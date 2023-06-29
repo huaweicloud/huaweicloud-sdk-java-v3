@@ -82,22 +82,16 @@ public class UpdateAutoLaunchGroupReqV2 {
             if (value == null) {
                 return null;
             }
-            ExcessFulfilledCapacityBehaviorEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExcessFulfilledCapacityBehaviorEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new ExcessFulfilledCapacityBehaviorEnum(value));
         }
 
         public static ExcessFulfilledCapacityBehaviorEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExcessFulfilledCapacityBehaviorEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -166,22 +160,16 @@ public class UpdateAutoLaunchGroupReqV2 {
             if (value == null) {
                 return null;
             }
-            InstancesBehaviorWithExpirationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstancesBehaviorWithExpirationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new InstancesBehaviorWithExpirationEnum(value));
         }
 
         public static InstancesBehaviorWithExpirationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstancesBehaviorWithExpirationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -334,23 +322,20 @@ public class UpdateAutoLaunchGroupReqV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAutoLaunchGroupReqV2 updateAutoLaunchGroupReqV2 = (UpdateAutoLaunchGroupReqV2) o;
-        return Objects.equals(this.name, updateAutoLaunchGroupReqV2.name)
-            && Objects.equals(this.guaranteePlanId, updateAutoLaunchGroupReqV2.guaranteePlanId)
-            && Objects.equals(this.targetCapacity, updateAutoLaunchGroupReqV2.targetCapacity)
-            && Objects.equals(this.stableCapacity, updateAutoLaunchGroupReqV2.stableCapacity)
-            && Objects.equals(this.excessFulfilledCapacityBehavior,
-                updateAutoLaunchGroupReqV2.excessFulfilledCapacityBehavior)
-            && Objects.equals(this.instancesBehaviorWithExpiration,
-                updateAutoLaunchGroupReqV2.instancesBehaviorWithExpiration)
-            && Objects.equals(this.spotPrice, updateAutoLaunchGroupReqV2.spotPrice);
+        UpdateAutoLaunchGroupReqV2 that = (UpdateAutoLaunchGroupReqV2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.guaranteePlanId, that.guaranteePlanId)
+            && Objects.equals(this.targetCapacity, that.targetCapacity)
+            && Objects.equals(this.stableCapacity, that.stableCapacity)
+            && Objects.equals(this.excessFulfilledCapacityBehavior, that.excessFulfilledCapacityBehavior)
+            && Objects.equals(this.instancesBehaviorWithExpiration, that.instancesBehaviorWithExpiration)
+            && Objects.equals(this.spotPrice, that.spotPrice);
     }
 
     @Override

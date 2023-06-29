@@ -168,21 +168,18 @@ public class ListCertificateAuthorityRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCertificateAuthorityRequest listCertificateAuthorityRequest = (ListCertificateAuthorityRequest) o;
-        return Objects.equals(this.limit, listCertificateAuthorityRequest.limit)
-            && Objects.equals(this.name, listCertificateAuthorityRequest.name)
-            && Objects.equals(this.offset, listCertificateAuthorityRequest.offset)
-            && Objects.equals(this.status, listCertificateAuthorityRequest.status)
-            && Objects.equals(this.type, listCertificateAuthorityRequest.type)
-            && Objects.equals(this.sortKey, listCertificateAuthorityRequest.sortKey)
-            && Objects.equals(this.sortDir, listCertificateAuthorityRequest.sortDir);
+        ListCertificateAuthorityRequest that = (ListCertificateAuthorityRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

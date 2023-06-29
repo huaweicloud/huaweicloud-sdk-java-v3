@@ -225,21 +225,19 @@ public class OptimizationTaskData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OptimizationTaskData optimizationTaskData = (OptimizationTaskData) o;
-        return Objects.equals(this.smiles, optimizationTaskData.smiles)
-            && Objects.equals(this.numTrials, optimizationTaskData.numTrials)
-            && Objects.equals(this.strongConstraints, optimizationTaskData.strongConstraints)
-            && Objects.equals(this.weakConstraints, optimizationTaskData.weakConstraints)
-            && Objects.equals(this.numExpected, optimizationTaskData.numExpected)
-            && Objects.equals(this.bindingSite, optimizationTaskData.bindingSite)
-            && Objects.equals(this.customProps, optimizationTaskData.customProps);
+        OptimizationTaskData that = (OptimizationTaskData) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.numTrials, that.numTrials)
+            && Objects.equals(this.strongConstraints, that.strongConstraints)
+            && Objects.equals(this.weakConstraints, that.weakConstraints)
+            && Objects.equals(this.numExpected, that.numExpected) && Objects.equals(this.bindingSite, that.bindingSite)
+            && Objects.equals(this.customProps, that.customProps);
     }
 
     @Override

@@ -83,22 +83,15 @@ public class ListDirectConnectsRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -392,23 +385,19 @@ public class ListDirectConnectsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDirectConnectsRequest listDirectConnectsRequest = (ListDirectConnectsRequest) o;
-        return Objects.equals(this.limit, listDirectConnectsRequest.limit)
-            && Objects.equals(this.marker, listDirectConnectsRequest.marker)
-            && Objects.equals(this.fields, listDirectConnectsRequest.fields)
-            && Objects.equals(this.sortKey, listDirectConnectsRequest.sortKey)
-            && Objects.equals(this.sortDir, listDirectConnectsRequest.sortDir)
-            && Objects.equals(this.hostingId, listDirectConnectsRequest.hostingId)
-            && Objects.equals(this.enterpriseProjectId, listDirectConnectsRequest.enterpriseProjectId)
-            && Objects.equals(this.id, listDirectConnectsRequest.id)
-            && Objects.equals(this.name, listDirectConnectsRequest.name);
+        ListDirectConnectsRequest that = (ListDirectConnectsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.fields, that.fields) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.hostingId, that.hostingId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

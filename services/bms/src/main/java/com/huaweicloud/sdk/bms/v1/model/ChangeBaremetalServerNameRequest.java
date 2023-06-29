@@ -65,16 +65,15 @@ public class ChangeBaremetalServerNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeBaremetalServerNameRequest changeBaremetalServerNameRequest = (ChangeBaremetalServerNameRequest) o;
-        return Objects.equals(this.serverId, changeBaremetalServerNameRequest.serverId)
-            && Objects.equals(this.body, changeBaremetalServerNameRequest.body);
+        ChangeBaremetalServerNameRequest that = (ChangeBaremetalServerNameRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.body, that.body);
     }
 
     @Override

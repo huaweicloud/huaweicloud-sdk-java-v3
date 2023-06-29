@@ -742,40 +742,29 @@ public class ListIssueItemResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssueItemResponse listIssueItemResponse = (ListIssueItemResponse) o;
-        return Objects.equals(this.actualWorkHours, listIssueItemResponse.actualWorkHours)
-            && Objects.equals(this.assignedCcUser, listIssueItemResponse.assignedCcUser)
-            && Objects.equals(this.assignedUser, listIssueItemResponse.assignedUser)
-            && Objects.equals(this.beginTime, listIssueItemResponse.beginTime)
-            && Objects.equals(this.createdTime, listIssueItemResponse.createdTime)
-            && Objects.equals(this.creator, listIssueItemResponse.creator)
-            && Objects.equals(this.customFields, listIssueItemResponse.customFields)
-            && Objects.equals(this.newCustomFields, listIssueItemResponse.newCustomFields)
-            && Objects.equals(this.developer, listIssueItemResponse.developer)
-            && Objects.equals(this.domain, listIssueItemResponse.domain)
-            && Objects.equals(this.doneRatio, listIssueItemResponse.doneRatio)
-            && Objects.equals(this.endTime, listIssueItemResponse.endTime)
-            && Objects.equals(this.expectedWorkHours, listIssueItemResponse.expectedWorkHours)
-            && Objects.equals(this.id, listIssueItemResponse.id)
-            && Objects.equals(this.project, listIssueItemResponse.project)
-            && Objects.equals(this.iteration, listIssueItemResponse.iteration)
-            && Objects.equals(this.module, listIssueItemResponse.module)
-            && Objects.equals(this.name, listIssueItemResponse.name)
-            && Objects.equals(this.parentIssue, listIssueItemResponse.parentIssue)
-            && Objects.equals(this.priority, listIssueItemResponse.priority)
-            && Objects.equals(this.severity, listIssueItemResponse.severity)
-            && Objects.equals(this.status, listIssueItemResponse.status)
-            && Objects.equals(this.tracker, listIssueItemResponse.tracker)
-            && Objects.equals(this.updatedTime, listIssueItemResponse.updatedTime)
-            && Objects.equals(this.closedTime, listIssueItemResponse.closedTime)
-            && Objects.equals(this.deleted, listIssueItemResponse.deleted);
+        ListIssueItemResponse that = (ListIssueItemResponse) obj;
+        return Objects.equals(this.actualWorkHours, that.actualWorkHours)
+            && Objects.equals(this.assignedCcUser, that.assignedCcUser)
+            && Objects.equals(this.assignedUser, that.assignedUser) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.customFields, that.customFields)
+            && Objects.equals(this.newCustomFields, that.newCustomFields)
+            && Objects.equals(this.developer, that.developer) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.doneRatio, that.doneRatio) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.expectedWorkHours, that.expectedWorkHours) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.iteration, that.iteration)
+            && Objects.equals(this.module, that.module) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.parentIssue, that.parentIssue) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tracker, that.tracker) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.closedTime, that.closedTime) && Objects.equals(this.deleted, that.deleted);
     }
 
     @Override

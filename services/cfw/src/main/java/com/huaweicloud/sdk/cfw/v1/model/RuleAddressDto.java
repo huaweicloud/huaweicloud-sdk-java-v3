@@ -143,20 +143,18 @@ public class RuleAddressDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleAddressDto ruleAddressDto = (RuleAddressDto) o;
-        return Objects.equals(this.type, ruleAddressDto.type)
-            && Objects.equals(this.addressType, ruleAddressDto.addressType)
-            && Objects.equals(this.address, ruleAddressDto.address)
-            && Objects.equals(this.addressSetId, ruleAddressDto.addressSetId)
-            && Objects.equals(this.addressSetName, ruleAddressDto.addressSetName)
-            && Objects.equals(this.domainAddressName, ruleAddressDto.domainAddressName);
+        RuleAddressDto that = (RuleAddressDto) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.addressType, that.addressType)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.addressSetId, that.addressSetId)
+            && Objects.equals(this.addressSetName, that.addressSetName)
+            && Objects.equals(this.domainAddressName, that.domainAddressName);
     }
 
     @Override

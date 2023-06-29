@@ -415,28 +415,22 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfDomainNameCertificateV2Response showDetailsOfDomainNameCertificateV2Response =
-            (ShowDetailsOfDomainNameCertificateV2Response) o;
-        return Objects.equals(this.commonName, showDetailsOfDomainNameCertificateV2Response.commonName)
-            && Objects.equals(this.san, showDetailsOfDomainNameCertificateV2Response.san)
-            && Objects.equals(this.version, showDetailsOfDomainNameCertificateV2Response.version)
-            && Objects.equals(this.organization, showDetailsOfDomainNameCertificateV2Response.organization)
-            && Objects.equals(this.organizationalUnit, showDetailsOfDomainNameCertificateV2Response.organizationalUnit)
-            && Objects.equals(this.locality, showDetailsOfDomainNameCertificateV2Response.locality)
-            && Objects.equals(this.state, showDetailsOfDomainNameCertificateV2Response.state)
-            && Objects.equals(this.country, showDetailsOfDomainNameCertificateV2Response.country)
-            && Objects.equals(this.notBefore, showDetailsOfDomainNameCertificateV2Response.notBefore)
-            && Objects.equals(this.notAfter, showDetailsOfDomainNameCertificateV2Response.notAfter)
-            && Objects.equals(this.serialNumber, showDetailsOfDomainNameCertificateV2Response.serialNumber)
-            && Objects.equals(this.issuer, showDetailsOfDomainNameCertificateV2Response.issuer)
-            && Objects.equals(this.signatureAlgorithm, showDetailsOfDomainNameCertificateV2Response.signatureAlgorithm);
+        ShowDetailsOfDomainNameCertificateV2Response that = (ShowDetailsOfDomainNameCertificateV2Response) obj;
+        return Objects.equals(this.commonName, that.commonName) && Objects.equals(this.san, that.san)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.organization, that.organization)
+            && Objects.equals(this.organizationalUnit, that.organizationalUnit)
+            && Objects.equals(this.locality, that.locality) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.notBefore, that.notBefore)
+            && Objects.equals(this.notAfter, that.notAfter) && Objects.equals(this.serialNumber, that.serialNumber)
+            && Objects.equals(this.issuer, that.issuer)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm);
     }
 
     @Override

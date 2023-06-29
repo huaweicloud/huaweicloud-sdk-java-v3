@@ -55,22 +55,15 @@ public class CreateInstanceByEngineRequest {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
         }
 
         public static EngineEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -141,16 +134,15 @@ public class CreateInstanceByEngineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceByEngineRequest createInstanceByEngineRequest = (CreateInstanceByEngineRequest) o;
-        return Objects.equals(this.engine, createInstanceByEngineRequest.engine)
-            && Objects.equals(this.body, createInstanceByEngineRequest.body);
+        CreateInstanceByEngineRequest that = (CreateInstanceByEngineRequest) obj;
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.body, that.body);
     }
 
     @Override

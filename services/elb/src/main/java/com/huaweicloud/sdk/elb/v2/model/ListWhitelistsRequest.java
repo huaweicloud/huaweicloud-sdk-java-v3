@@ -166,21 +166,18 @@ public class ListWhitelistsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWhitelistsRequest listWhitelistsRequest = (ListWhitelistsRequest) o;
-        return Objects.equals(this.limit, listWhitelistsRequest.limit)
-            && Objects.equals(this.marker, listWhitelistsRequest.marker)
-            && Objects.equals(this.pageReverse, listWhitelistsRequest.pageReverse)
-            && Objects.equals(this.id, listWhitelistsRequest.id)
-            && Objects.equals(this.enableWhitelist, listWhitelistsRequest.enableWhitelist)
-            && Objects.equals(this.listenerId, listWhitelistsRequest.listenerId)
-            && Objects.equals(this.whitelist, listWhitelistsRequest.whitelist);
+        ListWhitelistsRequest that = (ListWhitelistsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist)
+            && Objects.equals(this.listenerId, that.listenerId) && Objects.equals(this.whitelist, that.whitelist);
     }
 
     @Override

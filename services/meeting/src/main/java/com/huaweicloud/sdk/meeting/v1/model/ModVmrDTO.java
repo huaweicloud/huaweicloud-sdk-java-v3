@@ -121,18 +121,17 @@ public class ModVmrDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModVmrDTO modVmrDTO = (ModVmrDTO) o;
-        return Objects.equals(this.vmrName, modVmrDTO.vmrName) && Objects.equals(this.gustPwd, modVmrDTO.gustPwd)
-            && Objects.equals(this.chairPwd, modVmrDTO.chairPwd)
-            && Objects.equals(this.allowGustFirst, modVmrDTO.allowGustFirst)
-            && Objects.equals(this.gustFirstNotice, modVmrDTO.gustFirstNotice);
+        ModVmrDTO that = (ModVmrDTO) obj;
+        return Objects.equals(this.vmrName, that.vmrName) && Objects.equals(this.gustPwd, that.gustPwd)
+            && Objects.equals(this.chairPwd, that.chairPwd) && Objects.equals(this.allowGustFirst, that.allowGustFirst)
+            && Objects.equals(this.gustFirstNotice, that.gustFirstNotice);
     }
 
     @Override

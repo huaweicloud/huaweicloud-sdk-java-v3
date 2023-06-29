@@ -564,36 +564,25 @@ public class ClusterDetailInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterDetailInstance clusterDetailInstance = (ClusterDetailInstance) o;
-        return Objects.equals(this.flavor, clusterDetailInstance.flavor)
-            && Objects.equals(this.volume, clusterDetailInstance.volume)
-            && Objects.equals(this.status, clusterDetailInstance.status)
-            && Objects.equals(this.actions, clusterDetailInstance.actions)
-            && Objects.equals(this.type, clusterDetailInstance.type)
-            && Objects.equals(this.id, clusterDetailInstance.id)
-            && Objects.equals(this.name, clusterDetailInstance.name)
-            && Objects.equals(this.isFrozen, clusterDetailInstance.isFrozen)
-            && Objects.equals(this.components, clusterDetailInstance.components)
-            && Objects.equals(this.configStatus, clusterDetailInstance.configStatus)
-            && Objects.equals(this.role, clusterDetailInstance.role)
-            && Objects.equals(this.group, clusterDetailInstance.group)
-            && Objects.equals(this.links, clusterDetailInstance.links)
-            && Objects.equals(this.paramsGroupId, clusterDetailInstance.paramsGroupId)
-            && Objects.equals(this.publicIp, clusterDetailInstance.publicIp)
-            && Objects.equals(this.manageIp, clusterDetailInstance.manageIp)
-            && Objects.equals(this.trafficIp, clusterDetailInstance.trafficIp)
-            && Objects.equals(this.shardId, clusterDetailInstance.shardId)
-            && Objects.equals(this.manageFixIp, clusterDetailInstance.manageFixIp)
-            && Objects.equals(this.privateIp, clusterDetailInstance.privateIp)
-            && Objects.equals(this.internalIp, clusterDetailInstance.internalIp)
-            && Objects.equals(this.resource, clusterDetailInstance.resource);
+        ClusterDetailInstance that = (ClusterDetailInstance) obj;
+        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.isFrozen, that.isFrozen)
+            && Objects.equals(this.components, that.components) && Objects.equals(this.configStatus, that.configStatus)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.paramsGroupId, that.paramsGroupId)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.manageIp, that.manageIp)
+            && Objects.equals(this.trafficIp, that.trafficIp) && Objects.equals(this.shardId, that.shardId)
+            && Objects.equals(this.manageFixIp, that.manageFixIp) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.internalIp, that.internalIp) && Objects.equals(this.resource, that.resource);
     }
 
     @Override

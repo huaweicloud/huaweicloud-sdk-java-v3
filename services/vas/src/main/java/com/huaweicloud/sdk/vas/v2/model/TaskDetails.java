@@ -200,22 +200,15 @@ public class TaskDetails {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -292,22 +285,15 @@ public class TaskDetails {
             if (value == null) {
                 return null;
             }
-            TimingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimingStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimingStatusEnum(value));
         }
 
         public static TimingStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -744,30 +730,25 @@ public class TaskDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskDetails taskDetails = (TaskDetails) o;
-        return Objects.equals(this.id, taskDetails.id) && Objects.equals(this.name, taskDetails.name)
-            && Objects.equals(this.creator, taskDetails.creator)
-            && Objects.equals(this.projectId, taskDetails.projectId)
-            && Objects.equals(this.description, taskDetails.description)
-            && Objects.equals(this.serviceName, taskDetails.serviceName)
-            && Objects.equals(this.serviceVersion, taskDetails.serviceVersion)
-            && Objects.equals(this.serviceTitle, taskDetails.serviceTitle)
-            && Objects.equals(this.edgePoolId, taskDetails.edgePoolId)
-            && Objects.equals(this.resourceOrderId, taskDetails.resourceOrderId)
-            && Objects.equals(this.createdAt, taskDetails.createdAt)
-            && Objects.equals(this.updatedAt, taskDetails.updatedAt) && Objects.equals(this.state, taskDetails.state)
-            && Objects.equals(this.status, taskDetails.status) && Objects.equals(this.error, taskDetails.error)
-            && Objects.equals(this.timingStatus, taskDetails.timingStatus)
-            && Objects.equals(this.timing, taskDetails.timing) && Objects.equals(this.input, taskDetails.input)
-            && Objects.equals(this.output, taskDetails.output)
-            && Objects.equals(this.serviceConfig, taskDetails.serviceConfig);
+        TaskDetails that = (TaskDetails) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.serviceVersion, that.serviceVersion)
+            && Objects.equals(this.serviceTitle, that.serviceTitle) && Objects.equals(this.edgePoolId, that.edgePoolId)
+            && Objects.equals(this.resourceOrderId, that.resourceOrderId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.timingStatus, that.timingStatus)
+            && Objects.equals(this.timing, that.timing) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.serviceConfig, that.serviceConfig);
     }
 
     @Override

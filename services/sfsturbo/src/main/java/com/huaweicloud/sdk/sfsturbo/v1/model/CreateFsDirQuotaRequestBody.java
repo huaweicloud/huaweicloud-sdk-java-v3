@@ -77,17 +77,16 @@ public class CreateFsDirQuotaRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFsDirQuotaRequestBody createFsDirQuotaRequestBody = (CreateFsDirQuotaRequestBody) o;
-        return Objects.equals(this.path, createFsDirQuotaRequestBody.path)
-            && Objects.equals(this.capacity, createFsDirQuotaRequestBody.capacity)
-            && Objects.equals(this.inode, createFsDirQuotaRequestBody.inode);
+        CreateFsDirQuotaRequestBody that = (CreateFsDirQuotaRequestBody) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.inode, that.inode);
     }
 
     @Override

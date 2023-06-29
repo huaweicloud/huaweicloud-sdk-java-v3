@@ -116,22 +116,15 @@ public class VirtualInterface {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -208,22 +201,15 @@ public class VirtualInterface {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -739,35 +725,28 @@ public class VirtualInterface {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VirtualInterface virtualInterface = (VirtualInterface) o;
-        return Objects.equals(this.id, virtualInterface.id) && Objects.equals(this.name, virtualInterface.name)
-            && Objects.equals(this.adminStateUp, virtualInterface.adminStateUp)
-            && Objects.equals(this.bandwidth, virtualInterface.bandwidth)
-            && Objects.equals(this.createTime, virtualInterface.createTime)
-            && Objects.equals(this.updateTime, virtualInterface.updateTime)
-            && Objects.equals(this.description, virtualInterface.description)
-            && Objects.equals(this.directConnectId, virtualInterface.directConnectId)
-            && Objects.equals(this.serviceType, virtualInterface.serviceType)
-            && Objects.equals(this.status, virtualInterface.status)
-            && Objects.equals(this.tenantId, virtualInterface.tenantId)
-            && Objects.equals(this.type, virtualInterface.type) && Objects.equals(this.vgwId, virtualInterface.vgwId)
-            && Objects.equals(this.vlan, virtualInterface.vlan)
-            && Objects.equals(this.routeLimit, virtualInterface.routeLimit)
-            && Objects.equals(this.enableNqa, virtualInterface.enableNqa)
-            && Objects.equals(this.enableBfd, virtualInterface.enableBfd)
-            && Objects.equals(this.lagId, virtualInterface.lagId)
-            && Objects.equals(this.deviceId, virtualInterface.deviceId)
-            && Objects.equals(this.enterpriseProjectId, virtualInterface.enterpriseProjectId)
-            && Objects.equals(this.tags, virtualInterface.tags)
-            && Objects.equals(this.vifPeers, virtualInterface.vifPeers)
-            && Objects.equals(this.extendAttribute, virtualInterface.extendAttribute);
+        VirtualInterface that = (VirtualInterface) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.directConnectId, that.directConnectId)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.vgwId, that.vgwId) && Objects.equals(this.vlan, that.vlan)
+            && Objects.equals(this.routeLimit, that.routeLimit) && Objects.equals(this.enableNqa, that.enableNqa)
+            && Objects.equals(this.enableBfd, that.enableBfd) && Objects.equals(this.lagId, that.lagId)
+            && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.vifPeers, that.vifPeers)
+            && Objects.equals(this.extendAttribute, that.extendAttribute);
     }
 
     @Override

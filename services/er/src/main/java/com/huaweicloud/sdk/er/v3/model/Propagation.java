@@ -264,23 +264,20 @@ public class Propagation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Propagation propagation = (Propagation) o;
-        return Objects.equals(this.id, propagation.id) && Objects.equals(this.projectId, propagation.projectId)
-            && Objects.equals(this.erId, propagation.erId)
-            && Objects.equals(this.routeTableId, propagation.routeTableId)
-            && Objects.equals(this.attachmentId, propagation.attachmentId)
-            && Objects.equals(this.resourceType, propagation.resourceType)
-            && Objects.equals(this.resourceId, propagation.resourceId)
-            && Objects.equals(this.routePolicy, propagation.routePolicy)
-            && Objects.equals(this.state, propagation.state) && Objects.equals(this.createdAt, propagation.createdAt)
-            && Objects.equals(this.updatedAt, propagation.updatedAt);
+        Propagation that = (Propagation) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.erId, that.erId) && Objects.equals(this.routeTableId, that.routeTableId)
+            && Objects.equals(this.attachmentId, that.attachmentId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.routePolicy, that.routePolicy) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

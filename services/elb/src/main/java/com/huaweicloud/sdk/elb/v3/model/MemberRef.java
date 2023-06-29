@@ -33,15 +33,15 @@ public class MemberRef {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberRef memberRef = (MemberRef) o;
-        return Objects.equals(this.id, memberRef.id);
+        MemberRef that = (MemberRef) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

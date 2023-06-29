@@ -104,18 +104,16 @@ public class ShowTakeOverTaskDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTakeOverTaskDetailsRequest showTakeOverTaskDetailsRequest = (ShowTakeOverTaskDetailsRequest) o;
-        return Objects.equals(this.xSdkDate, showTakeOverTaskDetailsRequest.xSdkDate)
-            && Objects.equals(this.taskId, showTakeOverTaskDetailsRequest.taskId)
-            && Objects.equals(this.page, showTakeOverTaskDetailsRequest.page)
-            && Objects.equals(this.size, showTakeOverTaskDetailsRequest.size);
+        ShowTakeOverTaskDetailsRequest that = (ShowTakeOverTaskDetailsRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.size, that.size);
     }
 
     @Override

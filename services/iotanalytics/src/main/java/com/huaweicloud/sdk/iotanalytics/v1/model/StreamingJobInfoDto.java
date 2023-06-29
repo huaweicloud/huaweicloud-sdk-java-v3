@@ -255,25 +255,21 @@ public class StreamingJobInfoDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamingJobInfoDto streamingJobInfoDto = (StreamingJobInfoDto) o;
-        return Objects.equals(this.jobId, streamingJobInfoDto.jobId)
-            && Objects.equals(this.jobName, streamingJobInfoDto.jobName)
-            && Objects.equals(this.jobInputType, streamingJobInfoDto.jobInputType)
-            && Objects.equals(this.jobDescription, streamingJobInfoDto.jobDescription)
-            && Objects.equals(this.jobState, streamingJobInfoDto.jobState)
-            && Objects.equals(this.status, streamingJobInfoDto.status)
-            && Objects.equals(this.rtu, streamingJobInfoDto.rtu)
-            && Objects.equals(this.createdTime, streamingJobInfoDto.createdTime)
-            && Objects.equals(this.modifiedTime, streamingJobInfoDto.modifiedTime)
-            && Objects.equals(this.userId, streamingJobInfoDto.userId)
-            && Objects.equals(this.hasSavepoint, streamingJobInfoDto.hasSavepoint);
+        StreamingJobInfoDto that = (StreamingJobInfoDto) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobInputType, that.jobInputType)
+            && Objects.equals(this.jobDescription, that.jobDescription) && Objects.equals(this.jobState, that.jobState)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.rtu, that.rtu)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.hasSavepoint, that.hasSavepoint);
     }
 
     @Override

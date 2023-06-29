@@ -78,17 +78,16 @@ public class ShowAssetCipherResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetCipherResponse showAssetCipherResponse = (ShowAssetCipherResponse) o;
-        return Objects.equals(this.assetId, showAssetCipherResponse.assetId)
-            && Objects.equals(this.edk, showAssetCipherResponse.edk)
-            && Objects.equals(this.dk, showAssetCipherResponse.dk);
+        ShowAssetCipherResponse that = (ShowAssetCipherResponse) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.edk, that.edk)
+            && Objects.equals(this.dk, that.dk);
     }
 
     @Override

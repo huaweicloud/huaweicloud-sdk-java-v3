@@ -185,21 +185,18 @@ public class ShowJobProgressResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobProgressResponse showJobProgressResponse = (ShowJobProgressResponse) o;
-        return Objects.equals(this.isSuccess, showJobProgressResponse.isSuccess)
-            && Objects.equals(this.message, showJobProgressResponse.message)
-            && Objects.equals(this.jobId, showJobProgressResponse.jobId)
-            && Objects.equals(this.status, showJobProgressResponse.status)
-            && Objects.equals(this.subJobId, showJobProgressResponse.subJobId)
-            && Objects.equals(this.progress, showJobProgressResponse.progress)
-            && Objects.equals(this.subJobs, showJobProgressResponse.subJobs);
+        ShowJobProgressResponse that = (ShowJobProgressResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.subJobId, that.subJobId) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.subJobs, that.subJobs);
     }
 
     @Override

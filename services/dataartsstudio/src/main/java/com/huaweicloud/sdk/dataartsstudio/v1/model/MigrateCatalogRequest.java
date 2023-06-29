@@ -87,17 +87,16 @@ public class MigrateCatalogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateCatalogRequest migrateCatalogRequest = (MigrateCatalogRequest) o;
-        return Objects.equals(this.workspace, migrateCatalogRequest.workspace)
-            && Objects.equals(this.catalogId, migrateCatalogRequest.catalogId)
-            && Objects.equals(this.body, migrateCatalogRequest.body);
+        MigrateCatalogRequest that = (MigrateCatalogRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.catalogId, that.catalogId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -143,18 +143,17 @@ public class LogObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogObject logObject = (LogObject) o;
-        return Objects.equals(this.domainName, logObject.domainName)
-            && Objects.equals(this.startTime, logObject.startTime) && Objects.equals(this.endTime, logObject.endTime)
-            && Objects.equals(this.name, logObject.name) && Objects.equals(this.size, logObject.size)
-            && Objects.equals(this.link, logObject.link);
+        LogObject that = (LogObject) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.link, that.link);
     }
 
     @Override

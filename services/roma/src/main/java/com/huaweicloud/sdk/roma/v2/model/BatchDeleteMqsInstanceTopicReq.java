@@ -52,15 +52,15 @@ public class BatchDeleteMqsInstanceTopicReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteMqsInstanceTopicReq batchDeleteMqsInstanceTopicReq = (BatchDeleteMqsInstanceTopicReq) o;
-        return Objects.equals(this.topics, batchDeleteMqsInstanceTopicReq.topics);
+        BatchDeleteMqsInstanceTopicReq that = (BatchDeleteMqsInstanceTopicReq) obj;
+        return Objects.equals(this.topics, that.topics);
     }
 
     @Override

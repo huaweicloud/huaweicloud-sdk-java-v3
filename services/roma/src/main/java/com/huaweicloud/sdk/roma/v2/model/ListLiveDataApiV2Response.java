@@ -97,17 +97,16 @@ public class ListLiveDataApiV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveDataApiV2Response listLiveDataApiV2Response = (ListLiveDataApiV2Response) o;
-        return Objects.equals(this.size, listLiveDataApiV2Response.size)
-            && Objects.equals(this.total, listLiveDataApiV2Response.total)
-            && Objects.equals(this.apis, listLiveDataApiV2Response.apis);
+        ListLiveDataApiV2Response that = (ListLiveDataApiV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.apis, that.apis);
     }
 
     @Override

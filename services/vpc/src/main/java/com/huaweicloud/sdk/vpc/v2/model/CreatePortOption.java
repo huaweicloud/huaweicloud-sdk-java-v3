@@ -276,23 +276,20 @@ public class CreatePortOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePortOption createPortOption = (CreatePortOption) o;
-        return Objects.equals(this.name, createPortOption.name)
-            && Objects.equals(this.networkId, createPortOption.networkId)
-            && Objects.equals(this.fixedIps, createPortOption.fixedIps)
-            && Objects.equals(this.deviceOwner, createPortOption.deviceOwner)
-            && Objects.equals(this.securityGroups, createPortOption.securityGroups)
-            && Objects.equals(this.adminStateUp, createPortOption.adminStateUp)
-            && Objects.equals(this.allowedAddressPairs, createPortOption.allowedAddressPairs)
-            && Objects.equals(this.extraDhcpOpts, createPortOption.extraDhcpOpts)
-            && Objects.equals(this.tenantId, createPortOption.tenantId);
+        CreatePortOption that = (CreatePortOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.networkId, that.networkId)
+            && Objects.equals(this.fixedIps, that.fixedIps) && Objects.equals(this.deviceOwner, that.deviceOwner)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
+            && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts) && Objects.equals(this.tenantId, that.tenantId);
     }
 
     @Override

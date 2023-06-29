@@ -231,24 +231,19 @@ public class QuerySessionResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuerySessionResponse querySessionResponse = (QuerySessionResponse) o;
-        return Objects.equals(this.id, querySessionResponse.id)
-            && Objects.equals(this.active, querySessionResponse.active)
-            && Objects.equals(this.operation, querySessionResponse.operation)
-            && Objects.equals(this.type, querySessionResponse.type)
-            && Objects.equals(this.costTime, querySessionResponse.costTime)
-            && Objects.equals(this.planSummary, querySessionResponse.planSummary)
-            && Objects.equals(this.host, querySessionResponse.host)
-            && Objects.equals(this.client, querySessionResponse.client)
-            && Objects.equals(this.description, querySessionResponse.description)
-            && Objects.equals(this.namespace, querySessionResponse.namespace);
+        QuerySessionResponse that = (QuerySessionResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.active, that.active)
+            && Objects.equals(this.operation, that.operation) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.costTime, that.costTime) && Objects.equals(this.planSummary, that.planSummary)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.client, that.client)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.namespace, that.namespace);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class TemplateArgs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateArgs templateArgs = (TemplateArgs) o;
-        return Objects.equals(this.key, templateArgs.key) && Objects.equals(this.value, templateArgs.value);
+        TemplateArgs that = (TemplateArgs) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

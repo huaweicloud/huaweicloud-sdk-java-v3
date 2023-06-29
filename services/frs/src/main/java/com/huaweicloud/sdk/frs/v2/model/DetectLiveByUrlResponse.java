@@ -84,16 +84,15 @@ public class DetectLiveByUrlResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectLiveByUrlResponse detectLiveByUrlResponse = (DetectLiveByUrlResponse) o;
-        return Objects.equals(this.videoResult, detectLiveByUrlResponse.videoResult)
-            && Objects.equals(this.warningList, detectLiveByUrlResponse.warningList);
+        DetectLiveByUrlResponse that = (DetectLiveByUrlResponse) obj;
+        return Objects.equals(this.videoResult, that.videoResult) && Objects.equals(this.warningList, that.warningList);
     }
 
     @Override

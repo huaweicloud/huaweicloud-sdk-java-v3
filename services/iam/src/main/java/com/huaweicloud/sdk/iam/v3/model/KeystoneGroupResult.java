@@ -153,20 +153,17 @@ public class KeystoneGroupResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneGroupResult keystoneGroupResult = (KeystoneGroupResult) o;
-        return Objects.equals(this.description, keystoneGroupResult.description)
-            && Objects.equals(this.id, keystoneGroupResult.id)
-            && Objects.equals(this.domainId, keystoneGroupResult.domainId)
-            && Objects.equals(this.name, keystoneGroupResult.name)
-            && Objects.equals(this.links, keystoneGroupResult.links)
-            && Objects.equals(this.createTime, keystoneGroupResult.createTime);
+        KeystoneGroupResult that = (KeystoneGroupResult) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

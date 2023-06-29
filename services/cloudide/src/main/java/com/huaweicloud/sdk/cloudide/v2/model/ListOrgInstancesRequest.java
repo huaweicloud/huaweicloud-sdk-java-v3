@@ -125,19 +125,17 @@ public class ListOrgInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOrgInstancesRequest listOrgInstancesRequest = (ListOrgInstancesRequest) o;
-        return Objects.equals(this.isTemporary, listOrgInstancesRequest.isTemporary)
-            && Objects.equals(this.limit, listOrgInstancesRequest.limit)
-            && Objects.equals(this.offset, listOrgInstancesRequest.offset)
-            && Objects.equals(this.orgId, listOrgInstancesRequest.orgId)
-            && Objects.equals(this.search, listOrgInstancesRequest.search);
+        ListOrgInstancesRequest that = (ListOrgInstancesRequest) obj;
+        return Objects.equals(this.isTemporary, that.isTemporary) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.orgId, that.orgId)
+            && Objects.equals(this.search, that.search);
     }
 
     @Override

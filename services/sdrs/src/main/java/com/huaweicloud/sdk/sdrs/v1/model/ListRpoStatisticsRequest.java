@@ -124,19 +124,17 @@ public class ListRpoStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRpoStatisticsRequest listRpoStatisticsRequest = (ListRpoStatisticsRequest) o;
-        return Objects.equals(this.limit, listRpoStatisticsRequest.limit)
-            && Objects.equals(this.offset, listRpoStatisticsRequest.offset)
-            && Objects.equals(this.startTime, listRpoStatisticsRequest.startTime)
-            && Objects.equals(this.endTime, listRpoStatisticsRequest.endTime)
-            && Objects.equals(this.resourceType, listRpoStatisticsRequest.resourceType);
+        ListRpoStatisticsRequest that = (ListRpoStatisticsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

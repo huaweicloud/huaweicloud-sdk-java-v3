@@ -202,21 +202,20 @@ public class UpdateMixParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMixParam updateMixParam = (UpdateMixParam) o;
-        return Objects.equals(this.layoutTemplate, updateMixParam.layoutTemplate)
-            && Objects.equals(this.backgroundImage, updateMixParam.backgroundImage)
-            && Objects.equals(this.defaultUserBackgroundImage, updateMixParam.defaultUserBackgroundImage)
-            && Objects.equals(this.screenBackgroundImage, updateMixParam.screenBackgroundImage)
-            && Objects.equals(this.maxIdleTime, updateMixParam.maxIdleTime)
-            && Objects.equals(this.layoutPanes, updateMixParam.layoutPanes)
-            && Objects.equals(this.userBackgroundImages, updateMixParam.userBackgroundImages);
+        UpdateMixParam that = (UpdateMixParam) obj;
+        return Objects.equals(this.layoutTemplate, that.layoutTemplate)
+            && Objects.equals(this.backgroundImage, that.backgroundImage)
+            && Objects.equals(this.defaultUserBackgroundImage, that.defaultUserBackgroundImage)
+            && Objects.equals(this.screenBackgroundImage, that.screenBackgroundImage)
+            && Objects.equals(this.maxIdleTime, that.maxIdleTime) && Objects.equals(this.layoutPanes, that.layoutPanes)
+            && Objects.equals(this.userBackgroundImages, that.userBackgroundImages);
     }
 
     @Override

@@ -96,22 +96,15 @@ public class NodePoolStatus {
             if (value == null) {
                 return null;
             }
-            PhaseEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PhaseEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PhaseEnum(value));
         }
 
         public static PhaseEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PhaseEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -262,19 +255,18 @@ public class NodePoolStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePoolStatus nodePoolStatus = (NodePoolStatus) o;
-        return Objects.equals(this.currentNode, nodePoolStatus.currentNode)
-            && Objects.equals(this.creatingNode, nodePoolStatus.creatingNode)
-            && Objects.equals(this.deletingNode, nodePoolStatus.deletingNode)
-            && Objects.equals(this.phase, nodePoolStatus.phase) && Objects.equals(this.jobId, nodePoolStatus.jobId)
-            && Objects.equals(this.conditions, nodePoolStatus.conditions);
+        NodePoolStatus that = (NodePoolStatus) obj;
+        return Objects.equals(this.currentNode, that.currentNode)
+            && Objects.equals(this.creatingNode, that.creatingNode)
+            && Objects.equals(this.deletingNode, that.deletingNode) && Objects.equals(this.phase, that.phase)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.conditions, that.conditions);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ListMessageTemplateDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessageTemplateDetailsRequest listMessageTemplateDetailsRequest = (ListMessageTemplateDetailsRequest) o;
-        return Objects.equals(this.messageTemplateId, listMessageTemplateDetailsRequest.messageTemplateId);
+        ListMessageTemplateDetailsRequest that = (ListMessageTemplateDetailsRequest) obj;
+        return Objects.equals(this.messageTemplateId, that.messageTemplateId);
     }
 
     @Override

@@ -293,25 +293,21 @@ public class CreateAimSendTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAimSendTaskResponse createAimSendTaskResponse = (CreateAimSendTaskResponse) o;
-        return Objects.equals(this.taskName, createAimSendTaskResponse.taskName)
-            && Objects.equals(this.smsChannel, createAimSendTaskResponse.smsChannel)
-            && Objects.equals(this.resolveTask, createAimSendTaskResponse.resolveTask)
-            && Objects.equals(this.taskId, createAimSendTaskResponse.taskId)
-            && Objects.equals(this.taskState, createAimSendTaskResponse.taskState)
-            && Objects.equals(this.creationTime, createAimSendTaskResponse.creationTime)
-            && Objects.equals(this.submissionCount, createAimSendTaskResponse.submissionCount)
-            && Objects.equals(this.sendCount, createAimSendTaskResponse.sendCount)
-            && Objects.equals(this.resolveCount, createAimSendTaskResponse.resolveCount)
-            && Objects.equals(this.supportResolveCount, createAimSendTaskResponse.supportResolveCount)
-            && Objects.equals(this.failedShortChains, createAimSendTaskResponse.failedShortChains);
+        CreateAimSendTaskResponse that = (CreateAimSendTaskResponse) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.smsChannel, that.smsChannel)
+            && Objects.equals(this.resolveTask, that.resolveTask) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.taskState, that.taskState) && Objects.equals(this.creationTime, that.creationTime)
+            && Objects.equals(this.submissionCount, that.submissionCount)
+            && Objects.equals(this.sendCount, that.sendCount) && Objects.equals(this.resolveCount, that.resolveCount)
+            && Objects.equals(this.supportResolveCount, that.supportResolveCount)
+            && Objects.equals(this.failedShortChains, that.failedShortChains);
     }
 
     @Override

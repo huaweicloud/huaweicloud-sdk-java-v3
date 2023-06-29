@@ -52,15 +52,15 @@ public class DeleteActiveAlarmsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteActiveAlarmsRequestBody deleteActiveAlarmsRequestBody = (DeleteActiveAlarmsRequestBody) o;
-        return Objects.equals(this.events, deleteActiveAlarmsRequestBody.events);
+        DeleteActiveAlarmsRequestBody that = (DeleteActiveAlarmsRequestBody) obj;
+        return Objects.equals(this.events, that.events);
     }
 
     @Override

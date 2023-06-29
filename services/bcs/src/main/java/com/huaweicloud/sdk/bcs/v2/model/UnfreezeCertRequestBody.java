@@ -65,15 +65,15 @@ public class UnfreezeCertRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnfreezeCertRequestBody unfreezeCertRequestBody = (UnfreezeCertRequestBody) o;
-        return Objects.equals(this.file, unfreezeCertRequestBody.file);
+        UnfreezeCertRequestBody that = (UnfreezeCertRequestBody) obj;
+        return Objects.equals(this.file, that.file);
     }
 
     @Override

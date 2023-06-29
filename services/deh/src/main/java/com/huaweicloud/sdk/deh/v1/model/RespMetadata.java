@@ -33,15 +33,15 @@ public class RespMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespMetadata respMetadata = (RespMetadata) o;
-        return Objects.equals(this.osType, respMetadata.osType);
+        RespMetadata that = (RespMetadata) obj;
+        return Objects.equals(this.osType, that.osType);
     }
 
     @Override

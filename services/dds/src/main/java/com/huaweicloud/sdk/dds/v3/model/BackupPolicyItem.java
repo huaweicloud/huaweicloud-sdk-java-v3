@@ -79,17 +79,16 @@ public class BackupPolicyItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupPolicyItem backupPolicyItem = (BackupPolicyItem) o;
-        return Objects.equals(this.keepDays, backupPolicyItem.keepDays)
-            && Objects.equals(this.startTime, backupPolicyItem.startTime)
-            && Objects.equals(this.period, backupPolicyItem.period);
+        BackupPolicyItem that = (BackupPolicyItem) obj;
+        return Objects.equals(this.keepDays, that.keepDays) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.period, that.period);
     }
 
     @Override

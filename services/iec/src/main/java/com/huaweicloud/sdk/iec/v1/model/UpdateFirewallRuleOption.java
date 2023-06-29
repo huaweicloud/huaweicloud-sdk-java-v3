@@ -74,16 +74,16 @@ public class UpdateFirewallRuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFirewallRuleOption updateFirewallRuleOption = (UpdateFirewallRuleOption) o;
-        return Objects.equals(this.egressFirewallPolicy, updateFirewallRuleOption.egressFirewallPolicy)
-            && Objects.equals(this.ingressFirewallPolicy, updateFirewallRuleOption.ingressFirewallPolicy);
+        UpdateFirewallRuleOption that = (UpdateFirewallRuleOption) obj;
+        return Objects.equals(this.egressFirewallPolicy, that.egressFirewallPolicy)
+            && Objects.equals(this.ingressFirewallPolicy, that.ingressFirewallPolicy);
     }
 
     @Override

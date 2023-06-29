@@ -44,15 +44,15 @@ public class CreateSecretVersionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecretVersionResponse createSecretVersionResponse = (CreateSecretVersionResponse) o;
-        return Objects.equals(this.versionMetadata, createSecretVersionResponse.versionMetadata);
+        CreateSecretVersionResponse that = (CreateSecretVersionResponse) obj;
+        return Objects.equals(this.versionMetadata, that.versionMetadata);
     }
 
     @Override

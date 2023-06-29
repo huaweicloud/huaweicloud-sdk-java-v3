@@ -74,16 +74,15 @@ public class ReclaimCouponQuotasReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReclaimCouponQuotasReq reclaimCouponQuotasReq = (ReclaimCouponQuotasReq) o;
-        return Objects.equals(this.quotaIds, reclaimCouponQuotasReq.quotaIds)
-            && Objects.equals(this.remark, reclaimCouponQuotasReq.remark);
+        ReclaimCouponQuotasReq that = (ReclaimCouponQuotasReq) obj;
+        return Objects.equals(this.quotaIds, that.quotaIds) && Objects.equals(this.remark, that.remark);
     }
 
     @Override

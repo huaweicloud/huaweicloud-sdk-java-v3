@@ -947,52 +947,38 @@ public class EventManagementResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventManagementResponseInfo eventManagementResponseInfo = (EventManagementResponseInfo) o;
-        return Objects.equals(this.eventId, eventManagementResponseInfo.eventId)
-            && Objects.equals(this.eventClassId, eventManagementResponseInfo.eventClassId)
-            && Objects.equals(this.eventType, eventManagementResponseInfo.eventType)
-            && Objects.equals(this.eventName, eventManagementResponseInfo.eventName)
-            && Objects.equals(this.severity, eventManagementResponseInfo.severity)
-            && Objects.equals(this.containerName, eventManagementResponseInfo.containerName)
-            && Objects.equals(this.imageName, eventManagementResponseInfo.imageName)
-            && Objects.equals(this.hostName, eventManagementResponseInfo.hostName)
-            && Objects.equals(this.hostId, eventManagementResponseInfo.hostId)
-            && Objects.equals(this.privateIp, eventManagementResponseInfo.privateIp)
-            && Objects.equals(this.publicIp, eventManagementResponseInfo.publicIp)
-            && Objects.equals(this.osType, eventManagementResponseInfo.osType)
-            && Objects.equals(this.hostStatus, eventManagementResponseInfo.hostStatus)
-            && Objects.equals(this.agentStatus, eventManagementResponseInfo.agentStatus)
-            && Objects.equals(this.protectStatus, eventManagementResponseInfo.protectStatus)
-            && Objects.equals(this.assetValue, eventManagementResponseInfo.assetValue)
-            && Objects.equals(this.attackPhase, eventManagementResponseInfo.attackPhase)
-            && Objects.equals(this.attackTag, eventManagementResponseInfo.attackTag)
-            && Objects.equals(this.occurTime, eventManagementResponseInfo.occurTime)
-            && Objects.equals(this.handleTime, eventManagementResponseInfo.handleTime)
-            && Objects.equals(this.handleStatus, eventManagementResponseInfo.handleStatus)
-            && Objects.equals(this.handleMethod, eventManagementResponseInfo.handleMethod)
-            && Objects.equals(this.handler, eventManagementResponseInfo.handler)
-            && Objects.equals(this.operateAcceptList, eventManagementResponseInfo.operateAcceptList)
-            && Objects.equals(this.operateDetailList, eventManagementResponseInfo.operateDetailList)
-            && Objects.equals(this.forensicInfo, eventManagementResponseInfo.forensicInfo)
-            && Objects.equals(this.resourceInfo, eventManagementResponseInfo.resourceInfo)
-            && Objects.equals(this.geoInfo, eventManagementResponseInfo.geoInfo)
-            && Objects.equals(this.malwareInfo, eventManagementResponseInfo.malwareInfo)
-            && Objects.equals(this.networkInfo, eventManagementResponseInfo.networkInfo)
-            && Objects.equals(this.appInfo, eventManagementResponseInfo.appInfo)
-            && Objects.equals(this.systemInfo, eventManagementResponseInfo.systemInfo)
-            && Objects.equals(this.extendInfo, eventManagementResponseInfo.extendInfo)
-            && Objects.equals(this.recommendation, eventManagementResponseInfo.recommendation)
-            && Objects.equals(this.processInfoList, eventManagementResponseInfo.processInfoList)
-            && Objects.equals(this.userInfoList, eventManagementResponseInfo.userInfoList)
-            && Objects.equals(this.fileInfoList, eventManagementResponseInfo.fileInfoList)
-            && Objects.equals(this.eventDetails, eventManagementResponseInfo.eventDetails);
+        EventManagementResponseInfo that = (EventManagementResponseInfo) obj;
+        return Objects.equals(this.eventId, that.eventId) && Objects.equals(this.eventClassId, that.eventClassId)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.eventName, that.eventName)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.containerName, that.containerName)
+            && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.hostStatus, that.hostStatus) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.attackPhase, that.attackPhase)
+            && Objects.equals(this.attackTag, that.attackTag) && Objects.equals(this.occurTime, that.occurTime)
+            && Objects.equals(this.handleTime, that.handleTime) && Objects.equals(this.handleStatus, that.handleStatus)
+            && Objects.equals(this.handleMethod, that.handleMethod) && Objects.equals(this.handler, that.handler)
+            && Objects.equals(this.operateAcceptList, that.operateAcceptList)
+            && Objects.equals(this.operateDetailList, that.operateDetailList)
+            && Objects.equals(this.forensicInfo, that.forensicInfo)
+            && Objects.equals(this.resourceInfo, that.resourceInfo) && Objects.equals(this.geoInfo, that.geoInfo)
+            && Objects.equals(this.malwareInfo, that.malwareInfo) && Objects.equals(this.networkInfo, that.networkInfo)
+            && Objects.equals(this.appInfo, that.appInfo) && Objects.equals(this.systemInfo, that.systemInfo)
+            && Objects.equals(this.extendInfo, that.extendInfo)
+            && Objects.equals(this.recommendation, that.recommendation)
+            && Objects.equals(this.processInfoList, that.processInfoList)
+            && Objects.equals(this.userInfoList, that.userInfoList)
+            && Objects.equals(this.fileInfoList, that.fileInfoList)
+            && Objects.equals(this.eventDetails, that.eventDetails);
     }
 
     @Override

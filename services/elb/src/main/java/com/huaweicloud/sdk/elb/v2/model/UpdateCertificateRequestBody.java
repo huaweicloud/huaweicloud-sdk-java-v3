@@ -143,20 +143,17 @@ public class UpdateCertificateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCertificateRequestBody updateCertificateRequestBody = (UpdateCertificateRequestBody) o;
-        return Objects.equals(this.certificate, updateCertificateRequestBody.certificate)
-            && Objects.equals(this.privateKey, updateCertificateRequestBody.privateKey)
-            && Objects.equals(this.description, updateCertificateRequestBody.description)
-            && Objects.equals(this.domain, updateCertificateRequestBody.domain)
-            && Objects.equals(this.name, updateCertificateRequestBody.name)
-            && Objects.equals(this.adminStateUp, updateCertificateRequestBody.adminStateUp);
+        UpdateCertificateRequestBody that = (UpdateCertificateRequestBody) obj;
+        return Objects.equals(this.certificate, that.certificate) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.adminStateUp, that.adminStateUp);
     }
 
     @Override

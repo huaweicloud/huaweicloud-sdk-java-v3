@@ -76,16 +76,16 @@ public class ListEnterpriseSubCustomersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseSubCustomersResponse listEnterpriseSubCustomersResponse = (ListEnterpriseSubCustomersResponse) o;
-        return Objects.equals(this.totalCount, listEnterpriseSubCustomersResponse.totalCount)
-            && Objects.equals(this.subCustomerInfos, listEnterpriseSubCustomersResponse.subCustomerInfos);
+        ListEnterpriseSubCustomersResponse that = (ListEnterpriseSubCustomersResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.subCustomerInfos, that.subCustomerInfos);
     }
 
     @Override

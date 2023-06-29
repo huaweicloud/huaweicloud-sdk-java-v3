@@ -43,15 +43,15 @@ public class CreateTagReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTagReq createTagReq = (CreateTagReq) o;
-        return Objects.equals(this.tag, createTagReq.tag);
+        CreateTagReq that = (CreateTagReq) obj;
+        return Objects.equals(this.tag, that.tag);
     }
 
     @Override

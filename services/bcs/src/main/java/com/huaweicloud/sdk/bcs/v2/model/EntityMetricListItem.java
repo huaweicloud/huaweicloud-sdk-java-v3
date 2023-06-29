@@ -165,21 +165,19 @@ public class EntityMetricListItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EntityMetricListItem entityMetricListItem = (EntityMetricListItem) o;
-        return Objects.equals(this.cpuUsage, entityMetricListItem.cpuUsage)
-            && Objects.equals(this.diskReadRate, entityMetricListItem.diskReadRate)
-            && Objects.equals(this.diskWriteRate, entityMetricListItem.diskWriteRate)
-            && Objects.equals(this.memUsage, entityMetricListItem.memUsage)
-            && Objects.equals(this.recvBytesRate, entityMetricListItem.recvBytesRate)
-            && Objects.equals(this.sendBytesRate, entityMetricListItem.sendBytesRate)
-            && Objects.equals(this.filesystemUsage, entityMetricListItem.filesystemUsage);
+        EntityMetricListItem that = (EntityMetricListItem) obj;
+        return Objects.equals(this.cpuUsage, that.cpuUsage) && Objects.equals(this.diskReadRate, that.diskReadRate)
+            && Objects.equals(this.diskWriteRate, that.diskWriteRate) && Objects.equals(this.memUsage, that.memUsage)
+            && Objects.equals(this.recvBytesRate, that.recvBytesRate)
+            && Objects.equals(this.sendBytesRate, that.sendBytesRate)
+            && Objects.equals(this.filesystemUsage, that.filesystemUsage);
     }
 
     @Override

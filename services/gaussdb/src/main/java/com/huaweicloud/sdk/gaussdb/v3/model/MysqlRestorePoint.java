@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * MysqlRestorePoint
  */
-public class MysqlRestorePoint  {
-
+public class MysqlRestorePoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restore_time")
-    
+    @JsonProperty(value = "restore_time")
 
     private Long restoreTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_instance_id")
-    
+    @JsonProperty(value = "source_instance_id")
 
     private String sourceInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
 
     private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
@@ -45,9 +34,6 @@ public class MysqlRestorePoint  {
         this.restoreTime = restoreTime;
         return this;
     }
-
-    
-
 
     /**
      * PITR。要恢复的时间点。
@@ -61,15 +47,10 @@ public class MysqlRestorePoint  {
         this.restoreTime = restoreTime;
     }
 
-    
-
     public MysqlRestorePoint withSourceInstanceId(String sourceInstanceId) {
         this.sourceInstanceId = sourceInstanceId;
         return this;
     }
-
-    
-
 
     /**
      * 源实例ID。
@@ -83,15 +64,10 @@ public class MysqlRestorePoint  {
         this.sourceInstanceId = sourceInstanceId;
     }
 
-    
-
     public MysqlRestorePoint withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
-
-    
-
 
     /**
      * 备份文件ID。
@@ -105,15 +81,10 @@ public class MysqlRestorePoint  {
         this.backupId = backupId;
     }
 
-    
-
     public MysqlRestorePoint withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 备份类型。当参数为空时，backup_id不能为空，即默认按备份文件恢复。 当参数不为空时，取值范围： - backup：表示按备份文件恢复； - timestamp：表示按时间点恢复；
@@ -127,26 +98,25 @@ public class MysqlRestorePoint  {
         this.type = type;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlRestorePoint mysqlRestorePoint = (MysqlRestorePoint) o;
-        return Objects.equals(this.restoreTime, mysqlRestorePoint.restoreTime) &&
-            Objects.equals(this.sourceInstanceId, mysqlRestorePoint.sourceInstanceId) &&
-            Objects.equals(this.backupId, mysqlRestorePoint.backupId) &&
-            Objects.equals(this.type, mysqlRestorePoint.type);
+        MysqlRestorePoint that = (MysqlRestorePoint) obj;
+        return Objects.equals(this.restoreTime, that.restoreTime)
+            && Objects.equals(this.sourceInstanceId, that.sourceInstanceId)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.type, that.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(restoreTime, sourceInstanceId, backupId, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +128,7 @@ public class MysqlRestorePoint  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +139,5 @@ public class MysqlRestorePoint  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

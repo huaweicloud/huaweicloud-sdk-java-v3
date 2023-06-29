@@ -304,25 +304,20 @@ public class ExternalServiceBizCase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExternalServiceBizCase externalServiceBizCase = (ExternalServiceBizCase) o;
-        return Objects.equals(this.description, externalServiceBizCase.description)
-            && Objects.equals(this.preparation, externalServiceBizCase.preparation)
-            && Objects.equals(this.steps, externalServiceBizCase.steps)
-            && Objects.equals(this.labelList, externalServiceBizCase.labelList)
-            && Objects.equals(this.moduleId, externalServiceBizCase.moduleId)
-            && Objects.equals(this.testVersionId, externalServiceBizCase.testVersionId)
-            && Objects.equals(this.fixVersionId, externalServiceBizCase.fixVersionId)
-            && Objects.equals(this.assignedId, externalServiceBizCase.assignedId)
-            && Objects.equals(this.issueId, externalServiceBizCase.issueId)
-            && Objects.equals(this.statusId, externalServiceBizCase.statusId)
-            && Objects.equals(this.defectIdList, externalServiceBizCase.defectIdList);
+        ExternalServiceBizCase that = (ExternalServiceBizCase) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.preparation, that.preparation)
+            && Objects.equals(this.steps, that.steps) && Objects.equals(this.labelList, that.labelList)
+            && Objects.equals(this.moduleId, that.moduleId) && Objects.equals(this.testVersionId, that.testVersionId)
+            && Objects.equals(this.fixVersionId, that.fixVersionId) && Objects.equals(this.assignedId, that.assignedId)
+            && Objects.equals(this.issueId, that.issueId) && Objects.equals(this.statusId, that.statusId)
+            && Objects.equals(this.defectIdList, that.defectIdList);
     }
 
     @Override

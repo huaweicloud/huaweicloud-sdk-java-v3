@@ -53,15 +53,15 @@ public class CinderListVolumeTransfersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CinderListVolumeTransfersResponse cinderListVolumeTransfersResponse = (CinderListVolumeTransfersResponse) o;
-        return Objects.equals(this.transfers, cinderListVolumeTransfersResponse.transfers);
+        CinderListVolumeTransfersResponse that = (CinderListVolumeTransfersResponse) obj;
+        return Objects.equals(this.transfers, that.transfers);
     }
 
     @Override

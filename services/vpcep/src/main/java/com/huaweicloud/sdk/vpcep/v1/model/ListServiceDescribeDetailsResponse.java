@@ -65,22 +65,15 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -242,21 +235,19 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceDescribeDetailsResponse listServiceDescribeDetailsResponse = (ListServiceDescribeDetailsResponse) o;
-        return Objects.equals(this.id, listServiceDescribeDetailsResponse.id)
-            && Objects.equals(this.serviceName, listServiceDescribeDetailsResponse.serviceName)
-            && Objects.equals(this.serviceType, listServiceDescribeDetailsResponse.serviceType)
-            && Objects.equals(this.createdAt, listServiceDescribeDetailsResponse.createdAt)
-            && Objects.equals(this.isCharge, listServiceDescribeDetailsResponse.isCharge)
-            && Objects.equals(this.publicBorderGroup, listServiceDescribeDetailsResponse.publicBorderGroup)
-            && Objects.equals(this.enablePolicy, listServiceDescribeDetailsResponse.enablePolicy);
+        ListServiceDescribeDetailsResponse that = (ListServiceDescribeDetailsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.isCharge, that.isCharge)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.enablePolicy, that.enablePolicy);
     }
 
     @Override

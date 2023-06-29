@@ -111,22 +111,15 @@ public class CreateTableResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            OwnerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OwnerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OwnerTypeEnum(value));
         }
 
         public static OwnerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OwnerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,22 +218,15 @@ public class CreateTableResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TableTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableTypeEnum(value));
         }
 
         public static TableTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -608,31 +594,26 @@ public class CreateTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTableResponse createTableResponse = (CreateTableResponse) o;
-        return Objects.equals(this.catalogName, createTableResponse.catalogName)
-            && Objects.equals(this.databaseName, createTableResponse.databaseName)
-            && Objects.equals(this.tableName, createTableResponse.tableName)
-            && Objects.equals(this.createTime, createTableResponse.createTime)
-            && Objects.equals(this.lastAccessTime, createTableResponse.lastAccessTime)
-            && Objects.equals(this.updateTime, createTableResponse.updateTime)
-            && Objects.equals(this.lastAnalyzedTime, createTableResponse.lastAnalyzedTime)
-            && Objects.equals(this.owner, createTableResponse.owner)
-            && Objects.equals(this.ownerType, createTableResponse.ownerType)
-            && Objects.equals(this.parameters, createTableResponse.parameters)
-            && Objects.equals(this.partitionKeys, createTableResponse.partitionKeys)
-            && Objects.equals(this.retention, createTableResponse.retention)
-            && Objects.equals(this.storageDescriptor, createTableResponse.storageDescriptor)
-            && Objects.equals(this.tableType, createTableResponse.tableType)
-            && Objects.equals(this.comments, createTableResponse.comments)
-            && Objects.equals(this.viewExpandedText, createTableResponse.viewExpandedText)
-            && Objects.equals(this.viewOriginalText, createTableResponse.viewOriginalText);
+        CreateTableResponse that = (CreateTableResponse) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastAccessTime, that.lastAccessTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.lastAnalyzedTime, that.lastAnalyzedTime) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.ownerType, that.ownerType) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.partitionKeys, that.partitionKeys) && Objects.equals(this.retention, that.retention)
+            && Objects.equals(this.storageDescriptor, that.storageDescriptor)
+            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.comments, that.comments)
+            && Objects.equals(this.viewExpandedText, that.viewExpandedText)
+            && Objects.equals(this.viewOriginalText, that.viewOriginalText);
     }
 
     @Override

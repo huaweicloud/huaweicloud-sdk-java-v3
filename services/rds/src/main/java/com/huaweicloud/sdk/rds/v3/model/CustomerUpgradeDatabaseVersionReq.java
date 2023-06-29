@@ -33,15 +33,15 @@ public class CustomerUpgradeDatabaseVersionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerUpgradeDatabaseVersionReq customerUpgradeDatabaseVersionReq = (CustomerUpgradeDatabaseVersionReq) o;
-        return Objects.equals(this.delay, customerUpgradeDatabaseVersionReq.delay);
+        CustomerUpgradeDatabaseVersionReq that = (CustomerUpgradeDatabaseVersionReq) obj;
+        return Objects.equals(this.delay, that.delay);
     }
 
     @Override

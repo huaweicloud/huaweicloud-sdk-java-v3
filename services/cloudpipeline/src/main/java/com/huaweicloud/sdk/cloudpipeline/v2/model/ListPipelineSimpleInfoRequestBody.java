@@ -253,25 +253,20 @@ public class ListPipelineSimpleInfoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelineSimpleInfoRequestBody listPipelineSimpleInfoRequestBody = (ListPipelineSimpleInfoRequestBody) o;
-        return Objects.equals(this.pipelineName, listPipelineSimpleInfoRequestBody.pipelineName)
-            && Objects.equals(this.projectIds, listPipelineSimpleInfoRequestBody.projectIds)
-            && Objects.equals(this.creatorIds, listPipelineSimpleInfoRequestBody.creatorIds)
-            && Objects.equals(this.executorIds, listPipelineSimpleInfoRequestBody.executorIds)
-            && Objects.equals(this.status, listPipelineSimpleInfoRequestBody.status)
-            && Objects.equals(this.outcome, listPipelineSimpleInfoRequestBody.outcome)
-            && Objects.equals(this.sortKey, listPipelineSimpleInfoRequestBody.sortKey)
-            && Objects.equals(this.sortDir, listPipelineSimpleInfoRequestBody.sortDir)
-            && Objects.equals(this.gitUrl, listPipelineSimpleInfoRequestBody.gitUrl)
-            && Objects.equals(this.offset, listPipelineSimpleInfoRequestBody.offset)
-            && Objects.equals(this.limit, listPipelineSimpleInfoRequestBody.limit);
+        ListPipelineSimpleInfoRequestBody that = (ListPipelineSimpleInfoRequestBody) obj;
+        return Objects.equals(this.pipelineName, that.pipelineName) && Objects.equals(this.projectIds, that.projectIds)
+            && Objects.equals(this.creatorIds, that.creatorIds) && Objects.equals(this.executorIds, that.executorIds)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.outcome, that.outcome)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.gitUrl, that.gitUrl) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

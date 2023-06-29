@@ -33,16 +33,15 @@ public class ListSyntaxConversionProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSyntaxConversionProgressRequest listSyntaxConversionProgressRequest =
-            (ListSyntaxConversionProgressRequest) o;
-        return Objects.equals(this.migrationProjectId, listSyntaxConversionProgressRequest.migrationProjectId);
+        ListSyntaxConversionProgressRequest that = (ListSyntaxConversionProgressRequest) obj;
+        return Objects.equals(this.migrationProjectId, that.migrationProjectId);
     }
 
     @Override

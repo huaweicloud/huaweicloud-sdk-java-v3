@@ -100,18 +100,17 @@ public class CancelContractResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelContractResponse cancelContractResponse = (CancelContractResponse) o;
-        return Objects.equals(this.contractId, cancelContractResponse.contractId)
-            && Objects.equals(this.contractName, cancelContractResponse.contractName)
-            && Objects.equals(this.resultCode, cancelContractResponse.resultCode)
-            && Objects.equals(this.resultDescription, cancelContractResponse.resultDescription);
+        CancelContractResponse that = (CancelContractResponse) obj;
+        return Objects.equals(this.contractId, that.contractId) && Objects.equals(this.contractName, that.contractName)
+            && Objects.equals(this.resultCode, that.resultCode)
+            && Objects.equals(this.resultDescription, that.resultDescription);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdatePoolRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePoolRequest updatePoolRequest = (UpdatePoolRequest) o;
-        return Objects.equals(this.poolId, updatePoolRequest.poolId)
-            && Objects.equals(this.body, updatePoolRequest.body);
+        UpdatePoolRequest that = (UpdatePoolRequest) obj;
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.body, that.body);
     }
 
     @Override

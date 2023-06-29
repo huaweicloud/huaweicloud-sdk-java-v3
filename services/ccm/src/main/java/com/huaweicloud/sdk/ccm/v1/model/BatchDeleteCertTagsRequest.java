@@ -65,16 +65,15 @@ public class BatchDeleteCertTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteCertTagsRequest batchDeleteCertTagsRequest = (BatchDeleteCertTagsRequest) o;
-        return Objects.equals(this.certificateId, batchDeleteCertTagsRequest.certificateId)
-            && Objects.equals(this.body, batchDeleteCertTagsRequest.body);
+        BatchDeleteCertTagsRequest that = (BatchDeleteCertTagsRequest) obj;
+        return Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

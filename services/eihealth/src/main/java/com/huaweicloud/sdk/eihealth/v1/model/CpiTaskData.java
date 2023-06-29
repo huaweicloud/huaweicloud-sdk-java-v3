@@ -178,19 +178,17 @@ public class CpiTaskData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CpiTaskData cpiTaskData = (CpiTaskData) o;
-        return Objects.equals(this.header, cpiTaskData.header) && Objects.equals(this.fasta, cpiTaskData.fasta)
-            && Objects.equals(this.smilesList, cpiTaskData.smilesList)
-            && Objects.equals(this.threshold, cpiTaskData.threshold)
-            && Objects.equals(this.numResults, cpiTaskData.numResults)
-            && Objects.equals(this.customProps, cpiTaskData.customProps);
+        CpiTaskData that = (CpiTaskData) obj;
+        return Objects.equals(this.header, that.header) && Objects.equals(this.fasta, that.fasta)
+            && Objects.equals(this.smilesList, that.smilesList) && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.numResults, that.numResults) && Objects.equals(this.customProps, that.customProps);
     }
 
     @Override

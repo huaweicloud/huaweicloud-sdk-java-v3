@@ -490,26 +490,26 @@ public class Member {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Member member = (Member) o;
-        return Objects.equals(this.id, member.id) && Objects.equals(this.name, member.name)
-            && Objects.equals(this.projectId, member.projectId) && Objects.equals(this.poolId, member.poolId)
-            && Objects.equals(this.adminStateUp, member.adminStateUp)
-            && Objects.equals(this.subnetCidrId, member.subnetCidrId)
-            && Objects.equals(this.protocolPort, member.protocolPort) && Objects.equals(this.weight, member.weight)
-            && Objects.equals(this.address, member.address) && Objects.equals(this.ipVersion, member.ipVersion)
-            && Objects.equals(this.deviceOwner, member.deviceOwner) && Objects.equals(this.deviceId, member.deviceId)
-            && Objects.equals(this.operatingStatus, member.operatingStatus)
-            && Objects.equals(this.status, member.status) && Objects.equals(this.loadbalancerId, member.loadbalancerId)
-            && Objects.equals(this.loadbalancers, member.loadbalancers)
-            && Objects.equals(this.createdAt, member.createdAt) && Objects.equals(this.updatedAt, member.updatedAt)
-            && Objects.equals(this.memberType, member.memberType) && Objects.equals(this.instanceId, member.instanceId);
+        Member that = (Member) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.subnetCidrId, that.subnetCidrId)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.deviceOwner, that.deviceOwner) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.operatingStatus, that.operatingStatus) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.loadbalancers, that.loadbalancers) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.memberType, that.memberType)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

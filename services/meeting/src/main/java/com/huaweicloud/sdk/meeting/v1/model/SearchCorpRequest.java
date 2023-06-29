@@ -126,19 +126,17 @@ public class SearchCorpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchCorpRequest searchCorpRequest = (SearchCorpRequest) o;
-        return Objects.equals(this.xRequestId, searchCorpRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchCorpRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchCorpRequest.offset)
-            && Objects.equals(this.limit, searchCorpRequest.limit)
-            && Objects.equals(this.searchKey, searchCorpRequest.searchKey);
+        SearchCorpRequest that = (SearchCorpRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey);
     }
 
     @Override

@@ -231,24 +231,20 @@ public class IssueAccessory {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueAccessory issueAccessory = (IssueAccessory) o;
-        return Objects.equals(this.attachmentId, issueAccessory.attachmentId)
-            && Objects.equals(this.issueId, issueAccessory.issueId)
-            && Objects.equals(this.creatorNumId, issueAccessory.creatorNumId)
-            && Objects.equals(this.createdDate, issueAccessory.createdDate)
-            && Objects.equals(this.fileName, issueAccessory.fileName)
-            && Objects.equals(this.containerType, issueAccessory.containerType)
-            && Objects.equals(this.diskFileName, issueAccessory.diskFileName)
-            && Objects.equals(this.digest, issueAccessory.digest)
-            && Objects.equals(this.diskDirectory, issueAccessory.diskDirectory)
-            && Objects.equals(this.creatorId, issueAccessory.creatorId);
+        IssueAccessory that = (IssueAccessory) obj;
+        return Objects.equals(this.attachmentId, that.attachmentId) && Objects.equals(this.issueId, that.issueId)
+            && Objects.equals(this.creatorNumId, that.creatorNumId)
+            && Objects.equals(this.createdDate, that.createdDate) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.containerType, that.containerType)
+            && Objects.equals(this.diskFileName, that.diskFileName) && Objects.equals(this.digest, that.digest)
+            && Objects.equals(this.diskDirectory, that.diskDirectory) && Objects.equals(this.creatorId, that.creatorId);
     }
 
     @Override

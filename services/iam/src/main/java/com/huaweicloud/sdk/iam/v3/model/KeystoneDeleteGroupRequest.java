@@ -33,15 +33,15 @@ public class KeystoneDeleteGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneDeleteGroupRequest keystoneDeleteGroupRequest = (KeystoneDeleteGroupRequest) o;
-        return Objects.equals(this.groupId, keystoneDeleteGroupRequest.groupId);
+        KeystoneDeleteGroupRequest that = (KeystoneDeleteGroupRequest) obj;
+        return Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ShowVpcepConnectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVpcepConnectionRequest showVpcepConnectionRequest = (ShowVpcepConnectionRequest) o;
-        return Objects.equals(this.clusterId, showVpcepConnectionRequest.clusterId)
-            && Objects.equals(this.start, showVpcepConnectionRequest.start)
-            && Objects.equals(this.limit, showVpcepConnectionRequest.limit);
+        ShowVpcepConnectionRequest that = (ShowVpcepConnectionRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

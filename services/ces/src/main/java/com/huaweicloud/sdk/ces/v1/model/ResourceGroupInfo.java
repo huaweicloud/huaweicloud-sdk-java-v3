@@ -153,20 +153,19 @@ public class ResourceGroupInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceGroupInfo resourceGroupInfo = (ResourceGroupInfo) o;
-        return Objects.equals(this.groupName, resourceGroupInfo.groupName)
-            && Objects.equals(this.groupId, resourceGroupInfo.groupId)
-            && Objects.equals(this.createTime, resourceGroupInfo.createTime)
-            && Objects.equals(this.instanceStatistics, resourceGroupInfo.instanceStatistics)
-            && Objects.equals(this.status, resourceGroupInfo.status)
-            && Objects.equals(this.enterpriseProjectId, resourceGroupInfo.enterpriseProjectId);
+        ResourceGroupInfo that = (ResourceGroupInfo) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.instanceStatistics, that.instanceStatistics)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -163,20 +163,17 @@ public class UpdateIpGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIpGroupResponse updateIpGroupResponse = (UpdateIpGroupResponse) o;
-        return Objects.equals(this.id, updateIpGroupResponse.id)
-            && Objects.equals(this.name, updateIpGroupResponse.name)
-            && Objects.equals(this.ips, updateIpGroupResponse.ips)
-            && Objects.equals(this.size, updateIpGroupResponse.size)
-            && Objects.equals(this.rules, updateIpGroupResponse.rules)
-            && Objects.equals(this.description, updateIpGroupResponse.description);
+        UpdateIpGroupResponse that = (UpdateIpGroupResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ips, that.ips) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.rules, that.rules) && Objects.equals(this.description, that.description);
     }
 
     @Override

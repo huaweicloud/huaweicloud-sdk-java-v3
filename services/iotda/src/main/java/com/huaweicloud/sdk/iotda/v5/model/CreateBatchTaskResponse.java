@@ -309,25 +309,20 @@ public class CreateBatchTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateBatchTaskResponse createBatchTaskResponse = (CreateBatchTaskResponse) o;
-        return Objects.equals(this.taskId, createBatchTaskResponse.taskId)
-            && Objects.equals(this.taskName, createBatchTaskResponse.taskName)
-            && Objects.equals(this.taskType, createBatchTaskResponse.taskType)
-            && Objects.equals(this.targets, createBatchTaskResponse.targets)
-            && Objects.equals(this.targetsFilter, createBatchTaskResponse.targetsFilter)
-            && Objects.equals(this.document, createBatchTaskResponse.document)
-            && Objects.equals(this.taskPolicy, createBatchTaskResponse.taskPolicy)
-            && Objects.equals(this.status, createBatchTaskResponse.status)
-            && Objects.equals(this.statusDesc, createBatchTaskResponse.statusDesc)
-            && Objects.equals(this.taskProgress, createBatchTaskResponse.taskProgress)
-            && Objects.equals(this.createTime, createBatchTaskResponse.createTime);
+        CreateBatchTaskResponse that = (CreateBatchTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.targets, that.targets)
+            && Objects.equals(this.targetsFilter, that.targetsFilter) && Objects.equals(this.document, that.document)
+            && Objects.equals(this.taskPolicy, that.taskPolicy) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.statusDesc, that.statusDesc) && Objects.equals(this.taskProgress, that.taskProgress)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

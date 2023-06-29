@@ -272,25 +272,21 @@ public class QueryUserDetailResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryUserDetailResp queryUserDetailResp = (QueryUserDetailResp) o;
-        return Objects.equals(this.id, queryUserDetailResp.id)
-            && Objects.equals(this.account, queryUserDetailResp.account)
-            && Objects.equals(this.comment, queryUserDetailResp.comment)
-            && Objects.equals(this.isTransfer, queryUserDetailResp.isTransfer)
-            && Objects.equals(this.privileges, queryUserDetailResp.privileges)
-            && Objects.equals(this.password, queryUserDetailResp.password)
-            && Objects.equals(this.roles, queryUserDetailResp.roles)
-            && Objects.equals(this.selected, queryUserDetailResp.selected)
-            && Objects.equals(this.noPrivileges, queryUserDetailResp.noPrivileges)
-            && Objects.equals(this.parentAccount, queryUserDetailResp.parentAccount)
-            && Objects.equals(this.noParentAccount, queryUserDetailResp.noParentAccount);
+        QueryUserDetailResp that = (QueryUserDetailResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.comment, that.comment) && Objects.equals(this.isTransfer, that.isTransfer)
+            && Objects.equals(this.privileges, that.privileges) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.selected, that.selected)
+            && Objects.equals(this.noPrivileges, that.noPrivileges)
+            && Objects.equals(this.parentAccount, that.parentAccount)
+            && Objects.equals(this.noParentAccount, that.noParentAccount);
     }
 
     @Override

@@ -129,19 +129,18 @@ public class CreateConfTokenRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConfTokenRequest createConfTokenRequest = (CreateConfTokenRequest) o;
-        return Objects.equals(this.conferenceID, createConfTokenRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, createConfTokenRequest.xConferenceAuthorization)
-            && Objects.equals(this.xPassword, createConfTokenRequest.xPassword)
-            && Objects.equals(this.xLoginType, createConfTokenRequest.xLoginType)
-            && Objects.equals(this.xNonce, createConfTokenRequest.xNonce);
+        CreateConfTokenRequest that = (CreateConfTokenRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.xPassword, that.xPassword) && Objects.equals(this.xLoginType, that.xLoginType)
+            && Objects.equals(this.xNonce, that.xNonce);
     }
 
     @Override

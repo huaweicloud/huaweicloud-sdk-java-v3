@@ -197,19 +197,18 @@ public class JobDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobDetail jobDetail = (JobDetail) o;
-        return Objects.equals(this.id, jobDetail.id) && Objects.equals(this.name, jobDetail.name)
-            && Objects.equals(this.status, jobDetail.status) && Objects.equals(this.created, jobDetail.created)
-            && Objects.equals(this.ended, jobDetail.ended) && Objects.equals(this.progress, jobDetail.progress)
-            && Objects.equals(this.instance, jobDetail.instance)
-            && Objects.equals(this.failReason, jobDetail.failReason);
+        JobDetail that = (JobDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.ended, that.ended) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.instance, that.instance) && Objects.equals(this.failReason, that.failReason);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class PolicyComplianceSummaryUnit {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyComplianceSummaryUnit policyComplianceSummaryUnit = (PolicyComplianceSummaryUnit) o;
-        return Objects.equals(this.compliantCount, policyComplianceSummaryUnit.compliantCount)
-            && Objects.equals(this.nonCompliantCount, policyComplianceSummaryUnit.nonCompliantCount);
+        PolicyComplianceSummaryUnit that = (PolicyComplianceSummaryUnit) obj;
+        return Objects.equals(this.compliantCount, that.compliantCount)
+            && Objects.equals(this.nonCompliantCount, that.nonCompliantCount);
     }
 
     @Override

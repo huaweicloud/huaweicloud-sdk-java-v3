@@ -250,21 +250,19 @@ public class CommonTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonTask commonTask = (CommonTask) o;
-        return Objects.equals(this.taskId, commonTask.taskId) && Objects.equals(this.status, commonTask.status)
-            && Objects.equals(this.createTime, commonTask.createTime)
-            && Objects.equals(this.startTime, commonTask.startTime) && Objects.equals(this.endTime, commonTask.endTime)
-            && Objects.equals(this.errorCode, commonTask.errorCode)
-            && Objects.equals(this.description, commonTask.description)
-            && Objects.equals(this.userData, commonTask.userData) && Objects.equals(this.input, commonTask.input)
-            && Objects.equals(this.output, commonTask.output);
+        CommonTask that = (CommonTask) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output);
     }
 
     @Override

@@ -171,20 +171,18 @@ public class CreateAudioJobRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAudioJobRequestBody createAudioJobRequestBody = (CreateAudioJobRequestBody) o;
-        return Objects.equals(this.name, createAudioJobRequestBody.name)
-            && Objects.equals(this.description, createAudioJobRequestBody.description)
-            && Objects.equals(this.input, createAudioJobRequestBody.input)
-            && Objects.equals(this.output, createAudioJobRequestBody.output)
-            && Objects.equals(this.serviceConfig, createAudioJobRequestBody.serviceConfig)
-            && Objects.equals(this.serviceVersion, createAudioJobRequestBody.serviceVersion);
+        CreateAudioJobRequestBody that = (CreateAudioJobRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.serviceConfig, that.serviceConfig)
+            && Objects.equals(this.serviceVersion, that.serviceVersion);
     }
 
     @Override

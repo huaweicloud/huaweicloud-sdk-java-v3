@@ -187,21 +187,18 @@ public class InstanceOverviewVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceOverviewVo instanceOverviewVo = (InstanceOverviewVo) o;
-        return Objects.equals(this.id, instanceOverviewVo.id) && Objects.equals(this.name, instanceOverviewVo.name)
-            && Objects.equals(this.taskId, instanceOverviewVo.taskId)
-            && Objects.equals(this.taskType, instanceOverviewVo.taskType)
-            && Objects.equals(this.runStatus, instanceOverviewVo.runStatus)
-            && Objects.equals(this.notifyStatus, instanceOverviewVo.notifyStatus)
-            && Objects.equals(this.startTime, instanceOverviewVo.startTime)
-            && Objects.equals(this.endTime, instanceOverviewVo.endTime);
+        InstanceOverviewVo that = (InstanceOverviewVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.runStatus, that.runStatus) && Objects.equals(this.notifyStatus, that.notifyStatus)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

@@ -143,20 +143,17 @@ public class ListDataTablesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDataTablesRequest listDataTablesRequest = (ListDataTablesRequest) o;
-        return Objects.equals(this.workspace, listDataTablesRequest.workspace)
-            && Objects.equals(this.connectionId, listDataTablesRequest.connectionId)
-            && Objects.equals(this.databaseName, listDataTablesRequest.databaseName)
-            && Objects.equals(this.tableName, listDataTablesRequest.tableName)
-            && Objects.equals(this.limit, listDataTablesRequest.limit)
-            && Objects.equals(this.offset, listDataTablesRequest.offset);
+        ListDataTablesRequest that = (ListDataTablesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.connectionId, that.connectionId)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

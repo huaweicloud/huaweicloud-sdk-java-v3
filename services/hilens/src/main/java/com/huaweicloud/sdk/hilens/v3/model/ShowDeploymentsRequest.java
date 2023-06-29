@@ -165,21 +165,18 @@ public class ShowDeploymentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentsRequest showDeploymentsRequest = (ShowDeploymentsRequest) o;
-        return Objects.equals(this.clusterId, showDeploymentsRequest.clusterId)
-            && Objects.equals(this.nodeId, showDeploymentsRequest.nodeId)
-            && Objects.equals(this.provider, showDeploymentsRequest.provider)
-            && Objects.equals(this.name, showDeploymentsRequest.name)
-            && Objects.equals(this.sort, showDeploymentsRequest.sort)
-            && Objects.equals(this.limit, showDeploymentsRequest.limit)
-            && Objects.equals(this.offset, showDeploymentsRequest.offset);
+        ShowDeploymentsRequest that = (ShowDeploymentsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

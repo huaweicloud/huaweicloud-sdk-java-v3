@@ -121,19 +121,17 @@ public class ThrottleBindingBatchFailure {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThrottleBindingBatchFailure throttleBindingBatchFailure = (ThrottleBindingBatchFailure) o;
-        return Objects.equals(this.bindId, throttleBindingBatchFailure.bindId)
-            && Objects.equals(this.errorCode, throttleBindingBatchFailure.errorCode)
-            && Objects.equals(this.errorMsg, throttleBindingBatchFailure.errorMsg)
-            && Objects.equals(this.apiId, throttleBindingBatchFailure.apiId)
-            && Objects.equals(this.apiName, throttleBindingBatchFailure.apiName);
+        ThrottleBindingBatchFailure that = (ThrottleBindingBatchFailure) obj;
+        return Objects.equals(this.bindId, that.bindId) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName);
     }
 
     @Override

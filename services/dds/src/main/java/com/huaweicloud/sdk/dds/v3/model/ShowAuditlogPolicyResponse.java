@@ -97,17 +97,16 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAuditlogPolicyResponse showAuditlogPolicyResponse = (ShowAuditlogPolicyResponse) o;
-        return Objects.equals(this.keepDays, showAuditlogPolicyResponse.keepDays)
-            && Objects.equals(this.auditScope, showAuditlogPolicyResponse.auditScope)
-            && Objects.equals(this.auditTypes, showAuditlogPolicyResponse.auditTypes);
+        ShowAuditlogPolicyResponse that = (ShowAuditlogPolicyResponse) obj;
+        return Objects.equals(this.keepDays, that.keepDays) && Objects.equals(this.auditScope, that.auditScope)
+            && Objects.equals(this.auditTypes, that.auditTypes);
     }
 
     @Override

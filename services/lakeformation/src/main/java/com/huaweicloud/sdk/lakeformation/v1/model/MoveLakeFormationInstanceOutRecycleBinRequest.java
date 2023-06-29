@@ -33,16 +33,15 @@ public class MoveLakeFormationInstanceOutRecycleBinRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MoveLakeFormationInstanceOutRecycleBinRequest moveLakeFormationInstanceOutRecycleBinRequest =
-            (MoveLakeFormationInstanceOutRecycleBinRequest) o;
-        return Objects.equals(this.instanceId, moveLakeFormationInstanceOutRecycleBinRequest.instanceId);
+        MoveLakeFormationInstanceOutRecycleBinRequest that = (MoveLakeFormationInstanceOutRecycleBinRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class TemplateViewHistory {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateViewHistory templateViewHistory = (TemplateViewHistory) o;
-        return Objects.equals(this.templateId, templateViewHistory.templateId)
-            && Objects.equals(this.templateTitle, templateViewHistory.templateTitle);
+        TemplateViewHistory that = (TemplateViewHistory) obj;
+        return Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.templateTitle, that.templateTitle);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class LayerPath {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LayerPath layerPath = (LayerPath) o;
-        return Objects.equals(this.catalogId, layerPath.catalogId) && Objects.equals(this.order, layerPath.order);
+        LayerPath that = (LayerPath) obj;
+        return Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.order, that.order);
     }
 
     @Override

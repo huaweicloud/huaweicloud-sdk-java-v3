@@ -74,16 +74,15 @@ public class HistoryValues {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistoryValues historyValues = (HistoryValues) o;
-        return Objects.equals(this.propertyName, historyValues.propertyName)
-            && Objects.equals(this.values, historyValues.values);
+        HistoryValues that = (HistoryValues) obj;
+        return Objects.equals(this.propertyName, that.propertyName) && Objects.equals(this.values, that.values);
     }
 
     @Override

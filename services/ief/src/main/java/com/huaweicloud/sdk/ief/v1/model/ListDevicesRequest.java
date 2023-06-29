@@ -165,21 +165,18 @@ public class ListDevicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDevicesRequest listDevicesRequest = (ListDevicesRequest) o;
-        return Objects.equals(this.iefInstanceId, listDevicesRequest.iefInstanceId)
-            && Objects.equals(this.name, listDevicesRequest.name)
-            && Objects.equals(this.nodeId, listDevicesRequest.nodeId)
-            && Objects.equals(this.limit, listDevicesRequest.limit)
-            && Objects.equals(this.offset, listDevicesRequest.offset)
-            && Objects.equals(this.isBinding, listDevicesRequest.isBinding)
-            && Objects.equals(this.tags, listDevicesRequest.tags);
+        ListDevicesRequest that = (ListDevicesRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.isBinding, that.isBinding)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

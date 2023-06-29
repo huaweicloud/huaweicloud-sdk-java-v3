@@ -91,22 +91,15 @@ public class ShowResourceGroupResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -290,21 +283,19 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceGroupResponse showResourceGroupResponse = (ShowResourceGroupResponse) o;
-        return Objects.equals(this.groupName, showResourceGroupResponse.groupName)
-            && Objects.equals(this.groupId, showResourceGroupResponse.groupId)
-            && Objects.equals(this.createTime, showResourceGroupResponse.createTime)
-            && Objects.equals(this.enterpriseProjectId, showResourceGroupResponse.enterpriseProjectId)
-            && Objects.equals(this.type, showResourceGroupResponse.type)
-            && Objects.equals(this.associationEpIds, showResourceGroupResponse.associationEpIds)
-            && Objects.equals(this.tags, showResourceGroupResponse.tags);
+        ShowResourceGroupResponse that = (ShowResourceGroupResponse) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.associationEpIds, that.associationEpIds)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

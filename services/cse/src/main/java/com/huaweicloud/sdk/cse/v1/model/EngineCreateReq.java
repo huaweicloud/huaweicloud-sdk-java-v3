@@ -67,22 +67,15 @@ public class EngineCreateReq {
             if (value == null) {
                 return null;
             }
-            PaymentEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PaymentEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PaymentEnum(value));
         }
 
         public static PaymentEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PaymentEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -161,22 +154,15 @@ public class EngineCreateReq {
             if (value == null) {
                 return null;
             }
-            FlavorEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FlavorEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FlavorEnum(value));
         }
 
         public static FlavorEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FlavorEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -204,8 +190,8 @@ public class EngineCreateReq {
     private List<String> azList = null;
 
     /**
-    * 微服务引擎专享版认证方式，RBAC为安全认证，NONE为无认证。
-    */
+     * 微服务引擎专享版认证方式，RBAC为安全认证，NONE为无认证。
+     */
     public static final class AuthTypeEnum {
 
         /**
@@ -248,22 +234,15 @@ public class EngineCreateReq {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
         }
 
         public static AuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -355,22 +334,15 @@ public class EngineCreateReq {
             if (value == null) {
                 return null;
             }
-            SpecTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecTypeEnum(value));
         }
 
         public static SpecTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -660,26 +632,21 @@ public class EngineCreateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EngineCreateReq engineCreateReq = (EngineCreateReq) o;
-        return Objects.equals(this.name, engineCreateReq.name)
-            && Objects.equals(this.description, engineCreateReq.description)
-            && Objects.equals(this.payment, engineCreateReq.payment)
-            && Objects.equals(this.flavor, engineCreateReq.flavor)
-            && Objects.equals(this.azList, engineCreateReq.azList)
-            && Objects.equals(this.authType, engineCreateReq.authType) && Objects.equals(this.vpc, engineCreateReq.vpc)
-            && Objects.equals(this.networkId, engineCreateReq.networkId)
-            && Objects.equals(this.subnetCidr, engineCreateReq.subnetCidr)
-            && Objects.equals(this.publicIpId, engineCreateReq.publicIpId)
-            && Objects.equals(this.authCred, engineCreateReq.authCred)
-            && Objects.equals(this.specType, engineCreateReq.specType)
-            && Objects.equals(this.inputs, engineCreateReq.inputs);
+        EngineCreateReq that = (EngineCreateReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.payment, that.payment) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.azList, that.azList) && Objects.equals(this.authType, that.authType)
+            && Objects.equals(this.vpc, that.vpc) && Objects.equals(this.networkId, that.networkId)
+            && Objects.equals(this.subnetCidr, that.subnetCidr) && Objects.equals(this.publicIpId, that.publicIpId)
+            && Objects.equals(this.authCred, that.authCred) && Objects.equals(this.specType, that.specType)
+            && Objects.equals(this.inputs, that.inputs);
     }
 
     @Override

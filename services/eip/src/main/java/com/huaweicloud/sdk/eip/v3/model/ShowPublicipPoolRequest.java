@@ -55,16 +55,15 @@ public class ShowPublicipPoolRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicipPoolRequest showPublicipPoolRequest = (ShowPublicipPoolRequest) o;
-        return Objects.equals(this.publicipPoolId, showPublicipPoolRequest.publicipPoolId)
-            && Objects.equals(this.fields, showPublicipPoolRequest.fields);
+        ShowPublicipPoolRequest that = (ShowPublicipPoolRequest) obj;
+        return Objects.equals(this.publicipPoolId, that.publicipPoolId) && Objects.equals(this.fields, that.fields);
     }
 
     @Override

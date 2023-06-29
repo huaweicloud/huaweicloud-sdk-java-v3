@@ -319,22 +319,20 @@ public class PodResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PodResp podResp = (PodResp) o;
-        return Objects.equals(this.id, podResp.id) && Objects.equals(this.name, podResp.name)
-            && Objects.equals(this.configs, podResp.configs)
-            && Objects.equals(this.initContainers, podResp.initContainers)
-            && Objects.equals(this.containers, podResp.containers) && Objects.equals(this.nodeId, podResp.nodeId)
-            && Objects.equals(this.deploymentId, podResp.deploymentId)
-            && Objects.equals(this.projectId, podResp.projectId) && Objects.equals(this.reason, podResp.reason)
-            && Objects.equals(this.message, podResp.message) && Objects.equals(this.createdAt, podResp.createdAt)
-            && Objects.equals(this.state, podResp.state);
+        PodResp that = (PodResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.configs, that.configs) && Objects.equals(this.initContainers, that.initContainers)
+            && Objects.equals(this.containers, that.containers) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.state, that.state);
     }
 
     @Override

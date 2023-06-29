@@ -55,16 +55,15 @@ public class UpdateFuncSnapshotRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFuncSnapshotRequest updateFuncSnapshotRequest = (UpdateFuncSnapshotRequest) o;
-        return Objects.equals(this.action, updateFuncSnapshotRequest.action)
-            && Objects.equals(this.functionUrn, updateFuncSnapshotRequest.functionUrn);
+        UpdateFuncSnapshotRequest that = (UpdateFuncSnapshotRequest) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.functionUrn, that.functionUrn);
     }
 
     @Override

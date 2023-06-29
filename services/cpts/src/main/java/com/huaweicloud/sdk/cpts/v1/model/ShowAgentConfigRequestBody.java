@@ -101,18 +101,16 @@ public class ShowAgentConfigRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAgentConfigRequestBody showAgentConfigRequestBody = (ShowAgentConfigRequestBody) o;
-        return Objects.equals(this.appId, showAgentConfigRequestBody.appId)
-            && Objects.equals(this.address, showAgentConfigRequestBody.address)
-            && Objects.equals(this.version, showAgentConfigRequestBody.version)
-            && Objects.equals(this.agentId, showAgentConfigRequestBody.agentId);
+        ShowAgentConfigRequestBody that = (ShowAgentConfigRequestBody) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.agentId, that.agentId);
     }
 
     @Override

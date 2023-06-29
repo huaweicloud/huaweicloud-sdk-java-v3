@@ -43,16 +43,15 @@ public class ReclaimIndirectPartnerAccountRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReclaimIndirectPartnerAccountRequest reclaimIndirectPartnerAccountRequest =
-            (ReclaimIndirectPartnerAccountRequest) o;
-        return Objects.equals(this.body, reclaimIndirectPartnerAccountRequest.body);
+        ReclaimIndirectPartnerAccountRequest that = (ReclaimIndirectPartnerAccountRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

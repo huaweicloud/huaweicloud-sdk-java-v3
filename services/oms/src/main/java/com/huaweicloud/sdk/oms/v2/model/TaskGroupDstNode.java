@@ -143,19 +143,17 @@ public class TaskGroupDstNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskGroupDstNode taskGroupDstNode = (TaskGroupDstNode) o;
-        return Objects.equals(this.ak, taskGroupDstNode.ak) && Objects.equals(this.sk, taskGroupDstNode.sk)
-            && Objects.equals(this.region, taskGroupDstNode.region)
-            && Objects.equals(this.bucket, taskGroupDstNode.bucket)
-            && Objects.equals(this.cloudType, taskGroupDstNode.cloudType)
-            && Objects.equals(this.savePrefix, taskGroupDstNode.savePrefix);
+        TaskGroupDstNode that = (TaskGroupDstNode) obj;
+        return Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.bucket, that.bucket)
+            && Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.savePrefix, that.savePrefix);
     }
 
     @Override

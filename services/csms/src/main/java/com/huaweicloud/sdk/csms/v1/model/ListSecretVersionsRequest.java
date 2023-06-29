@@ -79,17 +79,16 @@ public class ListSecretVersionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecretVersionsRequest listSecretVersionsRequest = (ListSecretVersionsRequest) o;
-        return Objects.equals(this.secretName, listSecretVersionsRequest.secretName)
-            && Objects.equals(this.marker, listSecretVersionsRequest.marker)
-            && Objects.equals(this.limit, listSecretVersionsRequest.limit);
+        ListSecretVersionsRequest that = (ListSecretVersionsRequest) obj;
+        return Objects.equals(this.secretName, that.secretName) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

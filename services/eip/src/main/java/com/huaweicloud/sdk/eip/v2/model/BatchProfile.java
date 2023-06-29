@@ -99,18 +99,16 @@ public class BatchProfile {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchProfile batchProfile = (BatchProfile) o;
-        return Objects.equals(this.userId, batchProfile.userId)
-            && Objects.equals(this.productId, batchProfile.productId)
-            && Objects.equals(this.regionId, batchProfile.regionId)
-            && Objects.equals(this.orderId, batchProfile.orderId);
+        BatchProfile that = (BatchProfile) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override

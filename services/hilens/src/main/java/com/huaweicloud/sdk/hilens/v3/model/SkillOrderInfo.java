@@ -684,42 +684,32 @@ public class SkillOrderInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SkillOrderInfo skillOrderInfo = (SkillOrderInfo) o;
-        return Objects.equals(this.expirationStopFlag, skillOrderInfo.expirationStopFlag)
-            && Objects.equals(this.packageOrderId, skillOrderInfo.packageOrderId)
-            && Objects.equals(this.icon, skillOrderInfo.icon)
-            && Objects.equals(this.commissionFlag, skillOrderInfo.commissionFlag)
-            && Objects.equals(this.productInfo, skillOrderInfo.productInfo)
-            && Objects.equals(this.packageId, skillOrderInfo.packageId)
-            && Objects.equals(this.measureType, skillOrderInfo.measureType)
-            && Objects.equals(this.updateTime, skillOrderInfo.updateTime)
-            && Objects.equals(this.channelLimit, skillOrderInfo.channelLimit)
-            && Objects.equals(this.resourceStepSize, skillOrderInfo.resourceStepSize)
-            && Objects.equals(this.cloudServiceType, skillOrderInfo.cloudServiceType)
-            && Objects.equals(this.developerId, skillOrderInfo.developerId)
-            && Objects.equals(this.amount, skillOrderInfo.amount) && Objects.equals(this.format, skillOrderInfo.format)
-            && Objects.equals(this.resourceType, skillOrderInfo.resourceType)
-            && Objects.equals(this.expireTime, skillOrderInfo.expireTime)
-            && Objects.equals(this.measureUnit, skillOrderInfo.measureUnit)
-            && Objects.equals(this.skillChip, skillOrderInfo.skillChip)
-            && Objects.equals(this.versions, skillOrderInfo.versions)
-            && Objects.equals(this.skillName, skillOrderInfo.skillName)
-            && Objects.equals(this.skillType, skillOrderInfo.skillType)
-            && Objects.equals(this.usedAmount, skillOrderInfo.usedAmount)
-            && Objects.equals(this.chargeModel, skillOrderInfo.chargeModel)
-            && Objects.equals(this.resourceSpecCode, skillOrderInfo.resourceSpecCode)
-            && Objects.equals(this.skillId, skillOrderInfo.skillId)
-            && Objects.equals(this.skillPlatform, skillOrderInfo.skillPlatform)
-            && Objects.equals(this.orderLimit, skillOrderInfo.orderLimit)
-            && Objects.equals(this.orderId, skillOrderInfo.orderId)
-            && Objects.equals(this.status, skillOrderInfo.status);
+        SkillOrderInfo that = (SkillOrderInfo) obj;
+        return Objects.equals(this.expirationStopFlag, that.expirationStopFlag)
+            && Objects.equals(this.packageOrderId, that.packageOrderId) && Objects.equals(this.icon, that.icon)
+            && Objects.equals(this.commissionFlag, that.commissionFlag)
+            && Objects.equals(this.productInfo, that.productInfo) && Objects.equals(this.packageId, that.packageId)
+            && Objects.equals(this.measureType, that.measureType) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.channelLimit, that.channelLimit)
+            && Objects.equals(this.resourceStepSize, that.resourceStepSize)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.developerId, that.developerId) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.measureUnit, that.measureUnit)
+            && Objects.equals(this.skillChip, that.skillChip) && Objects.equals(this.versions, that.versions)
+            && Objects.equals(this.skillName, that.skillName) && Objects.equals(this.skillType, that.skillType)
+            && Objects.equals(this.usedAmount, that.usedAmount) && Objects.equals(this.chargeModel, that.chargeModel)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.skillId, that.skillId) && Objects.equals(this.skillPlatform, that.skillPlatform)
+            && Objects.equals(this.orderLimit, that.orderLimit) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

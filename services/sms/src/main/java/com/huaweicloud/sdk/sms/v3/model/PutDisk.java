@@ -120,17 +120,17 @@ public class PutDisk {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutDisk putDisk = (PutDisk) o;
-        return Objects.equals(this.needMigration, putDisk.needMigration) && Objects.equals(this.id, putDisk.id)
-            && Objects.equals(this.adjustSize, putDisk.adjustSize)
-            && Objects.equals(this.physicalVolumes, putDisk.physicalVolumes);
+        PutDisk that = (PutDisk) obj;
+        return Objects.equals(this.needMigration, that.needMigration) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.adjustSize, that.adjustSize)
+            && Objects.equals(this.physicalVolumes, that.physicalVolumes);
     }
 
     @Override

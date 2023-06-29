@@ -99,18 +99,16 @@ public class ResetMessageOffsetReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetMessageOffsetReq resetMessageOffsetReq = (ResetMessageOffsetReq) o;
-        return Objects.equals(this.topic, resetMessageOffsetReq.topic)
-            && Objects.equals(this.partition, resetMessageOffsetReq.partition)
-            && Objects.equals(this.messageOffset, resetMessageOffsetReq.messageOffset)
-            && Objects.equals(this.timestamp, resetMessageOffsetReq.timestamp);
+        ResetMessageOffsetReq that = (ResetMessageOffsetReq) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.messageOffset, that.messageOffset) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

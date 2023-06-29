@@ -55,16 +55,15 @@ public class CloudImageRegionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloudImageRegionInfo cloudImageRegionInfo = (CloudImageRegionInfo) o;
-        return Objects.equals(this.regionId, cloudImageRegionInfo.regionId)
-            && Objects.equals(this.imageId, cloudImageRegionInfo.imageId);
+        CloudImageRegionInfo that = (CloudImageRegionInfo) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.imageId, that.imageId);
     }
 
     @Override

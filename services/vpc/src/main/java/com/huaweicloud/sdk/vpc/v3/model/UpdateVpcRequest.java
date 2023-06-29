@@ -65,15 +65,15 @@ public class UpdateVpcRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcRequest updateVpcRequest = (UpdateVpcRequest) o;
-        return Objects.equals(this.vpcId, updateVpcRequest.vpcId) && Objects.equals(this.body, updateVpcRequest.body);
+        UpdateVpcRequest that = (UpdateVpcRequest) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.body, that.body);
     }
 
     @Override

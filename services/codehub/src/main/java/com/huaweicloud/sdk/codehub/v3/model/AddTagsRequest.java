@@ -77,16 +77,16 @@ public class AddTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddTagsRequest addTagsRequest = (AddTagsRequest) o;
-        return Objects.equals(this.tagName, addTagsRequest.tagName) && Objects.equals(this.ref, addTagsRequest.ref)
-            && Objects.equals(this.message, addTagsRequest.message);
+        AddTagsRequest that = (AddTagsRequest) obj;
+        return Objects.equals(this.tagName, that.tagName) && Objects.equals(this.ref, that.ref)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

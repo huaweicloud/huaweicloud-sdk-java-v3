@@ -242,20 +242,17 @@ public class ListFunctionStatisticsResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionStatisticsResponseBody listFunctionStatisticsResponseBody = (ListFunctionStatisticsResponseBody) o;
-        return Objects.equals(this.count, listFunctionStatisticsResponseBody.count)
-            && Objects.equals(this.duration, listFunctionStatisticsResponseBody.duration)
-            && Objects.equals(this.failCount, listFunctionStatisticsResponseBody.failCount)
-            && Objects.equals(this.maxDuration, listFunctionStatisticsResponseBody.maxDuration)
-            && Objects.equals(this.minDuration, listFunctionStatisticsResponseBody.minDuration)
-            && Objects.equals(this.rejectCount, listFunctionStatisticsResponseBody.rejectCount);
+        ListFunctionStatisticsResponseBody that = (ListFunctionStatisticsResponseBody) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.failCount, that.failCount) && Objects.equals(this.maxDuration, that.maxDuration)
+            && Objects.equals(this.minDuration, that.minDuration) && Objects.equals(this.rejectCount, that.rejectCount);
     }
 
     @Override

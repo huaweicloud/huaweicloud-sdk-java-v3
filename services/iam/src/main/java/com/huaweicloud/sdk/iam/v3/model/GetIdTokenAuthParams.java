@@ -74,16 +74,15 @@ public class GetIdTokenAuthParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetIdTokenAuthParams getIdTokenAuthParams = (GetIdTokenAuthParams) o;
-        return Objects.equals(this.idToken, getIdTokenAuthParams.idToken)
-            && Objects.equals(this.scope, getIdTokenAuthParams.scope);
+        GetIdTokenAuthParams that = (GetIdTokenAuthParams) obj;
+        return Objects.equals(this.idToken, that.idToken) && Objects.equals(this.scope, that.scope);
     }
 
     @Override

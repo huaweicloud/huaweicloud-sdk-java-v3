@@ -297,24 +297,23 @@ public class DataInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataInfo dataInfo = (DataInfo) o;
-        return Objects.equals(this.imageName, dataInfo.imageName) && Objects.equals(this.isProduct, dataInfo.isProduct)
-            && Objects.equals(this.imageLevel, dataInfo.imageLevel)
-            && Objects.equals(this.imageProducer, dataInfo.imageProducer)
-            && Objects.equals(this.imageStatus, dataInfo.imageStatus)
-            && Objects.equals(this.imageDate, dataInfo.imageDate)
-            && Objects.equals(this.uploadDate, dataInfo.uploadDate)
-            && Objects.equals(this.imageResolution, dataInfo.imageResolution)
-            && Objects.equals(this.imageDescription, dataInfo.imageDescription)
-            && Objects.equals(this.imageId, dataInfo.imageId) && Objects.equals(this.imageType, dataInfo.imageType)
-            && Objects.equals(this.userName, dataInfo.userName) && Objects.equals(this.imageAlias, dataInfo.imageAlias);
+        DataInfo that = (DataInfo) obj;
+        return Objects.equals(this.imageName, that.imageName) && Objects.equals(this.isProduct, that.isProduct)
+            && Objects.equals(this.imageLevel, that.imageLevel)
+            && Objects.equals(this.imageProducer, that.imageProducer)
+            && Objects.equals(this.imageStatus, that.imageStatus) && Objects.equals(this.imageDate, that.imageDate)
+            && Objects.equals(this.uploadDate, that.uploadDate)
+            && Objects.equals(this.imageResolution, that.imageResolution)
+            && Objects.equals(this.imageDescription, that.imageDescription)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageType, that.imageType)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.imageAlias, that.imageAlias);
     }
 
     @Override

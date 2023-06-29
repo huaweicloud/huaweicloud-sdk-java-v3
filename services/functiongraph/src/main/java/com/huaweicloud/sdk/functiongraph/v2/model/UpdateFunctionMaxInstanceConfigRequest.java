@@ -66,17 +66,15 @@ public class UpdateFunctionMaxInstanceConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionMaxInstanceConfigRequest updateFunctionMaxInstanceConfigRequest =
-            (UpdateFunctionMaxInstanceConfigRequest) o;
-        return Objects.equals(this.functionUrn, updateFunctionMaxInstanceConfigRequest.functionUrn)
-            && Objects.equals(this.body, updateFunctionMaxInstanceConfigRequest.body);
+        UpdateFunctionMaxInstanceConfigRequest that = (UpdateFunctionMaxInstanceConfigRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.body, that.body);
     }
 
     @Override

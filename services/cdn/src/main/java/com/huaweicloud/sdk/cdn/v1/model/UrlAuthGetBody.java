@@ -99,17 +99,16 @@ public class UrlAuthGetBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UrlAuthGetBody urlAuthGetBody = (UrlAuthGetBody) o;
-        return Objects.equals(this.status, urlAuthGetBody.status) && Objects.equals(this.type, urlAuthGetBody.type)
-            && Objects.equals(this.timeFormat, urlAuthGetBody.timeFormat)
-            && Objects.equals(this.expireTime, urlAuthGetBody.expireTime);
+        UrlAuthGetBody that = (UrlAuthGetBody) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.timeFormat, that.timeFormat) && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override

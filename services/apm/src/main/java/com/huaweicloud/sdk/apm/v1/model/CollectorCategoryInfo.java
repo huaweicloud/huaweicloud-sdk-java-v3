@@ -99,18 +99,16 @@ public class CollectorCategoryInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CollectorCategoryInfo collectorCategoryInfo = (CollectorCategoryInfo) o;
-        return Objects.equals(this.categoryId, collectorCategoryInfo.categoryId)
-            && Objects.equals(this.categoryName, collectorCategoryInfo.categoryName)
-            && Objects.equals(this.displayName, collectorCategoryInfo.displayName)
-            && Objects.equals(this.sequence, collectorCategoryInfo.sequence);
+        CollectorCategoryInfo that = (CollectorCategoryInfo) obj;
+        return Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.categoryName, that.categoryName)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

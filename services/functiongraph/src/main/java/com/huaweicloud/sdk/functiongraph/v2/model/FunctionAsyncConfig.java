@@ -131,19 +131,19 @@ public class FunctionAsyncConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FunctionAsyncConfig functionAsyncConfig = (FunctionAsyncConfig) o;
-        return Objects.equals(this.maxAsyncEventAgeInSeconds, functionAsyncConfig.maxAsyncEventAgeInSeconds)
-            && Objects.equals(this.maxAsyncRetryAttempts, functionAsyncConfig.maxAsyncRetryAttempts)
-            && Objects.equals(this.destinationConfig, functionAsyncConfig.destinationConfig)
-            && Objects.equals(this.createdTime, functionAsyncConfig.createdTime)
-            && Objects.equals(this.lastModified, functionAsyncConfig.lastModified);
+        FunctionAsyncConfig that = (FunctionAsyncConfig) obj;
+        return Objects.equals(this.maxAsyncEventAgeInSeconds, that.maxAsyncEventAgeInSeconds)
+            && Objects.equals(this.maxAsyncRetryAttempts, that.maxAsyncRetryAttempts)
+            && Objects.equals(this.destinationConfig, that.destinationConfig)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModified, that.lastModified);
     }
 
     @Override

@@ -87,18 +87,16 @@ public class ListPendingAggregationRequestsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPendingAggregationRequestsResponse listPendingAggregationRequestsResponse =
-            (ListPendingAggregationRequestsResponse) o;
-        return Objects.equals(this.pendingAggregationRequests,
-            listPendingAggregationRequestsResponse.pendingAggregationRequests)
-            && Objects.equals(this.pageInfo, listPendingAggregationRequestsResponse.pageInfo);
+        ListPendingAggregationRequestsResponse that = (ListPendingAggregationRequestsResponse) obj;
+        return Objects.equals(this.pendingAggregationRequests, that.pendingAggregationRequests)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

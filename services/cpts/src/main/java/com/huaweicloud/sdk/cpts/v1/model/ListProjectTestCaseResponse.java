@@ -97,17 +97,16 @@ public class ListProjectTestCaseResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectTestCaseResponse listProjectTestCaseResponse = (ListProjectTestCaseResponse) o;
-        return Objects.equals(this.code, listProjectTestCaseResponse.code)
-            && Objects.equals(this.message, listProjectTestCaseResponse.message)
-            && Objects.equals(this.directory, listProjectTestCaseResponse.directory);
+        ListProjectTestCaseResponse that = (ListProjectTestCaseResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.directory, that.directory);
     }
 
     @Override

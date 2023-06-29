@@ -69,22 +69,15 @@ public class ListCreateAccountStatusesRequest {
             if (value == null) {
                 return null;
             }
-            StatesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatesEnum(value));
         }
 
         public static StatesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -186,17 +179,16 @@ public class ListCreateAccountStatusesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCreateAccountStatusesRequest listCreateAccountStatusesRequest = (ListCreateAccountStatusesRequest) o;
-        return Objects.equals(this.states, listCreateAccountStatusesRequest.states)
-            && Objects.equals(this.limit, listCreateAccountStatusesRequest.limit)
-            && Objects.equals(this.marker, listCreateAccountStatusesRequest.marker);
+        ListCreateAccountStatusesRequest that = (ListCreateAccountStatusesRequest) obj;
+        return Objects.equals(this.states, that.states) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

@@ -223,22 +223,18 @@ public class UploadResourcesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadResourcesResponse uploadResourcesResponse = (UploadResourcesResponse) o;
-        return Objects.equals(this.groupName, uploadResourcesResponse.groupName)
-            && Objects.equals(this.status, uploadResourcesResponse.status)
-            && Objects.equals(this.resources, uploadResourcesResponse.resources)
-            && Objects.equals(this.createTime, uploadResourcesResponse.createTime)
-            && Objects.equals(this.updateTime, uploadResourcesResponse.updateTime)
-            && Objects.equals(this.isAsync, uploadResourcesResponse.isAsync)
-            && Objects.equals(this.owner, uploadResourcesResponse.owner)
-            && Objects.equals(this.details, uploadResourcesResponse.details);
+        UploadResourcesResponse that = (UploadResourcesResponse) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.isAsync, that.isAsync)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.details, that.details);
     }
 
     @Override

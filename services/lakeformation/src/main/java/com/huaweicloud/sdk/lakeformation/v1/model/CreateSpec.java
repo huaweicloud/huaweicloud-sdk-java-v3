@@ -55,16 +55,15 @@ public class CreateSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSpec createSpec = (CreateSpec) o;
-        return Objects.equals(this.specCode, createSpec.specCode)
-            && Objects.equals(this.strideNum, createSpec.strideNum);
+        CreateSpec that = (CreateSpec) obj;
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.strideNum, that.strideNum);
     }
 
     @Override

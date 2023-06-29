@@ -65,16 +65,15 @@ public class UpdateDomainHttpsCertRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainHttpsCertRequest updateDomainHttpsCertRequest = (UpdateDomainHttpsCertRequest) o;
-        return Objects.equals(this.domain, updateDomainHttpsCertRequest.domain)
-            && Objects.equals(this.body, updateDomainHttpsCertRequest.body);
+        UpdateDomainHttpsCertRequest that = (UpdateDomainHttpsCertRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.body, that.body);
     }
 
     @Override

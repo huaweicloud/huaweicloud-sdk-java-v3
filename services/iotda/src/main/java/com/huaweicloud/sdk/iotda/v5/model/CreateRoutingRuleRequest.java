@@ -65,16 +65,15 @@ public class CreateRoutingRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRoutingRuleRequest createRoutingRuleRequest = (CreateRoutingRuleRequest) o;
-        return Objects.equals(this.instanceId, createRoutingRuleRequest.instanceId)
-            && Objects.equals(this.body, createRoutingRuleRequest.body);
+        CreateRoutingRuleRequest that = (CreateRoutingRuleRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class BatchResetPasswordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchResetPasswordResponse batchResetPasswordResponse = (BatchResetPasswordResponse) o;
-        return Objects.equals(this.results, batchResetPasswordResponse.results)
-            && Objects.equals(this.count, batchResetPasswordResponse.count);
+        BatchResetPasswordResponse that = (BatchResetPasswordResponse) obj;
+        return Objects.equals(this.results, that.results) && Objects.equals(this.count, that.count);
     }
 
     @Override

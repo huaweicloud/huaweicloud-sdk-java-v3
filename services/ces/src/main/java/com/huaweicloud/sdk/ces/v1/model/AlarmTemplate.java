@@ -162,20 +162,19 @@ public class AlarmTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmTemplate alarmTemplate = (AlarmTemplate) o;
-        return Objects.equals(this.templateName, alarmTemplate.templateName)
-            && Objects.equals(this.templateDescription, alarmTemplate.templateDescription)
-            && Objects.equals(this.namespace, alarmTemplate.namespace)
-            && Objects.equals(this.dimensionName, alarmTemplate.dimensionName)
-            && Objects.equals(this.templateItems, alarmTemplate.templateItems)
-            && Objects.equals(this.templateId, alarmTemplate.templateId);
+        AlarmTemplate that = (AlarmTemplate) obj;
+        return Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateDescription, that.templateDescription)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensionName, that.dimensionName)
+            && Objects.equals(this.templateItems, that.templateItems)
+            && Objects.equals(this.templateId, that.templateId);
     }
 
     @Override

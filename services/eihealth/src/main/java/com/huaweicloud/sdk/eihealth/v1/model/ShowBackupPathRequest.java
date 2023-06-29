@@ -55,16 +55,16 @@ public class ShowBackupPathRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackupPathRequest showBackupPathRequest = (ShowBackupPathRequest) o;
-        return Objects.equals(this.backupId, showBackupPathRequest.backupId)
-            && Objects.equals(this.eihealthProjectId, showBackupPathRequest.eihealthProjectId);
+        ShowBackupPathRequest that = (ShowBackupPathRequest) obj;
+        return Objects.equals(this.backupId, that.backupId)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId);
     }
 
     @Override

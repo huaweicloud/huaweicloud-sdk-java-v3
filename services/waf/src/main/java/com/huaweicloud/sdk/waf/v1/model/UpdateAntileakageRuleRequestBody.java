@@ -68,22 +68,15 @@ public class UpdateAntileakageRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -200,18 +193,16 @@ public class UpdateAntileakageRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAntileakageRuleRequestBody updateAntileakageRuleRequestBody = (UpdateAntileakageRuleRequestBody) o;
-        return Objects.equals(this.url, updateAntileakageRuleRequestBody.url)
-            && Objects.equals(this.category, updateAntileakageRuleRequestBody.category)
-            && Objects.equals(this.contents, updateAntileakageRuleRequestBody.contents)
-            && Objects.equals(this.description, updateAntileakageRuleRequestBody.description);
+        UpdateAntileakageRuleRequestBody that = (UpdateAntileakageRuleRequestBody) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.contents, that.contents) && Objects.equals(this.description, that.description);
     }
 
     @Override

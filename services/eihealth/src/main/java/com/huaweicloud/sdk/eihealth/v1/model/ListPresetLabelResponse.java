@@ -75,16 +75,15 @@ public class ListPresetLabelResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPresetLabelResponse listPresetLabelResponse = (ListPresetLabelResponse) o;
-        return Objects.equals(this.count, listPresetLabelResponse.count)
-            && Objects.equals(this.labels, listPresetLabelResponse.labels);
+        ListPresetLabelResponse that = (ListPresetLabelResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.labels, that.labels);
     }
 
     @Override

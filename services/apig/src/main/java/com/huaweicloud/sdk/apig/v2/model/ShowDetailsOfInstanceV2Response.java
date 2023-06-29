@@ -271,22 +271,15 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -545,22 +538,15 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            InstanceStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceStatusEnum(value));
         }
 
         public static InstanceStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            InstanceStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -668,22 +654,15 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecEnum(value));
         }
 
         public static SpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -765,22 +744,15 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
         }
 
         public static ChargingModeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -852,22 +824,15 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            LoadbalancerProviderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LoadbalancerProviderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LoadbalancerProviderEnum(value));
         }
 
         public static LoadbalancerProviderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LoadbalancerProviderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1788,55 +1753,44 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfInstanceV2Response showDetailsOfInstanceV2Response = (ShowDetailsOfInstanceV2Response) o;
-        return Objects.equals(this.id, showDetailsOfInstanceV2Response.id)
-            && Objects.equals(this.projectId, showDetailsOfInstanceV2Response.projectId)
-            && Objects.equals(this.instanceName, showDetailsOfInstanceV2Response.instanceName)
-            && Objects.equals(this.status, showDetailsOfInstanceV2Response.status)
-            && Objects.equals(this.instanceStatus, showDetailsOfInstanceV2Response.instanceStatus)
-            && Objects.equals(this.type, showDetailsOfInstanceV2Response.type)
-            && Objects.equals(this.spec, showDetailsOfInstanceV2Response.spec)
-            && Objects.equals(this.createTime, showDetailsOfInstanceV2Response.createTime)
-            && Objects.equals(this.enterpriseProjectId, showDetailsOfInstanceV2Response.enterpriseProjectId)
-            && Objects.equals(this.eipAddress, showDetailsOfInstanceV2Response.eipAddress)
-            && Objects.equals(this.chargingMode, showDetailsOfInstanceV2Response.chargingMode)
-            && Objects.equals(this.cbcMetadata, showDetailsOfInstanceV2Response.cbcMetadata)
-            && Objects.equals(this.loadbalancerProvider, showDetailsOfInstanceV2Response.loadbalancerProvider)
-            && Objects.equals(this.description, showDetailsOfInstanceV2Response.description)
-            && Objects.equals(this.vpcId, showDetailsOfInstanceV2Response.vpcId)
-            && Objects.equals(this.subnetId, showDetailsOfInstanceV2Response.subnetId)
-            && Objects.equals(this.securityGroupId, showDetailsOfInstanceV2Response.securityGroupId)
-            && Objects.equals(this.maintainBegin, showDetailsOfInstanceV2Response.maintainBegin)
-            && Objects.equals(this.maintainEnd, showDetailsOfInstanceV2Response.maintainEnd)
-            && Objects.equals(this.ingressIp, showDetailsOfInstanceV2Response.ingressIp)
-            && Objects.equals(this.ingressIpV6, showDetailsOfInstanceV2Response.ingressIpV6)
-            && Objects.equals(this.userId, showDetailsOfInstanceV2Response.userId)
-            && Objects.equals(this.natEipIpv6Cidr, showDetailsOfInstanceV2Response.natEipIpv6Cidr)
-            && Objects.equals(this.eipIpv6Address, showDetailsOfInstanceV2Response.eipIpv6Address)
-            && Objects.equals(this.natEipAddress, showDetailsOfInstanceV2Response.natEipAddress)
-            && Objects.equals(this.bandwidthSize, showDetailsOfInstanceV2Response.bandwidthSize)
-            && Objects.equals(this.bandwidthChargingMode, showDetailsOfInstanceV2Response.bandwidthChargingMode)
-            && Objects.equals(this.availableZoneIds, showDetailsOfInstanceV2Response.availableZoneIds)
-            && Objects.equals(this.instanceVersion, showDetailsOfInstanceV2Response.instanceVersion)
-            && Objects.equals(this.virsubnetId, showDetailsOfInstanceV2Response.virsubnetId)
-            && Objects.equals(this.romaEipAddress, showDetailsOfInstanceV2Response.romaEipAddress)
-            && Objects.equals(this.listeners, showDetailsOfInstanceV2Response.listeners)
-            && Objects.equals(this.supportedFeatures, showDetailsOfInstanceV2Response.supportedFeatures)
-            && Objects.equals(this.endpointService, showDetailsOfInstanceV2Response.endpointService)
-            && Objects.equals(this.endpointServices, showDetailsOfInstanceV2Response.endpointServices)
-            && Objects.equals(this.nodeIps, showDetailsOfInstanceV2Response.nodeIps)
-            && Objects.equals(this.publicips, showDetailsOfInstanceV2Response.publicips)
-            && Objects.equals(this.privateips, showDetailsOfInstanceV2Response.privateips)
-            && Objects.equals(this.isReleasable, showDetailsOfInstanceV2Response.isReleasable)
-            && Objects.equals(this.ingressBandwidthChargingMode,
-                showDetailsOfInstanceV2Response.ingressBandwidthChargingMode);
+        ShowDetailsOfInstanceV2Response that = (ShowDetailsOfInstanceV2Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.instanceStatus, that.instanceStatus) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.eipAddress, that.eipAddress) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.cbcMetadata, that.cbcMetadata)
+            && Objects.equals(this.loadbalancerProvider, that.loadbalancerProvider)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd) && Objects.equals(this.ingressIp, that.ingressIp)
+            && Objects.equals(this.ingressIpV6, that.ingressIpV6) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.natEipIpv6Cidr, that.natEipIpv6Cidr)
+            && Objects.equals(this.eipIpv6Address, that.eipIpv6Address)
+            && Objects.equals(this.natEipAddress, that.natEipAddress)
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.bandwidthChargingMode, that.bandwidthChargingMode)
+            && Objects.equals(this.availableZoneIds, that.availableZoneIds)
+            && Objects.equals(this.instanceVersion, that.instanceVersion)
+            && Objects.equals(this.virsubnetId, that.virsubnetId)
+            && Objects.equals(this.romaEipAddress, that.romaEipAddress)
+            && Objects.equals(this.listeners, that.listeners)
+            && Objects.equals(this.supportedFeatures, that.supportedFeatures)
+            && Objects.equals(this.endpointService, that.endpointService)
+            && Objects.equals(this.endpointServices, that.endpointServices)
+            && Objects.equals(this.nodeIps, that.nodeIps) && Objects.equals(this.publicips, that.publicips)
+            && Objects.equals(this.privateips, that.privateips) && Objects.equals(this.isReleasable, that.isReleasable)
+            && Objects.equals(this.ingressBandwidthChargingMode, that.ingressBandwidthChargingMode);
     }
 
     @Override

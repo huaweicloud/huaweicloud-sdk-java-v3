@@ -382,30 +382,26 @@ public class FreeResourcePackageV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreeResourcePackageV3 freeResourcePackageV3 = (FreeResourcePackageV3) o;
-        return Objects.equals(this.orderInstanceId, freeResourcePackageV3.orderInstanceId)
-            && Objects.equals(this.orderId, freeResourcePackageV3.orderId)
-            && Objects.equals(this.productId, freeResourcePackageV3.productId)
-            && Objects.equals(this.productName, freeResourcePackageV3.productName)
-            && Objects.equals(this.enterpriseProjectId, freeResourcePackageV3.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectScope, freeResourcePackageV3.enterpriseProjectScope)
-            && Objects.equals(this.effectiveTime, freeResourcePackageV3.effectiveTime)
-            && Objects.equals(this.expireTime, freeResourcePackageV3.expireTime)
-            && Objects.equals(this.status, freeResourcePackageV3.status)
-            && Objects.equals(this.serviceTypeCode, freeResourcePackageV3.serviceTypeCode)
-            && Objects.equals(this.serviceTypeName, freeResourcePackageV3.serviceTypeName)
-            && Objects.equals(this.regionCode, freeResourcePackageV3.regionCode)
-            && Objects.equals(this.sourceType, freeResourcePackageV3.sourceType)
-            && Objects.equals(this.bundleType, freeResourcePackageV3.bundleType)
-            && Objects.equals(this.quotaReuseMode, freeResourcePackageV3.quotaReuseMode)
-            && Objects.equals(this.freeResources, freeResourcePackageV3.freeResources);
+        FreeResourcePackageV3 that = (FreeResourcePackageV3) obj;
+        return Objects.equals(this.orderInstanceId, that.orderInstanceId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectScope, that.enterpriseProjectScope)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.bundleType, that.bundleType)
+            && Objects.equals(this.quotaReuseMode, that.quotaReuseMode)
+            && Objects.equals(this.freeResources, that.freeResources);
     }
 
     @Override

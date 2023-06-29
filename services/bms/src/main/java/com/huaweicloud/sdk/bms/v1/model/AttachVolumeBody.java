@@ -43,15 +43,15 @@ public class AttachVolumeBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachVolumeBody attachVolumeBody = (AttachVolumeBody) o;
-        return Objects.equals(this.volumeAttachment, attachVolumeBody.volumeAttachment);
+        AttachVolumeBody that = (AttachVolumeBody) obj;
+        return Objects.equals(this.volumeAttachment, that.volumeAttachment);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class CreateDataImageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDataImageRequest createDataImageRequest = (CreateDataImageRequest) o;
-        return Objects.equals(this.body, createDataImageRequest.body);
+        CreateDataImageRequest that = (CreateDataImageRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

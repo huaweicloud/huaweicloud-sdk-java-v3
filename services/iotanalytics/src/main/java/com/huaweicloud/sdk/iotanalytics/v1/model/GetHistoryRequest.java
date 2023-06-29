@@ -147,18 +147,16 @@ public class GetHistoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetHistoryRequest getHistoryRequest = (GetHistoryRequest) o;
-        return Objects.equals(this.timeSpan, getHistoryRequest.timeSpan)
-            && Objects.equals(this.tags, getHistoryRequest.tags)
-            && Objects.equals(this.propertyNames, getHistoryRequest.propertyNames)
-            && Objects.equals(this.limit, getHistoryRequest.limit);
+        GetHistoryRequest that = (GetHistoryRequest) obj;
+        return Objects.equals(this.timeSpan, that.timeSpan) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.propertyNames, that.propertyNames) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

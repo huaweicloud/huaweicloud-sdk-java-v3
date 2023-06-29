@@ -120,18 +120,16 @@ public class SendSmVerificationCodeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendSmVerificationCodeReq sendSmVerificationCodeReq = (SendSmVerificationCodeReq) o;
-        return Objects.equals(this.mobilePhone, sendSmVerificationCodeReq.mobilePhone)
-            && Objects.equals(this.timeout, sendSmVerificationCodeReq.timeout)
-            && Objects.equals(this.language, sendSmVerificationCodeReq.language)
-            && Objects.equals(this.smTemplateArgs, sendSmVerificationCodeReq.smTemplateArgs);
+        SendSmVerificationCodeReq that = (SendSmVerificationCodeReq) obj;
+        return Objects.equals(this.mobilePhone, that.mobilePhone) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.smTemplateArgs, that.smTemplateArgs);
     }
 
     @Override

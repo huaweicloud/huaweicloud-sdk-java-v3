@@ -66,22 +66,15 @@ public class PostTask {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -464,26 +457,24 @@ public class PostTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostTask postTask = (PostTask) o;
-        return Objects.equals(this.name, postTask.name) && Objects.equals(this.type, postTask.type)
-            && Objects.equals(this.startTargetServer, postTask.startTargetServer)
-            && Objects.equals(this.osType, postTask.osType) && Objects.equals(this.sourceServer, postTask.sourceServer)
-            && Objects.equals(this.targetServer, postTask.targetServer)
-            && Objects.equals(this.migrationIp, postTask.migrationIp)
-            && Objects.equals(this.regionName, postTask.regionName) && Objects.equals(this.regionId, postTask.regionId)
-            && Objects.equals(this.projectName, postTask.projectName)
-            && Objects.equals(this.projectId, postTask.projectId)
-            && Objects.equals(this.vmTemplateId, postTask.vmTemplateId)
-            && Objects.equals(this.usePublicIp, postTask.usePublicIp) && Objects.equals(this.syncing, postTask.syncing)
-            && Objects.equals(this.existServer, postTask.existServer)
-            && Objects.equals(this.startNetworkCheck, postTask.startNetworkCheck);
+        PostTask that = (PostTask) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.startTargetServer, that.startTargetServer)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.sourceServer, that.sourceServer)
+            && Objects.equals(this.targetServer, that.targetServer)
+            && Objects.equals(this.migrationIp, that.migrationIp) && Objects.equals(this.regionName, that.regionName)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.vmTemplateId, that.vmTemplateId)
+            && Objects.equals(this.usePublicIp, that.usePublicIp) && Objects.equals(this.syncing, that.syncing)
+            && Objects.equals(this.existServer, that.existServer)
+            && Objects.equals(this.startNetworkCheck, that.startNetworkCheck);
     }
 
     @Override

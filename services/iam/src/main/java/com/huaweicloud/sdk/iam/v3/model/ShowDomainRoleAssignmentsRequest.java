@@ -319,29 +319,24 @@ public class ShowDomainRoleAssignmentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainRoleAssignmentsRequest showDomainRoleAssignmentsRequest = (ShowDomainRoleAssignmentsRequest) o;
-        return Objects.equals(this.domainId, showDomainRoleAssignmentsRequest.domainId)
-            && Objects.equals(this.roleId, showDomainRoleAssignmentsRequest.roleId)
-            && Objects.equals(this.subject, showDomainRoleAssignmentsRequest.subject)
-            && Objects.equals(this.subjectUserId, showDomainRoleAssignmentsRequest.subjectUserId)
-            && Objects.equals(this.subjectGroupId, showDomainRoleAssignmentsRequest.subjectGroupId)
-            && Objects.equals(this.subjectAgencyId, showDomainRoleAssignmentsRequest.subjectAgencyId)
-            && Objects.equals(this.scope, showDomainRoleAssignmentsRequest.scope)
-            && Objects.equals(this.scopeProjectId, showDomainRoleAssignmentsRequest.scopeProjectId)
-            && Objects.equals(this.scopeDomainId, showDomainRoleAssignmentsRequest.scopeDomainId)
-            && Objects.equals(this.scopeEnterpriseProjectsId,
-                showDomainRoleAssignmentsRequest.scopeEnterpriseProjectsId)
-            && Objects.equals(this.isInherited, showDomainRoleAssignmentsRequest.isInherited)
-            && Objects.equals(this.includeGroup, showDomainRoleAssignmentsRequest.includeGroup)
-            && Objects.equals(this.page, showDomainRoleAssignmentsRequest.page)
-            && Objects.equals(this.perPage, showDomainRoleAssignmentsRequest.perPage);
+        ShowDomainRoleAssignmentsRequest that = (ShowDomainRoleAssignmentsRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.roleId, that.roleId)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.subjectUserId, that.subjectUserId)
+            && Objects.equals(this.subjectGroupId, that.subjectGroupId)
+            && Objects.equals(this.subjectAgencyId, that.subjectAgencyId) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.scopeProjectId, that.scopeProjectId)
+            && Objects.equals(this.scopeDomainId, that.scopeDomainId)
+            && Objects.equals(this.scopeEnterpriseProjectsId, that.scopeEnterpriseProjectsId)
+            && Objects.equals(this.isInherited, that.isInherited)
+            && Objects.equals(this.includeGroup, that.includeGroup) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.perPage, that.perPage);
     }
 
     @Override

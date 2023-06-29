@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 点位校验配置结构体
  */
-public class PointValidityingDTO  {
-
+public class PointValidityingDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min")
-    
+    @JsonProperty(value = "min")
 
     private Long min;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max")
-    
+    @JsonProperty(value = "max")
 
     private Long max;
 
@@ -33,9 +24,6 @@ public class PointValidityingDTO  {
         this.min = min;
         return this;
     }
-
-    
-
 
     /**
      * 点位上报值的最小值，小于该值则上报告警
@@ -51,15 +39,10 @@ public class PointValidityingDTO  {
         this.min = min;
     }
 
-    
-
     public PointValidityingDTO withMax(Long max) {
         this.max = max;
         return this;
     }
-
-    
-
 
     /**
      * 点位上报值的最大值，大于该值则上报告警
@@ -75,24 +58,23 @@ public class PointValidityingDTO  {
         this.max = max;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PointValidityingDTO pointValidityingDTO = (PointValidityingDTO) o;
-        return Objects.equals(this.min, pointValidityingDTO.min) &&
-            Objects.equals(this.max, pointValidityingDTO.max);
+        PointValidityingDTO that = (PointValidityingDTO) obj;
+        return Objects.equals(this.min, that.min) && Objects.equals(this.max, that.max);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(min, max);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -102,6 +84,7 @@ public class PointValidityingDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -112,8 +95,5 @@ public class PointValidityingDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

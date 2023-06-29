@@ -122,22 +122,15 @@ public class TreeNode {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NodeTypeEnum(value));
         }
 
         public static NodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -391,21 +384,21 @@ public class TreeNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TreeNode treeNode = (TreeNode) o;
-        return Objects.equals(this.id, treeNode.id) && Objects.equals(this.parent, treeNode.parent)
-            && Objects.equals(this.realId, treeNode.realId) && Objects.equals(this.name, treeNode.name)
-            && Objects.equals(this.displayName, treeNode.displayName) && Objects.equals(this.appName, treeNode.appName)
-            && Objects.equals(this.appId, treeNode.appId) && Objects.equals(this.isAdmin, treeNode.isAdmin)
-            && Objects.equals(this.isRoot, treeNode.isRoot) && Objects.equals(this.businessId, treeNode.businessId)
-            && Objects.equals(this.nodeType, treeNode.nodeType) && Objects.equals(this.region, treeNode.region)
-            && Objects.equals(this.isDefault, treeNode.isDefault);
+        TreeNode that = (TreeNode) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.parent, that.parent)
+            && Objects.equals(this.realId, that.realId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.isAdmin, that.isAdmin)
+            && Objects.equals(this.isRoot, that.isRoot) && Objects.equals(this.businessId, that.businessId)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.isDefault, that.isDefault);
     }
 
     @Override

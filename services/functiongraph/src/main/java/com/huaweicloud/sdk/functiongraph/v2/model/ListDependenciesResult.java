@@ -116,6 +116,11 @@ public class ListDependenciesResult {
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
          * Enum HTTP for value: "http"
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -140,6 +145,7 @@ public class ListDependenciesResult {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
             map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
@@ -165,22 +171,15 @@ public class ListDependenciesResult {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -425,25 +424,20 @@ public class ListDependenciesResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDependenciesResult listDependenciesResult = (ListDependenciesResult) o;
-        return Objects.equals(this.id, listDependenciesResult.id)
-            && Objects.equals(this.owner, listDependenciesResult.owner)
-            && Objects.equals(this.link, listDependenciesResult.link)
-            && Objects.equals(this.runtime, listDependenciesResult.runtime)
-            && Objects.equals(this.etag, listDependenciesResult.etag)
-            && Objects.equals(this.size, listDependenciesResult.size)
-            && Objects.equals(this.name, listDependenciesResult.name)
-            && Objects.equals(this.fileName, listDependenciesResult.fileName)
-            && Objects.equals(this.description, listDependenciesResult.description)
-            && Objects.equals(this.version, listDependenciesResult.version)
-            && Objects.equals(this.lastModified, listDependenciesResult.lastModified);
+        ListDependenciesResult that = (ListDependenciesResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.link, that.link) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.etag, that.etag) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.lastModified, that.lastModified);
     }
 
     @Override

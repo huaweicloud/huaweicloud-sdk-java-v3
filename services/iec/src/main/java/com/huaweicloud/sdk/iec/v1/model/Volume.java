@@ -312,21 +312,20 @@ public class Volume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Volume volume = (Volume) o;
-        return Objects.equals(this.id, volume.id) && Objects.equals(this.status, volume.status)
-            && Objects.equals(this.size, volume.size) && Objects.equals(this.availabilityZone, volume.availabilityZone)
-            && Objects.equals(this.attachments, volume.attachments) && Objects.equals(this.name, volume.name)
-            && Objects.equals(this.description, volume.description)
-            && Objects.equals(this.volumeType, volume.volumeType) && Objects.equals(this.bootable, volume.bootable)
-            && Objects.equals(this.encrypted, volume.encrypted) && Objects.equals(this.multiattach, volume.multiattach)
-            && Objects.equals(this.metadata, volume.metadata);
+        Volume that = (Volume) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.attachments, that.attachments) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.volumeType, that.volumeType)
+            && Objects.equals(this.bootable, that.bootable) && Objects.equals(this.encrypted, that.encrypted)
+            && Objects.equals(this.multiattach, that.multiattach) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

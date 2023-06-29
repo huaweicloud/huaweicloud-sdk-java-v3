@@ -134,18 +134,16 @@ public class InstallApkRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstallApkRequestBody installApkRequestBody = (InstallApkRequestBody) o;
-        return Objects.equals(this.command, installApkRequestBody.command)
-            && Objects.equals(this.content, installApkRequestBody.content)
-            && Objects.equals(this.phoneIds, installApkRequestBody.phoneIds)
-            && Objects.equals(this.serverIds, installApkRequestBody.serverIds);
+        InstallApkRequestBody that = (InstallApkRequestBody) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.phoneIds, that.phoneIds) && Objects.equals(this.serverIds, that.serverIds);
     }
 
     @Override

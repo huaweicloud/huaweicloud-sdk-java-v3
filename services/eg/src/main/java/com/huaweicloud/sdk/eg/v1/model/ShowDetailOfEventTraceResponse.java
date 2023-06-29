@@ -185,21 +185,18 @@ public class ShowDetailOfEventTraceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailOfEventTraceResponse showDetailOfEventTraceResponse = (ShowDetailOfEventTraceResponse) o;
-        return Objects.equals(this.eventId, showDetailOfEventTraceResponse.eventId)
-            && Objects.equals(this.eventSource, showDetailOfEventTraceResponse.eventSource)
-            && Objects.equals(this.eventType, showDetailOfEventTraceResponse.eventType)
-            && Objects.equals(this.receiveTime, showDetailOfEventTraceResponse.receiveTime)
-            && Objects.equals(this.channelId, showDetailOfEventTraceResponse.channelId)
-            && Objects.equals(this.channelName, showDetailOfEventTraceResponse.channelName)
-            && Objects.equals(this.deliverList, showDetailOfEventTraceResponse.deliverList);
+        ShowDetailOfEventTraceResponse that = (ShowDetailOfEventTraceResponse) obj;
+        return Objects.equals(this.eventId, that.eventId) && Objects.equals(this.eventSource, that.eventSource)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.receiveTime, that.receiveTime)
+            && Objects.equals(this.channelId, that.channelId) && Objects.equals(this.channelName, that.channelName)
+            && Objects.equals(this.deliverList, that.deliverList);
     }
 
     @Override

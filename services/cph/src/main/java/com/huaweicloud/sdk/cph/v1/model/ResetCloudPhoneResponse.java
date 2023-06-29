@@ -75,16 +75,15 @@ public class ResetCloudPhoneResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetCloudPhoneResponse resetCloudPhoneResponse = (ResetCloudPhoneResponse) o;
-        return Objects.equals(this.requestId, resetCloudPhoneResponse.requestId)
-            && Objects.equals(this.jobs, resetCloudPhoneResponse.jobs);
+        ResetCloudPhoneResponse that = (ResetCloudPhoneResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

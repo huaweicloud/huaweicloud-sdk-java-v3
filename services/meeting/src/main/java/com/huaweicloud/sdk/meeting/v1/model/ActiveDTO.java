@@ -77,16 +77,16 @@ public class ActiveDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActiveDTO activeDTO = (ActiveDTO) o;
-        return Objects.equals(this.smsNumber, activeDTO.smsNumber) && Objects.equals(this.country, activeDTO.country)
-            && Objects.equals(this.emailAddr, activeDTO.emailAddr);
+        ActiveDTO that = (ActiveDTO) obj;
+        return Objects.equals(this.smsNumber, that.smsNumber) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.emailAddr, that.emailAddr);
     }
 
     @Override

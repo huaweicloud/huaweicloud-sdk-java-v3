@@ -647,40 +647,35 @@ public class ClusterSnapshots {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterSnapshots clusterSnapshots = (ClusterSnapshots) o;
-        return Objects.equals(this.id, clusterSnapshots.id) && Objects.equals(this.name, clusterSnapshots.name)
-            && Objects.equals(this.description, clusterSnapshots.description)
-            && Objects.equals(this.started, clusterSnapshots.started)
-            && Objects.equals(this.size, clusterSnapshots.size) && Objects.equals(this.status, clusterSnapshots.status)
-            && Objects.equals(this.clusterId, clusterSnapshots.clusterId)
-            && Objects.equals(this.datastore, clusterSnapshots.datastore)
-            && Objects.equals(this.clusterName, clusterSnapshots.clusterName)
-            && Objects.equals(this.updated, clusterSnapshots.updated)
-            && Objects.equals(this.type, clusterSnapshots.type)
-            && Objects.equals(this.bakExpectedStartTime, clusterSnapshots.bakExpectedStartTime)
-            && Objects.equals(this.bakKeepDay, clusterSnapshots.bakKeepDay)
-            && Objects.equals(this.bakPeriod, clusterSnapshots.bakPeriod)
-            && Objects.equals(this.dbUser, clusterSnapshots.dbUser)
-            && Objects.equals(this.progress, clusterSnapshots.progress)
-            && Objects.equals(this.backupKey, clusterSnapshots.backupKey)
-            && Objects.equals(this.priorBackupKey, clusterSnapshots.priorBackupKey)
-            && Objects.equals(this.baseBackupKey, clusterSnapshots.baseBackupKey)
-            && Objects.equals(this.backupDevice, clusterSnapshots.backupDevice)
-            && Objects.equals(this.totalBackupSize, clusterSnapshots.totalBackupSize)
-            && Objects.equals(this.baseBackupName, clusterSnapshots.baseBackupName)
-            && Objects.equals(this.supportInplaceRestore, clusterSnapshots.supportInplaceRestore)
-            && Objects.equals(this.fineGrainedBackup, clusterSnapshots.fineGrainedBackup)
-            && Objects.equals(this.backupLevel, clusterSnapshots.backupLevel)
-            && Objects.equals(this.fineGrainedBackupDetail, clusterSnapshots.fineGrainedBackupDetail)
-            && Objects.equals(this.guestAgentVersion, clusterSnapshots.guestAgentVersion)
-            && Objects.equals(this.clusterStatus, clusterSnapshots.clusterStatus);
+        ClusterSnapshots that = (ClusterSnapshots) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.started, that.started)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.bakExpectedStartTime, that.bakExpectedStartTime)
+            && Objects.equals(this.bakKeepDay, that.bakKeepDay) && Objects.equals(this.bakPeriod, that.bakPeriod)
+            && Objects.equals(this.dbUser, that.dbUser) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.backupKey, that.backupKey)
+            && Objects.equals(this.priorBackupKey, that.priorBackupKey)
+            && Objects.equals(this.baseBackupKey, that.baseBackupKey)
+            && Objects.equals(this.backupDevice, that.backupDevice)
+            && Objects.equals(this.totalBackupSize, that.totalBackupSize)
+            && Objects.equals(this.baseBackupName, that.baseBackupName)
+            && Objects.equals(this.supportInplaceRestore, that.supportInplaceRestore)
+            && Objects.equals(this.fineGrainedBackup, that.fineGrainedBackup)
+            && Objects.equals(this.backupLevel, that.backupLevel)
+            && Objects.equals(this.fineGrainedBackupDetail, that.fineGrainedBackupDetail)
+            && Objects.equals(this.guestAgentVersion, that.guestAgentVersion)
+            && Objects.equals(this.clusterStatus, that.clusterStatus);
     }
 
     @Override

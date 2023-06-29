@@ -87,17 +87,16 @@ public class ShowResInstanceInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResInstanceInfoRequest showResInstanceInfoRequest = (ShowResInstanceInfoRequest) o;
-        return Objects.equals(this.resourceType, showResInstanceInfoRequest.resourceType)
-            && Objects.equals(this.action, showResInstanceInfoRequest.action)
-            && Objects.equals(this.body, showResInstanceInfoRequest.body);
+        ShowResInstanceInfoRequest that = (ShowResInstanceInfoRequest) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

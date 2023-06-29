@@ -145,20 +145,17 @@ public class ListCustomAuthorizersV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomAuthorizersV2Request listCustomAuthorizersV2Request = (ListCustomAuthorizersV2Request) o;
-        return Objects.equals(this.instanceId, listCustomAuthorizersV2Request.instanceId)
-            && Objects.equals(this.offset, listCustomAuthorizersV2Request.offset)
-            && Objects.equals(this.limit, listCustomAuthorizersV2Request.limit)
-            && Objects.equals(this.id, listCustomAuthorizersV2Request.id)
-            && Objects.equals(this.name, listCustomAuthorizersV2Request.name)
-            && Objects.equals(this.type, listCustomAuthorizersV2Request.type);
+        ListCustomAuthorizersV2Request that = (ListCustomAuthorizersV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type);
     }
 
     @Override

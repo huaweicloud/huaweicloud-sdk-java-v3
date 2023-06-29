@@ -35,15 +35,15 @@ public class ListDrRelationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDrRelationsRequest listDrRelationsRequest = (ListDrRelationsRequest) o;
-        return Objects.equals(this.xLanguage, listDrRelationsRequest.xLanguage);
+        ListDrRelationsRequest that = (ListDrRelationsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

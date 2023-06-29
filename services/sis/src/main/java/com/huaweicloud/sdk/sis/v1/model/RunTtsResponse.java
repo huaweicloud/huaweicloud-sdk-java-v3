@@ -66,16 +66,15 @@ public class RunTtsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunTtsResponse runTtsResponse = (RunTtsResponse) o;
-        return Objects.equals(this.traceId, runTtsResponse.traceId)
-            && Objects.equals(this.result, runTtsResponse.result);
+        RunTtsResponse that = (RunTtsResponse) obj;
+        return Objects.equals(this.traceId, that.traceId) && Objects.equals(this.result, that.result);
     }
 
     @Override

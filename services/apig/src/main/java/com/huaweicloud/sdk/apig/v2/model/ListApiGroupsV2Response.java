@@ -97,17 +97,16 @@ public class ListApiGroupsV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiGroupsV2Response listApiGroupsV2Response = (ListApiGroupsV2Response) o;
-        return Objects.equals(this.size, listApiGroupsV2Response.size)
-            && Objects.equals(this.total, listApiGroupsV2Response.total)
-            && Objects.equals(this.groups, listApiGroupsV2Response.groups);
+        ListApiGroupsV2Response that = (ListApiGroupsV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.groups, that.groups);
     }
 
     @Override

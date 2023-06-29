@@ -78,22 +78,15 @@ public class UpdateAlertRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QueryTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
         }
 
         public static QueryTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -160,22 +153,15 @@ public class UpdateAlertRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -260,22 +246,15 @@ public class UpdateAlertRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SeverityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
         }
 
         public static SeverityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -635,28 +614,22 @@ public class UpdateAlertRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlertRuleRequestBody updateAlertRuleRequestBody = (UpdateAlertRuleRequestBody) o;
-        return Objects.equals(this.ruleName, updateAlertRuleRequestBody.ruleName)
-            && Objects.equals(this.description, updateAlertRuleRequestBody.description)
-            && Objects.equals(this.query, updateAlertRuleRequestBody.query)
-            && Objects.equals(this.queryType, updateAlertRuleRequestBody.queryType)
-            && Objects.equals(this.status, updateAlertRuleRequestBody.status)
-            && Objects.equals(this.severity, updateAlertRuleRequestBody.severity)
-            && Objects.equals(this.accumulatedTimes, updateAlertRuleRequestBody.accumulatedTimes)
-            && Objects.equals(this.customProperties, updateAlertRuleRequestBody.customProperties)
-            && Objects.equals(this.alertType, updateAlertRuleRequestBody.alertType)
-            && Objects.equals(this.eventGrouping, updateAlertRuleRequestBody.eventGrouping)
-            && Objects.equals(this.suppression, updateAlertRuleRequestBody.suppression)
-            && Objects.equals(this.simulation, updateAlertRuleRequestBody.simulation)
-            && Objects.equals(this.schedule, updateAlertRuleRequestBody.schedule)
-            && Objects.equals(this.triggers, updateAlertRuleRequestBody.triggers);
+        UpdateAlertRuleRequestBody that = (UpdateAlertRuleRequestBody) obj;
+        return Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.query, that.query) && Objects.equals(this.queryType, that.queryType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.accumulatedTimes, that.accumulatedTimes)
+            && Objects.equals(this.customProperties, that.customProperties)
+            && Objects.equals(this.alertType, that.alertType) && Objects.equals(this.eventGrouping, that.eventGrouping)
+            && Objects.equals(this.suppression, that.suppression) && Objects.equals(this.simulation, that.simulation)
+            && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.triggers, that.triggers);
     }
 
     @Override

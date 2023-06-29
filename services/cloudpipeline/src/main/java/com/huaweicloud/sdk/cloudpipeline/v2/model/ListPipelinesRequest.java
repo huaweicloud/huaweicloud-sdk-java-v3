@@ -65,16 +65,15 @@ public class ListPipelinesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelinesRequest listPipelinesRequest = (ListPipelinesRequest) o;
-        return Objects.equals(this.projectId, listPipelinesRequest.projectId)
-            && Objects.equals(this.body, listPipelinesRequest.body);
+        ListPipelinesRequest that = (ListPipelinesRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -267,24 +267,21 @@ public class ShowDescribeTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDescribeTableResponse showDescribeTableResponse = (ShowDescribeTableResponse) o;
-        return Objects.equals(this.isSuccess, showDescribeTableResponse.isSuccess)
-            && Objects.equals(this.message, showDescribeTableResponse.message)
-            && Objects.equals(this.columnCount, showDescribeTableResponse.columnCount)
-            && Objects.equals(this.columns, showDescribeTableResponse.columns)
-            && Objects.equals(this.tableType, showDescribeTableResponse.tableType)
-            && Objects.equals(this.dataType, showDescribeTableResponse.dataType)
-            && Objects.equals(this.dataLocation, showDescribeTableResponse.dataLocation)
-            && Objects.equals(this.storageProperties, showDescribeTableResponse.storageProperties)
-            && Objects.equals(this.tableComment, showDescribeTableResponse.tableComment)
-            && Objects.equals(this.createTableSql, showDescribeTableResponse.createTableSql);
+        ShowDescribeTableResponse that = (ShowDescribeTableResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.columnCount, that.columnCount) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.dataLocation, that.dataLocation)
+            && Objects.equals(this.storageProperties, that.storageProperties)
+            && Objects.equals(this.tableComment, that.tableComment)
+            && Objects.equals(this.createTableSql, that.createTableSql);
     }
 
     @Override

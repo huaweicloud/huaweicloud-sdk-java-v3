@@ -65,22 +65,15 @@ public class ShowJobDetailRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class ShowJobDetailRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -286,22 +272,15 @@ public class ShowJobDetailRequest {
             if (value == null) {
                 return null;
             }
-            CompareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CompareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CompareTypeEnum(value));
         }
 
         public static CompareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CompareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,22 +353,15 @@ public class ShowJobDetailRequest {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QueryTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
         }
 
         public static QueryTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -462,22 +434,15 @@ public class ShowJobDetailRequest {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectTypeEnum(value));
         }
 
         public static ObjectTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -559,22 +524,15 @@ public class ShowJobDetailRequest {
             if (value == null) {
                 return null;
             }
-            CompareDetailTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CompareDetailTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CompareDetailTypeEnum(value));
         }
 
         public static CompareDetailTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CompareDetailTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -820,27 +778,23 @@ public class ShowJobDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobDetailRequest showJobDetailRequest = (ShowJobDetailRequest) o;
-        return Objects.equals(this.jobId, showJobDetailRequest.jobId)
-            && Objects.equals(this.xLanguage, showJobDetailRequest.xLanguage)
-            && Objects.equals(this.type, showJobDetailRequest.type)
-            && Objects.equals(this.queryId, showJobDetailRequest.queryId)
-            && Objects.equals(this.offset, showJobDetailRequest.offset)
-            && Objects.equals(this.limit, showJobDetailRequest.limit)
-            && Objects.equals(this.compareType, showJobDetailRequest.compareType)
-            && Objects.equals(this.queryType, showJobDetailRequest.queryType)
-            && Objects.equals(this.objectType, showJobDetailRequest.objectType)
-            && Objects.equals(this.compareTaskId, showJobDetailRequest.compareTaskId)
-            && Objects.equals(this.sourceDbName, showJobDetailRequest.sourceDbName)
-            && Objects.equals(this.targetDbName, showJobDetailRequest.targetDbName)
-            && Objects.equals(this.compareDetailType, showJobDetailRequest.compareDetailType);
+        ShowJobDetailRequest that = (ShowJobDetailRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.queryId, that.queryId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.compareType, that.compareType) && Objects.equals(this.queryType, that.queryType)
+            && Objects.equals(this.objectType, that.objectType)
+            && Objects.equals(this.compareTaskId, that.compareTaskId)
+            && Objects.equals(this.sourceDbName, that.sourceDbName)
+            && Objects.equals(this.targetDbName, that.targetDbName)
+            && Objects.equals(this.compareDetailType, that.compareDetailType);
     }
 
     @Override

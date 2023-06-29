@@ -43,15 +43,15 @@ public class CreateClusterV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterV2Request createClusterV2Request = (CreateClusterV2Request) o;
-        return Objects.equals(this.body, createClusterV2Request.body);
+        CreateClusterV2Request that = (CreateClusterV2Request) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

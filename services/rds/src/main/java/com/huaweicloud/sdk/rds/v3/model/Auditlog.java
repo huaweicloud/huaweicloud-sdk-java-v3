@@ -121,17 +121,17 @@ public class Auditlog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Auditlog auditlog = (Auditlog) o;
-        return Objects.equals(this.id, auditlog.id) && Objects.equals(this.name, auditlog.name)
-            && Objects.equals(this.size, auditlog.size) && Objects.equals(this.beginTime, auditlog.beginTime)
-            && Objects.equals(this.endTime, auditlog.endTime);
+        Auditlog that = (Auditlog) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

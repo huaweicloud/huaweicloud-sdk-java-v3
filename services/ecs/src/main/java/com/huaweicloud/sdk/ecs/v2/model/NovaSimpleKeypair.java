@@ -99,18 +99,16 @@ public class NovaSimpleKeypair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaSimpleKeypair novaSimpleKeypair = (NovaSimpleKeypair) o;
-        return Objects.equals(this.fingerprint, novaSimpleKeypair.fingerprint)
-            && Objects.equals(this.name, novaSimpleKeypair.name)
-            && Objects.equals(this.publicKey, novaSimpleKeypair.publicKey)
-            && Objects.equals(this.type, novaSimpleKeypair.type);
+        NovaSimpleKeypair that = (NovaSimpleKeypair) obj;
+        return Objects.equals(this.fingerprint, that.fingerprint) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.publicKey, that.publicKey) && Objects.equals(this.type, that.type);
     }
 
     @Override

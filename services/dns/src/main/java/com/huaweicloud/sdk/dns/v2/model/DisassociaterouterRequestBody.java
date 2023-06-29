@@ -43,15 +43,15 @@ public class DisassociaterouterRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociaterouterRequestBody disassociaterouterRequestBody = (DisassociaterouterRequestBody) o;
-        return Objects.equals(this.router, disassociaterouterRequestBody.router);
+        DisassociaterouterRequestBody that = (DisassociaterouterRequestBody) obj;
+        return Objects.equals(this.router, that.router);
     }
 
     @Override

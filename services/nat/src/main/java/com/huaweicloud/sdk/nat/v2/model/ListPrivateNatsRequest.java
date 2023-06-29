@@ -49,8 +49,8 @@ public class ListPrivateNatsRequest {
     private List<String> description = null;
 
     /**
-    * Gets or Sets spec
-    */
+     * Gets or Sets spec
+     */
     public static final class SpecEnum {
 
         /**
@@ -105,22 +105,15 @@ public class ListPrivateNatsRequest {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecEnum(value));
         }
 
         public static SpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -143,8 +136,8 @@ public class ListPrivateNatsRequest {
     private List<SpecEnum> spec = null;
 
     /**
-    * Gets or Sets status
-    */
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
         /**
@@ -187,22 +180,15 @@ public class ListPrivateNatsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -557,25 +543,20 @@ public class ListPrivateNatsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivateNatsRequest listPrivateNatsRequest = (ListPrivateNatsRequest) o;
-        return Objects.equals(this.limit, listPrivateNatsRequest.limit)
-            && Objects.equals(this.marker, listPrivateNatsRequest.marker)
-            && Objects.equals(this.pageReverse, listPrivateNatsRequest.pageReverse)
-            && Objects.equals(this.id, listPrivateNatsRequest.id)
-            && Objects.equals(this.name, listPrivateNatsRequest.name)
-            && Objects.equals(this.description, listPrivateNatsRequest.description)
-            && Objects.equals(this.spec, listPrivateNatsRequest.spec)
-            && Objects.equals(this.status, listPrivateNatsRequest.status)
-            && Objects.equals(this.vpcId, listPrivateNatsRequest.vpcId)
-            && Objects.equals(this.virsubnetId, listPrivateNatsRequest.virsubnetId)
-            && Objects.equals(this.enterpriseProjectId, listPrivateNatsRequest.enterpriseProjectId);
+        ListPrivateNatsRequest that = (ListPrivateNatsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.virsubnetId, that.virsubnetId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

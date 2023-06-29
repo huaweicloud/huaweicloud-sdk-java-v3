@@ -33,15 +33,15 @@ public class ShowDomainApiAclPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainApiAclPolicyRequest showDomainApiAclPolicyRequest = (ShowDomainApiAclPolicyRequest) o;
-        return Objects.equals(this.domainId, showDomainApiAclPolicyRequest.domainId);
+        ShowDomainApiAclPolicyRequest that = (ShowDomainApiAclPolicyRequest) obj;
+        return Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

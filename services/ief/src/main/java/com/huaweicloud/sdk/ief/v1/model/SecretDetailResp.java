@@ -206,21 +206,18 @@ public class SecretDetailResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecretDetailResp secretDetailResp = (SecretDetailResp) o;
-        return Objects.equals(this.id, secretDetailResp.id) && Objects.equals(this.name, secretDetailResp.name)
-            && Objects.equals(this.description, secretDetailResp.description)
-            && Objects.equals(this.secrets, secretDetailResp.secrets)
-            && Objects.equals(this.projectId, secretDetailResp.projectId)
-            && Objects.equals(this.createdAt, secretDetailResp.createdAt)
-            && Objects.equals(this.updatedAt, secretDetailResp.updatedAt)
-            && Objects.equals(this.type, secretDetailResp.type);
+        SecretDetailResp that = (SecretDetailResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.secrets, that.secrets)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.type, that.type);
     }
 
     @Override

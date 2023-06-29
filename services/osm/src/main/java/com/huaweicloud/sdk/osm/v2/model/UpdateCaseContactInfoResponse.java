@@ -56,16 +56,15 @@ public class UpdateCaseContactInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCaseContactInfoResponse updateCaseContactInfoResponse = (UpdateCaseContactInfoResponse) o;
-        return Objects.equals(this.errorCode, updateCaseContactInfoResponse.errorCode)
-            && Objects.equals(this.errorMsg, updateCaseContactInfoResponse.errorMsg);
+        UpdateCaseContactInfoResponse that = (UpdateCaseContactInfoResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

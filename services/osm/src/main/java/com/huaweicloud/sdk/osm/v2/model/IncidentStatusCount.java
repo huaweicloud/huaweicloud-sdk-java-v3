@@ -59,16 +59,15 @@ public class IncidentStatusCount {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentStatusCount incidentStatusCount = (IncidentStatusCount) o;
-        return Objects.equals(this.status, incidentStatusCount.status)
-            && Objects.equals(this.count, incidentStatusCount.count);
+        IncidentStatusCount that = (IncidentStatusCount) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.count, that.count);
     }
 
     @Override

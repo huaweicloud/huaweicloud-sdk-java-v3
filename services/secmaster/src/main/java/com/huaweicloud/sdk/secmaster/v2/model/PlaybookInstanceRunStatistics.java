@@ -80,17 +80,17 @@ public class PlaybookInstanceRunStatistics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PlaybookInstanceRunStatistics playbookInstanceRunStatistics = (PlaybookInstanceRunStatistics) o;
-        return Objects.equals(this.playbookInstanceId, playbookInstanceRunStatistics.playbookInstanceId)
-            && Objects.equals(this.playbookInstanceName, playbookInstanceRunStatistics.playbookInstanceName)
-            && Objects.equals(this.playbookInstanceRunTime, playbookInstanceRunStatistics.playbookInstanceRunTime);
+        PlaybookInstanceRunStatistics that = (PlaybookInstanceRunStatistics) obj;
+        return Objects.equals(this.playbookInstanceId, that.playbookInstanceId)
+            && Objects.equals(this.playbookInstanceName, that.playbookInstanceName)
+            && Objects.equals(this.playbookInstanceRunTime, that.playbookInstanceRunTime);
     }
 
     @Override

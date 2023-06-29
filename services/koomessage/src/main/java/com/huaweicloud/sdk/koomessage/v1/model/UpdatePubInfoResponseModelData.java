@@ -33,15 +33,15 @@ public class UpdatePubInfoResponseModelData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePubInfoResponseModelData updatePubInfoResponseModelData = (UpdatePubInfoResponseModelData) o;
-        return Objects.equals(this.pubUpdateLogId, updatePubInfoResponseModelData.pubUpdateLogId);
+        UpdatePubInfoResponseModelData that = (UpdatePubInfoResponseModelData) obj;
+        return Objects.equals(this.pubUpdateLogId, that.pubUpdateLogId);
     }
 
     @Override

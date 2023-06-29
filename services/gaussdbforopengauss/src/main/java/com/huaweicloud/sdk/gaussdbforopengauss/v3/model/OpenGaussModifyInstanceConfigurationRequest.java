@@ -1,39 +1,30 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * OpenGaussModifyInstanceConfigurationRequest
  */
-public class OpenGaussModifyInstanceConfigurationRequest  {
-
+public class OpenGaussModifyInstanceConfigurationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private Map<String, String> values = null;
-    
+
     public OpenGaussModifyInstanceConfigurationRequest withValues(Map<String, String> values) {
         this.values = values;
         return this;
     }
 
-    
-
     public OpenGaussModifyInstanceConfigurationRequest putValuesItem(String key, String valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         this.values.put(key, valuesItem);
@@ -41,12 +32,13 @@ public class OpenGaussModifyInstanceConfigurationRequest  {
     }
 
     public OpenGaussModifyInstanceConfigurationRequest withValues(Consumer<Map<String, String>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         valuesSetter.accept(this.values);
         return this;
     }
+
     /**
      * 参数值对象Map<String,String>，用户基于默认参数模板自定义的参数值。
      * @return values
@@ -59,23 +51,23 @@ public class OpenGaussModifyInstanceConfigurationRequest  {
         this.values = values;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenGaussModifyInstanceConfigurationRequest openGaussModifyInstanceConfigurationRequest = (OpenGaussModifyInstanceConfigurationRequest) o;
-        return Objects.equals(this.values, openGaussModifyInstanceConfigurationRequest.values);
+        OpenGaussModifyInstanceConfigurationRequest that = (OpenGaussModifyInstanceConfigurationRequest) obj;
+        return Objects.equals(this.values, that.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class OpenGaussModifyInstanceConfigurationRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class OpenGaussModifyInstanceConfigurationRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

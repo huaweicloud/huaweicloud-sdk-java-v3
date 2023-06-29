@@ -111,18 +111,17 @@ public class UpdateMaterialRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMaterialRequest updateMaterialRequest = (UpdateMaterialRequest) o;
-        return Objects.equals(this.xRequestId, updateMaterialRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, updateMaterialRequest.acceptLanguage)
-            && Objects.equals(this.id, updateMaterialRequest.id)
-            && Objects.equals(this.body, updateMaterialRequest.body);
+        UpdateMaterialRequest that = (UpdateMaterialRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

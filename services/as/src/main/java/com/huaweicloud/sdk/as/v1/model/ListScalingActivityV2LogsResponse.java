@@ -122,18 +122,17 @@ public class ListScalingActivityV2LogsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingActivityV2LogsResponse listScalingActivityV2LogsResponse = (ListScalingActivityV2LogsResponse) o;
-        return Objects.equals(this.totalNumber, listScalingActivityV2LogsResponse.totalNumber)
-            && Objects.equals(this.startNumber, listScalingActivityV2LogsResponse.startNumber)
-            && Objects.equals(this.limit, listScalingActivityV2LogsResponse.limit)
-            && Objects.equals(this.scalingActivityLog, listScalingActivityV2LogsResponse.scalingActivityLog);
+        ListScalingActivityV2LogsResponse that = (ListScalingActivityV2LogsResponse) obj;
+        return Objects.equals(this.totalNumber, that.totalNumber) && Objects.equals(this.startNumber, that.startNumber)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.scalingActivityLog, that.scalingActivityLog);
     }
 
     @Override

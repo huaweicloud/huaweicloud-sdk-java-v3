@@ -99,18 +99,16 @@ public class ServerExtendVolumeAttachment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerExtendVolumeAttachment serverExtendVolumeAttachment = (ServerExtendVolumeAttachment) o;
-        return Objects.equals(this.id, serverExtendVolumeAttachment.id)
-            && Objects.equals(this.deleteOnTermination, serverExtendVolumeAttachment.deleteOnTermination)
-            && Objects.equals(this.bootIndex, serverExtendVolumeAttachment.bootIndex)
-            && Objects.equals(this.device, serverExtendVolumeAttachment.device);
+        ServerExtendVolumeAttachment that = (ServerExtendVolumeAttachment) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deleteOnTermination, that.deleteOnTermination)
+            && Objects.equals(this.bootIndex, that.bootIndex) && Objects.equals(this.device, that.device);
     }
 
     @Override

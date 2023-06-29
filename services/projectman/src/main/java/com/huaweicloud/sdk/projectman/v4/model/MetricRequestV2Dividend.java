@@ -53,15 +53,15 @@ public class MetricRequestV2Dividend {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricRequestV2Dividend metricRequestV2Dividend = (MetricRequestV2Dividend) o;
-        return Objects.equals(this.customFields, metricRequestV2Dividend.customFields);
+        MetricRequestV2Dividend that = (MetricRequestV2Dividend) obj;
+        return Objects.equals(this.customFields, that.customFields);
     }
 
     @Override

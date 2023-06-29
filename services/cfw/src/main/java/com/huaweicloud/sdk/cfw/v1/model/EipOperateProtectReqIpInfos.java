@@ -77,17 +77,16 @@ public class EipOperateProtectReqIpInfos {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EipOperateProtectReqIpInfos eipOperateProtectReqIpInfos = (EipOperateProtectReqIpInfos) o;
-        return Objects.equals(this.id, eipOperateProtectReqIpInfos.id)
-            && Objects.equals(this.publicIp, eipOperateProtectReqIpInfos.publicIp)
-            && Objects.equals(this.publicIpv6, eipOperateProtectReqIpInfos.publicIpv6);
+        EipOperateProtectReqIpInfos that = (EipOperateProtectReqIpInfos) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.publicIpv6, that.publicIpv6);
     }
 
     @Override

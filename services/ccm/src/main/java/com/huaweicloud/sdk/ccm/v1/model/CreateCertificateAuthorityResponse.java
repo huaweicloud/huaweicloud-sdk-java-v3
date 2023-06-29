@@ -34,15 +34,15 @@ public class CreateCertificateAuthorityResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateAuthorityResponse createCertificateAuthorityResponse = (CreateCertificateAuthorityResponse) o;
-        return Objects.equals(this.caId, createCertificateAuthorityResponse.caId);
+        CreateCertificateAuthorityResponse that = (CreateCertificateAuthorityResponse) obj;
+        return Objects.equals(this.caId, that.caId);
     }
 
     @Override

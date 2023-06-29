@@ -446,28 +446,23 @@ public class ValueInPropertyVisitors {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValueInPropertyVisitors valueInPropertyVisitors = (ValueInPropertyVisitors) o;
-        return Objects.equals(this.registerType, valueInPropertyVisitors.registerType)
-            && Objects.equals(this.accessMode, valueInPropertyVisitors.accessMode)
-            && Objects.equals(this.registerIndex, valueInPropertyVisitors.registerIndex)
-            && Objects.equals(this.registerNum, valueInPropertyVisitors.registerNum)
-            && Objects.equals(this.scaleIndex, valueInPropertyVisitors.scaleIndex)
-            && Objects.equals(this.originalDatatype, valueInPropertyVisitors.originalDatatype)
-            && Objects.equals(this.expectedDatatype, valueInPropertyVisitors.expectedDatatype)
-            && Objects.equals(this.isRegisterswap, valueInPropertyVisitors.isRegisterswap)
-            && Objects.equals(this.isSwap, valueInPropertyVisitors.isSwap)
-            && Objects.equals(this.sampleInterval, valueInPropertyVisitors.sampleInterval)
-            && Objects.equals(this.dataMin, valueInPropertyVisitors.dataMin)
-            && Objects.equals(this.dataMax, valueInPropertyVisitors.dataMax)
-            && Objects.equals(this.nodeId, valueInPropertyVisitors.nodeId)
-            && Objects.equals(this.browseName, valueInPropertyVisitors.browseName);
+        ValueInPropertyVisitors that = (ValueInPropertyVisitors) obj;
+        return Objects.equals(this.registerType, that.registerType) && Objects.equals(this.accessMode, that.accessMode)
+            && Objects.equals(this.registerIndex, that.registerIndex)
+            && Objects.equals(this.registerNum, that.registerNum) && Objects.equals(this.scaleIndex, that.scaleIndex)
+            && Objects.equals(this.originalDatatype, that.originalDatatype)
+            && Objects.equals(this.expectedDatatype, that.expectedDatatype)
+            && Objects.equals(this.isRegisterswap, that.isRegisterswap) && Objects.equals(this.isSwap, that.isSwap)
+            && Objects.equals(this.sampleInterval, that.sampleInterval) && Objects.equals(this.dataMin, that.dataMin)
+            && Objects.equals(this.dataMax, that.dataMax) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.browseName, that.browseName);
     }
 
     @Override

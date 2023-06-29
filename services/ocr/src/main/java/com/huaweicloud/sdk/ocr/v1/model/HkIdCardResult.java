@@ -316,25 +316,24 @@ public class HkIdCardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HkIdCardResult hkIdCardResult = (HkIdCardResult) o;
-        return Objects.equals(this.name, hkIdCardResult.name) && Objects.equals(this.nameEn, hkIdCardResult.nameEn)
-            && Objects.equals(this.sex, hkIdCardResult.sex) && Objects.equals(this.birthDate, hkIdCardResult.birthDate)
-            && Objects.equals(this.number, hkIdCardResult.number)
-            && Objects.equals(this.symbols, hkIdCardResult.symbols)
-            && Objects.equals(this.nameTelegraphCode, hkIdCardResult.nameTelegraphCode)
-            && Objects.equals(this.permanent, hkIdCardResult.permanent)
-            && Objects.equals(this.initialIssueDate, hkIdCardResult.initialIssueDate)
-            && Objects.equals(this.issueDate, hkIdCardResult.issueDate)
-            && Objects.equals(this.portraitLocation, hkIdCardResult.portraitLocation)
-            && Objects.equals(this.portraitImage, hkIdCardResult.portraitImage)
-            && Objects.equals(this.confidence, hkIdCardResult.confidence);
+        HkIdCardResult that = (HkIdCardResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.birthDate, that.birthDate)
+            && Objects.equals(this.number, that.number) && Objects.equals(this.symbols, that.symbols)
+            && Objects.equals(this.nameTelegraphCode, that.nameTelegraphCode)
+            && Objects.equals(this.permanent, that.permanent)
+            && Objects.equals(this.initialIssueDate, that.initialIssueDate)
+            && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.portraitLocation, that.portraitLocation)
+            && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

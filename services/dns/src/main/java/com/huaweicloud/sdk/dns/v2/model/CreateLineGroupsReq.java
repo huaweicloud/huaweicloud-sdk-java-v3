@@ -96,17 +96,16 @@ public class CreateLineGroupsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLineGroupsReq createLineGroupsReq = (CreateLineGroupsReq) o;
-        return Objects.equals(this.name, createLineGroupsReq.name)
-            && Objects.equals(this.description, createLineGroupsReq.description)
-            && Objects.equals(this.lines, createLineGroupsReq.lines);
+        CreateLineGroupsReq that = (CreateLineGroupsReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lines, that.lines);
     }
 
     @Override

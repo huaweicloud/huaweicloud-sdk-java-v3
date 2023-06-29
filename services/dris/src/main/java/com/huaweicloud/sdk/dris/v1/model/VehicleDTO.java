@@ -386,26 +386,24 @@ public class VehicleDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VehicleDTO vehicleDTO = (VehicleDTO) o;
-        return Objects.equals(this.vehicleId, vehicleDTO.vehicleId) && Objects.equals(this.plateNo, vehicleDTO.plateNo)
-            && Objects.equals(this.vin, vehicleDTO.vin) && Objects.equals(this.obuId, vehicleDTO.obuId)
-            && Objects.equals(this.imei, vehicleDTO.imei) && Objects.equals(this.brand, vehicleDTO.brand)
-            && Objects.equals(this.model, vehicleDTO.model) && Objects.equals(this.style, vehicleDTO.style)
-            && Objects.equals(this.fuelType, vehicleDTO.fuelType) && Objects.equals(this.color, vehicleDTO.color)
-            && Objects.equals(this.plateColor, vehicleDTO.plateColor)
-            && Objects.equals(this.accessType, vehicleDTO.accessType)
-            && Objects.equals(this.description, vehicleDTO.description)
-            && Objects.equals(this.lastModifiedTime, vehicleDTO.lastModifiedTime)
-            && Objects.equals(this.createdTime, vehicleDTO.createdTime)
-            && Objects.equals(this.lastOnlineTime, vehicleDTO.lastOnlineTime)
-            && Objects.equals(this.status, vehicleDTO.status);
+        VehicleDTO that = (VehicleDTO) obj;
+        return Objects.equals(this.vehicleId, that.vehicleId) && Objects.equals(this.plateNo, that.plateNo)
+            && Objects.equals(this.vin, that.vin) && Objects.equals(this.obuId, that.obuId)
+            && Objects.equals(this.imei, that.imei) && Objects.equals(this.brand, that.brand)
+            && Objects.equals(this.model, that.model) && Objects.equals(this.style, that.style)
+            && Objects.equals(this.fuelType, that.fuelType) && Objects.equals(this.color, that.color)
+            && Objects.equals(this.plateColor, that.plateColor) && Objects.equals(this.accessType, that.accessType)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastOnlineTime, that.lastOnlineTime) && Objects.equals(this.status, that.status);
     }
 
     @Override

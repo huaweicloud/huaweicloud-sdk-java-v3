@@ -77,17 +77,16 @@ public class RankETLFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RankETLFilter rankETLFilter = (RankETLFilter) o;
-        return Objects.equals(this.filterType, rankETLFilter.filterType)
-            && Objects.equals(this.timeType, rankETLFilter.timeType)
-            && Objects.equals(this.isMondayFirst, rankETLFilter.isMondayFirst);
+        RankETLFilter that = (RankETLFilter) obj;
+        return Objects.equals(this.filterType, that.filterType) && Objects.equals(this.timeType, that.timeType)
+            && Objects.equals(this.isMondayFirst, that.isMondayFirst);
     }
 
     @Override

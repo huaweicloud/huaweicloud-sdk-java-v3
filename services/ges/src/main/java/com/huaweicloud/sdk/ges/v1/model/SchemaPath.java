@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 点数据
  */
-public class SchemaPath  {
-
+public class SchemaPath {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log")
-    
+    @JsonProperty(value = "log")
 
     private String log;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cause")
-    
+    @JsonProperty(value = "cause")
 
     private String cause;
 
@@ -45,9 +34,6 @@ public class SchemaPath  {
         this.path = path;
         return this;
     }
-
-    
-
 
     /**
      * OBS文件路径
@@ -61,15 +47,10 @@ public class SchemaPath  {
         this.path = path;
     }
 
-    
-
     public SchemaPath withLog(String log) {
         this.log = log;
         return this;
     }
-
-    
-
 
     /**
      * OBS文件导入日志存储文件
@@ -83,15 +64,10 @@ public class SchemaPath  {
         this.log = log;
     }
 
-    
-
     public SchemaPath withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * - OBS文件导入状态。 - success：完全成功 - failed：完全失败 - partFailed：部分成功
@@ -105,15 +81,10 @@ public class SchemaPath  {
         this.status = status;
     }
 
-    
-
     public SchemaPath withCause(String cause) {
         this.cause = cause;
         return this;
     }
-
-    
-
 
     /**
      * 导入失败原因
@@ -127,26 +98,24 @@ public class SchemaPath  {
         this.cause = cause;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SchemaPath schemaPath = (SchemaPath) o;
-        return Objects.equals(this.path, schemaPath.path) &&
-            Objects.equals(this.log, schemaPath.log) &&
-            Objects.equals(this.status, schemaPath.status) &&
-            Objects.equals(this.cause, schemaPath.cause);
+        SchemaPath that = (SchemaPath) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.log, that.log)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.cause, that.cause);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path, log, status, cause);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +127,7 @@ public class SchemaPath  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +138,5 @@ public class SchemaPath  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

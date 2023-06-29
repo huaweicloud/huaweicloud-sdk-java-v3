@@ -83,16 +83,15 @@ public class AlterTableInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlterTableInput alterTableInput = (AlterTableInput) o;
-        return Objects.equals(this.alterParams, alterTableInput.alterParams)
-            && Objects.equals(this.table, alterTableInput.table);
+        AlterTableInput that = (AlterTableInput) obj;
+        return Objects.equals(this.alterParams, that.alterParams) && Objects.equals(this.table, that.table);
     }
 
     @Override

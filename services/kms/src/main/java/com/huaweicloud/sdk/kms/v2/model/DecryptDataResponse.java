@@ -78,17 +78,16 @@ public class DecryptDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DecryptDataResponse decryptDataResponse = (DecryptDataResponse) o;
-        return Objects.equals(this.keyId, decryptDataResponse.keyId)
-            && Objects.equals(this.plainText, decryptDataResponse.plainText)
-            && Objects.equals(this.plainTextBase64, decryptDataResponse.plainTextBase64);
+        DecryptDataResponse that = (DecryptDataResponse) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.plainText, that.plainText)
+            && Objects.equals(this.plainTextBase64, that.plainTextBase64);
     }
 
     @Override

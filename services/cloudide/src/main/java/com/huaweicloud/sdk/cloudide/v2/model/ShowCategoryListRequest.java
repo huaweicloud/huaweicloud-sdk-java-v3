@@ -129,19 +129,17 @@ public class ShowCategoryListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCategoryListRequest showCategoryListRequest = (ShowCategoryListRequest) o;
-        return Objects.equals(this.pageNum, showCategoryListRequest.pageNum)
-            && Objects.equals(this.pageSize, showCategoryListRequest.pageSize)
-            && Objects.equals(this.sceneName, showCategoryListRequest.sceneName)
-            && Objects.equals(this.supportIde, showCategoryListRequest.supportIde)
-            && Objects.equals(this.type, showCategoryListRequest.type);
+        ShowCategoryListRequest that = (ShowCategoryListRequest) obj;
+        return Objects.equals(this.pageNum, that.pageNum) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.sceneName, that.sceneName) && Objects.equals(this.supportIde, that.supportIde)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

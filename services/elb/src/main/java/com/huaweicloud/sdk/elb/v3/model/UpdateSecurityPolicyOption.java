@@ -34,8 +34,8 @@ public class UpdateSecurityPolicyOption {
     private List<String> protocols = null;
 
     /**
-    * Gets or Sets ciphers
-    */
+     * Gets or Sets ciphers
+     */
     public static final class CiphersEnum {
 
         /**
@@ -237,22 +237,15 @@ public class UpdateSecurityPolicyOption {
             if (value == null) {
                 return null;
             }
-            CiphersEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CiphersEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CiphersEnum(value));
         }
 
         public static CiphersEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CiphersEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -375,18 +368,16 @@ public class UpdateSecurityPolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSecurityPolicyOption updateSecurityPolicyOption = (UpdateSecurityPolicyOption) o;
-        return Objects.equals(this.name, updateSecurityPolicyOption.name)
-            && Objects.equals(this.description, updateSecurityPolicyOption.description)
-            && Objects.equals(this.protocols, updateSecurityPolicyOption.protocols)
-            && Objects.equals(this.ciphers, updateSecurityPolicyOption.ciphers);
+        UpdateSecurityPolicyOption that = (UpdateSecurityPolicyOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.protocols, that.protocols) && Objects.equals(this.ciphers, that.ciphers);
     }
 
     @Override

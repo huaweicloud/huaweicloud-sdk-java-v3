@@ -107,16 +107,16 @@ public class VulnsLevel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VulnsLevel vulnsLevel = (VulnsLevel) o;
-        return Objects.equals(this.high, vulnsLevel.high) && Objects.equals(this.middle, vulnsLevel.middle)
-            && Objects.equals(this.low, vulnsLevel.low) && Objects.equals(this.hint, vulnsLevel.hint);
+        VulnsLevel that = (VulnsLevel) obj;
+        return Objects.equals(this.high, that.high) && Objects.equals(this.middle, that.middle)
+            && Objects.equals(this.low, that.low) && Objects.equals(this.hint, that.hint);
     }
 
     @Override

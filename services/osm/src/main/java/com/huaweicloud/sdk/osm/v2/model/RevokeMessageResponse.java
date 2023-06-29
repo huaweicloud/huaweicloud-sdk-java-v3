@@ -56,16 +56,15 @@ public class RevokeMessageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RevokeMessageResponse revokeMessageResponse = (RevokeMessageResponse) o;
-        return Objects.equals(this.errorCode, revokeMessageResponse.errorCode)
-            && Objects.equals(this.errorMsg, revokeMessageResponse.errorMsg);
+        RevokeMessageResponse that = (RevokeMessageResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

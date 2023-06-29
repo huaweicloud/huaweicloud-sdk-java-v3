@@ -75,16 +75,15 @@ public class ShowAuditLogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAuditLogResponse showAuditLogResponse = (ShowAuditLogResponse) o;
-        return Objects.equals(this.total, showAuditLogResponse.total)
-            && Objects.equals(this.rows, showAuditLogResponse.rows);
+        ShowAuditLogResponse that = (ShowAuditLogResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.rows, that.rows);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowSubnetTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSubnetTagsRequest showSubnetTagsRequest = (ShowSubnetTagsRequest) o;
-        return Objects.equals(this.subnetId, showSubnetTagsRequest.subnetId);
+        ShowSubnetTagsRequest that = (ShowSubnetTagsRequest) obj;
+        return Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override

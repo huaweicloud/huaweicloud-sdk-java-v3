@@ -275,25 +275,21 @@ public class TicsLeagueNoticeVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TicsLeagueNoticeVo ticsLeagueNoticeVo = (TicsLeagueNoticeVo) o;
-        return Objects.equals(this.bcsChannelName, ticsLeagueNoticeVo.bcsChannelName)
-            && Objects.equals(this.bcsIp, ticsLeagueNoticeVo.bcsIp)
-            && Objects.equals(this.bcsOrgName, ticsLeagueNoticeVo.bcsOrgName)
-            && Objects.equals(this.blockChainId, ticsLeagueNoticeVo.blockChainId)
-            && Objects.equals(this.blockChainName, ticsLeagueNoticeVo.blockChainName)
-            && Objects.equals(this.createTime, ticsLeagueNoticeVo.createTime)
-            && Objects.equals(this.creatorName, ticsLeagueNoticeVo.creatorName)
-            && Objects.equals(this.description, ticsLeagueNoticeVo.description)
-            && Objects.equals(this.expireTime, ticsLeagueNoticeVo.expireTime)
-            && Objects.equals(this.id, ticsLeagueNoticeVo.id) && Objects.equals(this.name, ticsLeagueNoticeVo.name)
-            && Objects.equals(this.partners, ticsLeagueNoticeVo.partners);
+        TicsLeagueNoticeVo that = (TicsLeagueNoticeVo) obj;
+        return Objects.equals(this.bcsChannelName, that.bcsChannelName) && Objects.equals(this.bcsIp, that.bcsIp)
+            && Objects.equals(this.bcsOrgName, that.bcsOrgName) && Objects.equals(this.blockChainId, that.blockChainId)
+            && Objects.equals(this.blockChainName, that.blockChainName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.partners, that.partners);
     }
 
     @Override

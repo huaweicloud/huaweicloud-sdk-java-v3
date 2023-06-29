@@ -148,20 +148,18 @@ public class ListOngoingWebinarsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOngoingWebinarsRequest listOngoingWebinarsRequest = (ListOngoingWebinarsRequest) o;
-        return Objects.equals(this.xRequestId, listOngoingWebinarsRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, listOngoingWebinarsRequest.acceptLanguage)
-            && Objects.equals(this.offset, listOngoingWebinarsRequest.offset)
-            && Objects.equals(this.limit, listOngoingWebinarsRequest.limit)
-            && Objects.equals(this.searchKey, listOngoingWebinarsRequest.searchKey)
-            && Objects.equals(this.sortType, listOngoingWebinarsRequest.sortType);
+        ListOngoingWebinarsRequest that = (ListOngoingWebinarsRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.sortType, that.sortType);
     }
 
     @Override

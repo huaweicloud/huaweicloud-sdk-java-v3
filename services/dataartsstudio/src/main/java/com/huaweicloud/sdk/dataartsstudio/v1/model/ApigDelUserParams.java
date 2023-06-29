@@ -33,15 +33,15 @@ public class ApigDelUserParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigDelUserParams apigDelUserParams = (ApigDelUserParams) o;
-        return Objects.equals(this.userIds, apigDelUserParams.userIds);
+        ApigDelUserParams that = (ApigDelUserParams) obj;
+        return Objects.equals(this.userIds, that.userIds);
     }
 
     @Override

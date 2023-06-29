@@ -43,15 +43,15 @@ public class UpdateMixJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMixJobReq updateMixJobReq = (UpdateMixJobReq) o;
-        return Objects.equals(this.mixParam, updateMixJobReq.mixParam);
+        UpdateMixJobReq that = (UpdateMixJobReq) obj;
+        return Objects.equals(this.mixParam, that.mixParam);
     }
 
     @Override

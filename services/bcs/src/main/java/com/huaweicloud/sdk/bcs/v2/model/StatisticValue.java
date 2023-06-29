@@ -55,16 +55,15 @@ public class StatisticValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticValue statisticValue = (StatisticValue) o;
-        return Objects.equals(this.statistic, statisticValue.statistic)
-            && Objects.equals(this.value, statisticValue.value);
+        StatisticValue that = (StatisticValue) obj;
+        return Objects.equals(this.statistic, that.statistic) && Objects.equals(this.value, that.value);
     }
 
     @Override

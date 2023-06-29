@@ -55,16 +55,15 @@ public class ListTableUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTableUsersRequest listTableUsersRequest = (ListTableUsersRequest) o;
-        return Objects.equals(this.databaseName, listTableUsersRequest.databaseName)
-            && Objects.equals(this.tableName, listTableUsersRequest.tableName);
+        ListTableUsersRequest that = (ListTableUsersRequest) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName);
     }
 
     @Override

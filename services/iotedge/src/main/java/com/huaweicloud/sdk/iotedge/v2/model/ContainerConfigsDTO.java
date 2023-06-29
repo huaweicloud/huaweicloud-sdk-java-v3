@@ -1,55 +1,42 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ContainerPortDTO;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ContainerConfigsDTO
  */
-public class ContainerConfigsDTO  {
-
+public class ContainerConfigsDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="privileged")
-    
+    @JsonProperty(value = "privileged")
 
     private Boolean privileged;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_network")
-    
+    @JsonProperty(value = "host_network")
 
     private Boolean hostNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restart_policy")
-    
+    @JsonProperty(value = "restart_policy")
 
     private String restartPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_port_list")
-    
+    @JsonProperty(value = "container_port_list")
+
     private List<ContainerPortDTO> containerPortList = null;
-    
+
     public ContainerConfigsDTO withPrivileged(Boolean privileged) {
         this.privileged = privileged;
         return this;
     }
-
-    
-
 
     /**
      * 开启容器特权模式
@@ -63,15 +50,10 @@ public class ContainerConfigsDTO  {
         this.privileged = privileged;
     }
 
-    
-
     public ContainerConfigsDTO withHostNetwork(Boolean hostNetwork) {
         this.hostNetwork = hostNetwork;
         return this;
     }
-
-    
-
 
     /**
      * 是否使用主机网络模式
@@ -85,15 +67,10 @@ public class ContainerConfigsDTO  {
         this.hostNetwork = hostNetwork;
     }
 
-    
-
     public ContainerConfigsDTO withRestartPolicy(String restartPolicy) {
         this.restartPolicy = restartPolicy;
         return this;
     }
-
-    
-
 
     /**
      * 重启策略，容器执行健康检查后失败后的策略
@@ -107,16 +84,13 @@ public class ContainerConfigsDTO  {
         this.restartPolicy = restartPolicy;
     }
 
-    
-
     public ContainerConfigsDTO withContainerPortList(List<ContainerPortDTO> containerPortList) {
         this.containerPortList = containerPortList;
         return this;
     }
 
-    
     public ContainerConfigsDTO addContainerPortListItem(ContainerPortDTO containerPortListItem) {
-        if(this.containerPortList == null) {
+        if (this.containerPortList == null) {
             this.containerPortList = new ArrayList<>();
         }
         this.containerPortList.add(containerPortListItem);
@@ -124,7 +98,7 @@ public class ContainerConfigsDTO  {
     }
 
     public ContainerConfigsDTO withContainerPortList(Consumer<List<ContainerPortDTO>> containerPortListSetter) {
-        if(this.containerPortList == null) {
+        if (this.containerPortList == null) {
             this.containerPortList = new ArrayList<>();
         }
         containerPortListSetter.accept(this.containerPortList);
@@ -143,26 +117,25 @@ public class ContainerConfigsDTO  {
         this.containerPortList = containerPortList;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerConfigsDTO containerConfigsDTO = (ContainerConfigsDTO) o;
-        return Objects.equals(this.privileged, containerConfigsDTO.privileged) &&
-            Objects.equals(this.hostNetwork, containerConfigsDTO.hostNetwork) &&
-            Objects.equals(this.restartPolicy, containerConfigsDTO.restartPolicy) &&
-            Objects.equals(this.containerPortList, containerConfigsDTO.containerPortList);
+        ContainerConfigsDTO that = (ContainerConfigsDTO) obj;
+        return Objects.equals(this.privileged, that.privileged) && Objects.equals(this.hostNetwork, that.hostNetwork)
+            && Objects.equals(this.restartPolicy, that.restartPolicy)
+            && Objects.equals(this.containerPortList, that.containerPortList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(privileged, hostNetwork, restartPolicy, containerPortList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,6 +147,7 @@ public class ContainerConfigsDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -184,8 +158,5 @@ public class ContainerConfigsDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

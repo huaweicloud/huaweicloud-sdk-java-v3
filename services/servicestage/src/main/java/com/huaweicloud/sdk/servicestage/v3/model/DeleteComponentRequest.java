@@ -55,16 +55,16 @@ public class DeleteComponentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteComponentRequest deleteComponentRequest = (DeleteComponentRequest) o;
-        return Objects.equals(this.applicationId, deleteComponentRequest.applicationId)
-            && Objects.equals(this.componentId, deleteComponentRequest.componentId);
+        DeleteComponentRequest that = (DeleteComponentRequest) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.componentId, that.componentId);
     }
 
     @Override

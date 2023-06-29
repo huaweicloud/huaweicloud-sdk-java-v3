@@ -93,22 +93,15 @@ public class MetricAlarms {
             if (value == null) {
                 return null;
             }
-            AlarmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AlarmTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlarmTypeEnum(value));
         }
 
         public static AlarmTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AlarmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -536,31 +529,26 @@ public class MetricAlarms {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricAlarms metricAlarms = (MetricAlarms) o;
-        return Objects.equals(this.alarmName, metricAlarms.alarmName)
-            && Objects.equals(this.alarmDescription, metricAlarms.alarmDescription)
-            && Objects.equals(this.metric, metricAlarms.metric)
-            && Objects.equals(this.condition, metricAlarms.condition)
-            && Objects.equals(this.alarmEnabled, metricAlarms.alarmEnabled)
-            && Objects.equals(this.alarmLevel, metricAlarms.alarmLevel)
-            && Objects.equals(this.alarmType, metricAlarms.alarmType)
-            && Objects.equals(this.alarmActionEnabled, metricAlarms.alarmActionEnabled)
-            && Objects.equals(this.alarmActions, metricAlarms.alarmActions)
-            && Objects.equals(this.okActions, metricAlarms.okActions)
-            && Objects.equals(this.insufficientdataActions, metricAlarms.insufficientdataActions)
-            && Objects.equals(this.alarmActionBeginTime, metricAlarms.alarmActionBeginTime)
-            && Objects.equals(this.alarmActionEndTime, metricAlarms.alarmActionEndTime)
-            && Objects.equals(this.alarmId, metricAlarms.alarmId)
-            && Objects.equals(this.updateTime, metricAlarms.updateTime)
-            && Objects.equals(this.alarmState, metricAlarms.alarmState)
-            && Objects.equals(this.enterpriseProjectId, metricAlarms.enterpriseProjectId);
+        MetricAlarms that = (MetricAlarms) obj;
+        return Objects.equals(this.alarmName, that.alarmName)
+            && Objects.equals(this.alarmDescription, that.alarmDescription) && Objects.equals(this.metric, that.metric)
+            && Objects.equals(this.condition, that.condition) && Objects.equals(this.alarmEnabled, that.alarmEnabled)
+            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.alarmType, that.alarmType)
+            && Objects.equals(this.alarmActionEnabled, that.alarmActionEnabled)
+            && Objects.equals(this.alarmActions, that.alarmActions) && Objects.equals(this.okActions, that.okActions)
+            && Objects.equals(this.insufficientdataActions, that.insufficientdataActions)
+            && Objects.equals(this.alarmActionBeginTime, that.alarmActionBeginTime)
+            && Objects.equals(this.alarmActionEndTime, that.alarmActionEndTime)
+            && Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.alarmState, that.alarmState)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

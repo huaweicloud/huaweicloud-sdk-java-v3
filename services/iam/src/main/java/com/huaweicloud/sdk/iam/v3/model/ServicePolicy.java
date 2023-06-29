@@ -74,16 +74,15 @@ public class ServicePolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServicePolicy servicePolicy = (ServicePolicy) o;
-        return Objects.equals(this.version, servicePolicy.version)
-            && Objects.equals(this.statement, servicePolicy.statement);
+        ServicePolicy that = (ServicePolicy) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.statement, that.statement);
     }
 
     @Override

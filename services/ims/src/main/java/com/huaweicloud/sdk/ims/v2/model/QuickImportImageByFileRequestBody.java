@@ -49,8 +49,8 @@ public class QuickImportImageByFileRequestBody {
     private List<String> tags = null;
 
     /**
-    * 制作的镜像类型。系统盘镜像为ECS/BMS，数据盘镜像为DataImage. 制作数据盘镜像时该参数必选.
-    */
+     * 制作的镜像类型。系统盘镜像为ECS/BMS，数据盘镜像为DataImage. 制作数据盘镜像时该参数必选.
+     */
     public static final class TypeEnum {
 
         /**
@@ -99,22 +99,15 @@ public class QuickImportImageByFileRequestBody {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -186,22 +179,15 @@ public class QuickImportImageByFileRequestBody {
             if (value == null) {
                 return null;
             }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchitectureEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ArchitectureEnum(value));
         }
 
         public static ArchitectureEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -268,22 +254,15 @@ public class QuickImportImageByFileRequestBody {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -532,25 +511,21 @@ public class QuickImportImageByFileRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuickImportImageByFileRequestBody quickImportImageByFileRequestBody = (QuickImportImageByFileRequestBody) o;
-        return Objects.equals(this.name, quickImportImageByFileRequestBody.name)
-            && Objects.equals(this.description, quickImportImageByFileRequestBody.description)
-            && Objects.equals(this.osVersion, quickImportImageByFileRequestBody.osVersion)
-            && Objects.equals(this.imageUrl, quickImportImageByFileRequestBody.imageUrl)
-            && Objects.equals(this.minDisk, quickImportImageByFileRequestBody.minDisk)
-            && Objects.equals(this.tags, quickImportImageByFileRequestBody.tags)
-            && Objects.equals(this.type, quickImportImageByFileRequestBody.type)
-            && Objects.equals(this.enterpriseProjectId, quickImportImageByFileRequestBody.enterpriseProjectId)
-            && Objects.equals(this.architecture, quickImportImageByFileRequestBody.architecture)
-            && Objects.equals(this.osType, quickImportImageByFileRequestBody.osType)
-            && Objects.equals(this.imageTags, quickImportImageByFileRequestBody.imageTags);
+        QuickImportImageByFileRequestBody that = (QuickImportImageByFileRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.imageTags, that.imageTags);
     }
 
     @Override

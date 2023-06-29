@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class StopJobRequest  {
-
+public class StopJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_execution_id")
-    
+    @JsonProperty(value = "job_execution_id")
 
     private String jobExecutionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
@@ -34,9 +24,6 @@ public class StopJobRequest  {
         this.jobExecutionId = jobExecutionId;
         return this;
     }
-
-    
-
 
     /**
      * 作业ID。获取方法，请参见[获取作业ID](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)。
@@ -50,15 +37,10 @@ public class StopJobRequest  {
         this.jobExecutionId = jobExecutionId;
     }
 
-    
-
     public StopJobRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群ID。获取方法，请参见[获取集群ID](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)。
@@ -72,24 +54,24 @@ public class StopJobRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopJobRequest stopJobRequest = (StopJobRequest) o;
-        return Objects.equals(this.jobExecutionId, stopJobRequest.jobExecutionId) &&
-            Objects.equals(this.clusterId, stopJobRequest.clusterId);
+        StopJobRequest that = (StopJobRequest) obj;
+        return Objects.equals(this.jobExecutionId, that.jobExecutionId)
+            && Objects.equals(this.clusterId, that.clusterId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobExecutionId, clusterId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +81,7 @@ public class StopJobRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +92,5 @@ public class StopJobRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

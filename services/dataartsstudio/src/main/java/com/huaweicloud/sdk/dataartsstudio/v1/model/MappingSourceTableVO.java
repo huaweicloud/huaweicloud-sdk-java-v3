@@ -95,22 +95,15 @@ public class MappingSourceTableVO {
             if (value == null) {
                 return null;
             }
-            JoinTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JoinTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JoinTypeEnum(value));
         }
 
         public static JoinTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JoinTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -256,20 +249,17 @@ public class MappingSourceTableVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MappingSourceTableVO mappingSourceTableVO = (MappingSourceTableVO) o;
-        return Objects.equals(this.table1Id, mappingSourceTableVO.table1Id)
-            && Objects.equals(this.table2Id, mappingSourceTableVO.table2Id)
-            && Objects.equals(this.table1Name, mappingSourceTableVO.table1Name)
-            && Objects.equals(this.table2Name, mappingSourceTableVO.table2Name)
-            && Objects.equals(this.joinType, mappingSourceTableVO.joinType)
-            && Objects.equals(this.joinFields, mappingSourceTableVO.joinFields);
+        MappingSourceTableVO that = (MappingSourceTableVO) obj;
+        return Objects.equals(this.table1Id, that.table1Id) && Objects.equals(this.table2Id, that.table2Id)
+            && Objects.equals(this.table1Name, that.table1Name) && Objects.equals(this.table2Name, that.table2Name)
+            && Objects.equals(this.joinType, that.joinType) && Objects.equals(this.joinFields, that.joinFields);
     }
 
     @Override

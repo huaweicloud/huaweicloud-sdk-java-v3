@@ -66,16 +66,15 @@ public class AssociateIssuesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateIssuesResponse associateIssuesResponse = (AssociateIssuesResponse) o;
-        return Objects.equals(this.error, associateIssuesResponse.error)
-            && Objects.equals(this.status, associateIssuesResponse.status);
+        AssociateIssuesResponse that = (AssociateIssuesResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.status, that.status);
     }
 
     @Override

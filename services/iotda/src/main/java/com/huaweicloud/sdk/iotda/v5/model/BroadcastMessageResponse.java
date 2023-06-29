@@ -100,18 +100,16 @@ public class BroadcastMessageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BroadcastMessageResponse broadcastMessageResponse = (BroadcastMessageResponse) o;
-        return Objects.equals(this.appId, broadcastMessageResponse.appId)
-            && Objects.equals(this.topicFullName, broadcastMessageResponse.topicFullName)
-            && Objects.equals(this.messageId, broadcastMessageResponse.messageId)
-            && Objects.equals(this.createdTime, broadcastMessageResponse.createdTime);
+        BroadcastMessageResponse that = (BroadcastMessageResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.topicFullName, that.topicFullName)
+            && Objects.equals(this.messageId, that.messageId) && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

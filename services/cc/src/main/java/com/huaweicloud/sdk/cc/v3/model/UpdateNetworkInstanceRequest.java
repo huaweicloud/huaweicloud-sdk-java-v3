@@ -65,16 +65,15 @@ public class UpdateNetworkInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNetworkInstanceRequest updateNetworkInstanceRequest = (UpdateNetworkInstanceRequest) o;
-        return Objects.equals(this.id, updateNetworkInstanceRequest.id)
-            && Objects.equals(this.body, updateNetworkInstanceRequest.body);
+        UpdateNetworkInstanceRequest that = (UpdateNetworkInstanceRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.body, that.body);
     }
 
     @Override

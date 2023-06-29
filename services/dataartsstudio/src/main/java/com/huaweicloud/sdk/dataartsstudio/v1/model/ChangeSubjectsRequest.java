@@ -65,16 +65,15 @@ public class ChangeSubjectsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeSubjectsRequest changeSubjectsRequest = (ChangeSubjectsRequest) o;
-        return Objects.equals(this.workspace, changeSubjectsRequest.workspace)
-            && Objects.equals(this.body, changeSubjectsRequest.body);
+        ChangeSubjectsRequest that = (ChangeSubjectsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

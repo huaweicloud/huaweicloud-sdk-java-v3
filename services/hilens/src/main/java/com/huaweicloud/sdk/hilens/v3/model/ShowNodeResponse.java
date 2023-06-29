@@ -859,45 +859,37 @@ public class ShowNodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNodeResponse showNodeResponse = (ShowNodeResponse) o;
-        return Objects.equals(this.id, showNodeResponse.id) && Objects.equals(this.arch, showNodeResponse.arch)
-            && Objects.equals(this.memory, showNodeResponse.memory) && Objects.equals(this.name, showNodeResponse.name)
-            && Objects.equals(this.description, showNodeResponse.description)
-            && Objects.equals(this.createdAt, showNodeResponse.createdAt)
-            && Objects.equals(this.updatedAt, showNodeResponse.updatedAt)
-            && Objects.equals(this.userName, showNodeResponse.userName)
-            && Objects.equals(this.clusterId, showNodeResponse.clusterId)
-            && Objects.equals(this.clusterNodeState, showNodeResponse.clusterNodeState)
-            && Objects.equals(this.clusterNodeType, showNodeResponse.clusterNodeType)
-            && Objects.equals(this.firmwareName, showNodeResponse.firmwareName)
-            && Objects.equals(this.firmwareVersion, showNodeResponse.firmwareVersion)
-            && Objects.equals(this.upgradeFirmwareVersion, showNodeResponse.upgradeFirmwareVersion)
-            && Objects.equals(this.firmwareStatus, showNodeResponse.firmwareStatus)
-            && Objects.equals(this.firmwareUpgradeRecord, showNodeResponse.firmwareUpgradeRecord)
-            && Objects.equals(this.state, showNodeResponse.state) && Objects.equals(this.type, showNodeResponse.type)
-            && Objects.equals(this.activeStatus, showNodeResponse.activeStatus)
-            && Objects.equals(this.cpu, showNodeResponse.cpu) && Objects.equals(this.gpuNum, showNodeResponse.gpuNum)
-            && Objects.equals(this.npuNum, showNodeResponse.npuNum)
-            && Objects.equals(this.npuType, showNodeResponse.npuType)
-            && Objects.equals(this.osName, showNodeResponse.osName)
-            && Objects.equals(this.osType, showNodeResponse.osType)
-            && Objects.equals(this.osVersion, showNodeResponse.osVersion)
-            && Objects.equals(this.enableContainer, showNodeResponse.enableContainer)
-            && Objects.equals(this.enableGpu, showNodeResponse.enableGpu)
-            && Objects.equals(this.enableNpu, showNodeResponse.enableNpu)
-            && Objects.equals(this.hostIps, showNodeResponse.hostIps)
-            && Objects.equals(this.tags, showNodeResponse.tags)
-            && Objects.equals(this.npuInfo, showNodeResponse.npuInfo)
-            && Objects.equals(this.activeContent, showNodeResponse.activeContent)
-            && Objects.equals(this.logConfigs, showNodeResponse.logConfigs)
-            && Objects.equals(this.eventValidityPeriod, showNodeResponse.eventValidityPeriod);
+        ShowNodeResponse that = (ShowNodeResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterNodeState, that.clusterNodeState)
+            && Objects.equals(this.clusterNodeType, that.clusterNodeType)
+            && Objects.equals(this.firmwareName, that.firmwareName)
+            && Objects.equals(this.firmwareVersion, that.firmwareVersion)
+            && Objects.equals(this.upgradeFirmwareVersion, that.upgradeFirmwareVersion)
+            && Objects.equals(this.firmwareStatus, that.firmwareStatus)
+            && Objects.equals(this.firmwareUpgradeRecord, that.firmwareUpgradeRecord)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.activeStatus, that.activeStatus) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.gpuNum, that.gpuNum) && Objects.equals(this.npuNum, that.npuNum)
+            && Objects.equals(this.npuType, that.npuType) && Objects.equals(this.osName, that.osName)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.enableContainer, that.enableContainer)
+            && Objects.equals(this.enableGpu, that.enableGpu) && Objects.equals(this.enableNpu, that.enableNpu)
+            && Objects.equals(this.hostIps, that.hostIps) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.npuInfo, that.npuInfo) && Objects.equals(this.activeContent, that.activeContent)
+            && Objects.equals(this.logConfigs, that.logConfigs)
+            && Objects.equals(this.eventValidityPeriod, that.eventValidityPeriod);
     }
 
     @Override

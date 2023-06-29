@@ -90,22 +90,16 @@ public class ConfirmTargetDbTypeResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            EvaluationProjectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EvaluationProjectStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new EvaluationProjectStatusEnum(value));
         }
 
         public static EvaluationProjectStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EvaluationProjectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -300,22 +294,22 @@ public class ConfirmTargetDbTypeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfirmTargetDbTypeResponse confirmTargetDbTypeResponse = (ConfirmTargetDbTypeResponse) o;
-        return Objects.equals(this.evaluationProjectId, confirmTargetDbTypeResponse.evaluationProjectId)
-            && Objects.equals(this.evaluationProjectName, confirmTargetDbTypeResponse.evaluationProjectName)
-            && Objects.equals(this.evaluationProjectStatus, confirmTargetDbTypeResponse.evaluationProjectStatus)
-            && Objects.equals(this.projectStatusDetail, confirmTargetDbTypeResponse.projectStatusDetail)
-            && Objects.equals(this.sourceDbType, confirmTargetDbTypeResponse.sourceDbType)
-            && Objects.equals(this.sourceDbVersion, confirmTargetDbTypeResponse.sourceDbVersion)
-            && Objects.equals(this.targetDbType, confirmTargetDbTypeResponse.targetDbType)
-            && Objects.equals(this.targetDbVersion, confirmTargetDbTypeResponse.targetDbVersion);
+        ConfirmTargetDbTypeResponse that = (ConfirmTargetDbTypeResponse) obj;
+        return Objects.equals(this.evaluationProjectId, that.evaluationProjectId)
+            && Objects.equals(this.evaluationProjectName, that.evaluationProjectName)
+            && Objects.equals(this.evaluationProjectStatus, that.evaluationProjectStatus)
+            && Objects.equals(this.projectStatusDetail, that.projectStatusDetail)
+            && Objects.equals(this.sourceDbType, that.sourceDbType)
+            && Objects.equals(this.sourceDbVersion, that.sourceDbVersion)
+            && Objects.equals(this.targetDbType, that.targetDbType)
+            && Objects.equals(this.targetDbVersion, that.targetDbVersion);
     }
 
     @Override

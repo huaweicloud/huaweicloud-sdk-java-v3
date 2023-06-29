@@ -55,16 +55,15 @@ public class CreateCertificateDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateDTO createCertificateDTO = (CreateCertificateDTO) o;
-        return Objects.equals(this.content, createCertificateDTO.content)
-            && Objects.equals(this.appId, createCertificateDTO.appId);
+        CreateCertificateDTO that = (CreateCertificateDTO) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

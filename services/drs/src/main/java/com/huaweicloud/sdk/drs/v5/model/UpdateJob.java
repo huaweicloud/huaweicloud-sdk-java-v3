@@ -429,25 +429,22 @@ public class UpdateJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateJob updateJob = (UpdateJob) o;
-        return Objects.equals(this.jobId, updateJob.jobId) && Objects.equals(this.baseInfo, updateJob.baseInfo)
-            && Objects.equals(this.sourceEndpoint, updateJob.sourceEndpoint)
-            && Objects.equals(this.targetEndpoint, updateJob.targetEndpoint)
-            && Objects.equals(this.alarmNotify, updateJob.alarmNotify)
-            && Objects.equals(this.speedLimit, updateJob.speedLimit)
-            && Objects.equals(this.userMigration, updateJob.userMigration)
-            && Objects.equals(this.policyConfig, updateJob.policyConfig)
-            && Objects.equals(this.dbObject, updateJob.dbObject) && Objects.equals(this.dbParam, updateJob.dbParam)
-            && Objects.equals(this.tuningParams, updateJob.tuningParams)
-            && Objects.equals(this.periodOrder, updateJob.periodOrder)
-            && Objects.equals(this.nodeInfo, updateJob.nodeInfo);
+        UpdateJob that = (UpdateJob) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.baseInfo, that.baseInfo)
+            && Objects.equals(this.sourceEndpoint, that.sourceEndpoint)
+            && Objects.equals(this.targetEndpoint, that.targetEndpoint)
+            && Objects.equals(this.alarmNotify, that.alarmNotify) && Objects.equals(this.speedLimit, that.speedLimit)
+            && Objects.equals(this.userMigration, that.userMigration)
+            && Objects.equals(this.policyConfig, that.policyConfig) && Objects.equals(this.dbObject, that.dbObject)
+            && Objects.equals(this.dbParam, that.dbParam) && Objects.equals(this.tuningParams, that.tuningParams)
+            && Objects.equals(this.periodOrder, that.periodOrder) && Objects.equals(this.nodeInfo, that.nodeInfo);
     }
 
     @Override

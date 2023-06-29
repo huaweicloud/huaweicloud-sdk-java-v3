@@ -166,21 +166,19 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPostpaidBillSumResponse listPostpaidBillSumResponse = (ListPostpaidBillSumResponse) o;
-        return Objects.equals(this.billCycle, listPostpaidBillSumResponse.billCycle)
-            && Objects.equals(this.initialAmountDue, listPostpaidBillSumResponse.initialAmountDue)
-            && Objects.equals(this.consumeAmount, listPostpaidBillSumResponse.consumeAmount)
-            && Objects.equals(this.refunds, listPostpaidBillSumResponse.refunds)
-            && Objects.equals(this.adjustments, listPostpaidBillSumResponse.adjustments)
-            && Objects.equals(this.taxAmount, listPostpaidBillSumResponse.taxAmount)
-            && Objects.equals(this.currency, listPostpaidBillSumResponse.currency);
+        ListPostpaidBillSumResponse that = (ListPostpaidBillSumResponse) obj;
+        return Objects.equals(this.billCycle, that.billCycle)
+            && Objects.equals(this.initialAmountDue, that.initialAmountDue)
+            && Objects.equals(this.consumeAmount, that.consumeAmount) && Objects.equals(this.refunds, that.refunds)
+            && Objects.equals(this.adjustments, that.adjustments) && Objects.equals(this.taxAmount, that.taxAmount)
+            && Objects.equals(this.currency, that.currency);
     }
 
     @Override

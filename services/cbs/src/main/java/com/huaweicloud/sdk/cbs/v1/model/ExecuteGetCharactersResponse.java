@@ -1,65 +1,48 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.BasicListResp;
-import com.huaweicloud.sdk.cbs.v1.model.Character;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ExecuteGetCharactersResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
 
     private Integer quota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
 
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="characters")
-    
+    @JsonProperty(value = "characters")
+
     private List<Character> characters = null;
-    
+
     public ExecuteGetCharactersResponse withQuota(Integer quota) {
         this.quota = quota;
         return this;
     }
-
-    
-
 
     /**
      * 配额
@@ -73,15 +56,10 @@ public class ExecuteGetCharactersResponse extends SdkResponse {
         this.quota = quota;
     }
 
-    
-
     public ExecuteGetCharactersResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
-
-    
-
 
     /**
      * 总数
@@ -95,15 +73,10 @@ public class ExecuteGetCharactersResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ExecuteGetCharactersResponse withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 偏移
@@ -117,15 +90,10 @@ public class ExecuteGetCharactersResponse extends SdkResponse {
         this.offset = offset;
     }
 
-    
-
     public ExecuteGetCharactersResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 返回数量
@@ -139,16 +107,13 @@ public class ExecuteGetCharactersResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public ExecuteGetCharactersResponse withCharacters(List<Character> characters) {
         this.characters = characters;
         return this;
     }
 
-    
     public ExecuteGetCharactersResponse addCharactersItem(Character charactersItem) {
-        if(this.characters == null) {
+        if (this.characters == null) {
             this.characters = new ArrayList<>();
         }
         this.characters.add(charactersItem);
@@ -156,7 +121,7 @@ public class ExecuteGetCharactersResponse extends SdkResponse {
     }
 
     public ExecuteGetCharactersResponse withCharacters(Consumer<List<Character>> charactersSetter) {
-        if(this.characters == null) {
+        if (this.characters == null) {
             this.characters = new ArrayList<>();
         }
         charactersSetter.accept(this.characters);
@@ -175,27 +140,25 @@ public class ExecuteGetCharactersResponse extends SdkResponse {
         this.characters = characters;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteGetCharactersResponse executeGetCharactersResponse = (ExecuteGetCharactersResponse) o;
-        return Objects.equals(this.quota, executeGetCharactersResponse.quota) &&
-            Objects.equals(this.total, executeGetCharactersResponse.total) &&
-            Objects.equals(this.offset, executeGetCharactersResponse.offset) &&
-            Objects.equals(this.count, executeGetCharactersResponse.count) &&
-            Objects.equals(this.characters, executeGetCharactersResponse.characters);
+        ExecuteGetCharactersResponse that = (ExecuteGetCharactersResponse) obj;
+        return Objects.equals(this.quota, that.quota) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.characters, that.characters);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quota, total, offset, count, characters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -208,6 +171,7 @@ public class ExecuteGetCharactersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -218,8 +182,5 @@ public class ExecuteGetCharactersResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

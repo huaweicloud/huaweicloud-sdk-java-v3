@@ -216,21 +216,19 @@ public class GetUsersListDetailResponses {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetUsersListDetailResponses getUsersListDetailResponses = (GetUsersListDetailResponses) o;
-        return Objects.equals(this.name, getUsersListDetailResponses.name)
-            && Objects.equals(this.status, getUsersListDetailResponses.status)
-            && Objects.equals(this.baseAuthority, getUsersListDetailResponses.baseAuthority)
-            && Objects.equals(this.extendAuthority, getUsersListDetailResponses.extendAuthority)
-            && Objects.equals(this.description, getUsersListDetailResponses.description)
-            && Objects.equals(this.created, getUsersListDetailResponses.created)
-            && Objects.equals(this.databases, getUsersListDetailResponses.databases);
+        GetUsersListDetailResponses that = (GetUsersListDetailResponses) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.baseAuthority, that.baseAuthority)
+            && Objects.equals(this.extendAuthority, that.extendAuthority)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.databases, that.databases);
     }
 
     @Override

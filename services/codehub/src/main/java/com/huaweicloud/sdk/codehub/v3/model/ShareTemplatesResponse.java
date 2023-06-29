@@ -88,17 +88,16 @@ public class ShareTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShareTemplatesResponse shareTemplatesResponse = (ShareTemplatesResponse) o;
-        return Objects.equals(this.error, shareTemplatesResponse.error)
-            && Objects.equals(this.result, shareTemplatesResponse.result)
-            && Objects.equals(this.status, shareTemplatesResponse.status);
+        ShareTemplatesResponse that = (ShareTemplatesResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

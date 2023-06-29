@@ -52,15 +52,15 @@ public class UpdateWorkflowBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWorkflowBody updateWorkflowBody = (UpdateWorkflowBody) o;
-        return Objects.equals(this.parameters, updateWorkflowBody.parameters);
+        UpdateWorkflowBody that = (UpdateWorkflowBody) obj;
+        return Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

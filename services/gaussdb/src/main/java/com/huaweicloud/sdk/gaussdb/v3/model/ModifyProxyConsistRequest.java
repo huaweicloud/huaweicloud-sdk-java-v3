@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 修改代理一致性请求体
  */
-public class ModifyProxyConsistRequest  {
-
+public class ModifyProxyConsistRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="session_consistence")
-    
+    @JsonProperty(value = "session_consistence")
 
     private String sessionConsistence;
 
@@ -27,9 +19,6 @@ public class ModifyProxyConsistRequest  {
         this.sessionConsistence = sessionConsistence;
         return this;
     }
-
-    
-
 
     /**
      * 会话一致性。 - 取值\"true\"时表示会话一致性开启。 - 取值\"false\"时表示会话一致性关闭。
@@ -43,23 +32,23 @@ public class ModifyProxyConsistRequest  {
         this.sessionConsistence = sessionConsistence;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyProxyConsistRequest modifyProxyConsistRequest = (ModifyProxyConsistRequest) o;
-        return Objects.equals(this.sessionConsistence, modifyProxyConsistRequest.sessionConsistence);
+        ModifyProxyConsistRequest that = (ModifyProxyConsistRequest) obj;
+        return Objects.equals(this.sessionConsistence, that.sessionConsistence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sessionConsistence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class ModifyProxyConsistRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class ModifyProxyConsistRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

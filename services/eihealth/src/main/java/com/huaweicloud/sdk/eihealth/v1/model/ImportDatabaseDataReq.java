@@ -98,17 +98,16 @@ public class ImportDatabaseDataReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportDatabaseDataReq importDatabaseDataReq = (ImportDatabaseDataReq) o;
-        return Objects.equals(this.files, importDatabaseDataReq.files)
-            && Objects.equals(this.delimiter, importDatabaseDataReq.delimiter)
-            && Objects.equals(this.skipLines, importDatabaseDataReq.skipLines);
+        ImportDatabaseDataReq that = (ImportDatabaseDataReq) obj;
+        return Objects.equals(this.files, that.files) && Objects.equals(this.delimiter, that.delimiter)
+            && Objects.equals(this.skipLines, that.skipLines);
     }
 
     @Override

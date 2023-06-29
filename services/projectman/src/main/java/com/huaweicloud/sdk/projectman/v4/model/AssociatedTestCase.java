@@ -290,25 +290,20 @@ public class AssociatedTestCase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociatedTestCase associatedTestCase = (AssociatedTestCase) o;
-        return Objects.equals(this.caseId, associatedTestCase.caseId)
-            && Objects.equals(this.caseNum, associatedTestCase.caseNum)
-            && Objects.equals(this.caseName, associatedTestCase.caseName)
-            && Objects.equals(this.caseLevel, associatedTestCase.caseLevel)
-            && Objects.equals(this.status, associatedTestCase.status)
-            && Objects.equals(this.creator, associatedTestCase.creator)
-            && Objects.equals(this.owner, associatedTestCase.owner)
-            && Objects.equals(this.project, associatedTestCase.project)
-            && Objects.equals(this.isBaseLine, associatedTestCase.isBaseLine)
-            && Objects.equals(this.type, associatedTestCase.type)
-            && Objects.equals(this.createdTime, associatedTestCase.createdTime);
+        AssociatedTestCase that = (AssociatedTestCase) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.caseNum, that.caseNum)
+            && Objects.equals(this.caseName, that.caseName) && Objects.equals(this.caseLevel, that.caseLevel)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.project, that.project)
+            && Objects.equals(this.isBaseLine, that.isBaseLine) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

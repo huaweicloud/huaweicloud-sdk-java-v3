@@ -79,17 +79,17 @@ public class ShowSpResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSpResourceRequest showSpResourceRequest = (ShowSpResourceRequest) o;
-        return Objects.equals(this.xRequestId, showSpResourceRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, showSpResourceRequest.acceptLanguage)
-            && Objects.equals(this.queryGroup, showSpResourceRequest.queryGroup);
+        ShowSpResourceRequest that = (ShowSpResourceRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage)
+            && Objects.equals(this.queryGroup, that.queryGroup);
     }
 
     @Override

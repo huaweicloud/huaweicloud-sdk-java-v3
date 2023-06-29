@@ -65,16 +65,15 @@ public class UpdateReplSetNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateReplSetNameRequest updateReplSetNameRequest = (UpdateReplSetNameRequest) o;
-        return Objects.equals(this.instanceId, updateReplSetNameRequest.instanceId)
-            && Objects.equals(this.body, updateReplSetNameRequest.body);
+        UpdateReplSetNameRequest that = (UpdateReplSetNameRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

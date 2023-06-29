@@ -34,15 +34,15 @@ public class ShowRealNamedRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRealNamedRequest showRealNamedRequest = (ShowRealNamedRequest) o;
-        return Objects.equals(this.simCardId, showRealNamedRequest.simCardId);
+        ShowRealNamedRequest that = (ShowRealNamedRequest) obj;
+        return Objects.equals(this.simCardId, that.simCardId);
     }
 
     @Override

@@ -97,17 +97,16 @@ public class RecognizeFlashAsrResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeFlashAsrResponse recognizeFlashAsrResponse = (RecognizeFlashAsrResponse) o;
-        return Objects.equals(this.traceId, recognizeFlashAsrResponse.traceId)
-            && Objects.equals(this.audioDuration, recognizeFlashAsrResponse.audioDuration)
-            && Objects.equals(this.flashResult, recognizeFlashAsrResponse.flashResult);
+        RecognizeFlashAsrResponse that = (RecognizeFlashAsrResponse) obj;
+        return Objects.equals(this.traceId, that.traceId) && Objects.equals(this.audioDuration, that.audioDuration)
+            && Objects.equals(this.flashResult, that.flashResult);
     }
 
     @Override

@@ -121,19 +121,18 @@ public class QueryApplicationBriefResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryApplicationBriefResponseDTO queryApplicationBriefResponseDTO = (QueryApplicationBriefResponseDTO) o;
-        return Objects.equals(this.edgeAppId, queryApplicationBriefResponseDTO.edgeAppId)
-            && Objects.equals(this.description, queryApplicationBriefResponseDTO.description)
-            && Objects.equals(this.createdTime, queryApplicationBriefResponseDTO.createdTime)
-            && Objects.equals(this.lastModifiedTime, queryApplicationBriefResponseDTO.lastModifiedTime)
-            && Objects.equals(this.lastPublishedVersion, queryApplicationBriefResponseDTO.lastPublishedVersion);
+        QueryApplicationBriefResponseDTO that = (QueryApplicationBriefResponseDTO) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.lastPublishedVersion, that.lastPublishedVersion);
     }
 
     @Override

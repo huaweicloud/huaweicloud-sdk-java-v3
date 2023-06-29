@@ -77,17 +77,17 @@ public class PublicIpInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicIpInfo publicIpInfo = (PublicIpInfo) o;
-        return Objects.equals(this.publicipId, publicIpInfo.publicipId)
-            && Objects.equals(this.publicipAddress, publicIpInfo.publicipAddress)
-            && Objects.equals(this.ipVersion, publicIpInfo.ipVersion);
+        PublicIpInfo that = (PublicIpInfo) obj;
+        return Objects.equals(this.publicipId, that.publicipId)
+            && Objects.equals(this.publicipAddress, that.publicipAddress)
+            && Objects.equals(this.ipVersion, that.ipVersion);
     }
 
     @Override

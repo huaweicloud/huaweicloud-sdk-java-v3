@@ -1,54 +1,47 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 静默规则的匹配条件
  */
-public class Match  {
-
+public class Match {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
 
     private String key;
+
     /**
      * 指定匹配的方式：EXIST:存在，REGEX:正则，EQUALS:等于
      */
     public static final class OperateEnum {
 
-        
         /**
          * Enum EQUALS for value: "EQUALS"
          */
         public static final OperateEnum EQUALS = new OperateEnum("EQUALS");
-        
+
         /**
          * Enum REGEX for value: "REGEX"
          */
         public static final OperateEnum REGEX = new OperateEnum("REGEX");
-        
+
         /**
          * Enum EXIST for value: "EXIST"
          */
         public static final OperateEnum EXIST = new OperateEnum("EXIST");
-        
 
         private static final Map<String, OperateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,25 +71,18 @@ public class Match  {
 
         @JsonCreator
         public static OperateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            OperateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperateEnum(value));
         }
 
         public static OperateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            OperateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -114,23 +100,19 @@ public class Match  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operate")
-    
+    @JsonProperty(value = "operate")
 
     private OperateEnum operate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private List<String> value = null;
-    
+
     public Match withKey(String key) {
         this.key = key;
         return this;
     }
-
-    
-
 
     /**
      * 指定按照Metadata中的key进行匹配
@@ -144,15 +126,10 @@ public class Match  {
         this.key = key;
     }
 
-    
-
     public Match withOperate(OperateEnum operate) {
         this.operate = operate;
         return this;
     }
-
-    
-
 
     /**
      * 指定匹配的方式：EXIST:存在，REGEX:正则，EQUALS:等于
@@ -166,16 +143,13 @@ public class Match  {
         this.operate = operate;
     }
 
-    
-
     public Match withValue(List<String> value) {
         this.value = value;
         return this;
     }
 
-    
     public Match addValueItem(String valueItem) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         this.value.add(valueItem);
@@ -183,7 +157,7 @@ public class Match  {
     }
 
     public Match withValue(Consumer<List<String>> valueSetter) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);
@@ -202,25 +176,24 @@ public class Match  {
         this.value = value;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Match match = (Match) o;
-        return Objects.equals(this.key, match.key) &&
-            Objects.equals(this.operate, match.operate) &&
-            Objects.equals(this.value, match.value);
+        Match that = (Match) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.operate, that.operate)
+            && Objects.equals(this.value, that.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, operate, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -231,6 +204,7 @@ public class Match  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -241,8 +215,5 @@ public class Match  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

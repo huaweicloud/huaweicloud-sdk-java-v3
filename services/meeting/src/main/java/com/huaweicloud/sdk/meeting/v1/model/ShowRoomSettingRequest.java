@@ -79,17 +79,17 @@ public class ShowRoomSettingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRoomSettingRequest showRoomSettingRequest = (ShowRoomSettingRequest) o;
-        return Objects.equals(this.xRequestId, showRoomSettingRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, showRoomSettingRequest.acceptLanguage)
-            && Objects.equals(this.conferenceId, showRoomSettingRequest.conferenceId);
+        ShowRoomSettingRequest that = (ShowRoomSettingRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage)
+            && Objects.equals(this.conferenceId, that.conferenceId);
     }
 
     @Override

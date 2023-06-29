@@ -212,23 +212,19 @@ public class ShowWorkflowInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkflowInfoResponse showWorkflowInfoResponse = (ShowWorkflowInfoResponse) o;
-        return Objects.equals(this.name, showWorkflowInfoResponse.name)
-            && Objects.equals(this.createdAt, showWorkflowInfoResponse.createdAt)
-            && Objects.equals(this.definition, showWorkflowInfoResponse.definition)
-            && Objects.equals(this.graphUrn, showWorkflowInfoResponse.graphUrn)
-            && Objects.equals(this.description, showWorkflowInfoResponse.description)
-            && Objects.equals(this.xRequestId, showWorkflowInfoResponse.xRequestId)
-            && Objects.equals(this.connection, showWorkflowInfoResponse.connection)
-            && Objects.equals(this.contentLength, showWorkflowInfoResponse.contentLength)
-            && Objects.equals(this.date, showWorkflowInfoResponse.date);
+        ShowWorkflowInfoResponse that = (ShowWorkflowInfoResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.definition, that.definition) && Objects.equals(this.graphUrn, that.graphUrn)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

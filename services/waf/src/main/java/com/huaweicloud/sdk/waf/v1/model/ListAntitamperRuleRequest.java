@@ -99,18 +99,17 @@ public class ListAntitamperRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAntitamperRuleRequest listAntitamperRuleRequest = (ListAntitamperRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listAntitamperRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, listAntitamperRuleRequest.policyId)
-            && Objects.equals(this.page, listAntitamperRuleRequest.page)
-            && Objects.equals(this.pagesize, listAntitamperRuleRequest.pagesize);
+        ListAntitamperRuleRequest that = (ListAntitamperRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pagesize, that.pagesize);
     }
 
     @Override

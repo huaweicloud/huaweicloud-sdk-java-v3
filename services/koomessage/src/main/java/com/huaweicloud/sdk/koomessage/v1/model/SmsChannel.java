@@ -99,17 +99,16 @@ public class SmsChannel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsChannel smsChannel = (SmsChannel) o;
-        return Objects.equals(this.channelNumber, smsChannel.channelNumber)
-            && Objects.equals(this.smsTplId, smsChannel.smsTplId) && Objects.equals(this.smsSign, smsChannel.smsSign)
-            && Objects.equals(this.smsAppName, smsChannel.smsAppName);
+        SmsChannel that = (SmsChannel) obj;
+        return Objects.equals(this.channelNumber, that.channelNumber) && Objects.equals(this.smsTplId, that.smsTplId)
+            && Objects.equals(this.smsSign, that.smsSign) && Objects.equals(this.smsAppName, that.smsAppName);
     }
 
     @Override

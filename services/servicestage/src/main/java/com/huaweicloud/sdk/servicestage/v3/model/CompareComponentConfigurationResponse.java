@@ -132,18 +132,16 @@ public class CompareComponentConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareComponentConfigurationResponse compareComponentConfigurationResponse =
-            (CompareComponentConfigurationResponse) o;
-        return Objects.equals(this.addEnvs, compareComponentConfigurationResponse.addEnvs)
-            && Objects.equals(this.removeEnvs, compareComponentConfigurationResponse.removeEnvs)
-            && Objects.equals(this.modifyEnvs, compareComponentConfigurationResponse.modifyEnvs);
+        CompareComponentConfigurationResponse that = (CompareComponentConfigurationResponse) obj;
+        return Objects.equals(this.addEnvs, that.addEnvs) && Objects.equals(this.removeEnvs, that.removeEnvs)
+            && Objects.equals(this.modifyEnvs, that.modifyEnvs);
     }
 
     @Override

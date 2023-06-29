@@ -34,15 +34,15 @@ public class StopSimCardResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopSimCardResponse stopSimCardResponse = (StopSimCardResponse) o;
-        return Objects.equals(this.workOrderId, stopSimCardResponse.workOrderId);
+        StopSimCardResponse that = (StopSimCardResponse) obj;
+        return Objects.equals(this.workOrderId, that.workOrderId);
     }
 
     @Override

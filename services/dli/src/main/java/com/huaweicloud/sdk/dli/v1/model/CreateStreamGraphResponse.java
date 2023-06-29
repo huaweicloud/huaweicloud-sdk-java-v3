@@ -100,18 +100,16 @@ public class CreateStreamGraphResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateStreamGraphResponse createStreamGraphResponse = (CreateStreamGraphResponse) o;
-        return Objects.equals(this.isSuccess, createStreamGraphResponse.isSuccess)
-            && Objects.equals(this.message, createStreamGraphResponse.message)
-            && Objects.equals(this.errorCode, createStreamGraphResponse.errorCode)
-            && Objects.equals(this.streamGraph, createStreamGraphResponse.streamGraph);
+        CreateStreamGraphResponse that = (CreateStreamGraphResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.streamGraph, that.streamGraph);
     }
 
     @Override

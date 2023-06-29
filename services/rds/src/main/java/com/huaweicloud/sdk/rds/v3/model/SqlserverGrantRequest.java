@@ -74,16 +74,15 @@ public class SqlserverGrantRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlserverGrantRequest sqlserverGrantRequest = (SqlserverGrantRequest) o;
-        return Objects.equals(this.dbName, sqlserverGrantRequest.dbName)
-            && Objects.equals(this.users, sqlserverGrantRequest.users);
+        SqlserverGrantRequest that = (SqlserverGrantRequest) obj;
+        return Objects.equals(this.dbName, that.dbName) && Objects.equals(this.users, that.users);
     }
 
     @Override

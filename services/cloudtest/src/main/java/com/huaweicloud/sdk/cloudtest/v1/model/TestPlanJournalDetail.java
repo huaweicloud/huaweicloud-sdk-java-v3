@@ -172,19 +172,17 @@ public class TestPlanJournalDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestPlanJournalDetail testPlanJournalDetail = (TestPlanJournalDetail) o;
-        return Objects.equals(this.updated, testPlanJournalDetail.updated)
-            && Objects.equals(this.added, testPlanJournalDetail.added)
-            && Objects.equals(this.deleted, testPlanJournalDetail.deleted)
-            && Objects.equals(this.journalizedType, testPlanJournalDetail.journalizedType)
-            && Objects.equals(this.type, testPlanJournalDetail.type);
+        TestPlanJournalDetail that = (TestPlanJournalDetail) obj;
+        return Objects.equals(this.updated, that.updated) && Objects.equals(this.added, that.added)
+            && Objects.equals(this.deleted, that.deleted) && Objects.equals(this.journalizedType, that.journalizedType)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

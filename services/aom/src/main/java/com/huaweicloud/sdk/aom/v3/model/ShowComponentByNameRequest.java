@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowComponentByNameRequest  {
-
+public class ShowComponentByNameRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_id")
-    
+    @JsonProperty(value = "application_id")
 
     private String applicationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_name")
-    
+    @JsonProperty(value = "component_name")
 
     private String componentName;
 
@@ -34,9 +24,6 @@ public class ShowComponentByNameRequest  {
         this.applicationId = applicationId;
         return this;
     }
-
-    
-
 
     /**
      * 应用id
@@ -50,15 +37,10 @@ public class ShowComponentByNameRequest  {
         this.applicationId = applicationId;
     }
 
-    
-
     public ShowComponentByNameRequest withComponentName(String componentName) {
         this.componentName = componentName;
         return this;
     }
-
-    
-
 
     /**
      * 组件名称
@@ -72,24 +54,24 @@ public class ShowComponentByNameRequest  {
         this.componentName = componentName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowComponentByNameRequest showComponentByNameRequest = (ShowComponentByNameRequest) o;
-        return Objects.equals(this.applicationId, showComponentByNameRequest.applicationId) &&
-            Objects.equals(this.componentName, showComponentByNameRequest.componentName);
+        ShowComponentByNameRequest that = (ShowComponentByNameRequest) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.componentName, that.componentName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(applicationId, componentName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +81,7 @@ public class ShowComponentByNameRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +92,5 @@ public class ShowComponentByNameRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

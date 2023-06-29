@@ -77,17 +77,16 @@ public class UserStatusDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserStatusDTO userStatusDTO = (UserStatusDTO) o;
-        return Objects.equals(this.number, userStatusDTO.number)
-            && Objects.equals(this.regStatus, userStatusDTO.regStatus)
-            && Objects.equals(this.callStatus, userStatusDTO.callStatus);
+        UserStatusDTO that = (UserStatusDTO) obj;
+        return Objects.equals(this.number, that.number) && Objects.equals(this.regStatus, that.regStatus)
+            && Objects.equals(this.callStatus, that.callStatus);
     }
 
     @Override

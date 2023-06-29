@@ -144,20 +144,17 @@ public class SmsSendDetailQueryVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsSendDetailQueryVo smsSendDetailQueryVo = (SmsSendDetailQueryVo) o;
-        return Objects.equals(this.cid, smsSendDetailQueryVo.cid)
-            && Objects.equals(this.msisdn, smsSendDetailQueryVo.msisdn)
-            && Objects.equals(this.sentTime, smsSendDetailQueryVo.sentTime)
-            && Objects.equals(this.receivedTime, smsSendDetailQueryVo.receivedTime)
-            && Objects.equals(this.smsStatus, smsSendDetailQueryVo.smsStatus)
-            && Objects.equals(this.smsContent, smsSendDetailQueryVo.smsContent);
+        SmsSendDetailQueryVo that = (SmsSendDetailQueryVo) obj;
+        return Objects.equals(this.cid, that.cid) && Objects.equals(this.msisdn, that.msisdn)
+            && Objects.equals(this.sentTime, that.sentTime) && Objects.equals(this.receivedTime, that.receivedTime)
+            && Objects.equals(this.smsStatus, that.smsStatus) && Objects.equals(this.smsContent, that.smsContent);
     }
 
     @Override

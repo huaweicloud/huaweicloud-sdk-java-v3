@@ -85,17 +85,16 @@ public class ListAgenciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAgenciesRequest listAgenciesRequest = (ListAgenciesRequest) o;
-        return Objects.equals(this.xSite, listAgenciesRequest.xSite)
-            && Objects.equals(this.xLanguage, listAgenciesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listAgenciesRequest.xTimeZone);
+        ListAgenciesRequest that = (ListAgenciesRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

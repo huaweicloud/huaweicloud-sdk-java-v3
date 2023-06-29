@@ -55,16 +55,16 @@ public class DatabasesList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabasesList databasesList = (DatabasesList) o;
-        return Objects.equals(this.databaseName, databasesList.databaseName)
-            && Objects.equals(this.description, databasesList.description);
+        DatabasesList that = (DatabasesList) obj;
+        return Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

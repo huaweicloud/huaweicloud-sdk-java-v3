@@ -88,22 +88,15 @@ public class RomaInstanceCheckListRespInstances {
             if (value == null) {
                 return null;
             }
-            CpuArchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CpuArchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CpuArchEnum(value));
         }
 
         public static CpuArchEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CpuArchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -236,22 +229,15 @@ public class RomaInstanceCheckListRespInstances {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -328,22 +314,15 @@ public class RomaInstanceCheckListRespInstances {
             if (value == null) {
                 return null;
             }
-            ChargeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeTypeEnum(value));
         }
 
         public static ChargeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -808,37 +787,29 @@ public class RomaInstanceCheckListRespInstances {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RomaInstanceCheckListRespInstances romaInstanceCheckListRespInstances = (RomaInstanceCheckListRespInstances) o;
-        return Objects.equals(this.id, romaInstanceCheckListRespInstances.id)
-            && Objects.equals(this.name, romaInstanceCheckListRespInstances.name)
-            && Objects.equals(this.description, romaInstanceCheckListRespInstances.description)
-            && Objects.equals(this.flavorId, romaInstanceCheckListRespInstances.flavorId)
-            && Objects.equals(this.flavorType, romaInstanceCheckListRespInstances.flavorType)
-            && Objects.equals(this.cpuArch, romaInstanceCheckListRespInstances.cpuArch)
-            && Objects.equals(this.vpcId, romaInstanceCheckListRespInstances.vpcId)
-            && Objects.equals(this.subnetId, romaInstanceCheckListRespInstances.subnetId)
-            && Objects.equals(this.securityGroupId, romaInstanceCheckListRespInstances.securityGroupId)
-            && Objects.equals(this.publicipEnable, romaInstanceCheckListRespInstances.publicipEnable)
-            && Objects.equals(this.publicipId, romaInstanceCheckListRespInstances.publicipId)
-            && Objects.equals(this.publicipAddress, romaInstanceCheckListRespInstances.publicipAddress)
-            && Objects.equals(this.status, romaInstanceCheckListRespInstances.status)
-            && Objects.equals(this.errorCode, romaInstanceCheckListRespInstances.errorCode)
-            && Objects.equals(this.errorMsg, romaInstanceCheckListRespInstances.errorMsg)
-            && Objects.equals(this.chargeType, romaInstanceCheckListRespInstances.chargeType)
-            && Objects.equals(this.projectId, romaInstanceCheckListRespInstances.projectId)
-            && Objects.equals(this.createTime, romaInstanceCheckListRespInstances.createTime)
-            && Objects.equals(this.updateTime, romaInstanceCheckListRespInstances.updateTime)
-            && Objects.equals(this.maintainBegin, romaInstanceCheckListRespInstances.maintainBegin)
-            && Objects.equals(this.maintainEnd, romaInstanceCheckListRespInstances.maintainEnd)
-            && Objects.equals(this.availableZoneIds, romaInstanceCheckListRespInstances.availableZoneIds)
-            && Objects.equals(this.enterpriseProjectId, romaInstanceCheckListRespInstances.enterpriseProjectId);
+        RomaInstanceCheckListRespInstances that = (RomaInstanceCheckListRespInstances) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.flavorType, that.flavorType) && Objects.equals(this.cpuArch, that.cpuArch)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.publicipEnable, that.publicipEnable)
+            && Objects.equals(this.publicipId, that.publicipId)
+            && Objects.equals(this.publicipAddress, that.publicipAddress) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.chargeType, that.chargeType) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd)
+            && Objects.equals(this.availableZoneIds, that.availableZoneIds)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

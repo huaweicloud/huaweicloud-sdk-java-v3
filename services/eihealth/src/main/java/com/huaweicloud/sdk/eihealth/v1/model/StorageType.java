@@ -52,22 +52,15 @@ public class StorageType {
         if (value == null) {
             return null;
         }
-        StorageType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new StorageType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageType(value));
     }
 
     public static StorageType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        StorageType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

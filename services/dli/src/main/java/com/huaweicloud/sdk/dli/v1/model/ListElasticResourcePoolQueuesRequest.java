@@ -99,20 +99,17 @@ public class ListElasticResourcePoolQueuesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListElasticResourcePoolQueuesRequest listElasticResourcePoolQueuesRequest =
-            (ListElasticResourcePoolQueuesRequest) o;
-        return Objects.equals(this.elasticResourcePoolName,
-            listElasticResourcePoolQueuesRequest.elasticResourcePoolName)
-            && Objects.equals(this.limit, listElasticResourcePoolQueuesRequest.limit)
-            && Objects.equals(this.offset, listElasticResourcePoolQueuesRequest.offset)
-            && Objects.equals(this.queueName, listElasticResourcePoolQueuesRequest.queueName);
+        ListElasticResourcePoolQueuesRequest that = (ListElasticResourcePoolQueuesRequest) obj;
+        return Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.queueName, that.queueName);
     }
 
     @Override

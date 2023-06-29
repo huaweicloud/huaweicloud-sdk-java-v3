@@ -99,19 +99,16 @@ public class TransferEnterpriseMultiAccountCouponReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransferEnterpriseMultiAccountCouponReq transferEnterpriseMultiAccountCouponReq =
-            (TransferEnterpriseMultiAccountCouponReq) o;
-        return Objects.equals(this.customerId, transferEnterpriseMultiAccountCouponReq.customerId)
-            && Objects.equals(this.couponId, transferEnterpriseMultiAccountCouponReq.couponId)
-            && Objects.equals(this.amount, transferEnterpriseMultiAccountCouponReq.amount)
-            && Objects.equals(this.transId, transferEnterpriseMultiAccountCouponReq.transId);
+        TransferEnterpriseMultiAccountCouponReq that = (TransferEnterpriseMultiAccountCouponReq) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.couponId, that.couponId)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.transId, that.transId);
     }
 
     @Override

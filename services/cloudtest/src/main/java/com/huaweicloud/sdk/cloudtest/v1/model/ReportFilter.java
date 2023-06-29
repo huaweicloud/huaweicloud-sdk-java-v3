@@ -253,24 +253,20 @@ public class ReportFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReportFilter reportFilter = (ReportFilter) o;
-        return Objects.equals(this.creatorIds, reportFilter.creatorIds)
-            && Objects.equals(this.ownerIds, reportFilter.ownerIds) && Objects.equals(this.ranks, reportFilter.ranks)
-            && Objects.equals(this.releaseIds, reportFilter.releaseIds)
-            && Objects.equals(this.status, reportFilter.status)
-            && Objects.equals(this.moduleIds, reportFilter.moduleIds)
-            && Objects.equals(this.results, reportFilter.results)
-            && Objects.equals(this.labelIds, reportFilter.labelIds)
-            && Objects.equals(this.startTime, reportFilter.startTime)
-            && Objects.equals(this.endTime, reportFilter.endTime)
-            && Objects.equals(this.isAssociateIssue, reportFilter.isAssociateIssue);
+        ReportFilter that = (ReportFilter) obj;
+        return Objects.equals(this.creatorIds, that.creatorIds) && Objects.equals(this.ownerIds, that.ownerIds)
+            && Objects.equals(this.ranks, that.ranks) && Objects.equals(this.releaseIds, that.releaseIds)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.moduleIds, that.moduleIds)
+            && Objects.equals(this.results, that.results) && Objects.equals(this.labelIds, that.labelIds)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.isAssociateIssue, that.isAssociateIssue);
     }
 
     @Override

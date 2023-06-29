@@ -121,19 +121,17 @@ public class ListColumnsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListColumnsRequest listColumnsRequest = (ListColumnsRequest) o;
-        return Objects.equals(this.workspace, listColumnsRequest.workspace)
-            && Objects.equals(this.connectionId, listColumnsRequest.connectionId)
-            && Objects.equals(this.tableId, listColumnsRequest.tableId)
-            && Objects.equals(this.limit, listColumnsRequest.limit)
-            && Objects.equals(this.offset, listColumnsRequest.offset);
+        ListColumnsRequest that = (ListColumnsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.connectionId, that.connectionId)
+            && Objects.equals(this.tableId, that.tableId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

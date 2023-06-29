@@ -81,17 +81,16 @@ public class ListPortResultsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPortResultsRequest listPortResultsRequest = (ListPortResultsRequest) o;
-        return Objects.equals(this.taskId, listPortResultsRequest.taskId)
-            && Objects.equals(this.offset, listPortResultsRequest.offset)
-            && Objects.equals(this.limit, listPortResultsRequest.limit);
+        ListPortResultsRequest that = (ListPortResultsRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

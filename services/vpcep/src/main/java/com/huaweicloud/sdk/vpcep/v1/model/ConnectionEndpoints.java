@@ -49,8 +49,8 @@ public class ConnectionEndpoints {
     private List<QueryError> error = null;
 
     /**
-    * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
-    */
+     * 终端节点的连接状态。 ● pendingAcceptance：待接受 ● creating：创建中 ● accepted：已接受 ● rejected：已拒绝 ● failed：失败 ● deleting：删除中
+     */
     public static final class StatusEnum {
 
         /**
@@ -117,22 +117,15 @@ public class ConnectionEndpoints {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -312,22 +305,18 @@ public class ConnectionEndpoints {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConnectionEndpoints connectionEndpoints = (ConnectionEndpoints) o;
-        return Objects.equals(this.id, connectionEndpoints.id)
-            && Objects.equals(this.markerId, connectionEndpoints.markerId)
-            && Objects.equals(this.createdAt, connectionEndpoints.createdAt)
-            && Objects.equals(this.updatedAt, connectionEndpoints.updatedAt)
-            && Objects.equals(this.domainId, connectionEndpoints.domainId)
-            && Objects.equals(this.error, connectionEndpoints.error)
-            && Objects.equals(this.status, connectionEndpoints.status)
-            && Objects.equals(this.description, connectionEndpoints.description);
+        ConnectionEndpoints that = (ConnectionEndpoints) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.markerId, that.markerId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.error, that.error)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description);
     }
 
     @Override

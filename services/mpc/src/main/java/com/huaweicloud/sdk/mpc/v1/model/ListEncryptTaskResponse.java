@@ -101,17 +101,16 @@ public class ListEncryptTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEncryptTaskResponse listEncryptTaskResponse = (ListEncryptTaskResponse) o;
-        return Objects.equals(this.taskArray, listEncryptTaskResponse.taskArray)
-            && Objects.equals(this.isTruncated, listEncryptTaskResponse.isTruncated)
-            && Objects.equals(this.total, listEncryptTaskResponse.total);
+        ListEncryptTaskResponse that = (ListEncryptTaskResponse) obj;
+        return Objects.equals(this.taskArray, that.taskArray) && Objects.equals(this.isTruncated, that.isTruncated)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

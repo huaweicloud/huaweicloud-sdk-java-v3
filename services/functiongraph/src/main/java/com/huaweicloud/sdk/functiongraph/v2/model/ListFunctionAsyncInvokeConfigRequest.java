@@ -77,18 +77,16 @@ public class ListFunctionAsyncInvokeConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionAsyncInvokeConfigRequest listFunctionAsyncInvokeConfigRequest =
-            (ListFunctionAsyncInvokeConfigRequest) o;
-        return Objects.equals(this.functionUrn, listFunctionAsyncInvokeConfigRequest.functionUrn)
-            && Objects.equals(this.marker, listFunctionAsyncInvokeConfigRequest.marker)
-            && Objects.equals(this.limit, listFunctionAsyncInvokeConfigRequest.limit);
+        ListFunctionAsyncInvokeConfigRequest that = (ListFunctionAsyncInvokeConfigRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

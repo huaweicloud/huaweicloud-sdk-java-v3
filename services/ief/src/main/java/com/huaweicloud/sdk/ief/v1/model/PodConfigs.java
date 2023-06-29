@@ -121,18 +121,17 @@ public class PodConfigs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PodConfigs podConfigs = (PodConfigs) o;
-        return Objects.equals(this.hostNetwork, podConfigs.hostNetwork)
-            && Objects.equals(this.hostPid, podConfigs.hostPid) && Objects.equals(this.migration, podConfigs.migration)
-            && Objects.equals(this.restartPolicy, podConfigs.restartPolicy)
-            && Objects.equals(this.tolerationSeconds, podConfigs.tolerationSeconds);
+        PodConfigs that = (PodConfigs) obj;
+        return Objects.equals(this.hostNetwork, that.hostNetwork) && Objects.equals(this.hostPid, that.hostPid)
+            && Objects.equals(this.migration, that.migration) && Objects.equals(this.restartPolicy, that.restartPolicy)
+            && Objects.equals(this.tolerationSeconds, that.tolerationSeconds);
     }
 
     @Override

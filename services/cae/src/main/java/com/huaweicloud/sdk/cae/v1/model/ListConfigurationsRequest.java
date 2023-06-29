@@ -103,18 +103,18 @@ public class ListConfigurationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigurationsRequest listConfigurationsRequest = (ListConfigurationsRequest) o;
-        return Objects.equals(this.componentId, listConfigurationsRequest.componentId)
-            && Objects.equals(this.xEnvironmentID, listConfigurationsRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, listConfigurationsRequest.xEnterpriseProjectID)
-            && Objects.equals(this.applicationId, listConfigurationsRequest.applicationId);
+        ListConfigurationsRequest that = (ListConfigurationsRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.applicationId, that.applicationId);
     }
 
     @Override

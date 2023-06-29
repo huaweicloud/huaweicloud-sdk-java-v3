@@ -65,16 +65,15 @@ public class CreateProductRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProductRequest createProductRequest = (CreateProductRequest) o;
-        return Objects.equals(this.instanceId, createProductRequest.instanceId)
-            && Objects.equals(this.body, createProductRequest.body);
+        CreateProductRequest that = (CreateProductRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

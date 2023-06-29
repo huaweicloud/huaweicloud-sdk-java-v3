@@ -65,16 +65,15 @@ public class UpdateCertificateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCertificateRequest updateCertificateRequest = (UpdateCertificateRequest) o;
-        return Objects.equals(this.certificateId, updateCertificateRequest.certificateId)
-            && Objects.equals(this.body, updateCertificateRequest.body);
+        UpdateCertificateRequest that = (UpdateCertificateRequest) obj;
+        return Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

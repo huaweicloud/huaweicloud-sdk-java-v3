@@ -44,15 +44,15 @@ public class PushPortalInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushPortalInfoResponse pushPortalInfoResponse = (PushPortalInfoResponse) o;
-        return Objects.equals(this.data, pushPortalInfoResponse.data);
+        PushPortalInfoResponse that = (PushPortalInfoResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

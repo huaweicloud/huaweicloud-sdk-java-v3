@@ -77,17 +77,16 @@ public class CountStandardsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountStandardsRequest countStandardsRequest = (CountStandardsRequest) o;
-        return Objects.equals(this.workspace, countStandardsRequest.workspace)
-            && Objects.equals(this.id, countStandardsRequest.id)
-            && Objects.equals(this.bizType, countStandardsRequest.bizType);
+        CountStandardsRequest that = (CountStandardsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.bizType, that.bizType);
     }
 
     @Override

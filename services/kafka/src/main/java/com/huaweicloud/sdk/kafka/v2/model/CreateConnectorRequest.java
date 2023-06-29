@@ -65,16 +65,15 @@ public class CreateConnectorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConnectorRequest createConnectorRequest = (CreateConnectorRequest) o;
-        return Objects.equals(this.instanceId, createConnectorRequest.instanceId)
-            && Objects.equals(this.body, createConnectorRequest.body);
+        CreateConnectorRequest that = (CreateConnectorRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

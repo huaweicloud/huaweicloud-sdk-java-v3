@@ -77,22 +77,15 @@ public class AddRuleAclDtoRules {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AddressTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AddressTypeEnum(value));
         }
 
         public static AddressTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -164,22 +157,15 @@ public class AddRuleAclDtoRules {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,22 +252,15 @@ public class AddRuleAclDtoRules {
             if (value == null) {
                 return null;
             }
-            LongConnectEnableEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LongConnectEnableEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LongConnectEnableEnum(value));
         }
 
         public static LongConnectEnableEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            LongConnectEnableEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -353,22 +332,15 @@ public class AddRuleAclDtoRules {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
         }
 
         public static DirectionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -697,29 +669,24 @@ public class AddRuleAclDtoRules {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddRuleAclDtoRules addRuleAclDtoRules = (AddRuleAclDtoRules) o;
-        return Objects.equals(this.name, addRuleAclDtoRules.name)
-            && Objects.equals(this.sequence, addRuleAclDtoRules.sequence)
-            && Objects.equals(this.addressType, addRuleAclDtoRules.addressType)
-            && Objects.equals(this.actionType, addRuleAclDtoRules.actionType)
-            && Objects.equals(this.status, addRuleAclDtoRules.status)
-            && Objects.equals(this.longConnectTime, addRuleAclDtoRules.longConnectTime)
-            && Objects.equals(this.longConnectTimeHour, addRuleAclDtoRules.longConnectTimeHour)
-            && Objects.equals(this.longConnectTimeMinute, addRuleAclDtoRules.longConnectTimeMinute)
-            && Objects.equals(this.longConnectTimeSecond, addRuleAclDtoRules.longConnectTimeSecond)
-            && Objects.equals(this.longConnectEnable, addRuleAclDtoRules.longConnectEnable)
-            && Objects.equals(this.description, addRuleAclDtoRules.description)
-            && Objects.equals(this.direction, addRuleAclDtoRules.direction)
-            && Objects.equals(this.source, addRuleAclDtoRules.source)
-            && Objects.equals(this.destination, addRuleAclDtoRules.destination)
-            && Objects.equals(this.service, addRuleAclDtoRules.service);
+        AddRuleAclDtoRules that = (AddRuleAclDtoRules) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.sequence, that.sequence)
+            && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.longConnectTime, that.longConnectTime)
+            && Objects.equals(this.longConnectTimeHour, that.longConnectTimeHour)
+            && Objects.equals(this.longConnectTimeMinute, that.longConnectTimeMinute)
+            && Objects.equals(this.longConnectTimeSecond, that.longConnectTimeSecond)
+            && Objects.equals(this.longConnectEnable, that.longConnectEnable)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.service, that.service);
     }
 
     @Override

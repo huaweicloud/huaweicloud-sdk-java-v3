@@ -68,22 +68,15 @@ public class CreateL7policyReq {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -354,25 +347,21 @@ public class CreateL7policyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateL7policyReq createL7policyReq = (CreateL7policyReq) o;
-        return Objects.equals(this.name, createL7policyReq.name)
-            && Objects.equals(this.action, createL7policyReq.action)
-            && Objects.equals(this.tenantId, createL7policyReq.tenantId)
-            && Objects.equals(this.adminStateUp, createL7policyReq.adminStateUp)
-            && Objects.equals(this.description, createL7policyReq.description)
-            && Objects.equals(this.listenerId, createL7policyReq.listenerId)
-            && Objects.equals(this.redirectPoolId, createL7policyReq.redirectPoolId)
-            && Objects.equals(this.redirectListenerId, createL7policyReq.redirectListenerId)
-            && Objects.equals(this.redirectUrl, createL7policyReq.redirectUrl)
-            && Objects.equals(this.position, createL7policyReq.position)
-            && Objects.equals(this.rules, createL7policyReq.rules);
+        CreateL7policyReq that = (CreateL7policyReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.listenerId, that.listenerId)
+            && Objects.equals(this.redirectPoolId, that.redirectPoolId)
+            && Objects.equals(this.redirectListenerId, that.redirectListenerId)
+            && Objects.equals(this.redirectUrl, that.redirectUrl) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.rules, that.rules);
     }
 
     @Override

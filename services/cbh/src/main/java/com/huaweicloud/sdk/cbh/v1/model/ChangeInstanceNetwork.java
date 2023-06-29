@@ -134,18 +134,16 @@ public class ChangeInstanceNetwork {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeInstanceNetwork changeInstanceNetwork = (ChangeInstanceNetwork) o;
-        return Objects.equals(this.type, changeInstanceNetwork.type)
-            && Objects.equals(this.securityGroups, changeInstanceNetwork.securityGroups)
-            && Objects.equals(this.nics, changeInstanceNetwork.nics)
-            && Objects.equals(this.serverId, changeInstanceNetwork.serverId);
+        ChangeInstanceNetwork that = (ChangeInstanceNetwork) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.nics, that.nics) && Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

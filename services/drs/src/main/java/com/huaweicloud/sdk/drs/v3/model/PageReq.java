@@ -57,15 +57,15 @@ public class PageReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageReq pageReq = (PageReq) o;
-        return Objects.equals(this.curPage, pageReq.curPage) && Objects.equals(this.perPage, pageReq.perPage);
+        PageReq that = (PageReq) obj;
+        return Objects.equals(this.curPage, that.curPage) && Objects.equals(this.perPage, that.perPage);
     }
 
     @Override

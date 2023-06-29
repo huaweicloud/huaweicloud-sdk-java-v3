@@ -145,22 +145,15 @@ public class NovaServer {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -243,8 +236,8 @@ public class NovaServer {
     private List<NovaLink> links = null;
 
     /**
-    * 扩展属性，磁盘配置方式。对镜像启动云服务器生效。  取值范围：  - AUTO: API使用单个分区构建目标磁盘大小的云服务器。 API会自动调整文件系统以适应整个分区。 - MANUAL：API使用源映像中的分区方案和文件系统构建服务器。如果目标磁盘较大，则API不分区剩余的磁盘空间。
-    */
+     * 扩展属性，磁盘配置方式。对镜像启动云服务器生效。  取值范围：  - AUTO: API使用单个分区构建目标磁盘大小的云服务器。 API会自动调整文件系统以适应整个分区。 - MANUAL：API使用源映像中的分区方案和文件系统构建服务器。如果目标磁盘较大，则API不分区剩余的磁盘空间。
+     */
     public static final class OsDCFDiskConfigEnum {
 
         /**
@@ -287,22 +280,15 @@ public class NovaServer {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsDCFDiskConfigEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsDCFDiskConfigEnum(value));
         }
 
         public static OsDCFDiskConfigEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -466,22 +452,15 @@ public class NovaServer {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEXTSTSTaskStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEXTSTSTaskStateEnum(value));
         }
 
         public static OsEXTSTSTaskStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -608,22 +587,15 @@ public class NovaServer {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEXTSTSVmStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEXTSTSVmStateEnum(value));
         }
 
         public static OsEXTSTSVmStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -727,22 +699,15 @@ public class NovaServer {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostStatusEnum(value));
         }
 
         public static HostStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1701,49 +1666,46 @@ public class NovaServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaServer novaServer = (NovaServer) o;
-        return Objects.equals(this.name, novaServer.name) && Objects.equals(this.id, novaServer.id)
-            && Objects.equals(this.status, novaServer.status) && Objects.equals(this.created, novaServer.created)
-            && Objects.equals(this.updated, novaServer.updated) && Objects.equals(this.flavor, novaServer.flavor)
-            && Objects.equals(this.image, novaServer.image) && Objects.equals(this.tenantId, novaServer.tenantId)
-            && Objects.equals(this.keyName, novaServer.keyName) && Objects.equals(this.userId, novaServer.userId)
-            && Objects.equals(this.metadata, novaServer.metadata) && Objects.equals(this.hostId, novaServer.hostId)
-            && Objects.equals(this.addresses, novaServer.addresses)
-            && Objects.equals(this.securityGroups, novaServer.securityGroups)
-            && Objects.equals(this.links, novaServer.links)
-            && Objects.equals(this.osDCFDiskConfig, novaServer.osDCFDiskConfig)
-            && Objects.equals(this.osEXTAZAvailabilityZone, novaServer.osEXTAZAvailabilityZone)
-            && Objects.equals(this.osEXTSRVATTRHost, novaServer.osEXTSRVATTRHost)
-            && Objects.equals(this.osEXTSRVATTRHypervisorHostname, novaServer.osEXTSRVATTRHypervisorHostname)
-            && Objects.equals(this.osEXTSRVATTRInstanceName, novaServer.osEXTSRVATTRInstanceName)
-            && Objects.equals(this.osEXTSTSPowerState, novaServer.osEXTSTSPowerState)
-            && Objects.equals(this.osEXTSTSTaskState, novaServer.osEXTSTSTaskState)
-            && Objects.equals(this.osEXTSTSVmState, novaServer.osEXTSTSVmState)
-            && Objects.equals(this.osSRVUSGLaunchedAt, novaServer.osSRVUSGLaunchedAt)
-            && Objects.equals(this.osSRVUSGTerminatedAt, novaServer.osSRVUSGTerminatedAt)
-            && Objects.equals(this.osExtendedVolumesVolumesAttached, novaServer.osExtendedVolumesVolumesAttached)
-            && Objects.equals(this.fault, novaServer.fault) && Objects.equals(this.description, novaServer.description)
-            && Objects.equals(this.hostStatus, novaServer.hostStatus)
-            && Objects.equals(this.osEXTSRVATTRHostname, novaServer.osEXTSRVATTRHostname)
-            && Objects.equals(this.osEXTSRVATTRReservationId, novaServer.osEXTSRVATTRReservationId)
-            && Objects.equals(this.osEXTSRVATTRLaunchIndex, novaServer.osEXTSRVATTRLaunchIndex)
-            && Objects.equals(this.osEXTSRVATTRKernelId, novaServer.osEXTSRVATTRKernelId)
-            && Objects.equals(this.osEXTSRVATTRRamdiskId, novaServer.osEXTSRVATTRRamdiskId)
-            && Objects.equals(this.osEXTSRVATTRRootDeviceName, novaServer.osEXTSRVATTRRootDeviceName)
-            && Objects.equals(this.osEXTSRVATTRUserData, novaServer.osEXTSRVATTRUserData)
-            && Objects.equals(this.tags, novaServer.tags) && Objects.equals(this.locked, novaServer.locked)
-            && Objects.equals(this.accessIPv4, novaServer.accessIPv4)
-            && Objects.equals(this.accessIPv6, novaServer.accessIPv6)
-            && Objects.equals(this.configDrive, novaServer.configDrive)
-            && Objects.equals(this.progress, novaServer.progress)
-            && Objects.equals(this.osSchedulerHints, novaServer.osSchedulerHints);
+        NovaServer that = (NovaServer) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.addresses, that.addresses)
+            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.osDCFDiskConfig, that.osDCFDiskConfig)
+            && Objects.equals(this.osEXTAZAvailabilityZone, that.osEXTAZAvailabilityZone)
+            && Objects.equals(this.osEXTSRVATTRHost, that.osEXTSRVATTRHost)
+            && Objects.equals(this.osEXTSRVATTRHypervisorHostname, that.osEXTSRVATTRHypervisorHostname)
+            && Objects.equals(this.osEXTSRVATTRInstanceName, that.osEXTSRVATTRInstanceName)
+            && Objects.equals(this.osEXTSTSPowerState, that.osEXTSTSPowerState)
+            && Objects.equals(this.osEXTSTSTaskState, that.osEXTSTSTaskState)
+            && Objects.equals(this.osEXTSTSVmState, that.osEXTSTSVmState)
+            && Objects.equals(this.osSRVUSGLaunchedAt, that.osSRVUSGLaunchedAt)
+            && Objects.equals(this.osSRVUSGTerminatedAt, that.osSRVUSGTerminatedAt)
+            && Objects.equals(this.osExtendedVolumesVolumesAttached, that.osExtendedVolumesVolumesAttached)
+            && Objects.equals(this.fault, that.fault) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.hostStatus, that.hostStatus)
+            && Objects.equals(this.osEXTSRVATTRHostname, that.osEXTSRVATTRHostname)
+            && Objects.equals(this.osEXTSRVATTRReservationId, that.osEXTSRVATTRReservationId)
+            && Objects.equals(this.osEXTSRVATTRLaunchIndex, that.osEXTSRVATTRLaunchIndex)
+            && Objects.equals(this.osEXTSRVATTRKernelId, that.osEXTSRVATTRKernelId)
+            && Objects.equals(this.osEXTSRVATTRRamdiskId, that.osEXTSRVATTRRamdiskId)
+            && Objects.equals(this.osEXTSRVATTRRootDeviceName, that.osEXTSRVATTRRootDeviceName)
+            && Objects.equals(this.osEXTSRVATTRUserData, that.osEXTSRVATTRUserData)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.locked, that.locked)
+            && Objects.equals(this.accessIPv4, that.accessIPv4) && Objects.equals(this.accessIPv6, that.accessIPv6)
+            && Objects.equals(this.configDrive, that.configDrive) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.osSchedulerHints, that.osSchedulerHints);
     }
 
     @Override

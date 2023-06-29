@@ -75,16 +75,15 @@ public class ShowJobListByProjectIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobListByProjectIdResponse showJobListByProjectIdResponse = (ShowJobListByProjectIdResponse) o;
-        return Objects.equals(this.jobs, showJobListByProjectIdResponse.jobs)
-            && Objects.equals(this.total, showJobListByProjectIdResponse.total);
+        ShowJobListByProjectIdResponse that = (ShowJobListByProjectIdResponse) obj;
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.total, that.total);
     }
 
     @Override

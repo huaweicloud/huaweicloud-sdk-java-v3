@@ -121,17 +121,16 @@ public class CreateDockJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDockJobReq createDockJobReq = (CreateDockJobReq) o;
-        return Objects.equals(this.basicInfo, createDockJobReq.basicInfo)
-            && Objects.equals(this.receptors, createDockJobReq.receptors)
-            && Objects.equals(this.ligands, createDockJobReq.ligands);
+        CreateDockJobReq that = (CreateDockJobReq) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptors, that.receptors)
+            && Objects.equals(this.ligands, that.ligands);
     }
 
     @Override

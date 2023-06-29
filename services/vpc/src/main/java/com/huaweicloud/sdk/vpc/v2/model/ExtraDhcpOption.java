@@ -60,22 +60,15 @@ public class ExtraDhcpOption {
             if (value == null) {
                 return null;
             }
-            OptNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OptNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OptNameEnum(value));
         }
 
         public static OptNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OptNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class ExtraDhcpOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtraDhcpOption extraDhcpOption = (ExtraDhcpOption) o;
-        return Objects.equals(this.optName, extraDhcpOption.optName)
-            && Objects.equals(this.optValue, extraDhcpOption.optValue);
+        ExtraDhcpOption that = (ExtraDhcpOption) obj;
+        return Objects.equals(this.optName, that.optName) && Objects.equals(this.optValue, that.optValue);
     }
 
     @Override

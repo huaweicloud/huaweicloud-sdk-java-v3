@@ -96,17 +96,16 @@ public class OpExtendInfoRemoveResources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpExtendInfoRemoveResources opExtendInfoRemoveResources = (OpExtendInfoRemoveResources) o;
-        return Objects.equals(this.failCount, opExtendInfoRemoveResources.failCount)
-            && Objects.equals(this.totalCount, opExtendInfoRemoveResources.totalCount)
-            && Objects.equals(this.resources, opExtendInfoRemoveResources.resources);
+        OpExtendInfoRemoveResources that = (OpExtendInfoRemoveResources) obj;
+        return Objects.equals(this.failCount, that.failCount) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.resources, that.resources);
     }
 
     @Override

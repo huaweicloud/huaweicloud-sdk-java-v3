@@ -144,19 +144,18 @@ public class ShowInstanceParamResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceParamResponse showInstanceParamResponse = (ShowInstanceParamResponse) o;
-        return Objects.equals(this.updated, showInstanceParamResponse.updated)
-            && Objects.equals(this.configurationParameter, showInstanceParamResponse.configurationParameter)
-            && Objects.equals(this.offset, showInstanceParamResponse.offset)
-            && Objects.equals(this.limit, showInstanceParamResponse.limit)
-            && Objects.equals(this.total, showInstanceParamResponse.total);
+        ShowInstanceParamResponse that = (ShowInstanceParamResponse) obj;
+        return Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.configurationParameter, that.configurationParameter)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

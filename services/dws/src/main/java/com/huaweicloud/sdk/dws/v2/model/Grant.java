@@ -55,15 +55,15 @@ public class Grant {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Grant grant = (Grant) o;
-        return Objects.equals(this.permission, grant.permission) && Objects.equals(this.grantWith, grant.grantWith);
+        Grant that = (Grant) obj;
+        return Objects.equals(this.permission, that.permission) && Objects.equals(this.grantWith, that.grantWith);
     }
 
     @Override

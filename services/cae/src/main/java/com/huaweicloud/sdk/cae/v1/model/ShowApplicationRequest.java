@@ -81,17 +81,17 @@ public class ShowApplicationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApplicationRequest showApplicationRequest = (ShowApplicationRequest) o;
-        return Objects.equals(this.applicationId, showApplicationRequest.applicationId)
-            && Objects.equals(this.xEnvironmentID, showApplicationRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, showApplicationRequest.xEnterpriseProjectID);
+        ShowApplicationRequest that = (ShowApplicationRequest) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID);
     }
 
     @Override

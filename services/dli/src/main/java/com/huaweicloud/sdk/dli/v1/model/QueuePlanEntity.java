@@ -118,22 +118,15 @@ public class QueuePlanEntity {
             if (value == null) {
                 return null;
             }
-            RepeatDayEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RepeatDayEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RepeatDayEnum(value));
         }
 
         public static RepeatDayEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RepeatDayEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -366,23 +359,20 @@ public class QueuePlanEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueuePlanEntity queuePlanEntity = (QueuePlanEntity) o;
-        return Objects.equals(this.id, queuePlanEntity.id) && Objects.equals(this.planName, queuePlanEntity.planName)
-            && Objects.equals(this.targetCu, queuePlanEntity.targetCu)
-            && Objects.equals(this.startHour, queuePlanEntity.startHour)
-            && Objects.equals(this.startMinute, queuePlanEntity.startMinute)
-            && Objects.equals(this.repeatDay, queuePlanEntity.repeatDay)
-            && Objects.equals(this.validDateBegin, queuePlanEntity.validDateBegin)
-            && Objects.equals(this.validDateEnd, queuePlanEntity.validDateEnd)
-            && Objects.equals(this.activate, queuePlanEntity.activate)
-            && Objects.equals(this.lastExecuteTime, queuePlanEntity.lastExecuteTime);
+        QueuePlanEntity that = (QueuePlanEntity) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.planName, that.planName)
+            && Objects.equals(this.targetCu, that.targetCu) && Objects.equals(this.startHour, that.startHour)
+            && Objects.equals(this.startMinute, that.startMinute) && Objects.equals(this.repeatDay, that.repeatDay)
+            && Objects.equals(this.validDateBegin, that.validDateBegin)
+            && Objects.equals(this.validDateEnd, that.validDateEnd) && Objects.equals(this.activate, that.activate)
+            && Objects.equals(this.lastExecuteTime, that.lastExecuteTime);
     }
 
     @Override

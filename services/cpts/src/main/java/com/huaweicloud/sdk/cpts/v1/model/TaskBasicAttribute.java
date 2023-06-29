@@ -272,25 +272,20 @@ public class TaskBasicAttribute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskBasicAttribute taskBasicAttribute = (TaskBasicAttribute) o;
-        return Objects.equals(this.branchId, taskBasicAttribute.branchId)
-            && Objects.equals(this.branchName, taskBasicAttribute.branchName)
-            && Objects.equals(this.createBy, taskBasicAttribute.createBy)
-            && Objects.equals(this.iterationUri, taskBasicAttribute.iterationUri)
-            && Objects.equals(this.projectId, taskBasicAttribute.projectId)
-            && Objects.equals(this.protocols, taskBasicAttribute.protocols)
-            && Objects.equals(this.serviceId, taskBasicAttribute.serviceId)
-            && Objects.equals(this.stage, taskBasicAttribute.stage)
-            && Objects.equals(this.stageName, taskBasicAttribute.stageName)
-            && Objects.equals(this.taskId, taskBasicAttribute.taskId)
-            && Objects.equals(this.versionUri, taskBasicAttribute.versionUri);
+        TaskBasicAttribute that = (TaskBasicAttribute) obj;
+        return Objects.equals(this.branchId, that.branchId) && Objects.equals(this.branchName, that.branchName)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.iterationUri, that.iterationUri)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.protocols, that.protocols)
+            && Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.stage, that.stage)
+            && Objects.equals(this.stageName, that.stageName) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.versionUri, that.versionUri);
     }
 
     @Override

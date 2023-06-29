@@ -121,17 +121,17 @@ public class FlavorInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorInstance flavorInstance = (FlavorInstance) o;
-        return Objects.equals(this.id, flavorInstance.id) && Objects.equals(this.name, flavorInstance.name)
-            && Objects.equals(this.disk, flavorInstance.disk) && Objects.equals(this.ram, flavorInstance.ram)
-            && Objects.equals(this.vcpus, flavorInstance.vcpus);
+        FlavorInstance that = (FlavorInstance) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.vcpus, that.vcpus);
     }
 
     @Override

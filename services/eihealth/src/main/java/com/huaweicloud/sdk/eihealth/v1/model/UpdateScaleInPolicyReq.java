@@ -179,21 +179,20 @@ public class UpdateScaleInPolicyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateScaleInPolicyReq updateScaleInPolicyReq = (UpdateScaleInPolicyReq) o;
-        return Objects.equals(this.idleTime, updateScaleInPolicyReq.idleTime)
-            && Objects.equals(this.threshold, updateScaleInPolicyReq.threshold)
-            && Objects.equals(this.delayAfterAdd, updateScaleInPolicyReq.delayAfterAdd)
-            && Objects.equals(this.delayAfterDelete, updateScaleInPolicyReq.delayAfterDelete)
-            && Objects.equals(this.delayAfterFailure, updateScaleInPolicyReq.delayAfterFailure)
-            && Objects.equals(this.maxNodesBatchDeletion, updateScaleInPolicyReq.maxNodesBatchDeletion)
-            && Objects.equals(this.checkInterval, updateScaleInPolicyReq.checkInterval);
+        UpdateScaleInPolicyReq that = (UpdateScaleInPolicyReq) obj;
+        return Objects.equals(this.idleTime, that.idleTime) && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.delayAfterAdd, that.delayAfterAdd)
+            && Objects.equals(this.delayAfterDelete, that.delayAfterDelete)
+            && Objects.equals(this.delayAfterFailure, that.delayAfterFailure)
+            && Objects.equals(this.maxNodesBatchDeletion, that.maxNodesBatchDeletion)
+            && Objects.equals(this.checkInterval, that.checkInterval);
     }
 
     @Override

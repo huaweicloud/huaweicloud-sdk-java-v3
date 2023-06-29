@@ -222,22 +222,22 @@ public class DeepLearingParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeepLearingParam deepLearingParam = (DeepLearingParam) o;
-        return Objects.equals(this.initialParameters, deepLearingParam.initialParameters)
-            && Objects.equals(this.optimizeParameters, deepLearingParam.optimizeParameters)
-            && Objects.equals(this.regularParameters, deepLearingParam.regularParameters)
-            && Objects.equals(this.maxIterations, deepLearingParam.maxIterations)
-            && Objects.equals(this.earlyStopIterations, deepLearingParam.earlyStopIterations)
-            && Objects.equals(this.batchSize, deepLearingParam.batchSize)
-            && Objects.equals(this.datasetSplitParts, deepLearingParam.datasetSplitParts)
-            && Objects.equals(this.restartTrain, deepLearingParam.restartTrain);
+        DeepLearingParam that = (DeepLearingParam) obj;
+        return Objects.equals(this.initialParameters, that.initialParameters)
+            && Objects.equals(this.optimizeParameters, that.optimizeParameters)
+            && Objects.equals(this.regularParameters, that.regularParameters)
+            && Objects.equals(this.maxIterations, that.maxIterations)
+            && Objects.equals(this.earlyStopIterations, that.earlyStopIterations)
+            && Objects.equals(this.batchSize, that.batchSize)
+            && Objects.equals(this.datasetSplitParts, that.datasetSplitParts)
+            && Objects.equals(this.restartTrain, that.restartTrain);
     }
 
     @Override

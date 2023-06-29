@@ -77,17 +77,16 @@ public class ResourceCountsFilters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceCountsFilters resourceCountsFilters = (ResourceCountsFilters) o;
-        return Objects.equals(this.accountId, resourceCountsFilters.accountId)
-            && Objects.equals(this.resourceType, resourceCountsFilters.resourceType)
-            && Objects.equals(this.regionId, resourceCountsFilters.regionId);
+        ResourceCountsFilters that = (ResourceCountsFilters) obj;
+        return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

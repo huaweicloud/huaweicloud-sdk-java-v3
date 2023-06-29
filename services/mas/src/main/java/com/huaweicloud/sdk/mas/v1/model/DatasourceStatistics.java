@@ -55,16 +55,15 @@ public class DatasourceStatistics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatasourceStatistics datasourceStatistics = (DatasourceStatistics) o;
-        return Objects.equals(this.count, datasourceStatistics.count)
-            && Objects.equals(this.mysqlCount, datasourceStatistics.mysqlCount);
+        DatasourceStatistics that = (DatasourceStatistics) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.mysqlCount, that.mysqlCount);
     }
 
     @Override

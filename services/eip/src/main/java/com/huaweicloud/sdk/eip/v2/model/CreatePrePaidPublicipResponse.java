@@ -88,17 +88,16 @@ public class CreatePrePaidPublicipResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrePaidPublicipResponse createPrePaidPublicipResponse = (CreatePrePaidPublicipResponse) o;
-        return Objects.equals(this.publicip, createPrePaidPublicipResponse.publicip)
-            && Objects.equals(this.orderId, createPrePaidPublicipResponse.orderId)
-            && Objects.equals(this.publicipId, createPrePaidPublicipResponse.publicipId);
+        CreatePrePaidPublicipResponse that = (CreatePrePaidPublicipResponse) obj;
+        return Objects.equals(this.publicip, that.publicip) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.publicipId, that.publicipId);
     }
 
     @Override

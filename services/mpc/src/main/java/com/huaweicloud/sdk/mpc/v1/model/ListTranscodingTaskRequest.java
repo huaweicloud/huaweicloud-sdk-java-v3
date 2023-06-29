@@ -190,21 +190,18 @@ public class ListTranscodingTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTranscodingTaskRequest listTranscodingTaskRequest = (ListTranscodingTaskRequest) o;
-        return Objects.equals(this.xLanguage, listTranscodingTaskRequest.xLanguage)
-            && Objects.equals(this.taskId, listTranscodingTaskRequest.taskId)
-            && Objects.equals(this.status, listTranscodingTaskRequest.status)
-            && Objects.equals(this.startTime, listTranscodingTaskRequest.startTime)
-            && Objects.equals(this.endTime, listTranscodingTaskRequest.endTime)
-            && Objects.equals(this.page, listTranscodingTaskRequest.page)
-            && Objects.equals(this.size, listTranscodingTaskRequest.size);
+        ListTranscodingTaskRequest that = (ListTranscodingTaskRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

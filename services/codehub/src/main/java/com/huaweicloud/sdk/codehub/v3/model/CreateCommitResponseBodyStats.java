@@ -77,17 +77,16 @@ public class CreateCommitResponseBodyStats {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCommitResponseBodyStats createCommitResponseBodyStats = (CreateCommitResponseBodyStats) o;
-        return Objects.equals(this.additions, createCommitResponseBodyStats.additions)
-            && Objects.equals(this.deletions, createCommitResponseBodyStats.deletions)
-            && Objects.equals(this.total, createCommitResponseBodyStats.total);
+        CreateCommitResponseBodyStats that = (CreateCommitResponseBodyStats) obj;
+        return Objects.equals(this.additions, that.additions) && Objects.equals(this.deletions, that.deletions)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

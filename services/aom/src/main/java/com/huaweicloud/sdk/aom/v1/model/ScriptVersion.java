@@ -1,121 +1,97 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.ReferenceInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 脚本版本的详细信息。
  */
-public class ScriptVersion  {
-
+public class ScriptVersion {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
 
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_by")
-    
+    @JsonProperty(value = "create_by")
 
     private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_reference_number")
-    
+    @JsonProperty(value = "job_reference_number")
 
     private Integer jobReferenceNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="script_id")
-    
+    @JsonProperty(value = "script_id")
 
     private String scriptId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="script_language")
-    
+    @JsonProperty(value = "script_language")
 
     private String scriptLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_desc")
-    
+    @JsonProperty(value = "status_desc")
 
     private Integer statusDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_by")
-    
+    @JsonProperty(value = "update_by")
 
     private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_id")
-    
+    @JsonProperty(value = "version_id")
 
     private String versionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_number")
-    
+    @JsonProperty(value = "version_number")
 
     private String versionNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_reference_name")
-    
+    @JsonProperty(value = "job_reference_name")
+
     private List<ReferenceInfo> jobReferenceName = null;
-    
+
     public ScriptVersion withContent(String content) {
         this.content = content;
         return this;
     }
-
-    
-
 
     /**
      * 脚本内容，脚本内容不能为空
@@ -129,15 +105,10 @@ public class ScriptVersion  {
         this.content = content;
     }
 
-    
-
     public ScriptVersion withCreateBy(String createBy) {
         this.createBy = createBy;
         return this;
     }
-
-    
-
 
     /**
      * 创建人，比如为：张三
@@ -151,15 +122,10 @@ public class ScriptVersion  {
         this.createBy = createBy;
     }
 
-    
-
     public ScriptVersion withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -175,15 +141,10 @@ public class ScriptVersion  {
         this.createTime = createTime;
     }
 
-    
-
     public ScriptVersion withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目id
@@ -197,15 +158,10 @@ public class ScriptVersion  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ScriptVersion withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 脚本名称，支持数字，下划线，大小写字母 ,中文
@@ -219,15 +175,10 @@ public class ScriptVersion  {
         this.name = name;
     }
 
-    
-
     public ScriptVersion withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * 租户从IAM申请到的projectid，一般为32位字符串
@@ -241,15 +192,10 @@ public class ScriptVersion  {
         this.projectId = projectId;
     }
 
-    
-
     public ScriptVersion withJobReferenceNumber(Integer jobReferenceNumber) {
         this.jobReferenceNumber = jobReferenceNumber;
         return this;
     }
-
-    
-
 
     /**
      * 脚本版本的引用次数，脚本版本被作业引用的次数。默认是0次,引用次数为非负整数，不能出现负数
@@ -265,15 +211,10 @@ public class ScriptVersion  {
         this.jobReferenceNumber = jobReferenceNumber;
     }
 
-    
-
     public ScriptVersion withScriptId(String scriptId) {
         this.scriptId = scriptId;
         return this;
     }
-
-    
-
 
     /**
      * 脚本id，根据UUID.randomUUID生成。
@@ -287,15 +228,10 @@ public class ScriptVersion  {
         this.scriptId = scriptId;
     }
 
-    
-
     public ScriptVersion withScriptLanguage(String scriptLanguage) {
         this.scriptLanguage = scriptLanguage;
         return this;
     }
-
-    
-
 
     /**
      * 脚本语言，目前支持四种，分别是：SHELL BAT PYTHON POWER_SHELL
@@ -309,15 +245,10 @@ public class ScriptVersion  {
         this.scriptLanguage = scriptLanguage;
     }
 
-    
-
     public ScriptVersion withStatusDesc(Integer statusDesc) {
         this.statusDesc = statusDesc;
         return this;
     }
-
-    
-
 
     /**
      * 状态说明  0代表 未上线，1代表已上线  2代表已下线   3代表已禁用
@@ -333,15 +264,10 @@ public class ScriptVersion  {
         this.statusDesc = statusDesc;
     }
 
-    
-
     public ScriptVersion withUpdateBy(String updateBy) {
         this.updateBy = updateBy;
         return this;
     }
-
-    
-
 
     /**
      * 修改人
@@ -355,15 +281,10 @@ public class ScriptVersion  {
         this.updateBy = updateBy;
     }
 
-    
-
     public ScriptVersion withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 实体的最后更新时间戳。 注意：执行创建/修改/删除操作时，update_time将更新。
@@ -379,15 +300,10 @@ public class ScriptVersion  {
         this.updateTime = updateTime;
     }
 
-    
-
     public ScriptVersion withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
     }
-
-    
-
 
     /**
      * 版本id，根据UUID.randomUUID生成。
@@ -401,15 +317,10 @@ public class ScriptVersion  {
         this.versionId = versionId;
     }
 
-    
-
     public ScriptVersion withVersionNumber(String versionNumber) {
         this.versionNumber = versionNumber;
         return this;
     }
-
-    
-
 
     /**
      * 脚本版本号，支持数字，下划线，大小写字母和小数点
@@ -423,16 +334,13 @@ public class ScriptVersion  {
         this.versionNumber = versionNumber;
     }
 
-    
-
     public ScriptVersion withJobReferenceName(List<ReferenceInfo> jobReferenceName) {
         this.jobReferenceName = jobReferenceName;
         return this;
     }
 
-    
     public ScriptVersion addJobReferenceNameItem(ReferenceInfo jobReferenceNameItem) {
-        if(this.jobReferenceName == null) {
+        if (this.jobReferenceName == null) {
             this.jobReferenceName = new ArrayList<>();
         }
         this.jobReferenceName.add(jobReferenceNameItem);
@@ -440,7 +348,7 @@ public class ScriptVersion  {
     }
 
     public ScriptVersion withJobReferenceName(Consumer<List<ReferenceInfo>> jobReferenceNameSetter) {
-        if(this.jobReferenceName == null) {
+        if (this.jobReferenceName == null) {
             this.jobReferenceName = new ArrayList<>();
         }
         jobReferenceNameSetter.accept(this.jobReferenceName);
@@ -459,37 +367,46 @@ public class ScriptVersion  {
         this.jobReferenceName = jobReferenceName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScriptVersion scriptVersion = (ScriptVersion) o;
-        return Objects.equals(this.content, scriptVersion.content) &&
-            Objects.equals(this.createBy, scriptVersion.createBy) &&
-            Objects.equals(this.createTime, scriptVersion.createTime) &&
-            Objects.equals(this.enterpriseProjectId, scriptVersion.enterpriseProjectId) &&
-            Objects.equals(this.name, scriptVersion.name) &&
-            Objects.equals(this.projectId, scriptVersion.projectId) &&
-            Objects.equals(this.jobReferenceNumber, scriptVersion.jobReferenceNumber) &&
-            Objects.equals(this.scriptId, scriptVersion.scriptId) &&
-            Objects.equals(this.scriptLanguage, scriptVersion.scriptLanguage) &&
-            Objects.equals(this.statusDesc, scriptVersion.statusDesc) &&
-            Objects.equals(this.updateBy, scriptVersion.updateBy) &&
-            Objects.equals(this.updateTime, scriptVersion.updateTime) &&
-            Objects.equals(this.versionId, scriptVersion.versionId) &&
-            Objects.equals(this.versionNumber, scriptVersion.versionNumber) &&
-            Objects.equals(this.jobReferenceName, scriptVersion.jobReferenceName);
+        ScriptVersion that = (ScriptVersion) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.jobReferenceNumber, that.jobReferenceNumber)
+            && Objects.equals(this.scriptId, that.scriptId) && Objects.equals(this.scriptLanguage, that.scriptLanguage)
+            && Objects.equals(this.statusDesc, that.statusDesc) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.versionNumber, that.versionNumber)
+            && Objects.equals(this.jobReferenceName, that.jobReferenceName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(content, createBy, createTime, enterpriseProjectId, name, projectId, jobReferenceNumber, scriptId, scriptLanguage, statusDesc, updateBy, updateTime, versionId, versionNumber, jobReferenceName);
+        return Objects.hash(content,
+            createBy,
+            createTime,
+            enterpriseProjectId,
+            name,
+            projectId,
+            jobReferenceNumber,
+            scriptId,
+            scriptLanguage,
+            statusDesc,
+            updateBy,
+            updateTime,
+            versionId,
+            versionNumber,
+            jobReferenceName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -512,6 +429,7 @@ public class ScriptVersion  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -522,8 +440,5 @@ public class ScriptVersion  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

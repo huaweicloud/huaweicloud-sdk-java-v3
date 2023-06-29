@@ -165,21 +165,20 @@ public class SmsAppAddReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsAppAddReq smsAppAddReq = (SmsAppAddReq) o;
-        return Objects.equals(this.appName, smsAppAddReq.appName)
-            && Objects.equals(this.createSignAndTemplate, smsAppAddReq.createSignAndTemplate)
-            && Objects.equals(this.enterpriseProjectId, smsAppAddReq.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, smsAppAddReq.enterpriseProjectName)
-            && Objects.equals(this.region, smsAppAddReq.region)
-            && Objects.equals(this.upLinkAddr, smsAppAddReq.upLinkAddr)
-            && Objects.equals(this.showSecret, smsAppAddReq.showSecret);
+        SmsAppAddReq that = (SmsAppAddReq) obj;
+        return Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.createSignAndTemplate, that.createSignAndTemplate)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.upLinkAddr, that.upLinkAddr)
+            && Objects.equals(this.showSecret, that.showSecret);
     }
 
     @Override

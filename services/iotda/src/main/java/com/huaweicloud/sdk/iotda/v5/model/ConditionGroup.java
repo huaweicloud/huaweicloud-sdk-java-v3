@@ -105,17 +105,16 @@ public class ConditionGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConditionGroup conditionGroup = (ConditionGroup) o;
-        return Objects.equals(this.conditions, conditionGroup.conditions)
-            && Objects.equals(this.logic, conditionGroup.logic)
-            && Objects.equals(this.timeRange, conditionGroup.timeRange);
+        ConditionGroup that = (ConditionGroup) obj;
+        return Objects.equals(this.conditions, that.conditions) && Objects.equals(this.logic, that.logic)
+            && Objects.equals(this.timeRange, that.timeRange);
     }
 
     @Override

@@ -63,22 +63,15 @@ public class BackupFilesBody {
             if (value == null) {
                 return null;
             }
-            FileSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FileSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FileSourceEnum(value));
         }
 
         public static FileSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FileSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -200,18 +193,16 @@ public class BackupFilesBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupFilesBody backupFilesBody = (BackupFilesBody) o;
-        return Objects.equals(this.fileSource, backupFilesBody.fileSource)
-            && Objects.equals(this.bucketName, backupFilesBody.bucketName)
-            && Objects.equals(this.files, backupFilesBody.files)
-            && Objects.equals(this.backupId, backupFilesBody.backupId);
+        BackupFilesBody that = (BackupFilesBody) obj;
+        return Objects.equals(this.fileSource, that.fileSource) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.files, that.files) && Objects.equals(this.backupId, that.backupId);
     }
 
     @Override

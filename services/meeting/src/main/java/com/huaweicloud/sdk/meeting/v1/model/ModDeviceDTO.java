@@ -71,22 +71,15 @@ public class ModDeviceDTO {
             if (value == null) {
                 return null;
             }
-            PrjCodeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PrjCodeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrjCodeModeEnum(value));
         }
 
         public static PrjCodeModeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PrjCodeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,22 +171,15 @@ public class ModDeviceDTO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -352,20 +338,18 @@ public class ModDeviceDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModDeviceDTO modDeviceDTO = (ModDeviceDTO) o;
-        return Objects.equals(this.name, modDeviceDTO.name)
-            && Objects.equals(this.prjCodeMode, modDeviceDTO.prjCodeMode)
-            && Objects.equals(this.deptCode, modDeviceDTO.deptCode) && Objects.equals(this.phone, modDeviceDTO.phone)
-            && Objects.equals(this.country, modDeviceDTO.country) && Objects.equals(this.email, modDeviceDTO.email)
-            && Objects.equals(this.description, modDeviceDTO.description)
-            && Objects.equals(this.status, modDeviceDTO.status);
+        ModDeviceDTO that = (ModDeviceDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.prjCodeMode, that.prjCodeMode)
+            && Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status);
     }
 
     @Override

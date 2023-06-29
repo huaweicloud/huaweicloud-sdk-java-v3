@@ -143,20 +143,17 @@ public class BlackWhiteListResponseDataRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BlackWhiteListResponseDataRecords blackWhiteListResponseDataRecords = (BlackWhiteListResponseDataRecords) o;
-        return Objects.equals(this.listId, blackWhiteListResponseDataRecords.listId)
-            && Objects.equals(this.direction, blackWhiteListResponseDataRecords.direction)
-            && Objects.equals(this.addressType, blackWhiteListResponseDataRecords.addressType)
-            && Objects.equals(this.address, blackWhiteListResponseDataRecords.address)
-            && Objects.equals(this.protocol, blackWhiteListResponseDataRecords.protocol)
-            && Objects.equals(this.port, blackWhiteListResponseDataRecords.port);
+        BlackWhiteListResponseDataRecords that = (BlackWhiteListResponseDataRecords) obj;
+        return Objects.equals(this.listId, that.listId) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.port, that.port);
     }
 
     @Override

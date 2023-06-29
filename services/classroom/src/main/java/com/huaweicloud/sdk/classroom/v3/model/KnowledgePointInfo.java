@@ -77,16 +77,16 @@ public class KnowledgePointInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KnowledgePointInfo knowledgePointInfo = (KnowledgePointInfo) o;
-        return Objects.equals(this.id, knowledgePointInfo.id) && Objects.equals(this.name, knowledgePointInfo.name)
-            && Objects.equals(this.sequence, knowledgePointInfo.sequence);
+        KnowledgePointInfo that = (KnowledgePointInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

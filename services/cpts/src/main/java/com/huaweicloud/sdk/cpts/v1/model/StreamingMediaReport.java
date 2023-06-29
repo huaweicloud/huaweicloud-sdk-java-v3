@@ -759,48 +759,47 @@ public class StreamingMediaReport {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamingMediaReport streamingMediaReport = (StreamingMediaReport) o;
-        return Objects.equals(this.streamingPlayTimes, streamingMediaReport.streamingPlayTimes)
-            && Objects.equals(this.streamingErrorTimes, streamingMediaReport.streamingErrorTimes)
-            && Objects.equals(this.streamingSuccessRate, streamingMediaReport.streamingSuccessRate)
-            && Objects.equals(this.sentPacketsPerSecond, streamingMediaReport.sentPacketsPerSecond)
-            && Objects.equals(this.receivedPacketsPerSecond, streamingMediaReport.receivedPacketsPerSecond)
-            && Objects.equals(this.recvPackets, streamingMediaReport.recvPackets)
-            && Objects.equals(this.sendPackets, streamingMediaReport.sendPackets)
-            && Objects.equals(this.audioSentBytes, streamingMediaReport.audioSentBytes)
-            && Objects.equals(this.audioRecBytes, streamingMediaReport.audioRecBytes)
-            && Objects.equals(this.videoSentBytes, streamingMediaReport.videoSentBytes)
-            && Objects.equals(this.videoRecBytes, streamingMediaReport.videoRecBytes)
-            && Objects.equals(this.sumRecvKeyFrameDelay, streamingMediaReport.sumRecvKeyFrameDelay)
-            && Objects.equals(this.avgRecvKeyFrameDelay, streamingMediaReport.avgRecvKeyFrameDelay)
-            && Objects.equals(this.minRecvKeyFrameDelay, streamingMediaReport.minRecvKeyFrameDelay)
-            && Objects.equals(this.maxRecvKeyFrameDelay, streamingMediaReport.maxRecvKeyFrameDelay)
-            && Objects.equals(this.sumSendKeyFrameDelay, streamingMediaReport.sumSendKeyFrameDelay)
-            && Objects.equals(this.avgSendKeyFrameDelay, streamingMediaReport.avgSendKeyFrameDelay)
-            && Objects.equals(this.minSendKeyFrameDelay, streamingMediaReport.minSendKeyFrameDelay)
-            && Objects.equals(this.maxSendKeyFrameDelay, streamingMediaReport.maxSendKeyFrameDelay)
-            && Objects.equals(this.keyFrameSendCnt, streamingMediaReport.keyFrameSendCnt)
-            && Objects.equals(this.keyFrameReceiveCnt, streamingMediaReport.keyFrameReceiveCnt)
-            && Objects.equals(this.tcpConnectFailed, streamingMediaReport.tcpConnectFailed)
-            && Objects.equals(this.handShakeFailed, streamingMediaReport.handShakeFailed)
-            && Objects.equals(this.rtmpConnectFailed, streamingMediaReport.rtmpConnectFailed)
-            && Objects.equals(this.createStreamFailed, streamingMediaReport.createStreamFailed)
-            && Objects.equals(this.playFailed, streamingMediaReport.playFailed)
-            && Objects.equals(this.publishFailed, streamingMediaReport.publishFailed)
-            && Objects.equals(this.retryFailed, streamingMediaReport.retryFailed)
-            && Objects.equals(this.parseFileFailed, streamingMediaReport.parseFileFailed)
-            && Objects.equals(this.illegalUrlFailed, streamingMediaReport.illegalUrlFailed)
-            && Objects.equals(this.illegalFlvHeaderFailed, streamingMediaReport.illegalFlvHeaderFailed)
-            && Objects.equals(this.httpTimeoutFailed, streamingMediaReport.httpTimeoutFailed)
-            && Objects.equals(this.parseFlvFileFailed, streamingMediaReport.parseFlvFileFailed)
-            && Objects.equals(this.unknownFailed, streamingMediaReport.unknownFailed);
+        StreamingMediaReport that = (StreamingMediaReport) obj;
+        return Objects.equals(this.streamingPlayTimes, that.streamingPlayTimes)
+            && Objects.equals(this.streamingErrorTimes, that.streamingErrorTimes)
+            && Objects.equals(this.streamingSuccessRate, that.streamingSuccessRate)
+            && Objects.equals(this.sentPacketsPerSecond, that.sentPacketsPerSecond)
+            && Objects.equals(this.receivedPacketsPerSecond, that.receivedPacketsPerSecond)
+            && Objects.equals(this.recvPackets, that.recvPackets) && Objects.equals(this.sendPackets, that.sendPackets)
+            && Objects.equals(this.audioSentBytes, that.audioSentBytes)
+            && Objects.equals(this.audioRecBytes, that.audioRecBytes)
+            && Objects.equals(this.videoSentBytes, that.videoSentBytes)
+            && Objects.equals(this.videoRecBytes, that.videoRecBytes)
+            && Objects.equals(this.sumRecvKeyFrameDelay, that.sumRecvKeyFrameDelay)
+            && Objects.equals(this.avgRecvKeyFrameDelay, that.avgRecvKeyFrameDelay)
+            && Objects.equals(this.minRecvKeyFrameDelay, that.minRecvKeyFrameDelay)
+            && Objects.equals(this.maxRecvKeyFrameDelay, that.maxRecvKeyFrameDelay)
+            && Objects.equals(this.sumSendKeyFrameDelay, that.sumSendKeyFrameDelay)
+            && Objects.equals(this.avgSendKeyFrameDelay, that.avgSendKeyFrameDelay)
+            && Objects.equals(this.minSendKeyFrameDelay, that.minSendKeyFrameDelay)
+            && Objects.equals(this.maxSendKeyFrameDelay, that.maxSendKeyFrameDelay)
+            && Objects.equals(this.keyFrameSendCnt, that.keyFrameSendCnt)
+            && Objects.equals(this.keyFrameReceiveCnt, that.keyFrameReceiveCnt)
+            && Objects.equals(this.tcpConnectFailed, that.tcpConnectFailed)
+            && Objects.equals(this.handShakeFailed, that.handShakeFailed)
+            && Objects.equals(this.rtmpConnectFailed, that.rtmpConnectFailed)
+            && Objects.equals(this.createStreamFailed, that.createStreamFailed)
+            && Objects.equals(this.playFailed, that.playFailed)
+            && Objects.equals(this.publishFailed, that.publishFailed)
+            && Objects.equals(this.retryFailed, that.retryFailed)
+            && Objects.equals(this.parseFileFailed, that.parseFileFailed)
+            && Objects.equals(this.illegalUrlFailed, that.illegalUrlFailed)
+            && Objects.equals(this.illegalFlvHeaderFailed, that.illegalFlvHeaderFailed)
+            && Objects.equals(this.httpTimeoutFailed, that.httpTimeoutFailed)
+            && Objects.equals(this.parseFlvFileFailed, that.parseFlvFileFailed)
+            && Objects.equals(this.unknownFailed, that.unknownFailed);
     }
 
     @Override

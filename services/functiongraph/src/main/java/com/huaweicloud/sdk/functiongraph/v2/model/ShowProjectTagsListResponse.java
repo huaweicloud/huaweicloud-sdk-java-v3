@@ -91,16 +91,15 @@ public class ShowProjectTagsListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectTagsListResponse showProjectTagsListResponse = (ShowProjectTagsListResponse) o;
-        return Objects.equals(this.tags, showProjectTagsListResponse.tags)
-            && Objects.equals(this.sysTags, showProjectTagsListResponse.sysTags);
+        ShowProjectTagsListResponse that = (ShowProjectTagsListResponse) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

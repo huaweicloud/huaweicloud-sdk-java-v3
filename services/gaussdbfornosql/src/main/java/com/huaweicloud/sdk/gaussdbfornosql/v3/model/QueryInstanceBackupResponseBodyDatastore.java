@@ -55,17 +55,15 @@ public class QueryInstanceBackupResponseBodyDatastore {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryInstanceBackupResponseBodyDatastore queryInstanceBackupResponseBodyDatastore =
-            (QueryInstanceBackupResponseBodyDatastore) o;
-        return Objects.equals(this.type, queryInstanceBackupResponseBodyDatastore.type)
-            && Objects.equals(this.version, queryInstanceBackupResponseBodyDatastore.version);
+        QueryInstanceBackupResponseBodyDatastore that = (QueryInstanceBackupResponseBodyDatastore) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version);
     }
 
     @Override

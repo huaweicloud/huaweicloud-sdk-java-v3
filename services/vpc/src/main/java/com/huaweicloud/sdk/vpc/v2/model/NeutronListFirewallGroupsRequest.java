@@ -216,21 +216,19 @@ public class NeutronListFirewallGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronListFirewallGroupsRequest neutronListFirewallGroupsRequest = (NeutronListFirewallGroupsRequest) o;
-        return Objects.equals(this.marker, neutronListFirewallGroupsRequest.marker)
-            && Objects.equals(this.limit, neutronListFirewallGroupsRequest.limit)
-            && Objects.equals(this.id, neutronListFirewallGroupsRequest.id)
-            && Objects.equals(this.name, neutronListFirewallGroupsRequest.name)
-            && Objects.equals(this.description, neutronListFirewallGroupsRequest.description)
-            && Objects.equals(this.ingressFirewallPolicyId, neutronListFirewallGroupsRequest.ingressFirewallPolicyId)
-            && Objects.equals(this.egressFirewallPolicyId, neutronListFirewallGroupsRequest.egressFirewallPolicyId);
+        NeutronListFirewallGroupsRequest that = (NeutronListFirewallGroupsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ingressFirewallPolicyId, that.ingressFirewallPolicyId)
+            && Objects.equals(this.egressFirewallPolicyId, that.egressFirewallPolicyId);
     }
 
     @Override

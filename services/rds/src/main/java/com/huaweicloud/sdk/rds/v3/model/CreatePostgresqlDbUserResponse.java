@@ -34,15 +34,15 @@ public class CreatePostgresqlDbUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePostgresqlDbUserResponse createPostgresqlDbUserResponse = (CreatePostgresqlDbUserResponse) o;
-        return Objects.equals(this.resp, createPostgresqlDbUserResponse.resp);
+        CreatePostgresqlDbUserResponse that = (CreatePostgresqlDbUserResponse) obj;
+        return Objects.equals(this.resp, that.resp);
     }
 
     @Override

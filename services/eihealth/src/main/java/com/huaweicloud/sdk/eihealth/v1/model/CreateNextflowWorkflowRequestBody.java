@@ -221,20 +221,17 @@ public class CreateNextflowWorkflowRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNextflowWorkflowRequestBody createNextflowWorkflowRequestBody = (CreateNextflowWorkflowRequestBody) o;
-        return Objects.equals(this.workflowFile, createNextflowWorkflowRequestBody.workflowFile)
-            && Objects.equals(this.name, createNextflowWorkflowRequestBody.name)
-            && Objects.equals(this.description, createNextflowWorkflowRequestBody.description)
-            && Objects.equals(this.labels, createNextflowWorkflowRequestBody.labels)
-            && Objects.equals(this.mainFile, createNextflowWorkflowRequestBody.mainFile)
-            && Objects.equals(this.params, createNextflowWorkflowRequestBody.params);
+        CreateNextflowWorkflowRequestBody that = (CreateNextflowWorkflowRequestBody) obj;
+        return Objects.equals(this.workflowFile, that.workflowFile) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.mainFile, that.mainFile) && Objects.equals(this.params, that.params);
     }
 
     @Override

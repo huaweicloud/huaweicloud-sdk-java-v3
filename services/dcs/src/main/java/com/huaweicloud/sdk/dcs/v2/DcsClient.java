@@ -724,6 +724,36 @@ public class DcsClient {
     }
 
     /**
+     * 集群分片倒换
+     *
+     * 集群分片倒换，适用于proxy和cluster实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteClusterSwitchoverRequest 请求对象
+     * @return ExecuteClusterSwitchoverResponse
+     */
+    public ExecuteClusterSwitchoverResponse executeClusterSwitchover(ExecuteClusterSwitchoverRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.executeClusterSwitchover);
+    }
+
+    /**
+     * 集群分片倒换
+     *
+     * 集群分片倒换，适用于proxy和cluster实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteClusterSwitchoverRequest 请求对象
+     * @return SyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse>
+     */
+    public SyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> executeClusterSwitchoverInvoker(
+        ExecuteClusterSwitchoverRequest request) {
+        return new SyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse>(request,
+            DcsMeta.executeClusterSwitchover, hcClient);
+    }
+
+    /**
      * 查询可用区信息
      *
      * 查询所在局点的可用区信息
@@ -1742,6 +1772,34 @@ public class DcsClient {
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
         return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, DcsMeta.showInstance, hcClient);
+    }
+
+    /**
+     * 查询租户Job执行结果
+     *
+     * 查询租户Job执行结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobInfoRequest 请求对象
+     * @return ShowJobInfoResponse
+     */
+    public ShowJobInfoResponse showJobInfo(ShowJobInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showJobInfo);
+    }
+
+    /**
+     * 查询租户Job执行结果
+     *
+     * 查询租户Job执行结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobInfoRequest 请求对象
+     * @return SyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>
+     */
+    public SyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfoInvoker(ShowJobInfoRequest request) {
+        return new SyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>(request, DcsMeta.showJobInfo, hcClient);
     }
 
     /**

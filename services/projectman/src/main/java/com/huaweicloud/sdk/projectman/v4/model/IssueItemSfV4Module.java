@@ -55,15 +55,15 @@ public class IssueItemSfV4Module {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueItemSfV4Module issueItemSfV4Module = (IssueItemSfV4Module) o;
-        return Objects.equals(this.id, issueItemSfV4Module.id) && Objects.equals(this.name, issueItemSfV4Module.name);
+        IssueItemSfV4Module that = (IssueItemSfV4Module) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

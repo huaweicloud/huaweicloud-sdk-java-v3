@@ -127,18 +127,16 @@ public class ConfigurationForCreation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationForCreation configurationForCreation = (ConfigurationForCreation) o;
-        return Objects.equals(this.name, configurationForCreation.name)
-            && Objects.equals(this.description, configurationForCreation.description)
-            && Objects.equals(this.datastore, configurationForCreation.datastore)
-            && Objects.equals(this.values, configurationForCreation.values);
+        ConfigurationForCreation that = (ConfigurationForCreation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.values, that.values);
     }
 
     @Override

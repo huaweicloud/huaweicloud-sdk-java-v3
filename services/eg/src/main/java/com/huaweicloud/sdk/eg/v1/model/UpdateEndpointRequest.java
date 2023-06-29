@@ -65,16 +65,15 @@ public class UpdateEndpointRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointRequest updateEndpointRequest = (UpdateEndpointRequest) o;
-        return Objects.equals(this.endpointId, updateEndpointRequest.endpointId)
-            && Objects.equals(this.body, updateEndpointRequest.body);
+        UpdateEndpointRequest that = (UpdateEndpointRequest) obj;
+        return Objects.equals(this.endpointId, that.endpointId) && Objects.equals(this.body, that.body);
     }
 
     @Override

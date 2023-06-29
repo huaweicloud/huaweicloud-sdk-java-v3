@@ -83,16 +83,16 @@ public class BwChangeToPeriodReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BwChangeToPeriodReq bwChangeToPeriodReq = (BwChangeToPeriodReq) o;
-        return Objects.equals(this.bandwidthIds, bwChangeToPeriodReq.bandwidthIds)
-            && Objects.equals(this.extendParam, bwChangeToPeriodReq.extendParam);
+        BwChangeToPeriodReq that = (BwChangeToPeriodReq) obj;
+        return Objects.equals(this.bandwidthIds, that.bandwidthIds)
+            && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override

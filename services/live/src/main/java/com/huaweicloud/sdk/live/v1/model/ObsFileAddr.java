@@ -77,16 +77,16 @@ public class ObsFileAddr {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsFileAddr obsFileAddr = (ObsFileAddr) o;
-        return Objects.equals(this.bucket, obsFileAddr.bucket) && Objects.equals(this.location, obsFileAddr.location)
-            && Objects.equals(this._object, obsFileAddr._object);
+        ObsFileAddr that = (ObsFileAddr) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.location, that.location)
+            && Objects.equals(this._object, that._object);
     }
 
     @Override

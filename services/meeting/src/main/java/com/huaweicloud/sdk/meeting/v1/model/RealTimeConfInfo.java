@@ -33,15 +33,15 @@ public class RealTimeConfInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RealTimeConfInfo realTimeConfInfo = (RealTimeConfInfo) o;
-        return Objects.equals(this.chairID, realTimeConfInfo.chairID);
+        RealTimeConfInfo that = (RealTimeConfInfo) obj;
+        return Objects.equals(this.chairID, that.chairID);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class PushMenuInfoResponseModelData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushMenuInfoResponseModelData pushMenuInfoResponseModelData = (PushMenuInfoResponseModelData) o;
-        return Objects.equals(this.logId, pushMenuInfoResponseModelData.logId)
-            && Objects.equals(this.message, pushMenuInfoResponseModelData.message);
+        PushMenuInfoResponseModelData that = (PushMenuInfoResponseModelData) obj;
+        return Objects.equals(this.logId, that.logId) && Objects.equals(this.message, that.message);
     }
 
     @Override

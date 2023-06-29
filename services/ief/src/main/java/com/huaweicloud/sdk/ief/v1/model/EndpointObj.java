@@ -140,18 +140,17 @@ public class EndpointObj {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointObj endpointObj = (EndpointObj) o;
-        return Objects.equals(this.description, endpointObj.description)
-            && Objects.equals(this.iefInstanceId, endpointObj.iefInstanceId)
-            && Objects.equals(this.name, endpointObj.name) && Objects.equals(this.properties, endpointObj.properties)
-            && Objects.equals(this.type, endpointObj.type);
+        EndpointObj that = (EndpointObj) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.properties, that.properties) && Objects.equals(this.type, that.type);
     }
 
     @Override

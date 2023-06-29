@@ -119,18 +119,17 @@ public class UpdateBackupPolicyRequestInfo1 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBackupPolicyRequestInfo1 updateBackupPolicyRequestInfo1 = (UpdateBackupPolicyRequestInfo1) o;
-        return Objects.equals(this.enabled, updateBackupPolicyRequestInfo1.enabled)
-            && Objects.equals(this.policyId, updateBackupPolicyRequestInfo1.policyId)
-            && Objects.equals(this.operationDefinition, updateBackupPolicyRequestInfo1.operationDefinition)
-            && Objects.equals(this.trigger, updateBackupPolicyRequestInfo1.trigger);
+        UpdateBackupPolicyRequestInfo1 that = (UpdateBackupPolicyRequestInfo1) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.policyId, that.policyId)
+            && Objects.equals(this.operationDefinition, that.operationDefinition)
+            && Objects.equals(this.trigger, that.trigger);
     }
 
     @Override

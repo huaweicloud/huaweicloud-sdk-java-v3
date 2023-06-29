@@ -121,19 +121,17 @@ public class CreatePubInfoResponseModelData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePubInfoResponseModelData createPubInfoResponseModelData = (CreatePubInfoResponseModelData) o;
-        return Objects.equals(this.logId, createPubInfoResponseModelData.logId)
-            && Objects.equals(this.pubId, createPubInfoResponseModelData.pubId)
-            && Objects.equals(this.menuId, createPubInfoResponseModelData.menuId)
-            && Objects.equals(this.portalId, createPubInfoResponseModelData.portalId)
-            && Objects.equals(this.pubName, createPubInfoResponseModelData.pubName);
+        CreatePubInfoResponseModelData that = (CreatePubInfoResponseModelData) obj;
+        return Objects.equals(this.logId, that.logId) && Objects.equals(this.pubId, that.pubId)
+            && Objects.equals(this.menuId, that.menuId) && Objects.equals(this.portalId, that.portalId)
+            && Objects.equals(this.pubName, that.pubName);
     }
 
     @Override

@@ -73,22 +73,15 @@ public class DataBucketQuery {
             if (value == null) {
                 return null;
             }
-            DataEventEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataEventEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataEventEnum(value));
         }
 
         public static DataEventEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DataEventEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,17 +171,16 @@ public class DataBucketQuery {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataBucketQuery dataBucketQuery = (DataBucketQuery) o;
-        return Objects.equals(this.dataBucketName, dataBucketQuery.dataBucketName)
-            && Objects.equals(this.searchEnabled, dataBucketQuery.searchEnabled)
-            && Objects.equals(this.dataEvent, dataBucketQuery.dataEvent);
+        DataBucketQuery that = (DataBucketQuery) obj;
+        return Objects.equals(this.dataBucketName, that.dataBucketName)
+            && Objects.equals(this.searchEnabled, that.searchEnabled) && Objects.equals(this.dataEvent, that.dataEvent);
     }
 
     @Override

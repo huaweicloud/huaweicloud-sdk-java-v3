@@ -209,21 +209,19 @@ public class ParameterInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParameterInfo parameterInfo = (ParameterInfo) o;
-        return Objects.equals(this.id, parameterInfo.id) && Objects.equals(this.name, parameterInfo.name)
-            && Objects.equals(this.defaultValue, parameterInfo.defaultValue)
-            && Objects.equals(this.valueType, parameterInfo.valueType)
-            && Objects.equals(this.runningValue, parameterInfo.runningValue)
-            && Objects.equals(this.unit, parameterInfo.unit) && Objects.equals(this.reboot, parameterInfo.reboot)
-            && Objects.equals(this.valueRange, parameterInfo.valueRange)
-            && Objects.equals(this.description, parameterInfo.description);
+        ParameterInfo that = (ParameterInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.defaultValue, that.defaultValue) && Objects.equals(this.valueType, that.valueType)
+            && Objects.equals(this.runningValue, that.runningValue) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.reboot, that.reboot) && Objects.equals(this.valueRange, that.valueRange)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

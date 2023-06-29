@@ -99,18 +99,16 @@ public class CreateRedislogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRedislogRequest createRedislogRequest = (CreateRedislogRequest) o;
-        return Objects.equals(this.instanceId, createRedislogRequest.instanceId)
-            && Objects.equals(this.queryTime, createRedislogRequest.queryTime)
-            && Objects.equals(this.logType, createRedislogRequest.logType)
-            && Objects.equals(this.replicationId, createRedislogRequest.replicationId);
+        CreateRedislogRequest that = (CreateRedislogRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.queryTime, that.queryTime)
+            && Objects.equals(this.logType, that.logType) && Objects.equals(this.replicationId, that.replicationId);
     }
 
     @Override

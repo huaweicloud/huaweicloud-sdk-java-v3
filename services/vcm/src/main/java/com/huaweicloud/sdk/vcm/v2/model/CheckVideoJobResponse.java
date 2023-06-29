@@ -264,25 +264,20 @@ public class CheckVideoJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckVideoJobResponse checkVideoJobResponse = (CheckVideoJobResponse) o;
-        return Objects.equals(this.id, checkVideoJobResponse.id)
-            && Objects.equals(this.name, checkVideoJobResponse.name)
-            && Objects.equals(this.description, checkVideoJobResponse.description)
-            && Objects.equals(this.state, checkVideoJobResponse.state)
-            && Objects.equals(this.createdAt, checkVideoJobResponse.createdAt)
-            && Objects.equals(this.updatedAt, checkVideoJobResponse.updatedAt)
-            && Objects.equals(this.input, checkVideoJobResponse.input)
-            && Objects.equals(this.serviceConfig, checkVideoJobResponse.serviceConfig)
-            && Objects.equals(this.output, checkVideoJobResponse.output)
-            && Objects.equals(this.hostingResult, checkVideoJobResponse.hostingResult)
-            && Objects.equals(this.serviceVersion, checkVideoJobResponse.serviceVersion);
+        CheckVideoJobResponse that = (CheckVideoJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.serviceConfig, that.serviceConfig)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.hostingResult, that.hostingResult)
+            && Objects.equals(this.serviceVersion, that.serviceVersion);
     }
 
     @Override

@@ -95,22 +95,15 @@ public class ListSitesRequest {
             if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumeTypeEnum(value));
         }
 
         public static VolumeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -271,20 +264,18 @@ public class ListSitesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSitesRequest listSitesRequest = (ListSitesRequest) o;
-        return Objects.equals(this.limit, listSitesRequest.limit)
-            && Objects.equals(this.offset, listSitesRequest.offset) && Objects.equals(this.id, listSitesRequest.id)
-            && Objects.equals(this.area, listSitesRequest.area)
-            && Objects.equals(this.province, listSitesRequest.province)
-            && Objects.equals(this.city, listSitesRequest.city) && Objects.equals(this.flavor, listSitesRequest.flavor)
-            && Objects.equals(this.volumeType, listSitesRequest.volumeType);
+        ListSitesRequest that = (ListSitesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.area, that.area)
+            && Objects.equals(this.province, that.province) && Objects.equals(this.city, that.city)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.volumeType, that.volumeType);
     }
 
     @Override

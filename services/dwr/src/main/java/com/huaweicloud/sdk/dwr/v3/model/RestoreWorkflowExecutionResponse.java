@@ -168,21 +168,18 @@ public class RestoreWorkflowExecutionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreWorkflowExecutionResponse restoreWorkflowExecutionResponse = (RestoreWorkflowExecutionResponse) o;
-        return Objects.equals(this.executionUrn, restoreWorkflowExecutionResponse.executionUrn)
-            && Objects.equals(this.restoredAt, restoreWorkflowExecutionResponse.restoredAt)
-            && Objects.equals(this.executionName, restoreWorkflowExecutionResponse.executionName)
-            && Objects.equals(this.xRequestId, restoreWorkflowExecutionResponse.xRequestId)
-            && Objects.equals(this.connection, restoreWorkflowExecutionResponse.connection)
-            && Objects.equals(this.contentLength, restoreWorkflowExecutionResponse.contentLength)
-            && Objects.equals(this.date, restoreWorkflowExecutionResponse.date);
+        RestoreWorkflowExecutionResponse that = (RestoreWorkflowExecutionResponse) obj;
+        return Objects.equals(this.executionUrn, that.executionUrn) && Objects.equals(this.restoredAt, that.restoredAt)
+            && Objects.equals(this.executionName, that.executionName)
+            && Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

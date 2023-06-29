@@ -56,17 +56,15 @@ public class CreateTopicOrBatchDeleteTopicResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTopicOrBatchDeleteTopicResponse createTopicOrBatchDeleteTopicResponse =
-            (CreateTopicOrBatchDeleteTopicResponse) o;
-        return Objects.equals(this.id, createTopicOrBatchDeleteTopicResponse.id)
-            && Objects.equals(this.jobId, createTopicOrBatchDeleteTopicResponse.jobId);
+        CreateTopicOrBatchDeleteTopicResponse that = (CreateTopicOrBatchDeleteTopicResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

@@ -154,20 +154,20 @@ public class ScalingConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScalingConfiguration scalingConfiguration = (ScalingConfiguration) o;
-        return Objects.equals(this.scalingConfigurationId, scalingConfiguration.scalingConfigurationId)
-            && Objects.equals(this.tenant, scalingConfiguration.tenant)
-            && Objects.equals(this.scalingConfigurationName, scalingConfiguration.scalingConfigurationName)
-            && Objects.equals(this.instanceConfig, scalingConfiguration.instanceConfig)
-            && Objects.equals(this.createTime, scalingConfiguration.createTime)
-            && Objects.equals(this.scalingGroupId, scalingConfiguration.scalingGroupId);
+        ScalingConfiguration that = (ScalingConfiguration) obj;
+        return Objects.equals(this.scalingConfigurationId, that.scalingConfigurationId)
+            && Objects.equals(this.tenant, that.tenant)
+            && Objects.equals(this.scalingConfigurationName, that.scalingConfigurationName)
+            && Objects.equals(this.instanceConfig, that.instanceConfig)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.scalingGroupId, that.scalingGroupId);
     }
 
     @Override

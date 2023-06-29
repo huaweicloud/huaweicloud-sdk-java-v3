@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ParamGroupCopyRequestBody
  */
-public class ParamGroupCopyRequestBody  {
-
+public class ParamGroupCopyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
@@ -33,9 +24,6 @@ public class ParamGroupCopyRequestBody  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 复制后的参数模板名称。
@@ -49,15 +37,10 @@ public class ParamGroupCopyRequestBody  {
         this.name = name;
     }
 
-    
-
     public ParamGroupCopyRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 参数模板描述。
@@ -71,24 +54,23 @@ public class ParamGroupCopyRequestBody  {
         this.description = description;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParamGroupCopyRequestBody paramGroupCopyRequestBody = (ParamGroupCopyRequestBody) o;
-        return Objects.equals(this.name, paramGroupCopyRequestBody.name) &&
-            Objects.equals(this.description, paramGroupCopyRequestBody.description);
+        ParamGroupCopyRequestBody that = (ParamGroupCopyRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class ParamGroupCopyRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class ParamGroupCopyRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

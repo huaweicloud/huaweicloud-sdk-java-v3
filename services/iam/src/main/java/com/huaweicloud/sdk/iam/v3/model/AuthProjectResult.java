@@ -197,21 +197,18 @@ public class AuthProjectResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthProjectResult authProjectResult = (AuthProjectResult) o;
-        return Objects.equals(this.isDomain, authProjectResult.isDomain)
-            && Objects.equals(this.description, authProjectResult.description)
-            && Objects.equals(this.links, authProjectResult.links)
-            && Objects.equals(this.enabled, authProjectResult.enabled) && Objects.equals(this.id, authProjectResult.id)
-            && Objects.equals(this.parentId, authProjectResult.parentId)
-            && Objects.equals(this.domainId, authProjectResult.domainId)
-            && Objects.equals(this.name, authProjectResult.name);
+        AuthProjectResult that = (AuthProjectResult) obj;
+        return Objects.equals(this.isDomain, that.isDomain) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name);
     }
 
     @Override

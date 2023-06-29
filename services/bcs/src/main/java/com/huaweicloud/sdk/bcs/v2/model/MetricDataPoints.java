@@ -96,17 +96,16 @@ public class MetricDataPoints {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricDataPoints metricDataPoints = (MetricDataPoints) o;
-        return Objects.equals(this.timestamp, metricDataPoints.timestamp)
-            && Objects.equals(this.unit, metricDataPoints.unit)
-            && Objects.equals(this.statistics, metricDataPoints.statistics);
+        MetricDataPoints that = (MetricDataPoints) obj;
+        return Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.statistics, that.statistics);
     }
 
     @Override

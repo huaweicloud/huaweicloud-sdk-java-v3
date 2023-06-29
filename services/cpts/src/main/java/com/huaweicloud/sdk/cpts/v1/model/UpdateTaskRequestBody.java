@@ -310,25 +310,21 @@ public class UpdateTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskRequestBody updateTaskRequestBody = (UpdateTaskRequestBody) o;
-        return Objects.equals(this.id, updateTaskRequestBody.id)
-            && Objects.equals(this.name, updateTaskRequestBody.name)
-            && Objects.equals(this.description, updateTaskRequestBody.description)
-            && Objects.equals(this.projectId, updateTaskRequestBody.projectId)
-            && Objects.equals(this.runStatus, updateTaskRequestBody.runStatus)
-            && Objects.equals(this.runType, updateTaskRequestBody.runType)
-            && Objects.equals(this.taskRunInfo, updateTaskRequestBody.taskRunInfo)
-            && Objects.equals(this.caseList, updateTaskRequestBody.caseList)
-            && Objects.equals(this.operateMode, updateTaskRequestBody.operateMode)
-            && Objects.equals(this.benchConcurrent, updateTaskRequestBody.benchConcurrent)
-            && Objects.equals(this.relatedTempRunningData, updateTaskRequestBody.relatedTempRunningData);
+        UpdateTaskRequestBody that = (UpdateTaskRequestBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.runStatus, that.runStatus) && Objects.equals(this.runType, that.runType)
+            && Objects.equals(this.taskRunInfo, that.taskRunInfo) && Objects.equals(this.caseList, that.caseList)
+            && Objects.equals(this.operateMode, that.operateMode)
+            && Objects.equals(this.benchConcurrent, that.benchConcurrent)
+            && Objects.equals(this.relatedTempRunningData, that.relatedTempRunningData);
     }
 
     @Override

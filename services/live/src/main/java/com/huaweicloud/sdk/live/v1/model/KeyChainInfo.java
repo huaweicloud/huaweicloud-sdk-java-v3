@@ -77,22 +77,15 @@ public class KeyChainInfo {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
         }
 
         public static AuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,16 +166,16 @@ public class KeyChainInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeyChainInfo keyChainInfo = (KeyChainInfo) o;
-        return Objects.equals(this.key, keyChainInfo.key) && Objects.equals(this.authType, keyChainInfo.authType)
-            && Objects.equals(this.timeout, keyChainInfo.timeout);
+        KeyChainInfo that = (KeyChainInfo) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.authType, that.authType)
+            && Objects.equals(this.timeout, that.timeout);
     }
 
     @Override

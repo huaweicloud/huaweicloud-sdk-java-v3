@@ -123,22 +123,16 @@ public class CreateScalingGroupOption {
             if (value == null) {
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HealthPeriodicAuditMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new HealthPeriodicAuditMethodEnum(value));
         }
 
         public static HealthPeriodicAuditMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -229,22 +223,16 @@ public class CreateScalingGroupOption {
             if (value == null) {
                 return null;
             }
-            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceTerminatePolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new InstanceTerminatePolicyEnum(value));
         }
 
         public static InstanceTerminatePolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -332,22 +320,15 @@ public class CreateScalingGroupOption {
             if (value == null) {
                 return null;
             }
-            MultiAzPriorityPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MultiAzPriorityPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MultiAzPriorityPolicyEnum(value));
         }
 
         public static MultiAzPriorityPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MultiAzPriorityPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -854,38 +835,35 @@ public class CreateScalingGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScalingGroupOption createScalingGroupOption = (CreateScalingGroupOption) o;
-        return Objects.equals(this.scalingGroupName, createScalingGroupOption.scalingGroupName)
-            && Objects.equals(this.scalingConfigurationId, createScalingGroupOption.scalingConfigurationId)
-            && Objects.equals(this.desireInstanceNumber, createScalingGroupOption.desireInstanceNumber)
-            && Objects.equals(this.minInstanceNumber, createScalingGroupOption.minInstanceNumber)
-            && Objects.equals(this.maxInstanceNumber, createScalingGroupOption.maxInstanceNumber)
-            && Objects.equals(this.coolDownTime, createScalingGroupOption.coolDownTime)
-            && Objects.equals(this.lbListenerId, createScalingGroupOption.lbListenerId)
-            && Objects.equals(this.lbaasListeners, createScalingGroupOption.lbaasListeners)
-            && Objects.equals(this.availableZones, createScalingGroupOption.availableZones)
-            && Objects.equals(this.networks, createScalingGroupOption.networks)
-            && Objects.equals(this.securityGroups, createScalingGroupOption.securityGroups)
-            && Objects.equals(this.vpcId, createScalingGroupOption.vpcId)
-            && Objects.equals(this.healthPeriodicAuditMethod, createScalingGroupOption.healthPeriodicAuditMethod)
-            && Objects.equals(this.healthPeriodicAuditTime, createScalingGroupOption.healthPeriodicAuditTime)
-            && Objects.equals(this.healthPeriodicAuditGracePeriod,
-                createScalingGroupOption.healthPeriodicAuditGracePeriod)
-            && Objects.equals(this.instanceTerminatePolicy, createScalingGroupOption.instanceTerminatePolicy)
-            && Objects.equals(this.notifications, createScalingGroupOption.notifications)
-            && Objects.equals(this.deletePublicip, createScalingGroupOption.deletePublicip)
-            && Objects.equals(this.deleteVolume, createScalingGroupOption.deleteVolume)
-            && Objects.equals(this.enterpriseProjectId, createScalingGroupOption.enterpriseProjectId)
-            && Objects.equals(this.multiAzPriorityPolicy, createScalingGroupOption.multiAzPriorityPolicy)
-            && Objects.equals(this.iamAgencyName, createScalingGroupOption.iamAgencyName)
-            && Objects.equals(this.description, createScalingGroupOption.description);
+        CreateScalingGroupOption that = (CreateScalingGroupOption) obj;
+        return Objects.equals(this.scalingGroupName, that.scalingGroupName)
+            && Objects.equals(this.scalingConfigurationId, that.scalingConfigurationId)
+            && Objects.equals(this.desireInstanceNumber, that.desireInstanceNumber)
+            && Objects.equals(this.minInstanceNumber, that.minInstanceNumber)
+            && Objects.equals(this.maxInstanceNumber, that.maxInstanceNumber)
+            && Objects.equals(this.coolDownTime, that.coolDownTime)
+            && Objects.equals(this.lbListenerId, that.lbListenerId)
+            && Objects.equals(this.lbaasListeners, that.lbaasListeners)
+            && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.networks, that.networks)
+            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.healthPeriodicAuditMethod, that.healthPeriodicAuditMethod)
+            && Objects.equals(this.healthPeriodicAuditTime, that.healthPeriodicAuditTime)
+            && Objects.equals(this.healthPeriodicAuditGracePeriod, that.healthPeriodicAuditGracePeriod)
+            && Objects.equals(this.instanceTerminatePolicy, that.instanceTerminatePolicy)
+            && Objects.equals(this.notifications, that.notifications)
+            && Objects.equals(this.deletePublicip, that.deletePublicip)
+            && Objects.equals(this.deleteVolume, that.deleteVolume)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.multiAzPriorityPolicy, that.multiAzPriorityPolicy)
+            && Objects.equals(this.iamAgencyName, that.iamAgencyName)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

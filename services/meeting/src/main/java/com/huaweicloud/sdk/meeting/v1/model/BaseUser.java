@@ -167,18 +167,18 @@ public class BaseUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BaseUser baseUser = (BaseUser) o;
-        return Objects.equals(this.name, baseUser.name) && Objects.equals(this.contact, baseUser.contact)
-            && Objects.equals(this.country, baseUser.country) && Objects.equals(this.deptCode, baseUser.deptCode)
-            && Objects.equals(this.title, baseUser.title) && Objects.equals(this.sortLevel, baseUser.sortLevel)
-            && Objects.equals(this.desc, baseUser.desc);
+        BaseUser that = (BaseUser) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.contact, that.contact)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.sortLevel, that.sortLevel)
+            && Objects.equals(this.desc, that.desc);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class BatchAddServerNicsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAddServerNicsRequestBody batchAddServerNicsRequestBody = (BatchAddServerNicsRequestBody) o;
-        return Objects.equals(this.nics, batchAddServerNicsRequestBody.nics);
+        BatchAddServerNicsRequestBody that = (BatchAddServerNicsRequestBody) obj;
+        return Objects.equals(this.nics, that.nics);
     }
 
     @Override

@@ -140,19 +140,17 @@ public class BatchQueryStatReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchQueryStatReq batchQueryStatReq = (BatchQueryStatReq) o;
-        return Objects.equals(this.fromTime, batchQueryStatReq.fromTime)
-            && Objects.equals(this.toTime, batchQueryStatReq.toTime)
-            && Objects.equals(this.period, batchQueryStatReq.period)
-            && Objects.equals(this.method, batchQueryStatReq.method)
-            && Objects.equals(this.resourceIds, batchQueryStatReq.resourceIds);
+        BatchQueryStatReq that = (BatchQueryStatReq) obj;
+        return Objects.equals(this.fromTime, that.fromTime) && Objects.equals(this.toTime, that.toTime)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.resourceIds, that.resourceIds);
     }
 
     @Override

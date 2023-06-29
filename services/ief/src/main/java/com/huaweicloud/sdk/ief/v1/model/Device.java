@@ -335,22 +335,22 @@ public class Device {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Device device = (Device) o;
-        return Objects.equals(this.id, device.id) && Objects.equals(this.name, device.name)
-            && Objects.equals(this.accessProtocol, device.accessProtocol)
-            && Objects.equals(this.description, device.description) && Objects.equals(this.projectId, device.projectId)
-            && Objects.equals(this.createdAt, device.createdAt) && Objects.equals(this.updatedAt, device.updatedAt)
-            && Objects.equals(this.attributes, device.attributes)
-            && Objects.equals(this.connectionType, device.connectionType) && Objects.equals(this.twin, device.twin)
-            && Objects.equals(this.accessConfig, device.accessConfig)
-            && Objects.equals(this.propertyVisitors, device.propertyVisitors);
+        Device that = (Device) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.accessProtocol, that.accessProtocol)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.connectionType, that.connectionType) && Objects.equals(this.twin, that.twin)
+            && Objects.equals(this.accessConfig, that.accessConfig)
+            && Objects.equals(this.propertyVisitors, that.propertyVisitors);
     }
 
     @Override

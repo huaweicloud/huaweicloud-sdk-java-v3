@@ -77,17 +77,17 @@ public class ServiceTypes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceTypes serviceTypes = (ServiceTypes) o;
-        return Objects.equals(this.serviceTypeName, serviceTypes.serviceTypeName)
-            && Objects.equals(this.serviceTypeCode, serviceTypes.serviceTypeCode)
-            && Objects.equals(this.abbreviation, serviceTypes.abbreviation);
+        ServiceTypes that = (ServiceTypes) obj;
+        return Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.abbreviation, that.abbreviation);
     }
 
     @Override

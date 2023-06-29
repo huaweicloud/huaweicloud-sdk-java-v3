@@ -99,17 +99,16 @@ public class ModuleOwner {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModuleOwner moduleOwner = (ModuleOwner) o;
-        return Objects.equals(this.userId, moduleOwner.userId) && Objects.equals(this.userNumId, moduleOwner.userNumId)
-            && Objects.equals(this.userName, moduleOwner.userName)
-            && Objects.equals(this.nickName, moduleOwner.nickName);
+        ModuleOwner that = (ModuleOwner) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userNumId, that.userNumId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.nickName, that.nickName);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class ListQueryStructuredLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQueryStructuredLogsRequest listQueryStructuredLogsRequest = (ListQueryStructuredLogsRequest) o;
-        return Objects.equals(this.logGroupId, listQueryStructuredLogsRequest.logGroupId)
-            && Objects.equals(this.logStreamId, listQueryStructuredLogsRequest.logStreamId)
-            && Objects.equals(this.body, listQueryStructuredLogsRequest.body);
+        ListQueryStructuredLogsRequest that = (ListQueryStructuredLogsRequest) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

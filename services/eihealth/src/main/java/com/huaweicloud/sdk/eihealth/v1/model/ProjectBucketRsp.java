@@ -99,18 +99,17 @@ public class ProjectBucketRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectBucketRsp projectBucketRsp = (ProjectBucketRsp) o;
-        return Objects.equals(this.eihealthProjectId, projectBucketRsp.eihealthProjectId)
-            && Objects.equals(this.eihealthProjectName, projectBucketRsp.eihealthProjectName)
-            && Objects.equals(this.type, projectBucketRsp.type)
-            && Objects.equals(this.quoteRoot, projectBucketRsp.quoteRoot);
+        ProjectBucketRsp that = (ProjectBucketRsp) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.eihealthProjectName, that.eihealthProjectName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.quoteRoot, that.quoteRoot);
     }
 
     @Override

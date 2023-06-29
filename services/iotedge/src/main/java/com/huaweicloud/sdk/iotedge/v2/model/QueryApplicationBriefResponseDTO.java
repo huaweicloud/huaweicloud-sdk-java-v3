@@ -1,79 +1,62 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * QueryApplicationBriefResponseDTO
  */
-public class QueryApplicationBriefResponseDTO  {
-
+public class QueryApplicationBriefResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_published_version")
-    
+    @JsonProperty(value = "last_published_version")
 
     private String lastPublishedVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
 
     private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_type")
-    
+    @JsonProperty(value = "function_type")
 
     private String functionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_type")
-    
+    @JsonProperty(value = "deploy_type")
 
     private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
 
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_name")
-    
+    @JsonProperty(value = "edge_app_name")
 
     private String edgeAppName;
 
@@ -81,9 +64,6 @@ public class QueryApplicationBriefResponseDTO  {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 应用id
@@ -97,15 +77,10 @@ public class QueryApplicationBriefResponseDTO  {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public QueryApplicationBriefResponseDTO withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -119,15 +94,10 @@ public class QueryApplicationBriefResponseDTO  {
         this.description = description;
     }
 
-    
-
     public QueryApplicationBriefResponseDTO withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -141,15 +111,10 @@ public class QueryApplicationBriefResponseDTO  {
         this.createTime = createTime;
     }
 
-    
-
     public QueryApplicationBriefResponseDTO withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -163,15 +128,10 @@ public class QueryApplicationBriefResponseDTO  {
         this.updateTime = updateTime;
     }
 
-    
-
     public QueryApplicationBriefResponseDTO withLastPublishedVersion(String lastPublishedVersion) {
         this.lastPublishedVersion = lastPublishedVersion;
         return this;
     }
-
-    
-
 
     /**
      * 最新发布版本
@@ -185,15 +145,10 @@ public class QueryApplicationBriefResponseDTO  {
         this.lastPublishedVersion = lastPublishedVersion;
     }
 
-    
-
     public QueryApplicationBriefResponseDTO withAppType(String appType) {
         this.appType = appType;
         return this;
     }
-
-    
-
 
     /**
      * 应用类型SYSTEM_REQUIRED|SYSTEM_OPTIONAL|USER
@@ -207,15 +162,10 @@ public class QueryApplicationBriefResponseDTO  {
         this.appType = appType;
     }
 
-    
-
     public QueryApplicationBriefResponseDTO withFunctionType(String functionType) {
         this.functionType = functionType;
         return this;
     }
-
-    
-
 
     /**
      * 应用类型DATA_PROCESSING|PROTOCOL_PARSING
@@ -229,15 +179,10 @@ public class QueryApplicationBriefResponseDTO  {
         this.functionType = functionType;
     }
 
-    
-
     public QueryApplicationBriefResponseDTO withDeployType(String deployType) {
         this.deployType = deployType;
         return this;
     }
-
-    
-
 
     /**
      * 部署类型docker|process
@@ -251,15 +196,10 @@ public class QueryApplicationBriefResponseDTO  {
         this.deployType = deployType;
     }
 
-    
-
     public QueryApplicationBriefResponseDTO withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
-
-    
-
 
     /**
      * 驱动协议类型OPCUA|Modbus-TCP
@@ -273,15 +213,10 @@ public class QueryApplicationBriefResponseDTO  {
         this.protocol = protocol;
     }
 
-    
-
     public QueryApplicationBriefResponseDTO withEdgeAppName(String edgeAppName) {
         this.edgeAppName = edgeAppName;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称
@@ -295,32 +230,37 @@ public class QueryApplicationBriefResponseDTO  {
         this.edgeAppName = edgeAppName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryApplicationBriefResponseDTO queryApplicationBriefResponseDTO = (QueryApplicationBriefResponseDTO) o;
-        return Objects.equals(this.edgeAppId, queryApplicationBriefResponseDTO.edgeAppId) &&
-            Objects.equals(this.description, queryApplicationBriefResponseDTO.description) &&
-            Objects.equals(this.createTime, queryApplicationBriefResponseDTO.createTime) &&
-            Objects.equals(this.updateTime, queryApplicationBriefResponseDTO.updateTime) &&
-            Objects.equals(this.lastPublishedVersion, queryApplicationBriefResponseDTO.lastPublishedVersion) &&
-            Objects.equals(this.appType, queryApplicationBriefResponseDTO.appType) &&
-            Objects.equals(this.functionType, queryApplicationBriefResponseDTO.functionType) &&
-            Objects.equals(this.deployType, queryApplicationBriefResponseDTO.deployType) &&
-            Objects.equals(this.protocol, queryApplicationBriefResponseDTO.protocol) &&
-            Objects.equals(this.edgeAppName, queryApplicationBriefResponseDTO.edgeAppName);
+        QueryApplicationBriefResponseDTO that = (QueryApplicationBriefResponseDTO) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.lastPublishedVersion, that.lastPublishedVersion)
+            && Objects.equals(this.appType, that.appType) && Objects.equals(this.functionType, that.functionType)
+            && Objects.equals(this.deployType, that.deployType) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.edgeAppName, that.edgeAppName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, description, createTime, updateTime, lastPublishedVersion, appType, functionType, deployType, protocol, edgeAppName);
+        return Objects.hash(edgeAppId,
+            description,
+            createTime,
+            updateTime,
+            lastPublishedVersion,
+            appType,
+            functionType,
+            deployType,
+            protocol,
+            edgeAppName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,6 +278,7 @@ public class QueryApplicationBriefResponseDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -348,8 +289,5 @@ public class QueryApplicationBriefResponseDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

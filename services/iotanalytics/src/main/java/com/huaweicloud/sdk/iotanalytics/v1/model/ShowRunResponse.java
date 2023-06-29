@@ -185,20 +185,18 @@ public class ShowRunResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRunResponse showRunResponse = (ShowRunResponse) o;
-        return Objects.equals(this.runId, showRunResponse.runId) && Objects.equals(this.jobId, showRunResponse.jobId)
-            && Objects.equals(this.jobType, showRunResponse.jobType)
-            && Objects.equals(this.status, showRunResponse.status)
-            && Objects.equals(this.createdTime, showRunResponse.createdTime)
-            && Objects.equals(this.message, showRunResponse.message)
-            && Objects.equals(this.details, showRunResponse.details);
+        ShowRunResponse that = (ShowRunResponse) obj;
+        return Objects.equals(this.runId, that.runId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.details, that.details);
     }
 
     @Override

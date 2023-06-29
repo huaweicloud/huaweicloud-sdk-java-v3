@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * CreateGraphReqGraphSysTags
  */
-public class CreateGraphReqGraphSysTags  {
-
+public class CreateGraphReqGraphSysTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
 
     private String value;
 
@@ -33,9 +24,6 @@ public class CreateGraphReqGraphSysTags  {
         this.key = key;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目的key填：_sys_enterprise_project_id。
@@ -49,15 +37,10 @@ public class CreateGraphReqGraphSysTags  {
         this.key = key;
     }
 
-    
-
     public CreateGraphReqGraphSysTags withValue(String value) {
         this.value = value;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目的id。可以从企业项目获取。
@@ -71,24 +54,23 @@ public class CreateGraphReqGraphSysTags  {
         this.value = value;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGraphReqGraphSysTags createGraphReqGraphSysTags = (CreateGraphReqGraphSysTags) o;
-        return Objects.equals(this.key, createGraphReqGraphSysTags.key) &&
-            Objects.equals(this.value, createGraphReqGraphSysTags.value);
+        CreateGraphReqGraphSysTags that = (CreateGraphReqGraphSysTags) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class CreateGraphReqGraphSysTags  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class CreateGraphReqGraphSysTags  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -99,17 +99,17 @@ public class AdjustCouponQuotasReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdjustCouponQuotasReq adjustCouponQuotasReq = (AdjustCouponQuotasReq) o;
-        return Objects.equals(this.quotaId, adjustCouponQuotasReq.quotaId)
-            && Objects.equals(this.indirectPartnerIds, adjustCouponQuotasReq.indirectPartnerIds)
-            && Objects.equals(this.quotaAmount, adjustCouponQuotasReq.quotaAmount);
+        AdjustCouponQuotasReq that = (AdjustCouponQuotasReq) obj;
+        return Objects.equals(this.quotaId, that.quotaId)
+            && Objects.equals(this.indirectPartnerIds, that.indirectPartnerIds)
+            && Objects.equals(this.quotaAmount, that.quotaAmount);
     }
 
     @Override

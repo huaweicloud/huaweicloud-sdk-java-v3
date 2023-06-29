@@ -65,16 +65,15 @@ public class ListHistoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHistoryRequest listHistoryRequest = (ListHistoryRequest) o;
-        return Objects.equals(this.dataStoreId, listHistoryRequest.dataStoreId)
-            && Objects.equals(this.body, listHistoryRequest.body);
+        ListHistoryRequest that = (ListHistoryRequest) obj;
+        return Objects.equals(this.dataStoreId, that.dataStoreId) && Objects.equals(this.body, that.body);
     }
 
     @Override

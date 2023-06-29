@@ -99,16 +99,16 @@ public class ClusterInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterInstance clusterInstance = (ClusterInstance) o;
-        return Objects.equals(this.id, clusterInstance.id) && Objects.equals(this.name, clusterInstance.name)
-            && Objects.equals(this.type, clusterInstance.type) && Objects.equals(this.shardId, clusterInstance.shardId);
+        ClusterInstance that = (ClusterInstance) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.shardId, that.shardId);
     }
 
     @Override

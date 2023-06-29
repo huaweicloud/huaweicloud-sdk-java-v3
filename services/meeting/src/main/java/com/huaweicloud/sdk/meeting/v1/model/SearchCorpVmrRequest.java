@@ -174,21 +174,18 @@ public class SearchCorpVmrRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchCorpVmrRequest searchCorpVmrRequest = (SearchCorpVmrRequest) o;
-        return Objects.equals(this.xRequestId, searchCorpVmrRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchCorpVmrRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchCorpVmrRequest.offset)
-            && Objects.equals(this.limit, searchCorpVmrRequest.limit)
-            && Objects.equals(this.searchKey, searchCorpVmrRequest.searchKey)
-            && Objects.equals(this.vmrMode, searchCorpVmrRequest.vmrMode)
-            && Objects.equals(this.status, searchCorpVmrRequest.status);
+        SearchCorpVmrRequest that = (SearchCorpVmrRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.vmrMode, that.vmrMode) && Objects.equals(this.status, that.status);
     }
 
     @Override

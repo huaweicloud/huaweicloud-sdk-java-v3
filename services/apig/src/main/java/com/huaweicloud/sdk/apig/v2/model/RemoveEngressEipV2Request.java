@@ -33,15 +33,15 @@ public class RemoveEngressEipV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoveEngressEipV2Request removeEngressEipV2Request = (RemoveEngressEipV2Request) o;
-        return Objects.equals(this.instanceId, removeEngressEipV2Request.instanceId);
+        RemoveEngressEipV2Request that = (RemoveEngressEipV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

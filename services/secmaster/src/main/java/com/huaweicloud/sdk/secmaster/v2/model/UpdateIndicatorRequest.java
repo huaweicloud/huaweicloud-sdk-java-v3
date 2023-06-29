@@ -87,17 +87,16 @@ public class UpdateIndicatorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIndicatorRequest updateIndicatorRequest = (UpdateIndicatorRequest) o;
-        return Objects.equals(this.workspaceId, updateIndicatorRequest.workspaceId)
-            && Objects.equals(this.indicatorId, updateIndicatorRequest.indicatorId)
-            && Objects.equals(this.body, updateIndicatorRequest.body);
+        UpdateIndicatorRequest that = (UpdateIndicatorRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.indicatorId, that.indicatorId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

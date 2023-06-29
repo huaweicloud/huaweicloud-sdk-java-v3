@@ -75,16 +75,15 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckMd5DuplicationResponse checkMd5DuplicationResponse = (CheckMd5DuplicationResponse) o;
-        return Objects.equals(this.isDuplicated, checkMd5DuplicationResponse.isDuplicated)
-            && Objects.equals(this.assetIds, checkMd5DuplicationResponse.assetIds);
+        CheckMd5DuplicationResponse that = (CheckMd5DuplicationResponse) obj;
+        return Objects.equals(this.isDuplicated, that.isDuplicated) && Objects.equals(this.assetIds, that.assetIds);
     }
 
     @Override

@@ -339,27 +339,22 @@ public class AttachmentDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachmentDetails attachmentDetails = (AttachmentDetails) o;
-        return Objects.equals(this.id, attachmentDetails.id) && Objects.equals(this.name, attachmentDetails.name)
-            && Objects.equals(this.description, attachmentDetails.description)
-            && Objects.equals(this.state, attachmentDetails.state)
-            && Objects.equals(this.createdAt, attachmentDetails.createdAt)
-            && Objects.equals(this.updatedAt, attachmentDetails.updatedAt)
-            && Objects.equals(this.tags, attachmentDetails.tags)
-            && Objects.equals(this.projectId, attachmentDetails.projectId)
-            && Objects.equals(this.erId, attachmentDetails.erId)
-            && Objects.equals(this.resourceId, attachmentDetails.resourceId)
-            && Objects.equals(this.resourceType, attachmentDetails.resourceType)
-            && Objects.equals(this.resourceProjectId, attachmentDetails.resourceProjectId)
-            && Objects.equals(this.associated, attachmentDetails.associated)
-            && Objects.equals(this.routeTableId, attachmentDetails.routeTableId);
+        AttachmentDetails that = (AttachmentDetails) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.erId, that.erId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceProjectId, that.resourceProjectId)
+            && Objects.equals(this.associated, that.associated) && Objects.equals(this.routeTableId, that.routeTableId);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class LicensePlateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LicensePlateRequestBody licensePlateRequestBody = (LicensePlateRequestBody) o;
-        return Objects.equals(this.image, licensePlateRequestBody.image)
-            && Objects.equals(this.url, licensePlateRequestBody.url);
+        LicensePlateRequestBody that = (LicensePlateRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url);
     }
 
     @Override

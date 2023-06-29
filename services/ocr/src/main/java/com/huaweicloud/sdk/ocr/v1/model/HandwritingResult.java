@@ -74,16 +74,16 @@ public class HandwritingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HandwritingResult handwritingResult = (HandwritingResult) o;
-        return Objects.equals(this.wordsBlockCount, handwritingResult.wordsBlockCount)
-            && Objects.equals(this.wordsBlockList, handwritingResult.wordsBlockList);
+        HandwritingResult that = (HandwritingResult) obj;
+        return Objects.equals(this.wordsBlockCount, that.wordsBlockCount)
+            && Objects.equals(this.wordsBlockList, that.wordsBlockList);
     }
 
     @Override

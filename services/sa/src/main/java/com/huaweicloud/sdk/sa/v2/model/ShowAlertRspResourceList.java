@@ -209,23 +209,19 @@ public class ShowAlertRspResourceList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlertRspResourceList showAlertRspResourceList = (ShowAlertRspResourceList) o;
-        return Objects.equals(this.id, showAlertRspResourceList.id)
-            && Objects.equals(this.name, showAlertRspResourceList.name)
-            && Objects.equals(this.type, showAlertRspResourceList.type)
-            && Objects.equals(this.domainId, showAlertRspResourceList.domainId)
-            && Objects.equals(this.projectId, showAlertRspResourceList.projectId)
-            && Objects.equals(this.regionId, showAlertRspResourceList.regionId)
-            && Objects.equals(this.epId, showAlertRspResourceList.epId)
-            && Objects.equals(this.epName, showAlertRspResourceList.epName)
-            && Objects.equals(this.tags, showAlertRspResourceList.tags);
+        ShowAlertRspResourceList that = (ShowAlertRspResourceList) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.epId, that.epId) && Objects.equals(this.epName, that.epName)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

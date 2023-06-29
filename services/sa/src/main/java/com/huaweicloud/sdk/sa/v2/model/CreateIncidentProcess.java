@@ -121,19 +121,17 @@ public class CreateIncidentProcess {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIncidentProcess createIncidentProcess = (CreateIncidentProcess) o;
-        return Objects.equals(this.processName, createIncidentProcess.processName)
-            && Objects.equals(this.processPath, createIncidentProcess.processPath)
-            && Objects.equals(this.processPid, createIncidentProcess.processPid)
-            && Objects.equals(this.processUid, createIncidentProcess.processUid)
-            && Objects.equals(this.processCmdline, createIncidentProcess.processCmdline);
+        CreateIncidentProcess that = (CreateIncidentProcess) obj;
+        return Objects.equals(this.processName, that.processName) && Objects.equals(this.processPath, that.processPath)
+            && Objects.equals(this.processPid, that.processPid) && Objects.equals(this.processUid, that.processUid)
+            && Objects.equals(this.processCmdline, that.processCmdline);
     }
 
     @Override

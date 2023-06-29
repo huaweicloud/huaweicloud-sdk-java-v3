@@ -36,15 +36,15 @@ public class CreateTranscodingTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTranscodingTaskResponse createTranscodingTaskResponse = (CreateTranscodingTaskResponse) o;
-        return Objects.equals(this.taskId, createTranscodingTaskResponse.taskId);
+        CreateTranscodingTaskResponse that = (CreateTranscodingTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

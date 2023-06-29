@@ -1,26 +1,17 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowActionRuleRequest  {
-
+public class ShowActionRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_name")
-    
+    @JsonProperty(value = "rule_name")
 
     private String ruleName;
 
@@ -28,9 +19,6 @@ public class ShowActionRuleRequest  {
         this.ruleName = ruleName;
         return this;
     }
-
-    
-
 
     /**
      * 告警规则名称
@@ -44,23 +32,23 @@ public class ShowActionRuleRequest  {
         this.ruleName = ruleName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowActionRuleRequest showActionRuleRequest = (ShowActionRuleRequest) o;
-        return Objects.equals(this.ruleName, showActionRuleRequest.ruleName);
+        ShowActionRuleRequest that = (ShowActionRuleRequest) obj;
+        return Objects.equals(this.ruleName, that.ruleName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ruleName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -69,6 +57,7 @@ public class ShowActionRuleRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -79,8 +68,5 @@ public class ShowActionRuleRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -55,16 +55,15 @@ public class ShowProductDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProductDetailRequest showProductDetailRequest = (ShowProductDetailRequest) o;
-        return Objects.equals(this.productId, showProductDetailRequest.productId)
-            && Objects.equals(this.iefInstanceId, showProductDetailRequest.iefInstanceId);
+        ShowProductDetailRequest that = (ShowProductDetailRequest) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

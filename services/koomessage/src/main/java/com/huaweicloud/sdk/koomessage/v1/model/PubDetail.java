@@ -378,26 +378,23 @@ public class PubDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PubDetail pubDetail = (PubDetail) o;
-        return Objects.equals(this.pubId, pubDetail.pubId) && Objects.equals(this.operTime, pubDetail.operTime)
-            && Objects.equals(this.state, pubDetail.state) && Objects.equals(this.onlineTime, pubDetail.onlineTime)
-            && Objects.equals(this.companyName, pubDetail.companyName)
-            && Objects.equals(this.pubName, pubDetail.pubName) && Objects.equals(this.logoImg, pubDetail.logoImg)
-            && Objects.equals(this.logoUrl, pubDetail.logoUrl)
-            && Objects.equals(this.authorizationFiles, pubDetail.authorizationFiles)
-            && Objects.equals(this.autoGetPort, pubDetail.autoGetPort)
-            && Objects.equals(this.industry, pubDetail.industry)
-            && Objects.equals(this.pubAbstract, pubDetail.pubAbstract)
-            && Objects.equals(this.signsForAutoGetPort, pubDetail.signsForAutoGetPort)
-            && Objects.equals(this.companyId, pubDetail.companyId)
-            && Objects.equals(this.pubRemark, pubDetail.pubRemark);
+        PubDetail that = (PubDetail) obj;
+        return Objects.equals(this.pubId, that.pubId) && Objects.equals(this.operTime, that.operTime)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.onlineTime, that.onlineTime)
+            && Objects.equals(this.companyName, that.companyName) && Objects.equals(this.pubName, that.pubName)
+            && Objects.equals(this.logoImg, that.logoImg) && Objects.equals(this.logoUrl, that.logoUrl)
+            && Objects.equals(this.authorizationFiles, that.authorizationFiles)
+            && Objects.equals(this.autoGetPort, that.autoGetPort) && Objects.equals(this.industry, that.industry)
+            && Objects.equals(this.pubAbstract, that.pubAbstract)
+            && Objects.equals(this.signsForAutoGetPort, that.signsForAutoGetPort)
+            && Objects.equals(this.companyId, that.companyId) && Objects.equals(this.pubRemark, that.pubRemark);
     }
 
     @Override
