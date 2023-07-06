@@ -26,7 +26,7 @@ public class SourceWithPort {
     private String ipOrDomain;
 
     /**
-     * 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"）
+     * 源站类型，ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。
      */
     public static final class OriginTypeEnum {
 
@@ -166,7 +166,7 @@ public class SourceWithPort {
     }
 
     /**
-     * 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"）
+     * 源站类型，ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。
      * @return originType
      */
     public OriginTypeEnum getOriginType() {
@@ -183,7 +183,7 @@ public class SourceWithPort {
     }
 
     /**
-     * 主备状态（1代表主站；0代表备站）；主源站必须存在，备源站可选。
+     * 主备状态（1代表主源站；0代表备源站）。
      * @return activeStandby
      */
     public Integer getActiveStandby() {

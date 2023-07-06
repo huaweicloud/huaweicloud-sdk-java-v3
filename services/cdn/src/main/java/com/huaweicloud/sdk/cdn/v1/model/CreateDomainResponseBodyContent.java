@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建域名返回信息
+ * 创建域名返回信息。
  */
 public class CreateDomainResponseBodyContent {
 
@@ -244,7 +244,7 @@ public class CreateDomainResponseBodyContent {
     }
 
     /**
-     * 源站信息
+     * 源站信息。
      * @return sources
      */
     public List<Sources> getSources() {
@@ -372,7 +372,7 @@ public class CreateDomainResponseBodyContent {
     }
 
     /**
-     * range状态（\"off\"/\"on\"）。
+     * range状态，off：关闭，on：开启。
      * @return rangeStatus
      */
     public String getRangeStatus() {
@@ -389,7 +389,7 @@ public class CreateDomainResponseBodyContent {
     }
 
     /**
-     * follow302状态（\"off\"/\"on\"）。
+     * follow302状态，off：关闭，on：开启。
      * @return followStatus
      */
     public String getFollowStatus() {
@@ -406,7 +406,7 @@ public class CreateDomainResponseBodyContent {
     }
 
     /**
-     * 是否暂停源站回源。
+     * 是否暂停源站回源（off代表关闭 on代表开启）。
      * @return originStatus
      */
     public String getOriginStatus() {
@@ -423,7 +423,7 @@ public class CreateDomainResponseBodyContent {
     }
 
     /**
-     * 自动刷新预热（0代表关闭；1代表打开）
+     * 自动刷新预热（0代表关闭；1代表打开）。
      * @return autoRefreshPreheat
      */
     public Integer getAutoRefreshPreheat() {

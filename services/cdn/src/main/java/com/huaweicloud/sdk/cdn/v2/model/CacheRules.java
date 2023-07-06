@@ -124,7 +124,7 @@ public class CacheRules {
     }
 
     /**
-     * 此条配置的优先级, 默认值1，数值越大，优先级越高，取值范围为1-100，优先级不能相同。
+     * 此条缓存规则的优先级, 默认值1，数值越大，优先级越高，取值范围为1-100，优先级不能相同。
      * @return priority
      */
     public Integer getPriority() {

@@ -41,7 +41,7 @@ public class ShowTagsResponse extends SdkResponse {
     }
 
     /**
-     * 标签列表
+     * 标签列表。
      * @return tags
      */
     public List<java.util.Map> getTags() {

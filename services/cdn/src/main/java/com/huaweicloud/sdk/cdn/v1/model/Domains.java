@@ -456,7 +456,7 @@ public class Domains {
     }
 
     /**
-     * 自动刷新预热（0代表关闭；1代表打开）
+     * 自动刷新预热（0代表关闭；1代表打开）。
      * @return autoRefreshPreheat
      */
     public Integer getAutoRefreshPreheat() {
@@ -524,7 +524,7 @@ public class Domains {
     }
 
     /**
-     * 是否暂停源站回源。
+     * 是否暂停源站回源（off代表关闭 on代表开启）。。
      * @return originStatus
      */
     public String getOriginStatus() {
@@ -541,7 +541,7 @@ public class Domains {
     }
 
     /**
-     * 域名禁用原因
+     * 域名禁用原因。
      * @return bannedReason
      */
     public String getBannedReason() {
@@ -558,7 +558,7 @@ public class Domains {
     }
 
     /**
-     * 域名锁定原因
+     * 域名锁定原因。
      * @return lockedReason
      */
     public String getLockedReason() {

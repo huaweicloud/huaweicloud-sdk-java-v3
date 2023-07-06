@@ -49,6 +49,11 @@ public class ApigRegion {
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://apig.cn-southwest-2.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://apig.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://apig.tr-west-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("APIG");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -71,6 +76,8 @@ public class ApigRegion {
         map.put("af-south-1", AF_SOUTH_1);
         map.put("cn-north-9", CN_NORTH_9);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("tr-west-1", TR_WEST_1);
         return Collections.unmodifiableMap(map);
     }
 

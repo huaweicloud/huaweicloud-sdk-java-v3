@@ -32,7 +32,7 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
     }
 
     /**
-     * 编码
+     * 响应码，200：成功，400，失败。
      * @return code
      */
     public String getCode() {
@@ -49,7 +49,7 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
     }
 
     /**
-     * 结果
+     * 响应结果。
      * @return result
      */
     public String getResult() {
@@ -66,7 +66,7 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
     }
 
     /**
-     * 数据
+     * 响应体返回内容。
      * @return data
      */
     public Object getData() {

@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 公网IP绑定的带宽信息
+ * 弹性公网IP绑定的带宽信息
  */
 public class BandwidthInfoResp {
 
@@ -26,7 +26,7 @@ public class BandwidthInfoResp {
     private Integer bandwidthNumber;
 
     /**
-     * 带宽类型
+     * - 功能说明：带宽类型
      */
     public static final class BandwidthTypeEnum {
 
@@ -111,7 +111,7 @@ public class BandwidthInfoResp {
     }
 
     /**
-     * 带宽名称
+     * - 功能说明：带宽名称
      * @return bandwidthName
      */
     public String getBandwidthName() {
@@ -128,9 +128,9 @@ public class BandwidthInfoResp {
     }
 
     /**
-     * 带宽大小
+     * - 功能说明：带宽大小
      * minimum: 0
-     * maximum: 99999
+     * maximum: 2000
      * @return bandwidthNumber
      */
     public Integer getBandwidthNumber() {
@@ -147,7 +147,7 @@ public class BandwidthInfoResp {
     }
 
     /**
-     * 带宽类型
+     * - 功能说明：带宽类型
      * @return bandwidthType
      */
     public BandwidthTypeEnum getBandwidthType() {
@@ -164,7 +164,7 @@ public class BandwidthInfoResp {
     }
 
     /**
-     * 带宽id
+     * - 功能说明：带宽id
      * @return bandwidthId
      */
     public String getBandwidthId() {

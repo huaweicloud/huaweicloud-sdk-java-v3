@@ -52,6 +52,8 @@ public class HssRegion {
 
     public static final Region TR_WEST_1 = new Region("tr-west-1", "https://hss.tr-west-1.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://hss.cn-north-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("HSS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -76,6 +78,7 @@ public class HssRegion {
         map.put("cn-south-4", CN_SOUTH_4);
         map.put("la-north-2", LA_NORTH_2);
         map.put("tr-west-1", TR_WEST_1);
+        map.put("cn-north-2", CN_NORTH_2);
         return Collections.unmodifiableMap(map);
     }
 

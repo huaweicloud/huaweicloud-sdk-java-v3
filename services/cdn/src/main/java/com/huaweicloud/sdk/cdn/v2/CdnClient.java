@@ -20,7 +20,8 @@ public class CdnClient {
     /**
      * 批量域名复制
      *
-     * 批量域名复制接口
+     * 批量域名复制接口。
+     *  &gt; 将某个加速域名的配置批量复制到其他域名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -34,7 +35,8 @@ public class CdnClient {
     /**
      * 批量域名复制
      *
-     * 批量域名复制接口
+     * 批量域名复制接口。
+     *  &gt; 将某个加速域名的配置批量复制到其他域名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -150,7 +152,7 @@ public class CdnClient {
     /**
      * 查询加速域名
      *
-     * 查询加速域名
+     * 查询加速域名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -164,7 +166,7 @@ public class CdnClient {
     /**
      * 查询加速域名
      *
-     * 查询加速域名
+     * 查询加速域名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -324,7 +326,7 @@ public class CdnClient {
     /**
      * 查询加速域名详情
      *
-     * 加速域名详情信息接口
+     * 加速域名详情信息接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -338,7 +340,7 @@ public class CdnClient {
     /**
      * 查询加速域名详情
      *
-     * 加速域名详情信息接口
+     * 加速域名详情信息接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -355,7 +357,7 @@ public class CdnClient {
      * 查询域名配置接口
      *
      * 查询域名配置接口，
-     * 支持查询回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、回源跟随、ipv6设置、智能压缩、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面、缓存规则、IP黑白名单、防盗链、强制跳转、高级回源、回源是否校验Etag、回源超时时间、远程鉴权配置、webSocket配置、视频拖拽、请求限速。
+     * 支持查询回源请求头、业务类型、服务区域、HTTP header配置、URL鉴权、证书、源站、回源协议、回源跟随、ipv6设置、智能压缩、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面、缓存规则、IP黑白名单、防盗链、强制跳转、高级回源、回源是否校验Etag、回源超时时间、远程鉴权配置、webSocket配置、视频拖拽、请求限速。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -370,7 +372,7 @@ public class CdnClient {
      * 查询域名配置接口
      *
      * 查询域名配置接口，
-     * 支持查询回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、回源跟随、ipv6设置、智能压缩、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面、缓存规则、IP黑白名单、防盗链、强制跳转、高级回源、回源是否校验Etag、回源超时时间、远程鉴权配置、webSocket配置、视频拖拽、请求限速。
+     * 支持查询回源请求头、业务类型、服务区域、HTTP header配置、URL鉴权、证书、源站、回源协议、回源跟随、ipv6设置、智能压缩、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面、缓存规则、IP黑白名单、防盗链、强制跳转、高级回源、回源是否校验Etag、回源超时时间、远程鉴权配置、webSocket配置、视频拖拽、请求限速。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -384,7 +386,7 @@ public class CdnClient {
     }
 
     /**
-     * 查询域名统计区域运营商数据
+     * 按区域运营商查询域名统计数据
      *
      * - 支持查询90天内的数据。
      * 
@@ -410,7 +412,7 @@ public class CdnClient {
     }
 
     /**
-     * 查询域名统计区域运营商数据
+     * 按区域运营商查询域名统计数据
      *
      * - 支持查询90天内的数据。
      * 
@@ -601,7 +603,7 @@ public class CdnClient {
      * 修改域名全量配置接口
      *
      * 修改域名配置接口，
-     * 支持修改回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、回源跟随、ipv6设置、智能压缩、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面、缓存规则、IP黑白名单、防盗链、强制跳转、高级回源、回源是否校验Etag、回源超时时间、远程鉴权配置、webSocket配置、视频拖拽、请求限速。
+     * 支持修改回源请求头、业务类型、服务区域、HTTP header配置、URL鉴权、证书、源站、回源协议、回源跟随、ipv6设置、智能压缩、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面、缓存规则、IP黑白名单、防盗链、强制跳转、高级回源、回源是否校验Etag、回源超时时间、远程鉴权配置、webSocket配置、视频拖拽、请求限速。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -616,7 +618,7 @@ public class CdnClient {
      * 修改域名全量配置接口
      *
      * 修改域名配置接口，
-     * 支持修改回源请求头、HTTP header配置、URL鉴权、证书、源站、回源协议、回源跟随、ipv6设置、智能压缩、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面、缓存规则、IP黑白名单、防盗链、强制跳转、高级回源、回源是否校验Etag、回源超时时间、远程鉴权配置、webSocket配置、视频拖拽、请求限速。
+     * 支持修改回源请求头、业务类型、服务区域、HTTP header配置、URL鉴权、证书、源站、回源协议、回源跟随、ipv6设置、智能压缩、状态码缓存时间、Range回源、User-Agent黑白名单、改写回源URL、自定义错误页面、缓存规则、IP黑白名单、防盗链、强制跳转、高级回源、回源是否校验Etag、回源超时时间、远程鉴权配置、webSocket配置、视频拖拽、请求限速。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

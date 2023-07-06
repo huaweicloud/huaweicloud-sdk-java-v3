@@ -289,9 +289,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-软件信息-历史变动记录
+     * 获取软件信息的历史变动记录
      *
-     * 资产指纹-软件信息-历史变动记录
+     * 获取软件信息的历史变动记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -304,9 +304,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-软件信息-历史变动记录
+     * 获取软件信息的历史变动记录
      *
-     * 资产指纹-软件信息-历史变动记录
+     * 获取软件信息的历史变动记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -320,9 +320,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-软件信息
+     * 查询软件列表
      *
-     * 资产指纹-软件信息
+     * 查询软件列表，支持通过软件名称查询对应的服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -334,9 +334,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-软件信息
+     * 查询软件列表
      *
-     * 资产指纹-软件信息
+     * 查询软件列表，支持通过软件名称查询对应的服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -350,9 +350,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 单主机资产指纹-软件
+     * 查询软件的服务器列表
      *
-     * 单主机资产指纹-软件
+     * 查询软件的服务器列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -364,9 +364,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 单主机资产指纹-软件
+     * 查询软件的服务器列表
      *
-     * 单主机资产指纹-软件
+     * 查询软件的服务器列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -378,9 +378,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-自启动项-历史变动记录
+     * 获取自启动项的历史变动记录
      *
-     * 资产指纹-自启动项-历史变动记录
+     * 获取自启动项的历史变动记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -393,9 +393,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-自启动项-历史变动记录
+     * 获取自启动项的历史变动记录
      *
-     * 资产指纹-自启动项-历史变动记录
+     * 获取自启动项的历史变动记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -409,9 +409,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-自启动项信息
+     * 查询自启动项信息
      *
-     * 资产指纹-自启动项信息
+     * 查询自启动信息，支持通过传入自启动名称查询启动类型和服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -424,9 +424,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-自启动项信息
+     * 查询自启动项信息
      *
-     * 资产指纹-自启动项信息
+     * 查询自启动信息，支持通过传入自启动名称查询启动类型和服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -440,9 +440,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 单主机资产指纹-自启动项
+     * 查询自启动项的服务列表
      *
-     * 单主机资产指纹-自启动项
+     * 查询自启动项的服务列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -454,9 +454,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 单主机资产指纹-自启动项
+     * 查询自启动项的服务列表
      *
-     * 单主机资产指纹-自启动项
+     * 查询自启动项的服务列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -502,7 +502,7 @@ public class HssAsyncClient {
     /**
      * 查询主机静态网页防篡改防护动态
      *
-     * 查询主机静态网页防篡改防护动态
+     * 查询主机静态网页防篡改防护动态：展示服务器名称、服务器ip、防护策略、检测时间、防护文件、事件描述信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -517,7 +517,7 @@ public class HssAsyncClient {
     /**
      * 查询主机静态网页防篡改防护动态
      *
-     * 查询主机静态网页防篡改防护动态
+     * 查询主机静态网页防篡改防护动态：展示服务器名称、服务器ip、防护策略、检测时间、防护文件、事件描述信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -533,7 +533,7 @@ public class HssAsyncClient {
     /**
      * 查询主机动态网页防篡改防护动态
      *
-     * 查询主机动态网页防篡改防护动态
+     * 查询主机动态网页防篡改防护动态：包含告警级别、服务器ip、服务器名称、威胁类型、告警时间、攻击源ip、攻击源url信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -548,7 +548,7 @@ public class HssAsyncClient {
     /**
      * 查询主机动态网页防篡改防护动态
      *
-     * 查询主机动态网页防篡改防护动态
+     * 查询主机动态网页防篡改防护动态：包含告警级别、服务器ip、服务器名称、威胁类型、告警时间、攻击源ip、攻击源url信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -589,6 +589,97 @@ public class HssAsyncClient {
         ListHostStatusRequest request) {
         return new AsyncInvoker<ListHostStatusRequest, ListHostStatusResponse>(request, HssMeta.listHostStatus,
             hcClient);
+    }
+
+    /**
+     * 查询单台服务器漏洞信息
+     *
+     * 查询单台服务器漏洞信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListHostVulsRequest 请求对象
+     * @return CompletableFuture<ListHostVulsResponse>
+     */
+    public CompletableFuture<ListHostVulsResponse> listHostVulsAsync(ListHostVulsRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listHostVuls);
+    }
+
+    /**
+     * 查询单台服务器漏洞信息
+     *
+     * 查询单台服务器漏洞信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListHostVulsRequest 请求对象
+     * @return AsyncInvoker<ListHostVulsRequest, ListHostVulsResponse>
+     */
+    public AsyncInvoker<ListHostVulsRequest, ListHostVulsResponse> listHostVulsAsyncInvoker(
+        ListHostVulsRequest request) {
+        return new AsyncInvoker<ListHostVulsRequest, ListHostVulsResponse>(request, HssMeta.listHostVuls, hcClient);
+    }
+
+    /**
+     * 资产管理-资产指纹-Jar包的服务器列表
+     *
+     * 资产管理-资产指纹-Jar包的服务器列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJarPackageHostInfoRequest 请求对象
+     * @return CompletableFuture<ListJarPackageHostInfoResponse>
+     */
+    public CompletableFuture<ListJarPackageHostInfoResponse> listJarPackageHostInfoAsync(
+        ListJarPackageHostInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listJarPackageHostInfo);
+    }
+
+    /**
+     * 资产管理-资产指纹-Jar包的服务器列表
+     *
+     * 资产管理-资产指纹-Jar包的服务器列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJarPackageHostInfoRequest 请求对象
+     * @return AsyncInvoker<ListJarPackageHostInfoRequest, ListJarPackageHostInfoResponse>
+     */
+    public AsyncInvoker<ListJarPackageHostInfoRequest, ListJarPackageHostInfoResponse> listJarPackageHostInfoAsyncInvoker(
+        ListJarPackageHostInfoRequest request) {
+        return new AsyncInvoker<ListJarPackageHostInfoRequest, ListJarPackageHostInfoResponse>(request,
+            HssMeta.listJarPackageHostInfo, hcClient);
+    }
+
+    /**
+     * 查询中间件列表
+     *
+     * 查询中间件列表，支持通过中间件名称查询对应的服务器树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJarPackageStatisticsRequest 请求对象
+     * @return CompletableFuture<ListJarPackageStatisticsResponse>
+     */
+    public CompletableFuture<ListJarPackageStatisticsResponse> listJarPackageStatisticsAsync(
+        ListJarPackageStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listJarPackageStatistics);
+    }
+
+    /**
+     * 查询中间件列表
+     *
+     * 查询中间件列表，支持通过中间件名称查询对应的服务器树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJarPackageStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListJarPackageStatisticsRequest, ListJarPackageStatisticsResponse>
+     */
+    public AsyncInvoker<ListJarPackageStatisticsRequest, ListJarPackageStatisticsResponse> listJarPackageStatisticsAsyncInvoker(
+        ListJarPackageStatisticsRequest request) {
+        return new AsyncInvoker<ListJarPackageStatisticsRequest, ListJarPackageStatisticsResponse>(request,
+            HssMeta.listJarPackageStatistics, hcClient);
     }
 
     /**
@@ -653,9 +744,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-开放端口信息
+     * 查询开放端口列表
      *
-     * 资产指纹-开放端口信息
+     * 查询开放端口列表，支持通过传入端口或协议类型查询服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -667,9 +758,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-开放端口信息
+     * 查询开放端口列表
      *
-     * 资产指纹-开放端口信息
+     * 查询开放端口列表，支持通过传入端口或协议类型查询服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -683,9 +774,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 单主机资产指纹-开放端口信息
+     * 查询开放端口的服务器列表
      *
-     * 单主机资产指纹-开放端口信息
+     * 查询开放端口的服务器列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -697,9 +788,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 单主机资产指纹-开放端口信息
+     * 查询开放端口的服务器列表
      *
-     * 单主机资产指纹-开放端口信息
+     * 查询开放端口的服务器列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -711,9 +802,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-进程信息
+     * 查询进程列表
      *
-     * 资产指纹-进程信息
+     * 查询进程列表，通过传入进程路径参数查询对应的服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -726,9 +817,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-进程信息
+     * 查询进程列表
      *
-     * 资产指纹-进程信息
+     * 查询进程列表，通过传入进程路径参数查询对应的服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -986,9 +1077,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-账号信息
+     * 查询账号信息列表
      *
-     * 资产指纹-账号信息
+     * 查询账号信息列表，支持通过传入账号名称参数查询对应的服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1000,9 +1091,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 资产指纹-账号信息
+     * 查询账号信息列表
      *
-     * 资产指纹-账号信息
+     * 查询账号信息列表，支持通过传入账号名称参数查询对应的服务器数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1016,9 +1107,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 获取资产的账号列表
+     * 查询账号的服务器列表
      *
-     * 获取资产的账号列表
+     * 查询账号的服务器列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1030,9 +1121,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 获取资产的账号列表
+     * 查询账号的服务器列表
      *
-     * 获取资产的账号列表
+     * 查询账号的服务器列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1136,7 +1227,7 @@ public class HssAsyncClient {
     /**
      * 查询防护列表
      *
-     * 查询防护列表
+     * 查询防护列表：查询网页防篡改主机防护状态列表信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1150,7 +1241,7 @@ public class HssAsyncClient {
     /**
      * 查询防护列表
      *
-     * 查询防护列表
+     * 查询防护列表：查询网页防篡改主机防护状态列表信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1166,7 +1257,7 @@ public class HssAsyncClient {
     /**
      * 开启/关闭动态网页防篡改防护
      *
-     * 开启/关闭动态网页防篡改防护
+     * 开启/关闭动态网页防篡改防护，下发/清空动态网页防篡改策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1180,7 +1271,7 @@ public class HssAsyncClient {
     /**
      * 开启/关闭动态网页防篡改防护
      *
-     * 开启/关闭动态网页防篡改防护
+     * 开启/关闭动态网页防篡改防护，下发/清空动态网页防篡改策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1195,7 +1286,7 @@ public class HssAsyncClient {
     /**
      * 开启关闭网页防篡改防护
      *
-     * 开启关闭网页防篡改防护
+     * 开启/关闭网页防篡改功能防护，下发/清空网页防篡改策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1210,7 +1301,7 @@ public class HssAsyncClient {
     /**
      * 开启关闭网页防篡改防护
      *
-     * 开启关闭网页防篡改防护
+     * 开启/关闭网页防篡改功能防护，下发/清空网页防篡改策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1254,9 +1345,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 查询备份策略信息
+     * 查询HSS存储库绑定的备份策略信息
      *
-     * 查询备份策略信息,确保已经购买了勒索防护存储库，可以从cbr云备份服务进行验证，确保已经存在HSS_projectid命名的存储库已经购买
+     * 查询HSS存储库绑定的备份策略信息,确保已经购买了勒索防护存储库，可以从cbr云备份服务进行验证，确保已经存在HSS_projectid命名的存储库已经购买
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1269,9 +1360,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 查询备份策略信息
+     * 查询HSS存储库绑定的备份策略信息
      *
-     * 查询备份策略信息,确保已经购买了勒索防护存储库，可以从cbr云备份服务进行验证，确保已经存在HSS_projectid命名的存储库已经购买
+     * 查询HSS存储库绑定的备份策略信息,确保已经购买了勒索防护存储库，可以从cbr云备份服务进行验证，确保已经存在HSS_projectid命名的存储库已经购买
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1467,9 +1558,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 修改备份策略
+     * 修改存储库绑定的备份策略
      *
-     * 修改备份策略
+     * 修改存储库绑定的备份策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1482,9 +1573,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 修改备份策略
+     * 修改存储库绑定的备份策略
      *
-     * 修改备份策略
+     * 修改存储库绑定的备份策略
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

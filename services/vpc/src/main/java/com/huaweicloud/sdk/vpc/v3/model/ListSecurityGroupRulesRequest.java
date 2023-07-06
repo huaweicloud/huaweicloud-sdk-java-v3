@@ -58,6 +58,11 @@ public class ListSecurityGroupRulesRequest {
 
     private String action;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_ip_prefix")
+
+    private String remoteIpPrefix;
+
     public ListSecurityGroupRulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -291,6 +296,23 @@ public class ListSecurityGroupRulesRequest {
         this.action = action;
     }
 
+    public ListSecurityGroupRulesRequest withRemoteIpPrefix(String remoteIpPrefix) {
+        this.remoteIpPrefix = remoteIpPrefix;
+        return this;
+    }
+
+    /**
+     * 功能说明：远端IP地址 取值范围：cidr格式
+     * @return remoteIpPrefix
+     */
+    public String getRemoteIpPrefix() {
+        return remoteIpPrefix;
+    }
+
+    public void setRemoteIpPrefix(String remoteIpPrefix) {
+        this.remoteIpPrefix = remoteIpPrefix;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -304,13 +326,21 @@ public class ListSecurityGroupRulesRequest {
             && Objects.equals(this.id, that.id) && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.description, that.description)
             && Objects.equals(this.remoteGroupId, that.remoteGroupId) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.action, that.action);
+            && Objects.equals(this.action, that.action) && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(limit, marker, id, securityGroupId, protocol, description, remoteGroupId, direction, action);
+        return Objects.hash(limit,
+            marker,
+            id,
+            securityGroupId,
+            protocol,
+            description,
+            remoteGroupId,
+            direction,
+            action,
+            remoteIpPrefix);
     }
 
     @Override
@@ -326,6 +356,7 @@ public class ListSecurityGroupRulesRequest {
         sb.append("    remoteGroupId: ").append(toIndentedString(remoteGroupId)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
         sb.append("}");
         return sb.toString();
     }

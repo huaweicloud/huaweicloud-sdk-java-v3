@@ -31,7 +31,7 @@ public class DomainOriginHost {
     }
 
     /**
-     * 域名ID。获取方法请参见查询加速域名。
+     * 域名ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -48,7 +48,7 @@ public class DomainOriginHost {
     }
 
     /**
-     * 回源host的类型。
+     * 回源host的类型,accelerate：选择加速域名作为回源host域名,customize：使用自定义的域名作为回源host域名。
      * @return originHostType
      */
     public String getOriginHostType() {

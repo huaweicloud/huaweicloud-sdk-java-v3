@@ -26,7 +26,7 @@ public class ShowDomainDetailByNameRequest {
     }
 
     /**
-     * 加速域名名称,获取方法请参见查询加速域名。
+     * 加速域名名称。
      * @return domainName
      */
     public String getDomainName() {

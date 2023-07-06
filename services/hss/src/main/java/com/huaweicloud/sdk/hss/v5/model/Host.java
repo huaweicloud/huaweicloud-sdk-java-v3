@@ -188,6 +188,11 @@ public class Host {
 
     private Boolean upgradable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "open_time")
+
+    private Long openTime;
+
     public Host withHostName(String hostName) {
         this.hostName = hostName;
         return this;
@@ -364,7 +369,7 @@ public class Host {
     }
 
     /**
-     * 主机开通的版本，包含如下6种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。   - hss.version.container.enterprise ：容器版。
+     * 主机开通的版本，包含如下7种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.advanced ：专业版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。   - hss.version.container.enterprise ：容器版。
      * @return version
      */
     public String getVersion() {
@@ -811,6 +816,25 @@ public class Host {
         this.upgradable = upgradable;
     }
 
+    public Host withOpenTime(Long openTime) {
+        this.openTime = openTime;
+        return this;
+    }
+
+    /**
+     * 开启防护时间，采用时间戳，默认毫秒，
+     * minimum: 0
+     * maximum: 4824695185000
+     * @return openTime
+     */
+    public Long getOpenTime() {
+        return openTime;
+    }
+
+    public void setOpenTime(Long openTime) {
+        this.openTime = openTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -841,7 +865,7 @@ public class Host {
             && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.upgradeStatus, that.upgradeStatus)
             && Objects.equals(this.upgradeResultCode, that.upgradeResultCode)
-            && Objects.equals(this.upgradable, that.upgradable);
+            && Objects.equals(this.upgradable, that.upgradable) && Objects.equals(this.openTime, that.openTime);
     }
 
     @Override
@@ -880,7 +904,8 @@ public class Host {
             agentVersion,
             upgradeStatus,
             upgradeResultCode,
-            upgradable);
+            upgradable,
+            openTime);
     }
 
     @Override
@@ -922,6 +947,7 @@ public class Host {
         sb.append("    upgradeStatus: ").append(toIndentedString(upgradeStatus)).append("\n");
         sb.append("    upgradeResultCode: ").append(toIndentedString(upgradeResultCode)).append("\n");
         sb.append("    upgradable: ").append(toIndentedString(upgradable)).append("\n");
+        sb.append("    openTime: ").append(toIndentedString(openTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

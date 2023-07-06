@@ -576,9 +576,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 删除实例
+     * 删除/退订数据库实例
      *
-     * 删除数据库实例，不支持删除包周期实例。
+     * 删除/退订数据库实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -591,9 +591,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 删除实例
+     * 删除/退订数据库实例
      *
-     * 删除数据库实例，不支持删除包周期实例。
+     * 删除/退订数据库实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -638,9 +638,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 删除只读节点
+     * 删除/退订只读节点
      *
-     * 删除实例的只读节点。多可用区模式删除只读节点时，要保证删除后，剩余的只读节点和主节点在不同的可用区中，否则无法删除该只读节点。
+     * 删除/退订实例的只读节点。多可用区模式删除/退订只读节点时，要保证删除/退订后，剩余的只读节点和主节点在不同的可用区中，否则无法删除/退订该只读节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -653,9 +653,9 @@ public class GaussDBAsyncClient {
     }
 
     /**
-     * 删除只读节点
+     * 删除/退订只读节点
      *
-     * 删除实例的只读节点。多可用区模式删除只读节点时，要保证删除后，剩余的只读节点和主节点在不同的可用区中，否则无法删除该只读节点。
+     * 删除/退订实例的只读节点。多可用区模式删除/退订只读节点时，要保证删除/退订后，剩余的只读节点和主节点在不同的可用区中，否则无法删除/退订该只读节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

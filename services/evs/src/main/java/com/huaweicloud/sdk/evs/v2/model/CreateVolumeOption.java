@@ -72,7 +72,7 @@ public class CreateVolumeOption {
     private String snapshotId;
 
     /**
-     * 云硬盘类型。  目前支持\"SATA\"，\"SAS\"，\"GPSSD\"，\"SSD\"和\"ESSD\"五种。  - \"SATA\"为普通IO云硬盘(已售罄) - \"SAS\"为高IO云硬盘 - \"GPSSD\"为通用型SSD云硬盘 - \"SSD\"为超高IO云硬盘 - \"ESSD\"为极速IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=EVS&api=CinderListVolumeTypes)
+     * 云硬盘类型。  目前支持\"SATA\"，\"SAS\"，\"GPSSD\"，\"SSD\"，\"ESSD\"，\"GPSSD2\"和\"ESSD2\"七种。  - \"SATA\"为普通IO云硬盘(已售罄) - \"SAS\"为高IO云硬盘 - \"GPSSD\"为通用型SSD云硬盘 - \"SSD\"为超高IO云硬盘 - \"ESSD\"为极速IO云硬盘 - \"GPSSD2\"为通用型SSD V2云硬盘 - \"ESSD2\"为极速型SSD V2云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=EVS&api=CinderListVolumeTypes)
      */
     public static final class VolumeTypeEnum {
 
@@ -101,6 +101,16 @@ public class CreateVolumeOption {
          */
         public static final VolumeTypeEnum ESSD = new VolumeTypeEnum("ESSD");
 
+        /**
+         * Enum GPSSD2 for value: "GPSSD2"
+         */
+        public static final VolumeTypeEnum GPSSD2 = new VolumeTypeEnum("GPSSD2");
+
+        /**
+         * Enum ESSD2 for value: "ESSD2"
+         */
+        public static final VolumeTypeEnum ESSD2 = new VolumeTypeEnum("ESSD2");
+
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumeTypeEnum> createStaticFields() {
@@ -110,6 +120,8 @@ public class CreateVolumeOption {
             map.put("SAS", SAS);
             map.put("SATA", SATA);
             map.put("ESSD", ESSD);
+            map.put("GPSSD2", GPSSD2);
+            map.put("ESSD2", ESSD2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -168,6 +180,16 @@ public class CreateVolumeOption {
     @JsonProperty(value = "tags")
 
     private Map<String, String> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Integer throughput;
 
     public CreateVolumeOption withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -378,7 +400,7 @@ public class CreateVolumeOption {
     }
 
     /**
-     * 云硬盘类型。  目前支持\"SATA\"，\"SAS\"，\"GPSSD\"，\"SSD\"和\"ESSD\"五种。  - \"SATA\"为普通IO云硬盘(已售罄) - \"SAS\"为高IO云硬盘 - \"GPSSD\"为通用型SSD云硬盘 - \"SSD\"为超高IO云硬盘 - \"ESSD\"为极速IO云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=EVS&api=CinderListVolumeTypes)
+     * 云硬盘类型。  目前支持\"SATA\"，\"SAS\"，\"GPSSD\"，\"SSD\"，\"ESSD\"，\"GPSSD2\"和\"ESSD2\"七种。  - \"SATA\"为普通IO云硬盘(已售罄) - \"SAS\"为高IO云硬盘 - \"GPSSD\"为通用型SSD云硬盘 - \"SSD\"为超高IO云硬盘 - \"ESSD\"为极速IO云硬盘 - \"GPSSD2\"为通用型SSD V2云硬盘 - \"ESSD2\"为极速型SSD V2云硬盘 当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。  说明： 从快照创建云硬盘时，volume_type字段必须和快照源云硬盘保持一致。 了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=EVS&api=CinderListVolumeTypes)
      * @return volumeType
      */
     public VolumeTypeEnum getVolumeType() {
@@ -422,6 +444,40 @@ public class CreateVolumeOption {
         this.tags = tags;
     }
 
+    public CreateVolumeOption withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * 给云硬盘配置iops，购买GPSSD2、ESSD2类型的云硬盘时必填，其他类型不能设置。  说明： 1、了解GPSSD2、ESSD2类型的iops大小范围，请参见 [云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 2、只支持按需计费。
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    public CreateVolumeOption withThroughput(Integer throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 给云硬盘配置吞吐量，单位是MiB/s，购买GPSSD2类型云盘时必填，其他类型不能设置。  说明： 1、了解GPSSD2类型的吞吐量大小范围，请参见 [云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 2、只支持按需计费。
+     * @return throughput
+     */
+    public Integer getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -438,7 +494,8 @@ public class CreateVolumeOption {
             && Objects.equals(this.imageRef, that.imageRef) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.multiattach, that.multiattach) && Objects.equals(this.name, that.name)
             && Objects.equals(this.size, that.size) && Objects.equals(this.snapshotId, that.snapshotId)
-            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.iops, that.iops) && Objects.equals(this.throughput, that.throughput);
     }
 
     @Override
@@ -455,7 +512,9 @@ public class CreateVolumeOption {
             size,
             snapshotId,
             volumeType,
-            tags);
+            tags,
+            iops,
+            throughput);
     }
 
     @Override
@@ -475,6 +534,8 @@ public class CreateVolumeOption {
         sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
         sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("}");
         return sb.toString();
     }

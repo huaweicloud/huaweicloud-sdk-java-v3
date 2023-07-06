@@ -41,7 +41,7 @@ public class BatchCopyDomainResponse extends SdkResponse {
     }
 
     /**
-     * 成功响应体
+     * 复制配置结果。
      * @return result
      */
     public List<BatchCopyResultVo> getResult() {

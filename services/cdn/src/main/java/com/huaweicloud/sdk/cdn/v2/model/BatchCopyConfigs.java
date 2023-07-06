@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 原域名所有配置
+ * 需要复制的原域名配置。
  */
 public class BatchCopyConfigs {
 
@@ -51,7 +51,7 @@ public class BatchCopyConfigs {
     }
 
     /**
-     * 原域名
+     * 原域名。
      * @return sourceDomain
      */
     public String getSourceDomain() {

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Follow302StatusRequest {
 
     /**
-     * follow302状态（\"off\"/\"on\"）
+     * follow302状态，off：关闭，on：开启。
      */
     public static final class Follow302StatusEnum {
 
@@ -96,7 +96,7 @@ public class Follow302StatusRequest {
     }
 
     /**
-     * follow302状态（\"off\"/\"on\"）
+     * follow302状态，off：关闭，on：开启。
      * @return follow302Status
      */
     public Follow302StatusEnum getFollow302Status() {

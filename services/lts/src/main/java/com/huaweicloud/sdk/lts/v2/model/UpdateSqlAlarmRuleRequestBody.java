@@ -235,7 +235,7 @@ public class UpdateSqlAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_save_rule")
 
-    private NotificationSaveRule notificationSaveRule;
+    private SqlNotificationSaveRule notificationSaveRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_condition_count")
@@ -454,15 +454,15 @@ public class UpdateSqlAlarmRuleRequestBody {
         this.domainId = domainId;
     }
 
-    public UpdateSqlAlarmRuleRequestBody withNotificationSaveRule(NotificationSaveRule notificationSaveRule) {
+    public UpdateSqlAlarmRuleRequestBody withNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
         this.notificationSaveRule = notificationSaveRule;
         return this;
     }
 
     public UpdateSqlAlarmRuleRequestBody withNotificationSaveRule(
-        Consumer<NotificationSaveRule> notificationSaveRuleSetter) {
+        Consumer<SqlNotificationSaveRule> notificationSaveRuleSetter) {
         if (this.notificationSaveRule == null) {
-            this.notificationSaveRule = new NotificationSaveRule();
+            this.notificationSaveRule = new SqlNotificationSaveRule();
             notificationSaveRuleSetter.accept(this.notificationSaveRule);
         }
 
@@ -473,11 +473,11 @@ public class UpdateSqlAlarmRuleRequestBody {
      * 通知主题
      * @return notificationSaveRule
      */
-    public NotificationSaveRule getNotificationSaveRule() {
+    public SqlNotificationSaveRule getNotificationSaveRule() {
         return notificationSaveRule;
     }
 
-    public void setNotificationSaveRule(NotificationSaveRule notificationSaveRule) {
+    public void setNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
         this.notificationSaveRule = notificationSaveRule;
     }
 

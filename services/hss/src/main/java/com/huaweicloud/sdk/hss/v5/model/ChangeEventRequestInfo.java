@@ -51,7 +51,7 @@ public class ChangeEventRequestInfo {
     }
 
     /**
-     * 手动处理的备注
+     * 备注信息
      * @return handler
      */
     public String getHandler() {

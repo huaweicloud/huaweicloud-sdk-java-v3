@@ -38,7 +38,7 @@ public class ShowAgentConfigResponse extends SdkResponse {
     }
 
     /**
-     * Get code
+     * 响应码
      * @return code
      */
     public String getCode() {
@@ -55,7 +55,7 @@ public class ShowAgentConfigResponse extends SdkResponse {
     }
 
     /**
-     * Get message
+     * 响应消息
      * @return message
      */
     public String getMessage() {
@@ -72,7 +72,7 @@ public class ShowAgentConfigResponse extends SdkResponse {
     }
 
     /**
-     * Get extend
+     * 扩展信息
      * @return extend
      */
     public Object getExtend() {

@@ -20,7 +20,7 @@ public class CdnClient {
     /**
      * 删除资源标签配置接口
      *
-     * 用于删除资源标签
+     * 用于删除资源标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -34,7 +34,7 @@ public class CdnClient {
     /**
      * 删除资源标签配置接口
      *
-     * 用于删除资源标签
+     * 用于删除资源标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -138,7 +138,7 @@ public class CdnClient {
     /**
      * 创建资源标签配置接口
      *
-     * 用于创建资源标签
+     * 用于创建资源标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -152,7 +152,7 @@ public class CdnClient {
     /**
      * 创建资源标签配置接口
      *
-     * 用于创建资源标签
+     * 用于创建资源标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -527,7 +527,7 @@ public class CdnClient {
     }
 
     /**
-     * 查询域名统计数据-区域运营商
+     * 按区域运营商查询域名统计数据
      *
      * - 支持查询90天内的数据。
      * 
@@ -553,7 +553,7 @@ public class CdnClient {
     }
 
     /**
-     * 查询域名统计数据-区域运营商
+     * 按区域运营商查询域名统计数据
      *
      * - 支持查询90天内的数据。
      * 
@@ -897,7 +897,7 @@ public class CdnClient {
     /**
      * 查询资源标签列表配置接口
      *
-     * 用于查询资源标签列表
+     * 用于查询资源标签列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -911,7 +911,7 @@ public class CdnClient {
     /**
      * 查询资源标签列表配置接口
      *
-     * 用于查询资源标签列表
+     * 用于查询资源标签列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1130,9 +1130,9 @@ public class CdnClient {
     }
 
     /**
-     * 修改源站信息
+     * 修改源站信息。
      *
-     * 修改源站信息。源站IP地址或域名都可以指引CDN节点回源到对应的源站服务器，源站域名不能与加速域名相同。
+     * 修改加速域名的源站配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1144,9 +1144,9 @@ public class CdnClient {
     }
 
     /**
-     * 修改源站信息
+     * 修改源站信息。
      *
-     * 修改源站信息。源站IP地址或域名都可以指引CDN节点回源到对应的源站服务器，源站域名不能与加速域名相同。
+     * 修改加速域名的源站配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1220,7 +1220,7 @@ public class CdnClient {
     }
 
     /**
-     * 修改回源HOST
+     * 修改回源HOST。
      *
      * 修改回源HOST。回源HOST是CDN节点在回源过程中，在源站访问的站点域名，即http请求头中的host信息。
      * 
@@ -1234,7 +1234,7 @@ public class CdnClient {
     }
 
     /**
-     * 修改回源HOST
+     * 修改回源HOST。
      *
      * 修改回源HOST。回源HOST是CDN节点在回源过程中，在源站访问的站点域名，即http请求头中的host信息。
      * 

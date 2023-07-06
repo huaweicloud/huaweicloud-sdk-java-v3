@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * webSocket配置。  &gt; 只支持全站加速。
+ * webSocket配置。  &gt; 只有全站加速的域名支持该配置。
  */
 public class WebSocketSeek {
 

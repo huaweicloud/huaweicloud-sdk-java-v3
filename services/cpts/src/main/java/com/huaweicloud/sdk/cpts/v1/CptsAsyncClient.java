@@ -20,9 +20,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 批量启停任务（新版启停任务接口）
+     * 批量启停任务
      *
-     * 批量启停任务（新版启停任务接口）
+     * 批量启停任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -35,9 +35,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 批量启停任务（新版启停任务接口）
+     * 批量启停任务
      *
-     * 批量启停任务（新版启停任务接口）
+     * 批量启停任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -109,9 +109,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 创建用例
+     * 创建用例v2
      *
-     * 创建用例
+     * 创建用例v2
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -123,9 +123,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 创建用例
+     * 创建用例v2
      *
-     * 创建用例
+     * 创建用例v2
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -138,9 +138,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 创建任务
+     * 创建任务v3
      *
-     * 创建任务
+     * 创建任务v3
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -152,9 +152,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 创建任务
+     * 创建任务v3
      *
-     * 创建任务
+     * 创建任务v3
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -339,9 +339,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 删除用例
+     * 删除用例v2
      *
-     * 删除用例
+     * 删除用例v2
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -353,9 +353,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 删除用例
+     * 删除用例v2
      *
-     * 删除用例
+     * 删除用例v2
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -368,9 +368,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 删除任务
+     * 删除任务v3
      *
-     * 删除任务
+     * 删除任务v3
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -382,9 +382,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 删除任务
+     * 删除任务v3
      *
-     * 删除任务
+     * 删除任务v3
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -661,7 +661,7 @@ public class CptsAsyncClient {
     /**
      * 内外融合单个用例的详情数据
      *
-     * 内外融合单个用例的详情数据
+     * 查询单个用例的详情数据
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -675,7 +675,7 @@ public class CptsAsyncClient {
     /**
      * 内外融合单个用例的详情数据
      *
-     * 内外融合单个用例的详情数据
+     * 查询单个用例的详情数据
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -722,7 +722,7 @@ public class CptsAsyncClient {
     /**
      * 内外融合当前任务用例列表接口
      *
-     * 内外融合当前任务用例列表接口
+     * 查询当前任务用例列表接口
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -736,7 +736,7 @@ public class CptsAsyncClient {
     /**
      * 内外融合当前任务用例列表接口
      *
-     * 内外融合当前任务用例列表接口
+     * 查询当前任务用例列表接口
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1009,9 +1009,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 修改用例
+     * 修改用例v2
      *
-     * 修改用例
+     * 修改用例v2
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1023,9 +1023,9 @@ public class CptsAsyncClient {
     }
 
     /**
-     * 修改用例
+     * 修改用例v2
      *
-     * 修改用例
+     * 修改用例v2
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

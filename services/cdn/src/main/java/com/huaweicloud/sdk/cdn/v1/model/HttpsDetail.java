@@ -72,7 +72,7 @@ public class HttpsDetail {
     }
 
     /**
-     * 域名id
+     * 域名id。
      * @return domainId
      */
     public String getDomainId() {
@@ -89,7 +89,7 @@ public class HttpsDetail {
     }
 
     /**
-     * 绑定该证书的域名
+     * 绑定该证书的域名。
      * @return domainName
      */
     public String getDomainName() {
@@ -106,7 +106,7 @@ public class HttpsDetail {
     }
 
     /**
-     * 证书名字。（长度限制为3-32字符）。
+     * 证书名字。
      * @return certName
      */
     public String getCertName() {
@@ -123,7 +123,7 @@ public class HttpsDetail {
     }
 
     /**
-     * 证书内容
+     * 证书内容。
      * @return certificate
      */
     public String getCertificate() {
@@ -140,7 +140,7 @@ public class HttpsDetail {
     }
 
     /**
-     * 私钥内容
+     * 私钥内容。
      * @return privateKey
      */
     public String getPrivateKey() {
@@ -157,7 +157,7 @@ public class HttpsDetail {
     }
 
     /**
-     * 0：自有证书  1：云托管证书
+     * 0：自有证书  1：云托管证书。
      * @return certificateType
      */
     public Integer getCertificateType() {
@@ -174,7 +174,7 @@ public class HttpsDetail {
     }
 
     /**
-     * 证书过期时间
+     * 证书过期时间。
      * @return expirationTime
      */
     public Long getExpirationTime() {
@@ -191,7 +191,7 @@ public class HttpsDetail {
     }
 
     /**
-     * HTTPS证书是否启用，取值0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源，开启时需要传递证书及私钥。
+     * HTTPS证书是否启用，取值0：不启用；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源。
      * @return httpsStatus
      */
     public Integer getHttpsStatus() {

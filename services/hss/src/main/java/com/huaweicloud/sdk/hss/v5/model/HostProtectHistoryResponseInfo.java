@@ -21,6 +21,21 @@ public class HostProtectHistoryResponseInfo {
     private String filePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_operation")
+
+    private String fileOperation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_name")
+
+    private String hostName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_ip")
+
+    private String hostIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_id")
 
     private String processId;
@@ -71,13 +86,64 @@ public class HostProtectHistoryResponseInfo {
         this.filePath = filePath;
     }
 
+    public HostProtectHistoryResponseInfo withFileOperation(String fileOperation) {
+        this.fileOperation = fileOperation;
+        return this;
+    }
+
+    /**
+     * 文件操作类型   - add: 新增   - delete: 删除   - modify: 修改内容   - attribute: 修改属性   - unknown: 未知
+     * @return fileOperation
+     */
+    public String getFileOperation() {
+        return fileOperation;
+    }
+
+    public void setFileOperation(String fileOperation) {
+        this.fileOperation = fileOperation;
+    }
+
+    public HostProtectHistoryResponseInfo withHostName(String hostName) {
+        this.hostName = hostName;
+        return this;
+    }
+
+    /**
+     * 服务器名称
+     * @return hostName
+     */
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+
+    public HostProtectHistoryResponseInfo withHostIp(String hostIp) {
+        this.hostIp = hostIp;
+        return this;
+    }
+
+    /**
+     * 服务器ip
+     * @return hostIp
+     */
+    public String getHostIp() {
+        return hostIp;
+    }
+
+    public void setHostIp(String hostIp) {
+        this.hostIp = hostIp;
+    }
+
     public HostProtectHistoryResponseInfo withProcessId(String processId) {
         this.processId = processId;
         return this;
     }
 
     /**
-     * 进程ID，操作系统是Windows时返回
+     * 进程ID
      * @return processId
      */
     public String getProcessId() {
@@ -94,7 +160,7 @@ public class HostProtectHistoryResponseInfo {
     }
 
     /**
-     * 进程名称，操作系统是Windows时返回
+     * 进程名称
      * @return processName
      */
     public String getProcessName() {
@@ -111,7 +177,7 @@ public class HostProtectHistoryResponseInfo {
     }
 
     /**
-     * 进程命令行，操作系统是Windows时返回
+     * 进程命令行
      * @return processCmd
      */
     public String getProcessCmd() {
@@ -132,13 +198,14 @@ public class HostProtectHistoryResponseInfo {
         }
         HostProtectHistoryResponseInfo that = (HostProtectHistoryResponseInfo) obj;
         return Objects.equals(this.occrTime, that.occrTime) && Objects.equals(this.filePath, that.filePath)
-            && Objects.equals(this.processId, that.processId) && Objects.equals(this.processName, that.processName)
-            && Objects.equals(this.processCmd, that.processCmd);
+            && Objects.equals(this.fileOperation, that.fileOperation) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.processId, that.processId)
+            && Objects.equals(this.processName, that.processName) && Objects.equals(this.processCmd, that.processCmd);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(occrTime, filePath, processId, processName, processCmd);
+        return Objects.hash(occrTime, filePath, fileOperation, hostName, hostIp, processId, processName, processCmd);
     }
 
     @Override
@@ -147,6 +214,9 @@ public class HostProtectHistoryResponseInfo {
         sb.append("class HostProtectHistoryResponseInfo {\n");
         sb.append("    occrTime: ").append(toIndentedString(occrTime)).append("\n");
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
+        sb.append("    fileOperation: ").append(toIndentedString(fileOperation)).append("\n");
+        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
+        sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    processId: ").append(toIndentedString(processId)).append("\n");
         sb.append("    processName: ").append(toIndentedString(processName)).append("\n");
         sb.append("    processCmd: ").append(toIndentedString(processCmd)).append("\n");

@@ -36,7 +36,7 @@ public class Quotas {
     }
 
     /**
-     * 配额上限
+     * 配额上限。
      * @return quotaLimit
      */
     public Integer getQuotaLimit() {
@@ -53,7 +53,7 @@ public class Quotas {
     }
 
     /**
-     * 配额类型
+     * 配额类型。
      * @return type
      */
     public String getType() {
@@ -70,7 +70,7 @@ public class Quotas {
     }
 
     /**
-     * 已使用配额数
+     * 已使用配额数。
      * @return used
      */
     public Integer getUsed() {

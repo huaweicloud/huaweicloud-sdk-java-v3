@@ -84,7 +84,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
     }
 
     /**
-     * https开关（0：\"关闭\"；1：\"设置证书\" https_switch为1时，证书参数不能为空）
+     * https开关(0：\"关闭\"；1：\"设置证书\")。
      * @return httpsSwitch
      */
     public Integer getHttpsSwitch() {
@@ -101,7 +101,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
     }
 
     /**
-     * 回源方式:1：\"回源跟随\"；2：\"http\"(默认)，3：\"https\"  为空值时默认设置为http
+     * 回源方式:1：\"回源跟随\"；2：\"HTTP\"(默认)，3：https（自建）。
      * @return accessOriginWay
      */
     public Integer getAccessOriginWay() {
@@ -118,7 +118,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
     }
 
     /**
-     * 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
+     * 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（此参数即将下线，建议使用force_redirect_config修改配置）.
      * @return forceRedirectHttps
      */
     public Integer getForceRedirectHttps() {
@@ -179,7 +179,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
     }
 
     /**
-     * 证书名称（设置证书必填）（长度限制为3-32字符）。
+     * 证书名称（设置证书必填）（长度限制为3-64字符）。
      * @return certName
      */
     public String getCertName() {
@@ -196,7 +196,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
     }
 
     /**
-     * 证书内容（设置证书必填）
+     * HTTPS协议使用的SSL证书内容，仅支持PEM编码格式。不启用证书则无需输入。初次配置证书时必传。
      * @return certificate
      */
     public String getCertificate() {
@@ -213,7 +213,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
     }
 
     /**
-     * 私钥内容（设置证书必填）
+     * HTTPS协议使用的SSL证书私钥内容，仅支持PEM编码格式。不启用证书则无需输入。初次配置证书时必传。
      * @return privateKey
      */
     public String getPrivateKey() {

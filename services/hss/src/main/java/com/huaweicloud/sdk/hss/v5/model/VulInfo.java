@@ -78,6 +78,41 @@ public class VulInfo {
 
     private List<String> hostIdList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cve_list")
+
+    private List<VulInfoCveList> cveList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "patch_url")
+
+    private String patchUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_priority")
+
+    private String repairPriority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hosts_num")
+
+    private VulnerabilityHostNumberInfo hostsNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_success_num")
+
+    private Integer repairSuccessNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fixed_num")
+
+    private Long fixedNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ignored_num")
+
+    private Long ignoredNum;
+
     public VulInfo withVulName(String vulName) {
         this.vulName = vulName;
         return this;
@@ -293,7 +328,7 @@ public class VulInfo {
     }
 
     /**
-     * 漏洞类型，包含如下：   -linux_vul : linux漏洞   -windows_vul : windows漏洞   -web_cms : Web-CMS漏洞
+     * 漏洞类型，包含如下：   -linux_vul : linux漏洞   -windows_vul : windows漏洞   -web_cms : Web-CMS漏洞   -app_vul : 应用漏洞
      * @return type
      */
     public String getType() {
@@ -337,6 +372,156 @@ public class VulInfo {
         this.hostIdList = hostIdList;
     }
 
+    public VulInfo withCveList(List<VulInfoCveList> cveList) {
+        this.cveList = cveList;
+        return this;
+    }
+
+    public VulInfo addCveListItem(VulInfoCveList cveListItem) {
+        if (this.cveList == null) {
+            this.cveList = new ArrayList<>();
+        }
+        this.cveList.add(cveListItem);
+        return this;
+    }
+
+    public VulInfo withCveList(Consumer<List<VulInfoCveList>> cveListSetter) {
+        if (this.cveList == null) {
+            this.cveList = new ArrayList<>();
+        }
+        cveListSetter.accept(this.cveList);
+        return this;
+    }
+
+    /**
+     * CVE列表
+     * @return cveList
+     */
+    public List<VulInfoCveList> getCveList() {
+        return cveList;
+    }
+
+    public void setCveList(List<VulInfoCveList> cveList) {
+        this.cveList = cveList;
+    }
+
+    public VulInfo withPatchUrl(String patchUrl) {
+        this.patchUrl = patchUrl;
+        return this;
+    }
+
+    /**
+     * 补丁地址
+     * @return patchUrl
+     */
+    public String getPatchUrl() {
+        return patchUrl;
+    }
+
+    public void setPatchUrl(String patchUrl) {
+        this.patchUrl = patchUrl;
+    }
+
+    public VulInfo withRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+        return this;
+    }
+
+    /**
+     * 修复优先级 Critical 紧急 High 高 Medium 中 Low 低
+     * @return repairPriority
+     */
+    public String getRepairPriority() {
+        return repairPriority;
+    }
+
+    public void setRepairPriority(String repairPriority) {
+        this.repairPriority = repairPriority;
+    }
+
+    public VulInfo withHostsNum(VulnerabilityHostNumberInfo hostsNum) {
+        this.hostsNum = hostsNum;
+        return this;
+    }
+
+    public VulInfo withHostsNum(Consumer<VulnerabilityHostNumberInfo> hostsNumSetter) {
+        if (this.hostsNum == null) {
+            this.hostsNum = new VulnerabilityHostNumberInfo();
+            hostsNumSetter.accept(this.hostsNum);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hostsNum
+     * @return hostsNum
+     */
+    public VulnerabilityHostNumberInfo getHostsNum() {
+        return hostsNum;
+    }
+
+    public void setHostsNum(VulnerabilityHostNumberInfo hostsNum) {
+        this.hostsNum = hostsNum;
+    }
+
+    public VulInfo withRepairSuccessNum(Integer repairSuccessNum) {
+        this.repairSuccessNum = repairSuccessNum;
+        return this;
+    }
+
+    /**
+     * 修复成功次数
+     * minimum: 0
+     * maximum: 1000000
+     * @return repairSuccessNum
+     */
+    public Integer getRepairSuccessNum() {
+        return repairSuccessNum;
+    }
+
+    public void setRepairSuccessNum(Integer repairSuccessNum) {
+        this.repairSuccessNum = repairSuccessNum;
+    }
+
+    public VulInfo withFixedNum(Long fixedNum) {
+        this.fixedNum = fixedNum;
+        return this;
+    }
+
+    /**
+     * 修复数量
+     * minimum: 0
+     * maximum: 1000000
+     * @return fixedNum
+     */
+    public Long getFixedNum() {
+        return fixedNum;
+    }
+
+    public void setFixedNum(Long fixedNum) {
+        this.fixedNum = fixedNum;
+    }
+
+    public VulInfo withIgnoredNum(Long ignoredNum) {
+        this.ignoredNum = ignoredNum;
+        return this;
+    }
+
+    /**
+     * 忽略数量
+     * minimum: 0
+     * maximum: 1000000
+     * @return ignoredNum
+     */
+    public Long getIgnoredNum() {
+        return ignoredNum;
+    }
+
+    public void setIgnoredNum(Long ignoredNum) {
+        this.ignoredNum = ignoredNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -353,7 +538,11 @@ public class VulInfo {
             && Objects.equals(this.unhandleHostNum, that.unhandleHostNum)
             && Objects.equals(this.scanTime, that.scanTime) && Objects.equals(this.solutionDetail, that.solutionDetail)
             && Objects.equals(this.url, that.url) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.hostIdList, that.hostIdList);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.hostIdList, that.hostIdList)
+            && Objects.equals(this.cveList, that.cveList) && Objects.equals(this.patchUrl, that.patchUrl)
+            && Objects.equals(this.repairPriority, that.repairPriority) && Objects.equals(this.hostsNum, that.hostsNum)
+            && Objects.equals(this.repairSuccessNum, that.repairSuccessNum)
+            && Objects.equals(this.fixedNum, that.fixedNum) && Objects.equals(this.ignoredNum, that.ignoredNum);
     }
 
     @Override
@@ -370,7 +559,14 @@ public class VulInfo {
             url,
             description,
             type,
-            hostIdList);
+            hostIdList,
+            cveList,
+            patchUrl,
+            repairPriority,
+            hostsNum,
+            repairSuccessNum,
+            fixedNum,
+            ignoredNum);
     }
 
     @Override
@@ -390,6 +586,13 @@ public class VulInfo {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
+        sb.append("    cveList: ").append(toIndentedString(cveList)).append("\n");
+        sb.append("    patchUrl: ").append(toIndentedString(patchUrl)).append("\n");
+        sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
+        sb.append("    hostsNum: ").append(toIndentedString(hostsNum)).append("\n");
+        sb.append("    repairSuccessNum: ").append(toIndentedString(repairSuccessNum)).append("\n");
+        sb.append("    fixedNum: ").append(toIndentedString(fixedNum)).append("\n");
+        sb.append("    ignoredNum: ").append(toIndentedString(ignoredNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -63,7 +63,7 @@ public class ListDomainsResponse extends SdkResponse {
     }
 
     /**
-     * 域名信息
+     * 域名信息。
      * @return domains
      */
     public List<Domains> getDomains() {

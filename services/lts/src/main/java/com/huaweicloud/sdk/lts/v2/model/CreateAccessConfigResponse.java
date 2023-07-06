@@ -30,7 +30,7 @@ public class CreateAccessConfigResponse extends SdkResponse {
     private String accessConfigName;
 
     /**
-     * 日志接入类型。AGENT：主机接入
+     * 日志接入类型。AGENT：ECS接入  K8S_CCE: CCE接入
      */
     public static final class AccessConfigTypeEnum {
 
@@ -39,11 +39,17 @@ public class CreateAccessConfigResponse extends SdkResponse {
          */
         public static final AccessConfigTypeEnum AGENT = new AccessConfigTypeEnum("AGENT");
 
+        /**
+         * Enum K8S_CCE for value: "K8S_CCE"
+         */
+        public static final AccessConfigTypeEnum K8S_CCE = new AccessConfigTypeEnum("K8S_CCE");
+
         private static final Map<String, AccessConfigTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AccessConfigTypeEnum> createStaticFields() {
             Map<String, AccessConfigTypeEnum> map = new HashMap<>();
             map.put("AGENT", AGENT);
+            map.put("K8S_CCE", K8S_CCE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -106,7 +112,7 @@ public class CreateAccessConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_detail")
 
-    private AccessConfigDeatil accessConfigDetail;
+    private AccessConfigDeatilCreate accessConfigDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_info")
@@ -122,6 +128,16 @@ public class CreateAccessConfigResponse extends SdkResponse {
     @JsonProperty(value = "access_config_tag")
 
     private List<AccessConfigTag> accessConfigTag = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_split")
+
+    private Boolean logSplit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "binary_collect")
+
+    private Boolean binaryCollect;
 
     public CreateAccessConfigResponse withAccessConfigId(String accessConfigId) {
         this.accessConfigId = accessConfigId;
@@ -163,7 +179,7 @@ public class CreateAccessConfigResponse extends SdkResponse {
     }
 
     /**
-     * 日志接入类型。AGENT：主机接入
+     * 日志接入类型。AGENT：ECS接入  K8S_CCE: CCE接入
      * @return accessConfigType
      */
     public AccessConfigTypeEnum getAccessConfigType() {
@@ -193,14 +209,15 @@ public class CreateAccessConfigResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    public CreateAccessConfigResponse withAccessConfigDetail(AccessConfigDeatil accessConfigDetail) {
+    public CreateAccessConfigResponse withAccessConfigDetail(AccessConfigDeatilCreate accessConfigDetail) {
         this.accessConfigDetail = accessConfigDetail;
         return this;
     }
 
-    public CreateAccessConfigResponse withAccessConfigDetail(Consumer<AccessConfigDeatil> accessConfigDetailSetter) {
+    public CreateAccessConfigResponse withAccessConfigDetail(
+        Consumer<AccessConfigDeatilCreate> accessConfigDetailSetter) {
         if (this.accessConfigDetail == null) {
-            this.accessConfigDetail = new AccessConfigDeatil();
+            this.accessConfigDetail = new AccessConfigDeatilCreate();
             accessConfigDetailSetter.accept(this.accessConfigDetail);
         }
 
@@ -211,11 +228,11 @@ public class CreateAccessConfigResponse extends SdkResponse {
      * Get accessConfigDetail
      * @return accessConfigDetail
      */
-    public AccessConfigDeatil getAccessConfigDetail() {
+    public AccessConfigDeatilCreate getAccessConfigDetail() {
         return accessConfigDetail;
     }
 
-    public void setAccessConfigDetail(AccessConfigDeatil accessConfigDetail) {
+    public void setAccessConfigDetail(AccessConfigDeatilCreate accessConfigDetail) {
         this.accessConfigDetail = accessConfigDetail;
     }
 
@@ -293,7 +310,7 @@ public class CreateAccessConfigResponse extends SdkResponse {
     }
 
     /**
-     * Get accessConfigTag
+     * 标签信息。KEY不能重复,最多20个标签
      * @return accessConfigTag
      */
     public List<AccessConfigTag> getAccessConfigTag() {
@@ -302,6 +319,40 @@ public class CreateAccessConfigResponse extends SdkResponse {
 
     public void setAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
         this.accessConfigTag = accessConfigTag;
+    }
+
+    public CreateAccessConfigResponse withLogSplit(Boolean logSplit) {
+        this.logSplit = logSplit;
+        return this;
+    }
+
+    /**
+     * 二进制采集
+     * @return logSplit
+     */
+    public Boolean getLogSplit() {
+        return logSplit;
+    }
+
+    public void setLogSplit(Boolean logSplit) {
+        this.logSplit = logSplit;
+    }
+
+    public CreateAccessConfigResponse withBinaryCollect(Boolean binaryCollect) {
+        this.binaryCollect = binaryCollect;
+        return this;
+    }
+
+    /**
+     * 日志拆分
+     * @return binaryCollect
+     */
+    public Boolean getBinaryCollect() {
+        return binaryCollect;
+    }
+
+    public void setBinaryCollect(Boolean binaryCollect) {
+        this.binaryCollect = binaryCollect;
     }
 
     @Override
@@ -319,7 +370,8 @@ public class CreateAccessConfigResponse extends SdkResponse {
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.accessConfigDetail, that.accessConfigDetail)
             && Objects.equals(this.logInfo, that.logInfo) && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
-            && Objects.equals(this.accessConfigTag, that.accessConfigTag);
+            && Objects.equals(this.accessConfigTag, that.accessConfigTag)
+            && Objects.equals(this.logSplit, that.logSplit) && Objects.equals(this.binaryCollect, that.binaryCollect);
     }
 
     @Override
@@ -331,7 +383,9 @@ public class CreateAccessConfigResponse extends SdkResponse {
             accessConfigDetail,
             logInfo,
             hostGroupInfo,
-            accessConfigTag);
+            accessConfigTag,
+            logSplit,
+            binaryCollect);
     }
 
     @Override
@@ -346,6 +400,8 @@ public class CreateAccessConfigResponse extends SdkResponse {
         sb.append("    logInfo: ").append(toIndentedString(logInfo)).append("\n");
         sb.append("    hostGroupInfo: ").append(toIndentedString(hostGroupInfo)).append("\n");
         sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");
+        sb.append("    logSplit: ").append(toIndentedString(logSplit)).append("\n");
+        sb.append("    binaryCollect: ").append(toIndentedString(binaryCollect)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -271,6 +271,13 @@ public class VpcMeta {
             f -> f.withMarshaller(ListSecurityGroupRulesRequest::getAction, (req, v) -> {
                 req.setAction(v);
             }));
+        builder.<String>withRequestField("remote_ip_prefix",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getRemoteIpPrefix, (req, v) -> {
+                req.setRemoteIpPrefix(v);
+            }));
 
         // response
 

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建防护策略。若新建防护策略，则protection_policy_id为空，create_protection_policy必选
@@ -54,6 +57,11 @@ public class ProtectionProxyInfoRequestInfo {
     @JsonProperty(value = "operating_system")
 
     private String operatingSystem;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_whitelist")
+
+    private List<TrustProcessInfo> processWhitelist = null;
 
     public ProtectionProxyInfoRequestInfo withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -208,6 +216,40 @@ public class ProtectionProxyInfoRequestInfo {
         this.operatingSystem = operatingSystem;
     }
 
+    public ProtectionProxyInfoRequestInfo withProcessWhitelist(List<TrustProcessInfo> processWhitelist) {
+        this.processWhitelist = processWhitelist;
+        return this;
+    }
+
+    public ProtectionProxyInfoRequestInfo addProcessWhitelistItem(TrustProcessInfo processWhitelistItem) {
+        if (this.processWhitelist == null) {
+            this.processWhitelist = new ArrayList<>();
+        }
+        this.processWhitelist.add(processWhitelistItem);
+        return this;
+    }
+
+    public ProtectionProxyInfoRequestInfo withProcessWhitelist(
+        Consumer<List<TrustProcessInfo>> processWhitelistSetter) {
+        if (this.processWhitelist == null) {
+            this.processWhitelist = new ArrayList<>();
+        }
+        processWhitelistSetter.accept(this.processWhitelist);
+        return this;
+    }
+
+    /**
+     * 进程白名单
+     * @return processWhitelist
+     */
+    public List<TrustProcessInfo> getProcessWhitelist() {
+        return processWhitelist;
+    }
+
+    public void setProcessWhitelist(List<TrustProcessInfo> processWhitelist) {
+        this.processWhitelist = processWhitelist;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -224,7 +266,8 @@ public class ProtectionProxyInfoRequestInfo {
             && Objects.equals(this.protectionType, that.protectionType)
             && Objects.equals(this.excludeDirectory, that.excludeDirectory)
             && Objects.equals(this.runtimeDetectionStatus, that.runtimeDetectionStatus)
-            && Objects.equals(this.operatingSystem, that.operatingSystem);
+            && Objects.equals(this.operatingSystem, that.operatingSystem)
+            && Objects.equals(this.processWhitelist, that.processWhitelist);
     }
 
     @Override
@@ -237,7 +280,8 @@ public class ProtectionProxyInfoRequestInfo {
             protectionType,
             excludeDirectory,
             runtimeDetectionStatus,
-            operatingSystem);
+            operatingSystem,
+            processWhitelist);
     }
 
     @Override
@@ -253,6 +297,7 @@ public class ProtectionProxyInfoRequestInfo {
         sb.append("    excludeDirectory: ").append(toIndentedString(excludeDirectory)).append("\n");
         sb.append("    runtimeDetectionStatus: ").append(toIndentedString(runtimeDetectionStatus)).append("\n");
         sb.append("    operatingSystem: ").append(toIndentedString(operatingSystem)).append("\n");
+        sb.append("    processWhitelist: ").append(toIndentedString(processWhitelist)).append("\n");
         sb.append("}");
         return sb.toString();
     }

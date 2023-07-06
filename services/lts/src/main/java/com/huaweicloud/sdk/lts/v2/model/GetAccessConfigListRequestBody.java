@@ -193,7 +193,7 @@ public class GetAccessConfigListRequestBody {
     }
 
     /**
-     * Get accessConfigTagList
+     * 接入配置标签，KEY不能重复,最多20个标签
      * @return accessConfigTagList
      */
     public List<AccessConfigTag> getAccessConfigTagList() {

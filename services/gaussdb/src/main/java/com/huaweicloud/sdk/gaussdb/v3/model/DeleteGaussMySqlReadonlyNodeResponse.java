@@ -16,6 +16,11 @@ public class DeleteGaussMySqlReadonlyNodeResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
     public DeleteGaussMySqlReadonlyNodeResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -33,6 +38,23 @@ public class DeleteGaussMySqlReadonlyNodeResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public DeleteGaussMySqlReadonlyNodeResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单号，仅包年/包月返回该参数。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +64,12 @@ public class DeleteGaussMySqlReadonlyNodeResponse extends SdkResponse {
             return false;
         }
         DeleteGaussMySqlReadonlyNodeResponse that = (DeleteGaussMySqlReadonlyNodeResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, orderId);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class DeleteGaussMySqlReadonlyNodeResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteGaussMySqlReadonlyNodeResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

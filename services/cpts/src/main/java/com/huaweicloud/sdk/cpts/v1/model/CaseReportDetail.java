@@ -4243,7 +4243,7 @@ public class CaseReportDetail {
     }
 
     /**
-     * 反应实时vuser数数据
+     * 反应实时vuser数据
      * @return userConcur
      */
     public Integer getUserConcur() {

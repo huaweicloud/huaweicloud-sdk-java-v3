@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ProtectionPolicyInfo
@@ -64,6 +67,11 @@ public class ProtectionPolicyInfo {
     @JsonProperty(value = "operating_system")
 
     private String operatingSystem;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_whitelist")
+
+    private List<TrustProcessInfo> processWhitelist = null;
 
     public ProtectionPolicyInfo withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -254,6 +262,39 @@ public class ProtectionPolicyInfo {
         this.operatingSystem = operatingSystem;
     }
 
+    public ProtectionPolicyInfo withProcessWhitelist(List<TrustProcessInfo> processWhitelist) {
+        this.processWhitelist = processWhitelist;
+        return this;
+    }
+
+    public ProtectionPolicyInfo addProcessWhitelistItem(TrustProcessInfo processWhitelistItem) {
+        if (this.processWhitelist == null) {
+            this.processWhitelist = new ArrayList<>();
+        }
+        this.processWhitelist.add(processWhitelistItem);
+        return this;
+    }
+
+    public ProtectionPolicyInfo withProcessWhitelist(Consumer<List<TrustProcessInfo>> processWhitelistSetter) {
+        if (this.processWhitelist == null) {
+            this.processWhitelist = new ArrayList<>();
+        }
+        processWhitelistSetter.accept(this.processWhitelist);
+        return this;
+    }
+
+    /**
+     * 进程白名单
+     * @return processWhitelist
+     */
+    public List<TrustProcessInfo> getProcessWhitelist() {
+        return processWhitelist;
+    }
+
+    public void setProcessWhitelist(List<TrustProcessInfo> processWhitelist) {
+        this.processWhitelist = processWhitelist;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -272,7 +313,8 @@ public class ProtectionPolicyInfo {
             && Objects.equals(this.runtimeDetectionStatus, that.runtimeDetectionStatus)
             && Objects.equals(this.runtimeDetectionDirectory, that.runtimeDetectionDirectory)
             && Objects.equals(this.countAssociatedServer, that.countAssociatedServer)
-            && Objects.equals(this.operatingSystem, that.operatingSystem);
+            && Objects.equals(this.operatingSystem, that.operatingSystem)
+            && Objects.equals(this.processWhitelist, that.processWhitelist);
     }
 
     @Override
@@ -287,7 +329,8 @@ public class ProtectionPolicyInfo {
             runtimeDetectionStatus,
             runtimeDetectionDirectory,
             countAssociatedServer,
-            operatingSystem);
+            operatingSystem,
+            processWhitelist);
     }
 
     @Override
@@ -305,6 +348,7 @@ public class ProtectionPolicyInfo {
         sb.append("    runtimeDetectionDirectory: ").append(toIndentedString(runtimeDetectionDirectory)).append("\n");
         sb.append("    countAssociatedServer: ").append(toIndentedString(countAssociatedServer)).append("\n");
         sb.append("    operatingSystem: ").append(toIndentedString(operatingSystem)).append("\n");
+        sb.append("    processWhitelist: ").append(toIndentedString(processWhitelist)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -29,7 +29,7 @@ public class CreateTagsRequestBody {
     }
 
     /**
-     * 资源id
+     * 资源id。  > 域名ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -62,7 +62,7 @@ public class CreateTagsRequestBody {
     }
 
     /**
-     * 标签列表
+     * 标签列表。
      * @return tags
      */
     public List<java.util.Map> getTags() {

@@ -48,7 +48,7 @@ public class Compress {
     }
 
     /**
-     * 智能压缩类型（gzip：gzip压缩，br：br压缩）。
+     * 智能压缩类型（gzip：gzip压缩，brotli：brotli压缩）。
      * @return type
      */
     public String getType() {
@@ -65,7 +65,7 @@ public class Compress {
     }
 
     /**
-     * 压缩格式，内容总长度不可超过200个字符， 使用\",\"分隔，每组内容不可超过50个字符， 开启状态下，首次传空时默认值为.js,.html,.css,.xml,.json,.shtml,.htm，否则为上次设置的结果。
+     * 压缩格式，内容总长度不可超过200个字符，  多种格式用“,”分割，每组内容不可超过50个字符， 开启状态下，首次传空时默认值为.js,.html,.css,.xml,.json,.shtml,.htm，否则为上次设置的结果。
      * @return fileType
      */
     public String getFileType() {

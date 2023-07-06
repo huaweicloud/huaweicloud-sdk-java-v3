@@ -67,7 +67,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * 域名列表
+     * 域名列表。
      * @return domainName
      */
     public String getDomainName() {
@@ -84,7 +84,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * https开关(0：\"关闭\"；1：\"设置证书\")
+     * https开关(0：\"关闭\"；1：\"设置证书\")。
      * @return httpsSwitch
      */
     public Integer getHttpsSwitch() {
@@ -101,7 +101,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * 回源方式:1：\"PROTOCOL_FOLLOW\"；2：\"HTTP\"(默认)，3：\"https\"
+     * 回源方式:1：\"回源跟随\"；2：\"HTTP\"(默认)，3：https（自建）。
      * @return accessOriginWay
      */
     public Integer getAccessOriginWay() {
@@ -118,7 +118,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
+     * 强制跳转HTTPS（0：不强制；1：强制） 。
      * @return forceRedirectHttps
      */
     public Integer getForceRedirectHttps() {
@@ -162,7 +162,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * http2.0（0：关闭；1：开启）
+     * http2.0（0：关闭；1：开启）。
      * @return http2
      */
     public Integer getHttp2() {
@@ -179,7 +179,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * 证书名称。（长度限制为3-32字符）。
+     * 证书名称。
      * @return certName
      */
     public String getCertName() {
@@ -196,7 +196,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * 证书内容
+     * 证书内容。
      * @return certificate
      */
     public String getCertificate() {
@@ -213,7 +213,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * 证书类型（0为自有证书 ， 1为托管证书）
+     * 证书类型（0为自有证书 ， 1为托管证书）。
      * @return certificateType
      */
     public Integer getCertificateType() {
@@ -230,7 +230,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * 证书过期时间
+     * 证书过期时间。
      * @return expirationTime
      */
     public Long getExpirationTime() {

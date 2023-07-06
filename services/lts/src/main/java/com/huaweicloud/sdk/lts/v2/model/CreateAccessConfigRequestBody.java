@@ -24,7 +24,7 @@ public class CreateAccessConfigRequestBody {
     private String accessConfigName;
 
     /**
-     * 日志接入类型。AGENT：主机接入类型
+     * 日志接入类型。AGENT：ECS接入,K8S_CCE:CCE接入
      */
     public static final class AccessConfigTypeEnum {
 
@@ -33,11 +33,17 @@ public class CreateAccessConfigRequestBody {
          */
         public static final AccessConfigTypeEnum AGENT = new AccessConfigTypeEnum("AGENT");
 
+        /**
+         * Enum K8S_CCE for value: "K8S_CCE"
+         */
+        public static final AccessConfigTypeEnum K8S_CCE = new AccessConfigTypeEnum("K8S_CCE");
+
         private static final Map<String, AccessConfigTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AccessConfigTypeEnum> createStaticFields() {
             Map<String, AccessConfigTypeEnum> map = new HashMap<>();
             map.put("AGENT", AGENT);
+            map.put("K8S_CCE", K8S_CCE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -112,13 +118,23 @@ public class CreateAccessConfigRequestBody {
 
     private List<AccessConfigTag> accessConfigTag = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "binary_collect")
+
+    private Boolean binaryCollect;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_split")
+
+    private Boolean logSplit;
+
     public CreateAccessConfigRequestBody withAccessConfigName(String accessConfigName) {
         this.accessConfigName = accessConfigName;
         return this;
     }
 
     /**
-     * 日志接入名称
+     * 日志接入名称。 满足正则表达式：^(?!\\.)(?!_)(?!.*?\\.$)[\\u4e00-\\u9fa5a-zA-Z0-9-_.]{1,64}$
      * @return accessConfigName
      */
     public String getAccessConfigName() {
@@ -135,7 +151,7 @@ public class CreateAccessConfigRequestBody {
     }
 
     /**
-     * 日志接入类型。AGENT：主机接入类型
+     * 日志接入类型。AGENT：ECS接入,K8S_CCE:CCE接入
      * @return accessConfigType
      */
     public AccessConfigTypeEnum getAccessConfigType() {
@@ -248,7 +264,7 @@ public class CreateAccessConfigRequestBody {
     }
 
     /**
-     * Get accessConfigTag
+     * 标签信息。KEY不能重复,最多20个标签
      * @return accessConfigTag
      */
     public List<AccessConfigTag> getAccessConfigTag() {
@@ -257,6 +273,40 @@ public class CreateAccessConfigRequestBody {
 
     public void setAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
         this.accessConfigTag = accessConfigTag;
+    }
+
+    public CreateAccessConfigRequestBody withBinaryCollect(Boolean binaryCollect) {
+        this.binaryCollect = binaryCollect;
+        return this;
+    }
+
+    /**
+     * 二进制采集
+     * @return binaryCollect
+     */
+    public Boolean getBinaryCollect() {
+        return binaryCollect;
+    }
+
+    public void setBinaryCollect(Boolean binaryCollect) {
+        this.binaryCollect = binaryCollect;
+    }
+
+    public CreateAccessConfigRequestBody withLogSplit(Boolean logSplit) {
+        this.logSplit = logSplit;
+        return this;
+    }
+
+    /**
+     * 日志拆分
+     * @return logSplit
+     */
+    public Boolean getLogSplit() {
+        return logSplit;
+    }
+
+    public void setLogSplit(Boolean logSplit) {
+        this.logSplit = logSplit;
     }
 
     @Override
@@ -272,13 +322,20 @@ public class CreateAccessConfigRequestBody {
             && Objects.equals(this.accessConfigType, that.accessConfigType)
             && Objects.equals(this.accessConfigDetail, that.accessConfigDetail)
             && Objects.equals(this.logInfo, that.logInfo) && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
-            && Objects.equals(this.accessConfigTag, that.accessConfigTag);
+            && Objects.equals(this.accessConfigTag, that.accessConfigTag)
+            && Objects.equals(this.binaryCollect, that.binaryCollect) && Objects.equals(this.logSplit, that.logSplit);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(accessConfigName, accessConfigType, accessConfigDetail, logInfo, hostGroupInfo, accessConfigTag);
+        return Objects.hash(accessConfigName,
+            accessConfigType,
+            accessConfigDetail,
+            logInfo,
+            hostGroupInfo,
+            accessConfigTag,
+            binaryCollect,
+            logSplit);
     }
 
     @Override
@@ -291,6 +348,8 @@ public class CreateAccessConfigRequestBody {
         sb.append("    logInfo: ").append(toIndentedString(logInfo)).append("\n");
         sb.append("    hostGroupInfo: ").append(toIndentedString(hostGroupInfo)).append("\n");
         sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");
+        sb.append("    binaryCollect: ").append(toIndentedString(binaryCollect)).append("\n");
+        sb.append("    logSplit: ").append(toIndentedString(logSplit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

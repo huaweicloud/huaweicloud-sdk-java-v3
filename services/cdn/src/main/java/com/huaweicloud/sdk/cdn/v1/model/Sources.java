@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 源站信息
+ * 源站信息。
  */
 public class Sources {
 
@@ -20,13 +20,8 @@ public class Sources {
 
     private String domainId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip_or_domain")
-
-    private String ipOrDomain;
-
     /**
-     * 源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。
+     * 源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。源站为ipaddr时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持50个源站IP对象，备源站最多支持50个源站IP对象；源站为domain时，仅支持1个源站对象。不支持IP源站和域名源站混用。
      */
     public static final class OriginTypeEnum {
 
@@ -107,6 +102,11 @@ public class Sources {
     private OriginTypeEnum originType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_or_domain")
+
+    private String ipOrDomain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "active_standby")
 
     private Integer activeStandby;
@@ -133,6 +133,23 @@ public class Sources {
         this.domainId = domainId;
     }
 
+    public Sources withOriginType(OriginTypeEnum originType) {
+        this.originType = originType;
+        return this;
+    }
+
+    /**
+     * 源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。源站为ipaddr时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持50个源站IP对象，备源站最多支持50个源站IP对象；源站为domain时，仅支持1个源站对象。不支持IP源站和域名源站混用。
+     * @return originType
+     */
+    public OriginTypeEnum getOriginType() {
+        return originType;
+    }
+
+    public void setOriginType(OriginTypeEnum originType) {
+        this.originType = originType;
+    }
+
     public Sources withIpOrDomain(String ipOrDomain) {
         this.ipOrDomain = ipOrDomain;
         return this;
@@ -150,30 +167,13 @@ public class Sources {
         this.ipOrDomain = ipOrDomain;
     }
 
-    public Sources withOriginType(OriginTypeEnum originType) {
-        this.originType = originType;
-        return this;
-    }
-
-    /**
-     * 源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。
-     * @return originType
-     */
-    public OriginTypeEnum getOriginType() {
-        return originType;
-    }
-
-    public void setOriginType(OriginTypeEnum originType) {
-        this.originType = originType;
-    }
-
     public Sources withActiveStandby(Integer activeStandby) {
         this.activeStandby = activeStandby;
         return this;
     }
 
     /**
-     * 主备状态（1代表主站；0代表备站）,主源站必须存在，备源站可选，OBS桶不能有备源站。
+     * 主备状态，1代表主源站，0代表备源站。
      * @return activeStandby
      */
     public Integer getActiveStandby() {
@@ -210,15 +210,15 @@ public class Sources {
             return false;
         }
         Sources that = (Sources) obj;
-        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.ipOrDomain, that.ipOrDomain)
-            && Objects.equals(this.originType, that.originType)
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.originType, that.originType)
+            && Objects.equals(this.ipOrDomain, that.ipOrDomain)
             && Objects.equals(this.activeStandby, that.activeStandby)
             && Objects.equals(this.enableObsWebHosting, that.enableObsWebHosting);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, ipOrDomain, originType, activeStandby, enableObsWebHosting);
+        return Objects.hash(domainId, originType, ipOrDomain, activeStandby, enableObsWebHosting);
     }
 
     @Override
@@ -226,8 +226,8 @@ public class Sources {
         StringBuilder sb = new StringBuilder();
         sb.append("class Sources {\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    ipOrDomain: ").append(toIndentedString(ipOrDomain)).append("\n");
         sb.append("    originType: ").append(toIndentedString(originType)).append("\n");
+        sb.append("    ipOrDomain: ").append(toIndentedString(ipOrDomain)).append("\n");
         sb.append("    activeStandby: ").append(toIndentedString(activeStandby)).append("\n");
         sb.append("    enableObsWebHosting: ").append(toIndentedString(enableObsWebHosting)).append("\n");
         sb.append("}");

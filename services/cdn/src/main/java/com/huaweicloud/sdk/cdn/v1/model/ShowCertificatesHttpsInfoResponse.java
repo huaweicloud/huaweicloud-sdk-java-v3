@@ -30,7 +30,7 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
     }
 
     /**
-     * 查询结果总数
+     * 查询结果总数。
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
     }
 
     /**
-     * https对象。
+     * https配置。
      * @return https
      */
     public List<HttpsDetail> getHttps() {

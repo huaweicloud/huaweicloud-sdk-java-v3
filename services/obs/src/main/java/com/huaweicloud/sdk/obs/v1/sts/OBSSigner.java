@@ -35,6 +35,8 @@ import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Locale;
@@ -44,6 +46,29 @@ import java.util.TreeMap;
 
 public class OBSSigner {
     private static final Logger logger = LoggerFactory.getLogger(OBSSigner.class);
+
+    public static final List<String> ALLOWED_RESOURCE_PARAMTER_NAMES = Collections.unmodifiableList(
+            Arrays.asList("acl", "backtosource", "policy", "torrent", "logging", "location", "storageinfo", "quota",
+                    "storagepolicy", "storageclass", "requestpayment", "versions", "versioning", "versionid", "uploads",
+                    "uploadid", "partnumber", "website", "notification", "lifecycle", "deletebucket", "delete", "cors",
+                    "restore", "tagging", "replication", "metadata", "encryption", "directcoldaccess", "mirrorrefresh",
+                    "mirrorbacktosource", "obsbucketalias", "obsalias", "replication_progress", "inventory",
+                    "obsworkflowtriggerpolicy", "x-workflow-limit", "x-workflow-prefix", "x-workflow-start",
+                    "x-workflow-template-name", "x-workflow-graph-name", "x-workflow-execution-state",
+                    "x-workflow-category", "x-workflow-create", "customdomain", "cdnnotifyconfiguration", "dispolicy",
+                    "obscompresspolicy", "template_name", "template_name_prefix", "x-workflow-status", "sfsumount",
+                    "x-workflow-type", "x-workflow-forbid", "sfsacl", "attname", "object-lock", "retention",
+                    "x_obs_resource_type", "x_obs_dnslevel", "extension_policy", "x_obs_resource_id", "synccallback",
+                    "orchestration", "fscreatehardlink", "asyncfetchjob", "asynccallback", "sfsmount", "asyncfetchpolicy",
+                    /**
+                     * File System API
+                     */
+                    "append", "position", "truncate", "modify", "rename", "length", "name", "fileinterface",
+                    "readahead", "response-content-type", "response-content-language", "response-expires",
+                    "response-cache-control", "response-content-disposition", "response-content-encoding",
+                    "x-image-save-bucket", "x-image-save-object", "x-image-process", "x-obs-sse-kms-key-project-id",
+                    "x-oss-process", "ignore-sign-in-query", "listcontentsummary", "multilistcontentsummary",
+                    "getcontentsummary", "select", "select-type"));
 
     private static Class<?> jdkBase64EncoderClass;
 
@@ -104,7 +129,10 @@ public class OBSSigner {
                 if (paramNameValue.length > 1) {
                     value = URLDecoder.decode(paramNameValue[1], "UTF-8");
                 }
-                sortedResourceParams.put(name, value);
+                if (ALLOWED_RESOURCE_PARAMTER_NAMES.contains(name.toLowerCase(Locale.ROOT))
+                        || name.toLowerCase(Locale.ROOT).startsWith(headerPrefix)) {
+                    sortedResourceParams.put(name, value);
+                }
             }
 
             if (sortedResourceParams.size() > 0) {

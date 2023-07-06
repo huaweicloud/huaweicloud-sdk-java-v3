@@ -21,6 +21,11 @@ public class ListRiskConfigsRequest {
     private String checkName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
 
     private String severity;
@@ -77,6 +82,23 @@ public class ListRiskConfigsRequest {
 
     public void setCheckName(String checkName) {
         this.checkName = checkName;
+    }
+
+    public ListRiskConfigsRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 策略组ID
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public ListRiskConfigsRequest withSeverity(String severity) {
@@ -178,14 +200,15 @@ public class ListRiskConfigsRequest {
         }
         ListRiskConfigsRequest that = (ListRiskConfigsRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.severity, that.severity)
-            && Objects.equals(this.standard, that.standard) && Objects.equals(this.hostId, that.hostId)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.standard, that.standard)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, checkName, severity, standard, hostId, limit, offset);
+        return Objects.hash(enterpriseProjectId, checkName, groupId, severity, standard, hostId, limit, offset);
     }
 
     @Override
@@ -194,6 +217,7 @@ public class ListRiskConfigsRequest {
         sb.append("class ListRiskConfigsRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");

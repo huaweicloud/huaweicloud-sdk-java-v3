@@ -2136,6 +2136,31 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> showHighRiskCommands =
+        genForshowHighRiskCommands();
+
+    private static HttpRequestDef<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> genForshowHighRiskCommands() {
+        // basic
+        HttpRequestDef.Builder<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowHighRiskCommandsRequest.class, ShowHighRiskCommandsResponse.class)
+            .withName("ShowHighRiskCommands")
+            .withUri("/v3/{project_id}/instances/{instance_id}/high-risk-commands")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHighRiskCommandsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfiguration =
         genForshowInstanceConfiguration();
 
@@ -2619,6 +2644,38 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateConfigurationRequestBody.class),
             f -> f.withMarshaller(UpdateConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> updateHighRiskCommands =
+        genForupdateHighRiskCommands();
+
+    private static HttpRequestDef<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> genForupdateHighRiskCommands() {
+        // basic
+        HttpRequestDef.Builder<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateHighRiskCommandsRequest.class, UpdateHighRiskCommandsResponse.class)
+            .withName("UpdateHighRiskCommands")
+            .withUri("/v3/{project_id}/instances/{instance_id}/high-risk-commands")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHighRiskCommandsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<RenameHighRiskCommandsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RenameHighRiskCommandsRequest.class),
+            f -> f.withMarshaller(UpdateHighRiskCommandsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

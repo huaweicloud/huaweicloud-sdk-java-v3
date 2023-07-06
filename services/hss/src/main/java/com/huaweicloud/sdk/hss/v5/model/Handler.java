@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 手动处理的备注
+ * 备注信息
  */
 public class Handler {
 

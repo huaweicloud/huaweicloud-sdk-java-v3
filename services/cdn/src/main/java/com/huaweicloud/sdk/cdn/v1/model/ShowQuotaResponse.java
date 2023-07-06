@@ -41,7 +41,7 @@ public class ShowQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 配额数组
+     * 配额数组。
      * @return quotas
      */
     public List<Quotas> getQuotas() {

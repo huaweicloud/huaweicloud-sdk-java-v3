@@ -50,6 +50,31 @@ public class ListVulHostsRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_value")
+
+    private String assetValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "handle_status")
+
+    private String handleStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity_level")
+
+    private String severityLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_affect_business")
+
+    private Boolean isAffectBusiness;
+
     public ListVulHostsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -90,7 +115,7 @@ public class ListVulHostsRequest {
     }
 
     /**
-     * 漏洞类型   - linux_vul : 漏洞类型-linux漏洞   - windows_vul : 漏洞类型-windows漏洞
+     * 漏洞类型   - linux_vul : 漏洞类型-linux漏洞   - windows_vul : 漏洞类型-windows漏洞   - web_cms : Web-CMS漏洞   - app_vul : 应用漏洞
      * @return type
      */
     public String getType() {
@@ -190,6 +215,91 @@ public class ListVulHostsRequest {
         this.offset = offset;
     }
 
+    public ListVulHostsRequest withAssetValue(String assetValue) {
+        this.assetValue = assetValue;
+        return this;
+    }
+
+    /**
+     * 资产重要性 important:重要 common：一般 test：测试
+     * @return assetValue
+     */
+    public String getAssetValue() {
+        return assetValue;
+    }
+
+    public void setAssetValue(String assetValue) {
+        this.assetValue = assetValue;
+    }
+
+    public ListVulHostsRequest withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /**
+     * 服务器组名称
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public ListVulHostsRequest withHandleStatus(String handleStatus) {
+        this.handleStatus = handleStatus;
+        return this;
+    }
+
+    /**
+     * 处置状态，包含如下:   - unhandled ：未处理   - handled : 已处理
+     * @return handleStatus
+     */
+    public String getHandleStatus() {
+        return handleStatus;
+    }
+
+    public void setHandleStatus(String handleStatus) {
+        this.handleStatus = handleStatus;
+    }
+
+    public ListVulHostsRequest withSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
+        return this;
+    }
+
+    /**
+     * 危险程度 ，Critical，High，Medium，Low
+     * @return severityLevel
+     */
+    public String getSeverityLevel() {
+        return severityLevel;
+    }
+
+    public void setSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
+    }
+
+    public ListVulHostsRequest withIsAffectBusiness(Boolean isAffectBusiness) {
+        this.isAffectBusiness = isAffectBusiness;
+        return this;
+    }
+
+    /**
+     * 是否影响业务
+     * @return isAffectBusiness
+     */
+    public Boolean getIsAffectBusiness() {
+        return isAffectBusiness;
+    }
+
+    public void setIsAffectBusiness(Boolean isAffectBusiness) {
+        this.isAffectBusiness = isAffectBusiness;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -203,12 +313,27 @@ public class ListVulHostsRequest {
             && Objects.equals(this.vulId, that.vulId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.status, that.status) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.assetValue, that.assetValue)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.handleStatus, that.handleStatus)
+            && Objects.equals(this.severityLevel, that.severityLevel)
+            && Objects.equals(this.isAffectBusiness, that.isAffectBusiness);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, vulId, type, hostName, hostIp, status, limit, offset);
+        return Objects.hash(enterpriseProjectId,
+            vulId,
+            type,
+            hostName,
+            hostIp,
+            status,
+            limit,
+            offset,
+            assetValue,
+            groupName,
+            handleStatus,
+            severityLevel,
+            isAffectBusiness);
     }
 
     @Override
@@ -223,6 +348,11 @@ public class ListVulHostsRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
+        sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
+        sb.append("    isAffectBusiness: ").append(toIndentedString(isAffectBusiness)).append("\n");
         sb.append("}");
         return sb.toString();
     }

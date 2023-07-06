@@ -1902,6 +1902,37 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询高危命令
+     *
+     * 查询Redis的高危命令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHighRiskCommandsRequest 请求对象
+     * @return CompletableFuture<ShowHighRiskCommandsResponse>
+     */
+    public CompletableFuture<ShowHighRiskCommandsResponse> showHighRiskCommandsAsync(
+        ShowHighRiskCommandsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showHighRiskCommands);
+    }
+
+    /**
+     * 查询高危命令
+     *
+     * 查询Redis的高危命令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHighRiskCommandsRequest 请求对象
+     * @return AsyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse>
+     */
+    public AsyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> showHighRiskCommandsAsyncInvoker(
+        ShowHighRiskCommandsRequest request) {
+        return new AsyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse>(request,
+            GaussDBforNoSQLMeta.showHighRiskCommands, hcClient);
+    }
+
+    /**
      * 获取指定实例的参数
      *
      * 获取指定实例的参数信息。
@@ -2381,6 +2412,37 @@ public class GaussDBforNoSQLAsyncClient {
         UpdateConfigurationRequest request) {
         return new AsyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>(request,
             GaussDBforNoSQLMeta.updateConfiguration, hcClient);
+    }
+
+    /**
+     * 修改高危命令
+     *
+     * 批量修改高危命令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateHighRiskCommandsRequest 请求对象
+     * @return CompletableFuture<UpdateHighRiskCommandsResponse>
+     */
+    public CompletableFuture<UpdateHighRiskCommandsResponse> updateHighRiskCommandsAsync(
+        UpdateHighRiskCommandsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.updateHighRiskCommands);
+    }
+
+    /**
+     * 修改高危命令
+     *
+     * 批量修改高危命令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateHighRiskCommandsRequest 请求对象
+     * @return AsyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse>
+     */
+    public AsyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> updateHighRiskCommandsAsyncInvoker(
+        UpdateHighRiskCommandsRequest request) {
+        return new AsyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse>(request,
+            GaussDBforNoSQLMeta.updateHighRiskCommands, hcClient);
     }
 
     /**

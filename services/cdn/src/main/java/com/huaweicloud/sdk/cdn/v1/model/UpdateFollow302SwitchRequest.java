@@ -32,7 +32,7 @@ public class UpdateFollow302SwitchRequest {
     }
 
     /**
-     * 加速域名id。获取方法请参见查询加速域名。
+     * 加速域名id。
      * @return domainId
      */
     public String getDomainId() {

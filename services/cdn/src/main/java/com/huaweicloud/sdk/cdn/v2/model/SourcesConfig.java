@@ -11,19 +11,24 @@ import java.util.Objects;
 public class SourcesConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "origin_addr")
-
-    private String originAddr;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_type")
 
     private String originType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_addr")
+
+    private String originAddr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
     private Integer priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "weight")
+
+    private Integer weight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_web_hosting_status")
@@ -50,23 +55,6 @@ public class SourcesConfig {
 
     private String obsBucketType;
 
-    public SourcesConfig withOriginAddr(String originAddr) {
-        this.originAddr = originAddr;
-        return this;
-    }
-
-    /**
-     * 源站IP或者域名。
-     * @return originAddr
-     */
-    public String getOriginAddr() {
-        return originAddr;
-    }
-
-    public void setOriginAddr(String originAddr) {
-        this.originAddr = originAddr;
-    }
-
     public SourcesConfig withOriginType(String originType) {
         this.originType = originType;
         return this;
@@ -84,6 +72,23 @@ public class SourcesConfig {
         this.originType = originType;
     }
 
+    public SourcesConfig withOriginAddr(String originAddr) {
+        this.originAddr = originAddr;
+        return this;
+    }
+
+    /**
+     * 源站IP或者域名。
+     * @return originAddr
+     */
+    public String getOriginAddr() {
+        return originAddr;
+    }
+
+    public void setOriginAddr(String originAddr) {
+        this.originAddr = originAddr;
+    }
+
     public SourcesConfig withPriority(Integer priority) {
         this.priority = priority;
         return this;
@@ -99,6 +104,23 @@ public class SourcesConfig {
 
     public void setPriority(Integer priority) {
         this.priority = priority;
+    }
+
+    public SourcesConfig withWeight(Integer weight) {
+        this.weight = weight;
+        return this;
+    }
+
+    /**
+     * 权重，取值范围1-100。
+     * @return weight
+     */
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 
     public SourcesConfig withObsWebHostingStatus(String obsWebHostingStatus) {
@@ -195,8 +217,8 @@ public class SourcesConfig {
             return false;
         }
         SourcesConfig that = (SourcesConfig) obj;
-        return Objects.equals(this.originAddr, that.originAddr) && Objects.equals(this.originType, that.originType)
-            && Objects.equals(this.priority, that.priority)
+        return Objects.equals(this.originType, that.originType) && Objects.equals(this.originAddr, that.originAddr)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.weight, that.weight)
             && Objects.equals(this.obsWebHostingStatus, that.obsWebHostingStatus)
             && Objects.equals(this.httpPort, that.httpPort) && Objects.equals(this.httpsPort, that.httpsPort)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.obsBucketType, that.obsBucketType);
@@ -204,17 +226,25 @@ public class SourcesConfig {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(originAddr, originType, priority, obsWebHostingStatus, httpPort, httpsPort, hostName, obsBucketType);
+        return Objects.hash(originType,
+            originAddr,
+            priority,
+            weight,
+            obsWebHostingStatus,
+            httpPort,
+            httpsPort,
+            hostName,
+            obsBucketType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SourcesConfig {\n");
-        sb.append("    originAddr: ").append(toIndentedString(originAddr)).append("\n");
         sb.append("    originType: ").append(toIndentedString(originType)).append("\n");
+        sb.append("    originAddr: ").append(toIndentedString(originAddr)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    obsWebHostingStatus: ").append(toIndentedString(obsWebHostingStatus)).append("\n");
         sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
         sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");

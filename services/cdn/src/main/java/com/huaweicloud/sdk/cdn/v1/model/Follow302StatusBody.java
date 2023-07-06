@@ -21,7 +21,7 @@ public class Follow302StatusBody {
     private String domainId;
 
     /**
-     * follow302状态（\"off\"/\"on\"）
+     * follow302状态，off：关闭，on：开启。
      */
     public static final class FollowStatusEnum {
 
@@ -101,7 +101,7 @@ public class Follow302StatusBody {
     }
 
     /**
-     * 加速域名id。获取方法请参见查询加速域名。
+     * 加速域名id。
      * @return domainId
      */
     public String getDomainId() {
@@ -118,7 +118,7 @@ public class Follow302StatusBody {
     }
 
     /**
-     * follow302状态（\"off\"/\"on\"）
+     * follow302状态，off：关闭，on：开启。
      * @return followStatus
      */
     public FollowStatusEnum getFollowStatus() {

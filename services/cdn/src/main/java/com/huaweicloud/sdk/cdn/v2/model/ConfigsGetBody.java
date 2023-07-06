@@ -14,6 +14,16 @@ import java.util.function.Consumer;
 public class ConfigsGetBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "business_type")
+
+    private String businessType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_area")
+
+    private String serviceArea;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_request_header")
 
     private List<OriginRequestHeader> originRequestHeader = null;
@@ -142,6 +152,40 @@ public class ConfigsGetBody {
     @JsonProperty(value = "error_code_redirect_rules")
 
     private List<ErrorCodeRedirectRules> errorCodeRedirectRules = null;
+
+    public ConfigsGetBody withBusinessType(String businessType) {
+        this.businessType = businessType;
+        return this;
+    }
+
+    /**
+     * 业务类型，web：网站加速，download：文件下载加速，video：点播加速，wholesit：全站加速。
+     * @return businessType
+     */
+    public String getBusinessType() {
+        return businessType;
+    }
+
+    public void setBusinessType(String businessType) {
+        this.businessType = businessType;
+    }
+
+    public ConfigsGetBody withServiceArea(String serviceArea) {
+        this.serviceArea = serviceArea;
+        return this;
+    }
+
+    /**
+     * 服务区域，mainland_china：中国大陆，global：全球，outside_mainland_china：中国大陆境外。
+     * @return serviceArea
+     */
+    public String getServiceArea() {
+        return serviceArea;
+    }
+
+    public void setServiceArea(String serviceArea) {
+        this.serviceArea = serviceArea;
+    }
 
     public ConfigsGetBody withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
         this.originRequestHeader = originRequestHeader;
@@ -839,7 +883,9 @@ public class ConfigsGetBody {
             return false;
         }
         ConfigsGetBody that = (ConfigsGetBody) obj;
-        return Objects.equals(this.originRequestHeader, that.originRequestHeader)
+        return Objects.equals(this.businessType, that.businessType)
+            && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.originRequestHeader, that.originRequestHeader)
             && Objects.equals(this.httpResponseHeader, that.httpResponseHeader)
             && Objects.equals(this.urlAuth, that.urlAuth) && Objects.equals(this.https, that.https)
             && Objects.equals(this.sources, that.sources) && Objects.equals(this.originProtocol, that.originProtocol)
@@ -864,7 +910,9 @@ public class ConfigsGetBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(originRequestHeader,
+        return Objects.hash(businessType,
+            serviceArea,
+            originRequestHeader,
             httpResponseHeader,
             urlAuth,
             https,
@@ -896,6 +944,8 @@ public class ConfigsGetBody {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfigsGetBody {\n");
+        sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
+        sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
         sb.append("    originRequestHeader: ").append(toIndentedString(originRequestHeader)).append("\n");
         sb.append("    httpResponseHeader: ").append(toIndentedString(httpResponseHeader)).append("\n");
         sb.append("    urlAuth: ").append(toIndentedString(urlAuth)).append("\n");

@@ -21,7 +21,7 @@ public class UpdateAccessConfigRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_detail")
 
-    private AccessConfigDeatil accessConfigDetail;
+    private AccessConfigDeatilCreate accessConfigDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_info")
@@ -32,6 +32,16 @@ public class UpdateAccessConfigRequestBody {
     @JsonProperty(value = "access_config_tag")
 
     private List<AccessConfigTag> accessConfigTag = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_split")
+
+    private Boolean logSplit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "binary_collect")
+
+    private Boolean binaryCollect;
 
     public UpdateAccessConfigRequestBody withAccessConfigId(String accessConfigId) {
         this.accessConfigId = accessConfigId;
@@ -50,14 +60,15 @@ public class UpdateAccessConfigRequestBody {
         this.accessConfigId = accessConfigId;
     }
 
-    public UpdateAccessConfigRequestBody withAccessConfigDetail(AccessConfigDeatil accessConfigDetail) {
+    public UpdateAccessConfigRequestBody withAccessConfigDetail(AccessConfigDeatilCreate accessConfigDetail) {
         this.accessConfigDetail = accessConfigDetail;
         return this;
     }
 
-    public UpdateAccessConfigRequestBody withAccessConfigDetail(Consumer<AccessConfigDeatil> accessConfigDetailSetter) {
+    public UpdateAccessConfigRequestBody withAccessConfigDetail(
+        Consumer<AccessConfigDeatilCreate> accessConfigDetailSetter) {
         if (this.accessConfigDetail == null) {
-            this.accessConfigDetail = new AccessConfigDeatil();
+            this.accessConfigDetail = new AccessConfigDeatilCreate();
             accessConfigDetailSetter.accept(this.accessConfigDetail);
         }
 
@@ -68,11 +79,11 @@ public class UpdateAccessConfigRequestBody {
      * Get accessConfigDetail
      * @return accessConfigDetail
      */
-    public AccessConfigDeatil getAccessConfigDetail() {
+    public AccessConfigDeatilCreate getAccessConfigDetail() {
         return accessConfigDetail;
     }
 
-    public void setAccessConfigDetail(AccessConfigDeatil accessConfigDetail) {
+    public void setAccessConfigDetail(AccessConfigDeatilCreate accessConfigDetail) {
         this.accessConfigDetail = accessConfigDetail;
     }
 
@@ -124,7 +135,7 @@ public class UpdateAccessConfigRequestBody {
     }
 
     /**
-     * Get accessConfigTag
+     * 标签信息。KEY不能重复,最多20个标签
      * @return accessConfigTag
      */
     public List<AccessConfigTag> getAccessConfigTag() {
@@ -133,6 +144,40 @@ public class UpdateAccessConfigRequestBody {
 
     public void setAccessConfigTag(List<AccessConfigTag> accessConfigTag) {
         this.accessConfigTag = accessConfigTag;
+    }
+
+    public UpdateAccessConfigRequestBody withLogSplit(Boolean logSplit) {
+        this.logSplit = logSplit;
+        return this;
+    }
+
+    /**
+     * 日志拆分
+     * @return logSplit
+     */
+    public Boolean getLogSplit() {
+        return logSplit;
+    }
+
+    public void setLogSplit(Boolean logSplit) {
+        this.logSplit = logSplit;
+    }
+
+    public UpdateAccessConfigRequestBody withBinaryCollect(Boolean binaryCollect) {
+        this.binaryCollect = binaryCollect;
+        return this;
+    }
+
+    /**
+     * 二进制采集
+     * @return binaryCollect
+     */
+    public Boolean getBinaryCollect() {
+        return binaryCollect;
+    }
+
+    public void setBinaryCollect(Boolean binaryCollect) {
+        this.binaryCollect = binaryCollect;
     }
 
     @Override
@@ -147,12 +192,14 @@ public class UpdateAccessConfigRequestBody {
         return Objects.equals(this.accessConfigId, that.accessConfigId)
             && Objects.equals(this.accessConfigDetail, that.accessConfigDetail)
             && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
-            && Objects.equals(this.accessConfigTag, that.accessConfigTag);
+            && Objects.equals(this.accessConfigTag, that.accessConfigTag)
+            && Objects.equals(this.logSplit, that.logSplit) && Objects.equals(this.binaryCollect, that.binaryCollect);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accessConfigId, accessConfigDetail, hostGroupInfo, accessConfigTag);
+        return Objects
+            .hash(accessConfigId, accessConfigDetail, hostGroupInfo, accessConfigTag, logSplit, binaryCollect);
     }
 
     @Override
@@ -163,6 +210,8 @@ public class UpdateAccessConfigRequestBody {
         sb.append("    accessConfigDetail: ").append(toIndentedString(accessConfigDetail)).append("\n");
         sb.append("    hostGroupInfo: ").append(toIndentedString(hostGroupInfo)).append("\n");
         sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");
+        sb.append("    logSplit: ").append(toIndentedString(logSplit)).append("\n");
+        sb.append("    binaryCollect: ").append(toIndentedString(binaryCollect)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -70,7 +70,7 @@ public class OriginRequestUrlRewrite {
     }
 
     /**
-     * 需要替换的URI。 以正斜线（/）开头的URI，不含http(s)://头及域名。 长度不超过512个字符。 支持通配符\\*匹配，如：/test/\\*_/\\*.mp4。 匹配方式为“所有文件”时，不支持配置参数。
+     * 需要替换的URI。 改写后的URI以正斜线（/）开头的URI，不含http(s)://头及域名。 长度不超过512个字符。 支持通配符\\*匹配，如：/test/\\*_/\\*.mp4。 匹配方式为“所有文件”时，不支持配置参数。
      * @return sourceUrl
      */
     public String getSourceUrl() {

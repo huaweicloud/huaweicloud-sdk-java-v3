@@ -57,7 +57,7 @@ public class HttpInfoRequestBody {
     }
 
     /**
-     * 证书名字。（长度限制为3-32字符）。
+     * 证书名字。（长度限制为3-64字符）。
      * @return certName
      */
     public String getCertName() {
@@ -91,7 +91,7 @@ public class HttpInfoRequestBody {
     }
 
     /**
-     * 功能说明：HTTPS协议使用的证书内容，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
+     * HTTPS协议使用的SSL证书内容，仅支持PEM编码格式。不启用证书则无需输入。初次配置证书时必传。
      * @return certificate
      */
     public String getCertificate() {
@@ -108,7 +108,7 @@ public class HttpInfoRequestBody {
     }
 
     /**
-     * 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
+     * HTTPS协议使用的SSL证书私钥内容，仅支持PEM编码格式。不启用证书则无需输入。初次配置证书时必传。
      * @return privateKey
      */
     public String getPrivateKey() {
@@ -159,7 +159,7 @@ public class HttpInfoRequestBody {
     }
 
     /**
-     * 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（建议使用force_redirect_config修改配置）
+     * 强制跳转HTTPS（0：不强制；1：强制） 为空值时默认设置为关闭。（此参数即将下线,建议使用force_redirect_config修改配置）
      * @return forceRedirectHttps
      */
     public Integer getForceRedirectHttps() {

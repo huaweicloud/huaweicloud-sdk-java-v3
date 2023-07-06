@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,25 +13,65 @@ import java.util.Objects;
 public class UpgradeClusterResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "uid")
+    @JsonProperty(value = "metadata")
 
-    private String uid;
+    private UpgradeCluserResponseMetadata metadata;
 
-    public UpgradeClusterResponse withUid(String uid) {
-        this.uid = uid;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spec")
+
+    private UpgradeResponseSpec spec;
+
+    public UpgradeClusterResponse withMetadata(UpgradeCluserResponseMetadata metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public UpgradeClusterResponse withMetadata(Consumer<UpgradeCluserResponseMetadata> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new UpgradeCluserResponseMetadata();
+            metadataSetter.accept(this.metadata);
+        }
+
         return this;
     }
 
     /**
-     * 升级任务ID，可通过调用获取集群升级任务详情API查询进展
-     * @return uid
+     * Get metadata
+     * @return metadata
      */
-    public String getUid() {
-        return uid;
+    public UpgradeCluserResponseMetadata getMetadata() {
+        return metadata;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setMetadata(UpgradeCluserResponseMetadata metadata) {
+        this.metadata = metadata;
+    }
+
+    public UpgradeClusterResponse withSpec(UpgradeResponseSpec spec) {
+        this.spec = spec;
+        return this;
+    }
+
+    public UpgradeClusterResponse withSpec(Consumer<UpgradeResponseSpec> specSetter) {
+        if (this.spec == null) {
+            this.spec = new UpgradeResponseSpec();
+            specSetter.accept(this.spec);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get spec
+     * @return spec
+     */
+    public UpgradeResponseSpec getSpec() {
+        return spec;
+    }
+
+    public void setSpec(UpgradeResponseSpec spec) {
+        this.spec = spec;
     }
 
     @Override
@@ -42,19 +83,20 @@ public class UpgradeClusterResponse extends SdkResponse {
             return false;
         }
         UpgradeClusterResponse that = (UpgradeClusterResponse) obj;
-        return Objects.equals(this.uid, that.uid);
+        return Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uid);
+        return Objects.hash(metadata, spec);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpgradeClusterResponse {\n");
-        sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("}");
         return sb.toString();
     }

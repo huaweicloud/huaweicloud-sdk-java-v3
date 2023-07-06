@@ -1871,6 +1871,36 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 查询高危命令
+     *
+     * 查询Redis的高危命令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHighRiskCommandsRequest 请求对象
+     * @return ShowHighRiskCommandsResponse
+     */
+    public ShowHighRiskCommandsResponse showHighRiskCommands(ShowHighRiskCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.showHighRiskCommands);
+    }
+
+    /**
+     * 查询高危命令
+     *
+     * 查询Redis的高危命令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHighRiskCommandsRequest 请求对象
+     * @return SyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse>
+     */
+    public SyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse> showHighRiskCommandsInvoker(
+        ShowHighRiskCommandsRequest request) {
+        return new SyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse>(request,
+            GaussDBforNoSQLMeta.showHighRiskCommands, hcClient);
+    }
+
+    /**
      * 获取指定实例的参数
      *
      * 获取指定实例的参数信息。
@@ -2345,6 +2375,36 @@ public class GaussDBforNoSQLClient {
         UpdateConfigurationRequest request) {
         return new SyncInvoker<UpdateConfigurationRequest, UpdateConfigurationResponse>(request,
             GaussDBforNoSQLMeta.updateConfiguration, hcClient);
+    }
+
+    /**
+     * 修改高危命令
+     *
+     * 批量修改高危命令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateHighRiskCommandsRequest 请求对象
+     * @return UpdateHighRiskCommandsResponse
+     */
+    public UpdateHighRiskCommandsResponse updateHighRiskCommands(UpdateHighRiskCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.updateHighRiskCommands);
+    }
+
+    /**
+     * 修改高危命令
+     *
+     * 批量修改高危命令
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateHighRiskCommandsRequest 请求对象
+     * @return SyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse>
+     */
+    public SyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> updateHighRiskCommandsInvoker(
+        UpdateHighRiskCommandsRequest request) {
+        return new SyncInvoker<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse>(request,
+            GaussDBforNoSQLMeta.updateHighRiskCommands, hcClient);
     }
 
     /**

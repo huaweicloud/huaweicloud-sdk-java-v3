@@ -39,6 +39,11 @@ public class ProtectionInfoRequestInfo {
     private String backupProtectionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_resources")
+
+    private BackupResources backupResources;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_policy_id")
 
     private String backupPolicyId;
@@ -151,6 +156,32 @@ public class ProtectionInfoRequestInfo {
 
     public void setBackupProtectionStatus(String backupProtectionStatus) {
         this.backupProtectionStatus = backupProtectionStatus;
+    }
+
+    public ProtectionInfoRequestInfo withBackupResources(BackupResources backupResources) {
+        this.backupResources = backupResources;
+        return this;
+    }
+
+    public ProtectionInfoRequestInfo withBackupResources(Consumer<BackupResources> backupResourcesSetter) {
+        if (this.backupResources == null) {
+            this.backupResources = new BackupResources();
+            backupResourcesSetter.accept(this.backupResources);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get backupResources
+     * @return backupResources
+     */
+    public BackupResources getBackupResources() {
+        return backupResources;
+    }
+
+    public void setBackupResources(BackupResources backupResources) {
+        this.backupResources = backupResources;
     }
 
     public ProtectionInfoRequestInfo withBackupPolicyId(String backupPolicyId) {
@@ -276,6 +307,7 @@ public class ProtectionInfoRequestInfo {
             && Objects.equals(this.protectionPolicyId, that.protectionPolicyId)
             && Objects.equals(this.createProtectionPolicy, that.createProtectionPolicy)
             && Objects.equals(this.backupProtectionStatus, that.backupProtectionStatus)
+            && Objects.equals(this.backupResources, that.backupResources)
             && Objects.equals(this.backupPolicyId, that.backupPolicyId)
             && Objects.equals(this.backupCycle, that.backupCycle) && Objects.equals(this.agentIdList, that.agentIdList)
             && Objects.equals(this.hostIdList, that.hostIdList);
@@ -288,6 +320,7 @@ public class ProtectionInfoRequestInfo {
             protectionPolicyId,
             createProtectionPolicy,
             backupProtectionStatus,
+            backupResources,
             backupPolicyId,
             backupCycle,
             agentIdList,
@@ -303,6 +336,7 @@ public class ProtectionInfoRequestInfo {
         sb.append("    protectionPolicyId: ").append(toIndentedString(protectionPolicyId)).append("\n");
         sb.append("    createProtectionPolicy: ").append(toIndentedString(createProtectionPolicy)).append("\n");
         sb.append("    backupProtectionStatus: ").append(toIndentedString(backupProtectionStatus)).append("\n");
+        sb.append("    backupResources: ").append(toIndentedString(backupResources)).append("\n");
         sb.append("    backupPolicyId: ").append(toIndentedString(backupPolicyId)).append("\n");
         sb.append("    backupCycle: ").append(toIndentedString(backupCycle)).append("\n");
         sb.append("    agentIdList: ").append(toIndentedString(agentIdList)).append("\n");

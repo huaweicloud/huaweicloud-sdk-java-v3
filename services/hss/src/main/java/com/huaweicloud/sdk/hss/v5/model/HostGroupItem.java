@@ -43,6 +43,11 @@ public class HostGroupItem {
 
     private List<String> hostIdList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_outside")
+
+    private Boolean isOutside;
+
     public HostGroupItem withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -167,6 +172,23 @@ public class HostGroupItem {
         this.hostIdList = hostIdList;
     }
 
+    public HostGroupItem withIsOutside(Boolean isOutside) {
+        this.isOutside = isOutside;
+        return this;
+    }
+
+    /**
+     * 是否是线下数据中心服务器组
+     * @return isOutside
+     */
+    public Boolean getIsOutside() {
+        return isOutside;
+    }
+
+    public void setIsOutside(Boolean isOutside) {
+        this.isOutside = isOutside;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -179,12 +201,12 @@ public class HostGroupItem {
         return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
             && Objects.equals(this.hostNum, that.hostNum) && Objects.equals(this.riskHostNum, that.riskHostNum)
             && Objects.equals(this.unprotectHostNum, that.unprotectHostNum)
-            && Objects.equals(this.hostIdList, that.hostIdList);
+            && Objects.equals(this.hostIdList, that.hostIdList) && Objects.equals(this.isOutside, that.isOutside);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, groupName, hostNum, riskHostNum, unprotectHostNum, hostIdList);
+        return Objects.hash(groupId, groupName, hostNum, riskHostNum, unprotectHostNum, hostIdList, isOutside);
     }
 
     @Override
@@ -197,6 +219,7 @@ public class HostGroupItem {
         sb.append("    riskHostNum: ").append(toIndentedString(riskHostNum)).append("\n");
         sb.append("    unprotectHostNum: ").append(toIndentedString(unprotectHostNum)).append("\n");
         sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
+        sb.append("    isOutside: ").append(toIndentedString(isOutside)).append("\n");
         sb.append("}");
         return sb.toString();
     }

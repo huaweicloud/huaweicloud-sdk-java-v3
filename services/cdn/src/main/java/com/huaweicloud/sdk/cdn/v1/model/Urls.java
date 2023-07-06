@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 具体url信息
+ * 具体url信息。
  */
 public class Urls {
 
@@ -73,7 +73,7 @@ public class Urls {
     }
 
     /**
-     * url具体值
+     * url具体值。
      * @return url
      */
     public String getUrl() {
@@ -90,7 +90,7 @@ public class Urls {
     }
 
     /**
-     * url状态
+     * url状态。
      * @return status
      */
     public String getStatus() {
@@ -107,7 +107,7 @@ public class Urls {
     }
 
     /**
-     * 任务类型
+     * 任务类型。
      * @return type
      */
     public String getType() {
@@ -124,7 +124,7 @@ public class Urls {
     }
 
     /**
-     * 任务id
+     * 任务id。
      * @return taskId
      */
     public Long getTaskId() {
@@ -141,7 +141,7 @@ public class Urls {
     }
 
     /**
-     * 修改时间戳（毫秒）
+     * 修改时间戳（毫秒）。
      * @return modifyTime
      */
     public Long getModifyTime() {
@@ -158,7 +158,7 @@ public class Urls {
     }
 
     /**
-     * 创建时间戳（毫秒）
+     * 创建时间戳（毫秒）。
      * @return createTime
      */
     public Long getCreateTime() {
@@ -175,7 +175,7 @@ public class Urls {
     }
 
     /**
-     * 文件类型，目录还是文件
+     * 文件类型，目录还是文件。
      * @return fileType
      */
     public String getFileType() {

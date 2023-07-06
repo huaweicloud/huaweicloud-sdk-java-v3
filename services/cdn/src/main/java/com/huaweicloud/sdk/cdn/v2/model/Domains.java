@@ -306,7 +306,7 @@ public class Domains {
     }
 
     /**
-     * 源站域名或源站IP，源站为IP类型时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持15个源站IP对象，备源站最多支持15个源站IP对象；源站为域名类型时仅支持1个源站对象。不支持IP源站和域名源站混用。
+     * 源站配置。
      * @return sources
      */
     public List<Sources> getSources() {
@@ -434,7 +434,7 @@ public class Domains {
     }
 
     /**
-     * 自动刷新预热（0代表关闭；1代表打开）
+     * 自动刷新预热（0代表关闭；1代表打开）。
      * @return autoRefreshPreheat
      */
     public Integer getAutoRefreshPreheat() {
@@ -502,7 +502,7 @@ public class Domains {
     }
 
     /**
-     * 是否暂停源站回源。
+     * 是否暂停源站回源（off代表关闭 on代表开启）。
      * @return originStatus
      */
     public String getOriginStatus() {
@@ -519,7 +519,7 @@ public class Domains {
     }
 
     /**
-     * 域名禁用原因
+     * 域名禁用原因。
      * @return bannedReason
      */
     public String getBannedReason() {
@@ -536,7 +536,7 @@ public class Domains {
     }
 
     /**
-     * 域名锁定原因
+     * 域名锁定原因。
      * @return lockedReason
      */
     public String getLockedReason() {
@@ -586,7 +586,7 @@ public class Domains {
     }
 
     /**
-     * 标签信息
+     * 标签信息。
      * @return tags
      */
     public List<EpResourceTag> getTags() {

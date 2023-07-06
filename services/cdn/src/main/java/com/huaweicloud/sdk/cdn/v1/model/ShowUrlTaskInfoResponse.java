@@ -40,7 +40,7 @@ public class ShowUrlTaskInfoResponse extends SdkResponse {
     }
 
     /**
-     * 查询结果总数
+     * 查询结果总数。
      * @return total
      */
     public Integer getTotal() {
@@ -57,7 +57,7 @@ public class ShowUrlTaskInfoResponse extends SdkResponse {
     }
 
     /**
-     * 查询当前页总数
+     * 查询当前页总数。
      * @return count
      */
     public Integer getCount() {
@@ -90,7 +90,7 @@ public class ShowUrlTaskInfoResponse extends SdkResponse {
     }
 
     /**
-     * url信息
+     * url信息。
      * @return result
      */
     public List<Urls> getResult() {

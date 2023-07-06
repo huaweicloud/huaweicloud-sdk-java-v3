@@ -61,7 +61,7 @@ public class UrlAuth {
     }
 
     /**
-     * 是否开启URL鉴权(\"off\"/\"on\")。
+     * 是否开启URL鉴权，off：开启,on：关闭。
      * @return status
      */
     public String getStatus() {

@@ -106,6 +106,66 @@ public class ProtectionServerInfo {
 
     private String agentStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_id")
+
+    private String vaultId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_name")
+
+    private String vaultName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_size")
+
+    private Integer vaultSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_used")
+
+    private Integer vaultUsed;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_allocated")
+
+    private Integer vaultAllocated;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_charging_mode")
+
+    private String vaultChargingMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_status")
+
+    private String vaultStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_policy_id")
+
+    private String backupPolicyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_policy_name")
+
+    private String backupPolicyName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_policy_enabled")
+
+    private Boolean backupPolicyEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resources_num")
+
+    private Integer resourcesNum;
+
     public ProtectionServerInfo withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -316,7 +376,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 策略ID
+     * 防护策略ID
      * @return protectPolicyId
      */
     public String getProtectPolicyId() {
@@ -333,7 +393,7 @@ public class ProtectionServerInfo {
     }
 
     /**
-     * 策略名称
+     * 防护策略名称
      * @return protectPolicyName
      */
     public String getProtectPolicyName() {
@@ -442,6 +502,218 @@ public class ProtectionServerInfo {
         this.agentStatus = agentStatus;
     }
 
+    public ProtectionServerInfo withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 主机开通的版本，包含如下7种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.advanced ：专业版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。   - hss.version.container.enterprise ：容器版。
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public ProtectionServerInfo withVaultId(String vaultId) {
+        this.vaultId = vaultId;
+        return this;
+    }
+
+    /**
+     * 存储库ID
+     * @return vaultId
+     */
+    public String getVaultId() {
+        return vaultId;
+    }
+
+    public void setVaultId(String vaultId) {
+        this.vaultId = vaultId;
+    }
+
+    public ProtectionServerInfo withVaultName(String vaultName) {
+        this.vaultName = vaultName;
+        return this;
+    }
+
+    /**
+     * 存储库名称
+     * @return vaultName
+     */
+    public String getVaultName() {
+        return vaultName;
+    }
+
+    public void setVaultName(String vaultName) {
+        this.vaultName = vaultName;
+    }
+
+    public ProtectionServerInfo withVaultSize(Integer vaultSize) {
+        this.vaultSize = vaultSize;
+        return this;
+    }
+
+    /**
+     * 总容量，单位GB
+     * minimum: 0
+     * maximum: 2097152
+     * @return vaultSize
+     */
+    public Integer getVaultSize() {
+        return vaultSize;
+    }
+
+    public void setVaultSize(Integer vaultSize) {
+        this.vaultSize = vaultSize;
+    }
+
+    public ProtectionServerInfo withVaultUsed(Integer vaultUsed) {
+        this.vaultUsed = vaultUsed;
+        return this;
+    }
+
+    /**
+     * 已使用容量，单位MB
+     * minimum: 0
+     * maximum: 2097152
+     * @return vaultUsed
+     */
+    public Integer getVaultUsed() {
+        return vaultUsed;
+    }
+
+    public void setVaultUsed(Integer vaultUsed) {
+        this.vaultUsed = vaultUsed;
+    }
+
+    public ProtectionServerInfo withVaultAllocated(Integer vaultAllocated) {
+        this.vaultAllocated = vaultAllocated;
+        return this;
+    }
+
+    /**
+     * 已分配容量，单位GB，指绑定的服务器大小
+     * minimum: 0
+     * maximum: 2097152
+     * @return vaultAllocated
+     */
+    public Integer getVaultAllocated() {
+        return vaultAllocated;
+    }
+
+    public void setVaultAllocated(Integer vaultAllocated) {
+        this.vaultAllocated = vaultAllocated;
+    }
+
+    public ProtectionServerInfo withVaultChargingMode(String vaultChargingMode) {
+        this.vaultChargingMode = vaultChargingMode;
+        return this;
+    }
+
+    /**
+     * 存储库创建模式，按需：post_paid，包周期：pre_paid
+     * @return vaultChargingMode
+     */
+    public String getVaultChargingMode() {
+        return vaultChargingMode;
+    }
+
+    public void setVaultChargingMode(String vaultChargingMode) {
+        this.vaultChargingMode = vaultChargingMode;
+    }
+
+    public ProtectionServerInfo withVaultStatus(String vaultStatus) {
+        this.vaultStatus = vaultStatus;
+        return this;
+    }
+
+    /**
+     * 存储库状态。   - available ：可用。   - lock ：被锁定。   - frozen：冻结。   - deleting：删除中。   - error：错误。
+     * @return vaultStatus
+     */
+    public String getVaultStatus() {
+        return vaultStatus;
+    }
+
+    public void setVaultStatus(String vaultStatus) {
+        this.vaultStatus = vaultStatus;
+    }
+
+    public ProtectionServerInfo withBackupPolicyId(String backupPolicyId) {
+        this.backupPolicyId = backupPolicyId;
+        return this;
+    }
+
+    /**
+     * 备份策略ID，若为空，则为未绑定状态，若不为空，通过backup_policy_enabled字段判断策略是否启用
+     * @return backupPolicyId
+     */
+    public String getBackupPolicyId() {
+        return backupPolicyId;
+    }
+
+    public void setBackupPolicyId(String backupPolicyId) {
+        this.backupPolicyId = backupPolicyId;
+    }
+
+    public ProtectionServerInfo withBackupPolicyName(String backupPolicyName) {
+        this.backupPolicyName = backupPolicyName;
+        return this;
+    }
+
+    /**
+     * 备份策略名称
+     * @return backupPolicyName
+     */
+    public String getBackupPolicyName() {
+        return backupPolicyName;
+    }
+
+    public void setBackupPolicyName(String backupPolicyName) {
+        this.backupPolicyName = backupPolicyName;
+    }
+
+    public ProtectionServerInfo withBackupPolicyEnabled(Boolean backupPolicyEnabled) {
+        this.backupPolicyEnabled = backupPolicyEnabled;
+        return this;
+    }
+
+    /**
+     * 策略是否启用
+     * @return backupPolicyEnabled
+     */
+    public Boolean getBackupPolicyEnabled() {
+        return backupPolicyEnabled;
+    }
+
+    public void setBackupPolicyEnabled(Boolean backupPolicyEnabled) {
+        this.backupPolicyEnabled = backupPolicyEnabled;
+    }
+
+    public ProtectionServerInfo withResourcesNum(Integer resourcesNum) {
+        this.resourcesNum = resourcesNum;
+        return this;
+    }
+
+    /**
+     * 已绑定服务器（个）
+     * minimum: 0
+     * maximum: 2097152
+     * @return resourcesNum
+     */
+    public Integer getResourcesNum() {
+        return resourcesNum;
+    }
+
+    public void setResourcesNum(Integer resourcesNum) {
+        this.resourcesNum = resourcesNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -464,7 +736,16 @@ public class ProtectionServerInfo {
             && Objects.equals(this.backupProtectionStatus, that.backupProtectionStatus)
             && Objects.equals(this.countProtectEvent, that.countProtectEvent)
             && Objects.equals(this.countBackuped, that.countBackuped)
-            && Objects.equals(this.agentStatus, that.agentStatus);
+            && Objects.equals(this.agentStatus, that.agentStatus) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.vaultId, that.vaultId) && Objects.equals(this.vaultName, that.vaultName)
+            && Objects.equals(this.vaultSize, that.vaultSize) && Objects.equals(this.vaultUsed, that.vaultUsed)
+            && Objects.equals(this.vaultAllocated, that.vaultAllocated)
+            && Objects.equals(this.vaultChargingMode, that.vaultChargingMode)
+            && Objects.equals(this.vaultStatus, that.vaultStatus)
+            && Objects.equals(this.backupPolicyId, that.backupPolicyId)
+            && Objects.equals(this.backupPolicyName, that.backupPolicyName)
+            && Objects.equals(this.backupPolicyEnabled, that.backupPolicyEnabled)
+            && Objects.equals(this.resourcesNum, that.resourcesNum);
     }
 
     @Override
@@ -487,7 +768,19 @@ public class ProtectionServerInfo {
             backupProtectionStatus,
             countProtectEvent,
             countBackuped,
-            agentStatus);
+            agentStatus,
+            version,
+            vaultId,
+            vaultName,
+            vaultSize,
+            vaultUsed,
+            vaultAllocated,
+            vaultChargingMode,
+            vaultStatus,
+            backupPolicyId,
+            backupPolicyName,
+            backupPolicyEnabled,
+            resourcesNum);
     }
 
     @Override
@@ -513,6 +806,18 @@ public class ProtectionServerInfo {
         sb.append("    countProtectEvent: ").append(toIndentedString(countProtectEvent)).append("\n");
         sb.append("    countBackuped: ").append(toIndentedString(countBackuped)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
+        sb.append("    vaultName: ").append(toIndentedString(vaultName)).append("\n");
+        sb.append("    vaultSize: ").append(toIndentedString(vaultSize)).append("\n");
+        sb.append("    vaultUsed: ").append(toIndentedString(vaultUsed)).append("\n");
+        sb.append("    vaultAllocated: ").append(toIndentedString(vaultAllocated)).append("\n");
+        sb.append("    vaultChargingMode: ").append(toIndentedString(vaultChargingMode)).append("\n");
+        sb.append("    vaultStatus: ").append(toIndentedString(vaultStatus)).append("\n");
+        sb.append("    backupPolicyId: ").append(toIndentedString(backupPolicyId)).append("\n");
+        sb.append("    backupPolicyName: ").append(toIndentedString(backupPolicyName)).append("\n");
+        sb.append("    backupPolicyEnabled: ").append(toIndentedString(backupPolicyEnabled)).append("\n");
+        sb.append("    resourcesNum: ").append(toIndentedString(resourcesNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 支持的版本，包含如下:   - hss.version.basic ：基础版策略组   - hss.version.enterprise : 企业版策略组   - hss.version.premium : 旗舰版策略组   - hss.version.wtp : 网页防篡改版策略组   - hss.version.container.enterprise : 容器版策略组
+ * 支持的版本，包含如下:   - hss.version.basic ：基础版策略组   - hss.version.advanced : 专业版策略组   - hss.version.enterprise : 企业版策略组   - hss.version.premium : 旗舰版策略组   - hss.version.wtp : 网页防篡改版策略组   - hss.version.container.enterprise : 容器版策略组
  */
 public class SupportVersion {
 

@@ -25,6 +25,11 @@ public class ListSecurityGroupRulesRequest {
 
     private String securityGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_ip_prefix")
+
+    private String remoteIpPrefix;
+
     public ListSecurityGroupRulesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -76,6 +81,23 @@ public class ListSecurityGroupRulesRequest {
         this.securityGroupId = securityGroupId;
     }
 
+    public ListSecurityGroupRulesRequest withRemoteIpPrefix(String remoteIpPrefix) {
+        this.remoteIpPrefix = remoteIpPrefix;
+        return this;
+    }
+
+    /**
+     * 功能说明：远端IP地址 取值范围：cidr格式
+     * @return remoteIpPrefix
+     */
+    public String getRemoteIpPrefix() {
+        return remoteIpPrefix;
+    }
+
+    public void setRemoteIpPrefix(String remoteIpPrefix) {
+        this.remoteIpPrefix = remoteIpPrefix;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,13 @@ public class ListSecurityGroupRulesRequest {
         }
         ListSecurityGroupRulesRequest that = (ListSecurityGroupRulesRequest) obj;
         return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.securityGroupId, that.securityGroupId);
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(marker, limit, securityGroupId);
+        return Objects.hash(marker, limit, securityGroupId, remoteIpPrefix);
     }
 
     @Override
@@ -101,6 +124,7 @@ public class ListSecurityGroupRulesRequest {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
         sb.append("}");
         return sb.toString();
     }

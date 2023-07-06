@@ -32,7 +32,7 @@ public class UpdateDomainFullConfigRequest {
     }
 
     /**
-     * 加速域名
+     * 加速域名。
      * @return domainName
      */
     public String getDomainName() {

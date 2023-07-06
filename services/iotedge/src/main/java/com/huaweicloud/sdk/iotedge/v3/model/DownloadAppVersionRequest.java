@@ -2,13 +2,15 @@ package com.huaweicloud.sdk.iotedge.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.progress.ProgressListener;
+import com.huaweicloud.sdk.core.progress.ProgressRequest;
 
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DownloadAppVersionRequest {
+public class DownloadAppVersionRequest implements ProgressRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
@@ -19,6 +21,30 @@ public class DownloadAppVersionRequest {
     @JsonProperty(value = "version")
 
     private String version;
+
+    private ProgressListener progressListener;
+
+    private long progressInterval;
+
+    @Override
+    public void setProgressListener(ProgressListener progressListener) {
+        this.progressListener = progressListener;
+    }
+
+    @Override
+    public ProgressListener getProgressListener() {
+        return progressListener;
+    }
+
+    @Override
+    public void setProgressInterval(long progressInterval) {
+        this.progressInterval = progressInterval;
+    }
+
+    @Override
+    public long getProgressInterval() {
+        return progressInterval;
+    }
 
     public DownloadAppVersionRequest withAppId(String appId) {
         this.appId = appId;

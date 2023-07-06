@@ -26,9 +26,9 @@ public class ShowSqlFilterRuleRequest {
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
+    @JsonProperty(value = "sql_type")
 
-    private String type;
+    private String sqlType;
 
     public ShowSqlFilterRuleRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -83,21 +83,21 @@ public class ShowSqlFilterRuleRequest {
         this.nodeId = nodeId;
     }
 
-    public ShowSqlFilterRuleRequest withType(String type) {
-        this.type = type;
+    public ShowSqlFilterRuleRequest withSqlType(String sqlType) {
+        this.sqlType = sqlType;
         return this;
     }
 
     /**
      * SQL限流类型，取值为SELECT、UPDATE、DELETE，不区分大小写；若不传则默认查询所有类型的限流规则。
-     * @return type
+     * @return sqlType
      */
-    public String getType() {
-        return type;
+    public String getSqlType() {
+        return sqlType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setSqlType(String sqlType) {
+        this.sqlType = sqlType;
     }
 
     @Override
@@ -110,12 +110,12 @@ public class ShowSqlFilterRuleRequest {
         }
         ShowSqlFilterRuleRequest that = (ShowSqlFilterRuleRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.sqlType, that.sqlType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, nodeId, type);
+        return Objects.hash(xLanguage, instanceId, nodeId, sqlType);
     }
 
     @Override
@@ -125,7 +125,7 @@ public class ShowSqlFilterRuleRequest {
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    sqlType: ").append(toIndentedString(sqlType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

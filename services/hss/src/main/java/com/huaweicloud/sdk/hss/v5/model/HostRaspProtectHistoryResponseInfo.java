@@ -11,6 +11,16 @@ import java.util.Objects;
 public class HostRaspProtectHistoryResponseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_ip")
+
+    private String hostIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_name")
+
+    private String hostName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_time")
 
     private Long alarmTime;
@@ -34,6 +44,40 @@ public class HostRaspProtectHistoryResponseInfo {
     @JsonProperty(value = "attacked_url")
 
     private String attackedUrl;
+
+    public HostRaspProtectHistoryResponseInfo withHostIp(String hostIp) {
+        this.hostIp = hostIp;
+        return this;
+    }
+
+    /**
+     * 服务器ip
+     * @return hostIp
+     */
+    public String getHostIp() {
+        return hostIp;
+    }
+
+    public void setHostIp(String hostIp) {
+        this.hostIp = hostIp;
+    }
+
+    public HostRaspProtectHistoryResponseInfo withHostName(String hostName) {
+        this.hostName = hostName;
+        return this;
+    }
+
+    /**
+     * 服务器名称
+     * @return hostName
+     */
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
 
     public HostRaspProtectHistoryResponseInfo withAlarmTime(Long alarmTime) {
         this.alarmTime = alarmTime;
@@ -133,20 +177,23 @@ public class HostRaspProtectHistoryResponseInfo {
             return false;
         }
         HostRaspProtectHistoryResponseInfo that = (HostRaspProtectHistoryResponseInfo) obj;
-        return Objects.equals(this.alarmTime, that.alarmTime) && Objects.equals(this.threatType, that.threatType)
+        return Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.alarmTime, that.alarmTime) && Objects.equals(this.threatType, that.threatType)
             && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.sourceIp, that.sourceIp)
             && Objects.equals(this.attackedUrl, that.attackedUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alarmTime, threatType, alarmLevel, sourceIp, attackedUrl);
+        return Objects.hash(hostIp, hostName, alarmTime, threatType, alarmLevel, sourceIp, attackedUrl);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class HostRaspProtectHistoryResponseInfo {\n");
+        sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
+        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    alarmTime: ").append(toIndentedString(alarmTime)).append("\n");
         sb.append("    threatType: ").append(toIndentedString(threatType)).append("\n");
         sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");

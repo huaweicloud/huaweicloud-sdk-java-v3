@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 域名复制请求体
+ * 域名复制请求体。
  */
 public class BatchCopyDRequestBody {
 

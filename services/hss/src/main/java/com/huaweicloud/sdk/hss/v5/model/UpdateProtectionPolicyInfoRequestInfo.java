@@ -63,6 +63,11 @@ public class UpdateProtectionPolicyInfoRequestInfo {
 
     private String runtimeDetectionStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_whitelist")
+
+    private List<TrustProcessInfo> processWhitelist = null;
+
     public UpdateProtectionPolicyInfoRequestInfo withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -249,6 +254,40 @@ public class UpdateProtectionPolicyInfoRequestInfo {
         this.runtimeDetectionStatus = runtimeDetectionStatus;
     }
 
+    public UpdateProtectionPolicyInfoRequestInfo withProcessWhitelist(List<TrustProcessInfo> processWhitelist) {
+        this.processWhitelist = processWhitelist;
+        return this;
+    }
+
+    public UpdateProtectionPolicyInfoRequestInfo addProcessWhitelistItem(TrustProcessInfo processWhitelistItem) {
+        if (this.processWhitelist == null) {
+            this.processWhitelist = new ArrayList<>();
+        }
+        this.processWhitelist.add(processWhitelistItem);
+        return this;
+    }
+
+    public UpdateProtectionPolicyInfoRequestInfo withProcessWhitelist(
+        Consumer<List<TrustProcessInfo>> processWhitelistSetter) {
+        if (this.processWhitelist == null) {
+            this.processWhitelist = new ArrayList<>();
+        }
+        processWhitelistSetter.accept(this.processWhitelist);
+        return this;
+    }
+
+    /**
+     * 进程白名单
+     * @return processWhitelist
+     */
+    public List<TrustProcessInfo> getProcessWhitelist() {
+        return processWhitelist;
+    }
+
+    public void setProcessWhitelist(List<TrustProcessInfo> processWhitelist) {
+        this.processWhitelist = processWhitelist;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -266,7 +305,8 @@ public class UpdateProtectionPolicyInfoRequestInfo {
             && Objects.equals(this.excludeDirectory, that.excludeDirectory)
             && Objects.equals(this.agentIdList, that.agentIdList)
             && Objects.equals(this.operatingSystem, that.operatingSystem)
-            && Objects.equals(this.runtimeDetectionStatus, that.runtimeDetectionStatus);
+            && Objects.equals(this.runtimeDetectionStatus, that.runtimeDetectionStatus)
+            && Objects.equals(this.processWhitelist, that.processWhitelist);
     }
 
     @Override
@@ -280,7 +320,8 @@ public class UpdateProtectionPolicyInfoRequestInfo {
             excludeDirectory,
             agentIdList,
             operatingSystem,
-            runtimeDetectionStatus);
+            runtimeDetectionStatus,
+            processWhitelist);
     }
 
     @Override
@@ -297,6 +338,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
         sb.append("    agentIdList: ").append(toIndentedString(agentIdList)).append("\n");
         sb.append("    operatingSystem: ").append(toIndentedString(operatingSystem)).append("\n");
         sb.append("    runtimeDetectionStatus: ").append(toIndentedString(runtimeDetectionStatus)).append("\n");
+        sb.append("    processWhitelist: ").append(toIndentedString(processWhitelist)).append("\n");
         sb.append("}");
         return sb.toString();
     }

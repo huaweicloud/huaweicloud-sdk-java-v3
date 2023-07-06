@@ -56,7 +56,7 @@ public class CacheConfigRequest {
     }
 
     /**
-     * 缓存规则是否遵循源站
+     * 缓存规则是否遵循源站。
      * @return followOrigin
      */
     public Boolean getFollowOrigin() {

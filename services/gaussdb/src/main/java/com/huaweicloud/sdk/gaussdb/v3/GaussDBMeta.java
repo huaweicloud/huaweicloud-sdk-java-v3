@@ -3519,12 +3519,12 @@ public class GaussDBMeta {
             f -> f.withMarshaller(ShowSqlFilterRuleRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
             }));
-        builder.<String>withRequestField("type",
+        builder.<String>withRequestField("sql_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getType, (req, v) -> {
-                req.setType(v);
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getSqlType, (req, v) -> {
+                req.setSqlType(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,

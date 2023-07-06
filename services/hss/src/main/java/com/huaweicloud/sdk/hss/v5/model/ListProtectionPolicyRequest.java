@@ -36,6 +36,11 @@ public class ListProtectionPolicyRequest {
     private String policyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_policy_id")
+
+    private String protectPolicyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operating_system")
 
     private String operatingSystem;
@@ -129,6 +134,23 @@ public class ListProtectionPolicyRequest {
         this.policyName = policyName;
     }
 
+    public ListProtectionPolicyRequest withProtectPolicyId(String protectPolicyId) {
+        this.protectPolicyId = protectPolicyId;
+        return this;
+    }
+
+    /**
+     * 防护策略id
+     * @return protectPolicyId
+     */
+    public String getProtectPolicyId() {
+        return protectPolicyId;
+    }
+
+    public void setProtectPolicyId(String protectPolicyId) {
+        this.protectPolicyId = protectPolicyId;
+    }
+
     public ListProtectionPolicyRequest withOperatingSystem(String operatingSystem) {
         this.operatingSystem = operatingSystem;
         return this;
@@ -159,12 +181,13 @@ public class ListProtectionPolicyRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.policyName, that.policyName)
+            && Objects.equals(this.protectPolicyId, that.protectPolicyId)
             && Objects.equals(this.operatingSystem, that.operatingSystem);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, enterpriseProjectId, offset, limit, policyName, operatingSystem);
+        return Objects.hash(region, enterpriseProjectId, offset, limit, policyName, protectPolicyId, operatingSystem);
     }
 
     @Override
@@ -176,6 +199,7 @@ public class ListProtectionPolicyRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
+        sb.append("    protectPolicyId: ").append(toIndentedString(protectPolicyId)).append("\n");
         sb.append("    operatingSystem: ").append(toIndentedString(operatingSystem)).append("\n");
         sb.append("}");
         return sb.toString();

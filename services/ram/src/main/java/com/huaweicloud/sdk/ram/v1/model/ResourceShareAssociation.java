@@ -51,6 +51,11 @@ public class ResourceShareAssociation {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status_message")
+
+    private String statusMessage;
+
     public ResourceShareAssociation withAssociatedEntity(String associatedEntity) {
         this.associatedEntity = associatedEntity;
         return this;
@@ -187,6 +192,23 @@ public class ResourceShareAssociation {
         this.status = status;
     }
 
+    public ResourceShareAssociation withStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+        return this;
+    }
+
+    /**
+     * 绑定的当前状态的描述。
+     * @return statusMessage
+     */
+    public String getStatusMessage() {
+        return statusMessage;
+    }
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -202,7 +224,7 @@ public class ResourceShareAssociation {
             && Objects.equals(this.external, that.external)
             && Objects.equals(this.resourceShareId, that.resourceShareId)
             && Objects.equals(this.resourceShareName, that.resourceShareName)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.statusMessage, that.statusMessage);
     }
 
     @Override
@@ -214,7 +236,8 @@ public class ResourceShareAssociation {
             external,
             resourceShareId,
             resourceShareName,
-            status);
+            status,
+            statusMessage);
     }
 
     @Override
@@ -229,6 +252,7 @@ public class ResourceShareAssociation {
         sb.append("    resourceShareId: ").append(toIndentedString(resourceShareId)).append("\n");
         sb.append("    resourceShareName: ").append(toIndentedString(resourceShareName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

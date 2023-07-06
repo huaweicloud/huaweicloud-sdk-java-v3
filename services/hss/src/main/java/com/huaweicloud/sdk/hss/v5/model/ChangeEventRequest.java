@@ -22,6 +22,16 @@ public class ChangeEventRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_name")
+
+    private String containerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_id")
+
+    private String containerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ChangeEventRequestInfo body;
@@ -58,6 +68,40 @@ public class ChangeEventRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ChangeEventRequest withContainerName(String containerName) {
+        this.containerName = containerName;
+        return this;
+    }
+
+    /**
+     * 容器实例名称
+     * @return containerName
+     */
+    public String getContainerName() {
+        return containerName;
+    }
+
+    public void setContainerName(String containerName) {
+        this.containerName = containerName;
+    }
+
+    public ChangeEventRequest withContainerId(String containerId) {
+        this.containerId = containerId;
+        return this;
+    }
+
+    /**
+     * 容器Id
+     * @return containerId
+     */
+    public String getContainerId() {
+        return containerId;
+    }
+
+    public void setContainerId(String containerId) {
+        this.containerId = containerId;
     }
 
     public ChangeEventRequest withBody(ChangeEventRequestInfo body) {
@@ -97,12 +141,13 @@ public class ChangeEventRequest {
         ChangeEventRequest that = (ChangeEventRequest) obj;
         return Objects.equals(this.region, that.region)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.containerName, that.containerName)
+            && Objects.equals(this.containerId, that.containerId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, enterpriseProjectId, body);
+        return Objects.hash(region, enterpriseProjectId, containerName, containerId, body);
     }
 
     @Override
@@ -111,6 +156,8 @@ public class ChangeEventRequest {
         sb.append("class ChangeEventRequest {\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
+        sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

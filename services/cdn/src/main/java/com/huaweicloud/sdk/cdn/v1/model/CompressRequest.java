@@ -21,7 +21,7 @@ public class CompressRequest {
     }
 
     /**
-     * GZIP压缩开关。0关闭。1打开
+     * GZIP压缩开关。0关闭。1打开。
      * @return compressSwitch
      */
     public Integer getCompressSwitch() {

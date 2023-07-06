@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 成功响应详细内容
+ * 成功响应详细内容。
  */
 public class BatchCopyResultVo {
 
@@ -21,7 +21,7 @@ public class BatchCopyResultVo {
     private String reason;
 
     /**
-     * 批量操作结果
+     * 批量操作结果。
      */
     public static final class StatusEnum {
 
@@ -123,7 +123,7 @@ public class BatchCopyResultVo {
     }
 
     /**
-     * 批量操作结果
+     * 批量操作结果。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -140,7 +140,7 @@ public class BatchCopyResultVo {
     }
 
     /**
-     * 域名
+     * 域名。
      * @return domainName
      */
     public String getDomainName() {

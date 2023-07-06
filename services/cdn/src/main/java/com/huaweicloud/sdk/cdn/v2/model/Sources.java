@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 源站信息
+ * 源站信息。
  */
 public class Sources {
 
@@ -26,7 +26,7 @@ public class Sources {
     private String ipOrDomain;
 
     /**
-     * 源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。
+     * 源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。
      */
     public static final class OriginTypeEnum {
 
@@ -156,7 +156,7 @@ public class Sources {
     }
 
     /**
-     * 源站类型取值：ipaddr、 domain、obs_bucket，分别表示：源站IP、源站域名、OBS桶访问域名。
+     * 源站类型取值：ipaddr：源站IP、 domain：源站域名、obs_bucket：OBS桶域名。
      * @return originType
      */
     public OriginTypeEnum getOriginType() {
@@ -173,7 +173,7 @@ public class Sources {
     }
 
     /**
-     * 主备状态（1代表主站；0代表备站）,主源站必须存在，备源站可选，OBS桶不能有备源站。
+     * 主备状态，1代表主源站，0代表备源站。
      * @return activeStandby
      */
     public Integer getActiveStandby() {

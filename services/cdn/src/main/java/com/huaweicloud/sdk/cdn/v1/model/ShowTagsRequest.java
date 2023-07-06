@@ -21,7 +21,7 @@ public class ShowTagsRequest {
     }
 
     /**
-     * 资源id
+     * 资源id。  > 域名ID
      * @return resourceId
      */
     public String getResourceId() {
