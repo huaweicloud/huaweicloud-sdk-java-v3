@@ -1,6 +1,7 @@
 package com.huaweicloud.sdk.cgs.v5;
 
-import com.huaweicloud.sdk.cgs.v5.model.*;
+import com.huaweicloud.sdk.cgs.v5.model.ListContainerNodesRequest;
+import com.huaweicloud.sdk.cgs.v5.model.ListContainerNodesResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;

@@ -5,7 +5,34 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.kps.v3.model.*;
+import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairRequestBody;
+import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.CreateKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.CreateKeypairRequestBody;
+import com.huaweicloud.sdk.kps.v3.model.CreateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.DeleteAllFailedTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.DeleteAllFailedTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.DeleteFailedTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.DeleteFailedTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.DeleteKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.DeleteKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairRequestBody;
+import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairDetailRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairDetailResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairsRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairsResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListRunningTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListRunningTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.UpdateKeypairDescriptionRequest;
+import com.huaweicloud.sdk.kps.v3.model.UpdateKeypairDescriptionRequestBody;
+import com.huaweicloud.sdk.kps.v3.model.UpdateKeypairDescriptionResponse;
 
 @SuppressWarnings("unchecked")
 public class KpsMeta {

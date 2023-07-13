@@ -45,7 +45,7 @@ public class MetaData {
     }
 
     /**
-     * 用户主密钥ID，是metadata中的表示加密功能的字段，与__system__encrypted配合使用。 说明： - 系统盘不支持加密。 - 请参考[查询密钥列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=KMS&api=ListKeys&version=v2)，通过HTTPS请求获取密钥ID。
+     * 用户主密钥ID，是metadata中的表示加密功能的字段，与__system__encrypted配合使用。说明：- 系统盘不支持加密。- 请参考[查询密钥列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=KMS&api=ListKeys&version=v2)，通过HTTPS请求获取密钥ID。
      * @return systemCmkid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

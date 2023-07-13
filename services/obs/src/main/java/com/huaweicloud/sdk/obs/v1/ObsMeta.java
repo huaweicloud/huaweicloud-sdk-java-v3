@@ -5,7 +5,13 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.obs.v1.model.*;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequestBody;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationResponse;
 
 @SuppressWarnings("unchecked")
 public class ObsMeta {

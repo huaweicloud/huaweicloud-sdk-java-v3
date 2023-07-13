@@ -124,7 +124,7 @@ public class Instance {
     }
 
     /**
-     * id
+     * 实例ID。
      * @return id
      */
     public String getId() {

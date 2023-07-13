@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.cae.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -14,6 +15,11 @@ import java.util.function.Consumer;
 public class JobSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "progress")
+
+    private BigDecimal progress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -23,13 +29,30 @@ public class JobSpec {
 
     private List<Task> tasks = null;
 
+    public JobSpec withProgress(BigDecimal progress) {
+        this.progress = progress;
+        return this;
+    }
+
+    /**
+     * 任务进度。
+     * @return progress
+     */
+    public BigDecimal getProgress() {
+        return progress;
+    }
+
+    public void setProgress(BigDecimal progress) {
+        this.progress = progress;
+    }
+
     public JobSpec withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 任务状态
+     * 任务状态。
      * @return status
      */
     public String getStatus() {
@@ -62,7 +85,7 @@ public class JobSpec {
     }
 
     /**
-     * 子任务
+     * 子任务。
      * @return tasks
      */
     public List<Task> getTasks() {
@@ -82,18 +105,20 @@ public class JobSpec {
             return false;
         }
         JobSpec that = (JobSpec) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.tasks, that.tasks);
+        return Objects.equals(this.progress, that.progress) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, tasks);
+        return Objects.hash(progress, status, tasks);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class JobSpec {\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
         sb.append("}");

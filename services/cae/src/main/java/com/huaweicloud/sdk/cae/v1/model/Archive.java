@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Archive
+ * 构建产物纳管。
  */
 public class Archive {
 
@@ -21,7 +21,7 @@ public class Archive {
     }
 
     /**
-     * 镜像命名空间。
+     * 产物纳管SWR组织。
      * @return artifactNamespace
      */
     public String getArtifactNamespace() {

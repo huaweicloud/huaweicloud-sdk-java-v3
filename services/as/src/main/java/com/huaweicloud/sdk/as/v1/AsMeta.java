@@ -1,6 +1,160 @@
 package com.huaweicloud.sdk.as.v1;
 
-import com.huaweicloud.sdk.as.v1.model.*;
+import com.huaweicloud.sdk.as.v1.model.AttachCallbackInstanceLifeCycleHookRequest;
+import com.huaweicloud.sdk.as.v1.model.AttachCallbackInstanceLifeCycleHookResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchAddInstancesOption;
+import com.huaweicloud.sdk.as.v1.model.BatchAddScalingInstancesRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchAddScalingInstancesResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchDeleteScalingConfigOption;
+import com.huaweicloud.sdk.as.v1.model.BatchDeleteScalingConfigsRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchDeleteScalingConfigsResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchDeleteScalingPoliciesOption;
+import com.huaweicloud.sdk.as.v1.model.BatchDeleteScalingPoliciesRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchDeleteScalingPoliciesResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchEnterStandbyInstancesOption;
+import com.huaweicloud.sdk.as.v1.model.BatchExitStandByInstancesOption;
+import com.huaweicloud.sdk.as.v1.model.BatchPauseScalingPoliciesOption;
+import com.huaweicloud.sdk.as.v1.model.BatchPauseScalingPoliciesRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchPauseScalingPoliciesResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchProtectInstancesOption;
+import com.huaweicloud.sdk.as.v1.model.BatchProtectScalingInstancesRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchProtectScalingInstancesResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchRemoveInstancesOption;
+import com.huaweicloud.sdk.as.v1.model.BatchRemoveScalingInstancesRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchRemoveScalingInstancesResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchResumeScalingPoliciesOption;
+import com.huaweicloud.sdk.as.v1.model.BatchResumeScalingPoliciesRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchResumeScalingPoliciesResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchSetScalingInstancesStandbyRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchSetScalingInstancesStandbyResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchUnprotectInstancesOption;
+import com.huaweicloud.sdk.as.v1.model.BatchUnprotectScalingInstancesRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchUnprotectScalingInstancesResponse;
+import com.huaweicloud.sdk.as.v1.model.BatchUnsetScalingInstancesStantbyRequest;
+import com.huaweicloud.sdk.as.v1.model.BatchUnsetScalingInstancesStantbyResponse;
+import com.huaweicloud.sdk.as.v1.model.CallbackLifeCycleHookOption;
+import com.huaweicloud.sdk.as.v1.model.CreateGroupScheduledTaskRequest;
+import com.huaweicloud.sdk.as.v1.model.CreateGroupScheduledTaskResponse;
+import com.huaweicloud.sdk.as.v1.model.CreateLifeCycleHookOption;
+import com.huaweicloud.sdk.as.v1.model.CreateLifyCycleHookRequest;
+import com.huaweicloud.sdk.as.v1.model.CreateLifyCycleHookResponse;
+import com.huaweicloud.sdk.as.v1.model.CreateNotificationOption;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingConfigOption;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingConfigRequest;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingConfigResponse;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingGroupOption;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingGroupRequest;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingGroupResponse;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingNotificationRequest;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingNotificationResponse;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingPolicyOption;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingPolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingPolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingPolicyV2Option;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingTagInfoRequest;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingTagInfoResponse;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingV2PolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingV2PolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.CreateScheduledTaskOption;
+import com.huaweicloud.sdk.as.v1.model.CreateTagsOption;
+import com.huaweicloud.sdk.as.v1.model.DeleteGroupScheduledTaskRequest;
+import com.huaweicloud.sdk.as.v1.model.DeleteGroupScheduledTaskResponse;
+import com.huaweicloud.sdk.as.v1.model.DeleteLifecycleHookRequest;
+import com.huaweicloud.sdk.as.v1.model.DeleteLifecycleHookResponse;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingConfigRequest;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingConfigResponse;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingGroupRequest;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingGroupResponse;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingInstanceRequest;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingInstanceResponse;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingNotificationRequest;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingNotificationResponse;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingPolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingPolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingTagInfoRequest;
+import com.huaweicloud.sdk.as.v1.model.DeleteScalingTagInfoResponse;
+import com.huaweicloud.sdk.as.v1.model.DeleteTagsOption;
+import com.huaweicloud.sdk.as.v1.model.ExecuteScalingPolicyOption;
+import com.huaweicloud.sdk.as.v1.model.ExecuteScalingPolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.ExecuteScalingPolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.ListAllScalingV2PoliciesRequest;
+import com.huaweicloud.sdk.as.v1.model.ListAllScalingV2PoliciesResponse;
+import com.huaweicloud.sdk.as.v1.model.ListApiVersionsRequest;
+import com.huaweicloud.sdk.as.v1.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.as.v1.model.ListGroupScheduledTasksRequest;
+import com.huaweicloud.sdk.as.v1.model.ListGroupScheduledTasksResponse;
+import com.huaweicloud.sdk.as.v1.model.ListHookInstancesRequest;
+import com.huaweicloud.sdk.as.v1.model.ListHookInstancesResponse;
+import com.huaweicloud.sdk.as.v1.model.ListLifeCycleHooksRequest;
+import com.huaweicloud.sdk.as.v1.model.ListLifeCycleHooksResponse;
+import com.huaweicloud.sdk.as.v1.model.ListResourceInstancesRequest;
+import com.huaweicloud.sdk.as.v1.model.ListResourceInstancesResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingActivityLogsRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingActivityLogsResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingActivityV2LogsRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingActivityV2LogsResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingConfigsRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingConfigsResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingGroupsRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingGroupsResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingInstancesRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingInstancesResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingNotificationsRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingNotificationsResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingPoliciesRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingPoliciesResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingPolicyExecuteLogsRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingPolicyExecuteLogsResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingTagInfosByResourceIdRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingTagInfosByResourceIdResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingTagInfosByTenantIdRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingTagInfosByTenantIdResponse;
+import com.huaweicloud.sdk.as.v1.model.ListScalingV2PoliciesRequest;
+import com.huaweicloud.sdk.as.v1.model.ListScalingV2PoliciesResponse;
+import com.huaweicloud.sdk.as.v1.model.PauseScalingGroupOption;
+import com.huaweicloud.sdk.as.v1.model.PauseScalingGroupRequest;
+import com.huaweicloud.sdk.as.v1.model.PauseScalingGroupResponse;
+import com.huaweicloud.sdk.as.v1.model.PauseScalingPolicyOption;
+import com.huaweicloud.sdk.as.v1.model.PauseScalingPolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.PauseScalingPolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.QueryTagsOption;
+import com.huaweicloud.sdk.as.v1.model.ResumeScalingGroupOption;
+import com.huaweicloud.sdk.as.v1.model.ResumeScalingGroupRequest;
+import com.huaweicloud.sdk.as.v1.model.ResumeScalingGroupResponse;
+import com.huaweicloud.sdk.as.v1.model.ResumeScalingPolicyOption;
+import com.huaweicloud.sdk.as.v1.model.ResumeScalingPolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.ResumeScalingPolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowApiVersionRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowLifeCycleHookRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowLifeCycleHookResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowPolicyAndInstanceQuotaRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowPolicyAndInstanceQuotaResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowResourceQuotaRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowResourceQuotaResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowScalingConfigRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowScalingConfigResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowScalingGroupRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowScalingGroupResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowScalingPolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowScalingPolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowScalingV2PolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowScalingV2PolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.UpdateGroupScheduledTaskRequest;
+import com.huaweicloud.sdk.as.v1.model.UpdateGroupScheduledTaskResponse;
+import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookOption;
+import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookRequest;
+import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookResponse;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupOption;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupRequest;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupResponse;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingPolicyOption;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingPolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingPolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingV2PolicyOption;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingV2PolicyRequest;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingV2PolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.UpdateScheduledTaskOption;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -365,6 +519,39 @@ public class AsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse> createGroupScheduledTask =
+        genForcreateGroupScheduledTask();
+
+    private static HttpRequestDef<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse> genForcreateGroupScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateGroupScheduledTaskRequest.class, CreateGroupScheduledTaskResponse.class)
+                .withName("CreateGroupScheduledTask")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGroupScheduledTaskRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            }));
+        builder.<CreateScheduledTaskOption>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateScheduledTaskOption.class),
+            f -> f.withMarshaller(CreateGroupScheduledTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateLifyCycleHookRequest, CreateLifyCycleHookResponse> createLifyCycleHook =
         genForcreateLifyCycleHook();
 
@@ -539,6 +726,42 @@ public class AsMeta {
             TypeCasts.uncheckedConversion(CreateTagsOption.class),
             f -> f.withMarshaller(CreateScalingTagInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse> deleteGroupScheduledTask =
+        genFordeleteGroupScheduledTask();
+
+    private static HttpRequestDef<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse> genFordeleteGroupScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteGroupScheduledTaskRequest.class,
+                    DeleteGroupScheduledTaskResponse.class)
+                .withName("DeleteGroupScheduledTask")
+                .withUri(
+                    "/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGroupScheduledTaskRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            }));
+        builder.<String>withRequestField("scheduled_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGroupScheduledTaskRequest::getScheduledTaskId, (req, v) -> {
+                req.setScheduledTaskId(v);
             }));
 
         // response
@@ -791,6 +1014,45 @@ public class AsMeta {
             TypeCasts.uncheckedConversion(ExecuteScalingPolicyOption.class),
             f -> f.withMarshaller(ExecuteScalingPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse> listGroupScheduledTasks =
+        genForlistGroupScheduledTasks();
+
+    private static HttpRequestDef<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse> genForlistGroupScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListGroupScheduledTasksRequest.class, ListGroupScheduledTasksResponse.class)
+            .withName("ListGroupScheduledTasks")
+            .withUri("/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGroupScheduledTasksRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGroupScheduledTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGroupScheduledTasksRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
             }));
 
         // response
@@ -1691,6 +1953,47 @@ public class AsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowScalingPolicyRequest::getScalingPolicyId, (req, v) -> {
                 req.setScalingPolicyId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse> updateGroupScheduledTask =
+        genForupdateGroupScheduledTask();
+
+    private static HttpRequestDef<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse> genForupdateGroupScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateGroupScheduledTaskRequest.class, UpdateGroupScheduledTaskResponse.class)
+                .withName("UpdateGroupScheduledTask")
+                .withUri(
+                    "/autoscaling-api/v1/{project_id}/scaling-groups/{scaling_group_id}/scheduled-tasks/{scheduled_task_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGroupScheduledTaskRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            }));
+        builder.<String>withRequestField("scheduled_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGroupScheduledTaskRequest::getScheduledTaskId, (req, v) -> {
+                req.setScheduledTaskId(v);
+            }));
+        builder.<UpdateScheduledTaskOption>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateScheduledTaskOption.class),
+            f -> f.withMarshaller(UpdateGroupScheduledTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

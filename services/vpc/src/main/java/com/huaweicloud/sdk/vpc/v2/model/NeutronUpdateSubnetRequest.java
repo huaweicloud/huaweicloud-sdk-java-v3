@@ -1,0 +1,105 @@
+package com.huaweicloud.sdk.vpc.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Request Object
+ */
+public class NeutronUpdateSubnetRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private NeutronUpdateSubnetRequestBody body;
+
+    public NeutronUpdateSubnetRequest withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 子网ID
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    public NeutronUpdateSubnetRequest withBody(NeutronUpdateSubnetRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public NeutronUpdateSubnetRequest withBody(Consumer<NeutronUpdateSubnetRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new NeutronUpdateSubnetRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public NeutronUpdateSubnetRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(NeutronUpdateSubnetRequestBody body) {
+        this.body = body;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        NeutronUpdateSubnetRequest that = (NeutronUpdateSubnetRequest) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.body, that.body);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(subnetId, body);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class NeutronUpdateSubnetRequest {\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

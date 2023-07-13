@@ -1,22 +1,133 @@
 package com.huaweicloud.sdk.cae.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ComponentSpec
+ * 组件规格。
  */
 public class ComponentSpec {
+
+    /**
+     * 语言/运行时。
+     */
+    public static final class RuntimeEnum {
+
+        /**
+         * Enum DOCKER for value: "Docker"
+         */
+        public static final RuntimeEnum DOCKER = new RuntimeEnum("Docker");
+
+        /**
+         * Enum JAVA8 for value: "Java8"
+         */
+        public static final RuntimeEnum JAVA8 = new RuntimeEnum("Java8");
+
+        /**
+         * Enum JAVA11 for value: "Java11"
+         */
+        public static final RuntimeEnum JAVA11 = new RuntimeEnum("Java11");
+
+        /**
+         * Enum TOMCAT8 for value: "Tomcat8"
+         */
+        public static final RuntimeEnum TOMCAT8 = new RuntimeEnum("Tomcat8");
+
+        /**
+         * Enum TOMCAT9 for value: "Tomcat9"
+         */
+        public static final RuntimeEnum TOMCAT9 = new RuntimeEnum("Tomcat9");
+
+        /**
+         * Enum PYTHON3 for value: "Python3"
+         */
+        public static final RuntimeEnum PYTHON3 = new RuntimeEnum("Python3");
+
+        /**
+         * Enum NODEJS8 for value: "Nodejs8"
+         */
+        public static final RuntimeEnum NODEJS8 = new RuntimeEnum("Nodejs8");
+
+        /**
+         * Enum PHP7 for value: "Php7"
+         */
+        public static final RuntimeEnum PHP7 = new RuntimeEnum("Php7");
+
+        private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RuntimeEnum> createStaticFields() {
+            Map<String, RuntimeEnum> map = new HashMap<>();
+            map.put("Docker", DOCKER);
+            map.put("Java8", JAVA8);
+            map.put("Java11", JAVA11);
+            map.put("Tomcat8", TOMCAT8);
+            map.put("Tomcat9", TOMCAT9);
+            map.put("Python3", PYTHON3);
+            map.put("Nodejs8", NODEJS8);
+            map.put("Php7", PHP7);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RuntimeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RuntimeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
+        }
+
+        public static RuntimeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RuntimeEnum) {
+                return this.value.equals(((RuntimeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime")
 
-    private String runtime;
+    private RuntimeEnum runtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
@@ -29,11 +140,6 @@ public class ComponentSpec {
     private Integer replica;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "available_replica")
-
-    private Integer availableReplica;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
     private Source source;
@@ -44,14 +150,14 @@ public class ComponentSpec {
     private Build build;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_limit")
+
+    private ResourceLimit resourceLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_info")
 
     private List<Access> accessInfo = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "build_id")
-
-    private String buildId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_url")
@@ -59,34 +165,44 @@ public class ComponentSpec {
     private String imageUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_replica")
+
+    private Integer availableReplica;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "log_strategy")
+    @JsonProperty(value = "build_id")
 
-    private List<LogStrategy> logStrategy = null;
+    private String buildId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
 
-    public ComponentSpec withRuntime(String runtime) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "build_log_id")
+
+    private String buildLogId;
+
+    public ComponentSpec withRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
         return this;
     }
 
     /**
-     * 语言/运行时，例如：Java8、tomcat8。
+     * 语言/运行时。
      * @return runtime
      */
-    public String getRuntime() {
+    public RuntimeEnum getRuntime() {
         return runtime;
     }
 
-    public void setRuntime(String runtime) {
+    public void setRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
     }
 
@@ -96,7 +212,7 @@ public class ComponentSpec {
     }
 
     /**
-     * 环境id。
+     * 环境ID。
      * @return envId
      */
     public String getEnvId() {
@@ -113,7 +229,7 @@ public class ComponentSpec {
     }
 
     /**
-     * 副本。
+     * 实例个数。
      * @return replica
      */
     public Integer getReplica() {
@@ -122,23 +238,6 @@ public class ComponentSpec {
 
     public void setReplica(Integer replica) {
         this.replica = replica;
-    }
-
-    public ComponentSpec withAvailableReplica(Integer availableReplica) {
-        this.availableReplica = availableReplica;
-        return this;
-    }
-
-    /**
-     * 可用副本。
-     * @return availableReplica
-     */
-    public Integer getAvailableReplica() {
-        return availableReplica;
-    }
-
-    public void setAvailableReplica(Integer availableReplica) {
-        this.availableReplica = availableReplica;
     }
 
     public ComponentSpec withSource(Source source) {
@@ -193,6 +292,32 @@ public class ComponentSpec {
         this.build = build;
     }
 
+    public ComponentSpec withResourceLimit(ResourceLimit resourceLimit) {
+        this.resourceLimit = resourceLimit;
+        return this;
+    }
+
+    public ComponentSpec withResourceLimit(Consumer<ResourceLimit> resourceLimitSetter) {
+        if (this.resourceLimit == null) {
+            this.resourceLimit = new ResourceLimit();
+            resourceLimitSetter.accept(this.resourceLimit);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get resourceLimit
+     * @return resourceLimit
+     */
+    public ResourceLimit getResourceLimit() {
+        return resourceLimit;
+    }
+
+    public void setResourceLimit(ResourceLimit resourceLimit) {
+        this.resourceLimit = resourceLimit;
+    }
+
     public ComponentSpec withAccessInfo(List<Access> accessInfo) {
         this.accessInfo = accessInfo;
         return this;
@@ -215,7 +340,7 @@ public class ComponentSpec {
     }
 
     /**
-     * Get accessInfo
+     * 访问方式列表。
      * @return accessInfo
      */
     public List<Access> getAccessInfo() {
@@ -224,23 +349,6 @@ public class ComponentSpec {
 
     public void setAccessInfo(List<Access> accessInfo) {
         this.accessInfo = accessInfo;
-    }
-
-    public ComponentSpec withBuildId(String buildId) {
-        this.buildId = buildId;
-        return this;
-    }
-
-    /**
-     * 构建id。
-     * @return buildId
-     */
-    public String getBuildId() {
-        return buildId;
-    }
-
-    public void setBuildId(String buildId) {
-        this.buildId = buildId;
     }
 
     public ComponentSpec withImageUrl(String imageUrl) {
@@ -260,13 +368,30 @@ public class ComponentSpec {
         this.imageUrl = imageUrl;
     }
 
+    public ComponentSpec withAvailableReplica(Integer availableReplica) {
+        this.availableReplica = availableReplica;
+        return this;
+    }
+
+    /**
+     * 可用实例个数。
+     * @return availableReplica
+     */
+    public Integer getAvailableReplica() {
+        return availableReplica;
+    }
+
+    public void setAvailableReplica(Integer availableReplica) {
+        this.availableReplica = availableReplica;
+    }
+
     public ComponentSpec withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
     /**
-     * 任务id。
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -277,37 +402,21 @@ public class ComponentSpec {
         this.jobId = jobId;
     }
 
-    public ComponentSpec withLogStrategy(List<LogStrategy> logStrategy) {
-        this.logStrategy = logStrategy;
-        return this;
-    }
-
-    public ComponentSpec addLogStrategyItem(LogStrategy logStrategyItem) {
-        if (this.logStrategy == null) {
-            this.logStrategy = new ArrayList<>();
-        }
-        this.logStrategy.add(logStrategyItem);
-        return this;
-    }
-
-    public ComponentSpec withLogStrategy(Consumer<List<LogStrategy>> logStrategySetter) {
-        if (this.logStrategy == null) {
-            this.logStrategy = new ArrayList<>();
-        }
-        logStrategySetter.accept(this.logStrategy);
+    public ComponentSpec withBuildId(String buildId) {
+        this.buildId = buildId;
         return this;
     }
 
     /**
-     * 日志策略。
-     * @return logStrategy
+     * 构建任务ID。
+     * @return buildId
      */
-    public List<LogStrategy> getLogStrategy() {
-        return logStrategy;
+    public String getBuildId() {
+        return buildId;
     }
 
-    public void setLogStrategy(List<LogStrategy> logStrategy) {
-        this.logStrategy = logStrategy;
+    public void setBuildId(String buildId) {
+        this.buildId = buildId;
     }
 
     public ComponentSpec withStatus(String status) {
@@ -316,7 +425,7 @@ public class ComponentSpec {
     }
 
     /**
-     * 组件状态
+     * 组件状态。
      * @return status
      */
     public String getStatus() {
@@ -325,6 +434,23 @@ public class ComponentSpec {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public ComponentSpec withBuildLogId(String buildLogId) {
+        this.buildLogId = buildLogId;
+        return this;
+    }
+
+    /**
+     * 构建日志ID。
+     * @return buildLogId
+     */
+    public String getBuildLogId() {
+        return buildLogId;
+    }
+
+    public void setBuildLogId(String buildLogId) {
+        this.buildLogId = buildLogId;
     }
 
     @Override
@@ -337,12 +463,12 @@ public class ComponentSpec {
         }
         ComponentSpec that = (ComponentSpec) obj;
         return Objects.equals(this.runtime, that.runtime) && Objects.equals(this.envId, that.envId)
-            && Objects.equals(this.replica, that.replica)
-            && Objects.equals(this.availableReplica, that.availableReplica) && Objects.equals(this.source, that.source)
-            && Objects.equals(this.build, that.build) && Objects.equals(this.accessInfo, that.accessInfo)
-            && Objects.equals(this.buildId, that.buildId) && Objects.equals(this.imageUrl, that.imageUrl)
-            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.logStrategy, that.logStrategy)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.replica, that.replica) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.build, that.build) && Objects.equals(this.resourceLimit, that.resourceLimit)
+            && Objects.equals(this.accessInfo, that.accessInfo) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.availableReplica, that.availableReplica) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.buildId, that.buildId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.buildLogId, that.buildLogId);
     }
 
     @Override
@@ -350,15 +476,16 @@ public class ComponentSpec {
         return Objects.hash(runtime,
             envId,
             replica,
-            availableReplica,
             source,
             build,
+            resourceLimit,
             accessInfo,
-            buildId,
             imageUrl,
+            availableReplica,
             jobId,
-            logStrategy,
-            status);
+            buildId,
+            status,
+            buildLogId);
     }
 
     @Override
@@ -368,15 +495,16 @@ public class ComponentSpec {
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
         sb.append("    replica: ").append(toIndentedString(replica)).append("\n");
-        sb.append("    availableReplica: ").append(toIndentedString(availableReplica)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    build: ").append(toIndentedString(build)).append("\n");
+        sb.append("    resourceLimit: ").append(toIndentedString(resourceLimit)).append("\n");
         sb.append("    accessInfo: ").append(toIndentedString(accessInfo)).append("\n");
-        sb.append("    buildId: ").append(toIndentedString(buildId)).append("\n");
         sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+        sb.append("    availableReplica: ").append(toIndentedString(availableReplica)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-        sb.append("    logStrategy: ").append(toIndentedString(logStrategy)).append("\n");
+        sb.append("    buildId: ").append(toIndentedString(buildId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    buildLogId: ").append(toIndentedString(buildLogId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

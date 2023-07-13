@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ComponentSnapshotItem
@@ -17,14 +18,9 @@ public class ComponentSnapshotItem {
     private String componentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "context")
+    @JsonProperty(value = "index")
 
-    private Object context;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "created_at")
-
-    private OffsetDateTime createdAt;
+    private Integer index;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -32,9 +28,14 @@ public class ComponentSnapshotItem {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "index")
+    @JsonProperty(value = "context")
 
-    private Integer index;
+    private ComponentSnapshotContext context;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
@@ -47,7 +48,7 @@ public class ComponentSnapshotItem {
     }
 
     /**
-     * 组件id。
+     * 组件ID。
      * @return componentId
      */
     public String getComponentId() {
@@ -58,20 +59,63 @@ public class ComponentSnapshotItem {
         this.componentId = componentId;
     }
 
-    public ComponentSnapshotItem withContext(Object context) {
-        this.context = context;
+    public ComponentSnapshotItem withIndex(Integer index) {
+        this.index = index;
         return this;
     }
 
     /**
-     * 上下文信息。
+     * 快照索引。
+     * @return index
+     */
+    public Integer getIndex() {
+        return index;
+    }
+
+    public void setIndex(Integer index) {
+        this.index = index;
+    }
+
+    public ComponentSnapshotItem withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述信息。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ComponentSnapshotItem withContext(ComponentSnapshotContext context) {
+        this.context = context;
+        return this;
+    }
+
+    public ComponentSnapshotItem withContext(Consumer<ComponentSnapshotContext> contextSetter) {
+        if (this.context == null) {
+            this.context = new ComponentSnapshotContext();
+            contextSetter.accept(this.context);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get context
      * @return context
      */
-    public Object getContext() {
+    public ComponentSnapshotContext getContext() {
         return context;
     }
 
-    public void setContext(Object context) {
+    public void setContext(ComponentSnapshotContext context) {
         this.context = context;
     }
 
@@ -92,47 +136,13 @@ public class ComponentSnapshotItem {
         this.createdAt = createdAt;
     }
 
-    public ComponentSnapshotItem withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 描述。
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public ComponentSnapshotItem withIndex(Integer index) {
-        this.index = index;
-        return this;
-    }
-
-    /**
-     * 快照索引。
-     * @return index
-     */
-    public Integer getIndex() {
-        return index;
-    }
-
-    public void setIndex(Integer index) {
-        this.index = index;
-    }
-
     public ComponentSnapshotItem withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
     /**
-     * 修改时间。
+     * 更新时间。
      * @return updatedAt
      */
     public OffsetDateTime getUpdatedAt() {
@@ -152,14 +162,14 @@ public class ComponentSnapshotItem {
             return false;
         }
         ComponentSnapshotItem that = (ComponentSnapshotItem) obj;
-        return Objects.equals(this.componentId, that.componentId) && Objects.equals(this.context, that.context)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.index, that.index) && Objects.equals(this.updatedAt, that.updatedAt);
+        return Objects.equals(this.componentId, that.componentId) && Objects.equals(this.index, that.index)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.context, that.context)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(componentId, context, createdAt, description, index, updatedAt);
+        return Objects.hash(componentId, index, description, context, createdAt, updatedAt);
     }
 
     @Override
@@ -167,10 +177,10 @@ public class ComponentSnapshotItem {
         StringBuilder sb = new StringBuilder();
         sb.append("class ComponentSnapshotItem {\n");
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
+        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    context: ").append(toIndentedString(context)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    index: ").append(toIndentedString(index)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();

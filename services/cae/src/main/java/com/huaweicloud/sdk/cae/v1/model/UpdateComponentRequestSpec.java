@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.cae.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -10,6 +15,117 @@ import java.util.function.Consumer;
  * UpdateComponentRequestSpec
  */
 public class UpdateComponentRequestSpec {
+
+    /**
+     * 语言/运行时。
+     */
+    public static final class RuntimeEnum {
+
+        /**
+         * Enum DOCKER for value: "Docker"
+         */
+        public static final RuntimeEnum DOCKER = new RuntimeEnum("Docker");
+
+        /**
+         * Enum JAVA8 for value: "Java8"
+         */
+        public static final RuntimeEnum JAVA8 = new RuntimeEnum("Java8");
+
+        /**
+         * Enum JAVA11 for value: "Java11"
+         */
+        public static final RuntimeEnum JAVA11 = new RuntimeEnum("Java11");
+
+        /**
+         * Enum TOMCAT8 for value: "Tomcat8"
+         */
+        public static final RuntimeEnum TOMCAT8 = new RuntimeEnum("Tomcat8");
+
+        /**
+         * Enum TOMCAT9 for value: "Tomcat9"
+         */
+        public static final RuntimeEnum TOMCAT9 = new RuntimeEnum("Tomcat9");
+
+        /**
+         * Enum PYTHON3 for value: "Python3"
+         */
+        public static final RuntimeEnum PYTHON3 = new RuntimeEnum("Python3");
+
+        /**
+         * Enum NODEJS8 for value: "Nodejs8"
+         */
+        public static final RuntimeEnum NODEJS8 = new RuntimeEnum("Nodejs8");
+
+        /**
+         * Enum PHP7 for value: "Php7"
+         */
+        public static final RuntimeEnum PHP7 = new RuntimeEnum("Php7");
+
+        private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RuntimeEnum> createStaticFields() {
+            Map<String, RuntimeEnum> map = new HashMap<>();
+            map.put("Docker", DOCKER);
+            map.put("Java8", JAVA8);
+            map.put("Java11", JAVA11);
+            map.put("Tomcat8", TOMCAT8);
+            map.put("Tomcat9", TOMCAT9);
+            map.put("Python3", PYTHON3);
+            map.put("Nodejs8", NODEJS8);
+            map.put("Php7", PHP7);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RuntimeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RuntimeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
+        }
+
+        public static RuntimeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RuntimeEnum) {
+                return this.value.equals(((RuntimeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "runtime")
+
+    private RuntimeEnum runtime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
@@ -27,9 +143,26 @@ public class UpdateComponentRequestSpec {
     private ResourceLimit resourceLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "log_strategy")
+    @JsonProperty(value = "replica")
 
-    private LogStrategy logStrategy;
+    private Integer replica;
+
+    public UpdateComponentRequestSpec withRuntime(RuntimeEnum runtime) {
+        this.runtime = runtime;
+        return this;
+    }
+
+    /**
+     * 语言/运行时。
+     * @return runtime
+     */
+    public RuntimeEnum getRuntime() {
+        return runtime;
+    }
+
+    public void setRuntime(RuntimeEnum runtime) {
+        this.runtime = runtime;
+    }
 
     public UpdateComponentRequestSpec withSource(Source source) {
         this.source = source;
@@ -109,30 +242,21 @@ public class UpdateComponentRequestSpec {
         this.resourceLimit = resourceLimit;
     }
 
-    public UpdateComponentRequestSpec withLogStrategy(LogStrategy logStrategy) {
-        this.logStrategy = logStrategy;
-        return this;
-    }
-
-    public UpdateComponentRequestSpec withLogStrategy(Consumer<LogStrategy> logStrategySetter) {
-        if (this.logStrategy == null) {
-            this.logStrategy = new LogStrategy();
-            logStrategySetter.accept(this.logStrategy);
-        }
-
+    public UpdateComponentRequestSpec withReplica(Integer replica) {
+        this.replica = replica;
         return this;
     }
 
     /**
-     * Get logStrategy
-     * @return logStrategy
+     * 实例个数。
+     * @return replica
      */
-    public LogStrategy getLogStrategy() {
-        return logStrategy;
+    public Integer getReplica() {
+        return replica;
     }
 
-    public void setLogStrategy(LogStrategy logStrategy) {
-        this.logStrategy = logStrategy;
+    public void setReplica(Integer replica) {
+        this.replica = replica;
     }
 
     @Override
@@ -144,24 +268,25 @@ public class UpdateComponentRequestSpec {
             return false;
         }
         UpdateComponentRequestSpec that = (UpdateComponentRequestSpec) obj;
-        return Objects.equals(this.source, that.source) && Objects.equals(this.build, that.build)
-            && Objects.equals(this.resourceLimit, that.resourceLimit)
-            && Objects.equals(this.logStrategy, that.logStrategy);
+        return Objects.equals(this.runtime, that.runtime) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.build, that.build) && Objects.equals(this.resourceLimit, that.resourceLimit)
+            && Objects.equals(this.replica, that.replica);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(source, build, resourceLimit, logStrategy);
+        return Objects.hash(runtime, source, build, resourceLimit, replica);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateComponentRequestSpec {\n");
+        sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    build: ").append(toIndentedString(build)).append("\n");
         sb.append("    resourceLimit: ").append(toIndentedString(resourceLimit)).append("\n");
-        sb.append("    logStrategy: ").append(toIndentedString(logStrategy)).append("\n");
+        sb.append("    replica: ").append(toIndentedString(replica)).append("\n");
         sb.append("}");
         return sb.toString();
     }

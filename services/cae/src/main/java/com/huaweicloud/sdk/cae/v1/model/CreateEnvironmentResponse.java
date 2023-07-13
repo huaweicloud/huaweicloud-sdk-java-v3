@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -13,78 +12,25 @@ import java.util.function.Consumer;
 public class CreateEnvironmentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "api_version")
+    @JsonProperty(value = "job_id")
 
-    private String apiVersion;
+    private String jobId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kind")
-
-    private String kind;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "metadata")
-
-    private EnvironmentMetadata metadata;
-
-    public CreateEnvironmentResponse withApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
+    public CreateEnvironmentResponse withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * API版本。
-     * @return apiVersion
+     * 任务ID。
+     * @return jobId
      */
-    public String getApiVersion() {
-        return apiVersion;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setApiVersion(String apiVersion) {
-        this.apiVersion = apiVersion;
-    }
-
-    public CreateEnvironmentResponse withKind(String kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
-     * 资源种类
-     * @return kind
-     */
-    public String getKind() {
-        return kind;
-    }
-
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
-
-    public CreateEnvironmentResponse withMetadata(EnvironmentMetadata metadata) {
-        this.metadata = metadata;
-        return this;
-    }
-
-    public CreateEnvironmentResponse withMetadata(Consumer<EnvironmentMetadata> metadataSetter) {
-        if (this.metadata == null) {
-            this.metadata = new EnvironmentMetadata();
-            metadataSetter.accept(this.metadata);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
-    public EnvironmentMetadata getMetadata() {
-        return metadata;
-    }
-
-    public void setMetadata(EnvironmentMetadata metadata) {
-        this.metadata = metadata;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     @Override
@@ -96,22 +42,19 @@ public class CreateEnvironmentResponse extends SdkResponse {
             return false;
         }
         CreateEnvironmentResponse that = (CreateEnvironmentResponse) obj;
-        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
-            && Objects.equals(this.metadata, that.metadata);
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, kind, metadata);
+        return Objects.hash(jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateEnvironmentResponse {\n");
-        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
-        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
-        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

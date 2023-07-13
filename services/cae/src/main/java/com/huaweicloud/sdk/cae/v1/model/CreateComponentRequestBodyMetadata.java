@@ -62,7 +62,7 @@ public class CreateComponentRequestBodyMetadata {
     }
 
     /**
-     * 组件信息。
+     * 创建组件请求体附加参数，当前只支持version参数，此参数必填。
      * @return annotations
      */
     public Map<String, String> getAnnotations() {

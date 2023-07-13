@@ -1,6 +1,15 @@
 package com.huaweicloud.sdk.campusgo.v2;
 
-import com.huaweicloud.sdk.campusgo.v2.model.*;
+import com.huaweicloud.sdk.campusgo.v2.model.CreateResponseBody;
+import com.huaweicloud.sdk.campusgo.v2.model.CreateTasksRequest;
+import com.huaweicloud.sdk.campusgo.v2.model.CreateTasksRequestBody;
+import com.huaweicloud.sdk.campusgo.v2.model.CreateTasksResponse;
+import com.huaweicloud.sdk.campusgo.v2.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.campusgo.v2.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.campusgo.v2.model.ListTasksDetailsRequest;
+import com.huaweicloud.sdk.campusgo.v2.model.ListTasksDetailsResponse;
+import com.huaweicloud.sdk.campusgo.v2.model.ShowTaskRequest;
+import com.huaweicloud.sdk.campusgo.v2.model.ShowTaskResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;

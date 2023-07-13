@@ -5,7 +5,281 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.vpc.v2.model.*;
+import com.huaweicloud.sdk.vpc.v2.model.AcceptVpcPeeringRequest;
+import com.huaweicloud.sdk.vpc.v2.model.AcceptVpcPeeringResponse;
+import com.huaweicloud.sdk.vpc.v2.model.AssociateRouteTableRequest;
+import com.huaweicloud.sdk.vpc.v2.model.AssociateRouteTableResponse;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSubnetTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSubnetTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateSubnetTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateVpcTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateVpcTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.BatchCreateVpcTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSubnetTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSubnetTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSubnetTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteVpcTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteVpcTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteVpcTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateFlowLogReqBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateFlowLogRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateFlowLogResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreatePortRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreatePortRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreatePortResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreatePrivateipRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreatePrivateipRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreatePrivateipResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateRouteTableRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateRouteTableResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateRoutetableReqBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRuleRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetTagRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetTagRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateSubnetTagResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcPeeringRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcPeeringRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcPeeringResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcResourceTagRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcResourceTagRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcResourceTagResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcResponse;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcRouteRequest;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcRouteRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.CreateVpcRouteResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteFlowLogRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteFlowLogResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeletePortRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeletePortResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeletePrivateipRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeletePrivateipResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteRouteTableRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteRouteTableResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetTagRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteSubnetTagResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteVpcPeeringRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteVpcPeeringResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteVpcRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteVpcResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteVpcRouteRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteVpcRouteResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteVpcTagRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DeleteVpcTagResponse;
+import com.huaweicloud.sdk.vpc.v2.model.DisassociateRouteTableRequest;
+import com.huaweicloud.sdk.vpc.v2.model.DisassociateRouteTableResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListApiVersionRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListApiVersionResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListFlowLogsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListFlowLogsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListPortsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListPortsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListPrivateipsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListPrivateipsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListRouteTablesRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListRouteTablesResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupRulesRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupRulesResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListSecurityGroupsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListSubnetTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListSubnetTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsByTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListSubnetsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcPeeringsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcRoutesRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcRoutesResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcsByTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcsByTagsRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ListVpcsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronAddFirewallRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronAddFirewallRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronAddRouterInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronAddRouterInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateFirewallGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateFirewallGroupRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateFirewallGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateFirewallPolicyRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateFirewallPolicyRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateFirewallPolicyResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateFirewallRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateFirewallRuleRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateFirewallRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateNetworkRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateNetworkRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateNetworkResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreatePortRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreatePortRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreatePortResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateRouterRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateRouterRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateRouterResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSecurityGroupRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSecurityGroupRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSecurityGroupRuleRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSubnetRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSubnetRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSubnetResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteFirewallGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteFirewallGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteFirewallPolicyRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteFirewallPolicyResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteFirewallRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteFirewallRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteNetworkRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteNetworkResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeletePortRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeletePortResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteRouterRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteRouterResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteSecurityGroupRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteSubnetRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronDeleteSubnetResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronInsertFirewallRuleRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListFirewallGroupsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListFirewallGroupsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListFirewallPoliciesRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListFirewallPoliciesResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListFirewallRulesRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListNetworksRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListNetworksResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListPortsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListPortsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListRoutersRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListRoutersResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListSecurityGroupRulesRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListSecurityGroupRulesResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListSecurityGroupsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListSecurityGroupsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListSubnetsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronListSubnetsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronRemoveFirewallRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronRemoveFirewallRuleRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronRemoveFirewallRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronRemoveRouterInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronRemoveRouterInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowFirewallGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowFirewallGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowFirewallPolicyRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowFirewallPolicyResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowFirewallRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowFirewallRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowNetworkRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowNetworkResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowPortRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowPortResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowRouterRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowRouterResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowSecurityGroupRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowSubnetRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronShowSubnetResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallGroupRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallPolicyRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallPolicyRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallPolicyResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallRuleRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateNetworkRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateNetworkRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateNetworkResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdatePortRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdatePortRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdatePortResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateRouterRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateRouterRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateRouterResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateSecurityGroupRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateSubnetRequest;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateSubnetRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateSubnetResponse;
+import com.huaweicloud.sdk.vpc.v2.model.RejectVpcPeeringRequest;
+import com.huaweicloud.sdk.vpc.v2.model.RejectVpcPeeringResponse;
+import com.huaweicloud.sdk.vpc.v2.model.RouterInterfaceRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.RoutetableAssociateReqbody;
+import com.huaweicloud.sdk.vpc.v2.model.ShowFlowLogRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowFlowLogResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowNetworkIpAvailabilitiesRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowNetworkIpAvailabilitiesResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowPortRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowPortResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowPrivateipRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowPrivateipResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowQuotaRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowQuotaResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowRouteTableRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowRouteTableResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupRuleRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowSubnetTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowVpcPeeringRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowVpcPeeringResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowVpcRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowVpcResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowVpcRouteRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowVpcRouteResponse;
+import com.huaweicloud.sdk.vpc.v2.model.ShowVpcTagsRequest;
+import com.huaweicloud.sdk.vpc.v2.model.ShowVpcTagsResponse;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateFlowLogReqBody;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateFlowLogRequest;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateFlowLogResponse;
+import com.huaweicloud.sdk.vpc.v2.model.UpdatePortRequest;
+import com.huaweicloud.sdk.vpc.v2.model.UpdatePortRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.UpdatePortResponse;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateRouteTableRequest;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateRouteTableResponse;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateRoutetableReqBody;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateSubnetRequest;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateSubnetRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateSubnetResponse;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateVpcPeeringRequest;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateVpcPeeringRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateVpcPeeringResponse;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateVpcRequest;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateVpcRequestBody;
+import com.huaweicloud.sdk.vpc.v2.model.UpdateVpcResponse;
 
 import java.util.List;
 
@@ -1644,6 +1918,116 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<NeutronAddRouterInterfaceRequest, NeutronAddRouterInterfaceResponse> neutronAddRouterInterface =
+        genForneutronAddRouterInterface();
+
+    private static HttpRequestDef<NeutronAddRouterInterfaceRequest, NeutronAddRouterInterfaceResponse> genForneutronAddRouterInterface() {
+        // basic
+        HttpRequestDef.Builder<NeutronAddRouterInterfaceRequest, NeutronAddRouterInterfaceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    NeutronAddRouterInterfaceRequest.class,
+                    NeutronAddRouterInterfaceResponse.class)
+                .withName("NeutronAddRouterInterface")
+                .withUri("/v2.0/routers/{router_id}/add_router_interface")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("router_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronAddRouterInterfaceRequest::getRouterId, (req, v) -> {
+                req.setRouterId(v);
+            }));
+        builder.<RouterInterfaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RouterInterfaceRequestBody.class),
+            f -> f.withMarshaller(NeutronAddRouterInterfaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronCreateNetworkRequest, NeutronCreateNetworkResponse> neutronCreateNetwork =
+        genForneutronCreateNetwork();
+
+    private static HttpRequestDef<NeutronCreateNetworkRequest, NeutronCreateNetworkResponse> genForneutronCreateNetwork() {
+        // basic
+        HttpRequestDef.Builder<NeutronCreateNetworkRequest, NeutronCreateNetworkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, NeutronCreateNetworkRequest.class, NeutronCreateNetworkResponse.class)
+            .withName("NeutronCreateNetwork")
+            .withUri("/v2.0/networks")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<NeutronCreateNetworkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NeutronCreateNetworkRequestBody.class),
+            f -> f.withMarshaller(NeutronCreateNetworkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronCreatePortRequest, NeutronCreatePortResponse> neutronCreatePort =
+        genForneutronCreatePort();
+
+    private static HttpRequestDef<NeutronCreatePortRequest, NeutronCreatePortResponse> genForneutronCreatePort() {
+        // basic
+        HttpRequestDef.Builder<NeutronCreatePortRequest, NeutronCreatePortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NeutronCreatePortRequest.class, NeutronCreatePortResponse.class)
+                .withName("NeutronCreatePort")
+                .withUri("/v2.0/ports")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<NeutronCreatePortRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NeutronCreatePortRequestBody.class),
+            f -> f.withMarshaller(NeutronCreatePortRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronCreateRouterRequest, NeutronCreateRouterResponse> neutronCreateRouter =
+        genForneutronCreateRouter();
+
+    private static HttpRequestDef<NeutronCreateRouterRequest, NeutronCreateRouterResponse> genForneutronCreateRouter() {
+        // basic
+        HttpRequestDef.Builder<NeutronCreateRouterRequest, NeutronCreateRouterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateRouterRequest.class, NeutronCreateRouterResponse.class)
+                .withName("NeutronCreateRouter")
+                .withUri("/v2.0/routers")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<NeutronCreateRouterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NeutronCreateRouterRequestBody.class),
+            f -> f.withMarshaller(NeutronCreateRouterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> neutronCreateSecurityGroup =
         genForneutronCreateSecurityGroup();
 
@@ -1700,6 +2084,106 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<NeutronCreateSubnetRequest, NeutronCreateSubnetResponse> neutronCreateSubnet =
+        genForneutronCreateSubnet();
+
+    private static HttpRequestDef<NeutronCreateSubnetRequest, NeutronCreateSubnetResponse> genForneutronCreateSubnet() {
+        // basic
+        HttpRequestDef.Builder<NeutronCreateSubnetRequest, NeutronCreateSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateSubnetRequest.class, NeutronCreateSubnetResponse.class)
+                .withName("NeutronCreateSubnet")
+                .withUri("/v2.0/subnets")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<NeutronCreateSubnetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NeutronCreateSubnetRequestBody.class),
+            f -> f.withMarshaller(NeutronCreateSubnetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronDeleteNetworkRequest, NeutronDeleteNetworkResponse> neutronDeleteNetwork =
+        genForneutronDeleteNetwork();
+
+    private static HttpRequestDef<NeutronDeleteNetworkRequest, NeutronDeleteNetworkResponse> genForneutronDeleteNetwork() {
+        // basic
+        HttpRequestDef.Builder<NeutronDeleteNetworkRequest, NeutronDeleteNetworkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, NeutronDeleteNetworkRequest.class, NeutronDeleteNetworkResponse.class)
+            .withName("NeutronDeleteNetwork")
+            .withUri("/v2.0/networks/{network_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronDeleteNetworkRequest::getNetworkId, (req, v) -> {
+                req.setNetworkId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronDeletePortRequest, NeutronDeletePortResponse> neutronDeletePort =
+        genForneutronDeletePort();
+
+    private static HttpRequestDef<NeutronDeletePortRequest, NeutronDeletePortResponse> genForneutronDeletePort() {
+        // basic
+        HttpRequestDef.Builder<NeutronDeletePortRequest, NeutronDeletePortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeletePortRequest.class, NeutronDeletePortResponse.class)
+                .withName("NeutronDeletePort")
+                .withUri("/v2.0/ports/{port_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronDeletePortRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronDeleteRouterRequest, NeutronDeleteRouterResponse> neutronDeleteRouter =
+        genForneutronDeleteRouter();
+
+    private static HttpRequestDef<NeutronDeleteRouterRequest, NeutronDeleteRouterResponse> genForneutronDeleteRouter() {
+        // basic
+        HttpRequestDef.Builder<NeutronDeleteRouterRequest, NeutronDeleteRouterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, NeutronDeleteRouterRequest.class, NeutronDeleteRouterResponse.class)
+            .withName("NeutronDeleteRouter")
+            .withUri("/v2.0/routers/{router_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("router_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronDeleteRouterRequest::getRouterId, (req, v) -> {
+                req.setRouterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> neutronDeleteSecurityGroup =
         genForneutronDeleteSecurityGroup();
 
@@ -1749,6 +2233,288 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronDeleteSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
                 req.setSecurityGroupRuleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronDeleteSubnetRequest, NeutronDeleteSubnetResponse> neutronDeleteSubnet =
+        genForneutronDeleteSubnet();
+
+    private static HttpRequestDef<NeutronDeleteSubnetRequest, NeutronDeleteSubnetResponse> genForneutronDeleteSubnet() {
+        // basic
+        HttpRequestDef.Builder<NeutronDeleteSubnetRequest, NeutronDeleteSubnetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, NeutronDeleteSubnetRequest.class, NeutronDeleteSubnetResponse.class)
+            .withName("NeutronDeleteSubnet")
+            .withUri("/v2.0/subnets/{subnet_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronDeleteSubnetRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronListNetworksRequest, NeutronListNetworksResponse> neutronListNetworks =
+        genForneutronListNetworks();
+
+    private static HttpRequestDef<NeutronListNetworksRequest, NeutronListNetworksResponse> genForneutronListNetworks() {
+        // basic
+        HttpRequestDef.Builder<NeutronListNetworksRequest, NeutronListNetworksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronListNetworksRequest.class, NeutronListNetworksResponse.class)
+                .withName("NeutronListNetworks")
+                .withUri("/v2.0/networks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<Boolean>withRequestField("shared",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getShared, (req, v) -> {
+                req.setShared(v);
+            }));
+        builder.<Boolean>withRequestField("router:external",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getRouterExternal, (req, v) -> {
+                req.setRouterExternal(v);
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getAdminStateUp, (req, v) -> {
+                req.setAdminStateUp(v);
+            }));
+        builder.<String>withRequestField("provider:network_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getProviderNetworkType, (req, v) -> {
+                req.setProviderNetworkType(v);
+            }));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListNetworksRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronListPortsRequest, NeutronListPortsResponse> neutronListPorts =
+        genForneutronListPorts();
+
+    private static HttpRequestDef<NeutronListPortsRequest, NeutronListPortsResponse> genForneutronListPorts() {
+        // basic
+        HttpRequestDef.Builder<NeutronListPortsRequest, NeutronListPortsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronListPortsRequest.class, NeutronListPortsResponse.class)
+                .withName("NeutronListPorts")
+                .withUri("/v2.0/ports")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getAdminStateUp, (req, v) -> {
+                req.setAdminStateUp(v);
+            }));
+        builder.<String>withRequestField("network_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getNetworkId, (req, v) -> {
+                req.setNetworkId(v);
+            }));
+        builder.<String>withRequestField("mac_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getMacAddress, (req, v) -> {
+                req.setMacAddress(v);
+            }));
+        builder.<String>withRequestField("device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            }));
+        builder.<String>withRequestField("device_owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getDeviceOwner, (req, v) -> {
+                req.setDeviceOwner(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<List<String>>withRequestField("security_groups",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getSecurityGroups, (req, v) -> {
+                req.setSecurityGroups(v);
+            }));
+        builder.<List<String>>withRequestField("fixed_ips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getFixedIps, (req, v) -> {
+                req.setFixedIps(v);
+            }));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListPortsRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronListRoutersRequest, NeutronListRoutersResponse> neutronListRouters =
+        genForneutronListRouters();
+
+    private static HttpRequestDef<NeutronListRoutersRequest, NeutronListRoutersResponse> genForneutronListRouters() {
+        // basic
+        HttpRequestDef.Builder<NeutronListRoutersRequest, NeutronListRoutersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronListRoutersRequest.class, NeutronListRoutersResponse.class)
+                .withName("NeutronListRouters")
+                .withUri("/v2.0/routers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(NeutronListRoutersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListRoutersRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListRoutersRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListRoutersRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListRoutersRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(NeutronListRoutersRequest::getAdminStateUp, (req, v) -> {
+                req.setAdminStateUp(v);
             }));
 
         // response
@@ -1931,6 +2697,204 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<NeutronListSubnetsRequest, NeutronListSubnetsResponse> neutronListSubnets =
+        genForneutronListSubnets();
+
+    private static HttpRequestDef<NeutronListSubnetsRequest, NeutronListSubnetsResponse> genForneutronListSubnets() {
+        // basic
+        HttpRequestDef.Builder<NeutronListSubnetsRequest, NeutronListSubnetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronListSubnetsRequest.class, NeutronListSubnetsResponse.class)
+                .withName("NeutronListSubnets")
+                .withUri("/v2.0/subnets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("cidr",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getCidr, (req, v) -> {
+                req.setCidr(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Boolean>withRequestField("enable_dhcp",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getEnableDhcp, (req, v) -> {
+                req.setEnableDhcp(v);
+            }));
+        builder.<String>withRequestField("network_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getNetworkId, (req, v) -> {
+                req.setNetworkId(v);
+            }));
+        builder.<Integer>withRequestField("ip_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getIpVersion, (req, v) -> {
+                req.setIpVersion(v);
+            }));
+        builder.<String>withRequestField("gateway_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getGatewayIp, (req, v) -> {
+                req.setGatewayIp(v);
+            }));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronListSubnetsRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronRemoveRouterInterfaceRequest, NeutronRemoveRouterInterfaceResponse> neutronRemoveRouterInterface =
+        genForneutronRemoveRouterInterface();
+
+    private static HttpRequestDef<NeutronRemoveRouterInterfaceRequest, NeutronRemoveRouterInterfaceResponse> genForneutronRemoveRouterInterface() {
+        // basic
+        HttpRequestDef.Builder<NeutronRemoveRouterInterfaceRequest, NeutronRemoveRouterInterfaceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    NeutronRemoveRouterInterfaceRequest.class,
+                    NeutronRemoveRouterInterfaceResponse.class)
+                .withName("NeutronRemoveRouterInterface")
+                .withUri("/v2.0/routers/{router_id}/remove_router_interface")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("router_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronRemoveRouterInterfaceRequest::getRouterId, (req, v) -> {
+                req.setRouterId(v);
+            }));
+        builder.<RouterInterfaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RouterInterfaceRequestBody.class),
+            f -> f.withMarshaller(NeutronRemoveRouterInterfaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronShowNetworkRequest, NeutronShowNetworkResponse> neutronShowNetwork =
+        genForneutronShowNetwork();
+
+    private static HttpRequestDef<NeutronShowNetworkRequest, NeutronShowNetworkResponse> genForneutronShowNetwork() {
+        // basic
+        HttpRequestDef.Builder<NeutronShowNetworkRequest, NeutronShowNetworkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronShowNetworkRequest.class, NeutronShowNetworkResponse.class)
+                .withName("NeutronShowNetwork")
+                .withUri("/v2.0/networks/{network_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronShowNetworkRequest::getNetworkId, (req, v) -> {
+                req.setNetworkId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronShowPortRequest, NeutronShowPortResponse> neutronShowPort =
+        genForneutronShowPort();
+
+    private static HttpRequestDef<NeutronShowPortRequest, NeutronShowPortResponse> genForneutronShowPort() {
+        // basic
+        HttpRequestDef.Builder<NeutronShowPortRequest, NeutronShowPortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronShowPortRequest.class, NeutronShowPortResponse.class)
+                .withName("NeutronShowPort")
+                .withUri("/v2.0/ports/{port_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronShowPortRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronShowRouterRequest, NeutronShowRouterResponse> neutronShowRouter =
+        genForneutronShowRouter();
+
+    private static HttpRequestDef<NeutronShowRouterRequest, NeutronShowRouterResponse> genForneutronShowRouter() {
+        // basic
+        HttpRequestDef.Builder<NeutronShowRouterRequest, NeutronShowRouterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronShowRouterRequest.class, NeutronShowRouterResponse.class)
+                .withName("NeutronShowRouter")
+                .withUri("/v2.0/routers/{router_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("router_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronShowRouterRequest::getRouterId, (req, v) -> {
+                req.setRouterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> neutronShowSecurityGroup =
         genForneutronShowSecurityGroup();
 
@@ -1985,6 +2949,127 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<NeutronShowSubnetRequest, NeutronShowSubnetResponse> neutronShowSubnet =
+        genForneutronShowSubnet();
+
+    private static HttpRequestDef<NeutronShowSubnetRequest, NeutronShowSubnetResponse> genForneutronShowSubnet() {
+        // basic
+        HttpRequestDef.Builder<NeutronShowSubnetRequest, NeutronShowSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, NeutronShowSubnetRequest.class, NeutronShowSubnetResponse.class)
+                .withName("NeutronShowSubnet")
+                .withUri("/v2.0/subnets/{subnet_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronShowSubnetRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronUpdateNetworkRequest, NeutronUpdateNetworkResponse> neutronUpdateNetwork =
+        genForneutronUpdateNetwork();
+
+    private static HttpRequestDef<NeutronUpdateNetworkRequest, NeutronUpdateNetworkResponse> genForneutronUpdateNetwork() {
+        // basic
+        HttpRequestDef.Builder<NeutronUpdateNetworkRequest, NeutronUpdateNetworkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, NeutronUpdateNetworkRequest.class, NeutronUpdateNetworkResponse.class)
+            .withName("NeutronUpdateNetwork")
+            .withUri("/v2.0/networks/{network_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronUpdateNetworkRequest::getNetworkId, (req, v) -> {
+                req.setNetworkId(v);
+            }));
+        builder.<NeutronUpdateNetworkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NeutronUpdateNetworkRequestBody.class),
+            f -> f.withMarshaller(NeutronUpdateNetworkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronUpdatePortRequest, NeutronUpdatePortResponse> neutronUpdatePort =
+        genForneutronUpdatePort();
+
+    private static HttpRequestDef<NeutronUpdatePortRequest, NeutronUpdatePortResponse> genForneutronUpdatePort() {
+        // basic
+        HttpRequestDef.Builder<NeutronUpdatePortRequest, NeutronUpdatePortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdatePortRequest.class, NeutronUpdatePortResponse.class)
+                .withName("NeutronUpdatePort")
+                .withUri("/v2.0/ports/{port_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronUpdatePortRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            }));
+        builder.<NeutronUpdatePortRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NeutronUpdatePortRequestBody.class),
+            f -> f.withMarshaller(NeutronUpdatePortRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronUpdateRouterRequest, NeutronUpdateRouterResponse> neutronUpdateRouter =
+        genForneutronUpdateRouter();
+
+    private static HttpRequestDef<NeutronUpdateRouterRequest, NeutronUpdateRouterResponse> genForneutronUpdateRouter() {
+        // basic
+        HttpRequestDef.Builder<NeutronUpdateRouterRequest, NeutronUpdateRouterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateRouterRequest.class, NeutronUpdateRouterResponse.class)
+                .withName("NeutronUpdateRouter")
+                .withUri("/v2.0/routers/{router_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("router_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronUpdateRouterRequest::getRouterId, (req, v) -> {
+                req.setRouterId(v);
+            }));
+        builder.<NeutronUpdateRouterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NeutronUpdateRouterRequestBody.class),
+            f -> f.withMarshaller(NeutronUpdateRouterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroup =
         genForneutronUpdateSecurityGroup();
 
@@ -2012,6 +3097,38 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NeutronUpdateSecurityGroupRequestBody.class),
             f -> f.withMarshaller(NeutronUpdateSecurityGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NeutronUpdateSubnetRequest, NeutronUpdateSubnetResponse> neutronUpdateSubnet =
+        genForneutronUpdateSubnet();
+
+    private static HttpRequestDef<NeutronUpdateSubnetRequest, NeutronUpdateSubnetResponse> genForneutronUpdateSubnet() {
+        // basic
+        HttpRequestDef.Builder<NeutronUpdateSubnetRequest, NeutronUpdateSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateSubnetRequest.class, NeutronUpdateSubnetResponse.class)
+                .withName("NeutronUpdateSubnet")
+                .withUri("/v2.0/subnets/{subnet_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NeutronUpdateSubnetRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            }));
+        builder.<NeutronUpdateSubnetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NeutronUpdateSubnetRequestBody.class),
+            f -> f.withMarshaller(NeutronUpdateSubnetRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2634,6 +3751,24 @@ public class VpcMeta {
             f -> f.withMarshaller(NeutronUpdateFirewallRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
+        genForlistApiVersion();
+
+    private static HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> genForlistApiVersion() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionRequest, ListApiVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionRequest.class, ListApiVersionResponse.class)
+                .withName("ListApiVersion")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

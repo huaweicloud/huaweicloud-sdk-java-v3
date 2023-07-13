@@ -5,7 +5,24 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.ivs.v2.model.*;
+import com.huaweicloud.sdk.ivs.v2.model.DetectExtentionByIdCardImageRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectExtentionByIdCardImageResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectExtentionByNameAndIdRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectExtentionByNameAndIdResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByIdCardImageRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByIdCardImageResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByNameAndIdRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByNameAndIdResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByVideoAndIdCardImageRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByVideoAndIdCardImageResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByVideoAndNameAndIdRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByVideoAndNameAndIdResponse;
+import com.huaweicloud.sdk.ivs.v2.model.IvsExtentionByIdCardImageRequestBody;
+import com.huaweicloud.sdk.ivs.v2.model.IvsExtentionByNameAndIdRequestBody;
+import com.huaweicloud.sdk.ivs.v2.model.IvsStandardByIdCardImageRequestBody;
+import com.huaweicloud.sdk.ivs.v2.model.IvsStandardByNameAndIdRequestBody;
+import com.huaweicloud.sdk.ivs.v2.model.IvsStandardByVideoAndIdCardImageRequestBody;
+import com.huaweicloud.sdk.ivs.v2.model.IvsStandardByVideoAndNameAndIdRequestBody;
 
 @SuppressWarnings("unchecked")
 public class IvsMeta {

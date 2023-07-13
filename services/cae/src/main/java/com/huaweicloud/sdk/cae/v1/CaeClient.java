@@ -20,7 +20,7 @@ public class CaeClient {
     /**
      * 创建委托
      *
-     * 本接口用于创建cae_trust委托
+     * 创建委托。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -34,7 +34,7 @@ public class CaeClient {
     /**
      * 创建委托
      *
-     * 本接口用于创建cae_trust委托
+     * 创建委托。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -46,37 +46,37 @@ public class CaeClient {
     }
 
     /**
-     * 获取委托
+     * 获取委托列表
      *
-     * 本接口用于获取cae_trust委托，如果委托不存在则创建委托
+     * 获取委托列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgencyRequest 请求对象
-     * @return ShowAgencyResponse
+     * @param ListAgenciesRequest 请求对象
+     * @return ListAgenciesResponse
      */
-    public ShowAgencyResponse showAgency(ShowAgencyRequest request) {
-        return hcClient.syncInvokeHttp(request, CaeMeta.showAgency);
+    public ListAgenciesResponse listAgencies(ListAgenciesRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.listAgencies);
     }
 
     /**
-     * 获取委托
+     * 获取委托列表
      *
-     * 本接口用于获取cae_trust委托，如果委托不存在则创建委托
+     * 获取委托列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowAgencyRequest 请求对象
-     * @return SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
+     * @param ListAgenciesRequest 请求对象
+     * @return SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>
      */
-    public SyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyInvoker(ShowAgencyRequest request) {
-        return new SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>(request, CaeMeta.showAgency, hcClient);
+    public SyncInvoker<ListAgenciesRequest, ListAgenciesResponse> listAgenciesInvoker(ListAgenciesRequest request) {
+        return new SyncInvoker<ListAgenciesRequest, ListAgenciesResponse>(request, CaeMeta.listAgencies, hcClient);
     }
 
     /**
      * 创建应用
      *
-     * 本接口用于创建一个应用
+     * 创建应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -90,7 +90,7 @@ public class CaeClient {
     /**
      * 创建应用
      *
-     * 本接口用于创建一个应用
+     * 创建应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -106,7 +106,7 @@ public class CaeClient {
     /**
      * 删除应用
      *
-     * 本接口用于删除指定应用
+     * 删除应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -120,7 +120,7 @@ public class CaeClient {
     /**
      * 删除应用
      *
-     * 本接口用于删除指定应用
+     * 删除应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -136,7 +136,7 @@ public class CaeClient {
     /**
      * 获取应用列表
      *
-     * 本接口用于获取当前环境下的应用列表
+     * 获取应用列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -150,7 +150,7 @@ public class CaeClient {
     /**
      * 获取应用列表
      *
-     * 本接口用于获取当前环境下的应用列表
+     * 获取应用列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -164,9 +164,9 @@ public class CaeClient {
     }
 
     /**
-     * 获取应用
+     * 获取应用详情
      *
-     * 本接口用于获取指定应用详情
+     * 获取应用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -178,9 +178,9 @@ public class CaeClient {
     }
 
     /**
-     * 获取应用
+     * 获取应用详情
      *
-     * 本接口用于获取指定应用详情
+     * 获取应用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -194,9 +194,129 @@ public class CaeClient {
     }
 
     /**
+     * 创建证书
+     *
+     * 创建证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateRequest 请求对象
+     * @return CreateCertificateResponse
+     */
+    public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.createCertificate);
+    }
+
+    /**
+     * 创建证书
+     *
+     * 创建证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateRequest 请求对象
+     * @return SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
+     */
+    public SyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateInvoker(
+        CreateCertificateRequest request) {
+        return new SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request, CaeMeta.createCertificate,
+            hcClient);
+    }
+
+    /**
+     * 删除证书
+     *
+     * 删除证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCertificateRequest 请求对象
+     * @return DeleteCertificateResponse
+     */
+    public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.deleteCertificate);
+    }
+
+    /**
+     * 删除证书
+     *
+     * 删除证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCertificateRequest 请求对象
+     * @return SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
+     */
+    public SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateInvoker(
+        DeleteCertificateRequest request) {
+        return new SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, CaeMeta.deleteCertificate,
+            hcClient);
+    }
+
+    /**
+     * 获取证书列表
+     *
+     * 获取证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertificatesRequest 请求对象
+     * @return ListCertificatesResponse
+     */
+    public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.listCertificates);
+    }
+
+    /**
+     * 获取证书列表
+     *
+     * 获取证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertificatesRequest 请求对象
+     * @return SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
+     */
+    public SyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesInvoker(
+        ListCertificatesRequest request) {
+        return new SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, CaeMeta.listCertificates,
+            hcClient);
+    }
+
+    /**
+     * 修改证书
+     *
+     * 修改证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCertificateRequest 请求对象
+     * @return UpdateCertificateResponse
+     */
+    public UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.updateCertificate);
+    }
+
+    /**
+     * 修改证书
+     *
+     * 修改证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCertificateRequest 请求对象
+     * @return SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
+     */
+    public SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateInvoker(
+        UpdateCertificateRequest request) {
+        return new SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request, CaeMeta.updateCertificate,
+            hcClient);
+    }
+
+    /**
      * 创建组件
      *
-     * 本接口用于创建一个组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 创建组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -210,7 +330,7 @@ public class CaeClient {
     /**
      * 创建组件
      *
-     * 本接口用于创建一个组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 创建组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -226,7 +346,7 @@ public class CaeClient {
     /**
      * 删除组件
      *
-     * 本接口用于删除指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 删除组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -240,7 +360,7 @@ public class CaeClient {
     /**
      * 删除组件
      *
-     * 本接口用于删除指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 删除组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -256,7 +376,7 @@ public class CaeClient {
     /**
      * 操作组件
      *
-     * 本接口用于对组件执行指定操作，如部署、升级、重启、停止、启动、伸缩、重试、配置、回滚
+     * 对组件执行指定操作，如部署、升级、重启、停止、启动、伸缩、配置、回滚。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -270,7 +390,7 @@ public class CaeClient {
     /**
      * 操作组件
      *
-     * 本接口用于对组件执行指定操作，如部署、升级、重启、停止、启动、伸缩、重试、配置、回滚
+     * 对组件执行指定操作，如部署、升级、重启、停止、启动、伸缩、配置、回滚。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -282,9 +402,69 @@ public class CaeClient {
     }
 
     /**
+     * 获取组件事件列表
+     *
+     * 获取组件事件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListComponentEventsRequest 请求对象
+     * @return ListComponentEventsResponse
+     */
+    public ListComponentEventsResponse listComponentEvents(ListComponentEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.listComponentEvents);
+    }
+
+    /**
+     * 获取组件事件列表
+     *
+     * 获取组件事件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListComponentEventsRequest 请求对象
+     * @return SyncInvoker<ListComponentEventsRequest, ListComponentEventsResponse>
+     */
+    public SyncInvoker<ListComponentEventsRequest, ListComponentEventsResponse> listComponentEventsInvoker(
+        ListComponentEventsRequest request) {
+        return new SyncInvoker<ListComponentEventsRequest, ListComponentEventsResponse>(request,
+            CaeMeta.listComponentEvents, hcClient);
+    }
+
+    /**
+     * 获取组件实例列表
+     *
+     * 获取组件实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListComponentInstancesRequest 请求对象
+     * @return ListComponentInstancesResponse
+     */
+    public ListComponentInstancesResponse listComponentInstances(ListComponentInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.listComponentInstances);
+    }
+
+    /**
+     * 获取组件实例列表
+     *
+     * 获取组件实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListComponentInstancesRequest 请求对象
+     * @return SyncInvoker<ListComponentInstancesRequest, ListComponentInstancesResponse>
+     */
+    public SyncInvoker<ListComponentInstancesRequest, ListComponentInstancesResponse> listComponentInstancesInvoker(
+        ListComponentInstancesRequest request) {
+        return new SyncInvoker<ListComponentInstancesRequest, ListComponentInstancesResponse>(request,
+            CaeMeta.listComponentInstances, hcClient);
+    }
+
+    /**
      * 获取组件快照列表
      *
-     * 本接口用于获取组件快照版本
+     * 获取组件快照列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -298,7 +478,7 @@ public class CaeClient {
     /**
      * 获取组件快照列表
      *
-     * 本接口用于获取组件快照版本
+     * 获取组件快照列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -314,7 +494,7 @@ public class CaeClient {
     /**
      * 获取组件列表
      *
-     * 本接口用于获取组件列表，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 获取组件列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -328,7 +508,7 @@ public class CaeClient {
     /**
      * 获取组件列表
      *
-     * 本接口用于获取组件列表，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 获取组件列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -342,63 +522,9 @@ public class CaeClient {
     }
 
     /**
-     * 获取事件列表
+     * 获取组件详情
      *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEventsRequest 请求对象
-     * @return ListEventsResponse
-     */
-    public ListEventsResponse listEvents(ListEventsRequest request) {
-        return hcClient.syncInvokeHttp(request, CaeMeta.listEvents);
-    }
-
-    /**
-     * 获取事件列表
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListEventsRequest 请求对象
-     * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
-     */
-    public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
-        return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, CaeMeta.listEvents, hcClient);
-    }
-
-    /**
-     * 获取组件实例列表
-     *
-     * 本接口用于获取组件实例列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListInstancesRequest 请求对象
-     * @return ListInstancesResponse
-     */
-    public ListInstancesResponse listInstances(ListInstancesRequest request) {
-        return hcClient.syncInvokeHttp(request, CaeMeta.listInstances);
-    }
-
-    /**
-     * 获取组件实例列表
-     *
-     * 本接口用于获取组件实例列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListInstancesRequest 请求对象
-     * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
-     */
-    public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
-        return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, CaeMeta.listInstances, hcClient);
-    }
-
-    /**
-     * 获取组件
-     *
-     * 本接口用于获取指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 获取组件详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -410,9 +536,9 @@ public class CaeClient {
     }
 
     /**
-     * 获取组件
+     * 获取组件详情
      *
-     * 本接口用于获取指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 获取组件详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -426,7 +552,7 @@ public class CaeClient {
     /**
      * 更新组件
      *
-     * 本接口用于更新指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 更新组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -440,7 +566,7 @@ public class CaeClient {
     /**
      * 更新组件
      *
-     * 本接口用于更新指定的组件，组件是CAE的最小部署单位，支持将用户的源码，部署包，镜像等资源部署到组件上
+     * 更新组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -456,7 +582,7 @@ public class CaeClient {
     /**
      * 创建组件配置
      *
-     * 本接口用于创建组件配置
+     * 创建组件配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -471,7 +597,7 @@ public class CaeClient {
     /**
      * 创建组件配置
      *
-     * 本接口用于创建组件配置
+     * 创建组件配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -487,6 +613,7 @@ public class CaeClient {
     /**
      * 删除组件配置
      *
+     * 删除组件配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -501,6 +628,7 @@ public class CaeClient {
     /**
      * 删除组件配置
      *
+     * 删除组件配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -516,37 +644,121 @@ public class CaeClient {
     /**
      * 获取组件配置列表
      *
-     * 本接口用于获取组件配置
+     * 获取组件配置列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsRequest 请求对象
-     * @return ListConfigurationsResponse
+     * @param ListComponentConfigurationsRequest 请求对象
+     * @return ListComponentConfigurationsResponse
      */
-    public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
-        return hcClient.syncInvokeHttp(request, CaeMeta.listConfigurations);
+    public ListComponentConfigurationsResponse listComponentConfigurations(ListComponentConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.listComponentConfigurations);
     }
 
     /**
      * 获取组件配置列表
      *
-     * 本接口用于获取组件配置
+     * 获取组件配置列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListConfigurationsRequest 请求对象
-     * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
+     * @param ListComponentConfigurationsRequest 请求对象
+     * @return SyncInvoker<ListComponentConfigurationsRequest, ListComponentConfigurationsResponse>
      */
-    public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(
-        ListConfigurationsRequest request) {
-        return new SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request,
-            CaeMeta.listConfigurations, hcClient);
+    public SyncInvoker<ListComponentConfigurationsRequest, ListComponentConfigurationsResponse> listComponentConfigurationsInvoker(
+        ListComponentConfigurationsRequest request) {
+        return new SyncInvoker<ListComponentConfigurationsRequest, ListComponentConfigurationsResponse>(request,
+            CaeMeta.listComponentConfigurations, hcClient);
+    }
+
+    /**
+     * 创建域名
+     *
+     * 创建域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDomainRequest 请求对象
+     * @return CreateDomainResponse
+     */
+    public CreateDomainResponse createDomain(CreateDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.createDomain);
+    }
+
+    /**
+     * 创建域名
+     *
+     * 创建域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDomainRequest 请求对象
+     * @return SyncInvoker<CreateDomainRequest, CreateDomainResponse>
+     */
+    public SyncInvoker<CreateDomainRequest, CreateDomainResponse> createDomainInvoker(CreateDomainRequest request) {
+        return new SyncInvoker<CreateDomainRequest, CreateDomainResponse>(request, CaeMeta.createDomain, hcClient);
+    }
+
+    /**
+     * 删除域名
+     *
+     * 删除域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDomainRequest 请求对象
+     * @return DeleteDomainResponse
+     */
+    public DeleteDomainResponse deleteDomain(DeleteDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.deleteDomain);
+    }
+
+    /**
+     * 删除域名
+     *
+     * 删除域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDomainRequest 请求对象
+     * @return SyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
+     */
+    public SyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainInvoker(DeleteDomainRequest request) {
+        return new SyncInvoker<DeleteDomainRequest, DeleteDomainResponse>(request, CaeMeta.deleteDomain, hcClient);
+    }
+
+    /**
+     * 获取域名列表
+     *
+     * 获取域名列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainsRequest 请求对象
+     * @return ListDomainsResponse
+     */
+    public ListDomainsResponse listDomains(ListDomainsRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.listDomains);
+    }
+
+    /**
+     * 获取域名列表
+     *
+     * 获取域名列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainsRequest 请求对象
+     * @return SyncInvoker<ListDomainsRequest, ListDomainsResponse>
+     */
+    public SyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsInvoker(ListDomainsRequest request) {
+        return new SyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, CaeMeta.listDomains, hcClient);
     }
 
     /**
      * 创建环境
      *
-     * 本接口用于创建一个环境，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
+     * 创建环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -560,7 +772,7 @@ public class CaeClient {
     /**
      * 创建环境
      *
-     * 本接口用于创建一个环境，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
+     * 创建环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -576,7 +788,7 @@ public class CaeClient {
     /**
      * 删除环境
      *
-     * 本接口用于删除环境，暂未开放。
+     * 删除环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -590,7 +802,7 @@ public class CaeClient {
     /**
      * 删除环境
      *
-     * 本接口用于删除环境，暂未开放。
+     * 删除环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -606,7 +818,7 @@ public class CaeClient {
     /**
      * 获取环境列表
      *
-     * 本接口用于获取当前租户环境信息，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
+     * 获取环境列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -620,7 +832,7 @@ public class CaeClient {
     /**
      * 获取环境列表
      *
-     * 本接口用于获取当前租户环境信息，环境是CAE定义的一个资源维度，所有的用户组件都放在环境下
+     * 获取环境列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -636,7 +848,7 @@ public class CaeClient {
     /**
      * 重试任务
      *
-     * 本接口用于重试任务
+     * 重试任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -650,7 +862,7 @@ public class CaeClient {
     /**
      * 重试任务
      *
-     * 本接口用于重试任务
+     * 重试任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -664,7 +876,7 @@ public class CaeClient {
     /**
      * 获取任务详情
      *
-     * 本接口用于获取任务详情
+     * 获取任务详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -678,7 +890,7 @@ public class CaeClient {
     /**
      * 获取任务详情
      *
-     * 本接口用于获取任务详情
+     * 获取任务详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -690,9 +902,159 @@ public class CaeClient {
     }
 
     /**
-     * 创建卷
+     * 创建定时启停任务
      *
-     * 本接口用于创建卷
+     * 创建定时启停任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTimerRuleRequest 请求对象
+     * @return CreateTimerRuleResponse
+     */
+    public CreateTimerRuleResponse createTimerRule(CreateTimerRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.createTimerRule);
+    }
+
+    /**
+     * 创建定时启停任务
+     *
+     * 创建定时启停任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTimerRuleRequest 请求对象
+     * @return SyncInvoker<CreateTimerRuleRequest, CreateTimerRuleResponse>
+     */
+    public SyncInvoker<CreateTimerRuleRequest, CreateTimerRuleResponse> createTimerRuleInvoker(
+        CreateTimerRuleRequest request) {
+        return new SyncInvoker<CreateTimerRuleRequest, CreateTimerRuleResponse>(request, CaeMeta.createTimerRule,
+            hcClient);
+    }
+
+    /**
+     * 删除定时启停规则
+     *
+     * 删除定时启停规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTimerRuleRequest 请求对象
+     * @return DeleteTimerRuleResponse
+     */
+    public DeleteTimerRuleResponse deleteTimerRule(DeleteTimerRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.deleteTimerRule);
+    }
+
+    /**
+     * 删除定时启停规则
+     *
+     * 删除定时启停规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTimerRuleRequest 请求对象
+     * @return SyncInvoker<DeleteTimerRuleRequest, DeleteTimerRuleResponse>
+     */
+    public SyncInvoker<DeleteTimerRuleRequest, DeleteTimerRuleResponse> deleteTimerRuleInvoker(
+        DeleteTimerRuleRequest request) {
+        return new SyncInvoker<DeleteTimerRuleRequest, DeleteTimerRuleResponse>(request, CaeMeta.deleteTimerRule,
+            hcClient);
+    }
+
+    /**
+     * 获取定时启停规则列表
+     *
+     * 获取定时启停规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTimerRulesRequest 请求对象
+     * @return ListTimerRulesResponse
+     */
+    public ListTimerRulesResponse listTimerRules(ListTimerRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.listTimerRules);
+    }
+
+    /**
+     * 获取定时启停规则列表
+     *
+     * 获取定时启停规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTimerRulesRequest 请求对象
+     * @return SyncInvoker<ListTimerRulesRequest, ListTimerRulesResponse>
+     */
+    public SyncInvoker<ListTimerRulesRequest, ListTimerRulesResponse> listTimerRulesInvoker(
+        ListTimerRulesRequest request) {
+        return new SyncInvoker<ListTimerRulesRequest, ListTimerRulesResponse>(request, CaeMeta.listTimerRules,
+            hcClient);
+    }
+
+    /**
+     * 获取上次定时启停规则的执行情况
+     *
+     * 获取上次定时启停规则的执行情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExecutionResultRequest 请求对象
+     * @return ShowExecutionResultResponse
+     */
+    public ShowExecutionResultResponse showExecutionResult(ShowExecutionResultRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.showExecutionResult);
+    }
+
+    /**
+     * 获取上次定时启停规则的执行情况
+     *
+     * 获取上次定时启停规则的执行情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExecutionResultRequest 请求对象
+     * @return SyncInvoker<ShowExecutionResultRequest, ShowExecutionResultResponse>
+     */
+    public SyncInvoker<ShowExecutionResultRequest, ShowExecutionResultResponse> showExecutionResultInvoker(
+        ShowExecutionResultRequest request) {
+        return new SyncInvoker<ShowExecutionResultRequest, ShowExecutionResultResponse>(request,
+            CaeMeta.showExecutionResult, hcClient);
+    }
+
+    /**
+     * 修改定时启停规则
+     *
+     * 修改定时启停规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTimerRuleRequest 请求对象
+     * @return UpdateTimerRuleResponse
+     */
+    public UpdateTimerRuleResponse updateTimerRule(UpdateTimerRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CaeMeta.updateTimerRule);
+    }
+
+    /**
+     * 修改定时启停规则
+     *
+     * 修改定时启停规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTimerRuleRequest 请求对象
+     * @return SyncInvoker<UpdateTimerRuleRequest, UpdateTimerRuleResponse>
+     */
+    public SyncInvoker<UpdateTimerRuleRequest, UpdateTimerRuleResponse> updateTimerRuleInvoker(
+        UpdateTimerRuleRequest request) {
+        return new SyncInvoker<UpdateTimerRuleRequest, UpdateTimerRuleResponse>(request, CaeMeta.updateTimerRule,
+            hcClient);
+    }
+
+    /**
+     * 授权云存储
+     *
+     * 授权云存储。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -704,9 +1066,9 @@ public class CaeClient {
     }
 
     /**
-     * 创建卷
+     * 授权云存储
      *
-     * 本接口用于创建卷
+     * 授权云存储。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -718,9 +1080,9 @@ public class CaeClient {
     }
 
     /**
-     * 删除卷
+     * 解绑云存储
      *
-     * 本接口用于创建卷
+     * 解绑云存储。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -732,9 +1094,9 @@ public class CaeClient {
     }
 
     /**
-     * 删除卷
+     * 解绑云存储
      *
-     * 本接口用于创建卷
+     * 解绑云存储。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -746,9 +1108,9 @@ public class CaeClient {
     }
 
     /**
-     * 获取卷列表
+     * 获取云存储列表
      *
-     * 本接口用于获取卷列表
+     * 获取云存储列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -760,9 +1122,9 @@ public class CaeClient {
     }
 
     /**
-     * 获取卷列表
+     * 获取云存储列表
      *
-     * 本接口用于获取卷列表
+     * 获取云存储列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

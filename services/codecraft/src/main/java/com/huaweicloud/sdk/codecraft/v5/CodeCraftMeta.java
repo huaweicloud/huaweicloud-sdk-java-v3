@@ -1,6 +1,16 @@
 package com.huaweicloud.sdk.codecraft.v5;
 
-import com.huaweicloud.sdk.codecraft.v5.model.*;
+import com.huaweicloud.sdk.codecraft.v5.model.CreateCompetitionScoreRequest;
+import com.huaweicloud.sdk.codecraft.v5.model.CreateCompetitionScoreResponse;
+import com.huaweicloud.sdk.codecraft.v5.model.CreateScoresRequestModel;
+import com.huaweicloud.sdk.codecraft.v5.model.ListCompetitionWorksRequest;
+import com.huaweicloud.sdk.codecraft.v5.model.ListCompetitionWorksResponse;
+import com.huaweicloud.sdk.codecraft.v5.model.RegisterCompetitionInfoRequest;
+import com.huaweicloud.sdk.codecraft.v5.model.RegisterCompetitionInfoResponse;
+import com.huaweicloud.sdk.codecraft.v5.model.RegisterInfoRequestModel;
+import com.huaweicloud.sdk.codecraft.v5.model.UpdateCompetitionScoreRequest;
+import com.huaweicloud.sdk.codecraft.v5.model.UpdateCompetitionScoreResponse;
+import com.huaweicloud.sdk.codecraft.v5.model.UpdateScoreRequestModel;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;

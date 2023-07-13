@@ -431,7 +431,7 @@ public class PrePaidServerDataVolume {
     }
 
     /**
-     * 弹性公网IP随实例释放策略。  true：弹性公网IP随实例释放。 false：弹性公网IP不随实例释放。 默认值：false。
+     * 数据盘随实例释放策略。  true：数据盘随实例释放。 false：数据盘不随实例释放。 默认值：false。
      * @return deleteOnTermination
      */
     public Boolean getDeleteOnTermination() {

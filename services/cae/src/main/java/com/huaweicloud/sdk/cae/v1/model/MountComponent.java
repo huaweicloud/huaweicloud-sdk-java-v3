@@ -46,7 +46,7 @@ public class MountComponent {
     }
 
     /**
-     * 环境id。
+     * 环境ID。
      * @return envId
      */
     public String getEnvId() {
@@ -80,7 +80,7 @@ public class MountComponent {
     }
 
     /**
-     * 应用id。
+     * 应用ID。
      * @return appId
      */
     public String getAppId() {
@@ -114,7 +114,7 @@ public class MountComponent {
     }
 
     /**
-     * 组件id。
+     * 组件ID。
      * @return componentId
      */
     public String getComponentId() {

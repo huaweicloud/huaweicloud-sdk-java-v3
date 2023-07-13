@@ -21,29 +21,29 @@ public class EventItem {
     private String name;
 
     /**
-     * 涉及对象。
+     * 涉及对象类型。
      */
-    public static final class InvolvedObjectEnum {
+    public static final class InvolvedObjectKindEnum {
 
         /**
          * Enum COMPONENT for value: "Component"
          */
-        public static final InvolvedObjectEnum COMPONENT = new InvolvedObjectEnum("Component");
+        public static final InvolvedObjectKindEnum COMPONENT = new InvolvedObjectKindEnum("Component");
 
         /**
          * Enum COMPONENTINSTANCE for value: "ComponentInstance"
          */
-        public static final InvolvedObjectEnum COMPONENTINSTANCE = new InvolvedObjectEnum("ComponentInstance");
+        public static final InvolvedObjectKindEnum COMPONENTINSTANCE = new InvolvedObjectKindEnum("ComponentInstance");
 
         /**
          * Enum COMPONENTSCALING for value: "ComponentScaling"
          */
-        public static final InvolvedObjectEnum COMPONENTSCALING = new InvolvedObjectEnum("ComponentScaling");
+        public static final InvolvedObjectKindEnum COMPONENTSCALING = new InvolvedObjectKindEnum("ComponentScaling");
 
-        private static final Map<String, InvolvedObjectEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<String, InvolvedObjectKindEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<String, InvolvedObjectEnum> createStaticFields() {
-            Map<String, InvolvedObjectEnum> map = new HashMap<>();
+        private static Map<String, InvolvedObjectKindEnum> createStaticFields() {
+            Map<String, InvolvedObjectKindEnum> map = new HashMap<>();
             map.put("Component", COMPONENT);
             map.put("ComponentInstance", COMPONENTINSTANCE);
             map.put("ComponentScaling", COMPONENTSCALING);
@@ -52,7 +52,7 @@ public class EventItem {
 
         private String value;
 
-        InvolvedObjectEnum(String value) {
+        InvolvedObjectKindEnum(String value) {
             this.value = value;
         }
 
@@ -67,14 +67,14 @@ public class EventItem {
         }
 
         @JsonCreator
-        public static InvolvedObjectEnum fromValue(String value) {
+        public static InvolvedObjectKindEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InvolvedObjectEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InvolvedObjectKindEnum(value));
         }
 
-        public static InvolvedObjectEnum valueOf(String value) {
+        public static InvolvedObjectKindEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -84,8 +84,8 @@ public class EventItem {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof InvolvedObjectEnum) {
-                return this.value.equals(((InvolvedObjectEnum) obj).value);
+            if (obj instanceof InvolvedObjectKindEnum) {
+                return this.value.equals(((InvolvedObjectKindEnum) obj).value);
             }
             return false;
         }
@@ -97,9 +97,14 @@ public class EventItem {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "involved_object_kind")
+
+    private InvolvedObjectKindEnum involvedObjectKind;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "involved_object")
 
-    private InvolvedObjectEnum involvedObject;
+    private String involvedObject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
@@ -202,7 +207,7 @@ public class EventItem {
     }
 
     /**
-     * 事件名。
+     * 事件名称。
      * @return name
      */
     public String getName() {
@@ -213,7 +218,24 @@ public class EventItem {
         this.name = name;
     }
 
-    public EventItem withInvolvedObject(InvolvedObjectEnum involvedObject) {
+    public EventItem withInvolvedObjectKind(InvolvedObjectKindEnum involvedObjectKind) {
+        this.involvedObjectKind = involvedObjectKind;
+        return this;
+    }
+
+    /**
+     * 涉及对象类型。
+     * @return involvedObjectKind
+     */
+    public InvolvedObjectKindEnum getInvolvedObjectKind() {
+        return involvedObjectKind;
+    }
+
+    public void setInvolvedObjectKind(InvolvedObjectKindEnum involvedObjectKind) {
+        this.involvedObjectKind = involvedObjectKind;
+    }
+
+    public EventItem withInvolvedObject(String involvedObject) {
         this.involvedObject = involvedObject;
         return this;
     }
@@ -222,11 +244,11 @@ public class EventItem {
      * 涉及对象。
      * @return involvedObject
      */
-    public InvolvedObjectEnum getInvolvedObject() {
+    public String getInvolvedObject() {
         return involvedObject;
     }
 
-    public void setInvolvedObject(InvolvedObjectEnum involvedObject) {
+    public void setInvolvedObject(String involvedObject) {
         this.involvedObject = involvedObject;
     }
 
@@ -270,7 +292,7 @@ public class EventItem {
     }
 
     /**
-     * 修改时间。
+     * 更新时间。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -324,15 +346,15 @@ public class EventItem {
             return false;
         }
         EventItem that = (EventItem) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.involvedObject, that.involvedObject)
-            && Objects.equals(this.message, that.message) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.count, that.count);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.involvedObjectKind, that.involvedObjectKind)
+            && Objects.equals(this.involvedObject, that.involvedObject) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, involvedObject, message, createdAt, updatedAt, status, count);
+        return Objects.hash(name, involvedObjectKind, involvedObject, message, createdAt, updatedAt, status, count);
     }
 
     @Override
@@ -340,6 +362,7 @@ public class EventItem {
         StringBuilder sb = new StringBuilder();
         sb.append("class EventItem {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    involvedObjectKind: ").append(toIndentedString(involvedObjectKind)).append("\n");
         sb.append("    involvedObject: ").append(toIndentedString(involvedObject)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

@@ -12,6 +12,11 @@ import java.util.Objects;
 public class UpdateNodeFirmwareResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private Object body;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firmware_name")
 
     private String firmwareName;
@@ -20,6 +25,23 @@ public class UpdateNodeFirmwareResponse extends SdkResponse {
     @JsonProperty(value = "firmware_id")
 
     private String firmwareId;
+
+    public UpdateNodeFirmwareResponse withBody(Object body) {
+        this.body = body;
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public Object getBody() {
+        return body;
+    }
+
+    public void setBody(Object body) {
+        this.body = body;
+    }
 
     public UpdateNodeFirmwareResponse withFirmwareName(String firmwareName) {
         this.firmwareName = firmwareName;
@@ -64,18 +86,20 @@ public class UpdateNodeFirmwareResponse extends SdkResponse {
             return false;
         }
         UpdateNodeFirmwareResponse that = (UpdateNodeFirmwareResponse) obj;
-        return Objects.equals(this.firmwareName, that.firmwareName) && Objects.equals(this.firmwareId, that.firmwareId);
+        return Objects.equals(this.body, that.body) && Objects.equals(this.firmwareName, that.firmwareName)
+            && Objects.equals(this.firmwareId, that.firmwareId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firmwareName, firmwareId);
+        return Objects.hash(body, firmwareName, firmwareId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateNodeFirmwareResponse {\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("    firmwareName: ").append(toIndentedString(firmwareName)).append("\n");
         sb.append("    firmwareId: ").append(toIndentedString(firmwareId)).append("\n");
         sb.append("}");

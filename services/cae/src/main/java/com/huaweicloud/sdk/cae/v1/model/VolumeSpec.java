@@ -18,74 +18,10 @@ import java.util.function.Consumer;
  */
 public class VolumeSpec {
 
-    /**
-     * 资源类型。
-     */
-    public static final class ResourceTypeEnum {
-
-        /**
-         * Enum OBS for value: "obs"
-         */
-        public static final ResourceTypeEnum OBS = new ResourceTypeEnum("obs");
-
-        private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ResourceTypeEnum> createStaticFields() {
-            Map<String, ResourceTypeEnum> map = new HashMap<>();
-            map.put("obs", OBS);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ResourceTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ResourceTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
-        }
-
-        public static ResourceTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ResourceTypeEnum) {
-                return this.value.equals(((ResourceTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
-    private ResourceTypeEnum resourceType;
+    private String resourceType;
 
     /**
      * 对象存储类型，例如：并行文件系统、存储桶。
@@ -167,20 +103,20 @@ public class VolumeSpec {
 
     private List<String> resources = null;
 
-    public VolumeSpec withResourceType(ResourceTypeEnum resourceType) {
+    public VolumeSpec withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
     /**
-     * 资源类型。
+     * 资源类型，当前只支持“obs”。
      * @return resourceType
      */
-    public ResourceTypeEnum getResourceType() {
+    public String getResourceType() {
         return resourceType;
     }
 
-    public void setResourceType(ResourceTypeEnum resourceType) {
+    public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
 

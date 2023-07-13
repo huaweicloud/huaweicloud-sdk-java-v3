@@ -52,11 +52,6 @@ public class EnvironmentItem {
         public static final StatusEnum DELETING = new StatusEnum("deleting");
 
         /**
-         * Enum ERROR for value: "error"
-         */
-        public static final StatusEnum ERROR = new StatusEnum("error");
-
-        /**
          * Enum FREEZE for value: "freeze"
          */
         public static final StatusEnum FREEZE = new StatusEnum("freeze");
@@ -78,7 +73,6 @@ public class EnvironmentItem {
             map.put("creating", CREATING);
             map.put("finish", FINISH);
             map.put("deleting", DELETING);
-            map.put("error", ERROR);
             map.put("freeze", FREEZE);
             map.put("police_freeze", POLICE_FREEZE);
             map.put("delete_failed", DELETE_FAILED);
@@ -136,75 +130,6 @@ public class EnvironmentItem {
 
     private StatusEnum status;
 
-    /**
-     * 环境类型。
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum EXCLUSIVE for value: "exclusive"
-         */
-        public static final TypeEnum EXCLUSIVE = new TypeEnum("exclusive");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("exclusive", EXCLUSIVE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private TypeEnum type;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
 
@@ -226,7 +151,7 @@ public class EnvironmentItem {
     }
 
     /**
-     * 环境id。
+     * 环境ID。
      * @return id
      */
     public String getId() {
@@ -260,7 +185,7 @@ public class EnvironmentItem {
     }
 
     /**
-     * 任务id。
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -288,23 +213,6 @@ public class EnvironmentItem {
         this.status = status;
     }
 
-    public EnvironmentItem withType(TypeEnum type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 环境类型。
-     * @return type
-     */
-    public TypeEnum getType() {
-        return type;
-    }
-
-    public void setType(TypeEnum type) {
-        this.type = type;
-    }
-
     public EnvironmentItem withAnnotations(Map<String, String> annotations) {
         this.annotations = annotations;
         return this;
@@ -327,7 +235,7 @@ public class EnvironmentItem {
     }
 
     /**
-     * 环境信息。
+     * 环境附加属性。 - cluster_id：CCE集群ID。 - description: 环境描述信息。 - enterprise_project_id：企业项目ID。 - group_name：主环境绑定的SWR组织名称。 - inbound_eip_addr：负载均衡绑定EIP地址。 - namespace：CCE集群命名空间。 - public_elb_id：ELB ID，主环境绑定的负载均衡ID。 - type：环境类型，当前仅支持exclusive类型。 - vpc_id：主环境绑定的VPC ID。
      * @return annotations
      */
     public Map<String, String> getAnnotations() {
@@ -361,7 +269,7 @@ public class EnvironmentItem {
     }
 
     /**
-     * 修改时间。
+     * 更新时间。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -383,13 +291,13 @@ public class EnvironmentItem {
         EnvironmentItem that = (EnvironmentItem) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.annotations, that.annotations)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.annotations, that.annotations) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, jobId, status, type, annotations, createdAt, updatedAt);
+        return Objects.hash(id, name, jobId, status, annotations, createdAt, updatedAt);
     }
 
     @Override
@@ -400,7 +308,6 @@ public class EnvironmentItem {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

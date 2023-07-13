@@ -5,7 +5,11 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.expert.v1.model.*;
+import com.huaweicloud.sdk.expert.v1.model.ListRecordsCountRequest;
+import com.huaweicloud.sdk.expert.v1.model.ListRecordsCountResponse;
+import com.huaweicloud.sdk.expert.v1.model.ListUsersKeyRequest;
+import com.huaweicloud.sdk.expert.v1.model.ListUsersKeyResponse;
+import com.huaweicloud.sdk.expert.v1.model.Papers;
 
 @SuppressWarnings("unchecked")
 public class ExpertMeta {

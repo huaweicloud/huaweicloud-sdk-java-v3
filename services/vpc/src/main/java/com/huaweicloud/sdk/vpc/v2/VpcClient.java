@@ -1512,6 +1512,126 @@ public class VpcClient {
     }
 
     /**
+     * 路由器添加接口
+     *
+     * 添加路由器接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronAddRouterInterfaceRequest 请求对象
+     * @return NeutronAddRouterInterfaceResponse
+     */
+    public NeutronAddRouterInterfaceResponse neutronAddRouterInterface(NeutronAddRouterInterfaceRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronAddRouterInterface);
+    }
+
+    /**
+     * 路由器添加接口
+     *
+     * 添加路由器接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronAddRouterInterfaceRequest 请求对象
+     * @return SyncInvoker<NeutronAddRouterInterfaceRequest, NeutronAddRouterInterfaceResponse>
+     */
+    public SyncInvoker<NeutronAddRouterInterfaceRequest, NeutronAddRouterInterfaceResponse> neutronAddRouterInterfaceInvoker(
+        NeutronAddRouterInterfaceRequest request) {
+        return new SyncInvoker<NeutronAddRouterInterfaceRequest, NeutronAddRouterInterfaceResponse>(request,
+            VpcMeta.neutronAddRouterInterface, hcClient);
+    }
+
+    /**
+     * 创建网络
+     *
+     * 创建网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronCreateNetworkRequest 请求对象
+     * @return NeutronCreateNetworkResponse
+     */
+    public NeutronCreateNetworkResponse neutronCreateNetwork(NeutronCreateNetworkRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronCreateNetwork);
+    }
+
+    /**
+     * 创建网络
+     *
+     * 创建网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronCreateNetworkRequest 请求对象
+     * @return SyncInvoker<NeutronCreateNetworkRequest, NeutronCreateNetworkResponse>
+     */
+    public SyncInvoker<NeutronCreateNetworkRequest, NeutronCreateNetworkResponse> neutronCreateNetworkInvoker(
+        NeutronCreateNetworkRequest request) {
+        return new SyncInvoker<NeutronCreateNetworkRequest, NeutronCreateNetworkResponse>(request,
+            VpcMeta.neutronCreateNetwork, hcClient);
+    }
+
+    /**
+     * 创建端口
+     *
+     * 创建端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronCreatePortRequest 请求对象
+     * @return NeutronCreatePortResponse
+     */
+    public NeutronCreatePortResponse neutronCreatePort(NeutronCreatePortRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronCreatePort);
+    }
+
+    /**
+     * 创建端口
+     *
+     * 创建端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronCreatePortRequest 请求对象
+     * @return SyncInvoker<NeutronCreatePortRequest, NeutronCreatePortResponse>
+     */
+    public SyncInvoker<NeutronCreatePortRequest, NeutronCreatePortResponse> neutronCreatePortInvoker(
+        NeutronCreatePortRequest request) {
+        return new SyncInvoker<NeutronCreatePortRequest, NeutronCreatePortResponse>(request, VpcMeta.neutronCreatePort,
+            hcClient);
+    }
+
+    /**
+     * 创建路由器
+     *
+     * 创建路由器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronCreateRouterRequest 请求对象
+     * @return NeutronCreateRouterResponse
+     */
+    public NeutronCreateRouterResponse neutronCreateRouter(NeutronCreateRouterRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronCreateRouter);
+    }
+
+    /**
+     * 创建路由器
+     *
+     * 创建路由器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronCreateRouterRequest 请求对象
+     * @return SyncInvoker<NeutronCreateRouterRequest, NeutronCreateRouterResponse>
+     */
+    public SyncInvoker<NeutronCreateRouterRequest, NeutronCreateRouterResponse> neutronCreateRouterInvoker(
+        NeutronCreateRouterRequest request) {
+        return new SyncInvoker<NeutronCreateRouterRequest, NeutronCreateRouterResponse>(request,
+            VpcMeta.neutronCreateRouter, hcClient);
+    }
+
+    /**
      * 创建安全组
      *
      * 创建安全组
@@ -1570,6 +1690,126 @@ public class VpcClient {
         NeutronCreateSecurityGroupRuleRequest request) {
         return new SyncInvoker<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse>(request,
             VpcMeta.neutronCreateSecurityGroupRule, hcClient);
+    }
+
+    /**
+     * 创建子网
+     *
+     * 创建子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronCreateSubnetRequest 请求对象
+     * @return NeutronCreateSubnetResponse
+     */
+    public NeutronCreateSubnetResponse neutronCreateSubnet(NeutronCreateSubnetRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronCreateSubnet);
+    }
+
+    /**
+     * 创建子网
+     *
+     * 创建子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronCreateSubnetRequest 请求对象
+     * @return SyncInvoker<NeutronCreateSubnetRequest, NeutronCreateSubnetResponse>
+     */
+    public SyncInvoker<NeutronCreateSubnetRequest, NeutronCreateSubnetResponse> neutronCreateSubnetInvoker(
+        NeutronCreateSubnetRequest request) {
+        return new SyncInvoker<NeutronCreateSubnetRequest, NeutronCreateSubnetResponse>(request,
+            VpcMeta.neutronCreateSubnet, hcClient);
+    }
+
+    /**
+     * 删除网络
+     *
+     * 删除网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronDeleteNetworkRequest 请求对象
+     * @return NeutronDeleteNetworkResponse
+     */
+    public NeutronDeleteNetworkResponse neutronDeleteNetwork(NeutronDeleteNetworkRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronDeleteNetwork);
+    }
+
+    /**
+     * 删除网络
+     *
+     * 删除网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronDeleteNetworkRequest 请求对象
+     * @return SyncInvoker<NeutronDeleteNetworkRequest, NeutronDeleteNetworkResponse>
+     */
+    public SyncInvoker<NeutronDeleteNetworkRequest, NeutronDeleteNetworkResponse> neutronDeleteNetworkInvoker(
+        NeutronDeleteNetworkRequest request) {
+        return new SyncInvoker<NeutronDeleteNetworkRequest, NeutronDeleteNetworkResponse>(request,
+            VpcMeta.neutronDeleteNetwork, hcClient);
+    }
+
+    /**
+     * 删除端口
+     *
+     * 删除端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronDeletePortRequest 请求对象
+     * @return NeutronDeletePortResponse
+     */
+    public NeutronDeletePortResponse neutronDeletePort(NeutronDeletePortRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronDeletePort);
+    }
+
+    /**
+     * 删除端口
+     *
+     * 删除端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronDeletePortRequest 请求对象
+     * @return SyncInvoker<NeutronDeletePortRequest, NeutronDeletePortResponse>
+     */
+    public SyncInvoker<NeutronDeletePortRequest, NeutronDeletePortResponse> neutronDeletePortInvoker(
+        NeutronDeletePortRequest request) {
+        return new SyncInvoker<NeutronDeletePortRequest, NeutronDeletePortResponse>(request, VpcMeta.neutronDeletePort,
+            hcClient);
+    }
+
+    /**
+     * 删除路由器
+     *
+     * 删除路由器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronDeleteRouterRequest 请求对象
+     * @return NeutronDeleteRouterResponse
+     */
+    public NeutronDeleteRouterResponse neutronDeleteRouter(NeutronDeleteRouterRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronDeleteRouter);
+    }
+
+    /**
+     * 删除路由器
+     *
+     * 删除路由器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronDeleteRouterRequest 请求对象
+     * @return SyncInvoker<NeutronDeleteRouterRequest, NeutronDeleteRouterResponse>
+     */
+    public SyncInvoker<NeutronDeleteRouterRequest, NeutronDeleteRouterResponse> neutronDeleteRouterInvoker(
+        NeutronDeleteRouterRequest request) {
+        return new SyncInvoker<NeutronDeleteRouterRequest, NeutronDeleteRouterResponse>(request,
+            VpcMeta.neutronDeleteRouter, hcClient);
     }
 
     /**
@@ -1634,6 +1874,126 @@ public class VpcClient {
     }
 
     /**
+     * 删除子网
+     *
+     * 删除子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronDeleteSubnetRequest 请求对象
+     * @return NeutronDeleteSubnetResponse
+     */
+    public NeutronDeleteSubnetResponse neutronDeleteSubnet(NeutronDeleteSubnetRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronDeleteSubnet);
+    }
+
+    /**
+     * 删除子网
+     *
+     * 删除子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronDeleteSubnetRequest 请求对象
+     * @return SyncInvoker<NeutronDeleteSubnetRequest, NeutronDeleteSubnetResponse>
+     */
+    public SyncInvoker<NeutronDeleteSubnetRequest, NeutronDeleteSubnetResponse> neutronDeleteSubnetInvoker(
+        NeutronDeleteSubnetRequest request) {
+        return new SyncInvoker<NeutronDeleteSubnetRequest, NeutronDeleteSubnetResponse>(request,
+            VpcMeta.neutronDeleteSubnet, hcClient);
+    }
+
+    /**
+     * 查询网络列表
+     *
+     * 查询提交请求的租户的所有网络，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronListNetworksRequest 请求对象
+     * @return NeutronListNetworksResponse
+     */
+    public NeutronListNetworksResponse neutronListNetworks(NeutronListNetworksRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronListNetworks);
+    }
+
+    /**
+     * 查询网络列表
+     *
+     * 查询提交请求的租户的所有网络，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronListNetworksRequest 请求对象
+     * @return SyncInvoker<NeutronListNetworksRequest, NeutronListNetworksResponse>
+     */
+    public SyncInvoker<NeutronListNetworksRequest, NeutronListNetworksResponse> neutronListNetworksInvoker(
+        NeutronListNetworksRequest request) {
+        return new SyncInvoker<NeutronListNetworksRequest, NeutronListNetworksResponse>(request,
+            VpcMeta.neutronListNetworks, hcClient);
+    }
+
+    /**
+     * 查询端口列表
+     *
+     * 查询提交请求的租户的所有端口，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronListPortsRequest 请求对象
+     * @return NeutronListPortsResponse
+     */
+    public NeutronListPortsResponse neutronListPorts(NeutronListPortsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronListPorts);
+    }
+
+    /**
+     * 查询端口列表
+     *
+     * 查询提交请求的租户的所有端口，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronListPortsRequest 请求对象
+     * @return SyncInvoker<NeutronListPortsRequest, NeutronListPortsResponse>
+     */
+    public SyncInvoker<NeutronListPortsRequest, NeutronListPortsResponse> neutronListPortsInvoker(
+        NeutronListPortsRequest request) {
+        return new SyncInvoker<NeutronListPortsRequest, NeutronListPortsResponse>(request, VpcMeta.neutronListPorts,
+            hcClient);
+    }
+
+    /**
+     * 查询路由器列表
+     *
+     * 查询提交请求的租户有权限操作的所有路由器信息，单次查询最多返回2000条数据，超过2000后会返回分页标记。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronListRoutersRequest 请求对象
+     * @return NeutronListRoutersResponse
+     */
+    public NeutronListRoutersResponse neutronListRouters(NeutronListRoutersRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronListRouters);
+    }
+
+    /**
+     * 查询路由器列表
+     *
+     * 查询提交请求的租户有权限操作的所有路由器信息，单次查询最多返回2000条数据，超过2000后会返回分页标记。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronListRoutersRequest 请求对象
+     * @return SyncInvoker<NeutronListRoutersRequest, NeutronListRoutersResponse>
+     */
+    public SyncInvoker<NeutronListRoutersRequest, NeutronListRoutersResponse> neutronListRoutersInvoker(
+        NeutronListRoutersRequest request) {
+        return new SyncInvoker<NeutronListRoutersRequest, NeutronListRoutersResponse>(request,
+            VpcMeta.neutronListRouters, hcClient);
+    }
+
+    /**
      * 查询安全组规则列表
      *
      * 查询提交请求的租户有权限查看的所有安全组规则。单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询
@@ -1692,6 +2052,157 @@ public class VpcClient {
         NeutronListSecurityGroupsRequest request) {
         return new SyncInvoker<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse>(request,
             VpcMeta.neutronListSecurityGroups, hcClient);
+    }
+
+    /**
+     * 查询子网列表
+     *
+     * 查询提交请求租户的所有子网，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronListSubnetsRequest 请求对象
+     * @return NeutronListSubnetsResponse
+     */
+    public NeutronListSubnetsResponse neutronListSubnets(NeutronListSubnetsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronListSubnets);
+    }
+
+    /**
+     * 查询子网列表
+     *
+     * 查询提交请求租户的所有子网，单次查询最多返回2000条数据，超过2000后会返回分页标记。分页查询请参考分页查询 。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronListSubnetsRequest 请求对象
+     * @return SyncInvoker<NeutronListSubnetsRequest, NeutronListSubnetsResponse>
+     */
+    public SyncInvoker<NeutronListSubnetsRequest, NeutronListSubnetsResponse> neutronListSubnetsInvoker(
+        NeutronListSubnetsRequest request) {
+        return new SyncInvoker<NeutronListSubnetsRequest, NeutronListSubnetsResponse>(request,
+            VpcMeta.neutronListSubnets, hcClient);
+    }
+
+    /**
+     * 路由器删除接口
+     *
+     * 删除路由器接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronRemoveRouterInterfaceRequest 请求对象
+     * @return NeutronRemoveRouterInterfaceResponse
+     */
+    public NeutronRemoveRouterInterfaceResponse neutronRemoveRouterInterface(
+        NeutronRemoveRouterInterfaceRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronRemoveRouterInterface);
+    }
+
+    /**
+     * 路由器删除接口
+     *
+     * 删除路由器接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronRemoveRouterInterfaceRequest 请求对象
+     * @return SyncInvoker<NeutronRemoveRouterInterfaceRequest, NeutronRemoveRouterInterfaceResponse>
+     */
+    public SyncInvoker<NeutronRemoveRouterInterfaceRequest, NeutronRemoveRouterInterfaceResponse> neutronRemoveRouterInterfaceInvoker(
+        NeutronRemoveRouterInterfaceRequest request) {
+        return new SyncInvoker<NeutronRemoveRouterInterfaceRequest, NeutronRemoveRouterInterfaceResponse>(request,
+            VpcMeta.neutronRemoveRouterInterface, hcClient);
+    }
+
+    /**
+     * 查询网络
+     *
+     * 查询指定的网络详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronShowNetworkRequest 请求对象
+     * @return NeutronShowNetworkResponse
+     */
+    public NeutronShowNetworkResponse neutronShowNetwork(NeutronShowNetworkRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronShowNetwork);
+    }
+
+    /**
+     * 查询网络
+     *
+     * 查询指定的网络详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronShowNetworkRequest 请求对象
+     * @return SyncInvoker<NeutronShowNetworkRequest, NeutronShowNetworkResponse>
+     */
+    public SyncInvoker<NeutronShowNetworkRequest, NeutronShowNetworkResponse> neutronShowNetworkInvoker(
+        NeutronShowNetworkRequest request) {
+        return new SyncInvoker<NeutronShowNetworkRequest, NeutronShowNetworkResponse>(request,
+            VpcMeta.neutronShowNetwork, hcClient);
+    }
+
+    /**
+     * 查询端口
+     *
+     * 查询端口详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronShowPortRequest 请求对象
+     * @return NeutronShowPortResponse
+     */
+    public NeutronShowPortResponse neutronShowPort(NeutronShowPortRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronShowPort);
+    }
+
+    /**
+     * 查询端口
+     *
+     * 查询端口详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronShowPortRequest 请求对象
+     * @return SyncInvoker<NeutronShowPortRequest, NeutronShowPortResponse>
+     */
+    public SyncInvoker<NeutronShowPortRequest, NeutronShowPortResponse> neutronShowPortInvoker(
+        NeutronShowPortRequest request) {
+        return new SyncInvoker<NeutronShowPortRequest, NeutronShowPortResponse>(request, VpcMeta.neutronShowPort,
+            hcClient);
+    }
+
+    /**
+     * 查询路由器
+     *
+     * 查询路由器详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronShowRouterRequest 请求对象
+     * @return NeutronShowRouterResponse
+     */
+    public NeutronShowRouterResponse neutronShowRouter(NeutronShowRouterRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronShowRouter);
+    }
+
+    /**
+     * 查询路由器
+     *
+     * 查询路由器详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronShowRouterRequest 请求对象
+     * @return SyncInvoker<NeutronShowRouterRequest, NeutronShowRouterResponse>
+     */
+    public SyncInvoker<NeutronShowRouterRequest, NeutronShowRouterResponse> neutronShowRouterInvoker(
+        NeutronShowRouterRequest request) {
+        return new SyncInvoker<NeutronShowRouterRequest, NeutronShowRouterResponse>(request, VpcMeta.neutronShowRouter,
+            hcClient);
     }
 
     /**
@@ -1756,6 +2267,126 @@ public class VpcClient {
     }
 
     /**
+     * 查询子网
+     *
+     * 查询子网详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronShowSubnetRequest 请求对象
+     * @return NeutronShowSubnetResponse
+     */
+    public NeutronShowSubnetResponse neutronShowSubnet(NeutronShowSubnetRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronShowSubnet);
+    }
+
+    /**
+     * 查询子网
+     *
+     * 查询子网详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronShowSubnetRequest 请求对象
+     * @return SyncInvoker<NeutronShowSubnetRequest, NeutronShowSubnetResponse>
+     */
+    public SyncInvoker<NeutronShowSubnetRequest, NeutronShowSubnetResponse> neutronShowSubnetInvoker(
+        NeutronShowSubnetRequest request) {
+        return new SyncInvoker<NeutronShowSubnetRequest, NeutronShowSubnetResponse>(request, VpcMeta.neutronShowSubnet,
+            hcClient);
+    }
+
+    /**
+     * 更新网络
+     *
+     * 更新网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronUpdateNetworkRequest 请求对象
+     * @return NeutronUpdateNetworkResponse
+     */
+    public NeutronUpdateNetworkResponse neutronUpdateNetwork(NeutronUpdateNetworkRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronUpdateNetwork);
+    }
+
+    /**
+     * 更新网络
+     *
+     * 更新网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronUpdateNetworkRequest 请求对象
+     * @return SyncInvoker<NeutronUpdateNetworkRequest, NeutronUpdateNetworkResponse>
+     */
+    public SyncInvoker<NeutronUpdateNetworkRequest, NeutronUpdateNetworkResponse> neutronUpdateNetworkInvoker(
+        NeutronUpdateNetworkRequest request) {
+        return new SyncInvoker<NeutronUpdateNetworkRequest, NeutronUpdateNetworkResponse>(request,
+            VpcMeta.neutronUpdateNetwork, hcClient);
+    }
+
+    /**
+     * 更新端口
+     *
+     * 更新端口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronUpdatePortRequest 请求对象
+     * @return NeutronUpdatePortResponse
+     */
+    public NeutronUpdatePortResponse neutronUpdatePort(NeutronUpdatePortRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronUpdatePort);
+    }
+
+    /**
+     * 更新端口
+     *
+     * 更新端口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronUpdatePortRequest 请求对象
+     * @return SyncInvoker<NeutronUpdatePortRequest, NeutronUpdatePortResponse>
+     */
+    public SyncInvoker<NeutronUpdatePortRequest, NeutronUpdatePortResponse> neutronUpdatePortInvoker(
+        NeutronUpdatePortRequest request) {
+        return new SyncInvoker<NeutronUpdatePortRequest, NeutronUpdatePortResponse>(request, VpcMeta.neutronUpdatePort,
+            hcClient);
+    }
+
+    /**
+     * 更新路由器
+     *
+     * 更新路由器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronUpdateRouterRequest 请求对象
+     * @return NeutronUpdateRouterResponse
+     */
+    public NeutronUpdateRouterResponse neutronUpdateRouter(NeutronUpdateRouterRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronUpdateRouter);
+    }
+
+    /**
+     * 更新路由器
+     *
+     * 更新路由器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronUpdateRouterRequest 请求对象
+     * @return SyncInvoker<NeutronUpdateRouterRequest, NeutronUpdateRouterResponse>
+     */
+    public SyncInvoker<NeutronUpdateRouterRequest, NeutronUpdateRouterResponse> neutronUpdateRouterInvoker(
+        NeutronUpdateRouterRequest request) {
+        return new SyncInvoker<NeutronUpdateRouterRequest, NeutronUpdateRouterResponse>(request,
+            VpcMeta.neutronUpdateRouter, hcClient);
+    }
+
+    /**
      * 更新安全组
      *
      * 更新安全组
@@ -1783,6 +2414,36 @@ public class VpcClient {
         NeutronUpdateSecurityGroupRequest request) {
         return new SyncInvoker<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse>(request,
             VpcMeta.neutronUpdateSecurityGroup, hcClient);
+    }
+
+    /**
+     * 更新子网
+     *
+     * 更新子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronUpdateSubnetRequest 请求对象
+     * @return NeutronUpdateSubnetResponse
+     */
+    public NeutronUpdateSubnetResponse neutronUpdateSubnet(NeutronUpdateSubnetRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.neutronUpdateSubnet);
+    }
+
+    /**
+     * 更新子网
+     *
+     * 更新子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param NeutronUpdateSubnetRequest 请求对象
+     * @return SyncInvoker<NeutronUpdateSubnetRequest, NeutronUpdateSubnetResponse>
+     */
+    public SyncInvoker<NeutronUpdateSubnetRequest, NeutronUpdateSubnetResponse> neutronUpdateSubnetInvoker(
+        NeutronUpdateSubnetRequest request) {
+        return new SyncInvoker<NeutronUpdateSubnetRequest, NeutronUpdateSubnetResponse>(request,
+            VpcMeta.neutronUpdateSubnet, hcClient);
     }
 
     /**
@@ -2293,6 +2954,36 @@ public class VpcClient {
         NeutronUpdateFirewallRuleRequest request) {
         return new SyncInvoker<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse>(request,
             VpcMeta.neutronUpdateFirewallRule, hcClient);
+    }
+
+    /**
+     * 查询API版本信息列表
+     *
+     * 返回当前API所有可用的版本（仅针对OpenStack原生接口）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return ListApiVersionResponse
+     */
+    public ListApiVersionResponse listApiVersion(ListApiVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listApiVersion);
+    }
+
+    /**
+     * 查询API版本信息列表
+     *
+     * 返回当前API所有可用的版本（仅针对OpenStack原生接口）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListApiVersionRequest 请求对象
+     * @return SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>
+     */
+    public SyncInvoker<ListApiVersionRequest, ListApiVersionResponse> listApiVersionInvoker(
+        ListApiVersionRequest request) {
+        return new SyncInvoker<ListApiVersionRequest, ListApiVersionResponse>(request, VpcMeta.listApiVersion,
+            hcClient);
     }
 
     /**

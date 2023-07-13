@@ -5,7 +5,15 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.devsecurity.v1.model.*;
+import com.huaweicloud.sdk.devsecurity.v1.model.CreateSecAppTaskRequest;
+import com.huaweicloud.sdk.devsecurity.v1.model.CreateSecAppTaskRequestBody;
+import com.huaweicloud.sdk.devsecurity.v1.model.CreateSecAppTaskResponse;
+import com.huaweicloud.sdk.devsecurity.v1.model.DeleteSecAppTaskRequest;
+import com.huaweicloud.sdk.devsecurity.v1.model.DeleteSecAppTaskResponse;
+import com.huaweicloud.sdk.devsecurity.v1.model.ShowSecAppTaskResultRequest;
+import com.huaweicloud.sdk.devsecurity.v1.model.ShowSecAppTaskResultResponse;
+import com.huaweicloud.sdk.devsecurity.v1.model.ShowSecAppTaskStatusRequest;
+import com.huaweicloud.sdk.devsecurity.v1.model.ShowSecAppTaskStatusResponse;
 
 @SuppressWarnings("unchecked")
 public class DevSecurityMeta {

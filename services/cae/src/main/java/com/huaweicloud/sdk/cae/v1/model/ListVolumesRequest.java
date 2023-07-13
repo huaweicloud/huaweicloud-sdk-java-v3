@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.cae.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -16,102 +11,19 @@ import java.util.Objects;
 public class ListVolumesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Enterprise-Project-ID")
+
+    private String xEnterpriseProjectID;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Environment-ID")
 
     private String xEnvironmentID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Enterprise-Project-ID")
-
-    private String xEnterpriseProjectID;
-
-    /**
-     * 资源类型。
-     */
-    public static final class ResourceTypeEnum {
-
-        /**
-         * Enum OBS for value: "obs"
-         */
-        public static final ResourceTypeEnum OBS = new ResourceTypeEnum("obs");
-
-        private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ResourceTypeEnum> createStaticFields() {
-            Map<String, ResourceTypeEnum> map = new HashMap<>();
-            map.put("obs", OBS);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ResourceTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ResourceTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
-        }
-
-        public static ResourceTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ResourceTypeEnum) {
-                return this.value.equals(((ResourceTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
-    private ResourceTypeEnum resourceType;
-
-    public ListVolumesRequest withXEnvironmentID(String xEnvironmentID) {
-        this.xEnvironmentID = xEnvironmentID;
-        return this;
-    }
-
-    /**
-     * 环境id。
-     * @return xEnvironmentID
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Environment-ID")
-    public String getXEnvironmentID() {
-        return xEnvironmentID;
-    }
-
-    public void setXEnvironmentID(String xEnvironmentID) {
-        this.xEnvironmentID = xEnvironmentID;
-    }
+    private String resourceType;
 
     public ListVolumesRequest withXEnterpriseProjectID(String xEnterpriseProjectID) {
         this.xEnterpriseProjectID = xEnterpriseProjectID;
@@ -119,7 +31,7 @@ public class ListVolumesRequest {
     }
 
     /**
-     * 租户的企业项目id。
+     * 企业项目ID。  - 创建环境时，环境会绑定企业项目ID。      - 最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。     - 该字段不传（或传为字符串“0”）时，则查询默认企业项目下的资源。  > 关于企业项目ID的获取及企业项目特性的详细信息，请参见《[企业管理服务用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)》。
      * @return xEnterpriseProjectID
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -132,20 +44,39 @@ public class ListVolumesRequest {
         this.xEnterpriseProjectID = xEnterpriseProjectID;
     }
 
-    public ListVolumesRequest withResourceType(ResourceTypeEnum resourceType) {
+    public ListVolumesRequest withXEnvironmentID(String xEnvironmentID) {
+        this.xEnvironmentID = xEnvironmentID;
+        return this;
+    }
+
+    /**
+     * 环境ID。      - 获取环境ID，通过《[云应用引擎API参考](https://support.huaweicloud.com/api-cae/ListEnvironments.html)》的“获取环境列表”章节获取环境信息。     - 请求响应成功后在响应体的items数组中的一个元素即为一个环境的信息，其中id字段即是环境ID。
+     * @return xEnvironmentID
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Environment-ID")
+    public String getXEnvironmentID() {
+        return xEnvironmentID;
+    }
+
+    public void setXEnvironmentID(String xEnvironmentID) {
+        this.xEnvironmentID = xEnvironmentID;
+    }
+
+    public ListVolumesRequest withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
     /**
-     * 资源类型。
+     * 资源类型，当前只支持“obs”。
      * @return resourceType
      */
-    public ResourceTypeEnum getResourceType() {
+    public String getResourceType() {
         return resourceType;
     }
 
-    public void setResourceType(ResourceTypeEnum resourceType) {
+    public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
 
@@ -158,22 +89,22 @@ public class ListVolumesRequest {
             return false;
         }
         ListVolumesRequest that = (ListVolumesRequest) obj;
-        return Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
             && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xEnvironmentID, xEnterpriseProjectID, resourceType);
+        return Objects.hash(xEnterpriseProjectID, xEnvironmentID, resourceType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListVolumesRequest {\n");
-        sb.append("    xEnvironmentID: ").append(toIndentedString(xEnvironmentID)).append("\n");
         sb.append("    xEnterpriseProjectID: ").append(toIndentedString(xEnterpriseProjectID)).append("\n");
+        sb.append("    xEnvironmentID: ").append(toIndentedString(xEnvironmentID)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("}");
         return sb.toString();

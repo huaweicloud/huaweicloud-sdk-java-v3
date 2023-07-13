@@ -10,9 +10,19 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * MetadataResponse
+ * 响应数据。
  */
 public class MetadataResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
@@ -25,34 +35,43 @@ public class MetadataResponse {
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "jod_id")
-
-    private String jodId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private String status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
     private OffsetDateTime updatedAt;
+
+    public MetadataResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 组件ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public MetadataResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 组件名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public MetadataResponse withAnnotations(Map<String, String> annotations) {
         this.annotations = annotations;
@@ -76,7 +95,7 @@ public class MetadataResponse {
     }
 
     /**
-     * 属性信息。
+     * 组件附加属性。 - log_group_id：LTS日志组的ID。 - log_stream_id：LTS日志流的ID。 - version：组件版本。
      * @return annotations
      */
     public Map<String, String> getAnnotations() {
@@ -102,91 +121,6 @@ public class MetadataResponse {
 
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public MetadataResponse withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * 组件id。
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public MetadataResponse withJodId(String jodId) {
-        this.jodId = jodId;
-        return this;
-    }
-
-    /**
-     * 任务id。
-     * @return jodId
-     */
-    public String getJodId() {
-        return jodId;
-    }
-
-    public void setJodId(String jodId) {
-        this.jodId = jodId;
-    }
-
-    public MetadataResponse withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 名称。
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public MetadataResponse withStatus(String status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * 状态。
-     * @return status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public MetadataResponse withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 组件类型。
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public MetadataResponse withUpdatedAt(OffsetDateTime updatedAt) {
@@ -215,28 +149,24 @@ public class MetadataResponse {
             return false;
         }
         MetadataResponse that = (MetadataResponse) obj;
-        return Objects.equals(this.annotations, that.annotations) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.jodId, that.jodId)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.updatedAt, that.updatedAt);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.annotations, that.annotations) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(annotations, createdAt, id, jodId, name, status, type, updatedAt);
+        return Objects.hash(id, name, annotations, createdAt, updatedAt);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetadataResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    jodId: ").append(toIndentedString(jodId)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();

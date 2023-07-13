@@ -5,7 +5,26 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.vcm.v2.model.*;
+import com.huaweicloud.sdk.vcm.v2.model.CheckAudioJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.CheckAudioJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.CheckVideoJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.CheckVideoJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.CreateAudioJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.CreateAudioJobRequestBody;
+import com.huaweicloud.sdk.vcm.v2.model.CreateAudioJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.CreateAudioJobResponseBody;
+import com.huaweicloud.sdk.vcm.v2.model.CreateVideoJobReq;
+import com.huaweicloud.sdk.vcm.v2.model.CreateVideoJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.CreateVideoJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.CreateVideoJobResponseBody;
+import com.huaweicloud.sdk.vcm.v2.model.DeleteDemoInfoRequest;
+import com.huaweicloud.sdk.vcm.v2.model.DeleteDemoInfoResponse;
+import com.huaweicloud.sdk.vcm.v2.model.DeleteVideoJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.DeleteVideoJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.ListAudioJobsRequest;
+import com.huaweicloud.sdk.vcm.v2.model.ListAudioJobsResponse;
+import com.huaweicloud.sdk.vcm.v2.model.ListVideoJobsRequest;
+import com.huaweicloud.sdk.vcm.v2.model.ListVideoJobsResponse;
 
 import java.util.List;
 

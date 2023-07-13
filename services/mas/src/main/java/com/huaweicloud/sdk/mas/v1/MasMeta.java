@@ -5,7 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.mas.v1.model.*;
+import com.huaweicloud.sdk.mas.v1.model.NamespaceVo;
+import com.huaweicloud.sdk.mas.v1.model.ShowNameSpaceListRequest;
+import com.huaweicloud.sdk.mas.v1.model.ShowNameSpaceListResponse;
 
 import java.util.List;
 

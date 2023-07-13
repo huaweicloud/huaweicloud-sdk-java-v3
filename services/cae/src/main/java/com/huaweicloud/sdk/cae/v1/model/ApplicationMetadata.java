@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 数据。
+ * 响应数据。
  */
 public class ApplicationMetadata {
 
@@ -44,7 +44,7 @@ public class ApplicationMetadata {
     }
 
     /**
-     * 应用id。
+     * 应用ID。
      * @return id
      */
     public String getId() {
@@ -94,7 +94,7 @@ public class ApplicationMetadata {
     }
 
     /**
-     * 附加应用信息。
+     * 应用附加属性，当前只支持description参数。
      * @return annotations
      */
     public Map<String, String> getAnnotations() {
@@ -128,7 +128,7 @@ public class ApplicationMetadata {
     }
 
     /**
-     * 修改时间。
+     * 更新时间。
      * @return updatedAt
      */
     public String getUpdatedAt() {

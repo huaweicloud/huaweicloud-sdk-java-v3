@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Repo
+ * 源码仓库信息。
  */
 public class Repo {
 
@@ -31,7 +31,7 @@ public class Repo {
     }
 
     /**
-     * 授权名。
+     * 授权名称。
      * @return authName
      */
     public String getAuthName() {
@@ -65,7 +65,7 @@ public class Repo {
     }
 
     /**
-     * 命名空间。
+     * 命名空间，需填写命名空间的Base64编码。
      * @return namespace
      */
     public String getNamespace() {

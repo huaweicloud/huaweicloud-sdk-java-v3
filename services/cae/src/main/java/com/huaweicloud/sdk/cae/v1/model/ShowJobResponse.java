@@ -1,14 +1,9 @@
 package com.huaweicloud.sdk.cae.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -22,74 +17,10 @@ public class ShowJobResponse extends SdkResponse {
 
     private String apiVersion;
 
-    /**
-     * 资源种类。
-     */
-    public static final class KindEnum {
-
-        /**
-         * Enum JOB for value: "Job"
-         */
-        public static final KindEnum JOB = new KindEnum("Job");
-
-        private static final Map<String, KindEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, KindEnum> createStaticFields() {
-            Map<String, KindEnum> map = new HashMap<>();
-            map.put("Job", JOB);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        KindEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static KindEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KindEnum(value));
-        }
-
-        public static KindEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof KindEnum) {
-                return this.value.equals(((KindEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
 
-    private KindEnum kind;
+    private String kind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
@@ -102,7 +33,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * API版本。
+     * API版本，固定值“v1”，该值不可修改。
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -113,20 +44,20 @@ public class ShowJobResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
-    public ShowJobResponse withKind(KindEnum kind) {
+    public ShowJobResponse withKind(String kind) {
         this.kind = kind;
         return this;
     }
 
     /**
-     * 资源种类。
+     * API类型，固定值“Job”，该值不可修改。
      * @return kind
      */
-    public KindEnum getKind() {
+    public String getKind() {
         return kind;
     }
 
-    public void setKind(KindEnum kind) {
+    public void setKind(String kind) {
         this.kind = kind;
     }
 

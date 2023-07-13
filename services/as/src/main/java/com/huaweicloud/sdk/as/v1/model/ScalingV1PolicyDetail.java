@@ -199,7 +199,7 @@ public class ScalingV1PolicyDetail {
     }
 
     /**
-     * 伸缩策略状态  INSERVICE：已启用 PAUSED：已停用 EXECUTING：执行中
+     * 伸缩策略状态 INSERVICE：已启用 PAUSED：已停用 EXECUTING：执行中
      * @return policyStatus
      */
     public String getPolicyStatus() {

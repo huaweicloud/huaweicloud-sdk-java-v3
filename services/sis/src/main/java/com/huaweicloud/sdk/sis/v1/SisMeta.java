@@ -5,7 +5,38 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.sis.v1.model.*;
+import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobRequest;
+import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobResponse;
+import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyRequest;
+import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyRequest;
+import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.PostCreateVocabReq;
+import com.huaweicloud.sdk.sis.v1.model.PostCustomTTSReq;
+import com.huaweicloud.sdk.sis.v1.model.PostMultiModalAssessmentReq;
+import com.huaweicloud.sdk.sis.v1.model.PostShortAudioAssessmentReq;
+import com.huaweicloud.sdk.sis.v1.model.PostShortAudioReq;
+import com.huaweicloud.sdk.sis.v1.model.PostTranscriberJobs;
+import com.huaweicloud.sdk.sis.v1.model.PushTranscriberJobsRequest;
+import com.huaweicloud.sdk.sis.v1.model.PushTranscriberJobsResponse;
+import com.huaweicloud.sdk.sis.v1.model.PutUpdateVocabReq;
+import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrRequest;
+import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrResponse;
+import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioRequest;
+import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioResponse;
+import com.huaweicloud.sdk.sis.v1.model.RunAudioAssessmentRequest;
+import com.huaweicloud.sdk.sis.v1.model.RunAudioAssessmentResponse;
+import com.huaweicloud.sdk.sis.v1.model.RunMultiModalAssessmentRequest;
+import com.huaweicloud.sdk.sis.v1.model.RunMultiModalAssessmentResponse;
+import com.huaweicloud.sdk.sis.v1.model.RunTtsRequest;
+import com.huaweicloud.sdk.sis.v1.model.RunTtsResponse;
+import com.huaweicloud.sdk.sis.v1.model.ShowVocabulariesParams;
+import com.huaweicloud.sdk.sis.v1.model.ShowVocabulariesRequest;
+import com.huaweicloud.sdk.sis.v1.model.ShowVocabulariesResponse;
+import com.huaweicloud.sdk.sis.v1.model.ShowVocabularyRequest;
+import com.huaweicloud.sdk.sis.v1.model.ShowVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.UpdateVocabularyRequest;
+import com.huaweicloud.sdk.sis.v1.model.UpdateVocabularyResponse;
 
 @SuppressWarnings("unchecked")
 public class SisMeta {
@@ -97,6 +128,13 @@ public class SisMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PushTranscriberJobsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<PostTranscriberJobs>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

@@ -5,7 +5,25 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.moderation.v2.model.*;
+import com.huaweicloud.sdk.moderation.v2.model.ImageBatchModerationReq;
+import com.huaweicloud.sdk.moderation.v2.model.ImageDetectionReq;
+import com.huaweicloud.sdk.moderation.v2.model.RunCheckResultRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunCheckResultResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunCheckTaskJobsRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunCheckTaskJobsResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunImageBatchModerationRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunImageBatchModerationResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunImageModerationRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunImageModerationResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunModerationAudioRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunModerationAudioRequestBody;
+import com.huaweicloud.sdk.moderation.v2.model.RunModerationAudioResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunTaskSumbitRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunTaskSumbitResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunTextModerationRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunTextModerationResponse;
+import com.huaweicloud.sdk.moderation.v2.model.TaskSumbitReq;
+import com.huaweicloud.sdk.moderation.v2.model.TextDetectionReq;
 
 @SuppressWarnings("unchecked")
 public class ModerationMeta {

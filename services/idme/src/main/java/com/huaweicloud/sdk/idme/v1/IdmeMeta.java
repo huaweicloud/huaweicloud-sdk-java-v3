@@ -5,7 +5,23 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.idme.v1.model.*;
+import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationRequest;
+import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationRequestBody;
+import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.DeleteXdmApplicationRequest;
+import com.huaweicloud.sdk.idme.v1.model.DeleteXdmApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.DeployApplicationRequest;
+import com.huaweicloud.sdk.idme.v1.model.DeployApplicationRequestBody;
+import com.huaweicloud.sdk.idme.v1.model.DeployApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.ListAppsRequest;
+import com.huaweicloud.sdk.idme.v1.model.ListAppsResponse;
+import com.huaweicloud.sdk.idme.v1.model.ListEnvsRequest;
+import com.huaweicloud.sdk.idme.v1.model.ListEnvsResponse;
+import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationRequest;
+import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationRequestBody;
+import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.UninstallRequest;
+import com.huaweicloud.sdk.idme.v1.model.UninstallResponse;
 
 @SuppressWarnings("unchecked")
 public class IdmeMeta {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Build
+ * 构建信息。
  */
 public class Build {
 
@@ -71,7 +71,7 @@ public class Build {
     }
 
     /**
-     * Get parameters
+     * 构建附加参数。 - base_image：基础镜像地址。 - build_cmd：自定义构建命令。
      * @return parameters
      */
     public Map<String, String> getParameters() {

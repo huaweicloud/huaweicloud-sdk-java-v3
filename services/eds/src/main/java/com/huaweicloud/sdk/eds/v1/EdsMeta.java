@@ -5,7 +5,31 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.eds.v1.model.*;
+import com.huaweicloud.sdk.eds.v1.model.AddConnectorUserRequest;
+import com.huaweicloud.sdk.eds.v1.model.AddConnectorUserResponse;
+import com.huaweicloud.sdk.eds.v1.model.CancelContractRequest;
+import com.huaweicloud.sdk.eds.v1.model.CancelContractResponse;
+import com.huaweicloud.sdk.eds.v1.model.CommitContractRequest;
+import com.huaweicloud.sdk.eds.v1.model.CommitContractResponse;
+import com.huaweicloud.sdk.eds.v1.model.ContractReq;
+import com.huaweicloud.sdk.eds.v1.model.DeleteConnectorUserRequest;
+import com.huaweicloud.sdk.eds.v1.model.DeleteConnectorUserResponse;
+import com.huaweicloud.sdk.eds.v1.model.ListConnectorsByInstanceMangerRequest;
+import com.huaweicloud.sdk.eds.v1.model.ListConnectorsByInstanceMangerResponse;
+import com.huaweicloud.sdk.eds.v1.model.ListConnectorsByInstanceUserRequest;
+import com.huaweicloud.sdk.eds.v1.model.ListConnectorsByInstanceUserResponse;
+import com.huaweicloud.sdk.eds.v1.model.ListOffersRequest;
+import com.huaweicloud.sdk.eds.v1.model.ListOffersResponse;
+import com.huaweicloud.sdk.eds.v1.model.OfferPage;
+import com.huaweicloud.sdk.eds.v1.model.ShowAuditLogRequest;
+import com.huaweicloud.sdk.eds.v1.model.ShowAuditLogResponse;
+import com.huaweicloud.sdk.eds.v1.model.ShowConnectorRequest;
+import com.huaweicloud.sdk.eds.v1.model.ShowConnectorResponse;
+import com.huaweicloud.sdk.eds.v1.model.ShowContractRequest;
+import com.huaweicloud.sdk.eds.v1.model.ShowContractResponse;
+import com.huaweicloud.sdk.eds.v1.model.ShowOfferRequest;
+import com.huaweicloud.sdk.eds.v1.model.ShowOfferResponse;
+import com.huaweicloud.sdk.eds.v1.model.UserReq;
 
 @SuppressWarnings("unchecked")
 public class EdsMeta {

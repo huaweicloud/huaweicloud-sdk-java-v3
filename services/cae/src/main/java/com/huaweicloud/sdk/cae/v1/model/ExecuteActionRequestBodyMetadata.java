@@ -22,7 +22,7 @@ public class ExecuteActionRequestBodyMetadata {
     private Map<String, String> annotations = null;
 
     /**
-     * action名称。
+     * action名称，具体action如下。 - deploy：部署。 - upgrade：升级。 - configure：生效配置。 - scale：伸缩。 - restart：重启。 - start：启动。 - stop：停止。 - rollback：回滚。
      */
     public static final class NameEnum {
 
@@ -171,7 +171,7 @@ public class ExecuteActionRequestBodyMetadata {
     }
 
     /**
-     * action名称。
+     * action名称，具体action如下。 - deploy：部署。 - upgrade：升级。 - configure：生效配置。 - scale：伸缩。 - restart：重启。 - start：启动。 - stop：停止。 - rollback：回滚。
      * @return name
      */
     public NameEnum getName() {

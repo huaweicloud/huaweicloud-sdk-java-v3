@@ -51,15 +51,7 @@ public class AsClient {
     /**
      * 批量添加实例
      *
-     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
-     * 说明：
-     * - 单次最多批量操作实例个数为10。批量添加后实例数不能大于伸缩组的最大实例数，批量移出后实例数不能小于伸缩组的最小实例数。
-     * - 当伸缩组处于INSERVICE状态且没有伸缩活动时，才能添加实例。
-     * - 当伸缩组没有伸缩活动时，才能移出实例。
-     * - 向伸缩组中添加实例时，必须保证实例所在的可用区包含于伸缩组的可用区内。
-     * - 实例处于INSERVICE状态时才可以进行移出、设置或取消实例保护属性等操作。
-     * - 当伸缩组发生自动缩容活动时，设置了实例保护的实例不会被移出伸缩组。
-     * - 批量移出弹性伸缩组中的实例时，若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器相同，会解绑定实例和监听器。若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器不同，会保留实例和监听器的绑定关系。
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。说明：- 单次最多批量操作实例个数为10。批量添加后实例数不能大于伸缩组的最大实例数，批量移出后实例数不能小于伸缩组的最小实例数。- 当伸缩组处于INSERVICE状态且没有伸缩活动时，才能添加实例。- 当伸缩组没有伸缩活动时，才能移出实例。- 向伸缩组中添加实例时，必须保证实例所在的可用区包含于伸缩组的可用区内。- 实例处于INSERVICE状态时才可以进行移出、设置或取消实例保护属性等操作。- 当伸缩组发生自动缩容活动时，设置了实例保护的实例不会被移出伸缩组。- 批量移出弹性伸缩组中的实例时，若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器相同，会解绑定实例和监听器。若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器不同，会保留实例和监听器的绑定关系。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -73,15 +65,7 @@ public class AsClient {
     /**
      * 批量添加实例
      *
-     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
-     * 说明：
-     * - 单次最多批量操作实例个数为10。批量添加后实例数不能大于伸缩组的最大实例数，批量移出后实例数不能小于伸缩组的最小实例数。
-     * - 当伸缩组处于INSERVICE状态且没有伸缩活动时，才能添加实例。
-     * - 当伸缩组没有伸缩活动时，才能移出实例。
-     * - 向伸缩组中添加实例时，必须保证实例所在的可用区包含于伸缩组的可用区内。
-     * - 实例处于INSERVICE状态时才可以进行移出、设置或取消实例保护属性等操作。
-     * - 当伸缩组发生自动缩容活动时，设置了实例保护的实例不会被移出伸缩组。
-     * - 批量移出弹性伸缩组中的实例时，若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器相同，会解绑定实例和监听器。若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器不同，会保留实例和监听器的绑定关系。
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。说明：- 单次最多批量操作实例个数为10。批量添加后实例数不能大于伸缩组的最大实例数，批量移出后实例数不能小于伸缩组的最小实例数。- 当伸缩组处于INSERVICE状态且没有伸缩活动时，才能添加实例。- 当伸缩组没有伸缩活动时，才能移出实例。- 向伸缩组中添加实例时，必须保证实例所在的可用区包含于伸缩组的可用区内。- 实例处于INSERVICE状态时才可以进行移出、设置或取消实例保护属性等操作。- 当伸缩组发生自动缩容活动时，设置了实例保护的实例不会被移出伸缩组。- 批量移出弹性伸缩组中的实例时，若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器相同，会解绑定实例和监听器。若该实例加入伸缩组时绑定的监听器和伸缩组本身的监听器不同，会保留实例和监听器的绑定关系。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -369,6 +353,36 @@ public class AsClient {
     }
 
     /**
+     * 创建计划任务
+     *
+     * 创建计划任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateGroupScheduledTaskRequest 请求对象
+     * @return CreateGroupScheduledTaskResponse
+     */
+    public CreateGroupScheduledTaskResponse createGroupScheduledTask(CreateGroupScheduledTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, AsMeta.createGroupScheduledTask);
+    }
+
+    /**
+     * 创建计划任务
+     *
+     * 创建计划任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateGroupScheduledTaskRequest 请求对象
+     * @return SyncInvoker<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse>
+     */
+    public SyncInvoker<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse> createGroupScheduledTaskInvoker(
+        CreateGroupScheduledTaskRequest request) {
+        return new SyncInvoker<CreateGroupScheduledTaskRequest, CreateGroupScheduledTaskResponse>(request,
+            AsMeta.createGroupScheduledTask, hcClient);
+    }
+
+    /**
      * 创建生命周期挂钩
      *
      * 创建生命周期挂钩，可为伸缩组添加一个或多个生命周期挂钩，最多添加5个。添加生命周期挂钩后，当伸缩组进行伸缩活动时，实例将被生命周期挂钩挂起并置于等待状态（正在加入伸缩组或正在移出伸缩组），实例将保持此状态直至超时时间结束或者用户手动回调。用户能够在实例保持等待状态的时间段内执行自定义操作，例如，用户可以在新启动的实例上安装或配置软件，也可以在实例终止前从实例中下载日志文件。
@@ -546,6 +560,36 @@ public class AsClient {
         CreateScalingTagInfoRequest request) {
         return new SyncInvoker<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse>(request,
             AsMeta.createScalingTagInfo, hcClient);
+    }
+
+    /**
+     * 删除计划任务
+     *
+     * 删除计划任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteGroupScheduledTaskRequest 请求对象
+     * @return DeleteGroupScheduledTaskResponse
+     */
+    public DeleteGroupScheduledTaskResponse deleteGroupScheduledTask(DeleteGroupScheduledTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, AsMeta.deleteGroupScheduledTask);
+    }
+
+    /**
+     * 删除计划任务
+     *
+     * 删除计划任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteGroupScheduledTaskRequest 请求对象
+     * @return SyncInvoker<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse>
+     */
+    public SyncInvoker<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse> deleteGroupScheduledTaskInvoker(
+        DeleteGroupScheduledTaskRequest request) {
+        return new SyncInvoker<DeleteGroupScheduledTaskRequest, DeleteGroupScheduledTaskResponse>(request,
+            AsMeta.deleteGroupScheduledTask, hcClient);
     }
 
     /**
@@ -786,6 +830,36 @@ public class AsClient {
         ExecuteScalingPolicyRequest request) {
         return new SyncInvoker<ExecuteScalingPolicyRequest, ExecuteScalingPolicyResponse>(request,
             AsMeta.executeScalingPolicy, hcClient);
+    }
+
+    /**
+     * 查询计划任务列表
+     *
+     * 查询计划任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListGroupScheduledTasksRequest 请求对象
+     * @return ListGroupScheduledTasksResponse
+     */
+    public ListGroupScheduledTasksResponse listGroupScheduledTasks(ListGroupScheduledTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, AsMeta.listGroupScheduledTasks);
+    }
+
+    /**
+     * 查询计划任务列表
+     *
+     * 查询计划任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListGroupScheduledTasksRequest 请求对象
+     * @return SyncInvoker<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse>
+     */
+    public SyncInvoker<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse> listGroupScheduledTasksInvoker(
+        ListGroupScheduledTasksRequest request) {
+        return new SyncInvoker<ListGroupScheduledTasksRequest, ListGroupScheduledTasksResponse>(request,
+            AsMeta.listGroupScheduledTasks, hcClient);
     }
 
     /**
@@ -1479,6 +1553,36 @@ public class AsClient {
         ShowScalingPolicyRequest request) {
         return new SyncInvoker<ShowScalingPolicyRequest, ShowScalingPolicyResponse>(request, AsMeta.showScalingPolicy,
             hcClient);
+    }
+
+    /**
+     * 更新计划任务
+     *
+     * 更新计划任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGroupScheduledTaskRequest 请求对象
+     * @return UpdateGroupScheduledTaskResponse
+     */
+    public UpdateGroupScheduledTaskResponse updateGroupScheduledTask(UpdateGroupScheduledTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, AsMeta.updateGroupScheduledTask);
+    }
+
+    /**
+     * 更新计划任务
+     *
+     * 更新计划任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGroupScheduledTaskRequest 请求对象
+     * @return SyncInvoker<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse>
+     */
+    public SyncInvoker<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse> updateGroupScheduledTaskInvoker(
+        UpdateGroupScheduledTaskRequest request) {
+        return new SyncInvoker<UpdateGroupScheduledTaskRequest, UpdateGroupScheduledTaskResponse>(request,
+            AsMeta.updateGroupScheduledTask, hcClient);
     }
 
     /**

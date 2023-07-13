@@ -35,7 +35,7 @@ public class ListApplicationsResponse extends SdkResponse {
     }
 
     /**
-     * API版本。
+     * API版本，固定值“v1”，该值不可修改。
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -52,7 +52,7 @@ public class ListApplicationsResponse extends SdkResponse {
     }
 
     /**
-     * 资源种类。
+     * API类型，固定值“Application”，该值不可修改。
      * @return kind
      */
     public String getKind() {

@@ -11,16 +11,6 @@ import java.util.Objects;
 public class Task {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "created_at")
-
-    private String createdAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "detail")
-
-    private String detail;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "index")
 
     private Integer index;
@@ -36,43 +26,19 @@ public class Task {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detail")
+
+    private String detail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
     private String updatedAt;
-
-    public Task withCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    /**
-     * 创建时间。
-     * @return createdAt
-     */
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Task withDetail(String detail) {
-        this.detail = detail;
-        return this;
-    }
-
-    /**
-     * 任务详情。
-     * @return detail
-     */
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
 
     public Task withIndex(Integer index) {
         this.index = index;
@@ -97,7 +63,7 @@ public class Task {
     }
 
     /**
-     * 任务名称
+     * 任务名称。
      * @return name
      */
     public String getName() {
@@ -114,7 +80,7 @@ public class Task {
     }
 
     /**
-     * 任务状态
+     * 任务状态。
      * @return status
      */
     public String getStatus() {
@@ -125,13 +91,47 @@ public class Task {
         this.status = status;
     }
 
+    public Task withDetail(String detail) {
+        this.detail = detail;
+        return this;
+    }
+
+    /**
+     * 任务详情。
+     * @return detail
+     */
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public Task withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public Task withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
     /**
-     * 修改时间
+     * 更新时间。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -151,25 +151,25 @@ public class Task {
             return false;
         }
         Task that = (Task) obj;
-        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.detail, that.detail)
-            && Objects.equals(this.index, that.index) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.updatedAt, that.updatedAt);
+        return Objects.equals(this.index, that.index) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createdAt, detail, index, name, status, updatedAt);
+        return Objects.hash(index, name, status, detail, createdAt, updatedAt);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Task {\n");
-        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();

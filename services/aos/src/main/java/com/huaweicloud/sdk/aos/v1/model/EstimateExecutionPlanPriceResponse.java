@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 public class EstimateExecutionPlanPriceResponse extends SdkResponse {
 
     /**
-     * 币种，枚举值   * `CNY` - 元，中国站返回的币种   * `USD` - 美元，国际站返回的币种 
+     * 币种，枚举值   * `CNY` - 元，中国站返回的币种   * `USD` - 美元，国际站返回的币种
      */
     public static final class CurrencyEnum {
 
@@ -105,7 +105,7 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
     }
 
     /**
-     * 币种，枚举值   * `CNY` - 元，中国站返回的币种   * `USD` - 美元，国际站返回的币种 
+     * 币种，枚举值   * `CNY` - 元，中国站返回的币种   * `USD` - 美元，国际站返回的币种
      * @return currency
      */
     public CurrencyEnum getCurrency() {

@@ -29,7 +29,7 @@ public class CreateApplicationRequestBodyMetadata {
     }
 
     /**
-     * 名称。
+     * 应用名称。
      * @return name
      */
     public String getName() {
@@ -62,7 +62,7 @@ public class CreateApplicationRequestBodyMetadata {
     }
 
     /**
-     * 应用信息。
+     * 创建应用附加参数，当前只支持description参数。
      * @return annotations
      */
     public Map<String, String> getAnnotations() {

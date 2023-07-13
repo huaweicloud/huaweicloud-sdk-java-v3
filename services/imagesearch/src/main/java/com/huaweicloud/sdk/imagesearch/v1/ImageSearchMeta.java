@@ -5,7 +5,27 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.imagesearch.v1.model.*;
+import com.huaweicloud.sdk.imagesearch.v1.model.AddPictureRequestReq;
+import com.huaweicloud.sdk.imagesearch.v1.model.CreateInstanceReq;
+import com.huaweicloud.sdk.imagesearch.v1.model.DeletePictureReq;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunAddPictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunAddPictureResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunCheckPictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunCheckPictureResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunCreateInstanceRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunCreateInstanceResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunDeleteInstanceRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunDeleteInstanceResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunDeletePictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunDeletePictureResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunModifyPictureReq;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunModifyPictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunModifyPictureResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunQueryInstanceRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunQueryInstanceResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunSearchPictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunSearchPictureResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.SearchPictureReq;
 
 @SuppressWarnings("unchecked")
 public class ImageSearchMeta {

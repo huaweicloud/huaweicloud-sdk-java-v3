@@ -26,7 +26,7 @@ public class DeleteEnvironmentRequest {
     }
 
     /**
-     * 环境id。
+     * 环境ID。
      * @return environmentId
      */
     public String getEnvironmentId() {
@@ -43,7 +43,7 @@ public class DeleteEnvironmentRequest {
     }
 
     /**
-     * 租户的企业项目id。
+     * 企业项目ID。  - 创建环境时，环境会绑定企业项目ID。      - 最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。     - 该字段不传（或传为字符串“0”）时，则查询默认企业项目下的资源。  > 关于企业项目ID的获取及企业项目特性的详细信息，请参见《[企业管理服务用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0126101490.html)》。
      * @return xEnterpriseProjectID
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

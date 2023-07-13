@@ -5,7 +5,20 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.css.v2.model.*;
+import com.huaweicloud.sdk.css.v2.model.CreateClusterReq;
+import com.huaweicloud.sdk.css.v2.model.CreateClusterRequest;
+import com.huaweicloud.sdk.css.v2.model.CreateClusterResponse;
+import com.huaweicloud.sdk.css.v2.model.RestartClusterReq;
+import com.huaweicloud.sdk.css.v2.model.RestartClusterRequest;
+import com.huaweicloud.sdk.css.v2.model.RestartClusterResponse;
+import com.huaweicloud.sdk.css.v2.model.RollingRestartReq;
+import com.huaweicloud.sdk.css.v2.model.RollingRestartRequest;
+import com.huaweicloud.sdk.css.v2.model.RollingRestartResponse;
+import com.huaweicloud.sdk.css.v2.model.StartAutoCreateSnapshotsReq;
+import com.huaweicloud.sdk.css.v2.model.StartAutoCreateSnapshotsRequest;
+import com.huaweicloud.sdk.css.v2.model.StartAutoCreateSnapshotsResponse;
+import com.huaweicloud.sdk.css.v2.model.StopAutoCreateSnapshotsRequest;
+import com.huaweicloud.sdk.css.v2.model.StopAutoCreateSnapshotsResponse;
 
 @SuppressWarnings("unchecked")
 public class CssMeta {

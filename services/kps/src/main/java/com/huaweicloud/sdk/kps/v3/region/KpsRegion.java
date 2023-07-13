@@ -42,6 +42,17 @@ public class KpsRegion {
     public static final Region AP_SOUTHEAST_2 =
         new Region("ap-southeast-2", "https://kms.ap-southeast-2.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://kms.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://kms.na-mexico-1.myhuaweicloud.com");
+
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://kms.af-south-1.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://kms.cn-north-9.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://kms.cn-south-4.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("KPS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -61,6 +72,11 @@ public class KpsRegion {
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("la-north-2", LA_NORTH_2);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("na-mexico-1", NA_MEXICO_1);
+        map.put("af-south-1", AF_SOUTH_1);
+        map.put("cn-north-9", CN_NORTH_9);
+        map.put("cn-south-4", CN_SOUTH_4);
         return Collections.unmodifiableMap(map);
     }
 

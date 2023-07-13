@@ -24,7 +24,7 @@ public class ActionOnComponentSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
-    private Source source;
+    private ActionOnComponentSource source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_limit")
@@ -54,7 +54,7 @@ public class ActionOnComponentSpec {
     }
 
     /**
-     * 副本数目。
+     * 实例个数。
      * @return replica
      */
     public Integer getReplica() {
@@ -65,14 +65,14 @@ public class ActionOnComponentSpec {
         this.replica = replica;
     }
 
-    public ActionOnComponentSpec withSource(Source source) {
+    public ActionOnComponentSpec withSource(ActionOnComponentSource source) {
         this.source = source;
         return this;
     }
 
-    public ActionOnComponentSpec withSource(Consumer<Source> sourceSetter) {
+    public ActionOnComponentSpec withSource(Consumer<ActionOnComponentSource> sourceSetter) {
         if (this.source == null) {
-            this.source = new Source();
+            this.source = new ActionOnComponentSource();
             sourceSetter.accept(this.source);
         }
 
@@ -83,11 +83,11 @@ public class ActionOnComponentSpec {
      * Get source
      * @return source
      */
-    public Source getSource() {
+    public ActionOnComponentSource getSource() {
         return source;
     }
 
-    public void setSource(Source source) {
+    public void setSource(ActionOnComponentSource source) {
         this.source = source;
     }
 

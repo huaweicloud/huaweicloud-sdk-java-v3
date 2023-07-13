@@ -5,7 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.eihealth.v2.model.*;
+import com.huaweicloud.sdk.eihealth.v2.model.AdmetWithCustomRequest;
+import com.huaweicloud.sdk.eihealth.v2.model.ShowAdmetWithCustomPropsRequest;
+import com.huaweicloud.sdk.eihealth.v2.model.ShowAdmetWithCustomPropsResponse;
 
 @SuppressWarnings("unchecked")
 public class EiHealthMeta {

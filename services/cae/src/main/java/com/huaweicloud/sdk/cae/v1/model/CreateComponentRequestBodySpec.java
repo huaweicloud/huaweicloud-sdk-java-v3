@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class CreateComponentRequestBodySpec {
 
     /**
-     * 语言/运行时，例如：Java8、tomcat8。
+     * 语言/运行时。
      */
     public static final class RuntimeEnum {
 
@@ -158,7 +158,7 @@ public class CreateComponentRequestBodySpec {
     }
 
     /**
-     * 语言/运行时，例如：Java8、tomcat8。
+     * 语言/运行时。
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -175,7 +175,7 @@ public class CreateComponentRequestBodySpec {
     }
 
     /**
-     * 副本数目。
+     * 实例个数。
      * @return replica
      */
     public Integer getReplica() {

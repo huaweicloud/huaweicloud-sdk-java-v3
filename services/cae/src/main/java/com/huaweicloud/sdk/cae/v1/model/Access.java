@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Access
+ * 访问方式。
  */
 public class Access {
 
@@ -21,7 +21,7 @@ public class Access {
     private String address;
 
     /**
-     * 类型。
+     * 访问方式类型。
      */
     public static final class TypeEnum {
 
@@ -101,7 +101,7 @@ public class Access {
     }
 
     /**
-     * 地址。
+     * 访问地址。
      * @return address
      */
     public String getAddress() {
@@ -118,7 +118,7 @@ public class Access {
     }
 
     /**
-     * 类型。
+     * 访问方式类型。
      * @return type
      */
     public TypeEnum getType() {

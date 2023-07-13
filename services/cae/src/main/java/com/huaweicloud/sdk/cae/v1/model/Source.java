@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Source
+ * 源信息。
  */
 public class Source {
 
@@ -22,7 +22,7 @@ public class Source {
     private Repo code;
 
     /**
-     * 代码源类型。
+     * 源类型。
      */
     public static final class TypeEnum {
 
@@ -103,7 +103,7 @@ public class Source {
     private TypeEnum type;
 
     /**
-     * 代码源管理平台。
+     * 源子类型。 - 源类型为code时，子类型表示不同的代码仓库，如DevCloud（CodeArts)、GitLab、GitHub、Gitee、Bitbucket。 - 源类型为softwarePackage时，子类型表示不同的软件包仓库，如BinObs、BinDevCloud（CodeArts软件发布库)。
      */
     public static final class SubTypeEnum {
 
@@ -244,7 +244,7 @@ public class Source {
     }
 
     /**
-     * 代码源类型。
+     * 源类型。
      * @return type
      */
     public TypeEnum getType() {
@@ -261,7 +261,7 @@ public class Source {
     }
 
     /**
-     * 代码源管理平台。
+     * 源子类型。 - 源类型为code时，子类型表示不同的代码仓库，如DevCloud（CodeArts)、GitLab、GitHub、Gitee、Bitbucket。 - 源类型为softwarePackage时，子类型表示不同的软件包仓库，如BinObs、BinDevCloud（CodeArts软件发布库)。
      * @return subType
      */
     public SubTypeEnum getSubType() {
@@ -278,7 +278,7 @@ public class Source {
     }
 
     /**
-     * url代码地址。
+     * url地址。 - 源类型为image时，url地址为镜像地址。 - 源类型为code时，url地址为git地址。 - 源类型为softwarePackage时，url地址为软件包地址。
      * @return url
      */
     public String getUrl() {

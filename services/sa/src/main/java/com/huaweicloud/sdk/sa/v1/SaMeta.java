@@ -5,7 +5,12 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.sa.v1.model.*;
+import com.huaweicloud.sdk.sa.v1.model.CheckProductHealthyRequest;
+import com.huaweicloud.sdk.sa.v1.model.CheckProductHealthyResponse;
+import com.huaweicloud.sdk.sa.v1.model.Events;
+import com.huaweicloud.sdk.sa.v1.model.ImportEventsRequest;
+import com.huaweicloud.sdk.sa.v1.model.ImportEventsResponse;
+import com.huaweicloud.sdk.sa.v1.model.ProductInfo;
 
 @SuppressWarnings("unchecked")
 public class SaMeta {
