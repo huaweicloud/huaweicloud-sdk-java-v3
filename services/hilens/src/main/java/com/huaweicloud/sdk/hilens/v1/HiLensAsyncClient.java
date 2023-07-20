@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hilens.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.hilens.v1.model.*;
+import com.huaweicloud.sdk.hilens.v1.model.ListDeviceAlarmsRequest;
+import com.huaweicloud.sdk.hilens.v1.model.ListDeviceAlarmsResponse;
+import com.huaweicloud.sdk.hilens.v1.model.ListDevicesRequest;
+import com.huaweicloud.sdk.hilens.v1.model.ListDevicesResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +19,8 @@ public class HiLensAsyncClient {
     }
 
     public static ClientBuilder<HiLensAsyncClient> newBuilder() {
-        return new ClientBuilder<>(HiLensAsyncClient::new);
+        ClientBuilder<HiLensAsyncClient> clientBuilder = new ClientBuilder<>(HiLensAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

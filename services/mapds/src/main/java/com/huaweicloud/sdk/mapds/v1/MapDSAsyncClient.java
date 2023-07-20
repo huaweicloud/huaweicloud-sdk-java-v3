@@ -3,7 +3,16 @@ package com.huaweicloud.sdk.mapds.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.mapds.v1.model.*;
+import com.huaweicloud.sdk.mapds.v1.model.CreateCredentialRequest;
+import com.huaweicloud.sdk.mapds.v1.model.CreateCredentialResponse;
+import com.huaweicloud.sdk.mapds.v1.model.CreateSasTokenRequest;
+import com.huaweicloud.sdk.mapds.v1.model.CreateSasTokenResponse;
+import com.huaweicloud.sdk.mapds.v1.model.DeleteCedentialRequest;
+import com.huaweicloud.sdk.mapds.v1.model.DeleteCedentialResponse;
+import com.huaweicloud.sdk.mapds.v1.model.ShowCredentialRequest;
+import com.huaweicloud.sdk.mapds.v1.model.ShowCredentialResponse;
+import com.huaweicloud.sdk.mapds.v1.model.ShowMapTileRequest;
+import com.huaweicloud.sdk.mapds.v1.model.ShowMapTileResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +25,8 @@ public class MapDSAsyncClient {
     }
 
     public static ClientBuilder<MapDSAsyncClient> newBuilder() {
-        return new ClientBuilder<>(MapDSAsyncClient::new);
+        ClientBuilder<MapDSAsyncClient> clientBuilder = new ClientBuilder<>(MapDSAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

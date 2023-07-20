@@ -3,7 +3,22 @@ package com.huaweicloud.sdk.imagesearch.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.imagesearch.v1.model.*;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunAddPictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunAddPictureResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunCheckPictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunCheckPictureResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunCreateInstanceRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunCreateInstanceResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunDeleteInstanceRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunDeleteInstanceResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunDeletePictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunDeletePictureResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunModifyPictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunModifyPictureResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunQueryInstanceRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunQueryInstanceResponse;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunSearchPictureRequest;
+import com.huaweicloud.sdk.imagesearch.v1.model.RunSearchPictureResponse;
 
 public class ImageSearchClient {
 
@@ -14,7 +29,8 @@ public class ImageSearchClient {
     }
 
     public static ClientBuilder<ImageSearchClient> newBuilder() {
-        return new ClientBuilder<>(ImageSearchClient::new);
+        ClientBuilder<ImageSearchClient> clientBuilder = new ClientBuilder<>(ImageSearchClient::new);
+        return clientBuilder;
     }
 
     /**

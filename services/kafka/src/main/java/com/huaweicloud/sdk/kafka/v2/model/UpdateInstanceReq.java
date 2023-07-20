@@ -41,7 +41,7 @@ public class UpdateInstanceReq {
     private String securityGroupId;
 
     /**
-     * 容量阈值策略。 支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 
+     * 容量阈值策略。  支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 
      */
     public static final class RetentionPolicyEnum {
 
@@ -194,7 +194,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 安全组ID。
+     * 安全组ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -211,7 +211,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 容量阈值策略。 支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 
+     * 容量阈值策略。  支持两种策略模式： - produce_reject: 生产受限 - time_base: 自动删除 
      * @return retentionPolicy
      */
     public RetentionPolicyEnum getRetentionPolicy() {

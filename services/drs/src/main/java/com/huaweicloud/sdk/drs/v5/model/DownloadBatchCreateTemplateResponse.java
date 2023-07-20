@@ -1,14 +1,15 @@
-package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
+package com.huaweicloud.sdk.drs.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * ErrorResponse
+ * Response Object
  */
-public class ErrorResponse {
+public class DownloadBatchCreateTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
@@ -20,7 +21,7 @@ public class ErrorResponse {
 
     private String errorMsg;
 
-    public ErrorResponse withErrorCode(String errorCode) {
+    public DownloadBatchCreateTemplateResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
@@ -37,13 +38,13 @@ public class ErrorResponse {
         this.errorCode = errorCode;
     }
 
-    public ErrorResponse withErrorMsg(String errorMsg) {
+    public DownloadBatchCreateTemplateResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
     /**
-     * 错误消息。
+     * 错误描述。
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -62,7 +63,7 @@ public class ErrorResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ErrorResponse that = (ErrorResponse) obj;
+        DownloadBatchCreateTemplateResponse that = (DownloadBatchCreateTemplateResponse) obj;
         return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
@@ -74,7 +75,7 @@ public class ErrorResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ErrorResponse {\n");
+        sb.append("class DownloadBatchCreateTemplateResponse {\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("}");

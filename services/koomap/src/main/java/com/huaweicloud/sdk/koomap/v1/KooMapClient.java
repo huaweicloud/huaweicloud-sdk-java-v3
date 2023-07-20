@@ -3,7 +3,34 @@ package com.huaweicloud.sdk.koomap.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.koomap.v1.model.*;
+import com.huaweicloud.sdk.koomap.v1.model.CreateTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.CreateTaskResponse;
+import com.huaweicloud.sdk.koomap.v1.model.CreateWorkspaceRequest;
+import com.huaweicloud.sdk.koomap.v1.model.CreateWorkspaceResponse;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteWorkspaceRequest;
+import com.huaweicloud.sdk.koomap.v1.model.DeleteWorkspaceResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ListImageBaseInfoResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ListTaskInfoRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ListTaskInfoResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ListUsageInfoRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ListUsageInfoResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ListWorkspaceRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ListWorkspaceResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StartTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StartTaskResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StopTaskRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StopTaskResponse;
+import com.huaweicloud.sdk.koomap.v1.model.UpdateTaskArchivedStatusRequest;
+import com.huaweicloud.sdk.koomap.v1.model.UpdateTaskArchivedStatusResponse;
+import com.huaweicloud.sdk.koomap.v1.model.UpdateWorkspaceRequest;
+import com.huaweicloud.sdk.koomap.v1.model.UpdateWorkspaceResponse;
+import com.huaweicloud.sdk.koomap.v1.model.ValidateImageRequest;
+import com.huaweicloud.sdk.koomap.v1.model.ValidateImageResponse;
 
 public class KooMapClient {
 
@@ -14,7 +41,8 @@ public class KooMapClient {
     }
 
     public static ClientBuilder<KooMapClient> newBuilder() {
-        return new ClientBuilder<>(KooMapClient::new);
+        ClientBuilder<KooMapClient> clientBuilder = new ClientBuilder<>(KooMapClient::new);
+        return clientBuilder;
     }
 
     /**

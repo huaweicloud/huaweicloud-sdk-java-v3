@@ -141,7 +141,7 @@ public class AttachmentDetails {
     }
 
     /**
-     * 连接状态:pending|available|modifying|deleting|deleted|failed|pending_acceptance|rejected|initiating_request
+     * 连接状态:pending|available|modifying|deleting|deleted|failed|pending_acceptance|rejected|initiating_request|freezed
      * @return state
      */
     public String getState() {
@@ -276,7 +276,7 @@ public class AttachmentDetails {
     }
 
     /**
-     * - vgw：云专线的虚拟网关 - vpn：vpn网关 - peering：对等连接，通过云连接CC加载不同区域的企业路由器来创建“对等连接（Peering）”连接
+     * 内部连接关联的资源类型: - vgw：云专线的虚拟网关 - vpn：vpn网关 -  - peering：对等连接，通过云连接CC加载不同区域的企业路由器来创建“对等连接（Peering）”连接 -  -  - vpc：虚拟私有云 -
      * @return resourceType
      */
     public String getResourceType() {

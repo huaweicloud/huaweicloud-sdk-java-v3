@@ -3,7 +3,60 @@ package com.huaweicloud.sdk.nlp.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.nlp.v2.model.*;
+import com.huaweicloud.sdk.nlp.v2.model.RunAspectSentimentAdvanceRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunAspectSentimentAdvanceResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunAspectSentimentRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunAspectSentimentResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunClassificationRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunClassificationResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunConstituencyParserRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunConstituencyParserResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunDependencyParserRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunDependencyParserResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunDocClassificationRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunDocClassificationResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunDomainSentimentRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunDomainSentimentResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunEntityLinkingRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunEntityLinkingResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunEntitySentimentRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunEntitySentimentResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunEventExtractionRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunEventExtractionResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunFileTranslationRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunFileTranslationResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunGetFileTranslationResultRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunGetFileTranslationResultResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunKeywordExtractRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunKeywordExtractResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunLanguageDetectionRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunLanguageDetectionResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunMultiGrainedSegmentRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunMultiGrainedSegmentResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunNerDomainRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunNerDomainResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunNerRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunNerResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunPoemRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunPoemResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunSegmentRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunSegmentResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunSemanticParserRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunSemanticParserResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunSentenceEmbeddingRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunSentenceEmbeddingResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunSentimentRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunSentimentResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunSummaryDomainRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunSummaryDomainResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunSummaryRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunSummaryResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunTextSimilarityAdvanceRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunTextSimilarityAdvanceResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunTextSimilarityRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunTextSimilarityResponse;
+import com.huaweicloud.sdk.nlp.v2.model.RunTextTranslationRequest;
+import com.huaweicloud.sdk.nlp.v2.model.RunTextTranslationResponse;
 
 public class NlpClient {
 
@@ -14,7 +67,8 @@ public class NlpClient {
     }
 
     public static ClientBuilder<NlpClient> newBuilder() {
-        return new ClientBuilder<>(NlpClient::new, "BasicCredentials");
+        ClientBuilder<NlpClient> clientBuilder = new ClientBuilder<>(NlpClient::new, "BasicCredentials");
+        return clientBuilder;
     }
 
     /**

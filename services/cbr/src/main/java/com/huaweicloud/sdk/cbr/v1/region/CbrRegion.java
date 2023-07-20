@@ -12,6 +12,8 @@ import java.util.Objects;
 
 public class CbrRegion {
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://cbr.eu-west-101.myhuaweicloud.eu");
+
     public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://cbr.cn-north-1.myhuaweicloud.com");
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://cbr.cn-north-4.myhuaweicloud.com");
@@ -63,6 +65,7 @@ public class CbrRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
+        map.put("eu-west-101", EU_WEST_101);
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-south-1", CN_SOUTH_1);

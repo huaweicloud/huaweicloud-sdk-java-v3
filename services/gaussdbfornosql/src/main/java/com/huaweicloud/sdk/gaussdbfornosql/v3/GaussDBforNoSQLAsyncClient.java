@@ -3,7 +3,180 @@ package com.huaweicloud.sdk.gaussdbfornosql.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.gaussdbfornosql.v3.model.*;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckWeekPasswordRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckWeekPasswordResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CompareConfigurationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CompareConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CopyConfigurationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CopyConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateBackRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateBackResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateColdVolumeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateColdVolumeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateConfigurationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateInstanceRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteBackupRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteBackupResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteConfigurationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbUserRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbUserResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDisasterRecoveryRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDisasterRecoveryResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationDatastoresRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationDatastoresResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationTemplatesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationTemplatesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDatastoresRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDatastoresResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbUsersRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDedicatedResourcesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDedicatedResourcesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListEpsQuotasRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListEpsQuotasResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorInfosRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorInfosResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByResourceTagsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByResourceTagsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByTagsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByTagsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyEpsQuotasRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyEpsQuotasResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPortRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPortResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPublicIpRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPublicIpResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyVolumeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyVolumeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.PauseResumeDataSynchronizationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.PauseResumeDataSynchronizationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetDbUserPasswordRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetDbUserPasswordResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetPasswordRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetPasswordResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeColdVolumeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeColdVolumeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeInstanceRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeInstanceVolumeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeInstanceVolumeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsNewRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsNewResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApiVersionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplicableInstancesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplicableInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowErrorLogRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowErrorLogResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowHighRiskCommandsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowHighRiskCommandsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceBiactiveRegionsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceBiactiveRegionsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceConfigurationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceRoleRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceRoleResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowIpNumRequirementRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowIpNumRequirementResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowModifyHistoryRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowModifyHistoryResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPauseResumeStutusRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowPauseResumeStutusResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRecyclePolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSslRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSslResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchToMasterRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchToMasterResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchToSlaveRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchToSlaveResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateClientNetworkRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateClientNetworkResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateSecurityGroupRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateSecurityGroupResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpgradeDbVersionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpgradeDbVersionResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +189,8 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     public static ClientBuilder<GaussDBforNoSQLAsyncClient> newBuilder() {
-        return new ClientBuilder<>(GaussDBforNoSQLAsyncClient::new);
+        ClientBuilder<GaussDBforNoSQLAsyncClient> clientBuilder = new ClientBuilder<>(GaussDBforNoSQLAsyncClient::new);
+        return clientBuilder;
     }
 
     /**
@@ -1930,6 +2104,37 @@ public class GaussDBforNoSQLAsyncClient {
         ShowHighRiskCommandsRequest request) {
         return new AsyncInvoker<ShowHighRiskCommandsRequest, ShowHighRiskCommandsResponse>(request,
             GaussDBforNoSQLMeta.showHighRiskCommands, hcClient);
+    }
+
+    /**
+     * 查询实例可搭建双活关系的Region
+     *
+     * 查询实例可搭建双活关系的Region。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceBiactiveRegionsRequest 请求对象
+     * @return CompletableFuture<ShowInstanceBiactiveRegionsResponse>
+     */
+    public CompletableFuture<ShowInstanceBiactiveRegionsResponse> showInstanceBiactiveRegionsAsync(
+        ShowInstanceBiactiveRegionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showInstanceBiactiveRegions);
+    }
+
+    /**
+     * 查询实例可搭建双活关系的Region
+     *
+     * 查询实例可搭建双活关系的Region。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceBiactiveRegionsRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse>
+     */
+    public AsyncInvoker<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> showInstanceBiactiveRegionsAsyncInvoker(
+        ShowInstanceBiactiveRegionsRequest request) {
+        return new AsyncInvoker<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse>(request,
+            GaussDBforNoSQLMeta.showInstanceBiactiveRegions, hcClient);
     }
 
     /**

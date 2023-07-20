@@ -3,7 +3,28 @@ package com.huaweicloud.sdk.eds.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.eds.v1.model.*;
+import com.huaweicloud.sdk.eds.v1.model.AddConnectorUserRequest;
+import com.huaweicloud.sdk.eds.v1.model.AddConnectorUserResponse;
+import com.huaweicloud.sdk.eds.v1.model.CancelContractRequest;
+import com.huaweicloud.sdk.eds.v1.model.CancelContractResponse;
+import com.huaweicloud.sdk.eds.v1.model.CommitContractRequest;
+import com.huaweicloud.sdk.eds.v1.model.CommitContractResponse;
+import com.huaweicloud.sdk.eds.v1.model.DeleteConnectorUserRequest;
+import com.huaweicloud.sdk.eds.v1.model.DeleteConnectorUserResponse;
+import com.huaweicloud.sdk.eds.v1.model.ListConnectorsByInstanceMangerRequest;
+import com.huaweicloud.sdk.eds.v1.model.ListConnectorsByInstanceMangerResponse;
+import com.huaweicloud.sdk.eds.v1.model.ListConnectorsByInstanceUserRequest;
+import com.huaweicloud.sdk.eds.v1.model.ListConnectorsByInstanceUserResponse;
+import com.huaweicloud.sdk.eds.v1.model.ListOffersRequest;
+import com.huaweicloud.sdk.eds.v1.model.ListOffersResponse;
+import com.huaweicloud.sdk.eds.v1.model.ShowAuditLogRequest;
+import com.huaweicloud.sdk.eds.v1.model.ShowAuditLogResponse;
+import com.huaweicloud.sdk.eds.v1.model.ShowConnectorRequest;
+import com.huaweicloud.sdk.eds.v1.model.ShowConnectorResponse;
+import com.huaweicloud.sdk.eds.v1.model.ShowContractRequest;
+import com.huaweicloud.sdk.eds.v1.model.ShowContractResponse;
+import com.huaweicloud.sdk.eds.v1.model.ShowOfferRequest;
+import com.huaweicloud.sdk.eds.v1.model.ShowOfferResponse;
 
 public class EdsClient {
 
@@ -14,7 +35,8 @@ public class EdsClient {
     }
 
     public static ClientBuilder<EdsClient> newBuilder() {
-        return new ClientBuilder<>(EdsClient::new);
+        ClientBuilder<EdsClient> clientBuilder = new ClientBuilder<>(EdsClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -143,6 +143,11 @@ public class ListEnterpriseRoutersRequest {
     private List<String> resourceId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owned_by_self")
+
+    private Boolean ownedBySelf;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
     private List<String> sortKey = null;
@@ -390,6 +395,23 @@ public class ListEnterpriseRoutersRequest {
         this.resourceId = resourceId;
     }
 
+    public ListEnterpriseRoutersRequest withOwnedBySelf(Boolean ownedBySelf) {
+        this.ownedBySelf = ownedBySelf;
+        return this;
+    }
+
+    /**
+     * 过滤资源是否属于当前租户；取值为true时，只查属于当前租户的资源，不包括共享资源；为false时，查询当前租户及共享给该租户的资源；
+     * @return ownedBySelf
+     */
+    public Boolean getOwnedBySelf() {
+        return ownedBySelf;
+    }
+
+    public void setOwnedBySelf(Boolean ownedBySelf) {
+        this.ownedBySelf = ownedBySelf;
+    }
+
     public ListEnterpriseRoutersRequest withSortKey(List<String> sortKey) {
         this.sortKey = sortKey;
         return this;
@@ -468,13 +490,13 @@ public class ListEnterpriseRoutersRequest {
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.state, that.state) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir);
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.ownedBySelf, that.ownedBySelf)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, enterpriseProjectId, state, id, resourceId, sortKey, sortDir);
+        return Objects.hash(limit, marker, enterpriseProjectId, state, id, resourceId, ownedBySelf, sortKey, sortDir);
     }
 
     @Override
@@ -487,6 +509,7 @@ public class ListEnterpriseRoutersRequest {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    ownedBySelf: ").append(toIndentedString(ownedBySelf)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("}");

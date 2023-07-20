@@ -3,7 +3,46 @@ package com.huaweicloud.sdk.iotedge.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.iotedge.v3.model.*;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateAppInstanceRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateAppInstanceResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateAppRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateAppResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateAppVersionRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateAppVersionResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterInstallCmdRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterInstallCmdResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.CreateClusterResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppInstanceRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppInstanceResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppVersionRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.DeleteAppVersionResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.DeleteClusterRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.DeleteClusterResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.DownloadAppVersionRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.DownloadAppVersionResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppImageRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppImageResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppInstanceHistoryRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppInstanceHistoryResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppInstancesRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppInstancesResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppVersionsRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppVersionsResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppsRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListAppsResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClustersRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ListClustersResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowAppRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowAppResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowAppVersionRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowAppVersionResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.ShowClusterResponse;
+import com.huaweicloud.sdk.iotedge.v3.model.UpdateAppInstanceRequest;
+import com.huaweicloud.sdk.iotedge.v3.model.UpdateAppInstanceResponse;
 
 public class IoTEdgeClient {
 
@@ -14,7 +53,8 @@ public class IoTEdgeClient {
     }
 
     public static ClientBuilder<IoTEdgeClient> newBuilder() {
-        return new ClientBuilder<>(IoTEdgeClient::new);
+        ClientBuilder<IoTEdgeClient> clientBuilder = new ClientBuilder<>(IoTEdgeClient::new);
+        return clientBuilder;
     }
 
     /**

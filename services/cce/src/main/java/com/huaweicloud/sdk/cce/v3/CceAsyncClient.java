@@ -1,6 +1,85 @@
 package com.huaweicloud.sdk.cce.v3;
 
-import com.huaweicloud.sdk.cce.v3.model.*;
+import com.huaweicloud.sdk.cce.v3.model.AddNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.AddNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.AwakeClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.AwakeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskRequest;
+import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateCloudPersistentVolumeClaimsRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateCloudPersistentVolumeClaimsResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateKubernetesClusterCertRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateKubernetesClusterCertResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateNodePoolResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteCloudPersistentVolumeClaimsRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteCloudPersistentVolumeClaimsResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.HibernateClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListClustersRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListClustersResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListNodesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListNodesResponse;
+import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.MigrateNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskRequest;
+import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.RemoveNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.RemoveNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.ResetNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.ResetNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskRequest;
+import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +95,8 @@ public class CceAsyncClient {
     }
 
     public static ClientBuilder<CceAsyncClient> newBuilder() {
-        return new ClientBuilder<>(CceAsyncClient::new);
+        ClientBuilder<CceAsyncClient> clientBuilder = new ClientBuilder<>(CceAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

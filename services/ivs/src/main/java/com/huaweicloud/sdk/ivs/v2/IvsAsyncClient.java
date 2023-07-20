@@ -3,7 +3,18 @@ package com.huaweicloud.sdk.ivs.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.ivs.v2.model.*;
+import com.huaweicloud.sdk.ivs.v2.model.DetectExtentionByIdCardImageRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectExtentionByIdCardImageResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectExtentionByNameAndIdRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectExtentionByNameAndIdResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByIdCardImageRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByIdCardImageResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByNameAndIdRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByNameAndIdResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByVideoAndIdCardImageRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByVideoAndIdCardImageResponse;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByVideoAndNameAndIdRequest;
+import com.huaweicloud.sdk.ivs.v2.model.DetectStandardByVideoAndNameAndIdResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +27,8 @@ public class IvsAsyncClient {
     }
 
     public static ClientBuilder<IvsAsyncClient> newBuilder() {
-        return new ClientBuilder<>(IvsAsyncClient::new);
+        ClientBuilder<IvsAsyncClient> clientBuilder = new ClientBuilder<>(IvsAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -3,7 +3,96 @@ package com.huaweicloud.sdk.er.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.er.v3.model.*;
+import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableRequest;
+import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableResponse;
+import com.huaweicloud.sdk.er.v3.model.BatchCreateResourceTagsRequest;
+import com.huaweicloud.sdk.er.v3.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.er.v3.model.ChangeAvailabilityZoneRequest;
+import com.huaweicloud.sdk.er.v3.model.ChangeAvailabilityZoneResponse;
+import com.huaweicloud.sdk.er.v3.model.CreateEnterpriseRouterRequest;
+import com.huaweicloud.sdk.er.v3.model.CreateEnterpriseRouterResponse;
+import com.huaweicloud.sdk.er.v3.model.CreateFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.CreateFlowLogResponse;
+import com.huaweicloud.sdk.er.v3.model.CreateResourceTagRequest;
+import com.huaweicloud.sdk.er.v3.model.CreateResourceTagResponse;
+import com.huaweicloud.sdk.er.v3.model.CreateRouteTableRequest;
+import com.huaweicloud.sdk.er.v3.model.CreateRouteTableResponse;
+import com.huaweicloud.sdk.er.v3.model.CreateStaticRouteRequest;
+import com.huaweicloud.sdk.er.v3.model.CreateStaticRouteResponse;
+import com.huaweicloud.sdk.er.v3.model.CreateVpcAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.CreateVpcAttachmentResponse;
+import com.huaweicloud.sdk.er.v3.model.DeleteEnterpriseRouterRequest;
+import com.huaweicloud.sdk.er.v3.model.DeleteEnterpriseRouterResponse;
+import com.huaweicloud.sdk.er.v3.model.DeleteFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.DeleteFlowLogResponse;
+import com.huaweicloud.sdk.er.v3.model.DeleteResourceTagRequest;
+import com.huaweicloud.sdk.er.v3.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.er.v3.model.DeleteRouteTableRequest;
+import com.huaweicloud.sdk.er.v3.model.DeleteRouteTableResponse;
+import com.huaweicloud.sdk.er.v3.model.DeleteStaticRouteRequest;
+import com.huaweicloud.sdk.er.v3.model.DeleteStaticRouteResponse;
+import com.huaweicloud.sdk.er.v3.model.DeleteVpcAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.DeleteVpcAttachmentResponse;
+import com.huaweicloud.sdk.er.v3.model.DisableFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.DisableFlowLogResponse;
+import com.huaweicloud.sdk.er.v3.model.DisablePropagationRequest;
+import com.huaweicloud.sdk.er.v3.model.DisablePropagationResponse;
+import com.huaweicloud.sdk.er.v3.model.DisassociateRouteTableRequest;
+import com.huaweicloud.sdk.er.v3.model.DisassociateRouteTableResponse;
+import com.huaweicloud.sdk.er.v3.model.EnableFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.EnableFlowLogResponse;
+import com.huaweicloud.sdk.er.v3.model.EnablePropagationRequest;
+import com.huaweicloud.sdk.er.v3.model.EnablePropagationResponse;
+import com.huaweicloud.sdk.er.v3.model.ListAssociationsRequest;
+import com.huaweicloud.sdk.er.v3.model.ListAssociationsResponse;
+import com.huaweicloud.sdk.er.v3.model.ListAttachmentsRequest;
+import com.huaweicloud.sdk.er.v3.model.ListAttachmentsResponse;
+import com.huaweicloud.sdk.er.v3.model.ListAvailabilityZoneRequest;
+import com.huaweicloud.sdk.er.v3.model.ListAvailabilityZoneResponse;
+import com.huaweicloud.sdk.er.v3.model.ListEffectiveRoutesRequest;
+import com.huaweicloud.sdk.er.v3.model.ListEffectiveRoutesResponse;
+import com.huaweicloud.sdk.er.v3.model.ListEnterpriseRoutersRequest;
+import com.huaweicloud.sdk.er.v3.model.ListEnterpriseRoutersResponse;
+import com.huaweicloud.sdk.er.v3.model.ListFlowLogsRequest;
+import com.huaweicloud.sdk.er.v3.model.ListFlowLogsResponse;
+import com.huaweicloud.sdk.er.v3.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.er.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.er.v3.model.ListPropagationsRequest;
+import com.huaweicloud.sdk.er.v3.model.ListPropagationsResponse;
+import com.huaweicloud.sdk.er.v3.model.ListRouteTablesRequest;
+import com.huaweicloud.sdk.er.v3.model.ListRouteTablesResponse;
+import com.huaweicloud.sdk.er.v3.model.ListStaticRoutesRequest;
+import com.huaweicloud.sdk.er.v3.model.ListStaticRoutesResponse;
+import com.huaweicloud.sdk.er.v3.model.ListVpcAttachmentsRequest;
+import com.huaweicloud.sdk.er.v3.model.ListVpcAttachmentsResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowAttachmentResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowEnterpriseRouterRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowEnterpriseRouterResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowFlowLogResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowResourceTagRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowResourceTagResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowRouteTableRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowRouteTableResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowStaticRouteRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowStaticRouteResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowVpcAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowVpcAttachmentResponse;
+import com.huaweicloud.sdk.er.v3.model.UpdateAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.UpdateAttachmentResponse;
+import com.huaweicloud.sdk.er.v3.model.UpdateEnterpriseRouterRequest;
+import com.huaweicloud.sdk.er.v3.model.UpdateEnterpriseRouterResponse;
+import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogResponse;
+import com.huaweicloud.sdk.er.v3.model.UpdateRouteTableRequest;
+import com.huaweicloud.sdk.er.v3.model.UpdateRouteTableResponse;
+import com.huaweicloud.sdk.er.v3.model.UpdateStaticRouteRequest;
+import com.huaweicloud.sdk.er.v3.model.UpdateStaticRouteResponse;
+import com.huaweicloud.sdk.er.v3.model.UpdateVpcAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.UpdateVpcAttachmentResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +105,8 @@ public class ErAsyncClient {
     }
 
     public static ClientBuilder<ErAsyncClient> newBuilder() {
-        return new ClientBuilder<>(ErAsyncClient::new);
+        ClientBuilder<ErAsyncClient> clientBuilder = new ClientBuilder<>(ErAsyncClient::new);
+        return clientBuilder;
     }
 
     /**
@@ -418,6 +508,209 @@ public class ErAsyncClient {
     }
 
     /**
+     * 创建流日志
+     *
+     * 给ER实例创建流日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFlowLogRequest 请求对象
+     * @return CompletableFuture<CreateFlowLogResponse>
+     */
+    public CompletableFuture<CreateFlowLogResponse> createFlowLogAsync(CreateFlowLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.createFlowLog);
+    }
+
+    /**
+     * 创建流日志
+     *
+     * 给ER实例创建流日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFlowLogRequest 请求对象
+     * @return AsyncInvoker<CreateFlowLogRequest, CreateFlowLogResponse>
+     */
+    public AsyncInvoker<CreateFlowLogRequest, CreateFlowLogResponse> createFlowLogAsyncInvoker(
+        CreateFlowLogRequest request) {
+        return new AsyncInvoker<CreateFlowLogRequest, CreateFlowLogResponse>(request, ErMeta.createFlowLog, hcClient);
+    }
+
+    /**
+     * 删除流日志
+     *
+     * 删除流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFlowLogRequest 请求对象
+     * @return CompletableFuture<DeleteFlowLogResponse>
+     */
+    public CompletableFuture<DeleteFlowLogResponse> deleteFlowLogAsync(DeleteFlowLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.deleteFlowLog);
+    }
+
+    /**
+     * 删除流日志
+     *
+     * 删除流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFlowLogRequest 请求对象
+     * @return AsyncInvoker<DeleteFlowLogRequest, DeleteFlowLogResponse>
+     */
+    public AsyncInvoker<DeleteFlowLogRequest, DeleteFlowLogResponse> deleteFlowLogAsyncInvoker(
+        DeleteFlowLogRequest request) {
+        return new AsyncInvoker<DeleteFlowLogRequest, DeleteFlowLogResponse>(request, ErMeta.deleteFlowLog, hcClient);
+    }
+
+    /**
+     * 关闭流日志
+     *
+     * 关闭流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisableFlowLogRequest 请求对象
+     * @return CompletableFuture<DisableFlowLogResponse>
+     */
+    public CompletableFuture<DisableFlowLogResponse> disableFlowLogAsync(DisableFlowLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.disableFlowLog);
+    }
+
+    /**
+     * 关闭流日志
+     *
+     * 关闭流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisableFlowLogRequest 请求对象
+     * @return AsyncInvoker<DisableFlowLogRequest, DisableFlowLogResponse>
+     */
+    public AsyncInvoker<DisableFlowLogRequest, DisableFlowLogResponse> disableFlowLogAsyncInvoker(
+        DisableFlowLogRequest request) {
+        return new AsyncInvoker<DisableFlowLogRequest, DisableFlowLogResponse>(request, ErMeta.disableFlowLog,
+            hcClient);
+    }
+
+    /**
+     * 开启流日志
+     *
+     * 开启流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableFlowLogRequest 请求对象
+     * @return CompletableFuture<EnableFlowLogResponse>
+     */
+    public CompletableFuture<EnableFlowLogResponse> enableFlowLogAsync(EnableFlowLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.enableFlowLog);
+    }
+
+    /**
+     * 开启流日志
+     *
+     * 开启流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableFlowLogRequest 请求对象
+     * @return AsyncInvoker<EnableFlowLogRequest, EnableFlowLogResponse>
+     */
+    public AsyncInvoker<EnableFlowLogRequest, EnableFlowLogResponse> enableFlowLogAsyncInvoker(
+        EnableFlowLogRequest request) {
+        return new AsyncInvoker<EnableFlowLogRequest, EnableFlowLogResponse>(request, ErMeta.enableFlowLog, hcClient);
+    }
+
+    /**
+     * 查询流日志列表
+     *
+     * 查询企业路由器实例下的流日志列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlowLogsRequest 请求对象
+     * @return CompletableFuture<ListFlowLogsResponse>
+     */
+    public CompletableFuture<ListFlowLogsResponse> listFlowLogsAsync(ListFlowLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.listFlowLogs);
+    }
+
+    /**
+     * 查询流日志列表
+     *
+     * 查询企业路由器实例下的流日志列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlowLogsRequest 请求对象
+     * @return AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>
+     */
+    public AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogsAsyncInvoker(
+        ListFlowLogsRequest request) {
+        return new AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>(request, ErMeta.listFlowLogs, hcClient);
+    }
+
+    /**
+     * 查询流日志详情
+     *
+     * 查询流日志详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFlowLogRequest 请求对象
+     * @return CompletableFuture<ShowFlowLogResponse>
+     */
+    public CompletableFuture<ShowFlowLogResponse> showFlowLogAsync(ShowFlowLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.showFlowLog);
+    }
+
+    /**
+     * 查询流日志详情
+     *
+     * 查询流日志详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFlowLogRequest 请求对象
+     * @return AsyncInvoker<ShowFlowLogRequest, ShowFlowLogResponse>
+     */
+    public AsyncInvoker<ShowFlowLogRequest, ShowFlowLogResponse> showFlowLogAsyncInvoker(ShowFlowLogRequest request) {
+        return new AsyncInvoker<ShowFlowLogRequest, ShowFlowLogResponse>(request, ErMeta.showFlowLog, hcClient);
+    }
+
+    /**
+     * 更新流日志基本信息
+     *
+     * 更新流日志基本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFlowLogRequest 请求对象
+     * @return CompletableFuture<UpdateFlowLogResponse>
+     */
+    public CompletableFuture<UpdateFlowLogResponse> updateFlowLogAsync(UpdateFlowLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.updateFlowLog);
+    }
+
+    /**
+     * 更新流日志基本信息
+     *
+     * 更新流日志基本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFlowLogRequest 请求对象
+     * @return AsyncInvoker<UpdateFlowLogRequest, UpdateFlowLogResponse>
+     */
+    public AsyncInvoker<UpdateFlowLogRequest, UpdateFlowLogResponse> updateFlowLogAsyncInvoker(
+        UpdateFlowLogRequest request) {
+        return new AsyncInvoker<UpdateFlowLogRequest, UpdateFlowLogResponse>(request, ErMeta.updateFlowLog, hcClient);
+    }
+
+    /**
      * 删除路由传播
      *
      * 解绑连接和路由表的传播关系。
@@ -505,6 +798,34 @@ public class ErAsyncClient {
         ListPropagationsRequest request) {
         return new AsyncInvoker<ListPropagationsRequest, ListPropagationsResponse>(request, ErMeta.listPropagations,
             hcClient);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 查询租户各类资源的使用情况，如企业路由器的使用量，VPC连接的使用量等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return CompletableFuture<ShowQuotasResponse>
+     */
+    public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.showQuotas);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 查询租户各类资源的使用情况，如企业路由器的使用量，VPC连接的使用量等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
+        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, ErMeta.showQuotas, hcClient);
     }
 
     /**
@@ -835,6 +1156,41 @@ public class ErAsyncClient {
         UpdateRouteTableRequest request) {
         return new AsyncInvoker<UpdateRouteTableRequest, UpdateRouteTableResponse>(request, ErMeta.updateRouteTable,
             hcClient);
+    }
+
+    /**
+     * 批量添加删除资源标签
+     *
+     * - 为指定实例批量添加或删除标签
+     * - 标签管理服务需要使用该接口批量管理实例的标签。
+     * - 一个资源上最多有10个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateResourceTagsResponse>
+     */
+    public CompletableFuture<BatchCreateResourceTagsResponse> batchCreateResourceTagsAsync(
+        BatchCreateResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.batchCreateResourceTags);
+    }
+
+    /**
+     * 批量添加删除资源标签
+     *
+     * - 为指定实例批量添加或删除标签
+     * - 标签管理服务需要使用该接口批量管理实例的标签。
+     * - 一个资源上最多有10个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTagsAsyncInvoker(
+        BatchCreateResourceTagsRequest request) {
+        return new AsyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>(request,
+            ErMeta.batchCreateResourceTags, hcClient);
     }
 
     /**

@@ -1,6 +1,39 @@
 package com.huaweicloud.sdk.cbh.v1;
 
-import com.huaweicloud.sdk.cbh.v1.model.*;
+import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceNetworkRequest;
+import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceNetworkResponse;
+import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceOrderRequest;
+import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceOrderResponse;
+import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceOrderRequest;
+import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceOrderResponse;
+import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceRequest;
+import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.cbh.v1.model.InstallInstanceEipRequest;
+import com.huaweicloud.sdk.cbh.v1.model.InstallInstanceEipResponse;
+import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceRequest;
+import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceResponse;
+import com.huaweicloud.sdk.cbh.v1.model.ListQuotaStatusRequest;
+import com.huaweicloud.sdk.cbh.v1.model.ListQuotaStatusResponse;
+import com.huaweicloud.sdk.cbh.v1.model.ResetLoginMethodRequest;
+import com.huaweicloud.sdk.cbh.v1.model.ResetLoginMethodResponse;
+import com.huaweicloud.sdk.cbh.v1.model.ResetPasswordRequest;
+import com.huaweicloud.sdk.cbh.v1.model.ResetPasswordResponse;
+import com.huaweicloud.sdk.cbh.v1.model.RestartCbhInstanceRequest;
+import com.huaweicloud.sdk.cbh.v1.model.RestartCbhInstanceResponse;
+import com.huaweicloud.sdk.cbh.v1.model.SearchQuotaRequest;
+import com.huaweicloud.sdk.cbh.v1.model.SearchQuotaResponse;
+import com.huaweicloud.sdk.cbh.v1.model.ShowAvailableZoneInfoRequest;
+import com.huaweicloud.sdk.cbh.v1.model.ShowAvailableZoneInfoResponse;
+import com.huaweicloud.sdk.cbh.v1.model.ShowNetworkConfigurationRequest;
+import com.huaweicloud.sdk.cbh.v1.model.ShowNetworkConfigurationResponse;
+import com.huaweicloud.sdk.cbh.v1.model.StartCbhInstanceRequest;
+import com.huaweicloud.sdk.cbh.v1.model.StartCbhInstanceResponse;
+import com.huaweicloud.sdk.cbh.v1.model.StopCbhInstanceRequest;
+import com.huaweicloud.sdk.cbh.v1.model.StopCbhInstanceResponse;
+import com.huaweicloud.sdk.cbh.v1.model.UninstallInstanceEipRequest;
+import com.huaweicloud.sdk.cbh.v1.model.UninstallInstanceEipResponse;
+import com.huaweicloud.sdk.cbh.v1.model.UpgradeCbhInstanceRequest;
+import com.huaweicloud.sdk.cbh.v1.model.UpgradeCbhInstanceResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +49,8 @@ public class CbhAsyncClient {
     }
 
     public static ClientBuilder<CbhAsyncClient> newBuilder() {
-        return new ClientBuilder<>(CbhAsyncClient::new);
+        ClientBuilder<CbhAsyncClient> clientBuilder = new ClientBuilder<>(CbhAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

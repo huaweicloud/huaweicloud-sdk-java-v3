@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -37,7 +36,7 @@ public class ListEnterpriseResourceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matches")
 
-    private List<Map<String, String>> matches = null;
+    private List<KvItem> matches = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
@@ -112,12 +111,12 @@ public class ListEnterpriseResourceRequestBody {
         this.action = action;
     }
 
-    public ListEnterpriseResourceRequestBody withMatches(List<Map<String, String>> matches) {
+    public ListEnterpriseResourceRequestBody withMatches(List<KvItem> matches) {
         this.matches = matches;
         return this;
     }
 
-    public ListEnterpriseResourceRequestBody addMatchesItem(Map<String, String> matchesItem) {
+    public ListEnterpriseResourceRequestBody addMatchesItem(KvItem matchesItem) {
         if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
@@ -125,7 +124,7 @@ public class ListEnterpriseResourceRequestBody {
         return this;
     }
 
-    public ListEnterpriseResourceRequestBody withMatches(Consumer<List<Map<String, String>>> matchesSetter) {
+    public ListEnterpriseResourceRequestBody withMatches(Consumer<List<KvItem>> matchesSetter) {
         if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
@@ -137,11 +136,11 @@ public class ListEnterpriseResourceRequestBody {
      * 查询指定键值对
      * @return matches
      */
-    public List<Map<String, String>> getMatches() {
+    public List<KvItem> getMatches() {
         return matches;
     }
 
-    public void setMatches(List<Map<String, String>> matches) {
+    public void setMatches(List<KvItem> matches) {
         this.matches = matches;
     }
 

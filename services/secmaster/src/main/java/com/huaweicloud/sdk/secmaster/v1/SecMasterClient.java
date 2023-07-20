@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.secmaster.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.secmaster.v1.model.*;
+import com.huaweicloud.sdk.secmaster.v1.model.CheckProductHealthyRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.CheckProductHealthyResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ImportEventsRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ImportEventsResponse;
 
 public class SecMasterClient {
 
@@ -14,7 +17,8 @@ public class SecMasterClient {
     }
 
     public static ClientBuilder<SecMasterClient> newBuilder() {
-        return new ClientBuilder<>(SecMasterClient::new);
+        ClientBuilder<SecMasterClient> clientBuilder = new ClientBuilder<>(SecMasterClient::new);
+        return clientBuilder;
     }
 
     /**

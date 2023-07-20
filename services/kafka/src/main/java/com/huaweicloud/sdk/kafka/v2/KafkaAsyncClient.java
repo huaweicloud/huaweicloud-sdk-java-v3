@@ -3,7 +3,136 @@ package com.huaweicloud.sdk.kafka.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.kafka.v2.model.*;
+import com.huaweicloud.sdk.kafka.v2.model.BatchCreateOrDeleteKafkaTagRequest;
+import com.huaweicloud.sdk.kafka.v2.model.BatchCreateOrDeleteKafkaTagResponse;
+import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteGroupRequest;
+import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteGroupResponse;
+import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceTopicRequest;
+import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceTopicResponse;
+import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceUsersRequest;
+import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceUsersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CloseKafkaManagerRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CloseKafkaManagerResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateDeleteConnectorOrderResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceByEngineRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceByEngineResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceTopicRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceTopicResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceUserRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceUserResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceTopicsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceTopicsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstancesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstancesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListProductsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListProductsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListSinkTasksRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListSinkTasksResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswrodRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswrodResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.RestartManagerRequest;
+import com.huaweicloud.sdk.kafka.v2.model.RestartManagerResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowClusterRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowClusterResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowGroupsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowGroupsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceExtendProductInfoRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceExtendProductInfoResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceMessagesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceMessagesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceTopicDetailRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceTopicDetailResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceUsersRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceUsersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowMaintainWindowsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowMaintainWindowsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowMessagesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowMessagesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionBeginningMessageRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionBeginningMessageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +145,8 @@ public class KafkaAsyncClient {
     }
 
     public static ClientBuilder<KafkaAsyncClient> newBuilder() {
-        return new ClientBuilder<>(KafkaAsyncClient::new);
+        ClientBuilder<KafkaAsyncClient> clientBuilder = new ClientBuilder<>(KafkaAsyncClient::new);
+        return clientBuilder;
     }
 
     /**
@@ -83,7 +213,7 @@ public class KafkaAsyncClient {
     /**
      * Kafka实例批量删除Topic
      *
-     * 该接口用于向Kafka实例批量删除Topic。批量删除多个消费组时，部分删除成功，部分失败，此时接口返回删除成功，并在返回中显示删除失败的消费组信息。
+     * 该接口用于向Kafka实例批量删除Topic。批量删除多个Topic时，部分删除成功，部分失败，此时接口返回删除成功，并在返回中显示删除失败的Topic信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -98,7 +228,7 @@ public class KafkaAsyncClient {
     /**
      * Kafka实例批量删除Topic
      *
-     * 该接口用于向Kafka实例批量删除Topic。批量删除多个消费组时，部分删除成功，部分失败，此时接口返回删除成功，并在返回中显示删除失败的消费组信息。
+     * 该接口用于向Kafka实例批量删除Topic。批量删除多个Topic时，部分删除成功，部分失败，此时接口返回删除成功，并在返回中显示删除失败的Topic信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -835,7 +965,7 @@ public class KafkaAsyncClient {
      * 
      * 同时，unavailable_zones字段表示资源不足的可用区列表，如果为空，则表示所有可用区都有资源，如果不为空，则表示字段值的可用区没有资源。所以必须确保您购买的资源所在的可用区有资源，不在该字段列表内。
      * 
-     * [例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。](tag:hc,hws)
+     * [例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。](tag:hws)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -855,7 +985,7 @@ public class KafkaAsyncClient {
      * 
      * 同时，unavailable_zones字段表示资源不足的可用区列表，如果为空，则表示所有可用区都有资源，如果不为空，则表示字段值的可用区没有资源。所以必须确保您购买的资源所在的可用区有资源，不在该字段列表内。
      * 
-     * [例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。](tag:hc,hws)
+     * [例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。](tag:hws)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -895,6 +1025,66 @@ public class KafkaAsyncClient {
         ListSinkTasksRequest request) {
         return new AsyncInvoker<ListSinkTasksRequest, ListSinkTasksResponse>(request, KafkaMeta.listSinkTasks,
             hcClient);
+    }
+
+    /**
+     * 查询Topic的分区列表
+     *
+     * 查询Topic的分区列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTopicPartitionsRequest 请求对象
+     * @return CompletableFuture<ListTopicPartitionsResponse>
+     */
+    public CompletableFuture<ListTopicPartitionsResponse> listTopicPartitionsAsync(ListTopicPartitionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listTopicPartitions);
+    }
+
+    /**
+     * 查询Topic的分区列表
+     *
+     * 查询Topic的分区列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTopicPartitionsRequest 请求对象
+     * @return AsyncInvoker<ListTopicPartitionsRequest, ListTopicPartitionsResponse>
+     */
+    public AsyncInvoker<ListTopicPartitionsRequest, ListTopicPartitionsResponse> listTopicPartitionsAsyncInvoker(
+        ListTopicPartitionsRequest request) {
+        return new AsyncInvoker<ListTopicPartitionsRequest, ListTopicPartitionsResponse>(request,
+            KafkaMeta.listTopicPartitions, hcClient);
+    }
+
+    /**
+     * 查询Topic的当前生产者列表
+     *
+     * 查询Topic的当前生产者列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTopicProducersRequest 请求对象
+     * @return CompletableFuture<ListTopicProducersResponse>
+     */
+    public CompletableFuture<ListTopicProducersResponse> listTopicProducersAsync(ListTopicProducersRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listTopicProducers);
+    }
+
+    /**
+     * 查询Topic的当前生产者列表
+     *
+     * 查询Topic的当前生产者列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTopicProducersRequest 请求对象
+     * @return AsyncInvoker<ListTopicProducersRequest, ListTopicProducersResponse>
+     */
+    public AsyncInvoker<ListTopicProducersRequest, ListTopicProducersResponse> listTopicProducersAsyncInvoker(
+        ListTopicProducersRequest request) {
+        return new AsyncInvoker<ListTopicProducersRequest, ListTopicProducersResponse>(request,
+            KafkaMeta.listTopicProducers, hcClient);
     }
 
     /**

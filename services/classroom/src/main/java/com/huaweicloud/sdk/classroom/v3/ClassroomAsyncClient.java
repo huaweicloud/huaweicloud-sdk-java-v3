@@ -1,6 +1,41 @@
 package com.huaweicloud.sdk.classroom.v3;
 
-import com.huaweicloud.sdk.classroom.v3.model.*;
+import com.huaweicloud.sdk.classroom.v3.model.ApplyJudgementRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ApplyJudgementResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ExecuteExerciseRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ExecuteExerciseResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ListAllDifficultsRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ListAllDifficultsResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ListClassroomMemberJobsRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ListClassroomMemberJobsResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ListClassroomMembersRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ListClassroomMembersResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ListClassroomsRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ListClassroomsResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ListExercisesRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ListExercisesResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ListJobsRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ListJobsResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ListMemberJobRecordsRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ListMemberJobRecordsResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ListMyKnowledgePointsRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ListMyKnowledgePointsResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ListPackagesRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ListPackagesResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ShowClassroomDetailRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ShowClassroomDetailResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ShowExerciseDetailRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ShowExerciseDetailResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ShowJobDetailRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ShowJobDetailResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ShowJobExercisesRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ShowJobExercisesResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ShowJudgementDetailRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ShowJudgementDetailResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ShowJudgementFileRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ShowJudgementFileResponse;
+import com.huaweicloud.sdk.classroom.v3.model.ShowPackageDetailRequest;
+import com.huaweicloud.sdk.classroom.v3.model.ShowPackageDetailResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +51,8 @@ public class ClassroomAsyncClient {
     }
 
     public static ClientBuilder<ClassroomAsyncClient> newBuilder() {
-        return new ClientBuilder<>(ClassroomAsyncClient::new);
+        ClientBuilder<ClassroomAsyncClient> clientBuilder = new ClientBuilder<>(ClassroomAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

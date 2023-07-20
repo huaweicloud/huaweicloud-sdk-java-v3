@@ -146,7 +146,7 @@ public class ListAvailableZonesRespAvailableZones {
     }
 
     /**
-     * 分区上是否还有可用资源。
+     * 可用区上是否还有可用资源。
      * @return resourceAvailability
      */
     public String getResourceAvailability() {

@@ -3,7 +3,68 @@ package com.huaweicloud.sdk.das.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.das.v3.model.*;
+import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
+import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateSqlLimitRulesRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteDbUserRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteProcessRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteProcessResponse;
+import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesRequest;
+import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTemplatesDetailsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTemplatesDetailsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTemplatesDetailsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTemplatesDetailsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListApiVersionsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
+import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksResponse;
+import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksRequest;
+import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksResponse;
+import com.huaweicloud.sdk.das.v3.model.ListProcessesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListProcessesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisRequest;
+import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisResponse;
+import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
+import com.huaweicloud.sdk.das.v3.model.RegisterDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlExplainRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlExplainResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitJobInfoRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitJobInfoResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
+import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
 
 public class DasClient {
 
@@ -14,7 +75,8 @@ public class DasClient {
     }
 
     public static ClientBuilder<DasClient> newBuilder() {
-        return new ClientBuilder<>(DasClient::new);
+        ClientBuilder<DasClient> clientBuilder = new ClientBuilder<>(DasClient::new);
+        return clientBuilder;
     }
 
     /**

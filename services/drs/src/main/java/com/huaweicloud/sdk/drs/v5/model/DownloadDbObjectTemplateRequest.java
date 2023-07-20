@@ -97,6 +97,81 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
 
     private XLanguageEnum xLanguage;
 
+    /**
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+     */
+    public static final class FileImportDbLevelEnum {
+
+        /**
+         * Enum DATABASE for value: "database"
+         */
+        public static final FileImportDbLevelEnum DATABASE = new FileImportDbLevelEnum("database");
+
+        /**
+         * Enum TABLE for value: "table"
+         */
+        public static final FileImportDbLevelEnum TABLE = new FileImportDbLevelEnum("table");
+
+        private static final Map<String, FileImportDbLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FileImportDbLevelEnum> createStaticFields() {
+            Map<String, FileImportDbLevelEnum> map = new HashMap<>();
+            map.put("database", DATABASE);
+            map.put("table", TABLE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        FileImportDbLevelEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static FileImportDbLevelEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FileImportDbLevelEnum(value));
+        }
+
+        public static FileImportDbLevelEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof FileImportDbLevelEnum) {
+                return this.value.equals(((FileImportDbLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_import_db_level")
+
+    private FileImportDbLevelEnum fileImportDbLevel;
+
     private ProgressListener progressListener;
 
     private long progressInterval;
@@ -157,6 +232,23 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
         this.xLanguage = xLanguage;
     }
 
+    public DownloadDbObjectTemplateRequest withFileImportDbLevel(FileImportDbLevelEnum fileImportDbLevel) {
+        this.fileImportDbLevel = fileImportDbLevel;
+        return this;
+    }
+
+    /**
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+     * @return fileImportDbLevel
+     */
+    public FileImportDbLevelEnum getFileImportDbLevel() {
+        return fileImportDbLevel;
+    }
+
+    public void setFileImportDbLevel(FileImportDbLevelEnum fileImportDbLevel) {
+        this.fileImportDbLevel = fileImportDbLevel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -166,12 +258,13 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
             return false;
         }
         DownloadDbObjectTemplateRequest that = (DownloadDbObjectTemplateRequest) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xLanguage, that.xLanguage);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.fileImportDbLevel, that.fileImportDbLevel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, xLanguage);
+        return Objects.hash(jobId, xLanguage, fileImportDbLevel);
     }
 
     @Override
@@ -180,6 +273,7 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
         sb.append("class DownloadDbObjectTemplateRequest {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    fileImportDbLevel: ").append(toIndentedString(fileImportDbLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

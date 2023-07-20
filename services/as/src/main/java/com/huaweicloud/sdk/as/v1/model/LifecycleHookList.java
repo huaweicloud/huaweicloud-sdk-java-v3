@@ -254,7 +254,7 @@ public class LifecycleHookList {
 
     /**
      * 生命周期挂钩超时时间，单位秒。
-     * minimum: 300
+     * minimum: 60
      * maximum: 86400
      * @return defaultTimeout
      */

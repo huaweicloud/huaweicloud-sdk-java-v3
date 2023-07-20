@@ -3,7 +3,64 @@ package com.huaweicloud.sdk.devstar.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.devstar.v1.model.*;
+import com.huaweicloud.sdk.devstar.v1.model.CheckRepositoryDuplicateNameRequest;
+import com.huaweicloud.sdk.devstar.v1.model.CheckRepositoryDuplicateNameResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ConfirmDeploymentJobRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ConfirmDeploymentJobResponse;
+import com.huaweicloud.sdk.devstar.v1.model.CreateDeploymentJobsRequest;
+import com.huaweicloud.sdk.devstar.v1.model.CreateDeploymentJobsResponse;
+import com.huaweicloud.sdk.devstar.v1.model.CreateTemplateViewHistoriesRequest;
+import com.huaweicloud.sdk.devstar.v1.model.CreateTemplateViewHistoriesResponse;
+import com.huaweicloud.sdk.devstar.v1.model.DeleteApplicationV4Request;
+import com.huaweicloud.sdk.devstar.v1.model.DeleteApplicationV4Response;
+import com.huaweicloud.sdk.devstar.v1.model.DownloadApplicationCodeRequest;
+import com.huaweicloud.sdk.devstar.v1.model.DownloadApplicationCodeResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ListApplicationsV6Request;
+import com.huaweicloud.sdk.devstar.v1.model.ListApplicationsV6Response;
+import com.huaweicloud.sdk.devstar.v1.model.ListPipelineTemplatesRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ListPipelineTemplatesResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ListProjectsV4Request;
+import com.huaweicloud.sdk.devstar.v1.model.ListProjectsV4Response;
+import com.huaweicloud.sdk.devstar.v1.model.ListPublishedTemplatesRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ListPublishedTemplatesResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ListTemplateViewHistoriesRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ListTemplateViewHistoriesResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ListTemplatesRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ListTemplatesResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ListTemplatesV2Request;
+import com.huaweicloud.sdk.devstar.v1.model.ListTemplatesV2Response;
+import com.huaweicloud.sdk.devstar.v1.model.RunCodehubTemplateJobRequest;
+import com.huaweicloud.sdk.devstar.v1.model.RunCodehubTemplateJobResponse;
+import com.huaweicloud.sdk.devstar.v1.model.RunDevstarTemplateJobRequest;
+import com.huaweicloud.sdk.devstar.v1.model.RunDevstarTemplateJobResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ShowApplicationDependentResourcesRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ShowApplicationDependentResourcesResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ShowApplicationReleaseRepositoriesRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ShowApplicationReleaseRepositoriesResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ShowApplicationResDeleteStatusRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ShowApplicationResDeleteStatusResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ShowApplicationV3Request;
+import com.huaweicloud.sdk.devstar.v1.model.ShowApplicationV3Response;
+import com.huaweicloud.sdk.devstar.v1.model.ShowDeploymentJobsRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ShowDeploymentJobsResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ShowJobDetailRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ShowJobDetailResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ShowPipelineLastStatusV2Request;
+import com.huaweicloud.sdk.devstar.v1.model.ShowPipelineLastStatusV2Response;
+import com.huaweicloud.sdk.devstar.v1.model.ShowRepositoryByCloudIdeRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ShowRepositoryByCloudIdeResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ShowRepositoryStatisticalDataV2Request;
+import com.huaweicloud.sdk.devstar.v1.model.ShowRepositoryStatisticalDataV2Response;
+import com.huaweicloud.sdk.devstar.v1.model.ShowTemplateDetailRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ShowTemplateDetailResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ShowTemplateFileRequest;
+import com.huaweicloud.sdk.devstar.v1.model.ShowTemplateFileResponse;
+import com.huaweicloud.sdk.devstar.v1.model.ShowTemplateV3Request;
+import com.huaweicloud.sdk.devstar.v1.model.ShowTemplateV3Response;
+import com.huaweicloud.sdk.devstar.v1.model.StartPipelineRequest;
+import com.huaweicloud.sdk.devstar.v1.model.StartPipelineResponse;
+import com.huaweicloud.sdk.devstar.v1.model.UpdateApplicationRequest;
+import com.huaweicloud.sdk.devstar.v1.model.UpdateApplicationResponse;
 
 public class DevStarClient {
 
@@ -14,7 +71,8 @@ public class DevStarClient {
     }
 
     public static ClientBuilder<DevStarClient> newBuilder() {
-        return new ClientBuilder<>(DevStarClient::new, "GlobalCredentials");
+        ClientBuilder<DevStarClient> clientBuilder = new ClientBuilder<>(DevStarClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

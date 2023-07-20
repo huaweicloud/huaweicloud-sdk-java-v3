@@ -1,6 +1,7 @@
 package com.huaweicloud.sdk.cgs.v5;
 
-import com.huaweicloud.sdk.cgs.v5.model.*;
+import com.huaweicloud.sdk.cgs.v5.model.ListContainerNodesRequest;
+import com.huaweicloud.sdk.cgs.v5.model.ListContainerNodesResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +15,8 @@ public class CgsClient {
     }
 
     public static ClientBuilder<CgsClient> newBuilder() {
-        return new ClientBuilder<>(CgsClient::new);
+        ClientBuilder<CgsClient> clientBuilder = new ClientBuilder<>(CgsClient::new);
+        return clientBuilder;
     }
 
     /**

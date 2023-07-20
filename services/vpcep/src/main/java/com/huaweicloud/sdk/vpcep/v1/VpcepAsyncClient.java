@@ -3,7 +3,66 @@ package com.huaweicloud.sdk.vpcep.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.vpcep.v1.model.*;
+import com.huaweicloud.sdk.vpcep.v1.model.AcceptOrRejectEndpointRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.AcceptOrRejectEndpointResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.BatchAddEndpointServicePermissionsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.BatchAddEndpointServicePermissionsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.BatchAddOrRemoveResourceInstanceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.BatchAddOrRemoveResourceInstanceResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.BatchRemoveEndpointServicePermissionsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.BatchRemoveEndpointServicePermissionsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.CreateEndpointRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.CreateEndpointResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.CreateEndpointServiceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.CreateEndpointServiceResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.DeleteEndpointPolicyRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.DeleteEndpointPolicyResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.DeleteEndpointRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.DeleteEndpointResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.DeleteEndpointServiceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.DeleteEndpointServiceResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListEndpointInfoDetailsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListEndpointInfoDetailsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListEndpointServiceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListEndpointServiceResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListEndpointsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListEndpointsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListQueryProjectResourceTagsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListQueryProjectResourceTagsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListQuotaDetailsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListQuotaDetailsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListResourceInstancesRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListResourceInstancesResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServiceConnectionsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServiceConnectionsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServiceDescribeDetailsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServiceDescribeDetailsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServiceDetailsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServiceDetailsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServicePermissionsDetailsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServicePermissionsDetailsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServicePublicDetailsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListServicePublicDetailsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListSpecifiedVersionDetailsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListSpecifiedVersionDetailsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.ListVersionDetailsRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.ListVersionDetailsResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointConnectionsDescRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointConnectionsDescResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointPolicyRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointPolicyResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointRoutetableRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointRoutetableResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceNameRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceNameResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServicePermissionDescRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServicePermissionDescResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +75,8 @@ public class VpcepAsyncClient {
     }
 
     public static ClientBuilder<VpcepAsyncClient> newBuilder() {
-        return new ClientBuilder<>(VpcepAsyncClient::new);
+        ClientBuilder<VpcepAsyncClient> clientBuilder = new ClientBuilder<>(VpcepAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

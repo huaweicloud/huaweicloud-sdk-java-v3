@@ -21,7 +21,7 @@ public class AsyncJobResp {
     private String asyncJobId;
 
     /**
-     * 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - ASYNC_JOB_CREATING：批量异步任务创建中。 - ASYNC_JOB_CREATE_FAILED：批量异步任务创建失败。 - ASYNC_JOB_COMPLETED：批量异步任务创建完成。
+     * 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功。 - COMMIT_SUCCESS：批量异步任务提交成功。
      */
     public static final class StatusEnum {
 
@@ -36,19 +36,14 @@ public class AsyncJobResp {
         public static final StatusEnum ASYNC_JOB_VALIDATE_FAILED = new StatusEnum("ASYNC_JOB_VALIDATE_FAILED");
 
         /**
-         * Enum ASYNC_JOB_CREATING for value: "ASYNC_JOB_CREATING"
+         * Enum AUTO_PARAM_VALIDATE_SUCCESS for value: "AUTO_PARAM_VALIDATE_SUCCESS"
          */
-        public static final StatusEnum ASYNC_JOB_CREATING = new StatusEnum("ASYNC_JOB_CREATING");
+        public static final StatusEnum AUTO_PARAM_VALIDATE_SUCCESS = new StatusEnum("AUTO_PARAM_VALIDATE_SUCCESS");
 
         /**
-         * Enum ASYNC_JOB_CREATE_FAILED for value: "ASYNC_JOB_CREATE_FAILED"
+         * Enum COMMIT_SUCCESS for value: "COMMIT_SUCCESS"
          */
-        public static final StatusEnum ASYNC_JOB_CREATE_FAILED = new StatusEnum("ASYNC_JOB_CREATE_FAILED");
-
-        /**
-         * Enum ASYNC_JOB_COMPLETED for value: "ASYNC_JOB_COMPLETED"
-         */
-        public static final StatusEnum ASYNC_JOB_COMPLETED = new StatusEnum("ASYNC_JOB_COMPLETED");
+        public static final StatusEnum COMMIT_SUCCESS = new StatusEnum("COMMIT_SUCCESS");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -56,9 +51,8 @@ public class AsyncJobResp {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("ASYNC_JOB_VALIDATING", ASYNC_JOB_VALIDATING);
             map.put("ASYNC_JOB_VALIDATE_FAILED", ASYNC_JOB_VALIDATE_FAILED);
-            map.put("ASYNC_JOB_CREATING", ASYNC_JOB_CREATING);
-            map.put("ASYNC_JOB_CREATE_FAILED", ASYNC_JOB_CREATE_FAILED);
-            map.put("ASYNC_JOB_COMPLETED", ASYNC_JOB_COMPLETED);
+            map.put("AUTO_PARAM_VALIDATE_SUCCESS", AUTO_PARAM_VALIDATE_SUCCESS);
+            map.put("COMMIT_SUCCESS", COMMIT_SUCCESS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -151,7 +145,7 @@ public class AsyncJobResp {
     }
 
     /**
-     * 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - ASYNC_JOB_CREATING：批量异步任务创建中。 - ASYNC_JOB_CREATE_FAILED：批量异步任务创建失败。 - ASYNC_JOB_COMPLETED：批量异步任务创建完成。
+     * 批量异步创建的任务状态。取值： - ASYNC_JOB_VALIDATING：批量异步任务参数校验中。 - ASYNC_JOB_VALIDATE_FAILED：批量异步任务参数校验失败。 - AUTO_PARAM_VALIDATE_SUCCESS：批量异步任务参数校验成功。 - COMMIT_SUCCESS：批量异步任务提交成功。
      * @return status
      */
     public StatusEnum getStatus() {

@@ -12,6 +12,8 @@ import java.util.Objects;
 
 public class CfwRegion {
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://cfw.eu-west-101.myhuaweicloud.eu");
+
     public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://cfw.cn-south-4.myhuaweicloud.com");
 
     public static final Region CN_SOUTHWEST_2 =
@@ -53,6 +55,7 @@ public class CfwRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
+        map.put("eu-west-101", EU_WEST_101);
         map.put("cn-south-4", CN_SOUTH_4);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("cn-south-1", CN_SOUTH_1);

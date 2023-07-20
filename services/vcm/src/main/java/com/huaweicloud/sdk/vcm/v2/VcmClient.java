@@ -3,7 +3,22 @@ package com.huaweicloud.sdk.vcm.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.vcm.v2.model.*;
+import com.huaweicloud.sdk.vcm.v2.model.CheckAudioJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.CheckAudioJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.CheckVideoJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.CheckVideoJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.CreateAudioJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.CreateAudioJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.CreateVideoJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.CreateVideoJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.DeleteDemoInfoRequest;
+import com.huaweicloud.sdk.vcm.v2.model.DeleteDemoInfoResponse;
+import com.huaweicloud.sdk.vcm.v2.model.DeleteVideoJobRequest;
+import com.huaweicloud.sdk.vcm.v2.model.DeleteVideoJobResponse;
+import com.huaweicloud.sdk.vcm.v2.model.ListAudioJobsRequest;
+import com.huaweicloud.sdk.vcm.v2.model.ListAudioJobsResponse;
+import com.huaweicloud.sdk.vcm.v2.model.ListVideoJobsRequest;
+import com.huaweicloud.sdk.vcm.v2.model.ListVideoJobsResponse;
 
 public class VcmClient {
 
@@ -14,7 +29,8 @@ public class VcmClient {
     }
 
     public static ClientBuilder<VcmClient> newBuilder() {
-        return new ClientBuilder<>(VcmClient::new);
+        ClientBuilder<VcmClient> clientBuilder = new ClientBuilder<>(VcmClient::new);
+        return clientBuilder;
     }
 
     /**

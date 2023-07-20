@@ -3,7 +3,52 @@ package com.huaweicloud.sdk.dwr.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.dwr.v3.model.*;
+import com.huaweicloud.sdk.dwr.v3.model.AcceptServiceContractRequest;
+import com.huaweicloud.sdk.dwr.v3.model.AcceptServiceContractResponse;
+import com.huaweicloud.sdk.dwr.v3.model.AsyncInvokeApiStartWorkflowRequest;
+import com.huaweicloud.sdk.dwr.v3.model.AsyncInvokeApiStartWorkflowResponse;
+import com.huaweicloud.sdk.dwr.v3.model.CheckWorkflowAuthenticationRequest;
+import com.huaweicloud.sdk.dwr.v3.model.CheckWorkflowAuthenticationResponse;
+import com.huaweicloud.sdk.dwr.v3.model.CreateMyActionTemplateRequest;
+import com.huaweicloud.sdk.dwr.v3.model.CreateMyActionTemplateResponse;
+import com.huaweicloud.sdk.dwr.v3.model.CreateWorkflowAuthenticationRequest;
+import com.huaweicloud.sdk.dwr.v3.model.CreateWorkflowAuthenticationResponse;
+import com.huaweicloud.sdk.dwr.v3.model.CreateWorkflowRequest;
+import com.huaweicloud.sdk.dwr.v3.model.CreateWorkflowResponse;
+import com.huaweicloud.sdk.dwr.v3.model.DeleteMyActionTemplateRequest;
+import com.huaweicloud.sdk.dwr.v3.model.DeleteMyActionTemplateResponse;
+import com.huaweicloud.sdk.dwr.v3.model.DeleteWorkflowRequest;
+import com.huaweicloud.sdk.dwr.v3.model.DeleteWorkflowResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ListMyActionTemplateRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ListMyActionTemplateResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ListSystemTemplatesRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ListSystemTemplatesResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ListWorkflowInstanceRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ListWorkflowInstanceResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ListWorkflowsRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ListWorkflowsResponse;
+import com.huaweicloud.sdk.dwr.v3.model.RestoreWorkflowExecutionRequest;
+import com.huaweicloud.sdk.dwr.v3.model.RestoreWorkflowExecutionResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ShowPublicActionListRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ShowPublicActionListResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ShowPublicTemplateInfoRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ShowPublicTemplateInfoResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ShowServiceContractRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ShowServiceContractResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ShowSystemTemplateDetailRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ShowSystemTemplateDetailResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ShowThirdTemplateInfoRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ShowThirdTemplateInfoResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ShowWorkflowInfoRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ShowWorkflowInfoResponse;
+import com.huaweicloud.sdk.dwr.v3.model.ShowWorkflowInstanceRequest;
+import com.huaweicloud.sdk.dwr.v3.model.ShowWorkflowInstanceResponse;
+import com.huaweicloud.sdk.dwr.v3.model.UpdateMyActionTemplateRequest;
+import com.huaweicloud.sdk.dwr.v3.model.UpdateMyActionTemplateResponse;
+import com.huaweicloud.sdk.dwr.v3.model.UpdateMyActionTemplateToDeprecatedRequest;
+import com.huaweicloud.sdk.dwr.v3.model.UpdateMyActionTemplateToDeprecatedResponse;
+import com.huaweicloud.sdk.dwr.v3.model.UpdateWorkflowRequest;
+import com.huaweicloud.sdk.dwr.v3.model.UpdateWorkflowResponse;
 
 public class DwrClient {
 
@@ -14,7 +59,8 @@ public class DwrClient {
     }
 
     public static ClientBuilder<DwrClient> newBuilder() {
-        return new ClientBuilder<>(DwrClient::new);
+        ClientBuilder<DwrClient> clientBuilder = new ClientBuilder<>(DwrClient::new);
+        return clientBuilder;
     }
 
     /**

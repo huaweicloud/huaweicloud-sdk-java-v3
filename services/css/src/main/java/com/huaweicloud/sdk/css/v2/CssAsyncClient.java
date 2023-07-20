@@ -3,7 +3,16 @@ package com.huaweicloud.sdk.css.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.css.v2.model.*;
+import com.huaweicloud.sdk.css.v2.model.CreateClusterRequest;
+import com.huaweicloud.sdk.css.v2.model.CreateClusterResponse;
+import com.huaweicloud.sdk.css.v2.model.RestartClusterRequest;
+import com.huaweicloud.sdk.css.v2.model.RestartClusterResponse;
+import com.huaweicloud.sdk.css.v2.model.RollingRestartRequest;
+import com.huaweicloud.sdk.css.v2.model.RollingRestartResponse;
+import com.huaweicloud.sdk.css.v2.model.StartAutoCreateSnapshotsRequest;
+import com.huaweicloud.sdk.css.v2.model.StartAutoCreateSnapshotsResponse;
+import com.huaweicloud.sdk.css.v2.model.StopAutoCreateSnapshotsRequest;
+import com.huaweicloud.sdk.css.v2.model.StopAutoCreateSnapshotsResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +25,8 @@ public class CssAsyncClient {
     }
 
     public static ClientBuilder<CssAsyncClient> newBuilder() {
-        return new ClientBuilder<>(CssAsyncClient::new);
+        ClientBuilder<CssAsyncClient> clientBuilder = new ClientBuilder<>(CssAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

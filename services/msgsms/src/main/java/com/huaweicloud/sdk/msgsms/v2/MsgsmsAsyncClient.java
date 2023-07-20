@@ -3,7 +3,46 @@ package com.huaweicloud.sdk.msgsms.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.msgsms.v2.model.*;
+import com.huaweicloud.sdk.msgsms.v2.model.CreateAppRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.CreateAppResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.CreateSignatureRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.CreateSignatureResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.CreateTemplateRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.CreateTemplateResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.DeleteSignatureRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.DeleteSignatureResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.DeleteTemplateRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.DeleteTemplateResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.EnableSignatureRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.EnableSignatureResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ListAppDetailsRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ListAppDetailsResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ListSendCountryDetailsRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ListSendCountryDetailsResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ListSignatureDetailsRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ListSignatureDetailsResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ListTemplateDetailsRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ListTemplateDetailsResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ListTemplateVarilableDetailsRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ListTemplateVarilableDetailsResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowAppCountRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowAppCountResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowAppRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowAppResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowSignatureFileRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowSignatureFileResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowSignatureRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowSignatureResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowTemplateRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.ShowTemplateResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.UpdateAppRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.UpdateAppResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.UpdateSignatureRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.UpdateSignatureResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.UpdateTemplateRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.UpdateTemplateResponse;
+import com.huaweicloud.sdk.msgsms.v2.model.UploadSignatureFileRequest;
+import com.huaweicloud.sdk.msgsms.v2.model.UploadSignatureFileResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +55,8 @@ public class MsgsmsAsyncClient {
     }
 
     public static ClientBuilder<MsgsmsAsyncClient> newBuilder() {
-        return new ClientBuilder<>(MsgsmsAsyncClient::new);
+        ClientBuilder<MsgsmsAsyncClient> clientBuilder = new ClientBuilder<>(MsgsmsAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

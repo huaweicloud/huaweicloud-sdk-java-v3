@@ -3,7 +3,42 @@ package com.huaweicloud.sdk.oms.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.oms.v2.model.*;
+import com.huaweicloud.sdk.oms.v2.model.CreateSyncEventsRequest;
+import com.huaweicloud.sdk.oms.v2.model.CreateSyncEventsResponse;
+import com.huaweicloud.sdk.oms.v2.model.CreateTaskGroupRequest;
+import com.huaweicloud.sdk.oms.v2.model.CreateTaskGroupResponse;
+import com.huaweicloud.sdk.oms.v2.model.CreateTaskRequest;
+import com.huaweicloud.sdk.oms.v2.model.CreateTaskResponse;
+import com.huaweicloud.sdk.oms.v2.model.DeleteTaskGroupRequest;
+import com.huaweicloud.sdk.oms.v2.model.DeleteTaskGroupResponse;
+import com.huaweicloud.sdk.oms.v2.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.oms.v2.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.oms.v2.model.ListApiVersionsRequest;
+import com.huaweicloud.sdk.oms.v2.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.oms.v2.model.ListTaskGroupRequest;
+import com.huaweicloud.sdk.oms.v2.model.ListTaskGroupResponse;
+import com.huaweicloud.sdk.oms.v2.model.ListTasksRequest;
+import com.huaweicloud.sdk.oms.v2.model.ListTasksResponse;
+import com.huaweicloud.sdk.oms.v2.model.RetryTaskGroupRequest;
+import com.huaweicloud.sdk.oms.v2.model.RetryTaskGroupResponse;
+import com.huaweicloud.sdk.oms.v2.model.ShowApiInfoRequest;
+import com.huaweicloud.sdk.oms.v2.model.ShowApiInfoResponse;
+import com.huaweicloud.sdk.oms.v2.model.ShowTaskGroupRequest;
+import com.huaweicloud.sdk.oms.v2.model.ShowTaskGroupResponse;
+import com.huaweicloud.sdk.oms.v2.model.ShowTaskRequest;
+import com.huaweicloud.sdk.oms.v2.model.ShowTaskResponse;
+import com.huaweicloud.sdk.oms.v2.model.StartTaskGroupRequest;
+import com.huaweicloud.sdk.oms.v2.model.StartTaskGroupResponse;
+import com.huaweicloud.sdk.oms.v2.model.StartTaskRequest;
+import com.huaweicloud.sdk.oms.v2.model.StartTaskResponse;
+import com.huaweicloud.sdk.oms.v2.model.StopTaskGroupRequest;
+import com.huaweicloud.sdk.oms.v2.model.StopTaskGroupResponse;
+import com.huaweicloud.sdk.oms.v2.model.StopTaskRequest;
+import com.huaweicloud.sdk.oms.v2.model.StopTaskResponse;
+import com.huaweicloud.sdk.oms.v2.model.UpdateBandwidthPolicyRequest;
+import com.huaweicloud.sdk.oms.v2.model.UpdateBandwidthPolicyResponse;
+import com.huaweicloud.sdk.oms.v2.model.UpdateTaskGroupRequest;
+import com.huaweicloud.sdk.oms.v2.model.UpdateTaskGroupResponse;
 
 public class OmsClient {
 
@@ -14,7 +49,8 @@ public class OmsClient {
     }
 
     public static ClientBuilder<OmsClient> newBuilder() {
-        return new ClientBuilder<>(OmsClient::new);
+        ClientBuilder<OmsClient> clientBuilder = new ClientBuilder<>(OmsClient::new);
+        return clientBuilder;
     }
 
     /**

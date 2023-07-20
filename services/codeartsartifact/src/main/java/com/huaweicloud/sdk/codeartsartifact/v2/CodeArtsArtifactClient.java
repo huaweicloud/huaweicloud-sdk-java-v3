@@ -1,6 +1,9 @@
 package com.huaweicloud.sdk.codeartsartifact.v2;
 
-import com.huaweicloud.sdk.codeartsartifact.v2.model.*;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +17,8 @@ public class CodeArtsArtifactClient {
     }
 
     public static ClientBuilder<CodeArtsArtifactClient> newBuilder() {
-        return new ClientBuilder<>(CodeArtsArtifactClient::new);
+        ClientBuilder<CodeArtsArtifactClient> clientBuilder = new ClientBuilder<>(CodeArtsArtifactClient::new);
+        return clientBuilder;
     }
 
     /**

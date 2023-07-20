@@ -3,7 +3,162 @@ package com.huaweicloud.sdk.iotda.v5;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.iotda.v5.model.*;
+import com.huaweicloud.sdk.iotda.v5.model.AddApplicationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddApplicationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddQueueRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueRequest;
+import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageRequest;
+import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateAsyncCommandRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateAsyncCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateCommandRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateMessageRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateMessageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateOrDeleteDeviceInGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateOtaPackageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProductRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingRuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRoutingRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRuleActionRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRuleActionResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CreateRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingRuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRoutingRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleActionRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleActionResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListBatchTasksRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListBatchTasksResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListProductsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListPropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListResourcesByTagsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingRulesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListRoutingRulesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListRuleActionsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListRulesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListRulesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ResetDeviceSecretResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ResetFingerprintRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ResetFingerprintResponse;
+import com.huaweicloud.sdk.iotda.v5.model.RetryBatchTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.RetryBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.SearchDevicesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.SearchDevicesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowApplicationRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowApplicationResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowApplicationsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowApplicationsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowAsyncDeviceCommandResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceMessageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceShadowRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceShadowResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProductRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowQueueRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingRuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRoutingRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRuleActionResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.StopBatchTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.StopBatchTaskResponse;
+import com.huaweicloud.sdk.iotda.v5.model.TagDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.TagDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UnfreezeDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UnfreezeDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UntagDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UntagDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceGroupResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateDeviceShadowDesiredDataResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProductRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateProductResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdatePropertiesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingRuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRoutingRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleActionRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleActionResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UpdateRuleResponse;
+import com.huaweicloud.sdk.iotda.v5.model.UploadBatchTaskFileRequest;
+import com.huaweicloud.sdk.iotda.v5.model.UploadBatchTaskFileResponse;
 
 public class IoTDAClient {
 
@@ -14,8 +169,10 @@ public class IoTDAClient {
     }
 
     public static ClientBuilder<IoTDAClient> newBuilder() {
-        return new ClientBuilder<>(IoTDAClient::new, "BasicCredentials,IoTDACredentials")
-            .withDerivedAuthServiceName("iotdm");
+        ClientBuilder<IoTDAClient> clientBuilder =
+            new ClientBuilder<>(IoTDAClient::new, "BasicCredentials,IoTDACredentials");
+        clientBuilder.withDerivedAuthServiceName("iotdm");
+        return clientBuilder;
     }
 
     /**
@@ -375,6 +532,36 @@ public class IoTDAClient {
     public SyncInvoker<CreateBatchTaskRequest, CreateBatchTaskResponse> createBatchTaskInvoker(
         CreateBatchTaskRequest request) {
         return new SyncInvoker<CreateBatchTaskRequest, CreateBatchTaskResponse>(request, IoTDAMeta.createBatchTask,
+            hcClient);
+    }
+
+    /**
+     * 删除批量任务
+     *
+     * 应用服务器可调用此接口删除物联网平台中已经完成（状态为成功，失败，部分成功，已停止）的批量任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBatchTaskRequest 请求对象
+     * @return DeleteBatchTaskResponse
+     */
+    public DeleteBatchTaskResponse deleteBatchTask(DeleteBatchTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteBatchTask);
+    }
+
+    /**
+     * 删除批量任务
+     *
+     * 应用服务器可调用此接口删除物联网平台中已经完成（状态为成功，失败，部分成功，已停止）的批量任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBatchTaskRequest 请求对象
+     * @return SyncInvoker<DeleteBatchTaskRequest, DeleteBatchTaskResponse>
+     */
+    public SyncInvoker<DeleteBatchTaskRequest, DeleteBatchTaskResponse> deleteBatchTaskInvoker(
+        DeleteBatchTaskRequest request) {
+        return new SyncInvoker<DeleteBatchTaskRequest, DeleteBatchTaskResponse>(request, IoTDAMeta.deleteBatchTask,
             hcClient);
     }
 

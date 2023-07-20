@@ -3,7 +3,8 @@ package com.huaweicloud.sdk.eihealth.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.eihealth.v2.model.*;
+import com.huaweicloud.sdk.eihealth.v2.model.ShowAdmetWithCustomPropsRequest;
+import com.huaweicloud.sdk.eihealth.v2.model.ShowAdmetWithCustomPropsResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +17,8 @@ public class EiHealthAsyncClient {
     }
 
     public static ClientBuilder<EiHealthAsyncClient> newBuilder() {
-        return new ClientBuilder<>(EiHealthAsyncClient::new);
+        ClientBuilder<EiHealthAsyncClient> clientBuilder = new ClientBuilder<>(EiHealthAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -1,6 +1,63 @@
 package com.huaweicloud.sdk.cbs.v1;
 
-import com.huaweicloud.sdk.cbs.v1.model.*;
+import com.huaweicloud.sdk.cbs.v1.model.CollectHotQuestionsRequest;
+import com.huaweicloud.sdk.cbs.v1.model.CollectHotQuestionsResponse;
+import com.huaweicloud.sdk.cbs.v1.model.CollectKeyWordsRequest;
+import com.huaweicloud.sdk.cbs.v1.model.CollectKeyWordsResponse;
+import com.huaweicloud.sdk.cbs.v1.model.CollectReplyRatesRequest;
+import com.huaweicloud.sdk.cbs.v1.model.CollectReplyRatesResponse;
+import com.huaweicloud.sdk.cbs.v1.model.CollectSessionStatsRequest;
+import com.huaweicloud.sdk.cbs.v1.model.CollectSessionStatsResponse;
+import com.huaweicloud.sdk.cbs.v1.model.CreateSessionRequest;
+import com.huaweicloud.sdk.cbs.v1.model.CreateSessionResponse;
+import com.huaweicloud.sdk.cbs.v1.model.DeleteSessionRequest;
+import com.huaweicloud.sdk.cbs.v1.model.DeleteSessionResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteComposeVideoOndemandRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteComposeVideoOndemandResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteComposeVideoRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteComposeVideoResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteCreateVideoRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteCreateVideoResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteDeleteVideoByIdRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteDeleteVideoByIdResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteDeleteimageByIdRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteDeleteimageByIdResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetCharacterInfoByIdRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetCharacterInfoByIdResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetCharactersRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetCharactersResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetFramsListByImagesIdRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetFramsListByImagesIdResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetImagesListRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetImagesListResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetVideoInfoByIdRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetVideoInfoByIdResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetVideosListRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteGetVideosListResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecutePostCreateImagesRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecutePostCreateImagesResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteQaChatRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteQaChatResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteSessionRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteSessionResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUpdateImageNameRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUpdateImageNameResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUpdateVideoByIdRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUpdateVideoByIdResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUpdateVideoInfoByIdRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUpdateVideoInfoByIdResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUploadImageRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUploadImageResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUploadPptRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ExecuteUploadPptResponse;
+import com.huaweicloud.sdk.cbs.v1.model.ListSuggestionsRequest;
+import com.huaweicloud.sdk.cbs.v1.model.ListSuggestionsResponse;
+import com.huaweicloud.sdk.cbs.v1.model.PostRequestsRequest;
+import com.huaweicloud.sdk.cbs.v1.model.PostRequestsResponse;
+import com.huaweicloud.sdk.cbs.v1.model.TagLaborRequest;
+import com.huaweicloud.sdk.cbs.v1.model.TagLaborResponse;
+import com.huaweicloud.sdk.cbs.v1.model.TagSatisfactionRequest;
+import com.huaweicloud.sdk.cbs.v1.model.TagSatisfactionResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +71,8 @@ public class CbsClient {
     }
 
     public static ClientBuilder<CbsClient> newBuilder() {
-        return new ClientBuilder<>(CbsClient::new, "BasicCredentials");
+        ClientBuilder<CbsClient> clientBuilder = new ClientBuilder<>(CbsClient::new, "BasicCredentials");
+        return clientBuilder;
     }
 
     /**

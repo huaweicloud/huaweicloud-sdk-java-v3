@@ -82,18 +82,18 @@ public final class ExceptionUtils {
     private static void processErrorMessage(SdkErrorMessage sdkErrorMessage, Map<?, ?> errResult) {
         if (errResult.containsKey(Constants.ENCODED_AUTHORIZATION_MESSAGE)) {
             sdkErrorMessage.setEncodedAuthorizationMessage(
-                    (String) errResult.get(Constants.ENCODED_AUTHORIZATION_MESSAGE));
+                    errResult.get(Constants.ENCODED_AUTHORIZATION_MESSAGE).toString());
         }
 
         if (errResult.containsKey(Constants.ERROR_CODE) && errResult.containsKey(Constants.ERROR_MSG)) {
-            sdkErrorMessage.setErrorCode((String) errResult.get(Constants.ERROR_CODE));
-            sdkErrorMessage.setErrorMsg((String) errResult.get(Constants.ERROR_MSG));
+            sdkErrorMessage.setErrorCode(errResult.get(Constants.ERROR_CODE).toString());
+            sdkErrorMessage.setErrorMsg(errResult.get(Constants.ERROR_MSG).toString());
             return;
         }
 
         if (errResult.containsKey(Constants.CODE) && errResult.containsKey(Constants.MESSAGE)) {
-            sdkErrorMessage.setErrorCode((String) errResult.get(Constants.CODE));
-            sdkErrorMessage.setErrorMsg((String) errResult.get(Constants.MESSAGE));
+            sdkErrorMessage.setErrorCode(errResult.get(Constants.CODE).toString());
+            sdkErrorMessage.setErrorMsg(errResult.get(Constants.MESSAGE).toString());
             return;
         }
 

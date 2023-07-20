@@ -3,7 +3,12 @@ package com.huaweicloud.sdk.obs.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.obs.v1.model.*;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationResponse;
 
 public class ObsClient {
 
@@ -14,7 +19,8 @@ public class ObsClient {
     }
 
     public static ClientBuilder<ObsClient> newBuilder() {
-        return new ClientBuilder<>(ObsClient::new, "ObsCredentials");
+        ClientBuilder<ObsClient> clientBuilder = new ClientBuilder<>(ObsClient::new, "ObsCredentials");
+        return clientBuilder;
     }
 
     /**

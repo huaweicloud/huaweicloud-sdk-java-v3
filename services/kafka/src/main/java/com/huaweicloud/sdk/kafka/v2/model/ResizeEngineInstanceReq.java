@@ -92,7 +92,7 @@ public class ResizeEngineInstanceReq {
     }
 
     /**
-     * 垂直扩容时的新产品ID。  当oper_type类型是vertical时，该参数才有效且必填。
+     * 垂直扩容时的新产品ID。  当oper_type类型是vertical时，该参数才有效且必填。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
      * @return newProductId
      */
     public String getNewProductId() {
@@ -109,7 +109,7 @@ public class ResizeEngineInstanceReq {
     }
 
     /**
-     * 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 当oper_type类型是horizontal时，该参数必填。
+     * 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  当oper_type类型是horizontal时，该参数必填。
      * @return publicipId
      */
     public String getPublicipId() {

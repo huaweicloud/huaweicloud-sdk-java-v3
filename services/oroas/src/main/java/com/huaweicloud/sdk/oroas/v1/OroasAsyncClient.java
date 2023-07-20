@@ -3,7 +3,14 @@ package com.huaweicloud.sdk.oroas.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.oroas.v1.model.*;
+import com.huaweicloud.sdk.oroas.v1.model.CreateTaskRequest;
+import com.huaweicloud.sdk.oroas.v1.model.CreateTaskResponse;
+import com.huaweicloud.sdk.oroas.v1.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.oroas.v1.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.oroas.v1.model.ListTaskRequest;
+import com.huaweicloud.sdk.oroas.v1.model.ListTaskResponse;
+import com.huaweicloud.sdk.oroas.v1.model.ShowTaskRequest;
+import com.huaweicloud.sdk.oroas.v1.model.ShowTaskResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +23,8 @@ public class OroasAsyncClient {
     }
 
     public static ClientBuilder<OroasAsyncClient> newBuilder() {
-        return new ClientBuilder<>(OroasAsyncClient::new);
+        ClientBuilder<OroasAsyncClient> clientBuilder = new ClientBuilder<>(OroasAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -3,7 +3,38 @@ package com.huaweicloud.sdk.mrs.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.mrs.v2.model.*;
+import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsRequest;
+import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CancelSqlRequest;
+import com.huaweicloud.sdk.mrs.v2.model.CancelSqlResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CreateClusterRequest;
+import com.huaweicloud.sdk.mrs.v2.model.CreateClusterResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobRequest;
+import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlResponse;
+import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
+import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowAgencyMappingRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowAgencyMappingResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowAutoScalingPolicyResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSingleJobExeRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSingleJobExeResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.StopJobRequest;
+import com.huaweicloud.sdk.mrs.v2.model.StopJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameResponse;
 
 public class MrsClient {
 
@@ -14,7 +45,8 @@ public class MrsClient {
     }
 
     public static ClientBuilder<MrsClient> newBuilder() {
-        return new ClientBuilder<>(MrsClient::new);
+        ClientBuilder<MrsClient> clientBuilder = new ClientBuilder<>(MrsClient::new);
+        return clientBuilder;
     }
 
     /**

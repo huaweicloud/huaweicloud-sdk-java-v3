@@ -1,6 +1,29 @@
 package com.huaweicloud.sdk.cloudrtc.v1;
 
-import com.huaweicloud.sdk.cloudrtc.v1.model.*;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventDimensionRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventDimensionResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventsRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventsResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcClientQosDetailsRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcClientQosDetailsResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryQualityRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryQualityResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryScaleRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryScaleResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryUsageRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryUsageResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRealtimeNetworkRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRealtimeNetworkResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRealtimeQualityRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRealtimeQualityResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRealtimeScaleDimensionRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRealtimeScaleDimensionResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRealtimeScaleRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRealtimeScaleResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRoomListRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcRoomListResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcUserListRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcUserListResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +37,8 @@ public class CloudRTCClient {
     }
 
     public static ClientBuilder<CloudRTCClient> newBuilder() {
-        return new ClientBuilder<>(CloudRTCClient::new);
+        ClientBuilder<CloudRTCClient> clientBuilder = new ClientBuilder<>(CloudRTCClient::new);
+        return clientBuilder;
     }
 
     /**

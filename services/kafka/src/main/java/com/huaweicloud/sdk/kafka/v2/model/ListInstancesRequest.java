@@ -15,10 +15,74 @@ import java.util.Objects;
  */
 public class ListInstancesRequest {
 
+    /**
+     * 消息引擎：kafka。
+     */
+    public static final class EngineEnum {
+
+        /**
+         * Enum KAFKA for value: "kafka"
+         */
+        public static final EngineEnum KAFKA = new EngineEnum("kafka");
+
+        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineEnum> createStaticFields() {
+            Map<String, EngineEnum> map = new HashMap<>();
+            map.put("kafka", KAFKA);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EngineEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EngineEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
+        }
+
+        public static EngineEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EngineEnum) {
+                return this.value.equals(((EngineEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    private String engine;
+    private EngineEnum engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -31,7 +95,7 @@ public class ListInstancesRequest {
     private String instanceId;
 
     /**
-     * 实例状态。
+     * 实例状态。 详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。
      */
     public static final class StatusEnum {
 
@@ -300,7 +364,7 @@ public class ListInstancesRequest {
 
     private String limit;
 
-    public ListInstancesRequest withEngine(String engine) {
+    public ListInstancesRequest withEngine(EngineEnum engine) {
         this.engine = engine;
         return this;
     }
@@ -309,11 +373,11 @@ public class ListInstancesRequest {
      * 消息引擎：kafka。
      * @return engine
      */
-    public String getEngine() {
+    public EngineEnum getEngine() {
         return engine;
     }
 
-    public void setEngine(String engine) {
+    public void setEngine(EngineEnum engine) {
         this.engine = engine;
     }
 
@@ -357,7 +421,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 实例状态。
+     * 实例状态。 详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。
      * @return status
      */
     public StatusEnum getStatus() {

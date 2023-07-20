@@ -3,7 +3,76 @@ package com.huaweicloud.sdk.frs.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.frs.v2.model.*;
+import com.huaweicloud.sdk.frs.v2.model.AddFacesByBase64Request;
+import com.huaweicloud.sdk.frs.v2.model.AddFacesByBase64Response;
+import com.huaweicloud.sdk.frs.v2.model.AddFacesByFileRequest;
+import com.huaweicloud.sdk.frs.v2.model.AddFacesByFileResponse;
+import com.huaweicloud.sdk.frs.v2.model.AddFacesByUrlRequest;
+import com.huaweicloud.sdk.frs.v2.model.AddFacesByUrlResponse;
+import com.huaweicloud.sdk.frs.v2.model.BatchDeleteFacesRequest;
+import com.huaweicloud.sdk.frs.v2.model.BatchDeleteFacesResponse;
+import com.huaweicloud.sdk.frs.v2.model.CompareFaceByBase64Request;
+import com.huaweicloud.sdk.frs.v2.model.CompareFaceByBase64Response;
+import com.huaweicloud.sdk.frs.v2.model.CompareFaceByFileRequest;
+import com.huaweicloud.sdk.frs.v2.model.CompareFaceByFileResponse;
+import com.huaweicloud.sdk.frs.v2.model.CompareFaceByUrlRequest;
+import com.huaweicloud.sdk.frs.v2.model.CompareFaceByUrlResponse;
+import com.huaweicloud.sdk.frs.v2.model.CreateFaceSetRequest;
+import com.huaweicloud.sdk.frs.v2.model.CreateFaceSetResponse;
+import com.huaweicloud.sdk.frs.v2.model.DeleteFaceByExternalImageIdRequest;
+import com.huaweicloud.sdk.frs.v2.model.DeleteFaceByExternalImageIdResponse;
+import com.huaweicloud.sdk.frs.v2.model.DeleteFaceByFaceIdRequest;
+import com.huaweicloud.sdk.frs.v2.model.DeleteFaceByFaceIdResponse;
+import com.huaweicloud.sdk.frs.v2.model.DeleteFaceSetRequest;
+import com.huaweicloud.sdk.frs.v2.model.DeleteFaceSetResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByBase64IntlRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByBase64IntlResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByBase64Request;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByBase64Response;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByFileIntlRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByFileIntlResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByFileRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByFileResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByUrlIntlRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByUrlIntlResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByUrlRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectFaceByUrlResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByBase64IntlRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByBase64IntlResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByBase64Request;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByBase64Response;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByFileIntlRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByFileIntlResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByFileRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByFileResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByUrlIntlRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByUrlIntlResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByUrlRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveByUrlResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveFaceByBase64Request;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveFaceByBase64Response;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveFaceByFileRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveFaceByFileResponse;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveFaceByUrlRequest;
+import com.huaweicloud.sdk.frs.v2.model.DetectLiveFaceByUrlResponse;
+import com.huaweicloud.sdk.frs.v2.model.SearchFaceByBase64Request;
+import com.huaweicloud.sdk.frs.v2.model.SearchFaceByBase64Response;
+import com.huaweicloud.sdk.frs.v2.model.SearchFaceByFaceIdRequest;
+import com.huaweicloud.sdk.frs.v2.model.SearchFaceByFaceIdResponse;
+import com.huaweicloud.sdk.frs.v2.model.SearchFaceByFileRequest;
+import com.huaweicloud.sdk.frs.v2.model.SearchFaceByFileResponse;
+import com.huaweicloud.sdk.frs.v2.model.SearchFaceByUrlRequest;
+import com.huaweicloud.sdk.frs.v2.model.SearchFaceByUrlResponse;
+import com.huaweicloud.sdk.frs.v2.model.ShowAllFaceSetsRequest;
+import com.huaweicloud.sdk.frs.v2.model.ShowAllFaceSetsResponse;
+import com.huaweicloud.sdk.frs.v2.model.ShowFaceSetRequest;
+import com.huaweicloud.sdk.frs.v2.model.ShowFaceSetResponse;
+import com.huaweicloud.sdk.frs.v2.model.ShowFacesByFaceIdRequest;
+import com.huaweicloud.sdk.frs.v2.model.ShowFacesByFaceIdResponse;
+import com.huaweicloud.sdk.frs.v2.model.ShowFacesByLimitRequest;
+import com.huaweicloud.sdk.frs.v2.model.ShowFacesByLimitResponse;
+import com.huaweicloud.sdk.frs.v2.model.UpdateFaceRequest;
+import com.huaweicloud.sdk.frs.v2.model.UpdateFaceResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +85,8 @@ public class FrsAsyncClient {
     }
 
     public static ClientBuilder<FrsAsyncClient> newBuilder() {
-        return new ClientBuilder<>(FrsAsyncClient::new);
+        ClientBuilder<FrsAsyncClient> clientBuilder = new ClientBuilder<>(FrsAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

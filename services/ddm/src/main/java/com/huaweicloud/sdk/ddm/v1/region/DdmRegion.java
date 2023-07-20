@@ -12,6 +12,8 @@ import java.util.Objects;
 
 public class DdmRegion {
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://ddm.eu-west-101.myhuaweicloud.eu");
+
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://ddm.cn-southwest-2.myhuaweicloud.com");
 
@@ -42,6 +44,7 @@ public class DdmRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
+        map.put("eu-west-101", EU_WEST_101);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("cn-south-2", CN_SOUTH_2);
         map.put("cn-north-4", CN_NORTH_4);

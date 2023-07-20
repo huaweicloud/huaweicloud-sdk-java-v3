@@ -424,7 +424,7 @@ public class CreateInstanceByEngineReq {
     private Boolean enableAutoTopic;
 
     /**
-     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考磁盘类型及性能介绍。
+     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:otc,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。
      */
     public static final class StorageSpecCodeEnum {
 
@@ -633,7 +633,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+     * 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  认证用户名，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
      * @return accessUser
      */
     public String getAccessUser() {
@@ -734,7 +734,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空。 创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
+     * 创建节点到指定且有资源的可用区ID。请参考[查询可用区信息](ListAvailableZones.xml)获取可用区ID。  该参数不能为空数组或者数组的值为空。  创建Kafka实例，支持节点部署在1个或3个及3个以上的可用区。在为节点指定可用区时，用逗号分隔开。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -751,7 +751,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 产品ID。 产品ID可以从**查询产品规格列表**接口查询到。
+     * 产品ID。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
      * @return productId
      */
     public String getProductId() {
@@ -989,7 +989,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考磁盘类型及性能介绍。
+     * 存储IO规格。  取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:otc,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb)》的“磁盘类型及性能介绍”。
      * @return storageSpecCode
      */
     public StorageSpecCodeEnum getStorageSpecCode() {

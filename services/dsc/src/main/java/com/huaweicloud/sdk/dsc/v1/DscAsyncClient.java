@@ -3,7 +3,84 @@ package com.huaweicloud.sdk.dsc.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.dsc.v1.model.*;
+import com.huaweicloud.sdk.dsc.v1.model.AddBucketsRequest;
+import com.huaweicloud.sdk.dsc.v1.model.AddBucketsResponse;
+import com.huaweicloud.sdk.dsc.v1.model.AddRuleGroupRequest;
+import com.huaweicloud.sdk.dsc.v1.model.AddRuleGroupResponse;
+import com.huaweicloud.sdk.dsc.v1.model.AddRuleRequest;
+import com.huaweicloud.sdk.dsc.v1.model.AddRuleResponse;
+import com.huaweicloud.sdk.dsc.v1.model.AddScanJobRequest;
+import com.huaweicloud.sdk.dsc.v1.model.AddScanJobResponse;
+import com.huaweicloud.sdk.dsc.v1.model.BatchAddDataMaskRequest;
+import com.huaweicloud.sdk.dsc.v1.model.BatchAddDataMaskResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ChangeDbTemplateOperationRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ChangeDbTemplateOperationResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ChangeRuleRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ChangeRuleResponse;
+import com.huaweicloud.sdk.dsc.v1.model.CreateDatabaseWaterMarkRequest;
+import com.huaweicloud.sdk.dsc.v1.model.CreateDatabaseWaterMarkResponse;
+import com.huaweicloud.sdk.dsc.v1.model.CreateDocWatermarkByAddressRequest;
+import com.huaweicloud.sdk.dsc.v1.model.CreateDocWatermarkByAddressResponse;
+import com.huaweicloud.sdk.dsc.v1.model.CreateDocWatermarkRequest;
+import com.huaweicloud.sdk.dsc.v1.model.CreateDocWatermarkResponse;
+import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkByAddressRequest;
+import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkByAddressResponse;
+import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkRequest;
+import com.huaweicloud.sdk.dsc.v1.model.CreateImageWatermarkResponse;
+import com.huaweicloud.sdk.dsc.v1.model.CreateProductOrderRequest;
+import com.huaweicloud.sdk.dsc.v1.model.CreateProductOrderResponse;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteBucketRequest;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteBucketResponse;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleGroupRequest;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleGroupResponse;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleRequest;
+import com.huaweicloud.sdk.dsc.v1.model.DeleteRuleResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ListBucketsRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ListBucketsResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ListDbMaskTaskRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ListDbMaskTaskResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationBucketsRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationBucketsResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationColumnRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationColumnResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationDbRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationDbResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationFileRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationFileResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationTableRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ListRelationTableResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ListRuleGroupsRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ListRuleGroupsResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowDatabaseWaterMarkRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowDatabaseWaterMarkResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowDocWatermarkByAddressRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowDocWatermarkByAddressResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowDocWatermarkRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowDocWatermarkResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowImageWatermarkByAddressRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowImageWatermarkByAddressResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowImageWatermarkRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowImageWatermarkResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowImageWatermarkWithImageByAddressRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowImageWatermarkWithImageByAddressResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowImageWatermarkWithImageRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowImageWatermarkWithImageResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowOpenApiCalledRecordsRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowOpenApiCalledRecordsResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowRulesRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowRulesResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowScanJobResultsRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowScanJobResultsResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowScanJobsRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowScanJobsResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowSpecificationRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowSpecificationResponse;
+import com.huaweicloud.sdk.dsc.v1.model.ShowTopicsRequest;
+import com.huaweicloud.sdk.dsc.v1.model.ShowTopicsResponse;
+import com.huaweicloud.sdk.dsc.v1.model.UpdateAssetNameRequest;
+import com.huaweicloud.sdk.dsc.v1.model.UpdateAssetNameResponse;
+import com.huaweicloud.sdk.dsc.v1.model.UpdateDefaultTopicRequest;
+import com.huaweicloud.sdk.dsc.v1.model.UpdateDefaultTopicResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +93,8 @@ public class DscAsyncClient {
     }
 
     public static ClientBuilder<DscAsyncClient> newBuilder() {
-        return new ClientBuilder<>(DscAsyncClient::new);
+        ClientBuilder<DscAsyncClient> clientBuilder = new ClientBuilder<>(DscAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

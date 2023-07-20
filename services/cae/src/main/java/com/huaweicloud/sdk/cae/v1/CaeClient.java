@@ -1,6 +1,81 @@
 package com.huaweicloud.sdk.cae.v1;
 
-import com.huaweicloud.sdk.cae.v1.model.*;
+import com.huaweicloud.sdk.cae.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateAgencyResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateApplicationRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateApplicationResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateCertificateRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateCertificateResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentConfigurationRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentConfigurationResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateComponentResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateDomainRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateDomainResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateVolumeRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateVolumeResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteApplicationRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteApplicationResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteCertificateRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteComponentConfigurationRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteComponentConfigurationResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteComponentRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteComponentResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteDomainRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeResponse;
+import com.huaweicloud.sdk.cae.v1.model.ExecuteActionRequest;
+import com.huaweicloud.sdk.cae.v1.model.ExecuteActionResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListAgenciesRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListAgenciesResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListApplicationsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListApplicationsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListCertificatesRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentConfigurationsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentConfigurationsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentEventsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentEventsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentInstancesRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentInstancesResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentSnapshotsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentSnapshotsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListComponentsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListDomainsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListVolumesRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListVolumesResponse;
+import com.huaweicloud.sdk.cae.v1.model.RetryJobRequest;
+import com.huaweicloud.sdk.cae.v1.model.RetryJobResponse;
+import com.huaweicloud.sdk.cae.v1.model.ShowApplicationRequest;
+import com.huaweicloud.sdk.cae.v1.model.ShowApplicationResponse;
+import com.huaweicloud.sdk.cae.v1.model.ShowComponentRequest;
+import com.huaweicloud.sdk.cae.v1.model.ShowComponentResponse;
+import com.huaweicloud.sdk.cae.v1.model.ShowExecutionResultRequest;
+import com.huaweicloud.sdk.cae.v1.model.ShowExecutionResultResponse;
+import com.huaweicloud.sdk.cae.v1.model.ShowJobRequest;
+import com.huaweicloud.sdk.cae.v1.model.ShowJobResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateComponentRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateComponentResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +89,8 @@ public class CaeClient {
     }
 
     public static ClientBuilder<CaeClient> newBuilder() {
-        return new ClientBuilder<>(CaeClient::new);
+        ClientBuilder<CaeClient> clientBuilder = new ClientBuilder<>(CaeClient::new);
+        return clientBuilder;
     }
 
     /**

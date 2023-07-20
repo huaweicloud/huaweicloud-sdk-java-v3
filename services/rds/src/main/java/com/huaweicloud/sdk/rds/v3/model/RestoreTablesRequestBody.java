@@ -23,6 +23,11 @@ public class RestoreTablesRequestBody {
 
     private List<RestoreDatabasesInfo> restoreTables = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_fast_restore")
+
+    private Boolean isFastRestore;
+
     public RestoreTablesRequestBody withRestoreTime(Long restoreTime) {
         this.restoreTime = restoreTime;
         return this;
@@ -73,6 +78,23 @@ public class RestoreTablesRequestBody {
         this.restoreTables = restoreTables;
     }
 
+    public RestoreTablesRequestBody withIsFastRestore(Boolean isFastRestore) {
+        this.isFastRestore = isFastRestore;
+        return this;
+    }
+
+    /**
+     * 是否使用极速恢复，可先根据”获取实例是否能使用极速恢复“接口判断本次恢复是否能使用急速恢复。 如果实例使用了XA事务，则不可使用极速恢复！使用恢复会导致恢复失败！
+     * @return isFastRestore
+     */
+    public Boolean getIsFastRestore() {
+        return isFastRestore;
+    }
+
+    public void setIsFastRestore(Boolean isFastRestore) {
+        this.isFastRestore = isFastRestore;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +105,13 @@ public class RestoreTablesRequestBody {
         }
         RestoreTablesRequestBody that = (RestoreTablesRequestBody) obj;
         return Objects.equals(this.restoreTime, that.restoreTime)
-            && Objects.equals(this.restoreTables, that.restoreTables);
+            && Objects.equals(this.restoreTables, that.restoreTables)
+            && Objects.equals(this.isFastRestore, that.isFastRestore);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(restoreTime, restoreTables);
+        return Objects.hash(restoreTime, restoreTables, isFastRestore);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class RestoreTablesRequestBody {
         sb.append("class RestoreTablesRequestBody {\n");
         sb.append("    restoreTime: ").append(toIndentedString(restoreTime)).append("\n");
         sb.append("    restoreTables: ").append(toIndentedString(restoreTables)).append("\n");
+        sb.append("    isFastRestore: ").append(toIndentedString(isFastRestore)).append("\n");
         sb.append("}");
         return sb.toString();
     }

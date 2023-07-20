@@ -3,7 +3,72 @@ package com.huaweicloud.sdk.res.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.res.v1.model.*;
+import com.huaweicloud.sdk.res.v1.model.CreateResDatasourceRequest;
+import com.huaweicloud.sdk.res.v1.model.CreateResDatasourceResponse;
+import com.huaweicloud.sdk.res.v1.model.CreateResIntelligentSceneRequest;
+import com.huaweicloud.sdk.res.v1.model.CreateResIntelligentSceneResponse;
+import com.huaweicloud.sdk.res.v1.model.CreateResJobRequest;
+import com.huaweicloud.sdk.res.v1.model.CreateResJobResponse;
+import com.huaweicloud.sdk.res.v1.model.CreateResJobsRequest;
+import com.huaweicloud.sdk.res.v1.model.CreateResJobsResponse;
+import com.huaweicloud.sdk.res.v1.model.CreateResOnlineInstanceRequest;
+import com.huaweicloud.sdk.res.v1.model.CreateResOnlineInstanceResponse;
+import com.huaweicloud.sdk.res.v1.model.CreateResSceneRequest;
+import com.huaweicloud.sdk.res.v1.model.CreateResSceneResponse;
+import com.huaweicloud.sdk.res.v1.model.CreateResWorkspaceRequest;
+import com.huaweicloud.sdk.res.v1.model.CreateResWorkspaceResponse;
+import com.huaweicloud.sdk.res.v1.model.DeleteResDatasourceRequest;
+import com.huaweicloud.sdk.res.v1.model.DeleteResDatasourceResponse;
+import com.huaweicloud.sdk.res.v1.model.DeleteResJobRequest;
+import com.huaweicloud.sdk.res.v1.model.DeleteResJobResponse;
+import com.huaweicloud.sdk.res.v1.model.DeleteResOnlineInstanceRequest;
+import com.huaweicloud.sdk.res.v1.model.DeleteResOnlineInstanceResponse;
+import com.huaweicloud.sdk.res.v1.model.DeleteResSceneRequest;
+import com.huaweicloud.sdk.res.v1.model.DeleteResSceneResponse;
+import com.huaweicloud.sdk.res.v1.model.DeleteResWorkspaceRequest;
+import com.huaweicloud.sdk.res.v1.model.DeleteResWorkspaceResponse;
+import com.huaweicloud.sdk.res.v1.model.ListResDatasourcesRequest;
+import com.huaweicloud.sdk.res.v1.model.ListResDatasourcesResponse;
+import com.huaweicloud.sdk.res.v1.model.ListResEnterprisesRequest;
+import com.huaweicloud.sdk.res.v1.model.ListResEnterprisesResponse;
+import com.huaweicloud.sdk.res.v1.model.ListResOnlineServiceDetailsRequest;
+import com.huaweicloud.sdk.res.v1.model.ListResOnlineServiceDetailsResponse;
+import com.huaweicloud.sdk.res.v1.model.ListResResourceSpecRequest;
+import com.huaweicloud.sdk.res.v1.model.ListResResourceSpecResponse;
+import com.huaweicloud.sdk.res.v1.model.ListResScenesRequest;
+import com.huaweicloud.sdk.res.v1.model.ListResScenesResponse;
+import com.huaweicloud.sdk.res.v1.model.ListResWorkspacesRequest;
+import com.huaweicloud.sdk.res.v1.model.ListResWorkspacesResponse;
+import com.huaweicloud.sdk.res.v1.model.ShowResDatasourceRequest;
+import com.huaweicloud.sdk.res.v1.model.ShowResDatasourceResponse;
+import com.huaweicloud.sdk.res.v1.model.ShowResDatasourceWorkDetailRequest;
+import com.huaweicloud.sdk.res.v1.model.ShowResDatasourceWorkDetailResponse;
+import com.huaweicloud.sdk.res.v1.model.ShowResJobRequest;
+import com.huaweicloud.sdk.res.v1.model.ShowResJobResponse;
+import com.huaweicloud.sdk.res.v1.model.ShowResRecallSetRequest;
+import com.huaweicloud.sdk.res.v1.model.ShowResRecallSetResponse;
+import com.huaweicloud.sdk.res.v1.model.ShowResSceneRequest;
+import com.huaweicloud.sdk.res.v1.model.ShowResSceneResponse;
+import com.huaweicloud.sdk.res.v1.model.ShowResWrokspaceRequest;
+import com.huaweicloud.sdk.res.v1.model.ShowResWrokspaceResponse;
+import com.huaweicloud.sdk.res.v1.model.StartResJobRequest;
+import com.huaweicloud.sdk.res.v1.model.StartResJobResponse;
+import com.huaweicloud.sdk.res.v1.model.StartResSceneJobsRequest;
+import com.huaweicloud.sdk.res.v1.model.StartResSceneJobsResponse;
+import com.huaweicloud.sdk.res.v1.model.UpdateResDatasourceRequest;
+import com.huaweicloud.sdk.res.v1.model.UpdateResDatasourceResponse;
+import com.huaweicloud.sdk.res.v1.model.UpdateResDatastructRequest;
+import com.huaweicloud.sdk.res.v1.model.UpdateResDatastructResponse;
+import com.huaweicloud.sdk.res.v1.model.UpdateResIntelligentSceneRequest;
+import com.huaweicloud.sdk.res.v1.model.UpdateResIntelligentSceneResponse;
+import com.huaweicloud.sdk.res.v1.model.UpdateResJobRequest;
+import com.huaweicloud.sdk.res.v1.model.UpdateResJobResponse;
+import com.huaweicloud.sdk.res.v1.model.UpdateResOnlineInstanceRequest;
+import com.huaweicloud.sdk.res.v1.model.UpdateResOnlineInstanceResponse;
+import com.huaweicloud.sdk.res.v1.model.UpdateResSceneRequest;
+import com.huaweicloud.sdk.res.v1.model.UpdateResSceneResponse;
+import com.huaweicloud.sdk.res.v1.model.UpdateResWorkspaceRequest;
+import com.huaweicloud.sdk.res.v1.model.UpdateResWorkspaceResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +81,8 @@ public class ResAsyncClient {
     }
 
     public static ClientBuilder<ResAsyncClient> newBuilder() {
-        return new ClientBuilder<>(ResAsyncClient::new);
+        ClientBuilder<ResAsyncClient> clientBuilder = new ClientBuilder<>(ResAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

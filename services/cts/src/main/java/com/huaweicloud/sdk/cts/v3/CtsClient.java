@@ -3,7 +3,26 @@ package com.huaweicloud.sdk.cts.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.cts.v3.model.*;
+import com.huaweicloud.sdk.cts.v3.model.CreateNotificationRequest;
+import com.huaweicloud.sdk.cts.v3.model.CreateNotificationResponse;
+import com.huaweicloud.sdk.cts.v3.model.CreateTrackerRequest;
+import com.huaweicloud.sdk.cts.v3.model.CreateTrackerResponse;
+import com.huaweicloud.sdk.cts.v3.model.DeleteNotificationRequest;
+import com.huaweicloud.sdk.cts.v3.model.DeleteNotificationResponse;
+import com.huaweicloud.sdk.cts.v3.model.DeleteTrackerRequest;
+import com.huaweicloud.sdk.cts.v3.model.DeleteTrackerResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListNotificationsRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListNotificationsResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListQuotasRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListQuotasResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListTracesRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListTracesResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListTrackersRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListTrackersResponse;
+import com.huaweicloud.sdk.cts.v3.model.UpdateNotificationRequest;
+import com.huaweicloud.sdk.cts.v3.model.UpdateNotificationResponse;
+import com.huaweicloud.sdk.cts.v3.model.UpdateTrackerRequest;
+import com.huaweicloud.sdk.cts.v3.model.UpdateTrackerResponse;
 
 public class CtsClient {
 
@@ -14,7 +33,8 @@ public class CtsClient {
     }
 
     public static ClientBuilder<CtsClient> newBuilder() {
-        return new ClientBuilder<>(CtsClient::new);
+        ClientBuilder<CtsClient> clientBuilder = new ClientBuilder<>(CtsClient::new);
+        return clientBuilder;
     }
 
     /**

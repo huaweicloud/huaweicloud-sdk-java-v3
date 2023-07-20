@@ -3,7 +3,8 @@ package com.huaweicloud.sdk.mas.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.mas.v1.model.*;
+import com.huaweicloud.sdk.mas.v1.model.ShowNameSpaceListRequest;
+import com.huaweicloud.sdk.mas.v1.model.ShowNameSpaceListResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +17,8 @@ public class MasAsyncClient {
     }
 
     public static ClientBuilder<MasAsyncClient> newBuilder() {
-        return new ClientBuilder<>(MasAsyncClient::new);
+        ClientBuilder<MasAsyncClient> clientBuilder = new ClientBuilder<>(MasAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

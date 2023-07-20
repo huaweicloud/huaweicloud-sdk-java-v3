@@ -1,6 +1,59 @@
 package com.huaweicloud.sdk.cloudrtc.v2;
 
-import com.huaweicloud.sdk.cloudrtc.v2.model.*;
+import com.huaweicloud.sdk.cloudrtc.v2.model.CreateAppRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.CreateAppResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.CreateIndividualStreamJobRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.CreateIndividualStreamJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.CreateMixJobRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.CreateMixJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.CreateRecordRuleRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.CreateRecordRuleResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.DeleteAppRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.DeleteAppResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.DeleteRecordRuleRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.DeleteRecordRuleResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListAppsRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListAppsResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListRecordRulesRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListRecordRulesResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.RemoveRoomRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.RemoveRoomResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.RemoveUsersRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.RemoveUsersResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowAppRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowAppResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowAutoRecordRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowAutoRecordResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowIndividualStreamJobRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowIndividualStreamJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowMixJobRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowMixJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordCallbackRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordCallbackResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordRuleRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordRuleResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowUrlAuthRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ShowUrlAuthResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.StartAppRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.StartAppResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.StopAppRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.StopAppResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.StopIndividualStreamJobRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.StopIndividualStreamJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.StopMixJobRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.StopMixJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateAutoRecordRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateAutoRecordResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateIndividualStreamJobRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateIndividualStreamJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateMixJobRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateMixJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordRuleRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordRuleResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateUrlAuthRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateUrlAuthResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +67,8 @@ public class CloudRTCClient {
     }
 
     public static ClientBuilder<CloudRTCClient> newBuilder() {
-        return new ClientBuilder<>(CloudRTCClient::new);
+        ClientBuilder<CloudRTCClient> clientBuilder = new ClientBuilder<>(CloudRTCClient::new);
+        return clientBuilder;
     }
 
     /**

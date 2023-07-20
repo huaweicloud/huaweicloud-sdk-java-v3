@@ -3,7 +3,18 @@ package com.huaweicloud.sdk.scm.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.scm.v3.model.*;
+import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ExportCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ExportCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ImportCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListCertificatesRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.PushCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ShowCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ShowCertificateResponse;
 
 public class ScmClient {
 
@@ -14,7 +25,9 @@ public class ScmClient {
     }
 
     public static ClientBuilder<ScmClient> newBuilder() {
-        return new ClientBuilder<>(ScmClient::new, "GlobalCredentials,BasicCredentials");
+        ClientBuilder<ScmClient> clientBuilder =
+            new ClientBuilder<>(ScmClient::new, "GlobalCredentials,BasicCredentials");
+        return clientBuilder;
     }
 
     /**

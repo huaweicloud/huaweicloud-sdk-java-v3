@@ -3,7 +3,44 @@ package com.huaweicloud.sdk.sfsturbo.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.sfsturbo.v1.model.*;
+import com.huaweicloud.sdk.sfsturbo.v1.model.BatchAddSharedTagsRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.BatchAddSharedTagsResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirQuotaRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirQuotaResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirQuotaRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirQuotaResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteShareRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteSharedTagRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteSharedTagResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ExpandShareRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ExpandShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaResponse;
 
 public class SFSTurboClient {
 
@@ -14,7 +51,8 @@ public class SFSTurboClient {
     }
 
     public static ClientBuilder<SFSTurboClient> newBuilder() {
-        return new ClientBuilder<>(SFSTurboClient::new);
+        ClientBuilder<SFSTurboClient> clientBuilder = new ClientBuilder<>(SFSTurboClient::new);
+        return clientBuilder;
     }
 
     /**

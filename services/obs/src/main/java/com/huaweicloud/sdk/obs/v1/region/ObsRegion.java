@@ -26,6 +26,10 @@ public class ObsRegion {
 
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://obs.cn-south-1.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://obs.cn-south-4.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://obs.cn-south-2.myhuaweicloud.com");
+
     public static final Region LA_NORTH_2 = new Region("la-north-2", "https://obs.la-north-2.myhuaweicloud.com");
 
     public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://obs.na-mexico-1.myhuaweicloud.com");
@@ -43,6 +47,9 @@ public class ObsRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://obs.ap-southeast-3.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://obs.ap-southeast-4.myhuaweicloud.com");
+
     public static final Region AP_SOUTHEAST_1 =
         new Region("ap-southeast-1", "https://obs.ap-southeast-1.myhuaweicloud.com");
 
@@ -59,6 +66,8 @@ public class ObsRegion {
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-south-1", CN_SOUTH_1);
+        map.put("cn-south-4", CN_SOUTH_4);
+        map.put("cn-south-2", CN_SOUTH_2);
         map.put("la-north-2", LA_NORTH_2);
         map.put("na-mexico-1", NA_MEXICO_1);
         map.put("sa-brazil-1", SA_BRAZIL_1);
@@ -66,6 +75,7 @@ public class ObsRegion {
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         return Collections.unmodifiableMap(map);
     }

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -22,12 +21,12 @@ public class UpdateFunctionTagsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Map<String, String>> tags = null;
+    private List<KvItem> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
 
-    private List<Map<String, String>> sysTags = null;
+    private List<KvItem> sysTags = null;
 
     public UpdateFunctionTagsRequestBody withAction(String action) {
         this.action = action;
@@ -46,12 +45,12 @@ public class UpdateFunctionTagsRequestBody {
         this.action = action;
     }
 
-    public UpdateFunctionTagsRequestBody withTags(List<Map<String, String>> tags) {
+    public UpdateFunctionTagsRequestBody withTags(List<KvItem> tags) {
         this.tags = tags;
         return this;
     }
 
-    public UpdateFunctionTagsRequestBody addTagsItem(Map<String, String> tagsItem) {
+    public UpdateFunctionTagsRequestBody addTagsItem(KvItem tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -59,7 +58,7 @@ public class UpdateFunctionTagsRequestBody {
         return this;
     }
 
-    public UpdateFunctionTagsRequestBody withTags(Consumer<List<Map<String, String>>> tagsSetter) {
+    public UpdateFunctionTagsRequestBody withTags(Consumer<List<KvItem>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -71,20 +70,20 @@ public class UpdateFunctionTagsRequestBody {
      * 标签列表
      * @return tags
      */
-    public List<Map<String, String>> getTags() {
+    public List<KvItem> getTags() {
         return tags;
     }
 
-    public void setTags(List<Map<String, String>> tags) {
+    public void setTags(List<KvItem> tags) {
         this.tags = tags;
     }
 
-    public UpdateFunctionTagsRequestBody withSysTags(List<Map<String, String>> sysTags) {
+    public UpdateFunctionTagsRequestBody withSysTags(List<KvItem> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    public UpdateFunctionTagsRequestBody addSysTagsItem(Map<String, String> sysTagsItem) {
+    public UpdateFunctionTagsRequestBody addSysTagsItem(KvItem sysTagsItem) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -92,7 +91,7 @@ public class UpdateFunctionTagsRequestBody {
         return this;
     }
 
-    public UpdateFunctionTagsRequestBody withSysTags(Consumer<List<Map<String, String>>> sysTagsSetter) {
+    public UpdateFunctionTagsRequestBody withSysTags(Consumer<List<KvItem>> sysTagsSetter) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -104,11 +103,11 @@ public class UpdateFunctionTagsRequestBody {
      * 系统标签列表
      * @return sysTags
      */
-    public List<Map<String, String>> getSysTags() {
+    public List<KvItem> getSysTags() {
         return sysTags;
     }
 
-    public void setSysTags(List<Map<String, String>> sysTags) {
+    public void setSysTags(List<KvItem> sysTags) {
         this.sysTags = sysTags;
     }
 

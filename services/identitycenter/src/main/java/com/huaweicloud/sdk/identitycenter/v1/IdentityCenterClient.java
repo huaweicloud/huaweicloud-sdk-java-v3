@@ -3,7 +3,54 @@ package com.huaweicloud.sdk.identitycenter.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.identitycenter.v1.model.*;
+import com.huaweicloud.sdk.identitycenter.v1.model.AttachCustomerManagedPolicyToPermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.AttachCustomerManagedPolicyToPermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.AttachManagedPolicyToPermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.AttachManagedPolicyToPermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.CreateAccountAssignmentRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.CreateAccountAssignmentResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.CreatePermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.CreatePermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.DeleteAccountAssignmentRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.DeleteAccountAssignmentResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.DeletePermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.DeletePermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.DescribeAccountAssignmentCreationStatusRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.DescribeAccountAssignmentCreationStatusResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.DescribeAccountAssignmentDeletionStatusRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.DescribeAccountAssignmentDeletionStatusResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.DescribePermissionSetProvisioningStatusRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.DescribePermissionSetProvisioningStatusResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.DescribePermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.DescribePermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.DetachCustomerManagedPolicyReferenceFromPermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.DetachCustomerManagedPolicyReferenceFromPermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.DetachManagedPolicyFromPermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.DetachManagedPolicyFromPermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListAccountAssignmentCreationStatusRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListAccountAssignmentCreationStatusResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListAccountAssignmentDeletionStatusRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListAccountAssignmentDeletionStatusResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListAccountAssignmentsRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListAccountAssignmentsResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListAccountsForProvisionedPermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListAccountsForProvisionedPermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListCustomerManagedPolicyReferencesInPermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListCustomerManagedPolicyReferencesInPermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListInstancesRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListInstancesResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListManagedPoliciesInPermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListManagedPoliciesInPermissionSetResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListPermissionSetProvisioningStatusRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListPermissionSetProvisioningStatusResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListPermissionSetsProvisionedToAccountRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListPermissionSetsProvisionedToAccountResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListPermissionSetsRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListPermissionSetsResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListProfileAssociationsRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.ListProfileAssociationsResponse;
+import com.huaweicloud.sdk.identitycenter.v1.model.UpdatePermissionSetRequest;
+import com.huaweicloud.sdk.identitycenter.v1.model.UpdatePermissionSetResponse;
 
 public class IdentityCenterClient {
 
@@ -14,7 +61,9 @@ public class IdentityCenterClient {
     }
 
     public static ClientBuilder<IdentityCenterClient> newBuilder() {
-        return new ClientBuilder<>(IdentityCenterClient::new, "GlobalCredentials");
+        ClientBuilder<IdentityCenterClient> clientBuilder =
+            new ClientBuilder<>(IdentityCenterClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

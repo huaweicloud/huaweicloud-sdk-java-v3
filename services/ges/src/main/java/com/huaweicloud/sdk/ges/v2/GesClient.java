@@ -3,7 +3,66 @@ package com.huaweicloud.sdk.ges.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.ges.v2.model.*;
+import com.huaweicloud.sdk.ges.v2.model.AttachEip2Request;
+import com.huaweicloud.sdk.ges.v2.model.AttachEip2Response;
+import com.huaweicloud.sdk.ges.v2.model.ClearGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.ClearGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.CreateBackup2Request;
+import com.huaweicloud.sdk.ges.v2.model.CreateBackup2Response;
+import com.huaweicloud.sdk.ges.v2.model.CreateGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.CreateGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.CreateMetadata2Request;
+import com.huaweicloud.sdk.ges.v2.model.CreateMetadata2Response;
+import com.huaweicloud.sdk.ges.v2.model.DeleteBackup2Request;
+import com.huaweicloud.sdk.ges.v2.model.DeleteBackup2Response;
+import com.huaweicloud.sdk.ges.v2.model.DeleteGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.DeleteGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.DeleteMetadata2Request;
+import com.huaweicloud.sdk.ges.v2.model.DeleteMetadata2Response;
+import com.huaweicloud.sdk.ges.v2.model.DeregisterScenes2Request;
+import com.huaweicloud.sdk.ges.v2.model.DeregisterScenes2Response;
+import com.huaweicloud.sdk.ges.v2.model.DetachEip2Request;
+import com.huaweicloud.sdk.ges.v2.model.DetachEip2Response;
+import com.huaweicloud.sdk.ges.v2.model.ExpandGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.ExpandGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.ExportGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.ExportGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.ImportGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.ImportGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.ListBackups2Request;
+import com.huaweicloud.sdk.ges.v2.model.ListBackups2Response;
+import com.huaweicloud.sdk.ges.v2.model.ListGraphBackups2Request;
+import com.huaweicloud.sdk.ges.v2.model.ListGraphBackups2Response;
+import com.huaweicloud.sdk.ges.v2.model.ListGraphs2Request;
+import com.huaweicloud.sdk.ges.v2.model.ListGraphs2Response;
+import com.huaweicloud.sdk.ges.v2.model.ListJobs2Request;
+import com.huaweicloud.sdk.ges.v2.model.ListJobs2Response;
+import com.huaweicloud.sdk.ges.v2.model.ListMetadatas2Request;
+import com.huaweicloud.sdk.ges.v2.model.ListMetadatas2Response;
+import com.huaweicloud.sdk.ges.v2.model.ListQuotas2Request;
+import com.huaweicloud.sdk.ges.v2.model.ListQuotas2Response;
+import com.huaweicloud.sdk.ges.v2.model.ListScenes2Request;
+import com.huaweicloud.sdk.ges.v2.model.ListScenes2Response;
+import com.huaweicloud.sdk.ges.v2.model.RegisterScenes2Request;
+import com.huaweicloud.sdk.ges.v2.model.RegisterScenes2Response;
+import com.huaweicloud.sdk.ges.v2.model.ResizeGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.ResizeGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.RestartGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.RestartGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.ShowGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.ShowGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.ShowJob2Request;
+import com.huaweicloud.sdk.ges.v2.model.ShowJob2Response;
+import com.huaweicloud.sdk.ges.v2.model.ShowMetadata2Request;
+import com.huaweicloud.sdk.ges.v2.model.ShowMetadata2Response;
+import com.huaweicloud.sdk.ges.v2.model.StartGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.StartGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.StopGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.StopGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.UpgradeGraph2Request;
+import com.huaweicloud.sdk.ges.v2.model.UpgradeGraph2Response;
+import com.huaweicloud.sdk.ges.v2.model.UploadFromObs2Request;
+import com.huaweicloud.sdk.ges.v2.model.UploadFromObs2Response;
 
 public class GesClient {
 
@@ -14,7 +73,8 @@ public class GesClient {
     }
 
     public static ClientBuilder<GesClient> newBuilder() {
-        return new ClientBuilder<>(GesClient::new);
+        ClientBuilder<GesClient> clientBuilder = new ClientBuilder<>(GesClient::new);
+        return clientBuilder;
     }
 
     /**

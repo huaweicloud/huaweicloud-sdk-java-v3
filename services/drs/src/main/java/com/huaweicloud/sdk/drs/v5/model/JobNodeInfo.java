@@ -21,6 +21,11 @@ public class JobNodeInfo {
 
     private JobNodeVpcInfo vpc;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_info")
+
+    private JobNodeBaseInfo baseInfo;
+
     public JobNodeInfo withSpec(JobNodeSpecInfo spec) {
         this.spec = spec;
         return this;
@@ -73,6 +78,32 @@ public class JobNodeInfo {
         this.vpc = vpc;
     }
 
+    public JobNodeInfo withBaseInfo(JobNodeBaseInfo baseInfo) {
+        this.baseInfo = baseInfo;
+        return this;
+    }
+
+    public JobNodeInfo withBaseInfo(Consumer<JobNodeBaseInfo> baseInfoSetter) {
+        if (this.baseInfo == null) {
+            this.baseInfo = new JobNodeBaseInfo();
+            baseInfoSetter.accept(this.baseInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get baseInfo
+     * @return baseInfo
+     */
+    public JobNodeBaseInfo getBaseInfo() {
+        return baseInfo;
+    }
+
+    public void setBaseInfo(JobNodeBaseInfo baseInfo) {
+        this.baseInfo = baseInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +113,13 @@ public class JobNodeInfo {
             return false;
         }
         JobNodeInfo that = (JobNodeInfo) obj;
-        return Objects.equals(this.spec, that.spec) && Objects.equals(this.vpc, that.vpc);
+        return Objects.equals(this.spec, that.spec) && Objects.equals(this.vpc, that.vpc)
+            && Objects.equals(this.baseInfo, that.baseInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(spec, vpc);
+        return Objects.hash(spec, vpc, baseInfo);
     }
 
     @Override
@@ -96,6 +128,7 @@ public class JobNodeInfo {
         sb.append("class JobNodeInfo {\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    vpc: ").append(toIndentedString(vpc)).append("\n");
+        sb.append("    baseInfo: ").append(toIndentedString(baseInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

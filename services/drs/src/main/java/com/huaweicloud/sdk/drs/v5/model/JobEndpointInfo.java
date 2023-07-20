@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class JobEndpointInfo {
 
     /**
-     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+     * 数据库类型。取值： - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
      */
     public static final class DbTypeEnum {
 
@@ -92,7 +92,7 @@ public class JobEndpointInfo {
     private DbTypeEnum dbType;
 
     /**
-     * 数据库实例类型。取值：  - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
+     * 数据库实例类型。取值： - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
      */
     public static final class EndpointTypeEnum {
 
@@ -278,7 +278,7 @@ public class JobEndpointInfo {
     }
 
     /**
-     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
+     * 数据库类型。取值： - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。
      * @return dbType
      */
     public DbTypeEnum getDbType() {
@@ -295,7 +295,7 @@ public class JobEndpointInfo {
     }
 
     /**
-     * 数据库实例类型。取值：  - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
+     * 数据库实例类型。取值： - offline：自建数据库。 - ecs：华为云ECS自建数据库。 - cloud：华为云数据库。
      * @return endpointType
      */
     public EndpointTypeEnum getEndpointType() {

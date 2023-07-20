@@ -292,7 +292,7 @@ public class CollectDbObjectsAsyncRequest {
     }
 
     /**
-     * 是否强制刷新。取值： - true：是，表示从源库重新查询。    - false：否，表示从已缓存中数据查询。
+     * 是否强制刷新。取值： - true：是，表示从源库重新查询。 - false：否，表示从已缓存中数据查询。
      * @return isRefresh
      */
     public Boolean getIsRefresh() {

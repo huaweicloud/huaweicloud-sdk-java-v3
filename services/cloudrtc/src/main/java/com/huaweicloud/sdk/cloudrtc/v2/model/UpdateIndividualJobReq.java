@@ -12,40 +12,9 @@ import java.util.function.Consumer;
 public class UpdateIndividualJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publish_param")
-
-    private PublishParam publishParam;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_param")
 
     private RecordParam recordParam;
-
-    public UpdateIndividualJobReq withPublishParam(PublishParam publishParam) {
-        this.publishParam = publishParam;
-        return this;
-    }
-
-    public UpdateIndividualJobReq withPublishParam(Consumer<PublishParam> publishParamSetter) {
-        if (this.publishParam == null) {
-            this.publishParam = new PublishParam();
-            publishParamSetter.accept(this.publishParam);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get publishParam
-     * @return publishParam
-     */
-    public PublishParam getPublishParam() {
-        return publishParam;
-    }
-
-    public void setPublishParam(PublishParam publishParam) {
-        this.publishParam = publishParam;
-    }
 
     public UpdateIndividualJobReq withRecordParam(RecordParam recordParam) {
         this.recordParam = recordParam;
@@ -82,20 +51,18 @@ public class UpdateIndividualJobReq {
             return false;
         }
         UpdateIndividualJobReq that = (UpdateIndividualJobReq) obj;
-        return Objects.equals(this.publishParam, that.publishParam)
-            && Objects.equals(this.recordParam, that.recordParam);
+        return Objects.equals(this.recordParam, that.recordParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishParam, recordParam);
+        return Objects.hash(recordParam);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateIndividualJobReq {\n");
-        sb.append("    publishParam: ").append(toIndentedString(publishParam)).append("\n");
         sb.append("    recordParam: ").append(toIndentedString(recordParam)).append("\n");
         sb.append("}");
         return sb.toString();

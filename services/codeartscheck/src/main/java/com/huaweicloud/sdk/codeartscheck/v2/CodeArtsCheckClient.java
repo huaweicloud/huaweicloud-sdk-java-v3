@@ -1,6 +1,63 @@
 package com.huaweicloud.sdk.codeartscheck.v2;
 
-import com.huaweicloud.sdk.codeartscheck.v2.model.*;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CheckParametersRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CheckParametersResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CheckRecordRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CheckRecordResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CheckRulesetParametersRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CheckRulesetParametersResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CreateRulesetRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CreateRulesetResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CreateTaskRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.CreateTaskResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteRulesetRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteRulesetResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesetsRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListRulesetsResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListTaskParameterRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListTaskParameterResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListTaskRulesetRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListTaskRulesetResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListTemplateRulesRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ListTemplateRulesResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.RunTaskRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.RunTaskResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.SetDefaulTemplateRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.SetDefaulTemplateResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowProgressDetailRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowProgressDetailResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskCmetricsRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskCmetricsResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDefectsRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDefectsResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDefectsStatisticRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDefectsStatisticResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDetailRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskDetailResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskListByProjectIdRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskListByProjectIdResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskPathTreeRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskPathTreeResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskSettingsRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTaskSettingsResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasklogRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasklogResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksRulesetsRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.ShowTasksRulesetsResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.StopTaskByIdRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.StopTaskByIdResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateDefectStatusRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateDefectStatusResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateIgnorePathRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateIgnorePathResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateTaskRulesetRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateTaskRulesetResponse;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateTaskSettingsRequest;
+import com.huaweicloud.sdk.codeartscheck.v2.model.UpdateTaskSettingsResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +71,8 @@ public class CodeArtsCheckClient {
     }
 
     public static ClientBuilder<CodeArtsCheckClient> newBuilder() {
-        return new ClientBuilder<>(CodeArtsCheckClient::new);
+        ClientBuilder<CodeArtsCheckClient> clientBuilder = new ClientBuilder<>(CodeArtsCheckClient::new);
+        return clientBuilder;
     }
 
     /**

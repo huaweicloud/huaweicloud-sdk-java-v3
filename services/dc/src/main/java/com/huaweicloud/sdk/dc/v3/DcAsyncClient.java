@@ -3,7 +3,56 @@ package com.huaweicloud.sdk.dc.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.dc.v3.model.*;
+import com.huaweicloud.sdk.dc.v3.model.BatchCreateResourceTagsRequest;
+import com.huaweicloud.sdk.dc.v3.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateVirtualInterfaceRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateVirtualInterfaceResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteDirectConnectRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualInterfaceRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualInterfaceResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +65,8 @@ public class DcAsyncClient {
     }
 
     public static ClientBuilder<DcAsyncClient> newBuilder() {
-        return new ClientBuilder<>(DcAsyncClient::new);
+        ClientBuilder<DcAsyncClient> clientBuilder = new ClientBuilder<>(DcAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -27,12 +26,12 @@ public class ListEnterpriseResourceResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Map<String, String>> tags = null;
+    private List<KvItem> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
 
-    private List<Map<String, String>> sysTags = null;
+    private List<KvItem> sysTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_name")
@@ -82,12 +81,12 @@ public class ListEnterpriseResourceResult {
         this.resourceDetail = resourceDetail;
     }
 
-    public ListEnterpriseResourceResult withTags(List<Map<String, String>> tags) {
+    public ListEnterpriseResourceResult withTags(List<KvItem> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ListEnterpriseResourceResult addTagsItem(Map<String, String> tagsItem) {
+    public ListEnterpriseResourceResult addTagsItem(KvItem tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -95,7 +94,7 @@ public class ListEnterpriseResourceResult {
         return this;
     }
 
-    public ListEnterpriseResourceResult withTags(Consumer<List<Map<String, String>>> tagsSetter) {
+    public ListEnterpriseResourceResult withTags(Consumer<List<KvItem>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -107,20 +106,20 @@ public class ListEnterpriseResourceResult {
      * 标签列表
      * @return tags
      */
-    public List<Map<String, String>> getTags() {
+    public List<KvItem> getTags() {
         return tags;
     }
 
-    public void setTags(List<Map<String, String>> tags) {
+    public void setTags(List<KvItem> tags) {
         this.tags = tags;
     }
 
-    public ListEnterpriseResourceResult withSysTags(List<Map<String, String>> sysTags) {
+    public ListEnterpriseResourceResult withSysTags(List<KvItem> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    public ListEnterpriseResourceResult addSysTagsItem(Map<String, String> sysTagsItem) {
+    public ListEnterpriseResourceResult addSysTagsItem(KvItem sysTagsItem) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -128,7 +127,7 @@ public class ListEnterpriseResourceResult {
         return this;
     }
 
-    public ListEnterpriseResourceResult withSysTags(Consumer<List<Map<String, String>>> sysTagsSetter) {
+    public ListEnterpriseResourceResult withSysTags(Consumer<List<KvItem>> sysTagsSetter) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -140,11 +139,11 @@ public class ListEnterpriseResourceResult {
      * 系统标签列表
      * @return sysTags
      */
-    public List<Map<String, String>> getSysTags() {
+    public List<KvItem> getSysTags() {
         return sysTags;
     }
 
-    public void setSysTags(List<Map<String, String>> sysTags) {
+    public void setSysTags(List<KvItem> sysTags) {
         this.sysTags = sysTags;
     }
 

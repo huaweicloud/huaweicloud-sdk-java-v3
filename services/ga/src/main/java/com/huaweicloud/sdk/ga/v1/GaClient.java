@@ -3,7 +3,82 @@ package com.huaweicloud.sdk.ga.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.ga.v1.model.*;
+import com.huaweicloud.sdk.ga.v1.model.AddIpGroupIpRequest;
+import com.huaweicloud.sdk.ga.v1.model.AddIpGroupIpResponse;
+import com.huaweicloud.sdk.ga.v1.model.AssociateListenerRequest;
+import com.huaweicloud.sdk.ga.v1.model.AssociateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.CreateAcceleratorRequest;
+import com.huaweicloud.sdk.ga.v1.model.CreateAcceleratorResponse;
+import com.huaweicloud.sdk.ga.v1.model.CreateEndpointGroupRequest;
+import com.huaweicloud.sdk.ga.v1.model.CreateEndpointGroupResponse;
+import com.huaweicloud.sdk.ga.v1.model.CreateEndpointRequest;
+import com.huaweicloud.sdk.ga.v1.model.CreateEndpointResponse;
+import com.huaweicloud.sdk.ga.v1.model.CreateHealthCheckRequest;
+import com.huaweicloud.sdk.ga.v1.model.CreateHealthCheckResponse;
+import com.huaweicloud.sdk.ga.v1.model.CreateIpGroupRequest;
+import com.huaweicloud.sdk.ga.v1.model.CreateIpGroupResponse;
+import com.huaweicloud.sdk.ga.v1.model.CreateListenerRequest;
+import com.huaweicloud.sdk.ga.v1.model.CreateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.CreateTagsRequest;
+import com.huaweicloud.sdk.ga.v1.model.CreateTagsResponse;
+import com.huaweicloud.sdk.ga.v1.model.DeleteAcceleratorRequest;
+import com.huaweicloud.sdk.ga.v1.model.DeleteAcceleratorResponse;
+import com.huaweicloud.sdk.ga.v1.model.DeleteEndpointGroupRequest;
+import com.huaweicloud.sdk.ga.v1.model.DeleteEndpointGroupResponse;
+import com.huaweicloud.sdk.ga.v1.model.DeleteEndpointRequest;
+import com.huaweicloud.sdk.ga.v1.model.DeleteEndpointResponse;
+import com.huaweicloud.sdk.ga.v1.model.DeleteHealthCheckRequest;
+import com.huaweicloud.sdk.ga.v1.model.DeleteHealthCheckResponse;
+import com.huaweicloud.sdk.ga.v1.model.DeleteIpGroupRequest;
+import com.huaweicloud.sdk.ga.v1.model.DeleteIpGroupResponse;
+import com.huaweicloud.sdk.ga.v1.model.DeleteListenerRequest;
+import com.huaweicloud.sdk.ga.v1.model.DeleteListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.DeleteTagsRequest;
+import com.huaweicloud.sdk.ga.v1.model.DeleteTagsResponse;
+import com.huaweicloud.sdk.ga.v1.model.DisassociateListenerRequest;
+import com.huaweicloud.sdk.ga.v1.model.DisassociateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListAcceleratorsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListEndpointGroupsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListEndpointsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListEndpointsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListHealthChecksRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListHealthChecksResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListIpGroupsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListIpGroupsResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListListenersRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListListenersResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListRegionsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpRequest;
+import com.huaweicloud.sdk.ga.v1.model.RemoveIpGroupIpResponse;
+import com.huaweicloud.sdk.ga.v1.model.ShowAcceleratorRequest;
+import com.huaweicloud.sdk.ga.v1.model.ShowAcceleratorResponse;
+import com.huaweicloud.sdk.ga.v1.model.ShowEndpointGroupRequest;
+import com.huaweicloud.sdk.ga.v1.model.ShowEndpointGroupResponse;
+import com.huaweicloud.sdk.ga.v1.model.ShowEndpointRequest;
+import com.huaweicloud.sdk.ga.v1.model.ShowEndpointResponse;
+import com.huaweicloud.sdk.ga.v1.model.ShowHealthCheckRequest;
+import com.huaweicloud.sdk.ga.v1.model.ShowHealthCheckResponse;
+import com.huaweicloud.sdk.ga.v1.model.ShowIpGroupRequest;
+import com.huaweicloud.sdk.ga.v1.model.ShowIpGroupResponse;
+import com.huaweicloud.sdk.ga.v1.model.ShowListenerRequest;
+import com.huaweicloud.sdk.ga.v1.model.ShowListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.ShowResourceTagsRequest;
+import com.huaweicloud.sdk.ga.v1.model.ShowResourceTagsResponse;
+import com.huaweicloud.sdk.ga.v1.model.UpdateAcceleratorRequest;
+import com.huaweicloud.sdk.ga.v1.model.UpdateAcceleratorResponse;
+import com.huaweicloud.sdk.ga.v1.model.UpdateEndpointGroupRequest;
+import com.huaweicloud.sdk.ga.v1.model.UpdateEndpointGroupResponse;
+import com.huaweicloud.sdk.ga.v1.model.UpdateEndpointRequest;
+import com.huaweicloud.sdk.ga.v1.model.UpdateEndpointResponse;
+import com.huaweicloud.sdk.ga.v1.model.UpdateHealthCheckRequest;
+import com.huaweicloud.sdk.ga.v1.model.UpdateHealthCheckResponse;
+import com.huaweicloud.sdk.ga.v1.model.UpdateIpGroupRequest;
+import com.huaweicloud.sdk.ga.v1.model.UpdateIpGroupResponse;
+import com.huaweicloud.sdk.ga.v1.model.UpdateListenerRequest;
+import com.huaweicloud.sdk.ga.v1.model.UpdateListenerResponse;
 
 public class GaClient {
 
@@ -14,7 +89,8 @@ public class GaClient {
     }
 
     public static ClientBuilder<GaClient> newBuilder() {
-        return new ClientBuilder<>(GaClient::new);
+        ClientBuilder<GaClient> clientBuilder = new ClientBuilder<>(GaClient::new);
+        return clientBuilder;
     }
 
     /**

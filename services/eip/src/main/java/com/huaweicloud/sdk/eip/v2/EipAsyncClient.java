@@ -3,7 +3,82 @@ package com.huaweicloud.sdk.eip.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.eip.v2.model.*;
+import com.huaweicloud.sdk.eip.v2.model.AddPublicipsIntoSharedBandwidthRequest;
+import com.huaweicloud.sdk.eip.v2.model.AddPublicipsIntoSharedBandwidthResponse;
+import com.huaweicloud.sdk.eip.v2.model.BatchCreatePublicipTagsRequest;
+import com.huaweicloud.sdk.eip.v2.model.BatchCreatePublicipTagsResponse;
+import com.huaweicloud.sdk.eip.v2.model.BatchCreatePublicipsRequest;
+import com.huaweicloud.sdk.eip.v2.model.BatchCreatePublicipsResponse;
+import com.huaweicloud.sdk.eip.v2.model.BatchCreateSharedBandwidthsRequest;
+import com.huaweicloud.sdk.eip.v2.model.BatchCreateSharedBandwidthsResponse;
+import com.huaweicloud.sdk.eip.v2.model.BatchDeletePublicIpRequest;
+import com.huaweicloud.sdk.eip.v2.model.BatchDeletePublicIpResponse;
+import com.huaweicloud.sdk.eip.v2.model.BatchDeletePublicipTagsRequest;
+import com.huaweicloud.sdk.eip.v2.model.BatchDeletePublicipTagsResponse;
+import com.huaweicloud.sdk.eip.v2.model.BatchDisassociatePublicipsRequest;
+import com.huaweicloud.sdk.eip.v2.model.BatchDisassociatePublicipsResponse;
+import com.huaweicloud.sdk.eip.v2.model.ChangeBandwidthToPeriodRequest;
+import com.huaweicloud.sdk.eip.v2.model.ChangeBandwidthToPeriodResponse;
+import com.huaweicloud.sdk.eip.v2.model.ChangePublicipToPeriodRequest;
+import com.huaweicloud.sdk.eip.v2.model.ChangePublicipToPeriodResponse;
+import com.huaweicloud.sdk.eip.v2.model.CountPublicIpInstanceRequest;
+import com.huaweicloud.sdk.eip.v2.model.CountPublicIpInstanceResponse;
+import com.huaweicloud.sdk.eip.v2.model.CountPublicIpRequest;
+import com.huaweicloud.sdk.eip.v2.model.CountPublicIpResponse;
+import com.huaweicloud.sdk.eip.v2.model.CreatePrePaidPublicipRequest;
+import com.huaweicloud.sdk.eip.v2.model.CreatePrePaidPublicipResponse;
+import com.huaweicloud.sdk.eip.v2.model.CreatePublicipRequest;
+import com.huaweicloud.sdk.eip.v2.model.CreatePublicipResponse;
+import com.huaweicloud.sdk.eip.v2.model.CreatePublicipTagRequest;
+import com.huaweicloud.sdk.eip.v2.model.CreatePublicipTagResponse;
+import com.huaweicloud.sdk.eip.v2.model.CreateSharedBandwidthRequest;
+import com.huaweicloud.sdk.eip.v2.model.CreateSharedBandwidthResponse;
+import com.huaweicloud.sdk.eip.v2.model.DeletePublicipRequest;
+import com.huaweicloud.sdk.eip.v2.model.DeletePublicipResponse;
+import com.huaweicloud.sdk.eip.v2.model.DeletePublicipTagRequest;
+import com.huaweicloud.sdk.eip.v2.model.DeletePublicipTagResponse;
+import com.huaweicloud.sdk.eip.v2.model.DeleteSharedBandwidthRequest;
+import com.huaweicloud.sdk.eip.v2.model.DeleteSharedBandwidthResponse;
+import com.huaweicloud.sdk.eip.v2.model.ListBandwidthPkgRequest;
+import com.huaweicloud.sdk.eip.v2.model.ListBandwidthPkgResponse;
+import com.huaweicloud.sdk.eip.v2.model.ListBandwidthsRequest;
+import com.huaweicloud.sdk.eip.v2.model.ListBandwidthsResponse;
+import com.huaweicloud.sdk.eip.v2.model.ListPublicipTagsRequest;
+import com.huaweicloud.sdk.eip.v2.model.ListPublicipTagsResponse;
+import com.huaweicloud.sdk.eip.v2.model.ListPublicipsByTagsRequest;
+import com.huaweicloud.sdk.eip.v2.model.ListPublicipsByTagsResponse;
+import com.huaweicloud.sdk.eip.v2.model.ListPublicipsRequest;
+import com.huaweicloud.sdk.eip.v2.model.ListPublicipsResponse;
+import com.huaweicloud.sdk.eip.v2.model.ListQuotasRequest;
+import com.huaweicloud.sdk.eip.v2.model.ListQuotasResponse;
+import com.huaweicloud.sdk.eip.v2.model.NeutronCreateFloatingIpRequest;
+import com.huaweicloud.sdk.eip.v2.model.NeutronCreateFloatingIpResponse;
+import com.huaweicloud.sdk.eip.v2.model.NeutronDeleteFloatingIpRequest;
+import com.huaweicloud.sdk.eip.v2.model.NeutronDeleteFloatingIpResponse;
+import com.huaweicloud.sdk.eip.v2.model.NeutronListFloatingIpsRequest;
+import com.huaweicloud.sdk.eip.v2.model.NeutronListFloatingIpsResponse;
+import com.huaweicloud.sdk.eip.v2.model.NeutronShowFloatingIpRequest;
+import com.huaweicloud.sdk.eip.v2.model.NeutronShowFloatingIpResponse;
+import com.huaweicloud.sdk.eip.v2.model.NeutronUpdateFloatingIpRequest;
+import com.huaweicloud.sdk.eip.v2.model.NeutronUpdateFloatingIpResponse;
+import com.huaweicloud.sdk.eip.v2.model.RemovePublicipsFromSharedBandwidthRequest;
+import com.huaweicloud.sdk.eip.v2.model.RemovePublicipsFromSharedBandwidthResponse;
+import com.huaweicloud.sdk.eip.v2.model.ShowBandwidthRequest;
+import com.huaweicloud.sdk.eip.v2.model.ShowBandwidthResponse;
+import com.huaweicloud.sdk.eip.v2.model.ShowPublicIpTypeRequest;
+import com.huaweicloud.sdk.eip.v2.model.ShowPublicIpTypeResponse;
+import com.huaweicloud.sdk.eip.v2.model.ShowPublicipRequest;
+import com.huaweicloud.sdk.eip.v2.model.ShowPublicipResponse;
+import com.huaweicloud.sdk.eip.v2.model.ShowPublicipTagsRequest;
+import com.huaweicloud.sdk.eip.v2.model.ShowPublicipTagsResponse;
+import com.huaweicloud.sdk.eip.v2.model.ShowResourcesJobDetailRequest;
+import com.huaweicloud.sdk.eip.v2.model.ShowResourcesJobDetailResponse;
+import com.huaweicloud.sdk.eip.v2.model.UpdateBandwidthRequest;
+import com.huaweicloud.sdk.eip.v2.model.UpdateBandwidthResponse;
+import com.huaweicloud.sdk.eip.v2.model.UpdatePrePaidBandwidthRequest;
+import com.huaweicloud.sdk.eip.v2.model.UpdatePrePaidBandwidthResponse;
+import com.huaweicloud.sdk.eip.v2.model.UpdatePublicipRequest;
+import com.huaweicloud.sdk.eip.v2.model.UpdatePublicipResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +91,8 @@ public class EipAsyncClient {
     }
 
     public static ClientBuilder<EipAsyncClient> newBuilder() {
-        return new ClientBuilder<>(EipAsyncClient::new);
+        ClientBuilder<EipAsyncClient> clientBuilder = new ClientBuilder<>(EipAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

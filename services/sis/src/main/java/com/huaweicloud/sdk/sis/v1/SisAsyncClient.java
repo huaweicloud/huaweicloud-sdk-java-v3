@@ -3,7 +3,30 @@ package com.huaweicloud.sdk.sis.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.sis.v1.model.*;
+import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobRequest;
+import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobResponse;
+import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyRequest;
+import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyRequest;
+import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.PushTranscriberJobsRequest;
+import com.huaweicloud.sdk.sis.v1.model.PushTranscriberJobsResponse;
+import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrRequest;
+import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrResponse;
+import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioRequest;
+import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioResponse;
+import com.huaweicloud.sdk.sis.v1.model.RunAudioAssessmentRequest;
+import com.huaweicloud.sdk.sis.v1.model.RunAudioAssessmentResponse;
+import com.huaweicloud.sdk.sis.v1.model.RunMultiModalAssessmentRequest;
+import com.huaweicloud.sdk.sis.v1.model.RunMultiModalAssessmentResponse;
+import com.huaweicloud.sdk.sis.v1.model.RunTtsRequest;
+import com.huaweicloud.sdk.sis.v1.model.RunTtsResponse;
+import com.huaweicloud.sdk.sis.v1.model.ShowVocabulariesRequest;
+import com.huaweicloud.sdk.sis.v1.model.ShowVocabulariesResponse;
+import com.huaweicloud.sdk.sis.v1.model.ShowVocabularyRequest;
+import com.huaweicloud.sdk.sis.v1.model.ShowVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.UpdateVocabularyRequest;
+import com.huaweicloud.sdk.sis.v1.model.UpdateVocabularyResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +39,8 @@ public class SisAsyncClient {
     }
 
     public static ClientBuilder<SisAsyncClient> newBuilder() {
-        return new ClientBuilder<>(SisAsyncClient::new);
+        ClientBuilder<SisAsyncClient> clientBuilder = new ClientBuilder<>(SisAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

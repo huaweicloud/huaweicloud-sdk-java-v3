@@ -165,7 +165,7 @@ public class VpcAttachmentDetails {
     }
 
     /**
-     * VPC连接状态:pending|available|modifying|deleting|deleted|failed|initiating_request|rejected|pending_acceptance
+     * VPC连接状态:pending|available|modifying|deleting|deleted|failed|initiating_request|rejected|pending_acceptance|freezed
      * @return state
      */
     public String getState() {

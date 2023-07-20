@@ -1,6 +1,19 @@
 package com.huaweicloud.sdk.cms.v1;
 
-import com.huaweicloud.sdk.cms.v1.model.*;
+import com.huaweicloud.sdk.cms.v1.model.CreateAutoLaunchGroupRequest;
+import com.huaweicloud.sdk.cms.v1.model.CreateAutoLaunchGroupResponse;
+import com.huaweicloud.sdk.cms.v1.model.DeleteAutoLaunchGroupRequest;
+import com.huaweicloud.sdk.cms.v1.model.DeleteAutoLaunchGroupResponse;
+import com.huaweicloud.sdk.cms.v1.model.ListAutoLaunchGroupsRequest;
+import com.huaweicloud.sdk.cms.v1.model.ListAutoLaunchGroupsResponse;
+import com.huaweicloud.sdk.cms.v1.model.ListInstancesRequest;
+import com.huaweicloud.sdk.cms.v1.model.ListInstancesResponse;
+import com.huaweicloud.sdk.cms.v1.model.ListSupplyRecommendationRequest;
+import com.huaweicloud.sdk.cms.v1.model.ListSupplyRecommendationResponse;
+import com.huaweicloud.sdk.cms.v1.model.ShowAutoLaunchGroupRequest;
+import com.huaweicloud.sdk.cms.v1.model.ShowAutoLaunchGroupResponse;
+import com.huaweicloud.sdk.cms.v1.model.UpdateAutoLaunchGroupRequest;
+import com.huaweicloud.sdk.cms.v1.model.UpdateAutoLaunchGroupResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +27,8 @@ public class CmsClient {
     }
 
     public static ClientBuilder<CmsClient> newBuilder() {
-        return new ClientBuilder<>(CmsClient::new, "GlobalCredentials");
+        ClientBuilder<CmsClient> clientBuilder = new ClientBuilder<>(CmsClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

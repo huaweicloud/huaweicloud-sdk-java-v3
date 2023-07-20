@@ -12,6 +12,9 @@ import java.util.Objects;
 
 public class SFSTurboRegion {
 
+    public static final Region EU_WEST_101 =
+        new Region("eu-west-101", "https://sfs-turbo.eu-west-101.myhuaweicloud.eu");
+
     public static final Region CN_EAST_2 = new Region("cn-east-2", "https://sfs-turbo.cn-east-2.myhuaweicloud.com");
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://sfs-turbo.cn-east-3.myhuaweicloud.com");
@@ -63,6 +66,7 @@ public class SFSTurboRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
+        map.put("eu-west-101", EU_WEST_101);
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-north-1", CN_NORTH_1);

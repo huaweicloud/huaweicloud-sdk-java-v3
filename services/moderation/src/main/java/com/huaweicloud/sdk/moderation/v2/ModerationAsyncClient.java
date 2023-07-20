@@ -3,7 +3,20 @@ package com.huaweicloud.sdk.moderation.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.moderation.v2.model.*;
+import com.huaweicloud.sdk.moderation.v2.model.RunCheckResultRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunCheckResultResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunCheckTaskJobsRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunCheckTaskJobsResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunImageBatchModerationRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunImageBatchModerationResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunImageModerationRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunImageModerationResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunModerationAudioRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunModerationAudioResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunTaskSumbitRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunTaskSumbitResponse;
+import com.huaweicloud.sdk.moderation.v2.model.RunTextModerationRequest;
+import com.huaweicloud.sdk.moderation.v2.model.RunTextModerationResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +29,8 @@ public class ModerationAsyncClient {
     }
 
     public static ClientBuilder<ModerationAsyncClient> newBuilder() {
-        return new ClientBuilder<>(ModerationAsyncClient::new);
+        ClientBuilder<ModerationAsyncClient> clientBuilder = new ClientBuilder<>(ModerationAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

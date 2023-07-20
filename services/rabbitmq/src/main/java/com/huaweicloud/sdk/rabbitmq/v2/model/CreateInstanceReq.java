@@ -555,7 +555,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 租户VPC ID。
+     * 租户VPC ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -572,7 +572,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 租户安全组ID。
+     * 租户安全组ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -589,7 +589,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 子网ID。
+     * 子网ID。  获取方法如下：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -622,7 +622,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 创建节点到指定且有资源的可用区ID。该参数不能为空数组或者数组的值为空。
+     * 创建节点到指定且有资源的可用区ID。请参考[查询可用区信息](ListAvailableZones.xml)获取可用区ID。  该参数不能为空数组或者数组的值为空。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -639,7 +639,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 产品标识。  产品ID可以从**查询产品规格列表**接口查询。  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
+     * 产品标识。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
      * @return productId
      */
     public String getProductId() {

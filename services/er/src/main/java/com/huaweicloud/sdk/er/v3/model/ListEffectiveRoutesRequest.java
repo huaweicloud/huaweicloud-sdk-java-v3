@@ -74,9 +74,24 @@ public class ListEffectiveRoutesRequest {
         public static final ResourceTypeEnum CAN = new ResourceTypeEnum("can");
 
         /**
+         * Enum ECN for value: "ecn"
+         */
+        public static final ResourceTypeEnum ECN = new ResourceTypeEnum("ecn");
+
+        /**
          * Enum GDGW for value: "gdgw"
          */
         public static final ResourceTypeEnum GDGW = new ResourceTypeEnum("gdgw");
+
+        /**
+         * Enum CONNECT for value: "connect"
+         */
+        public static final ResourceTypeEnum CONNECT = new ResourceTypeEnum("connect");
+
+        /**
+         * Enum CFW for value: "cfw"
+         */
+        public static final ResourceTypeEnum CFW = new ResourceTypeEnum("cfw");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +103,10 @@ public class ListEffectiveRoutesRequest {
             map.put("vgw", VGW);
             map.put("peering", PEERING);
             map.put("can", CAN);
+            map.put("ecn", ECN);
             map.put("gdgw", GDGW);
+            map.put("connect", CONNECT);
+            map.put("cfw", CFW);
             return Collections.unmodifiableMap(map);
         }
 
@@ -251,7 +269,7 @@ public class ListEffectiveRoutesRequest {
     }
 
     /**
-     * 连接资源类型:vpc|vpn|vgw|peering
+     * - vpc：虚拟私有云 - vpn：vpn网关 - vgw：云专线的虚拟网关 - peering：对等连接，通过云连接CC加载不同区域的企业路由器来创建“对等连接（Peering）”连接 -  -  -  -
      * @return resourceType
      */
     public List<ResourceTypeEnum> getResourceType() {

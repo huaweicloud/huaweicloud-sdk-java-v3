@@ -96,6 +96,81 @@ public class UploadDbObjectTemplateRequest {
 
     private XLanguageEnum xLanguage;
 
+    /**
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+     */
+    public static final class FileImportDbLevelEnum {
+
+        /**
+         * Enum DATABASE for value: "database"
+         */
+        public static final FileImportDbLevelEnum DATABASE = new FileImportDbLevelEnum("database");
+
+        /**
+         * Enum TABLE for value: "table"
+         */
+        public static final FileImportDbLevelEnum TABLE = new FileImportDbLevelEnum("table");
+
+        private static final Map<String, FileImportDbLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FileImportDbLevelEnum> createStaticFields() {
+            Map<String, FileImportDbLevelEnum> map = new HashMap<>();
+            map.put("database", DATABASE);
+            map.put("table", TABLE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        FileImportDbLevelEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static FileImportDbLevelEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FileImportDbLevelEnum(value));
+        }
+
+        public static FileImportDbLevelEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof FileImportDbLevelEnum) {
+                return this.value.equals(((FileImportDbLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_import_db_level")
+
+    private FileImportDbLevelEnum fileImportDbLevel;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
@@ -137,6 +212,23 @@ public class UploadDbObjectTemplateRequest {
         this.xLanguage = xLanguage;
     }
 
+    public UploadDbObjectTemplateRequest withFileImportDbLevel(FileImportDbLevelEnum fileImportDbLevel) {
+        this.fileImportDbLevel = fileImportDbLevel;
+        return this;
+    }
+
+    /**
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级
+     * @return fileImportDbLevel
+     */
+    public FileImportDbLevelEnum getFileImportDbLevel() {
+        return fileImportDbLevel;
+    }
+
+    public void setFileImportDbLevel(FileImportDbLevelEnum fileImportDbLevel) {
+        this.fileImportDbLevel = fileImportDbLevel;
+    }
+
     public UploadDbObjectTemplateRequest withBody(UploadDbObjectTemplateRequestBody body) {
         this.body = body;
         return this;
@@ -173,12 +265,12 @@ public class UploadDbObjectTemplateRequest {
         }
         UploadDbObjectTemplateRequest that = (UploadDbObjectTemplateRequest) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xLanguage, that.xLanguage)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.fileImportDbLevel, that.fileImportDbLevel) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, xLanguage, body);
+        return Objects.hash(jobId, xLanguage, fileImportDbLevel, body);
     }
 
     @Override
@@ -187,6 +279,7 @@ public class UploadDbObjectTemplateRequest {
         sb.append("class UploadDbObjectTemplateRequest {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    fileImportDbLevel: ").append(toIndentedString(fileImportDbLevel)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

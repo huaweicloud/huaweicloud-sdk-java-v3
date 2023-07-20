@@ -1,6 +1,13 @@
 package com.huaweicloud.sdk.codecraft.v5;
 
-import com.huaweicloud.sdk.codecraft.v5.model.*;
+import com.huaweicloud.sdk.codecraft.v5.model.CreateCompetitionScoreRequest;
+import com.huaweicloud.sdk.codecraft.v5.model.CreateCompetitionScoreResponse;
+import com.huaweicloud.sdk.codecraft.v5.model.ListCompetitionWorksRequest;
+import com.huaweicloud.sdk.codecraft.v5.model.ListCompetitionWorksResponse;
+import com.huaweicloud.sdk.codecraft.v5.model.RegisterCompetitionInfoRequest;
+import com.huaweicloud.sdk.codecraft.v5.model.RegisterCompetitionInfoResponse;
+import com.huaweicloud.sdk.codecraft.v5.model.UpdateCompetitionScoreRequest;
+import com.huaweicloud.sdk.codecraft.v5.model.UpdateCompetitionScoreResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +21,8 @@ public class CodeCraftClient {
     }
 
     public static ClientBuilder<CodeCraftClient> newBuilder() {
-        return new ClientBuilder<>(CodeCraftClient::new, "GlobalCredentials");
+        ClientBuilder<CodeCraftClient> clientBuilder = new ClientBuilder<>(CodeCraftClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

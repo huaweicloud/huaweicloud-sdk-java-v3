@@ -3,7 +3,92 @@ package com.huaweicloud.sdk.cph.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.cph.v1.model.*;
+import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsRequest;
+import com.huaweicloud.sdk.cph.v1.model.BatchCreateTagsResponse;
+import com.huaweicloud.sdk.cph.v1.model.BatchDeleteTagsRequest;
+import com.huaweicloud.sdk.cph.v1.model.BatchDeleteTagsResponse;
+import com.huaweicloud.sdk.cph.v1.model.BatchExportCloudPhoneDataRequest;
+import com.huaweicloud.sdk.cph.v1.model.BatchExportCloudPhoneDataResponse;
+import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataRequest;
+import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataResponse;
+import com.huaweicloud.sdk.cph.v1.model.BatchMigrateCloudPhoneRequest;
+import com.huaweicloud.sdk.cph.v1.model.BatchMigrateCloudPhoneResponse;
+import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelRequest;
+import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelResponse;
+import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneServerRequest;
+import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneServerResponse;
+import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequest;
+import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerResponse;
+import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsRequest;
+import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsResponse;
+import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesRequest;
+import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesResponse;
+import com.huaweicloud.sdk.cph.v1.model.ImportTrafficRequest;
+import com.huaweicloud.sdk.cph.v1.model.ImportTrafficResponse;
+import com.huaweicloud.sdk.cph.v1.model.InstallApkRequest;
+import com.huaweicloud.sdk.cph.v1.model.InstallApkResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneImagesRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneImagesResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneModelsRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneModelsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelsRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServerModelsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServersRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhoneServersResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhonesRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListCloudPhonesResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListEncodeServersRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListEncodeServersResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListJobsRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListJobsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListResourceInstancesRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListResourceInstancesResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListResourceTagsRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListResourceTagsResponse;
+import com.huaweicloud.sdk.cph.v1.model.ListShareFilesRequest;
+import com.huaweicloud.sdk.cph.v1.model.ListShareFilesResponse;
+import com.huaweicloud.sdk.cph.v1.model.PushFileRequest;
+import com.huaweicloud.sdk.cph.v1.model.PushFileResponse;
+import com.huaweicloud.sdk.cph.v1.model.PushShareAppsRequest;
+import com.huaweicloud.sdk.cph.v1.model.PushShareAppsResponse;
+import com.huaweicloud.sdk.cph.v1.model.PushShareFilesRequest;
+import com.huaweicloud.sdk.cph.v1.model.PushShareFilesResponse;
+import com.huaweicloud.sdk.cph.v1.model.ResetCloudPhoneRequest;
+import com.huaweicloud.sdk.cph.v1.model.ResetCloudPhoneResponse;
+import com.huaweicloud.sdk.cph.v1.model.RestartCloudPhoneRequest;
+import com.huaweicloud.sdk.cph.v1.model.RestartCloudPhoneResponse;
+import com.huaweicloud.sdk.cph.v1.model.RestartCloudPhoneServerRequest;
+import com.huaweicloud.sdk.cph.v1.model.RestartCloudPhoneServerResponse;
+import com.huaweicloud.sdk.cph.v1.model.RestartEncodeServerRequest;
+import com.huaweicloud.sdk.cph.v1.model.RestartEncodeServerResponse;
+import com.huaweicloud.sdk.cph.v1.model.RunShellCommandRequest;
+import com.huaweicloud.sdk.cph.v1.model.RunShellCommandResponse;
+import com.huaweicloud.sdk.cph.v1.model.RunSyncCommandRequest;
+import com.huaweicloud.sdk.cph.v1.model.RunSyncCommandResponse;
+import com.huaweicloud.sdk.cph.v1.model.ShowBandwidthDetailRequest;
+import com.huaweicloud.sdk.cph.v1.model.ShowBandwidthDetailResponse;
+import com.huaweicloud.sdk.cph.v1.model.ShowCloudPhoneDetailRequest;
+import com.huaweicloud.sdk.cph.v1.model.ShowCloudPhoneDetailResponse;
+import com.huaweicloud.sdk.cph.v1.model.ShowCloudPhoneServerDetailRequest;
+import com.huaweicloud.sdk.cph.v1.model.ShowCloudPhoneServerDetailResponse;
+import com.huaweicloud.sdk.cph.v1.model.ShowJobRequest;
+import com.huaweicloud.sdk.cph.v1.model.ShowJobResponse;
+import com.huaweicloud.sdk.cph.v1.model.StopCloudPhoneRequest;
+import com.huaweicloud.sdk.cph.v1.model.StopCloudPhoneResponse;
+import com.huaweicloud.sdk.cph.v1.model.UninstallApkRequest;
+import com.huaweicloud.sdk.cph.v1.model.UninstallApkResponse;
+import com.huaweicloud.sdk.cph.v1.model.UpdateBandwidthRequest;
+import com.huaweicloud.sdk.cph.v1.model.UpdateBandwidthResponse;
+import com.huaweicloud.sdk.cph.v1.model.UpdateCloudPhonePropertyRequest;
+import com.huaweicloud.sdk.cph.v1.model.UpdateCloudPhonePropertyResponse;
+import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairRequest;
+import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairResponse;
+import com.huaweicloud.sdk.cph.v1.model.UpdatePhoneNameRequest;
+import com.huaweicloud.sdk.cph.v1.model.UpdatePhoneNameResponse;
+import com.huaweicloud.sdk.cph.v1.model.UpdateServerNameRequest;
+import com.huaweicloud.sdk.cph.v1.model.UpdateServerNameResponse;
 
 public class CphClient {
 
@@ -14,7 +99,8 @@ public class CphClient {
     }
 
     public static ClientBuilder<CphClient> newBuilder() {
-        return new ClientBuilder<>(CphClient::new);
+        ClientBuilder<CphClient> clientBuilder = new ClientBuilder<>(CphClient::new);
+        return clientBuilder;
     }
 
     /**

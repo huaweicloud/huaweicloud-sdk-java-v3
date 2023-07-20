@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hss.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.hss.v1.model.*;
+import com.huaweicloud.sdk.hss.v1.model.ListEventsRequest;
+import com.huaweicloud.sdk.hss.v1.model.ListEventsResponse;
+import com.huaweicloud.sdk.hss.v1.model.ListHostsRequest;
+import com.huaweicloud.sdk.hss.v1.model.ListHostsResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +19,8 @@ public class HssAsyncClient {
     }
 
     public static ClientBuilder<HssAsyncClient> newBuilder() {
-        return new ClientBuilder<>(HssAsyncClient::new);
+        ClientBuilder<HssAsyncClient> clientBuilder = new ClientBuilder<>(HssAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

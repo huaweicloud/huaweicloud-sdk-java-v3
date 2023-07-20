@@ -92,7 +92,7 @@ public class ListBackgroundTasksRequest {
     }
 
     /**
-     * 查询任务的最小时间，格式为 YYYYMMDDHHmmss。
+     * 查询任务的最小时间，格式为YYYYMMDDHHmmss。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -109,7 +109,7 @@ public class ListBackgroundTasksRequest {
     }
 
     /**
-     * 查询任务的最大时间，格式为 YYYYMMDDHHmmss。
+     * 查询任务的最大时间，格式为YYYYMMDDHHmmss。
      * @return endTime
      */
     public String getEndTime() {

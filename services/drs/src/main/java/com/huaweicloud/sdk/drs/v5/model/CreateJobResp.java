@@ -30,6 +30,11 @@ public class CreateJobResp {
 
     private String createTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_clone_job")
+
+    private String isCloneJob;
+
     public CreateJobResp withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +103,23 @@ public class CreateJobResp {
         this.createTime = createTime;
     }
 
+    public CreateJobResp withIsCloneJob(String isCloneJob) {
+        this.isCloneJob = isCloneJob;
+        return this;
+    }
+
+    /**
+     * 是否为克隆任务。
+     * @return isCloneJob
+     */
+    public String getIsCloneJob() {
+        return isCloneJob;
+    }
+
+    public void setIsCloneJob(String isCloneJob) {
+        this.isCloneJob = isCloneJob;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class CreateJobResp {
         }
         CreateJobResp that = (CreateJobResp) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.isCloneJob, that.isCloneJob);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, createTime);
+        return Objects.hash(id, name, status, createTime, isCloneJob);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class CreateJobResp {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    isCloneJob: ").append(toIndentedString(isCloneJob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

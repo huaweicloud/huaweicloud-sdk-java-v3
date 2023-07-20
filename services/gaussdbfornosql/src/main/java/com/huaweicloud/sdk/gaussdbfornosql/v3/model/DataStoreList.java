@@ -20,6 +20,11 @@ public class DataStoreList {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
     public DataStoreList withDatastoreName(String datastoreName) {
         this.datastoreName = datastoreName;
         return this;
@@ -54,6 +59,23 @@ public class DataStoreList {
         this.version = version;
     }
 
+    public DataStoreList withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 实例类型。 取值为“Cluster”，表示GaussDB(for Cassandra)、GaussDB(for Influx)、GaussDB(for Redis)集群实例类型。 取值为“InfluxdbSingle”，表示GaussDB(for Influx)单节点实例类型。 取值为“ReplicaSet”，表示GaussDB(for Mongo)副本集实例类型。
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class DataStoreList {
             return false;
         }
         DataStoreList that = (DataStoreList) obj;
-        return Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.version, that.version);
+        return Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datastoreName, version);
+        return Objects.hash(datastoreName, version, mode);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class DataStoreList {
         sb.append("class DataStoreList {\n");
         sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

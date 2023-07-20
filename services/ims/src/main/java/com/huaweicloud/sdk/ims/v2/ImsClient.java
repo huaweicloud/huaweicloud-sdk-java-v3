@@ -3,7 +3,92 @@ package com.huaweicloud.sdk.ims.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.ims.v2.model.*;
+import com.huaweicloud.sdk.ims.v2.model.AddImageTagRequest;
+import com.huaweicloud.sdk.ims.v2.model.AddImageTagResponse;
+import com.huaweicloud.sdk.ims.v2.model.BatchAddMembersRequest;
+import com.huaweicloud.sdk.ims.v2.model.BatchAddMembersResponse;
+import com.huaweicloud.sdk.ims.v2.model.BatchAddOrDeleteTagsRequest;
+import com.huaweicloud.sdk.ims.v2.model.BatchAddOrDeleteTagsResponse;
+import com.huaweicloud.sdk.ims.v2.model.BatchDeleteMembersRequest;
+import com.huaweicloud.sdk.ims.v2.model.BatchDeleteMembersResponse;
+import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersRequest;
+import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersResponse;
+import com.huaweicloud.sdk.ims.v2.model.CopyImageCrossRegionRequest;
+import com.huaweicloud.sdk.ims.v2.model.CopyImageCrossRegionResponse;
+import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionRequest;
+import com.huaweicloud.sdk.ims.v2.model.CopyImageInRegionResponse;
+import com.huaweicloud.sdk.ims.v2.model.CreateDataImageRequest;
+import com.huaweicloud.sdk.ims.v2.model.CreateDataImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.CreateImageRequest;
+import com.huaweicloud.sdk.ims.v2.model.CreateImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.CreateOrUpdateTagsRequest;
+import com.huaweicloud.sdk.ims.v2.model.CreateOrUpdateTagsResponse;
+import com.huaweicloud.sdk.ims.v2.model.CreateWholeImageRequest;
+import com.huaweicloud.sdk.ims.v2.model.CreateWholeImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.DeleteImageTagRequest;
+import com.huaweicloud.sdk.ims.v2.model.DeleteImageTagResponse;
+import com.huaweicloud.sdk.ims.v2.model.ExportImageRequest;
+import com.huaweicloud.sdk.ims.v2.model.ExportImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceAddImageMemberRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceAddImageMemberResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceCreateImageMetadataRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceCreateImageMetadataResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceCreateTagRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceCreateTagResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceDeleteImageMemberRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceDeleteImageMemberResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceDeleteImageRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceDeleteImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceDeleteTagRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceDeleteTagResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceListImageMemberSchemasRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceListImageMemberSchemasResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceListImageMembersRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceListImageMembersResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceListImageSchemasRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceListImageSchemasResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceListImagesRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceListImagesResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceShowImageMemberRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceShowImageMemberResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceShowImageMemberSchemasRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceShowImageMemberSchemasResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceShowImageRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceShowImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceShowImageSchemasRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceShowImageSchemasResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageMemberRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageMemberResponse;
+import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageRequest;
+import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickRequest;
+import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickResponse;
+import com.huaweicloud.sdk.ims.v2.model.ListImageByTagsRequest;
+import com.huaweicloud.sdk.ims.v2.model.ListImageByTagsResponse;
+import com.huaweicloud.sdk.ims.v2.model.ListImageTagsRequest;
+import com.huaweicloud.sdk.ims.v2.model.ListImageTagsResponse;
+import com.huaweicloud.sdk.ims.v2.model.ListImagesRequest;
+import com.huaweicloud.sdk.ims.v2.model.ListImagesResponse;
+import com.huaweicloud.sdk.ims.v2.model.ListImagesTagsRequest;
+import com.huaweicloud.sdk.ims.v2.model.ListImagesTagsResponse;
+import com.huaweicloud.sdk.ims.v2.model.ListOsVersionsRequest;
+import com.huaweicloud.sdk.ims.v2.model.ListOsVersionsResponse;
+import com.huaweicloud.sdk.ims.v2.model.ListTagsRequest;
+import com.huaweicloud.sdk.ims.v2.model.ListTagsResponse;
+import com.huaweicloud.sdk.ims.v2.model.ListVersionsRequest;
+import com.huaweicloud.sdk.ims.v2.model.ListVersionsResponse;
+import com.huaweicloud.sdk.ims.v2.model.RegisterImageRequest;
+import com.huaweicloud.sdk.ims.v2.model.RegisterImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.ShowImageQuotaRequest;
+import com.huaweicloud.sdk.ims.v2.model.ShowImageQuotaResponse;
+import com.huaweicloud.sdk.ims.v2.model.ShowJobProgressRequest;
+import com.huaweicloud.sdk.ims.v2.model.ShowJobProgressResponse;
+import com.huaweicloud.sdk.ims.v2.model.ShowJobRequest;
+import com.huaweicloud.sdk.ims.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.ims.v2.model.ShowVersionRequest;
+import com.huaweicloud.sdk.ims.v2.model.ShowVersionResponse;
+import com.huaweicloud.sdk.ims.v2.model.UpdateImageRequest;
+import com.huaweicloud.sdk.ims.v2.model.UpdateImageResponse;
 
 public class ImsClient {
 
@@ -14,7 +99,8 @@ public class ImsClient {
     }
 
     public static ClientBuilder<ImsClient> newBuilder() {
-        return new ClientBuilder<>(ImsClient::new);
+        ClientBuilder<ImsClient> clientBuilder = new ClientBuilder<>(ImsClient::new);
+        return clientBuilder;
     }
 
     /**

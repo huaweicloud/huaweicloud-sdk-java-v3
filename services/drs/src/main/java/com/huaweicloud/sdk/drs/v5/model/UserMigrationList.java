@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 用户迁移信息用户列表字段。当前支持的场景：  - 实时迁移场景：MySQL迁移，MongoDB迁移。
+ * 用户迁移信息用户列表字段。当前支持的场景： - 实时迁移场景：MySQL迁移，MongoDB迁移。
  */
 public class UserMigrationList {
 

@@ -1,6 +1,33 @@
 package com.huaweicloud.sdk.antiddos.v1;
 
-import com.huaweicloud.sdk.antiddos.v1.model.*;
+import com.huaweicloud.sdk.antiddos.v1.model.CreateDefaultConfigRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.CreateDefaultConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.DeleteDefaultConfigRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.DeleteDefaultConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ListDDosStatusRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ListDDosStatusResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ListDailyLogRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ListDailyLogResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ListDailyReportRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ListDailyReportResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ListNewConfigsRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ListNewConfigsResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ListWeeklyReportsRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ListWeeklyReportsResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowAlertConfigRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowAlertConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosStatusRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosStatusResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowDefaultConfigRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowDefaultConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowNewTaskStatusRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowNewTaskStatusResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.UpdateAlertConfigRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.UpdateAlertConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.UpdateDDosRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.UpdateDDosResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +43,8 @@ public class AntiDDoSAsyncClient {
     }
 
     public static ClientBuilder<AntiDDoSAsyncClient> newBuilder() {
-        return new ClientBuilder<>(AntiDDoSAsyncClient::new);
+        ClientBuilder<AntiDDoSAsyncClient> clientBuilder = new ClientBuilder<>(AntiDDoSAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

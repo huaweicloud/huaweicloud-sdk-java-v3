@@ -805,7 +805,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例的状态。 [详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。](tag:hws)[详细状态说明见[实例状态说明](https://support.huaweicloud.com/intl/zh-cn/api-kafka/kafka-api-180514012.html)。](tag:hws_hk)
+     * 实例的状态。详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。
      * @return status
      */
     public String getStatus() {
@@ -856,7 +856,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * '[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hc,hk,hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm,hk_g42,hk_tm)'
+     * [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_hk,ctc,sbc,hk_sbc,cmcc,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:otc,dt,g42,tm,hk_g42,hk_tm)
      * @return chargingMode
      */
     public Integer getChargingMode() {

@@ -21,7 +21,7 @@ public class ListSinkTasksRequest {
     }
 
     /**
-     * 实例转储ID。 请参考[实例生命周期][查询实例]接口返回的数据。
+     * 实例转储ID。  请参考[查询实例](ShowInstance.xml)返回的数据。
      * @return connectorId
      */
     public String getConnectorId() {

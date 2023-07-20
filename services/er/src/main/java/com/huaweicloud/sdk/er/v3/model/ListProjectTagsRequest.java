@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListProjectTagsRequest {
 
     /**
-     * - instance: 企业路由器实例 - route-table: 路由表 - vpc-attachment: VPC连接 - vgw-attachment: 虚拟网关连接 - peering-attachment: 对等连接（Peering）连接 - vpn-attachment: VPN网关连接 - attachments: 所有连接类型
+     * 标签资源类型: - instance: 企业路由器实例 - route-table: 路由表 - vpc-attachment: VPC连接 - vgw-attachment: 虚拟网关连接 - peering-attachment: 对等连接（Peering）连接 - vpn-attachment: VPN网关连接 -  -  -  -  - attachments: 所有连接类型
      */
     public static final class ResourceTypeEnum {
 
@@ -61,9 +61,24 @@ public class ListProjectTagsRequest {
         public static final ResourceTypeEnum CAN_ATTACHMENT = new ResourceTypeEnum("can-attachment");
 
         /**
+         * Enum ECN_ATTACHMENT for value: "ecn-attachment"
+         */
+        public static final ResourceTypeEnum ECN_ATTACHMENT = new ResourceTypeEnum("ecn-attachment");
+
+        /**
          * Enum GDGW_ATTACHMENT for value: "gdgw-attachment"
          */
         public static final ResourceTypeEnum GDGW_ATTACHMENT = new ResourceTypeEnum("gdgw-attachment");
+
+        /**
+         * Enum CONNECT_ATTACHMENT for value: "connect-attachment"
+         */
+        public static final ResourceTypeEnum CONNECT_ATTACHMENT = new ResourceTypeEnum("connect-attachment");
+
+        /**
+         * Enum CFW_ATTACHMENT for value: "cfw-attachment"
+         */
+        public static final ResourceTypeEnum CFW_ATTACHMENT = new ResourceTypeEnum("cfw-attachment");
 
         /**
          * Enum ATTACHMENTS for value: "attachments"
@@ -82,7 +97,10 @@ public class ListProjectTagsRequest {
             map.put("peering-attachment", PEERING_ATTACHMENT);
             map.put("vpn-attachment", VPN_ATTACHMENT);
             map.put("can-attachment", CAN_ATTACHMENT);
+            map.put("ecn-attachment", ECN_ATTACHMENT);
             map.put("gdgw-attachment", GDGW_ATTACHMENT);
+            map.put("connect-attachment", CONNECT_ATTACHMENT);
+            map.put("cfw-attachment", CFW_ATTACHMENT);
             map.put("attachments", ATTACHMENTS);
             return Collections.unmodifiableMap(map);
         }
@@ -144,7 +162,7 @@ public class ListProjectTagsRequest {
     }
 
     /**
-     * - instance: 企业路由器实例 - route-table: 路由表 - vpc-attachment: VPC连接 - vgw-attachment: 虚拟网关连接 - peering-attachment: 对等连接（Peering）连接 - vpn-attachment: VPN网关连接 - attachments: 所有连接类型
+     * 标签资源类型: - instance: 企业路由器实例 - route-table: 路由表 - vpc-attachment: VPC连接 - vgw-attachment: 虚拟网关连接 - peering-attachment: 对等连接（Peering）连接 - vpn-attachment: VPN网关连接 -  -  -  -  - attachments: 所有连接类型
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

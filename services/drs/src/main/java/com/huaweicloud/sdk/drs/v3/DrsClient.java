@@ -3,7 +3,76 @@ package com.huaweicloud.sdk.drs.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.drs.v3.model.*;
+import com.huaweicloud.sdk.drs.v3.model.BatchChangeDataRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchChangeDataResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchCheckJobsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchCheckJobsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchCheckResultsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchCheckResultsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchCreateJobsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchCreateJobsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchDeleteJobsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchDeleteJobsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchListJobDetailsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchListJobDetailsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchListJobStatusRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchListJobStatusResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchListProgressesRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchListProgressesResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchListRposAndRtosRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchListRposAndRtosResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchListStructDetailRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchListStructDetailResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchListStructProcessRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchListStructProcessResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchResetPasswordRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchResetPasswordResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchRestoreTaskRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchRestoreTaskResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetDefinerRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetDefinerResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetObjectsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetObjectsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetPolicyRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetPolicyResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetSmnRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetSmnResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetSpeedRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchSetSpeedResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchShowParamsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchShowParamsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchStartJobsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchStartJobsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchStopJobsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchStopJobsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchSwitchoverRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchSwitchoverResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchUpdateJobRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchUpdateJobResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchUpdateUserRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchUpdateUserResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchValidateClustersConnectionsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchValidateClustersConnectionsResponse;
+import com.huaweicloud.sdk.drs.v3.model.BatchValidateConnectionsRequest;
+import com.huaweicloud.sdk.drs.v3.model.BatchValidateConnectionsResponse;
+import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskRequest;
+import com.huaweicloud.sdk.drs.v3.model.CreateCompareTaskResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListAvailableZoneRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListAvailableZoneResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListCompareResultRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListCompareResultResponse;
+import com.huaweicloud.sdk.drs.v3.model.ListUsersRequest;
+import com.huaweicloud.sdk.drs.v3.model.ListUsersResponse;
+import com.huaweicloud.sdk.drs.v3.model.ShowJobListRequest;
+import com.huaweicloud.sdk.drs.v3.model.ShowJobListResponse;
+import com.huaweicloud.sdk.drs.v3.model.ShowMonitoringDataRequest;
+import com.huaweicloud.sdk.drs.v3.model.ShowMonitoringDataResponse;
+import com.huaweicloud.sdk.drs.v3.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.drs.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.drs.v3.model.UpdateParamsRequest;
+import com.huaweicloud.sdk.drs.v3.model.UpdateParamsResponse;
+import com.huaweicloud.sdk.drs.v3.model.UpdateTuningParamsRequest;
+import com.huaweicloud.sdk.drs.v3.model.UpdateTuningParamsResponse;
 
 public class DrsClient {
 
@@ -14,7 +83,8 @@ public class DrsClient {
     }
 
     public static ClientBuilder<DrsClient> newBuilder() {
-        return new ClientBuilder<>(DrsClient::new);
+        ClientBuilder<DrsClient> clientBuilder = new ClientBuilder<>(DrsClient::new);
+        return clientBuilder;
     }
 
     /**

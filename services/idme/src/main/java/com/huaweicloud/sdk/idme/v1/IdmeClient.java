@@ -3,7 +3,20 @@ package com.huaweicloud.sdk.idme.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.idme.v1.model.*;
+import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationRequest;
+import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.DeleteXdmApplicationRequest;
+import com.huaweicloud.sdk.idme.v1.model.DeleteXdmApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.DeployApplicationRequest;
+import com.huaweicloud.sdk.idme.v1.model.DeployApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.ListAppsRequest;
+import com.huaweicloud.sdk.idme.v1.model.ListAppsResponse;
+import com.huaweicloud.sdk.idme.v1.model.ListEnvsRequest;
+import com.huaweicloud.sdk.idme.v1.model.ListEnvsResponse;
+import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationRequest;
+import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.UninstallRequest;
+import com.huaweicloud.sdk.idme.v1.model.UninstallResponse;
 
 public class IdmeClient {
 
@@ -14,7 +27,8 @@ public class IdmeClient {
     }
 
     public static ClientBuilder<IdmeClient> newBuilder() {
-        return new ClientBuilder<>(IdmeClient::new);
+        ClientBuilder<IdmeClient> clientBuilder = new ClientBuilder<>(IdmeClient::new);
+        return clientBuilder;
     }
 
     /**

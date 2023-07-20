@@ -15,79 +15,102 @@ import java.util.function.Consumer;
 public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "hourly")
+    @JsonProperty(value = "engine")
 
-    private List<ListProductsRespHourly> hourly = null;
+    private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "monthly")
+    @JsonProperty(value = "versions")
 
-    private List<ListProductsRespHourly> monthly = null;
+    private List<String> versions = null;
 
-    public ShowInstanceExtendProductInfoResponse withHourly(List<ListProductsRespHourly> hourly) {
-        this.hourly = hourly;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "products")
 
-    public ShowInstanceExtendProductInfoResponse addHourlyItem(ListProductsRespHourly hourlyItem) {
-        if (this.hourly == null) {
-            this.hourly = new ArrayList<>();
-        }
-        this.hourly.add(hourlyItem);
-        return this;
-    }
+    private List<RabbitMQExtendProductInfoEntity> products = null;
 
-    public ShowInstanceExtendProductInfoResponse withHourly(Consumer<List<ListProductsRespHourly>> hourlySetter) {
-        if (this.hourly == null) {
-            this.hourly = new ArrayList<>();
-        }
-        hourlySetter.accept(this.hourly);
+    public ShowInstanceExtendProductInfoResponse withEngine(String engine) {
+        this.engine = engine;
         return this;
     }
 
     /**
-     * 表示按需付费的产品列表。
-     * @return hourly
+     * 消息引擎类型。
+     * @return engine
      */
-    public List<ListProductsRespHourly> getHourly() {
-        return hourly;
+    public String getEngine() {
+        return engine;
     }
 
-    public void setHourly(List<ListProductsRespHourly> hourly) {
-        this.hourly = hourly;
+    public void setEngine(String engine) {
+        this.engine = engine;
     }
 
-    public ShowInstanceExtendProductInfoResponse withMonthly(List<ListProductsRespHourly> monthly) {
-        this.monthly = monthly;
+    public ShowInstanceExtendProductInfoResponse withVersions(List<String> versions) {
+        this.versions = versions;
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse addMonthlyItem(ListProductsRespHourly monthlyItem) {
-        if (this.monthly == null) {
-            this.monthly = new ArrayList<>();
+    public ShowInstanceExtendProductInfoResponse addVersionsItem(String versionsItem) {
+        if (this.versions == null) {
+            this.versions = new ArrayList<>();
         }
-        this.monthly.add(monthlyItem);
+        this.versions.add(versionsItem);
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse withMonthly(Consumer<List<ListProductsRespHourly>> monthlySetter) {
-        if (this.monthly == null) {
-            this.monthly = new ArrayList<>();
+    public ShowInstanceExtendProductInfoResponse withVersions(Consumer<List<String>> versionsSetter) {
+        if (this.versions == null) {
+            this.versions = new ArrayList<>();
         }
-        monthlySetter.accept(this.monthly);
+        versionsSetter.accept(this.versions);
         return this;
     }
 
     /**
-     * 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Rabbitmq实例。
-     * @return monthly
+     * 消息引擎支持的版本
+     * @return versions
      */
-    public List<ListProductsRespHourly> getMonthly() {
-        return monthly;
+    public List<String> getVersions() {
+        return versions;
     }
 
-    public void setMonthly(List<ListProductsRespHourly> monthly) {
-        this.monthly = monthly;
+    public void setVersions(List<String> versions) {
+        this.versions = versions;
+    }
+
+    public ShowInstanceExtendProductInfoResponse withProducts(List<RabbitMQExtendProductInfoEntity> products) {
+        this.products = products;
+        return this;
+    }
+
+    public ShowInstanceExtendProductInfoResponse addProductsItem(RabbitMQExtendProductInfoEntity productsItem) {
+        if (this.products == null) {
+            this.products = new ArrayList<>();
+        }
+        this.products.add(productsItem);
+        return this;
+    }
+
+    public ShowInstanceExtendProductInfoResponse withProducts(
+        Consumer<List<RabbitMQExtendProductInfoEntity>> productsSetter) {
+        if (this.products == null) {
+            this.products = new ArrayList<>();
+        }
+        productsSetter.accept(this.products);
+        return this;
+    }
+
+    /**
+     * 规格变更的产品信息。
+     * @return products
+     */
+    public List<RabbitMQExtendProductInfoEntity> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<RabbitMQExtendProductInfoEntity> products) {
+        this.products = products;
     }
 
     @Override
@@ -99,20 +122,22 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
             return false;
         }
         ShowInstanceExtendProductInfoResponse that = (ShowInstanceExtendProductInfoResponse) obj;
-        return Objects.equals(this.hourly, that.hourly) && Objects.equals(this.monthly, that.monthly);
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.versions, that.versions)
+            && Objects.equals(this.products, that.products);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hourly, monthly);
+        return Objects.hash(engine, versions, products);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceExtendProductInfoResponse {\n");
-        sb.append("    hourly: ").append(toIndentedString(hourly)).append("\n");
-        sb.append("    monthly: ").append(toIndentedString(monthly)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
+        sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
+        sb.append("    products: ").append(toIndentedString(products)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -243,8 +243,8 @@ public class CreateLifeCycleHookOption {
     }
 
     /**
-     * 生命周期挂钩超时时间，取值范围300-86400，默认为3600，单位是秒。默认情况下，实例保持等待状态的时间。您可以延长超时时间，也可以在超时时间结束前进行 CONTINUE 或 ABANDON 操作。
-     * minimum: 300
+     * 生命周期挂钩超时时间，取值范围60-86400，默认为3600，单位是秒。默认情况下，实例保持等待状态的时间。您可以延长超时时间，也可以在超时时间结束前进行 CONTINUE 或 ABANDON 操作。
+     * minimum: 60
      * maximum: 86400
      * @return defaultTimeout
      */

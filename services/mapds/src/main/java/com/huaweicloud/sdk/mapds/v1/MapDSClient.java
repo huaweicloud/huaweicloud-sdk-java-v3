@@ -3,7 +3,16 @@ package com.huaweicloud.sdk.mapds.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.mapds.v1.model.*;
+import com.huaweicloud.sdk.mapds.v1.model.CreateCredentialRequest;
+import com.huaweicloud.sdk.mapds.v1.model.CreateCredentialResponse;
+import com.huaweicloud.sdk.mapds.v1.model.CreateSasTokenRequest;
+import com.huaweicloud.sdk.mapds.v1.model.CreateSasTokenResponse;
+import com.huaweicloud.sdk.mapds.v1.model.DeleteCedentialRequest;
+import com.huaweicloud.sdk.mapds.v1.model.DeleteCedentialResponse;
+import com.huaweicloud.sdk.mapds.v1.model.ShowCredentialRequest;
+import com.huaweicloud.sdk.mapds.v1.model.ShowCredentialResponse;
+import com.huaweicloud.sdk.mapds.v1.model.ShowMapTileRequest;
+import com.huaweicloud.sdk.mapds.v1.model.ShowMapTileResponse;
 
 public class MapDSClient {
 
@@ -14,7 +23,8 @@ public class MapDSClient {
     }
 
     public static ClientBuilder<MapDSClient> newBuilder() {
-        return new ClientBuilder<>(MapDSClient::new);
+        ClientBuilder<MapDSClient> clientBuilder = new ClientBuilder<>(MapDSClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -1,6 +1,33 @@
 package com.huaweicloud.sdk.cdn.v2;
 
-import com.huaweicloud.sdk.cdn.v2.model.*;
+import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
+import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelResponse;
+import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
+import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
+import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowChargeModesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainDetailByNameRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainDetailByNameResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainFullConfigRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainFullConfigResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlResponse;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigRequest;
+import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +41,8 @@ public class CdnClient {
     }
 
     public static ClientBuilder<CdnClient> newBuilder() {
-        return new ClientBuilder<>(CdnClient::new, "GlobalCredentials");
+        ClientBuilder<CdnClient> clientBuilder = new ClientBuilder<>(CdnClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

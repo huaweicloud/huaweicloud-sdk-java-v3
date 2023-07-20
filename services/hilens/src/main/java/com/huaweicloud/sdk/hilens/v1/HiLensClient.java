@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hilens.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.hilens.v1.model.*;
+import com.huaweicloud.sdk.hilens.v1.model.ListDeviceAlarmsRequest;
+import com.huaweicloud.sdk.hilens.v1.model.ListDeviceAlarmsResponse;
+import com.huaweicloud.sdk.hilens.v1.model.ListDevicesRequest;
+import com.huaweicloud.sdk.hilens.v1.model.ListDevicesResponse;
 
 public class HiLensClient {
 
@@ -14,7 +17,8 @@ public class HiLensClient {
     }
 
     public static ClientBuilder<HiLensClient> newBuilder() {
-        return new ClientBuilder<>(HiLensClient::new);
+        ClientBuilder<HiLensClient> clientBuilder = new ClientBuilder<>(HiLensClient::new);
+        return clientBuilder;
     }
 
     /**

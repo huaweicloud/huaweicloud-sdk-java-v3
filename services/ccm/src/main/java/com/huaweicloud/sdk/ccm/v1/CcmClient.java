@@ -1,6 +1,87 @@
 package com.huaweicloud.sdk.ccm.v1;
 
-import com.huaweicloud.sdk.ccm.v1.model.*;
+import com.huaweicloud.sdk.ccm.v1.model.BatchCreateCaTagsRequest;
+import com.huaweicloud.sdk.ccm.v1.model.BatchCreateCaTagsResponse;
+import com.huaweicloud.sdk.ccm.v1.model.BatchCreateCertTagsRequest;
+import com.huaweicloud.sdk.ccm.v1.model.BatchCreateCertTagsResponse;
+import com.huaweicloud.sdk.ccm.v1.model.BatchDeleteCaTagsRequest;
+import com.huaweicloud.sdk.ccm.v1.model.BatchDeleteCaTagsResponse;
+import com.huaweicloud.sdk.ccm.v1.model.BatchDeleteCertTagsRequest;
+import com.huaweicloud.sdk.ccm.v1.model.BatchDeleteCertTagsResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CountCaResourceInstancesRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CountCaResourceInstancesResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CountCertResourceInstancesRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CountCertResourceInstancesResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCaTagRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCaTagResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertTagRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertTagResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityObsAgencyRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityObsAgencyResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateByCsrRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateByCsrResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.DeleteCertificateAuthorityRequest;
+import com.huaweicloud.sdk.ccm.v1.model.DeleteCertificateAuthorityResponse;
+import com.huaweicloud.sdk.ccm.v1.model.DeleteCertificateRequest;
+import com.huaweicloud.sdk.ccm.v1.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.DisableCertificateAuthorityCrlRequest;
+import com.huaweicloud.sdk.ccm.v1.model.DisableCertificateAuthorityCrlResponse;
+import com.huaweicloud.sdk.ccm.v1.model.DisableCertificateAuthorityRequest;
+import com.huaweicloud.sdk.ccm.v1.model.DisableCertificateAuthorityResponse;
+import com.huaweicloud.sdk.ccm.v1.model.EnableCertificateAuthorityCrlRequest;
+import com.huaweicloud.sdk.ccm.v1.model.EnableCertificateAuthorityCrlResponse;
+import com.huaweicloud.sdk.ccm.v1.model.EnableCertificateAuthorityRequest;
+import com.huaweicloud.sdk.ccm.v1.model.EnableCertificateAuthorityResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ExportCertificateAuthorityCertificateRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ExportCertificateAuthorityCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ExportCertificateAuthorityCsrRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ExportCertificateAuthorityCsrResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ExportCertificateRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ExportCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ImportCertificateAuthorityCertificateRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ImportCertificateAuthorityCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.IssueCertificateAuthorityCertificateRequest;
+import com.huaweicloud.sdk.ccm.v1.model.IssueCertificateAuthorityCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ListCaResourceInstancesRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ListCaResourceInstancesResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ListCaTagsRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ListCaTagsResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertResourceInstancesRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertResourceInstancesResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertTagsRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertTagsResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertificateAuthorityObsBucketRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertificateAuthorityObsBucketResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertificateAuthorityRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertificateAuthorityResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertificateRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ListCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ListDomainCaTagsRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ListDomainCaTagsResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ListDomainCertTagsRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ListDomainCertTagsResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ParseCertificateSigningRequestRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ParseCertificateSigningRequestResponse;
+import com.huaweicloud.sdk.ccm.v1.model.RestoreCertificateAuthorityRequest;
+import com.huaweicloud.sdk.ccm.v1.model.RestoreCertificateAuthorityResponse;
+import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateAuthorityRequest;
+import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateAuthorityResponse;
+import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateRequest;
+import com.huaweicloud.sdk.ccm.v1.model.RevokeCertificateResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityObsAgencyRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityObsAgencyResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityQuotaRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityQuotaResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateAuthorityResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateQuotaRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateQuotaResponse;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateRequest;
+import com.huaweicloud.sdk.ccm.v1.model.ShowCertificateResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +95,8 @@ public class CcmClient {
     }
 
     public static ClientBuilder<CcmClient> newBuilder() {
-        return new ClientBuilder<>(CcmClient::new, "GlobalCredentials");
+        ClientBuilder<CcmClient> clientBuilder = new ClientBuilder<>(CcmClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

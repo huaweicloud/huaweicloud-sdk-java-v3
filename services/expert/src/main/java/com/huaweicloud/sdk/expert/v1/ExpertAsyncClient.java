@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.expert.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.expert.v1.model.*;
+import com.huaweicloud.sdk.expert.v1.model.ListRecordsCountRequest;
+import com.huaweicloud.sdk.expert.v1.model.ListRecordsCountResponse;
+import com.huaweicloud.sdk.expert.v1.model.ListUsersKeyRequest;
+import com.huaweicloud.sdk.expert.v1.model.ListUsersKeyResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +19,8 @@ public class ExpertAsyncClient {
     }
 
     public static ClientBuilder<ExpertAsyncClient> newBuilder() {
-        return new ClientBuilder<>(ExpertAsyncClient::new);
+        ClientBuilder<ExpertAsyncClient> clientBuilder = new ClientBuilder<>(ExpertAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

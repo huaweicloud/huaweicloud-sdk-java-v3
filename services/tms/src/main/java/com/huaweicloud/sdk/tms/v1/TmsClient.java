@@ -3,7 +3,34 @@ package com.huaweicloud.sdk.tms.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.tms.v1.model.*;
+import com.huaweicloud.sdk.tms.v1.model.CreatePredefineTagsRequest;
+import com.huaweicloud.sdk.tms.v1.model.CreatePredefineTagsResponse;
+import com.huaweicloud.sdk.tms.v1.model.CreateResourceTagRequest;
+import com.huaweicloud.sdk.tms.v1.model.CreateResourceTagResponse;
+import com.huaweicloud.sdk.tms.v1.model.DeletePredefineTagsRequest;
+import com.huaweicloud.sdk.tms.v1.model.DeletePredefineTagsResponse;
+import com.huaweicloud.sdk.tms.v1.model.DeleteResourceTagRequest;
+import com.huaweicloud.sdk.tms.v1.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListApiVersionsRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListPredefineTagsRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListPredefineTagsResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListProvidersRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListProvidersResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListResourceRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListResourceResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListTagKeysRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListTagKeysResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListTagValuesRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListTagValuesResponse;
+import com.huaweicloud.sdk.tms.v1.model.ShowApiVersionRequest;
+import com.huaweicloud.sdk.tms.v1.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.tms.v1.model.ShowResourceTagRequest;
+import com.huaweicloud.sdk.tms.v1.model.ShowResourceTagResponse;
+import com.huaweicloud.sdk.tms.v1.model.ShowTagQuotaRequest;
+import com.huaweicloud.sdk.tms.v1.model.ShowTagQuotaResponse;
+import com.huaweicloud.sdk.tms.v1.model.UpdatePredefineTagsRequest;
+import com.huaweicloud.sdk.tms.v1.model.UpdatePredefineTagsResponse;
 
 public class TmsClient {
 
@@ -14,7 +41,8 @@ public class TmsClient {
     }
 
     public static ClientBuilder<TmsClient> newBuilder() {
-        return new ClientBuilder<>(TmsClient::new, "GlobalCredentials");
+        ClientBuilder<TmsClient> clientBuilder = new ClientBuilder<>(TmsClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

@@ -3,7 +3,18 @@ package com.huaweicloud.sdk.scm.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.scm.v3.model.*;
+import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ExportCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ExportCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ImportCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListCertificatesRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.PushCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ShowCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ShowCertificateResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +27,9 @@ public class ScmAsyncClient {
     }
 
     public static ClientBuilder<ScmAsyncClient> newBuilder() {
-        return new ClientBuilder<>(ScmAsyncClient::new, "GlobalCredentials,BasicCredentials");
+        ClientBuilder<ScmAsyncClient> clientBuilder =
+            new ClientBuilder<>(ScmAsyncClient::new, "GlobalCredentials,BasicCredentials");
+        return clientBuilder;
     }
 
     /**

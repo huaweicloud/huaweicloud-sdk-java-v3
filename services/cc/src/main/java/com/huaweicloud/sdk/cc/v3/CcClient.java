@@ -1,6 +1,77 @@
 package com.huaweicloud.sdk.cc.v3;
 
-import com.huaweicloud.sdk.cc.v3.model.*;
+import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageRequest;
+import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.BatchCreateDeleteTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.BatchCreateDeleteTagsResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateAuthorisationRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateAuthorisationResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateCloudConnectionRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateTagRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateTagResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteAuthorisationRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteAuthorisationResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteBandwidthPackageRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteCloudConnectionRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteTagRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteTagResponse;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageRequest;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionRoutesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionRoutesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListDomainTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListDomainTagsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListInterRegionBandwidthsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListInterRegionBandwidthsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListPermissionsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListQuotasRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListQuotasResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListResourceByFilterTagRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListResourceByFilterTagResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListTagsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRoutesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRoutesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateAuthorisationRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateAuthorisationResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateBandwidthPackageRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCloudConnectionRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +85,8 @@ public class CcClient {
     }
 
     public static ClientBuilder<CcClient> newBuilder() {
-        return new ClientBuilder<>(CcClient::new, "GlobalCredentials");
+        ClientBuilder<CcClient> clientBuilder = new ClientBuilder<>(CcClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

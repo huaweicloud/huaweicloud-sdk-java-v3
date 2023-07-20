@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.sa.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.sa.v1.model.*;
+import com.huaweicloud.sdk.sa.v1.model.CheckProductHealthyRequest;
+import com.huaweicloud.sdk.sa.v1.model.CheckProductHealthyResponse;
+import com.huaweicloud.sdk.sa.v1.model.ImportEventsRequest;
+import com.huaweicloud.sdk.sa.v1.model.ImportEventsResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +19,8 @@ public class SaAsyncClient {
     }
 
     public static ClientBuilder<SaAsyncClient> newBuilder() {
-        return new ClientBuilder<>(SaAsyncClient::new);
+        ClientBuilder<SaAsyncClient> clientBuilder = new ClientBuilder<>(SaAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

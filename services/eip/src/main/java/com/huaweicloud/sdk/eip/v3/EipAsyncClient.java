@@ -3,7 +3,44 @@ package com.huaweicloud.sdk.eip.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.eip.v3.model.*;
+import com.huaweicloud.sdk.eip.v3.model.AssociatePublicipsRequest;
+import com.huaweicloud.sdk.eip.v3.model.AssociatePublicipsResponse;
+import com.huaweicloud.sdk.eip.v3.model.AttachBatchPublicIpRequest;
+import com.huaweicloud.sdk.eip.v3.model.AttachBatchPublicIpResponse;
+import com.huaweicloud.sdk.eip.v3.model.AttachShareBandwidthRequest;
+import com.huaweicloud.sdk.eip.v3.model.AttachShareBandwidthResponse;
+import com.huaweicloud.sdk.eip.v3.model.CountEipAvailableResourcesRequest;
+import com.huaweicloud.sdk.eip.v3.model.CountEipAvailableResourcesResponse;
+import com.huaweicloud.sdk.eip.v3.model.DetachBatchPublicIpRequest;
+import com.huaweicloud.sdk.eip.v3.model.DetachBatchPublicIpResponse;
+import com.huaweicloud.sdk.eip.v3.model.DetachShareBandwidthRequest;
+import com.huaweicloud.sdk.eip.v3.model.DetachShareBandwidthResponse;
+import com.huaweicloud.sdk.eip.v3.model.DisableNat64Request;
+import com.huaweicloud.sdk.eip.v3.model.DisableNat64Response;
+import com.huaweicloud.sdk.eip.v3.model.DisassociatePublicipsRequest;
+import com.huaweicloud.sdk.eip.v3.model.DisassociatePublicipsResponse;
+import com.huaweicloud.sdk.eip.v3.model.EnableNat64Request;
+import com.huaweicloud.sdk.eip.v3.model.EnableNat64Response;
+import com.huaweicloud.sdk.eip.v3.model.ListBandwidthRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListBandwidthResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListPublicipPoolRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListPublicipPoolResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListPublicipsRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListPublicipsResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListShareBandwidthTypesRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListShareBandwidthTypesResponse;
+import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolRequest;
+import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolResponse;
+import com.huaweicloud.sdk.eip.v3.model.ShowPublicipRequest;
+import com.huaweicloud.sdk.eip.v3.model.ShowPublicipResponse;
+import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipRequest;
+import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipResponse;
+import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipRequest;
+import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +53,37 @@ public class EipAsyncClient {
     }
 
     public static ClientBuilder<EipAsyncClient> newBuilder() {
-        return new ClientBuilder<>(EipAsyncClient::new);
+        ClientBuilder<EipAsyncClient> clientBuilder = new ClientBuilder<>(EipAsyncClient::new);
+        return clientBuilder;
+    }
+
+    /**
+     * 查询带宽列表
+     *
+     * 查询带宽列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthRequest 请求对象
+     * @return CompletableFuture<ListBandwidthResponse>
+     */
+    public CompletableFuture<ListBandwidthResponse> listBandwidthAsync(ListBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.listBandwidth);
+    }
+
+    /**
+     * 查询带宽列表
+     *
+     * 查询带宽列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthRequest 请求对象
+     * @return AsyncInvoker<ListBandwidthRequest, ListBandwidthResponse>
+     */
+    public AsyncInvoker<ListBandwidthRequest, ListBandwidthResponse> listBandwidthAsyncInvoker(
+        ListBandwidthRequest request) {
+        return new AsyncInvoker<ListBandwidthRequest, ListBandwidthResponse>(request, EipMeta.listBandwidth, hcClient);
     }
 
     /**
@@ -202,6 +269,67 @@ public class EipAsyncClient {
     }
 
     /**
+     * 共享带宽批量加入弹性公网IP
+     *
+     * 共享带宽批量加入弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachBatchPublicIpRequest 请求对象
+     * @return CompletableFuture<AttachBatchPublicIpResponse>
+     */
+    public CompletableFuture<AttachBatchPublicIpResponse> attachBatchPublicIpAsync(AttachBatchPublicIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.attachBatchPublicIp);
+    }
+
+    /**
+     * 共享带宽批量加入弹性公网IP
+     *
+     * 共享带宽批量加入弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachBatchPublicIpRequest 请求对象
+     * @return AsyncInvoker<AttachBatchPublicIpRequest, AttachBatchPublicIpResponse>
+     */
+    public AsyncInvoker<AttachBatchPublicIpRequest, AttachBatchPublicIpResponse> attachBatchPublicIpAsyncInvoker(
+        AttachBatchPublicIpRequest request) {
+        return new AsyncInvoker<AttachBatchPublicIpRequest, AttachBatchPublicIpResponse>(request,
+            EipMeta.attachBatchPublicIp, hcClient);
+    }
+
+    /**
+     * 共享带宽加入弹性公网IP
+     *
+     * 共享带宽加入弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachShareBandwidthRequest 请求对象
+     * @return CompletableFuture<AttachShareBandwidthResponse>
+     */
+    public CompletableFuture<AttachShareBandwidthResponse> attachShareBandwidthAsync(
+        AttachShareBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.attachShareBandwidth);
+    }
+
+    /**
+     * 共享带宽加入弹性公网IP
+     *
+     * 共享带宽加入弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachShareBandwidthRequest 请求对象
+     * @return AsyncInvoker<AttachShareBandwidthRequest, AttachShareBandwidthResponse>
+     */
+    public AsyncInvoker<AttachShareBandwidthRequest, AttachShareBandwidthResponse> attachShareBandwidthAsyncInvoker(
+        AttachShareBandwidthRequest request) {
+        return new AsyncInvoker<AttachShareBandwidthRequest, AttachShareBandwidthResponse>(request,
+            EipMeta.attachShareBandwidth, hcClient);
+    }
+
+    /**
      * 查询弹性公网IP可用数
      *
      * IP池用于查询公网可用ip个数
@@ -233,6 +361,96 @@ public class EipAsyncClient {
     }
 
     /**
+     * 共享带宽批量移出弹性公网IP
+     *
+     * 共享带宽批量移出弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachBatchPublicIpRequest 请求对象
+     * @return CompletableFuture<DetachBatchPublicIpResponse>
+     */
+    public CompletableFuture<DetachBatchPublicIpResponse> detachBatchPublicIpAsync(DetachBatchPublicIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.detachBatchPublicIp);
+    }
+
+    /**
+     * 共享带宽批量移出弹性公网IP
+     *
+     * 共享带宽批量移出弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachBatchPublicIpRequest 请求对象
+     * @return AsyncInvoker<DetachBatchPublicIpRequest, DetachBatchPublicIpResponse>
+     */
+    public AsyncInvoker<DetachBatchPublicIpRequest, DetachBatchPublicIpResponse> detachBatchPublicIpAsyncInvoker(
+        DetachBatchPublicIpRequest request) {
+        return new AsyncInvoker<DetachBatchPublicIpRequest, DetachBatchPublicIpResponse>(request,
+            EipMeta.detachBatchPublicIp, hcClient);
+    }
+
+    /**
+     * 共享带宽移出弹性公网IP
+     *
+     * 共享带宽移出弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachShareBandwidthRequest 请求对象
+     * @return CompletableFuture<DetachShareBandwidthResponse>
+     */
+    public CompletableFuture<DetachShareBandwidthResponse> detachShareBandwidthAsync(
+        DetachShareBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.detachShareBandwidth);
+    }
+
+    /**
+     * 共享带宽移出弹性公网IP
+     *
+     * 共享带宽移出弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachShareBandwidthRequest 请求对象
+     * @return AsyncInvoker<DetachShareBandwidthRequest, DetachShareBandwidthResponse>
+     */
+    public AsyncInvoker<DetachShareBandwidthRequest, DetachShareBandwidthResponse> detachShareBandwidthAsyncInvoker(
+        DetachShareBandwidthRequest request) {
+        return new AsyncInvoker<DetachShareBandwidthRequest, DetachShareBandwidthResponse>(request,
+            EipMeta.detachShareBandwidth, hcClient);
+    }
+
+    /**
+     * 弹性公网IP关闭NAT64
+     *
+     * 弹性公网IP关闭NAT64
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisableNat64Request 请求对象
+     * @return CompletableFuture<DisableNat64Response>
+     */
+    public CompletableFuture<DisableNat64Response> disableNat64Async(DisableNat64Request request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.disableNat64);
+    }
+
+    /**
+     * 弹性公网IP关闭NAT64
+     *
+     * 弹性公网IP关闭NAT64
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisableNat64Request 请求对象
+     * @return AsyncInvoker<DisableNat64Request, DisableNat64Response>
+     */
+    public AsyncInvoker<DisableNat64Request, DisableNat64Response> disableNat64AsyncInvoker(
+        DisableNat64Request request) {
+        return new AsyncInvoker<DisableNat64Request, DisableNat64Response>(request, EipMeta.disableNat64, hcClient);
+    }
+
+    /**
      * 解绑弹性公网IP
      *
      * 解绑弹性公网IP
@@ -261,6 +479,34 @@ public class EipAsyncClient {
         DisassociatePublicipsRequest request) {
         return new AsyncInvoker<DisassociatePublicipsRequest, DisassociatePublicipsResponse>(request,
             EipMeta.disassociatePublicips, hcClient);
+    }
+
+    /**
+     * 弹性公网IP开启NAT64
+     *
+     * 弹性公网IP开启NAT64
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableNat64Request 请求对象
+     * @return CompletableFuture<EnableNat64Response>
+     */
+    public CompletableFuture<EnableNat64Response> enableNat64Async(EnableNat64Request request) {
+        return hcClient.asyncInvokeHttp(request, EipMeta.enableNat64);
+    }
+
+    /**
+     * 弹性公网IP开启NAT64
+     *
+     * 弹性公网IP开启NAT64
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableNat64Request 请求对象
+     * @return AsyncInvoker<EnableNat64Request, EnableNat64Response>
+     */
+    public AsyncInvoker<EnableNat64Request, EnableNat64Response> enableNat64AsyncInvoker(EnableNat64Request request) {
+        return new AsyncInvoker<EnableNat64Request, EnableNat64Response>(request, EipMeta.enableNat64, hcClient);
     }
 
     /**

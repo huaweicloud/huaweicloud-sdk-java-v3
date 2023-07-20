@@ -3,7 +3,66 @@ package com.huaweicloud.sdk.vpc.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.vpc.v3.model.*;
+import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateVpcResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListVpcsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListVpcsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequest;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVpcRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateSubNetworkInterfaceRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +75,8 @@ public class VpcAsyncClient {
     }
 
     public static ClientBuilder<VpcAsyncClient> newBuilder() {
-        return new ClientBuilder<>(VpcAsyncClient::new);
+        ClientBuilder<VpcAsyncClient> clientBuilder = new ClientBuilder<>(VpcAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

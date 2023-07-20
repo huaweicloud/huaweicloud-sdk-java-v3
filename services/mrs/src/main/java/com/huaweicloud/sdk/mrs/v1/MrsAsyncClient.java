@@ -3,7 +3,44 @@ package com.huaweicloud.sdk.mrs.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.mrs.v1.model.*;
+import com.huaweicloud.sdk.mrs.v1.model.BatchCreateClusterTagsRequest;
+import com.huaweicloud.sdk.mrs.v1.model.BatchCreateClusterTagsResponse;
+import com.huaweicloud.sdk.mrs.v1.model.BatchDeleteClusterTagsRequest;
+import com.huaweicloud.sdk.mrs.v1.model.BatchDeleteClusterTagsResponse;
+import com.huaweicloud.sdk.mrs.v1.model.CreateAndExecuteJobRequest;
+import com.huaweicloud.sdk.mrs.v1.model.CreateAndExecuteJobResponse;
+import com.huaweicloud.sdk.mrs.v1.model.CreateClusterRequest;
+import com.huaweicloud.sdk.mrs.v1.model.CreateClusterResponse;
+import com.huaweicloud.sdk.mrs.v1.model.CreateClusterTagRequest;
+import com.huaweicloud.sdk.mrs.v1.model.CreateClusterTagResponse;
+import com.huaweicloud.sdk.mrs.v1.model.CreateScalingPolicyRequest;
+import com.huaweicloud.sdk.mrs.v1.model.CreateScalingPolicyResponse;
+import com.huaweicloud.sdk.mrs.v1.model.DeleteClusterRequest;
+import com.huaweicloud.sdk.mrs.v1.model.DeleteClusterResponse;
+import com.huaweicloud.sdk.mrs.v1.model.DeleteClusterTagRequest;
+import com.huaweicloud.sdk.mrs.v1.model.DeleteClusterTagResponse;
+import com.huaweicloud.sdk.mrs.v1.model.DeleteJobExecutionRequest;
+import com.huaweicloud.sdk.mrs.v1.model.DeleteJobExecutionResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListAllTagsRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListAllTagsResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListClusterTagsRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListClusterTagsResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListClustersByTagsRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListClustersByTagsResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListClustersRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListClustersResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListExecuteJobRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListExecuteJobResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListHostsRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListHostsResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ShowClusterDetailsRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ShowClusterDetailsResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ShowJobExesRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ShowJobExesResponse;
+import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingRequest;
+import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +53,8 @@ public class MrsAsyncClient {
     }
 
     public static ClientBuilder<MrsAsyncClient> newBuilder() {
-        return new ClientBuilder<>(MrsAsyncClient::new);
+        ClientBuilder<MrsAsyncClient> clientBuilder = new ClientBuilder<>(MrsAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

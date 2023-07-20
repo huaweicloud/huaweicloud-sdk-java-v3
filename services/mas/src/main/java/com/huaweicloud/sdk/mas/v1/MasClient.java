@@ -3,7 +3,8 @@ package com.huaweicloud.sdk.mas.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.mas.v1.model.*;
+import com.huaweicloud.sdk.mas.v1.model.ShowNameSpaceListRequest;
+import com.huaweicloud.sdk.mas.v1.model.ShowNameSpaceListResponse;
 
 public class MasClient {
 
@@ -14,7 +15,8 @@ public class MasClient {
     }
 
     public static ClientBuilder<MasClient> newBuilder() {
-        return new ClientBuilder<>(MasClient::new);
+        ClientBuilder<MasClient> clientBuilder = new ClientBuilder<>(MasClient::new);
+        return clientBuilder;
     }
 
     /**

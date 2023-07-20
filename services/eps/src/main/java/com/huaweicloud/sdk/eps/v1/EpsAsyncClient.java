@@ -3,7 +3,30 @@ package com.huaweicloud.sdk.eps.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.eps.v1.model.*;
+import com.huaweicloud.sdk.eps.v1.model.CreateEnterpriseProjectRequest;
+import com.huaweicloud.sdk.eps.v1.model.CreateEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.DisableEnterpriseProjectRequest;
+import com.huaweicloud.sdk.eps.v1.model.DisableEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.EnableEnterpriseProjectRequest;
+import com.huaweicloud.sdk.eps.v1.model.EnableEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.ListApiVersionsRequest;
+import com.huaweicloud.sdk.eps.v1.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.eps.v1.model.ListEnterpriseProjectRequest;
+import com.huaweicloud.sdk.eps.v1.model.ListEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.ListProvidersRequest;
+import com.huaweicloud.sdk.eps.v1.model.ListProvidersResponse;
+import com.huaweicloud.sdk.eps.v1.model.MigrateResourceRequest;
+import com.huaweicloud.sdk.eps.v1.model.MigrateResourceResponse;
+import com.huaweicloud.sdk.eps.v1.model.ShowApiVersionRequest;
+import com.huaweicloud.sdk.eps.v1.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectQuotaRequest;
+import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectQuotaResponse;
+import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectRequest;
+import com.huaweicloud.sdk.eps.v1.model.ShowEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.ShowResourceBindEnterpriseProjectRequest;
+import com.huaweicloud.sdk.eps.v1.model.ShowResourceBindEnterpriseProjectResponse;
+import com.huaweicloud.sdk.eps.v1.model.UpdateEnterpriseProjectRequest;
+import com.huaweicloud.sdk.eps.v1.model.UpdateEnterpriseProjectResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +39,8 @@ public class EpsAsyncClient {
     }
 
     public static ClientBuilder<EpsAsyncClient> newBuilder() {
-        return new ClientBuilder<>(EpsAsyncClient::new, "GlobalCredentials");
+        ClientBuilder<EpsAsyncClient> clientBuilder = new ClientBuilder<>(EpsAsyncClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

@@ -3,7 +3,50 @@ package com.huaweicloud.sdk.ugo.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.ugo.v1.model.*;
+import com.huaweicloud.sdk.ugo.v1.model.CheckPermissionRequest;
+import com.huaweicloud.sdk.ugo.v1.model.CheckPermissionResponse;
+import com.huaweicloud.sdk.ugo.v1.model.CommitSyntaxConversionRequest;
+import com.huaweicloud.sdk.ugo.v1.model.CommitSyntaxConversionResponse;
+import com.huaweicloud.sdk.ugo.v1.model.CommitVerificationRequest;
+import com.huaweicloud.sdk.ugo.v1.model.CommitVerificationResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ConfirmTargetDbTypeRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ConfirmTargetDbTypeResponse;
+import com.huaweicloud.sdk.ugo.v1.model.CreateEvaluationProjectRequest;
+import com.huaweicloud.sdk.ugo.v1.model.CreateEvaluationProjectResponse;
+import com.huaweicloud.sdk.ugo.v1.model.CreateMigrationProjectRequest;
+import com.huaweicloud.sdk.ugo.v1.model.CreateMigrationProjectResponse;
+import com.huaweicloud.sdk.ugo.v1.model.DeleteEvaluationProjectRequest;
+import com.huaweicloud.sdk.ugo.v1.model.DeleteEvaluationProjectResponse;
+import com.huaweicloud.sdk.ugo.v1.model.DeleteMigrationProjectRequest;
+import com.huaweicloud.sdk.ugo.v1.model.DeleteMigrationProjectResponse;
+import com.huaweicloud.sdk.ugo.v1.model.DownloadFailureReportRequest;
+import com.huaweicloud.sdk.ugo.v1.model.DownloadFailureReportResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ListApiVersionsRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ListEvaluationProjectsRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ListEvaluationProjectsResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ListMigrationProjectsRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ListMigrationProjectsResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ListPermissionCheckResultRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ListPermissionCheckResultResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ListQuotasRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ListQuotasResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ListSyntaxConversionProgressRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ListSyntaxConversionProgressResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ListVerificationProgressRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ListVerificationProgressResponse;
+import com.huaweicloud.sdk.ugo.v1.model.RunSqlConversionRequest;
+import com.huaweicloud.sdk.ugo.v1.model.RunSqlConversionResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ShowApiVersionInfoRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ShowApiVersionInfoResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ShowEvaluationProjectDetailRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ShowEvaluationProjectDetailResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ShowEvaluationProjectStatusRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ShowEvaluationProjectStatusResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ShowMigrationProjectDetailRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ShowMigrationProjectDetailResponse;
+import com.huaweicloud.sdk.ugo.v1.model.ShowMigrationProjectStatusRequest;
+import com.huaweicloud.sdk.ugo.v1.model.ShowMigrationProjectStatusResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +59,8 @@ public class UgoAsyncClient {
     }
 
     public static ClientBuilder<UgoAsyncClient> newBuilder() {
-        return new ClientBuilder<>(UgoAsyncClient::new);
+        ClientBuilder<UgoAsyncClient> clientBuilder = new ClientBuilder<>(UgoAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

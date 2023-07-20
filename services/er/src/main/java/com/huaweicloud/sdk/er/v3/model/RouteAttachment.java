@@ -25,6 +25,11 @@ public class RouteAttachment {
 
     private String attachmentId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
     public RouteAttachment withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -48,7 +53,7 @@ public class RouteAttachment {
     }
 
     /**
-     * 连接关联的资源类型：vpc|vgw|vpn|peering
+     * 连接关联的资源类型: - vpc：虚拟私有云 - vpn：vpn网关 - vgw：云专线的虚拟网关 - vpn：vpn网关 - vgw：云专线的虚拟网关 - peering：对等连接，通过云连接CC加载不同区域的企业路由器来创建“对等连接（Peering）”连接 -  -  -
      * @return resourceType
      */
     public String getResourceType() {
@@ -76,6 +81,23 @@ public class RouteAttachment {
         this.attachmentId = attachmentId;
     }
 
+    public RouteAttachment withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 路由优先级，普通路由固定值为1
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class RouteAttachment {
         }
         RouteAttachment that = (RouteAttachment) obj;
         return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.attachmentId, that.attachmentId);
+            && Objects.equals(this.attachmentId, that.attachmentId) && Objects.equals(this.priority, that.priority);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourceType, attachmentId);
+        return Objects.hash(resourceId, resourceType, attachmentId, priority);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class RouteAttachment {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    attachmentId: ").append(toIndentedString(attachmentId)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

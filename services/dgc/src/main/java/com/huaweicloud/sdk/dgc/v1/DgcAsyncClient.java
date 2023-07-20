@@ -3,7 +3,82 @@ package com.huaweicloud.sdk.dgc.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.dgc.v1.model.*;
+import com.huaweicloud.sdk.dgc.v1.model.CancelScriptRequest;
+import com.huaweicloud.sdk.dgc.v1.model.CancelScriptResponse;
+import com.huaweicloud.sdk.dgc.v1.model.CreateConnectionRequest;
+import com.huaweicloud.sdk.dgc.v1.model.CreateConnectionResponse;
+import com.huaweicloud.sdk.dgc.v1.model.CreateJobRequest;
+import com.huaweicloud.sdk.dgc.v1.model.CreateJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.CreateResourceRequest;
+import com.huaweicloud.sdk.dgc.v1.model.CreateResourceResponse;
+import com.huaweicloud.sdk.dgc.v1.model.CreateScriptRequest;
+import com.huaweicloud.sdk.dgc.v1.model.CreateScriptResponse;
+import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionRequest;
+import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionResponse;
+import com.huaweicloud.sdk.dgc.v1.model.DeleteJobRequest;
+import com.huaweicloud.sdk.dgc.v1.model.DeleteJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.DeleteResourceRequest;
+import com.huaweicloud.sdk.dgc.v1.model.DeleteResourceResponse;
+import com.huaweicloud.sdk.dgc.v1.model.DeleteScriptRequest;
+import com.huaweicloud.sdk.dgc.v1.model.DeleteScriptResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ExecuteScriptRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ExecuteScriptResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ExportConnectionsRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ExportConnectionsResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ExportJobListRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ExportJobListResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ExportJobRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ExportJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ImportConnectionsRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ImportConnectionsResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ImportJobRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ImportJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ListConnectionsRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ListConnectionsResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ListJobInstancesRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ListJobInstancesResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ListJobsRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ListJobsResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ListResourcesRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ListResourcesResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ListScriptsRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ListScriptsResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksResponse;
+import com.huaweicloud.sdk.dgc.v1.model.RestoreJobInstanceRequest;
+import com.huaweicloud.sdk.dgc.v1.model.RestoreJobInstanceResponse;
+import com.huaweicloud.sdk.dgc.v1.model.RunOnceRequest;
+import com.huaweicloud.sdk.dgc.v1.model.RunOnceResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ShowConnectionRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ShowConnectionResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ShowFileInfoRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ShowFileInfoResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ShowJobInstanceRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ShowJobInstanceResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ShowJobRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ShowJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ShowJobStatusRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ShowJobStatusResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ShowResourceRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ShowResourceResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ShowScriptRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ShowScriptResponse;
+import com.huaweicloud.sdk.dgc.v1.model.StartJobRequest;
+import com.huaweicloud.sdk.dgc.v1.model.StartJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceRequest;
+import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceResponse;
+import com.huaweicloud.sdk.dgc.v1.model.StopJobRequest;
+import com.huaweicloud.sdk.dgc.v1.model.StopJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionRequest;
+import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionResponse;
+import com.huaweicloud.sdk.dgc.v1.model.UpdateJobRequest;
+import com.huaweicloud.sdk.dgc.v1.model.UpdateJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.UpdateResourceRequest;
+import com.huaweicloud.sdk.dgc.v1.model.UpdateResourceResponse;
+import com.huaweicloud.sdk.dgc.v1.model.UpdateScriptRequest;
+import com.huaweicloud.sdk.dgc.v1.model.UpdateScriptResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +91,8 @@ public class DgcAsyncClient {
     }
 
     public static ClientBuilder<DgcAsyncClient> newBuilder() {
-        return new ClientBuilder<>(DgcAsyncClient::new);
+        ClientBuilder<DgcAsyncClient> clientBuilder = new ClientBuilder<>(DgcAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

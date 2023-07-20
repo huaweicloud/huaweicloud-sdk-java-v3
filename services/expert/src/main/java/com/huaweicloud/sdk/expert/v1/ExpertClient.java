@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.expert.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.expert.v1.model.*;
+import com.huaweicloud.sdk.expert.v1.model.ListRecordsCountRequest;
+import com.huaweicloud.sdk.expert.v1.model.ListRecordsCountResponse;
+import com.huaweicloud.sdk.expert.v1.model.ListUsersKeyRequest;
+import com.huaweicloud.sdk.expert.v1.model.ListUsersKeyResponse;
 
 public class ExpertClient {
 
@@ -14,7 +17,8 @@ public class ExpertClient {
     }
 
     public static ClientBuilder<ExpertClient> newBuilder() {
-        return new ClientBuilder<>(ExpertClient::new);
+        ClientBuilder<ExpertClient> clientBuilder = new ClientBuilder<>(ExpertClient::new);
+        return clientBuilder;
     }
 
     /**

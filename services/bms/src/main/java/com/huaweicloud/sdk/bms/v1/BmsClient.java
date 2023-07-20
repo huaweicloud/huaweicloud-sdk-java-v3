@@ -1,6 +1,63 @@
 package com.huaweicloud.sdk.bms.v1;
 
-import com.huaweicloud.sdk.bms.v1.model.*;
+import com.huaweicloud.sdk.bms.v1.model.AddServerNicsRequest;
+import com.huaweicloud.sdk.bms.v1.model.AddServerNicsResponse;
+import com.huaweicloud.sdk.bms.v1.model.AttachBaremetalServerVolumeRequest;
+import com.huaweicloud.sdk.bms.v1.model.AttachBaremetalServerVolumeResponse;
+import com.huaweicloud.sdk.bms.v1.model.BatchCreateBaremetalServerTagsRequest;
+import com.huaweicloud.sdk.bms.v1.model.BatchCreateBaremetalServerTagsResponse;
+import com.huaweicloud.sdk.bms.v1.model.BatchDeleteBaremetalServerTagsRequest;
+import com.huaweicloud.sdk.bms.v1.model.BatchDeleteBaremetalServerTagsResponse;
+import com.huaweicloud.sdk.bms.v1.model.BatchRebootBaremetalServersRequest;
+import com.huaweicloud.sdk.bms.v1.model.BatchRebootBaremetalServersResponse;
+import com.huaweicloud.sdk.bms.v1.model.BatchStartBaremetalServersRequest;
+import com.huaweicloud.sdk.bms.v1.model.BatchStartBaremetalServersResponse;
+import com.huaweicloud.sdk.bms.v1.model.BatchStopBaremetalServersRequest;
+import com.huaweicloud.sdk.bms.v1.model.BatchStopBaremetalServersResponse;
+import com.huaweicloud.sdk.bms.v1.model.ChangeBaremetalServerNameRequest;
+import com.huaweicloud.sdk.bms.v1.model.ChangeBaremetalServerNameResponse;
+import com.huaweicloud.sdk.bms.v1.model.ChangeBaremetalServerOsRequest;
+import com.huaweicloud.sdk.bms.v1.model.ChangeBaremetalServerOsResponse;
+import com.huaweicloud.sdk.bms.v1.model.CreateBareMetalServersRequest;
+import com.huaweicloud.sdk.bms.v1.model.CreateBareMetalServersResponse;
+import com.huaweicloud.sdk.bms.v1.model.DeleteServerNicsRequest;
+import com.huaweicloud.sdk.bms.v1.model.DeleteServerNicsResponse;
+import com.huaweicloud.sdk.bms.v1.model.DeleteWindowsBareMetalServerPasswordRequest;
+import com.huaweicloud.sdk.bms.v1.model.DeleteWindowsBareMetalServerPasswordResponse;
+import com.huaweicloud.sdk.bms.v1.model.DetachBaremetalServerVolumeRequest;
+import com.huaweicloud.sdk.bms.v1.model.DetachBaremetalServerVolumeResponse;
+import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServerDetailsRequest;
+import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServerDetailsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersRequest;
+import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersResponse;
+import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsRequest;
+import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ReinstallBaremetalServerOsRequest;
+import com.huaweicloud.sdk.bms.v1.model.ReinstallBaremetalServerOsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickRequest;
+import com.huaweicloud.sdk.bms.v1.model.ResetPwdOneClickResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerInterfaceAttachmentsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerTagsRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerTagsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerVolumeInfoRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowBaremetalServerVolumeInfoResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowJobInfosRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowJobInfosResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowResetPwdRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowResetPwdResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowServerRemoteConsoleRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowServerRemoteConsoleResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowSpecifiedVersionRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowSpecifiedVersionResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowTenantQuotaRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowTenantQuotaResponse;
+import com.huaweicloud.sdk.bms.v1.model.ShowWindowsBaremetalServerPwdRequest;
+import com.huaweicloud.sdk.bms.v1.model.ShowWindowsBaremetalServerPwdResponse;
+import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerInterfaceAttachmentsRequest;
+import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerInterfaceAttachmentsResponse;
+import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataRequest;
+import com.huaweicloud.sdk.bms.v1.model.UpdateBaremetalServerMetadataResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +71,8 @@ public class BmsClient {
     }
 
     public static ClientBuilder<BmsClient> newBuilder() {
-        return new ClientBuilder<>(BmsClient::new);
+        ClientBuilder<BmsClient> clientBuilder = new ClientBuilder<>(BmsClient::new);
+        return clientBuilder;
     }
 
     /**

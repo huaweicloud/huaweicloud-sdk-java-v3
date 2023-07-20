@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class UpdateJobReq {
 
     /**
-     * 更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy_config：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。
+     * 更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。
      */
     public static final class TypeEnum {
 
@@ -42,9 +42,9 @@ public class UpdateJobReq {
         public static final TypeEnum NETWORK = new TypeEnum("network");
 
         /**
-         * Enum POLICY_CONFIG for value: "policy_config"
+         * Enum POLICY for value: "policy"
          */
-        public static final TypeEnum POLICY_CONFIG = new TypeEnum("policy_config");
+        public static final TypeEnum POLICY = new TypeEnum("policy");
 
         /**
          * Enum DB_OBJECT for value: "db_object"
@@ -64,7 +64,7 @@ public class UpdateJobReq {
             map.put("description", DESCRIPTION);
             map.put("all", ALL);
             map.put("network", NETWORK);
-            map.put("policy_config", POLICY_CONFIG);
+            map.put("policy", POLICY);
             map.put("db_object", DB_OBJECT);
             map.put("precheck", PRECHECK);
             return Collections.unmodifiableMap(map);
@@ -132,7 +132,7 @@ public class UpdateJobReq {
     }
 
     /**
-     * 更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy_config：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。
+     * 更新指定ID任务详情类型。  场景一：更新单个任务详情，取值： - name：更新该任务名称。 - description：更新该任务描述。  场景二：更新批量异步任务详情，取值： - all：批量异步创建的任务，参数校验不通过，需要指定全部参数进行更新时。 - network：批量异步创建的任务，测试连接不通过，需要更新源库/目标库信息时。 - policy：批量异步创建的任务，需要更新任务配置时。 - db_object：批量异步创建的任务，需要更新对象信息时。 - precheck：批量异步创建的任务，需要重新预检查时。
      * @return type
      */
     public TypeEnum getType() {

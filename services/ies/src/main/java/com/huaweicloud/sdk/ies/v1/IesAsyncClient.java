@@ -3,7 +3,30 @@ package com.huaweicloud.sdk.ies.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.ies.v1.model.*;
+import com.huaweicloud.sdk.ies.v1.model.CreateEdgeSiteRequest;
+import com.huaweicloud.sdk.ies.v1.model.CreateEdgeSiteResponse;
+import com.huaweicloud.sdk.ies.v1.model.DeleteEdgeSiteRequest;
+import com.huaweicloud.sdk.ies.v1.model.DeleteEdgeSiteResponse;
+import com.huaweicloud.sdk.ies.v1.model.ListEdgeSiteMetricsRequest;
+import com.huaweicloud.sdk.ies.v1.model.ListEdgeSiteMetricsResponse;
+import com.huaweicloud.sdk.ies.v1.model.ListEdgeSitesRequest;
+import com.huaweicloud.sdk.ies.v1.model.ListEdgeSitesResponse;
+import com.huaweicloud.sdk.ies.v1.model.ListQuotasRequest;
+import com.huaweicloud.sdk.ies.v1.model.ListQuotasResponse;
+import com.huaweicloud.sdk.ies.v1.model.ListRacksRequest;
+import com.huaweicloud.sdk.ies.v1.model.ListRacksResponse;
+import com.huaweicloud.sdk.ies.v1.model.ListStoragePoolsRequest;
+import com.huaweicloud.sdk.ies.v1.model.ListStoragePoolsResponse;
+import com.huaweicloud.sdk.ies.v1.model.ListSupportedRegionsRequest;
+import com.huaweicloud.sdk.ies.v1.model.ListSupportedRegionsResponse;
+import com.huaweicloud.sdk.ies.v1.model.ShowEdgeSiteRequest;
+import com.huaweicloud.sdk.ies.v1.model.ShowEdgeSiteResponse;
+import com.huaweicloud.sdk.ies.v1.model.ShowRackRequest;
+import com.huaweicloud.sdk.ies.v1.model.ShowRackResponse;
+import com.huaweicloud.sdk.ies.v1.model.ShowStoragePoolRequest;
+import com.huaweicloud.sdk.ies.v1.model.ShowStoragePoolResponse;
+import com.huaweicloud.sdk.ies.v1.model.UpdateEdgeSiteRequest;
+import com.huaweicloud.sdk.ies.v1.model.UpdateEdgeSiteResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +39,8 @@ public class IesAsyncClient {
     }
 
     public static ClientBuilder<IesAsyncClient> newBuilder() {
-        return new ClientBuilder<>(IesAsyncClient::new, "GlobalCredentials");
+        ClientBuilder<IesAsyncClient> clientBuilder = new ClientBuilder<>(IesAsyncClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

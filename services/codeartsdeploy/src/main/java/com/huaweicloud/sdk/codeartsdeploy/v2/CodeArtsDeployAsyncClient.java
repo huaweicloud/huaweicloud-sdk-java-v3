@@ -1,6 +1,41 @@
 package com.huaweicloud.sdk.codeartsdeploy.v2;
 
-import com.huaweicloud.sdk.codeartsdeploy.v2.model.*;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateDeployTaskByTemplateRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateDeployTaskByTemplateResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateDeploymentGroupRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateDeploymentGroupResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateDeploymentHostRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateDeploymentHostResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteDeployTaskRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteDeployTaskResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteDeploymentGroupRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteDeploymentGroupResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteDeploymentHostRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.DeleteDeploymentHostResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListDeployTaskHistoryByDateRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListDeployTaskHistoryByDateResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListDeployTasksRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListDeployTasksResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostGroupsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostGroupsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListHostsResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListTaskSuccessRateRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ListTaskSuccessRateResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeployTaskDetailRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeployTaskDetailResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeploymentGroupDetailRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeploymentGroupDetailResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeploymentHostDetailRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeploymentHostDetailResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowProjectSuccessRateResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.StartDeployTaskResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateDeploymentGroupRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateDeploymentGroupResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateDeploymentHostRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.UpdateDeploymentHostResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +51,8 @@ public class CodeArtsDeployAsyncClient {
     }
 
     public static ClientBuilder<CodeArtsDeployAsyncClient> newBuilder() {
-        return new ClientBuilder<>(CodeArtsDeployAsyncClient::new);
+        ClientBuilder<CodeArtsDeployAsyncClient> clientBuilder = new ClientBuilder<>(CodeArtsDeployAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

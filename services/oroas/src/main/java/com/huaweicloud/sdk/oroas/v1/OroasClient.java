@@ -3,7 +3,14 @@ package com.huaweicloud.sdk.oroas.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.oroas.v1.model.*;
+import com.huaweicloud.sdk.oroas.v1.model.CreateTaskRequest;
+import com.huaweicloud.sdk.oroas.v1.model.CreateTaskResponse;
+import com.huaweicloud.sdk.oroas.v1.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.oroas.v1.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.oroas.v1.model.ListTaskRequest;
+import com.huaweicloud.sdk.oroas.v1.model.ListTaskResponse;
+import com.huaweicloud.sdk.oroas.v1.model.ShowTaskRequest;
+import com.huaweicloud.sdk.oroas.v1.model.ShowTaskResponse;
 
 public class OroasClient {
 
@@ -14,7 +21,8 @@ public class OroasClient {
     }
 
     public static ClientBuilder<OroasClient> newBuilder() {
-        return new ClientBuilder<>(OroasClient::new);
+        ClientBuilder<OroasClient> clientBuilder = new ClientBuilder<>(OroasClient::new);
+        return clientBuilder;
     }
 
     /**

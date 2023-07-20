@@ -1,6 +1,23 @@
 package com.huaweicloud.sdk.codeartsbuild.v3;
 
-import com.huaweicloud.sdk.codeartsbuild.v3.model.*;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowHistoryDetailsRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowHistoryDetailsResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobStatusRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobStatusResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobSuccessRatioRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobSuccessRatioResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowLastHistoryRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowLastHistoryResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListHistoryRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListHistoryResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +33,8 @@ public class CodeArtsBuildAsyncClient {
     }
 
     public static ClientBuilder<CodeArtsBuildAsyncClient> newBuilder() {
-        return new ClientBuilder<>(CodeArtsBuildAsyncClient::new);
+        ClientBuilder<CodeArtsBuildAsyncClient> clientBuilder = new ClientBuilder<>(CodeArtsBuildAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

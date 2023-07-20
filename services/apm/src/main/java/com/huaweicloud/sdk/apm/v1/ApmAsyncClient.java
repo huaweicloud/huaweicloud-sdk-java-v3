@@ -1,6 +1,85 @@
 package com.huaweicloud.sdk.apm.v1;
 
-import com.huaweicloud.sdk.apm.v1.model.*;
+import com.huaweicloud.sdk.apm.v1.model.ChangeAgentStatusRequest;
+import com.huaweicloud.sdk.apm.v1.model.ChangeAgentStatusResponse;
+import com.huaweicloud.sdk.apm.v1.model.CreateAkSkRequest;
+import com.huaweicloud.sdk.apm.v1.model.CreateAkSkResponse;
+import com.huaweicloud.sdk.apm.v1.model.DeleteAgentRequest;
+import com.huaweicloud.sdk.apm.v1.model.DeleteAgentResponse;
+import com.huaweicloud.sdk.apm.v1.model.DeleteAkSkRequest;
+import com.huaweicloud.sdk.apm.v1.model.DeleteAkSkResponse;
+import com.huaweicloud.sdk.apm.v1.model.DeleteAppRequest;
+import com.huaweicloud.sdk.apm.v1.model.DeleteAppResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListAkSkRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListAkSkResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListAlarmDataRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListAlarmDataResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListAlarmNotifyRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListAlarmNotifyResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListAppEnvsRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListAppEnvsResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListAppsRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListAppsResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListBusinessEnvRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListBusinessEnvResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListBusinessRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListBusinessResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListEnvInstancesRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListEnvInstancesResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListEnvMonitorItemRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListEnvMonitorItemResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListEnvTagsRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListEnvTagsResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListOpenRegionRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListOpenRegionResponse;
+import com.huaweicloud.sdk.apm.v1.model.ListSupportedRegionRequest;
+import com.huaweicloud.sdk.apm.v1.model.ListSupportedRegionResponse;
+import com.huaweicloud.sdk.apm.v1.model.SaveMonitorItemConfigRequest;
+import com.huaweicloud.sdk.apm.v1.model.SaveMonitorItemConfigResponse;
+import com.huaweicloud.sdk.apm.v1.model.SearchAgentRequest;
+import com.huaweicloud.sdk.apm.v1.model.SearchAgentResponse;
+import com.huaweicloud.sdk.apm.v1.model.SearchApplicationRequest;
+import com.huaweicloud.sdk.apm.v1.model.SearchApplicationResponse;
+import com.huaweicloud.sdk.apm.v1.model.SearchBusinessTopologyRequest;
+import com.huaweicloud.sdk.apm.v1.model.SearchBusinessTopologyResponse;
+import com.huaweicloud.sdk.apm.v1.model.SearchEnvTopologyRequest;
+import com.huaweicloud.sdk.apm.v1.model.SearchEnvTopologyResponse;
+import com.huaweicloud.sdk.apm.v1.model.SearchTransactionConfigRequest;
+import com.huaweicloud.sdk.apm.v1.model.SearchTransactionConfigResponse;
+import com.huaweicloud.sdk.apm.v1.model.SearchTransactionRequest;
+import com.huaweicloud.sdk.apm.v1.model.SearchTransactionResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowAkSksRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowAkSksResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowBusinessDetailRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowBusinessDetailResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowClobDetailRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowClobDetailResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowEnvMonitorItemsRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowEnvMonitorItemsResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowEventDetailRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowEventDetailResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowMasterAddressRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowMasterAddressResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemViewConfigRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowMonitorItemViewConfigResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowRawTableRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowRawTableResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowSpanSearchRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowSpanSearchResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowSubBusinessDetailRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowSubBusinessDetailResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowSumTableRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowSumTableResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowTopologyRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowTopologyResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowTopologyTreeRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowTopologyTreeResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowTraceEventsRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowTraceEventsResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowTransactionDetailRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowTransactionDetailResponse;
+import com.huaweicloud.sdk.apm.v1.model.ShowTrendRequest;
+import com.huaweicloud.sdk.apm.v1.model.ShowTrendResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +95,8 @@ public class ApmAsyncClient {
     }
 
     public static ClientBuilder<ApmAsyncClient> newBuilder() {
-        return new ClientBuilder<>(ApmAsyncClient::new);
+        ClientBuilder<ApmAsyncClient> clientBuilder = new ClientBuilder<>(ApmAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

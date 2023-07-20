@@ -17,11 +17,6 @@ public class MixJobReq {
     private MixParam mixParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publish_param")
-
-    private PublishParam publishParam;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_param")
 
     private RecordParam recordParam;
@@ -50,32 +45,6 @@ public class MixJobReq {
 
     public void setMixParam(MixParam mixParam) {
         this.mixParam = mixParam;
-    }
-
-    public MixJobReq withPublishParam(PublishParam publishParam) {
-        this.publishParam = publishParam;
-        return this;
-    }
-
-    public MixJobReq withPublishParam(Consumer<PublishParam> publishParamSetter) {
-        if (this.publishParam == null) {
-            this.publishParam = new PublishParam();
-            publishParamSetter.accept(this.publishParam);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get publishParam
-     * @return publishParam
-     */
-    public PublishParam getPublishParam() {
-        return publishParam;
-    }
-
-    public void setPublishParam(PublishParam publishParam) {
-        this.publishParam = publishParam;
     }
 
     public MixJobReq withRecordParam(RecordParam recordParam) {
@@ -113,13 +82,12 @@ public class MixJobReq {
             return false;
         }
         MixJobReq that = (MixJobReq) obj;
-        return Objects.equals(this.mixParam, that.mixParam) && Objects.equals(this.publishParam, that.publishParam)
-            && Objects.equals(this.recordParam, that.recordParam);
+        return Objects.equals(this.mixParam, that.mixParam) && Objects.equals(this.recordParam, that.recordParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mixParam, publishParam, recordParam);
+        return Objects.hash(mixParam, recordParam);
     }
 
     @Override
@@ -127,7 +95,6 @@ public class MixJobReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class MixJobReq {\n");
         sb.append("    mixParam: ").append(toIndentedString(mixParam)).append("\n");
-        sb.append("    publishParam: ").append(toIndentedString(publishParam)).append("\n");
         sb.append("    recordParam: ").append(toIndentedString(recordParam)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -96,7 +96,7 @@ public class ShowJobDetailRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息
      */
     public static final class TypeEnum {
 
@@ -135,6 +135,11 @@ public class ShowJobDetailRequest {
          */
         public static final TypeEnum COMAPRE = new TypeEnum("comapre");
 
+        /**
+         * Enum FILE for value: "file"
+         */
+        public static final TypeEnum FILE = new TypeEnum("file");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -146,6 +151,7 @@ public class ShowJobDetailRequest {
             map.put("progress", PROGRESS);
             map.put("log", LOG);
             map.put("comapre", COMAPRE);
+            map.put("file", FILE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -596,7 +602,7 @@ public class ShowJobDetailRequest {
     }
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息
      * @return type
      */
     public TypeEnum getType() {

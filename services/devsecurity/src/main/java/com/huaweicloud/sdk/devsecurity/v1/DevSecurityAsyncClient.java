@@ -3,7 +3,14 @@ package com.huaweicloud.sdk.devsecurity.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.devsecurity.v1.model.*;
+import com.huaweicloud.sdk.devsecurity.v1.model.CreateSecAppTaskRequest;
+import com.huaweicloud.sdk.devsecurity.v1.model.CreateSecAppTaskResponse;
+import com.huaweicloud.sdk.devsecurity.v1.model.DeleteSecAppTaskRequest;
+import com.huaweicloud.sdk.devsecurity.v1.model.DeleteSecAppTaskResponse;
+import com.huaweicloud.sdk.devsecurity.v1.model.ShowSecAppTaskResultRequest;
+import com.huaweicloud.sdk.devsecurity.v1.model.ShowSecAppTaskResultResponse;
+import com.huaweicloud.sdk.devsecurity.v1.model.ShowSecAppTaskStatusRequest;
+import com.huaweicloud.sdk.devsecurity.v1.model.ShowSecAppTaskStatusResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +23,8 @@ public class DevSecurityAsyncClient {
     }
 
     public static ClientBuilder<DevSecurityAsyncClient> newBuilder() {
-        return new ClientBuilder<>(DevSecurityAsyncClient::new);
+        ClientBuilder<DevSecurityAsyncClient> clientBuilder = new ClientBuilder<>(DevSecurityAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

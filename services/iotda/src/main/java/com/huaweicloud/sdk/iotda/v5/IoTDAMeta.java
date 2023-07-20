@@ -62,6 +62,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteApplicationResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskFileResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
@@ -622,6 +624,45 @@ public class IoTDAMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBatchTaskRequest, DeleteBatchTaskResponse> deleteBatchTask =
+        genFordeleteBatchTask();
+
+    private static HttpRequestDef<DeleteBatchTaskRequest, DeleteBatchTaskResponse> genFordeleteBatchTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteBatchTaskRequest, DeleteBatchTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBatchTaskRequest.class, DeleteBatchTaskResponse.class)
+                .withName("DeleteBatchTask")
+                .withUri("/v5/iot/{project_id}/batchtasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBatchTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBatchTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBatchTaskResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

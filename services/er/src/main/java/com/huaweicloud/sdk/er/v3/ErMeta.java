@@ -8,11 +8,17 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableRequest;
 import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableResponse;
 import com.huaweicloud.sdk.er.v3.model.AssociationRequestBody;
+import com.huaweicloud.sdk.er.v3.model.BatchCreateResourceTagsRequest;
+import com.huaweicloud.sdk.er.v3.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.er.v3.model.BatchOperateResourceTagsRequestBody;
 import com.huaweicloud.sdk.er.v3.model.ChangeAvailabilityZoneRequest;
 import com.huaweicloud.sdk.er.v3.model.ChangeAvailabilityZoneResponse;
 import com.huaweicloud.sdk.er.v3.model.CreateEnterpriseRouterRequest;
 import com.huaweicloud.sdk.er.v3.model.CreateEnterpriseRouterRequestBody;
 import com.huaweicloud.sdk.er.v3.model.CreateEnterpriseRouterResponse;
+import com.huaweicloud.sdk.er.v3.model.CreateFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.CreateFlowLogRequestBody;
+import com.huaweicloud.sdk.er.v3.model.CreateFlowLogResponse;
 import com.huaweicloud.sdk.er.v3.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.er.v3.model.CreateResourceTagRequestBody;
 import com.huaweicloud.sdk.er.v3.model.CreateResourceTagResponse;
@@ -27,6 +33,8 @@ import com.huaweicloud.sdk.er.v3.model.CreateVpcAttachmentRequest;
 import com.huaweicloud.sdk.er.v3.model.CreateVpcAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.DeleteEnterpriseRouterRequest;
 import com.huaweicloud.sdk.er.v3.model.DeleteEnterpriseRouterResponse;
+import com.huaweicloud.sdk.er.v3.model.DeleteFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.DeleteFlowLogResponse;
 import com.huaweicloud.sdk.er.v3.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.er.v3.model.DeleteResourceTagResponse;
 import com.huaweicloud.sdk.er.v3.model.DeleteRouteTableRequest;
@@ -35,10 +43,14 @@ import com.huaweicloud.sdk.er.v3.model.DeleteStaticRouteRequest;
 import com.huaweicloud.sdk.er.v3.model.DeleteStaticRouteResponse;
 import com.huaweicloud.sdk.er.v3.model.DeleteVpcAttachmentRequest;
 import com.huaweicloud.sdk.er.v3.model.DeleteVpcAttachmentResponse;
+import com.huaweicloud.sdk.er.v3.model.DisableFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.DisableFlowLogResponse;
 import com.huaweicloud.sdk.er.v3.model.DisablePropagationRequest;
 import com.huaweicloud.sdk.er.v3.model.DisablePropagationResponse;
 import com.huaweicloud.sdk.er.v3.model.DisassociateRouteTableRequest;
 import com.huaweicloud.sdk.er.v3.model.DisassociateRouteTableResponse;
+import com.huaweicloud.sdk.er.v3.model.EnableFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.EnableFlowLogResponse;
 import com.huaweicloud.sdk.er.v3.model.EnablePropagationRequest;
 import com.huaweicloud.sdk.er.v3.model.EnablePropagationResponse;
 import com.huaweicloud.sdk.er.v3.model.EnterpriseRouterAZ;
@@ -52,6 +64,8 @@ import com.huaweicloud.sdk.er.v3.model.ListEffectiveRoutesRequest;
 import com.huaweicloud.sdk.er.v3.model.ListEffectiveRoutesResponse;
 import com.huaweicloud.sdk.er.v3.model.ListEnterpriseRoutersRequest;
 import com.huaweicloud.sdk.er.v3.model.ListEnterpriseRoutersResponse;
+import com.huaweicloud.sdk.er.v3.model.ListFlowLogsRequest;
+import com.huaweicloud.sdk.er.v3.model.ListFlowLogsResponse;
 import com.huaweicloud.sdk.er.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.er.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.er.v3.model.ListPropagationsRequest;
@@ -67,6 +81,10 @@ import com.huaweicloud.sdk.er.v3.model.ShowAttachmentRequest;
 import com.huaweicloud.sdk.er.v3.model.ShowAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.ShowEnterpriseRouterRequest;
 import com.huaweicloud.sdk.er.v3.model.ShowEnterpriseRouterResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowFlowLogResponse;
+import com.huaweicloud.sdk.er.v3.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.er.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.er.v3.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.er.v3.model.ShowResourceTagResponse;
 import com.huaweicloud.sdk.er.v3.model.ShowRouteTableRequest;
@@ -81,6 +99,9 @@ import com.huaweicloud.sdk.er.v3.model.UpdateAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.UpdateEnterpriseRouterRequest;
 import com.huaweicloud.sdk.er.v3.model.UpdateEnterpriseRouterRequestBody;
 import com.huaweicloud.sdk.er.v3.model.UpdateEnterpriseRouterResponse;
+import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogRequest;
+import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogRequestBody;
+import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogResponse;
 import com.huaweicloud.sdk.er.v3.model.UpdateRouteRequestBody;
 import com.huaweicloud.sdk.er.v3.model.UpdateRouteTableRequest;
 import com.huaweicloud.sdk.er.v3.model.UpdateRouteTableRequestBody;
@@ -587,6 +608,13 @@ public class ErMeta {
             f -> f.withMarshaller(ListEnterpriseRoutersRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
             }));
+        builder.<Boolean>withRequestField("owned_by_self",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListEnterpriseRoutersRequest::getOwnedBySelf, (req, v) -> {
+                req.setOwnedBySelf(v);
+            }));
         builder.<List<String>>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -656,6 +684,282 @@ public class ErMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEnterpriseRouterRequestBody.class),
             f -> f.withMarshaller(UpdateEnterpriseRouterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFlowLogRequest, CreateFlowLogResponse> createFlowLog =
+        genForcreateFlowLog();
+
+    private static HttpRequestDef<CreateFlowLogRequest, CreateFlowLogResponse> genForcreateFlowLog() {
+        // basic
+        HttpRequestDef.Builder<CreateFlowLogRequest, CreateFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFlowLogRequest.class, CreateFlowLogResponse.class)
+                .withName("CreateFlowLog")
+                .withUri("/v3/{project_id}/enterprise-router/{er_id}/flow-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFlowLogRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFlowLogRequest::getXClientToken, (req, v) -> {
+                req.setXClientToken(v);
+            }));
+        builder.<CreateFlowLogRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFlowLogRequestBody.class),
+            f -> f.withMarshaller(CreateFlowLogRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateFlowLogResponse::getXClientToken, CreateFlowLogResponse::setXClientToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFlowLogRequest, DeleteFlowLogResponse> deleteFlowLog =
+        genFordeleteFlowLog();
+
+    private static HttpRequestDef<DeleteFlowLogRequest, DeleteFlowLogResponse> genFordeleteFlowLog() {
+        // basic
+        HttpRequestDef.Builder<DeleteFlowLogRequest, DeleteFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFlowLogRequest.class, DeleteFlowLogResponse.class)
+                .withName("DeleteFlowLog")
+                .withUri("/v3/{project_id}/enterprise-router/{er_id}/flow-logs/{flow_log_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFlowLogRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<String>withRequestField("flow_log_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFlowLogRequest::getFlowLogId, (req, v) -> {
+                req.setFlowLogId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisableFlowLogRequest, DisableFlowLogResponse> disableFlowLog =
+        genFordisableFlowLog();
+
+    private static HttpRequestDef<DisableFlowLogRequest, DisableFlowLogResponse> genFordisableFlowLog() {
+        // basic
+        HttpRequestDef.Builder<DisableFlowLogRequest, DisableFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableFlowLogRequest.class, DisableFlowLogResponse.class)
+                .withName("DisableFlowLog")
+                .withUri("/v3/{project_id}/enterprise-router/{er_id}/flow-logs/{flow_log_id}/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableFlowLogRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<String>withRequestField("flow_log_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableFlowLogRequest::getFlowLogId, (req, v) -> {
+                req.setFlowLogId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableFlowLogRequest, EnableFlowLogResponse> enableFlowLog =
+        genForenableFlowLog();
+
+    private static HttpRequestDef<EnableFlowLogRequest, EnableFlowLogResponse> genForenableFlowLog() {
+        // basic
+        HttpRequestDef.Builder<EnableFlowLogRequest, EnableFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableFlowLogRequest.class, EnableFlowLogResponse.class)
+                .withName("EnableFlowLog")
+                .withUri("/v3/{project_id}/enterprise-router/{er_id}/flow-logs/{flow_log_id}/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableFlowLogRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<String>withRequestField("flow_log_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableFlowLogRequest::getFlowLogId, (req, v) -> {
+                req.setFlowLogId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogs = genForlistFlowLogs();
+
+    private static HttpRequestDef<ListFlowLogsRequest, ListFlowLogsResponse> genForlistFlowLogs() {
+        // basic
+        HttpRequestDef.Builder<ListFlowLogsRequest, ListFlowLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlowLogsRequest.class, ListFlowLogsResponse.class)
+                .withName("ListFlowLogs")
+                .withUri("/v3/{project_id}/enterprise-router/{er_id}/flow-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<ListFlowLogsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlowLogsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<List<String>>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<List<String>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<List<ListFlowLogsRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFlowLogsRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlowLogRequest, ShowFlowLogResponse> showFlowLog = genForshowFlowLog();
+
+    private static HttpRequestDef<ShowFlowLogRequest, ShowFlowLogResponse> genForshowFlowLog() {
+        // basic
+        HttpRequestDef.Builder<ShowFlowLogRequest, ShowFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlowLogRequest.class, ShowFlowLogResponse.class)
+                .withName("ShowFlowLog")
+                .withUri("/v3/{project_id}/enterprise-router/{er_id}/flow-logs/{flow_log_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlowLogRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<String>withRequestField("flow_log_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlowLogRequest::getFlowLogId, (req, v) -> {
+                req.setFlowLogId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFlowLogRequest, UpdateFlowLogResponse> updateFlowLog =
+        genForupdateFlowLog();
+
+    private static HttpRequestDef<UpdateFlowLogRequest, UpdateFlowLogResponse> genForupdateFlowLog() {
+        // basic
+        HttpRequestDef.Builder<UpdateFlowLogRequest, UpdateFlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateFlowLogRequest.class, UpdateFlowLogResponse.class)
+                .withName("UpdateFlowLog")
+                .withUri("/v3/{project_id}/enterprise-router/{er_id}/flow-logs/{flow_log_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFlowLogRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<String>withRequestField("flow_log_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFlowLogRequest::getFlowLogId, (req, v) -> {
+                req.setFlowLogId(v);
+            }));
+        builder.<UpdateFlowLogRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFlowLogRequestBody.class),
+            f -> f.withMarshaller(UpdateFlowLogRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -830,6 +1134,51 @@ public class ErMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPropagationsRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
+                .withName("ShowQuotas")
+                .withUri("/v3/{project_id}/enterprise-router/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<List<String>>withRequestField("erId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<List<String>>withRequestField("routeTableId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getRouteTableId, (req, v) -> {
+                req.setRouteTableId(v);
+            }));
+        builder.<List<String>>withRequestField("vpcId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
             }));
 
         // response
@@ -1330,6 +1679,52 @@ public class ErMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTags =
+        genForbatchCreateResourceTags();
+
+    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForbatchCreateResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateResourceTagsRequest.class, BatchCreateResourceTagsResponse.class)
+            .withName("BatchCreateResourceTags")
+            .withUri("/v3/{project_id}/{resource_type}/{resource_id}/tags/action")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<BatchCreateResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<BatchOperateResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchOperateResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchCreateResourceTagsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

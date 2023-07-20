@@ -3,7 +3,56 @@ package com.huaweicloud.sdk.servicestage.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.servicestage.v3.model.*;
+import com.huaweicloud.sdk.servicestage.v3.model.CreateApplicationRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.CreateApplicationResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.CreateComponentRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.CreateComponentResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.CreateEnvironmentRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.CreateEnvironmentResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.DeleteApplicationConfigurationRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.DeleteApplicationConfigurationResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.DeleteApplicationRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.DeleteApplicationResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.DeleteComponentRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.DeleteComponentResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.DeleteEnvironmentRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.DeleteEnvironmentResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyApplicationConfigurationRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyApplicationConfigurationResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyApplicationRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyApplicationResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyComponentRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyComponentResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyEnvironmentRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyEnvironmentResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyResourceInEnvironmentRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ModifyResourceInEnvironmentResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowApplicationConfigurationRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowApplicationConfigurationResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowApplicationInfoRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowApplicationInfoResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowApplicationsRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowApplicationsResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowComponentInfoRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowComponentInfoResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowComponentRecordsRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowComponentRecordsResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowComponentsInApplicationRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowComponentsInApplicationResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowComponentsRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowComponentsResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowEnvironmentInfoRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowEnvironmentInfoResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowEnvironmentResourcesRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowEnvironmentResourcesResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowEnvironmentsRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowEnvironmentsResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowJobInfoRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowJobInfoResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowRuntimeStacksRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.ShowRuntimeStacksResponse;
+import com.huaweicloud.sdk.servicestage.v3.model.UpdateComponentActionRequest;
+import com.huaweicloud.sdk.servicestage.v3.model.UpdateComponentActionResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +65,8 @@ public class ServiceStageAsyncClient {
     }
 
     public static ClientBuilder<ServiceStageAsyncClient> newBuilder() {
-        return new ClientBuilder<>(ServiceStageAsyncClient::new);
+        ClientBuilder<ServiceStageAsyncClient> clientBuilder = new ClientBuilder<>(ServiceStageAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

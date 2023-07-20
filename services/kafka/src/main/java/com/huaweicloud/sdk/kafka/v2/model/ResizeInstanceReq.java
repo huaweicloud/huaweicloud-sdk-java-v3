@@ -114,7 +114,7 @@ public class ResizeInstanceReq {
     }
 
     /**
-     * 新规格变更后的产品ID。 涉及垂直扩容场景，需指定该项。
+     * 新规格变更后的产品ID。 涉及垂直扩容场景，需指定该项。 产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
      * @return newProductId
      */
     public String getNewProductId() {

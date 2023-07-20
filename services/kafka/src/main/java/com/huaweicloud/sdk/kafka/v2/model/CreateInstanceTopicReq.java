@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.kafka.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateInstanceTopicReq
@@ -40,6 +43,16 @@ public class CreateInstanceTopicReq {
 
     private Integer retentionTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_other_configs")
+
+    private List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_desc")
+
+    private String topicDesc;
+
     public CreateInstanceTopicReq withId(String id) {
         this.id = id;
         return this;
@@ -64,6 +77,8 @@ public class CreateInstanceTopicReq {
 
     /**
      * 副本数，配置数据的可靠性。 取值范围：1-3。
+     * minimum: 1
+     * maximum: 3
      * @return replication
      */
     public Integer getReplication() {
@@ -98,6 +113,8 @@ public class CreateInstanceTopicReq {
 
     /**
      * topic分区数，设置消费的并发数。 取值范围：[1-100](tag:hws,hws_hk,otc,hws_ocb,ctc,sbc,hk_sbc,g42,tm,hk_g42,hk_tm)[1-20](tag:cmcc)。
+     * minimum: 1
+     * maximum: 100
      * @return partition
      */
     public Integer getPartition() {
@@ -142,6 +159,59 @@ public class CreateInstanceTopicReq {
         this.retentionTime = retentionTime;
     }
 
+    public CreateInstanceTopicReq withTopicOtherConfigs(
+        List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs) {
+        this.topicOtherConfigs = topicOtherConfigs;
+        return this;
+    }
+
+    public CreateInstanceTopicReq addTopicOtherConfigsItem(
+        CreateInstanceTopicReqTopicOtherConfigs topicOtherConfigsItem) {
+        if (this.topicOtherConfigs == null) {
+            this.topicOtherConfigs = new ArrayList<>();
+        }
+        this.topicOtherConfigs.add(topicOtherConfigsItem);
+        return this;
+    }
+
+    public CreateInstanceTopicReq withTopicOtherConfigs(
+        Consumer<List<CreateInstanceTopicReqTopicOtherConfigs>> topicOtherConfigsSetter) {
+        if (this.topicOtherConfigs == null) {
+            this.topicOtherConfigs = new ArrayList<>();
+        }
+        topicOtherConfigsSetter.accept(this.topicOtherConfigs);
+        return this;
+    }
+
+    /**
+     * topic配置
+     * @return topicOtherConfigs
+     */
+    public List<CreateInstanceTopicReqTopicOtherConfigs> getTopicOtherConfigs() {
+        return topicOtherConfigs;
+    }
+
+    public void setTopicOtherConfigs(List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs) {
+        this.topicOtherConfigs = topicOtherConfigs;
+    }
+
+    public CreateInstanceTopicReq withTopicDesc(String topicDesc) {
+        this.topicDesc = topicDesc;
+        return this;
+    }
+
+    /**
+     * topic描述
+     * @return topicDesc
+     */
+    public String getTopicDesc() {
+        return topicDesc;
+    }
+
+    public void setTopicDesc(String topicDesc) {
+        this.topicDesc = topicDesc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,12 +225,21 @@ public class CreateInstanceTopicReq {
             && Objects.equals(this.syncMessageFlush, that.syncMessageFlush)
             && Objects.equals(this.partition, that.partition)
             && Objects.equals(this.syncReplication, that.syncReplication)
-            && Objects.equals(this.retentionTime, that.retentionTime);
+            && Objects.equals(this.retentionTime, that.retentionTime)
+            && Objects.equals(this.topicOtherConfigs, that.topicOtherConfigs)
+            && Objects.equals(this.topicDesc, that.topicDesc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, replication, syncMessageFlush, partition, syncReplication, retentionTime);
+        return Objects.hash(id,
+            replication,
+            syncMessageFlush,
+            partition,
+            syncReplication,
+            retentionTime,
+            topicOtherConfigs,
+            topicDesc);
     }
 
     @Override
@@ -173,6 +252,8 @@ public class CreateInstanceTopicReq {
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    syncReplication: ").append(toIndentedString(syncReplication)).append("\n");
         sb.append("    retentionTime: ").append(toIndentedString(retentionTime)).append("\n");
+        sb.append("    topicOtherConfigs: ").append(toIndentedString(topicOtherConfigs)).append("\n");
+        sb.append("    topicDesc: ").append(toIndentedString(topicDesc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

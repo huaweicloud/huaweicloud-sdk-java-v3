@@ -53,7 +53,7 @@ public class ShowKafkaTopicPartitionDiskusageRequest {
     }
 
     /**
-     * 占用磁盘大小，默认值1G (1K ,1M , 1G)。
+     * 占用磁盘大小，默认值1G (1K，1M，1G)。
      * @return minSize
      */
     public String getMinSize() {

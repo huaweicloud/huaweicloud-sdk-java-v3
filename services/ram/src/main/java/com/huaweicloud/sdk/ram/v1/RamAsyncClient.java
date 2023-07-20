@@ -3,7 +3,62 @@ package com.huaweicloud.sdk.ram.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.ram.v1.model.*;
+import com.huaweicloud.sdk.ram.v1.model.AcceptResourceShareInvitationRequest;
+import com.huaweicloud.sdk.ram.v1.model.AcceptResourceShareInvitationResponse;
+import com.huaweicloud.sdk.ram.v1.model.AssociateResourceSharePermissionRequest;
+import com.huaweicloud.sdk.ram.v1.model.AssociateResourceSharePermissionResponse;
+import com.huaweicloud.sdk.ram.v1.model.AssociateResourceShareRequest;
+import com.huaweicloud.sdk.ram.v1.model.AssociateResourceShareResponse;
+import com.huaweicloud.sdk.ram.v1.model.BatchCreateResourceShareTagsRequest;
+import com.huaweicloud.sdk.ram.v1.model.BatchCreateResourceShareTagsResponse;
+import com.huaweicloud.sdk.ram.v1.model.BatchDeleteResourceShareTagsRequest;
+import com.huaweicloud.sdk.ram.v1.model.BatchDeleteResourceShareTagsResponse;
+import com.huaweicloud.sdk.ram.v1.model.CreateResourceShareRequest;
+import com.huaweicloud.sdk.ram.v1.model.CreateResourceShareResponse;
+import com.huaweicloud.sdk.ram.v1.model.DeleteResourceShareRequest;
+import com.huaweicloud.sdk.ram.v1.model.DeleteResourceShareResponse;
+import com.huaweicloud.sdk.ram.v1.model.DisableOrganizationShareRequest;
+import com.huaweicloud.sdk.ram.v1.model.DisableOrganizationShareResponse;
+import com.huaweicloud.sdk.ram.v1.model.DisassociateResourceSharePermissionRequest;
+import com.huaweicloud.sdk.ram.v1.model.DisassociateResourceSharePermissionResponse;
+import com.huaweicloud.sdk.ram.v1.model.DisassociateResourceShareRequest;
+import com.huaweicloud.sdk.ram.v1.model.DisassociateResourceShareResponse;
+import com.huaweicloud.sdk.ram.v1.model.EnableOrganizationShareRequest;
+import com.huaweicloud.sdk.ram.v1.model.EnableOrganizationShareResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListPermissionsRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListQuotaRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListQuotaResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceSharePermissionsRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceSharePermissionsResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceShareTagsRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceShareTagsResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsResponse;
+import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationRequest;
+import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareCountByTagsRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareCountByTagsResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareInvitationRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareInvitationResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchResourceSharesRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchResourceSharesResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchSharedPrincipalsRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchSharedPrincipalsResponse;
+import com.huaweicloud.sdk.ram.v1.model.SearchSharedResourcesRequest;
+import com.huaweicloud.sdk.ram.v1.model.SearchSharedResourcesResponse;
+import com.huaweicloud.sdk.ram.v1.model.ShowOrganizationShareRequest;
+import com.huaweicloud.sdk.ram.v1.model.ShowOrganizationShareResponse;
+import com.huaweicloud.sdk.ram.v1.model.ShowPermissionRequest;
+import com.huaweicloud.sdk.ram.v1.model.ShowPermissionResponse;
+import com.huaweicloud.sdk.ram.v1.model.UpdateResourceShareRequest;
+import com.huaweicloud.sdk.ram.v1.model.UpdateResourceShareResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +71,8 @@ public class RamAsyncClient {
     }
 
     public static ClientBuilder<RamAsyncClient> newBuilder() {
-        return new ClientBuilder<>(RamAsyncClient::new, "GlobalCredentials");
+        ClientBuilder<RamAsyncClient> clientBuilder = new ClientBuilder<>(RamAsyncClient::new, "GlobalCredentials");
+        return clientBuilder;
     }
 
     /**

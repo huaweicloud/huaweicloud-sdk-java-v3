@@ -1,6 +1,23 @@
 package com.huaweicloud.sdk.cloudtable.v2;
 
-import com.huaweicloud.sdk.cloudtable.v2.model.*;
+import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterResponse;
+import com.huaweicloud.sdk.cloudtable.v2.model.DeleteClusterRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.DeleteClusterResponse;
+import com.huaweicloud.sdk.cloudtable.v2.model.EnableComponentRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.EnableComponentResponse;
+import com.huaweicloud.sdk.cloudtable.v2.model.ExpandClusterComponentRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.ExpandClusterComponentResponse;
+import com.huaweicloud.sdk.cloudtable.v2.model.ListClustersRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.ListClustersResponse;
+import com.huaweicloud.sdk.cloudtable.v2.model.RebootCloudTableClusterRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.RebootCloudTableClusterResponse;
+import com.huaweicloud.sdk.cloudtable.v2.model.ShowClusterDetailRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.ShowClusterDetailResponse;
+import com.huaweicloud.sdk.cloudtable.v2.model.ShowClusterSettingRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.ShowClusterSettingResponse;
+import com.huaweicloud.sdk.cloudtable.v2.model.UpdateClusterSettingRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.UpdateClusterSettingResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +31,8 @@ public class CloudTableClient {
     }
 
     public static ClientBuilder<CloudTableClient> newBuilder() {
-        return new ClientBuilder<>(CloudTableClient::new);
+        ClientBuilder<CloudTableClient> clientBuilder = new ClientBuilder<>(CloudTableClient::new);
+        return clientBuilder;
     }
 
     /**

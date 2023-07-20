@@ -3,7 +3,320 @@ package com.huaweicloud.sdk.rds.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.rds.v3.model.*;
+import com.huaweicloud.sdk.rds.v3.model.AllowDbPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.AllowDbPrivilegeResponse;
+import com.huaweicloud.sdk.rds.v3.model.AllowDbUserPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.AllowDbUserPrivilegeResponse;
+import com.huaweicloud.sdk.rds.v3.model.AllowSqlserverDbUserPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.AllowSqlserverDbUserPrivilegeResponse;
+import com.huaweicloud.sdk.rds.v3.model.ApplyConfigurationAsyncRequest;
+import com.huaweicloud.sdk.rds.v3.model.ApplyConfigurationAsyncResponse;
+import com.huaweicloud.sdk.rds.v3.model.AttachEipRequest;
+import com.huaweicloud.sdk.rds.v3.model.AttachEipResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchTagDelActionRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchTagDelActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverModeRequest;
+import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverModeResponse;
+import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverStrategyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverStrategyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ChangeOpsWindowRequest;
+import com.huaweicloud.sdk.rds.v3.model.ChangeOpsWindowResponse;
+import com.huaweicloud.sdk.rds.v3.model.ChangeProxyScaleRequest;
+import com.huaweicloud.sdk.rds.v3.model.ChangeProxyScaleResponse;
+import com.huaweicloud.sdk.rds.v3.model.ChangeTheDelayThresholdRequest;
+import com.huaweicloud.sdk.rds.v3.model.ChangeTheDelayThresholdResponse;
+import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateDbUserRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDatabaseSchemaRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDatabaseSchemaResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDbUserRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlExtensionRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlExtensionResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDbUserRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteJobRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteJobResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDbUserRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogRequest;
+import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogResponse;
+import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListApiVersionNewResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListApiVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListApiVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListAuditlogsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAuditlogsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDatabasesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDatabasesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListAuthorizedSqlserverDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListBackupsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListBackupsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListCollationsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListCollationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListConfigurationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDatabasesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDatabasesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDatastoresRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDatastoresResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDbUsersRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDrRelationsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDrRelationsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListEngineFlavorsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListEngineFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListErrorLogsNewRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListErrorLogsNewResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListErrorLogsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListErrorLogsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListFlavorsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListJobInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListJobInfoResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListMsdtcHostsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListMsdtcHostsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListOffSiteBackupsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListOffSiteBackupsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListOffSiteInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListOffSiteInstancesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListOffSiteRestoreTimesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListOffSiteRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDatabaseSchemasRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDatabaseSchemasResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDatabasesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDatabasesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDbUserPaginatedRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDbUserPaginatedResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlExtensionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlExtensionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSimplifiedInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSimplifiedInstancesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowLogFileRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowLogFileResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowLogStatisticsForLtsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowLogStatisticsForLtsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowLogsNewRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowLogsNewResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowLogsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowLogsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowlogForLtsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDatabasesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDatabasesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDbUsersRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSqlserverDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerRequest;
+import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifyCollationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyCollationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
+import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.RestoreTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestoreTablesResponse;
+import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.RevokeRequest;
+import com.huaweicloud.sdk.rds.v3.model.RevokeResponse;
+import com.huaweicloud.sdk.rds.v3.model.RevokeSqlserverDbUserPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.RevokeSqlserverDbUserPrivilegeResponse;
+import com.huaweicloud.sdk.rds.v3.model.SearchQueryScaleComputeFlavorsRequest;
+import com.huaweicloud.sdk.rds.v3.model.SearchQueryScaleComputeFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.SearchQueryScaleFlavorsRequest;
+import com.huaweicloud.sdk.rds.v3.model.SearchQueryScaleFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetBinlogClearPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetBinlogClearPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetPostgresqlDbUserPwdRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetPostgresqlDbUserPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetReadOnlySwitchRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetReadOnlySwitchResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetSecondLevelMonitorRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetSecondLevelMonitorResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetSecurityGroupRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetSecurityGroupResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetSensitiveSlowLogRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetSensitiveSlowLogResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogDownloadLinkRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogDownloadLinkResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowDnsNameRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowDnsNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowDrReplicaStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowDrReplicaStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowInstanceConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowInstanceConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartDatabaseProxyRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartDatabaseProxyResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartFailoverRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartFailoverResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartInstanceEnlargeVolumeActionRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartInstanceEnlargeVolumeActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartInstanceRestartActionRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartInstanceRestartActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartInstanceSingleToHaActionRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartInstanceSingleToHaActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartRecyclePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartRecyclePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.StartupInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.StartupInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
+import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
+import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.StopInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
+import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDataIpRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDataIpResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDbUserCommentRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDbUserCommentResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDbUserPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDbUserPrivilegeResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDnsNameRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDnsNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceNameRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePortRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePortResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +329,8 @@ public class RdsAsyncClient {
     }
 
     public static ClientBuilder<RdsAsyncClient> newBuilder() {
-        return new ClientBuilder<>(RdsAsyncClient::new);
+        ClientBuilder<RdsAsyncClient> clientBuilder = new ClientBuilder<>(RdsAsyncClient::new);
+        return clientBuilder;
     }
 
     /**
@@ -1028,6 +1342,41 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
         return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, RdsMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 获取实例是否能使用极速恢复
+     *
+     * 批量获取实例是否能在库表恢复时使用极速恢复。
+     * 
+     * - 调用接口前，您需要了解API 认证鉴权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesSupportFastRestoreRequest 请求对象
+     * @return CompletableFuture<ListInstancesSupportFastRestoreResponse>
+     */
+    public CompletableFuture<ListInstancesSupportFastRestoreResponse> listInstancesSupportFastRestoreAsync(
+        ListInstancesSupportFastRestoreRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstancesSupportFastRestore);
+    }
+
+    /**
+     * 获取实例是否能使用极速恢复
+     *
+     * 批量获取实例是否能在库表恢复时使用极速恢复。
+     * 
+     * - 调用接口前，您需要了解API 认证鉴权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesSupportFastRestoreRequest 请求对象
+     * @return AsyncInvoker<ListInstancesSupportFastRestoreRequest, ListInstancesSupportFastRestoreResponse>
+     */
+    public AsyncInvoker<ListInstancesSupportFastRestoreRequest, ListInstancesSupportFastRestoreResponse> listInstancesSupportFastRestoreAsyncInvoker(
+        ListInstancesSupportFastRestoreRequest request) {
+        return new AsyncInvoker<ListInstancesSupportFastRestoreRequest, ListInstancesSupportFastRestoreResponse>(
+            request, RdsMeta.listInstancesSupportFastRestore, hcClient);
     }
 
     /**

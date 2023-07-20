@@ -1,6 +1,45 @@
 package com.huaweicloud.sdk.cloudtest.v1;
 
-import com.huaweicloud.sdk.cloudtest.v1.model.*;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateApiTestSuiteByRepoFileRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateApiTestSuiteByRepoFileResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreatePlanRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreatePlanResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListEnvironmentsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListEnvironmentsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowIssuesByPlanIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowIssuesByPlanIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanJournalsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanJournalsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanListRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanListResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlansRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlansResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Request;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Response;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseResultResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +53,8 @@ public class CloudtestClient {
     }
 
     public static ClientBuilder<CloudtestClient> newBuilder() {
-        return new ClientBuilder<>(CloudtestClient::new);
+        ClientBuilder<CloudtestClient> clientBuilder = new ClientBuilder<>(CloudtestClient::new);
+        return clientBuilder;
     }
 
     /**

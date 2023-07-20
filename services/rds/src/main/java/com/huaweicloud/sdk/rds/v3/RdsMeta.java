@@ -163,6 +163,9 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoRequest;
@@ -1818,6 +1821,41 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(ListInstancesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesSupportFastRestoreRequest, ListInstancesSupportFastRestoreResponse> listInstancesSupportFastRestore =
+        genForlistInstancesSupportFastRestore();
+
+    private static HttpRequestDef<ListInstancesSupportFastRestoreRequest, ListInstancesSupportFastRestoreResponse> genForlistInstancesSupportFastRestore() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesSupportFastRestoreRequest, ListInstancesSupportFastRestoreResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListInstancesSupportFastRestoreRequest.class,
+                    ListInstancesSupportFastRestoreResponse.class)
+                .withName("ListInstancesSupportFastRestore")
+                .withUri("/v3/{project_id}/instances/fast-restore")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesSupportFastRestoreRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ListInstancesSupportFastRestoreRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesSupportFastRestoreRequestBody.class),
+            f -> f.withMarshaller(ListInstancesSupportFastRestoreRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

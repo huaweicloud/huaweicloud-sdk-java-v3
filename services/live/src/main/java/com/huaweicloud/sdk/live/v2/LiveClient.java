@@ -3,7 +3,42 @@ package com.huaweicloud.sdk.live.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.live.v2.model.*;
+import com.huaweicloud.sdk.live.v2.model.ListAreaDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListAreaDetailResponse;
+import com.huaweicloud.sdk.live.v2.model.ListBandwidthDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListBandwidthDetailResponse;
+import com.huaweicloud.sdk.live.v2.model.ListDomainBandwidthPeakRequest;
+import com.huaweicloud.sdk.live.v2.model.ListDomainBandwidthPeakResponse;
+import com.huaweicloud.sdk.live.v2.model.ListDomainTrafficDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListDomainTrafficDetailResponse;
+import com.huaweicloud.sdk.live.v2.model.ListDomainTrafficSummaryRequest;
+import com.huaweicloud.sdk.live.v2.model.ListDomainTrafficSummaryResponse;
+import com.huaweicloud.sdk.live.v2.model.ListHistoryStreamsRequest;
+import com.huaweicloud.sdk.live.v2.model.ListHistoryStreamsResponse;
+import com.huaweicloud.sdk.live.v2.model.ListQueryHttpCodeRequest;
+import com.huaweicloud.sdk.live.v2.model.ListQueryHttpCodeResponse;
+import com.huaweicloud.sdk.live.v2.model.ListRecordDataRequest;
+import com.huaweicloud.sdk.live.v2.model.ListRecordDataResponse;
+import com.huaweicloud.sdk.live.v2.model.ListSingleStreamBitrateRequest;
+import com.huaweicloud.sdk.live.v2.model.ListSingleStreamBitrateResponse;
+import com.huaweicloud.sdk.live.v2.model.ListSingleStreamDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListSingleStreamDetailResponse;
+import com.huaweicloud.sdk.live.v2.model.ListSingleStreamFramerateRequest;
+import com.huaweicloud.sdk.live.v2.model.ListSingleStreamFramerateResponse;
+import com.huaweicloud.sdk.live.v2.model.ListSnapshotDataRequest;
+import com.huaweicloud.sdk.live.v2.model.ListSnapshotDataResponse;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataRequest;
+import com.huaweicloud.sdk.live.v2.model.ListTranscodeDataResponse;
+import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListUpStreamDetailResponse;
+import com.huaweicloud.sdk.live.v2.model.ListUsersOfStreamRequest;
+import com.huaweicloud.sdk.live.v2.model.ListUsersOfStreamResponse;
+import com.huaweicloud.sdk.live.v2.model.ShowStreamCountRequest;
+import com.huaweicloud.sdk.live.v2.model.ShowStreamCountResponse;
+import com.huaweicloud.sdk.live.v2.model.ShowStreamPortraitRequest;
+import com.huaweicloud.sdk.live.v2.model.ShowStreamPortraitResponse;
+import com.huaweicloud.sdk.live.v2.model.ShowUpBandwidthRequest;
+import com.huaweicloud.sdk.live.v2.model.ShowUpBandwidthResponse;
 
 public class LiveClient {
 
@@ -14,7 +49,8 @@ public class LiveClient {
     }
 
     public static ClientBuilder<LiveClient> newBuilder() {
-        return new ClientBuilder<>(LiveClient::new);
+        ClientBuilder<LiveClient> clientBuilder = new ClientBuilder<>(LiveClient::new);
+        return clientBuilder;
     }
 
     /**

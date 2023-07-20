@@ -3,7 +3,30 @@ package com.huaweicloud.sdk.image.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.image.v2.model.*;
+import com.huaweicloud.sdk.image.v2.model.CreateImageHighresolutionMattingTaskRequest;
+import com.huaweicloud.sdk.image.v2.model.CreateImageHighresolutionMattingTaskResponse;
+import com.huaweicloud.sdk.image.v2.model.CreateVideoTaggingMediaTaskRequest;
+import com.huaweicloud.sdk.image.v2.model.CreateVideoTaggingMediaTaskResponse;
+import com.huaweicloud.sdk.image.v2.model.RunCelebrityRecognitionRequest;
+import com.huaweicloud.sdk.image.v2.model.RunCelebrityRecognitionResponse;
+import com.huaweicloud.sdk.image.v2.model.RunImageDescriptionRequest;
+import com.huaweicloud.sdk.image.v2.model.RunImageDescriptionResponse;
+import com.huaweicloud.sdk.image.v2.model.RunImageMainObjectDetectionRequest;
+import com.huaweicloud.sdk.image.v2.model.RunImageMainObjectDetectionResponse;
+import com.huaweicloud.sdk.image.v2.model.RunImageMediaTaggingDetRequest;
+import com.huaweicloud.sdk.image.v2.model.RunImageMediaTaggingDetResponse;
+import com.huaweicloud.sdk.image.v2.model.RunImageMediaTaggingRequest;
+import com.huaweicloud.sdk.image.v2.model.RunImageMediaTaggingResponse;
+import com.huaweicloud.sdk.image.v2.model.RunImageSuperResolutionRequest;
+import com.huaweicloud.sdk.image.v2.model.RunImageSuperResolutionResponse;
+import com.huaweicloud.sdk.image.v2.model.RunImageTaggingRequest;
+import com.huaweicloud.sdk.image.v2.model.RunImageTaggingResponse;
+import com.huaweicloud.sdk.image.v2.model.RunRecaptureDetectRequest;
+import com.huaweicloud.sdk.image.v2.model.RunRecaptureDetectResponse;
+import com.huaweicloud.sdk.image.v2.model.ShowImageHighresolutionMattingTaskRequest;
+import com.huaweicloud.sdk.image.v2.model.ShowImageHighresolutionMattingTaskResponse;
+import com.huaweicloud.sdk.image.v2.model.ShowVideoTaggingMediaTaskRequest;
+import com.huaweicloud.sdk.image.v2.model.ShowVideoTaggingMediaTaskResponse;
 
 public class ImageClient {
 
@@ -14,7 +37,8 @@ public class ImageClient {
     }
 
     public static ClientBuilder<ImageClient> newBuilder() {
-        return new ClientBuilder<>(ImageClient::new);
+        ClientBuilder<ImageClient> clientBuilder = new ClientBuilder<>(ImageClient::new);
+        return clientBuilder;
     }
 
     /**

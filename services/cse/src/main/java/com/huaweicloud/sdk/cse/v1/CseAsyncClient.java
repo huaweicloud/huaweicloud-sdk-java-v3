@@ -3,7 +3,26 @@ package com.huaweicloud.sdk.cse.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.cse.v1.model.*;
+import com.huaweicloud.sdk.cse.v1.model.CreateEngineRequest;
+import com.huaweicloud.sdk.cse.v1.model.CreateEngineResponse;
+import com.huaweicloud.sdk.cse.v1.model.DeleteEngineRequest;
+import com.huaweicloud.sdk.cse.v1.model.DeleteEngineResponse;
+import com.huaweicloud.sdk.cse.v1.model.DownloadKieRequest;
+import com.huaweicloud.sdk.cse.v1.model.DownloadKieResponse;
+import com.huaweicloud.sdk.cse.v1.model.ListEnginesRequest;
+import com.huaweicloud.sdk.cse.v1.model.ListEnginesResponse;
+import com.huaweicloud.sdk.cse.v1.model.ListFlavorsRequest;
+import com.huaweicloud.sdk.cse.v1.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.cse.v1.model.RetryEngineRequest;
+import com.huaweicloud.sdk.cse.v1.model.RetryEngineResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowEngineJobRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowEngineJobResponse;
+import com.huaweicloud.sdk.cse.v1.model.ShowEngineRequest;
+import com.huaweicloud.sdk.cse.v1.model.ShowEngineResponse;
+import com.huaweicloud.sdk.cse.v1.model.UpgradeEngineRequest;
+import com.huaweicloud.sdk.cse.v1.model.UpgradeEngineResponse;
+import com.huaweicloud.sdk.cse.v1.model.UploadKieRequest;
+import com.huaweicloud.sdk.cse.v1.model.UploadKieResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +35,8 @@ public class CseAsyncClient {
     }
 
     public static ClientBuilder<CseAsyncClient> newBuilder() {
-        return new ClientBuilder<>(CseAsyncClient::new);
+        ClientBuilder<CseAsyncClient> clientBuilder = new ClientBuilder<>(CseAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

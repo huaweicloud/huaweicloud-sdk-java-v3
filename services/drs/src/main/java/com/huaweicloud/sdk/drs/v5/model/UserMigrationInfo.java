@@ -61,7 +61,7 @@ public class UserMigrationInfo {
     }
 
     /**
-     * 是否统一重置密码。取值： - true：重置密码为统一密码。 - false：不统一重置密码。 当前支持的场景：  - 实时迁移场景：MySQL迁移。
+     * 是否统一重置密码。取值： - true：重置密码为统一密码。 - false：不统一重置密码。 当前支持的场景： - 实时迁移场景：MySQL迁移。
      * @return isSetPassword
      */
     public Boolean getIsSetPassword() {

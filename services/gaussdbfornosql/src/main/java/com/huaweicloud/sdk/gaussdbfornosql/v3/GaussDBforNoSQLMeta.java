@@ -167,6 +167,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowErrorLogRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowErrorLogResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowHighRiskCommandsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowHighRiskCommandsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceBiactiveRegionsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceBiactiveRegionsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowInstanceRoleRequest;
@@ -2373,6 +2375,34 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> showInstanceBiactiveRegions =
+        genForshowInstanceBiactiveRegions();
+
+    private static HttpRequestDef<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> genForshowInstanceBiactiveRegions() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceBiactiveRegionsRequest, ShowInstanceBiactiveRegionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowInstanceBiactiveRegionsRequest.class,
+                    ShowInstanceBiactiveRegionsResponse.class)
+                .withName("ShowInstanceBiactiveRegions")
+                .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery/regions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceBiactiveRegionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfiguration =
         genForshowInstanceConfiguration();
 
@@ -2547,6 +2577,20 @@ public class GaussDBforNoSQLMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getDatastoreType, (req, v) -> {
+                req.setDatastoreType(v);
+            }));
+        builder.<String>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getMode, (req, v) -> {
+                req.setMode(v);
+            }));
 
         // response
 

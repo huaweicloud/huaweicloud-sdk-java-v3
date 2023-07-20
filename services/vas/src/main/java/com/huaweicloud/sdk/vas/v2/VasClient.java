@@ -3,7 +3,20 @@ package com.huaweicloud.sdk.vas.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.vas.v2.model.*;
+import com.huaweicloud.sdk.vas.v2.model.CreateTasksRequest;
+import com.huaweicloud.sdk.vas.v2.model.CreateTasksResponse;
+import com.huaweicloud.sdk.vas.v2.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.vas.v2.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.vas.v2.model.ListTasksDetailsRequest;
+import com.huaweicloud.sdk.vas.v2.model.ListTasksDetailsResponse;
+import com.huaweicloud.sdk.vas.v2.model.ShowTaskRequest;
+import com.huaweicloud.sdk.vas.v2.model.ShowTaskResponse;
+import com.huaweicloud.sdk.vas.v2.model.StartTaskRequest;
+import com.huaweicloud.sdk.vas.v2.model.StartTaskResponse;
+import com.huaweicloud.sdk.vas.v2.model.StopTaskRequest;
+import com.huaweicloud.sdk.vas.v2.model.StopTaskResponse;
+import com.huaweicloud.sdk.vas.v2.model.UpdateTaskRequest;
+import com.huaweicloud.sdk.vas.v2.model.UpdateTaskResponse;
 
 public class VasClient {
 
@@ -14,7 +27,8 @@ public class VasClient {
     }
 
     public static ClientBuilder<VasClient> newBuilder() {
-        return new ClientBuilder<>(VasClient::new);
+        ClientBuilder<VasClient> clientBuilder = new ClientBuilder<>(VasClient::new);
+        return clientBuilder;
     }
 
     /**

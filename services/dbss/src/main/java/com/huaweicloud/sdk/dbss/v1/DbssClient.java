@@ -3,7 +3,50 @@ package com.huaweicloud.sdk.dbss.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.dbss.v1.model.*;
+import com.huaweicloud.sdk.dbss.v1.model.AddRdsNoAgentDatabaseRequest;
+import com.huaweicloud.sdk.dbss.v1.model.AddRdsNoAgentDatabaseResponse;
+import com.huaweicloud.sdk.dbss.v1.model.BatchAddResourceTagRequest;
+import com.huaweicloud.sdk.dbss.v1.model.BatchAddResourceTagResponse;
+import com.huaweicloud.sdk.dbss.v1.model.BatchDeleteResourceTagRequest;
+import com.huaweicloud.sdk.dbss.v1.model.BatchDeleteResourceTagResponse;
+import com.huaweicloud.sdk.dbss.v1.model.CountResourceInstanceByTagRequest;
+import com.huaweicloud.sdk.dbss.v1.model.CountResourceInstanceByTagResponse;
+import com.huaweicloud.sdk.dbss.v1.model.CreateInstancesPeriodOrderRequest;
+import com.huaweicloud.sdk.dbss.v1.model.CreateInstancesPeriodOrderResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditDatabasesRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditDatabasesResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditOperateLogsRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditOperateLogsResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditRuleRisksRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditRuleRisksResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditRuleScopesRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditRuleScopesResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditSensitiveMasksRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditSensitiveMasksResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAvailabilityZoneInfosRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAvailabilityZoneInfosResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListProjectResourceTagsRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListProjectResourceTagsResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListResourceInstanceByTagRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListResourceInstanceByTagResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListSqlInjectionRulesRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListSqlInjectionRulesResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ShowAuditQuotaRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ShowAuditQuotaResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ShowAuditRuleRiskRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ShowAuditRuleRiskResponse;
+import com.huaweicloud.sdk.dbss.v1.model.SwitchAgentRequest;
+import com.huaweicloud.sdk.dbss.v1.model.SwitchAgentResponse;
+import com.huaweicloud.sdk.dbss.v1.model.SwitchRiskRuleRequest;
+import com.huaweicloud.sdk.dbss.v1.model.SwitchRiskRuleResponse;
+import com.huaweicloud.sdk.dbss.v1.model.UpdateAuditSecurityGroupRequest;
+import com.huaweicloud.sdk.dbss.v1.model.UpdateAuditSecurityGroupResponse;
 
 public class DbssClient {
 
@@ -14,7 +57,8 @@ public class DbssClient {
     }
 
     public static ClientBuilder<DbssClient> newBuilder() {
-        return new ClientBuilder<>(DbssClient::new);
+        ClientBuilder<DbssClient> clientBuilder = new ClientBuilder<>(DbssClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -76,6 +76,10 @@ import com.huaweicloud.sdk.kafka.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListSinkTasksRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListSinkTasksResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
 import com.huaweicloud.sdk.kafka.v2.model.PartitionReassignRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordReq;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordRequest;
@@ -973,20 +977,6 @@ public class KafkaMeta {
             f -> f.withMarshaller(ListInstanceTopicsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTopicsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstanceTopicsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
 
         // response
 
@@ -1005,10 +995,10 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("engine",
+        builder.<ListInstancesRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListInstancesRequest.EngineEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));
@@ -1085,10 +1075,10 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("engine",
+        builder.<ListProductsRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListProductsRequest.EngineEnum.class),
             f -> f.withMarshaller(ListProductsRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));
@@ -1116,6 +1106,98 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSinkTasksRequest::getConnectorId, (req, v) -> {
                 req.setConnectorId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTopicPartitionsRequest, ListTopicPartitionsResponse> listTopicPartitions =
+        genForlistTopicPartitions();
+
+    private static HttpRequestDef<ListTopicPartitionsRequest, ListTopicPartitionsResponse> genForlistTopicPartitions() {
+        // basic
+        HttpRequestDef.Builder<ListTopicPartitionsRequest, ListTopicPartitionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTopicPartitionsRequest.class, ListTopicPartitionsResponse.class)
+                .withName("ListTopicPartitions")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/partitions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicPartitionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("topic",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicPartitionsRequest::getTopic, (req, v) -> {
+                req.setTopic(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopicPartitionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopicPartitionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTopicProducersRequest, ListTopicProducersResponse> listTopicProducers =
+        genForlistTopicProducers();
+
+    private static HttpRequestDef<ListTopicProducersRequest, ListTopicProducersResponse> genForlistTopicProducers() {
+        // basic
+        HttpRequestDef.Builder<ListTopicProducersRequest, ListTopicProducersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTopicProducersRequest.class, ListTopicProducersResponse.class)
+                .withName("ListTopicProducers")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/producers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicProducersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("topic",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicProducersRequest::getTopic, (req, v) -> {
+                req.setTopic(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopicProducersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopicProducersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1277,10 +1359,10 @@ public class KafkaMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("engine",
+        builder.<ResizeEngineInstanceRequest.EngineEnum>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ResizeEngineInstanceRequest.EngineEnum.class),
             f -> f.withMarshaller(ResizeEngineInstanceRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));

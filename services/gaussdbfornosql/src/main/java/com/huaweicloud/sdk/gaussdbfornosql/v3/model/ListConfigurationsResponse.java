@@ -20,6 +20,11 @@ public class ListConfigurationsResponse extends SdkResponse {
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quota")
+
+    private Integer quota;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurations")
 
     private List<ListConfigurationsResult> configurations = null;
@@ -39,6 +44,23 @@ public class ListConfigurationsResponse extends SdkResponse {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public ListConfigurationsResponse withQuota(Integer quota) {
+        this.quota = quota;
+        return this;
+    }
+
+    /**
+     * 用户可创建的自定义参数模板最大数量。
+     * @return quota
+     */
+    public Integer getQuota() {
+        return quota;
+    }
+
+    public void setQuota(Integer quota) {
+        this.quota = quota;
     }
 
     public ListConfigurationsResponse withConfigurations(List<ListConfigurationsResult> configurations) {
@@ -84,12 +106,13 @@ public class ListConfigurationsResponse extends SdkResponse {
             return false;
         }
         ListConfigurationsResponse that = (ListConfigurationsResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.configurations, that.configurations);
+        return Objects.equals(this.count, that.count) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.configurations, that.configurations);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, configurations);
+        return Objects.hash(count, quota, configurations);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class ListConfigurationsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListConfigurationsResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
         sb.append("    configurations: ").append(toIndentedString(configurations)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -31,7 +31,7 @@ public class ListInstancesDetailsRequest {
     private String instanceId;
 
     /**
-     * 实例状态。
+     * 实例状态，详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)。
      */
     public static final class StatusEnum {
 
@@ -363,7 +363,7 @@ public class ListInstancesDetailsRequest {
     }
 
     /**
-     * 实例状态。
+     * 实例状态，详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)。
      * @return status
      */
     public StatusEnum getStatus() {

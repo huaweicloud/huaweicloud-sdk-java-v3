@@ -1,6 +1,55 @@
 package com.huaweicloud.sdk.ces.v1;
 
-import com.huaweicloud.sdk.ces.v1.model.*;
+import com.huaweicloud.sdk.ces.v1.model.BatchListMetricDataRequest;
+import com.huaweicloud.sdk.ces.v1.model.BatchListMetricDataResponse;
+import com.huaweicloud.sdk.ces.v1.model.CreateAlarmRequest;
+import com.huaweicloud.sdk.ces.v1.model.CreateAlarmResponse;
+import com.huaweicloud.sdk.ces.v1.model.CreateAlarmTemplateRequest;
+import com.huaweicloud.sdk.ces.v1.model.CreateAlarmTemplateResponse;
+import com.huaweicloud.sdk.ces.v1.model.CreateEventsRequest;
+import com.huaweicloud.sdk.ces.v1.model.CreateEventsResponse;
+import com.huaweicloud.sdk.ces.v1.model.CreateMetricDataRequest;
+import com.huaweicloud.sdk.ces.v1.model.CreateMetricDataResponse;
+import com.huaweicloud.sdk.ces.v1.model.CreateResourceGroupRequest;
+import com.huaweicloud.sdk.ces.v1.model.CreateResourceGroupResponse;
+import com.huaweicloud.sdk.ces.v1.model.DeleteAlarmRequest;
+import com.huaweicloud.sdk.ces.v1.model.DeleteAlarmResponse;
+import com.huaweicloud.sdk.ces.v1.model.DeleteAlarmTemplateRequest;
+import com.huaweicloud.sdk.ces.v1.model.DeleteAlarmTemplateResponse;
+import com.huaweicloud.sdk.ces.v1.model.DeleteResourceGroupRequest;
+import com.huaweicloud.sdk.ces.v1.model.DeleteResourceGroupResponse;
+import com.huaweicloud.sdk.ces.v1.model.ListAlarmHistoriesRequest;
+import com.huaweicloud.sdk.ces.v1.model.ListAlarmHistoriesResponse;
+import com.huaweicloud.sdk.ces.v1.model.ListAlarmTemplatesRequest;
+import com.huaweicloud.sdk.ces.v1.model.ListAlarmTemplatesResponse;
+import com.huaweicloud.sdk.ces.v1.model.ListAlarmsRequest;
+import com.huaweicloud.sdk.ces.v1.model.ListAlarmsResponse;
+import com.huaweicloud.sdk.ces.v1.model.ListEventDetailRequest;
+import com.huaweicloud.sdk.ces.v1.model.ListEventDetailResponse;
+import com.huaweicloud.sdk.ces.v1.model.ListEventsRequest;
+import com.huaweicloud.sdk.ces.v1.model.ListEventsResponse;
+import com.huaweicloud.sdk.ces.v1.model.ListMetricsRequest;
+import com.huaweicloud.sdk.ces.v1.model.ListMetricsResponse;
+import com.huaweicloud.sdk.ces.v1.model.ListResourceGroupRequest;
+import com.huaweicloud.sdk.ces.v1.model.ListResourceGroupResponse;
+import com.huaweicloud.sdk.ces.v1.model.ShowAlarmRequest;
+import com.huaweicloud.sdk.ces.v1.model.ShowAlarmResponse;
+import com.huaweicloud.sdk.ces.v1.model.ShowEventDataRequest;
+import com.huaweicloud.sdk.ces.v1.model.ShowEventDataResponse;
+import com.huaweicloud.sdk.ces.v1.model.ShowMetricDataRequest;
+import com.huaweicloud.sdk.ces.v1.model.ShowMetricDataResponse;
+import com.huaweicloud.sdk.ces.v1.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.ces.v1.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.ces.v1.model.ShowResourceGroupRequest;
+import com.huaweicloud.sdk.ces.v1.model.ShowResourceGroupResponse;
+import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmActionRequest;
+import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmActionResponse;
+import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmRequest;
+import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmResponse;
+import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmTemplateRequest;
+import com.huaweicloud.sdk.ces.v1.model.UpdateAlarmTemplateResponse;
+import com.huaweicloud.sdk.ces.v1.model.UpdateResourceGroupRequest;
+import com.huaweicloud.sdk.ces.v1.model.UpdateResourceGroupResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +63,8 @@ public class CesClient {
     }
 
     public static ClientBuilder<CesClient> newBuilder() {
-        return new ClientBuilder<>(CesClient::new);
+        ClientBuilder<CesClient> clientBuilder = new ClientBuilder<>(CesClient::new);
+        return clientBuilder;
     }
 
     /**

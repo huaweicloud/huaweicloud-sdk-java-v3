@@ -3,7 +3,48 @@ package com.huaweicloud.sdk.csms.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.csms.v1.model.*;
+import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
+import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateSecretRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateSecretTagRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateSecretTagResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretForScheduleRequest;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretForScheduleResponse;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretRequest;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretStageRequest;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretStageResponse;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagRequest;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagResponse;
+import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobRequest;
+import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListProjectSecretsTagsRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListProjectSecretsTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListResourceInstancesRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListResourceInstancesResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretsResponse;
+import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
+import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageResponse;
+import com.huaweicloud.sdk.csms.v1.model.UploadSecretBlobRequest;
+import com.huaweicloud.sdk.csms.v1.model.UploadSecretBlobResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +57,8 @@ public class CsmsAsyncClient {
     }
 
     public static ClientBuilder<CsmsAsyncClient> newBuilder() {
-        return new ClientBuilder<>(CsmsAsyncClient::new);
+        ClientBuilder<CsmsAsyncClient> clientBuilder = new ClientBuilder<>(CsmsAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

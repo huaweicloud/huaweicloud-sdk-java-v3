@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.kafka.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 修改的topic。
@@ -34,6 +37,16 @@ public class UpdateInstanceTopicReqTopics {
     @JsonProperty(value = "new_partition_numbers")
 
     private Integer newPartitionNumbers;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_other_configs")
+
+    private List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_desc")
+
+    private String topicDesc;
 
     public UpdateInstanceTopicReqTopics withId(String id) {
         this.id = id;
@@ -120,6 +133,59 @@ public class UpdateInstanceTopicReqTopics {
         this.newPartitionNumbers = newPartitionNumbers;
     }
 
+    public UpdateInstanceTopicReqTopics withTopicOtherConfigs(
+        List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs) {
+        this.topicOtherConfigs = topicOtherConfigs;
+        return this;
+    }
+
+    public UpdateInstanceTopicReqTopics addTopicOtherConfigsItem(
+        CreateInstanceTopicReqTopicOtherConfigs topicOtherConfigsItem) {
+        if (this.topicOtherConfigs == null) {
+            this.topicOtherConfigs = new ArrayList<>();
+        }
+        this.topicOtherConfigs.add(topicOtherConfigsItem);
+        return this;
+    }
+
+    public UpdateInstanceTopicReqTopics withTopicOtherConfigs(
+        Consumer<List<CreateInstanceTopicReqTopicOtherConfigs>> topicOtherConfigsSetter) {
+        if (this.topicOtherConfigs == null) {
+            this.topicOtherConfigs = new ArrayList<>();
+        }
+        topicOtherConfigsSetter.accept(this.topicOtherConfigs);
+        return this;
+    }
+
+    /**
+     * topic配置
+     * @return topicOtherConfigs
+     */
+    public List<CreateInstanceTopicReqTopicOtherConfigs> getTopicOtherConfigs() {
+        return topicOtherConfigs;
+    }
+
+    public void setTopicOtherConfigs(List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs) {
+        this.topicOtherConfigs = topicOtherConfigs;
+    }
+
+    public UpdateInstanceTopicReqTopics withTopicDesc(String topicDesc) {
+        this.topicDesc = topicDesc;
+        return this;
+    }
+
+    /**
+     * topic描述
+     * @return topicDesc
+     */
+    public String getTopicDesc() {
+        return topicDesc;
+    }
+
+    public void setTopicDesc(String topicDesc) {
+        this.topicDesc = topicDesc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +198,20 @@ public class UpdateInstanceTopicReqTopics {
         return Objects.equals(this.id, that.id) && Objects.equals(this.retentionTime, that.retentionTime)
             && Objects.equals(this.syncReplication, that.syncReplication)
             && Objects.equals(this.syncMessageFlush, that.syncMessageFlush)
-            && Objects.equals(this.newPartitionNumbers, that.newPartitionNumbers);
+            && Objects.equals(this.newPartitionNumbers, that.newPartitionNumbers)
+            && Objects.equals(this.topicOtherConfigs, that.topicOtherConfigs)
+            && Objects.equals(this.topicDesc, that.topicDesc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, retentionTime, syncReplication, syncMessageFlush, newPartitionNumbers);
+        return Objects.hash(id,
+            retentionTime,
+            syncReplication,
+            syncMessageFlush,
+            newPartitionNumbers,
+            topicOtherConfigs,
+            topicDesc);
     }
 
     @Override
@@ -149,6 +223,8 @@ public class UpdateInstanceTopicReqTopics {
         sb.append("    syncReplication: ").append(toIndentedString(syncReplication)).append("\n");
         sb.append("    syncMessageFlush: ").append(toIndentedString(syncMessageFlush)).append("\n");
         sb.append("    newPartitionNumbers: ").append(toIndentedString(newPartitionNumbers)).append("\n");
+        sb.append("    topicOtherConfigs: ").append(toIndentedString(topicOtherConfigs)).append("\n");
+        sb.append("    topicDesc: ").append(toIndentedString(topicDesc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

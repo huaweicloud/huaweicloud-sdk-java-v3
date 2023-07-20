@@ -3,7 +3,30 @@ package com.huaweicloud.sdk.kps.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.kps.v3.model.*;
+import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.CreateKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.CreateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.DeleteAllFailedTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.DeleteAllFailedTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.DeleteFailedTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.DeleteFailedTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.DeleteKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.DeleteKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairDetailRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairDetailResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairsRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListKeypairsResponse;
+import com.huaweicloud.sdk.kps.v3.model.ListRunningTaskRequest;
+import com.huaweicloud.sdk.kps.v3.model.ListRunningTaskResponse;
+import com.huaweicloud.sdk.kps.v3.model.UpdateKeypairDescriptionRequest;
+import com.huaweicloud.sdk.kps.v3.model.UpdateKeypairDescriptionResponse;
 
 public class KpsClient {
 
@@ -14,7 +37,8 @@ public class KpsClient {
     }
 
     public static ClientBuilder<KpsClient> newBuilder() {
-        return new ClientBuilder<>(KpsClient::new);
+        ClientBuilder<KpsClient> clientBuilder = new ClientBuilder<>(KpsClient::new);
+        return clientBuilder;
     }
 
     /**

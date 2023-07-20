@@ -3,7 +3,60 @@ package com.huaweicloud.sdk.ges.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.ges.v1.model.*;
+import com.huaweicloud.sdk.ges.v1.model.AttachEipRequest;
+import com.huaweicloud.sdk.ges.v1.model.AttachEipResponse;
+import com.huaweicloud.sdk.ges.v1.model.ClearGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.ClearGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.CreateBackupRequest;
+import com.huaweicloud.sdk.ges.v1.model.CreateBackupResponse;
+import com.huaweicloud.sdk.ges.v1.model.CreateGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.CreateGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.CreateMetadataRequest;
+import com.huaweicloud.sdk.ges.v1.model.CreateMetadataResponse;
+import com.huaweicloud.sdk.ges.v1.model.DeleteBackupRequest;
+import com.huaweicloud.sdk.ges.v1.model.DeleteBackupResponse;
+import com.huaweicloud.sdk.ges.v1.model.DeleteGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.DeleteGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.DeleteMetadataRequest;
+import com.huaweicloud.sdk.ges.v1.model.DeleteMetadataResponse;
+import com.huaweicloud.sdk.ges.v1.model.DetachEipRequest;
+import com.huaweicloud.sdk.ges.v1.model.DetachEipResponse;
+import com.huaweicloud.sdk.ges.v1.model.ExpandGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.ExpandGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.ExportGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.ExportGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.ImportGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.ImportGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.ListBackupsRequest;
+import com.huaweicloud.sdk.ges.v1.model.ListBackupsResponse;
+import com.huaweicloud.sdk.ges.v1.model.ListGraphBackupsRequest;
+import com.huaweicloud.sdk.ges.v1.model.ListGraphBackupsResponse;
+import com.huaweicloud.sdk.ges.v1.model.ListGraphMetadatasRequest;
+import com.huaweicloud.sdk.ges.v1.model.ListGraphMetadatasResponse;
+import com.huaweicloud.sdk.ges.v1.model.ListGraphsRequest;
+import com.huaweicloud.sdk.ges.v1.model.ListGraphsResponse;
+import com.huaweicloud.sdk.ges.v1.model.ListJobsRequest;
+import com.huaweicloud.sdk.ges.v1.model.ListJobsResponse;
+import com.huaweicloud.sdk.ges.v1.model.ListMetadatasRequest;
+import com.huaweicloud.sdk.ges.v1.model.ListMetadatasResponse;
+import com.huaweicloud.sdk.ges.v1.model.ListQuotasRequest;
+import com.huaweicloud.sdk.ges.v1.model.ListQuotasResponse;
+import com.huaweicloud.sdk.ges.v1.model.ResizeGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.ResizeGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.RestartGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.RestartGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.ShowGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.ShowGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.ShowJobRequest;
+import com.huaweicloud.sdk.ges.v1.model.ShowJobResponse;
+import com.huaweicloud.sdk.ges.v1.model.StartGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.StartGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.StopGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.StopGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.UpgradeGraphRequest;
+import com.huaweicloud.sdk.ges.v1.model.UpgradeGraphResponse;
+import com.huaweicloud.sdk.ges.v1.model.UploadFromObsRequest;
+import com.huaweicloud.sdk.ges.v1.model.UploadFromObsResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +69,8 @@ public class GesAsyncClient {
     }
 
     public static ClientBuilder<GesAsyncClient> newBuilder() {
-        return new ClientBuilder<>(GesAsyncClient::new);
+        ClientBuilder<GesAsyncClient> clientBuilder = new ClientBuilder<>(GesAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -3,7 +3,18 @@ package com.huaweicloud.sdk.moderation.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.moderation.v3.model.*;
+import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationRequest;
+import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationResponse;
+import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobRequest;
+import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobResponse;
+import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobRequest;
+import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobResponse;
+import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobRequest;
+import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobResponse;
+import com.huaweicloud.sdk.moderation.v3.model.RunQueryVideoModerationJobRequest;
+import com.huaweicloud.sdk.moderation.v3.model.RunQueryVideoModerationJobResponse;
+import com.huaweicloud.sdk.moderation.v3.model.RunTextModerationRequest;
+import com.huaweicloud.sdk.moderation.v3.model.RunTextModerationResponse;
 
 public class ModerationClient {
 
@@ -14,7 +25,8 @@ public class ModerationClient {
     }
 
     public static ClientBuilder<ModerationClient> newBuilder() {
-        return new ClientBuilder<>(ModerationClient::new);
+        ClientBuilder<ModerationClient> clientBuilder = new ClientBuilder<>(ModerationClient::new);
+        return clientBuilder;
     }
 
     /**

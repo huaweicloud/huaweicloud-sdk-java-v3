@@ -3,7 +3,30 @@ package com.huaweicloud.sdk.deh.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.deh.v1.model.*;
+import com.huaweicloud.sdk.deh.v1.model.BatchCreateDedicatedHostTagsRequest;
+import com.huaweicloud.sdk.deh.v1.model.BatchCreateDedicatedHostTagsResponse;
+import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsRequest;
+import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsResponse;
+import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.DeleteDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.DeleteDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTypesRequest;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTypesResponse;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostsByTagsRequest;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostsByTagsResponse;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostsRequest;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostsResponse;
+import com.huaweicloud.sdk.deh.v1.model.ListServersDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.ListServersDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.ShowDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.ShowDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.ShowDedicatedHostTagsRequest;
+import com.huaweicloud.sdk.deh.v1.model.ShowDedicatedHostTagsResponse;
+import com.huaweicloud.sdk.deh.v1.model.ShowQuotaSetsRequest;
+import com.huaweicloud.sdk.deh.v1.model.ShowQuotaSetsResponse;
+import com.huaweicloud.sdk.deh.v1.model.UpdateDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.UpdateDedicatedHostResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +39,8 @@ public class DeHAsyncClient {
     }
 
     public static ClientBuilder<DeHAsyncClient> newBuilder() {
-        return new ClientBuilder<>(DeHAsyncClient::new);
+        ClientBuilder<DeHAsyncClient> clientBuilder = new ClientBuilder<>(DeHAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

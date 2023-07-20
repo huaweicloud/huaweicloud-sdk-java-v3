@@ -199,11 +199,6 @@ public class IndividualStreamJobReq {
     private Integer maxIdleTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publish_param")
-
-    private PublishParam publishParam;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_param")
 
     private RecordParam recordParam;
@@ -312,32 +307,6 @@ public class IndividualStreamJobReq {
         this.maxIdleTime = maxIdleTime;
     }
 
-    public IndividualStreamJobReq withPublishParam(PublishParam publishParam) {
-        this.publishParam = publishParam;
-        return this;
-    }
-
-    public IndividualStreamJobReq withPublishParam(Consumer<PublishParam> publishParamSetter) {
-        if (this.publishParam == null) {
-            this.publishParam = new PublishParam();
-            publishParamSetter.accept(this.publishParam);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get publishParam
-     * @return publishParam
-     */
-    public PublishParam getPublishParam() {
-        return publishParam;
-    }
-
-    public void setPublishParam(PublishParam publishParam) {
-        this.publishParam = publishParam;
-    }
-
     public IndividualStreamJobReq withRecordParam(RecordParam recordParam) {
         this.recordParam = recordParam;
         return this;
@@ -376,15 +345,12 @@ public class IndividualStreamJobReq {
         return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.userId, that.userId)
             && Objects.equals(this.isRecordAudio, that.isRecordAudio) && Objects.equals(this.videoType, that.videoType)
             && Objects.equals(this.selectStreamType, that.selectStreamType)
-            && Objects.equals(this.maxIdleTime, that.maxIdleTime)
-            && Objects.equals(this.publishParam, that.publishParam)
-            && Objects.equals(this.recordParam, that.recordParam);
+            && Objects.equals(this.maxIdleTime, that.maxIdleTime) && Objects.equals(this.recordParam, that.recordParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(roomId, userId, isRecordAudio, videoType, selectStreamType, maxIdleTime, publishParam, recordParam);
+        return Objects.hash(roomId, userId, isRecordAudio, videoType, selectStreamType, maxIdleTime, recordParam);
     }
 
     @Override
@@ -397,7 +363,6 @@ public class IndividualStreamJobReq {
         sb.append("    videoType: ").append(toIndentedString(videoType)).append("\n");
         sb.append("    selectStreamType: ").append(toIndentedString(selectStreamType)).append("\n");
         sb.append("    maxIdleTime: ").append(toIndentedString(maxIdleTime)).append("\n");
-        sb.append("    publishParam: ").append(toIndentedString(publishParam)).append("\n");
         sb.append("    recordParam: ").append(toIndentedString(recordParam)).append("\n");
         sb.append("}");
         return sb.toString();

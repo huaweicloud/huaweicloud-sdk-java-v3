@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.sa.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.sa.v1.model.*;
+import com.huaweicloud.sdk.sa.v1.model.CheckProductHealthyRequest;
+import com.huaweicloud.sdk.sa.v1.model.CheckProductHealthyResponse;
+import com.huaweicloud.sdk.sa.v1.model.ImportEventsRequest;
+import com.huaweicloud.sdk.sa.v1.model.ImportEventsResponse;
 
 public class SaClient {
 
@@ -14,7 +17,8 @@ public class SaClient {
     }
 
     public static ClientBuilder<SaClient> newBuilder() {
-        return new ClientBuilder<>(SaClient::new);
+        ClientBuilder<SaClient> clientBuilder = new ClientBuilder<>(SaClient::new);
+        return clientBuilder;
     }
 
     /**

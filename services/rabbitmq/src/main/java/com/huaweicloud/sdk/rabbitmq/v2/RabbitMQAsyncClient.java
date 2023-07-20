@@ -3,7 +3,54 @@ package com.huaweicloud.sdk.rabbitmq.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.rabbitmq.v2.model.*;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchCreateOrDeleteRabbitMqTagRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchCreateOrDeleteRabbitMqTagResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchRestartOrDeleteInstancesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchRestartOrDeleteInstancesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceByEngineRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceByEngineResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteBackgroundTaskRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteBackgroundTaskResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteInstanceRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListEngineProductsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListEngineProductsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListInstancesDetailsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListInstancesDetailsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListPluginsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListPluginsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceExtendProductInfoRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceExtendProductInfoResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateInstanceRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +63,8 @@ public class RabbitMQAsyncClient {
     }
 
     public static ClientBuilder<RabbitMQAsyncClient> newBuilder() {
-        return new ClientBuilder<>(RabbitMQAsyncClient::new);
+        ClientBuilder<RabbitMQAsyncClient> clientBuilder = new ClientBuilder<>(RabbitMQAsyncClient::new);
+        return clientBuilder;
     }
 
     /**
@@ -123,7 +171,7 @@ public class RabbitMQAsyncClient {
     /**
      * 创建实例
      *
-     * 创建实例，该接口支持创建按需[和包周期](tag:hws,hws_hk,ctc,cmcc)计费方式的实例。
+     * 创建实例，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -138,7 +186,7 @@ public class RabbitMQAsyncClient {
     /**
      * 创建实例
      *
-     * 创建实例，该接口支持创建按需[和包周期](tag:hws,hws_hk,ctc,cmcc)计费方式的实例。
+     * 创建实例，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -35,6 +35,16 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration_parameters")
 
     private List<ConfigurationParameterResult> configurationParameters = null;
@@ -107,6 +117,40 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         this.updated = updated;
     }
 
+    public ShowInstanceConfigurationResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 参数模板ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ShowInstanceConfigurationResponse withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 数据库实例类型。 GaussDB(for Cassandra)集群类型为\"Cluster\"。 GaussDB(for Mongo)副本集类型为\"ReplicaSet\"。 GaussDB(for Mongo)集群类型为\"Sharding\"。 GaussDB(for Influx)集群类型为\"Cluster\"。 GaussDB(for Influx)单节点类型为\"InfluxdbSingle\"。
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
     public ShowInstanceConfigurationResponse withConfigurationParameters(
         List<ConfigurationParameterResult> configurationParameters) {
         this.configurationParameters = configurationParameters;
@@ -154,13 +198,14 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         ShowInstanceConfigurationResponse that = (ShowInstanceConfigurationResponse) obj;
         return Objects.equals(this.datastoreVersionName, that.datastoreVersionName)
             && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
-            && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.mode, that.mode)
             && Objects.equals(this.configurationParameters, that.configurationParameters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datastoreVersionName, datastoreName, created, updated, configurationParameters);
+        return Objects.hash(datastoreVersionName, datastoreName, created, updated, id, mode, configurationParameters);
     }
 
     @Override
@@ -171,6 +216,8 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
         sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    configurationParameters: ").append(toIndentedString(configurationParameters)).append("\n");
         sb.append("}");
         return sb.toString();

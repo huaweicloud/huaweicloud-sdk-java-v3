@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.secmaster.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.secmaster.v1.model.*;
+import com.huaweicloud.sdk.secmaster.v1.model.CheckProductHealthyRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.CheckProductHealthyResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ImportEventsRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ImportEventsResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +19,8 @@ public class SecMasterAsyncClient {
     }
 
     public static ClientBuilder<SecMasterAsyncClient> newBuilder() {
-        return new ClientBuilder<>(SecMasterAsyncClient::new);
+        ClientBuilder<SecMasterAsyncClient> clientBuilder = new ClientBuilder<>(SecMasterAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

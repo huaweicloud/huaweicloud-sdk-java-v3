@@ -212,7 +212,7 @@ public class ActionParams {
     }
 
     /**
-     * 强制结束任务时取值true。
+     * 强制结束时取值为true。
      * @return forceDelete
      */
     public Boolean getForceDelete() {

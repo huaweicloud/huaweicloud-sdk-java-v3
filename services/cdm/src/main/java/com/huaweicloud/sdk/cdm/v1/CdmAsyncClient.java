@@ -1,6 +1,45 @@
 package com.huaweicloud.sdk.cdm.v1;
 
-import com.huaweicloud.sdk.cdm.v1.model.*;
+import com.huaweicloud.sdk.cdm.v1.model.CreateAndStartRandomClusterJobRequest;
+import com.huaweicloud.sdk.cdm.v1.model.CreateAndStartRandomClusterJobResponse;
+import com.huaweicloud.sdk.cdm.v1.model.CreateClusterRequest;
+import com.huaweicloud.sdk.cdm.v1.model.CreateClusterResponse;
+import com.huaweicloud.sdk.cdm.v1.model.CreateJobRequest;
+import com.huaweicloud.sdk.cdm.v1.model.CreateJobResponse;
+import com.huaweicloud.sdk.cdm.v1.model.CreateLinkRequest;
+import com.huaweicloud.sdk.cdm.v1.model.CreateLinkResponse;
+import com.huaweicloud.sdk.cdm.v1.model.DeleteClusterRequest;
+import com.huaweicloud.sdk.cdm.v1.model.DeleteClusterResponse;
+import com.huaweicloud.sdk.cdm.v1.model.DeleteJobRequest;
+import com.huaweicloud.sdk.cdm.v1.model.DeleteJobResponse;
+import com.huaweicloud.sdk.cdm.v1.model.DeleteLinkRequest;
+import com.huaweicloud.sdk.cdm.v1.model.DeleteLinkResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ListClustersRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ListClustersResponse;
+import com.huaweicloud.sdk.cdm.v1.model.RestartClusterRequest;
+import com.huaweicloud.sdk.cdm.v1.model.RestartClusterResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowClusterDetailRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowClusterDetailResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowJobStatusRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowJobStatusResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowJobsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowJobsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowLinkRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowLinkResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowSubmissionsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowSubmissionsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.StartClusterRequest;
+import com.huaweicloud.sdk.cdm.v1.model.StartClusterResponse;
+import com.huaweicloud.sdk.cdm.v1.model.StartJobRequest;
+import com.huaweicloud.sdk.cdm.v1.model.StartJobResponse;
+import com.huaweicloud.sdk.cdm.v1.model.StopClusterRequest;
+import com.huaweicloud.sdk.cdm.v1.model.StopClusterResponse;
+import com.huaweicloud.sdk.cdm.v1.model.StopJobRequest;
+import com.huaweicloud.sdk.cdm.v1.model.StopJobResponse;
+import com.huaweicloud.sdk.cdm.v1.model.UpdateJobRequest;
+import com.huaweicloud.sdk.cdm.v1.model.UpdateJobResponse;
+import com.huaweicloud.sdk.cdm.v1.model.UpdateLinkRequest;
+import com.huaweicloud.sdk.cdm.v1.model.UpdateLinkResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +55,8 @@ public class CdmAsyncClient {
     }
 
     public static ClientBuilder<CdmAsyncClient> newBuilder() {
-        return new ClientBuilder<>(CdmAsyncClient::new);
+        ClientBuilder<CdmAsyncClient> clientBuilder = new ClientBuilder<>(CdmAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

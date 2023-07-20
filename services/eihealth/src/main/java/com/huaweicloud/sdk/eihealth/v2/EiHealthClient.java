@@ -3,7 +3,8 @@ package com.huaweicloud.sdk.eihealth.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.eihealth.v2.model.*;
+import com.huaweicloud.sdk.eihealth.v2.model.ShowAdmetWithCustomPropsRequest;
+import com.huaweicloud.sdk.eihealth.v2.model.ShowAdmetWithCustomPropsResponse;
 
 public class EiHealthClient {
 
@@ -14,7 +15,8 @@ public class EiHealthClient {
     }
 
     public static ClientBuilder<EiHealthClient> newBuilder() {
-        return new ClientBuilder<>(EiHealthClient::new);
+        ClientBuilder<EiHealthClient> clientBuilder = new ClientBuilder<>(EiHealthClient::new);
+        return clientBuilder;
     }
 
     /**

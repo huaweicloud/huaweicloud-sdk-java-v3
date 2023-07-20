@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -127,6 +129,21 @@ public class JobDetailResp {
     @JsonProperty(value = "compare_result")
 
     private CompareResultInfo compareResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_import_file_resp")
+
+    private SupportImportFileResult supportImportFileResp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_features")
+
+    private Map<String, String> instanceFeatures = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_version")
+
+    private String taskVersion;
 
     public JobDetailResp withId(String id) {
         this.id = id;
@@ -353,7 +370,7 @@ public class JobDetailResp {
     }
 
     /**
-     * 限速信息体。 - 限速：自定义的最大迁移速度，迁移过程中的迁移速度将不会超过该速度。  - 不限速：对迁移速度不进行限制，通常会最大化使用源数据库的出口带宽。该流速模式同时会对源数据库造成读消耗，消耗取决于源数据库的出口带宽。比如：源数据库的出口带宽为100MB/s，假设高速模式使用了80%带宽，则迁移对源数据库将造成80MB/s的读操作IO消耗。
+     * 限速信息体。 - 限速：自定义的最大迁移速度，迁移过程中的迁移速度将不会超过该速度。 - 不限速：对迁移速度不进行限制，通常会最大化使用源数据库的出口带宽。该流速模式同时会对源数据库造成读消耗，消耗取决于源数据库的出口带宽。比如：源数据库的出口带宽为100MB/s，假设高速模式使用了80%带宽，则迁移对源数据库将造成80MB/s的读操作IO消耗。
      * @return speedLimit
      */
     public List<SpeedLimitInfo> getSpeedLimit() {
@@ -717,6 +734,82 @@ public class JobDetailResp {
         this.compareResult = compareResult;
     }
 
+    public JobDetailResp withSupportImportFileResp(SupportImportFileResult supportImportFileResp) {
+        this.supportImportFileResp = supportImportFileResp;
+        return this;
+    }
+
+    public JobDetailResp withSupportImportFileResp(Consumer<SupportImportFileResult> supportImportFileRespSetter) {
+        if (this.supportImportFileResp == null) {
+            this.supportImportFileResp = new SupportImportFileResult();
+            supportImportFileRespSetter.accept(this.supportImportFileResp);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get supportImportFileResp
+     * @return supportImportFileResp
+     */
+    public SupportImportFileResult getSupportImportFileResp() {
+        return supportImportFileResp;
+    }
+
+    public void setSupportImportFileResp(SupportImportFileResult supportImportFileResp) {
+        this.supportImportFileResp = supportImportFileResp;
+    }
+
+    public JobDetailResp withInstanceFeatures(Map<String, String> instanceFeatures) {
+        this.instanceFeatures = instanceFeatures;
+        return this;
+    }
+
+    public JobDetailResp putInstanceFeaturesItem(String key, String instanceFeaturesItem) {
+        if (this.instanceFeatures == null) {
+            this.instanceFeatures = new HashMap<>();
+        }
+        this.instanceFeatures.put(key, instanceFeaturesItem);
+        return this;
+    }
+
+    public JobDetailResp withInstanceFeatures(Consumer<Map<String, String>> instanceFeaturesSetter) {
+        if (this.instanceFeatures == null) {
+            this.instanceFeatures = new HashMap<>();
+        }
+        instanceFeaturesSetter.accept(this.instanceFeatures);
+        return this;
+    }
+
+    /**
+     * 由开关和版本共同控制的任务级别的功能列表。
+     * @return instanceFeatures
+     */
+    public Map<String, String> getInstanceFeatures() {
+        return instanceFeatures;
+    }
+
+    public void setInstanceFeatures(Map<String, String> instanceFeatures) {
+        this.instanceFeatures = instanceFeatures;
+    }
+
+    public JobDetailResp withTaskVersion(String taskVersion) {
+        this.taskVersion = taskVersion;
+        return this;
+    }
+
+    /**
+     * 任务版本。
+     * @return taskVersion
+     */
+    public String getTaskVersion() {
+        return taskVersion;
+    }
+
+    public void setTaskVersion(String taskVersion) {
+        this.taskVersion = taskVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -740,7 +833,10 @@ public class JobDetailResp {
             && Objects.equals(this.precheckResult, that.precheckResult)
             && Objects.equals(this.progressInfo, that.progressInfo)
             && Objects.equals(this.migrationObjectProgressInfo, that.migrationObjectProgressInfo)
-            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.compareResult, that.compareResult);
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.compareResult, that.compareResult)
+            && Objects.equals(this.supportImportFileResp, that.supportImportFileResp)
+            && Objects.equals(this.instanceFeatures, that.instanceFeatures)
+            && Objects.equals(this.taskVersion, that.taskVersion);
     }
 
     @Override
@@ -767,7 +863,10 @@ public class JobDetailResp {
             progressInfo,
             migrationObjectProgressInfo,
             metrics,
-            compareResult);
+            compareResult,
+            supportImportFileResp,
+            instanceFeatures,
+            taskVersion);
     }
 
     @Override
@@ -799,6 +898,9 @@ public class JobDetailResp {
             .append("\n");
         sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
         sb.append("    compareResult: ").append(toIndentedString(compareResult)).append("\n");
+        sb.append("    supportImportFileResp: ").append(toIndentedString(supportImportFileResp)).append("\n");
+        sb.append("    instanceFeatures: ").append(toIndentedString(instanceFeatures)).append("\n");
+        sb.append("    taskVersion: ").append(toIndentedString(taskVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

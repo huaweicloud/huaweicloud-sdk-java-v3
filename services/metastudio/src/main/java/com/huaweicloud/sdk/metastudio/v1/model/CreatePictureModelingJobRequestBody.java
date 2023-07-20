@@ -26,11 +26,6 @@ public class CreatePictureModelingJobRequestBody implements SdkFormDataBody {
     private String styleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "model_asset_id")
-
-    private String modelAssetId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -72,23 +67,6 @@ public class CreatePictureModelingJobRequestBody implements SdkFormDataBody {
 
     public void setStyleId(String styleId) {
         this.styleId = styleId;
-    }
-
-    public CreatePictureModelingJobRequestBody withModelAssetId(String modelAssetId) {
-        this.modelAssetId = modelAssetId;
-        return this;
-    }
-
-    /**
-     * 数字人模型资产ID，重复创建时使用。
-     * @return modelAssetId
-     */
-    public String getModelAssetId() {
-        return modelAssetId;
-    }
-
-    public void setModelAssetId(String modelAssetId) {
-        this.modelAssetId = modelAssetId;
     }
 
     public CreatePictureModelingJobRequestBody withName(String name) {
@@ -149,9 +127,6 @@ public class CreatePictureModelingJobRequestBody implements SdkFormDataBody {
             {
                 put("file", file);
                 put("style_id", new FormDataPart<>(styleId));
-                if (modelAssetId != null) {
-                    put("model_asset_id", new FormDataPart<>(modelAssetId));
-                }
                 put("name", new FormDataPart<>(name));
                 if (notifyUrl != null) {
                     put("notify_url", new FormDataPart<>(notifyUrl));
@@ -170,13 +145,12 @@ public class CreatePictureModelingJobRequestBody implements SdkFormDataBody {
         }
         CreatePictureModelingJobRequestBody that = (CreatePictureModelingJobRequestBody) obj;
         return Objects.equals(this.file, that.file) && Objects.equals(this.styleId, that.styleId)
-            && Objects.equals(this.modelAssetId, that.modelAssetId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.notifyUrl, that.notifyUrl);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.notifyUrl, that.notifyUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(file, styleId, modelAssetId, name, notifyUrl);
+        return Objects.hash(file, styleId, name, notifyUrl);
     }
 
     @Override
@@ -185,7 +159,6 @@ public class CreatePictureModelingJobRequestBody implements SdkFormDataBody {
         sb.append("class CreatePictureModelingJobRequestBody {\n");
         sb.append("    file: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
         sb.append("    styleId: ").append(toIndentedString(styleId)).append("\n");
-        sb.append("    modelAssetId: ").append(toIndentedString(modelAssetId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    notifyUrl: ").append(toIndentedString(notifyUrl)).append("\n");
         sb.append("}");

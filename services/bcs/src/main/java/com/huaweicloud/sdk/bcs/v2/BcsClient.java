@@ -1,6 +1,69 @@
 package com.huaweicloud.sdk.bcs.v2;
 
-import com.huaweicloud.sdk.bcs.v2.model.*;
+import com.huaweicloud.sdk.bcs.v2.model.BatchAddPeersToChannelRequest;
+import com.huaweicloud.sdk.bcs.v2.model.BatchAddPeersToChannelResponse;
+import com.huaweicloud.sdk.bcs.v2.model.BatchCreateChannelsRequest;
+import com.huaweicloud.sdk.bcs.v2.model.BatchCreateChannelsResponse;
+import com.huaweicloud.sdk.bcs.v2.model.BatchInviteMembersToChannelRequest;
+import com.huaweicloud.sdk.bcs.v2.model.BatchInviteMembersToChannelResponse;
+import com.huaweicloud.sdk.bcs.v2.model.BatchRemoveOrgsFromChannelRequest;
+import com.huaweicloud.sdk.bcs.v2.model.BatchRemoveOrgsFromChannelResponse;
+import com.huaweicloud.sdk.bcs.v2.model.BatchRemovePeersFromChannelRequest;
+import com.huaweicloud.sdk.bcs.v2.model.BatchRemovePeersFromChannelResponse;
+import com.huaweicloud.sdk.bcs.v2.model.CreateBlockchainCertByUserNameRequest;
+import com.huaweicloud.sdk.bcs.v2.model.CreateBlockchainCertByUserNameResponse;
+import com.huaweicloud.sdk.bcs.v2.model.CreateNewBlockchainRequest;
+import com.huaweicloud.sdk.bcs.v2.model.CreateNewBlockchainResponse;
+import com.huaweicloud.sdk.bcs.v2.model.DeleteBlockchainRequest;
+import com.huaweicloud.sdk.bcs.v2.model.DeleteBlockchainResponse;
+import com.huaweicloud.sdk.bcs.v2.model.DeleteChannelRequest;
+import com.huaweicloud.sdk.bcs.v2.model.DeleteChannelResponse;
+import com.huaweicloud.sdk.bcs.v2.model.DeleteMemberInviteRequest;
+import com.huaweicloud.sdk.bcs.v2.model.DeleteMemberInviteResponse;
+import com.huaweicloud.sdk.bcs.v2.model.DownloadBlockchainCertRequest;
+import com.huaweicloud.sdk.bcs.v2.model.DownloadBlockchainCertResponse;
+import com.huaweicloud.sdk.bcs.v2.model.DownloadBlockchainSdkConfigRequest;
+import com.huaweicloud.sdk.bcs.v2.model.DownloadBlockchainSdkConfigResponse;
+import com.huaweicloud.sdk.bcs.v2.model.FreezeCertRequest;
+import com.huaweicloud.sdk.bcs.v2.model.FreezeCertResponse;
+import com.huaweicloud.sdk.bcs.v2.model.HandleNotificationRequest;
+import com.huaweicloud.sdk.bcs.v2.model.HandleNotificationResponse;
+import com.huaweicloud.sdk.bcs.v2.model.HandleUnionMemberQuitListRequest;
+import com.huaweicloud.sdk.bcs.v2.model.HandleUnionMemberQuitListResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListBcsEventsRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListBcsEventsResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListBcsEventsStatisticRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListBcsEventsStatisticResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListBcsMetricRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListBcsMetricResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListBlockchainChannelsRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListBlockchainChannelsResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListBlockchainsRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListBlockchainsResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListEntityMetricRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListEntityMetricResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListInstanceMetricRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListInstanceMetricResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListMembersRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListMembersResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListNotificationsRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListNotificationsResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListOpRecordRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListOpRecordResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ListQuotasRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ListQuotasResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ShowBlockchainDetailRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ShowBlockchainDetailResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ShowBlockchainFlavorsRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ShowBlockchainFlavorsResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ShowBlockchainNodesRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ShowBlockchainNodesResponse;
+import com.huaweicloud.sdk.bcs.v2.model.ShowBlockchainStatusRequest;
+import com.huaweicloud.sdk.bcs.v2.model.ShowBlockchainStatusResponse;
+import com.huaweicloud.sdk.bcs.v2.model.UnfreezeCertRequest;
+import com.huaweicloud.sdk.bcs.v2.model.UnfreezeCertResponse;
+import com.huaweicloud.sdk.bcs.v2.model.UpdateInstanceRequest;
+import com.huaweicloud.sdk.bcs.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +77,8 @@ public class BcsClient {
     }
 
     public static ClientBuilder<BcsClient> newBuilder() {
-        return new ClientBuilder<>(BcsClient::new);
+        ClientBuilder<BcsClient> clientBuilder = new ClientBuilder<>(BcsClient::new);
+        return clientBuilder;
     }
 
     /**

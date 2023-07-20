@@ -3,7 +3,62 @@ package com.huaweicloud.sdk.evs.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.evs.v2.model.*;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchCreateVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.BatchDeleteVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferRequest;
+import com.huaweicloud.sdk.evs.v2.model.CinderAcceptVolumeTransferResponse;
+import com.huaweicloud.sdk.evs.v2.model.CinderCreateVolumeTransferRequest;
+import com.huaweicloud.sdk.evs.v2.model.CinderCreateVolumeTransferResponse;
+import com.huaweicloud.sdk.evs.v2.model.CinderDeleteVolumeTransferRequest;
+import com.huaweicloud.sdk.evs.v2.model.CinderDeleteVolumeTransferResponse;
+import com.huaweicloud.sdk.evs.v2.model.CinderListAvailabilityZonesRequest;
+import com.huaweicloud.sdk.evs.v2.model.CinderListAvailabilityZonesResponse;
+import com.huaweicloud.sdk.evs.v2.model.CinderListQuotasRequest;
+import com.huaweicloud.sdk.evs.v2.model.CinderListQuotasResponse;
+import com.huaweicloud.sdk.evs.v2.model.CinderListVolumeTransfersRequest;
+import com.huaweicloud.sdk.evs.v2.model.CinderListVolumeTransfersResponse;
+import com.huaweicloud.sdk.evs.v2.model.CinderListVolumeTypesRequest;
+import com.huaweicloud.sdk.evs.v2.model.CinderListVolumeTypesResponse;
+import com.huaweicloud.sdk.evs.v2.model.CinderShowVolumeTransferRequest;
+import com.huaweicloud.sdk.evs.v2.model.CinderShowVolumeTransferResponse;
+import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.CreateVolumeRequest;
+import com.huaweicloud.sdk.evs.v2.model.CreateVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeRequest;
+import com.huaweicloud.sdk.evs.v2.model.DeleteVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListSnapshotsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListVersionsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListVersionsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumeTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumesRequest;
+import com.huaweicloud.sdk.evs.v2.model.ListVolumesResponse;
+import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeRequest;
+import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowJobRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowVersionRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowVersionResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowVolumeRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsRequest;
+import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotResponse;
+import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequest;
+import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeResponse;
 
 public class EvsClient {
 
@@ -14,7 +69,8 @@ public class EvsClient {
     }
 
     public static ClientBuilder<EvsClient> newBuilder() {
-        return new ClientBuilder<>(EvsClient::new);
+        ClientBuilder<EvsClient> clientBuilder = new ClientBuilder<>(EvsClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -3,7 +3,90 @@ package com.huaweicloud.sdk.live.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.live.v1.model.*;
+import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsRequest;
+import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateRecordRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteDomainKeyChainRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteDomainKeyChainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsRequest;
+import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsResponse;
+import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineRequest;
+import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineResponse;
+import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsRequest;
+import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsResponse;
+import com.huaweicloud.sdk.live.v1.model.ListRecordContentsRequest;
+import com.huaweicloud.sdk.live.v1.model.ListRecordContentsResponse;
+import com.huaweicloud.sdk.live.v1.model.ListRecordRulesRequest;
+import com.huaweicloud.sdk.live.v1.model.ListRecordRulesResponse;
+import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsRequest;
+import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsResponse;
+import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenRequest;
+import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenResponse;
+import com.huaweicloud.sdk.live.v1.model.RunRecordRequest;
+import com.huaweicloud.sdk.live.v1.model.RunRecordResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowRecordRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateDomainHttpsCertRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateDomainHttpsCertResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateDomainIp6SwitchRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateDomainIp6SwitchResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateDomainKeyChainRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateDomainKeyChainResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateDomainRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateObsBucketAuthorityPublicRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateObsBucketAuthorityPublicResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateRecordCallbackConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateRecordCallbackConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateRecordRuleRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateSnapshotConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateSnapshotConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateStreamForbiddenRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateStreamForbiddenResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateTranscodingsTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateTranscodingsTemplateResponse;
 
 public class LiveClient {
 
@@ -14,7 +97,8 @@ public class LiveClient {
     }
 
     public static ClientBuilder<LiveClient> newBuilder() {
-        return new ClientBuilder<>(LiveClient::new);
+        ClientBuilder<LiveClient> clientBuilder = new ClientBuilder<>(LiveClient::new);
+        return clientBuilder;
     }
 
     /**

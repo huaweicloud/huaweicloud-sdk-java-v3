@@ -1,6 +1,61 @@
 package com.huaweicloud.sdk.aos.v1;
 
-import com.huaweicloud.sdk.aos.v1.model.*;
+import com.huaweicloud.sdk.aos.v1.model.ApplyExecutionPlanRequest;
+import com.huaweicloud.sdk.aos.v1.model.ApplyExecutionPlanResponse;
+import com.huaweicloud.sdk.aos.v1.model.ContinueDeployStackRequest;
+import com.huaweicloud.sdk.aos.v1.model.ContinueDeployStackResponse;
+import com.huaweicloud.sdk.aos.v1.model.ContinueRollbackStackRequest;
+import com.huaweicloud.sdk.aos.v1.model.ContinueRollbackStackResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreateExecutionPlanRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreateExecutionPlanResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreateStackRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreateStackResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeleteStackRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeleteStackResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeleteTemplateRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeleteTemplateResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeleteTemplateVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeleteTemplateVersionResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeployStackRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeployStackResponse;
+import com.huaweicloud.sdk.aos.v1.model.EstimateExecutionPlanPriceRequest;
+import com.huaweicloud.sdk.aos.v1.model.EstimateExecutionPlanPriceResponse;
+import com.huaweicloud.sdk.aos.v1.model.GetExecutionPlanMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.GetExecutionPlanMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.GetExecutionPlanRequest;
+import com.huaweicloud.sdk.aos.v1.model.GetExecutionPlanResponse;
+import com.huaweicloud.sdk.aos.v1.model.GetStackMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.GetStackMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.GetStackTemplateRequest;
+import com.huaweicloud.sdk.aos.v1.model.GetStackTemplateResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListStackEventsRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListStackEventsResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListStackOutputsRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListStackOutputsResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListStackResourcesRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListStackResourcesResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListStacksRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListStacksResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListTemplateVersionsRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListTemplateVersionsResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListTemplatesRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListTemplatesResponse;
+import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesRequest;
+import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowTemplateMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowTemplateMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionContentRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionContentResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.UpdateStackRequest;
+import com.huaweicloud.sdk.aos.v1.model.UpdateStackResponse;
+import com.huaweicloud.sdk.aos.v1.model.UpdateTemplateMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.UpdateTemplateMetadataResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -14,7 +69,8 @@ public class AosClient {
     }
 
     public static ClientBuilder<AosClient> newBuilder() {
-        return new ClientBuilder<>(AosClient::new);
+        ClientBuilder<AosClient> clientBuilder = new ClientBuilder<>(AosClient::new);
+        return clientBuilder;
     }
 
     /**

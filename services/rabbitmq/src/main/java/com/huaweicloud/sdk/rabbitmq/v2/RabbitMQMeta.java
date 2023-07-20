@@ -464,10 +464,10 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("engine",
+        builder.<ListProductsRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListProductsRequest.EngineEnum.class),
             f -> f.withMarshaller(ListProductsRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));
@@ -528,10 +528,10 @@ public class RabbitMQMeta {
             f -> f.withMarshaller(ResizeEngineInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("engine",
+        builder.<ResizeEngineInstanceRequest.EngineEnum>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ResizeEngineInstanceRequest.EngineEnum.class),
             f -> f.withMarshaller(ResizeEngineInstanceRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));
@@ -627,10 +627,10 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("engine",
+        builder.<ShowEngineInstanceExtendProductInfoRequest.EngineEnum>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.EngineEnum.class),
             f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));
@@ -707,10 +707,10 @@ public class RabbitMQMeta {
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getType, (req, v) -> {
                 req.setType(v);
             }));
-        builder.<String>withRequestField("engine",
+        builder.<ShowInstanceExtendProductInfoRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.EngineEnum.class),
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));

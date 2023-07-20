@@ -3,7 +3,54 @@ package com.huaweicloud.sdk.metastudio.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.metastudio.v1.model.*;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSelfPrivilegesRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSelfPrivilegesResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListStylesRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListStylesResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,7 +63,8 @@ public class MetaStudioAsyncClient {
     }
 
     public static ClientBuilder<MetaStudioAsyncClient> newBuilder() {
-        return new ClientBuilder<>(MetaStudioAsyncClient::new);
+        ClientBuilder<MetaStudioAsyncClient> clientBuilder = new ClientBuilder<>(MetaStudioAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

@@ -1,6 +1,37 @@
 package com.huaweicloud.sdk.aom.v3;
 
-import com.huaweicloud.sdk.aom.v3.model.*;
+import com.huaweicloud.sdk.aom.v3.model.CreateAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.CreateAppResponse;
+import com.huaweicloud.sdk.aom.v3.model.CreateComponentRequest;
+import com.huaweicloud.sdk.aom.v3.model.CreateComponentResponse;
+import com.huaweicloud.sdk.aom.v3.model.CreateEnvRequest;
+import com.huaweicloud.sdk.aom.v3.model.CreateEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.DeleteAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.DeleteAppResponse;
+import com.huaweicloud.sdk.aom.v3.model.DeleteComponentRequest;
+import com.huaweicloud.sdk.aom.v3.model.DeleteComponentResponse;
+import com.huaweicloud.sdk.aom.v3.model.DeleteEnvRequest;
+import com.huaweicloud.sdk.aom.v3.model.DeleteEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.ListResourceUnderNodeRequest;
+import com.huaweicloud.sdk.aom.v3.model.ListResourceUnderNodeResponse;
+import com.huaweicloud.sdk.aom.v3.model.ShowAppByNameRequest;
+import com.huaweicloud.sdk.aom.v3.model.ShowAppByNameResponse;
+import com.huaweicloud.sdk.aom.v3.model.ShowAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.ShowAppResponse;
+import com.huaweicloud.sdk.aom.v3.model.ShowComponentByNameRequest;
+import com.huaweicloud.sdk.aom.v3.model.ShowComponentByNameResponse;
+import com.huaweicloud.sdk.aom.v3.model.ShowComponentRequest;
+import com.huaweicloud.sdk.aom.v3.model.ShowComponentResponse;
+import com.huaweicloud.sdk.aom.v3.model.ShowEnvByNameRequest;
+import com.huaweicloud.sdk.aom.v3.model.ShowEnvByNameResponse;
+import com.huaweicloud.sdk.aom.v3.model.ShowEnvRequest;
+import com.huaweicloud.sdk.aom.v3.model.ShowEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.UpdateAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.UpdateAppResponse;
+import com.huaweicloud.sdk.aom.v3.model.UpdateComponentRequest;
+import com.huaweicloud.sdk.aom.v3.model.UpdateComponentResponse;
+import com.huaweicloud.sdk.aom.v3.model.UpdateEnvRequest;
+import com.huaweicloud.sdk.aom.v3.model.UpdateEnvResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +47,8 @@ public class AomAsyncClient {
     }
 
     public static ClientBuilder<AomAsyncClient> newBuilder() {
-        return new ClientBuilder<>(AomAsyncClient::new);
+        ClientBuilder<AomAsyncClient> clientBuilder = new ClientBuilder<>(AomAsyncClient::new);
+        return clientBuilder;
     }
 
     /**

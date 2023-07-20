@@ -38,6 +38,11 @@ public class EffectiveRoute {
 
     private String routeType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_group_id")
+
+    private String addressGroupId;
+
     public EffectiveRoute withRouteId(String routeId) {
         this.routeId = routeId;
         return this;
@@ -139,6 +144,23 @@ public class EffectiveRoute {
         this.routeType = routeType;
     }
 
+    public EffectiveRoute withAddressGroupId(String addressGroupId) {
+        this.addressGroupId = addressGroupId;
+        return this;
+    }
+
+    /**
+     * IP地址组id
+     * @return addressGroupId
+     */
+    public String getAddressGroupId() {
+        return addressGroupId;
+    }
+
+    public void setAddressGroupId(String addressGroupId) {
+        this.addressGroupId = addressGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -150,12 +172,13 @@ public class EffectiveRoute {
         EffectiveRoute that = (EffectiveRoute) obj;
         return Objects.equals(this.routeId, that.routeId) && Objects.equals(this.destination, that.destination)
             && Objects.equals(this.nextHops, that.nextHops) && Objects.equals(this.isBlackhole, that.isBlackhole)
-            && Objects.equals(this.routeType, that.routeType);
+            && Objects.equals(this.routeType, that.routeType)
+            && Objects.equals(this.addressGroupId, that.addressGroupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(routeId, destination, nextHops, isBlackhole, routeType);
+        return Objects.hash(routeId, destination, nextHops, isBlackhole, routeType, addressGroupId);
     }
 
     @Override
@@ -167,6 +190,7 @@ public class EffectiveRoute {
         sb.append("    nextHops: ").append(toIndentedString(nextHops)).append("\n");
         sb.append("    isBlackhole: ").append(toIndentedString(isBlackhole)).append("\n");
         sb.append("    routeType: ").append(toIndentedString(routeType)).append("\n");
+        sb.append("    addressGroupId: ").append(toIndentedString(addressGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

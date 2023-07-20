@@ -1,6 +1,47 @@
 package com.huaweicloud.sdk.cloudpipeline.v2;
 
-import com.huaweicloud.sdk.cloudpipeline.v2.model.*;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.BatchShowPipelinesLatestStatusRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.BatchShowPipelinesLatestStatusResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.BatchShowPipelinesStatusRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.BatchShowPipelinesStatusResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.CreatePipelineByTemplateIdRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.CreatePipelineByTemplateIdResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.CreatePipelineByTemplateRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.CreatePipelineByTemplateResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.DeletePipelineRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.DeletePipelineResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipelineRunsRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipelineRunsResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipelineSimpleInfoRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipelineSimpleInfoResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipelineTemplatesRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipelineTemplatesResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipelinesRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipelinesResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipleineBuildResultRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListPipleineBuildResultResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListTemplatesRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ListTemplatesResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.RemovePipelineRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.RemovePipelineResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.RunPipelineRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.RunPipelineResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowInstanceStatusRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowInstanceStatusResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowPipelineRunDetailRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowPipelineRunDetailResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowPipelineTemplateDetailRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowPipelineTemplateDetailResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowPipleineStatusRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowPipleineStatusResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowTemplateDetailRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.ShowTemplateDetailResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.StartNewPipelineRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.StartNewPipelineResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.StopPipelineNewRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.StopPipelineNewResponse;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.StopPipelineRunRequest;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.StopPipelineRunResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -16,7 +57,8 @@ public class CloudPipelineAsyncClient {
     }
 
     public static ClientBuilder<CloudPipelineAsyncClient> newBuilder() {
-        return new ClientBuilder<>(CloudPipelineAsyncClient::new);
+        ClientBuilder<CloudPipelineAsyncClient> clientBuilder = new ClientBuilder<>(CloudPipelineAsyncClient::new);
+        return clientBuilder;
     }
 
     /**
