@@ -47,6 +47,10 @@ public class RocketMQRegion {
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://dms.cn-north-9.myhuaweicloud.com");
 
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://dms.la-south-2.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://dms.la-north-2.myhuaweicloud.com");
+
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://dms.ap-southeast-4.myhuaweicloud.com");
 
@@ -73,6 +77,8 @@ public class RocketMQRegion {
         map.put("af-south-1", AF_SOUTH_1);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("la-south-2", LA_SOUTH_2);
+        map.put("la-north-2", LA_NORTH_2);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("tr-west-1", TR_WEST_1);
         return Collections.unmodifiableMap(map);

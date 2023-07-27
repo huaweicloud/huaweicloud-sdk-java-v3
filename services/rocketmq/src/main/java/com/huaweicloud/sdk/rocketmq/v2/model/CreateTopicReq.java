@@ -121,7 +121,7 @@ public class CreateTopicReq {
     }
 
     /**
-     * 主题名称。
+     * 主题名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
      * @return name
      */
     public String getName() {
@@ -171,7 +171,7 @@ public class CreateTopicReq {
     }
 
     /**
-     * 队列数。
+     * 队列数，范围1~50。
      * @return queueNum
      */
     public BigDecimal getQueueNum() {

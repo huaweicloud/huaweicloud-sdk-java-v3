@@ -139,6 +139,8 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateKeywordsAlarmRuleRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateKeywordsAlarmRuleResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupResponse;
+import com.huaweicloud.sdk.lts.v2.model.UpdateLogStreamRequest;
+import com.huaweicloud.sdk.lts.v2.model.UpdateLogStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateNotificationTemplateRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateNotificationTemplateResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateSqlAlarmRuleRequest;
@@ -1914,6 +1916,36 @@ public class LtsClient {
     public SyncInvoker<UpdateLogGroupRequest, UpdateLogGroupResponse> updateLogGroupInvoker(
         UpdateLogGroupRequest request) {
         return new SyncInvoker<UpdateLogGroupRequest, UpdateLogGroupResponse>(request, LtsMeta.updateLogGroup,
+            hcClient);
+    }
+
+    /**
+     * 修改日志流
+     *
+     * 该接口用于修改指定日志流下的日志存储时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogStreamRequest 请求对象
+     * @return UpdateLogStreamResponse
+     */
+    public UpdateLogStreamResponse updateLogStream(UpdateLogStreamRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateLogStream);
+    }
+
+    /**
+     * 修改日志流
+     *
+     * 该接口用于修改指定日志流下的日志存储时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogStreamRequest 请求对象
+     * @return SyncInvoker<UpdateLogStreamRequest, UpdateLogStreamResponse>
+     */
+    public SyncInvoker<UpdateLogStreamRequest, UpdateLogStreamResponse> updateLogStreamInvoker(
+        UpdateLogStreamRequest request) {
+        return new SyncInvoker<UpdateLogStreamRequest, UpdateLogStreamResponse>(request, LtsMeta.updateLogStream,
             hcClient);
     }
 

@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -24,7 +27,7 @@ public class ShowConfigSettingResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurations")
 
-    private String configurations;
+    private List<ConfigBody> configurations = null;
 
     public ShowConfigSettingResponse withTaskId(String taskId) {
         this.taskId = taskId;
@@ -60,8 +63,24 @@ public class ShowConfigSettingResponse extends SdkResponse {
         this.migrateType = migrateType;
     }
 
-    public ShowConfigSettingResponse withConfigurations(String configurations) {
+    public ShowConfigSettingResponse withConfigurations(List<ConfigBody> configurations) {
         this.configurations = configurations;
+        return this;
+    }
+
+    public ShowConfigSettingResponse addConfigurationsItem(ConfigBody configurationsItem) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        this.configurations.add(configurationsItem);
+        return this;
+    }
+
+    public ShowConfigSettingResponse withConfigurations(Consumer<List<ConfigBody>> configurationsSetter) {
+        if (this.configurations == null) {
+            this.configurations = new ArrayList<>();
+        }
+        configurationsSetter.accept(this.configurations);
         return this;
     }
 
@@ -69,11 +88,11 @@ public class ShowConfigSettingResponse extends SdkResponse {
      * 配置项的具体配置信息
      * @return configurations
      */
-    public String getConfigurations() {
+    public List<ConfigBody> getConfigurations() {
         return configurations;
     }
 
-    public void setConfigurations(String configurations) {
+    public void setConfigurations(List<ConfigBody> configurations) {
         this.configurations = configurations;
     }
 

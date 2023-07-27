@@ -26,7 +26,7 @@ public class ProjectRepository {
     }
 
     /**
-     * 创建项目的UUID
+     * 项目ID，获取方式请参见[获取项目ID](codehub_api_0014.xml)。
      * @return projectUuid
      */
     public String getProjectUuid() {
@@ -43,7 +43,7 @@ public class ProjectRepository {
     }
 
     /**
-     * 创建仓库的UUID
+     * 仓库UUID
      * @return repositoryUuid
      */
     public String getRepositoryUuid() {

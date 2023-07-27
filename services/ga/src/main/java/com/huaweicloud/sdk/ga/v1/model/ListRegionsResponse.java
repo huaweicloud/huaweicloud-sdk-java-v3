@@ -15,46 +15,46 @@ import java.util.function.Consumer;
 public class ListRegionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "area_regions")
+    @JsonProperty(value = "regions")
 
-    private List<AreaRegion> areaRegions = null;
+    private List<Region> regions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
     private String requestId;
 
-    public ListRegionsResponse withAreaRegions(List<AreaRegion> areaRegions) {
-        this.areaRegions = areaRegions;
+    public ListRegionsResponse withRegions(List<Region> regions) {
+        this.regions = regions;
         return this;
     }
 
-    public ListRegionsResponse addAreaRegionsItem(AreaRegion areaRegionsItem) {
-        if (this.areaRegions == null) {
-            this.areaRegions = new ArrayList<>();
+    public ListRegionsResponse addRegionsItem(Region regionsItem) {
+        if (this.regions == null) {
+            this.regions = new ArrayList<>();
         }
-        this.areaRegions.add(areaRegionsItem);
+        this.regions.add(regionsItem);
         return this;
     }
 
-    public ListRegionsResponse withAreaRegions(Consumer<List<AreaRegion>> areaRegionsSetter) {
-        if (this.areaRegions == null) {
-            this.areaRegions = new ArrayList<>();
+    public ListRegionsResponse withRegions(Consumer<List<Region>> regionsSetter) {
+        if (this.regions == null) {
+            this.regions = new ArrayList<>();
         }
-        areaRegionsSetter.accept(this.areaRegions);
+        regionsSetter.accept(this.regions);
         return this;
     }
 
     /**
      * 区域列表。
-     * @return areaRegions
+     * @return regions
      */
-    public List<AreaRegion> getAreaRegions() {
-        return areaRegions;
+    public List<Region> getRegions() {
+        return regions;
     }
 
-    public void setAreaRegions(List<AreaRegion> areaRegions) {
-        this.areaRegions = areaRegions;
+    public void setRegions(List<Region> regions) {
+        this.regions = regions;
     }
 
     public ListRegionsResponse withRequestId(String requestId) {
@@ -83,19 +83,19 @@ public class ListRegionsResponse extends SdkResponse {
             return false;
         }
         ListRegionsResponse that = (ListRegionsResponse) obj;
-        return Objects.equals(this.areaRegions, that.areaRegions) && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.regions, that.regions) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(areaRegions, requestId);
+        return Objects.hash(regions, requestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRegionsResponse {\n");
-        sb.append("    areaRegions: ").append(toIndentedString(areaRegions)).append("\n");
+        sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();

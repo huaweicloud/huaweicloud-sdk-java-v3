@@ -21,6 +21,9 @@ import com.huaweicloud.sdk.iotda.v5.model.AddProduct;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddRuleReq;
+import com.huaweicloud.sdk.iotda.v5.model.AddTunnelDto;
+import com.huaweicloud.sdk.iotda.v5.model.AddTunnelRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AsyncDeviceCommandRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueResponse;
@@ -32,6 +35,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequestBody;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeResponse;
@@ -70,6 +75,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
@@ -98,6 +105,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoRequest;
@@ -145,6 +154,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceShadowRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceShadowResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
@@ -3490,6 +3501,179 @@ public class IoTDAMeta {
             f -> f.withMarshaller(UntagDeviceResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddTunnelRequest, AddTunnelResponse> addTunnel = genForaddTunnel();
+
+    private static HttpRequestDef<AddTunnelRequest, AddTunnelResponse> genForaddTunnel() {
+        // basic
+        HttpRequestDef.Builder<AddTunnelRequest, AddTunnelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddTunnelRequest.class, AddTunnelResponse.class)
+                .withName("AddTunnel")
+                .withUri("/v5/iot/{project_id}/tunnels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddTunnelRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AddTunnelDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddTunnelDto.class),
+            f -> f.withMarshaller(AddTunnelRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CloseDeviceTunnelRequest, CloseDeviceTunnelResponse> closeDeviceTunnel =
+        genForcloseDeviceTunnel();
+
+    private static HttpRequestDef<CloseDeviceTunnelRequest, CloseDeviceTunnelResponse> genForcloseDeviceTunnel() {
+        // basic
+        HttpRequestDef.Builder<CloseDeviceTunnelRequest, CloseDeviceTunnelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CloseDeviceTunnelRequest.class, CloseDeviceTunnelResponse.class)
+                .withName("CloseDeviceTunnel")
+                .withUri("/v5/iot/{project_id}/tunnels/{tunnel_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tunnel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloseDeviceTunnelRequest::getTunnelId, (req, v) -> {
+                req.setTunnelId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloseDeviceTunnelRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CloseDeviceTunnelResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDeviceTunnelRequest, DeleteDeviceTunnelResponse> deleteDeviceTunnel =
+        genFordeleteDeviceTunnel();
+
+    private static HttpRequestDef<DeleteDeviceTunnelRequest, DeleteDeviceTunnelResponse> genFordeleteDeviceTunnel() {
+        // basic
+        HttpRequestDef.Builder<DeleteDeviceTunnelRequest, DeleteDeviceTunnelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDeviceTunnelRequest.class, DeleteDeviceTunnelResponse.class)
+                .withName("DeleteDeviceTunnel")
+                .withUri("/v5/iot/{project_id}/tunnels/{tunnel_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tunnel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceTunnelRequest::getTunnelId, (req, v) -> {
+                req.setTunnelId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDeviceTunnelRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDeviceTunnelResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDeviceTunnelsRequest, ListDeviceTunnelsResponse> listDeviceTunnels =
+        genForlistDeviceTunnels();
+
+    private static HttpRequestDef<ListDeviceTunnelsRequest, ListDeviceTunnelsResponse> genForlistDeviceTunnels() {
+        // basic
+        HttpRequestDef.Builder<ListDeviceTunnelsRequest, ListDeviceTunnelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDeviceTunnelsRequest.class, ListDeviceTunnelsResponse.class)
+                .withName("ListDeviceTunnels")
+                .withUri("/v5/iot/{project_id}/tunnels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceTunnelsRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDeviceTunnelsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDeviceTunnelRequest, ShowDeviceTunnelResponse> showDeviceTunnel =
+        genForshowDeviceTunnel();
+
+    private static HttpRequestDef<ShowDeviceTunnelRequest, ShowDeviceTunnelResponse> genForshowDeviceTunnel() {
+        // basic
+        HttpRequestDef.Builder<ShowDeviceTunnelRequest, ShowDeviceTunnelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDeviceTunnelRequest.class, ShowDeviceTunnelResponse.class)
+                .withName("ShowDeviceTunnel")
+                .withUri("/v5/iot/{project_id}/tunnels/{tunnel_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tunnel_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceTunnelRequest::getTunnelId, (req, v) -> {
+                req.setTunnelId(v);
+            }));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeviceTunnelRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
 
         return builder.build();
     }

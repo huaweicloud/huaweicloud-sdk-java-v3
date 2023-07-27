@@ -26,6 +26,16 @@ public class VnicResp {
     private String deviceOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vtep")
+
+    private String vtep;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vni")
+
+    private String vni;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
@@ -34,6 +44,11 @@ public class VnicResp {
     @JsonProperty(value = "port_id")
 
     private String portId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port_profile")
+
+    private String portProfile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mac")
@@ -101,6 +116,40 @@ public class VnicResp {
         this.deviceOwner = deviceOwner;
     }
 
+    public VnicResp withVtep(String vtep) {
+        this.vtep = vtep;
+        return this;
+    }
+
+    /**
+     * - 功能说明：VTEP IP
+     * @return vtep
+     */
+    public String getVtep() {
+        return vtep;
+    }
+
+    public void setVtep(String vtep) {
+        this.vtep = vtep;
+    }
+
+    public VnicResp withVni(String vni) {
+        this.vni = vni;
+        return this;
+    }
+
+    /**
+     * - 功能说明：VXLAN ID
+     * @return vni
+     */
+    public String getVni() {
+        return vni;
+    }
+
+    public void setVni(String vni) {
+        this.vni = vni;
+    }
+
     public VnicResp withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -133,6 +182,23 @@ public class VnicResp {
 
     public void setPortId(String portId) {
         this.portId = portId;
+    }
+
+    public VnicResp withPortProfile(String portProfile) {
+        this.portProfile = portProfile;
+        return this;
+    }
+
+    /**
+     * - 功能说明：端口profile信息
+     * @return portProfile
+     */
+    public String getPortProfile() {
+        return portProfile;
+    }
+
+    public void setPortProfile(String portProfile) {
+        this.portProfile = portProfile;
     }
 
     public VnicResp withMac(String mac) {
@@ -197,14 +263,25 @@ public class VnicResp {
         VnicResp that = (VnicResp) obj;
         return Objects.equals(this.privateIpAddress, that.privateIpAddress)
             && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.deviceOwner, that.deviceOwner)
+            && Objects.equals(this.vtep, that.vtep) && Objects.equals(this.vni, that.vni)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.portId, that.portId)
-            && Objects.equals(this.mac, that.mac) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.instanceType, that.instanceType);
+            && Objects.equals(this.portProfile, that.portProfile) && Objects.equals(this.mac, that.mac)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(privateIpAddress, deviceId, deviceOwner, vpcId, portId, mac, instanceId, instanceType);
+        return Objects.hash(privateIpAddress,
+            deviceId,
+            deviceOwner,
+            vtep,
+            vni,
+            vpcId,
+            portId,
+            portProfile,
+            mac,
+            instanceId,
+            instanceType);
     }
 
     @Override
@@ -214,8 +291,11 @@ public class VnicResp {
         sb.append("    privateIpAddress: ").append(toIndentedString(privateIpAddress)).append("\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
+        sb.append("    vtep: ").append(toIndentedString(vtep)).append("\n");
+        sb.append("    vni: ").append(toIndentedString(vni)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
+        sb.append("    portProfile: ").append(toIndentedString(portProfile)).append("\n");
         sb.append("    mac: ").append(toIndentedString(mac)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");

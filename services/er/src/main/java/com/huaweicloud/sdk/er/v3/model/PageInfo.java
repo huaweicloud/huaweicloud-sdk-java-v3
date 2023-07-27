@@ -26,7 +26,7 @@ public class PageInfo {
     }
 
     /**
-     * 下一页的marker，值为资源的uuid，为空时表示最后一页
+     * 下一页的marker，为空时表示最后一页
      * @return nextMarker
      */
     public String getNextMarker() {

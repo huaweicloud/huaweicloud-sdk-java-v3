@@ -24,6 +24,12 @@ import com.huaweicloud.sdk.codehub.v3.model.AssociateIssuesResponse;
 import com.huaweicloud.sdk.codehub.v3.model.CreateCommitRequest;
 import com.huaweicloud.sdk.codehub.v3.model.CreateCommitRequestBody;
 import com.huaweicloud.sdk.codehub.v3.model.CreateCommitResponse;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionBodyDto;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionNoteDto;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionNoteRequest;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionNoteResponse;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionRequest;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionResponse;
 import com.huaweicloud.sdk.codehub.v3.model.CreateNewBranchRequest;
 import com.huaweicloud.sdk.codehub.v3.model.CreateNewBranchRequestBody;
 import com.huaweicloud.sdk.codehub.v3.model.CreateNewBranchResponse;
@@ -132,6 +138,8 @@ import com.huaweicloud.sdk.codehub.v3.model.ShowRepositoryNameExistResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ShowRepositoryStatisticsRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ShowRepositoryStatisticsRequestBody;
 import com.huaweicloud.sdk.codehub.v3.model.ShowRepositoryStatisticsResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ShowReviewSettingRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ShowReviewSettingResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ShowSingleCommitRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ShowSingleCommitResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticCommitRequest;
@@ -328,6 +336,123 @@ public class CodeHubMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowSingleCommitRequest::getStats, (req, v) -> {
                 req.setStats(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse> createMergeRequestDiscussion =
+        genForcreateMergeRequestDiscussion();
+
+    private static HttpRequestDef<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse> genForcreateMergeRequestDiscussion() {
+        // basic
+        HttpRequestDef.Builder<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateMergeRequestDiscussionRequest.class,
+                    CreateMergeRequestDiscussionResponse.class)
+                .withName("CreateMergeRequestDiscussion")
+                .withUri("/v2/repositories/{repository_id}/merge_requests/{merge_request_iid}/discussions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateMergeRequestDiscussionRequest::getRepositoryId, (req, v) -> {
+                req.setRepositoryId(v);
+            }));
+        builder.<Integer>withRequestField("merge_request_iid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateMergeRequestDiscussionRequest::getMergeRequestIid, (req, v) -> {
+                req.setMergeRequestIid(v);
+            }));
+        builder.<CreateMergeRequestDiscussionBodyDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMergeRequestDiscussionBodyDto.class),
+            f -> f.withMarshaller(CreateMergeRequestDiscussionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse> createMergeRequestDiscussionNote =
+        genForcreateMergeRequestDiscussionNote();
+
+    private static HttpRequestDef<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse> genForcreateMergeRequestDiscussionNote() {
+        // basic
+        HttpRequestDef.Builder<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateMergeRequestDiscussionNoteRequest.class,
+                    CreateMergeRequestDiscussionNoteResponse.class)
+                .withName("CreateMergeRequestDiscussionNote")
+                .withUri(
+                    "/v2/repositories/{repository_id}/merge_requests/{merge_request_iid}/discussions/{discussion_id}/notes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getRepositoryId, (req, v) -> {
+                req.setRepositoryId(v);
+            }));
+        builder.<Integer>withRequestField("merge_request_iid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getMergeRequestIid, (req, v) -> {
+                req.setMergeRequestIid(v);
+            }));
+        builder.<String>withRequestField("discussion_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getDiscussionId, (req, v) -> {
+                req.setDiscussionId(v);
+            }));
+        builder.<CreateMergeRequestDiscussionNoteDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMergeRequestDiscussionNoteDto.class),
+            f -> f.withMarshaller(CreateMergeRequestDiscussionNoteRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowReviewSettingRequest, ShowReviewSettingResponse> showReviewSetting =
+        genForshowReviewSetting();
+
+    private static HttpRequestDef<ShowReviewSettingRequest, ShowReviewSettingResponse> genForshowReviewSetting() {
+        // basic
+        HttpRequestDef.Builder<ShowReviewSettingRequest, ShowReviewSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReviewSettingRequest.class, ShowReviewSettingResponse.class)
+                .withName("ShowReviewSetting")
+                .withUri("/v2/repositories/{repository_id}/review_setting")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowReviewSettingRequest::getRepositoryId, (req, v) -> {
+                req.setRepositoryId(v);
             }));
 
         // response

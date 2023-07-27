@@ -50,7 +50,7 @@ public class TestPlanDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_day")
 
-    private String expireDay;
+    private Integer expireDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
@@ -201,7 +201,7 @@ public class TestPlanDetail {
         this.currentStage = currentStage;
     }
 
-    public TestPlanDetail withExpireDay(String expireDay) {
+    public TestPlanDetail withExpireDay(Integer expireDay) {
         this.expireDay = expireDay;
         return this;
     }
@@ -210,11 +210,11 @@ public class TestPlanDetail {
      * 获取超期时间,正值表示已超期
      * @return expireDay
      */
-    public String getExpireDay() {
+    public Integer getExpireDay() {
         return expireDay;
     }
 
-    public void setExpireDay(String expireDay) {
+    public void setExpireDay(Integer expireDay) {
         this.expireDay = expireDay;
     }
 

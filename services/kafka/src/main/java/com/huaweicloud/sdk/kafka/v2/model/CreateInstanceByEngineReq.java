@@ -98,7 +98,7 @@ public class CreateInstanceByEngineReq {
     private EngineEnum engine;
 
     /**
-     * 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
+     * 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7
      */
     public static final class EngineVersionEnum {
 
@@ -414,6 +414,16 @@ public class CreateInstanceByEngineReq {
     private RetentionPolicyEnum retentionPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_enable")
+
+    private Boolean diskEncryptedEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_key")
+
+    private String diskEncryptedKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connector_enable")
 
     private Boolean connectorEnable;
@@ -582,7 +592,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 消息引擎的版本。取值填写为：   - 1.1.0   - 2.3.0   - 2.7
+     * 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7
      * @return engineVersion
      */
     public EngineVersionEnum getEngineVersion() {
@@ -949,6 +959,40 @@ public class CreateInstanceByEngineReq {
         this.retentionPolicy = retentionPolicy;
     }
 
+    public CreateInstanceByEngineReq withDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启磁盘加密。
+     * @return diskEncryptedEnable
+     */
+    public Boolean getDiskEncryptedEnable() {
+        return diskEncryptedEnable;
+    }
+
+    public void setDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+    }
+
+    public CreateInstanceByEngineReq withDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+        return this;
+    }
+
+    /**
+     * 磁盘加密key，未开启磁盘加密时为空
+     * @return diskEncryptedKey
+     */
+    public String getDiskEncryptedKey() {
+        return diskEncryptedKey;
+    }
+
+    public void setDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+    }
+
     public CreateInstanceByEngineReq withConnectorEnable(Boolean connectorEnable) {
         this.connectorEnable = connectorEnable;
         return this;
@@ -1135,6 +1179,8 @@ public class CreateInstanceByEngineReq {
             && Objects.equals(this.kafkaSecurityProtocol, that.kafkaSecurityProtocol)
             && Objects.equals(this.saslEnabledMechanisms, that.saslEnabledMechanisms)
             && Objects.equals(this.retentionPolicy, that.retentionPolicy)
+            && Objects.equals(this.diskEncryptedEnable, that.diskEncryptedEnable)
+            && Objects.equals(this.diskEncryptedKey, that.diskEncryptedKey)
             && Objects.equals(this.connectorEnable, that.connectorEnable)
             && Objects.equals(this.enableAutoTopic, that.enableAutoTopic)
             && Objects.equals(this.storageSpecCode, that.storageSpecCode)
@@ -1168,6 +1214,8 @@ public class CreateInstanceByEngineReq {
             kafkaSecurityProtocol,
             saslEnabledMechanisms,
             retentionPolicy,
+            diskEncryptedEnable,
+            diskEncryptedKey,
             connectorEnable,
             enableAutoTopic,
             storageSpecCode,
@@ -1205,6 +1253,8 @@ public class CreateInstanceByEngineReq {
         sb.append("    kafkaSecurityProtocol: ").append(toIndentedString(kafkaSecurityProtocol)).append("\n");
         sb.append("    saslEnabledMechanisms: ").append(toIndentedString(saslEnabledMechanisms)).append("\n");
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
+        sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");
+        sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
         sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");
         sb.append("    enableAutoTopic: ").append(toIndentedString(enableAutoTopic)).append("\n");
         sb.append("    storageSpecCode: ").append(toIndentedString(storageSpecCode)).append("\n");

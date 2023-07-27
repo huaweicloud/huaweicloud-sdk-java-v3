@@ -113,6 +113,11 @@ public class VulInfo {
 
     private Long ignoredNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verify_num")
+
+    private Integer verifyNum;
+
     public VulInfo withVulName(String vulName) {
         this.vulName = vulName;
         return this;
@@ -522,6 +527,25 @@ public class VulInfo {
         this.ignoredNum = ignoredNum;
     }
 
+    public VulInfo withVerifyNum(Integer verifyNum) {
+        this.verifyNum = verifyNum;
+        return this;
+    }
+
+    /**
+     * 验证数量
+     * minimum: 0
+     * maximum: 1000000
+     * @return verifyNum
+     */
+    public Integer getVerifyNum() {
+        return verifyNum;
+    }
+
+    public void setVerifyNum(Integer verifyNum) {
+        this.verifyNum = verifyNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -542,7 +566,8 @@ public class VulInfo {
             && Objects.equals(this.cveList, that.cveList) && Objects.equals(this.patchUrl, that.patchUrl)
             && Objects.equals(this.repairPriority, that.repairPriority) && Objects.equals(this.hostsNum, that.hostsNum)
             && Objects.equals(this.repairSuccessNum, that.repairSuccessNum)
-            && Objects.equals(this.fixedNum, that.fixedNum) && Objects.equals(this.ignoredNum, that.ignoredNum);
+            && Objects.equals(this.fixedNum, that.fixedNum) && Objects.equals(this.ignoredNum, that.ignoredNum)
+            && Objects.equals(this.verifyNum, that.verifyNum);
     }
 
     @Override
@@ -566,7 +591,8 @@ public class VulInfo {
             hostsNum,
             repairSuccessNum,
             fixedNum,
-            ignoredNum);
+            ignoredNum,
+            verifyNum);
     }
 
     @Override
@@ -593,6 +619,7 @@ public class VulInfo {
         sb.append("    repairSuccessNum: ").append(toIndentedString(repairSuccessNum)).append("\n");
         sb.append("    fixedNum: ").append(toIndentedString(fixedNum)).append("\n");
         sb.append("    ignoredNum: ").append(toIndentedString(ignoredNum)).append("\n");
+        sb.append("    verifyNum: ").append(toIndentedString(verifyNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -76,7 +76,7 @@ public class CreateCustomRuleRequestBody {
     }
 
     /**
-     * 精准防护规则生效的起始时间戳（毫秒）。当time=true，才需要填写该参数。
+     * 精准防护规则生效的起始时间戳（秒）。当time=true，才需要填写该参数。
      * @return start
      */
     public Long getStart() {
@@ -93,7 +93,7 @@ public class CreateCustomRuleRequestBody {
     }
 
     /**
-     * 精准防护规则生效的终止时间戳（毫秒）。当time=true，才需要填写该参数。
+     * 精准防护规则生效的终止时间戳（秒）。当time=true，才需要填写该参数。
      * @return terminal
      */
     public Long getTerminal() {

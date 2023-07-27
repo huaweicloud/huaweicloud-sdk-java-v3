@@ -15,10 +15,74 @@ import java.util.Objects;
  */
 public class ListInstancesRequest {
 
+    /**
+     * 消息引擎。
+     */
+    public static final class EngineEnum {
+
+        /**
+         * Enum RELIABILITY for value: "reliability"
+         */
+        public static final EngineEnum RELIABILITY = new EngineEnum("reliability");
+
+        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EngineEnum> createStaticFields() {
+            Map<String, EngineEnum> map = new HashMap<>();
+            map.put("reliability", RELIABILITY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EngineEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EngineEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
+        }
+
+        public static EngineEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EngineEnum) {
+                return this.value.equals(((EngineEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    private String engine;
+    private EngineEnum engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -300,20 +364,20 @@ public class ListInstancesRequest {
 
     private Integer offset;
 
-    public ListInstancesRequest withEngine(String engine) {
+    public ListInstancesRequest withEngine(EngineEnum engine) {
         this.engine = engine;
         return this;
     }
 
     /**
-     * 消息引擎：reliability。
+     * 消息引擎。
      * @return engine
      */
-    public String getEngine() {
+    public EngineEnum getEngine() {
         return engine;
     }
 
-    public void setEngine(String engine) {
+    public void setEngine(EngineEnum engine) {
         this.engine = engine;
     }
 

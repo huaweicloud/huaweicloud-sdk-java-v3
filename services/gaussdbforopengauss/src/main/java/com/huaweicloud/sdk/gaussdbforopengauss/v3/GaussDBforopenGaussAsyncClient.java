@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesRequest;
@@ -643,6 +645,36 @@ public class GaussDBforopenGaussAsyncClient {
         DeleteManualBackupRequest request) {
         return new AsyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request,
             GaussDBforopenGaussMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 获取备份下载链接
+     *
+     * 获取备份下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadBackupRequest 请求对象
+     * @return CompletableFuture<DownloadBackupResponse>
+     */
+    public CompletableFuture<DownloadBackupResponse> downloadBackupAsync(DownloadBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.downloadBackup);
+    }
+
+    /**
+     * 获取备份下载链接
+     *
+     * 获取备份下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadBackupRequest 请求对象
+     * @return AsyncInvoker<DownloadBackupRequest, DownloadBackupResponse>
+     */
+    public AsyncInvoker<DownloadBackupRequest, DownloadBackupResponse> downloadBackupAsyncInvoker(
+        DownloadBackupRequest request) {
+        return new AsyncInvoker<DownloadBackupRequest, DownloadBackupResponse>(request,
+            GaussDBforopenGaussMeta.downloadBackup, hcClient);
     }
 
     /**

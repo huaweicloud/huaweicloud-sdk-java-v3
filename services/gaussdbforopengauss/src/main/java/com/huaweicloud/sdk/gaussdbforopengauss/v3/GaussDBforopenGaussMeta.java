@@ -43,6 +43,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenDatabaseForCreation;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussDatabaseSchemaReq;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussGrantRequest;
@@ -740,6 +742,38 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteManualBackupRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadBackupRequest, DownloadBackupResponse> downloadBackup =
+        genFordownloadBackup();
+
+    private static HttpRequestDef<DownloadBackupRequest, DownloadBackupResponse> genFordownloadBackup() {
+        // basic
+        HttpRequestDef.Builder<DownloadBackupRequest, DownloadBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadBackupRequest.class, DownloadBackupResponse.class)
+                .withName("DownloadBackup")
+                .withUri("/v3/{project_id}/backup-files")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("backup_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadBackupRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadBackupRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

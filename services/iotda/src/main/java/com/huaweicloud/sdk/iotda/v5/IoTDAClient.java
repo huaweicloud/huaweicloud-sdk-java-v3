@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.iotda.v5.model.AddDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddTunnelRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BatchShowQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageRequest;
@@ -21,6 +23,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAsyncCommandRequest;
@@ -55,6 +59,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
@@ -79,6 +85,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceGroupsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceMessagesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoRequest;
@@ -119,6 +127,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceShadowRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceShadowResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ShowDeviceTunnelResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ShowDevicesInGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ShowOtaPackageRequest;
@@ -2796,6 +2806,154 @@ public class IoTDAClient {
      */
     public SyncInvoker<UntagDeviceRequest, UntagDeviceResponse> untagDeviceInvoker(UntagDeviceRequest request) {
         return new SyncInvoker<UntagDeviceRequest, UntagDeviceResponse>(request, IoTDAMeta.untagDevice, hcClient);
+    }
+
+    /**
+     * 创建设备隧道
+     *
+     * 创建设备隧道接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddTunnelRequest 请求对象
+     * @return AddTunnelResponse
+     */
+    public AddTunnelResponse addTunnel(AddTunnelRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.addTunnel);
+    }
+
+    /**
+     * 创建设备隧道
+     *
+     * 创建设备隧道接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddTunnelRequest 请求对象
+     * @return SyncInvoker<AddTunnelRequest, AddTunnelResponse>
+     */
+    public SyncInvoker<AddTunnelRequest, AddTunnelResponse> addTunnelInvoker(AddTunnelRequest request) {
+        return new SyncInvoker<AddTunnelRequest, AddTunnelResponse>(request, IoTDAMeta.addTunnel, hcClient);
+    }
+
+    /**
+     * 关闭设备隧道
+     *
+     * 关闭设备隧道接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CloseDeviceTunnelRequest 请求对象
+     * @return CloseDeviceTunnelResponse
+     */
+    public CloseDeviceTunnelResponse closeDeviceTunnel(CloseDeviceTunnelRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.closeDeviceTunnel);
+    }
+
+    /**
+     * 关闭设备隧道
+     *
+     * 关闭设备隧道接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CloseDeviceTunnelRequest 请求对象
+     * @return SyncInvoker<CloseDeviceTunnelRequest, CloseDeviceTunnelResponse>
+     */
+    public SyncInvoker<CloseDeviceTunnelRequest, CloseDeviceTunnelResponse> closeDeviceTunnelInvoker(
+        CloseDeviceTunnelRequest request) {
+        return new SyncInvoker<CloseDeviceTunnelRequest, CloseDeviceTunnelResponse>(request,
+            IoTDAMeta.closeDeviceTunnel, hcClient);
+    }
+
+    /**
+     * 删除设备隧道
+     *
+     * 删除设备隧道接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDeviceTunnelRequest 请求对象
+     * @return DeleteDeviceTunnelResponse
+     */
+    public DeleteDeviceTunnelResponse deleteDeviceTunnel(DeleteDeviceTunnelRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.deleteDeviceTunnel);
+    }
+
+    /**
+     * 删除设备隧道
+     *
+     * 删除设备隧道接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDeviceTunnelRequest 请求对象
+     * @return SyncInvoker<DeleteDeviceTunnelRequest, DeleteDeviceTunnelResponse>
+     */
+    public SyncInvoker<DeleteDeviceTunnelRequest, DeleteDeviceTunnelResponse> deleteDeviceTunnelInvoker(
+        DeleteDeviceTunnelRequest request) {
+        return new SyncInvoker<DeleteDeviceTunnelRequest, DeleteDeviceTunnelResponse>(request,
+            IoTDAMeta.deleteDeviceTunnel, hcClient);
+    }
+
+    /**
+     * 查询设备所有隧道
+     *
+     * 查询设备所有隧道接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDeviceTunnelsRequest 请求对象
+     * @return ListDeviceTunnelsResponse
+     */
+    public ListDeviceTunnelsResponse listDeviceTunnels(ListDeviceTunnelsRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.listDeviceTunnels);
+    }
+
+    /**
+     * 查询设备所有隧道
+     *
+     * 查询设备所有隧道接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDeviceTunnelsRequest 请求对象
+     * @return SyncInvoker<ListDeviceTunnelsRequest, ListDeviceTunnelsResponse>
+     */
+    public SyncInvoker<ListDeviceTunnelsRequest, ListDeviceTunnelsResponse> listDeviceTunnelsInvoker(
+        ListDeviceTunnelsRequest request) {
+        return new SyncInvoker<ListDeviceTunnelsRequest, ListDeviceTunnelsResponse>(request,
+            IoTDAMeta.listDeviceTunnels, hcClient);
+    }
+
+    /**
+     * 查询设备隧道
+     *
+     * 查询设备隧道信息接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDeviceTunnelRequest 请求对象
+     * @return ShowDeviceTunnelResponse
+     */
+    public ShowDeviceTunnelResponse showDeviceTunnel(ShowDeviceTunnelRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.showDeviceTunnel);
+    }
+
+    /**
+     * 查询设备隧道
+     *
+     * 查询设备隧道信息接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDeviceTunnelRequest 请求对象
+     * @return SyncInvoker<ShowDeviceTunnelRequest, ShowDeviceTunnelResponse>
+     */
+    public SyncInvoker<ShowDeviceTunnelRequest, ShowDeviceTunnelResponse> showDeviceTunnelInvoker(
+        ShowDeviceTunnelRequest request) {
+        return new SyncInvoker<ShowDeviceTunnelRequest, ShowDeviceTunnelResponse>(request, IoTDAMeta.showDeviceTunnel,
+            hcClient);
     }
 
 }

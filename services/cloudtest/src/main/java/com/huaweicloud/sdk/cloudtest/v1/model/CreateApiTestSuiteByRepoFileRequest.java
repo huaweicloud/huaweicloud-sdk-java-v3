@@ -27,7 +27,7 @@ public class CreateApiTestSuiteByRepoFileRequest {
     }
 
     /**
-     * 项目ID
+     * 项目ID，固定长度32位字符（字母和数字）。
      * @return projectId
      */
     public String getProjectId() {

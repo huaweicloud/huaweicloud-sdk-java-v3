@@ -20,12 +20,22 @@ import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestSuitByRepoFileInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.GenerateReportInfo;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListBranchesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListBranchesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListEnvironmentsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListEnvironmentsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseHistoriesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseHistoriesRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCaseHistoriesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.RunTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ServiceRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowApiTestcaseHistoriesRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowApiTestcaseHistoriesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowIssuesByPlanIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowIssuesByPlanIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanJournalsRequest;
@@ -248,6 +258,129 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListBranchesRequest, ListBranchesResponse> listBranches = genForlistBranches();
+
+    private static HttpRequestDef<ListBranchesRequest, ListBranchesResponse> genForlistBranches() {
+        // basic
+        HttpRequestDef.Builder<ListBranchesRequest, ListBranchesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBranchesRequest.class, ListBranchesResponse.class)
+                .withName("ListBranches")
+                .withUri("/v1/{project_id}/branches")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBranchesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<ListBranchesRequest.SortFieldEnum>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBranchesRequest.SortFieldEnum.class),
+            f -> f.withMarshaller(ListBranchesRequest::getSortField, (req, v) -> {
+                req.setSortField(v);
+            }));
+        builder.<ListBranchesRequest.SortTypeEnum>withRequestField("sort_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBranchesRequest.SortTypeEnum.class),
+            f -> f.withMarshaller(ListBranchesRequest::getSortType, (req, v) -> {
+                req.setSortType(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBranchesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBranchesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTestCaseHistoriesRequest, ListTestCaseHistoriesResponse> listTestCaseHistories =
+        genForlistTestCaseHistories();
+
+    private static HttpRequestDef<ListTestCaseHistoriesRequest, ListTestCaseHistoriesResponse> genForlistTestCaseHistories() {
+        // basic
+        HttpRequestDef.Builder<ListTestCaseHistoriesRequest, ListTestCaseHistoriesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListTestCaseHistoriesRequest.class, ListTestCaseHistoriesResponse.class)
+            .withName("ListTestCaseHistories")
+            .withUri("/v1/{project_id}/testcases/{testcase_id}/histories/batch-query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTestCaseHistoriesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("testcase_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTestCaseHistoriesRequest::getTestcaseId, (req, v) -> {
+                req.setTestcaseId(v);
+            }));
+        builder.<ListTestCaseHistoriesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTestCaseHistoriesRequestBody.class),
+            f -> f.withMarshaller(ListTestCaseHistoriesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTestCasesRequest, ListTestCasesResponse> listTestCases =
+        genForlistTestCases();
+
+    private static HttpRequestDef<ListTestCasesRequest, ListTestCasesResponse> genForlistTestCases() {
+        // basic
+        HttpRequestDef.Builder<ListTestCasesRequest, ListTestCasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTestCasesRequest.class, ListTestCasesResponse.class)
+                .withName("ListTestCases")
+                .withUri("/v1/{project_id}/testcases/batch-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTestCasesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<ListTestCasesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTestCasesRequestBody.class),
+            f -> f.withMarshaller(ListTestCasesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunTestCaseRequest, RunTestCaseResponse> runTestCase = genForrunTestCase();
 
     private static HttpRequestDef<RunTestCaseRequest, RunTestCaseResponse> genForrunTestCase() {
@@ -272,6 +405,60 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(RunTestCaseRequestBody.class),
             f -> f.withMarshaller(RunTestCaseRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApiTestcaseHistoriesRequest, ShowApiTestcaseHistoriesResponse> showApiTestcaseHistories =
+        genForshowApiTestcaseHistories();
+
+    private static HttpRequestDef<ShowApiTestcaseHistoriesRequest, ShowApiTestcaseHistoriesResponse> genForshowApiTestcaseHistories() {
+        // basic
+        HttpRequestDef.Builder<ShowApiTestcaseHistoriesRequest, ShowApiTestcaseHistoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowApiTestcaseHistoriesRequest.class, ShowApiTestcaseHistoriesResponse.class)
+                .withName("ShowApiTestcaseHistories")
+                .withUri("/v1/{project_id}/api-testcases/{testcase_id}/execute-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("testcase_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApiTestcaseHistoriesRequest::getTestcaseId, (req, v) -> {
+                req.setTestcaseId(v);
+            }));
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApiTestcaseHistoriesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowApiTestcaseHistoriesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowApiTestcaseHistoriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("plan_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApiTestcaseHistoriesRequest::getPlanId, (req, v) -> {
+                req.setPlanId(v);
             }));
 
         // response

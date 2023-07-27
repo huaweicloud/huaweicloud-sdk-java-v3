@@ -31,7 +31,7 @@ public class GetProductTemplatesRequest {
     }
 
     /**
-     * 项目ID
+     * 项目ID，获取方式请参见[获取项目ID](codehub_api_0014.xml)。
      * @return projectUuid
      */
     public String getProjectUuid() {

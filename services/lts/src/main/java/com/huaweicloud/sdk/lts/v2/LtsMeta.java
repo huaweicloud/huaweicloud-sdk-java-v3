@@ -183,6 +183,9 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateKeywordsAlarmRuleResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupParams;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupResponse;
+import com.huaweicloud.sdk.lts.v2.model.UpdateLogStreamParams;
+import com.huaweicloud.sdk.lts.v2.model.UpdateLogStreamRequest;
+import com.huaweicloud.sdk.lts.v2.model.UpdateLogStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateNotificationTemplateRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateNotificationTemplateResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateSqlAlarmRuleRequest;
@@ -1993,6 +1996,45 @@ public class LtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLogGroupParams.class),
             f -> f.withMarshaller(UpdateLogGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLogStreamRequest, UpdateLogStreamResponse> updateLogStream =
+        genForupdateLogStream();
+
+    private static HttpRequestDef<UpdateLogStreamRequest, UpdateLogStreamResponse> genForupdateLogStream() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogStreamRequest, UpdateLogStreamResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLogStreamRequest.class, UpdateLogStreamResponse.class)
+                .withName("UpdateLogStream")
+                .withUri("/v2/{project_id}/groups/{log_group_id}/streams_ttl/{log_stream_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("log_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogStreamRequest::getLogGroupId, (req, v) -> {
+                req.setLogGroupId(v);
+            }));
+        builder.<String>withRequestField("log_stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogStreamRequest::getLogStreamId, (req, v) -> {
+                req.setLogStreamId(v);
+            }));
+        builder.<UpdateLogStreamParams>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLogStreamParams.class),
+            f -> f.withMarshaller(UpdateLogStreamRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

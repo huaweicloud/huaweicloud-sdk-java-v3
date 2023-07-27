@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListAppliedHistoriesRequest;
@@ -636,6 +638,36 @@ public class GaussDBforopenGaussClient {
         DeleteManualBackupRequest request) {
         return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request,
             GaussDBforopenGaussMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 获取备份下载链接
+     *
+     * 获取备份下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadBackupRequest 请求对象
+     * @return DownloadBackupResponse
+     */
+    public DownloadBackupResponse downloadBackup(DownloadBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.downloadBackup);
+    }
+
+    /**
+     * 获取备份下载链接
+     *
+     * 获取备份下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadBackupRequest 请求对象
+     * @return SyncInvoker<DownloadBackupRequest, DownloadBackupResponse>
+     */
+    public SyncInvoker<DownloadBackupRequest, DownloadBackupResponse> downloadBackupInvoker(
+        DownloadBackupRequest request) {
+        return new SyncInvoker<DownloadBackupRequest, DownloadBackupResponse>(request,
+            GaussDBforopenGaussMeta.downloadBackup, hcClient);
     }
 
     /**

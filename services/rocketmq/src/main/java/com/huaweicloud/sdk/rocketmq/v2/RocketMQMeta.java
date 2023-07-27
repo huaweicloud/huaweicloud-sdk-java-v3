@@ -728,10 +728,10 @@ public class RocketMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("engine",
+        builder.<ListInstancesRequest.EngineEnum>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListInstancesRequest.EngineEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));
@@ -1500,10 +1500,10 @@ public class RocketMQMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("engine",
+        builder.<ValidateConsumedMessageRequest.EngineEnum>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ValidateConsumedMessageRequest.EngineEnum.class),
             f -> f.withMarshaller(ValidateConsumedMessageRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             }));

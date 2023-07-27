@@ -172,7 +172,7 @@ public class RepoInfoV2 {
     }
 
     /**
-     * 仓库组名(克隆地址中域名后面项目名前的一段 示例：git@repo.alpha.devcloud.inhuawei.com:Demo00228/testword.git  组名：Demo00228 )
+     * 仓库组名(克隆地址中域名后面仓库名前的一段 示例：git@repo.alpha.devcloud.inhuawei.com:Demo00228/testword.git  组名：Demo00228 )
      * @return groupName
      */
     public String getGroupName() {
@@ -274,7 +274,7 @@ public class RepoInfoV2 {
     }
 
     /**
-     * 项目的uuid
+     * 项目ID，获取方式请参见[获取项目ID](codehub_api_0014.xml)。
      * @return projectUuid
      */
     public String getProjectUuid() {

@@ -18,6 +18,10 @@ import com.huaweicloud.sdk.codehub.v3.model.AssociateIssuesRequest;
 import com.huaweicloud.sdk.codehub.v3.model.AssociateIssuesResponse;
 import com.huaweicloud.sdk.codehub.v3.model.CreateCommitRequest;
 import com.huaweicloud.sdk.codehub.v3.model.CreateCommitResponse;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionNoteRequest;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionNoteResponse;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionRequest;
+import com.huaweicloud.sdk.codehub.v3.model.CreateMergeRequestDiscussionResponse;
 import com.huaweicloud.sdk.codehub.v3.model.CreateNewBranchRequest;
 import com.huaweicloud.sdk.codehub.v3.model.CreateNewBranchResponse;
 import com.huaweicloud.sdk.codehub.v3.model.CreateProjectAndRepositoriesRequest;
@@ -114,6 +118,8 @@ import com.huaweicloud.sdk.codehub.v3.model.ShowRepositoryNameExistRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ShowRepositoryNameExistResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ShowRepositoryStatisticsRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ShowRepositoryStatisticsResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ShowReviewSettingRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ShowReviewSettingResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ShowSingleCommitRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ShowSingleCommitResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticCommitRequest;
@@ -260,6 +266,98 @@ public class CodeHubAsyncClient {
         ShowSingleCommitRequest request) {
         return new AsyncInvoker<ShowSingleCommitRequest, ShowSingleCommitResponse>(request,
             CodeHubMeta.showSingleCommit, hcClient);
+    }
+
+    /**
+     * 创建MR检视意见
+     *
+     * 创建MR检视意见
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateMergeRequestDiscussionRequest 请求对象
+     * @return CompletableFuture<CreateMergeRequestDiscussionResponse>
+     */
+    public CompletableFuture<CreateMergeRequestDiscussionResponse> createMergeRequestDiscussionAsync(
+        CreateMergeRequestDiscussionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.createMergeRequestDiscussion);
+    }
+
+    /**
+     * 创建MR检视意见
+     *
+     * 创建MR检视意见
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateMergeRequestDiscussionRequest 请求对象
+     * @return AsyncInvoker<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse>
+     */
+    public AsyncInvoker<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse> createMergeRequestDiscussionAsyncInvoker(
+        CreateMergeRequestDiscussionRequest request) {
+        return new AsyncInvoker<CreateMergeRequestDiscussionRequest, CreateMergeRequestDiscussionResponse>(request,
+            CodeHubMeta.createMergeRequestDiscussion, hcClient);
+    }
+
+    /**
+     * 回复MR检视意见
+     *
+     * 回复MR检视意见
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateMergeRequestDiscussionNoteRequest 请求对象
+     * @return CompletableFuture<CreateMergeRequestDiscussionNoteResponse>
+     */
+    public CompletableFuture<CreateMergeRequestDiscussionNoteResponse> createMergeRequestDiscussionNoteAsync(
+        CreateMergeRequestDiscussionNoteRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.createMergeRequestDiscussionNote);
+    }
+
+    /**
+     * 回复MR检视意见
+     *
+     * 回复MR检视意见
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateMergeRequestDiscussionNoteRequest 请求对象
+     * @return AsyncInvoker<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse>
+     */
+    public AsyncInvoker<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse> createMergeRequestDiscussionNoteAsyncInvoker(
+        CreateMergeRequestDiscussionNoteRequest request) {
+        return new AsyncInvoker<CreateMergeRequestDiscussionNoteRequest, CreateMergeRequestDiscussionNoteResponse>(
+            request, CodeHubMeta.createMergeRequestDiscussionNote, hcClient);
+    }
+
+    /**
+     * 获取检视意见设置
+     *
+     * 获取检视意见设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReviewSettingRequest 请求对象
+     * @return CompletableFuture<ShowReviewSettingResponse>
+     */
+    public CompletableFuture<ShowReviewSettingResponse> showReviewSettingAsync(ShowReviewSettingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeHubMeta.showReviewSetting);
+    }
+
+    /**
+     * 获取检视意见设置
+     *
+     * 获取检视意见设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReviewSettingRequest 请求对象
+     * @return AsyncInvoker<ShowReviewSettingRequest, ShowReviewSettingResponse>
+     */
+    public AsyncInvoker<ShowReviewSettingRequest, ShowReviewSettingResponse> showReviewSettingAsyncInvoker(
+        ShowReviewSettingRequest request) {
+        return new AsyncInvoker<ShowReviewSettingRequest, ShowReviewSettingResponse>(request,
+            CodeHubMeta.showReviewSetting, hcClient);
     }
 
     /**
@@ -415,7 +513,7 @@ public class CodeHubAsyncClient {
     /**
      * 校验指定项目下的仓库名
      *
-     * 一般创建仓库时调用。通过传入项目uuid,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
+     * 一般创建仓库时调用。通过传入项目ID，获取方式请参见[获取项目ID](codehub_api_0014.xml)。,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -430,7 +528,7 @@ public class CodeHubAsyncClient {
     /**
      * 校验指定项目下的仓库名
      *
-     * 一般创建仓库时调用。通过传入项目uuid,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
+     * 一般创建仓库时调用。通过传入项目ID，获取方式请参见[获取项目ID](codehub_api_0014.xml)。,仓库名，来判断仓库是否重名。仓库存在result:false,仓库不存在result:true。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

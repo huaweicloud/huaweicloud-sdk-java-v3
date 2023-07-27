@@ -1766,7 +1766,7 @@ public class HssMeta {
         // requests
         builder.<String>withRequestField("host_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getHostId, (req, v) -> {
                 req.setHostId(v);
