@@ -31,6 +31,11 @@ public class ActionOnComponentSpec {
 
     private ResourceLimitForUpgrade resourceLimit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "build")
+
+    private ActionOnComponentBuild build;
+
     public ActionOnComponentSpec withSnapshotIndex(Integer snapshotIndex) {
         this.snapshotIndex = snapshotIndex;
         return this;
@@ -117,6 +122,32 @@ public class ActionOnComponentSpec {
         this.resourceLimit = resourceLimit;
     }
 
+    public ActionOnComponentSpec withBuild(ActionOnComponentBuild build) {
+        this.build = build;
+        return this;
+    }
+
+    public ActionOnComponentSpec withBuild(Consumer<ActionOnComponentBuild> buildSetter) {
+        if (this.build == null) {
+            this.build = new ActionOnComponentBuild();
+            buildSetter.accept(this.build);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get build
+     * @return build
+     */
+    public ActionOnComponentBuild getBuild() {
+        return build;
+    }
+
+    public void setBuild(ActionOnComponentBuild build) {
+        this.build = build;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +158,13 @@ public class ActionOnComponentSpec {
         }
         ActionOnComponentSpec that = (ActionOnComponentSpec) obj;
         return Objects.equals(this.snapshotIndex, that.snapshotIndex) && Objects.equals(this.replica, that.replica)
-            && Objects.equals(this.source, that.source) && Objects.equals(this.resourceLimit, that.resourceLimit);
+            && Objects.equals(this.source, that.source) && Objects.equals(this.resourceLimit, that.resourceLimit)
+            && Objects.equals(this.build, that.build);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(snapshotIndex, replica, source, resourceLimit);
+        return Objects.hash(snapshotIndex, replica, source, resourceLimit, build);
     }
 
     @Override
@@ -143,6 +175,7 @@ public class ActionOnComponentSpec {
         sb.append("    replica: ").append(toIndentedString(replica)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    resourceLimit: ").append(toIndentedString(resourceLimit)).append("\n");
+        sb.append("    build: ").append(toIndentedString(build)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -36,7 +36,7 @@ public class ListAlarmTemplatesRequest {
     private String dimName;
 
     /**
-     * 模板类型(system代表默认自定义模板，custom代表系统模板),不传自定义和系统均需返回
+     * 模板类型(custom代表默认自定义模板，system代表系统模板),不传自定义和系统均需返回
      */
     public static final class TemplateTypeEnum {
 
@@ -193,7 +193,7 @@ public class ListAlarmTemplatesRequest {
     }
 
     /**
-     * 模板类型(system代表默认自定义模板，custom代表系统模板),不传自定义和系统均需返回
+     * 模板类型(custom代表默认自定义模板，system代表系统模板),不传自定义和系统均需返回
      * @return templateType
      */
     public TemplateTypeEnum getTemplateType() {

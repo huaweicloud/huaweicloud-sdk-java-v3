@@ -71,7 +71,7 @@ public class DesktopDetailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroup> securityGroups = null;
+    private List<SecurityGroupInfo> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_status")
@@ -461,12 +461,12 @@ public class DesktopDetailInfo {
         this.created = created;
     }
 
-    public DesktopDetailInfo withSecurityGroups(List<SecurityGroup> securityGroups) {
+    public DesktopDetailInfo withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public DesktopDetailInfo addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+    public DesktopDetailInfo addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -474,7 +474,7 @@ public class DesktopDetailInfo {
         return this;
     }
 
-    public DesktopDetailInfo withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
+    public DesktopDetailInfo withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -486,11 +486,11 @@ public class DesktopDetailInfo {
      * 桌面安全组。
      * @return securityGroups
      */
-    public List<SecurityGroup> getSecurityGroups() {
+    public List<SecurityGroupInfo> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

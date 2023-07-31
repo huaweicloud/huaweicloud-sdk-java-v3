@@ -978,9 +978,9 @@ public class CaeClient {
     }
 
     /**
-     * 创建定时启停任务
+     * 创建定时启停规则
      *
-     * 创建定时启停任务。
+     * 创建定时启停规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -992,9 +992,9 @@ public class CaeClient {
     }
 
     /**
-     * 创建定时启停任务
+     * 创建定时启停规则
      *
-     * 创建定时启停任务。
+     * 创建定时启停规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

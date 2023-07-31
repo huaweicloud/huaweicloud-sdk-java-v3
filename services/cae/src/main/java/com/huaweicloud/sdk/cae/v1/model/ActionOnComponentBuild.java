@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 /**
  * 构建信息。
  */
-public class Build {
+public class ActionOnComponentBuild {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "archive")
@@ -23,12 +23,12 @@ public class Build {
 
     private Map<String, String> parameters = null;
 
-    public Build withArchive(Archive archive) {
+    public ActionOnComponentBuild withArchive(Archive archive) {
         this.archive = archive;
         return this;
     }
 
-    public Build withArchive(Consumer<Archive> archiveSetter) {
+    public ActionOnComponentBuild withArchive(Consumer<Archive> archiveSetter) {
         if (this.archive == null) {
             this.archive = new Archive();
             archiveSetter.accept(this.archive);
@@ -49,12 +49,12 @@ public class Build {
         this.archive = archive;
     }
 
-    public Build withParameters(Map<String, String> parameters) {
+    public ActionOnComponentBuild withParameters(Map<String, String> parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    public Build putParametersItem(String key, String parametersItem) {
+    public ActionOnComponentBuild putParametersItem(String key, String parametersItem) {
         if (this.parameters == null) {
             this.parameters = new HashMap<>();
         }
@@ -62,7 +62,7 @@ public class Build {
         return this;
     }
 
-    public Build withParameters(Consumer<Map<String, String>> parametersSetter) {
+    public ActionOnComponentBuild withParameters(Consumer<Map<String, String>> parametersSetter) {
         if (this.parameters == null) {
             this.parameters = new HashMap<>();
         }
@@ -90,7 +90,7 @@ public class Build {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Build that = (Build) obj;
+        ActionOnComponentBuild that = (ActionOnComponentBuild) obj;
         return Objects.equals(this.archive, that.archive) && Objects.equals(this.parameters, that.parameters);
     }
 
@@ -102,7 +102,7 @@ public class Build {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Build {\n");
+        sb.append("class ActionOnComponentBuild {\n");
         sb.append("    archive: ").append(toIndentedString(archive)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("}");

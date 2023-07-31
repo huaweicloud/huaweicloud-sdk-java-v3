@@ -41,7 +41,7 @@ public class ListResourceGroupsRequest {
     private Integer limit;
 
     /**
-     * 资源分组创建方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型
+     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型
      */
     public static final class TypeEnum {
 
@@ -216,7 +216,7 @@ public class ListResourceGroupsRequest {
     }
 
     /**
-     * 资源分组创建方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型
+     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型
      * @return type
      */
     public TypeEnum getType() {

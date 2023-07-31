@@ -41,7 +41,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     private String enterpriseProjectId;
 
     /**
-     * 资源分组创建方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加）
+     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加）
      */
     public static final class TypeEnum {
 
@@ -205,7 +205,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 资源分组创建方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加）
+     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加）
      * @return type
      */
     public TypeEnum getType() {
@@ -271,7 +271,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 标签动态匹配时的关联标签,type为TAG时必传
+     * 标签动态匹配时的关联标签,type为TAG时该字段不为空
      * @return tags
      */
     public List<ResourceGroupTagRelation> getTags() {

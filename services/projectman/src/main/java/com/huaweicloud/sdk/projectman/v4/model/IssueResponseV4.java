@@ -114,6 +114,11 @@ public class IssueResponseV4 {
     private IssueItemSfV4Priority priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order")
+
+    private IssueResponseV4Order order;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
 
     private IssueItemSfV4Severity severity;
@@ -122,6 +127,21 @@ public class IssueResponseV4 {
     @JsonProperty(value = "status")
 
     private IssueItemSfV4Status status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "release_dev")
+
+    private String releaseDev;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "find_release_dev")
+
+    private String findReleaseDev;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "env")
+
+    private IssueResponseV4Env env;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker")
@@ -607,6 +627,32 @@ public class IssueResponseV4 {
         this.priority = priority;
     }
 
+    public IssueResponseV4 withOrder(IssueResponseV4Order order) {
+        this.order = order;
+        return this;
+    }
+
+    public IssueResponseV4 withOrder(Consumer<IssueResponseV4Order> orderSetter) {
+        if (this.order == null) {
+            this.order = new IssueResponseV4Order();
+            orderSetter.accept(this.order);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get order
+     * @return order
+     */
+    public IssueResponseV4Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(IssueResponseV4Order order) {
+        this.order = order;
+    }
+
     public IssueResponseV4 withSeverity(IssueItemSfV4Severity severity) {
         this.severity = severity;
         return this;
@@ -657,6 +703,66 @@ public class IssueResponseV4 {
 
     public void setStatus(IssueItemSfV4Status status) {
         this.status = status;
+    }
+
+    public IssueResponseV4 withReleaseDev(String releaseDev) {
+        this.releaseDev = releaseDev;
+        return this;
+    }
+
+    /**
+     * 工作项发布版本号
+     * @return releaseDev
+     */
+    public String getReleaseDev() {
+        return releaseDev;
+    }
+
+    public void setReleaseDev(String releaseDev) {
+        this.releaseDev = releaseDev;
+    }
+
+    public IssueResponseV4 withFindReleaseDev(String findReleaseDev) {
+        this.findReleaseDev = findReleaseDev;
+        return this;
+    }
+
+    /**
+     * 缺陷发现版本号（仅Bug类型工作项具备该字段）
+     * @return findReleaseDev
+     */
+    public String getFindReleaseDev() {
+        return findReleaseDev;
+    }
+
+    public void setFindReleaseDev(String findReleaseDev) {
+        this.findReleaseDev = findReleaseDev;
+    }
+
+    public IssueResponseV4 withEnv(IssueResponseV4Env env) {
+        this.env = env;
+        return this;
+    }
+
+    public IssueResponseV4 withEnv(Consumer<IssueResponseV4Env> envSetter) {
+        if (this.env == null) {
+            this.env = new IssueResponseV4Env();
+            envSetter.accept(this.env);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get env
+     * @return env
+     */
+    public IssueResponseV4Env getEnv() {
+        return env;
+    }
+
+    public void setEnv(IssueResponseV4Env env) {
+        this.env = env;
     }
 
     public IssueResponseV4 withTracker(CreateIssueResponseV4Tracker tracker) {
@@ -740,7 +846,9 @@ public class IssueResponseV4 {
             && Objects.equals(this.project, that.project) && Objects.equals(this.iteration, that.iteration)
             && Objects.equals(this.module, that.module) && Objects.equals(this.name, that.name)
             && Objects.equals(this.parentIssue, that.parentIssue) && Objects.equals(this.priority, that.priority)
-            && Objects.equals(this.severity, that.severity) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.releaseDev, that.releaseDev)
+            && Objects.equals(this.findReleaseDev, that.findReleaseDev) && Objects.equals(this.env, that.env)
             && Objects.equals(this.tracker, that.tracker) && Objects.equals(this.updatedTime, that.updatedTime)
             && Objects.equals(this.closedTime, that.closedTime);
     }
@@ -767,8 +875,12 @@ public class IssueResponseV4 {
             name,
             parentIssue,
             priority,
+            order,
             severity,
             status,
+            releaseDev,
+            findReleaseDev,
+            env,
             tracker,
             updatedTime,
             closedTime);
@@ -798,8 +910,12 @@ public class IssueResponseV4 {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    parentIssue: ").append(toIndentedString(parentIssue)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    releaseDev: ").append(toIndentedString(releaseDev)).append("\n");
+        sb.append("    findReleaseDev: ").append(toIndentedString(findReleaseDev)).append("\n");
+        sb.append("    env: ").append(toIndentedString(env)).append("\n");
         sb.append("    tracker: ").append(toIndentedString(tracker)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
         sb.append("    closedTime: ").append(toIndentedString(closedTime)).append("\n");
