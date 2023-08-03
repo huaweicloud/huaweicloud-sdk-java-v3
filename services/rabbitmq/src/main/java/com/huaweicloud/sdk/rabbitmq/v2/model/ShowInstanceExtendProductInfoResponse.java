@@ -17,19 +17,19 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hourly")
 
-    private List<ListProductsRespHourly> hourly = null;
+    private List<ShowInstanceExtendProductInfoRespHourly> hourly = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "monthly")
 
-    private List<ListProductsRespHourly> monthly = null;
+    private List<ShowInstanceExtendProductInfoRespHourly> monthly = null;
 
-    public ShowInstanceExtendProductInfoResponse withHourly(List<ListProductsRespHourly> hourly) {
+    public ShowInstanceExtendProductInfoResponse withHourly(List<ShowInstanceExtendProductInfoRespHourly> hourly) {
         this.hourly = hourly;
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse addHourlyItem(ListProductsRespHourly hourlyItem) {
+    public ShowInstanceExtendProductInfoResponse addHourlyItem(ShowInstanceExtendProductInfoRespHourly hourlyItem) {
         if (this.hourly == null) {
             this.hourly = new ArrayList<>();
         }
@@ -37,7 +37,8 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse withHourly(Consumer<List<ListProductsRespHourly>> hourlySetter) {
+    public ShowInstanceExtendProductInfoResponse withHourly(
+        Consumer<List<ShowInstanceExtendProductInfoRespHourly>> hourlySetter) {
         if (this.hourly == null) {
             this.hourly = new ArrayList<>();
         }
@@ -49,20 +50,20 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
      * 表示按需付费的产品列表。
      * @return hourly
      */
-    public List<ListProductsRespHourly> getHourly() {
+    public List<ShowInstanceExtendProductInfoRespHourly> getHourly() {
         return hourly;
     }
 
-    public void setHourly(List<ListProductsRespHourly> hourly) {
+    public void setHourly(List<ShowInstanceExtendProductInfoRespHourly> hourly) {
         this.hourly = hourly;
     }
 
-    public ShowInstanceExtendProductInfoResponse withMonthly(List<ListProductsRespHourly> monthly) {
+    public ShowInstanceExtendProductInfoResponse withMonthly(List<ShowInstanceExtendProductInfoRespHourly> monthly) {
         this.monthly = monthly;
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse addMonthlyItem(ListProductsRespHourly monthlyItem) {
+    public ShowInstanceExtendProductInfoResponse addMonthlyItem(ShowInstanceExtendProductInfoRespHourly monthlyItem) {
         if (this.monthly == null) {
             this.monthly = new ArrayList<>();
         }
@@ -70,7 +71,8 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInstanceExtendProductInfoResponse withMonthly(Consumer<List<ListProductsRespHourly>> monthlySetter) {
+    public ShowInstanceExtendProductInfoResponse withMonthly(
+        Consumer<List<ShowInstanceExtendProductInfoRespHourly>> monthlySetter) {
         if (this.monthly == null) {
             this.monthly = new ArrayList<>();
         }
@@ -82,11 +84,11 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
      * 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Rabbitmq实例。
      * @return monthly
      */
-    public List<ListProductsRespHourly> getMonthly() {
+    public List<ShowInstanceExtendProductInfoRespHourly> getMonthly() {
         return monthly;
     }
 
-    public void setMonthly(List<ListProductsRespHourly> monthly) {
+    public void setMonthly(List<ShowInstanceExtendProductInfoRespHourly> monthly) {
         this.monthly = monthly;
     }
 

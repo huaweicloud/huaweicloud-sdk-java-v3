@@ -1072,6 +1072,20 @@ public class GaussDBforopenGaussMeta {
             f -> f.withMarshaller(ListComponentInfosRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
+        builder.<ListComponentInfosRequest.ComponentTypeEnum>withRequestField("component_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListComponentInfosRequest.ComponentTypeEnum.class),
+            f -> f.withMarshaller(ListComponentInfosRequest::getComponentType, (req, v) -> {
+                req.setComponentType(v);
+            }));
+        builder.<String>withRequestField("availability_zone_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListComponentInfosRequest::getAvailabilityZoneId, (req, v) -> {
+                req.setAvailabilityZoneId(v);
+            }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

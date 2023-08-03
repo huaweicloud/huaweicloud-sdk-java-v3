@@ -43,6 +43,11 @@ public class ShowDetailOfSubscriptionTargetResponse extends SdkResponse {
     private TransForm transform;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dead_letter_queue")
+
+    private DeadLetterQueue deadLetterQueue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_time")
 
     private String createdTime;
@@ -163,6 +168,32 @@ public class ShowDetailOfSubscriptionTargetResponse extends SdkResponse {
         this.transform = transform;
     }
 
+    public ShowDetailOfSubscriptionTargetResponse withDeadLetterQueue(DeadLetterQueue deadLetterQueue) {
+        this.deadLetterQueue = deadLetterQueue;
+        return this;
+    }
+
+    public ShowDetailOfSubscriptionTargetResponse withDeadLetterQueue(Consumer<DeadLetterQueue> deadLetterQueueSetter) {
+        if (this.deadLetterQueue == null) {
+            this.deadLetterQueue = new DeadLetterQueue();
+            deadLetterQueueSetter.accept(this.deadLetterQueue);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get deadLetterQueue
+     * @return deadLetterQueue
+     */
+    public DeadLetterQueue getDeadLetterQueue() {
+        return deadLetterQueue;
+    }
+
+    public void setDeadLetterQueue(DeadLetterQueue deadLetterQueue) {
+        this.deadLetterQueue = deadLetterQueue;
+    }
+
     public ShowDetailOfSubscriptionTargetResponse withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
@@ -209,13 +240,15 @@ public class ShowDetailOfSubscriptionTargetResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.providerType, that.providerType)
             && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.detail, that.detail)
-            && Objects.equals(this.transform, that.transform) && Objects.equals(this.createdTime, that.createdTime)
-            && Objects.equals(this.updatedTime, that.updatedTime);
+            && Objects.equals(this.transform, that.transform)
+            && Objects.equals(this.deadLetterQueue, that.deadLetterQueue)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, providerType, connectionId, detail, transform, createdTime, updatedTime);
+        return Objects
+            .hash(id, name, providerType, connectionId, detail, transform, deadLetterQueue, createdTime, updatedTime);
     }
 
     @Override
@@ -228,6 +261,7 @@ public class ShowDetailOfSubscriptionTargetResponse extends SdkResponse {
         sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
+        sb.append("    deadLetterQueue: ").append(toIndentedString(deadLetterQueue)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
         sb.append("}");

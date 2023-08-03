@@ -51,7 +51,7 @@ public class CreateResolveTaskRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
 
-    private List<CreateResolveTaskParam> params = null;
+    private List<CreateShortChainParam> params = null;
 
     public CreateResolveTaskRequestBody withTplId(String tplId) {
         this.tplId = tplId;
@@ -190,12 +190,12 @@ public class CreateResolveTaskRequestBody {
         this.expirationTime = expirationTime;
     }
 
-    public CreateResolveTaskRequestBody withParams(List<CreateResolveTaskParam> params) {
+    public CreateResolveTaskRequestBody withParams(List<CreateShortChainParam> params) {
         this.params = params;
         return this;
     }
 
-    public CreateResolveTaskRequestBody addParamsItem(CreateResolveTaskParam paramsItem) {
+    public CreateResolveTaskRequestBody addParamsItem(CreateShortChainParam paramsItem) {
         if (this.params == null) {
             this.params = new ArrayList<>();
         }
@@ -203,7 +203,7 @@ public class CreateResolveTaskRequestBody {
         return this;
     }
 
-    public CreateResolveTaskRequestBody withParams(Consumer<List<CreateResolveTaskParam>> paramsSetter) {
+    public CreateResolveTaskRequestBody withParams(Consumer<List<CreateShortChainParam>> paramsSetter) {
         if (this.params == null) {
             this.params = new ArrayList<>();
         }
@@ -215,11 +215,11 @@ public class CreateResolveTaskRequestBody {
      * 短链参数列表。一次请求最多生成100个短链。  > OPPO模板一次最多申请10个短链。 
      * @return params
      */
-    public List<CreateResolveTaskParam> getParams() {
+    public List<CreateShortChainParam> getParams() {
         return params;
     }
 
-    public void setParams(List<CreateResolveTaskParam> params) {
+    public void setParams(List<CreateShortChainParam> params) {
         this.params = params;
     }
 

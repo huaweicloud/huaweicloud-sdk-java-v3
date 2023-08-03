@@ -22,7 +22,7 @@ public class DigitalHumanModelingJobInfo {
     private String jobId;
 
     /**
-     * 任务的状态。 * WAITING：等待任务调度 * PROCESSING：正在处理 * PARTIAL_SUCCEED: 部分成功（模型生成，截图失败） * SUCCEED：成功 * FAILED：失败 * CANCELED：取消
+     * 任务的状态。 * WAITING：等待任务调度 * PROCESSING：正在处理 * PARTIAL_SUCCEED：部分成功（模型生成，截图失败） * SUCCEED：成功 * FAILED：失败 * CANCELED：取消
      */
     public static final class StateEnum {
 
@@ -158,7 +158,7 @@ public class DigitalHumanModelingJobInfo {
     }
 
     /**
-     * 任务的状态。 * WAITING：等待任务调度 * PROCESSING：正在处理 * PARTIAL_SUCCEED: 部分成功（模型生成，截图失败） * SUCCEED：成功 * FAILED：失败 * CANCELED：取消
+     * 任务的状态。 * WAITING：等待任务调度 * PROCESSING：正在处理 * PARTIAL_SUCCEED：部分成功（模型生成，截图失败） * SUCCEED：成功 * FAILED：失败 * CANCELED：取消
      * @return state
      */
     public StateEnum getState() {
@@ -175,7 +175,7 @@ public class DigitalHumanModelingJobInfo {
     }
 
     /**
-     * 任务开始时间,格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
+     * 任务开始时间，格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
      * @return startTime
      */
     public String getStartTime() {
@@ -192,7 +192,7 @@ public class DigitalHumanModelingJobInfo {
     }
 
     /**
-     * 任务结束时间,格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
+     * 任务结束时间，格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
      * @return endTime
      */
     public String getEndTime() {

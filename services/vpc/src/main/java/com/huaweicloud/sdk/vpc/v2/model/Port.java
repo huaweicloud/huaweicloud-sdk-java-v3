@@ -288,6 +288,11 @@ public class Port {
 
     private String zoneId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_efi")
+
+    private Boolean enableEfi;
+
     public Port withId(String id) {
         this.id = id;
         return this;
@@ -751,6 +756,23 @@ public class Port {
         this.zoneId = zoneId;
     }
 
+    public Port withEnableEfi(Boolean enableEfi) {
+        this.enableEfi = enableEfi;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否使能efi，使能则表示端口支持vRoCE能力，默认为false
+     * @return enableEfi
+     */
+    public Boolean getEnableEfi() {
+        return enableEfi;
+    }
+
+    public void setEnableEfi(Boolean enableEfi) {
+        this.enableEfi = enableEfi;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -774,7 +796,7 @@ public class Port {
             && Objects.equals(this.bindingProfile, that.bindingProfile)
             && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
             && Objects.equals(this.portSecurityEnabled, that.portSecurityEnabled)
-            && Objects.equals(this.zoneId, that.zoneId);
+            && Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.enableEfi, that.enableEfi);
     }
 
     @Override
@@ -800,7 +822,8 @@ public class Port {
             instanceId,
             instanceType,
             portSecurityEnabled,
-            zoneId);
+            zoneId,
+            enableEfi);
     }
 
     @Override
@@ -829,6 +852,7 @@ public class Port {
         sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("    portSecurityEnabled: ").append(toIndentedString(portSecurityEnabled)).append("\n");
         sb.append("    zoneId: ").append(toIndentedString(zoneId)).append("\n");
+        sb.append("    enableEfi: ").append(toIndentedString(enableEfi)).append("\n");
         sb.append("}");
         return sb.toString();
     }

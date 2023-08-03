@@ -103,6 +103,16 @@ public class MysqlProxyV3 {
 
     private Boolean switchConnectionPoolTypeEnabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "route_mode")
+
+    private Integer routeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "balance_route_mode_enabled")
+
+    private Boolean balanceRouteModeEnabled;
+
     public MysqlProxyV3 withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -425,6 +435,40 @@ public class MysqlProxyV3 {
         this.switchConnectionPoolTypeEnabled = switchConnectionPoolTypeEnabled;
     }
 
+    public MysqlProxyV3 withRouteMode(Integer routeMode) {
+        this.routeMode = routeMode;
+        return this;
+    }
+
+    /**
+     * 数据库代理路由模式，默认为权重负载模式。  取值范围: - 0，表示权重负载模式; - 1，表示负载均衡模式（数据库主节点不接受读请求）； - 2，表示负载均衡模式（数据库主节点接受读请求）。
+     * @return routeMode
+     */
+    public Integer getRouteMode() {
+        return routeMode;
+    }
+
+    public void setRouteMode(Integer routeMode) {
+        this.routeMode = routeMode;
+    }
+
+    public MysqlProxyV3 withBalanceRouteModeEnabled(Boolean balanceRouteModeEnabled) {
+        this.balanceRouteModeEnabled = balanceRouteModeEnabled;
+        return this;
+    }
+
+    /**
+     * 数据库代理版本是否支持负载均衡模式。  取值范围: - true 支持; - false 不支持。
+     * @return balanceRouteModeEnabled
+     */
+    public Boolean getBalanceRouteModeEnabled() {
+        return balanceRouteModeEnabled;
+    }
+
+    public void setBalanceRouteModeEnabled(Boolean balanceRouteModeEnabled) {
+        this.balanceRouteModeEnabled = balanceRouteModeEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -444,7 +488,9 @@ public class MysqlProxyV3 {
             && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.flavorRef, that.flavorRef)
             && Objects.equals(this.name, that.name) && Objects.equals(this.transactionSplit, that.transactionSplit)
             && Objects.equals(this.connectionPoolType, that.connectionPoolType)
-            && Objects.equals(this.switchConnectionPoolTypeEnabled, that.switchConnectionPoolTypeEnabled);
+            && Objects.equals(this.switchConnectionPoolTypeEnabled, that.switchConnectionPoolTypeEnabled)
+            && Objects.equals(this.routeMode, that.routeMode)
+            && Objects.equals(this.balanceRouteModeEnabled, that.balanceRouteModeEnabled);
     }
 
     @Override
@@ -466,7 +512,9 @@ public class MysqlProxyV3 {
             name,
             transactionSplit,
             connectionPoolType,
-            switchConnectionPoolTypeEnabled);
+            switchConnectionPoolTypeEnabled,
+            routeMode,
+            balanceRouteModeEnabled);
     }
 
     @Override
@@ -493,6 +541,8 @@ public class MysqlProxyV3 {
         sb.append("    switchConnectionPoolTypeEnabled: ")
             .append(toIndentedString(switchConnectionPoolTypeEnabled))
             .append("\n");
+        sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
+        sb.append("    balanceRouteModeEnabled: ").append(toIndentedString(balanceRouteModeEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

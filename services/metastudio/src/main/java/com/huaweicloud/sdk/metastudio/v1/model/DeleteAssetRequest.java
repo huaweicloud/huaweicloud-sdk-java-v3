@@ -30,6 +30,11 @@ public class DeleteAssetRequest {
 
     private String assetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
     public DeleteAssetRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -53,7 +58,7 @@ public class DeleteAssetRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间.格式为(YYYYMMDD'T'HHMMSS'Z')。 取值为当前系统的GMT时间。
+     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -102,6 +107,23 @@ public class DeleteAssetRequest {
         this.assetId = assetId;
     }
 
+    public DeleteAssetRequest withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 删除模式
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -112,12 +134,13 @@ public class DeleteAssetRequest {
         }
         DeleteAssetRequest that = (DeleteAssetRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
-            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.assetId, that.assetId);
+            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xAppUserId, assetId);
+        return Objects.hash(authorization, xSdkDate, xAppUserId, assetId, mode);
     }
 
     @Override
@@ -128,6 +151,7 @@ public class DeleteAssetRequest {
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -70,7 +70,7 @@ public class PictureModelingByUrlReq {
     }
 
     /**
-     * 风格ID
+     * 模型名称
      * @return name
      */
     public String getName() {

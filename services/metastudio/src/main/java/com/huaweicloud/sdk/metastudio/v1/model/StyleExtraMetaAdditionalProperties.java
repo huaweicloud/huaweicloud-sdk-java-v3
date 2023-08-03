@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * StyleExtraMetaAdditionalProperties
+ * 可替换组件
  */
 public class StyleExtraMetaAdditionalProperties {
 

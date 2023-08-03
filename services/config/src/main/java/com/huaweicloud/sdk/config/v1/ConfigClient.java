@@ -2,12 +2,16 @@ package com.huaweicloud.sdk.config.v1;
 
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorResponse;
+import com.huaweicloud.sdk.config.v1.model.CreateConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.CreateConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.CreatePolicyAssignmentsRequest;
@@ -20,6 +24,8 @@ import com.huaweicloud.sdk.config.v1.model.DeleteAggregationAuthorizationRequest
 import com.huaweicloud.sdk.config.v1.model.DeleteAggregationAuthorizationResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.DeleteConfigurationAggregatorResponse;
+import com.huaweicloud.sdk.config.v1.model.DeleteConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.DeleteConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteOrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.DeleteOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.DeletePendingAggregationRequestRequest;
@@ -44,10 +50,20 @@ import com.huaweicloud.sdk.config.v1.model.ListAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListAllResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListAllTagsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListAllTagsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListBuiltInConformancePackTemplatesRequest;
+import com.huaweicloud.sdk.config.v1.model.ListBuiltInConformancePackTemplatesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListBuiltInPolicyDefinitionsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListBuiltInPolicyDefinitionsResponse;
 import com.huaweicloud.sdk.config.v1.model.ListConfigurationAggregatorsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListConfigurationAggregatorsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceByPackIdRequest;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceByPackIdResponse;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceDetailsByPackIdRequest;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceDetailsByPackIdResponse;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceScoresRequest;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceScoresResponse;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePacksRequest;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePacksResponse;
 import com.huaweicloud.sdk.config.v1.model.ListOrganizationPolicyAssignmentsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListOrganizationPolicyAssignmentsResponse;
 import com.huaweicloud.sdk.config.v1.model.ListPendingAggregationRequestsRequest;
@@ -86,12 +102,16 @@ import com.huaweicloud.sdk.config.v1.model.ShowAggregatePolicyStateComplianceSum
 import com.huaweicloud.sdk.config.v1.model.ShowAggregatePolicyStateComplianceSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateResourceConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateResourceConfigResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowBuiltInConformancePackTemplateRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowBuiltInConformancePackTemplateResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowBuiltInPolicyDefinitionRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowBuiltInPolicyDefinitionResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowConfigurationAggregatorResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowConfigurationAggregatorSourcesStatusRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowConfigurationAggregatorSourcesStatusResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowEvaluationStateByAssignmentIdRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowEvaluationStateByAssignmentIdResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowOrganizationPolicyAssignmentDetailedStatusRequest;
@@ -725,6 +745,312 @@ public class ConfigClient {
         UpdateConfigurationAggregatorRequest request) {
         return new SyncInvoker<UpdateConfigurationAggregatorRequest, UpdateConfigurationAggregatorResponse>(request,
             ConfigMeta.updateConfigurationAggregator, hcClient);
+    }
+
+    /**
+     * 列举合规规则包的结果概览
+     *
+     * 列举用户的合规规则包的合规结果概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectConformancePackComplianceSummaryRequest 请求对象
+     * @return CollectConformancePackComplianceSummaryResponse
+     */
+    public CollectConformancePackComplianceSummaryResponse collectConformancePackComplianceSummary(
+        CollectConformancePackComplianceSummaryRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.collectConformancePackComplianceSummary);
+    }
+
+    /**
+     * 列举合规规则包的结果概览
+     *
+     * 列举用户的合规规则包的合规结果概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectConformancePackComplianceSummaryRequest 请求对象
+     * @return SyncInvoker<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse>
+     */
+    public SyncInvoker<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse> collectConformancePackComplianceSummaryInvoker(
+        CollectConformancePackComplianceSummaryRequest request) {
+        return new SyncInvoker<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse>(
+            request, ConfigMeta.collectConformancePackComplianceSummary, hcClient);
+    }
+
+    /**
+     * 创建合规规则包
+     *
+     * 创建新的合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateConformancePackRequest 请求对象
+     * @return CreateConformancePackResponse
+     */
+    public CreateConformancePackResponse createConformancePack(CreateConformancePackRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.createConformancePack);
+    }
+
+    /**
+     * 创建合规规则包
+     *
+     * 创建新的合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateConformancePackRequest 请求对象
+     * @return SyncInvoker<CreateConformancePackRequest, CreateConformancePackResponse>
+     */
+    public SyncInvoker<CreateConformancePackRequest, CreateConformancePackResponse> createConformancePackInvoker(
+        CreateConformancePackRequest request) {
+        return new SyncInvoker<CreateConformancePackRequest, CreateConformancePackResponse>(request,
+            ConfigMeta.createConformancePack, hcClient);
+    }
+
+    /**
+     * 删除合规规则包
+     *
+     * 删除用户的合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConformancePackRequest 请求对象
+     * @return DeleteConformancePackResponse
+     */
+    public DeleteConformancePackResponse deleteConformancePack(DeleteConformancePackRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.deleteConformancePack);
+    }
+
+    /**
+     * 删除合规规则包
+     *
+     * 删除用户的合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConformancePackRequest 请求对象
+     * @return SyncInvoker<DeleteConformancePackRequest, DeleteConformancePackResponse>
+     */
+    public SyncInvoker<DeleteConformancePackRequest, DeleteConformancePackResponse> deleteConformancePackInvoker(
+        DeleteConformancePackRequest request) {
+        return new SyncInvoker<DeleteConformancePackRequest, DeleteConformancePackResponse>(request,
+            ConfigMeta.deleteConformancePack, hcClient);
+    }
+
+    /**
+     * 列举预定义合规规则包模板
+     *
+     * 列举预定义的合规规则包的模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBuiltInConformancePackTemplatesRequest 请求对象
+     * @return ListBuiltInConformancePackTemplatesResponse
+     */
+    public ListBuiltInConformancePackTemplatesResponse listBuiltInConformancePackTemplates(
+        ListBuiltInConformancePackTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.listBuiltInConformancePackTemplates);
+    }
+
+    /**
+     * 列举预定义合规规则包模板
+     *
+     * 列举预定义的合规规则包的模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBuiltInConformancePackTemplatesRequest 请求对象
+     * @return SyncInvoker<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse>
+     */
+    public SyncInvoker<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse> listBuiltInConformancePackTemplatesInvoker(
+        ListBuiltInConformancePackTemplatesRequest request) {
+        return new SyncInvoker<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse>(
+            request, ConfigMeta.listBuiltInConformancePackTemplates, hcClient);
+    }
+
+    /**
+     * 列举合规规则包的评估结果
+     *
+     * 列举合规规则包的合规规则评估结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConformancePackComplianceByPackIdRequest 请求对象
+     * @return ListConformancePackComplianceByPackIdResponse
+     */
+    public ListConformancePackComplianceByPackIdResponse listConformancePackComplianceByPackId(
+        ListConformancePackComplianceByPackIdRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.listConformancePackComplianceByPackId);
+    }
+
+    /**
+     * 列举合规规则包的评估结果
+     *
+     * 列举合规规则包的合规规则评估结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConformancePackComplianceByPackIdRequest 请求对象
+     * @return SyncInvoker<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse>
+     */
+    public SyncInvoker<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse> listConformancePackComplianceByPackIdInvoker(
+        ListConformancePackComplianceByPackIdRequest request) {
+        return new SyncInvoker<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse>(
+            request, ConfigMeta.listConformancePackComplianceByPackId, hcClient);
+    }
+
+    /**
+     * 列举合规规则包的评估结果详情
+     *
+     * 列举合规规则包的合规规则评估结果详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConformancePackComplianceDetailsByPackIdRequest 请求对象
+     * @return ListConformancePackComplianceDetailsByPackIdResponse
+     */
+    public ListConformancePackComplianceDetailsByPackIdResponse listConformancePackComplianceDetailsByPackId(
+        ListConformancePackComplianceDetailsByPackIdRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.listConformancePackComplianceDetailsByPackId);
+    }
+
+    /**
+     * 列举合规规则包的评估结果详情
+     *
+     * 列举合规规则包的合规规则评估结果详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConformancePackComplianceDetailsByPackIdRequest 请求对象
+     * @return SyncInvoker<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse>
+     */
+    public SyncInvoker<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse> listConformancePackComplianceDetailsByPackIdInvoker(
+        ListConformancePackComplianceDetailsByPackIdRequest request) {
+        return new SyncInvoker<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse>(
+            request, ConfigMeta.listConformancePackComplianceDetailsByPackId, hcClient);
+    }
+
+    /**
+     * 列举合规规则包分数
+     *
+     * 列举用户的合规规则包分数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConformancePackComplianceScoresRequest 请求对象
+     * @return ListConformancePackComplianceScoresResponse
+     */
+    public ListConformancePackComplianceScoresResponse listConformancePackComplianceScores(
+        ListConformancePackComplianceScoresRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.listConformancePackComplianceScores);
+    }
+
+    /**
+     * 列举合规规则包分数
+     *
+     * 列举用户的合规规则包分数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConformancePackComplianceScoresRequest 请求对象
+     * @return SyncInvoker<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse>
+     */
+    public SyncInvoker<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse> listConformancePackComplianceScoresInvoker(
+        ListConformancePackComplianceScoresRequest request) {
+        return new SyncInvoker<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse>(
+            request, ConfigMeta.listConformancePackComplianceScores, hcClient);
+    }
+
+    /**
+     * 列举合规规则包
+     *
+     * 列举用户的合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConformancePacksRequest 请求对象
+     * @return ListConformancePacksResponse
+     */
+    public ListConformancePacksResponse listConformancePacks(ListConformancePacksRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.listConformancePacks);
+    }
+
+    /**
+     * 列举合规规则包
+     *
+     * 列举用户的合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConformancePacksRequest 请求对象
+     * @return SyncInvoker<ListConformancePacksRequest, ListConformancePacksResponse>
+     */
+    public SyncInvoker<ListConformancePacksRequest, ListConformancePacksResponse> listConformancePacksInvoker(
+        ListConformancePacksRequest request) {
+        return new SyncInvoker<ListConformancePacksRequest, ListConformancePacksResponse>(request,
+            ConfigMeta.listConformancePacks, hcClient);
+    }
+
+    /**
+     * 查看预定义合规规则包模板
+     *
+     * 根据ID获取单个预定义合规规则包模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBuiltInConformancePackTemplateRequest 请求对象
+     * @return ShowBuiltInConformancePackTemplateResponse
+     */
+    public ShowBuiltInConformancePackTemplateResponse showBuiltInConformancePackTemplate(
+        ShowBuiltInConformancePackTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.showBuiltInConformancePackTemplate);
+    }
+
+    /**
+     * 查看预定义合规规则包模板
+     *
+     * 根据ID获取单个预定义合规规则包模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBuiltInConformancePackTemplateRequest 请求对象
+     * @return SyncInvoker<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse>
+     */
+    public SyncInvoker<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse> showBuiltInConformancePackTemplateInvoker(
+        ShowBuiltInConformancePackTemplateRequest request) {
+        return new SyncInvoker<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse>(
+            request, ConfigMeta.showBuiltInConformancePackTemplate, hcClient);
+    }
+
+    /**
+     * 查看合规规则包
+     *
+     * 根据ID获取单个合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConformancePackRequest 请求对象
+     * @return ShowConformancePackResponse
+     */
+    public ShowConformancePackResponse showConformancePack(ShowConformancePackRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.showConformancePack);
+    }
+
+    /**
+     * 查看合规规则包
+     *
+     * 根据ID获取单个合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConformancePackRequest 请求对象
+     * @return SyncInvoker<ShowConformancePackRequest, ShowConformancePackResponse>
+     */
+    public SyncInvoker<ShowConformancePackRequest, ShowConformancePackResponse> showConformancePackInvoker(
+        ShowConformancePackRequest request) {
+        return new SyncInvoker<ShowConformancePackRequest, ShowConformancePackResponse>(request,
+            ConfigMeta.showConformancePack, hcClient);
     }
 
     /**

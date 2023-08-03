@@ -140,7 +140,7 @@ public class AIMTemplate {
     }
 
     /**
-     * 模板状态。  - 0：禁用 - 1：启用  > 智能信息模板启动、禁用暂为运营管理功能，Console页面与API暂未开放此功能。 
+     * 模板状态。  - 0：禁用 - 1：启用 
      * @return tplState
      */
     public Integer getTplState() {

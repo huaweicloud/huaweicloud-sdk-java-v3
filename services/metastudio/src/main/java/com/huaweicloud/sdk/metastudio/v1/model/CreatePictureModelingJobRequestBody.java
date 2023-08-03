@@ -58,7 +58,7 @@ public class CreatePictureModelingJobRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 数字人风格ID。 * system_male_001: 男性风格01 * system_female_001: 女性风格01 * system_male_002：男性风格02 * system_female_002: 女性风格02
+     * 数字人风格ID。 * system_male_001：男性风格01 * system_female_001：女性风格01 * system_male_002：男性风格02 * system_female_002：女性风格02
      * @return styleId
      */
     public String getStyleId() {

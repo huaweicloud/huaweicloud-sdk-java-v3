@@ -24,7 +24,7 @@ public class PPTAssetMeta {
     private Boolean autoAnalysis;
 
     /**
-     * PPT解析状态。 * INITIALIZE： 初始 * WAITING： 等待 * CONVERTING： 解析中 * FAILED： 失败 * SUCCEEDED： 成功 * CANCELED： 取消
+     * PPT解析状态。 * INITIALIZE：初始 * WAITING：等待 * CONVERTING：解析中 * FAILED：失败 * SUCCEEDED：成功 * CANCELED：取消
      */
     public static final class PptAnalysisStatusEnum {
 
@@ -155,7 +155,7 @@ public class PPTAssetMeta {
     }
 
     /**
-     * PPT解析状态。 * INITIALIZE： 初始 * WAITING： 等待 * CONVERTING： 解析中 * FAILED： 失败 * SUCCEEDED： 成功 * CANCELED： 取消
+     * PPT解析状态。 * INITIALIZE：初始 * WAITING：等待 * CONVERTING：解析中 * FAILED：失败 * SUCCEEDED：成功 * CANCELED：取消
      * @return pptAnalysisStatus
      */
     public PptAnalysisStatusEnum getPptAnalysisStatus() {

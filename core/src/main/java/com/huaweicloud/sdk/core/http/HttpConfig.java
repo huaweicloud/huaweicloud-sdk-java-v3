@@ -51,6 +51,8 @@ public class HttpConfig {
 
     private boolean allowRedirects = false;
 
+    private boolean ignoreContentTypeForGetRequest = false;
+
     private String proxyUsername;
 
     private String proxyPassword;
@@ -125,6 +127,27 @@ public class HttpConfig {
 
     public HttpConfig withIgnoreRequiredValidation(boolean ignoreRequiredValidation) {
         setIgnoreRequiredValidation(ignoreRequiredValidation);
+        return this;
+    }
+
+    public boolean isIgnoreContentTypeForGetRequest() {
+        return ignoreContentTypeForGetRequest;
+    }
+
+    /**
+     * @param ignoreContentTypeForGetRequest Ignore the request header Content-Type when sending a GET request,
+     *                                       the default value is false.
+     */
+    public void setIgnoreContentTypeForGetRequest(boolean ignoreContentTypeForGetRequest) {
+        this.ignoreContentTypeForGetRequest = ignoreContentTypeForGetRequest;
+    }
+
+    /**
+     * @param ignoreContentTypeForGetRequest Ignore the request header Content-Type when sending a GET request,
+     *                                       the default value is false.
+     */
+    public HttpConfig withIgnoreContentTypeForGetRequest(boolean ignoreContentTypeForGetRequest) {
+        setIgnoreContentTypeForGetRequest(ignoreContentTypeForGetRequest);
         return this;
     }
 

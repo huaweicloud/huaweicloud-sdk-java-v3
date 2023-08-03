@@ -237,6 +237,11 @@ public class UpdateEventSourceResponse extends SdkResponse {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorInfo errorInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -478,6 +483,32 @@ public class UpdateEventSourceResponse extends SdkResponse {
         this.status = status;
     }
 
+    public UpdateEventSourceResponse withErrorInfo(ErrorInfo errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public UpdateEventSourceResponse withErrorInfo(Consumer<ErrorInfo> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorInfo();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorInfo getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorInfo errorInfo) {
+        this.errorInfo = errorInfo;
+    }
+
     public UpdateEventSourceResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -512,7 +543,8 @@ public class UpdateEventSourceResponse extends SdkResponse {
             && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
             && Objects.equals(this.channelId, that.channelId) && Objects.equals(this.channelName, that.channelName)
             && Objects.equals(this.type, that.type) && Objects.equals(this.detail, that.detail)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorInfo, that.errorInfo)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -530,6 +562,7 @@ public class UpdateEventSourceResponse extends SdkResponse {
             type,
             detail,
             status,
+            errorInfo,
             xRequestId);
     }
 
@@ -550,6 +583,7 @@ public class UpdateEventSourceResponse extends SdkResponse {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

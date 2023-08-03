@@ -150,7 +150,7 @@ public class StyleInfo {
     private String updateTime;
 
     /**
-     * 数字人风格状态枚举
+     * 数字人风格状态枚举 * CREATING：创建中 * PUBLISHED：已发布 * DELETED：已删除 * UNPUBLISHED：未发布 * PUBLISHING：发布中
      */
     public static final class StateEnum {
 
@@ -282,7 +282,7 @@ public class StyleInfo {
     }
 
     /**
-     * 租户id
+     * 租户ID
      * @return projectId
      */
     public String getProjectId() {
@@ -442,7 +442,7 @@ public class StyleInfo {
     }
 
     /**
-     * 数字人风格创建时间,格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
+     * 数字人风格创建时间，格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
      * @return createTime
      */
     public String getCreateTime() {
@@ -459,7 +459,7 @@ public class StyleInfo {
     }
 
     /**
-     * 数字人风格更新时间,格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
+     * 数字人风格更新时间，格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -476,7 +476,7 @@ public class StyleInfo {
     }
 
     /**
-     * 数字人风格状态枚举
+     * 数字人风格状态枚举 * CREATING：创建中 * PUBLISHED：已发布 * DELETED：已删除 * UNPUBLISHED：未发布 * PUBLISHING：发布中
      * @return state
      */
     public StateEnum getState() {

@@ -16,6 +16,21 @@ public class RequestLimitRules {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "match_type")
+
+    private String matchType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "match_value")
+
+    private String matchValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -36,7 +51,7 @@ public class RequestLimitRules {
     }
 
     /**
-     * 状态, on：开启，off：关闭。
+     * status只支持on，off无效。  > request_limit_rules字段置空时代表关闭请求限速功能。  > 旧接口中的参数，后续将下线。
      * @return status
      */
     public String getStatus() {
@@ -47,13 +62,64 @@ public class RequestLimitRules {
         this.status = status;
     }
 
+    public RequestLimitRules withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 优先级，值越大，优先级越高,取值范围：1-100。
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    public RequestLimitRules withMatchType(String matchType) {
+        this.matchType = matchType;
+        return this;
+    }
+
+    /**
+     * 匹配类型，all：所有文件，catalog：目录。
+     * @return matchType
+     */
+    public String getMatchType() {
+        return matchType;
+    }
+
+    public void setMatchType(String matchType) {
+        this.matchType = matchType;
+    }
+
+    public RequestLimitRules withMatchValue(String matchValue) {
+        this.matchValue = matchValue;
+        return this;
+    }
+
+    /**
+     * 匹配类型值。 当match_type为all时传空值，例如：\"\"； 当match_type为catalog时传目录地址，以“/”作为首字符,例如：\"/test\"。  > 值为catalog的时候必填
+     * @return matchValue
+     */
+    public String getMatchValue() {
+        return matchValue;
+    }
+
+    public void setMatchValue(String matchValue) {
+        this.matchValue = matchValue;
+    }
+
     public RequestLimitRules withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 限速方式，目前只支持按传送流量限速，当单个HTTP请求流量达到设定的值，开始限制访问速度。  > size:按传送流量限速。
+     * 限速方式，当前仅支持按流量大小限速，取值为size。
      * @return type
      */
     public String getType() {
@@ -70,7 +136,7 @@ public class RequestLimitRules {
     }
 
     /**
-     * 限速条件,type=size,limit_rate_after=50表示从传输传输50个字节后开始限速且限速值为limit_rate_value，  > 单位byte，取值范围：0-1073741824。
+     * 限速条件,type=size,limit_rate_after=50表示从传输表示传输50个字节后开始限速且限速值为limit_rate_value， 单位byte，取值范围：0-1073741824。
      * @return limitRateAfter
      */
     public Long getLimitRateAfter() {
@@ -87,7 +153,7 @@ public class RequestLimitRules {
     }
 
     /**
-     * 限速值,设置开始限速后的最大访问速度。  > 单位Bps，取值范围 0-104857600
+     * 限速值,单位Bps，取值范围 0-104857600。
      * @return limitRateValue
      */
     public Integer getLimitRateValue() {
@@ -107,14 +173,15 @@ public class RequestLimitRules {
             return false;
         }
         RequestLimitRules that = (RequestLimitRules) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.limitRateAfter, that.limitRateAfter)
+        return Objects.equals(this.status, that.status) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.matchType, that.matchType) && Objects.equals(this.matchValue, that.matchValue)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.limitRateAfter, that.limitRateAfter)
             && Objects.equals(this.limitRateValue, that.limitRateValue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type, limitRateAfter, limitRateValue);
+        return Objects.hash(status, priority, matchType, matchValue, type, limitRateAfter, limitRateValue);
     }
 
     @Override
@@ -122,6 +189,9 @@ public class RequestLimitRules {
         StringBuilder sb = new StringBuilder();
         sb.append("class RequestLimitRules {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    matchType: ").append(toIndentedString(matchType)).append("\n");
+        sb.append("    matchValue: ").append(toIndentedString(matchValue)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    limitRateAfter: ").append(toIndentedString(limitRateAfter)).append("\n");
         sb.append("    limitRateValue: ").append(toIndentedString(limitRateValue)).append("\n");

@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class VideoMotionCaptureJobReq {
 
     /**
-     * 视频驱动模式。 * HEAD: 头部 * HALF_BODY: 半身 * FULL_BODY: 全身 * AUTO: 自动
+     * 视频驱动模式。 * HEAD：头部 * HALF_BODY：半身 * FULL_BODY：全身 * AUTO：自动
      */
     public static final class MotionCaptureModeEnum {
 
@@ -119,7 +119,7 @@ public class VideoMotionCaptureJobReq {
     }
 
     /**
-     * 视频驱动模式。 * HEAD: 头部 * HALF_BODY: 半身 * FULL_BODY: 全身 * AUTO: 自动
+     * 视频驱动模式。 * HEAD：头部 * HALF_BODY：半身 * FULL_BODY：全身 * AUTO：自动
      * @return motionCaptureMode
      */
     public MotionCaptureModeEnum getMotionCaptureMode() {

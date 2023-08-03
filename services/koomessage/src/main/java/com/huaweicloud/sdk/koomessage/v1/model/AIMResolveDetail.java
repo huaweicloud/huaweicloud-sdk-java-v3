@@ -68,7 +68,7 @@ public class AIMResolveDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resolved_status")
 
-    private Object resolvedStatus;
+    private String resolvedStatus;
 
     public AIMResolveDetail withResolveId(String resolveId) {
         this.resolveId = resolveId;
@@ -257,7 +257,7 @@ public class AIMResolveDetail {
         this.resolvedTime = resolvedTime;
     }
 
-    public AIMResolveDetail withResolvedStatus(Object resolvedStatus) {
+    public AIMResolveDetail withResolvedStatus(String resolvedStatus) {
         this.resolvedStatus = resolvedStatus;
         return this;
     }
@@ -266,11 +266,11 @@ public class AIMResolveDetail {
      * 解析状态。 - success：解析成功 - fail：解析失败 - unresolved：未解析 
      * @return resolvedStatus
      */
-    public Object getResolvedStatus() {
+    public String getResolvedStatus() {
         return resolvedStatus;
     }
 
-    public void setResolvedStatus(Object resolvedStatus) {
+    public void setResolvedStatus(String resolvedStatus) {
         this.resolvedStatus = resolvedStatus;
     }
 

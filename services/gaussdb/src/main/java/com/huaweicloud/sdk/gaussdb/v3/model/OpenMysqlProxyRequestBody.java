@@ -109,6 +109,11 @@ public class OpenMysqlProxyRequestBody {
     private ProxyModeEnum proxyMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "route_mode")
+
+    private Integer routeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes_read_weight")
 
     private List<NodesWeight> nodesReadWeight = null;
@@ -181,6 +186,23 @@ public class OpenMysqlProxyRequestBody {
         this.proxyMode = proxyMode;
     }
 
+    public OpenMysqlProxyRequestBody withRouteMode(Integer routeMode) {
+        this.routeMode = routeMode;
+        return this;
+    }
+
+    /**
+     * 数据库代理路由模式，默认为权重负载模式。  取值范围: - 0，表示权重负载模式; - 1，表示负载均衡模式（数据库主节点不接受读请求）； - 2，表示负载均衡模式（数据库主节点接受读请求）。
+     * @return routeMode
+     */
+    public Integer getRouteMode() {
+        return routeMode;
+    }
+
+    public void setRouteMode(Integer routeMode) {
+        this.routeMode = routeMode;
+    }
+
     public OpenMysqlProxyRequestBody withNodesReadWeight(List<NodesWeight> nodesReadWeight) {
         this.nodesReadWeight = nodesReadWeight;
         return this;
@@ -225,12 +247,13 @@ public class OpenMysqlProxyRequestBody {
         OpenMysqlProxyRequestBody that = (OpenMysqlProxyRequestBody) obj;
         return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.nodeNum, that.nodeNum)
             && Objects.equals(this.proxyName, that.proxyName) && Objects.equals(this.proxyMode, that.proxyMode)
+            && Objects.equals(this.routeMode, that.routeMode)
             && Objects.equals(this.nodesReadWeight, that.nodesReadWeight);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef, nodeNum, proxyName, proxyMode, nodesReadWeight);
+        return Objects.hash(flavorRef, nodeNum, proxyName, proxyMode, routeMode, nodesReadWeight);
     }
 
     @Override
@@ -241,6 +264,7 @@ public class OpenMysqlProxyRequestBody {
         sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
         sb.append("    proxyName: ").append(toIndentedString(proxyName)).append("\n");
         sb.append("    proxyMode: ").append(toIndentedString(proxyMode)).append("\n");
+        sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
         sb.append("    nodesReadWeight: ").append(toIndentedString(nodesReadWeight)).append("\n");
         sb.append("}");
         return sb.toString();

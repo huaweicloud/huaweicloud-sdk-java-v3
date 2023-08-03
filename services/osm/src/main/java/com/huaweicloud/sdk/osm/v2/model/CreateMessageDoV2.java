@@ -19,16 +19,6 @@ public class CreateMessageDoV2 {
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_authorized")
-
-    private Integer isAuthorized;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "authorization_content")
-
-    private String authorizationContent;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessory_ids")
 
     private List<String> accessoryIds = null;
@@ -48,42 +38,6 @@ public class CreateMessageDoV2 {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public CreateMessageDoV2 withIsAuthorized(Integer isAuthorized) {
-        this.isAuthorized = isAuthorized;
-        return this;
-    }
-
-    /**
-     * 是否授权
-     * minimum: 0
-     * maximum: 1
-     * @return isAuthorized
-     */
-    public Integer getIsAuthorized() {
-        return isAuthorized;
-    }
-
-    public void setIsAuthorized(Integer isAuthorized) {
-        this.isAuthorized = isAuthorized;
-    }
-
-    public CreateMessageDoV2 withAuthorizationContent(String authorizationContent) {
-        this.authorizationContent = authorizationContent;
-        return this;
-    }
-
-    /**
-     * 机密信息
-     * @return authorizationContent
-     */
-    public String getAuthorizationContent() {
-        return authorizationContent;
-    }
-
-    public void setAuthorizationContent(String authorizationContent) {
-        this.authorizationContent = authorizationContent;
     }
 
     public CreateMessageDoV2 withAccessoryIds(List<String> accessoryIds) {
@@ -128,14 +82,12 @@ public class CreateMessageDoV2 {
             return false;
         }
         CreateMessageDoV2 that = (CreateMessageDoV2) obj;
-        return Objects.equals(this.content, that.content) && Objects.equals(this.isAuthorized, that.isAuthorized)
-            && Objects.equals(this.authorizationContent, that.authorizationContent)
-            && Objects.equals(this.accessoryIds, that.accessoryIds);
+        return Objects.equals(this.content, that.content) && Objects.equals(this.accessoryIds, that.accessoryIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(content, isAuthorized, authorizationContent, accessoryIds);
+        return Objects.hash(content, accessoryIds);
     }
 
     @Override
@@ -143,8 +95,6 @@ public class CreateMessageDoV2 {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMessageDoV2 {\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
-        sb.append("    isAuthorized: ").append(toIndentedString(isAuthorized)).append("\n");
-        sb.append("    authorizationContent: ").append(toIndentedString(authorizationContent)).append("\n");
         sb.append("    accessoryIds: ").append(toIndentedString(accessoryIds)).append("\n");
         sb.append("}");
         return sb.toString();

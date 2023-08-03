@@ -168,6 +168,11 @@ public class ListInstanceResult {
 
     private String diskUsage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_used_space")
+
+    private String backupUsedSpace;
+
     public ListInstanceResult withId(String id) {
         this.id = id;
         return this;
@@ -814,6 +819,23 @@ public class ListInstanceResult {
         this.diskUsage = diskUsage;
     }
 
+    public ListInstanceResult withBackupUsedSpace(String backupUsedSpace) {
+        this.backupUsedSpace = backupUsedSpace;
+        return this;
+    }
+
+    /**
+     * 备份空间使用量，单位KB。
+     * @return backupUsedSpace
+     */
+    public String getBackupUsedSpace() {
+        return backupUsedSpace;
+    }
+
+    public void setBackupUsedSpace(String backupUsedSpace) {
+        this.backupUsedSpace = backupUsedSpace;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -840,7 +862,8 @@ public class ListInstanceResult {
             && Objects.equals(this.instanceMode, that.instanceMode)
             && Objects.equals(this.diskEncryptionId, that.diskEncryptionId)
             && Objects.equals(this.chargeInfo, that.chargeInfo) && Objects.equals(this.timeZone, that.timeZone)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.diskUsage, that.diskUsage);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.diskUsage, that.diskUsage)
+            && Objects.equals(this.backupUsedSpace, that.backupUsedSpace);
     }
 
     @Override
@@ -875,7 +898,8 @@ public class ListInstanceResult {
             chargeInfo,
             timeZone,
             tags,
-            diskUsage);
+            diskUsage,
+            backupUsedSpace);
     }
 
     @Override
@@ -913,6 +937,7 @@ public class ListInstanceResult {
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    diskUsage: ").append(toIndentedString(diskUsage)).append("\n");
+        sb.append("    backupUsedSpace: ").append(toIndentedString(backupUsedSpace)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -14,12 +14,19 @@ import com.huaweicloud.sdk.mrs.v2.model.CancelSqlResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterReqV2;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CreateDataConnectorRequest;
+import com.huaweicloud.sdk.mrs.v2.model.CreateDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.DataConnectorReq;
+import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorRequest;
+import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlResponse;
 import com.huaweicloud.sdk.mrs.v2.model.JobBatchDelete;
 import com.huaweicloud.sdk.mrs.v2.model.JobExecution;
+import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowCommand;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowResponse;
@@ -45,6 +52,8 @@ import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterReq;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorResponse;
 
 import java.util.List;
 
@@ -481,6 +490,148 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateClusterReq.class),
             f -> f.withMarshaller(UpdateClusterNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDataConnectorRequest, CreateDataConnectorResponse> createDataConnector =
+        genForcreateDataConnector();
+
+    private static HttpRequestDef<CreateDataConnectorRequest, CreateDataConnectorResponse> genForcreateDataConnector() {
+        // basic
+        HttpRequestDef.Builder<CreateDataConnectorRequest, CreateDataConnectorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDataConnectorRequest.class, CreateDataConnectorResponse.class)
+                .withName("CreateDataConnector")
+                .withUri("/v2/{project_id}/data-connectors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DataConnectorReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataConnectorReq.class),
+            f -> f.withMarshaller(CreateDataConnectorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDataConnectorRequest, DeleteDataConnectorResponse> deleteDataConnector =
+        genFordeleteDataConnector();
+
+    private static HttpRequestDef<DeleteDataConnectorRequest, DeleteDataConnectorResponse> genFordeleteDataConnector() {
+        // basic
+        HttpRequestDef.Builder<DeleteDataConnectorRequest, DeleteDataConnectorResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDataConnectorRequest.class, DeleteDataConnectorResponse.class)
+            .withName("DeleteDataConnector")
+            .withUri("/v2/{project_id}/data-connectors/{connector_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connector_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDataConnectorRequest::getConnectorId, (req, v) -> {
+                req.setConnectorId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDataConnectorRequest, ListDataConnectorResponse> listDataConnector =
+        genForlistDataConnector();
+
+    private static HttpRequestDef<ListDataConnectorRequest, ListDataConnectorResponse> genForlistDataConnector() {
+        // basic
+        HttpRequestDef.Builder<ListDataConnectorRequest, ListDataConnectorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDataConnectorRequest.class, ListDataConnectorResponse.class)
+                .withName("ListDataConnector")
+                .withUri("/v2/{project_id}/data-connectors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connector_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataConnectorRequest::getConnectorId, (req, v) -> {
+                req.setConnectorId(v);
+            }));
+        builder.<String>withRequestField("source_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataConnectorRequest::getSourceType, (req, v) -> {
+                req.setSourceType(v);
+            }));
+        builder.<String>withRequestField("connector_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataConnectorRequest::getConnectorName, (req, v) -> {
+                req.setConnectorName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDataConnectorRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDataConnectorRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Boolean>withRequestField("available",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDataConnectorRequest::getAvailable, (req, v) -> {
+                req.setAvailable(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDataConnectorRequest, UpdateDataConnectorResponse> updateDataConnector =
+        genForupdateDataConnector();
+
+    private static HttpRequestDef<UpdateDataConnectorRequest, UpdateDataConnectorResponse> genForupdateDataConnector() {
+        // basic
+        HttpRequestDef.Builder<UpdateDataConnectorRequest, UpdateDataConnectorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDataConnectorRequest.class, UpdateDataConnectorResponse.class)
+                .withName("UpdateDataConnector")
+                .withUri("/v2/{project_id}/data-connectors/{connector_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connector_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDataConnectorRequest::getConnectorId, (req, v) -> {
+                req.setConnectorId(v);
+            }));
+        builder.<DataConnectorReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataConnectorReq.class),
+            f -> f.withMarshaller(UpdateDataConnectorRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

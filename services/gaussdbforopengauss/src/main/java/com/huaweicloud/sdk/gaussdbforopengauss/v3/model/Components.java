@@ -25,6 +25,11 @@ public class Components {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "distributed_id")
+
+    private String distributedId;
+
     public Components withId(String id) {
         this.id = id;
         return this;
@@ -65,7 +70,7 @@ public class Components {
     }
 
     /**
-     * 节点状态。
+     * 组件状态。 Primary：该组件为主。 Normal：该组件状态正常。 Down：该组件处于宕机状态。 Standby：该组件为备。 StateFollower：该ETCD为备。 StateLeader：该ETCD为主。 StateCandidate：该ETCD为仲裁。
      * @return status
      */
     public String getStatus() {
@@ -74,6 +79,23 @@ public class Components {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Components withDistributedId(String distributedId) {
+        this.distributedId = distributedId;
+        return this;
+    }
+
+    /**
+     * 分组id，只有dn组件有分组id，用于区分是否是同一个分片下的组件。其他组件为空字符串。
+     * @return distributedId
+     */
+    public String getDistributedId() {
+        return distributedId;
+    }
+
+    public void setDistributedId(String distributedId) {
+        this.distributedId = distributedId;
     }
 
     @Override
@@ -86,12 +108,12 @@ public class Components {
         }
         Components that = (Components) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.role, that.role)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.distributedId, that.distributedId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, role, status);
+        return Objects.hash(id, role, status, distributedId);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class Components {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    distributedId: ").append(toIndentedString(distributedId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

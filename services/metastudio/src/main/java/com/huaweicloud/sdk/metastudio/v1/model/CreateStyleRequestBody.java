@@ -174,7 +174,7 @@ public class CreateStyleRequestBody {
     }
 
     /**
-     * 租户id
+     * 租户ID
      * @return projectId
      */
     public String getProjectId() {

@@ -84,7 +84,7 @@ public class RTCRoomInfoList {
     }
 
     /**
-     * Get users
+     * 接入RTC的用户信息。
      * @return users
      */
     public List<RTCUserInfo> getUsers() {

@@ -43,7 +43,7 @@ public class AnimationItem {
     }
 
     /**
-     * 时间戳，相对时间戳，单位S，保留3位小数。
+     * 时间戳，相对时间戳。  单位秒。  保留3位小数。
      * minimum: 0
      * maximum: 7.2E+3
      * @return timestamp

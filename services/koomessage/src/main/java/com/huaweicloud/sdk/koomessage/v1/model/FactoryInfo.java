@@ -20,6 +20,11 @@ public class FactoryInfo {
 
     private Integer state;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
     public FactoryInfo withFactoryType(String factoryType) {
         this.factoryType = factoryType;
         return this;
@@ -54,6 +59,23 @@ public class FactoryInfo {
         this.state = state;
     }
 
+    public FactoryInfo withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 厂商版本
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class FactoryInfo {
             return false;
         }
         FactoryInfo that = (FactoryInfo) obj;
-        return Objects.equals(this.factoryType, that.factoryType) && Objects.equals(this.state, that.state);
+        return Objects.equals(this.factoryType, that.factoryType) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(factoryType, state);
+        return Objects.hash(factoryType, state, version);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class FactoryInfo {
         sb.append("class FactoryInfo {\n");
         sb.append("    factoryType: ").append(toIndentedString(factoryType)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -35,6 +35,7 @@ import com.huaweicloud.sdk.core.exchange.SdkExchangeCache;
 import com.huaweicloud.sdk.core.http.Field;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpConfig;
+import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.HttpResponse;
@@ -258,46 +259,42 @@ public class HcClient implements CustomizationConfigure {
         String endpoint = this.endpoints.get(endpointIndex.intValue());
         HttpRequest.HttpRequestBuilder httpRequestBuilder = HttpRequest.newBuilder();
         httpRequestBuilder.withMethod(reqDef.getMethod())
-                .withContentType(reqDef.getContentType())
                 .withEndpoint(endpoint)
                 .withPath(reqDef.getUri());
 
+        boolean hasBody = false;
         for (Field<R, ?> field : reqDef.getRequestFields()) {
-            Optional<?> reqValueOption;
-            if (httpConfig.isIgnoreRequiredValidation()) {
-                reqValueOption = field.readValueNoValidation(request);
-            } else {
-                reqValueOption = field.readValue(request);
+            Optional<?> reqValueOption = httpConfig.isIgnoreRequiredValidation() ?
+                    field.readValueNoValidation(request) : field.readValue(request);
+
+            if (!reqValueOption.isPresent()) {
+                continue;
             }
-            if (reqValueOption.isPresent()) {
-                Object reqValue = reqValueOption.get();
-                if (field.getLocation() == LocationType.Header) {
+            Object reqValue = reqValueOption.get();
+            switch (field.getLocation()) {
+                case Header:
                     httpRequestBuilder.addHeader(field.getName(), convertToStringParams(reqValue));
-                } else if (field.getLocation() == LocationType.Query) {
+                    break;
+                case Query:
                     buildQueryParams(httpRequestBuilder, field.getName(), reqValue);
-                } else if (field.getLocation() == LocationType.Path) {
+                    break;
+                case Path:
                     httpRequestBuilder.addPathParam(field.getName(), convertToStringParams(reqValue));
-                } else if (field.getLocation() == LocationType.Body) {
+                    break;
+                case Body:
                     buildRequestBody(httpRequestBuilder, reqValue);
-                } else if (field.getLocation() == LocationType.Cname) {
-                    try {
-                        URL url = new URL(
-                                endpoint.replace("\r", "").replace("\n", ""));
-                        StringBuilder endpointBuilder = new StringBuilder();
-                        endpointBuilder.append(url.getProtocol())
-                                .append("://")
-                                .append(reqValue)
-                                .append(".")
-                                .append(url.getHost());
-                        if (!StringUtils.isEmpty(url.getPath())) {
-                            endpointBuilder.append("/").append(url.getPath());
-                        }
-                        httpRequestBuilder.withEndpoint(endpointBuilder.toString());
-                    } catch (MalformedURLException e) {
-                        throw new SdkException("Failed to parse endpoint");
-                    }
-                }
+                    hasBody = true;
+                    break;
+                case Cname:
+                    buildCname(httpRequestBuilder, endpoint, reqValue);
+                    break;
+                default:
+                    break;
             }
+        }
+
+        if (!(this.httpConfig.isIgnoreContentTypeForGetRequest() && reqDef.getMethod() == HttpMethod.GET && !hasBody)) {
+            httpRequestBuilder.withContentType(reqDef.getContentType());
         }
 
         // handle upload/download progress
@@ -319,11 +316,30 @@ public class HcClient implements CustomizationConfigure {
         }
 
         // sign algorithm
-        if (Objects.nonNull(httpConfig) && Objects.nonNull(httpConfig.getSigningAlgorithm())) {
+        if (Objects.nonNull(httpConfig.getSigningAlgorithm())) {
             httpRequestBuilder.withSigningAlgorithm(httpConfig.getSigningAlgorithm());
         }
 
         return httpRequestBuilder.build();
+    }
+
+    private void buildCname(HttpRequest.HttpRequestBuilder httpRequestBuilder, String endpoint, Object reqValue) {
+        try {
+            URL url = new URL(
+                    endpoint.replace("\r", "").replace("\n", ""));
+            StringBuilder endpointBuilder = new StringBuilder();
+            endpointBuilder.append(url.getProtocol())
+                    .append("://")
+                    .append(reqValue)
+                    .append(".")
+                    .append(url.getHost());
+            if (!StringUtils.isEmpty(url.getPath())) {
+                endpointBuilder.append("/").append(url.getPath());
+            }
+            httpRequestBuilder.withEndpoint(endpointBuilder.toString());
+        } catch (MalformedURLException e) {
+            throw new SdkException("Failed to parse endpoint");
+        }
     }
 
     private void buildRequestBody(HttpRequest.HttpRequestBuilder httpRequestBuilder, Object reqValue) {

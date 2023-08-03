@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.metastudio.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -55,80 +50,10 @@ public class ListStylesRequest {
 
     private String sortKey;
 
-    /**
-     * 升序还是降序，默认升序。 * asc：升序 * desc：降序
-     */
-    public static final class SortDirEnum {
-
-        /**
-         * Enum ASC for value: "asc"
-         */
-        public static final SortDirEnum ASC = new SortDirEnum("asc");
-
-        /**
-         * Enum DESC for value: "desc"
-         */
-        public static final SortDirEnum DESC = new SortDirEnum("desc");
-
-        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, SortDirEnum> createStaticFields() {
-            Map<String, SortDirEnum> map = new HashMap<>();
-            map.put("asc", ASC);
-            map.put("desc", DESC);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        SortDirEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SortDirEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
-        }
-
-        public static SortDirEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SortDirEnum) {
-                return this.value.equals(((SortDirEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
 
-    private SortDirEnum sortDir;
+    private String sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_until")
@@ -163,7 +88,7 @@ public class ListStylesRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。格式为(YYYYMMDD'T'HHMMSS'Z')
+     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -220,7 +145,7 @@ public class ListStylesRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询
+     * 偏移量，表示从此偏移量开始查询。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -239,7 +164,7 @@ public class ListStylesRequest {
     }
 
     /**
-     * 每页显示的条目数量
+     * 每页显示的条目数量。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -258,7 +183,7 @@ public class ListStylesRequest {
     }
 
     /**
-     * 任务状态，默认所有状态，可多个状态查询，使用英文逗号分隔。 * WAITING：等待任务调度 * PROCESSING：正在处理 * PARTIAL_SUCCEED: 部分成功（模型生成，截图失败） * SUCCEED：成功 * FAILED：失败 * CANCELED：取消
+     * 任务状态，默认所有状态。  可多个状态查询，使用英文逗号分隔。  如state=CREATING,PUBLISHED
      * @return state
      */
     public String getState() {
@@ -275,7 +200,7 @@ public class ListStylesRequest {
     }
 
     /**
-     * 排序字段。
+     * 排序字段，目前只支持create_time。
      * @return sortKey
      */
     public String getSortKey() {
@@ -286,20 +211,20 @@ public class ListStylesRequest {
         this.sortKey = sortKey;
     }
 
-    public ListStylesRequest withSortDir(SortDirEnum sortDir) {
+    public ListStylesRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
     }
 
     /**
-     * 升序还是降序，默认升序。 * asc：升序 * desc：降序
+     * 排序方式。 * asc：升序 * desc：降序  默认asc升序。
      * @return sortDir
      */
-    public SortDirEnum getSortDir() {
+    public String getSortDir() {
         return sortDir;
     }
 
-    public void setSortDir(SortDirEnum sortDir) {
+    public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
     }
 
@@ -309,7 +234,7 @@ public class ListStylesRequest {
     }
 
     /**
-     * 过滤创建时间<=输入时间的记录。格式遵循：RFC 3339 如\"2021-01-10T10:43:17Z\"''。
+     * 过滤创建时间<=输入时间的记录。
      * @return createUntil
      */
     public String getCreateUntil() {
@@ -326,7 +251,7 @@ public class ListStylesRequest {
     }
 
     /**
-     * 过滤创建时间>=输入时间的记录。格式遵循：RFC 3339 如\"2021-01-10T10:43:17Z\"''。
+     * 过滤创建时间>=输入时间的记录。
      * @return createSince
      */
     public String getCreateSince() {

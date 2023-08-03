@@ -55,6 +55,11 @@ public class ConfigurationSummary {
          */
         public static final DatastoreNameEnum SQLSERVER = new DatastoreNameEnum("sqlserver");
 
+        /**
+         * Enum MARIADB for value: "mariadb"
+         */
+        public static final DatastoreNameEnum MARIADB = new DatastoreNameEnum("mariadb");
+
         private static final Map<String, DatastoreNameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatastoreNameEnum> createStaticFields() {
@@ -62,6 +67,7 @@ public class ConfigurationSummary {
             map.put("mysql", MYSQL);
             map.put("postgresql", POSTGRESQL);
             map.put("sqlserver", SQLSERVER);
+            map.put("mariadb", MARIADB);
             return Collections.unmodifiableMap(map);
         }
 

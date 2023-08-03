@@ -7,21 +7,21 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * EnlargeVolume
+ * EnlargeVolumeRequestBody
  */
-public class EnlargeVolume {
+public class EnlargeVolumeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enlarge_volume")
 
     private EnlargeVolumeObject enlargeVolume;
 
-    public EnlargeVolume withEnlargeVolume(EnlargeVolumeObject enlargeVolume) {
+    public EnlargeVolumeRequestBody withEnlargeVolume(EnlargeVolumeObject enlargeVolume) {
         this.enlargeVolume = enlargeVolume;
         return this;
     }
 
-    public EnlargeVolume withEnlargeVolume(Consumer<EnlargeVolumeObject> enlargeVolumeSetter) {
+    public EnlargeVolumeRequestBody withEnlargeVolume(Consumer<EnlargeVolumeObject> enlargeVolumeSetter) {
         if (this.enlargeVolume == null) {
             this.enlargeVolume = new EnlargeVolumeObject();
             enlargeVolumeSetter.accept(this.enlargeVolume);
@@ -50,7 +50,7 @@ public class EnlargeVolume {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnlargeVolume that = (EnlargeVolume) obj;
+        EnlargeVolumeRequestBody that = (EnlargeVolumeRequestBody) obj;
         return Objects.equals(this.enlargeVolume, that.enlargeVolume);
     }
 
@@ -62,7 +62,7 @@ public class EnlargeVolume {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class EnlargeVolume {\n");
+        sb.append("class EnlargeVolumeRequestBody {\n");
         sb.append("    enlargeVolume: ").append(toIndentedString(enlargeVolume)).append("\n");
         sb.append("}");
         return sb.toString();

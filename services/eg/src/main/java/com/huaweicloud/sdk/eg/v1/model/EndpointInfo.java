@@ -135,6 +135,11 @@ public class EndpointInfo {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorInfo errorInfo;
+
     /**
      * 访问端点类型
      */
@@ -349,6 +354,32 @@ public class EndpointInfo {
         this.status = status;
     }
 
+    public EndpointInfo withErrorInfo(ErrorInfo errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public EndpointInfo withErrorInfo(Consumer<ErrorInfo> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorInfo();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorInfo getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorInfo errorInfo) {
+        this.errorInfo = errorInfo;
+    }
+
     public EndpointInfo withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -462,9 +493,10 @@ public class EndpointInfo {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.domain, that.domain) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.scalable, that.scalable) && Objects.equals(this.createdTime, that.createdTime)
-            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.endpoints, that.endpoints);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorInfo, that.errorInfo)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.scalable, that.scalable)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.endpoints, that.endpoints);
     }
 
     @Override
@@ -476,6 +508,7 @@ public class EndpointInfo {
             domain,
             description,
             status,
+            errorInfo,
             type,
             scalable,
             createdTime,
@@ -494,6 +527,7 @@ public class EndpointInfo {
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    scalable: ").append(toIndentedString(scalable)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

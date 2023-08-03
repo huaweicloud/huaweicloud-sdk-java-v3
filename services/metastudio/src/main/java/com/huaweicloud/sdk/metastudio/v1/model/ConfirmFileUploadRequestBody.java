@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ConfirmFileUploadRequestBody {
 
     /**
-     * 文件上传状态。 - CREATED： 上传完成 - FAILED： 上传失败 - CANCELLED： 取消上传
+     * 文件上传状态。 - CREATED：上传完成 - FAILED：上传失败 - CANCELLED：取消上传
      */
     public static final class StateEnum {
 
@@ -102,7 +102,7 @@ public class ConfirmFileUploadRequestBody {
     }
 
     /**
-     * 文件上传状态。 - CREATED： 上传完成 - FAILED： 上传失败 - CANCELLED： 取消上传
+     * 文件上传状态。 - CREATED：上传完成 - FAILED：上传失败 - CANCELLED：取消上传
      * @return state
      */
     public StateEnum getState() {

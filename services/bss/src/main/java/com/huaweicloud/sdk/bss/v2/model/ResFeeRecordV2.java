@@ -116,6 +116,11 @@ public class ResFeeRecordV2 {
     private String tradeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trade_time")
 
     private String tradeTime;
@@ -640,6 +645,23 @@ public class ResFeeRecordV2 {
 
     public void setTradeId(String tradeId) {
         this.tradeId = tradeId;
+    }
+
+    public ResFeeRecordV2 withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 唯一标识。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ResFeeRecordV2 withTradeTime(String tradeTime) {
@@ -1244,7 +1266,8 @@ public class ResFeeRecordV2 {
             && Objects.equals(this.productSpecDesc, that.productSpecDesc) && Objects.equals(this.skuCode, that.skuCode)
             && Objects.equals(this.specSize, that.specSize)
             && Objects.equals(this.specSizeMeasureId, that.specSizeMeasureId)
-            && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.tradeTime, that.tradeTime)
+            && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.tradeTime, that.tradeTime)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
             && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.orderId, that.orderId)
@@ -1295,6 +1318,7 @@ public class ResFeeRecordV2 {
             specSize,
             specSizeMeasureId,
             tradeId,
+            id,
             tradeTime,
             enterpriseProjectId,
             enterpriseProjectName,
@@ -1356,6 +1380,7 @@ public class ResFeeRecordV2 {
         sb.append("    specSize: ").append(toIndentedString(specSize)).append("\n");
         sb.append("    specSizeMeasureId: ").append(toIndentedString(specSizeMeasureId)).append("\n");
         sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    tradeTime: ").append(toIndentedString(tradeTime)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");

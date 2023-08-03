@@ -21,6 +21,11 @@ public class DeleteTemplateMaterialResponse extends SdkResponse {
 
     private String message;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private Object data;
+
     public DeleteTemplateMaterialResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -55,6 +60,23 @@ public class DeleteTemplateMaterialResponse extends SdkResponse {
         this.message = message;
     }
 
+    public DeleteTemplateMaterialResponse withData(Object data) {
+        this.data = data;
+        return this;
+    }
+
+    /**
+     * 固定为null
+     * @return data
+     */
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,13 @@ public class DeleteTemplateMaterialResponse extends SdkResponse {
             return false;
         }
         DeleteTemplateMaterialResponse that = (DeleteTemplateMaterialResponse) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, message);
+        return Objects.hash(status, message, data);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class DeleteTemplateMaterialResponse extends SdkResponse {
         sb.append("class DeleteTemplateMaterialResponse {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

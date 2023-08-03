@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.eg.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -30,20 +35,160 @@ public class SourceKafkaMQParameters {
 
     private String topic;
 
+    /**
+     * 消费点位
+     */
+    public static final class SeekToEnum {
+
+        /**
+         * Enum LATEST for value: "latest"
+         */
+        public static final SeekToEnum LATEST = new SeekToEnum("latest");
+
+        /**
+         * Enum EARLIEST for value: "earliest"
+         */
+        public static final SeekToEnum EARLIEST = new SeekToEnum("earliest");
+
+        private static final Map<String, SeekToEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SeekToEnum> createStaticFields() {
+            Map<String, SeekToEnum> map = new HashMap<>();
+            map.put("latest", LATEST);
+            map.put("earliest", EARLIEST);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SeekToEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SeekToEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeekToEnum(value));
+        }
+
+        public static SeekToEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SeekToEnum) {
+                return this.value.equals(((SeekToEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "seek_to")
 
-    private String seekTo;
+    private SeekToEnum seekTo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_sasl_ssl")
 
     private Boolean enableSaslSsl;
 
+    /**
+     * SASL认证机制
+     */
+    public static final class SaslMechanismEnum {
+
+        /**
+         * Enum SCRAM_SHA_512 for value: "SCRAM-SHA-512"
+         */
+        public static final SaslMechanismEnum SCRAM_SHA_512 = new SaslMechanismEnum("SCRAM-SHA-512");
+
+        /**
+         * Enum PLAIN for value: "PLAIN"
+         */
+        public static final SaslMechanismEnum PLAIN = new SaslMechanismEnum("PLAIN");
+
+        private static final Map<String, SaslMechanismEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SaslMechanismEnum> createStaticFields() {
+            Map<String, SaslMechanismEnum> map = new HashMap<>();
+            map.put("SCRAM-SHA-512", SCRAM_SHA_512);
+            map.put("PLAIN", PLAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SaslMechanismEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SaslMechanismEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SaslMechanismEnum(value));
+        }
+
+        public static SaslMechanismEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SaslMechanismEnum) {
+                return this.value.equals(((SaslMechanismEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sasl_mechanism")
 
-    private String saslMechanism;
+    private SaslMechanismEnum saslMechanism;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_certificate_url")
@@ -133,7 +278,7 @@ public class SourceKafkaMQParameters {
         this.topic = topic;
     }
 
-    public SourceKafkaMQParameters withSeekTo(String seekTo) {
+    public SourceKafkaMQParameters withSeekTo(SeekToEnum seekTo) {
         this.seekTo = seekTo;
         return this;
     }
@@ -142,11 +287,11 @@ public class SourceKafkaMQParameters {
      * 消费点位
      * @return seekTo
      */
-    public String getSeekTo() {
+    public SeekToEnum getSeekTo() {
         return seekTo;
     }
 
-    public void setSeekTo(String seekTo) {
+    public void setSeekTo(SeekToEnum seekTo) {
         this.seekTo = seekTo;
     }
 
@@ -167,7 +312,7 @@ public class SourceKafkaMQParameters {
         this.enableSaslSsl = enableSaslSsl;
     }
 
-    public SourceKafkaMQParameters withSaslMechanism(String saslMechanism) {
+    public SourceKafkaMQParameters withSaslMechanism(SaslMechanismEnum saslMechanism) {
         this.saslMechanism = saslMechanism;
         return this;
     }
@@ -176,11 +321,11 @@ public class SourceKafkaMQParameters {
      * SASL认证机制
      * @return saslMechanism
      */
-    public String getSaslMechanism() {
+    public SaslMechanismEnum getSaslMechanism() {
         return saslMechanism;
     }
 
-    public void setSaslMechanism(String saslMechanism) {
+    public void setSaslMechanism(SaslMechanismEnum saslMechanism) {
         this.saslMechanism = saslMechanism;
     }
 

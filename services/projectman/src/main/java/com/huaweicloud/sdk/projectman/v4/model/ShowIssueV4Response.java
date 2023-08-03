@@ -130,6 +130,21 @@ public class ShowIssueV4Response extends SdkResponse {
     private IssueItemSfV4Status status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "release_dev")
+
+    private String releaseDev;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "find_release_dev")
+
+    private String findReleaseDev;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "env")
+
+    private IssueDetailResponseV4Env env;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker")
 
     private CreateIssueResponseV4Tracker tracker;
@@ -706,6 +721,66 @@ public class ShowIssueV4Response extends SdkResponse {
         this.status = status;
     }
 
+    public ShowIssueV4Response withReleaseDev(String releaseDev) {
+        this.releaseDev = releaseDev;
+        return this;
+    }
+
+    /**
+     * 工作项发布版本号
+     * @return releaseDev
+     */
+    public String getReleaseDev() {
+        return releaseDev;
+    }
+
+    public void setReleaseDev(String releaseDev) {
+        this.releaseDev = releaseDev;
+    }
+
+    public ShowIssueV4Response withFindReleaseDev(String findReleaseDev) {
+        this.findReleaseDev = findReleaseDev;
+        return this;
+    }
+
+    /**
+     * 缺陷发现版本号（仅Bug类型工作项具备该字段）
+     * @return findReleaseDev
+     */
+    public String getFindReleaseDev() {
+        return findReleaseDev;
+    }
+
+    public void setFindReleaseDev(String findReleaseDev) {
+        this.findReleaseDev = findReleaseDev;
+    }
+
+    public ShowIssueV4Response withEnv(IssueDetailResponseV4Env env) {
+        this.env = env;
+        return this;
+    }
+
+    public ShowIssueV4Response withEnv(Consumer<IssueDetailResponseV4Env> envSetter) {
+        if (this.env == null) {
+            this.env = new IssueDetailResponseV4Env();
+            envSetter.accept(this.env);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get env
+     * @return env
+     */
+    public IssueDetailResponseV4Env getEnv() {
+        return env;
+    }
+
+    public void setEnv(IssueDetailResponseV4Env env) {
+        this.env = env;
+    }
+
     public ShowIssueV4Response withTracker(CreateIssueResponseV4Tracker tracker) {
         this.tracker = tracker;
         return this;
@@ -864,10 +939,11 @@ public class ShowIssueV4Response extends SdkResponse {
             && Objects.equals(this.storyPoint, that.storyPoint) && Objects.equals(this.module, that.module)
             && Objects.equals(this.name, that.name) && Objects.equals(this.parentIssue, that.parentIssue)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.severity, that.severity)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.tracker, that.tracker)
-            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.closedTime, that.closedTime)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.order, that.order)
-            && Objects.equals(this.accessories, that.accessories);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.releaseDev, that.releaseDev)
+            && Objects.equals(this.findReleaseDev, that.findReleaseDev) && Objects.equals(this.env, that.env)
+            && Objects.equals(this.tracker, that.tracker) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.closedTime, that.closedTime) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.accessories, that.accessories);
     }
 
     @Override
@@ -895,6 +971,9 @@ public class ShowIssueV4Response extends SdkResponse {
             priority,
             severity,
             status,
+            releaseDev,
+            findReleaseDev,
+            env,
             tracker,
             updatedTime,
             closedTime,
@@ -930,6 +1009,9 @@ public class ShowIssueV4Response extends SdkResponse {
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    releaseDev: ").append(toIndentedString(releaseDev)).append("\n");
+        sb.append("    findReleaseDev: ").append(toIndentedString(findReleaseDev)).append("\n");
+        sb.append("    env: ").append(toIndentedString(env)).append("\n");
         sb.append("    tracker: ").append(toIndentedString(tracker)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
         sb.append("    closedTime: ").append(toIndentedString(closedTime)).append("\n");

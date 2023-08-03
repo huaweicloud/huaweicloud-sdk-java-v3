@@ -75,7 +75,7 @@ public class BackSources {
     }
 
     /**
-     * obs桶类型， “private”： 私有桶， “public”： 公有桶。
+     * OBS桶类型： - “private”， 私有桶： - “public”，公有桶。
      * @return obsBucketType
      */
     public String getObsBucketType() {

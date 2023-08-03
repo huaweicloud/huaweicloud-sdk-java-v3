@@ -111,6 +111,11 @@ public class HumanModelAssetMeta {
     private String modelingJobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_properties")
+
+    private HumanModelMetaProperties modelProperties;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "components")
 
     private List<ComponentInfo> components = null;
@@ -121,7 +126,7 @@ public class HumanModelAssetMeta {
     }
 
     /**
-     * 数字人模型风格ID。 * system_male_001: 男性风格01 * system_female_001: 女性风格01 * system_male_002：男性风格02  * system_female_002: 女性风格02
+     * 数字人模型风格ID。 * system_male_001：男性风格01 * system_female_001：女性风格01 * system_male_002：男性风格02  * system_female_002：女性风格02
      * @return styleId
      */
     public String getStyleId() {
@@ -164,6 +169,32 @@ public class HumanModelAssetMeta {
 
     public void setModelingJobId(String modelingJobId) {
         this.modelingJobId = modelingJobId;
+    }
+
+    public HumanModelAssetMeta withModelProperties(HumanModelMetaProperties modelProperties) {
+        this.modelProperties = modelProperties;
+        return this;
+    }
+
+    public HumanModelAssetMeta withModelProperties(Consumer<HumanModelMetaProperties> modelPropertiesSetter) {
+        if (this.modelProperties == null) {
+            this.modelProperties = new HumanModelMetaProperties();
+            modelPropertiesSetter.accept(this.modelProperties);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get modelProperties
+     * @return modelProperties
+     */
+    public HumanModelMetaProperties getModelProperties() {
+        return modelProperties;
+    }
+
+    public void setModelProperties(HumanModelMetaProperties modelProperties) {
+        this.modelProperties = modelProperties;
     }
 
     public HumanModelAssetMeta withComponents(List<ComponentInfo> components) {
@@ -210,12 +241,13 @@ public class HumanModelAssetMeta {
         HumanModelAssetMeta that = (HumanModelAssetMeta) obj;
         return Objects.equals(this.styleId, that.styleId) && Objects.equals(this.modelingType, that.modelingType)
             && Objects.equals(this.modelingJobId, that.modelingJobId)
+            && Objects.equals(this.modelProperties, that.modelProperties)
             && Objects.equals(this.components, that.components);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(styleId, modelingType, modelingJobId, components);
+        return Objects.hash(styleId, modelingType, modelingJobId, modelProperties, components);
     }
 
     @Override
@@ -225,6 +257,7 @@ public class HumanModelAssetMeta {
         sb.append("    styleId: ").append(toIndentedString(styleId)).append("\n");
         sb.append("    modelingType: ").append(toIndentedString(modelingType)).append("\n");
         sb.append("    modelingJobId: ").append(toIndentedString(modelingJobId)).append("\n");
+        sb.append("    modelProperties: ").append(toIndentedString(modelProperties)).append("\n");
         sb.append("    components: ").append(toIndentedString(components)).append("\n");
         sb.append("}");
         return sb.toString();

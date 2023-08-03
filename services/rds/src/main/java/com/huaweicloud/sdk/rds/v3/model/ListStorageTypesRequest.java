@@ -40,6 +40,11 @@ public class ListStorageTypesRequest {
          */
         public static final DatabaseNameEnum SQLSERVER = new DatabaseNameEnum("SQLServer");
 
+        /**
+         * Enum MARIADB for value: "MariaDB"
+         */
+        public static final DatabaseNameEnum MARIADB = new DatabaseNameEnum("MariaDB");
+
         private static final Map<String, DatabaseNameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatabaseNameEnum> createStaticFields() {
@@ -47,6 +52,7 @@ public class ListStorageTypesRequest {
             map.put("MySQL", MYSQL);
             map.put("PostgreSQL", POSTGRESQL);
             map.put("SQLServer", SQLSERVER);
+            map.put("MariaDB", MARIADB);
             return Collections.unmodifiableMap(map);
         }
 

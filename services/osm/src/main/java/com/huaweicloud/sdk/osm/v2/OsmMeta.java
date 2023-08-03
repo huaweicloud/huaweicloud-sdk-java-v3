@@ -19,8 +19,6 @@ import com.huaweicloud.sdk.osm.v2.model.ConfirmAuthorizationsResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateAndDeletePrivilegeReq;
 import com.huaweicloud.sdk.osm.v2.model.CreateAskQuestionRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateAskQuestionResponse;
-import com.huaweicloud.sdk.osm.v2.model.CreateAuthorizationRequest;
-import com.huaweicloud.sdk.osm.v2.model.CreateAuthorizationResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateCaseExtendsParamRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateCaseExtendsParamResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateCaseLabelsRequest;
@@ -60,7 +58,6 @@ import com.huaweicloud.sdk.osm.v2.model.CreateScoresRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateScoresResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateSessionRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateSessionResponse;
-import com.huaweicloud.sdk.osm.v2.model.CreateUserCenterAuthorizationV2Req;
 import com.huaweicloud.sdk.osm.v2.model.DeleteAccessoriesRequest;
 import com.huaweicloud.sdk.osm.v2.model.DeleteAccessoriesResponse;
 import com.huaweicloud.sdk.osm.v2.model.DeleteCaseLabelsRequest;
@@ -488,38 +485,6 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AskQuestionReq.class),
             f -> f.withMarshaller(CreateAskQuestionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateAuthorizationRequest, CreateAuthorizationResponse> createAuthorization =
-        genForcreateAuthorization();
-
-    private static HttpRequestDef<CreateAuthorizationRequest, CreateAuthorizationResponse> genForcreateAuthorization() {
-        // basic
-        HttpRequestDef.Builder<CreateAuthorizationRequest, CreateAuthorizationResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAuthorizationRequest.class, CreateAuthorizationResponse.class)
-                .withName("CreateAuthorization")
-                .withUri("/v2/servicerequest/cases/{case_id}/authorizations")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("case_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAuthorizationRequest::getCaseId, (req, v) -> {
-                req.setCaseId(v);
-            }));
-        builder.<CreateUserCenterAuthorizationV2Req>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateUserCenterAuthorizationV2Req.class),
-            f -> f.withMarshaller(CreateAuthorizationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

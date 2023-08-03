@@ -81,6 +81,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlPasswordRequest;
@@ -1363,6 +1365,37 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 设置读写分离路由模式
+     *
+     * 设置读写分离路由模式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyGaussMySqlProxyRouteModeRequest 请求对象
+     * @return CompletableFuture<ModifyGaussMySqlProxyRouteModeResponse>
+     */
+    public CompletableFuture<ModifyGaussMySqlProxyRouteModeResponse> modifyGaussMySqlProxyRouteModeAsync(
+        ModifyGaussMySqlProxyRouteModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.modifyGaussMySqlProxyRouteMode);
+    }
+
+    /**
+     * 设置读写分离路由模式
+     *
+     * 设置读写分离路由模式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyGaussMySqlProxyRouteModeRequest 请求对象
+     * @return AsyncInvoker<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse>
+     */
+    public AsyncInvoker<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse> modifyGaussMySqlProxyRouteModeAsyncInvoker(
+        ModifyGaussMySqlProxyRouteModeRequest request) {
+        return new AsyncInvoker<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse>(request,
+            GaussDBMeta.modifyGaussMySqlProxyRouteMode, hcClient);
+    }
+
+    /**
      * 修改数据库用户密码
      *
      * 修改云数据库 GaussDB(for MySQL)实例数据库用户密码。
@@ -2538,7 +2571,7 @@ public class GaussDBAsyncClient {
     /**
      * 更改数据库代理连接池类型
      *
-     * 更改数据库代理连接池类型
+     * 更改数据库代理连接池类型。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2553,7 +2586,7 @@ public class GaussDBAsyncClient {
     /**
      * 更改数据库代理连接池类型
      *
-     * 更改数据库代理连接池类型
+     * 更改数据库代理连接池类型。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -54,7 +54,7 @@ public class OBSSigner {
                     "restore", "tagging", "replication", "metadata", "encryption", "directcoldaccess", "mirrorrefresh",
                     "mirrorbacktosource", "obsbucketalias", "obsalias", "replication_progress", "inventory",
                     "obsworkflowtriggerpolicy", "x-workflow-limit", "x-workflow-prefix", "x-workflow-start",
-                    "x-workflow-template-name", "x-workflow-graph-name", "x-workflow-execution-state",
+                    "x-workflow-template-name", "x-workflow-graph-name", "x-workflow-execution-state", "x-obs-security-token",
                     "x-workflow-category", "x-workflow-create", "customdomain", "cdnnotifyconfiguration", "dispolicy",
                     "obscompresspolicy", "template_name", "template_name_prefix", "x-workflow-status", "sfsumount",
                     "x-workflow-type", "x-workflow-forbid", "sfsacl", "attname", "object-lock", "retention",
@@ -285,7 +285,7 @@ public class OBSSigner {
         throw new ClassNotFoundException("Failed to find a base64 encoder");
     }
 
-    static class Request {
+    public static class Request {
         private String key = null;
         private String secret = null;
         private String method = null;

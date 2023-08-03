@@ -64,7 +64,7 @@ public class CreatePictureModelingJobRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。格式为YYYYMMDD'T'HHMMSS'Z'
+     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

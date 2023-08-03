@@ -45,7 +45,7 @@ public class ShowAssetResponse extends SdkResponse {
     private String updateTime;
 
     /**
-     * 资产类型。 * HUMAN_MODEL:数字人模型 * VOICE_MODEL:音色模型 * SCENE:场景模型 * ANIMATION:动作动画 * VIDEO:视频文件 * IMAGE:图片文件 * PPT:幻灯片文件 * MATERIAL:风格化素材
+     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型 * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板
      */
     public static final class AssetTypeEnum {
 
@@ -99,6 +99,16 @@ public class ShowAssetResponse extends SdkResponse {
          */
         public static final AssetTypeEnum COMMON_FILE = new AssetTypeEnum("COMMON_FILE");
 
+        /**
+         * Enum HUMAN_MODEL_2D for value: "HUMAN_MODEL_2D"
+         */
+        public static final AssetTypeEnum HUMAN_MODEL_2D = new AssetTypeEnum("HUMAN_MODEL_2D");
+
+        /**
+         * Enum BUSINESS_CARD_TEMPLET for value: "BUSINESS_CARD_TEMPLET"
+         */
+        public static final AssetTypeEnum BUSINESS_CARD_TEMPLET = new AssetTypeEnum("BUSINESS_CARD_TEMPLET");
+
         private static final Map<String, AssetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssetTypeEnum> createStaticFields() {
@@ -113,6 +123,8 @@ public class ShowAssetResponse extends SdkResponse {
             map.put("MATERIAL", MATERIAL);
             map.put("NORMAL_MODEL", NORMAL_MODEL);
             map.put("COMMON_FILE", COMMON_FILE);
+            map.put("HUMAN_MODEL_2D", HUMAN_MODEL_2D);
+            map.put("BUSINESS_CARD_TEMPLET", BUSINESS_CARD_TEMPLET);
             return Collections.unmodifiableMap(map);
         }
 
@@ -168,7 +180,7 @@ public class ShowAssetResponse extends SdkResponse {
     private AssetTypeEnum assetType;
 
     /**
-     * 资产状态。 * CREATING:资产创建中，主文件尚未上传 * FAILED:主文件上传失败 * UNACTIVED:主文件上传成功，资产未激活，资产不可用于其他业务(用户可更新状态) * ACTIVED:主文件上传成功，资产激活，资产可用于其他业务(用户可更新状态) * DELETING:资产删除中，资产不可用，资产可恢复 * DELETED:资产文件已删除，资产不可用，资产不可恢复
+     * 资产状态。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复
      */
     public static final class AssetStateEnum {
 
@@ -377,7 +389,7 @@ public class ShowAssetResponse extends SdkResponse {
     }
 
     /**
-     * 资产类型。 * HUMAN_MODEL:数字人模型 * VOICE_MODEL:音色模型 * SCENE:场景模型 * ANIMATION:动作动画 * VIDEO:视频文件 * IMAGE:图片文件 * PPT:幻灯片文件 * MATERIAL:风格化素材
+     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型 * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板
      * @return assetType
      */
     public AssetTypeEnum getAssetType() {
@@ -394,7 +406,7 @@ public class ShowAssetResponse extends SdkResponse {
     }
 
     /**
-     * 资产状态。 * CREATING:资产创建中，主文件尚未上传 * FAILED:主文件上传失败 * UNACTIVED:主文件上传成功，资产未激活，资产不可用于其他业务(用户可更新状态) * ACTIVED:主文件上传成功，资产激活，资产可用于其他业务(用户可更新状态) * DELETING:资产删除中，资产不可用，资产可恢复 * DELETED:资产文件已删除，资产不可用，资产不可恢复
+     * 资产状态。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复
      * @return assetState
      */
     public AssetStateEnum getAssetState() {

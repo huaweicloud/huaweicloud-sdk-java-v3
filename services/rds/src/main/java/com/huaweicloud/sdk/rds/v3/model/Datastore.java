@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Datastore {
 
     /**
-     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+     * 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer - MariaDB
      */
     public static final class TypeEnum {
 
@@ -35,6 +35,11 @@ public class Datastore {
          */
         public static final TypeEnum SQLSERVER = new TypeEnum("SQLServer");
 
+        /**
+         * Enum MARIADB for value: "MariaDB"
+         */
+        public static final TypeEnum MARIADB = new TypeEnum("MariaDB");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -42,6 +47,7 @@ public class Datastore {
             map.put("MySQL", MYSQL);
             map.put("PostgreSQL", POSTGRESQL);
             map.put("SQLServer", SQLSERVER);
+            map.put("MariaDB", MARIADB);
             return Collections.unmodifiableMap(map);
         }
 
@@ -112,7 +118,7 @@ public class Datastore {
     }
 
     /**
-     * 数据库引擎，不区分大小写：  - MySQL - PostgreSQL - SQLServer
+     * 数据库引擎，不区分大小写： - MySQL - PostgreSQL - SQLServer - MariaDB
      * @return type
      */
     public TypeEnum getType() {

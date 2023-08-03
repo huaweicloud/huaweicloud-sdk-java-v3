@@ -1066,6 +1066,13 @@ public class VpcMeta {
             f -> f.withMarshaller(ListPortsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             }));
+        builder.<Boolean>withRequestField("enable_efi",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPortsRequest::getEnableEfi, (req, v) -> {
+                req.setEnableEfi(v);
+            }));
 
         // response
 

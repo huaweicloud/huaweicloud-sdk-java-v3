@@ -56,7 +56,7 @@ public class CacheRules {
     }
 
     /**
-     * 类型,all：匹配所有文件， file_extension：按文件后缀匹配， catalog：按目录匹配， full_path：全路径匹配， home_page：按首页匹配。
+     * 匹配类型: - all：匹配所有文件， - file_extension：按文件后缀匹配， - catalog：按目录匹配， - full_path：全路径匹配， - home_page：按首页匹配。   > 配置单条缓存规则时，可不传，默认为all。   > 配置多条缓存规则时，此参数必传。
      * @return matchType
      */
     public String getMatchType() {
@@ -90,7 +90,7 @@ public class CacheRules {
     }
 
     /**
-     * 缓存过期时间，最大支持365天。
+     * 缓存过期时间，最大支持365天。  > 默认值为0。
      * @return ttl
      */
     public Integer getTtl() {
@@ -141,7 +141,7 @@ public class CacheRules {
     }
 
     /**
-     * 缓存遵循源站开关，on：打开，off：关闭。
+     * 缓存遵循源站开关，on：打开，off：关闭。  > 默认值为off。
      * @return followOrigin
      */
     public String getFollowOrigin() {
@@ -158,7 +158,7 @@ public class CacheRules {
     }
 
     /**
-     * URL参数， del_params：忽略指定URL参数， reserve_params：保留指定URL参数， ignore_url_params：忽略全部URL参数， full_url：使用完整URL参数。
+     * URL参数： - del_params：忽略指定URL参数， - reserve_params：保留指定URL参数， - ignore_url_params：忽略全部URL参数， - full_url：使用完整URL参数。   > 不传此参数时，默认为full_url。
      * @return urlParameterType
      */
     public String getUrlParameterType() {
@@ -175,7 +175,7 @@ public class CacheRules {
     }
 
     /**
-     * URL参数值，最多设置10条，以\",\"分隔。
+     * URL参数值，最多设置10条，以\",\"分隔。  > 当url_parameter_type为del_params或reserve_params时必填。
      * @return urlParameterValue
      */
     public String getUrlParameterValue() {

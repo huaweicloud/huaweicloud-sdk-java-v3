@@ -13,8 +13,6 @@ import com.huaweicloud.sdk.osm.v2.model.ConfirmAuthorizationsRequest;
 import com.huaweicloud.sdk.osm.v2.model.ConfirmAuthorizationsResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateAskQuestionRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateAskQuestionResponse;
-import com.huaweicloud.sdk.osm.v2.model.CreateAuthorizationRequest;
-import com.huaweicloud.sdk.osm.v2.model.CreateAuthorizationResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateCaseExtendsParamRequest;
 import com.huaweicloud.sdk.osm.v2.model.CreateCaseExtendsParamResponse;
 import com.huaweicloud.sdk.osm.v2.model.CreateCaseLabelsRequest;
@@ -355,36 +353,6 @@ public class OsmClient {
         CreateAskQuestionRequest request) {
         return new SyncInvoker<CreateAskQuestionRequest, CreateAskQuestionResponse>(request, OsmMeta.createAskQuestion,
             hcClient);
-    }
-
-    /**
-     * 创建授权
-     *
-     * 创建授权
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateAuthorizationRequest 请求对象
-     * @return CreateAuthorizationResponse
-     */
-    public CreateAuthorizationResponse createAuthorization(CreateAuthorizationRequest request) {
-        return hcClient.syncInvokeHttp(request, OsmMeta.createAuthorization);
-    }
-
-    /**
-     * 创建授权
-     *
-     * 创建授权
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateAuthorizationRequest 请求对象
-     * @return SyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse>
-     */
-    public SyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse> createAuthorizationInvoker(
-        CreateAuthorizationRequest request) {
-        return new SyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse>(request,
-            OsmMeta.createAuthorization, hcClient);
     }
 
     /**

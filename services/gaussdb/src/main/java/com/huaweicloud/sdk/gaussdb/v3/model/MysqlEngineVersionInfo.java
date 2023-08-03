@@ -20,6 +20,16 @@ public class MysqlEngineVersionInfo {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kernel_version")
+
+    private String kernelVersion;
+
     public MysqlEngineVersionInfo withId(String id) {
         this.id = id;
         return this;
@@ -54,6 +64,40 @@ public class MysqlEngineVersionInfo {
         this.name = name;
     }
 
+    public MysqlEngineVersionInfo withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 兼容的开源数据库版本号，返回三位开源版本号。
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public MysqlEngineVersionInfo withKernelVersion(String kernelVersion) {
+        this.kernelVersion = kernelVersion;
+        return this;
+    }
+
+    /**
+     * 数据库版本号，返回完整的四位版本号。
+     * @return kernelVersion
+     */
+    public String getKernelVersion() {
+        return kernelVersion;
+    }
+
+    public void setKernelVersion(String kernelVersion) {
+        this.kernelVersion = kernelVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +107,13 @@ public class MysqlEngineVersionInfo {
             return false;
         }
         MysqlEngineVersionInfo that = (MysqlEngineVersionInfo) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.kernelVersion, that.kernelVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, name, version, kernelVersion);
     }
 
     @Override
@@ -77,6 +122,8 @@ public class MysqlEngineVersionInfo {
         sb.append("class MysqlEngineVersionInfo {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    kernelVersion: ").append(toIndentedString(kernelVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

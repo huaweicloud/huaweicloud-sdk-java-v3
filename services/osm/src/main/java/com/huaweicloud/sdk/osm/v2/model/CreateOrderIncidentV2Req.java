@@ -46,16 +46,6 @@ public class CreateOrderIncidentV2Req {
     private String sourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_authorized")
-
-    private Integer isAuthorized;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "authorization_content")
-
-    private String authorizationContent;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remind_mobile")
 
     private String remindMobile;
@@ -205,42 +195,6 @@ public class CreateOrderIncidentV2Req {
 
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
-    }
-
-    public CreateOrderIncidentV2Req withIsAuthorized(Integer isAuthorized) {
-        this.isAuthorized = isAuthorized;
-        return this;
-    }
-
-    /**
-     * 是否授权
-     * minimum: 0
-     * maximum: 1
-     * @return isAuthorized
-     */
-    public Integer getIsAuthorized() {
-        return isAuthorized;
-    }
-
-    public void setIsAuthorized(Integer isAuthorized) {
-        this.isAuthorized = isAuthorized;
-    }
-
-    public CreateOrderIncidentV2Req withAuthorizationContent(String authorizationContent) {
-        this.authorizationContent = authorizationContent;
-        return this;
-    }
-
-    /**
-     * 机密信息内容
-     * @return authorizationContent
-     */
-    public String getAuthorizationContent() {
-        return authorizationContent;
-    }
-
-    public void setAuthorizationContent(String authorizationContent) {
-        this.authorizationContent = authorizationContent;
     }
 
     public CreateOrderIncidentV2Req withRemindMobile(String remindMobile) {
@@ -474,13 +428,12 @@ public class CreateOrderIncidentV2Req {
             && Objects.equals(this.productCategoryId, that.productCategoryId)
             && Objects.equals(this.businessTypeId, that.businessTypeId) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.simpleDescription, that.simpleDescription)
-            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.isAuthorized, that.isAuthorized)
-            && Objects.equals(this.authorizationContent, that.authorizationContent)
-            && Objects.equals(this.remindMobile, that.remindMobile) && Objects.equals(this.remindMail, that.remindMail)
-            && Objects.equals(this.remindTime, that.remindTime) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.accessoryIds, that.accessoryIds) && Objects.equals(this.extendsMap, that.extendsMap)
-            && Objects.equals(this.extensionMap, that.extensionMap) && Objects.equals(this.severityId, that.severityId)
-            && Objects.equals(this.verifyCode, that.verifyCode) && Objects.equals(this.areaCode, that.areaCode);
+            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.remindMobile, that.remindMobile)
+            && Objects.equals(this.remindMail, that.remindMail) && Objects.equals(this.remindTime, that.remindTime)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.accessoryIds, that.accessoryIds)
+            && Objects.equals(this.extendsMap, that.extendsMap) && Objects.equals(this.extensionMap, that.extensionMap)
+            && Objects.equals(this.severityId, that.severityId) && Objects.equals(this.verifyCode, that.verifyCode)
+            && Objects.equals(this.areaCode, that.areaCode);
     }
 
     @Override
@@ -491,8 +444,6 @@ public class CreateOrderIncidentV2Req {
             regionId,
             simpleDescription,
             sourceId,
-            isAuthorized,
-            authorizationContent,
             remindMobile,
             remindMail,
             remindTime,
@@ -515,8 +466,6 @@ public class CreateOrderIncidentV2Req {
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    simpleDescription: ").append(toIndentedString(simpleDescription)).append("\n");
         sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
-        sb.append("    isAuthorized: ").append(toIndentedString(isAuthorized)).append("\n");
-        sb.append("    authorizationContent: ").append(toIndentedString(authorizationContent)).append("\n");
         sb.append("    remindMobile: ").append(toIndentedString(remindMobile)).append("\n");
         sb.append("    remindMail: ").append(toIndentedString(remindMail)).append("\n");
         sb.append("    remindTime: ").append(toIndentedString(remindTime)).append("\n");

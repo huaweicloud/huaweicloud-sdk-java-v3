@@ -1,35 +1,36 @@
-package com.huaweicloud.sdk.koomessage.v1.model;
+package com.huaweicloud.sdk.mrs.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * 请求成功返回的数据。
+ * Response Object
  */
-public class FreezePubResponseModelData {
+public class UpdateDataConnectorResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pub_id")
+    @JsonProperty(value = "result")
 
-    private String pubId;
+    private String result;
 
-    public FreezePubResponseModelData withPubId(String pubId) {
-        this.pubId = pubId;
+    public UpdateDataConnectorResponse withResult(String result) {
+        this.result = result;
         return this;
     }
 
     /**
-     * 服务号ID。
-     * @return pubId
+     * 更新映射请求操作结果，succeeded为操作成功，failed为操作失败
+     * @return result
      */
-    public String getPubId() {
-        return pubId;
+    public String getResult() {
+        return result;
     }
 
-    public void setPubId(String pubId) {
-        this.pubId = pubId;
+    public void setResult(String result) {
+        this.result = result;
     }
 
     @Override
@@ -40,20 +41,20 @@ public class FreezePubResponseModelData {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreezePubResponseModelData that = (FreezePubResponseModelData) obj;
-        return Objects.equals(this.pubId, that.pubId);
+        UpdateDataConnectorResponse that = (UpdateDataConnectorResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pubId);
+        return Objects.hash(result);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class FreezePubResponseModelData {\n");
-        sb.append("    pubId: ").append(toIndentedString(pubId)).append("\n");
+        sb.append("class UpdateDataConnectorResponse {\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();
     }

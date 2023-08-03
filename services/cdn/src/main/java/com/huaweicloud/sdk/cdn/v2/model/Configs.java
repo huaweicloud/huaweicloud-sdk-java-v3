@@ -24,6 +24,11 @@ public class Configs {
     private String serviceArea;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remark")
+
+    private String remark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_request_header")
 
     private List<OriginRequestHeader> originRequestHeader = null;
@@ -149,6 +154,21 @@ public class Configs {
     private List<RequestLimitRules> requestLimitRules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_frequency_limit")
+
+    private IpFrequencyLimit ipFrequencyLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hsts")
+
+    private Hsts hsts;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quic")
+
+    private Quic quic;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code_redirect_rules")
 
     private List<ErrorCodeRedirectRules> errorCodeRedirectRules = null;
@@ -159,7 +179,7 @@ public class Configs {
     }
 
     /**
-     * 业务类型，web：网站加速，download：文件下载加速，video：点播加速。  > 暂不支持“全站加速”变更为其它业务类型。
+     * 业务类型： - web：网站加速； - download：文件下载加速； - video：点播加速。  > 暂不支持“全站加速”变更为其它业务类型。
      * @return businessType
      */
     public String getBusinessType() {
@@ -176,7 +196,7 @@ public class Configs {
     }
 
     /**
-     * 服务区域，mainland_china：中国大陆，global：全球，outside_mainland_china：中国大陆境外。  > 暂不支持“中国大陆”与“中国大陆境外”互相直接切换。
+     * 服务区域： - mainland_china：中国大陆； - global：全球； - outside_mainland_china：中国大陆境外。  > 暂不支持“中国大陆”与“中国大陆境外”互相直接切换。
      * @return serviceArea
      */
     public String getServiceArea() {
@@ -185,6 +205,23 @@ public class Configs {
 
     public void setServiceArea(String serviceArea) {
         this.serviceArea = serviceArea;
+    }
+
+    public Configs withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    /**
+     * 给域名添加备注，字符长度范围0-200。
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public Configs withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
@@ -839,6 +876,84 @@ public class Configs {
         this.requestLimitRules = requestLimitRules;
     }
 
+    public Configs withIpFrequencyLimit(IpFrequencyLimit ipFrequencyLimit) {
+        this.ipFrequencyLimit = ipFrequencyLimit;
+        return this;
+    }
+
+    public Configs withIpFrequencyLimit(Consumer<IpFrequencyLimit> ipFrequencyLimitSetter) {
+        if (this.ipFrequencyLimit == null) {
+            this.ipFrequencyLimit = new IpFrequencyLimit();
+            ipFrequencyLimitSetter.accept(this.ipFrequencyLimit);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ipFrequencyLimit
+     * @return ipFrequencyLimit
+     */
+    public IpFrequencyLimit getIpFrequencyLimit() {
+        return ipFrequencyLimit;
+    }
+
+    public void setIpFrequencyLimit(IpFrequencyLimit ipFrequencyLimit) {
+        this.ipFrequencyLimit = ipFrequencyLimit;
+    }
+
+    public Configs withHsts(Hsts hsts) {
+        this.hsts = hsts;
+        return this;
+    }
+
+    public Configs withHsts(Consumer<Hsts> hstsSetter) {
+        if (this.hsts == null) {
+            this.hsts = new Hsts();
+            hstsSetter.accept(this.hsts);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hsts
+     * @return hsts
+     */
+    public Hsts getHsts() {
+        return hsts;
+    }
+
+    public void setHsts(Hsts hsts) {
+        this.hsts = hsts;
+    }
+
+    public Configs withQuic(Quic quic) {
+        this.quic = quic;
+        return this;
+    }
+
+    public Configs withQuic(Consumer<Quic> quicSetter) {
+        if (this.quic == null) {
+            this.quic = new Quic();
+            quicSetter.accept(this.quic);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get quic
+     * @return quic
+     */
+    public Quic getQuic() {
+        return quic;
+    }
+
+    public void setQuic(Quic quic) {
+        this.quic = quic;
+    }
+
     public Configs withErrorCodeRedirectRules(List<ErrorCodeRedirectRules> errorCodeRedirectRules) {
         this.errorCodeRedirectRules = errorCodeRedirectRules;
         return this;
@@ -882,7 +997,7 @@ public class Configs {
         }
         Configs that = (Configs) obj;
         return Objects.equals(this.businessType, that.businessType)
-            && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.serviceArea, that.serviceArea) && Objects.equals(this.remark, that.remark)
             && Objects.equals(this.originRequestHeader, that.originRequestHeader)
             && Objects.equals(this.httpResponseHeader, that.httpResponseHeader)
             && Objects.equals(this.urlAuth, that.urlAuth) && Objects.equals(this.https, that.https)
@@ -903,6 +1018,8 @@ public class Configs {
             && Objects.equals(this.remoteAuth, that.remoteAuth) && Objects.equals(this.websocket, that.websocket)
             && Objects.equals(this.videoSeek, that.videoSeek)
             && Objects.equals(this.requestLimitRules, that.requestLimitRules)
+            && Objects.equals(this.ipFrequencyLimit, that.ipFrequencyLimit) && Objects.equals(this.hsts, that.hsts)
+            && Objects.equals(this.quic, that.quic)
             && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules);
     }
 
@@ -910,6 +1027,7 @@ public class Configs {
     public int hashCode() {
         return Objects.hash(businessType,
             serviceArea,
+            remark,
             originRequestHeader,
             httpResponseHeader,
             urlAuth,
@@ -935,6 +1053,9 @@ public class Configs {
             websocket,
             videoSeek,
             requestLimitRules,
+            ipFrequencyLimit,
+            hsts,
+            quic,
             errorCodeRedirectRules);
     }
 
@@ -944,6 +1065,7 @@ public class Configs {
         sb.append("class Configs {\n");
         sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    originRequestHeader: ").append(toIndentedString(originRequestHeader)).append("\n");
         sb.append("    httpResponseHeader: ").append(toIndentedString(httpResponseHeader)).append("\n");
         sb.append("    urlAuth: ").append(toIndentedString(urlAuth)).append("\n");
@@ -969,6 +1091,9 @@ public class Configs {
         sb.append("    websocket: ").append(toIndentedString(websocket)).append("\n");
         sb.append("    videoSeek: ").append(toIndentedString(videoSeek)).append("\n");
         sb.append("    requestLimitRules: ").append(toIndentedString(requestLimitRules)).append("\n");
+        sb.append("    ipFrequencyLimit: ").append(toIndentedString(ipFrequencyLimit)).append("\n");
+        sb.append("    hsts: ").append(toIndentedString(hsts)).append("\n");
+        sb.append("    quic: ").append(toIndentedString(quic)).append("\n");
         sb.append("    errorCodeRedirectRules: ").append(toIndentedString(errorCodeRedirectRules)).append("\n");
         sb.append("}");
         return sb.toString();

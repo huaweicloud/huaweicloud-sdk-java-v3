@@ -35,6 +35,11 @@ public class ListConnectionsRequest {
 
     private String fuzzyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
     public ListConnectionsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -124,6 +129,23 @@ public class ListConnectionsRequest {
         this.fuzzyName = fuzzyName;
     }
 
+    public ListConnectionsRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 指定查询的目标连接，队列的实例id
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -135,12 +157,12 @@ public class ListConnectionsRequest {
         ListConnectionsRequest that = (ListConnectionsRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.sort, that.sort) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.fuzzyName, that.fuzzyName);
+            && Objects.equals(this.fuzzyName, that.fuzzyName) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, sort, name, fuzzyName);
+        return Objects.hash(offset, limit, sort, name, fuzzyName, instanceId);
     }
 
     @Override
@@ -152,6 +174,7 @@ public class ListConnectionsRequest {
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

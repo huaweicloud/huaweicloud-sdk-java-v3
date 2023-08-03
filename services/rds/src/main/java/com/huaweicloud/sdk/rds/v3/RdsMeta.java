@@ -110,7 +110,7 @@ import com.huaweicloud.sdk.rds.v3.model.DownloadSlowlogResponse;
 import com.huaweicloud.sdk.rds.v3.model.DropDatabaseV3Req;
 import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.EnableConfigurationResponse;
-import com.huaweicloud.sdk.rds.v3.model.EnlargeVolume;
+import com.huaweicloud.sdk.rds.v3.model.EnlargeVolumeRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ErrorlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.FailoverModeRequest;
@@ -3727,10 +3727,10 @@ public class RdsMeta {
             f -> f.withMarshaller(StartInstanceEnlargeVolumeActionRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
-        builder.<EnlargeVolume>withRequestField("body",
+        builder.<EnlargeVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(EnlargeVolume.class),
+            TypeCasts.uncheckedConversion(EnlargeVolumeRequestBody.class),
             f -> f.withMarshaller(StartInstanceEnlargeVolumeActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

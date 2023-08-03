@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.osm.v2.model;
+package com.huaweicloud.sdk.koophone.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,43 +9,45 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class CreateAuthorizationRequest {
+public class SyncInvokeInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "case_id")
+    @JsonProperty(value = "x-request-id")
 
-    private String caseId;
+    private String xRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateUserCenterAuthorizationV2Req body;
+    private InstanceSyncCommandsReq body;
 
-    public CreateAuthorizationRequest withCaseId(String caseId) {
-        this.caseId = caseId;
+    public SyncInvokeInstanceRequest withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
         return this;
     }
 
     /**
-     * 事件id
-     * @return caseId
+     * 消息跟踪唯一id
+     * @return xRequestId
      */
-    public String getCaseId() {
-        return caseId;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-request-id")
+    public String getXRequestId() {
+        return xRequestId;
     }
 
-    public void setCaseId(String caseId) {
-        this.caseId = caseId;
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
     }
 
-    public CreateAuthorizationRequest withBody(CreateUserCenterAuthorizationV2Req body) {
+    public SyncInvokeInstanceRequest withBody(InstanceSyncCommandsReq body) {
         this.body = body;
         return this;
     }
 
-    public CreateAuthorizationRequest withBody(Consumer<CreateUserCenterAuthorizationV2Req> bodySetter) {
+    public SyncInvokeInstanceRequest withBody(Consumer<InstanceSyncCommandsReq> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateUserCenterAuthorizationV2Req();
+            this.body = new InstanceSyncCommandsReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +58,11 @@ public class CreateAuthorizationRequest {
      * Get body
      * @return body
      */
-    public CreateUserCenterAuthorizationV2Req getBody() {
+    public InstanceSyncCommandsReq getBody() {
         return body;
     }
 
-    public void setBody(CreateUserCenterAuthorizationV2Req body) {
+    public void setBody(InstanceSyncCommandsReq body) {
         this.body = body;
     }
 
@@ -72,20 +74,20 @@ public class CreateAuthorizationRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAuthorizationRequest that = (CreateAuthorizationRequest) obj;
-        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.body, that.body);
+        SyncInvokeInstanceRequest that = (SyncInvokeInstanceRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(caseId, body);
+        return Objects.hash(xRequestId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateAuthorizationRequest {\n");
-        sb.append("    caseId: ").append(toIndentedString(caseId)).append("\n");
+        sb.append("class SyncInvokeInstanceRequest {\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -99,7 +99,7 @@ public class StartInstanceEnlargeVolumeActionRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private EnlargeVolume body;
+    private EnlargeVolumeRequestBody body;
 
     public StartInstanceEnlargeVolumeActionRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -137,14 +137,14 @@ public class StartInstanceEnlargeVolumeActionRequest {
         this.instanceId = instanceId;
     }
 
-    public StartInstanceEnlargeVolumeActionRequest withBody(EnlargeVolume body) {
+    public StartInstanceEnlargeVolumeActionRequest withBody(EnlargeVolumeRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public StartInstanceEnlargeVolumeActionRequest withBody(Consumer<EnlargeVolume> bodySetter) {
+    public StartInstanceEnlargeVolumeActionRequest withBody(Consumer<EnlargeVolumeRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new EnlargeVolume();
+            this.body = new EnlargeVolumeRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -155,11 +155,11 @@ public class StartInstanceEnlargeVolumeActionRequest {
      * Get body
      * @return body
      */
-    public EnlargeVolume getBody() {
+    public EnlargeVolumeRequestBody getBody() {
         return body;
     }
 
-    public void setBody(EnlargeVolume body) {
+    public void setBody(EnlargeVolumeRequestBody body) {
         this.body = body;
     }
 

@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.osm.v2.model;
+package com.huaweicloud.sdk.koophone.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,7 +9,7 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class CreateAuthorizationResponse extends SdkResponse {
+public class SetVideoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
@@ -21,13 +21,13 @@ public class CreateAuthorizationResponse extends SdkResponse {
 
     private String errorMsg;
 
-    public CreateAuthorizationResponse withErrorCode(String errorCode) {
+    public SetVideoResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
     /**
-     * 错误码
+     * 响应码，错误码规范KP.API.0001，数字递增
      * @return errorCode
      */
     public String getErrorCode() {
@@ -38,13 +38,13 @@ public class CreateAuthorizationResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    public CreateAuthorizationResponse withErrorMsg(String errorMsg) {
+    public SetVideoResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
     /**
-     * 错误描述
+     * 响应描述
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -63,7 +63,7 @@ public class CreateAuthorizationResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAuthorizationResponse that = (CreateAuthorizationResponse) obj;
+        SetVideoResponse that = (SetVideoResponse) obj;
         return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
@@ -75,7 +75,7 @@ public class CreateAuthorizationResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateAuthorizationResponse {\n");
+        sb.append("class SetVideoResponse {\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("}");

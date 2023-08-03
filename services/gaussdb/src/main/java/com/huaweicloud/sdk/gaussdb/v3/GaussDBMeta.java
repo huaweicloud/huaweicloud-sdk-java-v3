@@ -100,6 +100,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogErrorQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogSlowQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAliasRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBindEipRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyInternalIpRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyOpsWindow;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyPortRequest;
@@ -1861,6 +1864,55 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScheduleJobsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse> modifyGaussMySqlProxyRouteMode =
+        genFormodifyGaussMySqlProxyRouteMode();
+
+    private static HttpRequestDef<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse> genFormodifyGaussMySqlProxyRouteMode() {
+        // basic
+        HttpRequestDef.Builder<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyGaussMySqlProxyRouteModeRequest.class,
+                    ModifyGaussMySqlProxyRouteModeResponse.class)
+                .withName("ModifyGaussMySqlProxyRouteMode")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/route-mode")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getProxyId, (req, v) -> {
+                req.setProxyId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ModifyGaussMySqlProxyRouteModeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyGaussMySqlProxyRouteModeRequestBody.class),
+            f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

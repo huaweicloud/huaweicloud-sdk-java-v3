@@ -166,7 +166,7 @@ public class DnsAsyncClient {
     /**
      * 创建线路分组
      *
-     * 创建一个线路分组。
+     * 创建一个线路分组。 该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -180,7 +180,7 @@ public class DnsAsyncClient {
     /**
      * 创建线路分组
      *
-     * 创建一个线路分组。
+     * 创建一个线路分组。 该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -226,7 +226,7 @@ public class DnsAsyncClient {
     /**
      * 删除线路分组
      *
-     * 删除单个线路分组。
+     * 删除单个线路分组。该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -240,7 +240,7 @@ public class DnsAsyncClient {
     /**
      * 删除线路分组
      *
-     * 删除单个线路分组。
+     * 删除单个线路分组。该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -316,7 +316,7 @@ public class DnsAsyncClient {
     /**
      * 查询线路分组列表
      *
-     * 查询线路分组列表。
+     * 查询线路分组列表。该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -330,7 +330,7 @@ public class DnsAsyncClient {
     /**
      * 查询线路分组列表
      *
-     * 查询线路分组列表。
+     * 查询线路分组列表。该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -434,7 +434,7 @@ public class DnsAsyncClient {
     /**
      * 查询线路分组
      *
-     * 查询线路分组。
+     * 查询线路分组。该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -448,7 +448,7 @@ public class DnsAsyncClient {
     /**
      * 查询线路分组
      *
-     * 查询线路分组。
+     * 查询线路分组。该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -493,7 +493,7 @@ public class DnsAsyncClient {
     /**
      * 更新线路分组
      *
-     * 更新单个线路分组。
+     * 更新单个线路分组。该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -507,7 +507,7 @@ public class DnsAsyncClient {
     /**
      * 更新线路分组
      *
-     * 更新单个线路分组。
+     * 更新单个线路分组。该接口部分区域未上线、如需使用请提交工单申请开通。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -862,7 +862,7 @@ public class DnsAsyncClient {
     /**
      * 删除单个Record Set
      *
-     * 删除单个Record Set
+     * 删除单个Record Set. 删除有添加智能解析的记录集时、需要用Record Set多线路管理模块中删除接口进行删除.
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -876,7 +876,7 @@ public class DnsAsyncClient {
     /**
      * 删除单个Record Set
      *
-     * 删除单个Record Set
+     * 删除单个Record Set. 删除有添加智能解析的记录集时、需要用Record Set多线路管理模块中删除接口进行删除.
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -20,6 +20,11 @@ public class MysqlDatastore {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kernel_version")
+
+    private String kernelVersion;
+
     public MysqlDatastore withType(String type) {
         this.type = type;
         return this;
@@ -43,7 +48,7 @@ public class MysqlDatastore {
     }
 
     /**
-     * 数据库版本。  数据库支持的详细版本信息，可调用查询数据库引擎的版本接口获取。
+     * 数据库版本。  两位数的大版本号，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的name字段。
      * @return version
      */
     public String getVersion() {
@@ -52,6 +57,23 @@ public class MysqlDatastore {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public MysqlDatastore withKernelVersion(String kernelVersion) {
+        this.kernelVersion = kernelVersion;
+        return this;
+    }
+
+    /**
+     * 内核数据库版本。  完整的四位内核数据库版本，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的kernel_version字段。
+     * @return kernelVersion
+     */
+    public String getKernelVersion() {
+        return kernelVersion;
+    }
+
+    public void setKernelVersion(String kernelVersion) {
+        this.kernelVersion = kernelVersion;
     }
 
     @Override
@@ -63,12 +85,13 @@ public class MysqlDatastore {
             return false;
         }
         MysqlDatastore that = (MysqlDatastore) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.kernelVersion, that.kernelVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, version);
+        return Objects.hash(type, version, kernelVersion);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class MysqlDatastore {
         sb.append("class MysqlDatastore {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    kernelVersion: ").append(toIndentedString(kernelVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

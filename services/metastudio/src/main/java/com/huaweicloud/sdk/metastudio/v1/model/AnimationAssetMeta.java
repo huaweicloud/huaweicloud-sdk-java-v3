@@ -36,7 +36,7 @@ public class AnimationAssetMeta {
     private Float voiceDelay;
 
     /**
-     * 动画插入位置限制。 * ONLY_BEGINNING： 视频制作时，动画只允许出现在起始位置。 * ONLY_END： 视频制作时，动画只允许许出现在结束位置。
+     * 动画插入位置限制。 * ONLY_BEGINNING：视频制作时，动画只允许出现在起始位置。 * ONLY_END：视频制作时，动画只允许出现在结束位置。
      */
     public static final class AnimationInsertRestrictionEnum {
 
@@ -171,7 +171,7 @@ public class AnimationAssetMeta {
     }
 
     /**
-     * 语音延迟播放时长，单位秒。使用场景举例：入场动画3秒，voice_delay设置成4秒，则语音从入场动画开始后第4秒开始播放。
+     * 语音延迟播放时长。  单位秒。  使用场景举例：入场动画3秒，voice_delay设置成4秒，则语音从入场动画开始后第4秒开始播放。
      * minimum: 0
      * maximum: 1E+2
      * @return voiceDelay
@@ -191,7 +191,7 @@ public class AnimationAssetMeta {
     }
 
     /**
-     * 动画插入位置限制。 * ONLY_BEGINNING： 视频制作时，动画只允许出现在起始位置。 * ONLY_END： 视频制作时，动画只允许许出现在结束位置。
+     * 动画插入位置限制。 * ONLY_BEGINNING：视频制作时，动画只允许出现在起始位置。 * ONLY_END：视频制作时，动画只允许出现在结束位置。
      * @return animationInsertRestriction
      */
     public AnimationInsertRestrictionEnum getAnimationInsertRestriction() {

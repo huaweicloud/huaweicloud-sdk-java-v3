@@ -75,7 +75,7 @@ public class ListTtsaDataRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。格式为(YYYYMMDD'T'HHMMSS'Z')
+     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -113,7 +113,7 @@ public class ListTtsaDataRequest {
     }
 
     /**
-     * 偏移量，表示生成内容时间偏移，目前每次返回2S内容
+     * 偏移量，表示生成内容时间偏移，目前每次返回2秒内容。
      * minimum: 0
      * maximum: 10000
      * @return offset

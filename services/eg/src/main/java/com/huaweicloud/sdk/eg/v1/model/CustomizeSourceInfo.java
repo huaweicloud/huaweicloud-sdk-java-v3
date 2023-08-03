@@ -235,6 +235,11 @@ public class CustomizeSourceInfo {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorInfo errorInfo;
+
     public CustomizeSourceInfo withId(String id) {
         this.id = id;
         return this;
@@ -472,6 +477,32 @@ public class CustomizeSourceInfo {
         this.status = status;
     }
 
+    public CustomizeSourceInfo withErrorInfo(ErrorInfo errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public CustomizeSourceInfo withErrorInfo(Consumer<ErrorInfo> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorInfo();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorInfo getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorInfo errorInfo) {
+        this.errorInfo = errorInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -487,7 +518,7 @@ public class CustomizeSourceInfo {
             && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
             && Objects.equals(this.channelId, that.channelId) && Objects.equals(this.channelName, that.channelName)
             && Objects.equals(this.type, that.type) && Objects.equals(this.detail, that.detail)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorInfo, that.errorInfo);
     }
 
     @Override
@@ -504,7 +535,8 @@ public class CustomizeSourceInfo {
             channelName,
             type,
             detail,
-            status);
+            status,
+            errorInfo);
     }
 
     @Override
@@ -524,6 +556,7 @@ public class CustomizeSourceInfo {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

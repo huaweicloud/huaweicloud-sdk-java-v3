@@ -182,7 +182,7 @@ public class ListInstancesRequest {
     private TypeEnum type;
 
     /**
-     * 数据库类型，区分大小写。  - MySQL - PostgreSQL - SQLServer
+     * 数据库类型，区分大小写。 - MySQL - PostgreSQL - SQLServer - MariaDB
      */
     public static final class DatastoreTypeEnum {
 
@@ -201,6 +201,11 @@ public class ListInstancesRequest {
          */
         public static final DatastoreTypeEnum SQLSERVER = new DatastoreTypeEnum("SQLServer");
 
+        /**
+         * Enum MARIADB for value: "MariaDB"
+         */
+        public static final DatastoreTypeEnum MARIADB = new DatastoreTypeEnum("MariaDB");
+
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatastoreTypeEnum> createStaticFields() {
@@ -208,6 +213,7 @@ public class ListInstancesRequest {
             map.put("MySQL", MYSQL);
             map.put("PostgreSQL", POSTGRESQL);
             map.put("SQLServer", SQLSERVER);
+            map.put("MariaDB", MARIADB);
             return Collections.unmodifiableMap(map);
         }
 
@@ -363,7 +369,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 数据库类型，区分大小写。  - MySQL - PostgreSQL - SQLServer
+     * 数据库类型，区分大小写。 - MySQL - PostgreSQL - SQLServer - MariaDB
      * @return datastoreType
      */
     public DatastoreTypeEnum getDatastoreType() {

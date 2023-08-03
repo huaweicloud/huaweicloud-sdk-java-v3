@@ -63,7 +63,7 @@ public class ListVideoMotionCaptureJobsRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。格式为(YYYYMMDD'T'HHMMSS'Z')
+     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -120,7 +120,7 @@ public class ListVideoMotionCaptureJobsRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询
+     * 偏移量，表示从此偏移量开始查询。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -139,7 +139,7 @@ public class ListVideoMotionCaptureJobsRequest {
     }
 
     /**
-     * 每页显示的条目数量
+     * 每页显示的条目数量。
      * minimum: 1
      * maximum: 100
      * @return limit

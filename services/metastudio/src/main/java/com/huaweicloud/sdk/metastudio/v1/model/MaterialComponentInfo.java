@@ -21,7 +21,7 @@ public class MaterialComponentInfo {
     private String componentName;
 
     /**
-     * 素材组件类型。 * CLOTHES： 衣服 * PANTS： 裤子 * SHOES： 鞋子 * HAIR： 头发 * EYELASH： 睫毛 * EYEBROW： 眉毛
+     * 素材组件类型。 * CLOTHES：衣服 * PANTS：裤子 * SHOES：鞋子 * HAIR：头发 * EYELASH：睫毛 * EYEBROW：眉毛
      */
     public static final class ComponentTypeEnum {
 
@@ -147,7 +147,7 @@ public class MaterialComponentInfo {
     }
 
     /**
-     * 素材组件类型。 * CLOTHES： 衣服 * PANTS： 裤子 * SHOES： 鞋子 * HAIR： 头发 * EYELASH： 睫毛 * EYEBROW： 眉毛
+     * 素材组件类型。 * CLOTHES：衣服 * PANTS：裤子 * SHOES：鞋子 * HAIR：头发 * EYELASH：睫毛 * EYEBROW：眉毛
      * @return componentType
      */
     public ComponentTypeEnum getComponentType() {

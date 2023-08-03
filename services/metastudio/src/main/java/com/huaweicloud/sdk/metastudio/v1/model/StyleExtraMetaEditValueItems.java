@@ -35,6 +35,8 @@ public class StyleExtraMetaEditValueItems {
 
     /**
      * 最小值
+     * minimum: -1
+     * maximum: 1
      * @return minValue
      */
     public Float getMinValue() {
@@ -52,6 +54,8 @@ public class StyleExtraMetaEditValueItems {
 
     /**
      * 最大值
+     * minimum: -1
+     * maximum: 1
      * @return maxValue
      */
     public Float getMaxValue() {

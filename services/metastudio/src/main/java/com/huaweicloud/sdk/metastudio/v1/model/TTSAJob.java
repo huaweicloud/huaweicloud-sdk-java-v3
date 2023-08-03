@@ -21,7 +21,7 @@ public class TTSAJob {
     private String jobId;
 
     /**
-     * 任务的状态。 * WAITING * PROCESSING * SUCCEED * FAILED
+     * 任务的状态。 * WAITING：等待 * PROCESSING：处理中 * SUCCEED：成功 * FAILED：失败
      */
     public static final class StateEnum {
 
@@ -145,7 +145,7 @@ public class TTSAJob {
     }
 
     /**
-     * 任务的状态。 * WAITING * PROCESSING * SUCCEED * FAILED
+     * 任务的状态。 * WAITING：等待 * PROCESSING：处理中 * SUCCEED：成功 * FAILED：失败
      * @return state
      */
     public StateEnum getState() {
@@ -162,7 +162,7 @@ public class TTSAJob {
     }
 
     /**
-     * 任务开始时间,格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
+     * 任务开始时间，格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
      * @return startTime
      */
     public String getStartTime() {
@@ -179,7 +179,7 @@ public class TTSAJob {
     }
 
     /**
-     * 任务结束时间,格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
+     * 任务结束时间，格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
      * @return endTime
      */
     public String getEndTime() {
@@ -196,7 +196,7 @@ public class TTSAJob {
     }
 
     /**
-     * 语音驱动内容时长，单位:秒。
+     * 语音驱动内容时长。  单位:秒。
      * minimum: 0
      * maximum: 2147483647
      * @return contentDuration

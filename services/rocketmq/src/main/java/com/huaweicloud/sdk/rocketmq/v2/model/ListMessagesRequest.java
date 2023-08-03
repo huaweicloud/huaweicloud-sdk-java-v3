@@ -105,6 +105,11 @@ public class ListMessagesRequest {
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key")
+
+    private String key;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -204,6 +209,23 @@ public class ListMessagesRequest {
         this.offset = offset;
     }
 
+    public ListMessagesRequest withKey(String key) {
+        this.key = key;
+        return this;
+    }
+
+    /**
+     * 消息的key
+     * @return key
+     */
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public ListMessagesRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -266,13 +288,14 @@ public class ListMessagesRequest {
         ListMessagesRequest that = (ListMessagesRequest) obj;
         return Objects.equals(this.engine, that.engine) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.topic, that.topic) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.msgId, that.msgId);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.msgId, that.msgId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, instanceId, topic, limit, offset, startTime, endTime, msgId);
+        return Objects.hash(engine, instanceId, topic, limit, offset, key, startTime, endTime, msgId);
     }
 
     @Override
@@ -284,6 +307,7 @@ public class ListMessagesRequest {
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    msgId: ").append(toIndentedString(msgId)).append("\n");

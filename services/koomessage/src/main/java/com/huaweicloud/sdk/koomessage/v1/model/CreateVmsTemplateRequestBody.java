@@ -39,11 +39,6 @@ public class CreateVmsTemplateRequestBody {
     private String remarks;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "reminders")
-
-    private String reminders;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "callbackurl")
 
     private String callbackurl;
@@ -149,23 +144,6 @@ public class CreateVmsTemplateRequestBody {
         this.remarks = remarks;
     }
 
-    public CreateVmsTemplateRequestBody withReminders(String reminders) {
-        this.reminders = reminders;
-        return this;
-    }
-
-    /**
-     * 用于发送提醒短信，将智能信息基础版模板审批的结果和意见及时通知到指定对象，目前仅支持11位纯数字国内手机号码，多个号码用英文逗号分隔，最多支持5个手机号。
-     * @return reminders
-     */
-    public String getReminders() {
-        return reminders;
-    }
-
-    public void setReminders(String reminders) {
-        this.reminders = reminders;
-    }
-
     public CreateVmsTemplateRequestBody withCallbackurl(String callbackurl) {
         this.callbackurl = callbackurl;
         return this;
@@ -194,13 +172,12 @@ public class CreateVmsTemplateRequestBody {
         CreateVmsTemplateRequestBody that = (CreateVmsTemplateRequestBody) obj;
         return Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.tplName, that.tplName)
             && Objects.equals(this.title, that.title) && Objects.equals(this.reslist, that.reslist)
-            && Objects.equals(this.remarks, that.remarks) && Objects.equals(this.reminders, that.reminders)
-            && Objects.equals(this.callbackurl, that.callbackurl);
+            && Objects.equals(this.remarks, that.remarks) && Objects.equals(this.callbackurl, that.callbackurl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(expirationTime, tplName, title, reslist, remarks, reminders, callbackurl);
+        return Objects.hash(expirationTime, tplName, title, reslist, remarks, callbackurl);
     }
 
     @Override
@@ -212,7 +189,6 @@ public class CreateVmsTemplateRequestBody {
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    reslist: ").append(toIndentedString(reslist)).append("\n");
         sb.append("    remarks: ").append(toIndentedString(remarks)).append("\n");
-        sb.append("    reminders: ").append(toIndentedString(reminders)).append("\n");
         sb.append("    callbackurl: ").append(toIndentedString(callbackurl)).append("\n");
         sb.append("}");
         return sb.toString();

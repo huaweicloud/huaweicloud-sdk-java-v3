@@ -16,7 +16,7 @@ import java.util.Objects;
 public class SystemProperty {
 
     /**
-     * 操作。 - ADD： 增加 - DELETE： 删除
+     * 操作。 - ADD：增加 - DELETE：删除
      */
     public static final class ActionEnum {
 
@@ -91,7 +91,7 @@ public class SystemProperty {
     private ActionEnum action;
 
     /**
-     * 系统属性。 * STYLE_ID * DH_ID * PLATFORM_AVAILABLE * RENDER_ENGINE： 引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG: 视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE: 视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）
+     * 系统属性。 * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏） * CREATED_BY_PLATFORM： 是否平台生成
      */
     public static final class KeyEnum {
 
@@ -125,6 +125,11 @@ public class SystemProperty {
          */
         public static final KeyEnum BACKGROUND_SCENE = new KeyEnum("BACKGROUND_SCENE");
 
+        /**
+         * Enum CREATED_BY_PLATFORM for value: "CREATED_BY_PLATFORM"
+         */
+        public static final KeyEnum CREATED_BY_PLATFORM = new KeyEnum("CREATED_BY_PLATFORM");
+
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, KeyEnum> createStaticFields() {
@@ -135,6 +140,7 @@ public class SystemProperty {
             map.put("RENDER_ENGINE", RENDER_ENGINE);
             map.put("BACKGROUND_IMG", BACKGROUND_IMG);
             map.put("BACKGROUND_SCENE", BACKGROUND_SCENE);
+            map.put("CREATED_BY_PLATFORM", CREATED_BY_PLATFORM);
             return Collections.unmodifiableMap(map);
         }
 
@@ -200,7 +206,7 @@ public class SystemProperty {
     }
 
     /**
-     * 操作。 - ADD： 增加 - DELETE： 删除
+     * 操作。 - ADD：增加 - DELETE：删除
      * @return action
      */
     public ActionEnum getAction() {
@@ -217,7 +223,7 @@ public class SystemProperty {
     }
 
     /**
-     * 系统属性。 * STYLE_ID * DH_ID * PLATFORM_AVAILABLE * RENDER_ENGINE： 引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG: 视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE: 视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）
+     * 系统属性。 * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏） * CREATED_BY_PLATFORM： 是否平台生成
      * @return key
      */
     public KeyEnum getKey() {

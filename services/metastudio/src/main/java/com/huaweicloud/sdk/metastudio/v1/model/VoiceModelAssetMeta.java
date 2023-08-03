@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 音色模型元数据。
@@ -91,7 +92,7 @@ public class VoiceModelAssetMeta {
     private ModelTypeEnum modelType;
 
     /**
-     * 音色性别。默认UNKNOW。 * UNKNOW： 中性音色 * MALE： 男性音色 * FEMALE： 女性音色
+     * 音色性别。 * UNKNOW：中性音色 * MALE：男性音色 * FEMALE：女性音色  默认UNKNOW。
      */
     public static final class SexEnum {
 
@@ -172,7 +173,7 @@ public class VoiceModelAssetMeta {
     private SexEnum sex;
 
     /**
-     * 音色语言。默认UNKNOW。 * UNKNOW： 未知 * CN： 中文 * EN： 英文
+     * 音色语言。 * UNKNOW：未知 * CN：中文 * EN：英文  默认UNKNOW。
      */
     public static final class LanguageEnum {
 
@@ -252,6 +253,92 @@ public class VoiceModelAssetMeta {
 
     private LanguageEnum language;
 
+    /**
+     * 自研TTS运行模式，包括CPU模式和GPU模式。此参数仅内部使用，不对外开放。 * UNKNOW：未知 * TTS_V1：V1版本TTS，运行在CPU上 * TTS_V2：V2版本TTS，运行在GPU上  默认UNKNOW。
+     */
+    public static final class TtsModeEnum {
+
+        /**
+         * Enum UNKNOW for value: "UNKNOW"
+         */
+        public static final TtsModeEnum UNKNOW = new TtsModeEnum("UNKNOW");
+
+        /**
+         * Enum TTS_V1 for value: "TTS_V1"
+         */
+        public static final TtsModeEnum TTS_V1 = new TtsModeEnum("TTS_V1");
+
+        /**
+         * Enum TTS_V2 for value: "TTS_V2"
+         */
+        public static final TtsModeEnum TTS_V2 = new TtsModeEnum("TTS_V2");
+
+        private static final Map<String, TtsModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TtsModeEnum> createStaticFields() {
+            Map<String, TtsModeEnum> map = new HashMap<>();
+            map.put("UNKNOW", UNKNOW);
+            map.put("TTS_V1", TTS_V1);
+            map.put("TTS_V2", TTS_V2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TtsModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TtsModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TtsModeEnum(value));
+        }
+
+        public static TtsModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TtsModeEnum) {
+                return this.value.equals(((TtsModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tts_mode")
+
+    private TtsModeEnum ttsMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_voice_meta")
+
+    private ExternalVoiceAssetMeta externalVoiceMeta;
+
     public VoiceModelAssetMeta withModelType(ModelTypeEnum modelType) {
         this.modelType = modelType;
         return this;
@@ -275,7 +362,7 @@ public class VoiceModelAssetMeta {
     }
 
     /**
-     * 音色性别。默认UNKNOW。 * UNKNOW： 中性音色 * MALE： 男性音色 * FEMALE： 女性音色
+     * 音色性别。 * UNKNOW：中性音色 * MALE：男性音色 * FEMALE：女性音色  默认UNKNOW。
      * @return sex
      */
     public SexEnum getSex() {
@@ -292,7 +379,7 @@ public class VoiceModelAssetMeta {
     }
 
     /**
-     * 音色语言。默认UNKNOW。 * UNKNOW： 未知 * CN： 中文 * EN： 英文
+     * 音色语言。 * UNKNOW：未知 * CN：中文 * EN：英文  默认UNKNOW。
      * @return language
      */
     public LanguageEnum getLanguage() {
@@ -301,6 +388,49 @@ public class VoiceModelAssetMeta {
 
     public void setLanguage(LanguageEnum language) {
         this.language = language;
+    }
+
+    public VoiceModelAssetMeta withTtsMode(TtsModeEnum ttsMode) {
+        this.ttsMode = ttsMode;
+        return this;
+    }
+
+    /**
+     * 自研TTS运行模式，包括CPU模式和GPU模式。此参数仅内部使用，不对外开放。 * UNKNOW：未知 * TTS_V1：V1版本TTS，运行在CPU上 * TTS_V2：V2版本TTS，运行在GPU上  默认UNKNOW。
+     * @return ttsMode
+     */
+    public TtsModeEnum getTtsMode() {
+        return ttsMode;
+    }
+
+    public void setTtsMode(TtsModeEnum ttsMode) {
+        this.ttsMode = ttsMode;
+    }
+
+    public VoiceModelAssetMeta withExternalVoiceMeta(ExternalVoiceAssetMeta externalVoiceMeta) {
+        this.externalVoiceMeta = externalVoiceMeta;
+        return this;
+    }
+
+    public VoiceModelAssetMeta withExternalVoiceMeta(Consumer<ExternalVoiceAssetMeta> externalVoiceMetaSetter) {
+        if (this.externalVoiceMeta == null) {
+            this.externalVoiceMeta = new ExternalVoiceAssetMeta();
+            externalVoiceMetaSetter.accept(this.externalVoiceMeta);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get externalVoiceMeta
+     * @return externalVoiceMeta
+     */
+    public ExternalVoiceAssetMeta getExternalVoiceMeta() {
+        return externalVoiceMeta;
+    }
+
+    public void setExternalVoiceMeta(ExternalVoiceAssetMeta externalVoiceMeta) {
+        this.externalVoiceMeta = externalVoiceMeta;
     }
 
     @Override
@@ -313,12 +443,13 @@ public class VoiceModelAssetMeta {
         }
         VoiceModelAssetMeta that = (VoiceModelAssetMeta) obj;
         return Objects.equals(this.modelType, that.modelType) && Objects.equals(this.sex, that.sex)
-            && Objects.equals(this.language, that.language);
+            && Objects.equals(this.language, that.language) && Objects.equals(this.ttsMode, that.ttsMode)
+            && Objects.equals(this.externalVoiceMeta, that.externalVoiceMeta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(modelType, sex, language);
+        return Objects.hash(modelType, sex, language, ttsMode, externalVoiceMeta);
     }
 
     @Override
@@ -328,6 +459,8 @@ public class VoiceModelAssetMeta {
         sb.append("    modelType: ").append(toIndentedString(modelType)).append("\n");
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    ttsMode: ").append(toIndentedString(ttsMode)).append("\n");
+        sb.append("    externalVoiceMeta: ").append(toIndentedString(externalVoiceMeta)).append("\n");
         sb.append("}");
         return sb.toString();
     }

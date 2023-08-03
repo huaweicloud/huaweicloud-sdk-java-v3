@@ -67,7 +67,7 @@ public class PPTPageInfo {
     }
 
     /**
-     * 讲解词 (从备注中提取)。
+     * 讲解词（从备注中提取）。
      * @return pageContent
      */
     public String getPageContent() {

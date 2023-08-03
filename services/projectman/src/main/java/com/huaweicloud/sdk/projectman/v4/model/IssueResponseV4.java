@@ -141,7 +141,7 @@ public class IssueResponseV4 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env")
 
-    private IssueResponseV4Env env;
+    private IssueDetailResponseV4Env env;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tracker")
@@ -739,14 +739,14 @@ public class IssueResponseV4 {
         this.findReleaseDev = findReleaseDev;
     }
 
-    public IssueResponseV4 withEnv(IssueResponseV4Env env) {
+    public IssueResponseV4 withEnv(IssueDetailResponseV4Env env) {
         this.env = env;
         return this;
     }
 
-    public IssueResponseV4 withEnv(Consumer<IssueResponseV4Env> envSetter) {
+    public IssueResponseV4 withEnv(Consumer<IssueDetailResponseV4Env> envSetter) {
         if (this.env == null) {
-            this.env = new IssueResponseV4Env();
+            this.env = new IssueDetailResponseV4Env();
             envSetter.accept(this.env);
         }
 
@@ -757,11 +757,11 @@ public class IssueResponseV4 {
      * Get env
      * @return env
      */
-    public IssueResponseV4Env getEnv() {
+    public IssueDetailResponseV4Env getEnv() {
         return env;
     }
 
-    public void setEnv(IssueResponseV4Env env) {
+    public void setEnv(IssueDetailResponseV4Env env) {
         this.env = env;
     }
 

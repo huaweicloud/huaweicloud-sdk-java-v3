@@ -29,8 +29,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ListSelfPrivilegesRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ListSelfPrivilegesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataRequest;
@@ -98,7 +96,7 @@ public class MetaStudioClient {
     /**
      * 删除资产
      *
-     * 该接口用于删除资产库中的媒体资产列表。第一次调用删除接口，将指定资产放入回收站；第二次调用删除接口，将指定资产彻底删除。
+     * 该接口用于删除资产库中的媒体资产。第一次调用删除接口，将指定资产放入回收站；第二次调用删除接口，将指定资产彻底删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -112,7 +110,7 @@ public class MetaStudioClient {
     /**
      * 删除资产
      *
-     * 该接口用于删除资产库中的媒体资产列表。第一次调用删除接口，将指定资产放入回收站；第二次调用删除接口，将指定资产彻底删除。
+     * 该接口用于删除资产库中的媒体资产。第一次调用删除接口，将指定资产放入回收站；第二次调用删除接口，将指定资产彻底删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -241,7 +239,7 @@ public class MetaStudioClient {
     /**
      * 更新资产
      *
-     * 该接口用于更新资产库中的媒体资产列表。
+     * 该接口用于更新资产库中的媒体资产信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -255,7 +253,7 @@ public class MetaStudioClient {
     /**
      * 更新资产
      *
-     * 该接口用于更新资产库中的媒体资产列表。
+     * 该接口用于更新资产库中的媒体资产信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -501,36 +499,6 @@ public class MetaStudioClient {
      */
     public SyncInvoker<ListStylesRequest, ListStylesResponse> listStylesInvoker(ListStylesRequest request) {
         return new SyncInvoker<ListStylesRequest, ListStylesResponse>(request, MetaStudioMeta.listStyles, hcClient);
-    }
-
-    /**
-     * 查看租户自己权限列表
-     *
-     * 查看租户自己权限列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSelfPrivilegesRequest 请求对象
-     * @return ListSelfPrivilegesResponse
-     */
-    public ListSelfPrivilegesResponse listSelfPrivileges(ListSelfPrivilegesRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listSelfPrivileges);
-    }
-
-    /**
-     * 查看租户自己权限列表
-     *
-     * 查看租户自己权限列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSelfPrivilegesRequest 请求对象
-     * @return SyncInvoker<ListSelfPrivilegesRequest, ListSelfPrivilegesResponse>
-     */
-    public SyncInvoker<ListSelfPrivilegesRequest, ListSelfPrivilegesResponse> listSelfPrivilegesInvoker(
-        ListSelfPrivilegesRequest request) {
-        return new SyncInvoker<ListSelfPrivilegesRequest, ListSelfPrivilegesResponse>(request,
-            MetaStudioMeta.listSelfPrivileges, hcClient);
     }
 
     /**

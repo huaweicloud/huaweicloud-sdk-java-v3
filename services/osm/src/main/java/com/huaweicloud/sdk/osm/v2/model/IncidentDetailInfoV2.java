@@ -85,11 +85,6 @@ public class IncidentDetailInfoV2 {
     private List<IncidentSatisfactionV2Do> incidentSatisfaction = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_authorized")
-
-    private Integer isAuthorized;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity_name")
 
     private String severityName;
@@ -382,25 +377,6 @@ public class IncidentDetailInfoV2 {
         this.incidentSatisfaction = incidentSatisfaction;
     }
 
-    public IncidentDetailInfoV2 withIsAuthorized(Integer isAuthorized) {
-        this.isAuthorized = isAuthorized;
-        return this;
-    }
-
-    /**
-     * 是否授权
-     * minimum: 0
-     * maximum: 1
-     * @return isAuthorized
-     */
-    public Integer getIsAuthorized() {
-        return isAuthorized;
-    }
-
-    public void setIsAuthorized(Integer isAuthorized) {
-        this.isAuthorized = isAuthorized;
-    }
-
     public IncidentDetailInfoV2 withSeverityName(String severityName) {
         this.severityName = severityName;
         return this;
@@ -501,7 +477,6 @@ public class IncidentDetailInfoV2 {
             && Objects.equals(this.sourceName, that.sourceName) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.messageList, that.messageList)
             && Objects.equals(this.incidentSatisfaction, that.incidentSatisfaction)
-            && Objects.equals(this.isAuthorized, that.isAuthorized)
             && Objects.equals(this.severityName, that.severityName)
             && Objects.equals(this.businessOwnership, that.businessOwnership)
             && Objects.equals(this.resolveTime, that.resolveTime) && Objects.equals(this.extInfo, that.extInfo);
@@ -523,7 +498,6 @@ public class IncidentDetailInfoV2 {
             createTime,
             messageList,
             incidentSatisfaction,
-            isAuthorized,
             severityName,
             businessOwnership,
             resolveTime,
@@ -548,7 +522,6 @@ public class IncidentDetailInfoV2 {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    messageList: ").append(toIndentedString(messageList)).append("\n");
         sb.append("    incidentSatisfaction: ").append(toIndentedString(incidentSatisfaction)).append("\n");
-        sb.append("    isAuthorized: ").append(toIndentedString(isAuthorized)).append("\n");
         sb.append("    severityName: ").append(toIndentedString(severityName)).append("\n");
         sb.append("    businessOwnership: ").append(toIndentedString(businessOwnership)).append("\n");
         sb.append("    resolveTime: ").append(toIndentedString(resolveTime)).append("\n");

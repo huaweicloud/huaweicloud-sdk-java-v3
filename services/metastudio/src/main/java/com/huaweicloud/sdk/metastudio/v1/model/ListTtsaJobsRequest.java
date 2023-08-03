@@ -35,6 +35,11 @@ public class ListTtsaJobsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+
+    private String xAppUserId;
+
     public ListTtsaJobsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -58,7 +63,7 @@ public class ListTtsaJobsRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。格式为(YYYYMMDD'T'HHMMSS'Z')
+     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,7 +101,7 @@ public class ListTtsaJobsRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询
+     * 偏移量，表示从此偏移量开始查询。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -115,7 +120,7 @@ public class ListTtsaJobsRequest {
     }
 
     /**
-     * 每页显示的条目数量
+     * 每页显示的条目数量。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -126,6 +131,25 @@ public class ListTtsaJobsRequest {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public ListTtsaJobsRequest withXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
+        return this;
+    }
+
+    /**
+     * 开发者应用作为资产权属的可选字段。
+     * @return xAppUserId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+    public String getXAppUserId() {
+        return xAppUserId;
+    }
+
+    public void setXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
     }
 
     @Override
@@ -139,12 +163,12 @@ public class ListTtsaJobsRequest {
         ListTtsaJobsRequest that = (ListTtsaJobsRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.xAppUserId, that.xAppUserId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, offset, limit);
+        return Objects.hash(authorization, xSdkDate, xProjectId, offset, limit, xAppUserId);
     }
 
     @Override
@@ -156,6 +180,7 @@ public class ListTtsaJobsRequest {
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

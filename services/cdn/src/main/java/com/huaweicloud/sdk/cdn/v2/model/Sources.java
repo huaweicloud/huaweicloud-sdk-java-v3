@@ -190,7 +190,7 @@ public class Sources {
     }
 
     /**
-     * 是否开启Obs静态网站托管(0表示关闭,1表示则为开启)，源站类型为obs_bucket时传递。
+     * 是否开启OBS静态网站托管(0表示关闭,1表示则为开启)，源站类型为obs_bucket时传递。
      * @return enableObsWebHosting
      */
     public Integer getEnableObsWebHosting() {

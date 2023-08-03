@@ -243,6 +243,11 @@ public class ListPortsRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_efi")
+
+    private Boolean enableEfi;
+
     public ListPortsRequest withName(String name) {
         this.name = name;
         return this;
@@ -496,6 +501,23 @@ public class ListPortsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListPortsRequest withEnableEfi(Boolean enableEfi) {
+        this.enableEfi = enableEfi;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否使能efi，使能则表示端口支持vRoCE能力，默认为false
+     * @return enableEfi
+     */
+    public Boolean getEnableEfi() {
+        return enableEfi;
+    }
+
+    public void setEnableEfi(Boolean enableEfi) {
+        this.enableEfi = enableEfi;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -511,7 +533,8 @@ public class ListPortsRequest {
             && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.deviceOwner, that.deviceOwner)
             && Objects.equals(this.status, that.status) && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.marker, that.marker) && Objects.equals(this.fixedIps, that.fixedIps)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enableEfi, that.enableEfi);
     }
 
     @Override
@@ -528,7 +551,8 @@ public class ListPortsRequest {
             securityGroups,
             marker,
             fixedIps,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            enableEfi);
     }
 
     @Override
@@ -548,6 +572,7 @@ public class ListPortsRequest {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enableEfi: ").append(toIndentedString(enableEfi)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,7 +21,7 @@ public class StyleAssetItem {
     private String assetId;
 
     /**
-     * 资产类型
+     * 资产类型 * ANIMATION：动作 * MATERIAL：素材
      */
     public static final class AssetTypeEnum {
 
@@ -123,7 +123,7 @@ public class StyleAssetItem {
     }
 
     /**
-     * 资产类型
+     * 资产类型 * ANIMATION：动作 * MATERIAL：素材
      * @return assetType
      */
     public AssetTypeEnum getAssetType() {

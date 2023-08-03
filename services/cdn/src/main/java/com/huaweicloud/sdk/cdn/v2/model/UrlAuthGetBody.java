@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * URL鉴权查询响应体。
@@ -36,6 +37,11 @@ public class UrlAuthGetBody {
     private String matchType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inherit_config")
+
+    private InheritConfigQuery inheritConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
 
     private String key;
@@ -61,7 +67,7 @@ public class UrlAuthGetBody {
     }
 
     /**
-     * 是否开启URL鉴权，off：开启,on：关闭。
+     * 是否开启URL鉴权，on：开启,off：关闭。
      * @return status
      */
     public String getStatus() {
@@ -138,6 +144,32 @@ public class UrlAuthGetBody {
 
     public void setMatchType(String matchType) {
         this.matchType = matchType;
+    }
+
+    public UrlAuthGetBody withInheritConfig(InheritConfigQuery inheritConfig) {
+        this.inheritConfig = inheritConfig;
+        return this;
+    }
+
+    public UrlAuthGetBody withInheritConfig(Consumer<InheritConfigQuery> inheritConfigSetter) {
+        if (this.inheritConfig == null) {
+            this.inheritConfig = new InheritConfigQuery();
+            inheritConfigSetter.accept(this.inheritConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get inheritConfig
+     * @return inheritConfig
+     */
+    public InheritConfigQuery getInheritConfig() {
+        return inheritConfig;
+    }
+
+    public void setInheritConfig(InheritConfigQuery inheritConfig) {
+        this.inheritConfig = inheritConfig;
     }
 
     public UrlAuthGetBody withKey(String key) {
@@ -219,14 +251,15 @@ public class UrlAuthGetBody {
         UrlAuthGetBody that = (UrlAuthGetBody) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.signMethod, that.signMethod)
-            && Objects.equals(this.matchType, that.matchType) && Objects.equals(this.key, that.key)
-            && Objects.equals(this.backupKey, that.backupKey) && Objects.equals(this.signArg, that.signArg)
-            && Objects.equals(this.timeFormat, that.timeFormat);
+            && Objects.equals(this.matchType, that.matchType) && Objects.equals(this.inheritConfig, that.inheritConfig)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.backupKey, that.backupKey)
+            && Objects.equals(this.signArg, that.signArg) && Objects.equals(this.timeFormat, that.timeFormat);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type, expireTime, signMethod, matchType, key, backupKey, signArg, timeFormat);
+        return Objects
+            .hash(status, type, expireTime, signMethod, matchType, inheritConfig, key, backupKey, signArg, timeFormat);
     }
 
     @Override
@@ -238,6 +271,7 @@ public class UrlAuthGetBody {
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    signMethod: ").append(toIndentedString(signMethod)).append("\n");
         sb.append("    matchType: ").append(toIndentedString(matchType)).append("\n");
+        sb.append("    inheritConfig: ").append(toIndentedString(inheritConfig)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    backupKey: ").append(toIndentedString(backupKey)).append("\n");
         sb.append("    signArg: ").append(toIndentedString(signArg)).append("\n");

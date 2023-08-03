@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * StyleExtraMetaAdditionalProperties1
+ * 分类算法
  */
 public class StyleExtraMetaAdditionalProperties1 {
 

@@ -29,7 +29,7 @@ public class UpdateDigitalAssetRequestBody {
     private String assetDescription;
 
     /**
-     * 资产类型。 * HUMAN_MODEL:数字人模型 * VOICE_MODEL:音色模型(仅系统管理员可更新) * SCENE:场景模型 * ANIMATION:动作动画 * VIDEO:视频文件 * IMAGE:图片文件 * PPT:幻灯片文件 * MATERIAL:风格化素材
+     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可更新） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板
      */
     public static final class AssetTypeEnum {
 
@@ -83,6 +83,16 @@ public class UpdateDigitalAssetRequestBody {
          */
         public static final AssetTypeEnum COMMON_FILE = new AssetTypeEnum("COMMON_FILE");
 
+        /**
+         * Enum HUMAN_MODEL_2D for value: "HUMAN_MODEL_2D"
+         */
+        public static final AssetTypeEnum HUMAN_MODEL_2D = new AssetTypeEnum("HUMAN_MODEL_2D");
+
+        /**
+         * Enum BUSINESS_CARD_TEMPLET for value: "BUSINESS_CARD_TEMPLET"
+         */
+        public static final AssetTypeEnum BUSINESS_CARD_TEMPLET = new AssetTypeEnum("BUSINESS_CARD_TEMPLET");
+
         private static final Map<String, AssetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssetTypeEnum> createStaticFields() {
@@ -97,6 +107,8 @@ public class UpdateDigitalAssetRequestBody {
             map.put("MATERIAL", MATERIAL);
             map.put("NORMAL_MODEL", NORMAL_MODEL);
             map.put("COMMON_FILE", COMMON_FILE);
+            map.put("HUMAN_MODEL_2D", HUMAN_MODEL_2D);
+            map.put("BUSINESS_CARD_TEMPLET", BUSINESS_CARD_TEMPLET);
             return Collections.unmodifiableMap(map);
         }
 
@@ -152,7 +164,7 @@ public class UpdateDigitalAssetRequestBody {
     private AssetTypeEnum assetType;
 
     /**
-     * 资产状态。 * UNACTIVED: 取消激活。未激活的资产不可用于其他业务 * ACTIVED: 激活。激活后的资产科用于其他业务
+     * 资产状态。 * UNACTIVED：取消激活。未激活的资产不可用于其他业务 * ACTIVED：激活。激活后的资产可用于其他业务
      */
     public static final class AssetStateEnum {
 
@@ -286,7 +298,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 资产类型。 * HUMAN_MODEL:数字人模型 * VOICE_MODEL:音色模型(仅系统管理员可更新) * SCENE:场景模型 * ANIMATION:动作动画 * VIDEO:视频文件 * IMAGE:图片文件 * PPT:幻灯片文件 * MATERIAL:风格化素材
+     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可更新） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板
      * @return assetType
      */
     public AssetTypeEnum getAssetType() {
@@ -303,7 +315,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 资产状态。 * UNACTIVED: 取消激活。未激活的资产不可用于其他业务 * ACTIVED: 激活。激活后的资产科用于其他业务
+     * 资产状态。 * UNACTIVED：取消激活。未激活的资产不可用于其他业务 * ACTIVED：激活。激活后的资产可用于其他业务
      * @return assetState
      */
     public AssetStateEnum getAssetState() {
@@ -320,7 +332,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 资产所属者。填租户的project id。
+     * 项目ID。
      * @return assetOwner
      */
     public String getAssetOwner() {

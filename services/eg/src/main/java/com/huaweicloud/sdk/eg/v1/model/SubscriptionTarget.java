@@ -117,9 +117,19 @@ public class SubscriptionTarget {
     private KafkaTargetDetail kafkaDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "smn_detail")
+
+    private SmnTargetDetail smnDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
 
     private TransForm transform;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dead_letter_queue")
+
+    private DeadLetterQueue deadLetterQueue;
 
     public SubscriptionTarget withId(String id) {
         this.id = id;
@@ -195,7 +205,7 @@ public class SubscriptionTarget {
     }
 
     /**
-     * 订阅的事件目标参数列表，该字段序列化后总长度不超过1024字节
+     * 订阅的事件目标参数列表，该字段序列化后总长度不超过1024字节，函数、函数流、webhook订阅目标必填，其中函数、函数流委托名称必填
      * @return detail
      */
     public Object getDetail() {
@@ -232,6 +242,32 @@ public class SubscriptionTarget {
         this.kafkaDetail = kafkaDetail;
     }
 
+    public SubscriptionTarget withSmnDetail(SmnTargetDetail smnDetail) {
+        this.smnDetail = smnDetail;
+        return this;
+    }
+
+    public SubscriptionTarget withSmnDetail(Consumer<SmnTargetDetail> smnDetailSetter) {
+        if (this.smnDetail == null) {
+            this.smnDetail = new SmnTargetDetail();
+            smnDetailSetter.accept(this.smnDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get smnDetail
+     * @return smnDetail
+     */
+    public SmnTargetDetail getSmnDetail() {
+        return smnDetail;
+    }
+
+    public void setSmnDetail(SmnTargetDetail smnDetail) {
+        this.smnDetail = smnDetail;
+    }
+
     public SubscriptionTarget withTransform(TransForm transform) {
         this.transform = transform;
         return this;
@@ -258,6 +294,32 @@ public class SubscriptionTarget {
         this.transform = transform;
     }
 
+    public SubscriptionTarget withDeadLetterQueue(DeadLetterQueue deadLetterQueue) {
+        this.deadLetterQueue = deadLetterQueue;
+        return this;
+    }
+
+    public SubscriptionTarget withDeadLetterQueue(Consumer<DeadLetterQueue> deadLetterQueueSetter) {
+        if (this.deadLetterQueue == null) {
+            this.deadLetterQueue = new DeadLetterQueue();
+            deadLetterQueueSetter.accept(this.deadLetterQueue);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get deadLetterQueue
+     * @return deadLetterQueue
+     */
+    public DeadLetterQueue getDeadLetterQueue() {
+        return deadLetterQueue;
+    }
+
+    public void setDeadLetterQueue(DeadLetterQueue deadLetterQueue) {
+        this.deadLetterQueue = deadLetterQueue;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -270,12 +332,15 @@ public class SubscriptionTarget {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.providerType, that.providerType)
             && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.detail, that.detail)
-            && Objects.equals(this.kafkaDetail, that.kafkaDetail) && Objects.equals(this.transform, that.transform);
+            && Objects.equals(this.kafkaDetail, that.kafkaDetail) && Objects.equals(this.smnDetail, that.smnDetail)
+            && Objects.equals(this.transform, that.transform)
+            && Objects.equals(this.deadLetterQueue, that.deadLetterQueue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, providerType, connectionId, detail, kafkaDetail, transform);
+        return Objects
+            .hash(id, name, providerType, connectionId, detail, kafkaDetail, smnDetail, transform, deadLetterQueue);
     }
 
     @Override
@@ -288,7 +353,9 @@ public class SubscriptionTarget {
         sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    kafkaDetail: ").append(toIndentedString(kafkaDetail)).append("\n");
+        sb.append("    smnDetail: ").append(toIndentedString(smnDetail)).append("\n");
         sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
+        sb.append("    deadLetterQueue: ").append(toIndentedString(deadLetterQueue)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -70,83 +70,13 @@ public class ListAssetsRequest {
 
     private String sortKey;
 
-    /**
-     * 升序还是降序，默认升序。 * asc：升序 * desc：降序
-     */
-    public static final class SortDirEnum {
-
-        /**
-         * Enum ASC for value: "asc"
-         */
-        public static final SortDirEnum ASC = new SortDirEnum("asc");
-
-        /**
-         * Enum DESC for value: "desc"
-         */
-        public static final SortDirEnum DESC = new SortDirEnum("desc");
-
-        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, SortDirEnum> createStaticFields() {
-            Map<String, SortDirEnum> map = new HashMap<>();
-            map.put("asc", ASC);
-            map.put("desc", DESC);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        SortDirEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SortDirEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
-        }
-
-        public static SortDirEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SortDirEnum) {
-                return this.value.equals(((SortDirEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
 
-    private SortDirEnum sortDir;
+    private String sortDir;
 
     /**
-     * 资产来源，默认查询租户资产。 * SYSTEM： 系统资产 * CUSTOMIZATION： 租户资产 - ALL： 所有资产
+     * 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * ALL：所有资产  默认查询租户资产。
      */
     public static final class AssetSourceEnum {
 
@@ -247,9 +177,9 @@ public class ListAssetsRequest {
     private String sex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "lanuage")
+    @JsonProperty(value = "language")
 
-    private String lanuage;
+    private String language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_property")
@@ -279,7 +209,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间.格式为(YYYYMMDD'T'HHMMSS'Z')。 取值为当前系统的GMT时间。
+     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -423,7 +353,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 资产类型。 * HUMAN_MODEL:数字人模型 * VOICE_MODEL:音色模型(仅系统管理员可上传) * SCENE:场景模型 * ANIMATION:动作动画 * VIDEO:视频文件 * IMAGE:图片文件 * PPT:幻灯片文件 * MATERIAL:风格化素材 多个类型使用英文逗号分割
+     * 资产类型。多个类型使用英文逗号分割。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可上传） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板
      * @return assetType
      */
     public String getAssetType() {
@@ -451,20 +381,20 @@ public class ListAssetsRequest {
         this.sortKey = sortKey;
     }
 
-    public ListAssetsRequest withSortDir(SortDirEnum sortDir) {
+    public ListAssetsRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
     }
 
     /**
-     * 升序还是降序，默认升序。 * asc：升序 * desc：降序
+     * 排序方式。 * asc：升序 * desc：降序  默认asc升序。
      * @return sortDir
      */
-    public SortDirEnum getSortDir() {
+    public String getSortDir() {
         return sortDir;
     }
 
-    public void setSortDir(SortDirEnum sortDir) {
+    public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
     }
 
@@ -474,7 +404,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 资产来源，默认查询租户资产。 * SYSTEM： 系统资产 * CUSTOMIZATION： 租户资产 - ALL： 所有资产
+     * 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * ALL：所有资产  默认查询租户资产。
      * @return assetSource
      */
     public AssetSourceEnum getAssetSource() {
@@ -491,7 +421,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 资产状态。默认查询所有状态的资产。 * CREATING:资产创建中，主文件尚未上传 * FAILED:主文件上传失败 * UNACTIVED:主文件上传成功，资产未激活，资产不可用于其他业务(用户可更新状态) * ACTIVED:主文件上传成功，资产激活，资产可用于其他业务(用户可更新状态) * DELETING:资产删除中，资产不可用，资产可恢复 * DELETED:资产文件已删除，资产不可用，资产不可恢复 多个资产状态使用英文逗号分割
+     * 资产状态。多个资产状态使用英文逗号分割。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复  默认查询所有状态的资产。
      * @return assetState
      */
     public String getAssetState() {
@@ -508,7 +438,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 基于风格化ID查询关联资产。 * system_male_001: 男性风格01 * system_female_001: 女性风格01 * system_male_002：男性风格02  * system_female_002: 女性风格02
+     * 基于风格化ID查询关联资产。 * system_male_001：男性风格01 * system_female_001：女性风格01 * system_male_002：男性风格02  * system_female_002：女性风格02
      * @return styleId
      */
     public String getStyleId() {
@@ -525,7 +455,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 可用引擎。 * UE * MetaEngine  > 该字段当前只对MetaEngine白名单用户生效
+     * 可用引擎。 * UE：UE引擎 * MetaEngine：MetaEngine引擎 > 该字段当前只对MetaEngine白名单用户生效
      * @return renderEngine
      */
     public String getRenderEngine() {
@@ -542,7 +472,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 性别 多选使用英文逗号分隔
+     * 性别。多选使用英文逗号分隔。
      * @return sex
      */
     public String getSex() {
@@ -553,21 +483,21 @@ public class ListAssetsRequest {
         this.sex = sex;
     }
 
-    public ListAssetsRequest withLanuage(String lanuage) {
-        this.lanuage = lanuage;
+    public ListAssetsRequest withLanguage(String language) {
+        this.language = language;
         return this;
     }
 
     /**
-     * 语言 多选使用英文逗号分隔
-     * @return lanuage
+     * 语言。多选使用英文逗号分隔。
+     * @return language
      */
-    public String getLanuage() {
-        return lanuage;
+    public String getLanguage() {
+        return language;
     }
 
-    public void setLanuage(String lanuage) {
-        this.lanuage = lanuage;
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     public ListAssetsRequest withSystemProperty(String systemProperty) {
@@ -576,7 +506,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 系统属性。key和value间用\":\"分隔，多个key之间用\",\"分隔。如system_property=BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。 不同Key对应Value取值如下： * STYLE_ID * DH_ID * PLATFORM_AVAILABLE * RENDER_ENGINE： 引擎类型，可取值UE或MetaEngine * BACKGROUND_IMG: 视频制作的2D背景图片，可取值Yes * BACKGROUND_SCENE: 视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）
+     * 系统属性。  key和value间用\":\"分隔，多个key之间用\",\"分隔。  如system_property=BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下： * STYLE_ID：风格Id * RENDER_ENGINE：引擎类型，可取值UE或MetaEngine * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）
      * @return systemProperty
      */
     public String getSystemProperty() {
@@ -604,7 +534,7 @@ public class ListAssetsRequest {
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
             && Objects.equals(this.assetSource, that.assetSource) && Objects.equals(this.assetState, that.assetState)
             && Objects.equals(this.styleId, that.styleId) && Objects.equals(this.renderEngine, that.renderEngine)
-            && Objects.equals(this.sex, that.sex) && Objects.equals(this.lanuage, that.lanuage)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
             && Objects.equals(this.systemProperty, that.systemProperty);
     }
 
@@ -627,7 +557,7 @@ public class ListAssetsRequest {
             styleId,
             renderEngine,
             sex,
-            lanuage,
+            language,
             systemProperty);
     }
 
@@ -652,7 +582,7 @@ public class ListAssetsRequest {
         sb.append("    styleId: ").append(toIndentedString(styleId)).append("\n");
         sb.append("    renderEngine: ").append(toIndentedString(renderEngine)).append("\n");
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
-        sb.append("    lanuage: ").append(toIndentedString(lanuage)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    systemProperty: ").append(toIndentedString(systemProperty)).append("\n");
         sb.append("}");
         return sb.toString();

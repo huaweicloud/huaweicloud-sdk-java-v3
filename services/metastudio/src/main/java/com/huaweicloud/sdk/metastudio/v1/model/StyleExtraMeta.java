@@ -29,6 +29,11 @@ public class StyleExtraMeta {
     private String editEngine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_id")
+
+    private String modelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edit_value_items")
 
     private Map<String, StyleExtraMetaEditValueItems> editValueItems = null;
@@ -97,6 +102,23 @@ public class StyleExtraMeta {
 
     public void setEditEngine(String editEngine) {
         this.editEngine = editEngine;
+    }
+
+    public StyleExtraMeta withModelId(String modelId) {
+        this.modelId = modelId;
+        return this;
+    }
+
+    /**
+     * 照片建模算法调用的模型类型
+     * @return modelId
+     */
+    public String getModelId() {
+        return modelId;
+    }
+
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
     }
 
     public StyleExtraMeta withEditValueItems(Map<String, StyleExtraMetaEditValueItems> editValueItems) {
@@ -222,7 +244,7 @@ public class StyleExtraMeta {
     }
 
     /**
-     * Get modellingAlgorithm
+     * 分类算法列表
      * @return modellingAlgorithm
      */
     public Map<String, StyleExtraMetaModellingAlgorithm> getModellingAlgorithm() {
@@ -244,7 +266,7 @@ public class StyleExtraMeta {
         StyleExtraMeta that = (StyleExtraMeta) obj;
         return Objects.equals(this.pictureModelingEnable, that.pictureModelingEnable)
             && Objects.equals(this.editEnable, that.editEnable) && Objects.equals(this.editEngine, that.editEngine)
-            && Objects.equals(this.editValueItems, that.editValueItems)
+            && Objects.equals(this.modelId, that.modelId) && Objects.equals(this.editValueItems, that.editValueItems)
             && Objects.equals(this.editColorItems, that.editColorItems)
             && Objects.equals(this.editComponents, that.editComponents)
             && Objects.equals(this.modellingAlgorithm, that.modellingAlgorithm);
@@ -255,6 +277,7 @@ public class StyleExtraMeta {
         return Objects.hash(pictureModelingEnable,
             editEnable,
             editEngine,
+            modelId,
             editValueItems,
             editColorItems,
             editComponents,
@@ -268,6 +291,7 @@ public class StyleExtraMeta {
         sb.append("    pictureModelingEnable: ").append(toIndentedString(pictureModelingEnable)).append("\n");
         sb.append("    editEnable: ").append(toIndentedString(editEnable)).append("\n");
         sb.append("    editEngine: ").append(toIndentedString(editEngine)).append("\n");
+        sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
         sb.append("    editValueItems: ").append(toIndentedString(editValueItems)).append("\n");
         sb.append("    editColorItems: ").append(toIndentedString(editColorItems)).append("\n");
         sb.append("    editComponents: ").append(toIndentedString(editComponents)).append("\n");

@@ -520,7 +520,7 @@ public class InstanceParam {
     }
 
     /**
-     * 预装插件参数
+     * 预装插件参数，请注意敏感信息保护，若涉及敏感信息，请自行加密
      * @return pluginVars
      */
     public Map<String, String> getPluginVars() {

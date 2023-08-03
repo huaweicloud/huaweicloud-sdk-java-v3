@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class VideoMotionCaptureInfo {
 
     /**
-     * 视频驱动模式。 * HEAD: 头部 * HALF_BODY: 半身 * FULL_BODY: 全身 * AUTO: 自动
+     * 视频驱动模式。 * HEAD：头部 * HALF_BODY：半身 * FULL_BODY：全身 * AUTO：自动
      */
     public static final class MotionCaptureModeEnum {
 
@@ -119,7 +119,7 @@ public class VideoMotionCaptureInfo {
     private String jobId;
 
     /**
-     * 任务的状态。 * WAITING: 等待中 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败
+     * 任务的状态。 * WAITING：等待中 * PROCESSING：处理中 * SUCCEED：成功 * FAILED：失败
      */
     public static final class StateEnum {
 
@@ -221,7 +221,7 @@ public class VideoMotionCaptureInfo {
     }
 
     /**
-     * 视频驱动模式。 * HEAD: 头部 * HALF_BODY: 半身 * FULL_BODY: 全身 * AUTO: 自动
+     * 视频驱动模式。 * HEAD：头部 * HALF_BODY：半身 * FULL_BODY：全身 * AUTO：自动
      * @return motionCaptureMode
      */
     public MotionCaptureModeEnum getMotionCaptureMode() {
@@ -307,7 +307,7 @@ public class VideoMotionCaptureInfo {
     }
 
     /**
-     * 任务的状态。 * WAITING: 等待中 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败
+     * 任务的状态。 * WAITING：等待中 * PROCESSING：处理中 * SUCCEED：成功 * FAILED：失败
      * @return state
      */
     public StateEnum getState() {
@@ -324,7 +324,7 @@ public class VideoMotionCaptureInfo {
     }
 
     /**
-     * 任务开始时间,格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
+     * 任务开始时间，格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
      * @return startTime
      */
     public String getStartTime() {
@@ -341,7 +341,7 @@ public class VideoMotionCaptureInfo {
     }
 
     /**
-     * 任务结束时间,格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
+     * 任务结束时间，格式遵循：RFC 3339。 例 “2020-07-30T10:43:17Z”。
      * @return endTime
      */
     public String getEndTime() {

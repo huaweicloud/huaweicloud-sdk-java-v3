@@ -27,6 +27,11 @@ public class CreateTtsaRequest {
     private String xProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+
+    private String xAppUserId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CreateTTSAReq body;
@@ -54,7 +59,7 @@ public class CreateTtsaRequest {
     }
 
     /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。格式为(YYYYMMDD'T'HHMMSS'Z')
+     * 使用AK/SK方式认证时必选，请求的发生时间。  格式为(YYYYMMDD'T'HHMMSS'Z')。
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,6 +89,25 @@ public class CreateTtsaRequest {
 
     public void setXProjectId(String xProjectId) {
         this.xProjectId = xProjectId;
+    }
+
+    public CreateTtsaRequest withXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
+        return this;
+    }
+
+    /**
+     * 开发者应用作为资产权属的可选字段。
+     * @return xAppUserId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+    public String getXAppUserId() {
+        return xAppUserId;
+    }
+
+    public void setXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
     }
 
     public CreateTtsaRequest withBody(CreateTTSAReq body) {
@@ -122,12 +146,13 @@ public class CreateTtsaRequest {
         }
         CreateTtsaRequest that = (CreateTtsaRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
-            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.body, that.body);
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, body);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, body);
     }
 
     @Override
@@ -137,6 +162,7 @@ public class CreateTtsaRequest {
         sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
+        sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

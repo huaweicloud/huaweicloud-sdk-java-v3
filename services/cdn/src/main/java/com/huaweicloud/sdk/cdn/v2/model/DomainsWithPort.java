@@ -46,7 +46,7 @@ public class DomainsWithPort {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sources")
 
-    private List<SourcesConfig> sources = null;
+    private List<SourcesDomainConfig> sources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "https_status")
@@ -239,12 +239,12 @@ public class DomainsWithPort {
         this.cname = cname;
     }
 
-    public DomainsWithPort withSources(List<SourcesConfig> sources) {
+    public DomainsWithPort withSources(List<SourcesDomainConfig> sources) {
         this.sources = sources;
         return this;
     }
 
-    public DomainsWithPort addSourcesItem(SourcesConfig sourcesItem) {
+    public DomainsWithPort addSourcesItem(SourcesDomainConfig sourcesItem) {
         if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
@@ -252,7 +252,7 @@ public class DomainsWithPort {
         return this;
     }
 
-    public DomainsWithPort withSources(Consumer<List<SourcesConfig>> sourcesSetter) {
+    public DomainsWithPort withSources(Consumer<List<SourcesDomainConfig>> sourcesSetter) {
         if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
@@ -264,11 +264,11 @@ public class DomainsWithPort {
      * 源站配置。
      * @return sources
      */
-    public List<SourcesConfig> getSources() {
+    public List<SourcesDomainConfig> getSources() {
         return sources;
     }
 
-    public void setSources(List<SourcesConfig> sources) {
+    public void setSources(List<SourcesDomainConfig> sources) {
         this.sources = sources;
     }
 

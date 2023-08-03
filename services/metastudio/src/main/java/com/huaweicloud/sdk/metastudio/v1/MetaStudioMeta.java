@@ -38,8 +38,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ListSelfPrivilegesRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ListSelfPrivilegesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataRequest;
@@ -130,6 +128,13 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAssetRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
+            }));
+        builder.<String>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetRequest::getMode, (req, v) -> {
+                req.setMode(v);
             }));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
@@ -264,10 +269,10 @@ public class MetaStudioMeta {
             f -> f.withMarshaller(ListAssetsRequest::getSortKey, (req, v) -> {
                 req.setSortKey(v);
             }));
-        builder.<ListAssetsRequest.SortDirEnum>withRequestField("sort_dir",
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAssetsRequest.SortDirEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetsRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
             }));
@@ -306,12 +311,12 @@ public class MetaStudioMeta {
             f -> f.withMarshaller(ListAssetsRequest::getSex, (req, v) -> {
                 req.setSex(v);
             }));
-        builder.<String>withRequestField("lanuage",
+        builder.<String>withRequestField("language",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAssetsRequest::getLanuage, (req, v) -> {
-                req.setLanuage(v);
+            f -> f.withMarshaller(ListAssetsRequest::getLanguage, (req, v) -> {
+                req.setLanguage(v);
             }));
         builder.<String>withRequestField("system_property",
             LocationType.Query,
@@ -790,10 +795,10 @@ public class MetaStudioMeta {
             f -> f.withMarshaller(ListPictureModelingJobsRequest::getSortKey, (req, v) -> {
                 req.setSortKey(v);
             }));
-        builder.<ListPictureModelingJobsRequest.SortDirEnum>withRequestField("sort_dir",
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPictureModelingJobsRequest.SortDirEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPictureModelingJobsRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
             }));
@@ -937,10 +942,10 @@ public class MetaStudioMeta {
             f -> f.withMarshaller(ListStylesRequest::getSortKey, (req, v) -> {
                 req.setSortKey(v);
             }));
-        builder.<ListStylesRequest.SortDirEnum>withRequestField("sort_dir",
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListStylesRequest.SortDirEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStylesRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
             }));
@@ -992,73 +997,6 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSelfPrivilegesRequest, ListSelfPrivilegesResponse> listSelfPrivileges =
-        genForlistSelfPrivileges();
-
-    private static HttpRequestDef<ListSelfPrivilegesRequest, ListSelfPrivilegesResponse> genForlistSelfPrivileges() {
-        // basic
-        HttpRequestDef.Builder<ListSelfPrivilegesRequest, ListSelfPrivilegesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSelfPrivilegesRequest.class, ListSelfPrivilegesResponse.class)
-                .withName("ListSelfPrivileges")
-                .withUri("/v1/{project_id}/privileges")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelfPrivilegesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSelfPrivilegesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("privilege_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSelfPrivilegesRequest::getPrivilegeType, (req, v) -> {
-                req.setPrivilegeType(v);
-            }));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSelfPrivilegesRequest::getAuthorization, (req, v) -> {
-                req.setAuthorization(v);
-            }));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSelfPrivilegesRequest::getXSdkDate, (req, v) -> {
-                req.setXSdkDate(v);
-            }));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSelfPrivilegesRequest::getXProjectId, (req, v) -> {
-                req.setXProjectId(v);
-            }));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSelfPrivilegesRequest::getXAppUserId, (req, v) -> {
-                req.setXAppUserId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateTtsaRequest, CreateTtsaResponse> createTtsa = genForcreateTtsa();
 
     private static HttpRequestDef<CreateTtsaRequest, CreateTtsaResponse> genForcreateTtsa() {
@@ -1090,6 +1028,13 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTtsaRequest::getXProjectId, (req, v) -> {
                 req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtsaRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
             }));
         builder.<CreateTTSAReq>withRequestField("body",
             LocationType.Body,
@@ -1201,6 +1146,13 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTtsaJobsRequest::getXProjectId, (req, v) -> {
                 req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtsaJobsRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
             }));
 
         // response

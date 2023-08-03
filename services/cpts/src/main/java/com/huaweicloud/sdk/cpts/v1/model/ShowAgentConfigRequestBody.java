@@ -30,6 +30,11 @@ public class ShowAgentConfigRequestBody {
 
     private String agentId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
     public ShowAgentConfigRequestBody withAppId(Integer appId) {
         this.appId = appId;
         return this;
@@ -100,6 +105,23 @@ public class ShowAgentConfigRequestBody {
         this.agentId = agentId;
     }
 
+    public ShowAgentConfigRequestBody withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /**
+     * 探针别名
+     * @return alias
+     */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +132,13 @@ public class ShowAgentConfigRequestBody {
         }
         ShowAgentConfigRequestBody that = (ShowAgentConfigRequestBody) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.address, that.address)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.agentId, that.agentId);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.agentId, that.agentId)
+            && Objects.equals(this.alias, that.alias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, address, version, agentId);
+        return Objects.hash(appId, address, version, agentId, alias);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class ShowAgentConfigRequestBody {
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

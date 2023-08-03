@@ -21,7 +21,7 @@ public class DeleteTrackerRequest {
     private String trackerName;
 
     /**
-     * 标识追踪器类型。 目前仅支持数据类追踪器（data）的删除，默认值为\"data\"。
+     * 标识追踪器类型。 默认值为\"data\"。传入\"system\"时，配合tracker_name参数可删除管理类追踪器。
      */
     public static final class TrackerTypeEnum {
 
@@ -30,11 +30,17 @@ public class DeleteTrackerRequest {
          */
         public static final TrackerTypeEnum DATA = new TrackerTypeEnum("data");
 
+        /**
+         * Enum SYSTEM for value: "system"
+         */
+        public static final TrackerTypeEnum SYSTEM = new TrackerTypeEnum("system");
+
         private static final Map<String, TrackerTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TrackerTypeEnum> createStaticFields() {
             Map<String, TrackerTypeEnum> map = new HashMap<>();
             map.put("data", DATA);
+            map.put("system", SYSTEM);
             return Collections.unmodifiableMap(map);
         }
 
@@ -112,7 +118,7 @@ public class DeleteTrackerRequest {
     }
 
     /**
-     * 标识追踪器类型。 目前仅支持数据类追踪器（data）的删除，默认值为\"data\"。
+     * 标识追踪器类型。 默认值为\"data\"。传入\"system\"时，配合tracker_name参数可删除管理类追踪器。
      * @return trackerType
      */
     public TrackerTypeEnum getTrackerType() {

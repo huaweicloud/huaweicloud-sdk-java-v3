@@ -62,7 +62,7 @@ public class ListTtsaDataResponse extends SdkResponse {
     }
 
     /**
-     * 音频数据，Base64编码，1s内的数据。
+     * 音频数据，Base64编码，1秒内的数据。
      * @return audio
      */
     public String getAudio() {

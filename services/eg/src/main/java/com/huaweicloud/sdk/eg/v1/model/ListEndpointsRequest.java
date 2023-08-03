@@ -120,6 +120,11 @@ public class ListEndpointsRequest {
 
     private String fuzzyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
     public ListEndpointsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -243,6 +248,23 @@ public class ListEndpointsRequest {
         this.fuzzyName = fuzzyName;
     }
 
+    public ListEndpointsRequest withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 指定查询访问端点的SubnetId
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -255,12 +277,12 @@ public class ListEndpointsRequest {
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.sort, that.sort) && Objects.equals(this.type, that.type)
             && Objects.equals(this.name, that.name) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.fuzzyName, that.fuzzyName);
+            && Objects.equals(this.fuzzyName, that.fuzzyName) && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, sort, type, name, vpcId, fuzzyName);
+        return Objects.hash(offset, limit, sort, type, name, vpcId, fuzzyName, subnetId);
     }
 
     @Override
@@ -274,6 +296,7 @@ public class ListEndpointsRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

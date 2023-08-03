@@ -4,42 +4,32 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
- * 解绑服务号返回体。
+ * UnfreezePubResponseModel
  */
 public class UnfreezePubResponseModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data")
+    @JsonProperty(value = "pub_id")
 
-    private FreezePubResponseModelData data;
+    private String pubId;
 
-    public UnfreezePubResponseModel withData(FreezePubResponseModelData data) {
-        this.data = data;
-        return this;
-    }
-
-    public UnfreezePubResponseModel withData(Consumer<FreezePubResponseModelData> dataSetter) {
-        if (this.data == null) {
-            this.data = new FreezePubResponseModelData();
-            dataSetter.accept(this.data);
-        }
-
+    public UnfreezePubResponseModel withPubId(String pubId) {
+        this.pubId = pubId;
         return this;
     }
 
     /**
-     * Get data
-     * @return data
+     * 服务号ID。
+     * @return pubId
      */
-    public FreezePubResponseModelData getData() {
-        return data;
+    public String getPubId() {
+        return pubId;
     }
 
-    public void setData(FreezePubResponseModelData data) {
-        this.data = data;
+    public void setPubId(String pubId) {
+        this.pubId = pubId;
     }
 
     @Override
@@ -51,19 +41,19 @@ public class UnfreezePubResponseModel {
             return false;
         }
         UnfreezePubResponseModel that = (UnfreezePubResponseModel) obj;
-        return Objects.equals(this.data, that.data);
+        return Objects.equals(this.pubId, that.pubId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data);
+        return Objects.hash(pubId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UnfreezePubResponseModel {\n");
-        sb.append("    data: ").append(toIndentedString(data)).append("\n");
+        sb.append("    pubId: ").append(toIndentedString(pubId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

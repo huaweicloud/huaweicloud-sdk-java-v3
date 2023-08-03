@@ -10,13 +10,18 @@ import com.huaweicloud.sdk.config.v1.model.AggregateResourceConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.AggregationAuthorizationRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.ConfigurationAggregatorRequest;
+import com.huaweicloud.sdk.config.v1.model.ConformancePackRequestBody;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorResponse;
+import com.huaweicloud.sdk.config.v1.model.CreateConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.CreateConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.CreatePolicyAssignmentsRequest;
@@ -29,6 +34,8 @@ import com.huaweicloud.sdk.config.v1.model.DeleteAggregationAuthorizationRequest
 import com.huaweicloud.sdk.config.v1.model.DeleteAggregationAuthorizationResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.DeleteConfigurationAggregatorResponse;
+import com.huaweicloud.sdk.config.v1.model.DeleteConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.DeleteConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteOrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.DeleteOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.DeletePendingAggregationRequestRequest;
@@ -53,10 +60,20 @@ import com.huaweicloud.sdk.config.v1.model.ListAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListAllResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListAllTagsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListAllTagsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListBuiltInConformancePackTemplatesRequest;
+import com.huaweicloud.sdk.config.v1.model.ListBuiltInConformancePackTemplatesResponse;
 import com.huaweicloud.sdk.config.v1.model.ListBuiltInPolicyDefinitionsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListBuiltInPolicyDefinitionsResponse;
 import com.huaweicloud.sdk.config.v1.model.ListConfigurationAggregatorsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListConfigurationAggregatorsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceByPackIdRequest;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceByPackIdResponse;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceDetailsByPackIdRequest;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceDetailsByPackIdResponse;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceScoresRequest;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceScoresResponse;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePacksRequest;
+import com.huaweicloud.sdk.config.v1.model.ListConformancePacksResponse;
 import com.huaweicloud.sdk.config.v1.model.ListOrganizationPolicyAssignmentsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListOrganizationPolicyAssignmentsResponse;
 import com.huaweicloud.sdk.config.v1.model.ListPendingAggregationRequestsRequest;
@@ -100,12 +117,16 @@ import com.huaweicloud.sdk.config.v1.model.ShowAggregatePolicyStateComplianceSum
 import com.huaweicloud.sdk.config.v1.model.ShowAggregatePolicyStateComplianceSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateResourceConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowAggregateResourceConfigResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowBuiltInConformancePackTemplateRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowBuiltInConformancePackTemplateResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowBuiltInPolicyDefinitionRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowBuiltInPolicyDefinitionResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowConfigurationAggregatorResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowConfigurationAggregatorSourcesStatusRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowConfigurationAggregatorSourcesStatusResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowEvaluationStateByAssignmentIdRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowEvaluationStateByAssignmentIdResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowOrganizationPolicyAssignmentDetailedStatusRequest;
@@ -804,6 +825,389 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(ConfigurationAggregatorRequest.class),
             f -> f.withMarshaller(UpdateConfigurationAggregatorRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse> collectConformancePackComplianceSummary =
+        genForcollectConformancePackComplianceSummary();
+
+    private static HttpRequestDef<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse> genForcollectConformancePackComplianceSummary() {
+        // basic
+        HttpRequestDef.Builder<CollectConformancePackComplianceSummaryRequest, CollectConformancePackComplianceSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CollectConformancePackComplianceSummaryRequest.class,
+                    CollectConformancePackComplianceSummaryResponse.class)
+                .withName("CollectConformancePackComplianceSummary")
+                .withUri("/v1/resource-manager/domains/{domain_id}/conformance-packs/compliance/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CollectConformancePackComplianceSummaryRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectConformancePackComplianceSummaryRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("conformance_pack_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectConformancePackComplianceSummaryRequest::getConformancePackName, (req, v) -> {
+                req.setConformancePackName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateConformancePackRequest, CreateConformancePackResponse> createConformancePack =
+        genForcreateConformancePack();
+
+    private static HttpRequestDef<CreateConformancePackRequest, CreateConformancePackResponse> genForcreateConformancePack() {
+        // basic
+        HttpRequestDef.Builder<CreateConformancePackRequest, CreateConformancePackResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateConformancePackRequest.class, CreateConformancePackResponse.class)
+            .withName("CreateConformancePack")
+            .withUri("/v1/resource-manager/domains/{domain_id}/conformance-packs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ConformancePackRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConformancePackRequestBody.class),
+            f -> f.withMarshaller(CreateConformancePackRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConformancePackRequest, DeleteConformancePackResponse> deleteConformancePack =
+        genFordeleteConformancePack();
+
+    private static HttpRequestDef<DeleteConformancePackRequest, DeleteConformancePackResponse> genFordeleteConformancePack() {
+        // basic
+        HttpRequestDef.Builder<DeleteConformancePackRequest, DeleteConformancePackResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteConformancePackRequest.class, DeleteConformancePackResponse.class)
+            .withName("DeleteConformancePack")
+            .withUri("/v1/resource-manager/domains/{domain_id}/conformance-packs/{conformance_pack_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conformance_pack_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConformancePackRequest::getConformancePackId, (req, v) -> {
+                req.setConformancePackId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse> listBuiltInConformancePackTemplates =
+        genForlistBuiltInConformancePackTemplates();
+
+    private static HttpRequestDef<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse> genForlistBuiltInConformancePackTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListBuiltInConformancePackTemplatesRequest, ListBuiltInConformancePackTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListBuiltInConformancePackTemplatesRequest.class,
+                    ListBuiltInConformancePackTemplatesResponse.class)
+                .withName("ListBuiltInConformancePackTemplates")
+                .withUri("/v1/resource-manager/conformance-packs/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("template_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getTemplateKey, (req, v) -> {
+                req.setTemplateKey(v);
+            }));
+        builder.<ListBuiltInConformancePackTemplatesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBuiltInConformancePackTemplatesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListBuiltInConformancePackTemplatesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse> listConformancePackComplianceByPackId =
+        genForlistConformancePackComplianceByPackId();
+
+    private static HttpRequestDef<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse> genForlistConformancePackComplianceByPackId() {
+        // basic
+        HttpRequestDef.Builder<ListConformancePackComplianceByPackIdRequest, ListConformancePackComplianceByPackIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListConformancePackComplianceByPackIdRequest.class,
+                    ListConformancePackComplianceByPackIdResponse.class)
+                .withName("ListConformancePackComplianceByPackId")
+                .withUri("/v1/resource-manager/domains/{domain_id}/conformance-packs/{conformance_pack_id}/compliance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conformance_pack_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getConformancePackId, (req, v) -> {
+                req.setConformancePackId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("policy_assignment_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePackComplianceByPackIdRequest::getPolicyAssignmentName, (req, v) -> {
+                req.setPolicyAssignmentName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse> listConformancePackComplianceDetailsByPackId =
+        genForlistConformancePackComplianceDetailsByPackId();
+
+    private static HttpRequestDef<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse> genForlistConformancePackComplianceDetailsByPackId() {
+        // basic
+        HttpRequestDef.Builder<ListConformancePackComplianceDetailsByPackIdRequest, ListConformancePackComplianceDetailsByPackIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListConformancePackComplianceDetailsByPackIdRequest.class,
+                    ListConformancePackComplianceDetailsByPackIdResponse.class)
+                .withName("ListConformancePackComplianceDetailsByPackId")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/conformance-packs/{conformance_pack_id}/compliance/details")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conformance_pack_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getConformancePackId,
+                (req, v) -> {
+                    req.setConformancePackId(v);
+                }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("policy_assignment_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePackComplianceDetailsByPackIdRequest::getPolicyAssignmentName,
+                (req, v) -> {
+                    req.setPolicyAssignmentName(v);
+                }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse> listConformancePackComplianceScores =
+        genForlistConformancePackComplianceScores();
+
+    private static HttpRequestDef<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse> genForlistConformancePackComplianceScores() {
+        // basic
+        HttpRequestDef.Builder<ListConformancePackComplianceScoresRequest, ListConformancePackComplianceScoresResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListConformancePackComplianceScoresRequest.class,
+                    ListConformancePackComplianceScoresResponse.class)
+                .withName("ListConformancePackComplianceScores")
+                .withUri("/v1/resource-manager/domains/{domain_id}/conformance-packs/scores")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConformancePackComplianceScoresRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePackComplianceScoresRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("conformance_pack_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePackComplianceScoresRequest::getConformancePackName, (req, v) -> {
+                req.setConformancePackName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConformancePacksRequest, ListConformancePacksResponse> listConformancePacks =
+        genForlistConformancePacks();
+
+    private static HttpRequestDef<ListConformancePacksRequest, ListConformancePacksResponse> genForlistConformancePacks() {
+        // basic
+        HttpRequestDef.Builder<ListConformancePacksRequest, ListConformancePacksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListConformancePacksRequest.class, ListConformancePacksResponse.class)
+            .withName("ListConformancePacks")
+            .withUri("/v1/resource-manager/domains/{domain_id}/conformance-packs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConformancePacksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePacksRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("conformance_pack_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConformancePacksRequest::getConformancePackName, (req, v) -> {
+                req.setConformancePackName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse> showBuiltInConformancePackTemplate =
+        genForshowBuiltInConformancePackTemplate();
+
+    private static HttpRequestDef<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse> genForshowBuiltInConformancePackTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowBuiltInConformancePackTemplateRequest, ShowBuiltInConformancePackTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowBuiltInConformancePackTemplateRequest.class,
+                    ShowBuiltInConformancePackTemplateResponse.class)
+                .withName("ShowBuiltInConformancePackTemplate")
+                .withUri("/v1/resource-manager/conformance-packs/templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBuiltInConformancePackTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+        builder.<ShowBuiltInConformancePackTemplateRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowBuiltInConformancePackTemplateRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowBuiltInConformancePackTemplateRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConformancePackRequest, ShowConformancePackResponse> showConformancePack =
+        genForshowConformancePack();
+
+    private static HttpRequestDef<ShowConformancePackRequest, ShowConformancePackResponse> genForshowConformancePack() {
+        // basic
+        HttpRequestDef.Builder<ShowConformancePackRequest, ShowConformancePackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConformancePackRequest.class, ShowConformancePackResponse.class)
+                .withName("ShowConformancePack")
+                .withUri("/v1/resource-manager/domains/{domain_id}/conformance-packs/{conformance_pack_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conformance_pack_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConformancePackRequest::getConformancePackId, (req, v) -> {
+                req.setConformancePackId(v);
             }));
 
         // response

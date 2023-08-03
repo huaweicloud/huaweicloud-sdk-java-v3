@@ -9,10 +9,16 @@ import com.huaweicloud.sdk.mrs.v2.model.CancelSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CreateDataConnectorRequest;
+import com.huaweicloud.sdk.mrs.v2.model.CreateDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorRequest;
+import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowAgencyMappingRequest;
@@ -35,6 +41,8 @@ import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorResponse;
 
 public class MrsClient {
 
@@ -429,6 +437,126 @@ public class MrsClient {
         UpdateClusterNameRequest request) {
         return new SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>(request, MrsMeta.updateClusterName,
             hcClient);
+    }
+
+    /**
+     * 创建数据连接
+     *
+     * 创建数据连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDataConnectorRequest 请求对象
+     * @return CreateDataConnectorResponse
+     */
+    public CreateDataConnectorResponse createDataConnector(CreateDataConnectorRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.createDataConnector);
+    }
+
+    /**
+     * 创建数据连接
+     *
+     * 创建数据连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDataConnectorRequest 请求对象
+     * @return SyncInvoker<CreateDataConnectorRequest, CreateDataConnectorResponse>
+     */
+    public SyncInvoker<CreateDataConnectorRequest, CreateDataConnectorResponse> createDataConnectorInvoker(
+        CreateDataConnectorRequest request) {
+        return new SyncInvoker<CreateDataConnectorRequest, CreateDataConnectorResponse>(request,
+            MrsMeta.createDataConnector, hcClient);
+    }
+
+    /**
+     * 删除数据连接
+     *
+     * 删除数据连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDataConnectorRequest 请求对象
+     * @return DeleteDataConnectorResponse
+     */
+    public DeleteDataConnectorResponse deleteDataConnector(DeleteDataConnectorRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.deleteDataConnector);
+    }
+
+    /**
+     * 删除数据连接
+     *
+     * 删除数据连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDataConnectorRequest 请求对象
+     * @return SyncInvoker<DeleteDataConnectorRequest, DeleteDataConnectorResponse>
+     */
+    public SyncInvoker<DeleteDataConnectorRequest, DeleteDataConnectorResponse> deleteDataConnectorInvoker(
+        DeleteDataConnectorRequest request) {
+        return new SyncInvoker<DeleteDataConnectorRequest, DeleteDataConnectorResponse>(request,
+            MrsMeta.deleteDataConnector, hcClient);
+    }
+
+    /**
+     * 查询数据连接列表
+     *
+     * 查询数据连接列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDataConnectorRequest 请求对象
+     * @return ListDataConnectorResponse
+     */
+    public ListDataConnectorResponse listDataConnector(ListDataConnectorRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.listDataConnector);
+    }
+
+    /**
+     * 查询数据连接列表
+     *
+     * 查询数据连接列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDataConnectorRequest 请求对象
+     * @return SyncInvoker<ListDataConnectorRequest, ListDataConnectorResponse>
+     */
+    public SyncInvoker<ListDataConnectorRequest, ListDataConnectorResponse> listDataConnectorInvoker(
+        ListDataConnectorRequest request) {
+        return new SyncInvoker<ListDataConnectorRequest, ListDataConnectorResponse>(request, MrsMeta.listDataConnector,
+            hcClient);
+    }
+
+    /**
+     * 更新数据连接
+     *
+     * 更新数据连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDataConnectorRequest 请求对象
+     * @return UpdateDataConnectorResponse
+     */
+    public UpdateDataConnectorResponse updateDataConnector(UpdateDataConnectorRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.updateDataConnector);
+    }
+
+    /**
+     * 更新数据连接
+     *
+     * 更新数据连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDataConnectorRequest 请求对象
+     * @return SyncInvoker<UpdateDataConnectorRequest, UpdateDataConnectorResponse>
+     */
+    public SyncInvoker<UpdateDataConnectorRequest, UpdateDataConnectorResponse> updateDataConnectorInvoker(
+        UpdateDataConnectorRequest request) {
+        return new SyncInvoker<UpdateDataConnectorRequest, UpdateDataConnectorResponse>(request,
+            MrsMeta.updateDataConnector, hcClient);
     }
 
     /**

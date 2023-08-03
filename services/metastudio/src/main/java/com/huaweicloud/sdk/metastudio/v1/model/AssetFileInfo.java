@@ -85,7 +85,7 @@ public class AssetFileInfo {
     }
 
     /**
-     * 文件内容MD5值,固定32位。
+     * 文件内容MD5值，固定24位。
      * @return fileMd5
      */
     public String getFileMd5() {
@@ -138,7 +138,7 @@ public class AssetFileInfo {
     }
 
     /**
-     * 文件在资产中的分类。每种资产类型包含的文件分类不同。 * MAIN： 主文件 * COVER： 封面文件 * PAGE: 内容页图片 * SAMPLE：样例音频 * OTHER： 其他文件 > * 资产类型为SCENE、ANIMATION、VIDEO、IMAGE、MATERIAL时，包含MAIN、COVER和OTHER > * 资产类型为PPT时，包含MAIN、COVER、PAGE和OTHER > * 资产类型为HUMAN_MODEL时，包含MAIN、COVER和OTHER > * 资产类型为VOICE_MODEL时，包含MAIN、SAMPLE和OTHER
+     * 文件在资产中的分类。每种资产类型包含的文件分类不同。 * MAIN：主文件 * COVER：封面文件 * PAGE：内容页图片 * SAMPLE：样例音频 * OTHER：其他文件 * WHOLE_MODEL：全模型 * USER_MODIFIED_MODEL：用户上传模型 > * 资产类型为SCENE、ANIMATION、VIDEO、IMAGE、MATERIAL时，包含MAIN、COVER和OTHER > * 资产类型为PPT时，包含MAIN、COVER、PAGE和OTHER > * 资产类型为HUMAN_MODEL时，包含MAIN、COVER、WHOLE_MODEL、USER_MODIFIED_MODEL和OTHER > * 资产类型为VOICE_MODEL时，包含MAIN、SAMPLE和OTHER
      * @return assetFileCategory
      */
     public String getAssetFileCategory() {
@@ -155,7 +155,7 @@ public class AssetFileInfo {
     }
 
     /**
-     * 文件下载URL,有效期为24小时。
+     * 文件下载URL，有效期为24小时。
      * @return downloadUrl
      */
     public String getDownloadUrl() {

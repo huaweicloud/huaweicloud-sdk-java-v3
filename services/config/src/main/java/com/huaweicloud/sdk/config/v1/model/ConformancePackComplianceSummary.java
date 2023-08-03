@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.projectman.v4.model;
+package com.huaweicloud.sdk.config.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,44 +6,49 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 缺陷发现环境（仅Bug类型工作项具备该字段）
+ * 合规结果概览。
  */
-public class IssueResponseV4Env {
+public class ConformancePackComplianceSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Integer id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
 
-    public IssueResponseV4Env withId(Integer id) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "compliance")
+
+    private String compliance;
+
+    public ConformancePackComplianceSummary withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 缺陷发现环境id
+     * 合规规则包ID。
      * @return id
      */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public IssueResponseV4Env withName(String name) {
+    public ConformancePackComplianceSummary withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 缺陷发现环境名称
+     * 合规规则包名称。
      * @return name
      */
     public String getName() {
@@ -54,6 +59,23 @@ public class IssueResponseV4Env {
         this.name = name;
     }
 
+    public ConformancePackComplianceSummary withCompliance(String compliance) {
+        this.compliance = compliance;
+        return this;
+    }
+
+    /**
+     * 合规规则包合规结果。
+     * @return compliance
+     */
+    public String getCompliance() {
+        return compliance;
+    }
+
+    public void setCompliance(String compliance) {
+        this.compliance = compliance;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -62,21 +84,23 @@ public class IssueResponseV4Env {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueResponseV4Env that = (IssueResponseV4Env) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
+        ConformancePackComplianceSummary that = (ConformancePackComplianceSummary) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.compliance, that.compliance);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, name, compliance);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class IssueResponseV4Env {\n");
+        sb.append("class ConformancePackComplianceSummary {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    compliance: ").append(toIndentedString(compliance)).append("\n");
         sb.append("}");
         return sb.toString();
     }

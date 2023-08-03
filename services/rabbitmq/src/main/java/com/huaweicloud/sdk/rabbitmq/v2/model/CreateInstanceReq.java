@@ -98,7 +98,7 @@ public class CreateInstanceReq {
     private EngineEnum engine;
 
     /**
-     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 
+     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:g42,hk_g42,tm,hk_tm)。 
      */
     public static final class EngineVersionEnum {
 
@@ -487,7 +487,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35和3.7.17 
+     * 消息引擎的版本。   - RabbitMQ版本有：3.8.35[和3.7.17](tag:g42,hk_g42,tm,hk_tm)。 
      * @return engineVersion
      */
     public EngineVersionEnum getEngineVersion() {
@@ -521,7 +521,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+     * 认证用户名，只能由英文字母开头且由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
      * @return accessUser
      */
     public String getAccessUser() {

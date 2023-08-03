@@ -114,6 +114,11 @@ public class CreateConnectionResponse extends SdkResponse {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorInfo errorInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
@@ -224,6 +229,32 @@ public class CreateConnectionResponse extends SdkResponse {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public CreateConnectionResponse withErrorInfo(ErrorInfo errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public CreateConnectionResponse withErrorInfo(Consumer<ErrorInfo> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorInfo();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorInfo getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorInfo errorInfo) {
+        this.errorInfo = errorInfo;
     }
 
     public CreateConnectionResponse withVpcId(String vpcId) {
@@ -410,11 +441,11 @@ public class CreateConnectionResponse extends SdkResponse {
         CreateConnectionResponse that = (CreateConnectionResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
-            && Objects.equals(this.agency, that.agency) && Objects.equals(this.flavor, that.flavor)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.kafkaDetail, that.kafkaDetail)
-            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.agency, that.agency)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.kafkaDetail, that.kafkaDetail) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -423,6 +454,7 @@ public class CreateConnectionResponse extends SdkResponse {
             name,
             description,
             status,
+            errorInfo,
             vpcId,
             subnetId,
             agency,
@@ -442,6 +474,7 @@ public class CreateConnectionResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");

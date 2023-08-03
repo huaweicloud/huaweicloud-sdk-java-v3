@@ -825,7 +825,7 @@ public class RocketMQMeta {
             }));
         builder.<String>withRequestField("msg_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessageTraceRequest::getMsgId, (req, v) -> {
                 req.setMsgId(v);
@@ -881,6 +881,13 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessagesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+        builder.<String>withRequestField("key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessagesRequest::getKey, (req, v) -> {
+                req.setKey(v);
             }));
         builder.<String>withRequestField("start_time",
             LocationType.Query,

@@ -26,7 +26,7 @@ public class SceneComponentInfo {
     private String componentName;
 
     /**
-     * 组件类型。 * CAMERA： 摄像机 * PANEL： 屏幕 * LIGHT： 灯光
+     * 组件类型。 * CAMERA：摄像机 * PANEL：屏幕 * LIGHT：灯光
      */
     public static final class ComponentTypeEnum {
 
@@ -153,7 +153,7 @@ public class SceneComponentInfo {
     }
 
     /**
-     * 组件类型。 * CAMERA： 摄像机 * PANEL： 屏幕 * LIGHT： 灯光
+     * 组件类型。 * CAMERA：摄像机 * PANEL：屏幕 * LIGHT：灯光
      * @return componentType
      */
     public ComponentTypeEnum getComponentType() {

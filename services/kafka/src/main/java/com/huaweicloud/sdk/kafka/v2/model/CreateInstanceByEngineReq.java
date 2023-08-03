@@ -626,7 +626,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 消息存储空间，单位GB。   - Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 900000GB。
+     * 消息存储空间，单位GB。   - Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb)[900000](tag:g42,tm,hk_g42,ctc,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb)[900000](tag:g42,tm,hk_g42,ctc,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb)[900000](tag:g42,tm,hk_g42,ctc,hk_tm,hws_eu)GB。
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -643,7 +643,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  认证用户名，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
+     * 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  认证用户名，只能由英文字母开头且由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
      * @return accessUser
      */
     public String getAccessUser() {

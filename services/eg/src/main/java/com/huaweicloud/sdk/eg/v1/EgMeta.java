@@ -732,6 +732,13 @@ public class EgMeta {
             f -> f.withMarshaller(ListConnectionsRequest::getFuzzyName, (req, v) -> {
                 req.setFuzzyName(v);
             }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
 
         // response
 
@@ -798,6 +805,13 @@ public class EgMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEndpointsRequest::getFuzzyName, (req, v) -> {
                 req.setFuzzyName(v);
+            }));
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
             }));
 
         // response

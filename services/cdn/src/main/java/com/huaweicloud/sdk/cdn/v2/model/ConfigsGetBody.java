@@ -24,6 +24,11 @@ public class ConfigsGetBody {
     private String serviceArea;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remark")
+
+    private String remark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_request_header")
 
     private List<OriginRequestHeader> originRequestHeader = null;
@@ -86,7 +91,7 @@ public class ConfigsGetBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cache_url_parameter_filter")
 
-    private CacheUrlParameterFilter cacheUrlParameterFilter;
+    private CacheUrlParameterFilterGetBody cacheUrlParameterFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_accelerate")
@@ -149,6 +154,21 @@ public class ConfigsGetBody {
     private List<RequestLimitRules> requestLimitRules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_frequency_limit")
+
+    private IpFrequencyLimitQuery ipFrequencyLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hsts")
+
+    private HstsQuery hsts;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quic")
+
+    private Quic quic;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code_redirect_rules")
 
     private List<ErrorCodeRedirectRules> errorCodeRedirectRules = null;
@@ -159,7 +179,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * 业务类型，web：网站加速，download：文件下载加速，video：点播加速，wholesit：全站加速。
+     * 业务类型： - web：网站加速； - download：文件下载加速； - video：点播加速； - wholesite：全站加速。
      * @return businessType
      */
     public String getBusinessType() {
@@ -176,7 +196,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * 服务区域，mainland_china：中国大陆，global：全球，outside_mainland_china：中国大陆境外。
+     * 服务区域： - mainland_china：中国大陆； - global：全球； - outside_mainland_china：中国大陆境外。
      * @return serviceArea
      */
     public String getServiceArea() {
@@ -185,6 +205,23 @@ public class ConfigsGetBody {
 
     public void setServiceArea(String serviceArea) {
         this.serviceArea = serviceArea;
+    }
+
+    public ConfigsGetBody withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    /**
+     * 域名备注。
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public ConfigsGetBody withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
@@ -509,14 +546,15 @@ public class ConfigsGetBody {
         this.compress = compress;
     }
 
-    public ConfigsGetBody withCacheUrlParameterFilter(CacheUrlParameterFilter cacheUrlParameterFilter) {
+    public ConfigsGetBody withCacheUrlParameterFilter(CacheUrlParameterFilterGetBody cacheUrlParameterFilter) {
         this.cacheUrlParameterFilter = cacheUrlParameterFilter;
         return this;
     }
 
-    public ConfigsGetBody withCacheUrlParameterFilter(Consumer<CacheUrlParameterFilter> cacheUrlParameterFilterSetter) {
+    public ConfigsGetBody withCacheUrlParameterFilter(
+        Consumer<CacheUrlParameterFilterGetBody> cacheUrlParameterFilterSetter) {
         if (this.cacheUrlParameterFilter == null) {
-            this.cacheUrlParameterFilter = new CacheUrlParameterFilter();
+            this.cacheUrlParameterFilter = new CacheUrlParameterFilterGetBody();
             cacheUrlParameterFilterSetter.accept(this.cacheUrlParameterFilter);
         }
 
@@ -527,11 +565,11 @@ public class ConfigsGetBody {
      * Get cacheUrlParameterFilter
      * @return cacheUrlParameterFilter
      */
-    public CacheUrlParameterFilter getCacheUrlParameterFilter() {
+    public CacheUrlParameterFilterGetBody getCacheUrlParameterFilter() {
         return cacheUrlParameterFilter;
     }
 
-    public void setCacheUrlParameterFilter(CacheUrlParameterFilter cacheUrlParameterFilter) {
+    public void setCacheUrlParameterFilter(CacheUrlParameterFilterGetBody cacheUrlParameterFilter) {
         this.cacheUrlParameterFilter = cacheUrlParameterFilter;
     }
 
@@ -840,6 +878,84 @@ public class ConfigsGetBody {
         this.requestLimitRules = requestLimitRules;
     }
 
+    public ConfigsGetBody withIpFrequencyLimit(IpFrequencyLimitQuery ipFrequencyLimit) {
+        this.ipFrequencyLimit = ipFrequencyLimit;
+        return this;
+    }
+
+    public ConfigsGetBody withIpFrequencyLimit(Consumer<IpFrequencyLimitQuery> ipFrequencyLimitSetter) {
+        if (this.ipFrequencyLimit == null) {
+            this.ipFrequencyLimit = new IpFrequencyLimitQuery();
+            ipFrequencyLimitSetter.accept(this.ipFrequencyLimit);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ipFrequencyLimit
+     * @return ipFrequencyLimit
+     */
+    public IpFrequencyLimitQuery getIpFrequencyLimit() {
+        return ipFrequencyLimit;
+    }
+
+    public void setIpFrequencyLimit(IpFrequencyLimitQuery ipFrequencyLimit) {
+        this.ipFrequencyLimit = ipFrequencyLimit;
+    }
+
+    public ConfigsGetBody withHsts(HstsQuery hsts) {
+        this.hsts = hsts;
+        return this;
+    }
+
+    public ConfigsGetBody withHsts(Consumer<HstsQuery> hstsSetter) {
+        if (this.hsts == null) {
+            this.hsts = new HstsQuery();
+            hstsSetter.accept(this.hsts);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hsts
+     * @return hsts
+     */
+    public HstsQuery getHsts() {
+        return hsts;
+    }
+
+    public void setHsts(HstsQuery hsts) {
+        this.hsts = hsts;
+    }
+
+    public ConfigsGetBody withQuic(Quic quic) {
+        this.quic = quic;
+        return this;
+    }
+
+    public ConfigsGetBody withQuic(Consumer<Quic> quicSetter) {
+        if (this.quic == null) {
+            this.quic = new Quic();
+            quicSetter.accept(this.quic);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get quic
+     * @return quic
+     */
+    public Quic getQuic() {
+        return quic;
+    }
+
+    public void setQuic(Quic quic) {
+        this.quic = quic;
+    }
+
     public ConfigsGetBody withErrorCodeRedirectRules(List<ErrorCodeRedirectRules> errorCodeRedirectRules) {
         this.errorCodeRedirectRules = errorCodeRedirectRules;
         return this;
@@ -884,7 +1000,7 @@ public class ConfigsGetBody {
         }
         ConfigsGetBody that = (ConfigsGetBody) obj;
         return Objects.equals(this.businessType, that.businessType)
-            && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.serviceArea, that.serviceArea) && Objects.equals(this.remark, that.remark)
             && Objects.equals(this.originRequestHeader, that.originRequestHeader)
             && Objects.equals(this.httpResponseHeader, that.httpResponseHeader)
             && Objects.equals(this.urlAuth, that.urlAuth) && Objects.equals(this.https, that.https)
@@ -905,6 +1021,8 @@ public class ConfigsGetBody {
             && Objects.equals(this.remoteAuth, that.remoteAuth) && Objects.equals(this.websocket, that.websocket)
             && Objects.equals(this.videoSeek, that.videoSeek)
             && Objects.equals(this.requestLimitRules, that.requestLimitRules)
+            && Objects.equals(this.ipFrequencyLimit, that.ipFrequencyLimit) && Objects.equals(this.hsts, that.hsts)
+            && Objects.equals(this.quic, that.quic)
             && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules);
     }
 
@@ -912,6 +1030,7 @@ public class ConfigsGetBody {
     public int hashCode() {
         return Objects.hash(businessType,
             serviceArea,
+            remark,
             originRequestHeader,
             httpResponseHeader,
             urlAuth,
@@ -937,6 +1056,9 @@ public class ConfigsGetBody {
             websocket,
             videoSeek,
             requestLimitRules,
+            ipFrequencyLimit,
+            hsts,
+            quic,
             errorCodeRedirectRules);
     }
 
@@ -946,6 +1068,7 @@ public class ConfigsGetBody {
         sb.append("class ConfigsGetBody {\n");
         sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    originRequestHeader: ").append(toIndentedString(originRequestHeader)).append("\n");
         sb.append("    httpResponseHeader: ").append(toIndentedString(httpResponseHeader)).append("\n");
         sb.append("    urlAuth: ").append(toIndentedString(urlAuth)).append("\n");
@@ -971,6 +1094,9 @@ public class ConfigsGetBody {
         sb.append("    websocket: ").append(toIndentedString(websocket)).append("\n");
         sb.append("    videoSeek: ").append(toIndentedString(videoSeek)).append("\n");
         sb.append("    requestLimitRules: ").append(toIndentedString(requestLimitRules)).append("\n");
+        sb.append("    ipFrequencyLimit: ").append(toIndentedString(ipFrequencyLimit)).append("\n");
+        sb.append("    hsts: ").append(toIndentedString(hsts)).append("\n");
+        sb.append("    quic: ").append(toIndentedString(quic)).append("\n");
         sb.append("    errorCodeRedirectRules: ").append(toIndentedString(errorCodeRedirectRules)).append("\n");
         sb.append("}");
         return sb.toString();

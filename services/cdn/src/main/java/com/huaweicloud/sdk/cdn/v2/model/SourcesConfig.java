@@ -55,13 +55,33 @@ public class SourcesConfig {
 
     private String obsBucketType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bucket_access_key")
+
+    private String bucketAccessKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bucket_secret_key")
+
+    private String bucketSecretKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bucket_region")
+
+    private String bucketRegion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bucket_name")
+
+    private String bucketName;
+
     public SourcesConfig withOriginType(String originType) {
         this.originType = originType;
         return this;
     }
 
     /**
-     * 源站类型， ipaddr：源站IP，domain：源站域名，obs_bucket：OBS桶域名。
+     * 源站类型， - ipaddr：源站IP； - domain：源站域名； - obs_bucket：OBS桶域名； - third_bucket：第三方桶。
      * @return originType
      */
     public String getOriginType() {
@@ -129,7 +149,7 @@ public class SourcesConfig {
     }
 
     /**
-     * 是否开启Obs静态网站托管，源站类型为obs_bucket时传递，off：关闭，on：开启。
+     * 是否开启OBS静态网站托管，源站类型为obs_bucket时传递，off：关闭，on：开启。
      * @return obsWebHostingStatus
      */
     public String getObsWebHostingStatus() {
@@ -197,7 +217,7 @@ public class SourcesConfig {
     }
 
     /**
-     * obs桶源站类型 “private” 私有桶 “public” 公有桶。
+     * OBS桶源站类型： - “private” 私有桶； - “public” 公有桶，默认为公有桶。
      * @return obsBucketType
      */
     public String getObsBucketType() {
@@ -206,6 +226,74 @@ public class SourcesConfig {
 
     public void setObsBucketType(String obsBucketType) {
         this.obsBucketType = obsBucketType;
+    }
+
+    public SourcesConfig withBucketAccessKey(String bucketAccessKey) {
+        this.bucketAccessKey = bucketAccessKey;
+        return this;
+    }
+
+    /**
+     * 第三方对象存储访问密钥。  > 源站类型为第三方桶时必填
+     * @return bucketAccessKey
+     */
+    public String getBucketAccessKey() {
+        return bucketAccessKey;
+    }
+
+    public void setBucketAccessKey(String bucketAccessKey) {
+        this.bucketAccessKey = bucketAccessKey;
+    }
+
+    public SourcesConfig withBucketSecretKey(String bucketSecretKey) {
+        this.bucketSecretKey = bucketSecretKey;
+        return this;
+    }
+
+    /**
+     * 第三方对象存储密钥。  > 源站类型为第三方桶时必填
+     * @return bucketSecretKey
+     */
+    public String getBucketSecretKey() {
+        return bucketSecretKey;
+    }
+
+    public void setBucketSecretKey(String bucketSecretKey) {
+        this.bucketSecretKey = bucketSecretKey;
+    }
+
+    public SourcesConfig withBucketRegion(String bucketRegion) {
+        this.bucketRegion = bucketRegion;
+        return this;
+    }
+
+    /**
+     * 第三方对象存储区域。  > 源站类型为第三方桶时必填
+     * @return bucketRegion
+     */
+    public String getBucketRegion() {
+        return bucketRegion;
+    }
+
+    public void setBucketRegion(String bucketRegion) {
+        this.bucketRegion = bucketRegion;
+    }
+
+    public SourcesConfig withBucketName(String bucketName) {
+        this.bucketName = bucketName;
+        return this;
+    }
+
+    /**
+     * 第三方对象存储名称。  > 源站类型为第三方桶时必填
+     * @return bucketName
+     */
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
     }
 
     @Override
@@ -221,7 +309,10 @@ public class SourcesConfig {
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.weight, that.weight)
             && Objects.equals(this.obsWebHostingStatus, that.obsWebHostingStatus)
             && Objects.equals(this.httpPort, that.httpPort) && Objects.equals(this.httpsPort, that.httpsPort)
-            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.obsBucketType, that.obsBucketType);
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.obsBucketType, that.obsBucketType)
+            && Objects.equals(this.bucketAccessKey, that.bucketAccessKey)
+            && Objects.equals(this.bucketSecretKey, that.bucketSecretKey)
+            && Objects.equals(this.bucketRegion, that.bucketRegion) && Objects.equals(this.bucketName, that.bucketName);
     }
 
     @Override
@@ -234,7 +325,11 @@ public class SourcesConfig {
             httpPort,
             httpsPort,
             hostName,
-            obsBucketType);
+            obsBucketType,
+            bucketAccessKey,
+            bucketSecretKey,
+            bucketRegion,
+            bucketName);
     }
 
     @Override
@@ -250,6 +345,10 @@ public class SourcesConfig {
         sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    obsBucketType: ").append(toIndentedString(obsBucketType)).append("\n");
+        sb.append("    bucketAccessKey: ").append(toIndentedString(bucketAccessKey)).append("\n");
+        sb.append("    bucketSecretKey: ").append(toIndentedString(bucketSecretKey)).append("\n");
+        sb.append("    bucketRegion: ").append(toIndentedString(bucketRegion)).append("\n");
+        sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("}");
         return sb.toString();
     }
