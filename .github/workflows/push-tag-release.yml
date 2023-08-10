@@ -14,6 +14,7 @@ jobs:
       run: |
         git config user.name ${{ vars.SDK_USERNAME }}
         git config user.email ${{ vars.SDK_EMAIL }}
+        git lfs install
     - name: push && tag && release
       shell: bash
       run: |
