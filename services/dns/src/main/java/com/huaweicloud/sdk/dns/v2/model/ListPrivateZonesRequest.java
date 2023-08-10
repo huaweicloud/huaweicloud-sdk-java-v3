@@ -180,7 +180,7 @@ public class ListPrivateZonesRequest {
     }
 
     /**
-     * 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索 默认值为equal。
+     * 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索
      * @return searchMode
      */
     public String getSearchMode() {

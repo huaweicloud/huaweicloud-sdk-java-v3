@@ -59,6 +59,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseRequest;
@@ -181,6 +183,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerRequest;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyCollationRequest;
@@ -752,6 +756,37 @@ public class RdsAsyncClient {
         CreateRestoreInstanceRequest request) {
         return new AsyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>(request,
             RdsMeta.createRestoreInstance, hcClient);
+    }
+
+    /**
+     * 获取扩展日志下载信息
+     *
+     * 获取扩展日志下载信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateXelLogDownloadRequest 请求对象
+     * @return CompletableFuture<CreateXelLogDownloadResponse>
+     */
+    public CompletableFuture<CreateXelLogDownloadResponse> createXelLogDownloadAsync(
+        CreateXelLogDownloadRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.createXelLogDownload);
+    }
+
+    /**
+     * 获取扩展日志下载信息
+     *
+     * 获取扩展日志下载信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateXelLogDownloadRequest 请求对象
+     * @return AsyncInvoker<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse>
+     */
+    public AsyncInvoker<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse> createXelLogDownloadAsyncInvoker(
+        CreateXelLogDownloadRequest request) {
+        return new AsyncInvoker<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse>(request,
+            RdsMeta.createXelLogDownload, hcClient);
     }
 
     /**
@@ -1926,6 +1961,38 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesAsyncInvoker(
         ListStorageTypesRequest request) {
         return new AsyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>(request, RdsMeta.listStorageTypes,
+            hcClient);
+    }
+
+    /**
+     * 查询扩展日志文件列表
+     *
+     * 查询扩展日志文件列表。
+     * 查询扩展日志文件列表，可以调用接口/v3/{project_id}/instances/{instance_id}/xellog-download 获取扩展日志下载链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListXellogFilesRequest 请求对象
+     * @return CompletableFuture<ListXellogFilesResponse>
+     */
+    public CompletableFuture<ListXellogFilesResponse> listXellogFilesAsync(ListXellogFilesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listXellogFiles);
+    }
+
+    /**
+     * 查询扩展日志文件列表
+     *
+     * 查询扩展日志文件列表。
+     * 查询扩展日志文件列表，可以调用接口/v3/{project_id}/instances/{instance_id}/xellog-download 获取扩展日志下载链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListXellogFilesRequest 请求对象
+     * @return AsyncInvoker<ListXellogFilesRequest, ListXellogFilesResponse>
+     */
+    public AsyncInvoker<ListXellogFilesRequest, ListXellogFilesResponse> listXellogFilesAsyncInvoker(
+        ListXellogFilesRequest request) {
+        return new AsyncInvoker<ListXellogFilesRequest, ListXellogFilesResponse>(request, RdsMeta.listXellogFiles,
             hcClient);
     }
 

@@ -27,6 +27,8 @@ public class CreatePerformanceResourceReq {
 
     /**
      * 存储空间，单位GB
+     * minimum: 1
+     * maximum: 327680
      * @return space
      */
     public Integer getSpace() {

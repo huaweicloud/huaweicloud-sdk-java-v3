@@ -330,6 +330,16 @@ public class ShowInstanceResponse extends SdkResponse {
     private String publicBrokerAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "grpc_address")
+
+    private String grpcAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_grpc_address")
+
+    private String publicGrpcAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<TagEntity> tags = null;
@@ -1176,6 +1186,40 @@ public class ShowInstanceResponse extends SdkResponse {
         this.publicBrokerAddress = publicBrokerAddress;
     }
 
+    public ShowInstanceResponse withGrpcAddress(String grpcAddress) {
+        this.grpcAddress = grpcAddress;
+        return this;
+    }
+
+    /**
+     * grpc连接地址。
+     * @return grpcAddress
+     */
+    public String getGrpcAddress() {
+        return grpcAddress;
+    }
+
+    public void setGrpcAddress(String grpcAddress) {
+        this.grpcAddress = grpcAddress;
+    }
+
+    public ShowInstanceResponse withPublicGrpcAddress(String publicGrpcAddress) {
+        this.publicGrpcAddress = publicGrpcAddress;
+        return this;
+    }
+
+    /**
+     * 公网grpc连接地址。
+     * @return publicGrpcAddress
+     */
+    public String getPublicGrpcAddress() {
+        return publicGrpcAddress;
+    }
+
+    public void setPublicGrpcAddress(String publicGrpcAddress) {
+        this.publicGrpcAddress = publicGrpcAddress;
+    }
+
     public ShowInstanceResponse withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
@@ -1286,7 +1330,9 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.brokerAddress, that.brokerAddress)
             && Objects.equals(this.publicNamesrvAddress, that.publicNamesrvAddress)
             && Objects.equals(this.publicBrokerAddress, that.publicBrokerAddress)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
+            && Objects.equals(this.grpcAddress, that.grpcAddress)
+            && Objects.equals(this.publicGrpcAddress, that.publicGrpcAddress) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
@@ -1340,6 +1386,8 @@ public class ShowInstanceResponse extends SdkResponse {
             brokerAddress,
             publicNamesrvAddress,
             publicBrokerAddress,
+            grpcAddress,
+            publicGrpcAddress,
             tags,
             totalStorageSpace,
             resourceSpecCode);
@@ -1397,6 +1445,8 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    brokerAddress: ").append(toIndentedString(brokerAddress)).append("\n");
         sb.append("    publicNamesrvAddress: ").append(toIndentedString(publicNamesrvAddress)).append("\n");
         sb.append("    publicBrokerAddress: ").append(toIndentedString(publicBrokerAddress)).append("\n");
+        sb.append("    grpcAddress: ").append(toIndentedString(grpcAddress)).append("\n");
+        sb.append("    publicGrpcAddress: ").append(toIndentedString(publicGrpcAddress)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    totalStorageSpace: ").append(toIndentedString(totalStorageSpace)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");

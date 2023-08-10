@@ -25,6 +25,21 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lag")
+
+    private Long lag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_offset")
+
+    private Long maxOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consumer_offset")
+
+    private Long consumerOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokers")
 
     private List<Brokers> brokers = null;
@@ -79,6 +94,57 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
         this.total = total;
     }
 
+    public ShowConsumerListOrDetailsResponse withLag(Long lag) {
+        this.lag = lag;
+        return this;
+    }
+
+    /**
+     * 消费堆积总数
+     * @return lag
+     */
+    public Long getLag() {
+        return lag;
+    }
+
+    public void setLag(Long lag) {
+        this.lag = lag;
+    }
+
+    public ShowConsumerListOrDetailsResponse withMaxOffset(Long maxOffset) {
+        this.maxOffset = maxOffset;
+        return this;
+    }
+
+    /**
+     * 消息总数
+     * @return maxOffset
+     */
+    public Long getMaxOffset() {
+        return maxOffset;
+    }
+
+    public void setMaxOffset(Long maxOffset) {
+        this.maxOffset = maxOffset;
+    }
+
+    public ShowConsumerListOrDetailsResponse withConsumerOffset(Long consumerOffset) {
+        this.consumerOffset = consumerOffset;
+        return this;
+    }
+
+    /**
+     * 已消费消息数
+     * @return consumerOffset
+     */
+    public Long getConsumerOffset() {
+        return consumerOffset;
+    }
+
+    public void setConsumerOffset(Long consumerOffset) {
+        this.consumerOffset = consumerOffset;
+    }
+
     public ShowConsumerListOrDetailsResponse withBrokers(List<Brokers> brokers) {
         this.brokers = brokers;
         return this;
@@ -122,12 +188,13 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
         }
         ShowConsumerListOrDetailsResponse that = (ShowConsumerListOrDetailsResponse) obj;
         return Objects.equals(this.topics, that.topics) && Objects.equals(this.total, that.total)
-            && Objects.equals(this.brokers, that.brokers);
+            && Objects.equals(this.lag, that.lag) && Objects.equals(this.maxOffset, that.maxOffset)
+            && Objects.equals(this.consumerOffset, that.consumerOffset) && Objects.equals(this.brokers, that.brokers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topics, total, brokers);
+        return Objects.hash(topics, total, lag, maxOffset, consumerOffset, brokers);
     }
 
     @Override
@@ -136,6 +203,9 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
         sb.append("class ShowConsumerListOrDetailsResponse {\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    lag: ").append(toIndentedString(lag)).append("\n");
+        sb.append("    maxOffset: ").append(toIndentedString(maxOffset)).append("\n");
+        sb.append("    consumerOffset: ").append(toIndentedString(consumerOffset)).append("\n");
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("}");
         return sb.toString();

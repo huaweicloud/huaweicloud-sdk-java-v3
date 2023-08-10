@@ -45,6 +45,11 @@ public class MyanmarIdcardRequestBody {
 
     private Boolean returnIdcardType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_translation")
+
+    private Boolean returnTranslation;
+
     public MyanmarIdcardRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -164,6 +169,23 @@ public class MyanmarIdcardRequestBody {
         this.returnIdcardType = returnIdcardType;
     }
 
+    public MyanmarIdcardRequestBody withReturnTranslation(Boolean returnTranslation) {
+        this.returnTranslation = returnTranslation;
+        return this;
+    }
+
+    /**
+     * 是否返回转译信息的开关，可选值如下所示： - true: 返回转译信息。 - false：不返回转译信息。 
+     * @return returnTranslation
+     */
+    public Boolean getReturnTranslation() {
+        return returnTranslation;
+    }
+
+    public void setReturnTranslation(Boolean returnTranslation) {
+        this.returnTranslation = returnTranslation;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,7 +200,8 @@ public class MyanmarIdcardRequestBody {
             && Objects.equals(this.returnConfidence, that.returnConfidence)
             && Objects.equals(this.returnPortraitImage, that.returnPortraitImage)
             && Objects.equals(this.returnPortraitLocation, that.returnPortraitLocation)
-            && Objects.equals(this.returnIdcardType, that.returnIdcardType);
+            && Objects.equals(this.returnIdcardType, that.returnIdcardType)
+            && Objects.equals(this.returnTranslation, that.returnTranslation);
     }
 
     @Override
@@ -189,7 +212,8 @@ public class MyanmarIdcardRequestBody {
             returnConfidence,
             returnPortraitImage,
             returnPortraitLocation,
-            returnIdcardType);
+            returnIdcardType,
+            returnTranslation);
     }
 
     @Override
@@ -203,6 +227,7 @@ public class MyanmarIdcardRequestBody {
         sb.append("    returnPortraitImage: ").append(toIndentedString(returnPortraitImage)).append("\n");
         sb.append("    returnPortraitLocation: ").append(toIndentedString(returnPortraitLocation)).append("\n");
         sb.append("    returnIdcardType: ").append(toIndentedString(returnIdcardType)).append("\n");
+        sb.append("    returnTranslation: ").append(toIndentedString(returnTranslation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

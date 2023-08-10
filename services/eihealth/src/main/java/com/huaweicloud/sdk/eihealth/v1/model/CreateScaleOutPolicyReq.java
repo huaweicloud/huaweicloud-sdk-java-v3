@@ -133,7 +133,7 @@ public class CreateScaleOutPolicyReq {
 
     /**
      * 扩容节点数上限
-     * minimum: 1
+     * minimum: 0
      * maximum: 50
      * @return maxNodes
      */
@@ -152,7 +152,7 @@ public class CreateScaleOutPolicyReq {
 
     /**
      * 扩容节点数下限
-     * minimum: 1
+     * minimum: 0
      * maximum: 50
      * @return minNodes
      */

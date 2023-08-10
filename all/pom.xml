@@ -8,13 +8,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.1.52</version>
+        <version>3.1.53</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>huaweicloud-sdk-all</artifactId>
-    <version>3.1.52</version>
+    <version>3.1.53</version>
     <name>Huawei Cloud SDK for Java</name>
     <description>Huawei Cloud SDK for Java provides all services</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
@@ -24,766 +24,766 @@
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cfw</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-core</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-antiddos</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-aom</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-apig</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-as</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-bcs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-bms</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-bss</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-bssintl</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cbr</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cce</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ces</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-classroom</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cloudrtc</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cloudide</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cloudpipeline</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cloudtest</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-codeartscheck</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cts</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-das</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dcs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ddm</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dds</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-devstar</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dlf</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dgc</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dli</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dns</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-drs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ecs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-eihealth</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-eip</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-elb</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-eps</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-evs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-gaussdbfornosql</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-hss</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cgs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-iam</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-iec</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ief</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ies</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-image</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ims</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-iotda</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-iotedge</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-kafka</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-kms</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-kps</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-live</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-meeting</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-moderation</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-mpc</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-mrs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-nat</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-oms</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-osm</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-projectman</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-rabbitmq</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-rds</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-rms</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-roma</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-sa</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-secmaster</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-scm</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-servicestage</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-smn</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-sms</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-swr</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-tms</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-vpc</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-vpcep</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cdn</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ugo</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ocr</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-waf</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-oroas</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-vod</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-lts</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-gaussdb</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ccm</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-csms</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-codeartsdeploy</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-frs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-codecraft</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-imagesearch</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cbs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cpts</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ivs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-gsl</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cdm</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-sdrs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dbss</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dsc</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-vss</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-nlp</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-gaussdbforopengauss</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-campusgo</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-codehub</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-vas</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cbh</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ges</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-sfsturbo</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-sis</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cloudtable</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-deh</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-res</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-hilens</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-iotanalytics</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-expert</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-css</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dws</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-vcm</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cc</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cse</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cae</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-rocketmq</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-apm</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cph</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-eg</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-er</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ga</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-workspace</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-workspaceapp</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-codeartsartifact</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-koomessage</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-koophone</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-koomap</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-devsecurity</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dc</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-aos</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-mas</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dwr</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dris</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-mapds</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-codeartsbuild</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-lakeformation</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-organizations</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-ram</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-idme</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
 	<dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-metastudio</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-cms</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-msgsms</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-eds</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-obs</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-dataartsstudio</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-tics</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-config</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-identitycenter</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
         <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-pangulargemodels</artifactId>
-            <version>3.1.52</version>
+            <version>3.1.53</version>
         </dependency>
     </dependencies>
     <build>
-        <finalName>${project.artifactId}-3.1.52</finalName>
+        <finalName>${project.artifactId}-3.1.53</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>

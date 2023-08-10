@@ -29,7 +29,7 @@ public class MysqlInstanceResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
 
-    private MysqlDatastore datastore;
+    private MysqlDatastoreInRes datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
@@ -147,14 +147,14 @@ public class MysqlInstanceResponse {
         this.status = status;
     }
 
-    public MysqlInstanceResponse withDatastore(MysqlDatastore datastore) {
+    public MysqlInstanceResponse withDatastore(MysqlDatastoreInRes datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public MysqlInstanceResponse withDatastore(Consumer<MysqlDatastore> datastoreSetter) {
+    public MysqlInstanceResponse withDatastore(Consumer<MysqlDatastoreInRes> datastoreSetter) {
         if (this.datastore == null) {
-            this.datastore = new MysqlDatastore();
+            this.datastore = new MysqlDatastoreInRes();
             datastoreSetter.accept(this.datastore);
         }
 
@@ -165,11 +165,11 @@ public class MysqlInstanceResponse {
      * Get datastore
      * @return datastore
      */
-    public MysqlDatastore getDatastore() {
+    public MysqlDatastoreInRes getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(MysqlDatastore datastore) {
+    public void setDatastore(MysqlDatastoreInRes datastore) {
         this.datastore = datastore;
     }
 

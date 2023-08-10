@@ -15,9 +15,53 @@ import java.util.function.Consumer;
 public class ShowTopicStatusResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_offset")
+
+    private Integer maxOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_offset")
+
+    private Integer minOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokers")
 
     private List<ShowTopicStatusRespBrokers> brokers = null;
+
+    public ShowTopicStatusResponse withMaxOffset(Integer maxOffset) {
+        this.maxOffset = maxOffset;
+        return this;
+    }
+
+    /**
+     * 最大偏移量。
+     * @return maxOffset
+     */
+    public Integer getMaxOffset() {
+        return maxOffset;
+    }
+
+    public void setMaxOffset(Integer maxOffset) {
+        this.maxOffset = maxOffset;
+    }
+
+    public ShowTopicStatusResponse withMinOffset(Integer minOffset) {
+        this.minOffset = minOffset;
+        return this;
+    }
+
+    /**
+     * 最小偏移量。
+     * @return minOffset
+     */
+    public Integer getMinOffset() {
+        return minOffset;
+    }
+
+    public void setMinOffset(Integer minOffset) {
+        this.minOffset = minOffset;
+    }
 
     public ShowTopicStatusResponse withBrokers(List<ShowTopicStatusRespBrokers> brokers) {
         this.brokers = brokers;
@@ -61,18 +105,21 @@ public class ShowTopicStatusResponse extends SdkResponse {
             return false;
         }
         ShowTopicStatusResponse that = (ShowTopicStatusResponse) obj;
-        return Objects.equals(this.brokers, that.brokers);
+        return Objects.equals(this.maxOffset, that.maxOffset) && Objects.equals(this.minOffset, that.minOffset)
+            && Objects.equals(this.brokers, that.brokers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brokers);
+        return Objects.hash(maxOffset, minOffset, brokers);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTopicStatusResponse {\n");
+        sb.append("    maxOffset: ").append(toIndentedString(maxOffset)).append("\n");
+        sb.append("    minOffset: ").append(toIndentedString(minOffset)).append("\n");
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("}");
         return sb.toString();

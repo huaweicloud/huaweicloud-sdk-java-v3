@@ -51,6 +51,11 @@ public class ComputingResourceFlavorsRsp {
     private Boolean soldOut;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az")
+
+    private String az;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu_detail")
 
     private String cpuDetail;
@@ -211,6 +216,23 @@ public class ComputingResourceFlavorsRsp {
         this.soldOut = soldOut;
     }
 
+    public ComputingResourceFlavorsRsp withAz(String az) {
+        this.az = az;
+        return this;
+    }
+
+    /**
+     * 可用区
+     * @return az
+     */
+    public String getAz() {
+        return az;
+    }
+
+    public void setAz(String az) {
+        this.az = az;
+    }
+
     public ComputingResourceFlavorsRsp withCpuDetail(String cpuDetail) {
         this.cpuDetail = cpuDetail;
         return this;
@@ -309,8 +331,8 @@ public class ComputingResourceFlavorsRsp {
             && Objects.equals(this.ram, that.ram) && Objects.equals(this.vcpus, that.vcpus)
             && Objects.equals(this.maxRate, that.maxRate) && Objects.equals(this.minRate, that.minRate)
             && Objects.equals(this.maxPps, that.maxPps) && Objects.equals(this.soldOut, that.soldOut)
-            && Objects.equals(this.cpuDetail, that.cpuDetail) && Objects.equals(this.diskDetail, that.diskDetail)
-            && Objects.equals(this.memoryDetail, that.memoryDetail)
+            && Objects.equals(this.az, that.az) && Objects.equals(this.cpuDetail, that.cpuDetail)
+            && Objects.equals(this.diskDetail, that.diskDetail) && Objects.equals(this.memoryDetail, that.memoryDetail)
             && Objects.equals(this.netcardDetail, that.netcardDetail) && Objects.equals(this.cpuArch, that.cpuArch);
     }
 
@@ -324,6 +346,7 @@ public class ComputingResourceFlavorsRsp {
             minRate,
             maxPps,
             soldOut,
+            az,
             cpuDetail,
             diskDetail,
             memoryDetail,
@@ -343,6 +366,7 @@ public class ComputingResourceFlavorsRsp {
         sb.append("    minRate: ").append(toIndentedString(minRate)).append("\n");
         sb.append("    maxPps: ").append(toIndentedString(maxPps)).append("\n");
         sb.append("    soldOut: ").append(toIndentedString(soldOut)).append("\n");
+        sb.append("    az: ").append(toIndentedString(az)).append("\n");
         sb.append("    cpuDetail: ").append(toIndentedString(cpuDetail)).append("\n");
         sb.append("    diskDetail: ").append(toIndentedString(diskDetail)).append("\n");
         sb.append("    memoryDetail: ").append(toIndentedString(memoryDetail)).append("\n");

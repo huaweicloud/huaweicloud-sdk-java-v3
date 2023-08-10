@@ -115,6 +115,93 @@ public class CreateTopicOrBatchDeleteTopicReq {
 
     private PermissionEnum permission;
 
+    /**
+     * 消息类型。
+     */
+    public static final class MessageTypeEnum {
+
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
+        public static final MessageTypeEnum NORMAL = new MessageTypeEnum("NORMAL");
+
+        /**
+         * Enum FIFO for value: "FIFO"
+         */
+        public static final MessageTypeEnum FIFO = new MessageTypeEnum("FIFO");
+
+        /**
+         * Enum DELAY for value: "DELAY"
+         */
+        public static final MessageTypeEnum DELAY = new MessageTypeEnum("DELAY");
+
+        /**
+         * Enum TRANSACTION for value: "TRANSACTION"
+         */
+        public static final MessageTypeEnum TRANSACTION = new MessageTypeEnum("TRANSACTION");
+
+        private static final Map<String, MessageTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MessageTypeEnum> createStaticFields() {
+            Map<String, MessageTypeEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("FIFO", FIFO);
+            map.put("DELAY", DELAY);
+            map.put("TRANSACTION", TRANSACTION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        MessageTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static MessageTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MessageTypeEnum(value));
+        }
+
+        public static MessageTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof MessageTypeEnum) {
+                return this.value.equals(((MessageTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message_type")
+
+    private MessageTypeEnum messageType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
 
@@ -204,6 +291,23 @@ public class CreateTopicOrBatchDeleteTopicReq {
         this.permission = permission;
     }
 
+    public CreateTopicOrBatchDeleteTopicReq withMessageType(MessageTypeEnum messageType) {
+        this.messageType = messageType;
+        return this;
+    }
+
+    /**
+     * 消息类型。
+     * @return messageType
+     */
+    public MessageTypeEnum getMessageType() {
+        return messageType;
+    }
+
+    public void setMessageType(MessageTypeEnum messageType) {
+        this.messageType = messageType;
+    }
+
     public CreateTopicOrBatchDeleteTopicReq withTopics(List<String> topics) {
         this.topics = topics;
         return this;
@@ -248,12 +352,12 @@ public class CreateTopicOrBatchDeleteTopicReq {
         CreateTopicOrBatchDeleteTopicReq that = (CreateTopicOrBatchDeleteTopicReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.brokers, that.brokers)
             && Objects.equals(this.queueNum, that.queueNum) && Objects.equals(this.permission, that.permission)
-            && Objects.equals(this.topics, that.topics);
+            && Objects.equals(this.messageType, that.messageType) && Objects.equals(this.topics, that.topics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, brokers, queueNum, permission, topics);
+        return Objects.hash(name, brokers, queueNum, permission, messageType, topics);
     }
 
     @Override
@@ -264,6 +368,7 @@ public class CreateTopicOrBatchDeleteTopicReq {
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    queueNum: ").append(toIndentedString(queueNum)).append("\n");
         sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
+        sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -59,6 +59,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseRequest;
@@ -181,6 +183,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerRequest;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyCollationRequest;
@@ -745,6 +749,36 @@ public class RdsClient {
         CreateRestoreInstanceRequest request) {
         return new SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>(request,
             RdsMeta.createRestoreInstance, hcClient);
+    }
+
+    /**
+     * 获取扩展日志下载信息
+     *
+     * 获取扩展日志下载信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateXelLogDownloadRequest 请求对象
+     * @return CreateXelLogDownloadResponse
+     */
+    public CreateXelLogDownloadResponse createXelLogDownload(CreateXelLogDownloadRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createXelLogDownload);
+    }
+
+    /**
+     * 获取扩展日志下载信息
+     *
+     * 获取扩展日志下载信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateXelLogDownloadRequest 请求对象
+     * @return SyncInvoker<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse>
+     */
+    public SyncInvoker<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse> createXelLogDownloadInvoker(
+        CreateXelLogDownloadRequest request) {
+        return new SyncInvoker<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse>(request,
+            RdsMeta.createXelLogDownload, hcClient);
     }
 
     /**
@@ -1907,6 +1941,38 @@ public class RdsClient {
     public SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesInvoker(
         ListStorageTypesRequest request) {
         return new SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>(request, RdsMeta.listStorageTypes,
+            hcClient);
+    }
+
+    /**
+     * 查询扩展日志文件列表
+     *
+     * 查询扩展日志文件列表。
+     * 查询扩展日志文件列表，可以调用接口/v3/{project_id}/instances/{instance_id}/xellog-download 获取扩展日志下载链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListXellogFilesRequest 请求对象
+     * @return ListXellogFilesResponse
+     */
+    public ListXellogFilesResponse listXellogFiles(ListXellogFilesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listXellogFiles);
+    }
+
+    /**
+     * 查询扩展日志文件列表
+     *
+     * 查询扩展日志文件列表。
+     * 查询扩展日志文件列表，可以调用接口/v3/{project_id}/instances/{instance_id}/xellog-download 获取扩展日志下载链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListXellogFilesRequest 请求对象
+     * @return SyncInvoker<ListXellogFilesRequest, ListXellogFilesResponse>
+     */
+    public SyncInvoker<ListXellogFilesRequest, ListXellogFilesResponse> listXellogFilesInvoker(
+        ListXellogFilesRequest request) {
+        return new SyncInvoker<ListXellogFilesRequest, ListXellogFilesResponse>(request, RdsMeta.listXellogFiles,
             hcClient);
     }
 

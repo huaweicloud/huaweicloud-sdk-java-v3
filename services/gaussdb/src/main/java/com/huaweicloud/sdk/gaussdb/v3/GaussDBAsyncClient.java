@@ -49,6 +49,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyRequest;
@@ -81,6 +83,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordRequest;
@@ -167,6 +171,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyPortRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyPortResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSqlFilterControlRequest;
@@ -871,6 +877,37 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 查询实例是否开启备份加密功能
+     *
+     * 查询实例是否开启备份加密功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DescribeBackupEncryptStatusRequest 请求对象
+     * @return CompletableFuture<DescribeBackupEncryptStatusResponse>
+     */
+    public CompletableFuture<DescribeBackupEncryptStatusResponse> describeBackupEncryptStatusAsync(
+        DescribeBackupEncryptStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.describeBackupEncryptStatus);
+    }
+
+    /**
+     * 查询实例是否开启备份加密功能
+     *
+     * 查询实例是否开启备份加密功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DescribeBackupEncryptStatusRequest 请求对象
+     * @return AsyncInvoker<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse>
+     */
+    public AsyncInvoker<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> describeBackupEncryptStatusAsyncInvoker(
+        DescribeBackupEncryptStatusRequest request) {
+        return new AsyncInvoker<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse>(request,
+            GaussDBMeta.describeBackupEncryptStatus, hcClient);
+    }
+
+    /**
      * 包周期存储扩容
      *
      * 包周期存储扩容。
@@ -1362,6 +1399,37 @@ public class GaussDBAsyncClient {
         ListScheduleJobsRequest request) {
         return new AsyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse>(request,
             GaussDBMeta.listScheduleJobs, hcClient);
+    }
+
+    /**
+     * 打开或关闭备份加密
+     *
+     * 打开或关闭备份加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyBackupEncryptStatusRequest 请求对象
+     * @return CompletableFuture<ModifyBackupEncryptStatusResponse>
+     */
+    public CompletableFuture<ModifyBackupEncryptStatusResponse> modifyBackupEncryptStatusAsync(
+        ModifyBackupEncryptStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.modifyBackupEncryptStatus);
+    }
+
+    /**
+     * 打开或关闭备份加密
+     *
+     * 打开或关闭备份加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyBackupEncryptStatusRequest 请求对象
+     * @return AsyncInvoker<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse>
+     */
+    public AsyncInvoker<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> modifyBackupEncryptStatusAsyncInvoker(
+        ModifyBackupEncryptStatusRequest request) {
+        return new AsyncInvoker<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse>(request,
+            GaussDBMeta.modifyBackupEncryptStatus, hcClient);
     }
 
     /**
@@ -2597,6 +2665,36 @@ public class GaussDBAsyncClient {
         UpdateProxyConnectionPoolTypeRequest request) {
         return new AsyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>(request,
             GaussDBMeta.updateProxyConnectionPoolType, hcClient);
+    }
+
+    /**
+     * 修改读写分离端口号
+     *
+     * 修改读写分离端口号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateProxyPortRequest 请求对象
+     * @return CompletableFuture<UpdateProxyPortResponse>
+     */
+    public CompletableFuture<UpdateProxyPortResponse> updateProxyPortAsync(UpdateProxyPortRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateProxyPort);
+    }
+
+    /**
+     * 修改读写分离端口号
+     *
+     * 修改读写分离端口号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateProxyPortRequest 请求对象
+     * @return AsyncInvoker<UpdateProxyPortRequest, UpdateProxyPortResponse>
+     */
+    public AsyncInvoker<UpdateProxyPortRequest, UpdateProxyPortResponse> updateProxyPortAsyncInvoker(
+        UpdateProxyPortRequest request) {
+        return new AsyncInvoker<UpdateProxyPortRequest, UpdateProxyPortResponse>(request, GaussDBMeta.updateProxyPort,
+            hcClient);
     }
 
     /**

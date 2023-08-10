@@ -103,6 +103,11 @@ public class MyanmarIdcardResult {
 
     private String idcardType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "translation_info")
+
+    private MyanmarIdcardTranslationInfo translationInfo;
+
     public MyanmarIdcardResult withSide(String side) {
         this.side = side;
         return this;
@@ -434,6 +439,32 @@ public class MyanmarIdcardResult {
         this.idcardType = idcardType;
     }
 
+    public MyanmarIdcardResult withTranslationInfo(MyanmarIdcardTranslationInfo translationInfo) {
+        this.translationInfo = translationInfo;
+        return this;
+    }
+
+    public MyanmarIdcardResult withTranslationInfo(Consumer<MyanmarIdcardTranslationInfo> translationInfoSetter) {
+        if (this.translationInfo == null) {
+            this.translationInfo = new MyanmarIdcardTranslationInfo();
+            translationInfoSetter.accept(this.translationInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get translationInfo
+     * @return translationInfo
+     */
+    public MyanmarIdcardTranslationInfo getTranslationInfo() {
+        return translationInfo;
+    }
+
+    public void setTranslationInfo(MyanmarIdcardTranslationInfo translationInfo) {
+        this.translationInfo = translationInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -454,7 +485,8 @@ public class MyanmarIdcardResult {
             && Objects.equals(this.confidence, that.confidence)
             && Objects.equals(this.portraitImage, that.portraitImage)
             && Objects.equals(this.portraitLocation, that.portraitLocation)
-            && Objects.equals(this.idcardType, that.idcardType);
+            && Objects.equals(this.idcardType, that.idcardType)
+            && Objects.equals(this.translationInfo, that.translationInfo);
     }
 
     @Override
@@ -476,7 +508,8 @@ public class MyanmarIdcardResult {
             confidence,
             portraitImage,
             portraitLocation,
-            idcardType);
+            idcardType,
+            translationInfo);
     }
 
     @Override
@@ -501,6 +534,7 @@ public class MyanmarIdcardResult {
         sb.append("    portraitImage: ").append(toIndentedString(portraitImage)).append("\n");
         sb.append("    portraitLocation: ").append(toIndentedString(portraitLocation)).append("\n");
         sb.append("    idcardType: ").append(toIndentedString(idcardType)).append("\n");
+        sb.append("    translationInfo: ").append(toIndentedString(translationInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

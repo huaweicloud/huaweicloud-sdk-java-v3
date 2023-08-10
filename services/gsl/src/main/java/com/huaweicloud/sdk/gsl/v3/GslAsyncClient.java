@@ -43,6 +43,10 @@ import com.huaweicloud.sdk.gsl.v3.model.ListSmsDetailsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListSmsDetailsResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListTagsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListTagsResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrderDetailsRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrderDetailsResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrdersRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrdersResponse;
 import com.huaweicloud.sdk.gsl.v3.model.RegisterImeiRequest;
 import com.huaweicloud.sdk.gsl.v3.model.RegisterImeiResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ResetSimCardRequest;
@@ -79,95 +83,6 @@ public class GslAsyncClient {
     public static ClientBuilder<GslAsyncClient> newBuilder() {
         ClientBuilder<GslAsyncClient> clientBuilder = new ClientBuilder<>(GslAsyncClient::new);
         return clientBuilder;
-    }
-
-    /**
-     * 查询后向流量池成员列表
-     *
-     * 查询后向流量池成员列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListBackPoolMembersRequest 请求对象
-     * @return CompletableFuture<ListBackPoolMembersResponse>
-     */
-    public CompletableFuture<ListBackPoolMembersResponse> listBackPoolMembersAsync(ListBackPoolMembersRequest request) {
-        return hcClient.asyncInvokeHttp(request, GslMeta.listBackPoolMembers);
-    }
-
-    /**
-     * 查询后向流量池成员列表
-     *
-     * 查询后向流量池成员列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListBackPoolMembersRequest 请求对象
-     * @return AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>
-     */
-    public AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembersAsyncInvoker(
-        ListBackPoolMembersRequest request) {
-        return new AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>(request,
-            GslMeta.listBackPoolMembers, hcClient);
-    }
-
-    /**
-     * 查询后向流量池列表
-     *
-     * 查询后向流量池列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListBackPoolsRequest 请求对象
-     * @return CompletableFuture<ListBackPoolsResponse>
-     */
-    public CompletableFuture<ListBackPoolsResponse> listBackPoolsAsync(ListBackPoolsRequest request) {
-        return hcClient.asyncInvokeHttp(request, GslMeta.listBackPools);
-    }
-
-    /**
-     * 查询后向流量池列表
-     *
-     * 查询后向流量池列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListBackPoolsRequest 请求对象
-     * @return AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>
-     */
-    public AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse> listBackPoolsAsyncInvoker(
-        ListBackPoolsRequest request) {
-        return new AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>(request, GslMeta.listBackPools, hcClient);
-    }
-
-    /**
-     * 查询套餐列表信息
-     *
-     * 查询套餐列表信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListProPricePlansRequest 请求对象
-     * @return CompletableFuture<ListProPricePlansResponse>
-     */
-    public CompletableFuture<ListProPricePlansResponse> listProPricePlansAsync(ListProPricePlansRequest request) {
-        return hcClient.asyncInvokeHttp(request, GslMeta.listProPricePlans);
-    }
-
-    /**
-     * 查询套餐列表信息
-     *
-     * 查询套餐列表信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListProPricePlansRequest 请求对象
-     * @return AsyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse>
-     */
-    public AsyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse> listProPricePlansAsyncInvoker(
-        ListProPricePlansRequest request) {
-        return new AsyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse>(request, GslMeta.listProPricePlans,
-            hcClient);
     }
 
     /**
@@ -351,9 +266,98 @@ public class GslAsyncClient {
     }
 
     /**
+     * 查询后向流量池成员列表
+     *
+     * 查询后向流量池成员列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBackPoolMembersRequest 请求对象
+     * @return CompletableFuture<ListBackPoolMembersResponse>
+     */
+    public CompletableFuture<ListBackPoolMembersResponse> listBackPoolMembersAsync(ListBackPoolMembersRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listBackPoolMembers);
+    }
+
+    /**
+     * 查询后向流量池成员列表
+     *
+     * 查询后向流量池成员列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBackPoolMembersRequest 请求对象
+     * @return AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>
+     */
+    public AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembersAsyncInvoker(
+        ListBackPoolMembersRequest request) {
+        return new AsyncInvoker<ListBackPoolMembersRequest, ListBackPoolMembersResponse>(request,
+            GslMeta.listBackPoolMembers, hcClient);
+    }
+
+    /**
+     * 查询后向流量池列表
+     *
+     * 查询后向流量池列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBackPoolsRequest 请求对象
+     * @return CompletableFuture<ListBackPoolsResponse>
+     */
+    public CompletableFuture<ListBackPoolsResponse> listBackPoolsAsync(ListBackPoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listBackPools);
+    }
+
+    /**
+     * 查询后向流量池列表
+     *
+     * 查询后向流量池列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBackPoolsRequest 请求对象
+     * @return AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>
+     */
+    public AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse> listBackPoolsAsyncInvoker(
+        ListBackPoolsRequest request) {
+        return new AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse>(request, GslMeta.listBackPools, hcClient);
+    }
+
+    /**
+     * 查询套餐列表信息
+     *
+     * 查询套餐列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProPricePlansRequest 请求对象
+     * @return CompletableFuture<ListProPricePlansResponse>
+     */
+    public CompletableFuture<ListProPricePlansResponse> listProPricePlansAsync(ListProPricePlansRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listProPricePlans);
+    }
+
+    /**
+     * 查询套餐列表信息
+     *
+     * 查询套餐列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProPricePlansRequest 请求对象
+     * @return AsyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse>
+     */
+    public AsyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse> listProPricePlansAsyncInvoker(
+        ListProPricePlansRequest request) {
+        return new AsyncInvoker<ListProPricePlansRequest, ListProPricePlansResponse>(request, GslMeta.listProPricePlans,
+            hcClient);
+    }
+
+    /**
      * 清除实名认证信息
      *
-     * 清除实名认证信息，接口只支持电信卡调用
+     * 清除实名认证信息，接口仅支持中国电信卡调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -367,7 +371,7 @@ public class GslAsyncClient {
     /**
      * 清除实名认证信息
      *
-     * 清除实名认证信息，接口只支持电信卡调用
+     * 清除实名认证信息，接口仅支持中国电信卡调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -441,7 +445,7 @@ public class GslAsyncClient {
     /**
      * SIM卡机卡重绑
      *
-     * 支持固定机卡重绑(需要上传IMEI，将SIM卡绑定到指定IMEI的设备)和普通机卡重绑(会清除之前绑定的设备,将SIM卡绑定到正在使用的设备)，单卡每月只允许重绑2次，接口只支持电信卡调用。
+     * 支持固定机卡重绑(需要上传IMEI，将SIM卡绑定到指定IMEI的设备)和普通机卡重绑(会清除之前绑定的设备,将SIM卡绑定到正在使用的设备)，接口仅支持中国电信卡，中国移动卡调用。中国电信卡单卡每月只允许重绑2次，中国移动卡仅支持普通机卡重绑。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -455,7 +459,7 @@ public class GslAsyncClient {
     /**
      * SIM卡机卡重绑
      *
-     * 支持固定机卡重绑(需要上传IMEI，将SIM卡绑定到指定IMEI的设备)和普通机卡重绑(会清除之前绑定的设备,将SIM卡绑定到正在使用的设备)，单卡每月只允许重绑2次，接口只支持电信卡调用。
+     * 支持固定机卡重绑(需要上传IMEI，将SIM卡绑定到指定IMEI的设备)和普通机卡重绑(会清除之前绑定的设备,将SIM卡绑定到正在使用的设备)，接口仅支持中国电信卡，中国移动卡调用。中国电信卡单卡每月只允许重绑2次，中国移动卡仅支持普通机卡重绑。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -497,9 +501,9 @@ public class GslAsyncClient {
     }
 
     /**
-     * SIM卡达量断网/恢复在用
+     * SIM卡达量断网/取消达量断网
      *
-     * SIM卡达量断网/恢复在用,只支持电信卡。
+     * SIM卡达量断网/取消达量断网，接口仅支持中国电信的卡以及中国联通、中国移动的组池卡调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -511,9 +515,9 @@ public class GslAsyncClient {
     }
 
     /**
-     * SIM卡达量断网/恢复在用
+     * SIM卡达量断网/取消达量断网
      *
-     * SIM卡达量断网/恢复在用,只支持电信卡。
+     * SIM卡达量断网/取消达量断网，接口仅支持中国电信的卡以及中国联通、中国移动的组池卡调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -529,7 +533,7 @@ public class GslAsyncClient {
     /**
      * 实体卡限速
      *
-     * 实体卡限速接口,支持电信和联通实体卡调用。联通卡需要个人实名认证后才能使用限速功能。
+     * 实体卡限速接口，接口仅支持中国电信和中国联通实体卡调用。中国联通卡需要个人实名认证后才能使用限速功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -543,7 +547,7 @@ public class GslAsyncClient {
     /**
      * 实体卡限速
      *
-     * 实体卡限速接口,支持电信和联通实体卡调用。联通卡需要个人实名认证后才能使用限速功能。
+     * 实体卡限速接口，接口仅支持中国电信和中国联通实体卡调用。中国联通卡需要个人实名认证后才能使用限速功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -588,7 +592,7 @@ public class GslAsyncClient {
     /**
      * 查询SIM卡实名认证信息
      *
-     * 实时查询SIM卡实名认证信息。
+     * 实时查询SIM卡实名认证信息，接口仅支持查询中国大陆运营商卡片的实名认证信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -602,7 +606,7 @@ public class GslAsyncClient {
     /**
      * 查询SIM卡实名认证信息
      *
-     * 实时查询SIM卡实名认证信息。
+     * 实时查询SIM卡实名认证信息，接口仅支持查询中国大陆运营商卡片的实名认证信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -645,7 +649,7 @@ public class GslAsyncClient {
     /**
      * SIM卡申请断网/恢复在用
      *
-     * SIM卡申请断网/恢复在用,只支持电信卡。
+     * SIM卡申请断网/恢复在用，接口仅支持中国电信卡调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -659,7 +663,7 @@ public class GslAsyncClient {
     /**
      * SIM卡申请断网/恢复在用
      *
-     * SIM卡申请断网/恢复在用,只支持电信卡。
+     * SIM卡申请断网/恢复在用，接口仅支持中国电信卡调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -934,7 +938,7 @@ public class GslAsyncClient {
     /**
      * 短信发送详情
      *
-     * 短信发送详情
+     * 短信发送详情，接口仅支持开通短信套餐的中国移动与中国电信卡调用
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -948,7 +952,7 @@ public class GslAsyncClient {
     /**
      * 短信发送详情
      *
-     * 短信发送详情
+     * 短信发送详情，接口仅支持开通短信套餐的中国移动与中国电信卡调用
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -964,7 +968,7 @@ public class GslAsyncClient {
     /**
      * 发送短信
      *
-     * 发送短信
+     * 发送短信，接口仅支持开通短信套餐的中国移动与中国电信卡调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -978,7 +982,7 @@ public class GslAsyncClient {
     /**
      * 发送短信
      *
-     * 发送短信
+     * 发送短信，接口仅支持开通短信套餐的中国移动与中国电信卡调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -987,6 +991,67 @@ public class GslAsyncClient {
      */
     public AsyncInvoker<SendSmsRequest, SendSmsResponse> sendSmsAsyncInvoker(SendSmsRequest request) {
         return new AsyncInvoker<SendSmsRequest, SendSmsResponse>(request, GslMeta.sendSms, hcClient);
+    }
+
+    /**
+     * 分页查询业务受理明细
+     *
+     * 分页查询业务受理明细
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkOrderDetailsRequest 请求对象
+     * @return CompletableFuture<ListWorkOrderDetailsResponse>
+     */
+    public CompletableFuture<ListWorkOrderDetailsResponse> listWorkOrderDetailsAsync(
+        ListWorkOrderDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listWorkOrderDetails);
+    }
+
+    /**
+     * 分页查询业务受理明细
+     *
+     * 分页查询业务受理明细
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkOrderDetailsRequest 请求对象
+     * @return AsyncInvoker<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse>
+     */
+    public AsyncInvoker<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> listWorkOrderDetailsAsyncInvoker(
+        ListWorkOrderDetailsRequest request) {
+        return new AsyncInvoker<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse>(request,
+            GslMeta.listWorkOrderDetails, hcClient);
+    }
+
+    /**
+     * 分页查询业务受理单
+     *
+     * 分页查询业务受理单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkOrdersRequest 请求对象
+     * @return CompletableFuture<ListWorkOrdersResponse>
+     */
+    public CompletableFuture<ListWorkOrdersResponse> listWorkOrdersAsync(ListWorkOrdersRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listWorkOrders);
+    }
+
+    /**
+     * 分页查询业务受理单
+     *
+     * 分页查询业务受理单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkOrdersRequest 请求对象
+     * @return AsyncInvoker<ListWorkOrdersRequest, ListWorkOrdersResponse>
+     */
+    public AsyncInvoker<ListWorkOrdersRequest, ListWorkOrdersResponse> listWorkOrdersAsyncInvoker(
+        ListWorkOrdersRequest request) {
+        return new AsyncInvoker<ListWorkOrdersRequest, ListWorkOrdersResponse>(request, GslMeta.listWorkOrders,
+            hcClient);
     }
 
 }

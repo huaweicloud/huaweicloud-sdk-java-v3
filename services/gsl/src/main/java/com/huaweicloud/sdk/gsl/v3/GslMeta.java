@@ -54,6 +54,10 @@ import com.huaweicloud.sdk.gsl.v3.model.ListSmsDetailsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListSmsDetailsResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListTagsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListTagsResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrderDetailsRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrderDetailsResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrdersRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrdersResponse;
 import com.huaweicloud.sdk.gsl.v3.model.RegisterImeiReq;
 import com.huaweicloud.sdk.gsl.v3.model.RegisterImeiRequest;
 import com.huaweicloud.sdk.gsl.v3.model.RegisterImeiResponse;
@@ -87,186 +91,6 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class GslMeta {
-
-    public static final HttpRequestDef<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembers =
-        genForlistBackPoolMembers();
-
-    private static HttpRequestDef<ListBackPoolMembersRequest, ListBackPoolMembersResponse> genForlistBackPoolMembers() {
-        // basic
-        HttpRequestDef.Builder<ListBackPoolMembersRequest, ListBackPoolMembersResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListBackPoolMembersRequest.class, ListBackPoolMembersResponse.class)
-                .withName("ListBackPoolMembers")
-                .withUri("/v1/back-pools/{back_pool_id}/members")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Long>withRequestField("back_pool_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getBackPoolId, (req, v) -> {
-                req.setBackPoolId(v);
-            }));
-        builder.<String>withRequestField("cid",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getCid, (req, v) -> {
-                req.setCid(v);
-            }));
-        builder.<Long>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("billing_cycle",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackPoolMembersRequest::getBillingCycle, (req, v) -> {
-                req.setBillingCycle(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListBackPoolsRequest, ListBackPoolsResponse> listBackPools =
-        genForlistBackPools();
-
-    private static HttpRequestDef<ListBackPoolsRequest, ListBackPoolsResponse> genForlistBackPools() {
-        // basic
-        HttpRequestDef.Builder<ListBackPoolsRequest, ListBackPoolsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListBackPoolsRequest.class, ListBackPoolsResponse.class)
-                .withName("ListBackPools")
-                .withUri("/v1/back-pools")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("pool_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getPoolName, (req, v) -> {
-                req.setPoolName(v);
-            }));
-        builder.<Long>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("billing_cycle",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getBillingCycle, (req, v) -> {
-                req.setBillingCycle(v);
-            }));
-        builder.<Boolean>withRequestField("all_billing_cycle",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListBackPoolsRequest::getAllBillingCycle, (req, v) -> {
-                req.setAllBillingCycle(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListProPricePlansRequest, ListProPricePlansResponse> listProPricePlans =
-        genForlistProPricePlans();
-
-    private static HttpRequestDef<ListProPricePlansRequest, ListProPricePlansResponse> genForlistProPricePlans() {
-        // basic
-        HttpRequestDef.Builder<ListProPricePlansRequest, ListProPricePlansResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListProPricePlansRequest.class, ListProPricePlansResponse.class)
-                .withName("ListProPricePlans")
-                .withUri("/v1/price-plans")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Long>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("main_search_key",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getMainSearchKey, (req, v) -> {
-                req.setMainSearchKey(v);
-            }));
-        builder.<Long>withRequestField("flow_total",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getFlowTotal, (req, v) -> {
-                req.setFlowTotal(v);
-            }));
-        builder.<Long>withRequestField("network_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getNetworkType, (req, v) -> {
-                req.setNetworkType(v);
-            }));
-        builder.<Long>withRequestField("location_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getLocationType, (req, v) -> {
-                req.setLocationType(v);
-            }));
-        builder.<Integer>withRequestField("carrier_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getCarrierType, (req, v) -> {
-                req.setCarrierType(v);
-            }));
-        builder.<Long>withRequestField("country_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListProPricePlansRequest::getCountryType, (req, v) -> {
-                req.setCountryType(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
 
     public static final HttpRequestDef<BatchSetAttributesRequest, BatchSetAttributesResponse> batchSetAttributes =
         genForbatchSetAttributes();
@@ -470,6 +294,186 @@ public class GslMeta {
             f -> f.withMarshaller(UpdateAttributeResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackPoolMembersRequest, ListBackPoolMembersResponse> listBackPoolMembers =
+        genForlistBackPoolMembers();
+
+    private static HttpRequestDef<ListBackPoolMembersRequest, ListBackPoolMembersResponse> genForlistBackPoolMembers() {
+        // basic
+        HttpRequestDef.Builder<ListBackPoolMembersRequest, ListBackPoolMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackPoolMembersRequest.class, ListBackPoolMembersResponse.class)
+                .withName("ListBackPoolMembers")
+                .withUri("/v1/back-pools/{back_pool_id}/members")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("back_pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getBackPoolId, (req, v) -> {
+                req.setBackPoolId(v);
+            }));
+        builder.<String>withRequestField("cid",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getCid, (req, v) -> {
+                req.setCid(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("billing_cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackPoolMembersRequest::getBillingCycle, (req, v) -> {
+                req.setBillingCycle(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBackPoolsRequest, ListBackPoolsResponse> listBackPools =
+        genForlistBackPools();
+
+    private static HttpRequestDef<ListBackPoolsRequest, ListBackPoolsResponse> genForlistBackPools() {
+        // basic
+        HttpRequestDef.Builder<ListBackPoolsRequest, ListBackPoolsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackPoolsRequest.class, ListBackPoolsResponse.class)
+                .withName("ListBackPools")
+                .withUri("/v1/back-pools")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getPoolName, (req, v) -> {
+                req.setPoolName(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("billing_cycle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getBillingCycle, (req, v) -> {
+                req.setBillingCycle(v);
+            }));
+        builder.<Boolean>withRequestField("all_billing_cycle",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListBackPoolsRequest::getAllBillingCycle, (req, v) -> {
+                req.setAllBillingCycle(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProPricePlansRequest, ListProPricePlansResponse> listProPricePlans =
+        genForlistProPricePlans();
+
+    private static HttpRequestDef<ListProPricePlansRequest, ListProPricePlansResponse> genForlistProPricePlans() {
+        // basic
+        HttpRequestDef.Builder<ListProPricePlansRequest, ListProPricePlansResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProPricePlansRequest.class, ListProPricePlansResponse.class)
+                .withName("ListProPricePlans")
+                .withUri("/v1/price-plans")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("main_search_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getMainSearchKey, (req, v) -> {
+                req.setMainSearchKey(v);
+            }));
+        builder.<Long>withRequestField("flow_total",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getFlowTotal, (req, v) -> {
+                req.setFlowTotal(v);
+            }));
+        builder.<Long>withRequestField("network_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getNetworkType, (req, v) -> {
+                req.setNetworkType(v);
+            }));
+        builder.<Long>withRequestField("location_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getLocationType, (req, v) -> {
+                req.setLocationType(v);
+            }));
+        builder.<Integer>withRequestField("carrier_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getCarrierType, (req, v) -> {
+                req.setCarrierType(v);
+            }));
+        builder.<Long>withRequestField("country_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListProPricePlansRequest::getCountryType, (req, v) -> {
+                req.setCountryType(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -1386,6 +1390,126 @@ public class GslMeta {
             f -> f.withMarshaller(SendSmsResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> listWorkOrderDetails =
+        genForlistWorkOrderDetails();
+
+    private static HttpRequestDef<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> genForlistWorkOrderDetails() {
+        // basic
+        HttpRequestDef.Builder<ListWorkOrderDetailsRequest, ListWorkOrderDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListWorkOrderDetailsRequest.class, ListWorkOrderDetailsResponse.class)
+            .withName("ListWorkOrderDetails")
+            .withUri("/v1/work-orders/{work_order_id}/details")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("work_order_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getWorkOrderId, (req, v) -> {
+                req.setWorkOrderId(v);
+            }));
+        builder.<String>withRequestField("main_search_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getMainSearchKey, (req, v) -> {
+                req.setMainSearchKey(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("sim_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getSimType, (req, v) -> {
+                req.setSimType(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkOrderDetailsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkOrdersRequest, ListWorkOrdersResponse> listWorkOrders =
+        genForlistWorkOrders();
+
+    private static HttpRequestDef<ListWorkOrdersRequest, ListWorkOrdersResponse> genForlistWorkOrders() {
+        // basic
+        HttpRequestDef.Builder<ListWorkOrdersRequest, ListWorkOrdersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWorkOrdersRequest.class, ListWorkOrdersResponse.class)
+                .withName("ListWorkOrders")
+                .withUri("/v1/work-orders")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("main_search_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkOrdersRequest::getMainSearchKey, (req, v) -> {
+                req.setMainSearchKey(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListWorkOrdersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListWorkOrdersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("sim_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkOrdersRequest::getSimType, (req, v) -> {
+                req.setSimType(v);
+            }));
+        builder.<Integer>withRequestField("work_order_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkOrdersRequest::getWorkOrderType, (req, v) -> {
+                req.setWorkOrderType(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkOrdersRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+
+        // response
 
         return builder.build();
     }

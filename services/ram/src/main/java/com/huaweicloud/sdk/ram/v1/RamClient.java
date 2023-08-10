@@ -37,10 +37,6 @@ import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsResponse;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationRequest;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationResponse;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsRequest;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsResponse;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesRequest;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesResponse;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsRequest;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsResponse;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareCountByTagsRequest;
@@ -317,36 +313,6 @@ public class RamClient {
     }
 
     /**
-     * 检索去重的共享的角色
-     *
-     * 检索您正在共享资源的不同角色或被共享资源给您的不同角色。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SearchDistinctPrincipalsRequest 请求对象
-     * @return SearchDistinctPrincipalsResponse
-     */
-    public SearchDistinctPrincipalsResponse searchDistinctPrincipals(SearchDistinctPrincipalsRequest request) {
-        return hcClient.syncInvokeHttp(request, RamMeta.searchDistinctPrincipals);
-    }
-
-    /**
-     * 检索去重的共享的角色
-     *
-     * 检索您正在共享资源的不同角色或被共享资源给您的不同角色。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SearchDistinctPrincipalsRequest 请求对象
-     * @return SyncInvoker<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse>
-     */
-    public SyncInvoker<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse> searchDistinctPrincipalsInvoker(
-        SearchDistinctPrincipalsRequest request) {
-        return new SyncInvoker<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse>(request,
-            RamMeta.searchDistinctPrincipals, hcClient);
-    }
-
-    /**
      * 检索资源使用者
      *
      * 检索共享资源的使用者。
@@ -402,37 +368,6 @@ public class RamClient {
      */
     public SyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaInvoker(ListQuotaRequest request) {
         return new SyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, RamMeta.listQuota, hcClient);
-    }
-
-    /**
-     * 检索去重的共享的资源
-     *
-     * 检索您添加到资源共享或被共享给您的不同资源。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SearchDistinctSharedResourcesRequest 请求对象
-     * @return SearchDistinctSharedResourcesResponse
-     */
-    public SearchDistinctSharedResourcesResponse searchDistinctSharedResources(
-        SearchDistinctSharedResourcesRequest request) {
-        return hcClient.syncInvokeHttp(request, RamMeta.searchDistinctSharedResources);
-    }
-
-    /**
-     * 检索去重的共享的资源
-     *
-     * 检索您添加到资源共享或被共享给您的不同资源。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SearchDistinctSharedResourcesRequest 请求对象
-     * @return SyncInvoker<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse>
-     */
-    public SyncInvoker<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse> searchDistinctSharedResourcesInvoker(
-        SearchDistinctSharedResourcesRequest request) {
-        return new SyncInvoker<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse>(request,
-            RamMeta.searchDistinctSharedResources, hcClient);
     }
 
     /**

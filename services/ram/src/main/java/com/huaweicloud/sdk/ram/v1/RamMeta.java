@@ -44,12 +44,6 @@ import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationRequest;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationResponse;
 import com.huaweicloud.sdk.ram.v1.model.ResourceShareAssociationReqBody;
 import com.huaweicloud.sdk.ram.v1.model.ResourceSharesByTagsReqBody;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsRequest;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctPrincipalsResponse;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedPrincipalsReqBody;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesReqBody;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesRequest;
-import com.huaweicloud.sdk.ram.v1.model.SearchDistinctSharedResourcesResponse;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsReqBody;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsRequest;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsResponse;
@@ -318,32 +312,6 @@ public class RamMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse> searchDistinctPrincipals =
-        genForsearchDistinctPrincipals();
-
-    private static HttpRequestDef<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse> genForsearchDistinctPrincipals() {
-        // basic
-        HttpRequestDef.Builder<SearchDistinctPrincipalsRequest, SearchDistinctPrincipalsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, SearchDistinctPrincipalsRequest.class, SearchDistinctPrincipalsResponse.class)
-                .withName("SearchDistinctPrincipals")
-                .withUri("/v1/shared-principals/search-distinct-principal")
-                .withContentType("application/json");
-
-        // requests
-        builder.<SearchDistinctSharedPrincipalsReqBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SearchDistinctSharedPrincipalsReqBody.class),
-            f -> f.withMarshaller(SearchDistinctPrincipalsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse> searchSharedPrincipals =
         genForsearchSharedPrincipals();
 
@@ -380,34 +348,6 @@ public class RamMeta {
                 .withContentType("application/json");
 
         // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse> searchDistinctSharedResources =
-        genForsearchDistinctSharedResources();
-
-    private static HttpRequestDef<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse> genForsearchDistinctSharedResources() {
-        // basic
-        HttpRequestDef.Builder<SearchDistinctSharedResourcesRequest, SearchDistinctSharedResourcesResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    SearchDistinctSharedResourcesRequest.class,
-                    SearchDistinctSharedResourcesResponse.class)
-                .withName("SearchDistinctSharedResources")
-                .withUri("/v1/shared-resources/search-distinct-resource")
-                .withContentType("application/json");
-
-        // requests
-        builder.<SearchDistinctSharedResourcesReqBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SearchDistinctSharedResourcesReqBody.class),
-            f -> f.withMarshaller(SearchDistinctSharedResourcesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
 
         // response
 

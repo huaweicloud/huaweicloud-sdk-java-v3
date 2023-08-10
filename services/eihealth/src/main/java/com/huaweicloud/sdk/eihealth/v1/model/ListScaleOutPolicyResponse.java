@@ -63,7 +63,7 @@ public class ListScaleOutPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 计算资源列表
+     * 扩容策略列表
      * @return policies
      */
     public List<ScaleOutPolicyRsp> getPolicies() {

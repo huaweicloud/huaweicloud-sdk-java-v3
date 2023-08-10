@@ -211,7 +211,7 @@ public class Backups {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
 
-    private MysqlDatastore datastore;
+    private MysqlDatastoreInBackup datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
@@ -440,14 +440,14 @@ public class Backups {
         this.size = size;
     }
 
-    public Backups withDatastore(MysqlDatastore datastore) {
+    public Backups withDatastore(MysqlDatastoreInBackup datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public Backups withDatastore(Consumer<MysqlDatastore> datastoreSetter) {
+    public Backups withDatastore(Consumer<MysqlDatastoreInBackup> datastoreSetter) {
         if (this.datastore == null) {
-            this.datastore = new MysqlDatastore();
+            this.datastore = new MysqlDatastoreInBackup();
             datastoreSetter.accept(this.datastore);
         }
 
@@ -458,11 +458,11 @@ public class Backups {
      * Get datastore
      * @return datastore
      */
-    public MysqlDatastore getDatastore() {
+    public MysqlDatastoreInBackup getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(MysqlDatastore datastore) {
+    public void setDatastore(MysqlDatastoreInBackup datastore) {
         this.datastore = datastore;
     }
 

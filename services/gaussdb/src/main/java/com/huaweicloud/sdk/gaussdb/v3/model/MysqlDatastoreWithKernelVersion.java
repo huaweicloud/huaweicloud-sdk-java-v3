@@ -31,7 +31,7 @@ public class MysqlDatastoreWithKernelVersion {
     }
 
     /**
-     * 数据库引擎，现在只支持gaussdb-mysql
+     * 数据库引擎，现在只支持gaussdb-mysql。
      * @return type
      */
     public String getType() {

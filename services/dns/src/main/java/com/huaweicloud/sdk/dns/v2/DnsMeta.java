@@ -2039,7 +2039,7 @@ public class DnsMeta {
         // requests
         builder.<String>withRequestField("type",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPrivateZonesRequest::getType, (req, v) -> {
                 req.setType(v);

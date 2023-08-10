@@ -26,7 +26,7 @@ public class ModifyProxyRouteWeightReadonlyNode {
     }
 
     /**
-     * 只读节点id
+     * 只读节点ID。
      * @return id
      */
     public String getId() {

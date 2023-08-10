@@ -221,7 +221,7 @@ public class BackPoolVO {
     }
 
     /**
-     * 流量池状态: 2-在用,-1-欠费停用
+     * 流量池状态: 2-在用,-1-已停用,-2已废弃
      * @return poolStatus
      */
     public Integer getPoolStatus() {

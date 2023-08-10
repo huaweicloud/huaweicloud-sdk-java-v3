@@ -45,13 +45,18 @@ import com.huaweicloud.sdk.eihealth.v1.model.BatchUpdateNoticeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.BatchUpdateNoticeResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CancelDataJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CancelDataJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CancelDrugJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CancelDrugJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CancelJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CancelJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ChangePasswordReq;
 import com.huaweicloud.sdk.eihealth.v1.model.ChangePasswordRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ChangePasswordResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CheckDrugLigandDifferenceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CheckDrugLigandDifferenceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CheckEmailConnectionRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CheckEmailConnectionResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CheckLigandDifferenceReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CheckTokenVerificationRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CheckTokenVerificationResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CleanNextflowCacheRequest;
@@ -87,6 +92,23 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateDatabaseReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDatabaseResourceReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDatabaseResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDatabaseResourceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDockJobReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDockingJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDockingJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandInteraction2dSvgReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandInteraction2dSvgRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandInteraction2dSvgResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandPreviewTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandPreviewTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSdfRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSdfResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSimilarityGraphTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSimilarityGraphTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateGenerationTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateGenerationTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateImageReq;
@@ -100,6 +122,10 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateLabelPageResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateLabelReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateLabelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateLabelResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateLigandPreviewTaskReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateLigandSdfReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateLigandSimilarityGraphTaskReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateLigandSvgReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateNextflowJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateNextflowJobRequestBody;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateNextflowJobResponse;
@@ -111,6 +137,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateNotebookRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateNotebookResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateOptimizationTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateOptimizationTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateOptmJobReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateOptmJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateOptmJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreatePerformanceResourceReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreatePerformanceResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreatePerformanceResourceResponse;
@@ -128,6 +157,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateStudyJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateStudyReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateStudyRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateStudyResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisJobReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateTemplateReq;
@@ -156,6 +188,12 @@ import com.huaweicloud.sdk.eihealth.v1.model.DeleteDatabaseDataRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDatabaseDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDatabaseResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDatabaseResourceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandPreviewTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandPreviewTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteImageRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteImageResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteInstanceRequest;
@@ -197,8 +235,12 @@ import com.huaweicloud.sdk.eihealth.v1.model.DeleteWorkflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteWorkflowResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataJobLogRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataJobLogResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataReq;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataTraceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataTraceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DrugFile;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteJobRequest;
@@ -261,6 +303,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListDatabaseResourceFlavorRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDatabaseResourceFlavorResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDatabaseResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDatabaseResourceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListGlobalWorkflowStatisticRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListGlobalWorkflowStatisticResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListIamGroupUsersRequest;
@@ -342,6 +386,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListWorkflowStatisticResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ManageAssetReq;
 import com.huaweicloud.sdk.eihealth.v1.model.NotebookActionReq;
 import com.huaweicloud.sdk.eihealth.v1.model.OptimizationTaskData;
+import com.huaweicloud.sdk.eihealth.v1.model.ParseDrugReceptorInfoRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ParseDrugReceptorInfoResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.PublishAppReq;
 import com.huaweicloud.sdk.eihealth.v1.model.PublishAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.PublishAppResponse;
@@ -363,6 +409,10 @@ import com.huaweicloud.sdk.eihealth.v1.model.QuoteInstanceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.QuoteInstanceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RebootNodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RebootNodeResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ReceptorDrugFile;
+import com.huaweicloud.sdk.eihealth.v1.model.RecognizeDrugReceptorPocketRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.RecognizeDrugReceptorPocketResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.RecognizeReceptorPocketReq;
 import com.huaweicloud.sdk.eihealth.v1.model.ResetPasswordReq;
 import com.huaweicloud.sdk.eihealth.v1.model.RestoreBackupReq;
 import com.huaweicloud.sdk.eihealth.v1.model.RestoreBackupRequest;
@@ -375,6 +425,11 @@ import com.huaweicloud.sdk.eihealth.v1.model.RetryNextflowJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RetryNextflowJobRequestBody;
 import com.huaweicloud.sdk.eihealth.v1.model.RetryNextflowJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RowDataReq;
+import com.huaweicloud.sdk.eihealth.v1.model.RunDrugLigandToSmilesConversionRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.RunDrugLigandToSmilesConversionResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.RunDrugReceptorPreprocessRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.RunDrugReceptorPreprocessResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.RunReceptorPreprocessReq;
 import com.huaweicloud.sdk.eihealth.v1.model.SearchTaskData;
 import com.huaweicloud.sdk.eihealth.v1.model.SendCodeReq;
 import com.huaweicloud.sdk.eihealth.v1.model.SetMessageClearRuleReq;
@@ -410,12 +465,20 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowDataRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowDockerLoginRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowDockerLoginResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDockingJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDockingJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDrugLigandPreviewTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDrugLigandPreviewTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDrugLigandSimilarityGraphTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDrugLigandSimilarityGraphTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowEnvRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowEnvResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowEvsQuotaRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowEvsQuotaResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowExtremumInfoRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowExtremumInfoResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowFepJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowFepJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowGenerationTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowGenerationTaskResultResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowInstanceRequest;
@@ -456,6 +519,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowNotebookTokenRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowNotebookTokenResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowOptimizationTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowOptimizationTaskResultResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowOptmJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowOptmJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowOverviewRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowOverviewResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowProjectRequest;
@@ -476,6 +541,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowScheduleRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowScheduleResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSearchTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSearchTaskResultResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisTaskResultResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowTaskEventsRequest;
@@ -564,8 +631,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.UpdateJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMemberReq;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMemberRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMemberResponse;
-import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageClearRuleRequest;
-import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageClearRuleResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageClearRuleRequestBodyRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageClearRuleRequestBodyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageEmailConfigRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageEmailConfigResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageReceiveConfigRequest;
@@ -3703,6 +3770,817 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDockingJobRequest, CreateDockingJobResponse> createDockingJob =
+        genForcreateDockingJob();
+
+    private static HttpRequestDef<CreateDockingJobRequest, CreateDockingJobResponse> genForcreateDockingJob() {
+        // basic
+        HttpRequestDef.Builder<CreateDockingJobRequest, CreateDockingJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDockingJobRequest.class, CreateDockingJobResponse.class)
+                .withName("CreateDockingJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/docking")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDockingJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateDockJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDockJobReq.class),
+            f -> f.withMarshaller(CreateDockingJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDockingJobRequest, ShowDockingJobResponse> showDockingJob =
+        genForshowDockingJob();
+
+    private static HttpRequestDef<ShowDockingJobRequest, ShowDockingJobResponse> genForshowDockingJob() {
+        // basic
+        HttpRequestDef.Builder<ShowDockingJobRequest, ShowDockingJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDockingJobRequest.class, ShowDockingJobResponse.class)
+                .withName("ShowDockingJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/docking/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDockingJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDockingJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse> checkDrugLigandDifference =
+        genForcheckDrugLigandDifference();
+
+    private static HttpRequestDef<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse> genForcheckDrugLigandDifference() {
+        // basic
+        HttpRequestDef.Builder<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckDrugLigandDifferenceRequest.class,
+                    CheckDrugLigandDifferenceResponse.class)
+                .withName("CheckDrugLigandDifference")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/diff3d")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDrugLigandDifferenceRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CheckLigandDifferenceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckLigandDifferenceReq.class),
+            f -> f.withMarshaller(CheckDrugLigandDifferenceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse> createDrugLigandInteraction2dSvg =
+        genForcreateDrugLigandInteraction2dSvg();
+
+    private static HttpRequestDef<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse> genForcreateDrugLigandInteraction2dSvg() {
+        // basic
+        HttpRequestDef.Builder<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDrugLigandInteraction2dSvgRequest.class,
+                    CreateDrugLigandInteraction2dSvgResponse.class)
+                .withName("CreateDrugLigandInteraction2dSvg")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/interaction2d")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDrugLigandInteraction2dSvgRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateDrugLigandInteraction2dSvgReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDrugLigandInteraction2dSvgReq.class),
+            f -> f.withMarshaller(CreateDrugLigandInteraction2dSvgRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse> createDrugLigandPreviewTask =
+        genForcreateDrugLigandPreviewTask();
+
+    private static HttpRequestDef<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse> genForcreateDrugLigandPreviewTask() {
+        // basic
+        HttpRequestDef.Builder<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDrugLigandPreviewTaskRequest.class,
+                    CreateDrugLigandPreviewTaskResponse.class)
+                .withName("CreateDrugLigandPreviewTask")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/preview")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDrugLigandPreviewTaskRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateLigandPreviewTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLigandPreviewTaskReq.class),
+            f -> f.withMarshaller(CreateDrugLigandPreviewTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse> createDrugLigandSdf =
+        genForcreateDrugLigandSdf();
+
+    private static HttpRequestDef<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse> genForcreateDrugLigandSdf() {
+        // basic
+        HttpRequestDef.Builder<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDrugLigandSdfRequest.class, CreateDrugLigandSdfResponse.class)
+                .withName("CreateDrugLigandSdf")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/sdf")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDrugLigandSdfRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateLigandSdfReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLigandSdfReq.class),
+            f -> f.withMarshaller(CreateDrugLigandSdfRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDrugLigandSdfResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse> createDrugLigandSimilarityGraphTask =
+        genForcreateDrugLigandSimilarityGraphTask();
+
+    private static HttpRequestDef<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse> genForcreateDrugLigandSimilarityGraphTask() {
+        // basic
+        HttpRequestDef.Builder<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDrugLigandSimilarityGraphTaskRequest.class,
+                    CreateDrugLigandSimilarityGraphTaskResponse.class)
+                .withName("CreateDrugLigandSimilarityGraphTask")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/similarity-graph")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDrugLigandSimilarityGraphTaskRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateLigandSimilarityGraphTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLigandSimilarityGraphTaskReq.class),
+            f -> f.withMarshaller(CreateDrugLigandSimilarityGraphTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse> createDrugLigandSvg =
+        genForcreateDrugLigandSvg();
+
+    private static HttpRequestDef<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse> genForcreateDrugLigandSvg() {
+        // basic
+        HttpRequestDef.Builder<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDrugLigandSvgRequest.class, CreateDrugLigandSvgResponse.class)
+                .withName("CreateDrugLigandSvg")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/svg")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDrugLigandSvgRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateLigandSvgReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLigandSvgReq.class),
+            f -> f.withMarshaller(CreateDrugLigandSvgRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDrugLigandSvgResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse> deleteDrugLigandPreviewTask =
+        genFordeleteDrugLigandPreviewTask();
+
+    private static HttpRequestDef<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse> genFordeleteDrugLigandPreviewTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDrugLigandPreviewTaskRequest.class,
+                    DeleteDrugLigandPreviewTaskResponse.class)
+                .withName("DeleteDrugLigandPreviewTask")
+                .withUri(
+                    "/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/preview/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDrugLigandPreviewTaskRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDrugLigandPreviewTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse> deleteDrugLigandSimilarityGraphTask =
+        genFordeleteDrugLigandSimilarityGraphTask();
+
+    private static HttpRequestDef<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse> genFordeleteDrugLigandSimilarityGraphTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDrugLigandSimilarityGraphTaskRequest.class,
+                    DeleteDrugLigandSimilarityGraphTaskResponse.class)
+                .withName("DeleteDrugLigandSimilarityGraphTask")
+                .withUri(
+                    "/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/similarity-graph/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDrugLigandSimilarityGraphTaskRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDrugLigandSimilarityGraphTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse> parseDrugReceptorInfo =
+        genForparseDrugReceptorInfo();
+
+    private static HttpRequestDef<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse> genForparseDrugReceptorInfo() {
+        // basic
+        HttpRequestDef.Builder<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ParseDrugReceptorInfoRequest.class, ParseDrugReceptorInfoResponse.class)
+            .withName("ParseDrugReceptorInfo")
+            .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/receptor/info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ParseDrugReceptorInfoRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<ReceptorDrugFile>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReceptorDrugFile.class),
+            f -> f.withMarshaller(ParseDrugReceptorInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse> recognizeDrugReceptorPocket =
+        genForrecognizeDrugReceptorPocket();
+
+    private static HttpRequestDef<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse> genForrecognizeDrugReceptorPocket() {
+        // basic
+        HttpRequestDef.Builder<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeDrugReceptorPocketRequest.class,
+                    RecognizeDrugReceptorPocketResponse.class)
+                .withName("RecognizeDrugReceptorPocket")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/receptor/pocket")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeDrugReceptorPocketRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<RecognizeReceptorPocketReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RecognizeReceptorPocketReq.class),
+            f -> f.withMarshaller(RecognizeDrugReceptorPocketRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse> runDrugLigandToSmilesConversion =
+        genForrunDrugLigandToSmilesConversion();
+
+    private static HttpRequestDef<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse> genForrunDrugLigandToSmilesConversion() {
+        // basic
+        HttpRequestDef.Builder<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RunDrugLigandToSmilesConversionRequest.class,
+                    RunDrugLigandToSmilesConversionResponse.class)
+                .withName("RunDrugLigandToSmilesConversion")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/smiles")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunDrugLigandToSmilesConversionRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<DrugFile>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DrugFile.class),
+            f -> f.withMarshaller(RunDrugLigandToSmilesConversionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse> runDrugReceptorPreprocess =
+        genForrunDrugReceptorPreprocess();
+
+    private static HttpRequestDef<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse> genForrunDrugReceptorPreprocess() {
+        // basic
+        HttpRequestDef.Builder<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RunDrugReceptorPreprocessRequest.class,
+                    RunDrugReceptorPreprocessResponse.class)
+                .withName("RunDrugReceptorPreprocess")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/receptor/preprocess")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunDrugReceptorPreprocessRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<RunReceptorPreprocessReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunReceptorPreprocessReq.class),
+            f -> f.withMarshaller(RunDrugReceptorPreprocessRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RunDrugReceptorPreprocessResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse> showDrugLigandPreviewTask =
+        genForshowDrugLigandPreviewTask();
+
+    private static HttpRequestDef<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse> genForshowDrugLigandPreviewTask() {
+        // basic
+        HttpRequestDef.Builder<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDrugLigandPreviewTaskRequest.class,
+                    ShowDrugLigandPreviewTaskResponse.class)
+                .withName("ShowDrugLigandPreviewTask")
+                .withUri(
+                    "/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/preview/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDrugLigandPreviewTaskRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDrugLigandPreviewTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse> showDrugLigandSimilarityGraphTask =
+        genForshowDrugLigandSimilarityGraphTask();
+
+    private static HttpRequestDef<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse> genForshowDrugLigandSimilarityGraphTask() {
+        // basic
+        HttpRequestDef.Builder<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDrugLigandSimilarityGraphTaskRequest.class,
+                    ShowDrugLigandSimilarityGraphTaskResponse.class)
+                .withName("ShowDrugLigandSimilarityGraphTask")
+                .withUri(
+                    "/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/ligand/similarity-graph/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDrugLigandSimilarityGraphTaskRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDrugLigandSimilarityGraphTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelDrugJobRequest, CancelDrugJobResponse> cancelDrugJob =
+        genForcancelDrugJob();
+
+    private static HttpRequestDef<CancelDrugJobRequest, CancelDrugJobResponse> genForcancelDrugJob() {
+        // basic
+        HttpRequestDef.Builder<CancelDrugJobRequest, CancelDrugJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CancelDrugJobRequest.class, CancelDrugJobResponse.class)
+                .withName("CancelDrugJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/{job_id}/cancel")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelDrugJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelDrugJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDrugJobRequest, DeleteDrugJobResponse> deleteDrugJob =
+        genFordeleteDrugJob();
+
+    private static HttpRequestDef<DeleteDrugJobRequest, DeleteDrugJobResponse> genFordeleteDrugJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteDrugJobRequest, DeleteDrugJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDrugJobRequest.class, DeleteDrugJobResponse.class)
+                .withName("DeleteDrugJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDrugJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDrugJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDrugJobRequest, ListDrugJobResponse> listDrugJob = genForlistDrugJob();
+
+    private static HttpRequestDef<ListDrugJobRequest, ListDrugJobResponse> genForlistDrugJob() {
+        // basic
+        HttpRequestDef.Builder<ListDrugJobRequest, ListDrugJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDrugJobRequest.class, ListDrugJobResponse.class)
+                .withName("ListDrugJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getJobName, (req, v) -> {
+                req.setJobName(v);
+            }));
+        builder.<List<String>>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getLabels, (req, v) -> {
+                req.setLabels(v);
+            }));
+        builder.<List<String>>withRequestField("status_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getStatusList, (req, v) -> {
+                req.setStatusList(v);
+            }));
+        builder.<List<String>>withRequestField("type_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getTypeList, (req, v) -> {
+                req.setTypeList(v);
+            }));
+        builder.<Long>withRequestField("create_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getCreateStartTime, (req, v) -> {
+                req.setCreateStartTime(v);
+            }));
+        builder.<Long>withRequestField("create_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getCreateEndTime, (req, v) -> {
+                req.setCreateEndTime(v);
+            }));
+        builder.<Long>withRequestField("finish_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getFinishStartTime, (req, v) -> {
+                req.setFinishStartTime(v);
+            }));
+        builder.<Long>withRequestField("finish_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getFinishEndTime, (req, v) -> {
+                req.setFinishEndTime(v);
+            }));
+        builder.<String>withRequestField("total_time_range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDrugJobRequest::getTotalTimeRange, (req, v) -> {
+                req.setTotalTimeRange(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFepJobRequest, CreateFepJobResponse> createFepJob = genForcreateFepJob();
+
+    private static HttpRequestDef<CreateFepJobRequest, CreateFepJobResponse> genForcreateFepJob() {
+        // basic
+        HttpRequestDef.Builder<CreateFepJobRequest, CreateFepJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFepJobRequest.class, CreateFepJobResponse.class)
+                .withName("CreateFepJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/fep")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFepJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateFepJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFepJobReq.class),
+            f -> f.withMarshaller(CreateFepJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFepJobRequest, ShowFepJobResponse> showFepJob = genForshowFepJob();
+
+    private static HttpRequestDef<ShowFepJobRequest, ShowFepJobResponse> genForshowFepJob() {
+        // basic
+        HttpRequestDef.Builder<ShowFepJobRequest, ShowFepJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFepJobRequest.class, ShowFepJobResponse.class)
+                .withName("ShowFepJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/fep/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFepJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFepJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteTagRequest, BatchDeleteTagResponse> batchDeleteTag =
         genForbatchDeleteTag();
 
@@ -5393,23 +6271,26 @@ public class EiHealthMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateMessageClearRuleRequest, UpdateMessageClearRuleResponse> updateMessageClearRule =
-        genForupdateMessageClearRule();
+    public static final HttpRequestDef<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse> updateMessageClearRuleRequestBody =
+        genForupdateMessageClearRuleRequestBody();
 
-    private static HttpRequestDef<UpdateMessageClearRuleRequest, UpdateMessageClearRuleResponse> genForupdateMessageClearRule() {
+    private static HttpRequestDef<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse> genForupdateMessageClearRuleRequestBody() {
         // basic
-        HttpRequestDef.Builder<UpdateMessageClearRuleRequest, UpdateMessageClearRuleResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateMessageClearRuleRequest.class, UpdateMessageClearRuleResponse.class)
-            .withName("UpdateMessageClearRule")
-            .withUri("/v1/{project_id}/messages/rules")
-            .withContentType("application/json");
+        HttpRequestDef.Builder<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateMessageClearRuleRequestBodyRequest.class,
+                    UpdateMessageClearRuleRequestBodyResponse.class)
+                .withName("UpdateMessageClearRuleRequestBody")
+                .withUri("/v1/{project_id}/messages/rules")
+                .withContentType("application/json");
 
         // requests
         builder.<SetMessageClearRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetMessageClearRuleReq.class),
-            f -> f.withMarshaller(UpdateMessageClearRuleRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateMessageClearRuleRequestBodyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -6589,6 +7470,37 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadDataRequest, DownloadDataResponse> downloadData = genFordownloadData();
+
+    private static HttpRequestDef<DownloadDataRequest, DownloadDataResponse> genFordownloadData() {
+        // basic
+        HttpRequestDef.Builder<DownloadDataRequest, DownloadDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadDataRequest.class, DownloadDataResponse.class)
+                .withName("DownloadData")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/data/download")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadDataRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<DownloadDataReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DownloadDataReq.class),
+            f -> f.withMarshaller(DownloadDataRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListObsBucketRequest, ListObsBucketResponse> listObsBucket =
         genForlistObsBucket();
 
@@ -6660,6 +7572,69 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListObsBucketObjectRequest::getSearchKey, (req, v) -> {
                 req.setSearchKey(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOptmJobRequest, CreateOptmJobResponse> createOptmJob =
+        genForcreateOptmJob();
+
+    private static HttpRequestDef<CreateOptmJobRequest, CreateOptmJobResponse> genForcreateOptmJob() {
+        // basic
+        HttpRequestDef.Builder<CreateOptmJobRequest, CreateOptmJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOptmJobRequest.class, CreateOptmJobResponse.class)
+                .withName("CreateOptmJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/optimization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOptmJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateOptmJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOptmJobReq.class),
+            f -> f.withMarshaller(CreateOptmJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOptmJobRequest, ShowOptmJobResponse> showOptmJob = genForshowOptmJob();
+
+    private static HttpRequestDef<ShowOptmJobRequest, ShowOptmJobResponse> genForshowOptmJob() {
+        // basic
+        HttpRequestDef.Builder<ShowOptmJobRequest, ShowOptmJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOptmJobRequest.class, ShowOptmJobResponse.class)
+                .withName("ShowOptmJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/optimization/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOptmJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOptmJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
             }));
 
         // response
@@ -7739,6 +8714,70 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowExtremumInfoRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSynthesisJobRequest, CreateSynthesisJobResponse> createSynthesisJob =
+        genForcreateSynthesisJob();
+
+    private static HttpRequestDef<CreateSynthesisJobRequest, CreateSynthesisJobResponse> genForcreateSynthesisJob() {
+        // basic
+        HttpRequestDef.Builder<CreateSynthesisJobRequest, CreateSynthesisJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSynthesisJobRequest.class, CreateSynthesisJobResponse.class)
+                .withName("CreateSynthesisJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/synthesis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSynthesisJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<CreateSynthesisJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSynthesisJobReq.class),
+            f -> f.withMarshaller(CreateSynthesisJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSynthesisJobRequest, ShowSynthesisJobResponse> showSynthesisJob =
+        genForshowSynthesisJob();
+
+    private static HttpRequestDef<ShowSynthesisJobRequest, ShowSynthesisJobResponse> genForshowSynthesisJob() {
+        // basic
+        HttpRequestDef.Builder<ShowSynthesisJobRequest, ShowSynthesisJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSynthesisJobRequest.class, ShowSynthesisJobResponse.class)
+                .withName("ShowSynthesisJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/synthesis/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSynthesisJobRequest::getEihealthProjectId, (req, v) -> {
+                req.setEihealthProjectId(v);
+            }));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSynthesisJobRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
 

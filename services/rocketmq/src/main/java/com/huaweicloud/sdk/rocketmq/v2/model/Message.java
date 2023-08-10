@@ -42,7 +42,7 @@ public class Message {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reconsume_times")
 
-    private String reconsumeTimes;
+    private Integer reconsumeTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
@@ -77,12 +77,12 @@ public class Message {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_id")
 
-    private String queueId;
+    private Integer queueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "queue_offset")
 
-    private String queueOffset;
+    private Integer queueOffset;
 
     public Message withMsgId(String msgId) {
         this.msgId = msgId;
@@ -169,7 +169,7 @@ public class Message {
         this.bornTimestamp = bornTimestamp;
     }
 
-    public Message withReconsumeTimes(String reconsumeTimes) {
+    public Message withReconsumeTimes(Integer reconsumeTimes) {
         this.reconsumeTimes = reconsumeTimes;
         return this;
     }
@@ -178,11 +178,11 @@ public class Message {
      * 重试次数。
      * @return reconsumeTimes
      */
-    public String getReconsumeTimes() {
+    public Integer getReconsumeTimes() {
         return reconsumeTimes;
     }
 
-    public void setReconsumeTimes(String reconsumeTimes) {
+    public void setReconsumeTimes(Integer reconsumeTimes) {
         this.reconsumeTimes = reconsumeTimes;
     }
 
@@ -304,7 +304,7 @@ public class Message {
         this.storeHost = storeHost;
     }
 
-    public Message withQueueId(String queueId) {
+    public Message withQueueId(Integer queueId) {
         this.queueId = queueId;
         return this;
     }
@@ -313,15 +313,15 @@ public class Message {
      * 队列ID。
      * @return queueId
      */
-    public String getQueueId() {
+    public Integer getQueueId() {
         return queueId;
     }
 
-    public void setQueueId(String queueId) {
+    public void setQueueId(Integer queueId) {
         this.queueId = queueId;
     }
 
-    public Message withQueueOffset(String queueOffset) {
+    public Message withQueueOffset(Integer queueOffset) {
         this.queueOffset = queueOffset;
         return this;
     }
@@ -330,11 +330,11 @@ public class Message {
      * 在队列中的偏移量。
      * @return queueOffset
      */
-    public String getQueueOffset() {
+    public Integer getQueueOffset() {
         return queueOffset;
     }
 
-    public void setQueueOffset(String queueOffset) {
+    public void setQueueOffset(Integer queueOffset) {
         this.queueOffset = queueOffset;
     }
 

@@ -769,7 +769,7 @@ public class ShowSimCardResponse extends SdkResponse {
     }
 
     /**
-     * 是否单独断网 true:断网，false:未断网 （当前仅电信卡支持）
+     * 是否单独断网 true:断网，false:未断网 （当前只支持联通、移动的组池卡，电信卡不限制）
      * @return cutNetFlag
      */
     public Boolean getCutNetFlag() {
@@ -786,7 +786,7 @@ public class ShowSimCardResponse extends SdkResponse {
     }
 
     /**
-     * 是否达量断网 true:达量断网，false:未达量断网 （当前仅电信卡支持）
+     * 是否达量断网 true:达量断网，false:未达量断网 （当前只支持联通、移动的组池卡，电信卡不限制）
      * @return exceedCutNetFlag
      */
     public Boolean getExceedCutNetFlag() {

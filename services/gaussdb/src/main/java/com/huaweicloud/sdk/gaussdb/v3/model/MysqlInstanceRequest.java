@@ -31,7 +31,7 @@ public class MysqlInstanceRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
 
-    private MysqlDatastore datastore;
+    private MysqlDatastoreInReq datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
@@ -183,14 +183,14 @@ public class MysqlInstanceRequest {
         this.name = name;
     }
 
-    public MysqlInstanceRequest withDatastore(MysqlDatastore datastore) {
+    public MysqlInstanceRequest withDatastore(MysqlDatastoreInReq datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public MysqlInstanceRequest withDatastore(Consumer<MysqlDatastore> datastoreSetter) {
+    public MysqlInstanceRequest withDatastore(Consumer<MysqlDatastoreInReq> datastoreSetter) {
         if (this.datastore == null) {
-            this.datastore = new MysqlDatastore();
+            this.datastore = new MysqlDatastoreInReq();
             datastoreSetter.accept(this.datastore);
         }
 
@@ -201,11 +201,11 @@ public class MysqlInstanceRequest {
      * Get datastore
      * @return datastore
      */
-    public MysqlDatastore getDatastore() {
+    public MysqlDatastoreInReq getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(MysqlDatastore datastore) {
+    public void setDatastore(MysqlDatastoreInReq datastore) {
         this.datastore = datastore;
     }
 

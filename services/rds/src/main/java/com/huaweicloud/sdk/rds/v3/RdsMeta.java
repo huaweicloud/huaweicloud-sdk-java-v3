@@ -75,6 +75,9 @@ import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSqlserverDbUserResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
 import com.huaweicloud.sdk.rds.v3.model.CustomerModifyAutoEnlargePolicyReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReq;
 import com.huaweicloud.sdk.rds.v3.model.DataIpRequest;
@@ -216,6 +219,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerRequest;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifiyInstanceNameRequest;
@@ -900,6 +905,45 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRestoreInstanceRequestBody.class),
             f -> f.withMarshaller(CreateRestoreInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse> createXelLogDownload =
+        genForcreateXelLogDownload();
+
+    private static HttpRequestDef<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse> genForcreateXelLogDownload() {
+        // basic
+        HttpRequestDef.Builder<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateXelLogDownloadRequest.class, CreateXelLogDownloadResponse.class)
+            .withName("CreateXelLogDownload")
+            .withUri("/v3/{project_id}/instances/{instance_id}/xellog-download")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateXelLogDownloadRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateXelLogDownloadRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateXelLogDownloadRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateXelLogDownloadRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CreateXelLogDownloadRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateXelLogDownloadRequestBody.class),
+            f -> f.withMarshaller(CreateXelLogDownloadRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2656,6 +2700,52 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStorageTypesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListXellogFilesRequest, ListXellogFilesResponse> listXellogFiles =
+        genForlistXellogFiles();
+
+    private static HttpRequestDef<ListXellogFilesRequest, ListXellogFilesResponse> genForlistXellogFiles() {
+        // basic
+        HttpRequestDef.Builder<ListXellogFilesRequest, ListXellogFilesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListXellogFilesRequest.class, ListXellogFilesResponse.class)
+                .withName("ListXellogFiles")
+                .withUri("/v3/{project_id}/instances/{instance_id}/xellog-files")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListXellogFilesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListXellogFilesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListXellogFilesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListXellogFilesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

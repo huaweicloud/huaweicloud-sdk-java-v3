@@ -61,6 +61,11 @@ public class SubCustomerMonthlyBillDetail {
     private String tradeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bill_detail_type")
 
     private Integer billDetailType;
@@ -408,6 +413,23 @@ public class SubCustomerMonthlyBillDetail {
 
     public void setTradeId(String tradeId) {
         this.tradeId = tradeId;
+    }
+
+    public SubCustomerMonthlyBillDetail withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 唯一标识。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public SubCustomerMonthlyBillDetail withBillDetailType(Integer billDetailType) {
@@ -1038,7 +1060,8 @@ public class SubCustomerMonthlyBillDetail {
             && Objects.equals(this.serviceTypeName, that.serviceTypeName)
             && Objects.equals(this.resourceTypeName, that.resourceTypeName)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.tradeTime, that.tradeTime)
-            && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.billDetailType, that.billDetailType)
+            && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.billDetailType, that.billDetailType)
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.productSpecDesc, that.productSpecDesc)
             && Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.productId, that.productId)
@@ -1082,6 +1105,7 @@ public class SubCustomerMonthlyBillDetail {
             chargingMode,
             tradeTime,
             tradeId,
+            id,
             billDetailType,
             resourceId,
             resourceName,
@@ -1134,6 +1158,7 @@ public class SubCustomerMonthlyBillDetail {
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    tradeTime: ").append(toIndentedString(tradeTime)).append("\n");
         sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    billDetailType: ").append(toIndentedString(billDetailType)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");

@@ -8,6 +8,7 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.gaussdb.v3.model.AddDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.AddDatabasePermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ApplyConfigurationRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.BackupEncryptRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchOperateInstanceTagRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchTagActionResponse;
@@ -62,6 +63,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.EnlargeProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeResponse;
@@ -99,6 +102,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogErrorQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogSlowQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAliasRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBindEipRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequestBody;
@@ -219,6 +224,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyPortRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyPortRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyPortResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxySessionConsistenceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSqlFilterControlRequest;
@@ -1079,6 +1087,41 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> describeBackupEncryptStatus =
+        genFordescribeBackupEncryptStatus();
+
+    private static HttpRequestDef<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> genFordescribeBackupEncryptStatus() {
+        // basic
+        HttpRequestDef.Builder<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    DescribeBackupEncryptStatusRequest.class,
+                    DescribeBackupEncryptStatusResponse.class)
+                .withName("DescribeBackupEncryptStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/encryption")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DescribeBackupEncryptStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DescribeBackupEncryptStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse> expandGaussMySqlInstanceVolume =
         genForexpandGaussMySqlInstanceVolume();
 
@@ -1864,6 +1907,48 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScheduleJobsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> modifyBackupEncryptStatus =
+        genFormodifyBackupEncryptStatus();
+
+    private static HttpRequestDef<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> genFormodifyBackupEncryptStatus() {
+        // basic
+        HttpRequestDef.Builder<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ModifyBackupEncryptStatusRequest.class,
+                    ModifyBackupEncryptStatusResponse.class)
+                .withName("ModifyBackupEncryptStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/encryption")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<BackupEncryptRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BackupEncryptRequest.class),
+            f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -3513,6 +3598,52 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ProxyUpdateProxyConnectionPoolTypeRequest.class),
             f -> f.withMarshaller(UpdateProxyConnectionPoolTypeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProxyPortRequest, UpdateProxyPortResponse> updateProxyPort =
+        genForupdateProxyPort();
+
+    private static HttpRequestDef<UpdateProxyPortRequest, UpdateProxyPortResponse> genForupdateProxyPort() {
+        // basic
+        HttpRequestDef.Builder<UpdateProxyPortRequest, UpdateProxyPortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateProxyPortRequest.class, UpdateProxyPortResponse.class)
+                .withName("UpdateProxyPort")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/port")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProxyPortRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProxyPortRequest::getProxyId, (req, v) -> {
+                req.setProxyId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProxyPortRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<UpdateProxyPortRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateProxyPortRequestBody.class),
+            f -> f.withMarshaller(UpdateProxyPortRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

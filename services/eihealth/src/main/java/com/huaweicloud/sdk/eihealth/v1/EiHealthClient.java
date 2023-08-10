@@ -29,10 +29,14 @@ import com.huaweicloud.sdk.eihealth.v1.model.BatchUpdateNoticeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.BatchUpdateNoticeResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CancelDataJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CancelDataJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CancelDrugJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CancelDrugJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CancelJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CancelJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ChangePasswordRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ChangePasswordResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CheckDrugLigandDifferenceRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CheckDrugLigandDifferenceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CheckEmailConnectionRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CheckEmailConnectionResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CheckTokenVerificationRequest;
@@ -61,6 +65,20 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateDatabaseDataRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDatabaseDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDatabaseResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDatabaseResourceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDockingJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDockingJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandInteraction2dSvgRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandInteraction2dSvgResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandPreviewTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandPreviewTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSdfRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSdfResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSimilarityGraphTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSimilarityGraphTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateGenerationTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateGenerationTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateImageRequest;
@@ -79,6 +97,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateNotebookRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateNotebookResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateOptimizationTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateOptimizationTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateOptmJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateOptmJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreatePerformanceResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreatePerformanceResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateProjectRequest;
@@ -91,6 +111,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateStudyJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateStudyJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateStudyRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateStudyResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateTemplateRequest;
@@ -115,6 +137,12 @@ import com.huaweicloud.sdk.eihealth.v1.model.DeleteDatabaseDataRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDatabaseDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDatabaseResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDatabaseResourceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandPreviewTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandPreviewTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteImageRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteImageResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteInstanceRequest;
@@ -155,6 +183,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.DeleteWorkflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteWorkflowResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataJobLogRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataJobLogResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataTraceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DownloadDataTraceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ExecuteAssetActionRequest;
@@ -207,6 +237,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListDatabaseResourceFlavorRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDatabaseResourceFlavorResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDatabaseResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDatabaseResourceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListGlobalWorkflowStatisticRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListGlobalWorkflowStatisticResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListIamGroupUsersRequest;
@@ -285,6 +317,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListWorkflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListWorkflowResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListWorkflowStatisticRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListWorkflowStatisticResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ParseDrugReceptorInfoRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ParseDrugReceptorInfoResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.PublishAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.PublishAppResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.PublishDataRequest;
@@ -299,6 +333,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.QuoteInstanceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.QuoteInstanceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RebootNodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RebootNodeResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.RecognizeDrugReceptorPocketRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.RecognizeDrugReceptorPocketResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RestoreBackupRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RestoreBackupResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RetryDataJobRequest;
@@ -307,6 +343,10 @@ import com.huaweicloud.sdk.eihealth.v1.model.RetryJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RetryJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RetryNextflowJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RetryNextflowJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.RunDrugLigandToSmilesConversionRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.RunDrugLigandToSmilesConversionResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.RunDrugReceptorPreprocessRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.RunDrugReceptorPreprocessResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.Show3dStructureContentRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.Show3dStructureContentResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetPropertiesRequest;
@@ -337,12 +377,20 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowDataRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowDataResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowDockerLoginRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowDockerLoginResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDockingJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDockingJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDrugLigandPreviewTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDrugLigandPreviewTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDrugLigandSimilarityGraphTaskRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowDrugLigandSimilarityGraphTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowEnvRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowEnvResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowEvsQuotaRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowEvsQuotaResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowExtremumInfoRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowExtremumInfoResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowFepJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowFepJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowGenerationTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowGenerationTaskResultResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowInstanceRequest;
@@ -383,6 +431,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowNotebookTokenRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowNotebookTokenResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowOptimizationTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowOptimizationTaskResultResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowOptmJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowOptmJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowOverviewRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowOverviewResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowProjectRequest;
@@ -403,6 +453,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowScheduleRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowScheduleResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSearchTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSearchTaskResultResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisTaskResultResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowTaskEventsRequest;
@@ -477,8 +529,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.UpdateJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMemberRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMemberResponse;
-import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageClearRuleRequest;
-import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageClearRuleResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageClearRuleRequestBodyRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageClearRuleRequestBodyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageEmailConfigRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageEmailConfigResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateMessageReceiveConfigRequest;
@@ -3213,6 +3265,633 @@ public class EiHealthClient {
     }
 
     /**
+     * 创建分子对接作业
+     *
+     * 创建分子对接作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDockingJobRequest 请求对象
+     * @return CreateDockingJobResponse
+     */
+    public CreateDockingJobResponse createDockingJob(CreateDockingJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createDockingJob);
+    }
+
+    /**
+     * 创建分子对接作业
+     *
+     * 创建分子对接作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDockingJobRequest 请求对象
+     * @return SyncInvoker<CreateDockingJobRequest, CreateDockingJobResponse>
+     */
+    public SyncInvoker<CreateDockingJobRequest, CreateDockingJobResponse> createDockingJobInvoker(
+        CreateDockingJobRequest request) {
+        return new SyncInvoker<CreateDockingJobRequest, CreateDockingJobResponse>(request,
+            EiHealthMeta.createDockingJob, hcClient);
+    }
+
+    /**
+     * 查询分子对接作业详情
+     *
+     * 查询分子对接作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDockingJobRequest 请求对象
+     * @return ShowDockingJobResponse
+     */
+    public ShowDockingJobResponse showDockingJob(ShowDockingJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showDockingJob);
+    }
+
+    /**
+     * 查询分子对接作业详情
+     *
+     * 查询分子对接作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDockingJobRequest 请求对象
+     * @return SyncInvoker<ShowDockingJobRequest, ShowDockingJobResponse>
+     */
+    public SyncInvoker<ShowDockingJobRequest, ShowDockingJobResponse> showDockingJobInvoker(
+        ShowDockingJobRequest request) {
+        return new SyncInvoker<ShowDockingJobRequest, ShowDockingJobResponse>(request, EiHealthMeta.showDockingJob,
+            hcClient);
+    }
+
+    /**
+     * 计算配体间的3D结构差异
+     *
+     * 计算配体间的3D结构差异
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckDrugLigandDifferenceRequest 请求对象
+     * @return CheckDrugLigandDifferenceResponse
+     */
+    public CheckDrugLigandDifferenceResponse checkDrugLigandDifference(CheckDrugLigandDifferenceRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.checkDrugLigandDifference);
+    }
+
+    /**
+     * 计算配体间的3D结构差异
+     *
+     * 计算配体间的3D结构差异
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckDrugLigandDifferenceRequest 请求对象
+     * @return SyncInvoker<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse>
+     */
+    public SyncInvoker<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse> checkDrugLigandDifferenceInvoker(
+        CheckDrugLigandDifferenceRequest request) {
+        return new SyncInvoker<CheckDrugLigandDifferenceRequest, CheckDrugLigandDifferenceResponse>(request,
+            EiHealthMeta.checkDrugLigandDifference, hcClient);
+    }
+
+    /**
+     * 生成相互作用2D图
+     *
+     * 生成相互作用2D图，若不提供配体文件，则受体文件中必须包含配体；若提供配体文件，则受体中的配体（若有）则会被忽略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandInteraction2dSvgRequest 请求对象
+     * @return CreateDrugLigandInteraction2dSvgResponse
+     */
+    public CreateDrugLigandInteraction2dSvgResponse createDrugLigandInteraction2dSvg(
+        CreateDrugLigandInteraction2dSvgRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createDrugLigandInteraction2dSvg);
+    }
+
+    /**
+     * 生成相互作用2D图
+     *
+     * 生成相互作用2D图，若不提供配体文件，则受体文件中必须包含配体；若提供配体文件，则受体中的配体（若有）则会被忽略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandInteraction2dSvgRequest 请求对象
+     * @return SyncInvoker<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse>
+     */
+    public SyncInvoker<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse> createDrugLigandInteraction2dSvgInvoker(
+        CreateDrugLigandInteraction2dSvgRequest request) {
+        return new SyncInvoker<CreateDrugLigandInteraction2dSvgRequest, CreateDrugLigandInteraction2dSvgResponse>(
+            request, EiHealthMeta.createDrugLigandInteraction2dSvg, hcClient);
+    }
+
+    /**
+     * 创建配体文件预览任务
+     *
+     * 创建配体文件预览任务，支持SMI、SDF、PDB、MOL2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandPreviewTaskRequest 请求对象
+     * @return CreateDrugLigandPreviewTaskResponse
+     */
+    public CreateDrugLigandPreviewTaskResponse createDrugLigandPreviewTask(CreateDrugLigandPreviewTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createDrugLigandPreviewTask);
+    }
+
+    /**
+     * 创建配体文件预览任务
+     *
+     * 创建配体文件预览任务，支持SMI、SDF、PDB、MOL2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandPreviewTaskRequest 请求对象
+     * @return SyncInvoker<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse>
+     */
+    public SyncInvoker<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse> createDrugLigandPreviewTaskInvoker(
+        CreateDrugLigandPreviewTaskRequest request) {
+        return new SyncInvoker<CreateDrugLigandPreviewTaskRequest, CreateDrugLigandPreviewTaskResponse>(request,
+            EiHealthMeta.createDrugLigandPreviewTask, hcClient);
+    }
+
+    /**
+     * 生成分子SDF三维结构
+     *
+     * 生成分子SDF三维结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandSdfRequest 请求对象
+     * @return CreateDrugLigandSdfResponse
+     */
+    public CreateDrugLigandSdfResponse createDrugLigandSdf(CreateDrugLigandSdfRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createDrugLigandSdf);
+    }
+
+    /**
+     * 生成分子SDF三维结构
+     *
+     * 生成分子SDF三维结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandSdfRequest 请求对象
+     * @return SyncInvoker<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse>
+     */
+    public SyncInvoker<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse> createDrugLigandSdfInvoker(
+        CreateDrugLigandSdfRequest request) {
+        return new SyncInvoker<CreateDrugLigandSdfRequest, CreateDrugLigandSdfResponse>(request,
+            EiHealthMeta.createDrugLigandSdf, hcClient);
+    }
+
+    /**
+     * 创建配体相似性图计算任务
+     *
+     * 创建配体相似性图计算任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @return CreateDrugLigandSimilarityGraphTaskResponse
+     */
+    public CreateDrugLigandSimilarityGraphTaskResponse createDrugLigandSimilarityGraphTask(
+        CreateDrugLigandSimilarityGraphTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createDrugLigandSimilarityGraphTask);
+    }
+
+    /**
+     * 创建配体相似性图计算任务
+     *
+     * 创建配体相似性图计算任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @return SyncInvoker<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse>
+     */
+    public SyncInvoker<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse> createDrugLigandSimilarityGraphTaskInvoker(
+        CreateDrugLigandSimilarityGraphTaskRequest request) {
+        return new SyncInvoker<CreateDrugLigandSimilarityGraphTaskRequest, CreateDrugLigandSimilarityGraphTaskResponse>(
+            request, EiHealthMeta.createDrugLigandSimilarityGraphTask, hcClient);
+    }
+
+    /**
+     * 生成分子SVG图
+     *
+     * 生成分子SVG图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandSvgRequest 请求对象
+     * @return CreateDrugLigandSvgResponse
+     */
+    public CreateDrugLigandSvgResponse createDrugLigandSvg(CreateDrugLigandSvgRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createDrugLigandSvg);
+    }
+
+    /**
+     * 生成分子SVG图
+     *
+     * 生成分子SVG图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDrugLigandSvgRequest 请求对象
+     * @return SyncInvoker<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse>
+     */
+    public SyncInvoker<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse> createDrugLigandSvgInvoker(
+        CreateDrugLigandSvgRequest request) {
+        return new SyncInvoker<CreateDrugLigandSvgRequest, CreateDrugLigandSvgResponse>(request,
+            EiHealthMeta.createDrugLigandSvg, hcClient);
+    }
+
+    /**
+     * 删除配体文件预览任务
+     *
+     * 删除配体文件预览任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDrugLigandPreviewTaskRequest 请求对象
+     * @return DeleteDrugLigandPreviewTaskResponse
+     */
+    public DeleteDrugLigandPreviewTaskResponse deleteDrugLigandPreviewTask(DeleteDrugLigandPreviewTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.deleteDrugLigandPreviewTask);
+    }
+
+    /**
+     * 删除配体文件预览任务
+     *
+     * 删除配体文件预览任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDrugLigandPreviewTaskRequest 请求对象
+     * @return SyncInvoker<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse>
+     */
+    public SyncInvoker<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse> deleteDrugLigandPreviewTaskInvoker(
+        DeleteDrugLigandPreviewTaskRequest request) {
+        return new SyncInvoker<DeleteDrugLigandPreviewTaskRequest, DeleteDrugLigandPreviewTaskResponse>(request,
+            EiHealthMeta.deleteDrugLigandPreviewTask, hcClient);
+    }
+
+    /**
+     * 删除配体相似性图计算任务
+     *
+     * 删除配体相似性图计算任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @return DeleteDrugLigandSimilarityGraphTaskResponse
+     */
+    public DeleteDrugLigandSimilarityGraphTaskResponse deleteDrugLigandSimilarityGraphTask(
+        DeleteDrugLigandSimilarityGraphTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.deleteDrugLigandSimilarityGraphTask);
+    }
+
+    /**
+     * 删除配体相似性图计算任务
+     *
+     * 删除配体相似性图计算任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @return SyncInvoker<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse>
+     */
+    public SyncInvoker<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse> deleteDrugLigandSimilarityGraphTaskInvoker(
+        DeleteDrugLigandSimilarityGraphTaskRequest request) {
+        return new SyncInvoker<DeleteDrugLigandSimilarityGraphTaskRequest, DeleteDrugLigandSimilarityGraphTaskResponse>(
+            request, EiHealthMeta.deleteDrugLigandSimilarityGraphTask, hcClient);
+    }
+
+    /**
+     * 受体信息解析
+     *
+     * 受体信息解析，如果有多个受体蛋白则只处理第一个，如果一个受体蛋白里结合了多个配体，则最多只处理前10个
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ParseDrugReceptorInfoRequest 请求对象
+     * @return ParseDrugReceptorInfoResponse
+     */
+    public ParseDrugReceptorInfoResponse parseDrugReceptorInfo(ParseDrugReceptorInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.parseDrugReceptorInfo);
+    }
+
+    /**
+     * 受体信息解析
+     *
+     * 受体信息解析，如果有多个受体蛋白则只处理第一个，如果一个受体蛋白里结合了多个配体，则最多只处理前10个
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ParseDrugReceptorInfoRequest 请求对象
+     * @return SyncInvoker<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse>
+     */
+    public SyncInvoker<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse> parseDrugReceptorInfoInvoker(
+        ParseDrugReceptorInfoRequest request) {
+        return new SyncInvoker<ParseDrugReceptorInfoRequest, ParseDrugReceptorInfoResponse>(request,
+            EiHealthMeta.parseDrugReceptorInfo, hcClient);
+    }
+
+    /**
+     * 受体口袋检测
+     *
+     * 检测受体口袋，检测类型基于配体，基于氨基酸残基，自动检测，自定义和全局对接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeDrugReceptorPocketRequest 请求对象
+     * @return RecognizeDrugReceptorPocketResponse
+     */
+    public RecognizeDrugReceptorPocketResponse recognizeDrugReceptorPocket(RecognizeDrugReceptorPocketRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.recognizeDrugReceptorPocket);
+    }
+
+    /**
+     * 受体口袋检测
+     *
+     * 检测受体口袋，检测类型基于配体，基于氨基酸残基，自动检测，自定义和全局对接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeDrugReceptorPocketRequest 请求对象
+     * @return SyncInvoker<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse>
+     */
+    public SyncInvoker<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse> recognizeDrugReceptorPocketInvoker(
+        RecognizeDrugReceptorPocketRequest request) {
+        return new SyncInvoker<RecognizeDrugReceptorPocketRequest, RecognizeDrugReceptorPocketResponse>(request,
+            EiHealthMeta.recognizeDrugReceptorPocket, hcClient);
+    }
+
+    /**
+     * 配体格式转换为SMILES
+     *
+     * 配体格式转换为SMILES，若配体文件中存在多个分子，则只取第一个返回
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunDrugLigandToSmilesConversionRequest 请求对象
+     * @return RunDrugLigandToSmilesConversionResponse
+     */
+    public RunDrugLigandToSmilesConversionResponse runDrugLigandToSmilesConversion(
+        RunDrugLigandToSmilesConversionRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.runDrugLigandToSmilesConversion);
+    }
+
+    /**
+     * 配体格式转换为SMILES
+     *
+     * 配体格式转换为SMILES，若配体文件中存在多个分子，则只取第一个返回
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunDrugLigandToSmilesConversionRequest 请求对象
+     * @return SyncInvoker<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse>
+     */
+    public SyncInvoker<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse> runDrugLigandToSmilesConversionInvoker(
+        RunDrugLigandToSmilesConversionRequest request) {
+        return new SyncInvoker<RunDrugLigandToSmilesConversionRequest, RunDrugLigandToSmilesConversionResponse>(request,
+            EiHealthMeta.runDrugLigandToSmilesConversion, hcClient);
+    }
+
+    /**
+     * 受体预处理
+     *
+     * 受体预处理，用于前端显示预处理后的受体
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunDrugReceptorPreprocessRequest 请求对象
+     * @return RunDrugReceptorPreprocessResponse
+     */
+    public RunDrugReceptorPreprocessResponse runDrugReceptorPreprocess(RunDrugReceptorPreprocessRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.runDrugReceptorPreprocess);
+    }
+
+    /**
+     * 受体预处理
+     *
+     * 受体预处理，用于前端显示预处理后的受体
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunDrugReceptorPreprocessRequest 请求对象
+     * @return SyncInvoker<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse>
+     */
+    public SyncInvoker<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse> runDrugReceptorPreprocessInvoker(
+        RunDrugReceptorPreprocessRequest request) {
+        return new SyncInvoker<RunDrugReceptorPreprocessRequest, RunDrugReceptorPreprocessResponse>(request,
+            EiHealthMeta.runDrugReceptorPreprocess, hcClient);
+    }
+
+    /**
+     * 查询配体文件预览任务
+     *
+     * 查询配体文件预览任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDrugLigandPreviewTaskRequest 请求对象
+     * @return ShowDrugLigandPreviewTaskResponse
+     */
+    public ShowDrugLigandPreviewTaskResponse showDrugLigandPreviewTask(ShowDrugLigandPreviewTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showDrugLigandPreviewTask);
+    }
+
+    /**
+     * 查询配体文件预览任务
+     *
+     * 查询配体文件预览任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDrugLigandPreviewTaskRequest 请求对象
+     * @return SyncInvoker<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse>
+     */
+    public SyncInvoker<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse> showDrugLigandPreviewTaskInvoker(
+        ShowDrugLigandPreviewTaskRequest request) {
+        return new SyncInvoker<ShowDrugLigandPreviewTaskRequest, ShowDrugLigandPreviewTaskResponse>(request,
+            EiHealthMeta.showDrugLigandPreviewTask, hcClient);
+    }
+
+    /**
+     * 查询配体相似性图计算任务
+     *
+     * 查询配体相似性图计算任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @return ShowDrugLigandSimilarityGraphTaskResponse
+     */
+    public ShowDrugLigandSimilarityGraphTaskResponse showDrugLigandSimilarityGraphTask(
+        ShowDrugLigandSimilarityGraphTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showDrugLigandSimilarityGraphTask);
+    }
+
+    /**
+     * 查询配体相似性图计算任务
+     *
+     * 查询配体相似性图计算任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDrugLigandSimilarityGraphTaskRequest 请求对象
+     * @return SyncInvoker<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse>
+     */
+    public SyncInvoker<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse> showDrugLigandSimilarityGraphTaskInvoker(
+        ShowDrugLigandSimilarityGraphTaskRequest request) {
+        return new SyncInvoker<ShowDrugLigandSimilarityGraphTaskRequest, ShowDrugLigandSimilarityGraphTaskResponse>(
+            request, EiHealthMeta.showDrugLigandSimilarityGraphTask, hcClient);
+    }
+
+    /**
+     * 取消药物作业
+     *
+     * 取消药物作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelDrugJobRequest 请求对象
+     * @return CancelDrugJobResponse
+     */
+    public CancelDrugJobResponse cancelDrugJob(CancelDrugJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.cancelDrugJob);
+    }
+
+    /**
+     * 取消药物作业
+     *
+     * 取消药物作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelDrugJobRequest 请求对象
+     * @return SyncInvoker<CancelDrugJobRequest, CancelDrugJobResponse>
+     */
+    public SyncInvoker<CancelDrugJobRequest, CancelDrugJobResponse> cancelDrugJobInvoker(CancelDrugJobRequest request) {
+        return new SyncInvoker<CancelDrugJobRequest, CancelDrugJobResponse>(request, EiHealthMeta.cancelDrugJob,
+            hcClient);
+    }
+
+    /**
+     * 删除药物作业
+     *
+     * 删除药物作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDrugJobRequest 请求对象
+     * @return DeleteDrugJobResponse
+     */
+    public DeleteDrugJobResponse deleteDrugJob(DeleteDrugJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.deleteDrugJob);
+    }
+
+    /**
+     * 删除药物作业
+     *
+     * 删除药物作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDrugJobRequest 请求对象
+     * @return SyncInvoker<DeleteDrugJobRequest, DeleteDrugJobResponse>
+     */
+    public SyncInvoker<DeleteDrugJobRequest, DeleteDrugJobResponse> deleteDrugJobInvoker(DeleteDrugJobRequest request) {
+        return new SyncInvoker<DeleteDrugJobRequest, DeleteDrugJobResponse>(request, EiHealthMeta.deleteDrugJob,
+            hcClient);
+    }
+
+    /**
+     * 获取药物作业列表
+     *
+     * 获取药物作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDrugJobRequest 请求对象
+     * @return ListDrugJobResponse
+     */
+    public ListDrugJobResponse listDrugJob(ListDrugJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listDrugJob);
+    }
+
+    /**
+     * 获取药物作业列表
+     *
+     * 获取药物作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDrugJobRequest 请求对象
+     * @return SyncInvoker<ListDrugJobRequest, ListDrugJobResponse>
+     */
+    public SyncInvoker<ListDrugJobRequest, ListDrugJobResponse> listDrugJobInvoker(ListDrugJobRequest request) {
+        return new SyncInvoker<ListDrugJobRequest, ListDrugJobResponse>(request, EiHealthMeta.listDrugJob, hcClient);
+    }
+
+    /**
+     * 创建自由能微扰作业
+     *
+     * 创建自由能微扰作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFepJobRequest 请求对象
+     * @return CreateFepJobResponse
+     */
+    public CreateFepJobResponse createFepJob(CreateFepJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createFepJob);
+    }
+
+    /**
+     * 创建自由能微扰作业
+     *
+     * 创建自由能微扰作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFepJobRequest 请求对象
+     * @return SyncInvoker<CreateFepJobRequest, CreateFepJobResponse>
+     */
+    public SyncInvoker<CreateFepJobRequest, CreateFepJobResponse> createFepJobInvoker(CreateFepJobRequest request) {
+        return new SyncInvoker<CreateFepJobRequest, CreateFepJobResponse>(request, EiHealthMeta.createFepJob, hcClient);
+    }
+
+    /**
+     * 查询自由能微扰作业详情
+     *
+     * 查询自由能微扰作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFepJobRequest 请求对象
+     * @return ShowFepJobResponse
+     */
+    public ShowFepJobResponse showFepJob(ShowFepJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showFepJob);
+    }
+
+    /**
+     * 查询自由能微扰作业详情
+     *
+     * 查询自由能微扰作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFepJobRequest 请求对象
+     * @return SyncInvoker<ShowFepJobRequest, ShowFepJobResponse>
+     */
+    public SyncInvoker<ShowFepJobRequest, ShowFepJobResponse> showFepJobInvoker(ShowFepJobRequest request) {
+        return new SyncInvoker<ShowFepJobRequest, ShowFepJobResponse>(request, EiHealthMeta.showFepJob, hcClient);
+    }
+
+    /**
      * 批量删除镜像tag
      *
      * 批量删除镜像tag
@@ -4582,11 +5261,12 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageClearRuleRequest 请求对象
-     * @return UpdateMessageClearRuleResponse
+     * @param UpdateMessageClearRuleRequestBodyRequest 请求对象
+     * @return UpdateMessageClearRuleRequestBodyResponse
      */
-    public UpdateMessageClearRuleResponse updateMessageClearRule(UpdateMessageClearRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, EiHealthMeta.updateMessageClearRule);
+    public UpdateMessageClearRuleRequestBodyResponse updateMessageClearRuleRequestBody(
+        UpdateMessageClearRuleRequestBodyRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.updateMessageClearRuleRequestBody);
     }
 
     /**
@@ -4596,13 +5276,13 @@ public class EiHealthClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateMessageClearRuleRequest 请求对象
-     * @return SyncInvoker<UpdateMessageClearRuleRequest, UpdateMessageClearRuleResponse>
+     * @param UpdateMessageClearRuleRequestBodyRequest 请求对象
+     * @return SyncInvoker<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse>
      */
-    public SyncInvoker<UpdateMessageClearRuleRequest, UpdateMessageClearRuleResponse> updateMessageClearRuleInvoker(
-        UpdateMessageClearRuleRequest request) {
-        return new SyncInvoker<UpdateMessageClearRuleRequest, UpdateMessageClearRuleResponse>(request,
-            EiHealthMeta.updateMessageClearRule, hcClient);
+    public SyncInvoker<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse> updateMessageClearRuleRequestBodyInvoker(
+        UpdateMessageClearRuleRequestBodyRequest request) {
+        return new SyncInvoker<UpdateMessageClearRuleRequestBodyRequest, UpdateMessageClearRuleRequestBodyResponse>(
+            request, EiHealthMeta.updateMessageClearRuleRequestBody, hcClient);
     }
 
     /**
@@ -5649,6 +6329,34 @@ public class EiHealthClient {
     }
 
     /**
+     * 文件下载
+     *
+     * 文件下载
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadDataRequest 请求对象
+     * @return DownloadDataResponse
+     */
+    public DownloadDataResponse downloadData(DownloadDataRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.downloadData);
+    }
+
+    /**
+     * 文件下载
+     *
+     * 文件下载
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadDataRequest 请求对象
+     * @return SyncInvoker<DownloadDataRequest, DownloadDataResponse>
+     */
+    public SyncInvoker<DownloadDataRequest, DownloadDataResponse> downloadDataInvoker(DownloadDataRequest request) {
+        return new SyncInvoker<DownloadDataRequest, DownloadDataResponse>(request, EiHealthMeta.downloadData, hcClient);
+    }
+
+    /**
      * 获取用户OBS桶列表
      *
      * 获取用户OBS桶列表
@@ -5705,6 +6413,63 @@ public class EiHealthClient {
         ListObsBucketObjectRequest request) {
         return new SyncInvoker<ListObsBucketObjectRequest, ListObsBucketObjectResponse>(request,
             EiHealthMeta.listObsBucketObject, hcClient);
+    }
+
+    /**
+     * 创建分子优化作业
+     *
+     * 创建分子优化作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOptmJobRequest 请求对象
+     * @return CreateOptmJobResponse
+     */
+    public CreateOptmJobResponse createOptmJob(CreateOptmJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createOptmJob);
+    }
+
+    /**
+     * 创建分子优化作业
+     *
+     * 创建分子优化作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOptmJobRequest 请求对象
+     * @return SyncInvoker<CreateOptmJobRequest, CreateOptmJobResponse>
+     */
+    public SyncInvoker<CreateOptmJobRequest, CreateOptmJobResponse> createOptmJobInvoker(CreateOptmJobRequest request) {
+        return new SyncInvoker<CreateOptmJobRequest, CreateOptmJobResponse>(request, EiHealthMeta.createOptmJob,
+            hcClient);
+    }
+
+    /**
+     * 查询分子优化作业详情
+     *
+     * 查询分子优化作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOptmJobRequest 请求对象
+     * @return ShowOptmJobResponse
+     */
+    public ShowOptmJobResponse showOptmJob(ShowOptmJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showOptmJob);
+    }
+
+    /**
+     * 查询分子优化作业详情
+     *
+     * 查询分子优化作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOptmJobRequest 请求对象
+     * @return SyncInvoker<ShowOptmJobRequest, ShowOptmJobResponse>
+     */
+    public SyncInvoker<ShowOptmJobRequest, ShowOptmJobResponse> showOptmJobInvoker(ShowOptmJobRequest request) {
+        return new SyncInvoker<ShowOptmJobRequest, ShowOptmJobResponse>(request, EiHealthMeta.showOptmJob, hcClient);
     }
 
     /**
@@ -6729,6 +7494,66 @@ public class EiHealthClient {
         ShowExtremumInfoRequest request) {
         return new SyncInvoker<ShowExtremumInfoRequest, ShowExtremumInfoResponse>(request,
             EiHealthMeta.showExtremumInfo, hcClient);
+    }
+
+    /**
+     * 创建分子合成路径规划作业
+     *
+     * 创建分子合成路径规划作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSynthesisJobRequest 请求对象
+     * @return CreateSynthesisJobResponse
+     */
+    public CreateSynthesisJobResponse createSynthesisJob(CreateSynthesisJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createSynthesisJob);
+    }
+
+    /**
+     * 创建分子合成路径规划作业
+     *
+     * 创建分子合成路径规划作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSynthesisJobRequest 请求对象
+     * @return SyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse>
+     */
+    public SyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse> createSynthesisJobInvoker(
+        CreateSynthesisJobRequest request) {
+        return new SyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse>(request,
+            EiHealthMeta.createSynthesisJob, hcClient);
+    }
+
+    /**
+     * 查询分子合成路径规划作业详情
+     *
+     * 查询分子合成路径规划作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSynthesisJobRequest 请求对象
+     * @return ShowSynthesisJobResponse
+     */
+    public ShowSynthesisJobResponse showSynthesisJob(ShowSynthesisJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showSynthesisJob);
+    }
+
+    /**
+     * 查询分子合成路径规划作业详情
+     *
+     * 查询分子合成路径规划作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSynthesisJobRequest 请求对象
+     * @return SyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse>
+     */
+    public SyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse> showSynthesisJobInvoker(
+        ShowSynthesisJobRequest request) {
+        return new SyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse>(request,
+            EiHealthMeta.showSynthesisJob, hcClient);
     }
 
     /**

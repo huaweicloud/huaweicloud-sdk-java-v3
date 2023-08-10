@@ -11,6 +11,11 @@ import java.util.Objects;
 public class GroupInfoSimple {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "createdAt")
+
+    private Integer createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
 
     private String groupId;
@@ -24,6 +29,33 @@ public class GroupInfoSimple {
     @JsonProperty(value = "coordinator_id")
 
     private Integer coordinatorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_desc")
+
+    private String groupDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lag")
+
+    private Integer lag;
+
+    public GroupInfoSimple withCreatedAt(Integer createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 创建时间。
+     * @return createdAt
+     */
+    public Integer getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Integer createdAt) {
+        this.createdAt = createdAt;
+    }
 
     public GroupInfoSimple withGroupId(String groupId) {
         this.groupId = groupId;
@@ -76,6 +108,40 @@ public class GroupInfoSimple {
         this.coordinatorId = coordinatorId;
     }
 
+    public GroupInfoSimple withGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+        return this;
+    }
+
+    /**
+     * 消费组描述。
+     * @return groupDesc
+     */
+    public String getGroupDesc() {
+        return groupDesc;
+    }
+
+    public void setGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+    }
+
+    public GroupInfoSimple withLag(Integer lag) {
+        this.lag = lag;
+        return this;
+    }
+
+    /**
+     * 堆积数。
+     * @return lag
+     */
+    public Integer getLag() {
+        return lag;
+    }
+
+    public void setLag(Integer lag) {
+        this.lag = lag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,22 +151,26 @@ public class GroupInfoSimple {
             return false;
         }
         GroupInfoSimple that = (GroupInfoSimple) obj;
-        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.coordinatorId, that.coordinatorId);
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.coordinatorId, that.coordinatorId)
+            && Objects.equals(this.groupDesc, that.groupDesc) && Objects.equals(this.lag, that.lag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, state, coordinatorId);
+        return Objects.hash(createdAt, groupId, state, coordinatorId, groupDesc, lag);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class GroupInfoSimple {\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    coordinatorId: ").append(toIndentedString(coordinatorId)).append("\n");
+        sb.append("    groupDesc: ").append(toIndentedString(groupDesc)).append("\n");
+        sb.append("    lag: ").append(toIndentedString(lag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

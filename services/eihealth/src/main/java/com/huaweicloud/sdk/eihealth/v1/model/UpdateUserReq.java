@@ -36,7 +36,7 @@ public class UpdateUserReq {
     }
 
     /**
-     * 用户手机号，纯数字，长度小于等于32位。必须与国家码同时存在。
+     * 用户手机号，纯数字，长度小于等于32位，当且仅当重置手机号时传入空串。必须与国家码同时存在。
      * @return mobile
      */
     public String getMobile() {
@@ -53,7 +53,7 @@ public class UpdateUserReq {
     }
 
     /**
-     * 国家码。中国大陆为“0086”
+     * 国家码，当且仅当重置手机号时传入空串。中国大陆为“0086”
      * @return areacode
      */
     public String getAreacode() {

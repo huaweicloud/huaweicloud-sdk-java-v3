@@ -29,6 +29,11 @@ public class AppFilterDto {
     private String appVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_resource")
+
+    private TaskResourceDto appResource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_node_labels")
 
     private List<String> appNodeLabels = null;
@@ -84,6 +89,32 @@ public class AppFilterDto {
         this.appVersion = appVersion;
     }
 
+    public AppFilterDto withAppResource(TaskResourceDto appResource) {
+        this.appResource = appResource;
+        return this;
+    }
+
+    public AppFilterDto withAppResource(Consumer<TaskResourceDto> appResourceSetter) {
+        if (this.appResource == null) {
+            this.appResource = new TaskResourceDto();
+            appResourceSetter.accept(this.appResource);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get appResource
+     * @return appResource
+     */
+    public TaskResourceDto getAppResource() {
+        return appResource;
+    }
+
+    public void setAppResource(TaskResourceDto appResource) {
+        this.appResource = appResource;
+    }
+
     public AppFilterDto withAppNodeLabels(List<String> appNodeLabels) {
         this.appNodeLabels = appNodeLabels;
         return this;
@@ -127,13 +158,13 @@ public class AppFilterDto {
         }
         AppFilterDto that = (AppFilterDto) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
-            && Objects.equals(this.appVersion, that.appVersion)
+            && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.appResource, that.appResource)
             && Objects.equals(this.appNodeLabels, that.appNodeLabels);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appName, appVersion, appNodeLabels);
+        return Objects.hash(appId, appName, appVersion, appResource, appNodeLabels);
     }
 
     @Override
@@ -143,6 +174,7 @@ public class AppFilterDto {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    appVersion: ").append(toIndentedString(appVersion)).append("\n");
+        sb.append("    appResource: ").append(toIndentedString(appResource)).append("\n");
         sb.append("    appNodeLabels: ").append(toIndentedString(appNodeLabels)).append("\n");
         sb.append("}");
         return sb.toString();

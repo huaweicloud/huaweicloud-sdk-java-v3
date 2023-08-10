@@ -113,6 +113,11 @@ public class MysqlProxyV3 {
 
     private Boolean balanceRouteModeEnabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consistence_mode")
+
+    private String consistenceMode;
+
     public MysqlProxyV3 withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -469,6 +474,23 @@ public class MysqlProxyV3 {
         this.balanceRouteModeEnabled = balanceRouteModeEnabled;
     }
 
+    public MysqlProxyV3 withConsistenceMode(String consistenceMode) {
+        this.consistenceMode = consistenceMode;
+        return this;
+    }
+
+    /**
+     * 一致性模式。默认值为空，此时以会话一致性参数session_consistence为准。 - session: 会话一致性 - global: 全局一致性 - eventual: 最终一致性
+     * @return consistenceMode
+     */
+    public String getConsistenceMode() {
+        return consistenceMode;
+    }
+
+    public void setConsistenceMode(String consistenceMode) {
+        this.consistenceMode = consistenceMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -490,7 +512,8 @@ public class MysqlProxyV3 {
             && Objects.equals(this.connectionPoolType, that.connectionPoolType)
             && Objects.equals(this.switchConnectionPoolTypeEnabled, that.switchConnectionPoolTypeEnabled)
             && Objects.equals(this.routeMode, that.routeMode)
-            && Objects.equals(this.balanceRouteModeEnabled, that.balanceRouteModeEnabled);
+            && Objects.equals(this.balanceRouteModeEnabled, that.balanceRouteModeEnabled)
+            && Objects.equals(this.consistenceMode, that.consistenceMode);
     }
 
     @Override
@@ -514,7 +537,8 @@ public class MysqlProxyV3 {
             connectionPoolType,
             switchConnectionPoolTypeEnabled,
             routeMode,
-            balanceRouteModeEnabled);
+            balanceRouteModeEnabled,
+            consistenceMode);
     }
 
     @Override
@@ -543,6 +567,7 @@ public class MysqlProxyV3 {
             .append("\n");
         sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
         sb.append("    balanceRouteModeEnabled: ").append(toIndentedString(balanceRouteModeEnabled)).append("\n");
+        sb.append("    consistenceMode: ").append(toIndentedString(consistenceMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

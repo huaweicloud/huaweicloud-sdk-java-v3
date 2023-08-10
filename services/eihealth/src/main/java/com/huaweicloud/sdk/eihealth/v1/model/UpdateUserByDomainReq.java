@@ -36,7 +36,7 @@ public class UpdateUserByDomainReq {
     }
 
     /**
-     * 新密码，在8-32位之间支持用户自定义密码长度，至少包含以下四种字符中的三种： 大写字母、小写字母、数字和特殊字符。
+     * 新密码，在8-32位之间支持用户自定义密码长度，至少包含以下四种字符中的两种： 大写字母、小写字母、数字和特殊字符。
      * @return password
      */
     public String getPassword() {
@@ -53,7 +53,7 @@ public class UpdateUserByDomainReq {
     }
 
     /**
-     * 用户手机号，纯数字，长度小于等于32位。必须与国家码同时存在。
+     * 用户手机号，纯数字，长度小于等于32位，当且仅当重置手机号时传入空串。必须与国家码同时存在。
      * @return mobile
      */
     public String getMobile() {
@@ -70,7 +70,7 @@ public class UpdateUserByDomainReq {
     }
 
     /**
-     * 国家码。中国大陆为“0086”
+     * 国家码，当且仅当重置手机号时传入空串。中国大陆为“0086”
      * @return areacode
      */
     public String getAreacode() {

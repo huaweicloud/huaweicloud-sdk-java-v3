@@ -24,6 +24,11 @@ public class ComputingResourceRsp {
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "evs_resource_id")
+
+    private String evsResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -115,6 +120,23 @@ public class ComputingResourceRsp {
 
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
+    }
+
+    public ComputingResourceRsp withEvsResourceId(String evsResourceId) {
+        this.evsResourceId = evsResourceId;
+        return this;
+    }
+
+    /**
+     * 额外盘资源ID
+     * @return evsResourceId
+     */
+    public String getEvsResourceId() {
+        return evsResourceId;
+    }
+
+    public void setEvsResourceId(String evsResourceId) {
+        this.evsResourceId = evsResourceId;
     }
 
     public ComputingResourceRsp withName(String name) {
@@ -390,10 +412,10 @@ public class ComputingResourceRsp {
         }
         ComputingResourceRsp that = (ComputingResourceRsp) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.spec, that.spec)
-            && Objects.equals(this.systemDisk, that.systemDisk) && Objects.equals(this.dataDisks, that.dataDisks)
-            && Objects.equals(this.image, that.image) && Objects.equals(this.chargeMode, that.chargeMode)
-            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.evsResourceId, that.evsResourceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.systemDisk, that.systemDisk)
+            && Objects.equals(this.dataDisks, that.dataDisks) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.failureReason, that.failureReason) && Objects.equals(this.status, that.status)
             && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
             && Objects.equals(this.schedulable, that.schedulable) && Objects.equals(this.nodeLabels, that.nodeLabels);
@@ -403,6 +425,7 @@ public class ComputingResourceRsp {
     public int hashCode() {
         return Objects.hash(id,
             resourceId,
+            evsResourceId,
             name,
             spec,
             systemDisk,
@@ -423,6 +446,7 @@ public class ComputingResourceRsp {
         sb.append("class ComputingResourceRsp {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    evsResourceId: ").append(toIndentedString(evsResourceId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    systemDisk: ").append(toIndentedString(systemDisk)).append("\n");

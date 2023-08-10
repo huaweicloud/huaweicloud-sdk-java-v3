@@ -20,6 +20,11 @@ public class CreateAutoJobResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_platform_flavor")
+
+    private TaskResourceDto maxPlatformFlavor;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_infos")
 
     private List<AppFilterDto> appInfos = null;
@@ -44,6 +49,32 @@ public class CreateAutoJobResponse extends SdkResponse {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public CreateAutoJobResponse withMaxPlatformFlavor(TaskResourceDto maxPlatformFlavor) {
+        this.maxPlatformFlavor = maxPlatformFlavor;
+        return this;
+    }
+
+    public CreateAutoJobResponse withMaxPlatformFlavor(Consumer<TaskResourceDto> maxPlatformFlavorSetter) {
+        if (this.maxPlatformFlavor == null) {
+            this.maxPlatformFlavor = new TaskResourceDto();
+            maxPlatformFlavorSetter.accept(this.maxPlatformFlavor);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get maxPlatformFlavor
+     * @return maxPlatformFlavor
+     */
+    public TaskResourceDto getMaxPlatformFlavor() {
+        return maxPlatformFlavor;
+    }
+
+    public void setMaxPlatformFlavor(TaskResourceDto maxPlatformFlavor) {
+        this.maxPlatformFlavor = maxPlatformFlavor;
     }
 
     public CreateAutoJobResponse withAppInfos(List<AppFilterDto> appInfos) {
@@ -114,13 +145,13 @@ public class CreateAutoJobResponse extends SdkResponse {
             return false;
         }
         CreateAutoJobResponse that = (CreateAutoJobResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.appInfos, that.appInfos)
-            && Objects.equals(this.jobInfo, that.jobInfo);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.maxPlatformFlavor, that.maxPlatformFlavor)
+            && Objects.equals(this.appInfos, that.appInfos) && Objects.equals(this.jobInfo, that.jobInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, appInfos, jobInfo);
+        return Objects.hash(id, maxPlatformFlavor, appInfos, jobInfo);
     }
 
     @Override
@@ -128,6 +159,7 @@ public class CreateAutoJobResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAutoJobResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    maxPlatformFlavor: ").append(toIndentedString(maxPlatformFlavor)).append("\n");
         sb.append("    appInfos: ").append(toIndentedString(appInfos)).append("\n");
         sb.append("    jobInfo: ").append(toIndentedString(jobInfo)).append("\n");
         sb.append("}");
