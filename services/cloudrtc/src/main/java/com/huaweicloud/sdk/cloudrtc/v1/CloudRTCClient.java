@@ -2,10 +2,14 @@ package com.huaweicloud.sdk.cloudrtc.v1;
 
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventDimensionRequest;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventDimensionResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventResponse;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventsRequest;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventsResponse;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcClientQosDetailsRequest;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcClientQosDetailsResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcEventRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcEventResponse;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryQualityRequest;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryQualityResponse;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryScaleRequest;
@@ -39,6 +43,64 @@ public class CloudRTCClient {
     public static ClientBuilder<CloudRTCClient> newBuilder() {
         ClientBuilder<CloudRTCClient> clientBuilder = new ClientBuilder<>(CloudRTCClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 查询用户异常体验事件接口
+     *
+     * 查询指定APP下通话的异常明细数据。可查询5天内的数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRtcAbnormalEventRequest 请求对象
+     * @return ListRtcAbnormalEventResponse
+     */
+    public ListRtcAbnormalEventResponse listRtcAbnormalEvent(ListRtcAbnormalEventRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudRTCMeta.listRtcAbnormalEvent);
+    }
+
+    /**
+     * 查询用户异常体验事件接口
+     *
+     * 查询指定APP下通话的异常明细数据。可查询5天内的数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRtcAbnormalEventRequest 请求对象
+     * @return SyncInvoker<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse>
+     */
+    public SyncInvoker<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse> listRtcAbnormalEventInvoker(
+        ListRtcAbnormalEventRequest request) {
+        return new SyncInvoker<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse>(request,
+            CloudRTCMeta.listRtcAbnormalEvent, hcClient);
+    }
+
+    /**
+     * 查询详情事件接口
+     *
+     * 查询指定APP下通话的异常明细数据。可查询5天内的数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRtcEventRequest 请求对象
+     * @return ListRtcEventResponse
+     */
+    public ListRtcEventResponse listRtcEvent(ListRtcEventRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudRTCMeta.listRtcEvent);
+    }
+
+    /**
+     * 查询详情事件接口
+     *
+     * 查询指定APP下通话的异常明细数据。可查询5天内的数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRtcEventRequest 请求对象
+     * @return SyncInvoker<ListRtcEventRequest, ListRtcEventResponse>
+     */
+    public SyncInvoker<ListRtcEventRequest, ListRtcEventResponse> listRtcEventInvoker(ListRtcEventRequest request) {
+        return new SyncInvoker<ListRtcEventRequest, ListRtcEventResponse>(request, CloudRTCMeta.listRtcEvent, hcClient);
     }
 
     /**

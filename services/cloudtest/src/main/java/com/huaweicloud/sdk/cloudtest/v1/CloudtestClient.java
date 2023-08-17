@@ -38,10 +38,14 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Request;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Response;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseRequest;
@@ -563,6 +567,36 @@ public class CloudtestClient {
     }
 
     /**
+     * 查询用户用例关联缺陷的统计信息
+     *
+     * 查询用户用例关联缺陷的统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTestCaseAndDefectInfoRequest 请求对象
+     * @return ShowTestCaseAndDefectInfoResponse
+     */
+    public ShowTestCaseAndDefectInfoResponse showTestCaseAndDefectInfo(ShowTestCaseAndDefectInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showTestCaseAndDefectInfo);
+    }
+
+    /**
+     * 查询用户用例关联缺陷的统计信息
+     *
+     * 查询用户用例关联缺陷的统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTestCaseAndDefectInfoRequest 请求对象
+     * @return SyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse>
+     */
+    public SyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse> showTestCaseAndDefectInfoInvoker(
+        ShowTestCaseAndDefectInfoRequest request) {
+        return new SyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse>(request,
+            CloudtestMeta.showTestCaseAndDefectInfo, hcClient);
+    }
+
+    /**
      * 获取测试用例详情
      *
      * 获取测试用例详情
@@ -620,6 +654,36 @@ public class CloudtestClient {
         ShowTestCaseDetailV2Request request) {
         return new SyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response>(request,
             CloudtestMeta.showTestCaseDetailV2, hcClient);
+    }
+
+    /**
+     * 查询时段内用例的执行情况
+     *
+     * 查询时段内用例的执行情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUserExecuteTestCaseInfoRequest 请求对象
+     * @return ShowUserExecuteTestCaseInfoResponse
+     */
+    public ShowUserExecuteTestCaseInfoResponse showUserExecuteTestCaseInfo(ShowUserExecuteTestCaseInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showUserExecuteTestCaseInfo);
+    }
+
+    /**
+     * 查询时段内用例的执行情况
+     *
+     * 查询时段内用例的执行情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUserExecuteTestCaseInfoRequest 请求对象
+     * @return SyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse>
+     */
+    public SyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfoInvoker(
+        ShowUserExecuteTestCaseInfoRequest request) {
+        return new SyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse>(request,
+            CloudtestMeta.showUserExecuteTestCaseInfo, hcClient);
     }
 
     /**

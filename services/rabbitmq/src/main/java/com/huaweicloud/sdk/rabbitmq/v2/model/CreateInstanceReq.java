@@ -107,17 +107,11 @@ public class CreateInstanceReq {
          */
         public static final EngineVersionEnum _3_8_35 = new EngineVersionEnum("3.8.35");
 
-        /**
-         * Enum _3_7_17 for value: "3.7.17"
-         */
-        public static final EngineVersionEnum _3_7_17 = new EngineVersionEnum("3.7.17");
-
         private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineVersionEnum> createStaticFields() {
             Map<String, EngineVersionEnum> map = new HashMap<>();
             map.put("3.8.35", _3_8_35);
-            map.put("3.7.17", _3_7_17);
             return Collections.unmodifiableMap(map);
         }
 

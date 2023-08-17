@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlProxyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlReadonlyNodeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlReadonlyNodeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMysqlDnsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMysqlDnsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlBackupRequest;
@@ -87,6 +89,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMysqlDnsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMysqlDnsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlDatabasePasswordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ResetGaussMySqlPasswordRequest;
@@ -596,6 +600,36 @@ public class GaussDBAsyncClient {
         CreateGaussMySqlReadonlyNodeRequest request) {
         return new AsyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>(request,
             GaussDBMeta.createGaussMySqlReadonlyNode, hcClient);
+    }
+
+    /**
+     * 申请内网域名
+     *
+     * 申请内网域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateGaussMysqlDnsRequest 请求对象
+     * @return CompletableFuture<CreateGaussMysqlDnsResponse>
+     */
+    public CompletableFuture<CreateGaussMysqlDnsResponse> createGaussMysqlDnsAsync(CreateGaussMysqlDnsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.createGaussMysqlDns);
+    }
+
+    /**
+     * 申请内网域名
+     *
+     * 申请内网域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateGaussMysqlDnsRequest 请求对象
+     * @return AsyncInvoker<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse>
+     */
+    public AsyncInvoker<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse> createGaussMysqlDnsAsyncInvoker(
+        CreateGaussMysqlDnsRequest request) {
+        return new AsyncInvoker<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse>(request,
+            GaussDBMeta.createGaussMysqlDns, hcClient);
     }
 
     /**
@@ -1461,6 +1495,36 @@ public class GaussDBAsyncClient {
         ModifyGaussMySqlProxyRouteModeRequest request) {
         return new AsyncInvoker<ModifyGaussMySqlProxyRouteModeRequest, ModifyGaussMySqlProxyRouteModeResponse>(request,
             GaussDBMeta.modifyGaussMySqlProxyRouteMode, hcClient);
+    }
+
+    /**
+     * 修改内网域名
+     *
+     * 修改内网域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyGaussMysqlDnsRequest 请求对象
+     * @return CompletableFuture<ModifyGaussMysqlDnsResponse>
+     */
+    public CompletableFuture<ModifyGaussMysqlDnsResponse> modifyGaussMysqlDnsAsync(ModifyGaussMysqlDnsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.modifyGaussMysqlDns);
+    }
+
+    /**
+     * 修改内网域名
+     *
+     * 修改内网域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyGaussMysqlDnsRequest 请求对象
+     * @return AsyncInvoker<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse>
+     */
+    public AsyncInvoker<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse> modifyGaussMysqlDnsAsyncInvoker(
+        ModifyGaussMysqlDnsRequest request) {
+        return new AsyncInvoker<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse>(request,
+            GaussDBMeta.modifyGaussMysqlDns, hcClient);
     }
 
     /**

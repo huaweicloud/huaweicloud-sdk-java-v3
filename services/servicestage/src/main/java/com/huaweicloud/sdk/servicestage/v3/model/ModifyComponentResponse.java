@@ -12,31 +12,9 @@ import java.util.Objects;
 public class ModifyComponentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "component_id")
-
-    private String componentId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
     private String jobId;
-
-    public ModifyComponentResponse withComponentId(String componentId) {
-        this.componentId = componentId;
-        return this;
-    }
-
-    /**
-     * 组件id
-     * @return componentId
-     */
-    public String getComponentId() {
-        return componentId;
-    }
-
-    public void setComponentId(String componentId) {
-        this.componentId = componentId;
-    }
 
     public ModifyComponentResponse withJobId(String jobId) {
         this.jobId = jobId;
@@ -64,19 +42,18 @@ public class ModifyComponentResponse extends SdkResponse {
             return false;
         }
         ModifyComponentResponse that = (ModifyComponentResponse) obj;
-        return Objects.equals(this.componentId, that.componentId) && Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(componentId, jobId);
+        return Objects.hash(jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ModifyComponentResponse {\n");
-        sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();

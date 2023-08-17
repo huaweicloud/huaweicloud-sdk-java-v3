@@ -105,7 +105,7 @@ public class ApiRespBaseInfo {
     private String version;
 
     /**
-     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
+     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS - GRPCS
      */
     public static final class ReqProtocolEnum {
 
@@ -124,6 +124,11 @@ public class ApiRespBaseInfo {
          */
         public static final ReqProtocolEnum BOTH = new ReqProtocolEnum("BOTH");
 
+        /**
+         * Enum GRPCS for value: "GRPCS"
+         */
+        public static final ReqProtocolEnum GRPCS = new ReqProtocolEnum("GRPCS");
+
         private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ReqProtocolEnum> createStaticFields() {
@@ -131,6 +136,7 @@ public class ApiRespBaseInfo {
             map.put("HTTP", HTTP);
             map.put("HTTPS", HTTPS);
             map.put("BOTH", BOTH);
+            map.put("GRPCS", GRPCS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -186,7 +192,7 @@ public class ApiRespBaseInfo {
     private ReqProtocolEnum reqProtocol;
 
     /**
-     * API的请求方式
+     * API的请求方式，当API的请求协议为GRPC类型协议时请求方式固定为POST。
      */
     public static final class ReqMethodEnum {
 
@@ -302,7 +308,7 @@ public class ApiRespBaseInfo {
     private String reqUri;
 
     /**
-     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证  当API的请求协议为GRPC类型时不支持自定义认证。
      */
     public static final class AuthTypeEnum {
 
@@ -474,7 +480,7 @@ public class ApiRespBaseInfo {
     private MatchModeEnum matchMode;
 
     /**
-     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 - GRPC：grpc后端
      */
     public static final class BackendTypeEnum {
 
@@ -493,6 +499,11 @@ public class ApiRespBaseInfo {
          */
         public static final BackendTypeEnum MOCK = new BackendTypeEnum("MOCK");
 
+        /**
+         * Enum GRPC for value: "GRPC"
+         */
+        public static final BackendTypeEnum GRPC = new BackendTypeEnum("GRPC");
+
         private static final Map<String, BackendTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, BackendTypeEnum> createStaticFields() {
@@ -500,6 +511,7 @@ public class ApiRespBaseInfo {
             map.put("HTTP", HTTP);
             map.put("FUNCTION", FUNCTION);
             map.put("MOCK", MOCK);
+            map.put("GRPC", GRPC);
             return Collections.unmodifiableMap(map);
         }
 
@@ -828,7 +840,7 @@ public class ApiRespBaseInfo {
     }
 
     /**
-     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
+     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS - GRPCS
      * @return reqProtocol
      */
     public ReqProtocolEnum getReqProtocol() {
@@ -845,7 +857,7 @@ public class ApiRespBaseInfo {
     }
 
     /**
-     * API的请求方式
+     * API的请求方式，当API的请求协议为GRPC类型协议时请求方式固定为POST。
      * @return reqMethod
      */
     public ReqMethodEnum getReqMethod() {
@@ -879,7 +891,7 @@ public class ApiRespBaseInfo {
     }
 
     /**
-     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证  当API的请求协议为GRPC类型时不支持自定义认证。
      * @return authType
      */
     public AuthTypeEnum getAuthType() {
@@ -956,7 +968,7 @@ public class ApiRespBaseInfo {
     }
 
     /**
-     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 - GRPC：grpc后端
      * @return backendType
      */
     public BackendTypeEnum getBackendType() {
@@ -1024,7 +1036,7 @@ public class ApiRespBaseInfo {
     }
 
     /**
-     * 正常响应示例，描述API的正常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * 正常响应示例，描述API的正常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。  当API的请求协议为GRPC类型时不支持配置。
      * @return resultNormalSample
      */
     public String getResultNormalSample() {
@@ -1041,7 +1053,7 @@ public class ApiRespBaseInfo {
     }
 
     /**
-     * 失败返回示例，描述API的异常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * 失败返回示例，描述API的异常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。  当API的请求协议为GRPC类型时不支持配置。
      * @return resultFailureSample
      */
     public String getResultFailureSample() {
@@ -1058,7 +1070,7 @@ public class ApiRespBaseInfo {
     }
 
     /**
-     * 前端自定义认证对象的ID
+     * 前端自定义认证对象的ID，API请求协议为GRPC类型时不支持前端自定义认证
      * @return authorizerId
      */
     public String getAuthorizerId() {

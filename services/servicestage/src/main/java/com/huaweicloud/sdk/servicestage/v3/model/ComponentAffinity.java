@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.servicestage.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,249 +13,118 @@ import java.util.function.Consumer;
  */
 public class ComponentAffinity {
 
-    /**
-     * 指定亲和和反亲和的类型
-     */
-    public static final class KindEnum {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az")
 
-        /**
-         * Enum NODE for value: "node"
-         */
-        public static final KindEnum NODE = new KindEnum("node");
-
-        /**
-         * Enum POD for value: "pod"
-         */
-        public static final KindEnum POD = new KindEnum("pod");
-
-        private static final Map<String, KindEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, KindEnum> createStaticFields() {
-            Map<String, KindEnum> map = new HashMap<>();
-            map.put("node", NODE);
-            map.put("pod", POD);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        KindEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static KindEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KindEnum(value));
-        }
-
-        public static KindEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof KindEnum) {
-                return this.value.equals(((KindEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private List<String> az = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kind")
+    @JsonProperty(value = "node")
 
-    private KindEnum kind;
-
-    /**
-     * Gets or Sets condition
-     */
-    public static final class ConditionEnum {
-
-        /**
-         * Enum REQUIRED for value: "required"
-         */
-        public static final ConditionEnum REQUIRED = new ConditionEnum("required");
-
-        /**
-         * Enum PREFERRED for value: "preferred"
-         */
-        public static final ConditionEnum PREFERRED = new ConditionEnum("preferred");
-
-        private static final Map<String, ConditionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ConditionEnum> createStaticFields() {
-            Map<String, ConditionEnum> map = new HashMap<>();
-            map.put("required", REQUIRED);
-            map.put("preferred", PREFERRED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ConditionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ConditionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionEnum(value));
-        }
-
-        public static ConditionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ConditionEnum) {
-                return this.value.equals(((ConditionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private List<String> node = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "condition")
+    @JsonProperty(value = "component")
 
-    private ConditionEnum condition;
+    private List<ComponentAffinityAppInnerParameters> component = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "weight")
-
-    private Integer weight;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "match_expressions")
-
-    private List<ComponentAffinityMatchExpressions> matchExpressions = null;
-
-    public ComponentAffinity withKind(KindEnum kind) {
-        this.kind = kind;
+    public ComponentAffinity withAz(List<String> az) {
+        this.az = az;
         return this;
     }
 
-    /**
-     * 指定亲和和反亲和的类型
-     * @return kind
-     */
-    public KindEnum getKind() {
-        return kind;
-    }
-
-    public void setKind(KindEnum kind) {
-        this.kind = kind;
-    }
-
-    public ComponentAffinity withCondition(ConditionEnum condition) {
-        this.condition = condition;
-        return this;
-    }
-
-    /**
-     * Get condition
-     * @return condition
-     */
-    public ConditionEnum getCondition() {
-        return condition;
-    }
-
-    public void setCondition(ConditionEnum condition) {
-        this.condition = condition;
-    }
-
-    public ComponentAffinity withWeight(Integer weight) {
-        this.weight = weight;
-        return this;
-    }
-
-    /**
-     * Get weight
-     * @return weight
-     */
-    public Integer getWeight() {
-        return weight;
-    }
-
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
-
-    public ComponentAffinity withMatchExpressions(List<ComponentAffinityMatchExpressions> matchExpressions) {
-        this.matchExpressions = matchExpressions;
-        return this;
-    }
-
-    public ComponentAffinity addMatchExpressionsItem(ComponentAffinityMatchExpressions matchExpressionsItem) {
-        if (this.matchExpressions == null) {
-            this.matchExpressions = new ArrayList<>();
+    public ComponentAffinity addAzItem(String azItem) {
+        if (this.az == null) {
+            this.az = new ArrayList<>();
         }
-        this.matchExpressions.add(matchExpressionsItem);
+        this.az.add(azItem);
         return this;
     }
 
-    public ComponentAffinity withMatchExpressions(
-        Consumer<List<ComponentAffinityMatchExpressions>> matchExpressionsSetter) {
-        if (this.matchExpressions == null) {
-            this.matchExpressions = new ArrayList<>();
+    public ComponentAffinity withAz(Consumer<List<String>> azSetter) {
+        if (this.az == null) {
+            this.az = new ArrayList<>();
         }
-        matchExpressionsSetter.accept(this.matchExpressions);
+        azSetter.accept(this.az);
         return this;
     }
 
     /**
-     * 匹配的条件列表
-     * @return matchExpressions
+     * Get az
+     * @return az
      */
-    public List<ComponentAffinityMatchExpressions> getMatchExpressions() {
-        return matchExpressions;
+    public List<String> getAz() {
+        return az;
     }
 
-    public void setMatchExpressions(List<ComponentAffinityMatchExpressions> matchExpressions) {
-        this.matchExpressions = matchExpressions;
+    public void setAz(List<String> az) {
+        this.az = az;
+    }
+
+    public ComponentAffinity withNode(List<String> node) {
+        this.node = node;
+        return this;
+    }
+
+    public ComponentAffinity addNodeItem(String nodeItem) {
+        if (this.node == null) {
+            this.node = new ArrayList<>();
+        }
+        this.node.add(nodeItem);
+        return this;
+    }
+
+    public ComponentAffinity withNode(Consumer<List<String>> nodeSetter) {
+        if (this.node == null) {
+            this.node = new ArrayList<>();
+        }
+        nodeSetter.accept(this.node);
+        return this;
+    }
+
+    /**
+     * Get node
+     * @return node
+     */
+    public List<String> getNode() {
+        return node;
+    }
+
+    public void setNode(List<String> node) {
+        this.node = node;
+    }
+
+    public ComponentAffinity withComponent(List<ComponentAffinityAppInnerParameters> component) {
+        this.component = component;
+        return this;
+    }
+
+    public ComponentAffinity addComponentItem(ComponentAffinityAppInnerParameters componentItem) {
+        if (this.component == null) {
+            this.component = new ArrayList<>();
+        }
+        this.component.add(componentItem);
+        return this;
+    }
+
+    public ComponentAffinity withComponent(Consumer<List<ComponentAffinityAppInnerParameters>> componentSetter) {
+        if (this.component == null) {
+            this.component = new ArrayList<>();
+        }
+        componentSetter.accept(this.component);
+        return this;
+    }
+
+    /**
+     * Get component
+     * @return component
+     */
+    public List<ComponentAffinityAppInnerParameters> getComponent() {
+        return component;
+    }
+
+    public void setComponent(List<ComponentAffinityAppInnerParameters> component) {
+        this.component = component;
     }
 
     @Override
@@ -272,23 +136,22 @@ public class ComponentAffinity {
             return false;
         }
         ComponentAffinity that = (ComponentAffinity) obj;
-        return Objects.equals(this.kind, that.kind) && Objects.equals(this.condition, that.condition)
-            && Objects.equals(this.weight, that.weight) && Objects.equals(this.matchExpressions, that.matchExpressions);
+        return Objects.equals(this.az, that.az) && Objects.equals(this.node, that.node)
+            && Objects.equals(this.component, that.component);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(kind, condition, weight, matchExpressions);
+        return Objects.hash(az, node, component);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ComponentAffinity {\n");
-        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
-        sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
-        sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
-        sb.append("    matchExpressions: ").append(toIndentedString(matchExpressions)).append("\n");
+        sb.append("    az: ").append(toIndentedString(az)).append("\n");
+        sb.append("    node: ").append(toIndentedString(node)).append("\n");
+        sb.append("    component: ").append(toIndentedString(component)).append("\n");
         sb.append("}");
         return sb.toString();
     }

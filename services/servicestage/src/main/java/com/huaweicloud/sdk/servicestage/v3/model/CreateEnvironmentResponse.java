@@ -25,6 +25,11 @@ public class CreateEnvironmentResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -141,11 +146,6 @@ public class CreateEnvironmentResponse extends SdkResponse {
     private DeployModeEnum deployMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resources")
-
-    private List<Resource> resources = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
     private List<EnvironmentViewLabels> labels = null;
@@ -165,6 +165,23 @@ public class CreateEnvironmentResponse extends SdkResponse {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public CreateEnvironmentResponse withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * Get projectId
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public CreateEnvironmentResponse withName(String name) {
@@ -303,39 +320,6 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.deployMode = deployMode;
     }
 
-    public CreateEnvironmentResponse withResources(List<Resource> resources) {
-        this.resources = resources;
-        return this;
-    }
-
-    public CreateEnvironmentResponse addResourcesItem(Resource resourcesItem) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
-        this.resources.add(resourcesItem);
-        return this;
-    }
-
-    public CreateEnvironmentResponse withResources(Consumer<List<Resource>> resourcesSetter) {
-        if (this.resources == null) {
-            this.resources = new ArrayList<>();
-        }
-        resourcesSetter.accept(this.resources);
-        return this;
-    }
-
-    /**
-     * Get resources
-     * @return resources
-     */
-    public List<Resource> getResources() {
-        return resources;
-    }
-
-    public void setResources(List<Resource> resources) {
-        this.resources = resources;
-    }
-
     public CreateEnvironmentResponse withLabels(List<EnvironmentViewLabels> labels) {
         this.labels = labels;
         return this;
@@ -378,18 +362,18 @@ public class CreateEnvironmentResponse extends SdkResponse {
             return false;
         }
         CreateEnvironmentResponse that = (CreateEnvironmentResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.creator, that.creator)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.deployMode, that.deployMode) && Objects.equals(this.resources, that.resources)
-            && Objects.equals(this.labels, that.labels);
+            && Objects.equals(this.deployMode, that.deployMode) && Objects.equals(this.labels, that.labels);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
+            projectId,
             name,
             description,
             enterpriseProjectId,
@@ -398,7 +382,6 @@ public class CreateEnvironmentResponse extends SdkResponse {
             createTime,
             updateTime,
             deployMode,
-            resources,
             labels);
     }
 
@@ -407,6 +390,7 @@ public class CreateEnvironmentResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateEnvironmentResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
@@ -415,7 +399,6 @@ public class CreateEnvironmentResponse extends SdkResponse {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    deployMode: ").append(toIndentedString(deployMode)).append("\n");
-        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("}");
         return sb.toString();

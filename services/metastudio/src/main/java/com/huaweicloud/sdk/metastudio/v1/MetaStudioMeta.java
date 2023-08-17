@@ -325,6 +325,13 @@ public class MetaStudioMeta {
             f -> f.withMarshaller(ListAssetsRequest::getSystemProperty, (req, v) -> {
                 req.setSystemProperty(v);
             }));
+        builder.<Boolean>withRequestField("action_editable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAssetsRequest::getActionEditable, (req, v) -> {
+                req.setActionEditable(v);
+            }));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

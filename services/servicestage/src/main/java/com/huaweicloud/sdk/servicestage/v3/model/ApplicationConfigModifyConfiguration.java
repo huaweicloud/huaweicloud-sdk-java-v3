@@ -16,14 +16,14 @@ public class ApplicationConfigModifyConfiguration {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env")
 
-    private List<DnsConfigOptions> env = null;
+    private List<ApplicationConfigModifyConfigurationEnv> env = null;
 
-    public ApplicationConfigModifyConfiguration withEnv(List<DnsConfigOptions> env) {
+    public ApplicationConfigModifyConfiguration withEnv(List<ApplicationConfigModifyConfigurationEnv> env) {
         this.env = env;
         return this;
     }
 
-    public ApplicationConfigModifyConfiguration addEnvItem(DnsConfigOptions envItem) {
+    public ApplicationConfigModifyConfiguration addEnvItem(ApplicationConfigModifyConfigurationEnv envItem) {
         if (this.env == null) {
             this.env = new ArrayList<>();
         }
@@ -31,7 +31,8 @@ public class ApplicationConfigModifyConfiguration {
         return this;
     }
 
-    public ApplicationConfigModifyConfiguration withEnv(Consumer<List<DnsConfigOptions>> envSetter) {
+    public ApplicationConfigModifyConfiguration withEnv(
+        Consumer<List<ApplicationConfigModifyConfigurationEnv>> envSetter) {
         if (this.env == null) {
             this.env = new ArrayList<>();
         }
@@ -43,11 +44,11 @@ public class ApplicationConfigModifyConfiguration {
      * application environment parameters
      * @return env
      */
-    public List<DnsConfigOptions> getEnv() {
+    public List<ApplicationConfigModifyConfigurationEnv> getEnv() {
         return env;
     }
 
-    public void setEnv(List<DnsConfigOptions> env) {
+    public void setEnv(List<ApplicationConfigModifyConfigurationEnv> env) {
         this.env = env;
     }
 

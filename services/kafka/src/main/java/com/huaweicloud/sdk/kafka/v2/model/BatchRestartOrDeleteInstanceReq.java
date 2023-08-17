@@ -104,16 +104,6 @@ public class BatchRestartOrDeleteInstanceReq {
     public static final class AllFailureEnum {
 
         /**
-         * Enum TRUE for value: "true"
-         */
-        public static final AllFailureEnum TRUE = new AllFailureEnum("true");
-
-        /**
-         * Enum FALSE for value: "false"
-         */
-        public static final AllFailureEnum FALSE = new AllFailureEnum("false");
-
-        /**
          * Enum KAFKA for value: "kafka"
          */
         public static final AllFailureEnum KAFKA = new AllFailureEnum("kafka");
@@ -122,8 +112,6 @@ public class BatchRestartOrDeleteInstanceReq {
 
         private static Map<String, AllFailureEnum> createStaticFields() {
             Map<String, AllFailureEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("false", FALSE);
             map.put("kafka", KAFKA);
             return Collections.unmodifiableMap(map);
         }
@@ -175,7 +163,7 @@ public class BatchRestartOrDeleteInstanceReq {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "all_failure")
+    @JsonProperty(value = "allFailure")
 
     private AllFailureEnum allFailure;
 

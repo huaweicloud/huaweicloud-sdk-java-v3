@@ -19,9 +19,14 @@ import com.huaweicloud.sdk.cloudrtc.v2.model.DeleteRecordRuleResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.IndividualStreamJobReq;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ListAppsRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ListAppsResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListObsBucketObjectsRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListObsBucketObjectsResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListObsBucketsRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListObsBucketsResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ListRecordRulesRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ListRecordRulesResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.MixJobReq;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ObsAuthorityConfig;
 import com.huaweicloud.sdk.cloudrtc.v2.model.RecordRuleReq;
 import com.huaweicloud.sdk.cloudrtc.v2.model.RemoveRoomRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.RemoveRoomResponse;
@@ -58,6 +63,8 @@ import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateIndividualStreamJobResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateMixJobReq;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateMixJobRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateMixJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateObsBucketAuthorityRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateObsBucketAuthorityResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordRuleRequest;
@@ -1621,6 +1628,113 @@ public class CloudRTCMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(UpdateUrlAuthResponse::getXRequestId, UpdateUrlAuthResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse> listObsBucketObjects =
+        genForlistObsBucketObjects();
+
+    private static HttpRequestDef<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse> genForlistObsBucketObjects() {
+        // basic
+        HttpRequestDef.Builder<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListObsBucketObjectsRequest.class, ListObsBucketObjectsResponse.class)
+            .withName("ListObsBucketObjects")
+            .withUri("/v2/rtc-ops/buckets/objects")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObsBucketObjectsRequest::getBucket, (req, v) -> {
+                req.setBucket(v);
+            }));
+        builder.<String>withRequestField("prefix",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObsBucketObjectsRequest::getPrefix, (req, v) -> {
+                req.setPrefix(v);
+            }));
+        builder.<ListObsBucketObjectsRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListObsBucketObjectsRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListObsBucketObjectsRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<ListObsBucketObjectsRequest.LocationEnum>withRequestField("location",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListObsBucketObjectsRequest.LocationEnum.class),
+            f -> f.withMarshaller(ListObsBucketObjectsRequest::getLocation, (req, v) -> {
+                req.setLocation(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListObsBucketObjectsResponse::getXRequestId,
+                ListObsBucketObjectsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> listObsBuckets =
+        genForlistObsBuckets();
+
+    private static HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> genForlistObsBuckets() {
+        // basic
+        HttpRequestDef.Builder<ListObsBucketsRequest, ListObsBucketsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListObsBucketsRequest.class, ListObsBucketsResponse.class)
+                .withName("ListObsBuckets")
+                .withUri("/v2/rtc-ops/buckets")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListObsBucketsResponse::getXRequestId, ListObsBucketsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse> updateObsBucketAuthority =
+        genForupdateObsBucketAuthority();
+
+    private static HttpRequestDef<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse> genForupdateObsBucketAuthority() {
+        // basic
+        HttpRequestDef.Builder<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateObsBucketAuthorityRequest.class, UpdateObsBucketAuthorityResponse.class)
+                .withName("UpdateObsBucketAuthority")
+                .withUri("/v2/rtc-ops/buckets/authentication")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ObsAuthorityConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ObsAuthorityConfig.class),
+            f -> f.withMarshaller(UpdateObsBucketAuthorityRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateObsBucketAuthorityResponse::getXRequestId,
+                UpdateObsBucketAuthorityResponse::setXRequestId));
         return builder.build();
     }
 

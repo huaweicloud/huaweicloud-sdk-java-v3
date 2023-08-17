@@ -19,6 +19,11 @@ public class ApplicationModify {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -26,7 +31,7 @@ public class ApplicationModify {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    private List<EnvironmentViewLabels> labels = null;
+    private List<EnvironmentCreateLabels> labels = null;
 
     public ApplicationModify withName(String name) {
         this.name = name;
@@ -43,6 +48,23 @@ public class ApplicationModify {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ApplicationModify withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * Get enterpriseProjectId
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public ApplicationModify withDescription(String description) {
@@ -62,12 +84,12 @@ public class ApplicationModify {
         this.description = description;
     }
 
-    public ApplicationModify withLabels(List<EnvironmentViewLabels> labels) {
+    public ApplicationModify withLabels(List<EnvironmentCreateLabels> labels) {
         this.labels = labels;
         return this;
     }
 
-    public ApplicationModify addLabelsItem(EnvironmentViewLabels labelsItem) {
+    public ApplicationModify addLabelsItem(EnvironmentCreateLabels labelsItem) {
         if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
@@ -75,7 +97,7 @@ public class ApplicationModify {
         return this;
     }
 
-    public ApplicationModify withLabels(Consumer<List<EnvironmentViewLabels>> labelsSetter) {
+    public ApplicationModify withLabels(Consumer<List<EnvironmentCreateLabels>> labelsSetter) {
         if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
@@ -87,11 +109,11 @@ public class ApplicationModify {
      * Get labels
      * @return labels
      */
-    public List<EnvironmentViewLabels> getLabels() {
+    public List<EnvironmentCreateLabels> getLabels() {
         return labels;
     }
 
-    public void setLabels(List<EnvironmentViewLabels> labels) {
+    public void setLabels(List<EnvironmentCreateLabels> labels) {
         this.labels = labels;
     }
 
@@ -104,13 +126,14 @@ public class ApplicationModify {
             return false;
         }
         ApplicationModify that = (ApplicationModify) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.labels, that.labels);
+        return Objects.equals(this.name, that.name)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, labels);
+        return Objects.hash(name, enterpriseProjectId, description, labels);
     }
 
     @Override
@@ -118,6 +141,7 @@ public class ApplicationModify {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplicationModify {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("}");

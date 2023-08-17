@@ -41,6 +41,11 @@ public class AssetExtraMeta {
 
     private MaterialAssetMeta materialMeta;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "human_model_2d_meta")
+
+    private HumanModel2DAssetMeta humanModel2dMeta;
+
     public AssetExtraMeta withHumanModelMeta(HumanModelAssetMeta humanModelMeta) {
         this.humanModelMeta = humanModelMeta;
         return this;
@@ -197,6 +202,32 @@ public class AssetExtraMeta {
         this.materialMeta = materialMeta;
     }
 
+    public AssetExtraMeta withHumanModel2dMeta(HumanModel2DAssetMeta humanModel2dMeta) {
+        this.humanModel2dMeta = humanModel2dMeta;
+        return this;
+    }
+
+    public AssetExtraMeta withHumanModel2dMeta(Consumer<HumanModel2DAssetMeta> humanModel2dMetaSetter) {
+        if (this.humanModel2dMeta == null) {
+            this.humanModel2dMeta = new HumanModel2DAssetMeta();
+            humanModel2dMetaSetter.accept(this.humanModel2dMeta);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get humanModel2dMeta
+     * @return humanModel2dMeta
+     */
+    public HumanModel2DAssetMeta getHumanModel2dMeta() {
+        return humanModel2dMeta;
+    }
+
+    public void setHumanModel2dMeta(HumanModel2DAssetMeta humanModel2dMeta) {
+        this.humanModel2dMeta = humanModel2dMeta;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -209,12 +240,14 @@ public class AssetExtraMeta {
         return Objects.equals(this.humanModelMeta, that.humanModelMeta)
             && Objects.equals(this.voiceModelMeta, that.voiceModelMeta) && Objects.equals(this.pptMeta, that.pptMeta)
             && Objects.equals(this.animationMeta, that.animationMeta) && Objects.equals(this.sceneMeta, that.sceneMeta)
-            && Objects.equals(this.materialMeta, that.materialMeta);
+            && Objects.equals(this.materialMeta, that.materialMeta)
+            && Objects.equals(this.humanModel2dMeta, that.humanModel2dMeta);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(humanModelMeta, voiceModelMeta, pptMeta, animationMeta, sceneMeta, materialMeta);
+        return Objects
+            .hash(humanModelMeta, voiceModelMeta, pptMeta, animationMeta, sceneMeta, materialMeta, humanModel2dMeta);
     }
 
     @Override
@@ -227,6 +260,7 @@ public class AssetExtraMeta {
         sb.append("    animationMeta: ").append(toIndentedString(animationMeta)).append("\n");
         sb.append("    sceneMeta: ").append(toIndentedString(sceneMeta)).append("\n");
         sb.append("    materialMeta: ").append(toIndentedString(materialMeta)).append("\n");
+        sb.append("    humanModel2dMeta: ").append(toIndentedString(humanModel2dMeta)).append("\n");
         sb.append("}");
         return sb.toString();
     }

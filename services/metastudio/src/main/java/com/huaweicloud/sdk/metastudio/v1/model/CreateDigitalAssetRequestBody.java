@@ -29,7 +29,7 @@ public class CreateDigitalAssetRequestBody {
     private String assetDescription;
 
     /**
-     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可上传） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板
+     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可上传） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐
      */
     public static final class AssetTypeEnum {
 
@@ -69,6 +69,11 @@ public class CreateDigitalAssetRequestBody {
         public static final AssetTypeEnum PPT = new AssetTypeEnum("PPT");
 
         /**
+         * Enum MATERIAL for value: "MATERIAL"
+         */
+        public static final AssetTypeEnum MATERIAL = new AssetTypeEnum("MATERIAL");
+
+        /**
          * Enum NORMAL_MODEL for value: "NORMAL_MODEL"
          */
         public static final AssetTypeEnum NORMAL_MODEL = new AssetTypeEnum("NORMAL_MODEL");
@@ -88,6 +93,11 @@ public class CreateDigitalAssetRequestBody {
          */
         public static final AssetTypeEnum BUSINESS_CARD_TEMPLET = new AssetTypeEnum("BUSINESS_CARD_TEMPLET");
 
+        /**
+         * Enum MUSIC for value: "MUSIC"
+         */
+        public static final AssetTypeEnum MUSIC = new AssetTypeEnum("MUSIC");
+
         private static final Map<String, AssetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssetTypeEnum> createStaticFields() {
@@ -99,10 +109,12 @@ public class CreateDigitalAssetRequestBody {
             map.put("VIDEO", VIDEO);
             map.put("IMAGE", IMAGE);
             map.put("PPT", PPT);
+            map.put("MATERIAL", MATERIAL);
             map.put("NORMAL_MODEL", NORMAL_MODEL);
             map.put("COMMON_FILE", COMMON_FILE);
             map.put("HUMAN_MODEL_2D", HUMAN_MODEL_2D);
             map.put("BUSINESS_CARD_TEMPLET", BUSINESS_CARD_TEMPLET);
+            map.put("MUSIC", MUSIC);
             return Collections.unmodifiableMap(map);
         }
 
@@ -217,7 +229,7 @@ public class CreateDigitalAssetRequestBody {
     }
 
     /**
-     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可上传） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板
+     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可上传） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐
      * @return assetType
      */
     public AssetTypeEnum getAssetType() {

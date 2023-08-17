@@ -20,6 +20,11 @@ public class Agency {
 
     private String agencyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_urn")
+
+    private String agencyUrn;
+
     public Agency withProviderName(String providerName) {
         this.providerName = providerName;
         return this;
@@ -43,7 +48,7 @@ public class Agency {
     }
 
     /**
-     * 对应provider所使用的IAM委托名称，资源编排服务会使用此委托的权限去访问、创建对应provider的资源
+     * 对应provider所使用的IAM委托名称，资源编排服务会使用此委托的权限去访问、创建对应provider的资源。agency_name和agency_urn必须有且只有一个存在
      * @return agencyName
      */
     public String getAgencyName() {
@@ -52,6 +57,23 @@ public class Agency {
 
     public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
+    }
+
+    public Agency withAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+        return this;
+    }
+
+    /**
+     * 委托URN  当用户定义Agency时，agency_name和agency_urn 必须有且只有一个存在。  推荐用户在使用v5委托时给与agency_urn，agency_name只支持接收普通委托名称，若给与了v5委托名称，则会在部署模板时失败。
+     * @return agencyUrn
+     */
+    public String getAgencyUrn() {
+        return agencyUrn;
+    }
+
+    public void setAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
     }
 
     @Override
@@ -63,12 +85,13 @@ public class Agency {
             return false;
         }
         Agency that = (Agency) obj;
-        return Objects.equals(this.providerName, that.providerName) && Objects.equals(this.agencyName, that.agencyName);
+        return Objects.equals(this.providerName, that.providerName) && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.agencyUrn, that.agencyUrn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(providerName, agencyName);
+        return Objects.hash(providerName, agencyName, agencyUrn);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class Agency {
         sb.append("class Agency {\n");
         sb.append("    providerName: ").append(toIndentedString(providerName)).append("\n");
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
+        sb.append("    agencyUrn: ").append(toIndentedString(agencyUrn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

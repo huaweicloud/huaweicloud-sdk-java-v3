@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class PostPaidServerRootVolume {
 
     /**
-     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  - SATA：普通IO磁盘类型。 - SAS：高IO磁盘类型。 - SSD：超高IO磁盘类型。 - co-p1：高IO (性能优化Ⅰ型) - uh-l1：超高IO (时延优化)  > 说明： >  > 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
+     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。   - SATA：普通IO磁盘类型。  - SAS：高IO磁盘类型。  - SSD：超高IO磁盘类型。  - co-p1：高IO (性能优化Ⅰ型)。  - uh-l1：超高IO (时延优化)。  - GPSSD2：通用型SSD V2磁盘类型。  - ESSD2：极速型SSD V2磁盘类型。   > 说明： >  > 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。  了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。  获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=EVS&api=CinderListVolumeTypes)
      */
     public static final class VolumetypeEnum {
 
@@ -56,6 +56,16 @@ public class PostPaidServerRootVolume {
          */
         public static final VolumetypeEnum ESSD = new VolumetypeEnum("ESSD");
 
+        /**
+         * Enum GPSSD2 for value: "GPSSD2"
+         */
+        public static final VolumetypeEnum GPSSD2 = new VolumetypeEnum("GPSSD2");
+
+        /**
+         * Enum ESSD2 for value: "ESSD2"
+         */
+        public static final VolumetypeEnum ESSD2 = new VolumetypeEnum("ESSD2");
+
         private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumetypeEnum> createStaticFields() {
@@ -67,6 +77,8 @@ public class PostPaidServerRootVolume {
             map.put("co-p1", CO_P1);
             map.put("uh-l1", UH_L1);
             map.put("ESSD", ESSD);
+            map.put("GPSSD2", GPSSD2);
+            map.put("ESSD2", ESSD2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -125,6 +137,16 @@ public class PostPaidServerRootVolume {
     @JsonProperty(value = "size")
 
     private Integer size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Integer throughput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hw:passthrough")
@@ -221,7 +243,7 @@ public class PostPaidServerRootVolume {
     }
 
     /**
-     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  - SATA：普通IO磁盘类型。 - SAS：高IO磁盘类型。 - SSD：超高IO磁盘类型。 - co-p1：高IO (性能优化Ⅰ型) - uh-l1：超高IO (时延优化)  > 说明： >  > 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。
+     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。   - SATA：普通IO磁盘类型。  - SAS：高IO磁盘类型。  - SSD：超高IO磁盘类型。  - co-p1：高IO (性能优化Ⅰ型)。  - uh-l1：超高IO (时延优化)。  - GPSSD2：通用型SSD V2磁盘类型。  - ESSD2：极速型SSD V2磁盘类型。   > 说明： >  > 对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。  了解不同磁盘类型的详细信息，请参见 [磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。  获取region可用的卷类型，请参见[查询云硬盘类型列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=EVS&api=CinderListVolumeTypes)
      * @return volumetype
      */
     public VolumetypeEnum getVolumetype() {
@@ -249,6 +271,40 @@ public class PostPaidServerRootVolume {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    public PostPaidServerRootVolume withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * 给云硬盘配置iops，购买GPSSD2、ESSD2类型的云硬盘时必填，其他类型不能设置。  说明： 1、了解GPSSD2、ESSD2类型的iops大小范围，请参见 [云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 2、只支持按需计费。
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    public PostPaidServerRootVolume withThroughput(Integer throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 给云硬盘配置吞吐量，单位是MiB/s，购买GPSSD2类型云盘时必填，其他类型不能设置。  说明： 1、了解GPSSD2类型的吞吐量大小范围，请参见 [云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。 2、只支持按需计费。
+     * @return throughput
+     */
+    public Integer getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
     }
 
     public PostPaidServerRootVolume withHwPassthrough(Boolean hwPassthrough) {
@@ -364,6 +420,7 @@ public class PostPaidServerRootVolume {
         }
         PostPaidServerRootVolume that = (PostPaidServerRootVolume) obj;
         return Objects.equals(this.volumetype, that.volumetype) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.iops, that.iops) && Objects.equals(this.throughput, that.throughput)
             && Objects.equals(this.hwPassthrough, that.hwPassthrough)
             && Objects.equals(this.clusterType, that.clusterType) && Objects.equals(this.clusterId, that.clusterId)
             && Objects.equals(this.extendparam, that.extendparam) && Objects.equals(this.metadata, that.metadata);
@@ -371,7 +428,8 @@ public class PostPaidServerRootVolume {
 
     @Override
     public int hashCode() {
-        return Objects.hash(volumetype, size, hwPassthrough, clusterType, clusterId, extendparam, metadata);
+        return Objects
+            .hash(volumetype, size, iops, throughput, hwPassthrough, clusterType, clusterId, extendparam, metadata);
     }
 
     @Override
@@ -380,6 +438,8 @@ public class PostPaidServerRootVolume {
         sb.append("class PostPaidServerRootVolume {\n");
         sb.append("    volumetype: ").append(toIndentedString(volumetype)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("    hwPassthrough: ").append(toIndentedString(hwPassthrough)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");

@@ -531,6 +531,21 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private BandwidthInfo bandwidthInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_service_type_code")
+
+    private String cloudServiceTypeCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_resource_type_code")
+
+    private String cloudResourceTypeCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inquery_spec_code")
+
+    private String inquerySpecCode;
+
     public ShowInstanceResponse withVpcName(String vpcName) {
         this.vpcName = vpcName;
         return this;
@@ -1585,6 +1600,57 @@ public class ShowInstanceResponse extends SdkResponse {
         this.bandwidthInfo = bandwidthInfo;
     }
 
+    public ShowInstanceResponse withCloudServiceTypeCode(String cloudServiceTypeCode) {
+        this.cloudServiceTypeCode = cloudServiceTypeCode;
+        return this;
+    }
+
+    /**
+     * 云服务类型编码。
+     * @return cloudServiceTypeCode
+     */
+    public String getCloudServiceTypeCode() {
+        return cloudServiceTypeCode;
+    }
+
+    public void setCloudServiceTypeCode(String cloudServiceTypeCode) {
+        this.cloudServiceTypeCode = cloudServiceTypeCode;
+    }
+
+    public ShowInstanceResponse withCloudResourceTypeCode(String cloudResourceTypeCode) {
+        this.cloudResourceTypeCode = cloudResourceTypeCode;
+        return this;
+    }
+
+    /**
+     * 云资源类型编码。
+     * @return cloudResourceTypeCode
+     */
+    public String getCloudResourceTypeCode() {
+        return cloudResourceTypeCode;
+    }
+
+    public void setCloudResourceTypeCode(String cloudResourceTypeCode) {
+        this.cloudResourceTypeCode = cloudResourceTypeCode;
+    }
+
+    public ShowInstanceResponse withInquerySpecCode(String inquerySpecCode) {
+        this.inquerySpecCode = inquerySpecCode;
+        return this;
+    }
+
+    /**
+     * 运营系统中的规格编码
+     * @return inquerySpecCode
+     */
+    public String getInquerySpecCode() {
+        return inquerySpecCode;
+    }
+
+    public void setInquerySpecCode(String inquerySpecCode) {
+        this.inquerySpecCode = inquerySpecCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1632,7 +1698,10 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.supportSlowLogFlag, that.supportSlowLogFlag)
             && Objects.equals(this.dbNumber, that.dbNumber) && Objects.equals(this.replicaCount, that.replicaCount)
             && Objects.equals(this.shardingCount, that.shardingCount)
-            && Objects.equals(this.bandwidthInfo, that.bandwidthInfo);
+            && Objects.equals(this.bandwidthInfo, that.bandwidthInfo)
+            && Objects.equals(this.cloudServiceTypeCode, that.cloudServiceTypeCode)
+            && Objects.equals(this.cloudResourceTypeCode, that.cloudResourceTypeCode)
+            && Objects.equals(this.inquerySpecCode, that.inquerySpecCode);
     }
 
     @Override
@@ -1694,7 +1763,10 @@ public class ShowInstanceResponse extends SdkResponse {
             dbNumber,
             replicaCount,
             shardingCount,
-            bandwidthInfo);
+            bandwidthInfo,
+            cloudServiceTypeCode,
+            cloudResourceTypeCode,
+            inquerySpecCode);
     }
 
     @Override
@@ -1759,6 +1831,9 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    replicaCount: ").append(toIndentedString(replicaCount)).append("\n");
         sb.append("    shardingCount: ").append(toIndentedString(shardingCount)).append("\n");
         sb.append("    bandwidthInfo: ").append(toIndentedString(bandwidthInfo)).append("\n");
+        sb.append("    cloudServiceTypeCode: ").append(toIndentedString(cloudServiceTypeCode)).append("\n");
+        sb.append("    cloudResourceTypeCode: ").append(toIndentedString(cloudResourceTypeCode)).append("\n");
+        sb.append("    inquerySpecCode: ").append(toIndentedString(inquerySpecCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

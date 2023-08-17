@@ -143,7 +143,7 @@ public class ShowComponentInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_metric")
 
-    private ComponentModifyCustomMetric customMetric;
+    private ComponentCreateCustomMetric customMetric;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "affinity")
@@ -745,14 +745,14 @@ public class ShowComponentInfoResponse extends SdkResponse {
         this.logs = logs;
     }
 
-    public ShowComponentInfoResponse withCustomMetric(ComponentModifyCustomMetric customMetric) {
+    public ShowComponentInfoResponse withCustomMetric(ComponentCreateCustomMetric customMetric) {
         this.customMetric = customMetric;
         return this;
     }
 
-    public ShowComponentInfoResponse withCustomMetric(Consumer<ComponentModifyCustomMetric> customMetricSetter) {
+    public ShowComponentInfoResponse withCustomMetric(Consumer<ComponentCreateCustomMetric> customMetricSetter) {
         if (this.customMetric == null) {
-            this.customMetric = new ComponentModifyCustomMetric();
+            this.customMetric = new ComponentCreateCustomMetric();
             customMetricSetter.accept(this.customMetric);
         }
 
@@ -763,11 +763,11 @@ public class ShowComponentInfoResponse extends SdkResponse {
      * Get customMetric
      * @return customMetric
      */
-    public ComponentModifyCustomMetric getCustomMetric() {
+    public ComponentCreateCustomMetric getCustomMetric() {
         return customMetric;
     }
 
-    public void setCustomMetric(ComponentModifyCustomMetric customMetric) {
+    public void setCustomMetric(ComponentCreateCustomMetric customMetric) {
         this.customMetric = customMetric;
     }
 

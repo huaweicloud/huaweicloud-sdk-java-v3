@@ -25,6 +25,11 @@ public class ShowEnvironmentInfoResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -165,6 +170,23 @@ public class ShowEnvironmentInfoResponse extends SdkResponse {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public ShowEnvironmentInfoResponse withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * Get projectId
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public ShowEnvironmentInfoResponse withName(String name) {
@@ -378,8 +400,8 @@ public class ShowEnvironmentInfoResponse extends SdkResponse {
             return false;
         }
         ShowEnvironmentInfoResponse that = (ShowEnvironmentInfoResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.creator, that.creator)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
@@ -390,6 +412,7 @@ public class ShowEnvironmentInfoResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(id,
+            projectId,
             name,
             description,
             enterpriseProjectId,
@@ -407,6 +430,7 @@ public class ShowEnvironmentInfoResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEnvironmentInfoResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

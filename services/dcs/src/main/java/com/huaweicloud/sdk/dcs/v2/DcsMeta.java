@@ -151,6 +151,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowTagsRequest;
@@ -2279,6 +2281,31 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMigrationTaskStatsRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNodesInformationRequest, ShowNodesInformationResponse> showNodesInformation =
+        genForshowNodesInformation();
+
+    private static HttpRequestDef<ShowNodesInformationRequest, ShowNodesInformationResponse> genForshowNodesInformation() {
+        // basic
+        HttpRequestDef.Builder<ShowNodesInformationRequest, ShowNodesInformationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowNodesInformationRequest.class, ShowNodesInformationResponse.class)
+            .withName("ShowNodesInformation")
+            .withUri("/v2/{project_id}/instances/{instance_id}/logical-nodes")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNodesInformationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response

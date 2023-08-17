@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -20,7 +22,7 @@ public class ListSnapshotConfigsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshot_config_list")
 
-    private LiveSnapshotConfig snapshotConfigList;
+    private List<LiveSnapshotConfig> snapshotConfigList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -49,29 +51,37 @@ public class ListSnapshotConfigsResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListSnapshotConfigsResponse withSnapshotConfigList(LiveSnapshotConfig snapshotConfigList) {
+    public ListSnapshotConfigsResponse withSnapshotConfigList(List<LiveSnapshotConfig> snapshotConfigList) {
         this.snapshotConfigList = snapshotConfigList;
         return this;
     }
 
-    public ListSnapshotConfigsResponse withSnapshotConfigList(Consumer<LiveSnapshotConfig> snapshotConfigListSetter) {
+    public ListSnapshotConfigsResponse addSnapshotConfigListItem(LiveSnapshotConfig snapshotConfigListItem) {
         if (this.snapshotConfigList == null) {
-            this.snapshotConfigList = new LiveSnapshotConfig();
-            snapshotConfigListSetter.accept(this.snapshotConfigList);
+            this.snapshotConfigList = new ArrayList<>();
         }
+        this.snapshotConfigList.add(snapshotConfigListItem);
+        return this;
+    }
 
+    public ListSnapshotConfigsResponse withSnapshotConfigList(
+        Consumer<List<LiveSnapshotConfig>> snapshotConfigListSetter) {
+        if (this.snapshotConfigList == null) {
+            this.snapshotConfigList = new ArrayList<>();
+        }
+        snapshotConfigListSetter.accept(this.snapshotConfigList);
         return this;
     }
 
     /**
-     * Get snapshotConfigList
+     * 截图配置
      * @return snapshotConfigList
      */
-    public LiveSnapshotConfig getSnapshotConfigList() {
+    public List<LiveSnapshotConfig> getSnapshotConfigList() {
         return snapshotConfigList;
     }
 
-    public void setSnapshotConfigList(LiveSnapshotConfig snapshotConfigList) {
+    public void setSnapshotConfigList(List<LiveSnapshotConfig> snapshotConfigList) {
         this.snapshotConfigList = snapshotConfigList;
     }
 

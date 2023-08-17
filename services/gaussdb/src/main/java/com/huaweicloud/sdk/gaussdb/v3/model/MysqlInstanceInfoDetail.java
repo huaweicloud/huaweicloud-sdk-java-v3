@@ -84,6 +84,11 @@ public class MysqlInstanceInfoDetail {
     private List<String> privateWriteIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "private_dns_names")
+
+    private List<String> privateDnsNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ips")
 
     private String publicIps;
@@ -435,6 +440,39 @@ public class MysqlInstanceInfoDetail {
         this.privateWriteIps = privateWriteIps;
     }
 
+    public MysqlInstanceInfoDetail withPrivateDnsNames(List<String> privateDnsNames) {
+        this.privateDnsNames = privateDnsNames;
+        return this;
+    }
+
+    public MysqlInstanceInfoDetail addPrivateDnsNamesItem(String privateDnsNamesItem) {
+        if (this.privateDnsNames == null) {
+            this.privateDnsNames = new ArrayList<>();
+        }
+        this.privateDnsNames.add(privateDnsNamesItem);
+        return this;
+    }
+
+    public MysqlInstanceInfoDetail withPrivateDnsNames(Consumer<List<String>> privateDnsNamesSetter) {
+        if (this.privateDnsNames == null) {
+            this.privateDnsNames = new ArrayList<>();
+        }
+        privateDnsNamesSetter.accept(this.privateDnsNames);
+        return this;
+    }
+
+    /**
+     * 实例内网域名列表。实例创建成功后，需要手动申请内网域名，否则查询内网域名为空。
+     * @return privateDnsNames
+     */
+    public List<String> getPrivateDnsNames() {
+        return privateDnsNames;
+    }
+
+    public void setPrivateDnsNames(List<String> privateDnsNames) {
+        this.privateDnsNames = privateDnsNames;
+    }
+
     public MysqlInstanceInfoDetail withPublicIps(String publicIps) {
         this.publicIps = publicIps;
         return this;
@@ -780,6 +818,7 @@ public class MysqlInstanceInfoDetail {
             && Objects.equals(this.nodeCount, that.nodeCount) && Objects.equals(this.datastore, that.datastore)
             && Objects.equals(this.backupUsedSpace, that.backupUsedSpace) && Objects.equals(this.created, that.created)
             && Objects.equals(this.updated, that.updated) && Objects.equals(this.privateWriteIps, that.privateWriteIps)
+            && Objects.equals(this.privateDnsNames, that.privateDnsNames)
             && Objects.equals(this.publicIps, that.publicIps) && Objects.equals(this.dbUserName, that.dbUserName)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.securityGroupId, that.securityGroupId)
@@ -809,6 +848,7 @@ public class MysqlInstanceInfoDetail {
             created,
             updated,
             privateWriteIps,
+            privateDnsNames,
             publicIps,
             dbUserName,
             vpcId,
@@ -845,6 +885,7 @@ public class MysqlInstanceInfoDetail {
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    privateWriteIps: ").append(toIndentedString(privateWriteIps)).append("\n");
+        sb.append("    privateDnsNames: ").append(toIndentedString(privateDnsNames)).append("\n");
         sb.append("    publicIps: ").append(toIndentedString(publicIps)).append("\n");
         sb.append("    dbUserName: ").append(toIndentedString(dbUserName)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");

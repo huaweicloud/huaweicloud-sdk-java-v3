@@ -24,6 +24,7 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ChangeGaussMySqlProxySpecificationRe
 import com.huaweicloud.sdk.gaussdb.v3.model.CloseMysqlProxyRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateConfigurationRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateDnsNameReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlBackupRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlBackupResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlConfigurationRequest;
@@ -39,6 +40,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlProxyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlReadonlyNodeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMySqlReadonlyNodeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMysqlDnsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateGaussMysqlDnsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionResponse;
@@ -105,9 +108,12 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAliasRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBindEipRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDnsNameReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMysqlDnsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMysqlDnsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyInternalIpRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyOpsWindow;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyPortRequest;
@@ -731,6 +737,45 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MysqlCreateReadonlyNodeRequest.class),
             f -> f.withMarshaller(CreateGaussMySqlReadonlyNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse> createGaussMysqlDns =
+        genForcreateGaussMysqlDns();
+
+    private static HttpRequestDef<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse> genForcreateGaussMysqlDns() {
+        // basic
+        HttpRequestDef.Builder<CreateGaussMysqlDnsRequest, CreateGaussMysqlDnsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateGaussMysqlDnsRequest.class, CreateGaussMysqlDnsResponse.class)
+                .withName("CreateGaussMysqlDns")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dns")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGaussMysqlDnsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGaussMysqlDnsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CreateDnsNameReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDnsNameReq.class),
+            f -> f.withMarshaller(CreateGaussMysqlDnsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1997,6 +2042,45 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyGaussMySqlProxyRouteModeRequestBody.class),
             f -> f.withMarshaller(ModifyGaussMySqlProxyRouteModeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse> modifyGaussMysqlDns =
+        genFormodifyGaussMysqlDns();
+
+    private static HttpRequestDef<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse> genFormodifyGaussMysqlDns() {
+        // basic
+        HttpRequestDef.Builder<ModifyGaussMysqlDnsRequest, ModifyGaussMysqlDnsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyGaussMysqlDnsRequest.class, ModifyGaussMysqlDnsResponse.class)
+                .withName("ModifyGaussMysqlDns")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dns")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyGaussMysqlDnsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyGaussMysqlDnsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<ModifyDnsNameReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyDnsNameReq.class),
+            f -> f.withMarshaller(ModifyGaussMysqlDnsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

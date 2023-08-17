@@ -38,10 +38,14 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Request;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Response;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseRequest;
@@ -573,6 +577,37 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 查询用户用例关联缺陷的统计信息
+     *
+     * 查询用户用例关联缺陷的统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTestCaseAndDefectInfoRequest 请求对象
+     * @return CompletableFuture<ShowTestCaseAndDefectInfoResponse>
+     */
+    public CompletableFuture<ShowTestCaseAndDefectInfoResponse> showTestCaseAndDefectInfoAsync(
+        ShowTestCaseAndDefectInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showTestCaseAndDefectInfo);
+    }
+
+    /**
+     * 查询用户用例关联缺陷的统计信息
+     *
+     * 查询用户用例关联缺陷的统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTestCaseAndDefectInfoRequest 请求对象
+     * @return AsyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse>
+     */
+    public AsyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse> showTestCaseAndDefectInfoAsyncInvoker(
+        ShowTestCaseAndDefectInfoRequest request) {
+        return new AsyncInvoker<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse>(request,
+            CloudtestMeta.showTestCaseAndDefectInfo, hcClient);
+    }
+
+    /**
      * 获取测试用例详情
      *
      * 获取测试用例详情
@@ -631,6 +666,37 @@ public class CloudtestAsyncClient {
         ShowTestCaseDetailV2Request request) {
         return new AsyncInvoker<ShowTestCaseDetailV2Request, ShowTestCaseDetailV2Response>(request,
             CloudtestMeta.showTestCaseDetailV2, hcClient);
+    }
+
+    /**
+     * 查询时段内用例的执行情况
+     *
+     * 查询时段内用例的执行情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUserExecuteTestCaseInfoRequest 请求对象
+     * @return CompletableFuture<ShowUserExecuteTestCaseInfoResponse>
+     */
+    public CompletableFuture<ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfoAsync(
+        ShowUserExecuteTestCaseInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showUserExecuteTestCaseInfo);
+    }
+
+    /**
+     * 查询时段内用例的执行情况
+     *
+     * 查询时段内用例的执行情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUserExecuteTestCaseInfoRequest 请求对象
+     * @return AsyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse>
+     */
+    public AsyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfoAsyncInvoker(
+        ShowUserExecuteTestCaseInfoRequest request) {
+        return new AsyncInvoker<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse>(request,
+            CloudtestMeta.showUserExecuteTestCaseInfo, hcClient);
     }
 
     /**

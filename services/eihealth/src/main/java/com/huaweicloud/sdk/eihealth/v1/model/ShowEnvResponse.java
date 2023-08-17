@@ -41,6 +41,11 @@ public class ShowEnvResponse extends SdkResponse {
 
     private Boolean enableColdArchive;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_bucket_path")
+
+    private String publicBucketPath;
+
     public ShowEnvResponse withDevUserPool(Boolean devUserPool) {
         this.devUserPool = devUserPool;
         return this;
@@ -143,6 +148,23 @@ public class ShowEnvResponse extends SdkResponse {
         this.enableColdArchive = enableColdArchive;
     }
 
+    public ShowEnvResponse withPublicBucketPath(String publicBucketPath) {
+        this.publicBucketPath = publicBucketPath;
+        return this;
+    }
+
+    /**
+     * 医疗智能体公共数据桶https路径
+     * @return publicBucketPath
+     */
+    public String getPublicBucketPath() {
+        return publicBucketPath;
+    }
+
+    public void setPublicBucketPath(String publicBucketPath) {
+        this.publicBucketPath = publicBucketPath;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -156,12 +178,14 @@ public class ShowEnvResponse extends SdkResponse {
             && Objects.equals(this.hasDrug, that.hasDrug)
             && Objects.equals(this.hasEncryptionButton, that.hasEncryptionButton)
             && Objects.equals(this.deployMode, that.deployMode)
-            && Objects.equals(this.enableColdArchive, that.enableColdArchive);
+            && Objects.equals(this.enableColdArchive, that.enableColdArchive)
+            && Objects.equals(this.publicBucketPath, that.publicBucketPath);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(devUserPool, hasDev, hasDrug, hasEncryptionButton, deployMode, enableColdArchive);
+        return Objects
+            .hash(devUserPool, hasDev, hasDrug, hasEncryptionButton, deployMode, enableColdArchive, publicBucketPath);
     }
 
     @Override
@@ -174,6 +198,7 @@ public class ShowEnvResponse extends SdkResponse {
         sb.append("    hasEncryptionButton: ").append(toIndentedString(hasEncryptionButton)).append("\n");
         sb.append("    deployMode: ").append(toIndentedString(deployMode)).append("\n");
         sb.append("    enableColdArchive: ").append(toIndentedString(enableColdArchive)).append("\n");
+        sb.append("    publicBucketPath: ").append(toIndentedString(publicBucketPath)).append("\n");
         sb.append("}");
         return sb.toString();
     }

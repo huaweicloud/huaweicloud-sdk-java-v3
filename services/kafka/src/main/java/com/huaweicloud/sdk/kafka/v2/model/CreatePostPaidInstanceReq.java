@@ -108,11 +108,6 @@ public class CreatePostPaidInstanceReq {
         public static final EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
 
         /**
-         * Enum _2_3_0 for value: "2.3.0"
-         */
-        public static final EngineVersionEnum _2_3_0 = new EngineVersionEnum("2.3.0");
-
-        /**
          * Enum _2_7 for value: "2.7"
          */
         public static final EngineVersionEnum _2_7 = new EngineVersionEnum("2.7");
@@ -122,7 +117,6 @@ public class CreatePostPaidInstanceReq {
         private static Map<String, EngineVersionEnum> createStaticFields() {
             Map<String, EngineVersionEnum> map = new HashMap<>();
             map.put("1.1.0", _1_1_0);
-            map.put("2.3.0", _2_3_0);
             map.put("2.7", _2_7);
             return Collections.unmodifiableMap(map);
         }

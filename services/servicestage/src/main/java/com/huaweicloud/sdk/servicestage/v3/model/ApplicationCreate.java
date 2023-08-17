@@ -31,7 +31,7 @@ public class ApplicationCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    private List<EnvironmentViewLabels> labels = null;
+    private List<EnvironmentCreateLabels> labels = null;
 
     public ApplicationCreate withName(String name) {
         this.name = name;
@@ -84,12 +84,12 @@ public class ApplicationCreate {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ApplicationCreate withLabels(List<EnvironmentViewLabels> labels) {
+    public ApplicationCreate withLabels(List<EnvironmentCreateLabels> labels) {
         this.labels = labels;
         return this;
     }
 
-    public ApplicationCreate addLabelsItem(EnvironmentViewLabels labelsItem) {
+    public ApplicationCreate addLabelsItem(EnvironmentCreateLabels labelsItem) {
         if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
@@ -97,7 +97,7 @@ public class ApplicationCreate {
         return this;
     }
 
-    public ApplicationCreate withLabels(Consumer<List<EnvironmentViewLabels>> labelsSetter) {
+    public ApplicationCreate withLabels(Consumer<List<EnvironmentCreateLabels>> labelsSetter) {
         if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
@@ -109,11 +109,11 @@ public class ApplicationCreate {
      * Get labels
      * @return labels
      */
-    public List<EnvironmentViewLabels> getLabels() {
+    public List<EnvironmentCreateLabels> getLabels() {
         return labels;
     }
 
-    public void setLabels(List<EnvironmentViewLabels> labels) {
+    public void setLabels(List<EnvironmentCreateLabels> labels) {
         this.labels = labels;
     }
 

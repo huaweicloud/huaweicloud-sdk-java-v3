@@ -34,6 +34,11 @@ public class EnvironmentListView {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -195,6 +200,23 @@ public class EnvironmentListView {
         this.description = description;
     }
 
+    public EnvironmentListView withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * Get projectId
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
     public EnvironmentListView withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -340,7 +362,7 @@ public class EnvironmentListView {
         }
         EnvironmentListView that = (EnvironmentListView) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.creator, that.creator)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
@@ -352,6 +374,7 @@ public class EnvironmentListView {
         return Objects.hash(id,
             name,
             description,
+            projectId,
             enterpriseProjectId,
             vpcId,
             creator,
@@ -368,6 +391,7 @@ public class EnvironmentListView {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");

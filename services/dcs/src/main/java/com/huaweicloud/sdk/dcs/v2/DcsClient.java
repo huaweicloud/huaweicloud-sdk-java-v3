@@ -127,6 +127,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowTagsRequest;
@@ -2008,6 +2010,40 @@ public class DcsClient {
         ShowMigrationTaskStatsRequest request) {
         return new SyncInvoker<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse>(request,
             DcsMeta.showMigrationTaskStats, hcClient);
+    }
+
+    /**
+     * 查询实例节点信息
+     *
+     * 查询指定实例的节点信息。
+     * 仅支持Redis4.0和Redis5.0实例查询。
+     * 创建中实例不返回节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNodesInformationRequest 请求对象
+     * @return ShowNodesInformationResponse
+     */
+    public ShowNodesInformationResponse showNodesInformation(ShowNodesInformationRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showNodesInformation);
+    }
+
+    /**
+     * 查询实例节点信息
+     *
+     * 查询指定实例的节点信息。
+     * 仅支持Redis4.0和Redis5.0实例查询。
+     * 创建中实例不返回节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNodesInformationRequest 请求对象
+     * @return SyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse>
+     */
+    public SyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse> showNodesInformationInvoker(
+        ShowNodesInformationRequest request) {
+        return new SyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse>(request,
+            DcsMeta.showNodesInformation, hcClient);
     }
 
     /**

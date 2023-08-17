@@ -163,7 +163,7 @@ public class BatchRestartOrDeleteInstanceReq {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "all_failure")
+    @JsonProperty(value = "allFailure")
 
     private AllFailureEnum allFailure;
 

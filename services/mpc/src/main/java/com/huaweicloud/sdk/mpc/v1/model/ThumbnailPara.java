@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class ThumbnailPara {
 
     /**
-     * 采样类型。  取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。选择同步截图时，需指定此类型。  默认值：\"TIME\" 
+     * 采样类型。  取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。选择同步截图时，需指定此类型。 - \"DOTS_MS\"：同步截图指定时间点毫秒值。  默认值：\"TIME\" 
      */
     public static final class TypeEnum {
 
@@ -38,6 +38,11 @@ public class ThumbnailPara {
          */
         public static final TypeEnum DOTS = new TypeEnum("DOTS");
 
+        /**
+         * Enum DOTS_MS for value: "DOTS_MS"
+         */
+        public static final TypeEnum DOTS_MS = new TypeEnum("DOTS_MS");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -45,6 +50,7 @@ public class ThumbnailPara {
             map.put("PERCENT", PERCENT);
             map.put("TIME", TIME);
             map.put("DOTS", DOTS);
+            map.put("DOTS_MS", DOTS_MS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -120,6 +126,11 @@ public class ThumbnailPara {
     private List<Integer> dots = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dots_ms")
+
+    private List<Integer> dotsMs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_filename")
 
     private String outputFilename;
@@ -150,7 +161,7 @@ public class ThumbnailPara {
     }
 
     /**
-     * 采样类型。  取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。选择同步截图时，需指定此类型。  默认值：\"TIME\" 
+     * 采样类型。  取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。选择同步截图时，需指定此类型。 - \"DOTS_MS\"：同步截图指定时间点毫秒值。  默认值：\"TIME\" 
      * @return type
      */
     public TypeEnum getType() {
@@ -249,6 +260,39 @@ public class ThumbnailPara {
 
     public void setDots(List<Integer> dots) {
         this.dots = dots;
+    }
+
+    public ThumbnailPara withDotsMs(List<Integer> dotsMs) {
+        this.dotsMs = dotsMs;
+        return this;
+    }
+
+    public ThumbnailPara addDotsMsItem(Integer dotsMsItem) {
+        if (this.dotsMs == null) {
+            this.dotsMs = new ArrayList<>();
+        }
+        this.dotsMs.add(dotsMsItem);
+        return this;
+    }
+
+    public ThumbnailPara withDotsMs(Consumer<List<Integer>> dotsMsSetter) {
+        if (this.dotsMs == null) {
+            this.dotsMs = new ArrayList<>();
+        }
+        dotsMsSetter.accept(this.dotsMs);
+        return this;
+    }
+
+    /**
+     * 同步截图下，指定时间截图的时间点数组，单位毫秒  例如输入[1000]，截取视频第1000毫秒位置的图像帧，仅支持一个时间点 
+     * @return dotsMs
+     */
+    public List<Integer> getDotsMs() {
+        return dotsMs;
+    }
+
+    public void setDotsMs(List<Integer> dotsMs) {
+        this.dotsMs = dotsMs;
     }
 
     public ThumbnailPara withOutputFilename(String outputFilename) {
@@ -355,14 +399,16 @@ public class ThumbnailPara {
         ThumbnailPara that = (ThumbnailPara) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.time, that.time)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
-            && Objects.equals(this.dots, that.dots) && Objects.equals(this.outputFilename, that.outputFilename)
-            && Objects.equals(this.format, that.format) && Objects.equals(this.width, that.width)
-            && Objects.equals(this.height, that.height) && Objects.equals(this.maxLength, that.maxLength);
+            && Objects.equals(this.dots, that.dots) && Objects.equals(this.dotsMs, that.dotsMs)
+            && Objects.equals(this.outputFilename, that.outputFilename) && Objects.equals(this.format, that.format)
+            && Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.maxLength, that.maxLength);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, time, startTime, duration, dots, outputFilename, format, width, height, maxLength);
+        return Objects
+            .hash(type, time, startTime, duration, dots, dotsMs, outputFilename, format, width, height, maxLength);
     }
 
     @Override
@@ -374,6 +420,7 @@ public class ThumbnailPara {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    dots: ").append(toIndentedString(dots)).append("\n");
+        sb.append("    dotsMs: ").append(toIndentedString(dotsMs)).append("\n");
         sb.append("    outputFilename: ").append(toIndentedString(outputFilename)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");

@@ -78,6 +78,11 @@ public class ComponentList {
 
     private String platformType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_accesses")
+
+    private List<ExternalAccesses> externalAccesses = null;
+
     public ComponentList withName(String name) {
         this.name = name;
         return this;
@@ -342,6 +347,39 @@ public class ComponentList {
         this.platformType = platformType;
     }
 
+    public ComponentList withExternalAccesses(List<ExternalAccesses> externalAccesses) {
+        this.externalAccesses = externalAccesses;
+        return this;
+    }
+
+    public ComponentList addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
+        if (this.externalAccesses == null) {
+            this.externalAccesses = new ArrayList<>();
+        }
+        this.externalAccesses.add(externalAccessesItem);
+        return this;
+    }
+
+    public ComponentList withExternalAccesses(Consumer<List<ExternalAccesses>> externalAccessesSetter) {
+        if (this.externalAccesses == null) {
+            this.externalAccesses = new ArrayList<>();
+        }
+        externalAccessesSetter.accept(this.externalAccesses);
+        return this;
+    }
+
+    /**
+     * Get externalAccesses
+     * @return externalAccesses
+     */
+    public List<ExternalAccesses> getExternalAccesses() {
+        return externalAccesses;
+    }
+
+    public void setExternalAccesses(List<ExternalAccesses> externalAccesses) {
+        this.externalAccesses = externalAccesses;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -358,7 +396,8 @@ public class ComponentList {
             && Objects.equals(this.environmentId, that.environmentId)
             && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.creator, that.creator) && Objects.equals(this.source, that.source)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.platformType, that.platformType);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.platformType, that.platformType)
+            && Objects.equals(this.externalAccesses, that.externalAccesses);
     }
 
     @Override
@@ -375,7 +414,8 @@ public class ComponentList {
             creator,
             source,
             version,
-            platformType);
+            platformType,
+            externalAccesses);
     }
 
     @Override
@@ -395,6 +435,7 @@ public class ComponentList {
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    platformType: ").append(toIndentedString(platformType)).append("\n");
+        sb.append("    externalAccesses: ").append(toIndentedString(externalAccesses)).append("\n");
         sb.append("}");
         return sb.toString();
     }

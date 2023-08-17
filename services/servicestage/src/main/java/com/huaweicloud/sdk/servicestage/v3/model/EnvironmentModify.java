@@ -24,14 +24,9 @@ public class EnvironmentModify {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    private List<EnvironmentViewLabels> labels = null;
+    private List<EnvironmentCreateLabels> labels = null;
 
     public EnvironmentModify withName(String name) {
         this.name = name;
@@ -67,29 +62,12 @@ public class EnvironmentModify {
         this.description = description;
     }
 
-    public EnvironmentModify withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * Get enterpriseProjectId
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public EnvironmentModify withLabels(List<EnvironmentViewLabels> labels) {
+    public EnvironmentModify withLabels(List<EnvironmentCreateLabels> labels) {
         this.labels = labels;
         return this;
     }
 
-    public EnvironmentModify addLabelsItem(EnvironmentViewLabels labelsItem) {
+    public EnvironmentModify addLabelsItem(EnvironmentCreateLabels labelsItem) {
         if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
@@ -97,7 +75,7 @@ public class EnvironmentModify {
         return this;
     }
 
-    public EnvironmentModify withLabels(Consumer<List<EnvironmentViewLabels>> labelsSetter) {
+    public EnvironmentModify withLabels(Consumer<List<EnvironmentCreateLabels>> labelsSetter) {
         if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
@@ -109,11 +87,11 @@ public class EnvironmentModify {
      * Get labels
      * @return labels
      */
-    public List<EnvironmentViewLabels> getLabels() {
+    public List<EnvironmentCreateLabels> getLabels() {
         return labels;
     }
 
-    public void setLabels(List<EnvironmentViewLabels> labels) {
+    public void setLabels(List<EnvironmentCreateLabels> labels) {
         this.labels = labels;
     }
 
@@ -127,13 +105,12 @@ public class EnvironmentModify {
         }
         EnvironmentModify that = (EnvironmentModify) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.labels, that.labels);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, enterpriseProjectId, labels);
+        return Objects.hash(name, description, labels);
     }
 
     @Override
@@ -142,7 +119,6 @@ public class EnvironmentModify {
         sb.append("class EnvironmentModify {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("}");
         return sb.toString();

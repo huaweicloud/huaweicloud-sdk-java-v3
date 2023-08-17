@@ -2,10 +2,14 @@ package com.huaweicloud.sdk.cloudrtc.v1;
 
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventDimensionRequest;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventDimensionResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventResponse;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventsRequest;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcAbnormalEventsResponse;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcClientQosDetailsRequest;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcClientQosDetailsResponse;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcEventRequest;
+import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcEventResponse;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryQualityRequest;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryQualityResponse;
 import com.huaweicloud.sdk.cloudrtc.v1.model.ListRtcHistoryScaleRequest;
@@ -34,6 +38,108 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class CloudRTCMeta {
+
+    public static final HttpRequestDef<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse> listRtcAbnormalEvent =
+        genForlistRtcAbnormalEvent();
+
+    private static HttpRequestDef<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse> genForlistRtcAbnormalEvent() {
+        // basic
+        HttpRequestDef.Builder<ListRtcAbnormalEventRequest, ListRtcAbnormalEventResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRtcAbnormalEventRequest.class, ListRtcAbnormalEventResponse.class)
+            .withName("ListRtcAbnormalEvent")
+            .withUri("/v1/{project_id}/rtc/client/abnormalevent")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("room_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getRoomId, (req, v) -> {
+                req.setRoomId(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRtcAbnormalEventRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRtcAbnormalEventResponse::getXRequestId,
+                ListRtcAbnormalEventResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRtcEventRequest, ListRtcEventResponse> listRtcEvent = genForlistRtcEvent();
+
+    private static HttpRequestDef<ListRtcEventRequest, ListRtcEventResponse> genForlistRtcEvent() {
+        // basic
+        HttpRequestDef.Builder<ListRtcEventRequest, ListRtcEventResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRtcEventRequest.class, ListRtcEventResponse.class)
+                .withName("ListRtcEvent")
+                .withUri("/v1/{project_id}/rtc/client/event")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRtcEventRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("room_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRtcEventRequest::getRoomId, (req, v) -> {
+                req.setRoomId(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRtcEventRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRtcEventRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRtcEventResponse::getXRequestId, ListRtcEventResponse::setXRequestId));
+        return builder.build();
+    }
 
     public static final HttpRequestDef<ListRtcAbnormalEventDimensionRequest, ListRtcAbnormalEventDimensionResponse> listRtcAbnormalEventDimension =
         genForlistRtcAbnormalEventDimension();

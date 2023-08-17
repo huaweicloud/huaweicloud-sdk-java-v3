@@ -122,7 +122,7 @@ public class EnvironmentCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    private List<EnvironmentViewLabels> labels = null;
+    private List<EnvironmentCreateLabels> labels = null;
 
     public EnvironmentCreate withName(String name) {
         this.name = name;
@@ -209,12 +209,12 @@ public class EnvironmentCreate {
         this.deployMode = deployMode;
     }
 
-    public EnvironmentCreate withLabels(List<EnvironmentViewLabels> labels) {
+    public EnvironmentCreate withLabels(List<EnvironmentCreateLabels> labels) {
         this.labels = labels;
         return this;
     }
 
-    public EnvironmentCreate addLabelsItem(EnvironmentViewLabels labelsItem) {
+    public EnvironmentCreate addLabelsItem(EnvironmentCreateLabels labelsItem) {
         if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
@@ -222,7 +222,7 @@ public class EnvironmentCreate {
         return this;
     }
 
-    public EnvironmentCreate withLabels(Consumer<List<EnvironmentViewLabels>> labelsSetter) {
+    public EnvironmentCreate withLabels(Consumer<List<EnvironmentCreateLabels>> labelsSetter) {
         if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
@@ -234,11 +234,11 @@ public class EnvironmentCreate {
      * Get labels
      * @return labels
      */
-    public List<EnvironmentViewLabels> getLabels() {
+    public List<EnvironmentCreateLabels> getLabels() {
         return labels;
     }
 
-    public void setLabels(List<EnvironmentViewLabels> labels) {
+    public void setLabels(List<EnvironmentCreateLabels> labels) {
         this.labels = labels;
     }
 

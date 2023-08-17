@@ -26,7 +26,7 @@ public class BackendApiBaseInfo {
     private String urlDomain;
 
     /**
-     * 请求协议
+     * 请求协议，后端类型为GRPC时请求协议可选GRPCS
      */
     public static final class ReqProtocolEnum {
 
@@ -40,12 +40,18 @@ public class BackendApiBaseInfo {
          */
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
 
+        /**
+         * Enum GRPCS for value: "GRPCS"
+         */
+        public static final ReqProtocolEnum GRPCS = new ReqProtocolEnum("GRPCS");
+
         private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ReqProtocolEnum> createStaticFields() {
             Map<String, ReqProtocolEnum> map = new HashMap<>();
             map.put("HTTP", HTTP);
             map.put("HTTPS", HTTPS);
+            map.put("GRPCS", GRPCS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -106,7 +112,7 @@ public class BackendApiBaseInfo {
     private String remark;
 
     /**
-     * 请求方式
+     * 请求方式，后端类型为GRPC时请求方式固定为POST
      */
     public static final class ReqMethodEnum {
 
@@ -247,7 +253,7 @@ public class BackendApiBaseInfo {
     }
 
     /**
-     * 后端自定义认证对象的ID
+     * 后端自定义认证对象的ID，后端类型为GRPC时不支持后端自定义认证
      * @return authorizerId
      */
     public String getAuthorizerId() {
@@ -281,7 +287,7 @@ public class BackendApiBaseInfo {
     }
 
     /**
-     * 请求协议
+     * 请求协议，后端类型为GRPC时请求协议可选GRPCS
      * @return reqProtocol
      */
     public ReqProtocolEnum getReqProtocol() {
@@ -315,7 +321,7 @@ public class BackendApiBaseInfo {
     }
 
     /**
-     * 请求方式
+     * 请求方式，后端类型为GRPC时请求方式固定为POST
      * @return reqMethod
      */
     public ReqMethodEnum getReqMethod() {
@@ -349,7 +355,7 @@ public class BackendApiBaseInfo {
     }
 
     /**
-     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。   支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。  > 需要服从URI规范。
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。   支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。  > 需要服从URI规范。  后端类型为GRPC时请求地址固定为/
      * @return reqUri
      */
     public String getReqUri() {

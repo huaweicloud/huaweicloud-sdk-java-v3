@@ -55,6 +55,11 @@ public class CreateSecurityGroupRuleOption {
 
     private String remoteGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_address_group_id")
+
+    private String remoteAddressGroupId;
+
     public CreateSecurityGroupRuleOption withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -180,7 +185,7 @@ public class CreateSecurityGroupRuleOption {
     }
 
     /**
-     * 功能说明：远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址 取值范围：IP地址，或者cidr格式 约束：和remote_group_id互斥
+     * 功能说明：远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址 取值范围：IP地址，或者cidr格式 约束：和remote_group_id，remote_address_group_id互斥
      * @return remoteIpPrefix
      */
     public String getRemoteIpPrefix() {
@@ -197,7 +202,7 @@ public class CreateSecurityGroupRuleOption {
     }
 
     /**
-     * 功能说明：对端安全组ID 约束：和remote_ip_prefix互斥
+     * 功能说明：对端安全组ID 约束：和remote_ip_prefix，remote_address_group_id互斥
      * @return remoteGroupId
      */
     public String getRemoteGroupId() {
@@ -206,6 +211,23 @@ public class CreateSecurityGroupRuleOption {
 
     public void setRemoteGroupId(String remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
+    }
+
+    public CreateSecurityGroupRuleOption withRemoteAddressGroupId(String remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
+        return this;
+    }
+
+    /**
+     * 功能说明：远端IP地址组ID 约束：和remote_ip_prefix，remote_group_id互斥
+     * @return remoteAddressGroupId
+     */
+    public String getRemoteAddressGroupId() {
+        return remoteAddressGroupId;
+    }
+
+    public void setRemoteAddressGroupId(String remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
     }
 
     @Override
@@ -223,7 +245,8 @@ public class CreateSecurityGroupRuleOption {
             && Objects.equals(this.portRangeMin, that.portRangeMin)
             && Objects.equals(this.portRangeMax, that.portRangeMax)
             && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix)
-            && Objects.equals(this.remoteGroupId, that.remoteGroupId);
+            && Objects.equals(this.remoteGroupId, that.remoteGroupId)
+            && Objects.equals(this.remoteAddressGroupId, that.remoteAddressGroupId);
     }
 
     @Override
@@ -236,7 +259,8 @@ public class CreateSecurityGroupRuleOption {
             portRangeMin,
             portRangeMax,
             remoteIpPrefix,
-            remoteGroupId);
+            remoteGroupId,
+            remoteAddressGroupId);
     }
 
     @Override
@@ -252,6 +276,7 @@ public class CreateSecurityGroupRuleOption {
         sb.append("    portRangeMax: ").append(toIndentedString(portRangeMax)).append("\n");
         sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
         sb.append("    remoteGroupId: ").append(toIndentedString(remoteGroupId)).append("\n");
+        sb.append("    remoteAddressGroupId: ").append(toIndentedString(remoteAddressGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

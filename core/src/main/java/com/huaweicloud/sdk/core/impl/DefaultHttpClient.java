@@ -223,11 +223,11 @@ public class DefaultHttpClient implements HttpClient {
             }
 
             @Override
-            public long contentLength() {
+            public long contentLength() throws IOException {
                 if (httpRequest.haveHeader(Constants.CONTENT_LENGTH)) {
                     return Long.parseLong(httpRequest.getHeader(Constants.CONTENT_LENGTH));
                 }
-                return httpRequest.getBodyAsString().length();
+                return super.contentLength();
             }
         });
         return requestBuilder.build();

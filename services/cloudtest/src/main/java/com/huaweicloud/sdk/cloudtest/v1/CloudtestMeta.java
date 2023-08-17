@@ -48,10 +48,16 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Request;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseDetailV2Response;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanIssueDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanJournalList;
@@ -746,6 +752,41 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse> showTestCaseAndDefectInfo =
+        genForshowTestCaseAndDefectInfo();
+
+    private static HttpRequestDef<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse> genForshowTestCaseAndDefectInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowTestCaseAndDefectInfoRequest, ShowTestCaseAndDefectInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowTestCaseAndDefectInfoRequest.class,
+                    ShowTestCaseAndDefectInfoResponse.class)
+                .withName("ShowTestCaseAndDefectInfo")
+                .withUri("/v1/{project_id}/testcases/defect-info/list-by-creation-time")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTestCaseAndDefectInfoRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<ShowTestCaseAndDefectInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowTestCaseAndDefectInfoRequestBody.class),
+            f -> f.withMarshaller(ShowTestCaseAndDefectInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTestCaseDetailRequest, ShowTestCaseDetailResponse> showTestCaseDetail =
         genForshowTestCaseDetail();
 
@@ -803,6 +844,41 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTestCaseDetailV2Request::getTestcaseNumber, (req, v) -> {
                 req.setTestcaseNumber(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfo =
+        genForshowUserExecuteTestCaseInfo();
+
+    private static HttpRequestDef<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse> genForshowUserExecuteTestCaseInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowUserExecuteTestCaseInfoRequest, ShowUserExecuteTestCaseInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowUserExecuteTestCaseInfoRequest.class,
+                    ShowUserExecuteTestCaseInfoResponse.class)
+                .withName("ShowUserExecuteTestCaseInfo")
+                .withUri("/v1/{project_id}/testcases/execute-info/statistic-by-user")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUserExecuteTestCaseInfoRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<ShowUserExecuteTestCaseInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowUserExecuteTestCaseInfoRequestBody.class),
+            f -> f.withMarshaller(ShowUserExecuteTestCaseInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

@@ -14,6 +14,10 @@ import com.huaweicloud.sdk.cloudrtc.v2.model.DeleteRecordRuleRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.DeleteRecordRuleResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ListAppsRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ListAppsResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListObsBucketObjectsRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListObsBucketObjectsResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListObsBucketsRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.ListObsBucketsResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ListRecordRulesRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ListRecordRulesResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.RemoveRoomRequest;
@@ -48,6 +52,8 @@ import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateIndividualStreamJobRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateIndividualStreamJobResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateMixJobRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateMixJobResponse;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateObsBucketAuthorityRequest;
+import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateObsBucketAuthorityResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordRuleRequest;
@@ -918,6 +924,96 @@ public class CloudRTCClient {
     public SyncInvoker<UpdateUrlAuthRequest, UpdateUrlAuthResponse> updateUrlAuthInvoker(UpdateUrlAuthRequest request) {
         return new SyncInvoker<UpdateUrlAuthRequest, UpdateUrlAuthResponse>(request, CloudRTCMeta.updateUrlAuth,
             hcClient);
+    }
+
+    /**
+     * 查询OBS桶下对象列表
+     *
+     * 查询OBS桶下对象列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListObsBucketObjectsRequest 请求对象
+     * @return ListObsBucketObjectsResponse
+     */
+    public ListObsBucketObjectsResponse listObsBucketObjects(ListObsBucketObjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudRTCMeta.listObsBucketObjects);
+    }
+
+    /**
+     * 查询OBS桶下对象列表
+     *
+     * 查询OBS桶下对象列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListObsBucketObjectsRequest 请求对象
+     * @return SyncInvoker<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse>
+     */
+    public SyncInvoker<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse> listObsBucketObjectsInvoker(
+        ListObsBucketObjectsRequest request) {
+        return new SyncInvoker<ListObsBucketObjectsRequest, ListObsBucketObjectsResponse>(request,
+            CloudRTCMeta.listObsBucketObjects, hcClient);
+    }
+
+    /**
+     * 查询OBS桶列表
+     *
+     * 查询OBS桶列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListObsBucketsRequest 请求对象
+     * @return ListObsBucketsResponse
+     */
+    public ListObsBucketsResponse listObsBuckets(ListObsBucketsRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudRTCMeta.listObsBuckets);
+    }
+
+    /**
+     * 查询OBS桶列表
+     *
+     * 查询OBS桶列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListObsBucketsRequest 请求对象
+     * @return SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>
+     */
+    public SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse> listObsBucketsInvoker(
+        ListObsBucketsRequest request) {
+        return new SyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>(request, CloudRTCMeta.listObsBuckets,
+            hcClient);
+    }
+
+    /**
+     * OBS桶授权及取消授权
+     *
+     * OBS桶授权及取消授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateObsBucketAuthorityRequest 请求对象
+     * @return UpdateObsBucketAuthorityResponse
+     */
+    public UpdateObsBucketAuthorityResponse updateObsBucketAuthority(UpdateObsBucketAuthorityRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudRTCMeta.updateObsBucketAuthority);
+    }
+
+    /**
+     * OBS桶授权及取消授权
+     *
+     * OBS桶授权及取消授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateObsBucketAuthorityRequest 请求对象
+     * @return SyncInvoker<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse>
+     */
+    public SyncInvoker<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse> updateObsBucketAuthorityInvoker(
+        UpdateObsBucketAuthorityRequest request) {
+        return new SyncInvoker<UpdateObsBucketAuthorityRequest, UpdateObsBucketAuthorityResponse>(request,
+            CloudRTCMeta.updateObsBucketAuthority, hcClient);
     }
 
 }

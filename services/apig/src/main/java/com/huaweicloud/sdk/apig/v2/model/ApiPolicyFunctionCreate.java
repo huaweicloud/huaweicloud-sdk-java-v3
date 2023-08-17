@@ -442,7 +442,7 @@ public class ApiPolicyFunctionCreate {
     }
 
     /**
-     * 后端参数列表
+     * 后端参数列表，后端类型为GRPC时不支持配置
      * @return backendParams
      */
     public List<BackendParamBase> getBackendParams() {
@@ -492,7 +492,7 @@ public class ApiPolicyFunctionCreate {
     }
 
     /**
-     * 后端自定义认证对象的ID
+     * 后端自定义认证对象的ID，后端类型为GRPC时不支持后端自定义认证
      * @return authorizerId
      */
     public String getAuthorizerId() {

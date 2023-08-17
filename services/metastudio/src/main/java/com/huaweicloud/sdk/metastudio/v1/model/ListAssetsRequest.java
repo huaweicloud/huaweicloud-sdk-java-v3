@@ -186,6 +186,11 @@ public class ListAssetsRequest {
 
     private String systemProperty;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_editable")
+
+    private Boolean actionEditable;
+
     public ListAssetsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -353,7 +358,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 资产类型。多个类型使用英文逗号分割。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可上传） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板
+     * 资产类型。多个类型使用英文逗号分割。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可上传） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐
      * @return assetType
      */
     public String getAssetType() {
@@ -421,7 +426,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 资产状态。多个资产状态使用英文逗号分割。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复  默认查询所有状态的资产。
+     * 资产状态。多个资产状态使用英文逗号分割。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复 * BLOCK：资产被冻结，资产不可用，不可查看文件。 默认查询所有状态的资产。
      * @return assetState
      */
     public String getAssetState() {
@@ -506,7 +511,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 系统属性。  key和value间用\":\"分隔，多个key之间用\",\"分隔。  如system_property=BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下： * STYLE_ID：风格Id * RENDER_ENGINE：引擎类型，可取值UE或MetaEngine * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）
+     * 系统属性。  key和value间用\":\"分隔，多个key之间用\",\"分隔。  如system_property=BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下： * STYLE_ID：风格Id * RENDER_ENGINE：引擎类型，可取值UE或MetaEngine * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏） * CREATED_BY_PLATFORM：是否平台生成，可取值Yes
      * @return systemProperty
      */
     public String getSystemProperty() {
@@ -515,6 +520,23 @@ public class ListAssetsRequest {
 
     public void setSystemProperty(String systemProperty) {
         this.systemProperty = systemProperty;
+    }
+
+    public ListAssetsRequest withActionEditable(Boolean actionEditable) {
+        this.actionEditable = actionEditable;
+        return this;
+    }
+
+    /**
+     * 动作是否可编辑。仅在分身数字人模型查询时有效。
+     * @return actionEditable
+     */
+    public Boolean getActionEditable() {
+        return actionEditable;
+    }
+
+    public void setActionEditable(Boolean actionEditable) {
+        this.actionEditable = actionEditable;
     }
 
     @Override
@@ -535,7 +557,8 @@ public class ListAssetsRequest {
             && Objects.equals(this.assetSource, that.assetSource) && Objects.equals(this.assetState, that.assetState)
             && Objects.equals(this.styleId, that.styleId) && Objects.equals(this.renderEngine, that.renderEngine)
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
-            && Objects.equals(this.systemProperty, that.systemProperty);
+            && Objects.equals(this.systemProperty, that.systemProperty)
+            && Objects.equals(this.actionEditable, that.actionEditable);
     }
 
     @Override
@@ -558,7 +581,8 @@ public class ListAssetsRequest {
             renderEngine,
             sex,
             language,
-            systemProperty);
+            systemProperty,
+            actionEditable);
     }
 
     @Override
@@ -584,6 +608,7 @@ public class ListAssetsRequest {
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    systemProperty: ").append(toIndentedString(systemProperty)).append("\n");
+        sb.append("    actionEditable: ").append(toIndentedString(actionEditable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

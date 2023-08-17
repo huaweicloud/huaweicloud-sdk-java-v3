@@ -196,6 +196,11 @@ public class NeutronCreateSecurityGroupRuleOption {
     private String remoteIpPrefix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_address_group_id")
+
+    private String remoteAddressGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
@@ -336,6 +341,23 @@ public class NeutronCreateSecurityGroupRuleOption {
         this.remoteIpPrefix = remoteIpPrefix;
     }
 
+    public NeutronCreateSecurityGroupRuleOption withRemoteAddressGroupId(String remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
+        return this;
+    }
+
+    /**
+     * 功能说明：远端地址组的ID
+     * @return remoteAddressGroupId
+     */
+    public String getRemoteAddressGroupId() {
+        return remoteAddressGroupId;
+    }
+
+    public void setRemoteAddressGroupId(String remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
+    }
+
     public NeutronCreateSecurityGroupRuleOption withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
@@ -367,6 +389,7 @@ public class NeutronCreateSecurityGroupRuleOption {
             && Objects.equals(this.portRangeMin, that.portRangeMin) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.remoteGroupId, that.remoteGroupId)
             && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix)
+            && Objects.equals(this.remoteAddressGroupId, that.remoteAddressGroupId)
             && Objects.equals(this.securityGroupId, that.securityGroupId);
     }
 
@@ -380,6 +403,7 @@ public class NeutronCreateSecurityGroupRuleOption {
             protocol,
             remoteGroupId,
             remoteIpPrefix,
+            remoteAddressGroupId,
             securityGroupId);
     }
 
@@ -395,6 +419,7 @@ public class NeutronCreateSecurityGroupRuleOption {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    remoteGroupId: ").append(toIndentedString(remoteGroupId)).append("\n");
         sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
+        sb.append("    remoteAddressGroupId: ").append(toIndentedString(remoteAddressGroupId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
