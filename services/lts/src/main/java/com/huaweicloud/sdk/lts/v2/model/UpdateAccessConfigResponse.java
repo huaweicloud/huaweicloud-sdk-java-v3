@@ -139,6 +139,11 @@ public class UpdateAccessConfigResponse extends SdkResponse {
 
     private Boolean binaryCollect;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
     public UpdateAccessConfigResponse withAccessConfigId(String accessConfigId) {
         this.accessConfigId = accessConfigId;
         return this;
@@ -355,6 +360,23 @@ public class UpdateAccessConfigResponse extends SdkResponse {
         this.binaryCollect = binaryCollect;
     }
 
+    public UpdateAccessConfigResponse withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * CCE集群ID
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -371,7 +393,8 @@ public class UpdateAccessConfigResponse extends SdkResponse {
             && Objects.equals(this.accessConfigDetail, that.accessConfigDetail)
             && Objects.equals(this.logInfo, that.logInfo) && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
             && Objects.equals(this.accessConfigTag, that.accessConfigTag)
-            && Objects.equals(this.logSplit, that.logSplit) && Objects.equals(this.binaryCollect, that.binaryCollect);
+            && Objects.equals(this.logSplit, that.logSplit) && Objects.equals(this.binaryCollect, that.binaryCollect)
+            && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override
@@ -385,7 +408,8 @@ public class UpdateAccessConfigResponse extends SdkResponse {
             hostGroupInfo,
             accessConfigTag,
             logSplit,
-            binaryCollect);
+            binaryCollect,
+            clusterId);
     }
 
     @Override
@@ -402,6 +426,7 @@ public class UpdateAccessConfigResponse extends SdkResponse {
         sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");
         sb.append("    logSplit: ").append(toIndentedString(logSplit)).append("\n");
         sb.append("    binaryCollect: ").append(toIndentedString(binaryCollect)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

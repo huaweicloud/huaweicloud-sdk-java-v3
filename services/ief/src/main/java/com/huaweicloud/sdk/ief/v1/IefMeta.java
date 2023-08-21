@@ -2338,6 +2338,13 @@ public class IefMeta {
             f -> f.withMarshaller(ListEdgeNodesRequest::getTags, (req, v) -> {
                 req.setTags(v);
             }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEdgeNodesRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
         builder.<String>withRequestField("ief-instance-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2587,6 +2594,13 @@ public class IefMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPodsRequest::getDeploymentIds, (req, v) -> {
                 req.setDeploymentIds(v);
+            }));
+        builder.<String>withRequestField("plugin_instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPodsRequest::getPluginInstanceName, (req, v) -> {
+                req.setPluginInstanceName(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,

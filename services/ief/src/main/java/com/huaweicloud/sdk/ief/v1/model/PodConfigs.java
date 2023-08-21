@@ -35,6 +35,11 @@ public class PodConfigs {
 
     private Integer tolerationSeconds;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dns_policy")
+
+    private String dnsPolicy;
+
     public PodConfigs withHostNetwork(Boolean hostNetwork) {
         this.hostNetwork = hostNetwork;
         return this;
@@ -120,6 +125,23 @@ public class PodConfigs {
         this.tolerationSeconds = tolerationSeconds;
     }
 
+    public PodConfigs withDnsPolicy(String dnsPolicy) {
+        this.dnsPolicy = dnsPolicy;
+        return this;
+    }
+
+    /**
+     * 应用实例DNS策略，可选值Default、ClusterFirst、ClusterFirstWithHostNet，默认为Default。应用实例启用主机网络时只能选填Default、ClusterFirstWithHostNet，不启用主机网络时只能选填Default、ClusterFirst
+     * @return dnsPolicy
+     */
+    public String getDnsPolicy() {
+        return dnsPolicy;
+    }
+
+    public void setDnsPolicy(String dnsPolicy) {
+        this.dnsPolicy = dnsPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,13 @@ public class PodConfigs {
         PodConfigs that = (PodConfigs) obj;
         return Objects.equals(this.hostNetwork, that.hostNetwork) && Objects.equals(this.hostPid, that.hostPid)
             && Objects.equals(this.migration, that.migration) && Objects.equals(this.restartPolicy, that.restartPolicy)
-            && Objects.equals(this.tolerationSeconds, that.tolerationSeconds);
+            && Objects.equals(this.tolerationSeconds, that.tolerationSeconds)
+            && Objects.equals(this.dnsPolicy, that.dnsPolicy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostNetwork, hostPid, migration, restartPolicy, tolerationSeconds);
+        return Objects.hash(hostNetwork, hostPid, migration, restartPolicy, tolerationSeconds, dnsPolicy);
     }
 
     @Override
@@ -148,6 +171,7 @@ public class PodConfigs {
         sb.append("    migration: ").append(toIndentedString(migration)).append("\n");
         sb.append("    restartPolicy: ").append(toIndentedString(restartPolicy)).append("\n");
         sb.append("    tolerationSeconds: ").append(toIndentedString(tolerationSeconds)).append("\n");
+        sb.append("    dnsPolicy: ").append(toIndentedString(dnsPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -159,6 +159,11 @@ public class ListEdgeNodesRequest {
 
     private String tags;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public ListEdgeNodesRequest withIefInstanceId(String iefInstanceId) {
         this.iefInstanceId = iefInstanceId;
         return this;
@@ -329,6 +334,23 @@ public class ListEdgeNodesRequest {
         this.tags = tags;
     }
 
+    public ListEdgeNodesRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 按边缘节点组ID查找。仅支持在铂金版实例中使用
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -342,12 +364,14 @@ public class ListEdgeNodesRequest {
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.sort, that.sort) && Objects.equals(this.deviceId, that.deviceId)
             && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.appName, that.appName)
-            && Objects.equals(this.state, that.state) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.state, that.state) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(iefInstanceId, name, limit, offset, sort, deviceId, deviceName, appName, state, tags);
+        return Objects
+            .hash(iefInstanceId, name, limit, offset, sort, deviceId, deviceName, appName, state, tags, groupId);
     }
 
     @Override
@@ -364,6 +388,7 @@ public class ListEdgeNodesRequest {
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

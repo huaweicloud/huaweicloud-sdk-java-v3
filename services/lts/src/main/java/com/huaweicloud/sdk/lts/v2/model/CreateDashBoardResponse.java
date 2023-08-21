@@ -37,7 +37,7 @@ public class CreateDashBoardResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_update_time")
 
-    private String lastUpdateTime;
+    private Long lastUpdateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -52,7 +52,7 @@ public class CreateDashBoardResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "useSystemTemplate")
 
-    private String useSystemTemplate;
+    private Boolean useSystemTemplate;
 
     public CreateDashBoardResponse withCharts(List<String> charts) {
         this.charts = charts;
@@ -154,7 +154,7 @@ public class CreateDashBoardResponse extends SdkResponse {
         this.id = id;
     }
 
-    public CreateDashBoardResponse withLastUpdateTime(String lastUpdateTime) {
+    public CreateDashBoardResponse withLastUpdateTime(Long lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
     }
@@ -163,11 +163,11 @@ public class CreateDashBoardResponse extends SdkResponse {
      * 最近修改时间
      * @return lastUpdateTime
      */
-    public String getLastUpdateTime() {
+    public Long getLastUpdateTime() {
         return lastUpdateTime;
     }
 
-    public void setLastUpdateTime(String lastUpdateTime) {
+    public void setLastUpdateTime(Long lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
     }
 
@@ -205,7 +205,7 @@ public class CreateDashBoardResponse extends SdkResponse {
         this.title = title;
     }
 
-    public CreateDashBoardResponse withUseSystemTemplate(String useSystemTemplate) {
+    public CreateDashBoardResponse withUseSystemTemplate(Boolean useSystemTemplate) {
         this.useSystemTemplate = useSystemTemplate;
         return this;
     }
@@ -214,11 +214,11 @@ public class CreateDashBoardResponse extends SdkResponse {
      * 是否使用模板
      * @return useSystemTemplate
      */
-    public String getUseSystemTemplate() {
+    public Boolean getUseSystemTemplate() {
         return useSystemTemplate;
     }
 
-    public void setUseSystemTemplate(String useSystemTemplate) {
+    public void setUseSystemTemplate(Boolean useSystemTemplate) {
         this.useSystemTemplate = useSystemTemplate;
     }
 

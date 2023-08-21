@@ -128,6 +128,11 @@ public class CreateAccessConfigRequestBody {
 
     private Boolean logSplit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
     public CreateAccessConfigRequestBody withAccessConfigName(String accessConfigName) {
         this.accessConfigName = accessConfigName;
         return this;
@@ -309,6 +314,23 @@ public class CreateAccessConfigRequestBody {
         this.logSplit = logSplit;
     }
 
+    public CreateAccessConfigRequestBody withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * CCE集群ID，当CCE类型时，为必填
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -323,7 +345,8 @@ public class CreateAccessConfigRequestBody {
             && Objects.equals(this.accessConfigDetail, that.accessConfigDetail)
             && Objects.equals(this.logInfo, that.logInfo) && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
             && Objects.equals(this.accessConfigTag, that.accessConfigTag)
-            && Objects.equals(this.binaryCollect, that.binaryCollect) && Objects.equals(this.logSplit, that.logSplit);
+            && Objects.equals(this.binaryCollect, that.binaryCollect) && Objects.equals(this.logSplit, that.logSplit)
+            && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override
@@ -335,7 +358,8 @@ public class CreateAccessConfigRequestBody {
             hostGroupInfo,
             accessConfigTag,
             binaryCollect,
-            logSplit);
+            logSplit,
+            clusterId);
     }
 
     @Override
@@ -350,6 +374,7 @@ public class CreateAccessConfigRequestBody {
         sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");
         sb.append("    binaryCollect: ").append(toIndentedString(binaryCollect)).append("\n");
         sb.append("    logSplit: ").append(toIndentedString(logSplit)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

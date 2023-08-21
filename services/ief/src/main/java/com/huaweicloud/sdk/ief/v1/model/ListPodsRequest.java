@@ -31,6 +31,11 @@ public class ListPodsRequest {
     private String deploymentIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plugin_instance_name")
+
+    private String pluginInstanceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -113,6 +118,23 @@ public class ListPodsRequest {
         this.deploymentIds = deploymentIds;
     }
 
+    public ListPodsRequest withPluginInstanceName(String pluginInstanceName) {
+        this.pluginInstanceName = pluginInstanceName;
+        return this;
+    }
+
+    /**
+     * 指定插件实例名称查询对应的应用实例列表，可选
+     * @return pluginInstanceName
+     */
+    public String getPluginInstanceName() {
+        return pluginInstanceName;
+    }
+
+    public void setPluginInstanceName(String pluginInstanceName) {
+        this.pluginInstanceName = pluginInstanceName;
+    }
+
     public ListPodsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -175,13 +197,16 @@ public class ListPodsRequest {
         ListPodsRequest that = (ListPodsRequest) obj;
         return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.deploymentId, that.deploymentId)
-            && Objects.equals(this.deploymentIds, that.deploymentIds) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
+            && Objects.equals(this.deploymentIds, that.deploymentIds)
+            && Objects.equals(this.pluginInstanceName, that.pluginInstanceName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nodeId, groupId, deploymentId, deploymentIds, limit, offset, iefInstanceId);
+        return Objects
+            .hash(nodeId, groupId, deploymentId, deploymentIds, pluginInstanceName, limit, offset, iefInstanceId);
     }
 
     @Override
@@ -192,6 +217,7 @@ public class ListPodsRequest {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    deploymentId: ").append(toIndentedString(deploymentId)).append("\n");
         sb.append("    deploymentIds: ").append(toIndentedString(deploymentIds)).append("\n");
+        sb.append("    pluginInstanceName: ").append(toIndentedString(pluginInstanceName)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    iefInstanceId: ").append(toIndentedString(iefInstanceId)).append("\n");

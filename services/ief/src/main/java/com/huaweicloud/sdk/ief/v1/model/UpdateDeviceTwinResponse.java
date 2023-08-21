@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,62 +17,77 @@ public class UpdateDeviceTwinResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "property_visitors")
 
-    private ValueInPropertyVisitors propertyVisitors;
+    private Map<String, ValueInPropertyVisitors> propertyVisitors = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "twin")
 
-    private ValueInTwinResponse twin;
+    private Map<String, ValueInTwinResponse> twin = null;
 
-    public UpdateDeviceTwinResponse withPropertyVisitors(ValueInPropertyVisitors propertyVisitors) {
+    public UpdateDeviceTwinResponse withPropertyVisitors(Map<String, ValueInPropertyVisitors> propertyVisitors) {
         this.propertyVisitors = propertyVisitors;
         return this;
     }
 
-    public UpdateDeviceTwinResponse withPropertyVisitors(Consumer<ValueInPropertyVisitors> propertyVisitorsSetter) {
+    public UpdateDeviceTwinResponse putPropertyVisitorsItem(String key, ValueInPropertyVisitors propertyVisitorsItem) {
         if (this.propertyVisitors == null) {
-            this.propertyVisitors = new ValueInPropertyVisitors();
-            propertyVisitorsSetter.accept(this.propertyVisitors);
+            this.propertyVisitors = new HashMap<>();
         }
+        this.propertyVisitors.put(key, propertyVisitorsItem);
+        return this;
+    }
 
+    public UpdateDeviceTwinResponse withPropertyVisitors(
+        Consumer<Map<String, ValueInPropertyVisitors>> propertyVisitorsSetter) {
+        if (this.propertyVisitors == null) {
+            this.propertyVisitors = new HashMap<>();
+        }
+        propertyVisitorsSetter.accept(this.propertyVisitors);
         return this;
     }
 
     /**
-     * Get propertyVisitors
+     * 孪生属性配置
      * @return propertyVisitors
      */
-    public ValueInPropertyVisitors getPropertyVisitors() {
+    public Map<String, ValueInPropertyVisitors> getPropertyVisitors() {
         return propertyVisitors;
     }
 
-    public void setPropertyVisitors(ValueInPropertyVisitors propertyVisitors) {
+    public void setPropertyVisitors(Map<String, ValueInPropertyVisitors> propertyVisitors) {
         this.propertyVisitors = propertyVisitors;
     }
 
-    public UpdateDeviceTwinResponse withTwin(ValueInTwinResponse twin) {
+    public UpdateDeviceTwinResponse withTwin(Map<String, ValueInTwinResponse> twin) {
         this.twin = twin;
         return this;
     }
 
-    public UpdateDeviceTwinResponse withTwin(Consumer<ValueInTwinResponse> twinSetter) {
+    public UpdateDeviceTwinResponse putTwinItem(String key, ValueInTwinResponse twinItem) {
         if (this.twin == null) {
-            this.twin = new ValueInTwinResponse();
-            twinSetter.accept(this.twin);
+            this.twin = new HashMap<>();
         }
+        this.twin.put(key, twinItem);
+        return this;
+    }
 
+    public UpdateDeviceTwinResponse withTwin(Consumer<Map<String, ValueInTwinResponse>> twinSetter) {
+        if (this.twin == null) {
+            this.twin = new HashMap<>();
+        }
+        twinSetter.accept(this.twin);
         return this;
     }
 
     /**
-     * Get twin
+     * 终端设备动态属性
      * @return twin
      */
-    public ValueInTwinResponse getTwin() {
+    public Map<String, ValueInTwinResponse> getTwin() {
         return twin;
     }
 
-    public void setTwin(ValueInTwinResponse twin) {
+    public void setTwin(Map<String, ValueInTwinResponse> twin) {
         this.twin = twin;
     }
 

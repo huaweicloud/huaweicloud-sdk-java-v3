@@ -43,6 +43,11 @@ public class AppConfigs {
 
     private Boolean hostPid;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dns_policy")
+
+    private String dnsPolicy;
+
     public AppConfigs withPrivileged(Boolean privileged) {
         this.privileged = privileged;
         return this;
@@ -161,6 +166,23 @@ public class AppConfigs {
         this.hostPid = hostPid;
     }
 
+    public AppConfigs withDnsPolicy(String dnsPolicy) {
+        this.dnsPolicy = dnsPolicy;
+        return this;
+    }
+
+    /**
+     * 应用实例DNS策略，可选值Default、ClusterFirst、ClusterFirstWithHostNet，默认为Default。应用实例启用主机网络时只能选填Default、ClusterFirstWithHostNet，不启用主机网络时只能选填Default、ClusterFirst
+     * @return dnsPolicy
+     */
+    public String getDnsPolicy() {
+        return dnsPolicy;
+    }
+
+    public void setDnsPolicy(String dnsPolicy) {
+        this.dnsPolicy = dnsPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -173,12 +195,12 @@ public class AppConfigs {
         return Objects.equals(this.privileged, that.privileged) && Objects.equals(this.runAsUser, that.runAsUser)
             && Objects.equals(this.hostNetwork, that.hostNetwork)
             && Objects.equals(this.restartPolicy, that.restartPolicy) && Objects.equals(this.ports, that.ports)
-            && Objects.equals(this.hostPid, that.hostPid);
+            && Objects.equals(this.hostPid, that.hostPid) && Objects.equals(this.dnsPolicy, that.dnsPolicy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(privileged, runAsUser, hostNetwork, restartPolicy, ports, hostPid);
+        return Objects.hash(privileged, runAsUser, hostNetwork, restartPolicy, ports, hostPid, dnsPolicy);
     }
 
     @Override
@@ -191,6 +213,7 @@ public class AppConfigs {
         sb.append("    restartPolicy: ").append(toIndentedString(restartPolicy)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    hostPid: ").append(toIndentedString(hostPid)).append("\n");
+        sb.append("    dnsPolicy: ").append(toIndentedString(dnsPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

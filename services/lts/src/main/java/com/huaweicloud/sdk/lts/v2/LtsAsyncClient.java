@@ -43,6 +43,8 @@ import com.huaweicloud.sdk.lts.v2.model.DeleteActiveAlarmsRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteActiveAlarmsResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.DeleteDashboardRequest;
+import com.huaweicloud.sdk.lts.v2.model.DeleteDashboardResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteHostGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteHostGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteKeywordsAlarmRuleRequest;
@@ -678,6 +680,36 @@ public class LtsAsyncClient {
         DeleteActiveAlarmsRequest request) {
         return new AsyncInvoker<DeleteActiveAlarmsRequest, DeleteActiveAlarmsResponse>(request,
             LtsMeta.deleteActiveAlarms, hcClient);
+    }
+
+    /**
+     * 删除仪表盘
+     *
+     * 删除仪表盘
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDashboardRequest 请求对象
+     * @return CompletableFuture<DeleteDashboardResponse>
+     */
+    public CompletableFuture<DeleteDashboardResponse> deleteDashboardAsync(DeleteDashboardRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.deleteDashboard);
+    }
+
+    /**
+     * 删除仪表盘
+     *
+     * 删除仪表盘
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDashboardRequest 请求对象
+     * @return AsyncInvoker<DeleteDashboardRequest, DeleteDashboardResponse>
+     */
+    public AsyncInvoker<DeleteDashboardRequest, DeleteDashboardResponse> deleteDashboardAsyncInvoker(
+        DeleteDashboardRequest request) {
+        return new AsyncInvoker<DeleteDashboardRequest, DeleteDashboardResponse>(request, LtsMeta.deleteDashboard,
+            hcClient);
     }
 
     /**

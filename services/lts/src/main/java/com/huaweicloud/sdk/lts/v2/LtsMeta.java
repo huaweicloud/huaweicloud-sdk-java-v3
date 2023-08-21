@@ -64,6 +64,8 @@ import com.huaweicloud.sdk.lts.v2.model.DeleteActiveAlarmsRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.DeleteActiveAlarmsResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.DeleteDashboardRequest;
+import com.huaweicloud.sdk.lts.v2.model.DeleteDashboardResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteHostGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteHostGroupRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.DeleteHostGroupResponse;
@@ -688,6 +690,38 @@ public class LtsMeta {
             TypeCasts.uncheckedConversion(DeleteActiveAlarmsRequestBody.class),
             f -> f.withMarshaller(DeleteActiveAlarmsRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDashboardRequest, DeleteDashboardResponse> deleteDashboard =
+        genFordeleteDashboard();
+
+    private static HttpRequestDef<DeleteDashboardRequest, DeleteDashboardResponse> genFordeleteDashboard() {
+        // basic
+        HttpRequestDef.Builder<DeleteDashboardRequest, DeleteDashboardResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDashboardRequest.class, DeleteDashboardResponse.class)
+                .withName("DeleteDashboard")
+                .withUri("/v2/{project_id}/dashboard")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDashboardRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<Boolean>withRequestField("is_delete_charts",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteDashboardRequest::getIsDeleteCharts, (req, v) -> {
+                req.setIsDeleteCharts(v);
             }));
 
         // response
