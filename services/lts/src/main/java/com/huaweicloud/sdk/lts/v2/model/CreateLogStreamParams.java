@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.lts.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -24,7 +26,7 @@ public class CreateLogStreamParams {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private TagsBody tags;
+    private List<TagsBody> tags = null;
 
     public CreateLogStreamParams withLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
@@ -62,29 +64,36 @@ public class CreateLogStreamParams {
         this.ttlInDays = ttlInDays;
     }
 
-    public CreateLogStreamParams withTags(TagsBody tags) {
+    public CreateLogStreamParams withTags(List<TagsBody> tags) {
         this.tags = tags;
         return this;
     }
 
-    public CreateLogStreamParams withTags(Consumer<TagsBody> tagsSetter) {
+    public CreateLogStreamParams addTagsItem(TagsBody tagsItem) {
         if (this.tags == null) {
-            this.tags = new TagsBody();
-            tagsSetter.accept(this.tags);
+            this.tags = new ArrayList<>();
         }
+        this.tags.add(tagsItem);
+        return this;
+    }
 
+    public CreateLogStreamParams withTags(Consumer<List<TagsBody>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
         return this;
     }
 
     /**
-     * Get tags
+     * 标签字段信息
      * @return tags
      */
-    public TagsBody getTags() {
+    public List<TagsBody> getTags() {
         return tags;
     }
 
-    public void setTags(TagsBody tags) {
+    public void setTags(List<TagsBody> tags) {
         this.tags = tags;
     }
 

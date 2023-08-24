@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 更新公网NAT网关实例的请求体。
@@ -112,6 +113,11 @@ public class UpdateNatGatewayOption {
 
     private SpecEnum spec;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_conf")
+
+    private SessionConfiguration sessionConf;
+
     public UpdateNatGatewayOption withName(String name) {
         this.name = name;
         return this;
@@ -163,6 +169,32 @@ public class UpdateNatGatewayOption {
         this.spec = spec;
     }
 
+    public UpdateNatGatewayOption withSessionConf(SessionConfiguration sessionConf) {
+        this.sessionConf = sessionConf;
+        return this;
+    }
+
+    public UpdateNatGatewayOption withSessionConf(Consumer<SessionConfiguration> sessionConfSetter) {
+        if (this.sessionConf == null) {
+            this.sessionConf = new SessionConfiguration();
+            sessionConfSetter.accept(this.sessionConf);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sessionConf
+     * @return sessionConf
+     */
+    public SessionConfiguration getSessionConf() {
+        return sessionConf;
+    }
+
+    public void setSessionConf(SessionConfiguration sessionConf) {
+        this.sessionConf = sessionConf;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -173,12 +205,12 @@ public class UpdateNatGatewayOption {
         }
         UpdateNatGatewayOption that = (UpdateNatGatewayOption) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.spec, that.spec);
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.sessionConf, that.sessionConf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, spec);
+        return Objects.hash(name, description, spec, sessionConf);
     }
 
     @Override
@@ -188,6 +220,7 @@ public class UpdateNatGatewayOption {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
+        sb.append("    sessionConf: ").append(toIndentedString(sessionConf)).append("\n");
         sb.append("}");
         return sb.toString();
     }

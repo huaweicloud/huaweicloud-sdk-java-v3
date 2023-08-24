@@ -172,6 +172,81 @@ public class AuthorizerBase {
 
     private String authorizerUri;
 
+    /**
+     * 对接函数的网络架构类型 - V1：非VPC网络架构 - V2：VPC网络架构
+     */
+    public static final class NetworkTypeEnum {
+
+        /**
+         * Enum V1 for value: "V1"
+         */
+        public static final NetworkTypeEnum V1 = new NetworkTypeEnum("V1");
+
+        /**
+         * Enum V2 for value: "V2"
+         */
+        public static final NetworkTypeEnum V2 = new NetworkTypeEnum("V2");
+
+        private static final Map<String, NetworkTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, NetworkTypeEnum> createStaticFields() {
+            Map<String, NetworkTypeEnum> map = new HashMap<>();
+            map.put("V1", V1);
+            map.put("V2", V2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        NetworkTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static NetworkTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetworkTypeEnum(value));
+        }
+
+        public static NetworkTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof NetworkTypeEnum) {
+                return this.value.equals(((NetworkTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_type")
+
+    private NetworkTypeEnum networkType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorizer_version")
 
@@ -273,6 +348,23 @@ public class AuthorizerBase {
 
     public void setAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
+    }
+
+    public AuthorizerBase withNetworkType(NetworkTypeEnum networkType) {
+        this.networkType = networkType;
+        return this;
+    }
+
+    /**
+     * 对接函数的网络架构类型 - V1：非VPC网络架构 - V2：VPC网络架构
+     * @return networkType
+     */
+    public NetworkTypeEnum getNetworkType() {
+        return networkType;
+    }
+
+    public void setNetworkType(NetworkTypeEnum networkType) {
+        this.networkType = networkType;
     }
 
     public AuthorizerBase withAuthorizerVersion(String authorizerVersion) {
@@ -422,6 +514,7 @@ public class AuthorizerBase {
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.authorizerType, that.authorizerType)
             && Objects.equals(this.authorizerUri, that.authorizerUri)
+            && Objects.equals(this.networkType, that.networkType)
             && Objects.equals(this.authorizerVersion, that.authorizerVersion)
             && Objects.equals(this.authorizerAliasUri, that.authorizerAliasUri)
             && Objects.equals(this.identities, that.identities) && Objects.equals(this.ttl, that.ttl)
@@ -435,6 +528,7 @@ public class AuthorizerBase {
             type,
             authorizerType,
             authorizerUri,
+            networkType,
             authorizerVersion,
             authorizerAliasUri,
             identities,
@@ -452,6 +546,7 @@ public class AuthorizerBase {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    authorizerType: ").append(toIndentedString(authorizerType)).append("\n");
         sb.append("    authorizerUri: ").append(toIndentedString(authorizerUri)).append("\n");
+        sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    authorizerVersion: ").append(toIndentedString(authorizerVersion)).append("\n");
         sb.append("    authorizerAliasUri: ").append(toIndentedString(authorizerAliasUri)).append("\n");
         sb.append("    identities: ").append(toIndentedString(identities)).append("\n");

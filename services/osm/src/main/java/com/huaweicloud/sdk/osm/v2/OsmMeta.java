@@ -195,6 +195,8 @@ import com.huaweicloud.sdk.osm.v2.model.ShowDownloadAccessoryUrlRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowDownloadAccessoryUrlResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowLatestPublishedAgreementRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowLatestPublishedAgreementResponse;
+import com.huaweicloud.sdk.osm.v2.model.ShowLoginTypeRequest;
+import com.huaweicloud.sdk.osm.v2.model.ShowLoginTypeResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowPartnersCasesPrivilegeRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowPartnersCasesPrivilegeResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowPartnersServiceInfoRequest;
@@ -4575,6 +4577,38 @@ public class OsmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getXTimeZone, (req, v) -> {
+                req.setXTimeZone(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLoginTypeRequest, ShowLoginTypeResponse> showLoginType =
+        genForshowLoginType();
+
+    private static HttpRequestDef<ShowLoginTypeRequest, ShowLoginTypeResponse> genForshowLoginType() {
+        // basic
+        HttpRequestDef.Builder<ShowLoginTypeRequest, ShowLoginTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLoginTypeRequest.class, ShowLoginTypeResponse.class)
+                .withName("ShowLoginType")
+                .withUri("/v2/servicerequest/authorizations/login-type")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLoginTypeRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<String>withRequestField("X-Time-Zone",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLoginTypeRequest::getXTimeZone, (req, v) -> {
                 req.setXTimeZone(v);
             }));
 

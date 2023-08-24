@@ -5,15 +5,24 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
+import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupResponse;
@@ -28,6 +37,8 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRequest;
@@ -38,8 +49,13 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
@@ -51,11 +67,16 @@ import com.huaweicloud.sdk.vpc.v3.model.ListVpcsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
@@ -69,6 +90,12 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRulesRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupResponse;
@@ -681,6 +708,341 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSubNetworkInterfaceRequestBody.class),
             f -> f.withMarshaller(UpdateSubNetworkInterfaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddFirewallRulesRequest, AddFirewallRulesResponse> addFirewallRules =
+        genForaddFirewallRules();
+
+    private static HttpRequestDef<AddFirewallRulesRequest, AddFirewallRulesResponse> genForaddFirewallRules() {
+        // basic
+        HttpRequestDef.Builder<AddFirewallRulesRequest, AddFirewallRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddFirewallRulesRequest.class, AddFirewallRulesResponse.class)
+                .withName("AddFirewallRules")
+                .withUri("/v3/{project_id}/vpc/firewalls/{firewall_id}/insert-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddFirewallRulesRequest::getFirewallId, (req, v) -> {
+                req.setFirewallId(v);
+            }));
+        builder.<AddFirewallRulesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddFirewallRulesRequestBody.class),
+            f -> f.withMarshaller(AddFirewallRulesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse> associateSubnetFirewall =
+        genForassociateSubnetFirewall();
+
+    private static HttpRequestDef<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse> genForassociateSubnetFirewall() {
+        // basic
+        HttpRequestDef.Builder<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, AssociateSubnetFirewallRequest.class, AssociateSubnetFirewallResponse.class)
+            .withName("AssociateSubnetFirewall")
+            .withUri("/v3/{project_id}/vpc/firewalls/{firewall_id}/associate-subnets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateSubnetFirewallRequest::getFirewallId, (req, v) -> {
+                req.setFirewallId(v);
+            }));
+        builder.<AssociateSubnetFirewallRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateSubnetFirewallRequestBody.class),
+            f -> f.withMarshaller(AssociateSubnetFirewallRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> createFirewall =
+        genForcreateFirewall();
+
+    private static HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> genForcreateFirewall() {
+        // basic
+        HttpRequestDef.Builder<CreateFirewallRequest, CreateFirewallResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFirewallRequest.class, CreateFirewallResponse.class)
+                .withName("CreateFirewall")
+                .withUri("/v3/{project_id}/vpc/firewalls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateFirewallRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFirewallRequestBody.class),
+            f -> f.withMarshaller(CreateFirewallRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewall =
+        genFordeleteFirewall();
+
+    private static HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> genFordeleteFirewall() {
+        // basic
+        HttpRequestDef.Builder<DeleteFirewallRequest, DeleteFirewallResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFirewallRequest.class, DeleteFirewallResponse.class)
+                .withName("DeleteFirewall")
+                .withUri("/v3/{project_id}/vpc/firewalls/{firewall_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFirewallRequest::getFirewallId, (req, v) -> {
+                req.setFirewallId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse> disassociateSubnetFirewall =
+        genFordisassociateSubnetFirewall();
+
+    private static HttpRequestDef<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse> genFordisassociateSubnetFirewall() {
+        // basic
+        HttpRequestDef.Builder<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    DisassociateSubnetFirewallRequest.class,
+                    DisassociateSubnetFirewallResponse.class)
+                .withName("DisassociateSubnetFirewall")
+                .withUri("/v3/{project_id}/vpc/firewalls/{firewall_id}/disassociate-subnets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateSubnetFirewallRequest::getFirewallId, (req, v) -> {
+                req.setFirewallId(v);
+            }));
+        builder.<DisassociateSubnetFirewallRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisassociateSubnetFirewallRequestBody.class),
+            f -> f.withMarshaller(DisassociateSubnetFirewallRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFirewallRequest, ListFirewallResponse> listFirewall = genForlistFirewall();
+
+    private static HttpRequestDef<ListFirewallRequest, ListFirewallResponse> genForlistFirewall() {
+        // basic
+        HttpRequestDef.Builder<ListFirewallRequest, ListFirewallResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFirewallRequest.class, ListFirewallResponse.class)
+                .withName("ListFirewall")
+                .withUri("/v3/{project_id}/vpc/firewalls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFirewallRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFirewallRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFirewallRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFirewallRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<ListFirewallRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFirewallRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListFirewallRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFirewallRequest::getAdminStateUp, (req, v) -> {
+                req.setAdminStateUp(v);
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFirewallRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> removeFirewallRules =
+        genForremoveFirewallRules();
+
+    private static HttpRequestDef<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> genForremoveFirewallRules() {
+        // basic
+        HttpRequestDef.Builder<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RemoveFirewallRulesRequest.class, RemoveFirewallRulesResponse.class)
+                .withName("RemoveFirewallRules")
+                .withUri("/v3/{project_id}/vpc/firewalls/{firewall_id}/remove-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveFirewallRulesRequest::getFirewallId, (req, v) -> {
+                req.setFirewallId(v);
+            }));
+        builder.<RemoveFirewallRulesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemoveFirewallRulesRequestBody.class),
+            f -> f.withMarshaller(RemoveFirewallRulesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFirewallRequest, ShowFirewallResponse> showFirewall = genForshowFirewall();
+
+    private static HttpRequestDef<ShowFirewallRequest, ShowFirewallResponse> genForshowFirewall() {
+        // basic
+        HttpRequestDef.Builder<ShowFirewallRequest, ShowFirewallResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFirewallRequest.class, ShowFirewallResponse.class)
+                .withName("ShowFirewall")
+                .withUri("/v3/{project_id}/vpc/firewalls/{firewall_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFirewallRequest::getFirewallId, (req, v) -> {
+                req.setFirewallId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFirewallRequest, UpdateFirewallResponse> updateFirewall =
+        genForupdateFirewall();
+
+    private static HttpRequestDef<UpdateFirewallRequest, UpdateFirewallResponse> genForupdateFirewall() {
+        // basic
+        HttpRequestDef.Builder<UpdateFirewallRequest, UpdateFirewallResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateFirewallRequest.class, UpdateFirewallResponse.class)
+                .withName("UpdateFirewall")
+                .withUri("/v3/{project_id}/vpc/firewalls/{firewall_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFirewallRequest::getFirewallId, (req, v) -> {
+                req.setFirewallId(v);
+            }));
+        builder.<UpdateFirewallRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFirewallRequestBody.class),
+            f -> f.withMarshaller(UpdateFirewallRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> updateFirewallRules =
+        genForupdateFirewallRules();
+
+    private static HttpRequestDef<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> genForupdateFirewallRules() {
+        // basic
+        HttpRequestDef.Builder<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateFirewallRulesRequest.class, UpdateFirewallRulesResponse.class)
+                .withName("UpdateFirewallRules")
+                .withUri("/v3/{project_id}/vpc/firewalls/{firewall_id}/update-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("firewall_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFirewallRulesRequest::getFirewallId, (req, v) -> {
+                req.setFirewallId(v);
+            }));
+        builder.<UpdateFirewallRulesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFirewallRulesRequestBody.class),
+            f -> f.withMarshaller(UpdateFirewallRulesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

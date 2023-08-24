@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * RespInstanceBase
@@ -31,7 +34,7 @@ public class RespInstanceBase {
     private String instanceName;
 
     /**
-     * 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 - InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 - UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 - DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 - RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 - UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 - Unhealthy：实例异常 - RestartTimeout：重启超时
+     * 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 - InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 - UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 - DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 - RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 - UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 - Unhealthy：实例异常 - RestartTimeout：重启超时 - Resizing：规格变更中 - ResizeFailed：规格变更失败 - ResizeTimeout：规格变更超时
      */
     public static final class StatusEnum {
 
@@ -205,6 +208,21 @@ public class RespInstanceBase {
          */
         public static final StatusEnum RESTARTTIMEOUT = new StatusEnum("RestartTimeout");
 
+        /**
+         * Enum RESIZING for value: "Resizing"
+         */
+        public static final StatusEnum RESIZING = new StatusEnum("Resizing");
+
+        /**
+         * Enum RESIZEFAILED for value: "ResizeFailed"
+         */
+        public static final StatusEnum RESIZEFAILED = new StatusEnum("ResizeFailed");
+
+        /**
+         * Enum RESIZETIMEOUT for value: "ResizeTimeout"
+         */
+        public static final StatusEnum RESIZETIMEOUT = new StatusEnum("ResizeTimeout");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -243,6 +261,9 @@ public class RespInstanceBase {
             map.put("RestartFail", RESTARTFAIL);
             map.put("Unhealthy", UNHEALTHY);
             map.put("RestartTimeout", RESTARTTIMEOUT);
+            map.put("Resizing", RESIZING);
+            map.put("ResizeFailed", RESIZEFAILED);
+            map.put("ResizeTimeout", RESIZETIMEOUT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -298,7 +319,7 @@ public class RespInstanceBase {
     private StatusEnum status;
 
     /**
-     * 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 - 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 - 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 - 41：重启超时
+     * 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 - 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 - 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 - 41：重启超时 - 42：规格变更中 - 43：规格变更失败 - 44：规格变更超时
      */
     public static final class InstanceStatusEnum {
 
@@ -472,6 +493,21 @@ public class RespInstanceBase {
          */
         public static final InstanceStatusEnum NUMBER_41 = new InstanceStatusEnum(41);
 
+        /**
+         * Enum NUMBER_42 for value: 42
+         */
+        public static final InstanceStatusEnum NUMBER_42 = new InstanceStatusEnum(42);
+
+        /**
+         * Enum NUMBER_43 for value: 43
+         */
+        public static final InstanceStatusEnum NUMBER_43 = new InstanceStatusEnum(43);
+
+        /**
+         * Enum NUMBER_44 for value: 44
+         */
+        public static final InstanceStatusEnum NUMBER_44 = new InstanceStatusEnum(44);
+
         private static final Map<Integer, InstanceStatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Integer, InstanceStatusEnum> createStaticFields() {
@@ -510,6 +546,9 @@ public class RespInstanceBase {
             map.put(39, NUMBER_39);
             map.put(40, NUMBER_40);
             map.put(41, NUMBER_41);
+            map.put(42, NUMBER_42);
+            map.put(43, NUMBER_43);
+            map.put(44, NUMBER_44);
             return Collections.unmodifiableMap(map);
         }
 
@@ -614,6 +653,41 @@ public class RespInstanceBase {
          */
         public static final SpecEnum PLATINUM_IPV6 = new SpecEnum("PLATINUM_IPV6");
 
+        /**
+         * Enum PLATINUM_X2 for value: "PLATINUM_X2"
+         */
+        public static final SpecEnum PLATINUM_X2 = new SpecEnum("PLATINUM_X2");
+
+        /**
+         * Enum PLATINUM_X3 for value: "PLATINUM_X3"
+         */
+        public static final SpecEnum PLATINUM_X3 = new SpecEnum("PLATINUM_X3");
+
+        /**
+         * Enum PLATINUM_X4 for value: "PLATINUM_X4"
+         */
+        public static final SpecEnum PLATINUM_X4 = new SpecEnum("PLATINUM_X4");
+
+        /**
+         * Enum PLATINUM_X5 for value: "PLATINUM_X5"
+         */
+        public static final SpecEnum PLATINUM_X5 = new SpecEnum("PLATINUM_X5");
+
+        /**
+         * Enum PLATINUM_X6 for value: "PLATINUM_X6"
+         */
+        public static final SpecEnum PLATINUM_X6 = new SpecEnum("PLATINUM_X6");
+
+        /**
+         * Enum PLATINUM_X7 for value: "PLATINUM_X7"
+         */
+        public static final SpecEnum PLATINUM_X7 = new SpecEnum("PLATINUM_X7");
+
+        /**
+         * Enum PLATINUM_X8 for value: "PLATINUM_X8"
+         */
+        public static final SpecEnum PLATINUM_X8 = new SpecEnum("PLATINUM_X8");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -626,6 +700,13 @@ public class RespInstanceBase {
             map.put("PROFESSIONAL_IPV6", PROFESSIONAL_IPV6);
             map.put("ENTERPRISE_IPV6", ENTERPRISE_IPV6);
             map.put("PLATINUM_IPV6", PLATINUM_IPV6);
+            map.put("PLATINUM_X2", PLATINUM_X2);
+            map.put("PLATINUM_X3", PLATINUM_X3);
+            map.put("PLATINUM_X4", PLATINUM_X4);
+            map.put("PLATINUM_X5", PLATINUM_X5);
+            map.put("PLATINUM_X6", PLATINUM_X6);
+            map.put("PLATINUM_X7", PLATINUM_X7);
+            map.put("PLATINUM_X8", PLATINUM_X8);
             return Collections.unmodifiableMap(map);
         }
 
@@ -850,6 +931,11 @@ public class RespInstanceBase {
 
     private LoadbalancerProviderEnum loadbalancerProvider;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cbc_operation_locks")
+
+    private List<CbcOperationLock> cbcOperationLocks = null;
+
     public RespInstanceBase withId(String id) {
         this.id = id;
         return this;
@@ -907,7 +993,7 @@ public class RespInstanceBase {
     }
 
     /**
-     * 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 - InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 - UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 - DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 - RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 - UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 - Unhealthy：实例异常 - RestartTimeout：重启超时
+     * 实例状态： - Creating：创建中 - CreateSuccess：创建成功 - CreateFail：创建失败 - Initing：初始化中 - Registering：注册中 - Running：运行中 - InitingFailed：初始化失败 - RegisterFailed：注册失败 - Installing：安装中 - InstallFailed：安装失败 - Updating：升级中 - UpdateFailed：升级失败 - Rollbacking：回滚中 - RollbackSuccess：回滚成功 - RollbackFailed：回滚失败 - Deleting：删除中 - DeleteFailed：删除失败 - Unregistering：注销中 - UnRegisterFailed：注销失败 - CreateTimeout：创建超时 - InitTimeout：初始化超时 - RegisterTimeout：注册超时 - InstallTimeout：安装超时 - UpdateTimeout：升级超时 - RollbackTimeout：回滚超时 - DeleteTimeout：删除超时 - UnregisterTimeout：注销超时 - Starting：启动中 - Freezing：冻结中 - Frozen：已冻结 - Restarting：重启中 - RestartFail：重启失败 - Unhealthy：实例异常 - RestartTimeout：重启超时 - Resizing：规格变更中 - ResizeFailed：规格变更失败 - ResizeTimeout：规格变更超时
      * @return status
      */
     public StatusEnum getStatus() {
@@ -924,7 +1010,7 @@ public class RespInstanceBase {
     }
 
     /**
-     * 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 - 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 - 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 - 41：重启超时
+     * 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 - 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 - 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 - 41：重启超时 - 42：规格变更中 - 43：规格变更失败 - 44：规格变更超时
      * @return instanceStatus
      */
     public InstanceStatusEnum getInstanceStatus() {
@@ -1071,6 +1157,39 @@ public class RespInstanceBase {
         this.loadbalancerProvider = loadbalancerProvider;
     }
 
+    public RespInstanceBase withCbcOperationLocks(List<CbcOperationLock> cbcOperationLocks) {
+        this.cbcOperationLocks = cbcOperationLocks;
+        return this;
+    }
+
+    public RespInstanceBase addCbcOperationLocksItem(CbcOperationLock cbcOperationLocksItem) {
+        if (this.cbcOperationLocks == null) {
+            this.cbcOperationLocks = new ArrayList<>();
+        }
+        this.cbcOperationLocks.add(cbcOperationLocksItem);
+        return this;
+    }
+
+    public RespInstanceBase withCbcOperationLocks(Consumer<List<CbcOperationLock>> cbcOperationLocksSetter) {
+        if (this.cbcOperationLocks == null) {
+            this.cbcOperationLocks = new ArrayList<>();
+        }
+        cbcOperationLocksSetter.accept(this.cbcOperationLocks);
+        return this;
+    }
+
+    /**
+     * 云运营限制操作锁
+     * @return cbcOperationLocks
+     */
+    public List<CbcOperationLock> getCbcOperationLocks() {
+        return cbcOperationLocks;
+    }
+
+    public void setCbcOperationLocks(List<CbcOperationLock> cbcOperationLocks) {
+        this.cbcOperationLocks = cbcOperationLocks;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1087,7 +1206,8 @@ public class RespInstanceBase {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.eipAddress, that.eipAddress) && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.cbcMetadata, that.cbcMetadata)
-            && Objects.equals(this.loadbalancerProvider, that.loadbalancerProvider);
+            && Objects.equals(this.loadbalancerProvider, that.loadbalancerProvider)
+            && Objects.equals(this.cbcOperationLocks, that.cbcOperationLocks);
     }
 
     @Override
@@ -1104,7 +1224,8 @@ public class RespInstanceBase {
             eipAddress,
             chargingMode,
             cbcMetadata,
-            loadbalancerProvider);
+            loadbalancerProvider,
+            cbcOperationLocks);
     }
 
     @Override
@@ -1124,6 +1245,7 @@ public class RespInstanceBase {
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    cbcMetadata: ").append(toIndentedString(cbcMetadata)).append("\n");
         sb.append("    loadbalancerProvider: ").append(toIndentedString(loadbalancerProvider)).append("\n");
+        sb.append("    cbcOperationLocks: ").append(toIndentedString(cbcOperationLocks)).append("\n");
         sb.append("}");
         return sb.toString();
     }

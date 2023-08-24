@@ -58,7 +58,7 @@ public class UpdatePortalFastappModel {
     }
 
     /**
-     * 快应用LOGO图片资源ID。  > 图片格式为jpg、bmp、jpeg，分辨率大于等于192*192，比例+-0.15，大小不超过5M。参数值为上传智能信息服务号图片资源API返回的resource_id。 
+     * 快应用LOGO图片资源ID。  > 图片格式为jpg、bmp、jpeg，分辨率大于等于192*192，大小不超过4M。参数值为上传智能信息服务号图片资源API返回的resource_id。 
      * @return logoImg
      */
     public String getLogoImg() {

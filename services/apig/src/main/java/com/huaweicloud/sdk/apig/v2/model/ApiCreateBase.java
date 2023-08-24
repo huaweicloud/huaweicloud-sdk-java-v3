@@ -307,7 +307,7 @@ public class ApiCreateBase {
     private String reqUri;
 
     /**
-     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证  当API的请求协议为GRPC类型时不支持自定义认证。
+     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证，当auth_type取值为AUTHORIZER时，authorizer_id字段必须传入  当API的请求协议为GRPC类型时不支持自定义认证。
      */
     public static final class AuthTypeEnum {
 
@@ -479,7 +479,7 @@ public class ApiCreateBase {
     private MatchModeEnum matchMode;
 
     /**
-     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 - GRPC：grpc后端
+     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流，当backend_type取值为FUNCTION时，func_info字段必须传入 - MOCK：模拟的后端，当backend_type取值为MOCK时，mock_info字段必须传入 - GRPC：grpc后端
      */
     public static final class BackendTypeEnum {
 
@@ -621,7 +621,7 @@ public class ApiCreateBase {
     private String tag;
 
     /**
-     * 请求内容格式类型：  application/json application/xml multipart/form-date text/plain  暂不支持
+     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain  暂不支持
      */
     public static final class ContentTypeEnum {
 
@@ -636,9 +636,9 @@ public class ApiCreateBase {
         public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
 
         /**
-         * Enum MULTIPART_FORM_DATE for value: "multipart/form-date"
+         * Enum MULTIPART_FORM_DATA for value: "multipart/form-data"
          */
-        public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
+        public static final ContentTypeEnum MULTIPART_FORM_DATA = new ContentTypeEnum("multipart/form-data");
 
         /**
          * Enum TEXT_PLAIN for value: "text/plain"
@@ -651,7 +651,7 @@ public class ApiCreateBase {
             Map<String, ContentTypeEnum> map = new HashMap<>();
             map.put("application/json", APPLICATION_JSON);
             map.put("application/xml", APPLICATION_XML);
-            map.put("multipart/form-date", MULTIPART_FORM_DATE);
+            map.put("multipart/form-data", MULTIPART_FORM_DATA);
             map.put("text/plain", TEXT_PLAIN);
             return Collections.unmodifiableMap(map);
         }
@@ -845,7 +845,7 @@ public class ApiCreateBase {
     }
 
     /**
-     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证  当API的请求协议为GRPC类型时不支持自定义认证。
+     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证，当auth_type取值为AUTHORIZER时，authorizer_id字段必须传入  当API的请求协议为GRPC类型时不支持自定义认证。
      * @return authType
      */
     public AuthTypeEnum getAuthType() {
@@ -922,7 +922,7 @@ public class ApiCreateBase {
     }
 
     /**
-     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 - GRPC：grpc后端
+     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流，当backend_type取值为FUNCTION时，func_info字段必须传入 - MOCK：模拟的后端，当backend_type取值为MOCK时，mock_info字段必须传入 - GRPC：grpc后端
      * @return backendType
      */
     public BackendTypeEnum getBackendType() {
@@ -1142,7 +1142,7 @@ public class ApiCreateBase {
     }
 
     /**
-     * 请求内容格式类型：  application/json application/xml multipart/form-date text/plain  暂不支持
+     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain  暂不支持
      * @return contentType
      */
     public ContentTypeEnum getContentType() {

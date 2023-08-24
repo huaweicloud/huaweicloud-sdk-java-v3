@@ -24,6 +24,21 @@ public class VatInvoiceResult {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "invoice_tag")
+
+    private String invoiceTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sum_amount")
+
+    private String sumAmount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sum_tax")
+
+    private String sumTax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
 
     private String serialNumber;
@@ -210,6 +225,57 @@ public class VatInvoiceResult {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public VatInvoiceResult withInvoiceTag(String invoiceTag) {
+        this.invoiceTag = invoiceTag;
+        return this;
+    }
+
+    /**
+     * 增值税发票左上角标志。当“advanced_mode”设置为“true”时才返回。包含：通行费、代开。 
+     * @return invoiceTag
+     */
+    public String getInvoiceTag() {
+        return invoiceTag;
+    }
+
+    public void setInvoiceTag(String invoiceTag) {
+        this.invoiceTag = invoiceTag;
+    }
+
+    public VatInvoiceResult withSumAmount(String sumAmount) {
+        this.sumAmount = sumAmount;
+        return this;
+    }
+
+    /**
+     * 小计金额，当传入多页PDF时返回此字段。 
+     * @return sumAmount
+     */
+    public String getSumAmount() {
+        return sumAmount;
+    }
+
+    public void setSumAmount(String sumAmount) {
+        this.sumAmount = sumAmount;
+    }
+
+    public VatInvoiceResult withSumTax(String sumTax) {
+        this.sumTax = sumTax;
+        return this;
+    }
+
+    /**
+     * 小计税额，当传入多页PDF时返回此字段。 
+     * @return sumTax
+     */
+    public String getSumTax() {
+        return sumTax;
+    }
+
+    public void setSumTax(String sumTax) {
+        this.sumTax = sumTax;
     }
 
     public VatInvoiceResult withSerialNumber(String serialNumber) {
@@ -797,7 +863,8 @@ public class VatInvoiceResult {
         }
         VatInvoiceResult that = (VatInvoiceResult) obj;
         return Objects.equals(this.title, that.title) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.serialNumber, that.serialNumber)
+            && Objects.equals(this.invoiceTag, that.invoiceTag) && Objects.equals(this.sumAmount, that.sumAmount)
+            && Objects.equals(this.sumTax, that.sumTax) && Objects.equals(this.serialNumber, that.serialNumber)
             && Objects.equals(this.attribution, that.attribution)
             && Objects.equals(this.supervisionSeal, that.supervisionSeal) && Objects.equals(this.code, that.code)
             && Objects.equals(this.printCode, that.printCode) && Objects.equals(this.machineNumber, that.machineNumber)
@@ -822,6 +889,9 @@ public class VatInvoiceResult {
     public int hashCode() {
         return Objects.hash(title,
             type,
+            invoiceTag,
+            sumAmount,
+            sumTax,
             serialNumber,
             attribution,
             supervisionSeal,
@@ -861,6 +931,9 @@ public class VatInvoiceResult {
         sb.append("class VatInvoiceResult {\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    invoiceTag: ").append(toIndentedString(invoiceTag)).append("\n");
+        sb.append("    sumAmount: ").append(toIndentedString(sumAmount)).append("\n");
+        sb.append("    sumTax: ").append(toIndentedString(sumTax)).append("\n");
         sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
         sb.append("    attribution: ").append(toIndentedString(attribution)).append("\n");
         sb.append("    supervisionSeal: ").append(toIndentedString(supervisionSeal)).append("\n");

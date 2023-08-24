@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建公网NAT网关实例的请求体。
@@ -127,6 +128,11 @@ public class CreateNatGatewayOption {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_conf")
+
+    private SessionConfiguration sessionConf;
+
     public CreateNatGatewayOption withName(String name) {
         this.name = name;
         return this;
@@ -229,6 +235,32 @@ public class CreateNatGatewayOption {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateNatGatewayOption withSessionConf(SessionConfiguration sessionConf) {
+        this.sessionConf = sessionConf;
+        return this;
+    }
+
+    public CreateNatGatewayOption withSessionConf(Consumer<SessionConfiguration> sessionConfSetter) {
+        if (this.sessionConf == null) {
+            this.sessionConf = new SessionConfiguration();
+            sessionConfSetter.accept(this.sessionConf);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sessionConf
+     * @return sessionConf
+     */
+    public SessionConfiguration getSessionConf() {
+        return sessionConf;
+    }
+
+    public void setSessionConf(SessionConfiguration sessionConf) {
+        this.sessionConf = sessionConf;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -241,12 +273,13 @@ public class CreateNatGatewayOption {
         return Objects.equals(this.name, that.name) && Objects.equals(this.routerId, that.routerId)
             && Objects.equals(this.internalNetworkId, that.internalNetworkId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.spec, that.spec)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sessionConf, that.sessionConf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, routerId, internalNetworkId, description, spec, enterpriseProjectId);
+        return Objects.hash(name, routerId, internalNetworkId, description, spec, enterpriseProjectId, sessionConf);
     }
 
     @Override
@@ -259,6 +292,7 @@ public class CreateNatGatewayOption {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    sessionConf: ").append(toIndentedString(sessionConf)).append("\n");
         sb.append("}");
         return sb.toString();
     }

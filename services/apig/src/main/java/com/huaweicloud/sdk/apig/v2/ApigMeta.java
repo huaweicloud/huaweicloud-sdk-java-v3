@@ -1,10 +1,14 @@
 package com.huaweicloud.sdk.apig.v2;
 
+import com.huaweicloud.sdk.apig.v2.model.AcceptOrRejectEndpointConnectionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.AcceptOrRejectEndpointConnectionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.AclApiBindingCreate;
 import com.huaweicloud.sdk.apig.v2.model.AclBatchDelete;
 import com.huaweicloud.sdk.apig.v2.model.AclBindingBatchDelete;
 import com.huaweicloud.sdk.apig.v2.model.AddEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddEipV2Response;
+import com.huaweicloud.sdk.apig.v2.model.AddEndpointPermissionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.AddEndpointPermissionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.AddEngressEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddEngressEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.AddIngressEipV2Request;
@@ -70,6 +74,7 @@ import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CheckAppV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CheckAppV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ConnectionActionReq;
 import com.huaweicloud.sdk.apig.v2.model.CreateAclStrategyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateAclStrategyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CreateAnAppV2Request;
@@ -136,6 +141,8 @@ import com.huaweicloud.sdk.apig.v2.model.DeleteCertificateV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCertificateV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCustomAuthorizerV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCustomAuthorizerV2Response;
+import com.huaweicloud.sdk.apig.v2.model.DeleteEndpointPermissionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteEndpointPermissionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEnvironmentV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEnvironmentV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEnvironmentVariableV2Request;
@@ -171,6 +178,7 @@ import com.huaweicloud.sdk.apig.v2.model.DisassociateRequestThrottlingPolicyV2Re
 import com.huaweicloud.sdk.apig.v2.model.DisassociateSignatureKeyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DisassociateSignatureKeyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.EipBindReq;
+import com.huaweicloud.sdk.apig.v2.model.EndpointPermissionList;
 import com.huaweicloud.sdk.apig.v2.model.EnvCreate;
 import com.huaweicloud.sdk.apig.v2.model.EnvVariableCreate;
 import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsV2Request;
@@ -240,6 +248,10 @@ import com.huaweicloud.sdk.apig.v2.model.ListCertificatesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListCertificatesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListCustomAuthorizersV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListCustomAuthorizersV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ListEndpointConnectionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListEndpointConnectionsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListEndpointPermissionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListEndpointPermissionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListEnvironmentVariablesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListEnvironmentVariablesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListEnvironmentsV2Request;
@@ -405,6 +417,47 @@ import java.util.Map;
 @SuppressWarnings("unchecked")
 public class ApigMeta {
 
+    public static final HttpRequestDef<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> acceptOrRejectEndpointConnections =
+        genForacceptOrRejectEndpointConnections();
+
+    private static HttpRequestDef<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> genForacceptOrRejectEndpointConnections() {
+        // basic
+        HttpRequestDef.Builder<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AcceptOrRejectEndpointConnectionsRequest.class,
+                    AcceptOrRejectEndpointConnectionsResponse.class)
+                .withName("AcceptOrRejectEndpointConnections")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-endpoint/connections/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptOrRejectEndpointConnectionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ConnectionActionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConnectionActionReq.class),
+            f -> f.withMarshaller(AcceptOrRejectEndpointConnectionsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AcceptOrRejectEndpointConnectionsResponse::getXRequestId,
+                AcceptOrRejectEndpointConnectionsResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddEipV2Request, AddEipV2Response> addEipV2 = genForaddEipV2();
 
     private static HttpRequestDef<AddEipV2Request, AddEipV2Response> genForaddEipV2() {
@@ -433,6 +486,44 @@ public class ApigMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> addEndpointPermissions =
+        genForaddEndpointPermissions();
+
+    private static HttpRequestDef<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> genForaddEndpointPermissions() {
+        // basic
+        HttpRequestDef.Builder<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddEndpointPermissionsRequest.class, AddEndpointPermissionsResponse.class)
+            .withName("AddEndpointPermissions")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-endpoint/permissions/batch-add")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddEndpointPermissionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<EndpointPermissionList>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EndpointPermissionList.class),
+            f -> f.withMarshaller(AddEndpointPermissionsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddEndpointPermissionsResponse::getXRequestId,
+                AddEndpointPermissionsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1099,6 +1190,47 @@ public class ApigMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> deleteEndpointPermissions =
+        genFordeleteEndpointPermissions();
+
+    private static HttpRequestDef<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> genFordeleteEndpointPermissions() {
+        // basic
+        HttpRequestDef.Builder<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DeleteEndpointPermissionsRequest.class,
+                    DeleteEndpointPermissionsResponse.class)
+                .withName("DeleteEndpointPermissions")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-endpoint/permissions/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEndpointPermissionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<EndpointPermissionList>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EndpointPermissionList.class),
+            f -> f.withMarshaller(DeleteEndpointPermissionsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteEndpointPermissionsResponse::getXRequestId,
+                DeleteEndpointPermissionsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -2122,6 +2254,124 @@ public class ApigMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> listEndpointConnections =
+        genForlistEndpointConnections();
+
+    private static HttpRequestDef<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> genForlistEndpointConnections() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListEndpointConnectionsRequest.class, ListEndpointConnectionsResponse.class)
+            .withName("ListEndpointConnections")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-endpoint/connections")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<Integer>withRequestField("marker_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getMarkerId, (req, v) -> {
+                req.setMarkerId(v);
+            }));
+        builder.<ListEndpointConnectionsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEndpointConnectionsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListEndpointConnectionsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEndpointConnectionsResponse::getXRequestId,
+                ListEndpointConnectionsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> listEndpointPermissions =
+        genForlistEndpointPermissions();
+
+    private static HttpRequestDef<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> genForlistEndpointPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListEndpointPermissionsRequest.class, ListEndpointPermissionsResponse.class)
+            .withName("ListEndpointPermissions")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/vpc-endpoint/permissions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointPermissionsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEndpointPermissionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointPermissionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("permission",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointPermissionsRequest::getPermission, (req, v) -> {
+                req.setPermission(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEndpointPermissionsResponse::getXRequestId,
+                ListEndpointPermissionsResponse::setXRequestId));
         return builder.build();
     }
 

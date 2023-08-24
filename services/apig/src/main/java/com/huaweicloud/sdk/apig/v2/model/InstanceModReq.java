@@ -131,7 +131,7 @@ public class InstanceModReq {
     }
 
     /**
-     * 终端节点服务的名称。  长度不超过16个字符，允许输入大小写字母、数字、下划线、中划线。  如果您不填写该参数，系统生成的终端节点服务的名称为{region}.apig.{service_id}。 如果您填写该参数，系统生成的终端节点服务的名称为{region}.{vpcep_service_name}.{service_id}。 
+     * 终端节点服务的名称。  支持英文、数字、中划线、下划线，0~16个字符。  如果您不填写该参数，系统生成的终端节点服务的名称为{region}.apig.{service_id}。 如果您填写该参数，系统生成的终端节点服务的名称为{region}.{vpcep_service_name}.{service_id}。 
      * @return vpcepServiceName
      */
     public String getVpcepServiceName() {

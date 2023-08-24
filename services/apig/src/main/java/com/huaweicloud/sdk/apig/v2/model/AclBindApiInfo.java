@@ -1,9 +1,14 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -60,6 +65,117 @@ public class AclBindApiInfo {
     @JsonProperty(value = "publish_id")
 
     private String publishId;
+
+    /**
+     * API请求方法
+     */
+    public static final class ReqMethodEnum {
+
+        /**
+         * Enum GET for value: "GET"
+         */
+        public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
+
+        /**
+         * Enum POST for value: "POST"
+         */
+        public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
+
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
+        public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
+
+        /**
+         * Enum PUT for value: "PUT"
+         */
+        public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
+
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
+        public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
+
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
+        public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
+
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
+        public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
+
+        /**
+         * Enum ANY for value: "ANY"
+         */
+        public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
+
+        private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReqMethodEnum> createStaticFields() {
+            Map<String, ReqMethodEnum> map = new HashMap<>();
+            map.put("GET", GET);
+            map.put("POST", POST);
+            map.put("DELETE", DELETE);
+            map.put("PUT", PUT);
+            map.put("PATCH", PATCH);
+            map.put("HEAD", HEAD);
+            map.put("OPTIONS", OPTIONS);
+            map.put("ANY", ANY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ReqMethodEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ReqMethodEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
+        }
+
+        public static ReqMethodEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ReqMethodEnum) {
+                return this.value.equals(((ReqMethodEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "req_method")
+
+    private ReqMethodEnum reqMethod;
 
     public AclBindApiInfo withApiId(String apiId) {
         this.apiId = apiId;
@@ -231,6 +347,23 @@ public class AclBindApiInfo {
         this.publishId = publishId;
     }
 
+    public AclBindApiInfo withReqMethod(ReqMethodEnum reqMethod) {
+        this.reqMethod = reqMethod;
+        return this;
+    }
+
+    /**
+     * API请求方法
+     * @return reqMethod
+     */
+    public ReqMethodEnum getReqMethod() {
+        return reqMethod;
+    }
+
+    public void setReqMethod(ReqMethodEnum reqMethod) {
+        this.reqMethod = reqMethod;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -244,12 +377,23 @@ public class AclBindApiInfo {
             && Objects.equals(this.apiType, that.apiType) && Objects.equals(this.apiRemark, that.apiRemark)
             && Objects.equals(this.envId, that.envId) && Objects.equals(this.envName, that.envName)
             && Objects.equals(this.bindId, that.bindId) && Objects.equals(this.groupName, that.groupName)
-            && Objects.equals(this.bindTime, that.bindTime) && Objects.equals(this.publishId, that.publishId);
+            && Objects.equals(this.bindTime, that.bindTime) && Objects.equals(this.publishId, that.publishId)
+            && Objects.equals(this.reqMethod, that.reqMethod);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(apiId, apiName, apiType, apiRemark, envId, envName, bindId, groupName, bindTime, publishId);
+        return Objects.hash(apiId,
+            apiName,
+            apiType,
+            apiRemark,
+            envId,
+            envName,
+            bindId,
+            groupName,
+            bindTime,
+            publishId,
+            reqMethod);
     }
 
     @Override
@@ -266,6 +410,7 @@ public class AclBindApiInfo {
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    bindTime: ").append(toIndentedString(bindTime)).append("\n");
         sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
+        sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("}");
         return sb.toString();
     }

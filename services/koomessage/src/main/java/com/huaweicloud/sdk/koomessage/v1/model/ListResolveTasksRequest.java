@@ -16,6 +16,11 @@ public class ListResolveTasksRequest {
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_name")
+
+    private String taskName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tpl_id")
 
     private String tplId;
@@ -70,6 +75,23 @@ public class ListResolveTasksRequest {
 
     public void setTaskId(String taskId) {
         this.taskId = taskId;
+    }
+
+    public ListResolveTasksRequest withTaskName(String taskName) {
+        this.taskName = taskName;
+        return this;
+    }
+
+    /**
+     * 任务名称。
+     * @return taskName
+     */
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
     }
 
     public ListResolveTasksRequest withTplId(String tplId) {
@@ -221,16 +243,16 @@ public class ListResolveTasksRequest {
             return false;
         }
         ListResolveTasksRequest that = (ListResolveTasksRequest) obj;
-        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.tplId, that.tplId)
-            && Objects.equals(this.tplName, that.tplName) && Objects.equals(this.custFlag, that.custFlag)
-            && Objects.equals(this.aimUrl, that.aimUrl) && Objects.equals(this.beginTime, that.beginTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.tplId, that.tplId) && Objects.equals(this.tplName, that.tplName)
+            && Objects.equals(this.custFlag, that.custFlag) && Objects.equals(this.aimUrl, that.aimUrl)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, tplId, tplName, custFlag, aimUrl, beginTime, endTime, offset, limit);
+        return Objects.hash(taskId, taskName, tplId, tplName, custFlag, aimUrl, beginTime, endTime, offset, limit);
     }
 
     @Override
@@ -238,6 +260,7 @@ public class ListResolveTasksRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResolveTasksRequest {\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
         sb.append("    tplName: ").append(toIndentedString(tplName)).append("\n");
         sb.append("    custFlag: ").append(toIndentedString(custFlag)).append("\n");

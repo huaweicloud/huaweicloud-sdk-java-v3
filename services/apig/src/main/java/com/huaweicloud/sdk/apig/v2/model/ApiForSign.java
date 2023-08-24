@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -69,6 +74,117 @@ public class ApiForSign {
     @JsonProperty(value = "signature_name")
 
     private String signatureName;
+
+    /**
+     * API请求方法
+     */
+    public static final class ReqMethodEnum {
+
+        /**
+         * Enum GET for value: "GET"
+         */
+        public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
+
+        /**
+         * Enum POST for value: "POST"
+         */
+        public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
+
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
+        public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
+
+        /**
+         * Enum PUT for value: "PUT"
+         */
+        public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
+
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
+        public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
+
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
+        public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
+
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
+        public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
+
+        /**
+         * Enum ANY for value: "ANY"
+         */
+        public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
+
+        private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReqMethodEnum> createStaticFields() {
+            Map<String, ReqMethodEnum> map = new HashMap<>();
+            map.put("GET", GET);
+            map.put("POST", POST);
+            map.put("DELETE", DELETE);
+            map.put("PUT", PUT);
+            map.put("PATCH", PATCH);
+            map.put("HEAD", HEAD);
+            map.put("OPTIONS", OPTIONS);
+            map.put("ANY", ANY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ReqMethodEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ReqMethodEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
+        }
+
+        public static ReqMethodEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ReqMethodEnum) {
+                return this.value.equals(((ReqMethodEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "req_method")
+
+    private ReqMethodEnum reqMethod;
 
     public ApiForSign withAuthType(String authType) {
         this.authType = authType;
@@ -274,6 +390,23 @@ public class ApiForSign {
         this.signatureName = signatureName;
     }
 
+    public ApiForSign withReqMethod(ReqMethodEnum reqMethod) {
+        this.reqMethod = reqMethod;
+        return this;
+    }
+
+    /**
+     * API请求方法
+     * @return reqMethod
+     */
+    public ReqMethodEnum getReqMethod() {
+        return reqMethod;
+    }
+
+    public void setReqMethod(ReqMethodEnum reqMethod) {
+        this.reqMethod = reqMethod;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -288,7 +421,8 @@ public class ApiForSign {
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.remark, that.remark) && Objects.equals(this.runEnvId, that.runEnvId)
             && Objects.equals(this.id, that.id) && Objects.equals(this.reqUri, that.reqUri)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.signatureName, that.signatureName);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.signatureName, that.signatureName)
+            && Objects.equals(this.reqMethod, that.reqMethod);
     }
 
     @Override
@@ -304,7 +438,8 @@ public class ApiForSign {
             id,
             reqUri,
             type,
-            signatureName);
+            signatureName,
+            reqMethod);
     }
 
     @Override
@@ -323,6 +458,7 @@ public class ApiForSign {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    signatureName: ").append(toIndentedString(signatureName)).append("\n");
+        sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("}");
         return sb.toString();
     }

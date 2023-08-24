@@ -109,7 +109,7 @@ public class SubscriptionTarget {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    private Object detail;
+    private Detail detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_detail")
@@ -199,20 +199,29 @@ public class SubscriptionTarget {
         this.connectionId = connectionId;
     }
 
-    public SubscriptionTarget withDetail(Object detail) {
+    public SubscriptionTarget withDetail(Detail detail) {
         this.detail = detail;
         return this;
     }
 
+    public SubscriptionTarget withDetail(Consumer<Detail> detailSetter) {
+        if (this.detail == null) {
+            this.detail = new Detail();
+            detailSetter.accept(this.detail);
+        }
+
+        return this;
+    }
+
     /**
-     * 订阅的事件目标参数列表，该字段序列化后总长度不超过1024字节，函数、函数流、webhook订阅目标必填，其中函数、函数流委托名称必填
+     * Get detail
      * @return detail
      */
-    public Object getDetail() {
+    public Detail getDetail() {
         return detail;
     }
 
-    public void setDetail(Object detail) {
+    public void setDetail(Detail detail) {
         this.detail = detail;
     }
 

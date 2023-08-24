@@ -65,7 +65,7 @@ public class Callback {
     }
 
     /**
-     * 回调类型。  - 0：智能信息发送回调 - 1：模板状态回调 
+     * 回调类型。  - 0：智能信息单条发送回调 - 1：模板状态回调 - 2：智能信息批量发送回调 
      * @return urlType
      */
     public Integer getUrlType() {

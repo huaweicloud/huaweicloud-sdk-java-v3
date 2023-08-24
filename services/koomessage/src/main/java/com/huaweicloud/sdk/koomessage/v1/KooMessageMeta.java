@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.koomessage.v1.model.AddAimMsgSignatureRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.AddAimMsgSignatureResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.AddCallBackRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.AddCallBackResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.AddCallbackRequestBody;
@@ -14,6 +16,8 @@ import com.huaweicloud.sdk.koomessage.v1.model.AddVmsCallBackResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CheckMobileCapabilityRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CheckMobileCapabilityRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.CheckMobileCapabilityResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.CreateAimMsgTemplateRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.CreateAimMsgTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateAimPersonalTemplateRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateAimPersonalTemplateRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateAimPersonalTemplateResponse;
@@ -26,12 +30,18 @@ import com.huaweicloud.sdk.koomessage.v1.model.CreatePubInfoResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateResolveTaskRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateResolveTaskRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateResolveTaskResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.CreateSmsAppRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.CreateSmsAppResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsSendTaskRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsSendTaskRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsSendTaskResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsTemplateRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsTemplateRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsTemplateResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimMsgSignatureRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimMsgSignatureResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimMsgTemplateRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimMsgTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimPersonalTemplateRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimPersonalTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.DeletePortInfoRequest;
@@ -44,6 +54,16 @@ import com.huaweicloud.sdk.koomessage.v1.model.FreezePubRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.FreezePubResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimCallbacksRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimCallbacksResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgAppDetailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgAppDetailResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgAppRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgAppResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgSignatureDetailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgSignatureDetailResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgSignatureRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgSignatureResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgTemplateRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimResolveDetailsRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimResolveDetailsResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimSendDetailsRequest;
@@ -79,6 +99,8 @@ import com.huaweicloud.sdk.koomessage.v1.model.ListVmsTemplateStatusResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.LockPortRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.LockPortRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.LockPortResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.MsgAppRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.MsgTemplateRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.PushMenuInfoRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.PushMenuInfoResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.PushPortalInfoRequest;
@@ -86,12 +108,31 @@ import com.huaweicloud.sdk.koomessage.v1.model.PushPortalInfoResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.RegisterPortRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.RegisterPortRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.RegisterPortResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchDifferentMessagesRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchDifferentMessagesResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchMessagesRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchMessagesResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgSignatureFileInfoRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgSignatureFileInfoResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateDetailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateDetailResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateVariableRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateVariableResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.SignatureRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.SmsMultiTemplateTaskRequestBody;
+import com.huaweicloud.sdk.koomessage.v1.model.SmsTaskReq;
 import com.huaweicloud.sdk.koomessage.v1.model.UnfreezePubRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UnfreezePubRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.UnfreezePubResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UnlockPortRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UnlockPortRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.UnlockPortResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgAppRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgAppResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgSignatureRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgSignatureResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgTemplateRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdateMenuRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdateMenuRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdateMenuResponse;
@@ -104,6 +145,9 @@ import com.huaweicloud.sdk.koomessage.v1.model.UpdatePortalInfoResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdatePubInfoRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdatePubInfoRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdatePubInfoResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.UploadAimMsgSignatureFileRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.UploadAimMsgSignatureFileRequestBody;
+import com.huaweicloud.sdk.koomessage.v1.model.UploadAimMsgSignatureFileResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UploadAimTemplateMaterialRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UploadAimTemplateMaterialRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.UploadAimTemplateMaterialResponse;
@@ -228,6 +272,13 @@ public class KooMessageMeta {
             f -> f.withMarshaller(ListAimResolveDetailsRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimResolveDetailsRequest::getTaskName, (req, v) -> {
+                req.setTaskName(v);
+            }));
         builder.<String>withRequestField("tpl_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -322,6 +373,13 @@ public class KooMessageMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResolveTasksRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResolveTasksRequest::getTaskName, (req, v) -> {
+                req.setTaskName(v);
             }));
         builder.<String>withRequestField("tpl_id",
             LocationType.Query,
@@ -1229,6 +1287,685 @@ public class KooMessageMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAimSendTasksRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSmsAppRequest, CreateSmsAppResponse> createSmsApp = genForcreateSmsApp();
+
+    private static HttpRequestDef<CreateSmsAppRequest, CreateSmsAppResponse> genForcreateSmsApp() {
+        // basic
+        HttpRequestDef.Builder<CreateSmsAppRequest, CreateSmsAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSmsAppRequest.class, CreateSmsAppResponse.class)
+                .withName("CreateSmsApp")
+                .withUri("/v1/sms/apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<MsgAppRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MsgAppRequest.class),
+            f -> f.withMarshaller(CreateSmsAppRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAimMsgAppRequest, ListAimMsgAppResponse> listAimMsgApp =
+        genForlistAimMsgApp();
+
+    private static HttpRequestDef<ListAimMsgAppRequest, ListAimMsgAppResponse> genForlistAimMsgApp() {
+        // basic
+        HttpRequestDef.Builder<ListAimMsgAppRequest, ListAimMsgAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAimMsgAppRequest.class, ListAimMsgAppResponse.class)
+                .withName("ListAimMsgApp")
+                .withUri("/v1/sms/apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAimMsgAppRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAimMsgAppRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgAppRequest::getAppName, (req, v) -> {
+                req.setAppName(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgAppRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgAppRequest::getBeginTime, (req, v) -> {
+                req.setBeginTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgAppRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse> listAimMsgAppDetail =
+        genForlistAimMsgAppDetail();
+
+    private static HttpRequestDef<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse> genForlistAimMsgAppDetail() {
+        // basic
+        HttpRequestDef.Builder<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAimMsgAppDetailRequest.class, ListAimMsgAppDetailResponse.class)
+                .withName("ListAimMsgAppDetail")
+                .withUri("/v1/sms/apps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgAppDetailRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse> updateAimMsgApp =
+        genForupdateAimMsgApp();
+
+    private static HttpRequestDef<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse> genForupdateAimMsgApp() {
+        // basic
+        HttpRequestDef.Builder<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAimMsgAppRequest.class, UpdateAimMsgAppResponse.class)
+                .withName("UpdateAimMsgApp")
+                .withUri("/v1/sms/apps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAimMsgAppRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<MsgAppRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MsgAppRequest.class),
+            f -> f.withMarshaller(UpdateAimMsgAppRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse> sendAimBatchDifferentMessages =
+        genForsendAimBatchDifferentMessages();
+
+    private static HttpRequestDef<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse> genForsendAimBatchDifferentMessages() {
+        // basic
+        HttpRequestDef.Builder<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SendAimBatchDifferentMessagesRequest.class,
+                    SendAimBatchDifferentMessagesResponse.class)
+                .withName("SendAimBatchDifferentMessages")
+                .withUri("/v1/aim/sms/diff-messages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SmsMultiTemplateTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SmsMultiTemplateTaskRequestBody.class),
+            f -> f.withMarshaller(SendAimBatchDifferentMessagesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse> sendAimBatchMessages =
+        genForsendAimBatchMessages();
+
+    private static HttpRequestDef<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse> genForsendAimBatchMessages() {
+        // basic
+        HttpRequestDef.Builder<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SendAimBatchMessagesRequest.class, SendAimBatchMessagesResponse.class)
+            .withName("SendAimBatchMessages")
+            .withUri("/v1/aim/sms/messages")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SmsTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SmsTaskReq.class),
+            f -> f.withMarshaller(SendAimBatchMessagesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse> addAimMsgSignature =
+        genForaddAimMsgSignature();
+
+    private static HttpRequestDef<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse> genForaddAimMsgSignature() {
+        // basic
+        HttpRequestDef.Builder<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddAimMsgSignatureRequest.class, AddAimMsgSignatureResponse.class)
+                .withName("AddAimMsgSignature")
+                .withUri("/v1/sms/signatures")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SignatureRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SignatureRequest.class),
+            f -> f.withMarshaller(AddAimMsgSignatureRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> deleteAimMsgSignature =
+        genFordeleteAimMsgSignature();
+
+    private static HttpRequestDef<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> genFordeleteAimMsgSignature() {
+        // basic
+        HttpRequestDef.Builder<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAimMsgSignatureRequest.class, DeleteAimMsgSignatureResponse.class)
+            .withName("DeleteAimMsgSignature")
+            .withUri("/v1/aim/sms/signatures/{signature_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("signature_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAimMsgSignatureRequest::getSignatureId, (req, v) -> {
+                req.setSignatureId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse> listAimMsgSignature =
+        genForlistAimMsgSignature();
+
+    private static HttpRequestDef<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse> genForlistAimMsgSignature() {
+        // basic
+        HttpRequestDef.Builder<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAimMsgSignatureRequest.class, ListAimMsgSignatureResponse.class)
+                .withName("ListAimMsgSignature")
+                .withUri("/v1/sms/signatures")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getAppName, (req, v) -> {
+                req.setAppName(v);
+            }));
+        builder.<String>withRequestField("signature_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getSignatureId, (req, v) -> {
+                req.setSignatureId(v);
+            }));
+        builder.<String>withRequestField("signature_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getSignatureName, (req, v) -> {
+                req.setSignatureName(v);
+            }));
+        builder.<String>withRequestField("signature_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getSignatureType, (req, v) -> {
+                req.setSignatureType(v);
+            }));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getBeginTime, (req, v) -> {
+                req.setBeginTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgSignatureRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse> listAimMsgSignatureDetail =
+        genForlistAimMsgSignatureDetail();
+
+    private static HttpRequestDef<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse> genForlistAimMsgSignatureDetail() {
+        // basic
+        HttpRequestDef.Builder<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAimMsgSignatureDetailRequest.class,
+                    ListAimMsgSignatureDetailResponse.class)
+                .withName("ListAimMsgSignatureDetail")
+                .withUri("/v1/sms/signatures/{signature_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("signature_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgSignatureDetailRequest::getSignatureId, (req, v) -> {
+                req.setSignatureId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse> showAimMsgSignatureFileInfo =
+        genForshowAimMsgSignatureFileInfo();
+
+    private static HttpRequestDef<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse> genForshowAimMsgSignatureFileInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAimMsgSignatureFileInfoRequest.class,
+                    ShowAimMsgSignatureFileInfoResponse.class)
+                .withName("ShowAimMsgSignatureFileInfo")
+                .withUri("/v1/sms/signatures/files")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("file_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAimMsgSignatureFileInfoRequest::getFileId, (req, v) -> {
+                req.setFileId(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAimMsgSignatureFileInfoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAimMsgSignatureFileInfoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse> updateAimMsgSignature =
+        genForupdateAimMsgSignature();
+
+    private static HttpRequestDef<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse> genForupdateAimMsgSignature() {
+        // basic
+        HttpRequestDef.Builder<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAimMsgSignatureRequest.class, UpdateAimMsgSignatureResponse.class)
+            .withName("UpdateAimMsgSignature")
+            .withUri("/v1/sms/signatures/{signature_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("signature_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAimMsgSignatureRequest::getSignatureId, (req, v) -> {
+                req.setSignatureId(v);
+            }));
+        builder.<SignatureRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SignatureRequest.class),
+            f -> f.withMarshaller(UpdateAimMsgSignatureRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse> uploadAimMsgSignatureFile =
+        genForuploadAimMsgSignatureFile();
+
+    private static HttpRequestDef<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse> genForuploadAimMsgSignatureFile() {
+        // basic
+        HttpRequestDef.Builder<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UploadAimMsgSignatureFileRequest.class,
+                    UploadAimMsgSignatureFileResponse.class)
+                .withName("UploadAimMsgSignatureFile")
+                .withUri("/v1/sms/signatures/files")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("file_desc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadAimMsgSignatureFileRequest::getFileDesc, (req, v) -> {
+                req.setFileDesc(v);
+            }));
+        builder.<UploadAimMsgSignatureFileRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadAimMsgSignatureFileRequestBody.class),
+            f -> f.withMarshaller(UploadAimMsgSignatureFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse> createAimMsgTemplate =
+        genForcreateAimMsgTemplate();
+
+    private static HttpRequestDef<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse> genForcreateAimMsgTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAimMsgTemplateRequest.class, CreateAimMsgTemplateResponse.class)
+            .withName("CreateAimMsgTemplate")
+            .withUri("/v1/sms/templates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<MsgTemplateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MsgTemplateRequest.class),
+            f -> f.withMarshaller(CreateAimMsgTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse> deleteAimMsgTemplate =
+        genFordeleteAimMsgTemplate();
+
+    private static HttpRequestDef<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse> genFordeleteAimMsgTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAimMsgTemplateRequest.class, DeleteAimMsgTemplateResponse.class)
+            .withName("DeleteAimMsgTemplate")
+            .withUri("/v1/sms/templates/{template_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAimMsgTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse> listAimMsgTemplate =
+        genForlistAimMsgTemplate();
+
+    private static HttpRequestDef<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse> genForlistAimMsgTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAimMsgTemplateRequest.class, ListAimMsgTemplateResponse.class)
+                .withName("ListAimMsgTemplate")
+                .withUri("/v1/sms/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getAppName, (req, v) -> {
+                req.setAppName(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<ListAimMsgTemplateRequest.FlowStatusEnum>withRequestField("flow_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAimMsgTemplateRequest.FlowStatusEnum.class),
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getFlowStatus, (req, v) -> {
+                req.setFlowStatus(v);
+            }));
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+        builder.<String>withRequestField("template_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getTemplateName, (req, v) -> {
+                req.setTemplateName(v);
+            }));
+        builder.<ListAimMsgTemplateRequest.TemplateTypeEnum>withRequestField("template_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAimMsgTemplateRequest.TemplateTypeEnum.class),
+            f -> f.withMarshaller(ListAimMsgTemplateRequest::getTemplateType, (req, v) -> {
+                req.setTemplateType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse> showAimMsgTemplateDetail =
+        genForshowAimMsgTemplateDetail();
+
+    private static HttpRequestDef<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse> genForshowAimMsgTemplateDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowAimMsgTemplateDetailRequest.class, ShowAimMsgTemplateDetailResponse.class)
+                .withName("ShowAimMsgTemplateDetail")
+                .withUri("/v1/sms/templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAimMsgTemplateDetailRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse> showAimMsgTemplateVariable =
+        genForshowAimMsgTemplateVariable();
+
+    private static HttpRequestDef<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse> genForshowAimMsgTemplateVariable() {
+        // basic
+        HttpRequestDef.Builder<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAimMsgTemplateVariableRequest.class,
+                    ShowAimMsgTemplateVariableResponse.class)
+                .withName("ShowAimMsgTemplateVariable")
+                .withUri("/v1/sms/templates/{template_id}/variable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAimMsgTemplateVariableRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse> updateAimMsgTemplate =
+        genForupdateAimMsgTemplate();
+
+    private static HttpRequestDef<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse> genForupdateAimMsgTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAimMsgTemplateRequest.class, UpdateAimMsgTemplateResponse.class)
+            .withName("UpdateAimMsgTemplate")
+            .withUri("/v1/sms/templates/{template_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAimMsgTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+        builder.<MsgTemplateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MsgTemplateRequest.class),
+            f -> f.withMarshaller(UpdateAimMsgTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

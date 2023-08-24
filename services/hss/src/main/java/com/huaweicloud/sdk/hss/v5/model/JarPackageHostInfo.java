@@ -118,7 +118,7 @@ public class JarPackageHostInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_time")
 
-    private Integer recordTime;
+    private Long recordTime;
 
     public JarPackageHostInfo withAgentId(String agentId) {
         this.agentId = agentId;
@@ -487,7 +487,7 @@ public class JarPackageHostInfo {
         this.isEmbedded = isEmbedded;
     }
 
-    public JarPackageHostInfo withRecordTime(Integer recordTime) {
+    public JarPackageHostInfo withRecordTime(Long recordTime) {
         this.recordTime = recordTime;
         return this;
     }
@@ -498,11 +498,11 @@ public class JarPackageHostInfo {
      * maximum: 4070880000000
      * @return recordTime
      */
-    public Integer getRecordTime() {
+    public Long getRecordTime() {
         return recordTime;
     }
 
-    public void setRecordTime(Integer recordTime) {
+    public void setRecordTime(Long recordTime) {
         this.recordTime = recordTime;
     }
 

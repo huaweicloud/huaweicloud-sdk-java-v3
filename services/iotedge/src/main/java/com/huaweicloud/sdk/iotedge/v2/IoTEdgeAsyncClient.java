@@ -3,8 +3,12 @@ package com.huaweicloud.sdk.iotedge.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.iotedge.v2.model.AddAppConfigsTemplatesRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.AddAppConfigsTemplatesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.AddDeviceRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.AddDeviceResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralAppConfigsTemplateRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralOtTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralOtTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.AddOtTemplatesRequest;
@@ -15,6 +19,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsNewRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsNewResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.BatchListAppConfigsTemplatesRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.BatchListAppConfigsTemplatesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListDcDevicesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListDcDevicesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListDcDsRequest;
@@ -45,6 +51,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.CreateInstallCmdRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateInstallCmdResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointRequest;
@@ -83,6 +91,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ListNasRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowAppConfigsTemplateRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowDcDsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowDcDsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowDcPointRequest;
@@ -97,6 +107,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleShadowRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleShadowResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowNaRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowNaResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowOtTemplateRequest;
@@ -125,6 +137,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.UpdateIaConfigRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateIaConfigResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleShadowRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleShadowResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleStateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleStateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaRequest;
@@ -438,6 +452,161 @@ public class IoTEdgeAsyncClient {
     public AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceAsyncInvoker(
         UpdateDeviceRequest request) {
         return new AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, IoTEdgeMeta.updateDevice, hcClient);
+    }
+
+    /**
+     * 添加应用配置模板
+     *
+     * 添加应用配置模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddAppConfigsTemplatesRequest 请求对象
+     * @return CompletableFuture<AddAppConfigsTemplatesResponse>
+     */
+    public CompletableFuture<AddAppConfigsTemplatesResponse> addAppConfigsTemplatesAsync(
+        AddAppConfigsTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.addAppConfigsTemplates);
+    }
+
+    /**
+     * 添加应用配置模板
+     *
+     * 添加应用配置模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddAppConfigsTemplatesRequest 请求对象
+     * @return AsyncInvoker<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse>
+     */
+    public AsyncInvoker<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse> addAppConfigsTemplatesAsyncInvoker(
+        AddAppConfigsTemplatesRequest request) {
+        return new AsyncInvoker<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse>(request,
+            IoTEdgeMeta.addAppConfigsTemplates, hcClient);
+    }
+
+    /**
+     * 导入标准应用配置模板
+     *
+     * 导入标准应用配置模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddGeneralAppConfigsTemplateRequest 请求对象
+     * @return CompletableFuture<AddGeneralAppConfigsTemplateResponse>
+     */
+    public CompletableFuture<AddGeneralAppConfigsTemplateResponse> addGeneralAppConfigsTemplateAsync(
+        AddGeneralAppConfigsTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.addGeneralAppConfigsTemplate);
+    }
+
+    /**
+     * 导入标准应用配置模板
+     *
+     * 导入标准应用配置模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddGeneralAppConfigsTemplateRequest 请求对象
+     * @return AsyncInvoker<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse>
+     */
+    public AsyncInvoker<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse> addGeneralAppConfigsTemplateAsyncInvoker(
+        AddGeneralAppConfigsTemplateRequest request) {
+        return new AsyncInvoker<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse>(request,
+            IoTEdgeMeta.addGeneralAppConfigsTemplate, hcClient);
+    }
+
+    /**
+     * 查询应用配置模板列表
+     *
+     * 查询应用配置模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListAppConfigsTemplatesRequest 请求对象
+     * @return CompletableFuture<BatchListAppConfigsTemplatesResponse>
+     */
+    public CompletableFuture<BatchListAppConfigsTemplatesResponse> batchListAppConfigsTemplatesAsync(
+        BatchListAppConfigsTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchListAppConfigsTemplates);
+    }
+
+    /**
+     * 查询应用配置模板列表
+     *
+     * 查询应用配置模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchListAppConfigsTemplatesRequest 请求对象
+     * @return AsyncInvoker<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse>
+     */
+    public AsyncInvoker<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse> batchListAppConfigsTemplatesAsyncInvoker(
+        BatchListAppConfigsTemplatesRequest request) {
+        return new AsyncInvoker<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse>(request,
+            IoTEdgeMeta.batchListAppConfigsTemplates, hcClient);
+    }
+
+    /**
+     * 删除应用配置模板
+     *
+     * 删除应用配置模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppConfigsTemplateRequest 请求对象
+     * @return CompletableFuture<DeleteAppConfigsTemplateResponse>
+     */
+    public CompletableFuture<DeleteAppConfigsTemplateResponse> deleteAppConfigsTemplateAsync(
+        DeleteAppConfigsTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.deleteAppConfigsTemplate);
+    }
+
+    /**
+     * 删除应用配置模板
+     *
+     * 删除应用配置模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppConfigsTemplateRequest 请求对象
+     * @return AsyncInvoker<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse>
+     */
+    public AsyncInvoker<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse> deleteAppConfigsTemplateAsyncInvoker(
+        DeleteAppConfigsTemplateRequest request) {
+        return new AsyncInvoker<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse>(request,
+            IoTEdgeMeta.deleteAppConfigsTemplate, hcClient);
+    }
+
+    /**
+     * 查询应用配置模板详情
+     *
+     * 查询应用配置模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAppConfigsTemplateRequest 请求对象
+     * @return CompletableFuture<ShowAppConfigsTemplateResponse>
+     */
+    public CompletableFuture<ShowAppConfigsTemplateResponse> showAppConfigsTemplateAsync(
+        ShowAppConfigsTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showAppConfigsTemplate);
+    }
+
+    /**
+     * 查询应用配置模板详情
+     *
+     * 查询应用配置模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAppConfigsTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse>
+     */
+    public AsyncInvoker<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse> showAppConfigsTemplateAsyncInvoker(
+        ShowAppConfigsTemplateRequest request) {
+        return new AsyncInvoker<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse>(request,
+            IoTEdgeMeta.showAppConfigsTemplate, hcClient);
     }
 
     /**
@@ -1391,6 +1560,66 @@ public class IoTEdgeAsyncClient {
         UpdateModuleStateRequest request) {
         return new AsyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>(request,
             IoTEdgeMeta.updateModuleState, hcClient);
+    }
+
+    /**
+     * 获取模块影子
+     *
+     * 获取模块影子信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowModuleShadowRequest 请求对象
+     * @return CompletableFuture<ShowModuleShadowResponse>
+     */
+    public CompletableFuture<ShowModuleShadowResponse> showModuleShadowAsync(ShowModuleShadowRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showModuleShadow);
+    }
+
+    /**
+     * 获取模块影子
+     *
+     * 获取模块影子信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowModuleShadowRequest 请求对象
+     * @return AsyncInvoker<ShowModuleShadowRequest, ShowModuleShadowResponse>
+     */
+    public AsyncInvoker<ShowModuleShadowRequest, ShowModuleShadowResponse> showModuleShadowAsyncInvoker(
+        ShowModuleShadowRequest request) {
+        return new AsyncInvoker<ShowModuleShadowRequest, ShowModuleShadowResponse>(request,
+            IoTEdgeMeta.showModuleShadow, hcClient);
+    }
+
+    /**
+     * 更新模块影子
+     *
+     * 更新模块影子信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateModuleShadowRequest 请求对象
+     * @return CompletableFuture<UpdateModuleShadowResponse>
+     */
+    public CompletableFuture<UpdateModuleShadowResponse> updateModuleShadowAsync(UpdateModuleShadowRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.updateModuleShadow);
+    }
+
+    /**
+     * 更新模块影子
+     *
+     * 更新模块影子信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateModuleShadowRequest 请求对象
+     * @return AsyncInvoker<UpdateModuleShadowRequest, UpdateModuleShadowResponse>
+     */
+    public AsyncInvoker<UpdateModuleShadowRequest, UpdateModuleShadowResponse> updateModuleShadowAsyncInvoker(
+        UpdateModuleShadowRequest request) {
+        return new AsyncInvoker<UpdateModuleShadowRequest, UpdateModuleShadowResponse>(request,
+            IoTEdgeMeta.updateModuleShadow, hcClient);
     }
 
     /**

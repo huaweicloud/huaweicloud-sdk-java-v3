@@ -5,9 +5,13 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.iotedge.v2.model.AddAppConfigsTemplatesRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.AddAppConfigsTemplatesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.AddDeviceRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.AddDeviceRequestBody;
 import com.huaweicloud.sdk.iotedge.v2.model.AddDeviceResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralAppConfigsTemplateRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralOtTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.AddGeneralOtTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.AddOtTemplatesRequest;
@@ -20,6 +24,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.BatchConfirmConfigsNewResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsRequestBody;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchImportConfigsResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.BatchListAppConfigsTemplatesRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.BatchListAppConfigsTemplatesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListDcDevicesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListDcDevicesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListDcDsRequest;
@@ -35,6 +41,7 @@ import com.huaweicloud.sdk.iotedge.v2.model.BatchListModulesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListOtTemplatesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.BatchListOtTemplatesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ConfirmIaConfigsRequestBody;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateAppConfigsTemplatesReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateDcDsReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateDcPointReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateDcPointRequest;
@@ -60,6 +67,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateOtTemplatesReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateRouterReqDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointRequest;
@@ -100,6 +109,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ListNasRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowAppConfigsTemplateRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowDcDsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowDcDsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowDcPointRequest;
@@ -114,6 +125,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowIaConfigResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleShadowRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ShowModuleShadowResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowNaRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowNaResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ShowOtTemplateRequest;
@@ -151,6 +164,9 @@ import com.huaweicloud.sdk.iotedge.v2.model.UpdateIaConfigRequestDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateIaConfigResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleShadowRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleShadowResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleShadowsRequestBody;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleStateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateModuleStateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaRequest;
@@ -542,6 +558,154 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(UpdateDesireds.class),
             f -> f.withMarshaller(UpdateDeviceRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse> addAppConfigsTemplates =
+        genForaddAppConfigsTemplates();
+
+    private static HttpRequestDef<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse> genForaddAppConfigsTemplates() {
+        // basic
+        HttpRequestDef.Builder<AddAppConfigsTemplatesRequest, AddAppConfigsTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddAppConfigsTemplatesRequest.class, AddAppConfigsTemplatesResponse.class)
+            .withName("AddAppConfigsTemplates")
+            .withUri("/v2/{project_id}/templates/apps/configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateAppConfigsTemplatesReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAppConfigsTemplatesReqDTO.class),
+            f -> f.withMarshaller(AddAppConfigsTemplatesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse> addGeneralAppConfigsTemplate =
+        genForaddGeneralAppConfigsTemplate();
+
+    private static HttpRequestDef<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse> genForaddGeneralAppConfigsTemplate() {
+        // basic
+        HttpRequestDef.Builder<AddGeneralAppConfigsTemplateRequest, AddGeneralAppConfigsTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AddGeneralAppConfigsTemplateRequest.class,
+                    AddGeneralAppConfigsTemplateResponse.class)
+                .withName("AddGeneralAppConfigsTemplate")
+                .withUri("/v2/{project_id}/templates/apps/configs/import")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddGeneralAppConfigsTemplateResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse> batchListAppConfigsTemplates =
+        genForbatchListAppConfigsTemplates();
+
+    private static HttpRequestDef<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse> genForbatchListAppConfigsTemplates() {
+        // basic
+        HttpRequestDef.Builder<BatchListAppConfigsTemplatesRequest, BatchListAppConfigsTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    BatchListAppConfigsTemplatesRequest.class,
+                    BatchListAppConfigsTemplatesResponse.class)
+                .withName("BatchListAppConfigsTemplates")
+                .withUri("/v2/{project_id}/templates/apps/configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListAppConfigsTemplatesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchListAppConfigsTemplatesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse> deleteAppConfigsTemplate =
+        genFordeleteAppConfigsTemplate();
+
+    private static HttpRequestDef<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse> genFordeleteAppConfigsTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppConfigsTemplateRequest, DeleteAppConfigsTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteAppConfigsTemplateRequest.class,
+                    DeleteAppConfigsTemplateResponse.class)
+                .withName("DeleteAppConfigsTemplate")
+                .withUri("/v2/{project_id}/templates/apps/configs/{tpl_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tpl_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppConfigsTemplateRequest::getTplId, (req, v) -> {
+                req.setTplId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAppConfigsTemplateResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse> showAppConfigsTemplate =
+        genForshowAppConfigsTemplate();
+
+    private static HttpRequestDef<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse> genForshowAppConfigsTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowAppConfigsTemplateRequest, ShowAppConfigsTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAppConfigsTemplateRequest.class, ShowAppConfigsTemplateResponse.class)
+            .withName("ShowAppConfigsTemplate")
+            .withUri("/v2/{project_id}/templates/apps/configs/{tpl_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("tpl_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppConfigsTemplateRequest::getTplId, (req, v) -> {
+                req.setTplId(v);
             }));
 
         // response
@@ -1865,6 +2029,77 @@ public class IoTEdgeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEdgeModuleStateReqDTO.class),
             f -> f.withMarshaller(UpdateModuleStateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowModuleShadowRequest, ShowModuleShadowResponse> showModuleShadow =
+        genForshowModuleShadow();
+
+    private static HttpRequestDef<ShowModuleShadowRequest, ShowModuleShadowResponse> genForshowModuleShadow() {
+        // basic
+        HttpRequestDef.Builder<ShowModuleShadowRequest, ShowModuleShadowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowModuleShadowRequest.class, ShowModuleShadowResponse.class)
+                .withName("ShowModuleShadow")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/modules/{module_id}/shadow")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModuleShadowRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            }));
+        builder.<String>withRequestField("module_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModuleShadowRequest::getModuleId, (req, v) -> {
+                req.setModuleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateModuleShadowRequest, UpdateModuleShadowResponse> updateModuleShadow =
+        genForupdateModuleShadow();
+
+    private static HttpRequestDef<UpdateModuleShadowRequest, UpdateModuleShadowResponse> genForupdateModuleShadow() {
+        // basic
+        HttpRequestDef.Builder<UpdateModuleShadowRequest, UpdateModuleShadowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateModuleShadowRequest.class, UpdateModuleShadowResponse.class)
+                .withName("UpdateModuleShadow")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/modules/{module_id}/shadow")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateModuleShadowRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            }));
+        builder.<String>withRequestField("module_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateModuleShadowRequest::getModuleId, (req, v) -> {
+                req.setModuleId(v);
+            }));
+        builder.<UpdateModuleShadowsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateModuleShadowsRequestBody.class),
+            f -> f.withMarshaller(UpdateModuleShadowRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

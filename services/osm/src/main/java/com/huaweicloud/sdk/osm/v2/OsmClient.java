@@ -167,6 +167,8 @@ import com.huaweicloud.sdk.osm.v2.model.ShowDownloadAccessoryUrlRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowDownloadAccessoryUrlResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowLatestPublishedAgreementRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowLatestPublishedAgreementResponse;
+import com.huaweicloud.sdk.osm.v2.model.ShowLoginTypeRequest;
+import com.huaweicloud.sdk.osm.v2.model.ShowLoginTypeResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowPartnersCasesPrivilegeRequest;
 import com.huaweicloud.sdk.osm.v2.model.ShowPartnersCasesPrivilegeResponse;
 import com.huaweicloud.sdk.osm.v2.model.ShowPartnersServiceInfoRequest;
@@ -2629,6 +2631,34 @@ public class OsmClient {
         ShowLatestPublishedAgreementRequest request) {
         return new SyncInvoker<ShowLatestPublishedAgreementRequest, ShowLatestPublishedAgreementResponse>(request,
             OsmMeta.showLatestPublishedAgreement, hcClient);
+    }
+
+    /**
+     * 查询登录类型
+     *
+     * 查询登录类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLoginTypeRequest 请求对象
+     * @return ShowLoginTypeResponse
+     */
+    public ShowLoginTypeResponse showLoginType(ShowLoginTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, OsmMeta.showLoginType);
+    }
+
+    /**
+     * 查询登录类型
+     *
+     * 查询登录类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLoginTypeRequest 请求对象
+     * @return SyncInvoker<ShowLoginTypeRequest, ShowLoginTypeResponse>
+     */
+    public SyncInvoker<ShowLoginTypeRequest, ShowLoginTypeResponse> showLoginTypeInvoker(ShowLoginTypeRequest request) {
+        return new SyncInvoker<ShowLoginTypeRequest, ShowLoginTypeResponse>(request, OsmMeta.showLoginType, hcClient);
     }
 
     /**

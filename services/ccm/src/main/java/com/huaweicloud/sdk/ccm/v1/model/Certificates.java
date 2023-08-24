@@ -86,6 +86,11 @@ public class Certificates {
 
     private EncCertInfo encCertInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public Certificates withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
@@ -359,6 +364,23 @@ public class Certificates {
         this.encCertInfo = encCertInfo;
     }
 
+    public Certificates withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID，默认为“0”。 对于开通企业项目的用户，表示资源处于默认企业项目下。 对于未开通企业项目的用户，表示资源未处于企业项目下。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -377,7 +399,8 @@ public class Certificates {
             && Objects.equals(this.deleteTime, that.deleteTime) && Objects.equals(this.notBefore, that.notBefore)
             && Objects.equals(this.notAfter, that.notAfter)
             && Objects.equals(this.distinguishedName, that.distinguishedName)
-            && Objects.equals(this.encCertInfo, that.encCertInfo);
+            && Objects.equals(this.encCertInfo, that.encCertInfo)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -396,7 +419,8 @@ public class Certificates {
             notBefore,
             notAfter,
             distinguishedName,
-            encCertInfo);
+            encCertInfo,
+            enterpriseProjectId);
     }
 
     @Override
@@ -418,6 +442,7 @@ public class Certificates {
         sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("    encCertInfo: ").append(toIndentedString(encCertInfo)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

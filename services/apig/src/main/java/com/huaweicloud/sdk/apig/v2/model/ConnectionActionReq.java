@@ -1,0 +1,189 @@
+package com.huaweicloud.sdk.apig.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * ConnectionActionReq
+ */
+public class ConnectionActionReq {
+
+    /**
+     * 允许或拒绝连接 - receive 接受 - reject 拒绝
+     */
+    public static final class ActionEnum {
+
+        /**
+         * Enum RECEIVE for value: "receive"
+         */
+        public static final ActionEnum RECEIVE = new ActionEnum("receive");
+
+        /**
+         * Enum REJECT for value: "reject"
+         */
+        public static final ActionEnum REJECT = new ActionEnum("reject");
+
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("receive", RECEIVE);
+            map.put("reject", REJECT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ActionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ActionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
+        }
+
+        public static ActionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ActionEnum) {
+                return this.value.equals(((ActionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private ActionEnum action;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endpoints")
+
+    private List<String> endpoints = null;
+
+    public ConnectionActionReq withAction(ActionEnum action) {
+        this.action = action;
+        return this;
+    }
+
+    /**
+     * 允许或拒绝连接 - receive 接受 - reject 拒绝
+     * @return action
+     */
+    public ActionEnum getAction() {
+        return action;
+    }
+
+    public void setAction(ActionEnum action) {
+        this.action = action;
+    }
+
+    public ConnectionActionReq withEndpoints(List<String> endpoints) {
+        this.endpoints = endpoints;
+        return this;
+    }
+
+    public ConnectionActionReq addEndpointsItem(String endpointsItem) {
+        if (this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
+        this.endpoints.add(endpointsItem);
+        return this;
+    }
+
+    public ConnectionActionReq withEndpoints(Consumer<List<String>> endpointsSetter) {
+        if (this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
+        }
+        endpointsSetter.accept(this.endpoints);
+        return this;
+    }
+
+    /**
+     * 终端节点列表
+     * @return endpoints
+     */
+    public List<String> getEndpoints() {
+        return endpoints;
+    }
+
+    public void setEndpoints(List<String> endpoints) {
+        this.endpoints = endpoints;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ConnectionActionReq that = (ConnectionActionReq) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.endpoints, that.endpoints);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(action, endpoints);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ConnectionActionReq {\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    endpoints: ").append(toIndentedString(endpoints)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

@@ -21,6 +21,11 @@ public class AIMResolveDetail {
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_name")
+
+    private String taskName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "send_account")
 
     private String sendAccount;
@@ -102,6 +107,23 @@ public class AIMResolveDetail {
 
     public void setTaskId(String taskId) {
         this.taskId = taskId;
+    }
+
+    public AIMResolveDetail withTaskName(String taskName) {
+        this.taskName = taskName;
+        return this;
+    }
+
+    /**
+     * 任务名称。
+     * @return taskName
+     */
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
     }
 
     public AIMResolveDetail withSendAccount(String sendAccount) {
@@ -284,11 +306,11 @@ public class AIMResolveDetail {
         }
         AIMResolveDetail that = (AIMResolveDetail) obj;
         return Objects.equals(this.resolveId, that.resolveId) && Objects.equals(this.taskId, that.taskId)
-            && Objects.equals(this.sendAccount, that.sendAccount) && Objects.equals(this.tplId, that.tplId)
-            && Objects.equals(this.tplName, that.tplName) && Objects.equals(this.custFlag, that.custFlag)
-            && Objects.equals(this.aimUrl, that.aimUrl) && Objects.equals(this.resultCode, that.resultCode)
-            && Objects.equals(this.generateDate, that.generateDate) && Objects.equals(this.expireDate, that.expireDate)
-            && Objects.equals(this.resolvedTime, that.resolvedTime)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.sendAccount, that.sendAccount)
+            && Objects.equals(this.tplId, that.tplId) && Objects.equals(this.tplName, that.tplName)
+            && Objects.equals(this.custFlag, that.custFlag) && Objects.equals(this.aimUrl, that.aimUrl)
+            && Objects.equals(this.resultCode, that.resultCode) && Objects.equals(this.generateDate, that.generateDate)
+            && Objects.equals(this.expireDate, that.expireDate) && Objects.equals(this.resolvedTime, that.resolvedTime)
             && Objects.equals(this.resolvedStatus, that.resolvedStatus);
     }
 
@@ -296,6 +318,7 @@ public class AIMResolveDetail {
     public int hashCode() {
         return Objects.hash(resolveId,
             taskId,
+            taskName,
             sendAccount,
             tplId,
             tplName,
@@ -314,6 +337,7 @@ public class AIMResolveDetail {
         sb.append("class AIMResolveDetail {\n");
         sb.append("    resolveId: ").append(toIndentedString(resolveId)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    sendAccount: ").append(toIndentedString(sendAccount)).append("\n");
         sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
         sb.append("    tplName: ").append(toIndentedString(tplName)).append("\n");

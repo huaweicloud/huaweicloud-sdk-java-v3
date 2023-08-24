@@ -22,7 +22,7 @@ public class GlanceListImagesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "images")
 
-    private List<GlanceShowImageResponseBody> images = null;
+    private List<GlanceShowImageListResponseBody> images = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema")
@@ -51,12 +51,12 @@ public class GlanceListImagesResponse extends SdkResponse {
         this.first = first;
     }
 
-    public GlanceListImagesResponse withImages(List<GlanceShowImageResponseBody> images) {
+    public GlanceListImagesResponse withImages(List<GlanceShowImageListResponseBody> images) {
         this.images = images;
         return this;
     }
 
-    public GlanceListImagesResponse addImagesItem(GlanceShowImageResponseBody imagesItem) {
+    public GlanceListImagesResponse addImagesItem(GlanceShowImageListResponseBody imagesItem) {
         if (this.images == null) {
             this.images = new ArrayList<>();
         }
@@ -64,7 +64,7 @@ public class GlanceListImagesResponse extends SdkResponse {
         return this;
     }
 
-    public GlanceListImagesResponse withImages(Consumer<List<GlanceShowImageResponseBody>> imagesSetter) {
+    public GlanceListImagesResponse withImages(Consumer<List<GlanceShowImageListResponseBody>> imagesSetter) {
         if (this.images == null) {
             this.images = new ArrayList<>();
         }
@@ -76,11 +76,11 @@ public class GlanceListImagesResponse extends SdkResponse {
      * 资源类型。
      * @return images
      */
-    public List<GlanceShowImageResponseBody> getImages() {
+    public List<GlanceShowImageListResponseBody> getImages() {
         return images;
     }
 
-    public void setImages(List<GlanceShowImageResponseBody> images) {
+    public void setImages(List<GlanceShowImageListResponseBody> images) {
         this.images = images;
     }
 

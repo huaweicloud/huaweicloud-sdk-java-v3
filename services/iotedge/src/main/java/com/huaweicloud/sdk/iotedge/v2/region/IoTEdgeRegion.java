@@ -12,7 +12,10 @@ import java.util.Objects;
 
 public class IoTEdgeRegion {
 
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://iotedge-api.cn-north-4.myhuaweicloud.cn");
+    public static final Region CN_NORTH_4 =
+        new Region("cn-north-4", "https://iotedge-api.cn-north-4.myhuaweicloud.com");
+
+    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://iotedge-api.cn-east-3.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("IOTEDGE");
 
@@ -21,6 +24,7 @@ public class IoTEdgeRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
+        map.put("cn-east-3", CN_EAST_3);
         return Collections.unmodifiableMap(map);
     }
 

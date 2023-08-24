@@ -96,6 +96,11 @@ public class CertificateAuthorities {
 
     private ListCrlConfiguration crlConfiguration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CertificateAuthorities withCaId(String caId) {
         this.caId = caId;
         return this;
@@ -405,6 +410,23 @@ public class CertificateAuthorities {
         this.crlConfiguration = crlConfiguration;
     }
 
+    public CertificateAuthorities withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID，默认为“0”。 对于开通企业项目的用户，表示资源处于默认企业项目下。 对于未开通企业项目的用户，表示资源未处于企业项目下。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -424,7 +446,8 @@ public class CertificateAuthorities {
             && Objects.equals(this.deleteTime, that.deleteTime) && Objects.equals(this.notBefore, that.notBefore)
             && Objects.equals(this.notAfter, that.notAfter)
             && Objects.equals(this.distinguishedName, that.distinguishedName)
-            && Objects.equals(this.crlConfiguration, that.crlConfiguration);
+            && Objects.equals(this.crlConfiguration, that.crlConfiguration)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -445,7 +468,8 @@ public class CertificateAuthorities {
             notBefore,
             notAfter,
             distinguishedName,
-            crlConfiguration);
+            crlConfiguration,
+            enterpriseProjectId);
     }
 
     @Override
@@ -469,6 +493,7 @@ public class CertificateAuthorities {
         sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("    crlConfiguration: ").append(toIndentedString(crlConfiguration)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

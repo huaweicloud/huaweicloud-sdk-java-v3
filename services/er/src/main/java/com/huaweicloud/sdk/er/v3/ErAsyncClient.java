@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.er.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.er.v3.model.AcceptAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.AcceptAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableRequest;
 import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableResponse;
 import com.huaweicloud.sdk.er.v3.model.BatchCreateResourceTagsRequest;
@@ -65,6 +67,8 @@ import com.huaweicloud.sdk.er.v3.model.ListStaticRoutesRequest;
 import com.huaweicloud.sdk.er.v3.model.ListStaticRoutesResponse;
 import com.huaweicloud.sdk.er.v3.model.ListVpcAttachmentsRequest;
 import com.huaweicloud.sdk.er.v3.model.ListVpcAttachmentsResponse;
+import com.huaweicloud.sdk.er.v3.model.RejectAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.RejectAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.ShowAttachmentRequest;
 import com.huaweicloud.sdk.er.v3.model.ShowAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.ShowEnterpriseRouterRequest;
@@ -201,6 +205,36 @@ public class ErAsyncClient {
     }
 
     /**
+     * 接受共享连接创建
+     *
+     * 接受共享连接创建
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AcceptAttachmentRequest 请求对象
+     * @return CompletableFuture<AcceptAttachmentResponse>
+     */
+    public CompletableFuture<AcceptAttachmentResponse> acceptAttachmentAsync(AcceptAttachmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.acceptAttachment);
+    }
+
+    /**
+     * 接受共享连接创建
+     *
+     * 接受共享连接创建
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AcceptAttachmentRequest 请求对象
+     * @return AsyncInvoker<AcceptAttachmentRequest, AcceptAttachmentResponse>
+     */
+    public AsyncInvoker<AcceptAttachmentRequest, AcceptAttachmentResponse> acceptAttachmentAsyncInvoker(
+        AcceptAttachmentRequest request) {
+        return new AsyncInvoker<AcceptAttachmentRequest, AcceptAttachmentResponse>(request, ErMeta.acceptAttachment,
+            hcClient);
+    }
+
+    /**
      * 查询连接列表
      *
      * 查询企业路由器实例下的连接列表。
@@ -227,6 +261,36 @@ public class ErAsyncClient {
     public AsyncInvoker<ListAttachmentsRequest, ListAttachmentsResponse> listAttachmentsAsyncInvoker(
         ListAttachmentsRequest request) {
         return new AsyncInvoker<ListAttachmentsRequest, ListAttachmentsResponse>(request, ErMeta.listAttachments,
+            hcClient);
+    }
+
+    /**
+     * 拒绝共享连接创建
+     *
+     * 拒绝共享连接创建
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RejectAttachmentRequest 请求对象
+     * @return CompletableFuture<RejectAttachmentResponse>
+     */
+    public CompletableFuture<RejectAttachmentResponse> rejectAttachmentAsync(RejectAttachmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.rejectAttachment);
+    }
+
+    /**
+     * 拒绝共享连接创建
+     *
+     * 拒绝共享连接创建
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RejectAttachmentRequest 请求对象
+     * @return AsyncInvoker<RejectAttachmentRequest, RejectAttachmentResponse>
+     */
+    public AsyncInvoker<RejectAttachmentRequest, RejectAttachmentResponse> rejectAttachmentAsyncInvoker(
+        RejectAttachmentRequest request) {
+        return new AsyncInvoker<RejectAttachmentRequest, RejectAttachmentResponse>(request, ErMeta.rejectAttachment,
             hcClient);
     }
 

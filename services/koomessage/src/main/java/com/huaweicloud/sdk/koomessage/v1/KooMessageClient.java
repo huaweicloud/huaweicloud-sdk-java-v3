@@ -3,12 +3,16 @@ package com.huaweicloud.sdk.koomessage.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.koomessage.v1.model.AddAimMsgSignatureRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.AddAimMsgSignatureResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.AddCallBackRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.AddCallBackResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.AddVmsCallBackRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.AddVmsCallBackResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CheckMobileCapabilityRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CheckMobileCapabilityResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.CreateAimMsgTemplateRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.CreateAimMsgTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateAimPersonalTemplateRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateAimPersonalTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateAimSendTaskRequest;
@@ -17,10 +21,16 @@ import com.huaweicloud.sdk.koomessage.v1.model.CreatePubInfoRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CreatePubInfoResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateResolveTaskRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateResolveTaskResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.CreateSmsAppRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.CreateSmsAppResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsSendTaskRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsSendTaskResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsTemplateRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.CreateVmsTemplateResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimMsgSignatureRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimMsgSignatureResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimMsgTemplateRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimMsgTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimPersonalTemplateRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.DeleteAimPersonalTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.DeletePortInfoRequest;
@@ -31,6 +41,16 @@ import com.huaweicloud.sdk.koomessage.v1.model.FreezePubRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.FreezePubResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimCallbacksRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimCallbacksResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgAppDetailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgAppDetailResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgAppRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgAppResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgSignatureDetailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgSignatureDetailResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgSignatureRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgSignatureResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgTemplateRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ListAimMsgTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimResolveDetailsRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimResolveDetailsResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ListAimSendDetailsRequest;
@@ -69,10 +89,26 @@ import com.huaweicloud.sdk.koomessage.v1.model.PushPortalInfoRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.PushPortalInfoResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.RegisterPortRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.RegisterPortResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchDifferentMessagesRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchDifferentMessagesResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchMessagesRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchMessagesResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgSignatureFileInfoRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgSignatureFileInfoResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateDetailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateDetailResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateVariableRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateVariableResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UnfreezePubRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UnfreezePubResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UnlockPortRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UnlockPortResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgAppRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgAppResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgSignatureRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgSignatureResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgTemplateRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.UpdateAimMsgTemplateResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdateMenuRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdateMenuResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdatePersonalTemplateStateRequest;
@@ -81,6 +117,8 @@ import com.huaweicloud.sdk.koomessage.v1.model.UpdatePortalInfoRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdatePortalInfoResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdatePubInfoRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UpdatePubInfoResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.UploadAimMsgSignatureFileRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.UploadAimMsgSignatureFileResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UploadAimTemplateMaterialRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UploadAimTemplateMaterialResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UploadMediaRequest;
@@ -903,6 +941,615 @@ public class KooMessageClient {
         ListAimSendTasksRequest request) {
         return new SyncInvoker<ListAimSendTasksRequest, ListAimSendTasksResponse>(request,
             KooMessageMeta.listAimSendTasks, hcClient);
+    }
+
+    /**
+     * 创建短信应用
+     *
+     * 该接口用于用户创建短信应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSmsAppRequest 请求对象
+     * @return CreateSmsAppResponse
+     */
+    public CreateSmsAppResponse createSmsApp(CreateSmsAppRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.createSmsApp);
+    }
+
+    /**
+     * 创建短信应用
+     *
+     * 该接口用于用户创建短信应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSmsAppRequest 请求对象
+     * @return SyncInvoker<CreateSmsAppRequest, CreateSmsAppResponse>
+     */
+    public SyncInvoker<CreateSmsAppRequest, CreateSmsAppResponse> createSmsAppInvoker(CreateSmsAppRequest request) {
+        return new SyncInvoker<CreateSmsAppRequest, CreateSmsAppResponse>(request, KooMessageMeta.createSmsApp,
+            hcClient);
+    }
+
+    /**
+     * 查询短信应用
+     *
+     * 该接口用于用户查询已创建的短信应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgAppRequest 请求对象
+     * @return ListAimMsgAppResponse
+     */
+    public ListAimMsgAppResponse listAimMsgApp(ListAimMsgAppRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.listAimMsgApp);
+    }
+
+    /**
+     * 查询短信应用
+     *
+     * 该接口用于用户查询已创建的短信应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgAppRequest 请求对象
+     * @return SyncInvoker<ListAimMsgAppRequest, ListAimMsgAppResponse>
+     */
+    public SyncInvoker<ListAimMsgAppRequest, ListAimMsgAppResponse> listAimMsgAppInvoker(ListAimMsgAppRequest request) {
+        return new SyncInvoker<ListAimMsgAppRequest, ListAimMsgAppResponse>(request, KooMessageMeta.listAimMsgApp,
+            hcClient);
+    }
+
+    /**
+     * 获取短信应用详情
+     *
+     * 该接口用于用户获取已创建的短信应用详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgAppDetailRequest 请求对象
+     * @return ListAimMsgAppDetailResponse
+     */
+    public ListAimMsgAppDetailResponse listAimMsgAppDetail(ListAimMsgAppDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.listAimMsgAppDetail);
+    }
+
+    /**
+     * 获取短信应用详情
+     *
+     * 该接口用于用户获取已创建的短信应用详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgAppDetailRequest 请求对象
+     * @return SyncInvoker<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse>
+     */
+    public SyncInvoker<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse> listAimMsgAppDetailInvoker(
+        ListAimMsgAppDetailRequest request) {
+        return new SyncInvoker<ListAimMsgAppDetailRequest, ListAimMsgAppDetailResponse>(request,
+            KooMessageMeta.listAimMsgAppDetail, hcClient);
+    }
+
+    /**
+     * 修改短信应用
+     *
+     * 该接口用于用户修改短信应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAimMsgAppRequest 请求对象
+     * @return UpdateAimMsgAppResponse
+     */
+    public UpdateAimMsgAppResponse updateAimMsgApp(UpdateAimMsgAppRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.updateAimMsgApp);
+    }
+
+    /**
+     * 修改短信应用
+     *
+     * 该接口用于用户修改短信应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAimMsgAppRequest 请求对象
+     * @return SyncInvoker<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse>
+     */
+    public SyncInvoker<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse> updateAimMsgAppInvoker(
+        UpdateAimMsgAppRequest request) {
+        return new SyncInvoker<UpdateAimMsgAppRequest, UpdateAimMsgAppResponse>(request, KooMessageMeta.updateAimMsgApp,
+            hcClient);
+    }
+
+    /**
+     * 发送分批短信
+     *
+     * 该接口用于向不同用户发送不同内容的短信。
+     * 
+     * - 前提条件
+     * 
+     * 1. 已创建短信应用。
+     * 2. 已申请短信签名，获取签名通道号。
+     * 3. 已申请短信模板，获取模板ID。
+     * 
+     * - 注意事项
+     * 
+     * 单条短信最多允许携带500个号码，每个号码最大长度为21位。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendAimBatchDifferentMessagesRequest 请求对象
+     * @return SendAimBatchDifferentMessagesResponse
+     */
+    public SendAimBatchDifferentMessagesResponse sendAimBatchDifferentMessages(
+        SendAimBatchDifferentMessagesRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.sendAimBatchDifferentMessages);
+    }
+
+    /**
+     * 发送分批短信
+     *
+     * 该接口用于向不同用户发送不同内容的短信。
+     * 
+     * - 前提条件
+     * 
+     * 1. 已创建短信应用。
+     * 2. 已申请短信签名，获取签名通道号。
+     * 3. 已申请短信模板，获取模板ID。
+     * 
+     * - 注意事项
+     * 
+     * 单条短信最多允许携带500个号码，每个号码最大长度为21位。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendAimBatchDifferentMessagesRequest 请求对象
+     * @return SyncInvoker<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse>
+     */
+    public SyncInvoker<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse> sendAimBatchDifferentMessagesInvoker(
+        SendAimBatchDifferentMessagesRequest request) {
+        return new SyncInvoker<SendAimBatchDifferentMessagesRequest, SendAimBatchDifferentMessagesResponse>(request,
+            KooMessageMeta.sendAimBatchDifferentMessages, hcClient);
+    }
+
+    /**
+     * 发送短信
+     *
+     * 向单个或多个用户发送相同内容的短信。
+     * 
+     * - 前提条件
+     * 
+     * 1. 已创建短信应用。
+     * 2. 已申请短信签名，获取签名通道号。
+     * 3. 已申请短信模板，获取模板ID。
+     * 
+     * - 注意事项
+     * 
+     * 最多允许携带500个号码，每个号码最大长度为21位。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendAimBatchMessagesRequest 请求对象
+     * @return SendAimBatchMessagesResponse
+     */
+    public SendAimBatchMessagesResponse sendAimBatchMessages(SendAimBatchMessagesRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.sendAimBatchMessages);
+    }
+
+    /**
+     * 发送短信
+     *
+     * 向单个或多个用户发送相同内容的短信。
+     * 
+     * - 前提条件
+     * 
+     * 1. 已创建短信应用。
+     * 2. 已申请短信签名，获取签名通道号。
+     * 3. 已申请短信模板，获取模板ID。
+     * 
+     * - 注意事项
+     * 
+     * 最多允许携带500个号码，每个号码最大长度为21位。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendAimBatchMessagesRequest 请求对象
+     * @return SyncInvoker<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse>
+     */
+    public SyncInvoker<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse> sendAimBatchMessagesInvoker(
+        SendAimBatchMessagesRequest request) {
+        return new SyncInvoker<SendAimBatchMessagesRequest, SendAimBatchMessagesResponse>(request,
+            KooMessageMeta.sendAimBatchMessages, hcClient);
+    }
+
+    /**
+     * 创建短信签名
+     *
+     * 该接口用于用户创建短信签名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddAimMsgSignatureRequest 请求对象
+     * @return AddAimMsgSignatureResponse
+     */
+    public AddAimMsgSignatureResponse addAimMsgSignature(AddAimMsgSignatureRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.addAimMsgSignature);
+    }
+
+    /**
+     * 创建短信签名
+     *
+     * 该接口用于用户创建短信签名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddAimMsgSignatureRequest 请求对象
+     * @return SyncInvoker<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse>
+     */
+    public SyncInvoker<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse> addAimMsgSignatureInvoker(
+        AddAimMsgSignatureRequest request) {
+        return new SyncInvoker<AddAimMsgSignatureRequest, AddAimMsgSignatureResponse>(request,
+            KooMessageMeta.addAimMsgSignature, hcClient);
+    }
+
+    /**
+     * 删除短信签名
+     *
+     * 该接口用于用户删除已创建的短信签名。删除已审核通过的签名，会同步删除该签名对应的通道号和该签名下的所有短信模板，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAimMsgSignatureRequest 请求对象
+     * @return DeleteAimMsgSignatureResponse
+     */
+    public DeleteAimMsgSignatureResponse deleteAimMsgSignature(DeleteAimMsgSignatureRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.deleteAimMsgSignature);
+    }
+
+    /**
+     * 删除短信签名
+     *
+     * 该接口用于用户删除已创建的短信签名。删除已审核通过的签名，会同步删除该签名对应的通道号和该签名下的所有短信模板，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAimMsgSignatureRequest 请求对象
+     * @return SyncInvoker<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse>
+     */
+    public SyncInvoker<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse> deleteAimMsgSignatureInvoker(
+        DeleteAimMsgSignatureRequest request) {
+        return new SyncInvoker<DeleteAimMsgSignatureRequest, DeleteAimMsgSignatureResponse>(request,
+            KooMessageMeta.deleteAimMsgSignature, hcClient);
+    }
+
+    /**
+     * 查询短信签名
+     *
+     * 该接口用于用户查询已创建的短信签名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgSignatureRequest 请求对象
+     * @return ListAimMsgSignatureResponse
+     */
+    public ListAimMsgSignatureResponse listAimMsgSignature(ListAimMsgSignatureRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.listAimMsgSignature);
+    }
+
+    /**
+     * 查询短信签名
+     *
+     * 该接口用于用户查询已创建的短信签名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgSignatureRequest 请求对象
+     * @return SyncInvoker<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse>
+     */
+    public SyncInvoker<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse> listAimMsgSignatureInvoker(
+        ListAimMsgSignatureRequest request) {
+        return new SyncInvoker<ListAimMsgSignatureRequest, ListAimMsgSignatureResponse>(request,
+            KooMessageMeta.listAimMsgSignature, hcClient);
+    }
+
+    /**
+     * 获取短信签名详情
+     *
+     * 该接口用于用户获取已创建的短信签名详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgSignatureDetailRequest 请求对象
+     * @return ListAimMsgSignatureDetailResponse
+     */
+    public ListAimMsgSignatureDetailResponse listAimMsgSignatureDetail(ListAimMsgSignatureDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.listAimMsgSignatureDetail);
+    }
+
+    /**
+     * 获取短信签名详情
+     *
+     * 该接口用于用户获取已创建的短信签名详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgSignatureDetailRequest 请求对象
+     * @return SyncInvoker<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse>
+     */
+    public SyncInvoker<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse> listAimMsgSignatureDetailInvoker(
+        ListAimMsgSignatureDetailRequest request) {
+        return new SyncInvoker<ListAimMsgSignatureDetailRequest, ListAimMsgSignatureDetailResponse>(request,
+            KooMessageMeta.listAimMsgSignatureDetail, hcClient);
+    }
+
+    /**
+     * 查询申请文件
+     *
+     * 该接口用于用户查询创建短信签名时上传的营业执照/授权委托书文件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAimMsgSignatureFileInfoRequest 请求对象
+     * @return ShowAimMsgSignatureFileInfoResponse
+     */
+    public ShowAimMsgSignatureFileInfoResponse showAimMsgSignatureFileInfo(ShowAimMsgSignatureFileInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.showAimMsgSignatureFileInfo);
+    }
+
+    /**
+     * 查询申请文件
+     *
+     * 该接口用于用户查询创建短信签名时上传的营业执照/授权委托书文件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAimMsgSignatureFileInfoRequest 请求对象
+     * @return SyncInvoker<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse>
+     */
+    public SyncInvoker<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse> showAimMsgSignatureFileInfoInvoker(
+        ShowAimMsgSignatureFileInfoRequest request) {
+        return new SyncInvoker<ShowAimMsgSignatureFileInfoRequest, ShowAimMsgSignatureFileInfoResponse>(request,
+            KooMessageMeta.showAimMsgSignatureFileInfo, hcClient);
+    }
+
+    /**
+     * 修改短信签名
+     *
+     * 该接口用于用户更新短信签名信息，目前仅支持审核不通过的短信签名重新修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAimMsgSignatureRequest 请求对象
+     * @return UpdateAimMsgSignatureResponse
+     */
+    public UpdateAimMsgSignatureResponse updateAimMsgSignature(UpdateAimMsgSignatureRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.updateAimMsgSignature);
+    }
+
+    /**
+     * 修改短信签名
+     *
+     * 该接口用于用户更新短信签名信息，目前仅支持审核不通过的短信签名重新修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAimMsgSignatureRequest 请求对象
+     * @return SyncInvoker<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse>
+     */
+    public SyncInvoker<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse> updateAimMsgSignatureInvoker(
+        UpdateAimMsgSignatureRequest request) {
+        return new SyncInvoker<UpdateAimMsgSignatureRequest, UpdateAimMsgSignatureResponse>(request,
+            KooMessageMeta.updateAimMsgSignature, hcClient);
+    }
+
+    /**
+     * 上传申请文件
+     *
+     * 该接口用于用户上传创建短信签名所需的营业执照/授权委托书文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadAimMsgSignatureFileRequest 请求对象
+     * @return UploadAimMsgSignatureFileResponse
+     */
+    public UploadAimMsgSignatureFileResponse uploadAimMsgSignatureFile(UploadAimMsgSignatureFileRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.uploadAimMsgSignatureFile);
+    }
+
+    /**
+     * 上传申请文件
+     *
+     * 该接口用于用户上传创建短信签名所需的营业执照/授权委托书文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadAimMsgSignatureFileRequest 请求对象
+     * @return SyncInvoker<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse>
+     */
+    public SyncInvoker<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse> uploadAimMsgSignatureFileInvoker(
+        UploadAimMsgSignatureFileRequest request) {
+        return new SyncInvoker<UploadAimMsgSignatureFileRequest, UploadAimMsgSignatureFileResponse>(request,
+            KooMessageMeta.uploadAimMsgSignatureFile, hcClient);
+    }
+
+    /**
+     * 创建短信模板
+     *
+     * 该接口用于用户创建短信模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAimMsgTemplateRequest 请求对象
+     * @return CreateAimMsgTemplateResponse
+     */
+    public CreateAimMsgTemplateResponse createAimMsgTemplate(CreateAimMsgTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.createAimMsgTemplate);
+    }
+
+    /**
+     * 创建短信模板
+     *
+     * 该接口用于用户创建短信模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAimMsgTemplateRequest 请求对象
+     * @return SyncInvoker<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse>
+     */
+    public SyncInvoker<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse> createAimMsgTemplateInvoker(
+        CreateAimMsgTemplateRequest request) {
+        return new SyncInvoker<CreateAimMsgTemplateRequest, CreateAimMsgTemplateResponse>(request,
+            KooMessageMeta.createAimMsgTemplate, hcClient);
+    }
+
+    /**
+     * 删除短信模板
+     *
+     * 该接口用于用户删除已创建的短信模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAimMsgTemplateRequest 请求对象
+     * @return DeleteAimMsgTemplateResponse
+     */
+    public DeleteAimMsgTemplateResponse deleteAimMsgTemplate(DeleteAimMsgTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.deleteAimMsgTemplate);
+    }
+
+    /**
+     * 删除短信模板
+     *
+     * 该接口用于用户删除已创建的短信模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAimMsgTemplateRequest 请求对象
+     * @return SyncInvoker<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse>
+     */
+    public SyncInvoker<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse> deleteAimMsgTemplateInvoker(
+        DeleteAimMsgTemplateRequest request) {
+        return new SyncInvoker<DeleteAimMsgTemplateRequest, DeleteAimMsgTemplateResponse>(request,
+            KooMessageMeta.deleteAimMsgTemplate, hcClient);
+    }
+
+    /**
+     * 查询短信模板
+     *
+     * 该接口用于用户查询已创建的短信模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgTemplateRequest 请求对象
+     * @return ListAimMsgTemplateResponse
+     */
+    public ListAimMsgTemplateResponse listAimMsgTemplate(ListAimMsgTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.listAimMsgTemplate);
+    }
+
+    /**
+     * 查询短信模板
+     *
+     * 该接口用于用户查询已创建的短信模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAimMsgTemplateRequest 请求对象
+     * @return SyncInvoker<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse>
+     */
+    public SyncInvoker<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse> listAimMsgTemplateInvoker(
+        ListAimMsgTemplateRequest request) {
+        return new SyncInvoker<ListAimMsgTemplateRequest, ListAimMsgTemplateResponse>(request,
+            KooMessageMeta.listAimMsgTemplate, hcClient);
+    }
+
+    /**
+     * 获取短信模板详情
+     *
+     * 该接口用于用户获取已创建的短信模板详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAimMsgTemplateDetailRequest 请求对象
+     * @return ShowAimMsgTemplateDetailResponse
+     */
+    public ShowAimMsgTemplateDetailResponse showAimMsgTemplateDetail(ShowAimMsgTemplateDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.showAimMsgTemplateDetail);
+    }
+
+    /**
+     * 获取短信模板详情
+     *
+     * 该接口用于用户获取已创建的短信模板详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAimMsgTemplateDetailRequest 请求对象
+     * @return SyncInvoker<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse>
+     */
+    public SyncInvoker<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse> showAimMsgTemplateDetailInvoker(
+        ShowAimMsgTemplateDetailRequest request) {
+        return new SyncInvoker<ShowAimMsgTemplateDetailRequest, ShowAimMsgTemplateDetailResponse>(request,
+            KooMessageMeta.showAimMsgTemplateDetail, hcClient);
+    }
+
+    /**
+     * 查询短信模板变量
+     *
+     * 该接口用于用户查询短信模板变量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAimMsgTemplateVariableRequest 请求对象
+     * @return ShowAimMsgTemplateVariableResponse
+     */
+    public ShowAimMsgTemplateVariableResponse showAimMsgTemplateVariable(ShowAimMsgTemplateVariableRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.showAimMsgTemplateVariable);
+    }
+
+    /**
+     * 查询短信模板变量
+     *
+     * 该接口用于用户查询短信模板变量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAimMsgTemplateVariableRequest 请求对象
+     * @return SyncInvoker<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse>
+     */
+    public SyncInvoker<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse> showAimMsgTemplateVariableInvoker(
+        ShowAimMsgTemplateVariableRequest request) {
+        return new SyncInvoker<ShowAimMsgTemplateVariableRequest, ShowAimMsgTemplateVariableResponse>(request,
+            KooMessageMeta.showAimMsgTemplateVariable, hcClient);
+    }
+
+    /**
+     * 修改短信模板
+     *
+     * 该接口用于用户修改短信模板信息，目前仅支持审核不通过的短信模板重新修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAimMsgTemplateRequest 请求对象
+     * @return UpdateAimMsgTemplateResponse
+     */
+    public UpdateAimMsgTemplateResponse updateAimMsgTemplate(UpdateAimMsgTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.updateAimMsgTemplate);
+    }
+
+    /**
+     * 修改短信模板
+     *
+     * 该接口用于用户修改短信模板信息，目前仅支持审核不通过的短信模板重新修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAimMsgTemplateRequest 请求对象
+     * @return SyncInvoker<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse>
+     */
+    public SyncInvoker<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse> updateAimMsgTemplateInvoker(
+        UpdateAimMsgTemplateRequest request) {
+        return new SyncInvoker<UpdateAimMsgTemplateRequest, UpdateAimMsgTemplateResponse>(request,
+            KooMessageMeta.updateAimMsgTemplate, hcClient);
     }
 
     /**

@@ -19,6 +19,11 @@ public class ListResolveTaskResult {
     private String taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_name")
+
+    private String taskName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tpl_id")
 
     private String tplId;
@@ -73,6 +78,23 @@ public class ListResolveTaskResult {
 
     public void setTaskId(String taskId) {
         this.taskId = taskId;
+    }
+
+    public ListResolveTaskResult withTaskName(String taskName) {
+        this.taskName = taskName;
+        return this;
+    }
+
+    /**
+     * 任务名称。
+     * @return taskName
+     */
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
     }
 
     public ListResolveTaskResult withTplId(String tplId) {
@@ -252,8 +274,9 @@ public class ListResolveTaskResult {
             return false;
         }
         ListResolveTaskResult that = (ListResolveTaskResult) obj;
-        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.tplId, that.tplId)
-            && Objects.equals(this.smsSigns, that.smsSigns) && Objects.equals(this.resolvingTimes, that.resolvingTimes)
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.tplId, that.tplId) && Objects.equals(this.smsSigns, that.smsSigns)
+            && Objects.equals(this.resolvingTimes, that.resolvingTimes)
             && Objects.equals(this.resolvedTimes, that.resolvedTimes)
             && Objects.equals(this.aimCodeType, that.aimCodeType) && Objects.equals(this.domain, that.domain)
             && Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.params, that.params);
@@ -261,8 +284,16 @@ public class ListResolveTaskResult {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(taskId, tplId, smsSigns, resolvingTimes, resolvedTimes, aimCodeType, domain, expirationTime, params);
+        return Objects.hash(taskId,
+            taskName,
+            tplId,
+            smsSigns,
+            resolvingTimes,
+            resolvedTimes,
+            aimCodeType,
+            domain,
+            expirationTime,
+            params);
     }
 
     @Override
@@ -270,6 +301,7 @@ public class ListResolveTaskResult {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResolveTaskResult {\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
         sb.append("    smsSigns: ").append(toIndentedString(smsSigns)).append("\n");
         sb.append("    resolvingTimes: ").append(toIndentedString(resolvingTimes)).append("\n");

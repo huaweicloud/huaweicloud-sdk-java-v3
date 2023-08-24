@@ -76,6 +76,117 @@ public class SignApiBindingInfo {
 
     private String signName;
 
+    /**
+     * API请求方法
+     */
+    public static final class ReqMethodEnum {
+
+        /**
+         * Enum GET for value: "GET"
+         */
+        public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
+
+        /**
+         * Enum POST for value: "POST"
+         */
+        public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
+
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
+        public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
+
+        /**
+         * Enum PUT for value: "PUT"
+         */
+        public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
+
+        /**
+         * Enum PATCH for value: "PATCH"
+         */
+        public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
+
+        /**
+         * Enum HEAD for value: "HEAD"
+         */
+        public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
+
+        /**
+         * Enum OPTIONS for value: "OPTIONS"
+         */
+        public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
+
+        /**
+         * Enum ANY for value: "ANY"
+         */
+        public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
+
+        private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReqMethodEnum> createStaticFields() {
+            Map<String, ReqMethodEnum> map = new HashMap<>();
+            map.put("GET", GET);
+            map.put("POST", POST);
+            map.put("DELETE", DELETE);
+            map.put("PUT", PUT);
+            map.put("PATCH", PATCH);
+            map.put("HEAD", HEAD);
+            map.put("OPTIONS", OPTIONS);
+            map.put("ANY", ANY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ReqMethodEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ReqMethodEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
+        }
+
+        public static ReqMethodEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ReqMethodEnum) {
+                return this.value.equals(((ReqMethodEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "req_method")
+
+    private ReqMethodEnum reqMethod;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_key")
 
@@ -377,6 +488,23 @@ public class SignApiBindingInfo {
         this.signName = signName;
     }
 
+    public SignApiBindingInfo withReqMethod(ReqMethodEnum reqMethod) {
+        this.reqMethod = reqMethod;
+        return this;
+    }
+
+    /**
+     * API请求方法
+     * @return reqMethod
+     */
+    public ReqMethodEnum getReqMethod() {
+        return reqMethod;
+    }
+
+    public void setReqMethod(ReqMethodEnum reqMethod) {
+        this.reqMethod = reqMethod;
+    }
+
     public SignApiBindingInfo withSignKey(String signKey) {
         this.signKey = signKey;
         return this;
@@ -443,8 +571,8 @@ public class SignApiBindingInfo {
             && Objects.equals(this.apiType, that.apiType) && Objects.equals(this.apiName, that.apiName)
             && Objects.equals(this.id, that.id) && Objects.equals(this.apiRemark, that.apiRemark)
             && Objects.equals(this.signId, that.signId) && Objects.equals(this.signName, that.signName)
-            && Objects.equals(this.signKey, that.signKey) && Objects.equals(this.signSecret, that.signSecret)
-            && Objects.equals(this.signType, that.signType);
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.signKey, that.signKey)
+            && Objects.equals(this.signSecret, that.signSecret) && Objects.equals(this.signType, that.signType);
     }
 
     @Override
@@ -461,6 +589,7 @@ public class SignApiBindingInfo {
             apiRemark,
             signId,
             signName,
+            reqMethod,
             signKey,
             signSecret,
             signType);
@@ -482,6 +611,7 @@ public class SignApiBindingInfo {
         sb.append("    apiRemark: ").append(toIndentedString(apiRemark)).append("\n");
         sb.append("    signId: ").append(toIndentedString(signId)).append("\n");
         sb.append("    signName: ").append(toIndentedString(signName)).append("\n");
+        sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("    signKey: ").append(toIndentedString(signKey)).append("\n");
         sb.append("    signSecret: ").append(toIndentedString(signSecret)).append("\n");
         sb.append("    signType: ").append(toIndentedString(signType)).append("\n");

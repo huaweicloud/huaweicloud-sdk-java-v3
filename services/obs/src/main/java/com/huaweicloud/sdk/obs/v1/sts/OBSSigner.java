@@ -101,7 +101,6 @@ public class OBSSigner {
 
     public void sign(Request request) throws Exception {
         String stringToSign = makeServiceCanonicalString(request.getMethod(), request.getUrl(), request.getHeaders());
-        logger.debug("stringToSign: {}", stringToSign);
         String auth = "OBS " + request.getKey() + ":" + calculateSignature(stringToSign, request.getSecret());
         Map<String, String> headers = request.getHeaders();
         headers.put("Authorization", auth);

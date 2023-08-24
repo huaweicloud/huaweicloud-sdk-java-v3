@@ -14,9 +14,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 镜像信息响应体
+ * 
  */
-public class GlanceShowImageResponseBody {
+public class GlanceShowImageListResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "__backup_id")
@@ -1134,6 +1134,11 @@ public class GlanceShowImageResponseBody {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "_sys_enterprise_project_id")
+
+    private String sysEnterpriseProjectId;
+
     /**
      * 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
      */
@@ -1424,7 +1429,7 @@ public class GlanceShowImageResponseBody {
 
     private String supportAmd;
 
-    public GlanceShowImageResponseBody withBackupId(String backupId) {
+    public GlanceShowImageListResponseBody withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
@@ -1443,7 +1448,7 @@ public class GlanceShowImageResponseBody {
         this.backupId = backupId;
     }
 
-    public GlanceShowImageResponseBody withDataOrigin(String dataOrigin) {
+    public GlanceShowImageListResponseBody withDataOrigin(String dataOrigin) {
         this.dataOrigin = dataOrigin;
         return this;
     }
@@ -1462,7 +1467,7 @@ public class GlanceShowImageResponseBody {
         this.dataOrigin = dataOrigin;
     }
 
-    public GlanceShowImageResponseBody withDescription(String description) {
+    public GlanceShowImageListResponseBody withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -1481,7 +1486,7 @@ public class GlanceShowImageResponseBody {
         this.description = description;
     }
 
-    public GlanceShowImageResponseBody withImageSize(String imageSize) {
+    public GlanceShowImageListResponseBody withImageSize(String imageSize) {
         this.imageSize = imageSize;
         return this;
     }
@@ -1500,7 +1505,7 @@ public class GlanceShowImageResponseBody {
         this.imageSize = imageSize;
     }
 
-    public GlanceShowImageResponseBody withImageSourceType(ImageSourceTypeEnum imageSourceType) {
+    public GlanceShowImageListResponseBody withImageSourceType(ImageSourceTypeEnum imageSourceType) {
         this.imageSourceType = imageSourceType;
         return this;
     }
@@ -1519,7 +1524,7 @@ public class GlanceShowImageResponseBody {
         this.imageSourceType = imageSourceType;
     }
 
-    public GlanceShowImageResponseBody withImagetype(ImagetypeEnum imagetype) {
+    public GlanceShowImageListResponseBody withImagetype(ImagetypeEnum imagetype) {
         this.imagetype = imagetype;
         return this;
     }
@@ -1538,7 +1543,7 @@ public class GlanceShowImageResponseBody {
         this.imagetype = imagetype;
     }
 
-    public GlanceShowImageResponseBody withIsregistered(IsregisteredEnum isregistered) {
+    public GlanceShowImageListResponseBody withIsregistered(IsregisteredEnum isregistered) {
         this.isregistered = isregistered;
         return this;
     }
@@ -1557,7 +1562,7 @@ public class GlanceShowImageResponseBody {
         this.isregistered = isregistered;
     }
 
-    public GlanceShowImageResponseBody withOriginalimagename(String originalimagename) {
+    public GlanceShowImageListResponseBody withOriginalimagename(String originalimagename) {
         this.originalimagename = originalimagename;
         return this;
     }
@@ -1576,7 +1581,7 @@ public class GlanceShowImageResponseBody {
         this.originalimagename = originalimagename;
     }
 
-    public GlanceShowImageResponseBody withOsBit(OsBitEnum osBit) {
+    public GlanceShowImageListResponseBody withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
         return this;
     }
@@ -1595,7 +1600,7 @@ public class GlanceShowImageResponseBody {
         this.osBit = osBit;
     }
 
-    public GlanceShowImageResponseBody withOsType(OsTypeEnum osType) {
+    public GlanceShowImageListResponseBody withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
     }
@@ -1614,7 +1619,7 @@ public class GlanceShowImageResponseBody {
         this.osType = osType;
     }
 
-    public GlanceShowImageResponseBody withOsVersion(String osVersion) {
+    public GlanceShowImageListResponseBody withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
     }
@@ -1633,7 +1638,7 @@ public class GlanceShowImageResponseBody {
         this.osVersion = osVersion;
     }
 
-    public GlanceShowImageResponseBody withPlatform(PlatformEnum platform) {
+    public GlanceShowImageListResponseBody withPlatform(PlatformEnum platform) {
         this.platform = platform;
         return this;
     }
@@ -1652,7 +1657,7 @@ public class GlanceShowImageResponseBody {
         this.platform = platform;
     }
 
-    public GlanceShowImageResponseBody withProductcode(String productcode) {
+    public GlanceShowImageListResponseBody withProductcode(String productcode) {
         this.productcode = productcode;
         return this;
     }
@@ -1671,7 +1676,7 @@ public class GlanceShowImageResponseBody {
         this.productcode = productcode;
     }
 
-    public GlanceShowImageResponseBody withSupportDiskintensive(String supportDiskintensive) {
+    public GlanceShowImageListResponseBody withSupportDiskintensive(String supportDiskintensive) {
         this.supportDiskintensive = supportDiskintensive;
         return this;
     }
@@ -1690,7 +1695,7 @@ public class GlanceShowImageResponseBody {
         this.supportDiskintensive = supportDiskintensive;
     }
 
-    public GlanceShowImageResponseBody withSupportHighperformance(String supportHighperformance) {
+    public GlanceShowImageListResponseBody withSupportHighperformance(String supportHighperformance) {
         this.supportHighperformance = supportHighperformance;
         return this;
     }
@@ -1709,7 +1714,7 @@ public class GlanceShowImageResponseBody {
         this.supportHighperformance = supportHighperformance;
     }
 
-    public GlanceShowImageResponseBody withSupportKvm(String supportKvm) {
+    public GlanceShowImageListResponseBody withSupportKvm(String supportKvm) {
         this.supportKvm = supportKvm;
         return this;
     }
@@ -1728,7 +1733,7 @@ public class GlanceShowImageResponseBody {
         this.supportKvm = supportKvm;
     }
 
-    public GlanceShowImageResponseBody withSupportKvmGpuType(String supportKvmGpuType) {
+    public GlanceShowImageListResponseBody withSupportKvmGpuType(String supportKvmGpuType) {
         this.supportKvmGpuType = supportKvmGpuType;
         return this;
     }
@@ -1747,7 +1752,7 @@ public class GlanceShowImageResponseBody {
         this.supportKvmGpuType = supportKvmGpuType;
     }
 
-    public GlanceShowImageResponseBody withSupportKvmInfiniband(String supportKvmInfiniband) {
+    public GlanceShowImageListResponseBody withSupportKvmInfiniband(String supportKvmInfiniband) {
         this.supportKvmInfiniband = supportKvmInfiniband;
         return this;
     }
@@ -1766,7 +1771,7 @@ public class GlanceShowImageResponseBody {
         this.supportKvmInfiniband = supportKvmInfiniband;
     }
 
-    public GlanceShowImageResponseBody withSupportLargememory(String supportLargememory) {
+    public GlanceShowImageListResponseBody withSupportLargememory(String supportLargememory) {
         this.supportLargememory = supportLargememory;
         return this;
     }
@@ -1785,7 +1790,7 @@ public class GlanceShowImageResponseBody {
         this.supportLargememory = supportLargememory;
     }
 
-    public GlanceShowImageResponseBody withSupportXen(String supportXen) {
+    public GlanceShowImageListResponseBody withSupportXen(String supportXen) {
         this.supportXen = supportXen;
         return this;
     }
@@ -1804,7 +1809,7 @@ public class GlanceShowImageResponseBody {
         this.supportXen = supportXen;
     }
 
-    public GlanceShowImageResponseBody withSupportXenGpuType(String supportXenGpuType) {
+    public GlanceShowImageListResponseBody withSupportXenGpuType(String supportXenGpuType) {
         this.supportXenGpuType = supportXenGpuType;
         return this;
     }
@@ -1823,7 +1828,7 @@ public class GlanceShowImageResponseBody {
         this.supportXenGpuType = supportXenGpuType;
     }
 
-    public GlanceShowImageResponseBody withSupportXenHana(String supportXenHana) {
+    public GlanceShowImageListResponseBody withSupportXenHana(String supportXenHana) {
         this.supportXenHana = supportXenHana;
         return this;
     }
@@ -1842,7 +1847,7 @@ public class GlanceShowImageResponseBody {
         this.supportXenHana = supportXenHana;
     }
 
-    public GlanceShowImageResponseBody withChecksum(String checksum) {
+    public GlanceShowImageListResponseBody withChecksum(String checksum) {
         this.checksum = checksum;
         return this;
     }
@@ -1859,7 +1864,7 @@ public class GlanceShowImageResponseBody {
         this.checksum = checksum;
     }
 
-    public GlanceShowImageResponseBody withContainerFormat(String containerFormat) {
+    public GlanceShowImageListResponseBody withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
         return this;
     }
@@ -1876,7 +1881,7 @@ public class GlanceShowImageResponseBody {
         this.containerFormat = containerFormat;
     }
 
-    public GlanceShowImageResponseBody withCreatedAt(String createdAt) {
+    public GlanceShowImageListResponseBody withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -1893,7 +1898,7 @@ public class GlanceShowImageResponseBody {
         this.createdAt = createdAt;
     }
 
-    public GlanceShowImageResponseBody withDiskFormat(DiskFormatEnum diskFormat) {
+    public GlanceShowImageListResponseBody withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
         return this;
     }
@@ -1910,7 +1915,7 @@ public class GlanceShowImageResponseBody {
         this.diskFormat = diskFormat;
     }
 
-    public GlanceShowImageResponseBody withFile(String file) {
+    public GlanceShowImageListResponseBody withFile(String file) {
         this.file = file;
         return this;
     }
@@ -1927,7 +1932,7 @@ public class GlanceShowImageResponseBody {
         this.file = file;
     }
 
-    public GlanceShowImageResponseBody withId(String id) {
+    public GlanceShowImageListResponseBody withId(String id) {
         this.id = id;
         return this;
     }
@@ -1944,7 +1949,7 @@ public class GlanceShowImageResponseBody {
         this.id = id;
     }
 
-    public GlanceShowImageResponseBody withMinDisk(Integer minDisk) {
+    public GlanceShowImageListResponseBody withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
         return this;
     }
@@ -1961,7 +1966,7 @@ public class GlanceShowImageResponseBody {
         this.minDisk = minDisk;
     }
 
-    public GlanceShowImageResponseBody withMinRam(Integer minRam) {
+    public GlanceShowImageListResponseBody withMinRam(Integer minRam) {
         this.minRam = minRam;
         return this;
     }
@@ -1978,7 +1983,7 @@ public class GlanceShowImageResponseBody {
         this.minRam = minRam;
     }
 
-    public GlanceShowImageResponseBody withName(String name) {
+    public GlanceShowImageListResponseBody withName(String name) {
         this.name = name;
         return this;
     }
@@ -1995,7 +2000,7 @@ public class GlanceShowImageResponseBody {
         this.name = name;
     }
 
-    public GlanceShowImageResponseBody withOwner(String owner) {
+    public GlanceShowImageListResponseBody withOwner(String owner) {
         this.owner = owner;
         return this;
     }
@@ -2012,7 +2017,7 @@ public class GlanceShowImageResponseBody {
         this.owner = owner;
     }
 
-    public GlanceShowImageResponseBody withProtected(Boolean _protected) {
+    public GlanceShowImageListResponseBody withProtected(Boolean _protected) {
         this._protected = _protected;
         return this;
     }
@@ -2029,7 +2034,7 @@ public class GlanceShowImageResponseBody {
         this._protected = _protected;
     }
 
-    public GlanceShowImageResponseBody withSchema(String schema) {
+    public GlanceShowImageListResponseBody withSchema(String schema) {
         this.schema = schema;
         return this;
     }
@@ -2046,7 +2051,7 @@ public class GlanceShowImageResponseBody {
         this.schema = schema;
     }
 
-    public GlanceShowImageResponseBody withSelf(String self) {
+    public GlanceShowImageListResponseBody withSelf(String self) {
         this.self = self;
         return this;
     }
@@ -2063,7 +2068,7 @@ public class GlanceShowImageResponseBody {
         this.self = self;
     }
 
-    public GlanceShowImageResponseBody withSize(Long size) {
+    public GlanceShowImageListResponseBody withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -2080,7 +2085,7 @@ public class GlanceShowImageResponseBody {
         this.size = size;
     }
 
-    public GlanceShowImageResponseBody withStatus(StatusEnum status) {
+    public GlanceShowImageListResponseBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -2097,12 +2102,12 @@ public class GlanceShowImageResponseBody {
         this.status = status;
     }
 
-    public GlanceShowImageResponseBody withTags(List<String> tags) {
+    public GlanceShowImageListResponseBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    public GlanceShowImageResponseBody addTagsItem(String tagsItem) {
+    public GlanceShowImageListResponseBody addTagsItem(String tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -2110,7 +2115,7 @@ public class GlanceShowImageResponseBody {
         return this;
     }
 
-    public GlanceShowImageResponseBody withTags(Consumer<List<String>> tagsSetter) {
+    public GlanceShowImageListResponseBody withTags(Consumer<List<String>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -2130,7 +2135,7 @@ public class GlanceShowImageResponseBody {
         this.tags = tags;
     }
 
-    public GlanceShowImageResponseBody withUpdatedAt(String updatedAt) {
+    public GlanceShowImageListResponseBody withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
@@ -2147,7 +2152,7 @@ public class GlanceShowImageResponseBody {
         this.updatedAt = updatedAt;
     }
 
-    public GlanceShowImageResponseBody withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
+    public GlanceShowImageListResponseBody withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
         return this;
     }
@@ -2164,7 +2169,7 @@ public class GlanceShowImageResponseBody {
         this.virtualEnvType = virtualEnvType;
     }
 
-    public GlanceShowImageResponseBody withVirtualSize(Integer virtualSize) {
+    public GlanceShowImageListResponseBody withVirtualSize(Integer virtualSize) {
         this.virtualSize = virtualSize;
         return this;
     }
@@ -2181,7 +2186,7 @@ public class GlanceShowImageResponseBody {
         this.virtualSize = virtualSize;
     }
 
-    public GlanceShowImageResponseBody withVisibility(VisibilityEnum visibility) {
+    public GlanceShowImageListResponseBody withVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
         return this;
     }
@@ -2198,7 +2203,7 @@ public class GlanceShowImageResponseBody {
         this.visibility = visibility;
     }
 
-    public GlanceShowImageResponseBody withSupportFcInject(SupportFcInjectEnum supportFcInject) {
+    public GlanceShowImageListResponseBody withSupportFcInject(SupportFcInjectEnum supportFcInject) {
         this.supportFcInject = supportFcInject;
         return this;
     }
@@ -2217,7 +2222,7 @@ public class GlanceShowImageResponseBody {
         this.supportFcInject = supportFcInject;
     }
 
-    public GlanceShowImageResponseBody withEnterpriseProjectId(String enterpriseProjectId) {
+    public GlanceShowImageListResponseBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
@@ -2234,7 +2239,24 @@ public class GlanceShowImageResponseBody {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public GlanceShowImageResponseBody withHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
+    public GlanceShowImageListResponseBody withSysEnterpriseProjectId(String sysEnterpriseProjectId) {
+        this.sysEnterpriseProjectId = sysEnterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 表示当前镜像所属的企业项目。 取值为0或无该值，表示属于default企业项目。 取值为UUID，表示属于该UUID对应的企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
+     * @return sysEnterpriseProjectId
+     */
+    public String getSysEnterpriseProjectId() {
+        return sysEnterpriseProjectId;
+    }
+
+    public void setSysEnterpriseProjectId(String sysEnterpriseProjectId) {
+        this.sysEnterpriseProjectId = sysEnterpriseProjectId;
+    }
+
+    public GlanceShowImageListResponseBody withHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
         this.hwFirmwareType = hwFirmwareType;
         return this;
     }
@@ -2251,7 +2273,7 @@ public class GlanceShowImageResponseBody {
         this.hwFirmwareType = hwFirmwareType;
     }
 
-    public GlanceShowImageResponseBody withSupportArm(SupportArmEnum supportArm) {
+    public GlanceShowImageListResponseBody withSupportArm(SupportArmEnum supportArm) {
         this.supportArm = supportArm;
         return this;
     }
@@ -2270,7 +2292,7 @@ public class GlanceShowImageResponseBody {
         this.supportArm = supportArm;
     }
 
-    public GlanceShowImageResponseBody withIsOffshelved(IsOffshelvedEnum isOffshelved) {
+    public GlanceShowImageListResponseBody withIsOffshelved(IsOffshelvedEnum isOffshelved) {
         this.isOffshelved = isOffshelved;
         return this;
     }
@@ -2289,7 +2311,7 @@ public class GlanceShowImageResponseBody {
         this.isOffshelved = isOffshelved;
     }
 
-    public GlanceShowImageResponseBody withLazyloading(String lazyloading) {
+    public GlanceShowImageListResponseBody withLazyloading(String lazyloading) {
         this.lazyloading = lazyloading;
         return this;
     }
@@ -2308,7 +2330,7 @@ public class GlanceShowImageResponseBody {
         this.lazyloading = lazyloading;
     }
 
-    public GlanceShowImageResponseBody withOsFeatureList(String osFeatureList) {
+    public GlanceShowImageListResponseBody withOsFeatureList(String osFeatureList) {
         this.osFeatureList = osFeatureList;
         return this;
     }
@@ -2327,7 +2349,7 @@ public class GlanceShowImageResponseBody {
         this.osFeatureList = osFeatureList;
     }
 
-    public GlanceShowImageResponseBody withRootOrigin(String rootOrigin) {
+    public GlanceShowImageListResponseBody withRootOrigin(String rootOrigin) {
         this.rootOrigin = rootOrigin;
         return this;
     }
@@ -2346,7 +2368,7 @@ public class GlanceShowImageResponseBody {
         this.rootOrigin = rootOrigin;
     }
 
-    public GlanceShowImageResponseBody withSequenceNum(String sequenceNum) {
+    public GlanceShowImageListResponseBody withSequenceNum(String sequenceNum) {
         this.sequenceNum = sequenceNum;
         return this;
     }
@@ -2365,7 +2387,7 @@ public class GlanceShowImageResponseBody {
         this.sequenceNum = sequenceNum;
     }
 
-    public GlanceShowImageResponseBody withSupportAgentList(String supportAgentList) {
+    public GlanceShowImageListResponseBody withSupportAgentList(String supportAgentList) {
         this.supportAgentList = supportAgentList;
         return this;
     }
@@ -2384,7 +2406,7 @@ public class GlanceShowImageResponseBody {
         this.supportAgentList = supportAgentList;
     }
 
-    public GlanceShowImageResponseBody withSystemCmkid(String systemCmkid) {
+    public GlanceShowImageListResponseBody withSystemCmkid(String systemCmkid) {
         this.systemCmkid = systemCmkid;
         return this;
     }
@@ -2403,7 +2425,7 @@ public class GlanceShowImageResponseBody {
         this.systemCmkid = systemCmkid;
     }
 
-    public GlanceShowImageResponseBody withActiveAt(String activeAt) {
+    public GlanceShowImageListResponseBody withActiveAt(String activeAt) {
         this.activeAt = activeAt;
         return this;
     }
@@ -2420,7 +2442,7 @@ public class GlanceShowImageResponseBody {
         this.activeAt = activeAt;
     }
 
-    public GlanceShowImageResponseBody withHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
+    public GlanceShowImageListResponseBody withHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
         this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
         return this;
     }
@@ -2437,7 +2459,7 @@ public class GlanceShowImageResponseBody {
         this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
     }
 
-    public GlanceShowImageResponseBody withMaxRam(String maxRam) {
+    public GlanceShowImageListResponseBody withMaxRam(String maxRam) {
         this.maxRam = maxRam;
         return this;
     }
@@ -2454,7 +2476,7 @@ public class GlanceShowImageResponseBody {
         this.maxRam = maxRam;
     }
 
-    public GlanceShowImageResponseBody withImageLocation(String imageLocation) {
+    public GlanceShowImageListResponseBody withImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
         return this;
     }
@@ -2473,7 +2495,7 @@ public class GlanceShowImageResponseBody {
         this.imageLocation = imageLocation;
     }
 
-    public GlanceShowImageResponseBody withIsConfigInit(String isConfigInit) {
+    public GlanceShowImageListResponseBody withIsConfigInit(String isConfigInit) {
         this.isConfigInit = isConfigInit;
         return this;
     }
@@ -2492,7 +2514,7 @@ public class GlanceShowImageResponseBody {
         this.isConfigInit = isConfigInit;
     }
 
-    public GlanceShowImageResponseBody withAccountCode(String accountCode) {
+    public GlanceShowImageListResponseBody withAccountCode(String accountCode) {
         this.accountCode = accountCode;
         return this;
     }
@@ -2511,7 +2533,7 @@ public class GlanceShowImageResponseBody {
         this.accountCode = accountCode;
     }
 
-    public GlanceShowImageResponseBody withSupportAmd(String supportAmd) {
+    public GlanceShowImageListResponseBody withSupportAmd(String supportAmd) {
         this.supportAmd = supportAmd;
         return this;
     }
@@ -2538,7 +2560,7 @@ public class GlanceShowImageResponseBody {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceShowImageResponseBody that = (GlanceShowImageResponseBody) obj;
+        GlanceShowImageListResponseBody that = (GlanceShowImageListResponseBody) obj;
         return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.dataOrigin, that.dataOrigin)
             && Objects.equals(this.description, that.description) && Objects.equals(this.imageSize, that.imageSize)
             && Objects.equals(this.imageSourceType, that.imageSourceType)
@@ -2568,6 +2590,7 @@ public class GlanceShowImageResponseBody {
             && Objects.equals(this.virtualSize, that.virtualSize) && Objects.equals(this.visibility, that.visibility)
             && Objects.equals(this.supportFcInject, that.supportFcInject)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sysEnterpriseProjectId, that.sysEnterpriseProjectId)
             && Objects.equals(this.hwFirmwareType, that.hwFirmwareType)
             && Objects.equals(this.supportArm, that.supportArm) && Objects.equals(this.isOffshelved, that.isOffshelved)
             && Objects.equals(this.lazyloading, that.lazyloading)
@@ -2627,6 +2650,7 @@ public class GlanceShowImageResponseBody {
             visibility,
             supportFcInject,
             enterpriseProjectId,
+            sysEnterpriseProjectId,
             hwFirmwareType,
             supportArm,
             isOffshelved,
@@ -2648,7 +2672,7 @@ public class GlanceShowImageResponseBody {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class GlanceShowImageResponseBody {\n");
+        sb.append("class GlanceShowImageListResponseBody {\n");
         sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
         sb.append("    dataOrigin: ").append(toIndentedString(dataOrigin)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -2693,6 +2717,7 @@ public class GlanceShowImageResponseBody {
         sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
         sb.append("    supportFcInject: ").append(toIndentedString(supportFcInject)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    sysEnterpriseProjectId: ").append(toIndentedString(sysEnterpriseProjectId)).append("\n");
         sb.append("    hwFirmwareType: ").append(toIndentedString(hwFirmwareType)).append("\n");
         sb.append("    supportArm: ").append(toIndentedString(supportArm)).append("\n");
         sb.append("    isOffshelved: ").append(toIndentedString(isOffshelved)).append("\n");

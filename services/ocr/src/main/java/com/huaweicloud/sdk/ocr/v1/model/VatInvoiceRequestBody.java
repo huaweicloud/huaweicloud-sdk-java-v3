@@ -30,6 +30,11 @@ public class VatInvoiceRequestBody {
 
     private Boolean returnTextLocation;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_num")
+
+    private Integer pageNum;
+
     public VatInvoiceRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -98,6 +103,23 @@ public class VatInvoiceRequestBody {
         this.returnTextLocation = returnTextLocation;
     }
 
+    public VatInvoiceRequestBody withPageNum(Integer pageNum) {
+        this.pageNum = pageNum;
+        return this;
+    }
+
+    /**
+     * 页码，默认为1，返回第一页结果。如果传参不大于PDF页数，则返回对应PDF页的结果。 
+     * @return pageNum
+     */
+    public Integer getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(Integer pageNum) {
+        this.pageNum = pageNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +131,13 @@ public class VatInvoiceRequestBody {
         VatInvoiceRequestBody that = (VatInvoiceRequestBody) obj;
         return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
             && Objects.equals(this.advancedMode, that.advancedMode)
-            && Objects.equals(this.returnTextLocation, that.returnTextLocation);
+            && Objects.equals(this.returnTextLocation, that.returnTextLocation)
+            && Objects.equals(this.pageNum, that.pageNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, advancedMode, returnTextLocation);
+        return Objects.hash(image, url, advancedMode, returnTextLocation, pageNum);
     }
 
     @Override
@@ -125,6 +148,7 @@ public class VatInvoiceRequestBody {
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    advancedMode: ").append(toIndentedString(advancedMode)).append("\n");
         sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
+        sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

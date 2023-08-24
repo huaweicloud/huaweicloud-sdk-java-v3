@@ -151,7 +151,7 @@ public class ShowInstanceMessagesRequest {
     }
 
     /**
-     * 分页大小。取值范围为0~50。
+     * 每一页显示的message数量。
      * @return limit
      */
     public String getLimit() {
@@ -168,7 +168,7 @@ public class ShowInstanceMessagesRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * 页数。
      * @return offset
      */
     public String getOffset() {

@@ -38,6 +38,11 @@ public class BackupRestore {
 
     private String resourceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "details")
+
+    private RestoreDetails details;
+
     public BackupRestore withMappings(List<BackupRestoreServerMapping> mappings) {
         this.mappings = mappings;
         return this;
@@ -139,6 +144,32 @@ public class BackupRestore {
         this.resourceId = resourceId;
     }
 
+    public BackupRestore withDetails(RestoreDetails details) {
+        this.details = details;
+        return this;
+    }
+
+    public BackupRestore withDetails(Consumer<RestoreDetails> detailsSetter) {
+        if (this.details == null) {
+            this.details = new RestoreDetails();
+            detailsSetter.accept(this.details);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get details
+     * @return details
+     */
+    public RestoreDetails getDetails() {
+        return details;
+    }
+
+    public void setDetails(RestoreDetails details) {
+        this.details = details;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -150,12 +181,12 @@ public class BackupRestore {
         BackupRestore that = (BackupRestore) obj;
         return Objects.equals(this.mappings, that.mappings) && Objects.equals(this.powerOn, that.powerOn)
             && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.volumeId, that.volumeId)
-            && Objects.equals(this.resourceId, that.resourceId);
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.details, that.details);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mappings, powerOn, serverId, volumeId, resourceId);
+        return Objects.hash(mappings, powerOn, serverId, volumeId, resourceId, details);
     }
 
     @Override
@@ -167,6 +198,7 @@ public class BackupRestore {
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    details: ").append(toIndentedString(details)).append("\n");
         sb.append("}");
         return sb.toString();
     }

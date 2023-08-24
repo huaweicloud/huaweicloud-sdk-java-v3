@@ -1,7 +1,11 @@
 package com.huaweicloud.sdk.apig.v2;
 
+import com.huaweicloud.sdk.apig.v2.model.AcceptOrRejectEndpointConnectionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.AcceptOrRejectEndpointConnectionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.AddEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddEipV2Response;
+import com.huaweicloud.sdk.apig.v2.model.AddEndpointPermissionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.AddEndpointPermissionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.AddEngressEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddEngressEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.AddIngressEipV2Request;
@@ -114,6 +118,8 @@ import com.huaweicloud.sdk.apig.v2.model.DeleteCertificateV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCertificateV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCustomAuthorizerV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteCustomAuthorizerV2Response;
+import com.huaweicloud.sdk.apig.v2.model.DeleteEndpointPermissionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteEndpointPermissionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEnvironmentV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEnvironmentV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteEnvironmentVariableV2Request;
@@ -210,6 +216,10 @@ import com.huaweicloud.sdk.apig.v2.model.ListCertificatesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListCertificatesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListCustomAuthorizersV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListCustomAuthorizersV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ListEndpointConnectionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListEndpointConnectionsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListEndpointPermissionsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListEndpointPermissionsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListEnvironmentVariablesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListEnvironmentVariablesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListEnvironmentsV2Request;
@@ -358,6 +368,37 @@ public class ApigClient {
     }
 
     /**
+     * 接受或拒绝终端节点连接
+     *
+     * 接受或拒绝实例节点连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AcceptOrRejectEndpointConnectionsRequest 请求对象
+     * @return AcceptOrRejectEndpointConnectionsResponse
+     */
+    public AcceptOrRejectEndpointConnectionsResponse acceptOrRejectEndpointConnections(
+        AcceptOrRejectEndpointConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.acceptOrRejectEndpointConnections);
+    }
+
+    /**
+     * 接受或拒绝终端节点连接
+     *
+     * 接受或拒绝实例节点连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AcceptOrRejectEndpointConnectionsRequest 请求对象
+     * @return SyncInvoker<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse>
+     */
+    public SyncInvoker<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse> acceptOrRejectEndpointConnectionsInvoker(
+        AcceptOrRejectEndpointConnectionsRequest request) {
+        return new SyncInvoker<AcceptOrRejectEndpointConnectionsRequest, AcceptOrRejectEndpointConnectionsResponse>(
+            request, ApigMeta.acceptOrRejectEndpointConnections, hcClient);
+    }
+
+    /**
      * 实例更新或绑定EIP
      *
      * 实例更新或绑定EIP
@@ -383,6 +424,36 @@ public class ApigClient {
      */
     public SyncInvoker<AddEipV2Request, AddEipV2Response> addEipV2Invoker(AddEipV2Request request) {
         return new SyncInvoker<AddEipV2Request, AddEipV2Response>(request, ApigMeta.addEipV2, hcClient);
+    }
+
+    /**
+     * 批量添加实例终端节点连接白名单
+     *
+     * 批量添加实例终端节点连接白名单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddEndpointPermissionsRequest 请求对象
+     * @return AddEndpointPermissionsResponse
+     */
+    public AddEndpointPermissionsResponse addEndpointPermissions(AddEndpointPermissionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.addEndpointPermissions);
+    }
+
+    /**
+     * 批量添加实例终端节点连接白名单
+     *
+     * 批量添加实例终端节点连接白名单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddEndpointPermissionsRequest 请求对象
+     * @return SyncInvoker<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse>
+     */
+    public SyncInvoker<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse> addEndpointPermissionsInvoker(
+        AddEndpointPermissionsRequest request) {
+        return new SyncInvoker<AddEndpointPermissionsRequest, AddEndpointPermissionsResponse>(request,
+            ApigMeta.addEndpointPermissions, hcClient);
     }
 
     /**
@@ -1052,6 +1123,36 @@ public class ApigClient {
         DeleteCustomAuthorizerV2Request request) {
         return new SyncInvoker<DeleteCustomAuthorizerV2Request, DeleteCustomAuthorizerV2Response>(request,
             ApigMeta.deleteCustomAuthorizerV2, hcClient);
+    }
+
+    /**
+     * 批量删除实例终端节点连接白名单
+     *
+     * 批量删除实例终端节点连接白名单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEndpointPermissionsRequest 请求对象
+     * @return DeleteEndpointPermissionsResponse
+     */
+    public DeleteEndpointPermissionsResponse deleteEndpointPermissions(DeleteEndpointPermissionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.deleteEndpointPermissions);
+    }
+
+    /**
+     * 批量删除实例终端节点连接白名单
+     *
+     * 批量删除实例终端节点连接白名单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEndpointPermissionsRequest 请求对象
+     * @return SyncInvoker<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse>
+     */
+    public SyncInvoker<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse> deleteEndpointPermissionsInvoker(
+        DeleteEndpointPermissionsRequest request) {
+        return new SyncInvoker<DeleteEndpointPermissionsRequest, DeleteEndpointPermissionsResponse>(request,
+            ApigMeta.deleteEndpointPermissions, hcClient);
     }
 
     /**
@@ -1798,6 +1899,66 @@ public class ApigClient {
         ListCustomAuthorizersV2Request request) {
         return new SyncInvoker<ListCustomAuthorizersV2Request, ListCustomAuthorizersV2Response>(request,
             ApigMeta.listCustomAuthorizersV2, hcClient);
+    }
+
+    /**
+     * 查询实例终端节点连接列表
+     *
+     * 查询实例终端节点连接列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEndpointConnectionsRequest 请求对象
+     * @return ListEndpointConnectionsResponse
+     */
+    public ListEndpointConnectionsResponse listEndpointConnections(ListEndpointConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listEndpointConnections);
+    }
+
+    /**
+     * 查询实例终端节点连接列表
+     *
+     * 查询实例终端节点连接列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEndpointConnectionsRequest 请求对象
+     * @return SyncInvoker<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse>
+     */
+    public SyncInvoker<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse> listEndpointConnectionsInvoker(
+        ListEndpointConnectionsRequest request) {
+        return new SyncInvoker<ListEndpointConnectionsRequest, ListEndpointConnectionsResponse>(request,
+            ApigMeta.listEndpointConnections, hcClient);
+    }
+
+    /**
+     * 查询实例的终端节点服务的白名单列表
+     *
+     * 查询当前实例终端节点服务的白名单列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEndpointPermissionsRequest 请求对象
+     * @return ListEndpointPermissionsResponse
+     */
+    public ListEndpointPermissionsResponse listEndpointPermissions(ListEndpointPermissionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.listEndpointPermissions);
+    }
+
+    /**
+     * 查询实例的终端节点服务的白名单列表
+     *
+     * 查询当前实例终端节点服务的白名单列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEndpointPermissionsRequest 请求对象
+     * @return SyncInvoker<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse>
+     */
+    public SyncInvoker<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse> listEndpointPermissionsInvoker(
+        ListEndpointPermissionsRequest request) {
+        return new SyncInvoker<ListEndpointPermissionsRequest, ListEndpointPermissionsResponse>(request,
+            ApigMeta.listEndpointPermissions, hcClient);
     }
 
     /**

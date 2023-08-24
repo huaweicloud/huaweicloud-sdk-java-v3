@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 公网NAT网关实例的响应体。
@@ -240,6 +241,11 @@ public class NatGatewayResponseBody {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_conf")
+
+    private SessionConfiguration sessionConf;
+
     public NatGatewayResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -427,6 +433,32 @@ public class NatGatewayResponseBody {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public NatGatewayResponseBody withSessionConf(SessionConfiguration sessionConf) {
+        this.sessionConf = sessionConf;
+        return this;
+    }
+
+    public NatGatewayResponseBody withSessionConf(Consumer<SessionConfiguration> sessionConfSetter) {
+        if (this.sessionConf == null) {
+            this.sessionConf = new SessionConfiguration();
+            sessionConfSetter.accept(this.sessionConf);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sessionConf
+     * @return sessionConf
+     */
+    public SessionConfiguration getSessionConf() {
+        return sessionConf;
+    }
+
+    public void setSessionConf(SessionConfiguration sessionConf) {
+        this.sessionConf = sessionConf;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -442,7 +474,8 @@ public class NatGatewayResponseBody {
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.routerId, that.routerId)
             && Objects.equals(this.internalNetworkId, that.internalNetworkId)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sessionConf, that.sessionConf);
     }
 
     @Override
@@ -457,7 +490,8 @@ public class NatGatewayResponseBody {
             createdAt,
             routerId,
             internalNetworkId,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            sessionConf);
     }
 
     @Override
@@ -475,6 +509,7 @@ public class NatGatewayResponseBody {
         sb.append("    routerId: ").append(toIndentedString(routerId)).append("\n");
         sb.append("    internalNetworkId: ").append(toIndentedString(internalNetworkId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    sessionConf: ").append(toIndentedString(sessionConf)).append("\n");
         sb.append("}");
         return sb.toString();
     }

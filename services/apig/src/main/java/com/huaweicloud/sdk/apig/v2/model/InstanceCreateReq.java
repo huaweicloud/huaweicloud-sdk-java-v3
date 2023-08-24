@@ -44,7 +44,7 @@ public class InstanceCreateReq {
     private String instanceId;
 
     /**
-     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例
+     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例 - PLATINUM_X2：铂金版 x2实例 - PLATINUM_X3：铂金版 x3实例 - PLATINUM_X4：铂金版 x4实例 - PLATINUM_X5：铂金版 x5实例 - PLATINUM_X6：铂金版 x6实例 - PLATINUM_X7：铂金版 x7实例 - PLATINUM_X8：铂金版 x8实例  当前仅部分region支持铂金版 x2、铂金版 x3、铂金版 x4、铂金版 x5、铂金版 x6、铂金版 x7、铂金版 x8
      */
     public static final class SpecIdEnum {
 
@@ -88,6 +88,41 @@ public class InstanceCreateReq {
          */
         public static final SpecIdEnum PLATINUM_IPV6 = new SpecIdEnum("PLATINUM_IPV6");
 
+        /**
+         * Enum PLATINUM_X2 for value: "PLATINUM_X2"
+         */
+        public static final SpecIdEnum PLATINUM_X2 = new SpecIdEnum("PLATINUM_X2");
+
+        /**
+         * Enum PLATINUM_X3 for value: "PLATINUM_X3"
+         */
+        public static final SpecIdEnum PLATINUM_X3 = new SpecIdEnum("PLATINUM_X3");
+
+        /**
+         * Enum PLATINUM_X4 for value: "PLATINUM_X4"
+         */
+        public static final SpecIdEnum PLATINUM_X4 = new SpecIdEnum("PLATINUM_X4");
+
+        /**
+         * Enum PLATINUM_X5 for value: "PLATINUM_X5"
+         */
+        public static final SpecIdEnum PLATINUM_X5 = new SpecIdEnum("PLATINUM_X5");
+
+        /**
+         * Enum PLATINUM_X6 for value: "PLATINUM_X6"
+         */
+        public static final SpecIdEnum PLATINUM_X6 = new SpecIdEnum("PLATINUM_X6");
+
+        /**
+         * Enum PLATINUM_X7 for value: "PLATINUM_X7"
+         */
+        public static final SpecIdEnum PLATINUM_X7 = new SpecIdEnum("PLATINUM_X7");
+
+        /**
+         * Enum PLATINUM_X8 for value: "PLATINUM_X8"
+         */
+        public static final SpecIdEnum PLATINUM_X8 = new SpecIdEnum("PLATINUM_X8");
+
         private static final Map<String, SpecIdEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecIdEnum> createStaticFields() {
@@ -100,6 +135,13 @@ public class InstanceCreateReq {
             map.put("PROFESSIONAL_IPV6", PROFESSIONAL_IPV6);
             map.put("ENTERPRISE_IPV6", ENTERPRISE_IPV6);
             map.put("PLATINUM_IPV6", PLATINUM_IPV6);
+            map.put("PLATINUM_X2", PLATINUM_X2);
+            map.put("PLATINUM_X3", PLATINUM_X3);
+            map.put("PLATINUM_X4", PLATINUM_X4);
+            map.put("PLATINUM_X5", PLATINUM_X5);
+            map.put("PLATINUM_X6", PLATINUM_X6);
+            map.put("PLATINUM_X7", PLATINUM_X7);
+            map.put("PLATINUM_X8", PLATINUM_X8);
             return Collections.unmodifiableMap(map);
         }
 
@@ -527,7 +569,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例
+     * 实例规格： - BASIC：基础版实例 - PROFESSIONAL：专业版实例 - ENTERPRISE：企业版实例 - PLATINUM：铂金版实例 - BASIC_IPV6：基础版IPV6实例 - PROFESSIONAL_IPV6：专业版IPV6实例 - ENTERPRISE_IPV6：企业版IPV6实例 - PLATINUM_IPV6：铂金版IPV6实例 - PLATINUM_X2：铂金版 x2实例 - PLATINUM_X3：铂金版 x3实例 - PLATINUM_X4：铂金版 x4实例 - PLATINUM_X5：铂金版 x5实例 - PLATINUM_X6：铂金版 x6实例 - PLATINUM_X7：铂金版 x7实例 - PLATINUM_X8：铂金版 x8实例  当前仅部分region支持铂金版 x2、铂金版 x3、铂金版 x4、铂金版 x5、铂金版 x6、铂金版 x7、铂金版 x8
      * @return specId
      */
     public SpecIdEnum getSpecId() {
@@ -763,7 +805,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 终端节点服务的名称。  长度不超过16个字符，允许输入大小写字母、数字、下划线、中划线。  如果您不填写该参数，系统生成的终端节点服务的名称为{region}.apig.{service_id}。 如果您填写该参数，系统生成的终端节点服务的名称为{region}.{vpcep_service_name}.{service_id}。 实例创建完成后，可以在实例管理->终端节点管理页面修改该名称。 
+     * 终端节点服务的名称。  支持英文、数字、中划线、下划线，0~16个字符。  如果您填写该参数为空，系统生成的终端节点服务的名称为{region}.{service_id}。 如果您填写该参数，系统生成的终端节点服务的名称为{region}.{vpcep_service_name}.{service_id}。 实例创建完成后，可以在实例管理->终端节点管理页面修改该名称。 
      * @return vpcepServiceName
      */
     public String getVpcepServiceName() {

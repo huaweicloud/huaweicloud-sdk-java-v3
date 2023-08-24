@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.er.v3.model.AcceptAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.AcceptAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableRequest;
 import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableResponse;
 import com.huaweicloud.sdk.er.v3.model.AssociationRequestBody;
@@ -77,6 +79,8 @@ import com.huaweicloud.sdk.er.v3.model.ListStaticRoutesResponse;
 import com.huaweicloud.sdk.er.v3.model.ListVpcAttachmentsRequest;
 import com.huaweicloud.sdk.er.v3.model.ListVpcAttachmentsResponse;
 import com.huaweicloud.sdk.er.v3.model.PropagationRequestBody;
+import com.huaweicloud.sdk.er.v3.model.RejectAttachmentRequest;
+import com.huaweicloud.sdk.er.v3.model.RejectAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.ShowAttachmentRequest;
 import com.huaweicloud.sdk.er.v3.model.ShowAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.ShowEnterpriseRouterRequest;
@@ -289,6 +293,38 @@ public class ErMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AcceptAttachmentRequest, AcceptAttachmentResponse> acceptAttachment =
+        genForacceptAttachment();
+
+    private static HttpRequestDef<AcceptAttachmentRequest, AcceptAttachmentResponse> genForacceptAttachment() {
+        // basic
+        HttpRequestDef.Builder<AcceptAttachmentRequest, AcceptAttachmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AcceptAttachmentRequest.class, AcceptAttachmentResponse.class)
+                .withName("AcceptAttachment")
+                .withUri("/v3/{project_id}/enterprise-router/{er_id}/attachments/{attachment_id}/accept")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptAttachmentRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<String>withRequestField("attachment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptAttachmentRequest::getAttachmentId, (req, v) -> {
+                req.setAttachmentId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAttachmentsRequest, ListAttachmentsResponse> listAttachments =
         genForlistAttachments();
 
@@ -356,6 +392,38 @@ public class ErMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAttachmentsRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RejectAttachmentRequest, RejectAttachmentResponse> rejectAttachment =
+        genForrejectAttachment();
+
+    private static HttpRequestDef<RejectAttachmentRequest, RejectAttachmentResponse> genForrejectAttachment() {
+        // basic
+        HttpRequestDef.Builder<RejectAttachmentRequest, RejectAttachmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RejectAttachmentRequest.class, RejectAttachmentResponse.class)
+                .withName("RejectAttachment")
+                .withUri("/v3/{project_id}/enterprise-router/{er_id}/attachments/{attachment_id}/reject")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RejectAttachmentRequest::getErId, (req, v) -> {
+                req.setErId(v);
+            }));
+        builder.<String>withRequestField("attachment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RejectAttachmentRequest::getAttachmentId, (req, v) -> {
+                req.setAttachmentId(v);
             }));
 
         // response

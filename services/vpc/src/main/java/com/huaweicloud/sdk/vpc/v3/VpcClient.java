@@ -3,12 +3,18 @@ package com.huaweicloud.sdk.vpc.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
+import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleRequest;
@@ -19,6 +25,8 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteIpAddressGroupForceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRequest;
@@ -29,8 +37,12 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
@@ -41,10 +53,14 @@ import com.huaweicloud.sdk.vpc.v3.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
@@ -57,6 +73,10 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateFirewallRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSubNetworkInterfaceRequest;
@@ -587,6 +607,302 @@ public class VpcClient {
         UpdateSubNetworkInterfaceRequest request) {
         return new SyncInvoker<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse>(request,
             VpcMeta.updateSubNetworkInterface, hcClient);
+    }
+
+    /**
+     * 网络ACL插入规则
+     *
+     * 网络ACL插入规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddFirewallRulesRequest 请求对象
+     * @return AddFirewallRulesResponse
+     */
+    public AddFirewallRulesResponse addFirewallRules(AddFirewallRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.addFirewallRules);
+    }
+
+    /**
+     * 网络ACL插入规则
+     *
+     * 网络ACL插入规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddFirewallRulesRequest 请求对象
+     * @return SyncInvoker<AddFirewallRulesRequest, AddFirewallRulesResponse>
+     */
+    public SyncInvoker<AddFirewallRulesRequest, AddFirewallRulesResponse> addFirewallRulesInvoker(
+        AddFirewallRulesRequest request) {
+        return new SyncInvoker<AddFirewallRulesRequest, AddFirewallRulesResponse>(request, VpcMeta.addFirewallRules,
+            hcClient);
+    }
+
+    /**
+     * 网络ACL绑定子网
+     *
+     * 网络ACL绑定子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateSubnetFirewallRequest 请求对象
+     * @return AssociateSubnetFirewallResponse
+     */
+    public AssociateSubnetFirewallResponse associateSubnetFirewall(AssociateSubnetFirewallRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.associateSubnetFirewall);
+    }
+
+    /**
+     * 网络ACL绑定子网
+     *
+     * 网络ACL绑定子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateSubnetFirewallRequest 请求对象
+     * @return SyncInvoker<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse>
+     */
+    public SyncInvoker<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse> associateSubnetFirewallInvoker(
+        AssociateSubnetFirewallRequest request) {
+        return new SyncInvoker<AssociateSubnetFirewallRequest, AssociateSubnetFirewallResponse>(request,
+            VpcMeta.associateSubnetFirewall, hcClient);
+    }
+
+    /**
+     * 创建网络ACL
+     *
+     * 创建网络ACL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFirewallRequest 请求对象
+     * @return CreateFirewallResponse
+     */
+    public CreateFirewallResponse createFirewall(CreateFirewallRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createFirewall);
+    }
+
+    /**
+     * 创建网络ACL
+     *
+     * 创建网络ACL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFirewallRequest 请求对象
+     * @return SyncInvoker<CreateFirewallRequest, CreateFirewallResponse>
+     */
+    public SyncInvoker<CreateFirewallRequest, CreateFirewallResponse> createFirewallInvoker(
+        CreateFirewallRequest request) {
+        return new SyncInvoker<CreateFirewallRequest, CreateFirewallResponse>(request, VpcMeta.createFirewall,
+            hcClient);
+    }
+
+    /**
+     * 删除网络ACL
+     *
+     * 删除网络ACL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFirewallRequest 请求对象
+     * @return DeleteFirewallResponse
+     */
+    public DeleteFirewallResponse deleteFirewall(DeleteFirewallRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteFirewall);
+    }
+
+    /**
+     * 删除网络ACL
+     *
+     * 删除网络ACL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFirewallRequest 请求对象
+     * @return SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>
+     */
+    public SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewallInvoker(
+        DeleteFirewallRequest request) {
+        return new SyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>(request, VpcMeta.deleteFirewall,
+            hcClient);
+    }
+
+    /**
+     * 网络ACL解绑子网
+     *
+     * 网络ACL解绑子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateSubnetFirewallRequest 请求对象
+     * @return DisassociateSubnetFirewallResponse
+     */
+    public DisassociateSubnetFirewallResponse disassociateSubnetFirewall(DisassociateSubnetFirewallRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.disassociateSubnetFirewall);
+    }
+
+    /**
+     * 网络ACL解绑子网
+     *
+     * 网络ACL解绑子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateSubnetFirewallRequest 请求对象
+     * @return SyncInvoker<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse>
+     */
+    public SyncInvoker<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse> disassociateSubnetFirewallInvoker(
+        DisassociateSubnetFirewallRequest request) {
+        return new SyncInvoker<DisassociateSubnetFirewallRequest, DisassociateSubnetFirewallResponse>(request,
+            VpcMeta.disassociateSubnetFirewall, hcClient);
+    }
+
+    /**
+     * 查询网络ACL列表
+     *
+     * 查询网络ACL列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFirewallRequest 请求对象
+     * @return ListFirewallResponse
+     */
+    public ListFirewallResponse listFirewall(ListFirewallRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listFirewall);
+    }
+
+    /**
+     * 查询网络ACL列表
+     *
+     * 查询网络ACL列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFirewallRequest 请求对象
+     * @return SyncInvoker<ListFirewallRequest, ListFirewallResponse>
+     */
+    public SyncInvoker<ListFirewallRequest, ListFirewallResponse> listFirewallInvoker(ListFirewallRequest request) {
+        return new SyncInvoker<ListFirewallRequest, ListFirewallResponse>(request, VpcMeta.listFirewall, hcClient);
+    }
+
+    /**
+     * 网络ACL移除规则
+     *
+     * 网络ACL移除规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveFirewallRulesRequest 请求对象
+     * @return RemoveFirewallRulesResponse
+     */
+    public RemoveFirewallRulesResponse removeFirewallRules(RemoveFirewallRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.removeFirewallRules);
+    }
+
+    /**
+     * 网络ACL移除规则
+     *
+     * 网络ACL移除规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveFirewallRulesRequest 请求对象
+     * @return SyncInvoker<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse>
+     */
+    public SyncInvoker<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse> removeFirewallRulesInvoker(
+        RemoveFirewallRulesRequest request) {
+        return new SyncInvoker<RemoveFirewallRulesRequest, RemoveFirewallRulesResponse>(request,
+            VpcMeta.removeFirewallRules, hcClient);
+    }
+
+    /**
+     * 查询网络ACL详情
+     *
+     * 查询网络ACL详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFirewallRequest 请求对象
+     * @return ShowFirewallResponse
+     */
+    public ShowFirewallResponse showFirewall(ShowFirewallRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showFirewall);
+    }
+
+    /**
+     * 查询网络ACL详情
+     *
+     * 查询网络ACL详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFirewallRequest 请求对象
+     * @return SyncInvoker<ShowFirewallRequest, ShowFirewallResponse>
+     */
+    public SyncInvoker<ShowFirewallRequest, ShowFirewallResponse> showFirewallInvoker(ShowFirewallRequest request) {
+        return new SyncInvoker<ShowFirewallRequest, ShowFirewallResponse>(request, VpcMeta.showFirewall, hcClient);
+    }
+
+    /**
+     * 更新网络ACL
+     *
+     * 更新网络ACL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFirewallRequest 请求对象
+     * @return UpdateFirewallResponse
+     */
+    public UpdateFirewallResponse updateFirewall(UpdateFirewallRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.updateFirewall);
+    }
+
+    /**
+     * 更新网络ACL
+     *
+     * 更新网络ACL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFirewallRequest 请求对象
+     * @return SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse>
+     */
+    public SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse> updateFirewallInvoker(
+        UpdateFirewallRequest request) {
+        return new SyncInvoker<UpdateFirewallRequest, UpdateFirewallResponse>(request, VpcMeta.updateFirewall,
+            hcClient);
+    }
+
+    /**
+     * 网络ACL更新规则
+     *
+     * 网络ACL更新规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFirewallRulesRequest 请求对象
+     * @return UpdateFirewallRulesResponse
+     */
+    public UpdateFirewallRulesResponse updateFirewallRules(UpdateFirewallRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.updateFirewallRules);
+    }
+
+    /**
+     * 网络ACL更新规则
+     *
+     * 网络ACL更新规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFirewallRulesRequest 请求对象
+     * @return SyncInvoker<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse>
+     */
+    public SyncInvoker<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse> updateFirewallRulesInvoker(
+        UpdateFirewallRulesRequest request) {
+        return new SyncInvoker<UpdateFirewallRulesRequest, UpdateFirewallRulesResponse>(request,
+            VpcMeta.updateFirewallRules, hcClient);
     }
 
     /**

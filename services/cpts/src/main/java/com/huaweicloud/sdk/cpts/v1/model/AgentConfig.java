@@ -93,6 +93,21 @@ public class AgentConfig {
 
     private List<MockRuleConfig> mockRuleList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clickhouse_enable")
+
+    private Boolean clickhouseEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clickhouse_shadow_type")
+
+    private String clickhouseShadowType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clickhouse_shadow_repository")
+
+    private String clickhouseShadowRepository;
+
     public AgentConfig withAgentId(Integer agentId) {
         this.agentId = agentId;
         return this;
@@ -383,6 +398,57 @@ public class AgentConfig {
         this.mockRuleList = mockRuleList;
     }
 
+    public AgentConfig withClickhouseEnable(Boolean clickhouseEnable) {
+        this.clickhouseEnable = clickhouseEnable;
+        return this;
+    }
+
+    /**
+     * clickhouse影子规则开关
+     * @return clickhouseEnable
+     */
+    public Boolean getClickhouseEnable() {
+        return clickhouseEnable;
+    }
+
+    public void setClickhouseEnable(Boolean clickhouseEnable) {
+        this.clickhouseEnable = clickhouseEnable;
+    }
+
+    public AgentConfig withClickhouseShadowType(String clickhouseShadowType) {
+        this.clickhouseShadowType = clickhouseShadowType;
+        return this;
+    }
+
+    /**
+     * clickhouse影子规则类型
+     * @return clickhouseShadowType
+     */
+    public String getClickhouseShadowType() {
+        return clickhouseShadowType;
+    }
+
+    public void setClickhouseShadowType(String clickhouseShadowType) {
+        this.clickhouseShadowType = clickhouseShadowType;
+    }
+
+    public AgentConfig withClickhouseShadowRepository(String clickhouseShadowRepository) {
+        this.clickhouseShadowRepository = clickhouseShadowRepository;
+        return this;
+    }
+
+    /**
+     * clickhouse影子库映射信息
+     * @return clickhouseShadowRepository
+     */
+    public String getClickhouseShadowRepository() {
+        return clickhouseShadowRepository;
+    }
+
+    public void setClickhouseShadowRepository(String clickhouseShadowRepository) {
+        this.clickhouseShadowRepository = clickhouseShadowRepository;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -403,7 +469,10 @@ public class AgentConfig {
             && Objects.equals(this.kafkaEnable, that.kafkaEnable)
             && Objects.equals(this.kafkaShadowTopicPrefix, that.kafkaShadowTopicPrefix)
             && Objects.equals(this.appLogLevel, that.appLogLevel) && Objects.equals(this.appLogPath, that.appLogPath)
-            && Objects.equals(this.mockRuleList, that.mockRuleList);
+            && Objects.equals(this.mockRuleList, that.mockRuleList)
+            && Objects.equals(this.clickhouseEnable, that.clickhouseEnable)
+            && Objects.equals(this.clickhouseShadowType, that.clickhouseShadowType)
+            && Objects.equals(this.clickhouseShadowRepository, that.clickhouseShadowRepository);
     }
 
     @Override
@@ -423,7 +492,10 @@ public class AgentConfig {
             kafkaShadowTopicPrefix,
             appLogLevel,
             appLogPath,
-            mockRuleList);
+            mockRuleList,
+            clickhouseEnable,
+            clickhouseShadowType,
+            clickhouseShadowRepository);
     }
 
     @Override
@@ -446,6 +518,9 @@ public class AgentConfig {
         sb.append("    appLogLevel: ").append(toIndentedString(appLogLevel)).append("\n");
         sb.append("    appLogPath: ").append(toIndentedString(appLogPath)).append("\n");
         sb.append("    mockRuleList: ").append(toIndentedString(mockRuleList)).append("\n");
+        sb.append("    clickhouseEnable: ").append(toIndentedString(clickhouseEnable)).append("\n");
+        sb.append("    clickhouseShadowType: ").append(toIndentedString(clickhouseShadowType)).append("\n");
+        sb.append("    clickhouseShadowRepository: ").append(toIndentedString(clickhouseShadowRepository)).append("\n");
         sb.append("}");
         return sb.toString();
     }
