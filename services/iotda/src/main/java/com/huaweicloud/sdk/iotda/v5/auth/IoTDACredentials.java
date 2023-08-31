@@ -211,8 +211,8 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
                 builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
             }
             Map<String, String> header = isDefaultEndpoint(httpRequest)
-                    ? AKSKSigner.sign(builder.build(), this)
-                    : DerivedAKSKSigner.sign(builder.build(), this);
+                    ? AKSKSigner.getInstance().sign(builder.build(), this)
+                    : DerivedAKSKSigner.getInstance().sign(builder.build(), this);
             builder.addHeaders(header);
             return builder.build();
         });

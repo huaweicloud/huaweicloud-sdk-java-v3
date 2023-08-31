@@ -19,6 +19,11 @@ public class ShowMonthUsageReq {
     private List<Long> simCardIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccids")
+
+    private List<String> iccids = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_cycles")
 
     private List<String> billingCycles = null;
@@ -45,7 +50,7 @@ public class ShowMonthUsageReq {
     }
 
     /**
-     * sim卡id列表，最多支持传入500个SIM卡id。
+     * sim卡id列表，最多支持传入500个SIM卡id。sim_card_ids与iccids不能同时为空，sim_card_ids参数为空则根据iccids参数处理
      * @return simCardIds
      */
     public List<Long> getSimCardIds() {
@@ -54,6 +59,39 @@ public class ShowMonthUsageReq {
 
     public void setSimCardIds(List<Long> simCardIds) {
         this.simCardIds = simCardIds;
+    }
+
+    public ShowMonthUsageReq withIccids(List<String> iccids) {
+        this.iccids = iccids;
+        return this;
+    }
+
+    public ShowMonthUsageReq addIccidsItem(String iccidsItem) {
+        if (this.iccids == null) {
+            this.iccids = new ArrayList<>();
+        }
+        this.iccids.add(iccidsItem);
+        return this;
+    }
+
+    public ShowMonthUsageReq withIccids(Consumer<List<String>> iccidsSetter) {
+        if (this.iccids == null) {
+            this.iccids = new ArrayList<>();
+        }
+        iccidsSetter.accept(this.iccids);
+        return this;
+    }
+
+    /**
+     * iccid列表，最多支持传入500个iccid。sim_card_ids与iccids不能同时为空，sim_card_ids参数为空则根据iccids参数处理
+     * @return iccids
+     */
+    public List<String> getIccids() {
+        return iccids;
+    }
+
+    public void setIccids(List<String> iccids) {
+        this.iccids = iccids;
     }
 
     public ShowMonthUsageReq withBillingCycles(List<String> billingCycles) {
@@ -98,13 +136,13 @@ public class ShowMonthUsageReq {
             return false;
         }
         ShowMonthUsageReq that = (ShowMonthUsageReq) obj;
-        return Objects.equals(this.simCardIds, that.simCardIds)
+        return Objects.equals(this.simCardIds, that.simCardIds) && Objects.equals(this.iccids, that.iccids)
             && Objects.equals(this.billingCycles, that.billingCycles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(simCardIds, billingCycles);
+        return Objects.hash(simCardIds, iccids, billingCycles);
     }
 
     @Override
@@ -112,6 +150,7 @@ public class ShowMonthUsageReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMonthUsageReq {\n");
         sb.append("    simCardIds: ").append(toIndentedString(simCardIds)).append("\n");
+        sb.append("    iccids: ").append(toIndentedString(iccids)).append("\n");
         sb.append("    billingCycles: ").append(toIndentedString(billingCycles)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -43,6 +43,11 @@ public class CreateCertificateByCsrRequestBody {
 
     private List<SubjectAlternativeName> subjectAlternativeNames = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CreateCertificateByCsrRequestBody withIssuerId(String issuerId) {
         this.issuerId = issuerId;
         return this;
@@ -175,6 +180,23 @@ public class CreateCertificateByCsrRequestBody {
         this.subjectAlternativeNames = subjectAlternativeNames;
     }
 
+    public CreateCertificateByCsrRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件.   取值为“all”   取值为“0”   满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -187,12 +209,13 @@ public class CreateCertificateByCsrRequestBody {
         return Objects.equals(this.issuerId, that.issuerId) && Objects.equals(this.csr, that.csr)
             && Objects.equals(this.validity, that.validity) && Objects.equals(this.type, that.type)
             && Objects.equals(this.pathLength, that.pathLength)
-            && Objects.equals(this.subjectAlternativeNames, that.subjectAlternativeNames);
+            && Objects.equals(this.subjectAlternativeNames, that.subjectAlternativeNames)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(issuerId, csr, validity, type, pathLength, subjectAlternativeNames);
+        return Objects.hash(issuerId, csr, validity, type, pathLength, subjectAlternativeNames, enterpriseProjectId);
     }
 
     @Override
@@ -205,6 +228,7 @@ public class CreateCertificateByCsrRequestBody {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    pathLength: ").append(toIndentedString(pathLength)).append("\n");
         sb.append("    subjectAlternativeNames: ").append(toIndentedString(subjectAlternativeNames)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

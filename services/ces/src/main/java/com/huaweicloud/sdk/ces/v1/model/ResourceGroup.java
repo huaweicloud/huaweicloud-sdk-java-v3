@@ -28,6 +28,11 @@ public class ResourceGroup {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_type")
+
+    private Integer eventType;
+
     public ResourceGroup withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -95,6 +100,25 @@ public class ResourceGroup {
         this.status = status;
     }
 
+    public ResourceGroup withEventType(Integer eventType) {
+        this.eventType = eventType;
+        return this;
+    }
+
+    /**
+     * 事件类型，默认为0。
+     * minimum: 0
+     * maximum: 1
+     * @return eventType
+     */
+    public Integer getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(Integer eventType) {
+        this.eventType = eventType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +129,12 @@ public class ResourceGroup {
         }
         ResourceGroup that = (ResourceGroup) obj;
         return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensions, that.dimensions)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.eventType, that.eventType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(namespace, dimensions, status);
+        return Objects.hash(namespace, dimensions, status, eventType);
     }
 
     @Override
@@ -120,6 +144,7 @@ public class ResourceGroup {
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

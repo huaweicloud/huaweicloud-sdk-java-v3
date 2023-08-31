@@ -37,6 +37,11 @@ public class CreateComponentRequestBodySpec {
         public static final RuntimeEnum JAVA11 = new RuntimeEnum("Java11");
 
         /**
+         * Enum JAVA17 for value: "Java17"
+         */
+        public static final RuntimeEnum JAVA17 = new RuntimeEnum("Java17");
+
+        /**
          * Enum TOMCAT8 for value: "Tomcat8"
          */
         public static final RuntimeEnum TOMCAT8 = new RuntimeEnum("Tomcat8");
@@ -57,6 +62,16 @@ public class CreateComponentRequestBodySpec {
         public static final RuntimeEnum NODEJS8 = new RuntimeEnum("Nodejs8");
 
         /**
+         * Enum NODEJS14 for value: "Nodejs14"
+         */
+        public static final RuntimeEnum NODEJS14 = new RuntimeEnum("Nodejs14");
+
+        /**
+         * Enum NODEJS16 for value: "Nodejs16"
+         */
+        public static final RuntimeEnum NODEJS16 = new RuntimeEnum("Nodejs16");
+
+        /**
          * Enum PHP7 for value: "Php7"
          */
         public static final RuntimeEnum PHP7 = new RuntimeEnum("Php7");
@@ -68,10 +83,13 @@ public class CreateComponentRequestBodySpec {
             map.put("Docker", DOCKER);
             map.put("Java8", JAVA8);
             map.put("Java11", JAVA11);
+            map.put("Java17", JAVA17);
             map.put("Tomcat8", TOMCAT8);
             map.put("Tomcat9", TOMCAT9);
             map.put("Python3", PYTHON3);
             map.put("Nodejs8", NODEJS8);
+            map.put("Nodejs14", NODEJS14);
+            map.put("Nodejs16", NODEJS16);
             map.put("Php7", PHP7);
             return Collections.unmodifiableMap(map);
         }

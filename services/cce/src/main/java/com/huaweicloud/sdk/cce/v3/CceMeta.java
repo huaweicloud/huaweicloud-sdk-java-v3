@@ -3,8 +3,15 @@ package com.huaweicloud.sdk.cce.v3;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeList;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.AddonInstanceRollbackRequest;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.CertDuration;
 import com.huaweicloud.sdk.cce.v3.model.Cluster;
 import com.huaweicloud.sdk.cce.v3.model.ClusterInformation;
@@ -62,8 +69,13 @@ import com.huaweicloud.sdk.cce.v3.model.RemoveNodesTask;
 import com.huaweicloud.sdk.cce.v3.model.ResetNodeList;
 import com.huaweicloud.sdk.cce.v3.model.ResetNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.ResetNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.ResizeClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.ResizeClusterRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.ResizeClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
@@ -152,6 +164,70 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AwakeClusterRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTags =
+        genForbatchCreateClusterTags();
+
+    private static HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> genForbatchCreateClusterTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateClusterTagsRequest.class, BatchCreateClusterTagsResponse.class)
+            .withName("BatchCreateClusterTags")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/create")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<BatchCreateClusterTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateClusterTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateClusterTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> batchDeleteClusterTags =
+        genForbatchDeleteClusterTags();
+
+    private static HttpRequestDef<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> genForbatchDeleteClusterTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteClusterTagsRequest.class, BatchDeleteClusterTagsResponse.class)
+            .withName("BatchDeleteClusterTags")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/tags/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<BatchDeleteClusterTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteClusterTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -938,6 +1014,38 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeClusterRequest, ResizeClusterResponse> resizeCluster =
+        genForresizeCluster();
+
+    private static HttpRequestDef<ResizeClusterRequest, ResizeClusterResponse> genForresizeCluster() {
+        // basic
+        HttpRequestDef.Builder<ResizeClusterRequest, ResizeClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResizeClusterRequest.class, ResizeClusterResponse.class)
+                .withName("ResizeCluster")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/resize")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ResizeClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeClusterRequestBody.class),
+            f -> f.withMarshaller(ResizeClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> retryUpgradeClusterTask =
         genForretryUpgradeClusterTask();
 
@@ -956,6 +1064,38 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RetryUpgradeClusterTaskRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> rollbackAddonInstance =
+        genForrollbackAddonInstance();
+
+    private static HttpRequestDef<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> genForrollbackAddonInstance() {
+        // basic
+        HttpRequestDef.Builder<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RollbackAddonInstanceRequest.class, RollbackAddonInstanceResponse.class)
+            .withName("RollbackAddonInstance")
+            .withUri("/api/v3/addons/{id}/operation/rollback")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RollbackAddonInstanceRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<AddonInstanceRollbackRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddonInstanceRollbackRequest.class),
+            f -> f.withMarshaller(RollbackAddonInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

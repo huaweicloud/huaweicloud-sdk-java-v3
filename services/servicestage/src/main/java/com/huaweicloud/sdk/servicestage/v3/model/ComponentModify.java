@@ -155,6 +155,11 @@ public class ComponentModify {
     private ComponentProbe readinessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_accesses")
+
+    private List<ExternalAccesses> externalAccesses = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refer_resources")
 
     private List<ReferResourceCreate> referResources = null;
@@ -825,6 +830,39 @@ public class ComponentModify {
         this.readinessProbe = readinessProbe;
     }
 
+    public ComponentModify withExternalAccesses(List<ExternalAccesses> externalAccesses) {
+        this.externalAccesses = externalAccesses;
+        return this;
+    }
+
+    public ComponentModify addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
+        if (this.externalAccesses == null) {
+            this.externalAccesses = new ArrayList<>();
+        }
+        this.externalAccesses.add(externalAccessesItem);
+        return this;
+    }
+
+    public ComponentModify withExternalAccesses(Consumer<List<ExternalAccesses>> externalAccessesSetter) {
+        if (this.externalAccesses == null) {
+            this.externalAccesses = new ArrayList<>();
+        }
+        externalAccessesSetter.accept(this.externalAccesses);
+        return this;
+    }
+
+    /**
+     * Get externalAccesses
+     * @return externalAccesses
+     */
+    public List<ExternalAccesses> getExternalAccesses() {
+        return externalAccesses;
+    }
+
+    public void setExternalAccesses(List<ExternalAccesses> externalAccesses) {
+        this.externalAccesses = externalAccesses;
+    }
+
     public ComponentModify withReferResources(List<ReferResourceCreate> referResources) {
         this.referResources = referResources;
         return this;
@@ -883,6 +921,7 @@ public class ComponentModify {
             && Objects.equals(this.antiAffinity, that.antiAffinity)
             && Objects.equals(this.livenessProbe, that.livenessProbe)
             && Objects.equals(this.readinessProbe, that.readinessProbe)
+            && Objects.equals(this.externalAccesses, that.externalAccesses)
             && Objects.equals(this.referResources, that.referResources);
     }
 
@@ -916,6 +955,7 @@ public class ComponentModify {
             antiAffinity,
             livenessProbe,
             readinessProbe,
+            externalAccesses,
             referResources);
     }
 
@@ -951,6 +991,7 @@ public class ComponentModify {
         sb.append("    antiAffinity: ").append(toIndentedString(antiAffinity)).append("\n");
         sb.append("    livenessProbe: ").append(toIndentedString(livenessProbe)).append("\n");
         sb.append("    readinessProbe: ").append(toIndentedString(readinessProbe)).append("\n");
+        sb.append("    externalAccesses: ").append(toIndentedString(externalAccesses)).append("\n");
         sb.append("    referResources: ").append(toIndentedString(referResources)).append("\n");
         sb.append("}");
         return sb.toString();

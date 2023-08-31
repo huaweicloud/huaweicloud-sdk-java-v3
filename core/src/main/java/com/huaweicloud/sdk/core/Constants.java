@@ -27,9 +27,13 @@ package com.huaweicloud.sdk.core;
 public final class Constants {
     public static final String LINE_SEPARATOR = "\n";
 
-    public static final String SDK_SIGNING_ALGORITHM = "SDK-HMAC-SHA256";
+    public static final String SDK_HMAC_SHA256 = "SDK-HMAC-SHA256";
 
-    public static final String SM3_SIGNING_ALGORITHM = "SDK-HMAC-SM3";
+    public static final String SDK_HMAC_SM3 = "SDK-HMAC-SM3";
+
+    public static final String SDK_ECDSA_P256_SHA256 = "SDK-ECDSA-P256-SHA256";
+
+    public static final String SDK_SM2_SM3 = "SDK-SM2-SM3";
 
     public static final String SECURITY_PROVIDER_BGM = "BGMProvider";
 
@@ -62,6 +66,8 @@ public final class Constants {
     public static final String X_IDP_ID = "X-Idp-Id";
 
     public static final String X_SDK_CONTENT_SHA256 = "X-Sdk-Content-Sha256";
+
+    public static final String X_SDK_CONTENT_SM3 = "X-Sdk-Content-Sm3";
 
     public static final String X_SUBJECT_TOKEN = "X-Subject-Token";
 

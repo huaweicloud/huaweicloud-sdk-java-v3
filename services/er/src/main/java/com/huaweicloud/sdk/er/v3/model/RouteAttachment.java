@@ -25,11 +25,6 @@ public class RouteAttachment {
 
     private String attachmentId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "priority")
-
-    private Integer priority;
-
     public RouteAttachment withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -81,23 +76,6 @@ public class RouteAttachment {
         this.attachmentId = attachmentId;
     }
 
-    public RouteAttachment withPriority(Integer priority) {
-        this.priority = priority;
-        return this;
-    }
-
-    /**
-     * 路由优先级，普通路由固定值为1
-     * @return priority
-     */
-    public Integer getPriority() {
-        return priority;
-    }
-
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +86,12 @@ public class RouteAttachment {
         }
         RouteAttachment that = (RouteAttachment) obj;
         return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.attachmentId, that.attachmentId) && Objects.equals(this.priority, that.priority);
+            && Objects.equals(this.attachmentId, that.attachmentId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourceType, attachmentId, priority);
+        return Objects.hash(resourceId, resourceType, attachmentId);
     }
 
     @Override
@@ -123,7 +101,6 @@ public class RouteAttachment {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    attachmentId: ").append(toIndentedString(attachmentId)).append("\n");
-        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

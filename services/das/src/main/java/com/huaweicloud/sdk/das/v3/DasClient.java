@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateTuningRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessRequest;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
 
@@ -337,6 +341,36 @@ public class DasClient {
         CreateSqlLimitRulesRequest request) {
         return new SyncInvoker<CreateSqlLimitRulesRequest, CreateSqlLimitRulesResponse>(request,
             DasMeta.createSqlLimitRules, hcClient);
+    }
+
+    /**
+     * 执行SQL诊断
+     *
+     * 执行SQL诊断，
+     * 用于用户执行SQL诊断。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTuningRequest 请求对象
+     * @return CreateTuningResponse
+     */
+    public CreateTuningResponse createTuning(CreateTuningRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createTuning);
+    }
+
+    /**
+     * 执行SQL诊断
+     *
+     * 执行SQL诊断，
+     * 用于用户执行SQL诊断。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTuningRequest 请求对象
+     * @return SyncInvoker<CreateTuningRequest, CreateTuningResponse>
+     */
+    public SyncInvoker<CreateTuningRequest, CreateTuningResponse> createTuningInvoker(CreateTuningRequest request) {
+        return new SyncInvoker<CreateTuningRequest, CreateTuningResponse>(request, DasMeta.createTuning, hcClient);
     }
 
     /**
@@ -1009,6 +1043,34 @@ public class DasClient {
         ShowSqlSwitchStatusRequest request) {
         return new SyncInvoker<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse>(request,
             DasMeta.showSqlSwitchStatus, hcClient);
+    }
+
+    /**
+     * 获取诊断结果
+     *
+     * 获取诊断结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTuningRequest 请求对象
+     * @return ShowTuningResponse
+     */
+    public ShowTuningResponse showTuning(ShowTuningRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showTuning);
+    }
+
+    /**
+     * 获取诊断结果
+     *
+     * 获取诊断结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTuningRequest 请求对象
+     * @return SyncInvoker<ShowTuningRequest, ShowTuningResponse>
+     */
+    public SyncInvoker<ShowTuningRequest, ShowTuningResponse> showTuningInvoker(ShowTuningRequest request) {
+        return new SyncInvoker<ShowTuningRequest, ShowTuningResponse>(request, DasMeta.showTuning, hcClient);
     }
 
     /**

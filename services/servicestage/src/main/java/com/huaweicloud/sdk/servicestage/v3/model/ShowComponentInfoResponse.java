@@ -133,7 +133,7 @@ public class ShowComponentInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tomcat_opts")
 
-    private ComponentCreateTomcatOpts tomcatOpts;
+    private ComponentInfoTomcatOpts tomcatOpts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logs")
@@ -143,7 +143,7 @@ public class ShowComponentInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_metric")
 
-    private ComponentCreateCustomMetric customMetric;
+    private ComponentInfoCustomMetric customMetric;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "affinity")
@@ -686,14 +686,14 @@ public class ShowComponentInfoResponse extends SdkResponse {
         this.jvmOpts = jvmOpts;
     }
 
-    public ShowComponentInfoResponse withTomcatOpts(ComponentCreateTomcatOpts tomcatOpts) {
+    public ShowComponentInfoResponse withTomcatOpts(ComponentInfoTomcatOpts tomcatOpts) {
         this.tomcatOpts = tomcatOpts;
         return this;
     }
 
-    public ShowComponentInfoResponse withTomcatOpts(Consumer<ComponentCreateTomcatOpts> tomcatOptsSetter) {
+    public ShowComponentInfoResponse withTomcatOpts(Consumer<ComponentInfoTomcatOpts> tomcatOptsSetter) {
         if (this.tomcatOpts == null) {
-            this.tomcatOpts = new ComponentCreateTomcatOpts();
+            this.tomcatOpts = new ComponentInfoTomcatOpts();
             tomcatOptsSetter.accept(this.tomcatOpts);
         }
 
@@ -704,11 +704,11 @@ public class ShowComponentInfoResponse extends SdkResponse {
      * Get tomcatOpts
      * @return tomcatOpts
      */
-    public ComponentCreateTomcatOpts getTomcatOpts() {
+    public ComponentInfoTomcatOpts getTomcatOpts() {
         return tomcatOpts;
     }
 
-    public void setTomcatOpts(ComponentCreateTomcatOpts tomcatOpts) {
+    public void setTomcatOpts(ComponentInfoTomcatOpts tomcatOpts) {
         this.tomcatOpts = tomcatOpts;
     }
 
@@ -745,14 +745,14 @@ public class ShowComponentInfoResponse extends SdkResponse {
         this.logs = logs;
     }
 
-    public ShowComponentInfoResponse withCustomMetric(ComponentCreateCustomMetric customMetric) {
+    public ShowComponentInfoResponse withCustomMetric(ComponentInfoCustomMetric customMetric) {
         this.customMetric = customMetric;
         return this;
     }
 
-    public ShowComponentInfoResponse withCustomMetric(Consumer<ComponentCreateCustomMetric> customMetricSetter) {
+    public ShowComponentInfoResponse withCustomMetric(Consumer<ComponentInfoCustomMetric> customMetricSetter) {
         if (this.customMetric == null) {
-            this.customMetric = new ComponentCreateCustomMetric();
+            this.customMetric = new ComponentInfoCustomMetric();
             customMetricSetter.accept(this.customMetric);
         }
 
@@ -763,11 +763,11 @@ public class ShowComponentInfoResponse extends SdkResponse {
      * Get customMetric
      * @return customMetric
      */
-    public ComponentCreateCustomMetric getCustomMetric() {
+    public ComponentInfoCustomMetric getCustomMetric() {
         return customMetric;
     }
 
-    public void setCustomMetric(ComponentCreateCustomMetric customMetric) {
+    public void setCustomMetric(ComponentInfoCustomMetric customMetric) {
         this.customMetric = customMetric;
     }
 

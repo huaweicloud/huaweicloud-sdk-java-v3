@@ -20,6 +20,11 @@ public class ExceedCutNetReq {
 
     private String quota;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid")
+
+    private String iccid;
+
     public ExceedCutNetReq withAction(Integer action) {
         this.action = action;
         return this;
@@ -56,6 +61,23 @@ public class ExceedCutNetReq {
         this.quota = quota;
     }
 
+    public ExceedCutNetReq withIccid(String iccid) {
+        this.iccid = iccid;
+        return this;
+    }
+
+    /**
+     * iccid，传入的sim_card_id为0,则根据iccid进行处理
+     * @return iccid
+     */
+    public String getIccid() {
+        return iccid;
+    }
+
+    public void setIccid(String iccid) {
+        this.iccid = iccid;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,12 +87,13 @@ public class ExceedCutNetReq {
             return false;
         }
         ExceedCutNetReq that = (ExceedCutNetReq) obj;
-        return Objects.equals(this.action, that.action) && Objects.equals(this.quota, that.quota);
+        return Objects.equals(this.action, that.action) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.iccid, that.iccid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, quota);
+        return Objects.hash(action, quota, iccid);
     }
 
     @Override
@@ -79,6 +102,7 @@ public class ExceedCutNetReq {
         sb.append("class ExceedCutNetReq {\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
+        sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

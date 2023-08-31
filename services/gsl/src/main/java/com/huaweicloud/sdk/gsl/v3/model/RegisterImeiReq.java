@@ -20,6 +20,11 @@ public class RegisterImeiReq {
 
     private String imei;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid")
+
+    private String iccid;
+
     public RegisterImeiReq withBindType(Integer bindType) {
         this.bindType = bindType;
         return this;
@@ -56,6 +61,23 @@ public class RegisterImeiReq {
         this.imei = imei;
     }
 
+    public RegisterImeiReq withIccid(String iccid) {
+        this.iccid = iccid;
+        return this;
+    }
+
+    /**
+     * iccid，传入的sim_card_id为0,则根据iccid进行处理
+     * @return iccid
+     */
+    public String getIccid() {
+        return iccid;
+    }
+
+    public void setIccid(String iccid) {
+        this.iccid = iccid;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,12 +87,13 @@ public class RegisterImeiReq {
             return false;
         }
         RegisterImeiReq that = (RegisterImeiReq) obj;
-        return Objects.equals(this.bindType, that.bindType) && Objects.equals(this.imei, that.imei);
+        return Objects.equals(this.bindType, that.bindType) && Objects.equals(this.imei, that.imei)
+            && Objects.equals(this.iccid, that.iccid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bindType, imei);
+        return Objects.hash(bindType, imei, iccid);
     }
 
     @Override
@@ -79,6 +102,7 @@ public class RegisterImeiReq {
         sb.append("class RegisterImeiReq {\n");
         sb.append("    bindType: ").append(toIndentedString(bindType)).append("\n");
         sb.append("    imei: ").append(toIndentedString(imei)).append("\n");
+        sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

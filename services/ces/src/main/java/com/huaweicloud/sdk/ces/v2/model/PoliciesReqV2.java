@@ -16,14 +16,14 @@ public class PoliciesReqV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
-    private List<Policy> policies = null;
+    private List<UpdatePolicy> policies = null;
 
-    public PoliciesReqV2 withPolicies(List<Policy> policies) {
+    public PoliciesReqV2 withPolicies(List<UpdatePolicy> policies) {
         this.policies = policies;
         return this;
     }
 
-    public PoliciesReqV2 addPoliciesItem(Policy policiesItem) {
+    public PoliciesReqV2 addPoliciesItem(UpdatePolicy policiesItem) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class PoliciesReqV2 {
         return this;
     }
 
-    public PoliciesReqV2 withPolicies(Consumer<List<Policy>> policiesSetter) {
+    public PoliciesReqV2 withPolicies(Consumer<List<UpdatePolicy>> policiesSetter) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class PoliciesReqV2 {
      * 策略信息
      * @return policies
      */
-    public List<Policy> getPolicies() {
+    public List<UpdatePolicy> getPolicies() {
         return policies;
     }
 
-    public void setPolicies(List<Policy> policies) {
+    public void setPolicies(List<UpdatePolicy> policies) {
         this.policies = policies;
     }
 

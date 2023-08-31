@@ -25,7 +25,6 @@ import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.utils.BinaryUtils;
-import com.huaweicloud.sdk.core.utils.SignUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import javax.crypto.Mac;
@@ -37,16 +36,11 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.SimpleTimeZone;
-import java.util.TreeMap;
-import java.util.stream.Collectors;
 
 /**
  * signature certification with AK/SK
@@ -55,128 +49,76 @@ import java.util.stream.Collectors;
  */
 public class DerivedAKSKSigner extends AKSKSigner {
     private static final String V_11_HMAC_SHA_256 = "V11-HMAC-SHA256";
+    private static volatile DerivedAKSKSigner instance;
 
-    public static <T extends AbstractCredentials<T>> Map<String, String>
-        sign(HttpRequest request, T credential) {
-        if (StringUtils.isEmpty(credential.getAk())) {
-            throw new SdkException("ak is required in credentials");
+    protected DerivedAKSKSigner() {
+
+    }
+
+    public static DerivedAKSKSigner getInstance() {
+        if (instance != null) {
+            return instance;
         }
-        if (StringUtils.isEmpty(credential.getSk())) {
-            throw new SdkException("sk in credentials is required");
+
+        synchronized (DerivedAKSKSigner.class) {
+            if (instance == null) {
+                instance = new DerivedAKSKSigner();
+            }
+            return instance;
         }
+    }
+
+    @Override
+    protected <T extends AbstractCredentials<T>> void checkRequired(T credential) {
+        super.checkRequired(credential);
         if (StringUtils.isEmpty(credential.regionId)) {
             throw new SdkException("regionId is required in credentials when using derived auth");
         }
         if (StringUtils.isEmpty(credential.derivedAuthServiceName)) {
             throw new SdkException("derivedAuthServiceName is required in credentials when using derived auth");
         }
+    }
 
-        // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************
+    public <T extends AbstractCredentials<T>> Map<String, String> sign(HttpRequest request, T credentials) {
+        checkRequired(credentials);
+
         HashMap<String, String> authenticationHeaders = new HashMap<>();
-
-        // Step 1: add basic headers required by V4
         URL url = request.getUrl();
-
-        // Step 1.1: Add Host header
         String canonicalHost = url.getAuthority();
         authenticationHeaders.put(Constants.HOST, canonicalHost);
 
-        // Step 1.2: Add X-Sdk-Date
-        String dateTimeStamp;
-        if (request.haveHeader(Constants.X_SDK_DATE)) {
-            dateTimeStamp = request.getHeader(Constants.X_SDK_DATE);
-        } else {
-            SimpleDateFormat isoDateFormat = new SimpleDateFormat(Constants.ISO_8601_BASIC_FORMAT);
-            isoDateFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
-            dateTimeStamp = isoDateFormat.format(new Date());
-            authenticationHeaders.put(Constants.X_SDK_DATE, dateTimeStamp);
-        }
+        String dateTimeStamp = extractTimeStamp(request, authenticationHeaders);
 
-        // Step 1.3 combine all headers
-        Map<String, String> allHeaders = new TreeMap<>();
+        Map<String, String> allHeaders = combineAllHeaders(request, authenticationHeaders);
 
-        allHeaders.putAll(request.getHeaders()
-            .entrySet()
-            .stream()
-            .filter(entry -> (!entry.getKey().startsWith(Constants.CONTENT_TYPE) || !entry.getValue()
-                .get(0)
-                .startsWith(Constants.MEDIATYPE.MULTIPART_FORM_DATA)))
-            .collect(
-                Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), entry -> entry.getValue().get(0))));
-        allHeaders.putAll(authenticationHeaders.entrySet()
-            .stream()
-            .collect(Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), Map.Entry::getValue)));
+        String canonicalUri = buildCanonicalUri(url);
 
-        // Step 2: Create Canonical URI -- the part of the URI from domain to query
-        String pathOld = url.getPath();
-        String canonicalUri;
-        if (pathOld.equals("/")) {
-            canonicalUri = pathOld;
-        } else {
-            StringBuilder canonicalUriSb = new StringBuilder();
-            String[] split = pathOld.split("/");
-            for (String urlSplit : split) {
-                canonicalUriSb.append(SignUtils.urlEncode(urlSplit, false)).append("/");
-            }
-            canonicalUri = canonicalUriSb.toString();
-        }
-
-        // Step 3: Create the canonical query string. In this example (a GET request),
-        // request parameters are in the query string. Query string values must
-        // be URL-encoded (space=%20). The parameters must be sorted by name.
-        // For this example, the query string is pre-formatted in the request_parameters
-        // variable.
         String query = url.getQuery();
         Map<String, List<String>> parameters = request.getQueryParams();
         String canonicalQueryString = buildCanonicalQueryString(query, parameters);
 
-        // Step 4: Create the list of signed headers. This lists the headers
-        // in the canonical_headers list, delimited with ";" and in alpha order.
-        // Note: The request can include any headers; canonical_headers and
-        // signed_headers lists those that you want to be included in the
-        // hash of the request. "Host" and "x-sdk-date" are always required.
-        // In V4 signer, we only use required header - host & x-sdk-date.
         String signedHeaderNames = String.join(";", allHeaders.keySet());
 
-        // Step 5: Create the canonical headers and signed headers. Header names
-        // and value must be trimmed and lower-case, and sorted in ASCII order.
-        // Note that there is a trailing \n.
         String canonicalHeaders = buildCanonicalHeaders(allHeaders);
 
-        // Step 6: Create payload hash (hash of the request body content). For GET
-        // requests, the payload is an empty string ("").
         String payloadHash = buildPayloadHash(request);
 
-        // Step 7: Combine elements to create canonical request
-        String canonicalRequest =
-            buildCanonicalRequest(
-                request.getMethod().name(),
-                canonicalUri,
-                canonicalQueryString,
-                canonicalHeaders,
-                signedHeaderNames,
-                payloadHash);
-        String canonicalRequestHash = BinaryUtils.toHex(sha256(canonicalRequest));
-        // ************* TASK 2: CREATE THE STRING TO SIGN*************
-        // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256(recommended)
+        String canonicalRequest = buildCanonicalRequest(request.getMethod().name(),
+                canonicalUri, canonicalQueryString, canonicalHeaders, signedHeaderNames, payloadHash);
+        String canonicalRequestHash = BinaryUtils.toHex(hasher.hash(canonicalRequest.getBytes(StandardCharsets.UTF_8)));
+
         String dateStr = dateTimeStamp.substring(0, 8);
-        String info = dateStr + "/" + credential.regionId + "/" + credential.derivedAuthServiceName;
-        String stringToSign = getStringToSign(V_11_HMAC_SHA_256, dateTimeStamp, info, canonicalRequestHash);
+        String info = String.format(Locale.ROOT, "%s/%s/%s",
+                dateStr, credentials.regionId, credentials.derivedAuthServiceName);
+        String stringToSign = buildStringToSign(V_11_HMAC_SHA_256, dateTimeStamp, info, canonicalRequestHash);
 
-        // ************* TASK 3: CALCULATE THE SIGNATURE *************
-        // Create the signing key using the function defined above.
-        String derivationKey = HKDF.getDerKeySHA256(credential.getAk(), credential.getSk(), info);
-        String signatureString = signature(stringToSign, derivationKey);
+        String derivationKey = HKDF.getDerKeySHA256(credentials.getAk(), credentials.getSk(), info);
+        HmacSigningKey hmacSigningKey = new HmacSigningKey(hasher, derivationKey.getBytes(StandardCharsets.UTF_8));
+        String signature = buildSignature(stringToSign, hmacSigningKey);
 
-        // ************* TASK 4: ADD SIGNING INFORMATION TO THE REQUEST *************
-        // The signing information can be either in a query string value or in
-        // a header named Authorization. This code shows how to use a header.
-        // Create authorization header and add to request headers
-        StringBuilder authorization = new StringBuilder(V_11_HMAC_SHA_256).append(" ");
-        authorization.append("Credential=").append(credential.getAk()).append("/").append(info).append(", ");
-        authorization.append("SignedHeaders=").append(signedHeaderNames).append(", ");
-        authorization.append("Signature=").append(signatureString);
-        authenticationHeaders.put(Constants.AUTHORIZATION, authorization.toString());
+        String authorization = String.format(Locale.ROOT, "%s Credential=%s/%s, SignedHeaders=%s, Signature=%s",
+                V_11_HMAC_SHA_256, credentials.getAk(), info, signedHeaderNames, signature);
+        authenticationHeaders.put(Constants.AUTHORIZATION, authorization);
         return authenticationHeaders;
     }
 

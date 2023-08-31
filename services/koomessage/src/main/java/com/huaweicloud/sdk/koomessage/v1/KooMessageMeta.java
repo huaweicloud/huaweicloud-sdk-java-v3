@@ -112,12 +112,17 @@ import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchDifferentMessagesRequ
 import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchDifferentMessagesResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchMessagesRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchMessagesResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.SetPrimaryVideoThumbnailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.SetPrimaryVideoThumbnailRequestBody;
+import com.huaweicloud.sdk.koomessage.v1.model.SetPrimaryVideoThumbnailResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgSignatureFileInfoRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgSignatureFileInfoResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateDetailRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateDetailResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateVariableRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateVariableResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowTemplateVideoThumbnailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowTemplateVideoThumbnailResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.SignatureRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.SmsMultiTemplateTaskRequestBody;
 import com.huaweicloud.sdk.koomessage.v1.model.SmsTaskReq;
@@ -2221,6 +2226,60 @@ public class KooMessageMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAimTemplatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse> setPrimaryVideoThumbnail =
+        genForsetPrimaryVideoThumbnail();
+
+    private static HttpRequestDef<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse> genForsetPrimaryVideoThumbnail() {
+        // basic
+        HttpRequestDef.Builder<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, SetPrimaryVideoThumbnailRequest.class, SetPrimaryVideoThumbnailResponse.class)
+                .withName("SetPrimaryVideoThumbnail")
+                .withUri("/v1/aim/template-material-thumbnails")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SetPrimaryVideoThumbnailRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetPrimaryVideoThumbnailRequestBody.class),
+            f -> f.withMarshaller(SetPrimaryVideoThumbnailRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse> showTemplateVideoThumbnail =
+        genForshowTemplateVideoThumbnail();
+
+    private static HttpRequestDef<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse> genForshowTemplateVideoThumbnail() {
+        // basic
+        HttpRequestDef.Builder<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowTemplateVideoThumbnailRequest.class,
+                    ShowTemplateVideoThumbnailResponse.class)
+                .withName("ShowTemplateVideoThumbnail")
+                .withUri("/v1/aim/template-material-thumbnails")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("aim_resource_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateVideoThumbnailRequest::getAimResourceId, (req, v) -> {
+                req.setAimResourceId(v);
             }));
 
         // response

@@ -51,12 +51,18 @@ public class Volume {
          */
         public static final ResourceSubTypeEnum OBJECT_BUCKET = new ResourceSubTypeEnum("object_bucket");
 
+        /**
+         * Enum SFS3_0 for value: "sfs3.0"
+         */
+        public static final ResourceSubTypeEnum SFS3_0 = new ResourceSubTypeEnum("sfs3.0");
+
         private static final Map<String, ResourceSubTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceSubTypeEnum> createStaticFields() {
             Map<String, ResourceSubTypeEnum> map = new HashMap<>();
             map.put("parallel_file_system", PARALLEL_FILE_SYSTEM);
             map.put("object_bucket", OBJECT_BUCKET);
+            map.put("sfs3.0", SFS3_0);
             return Collections.unmodifiableMap(map);
         }
 

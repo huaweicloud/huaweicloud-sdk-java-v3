@@ -165,7 +165,7 @@ public class ListHostsRequest {
     }
 
     /**
-     * 偏移量,表示从此偏移量开始查询,offset大于等于0
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0
      * minimum: 0
      * @return offset
      */

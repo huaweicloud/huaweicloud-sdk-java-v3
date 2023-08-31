@@ -32,14 +32,14 @@ public class DerivationAKSKSignerTest {
             .addQueryParam("marker", Arrays.asList("13551d6b-755d-4757-b956-536f674975c0")).build();
         System.out.println(httpRequest.getUrl().toString());
 
-        Map<String, String> header = AKSKSigner.sign(httpRequest, credentials);
+        Map<String, String> header = AKSKSigner.getInstance().sign(httpRequest, credentials);
 
         header.forEach((key, value) -> System.out.println(key + ":" + value));
 
         Assert.assertEquals("SDK-HMAC-SHA256 "
             + "Access=testAK, "
-            + "SignedHeaders=content-type;host;x-sdk-date, "
-            + "Signature=2f1e228b4e2c68e428f7377c12a15526f26c27795dcf4cb641cc90c5b3fba962",
+            + "SignedHeaders=host;x-sdk-date, "
+            + "Signature=cf461fb1e37cf404d70208a03be7d37d1b395fea3d1ae9dc8175f6cf9cab2e31",
             header.get("Authorization"));
         Assert.assertEquals(header.get("Host"), "service.region.example.com");
     }

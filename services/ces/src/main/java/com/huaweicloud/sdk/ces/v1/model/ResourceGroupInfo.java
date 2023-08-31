@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.ces.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,6 +17,16 @@ public class ResourceGroupInfo {
     @JsonProperty(value = "group_name")
 
     private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relation_ids")
+
+    private List<String> relationIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
@@ -41,6 +53,11 @@ public class ResourceGroupInfo {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resources")
+
+    private List<Resource> resources = null;
+
     public ResourceGroupInfo withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
@@ -56,6 +73,56 @@ public class ResourceGroupInfo {
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;
+    }
+
+    public ResourceGroupInfo withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 资源分组添加资源方式，EPS：同步企业项目，TAG：标签动态匹配，空值：手动添加；
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public ResourceGroupInfo withRelationIds(List<String> relationIds) {
+        this.relationIds = relationIds;
+        return this;
+    }
+
+    public ResourceGroupInfo addRelationIdsItem(String relationIdsItem) {
+        if (this.relationIds == null) {
+            this.relationIds = new ArrayList<>();
+        }
+        this.relationIds.add(relationIdsItem);
+        return this;
+    }
+
+    public ResourceGroupInfo withRelationIds(Consumer<List<String>> relationIdsSetter) {
+        if (this.relationIds == null) {
+            this.relationIds = new ArrayList<>();
+        }
+        relationIdsSetter.accept(this.relationIds);
+        return this;
+    }
+
+    /**
+     * 企业项目ID列表
+     * @return relationIds
+     */
+    public List<String> getRelationIds() {
+        return relationIds;
+    }
+
+    public void setRelationIds(List<String> relationIds) {
+        this.relationIds = relationIds;
     }
 
     public ResourceGroupInfo withGroupId(String groupId) {
@@ -152,6 +219,39 @@ public class ResourceGroupInfo {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ResourceGroupInfo withResources(List<Resource> resources) {
+        this.resources = resources;
+        return this;
+    }
+
+    public ResourceGroupInfo addResourcesItem(Resource resourcesItem) {
+        if (this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        this.resources.add(resourcesItem);
+        return this;
+    }
+
+    public ResourceGroupInfo withResources(Consumer<List<Resource>> resourcesSetter) {
+        if (this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        resourcesSetter.accept(this.resources);
+        return this;
+    }
+
+    /**
+     * 一组或者多个资源信息，默认为空。
+     * @return resources
+     */
+    public List<Resource> getResources() {
+        return resources;
+    }
+
+    public void setResources(List<Resource> resources) {
+        this.resources = resources;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -161,16 +261,26 @@ public class ResourceGroupInfo {
             return false;
         }
         ResourceGroupInfo that = (ResourceGroupInfo) obj;
-        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.relationIds, that.relationIds) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.instanceStatistics, that.instanceStatistics)
             && Objects.equals(this.status, that.status)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.resources, that.resources);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupName, groupId, createTime, instanceStatistics, status, enterpriseProjectId);
+        return Objects.hash(groupName,
+            type,
+            relationIds,
+            groupId,
+            createTime,
+            instanceStatistics,
+            status,
+            enterpriseProjectId,
+            resources);
     }
 
     @Override
@@ -178,11 +288,14 @@ public class ResourceGroupInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResourceGroupInfo {\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    relationIds: ").append(toIndentedString(relationIds)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    instanceStatistics: ").append(toIndentedString(instanceStatistics)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("}");
         return sb.toString();
     }

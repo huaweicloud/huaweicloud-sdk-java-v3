@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.dgc.v1.model.CreateResourceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateResourceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.CreateScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateScriptResponse;
+import com.huaweicloud.sdk.dgc.v1.model.CreateSupplementdataRequest;
+import com.huaweicloud.sdk.dgc.v1.model.CreateSupplementdataResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionRequest;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteJobRequest;
@@ -45,6 +47,8 @@ import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptsRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptsResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ListSupplementdataRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ListSupplementdataResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksResponse;
 import com.huaweicloud.sdk.dgc.v1.model.RestoreJobInstanceRequest;
@@ -71,6 +75,8 @@ import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.StopSupplementdataRequest;
+import com.huaweicloud.sdk.dgc.v1.model.StopSupplementdataResponse;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionRequest;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateJobRequest;
@@ -225,6 +231,34 @@ public class DgcClient {
      */
     public SyncInvoker<CreateScriptRequest, CreateScriptResponse> createScriptInvoker(CreateScriptRequest request) {
         return new SyncInvoker<CreateScriptRequest, CreateScriptResponse>(request, DgcMeta.createScript, hcClient);
+    }
+
+    /**
+     * 创建补数据实例
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSupplementdataRequest 请求对象
+     * @return CreateSupplementdataResponse
+     */
+    public CreateSupplementdataResponse createSupplementdata(CreateSupplementdataRequest request) {
+        return hcClient.syncInvokeHttp(request, DgcMeta.createSupplementdata);
+    }
+
+    /**
+     * 创建补数据实例
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSupplementdataRequest 请求对象
+     * @return SyncInvoker<CreateSupplementdataRequest, CreateSupplementdataResponse>
+     */
+    public SyncInvoker<CreateSupplementdataRequest, CreateSupplementdataResponse> createSupplementdataInvoker(
+        CreateSupplementdataRequest request) {
+        return new SyncInvoker<CreateSupplementdataRequest, CreateSupplementdataResponse>(request,
+            DgcMeta.createSupplementdata, hcClient);
     }
 
     /**
@@ -654,6 +688,34 @@ public class DgcClient {
     }
 
     /**
+     * 查询补数据实例
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSupplementdataRequest 请求对象
+     * @return ListSupplementdataResponse
+     */
+    public ListSupplementdataResponse listSupplementdata(ListSupplementdataRequest request) {
+        return hcClient.syncInvokeHttp(request, DgcMeta.listSupplementdata);
+    }
+
+    /**
+     * 查询补数据实例
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSupplementdataRequest 请求对象
+     * @return SyncInvoker<ListSupplementdataRequest, ListSupplementdataResponse>
+     */
+    public SyncInvoker<ListSupplementdataRequest, ListSupplementdataResponse> listSupplementdataInvoker(
+        ListSupplementdataRequest request) {
+        return new SyncInvoker<ListSupplementdataRequest, ListSupplementdataResponse>(request,
+            DgcMeta.listSupplementdata, hcClient);
+    }
+
+    /**
      * 查询系统任务详情
      *
      * 
@@ -999,6 +1061,34 @@ public class DgcClient {
         StopJobInstanceRequest request) {
         return new SyncInvoker<StopJobInstanceRequest, StopJobInstanceResponse>(request, DgcMeta.stopJobInstance,
             hcClient);
+    }
+
+    /**
+     * 停止补数据实例
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopSupplementdataRequest 请求对象
+     * @return StopSupplementdataResponse
+     */
+    public StopSupplementdataResponse stopSupplementdata(StopSupplementdataRequest request) {
+        return hcClient.syncInvokeHttp(request, DgcMeta.stopSupplementdata);
+    }
+
+    /**
+     * 停止补数据实例
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopSupplementdataRequest 请求对象
+     * @return SyncInvoker<StopSupplementdataRequest, StopSupplementdataResponse>
+     */
+    public SyncInvoker<StopSupplementdataRequest, StopSupplementdataResponse> stopSupplementdataInvoker(
+        StopSupplementdataRequest request) {
+        return new SyncInvoker<StopSupplementdataRequest, StopSupplementdataResponse>(request,
+            DgcMeta.stopSupplementdata, hcClient);
     }
 
     /**

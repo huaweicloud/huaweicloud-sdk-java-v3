@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * AlarmTemplates
@@ -38,26 +35,6 @@ public class AlarmTemplates {
     @JsonProperty(value = "template_description")
 
     private String templateDescription;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "association_alarm_total")
-
-    private Integer associationAlarmTotal;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policy_total")
-
-    private Integer policyTotal;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policy_statistics")
-
-    private List<PolicyStatistics> policyStatistics = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "association_resource_groups")
-
-    private List<AssociationResourceGroup> associationResourceGroups = null;
 
     public AlarmTemplates withTemplateId(String templateId) {
         this.templateId = templateId;
@@ -144,107 +121,6 @@ public class AlarmTemplates {
         this.templateDescription = templateDescription;
     }
 
-    public AlarmTemplates withAssociationAlarmTotal(Integer associationAlarmTotal) {
-        this.associationAlarmTotal = associationAlarmTotal;
-        return this;
-    }
-
-    /**
-     * 告警模板关联的告警规则数目
-     * @return associationAlarmTotal
-     */
-    public Integer getAssociationAlarmTotal() {
-        return associationAlarmTotal;
-    }
-
-    public void setAssociationAlarmTotal(Integer associationAlarmTotal) {
-        this.associationAlarmTotal = associationAlarmTotal;
-    }
-
-    public AlarmTemplates withPolicyTotal(Integer policyTotal) {
-        this.policyTotal = policyTotal;
-        return this;
-    }
-
-    /**
-     * 告警模板的告警策略总数
-     * @return policyTotal
-     */
-    public Integer getPolicyTotal() {
-        return policyTotal;
-    }
-
-    public void setPolicyTotal(Integer policyTotal) {
-        this.policyTotal = policyTotal;
-    }
-
-    public AlarmTemplates withPolicyStatistics(List<PolicyStatistics> policyStatistics) {
-        this.policyStatistics = policyStatistics;
-        return this;
-    }
-
-    public AlarmTemplates addPolicyStatisticsItem(PolicyStatistics policyStatisticsItem) {
-        if (this.policyStatistics == null) {
-            this.policyStatistics = new ArrayList<>();
-        }
-        this.policyStatistics.add(policyStatisticsItem);
-        return this;
-    }
-
-    public AlarmTemplates withPolicyStatistics(Consumer<List<PolicyStatistics>> policyStatisticsSetter) {
-        if (this.policyStatistics == null) {
-            this.policyStatistics = new ArrayList<>();
-        }
-        policyStatisticsSetter.accept(this.policyStatistics);
-        return this;
-    }
-
-    /**
-     * 服务列表告警策略数目统计
-     * @return policyStatistics
-     */
-    public List<PolicyStatistics> getPolicyStatistics() {
-        return policyStatistics;
-    }
-
-    public void setPolicyStatistics(List<PolicyStatistics> policyStatistics) {
-        this.policyStatistics = policyStatistics;
-    }
-
-    public AlarmTemplates withAssociationResourceGroups(List<AssociationResourceGroup> associationResourceGroups) {
-        this.associationResourceGroups = associationResourceGroups;
-        return this;
-    }
-
-    public AlarmTemplates addAssociationResourceGroupsItem(AssociationResourceGroup associationResourceGroupsItem) {
-        if (this.associationResourceGroups == null) {
-            this.associationResourceGroups = new ArrayList<>();
-        }
-        this.associationResourceGroups.add(associationResourceGroupsItem);
-        return this;
-    }
-
-    public AlarmTemplates withAssociationResourceGroups(
-        Consumer<List<AssociationResourceGroup>> associationResourceGroupsSetter) {
-        if (this.associationResourceGroups == null) {
-            this.associationResourceGroups = new ArrayList<>();
-        }
-        associationResourceGroupsSetter.accept(this.associationResourceGroups);
-        return this;
-    }
-
-    /**
-     * 关联的资源分组
-     * @return associationResourceGroups
-     */
-    public List<AssociationResourceGroup> getAssociationResourceGroups() {
-        return associationResourceGroups;
-    }
-
-    public void setAssociationResourceGroups(List<AssociationResourceGroup> associationResourceGroups) {
-        this.associationResourceGroups = associationResourceGroups;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -256,24 +132,12 @@ public class AlarmTemplates {
         AlarmTemplates that = (AlarmTemplates) obj;
         return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
             && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.templateDescription, that.templateDescription)
-            && Objects.equals(this.associationAlarmTotal, that.associationAlarmTotal)
-            && Objects.equals(this.policyTotal, that.policyTotal)
-            && Objects.equals(this.policyStatistics, that.policyStatistics)
-            && Objects.equals(this.associationResourceGroups, that.associationResourceGroups);
+            && Objects.equals(this.templateDescription, that.templateDescription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateId,
-            templateName,
-            templateType,
-            createTime,
-            templateDescription,
-            associationAlarmTotal,
-            policyTotal,
-            policyStatistics,
-            associationResourceGroups);
+        return Objects.hash(templateId, templateName, templateType, createTime, templateDescription);
     }
 
     @Override
@@ -285,10 +149,6 @@ public class AlarmTemplates {
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    templateDescription: ").append(toIndentedString(templateDescription)).append("\n");
-        sb.append("    associationAlarmTotal: ").append(toIndentedString(associationAlarmTotal)).append("\n");
-        sb.append("    policyTotal: ").append(toIndentedString(policyTotal)).append("\n");
-        sb.append("    policyStatistics: ").append(toIndentedString(policyStatistics)).append("\n");
-        sb.append("    associationResourceGroups: ").append(toIndentedString(associationResourceGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

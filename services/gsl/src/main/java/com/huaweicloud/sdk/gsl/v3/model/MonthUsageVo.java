@@ -19,6 +19,11 @@ public class MonthUsageVo {
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid")
+
+    private String iccid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flow_usages")
 
     private List<FlowUsageVo> flowUsages = null;
@@ -39,6 +44,23 @@ public class MonthUsageVo {
 
     public void setSimCardId(Long simCardId) {
         this.simCardId = simCardId;
+    }
+
+    public MonthUsageVo withIccid(String iccid) {
+        this.iccid = iccid;
+        return this;
+    }
+
+    /**
+     * iccid
+     * @return iccid
+     */
+    public String getIccid() {
+        return iccid;
+    }
+
+    public void setIccid(String iccid) {
+        this.iccid = iccid;
     }
 
     public MonthUsageVo withFlowUsages(List<FlowUsageVo> flowUsages) {
@@ -83,12 +105,13 @@ public class MonthUsageVo {
             return false;
         }
         MonthUsageVo that = (MonthUsageVo) obj;
-        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.flowUsages, that.flowUsages);
+        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.iccid, that.iccid)
+            && Objects.equals(this.flowUsages, that.flowUsages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(simCardId, flowUsages);
+        return Objects.hash(simCardId, iccid, flowUsages);
     }
 
     @Override
@@ -96,6 +119,7 @@ public class MonthUsageVo {
         StringBuilder sb = new StringBuilder();
         sb.append("class MonthUsageVo {\n");
         sb.append("    simCardId: ").append(toIndentedString(simCardId)).append("\n");
+        sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
         sb.append("    flowUsages: ").append(toIndentedString(flowUsages)).append("\n");
         sb.append("}");
         return sb.toString();

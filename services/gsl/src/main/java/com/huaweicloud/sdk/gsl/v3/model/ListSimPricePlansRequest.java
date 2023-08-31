@@ -16,6 +16,11 @@ public class ListSimPricePlansRequest {
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid")
+
+    private String iccid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "real_time")
 
     private Boolean realTime;
@@ -46,6 +51,23 @@ public class ListSimPricePlansRequest {
 
     public void setSimCardId(Long simCardId) {
         this.simCardId = simCardId;
+    }
+
+    public ListSimPricePlansRequest withIccid(String iccid) {
+        this.iccid = iccid;
+        return this;
+    }
+
+    /**
+     * iccid，传入的SIM卡标识（sim_card_id）为0,则根据iccid进行处理
+     * @return iccid
+     */
+    public String getIccid() {
+        return iccid;
+    }
+
+    public void setIccid(String iccid) {
+        this.iccid = iccid;
     }
 
     public ListSimPricePlansRequest withRealTime(Boolean realTime) {
@@ -112,13 +134,14 @@ public class ListSimPricePlansRequest {
             return false;
         }
         ListSimPricePlansRequest that = (ListSimPricePlansRequest) obj;
-        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.realTime, that.realTime)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.iccid, that.iccid)
+            && Objects.equals(this.realTime, that.realTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(simCardId, realTime, limit, offset);
+        return Objects.hash(simCardId, iccid, realTime, limit, offset);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class ListSimPricePlansRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSimPricePlansRequest {\n");
         sb.append("    simCardId: ").append(toIndentedString(simCardId)).append("\n");
+        sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
         sb.append("    realTime: ").append(toIndentedString(realTime)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

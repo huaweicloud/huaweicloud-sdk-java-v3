@@ -50,6 +50,11 @@ public class CreateEnvironmentResponse extends SdkResponse {
     private String chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_mode")
+
+    private String deployMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
@@ -196,6 +201,23 @@ public class CreateEnvironmentResponse extends SdkResponse {
 
     public void setChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
+    }
+
+    public CreateEnvironmentResponse withDeployMode(String deployMode) {
+        this.deployMode = deployMode;
+        return this;
+    }
+
+    /**
+     * 环境类型
+     * @return deployMode
+     */
+    public String getDeployMode() {
+        return deployMode;
+    }
+
+    public void setDeployMode(String deployMode) {
+        this.deployMode = deployMode;
     }
 
     public CreateEnvironmentResponse withVpcId(String vpcId) {
@@ -345,8 +367,8 @@ public class CreateEnvironmentResponse extends SdkResponse {
             && Objects.equals(this.alias, that.alias) && Objects.equals(this.description, that.description)
             && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.baseResources, that.baseResources)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.deployMode, that.deployMode)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.baseResources, that.baseResources)
             && Objects.equals(this.optionalResources, that.optionalResources)
             && Objects.equals(this.creator, that.creator) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime);
@@ -361,6 +383,7 @@ public class CreateEnvironmentResponse extends SdkResponse {
             projectId,
             enterpriseProjectId,
             chargeMode,
+            deployMode,
             vpcId,
             baseResources,
             optionalResources,
@@ -380,6 +403,7 @@ public class CreateEnvironmentResponse extends SdkResponse {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    deployMode: ").append(toIndentedString(deployMode)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    baseResources: ").append(toIndentedString(baseResources)).append("\n");
         sb.append("    optionalResources: ").append(toIndentedString(optionalResources)).append("\n");

@@ -80,6 +80,21 @@ public class QueryResRecordsDetailReq {
 
     private Integer statisticType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query_type")
+
+    private String queryType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bill_cycle_begin")
+
+    private String billCycleBegin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bill_cycle_end")
+
+    private String billCycleEnd;
+
     public QueryResRecordsDetailReq withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -328,6 +343,57 @@ public class QueryResRecordsDetailReq {
         this.statisticType = statisticType;
     }
 
+    public QueryResRecordsDetailReq withQueryType(String queryType) {
+        this.queryType = queryType;
+        return this;
+    }
+
+    /**
+     * 查询类型。默认值为BILLCYCLE。 BILLCYCLE：按月DAILY：按天仅当statistic_type=2时，支持传递query_type=DAILY。该参数不携带或携带值为null或携带为空串时，取默认值BILLCYCLE。
+     * @return queryType
+     */
+    public String getQueryType() {
+        return queryType;
+    }
+
+    public void setQueryType(String queryType) {
+        this.queryType = queryType;
+    }
+
+    public QueryResRecordsDetailReq withBillCycleBegin(String billCycleBegin) {
+        this.billCycleBegin = billCycleBegin;
+        return this;
+    }
+
+    /**
+     * 账期开始时间。格式为YYYY-MM-DD。 仅当query_type=DAILY时，必须传递账期开始时间。该参数不携带或携带值为null或携带为空串时，不作为筛选条件。
+     * @return billCycleBegin
+     */
+    public String getBillCycleBegin() {
+        return billCycleBegin;
+    }
+
+    public void setBillCycleBegin(String billCycleBegin) {
+        this.billCycleBegin = billCycleBegin;
+    }
+
+    public QueryResRecordsDetailReq withBillCycleEnd(String billCycleEnd) {
+        this.billCycleEnd = billCycleEnd;
+        return this;
+    }
+
+    /**
+     * 账期结束时间。格式为YYYY-MM-DD。 仅当query_type=DAILY时，必须传递账期结束时间。该参数不携带或携带值为null或携带为空串时，不作为筛选条件。
+     * @return billCycleEnd
+     */
+    public String getBillCycleEnd() {
+        return billCycleEnd;
+    }
+
+    public void setBillCycleEnd(String billCycleEnd) {
+        this.billCycleEnd = billCycleEnd;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -345,7 +411,9 @@ public class QueryResRecordsDetailReq {
             && Objects.equals(this.includeZeroRecord, that.includeZeroRecord)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.method, that.method) && Objects.equals(this.subCustomerId, that.subCustomerId)
-            && Objects.equals(this.statisticType, that.statisticType);
+            && Objects.equals(this.statisticType, that.statisticType) && Objects.equals(this.queryType, that.queryType)
+            && Objects.equals(this.billCycleBegin, that.billCycleBegin)
+            && Objects.equals(this.billCycleEnd, that.billCycleEnd);
     }
 
     @Override
@@ -363,7 +431,10 @@ public class QueryResRecordsDetailReq {
             limit,
             method,
             subCustomerId,
-            statisticType);
+            statisticType,
+            queryType,
+            billCycleBegin,
+            billCycleEnd);
     }
 
     @Override
@@ -384,6 +455,9 @@ public class QueryResRecordsDetailReq {
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    subCustomerId: ").append(toIndentedString(subCustomerId)).append("\n");
         sb.append("    statisticType: ").append(toIndentedString(statisticType)).append("\n");
+        sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+        sb.append("    billCycleBegin: ").append(toIndentedString(billCycleBegin)).append("\n");
+        sb.append("    billCycleEnd: ").append(toIndentedString(billCycleEnd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

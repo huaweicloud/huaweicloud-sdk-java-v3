@@ -63,6 +63,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateRequest
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeTaxiInvoiceRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeTaxiInvoiceResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeThailandIdcardRequest;
@@ -1097,6 +1099,37 @@ public class OcrAsyncClient {
         RecognizeQuotaInvoiceRequest request) {
         return new AsyncInvoker<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse>(request,
             OcrMeta.recognizeQuotaInvoice, hcClient);
+    }
+
+    /**
+     * 智能文档解析
+     *
+     * 对证件、票据、表单等任意版式文档进行键值对提取、文字识别、以及表格识别等任务，实现进阶高效的自动化结构化返回。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeSmartDocumentRecognizerRequest 请求对象
+     * @return CompletableFuture<RecognizeSmartDocumentRecognizerResponse>
+     */
+    public CompletableFuture<RecognizeSmartDocumentRecognizerResponse> recognizeSmartDocumentRecognizerAsync(
+        RecognizeSmartDocumentRecognizerRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeSmartDocumentRecognizer);
+    }
+
+    /**
+     * 智能文档解析
+     *
+     * 对证件、票据、表单等任意版式文档进行键值对提取、文字识别、以及表格识别等任务，实现进阶高效的自动化结构化返回。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeSmartDocumentRecognizerRequest 请求对象
+     * @return AsyncInvoker<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse>
+     */
+    public AsyncInvoker<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse> recognizeSmartDocumentRecognizerAsyncInvoker(
+        RecognizeSmartDocumentRecognizerRequest request) {
+        return new AsyncInvoker<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse>(
+            request, OcrMeta.recognizeSmartDocumentRecognizer, hcClient);
     }
 
     /**

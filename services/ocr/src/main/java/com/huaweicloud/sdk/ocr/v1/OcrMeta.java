@@ -95,6 +95,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateRequest
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeTaxiInvoiceRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeTaxiInvoiceResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeThailandIdcardRequest;
@@ -117,6 +119,7 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeWaybillElectronicRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeWaybillElectronicResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeWebImageRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeWebImageResponse;
+import com.huaweicloud.sdk.ocr.v1.model.SmartDocumentRecognizerRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.TaxiInvoiceRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.ThailandIdcardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.ThailandLicensePlateRequestBody;
@@ -1075,6 +1078,41 @@ public class OcrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QuotaInvoiceRequestBody.class),
             f -> f.withMarshaller(RecognizeQuotaInvoiceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse> recognizeSmartDocumentRecognizer =
+        genForrecognizeSmartDocumentRecognizer();
+
+    private static HttpRequestDef<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse> genForrecognizeSmartDocumentRecognizer() {
+        // basic
+        HttpRequestDef.Builder<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeSmartDocumentRecognizerRequest.class,
+                    RecognizeSmartDocumentRecognizerResponse.class)
+                .withName("RecognizeSmartDocumentRecognizer")
+                .withUri("/v2/{project_id}/ocr/smart-document-recognizer")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeSmartDocumentRecognizerRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<SmartDocumentRecognizerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SmartDocumentRecognizerRequestBody.class),
+            f -> f.withMarshaller(RecognizeSmartDocumentRecognizerRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

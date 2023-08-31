@@ -161,13 +161,10 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
         Map<String, String> headers;
         if (isDerivedAuth(httpRequest)) {
-            headers = DerivedAKSKSigner.sign(builder.build(), this);
-        } else if (httpRequest.getSigningAlgorithm() == SigningAlgorithm.HMAC_SHA256) {
-            headers = AKSKSigner.sign(builder.build(), this);
-        } else if (httpRequest.getSigningAlgorithm() == SigningAlgorithm.HMAC_SM3) {
-            headers = SM3AKSKSigner.sign(builder.build(), this);
+            headers = DerivedAKSKSigner.getInstance().sign(builder.build(), this);
         } else {
-            throw new SdkException("Failed to sign the request");
+            IAKSKSigner signer = AKSKSignerFactory.getSigner(httpRequest.getSigningAlgorithm());
+            headers = signer.sign(builder.build(), this);
         }
 
         builder.addHeaders(headers);

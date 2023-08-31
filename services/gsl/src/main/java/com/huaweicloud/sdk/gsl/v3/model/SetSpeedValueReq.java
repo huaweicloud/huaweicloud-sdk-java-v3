@@ -15,6 +15,11 @@ public class SetSpeedValueReq {
 
     private Integer speedValue;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid")
+
+    private String iccid;
+
     public SetSpeedValueReq withSpeedValue(Integer speedValue) {
         this.speedValue = speedValue;
         return this;
@@ -33,6 +38,23 @@ public class SetSpeedValueReq {
         this.speedValue = speedValue;
     }
 
+    public SetSpeedValueReq withIccid(String iccid) {
+        this.iccid = iccid;
+        return this;
+    }
+
+    /**
+     * iccid，传入的sim_card_id为0,则根据iccid进行处理
+     * @return iccid
+     */
+    public String getIccid() {
+        return iccid;
+    }
+
+    public void setIccid(String iccid) {
+        this.iccid = iccid;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +64,12 @@ public class SetSpeedValueReq {
             return false;
         }
         SetSpeedValueReq that = (SetSpeedValueReq) obj;
-        return Objects.equals(this.speedValue, that.speedValue);
+        return Objects.equals(this.speedValue, that.speedValue) && Objects.equals(this.iccid, that.iccid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(speedValue);
+        return Objects.hash(speedValue, iccid);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class SetSpeedValueReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class SetSpeedValueReq {\n");
         sb.append("    speedValue: ").append(toIndentedString(speedValue)).append("\n");
+        sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

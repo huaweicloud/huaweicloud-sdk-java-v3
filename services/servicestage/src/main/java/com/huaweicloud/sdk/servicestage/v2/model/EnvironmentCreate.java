@@ -39,6 +39,11 @@ public class EnvironmentCreate {
     private ChargeMode chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_mode")
+
+    private String deployMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
@@ -138,6 +143,23 @@ public class EnvironmentCreate {
         this.chargeMode = chargeMode;
     }
 
+    public EnvironmentCreate withDeployMode(String deployMode) {
+        this.deployMode = deployMode;
+        return this;
+    }
+
+    /**
+     * Get deployMode
+     * @return deployMode
+     */
+    public String getDeployMode() {
+        return deployMode;
+    }
+
+    public void setDeployMode(String deployMode) {
+        this.deployMode = deployMode;
+    }
+
     public EnvironmentCreate withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -233,15 +255,22 @@ public class EnvironmentCreate {
         return Objects.equals(this.name, that.name) && Objects.equals(this.alias, that.alias)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.baseResources, that.baseResources)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.deployMode, that.deployMode)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.baseResources, that.baseResources)
             && Objects.equals(this.optionalResources, that.optionalResources);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, alias, description, enterpriseProjectId, chargeMode, vpcId, baseResources, optionalResources);
+        return Objects.hash(name,
+            alias,
+            description,
+            enterpriseProjectId,
+            chargeMode,
+            deployMode,
+            vpcId,
+            baseResources,
+            optionalResources);
     }
 
     @Override
@@ -253,6 +282,7 @@ public class EnvironmentCreate {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    deployMode: ").append(toIndentedString(deployMode)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    baseResources: ").append(toIndentedString(baseResources)).append("\n");
         sb.append("    optionalResources: ").append(toIndentedString(optionalResources)).append("\n");

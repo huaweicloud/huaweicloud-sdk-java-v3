@@ -98,11 +98,6 @@ public class BatchOperateResourceTagsRequestBody {
 
     private List<Tag> tags = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sys_tags")
-
-    private List<Tag> sysTags = null;
-
     public BatchOperateResourceTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -153,39 +148,6 @@ public class BatchOperateResourceTagsRequestBody {
         this.tags = tags;
     }
 
-    public BatchOperateResourceTagsRequestBody withSysTags(List<Tag> sysTags) {
-        this.sysTags = sysTags;
-        return this;
-    }
-
-    public BatchOperateResourceTagsRequestBody addSysTagsItem(Tag sysTagsItem) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        this.sysTags.add(sysTagsItem);
-        return this;
-    }
-
-    public BatchOperateResourceTagsRequestBody withSysTags(Consumer<List<Tag>> sysTagsSetter) {
-        if (this.sysTags == null) {
-            this.sysTags = new ArrayList<>();
-        }
-        sysTagsSetter.accept(this.sysTags);
-        return this;
-    }
-
-    /**
-     * 标签列表。
-     * @return sysTags
-     */
-    public List<Tag> getSysTags() {
-        return sysTags;
-    }
-
-    public void setSysTags(List<Tag> sysTags) {
-        this.sysTags = sysTags;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -195,13 +157,12 @@ public class BatchOperateResourceTagsRequestBody {
             return false;
         }
         BatchOperateResourceTagsRequestBody that = (BatchOperateResourceTagsRequestBody) obj;
-        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.sysTags, that.sysTags);
+        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, tags, sysTags);
+        return Objects.hash(action, tags);
     }
 
     @Override
@@ -210,7 +171,6 @@ public class BatchOperateResourceTagsRequestBody {
         sb.append("class BatchOperateResourceTagsRequestBody {\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

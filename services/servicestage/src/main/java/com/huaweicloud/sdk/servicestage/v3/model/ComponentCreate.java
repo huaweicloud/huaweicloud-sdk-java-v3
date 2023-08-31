@@ -127,7 +127,7 @@ public class ComponentCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tomcat_opts")
 
-    private ComponentCreateTomcatOpts tomcatOpts;
+    private ComponentModifyTomcatOpts tomcatOpts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logs")
@@ -137,7 +137,7 @@ public class ComponentCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_metric")
 
-    private ComponentCreateCustomMetric customMetric;
+    private ComponentModifyCustomMetric customMetric;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "affinity")
@@ -658,14 +658,14 @@ public class ComponentCreate {
         this.jvmOpts = jvmOpts;
     }
 
-    public ComponentCreate withTomcatOpts(ComponentCreateTomcatOpts tomcatOpts) {
+    public ComponentCreate withTomcatOpts(ComponentModifyTomcatOpts tomcatOpts) {
         this.tomcatOpts = tomcatOpts;
         return this;
     }
 
-    public ComponentCreate withTomcatOpts(Consumer<ComponentCreateTomcatOpts> tomcatOptsSetter) {
+    public ComponentCreate withTomcatOpts(Consumer<ComponentModifyTomcatOpts> tomcatOptsSetter) {
         if (this.tomcatOpts == null) {
-            this.tomcatOpts = new ComponentCreateTomcatOpts();
+            this.tomcatOpts = new ComponentModifyTomcatOpts();
             tomcatOptsSetter.accept(this.tomcatOpts);
         }
 
@@ -676,11 +676,11 @@ public class ComponentCreate {
      * Get tomcatOpts
      * @return tomcatOpts
      */
-    public ComponentCreateTomcatOpts getTomcatOpts() {
+    public ComponentModifyTomcatOpts getTomcatOpts() {
         return tomcatOpts;
     }
 
-    public void setTomcatOpts(ComponentCreateTomcatOpts tomcatOpts) {
+    public void setTomcatOpts(ComponentModifyTomcatOpts tomcatOpts) {
         this.tomcatOpts = tomcatOpts;
     }
 
@@ -717,14 +717,14 @@ public class ComponentCreate {
         this.logs = logs;
     }
 
-    public ComponentCreate withCustomMetric(ComponentCreateCustomMetric customMetric) {
+    public ComponentCreate withCustomMetric(ComponentModifyCustomMetric customMetric) {
         this.customMetric = customMetric;
         return this;
     }
 
-    public ComponentCreate withCustomMetric(Consumer<ComponentCreateCustomMetric> customMetricSetter) {
+    public ComponentCreate withCustomMetric(Consumer<ComponentModifyCustomMetric> customMetricSetter) {
         if (this.customMetric == null) {
-            this.customMetric = new ComponentCreateCustomMetric();
+            this.customMetric = new ComponentModifyCustomMetric();
             customMetricSetter.accept(this.customMetric);
         }
 
@@ -735,11 +735,11 @@ public class ComponentCreate {
      * Get customMetric
      * @return customMetric
      */
-    public ComponentCreateCustomMetric getCustomMetric() {
+    public ComponentModifyCustomMetric getCustomMetric() {
         return customMetric;
     }
 
-    public void setCustomMetric(ComponentCreateCustomMetric customMetric) {
+    public void setCustomMetric(ComponentModifyCustomMetric customMetric) {
         this.customMetric = customMetric;
     }
 

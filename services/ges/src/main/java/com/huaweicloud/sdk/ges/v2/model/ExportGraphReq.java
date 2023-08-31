@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 导出图请求体
@@ -29,6 +30,11 @@ public class ExportGraphReq {
     @JsonProperty(value = "schema_name")
 
     private String schemaName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "paginate")
+
+    private ExportGraphReqPaginate paginate;
 
     public ExportGraphReq withGraphExportPath(String graphExportPath) {
         this.graphExportPath = graphExportPath;
@@ -98,6 +104,32 @@ public class ExportGraphReq {
         this.schemaName = schemaName;
     }
 
+    public ExportGraphReq withPaginate(ExportGraphReqPaginate paginate) {
+        this.paginate = paginate;
+        return this;
+    }
+
+    public ExportGraphReq withPaginate(Consumer<ExportGraphReqPaginate> paginateSetter) {
+        if (this.paginate == null) {
+            this.paginate = new ExportGraphReqPaginate();
+            paginateSetter.accept(this.paginate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get paginate
+     * @return paginate
+     */
+    public ExportGraphReqPaginate getPaginate() {
+        return paginate;
+    }
+
+    public void setPaginate(ExportGraphReqPaginate paginate) {
+        this.paginate = paginate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +142,12 @@ public class ExportGraphReq {
         return Objects.equals(this.graphExportPath, that.graphExportPath)
             && Objects.equals(this.edgeSetName, that.edgeSetName)
             && Objects.equals(this.vertexSetName, that.vertexSetName)
-            && Objects.equals(this.schemaName, that.schemaName);
+            && Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.paginate, that.paginate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(graphExportPath, edgeSetName, vertexSetName, schemaName);
+        return Objects.hash(graphExportPath, edgeSetName, vertexSetName, schemaName, paginate);
     }
 
     @Override
@@ -126,6 +158,7 @@ public class ExportGraphReq {
         sb.append("    edgeSetName: ").append(toIndentedString(edgeSetName)).append("\n");
         sb.append("    vertexSetName: ").append(toIndentedString(vertexSetName)).append("\n");
         sb.append("    schemaName: ").append(toIndentedString(schemaName)).append("\n");
+        sb.append("    paginate: ").append(toIndentedString(paginate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

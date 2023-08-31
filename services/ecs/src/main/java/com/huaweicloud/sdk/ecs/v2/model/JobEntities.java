@@ -14,6 +14,16 @@ import java.util.function.Consumer;
 public class JobEntities {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_id")
+
+    private String serverId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nic_id")
+
+    private String nicId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sub_jobs")
 
     private List<SubJob> subJobs = null;
@@ -22,6 +32,40 @@ public class JobEntities {
     @JsonProperty(value = "sub_jobs_total")
 
     private Integer subJobsTotal;
+
+    public JobEntities withServerId(String serverId) {
+        this.serverId = serverId;
+        return this;
+    }
+
+    /**
+     * 云服务器相关操作显示server_id。
+     * @return serverId
+     */
+    public String getServerId() {
+        return serverId;
+    }
+
+    public void setServerId(String serverId) {
+        this.serverId = serverId;
+    }
+
+    public JobEntities withNicId(String nicId) {
+        this.nicId = nicId;
+        return this;
+    }
+
+    /**
+     * 网卡相关操作显示nic_id。
+     * @return nicId
+     */
+    public String getNicId() {
+        return nicId;
+    }
+
+    public void setNicId(String nicId) {
+        this.nicId = nicId;
+    }
 
     public JobEntities withSubJobs(List<SubJob> subJobs) {
         this.subJobs = subJobs;
@@ -82,18 +126,21 @@ public class JobEntities {
             return false;
         }
         JobEntities that = (JobEntities) obj;
-        return Objects.equals(this.subJobs, that.subJobs) && Objects.equals(this.subJobsTotal, that.subJobsTotal);
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.nicId, that.nicId)
+            && Objects.equals(this.subJobs, that.subJobs) && Objects.equals(this.subJobsTotal, that.subJobsTotal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subJobs, subJobsTotal);
+        return Objects.hash(serverId, nicId, subJobs, subJobsTotal);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class JobEntities {\n");
+        sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("    nicId: ").append(toIndentedString(nicId)).append("\n");
         sb.append("    subJobs: ").append(toIndentedString(subJobs)).append("\n");
         sb.append("    subJobsTotal: ").append(toIndentedString(subJobsTotal)).append("\n");
         sb.append("}");

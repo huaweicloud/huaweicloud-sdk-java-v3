@@ -23,7 +23,9 @@ package com.huaweicloud.sdk.core.auth;
 
 public enum SigningAlgorithm {
     HMAC_SHA256,
-    HMAC_SM3;
+    HMAC_SM3,
+    ECDSA_P256_SHA256,
+    SM2_SM3;
 
     public static SigningAlgorithm getDefault() {
         return HMAC_SHA256;

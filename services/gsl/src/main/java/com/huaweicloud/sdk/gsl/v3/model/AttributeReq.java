@@ -16,6 +16,11 @@ public class AttributeReq {
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid")
+
+    private String iccid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customer_attribute1")
 
     private String customerAttribute1;
@@ -51,7 +56,7 @@ public class AttributeReq {
     }
 
     /**
-     * SIM卡标识
+     * SIM卡标识，如果SIM卡标识传0则表示需要根据iccid处理。
      * @return simCardId
      */
     public Long getSimCardId() {
@@ -60,6 +65,23 @@ public class AttributeReq {
 
     public void setSimCardId(Long simCardId) {
         this.simCardId = simCardId;
+    }
+
+    public AttributeReq withIccid(String iccid) {
+        this.iccid = iccid;
+        return this;
+    }
+
+    /**
+     * iccid，如果SIM卡标识传0则表示需要根据iccid处理。
+     * @return iccid
+     */
+    public String getIccid() {
+        return iccid;
+    }
+
+    public void setIccid(String iccid) {
+        this.iccid = iccid;
     }
 
     public AttributeReq withCustomerAttribute1(String customerAttribute1) {
@@ -173,7 +195,7 @@ public class AttributeReq {
             return false;
         }
         AttributeReq that = (AttributeReq) obj;
-        return Objects.equals(this.simCardId, that.simCardId)
+        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.iccid, that.iccid)
             && Objects.equals(this.customerAttribute1, that.customerAttribute1)
             && Objects.equals(this.customerAttribute2, that.customerAttribute2)
             && Objects.equals(this.customerAttribute3, that.customerAttribute3)
@@ -185,6 +207,7 @@ public class AttributeReq {
     @Override
     public int hashCode() {
         return Objects.hash(simCardId,
+            iccid,
             customerAttribute1,
             customerAttribute2,
             customerAttribute3,
@@ -198,6 +221,7 @@ public class AttributeReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class AttributeReq {\n");
         sb.append("    simCardId: ").append(toIndentedString(simCardId)).append("\n");
+        sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
         sb.append("    customerAttribute1: ").append(toIndentedString(customerAttribute1)).append("\n");
         sb.append("    customerAttribute2: ").append(toIndentedString(customerAttribute2)).append("\n");
         sb.append("    customerAttribute3: ").append(toIndentedString(customerAttribute3)).append("\n");

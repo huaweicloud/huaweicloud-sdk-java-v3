@@ -14,14 +14,24 @@ import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourcesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmRulesRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmRulesResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmTemplateResponse;
+import com.huaweicloud.sdk.ces.v2.model.CreateDashboardWidgetsRequest;
+import com.huaweicloud.sdk.ces.v2.model.CreateDashboardWidgetsResponse;
+import com.huaweicloud.sdk.ces.v2.model.CreateOneDashboardRequest;
+import com.huaweicloud.sdk.ces.v2.model.CreateOneDashboardResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupResponse;
 import com.huaweicloud.sdk.ces.v2.model.DeleteAlarmRuleResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.DeleteAlarmRuleResourcesResponse;
+import com.huaweicloud.sdk.ces.v2.model.DeleteDashboardsRequest;
+import com.huaweicloud.sdk.ces.v2.model.DeleteDashboardsResponse;
+import com.huaweicloud.sdk.ces.v2.model.DeleteOneWidgetRequest;
+import com.huaweicloud.sdk.ces.v2.model.DeleteOneWidgetResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListAgentDimensionInfoRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListAgentDimensionInfoResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmHistoriesRequest;
@@ -36,6 +46,10 @@ import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplateAssociationAlarmsReques
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplateAssociationAlarmsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplatesRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplatesResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListDashboardInfosRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListDashboardInfosResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListDashboardWidgetsRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListDashboardWidgetsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsServicesResourcesRequest;
@@ -44,10 +58,14 @@ import com.huaweicloud.sdk.ces.v2.model.ShowAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v2.model.ShowResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowResourceGroupResponse;
+import com.huaweicloud.sdk.ces.v2.model.ShowWidgetRequest;
+import com.huaweicloud.sdk.ces.v2.model.ShowWidgetResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -278,6 +296,36 @@ public class CesClient {
     }
 
     /**
+     * 批量更新监控视图
+     *
+     * 批量更新监控视图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateWidgetsRequest 请求对象
+     * @return BatchUpdateWidgetsResponse
+     */
+    public BatchUpdateWidgetsResponse batchUpdateWidgets(BatchUpdateWidgetsRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.batchUpdateWidgets);
+    }
+
+    /**
+     * 批量更新监控视图
+     *
+     * 批量更新监控视图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateWidgetsRequest 请求对象
+     * @return SyncInvoker<BatchUpdateWidgetsRequest, BatchUpdateWidgetsResponse>
+     */
+    public SyncInvoker<BatchUpdateWidgetsRequest, BatchUpdateWidgetsResponse> batchUpdateWidgetsInvoker(
+        BatchUpdateWidgetsRequest request) {
+        return new SyncInvoker<BatchUpdateWidgetsRequest, BatchUpdateWidgetsResponse>(request,
+            CesMeta.batchUpdateWidgets, hcClient);
+    }
+
+    /**
      * 创建告警规则
      *
      * 创建告警规则
@@ -338,6 +386,66 @@ public class CesClient {
     }
 
     /**
+     * 创建/复制/批量创建监控视图到指定的监控面板
+     *
+     * 创建/复制/批量创建监控视图到指定的监控面板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDashboardWidgetsRequest 请求对象
+     * @return CreateDashboardWidgetsResponse
+     */
+    public CreateDashboardWidgetsResponse createDashboardWidgets(CreateDashboardWidgetsRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.createDashboardWidgets);
+    }
+
+    /**
+     * 创建/复制/批量创建监控视图到指定的监控面板
+     *
+     * 创建/复制/批量创建监控视图到指定的监控面板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDashboardWidgetsRequest 请求对象
+     * @return SyncInvoker<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse>
+     */
+    public SyncInvoker<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse> createDashboardWidgetsInvoker(
+        CreateDashboardWidgetsRequest request) {
+        return new SyncInvoker<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse>(request,
+            CesMeta.createDashboardWidgets, hcClient);
+    }
+
+    /**
+     * 创建/复制监控面板
+     *
+     * 创建/复制监控面板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOneDashboardRequest 请求对象
+     * @return CreateOneDashboardResponse
+     */
+    public CreateOneDashboardResponse createOneDashboard(CreateOneDashboardRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.createOneDashboard);
+    }
+
+    /**
+     * 创建/复制监控面板
+     *
+     * 创建/复制监控面板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOneDashboardRequest 请求对象
+     * @return SyncInvoker<CreateOneDashboardRequest, CreateOneDashboardResponse>
+     */
+    public SyncInvoker<CreateOneDashboardRequest, CreateOneDashboardResponse> createOneDashboardInvoker(
+        CreateOneDashboardRequest request) {
+        return new SyncInvoker<CreateOneDashboardRequest, CreateOneDashboardResponse>(request,
+            CesMeta.createOneDashboard, hcClient);
+    }
+
+    /**
      * 创建资源分组
      *
      * 创建资源分组
@@ -395,6 +503,66 @@ public class CesClient {
         DeleteAlarmRuleResourcesRequest request) {
         return new SyncInvoker<DeleteAlarmRuleResourcesRequest, DeleteAlarmRuleResourcesResponse>(request,
             CesMeta.deleteAlarmRuleResources, hcClient);
+    }
+
+    /**
+     * 批量删除监控面板
+     *
+     * 批量删除监控面板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDashboardsRequest 请求对象
+     * @return DeleteDashboardsResponse
+     */
+    public DeleteDashboardsResponse deleteDashboards(DeleteDashboardsRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.deleteDashboards);
+    }
+
+    /**
+     * 批量删除监控面板
+     *
+     * 批量删除监控面板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDashboardsRequest 请求对象
+     * @return SyncInvoker<DeleteDashboardsRequest, DeleteDashboardsResponse>
+     */
+    public SyncInvoker<DeleteDashboardsRequest, DeleteDashboardsResponse> deleteDashboardsInvoker(
+        DeleteDashboardsRequest request) {
+        return new SyncInvoker<DeleteDashboardsRequest, DeleteDashboardsResponse>(request, CesMeta.deleteDashboards,
+            hcClient);
+    }
+
+    /**
+     * 删除指定监控视图
+     *
+     * 删除指定监控视图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOneWidgetRequest 请求对象
+     * @return DeleteOneWidgetResponse
+     */
+    public DeleteOneWidgetResponse deleteOneWidget(DeleteOneWidgetRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.deleteOneWidget);
+    }
+
+    /**
+     * 删除指定监控视图
+     *
+     * 删除指定监控视图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOneWidgetRequest 请求对象
+     * @return SyncInvoker<DeleteOneWidgetRequest, DeleteOneWidgetResponse>
+     */
+    public SyncInvoker<DeleteOneWidgetRequest, DeleteOneWidgetResponse> deleteOneWidgetInvoker(
+        DeleteOneWidgetRequest request) {
+        return new SyncInvoker<DeleteOneWidgetRequest, DeleteOneWidgetResponse>(request, CesMeta.deleteOneWidget,
+            hcClient);
     }
 
     /**
@@ -609,6 +777,66 @@ public class CesClient {
     }
 
     /**
+     * 查询监控面板列表
+     *
+     * 查询监控面板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDashboardInfosRequest 请求对象
+     * @return ListDashboardInfosResponse
+     */
+    public ListDashboardInfosResponse listDashboardInfos(ListDashboardInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.listDashboardInfos);
+    }
+
+    /**
+     * 查询监控面板列表
+     *
+     * 查询监控面板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDashboardInfosRequest 请求对象
+     * @return SyncInvoker<ListDashboardInfosRequest, ListDashboardInfosResponse>
+     */
+    public SyncInvoker<ListDashboardInfosRequest, ListDashboardInfosResponse> listDashboardInfosInvoker(
+        ListDashboardInfosRequest request) {
+        return new SyncInvoker<ListDashboardInfosRequest, ListDashboardInfosResponse>(request,
+            CesMeta.listDashboardInfos, hcClient);
+    }
+
+    /**
+     * 查询指定监控面板下的监控视图列表
+     *
+     * 查询指定监控面板下的监控视图列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDashboardWidgetsRequest 请求对象
+     * @return ListDashboardWidgetsResponse
+     */
+    public ListDashboardWidgetsResponse listDashboardWidgets(ListDashboardWidgetsRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.listDashboardWidgets);
+    }
+
+    /**
+     * 查询指定监控面板下的监控视图列表
+     *
+     * 查询指定监控面板下的监控视图列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDashboardWidgetsRequest 请求对象
+     * @return SyncInvoker<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse>
+     */
+    public SyncInvoker<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse> listDashboardWidgetsInvoker(
+        ListDashboardWidgetsRequest request) {
+        return new SyncInvoker<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse>(request,
+            CesMeta.listDashboardWidgets, hcClient);
+    }
+
+    /**
      * 查询资源分组列表
      *
      * 查询资源分组列表
@@ -730,6 +958,34 @@ public class CesClient {
     }
 
     /**
+     * 查询指定监控视图信息
+     *
+     * 查询指定监控视图信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowWidgetRequest 请求对象
+     * @return ShowWidgetResponse
+     */
+    public ShowWidgetResponse showWidget(ShowWidgetRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.showWidget);
+    }
+
+    /**
+     * 查询指定监控视图信息
+     *
+     * 查询指定监控视图信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowWidgetRequest 请求对象
+     * @return SyncInvoker<ShowWidgetRequest, ShowWidgetResponse>
+     */
+    public SyncInvoker<ShowWidgetRequest, ShowWidgetResponse> showWidgetInvoker(ShowWidgetRequest request) {
+        return new SyncInvoker<ShowWidgetRequest, ShowWidgetResponse>(request, CesMeta.showWidget, hcClient);
+    }
+
+    /**
      * 修改告警规则策略(全量修改)
      *
      * 修改告警规则策略(全量修改)
@@ -787,6 +1043,36 @@ public class CesClient {
         UpdateAlarmTemplateRequest request) {
         return new SyncInvoker<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse>(request,
             CesMeta.updateAlarmTemplate, hcClient);
+    }
+
+    /**
+     * 修改监控面板
+     *
+     * 修改监控面板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDashboardRequest 请求对象
+     * @return UpdateDashboardResponse
+     */
+    public UpdateDashboardResponse updateDashboard(UpdateDashboardRequest request) {
+        return hcClient.syncInvokeHttp(request, CesMeta.updateDashboard);
+    }
+
+    /**
+     * 修改监控面板
+     *
+     * 修改监控面板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDashboardRequest 请求对象
+     * @return SyncInvoker<UpdateDashboardRequest, UpdateDashboardResponse>
+     */
+    public SyncInvoker<UpdateDashboardRequest, UpdateDashboardResponse> updateDashboardInvoker(
+        UpdateDashboardRequest request) {
+        return new SyncInvoker<UpdateDashboardRequest, UpdateDashboardResponse>(request, CesMeta.updateDashboard,
+            hcClient);
     }
 
     /**

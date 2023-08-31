@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.cae.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -24,93 +19,6 @@ public class CreateSpecCert {
     @JsonProperty(value = "key")
 
     private String key;
-
-    /**
-     * 安全策略。 - tls-1-2-strict - tls-1-2 - tls-1-1 - tls-1-0
-     */
-    public static final class PolicyEnum {
-
-        /**
-         * Enum TLS_1_2_STRICT for value: "tls-1-2-strict"
-         */
-        public static final PolicyEnum TLS_1_2_STRICT = new PolicyEnum("tls-1-2-strict");
-
-        /**
-         * Enum TLS_1_2 for value: "tls-1-2"
-         */
-        public static final PolicyEnum TLS_1_2 = new PolicyEnum("tls-1-2");
-
-        /**
-         * Enum TLS_1_1 for value: "tls-1-1"
-         */
-        public static final PolicyEnum TLS_1_1 = new PolicyEnum("tls-1-1");
-
-        /**
-         * Enum TLS_1_0 for value: "tls-1-0"
-         */
-        public static final PolicyEnum TLS_1_0 = new PolicyEnum("tls-1-0");
-
-        private static final Map<String, PolicyEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PolicyEnum> createStaticFields() {
-            Map<String, PolicyEnum> map = new HashMap<>();
-            map.put("tls-1-2-strict", TLS_1_2_STRICT);
-            map.put("tls-1-2", TLS_1_2);
-            map.put("tls-1-1", TLS_1_1);
-            map.put("tls-1-0", TLS_1_0);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PolicyEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PolicyEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PolicyEnum(value));
-        }
-
-        public static PolicyEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PolicyEnum) {
-                return this.value.equals(((PolicyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policy")
-
-    private PolicyEnum policy;
 
     public CreateSpecCert withCrt(String crt) {
         this.crt = crt;
@@ -146,23 +54,6 @@ public class CreateSpecCert {
         this.key = key;
     }
 
-    public CreateSpecCert withPolicy(PolicyEnum policy) {
-        this.policy = policy;
-        return this;
-    }
-
-    /**
-     * 安全策略。 - tls-1-2-strict - tls-1-2 - tls-1-1 - tls-1-0
-     * @return policy
-     */
-    public PolicyEnum getPolicy() {
-        return policy;
-    }
-
-    public void setPolicy(PolicyEnum policy) {
-        this.policy = policy;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -172,13 +63,12 @@ public class CreateSpecCert {
             return false;
         }
         CreateSpecCert that = (CreateSpecCert) obj;
-        return Objects.equals(this.crt, that.crt) && Objects.equals(this.key, that.key)
-            && Objects.equals(this.policy, that.policy);
+        return Objects.equals(this.crt, that.crt) && Objects.equals(this.key, that.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(crt, key, policy);
+        return Objects.hash(crt, key);
     }
 
     @Override
@@ -187,7 +77,6 @@ public class CreateSpecCert {
         sb.append("class CreateSpecCert {\n");
         sb.append("    crt: ").append(toIndentedString(crt)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
-        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

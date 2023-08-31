@@ -812,6 +812,64 @@ public class GslClient {
     }
 
     /**
+     * 短信发送详情
+     *
+     * 短信发送详情，接口仅支持开通短信套餐的中国移动与中国电信卡调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmsDetailsRequest 请求对象
+     * @return ListSmsDetailsResponse
+     */
+    public ListSmsDetailsResponse listSmsDetails(ListSmsDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, GslMeta.listSmsDetails);
+    }
+
+    /**
+     * 短信发送详情
+     *
+     * 短信发送详情，接口仅支持开通短信套餐的中国移动与中国电信卡调用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmsDetailsRequest 请求对象
+     * @return SyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>
+     */
+    public SyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse> listSmsDetailsInvoker(
+        ListSmsDetailsRequest request) {
+        return new SyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>(request, GslMeta.listSmsDetails,
+            hcClient);
+    }
+
+    /**
+     * 发送短信
+     *
+     * 发送短信，接口仅支持开通短信套餐的中国移动与中国电信卡调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendSmsRequest 请求对象
+     * @return SendSmsResponse
+     */
+    public SendSmsResponse sendSms(SendSmsRequest request) {
+        return hcClient.syncInvokeHttp(request, GslMeta.sendSms);
+    }
+
+    /**
+     * 发送短信
+     *
+     * 发送短信，接口仅支持开通短信套餐的中国移动与中国电信卡调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendSmsRequest 请求对象
+     * @return SyncInvoker<SendSmsRequest, SendSmsResponse>
+     */
+    public SyncInvoker<SendSmsRequest, SendSmsResponse> sendSmsInvoker(SendSmsRequest request) {
+        return new SyncInvoker<SendSmsRequest, SendSmsResponse>(request, GslMeta.sendSms, hcClient);
+    }
+
+    /**
      * 批量设置/取消设置标签接口
      *
      * 批量设置/取消设置标签接口
@@ -921,64 +979,6 @@ public class GslClient {
      */
     public SyncInvoker<ListTagsRequest, ListTagsResponse> listTagsInvoker(ListTagsRequest request) {
         return new SyncInvoker<ListTagsRequest, ListTagsResponse>(request, GslMeta.listTags, hcClient);
-    }
-
-    /**
-     * 短信发送详情
-     *
-     * 短信发送详情，接口仅支持开通短信套餐的中国移动与中国电信卡调用
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSmsDetailsRequest 请求对象
-     * @return ListSmsDetailsResponse
-     */
-    public ListSmsDetailsResponse listSmsDetails(ListSmsDetailsRequest request) {
-        return hcClient.syncInvokeHttp(request, GslMeta.listSmsDetails);
-    }
-
-    /**
-     * 短信发送详情
-     *
-     * 短信发送详情，接口仅支持开通短信套餐的中国移动与中国电信卡调用
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSmsDetailsRequest 请求对象
-     * @return SyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>
-     */
-    public SyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse> listSmsDetailsInvoker(
-        ListSmsDetailsRequest request) {
-        return new SyncInvoker<ListSmsDetailsRequest, ListSmsDetailsResponse>(request, GslMeta.listSmsDetails,
-            hcClient);
-    }
-
-    /**
-     * 发送短信
-     *
-     * 发送短信，接口仅支持开通短信套餐的中国移动与中国电信卡调用。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SendSmsRequest 请求对象
-     * @return SendSmsResponse
-     */
-    public SendSmsResponse sendSms(SendSmsRequest request) {
-        return hcClient.syncInvokeHttp(request, GslMeta.sendSms);
-    }
-
-    /**
-     * 发送短信
-     *
-     * 发送短信，接口仅支持开通短信套餐的中国移动与中国电信卡调用。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SendSmsRequest 请求对象
-     * @return SyncInvoker<SendSmsRequest, SendSmsResponse>
-     */
-    public SyncInvoker<SendSmsRequest, SendSmsResponse> sendSmsInvoker(SendSmsRequest request) {
-        return new SyncInvoker<SendSmsRequest, SendSmsResponse>(request, GslMeta.sendSms, hcClient);
     }
 
     /**

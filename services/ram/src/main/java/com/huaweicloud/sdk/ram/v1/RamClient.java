@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.ram.v1.model.ListResourceShareTagsRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceShareTagsResponse;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceTypesRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceTypesResponse;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationRequest;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationResponse;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsRequest;
@@ -160,6 +162,64 @@ public class RamClient {
         ListResourceSharePermissionsRequest request) {
         return new SyncInvoker<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse>(request,
             RamMeta.listResourceSharePermissions, hcClient);
+    }
+
+    /**
+     * 查询资源共享的配额
+     *
+     * 查询当前帐号的资源共享配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaRequest 请求对象
+     * @return ListQuotaResponse
+     */
+    public ListQuotaResponse listQuota(ListQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, RamMeta.listQuota);
+    }
+
+    /**
+     * 查询资源共享的配额
+     *
+     * 查询当前帐号的资源共享配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaRequest 请求对象
+     * @return SyncInvoker<ListQuotaRequest, ListQuotaResponse>
+     */
+    public SyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaInvoker(ListQuotaRequest request) {
+        return new SyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, RamMeta.listQuota, hcClient);
+    }
+
+    /**
+     * 检索云服务资源类型
+     *
+     * 查询已对接云服务的资源类型和区域等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTypesRequest 请求对象
+     * @return ListResourceTypesResponse
+     */
+    public ListResourceTypesResponse listResourceTypes(ListResourceTypesRequest request) {
+        return hcClient.syncInvokeHttp(request, RamMeta.listResourceTypes);
+    }
+
+    /**
+     * 检索云服务资源类型
+     *
+     * 查询已对接云服务的资源类型和区域等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTypesRequest 请求对象
+     * @return SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>
+     */
+    public SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypesInvoker(
+        ListResourceTypesRequest request) {
+        return new SyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>(request, RamMeta.listResourceTypes,
+            hcClient);
     }
 
     /**
@@ -340,34 +400,6 @@ public class RamClient {
         SearchSharedPrincipalsRequest request) {
         return new SyncInvoker<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse>(request,
             RamMeta.searchSharedPrincipals, hcClient);
-    }
-
-    /**
-     * 查询资源共享的配额
-     *
-     * 查询当前帐号的资源共享配额信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotaRequest 请求对象
-     * @return ListQuotaResponse
-     */
-    public ListQuotaResponse listQuota(ListQuotaRequest request) {
-        return hcClient.syncInvokeHttp(request, RamMeta.listQuota);
-    }
-
-    /**
-     * 查询资源共享的配额
-     *
-     * 查询当前帐号的资源共享配额信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotaRequest 请求对象
-     * @return SyncInvoker<ListQuotaRequest, ListQuotaResponse>
-     */
-    public SyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaInvoker(ListQuotaRequest request) {
-        return new SyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, RamMeta.listQuota, hcClient);
     }
 
     /**

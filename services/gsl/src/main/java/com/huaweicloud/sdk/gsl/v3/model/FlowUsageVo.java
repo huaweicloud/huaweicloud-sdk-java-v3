@@ -43,7 +43,7 @@ public class FlowUsageVo {
     }
 
     /**
-     * 已用流量
+     * 已用流量（MB）
      * @return flowUsed
      */
     public Double getFlowUsed() {

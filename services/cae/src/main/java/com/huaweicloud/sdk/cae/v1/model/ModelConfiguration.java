@@ -32,7 +32,7 @@ public class ModelConfiguration {
     private String operationId;
 
     /**
-     * 组件配置类型，当前CAE支持组件配置如下8类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。
+     * 组件配置类型，当前CAE支持组件配置如下8类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。  - apm2：性能管理。  - log: 自定义日志路径。
      */
     public static final class TypeEnum {
 
@@ -76,6 +76,16 @@ public class ModelConfiguration {
          */
         public static final TypeEnum LIFECYCLE = new TypeEnum("lifecycle");
 
+        /**
+         * Enum APM2 for value: "apm2"
+         */
+        public static final TypeEnum APM2 = new TypeEnum("apm2");
+
+        /**
+         * Enum LOG for value: "log"
+         */
+        public static final TypeEnum LOG = new TypeEnum("log");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -88,6 +98,8 @@ public class ModelConfiguration {
             map.put("volume", VOLUME);
             map.put("healthCheck", HEALTHCHECK);
             map.put("lifecycle", LIFECYCLE);
+            map.put("apm2", APM2);
+            map.put("log", LOG);
             return Collections.unmodifiableMap(map);
         }
 
@@ -204,7 +216,7 @@ public class ModelConfiguration {
     }
 
     /**
-     * 组件配置类型，当前CAE支持组件配置如下8类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。
+     * 组件配置类型，当前CAE支持组件配置如下8类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。  - apm2：性能管理。  - log: 自定义日志路径。
      * @return type
      */
     public TypeEnum getType() {

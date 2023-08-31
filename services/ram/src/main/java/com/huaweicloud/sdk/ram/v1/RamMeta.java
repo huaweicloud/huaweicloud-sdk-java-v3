@@ -40,6 +40,8 @@ import com.huaweicloud.sdk.ram.v1.model.ListResourceShareTagsRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceShareTagsResponse;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceTypesRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceTypesResponse;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationRequest;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationResponse;
 import com.huaweicloud.sdk.ram.v1.model.ResourceShareAssociationReqBody;
@@ -193,6 +195,55 @@ public class RamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListQuotaRequest, ListQuotaResponse> listQuota = genForlistQuota();
+
+    private static HttpRequestDef<ListQuotaRequest, ListQuotaResponse> genForlistQuota() {
+        // basic
+        HttpRequestDef.Builder<ListQuotaRequest, ListQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotaRequest.class, ListQuotaResponse.class)
+                .withName("ListQuota")
+                .withUri("/v1/resource-shares/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypes =
+        genForlistResourceTypes();
+
+    private static HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> genForlistResourceTypes() {
+        // basic
+        HttpRequestDef.Builder<ListResourceTypesRequest, ListResourceTypesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResourceTypesRequest.class, ListResourceTypesResponse.class)
+                .withName("ListResourceTypes")
+                .withUri("/v1/resource-types")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourceTypesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceTypesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DisableOrganizationShareRequest, DisableOrganizationShareResponse> disableOrganizationShare =
         genFordisableOrganizationShare();
 
@@ -331,23 +382,6 @@ public class RamMeta {
             f -> f.withMarshaller(SearchSharedPrincipalsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListQuotaRequest, ListQuotaResponse> listQuota = genForlistQuota();
-
-    private static HttpRequestDef<ListQuotaRequest, ListQuotaResponse> genForlistQuota() {
-        // basic
-        HttpRequestDef.Builder<ListQuotaRequest, ListQuotaResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListQuotaRequest.class, ListQuotaResponse.class)
-                .withName("ListQuota")
-                .withUri("/v1/resource-shares/quotas")
-                .withContentType("application/json");
-
-        // requests
 
         // response
 

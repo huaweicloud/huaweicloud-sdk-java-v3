@@ -15,13 +15,18 @@ public class ShowSimCardRequest {
 
     private Long simCardId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid")
+
+    private String iccid;
+
     public ShowSimCardRequest withSimCardId(Long simCardId) {
         this.simCardId = simCardId;
         return this;
     }
 
     /**
-     * SIM卡标识，可通过[查询SIM卡列表接口](https://support.huaweicloud.com/api-ocgsl/gsl_07_0008.html)获取
+     * SIM卡标识，如果SIM卡标识传0则表示需要根据iccid处理。可通过[查询SIM卡列表接口](https://support.huaweicloud.com/api-ocgsl/gsl_07_0008.html)获取
      * minimum: 0
      * @return simCardId
      */
@@ -33,6 +38,23 @@ public class ShowSimCardRequest {
         this.simCardId = simCardId;
     }
 
+    public ShowSimCardRequest withIccid(String iccid) {
+        this.iccid = iccid;
+        return this;
+    }
+
+    /**
+     * iccid
+     * @return iccid
+     */
+    public String getIccid() {
+        return iccid;
+    }
+
+    public void setIccid(String iccid) {
+        this.iccid = iccid;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +64,12 @@ public class ShowSimCardRequest {
             return false;
         }
         ShowSimCardRequest that = (ShowSimCardRequest) obj;
-        return Objects.equals(this.simCardId, that.simCardId);
+        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.iccid, that.iccid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(simCardId);
+        return Objects.hash(simCardId, iccid);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class ShowSimCardRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowSimCardRequest {\n");
         sb.append("    simCardId: ").append(toIndentedString(simCardId)).append("\n");
+        sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

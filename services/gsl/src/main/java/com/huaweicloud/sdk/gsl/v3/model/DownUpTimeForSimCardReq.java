@@ -15,6 +15,11 @@ public class DownUpTimeForSimCardReq {
 
     private Integer downUpSwitch;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid")
+
+    private String iccid;
+
     public DownUpTimeForSimCardReq withDownUpSwitch(Integer downUpSwitch) {
         this.downUpSwitch = downUpSwitch;
         return this;
@@ -34,6 +39,23 @@ public class DownUpTimeForSimCardReq {
         this.downUpSwitch = downUpSwitch;
     }
 
+    public DownUpTimeForSimCardReq withIccid(String iccid) {
+        this.iccid = iccid;
+        return this;
+    }
+
+    /**
+     * iccid，传入的sim_card_id为0,则根据iccid进行处理
+     * @return iccid
+     */
+    public String getIccid() {
+        return iccid;
+    }
+
+    public void setIccid(String iccid) {
+        this.iccid = iccid;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -43,12 +65,12 @@ public class DownUpTimeForSimCardReq {
             return false;
         }
         DownUpTimeForSimCardReq that = (DownUpTimeForSimCardReq) obj;
-        return Objects.equals(this.downUpSwitch, that.downUpSwitch);
+        return Objects.equals(this.downUpSwitch, that.downUpSwitch) && Objects.equals(this.iccid, that.iccid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(downUpSwitch);
+        return Objects.hash(downUpSwitch, iccid);
     }
 
     @Override
@@ -56,6 +78,7 @@ public class DownUpTimeForSimCardReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class DownUpTimeForSimCardReq {\n");
         sb.append("    downUpSwitch: ").append(toIndentedString(downUpSwitch)).append("\n");
+        sb.append("    iccid: ").append(toIndentedString(iccid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

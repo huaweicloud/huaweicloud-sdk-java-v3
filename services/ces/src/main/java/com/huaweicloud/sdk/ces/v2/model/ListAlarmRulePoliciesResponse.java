@@ -17,19 +17,19 @@ public class ListAlarmRulePoliciesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
-    private List<Policy> policies = null;
+    private List<ListPolicy> policies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ListAlarmRulePoliciesResponse withPolicies(List<Policy> policies) {
+    public ListAlarmRulePoliciesResponse withPolicies(List<ListPolicy> policies) {
         this.policies = policies;
         return this;
     }
 
-    public ListAlarmRulePoliciesResponse addPoliciesItem(Policy policiesItem) {
+    public ListAlarmRulePoliciesResponse addPoliciesItem(ListPolicy policiesItem) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListAlarmRulePoliciesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAlarmRulePoliciesResponse withPolicies(Consumer<List<Policy>> policiesSetter) {
+    public ListAlarmRulePoliciesResponse withPolicies(Consumer<List<ListPolicy>> policiesSetter) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListAlarmRulePoliciesResponse extends SdkResponse {
      * 策略信息
      * @return policies
      */
-    public List<Policy> getPolicies() {
+    public List<ListPolicy> getPolicies() {
         return policies;
     }
 
-    public void setPolicies(List<Policy> policies) {
+    public void setPolicies(List<ListPolicy> policies) {
         this.policies = policies;
     }
 

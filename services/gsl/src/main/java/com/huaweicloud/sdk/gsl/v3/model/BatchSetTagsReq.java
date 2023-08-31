@@ -24,6 +24,11 @@ public class BatchSetTagsReq {
     private List<Long> simCardIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccids")
+
+    private List<String> iccids = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_ids")
 
     private List<Long> tagIds = null;
@@ -67,7 +72,7 @@ public class BatchSetTagsReq {
     }
 
     /**
-     * SIM卡id列表，最多500
+     * SIM卡id列表，最多500.sim_card_ids与iccids不能同时为空，sim_card_ids参数为空则根据iccids参数处理
      * @return simCardIds
      */
     public List<Long> getSimCardIds() {
@@ -76,6 +81,39 @@ public class BatchSetTagsReq {
 
     public void setSimCardIds(List<Long> simCardIds) {
         this.simCardIds = simCardIds;
+    }
+
+    public BatchSetTagsReq withIccids(List<String> iccids) {
+        this.iccids = iccids;
+        return this;
+    }
+
+    public BatchSetTagsReq addIccidsItem(String iccidsItem) {
+        if (this.iccids == null) {
+            this.iccids = new ArrayList<>();
+        }
+        this.iccids.add(iccidsItem);
+        return this;
+    }
+
+    public BatchSetTagsReq withIccids(Consumer<List<String>> iccidsSetter) {
+        if (this.iccids == null) {
+            this.iccids = new ArrayList<>();
+        }
+        iccidsSetter.accept(this.iccids);
+        return this;
+    }
+
+    /**
+     * iccid列表，最多支持传入500个iccid。sim_card_ids与iccids不能同时为空，sim_card_ids参数为空则根据iccids参数处理
+     * @return iccids
+     */
+    public List<String> getIccids() {
+        return iccids;
+    }
+
+    public void setIccids(List<String> iccids) {
+        this.iccids = iccids;
     }
 
     public BatchSetTagsReq withTagIds(List<Long> tagIds) {
@@ -121,12 +159,12 @@ public class BatchSetTagsReq {
         }
         BatchSetTagsReq that = (BatchSetTagsReq) obj;
         return Objects.equals(this.fileTempId, that.fileTempId) && Objects.equals(this.simCardIds, that.simCardIds)
-            && Objects.equals(this.tagIds, that.tagIds);
+            && Objects.equals(this.iccids, that.iccids) && Objects.equals(this.tagIds, that.tagIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fileTempId, simCardIds, tagIds);
+        return Objects.hash(fileTempId, simCardIds, iccids, tagIds);
     }
 
     @Override
@@ -135,6 +173,7 @@ public class BatchSetTagsReq {
         sb.append("class BatchSetTagsReq {\n");
         sb.append("    fileTempId: ").append(toIndentedString(fileTempId)).append("\n");
         sb.append("    simCardIds: ").append(toIndentedString(simCardIds)).append("\n");
+        sb.append("    iccids: ").append(toIndentedString(iccids)).append("\n");
         sb.append("    tagIds: ").append(toIndentedString(tagIds)).append("\n");
         sb.append("}");
         return sb.toString();

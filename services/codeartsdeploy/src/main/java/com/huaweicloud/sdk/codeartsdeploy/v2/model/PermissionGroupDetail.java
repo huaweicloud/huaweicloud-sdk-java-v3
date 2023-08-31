@@ -109,7 +109,7 @@ public class PermissionGroupDetail {
     }
 
     /**
-     * 是否有管理权限
+     * 是否有编辑主机集群权限矩阵的权限
      * @return canManage
      */
     public Boolean getCanManage() {

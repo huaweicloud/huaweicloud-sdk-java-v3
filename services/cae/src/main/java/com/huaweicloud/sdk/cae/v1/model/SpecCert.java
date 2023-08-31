@@ -22,11 +22,6 @@ public class SpecCert {
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policy")
-
-    private String policy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -65,23 +60,6 @@ public class SpecCert {
         this.key = key;
     }
 
-    public SpecCert withPolicy(String policy) {
-        this.policy = policy;
-        return this;
-    }
-
-    /**
-     * 安全策略。 - tls-1-2-strict - tls-1-2 - tls-1-1 - tls-1-0
-     * @return policy
-     */
-    public String getPolicy() {
-        return policy;
-    }
-
-    public void setPolicy(String policy) {
-        this.policy = policy;
-    }
-
     public SpecCert withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -109,12 +87,12 @@ public class SpecCert {
         }
         SpecCert that = (SpecCert) obj;
         return Objects.equals(this.crt, that.crt) && Objects.equals(this.key, that.key)
-            && Objects.equals(this.policy, that.policy) && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(crt, key, policy, createdAt);
+        return Objects.hash(crt, key, createdAt);
     }
 
     @Override
@@ -123,7 +101,6 @@ public class SpecCert {
         sb.append("class SpecCert {\n");
         sb.append("    crt: ").append(toIndentedString(crt)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
-        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("}");
         return sb.toString();

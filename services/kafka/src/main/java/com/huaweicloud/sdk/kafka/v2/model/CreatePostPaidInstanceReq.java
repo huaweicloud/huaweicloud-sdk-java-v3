@@ -97,80 +97,10 @@ public class CreatePostPaidInstanceReq {
 
     private EngineEnum engine;
 
-    /**
-     * 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,otc,ctc,g42,hk_g42,tm,hk_tm)   - 2.7
-     */
-    public static final class EngineVersionEnum {
-
-        /**
-         * Enum _1_1_0 for value: "1.1.0"
-         */
-        public static final EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
-
-        /**
-         * Enum _2_7 for value: "2.7"
-         */
-        public static final EngineVersionEnum _2_7 = new EngineVersionEnum("2.7");
-
-        private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineVersionEnum> createStaticFields() {
-            Map<String, EngineVersionEnum> map = new HashMap<>();
-            map.put("1.1.0", _1_1_0);
-            map.put("2.7", _2_7);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineVersionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineVersionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineVersionEnum(value));
-        }
-
-        public static EngineVersionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EngineVersionEnum) {
-                return this.value.equals(((EngineVersionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
 
-    private EngineVersionEnum engineVersion;
+    private String engineVersion;
 
     /**
      *  [新规格实例：Kafka实例业务TPS规格，取值范围：   - c6.2u4g.cluster   - c6.4u8g.cluster   - c6.8u16g.cluster   - c6.12u24g.cluster   - c6.16u32g.cluster  老规格实例：](tag:hc,hk) Kafka实例的基准带宽，表示单位时间内传送的最大数据量，单位MB。取值范围：   - 100MB   - 300MB   - 600MB   - 1200MB  注：此参数无需设置，其取值实际是由产品ID（product_id）决定。
@@ -819,7 +749,7 @@ public class CreatePostPaidInstanceReq {
         this.engine = engine;
     }
 
-    public CreatePostPaidInstanceReq withEngineVersion(EngineVersionEnum engineVersion) {
+    public CreatePostPaidInstanceReq withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
@@ -828,11 +758,11 @@ public class CreatePostPaidInstanceReq {
      * 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,otc,ctc,g42,hk_g42,tm,hk_tm)   - 2.7
      * @return engineVersion
      */
-    public EngineVersionEnum getEngineVersion() {
+    public String getEngineVersion() {
         return engineVersion;
     }
 
-    public void setEngineVersion(EngineVersionEnum engineVersion) {
+    public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
 

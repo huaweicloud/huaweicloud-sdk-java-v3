@@ -39,6 +39,11 @@ public class InstanceResponse {
     private List<String> privateDnsNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_dns_names")
+
+    private List<String> publicDnsNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_ips")
 
     private List<String> publicIps = null;
@@ -319,7 +324,7 @@ public class InstanceResponse {
     }
 
     /**
-     * Get privateDnsNames
+     * 内网域名列表
      * @return privateDnsNames
      */
     public List<String> getPrivateDnsNames() {
@@ -328,6 +333,39 @@ public class InstanceResponse {
 
     public void setPrivateDnsNames(List<String> privateDnsNames) {
         this.privateDnsNames = privateDnsNames;
+    }
+
+    public InstanceResponse withPublicDnsNames(List<String> publicDnsNames) {
+        this.publicDnsNames = publicDnsNames;
+        return this;
+    }
+
+    public InstanceResponse addPublicDnsNamesItem(String publicDnsNamesItem) {
+        if (this.publicDnsNames == null) {
+            this.publicDnsNames = new ArrayList<>();
+        }
+        this.publicDnsNames.add(publicDnsNamesItem);
+        return this;
+    }
+
+    public InstanceResponse withPublicDnsNames(Consumer<List<String>> publicDnsNamesSetter) {
+        if (this.publicDnsNames == null) {
+            this.publicDnsNames = new ArrayList<>();
+        }
+        publicDnsNamesSetter.accept(this.publicDnsNames);
+        return this;
+    }
+
+    /**
+     * 公网域名列表
+     * @return publicDnsNames
+     */
+    public List<String> getPublicDnsNames() {
+        return publicDnsNames;
+    }
+
+    public void setPublicDnsNames(List<String> publicDnsNames) {
+        this.publicDnsNames = publicDnsNames;
     }
 
     public InstanceResponse withPublicIps(List<String> publicIps) {
@@ -1046,6 +1084,7 @@ public class InstanceResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
             && Objects.equals(this.enableSsl, that.enableSsl) && Objects.equals(this.privateIps, that.privateIps)
             && Objects.equals(this.privateDnsNames, that.privateDnsNames)
+            && Objects.equals(this.publicDnsNames, that.publicDnsNames)
             && Objects.equals(this.publicIps, that.publicIps) && Objects.equals(this.type, that.type)
             && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.dbUserName, that.dbUserName)
@@ -1077,6 +1116,7 @@ public class InstanceResponse {
             enableSsl,
             privateIps,
             privateDnsNames,
+            publicDnsNames,
             publicIps,
             type,
             created,
@@ -1123,6 +1163,7 @@ public class InstanceResponse {
         sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
         sb.append("    privateIps: ").append(toIndentedString(privateIps)).append("\n");
         sb.append("    privateDnsNames: ").append(toIndentedString(privateDnsNames)).append("\n");
+        sb.append("    publicDnsNames: ").append(toIndentedString(publicDnsNames)).append("\n");
         sb.append("    publicIps: ").append(toIndentedString(publicIps)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");

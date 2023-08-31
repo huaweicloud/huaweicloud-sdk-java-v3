@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class Attributes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gender")
+
+    private String gender;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dress")
 
     private Dress dress;
@@ -65,6 +70,23 @@ public class Attributes {
     @JsonProperty(value = "face_angle")
 
     private Integer faceAngle;
+
+    public Attributes withGender(String gender) {
+        this.gender = gender;
+        return this;
+    }
+
+    /**
+     * 性别： • male：男性 • female：女性
+     * @return gender
+     */
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public Attributes withDress(Dress dress) {
         this.dress = dress;
@@ -289,23 +311,25 @@ public class Attributes {
             return false;
         }
         Attributes that = (Attributes) obj;
-        return Objects.equals(this.dress, that.dress) && Objects.equals(this.glass, that.glass)
-            && Objects.equals(this.hat, that.hat) && Objects.equals(this.age, that.age)
-            && Objects.equals(this.mask, that.mask) && Objects.equals(this.beard, that.beard)
-            && Objects.equals(this.phototype, that.phototype) && Objects.equals(this.quality, that.quality)
-            && Objects.equals(this.hair, that.hair) && Objects.equals(this.expression, that.expression)
-            && Objects.equals(this.faceAngle, that.faceAngle);
+        return Objects.equals(this.gender, that.gender) && Objects.equals(this.dress, that.dress)
+            && Objects.equals(this.glass, that.glass) && Objects.equals(this.hat, that.hat)
+            && Objects.equals(this.age, that.age) && Objects.equals(this.mask, that.mask)
+            && Objects.equals(this.beard, that.beard) && Objects.equals(this.phototype, that.phototype)
+            && Objects.equals(this.quality, that.quality) && Objects.equals(this.hair, that.hair)
+            && Objects.equals(this.expression, that.expression) && Objects.equals(this.faceAngle, that.faceAngle);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dress, glass, hat, age, mask, beard, phototype, quality, hair, expression, faceAngle);
+        return Objects
+            .hash(gender, dress, glass, hat, age, mask, beard, phototype, quality, hair, expression, faceAngle);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Attributes {\n");
+        sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
         sb.append("    dress: ").append(toIndentedString(dress)).append("\n");
         sb.append("    glass: ").append(toIndentedString(glass)).append("\n");
         sb.append("    hat: ").append(toIndentedString(hat)).append("\n");

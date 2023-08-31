@@ -38,6 +38,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowMrsVersionListRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowMrsVersionListResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSingleJobExeRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSingleJobExeResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultRequest;
@@ -788,6 +790,24 @@ public class MrsMeta {
             f -> f.withMarshaller(ShowSqlResultRequest::getSqlId, (req, v) -> {
                 req.setSqlId(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMrsVersionListRequest, ShowMrsVersionListResponse> showMrsVersionList =
+        genForshowMrsVersionList();
+
+    private static HttpRequestDef<ShowMrsVersionListRequest, ShowMrsVersionListResponse> genForshowMrsVersionList() {
+        // basic
+        HttpRequestDef.Builder<ShowMrsVersionListRequest, ShowMrsVersionListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMrsVersionListRequest.class, ShowMrsVersionListResponse.class)
+                .withName("ShowMrsVersionList")
+                .withUri("/v2/{project_id}/metadata/versions")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

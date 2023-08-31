@@ -84,7 +84,7 @@ public class EnvExecutionBody {
     }
 
     /**
-     * 限制触发来源,0不限制任何部署请求来源,1时只允许通过流水线触发部署
+     * 限制触发来源，0不限制任何部署请求来源，1时只允许通过流水线触发部署
      * @return triggerSource
      */
     public String getTriggerSource() {

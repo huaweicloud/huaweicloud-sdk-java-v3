@@ -78,6 +78,11 @@ public class AddonInstanceStatus {
          */
         public static final StatusEnum ROLLBACKING = new StatusEnum("rollbacking");
 
+        /**
+         * Enum ROLLBACKFAILED for value: "rollbackFailed"
+         */
+        public static final StatusEnum ROLLBACKFAILED = new StatusEnum("rollbackFailed");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -93,6 +98,7 @@ public class AddonInstanceStatus {
             map.put("deleteFailed", DELETEFAILED);
             map.put("available", AVAILABLE);
             map.put("rollbacking", ROLLBACKING);
+            map.put("rollbackFailed", ROLLBACKFAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -166,6 +172,16 @@ public class AddonInstanceStatus {
     @JsonProperty(value = "currentVersion")
 
     private Versions currentVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isRollbackable")
+
+    private Boolean isRollbackable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "previousVersion")
+
+    private String previousVersion;
 
     public AddonInstanceStatus withStatus(StatusEnum status) {
         this.status = status;
@@ -277,6 +293,40 @@ public class AddonInstanceStatus {
         this.currentVersion = currentVersion;
     }
 
+    public AddonInstanceStatus withIsRollbackable(Boolean isRollbackable) {
+        this.isRollbackable = isRollbackable;
+        return this;
+    }
+
+    /**
+     * 是否支持回滚到插件升级前的插件版本
+     * @return isRollbackable
+     */
+    public Boolean getIsRollbackable() {
+        return isRollbackable;
+    }
+
+    public void setIsRollbackable(Boolean isRollbackable) {
+        this.isRollbackable = isRollbackable;
+    }
+
+    public AddonInstanceStatus withPreviousVersion(String previousVersion) {
+        this.previousVersion = previousVersion;
+        return this;
+    }
+
+    /**
+     * 插件升级或回滚前的版本
+     * @return previousVersion
+     */
+    public String getPreviousVersion() {
+        return previousVersion;
+    }
+
+    public void setPreviousVersion(String previousVersion) {
+        this.previousVersion = previousVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -288,12 +338,14 @@ public class AddonInstanceStatus {
         AddonInstanceStatus that = (AddonInstanceStatus) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.reason, that.reason)
             && Objects.equals(this.message, that.message) && Objects.equals(this.targetVersions, that.targetVersions)
-            && Objects.equals(this.currentVersion, that.currentVersion);
+            && Objects.equals(this.currentVersion, that.currentVersion)
+            && Objects.equals(this.isRollbackable, that.isRollbackable)
+            && Objects.equals(this.previousVersion, that.previousVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, reason, message, targetVersions, currentVersion);
+        return Objects.hash(status, reason, message, targetVersions, currentVersion, isRollbackable, previousVersion);
     }
 
     @Override
@@ -305,6 +357,8 @@ public class AddonInstanceStatus {
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    targetVersions: ").append(toIndentedString(targetVersions)).append("\n");
         sb.append("    currentVersion: ").append(toIndentedString(currentVersion)).append("\n");
+        sb.append("    isRollbackable: ").append(toIndentedString(isRollbackable)).append("\n");
+        sb.append("    previousVersion: ").append(toIndentedString(previousVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

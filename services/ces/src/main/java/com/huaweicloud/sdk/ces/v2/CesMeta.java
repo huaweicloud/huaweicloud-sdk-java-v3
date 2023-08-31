@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v2;
 
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesResponse;
+import com.huaweicloud.sdk.ces.v2.model.BaseWidgetInfo;
 import com.huaweicloud.sdk.ces.v2.model.BatchCreateResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchCreateResourcesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmRulesRequest;
@@ -10,6 +11,7 @@ import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmsRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteDashboardRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourceGroupsRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourceGroupsRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourceGroupsResponse;
@@ -18,16 +20,27 @@ import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourcesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmsRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmRulesRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmRulesResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmTemplateRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmTemplateResponse;
+import com.huaweicloud.sdk.ces.v2.model.CreateDashboardRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.CreateDashboardWidgetsRequest;
+import com.huaweicloud.sdk.ces.v2.model.CreateDashboardWidgetsResponse;
+import com.huaweicloud.sdk.ces.v2.model.CreateOneDashboardRequest;
+import com.huaweicloud.sdk.ces.v2.model.CreateOneDashboardResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupResponse;
 import com.huaweicloud.sdk.ces.v2.model.DeleteAlarmRuleResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.DeleteAlarmRuleResourcesResponse;
+import com.huaweicloud.sdk.ces.v2.model.DeleteDashboardsRequest;
+import com.huaweicloud.sdk.ces.v2.model.DeleteDashboardsResponse;
+import com.huaweicloud.sdk.ces.v2.model.DeleteOneWidgetRequest;
+import com.huaweicloud.sdk.ces.v2.model.DeleteOneWidgetResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListAgentDimensionInfoRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListAgentDimensionInfoResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmHistoriesRequest;
@@ -42,6 +55,10 @@ import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplateAssociationAlarmsReques
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplateAssociationAlarmsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplatesRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplatesResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListDashboardInfosRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListDashboardInfosResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListDashboardWidgetsRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListDashboardWidgetsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsServicesResourcesRequest;
@@ -55,18 +72,26 @@ import com.huaweicloud.sdk.ces.v2.model.ShowAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v2.model.ShowResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowResourceGroupResponse;
+import com.huaweicloud.sdk.ces.v2.model.ShowWidgetRequest;
+import com.huaweicloud.sdk.ces.v2.model.ShowWidgetResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateWidgetInfo;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class CesMeta {
@@ -273,6 +298,31 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUpdateWidgetsRequest, BatchUpdateWidgetsResponse> batchUpdateWidgets =
+        genForbatchUpdateWidgets();
+
+    private static HttpRequestDef<BatchUpdateWidgetsRequest, BatchUpdateWidgetsResponse> genForbatchUpdateWidgets() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateWidgetsRequest, BatchUpdateWidgetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchUpdateWidgetsRequest.class, BatchUpdateWidgetsResponse.class)
+                .withName("BatchUpdateWidgets")
+                .withUri("/v2/{project_id}/widgets/batch-update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<UpdateWidgetInfo>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchUpdateWidgetsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(UpdateWidgetInfo.class));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAlarmRulesRequest, CreateAlarmRulesResponse> createAlarmRules =
         genForcreateAlarmRules();
 
@@ -315,6 +365,63 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAlarmTemplateRequestBody.class),
             f -> f.withMarshaller(CreateAlarmTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse> createDashboardWidgets =
+        genForcreateDashboardWidgets();
+
+    private static HttpRequestDef<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse> genForcreateDashboardWidgets() {
+        // basic
+        HttpRequestDef.Builder<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDashboardWidgetsRequest.class, CreateDashboardWidgetsResponse.class)
+            .withName("CreateDashboardWidgets")
+            .withUri("/v2/{project_id}/dashboards/{dashboard_id}/widgets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dashboard_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDashboardWidgetsRequest::getDashboardId, (req, v) -> {
+                req.setDashboardId(v);
+            }));
+        builder.<List<BaseWidgetInfo>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CreateDashboardWidgetsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(BaseWidgetInfo.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOneDashboardRequest, CreateOneDashboardResponse> createOneDashboard =
+        genForcreateOneDashboard();
+
+    private static HttpRequestDef<CreateOneDashboardRequest, CreateOneDashboardResponse> genForcreateOneDashboard() {
+        // basic
+        HttpRequestDef.Builder<CreateOneDashboardRequest, CreateOneDashboardResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOneDashboardRequest.class, CreateOneDashboardResponse.class)
+                .withName("CreateOneDashboard")
+                .withUri("/v2/{project_id}/dashboards")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateDashboardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDashboardRequestBody.class),
+            f -> f.withMarshaller(CreateOneDashboardRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -374,6 +481,56 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(ResourcesReqV2.class),
             f -> f.withMarshaller(DeleteAlarmRuleResourcesRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDashboardsRequest, DeleteDashboardsResponse> deleteDashboards =
+        genFordeleteDashboards();
+
+    private static HttpRequestDef<DeleteDashboardsRequest, DeleteDashboardsResponse> genFordeleteDashboards() {
+        // basic
+        HttpRequestDef.Builder<DeleteDashboardsRequest, DeleteDashboardsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteDashboardsRequest.class, DeleteDashboardsResponse.class)
+                .withName("DeleteDashboards")
+                .withUri("/v2/{project_id}/dashboards/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteDashboardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchDeleteDashboardRequestBody.class),
+            f -> f.withMarshaller(DeleteDashboardsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOneWidgetRequest, DeleteOneWidgetResponse> deleteOneWidget =
+        genFordeleteOneWidget();
+
+    private static HttpRequestDef<DeleteOneWidgetRequest, DeleteOneWidgetResponse> genFordeleteOneWidget() {
+        // basic
+        HttpRequestDef.Builder<DeleteOneWidgetRequest, DeleteOneWidgetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteOneWidgetRequest.class, DeleteOneWidgetResponse.class)
+                .withName("DeleteOneWidget")
+                .withUri("/v2/{project_id}/widgets/{widget_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("widget_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOneWidgetRequest::getWidgetId, (req, v) -> {
+                req.setWidgetId(v);
             }));
 
         // response
@@ -769,6 +926,77 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDashboardInfosRequest, ListDashboardInfosResponse> listDashboardInfos =
+        genForlistDashboardInfos();
+
+    private static HttpRequestDef<ListDashboardInfosRequest, ListDashboardInfosResponse> genForlistDashboardInfos() {
+        // basic
+        HttpRequestDef.Builder<ListDashboardInfosRequest, ListDashboardInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDashboardInfosRequest.class, ListDashboardInfosResponse.class)
+                .withName("ListDashboardInfos")
+                .withUri("/v2/{project_id}/dashboards")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDashboardInfosRequest::getEnterpriseId, (req, v) -> {
+                req.setEnterpriseId(v);
+            }));
+        builder.<Boolean>withRequestField("is_favorite",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDashboardInfosRequest::getIsFavorite, (req, v) -> {
+                req.setIsFavorite(v);
+            }));
+        builder.<String>withRequestField("dashboard_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDashboardInfosRequest::getDashboardName, (req, v) -> {
+                req.setDashboardName(v);
+            }));
+        builder.<String>withRequestField("dashboard_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDashboardInfosRequest::getDashboardId, (req, v) -> {
+                req.setDashboardId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse> listDashboardWidgets =
+        genForlistDashboardWidgets();
+
+    private static HttpRequestDef<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse> genForlistDashboardWidgets() {
+        // basic
+        HttpRequestDef.Builder<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDashboardWidgetsRequest.class, ListDashboardWidgetsResponse.class)
+            .withName("ListDashboardWidgets")
+            .withUri("/v2/{project_id}/dashboards/{dashboard_id}/widgets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dashboard_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDashboardWidgetsRequest::getDashboardId, (req, v) -> {
+                req.setDashboardId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListResourceGroupsRequest, ListResourceGroupsResponse> listResourceGroups =
         genForlistResourceGroups();
 
@@ -949,6 +1177,30 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowWidgetRequest, ShowWidgetResponse> showWidget = genForshowWidget();
+
+    private static HttpRequestDef<ShowWidgetRequest, ShowWidgetResponse> genForshowWidget() {
+        // basic
+        HttpRequestDef.Builder<ShowWidgetRequest, ShowWidgetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWidgetRequest.class, ShowWidgetResponse.class)
+                .withName("ShowWidget")
+                .withUri("/v2/{project_id}/widgets/{widget_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("widget_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWidgetRequest::getWidgetId, (req, v) -> {
+                req.setWidgetId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAlarmRulePoliciesRequest, UpdateAlarmRulePoliciesResponse> updateAlarmRulePolicies =
         genForupdateAlarmRulePolicies();
 
@@ -1005,6 +1257,38 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAlarmTemplateRequestBody.class),
             f -> f.withMarshaller(UpdateAlarmTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDashboardRequest, UpdateDashboardResponse> updateDashboard =
+        genForupdateDashboard();
+
+    private static HttpRequestDef<UpdateDashboardRequest, UpdateDashboardResponse> genForupdateDashboard() {
+        // basic
+        HttpRequestDef.Builder<UpdateDashboardRequest, UpdateDashboardResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDashboardRequest.class, UpdateDashboardResponse.class)
+                .withName("UpdateDashboard")
+                .withUri("/v2/{project_id}/dashboards/{dashboard_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dashboard_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDashboardRequest::getDashboardId, (req, v) -> {
+                req.setDashboardId(v);
+            }));
+        builder.<UpdateDashboardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDashboardRequestBody.class),
+            f -> f.withMarshaller(UpdateDashboardRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

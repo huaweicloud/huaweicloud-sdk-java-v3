@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.dgc.v1.model.CreateResourceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateResourceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.CreateScriptRequest;
 import com.huaweicloud.sdk.dgc.v1.model.CreateScriptResponse;
+import com.huaweicloud.sdk.dgc.v1.model.CreateSupplementdataRequest;
+import com.huaweicloud.sdk.dgc.v1.model.CreateSupplementdataResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionRequest;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteConnctionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.DeleteJobRequest;
@@ -54,6 +56,8 @@ import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptResultsResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptsRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListScriptsResponse;
+import com.huaweicloud.sdk.dgc.v1.model.ListSupplementdataRequest;
+import com.huaweicloud.sdk.dgc.v1.model.ListSupplementdataResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksRequest;
 import com.huaweicloud.sdk.dgc.v1.model.ListSystemTasksResponse;
 import com.huaweicloud.sdk.dgc.v1.model.ResourceInfo;
@@ -83,6 +87,9 @@ import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceRequest;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobInstanceResponse;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobRequest;
 import com.huaweicloud.sdk.dgc.v1.model.StopJobResponse;
+import com.huaweicloud.sdk.dgc.v1.model.StopSupplementdataRequest;
+import com.huaweicloud.sdk.dgc.v1.model.StopSupplementdataResponse;
+import com.huaweicloud.sdk.dgc.v1.model.SupplementDataInfo;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionRequest;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateConnectionResponse;
 import com.huaweicloud.sdk.dgc.v1.model.UpdateJobRequest;
@@ -258,6 +265,38 @@ public class DgcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ScriptInfo.class),
             f -> f.withMarshaller(CreateScriptRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSupplementdataRequest, CreateSupplementdataResponse> createSupplementdata =
+        genForcreateSupplementdata();
+
+    private static HttpRequestDef<CreateSupplementdataRequest, CreateSupplementdataResponse> genForcreateSupplementdata() {
+        // basic
+        HttpRequestDef.Builder<CreateSupplementdataRequest, CreateSupplementdataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSupplementdataRequest.class, CreateSupplementdataResponse.class)
+            .withName("CreateSupplementdata")
+            .withUri("/v1.0/{project_id}/supplementdata")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSupplementdataRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<SupplementDataInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SupplementDataInfo.class),
+            f -> f.withMarshaller(CreateSupplementdataRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -744,6 +783,31 @@ public class DgcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSupplementdataRequest, ListSupplementdataResponse> listSupplementdata =
+        genForlistSupplementdata();
+
+    private static HttpRequestDef<ListSupplementdataRequest, ListSupplementdataResponse> genForlistSupplementdata() {
+        // basic
+        HttpRequestDef.Builder<ListSupplementdataRequest, ListSupplementdataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSupplementdataRequest.class, ListSupplementdataResponse.class)
+                .withName("ListSupplementdata")
+                .withUri("/v1.0/{project_id}/supplementdata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupplementdataRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSystemTasksRequest, ListSystemTasksResponse> listSystemTasks =
         genForlistSystemTasks();
 
@@ -1180,6 +1244,38 @@ public class DgcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopJobInstanceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopSupplementdataRequest, StopSupplementdataResponse> stopSupplementdata =
+        genForstopSupplementdata();
+
+    private static HttpRequestDef<StopSupplementdataRequest, StopSupplementdataResponse> genForstopSupplementdata() {
+        // basic
+        HttpRequestDef.Builder<StopSupplementdataRequest, StopSupplementdataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StopSupplementdataRequest.class, StopSupplementdataResponse.class)
+                .withName("StopSupplementdata")
+                .withUri("/v1.0/{project_id}/supplementdata/{instance_name}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopSupplementdataRequest::getInstanceName, (req, v) -> {
+                req.setInstanceName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopSupplementdataRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
             }));
 

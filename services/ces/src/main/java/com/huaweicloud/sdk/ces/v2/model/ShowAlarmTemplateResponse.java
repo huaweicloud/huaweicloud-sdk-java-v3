@@ -41,11 +41,6 @@ public class ShowAlarmTemplateResponse extends SdkResponse {
     private String templateDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "association_alarm_total")
-
-    private Integer associationAlarmTotal;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
     private List<AlarmTemplatePolicies> policies = null;
@@ -135,23 +130,6 @@ public class ShowAlarmTemplateResponse extends SdkResponse {
         this.templateDescription = templateDescription;
     }
 
-    public ShowAlarmTemplateResponse withAssociationAlarmTotal(Integer associationAlarmTotal) {
-        this.associationAlarmTotal = associationAlarmTotal;
-        return this;
-    }
-
-    /**
-     * 告警模板关联的告警规则数目
-     * @return associationAlarmTotal
-     */
-    public Integer getAssociationAlarmTotal() {
-        return associationAlarmTotal;
-    }
-
-    public void setAssociationAlarmTotal(Integer associationAlarmTotal) {
-        this.associationAlarmTotal = associationAlarmTotal;
-    }
-
     public ShowAlarmTemplateResponse withPolicies(List<AlarmTemplatePolicies> policies) {
         this.policies = policies;
         return this;
@@ -197,19 +175,12 @@ public class ShowAlarmTemplateResponse extends SdkResponse {
         return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
             && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.templateDescription, that.templateDescription)
-            && Objects.equals(this.associationAlarmTotal, that.associationAlarmTotal)
             && Objects.equals(this.policies, that.policies);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateId,
-            templateName,
-            templateType,
-            createTime,
-            templateDescription,
-            associationAlarmTotal,
-            policies);
+        return Objects.hash(templateId, templateName, templateType, createTime, templateDescription, policies);
     }
 
     @Override
@@ -221,7 +192,6 @@ public class ShowAlarmTemplateResponse extends SdkResponse {
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    templateDescription: ").append(toIndentedString(templateDescription)).append("\n");
-        sb.append("    associationAlarmTotal: ").append(toIndentedString(associationAlarmTotal)).append("\n");
         sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
         sb.append("}");
         return sb.toString();

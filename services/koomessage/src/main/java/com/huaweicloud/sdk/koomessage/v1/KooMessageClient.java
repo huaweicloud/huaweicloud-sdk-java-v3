@@ -93,12 +93,16 @@ import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchDifferentMessagesRequ
 import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchDifferentMessagesResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchMessagesRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.SendAimBatchMessagesResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.SetPrimaryVideoThumbnailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.SetPrimaryVideoThumbnailResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgSignatureFileInfoRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgSignatureFileInfoResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateDetailRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateDetailResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateVariableRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.ShowAimMsgTemplateVariableResponse;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowTemplateVideoThumbnailRequest;
+import com.huaweicloud.sdk.koomessage.v1.model.ShowTemplateVideoThumbnailResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UnfreezePubRequest;
 import com.huaweicloud.sdk.koomessage.v1.model.UnfreezePubResponse;
 import com.huaweicloud.sdk.koomessage.v1.model.UnlockPortRequest;
@@ -1557,7 +1561,7 @@ public class KooMessageClient {
      *
      * 用于用户创建个人模板。
      * 
-     * &gt; 请求中所有字符串不允许携带“&lt;”、“&gt;”或多个空格。
+     * &gt; 请求中所有字符串不允许携带“&lt;”、“&gt;”、“\\&amp;amp;amp;”或多个空格。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1573,7 +1577,7 @@ public class KooMessageClient {
      *
      * 用于用户创建个人模板。
      * 
-     * &gt; 请求中所有字符串不允许携带“&lt;”、“&gt;”或多个空格。
+     * &gt; 请求中所有字符串不允许携带“&lt;”、“&gt;”、“\\&amp;amp;amp;”或多个空格。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1589,7 +1593,7 @@ public class KooMessageClient {
     /**
      * 删除模板实例
      *
-     * 根据客户提供的模板ID，删除智能信息个人模板。
+     * 根据用户提供的模板ID，删除智能信息个人模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1603,7 +1607,7 @@ public class KooMessageClient {
     /**
      * 删除模板实例
      *
-     * 根据客户提供的模板ID，删除智能信息个人模板。
+     * 根据用户提供的模板ID，删除智能信息个人模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1619,7 +1623,7 @@ public class KooMessageClient {
     /**
      * 删除模板素材
      *
-     * 根据客户提供的模板ID，删除模板素材。
+     * 根据用户提供的模板ID，删除模板素材。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1633,7 +1637,7 @@ public class KooMessageClient {
     /**
      * 删除模板素材
      *
-     * 根据客户提供的模板ID，删除模板素材。
+     * 根据用户提供的模板ID，删除模板素材。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1649,7 +1653,7 @@ public class KooMessageClient {
     /**
      * 查询智能消息模板素材列表
      *
-     * 根据客户提供的过滤条件，查询模板素材列表。
+     * 根据用户提供的过滤条件，查询模板素材列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1663,7 +1667,7 @@ public class KooMessageClient {
     /**
      * 查询智能消息模板素材列表
      *
-     * 根据客户提供的过滤条件，查询模板素材列表。
+     * 根据用户提供的过滤条件，查询模板素材列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1739,9 +1743,69 @@ public class KooMessageClient {
     }
 
     /**
+     * 设置视频模板封面图
+     *
+     * 根据用户提供的视频封面图资源ID和AIM视频资源ID设置视频模板的封面图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetPrimaryVideoThumbnailRequest 请求对象
+     * @return SetPrimaryVideoThumbnailResponse
+     */
+    public SetPrimaryVideoThumbnailResponse setPrimaryVideoThumbnail(SetPrimaryVideoThumbnailRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.setPrimaryVideoThumbnail);
+    }
+
+    /**
+     * 设置视频模板封面图
+     *
+     * 根据用户提供的视频封面图资源ID和AIM视频资源ID设置视频模板的封面图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetPrimaryVideoThumbnailRequest 请求对象
+     * @return SyncInvoker<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse>
+     */
+    public SyncInvoker<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse> setPrimaryVideoThumbnailInvoker(
+        SetPrimaryVideoThumbnailRequest request) {
+        return new SyncInvoker<SetPrimaryVideoThumbnailRequest, SetPrimaryVideoThumbnailResponse>(request,
+            KooMessageMeta.setPrimaryVideoThumbnail, hcClient);
+    }
+
+    /**
+     * 查询视频模板封面图
+     *
+     * 根据用户提供的过滤条件，查询视频模板封面图资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTemplateVideoThumbnailRequest 请求对象
+     * @return ShowTemplateVideoThumbnailResponse
+     */
+    public ShowTemplateVideoThumbnailResponse showTemplateVideoThumbnail(ShowTemplateVideoThumbnailRequest request) {
+        return hcClient.syncInvokeHttp(request, KooMessageMeta.showTemplateVideoThumbnail);
+    }
+
+    /**
+     * 查询视频模板封面图
+     *
+     * 根据用户提供的过滤条件，查询视频模板封面图资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTemplateVideoThumbnailRequest 请求对象
+     * @return SyncInvoker<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse>
+     */
+    public SyncInvoker<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse> showTemplateVideoThumbnailInvoker(
+        ShowTemplateVideoThumbnailRequest request) {
+        return new SyncInvoker<ShowTemplateVideoThumbnailRequest, ShowTemplateVideoThumbnailResponse>(request,
+            KooMessageMeta.showTemplateVideoThumbnail, hcClient);
+    }
+
+    /**
      * 启用或禁用模板实例
      *
-     * 根据客户提供的模板ID，启用或禁用智能信息个人模板。
+     * 根据用户提供的模板ID，启用或禁用智能信息个人模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1755,7 +1819,7 @@ public class KooMessageClient {
     /**
      * 启用或禁用模板实例
      *
-     * 根据客户提供的模板ID，启用或禁用智能信息个人模板。
+     * 根据用户提供的模板ID，启用或禁用智能信息个人模板。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

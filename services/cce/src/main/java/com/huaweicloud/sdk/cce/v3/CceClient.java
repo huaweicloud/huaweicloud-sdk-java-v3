@@ -4,6 +4,10 @@ import com.huaweicloud.sdk.cce.v3.model.AddNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceRequest;
@@ -48,8 +52,12 @@ import com.huaweicloud.sdk.cce.v3.model.RemoveNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.RemoveNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.ResetNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.ResetNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.ResizeClusterRequest;
+import com.huaweicloud.sdk.cce.v3.model.ResizeClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
+import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
@@ -153,6 +161,72 @@ public class CceClient {
      */
     public SyncInvoker<AwakeClusterRequest, AwakeClusterResponse> awakeClusterInvoker(AwakeClusterRequest request) {
         return new SyncInvoker<AwakeClusterRequest, AwakeClusterResponse>(request, CceMeta.awakeCluster, hcClient);
+    }
+
+    /**
+     * 批量添加指定集群的资源标签
+     *
+     * 该API用于批量添加指定集群的资源标签。
+     * &gt; - 每个集群支持最多20个资源标签。
+     * &gt; - 此接口为幂等接口：创建时，如果创建的标签已经存在（key/value均相同视为重复），默认处理成功；key相同，value不同时会覆盖原有标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateClusterTagsRequest 请求对象
+     * @return BatchCreateClusterTagsResponse
+     */
+    public BatchCreateClusterTagsResponse batchCreateClusterTags(BatchCreateClusterTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.batchCreateClusterTags);
+    }
+
+    /**
+     * 批量添加指定集群的资源标签
+     *
+     * 该API用于批量添加指定集群的资源标签。
+     * &gt; - 每个集群支持最多20个资源标签。
+     * &gt; - 此接口为幂等接口：创建时，如果创建的标签已经存在（key/value均相同视为重复），默认处理成功；key相同，value不同时会覆盖原有标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateClusterTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>
+     */
+    public SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTagsInvoker(
+        BatchCreateClusterTagsRequest request) {
+        return new SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>(request,
+            CceMeta.batchCreateClusterTags, hcClient);
+    }
+
+    /**
+     * 批量删除指定集群的资源标签
+     *
+     * 该API用于批量删除指定集群的资源标签。
+     * &gt; - 此接口为幂等接口：删除时，如果删除的标签key不存在，默认处理成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteClusterTagsRequest 请求对象
+     * @return BatchDeleteClusterTagsResponse
+     */
+    public BatchDeleteClusterTagsResponse batchDeleteClusterTags(BatchDeleteClusterTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.batchDeleteClusterTags);
+    }
+
+    /**
+     * 批量删除指定集群的资源标签
+     *
+     * 该API用于批量删除指定集群的资源标签。
+     * &gt; - 此接口为幂等接口：删除时，如果删除的标签key不存在，默认处理成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteClusterTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> batchDeleteClusterTagsInvoker(
+        BatchDeleteClusterTagsRequest request) {
+        return new SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>(request,
+            CceMeta.batchDeleteClusterTags, hcClient);
     }
 
     /**
@@ -862,6 +936,40 @@ public class CceClient {
     }
 
     /**
+     * 变更集群规格
+     *
+     * 该API用于变更一个指定集群的规格。
+     * 
+     * &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * &gt;   - 使用限制请参考：[[变更集群规格](https://support.huaweicloud.com/usermanual-cce/cce_10_0403.html)。](tag:hws)[[变更集群规格](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0403.html)](tag:hws_hk)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeClusterRequest 请求对象
+     * @return ResizeClusterResponse
+     */
+    public ResizeClusterResponse resizeCluster(ResizeClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.resizeCluster);
+    }
+
+    /**
+     * 变更集群规格
+     *
+     * 该API用于变更一个指定集群的规格。
+     * 
+     * &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * &gt;   - 使用限制请参考：[[变更集群规格](https://support.huaweicloud.com/usermanual-cce/cce_10_0403.html)。](tag:hws)[[变更集群规格](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0403.html)](tag:hws_hk)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeClusterRequest 请求对象
+     * @return SyncInvoker<ResizeClusterRequest, ResizeClusterResponse>
+     */
+    public SyncInvoker<ResizeClusterRequest, ResizeClusterResponse> resizeClusterInvoker(ResizeClusterRequest request) {
+        return new SyncInvoker<ResizeClusterRequest, ResizeClusterResponse>(request, CceMeta.resizeCluster, hcClient);
+    }
+
+    /**
      * 重试集群升级任务
      *
      * 重新执行失败的集群升级任务。
@@ -893,6 +1001,36 @@ public class CceClient {
         RetryUpgradeClusterTaskRequest request) {
         return new SyncInvoker<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse>(request,
             CceMeta.retryUpgradeClusterTask, hcClient);
+    }
+
+    /**
+     * 回滚AddonInstance
+     *
+     * 将插件实例回滚到升级前的版本。只有在当前插件实例版本支持回滚到升级前的版本（status.isRollbackable为true），且插件实例状态为running（运行中）、available（可用）、abnormal（不可用）、upgradeFailed（升级失败）、rollbackFailed（回滚失败）时支持回滚。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RollbackAddonInstanceRequest 请求对象
+     * @return RollbackAddonInstanceResponse
+     */
+    public RollbackAddonInstanceResponse rollbackAddonInstance(RollbackAddonInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.rollbackAddonInstance);
+    }
+
+    /**
+     * 回滚AddonInstance
+     *
+     * 将插件实例回滚到升级前的版本。只有在当前插件实例版本支持回滚到升级前的版本（status.isRollbackable为true），且插件实例状态为running（运行中）、available（可用）、abnormal（不可用）、upgradeFailed（升级失败）、rollbackFailed（回滚失败）时支持回滚。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RollbackAddonInstanceRequest 请求对象
+     * @return SyncInvoker<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse>
+     */
+    public SyncInvoker<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> rollbackAddonInstanceInvoker(
+        RollbackAddonInstanceRequest request) {
+        return new SyncInvoker<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse>(request,
+            CceMeta.rollbackAddonInstance, hcClient);
     }
 
     /**

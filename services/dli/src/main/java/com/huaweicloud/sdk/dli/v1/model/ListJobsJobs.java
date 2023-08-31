@@ -201,6 +201,16 @@ public class ListJobsJobs {
 
     private Long endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_cost")
+
+    private String cpuCost;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_byte")
+
+    private String outputByte;
+
     public ListJobsJobs withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -540,6 +550,40 @@ public class ListJobsJobs {
         this.endTime = endTime;
     }
 
+    public ListJobsJobs withCpuCost(String cpuCost) {
+        this.cpuCost = cpuCost;
+        return this;
+    }
+
+    /**
+     * 作业的CPU累计使用量
+     * @return cpuCost
+     */
+    public String getCpuCost() {
+        return cpuCost;
+    }
+
+    public void setCpuCost(String cpuCost) {
+        this.cpuCost = cpuCost;
+    }
+
+    public ListJobsJobs withOutputByte(String outputByte) {
+        this.outputByte = outputByte;
+        return this;
+    }
+
+    /**
+     * 作业的输出字节数
+     * @return outputByte
+     */
+    public String getOutputByte() {
+        return outputByte;
+    }
+
+    public void setOutputByte(String outputByte) {
+        this.outputByte = outputByte;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -558,7 +602,8 @@ public class ListJobsJobs {
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.withColumnHeader, that.withColumnHeader) && Objects.equals(this.detail, that.detail)
             && Objects.equals(this.statement, that.statement) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.message, that.message) && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.message, that.message) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.cpuCost, that.cpuCost) && Objects.equals(this.outputByte, that.outputByte);
     }
 
     @Override
@@ -581,7 +626,9 @@ public class ListJobsJobs {
             statement,
             tags,
             message,
-            endTime);
+            endTime,
+            cpuCost,
+            outputByte);
     }
 
     @Override
@@ -607,6 +654,8 @@ public class ListJobsJobs {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    cpuCost: ").append(toIndentedString(cpuCost)).append("\n");
+        sb.append("    outputByte: ").append(toIndentedString(outputByte)).append("\n");
         sb.append("}");
         return sb.toString();
     }

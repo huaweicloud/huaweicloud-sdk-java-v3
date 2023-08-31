@@ -42,7 +42,7 @@ public class AuthCache {
 
     /**
      * @param akWithName use ak and regionId as key of project, use ak as key of domain
-     * @param id projectId or domainId of the account
+     * @param id         projectId or domainId of the account
      */
     public static void putAuth(String akWithName, String id) {
         AUTH_MAP.put(akWithName, id);

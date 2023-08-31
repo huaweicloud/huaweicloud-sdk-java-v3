@@ -23,6 +23,9 @@ import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSqlLimitRulesBody;
 import com.huaweicloud.sdk.das.v3.model.CreateSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateTuningReq;
+import com.huaweicloud.sdk.das.v3.model.CreateTuningRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessReqBody;
@@ -75,6 +78,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequestBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
@@ -340,6 +345,44 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSqlLimitRulesBody.class),
             f -> f.withMarshaller(CreateSqlLimitRulesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTuningRequest, CreateTuningResponse> createTuning = genForcreateTuning();
+
+    private static HttpRequestDef<CreateTuningRequest, CreateTuningResponse> genForcreateTuning() {
+        // basic
+        HttpRequestDef.Builder<CreateTuningRequest, CreateTuningResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTuningRequest.class, CreateTuningResponse.class)
+                .withName("CreateTuning")
+                .withUri("/v3/{project_id}/connections/{connection_id}/tuning/create-tuning")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTuningRequest::getConnectionId, (req, v) -> {
+                req.setConnectionId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTuningRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CreateTuningReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTuningReq.class),
+            f -> f.withMarshaller(CreateTuningRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1489,6 +1532,44 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSqlSwitchStatusRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTuningRequest, ShowTuningResponse> showTuning = genForshowTuning();
+
+    private static HttpRequestDef<ShowTuningRequest, ShowTuningResponse> genForshowTuning() {
+        // basic
+        HttpRequestDef.Builder<ShowTuningRequest, ShowTuningResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTuningRequest.class, ShowTuningResponse.class)
+                .withName("ShowTuning")
+                .withUri("/v3/{project_id}/connections/{connection_id}/tuning/{message_id}/show-tuning-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("message_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTuningRequest::getMessageId, (req, v) -> {
+                req.setMessageId(v);
+            }));
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTuningRequest::getConnectionId, (req, v) -> {
+                req.setConnectionId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTuningRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

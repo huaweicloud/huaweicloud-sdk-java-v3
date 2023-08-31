@@ -97,80 +97,10 @@ public class CreateInstanceByEngineReq {
 
     private EngineEnum engine;
 
-    /**
-     * 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7
-     */
-    public static final class EngineVersionEnum {
-
-        /**
-         * Enum _1_1_0 for value: "1.1.0"
-         */
-        public static final EngineVersionEnum _1_1_0 = new EngineVersionEnum("1.1.0");
-
-        /**
-         * Enum _2_7 for value: "2.7"
-         */
-        public static final EngineVersionEnum _2_7 = new EngineVersionEnum("2.7");
-
-        private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineVersionEnum> createStaticFields() {
-            Map<String, EngineVersionEnum> map = new HashMap<>();
-            map.put("1.1.0", _1_1_0);
-            map.put("2.7", _2_7);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineVersionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineVersionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineVersionEnum(value));
-        }
-
-        public static EngineVersionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EngineVersionEnum) {
-                return this.value.equals(((EngineVersionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
 
-    private EngineVersionEnum engineVersion;
+    private String engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_num")
@@ -580,7 +510,7 @@ public class CreateInstanceByEngineReq {
         this.engine = engine;
     }
 
-    public CreateInstanceByEngineReq withEngineVersion(EngineVersionEnum engineVersion) {
+    public CreateInstanceByEngineReq withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
@@ -589,11 +519,11 @@ public class CreateInstanceByEngineReq {
      * 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm)   - 2.7
      * @return engineVersion
      */
-    public EngineVersionEnum getEngineVersion() {
+    public String getEngineVersion() {
         return engineVersion;
     }
 
-    public void setEngineVersion(EngineVersionEnum engineVersion) {
+    public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
 

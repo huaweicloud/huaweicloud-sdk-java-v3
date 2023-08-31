@@ -29,6 +29,11 @@ public class ResqTagResource {
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "without_any_tag")
+
+    private Boolean withoutAnyTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -121,6 +126,23 @@ public class ResqTagResource {
         this.tags = tags;
     }
 
+    public ResqTagResource withWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+        return this;
+    }
+
+    /**
+     * 是否仅查询未带标签的资源。该字段为true时查询不带标签的资源。
+     * @return withoutAnyTag
+     */
+    public Boolean getWithoutAnyTag() {
+        return withoutAnyTag;
+    }
+
+    public void setWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+    }
+
     public ResqTagResource withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -165,13 +187,13 @@ public class ResqTagResource {
         }
         ResqTagResource that = (ResqTagResource) obj;
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.resourceTypes, that.resourceTypes)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.withoutAnyTag, that.withoutAnyTag)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, resourceTypes, tags, offset, limit);
+        return Objects.hash(projectId, resourceTypes, tags, withoutAnyTag, offset, limit);
     }
 
     @Override
@@ -181,6 +203,7 @@ public class ResqTagResource {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    resourceTypes: ").append(toIndentedString(resourceTypes)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    withoutAnyTag: ").append(toIndentedString(withoutAnyTag)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

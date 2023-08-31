@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowHdfsFileListResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowJobExeListNewResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowMrsVersionListRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowMrsVersionListResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSingleJobExeRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSingleJobExeResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultRequest;
@@ -671,6 +673,36 @@ public class MrsClient {
      */
     public SyncInvoker<ShowSqlResultRequest, ShowSqlResultResponse> showSqlResultInvoker(ShowSqlResultRequest request) {
         return new SyncInvoker<ShowSqlResultRequest, ShowSqlResultResponse>(request, MrsMeta.showSqlResult, hcClient);
+    }
+
+    /**
+     * 展示MRS版本列表
+     *
+     * 展示MRS版本列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMrsVersionListRequest 请求对象
+     * @return ShowMrsVersionListResponse
+     */
+    public ShowMrsVersionListResponse showMrsVersionList(ShowMrsVersionListRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.showMrsVersionList);
+    }
+
+    /**
+     * 展示MRS版本列表
+     *
+     * 展示MRS版本列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMrsVersionListRequest 请求对象
+     * @return SyncInvoker<ShowMrsVersionListRequest, ShowMrsVersionListResponse>
+     */
+    public SyncInvoker<ShowMrsVersionListRequest, ShowMrsVersionListResponse> showMrsVersionListInvoker(
+        ShowMrsVersionListRequest request) {
+        return new SyncInvoker<ShowMrsVersionListRequest, ShowMrsVersionListResponse>(request,
+            MrsMeta.showMrsVersionList, hcClient);
     }
 
 }

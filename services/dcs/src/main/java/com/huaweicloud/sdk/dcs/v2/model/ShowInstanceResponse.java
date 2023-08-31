@@ -115,6 +115,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private List<String> azCodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_zones")
+
+    private List<String> availableZones = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_user")
 
     private String accessUser;
@@ -894,6 +899,39 @@ public class ShowInstanceResponse extends SdkResponse {
         this.azCodes = azCodes;
     }
 
+    public ShowInstanceResponse withAvailableZones(List<String> availableZones) {
+        this.availableZones = availableZones;
+        return this;
+    }
+
+    public ShowInstanceResponse addAvailableZonesItem(String availableZonesItem) {
+        if (this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
+        this.availableZones.add(availableZonesItem);
+        return this;
+    }
+
+    public ShowInstanceResponse withAvailableZones(Consumer<List<String>> availableZonesSetter) {
+        if (this.availableZones == null) {
+            this.availableZones = new ArrayList<>();
+        }
+        availableZonesSetter.accept(this.availableZones);
+        return this;
+    }
+
+    /**
+     * 实例所在的可用区id。返回\"可用区ID\"
+     * @return availableZones
+     */
+    public List<String> getAvailableZones() {
+        return availableZones;
+    }
+
+    public void setAvailableZones(List<String> availableZones) {
+        this.availableZones = availableZones;
+    }
+
     public ShowInstanceResponse withAccessUser(String accessUser) {
         this.accessUser = accessUser;
         return this;
@@ -1671,11 +1709,12 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.maintainEnd, that.maintainEnd) && Objects.equals(this.engine, that.engine)
             && Objects.equals(this.noPasswordAccess, that.noPasswordAccess) && Objects.equals(this.ip, that.ip)
             && Objects.equals(this.instanceBackupPolicy, that.instanceBackupPolicy)
-            && Objects.equals(this.azCodes, that.azCodes) && Objects.equals(this.accessUser, that.accessUser)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.port, that.port)
-            && Objects.equals(this.userId, that.userId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.subnetId, that.subnetId)
-            && Objects.equals(this.subnetName, that.subnetName) && Objects.equals(this.subnetCidr, that.subnetCidr)
+            && Objects.equals(this.azCodes, that.azCodes) && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.accessUser, that.accessUser) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.subnetName, that.subnetName)
+            && Objects.equals(this.subnetCidr, that.subnetCidr)
             && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.domainName, that.domainName)
             && Objects.equals(this.readonlyDomainName, that.readonlyDomainName)
@@ -1725,6 +1764,7 @@ public class ShowInstanceResponse extends SdkResponse {
             ip,
             instanceBackupPolicy,
             azCodes,
+            availableZones,
             accessUser,
             instanceId,
             port,
@@ -1792,6 +1832,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    instanceBackupPolicy: ").append(toIndentedString(instanceBackupPolicy)).append("\n");
         sb.append("    azCodes: ").append(toIndentedString(azCodes)).append("\n");
+        sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");

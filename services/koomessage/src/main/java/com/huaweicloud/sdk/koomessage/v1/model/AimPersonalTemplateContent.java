@@ -143,7 +143,7 @@ public class AimPersonalTemplateContent {
     }
 
     /**
-     * src类型。资源类型为Image或Video时，该项为必填项。 - 1：指资源ID  - 2：指资源地址 
+     * src类型。资源类型为Image或Video时，该项为必填项。 - 1：指资源ID  - 2：指资源地址  > src_type为2，即资源地址时，src或cover内容必须是存储在客户侧服务器上的资源地址。 
      * minimum: 1
      * maximum: 10
      * @return srcType
@@ -162,7 +162,7 @@ public class AimPersonalTemplateContent {
     }
 
     /**
-     * 资源来源，资源类型为Image或Video时，为必填。  > - 如上src_type为1，即资源ID时，参数填入上传模板素材接口中返回的aim_resource_id，如：691996319597764608 > - 如上src_type为2，即资源地址时，参数填写资源完整的URL，最大长度不超过1000个字符  
+     * 资源来源，资源类型为Image或Video时，为必填，通过设置视频模板封面图接口设置视频封面。 > - 如上src_type为1，即资源ID时，参数填入上传模板素材接口中返回的aim_resource_id，如：691996319597764608 > - 如上src_type为2，即资源地址时，参数填写资源完整的URL，最大长度不超过1000个字符  
      * @return src
      */
     public String getSrc() {

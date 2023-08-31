@@ -1,14 +1,9 @@
 package com.huaweicloud.sdk.cae.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -25,86 +20,6 @@ public class MetaDomain {
     @JsonProperty(value = "name")
 
     private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "zone_id")
-
-    private String zoneId;
-
-    /**
-     * 域名类型，默认是公网域名public
-     */
-    public static final class ZoneTypeEnum {
-
-        /**
-         * Enum PRIVATE for value: "private"
-         */
-        public static final ZoneTypeEnum PRIVATE = new ZoneTypeEnum("private");
-
-        /**
-         * Enum PUBLIC for value: "public"
-         */
-        public static final ZoneTypeEnum PUBLIC = new ZoneTypeEnum("public");
-
-        private static final Map<String, ZoneTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ZoneTypeEnum> createStaticFields() {
-            Map<String, ZoneTypeEnum> map = new HashMap<>();
-            map.put("private", PRIVATE);
-            map.put("public", PUBLIC);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ZoneTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ZoneTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ZoneTypeEnum(value));
-        }
-
-        public static ZoneTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ZoneTypeEnum) {
-                return this.value.equals(((ZoneTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "zone_type")
-
-    private ZoneTypeEnum zoneType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
@@ -145,40 +60,6 @@ public class MetaDomain {
         this.name = name;
     }
 
-    public MetaDomain withZoneId(String zoneId) {
-        this.zoneId = zoneId;
-        return this;
-    }
-
-    /**
-     * 区域ID。
-     * @return zoneId
-     */
-    public String getZoneId() {
-        return zoneId;
-    }
-
-    public void setZoneId(String zoneId) {
-        this.zoneId = zoneId;
-    }
-
-    public MetaDomain withZoneType(ZoneTypeEnum zoneType) {
-        this.zoneType = zoneType;
-        return this;
-    }
-
-    /**
-     * 域名类型，默认是公网域名public
-     * @return zoneType
-     */
-    public ZoneTypeEnum getZoneType() {
-        return zoneType;
-    }
-
-    public void setZoneType(ZoneTypeEnum zoneType) {
-        this.zoneType = zoneType;
-    }
-
     public MetaDomain withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -206,13 +87,12 @@ public class MetaDomain {
         }
         MetaDomain that = (MetaDomain) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.zoneType, that.zoneType)
             && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, zoneId, zoneType, createdAt);
+        return Objects.hash(id, name, createdAt);
     }
 
     @Override
@@ -221,8 +101,6 @@ public class MetaDomain {
         sb.append("class MetaDomain {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    zoneId: ").append(toIndentedString(zoneId)).append("\n");
-        sb.append("    zoneType: ").append(toIndentedString(zoneType)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.ram.v1.model.ListResourceShareTagsRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceShareTagsResponse;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsRequest;
 import com.huaweicloud.sdk.ram.v1.model.ListResourceSharesByTagsResponse;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceTypesRequest;
+import com.huaweicloud.sdk.ram.v1.model.ListResourceTypesResponse;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationRequest;
 import com.huaweicloud.sdk.ram.v1.model.RejectResourceShareInvitationResponse;
 import com.huaweicloud.sdk.ram.v1.model.SearchResourceShareAssociationsRequest;
@@ -162,6 +164,64 @@ public class RamAsyncClient {
         ListResourceSharePermissionsRequest request) {
         return new AsyncInvoker<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResponse>(request,
             RamMeta.listResourceSharePermissions, hcClient);
+    }
+
+    /**
+     * 查询资源共享的配额
+     *
+     * 查询当前帐号的资源共享配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaRequest 请求对象
+     * @return CompletableFuture<ListQuotaResponse>
+     */
+    public CompletableFuture<ListQuotaResponse> listQuotaAsync(ListQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, RamMeta.listQuota);
+    }
+
+    /**
+     * 查询资源共享的配额
+     *
+     * 查询当前帐号的资源共享配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotaRequest 请求对象
+     * @return AsyncInvoker<ListQuotaRequest, ListQuotaResponse>
+     */
+    public AsyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaAsyncInvoker(ListQuotaRequest request) {
+        return new AsyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, RamMeta.listQuota, hcClient);
+    }
+
+    /**
+     * 检索云服务资源类型
+     *
+     * 查询已对接云服务的资源类型和区域等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTypesRequest 请求对象
+     * @return CompletableFuture<ListResourceTypesResponse>
+     */
+    public CompletableFuture<ListResourceTypesResponse> listResourceTypesAsync(ListResourceTypesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RamMeta.listResourceTypes);
+    }
+
+    /**
+     * 检索云服务资源类型
+     *
+     * 查询已对接云服务的资源类型和区域等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListResourceTypesRequest 请求对象
+     * @return AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>
+     */
+    public AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypesAsyncInvoker(
+        ListResourceTypesRequest request) {
+        return new AsyncInvoker<ListResourceTypesRequest, ListResourceTypesResponse>(request, RamMeta.listResourceTypes,
+            hcClient);
     }
 
     /**
@@ -346,34 +406,6 @@ public class RamAsyncClient {
         SearchSharedPrincipalsRequest request) {
         return new AsyncInvoker<SearchSharedPrincipalsRequest, SearchSharedPrincipalsResponse>(request,
             RamMeta.searchSharedPrincipals, hcClient);
-    }
-
-    /**
-     * 查询资源共享的配额
-     *
-     * 查询当前帐号的资源共享配额信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotaRequest 请求对象
-     * @return CompletableFuture<ListQuotaResponse>
-     */
-    public CompletableFuture<ListQuotaResponse> listQuotaAsync(ListQuotaRequest request) {
-        return hcClient.asyncInvokeHttp(request, RamMeta.listQuota);
-    }
-
-    /**
-     * 查询资源共享的配额
-     *
-     * 查询当前帐号的资源共享配额信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotaRequest 请求对象
-     * @return AsyncInvoker<ListQuotaRequest, ListQuotaResponse>
-     */
-    public AsyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaAsyncInvoker(ListQuotaRequest request) {
-        return new AsyncInvoker<ListQuotaRequest, ListQuotaResponse>(request, RamMeta.listQuota, hcClient);
     }
 
     /**

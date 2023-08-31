@@ -1,0 +1,264 @@
+package com.huaweicloud.sdk.codeartsdeploy.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+/**
+ * 主机集群详细信息
+ */
+public class CreateHostClusterRequestBody {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    /**
+     * 操作系统：windows|linux
+     */
+    public static final class OsEnum {
+
+        /**
+         * Enum WINDOWS for value: "windows"
+         */
+        public static final OsEnum WINDOWS = new OsEnum("windows");
+
+        /**
+         * Enum LINUX for value: "linux"
+         */
+        public static final OsEnum LINUX = new OsEnum("linux");
+
+        private static final Map<String, OsEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OsEnum> createStaticFields() {
+            Map<String, OsEnum> map = new HashMap<>();
+            map.put("windows", WINDOWS);
+            map.put("linux", LINUX);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OsEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OsEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEnum(value));
+        }
+
+        public static OsEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OsEnum) {
+                return this.value.equals(((OsEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os")
+
+    private OsEnum os;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slave_cluster_id")
+
+    private String slaveClusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_proxy_mode")
+
+    private Integer isProxyMode;
+
+    public CreateHostClusterRequestBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 主机集群名
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public CreateHostClusterRequestBody withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 项目ID
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public CreateHostClusterRequestBody withOs(OsEnum os) {
+        this.os = os;
+        return this;
+    }
+
+    /**
+     * 操作系统：windows|linux
+     * @return os
+     */
+    public OsEnum getOs() {
+        return os;
+    }
+
+    public void setOs(OsEnum os) {
+        this.os = os;
+    }
+
+    public CreateHostClusterRequestBody withSlaveClusterId(String slaveClusterId) {
+        this.slaveClusterId = slaveClusterId;
+        return this;
+    }
+
+    /**
+     * slave集群id，默认为null时使用默认slave集群，用户自定义slave时为slave集群id
+     * @return slaveClusterId
+     */
+    public String getSlaveClusterId() {
+        return slaveClusterId;
+    }
+
+    public void setSlaveClusterId(String slaveClusterId) {
+        this.slaveClusterId = slaveClusterId;
+    }
+
+    public CreateHostClusterRequestBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public CreateHostClusterRequestBody withIsProxyMode(Integer isProxyMode) {
+        this.isProxyMode = isProxyMode;
+        return this;
+    }
+
+    /**
+     * 主机集群是否为代理机接入模式， 1：是 0：否
+     * @return isProxyMode
+     */
+    public Integer getIsProxyMode() {
+        return isProxyMode;
+    }
+
+    public void setIsProxyMode(Integer isProxyMode) {
+        this.isProxyMode = isProxyMode;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        CreateHostClusterRequestBody that = (CreateHostClusterRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.os, that.os) && Objects.equals(this.slaveClusterId, that.slaveClusterId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.isProxyMode, that.isProxyMode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, projectId, os, slaveClusterId, description, isProxyMode);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class CreateHostClusterRequestBody {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    os: ").append(toIndentedString(os)).append("\n");
+        sb.append("    slaveClusterId: ").append(toIndentedString(slaveClusterId)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    isProxyMode: ").append(toIndentedString(isProxyMode)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}
