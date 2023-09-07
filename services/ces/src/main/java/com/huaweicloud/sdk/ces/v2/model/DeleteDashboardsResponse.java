@@ -41,7 +41,7 @@ public class DeleteDashboardsResponse extends SdkResponse {
     }
 
     /**
-     * 批量删除监控面板返回结果
+     * 批量删除监控看板返回结果
      * @return dashboards
      */
     public List<BatchDeleteDashboardRespInfo> getDashboards() {

@@ -11,19 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * ScheduledPolicy
+ * 定时、周期任务策略
  */
 public class ScheduledPolicy {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_time")
-
-    private String startTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
-
-    private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "launch_time")
@@ -31,32 +21,32 @@ public class ScheduledPolicy {
     private String launchTime;
 
     /**
-     * 非必选，不填写时计划任务为定时执行， 填写时，为周期执行，且只能填写DAILY，WEEKLY，MONTHLY 中的一种，分别为按天，按周，按月周期执行
+     * 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
      */
     public static final class RecurrenceTypeEnum {
 
         /**
-         * Enum DAILY for value: "DAILY"
+         * Enum DAILY for value: "Daily"
          */
-        public static final RecurrenceTypeEnum DAILY = new RecurrenceTypeEnum("DAILY");
+        public static final RecurrenceTypeEnum DAILY = new RecurrenceTypeEnum("Daily");
 
         /**
-         * Enum WEEKLY for value: "WEEKLY"
+         * Enum WEEKLY for value: "Weekly"
          */
-        public static final RecurrenceTypeEnum WEEKLY = new RecurrenceTypeEnum("WEEKLY");
+        public static final RecurrenceTypeEnum WEEKLY = new RecurrenceTypeEnum("Weekly");
 
         /**
-         * Enum MONTHLY for value: "MONTHLY"
+         * Enum MONTHLY for value: "Monthly"
          */
-        public static final RecurrenceTypeEnum MONTHLY = new RecurrenceTypeEnum("MONTHLY");
+        public static final RecurrenceTypeEnum MONTHLY = new RecurrenceTypeEnum("Monthly");
 
         private static final Map<String, RecurrenceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RecurrenceTypeEnum> createStaticFields() {
             Map<String, RecurrenceTypeEnum> map = new HashMap<>();
-            map.put("DAILY", DAILY);
-            map.put("WEEKLY", WEEKLY);
-            map.put("MONTHLY", MONTHLY);
+            map.put("Daily", DAILY);
+            map.put("Weekly", WEEKLY);
+            map.put("Monthly", MONTHLY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -116,39 +106,15 @@ public class ScheduledPolicy {
 
     private String recurrenceValue;
 
-    public ScheduledPolicy withStartTime(String startTime) {
-        this.startTime = startTime;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
 
-    /**
-     * 非必选，仅当recurrence_type不为空时生效，表示计划任务的生效开始时间，格式为yyyy-MM-dd'T'HH:mm'Z'，不填写时默认为任务创建成功的时间
-     * @return startTime
-     */
-    public String getStartTime() {
-        return startTime;
-    }
+    private String startTime;
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
 
-    public ScheduledPolicy withEndTime(String endTime) {
-        this.endTime = endTime;
-        return this;
-    }
-
-    /**
-     * 仅当recurrence_type不为空时生效且必选，表示计划任务的生效结束时间，格式为yyyy-MM-dd'T'HH:mm'Z'
-     * @return endTime
-     */
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
+    private String endTime;
 
     public ScheduledPolicy withLaunchTime(String launchTime) {
         this.launchTime = launchTime;
@@ -156,7 +122,7 @@ public class ScheduledPolicy {
     }
 
     /**
-     * 必选，执行时间，采用UTC时间，recurrence_type不填写或为空时，格式为HH:mm, recurrence_type不为空时，格式为yyyy-MM-dd'T'HH:mm'Z'
+     * 触发时间，遵循UTC时间。如果scaling_policy_type为SCHEDULED，则格式为：YYYY-MM-DDThh:mmZ。如果scaling_policy_type为RECURRENCE，则格式为：hh:mm。
      * @return launchTime
      */
     public String getLaunchTime() {
@@ -173,7 +139,7 @@ public class ScheduledPolicy {
     }
 
     /**
-     * 非必选，不填写时计划任务为定时执行， 填写时，为周期执行，且只能填写DAILY，WEEKLY，MONTHLY 中的一种，分别为按天，按周，按月周期执行
+     * 周期触发类型，scaling_policy_type为RECURRENCE时该项必选。Daily：每天执行一次。Weekly：每周指定天执行一次。Monthly：每月指定天执行一次。
      * @return recurrenceType
      */
     public RecurrenceTypeEnum getRecurrenceType() {
@@ -190,7 +156,7 @@ public class ScheduledPolicy {
     }
 
     /**
-     * 仅当recurrence_type为WEEKLY，MONTHLY时必选，表示周期执行的具体日期，多个日期用,分割。recurrence_type为WEEKLY时，可填入1-7， recurrence_type为MONTHLY时，可填入1-31
+     * 周期触发任务数值，scaling_policy_type为RECURRENCE时该项必选。类型为Daily时，该字段为null，表示每天执行类型为Weekly时，该字段取值范围为1-7，1表示星期日，以此类推，以”,”分割，例如：1,3,5。类型为Monthly时，该字段取值范围为1-31，分别表示每月的日期，以“,”分割，例如：1,10,13,28。说明：- 当recurrence_type类型为Daily时，recurrence_value参数不生效。
      * @return recurrenceValue
      */
     public String getRecurrenceValue() {
@@ -199,6 +165,40 @@ public class ScheduledPolicy {
 
     public void setRecurrenceValue(String recurrenceValue) {
         this.recurrenceValue = recurrenceValue;
+    }
+
+    public ScheduledPolicy withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * 周期策略重复执行开始时间，遵循UTC时间。默认为当前时间，格式为：YYYY-MM-DDThh：mZ
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public ScheduledPolicy withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 周期策略重复执行结束时间，遵循UTC时间，scaling_policy_type为RECURRENCE时该项必选。当为周期类型策略时，不得早于当前时间和开始时间。格式为：YYYY-MM-DDThh：mmZ
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     @Override
@@ -210,26 +210,26 @@ public class ScheduledPolicy {
             return false;
         }
         ScheduledPolicy that = (ScheduledPolicy) obj;
-        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.launchTime, that.launchTime)
+        return Objects.equals(this.launchTime, that.launchTime)
             && Objects.equals(this.recurrenceType, that.recurrenceType)
-            && Objects.equals(this.recurrenceValue, that.recurrenceValue);
+            && Objects.equals(this.recurrenceValue, that.recurrenceValue)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, launchTime, recurrenceType, recurrenceValue);
+        return Objects.hash(launchTime, recurrenceType, recurrenceValue, startTime, endTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScheduledPolicy {\n");
-        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    launchTime: ").append(toIndentedString(launchTime)).append("\n");
         sb.append("    recurrenceType: ").append(toIndentedString(recurrenceType)).append("\n");
         sb.append("    recurrenceValue: ").append(toIndentedString(recurrenceValue)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

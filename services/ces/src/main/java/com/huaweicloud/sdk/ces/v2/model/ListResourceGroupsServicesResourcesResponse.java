@@ -66,7 +66,7 @@ public class ListResourceGroupsServicesResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 资源分组资源列表
+     * 资源分组关联资源列表
      * @return resources
      */
     public List<GetResourceGroupResources> getResources() {

@@ -229,7 +229,8 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         }
 
         if (Objects.nonNull(httpRequest.getContentType())
-                && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
+                && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)
+                && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_BSON)) {
             builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
         }
 

@@ -40,7 +40,7 @@ public class BatchDeleteDashboardRequestBody {
     }
 
     /**
-     * 监控面板id列表
+     * 监控看板id列表
      * @return dashboardIds
      */
     public List<String> getDashboardIds() {

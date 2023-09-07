@@ -21,7 +21,7 @@ public class DashBoardNameItem {
     }
 
     /**
-     * 自定义监控面板名称
+     * 自定义监控看板名称
      * @return dashboardName
      */
     public String getDashboardName() {

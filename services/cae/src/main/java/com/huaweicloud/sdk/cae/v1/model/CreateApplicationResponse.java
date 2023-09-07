@@ -15,49 +15,49 @@ public class CreateApplicationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_version")
 
-    private String apiVersion;
+    private ApiVersionObj apiVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
 
-    private String kind;
+    private ApplicationKindObj kind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
     private ApplicationMetadata metadata;
 
-    public CreateApplicationResponse withApiVersion(String apiVersion) {
+    public CreateApplicationResponse withApiVersion(ApiVersionObj apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
     /**
-     * API版本，固定值“v1”，该值不可修改。
+     * Get apiVersion
      * @return apiVersion
      */
-    public String getApiVersion() {
+    public ApiVersionObj getApiVersion() {
         return apiVersion;
     }
 
-    public void setApiVersion(String apiVersion) {
+    public void setApiVersion(ApiVersionObj apiVersion) {
         this.apiVersion = apiVersion;
     }
 
-    public CreateApplicationResponse withKind(String kind) {
+    public CreateApplicationResponse withKind(ApplicationKindObj kind) {
         this.kind = kind;
         return this;
     }
 
     /**
-     * API类型，固定值“Application”，该值不可修改。
+     * Get kind
      * @return kind
      */
-    public String getKind() {
+    public ApplicationKindObj getKind() {
         return kind;
     }
 
-    public void setKind(String kind) {
+    public void setKind(ApplicationKindObj kind) {
         this.kind = kind;
     }
 

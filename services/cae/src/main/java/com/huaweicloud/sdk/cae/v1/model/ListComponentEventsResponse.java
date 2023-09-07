@@ -17,49 +17,49 @@ public class ListComponentEventsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_version")
 
-    private String apiVersion;
+    private ApiVersionObj apiVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
 
-    private String kind;
+    private ComponentEventKindObj kind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
     private List<EventItem> items = null;
 
-    public ListComponentEventsResponse withApiVersion(String apiVersion) {
+    public ListComponentEventsResponse withApiVersion(ApiVersionObj apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
     /**
-     * API版本，固定值“v1”，该值不可修改。
+     * Get apiVersion
      * @return apiVersion
      */
-    public String getApiVersion() {
+    public ApiVersionObj getApiVersion() {
         return apiVersion;
     }
 
-    public void setApiVersion(String apiVersion) {
+    public void setApiVersion(ApiVersionObj apiVersion) {
         this.apiVersion = apiVersion;
     }
 
-    public ListComponentEventsResponse withKind(String kind) {
+    public ListComponentEventsResponse withKind(ComponentEventKindObj kind) {
         this.kind = kind;
         return this;
     }
 
     /**
-     * API类型，固定值“ComponentEvent”，该值不可修改。
+     * Get kind
      * @return kind
      */
-    public String getKind() {
+    public ComponentEventKindObj getKind() {
         return kind;
     }
 
-    public void setKind(String kind) {
+    public void setKind(ComponentEventKindObj kind) {
         this.kind = kind;
     }
 

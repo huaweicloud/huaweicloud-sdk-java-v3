@@ -13,14 +13,14 @@ public class Location {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x")
 
-    private Integer x;
+    private String x;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "y")
 
-    private Integer y;
+    private String y;
 
-    public Location withX(Integer x) {
+    public Location withX(String x) {
         this.x = x;
         return this;
     }
@@ -29,15 +29,15 @@ public class Location {
      * Get x
      * @return x
      */
-    public Integer getX() {
+    public String getX() {
         return x;
     }
 
-    public void setX(Integer x) {
+    public void setX(String x) {
         this.x = x;
     }
 
-    public Location withY(Integer y) {
+    public Location withY(String y) {
         this.y = y;
         return this;
     }
@@ -46,11 +46,11 @@ public class Location {
      * Get y
      * @return y
      */
-    public Integer getY() {
+    public String getY() {
         return y;
     }
 
-    public void setY(Integer y) {
+    public void setY(String y) {
         this.y = y;
     }
 

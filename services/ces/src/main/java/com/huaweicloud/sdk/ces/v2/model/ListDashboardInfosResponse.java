@@ -41,7 +41,7 @@ public class ListDashboardInfosResponse extends SdkResponse {
     }
 
     /**
-     * 监控面板列表
+     * 监控看板列表
      * @return dashboards
      */
     public List<DashBoardInfo> getDashboards() {

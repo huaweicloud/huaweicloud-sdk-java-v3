@@ -101,7 +101,7 @@ public class ShowTopDomainNamesRequest {
     }
 
     /**
-     * 服务区域：mainland_china（默认）、outside_mainland_china，当查询回源类指标时该参数无效。
+     * 服务区域：mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china，当查询回源类指标时该参数无效。
      * @return serviceArea
      */
     public String getServiceArea() {

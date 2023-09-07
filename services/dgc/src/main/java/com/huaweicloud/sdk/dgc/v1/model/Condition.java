@@ -26,7 +26,7 @@ public class Condition {
     }
 
     /**
-     * Get preNodeName
+     * 本节点依赖的前一个节点名称
      * @return preNodeName
      */
     public String getPreNodeName() {
@@ -43,7 +43,7 @@ public class Condition {
     }
 
     /**
-     * Get expression
+     * EL表达式，如果EL表达式的计算结果为true，则触发执行本节点
      * @return expression
      */
     public String getExpression() {

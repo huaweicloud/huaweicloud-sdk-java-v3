@@ -53,7 +53,7 @@ public class ListDashboardInfosRequest {
     }
 
     /**
-     * 指定企业项目下监控面板是否收藏，true:收藏，false:未收藏，填此参数时，enterprise_id必填
+     * 指定企业项目下监控看板是否收藏，true:收藏，false:未收藏，填此参数时，enterprise_id必填
      * @return isFavorite
      */
     public Boolean getIsFavorite() {
@@ -70,7 +70,7 @@ public class ListDashboardInfosRequest {
     }
 
     /**
-     * 监控面板名称
+     * 监控看板名称
      * @return dashboardName
      */
     public String getDashboardName() {
@@ -87,7 +87,7 @@ public class ListDashboardInfosRequest {
     }
 
     /**
-     * 监控面板id
+     * 监控看板id
      * @return dashboardId
      */
     public String getDashboardId() {

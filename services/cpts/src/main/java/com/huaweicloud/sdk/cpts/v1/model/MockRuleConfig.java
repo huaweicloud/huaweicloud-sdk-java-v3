@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cpts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 全链路压测探针Mock规则配置
@@ -54,6 +57,26 @@ public class MockRuleConfig {
     @JsonProperty(value = "id")
 
     private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "response_header")
+
+    private Map<String, String> responseHeader = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "response_body")
+
+    private String responseBody;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "response_time")
+
+    private Integer responseTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "response_code")
+
+    private Integer responseCode;
 
     public MockRuleConfig withServiceType(String serviceType) {
         this.serviceType = serviceType;
@@ -129,7 +152,7 @@ public class MockRuleConfig {
     }
 
     /**
-     * mock策略（当前只支持redirect）
+     * mock策略（redirect/json）
      * @return mockStrategy
      */
     public String getMockStrategy() {
@@ -210,6 +233,90 @@ public class MockRuleConfig {
         this.id = id;
     }
 
+    public MockRuleConfig withResponseHeader(Map<String, String> responseHeader) {
+        this.responseHeader = responseHeader;
+        return this;
+    }
+
+    public MockRuleConfig putResponseHeaderItem(String key, String responseHeaderItem) {
+        if (this.responseHeader == null) {
+            this.responseHeader = new HashMap<>();
+        }
+        this.responseHeader.put(key, responseHeaderItem);
+        return this;
+    }
+
+    public MockRuleConfig withResponseHeader(Consumer<Map<String, String>> responseHeaderSetter) {
+        if (this.responseHeader == null) {
+            this.responseHeader = new HashMap<>();
+        }
+        responseHeaderSetter.accept(this.responseHeader);
+        return this;
+    }
+
+    /**
+     * 自定义响应头
+     * @return responseHeader
+     */
+    public Map<String, String> getResponseHeader() {
+        return responseHeader;
+    }
+
+    public void setResponseHeader(Map<String, String> responseHeader) {
+        this.responseHeader = responseHeader;
+    }
+
+    public MockRuleConfig withResponseBody(String responseBody) {
+        this.responseBody = responseBody;
+        return this;
+    }
+
+    /**
+     * 自定义响应体
+     * @return responseBody
+     */
+    public String getResponseBody() {
+        return responseBody;
+    }
+
+    public void setResponseBody(String responseBody) {
+        this.responseBody = responseBody;
+    }
+
+    public MockRuleConfig withResponseTime(Integer responseTime) {
+        this.responseTime = responseTime;
+        return this;
+    }
+
+    /**
+     * 自定义响应时长
+     * @return responseTime
+     */
+    public Integer getResponseTime() {
+        return responseTime;
+    }
+
+    public void setResponseTime(Integer responseTime) {
+        this.responseTime = responseTime;
+    }
+
+    public MockRuleConfig withResponseCode(Integer responseCode) {
+        this.responseCode = responseCode;
+        return this;
+    }
+
+    /**
+     * 自定义响应码
+     * @return responseCode
+     */
+    public Integer getResponseCode() {
+        return responseCode;
+    }
+
+    public void setResponseCode(Integer responseCode) {
+        this.responseCode = responseCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -224,13 +331,27 @@ public class MockRuleConfig {
             && Objects.equals(this.redirectUrl, that.redirectUrl)
             && Objects.equals(this.mockStrategy, that.mockStrategy) && Objects.equals(this.enable, that.enable)
             && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.id, that.id);
+            && Objects.equals(this.id, that.id) && Objects.equals(this.responseHeader, that.responseHeader)
+            && Objects.equals(this.responseBody, that.responseBody)
+            && Objects.equals(this.responseTime, that.responseTime)
+            && Objects.equals(this.responseCode, that.responseCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(serviceType, requestUrl, requestMethod, redirectUrl, mockStrategy, enable, name, projectId, id);
+        return Objects.hash(serviceType,
+            requestUrl,
+            requestMethod,
+            redirectUrl,
+            mockStrategy,
+            enable,
+            name,
+            projectId,
+            id,
+            responseHeader,
+            responseBody,
+            responseTime,
+            responseCode);
     }
 
     @Override
@@ -246,6 +367,10 @@ public class MockRuleConfig {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    responseHeader: ").append(toIndentedString(responseHeader)).append("\n");
+        sb.append("    responseBody: ").append(toIndentedString(responseBody)).append("\n");
+        sb.append("    responseTime: ").append(toIndentedString(responseTime)).append("\n");
+        sb.append("    responseCode: ").append(toIndentedString(responseCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

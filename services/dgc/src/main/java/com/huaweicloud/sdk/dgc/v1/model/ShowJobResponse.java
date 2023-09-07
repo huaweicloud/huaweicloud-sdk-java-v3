@@ -45,24 +45,24 @@ public class ShowJobResponse extends SdkResponse {
     private String directory;
 
     /**
-     * Gets or Sets jobType
+     * 作业类型，REAL_TIME： 实时处理，BATCH：批处理
      */
-    public static final class JobTypeEnum {
+    public static final class ProcessTypeEnum {
 
         /**
          * Enum BATCH for value: "BATCH"
          */
-        public static final JobTypeEnum BATCH = new JobTypeEnum("BATCH");
+        public static final ProcessTypeEnum BATCH = new ProcessTypeEnum("BATCH");
 
         /**
          * Enum REAL_TIME for value: "REAL_TIME"
          */
-        public static final JobTypeEnum REAL_TIME = new JobTypeEnum("REAL_TIME");
+        public static final ProcessTypeEnum REAL_TIME = new ProcessTypeEnum("REAL_TIME");
 
-        private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<String, ProcessTypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<String, JobTypeEnum> createStaticFields() {
-            Map<String, JobTypeEnum> map = new HashMap<>();
+        private static Map<String, ProcessTypeEnum> createStaticFields() {
+            Map<String, ProcessTypeEnum> map = new HashMap<>();
             map.put("BATCH", BATCH);
             map.put("REAL_TIME", REAL_TIME);
             return Collections.unmodifiableMap(map);
@@ -70,7 +70,7 @@ public class ShowJobResponse extends SdkResponse {
 
         private String value;
 
-        JobTypeEnum(String value) {
+        ProcessTypeEnum(String value) {
             this.value = value;
         }
 
@@ -85,14 +85,14 @@ public class ShowJobResponse extends SdkResponse {
         }
 
         @JsonCreator
-        public static JobTypeEnum fromValue(String value) {
+        public static ProcessTypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProcessTypeEnum(value));
         }
 
-        public static JobTypeEnum valueOf(String value) {
+        public static ProcessTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -102,8 +102,8 @@ public class ShowJobResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof JobTypeEnum) {
-                return this.value.equals(((JobTypeEnum) obj).value);
+            if (obj instanceof ProcessTypeEnum) {
+                return this.value.equals(((ProcessTypeEnum) obj).value);
             }
             return false;
         }
@@ -115,14 +115,110 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "jobType")
+    @JsonProperty(value = "processType")
 
-    private JobTypeEnum jobType;
+    private ProcessTypeEnum processType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lastUpdateUser")
+
+    private String lastUpdateUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "logPath")
+
+    private String logPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basicConfig")
 
-    private BasicInfo basicConfig;
+    private BasicConfig basicConfig;
+
+    /**
+     * 在开启审批开关后，需要填写该字段。表示创建作业的目标状态，有三种状态：SAVED、SUBMITTED和PRODUCTION，分别表示作业创建后是保存态，提交态，生产态。
+     */
+    public static final class TargetStatusEnum {
+
+        /**
+         * Enum SAVED for value: "SAVED"
+         */
+        public static final TargetStatusEnum SAVED = new TargetStatusEnum("SAVED");
+
+        /**
+         * Enum SUBMITTED for value: "SUBMITTED"
+         */
+        public static final TargetStatusEnum SUBMITTED = new TargetStatusEnum("SUBMITTED");
+
+        /**
+         * Enum PRODUCTION for value: "PRODUCTION"
+         */
+        public static final TargetStatusEnum PRODUCTION = new TargetStatusEnum("PRODUCTION");
+
+        private static final Map<String, TargetStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TargetStatusEnum> createStaticFields() {
+            Map<String, TargetStatusEnum> map = new HashMap<>();
+            map.put("SAVED", SAVED);
+            map.put("SUBMITTED", SUBMITTED);
+            map.put("PRODUCTION", PRODUCTION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TargetStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TargetStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TargetStatusEnum(value));
+        }
+
+        public static TargetStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TargetStatusEnum) {
+                return this.value.equals(((TargetStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "targetStatus")
+
+    private TargetStatusEnum targetStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "approvers")
+
+    private List<JobApprover> approvers = null;
 
     public ShowJobResponse withName(String name) {
         this.name = name;
@@ -130,7 +226,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * Get name
+     * 作业名称
      * @return name
      */
     public String getName() {
@@ -163,7 +259,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * Get nodes
+     * 节点定义
      * @return nodes
      */
     public List<Node> getNodes() {
@@ -222,7 +318,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * Get params
+     * 作业参数定义
      * @return params
      */
     public List<JobParam> getParams() {
@@ -239,7 +335,7 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     /**
-     * Get directory
+     * 作业在目录树上的路径。创建作业时如果路径目录不存在，会自动创建目录，如/dir/a/，默认在根目录/。
      * @return directory
      */
     public String getDirectory() {
@@ -250,31 +346,65 @@ public class ShowJobResponse extends SdkResponse {
         this.directory = directory;
     }
 
-    public ShowJobResponse withJobType(JobTypeEnum jobType) {
-        this.jobType = jobType;
+    public ShowJobResponse withProcessType(ProcessTypeEnum processType) {
+        this.processType = processType;
         return this;
     }
 
     /**
-     * Get jobType
-     * @return jobType
+     * 作业类型，REAL_TIME： 实时处理，BATCH：批处理
+     * @return processType
      */
-    public JobTypeEnum getJobType() {
-        return jobType;
+    public ProcessTypeEnum getProcessType() {
+        return processType;
     }
 
-    public void setJobType(JobTypeEnum jobType) {
-        this.jobType = jobType;
+    public void setProcessType(ProcessTypeEnum processType) {
+        this.processType = processType;
     }
 
-    public ShowJobResponse withBasicConfig(BasicInfo basicConfig) {
+    public ShowJobResponse withLastUpdateUser(String lastUpdateUser) {
+        this.lastUpdateUser = lastUpdateUser;
+        return this;
+    }
+
+    /**
+     * 作业最后修改人
+     * @return lastUpdateUser
+     */
+    public String getLastUpdateUser() {
+        return lastUpdateUser;
+    }
+
+    public void setLastUpdateUser(String lastUpdateUser) {
+        this.lastUpdateUser = lastUpdateUser;
+    }
+
+    public ShowJobResponse withLogPath(String logPath) {
+        this.logPath = logPath;
+        return this;
+    }
+
+    /**
+     * 作业运行日志存放的OBS路径。
+     * @return logPath
+     */
+    public String getLogPath() {
+        return logPath;
+    }
+
+    public void setLogPath(String logPath) {
+        this.logPath = logPath;
+    }
+
+    public ShowJobResponse withBasicConfig(BasicConfig basicConfig) {
         this.basicConfig = basicConfig;
         return this;
     }
 
-    public ShowJobResponse withBasicConfig(Consumer<BasicInfo> basicConfigSetter) {
+    public ShowJobResponse withBasicConfig(Consumer<BasicConfig> basicConfigSetter) {
         if (this.basicConfig == null) {
-            this.basicConfig = new BasicInfo();
+            this.basicConfig = new BasicConfig();
             basicConfigSetter.accept(this.basicConfig);
         }
 
@@ -285,12 +415,62 @@ public class ShowJobResponse extends SdkResponse {
      * Get basicConfig
      * @return basicConfig
      */
-    public BasicInfo getBasicConfig() {
+    public BasicConfig getBasicConfig() {
         return basicConfig;
     }
 
-    public void setBasicConfig(BasicInfo basicConfig) {
+    public void setBasicConfig(BasicConfig basicConfig) {
         this.basicConfig = basicConfig;
+    }
+
+    public ShowJobResponse withTargetStatus(TargetStatusEnum targetStatus) {
+        this.targetStatus = targetStatus;
+        return this;
+    }
+
+    /**
+     * 在开启审批开关后，需要填写该字段。表示创建作业的目标状态，有三种状态：SAVED、SUBMITTED和PRODUCTION，分别表示作业创建后是保存态，提交态，生产态。
+     * @return targetStatus
+     */
+    public TargetStatusEnum getTargetStatus() {
+        return targetStatus;
+    }
+
+    public void setTargetStatus(TargetStatusEnum targetStatus) {
+        this.targetStatus = targetStatus;
+    }
+
+    public ShowJobResponse withApprovers(List<JobApprover> approvers) {
+        this.approvers = approvers;
+        return this;
+    }
+
+    public ShowJobResponse addApproversItem(JobApprover approversItem) {
+        if (this.approvers == null) {
+            this.approvers = new ArrayList<>();
+        }
+        this.approvers.add(approversItem);
+        return this;
+    }
+
+    public ShowJobResponse withApprovers(Consumer<List<JobApprover>> approversSetter) {
+        if (this.approvers == null) {
+            this.approvers = new ArrayList<>();
+        }
+        approversSetter.accept(this.approvers);
+        return this;
+    }
+
+    /**
+     * 在开启审批开关后，需要填写该字段，表示作业审批人。
+     * @return approvers
+     */
+    public List<JobApprover> getApprovers() {
+        return approvers;
+    }
+
+    public void setApprovers(List<JobApprover> approvers) {
+        this.approvers = approvers;
     }
 
     @Override
@@ -304,13 +484,25 @@ public class ShowJobResponse extends SdkResponse {
         ShowJobResponse that = (ShowJobResponse) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.nodes, that.nodes)
             && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.params, that.params)
-            && Objects.equals(this.directory, that.directory) && Objects.equals(this.jobType, that.jobType)
-            && Objects.equals(this.basicConfig, that.basicConfig);
+            && Objects.equals(this.directory, that.directory) && Objects.equals(this.processType, that.processType)
+            && Objects.equals(this.lastUpdateUser, that.lastUpdateUser) && Objects.equals(this.logPath, that.logPath)
+            && Objects.equals(this.basicConfig, that.basicConfig)
+            && Objects.equals(this.targetStatus, that.targetStatus) && Objects.equals(this.approvers, that.approvers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, nodes, schedule, params, directory, jobType, basicConfig);
+        return Objects.hash(name,
+            nodes,
+            schedule,
+            params,
+            directory,
+            processType,
+            lastUpdateUser,
+            logPath,
+            basicConfig,
+            targetStatus,
+            approvers);
     }
 
     @Override
@@ -322,8 +514,12 @@ public class ShowJobResponse extends SdkResponse {
         sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
-        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    processType: ").append(toIndentedString(processType)).append("\n");
+        sb.append("    lastUpdateUser: ").append(toIndentedString(lastUpdateUser)).append("\n");
+        sb.append("    logPath: ").append(toIndentedString(logPath)).append("\n");
         sb.append("    basicConfig: ").append(toIndentedString(basicConfig)).append("\n");
+        sb.append("    targetStatus: ").append(toIndentedString(targetStatus)).append("\n");
+        sb.append("    approvers: ").append(toIndentedString(approvers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

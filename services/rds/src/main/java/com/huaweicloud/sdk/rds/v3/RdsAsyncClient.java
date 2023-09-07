@@ -129,7 +129,11 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreResponse;
@@ -1377,6 +1381,68 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
         return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, RdsMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 查询购买推荐
+     *
+     * 查询购买推荐
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesRecommendationRequest 请求对象
+     * @return CompletableFuture<ListInstancesRecommendationResponse>
+     */
+    public CompletableFuture<ListInstancesRecommendationResponse> listInstancesRecommendationAsync(
+        ListInstancesRecommendationRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstancesRecommendation);
+    }
+
+    /**
+     * 查询购买推荐
+     *
+     * 查询购买推荐
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesRecommendationRequest 请求对象
+     * @return AsyncInvoker<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse>
+     */
+    public AsyncInvoker<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse> listInstancesRecommendationAsyncInvoker(
+        ListInstancesRecommendationRequest request) {
+        return new AsyncInvoker<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse>(request,
+            RdsMeta.listInstancesRecommendation, hcClient);
+    }
+
+    /**
+     * 查询监控大盘列表
+     *
+     * 查询监控大盘列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesResourceMetricsRequest 请求对象
+     * @return CompletableFuture<ListInstancesResourceMetricsResponse>
+     */
+    public CompletableFuture<ListInstancesResourceMetricsResponse> listInstancesResourceMetricsAsync(
+        ListInstancesResourceMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstancesResourceMetrics);
+    }
+
+    /**
+     * 查询监控大盘列表
+     *
+     * 查询监控大盘列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesResourceMetricsRequest 请求对象
+     * @return AsyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse>
+     */
+    public AsyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> listInstancesResourceMetricsAsyncInvoker(
+        ListInstancesResourceMetricsRequest request) {
+        return new AsyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse>(request,
+            RdsMeta.listInstancesResourceMetrics, hcClient);
     }
 
     /**

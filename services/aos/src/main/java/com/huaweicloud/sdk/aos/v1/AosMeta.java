@@ -17,6 +17,9 @@ import com.huaweicloud.sdk.aos.v1.model.CreateStackRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteTemplateRequest;
@@ -554,6 +557,45 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteStackRequest::getClientRequestId, (req, v) -> {
                 req.setClientRequestId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse> deleteStackEnhanced =
+        genFordeleteStackEnhanced();
+
+    private static HttpRequestDef<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse> genFordeleteStackEnhanced() {
+        // basic
+        HttpRequestDef.Builder<DeleteStackEnhancedRequest, DeleteStackEnhancedResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteStackEnhancedRequest.class, DeleteStackEnhancedResponse.class)
+                .withName("DeleteStackEnhanced")
+                .withUri("/v1/{project_id}/stacks/{stack_name}/deletion")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStackEnhancedRequest::getStackName, (req, v) -> {
+                req.setStackName(v);
+            }));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStackEnhancedRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            }));
+        builder.<DeleteStackEnhancedRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteStackEnhancedRequestBody.class),
+            f -> f.withMarshaller(DeleteStackEnhancedRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

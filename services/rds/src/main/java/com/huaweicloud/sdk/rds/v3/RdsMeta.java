@@ -164,7 +164,11 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequestBody;
@@ -1865,6 +1869,97 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(ListInstancesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse> listInstancesRecommendation =
+        genForlistInstancesRecommendation();
+
+    private static HttpRequestDef<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse> genForlistInstancesRecommendation() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstancesRecommendationRequest.class,
+                    ListInstancesRecommendationResponse.class)
+                .withName("ListInstancesRecommendation")
+                .withUri("/v3/{project_id}/instances/product-recommendation")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListInstancesRecommendationRequest.EngineEnum>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstancesRecommendationRequest.EngineEnum.class),
+            f -> f.withMarshaller(ListInstancesRecommendationRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> listInstancesResourceMetrics =
+        genForlistInstancesResourceMetrics();
+
+    private static HttpRequestDef<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> genForlistInstancesResourceMetrics() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstancesResourceMetricsRequest.class,
+                    ListInstancesResourceMetricsResponse.class)
+                .withName("ListInstancesResourceMetrics")
+                .withUri("/v3/{project_id}/instances/resource-monitoring")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListInstancesResourceMetricsRequest.EngineEnum>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstancesResourceMetricsRequest.EngineEnum.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("search_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getSearchField, (req, v) -> {
+                req.setSearchField(v);
+            }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ListInstancesResourceMetricsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesResourceMetricsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
+        builder.<ListInstancesResourceMetricsRequest.SortFieldEnum>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesResourceMetricsRequest.SortFieldEnum.class),
+            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getSortField, (req, v) -> {
+                req.setSortField(v);
             }));
 
         // response

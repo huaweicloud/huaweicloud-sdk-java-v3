@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -548,6 +551,16 @@ public class ListJobsRequest {
 
     private String sortDir;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_ids")
+
+    private List<String> instanceIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_ip")
+
+    private String instanceIp;
+
     public ListJobsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -737,6 +750,56 @@ public class ListJobsRequest {
         this.sortDir = sortDir;
     }
 
+    public ListJobsRequest withInstanceIds(List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+        return this;
+    }
+
+    public ListJobsRequest addInstanceIdsItem(String instanceIdsItem) {
+        if (this.instanceIds == null) {
+            this.instanceIds = new ArrayList<>();
+        }
+        this.instanceIds.add(instanceIdsItem);
+        return this;
+    }
+
+    public ListJobsRequest withInstanceIds(Consumer<List<String>> instanceIdsSetter) {
+        if (this.instanceIds == null) {
+            this.instanceIds = new ArrayList<>();
+        }
+        instanceIdsSetter.accept(this.instanceIds);
+        return this;
+    }
+
+    /**
+     * 数据库实例ID列表，最多支持10个
+     * @return instanceIds
+     */
+    public List<String> getInstanceIds() {
+        return instanceIds;
+    }
+
+    public void setInstanceIds(List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+    }
+
+    public ListJobsRequest withInstanceIp(String instanceIp) {
+        this.instanceIp = instanceIp;
+        return this;
+    }
+
+    /**
+     * 数据库实例IP
+     * @return instanceIp
+     */
+    public String getInstanceIp() {
+        return instanceIp;
+    }
+
+    public void setInstanceIp(String instanceIp) {
+        this.instanceIp = instanceIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -751,7 +814,8 @@ public class ListJobsRequest {
             && Objects.equals(this.engineType, that.engineType) && Objects.equals(this.netType, that.netType)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.instanceIds, that.instanceIds) && Objects.equals(this.instanceIp, that.instanceIp);
     }
 
     @Override
@@ -766,7 +830,9 @@ public class ListJobsRequest {
             offset,
             limit,
             sortKey,
-            sortDir);
+            sortDir,
+            instanceIds,
+            instanceIp);
     }
 
     @Override
@@ -784,6 +850,8 @@ public class ListJobsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
+        sb.append("    instanceIds: ").append(toIndentedString(instanceIds)).append("\n");
+        sb.append("    instanceIp: ").append(toIndentedString(instanceIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

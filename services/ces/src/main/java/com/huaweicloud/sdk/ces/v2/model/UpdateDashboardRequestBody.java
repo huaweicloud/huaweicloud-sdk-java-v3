@@ -31,7 +31,7 @@ public class UpdateDashboardRequestBody {
     }
 
     /**
-     * 自定义监控面板名称
+     * 自定义监控看板名称
      * @return dashboardName
      */
     public String getDashboardName() {
@@ -48,7 +48,7 @@ public class UpdateDashboardRequestBody {
     }
 
     /**
-     * 监控面板是否标记收藏, true: 收藏, false: 未收藏
+     * 监控看板是否标记收藏, true: 收藏, false: 未收藏
      * @return isFavorite
      */
     public Boolean getIsFavorite() {

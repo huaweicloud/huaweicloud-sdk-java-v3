@@ -109,7 +109,7 @@ public class Event {
     }
 
     /**
-     * 读取策略
+     * 读取策略，LAST ：从上次位置读取，NEW- 从最新位置读取，默认为LAST
      * @return readPolicy
      */
     public String getReadPolicy() {

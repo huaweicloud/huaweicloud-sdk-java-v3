@@ -309,7 +309,7 @@ public class ShowJobDetailRequest {
     private CompareTypeEnum compareType;
 
     /**
-     * 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。
+     * 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。
      */
     public static final class QueryTypeEnum {
 
@@ -687,7 +687,7 @@ public class ShowJobDetailRequest {
     }
 
     /**
-     * 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。
+     * 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。
      * @return queryType
      */
     public QueryTypeEnum getQueryType() {

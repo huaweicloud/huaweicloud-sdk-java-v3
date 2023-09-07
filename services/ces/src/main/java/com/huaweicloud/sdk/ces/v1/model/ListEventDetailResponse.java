@@ -119,11 +119,6 @@ public class ListEventDetailResponse extends SdkResponse {
 
     private TotalMetaData metaData;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dimensions")
-
-    private MetricsDimension dimensions;
-
     public ListEventDetailResponse withEventName(String eventName) {
         this.eventName = eventName;
         return this;
@@ -283,32 +278,6 @@ public class ListEventDetailResponse extends SdkResponse {
         this.metaData = metaData;
     }
 
-    public ListEventDetailResponse withDimensions(MetricsDimension dimensions) {
-        this.dimensions = dimensions;
-        return this;
-    }
-
-    public ListEventDetailResponse withDimensions(Consumer<MetricsDimension> dimensionsSetter) {
-        if (this.dimensions == null) {
-            this.dimensions = new MetricsDimension();
-            dimensionsSetter.accept(this.dimensions);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get dimensions
-     * @return dimensions
-     */
-    public MetricsDimension getDimensions() {
-        return dimensions;
-    }
-
-    public void setDimensions(MetricsDimension dimensions) {
-        this.dimensions = dimensions;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -320,13 +289,12 @@ public class ListEventDetailResponse extends SdkResponse {
         ListEventDetailResponse that = (ListEventDetailResponse) obj;
         return Objects.equals(this.eventName, that.eventName) && Objects.equals(this.eventType, that.eventType)
             && Objects.equals(this.eventUsers, that.eventUsers) && Objects.equals(this.eventSources, that.eventSources)
-            && Objects.equals(this.eventInfo, that.eventInfo) && Objects.equals(this.metaData, that.metaData)
-            && Objects.equals(this.dimensions, that.dimensions);
+            && Objects.equals(this.eventInfo, that.eventInfo) && Objects.equals(this.metaData, that.metaData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventName, eventType, eventUsers, eventSources, eventInfo, metaData, dimensions);
+        return Objects.hash(eventName, eventType, eventUsers, eventSources, eventInfo, metaData);
     }
 
     @Override
@@ -339,7 +307,6 @@ public class ListEventDetailResponse extends SdkResponse {
         sb.append("    eventSources: ").append(toIndentedString(eventSources)).append("\n");
         sb.append("    eventInfo: ").append(toIndentedString(eventInfo)).append("\n");
         sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
-        sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

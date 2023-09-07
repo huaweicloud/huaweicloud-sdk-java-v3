@@ -54,6 +54,8 @@ import com.huaweicloud.sdk.cae.v1.model.ListComponentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListEipsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListEipsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
@@ -74,6 +76,8 @@ import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateComponentRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateComponentResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateEipRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateEipResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -840,6 +844,62 @@ public class CaeAsyncClient {
      */
     public AsyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsAsyncInvoker(ListDomainsRequest request) {
         return new AsyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, CaeMeta.listDomains, hcClient);
+    }
+
+    /**
+     * 获取集群节点弹性公网IP列表
+     *
+     * 获取集群节点弹性公网IP列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEipsRequest 请求对象
+     * @return CompletableFuture<ListEipsResponse>
+     */
+    public CompletableFuture<ListEipsResponse> listEipsAsync(ListEipsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.listEips);
+    }
+
+    /**
+     * 获取集群节点弹性公网IP列表
+     *
+     * 获取集群节点弹性公网IP列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEipsRequest 请求对象
+     * @return AsyncInvoker<ListEipsRequest, ListEipsResponse>
+     */
+    public AsyncInvoker<ListEipsRequest, ListEipsResponse> listEipsAsyncInvoker(ListEipsRequest request) {
+        return new AsyncInvoker<ListEipsRequest, ListEipsResponse>(request, CaeMeta.listEips, hcClient);
+    }
+
+    /**
+     * 修改带宽
+     *
+     * 修改带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEipRequest 请求对象
+     * @return CompletableFuture<UpdateEipResponse>
+     */
+    public CompletableFuture<UpdateEipResponse> updateEipAsync(UpdateEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.updateEip);
+    }
+
+    /**
+     * 修改带宽
+     *
+     * 修改带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEipRequest 请求对象
+     * @return AsyncInvoker<UpdateEipRequest, UpdateEipResponse>
+     */
+    public AsyncInvoker<UpdateEipRequest, UpdateEipResponse> updateEipAsyncInvoker(UpdateEipRequest request) {
+        return new AsyncInvoker<UpdateEipRequest, UpdateEipResponse>(request, CaeMeta.updateEip, hcClient);
     }
 
     /**

@@ -172,7 +172,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 最大重试次数。
+     * 最大重试次数,取值范围为1~16。
      * @return retryMaxTime
      */
     public BigDecimal getRetryMaxTime() {

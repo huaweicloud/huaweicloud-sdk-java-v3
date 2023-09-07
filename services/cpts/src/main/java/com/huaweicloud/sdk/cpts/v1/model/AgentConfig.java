@@ -108,6 +108,16 @@ public class AgentConfig {
 
     private String clickhouseShadowRepository;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pulsar_enable")
+
+    private Boolean pulsarEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pulsar_shadow_topic_prefix")
+
+    private String pulsarShadowTopicPrefix;
+
     public AgentConfig withAgentId(Integer agentId) {
         this.agentId = agentId;
         return this;
@@ -449,6 +459,40 @@ public class AgentConfig {
         this.clickhouseShadowRepository = clickhouseShadowRepository;
     }
 
+    public AgentConfig withPulsarEnable(Boolean pulsarEnable) {
+        this.pulsarEnable = pulsarEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启pulsar影子库规则
+     * @return pulsarEnable
+     */
+    public Boolean getPulsarEnable() {
+        return pulsarEnable;
+    }
+
+    public void setPulsarEnable(Boolean pulsarEnable) {
+        this.pulsarEnable = pulsarEnable;
+    }
+
+    public AgentConfig withPulsarShadowTopicPrefix(String pulsarShadowTopicPrefix) {
+        this.pulsarShadowTopicPrefix = pulsarShadowTopicPrefix;
+        return this;
+    }
+
+    /**
+     * pulsar影子库前缀
+     * @return pulsarShadowTopicPrefix
+     */
+    public String getPulsarShadowTopicPrefix() {
+        return pulsarShadowTopicPrefix;
+    }
+
+    public void setPulsarShadowTopicPrefix(String pulsarShadowTopicPrefix) {
+        this.pulsarShadowTopicPrefix = pulsarShadowTopicPrefix;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -472,7 +516,9 @@ public class AgentConfig {
             && Objects.equals(this.mockRuleList, that.mockRuleList)
             && Objects.equals(this.clickhouseEnable, that.clickhouseEnable)
             && Objects.equals(this.clickhouseShadowType, that.clickhouseShadowType)
-            && Objects.equals(this.clickhouseShadowRepository, that.clickhouseShadowRepository);
+            && Objects.equals(this.clickhouseShadowRepository, that.clickhouseShadowRepository)
+            && Objects.equals(this.pulsarEnable, that.pulsarEnable)
+            && Objects.equals(this.pulsarShadowTopicPrefix, that.pulsarShadowTopicPrefix);
     }
 
     @Override
@@ -495,7 +541,9 @@ public class AgentConfig {
             mockRuleList,
             clickhouseEnable,
             clickhouseShadowType,
-            clickhouseShadowRepository);
+            clickhouseShadowRepository,
+            pulsarEnable,
+            pulsarShadowTopicPrefix);
     }
 
     @Override
@@ -521,6 +569,8 @@ public class AgentConfig {
         sb.append("    clickhouseEnable: ").append(toIndentedString(clickhouseEnable)).append("\n");
         sb.append("    clickhouseShadowType: ").append(toIndentedString(clickhouseShadowType)).append("\n");
         sb.append("    clickhouseShadowRepository: ").append(toIndentedString(clickhouseShadowRepository)).append("\n");
+        sb.append("    pulsarEnable: ").append(toIndentedString(pulsarEnable)).append("\n");
+        sb.append("    pulsarShadowTopicPrefix: ").append(toIndentedString(pulsarShadowTopicPrefix)).append("\n");
         sb.append("}");
         return sb.toString();
     }

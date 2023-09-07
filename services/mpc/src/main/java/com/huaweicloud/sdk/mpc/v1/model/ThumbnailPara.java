@@ -24,11 +24,6 @@ public class ThumbnailPara {
     public static final class TypeEnum {
 
         /**
-         * Enum PERCENT for value: "PERCENT"
-         */
-        public static final TypeEnum PERCENT = new TypeEnum("PERCENT");
-
-        /**
          * Enum TIME for value: "TIME"
          */
         public static final TypeEnum TIME = new TypeEnum("TIME");
@@ -47,7 +42,6 @@ public class ThumbnailPara {
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("PERCENT", PERCENT);
             map.put("TIME", TIME);
             map.put("DOTS", DOTS);
             map.put("DOTS_MS", DOTS_MS);

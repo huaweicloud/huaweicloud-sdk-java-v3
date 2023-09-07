@@ -658,6 +658,62 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Long>withRequestField("minPlanTime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListJobInstancesRequest::getMinPlanTime, (req, v) -> {
+                req.setMinPlanTime(v);
+            }));
+        builder.<Long>withRequestField("maxPlanTime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListJobInstancesRequest::getMaxPlanTime, (req, v) -> {
+                req.setMaxPlanTime(v);
+            }));
+        builder.<ListJobInstancesRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListJobInstancesRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListJobInstancesRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<Boolean>withRequestField("preciseQuery",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListJobInstancesRequest::getPreciseQuery, (req, v) -> {
+                req.setPreciseQuery(v);
+            }));
+        builder.<String>withRequestField("jobName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobInstancesRequest::getJobName, (req, v) -> {
+                req.setJobName(v);
+            }));
+        builder.<ListJobInstancesRequest.InstanceTypeEnum>withRequestField("instanceType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListJobInstancesRequest.InstanceTypeEnum.class),
+            f -> f.withMarshaller(ListJobInstancesRequest::getInstanceType, (req, v) -> {
+                req.setInstanceType(v);
+            }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

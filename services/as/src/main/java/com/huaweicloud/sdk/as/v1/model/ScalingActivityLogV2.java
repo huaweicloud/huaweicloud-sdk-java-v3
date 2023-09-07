@@ -143,7 +143,7 @@ public class ScalingActivityLogV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scaling_value")
 
-    private String scalingValue;
+    private Integer scalingValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -418,7 +418,7 @@ public class ScalingActivityLogV2 {
         this.instanceStandbyList = instanceStandbyList;
     }
 
-    public ScalingActivityLogV2 withScalingValue(String scalingValue) {
+    public ScalingActivityLogV2 withScalingValue(Integer scalingValue) {
         this.scalingValue = scalingValue;
         return this;
     }
@@ -427,11 +427,11 @@ public class ScalingActivityLogV2 {
      * 伸缩活动中变化（增加或减少）的云服务器数量。
      * @return scalingValue
      */
-    public String getScalingValue() {
+    public Integer getScalingValue() {
         return scalingValue;
     }
 
-    public void setScalingValue(String scalingValue) {
+    public void setScalingValue(Integer scalingValue) {
         this.scalingValue = scalingValue;
     }
 

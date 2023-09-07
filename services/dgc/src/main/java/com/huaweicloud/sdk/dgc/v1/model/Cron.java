@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.dgc.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -29,6 +27,11 @@ public class Cron {
     private String expression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expressionTimeZone")
+
+    private String expressionTimeZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependPrePeriod")
 
     private Boolean dependPrePeriod;
@@ -36,7 +39,7 @@ public class Cron {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependJobs")
 
-    private List<DependJob> dependJobs = null;
+    private DependJobs dependJobs;
 
     public Cron withStartTime(String startTime) {
         this.startTime = startTime;
@@ -44,7 +47,7 @@ public class Cron {
     }
 
     /**
-     * Get startTime
+     * 调度开始时间，采用ISO 8601时间表示方法，格式为yyyy-MM-dd'T'HH:mm:ssZ，例如2018-10-22T23:59:59+08表示的时间为2018年10月22日23时59分59秒，在正8区，即北京时区
      * @return startTime
      */
     public String getStartTime() {
@@ -61,7 +64,7 @@ public class Cron {
     }
 
     /**
-     * Get endTime
+     * 调度结束时间，采用ISO 8601时间表示方法，格式为yyyy-MM-dd'T'HH:mm:ssZ，例如2018-10-22T23:59:59+08表示的时间为2018年10月22日23时59分59秒，在正8区，即北京时区。如果结束时间不配置，作业会按照调度周期一直执行下去
      * @return endTime
      */
     public String getEndTime() {
@@ -78,7 +81,7 @@ public class Cron {
     }
 
     /**
-     * Cron表达式
+     * Cron表达式，格式为\"<秒> <分> <时> <天> <月> <星期>\"
      * @return expression
      */
     public String getExpression() {
@@ -87,6 +90,23 @@ public class Cron {
 
     public void setExpression(String expression) {
         this.expression = expression;
+    }
+
+    public Cron withExpressionTimeZone(String expressionTimeZone) {
+        this.expressionTimeZone = expressionTimeZone;
+        return this;
+    }
+
+    /**
+     * Cron表达式对应的时区信息，例如GMT+8
+     * @return expressionTimeZone
+     */
+    public String getExpressionTimeZone() {
+        return expressionTimeZone;
+    }
+
+    public void setExpressionTimeZone(String expressionTimeZone) {
+        this.expressionTimeZone = expressionTimeZone;
     }
 
     public Cron withDependPrePeriod(Boolean dependPrePeriod) {
@@ -106,36 +126,29 @@ public class Cron {
         this.dependPrePeriod = dependPrePeriod;
     }
 
-    public Cron withDependJobs(List<DependJob> dependJobs) {
+    public Cron withDependJobs(DependJobs dependJobs) {
         this.dependJobs = dependJobs;
         return this;
     }
 
-    public Cron addDependJobsItem(DependJob dependJobsItem) {
+    public Cron withDependJobs(Consumer<DependJobs> dependJobsSetter) {
         if (this.dependJobs == null) {
-            this.dependJobs = new ArrayList<>();
+            this.dependJobs = new DependJobs();
+            dependJobsSetter.accept(this.dependJobs);
         }
-        this.dependJobs.add(dependJobsItem);
-        return this;
-    }
 
-    public Cron withDependJobs(Consumer<List<DependJob>> dependJobsSetter) {
-        if (this.dependJobs == null) {
-            this.dependJobs = new ArrayList<>();
-        }
-        dependJobsSetter.accept(this.dependJobs);
         return this;
     }
 
     /**
-     * 依赖其它作业列表
+     * Get dependJobs
      * @return dependJobs
      */
-    public List<DependJob> getDependJobs() {
+    public DependJobs getDependJobs() {
         return dependJobs;
     }
 
-    public void setDependJobs(List<DependJob> dependJobs) {
+    public void setDependJobs(DependJobs dependJobs) {
         this.dependJobs = dependJobs;
     }
 
@@ -150,13 +163,14 @@ public class Cron {
         Cron that = (Cron) obj;
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.expressionTimeZone, that.expressionTimeZone)
             && Objects.equals(this.dependPrePeriod, that.dependPrePeriod)
             && Objects.equals(this.dependJobs, that.dependJobs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, expression, dependPrePeriod, dependJobs);
+        return Objects.hash(startTime, endTime, expression, expressionTimeZone, dependPrePeriod, dependJobs);
     }
 
     @Override
@@ -166,6 +180,7 @@ public class Cron {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    expression: ").append(toIndentedString(expression)).append("\n");
+        sb.append("    expressionTimeZone: ").append(toIndentedString(expressionTimeZone)).append("\n");
         sb.append("    dependPrePeriod: ").append(toIndentedString(dependPrePeriod)).append("\n");
         sb.append("    dependJobs: ").append(toIndentedString(dependJobs)).append("\n");
         sb.append("}");

@@ -17,7 +17,7 @@ public class CreateDomainResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_version")
 
-    private String apiVersion;
+    private ApiVersionObj apiVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
@@ -29,20 +29,20 @@ public class CreateDomainResponse extends SdkResponse {
 
     private String kind;
 
-    public CreateDomainResponse withApiVersion(String apiVersion) {
+    public CreateDomainResponse withApiVersion(ApiVersionObj apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
     /**
-     * API版本，固定值“v1”，该值不可修改。
+     * Get apiVersion
      * @return apiVersion
      */
-    public String getApiVersion() {
+    public ApiVersionObj getApiVersion() {
         return apiVersion;
     }
 
-    public void setApiVersion(String apiVersion) {
+    public void setApiVersion(ApiVersionObj apiVersion) {
         this.apiVersion = apiVersion;
     }
 

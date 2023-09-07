@@ -129,7 +129,11 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreResponse;
@@ -1365,6 +1369,67 @@ public class RdsClient {
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
         return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, RdsMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 查询购买推荐
+     *
+     * 查询购买推荐
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesRecommendationRequest 请求对象
+     * @return ListInstancesRecommendationResponse
+     */
+    public ListInstancesRecommendationResponse listInstancesRecommendation(ListInstancesRecommendationRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listInstancesRecommendation);
+    }
+
+    /**
+     * 查询购买推荐
+     *
+     * 查询购买推荐
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesRecommendationRequest 请求对象
+     * @return SyncInvoker<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse>
+     */
+    public SyncInvoker<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse> listInstancesRecommendationInvoker(
+        ListInstancesRecommendationRequest request) {
+        return new SyncInvoker<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse>(request,
+            RdsMeta.listInstancesRecommendation, hcClient);
+    }
+
+    /**
+     * 查询监控大盘列表
+     *
+     * 查询监控大盘列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesResourceMetricsRequest 请求对象
+     * @return ListInstancesResourceMetricsResponse
+     */
+    public ListInstancesResourceMetricsResponse listInstancesResourceMetrics(
+        ListInstancesResourceMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listInstancesResourceMetrics);
+    }
+
+    /**
+     * 查询监控大盘列表
+     *
+     * 查询监控大盘列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesResourceMetricsRequest 请求对象
+     * @return SyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse>
+     */
+    public SyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> listInstancesResourceMetricsInvoker(
+        ListInstancesResourceMetricsRequest request) {
+        return new SyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse>(request,
+            RdsMeta.listInstancesResourceMetrics, hcClient);
     }
 
     /**

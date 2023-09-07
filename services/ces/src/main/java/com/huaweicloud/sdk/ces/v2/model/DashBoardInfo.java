@@ -51,7 +51,7 @@ public class DashBoardInfo {
     }
 
     /**
-     * 监控面板id
+     * 监控看板id
      * @return dashboardId
      */
     public String getDashboardId() {
@@ -68,7 +68,7 @@ public class DashBoardInfo {
     }
 
     /**
-     * 自定义监控面板名称
+     * 自定义监控看板名称
      * @return dashboardName
      */
     public String getDashboardName() {
@@ -121,7 +121,7 @@ public class DashBoardInfo {
     }
 
     /**
-     * 监控面板是否标记收藏, true: 收藏, false: 未收藏
+     * 监控看板是否标记收藏, true: 收藏, false: 未收藏
      * @return isFavorite
      */
     public Boolean getIsFavorite() {
@@ -138,7 +138,7 @@ public class DashBoardInfo {
     }
 
     /**
-     * 监控面板的创建用户名
+     * 监控看板的创建用户名
      * @return creatorName
      */
     public String getCreatorName() {
@@ -155,7 +155,7 @@ public class DashBoardInfo {
     }
 
     /**
-     * 监控面板创建时间
+     * 监控看板创建时间
      * minimum: 1111111111111
      * maximum: 9999999999999
      * @return createTime

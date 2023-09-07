@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * BasicInfo
+ * BasicConfig
  */
-public class BasicInfo {
+public class BasicConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
@@ -35,7 +35,7 @@ public class BasicInfo {
 
     private Object customFields;
 
-    public BasicInfo withOwner(String owner) {
+    public BasicConfig withOwner(String owner) {
         this.owner = owner;
         return this;
     }
@@ -52,7 +52,7 @@ public class BasicInfo {
         this.owner = owner;
     }
 
-    public BasicInfo withPriority(Integer priority) {
+    public BasicConfig withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
@@ -69,7 +69,7 @@ public class BasicInfo {
         this.priority = priority;
     }
 
-    public BasicInfo withExecuteUser(String executeUser) {
+    public BasicConfig withExecuteUser(String executeUser) {
         this.executeUser = executeUser;
         return this;
     }
@@ -86,7 +86,7 @@ public class BasicInfo {
         this.executeUser = executeUser;
     }
 
-    public BasicInfo withInstanceTimeout(Integer instanceTimeout) {
+    public BasicConfig withInstanceTimeout(Integer instanceTimeout) {
         this.instanceTimeout = instanceTimeout;
         return this;
     }
@@ -103,7 +103,7 @@ public class BasicInfo {
         this.instanceTimeout = instanceTimeout;
     }
 
-    public BasicInfo withCustomFields(Object customFields) {
+    public BasicConfig withCustomFields(Object customFields) {
         this.customFields = customFields;
         return this;
     }
@@ -128,7 +128,7 @@ public class BasicInfo {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BasicInfo that = (BasicInfo) obj;
+        BasicConfig that = (BasicConfig) obj;
         return Objects.equals(this.owner, that.owner) && Objects.equals(this.priority, that.priority)
             && Objects.equals(this.executeUser, that.executeUser)
             && Objects.equals(this.instanceTimeout, that.instanceTimeout)
@@ -143,7 +143,7 @@ public class BasicInfo {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BasicInfo {\n");
+        sb.append("class BasicConfig {\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    executeUser: ").append(toIndentedString(executeUser)).append("\n");

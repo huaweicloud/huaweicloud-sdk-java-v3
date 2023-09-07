@@ -29,7 +29,7 @@ public class ScheduledTaskDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduled_policy")
 
-    private ScheduledPolicy scheduledPolicy;
+    private ScheduledTaskPolicy scheduledPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_number")
@@ -107,14 +107,14 @@ public class ScheduledTaskDetail {
         this.name = name;
     }
 
-    public ScheduledTaskDetail withScheduledPolicy(ScheduledPolicy scheduledPolicy) {
+    public ScheduledTaskDetail withScheduledPolicy(ScheduledTaskPolicy scheduledPolicy) {
         this.scheduledPolicy = scheduledPolicy;
         return this;
     }
 
-    public ScheduledTaskDetail withScheduledPolicy(Consumer<ScheduledPolicy> scheduledPolicySetter) {
+    public ScheduledTaskDetail withScheduledPolicy(Consumer<ScheduledTaskPolicy> scheduledPolicySetter) {
         if (this.scheduledPolicy == null) {
-            this.scheduledPolicy = new ScheduledPolicy();
+            this.scheduledPolicy = new ScheduledTaskPolicy();
             scheduledPolicySetter.accept(this.scheduledPolicy);
         }
 
@@ -125,11 +125,11 @@ public class ScheduledTaskDetail {
      * Get scheduledPolicy
      * @return scheduledPolicy
      */
-    public ScheduledPolicy getScheduledPolicy() {
+    public ScheduledTaskPolicy getScheduledPolicy() {
         return scheduledPolicy;
     }
 
-    public void setScheduledPolicy(ScheduledPolicy scheduledPolicy) {
+    public void setScheduledPolicy(ScheduledTaskPolicy scheduledPolicy) {
         this.scheduledPolicy = scheduledPolicy;
     }
 

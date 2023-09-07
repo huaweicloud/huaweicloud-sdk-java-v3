@@ -14,49 +14,49 @@ public class Agency {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_version")
 
-    private String apiVersion;
+    private ApiVersionObj apiVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
 
-    private String kind;
+    private AgencyKindObj kind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
     private AgencyMetadata metadata;
 
-    public Agency withApiVersion(String apiVersion) {
+    public Agency withApiVersion(ApiVersionObj apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
     /**
-     * API版本，固定值“v1”，该值不可修改。
+     * Get apiVersion
      * @return apiVersion
      */
-    public String getApiVersion() {
+    public ApiVersionObj getApiVersion() {
         return apiVersion;
     }
 
-    public void setApiVersion(String apiVersion) {
+    public void setApiVersion(ApiVersionObj apiVersion) {
         this.apiVersion = apiVersion;
     }
 
-    public Agency withKind(String kind) {
+    public Agency withKind(AgencyKindObj kind) {
         this.kind = kind;
         return this;
     }
 
     /**
-     * API类型，固定值“Agency”，该值不可修改。
+     * Get kind
      * @return kind
      */
-    public String getKind() {
+    public AgencyKindObj getKind() {
         return kind;
     }
 
-    public void setKind(String kind) {
+    public void setKind(AgencyKindObj kind) {
         this.kind = kind;
     }
 

@@ -26,32 +26,32 @@ public class JobParam {
     private String value;
 
     /**
-     * Gets or Sets paramType
+     * 参数类型
      */
-    public static final class ParamTypeEnum {
+    public static final class TypeEnum {
+
+        /**
+         * Enum PROCEDURE for value: "procedure"
+         */
+        public static final TypeEnum PROCEDURE = new TypeEnum("procedure");
 
         /**
          * Enum VARIABLE for value: "variable"
          */
-        public static final ParamTypeEnum VARIABLE = new ParamTypeEnum("variable");
+        public static final TypeEnum VARIABLE = new TypeEnum("variable");
 
-        /**
-         * Enum CONSTANTS for value: "constants"
-         */
-        public static final ParamTypeEnum CONSTANTS = new ParamTypeEnum("constants");
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static final Map<String, ParamTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ParamTypeEnum> createStaticFields() {
-            Map<String, ParamTypeEnum> map = new HashMap<>();
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("procedure", PROCEDURE);
             map.put("variable", VARIABLE);
-            map.put("constants", CONSTANTS);
             return Collections.unmodifiableMap(map);
         }
 
         private String value;
 
-        ParamTypeEnum(String value) {
+        TypeEnum(String value) {
             this.value = value;
         }
 
@@ -66,14 +66,14 @@ public class JobParam {
         }
 
         @JsonCreator
-        public static ParamTypeEnum fromValue(String value) {
+        public static TypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ParamTypeEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
-        public static ParamTypeEnum valueOf(String value) {
+        public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -83,8 +83,8 @@ public class JobParam {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof ParamTypeEnum) {
-                return this.value.equals(((ParamTypeEnum) obj).value);
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
         }
@@ -96,9 +96,9 @@ public class JobParam {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "paramType")
+    @JsonProperty(value = "type")
 
-    private ParamTypeEnum paramType;
+    private TypeEnum type;
 
     public JobParam withName(String name) {
         this.name = name;
@@ -134,21 +134,21 @@ public class JobParam {
         this.value = value;
     }
 
-    public JobParam withParamType(ParamTypeEnum paramType) {
-        this.paramType = paramType;
+    public JobParam withType(TypeEnum type) {
+        this.type = type;
         return this;
     }
 
     /**
-     * Get paramType
-     * @return paramType
+     * 参数类型
+     * @return type
      */
-    public ParamTypeEnum getParamType() {
-        return paramType;
+    public TypeEnum getType() {
+        return type;
     }
 
-    public void setParamType(ParamTypeEnum paramType) {
-        this.paramType = paramType;
+    public void setType(TypeEnum type) {
+        this.type = type;
     }
 
     @Override
@@ -161,12 +161,12 @@ public class JobParam {
         }
         JobParam that = (JobParam) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
-            && Objects.equals(this.paramType, that.paramType);
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, value, paramType);
+        return Objects.hash(name, value, type);
     }
 
     @Override
@@ -175,7 +175,7 @@ public class JobParam {
         sb.append("class JobParam {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
-        sb.append("    paramType: ").append(toIndentedString(paramType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

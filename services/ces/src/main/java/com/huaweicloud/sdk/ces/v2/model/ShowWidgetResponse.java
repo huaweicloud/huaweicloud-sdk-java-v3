@@ -426,7 +426,7 @@ public class ShowWidgetResponse extends SdkResponse {
     }
 
     /**
-     * 监控面板创建时间
+     * 监控看板创建时间
      * minimum: 1111111111111
      * maximum: 9999999999999
      * @return createTime

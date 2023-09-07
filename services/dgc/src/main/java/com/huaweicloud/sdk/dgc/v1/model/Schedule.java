@@ -17,38 +17,56 @@ import java.util.function.Consumer;
 public class Schedule {
 
     /**
-     * Gets or Sets scheType
+     * Gets or Sets type
      */
-    public static final class ScheTypeEnum {
+    public static final class TypeEnum {
 
         /**
          * Enum EXECUTE_ONCE for value: "EXECUTE_ONCE"
          */
-        public static final ScheTypeEnum EXECUTE_ONCE = new ScheTypeEnum("EXECUTE_ONCE");
+        public static final TypeEnum EXECUTE_ONCE = new TypeEnum("EXECUTE_ONCE");
+
+        /**
+         * Enum EVENT_TRIGGER for value: "EVENT_TRIGGER"
+         */
+        public static final TypeEnum EVENT_TRIGGER = new TypeEnum("EVENT_TRIGGER");
+
+        /**
+         * Enum RUN_ONCE for value: "RUN_ONCE"
+         */
+        public static final TypeEnum RUN_ONCE = new TypeEnum("RUN_ONCE");
 
         /**
          * Enum CRON for value: "CRON"
          */
-        public static final ScheTypeEnum CRON = new ScheTypeEnum("CRON");
+        public static final TypeEnum CRON = new TypeEnum("CRON");
 
         /**
          * Enum EVENT for value: "EVENT"
          */
-        public static final ScheTypeEnum EVENT = new ScheTypeEnum("EVENT");
+        public static final TypeEnum EVENT = new TypeEnum("EVENT");
 
-        private static final Map<String, ScheTypeEnum> STATIC_FIELDS = createStaticFields();
+        /**
+         * Enum SCHEDULE for value: "SCHEDULE"
+         */
+        public static final TypeEnum SCHEDULE = new TypeEnum("SCHEDULE");
 
-        private static Map<String, ScheTypeEnum> createStaticFields() {
-            Map<String, ScheTypeEnum> map = new HashMap<>();
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
             map.put("EXECUTE_ONCE", EXECUTE_ONCE);
+            map.put("EVENT_TRIGGER", EVENT_TRIGGER);
+            map.put("RUN_ONCE", RUN_ONCE);
             map.put("CRON", CRON);
             map.put("EVENT", EVENT);
+            map.put("SCHEDULE", SCHEDULE);
             return Collections.unmodifiableMap(map);
         }
 
         private String value;
 
-        ScheTypeEnum(String value) {
+        TypeEnum(String value) {
             this.value = value;
         }
 
@@ -63,14 +81,14 @@ public class Schedule {
         }
 
         @JsonCreator
-        public static ScheTypeEnum fromValue(String value) {
+        public static TypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScheTypeEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
-        public static ScheTypeEnum valueOf(String value) {
+        public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -80,8 +98,8 @@ public class Schedule {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof ScheTypeEnum) {
-                return this.value.equals(((ScheTypeEnum) obj).value);
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
         }
@@ -93,9 +111,9 @@ public class Schedule {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scheType")
+    @JsonProperty(value = "type")
 
-    private ScheTypeEnum scheType;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cron")
@@ -107,21 +125,21 @@ public class Schedule {
 
     private Event event;
 
-    public Schedule withScheType(ScheTypeEnum scheType) {
-        this.scheType = scheType;
+    public Schedule withType(TypeEnum type) {
+        this.type = type;
         return this;
     }
 
     /**
-     * Get scheType
-     * @return scheType
+     * Get type
+     * @return type
      */
-    public ScheTypeEnum getScheType() {
-        return scheType;
+    public TypeEnum getType() {
+        return type;
     }
 
-    public void setScheType(ScheTypeEnum scheType) {
-        this.scheType = scheType;
+    public void setType(TypeEnum type) {
+        this.type = type;
     }
 
     public Schedule withCron(Cron cron) {
@@ -185,20 +203,20 @@ public class Schedule {
             return false;
         }
         Schedule that = (Schedule) obj;
-        return Objects.equals(this.scheType, that.scheType) && Objects.equals(this.cron, that.cron)
+        return Objects.equals(this.type, that.type) && Objects.equals(this.cron, that.cron)
             && Objects.equals(this.event, that.event);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scheType, cron, event);
+        return Objects.hash(type, cron, event);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Schedule {\n");
-        sb.append("    scheType: ").append(toIndentedString(scheType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    cron: ").append(toIndentedString(cron)).append("\n");
         sb.append("    event: ").append(toIndentedString(event)).append("\n");
         sb.append("}");

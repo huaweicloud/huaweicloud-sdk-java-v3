@@ -36,7 +36,7 @@ public class CreateDashboardRequestBody {
     }
 
     /**
-     * 自定义监控面板名称
+     * 自定义监控看板名称
      * @return dashboardName
      */
     public String getDashboardName() {
@@ -70,7 +70,7 @@ public class CreateDashboardRequestBody {
     }
 
     /**
-     * 监控面板id
+     * 监控看板id
      * @return dashboardId
      */
     public String getDashboardId() {

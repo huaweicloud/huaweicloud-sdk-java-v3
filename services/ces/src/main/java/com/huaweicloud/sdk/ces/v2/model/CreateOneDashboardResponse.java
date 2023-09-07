@@ -22,7 +22,7 @@ public class CreateOneDashboardResponse extends SdkResponse {
     }
 
     /**
-     * 监控面板id
+     * 监控看板id
      * @return dashboardId
      */
     public String getDashboardId() {

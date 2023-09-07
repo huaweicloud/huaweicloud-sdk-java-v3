@@ -64,6 +64,8 @@ import com.huaweicloud.sdk.cae.v1.model.ListComponentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListEipsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListEipsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
@@ -86,6 +88,9 @@ import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateComponentRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateComponentRequestBody;
 import com.huaweicloud.sdk.cae.v1.model.UpdateComponentResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateEipRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateEipRequestBody;
+import com.huaweicloud.sdk.cae.v1.model.UpdateEipResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
@@ -1133,6 +1138,75 @@ public class CaeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDomainsRequest::getXEnvironmentID, (req, v) -> {
                 req.setXEnvironmentID(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEipsRequest, ListEipsResponse> listEips = genForlistEips();
+
+    private static HttpRequestDef<ListEipsRequest, ListEipsResponse> genForlistEips() {
+        // basic
+        HttpRequestDef.Builder<ListEipsRequest, ListEipsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEipsRequest.class, ListEipsResponse.class)
+                .withName("ListEips")
+                .withUri("/v1/{project_id}/cae/eips")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipsRequest::getXEnterpriseProjectID, (req, v) -> {
+                req.setXEnterpriseProjectID(v);
+            }));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipsRequest::getXEnvironmentID, (req, v) -> {
+                req.setXEnvironmentID(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEipRequest, UpdateEipResponse> updateEip = genForupdateEip();
+
+    private static HttpRequestDef<UpdateEipRequest, UpdateEipResponse> genForupdateEip() {
+        // basic
+        HttpRequestDef.Builder<UpdateEipRequest, UpdateEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEipRequest.class, UpdateEipResponse.class)
+                .withName("UpdateEip")
+                .withUri("/v1/{project_id}/cae/eips")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEipRequest::getXEnterpriseProjectID, (req, v) -> {
+                req.setXEnterpriseProjectID(v);
+            }));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEipRequest::getXEnvironmentID, (req, v) -> {
+                req.setXEnvironmentID(v);
+            }));
+        builder.<UpdateEipRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateEipRequestBody.class),
+            f -> f.withMarshaller(UpdateEipRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

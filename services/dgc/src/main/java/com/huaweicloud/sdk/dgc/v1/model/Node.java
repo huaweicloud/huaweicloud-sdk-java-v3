@@ -26,92 +26,107 @@ public class Node {
     /**
      * 节点的类型
      */
-    public static final class NodeTypeEnum {
+    public static final class TypeEnum {
 
         /**
          * Enum HIVESQL for value: "HiveSQL"
          */
-        public static final NodeTypeEnum HIVESQL = new NodeTypeEnum("HiveSQL");
+        public static final TypeEnum HIVESQL = new TypeEnum("HiveSQL");
 
         /**
          * Enum SPARKSQL for value: "SparkSQL"
          */
-        public static final NodeTypeEnum SPARKSQL = new NodeTypeEnum("SparkSQL");
+        public static final TypeEnum SPARKSQL = new TypeEnum("SparkSQL");
 
         /**
          * Enum DWSSQL for value: "DWSSQL"
          */
-        public static final NodeTypeEnum DWSSQL = new NodeTypeEnum("DWSSQL");
+        public static final TypeEnum DWSSQL = new TypeEnum("DWSSQL");
 
         /**
          * Enum DLISQL for value: "DLISQL"
          */
-        public static final NodeTypeEnum DLISQL = new NodeTypeEnum("DLISQL");
+        public static final TypeEnum DLISQL = new TypeEnum("DLISQL");
 
         /**
          * Enum SHELL for value: "Shell"
          */
-        public static final NodeTypeEnum SHELL = new NodeTypeEnum("Shell");
+        public static final TypeEnum SHELL = new TypeEnum("Shell");
 
         /**
          * Enum CDMJOB for value: "CDMJob"
          */
-        public static final NodeTypeEnum CDMJOB = new NodeTypeEnum("CDMJob");
+        public static final TypeEnum CDMJOB = new TypeEnum("CDMJob");
 
         /**
          * Enum DISTRANSFERTASK for value: "DISTransferTask"
          */
-        public static final NodeTypeEnum DISTRANSFERTASK = new NodeTypeEnum("DISTransferTask");
+        public static final TypeEnum DISTRANSFERTASK = new TypeEnum("DISTransferTask");
 
         /**
          * Enum CSJOB for value: "CSJob"
          */
-        public static final NodeTypeEnum CSJOB = new NodeTypeEnum("CSJob");
+        public static final TypeEnum CSJOB = new TypeEnum("CSJob");
 
         /**
          * Enum CLOUDTABLEMANAGE for value: "CloudTableManage"
          */
-        public static final NodeTypeEnum CLOUDTABLEMANAGE = new NodeTypeEnum("CloudTableManage");
+        public static final TypeEnum CLOUDTABLEMANAGE = new TypeEnum("CloudTableManage");
 
         /**
          * Enum OBSMANAGER for value: "OBSManager"
          */
-        public static final NodeTypeEnum OBSMANAGER = new NodeTypeEnum("OBSManager");
+        public static final TypeEnum OBSMANAGER = new TypeEnum("OBSManager");
 
         /**
          * Enum RESTAPI for value: "RESTAPI"
          */
-        public static final NodeTypeEnum RESTAPI = new NodeTypeEnum("RESTAPI");
+        public static final TypeEnum RESTAPI = new TypeEnum("RESTAPI");
 
         /**
          * Enum MACHINELEARNING for value: "MachineLearning"
          */
-        public static final NodeTypeEnum MACHINELEARNING = new NodeTypeEnum("MachineLearning");
+        public static final TypeEnum MACHINELEARNING = new TypeEnum("MachineLearning");
 
         /**
          * Enum SMN for value: "SMN"
          */
-        public static final NodeTypeEnum SMN = new NodeTypeEnum("SMN");
+        public static final TypeEnum SMN = new TypeEnum("SMN");
 
         /**
          * Enum MRSSPARK for value: "MRSSpark"
          */
-        public static final NodeTypeEnum MRSSPARK = new NodeTypeEnum("MRSSpark");
+        public static final TypeEnum MRSSPARK = new TypeEnum("MRSSpark");
 
         /**
          * Enum MAPREDUCE for value: "MapReduce"
          */
-        public static final NodeTypeEnum MAPREDUCE = new NodeTypeEnum("MapReduce");
+        public static final TypeEnum MAPREDUCE = new TypeEnum("MapReduce");
 
         /**
          * Enum DLISPARK for value: "DLISpark"
          */
-        public static final NodeTypeEnum DLISPARK = new NodeTypeEnum("DLISpark");
+        public static final TypeEnum DLISPARK = new TypeEnum("DLISpark");
 
-        private static final Map<String, NodeTypeEnum> STATIC_FIELDS = createStaticFields();
+        /**
+         * Enum MRSFLINK for value: "MRSFlink"
+         */
+        public static final TypeEnum MRSFLINK = new TypeEnum("MRSFlink");
 
-        private static Map<String, NodeTypeEnum> createStaticFields() {
-            Map<String, NodeTypeEnum> map = new HashMap<>();
+        /**
+         * Enum MRSHETUENGINE for value: "MRSHetuEngine"
+         */
+        public static final TypeEnum MRSHETUENGINE = new TypeEnum("MRSHetuEngine");
+
+        /**
+         * Enum RDS_SQL for value: "RDS SQL"
+         */
+        public static final TypeEnum RDS_SQL = new TypeEnum("RDS SQL");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
             map.put("HiveSQL", HIVESQL);
             map.put("SparkSQL", SPARKSQL);
             map.put("DWSSQL", DWSSQL);
@@ -128,12 +143,15 @@ public class Node {
             map.put("MRSSpark", MRSSPARK);
             map.put("MapReduce", MAPREDUCE);
             map.put("DLISpark", DLISPARK);
+            map.put("MRSFlink", MRSFLINK);
+            map.put("MRSHetuEngine", MRSHETUENGINE);
+            map.put("RDS SQL", RDS_SQL);
             return Collections.unmodifiableMap(map);
         }
 
         private String value;
 
-        NodeTypeEnum(String value) {
+        TypeEnum(String value) {
             this.value = value;
         }
 
@@ -148,14 +166,14 @@ public class Node {
         }
 
         @JsonCreator
-        public static NodeTypeEnum fromValue(String value) {
+        public static TypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NodeTypeEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
-        public static NodeTypeEnum valueOf(String value) {
+        public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -165,8 +183,8 @@ public class Node {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof NodeTypeEnum) {
-                return this.value.equals(((NodeTypeEnum) obj).value);
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
         }
@@ -178,9 +196,9 @@ public class Node {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nodeType")
+    @JsonProperty(value = "type")
 
-    private NodeTypeEnum nodeType;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
@@ -188,19 +206,19 @@ public class Node {
     private Location location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "preNodeNames")
+    @JsonProperty(value = "preNodeName")
 
-    private String preNodeNames;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "condition")
-
-    private List<Condition> condition = null;
+    private List<String> preNodeName = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nodeProperties")
+    @JsonProperty(value = "conditions")
 
-    private String nodeProperties;
+    private List<Condition> conditions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "properties")
+
+    private List<Property> properties = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pollingInterval")
@@ -242,6 +260,11 @@ public class Node {
          */
         public static final FailPolicyEnum SUSPEND = new FailPolicyEnum("SUSPEND");
 
+        /**
+         * Enum FAIL_CHILD for value: "FAIL_CHILD"
+         */
+        public static final FailPolicyEnum FAIL_CHILD = new FailPolicyEnum("FAIL_CHILD");
+
         private static final Map<String, FailPolicyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FailPolicyEnum> createStaticFields() {
@@ -249,6 +272,7 @@ public class Node {
             map.put("FAIL", FAIL);
             map.put("IGNORE", IGNORE);
             map.put("SUSPEND", SUSPEND);
+            map.put("FAIL_CHILD", FAIL_CHILD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -311,7 +335,7 @@ public class Node {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cronTrigger")
 
-    private Cron cronTrigger;
+    private CronTrigger cronTrigger;
 
     public Node withName(String name) {
         this.name = name;
@@ -319,7 +343,7 @@ public class Node {
     }
 
     /**
-     * Get name
+     * 节点名称，只能包含六种字符：英文字母、数字、中文、中划线、下划线和点号，且长度小于等于128个字符。同一个作业中节点名称不能重复。
      * @return name
      */
     public String getName() {
@@ -330,21 +354,21 @@ public class Node {
         this.name = name;
     }
 
-    public Node withNodeType(NodeTypeEnum nodeType) {
-        this.nodeType = nodeType;
+    public Node withType(TypeEnum type) {
+        this.type = type;
         return this;
     }
 
     /**
      * 节点的类型
-     * @return nodeType
+     * @return type
      */
-    public NodeTypeEnum getNodeType() {
-        return nodeType;
+    public TypeEnum getType() {
+        return type;
     }
 
-    public void setNodeType(NodeTypeEnum nodeType) {
-        this.nodeType = nodeType;
+    public void setType(TypeEnum type) {
+        this.type = type;
     }
 
     public Node withLocation(Location location) {
@@ -373,71 +397,103 @@ public class Node {
         this.location = location;
     }
 
-    public Node withPreNodeNames(String preNodeNames) {
-        this.preNodeNames = preNodeNames;
+    public Node withPreNodeName(List<String> preNodeName) {
+        this.preNodeName = preNodeName;
         return this;
     }
 
-    /**
-     * 本节点依赖的前一个节点名称
-     * @return preNodeNames
-     */
-    public String getPreNodeNames() {
-        return preNodeNames;
-    }
-
-    public void setPreNodeNames(String preNodeNames) {
-        this.preNodeNames = preNodeNames;
-    }
-
-    public Node withCondition(List<Condition> condition) {
-        this.condition = condition;
-        return this;
-    }
-
-    public Node addConditionItem(Condition conditionItem) {
-        if (this.condition == null) {
-            this.condition = new ArrayList<>();
+    public Node addPreNodeNameItem(String preNodeNameItem) {
+        if (this.preNodeName == null) {
+            this.preNodeName = new ArrayList<>();
         }
-        this.condition.add(conditionItem);
+        this.preNodeName.add(preNodeNameItem);
         return this;
     }
 
-    public Node withCondition(Consumer<List<Condition>> conditionSetter) {
-        if (this.condition == null) {
-            this.condition = new ArrayList<>();
+    public Node withPreNodeName(Consumer<List<String>> preNodeNameSetter) {
+        if (this.preNodeName == null) {
+            this.preNodeName = new ArrayList<>();
         }
-        conditionSetter.accept(this.condition);
+        preNodeNameSetter.accept(this.preNodeName);
         return this;
     }
 
     /**
-     * 节点执行条件
-     * @return condition
+     * 本本节点依赖的前面的节点名称列表
+     * @return preNodeName
      */
-    public List<Condition> getCondition() {
-        return condition;
+    public List<String> getPreNodeName() {
+        return preNodeName;
     }
 
-    public void setCondition(List<Condition> condition) {
-        this.condition = condition;
+    public void setPreNodeName(List<String> preNodeName) {
+        this.preNodeName = preNodeName;
     }
 
-    public Node withNodeProperties(String nodeProperties) {
-        this.nodeProperties = nodeProperties;
+    public Node withConditions(List<Condition> conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
+    public Node addConditionsItem(Condition conditionsItem) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        this.conditions.add(conditionsItem);
+        return this;
+    }
+
+    public Node withConditions(Consumer<List<Condition>> conditionsSetter) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        conditionsSetter.accept(this.conditions);
         return this;
     }
 
     /**
-     * 节点的属性
-     * @return nodeProperties
+     * 节点执行条件，如果配置此参数，本节点是否执行由condition的字段expression所保存的EL表达式计算结果决定
+     * @return conditions
      */
-    public String getNodeProperties() {
-        return nodeProperties;
+    public List<Condition> getConditions() {
+        return conditions;
     }
 
-    public void setNodeProperties(String nodeProperties) {
-        this.nodeProperties = nodeProperties;
+    public void setConditions(List<Condition> conditions) {
+        this.conditions = conditions;
+    }
+
+    public Node withProperties(List<Property> properties) {
+        this.properties = properties;
+        return this;
+    }
+
+    public Node addPropertiesItem(Property propertiesItem) {
+        if (this.properties == null) {
+            this.properties = new ArrayList<>();
+        }
+        this.properties.add(propertiesItem);
+        return this;
+    }
+
+    public Node withProperties(Consumer<List<Property>> propertiesSetter) {
+        if (this.properties == null) {
+            this.properties = new ArrayList<>();
+        }
+        propertiesSetter.accept(this.properties);
+        return this;
+    }
+
+    /**
+     * 节点属性
+     * @return properties
+     */
+    public List<Property> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(List<Property> properties) {
+        this.properties = properties;
     }
 
     public Node withPollingInterval(Integer pollingInterval) {
@@ -551,14 +607,14 @@ public class Node {
         this.eventTrigger = eventTrigger;
     }
 
-    public Node withCronTrigger(Cron cronTrigger) {
+    public Node withCronTrigger(CronTrigger cronTrigger) {
         this.cronTrigger = cronTrigger;
         return this;
     }
 
-    public Node withCronTrigger(Consumer<Cron> cronTriggerSetter) {
+    public Node withCronTrigger(Consumer<CronTrigger> cronTriggerSetter) {
         if (this.cronTrigger == null) {
-            this.cronTrigger = new Cron();
+            this.cronTrigger = new CronTrigger();
             cronTriggerSetter.accept(this.cronTrigger);
         }
 
@@ -569,11 +625,11 @@ public class Node {
      * Get cronTrigger
      * @return cronTrigger
      */
-    public Cron getCronTrigger() {
+    public CronTrigger getCronTrigger() {
         return cronTrigger;
     }
 
-    public void setCronTrigger(Cron cronTrigger) {
+    public void setCronTrigger(CronTrigger cronTrigger) {
         this.cronTrigger = cronTrigger;
     }
 
@@ -586,10 +642,9 @@ public class Node {
             return false;
         }
         Node that = (Node) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.nodeType, that.nodeType)
-            && Objects.equals(this.location, that.location) && Objects.equals(this.preNodeNames, that.preNodeNames)
-            && Objects.equals(this.condition, that.condition)
-            && Objects.equals(this.nodeProperties, that.nodeProperties)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.preNodeName, that.preNodeName)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.properties, that.properties)
             && Objects.equals(this.pollingInterval, that.pollingInterval)
             && Objects.equals(this.maxExecutionTime, that.maxExecutionTime)
             && Objects.equals(this.retryTimes, that.retryTimes)
@@ -601,11 +656,11 @@ public class Node {
     @Override
     public int hashCode() {
         return Objects.hash(name,
-            nodeType,
+            type,
             location,
-            preNodeNames,
-            condition,
-            nodeProperties,
+            preNodeName,
+            conditions,
+            properties,
             pollingInterval,
             maxExecutionTime,
             retryTimes,
@@ -620,11 +675,11 @@ public class Node {
         StringBuilder sb = new StringBuilder();
         sb.append("class Node {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
-        sb.append("    preNodeNames: ").append(toIndentedString(preNodeNames)).append("\n");
-        sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
-        sb.append("    nodeProperties: ").append(toIndentedString(nodeProperties)).append("\n");
+        sb.append("    preNodeName: ").append(toIndentedString(preNodeName)).append("\n");
+        sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("    pollingInterval: ").append(toIndentedString(pollingInterval)).append("\n");
         sb.append("    maxExecutionTime: ").append(toIndentedString(maxExecutionTime)).append("\n");
         sb.append("    retryTimes: ").append(toIndentedString(retryTimes)).append("\n");
