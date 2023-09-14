@@ -84,7 +84,7 @@ public class ShowBandwidthCalcRequest {
     }
 
     /**
-     * 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com all表示查询名下全部域名
+     * 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com all表示查询名下全部域名。如果域名在查询时间段内无数据，结果将不返回该域名的信息。
      * @return domainName
      */
     public String getDomainName() {

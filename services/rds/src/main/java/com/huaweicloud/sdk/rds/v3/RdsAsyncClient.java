@@ -197,6 +197,8 @@ import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceRequest;
@@ -323,6 +325,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
 
@@ -2153,6 +2157,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 表级时间点恢复(MySQL)
+     *
+     * 表级时间点恢复(MySQL)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreTablesNewRequest 请求对象
+     * @return CompletableFuture<RestoreTablesNewResponse>
+     */
+    public CompletableFuture<RestoreTablesNewResponse> restoreTablesNewAsync(RestoreTablesNewRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.restoreTablesNew);
+    }
+
+    /**
+     * 表级时间点恢复(MySQL)
+     *
+     * 表级时间点恢复(MySQL)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreTablesNewRequest 请求对象
+     * @return AsyncInvoker<RestoreTablesNewRequest, RestoreTablesNewResponse>
+     */
+    public AsyncInvoker<RestoreTablesNewRequest, RestoreTablesNewResponse> restoreTablesNewAsyncInvoker(
+        RestoreTablesNewRequest request) {
+        return new AsyncInvoker<RestoreTablesNewRequest, RestoreTablesNewResponse>(request, RdsMeta.restoreTablesNew,
+            hcClient);
+    }
+
+    /**
      * 恢复到已有实例
      *
      * 恢复到已有实例。
@@ -3456,6 +3490,36 @@ public class RdsAsyncClient {
         UpgradeDbVersionRequest request) {
         return new AsyncInvoker<UpgradeDbVersionRequest, UpgradeDbVersionResponse>(request, RdsMeta.upgradeDbVersion,
             hcClient);
+    }
+
+    /**
+     * 升级内核小版本
+     *
+     * 对实例进行小版本升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeDbVersionNewRequest 请求对象
+     * @return CompletableFuture<UpgradeDbVersionNewResponse>
+     */
+    public CompletableFuture<UpgradeDbVersionNewResponse> upgradeDbVersionNewAsync(UpgradeDbVersionNewRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.upgradeDbVersionNew);
+    }
+
+    /**
+     * 升级内核小版本
+     *
+     * 对实例进行小版本升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeDbVersionNewRequest 请求对象
+     * @return AsyncInvoker<UpgradeDbVersionNewRequest, UpgradeDbVersionNewResponse>
+     */
+    public AsyncInvoker<UpgradeDbVersionNewRequest, UpgradeDbVersionNewResponse> upgradeDbVersionNewAsyncInvoker(
+        UpgradeDbVersionNewRequest request) {
+        return new AsyncInvoker<UpgradeDbVersionNewRequest, UpgradeDbVersionNewResponse>(request,
+            RdsMeta.upgradeDbVersionNew, hcClient);
     }
 
     /**

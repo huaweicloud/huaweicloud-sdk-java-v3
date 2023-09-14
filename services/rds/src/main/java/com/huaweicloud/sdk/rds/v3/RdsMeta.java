@@ -80,6 +80,7 @@ import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
 import com.huaweicloud.sdk.rds.v3.model.CustomerModifyAutoEnlargePolicyReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReq;
+import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReqNew;
 import com.huaweicloud.sdk.rds.v3.model.DataIpRequest;
 import com.huaweicloud.sdk.rds.v3.model.DatabaseForCreation;
 import com.huaweicloud.sdk.rds.v3.model.DbUserPrivilegeRequest;
@@ -249,6 +250,9 @@ import com.huaweicloud.sdk.rds.v3.model.ResizeFlavorRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistingInstanceRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesResponse;
@@ -400,6 +404,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateRdsInstanceAliasRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UserForCreation;
@@ -2959,6 +2965,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestoreTablesNewRequest, RestoreTablesNewResponse> restoreTablesNew =
+        genForrestoreTablesNew();
+
+    private static HttpRequestDef<RestoreTablesNewRequest, RestoreTablesNewResponse> genForrestoreTablesNew() {
+        // basic
+        HttpRequestDef.Builder<RestoreTablesNewRequest, RestoreTablesNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestoreTablesNewRequest.class, RestoreTablesNewResponse.class)
+                .withName("RestoreTablesNew")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/restore/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreTablesNewRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreTablesNewRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<RestoreTablesNewRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestoreTablesNewRequestBody.class),
+            f -> f.withMarshaller(RestoreTablesNewRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestoreToExistingInstanceRequest, RestoreToExistingInstanceResponse> restoreToExistingInstance =
         genForrestoreToExistingInstance();
 
@@ -4531,6 +4576,45 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CustomerUpgradeDatabaseVersionReq.class),
             f -> f.withMarshaller(UpgradeDbVersionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeDbVersionNewRequest, UpgradeDbVersionNewResponse> upgradeDbVersionNew =
+        genForupgradeDbVersionNew();
+
+    private static HttpRequestDef<UpgradeDbVersionNewRequest, UpgradeDbVersionNewResponse> genForupgradeDbVersionNew() {
+        // basic
+        HttpRequestDef.Builder<UpgradeDbVersionNewRequest, UpgradeDbVersionNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeDbVersionNewRequest.class, UpgradeDbVersionNewResponse.class)
+                .withName("UpgradeDbVersionNew")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDbVersionNewRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpgradeDbVersionNewRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpgradeDbVersionNewRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpgradeDbVersionNewRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CustomerUpgradeDatabaseVersionReqNew>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CustomerUpgradeDatabaseVersionReqNew.class),
+            f -> f.withMarshaller(UpgradeDbVersionNewRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

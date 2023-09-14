@@ -60,6 +60,11 @@ public class ShowInstanceMessagesRequest {
 
     private String partition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keyword")
+
+    private String keyword;
+
     public ShowInstanceMessagesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -230,6 +235,23 @@ public class ShowInstanceMessagesRequest {
         this.partition = partition;
     }
 
+    public ShowInstanceMessagesRequest withKeyword(String keyword) {
+        this.keyword = keyword;
+        return this;
+    }
+
+    /**
+     * 关键词。 取值范围为0~50。
+     * @return keyword
+     */
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -243,13 +265,23 @@ public class ShowInstanceMessagesRequest {
             && Objects.equals(this.asc, that.asc) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.download, that.download)
-            && Objects.equals(this.messageOffset, that.messageOffset) && Objects.equals(this.partition, that.partition);
+            && Objects.equals(this.messageOffset, that.messageOffset) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.keyword, that.keyword);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(instanceId, topic, asc, startTime, endTime, limit, offset, download, messageOffset, partition);
+        return Objects.hash(instanceId,
+            topic,
+            asc,
+            startTime,
+            endTime,
+            limit,
+            offset,
+            download,
+            messageOffset,
+            partition,
+            keyword);
     }
 
     @Override
@@ -266,6 +298,7 @@ public class ShowInstanceMessagesRequest {
         sb.append("    download: ").append(toIndentedString(download)).append("\n");
         sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
+        sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
         sb.append("}");
         return sb.toString();
     }

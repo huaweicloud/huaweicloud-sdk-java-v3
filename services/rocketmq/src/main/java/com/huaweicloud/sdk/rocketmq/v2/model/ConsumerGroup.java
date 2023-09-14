@@ -134,7 +134,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 最大重试次数,取值范围为1~16。
+     * 最大重试次数。
      * @return retryMaxTime
      */
     public BigDecimal getRetryMaxTime() {

@@ -73,7 +73,7 @@ public class ListSupplementdataResponse extends SdkResponse {
     }
 
     /**
-     * Get rows
+     * 包含若干补数据实例信息
      * @return rows
      */
     public List<SupplementDataResp> getRows() {
@@ -90,7 +90,7 @@ public class ListSupplementdataResponse extends SdkResponse {
     }
 
     /**
-     * Get success
+     * 查询是否成功，取值为true或者false
      * @return success
      */
     public Boolean getSuccess() {
@@ -107,7 +107,7 @@ public class ListSupplementdataResponse extends SdkResponse {
     }
 
     /**
-     * Get total
+     * 补数据实例数量
      * @return total
      */
     public Integer getTotal() {

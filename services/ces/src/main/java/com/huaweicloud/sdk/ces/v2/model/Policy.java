@@ -114,7 +114,7 @@ public class Policy {
     }
 
     /**
-     * 告警阈值的比较条件，支持的值为(>|<|>=|<=|=|><|cycle_decrease|cycle_increase|cycle_wave)，cycle_decrease为环比下降，cycle_increase为环比上升，cycle_wave为环比波动
+     * 告警阈值的比较条件，支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave)，cycle_decrease为环比下降，cycle_increase为环比上升，cycle_wave为环比波动
      * @return comparisonOperator
      */
     public String getComparisonOperator() {

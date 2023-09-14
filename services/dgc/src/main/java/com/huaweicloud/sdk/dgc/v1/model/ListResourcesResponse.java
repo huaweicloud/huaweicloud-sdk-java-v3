@@ -30,7 +30,7 @@ public class ListResourcesResponse extends SdkResponse {
     }
 
     /**
-     * Get total
+     * 总的资源个数
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListResourcesResponse extends SdkResponse {
     }
 
     /**
-     * Get resources
+     * 资源列表
      * @return resources
      */
     public List<ResourceInfo> getResources() {

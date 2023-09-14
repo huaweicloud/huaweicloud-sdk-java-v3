@@ -26,7 +26,7 @@ public class KeypairDetail {
     private Long id;
 
     /**
-     * SSH密钥对的类型
+     * SSH密钥对的类型。ssh或x509。
      */
     public static final class TypeEnum {
 
@@ -101,7 +101,7 @@ public class KeypairDetail {
     private TypeEnum type;
 
     /**
-     * 租户级或者用户级
+     * 租户级或者用户级。domain或user。
      */
     public static final class ScopeEnum {
 
@@ -225,6 +225,16 @@ public class KeypairDetail {
 
     private Integer frozenState;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_id")
+
+    private String keyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "algorithm")
+
+    private String algorithm;
+
     public KeypairDetail withName(String name) {
         this.name = name;
         return this;
@@ -267,7 +277,7 @@ public class KeypairDetail {
     }
 
     /**
-     * SSH密钥对的类型
+     * SSH密钥对的类型。ssh或x509。
      * @return type
      */
     public TypeEnum getType() {
@@ -284,7 +294,7 @@ public class KeypairDetail {
     }
 
     /**
-     * 租户级或者用户级
+     * 租户级或者用户级。domain或user。
      * @return scope
      */
     public ScopeEnum getScope() {
@@ -473,6 +483,40 @@ public class KeypairDetail {
         this.frozenState = frozenState;
     }
 
+    public KeypairDetail withKeyId(String keyId) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    /**
+     * 密钥ID。
+     * @return keyId
+     */
+    public String getKeyId() {
+        return keyId;
+    }
+
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
+
+    public KeypairDetail withAlgorithm(String algorithm) {
+        this.algorithm = algorithm;
+        return this;
+    }
+
+    /**
+     * 生成算法。
+     * @return algorithm
+     */
+    public String getAlgorithm() {
+        return algorithm;
+    }
+
+    public void setAlgorithm(String algorithm) {
+        this.algorithm = algorithm;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -488,7 +532,8 @@ public class KeypairDetail {
             && Objects.equals(this.isKeyProtection, that.isKeyProtection) && Objects.equals(this.deleted, that.deleted)
             && Objects.equals(this.description, that.description) && Objects.equals(this.userId, that.userId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.deleteTime, that.deleteTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.frozenState, that.frozenState);
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.frozenState, that.frozenState)
+            && Objects.equals(this.keyId, that.keyId) && Objects.equals(this.algorithm, that.algorithm);
     }
 
     @Override
@@ -506,7 +551,9 @@ public class KeypairDetail {
             createTime,
             deleteTime,
             updateTime,
-            frozenState);
+            frozenState,
+            keyId,
+            algorithm);
     }
 
     @Override
@@ -527,6 +574,8 @@ public class KeypairDetail {
         sb.append("    deleteTime: ").append(toIndentedString(deleteTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    frozenState: ").append(toIndentedString(frozenState)).append("\n");
+        sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
+        sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

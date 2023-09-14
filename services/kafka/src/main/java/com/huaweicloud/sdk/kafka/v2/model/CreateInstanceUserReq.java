@@ -16,6 +16,11 @@ public class CreateInstanceUserReq {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_desc")
+
+    private String userDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_passwd")
 
     private String userPasswd;
@@ -35,6 +40,23 @@ public class CreateInstanceUserReq {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public CreateInstanceUserReq withUserDesc(String userDesc) {
+        this.userDesc = userDesc;
+        return this;
+    }
+
+    /**
+     * 用户描述。
+     * @return userDesc
+     */
+    public String getUserDesc() {
+        return userDesc;
+    }
+
+    public void setUserDesc(String userDesc) {
+        this.userDesc = userDesc;
     }
 
     public CreateInstanceUserReq withUserPasswd(String userPasswd) {
@@ -63,12 +85,13 @@ public class CreateInstanceUserReq {
             return false;
         }
         CreateInstanceUserReq that = (CreateInstanceUserReq) obj;
-        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userPasswd, that.userPasswd);
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userDesc, that.userDesc)
+            && Objects.equals(this.userPasswd, that.userPasswd);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, userPasswd);
+        return Objects.hash(userName, userDesc, userPasswd);
     }
 
     @Override
@@ -76,6 +99,7 @@ public class CreateInstanceUserReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceUserReq {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userDesc: ").append(toIndentedString(userDesc)).append("\n");
         sb.append("    userPasswd: ").append(toIndentedString(userPasswd)).append("\n");
         sb.append("}");
         return sb.toString();

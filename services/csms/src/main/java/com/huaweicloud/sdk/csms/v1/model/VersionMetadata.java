@@ -24,6 +24,11 @@ public class VersionMetadata {
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private Long expireTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kms_key_id")
 
     private String kmsKeyId;
@@ -61,7 +66,7 @@ public class VersionMetadata {
     }
 
     /**
-     * 凭据版本创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 
+     * 凭据版本创建时间，时间戳，即从1970年1月1日至该时间的总秒数。
      * minimum: 0
      * maximum: 13
      * @return createTime
@@ -74,13 +79,32 @@ public class VersionMetadata {
         this.createTime = createTime;
     }
 
+    public VersionMetadata withExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * 凭据版本过期时间，时间戳，即从1970年1月1日至该时间的总秒数。默认为空，凭据订阅“版本过期”事件类型时，有效期判断所依据的值。
+     * minimum: 0
+     * maximum: 13
+     * @return expireTime
+     */
+    public Long getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+    }
+
     public VersionMetadata withKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
         return this;
     }
 
     /**
-     * 加密版本凭据值的KMS主密钥ID。 
+     * 加密版本凭据值的KMS主密钥ID。
      * @return kmsKeyId
      */
     public String getKmsKeyId() {
@@ -130,7 +154,7 @@ public class VersionMetadata {
     }
 
     /**
-     * 凭据版本被标记的状态列表。每个版本标签对于凭据对象下版本是唯一存在的，如果你创建版本时，指定的是同一凭据对象下的一个已经标记在其他版本上的状态，该标签将自动从其他版本上删除，并附加到此版本上。  如果未指定version_stage的值，则凭据管理服务会自动移动临时标签SYSCURRENT到此新版本。 
+     * 凭据版本被标记的状态列表。每个版本标签对于凭据对象下版本是唯一存在的，如果你创建版本时，指定的是同一凭据对象下的一个已经标记在其他版本上的状态，该标签将自动从其他版本上删除，并附加到此版本上。  如果未指定version_stage的值，则凭据管理服务会自动移动临时标签SYSCURRENT到此新版本。
      * @return versionStages
      */
     public List<String> getVersionStages() {
@@ -151,13 +175,14 @@ public class VersionMetadata {
         }
         VersionMetadata that = (VersionMetadata) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.kmsKeyId, that.kmsKeyId) && Objects.equals(this.secretName, that.secretName)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.kmsKeyId, that.kmsKeyId)
+            && Objects.equals(this.secretName, that.secretName)
             && Objects.equals(this.versionStages, that.versionStages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, createTime, kmsKeyId, secretName, versionStages);
+        return Objects.hash(id, createTime, expireTime, kmsKeyId, secretName, versionStages);
     }
 
     @Override
@@ -166,6 +191,7 @@ public class VersionMetadata {
         sb.append("class VersionMetadata {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    kmsKeyId: ").append(toIndentedString(kmsKeyId)).append("\n");
         sb.append("    secretName: ").append(toIndentedString(secretName)).append("\n");
         sb.append("    versionStages: ").append(toIndentedString(versionStages)).append("\n");

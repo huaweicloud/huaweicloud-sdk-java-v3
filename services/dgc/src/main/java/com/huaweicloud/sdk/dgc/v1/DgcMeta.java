@@ -633,6 +633,27 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("connectionName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getConnectionName, (req, v) -> {
+                req.setConnectionName(v);
+            }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -738,6 +759,34 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ListJobsRequest.JobTypeEnum>withRequestField("jobType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListJobsRequest.JobTypeEnum.class),
+            f -> f.withMarshaller(ListJobsRequest::getJobType, (req, v) -> {
+                req.setJobType(v);
+            }));
+        builder.<String>withRequestField("jobName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getJobName, (req, v) -> {
+                req.setJobName(v);
+            }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -763,6 +812,27 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResourcesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("resourceName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourcesRequest::getResourceName, (req, v) -> {
+                req.setResourceName(v);
+            }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -826,6 +896,27 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScriptsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScriptsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("scriptName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScriptsRequest::getScriptName, (req, v) -> {
+                req.setScriptName(v);
+            }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -851,6 +942,62 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupplementdataRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<String>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupplementdataRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<String>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupplementdataRequest::getSize, (req, v) -> {
+                req.setSize(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupplementdataRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("userName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupplementdataRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupplementdataRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("startDate",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupplementdataRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            }));
+        builder.<String>withRequestField("endDate",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSupplementdataRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1316,11 +1463,11 @@ public class DgcMeta {
         HttpRequestDef.Builder<StopSupplementdataRequest, StopSupplementdataResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, StopSupplementdataRequest.class, StopSupplementdataResponse.class)
                 .withName("StopSupplementdata")
-                .withUri("/v1.0/{project_id}/supplementdata/{instance_name}/stop")
+                .withUri("/v1.0/{project_id}/supplementdata/{instanceName}/stop")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("instance_name",
+        builder.<String>withRequestField("instanceName",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),

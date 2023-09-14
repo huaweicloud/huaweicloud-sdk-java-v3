@@ -23,6 +23,11 @@ public class VideoCreateRequest {
 
     private VideoCreateRequestData data;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "biz_type")
+
+    private String bizType;
+
     /**
      * 事件类型，可选值如下： default：默认事件
      */
@@ -303,6 +308,23 @@ public class VideoCreateRequest {
         this.data = data;
     }
 
+    public VideoCreateRequest withBizType(String bizType) {
+        this.bizType = bizType;
+        return this;
+    }
+
+    /**
+     * 用户在控制台界面创建的biz_type名称，如果请求参数中传了biz_type则优先使用biz_type；如果用户没传biz_type则event_type和image_categories必须传。
+     * @return bizType
+     */
+    public String getBizType() {
+        return bizType;
+    }
+
+    public void setBizType(String bizType) {
+        this.bizType = bizType;
+    }
+
     public VideoCreateRequest withEventType(EventTypeEnum eventType) {
         this.eventType = eventType;
         return this;
@@ -412,7 +434,8 @@ public class VideoCreateRequest {
             return false;
         }
         VideoCreateRequest that = (VideoCreateRequest) obj;
-        return Objects.equals(this.data, that.data) && Objects.equals(this.eventType, that.eventType)
+        return Objects.equals(this.data, that.data) && Objects.equals(this.bizType, that.bizType)
+            && Objects.equals(this.eventType, that.eventType)
             && Objects.equals(this.imageCategories, that.imageCategories)
             && Objects.equals(this.audioCategories, that.audioCategories)
             && Objects.equals(this.callback, that.callback);
@@ -420,7 +443,7 @@ public class VideoCreateRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, eventType, imageCategories, audioCategories, callback);
+        return Objects.hash(data, bizType, eventType, imageCategories, audioCategories, callback);
     }
 
     @Override
@@ -428,6 +451,7 @@ public class VideoCreateRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class VideoCreateRequest {\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
+        sb.append("    bizType: ").append(toIndentedString(bizType)).append("\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
         sb.append("    imageCategories: ").append(toIndentedString(imageCategories)).append("\n");
         sb.append("    audioCategories: ").append(toIndentedString(audioCategories)).append("\n");

@@ -28,6 +28,11 @@ public class CreateSecretVersionRequestBody {
 
     private List<String> versionStages = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private Long expireTime;
+
     public CreateSecretVersionRequestBody withSecretBinary(String secretBinary) {
         this.secretBinary = secretBinary;
         return this;
@@ -95,6 +100,25 @@ public class CreateSecretVersionRequestBody {
         this.versionStages = versionStages;
     }
 
+    public CreateSecretVersionRequestBody withExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * 凭据版本过期时间，时间戳，即从1970年1月1日至该时间的总秒数。默认为空，凭据订阅“版本过期”事件类型时，有效期判断所依据的值。 
+     * minimum: 0
+     * maximum: 9999999999999
+     * @return expireTime
+     */
+    public Long getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +130,13 @@ public class CreateSecretVersionRequestBody {
         CreateSecretVersionRequestBody that = (CreateSecretVersionRequestBody) obj;
         return Objects.equals(this.secretBinary, that.secretBinary)
             && Objects.equals(this.secretString, that.secretString)
-            && Objects.equals(this.versionStages, that.versionStages);
+            && Objects.equals(this.versionStages, that.versionStages)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(secretBinary, secretString, versionStages);
+        return Objects.hash(secretBinary, secretString, versionStages, expireTime);
     }
 
     @Override
@@ -121,6 +146,7 @@ public class CreateSecretVersionRequestBody {
         sb.append("    secretBinary: ").append(toIndentedString(secretBinary)).append("\n");
         sb.append("    secretString: ").append(toIndentedString(secretString)).append("\n");
         sb.append("    versionStages: ").append(toIndentedString(versionStages)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

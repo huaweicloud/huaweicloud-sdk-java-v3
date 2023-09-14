@@ -22,7 +22,7 @@ public class CreateKeypairAction {
     private String name;
 
     /**
-     * SSH密钥对的类型
+     * SSH密钥对的类型。ssh或x509。
      */
     public static final class TypeEnum {
 
@@ -102,7 +102,7 @@ public class CreateKeypairAction {
     private String publicKey;
 
     /**
-     * 租户级或者用户级
+     * 租户级或者用户级。domain或user。
      */
     public static final class ScopeEnum {
 
@@ -209,7 +209,7 @@ public class CreateKeypairAction {
     }
 
     /**
-     * SSH密钥对的类型
+     * SSH密钥对的类型。ssh或x509。
      * @return type
      */
     public TypeEnum getType() {
@@ -243,7 +243,7 @@ public class CreateKeypairAction {
     }
 
     /**
-     * 租户级或者用户级
+     * 租户级或者用户级。domain或user。
      * @return scope
      */
     public ScopeEnum getScope() {

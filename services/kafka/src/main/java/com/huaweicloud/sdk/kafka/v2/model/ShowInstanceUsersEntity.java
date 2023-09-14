@@ -16,6 +16,11 @@ public class ShowInstanceUsersEntity {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_desc")
+
+    private String userDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
 
     private String role;
@@ -45,6 +50,23 @@ public class ShowInstanceUsersEntity {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public ShowInstanceUsersEntity withUserDesc(String userDesc) {
+        this.userDesc = userDesc;
+        return this;
+    }
+
+    /**
+     * 用户描述。
+     * @return userDesc
+     */
+    public String getUserDesc() {
+        return userDesc;
+    }
+
+    public void setUserDesc(String userDesc) {
+        this.userDesc = userDesc;
     }
 
     public ShowInstanceUsersEntity withRole(String role) {
@@ -107,13 +129,14 @@ public class ShowInstanceUsersEntity {
             return false;
         }
         ShowInstanceUsersEntity that = (ShowInstanceUsersEntity) obj;
-        return Objects.equals(this.userName, that.userName) && Objects.equals(this.role, that.role)
-            && Objects.equals(this.defaultApp, that.defaultApp) && Objects.equals(this.createdTime, that.createdTime);
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userDesc, that.userDesc)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.defaultApp, that.defaultApp)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, role, defaultApp, createdTime);
+        return Objects.hash(userName, userDesc, role, defaultApp, createdTime);
     }
 
     @Override
@@ -121,6 +144,7 @@ public class ShowInstanceUsersEntity {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceUsersEntity {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userDesc: ").append(toIndentedString(userDesc)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("    defaultApp: ").append(toIndentedString(defaultApp)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Auth {
 
     /**
-     * 取值为枚举类型。
+     * 取值为枚举类型。password或keypair。
      */
     public static final class TypeEnum {
 
@@ -101,7 +101,7 @@ public class Auth {
     }
 
     /**
-     * 取值为枚举类型。
+     * 取值为枚举类型。password或keypair。
      * @return type
      */
     public TypeEnum getType() {

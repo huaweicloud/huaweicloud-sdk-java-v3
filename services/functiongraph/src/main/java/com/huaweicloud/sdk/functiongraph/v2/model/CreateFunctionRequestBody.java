@@ -254,6 +254,11 @@ public class CreateFunctionRequestBody {
          */
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
 
+        /**
+         * Enum CUSTOM_IMAGE_SWR for value: "Custom-Image-Swr"
+         */
+        public static final CodeTypeEnum CUSTOM_IMAGE_SWR = new CodeTypeEnum("Custom-Image-Swr");
+
         private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CodeTypeEnum> createStaticFields() {
@@ -262,6 +267,7 @@ public class CreateFunctionRequestBody {
             map.put("zip", ZIP);
             map.put("obs", OBS);
             map.put("jar", JAR);
+            map.put("Custom-Image-Swr", CUSTOM_IMAGE_SWR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -325,6 +331,11 @@ public class CreateFunctionRequestBody {
     @JsonProperty(value = "code_filename")
 
     private String codeFilename;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_image")
+
+    private CustomImage customImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_data")
@@ -508,7 +519,7 @@ public class CreateFunctionRequestBody {
     }
 
     /**
-     * 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询华为云函数工作流服务进行配置
+     * 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
      * @return timeout
      */
     public Integer getTimeout() {
@@ -525,7 +536,7 @@ public class CreateFunctionRequestBody {
     }
 
     /**
-     * 函数执行入口 规则：xx.xx，必须包含“. ” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
+     * 函数执行入口 规则：xx.xx，必须包含“. ”；自定义镜像函数handler为“-” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
      * @return handler
      */
     public String getHandler() {
@@ -669,7 +680,7 @@ public class CreateFunctionRequestBody {
     }
 
     /**
-     * 函数的文件名，当CodeType为jar/zip时必须提供该字段，inline和obs不需要提供。
+     * 函数的文件名，当CodeType为jar/zip时必须提供该字段，CodeType为其他值时不需要提供。
      * @return codeFilename
      */
     public String getCodeFilename() {
@@ -678,6 +689,32 @@ public class CreateFunctionRequestBody {
 
     public void setCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
+    }
+
+    public CreateFunctionRequestBody withCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
+        return this;
+    }
+
+    public CreateFunctionRequestBody withCustomImage(Consumer<CustomImage> customImageSetter) {
+        if (this.customImage == null) {
+            this.customImage = new CustomImage();
+            customImageSetter.accept(this.customImage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customImage
+     * @return customImage
+     */
+    public CustomImage getCustomImage() {
+        return customImage;
+    }
+
+    public void setCustomImage(CustomImage customImage) {
+        this.customImage = customImage;
     }
 
     public CreateFunctionRequestBody withUserData(String userData) {
@@ -910,9 +947,9 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.memorySize, that.memorySize)
             && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.codeType, that.codeType)
             && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.codeFilename, that.codeFilename)
-            && Objects.equals(this.userData, that.userData) && Objects.equals(this.xrole, that.xrole)
-            && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.funcCode, that.funcCode)
+            && Objects.equals(this.customImage, that.customImage) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.xrole, that.xrole) && Objects.equals(this.appXrole, that.appXrole)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.funcCode, that.funcCode)
             && Objects.equals(this.initializerHandler, that.initializerHandler)
             && Objects.equals(this.initializerTimeout, that.initializerTimeout)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
@@ -934,6 +971,7 @@ public class CreateFunctionRequestBody {
             codeType,
             codeUrl,
             codeFilename,
+            customImage,
             userData,
             xrole,
             appXrole,
@@ -963,6 +1001,7 @@ public class CreateFunctionRequestBody {
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
+        sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    xrole: ").append(toIndentedString(xrole)).append("\n");
         sb.append("    appXrole: ").append(toIndentedString(appXrole)).append("\n");

@@ -51,6 +51,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.CreateInstallCmdRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateInstallCmdResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsRequest;
@@ -75,6 +77,12 @@ import com.huaweicloud.sdk.iotedge.v2.model.DeleteNaRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteNaResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsReleaseRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsReleaseResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListDevicesRequest;
@@ -145,6 +153,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateRoutesResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateScheduleRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateScheduleResponse;
 
 public class IoTEdgeClient {
 
@@ -304,6 +314,67 @@ public class IoTEdgeClient {
      */
     public SyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse> showEdgeNodeInvoker(ShowEdgeNodeRequest request) {
         return new SyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse>(request, IoTEdgeMeta.showEdgeNode, hcClient);
+    }
+
+    /**
+     * 设备控制释放
+     *
+     * 设备控制释放
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDeviceControlsReleaseRequest 请求对象
+     * @return ExecuteDeviceControlsReleaseResponse
+     */
+    public ExecuteDeviceControlsReleaseResponse executeDeviceControlsRelease(
+        ExecuteDeviceControlsReleaseRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.executeDeviceControlsRelease);
+    }
+
+    /**
+     * 设备控制释放
+     *
+     * 设备控制释放
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDeviceControlsReleaseRequest 请求对象
+     * @return SyncInvoker<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse>
+     */
+    public SyncInvoker<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse> executeDeviceControlsReleaseInvoker(
+        ExecuteDeviceControlsReleaseRequest request) {
+        return new SyncInvoker<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse>(request,
+            IoTEdgeMeta.executeDeviceControlsRelease, hcClient);
+    }
+
+    /**
+     * 设备控制设置
+     *
+     * 设备控制设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDeviceControlsSetRequest 请求对象
+     * @return ExecuteDeviceControlsSetResponse
+     */
+    public ExecuteDeviceControlsSetResponse executeDeviceControlsSet(ExecuteDeviceControlsSetRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.executeDeviceControlsSet);
+    }
+
+    /**
+     * 设备控制设置
+     *
+     * 设备控制设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDeviceControlsSetRequest 请求对象
+     * @return SyncInvoker<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse>
+     */
+    public SyncInvoker<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> executeDeviceControlsSetInvoker(
+        ExecuteDeviceControlsSetRequest request) {
+        return new SyncInvoker<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse>(request,
+            IoTEdgeMeta.executeDeviceControlsSet, hcClient);
     }
 
     /**
@@ -1888,6 +1959,96 @@ public class IoTEdgeClient {
      */
     public SyncInvoker<ShowPointsRequest, ShowPointsResponse> showPointsInvoker(ShowPointsRequest request) {
         return new SyncInvoker<ShowPointsRequest, ShowPointsResponse>(request, IoTEdgeMeta.showPoints, hcClient);
+    }
+
+    /**
+     * 创建调度计划
+     *
+     * 用户通过北向接口在指定边缘节点上创建调度计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateScheduleRequest 请求对象
+     * @return CreateScheduleResponse
+     */
+    public CreateScheduleResponse createSchedule(CreateScheduleRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.createSchedule);
+    }
+
+    /**
+     * 创建调度计划
+     *
+     * 用户通过北向接口在指定边缘节点上创建调度计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateScheduleRequest 请求对象
+     * @return SyncInvoker<CreateScheduleRequest, CreateScheduleResponse>
+     */
+    public SyncInvoker<CreateScheduleRequest, CreateScheduleResponse> createScheduleInvoker(
+        CreateScheduleRequest request) {
+        return new SyncInvoker<CreateScheduleRequest, CreateScheduleResponse>(request, IoTEdgeMeta.createSchedule,
+            hcClient);
+    }
+
+    /**
+     * 删除调度计划
+     *
+     * 用户通过北向接口删除边缘节点上调度计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteScheduleRequest 请求对象
+     * @return DeleteScheduleResponse
+     */
+    public DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.deleteSchedule);
+    }
+
+    /**
+     * 删除调度计划
+     *
+     * 用户通过北向接口删除边缘节点上调度计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteScheduleRequest 请求对象
+     * @return SyncInvoker<DeleteScheduleRequest, DeleteScheduleResponse>
+     */
+    public SyncInvoker<DeleteScheduleRequest, DeleteScheduleResponse> deleteScheduleInvoker(
+        DeleteScheduleRequest request) {
+        return new SyncInvoker<DeleteScheduleRequest, DeleteScheduleResponse>(request, IoTEdgeMeta.deleteSchedule,
+            hcClient);
+    }
+
+    /**
+     * 更新调度计划，机机接口，全量更新字段
+     *
+     * 用户通过北向接口修改边缘节点上调度计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateScheduleRequest 请求对象
+     * @return UpdateScheduleResponse
+     */
+    public UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.updateSchedule);
+    }
+
+    /**
+     * 更新调度计划，机机接口，全量更新字段
+     *
+     * 用户通过北向接口修改边缘节点上调度计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateScheduleRequest 请求对象
+     * @return SyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>
+     */
+    public SyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse> updateScheduleInvoker(
+        UpdateScheduleRequest request) {
+        return new SyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>(request, IoTEdgeMeta.updateSchedule,
+            hcClient);
     }
 
     /**

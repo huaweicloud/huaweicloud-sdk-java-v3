@@ -16,7 +16,7 @@ public class StopSupplementdataRequest {
     private String workspace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_name")
+    @JsonProperty(value = "instanceName")
 
     private String instanceName;
 

@@ -33,6 +33,11 @@ public class TextDetectionReq {
 
     private List<String> whiteGlossaryNames = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "biz_type")
+
+    private String bizType;
+
     public TextDetectionReq withEventType(String eventType) {
         this.eventType = eventType;
         return this;
@@ -142,6 +147,23 @@ public class TextDetectionReq {
         this.whiteGlossaryNames = whiteGlossaryNames;
     }
 
+    public TextDetectionReq withBizType(String bizType) {
+        this.bizType = bizType;
+        return this;
+    }
+
+    /**
+     * 自定义审核策略名称，可在控制台配置;如果请求参数中传了biz_type则优先使用biz_type,如果用户没传biz_type则event_type必须传。
+     * @return bizType
+     */
+    public String getBizType() {
+        return bizType;
+    }
+
+    public void setBizType(String bizType) {
+        this.bizType = bizType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -152,12 +174,13 @@ public class TextDetectionReq {
         }
         TextDetectionReq that = (TextDetectionReq) obj;
         return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.glossaryNames, that.glossaryNames)
-            && Objects.equals(this.data, that.data) && Objects.equals(this.whiteGlossaryNames, that.whiteGlossaryNames);
+            && Objects.equals(this.data, that.data) && Objects.equals(this.whiteGlossaryNames, that.whiteGlossaryNames)
+            && Objects.equals(this.bizType, that.bizType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventType, glossaryNames, data, whiteGlossaryNames);
+        return Objects.hash(eventType, glossaryNames, data, whiteGlossaryNames, bizType);
     }
 
     @Override
@@ -168,6 +191,7 @@ public class TextDetectionReq {
         sb.append("    glossaryNames: ").append(toIndentedString(glossaryNames)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    whiteGlossaryNames: ").append(toIndentedString(whiteGlossaryNames)).append("\n");
+        sb.append("    bizType: ").append(toIndentedString(bizType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

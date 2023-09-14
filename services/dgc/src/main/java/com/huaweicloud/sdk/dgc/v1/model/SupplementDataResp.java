@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.dgc.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public class SupplementDataResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endDate")
 
-    private BigDecimal endDate;
+    private Long endDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobList")
@@ -37,7 +36,7 @@ public class SupplementDataResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startDate")
 
-    private BigDecimal startDate;
+    private Long startDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -47,17 +46,17 @@ public class SupplementDataResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "submittedDate")
 
-    private BigDecimal submittedDate;
+    private Long submittedDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supplement_data_instance_time")
 
-    private Object supplementDataInstanceTime;
+    private SupplementDataRespSupplementDataInstanceTime supplementDataInstanceTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supplement_data_run_time")
 
-    private Object supplementDataRunTime;
+    private SupplementDataRespSupplementDataRunTime supplementDataRunTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -69,20 +68,20 @@ public class SupplementDataResp {
 
     private String userName;
 
-    public SupplementDataResp withEndDate(BigDecimal endDate) {
+    public SupplementDataResp withEndDate(Long endDate) {
         this.endDate = endDate;
         return this;
     }
 
     /**
-     * Get endDate
+     * 作业的开始日期 13位时间戳
      * @return endDate
      */
-    public BigDecimal getEndDate() {
+    public Long getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(BigDecimal endDate) {
+    public void setEndDate(Long endDate) {
         this.endDate = endDate;
     }
 
@@ -108,7 +107,7 @@ public class SupplementDataResp {
     }
 
     /**
-     * Get jobList
+     * 补数据作业名称，可能有依赖的作业，故会有多个作业的情况。
      * @return jobList
      */
     public List<String> getJobList() {
@@ -125,7 +124,7 @@ public class SupplementDataResp {
     }
 
     /**
-     * Get name
+     * 补数据名称
      * @return name
      */
     public String getName() {
@@ -142,7 +141,7 @@ public class SupplementDataResp {
     }
 
     /**
-     * Get parallel
+     * 并行周期数，取值范围[1,5]
      * @return parallel
      */
     public Integer getParallel() {
@@ -153,20 +152,20 @@ public class SupplementDataResp {
         this.parallel = parallel;
     }
 
-    public SupplementDataResp withStartDate(BigDecimal startDate) {
+    public SupplementDataResp withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
 
     /**
-     * Get startDate
+     * 作业的结束日期 13位时间戳
      * @return startDate
      */
-    public BigDecimal getStartDate() {
+    public Long getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(BigDecimal startDate) {
+    public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
 
@@ -176,7 +175,7 @@ public class SupplementDataResp {
     }
 
     /**
-     * Get status
+     * 实例状态：SUCCESS：成功RUNNING ：运行中CANCLE：取消
      * @return status
      */
     public String getStatus() {
@@ -187,25 +186,36 @@ public class SupplementDataResp {
         this.status = status;
     }
 
-    public SupplementDataResp withSubmittedDate(BigDecimal submittedDate) {
+    public SupplementDataResp withSubmittedDate(Long submittedDate) {
         this.submittedDate = submittedDate;
         return this;
     }
 
     /**
-     * Get submittedDate
+     * 作业提交时间，13位时间戳
      * @return submittedDate
      */
-    public BigDecimal getSubmittedDate() {
+    public Long getSubmittedDate() {
         return submittedDate;
     }
 
-    public void setSubmittedDate(BigDecimal submittedDate) {
+    public void setSubmittedDate(Long submittedDate) {
         this.submittedDate = submittedDate;
     }
 
-    public SupplementDataResp withSupplementDataInstanceTime(Object supplementDataInstanceTime) {
+    public SupplementDataResp withSupplementDataInstanceTime(
+        SupplementDataRespSupplementDataInstanceTime supplementDataInstanceTime) {
         this.supplementDataInstanceTime = supplementDataInstanceTime;
+        return this;
+    }
+
+    public SupplementDataResp withSupplementDataInstanceTime(
+        Consumer<SupplementDataRespSupplementDataInstanceTime> supplementDataInstanceTimeSetter) {
+        if (this.supplementDataInstanceTime == null) {
+            this.supplementDataInstanceTime = new SupplementDataRespSupplementDataInstanceTime();
+            supplementDataInstanceTimeSetter.accept(this.supplementDataInstanceTime);
+        }
+
         return this;
     }
 
@@ -213,16 +223,26 @@ public class SupplementDataResp {
      * Get supplementDataInstanceTime
      * @return supplementDataInstanceTime
      */
-    public Object getSupplementDataInstanceTime() {
+    public SupplementDataRespSupplementDataInstanceTime getSupplementDataInstanceTime() {
         return supplementDataInstanceTime;
     }
 
-    public void setSupplementDataInstanceTime(Object supplementDataInstanceTime) {
+    public void setSupplementDataInstanceTime(SupplementDataRespSupplementDataInstanceTime supplementDataInstanceTime) {
         this.supplementDataInstanceTime = supplementDataInstanceTime;
     }
 
-    public SupplementDataResp withSupplementDataRunTime(Object supplementDataRunTime) {
+    public SupplementDataResp withSupplementDataRunTime(SupplementDataRespSupplementDataRunTime supplementDataRunTime) {
         this.supplementDataRunTime = supplementDataRunTime;
+        return this;
+    }
+
+    public SupplementDataResp withSupplementDataRunTime(
+        Consumer<SupplementDataRespSupplementDataRunTime> supplementDataRunTimeSetter) {
+        if (this.supplementDataRunTime == null) {
+            this.supplementDataRunTime = new SupplementDataRespSupplementDataRunTime();
+            supplementDataRunTimeSetter.accept(this.supplementDataRunTime);
+        }
+
         return this;
     }
 
@@ -230,11 +250,11 @@ public class SupplementDataResp {
      * Get supplementDataRunTime
      * @return supplementDataRunTime
      */
-    public Object getSupplementDataRunTime() {
+    public SupplementDataRespSupplementDataRunTime getSupplementDataRunTime() {
         return supplementDataRunTime;
     }
 
-    public void setSupplementDataRunTime(Object supplementDataRunTime) {
+    public void setSupplementDataRunTime(SupplementDataRespSupplementDataRunTime supplementDataRunTime) {
         this.supplementDataRunTime = supplementDataRunTime;
     }
 
@@ -244,7 +264,7 @@ public class SupplementDataResp {
     }
 
     /**
-     * Get type
+     * 触发补数据的类型，取值范围[0, 1]。0代表作业监控界面触发的补数据，1代表恢复动作触发的补数据
      * @return type
      */
     public Integer getType() {
@@ -261,7 +281,7 @@ public class SupplementDataResp {
     }
 
     /**
-     * Get userName
+     * 用户名称
      * @return userName
      */
     public String getUserName() {

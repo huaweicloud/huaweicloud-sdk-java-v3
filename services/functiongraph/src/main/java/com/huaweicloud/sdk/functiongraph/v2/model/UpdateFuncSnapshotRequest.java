@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -10,17 +15,87 @@ import java.util.Objects;
  */
 public class UpdateFuncSnapshotRequest {
 
+    /**
+     * 禁用/启用
+     */
+    public static final class ActionEnum {
+
+        /**
+         * Enum ENABLE for value: "enable"
+         */
+        public static final ActionEnum ENABLE = new ActionEnum("enable");
+
+        /**
+         * Enum DISABLE for value: "disable"
+         */
+        public static final ActionEnum DISABLE = new ActionEnum("disable");
+
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("enable", ENABLE);
+            map.put("disable", DISABLE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ActionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ActionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
+        }
+
+        public static ActionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ActionEnum) {
+                return this.value.equals(((ActionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private String action;
+    private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "function_urn")
 
     private String functionUrn;
 
-    public UpdateFuncSnapshotRequest withAction(String action) {
+    public UpdateFuncSnapshotRequest withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
@@ -29,11 +104,11 @@ public class UpdateFuncSnapshotRequest {
      * 禁用/启用
      * @return action
      */
-    public String getAction() {
+    public ActionEnum getAction() {
         return action;
     }
 
-    public void setAction(String action) {
+    public void setAction(ActionEnum action) {
         this.action = action;
     }
 

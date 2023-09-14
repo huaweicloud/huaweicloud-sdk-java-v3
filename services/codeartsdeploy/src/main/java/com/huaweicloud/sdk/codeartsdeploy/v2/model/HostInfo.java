@@ -39,7 +39,7 @@ public class HostInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
 
-    private PermissionHostDetail permission;
+    private PermissionHostDetailNew permission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
@@ -205,14 +205,14 @@ public class HostInfo {
         this.authorization = authorization;
     }
 
-    public HostInfo withPermission(PermissionHostDetail permission) {
+    public HostInfo withPermission(PermissionHostDetailNew permission) {
         this.permission = permission;
         return this;
     }
 
-    public HostInfo withPermission(Consumer<PermissionHostDetail> permissionSetter) {
+    public HostInfo withPermission(Consumer<PermissionHostDetailNew> permissionSetter) {
         if (this.permission == null) {
-            this.permission = new PermissionHostDetail();
+            this.permission = new PermissionHostDetailNew();
             permissionSetter.accept(this.permission);
         }
 
@@ -223,11 +223,11 @@ public class HostInfo {
      * Get permission
      * @return permission
      */
-    public PermissionHostDetail getPermission() {
+    public PermissionHostDetailNew getPermission() {
         return permission;
     }
 
-    public void setPermission(PermissionHostDetail permission) {
+    public void setPermission(PermissionHostDetailNew permission) {
         this.permission = permission;
     }
 

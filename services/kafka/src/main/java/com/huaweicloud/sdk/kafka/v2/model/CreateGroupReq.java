@@ -15,6 +15,11 @@ public class CreateGroupReq {
 
     private String groupName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_desc")
+
+    private String groupDesc;
+
     public CreateGroupReq withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
@@ -32,6 +37,23 @@ public class CreateGroupReq {
         this.groupName = groupName;
     }
 
+    public CreateGroupReq withGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+        return this;
+    }
+
+    /**
+     * 消费组描述
+     * @return groupDesc
+     */
+    public String getGroupDesc() {
+        return groupDesc;
+    }
+
+    public void setGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class CreateGroupReq {
             return false;
         }
         CreateGroupReq that = (CreateGroupReq) obj;
-        return Objects.equals(this.groupName, that.groupName);
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupDesc, that.groupDesc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupName);
+        return Objects.hash(groupName, groupDesc);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class CreateGroupReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateGroupReq {\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    groupDesc: ").append(toIndentedString(groupDesc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -36,7 +36,7 @@ public class ListResourceInstancesRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "matches")
 
-    private List<TagItem> matches = null;
+    private List<TagMatches> matches = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
@@ -116,7 +116,7 @@ public class ListResourceInstancesRequestBody {
     }
 
     /**
-     * 标签列表，key和value键值对的集合。  - key：表示标签键，一个凭据下最多包含20个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为36个字符。key之间是“与”的关系  - value：表示标签值。每个值最大长度43个字符，value之间为“或”的关系。
+     * 标签列表，key和value键值对的集合。最多不超过10个。
      * @return tags
      */
     public List<Tag> getTags() {
@@ -127,12 +127,12 @@ public class ListResourceInstancesRequestBody {
         this.tags = tags;
     }
 
-    public ListResourceInstancesRequestBody withMatches(List<TagItem> matches) {
+    public ListResourceInstancesRequestBody withMatches(List<TagMatches> matches) {
         this.matches = matches;
         return this;
     }
 
-    public ListResourceInstancesRequestBody addMatchesItem(TagItem matchesItem) {
+    public ListResourceInstancesRequestBody addMatchesItem(TagMatches matchesItem) {
         if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
@@ -140,7 +140,7 @@ public class ListResourceInstancesRequestBody {
         return this;
     }
 
-    public ListResourceInstancesRequestBody withMatches(Consumer<List<TagItem>> matchesSetter) {
+    public ListResourceInstancesRequestBody withMatches(Consumer<List<TagMatches>> matchesSetter) {
         if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
@@ -152,11 +152,11 @@ public class ListResourceInstancesRequestBody {
      * 搜索字段。  - key为搜索的字段，目前仅支持搜索凭据名称，值为“resource_name”。  - value为模糊匹配的值，最大长度为255个字符。为空返回空值。
      * @return matches
      */
-    public List<TagItem> getMatches() {
+    public List<TagMatches> getMatches() {
         return matches;
     }
 
-    public void setMatches(List<TagItem> matches) {
+    public void setMatches(List<TagMatches> matches) {
         this.matches = matches;
     }
 

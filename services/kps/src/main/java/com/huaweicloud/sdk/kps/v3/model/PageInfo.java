@@ -48,7 +48,7 @@ public class PageInfo {
     }
 
     /**
-     * 返回前一页查询地址
+     * 返回上一页的查询地址
      * @return previousMarker
      */
     public String getPreviousMarker() {
@@ -65,7 +65,9 @@ public class PageInfo {
     }
 
     /**
-     * 本页返回条目数量
+     * 返回条目数量
+     * minimum: 0
+     * maximum: 1000
      * @return currentCount
      */
     public Integer getCurrentCount() {

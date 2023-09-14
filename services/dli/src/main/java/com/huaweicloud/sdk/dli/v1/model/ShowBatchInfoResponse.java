@@ -80,6 +80,11 @@ public class ShowBatchInfoResponse extends SdkResponse {
     private String image;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "req_body")
+
+    private String reqBody;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private Long updateTime;
@@ -331,6 +336,23 @@ public class ShowBatchInfoResponse extends SdkResponse {
         this.image = image;
     }
 
+    public ShowBatchInfoResponse withReqBody(String reqBody) {
+        this.reqBody = reqBody;
+        return this;
+    }
+
+    /**
+     * 请求参数详情
+     * @return reqBody
+     */
+    public String getReqBody() {
+        return reqBody;
+    }
+
+    public void setReqBody(String reqBody) {
+        this.reqBody = reqBody;
+    }
+
     public ShowBatchInfoResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -397,8 +419,9 @@ public class ShowBatchInfoResponse extends SdkResponse {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.name, that.name)
             && Objects.equals(this.owner, that.owner) && Objects.equals(this.proxyUser, that.proxyUser)
             && Objects.equals(this.kind, that.kind) && Objects.equals(this.queue, that.queue)
-            && Objects.equals(this.image, that.image) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.feature, that.feature) && Objects.equals(this.sparkVersion, that.sparkVersion);
+            && Objects.equals(this.image, that.image) && Objects.equals(this.reqBody, that.reqBody)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.feature, that.feature)
+            && Objects.equals(this.sparkVersion, that.sparkVersion);
     }
 
     @Override
@@ -416,6 +439,7 @@ public class ShowBatchInfoResponse extends SdkResponse {
             kind,
             queue,
             image,
+            reqBody,
             updateTime,
             feature,
             sparkVersion);
@@ -438,6 +462,7 @@ public class ShowBatchInfoResponse extends SdkResponse {
         sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    reqBody: ").append(toIndentedString(reqBody)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
         sb.append("    sparkVersion: ").append(toIndentedString(sparkVersion)).append("\n");

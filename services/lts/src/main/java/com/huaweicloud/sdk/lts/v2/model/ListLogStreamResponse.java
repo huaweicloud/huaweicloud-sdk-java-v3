@@ -17,14 +17,14 @@ public class ListLogStreamResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_streams")
 
-    private List<LogStream> logStreams = null;
+    private List<LogStreamResBody> logStreams = null;
 
-    public ListLogStreamResponse withLogStreams(List<LogStream> logStreams) {
+    public ListLogStreamResponse withLogStreams(List<LogStreamResBody> logStreams) {
         this.logStreams = logStreams;
         return this;
     }
 
-    public ListLogStreamResponse addLogStreamsItem(LogStream logStreamsItem) {
+    public ListLogStreamResponse addLogStreamsItem(LogStreamResBody logStreamsItem) {
         if (this.logStreams == null) {
             this.logStreams = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListLogStreamResponse extends SdkResponse {
         return this;
     }
 
-    public ListLogStreamResponse withLogStreams(Consumer<List<LogStream>> logStreamsSetter) {
+    public ListLogStreamResponse withLogStreams(Consumer<List<LogStreamResBody>> logStreamsSetter) {
         if (this.logStreams == null) {
             this.logStreams = new ArrayList<>();
         }
@@ -41,14 +41,14 @@ public class ListLogStreamResponse extends SdkResponse {
     }
 
     /**
-     * 日志组数组。
+     * Get logStreams
      * @return logStreams
      */
-    public List<LogStream> getLogStreams() {
+    public List<LogStreamResBody> getLogStreams() {
         return logStreams;
     }
 
-    public void setLogStreams(List<LogStream> logStreams) {
+    public void setLogStreams(List<LogStreamResBody> logStreams) {
         this.logStreams = logStreams;
     }
 

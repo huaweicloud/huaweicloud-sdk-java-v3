@@ -30,6 +30,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionTriggerRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionTriggerRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionTriggerResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionUrlRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionUrlResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionVersionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionVersionRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionVersionResponse;
@@ -55,6 +57,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionTriggerRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionTriggerResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionUrlRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionUrlResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteTagsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteTagsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteVersionAliasRequest;
@@ -66,6 +70,7 @@ import com.huaweicloud.sdk.functiongraph.v2.model.EnableLtsLogsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ExportFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ExportFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.FlowExecuteBody;
+import com.huaweicloud.sdk.functiongraph.v2.model.FunctionUrlRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.ImportFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ImportFunctionRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.ImportFunctionResponse;
@@ -126,6 +131,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionConfigRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionConfigResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionTriggerRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionTriggerResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionUrlRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionUrlResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowLtsLogDetailsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowLtsLogDetailsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowProjectTagsListRequest;
@@ -176,6 +183,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionReservedInstance
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionReservedInstancesCountRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionReservedInstancesCountResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionTagsRequestBody;
+import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionUrlRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionUrlResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateTracingRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateTracingRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateTracingResponse;
@@ -485,6 +494,38 @@ public class FunctionGraphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFunctionTriggerRequestBody.class),
             f -> f.withMarshaller(CreateFunctionTriggerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFunctionUrlRequest, CreateFunctionUrlResponse> createFunctionUrl =
+        genForcreateFunctionUrl();
+
+    private static HttpRequestDef<CreateFunctionUrlRequest, CreateFunctionUrlResponse> genForcreateFunctionUrl() {
+        // basic
+        HttpRequestDef.Builder<CreateFunctionUrlRequest, CreateFunctionUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFunctionUrlRequest.class, CreateFunctionUrlResponse.class)
+                .withName("CreateFunctionUrl")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/function-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFunctionUrlRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+        builder.<FunctionUrlRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FunctionUrlRequestBody.class),
+            f -> f.withMarshaller(CreateFunctionUrlRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -818,6 +859,31 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteFunctionTriggerRequest::getTriggerId, (req, v) -> {
                 req.setTriggerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFunctionUrlRequest, DeleteFunctionUrlResponse> deleteFunctionUrl =
+        genFordeleteFunctionUrl();
+
+    private static HttpRequestDef<DeleteFunctionUrlRequest, DeleteFunctionUrlResponse> genFordeleteFunctionUrl() {
+        // basic
+        HttpRequestDef.Builder<DeleteFunctionUrlRequest, DeleteFunctionUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFunctionUrlRequest.class, DeleteFunctionUrlResponse.class)
+                .withName("DeleteFunctionUrl")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/function-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFunctionUrlRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
             }));
 
         // response
@@ -1898,7 +1964,7 @@ public class FunctionGraphMeta {
         HttpRequestDef.Builder<ShowFuncSnapshotStateRequest, ShowFuncSnapshotStateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowFuncSnapshotStateRequest.class, ShowFuncSnapshotStateResponse.class)
             .withName("ShowFuncSnapshotState")
-            .withUri("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/state")
+            .withUri("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/{action}")
             .withContentType("application/json");
 
         // requests
@@ -1908,6 +1974,13 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFuncSnapshotStateRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            }));
+        builder.<ShowFuncSnapshotStateRequest.ActionEnum>withRequestField("action",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowFuncSnapshotStateRequest.ActionEnum.class),
+            f -> f.withMarshaller(ShowFuncSnapshotStateRequest::getAction, (req, v) -> {
+                req.setAction(v);
             }));
 
         // response
@@ -2025,6 +2098,31 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFunctionTriggerRequest::getTriggerId, (req, v) -> {
                 req.setTriggerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFunctionUrlRequest, ShowFunctionUrlResponse> showFunctionUrl =
+        genForshowFunctionUrl();
+
+    private static HttpRequestDef<ShowFunctionUrlRequest, ShowFunctionUrlResponse> genForshowFunctionUrl() {
+        // basic
+        HttpRequestDef.Builder<ShowFunctionUrlRequest, ShowFunctionUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFunctionUrlRequest.class, ShowFunctionUrlResponse.class)
+                .withName("ShowFunctionUrl")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/function-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFunctionUrlRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
             }));
 
         // response
@@ -2589,10 +2687,10 @@ public class FunctionGraphMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("action",
+        builder.<UpdateFuncSnapshotRequest.ActionEnum>withRequestField("action",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(UpdateFuncSnapshotRequest.ActionEnum.class),
             f -> f.withMarshaller(UpdateFuncSnapshotRequest::getAction, (req, v) -> {
                 req.setAction(v);
             }));
@@ -2770,6 +2868,38 @@ public class FunctionGraphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFunctionReservedInstancesCountRequestBody.class),
             f -> f.withMarshaller(UpdateFunctionReservedInstancesCountRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFunctionUrlRequest, UpdateFunctionUrlResponse> updateFunctionUrl =
+        genForupdateFunctionUrl();
+
+    private static HttpRequestDef<UpdateFunctionUrlRequest, UpdateFunctionUrlResponse> genForupdateFunctionUrl() {
+        // basic
+        HttpRequestDef.Builder<UpdateFunctionUrlRequest, UpdateFunctionUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateFunctionUrlRequest.class, UpdateFunctionUrlResponse.class)
+                .withName("UpdateFunctionUrl")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/function-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFunctionUrlRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+        builder.<FunctionUrlRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FunctionUrlRequestBody.class),
+            f -> f.withMarshaller(UpdateFunctionUrlRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

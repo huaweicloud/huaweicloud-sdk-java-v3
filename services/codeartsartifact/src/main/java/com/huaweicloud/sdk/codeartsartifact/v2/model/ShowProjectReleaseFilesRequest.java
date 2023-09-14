@@ -91,7 +91,7 @@ public class ShowProjectReleaseFilesRequest {
     }
 
     /**
-     * 华为云devcloud的项目id
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

@@ -118,6 +118,21 @@ public class AgentConfig {
 
     private String pulsarShadowTopicPrefix;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elasticsearch_enable")
+
+    private Boolean elasticsearchEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elasticsearch_shadow_type")
+
+    private String elasticsearchShadowType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elasticsearch_shadow_repository")
+
+    private String elasticsearchShadowRepository;
+
     public AgentConfig withAgentId(Integer agentId) {
         this.agentId = agentId;
         return this;
@@ -493,6 +508,57 @@ public class AgentConfig {
         this.pulsarShadowTopicPrefix = pulsarShadowTopicPrefix;
     }
 
+    public AgentConfig withElasticsearchEnable(Boolean elasticsearchEnable) {
+        this.elasticsearchEnable = elasticsearchEnable;
+        return this;
+    }
+
+    /**
+     * elasticsearch影子规则开关
+     * @return elasticsearchEnable
+     */
+    public Boolean getElasticsearchEnable() {
+        return elasticsearchEnable;
+    }
+
+    public void setElasticsearchEnable(Boolean elasticsearchEnable) {
+        this.elasticsearchEnable = elasticsearchEnable;
+    }
+
+    public AgentConfig withElasticsearchShadowType(String elasticsearchShadowType) {
+        this.elasticsearchShadowType = elasticsearchShadowType;
+        return this;
+    }
+
+    /**
+     * elasticsearch影子规则类型
+     * @return elasticsearchShadowType
+     */
+    public String getElasticsearchShadowType() {
+        return elasticsearchShadowType;
+    }
+
+    public void setElasticsearchShadowType(String elasticsearchShadowType) {
+        this.elasticsearchShadowType = elasticsearchShadowType;
+    }
+
+    public AgentConfig withElasticsearchShadowRepository(String elasticsearchShadowRepository) {
+        this.elasticsearchShadowRepository = elasticsearchShadowRepository;
+        return this;
+    }
+
+    /**
+     * elasticsearch影子库映射信息
+     * @return elasticsearchShadowRepository
+     */
+    public String getElasticsearchShadowRepository() {
+        return elasticsearchShadowRepository;
+    }
+
+    public void setElasticsearchShadowRepository(String elasticsearchShadowRepository) {
+        this.elasticsearchShadowRepository = elasticsearchShadowRepository;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -518,7 +584,10 @@ public class AgentConfig {
             && Objects.equals(this.clickhouseShadowType, that.clickhouseShadowType)
             && Objects.equals(this.clickhouseShadowRepository, that.clickhouseShadowRepository)
             && Objects.equals(this.pulsarEnable, that.pulsarEnable)
-            && Objects.equals(this.pulsarShadowTopicPrefix, that.pulsarShadowTopicPrefix);
+            && Objects.equals(this.pulsarShadowTopicPrefix, that.pulsarShadowTopicPrefix)
+            && Objects.equals(this.elasticsearchEnable, that.elasticsearchEnable)
+            && Objects.equals(this.elasticsearchShadowType, that.elasticsearchShadowType)
+            && Objects.equals(this.elasticsearchShadowRepository, that.elasticsearchShadowRepository);
     }
 
     @Override
@@ -543,7 +612,10 @@ public class AgentConfig {
             clickhouseShadowType,
             clickhouseShadowRepository,
             pulsarEnable,
-            pulsarShadowTopicPrefix);
+            pulsarShadowTopicPrefix,
+            elasticsearchEnable,
+            elasticsearchShadowType,
+            elasticsearchShadowRepository);
     }
 
     @Override
@@ -571,6 +643,11 @@ public class AgentConfig {
         sb.append("    clickhouseShadowRepository: ").append(toIndentedString(clickhouseShadowRepository)).append("\n");
         sb.append("    pulsarEnable: ").append(toIndentedString(pulsarEnable)).append("\n");
         sb.append("    pulsarShadowTopicPrefix: ").append(toIndentedString(pulsarShadowTopicPrefix)).append("\n");
+        sb.append("    elasticsearchEnable: ").append(toIndentedString(elasticsearchEnable)).append("\n");
+        sb.append("    elasticsearchShadowType: ").append(toIndentedString(elasticsearchShadowType)).append("\n");
+        sb.append("    elasticsearchShadowRepository: ")
+            .append(toIndentedString(elasticsearchShadowRepository))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

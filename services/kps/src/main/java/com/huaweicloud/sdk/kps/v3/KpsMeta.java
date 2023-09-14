@@ -8,6 +8,11 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairRequestBody;
 import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairRequestBody;
+import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.ClearPrivateKeyRequest;
+import com.huaweicloud.sdk.kps.v3.model.ClearPrivateKeyResponse;
 import com.huaweicloud.sdk.kps.v3.model.CreateKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.CreateKeypairRequestBody;
 import com.huaweicloud.sdk.kps.v3.model.CreateKeypairResponse;
@@ -20,6 +25,12 @@ import com.huaweicloud.sdk.kps.v3.model.DeleteKeypairResponse;
 import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairRequestBody;
 import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.ExportPrivateKeyRequest;
+import com.huaweicloud.sdk.kps.v3.model.ExportPrivateKeyRequestBody;
+import com.huaweicloud.sdk.kps.v3.model.ExportPrivateKeyResponse;
+import com.huaweicloud.sdk.kps.v3.model.ImportPrivateKeyRequest;
+import com.huaweicloud.sdk.kps.v3.model.ImportPrivateKeyRequestBody;
+import com.huaweicloud.sdk.kps.v3.model.ImportPrivateKeyResponse;
 import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskRequest;
 import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskResponse;
 import com.huaweicloud.sdk.kps.v3.model.ListKeypairDetailRequest;
@@ -58,6 +69,63 @@ public class KpsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> batchAssociateKeypair =
+        genForbatchAssociateKeypair();
+
+    private static HttpRequestDef<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> genForbatchAssociateKeypair() {
+        // basic
+        HttpRequestDef.Builder<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchAssociateKeypairRequest.class, BatchAssociateKeypairResponse.class)
+            .withName("BatchAssociateKeypair")
+            .withUri("/v3/{project_id}/keypairs/batch-associate")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchAssociateKeypairRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchAssociateKeypairRequestBody.class),
+            f -> f.withMarshaller(BatchAssociateKeypairRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ClearPrivateKeyRequest, ClearPrivateKeyResponse> clearPrivateKey =
+        genForclearPrivateKey();
+
+    private static HttpRequestDef<ClearPrivateKeyRequest, ClearPrivateKeyResponse> genForclearPrivateKey() {
+        // basic
+        HttpRequestDef.Builder<ClearPrivateKeyRequest, ClearPrivateKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, ClearPrivateKeyRequest.class, ClearPrivateKeyResponse.class)
+                .withName("ClearPrivateKey")
+                .withUri("/v3/{project_id}/keypairs/{keypair_name}/private-key")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keypair_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ClearPrivateKeyRequest::getKeypairName, (req, v) -> {
+                req.setKeypairName(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ClearPrivateKeyResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -180,6 +248,56 @@ public class KpsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportPrivateKeyRequest, ExportPrivateKeyResponse> exportPrivateKey =
+        genForexportPrivateKey();
+
+    private static HttpRequestDef<ExportPrivateKeyRequest, ExportPrivateKeyResponse> genForexportPrivateKey() {
+        // basic
+        HttpRequestDef.Builder<ExportPrivateKeyRequest, ExportPrivateKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportPrivateKeyRequest.class, ExportPrivateKeyResponse.class)
+                .withName("ExportPrivateKey")
+                .withUri("/v3/{project_id}/keypairs/private-key/export")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ExportPrivateKeyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportPrivateKeyRequestBody.class),
+            f -> f.withMarshaller(ExportPrivateKeyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportPrivateKeyRequest, ImportPrivateKeyResponse> importPrivateKey =
+        genForimportPrivateKey();
+
+    private static HttpRequestDef<ImportPrivateKeyRequest, ImportPrivateKeyResponse> genForimportPrivateKey() {
+        // basic
+        HttpRequestDef.Builder<ImportPrivateKeyRequest, ImportPrivateKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportPrivateKeyRequest.class, ImportPrivateKeyResponse.class)
+                .withName("ImportPrivateKey")
+                .withUri("/v3/{project_id}/keypairs/private-key/import")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ImportPrivateKeyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportPrivateKeyRequestBody.class),
+            f -> f.withMarshaller(ImportPrivateKeyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFailedTaskRequest, ListFailedTaskResponse> listFailedTask =
         genForlistFailedTask();
 
@@ -192,17 +310,17 @@ public class KpsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFailedTaskRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFailedTaskRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));

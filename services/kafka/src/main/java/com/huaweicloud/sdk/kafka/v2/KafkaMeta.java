@@ -147,6 +147,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicReq;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceConsumerGroupRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceConsumerGroupResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpReq;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpResponse;
@@ -156,6 +158,8 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicReq;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaReq;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaResponse;
@@ -164,6 +168,7 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateUserReq;
 
 @SuppressWarnings("unchecked")
 public class KafkaMeta {
@@ -1770,6 +1775,13 @@ public class KafkaMeta {
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getPartition, (req, v) -> {
                 req.setPartition(v);
             }));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getKeyword, (req, v) -> {
+                req.setKeyword(v);
+            }));
 
         // response
 
@@ -2277,6 +2289,55 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> updateInstanceConsumerGroup =
+        genForupdateInstanceConsumerGroup();
+
+    private static HttpRequestDef<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> genForupdateInstanceConsumerGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateInstanceConsumerGroupRequest.class,
+                    UpdateInstanceConsumerGroupResponse.class)
+                .withName("UpdateInstanceConsumerGroup")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getGroup, (req, v) -> {
+                req.setGroup(v);
+            }));
+        builder.<CreateGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateGroupReq.class),
+            f -> f.withMarshaller(UpdateInstanceConsumerGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIp =
         genForupdateInstanceCrossVpcIp();
 
@@ -2334,6 +2395,52 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceTopicReq.class),
             f -> f.withMarshaller(UpdateInstanceTopicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceUserRequest, UpdateInstanceUserResponse> updateInstanceUser =
+        genForupdateInstanceUser();
+
+    private static HttpRequestDef<UpdateInstanceUserRequest, UpdateInstanceUserResponse> genForupdateInstanceUser() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceUserRequest, UpdateInstanceUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceUserRequest.class, UpdateInstanceUserResponse.class)
+                .withName("UpdateInstanceUser")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/users/{user_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceUserRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceUserRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<UpdateUserReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateUserReq.class),
+            f -> f.withMarshaller(UpdateInstanceUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

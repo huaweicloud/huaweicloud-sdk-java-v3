@@ -5,12 +5,16 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretTagRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretTagResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretEventRequest;
+import com.huaweicloud.sdk.csms.v1.model.DeleteSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretForScheduleRequest;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretForScheduleResponse;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretRequest;
@@ -21,10 +25,14 @@ import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagRequest;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagResponse;
 import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobRequest;
 import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListNotificationRecordsRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListNotificationRecordsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListProjectSecretsTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListProjectSecretsTagsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListResourceInstancesRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListResourceInstancesResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretEventsRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretEventsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsRequest;
@@ -33,16 +41,22 @@ import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateVersionRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateVersionResponse;
 import com.huaweicloud.sdk.csms.v1.model.UploadSecretBlobRequest;
 import com.huaweicloud.sdk.csms.v1.model.UploadSecretBlobResponse;
 
@@ -130,9 +144,39 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 创建事件
+     *
+     * 创建事件，事件可配置在一个或多个凭据对象上。当事件为启用状态且包含的基础事件类型在凭据对象上触发时，云服务会将对应的事件通知发送至事件指定的通知主题上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecretEventRequest 请求对象
+     * @return CompletableFuture<CreateSecretEventResponse>
+     */
+    public CompletableFuture<CreateSecretEventResponse> createSecretEventAsync(CreateSecretEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.createSecretEvent);
+    }
+
+    /**
+     * 创建事件
+     *
+     * 创建事件，事件可配置在一个或多个凭据对象上。当事件为启用状态且包含的基础事件类型在凭据对象上触发时，云服务会将对应的事件通知发送至事件指定的通知主题上。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecretEventRequest 请求对象
+     * @return AsyncInvoker<CreateSecretEventRequest, CreateSecretEventResponse>
+     */
+    public AsyncInvoker<CreateSecretEventRequest, CreateSecretEventResponse> createSecretEventAsyncInvoker(
+        CreateSecretEventRequest request) {
+        return new AsyncInvoker<CreateSecretEventRequest, CreateSecretEventResponse>(request,
+            CsmsMeta.createSecretEvent, hcClient);
+    }
+
+    /**
      * 添加凭据标签
      *
-     * - 功能介绍：添加凭据标签。
+     * 添加凭据标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -146,7 +190,7 @@ public class CsmsAsyncClient {
     /**
      * 添加凭据标签
      *
-     * - 功能介绍：添加凭据标签。
+     * 添加凭据标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -219,6 +263,36 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 立即删除事件
+     *
+     * 立即删除指定的事件，且无法恢复。如事件存在凭据引用，则无法删除，请先解除关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSecretEventRequest 请求对象
+     * @return CompletableFuture<DeleteSecretEventResponse>
+     */
+    public CompletableFuture<DeleteSecretEventResponse> deleteSecretEventAsync(DeleteSecretEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.deleteSecretEvent);
+    }
+
+    /**
+     * 立即删除事件
+     *
+     * 立即删除指定的事件，且无法恢复。如事件存在凭据引用，则无法删除，请先解除关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSecretEventRequest 请求对象
+     * @return AsyncInvoker<DeleteSecretEventRequest, DeleteSecretEventResponse>
+     */
+    public AsyncInvoker<DeleteSecretEventRequest, DeleteSecretEventResponse> deleteSecretEventAsyncInvoker(
+        DeleteSecretEventRequest request) {
+        return new AsyncInvoker<DeleteSecretEventRequest, DeleteSecretEventResponse>(request,
+            CsmsMeta.deleteSecretEvent, hcClient);
+    }
+
+    /**
      * 创建凭据的定时删除任务
      *
      * 指定延迟删除时间，创建删除凭据的定时任务，可设置7~30天的的延迟删除时间。
@@ -282,7 +356,7 @@ public class CsmsAsyncClient {
     /**
      * 删除凭据标签
      *
-     * - 功能介绍：删除凭据标签。
+     * 删除凭据标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -296,7 +370,7 @@ public class CsmsAsyncClient {
     /**
      * 删除凭据标签
      *
-     * - 功能介绍：删除凭据标签。
+     * 删除凭据标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -340,9 +414,40 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 查询已触发的事件通知记录
+     *
+     * 查询三个月内所有已触发的事件通知记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotificationRecordsRequest 请求对象
+     * @return CompletableFuture<ListNotificationRecordsResponse>
+     */
+    public CompletableFuture<ListNotificationRecordsResponse> listNotificationRecordsAsync(
+        ListNotificationRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.listNotificationRecords);
+    }
+
+    /**
+     * 查询已触发的事件通知记录
+     *
+     * 查询三个月内所有已触发的事件通知记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotificationRecordsRequest 请求对象
+     * @return AsyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse>
+     */
+    public AsyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse> listNotificationRecordsAsyncInvoker(
+        ListNotificationRecordsRequest request) {
+        return new AsyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse>(request,
+            CsmsMeta.listNotificationRecords, hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
-     * - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
+     * 查询用户在指定项目下的所有凭据标签集合。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -357,7 +462,7 @@ public class CsmsAsyncClient {
     /**
      * 查询项目标签
      *
-     * - 功能介绍：查询用户在指定项目下的所有凭据标签集合。
+     * 查询用户在指定项目下的所有凭据标签集合。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -373,7 +478,7 @@ public class CsmsAsyncClient {
     /**
      * 查询凭据实例
      *
-     * - 功能介绍：查询凭据实例。通过标签过滤，筛选用户凭据,返回凭据列表。
+     * 查询凭据实例。通过标签过滤，筛选用户凭据，返回凭据列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -388,7 +493,7 @@ public class CsmsAsyncClient {
     /**
      * 查询凭据实例
      *
-     * - 功能介绍：查询凭据实例。通过标签过滤，筛选用户凭据,返回凭据列表。
+     * 查询凭据实例。通过标签过滤，筛选用户凭据，返回凭据列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -402,9 +507,39 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 查询事件列表
+     *
+     * 查询当前用户在本项目下创建的所有事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecretEventsRequest 请求对象
+     * @return CompletableFuture<ListSecretEventsResponse>
+     */
+    public CompletableFuture<ListSecretEventsResponse> listSecretEventsAsync(ListSecretEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.listSecretEvents);
+    }
+
+    /**
+     * 查询事件列表
+     *
+     * 查询当前用户在本项目下创建的所有事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecretEventsRequest 请求对象
+     * @return AsyncInvoker<ListSecretEventsRequest, ListSecretEventsResponse>
+     */
+    public AsyncInvoker<ListSecretEventsRequest, ListSecretEventsResponse> listSecretEventsAsyncInvoker(
+        ListSecretEventsRequest request) {
+        return new AsyncInvoker<ListSecretEventsRequest, ListSecretEventsResponse>(request, CsmsMeta.listSecretEvents,
+            hcClient);
+    }
+
+    /**
      * 查询凭据标签
      *
-     * - 功能介绍：查询凭据标签。
+     * 查询凭据标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -418,7 +553,7 @@ public class CsmsAsyncClient {
     /**
      * 查询凭据标签
      *
-     * - 功能介绍：查询凭据标签。
+     * 查询凭据标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -547,6 +682,36 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 查询事件
+     *
+     * 查询指定事件的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecretEventRequest 请求对象
+     * @return CompletableFuture<ShowSecretEventResponse>
+     */
+    public CompletableFuture<ShowSecretEventResponse> showSecretEventAsync(ShowSecretEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.showSecretEvent);
+    }
+
+    /**
+     * 查询事件
+     *
+     * 查询指定事件的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecretEventRequest 请求对象
+     * @return AsyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse>
+     */
+    public AsyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse> showSecretEventAsyncInvoker(
+        ShowSecretEventRequest request) {
+        return new AsyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse>(request, CsmsMeta.showSecretEvent,
+            hcClient);
+    }
+
+    /**
      * 查询凭据的版本状态
      *
      * 查询指定凭据版本状态标记的版本信息。
@@ -638,6 +803,36 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 更新事件
+     *
+     * 更新指定事件的元数据信息。支持更新的元数据包含事件启用状态、基础类型列表、通知主题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecretEventRequest 请求对象
+     * @return CompletableFuture<UpdateSecretEventResponse>
+     */
+    public CompletableFuture<UpdateSecretEventResponse> updateSecretEventAsync(UpdateSecretEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.updateSecretEvent);
+    }
+
+    /**
+     * 更新事件
+     *
+     * 更新指定事件的元数据信息。支持更新的元数据包含事件启用状态、基础类型列表、通知主题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecretEventRequest 请求对象
+     * @return AsyncInvoker<UpdateSecretEventRequest, UpdateSecretEventResponse>
+     */
+    public AsyncInvoker<UpdateSecretEventRequest, UpdateSecretEventResponse> updateSecretEventAsyncInvoker(
+        UpdateSecretEventRequest request) {
+        return new AsyncInvoker<UpdateSecretEventRequest, UpdateSecretEventResponse>(request,
+            CsmsMeta.updateSecretEvent, hcClient);
+    }
+
+    /**
      * 更新凭据的版本状态
      *
      * 更新凭据的版本状态。
@@ -665,6 +860,35 @@ public class CsmsAsyncClient {
         UpdateSecretStageRequest request) {
         return new AsyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse>(request,
             CsmsMeta.updateSecretStage, hcClient);
+    }
+
+    /**
+     * 更新凭据版本
+     *
+     * 当前支持更新指定凭据版本的有效期，只能更新ENABLED状态的凭据。在关联订阅的事件包含“版本过期”基础事件类型时，每次更新版本有效期后仅会触发一次事件通知。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVersionRequest 请求对象
+     * @return CompletableFuture<UpdateVersionResponse>
+     */
+    public CompletableFuture<UpdateVersionResponse> updateVersionAsync(UpdateVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.updateVersion);
+    }
+
+    /**
+     * 更新凭据版本
+     *
+     * 当前支持更新指定凭据版本的有效期，只能更新ENABLED状态的凭据。在关联订阅的事件包含“版本过期”基础事件类型时，每次更新版本有效期后仅会触发一次事件通知。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVersionRequest 请求对象
+     * @return AsyncInvoker<UpdateVersionRequest, UpdateVersionResponse>
+     */
+    public AsyncInvoker<UpdateVersionRequest, UpdateVersionResponse> updateVersionAsyncInvoker(
+        UpdateVersionRequest request) {
+        return new AsyncInvoker<UpdateVersionRequest, UpdateVersionResponse>(request, CsmsMeta.updateVersion, hcClient);
     }
 
     /**

@@ -202,7 +202,6 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateTransferRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.UpdateTransferResponse;
 
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class LtsMeta {
@@ -1386,13 +1385,6 @@ public class LtsMeta {
             f -> f.withMarshaller(ListLogStreamRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
             }));
-        builder.<String>withRequestField("tag",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogStreamRequest::getTag, (req, v) -> {
-                req.setTag(v);
-            }));
 
         // response
 
@@ -1713,13 +1705,6 @@ public class LtsMeta {
             }));
 
         // response
-        builder.<Map<String, List<Object>>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(List.class));
 
         return builder.build();
     }

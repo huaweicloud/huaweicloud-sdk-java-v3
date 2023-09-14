@@ -15,6 +15,21 @@ public class ListScriptsRequest {
 
     private String workspace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scriptName")
+
+    private String scriptName;
+
     public ListScriptsRequest withWorkspace(String workspace) {
         this.workspace = workspace;
         return this;
@@ -32,6 +47,57 @@ public class ListScriptsRequest {
         this.workspace = workspace;
     }
 
+    public ListScriptsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 分页参数:每页限定数量
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListScriptsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 分页参数：页数
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListScriptsRequest withScriptName(String scriptName) {
+        this.scriptName = scriptName;
+        return this;
+    }
+
+    /**
+     * 脚本名称
+     * @return scriptName
+     */
+    public String getScriptName() {
+        return scriptName;
+    }
+
+    public void setScriptName(String scriptName) {
+        this.scriptName = scriptName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +107,13 @@ public class ListScriptsRequest {
             return false;
         }
         ListScriptsRequest that = (ListScriptsRequest) obj;
-        return Objects.equals(this.workspace, that.workspace);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.scriptName, that.scriptName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace);
+        return Objects.hash(workspace, limit, offset, scriptName);
     }
 
     @Override
@@ -54,6 +121,9 @@ public class ListScriptsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScriptsRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

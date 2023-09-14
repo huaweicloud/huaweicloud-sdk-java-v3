@@ -3,8 +3,11 @@ package com.huaweicloud.sdk.bms.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 /**
  * nics字段数据结构说明
@@ -20,6 +23,11 @@ public class Nics {
     @JsonProperty(value = "ip_address")
 
     private String ipAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allowed_address_pairs")
+
+    private List<CreateServerNicAllowedAddressPairs> allowedAddressPairs = null;
 
     public Nics withSubnetId(UUID subnetId) {
         this.subnetId = subnetId;
@@ -55,6 +63,39 @@ public class Nics {
         this.ipAddress = ipAddress;
     }
 
+    public Nics withAllowedAddressPairs(List<CreateServerNicAllowedAddressPairs> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+        return this;
+    }
+
+    public Nics addAllowedAddressPairsItem(CreateServerNicAllowedAddressPairs allowedAddressPairsItem) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        this.allowedAddressPairs.add(allowedAddressPairsItem);
+        return this;
+    }
+
+    public Nics withAllowedAddressPairs(Consumer<List<CreateServerNicAllowedAddressPairs>> allowedAddressPairsSetter) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        allowedAddressPairsSetter.accept(this.allowedAddressPairs);
+        return this;
+    }
+
+    /**
+     * IP/Mac对列表， 约束：IP地址不允许为 “0.0.0.0/0” 如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组 如果allowed_address_pairs为“1.1.1.1/0”，表示关闭源目地址检查开关 被绑定的云服务器网卡allowed_address_pairs填“1.1.1.1/0”
+     * @return allowedAddressPairs
+     */
+    public List<CreateServerNicAllowedAddressPairs> getAllowedAddressPairs() {
+        return allowedAddressPairs;
+    }
+
+    public void setAllowedAddressPairs(List<CreateServerNicAllowedAddressPairs> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +105,13 @@ public class Nics {
             return false;
         }
         Nics that = (Nics) obj;
-        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.ipAddress, that.ipAddress);
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnetId, ipAddress);
+        return Objects.hash(subnetId, ipAddress, allowedAddressPairs);
     }
 
     @Override
@@ -78,6 +120,7 @@ public class Nics {
         sb.append("class Nics {\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+        sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.1.58</version>
+        <version>3.1.59</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.1.58</version>
+    <version>3.1.59</version>
     <packaging>pom</packaging>
     <name>Huawei Cloud SDK for Java Services</name>
     <description>Services code for Huawei Cloud SDK for Java</description>
@@ -23,7 +23,6 @@
         <module>metastudio</module>
         <module>ram</module>
         <module>workspaceapp</module>
-        <module>cloudpipeline</module>
         <module>mpc</module>
         <module>imagesearch</module>
         <module>codeartsdeploy</module>
@@ -35,6 +34,7 @@
         <module>evs</module>
         <module>ga</module>
         <module>vpcep</module>
+        <module>cloudpond</module>
         <module>cbr</module>
         <module>elb</module>
         <module>tms</module>
@@ -113,7 +113,6 @@
         <module>config</module>
         <module>rabbitmq</module>
         <module>dws</module>
-        <module>ies</module>
         <module>msgsms</module>
         <module>koophone</module>
         <module>hilens</module>
@@ -126,6 +125,7 @@
         <module>ges</module>
         <module>ims</module>
         <module>optverse</module>
+        <module>codeartsinspector</module>
         <module>expert</module>
         <module>ec</module>
         <module>apm</module>
@@ -153,6 +153,7 @@
         <module>smn</module>
         <module>vcm</module>
         <module>vas</module>
+        <module>codeartspipeline</module>
         <module>csms</module>
         <module>cce</module>
         <module>dbss</module>
@@ -170,7 +171,6 @@
         <module>dris</module>
         <module>res</module>
         <module>mapds</module>
-        <module>vss</module>
         <module>gaussdbforopengauss</module>
         <module>cms</module>
     </modules>

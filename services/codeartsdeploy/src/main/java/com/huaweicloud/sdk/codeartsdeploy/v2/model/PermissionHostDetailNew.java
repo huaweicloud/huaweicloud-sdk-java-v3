@@ -1,0 +1,166 @@
+package com.huaweicloud.sdk.codeartsdeploy.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * 主机相关权限详情类
+ */
+public class PermissionHostDetailNew {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_view")
+
+    private Boolean canView;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_edit")
+
+    private Boolean canEdit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_delete")
+
+    private Boolean canDelete;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_add_host")
+
+    private Boolean canAddHost;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_copy")
+
+    private Boolean canCopy;
+
+    public PermissionHostDetailNew withCanView(Boolean canView) {
+        this.canView = canView;
+        return this;
+    }
+
+    /**
+     * 是否有查看权限
+     * @return canView
+     */
+    public Boolean getCanView() {
+        return canView;
+    }
+
+    public void setCanView(Boolean canView) {
+        this.canView = canView;
+    }
+
+    public PermissionHostDetailNew withCanEdit(Boolean canEdit) {
+        this.canEdit = canEdit;
+        return this;
+    }
+
+    /**
+     * 是否有编辑权限
+     * @return canEdit
+     */
+    public Boolean getCanEdit() {
+        return canEdit;
+    }
+
+    public void setCanEdit(Boolean canEdit) {
+        this.canEdit = canEdit;
+    }
+
+    public PermissionHostDetailNew withCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
+        return this;
+    }
+
+    /**
+     * 是否有删除权限
+     * @return canDelete
+     */
+    public Boolean getCanDelete() {
+        return canDelete;
+    }
+
+    public void setCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
+    }
+
+    public PermissionHostDetailNew withCanAddHost(Boolean canAddHost) {
+        this.canAddHost = canAddHost;
+        return this;
+    }
+
+    /**
+     * 是否有添加主机权限
+     * @return canAddHost
+     */
+    public Boolean getCanAddHost() {
+        return canAddHost;
+    }
+
+    public void setCanAddHost(Boolean canAddHost) {
+        this.canAddHost = canAddHost;
+    }
+
+    public PermissionHostDetailNew withCanCopy(Boolean canCopy) {
+        this.canCopy = canCopy;
+        return this;
+    }
+
+    /**
+     * 是否有复制主机权限
+     * @return canCopy
+     */
+    public Boolean getCanCopy() {
+        return canCopy;
+    }
+
+    public void setCanCopy(Boolean canCopy) {
+        this.canCopy = canCopy;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        PermissionHostDetailNew that = (PermissionHostDetailNew) obj;
+        return Objects.equals(this.canView, that.canView) && Objects.equals(this.canEdit, that.canEdit)
+            && Objects.equals(this.canDelete, that.canDelete) && Objects.equals(this.canAddHost, that.canAddHost)
+            && Objects.equals(this.canCopy, that.canCopy);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(canView, canEdit, canDelete, canAddHost, canCopy);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PermissionHostDetailNew {\n");
+        sb.append("    canView: ").append(toIndentedString(canView)).append("\n");
+        sb.append("    canEdit: ").append(toIndentedString(canEdit)).append("\n");
+        sb.append("    canDelete: ").append(toIndentedString(canDelete)).append("\n");
+        sb.append("    canAddHost: ").append(toIndentedString(canAddHost)).append("\n");
+        sb.append("    canCopy: ").append(toIndentedString(canCopy)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

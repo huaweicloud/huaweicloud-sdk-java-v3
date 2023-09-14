@@ -113,6 +113,8 @@ import com.huaweicloud.sdk.meeting.v1.model.DeleteRecordingsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteRecordingsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteResourceRequest;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteResourceResponse;
+import com.huaweicloud.sdk.meeting.v1.model.DeleteTokenRequest;
+import com.huaweicloud.sdk.meeting.v1.model.DeleteTokenResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteVisionActiveCodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteVisionActiveCodeResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteWebHookConfigRequest;
@@ -2469,6 +2471,37 @@ public class MeetingMeta {
             f -> f.withMarshaller(DeleteResourceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }).withInnerContainerType(String.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTokenRequest, DeleteTokenResponse> deleteToken = genFordeleteToken();
+
+    private static HttpRequestDef<DeleteTokenRequest, DeleteTokenResponse> genFordeleteToken() {
+        // basic
+        HttpRequestDef.Builder<DeleteTokenRequest, DeleteTokenResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTokenRequest.class, DeleteTokenResponse.class)
+                .withName("DeleteToken")
+                .withUri("/v1/usg/acs/token")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Request-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTokenRequest::getXRequestID, (req, v) -> {
+                req.setXRequestID(v);
+            }));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTokenRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            }));
 
         // response
 

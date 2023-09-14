@@ -3,30 +3,18 @@ package com.huaweicloud.sdk.image.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.image.v2.model.CreateImageHighresolutionMattingTaskRequest;
-import com.huaweicloud.sdk.image.v2.model.CreateImageHighresolutionMattingTaskResponse;
-import com.huaweicloud.sdk.image.v2.model.CreateVideoTaggingMediaTaskRequest;
-import com.huaweicloud.sdk.image.v2.model.CreateVideoTaggingMediaTaskResponse;
 import com.huaweicloud.sdk.image.v2.model.RunCelebrityRecognitionRequest;
 import com.huaweicloud.sdk.image.v2.model.RunCelebrityRecognitionResponse;
-import com.huaweicloud.sdk.image.v2.model.RunImageDescriptionRequest;
-import com.huaweicloud.sdk.image.v2.model.RunImageDescriptionResponse;
 import com.huaweicloud.sdk.image.v2.model.RunImageMainObjectDetectionRequest;
 import com.huaweicloud.sdk.image.v2.model.RunImageMainObjectDetectionResponse;
 import com.huaweicloud.sdk.image.v2.model.RunImageMediaTaggingDetRequest;
 import com.huaweicloud.sdk.image.v2.model.RunImageMediaTaggingDetResponse;
 import com.huaweicloud.sdk.image.v2.model.RunImageMediaTaggingRequest;
 import com.huaweicloud.sdk.image.v2.model.RunImageMediaTaggingResponse;
-import com.huaweicloud.sdk.image.v2.model.RunImageSuperResolutionRequest;
-import com.huaweicloud.sdk.image.v2.model.RunImageSuperResolutionResponse;
 import com.huaweicloud.sdk.image.v2.model.RunImageTaggingRequest;
 import com.huaweicloud.sdk.image.v2.model.RunImageTaggingResponse;
 import com.huaweicloud.sdk.image.v2.model.RunRecaptureDetectRequest;
 import com.huaweicloud.sdk.image.v2.model.RunRecaptureDetectResponse;
-import com.huaweicloud.sdk.image.v2.model.ShowImageHighresolutionMattingTaskRequest;
-import com.huaweicloud.sdk.image.v2.model.ShowImageHighresolutionMattingTaskResponse;
-import com.huaweicloud.sdk.image.v2.model.ShowVideoTaggingMediaTaskRequest;
-import com.huaweicloud.sdk.image.v2.model.ShowVideoTaggingMediaTaskResponse;
 
 public class ImageClient {
 
@@ -39,67 +27,6 @@ public class ImageClient {
     public static ClientBuilder<ImageClient> newBuilder() {
         ClientBuilder<ImageClient> clientBuilder = new ClientBuilder<>(ImageClient::new);
         return clientBuilder;
-    }
-
-    /**
-     * 创建图像高清抠图任务
-     *
-     * 创建图像高清抠图任务，将输入的高清图像中的商品主体从原图中扣取出来，输出商品主体图片或者蒙版。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateImageHighresolutionMattingTaskRequest 请求对象
-     * @return CreateImageHighresolutionMattingTaskResponse
-     */
-    public CreateImageHighresolutionMattingTaskResponse createImageHighresolutionMattingTask(
-        CreateImageHighresolutionMattingTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.createImageHighresolutionMattingTask);
-    }
-
-    /**
-     * 创建图像高清抠图任务
-     *
-     * 创建图像高清抠图任务，将输入的高清图像中的商品主体从原图中扣取出来，输出商品主体图片或者蒙版。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateImageHighresolutionMattingTaskRequest 请求对象
-     * @return SyncInvoker<CreateImageHighresolutionMattingTaskRequest, CreateImageHighresolutionMattingTaskResponse>
-     */
-    public SyncInvoker<CreateImageHighresolutionMattingTaskRequest, CreateImageHighresolutionMattingTaskResponse> createImageHighresolutionMattingTaskInvoker(
-        CreateImageHighresolutionMattingTaskRequest request) {
-        return new SyncInvoker<CreateImageHighresolutionMattingTaskRequest, CreateImageHighresolutionMattingTaskResponse>(
-            request, ImageMeta.createImageHighresolutionMattingTask, hcClient);
-    }
-
-    /**
-     * 创建视频标签任务
-     *
-     * 创建视频标签任务，输入一段视频，通过AI模型分析视频中的信息，输出视频所包含的媒资标签、名人标签、logo标签、语音标签、OCR标签等信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoTaggingMediaTaskRequest 请求对象
-     * @return CreateVideoTaggingMediaTaskResponse
-     */
-    public CreateVideoTaggingMediaTaskResponse createVideoTaggingMediaTask(CreateVideoTaggingMediaTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.createVideoTaggingMediaTask);
-    }
-
-    /**
-     * 创建视频标签任务
-     *
-     * 创建视频标签任务，输入一段视频，通过AI模型分析视频中的信息，输出视频所包含的媒资标签、名人标签、logo标签、语音标签、OCR标签等信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateVideoTaggingMediaTaskRequest 请求对象
-     * @return SyncInvoker<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse>
-     */
-    public SyncInvoker<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse> createVideoTaggingMediaTaskInvoker(
-        CreateVideoTaggingMediaTaskRequest request) {
-        return new SyncInvoker<CreateVideoTaggingMediaTaskRequest, CreateVideoTaggingMediaTaskResponse>(request,
-            ImageMeta.createVideoTaggingMediaTask, hcClient);
     }
 
     /**
@@ -130,36 +57,6 @@ public class ImageClient {
         RunCelebrityRecognitionRequest request) {
         return new SyncInvoker<RunCelebrityRecognitionRequest, RunCelebrityRecognitionResponse>(request,
             ImageMeta.runCelebrityRecognition, hcClient);
-    }
-
-    /**
-     * 图像描述
-     *
-     * 图像描述
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageDescriptionRequest 请求对象
-     * @return RunImageDescriptionResponse
-     */
-    public RunImageDescriptionResponse runImageDescription(RunImageDescriptionRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.runImageDescription);
-    }
-
-    /**
-     * 图像描述
-     *
-     * 图像描述
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageDescriptionRequest 请求对象
-     * @return SyncInvoker<RunImageDescriptionRequest, RunImageDescriptionResponse>
-     */
-    public SyncInvoker<RunImageDescriptionRequest, RunImageDescriptionResponse> runImageDescriptionInvoker(
-        RunImageDescriptionRequest request) {
-        return new SyncInvoker<RunImageDescriptionRequest, RunImageDescriptionResponse>(request,
-            ImageMeta.runImageDescription, hcClient);
     }
 
     /**
@@ -253,36 +150,6 @@ public class ImageClient {
     }
 
     /**
-     * 图像超分
-     *
-     * 图像数据，base64编码，输入图像范围200px ~ 1080px，支持JPG/PNG/BMP/JPEG/WEBP格式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageSuperResolutionRequest 请求对象
-     * @return RunImageSuperResolutionResponse
-     */
-    public RunImageSuperResolutionResponse runImageSuperResolution(RunImageSuperResolutionRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.runImageSuperResolution);
-    }
-
-    /**
-     * 图像超分
-     *
-     * 图像数据，base64编码，输入图像范围200px ~ 1080px，支持JPG/PNG/BMP/JPEG/WEBP格式
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunImageSuperResolutionRequest 请求对象
-     * @return SyncInvoker<RunImageSuperResolutionRequest, RunImageSuperResolutionResponse>
-     */
-    public SyncInvoker<RunImageSuperResolutionRequest, RunImageSuperResolutionResponse> runImageSuperResolutionInvoker(
-        RunImageSuperResolutionRequest request) {
-        return new SyncInvoker<RunImageSuperResolutionRequest, RunImageSuperResolutionResponse>(request,
-            ImageMeta.runImageSuperResolution, hcClient);
-    }
-
-    /**
      * 图像标签
      *
      * 自然图像的语义内容非常丰富，一个图像包含多个标签内容，图像标签服务准确识别自然图片中数百种场景、上千种通用物体及其属性，让智能相册管理、照片检索和分类、基于场景内容或者物体的广告推荐等功能更加直观。使用时用户发送待处理图片，返回图片标签内容及相应置信度。
@@ -340,67 +207,6 @@ public class ImageClient {
         RunRecaptureDetectRequest request) {
         return new SyncInvoker<RunRecaptureDetectRequest, RunRecaptureDetectResponse>(request,
             ImageMeta.runRecaptureDetect, hcClient);
-    }
-
-    /**
-     * 查询图像高清抠图任务
-     *
-     * 查询图像高清抠图任务，返回参数配置以及任务状态信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowImageHighresolutionMattingTaskRequest 请求对象
-     * @return ShowImageHighresolutionMattingTaskResponse
-     */
-    public ShowImageHighresolutionMattingTaskResponse showImageHighresolutionMattingTask(
-        ShowImageHighresolutionMattingTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.showImageHighresolutionMattingTask);
-    }
-
-    /**
-     * 查询图像高清抠图任务
-     *
-     * 查询图像高清抠图任务，返回参数配置以及任务状态信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowImageHighresolutionMattingTaskRequest 请求对象
-     * @return SyncInvoker<ShowImageHighresolutionMattingTaskRequest, ShowImageHighresolutionMattingTaskResponse>
-     */
-    public SyncInvoker<ShowImageHighresolutionMattingTaskRequest, ShowImageHighresolutionMattingTaskResponse> showImageHighresolutionMattingTaskInvoker(
-        ShowImageHighresolutionMattingTaskRequest request) {
-        return new SyncInvoker<ShowImageHighresolutionMattingTaskRequest, ShowImageHighresolutionMattingTaskResponse>(
-            request, ImageMeta.showImageHighresolutionMattingTask, hcClient);
-    }
-
-    /**
-     * 查询视频标签任务
-     *
-     * 查询视频标签任务详情，返回参数配置以及任务状态信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoTaggingMediaTaskRequest 请求对象
-     * @return ShowVideoTaggingMediaTaskResponse
-     */
-    public ShowVideoTaggingMediaTaskResponse showVideoTaggingMediaTask(ShowVideoTaggingMediaTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, ImageMeta.showVideoTaggingMediaTask);
-    }
-
-    /**
-     * 查询视频标签任务
-     *
-     * 查询视频标签任务详情，返回参数配置以及任务状态信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowVideoTaggingMediaTaskRequest 请求对象
-     * @return SyncInvoker<ShowVideoTaggingMediaTaskRequest, ShowVideoTaggingMediaTaskResponse>
-     */
-    public SyncInvoker<ShowVideoTaggingMediaTaskRequest, ShowVideoTaggingMediaTaskResponse> showVideoTaggingMediaTaskInvoker(
-        ShowVideoTaggingMediaTaskRequest request) {
-        return new SyncInvoker<ShowVideoTaggingMediaTaskRequest, ShowVideoTaggingMediaTaskResponse>(request,
-            ImageMeta.showVideoTaggingMediaTask, hcClient);
     }
 
 }

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -14,6 +19,96 @@ public class ListJobsRequest {
     @JsonProperty(value = "workspace")
 
     private String workspace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    /**
+     * 作业类型:  - REAL_TIME: 实时处理   - BATCH: 批处理
+     */
+    public static final class JobTypeEnum {
+
+        /**
+         * Enum REAL_TIME for value: "REAL_TIME"
+         */
+        public static final JobTypeEnum REAL_TIME = new JobTypeEnum("REAL_TIME");
+
+        /**
+         * Enum BATCH for value: "BATCH"
+         */
+        public static final JobTypeEnum BATCH = new JobTypeEnum("BATCH");
+
+        private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, JobTypeEnum> createStaticFields() {
+            Map<String, JobTypeEnum> map = new HashMap<>();
+            map.put("REAL_TIME", REAL_TIME);
+            map.put("BATCH", BATCH);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        JobTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static JobTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
+        }
+
+        public static JobTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof JobTypeEnum) {
+                return this.value.equals(((JobTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "jobType")
+
+    private JobTypeEnum jobType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "jobName")
+
+    private String jobName;
 
     public ListJobsRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -32,6 +127,74 @@ public class ListJobsRequest {
         this.workspace = workspace;
     }
 
+    public ListJobsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 分页参数：每页限定数量
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListJobsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 分页参数：页数
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListJobsRequest withJobType(JobTypeEnum jobType) {
+        this.jobType = jobType;
+        return this;
+    }
+
+    /**
+     * 作业类型:  - REAL_TIME: 实时处理   - BATCH: 批处理
+     * @return jobType
+     */
+    public JobTypeEnum getJobType() {
+        return jobType;
+    }
+
+    public void setJobType(JobTypeEnum jobType) {
+        this.jobType = jobType;
+    }
+
+    public ListJobsRequest withJobName(String jobName) {
+        this.jobName = jobName;
+        return this;
+    }
+
+    /**
+     * 作业名称
+     * @return jobName
+     */
+    public String getJobName() {
+        return jobName;
+    }
+
+    public void setJobName(String jobName) {
+        this.jobName = jobName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +204,14 @@ public class ListJobsRequest {
             return false;
         }
         ListJobsRequest that = (ListJobsRequest) obj;
-        return Objects.equals(this.workspace, that.workspace);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.jobName, that.jobName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace);
+        return Objects.hash(workspace, limit, offset, jobType, jobName);
     }
 
     @Override
@@ -54,6 +219,10 @@ public class ListJobsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListJobsRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

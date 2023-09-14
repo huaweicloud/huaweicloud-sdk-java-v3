@@ -41,7 +41,7 @@ public class SqlAlarmRuleRespList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
 
-    private Frequency frequency;
+    private Object frequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_expression")
@@ -344,17 +344,8 @@ public class SqlAlarmRuleRespList {
         this.sqlRequests = sqlRequests;
     }
 
-    public SqlAlarmRuleRespList withFrequency(Frequency frequency) {
+    public SqlAlarmRuleRespList withFrequency(Object frequency) {
         this.frequency = frequency;
-        return this;
-    }
-
-    public SqlAlarmRuleRespList withFrequency(Consumer<Frequency> frequencySetter) {
-        if (this.frequency == null) {
-            this.frequency = new Frequency();
-            frequencySetter.accept(this.frequency);
-        }
-
         return this;
     }
 
@@ -362,11 +353,11 @@ public class SqlAlarmRuleRespList {
      * 告警统计周期
      * @return frequency
      */
-    public Frequency getFrequency() {
+    public Object getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(Frequency frequency) {
+    public void setFrequency(Object frequency) {
         this.frequency = frequency;
     }
 

@@ -67,6 +67,9 @@ import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateModuleResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateOtTemplatesReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.CreateRouterReqDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleReqDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.CreateScheduleResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteAppConfigsTemplateResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsRequest;
@@ -91,7 +94,15 @@ import com.huaweicloud.sdk.iotedge.v2.model.DeleteNaRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteNaResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteOtTemplateResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteScheduleResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.DeviceControlReleaseReqDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.DeviceControlSetReqDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.EdgeNodeCreation;
+import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsReleaseRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsReleaseResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ExecuteDeviceControlsSetResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequestBody;
 import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsResponse;
@@ -174,6 +185,9 @@ import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaRequestDTO;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateNaResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.UpdateRoutesResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateScheduleReqDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateScheduleRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.UpdateScheduleResponse;
 
 import java.util.List;
 
@@ -374,6 +388,88 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEdgeNodeRequest::getEdgeNodeId, (req, v) -> {
                 req.setEdgeNodeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse> executeDeviceControlsRelease =
+        genForexecuteDeviceControlsRelease();
+
+    private static HttpRequestDef<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse> genForexecuteDeviceControlsRelease() {
+        // basic
+        HttpRequestDef.Builder<ExecuteDeviceControlsReleaseRequest, ExecuteDeviceControlsReleaseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteDeviceControlsReleaseRequest.class,
+                    ExecuteDeviceControlsReleaseResponse.class)
+                .withName("ExecuteDeviceControlsRelease")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/devices/{device_id}/controls/release")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteDeviceControlsReleaseRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            }));
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteDeviceControlsReleaseRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            }));
+        builder.<DeviceControlReleaseReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeviceControlReleaseReqDTO.class),
+            f -> f.withMarshaller(ExecuteDeviceControlsReleaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> executeDeviceControlsSet =
+        genForexecuteDeviceControlsSet();
+
+    private static HttpRequestDef<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> genForexecuteDeviceControlsSet() {
+        // basic
+        HttpRequestDef.Builder<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ExecuteDeviceControlsSetRequest.class, ExecuteDeviceControlsSetResponse.class)
+                .withName("ExecuteDeviceControlsSet")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/devices/{device_id}/controls/set")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            }));
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getDeviceId, (req, v) -> {
+                req.setDeviceId(v);
+            }));
+        builder.<DeviceControlSetReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeviceControlSetReqDTO.class),
+            f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -2417,6 +2513,116 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPointsRequest::getDsId, (req, v) -> {
                 req.setDsId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateScheduleRequest, CreateScheduleResponse> createSchedule =
+        genForcreateSchedule();
+
+    private static HttpRequestDef<CreateScheduleRequest, CreateScheduleResponse> genForcreateSchedule() {
+        // basic
+        HttpRequestDef.Builder<CreateScheduleRequest, CreateScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateScheduleRequest.class, CreateScheduleResponse.class)
+                .withName("CreateSchedule")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/schedules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateScheduleRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            }));
+        builder.<CreateScheduleReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateScheduleReqDTO.class),
+            f -> f.withMarshaller(CreateScheduleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScheduleRequest, DeleteScheduleResponse> deleteSchedule =
+        genFordeleteSchedule();
+
+    private static HttpRequestDef<DeleteScheduleRequest, DeleteScheduleResponse> genFordeleteSchedule() {
+        // basic
+        HttpRequestDef.Builder<DeleteScheduleRequest, DeleteScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteScheduleRequest.class, DeleteScheduleResponse.class)
+                .withName("DeleteSchedule")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/schedules/{schedule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduleRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            }));
+        builder.<String>withRequestField("schedule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduleRequest::getScheduleId, (req, v) -> {
+                req.setScheduleId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteScheduleResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScheduleRequest, UpdateScheduleResponse> updateSchedule =
+        genForupdateSchedule();
+
+    private static HttpRequestDef<UpdateScheduleRequest, UpdateScheduleResponse> genForupdateSchedule() {
+        // basic
+        HttpRequestDef.Builder<UpdateScheduleRequest, UpdateScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScheduleRequest.class, UpdateScheduleResponse.class)
+                .withName("UpdateSchedule")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/schedules/{schedule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduleRequest::getEdgeNodeId, (req, v) -> {
+                req.setEdgeNodeId(v);
+            }));
+        builder.<String>withRequestField("schedule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduleRequest::getScheduleId, (req, v) -> {
+                req.setScheduleId(v);
+            }));
+        builder.<UpdateScheduleReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateScheduleReqDTO.class),
+            f -> f.withMarshaller(UpdateScheduleRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

@@ -41,6 +41,8 @@ import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesResponse;
+import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSRequest;
+import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSResponse;
 import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequest;
@@ -634,6 +636,36 @@ public class EvsAsyncClient {
     public AsyncInvoker<ListVolumesByTagsRequest, ListVolumesByTagsResponse> listVolumesByTagsAsyncInvoker(
         ListVolumesByTagsRequest request) {
         return new AsyncInvoker<ListVolumesByTagsRequest, ListVolumesByTagsResponse>(request, EvsMeta.listVolumesByTags,
+            hcClient);
+    }
+
+    /**
+     * 修改云硬盘QoS
+     *
+     * 调整云硬盘的iops或者吞吐量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyVolumeQoSRequest 请求对象
+     * @return CompletableFuture<ModifyVolumeQoSResponse>
+     */
+    public CompletableFuture<ModifyVolumeQoSResponse> modifyVolumeQoSAsync(ModifyVolumeQoSRequest request) {
+        return hcClient.asyncInvokeHttp(request, EvsMeta.modifyVolumeQoS);
+    }
+
+    /**
+     * 修改云硬盘QoS
+     *
+     * 调整云硬盘的iops或者吞吐量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyVolumeQoSRequest 请求对象
+     * @return AsyncInvoker<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse>
+     */
+    public AsyncInvoker<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> modifyVolumeQoSAsyncInvoker(
+        ModifyVolumeQoSRequest request) {
+        return new AsyncInvoker<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse>(request, EvsMeta.modifyVolumeQoS,
             hcClient);
     }
 

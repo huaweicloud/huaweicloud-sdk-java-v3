@@ -38,6 +38,11 @@ public class ImageDetectionReq {
 
     private String image;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "biz_type")
+
+    private String bizType;
+
     public ImageDetectionReq withEventType(String eventType) {
         this.eventType = eventType;
         return this;
@@ -148,6 +153,23 @@ public class ImageDetectionReq {
         this.image = image;
     }
 
+    public ImageDetectionReq withBizType(String bizType) {
+        this.bizType = bizType;
+        return this;
+    }
+
+    /**
+     * 自定义审核策略名称，可在控制台配置;如果请求参数中传了biz_type则优先使用biz_type,如果用户没传biz_type则event_type和categories必须传。
+     * @return bizType
+     */
+    public String getBizType() {
+        return bizType;
+    }
+
+    public void setBizType(String bizType) {
+        this.bizType = bizType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -159,12 +181,12 @@ public class ImageDetectionReq {
         ImageDetectionReq that = (ImageDetectionReq) obj;
         return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.categories, that.categories)
             && Objects.equals(this.imageTextConfig, that.imageTextConfig) && Objects.equals(this.url, that.url)
-            && Objects.equals(this.image, that.image);
+            && Objects.equals(this.image, that.image) && Objects.equals(this.bizType, that.bizType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventType, categories, imageTextConfig, url, image);
+        return Objects.hash(eventType, categories, imageTextConfig, url, image, bizType);
     }
 
     @Override
@@ -176,6 +198,7 @@ public class ImageDetectionReq {
         sb.append("    imageTextConfig: ").append(toIndentedString(imageTextConfig)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    bizType: ").append(toIndentedString(bizType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

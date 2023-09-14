@@ -96,7 +96,7 @@ public class Keypair {
     private TypeEnum type;
 
     /**
-     * 租户级或者用户级
+     * 租户级或者用户级。domain或user。
      */
     public static final class ScopeEnum {
 
@@ -230,7 +230,7 @@ public class Keypair {
     }
 
     /**
-     * 租户级或者用户级
+     * 租户级或者用户级。domain或user。
      * @return scope
      */
     public ScopeEnum getScope() {

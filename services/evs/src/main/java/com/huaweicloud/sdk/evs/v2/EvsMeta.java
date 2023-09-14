@@ -50,6 +50,9 @@ import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesByTagsResponse;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesRequest;
 import com.huaweicloud.sdk.evs.v2.model.ListVolumesResponse;
+import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSRequest;
+import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSResponse;
 import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeResponse;
@@ -734,6 +737,38 @@ public class EvsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListVolumesByTagsRequestBody.class),
             f -> f.withMarshaller(ListVolumesByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> modifyVolumeQoS =
+        genFormodifyVolumeQoS();
+
+    private static HttpRequestDef<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> genFormodifyVolumeQoS() {
+        // basic
+        HttpRequestDef.Builder<ModifyVolumeQoSRequest, ModifyVolumeQoSResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyVolumeQoSRequest.class, ModifyVolumeQoSResponse.class)
+                .withName("ModifyVolumeQoS")
+                .withUri("/v5/{project_id}/cloudvolumes/{volume_id}/qos")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyVolumeQoSRequest::getVolumeId, (req, v) -> {
+                req.setVolumeId(v);
+            }));
+        builder.<ModifyVolumeQoSRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyVolumeQoSRequestBody.class),
+            f -> f.withMarshaller(ModifyVolumeQoSRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -596,6 +596,7 @@ public class DgcAsyncClient {
     /**
      * 查询作业列表
      *
+     * 查询作业列表清单
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -609,6 +610,7 @@ public class DgcAsyncClient {
     /**
      * 查询作业列表
      *
+     * 查询作业列表清单
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

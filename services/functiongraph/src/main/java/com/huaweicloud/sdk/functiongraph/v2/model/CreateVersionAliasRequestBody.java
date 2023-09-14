@@ -39,7 +39,7 @@ public class CreateVersionAliasRequestBody {
     }
 
     /**
-     * 要获取的别名名称。
+     * 别名名称。
      * @return name
      */
     public String getName() {

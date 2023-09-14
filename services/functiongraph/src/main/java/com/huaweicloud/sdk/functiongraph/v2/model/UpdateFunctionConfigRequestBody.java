@@ -362,7 +362,7 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     /**
-     * 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询华为云函数工作流服务进行配置
+     * 函数执行超时时间，超时函数将被强行停止，范围3～900秒，可以通过白名单配置延长到12小时，具体可以咨询客服进行配置
      * @return timeout
      */
     public Integer getTimeout() {
@@ -825,7 +825,7 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     /**
-     * 函数快照式冷启动Restore Hook入口，仅支持Java，规则：xx.xx，必须包含“. ”。如：com.huawei.demo.Test.restoreHook
+     * 函数快照式冷启动Restore Hook入口，仅支持Java，规则：xx.xx，必须包含“. ”。如：com.xxx.demo.Test.restoreHook
      * @return restoreHookHandler
      */
     public String getRestoreHookHandler() {

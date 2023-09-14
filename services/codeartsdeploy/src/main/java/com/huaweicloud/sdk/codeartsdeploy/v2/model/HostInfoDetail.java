@@ -39,7 +39,7 @@ public class HostInfoDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission")
 
-    private PermissionHostDetail permission;
+    private PermissionHostDetailNew permission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
@@ -69,7 +69,7 @@ public class HostInfoDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy_host")
 
-    private String proxyHost;
+    private HostInfoDetail proxyHost;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_status")
@@ -200,14 +200,14 @@ public class HostInfoDetail {
         this.authorization = authorization;
     }
 
-    public HostInfoDetail withPermission(PermissionHostDetail permission) {
+    public HostInfoDetail withPermission(PermissionHostDetailNew permission) {
         this.permission = permission;
         return this;
     }
 
-    public HostInfoDetail withPermission(Consumer<PermissionHostDetail> permissionSetter) {
+    public HostInfoDetail withPermission(Consumer<PermissionHostDetailNew> permissionSetter) {
         if (this.permission == null) {
-            this.permission = new PermissionHostDetail();
+            this.permission = new PermissionHostDetailNew();
             permissionSetter.accept(this.permission);
         }
 
@@ -218,11 +218,11 @@ public class HostInfoDetail {
      * Get permission
      * @return permission
      */
-    public PermissionHostDetail getPermission() {
+    public PermissionHostDetailNew getPermission() {
         return permission;
     }
 
-    public void setPermission(PermissionHostDetail permission) {
+    public void setPermission(PermissionHostDetailNew permission) {
         this.permission = permission;
     }
 
@@ -311,20 +311,29 @@ public class HostInfoDetail {
         this.ownerName = ownerName;
     }
 
-    public HostInfoDetail withProxyHost(String proxyHost) {
+    public HostInfoDetail withProxyHost(HostInfoDetail proxyHost) {
         this.proxyHost = proxyHost;
         return this;
     }
 
+    public HostInfoDetail withProxyHost(Consumer<HostInfoDetail> proxyHostSetter) {
+        if (this.proxyHost == null) {
+            this.proxyHost = new HostInfoDetail();
+            proxyHostSetter.accept(this.proxyHost);
+        }
+
+        return this;
+    }
+
     /**
-     * 代理机
+     * Get proxyHost
      * @return proxyHost
      */
-    public String getProxyHost() {
+    public HostInfoDetail getProxyHost() {
         return proxyHost;
     }
 
-    public void setProxyHost(String proxyHost) {
+    public void setProxyHost(HostInfoDetail proxyHost) {
         this.proxyHost = proxyHost;
     }
 

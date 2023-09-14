@@ -59,6 +59,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlDatabaseCharsetsRequest;
@@ -1019,6 +1021,36 @@ public class GaussDBClient {
         InvokeGaussMySqlInstanceSwitchOverRequest request) {
         return new SyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse>(
             request, GaussDBMeta.invokeGaussMySqlInstanceSwitchOver, hcClient);
+    }
+
+    /**
+     * 获取全量SQL的临时下载链接
+     *
+     * 获取全量SQL的临时下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAuditLogDownloadLinkRequest 请求对象
+     * @return ListAuditLogDownloadLinkResponse
+     */
+    public ListAuditLogDownloadLinkResponse listAuditLogDownloadLink(ListAuditLogDownloadLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listAuditLogDownloadLink);
+    }
+
+    /**
+     * 获取全量SQL的临时下载链接
+     *
+     * 获取全量SQL的临时下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAuditLogDownloadLinkRequest 请求对象
+     * @return SyncInvoker<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse>
+     */
+    public SyncInvoker<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> listAuditLogDownloadLinkInvoker(
+        ListAuditLogDownloadLinkRequest request) {
+        return new SyncInvoker<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse>(request,
+            GaussDBMeta.listAuditLogDownloadLink, hcClient);
     }
 
     /**

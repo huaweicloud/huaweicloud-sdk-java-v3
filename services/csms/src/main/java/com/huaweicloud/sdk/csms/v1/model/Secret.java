@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.csms.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 凭据对象。
@@ -50,6 +53,46 @@ public class Secret {
 
     private Long scheduledDeleteTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secret_type")
+
+    private String secretType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_rotation")
+
+    private Boolean autoRotation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rotation_period")
+
+    private String rotationPeriod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rotation_config")
+
+    private String rotationConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rotation_time")
+
+    private Long rotationTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "next_rotation_time")
+
+    private Long nextRotationTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_subscriptions")
+
+    private List<String> eventSubscriptions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public Secret withId(String id) {
         this.id = id;
         return this;
@@ -90,7 +133,7 @@ public class Secret {
     }
 
     /**
-     * 凭据状态，取值如下：  ENABLED：表示启用状态  DISABLED：表示禁用状态  PENDING_DELETE：表示待删除状态  FROZEN：表示冻结状态 
+     * 凭据状态，取值如下：  ENABLED：表示启用状态  DISABLED：表示禁用状态  PENDING_DELETE：表示待删除状态  FROZEN：表示冻结状态
      * @return state
      */
     public String getState() {
@@ -107,7 +150,7 @@ public class Secret {
     }
 
     /**
-     * 用于加密凭据值的KMS主密钥的ID值。 
+     * 用于加密凭据值的KMS主密钥的ID值。
      * @return kmsKeyId
      */
     public String getKmsKeyId() {
@@ -141,7 +184,7 @@ public class Secret {
     }
 
     /**
-     * 凭据创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 
+     * 凭据创建时间，时间戳，即从1970年1月1日至该时间的总秒数。
      * minimum: 0
      * maximum: 13
      * @return createTime
@@ -179,7 +222,7 @@ public class Secret {
     }
 
     /**
-     * 凭据计划删除时间，时间戳，即从1970年1月1日至该时间的总秒数。  凭据不在删除计划中时，本项值为null。 
+     * 凭据计划删除时间，时间戳，即从1970年1月1日至该时间的总秒数。  凭据不在删除计划中时，本项值为null。
      * minimum: 0
      * maximum: 13
      * @return scheduledDeleteTime
@@ -190,6 +233,162 @@ public class Secret {
 
     public void setScheduledDeleteTime(Long scheduledDeleteTime) {
         this.scheduledDeleteTime = scheduledDeleteTime;
+    }
+
+    public Secret withSecretType(String secretType) {
+        this.secretType = secretType;
+        return this;
+    }
+
+    /**
+     * 凭据类型  取值 ： COMMON ：通用凭据(默认)。用于应用系统中的各种敏感信息储存。         RDS ：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。
+     * @return secretType
+     */
+    public String getSecretType() {
+        return secretType;
+    }
+
+    public void setSecretType(String secretType) {
+        this.secretType = secretType;
+    }
+
+    public Secret withAutoRotation(Boolean autoRotation) {
+        this.autoRotation = autoRotation;
+        return this;
+    }
+
+    /**
+     * 自动轮转  取值：true 开启, false 关闭(默认)
+     * @return autoRotation
+     */
+    public Boolean getAutoRotation() {
+        return autoRotation;
+    }
+
+    public void setAutoRotation(Boolean autoRotation) {
+        this.autoRotation = autoRotation;
+    }
+
+    public Secret withRotationPeriod(String rotationPeriod) {
+        this.rotationPeriod = rotationPeriod;
+        return this;
+    }
+
+    /**
+     * 轮转周期  约束：6小时-8,760小时 （365天）  类型：Integer[unit] ，Integer表示时间长度 。unit表示时间单位，d（天）、h（小时）、m（分钟）、s（秒）。例如 1d 表示一天，24h也表示一天  说明：当开启自动轮转时，必须填写该值
+     * @return rotationPeriod
+     */
+    public String getRotationPeriod() {
+        return rotationPeriod;
+    }
+
+    public void setRotationPeriod(String rotationPeriod) {
+        this.rotationPeriod = rotationPeriod;
+    }
+
+    public Secret withRotationConfig(String rotationConfig) {
+        this.rotationConfig = rotationConfig;
+        return this;
+    }
+
+    /**
+     * 轮转配置  约束：范围不超过1024个字符。  当secret_type为RDS时，配置为{\"RDSInstanceId\":\"\",\"SecretSubType\":\"\"}  说明：当secret_type为RDS时，必须填写该值  RDSInstanceId为RDS的实例ID,SecretSubType为轮转子类型，取值为：SingleUser，MultiUser。  SingleUser：指定轮转类型为单用户模式轮转，每次轮转将指定账号重置为新的口令。  MultiUser：指定轮转类型为双用户模式轮转，SYSCURRENT和SYSPREVIOUS分别引用其中一个账号。凭据轮转时，SYSPREVIOUS引用的账号口令会被重置为新的随机口令，随后凭据交换SYSCURRENT和SYSPREVIOUS对RDS账号的引用。
+     * @return rotationConfig
+     */
+    public String getRotationConfig() {
+        return rotationConfig;
+    }
+
+    public void setRotationConfig(String rotationConfig) {
+        this.rotationConfig = rotationConfig;
+    }
+
+    public Secret withRotationTime(Long rotationTime) {
+        this.rotationTime = rotationTime;
+        return this;
+    }
+
+    /**
+     * 轮转时间戳
+     * minimum: 0
+     * maximum: 13
+     * @return rotationTime
+     */
+    public Long getRotationTime() {
+        return rotationTime;
+    }
+
+    public void setRotationTime(Long rotationTime) {
+        this.rotationTime = rotationTime;
+    }
+
+    public Secret withNextRotationTime(Long nextRotationTime) {
+        this.nextRotationTime = nextRotationTime;
+        return this;
+    }
+
+    /**
+     * 下一次轮转时间戳
+     * minimum: 0
+     * maximum: 13
+     * @return nextRotationTime
+     */
+    public Long getNextRotationTime() {
+        return nextRotationTime;
+    }
+
+    public void setNextRotationTime(Long nextRotationTime) {
+        this.nextRotationTime = nextRotationTime;
+    }
+
+    public Secret withEventSubscriptions(List<String> eventSubscriptions) {
+        this.eventSubscriptions = eventSubscriptions;
+        return this;
+    }
+
+    public Secret addEventSubscriptionsItem(String eventSubscriptionsItem) {
+        if (this.eventSubscriptions == null) {
+            this.eventSubscriptions = new ArrayList<>();
+        }
+        this.eventSubscriptions.add(eventSubscriptionsItem);
+        return this;
+    }
+
+    public Secret withEventSubscriptions(Consumer<List<String>> eventSubscriptionsSetter) {
+        if (this.eventSubscriptions == null) {
+            this.eventSubscriptions = new ArrayList<>();
+        }
+        eventSubscriptionsSetter.accept(this.eventSubscriptions);
+        return this;
+    }
+
+    /**
+     * 凭据订阅的事件列表，当前最大可订阅一个事件。当事件包含的基础事件触发时，通知消息将发送到事件对应的通知主题。
+     * @return eventSubscriptions
+     */
+    public List<String> getEventSubscriptions() {
+        return eventSubscriptions;
+    }
+
+    public void setEventSubscriptions(List<String> eventSubscriptions) {
+        this.eventSubscriptions = eventSubscriptions;
+    }
+
+    public Secret withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     @Override
@@ -205,12 +404,34 @@ public class Secret {
             && Objects.equals(this.state, that.state) && Objects.equals(this.kmsKeyId, that.kmsKeyId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.scheduledDeleteTime, that.scheduledDeleteTime);
+            && Objects.equals(this.scheduledDeleteTime, that.scheduledDeleteTime)
+            && Objects.equals(this.secretType, that.secretType) && Objects.equals(this.autoRotation, that.autoRotation)
+            && Objects.equals(this.rotationPeriod, that.rotationPeriod)
+            && Objects.equals(this.rotationConfig, that.rotationConfig)
+            && Objects.equals(this.rotationTime, that.rotationTime)
+            && Objects.equals(this.nextRotationTime, that.nextRotationTime)
+            && Objects.equals(this.eventSubscriptions, that.eventSubscriptions)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, state, kmsKeyId, description, createTime, updateTime, scheduledDeleteTime);
+        return Objects.hash(id,
+            name,
+            state,
+            kmsKeyId,
+            description,
+            createTime,
+            updateTime,
+            scheduledDeleteTime,
+            secretType,
+            autoRotation,
+            rotationPeriod,
+            rotationConfig,
+            rotationTime,
+            nextRotationTime,
+            eventSubscriptions,
+            enterpriseProjectId);
     }
 
     @Override
@@ -225,6 +446,14 @@ public class Secret {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    scheduledDeleteTime: ").append(toIndentedString(scheduledDeleteTime)).append("\n");
+        sb.append("    secretType: ").append(toIndentedString(secretType)).append("\n");
+        sb.append("    autoRotation: ").append(toIndentedString(autoRotation)).append("\n");
+        sb.append("    rotationPeriod: ").append(toIndentedString(rotationPeriod)).append("\n");
+        sb.append("    rotationConfig: ").append(toIndentedString(rotationConfig)).append("\n");
+        sb.append("    rotationTime: ").append(toIndentedString(rotationTime)).append("\n");
+        sb.append("    nextRotationTime: ").append(toIndentedString(nextRotationTime)).append("\n");
+        sb.append("    eventSubscriptions: ").append(toIndentedString(eventSubscriptions)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

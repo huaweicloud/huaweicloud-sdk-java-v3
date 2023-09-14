@@ -122,7 +122,7 @@ public class ScheduledTaskPolicy {
     }
 
     /**
-     * 非必选，仅当recurrence_type不为空时生效，表示计划任务的生效开始时间，格式为yyyy-MM-dd'T'HH:mm'Z'，不填写时默认为任务创建成功的时间
+     * 非必选，仅当recurrence_type不为空时生效，表示计划任务的生效开始时间，格式为yyyy-MM-ddTHH:mmZ，不填写时默认为任务创建成功的时间
      * @return startTime
      */
     public String getStartTime() {
@@ -139,7 +139,7 @@ public class ScheduledTaskPolicy {
     }
 
     /**
-     * 仅当recurrence_type不为空时生效且必选，表示计划任务的生效结束时间，格式为yyyy-MM-dd'T'HH:mm'Z'
+     * 仅当recurrence_type不为空时生效且必选，表示计划任务的生效结束时间，格式为yyyy-MM-ddTHH:mmZ
      * @return endTime
      */
     public String getEndTime() {
@@ -156,7 +156,7 @@ public class ScheduledTaskPolicy {
     }
 
     /**
-     * 必选，执行时间，采用UTC时间，recurrence_type不填写或为空时，格式为HH:mm, recurrence_type不为空时，格式为yyyy-MM-dd'T'HH:mm'Z'
+     * 必选，执行时间，采用UTC时间，recurrence_type不填写或为空时，格式为yyyy-MM-ddTHH:mmZ, recurrence_type不为空时，格式为 HH:mm
      * @return launchTime
      */
     public String getLaunchTime() {

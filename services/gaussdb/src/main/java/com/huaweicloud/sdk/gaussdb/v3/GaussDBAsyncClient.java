@@ -59,6 +59,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlDatabaseCharsetsRequest;
@@ -1034,6 +1036,37 @@ public class GaussDBAsyncClient {
         InvokeGaussMySqlInstanceSwitchOverRequest request) {
         return new AsyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse>(
             request, GaussDBMeta.invokeGaussMySqlInstanceSwitchOver, hcClient);
+    }
+
+    /**
+     * 获取全量SQL的临时下载链接
+     *
+     * 获取全量SQL的临时下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAuditLogDownloadLinkRequest 请求对象
+     * @return CompletableFuture<ListAuditLogDownloadLinkResponse>
+     */
+    public CompletableFuture<ListAuditLogDownloadLinkResponse> listAuditLogDownloadLinkAsync(
+        ListAuditLogDownloadLinkRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.listAuditLogDownloadLink);
+    }
+
+    /**
+     * 获取全量SQL的临时下载链接
+     *
+     * 获取全量SQL的临时下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAuditLogDownloadLinkRequest 请求对象
+     * @return AsyncInvoker<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse>
+     */
+    public AsyncInvoker<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> listAuditLogDownloadLinkAsyncInvoker(
+        ListAuditLogDownloadLinkRequest request) {
+        return new AsyncInvoker<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse>(request,
+            GaussDBMeta.listAuditLogDownloadLink, hcClient);
     }
 
     /**

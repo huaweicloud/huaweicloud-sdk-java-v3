@@ -36,7 +36,7 @@ public class CreateSqlAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
 
-    private Frequency frequency;
+    private Object frequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_expression")
@@ -143,7 +143,7 @@ public class CreateSqlAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_save_rule")
 
-    private SqlNotificationSaveRule notificationSaveRule;
+    private Object notificationSaveRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_condition_count")
@@ -232,17 +232,8 @@ public class CreateSqlAlarmRuleRequestBody {
         this.sqlRequests = sqlRequests;
     }
 
-    public CreateSqlAlarmRuleRequestBody withFrequency(Frequency frequency) {
+    public CreateSqlAlarmRuleRequestBody withFrequency(Object frequency) {
         this.frequency = frequency;
-        return this;
-    }
-
-    public CreateSqlAlarmRuleRequestBody withFrequency(Consumer<Frequency> frequencySetter) {
-        if (this.frequency == null) {
-            this.frequency = new Frequency();
-            frequencySetter.accept(this.frequency);
-        }
-
         return this;
     }
 
@@ -250,11 +241,11 @@ public class CreateSqlAlarmRuleRequestBody {
      * 告警统计周期
      * @return frequency
      */
-    public Frequency getFrequency() {
+    public Object getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(Frequency frequency) {
+    public void setFrequency(Object frequency) {
         this.frequency = frequency;
     }
 
@@ -326,18 +317,8 @@ public class CreateSqlAlarmRuleRequestBody {
         this.domainId = domainId;
     }
 
-    public CreateSqlAlarmRuleRequestBody withNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
+    public CreateSqlAlarmRuleRequestBody withNotificationSaveRule(Object notificationSaveRule) {
         this.notificationSaveRule = notificationSaveRule;
-        return this;
-    }
-
-    public CreateSqlAlarmRuleRequestBody withNotificationSaveRule(
-        Consumer<SqlNotificationSaveRule> notificationSaveRuleSetter) {
-        if (this.notificationSaveRule == null) {
-            this.notificationSaveRule = new SqlNotificationSaveRule();
-            notificationSaveRuleSetter.accept(this.notificationSaveRule);
-        }
-
         return this;
     }
 
@@ -345,11 +326,11 @@ public class CreateSqlAlarmRuleRequestBody {
      * 通知主题
      * @return notificationSaveRule
      */
-    public SqlNotificationSaveRule getNotificationSaveRule() {
+    public Object getNotificationSaveRule() {
         return notificationSaveRule;
     }
 
-    public void setNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
+    public void setNotificationSaveRule(Object notificationSaveRule) {
         this.notificationSaveRule = notificationSaveRule;
     }
 

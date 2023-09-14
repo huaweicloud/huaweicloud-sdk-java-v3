@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 绑定密钥对描述消息体
+ * 绑定密钥对请求体。
  */
 public class AssociateKeypairRequestBody {
 

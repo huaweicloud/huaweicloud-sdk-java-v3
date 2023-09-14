@@ -76,6 +76,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.GrantDatabasePermissionRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlDatabaseCharsetsRequest;
@@ -1283,6 +1285,74 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(TaurusSwitchoverRequest.class),
             f -> f.withMarshaller(InvokeGaussMySqlInstanceSwitchOverRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> listAuditLogDownloadLink =
+        genForlistAuditLogDownloadLink();
+
+    private static HttpRequestDef<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> genForlistAuditLogDownloadLink() {
+        // basic
+        HttpRequestDef.Builder<ListAuditLogDownloadLinkRequest, ListAuditLogDownloadLinkResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListAuditLogDownloadLinkRequest.class, ListAuditLogDownloadLinkResponse.class)
+                .withName("ListAuditLogDownloadLink")
+                .withUri("/v3/{project_id}/instance/{instance_id}/auditlog/download-link")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<String>withRequestField("last_file_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getLastFileName, (req, v) -> {
+                req.setLastFileName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditLogDownloadLinkRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             }));
 
         // response

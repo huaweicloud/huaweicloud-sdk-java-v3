@@ -68,6 +68,16 @@ public class SupplementDataInfo {
 
     private String force;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supplement_data_run_time")
+
+    private SupplementDataInfoSupplementDataRunTime supplementDataRunTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supplement_data_instance_time")
+
+    private SupplementDataInfoSupplementDataInstanceTime supplementDataInstanceTime;
+
     public SupplementDataInfo withName(String name) {
         this.name = name;
         return this;
@@ -108,7 +118,7 @@ public class SupplementDataInfo {
     }
 
     /**
-     * 开始补数据时间
+     * 补数据开始时间
      * @return startDate
      */
     public String getStartDate() {
@@ -125,7 +135,7 @@ public class SupplementDataInfo {
     }
 
     /**
-     * 截止补数据时间
+     * 补数据结束时间
      * @return endDate
      */
     public String getEndDate() {
@@ -142,7 +152,7 @@ public class SupplementDataInfo {
     }
 
     /**
-     * 优先级
+     * 并行周期数
      * @return parallel
      */
     public Integer getParallel() {
@@ -192,7 +202,7 @@ public class SupplementDataInfo {
     }
 
     /**
-     * Get isDayGranularity
+     * 是否按天粒度补数据
      * @return isDayGranularity
      */
     public Boolean getIsDayGranularity() {
@@ -209,7 +219,7 @@ public class SupplementDataInfo {
     }
 
     /**
-     * Get priority
+     * 优先级
      * @return priority
      */
     public Integer getPriority() {
@@ -226,7 +236,7 @@ public class SupplementDataInfo {
     }
 
     /**
-     * Get isStopWhenFail
+     * 失败时作业是否停止
      * @return isStopWhenFail
      */
     public Boolean getIsStopWhenFail() {
@@ -243,7 +253,7 @@ public class SupplementDataInfo {
     }
 
     /**
-     * Get reverseOrder
+     * 按照时间倒序补跑
      * @return reverseOrder
      */
     public Integer getReverseOrder() {
@@ -260,7 +270,7 @@ public class SupplementDataInfo {
     }
 
     /**
-     * Get force
+     * 当前有补数据实例在运行时，是否强制补数据
      * @return force
      */
     public String getForce() {
@@ -269,6 +279,61 @@ public class SupplementDataInfo {
 
     public void setForce(String force) {
         this.force = force;
+    }
+
+    public SupplementDataInfo withSupplementDataRunTime(SupplementDataInfoSupplementDataRunTime supplementDataRunTime) {
+        this.supplementDataRunTime = supplementDataRunTime;
+        return this;
+    }
+
+    public SupplementDataInfo withSupplementDataRunTime(
+        Consumer<SupplementDataInfoSupplementDataRunTime> supplementDataRunTimeSetter) {
+        if (this.supplementDataRunTime == null) {
+            this.supplementDataRunTime = new SupplementDataInfoSupplementDataRunTime();
+            supplementDataRunTimeSetter.accept(this.supplementDataRunTime);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get supplementDataRunTime
+     * @return supplementDataRunTime
+     */
+    public SupplementDataInfoSupplementDataRunTime getSupplementDataRunTime() {
+        return supplementDataRunTime;
+    }
+
+    public void setSupplementDataRunTime(SupplementDataInfoSupplementDataRunTime supplementDataRunTime) {
+        this.supplementDataRunTime = supplementDataRunTime;
+    }
+
+    public SupplementDataInfo withSupplementDataInstanceTime(
+        SupplementDataInfoSupplementDataInstanceTime supplementDataInstanceTime) {
+        this.supplementDataInstanceTime = supplementDataInstanceTime;
+        return this;
+    }
+
+    public SupplementDataInfo withSupplementDataInstanceTime(
+        Consumer<SupplementDataInfoSupplementDataInstanceTime> supplementDataInstanceTimeSetter) {
+        if (this.supplementDataInstanceTime == null) {
+            this.supplementDataInstanceTime = new SupplementDataInfoSupplementDataInstanceTime();
+            supplementDataInstanceTimeSetter.accept(this.supplementDataInstanceTime);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get supplementDataInstanceTime
+     * @return supplementDataInstanceTime
+     */
+    public SupplementDataInfoSupplementDataInstanceTime getSupplementDataInstanceTime() {
+        return supplementDataInstanceTime;
+    }
+
+    public void setSupplementDataInstanceTime(SupplementDataInfoSupplementDataInstanceTime supplementDataInstanceTime) {
+        this.supplementDataInstanceTime = supplementDataInstanceTime;
     }
 
     @Override
@@ -285,7 +350,9 @@ public class SupplementDataInfo {
             && Objects.equals(this.parallel, that.parallel) && Objects.equals(this.dependJobs, that.dependJobs)
             && Objects.equals(this.isDayGranularity, that.isDayGranularity)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.isStopWhenFail, that.isStopWhenFail)
-            && Objects.equals(this.reverseOrder, that.reverseOrder) && Objects.equals(this.force, that.force);
+            && Objects.equals(this.reverseOrder, that.reverseOrder) && Objects.equals(this.force, that.force)
+            && Objects.equals(this.supplementDataRunTime, that.supplementDataRunTime)
+            && Objects.equals(this.supplementDataInstanceTime, that.supplementDataInstanceTime);
     }
 
     @Override
@@ -300,7 +367,9 @@ public class SupplementDataInfo {
             priority,
             isStopWhenFail,
             reverseOrder,
-            force);
+            force,
+            supplementDataRunTime,
+            supplementDataInstanceTime);
     }
 
     @Override
@@ -318,6 +387,8 @@ public class SupplementDataInfo {
         sb.append("    isStopWhenFail: ").append(toIndentedString(isStopWhenFail)).append("\n");
         sb.append("    reverseOrder: ").append(toIndentedString(reverseOrder)).append("\n");
         sb.append("    force: ").append(toIndentedString(force)).append("\n");
+        sb.append("    supplementDataRunTime: ").append(toIndentedString(supplementDataRunTime)).append("\n");
+        sb.append("    supplementDataInstanceTime: ").append(toIndentedString(supplementDataInstanceTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -13,44 +13,48 @@ public class ListFailedTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
-    public ListFailedTaskRequest withLimit(String limit) {
+    public ListFailedTaskRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 每页返回的个数。 默认值：50。 
+     * 每页显示的条目数量。默认值1000。
+     * minimum: 1
+     * maximum: 1000
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
-    public ListFailedTaskRequest withOffset(String offset) {
+    public ListFailedTaskRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0 
+     * 失败的任务信息列表的偏移量
+     * minimum: 0
+     * maximum: 100000
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 

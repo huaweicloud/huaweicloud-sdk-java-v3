@@ -29,7 +29,7 @@ public class EventInfoDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    private EventItemDetail detail;
+    private ShowEventItemDetail detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_id")
@@ -87,14 +87,14 @@ public class EventInfoDetail {
         this.time = time;
     }
 
-    public EventInfoDetail withDetail(EventItemDetail detail) {
+    public EventInfoDetail withDetail(ShowEventItemDetail detail) {
         this.detail = detail;
         return this;
     }
 
-    public EventInfoDetail withDetail(Consumer<EventItemDetail> detailSetter) {
+    public EventInfoDetail withDetail(Consumer<ShowEventItemDetail> detailSetter) {
         if (this.detail == null) {
-            this.detail = new EventItemDetail();
+            this.detail = new ShowEventItemDetail();
             detailSetter.accept(this.detail);
         }
 
@@ -105,11 +105,11 @@ public class EventInfoDetail {
      * Get detail
      * @return detail
      */
-    public EventItemDetail getDetail() {
+    public ShowEventItemDetail getDetail() {
         return detail;
     }
 
-    public void setDetail(EventItemDetail detail) {
+    public void setDetail(ShowEventItemDetail detail) {
         this.detail = detail;
     }
 

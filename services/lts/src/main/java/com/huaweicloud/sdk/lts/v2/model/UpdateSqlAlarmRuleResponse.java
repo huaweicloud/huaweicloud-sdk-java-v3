@@ -62,7 +62,7 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
 
-    private Frequency frequency;
+    private Object frequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_expression")
@@ -333,17 +333,8 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         this.sqlRequests = sqlRequests;
     }
 
-    public UpdateSqlAlarmRuleResponse withFrequency(Frequency frequency) {
+    public UpdateSqlAlarmRuleResponse withFrequency(Object frequency) {
         this.frequency = frequency;
-        return this;
-    }
-
-    public UpdateSqlAlarmRuleResponse withFrequency(Consumer<Frequency> frequencySetter) {
-        if (this.frequency == null) {
-            this.frequency = new Frequency();
-            frequencySetter.accept(this.frequency);
-        }
-
         return this;
     }
 
@@ -351,11 +342,11 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
      * 告警统计周期
      * @return frequency
      */
-    public Frequency getFrequency() {
+    public Object getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(Frequency frequency) {
+    public void setFrequency(Object frequency) {
         this.frequency = frequency;
     }
 

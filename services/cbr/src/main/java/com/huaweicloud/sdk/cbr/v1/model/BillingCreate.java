@@ -525,21 +525,6 @@ public class BillingCreate {
 
     private Boolean isMultiAz;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "promotion_info")
-
-    private String promotionInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "purchase_mode")
-
-    private String purchaseMode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
     public BillingCreate withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
         return this;
@@ -746,57 +731,6 @@ public class BillingCreate {
         this.isMultiAz = isMultiAz;
     }
 
-    public BillingCreate withPromotionInfo(String promotionInfo) {
-        this.promotionInfo = promotionInfo;
-        return this;
-    }
-
-    /**
-     * 促销信息，包周期时可选参数
-     * @return promotionInfo
-     */
-    public String getPromotionInfo() {
-        return promotionInfo;
-    }
-
-    public void setPromotionInfo(String promotionInfo) {
-        this.promotionInfo = promotionInfo;
-    }
-
-    public BillingCreate withPurchaseMode(String purchaseMode) {
-        this.purchaseMode = purchaseMode;
-        return this;
-    }
-
-    /**
-     * 购买模式，包周期时可选参数
-     * @return purchaseMode
-     */
-    public String getPurchaseMode() {
-        return purchaseMode;
-    }
-
-    public void setPurchaseMode(String purchaseMode) {
-        this.purchaseMode = purchaseMode;
-    }
-
-    public BillingCreate withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单 ID，包周期时可选参数
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -812,9 +746,7 @@ public class BillingCreate {
             && Objects.equals(this.size, that.size) && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
             && Objects.equals(this.isAutoRenew, that.isAutoRenew) && Objects.equals(this.isAutoPay, that.isAutoPay)
-            && Objects.equals(this.consoleUrl, that.consoleUrl) && Objects.equals(this.isMultiAz, that.isMultiAz)
-            && Objects.equals(this.promotionInfo, that.promotionInfo)
-            && Objects.equals(this.purchaseMode, that.purchaseMode) && Objects.equals(this.orderId, that.orderId);
+            && Objects.equals(this.consoleUrl, that.consoleUrl) && Objects.equals(this.isMultiAz, that.isMultiAz);
     }
 
     @Override
@@ -830,10 +762,7 @@ public class BillingCreate {
             isAutoRenew,
             isAutoPay,
             consoleUrl,
-            isMultiAz,
-            promotionInfo,
-            purchaseMode,
-            orderId);
+            isMultiAz);
     }
 
     @Override
@@ -852,9 +781,6 @@ public class BillingCreate {
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("    consoleUrl: ").append(toIndentedString(consoleUrl)).append("\n");
         sb.append("    isMultiAz: ").append(toIndentedString(isMultiAz)).append("\n");
-        sb.append("    promotionInfo: ").append(toIndentedString(promotionInfo)).append("\n");
-        sb.append("    purchaseMode: ").append(toIndentedString(purchaseMode)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

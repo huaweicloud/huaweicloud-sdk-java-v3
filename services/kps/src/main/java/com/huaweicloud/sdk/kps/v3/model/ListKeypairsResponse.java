@@ -46,7 +46,7 @@ public class ListKeypairsResponse extends SdkResponse {
     }
 
     /**
-     * SSH密钥对信息详情
+     * SSH密钥对信息列表
      * @return keypairs
      */
     public List<Keypairs> getKeypairs() {

@@ -5,6 +5,10 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.ClearPrivateKeyRequest;
+import com.huaweicloud.sdk.kps.v3.model.ClearPrivateKeyResponse;
 import com.huaweicloud.sdk.kps.v3.model.CreateKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.CreateKeypairResponse;
 import com.huaweicloud.sdk.kps.v3.model.DeleteAllFailedTaskRequest;
@@ -15,6 +19,10 @@ import com.huaweicloud.sdk.kps.v3.model.DeleteKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.DeleteKeypairResponse;
 import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.DisassociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.ExportPrivateKeyRequest;
+import com.huaweicloud.sdk.kps.v3.model.ExportPrivateKeyResponse;
+import com.huaweicloud.sdk.kps.v3.model.ImportPrivateKeyRequest;
+import com.huaweicloud.sdk.kps.v3.model.ImportPrivateKeyResponse;
 import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskRequest;
 import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskResponse;
 import com.huaweicloud.sdk.kps.v3.model.ListKeypairDetailRequest;
@@ -68,6 +76,66 @@ public class KpsClient {
     public SyncInvoker<AssociateKeypairRequest, AssociateKeypairResponse> associateKeypairInvoker(
         AssociateKeypairRequest request) {
         return new SyncInvoker<AssociateKeypairRequest, AssociateKeypairResponse>(request, KpsMeta.associateKeypair,
+            hcClient);
+    }
+
+    /**
+     * 批量绑定SSH密钥对
+     *
+     * 给指定的虚拟机批量绑定新的SSH密钥对。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAssociateKeypairRequest 请求对象
+     * @return BatchAssociateKeypairResponse
+     */
+    public BatchAssociateKeypairResponse batchAssociateKeypair(BatchAssociateKeypairRequest request) {
+        return hcClient.syncInvokeHttp(request, KpsMeta.batchAssociateKeypair);
+    }
+
+    /**
+     * 批量绑定SSH密钥对
+     *
+     * 给指定的虚拟机批量绑定新的SSH密钥对。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAssociateKeypairRequest 请求对象
+     * @return SyncInvoker<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse>
+     */
+    public SyncInvoker<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> batchAssociateKeypairInvoker(
+        BatchAssociateKeypairRequest request) {
+        return new SyncInvoker<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse>(request,
+            KpsMeta.batchAssociateKeypair, hcClient);
+    }
+
+    /**
+     * 清除私钥
+     *
+     * 清除SSH密钥对私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ClearPrivateKeyRequest 请求对象
+     * @return ClearPrivateKeyResponse
+     */
+    public ClearPrivateKeyResponse clearPrivateKey(ClearPrivateKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, KpsMeta.clearPrivateKey);
+    }
+
+    /**
+     * 清除私钥
+     *
+     * 清除SSH密钥对私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ClearPrivateKeyRequest 请求对象
+     * @return SyncInvoker<ClearPrivateKeyRequest, ClearPrivateKeyResponse>
+     */
+    public SyncInvoker<ClearPrivateKeyRequest, ClearPrivateKeyResponse> clearPrivateKeyInvoker(
+        ClearPrivateKeyRequest request) {
+        return new SyncInvoker<ClearPrivateKeyRequest, ClearPrivateKeyResponse>(request, KpsMeta.clearPrivateKey,
             hcClient);
     }
 
@@ -215,6 +283,66 @@ public class KpsClient {
         DisassociateKeypairRequest request) {
         return new SyncInvoker<DisassociateKeypairRequest, DisassociateKeypairResponse>(request,
             KpsMeta.disassociateKeypair, hcClient);
+    }
+
+    /**
+     * 导出私钥
+     *
+     * 导出指定密钥对的私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExportPrivateKeyRequest 请求对象
+     * @return ExportPrivateKeyResponse
+     */
+    public ExportPrivateKeyResponse exportPrivateKey(ExportPrivateKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, KpsMeta.exportPrivateKey);
+    }
+
+    /**
+     * 导出私钥
+     *
+     * 导出指定密钥对的私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExportPrivateKeyRequest 请求对象
+     * @return SyncInvoker<ExportPrivateKeyRequest, ExportPrivateKeyResponse>
+     */
+    public SyncInvoker<ExportPrivateKeyRequest, ExportPrivateKeyResponse> exportPrivateKeyInvoker(
+        ExportPrivateKeyRequest request) {
+        return new SyncInvoker<ExportPrivateKeyRequest, ExportPrivateKeyResponse>(request, KpsMeta.exportPrivateKey,
+            hcClient);
+    }
+
+    /**
+     * 导入私钥
+     *
+     * 导入私钥到指定密钥对。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportPrivateKeyRequest 请求对象
+     * @return ImportPrivateKeyResponse
+     */
+    public ImportPrivateKeyResponse importPrivateKey(ImportPrivateKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, KpsMeta.importPrivateKey);
+    }
+
+    /**
+     * 导入私钥
+     *
+     * 导入私钥到指定密钥对。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ImportPrivateKeyRequest 请求对象
+     * @return SyncInvoker<ImportPrivateKeyRequest, ImportPrivateKeyResponse>
+     */
+    public SyncInvoker<ImportPrivateKeyRequest, ImportPrivateKeyResponse> importPrivateKeyInvoker(
+        ImportPrivateKeyRequest request) {
+        return new SyncInvoker<ImportPrivateKeyRequest, ImportPrivateKeyResponse>(request, KpsMeta.importPrivateKey,
+            hcClient);
     }
 
     /**

@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -148,7 +147,7 @@ public class ListChartsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config")
 
-    private ChartConfig config;
+    private Object config;
 
     public ListChartsResponse withId(String id) {
         this.id = id;
@@ -286,17 +285,8 @@ public class ListChartsResponse extends SdkResponse {
         this.logStreamName = logStreamName;
     }
 
-    public ListChartsResponse withConfig(ChartConfig config) {
+    public ListChartsResponse withConfig(Object config) {
         this.config = config;
-        return this;
-    }
-
-    public ListChartsResponse withConfig(Consumer<ChartConfig> configSetter) {
-        if (this.config == null) {
-            this.config = new ChartConfig();
-            configSetter.accept(this.config);
-        }
-
         return this;
     }
 
@@ -304,11 +294,11 @@ public class ListChartsResponse extends SdkResponse {
      * 图表配置详情
      * @return config
      */
-    public ChartConfig getConfig() {
+    public Object getConfig() {
         return config;
     }
 
-    public void setConfig(ChartConfig config) {
+    public void setConfig(Object config) {
         this.config = config;
     }
 

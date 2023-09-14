@@ -93,6 +93,11 @@ public class FlavorsItems {
 
     private List<FlavorAzObject> flavorsAvailableZones = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "replica_count")
+
+    private Integer replicaCount;
+
     public FlavorsItems withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
@@ -429,6 +434,23 @@ public class FlavorsItems {
         this.flavorsAvailableZones = flavorsAvailableZones;
     }
 
+    public FlavorsItems withReplicaCount(Integer replicaCount) {
+        this.replicaCount = replicaCount;
+        return this;
+    }
+
+    /**
+     * 副本数
+     * @return replicaCount
+     */
+    public Integer getReplicaCount() {
+        return replicaCount;
+    }
+
+    public void setReplicaCount(Integer replicaCount) {
+        this.replicaCount = replicaCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -449,7 +471,8 @@ public class FlavorsItems {
             && Objects.equals(this.tenantIpCount, that.tenantIpCount)
             && Objects.equals(this.pricingType, that.pricingType) && Objects.equals(this.isDec, that.isDec)
             && Objects.equals(this.attrs, that.attrs)
-            && Objects.equals(this.flavorsAvailableZones, that.flavorsAvailableZones);
+            && Objects.equals(this.flavorsAvailableZones, that.flavorsAvailableZones)
+            && Objects.equals(this.replicaCount, that.replicaCount);
     }
 
     @Override
@@ -469,7 +492,8 @@ public class FlavorsItems {
             pricingType,
             isDec,
             attrs,
-            flavorsAvailableZones);
+            flavorsAvailableZones,
+            replicaCount);
     }
 
     @Override
@@ -492,6 +516,7 @@ public class FlavorsItems {
         sb.append("    isDec: ").append(toIndentedString(isDec)).append("\n");
         sb.append("    attrs: ").append(toIndentedString(attrs)).append("\n");
         sb.append("    flavorsAvailableZones: ").append(toIndentedString(flavorsAvailableZones)).append("\n");
+        sb.append("    replicaCount: ").append(toIndentedString(replicaCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

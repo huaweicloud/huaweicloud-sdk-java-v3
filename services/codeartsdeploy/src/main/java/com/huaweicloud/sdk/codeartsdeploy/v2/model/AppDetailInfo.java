@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.codeartsdeploy.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 应用详情信息
@@ -123,7 +126,7 @@ public class AppDetailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "arrange_infos")
 
-    private Object arrangeInfos;
+    private List<TaskV2Info> arrangeInfos = null;
 
     public AppDetailInfo withId(String id) {
         this.id = id;
@@ -499,8 +502,24 @@ public class AppDetailInfo {
         this.permissionLevel = permissionLevel;
     }
 
-    public AppDetailInfo withArrangeInfos(Object arrangeInfos) {
+    public AppDetailInfo withArrangeInfos(List<TaskV2Info> arrangeInfos) {
         this.arrangeInfos = arrangeInfos;
+        return this;
+    }
+
+    public AppDetailInfo addArrangeInfosItem(TaskV2Info arrangeInfosItem) {
+        if (this.arrangeInfos == null) {
+            this.arrangeInfos = new ArrayList<>();
+        }
+        this.arrangeInfos.add(arrangeInfosItem);
+        return this;
+    }
+
+    public AppDetailInfo withArrangeInfos(Consumer<List<TaskV2Info>> arrangeInfosSetter) {
+        if (this.arrangeInfos == null) {
+            this.arrangeInfos = new ArrayList<>();
+        }
+        arrangeInfosSetter.accept(this.arrangeInfos);
         return this;
     }
 
@@ -508,11 +527,11 @@ public class AppDetailInfo {
      * 部署任务信息
      * @return arrangeInfos
      */
-    public Object getArrangeInfos() {
+    public List<TaskV2Info> getArrangeInfos() {
         return arrangeInfos;
     }
 
-    public void setArrangeInfos(Object arrangeInfos) {
+    public void setArrangeInfos(List<TaskV2Info> arrangeInfos) {
         this.arrangeInfos = arrangeInfos;
     }
 

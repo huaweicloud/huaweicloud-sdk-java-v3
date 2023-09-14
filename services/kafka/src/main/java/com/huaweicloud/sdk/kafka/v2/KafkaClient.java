@@ -121,12 +121,16 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceConsumerGroupRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceConsumerGroupResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
@@ -1978,6 +1982,36 @@ public class KafkaClient {
     }
 
     /**
+     * 编辑消费组
+     *
+     * 编辑消费组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInstanceConsumerGroupRequest 请求对象
+     * @return UpdateInstanceConsumerGroupResponse
+     */
+    public UpdateInstanceConsumerGroupResponse updateInstanceConsumerGroup(UpdateInstanceConsumerGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstanceConsumerGroup);
+    }
+
+    /**
+     * 编辑消费组
+     *
+     * 编辑消费组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInstanceConsumerGroupRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse>
+     */
+    public SyncInvoker<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse> updateInstanceConsumerGroupInvoker(
+        UpdateInstanceConsumerGroupRequest request) {
+        return new SyncInvoker<UpdateInstanceConsumerGroupRequest, UpdateInstanceConsumerGroupResponse>(request,
+            KafkaMeta.updateInstanceConsumerGroup, hcClient);
+    }
+
+    /**
      * 修改实例跨VPC访问的内网IP
      *
      * 修改实例跨VPC访问的内网IP。
@@ -2035,6 +2069,36 @@ public class KafkaClient {
         UpdateInstanceTopicRequest request) {
         return new SyncInvoker<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse>(request,
             KafkaMeta.updateInstanceTopic, hcClient);
+    }
+
+    /**
+     * 修改用户参数
+     *
+     * 修改用户参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInstanceUserRequest 请求对象
+     * @return UpdateInstanceUserResponse
+     */
+    public UpdateInstanceUserResponse updateInstanceUser(UpdateInstanceUserRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.updateInstanceUser);
+    }
+
+    /**
+     * 修改用户参数
+     *
+     * 修改用户参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInstanceUserRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse>
+     */
+    public SyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse> updateInstanceUserInvoker(
+        UpdateInstanceUserRequest request) {
+        return new SyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse>(request,
+            KafkaMeta.updateInstanceUser, hcClient);
     }
 
     /**

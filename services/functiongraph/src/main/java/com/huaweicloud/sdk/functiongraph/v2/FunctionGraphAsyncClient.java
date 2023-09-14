@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionTriggerRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionTriggerResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionUrlRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionUrlResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionVersionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateTagsRequest;
@@ -45,6 +47,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionTriggerRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionTriggerResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionUrlRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionUrlResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteTagsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteTagsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteVersionAliasRequest;
@@ -111,6 +115,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionConfigRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionConfigResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionTriggerRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionTriggerResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionUrlRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionUrlResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowLtsLogDetailsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowLtsLogDetailsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowProjectTagsListRequest;
@@ -153,6 +159,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionMaxInstanceConfi
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionMaxInstanceConfigResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionReservedInstancesCountRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionReservedInstancesCountResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionUrlRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionUrlResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateTracingRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateTracingResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateTriggerRequest;
@@ -499,6 +507,36 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 创建函数URL
+     *
+     * 创建函数URL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFunctionUrlRequest 请求对象
+     * @return CompletableFuture<CreateFunctionUrlResponse>
+     */
+    public CompletableFuture<CreateFunctionUrlResponse> createFunctionUrlAsync(CreateFunctionUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createFunctionUrl);
+    }
+
+    /**
+     * 创建函数URL
+     *
+     * 创建函数URL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFunctionUrlRequest 请求对象
+     * @return AsyncInvoker<CreateFunctionUrlRequest, CreateFunctionUrlResponse>
+     */
+    public AsyncInvoker<CreateFunctionUrlRequest, CreateFunctionUrlResponse> createFunctionUrlAsyncInvoker(
+        CreateFunctionUrlRequest request) {
+        return new AsyncInvoker<CreateFunctionUrlRequest, CreateFunctionUrlResponse>(request,
+            FunctionGraphMeta.createFunctionUrl, hcClient);
+    }
+
+    /**
      * 发布函数版本
      *
      * 发布函数版本。
@@ -833,6 +871,36 @@ public class FunctionGraphAsyncClient {
         DeleteFunctionTriggerRequest request) {
         return new AsyncInvoker<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse>(request,
             FunctionGraphMeta.deleteFunctionTrigger, hcClient);
+    }
+
+    /**
+     * 删除函数URL
+     *
+     * 删除函数URL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFunctionUrlRequest 请求对象
+     * @return CompletableFuture<DeleteFunctionUrlResponse>
+     */
+    public CompletableFuture<DeleteFunctionUrlResponse> deleteFunctionUrlAsync(DeleteFunctionUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteFunctionUrl);
+    }
+
+    /**
+     * 删除函数URL
+     *
+     * 删除函数URL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFunctionUrlRequest 请求对象
+     * @return AsyncInvoker<DeleteFunctionUrlRequest, DeleteFunctionUrlResponse>
+     */
+    public AsyncInvoker<DeleteFunctionUrlRequest, DeleteFunctionUrlResponse> deleteFunctionUrlAsyncInvoker(
+        DeleteFunctionUrlRequest request) {
+        return new AsyncInvoker<DeleteFunctionUrlRequest, DeleteFunctionUrlResponse>(request,
+            FunctionGraphMeta.deleteFunctionUrl, hcClient);
     }
 
     /**
@@ -1841,6 +1909,36 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 获取指定函数的URL
+     *
+     * 获取指定函数的URL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFunctionUrlRequest 请求对象
+     * @return CompletableFuture<ShowFunctionUrlResponse>
+     */
+    public CompletableFuture<ShowFunctionUrlResponse> showFunctionUrlAsync(ShowFunctionUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showFunctionUrl);
+    }
+
+    /**
+     * 获取指定函数的URL
+     *
+     * 获取指定函数的URL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFunctionUrlRequest 请求对象
+     * @return AsyncInvoker<ShowFunctionUrlRequest, ShowFunctionUrlResponse>
+     */
+    public AsyncInvoker<ShowFunctionUrlRequest, ShowFunctionUrlResponse> showFunctionUrlAsyncInvoker(
+        ShowFunctionUrlRequest request) {
+        return new AsyncInvoker<ShowFunctionUrlRequest, ShowFunctionUrlResponse>(request,
+            FunctionGraphMeta.showFunctionUrl, hcClient);
+    }
+
+    /**
      * 获取指定函数的lts日志组日志流配置
      *
      * 获取指定函数的lts日志组日志流配置。
@@ -2474,6 +2572,36 @@ public class FunctionGraphAsyncClient {
         UpdateFunctionReservedInstancesCountRequest request) {
         return new AsyncInvoker<UpdateFunctionReservedInstancesCountRequest, UpdateFunctionReservedInstancesCountResponse>(
             request, FunctionGraphMeta.updateFunctionReservedInstancesCount, hcClient);
+    }
+
+    /**
+     * 更新函数URL
+     *
+     * 更新函数URL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFunctionUrlRequest 请求对象
+     * @return CompletableFuture<UpdateFunctionUrlResponse>
+     */
+    public CompletableFuture<UpdateFunctionUrlResponse> updateFunctionUrlAsync(UpdateFunctionUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateFunctionUrl);
+    }
+
+    /**
+     * 更新函数URL
+     *
+     * 更新函数URL
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFunctionUrlRequest 请求对象
+     * @return AsyncInvoker<UpdateFunctionUrlRequest, UpdateFunctionUrlResponse>
+     */
+    public AsyncInvoker<UpdateFunctionUrlRequest, UpdateFunctionUrlResponse> updateFunctionUrlAsyncInvoker(
+        UpdateFunctionUrlRequest request) {
+        return new AsyncInvoker<UpdateFunctionUrlRequest, UpdateFunctionUrlResponse>(request,
+            FunctionGraphMeta.updateFunctionUrl, hcClient);
     }
 
     /**

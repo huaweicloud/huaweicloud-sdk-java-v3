@@ -99,6 +99,8 @@ import com.huaweicloud.sdk.meeting.v1.model.DeleteRecordingsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteRecordingsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteResourceRequest;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteResourceResponse;
+import com.huaweicloud.sdk.meeting.v1.model.DeleteTokenRequest;
+import com.huaweicloud.sdk.meeting.v1.model.DeleteTokenResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteVisionActiveCodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteVisionActiveCodeResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteWebHookConfigRequest;
@@ -1812,6 +1814,34 @@ public class MeetingAsyncClient {
         DeleteResourceRequest request) {
         return new AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, MeetingMeta.deleteResource,
             hcClient);
+    }
+
+    /**
+     * 注销登录
+     *
+     * 该接口提供注销功能。服务器收到请求后，删除该Token。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTokenRequest 请求对象
+     * @return CompletableFuture<DeleteTokenResponse>
+     */
+    public CompletableFuture<DeleteTokenResponse> deleteTokenAsync(DeleteTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.deleteToken);
+    }
+
+    /**
+     * 注销登录
+     *
+     * 该接口提供注销功能。服务器收到请求后，删除该Token。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTokenRequest 请求对象
+     * @return AsyncInvoker<DeleteTokenRequest, DeleteTokenResponse>
+     */
+    public AsyncInvoker<DeleteTokenRequest, DeleteTokenResponse> deleteTokenAsyncInvoker(DeleteTokenRequest request) {
+        return new AsyncInvoker<DeleteTokenRequest, DeleteTokenResponse>(request, MeetingMeta.deleteToken, hcClient);
     }
 
     /**

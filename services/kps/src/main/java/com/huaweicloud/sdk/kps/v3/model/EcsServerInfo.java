@@ -26,6 +26,11 @@ public class EcsServerInfo {
 
     private Boolean disablePassword;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port")
+
+    private Long port;
+
     public EcsServerInfo withId(String id) {
         this.id = id;
         return this;
@@ -75,7 +80,7 @@ public class EcsServerInfo {
     }
 
     /**
-     * - true：禁用虚拟机的ssh登陆。 - false：不禁用虚拟机的ssh登陆。
+     * - true：禁用虚拟机的ssh登录。 - false：不禁用虚拟机的ssh登录。
      * @return disablePassword
      */
     public Boolean getDisablePassword() {
@@ -84,6 +89,25 @@ public class EcsServerInfo {
 
     public void setDisablePassword(Boolean disablePassword) {
         this.disablePassword = disablePassword;
+    }
+
+    public EcsServerInfo withPort(Long port) {
+        this.port = port;
+        return this;
+    }
+
+    /**
+     * SSH监听端口。
+     * minimum: 1
+     * maximum: 65535
+     * @return port
+     */
+    public Long getPort() {
+        return port;
+    }
+
+    public void setPort(Long port) {
+        this.port = port;
     }
 
     @Override
@@ -96,12 +120,12 @@ public class EcsServerInfo {
         }
         EcsServerInfo that = (EcsServerInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.auth, that.auth)
-            && Objects.equals(this.disablePassword, that.disablePassword);
+            && Objects.equals(this.disablePassword, that.disablePassword) && Objects.equals(this.port, that.port);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, auth, disablePassword);
+        return Objects.hash(id, auth, disablePassword, port);
     }
 
     @Override
@@ -111,6 +135,7 @@ public class EcsServerInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    auth: ").append(toIndentedString(auth)).append("\n");
         sb.append("    disablePassword: ").append(toIndentedString(disablePassword)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("}");
         return sb.toString();
     }

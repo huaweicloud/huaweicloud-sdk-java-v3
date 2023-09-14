@@ -20,12 +20,17 @@ import java.util.function.Consumer;
 public class ShowResourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
 
     /**
-     * Gets or Sets type
+     * 资源类型:   - archive: 压缩包   - file: 文件   - jar: jar文件   - pyFile：python文件
      */
     public static final class TypeEnum {
 
@@ -44,6 +49,11 @@ public class ShowResourceResponse extends SdkResponse {
          */
         public static final TypeEnum JAR = new TypeEnum("jar");
 
+        /**
+         * Enum PYFILE for value: "pyFile"
+         */
+        public static final TypeEnum PYFILE = new TypeEnum("pyFile");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -51,6 +61,7 @@ public class ShowResourceResponse extends SdkResponse {
             map.put("archive", ARCHIVE);
             map.put("file", FILE);
             map.put("jar", JAR);
+            map.put("pyFile", PYFILE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -125,13 +136,40 @@ public class ShowResourceResponse extends SdkResponse {
 
     private String directory;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dependPackages")
+
+    private List<DependPackage> dependPackages = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "jobRelation")
+
+    private List<Relation> jobRelation = null;
+
+    public ShowResourceResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 资源id
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public ShowResourceResponse withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * Get name
+     * 资源名称，只能包含英文字母、数字、中文字符、下划线或中划线。
      * @return name
      */
     public String getName() {
@@ -148,7 +186,7 @@ public class ShowResourceResponse extends SdkResponse {
     }
 
     /**
-     * Get type
+     * 资源类型:   - archive: 压缩包   - file: 文件   - jar: jar文件   - pyFile：python文件
      * @return type
      */
     public TypeEnum getType() {
@@ -198,7 +236,7 @@ public class ShowResourceResponse extends SdkResponse {
     }
 
     /**
-     * Get dependFiles
+     * 主Jar包所依赖的JAR包、properties文件
      * @return dependFiles
      */
     public List<String> getDependFiles() {
@@ -215,7 +253,7 @@ public class ShowResourceResponse extends SdkResponse {
     }
 
     /**
-     * Get desc
+     * 资源描述
      * @return desc
      */
     public String getDesc() {
@@ -243,6 +281,72 @@ public class ShowResourceResponse extends SdkResponse {
         this.directory = directory;
     }
 
+    public ShowResourceResponse withDependPackages(List<DependPackage> dependPackages) {
+        this.dependPackages = dependPackages;
+        return this;
+    }
+
+    public ShowResourceResponse addDependPackagesItem(DependPackage dependPackagesItem) {
+        if (this.dependPackages == null) {
+            this.dependPackages = new ArrayList<>();
+        }
+        this.dependPackages.add(dependPackagesItem);
+        return this;
+    }
+
+    public ShowResourceResponse withDependPackages(Consumer<List<DependPackage>> dependPackagesSetter) {
+        if (this.dependPackages == null) {
+            this.dependPackages = new ArrayList<>();
+        }
+        dependPackagesSetter.accept(this.dependPackages);
+        return this;
+    }
+
+    /**
+     * 主Jar包所依赖的JAR包、properties文件。同时存在dependFiles和dependPackages时，优先解析该字段。
+     * @return dependPackages
+     */
+    public List<DependPackage> getDependPackages() {
+        return dependPackages;
+    }
+
+    public void setDependPackages(List<DependPackage> dependPackages) {
+        this.dependPackages = dependPackages;
+    }
+
+    public ShowResourceResponse withJobRelation(List<Relation> jobRelation) {
+        this.jobRelation = jobRelation;
+        return this;
+    }
+
+    public ShowResourceResponse addJobRelationItem(Relation jobRelationItem) {
+        if (this.jobRelation == null) {
+            this.jobRelation = new ArrayList<>();
+        }
+        this.jobRelation.add(jobRelationItem);
+        return this;
+    }
+
+    public ShowResourceResponse withJobRelation(Consumer<List<Relation>> jobRelationSetter) {
+        if (this.jobRelation == null) {
+            this.jobRelation = new ArrayList<>();
+        }
+        jobRelationSetter.accept(this.jobRelation);
+        return this;
+    }
+
+    /**
+     * 通过jar包名称查询相关的job
+     * @return jobRelation
+     */
+    public List<Relation> getJobRelation() {
+        return jobRelation;
+    }
+
+    public void setJobRelation(List<Relation> jobRelation) {
+        this.jobRelation = jobRelation;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -252,26 +356,32 @@ public class ShowResourceResponse extends SdkResponse {
             return false;
         }
         ShowResourceResponse that = (ShowResourceResponse) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.location, that.location) && Objects.equals(this.dependFiles, that.dependFiles)
-            && Objects.equals(this.desc, that.desc) && Objects.equals(this.directory, that.directory);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.dependFiles, that.dependFiles) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.directory, that.directory)
+            && Objects.equals(this.dependPackages, that.dependPackages)
+            && Objects.equals(this.jobRelation, that.jobRelation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, location, dependFiles, desc, directory);
+        return Objects.hash(id, name, type, location, dependFiles, desc, directory, dependPackages, jobRelation);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResourceResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    dependFiles: ").append(toIndentedString(dependFiles)).append("\n");
         sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
+        sb.append("    dependPackages: ").append(toIndentedString(dependPackages)).append("\n");
+        sb.append("    jobRelation: ").append(toIndentedString(jobRelation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

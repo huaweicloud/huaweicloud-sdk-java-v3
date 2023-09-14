@@ -96,6 +96,11 @@ public class MysqlInstanceResponse {
 
     private MysqlChargeInfo chargeInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volume")
+
+    private MysqlVolumeResp volume;
+
     public MysqlInstanceResponse withId(String id) {
         this.id = id;
         return this;
@@ -412,6 +417,32 @@ public class MysqlInstanceResponse {
         this.chargeInfo = chargeInfo;
     }
 
+    public MysqlInstanceResponse withVolume(MysqlVolumeResp volume) {
+        this.volume = volume;
+        return this;
+    }
+
+    public MysqlInstanceResponse withVolume(Consumer<MysqlVolumeResp> volumeSetter) {
+        if (this.volume == null) {
+            this.volume = new MysqlVolumeResp();
+            volumeSetter.accept(this.volume);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get volume
+     * @return volume
+     */
+    public MysqlVolumeResp getVolume() {
+        return volume;
+    }
+
+    public void setVolume(MysqlVolumeResp volume) {
+        this.volume = volume;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -431,7 +462,7 @@ public class MysqlInstanceResponse {
             && Objects.equals(this.masterAvailabilityZone, that.masterAvailabilityZone)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.flavorRef, that.flavorRef)
-            && Objects.equals(this.chargeInfo, that.chargeInfo);
+            && Objects.equals(this.chargeInfo, that.chargeInfo) && Objects.equals(this.volume, that.volume);
     }
 
     @Override
@@ -452,7 +483,8 @@ public class MysqlInstanceResponse {
             securityGroupId,
             subnetId,
             flavorRef,
-            chargeInfo);
+            chargeInfo,
+            volume);
     }
 
     @Override
@@ -476,6 +508,7 @@ public class MysqlInstanceResponse {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
+        sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("}");
         return sb.toString();
     }

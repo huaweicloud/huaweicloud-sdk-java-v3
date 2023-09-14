@@ -104,7 +104,7 @@ public class CreateTransferResponseBodyLogTransferInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_transfer_detail")
 
-    private TransferDetail logTransferDetail;
+    private Object logTransferDetail;
 
     /**
      * 日志转储方式。cycle是指周期性转储，realTime是指实时转储。OBS转储只支持\"cycle\"，DIS转储和DMS转储只支持\"realTime\"。
@@ -407,18 +407,8 @@ public class CreateTransferResponseBodyLogTransferInfo {
         this.logStorageFormat = logStorageFormat;
     }
 
-    public CreateTransferResponseBodyLogTransferInfo withLogTransferDetail(TransferDetail logTransferDetail) {
+    public CreateTransferResponseBodyLogTransferInfo withLogTransferDetail(Object logTransferDetail) {
         this.logTransferDetail = logTransferDetail;
-        return this;
-    }
-
-    public CreateTransferResponseBodyLogTransferInfo withLogTransferDetail(
-        Consumer<TransferDetail> logTransferDetailSetter) {
-        if (this.logTransferDetail == null) {
-            this.logTransferDetail = new TransferDetail();
-            logTransferDetailSetter.accept(this.logTransferDetail);
-        }
-
         return this;
     }
 
@@ -426,11 +416,11 @@ public class CreateTransferResponseBodyLogTransferInfo {
      * 日志转储详细信息
      * @return logTransferDetail
      */
-    public TransferDetail getLogTransferDetail() {
+    public Object getLogTransferDetail() {
         return logTransferDetail;
     }
 
-    public void setLogTransferDetail(TransferDetail logTransferDetail) {
+    public void setLogTransferDetail(Object logTransferDetail) {
         this.logTransferDetail = logTransferDetail;
     }
 
