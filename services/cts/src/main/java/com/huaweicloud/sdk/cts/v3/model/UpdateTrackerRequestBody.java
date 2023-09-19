@@ -172,6 +172,16 @@ public class UpdateTrackerRequestBody {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_organization_tracker")
+
+    private Boolean isOrganizationTracker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "management_event_selector")
+
+    private ManagementEventSelector managementEventSelector;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_lts_enabled")
 
     private Boolean isLtsEnabled;
@@ -250,6 +260,50 @@ public class UpdateTrackerRequestBody {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public UpdateTrackerRequestBody withIsOrganizationTracker(Boolean isOrganizationTracker) {
+        this.isOrganizationTracker = isOrganizationTracker;
+        return this;
+    }
+
+    /**
+     * 是否应用到我的组织。 只针对管理类追踪器。设置为true时，ORG组织下所有成员当前区域的审计日志会转储到该追踪器配置的OBS桶或者LTS日志流，但是事件列表界面不支持查看其它组织成员的审计日志。
+     * @return isOrganizationTracker
+     */
+    public Boolean getIsOrganizationTracker() {
+        return isOrganizationTracker;
+    }
+
+    public void setIsOrganizationTracker(Boolean isOrganizationTracker) {
+        this.isOrganizationTracker = isOrganizationTracker;
+    }
+
+    public UpdateTrackerRequestBody withManagementEventSelector(ManagementEventSelector managementEventSelector) {
+        this.managementEventSelector = managementEventSelector;
+        return this;
+    }
+
+    public UpdateTrackerRequestBody withManagementEventSelector(
+        Consumer<ManagementEventSelector> managementEventSelectorSetter) {
+        if (this.managementEventSelector == null) {
+            this.managementEventSelector = new ManagementEventSelector();
+            managementEventSelectorSetter.accept(this.managementEventSelector);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get managementEventSelector
+     * @return managementEventSelector
+     */
+    public ManagementEventSelector getManagementEventSelector() {
+        return managementEventSelector;
+    }
+
+    public void setManagementEventSelector(ManagementEventSelector managementEventSelector) {
+        this.managementEventSelector = managementEventSelector;
     }
 
     public UpdateTrackerRequestBody withIsLtsEnabled(Boolean isLtsEnabled) {
@@ -382,8 +436,10 @@ public class UpdateTrackerRequestBody {
         }
         UpdateTrackerRequestBody that = (UpdateTrackerRequestBody) obj;
         return Objects.equals(this.trackerType, that.trackerType) && Objects.equals(this.trackerName, that.trackerName)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.isLtsEnabled, that.isLtsEnabled)
-            && Objects.equals(this.obsInfo, that.obsInfo)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.isOrganizationTracker, that.isOrganizationTracker)
+            && Objects.equals(this.managementEventSelector, that.managementEventSelector)
+            && Objects.equals(this.isLtsEnabled, that.isLtsEnabled) && Objects.equals(this.obsInfo, that.obsInfo)
             && Objects.equals(this.isSupportTraceFilesEncryption, that.isSupportTraceFilesEncryption)
             && Objects.equals(this.kmsId, that.kmsId) && Objects.equals(this.isSupportValidate, that.isSupportValidate)
             && Objects.equals(this.dataBucket, that.dataBucket);
@@ -394,6 +450,8 @@ public class UpdateTrackerRequestBody {
         return Objects.hash(trackerType,
             trackerName,
             status,
+            isOrganizationTracker,
+            managementEventSelector,
             isLtsEnabled,
             obsInfo,
             isSupportTraceFilesEncryption,
@@ -409,6 +467,8 @@ public class UpdateTrackerRequestBody {
         sb.append("    trackerType: ").append(toIndentedString(trackerType)).append("\n");
         sb.append("    trackerName: ").append(toIndentedString(trackerName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    isOrganizationTracker: ").append(toIndentedString(isOrganizationTracker)).append("\n");
+        sb.append("    managementEventSelector: ").append(toIndentedString(managementEventSelector)).append("\n");
         sb.append("    isLtsEnabled: ").append(toIndentedString(isLtsEnabled)).append("\n");
         sb.append("    obsInfo: ").append(toIndentedString(obsInfo)).append("\n");
         sb.append("    isSupportTraceFilesEncryption: ")

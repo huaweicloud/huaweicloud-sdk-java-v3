@@ -16,6 +16,11 @@ public class CreateTtsaResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public CreateTtsaResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -33,6 +38,25 @@ public class CreateTtsaResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public CreateTtsaResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +66,12 @@ public class CreateTtsaResponse extends SdkResponse {
             return false;
         }
         CreateTtsaResponse that = (CreateTtsaResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, xRequestId);
     }
 
     @Override
@@ -55,6 +79,7 @@ public class CreateTtsaResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateTtsaResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

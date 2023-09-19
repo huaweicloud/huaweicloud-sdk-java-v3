@@ -79,7 +79,7 @@ public class ListEncodeServersRequest {
     }
 
     /**
-     * 编码服务类型 - 0：服务器 - 1：容器
+     * 编码服务类型。 - 0：服务器 - 1：容器
      * minimum: -128
      * maximum: 128
      * @return type
@@ -98,7 +98,7 @@ public class ListEncodeServersRequest {
     }
 
     /**
-     * 状态列表 - 1：运行中 - 2：异常 - 3：重启中 - 4：冻结 - 5：关机 - 100、1014、0：创建中
+     * 状态列表。 - 1：运行中 - 2：异常 - 3：重启中 - 4：冻结 - 5：关机 - 100、1014、0：创建中
      * minimum: -128
      * maximum: 128
      * @return status

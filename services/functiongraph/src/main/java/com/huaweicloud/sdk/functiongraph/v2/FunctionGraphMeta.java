@@ -76,6 +76,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ImportFunctionRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.ImportFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.InvokeFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.InvokeFunctionResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListActiveAsyncInvocationsRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListActiveAsyncInvocationsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListAsyncInvocationsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListAsyncInvocationsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListDependenciesRequest;
@@ -1130,6 +1132,76 @@ public class FunctionGraphMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(InvokeFunctionResponse::getXCffRequestId, InvokeFunctionResponse::setXCffRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListActiveAsyncInvocationsRequest, ListActiveAsyncInvocationsResponse> listActiveAsyncInvocations =
+        genForlistActiveAsyncInvocations();
+
+    private static HttpRequestDef<ListActiveAsyncInvocationsRequest, ListActiveAsyncInvocationsResponse> genForlistActiveAsyncInvocations() {
+        // basic
+        HttpRequestDef.Builder<ListActiveAsyncInvocationsRequest, ListActiveAsyncInvocationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListActiveAsyncInvocationsRequest.class,
+                    ListActiveAsyncInvocationsResponse.class)
+                .withName("ListActiveAsyncInvocations")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/active-async-invocations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveAsyncInvocationsRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            }));
+        builder.<String>withRequestField("requests",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveAsyncInvocationsRequest::getRequests, (req, v) -> {
+                req.setRequests(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveAsyncInvocationsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveAsyncInvocationsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListActiveAsyncInvocationsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("query_begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListActiveAsyncInvocationsRequest::getQueryBeginTime, (req, v) -> {
+                req.setQueryBeginTime(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("query_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListActiveAsyncInvocationsRequest::getQueryEndTime, (req, v) -> {
+                req.setQueryEndTime(v);
+            }));
+
+        // response
+
         return builder.build();
     }
 

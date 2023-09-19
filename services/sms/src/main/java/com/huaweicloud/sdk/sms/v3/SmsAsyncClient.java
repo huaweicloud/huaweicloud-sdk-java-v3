@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.sms.v3.model.CollectLogRequest;
 import com.huaweicloud.sdk.sms.v3.model.CollectLogResponse;
 import com.huaweicloud.sdk.sms.v3.model.CreateMigprojectRequest;
 import com.huaweicloud.sdk.sms.v3.model.CreateMigprojectResponse;
+import com.huaweicloud.sdk.sms.v3.model.CreatePrivacyAgreementsRequest;
+import com.huaweicloud.sdk.sms.v3.model.CreatePrivacyAgreementsResponse;
 import com.huaweicloud.sdk.sms.v3.model.CreateTaskRequest;
 import com.huaweicloud.sdk.sms.v3.model.CreateTaskResponse;
 import com.huaweicloud.sdk.sms.v3.model.CreateTemplateRequest;
@@ -57,6 +59,8 @@ import com.huaweicloud.sdk.sms.v3.model.ShowOverviewRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowOverviewResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowPassphraseRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowPassphraseResponse;
+import com.huaweicloud.sdk.sms.v3.model.ShowPrivacyAgreementsRequest;
+import com.huaweicloud.sdk.sms.v3.model.ShowPrivacyAgreementsResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowServerRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowServerResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowSha256Request;
@@ -197,6 +201,37 @@ public class SmsAsyncClient {
         CreateMigprojectRequest request) {
         return new AsyncInvoker<CreateMigprojectRequest, CreateMigprojectResponse>(request, SmsMeta.createMigproject,
             hcClient);
+    }
+
+    /**
+     * 同意隐私协议
+     *
+     * 同意隐私协议接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePrivacyAgreementsRequest 请求对象
+     * @return CompletableFuture<CreatePrivacyAgreementsResponse>
+     */
+    public CompletableFuture<CreatePrivacyAgreementsResponse> createPrivacyAgreementsAsync(
+        CreatePrivacyAgreementsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.createPrivacyAgreements);
+    }
+
+    /**
+     * 同意隐私协议
+     *
+     * 同意隐私协议接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePrivacyAgreementsRequest 请求对象
+     * @return AsyncInvoker<CreatePrivacyAgreementsRequest, CreatePrivacyAgreementsResponse>
+     */
+    public AsyncInvoker<CreatePrivacyAgreementsRequest, CreatePrivacyAgreementsResponse> createPrivacyAgreementsAsyncInvoker(
+        CreatePrivacyAgreementsRequest request) {
+        return new AsyncInvoker<CreatePrivacyAgreementsRequest, CreatePrivacyAgreementsResponse>(request,
+            SmsMeta.createPrivacyAgreements, hcClient);
     }
 
     /**
@@ -812,6 +847,37 @@ public class SmsAsyncClient {
     }
 
     /**
+     * 查询用户是否同意隐私协议
+     *
+     * 查询用户是否同意隐私协议接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPrivacyAgreementsRequest 请求对象
+     * @return CompletableFuture<ShowPrivacyAgreementsResponse>
+     */
+    public CompletableFuture<ShowPrivacyAgreementsResponse> showPrivacyAgreementsAsync(
+        ShowPrivacyAgreementsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.showPrivacyAgreements);
+    }
+
+    /**
+     * 查询用户是否同意隐私协议
+     *
+     * 查询用户是否同意隐私协议接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPrivacyAgreementsRequest 请求对象
+     * @return AsyncInvoker<ShowPrivacyAgreementsRequest, ShowPrivacyAgreementsResponse>
+     */
+    public AsyncInvoker<ShowPrivacyAgreementsRequest, ShowPrivacyAgreementsResponse> showPrivacyAgreementsAsyncInvoker(
+        ShowPrivacyAgreementsRequest request) {
+        return new AsyncInvoker<ShowPrivacyAgreementsRequest, ShowPrivacyAgreementsResponse>(request,
+            SmsMeta.showPrivacyAgreements, hcClient);
+    }
+
+    /**
      * 查询指定ID的源端服务器
      *
      * 迁移Agent将源端服务器信息上报到主机迁移服务后，主机迁移服务会对迁移的可行性进行检测，该接口返回源端服务器的基本信息和检查结果。
@@ -842,7 +908,7 @@ public class SmsAsyncClient {
     /**
      * 计算sha256
      *
-     * 计算sha256
+     * 计算sha256，加密字段值为uuid。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -856,7 +922,7 @@ public class SmsAsyncClient {
     /**
      * 计算sha256
      *
-     * 计算sha256
+     * 计算sha256，加密字段值为uuid。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

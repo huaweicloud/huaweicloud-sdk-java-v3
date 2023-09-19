@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.ocr.v1.model.AcceptanceBillRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.AutoClassificationRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.BankcardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.BusinessCardRequestBody;
@@ -35,6 +36,9 @@ import com.huaweicloud.sdk.ocr.v1.model.PassportRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.PcrTestRecordRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.QualificationCertificateRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.QuotaInvoiceRequestBody;
+import com.huaweicloud.sdk.ocr.v1.model.RealEstateCertificateRequestBody;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardRequest;
@@ -95,6 +99,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateRequest
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeRealEstateCertificateRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeRealEstateCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeTaxiInvoiceRequest;
@@ -111,8 +117,12 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeTransportationLicenseRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeTransportationLicenseResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVatInvoiceRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVatInvoiceResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeVehicleCertificateRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeVehicleCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVehicleLicenseRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVehicleLicenseResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeVietnamIdCardRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeVietnamIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVinRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVinResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeWaybillElectronicRequest;
@@ -127,13 +137,47 @@ import com.huaweicloud.sdk.ocr.v1.model.TollInvoiceRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.TrainTicketRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.TransportationLicenseRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.VatInvoiceRequestBody;
+import com.huaweicloud.sdk.ocr.v1.model.VehicleCertificateRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.VehicleLicenseRequestBody;
+import com.huaweicloud.sdk.ocr.v1.model.VietnamIdCardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.VinRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.WaybillElectronicRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.WebImageRequestBody;
 
 @SuppressWarnings("unchecked")
 public class OcrMeta {
+
+    public static final HttpRequestDef<RecognizeAcceptanceBillRequest, RecognizeAcceptanceBillResponse> recognizeAcceptanceBill =
+        genForrecognizeAcceptanceBill();
+
+    private static HttpRequestDef<RecognizeAcceptanceBillRequest, RecognizeAcceptanceBillResponse> genForrecognizeAcceptanceBill() {
+        // basic
+        HttpRequestDef.Builder<RecognizeAcceptanceBillRequest, RecognizeAcceptanceBillResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeAcceptanceBillRequest.class, RecognizeAcceptanceBillResponse.class)
+            .withName("RecognizeAcceptanceBill")
+            .withUri("/v2/{project_id}/ocr/acceptance-bill")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeAcceptanceBillRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<AcceptanceBillRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AcceptanceBillRequestBody.class),
+            f -> f.withMarshaller(RecognizeAcceptanceBillRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse> recognizeAutoClassification =
         genForrecognizeAutoClassification();
@@ -1086,6 +1130,41 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeRealEstateCertificateRequest, RecognizeRealEstateCertificateResponse> recognizeRealEstateCertificate =
+        genForrecognizeRealEstateCertificate();
+
+    private static HttpRequestDef<RecognizeRealEstateCertificateRequest, RecognizeRealEstateCertificateResponse> genForrecognizeRealEstateCertificate() {
+        // basic
+        HttpRequestDef.Builder<RecognizeRealEstateCertificateRequest, RecognizeRealEstateCertificateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeRealEstateCertificateRequest.class,
+                    RecognizeRealEstateCertificateResponse.class)
+                .withName("RecognizeRealEstateCertificate")
+                .withUri("/v2/{project_id}/ocr/real-estate-certificate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeRealEstateCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<RealEstateCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RealEstateCertificateRequestBody.class),
+            f -> f.withMarshaller(RecognizeRealEstateCertificateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeSmartDocumentRecognizerRequest, RecognizeSmartDocumentRecognizerResponse> recognizeSmartDocumentRecognizer =
         genForrecognizeSmartDocumentRecognizer();
 
@@ -1351,6 +1430,41 @@ public class OcrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RecognizeVehicleCertificateRequest, RecognizeVehicleCertificateResponse> recognizeVehicleCertificate =
+        genForrecognizeVehicleCertificate();
+
+    private static HttpRequestDef<RecognizeVehicleCertificateRequest, RecognizeVehicleCertificateResponse> genForrecognizeVehicleCertificate() {
+        // basic
+        HttpRequestDef.Builder<RecognizeVehicleCertificateRequest, RecognizeVehicleCertificateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeVehicleCertificateRequest.class,
+                    RecognizeVehicleCertificateResponse.class)
+                .withName("RecognizeVehicleCertificate")
+                .withUri("/v2/{project_id}/ocr/vehicle-certificate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeVehicleCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<VehicleCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VehicleCertificateRequestBody.class),
+            f -> f.withMarshaller(RecognizeVehicleCertificateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse> recognizeVehicleLicense =
         genForrecognizeVehicleLicense();
 
@@ -1375,6 +1489,38 @@ public class OcrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(VehicleLicenseRequestBody.class),
             f -> f.withMarshaller(RecognizeVehicleLicenseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeVietnamIdCardRequest, RecognizeVietnamIdCardResponse> recognizeVietnamIdCard =
+        genForrecognizeVietnamIdCard();
+
+    private static HttpRequestDef<RecognizeVietnamIdCardRequest, RecognizeVietnamIdCardResponse> genForrecognizeVietnamIdCard() {
+        // basic
+        HttpRequestDef.Builder<RecognizeVietnamIdCardRequest, RecognizeVietnamIdCardResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeVietnamIdCardRequest.class, RecognizeVietnamIdCardResponse.class)
+            .withName("RecognizeVietnamIdCard")
+            .withUri("/v2/{project_id}/ocr/vietnam-id-card")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeVietnamIdCardRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<VietnamIdCardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VietnamIdCardRequestBody.class),
+            f -> f.withMarshaller(RecognizeVietnamIdCardRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

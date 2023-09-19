@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 云手机使用的带宽信息
+ * 云手机使用的带宽信息。
  */
 public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
 
@@ -36,7 +36,7 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
     }
 
     /**
-     * 云手机服务器的带宽唯一标识
+     * 云手机服务器的带宽唯一标识。
      * @return bandWidthId
      */
     public String getBandWidthId() {
@@ -53,7 +53,7 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
     }
 
     /**
-     * 云手机服务器的带宽大小
+     * 云手机服务器的带宽大小。
      * minimum: 0
      * maximum: 8096
      * @return bandWidthSize
@@ -72,7 +72,7 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
     }
 
     /**
-     * 云手机服务器带宽的计费方式  取值范围：  - 0，bandwidth, 按带宽计费  - 1，traffic, 按流量计费
+     * 云手机服务器带宽的计费方式。  - 0：bandwidth, 按带宽计费  - 1：traffic, 按流量计费
      * minimum: -128
      * maximum: 128
      * @return bandWidthChargeMode
@@ -91,7 +91,7 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
     }
 
     /**
-     * 云手机服务器的带宽类型  - 0，per，独享带宽 - 1，whole，共享带宽
+     * 云手机服务器的带宽类型。  - 0：per，独享带宽 - 1：whole，共享带宽
      * minimum: -128
      * maximum: 128
      * @return bandWidthShareType

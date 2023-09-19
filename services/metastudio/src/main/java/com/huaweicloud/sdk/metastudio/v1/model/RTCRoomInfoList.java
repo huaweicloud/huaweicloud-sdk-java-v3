@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * RTC Animation加入房间信息。
+ * RTC房间信息。
  */
 public class RTCRoomInfoList {
 
@@ -84,7 +84,7 @@ public class RTCRoomInfoList {
     }
 
     /**
-     * 接入RTC的用户信息。
+     * 加入RTC房间用户信息。
      * @return users
      */
     public List<RTCUserInfo> getUsers() {

@@ -24,6 +24,11 @@ public class ListVideoMotionCaptureJobsResponse extends SdkResponse {
 
     private List<VideoMotionCaptureInfo> videoMotionCaptureJobs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ListVideoMotionCaptureJobsResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -79,6 +84,25 @@ public class ListVideoMotionCaptureJobsResponse extends SdkResponse {
         this.videoMotionCaptureJobs = videoMotionCaptureJobs;
     }
 
+    public ListVideoMotionCaptureJobsResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -89,12 +113,13 @@ public class ListVideoMotionCaptureJobsResponse extends SdkResponse {
         }
         ListVideoMotionCaptureJobsResponse that = (ListVideoMotionCaptureJobsResponse) obj;
         return Objects.equals(this.total, that.total)
-            && Objects.equals(this.videoMotionCaptureJobs, that.videoMotionCaptureJobs);
+            && Objects.equals(this.videoMotionCaptureJobs, that.videoMotionCaptureJobs)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, videoMotionCaptureJobs);
+        return Objects.hash(total, videoMotionCaptureJobs, xRequestId);
     }
 
     @Override
@@ -103,6 +128,7 @@ public class ListVideoMotionCaptureJobsResponse extends SdkResponse {
         sb.append("class ListVideoMotionCaptureJobsResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    videoMotionCaptureJobs: ").append(toIndentedString(videoMotionCaptureJobs)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

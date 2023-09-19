@@ -20,6 +20,11 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "servers")
 
     private List<Server> servers = null;
@@ -39,6 +44,25 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public ListCloudPhoneServersResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 实例总数。
+     * minimum: 0
+     * maximum: 100000
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     public ListCloudPhoneServersResponse withServers(List<Server> servers) {
@@ -63,7 +87,7 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器信息
+     * 云手机服务器信息。
      * @return servers
      */
     public List<Server> getServers() {
@@ -83,12 +107,13 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
             return false;
         }
         ListCloudPhoneServersResponse that = (ListCloudPhoneServersResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.servers, that.servers);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.servers, that.servers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, servers);
+        return Objects.hash(requestId, count, servers);
     }
 
     @Override
@@ -96,6 +121,7 @@ public class ListCloudPhoneServersResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCloudPhoneServersResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
         sb.append("}");
         return sb.toString();

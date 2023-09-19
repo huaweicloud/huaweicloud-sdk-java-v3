@@ -24,6 +24,11 @@ public class ListCloudPhonesResponse extends SdkResponse {
 
     private String requestId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public ListCloudPhonesResponse withPhones(List<Phone> phones) {
         this.phones = phones;
         return this;
@@ -46,7 +51,7 @@ public class ListCloudPhonesResponse extends SdkResponse {
     }
 
     /**
-     * 云手机信息
+     * 云手机信息。
      * @return phones
      */
     public List<Phone> getPhones() {
@@ -74,6 +79,25 @@ public class ListCloudPhonesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    public ListCloudPhonesResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 实例总数。
+     * minimum: 0
+     * maximum: 100000
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +107,13 @@ public class ListCloudPhonesResponse extends SdkResponse {
             return false;
         }
         ListCloudPhonesResponse that = (ListCloudPhonesResponse) obj;
-        return Objects.equals(this.phones, that.phones) && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.phones, that.phones) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phones, requestId);
+        return Objects.hash(phones, requestId, count);
     }
 
     @Override
@@ -97,6 +122,7 @@ public class ListCloudPhonesResponse extends SdkResponse {
         sb.append("class ListCloudPhonesResponse {\n");
         sb.append("    phones: ").append(toIndentedString(phones)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

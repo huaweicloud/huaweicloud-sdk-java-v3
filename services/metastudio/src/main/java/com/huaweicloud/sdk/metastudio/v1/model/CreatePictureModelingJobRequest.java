@@ -32,11 +32,6 @@ public class CreatePictureModelingJobRequest {
     private String xAppUserId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-User-Privilege")
-
-    private String xUserPrivilege;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CreatePictureModelingJobRequestBody body;
@@ -115,25 +110,6 @@ public class CreatePictureModelingJobRequest {
         this.xAppUserId = xAppUserId;
     }
 
-    public CreatePictureModelingJobRequest withXUserPrivilege(String xUserPrivilege) {
-        this.xUserPrivilege = xUserPrivilege;
-        return this;
-    }
-
-    /**
-     * 测试用户判断。
-     * @return xUserPrivilege
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-User-Privilege")
-    public String getXUserPrivilege() {
-        return xUserPrivilege;
-    }
-
-    public void setXUserPrivilege(String xUserPrivilege) {
-        this.xUserPrivilege = xUserPrivilege;
-    }
-
     public CreatePictureModelingJobRequest withBody(CreatePictureModelingJobRequestBody body) {
         this.body = body;
         return this;
@@ -171,12 +147,12 @@ public class CreatePictureModelingJobRequest {
         CreatePictureModelingJobRequest that = (CreatePictureModelingJobRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
-            && Objects.equals(this.xUserPrivilege, that.xUserPrivilege) && Objects.equals(this.body, that.body);
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, xUserPrivilege, body);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, body);
     }
 
     @Override
@@ -187,7 +163,6 @@ public class CreatePictureModelingJobRequest {
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
-        sb.append("    xUserPrivilege: ").append(toIndentedString(xUserPrivilege)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

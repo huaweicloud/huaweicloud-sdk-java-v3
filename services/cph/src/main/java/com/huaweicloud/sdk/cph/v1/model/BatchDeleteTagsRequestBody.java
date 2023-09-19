@@ -29,7 +29,7 @@ public class BatchDeleteTagsRequestBody {
     }
 
     /**
-     * 操作标识： - delete，刪除
+     * 操作标识。 - delete：刪除
      * @return action
      */
     public String getAction() {

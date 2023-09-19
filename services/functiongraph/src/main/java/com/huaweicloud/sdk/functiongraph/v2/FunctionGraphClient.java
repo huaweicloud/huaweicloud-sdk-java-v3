@@ -63,6 +63,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ImportFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ImportFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.InvokeFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.InvokeFunctionResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListActiveAsyncInvocationsRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListActiveAsyncInvocationsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListAsyncInvocationsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListAsyncInvocationsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListDependenciesRequest;
@@ -1097,6 +1099,36 @@ public class FunctionGraphClient {
         InvokeFunctionRequest request) {
         return new SyncInvoker<InvokeFunctionRequest, InvokeFunctionResponse>(request, FunctionGraphMeta.invokeFunction,
             hcClient);
+    }
+
+    /**
+     * 获取函数活跃异步调用请求列表
+     *
+     * 获取函数异步调用活跃请求列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListActiveAsyncInvocationsRequest 请求对象
+     * @return ListActiveAsyncInvocationsResponse
+     */
+    public ListActiveAsyncInvocationsResponse listActiveAsyncInvocations(ListActiveAsyncInvocationsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listActiveAsyncInvocations);
+    }
+
+    /**
+     * 获取函数活跃异步调用请求列表
+     *
+     * 获取函数异步调用活跃请求列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListActiveAsyncInvocationsRequest 请求对象
+     * @return SyncInvoker<ListActiveAsyncInvocationsRequest, ListActiveAsyncInvocationsResponse>
+     */
+    public SyncInvoker<ListActiveAsyncInvocationsRequest, ListActiveAsyncInvocationsResponse> listActiveAsyncInvocationsInvoker(
+        ListActiveAsyncInvocationsRequest request) {
+        return new SyncInvoker<ListActiveAsyncInvocationsRequest, ListActiveAsyncInvocationsResponse>(request,
+            FunctionGraphMeta.listActiveAsyncInvocations, hcClient);
     }
 
     /**

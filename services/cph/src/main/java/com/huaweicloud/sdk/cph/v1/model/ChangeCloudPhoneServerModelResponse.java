@@ -49,7 +49,7 @@ public class ChangeCloudPhoneServerModelResponse extends SdkResponse {
     }
 
     /**
-     * 订单ID，不超过64个字节
+     * 订单ID，不超过64个字节。
      * @return orderId
      */
     public String getOrderId() {
@@ -66,7 +66,7 @@ public class ChangeCloudPhoneServerModelResponse extends SdkResponse {
     }
 
     /**
-     * 产品ID，不超过64个字节
+     * 产品ID，不超过64个字节。
      * @return productId
      */
     public String getProductId() {

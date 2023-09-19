@@ -121,10 +121,16 @@ import com.huaweicloud.sdk.lts.v2.model.ListTransfersRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListTransfersResponse;
 import com.huaweicloud.sdk.lts.v2.model.RegisterDmsKafkaInstanceRequest;
 import com.huaweicloud.sdk.lts.v2.model.RegisterDmsKafkaInstanceResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowAdminConfigRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowAdminConfigResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRuleRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRuleResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowLogConvergeConfigRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowLogConvergeConfigResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowMemberGroupAndStreamRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowMemberGroupAndStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowNotificationTemplateRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowNotificationTemplateResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowStructTemplateRequest;
@@ -139,6 +145,8 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateHostGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateHostGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateKeywordsAlarmRuleRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateKeywordsAlarmRuleResponse;
+import com.huaweicloud.sdk.lts.v2.model.UpdateLogConvergeConfigRequest;
+import com.huaweicloud.sdk.lts.v2.model.UpdateLogConvergeConfigResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogStreamRequest;
@@ -151,6 +159,8 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateStructConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateStructConfigResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateStructTemplateRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateStructTemplateResponse;
+import com.huaweicloud.sdk.lts.v2.model.UpdateSwitchRequest;
+import com.huaweicloud.sdk.lts.v2.model.UpdateSwitchResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateTransferRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateTransferResponse;
 
@@ -2249,6 +2259,154 @@ public class LtsClient {
         UpdateAomMappingRulesRequest request) {
         return new SyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse>(request,
             LtsMeta.updateAomMappingRules, hcClient);
+    }
+
+    /**
+     * 获取日志汇聚开关
+     *
+     * 只能由管理员或者委托管理员调用    获取日志汇聚开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAdminConfigRequest 请求对象
+     * @return ShowAdminConfigResponse
+     */
+    public ShowAdminConfigResponse showAdminConfig(ShowAdminConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.showAdminConfig);
+    }
+
+    /**
+     * 获取日志汇聚开关
+     *
+     * 只能由管理员或者委托管理员调用    获取日志汇聚开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAdminConfigRequest 请求对象
+     * @return SyncInvoker<ShowAdminConfigRequest, ShowAdminConfigResponse>
+     */
+    public SyncInvoker<ShowAdminConfigRequest, ShowAdminConfigResponse> showAdminConfigInvoker(
+        ShowAdminConfigRequest request) {
+        return new SyncInvoker<ShowAdminConfigRequest, ShowAdminConfigResponse>(request, LtsMeta.showAdminConfig,
+            hcClient);
+    }
+
+    /**
+     * 获取组织成员汇聚配置
+     *
+     * 只能由组织管理员或者委托管理员调用    获取组织成员汇聚配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLogConvergeConfigRequest 请求对象
+     * @return ShowLogConvergeConfigResponse
+     */
+    public ShowLogConvergeConfigResponse showLogConvergeConfig(ShowLogConvergeConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.showLogConvergeConfig);
+    }
+
+    /**
+     * 获取组织成员汇聚配置
+     *
+     * 只能由组织管理员或者委托管理员调用    获取组织成员汇聚配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLogConvergeConfigRequest 请求对象
+     * @return SyncInvoker<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse>
+     */
+    public SyncInvoker<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse> showLogConvergeConfigInvoker(
+        ShowLogConvergeConfigRequest request) {
+        return new SyncInvoker<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse>(request,
+            LtsMeta.showLogConvergeConfig, hcClient);
+    }
+
+    /**
+     * 获取组织成员日志组日志流
+     *
+     * 只能由管理员或者委托管理员调用，获取组织成员日志组日志流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMemberGroupAndStreamRequest 请求对象
+     * @return ShowMemberGroupAndStreamResponse
+     */
+    public ShowMemberGroupAndStreamResponse showMemberGroupAndStream(ShowMemberGroupAndStreamRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.showMemberGroupAndStream);
+    }
+
+    /**
+     * 获取组织成员日志组日志流
+     *
+     * 只能由管理员或者委托管理员调用，获取组织成员日志组日志流
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMemberGroupAndStreamRequest 请求对象
+     * @return SyncInvoker<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse>
+     */
+    public SyncInvoker<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse> showMemberGroupAndStreamInvoker(
+        ShowMemberGroupAndStreamRequest request) {
+        return new SyncInvoker<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse>(request,
+            LtsMeta.showMemberGroupAndStream, hcClient);
+    }
+
+    /**
+     * 更新汇聚配置
+     *
+     * 只能由管理员或者委托管理员 ,更新汇聚配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogConvergeConfigRequest 请求对象
+     * @return UpdateLogConvergeConfigResponse
+     */
+    public UpdateLogConvergeConfigResponse updateLogConvergeConfig(UpdateLogConvergeConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateLogConvergeConfig);
+    }
+
+    /**
+     * 更新汇聚配置
+     *
+     * 只能由管理员或者委托管理员 ,更新汇聚配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogConvergeConfigRequest 请求对象
+     * @return SyncInvoker<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse>
+     */
+    public SyncInvoker<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse> updateLogConvergeConfigInvoker(
+        UpdateLogConvergeConfigRequest request) {
+        return new SyncInvoker<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse>(request,
+            LtsMeta.updateLogConvergeConfig, hcClient);
+    }
+
+    /**
+     * 修改日志汇聚开关
+     *
+     * 只能由管理员或者委托管理员调用     修改日志汇聚开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSwitchRequest 请求对象
+     * @return UpdateSwitchResponse
+     */
+    public UpdateSwitchResponse updateSwitch(UpdateSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateSwitch);
+    }
+
+    /**
+     * 修改日志汇聚开关
+     *
+     * 只能由管理员或者委托管理员调用     修改日志汇聚开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSwitchRequest 请求对象
+     * @return SyncInvoker<UpdateSwitchRequest, UpdateSwitchResponse>
+     */
+    public SyncInvoker<UpdateSwitchRequest, UpdateSwitchResponse> updateSwitchInvoker(UpdateSwitchRequest request) {
+        return new SyncInvoker<UpdateSwitchRequest, UpdateSwitchResponse>(request, LtsMeta.updateSwitch, hcClient);
     }
 
     /**

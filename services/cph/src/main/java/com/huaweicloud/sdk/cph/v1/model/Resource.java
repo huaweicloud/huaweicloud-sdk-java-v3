@@ -106,7 +106,7 @@ public class Resource {
     }
 
     /**
-     * 标签列表
+     * 标签列表。
      * @return tags
      */
     public List<Tag> getTags() {

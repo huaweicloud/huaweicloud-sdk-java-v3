@@ -41,13 +41,18 @@ public class ServerModel {
 
     private Integer productType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "free_size")
+
+    private Integer freeSize;
+
     public ServerModel withServerModelName(String serverModelName) {
         this.serverModelName = serverModelName;
         return this;
     }
 
     /**
-     * 云手机服务器的规格名称，不超过64字节
+     * 云手机服务器的规格名称，不超过64字节。
      * @return serverModelName
      */
     public String getServerModelName() {
@@ -64,7 +69,7 @@ public class ServerModel {
     }
 
     /**
-     * 云手机服务器的型号，如Hi1616。不超过32字节
+     * 云手机服务器的型号，如Hi1616。不超过32字节。
      * @return serverType
      */
     public String getServerType() {
@@ -81,7 +86,7 @@ public class ServerModel {
     }
 
     /**
-     * 云手机服务器的CPU核数
+     * 云手机服务器的CPU核数。
      * minimum: 0
      * maximum: 8096
      * @return cpu
@@ -100,7 +105,7 @@ public class ServerModel {
     }
 
     /**
-     * 云手机服务器的内存大小，单位G
+     * 云手机服务器的内存大小，单位G。
      * minimum: 0
      * maximum: 8096
      * @return memory
@@ -145,7 +150,7 @@ public class ServerModel {
     }
 
     /**
-     * 产品类型 - 0：云手机 - 1：云手游
+     * 产品类型。 - 0：云手机 - 1：云手游
      * minimum: 0
      * maximum: 128
      * @return productType
@@ -156,6 +161,25 @@ public class ServerModel {
 
     public void setProductType(Integer productType) {
         this.productType = productType;
+    }
+
+    public ServerModel withFreeSize(Integer freeSize) {
+        this.freeSize = freeSize;
+        return this;
+    }
+
+    /**
+     * 服务器磁盘的免费配额。
+     * minimum: 0
+     * maximum: 100000
+     * @return freeSize
+     */
+    public Integer getFreeSize() {
+        return freeSize;
+    }
+
+    public void setFreeSize(Integer freeSize) {
+        this.freeSize = freeSize;
     }
 
     @Override
@@ -170,12 +194,12 @@ public class ServerModel {
         return Objects.equals(this.serverModelName, that.serverModelName)
             && Objects.equals(this.serverType, that.serverType) && Objects.equals(this.cpu, that.cpu)
             && Objects.equals(this.memory, that.memory) && Objects.equals(this.extendSpec, that.extendSpec)
-            && Objects.equals(this.productType, that.productType);
+            && Objects.equals(this.productType, that.productType) && Objects.equals(this.freeSize, that.freeSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serverModelName, serverType, cpu, memory, extendSpec, productType);
+        return Objects.hash(serverModelName, serverType, cpu, memory, extendSpec, productType, freeSize);
     }
 
     @Override
@@ -188,6 +212,7 @@ public class ServerModel {
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
         sb.append("    extendSpec: ").append(toIndentedString(extendSpec)).append("\n");
         sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
+        sb.append("    freeSize: ").append(toIndentedString(freeSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

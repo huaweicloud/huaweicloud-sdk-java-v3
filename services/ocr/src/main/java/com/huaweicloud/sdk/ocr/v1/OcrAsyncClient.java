@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.ocr.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardRequest;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateRequest
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeRealEstateCertificateRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeRealEstateCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeSmartDocumentRecognizerResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeTaxiInvoiceRequest;
@@ -79,8 +83,12 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeTransportationLicenseRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeTransportationLicenseResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVatInvoiceRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVatInvoiceResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeVehicleCertificateRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeVehicleCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVehicleLicenseRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVehicleLicenseResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeVietnamIdCardRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeVietnamIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVinRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeVinResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeWaybillElectronicRequest;
@@ -101,6 +109,37 @@ public class OcrAsyncClient {
     public static ClientBuilder<OcrAsyncClient> newBuilder() {
         ClientBuilder<OcrAsyncClient> clientBuilder = new ClientBuilder<>(OcrAsyncClient::new, "BasicCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 电子承兑汇票识别
+     *
+     * 识别电子承兑汇票识别中的关键字段, 并以json格式返回结构化结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeAcceptanceBillRequest 请求对象
+     * @return CompletableFuture<RecognizeAcceptanceBillResponse>
+     */
+    public CompletableFuture<RecognizeAcceptanceBillResponse> recognizeAcceptanceBillAsync(
+        RecognizeAcceptanceBillRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeAcceptanceBill);
+    }
+
+    /**
+     * 电子承兑汇票识别
+     *
+     * 识别电子承兑汇票识别中的关键字段, 并以json格式返回结构化结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeAcceptanceBillRequest 请求对象
+     * @return AsyncInvoker<RecognizeAcceptanceBillRequest, RecognizeAcceptanceBillResponse>
+     */
+    public AsyncInvoker<RecognizeAcceptanceBillRequest, RecognizeAcceptanceBillResponse> recognizeAcceptanceBillAsyncInvoker(
+        RecognizeAcceptanceBillRequest request) {
+        return new AsyncInvoker<RecognizeAcceptanceBillRequest, RecognizeAcceptanceBillResponse>(request,
+            OcrMeta.recognizeAcceptanceBill, hcClient);
     }
 
     /**
@@ -1102,6 +1141,39 @@ public class OcrAsyncClient {
     }
 
     /**
+     * 不动产证识别
+     *
+     * 识别不动产证中的文字信息，并返回识别的结构化结果。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     * 说明： 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeRealEstateCertificateRequest 请求对象
+     * @return CompletableFuture<RecognizeRealEstateCertificateResponse>
+     */
+    public CompletableFuture<RecognizeRealEstateCertificateResponse> recognizeRealEstateCertificateAsync(
+        RecognizeRealEstateCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeRealEstateCertificate);
+    }
+
+    /**
+     * 不动产证识别
+     *
+     * 识别不动产证中的文字信息，并返回识别的结构化结果。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     * 说明： 如果图片中包含多张卡证票据，请调用[智能分类识别](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;OCR&amp;api&#x3D;AutoClassification)服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeRealEstateCertificateRequest 请求对象
+     * @return AsyncInvoker<RecognizeRealEstateCertificateRequest, RecognizeRealEstateCertificateResponse>
+     */
+    public AsyncInvoker<RecognizeRealEstateCertificateRequest, RecognizeRealEstateCertificateResponse> recognizeRealEstateCertificateAsyncInvoker(
+        RecognizeRealEstateCertificateRequest request) {
+        return new AsyncInvoker<RecognizeRealEstateCertificateRequest, RecognizeRealEstateCertificateResponse>(request,
+            OcrMeta.recognizeRealEstateCertificate, hcClient);
+    }
+
+    /**
      * 智能文档解析
      *
      * 对证件、票据、表单等任意版式文档进行键值对提取、文字识别、以及表格识别等任务，实现进阶高效的自动化结构化返回。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
@@ -1373,6 +1445,37 @@ public class OcrAsyncClient {
     }
 
     /**
+     * 车辆合格证识别
+     *
+     * 识别车辆合格证中的文字信息，并返回识别的结构化结果。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeVehicleCertificateRequest 请求对象
+     * @return CompletableFuture<RecognizeVehicleCertificateResponse>
+     */
+    public CompletableFuture<RecognizeVehicleCertificateResponse> recognizeVehicleCertificateAsync(
+        RecognizeVehicleCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeVehicleCertificate);
+    }
+
+    /**
+     * 车辆合格证识别
+     *
+     * 识别车辆合格证中的文字信息，并返回识别的结构化结果。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section11)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeVehicleCertificateRequest 请求对象
+     * @return AsyncInvoker<RecognizeVehicleCertificateRequest, RecognizeVehicleCertificateResponse>
+     */
+    public AsyncInvoker<RecognizeVehicleCertificateRequest, RecognizeVehicleCertificateResponse> recognizeVehicleCertificateAsyncInvoker(
+        RecognizeVehicleCertificateRequest request) {
+        return new AsyncInvoker<RecognizeVehicleCertificateRequest, RecognizeVehicleCertificateResponse>(request,
+            OcrMeta.recognizeVehicleCertificate, hcClient);
+    }
+
+    /**
      * 行驶证识别
      *
      * 识别用户上传的行驶证图片（或者用户提供的华为云上OBS的行驶证图片文件的URL）中主页和副页的文字内容，并将识别的结果返回给用户。该接口的使用限制请参见[约束与限制](https://support.huaweicloud.com/productdesc-ocr/ocr_01_0006.html#section7)，详细使用指导请参见[OCR服务使用简介](https://support.huaweicloud.com/qs-ocr/ocr_05_0001.html)章节。
@@ -1405,6 +1508,37 @@ public class OcrAsyncClient {
         RecognizeVehicleLicenseRequest request) {
         return new AsyncInvoker<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse>(request,
             OcrMeta.recognizeVehicleLicense, hcClient);
+    }
+
+    /**
+     * 越南身份证识别
+     *
+     * 识别越南身份证中的文字信息，并将识别的结构化结果返回给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeVietnamIdCardRequest 请求对象
+     * @return CompletableFuture<RecognizeVietnamIdCardResponse>
+     */
+    public CompletableFuture<RecognizeVietnamIdCardResponse> recognizeVietnamIdCardAsync(
+        RecognizeVietnamIdCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeVietnamIdCard);
+    }
+
+    /**
+     * 越南身份证识别
+     *
+     * 识别越南身份证中的文字信息，并将识别的结构化结果返回给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeVietnamIdCardRequest 请求对象
+     * @return AsyncInvoker<RecognizeVietnamIdCardRequest, RecognizeVietnamIdCardResponse>
+     */
+    public AsyncInvoker<RecognizeVietnamIdCardRequest, RecognizeVietnamIdCardResponse> recognizeVietnamIdCardAsyncInvoker(
+        RecognizeVietnamIdCardRequest request) {
+        return new AsyncInvoker<RecognizeVietnamIdCardRequest, RecognizeVietnamIdCardResponse>(request,
+            OcrMeta.recognizeVietnamIdCard, hcClient);
     }
 
     /**

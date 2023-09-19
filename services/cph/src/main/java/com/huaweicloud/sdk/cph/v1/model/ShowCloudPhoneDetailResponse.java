@@ -102,7 +102,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机名称，不超过65个字符
+     * 云手机名称，不超过65个字符。
      * @return phoneName
      */
     public String getPhoneName() {
@@ -119,7 +119,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器ID，不超过32个字节
+     * 云手机服务器ID，不超过32个字节。
      * @return serverId
      */
     public String getServerId() {
@@ -136,7 +136,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机的唯一标识，不超过32个字节
+     * 云手机的唯一标识，不超过32个字节。
      * @return phoneId
      */
     public String getPhoneId() {
@@ -153,7 +153,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机镜像ID，不超过32个字节
+     * 云手机镜像ID，不超过32个字节。
      * @return imageId
      */
     public String getImageId() {
@@ -170,7 +170,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机是否开启VNC服务 - true：开启 - false：关闭
+     * 云手机是否开启VNC服务（过期） - true：开启 - false：关闭
      * @return vncEnable
      */
     public String getVncEnable() {
@@ -187,7 +187,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机规格名称，不超过64个字节
+     * 云手机规格名称，不超过64个字节。
      * @return phoneModelName
      */
     public String getPhoneModelName() {
@@ -204,7 +204,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机状态 - 0：创建中 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
+     * 云手机状态。 - 0：创建中 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
      * minimum: -128
      * maximum: 128
      * @return status
@@ -239,7 +239,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机访问信息
+     * 云手机访问信息。
      * @return accessInfos
      */
     public List<PhoneAccessInfo> getAccessInfos() {
@@ -256,7 +256,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机属性字符串，不超过2048个字节
+     * 云手机属性字符串，不超过2048个字节。
      * @return property
      */
     public String getProperty() {
@@ -300,7 +300,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * 创建时间， 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return createTime
      */
     public String getCreateTime() {
@@ -317,7 +317,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
+     * 更新时间， 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return updateTime
      */
     public String getUpdateTime() {

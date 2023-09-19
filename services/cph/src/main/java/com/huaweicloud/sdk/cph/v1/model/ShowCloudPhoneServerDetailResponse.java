@@ -152,7 +152,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器名称 不超过65字符，只支持英文字母、数字、汉字、下划线和中划线
+     * 云手机服务器名称， 不超过65字符，只支持英文字母、数字、汉字、下划线和中划线。
      * @return serverName
      */
     public String getServerName() {
@@ -169,7 +169,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所在的可用区
+     * 云手机服务器所在的可用区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -186,7 +186,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器的唯一标识，不超过32个字节
+     * 云手机服务器的唯一标识，不超过32个字节。
      * @return serverId
      */
     public String getServerId() {
@@ -203,7 +203,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器规格名称，不超过64个字节
+     * 云手机服务器规格名称，不超过64个字节。
      * @return serverModelName
      */
     public String getServerModelName() {
@@ -220,7 +220,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机规格名称，不超过64个字节
+     * 云手机规格名称，不超过64个字节。
      * @return phoneModelName
      */
     public String getPhoneModelName() {
@@ -237,7 +237,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 连接云手机所使用的密钥对的名称，不超过64个字节
+     * 连接云手机所使用的密钥对的名称，不超过64个字节。
      * @return keypairName
      */
     public String getKeypairName() {
@@ -254,7 +254,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 服务器状态 - 0、1、3、4：创建中 - 2：异常 - 5：正常 - 8：冻结 - 10：关机 - 11：关机中 - 12：关机失败 - 13：开机中
+     * 服务器状态。 - 0、1、3、4：创建中 - 2：异常 - 5：正常 - 8：冻结 - 10：关机 - 11：关机中 - 12：关机失败 - 13：开机中
      * minimum: -128
      * maximum: 128
      * @return status
@@ -273,7 +273,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属虚拟私有云（简称VPC）的ID 网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC ID；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC ID
+     * 云手机服务器所属虚拟私有云（简称VPC）的ID。网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC ID；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -290,7 +290,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属虚拟私有云（简称VPC）的网段 网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC CIDR；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC CIDR
+     * 云手机服务器所属虚拟私有云（简称VPC）的网段。网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC CIDR；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC CIDR。
      * @return cidr
      */
     public String getCidr() {
@@ -307,7 +307,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属虚拟私有云（简称VPC）的网段 网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC CIDR；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC CIDR
+     * 云手机服务器所属虚拟私有云（简称VPC）的网段。网络版本 network_version 取值为“v1”时，表示云手机服务器所属资源租户的VPC CIDR；取值为“v2”时，表示租户创建服务器时指定 VPC 的 VPC CIDR。
      * @return vpcCidr
      */
     public String getVpcCidr() {
@@ -324,7 +324,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属子网的ID 仅在网络版本 network_version 取值为“v2”时，该取值表示租户创建服务器时指定子网的 ID，网络版本取值为“v1”时，该字段表示云手机服务器所属资源租户的子网ID
+     * 云手机服务器所属子网的ID。仅在网络版本 network_version 取值为“v2”时，该取值表示租户创建服务器时指定子网的 ID；网络版本取值为“v1”时，该字段表示云手机服务器所属资源租户的子网ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -341,7 +341,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所属子网的网段 网络版本 network_version 取值为“v2”时，表示租户创建服务器时指定子网的 CIDR; 取值为“v1”时，表示云手机服务器所属资源租户的子网CIDR
+     * 云手机服务器所属子网的网段。网络版本 network_version取值为“v2”时，表示租户创建服务器时指定子网的 CIDR；取值为“v1”时，表示云手机服务器所属资源租户的子网CIDR。
      * @return subnetCidr
      */
     public String getSubnetCidr() {
@@ -358,7 +358,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器的项目ID
+     * 云手机服务器的项目ID。
      * @return resourceProjectId
      */
     public String getResourceProjectId() {
@@ -418,7 +418,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器的IP相关信息
+     * 云手机服务器的IP相关信息。
      * @return addresses
      */
     public List<Address> getAddresses() {
@@ -451,7 +451,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器带宽信息的结构体数组
+     * 云手机服务器带宽信息的结构体数组。
      * @return bandWidths
      */
     public List<Bandwidth> getBandWidths() {
@@ -484,7 +484,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器卷信息的结构体数组
+     * 云手机服务器卷信息的结构体数组。
      * @return volumes
      */
     public List<Volume> getVolumes() {
@@ -501,7 +501,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 是否为自定义网络的云手机服务器标识。  \"v1\"，非自定义网络的云手机服务器。\\t\"v2\"，自定义网络的云手机服务器。 支持按照网络版本字段进行筛选
+     * 是否为自定义网络的云手机服务器标识。\"v1\"，非自定义网络的云手机服务器。\"v2\"，自定义网络的云手机服务器。支持按照网络版本字段进行筛选。
      * @return networkVersion
      */
     public String getNetworkVersion() {
@@ -551,7 +551,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 服务器扩展网卡绑定的安全组信息 系统定义网络的服务器，该字段返回为空列表
+     * 服务器扩展网卡绑定的安全组信息。 系统定义网络的服务器，该字段返回为空列表。
      * @return securityGroups
      */
     public List<String> getSecurityGroups() {
@@ -568,7 +568,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * 创建时间， 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return createTime
      */
     public String getCreateTime() {
@@ -585,7 +585,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * 更新时间， 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return updateTime
      */
     public String getUpdateTime() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 服务器开发端口信息
+ * 服务器开发端口信息。
  */
 public class Address {
 
@@ -36,7 +36,7 @@ public class Address {
     }
 
     /**
-     * 云手机服务器的内网IP，过期字段
+     * 云手机服务器的内网IP，过期字段。
      * @return intranetIp
      */
     public String getIntranetIp() {
@@ -53,7 +53,7 @@ public class Address {
     }
 
     /**
-     * 云手机服务器的公网IP，过期字段
+     * 云手机服务器的公网IP，过期字段。
      * @return accessIp
      */
     public String getAccessIp() {
@@ -70,7 +70,7 @@ public class Address {
     }
 
     /**
-     * 云手机服务器的内网IP，新增字段
+     * 云手机服务器的内网IP，新增字段。
      * @return serverIp
      */
     public String getServerIp() {
@@ -87,7 +87,7 @@ public class Address {
     }
 
     /**
-     * 云手机服务器的公网IP，新增字段
+     * 云手机服务器的公网IP，新增字段。
      * @return publicIp
      */
     public String getPublicIp() {

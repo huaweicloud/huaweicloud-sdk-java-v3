@@ -29,7 +29,7 @@ public class ImportTrafficRequestBody {
     }
 
     /**
-     * 手机路由类型 direct：默认路由 routing：路由到编码容器
+     * 手机路由类型。 - direct：默认路由 - routing：路由到编码容器
      * @return trafficType
      */
     public String getTrafficType() {
@@ -62,7 +62,7 @@ public class ImportTrafficRequestBody {
     }
 
     /**
-     * 手机id列表 一次调用最多支持100个
+     * 手机id列表，一次调用最多支持100个。
      * @return phoneIds
      */
     public List<String> getPhoneIds() {

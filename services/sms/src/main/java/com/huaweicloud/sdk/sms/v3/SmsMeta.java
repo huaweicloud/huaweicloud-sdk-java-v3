@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.sms.v3.model.CommandBody;
 import com.huaweicloud.sdk.sms.v3.model.ConfigurationRequestBody;
 import com.huaweicloud.sdk.sms.v3.model.CreateMigprojectRequest;
 import com.huaweicloud.sdk.sms.v3.model.CreateMigprojectResponse;
+import com.huaweicloud.sdk.sms.v3.model.CreatePrivacyAgreementsRequest;
+import com.huaweicloud.sdk.sms.v3.model.CreatePrivacyAgreementsResponse;
 import com.huaweicloud.sdk.sms.v3.model.CreateTaskRequest;
 import com.huaweicloud.sdk.sms.v3.model.CreateTaskResponse;
 import com.huaweicloud.sdk.sms.v3.model.CreateTemplateReq;
@@ -74,6 +76,8 @@ import com.huaweicloud.sdk.sms.v3.model.ShowOverviewRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowOverviewResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowPassphraseRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowPassphraseResponse;
+import com.huaweicloud.sdk.sms.v3.model.ShowPrivacyAgreementsRequest;
+import com.huaweicloud.sdk.sms.v3.model.ShowPrivacyAgreementsResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowServerRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowServerResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowSha256Request;
@@ -220,6 +224,31 @@ public class SmsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePrivacyAgreementsRequest, CreatePrivacyAgreementsResponse> createPrivacyAgreements =
+        genForcreatePrivacyAgreements();
+
+    private static HttpRequestDef<CreatePrivacyAgreementsRequest, CreatePrivacyAgreementsResponse> genForcreatePrivacyAgreements() {
+        // basic
+        HttpRequestDef.Builder<CreatePrivacyAgreementsRequest, CreatePrivacyAgreementsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePrivacyAgreementsRequest.class, CreatePrivacyAgreementsResponse.class)
+            .withName("CreatePrivacyAgreements")
+            .withUri("/v3/privacy-agreements")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePrivacyAgreementsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -895,6 +924,24 @@ public class SmsMeta {
             f -> f.withMarshaller(ShowPassphraseRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivacyAgreementsRequest, ShowPrivacyAgreementsResponse> showPrivacyAgreements =
+        genForshowPrivacyAgreements();
+
+    private static HttpRequestDef<ShowPrivacyAgreementsRequest, ShowPrivacyAgreementsResponse> genForshowPrivacyAgreements() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivacyAgreementsRequest, ShowPrivacyAgreementsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPrivacyAgreementsRequest.class, ShowPrivacyAgreementsResponse.class)
+            .withName("ShowPrivacyAgreements")
+            .withUri("/v3/privacy-agreements")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 

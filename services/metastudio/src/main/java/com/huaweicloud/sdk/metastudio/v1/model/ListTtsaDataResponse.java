@@ -39,6 +39,11 @@ public class ListTtsaDataResponse extends SdkResponse {
 
     private List<MotionItem> motions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ListTtsaDataResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -172,6 +177,25 @@ public class ListTtsaDataResponse extends SdkResponse {
         this.motions = motions;
     }
 
+    public ListTtsaDataResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -183,12 +207,12 @@ public class ListTtsaDataResponse extends SdkResponse {
         ListTtsaDataResponse that = (ListTtsaDataResponse) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.audio, that.audio)
             && Objects.equals(this.blendshapes, that.blendshapes) && Objects.equals(this.animations, that.animations)
-            && Objects.equals(this.motions, that.motions);
+            && Objects.equals(this.motions, that.motions) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, audio, blendshapes, animations, motions);
+        return Objects.hash(jobId, audio, blendshapes, animations, motions, xRequestId);
     }
 
     @Override
@@ -200,6 +224,7 @@ public class ListTtsaDataResponse extends SdkResponse {
         sb.append("    blendshapes: ").append(toIndentedString(blendshapes)).append("\n");
         sb.append("    animations: ").append(toIndentedString(animations)).append("\n");
         sb.append("    motions: ").append(toIndentedString(motions)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

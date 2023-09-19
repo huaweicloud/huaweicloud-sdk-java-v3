@@ -45,13 +45,18 @@ public class EncodeServerAccessInfo {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_ipv6")
+
+    private String serverIpv6;
+
     public EncodeServerAccessInfo withListenPort(Integer listenPort) {
         this.listenPort = listenPort;
         return this;
     }
 
     /**
-     * 编码服务监听端口
+     * 编码服务监听端口。
      * minimum: 0
      * maximum: 65535
      * @return listenPort
@@ -70,7 +75,7 @@ public class EncodeServerAccessInfo {
     }
 
     /**
-     * 编码服务访问的公网IP（过期）
+     * 编码服务访问的公网IP（过期）。
      * @return accessIp
      */
     public String getAccessIp() {
@@ -87,7 +92,7 @@ public class EncodeServerAccessInfo {
     }
 
     /**
-     * 编码服务访问的内网IP（过期）
+     * 编码服务访问的内网IP（过期）。
      * @return intranetIp
      */
     public String getIntranetIp() {
@@ -104,7 +109,7 @@ public class EncodeServerAccessInfo {
     }
 
     /**
-     * 编码服务访问的公网IP（新增）
+     * 编码服务访问的公网IP（新增）。
      * @return publicIp
      */
     public String getPublicIp() {
@@ -121,7 +126,7 @@ public class EncodeServerAccessInfo {
     }
 
     /**
-     * 编码服务访问的内网IP（新增）
+     * 编码服务访问的内网IP（新增）。
      * @return serverIp
      */
     public String getServerIp() {
@@ -138,7 +143,7 @@ public class EncodeServerAccessInfo {
     }
 
     /**
-     * 编码服务公网的访问端口
+     * 编码服务公网的访问端口。
      * minimum: 0
      * maximum: 65535
      * @return accessPort
@@ -168,6 +173,23 @@ public class EncodeServerAccessInfo {
         this.type = type;
     }
 
+    public EncodeServerAccessInfo withServerIpv6(String serverIpv6) {
+        this.serverIpv6 = serverIpv6;
+        return this;
+    }
+
+    /**
+     * 编码服务访问的内网IPv6 IP（新增）。
+     * @return serverIpv6
+     */
+    public String getServerIpv6() {
+        return serverIpv6;
+    }
+
+    public void setServerIpv6(String serverIpv6) {
+        this.serverIpv6 = serverIpv6;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +202,12 @@ public class EncodeServerAccessInfo {
         return Objects.equals(this.listenPort, that.listenPort) && Objects.equals(this.accessIp, that.accessIp)
             && Objects.equals(this.intranetIp, that.intranetIp) && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.serverIp, that.serverIp) && Objects.equals(this.accessPort, that.accessPort)
-            && Objects.equals(this.type, that.type);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.serverIpv6, that.serverIpv6);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(listenPort, accessIp, intranetIp, publicIp, serverIp, accessPort, type);
+        return Objects.hash(listenPort, accessIp, intranetIp, publicIp, serverIp, accessPort, type, serverIpv6);
     }
 
     @Override
@@ -199,6 +221,7 @@ public class EncodeServerAccessInfo {
         sb.append("    serverIp: ").append(toIndentedString(serverIp)).append("\n");
         sb.append("    accessPort: ").append(toIndentedString(accessPort)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    serverIpv6: ").append(toIndentedString(serverIpv6)).append("\n");
         sb.append("}");
         return sb.toString();
     }

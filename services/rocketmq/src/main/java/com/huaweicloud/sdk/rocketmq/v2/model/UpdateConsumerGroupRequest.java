@@ -24,7 +24,7 @@ public class UpdateConsumerGroupRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ConsumerGroup body;
+    private UpdateConsumerGroup body;
 
     public UpdateConsumerGroupRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -60,14 +60,14 @@ public class UpdateConsumerGroupRequest {
         this.group = group;
     }
 
-    public UpdateConsumerGroupRequest withBody(ConsumerGroup body) {
+    public UpdateConsumerGroupRequest withBody(UpdateConsumerGroup body) {
         this.body = body;
         return this;
     }
 
-    public UpdateConsumerGroupRequest withBody(Consumer<ConsumerGroup> bodySetter) {
+    public UpdateConsumerGroupRequest withBody(Consumer<UpdateConsumerGroup> bodySetter) {
         if (this.body == null) {
-            this.body = new ConsumerGroup();
+            this.body = new UpdateConsumerGroup();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdateConsumerGroupRequest {
      * Get body
      * @return body
      */
-    public ConsumerGroup getBody() {
+    public UpdateConsumerGroup getBody() {
         return body;
     }
 
-    public void setBody(ConsumerGroup body) {
+    public void setBody(UpdateConsumerGroup body) {
         this.body = body;
     }
 

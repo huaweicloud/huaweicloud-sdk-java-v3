@@ -24,6 +24,11 @@ public class ListAssetsResponse extends SdkResponse {
 
     private List<DigitalAssetInfo> assets = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ListAssetsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -76,6 +81,25 @@ public class ListAssetsResponse extends SdkResponse {
         this.assets = assets;
     }
 
+    public ListAssetsResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,12 +109,13 @@ public class ListAssetsResponse extends SdkResponse {
             return false;
         }
         ListAssetsResponse that = (ListAssetsResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.assets, that.assets);
+        return Objects.equals(this.count, that.count) && Objects.equals(this.assets, that.assets)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, assets);
+        return Objects.hash(count, assets, xRequestId);
     }
 
     @Override
@@ -99,6 +124,7 @@ public class ListAssetsResponse extends SdkResponse {
         sb.append("class ListAssetsResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    assets: ").append(toIndentedString(assets)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

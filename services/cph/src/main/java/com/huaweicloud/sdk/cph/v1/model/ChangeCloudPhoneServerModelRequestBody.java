@@ -37,7 +37,7 @@ public class ChangeCloudPhoneServerModelRequestBody {
     }
 
     /**
-     * 云手机服务器的唯一标识。只有特定的服务器才能操作变更规格
+     * 云手机服务器的唯一标识。只有特定的服务器才能操作变更规格。
      * @return serverId
      */
     public String getServerId() {

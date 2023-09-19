@@ -16,6 +16,11 @@ public class CreateDigitalAssetResponse extends SdkResponse {
 
     private String assetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public CreateDigitalAssetResponse withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
@@ -33,6 +38,25 @@ public class CreateDigitalAssetResponse extends SdkResponse {
         this.assetId = assetId;
     }
 
+    public CreateDigitalAssetResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +66,12 @@ public class CreateDigitalAssetResponse extends SdkResponse {
             return false;
         }
         CreateDigitalAssetResponse that = (CreateDigitalAssetResponse) obj;
-        return Objects.equals(this.assetId, that.assetId);
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId);
+        return Objects.hash(assetId, xRequestId);
     }
 
     @Override
@@ -55,6 +79,7 @@ public class CreateDigitalAssetResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateDigitalAssetResponse {\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

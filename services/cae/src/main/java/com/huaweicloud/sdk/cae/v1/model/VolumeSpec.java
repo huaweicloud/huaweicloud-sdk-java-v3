@@ -24,7 +24,7 @@ public class VolumeSpec {
     private String resourceType;
 
     /**
-     * 对象存储类型，例如：并行文件系统、存储桶。
+     * 对象存储类型，包括：并行文件系统、存储桶、SFS3.0容量型。
      */
     public static final class ResourceSubTypeEnum {
 
@@ -115,7 +115,7 @@ public class VolumeSpec {
     }
 
     /**
-     * 资源类型，当前只支持“obs”。
+     * 资源类型，当前只支持“obs”和“sfs”。
      * @return resourceType
      */
     public String getResourceType() {
@@ -132,7 +132,7 @@ public class VolumeSpec {
     }
 
     /**
-     * 对象存储类型，例如：并行文件系统、存储桶。
+     * 对象存储类型，包括：并行文件系统、存储桶、SFS3.0容量型。
      * @return resourceSubType
      */
     public ResourceSubTypeEnum getResourceSubType() {
@@ -165,7 +165,7 @@ public class VolumeSpec {
     }
 
     /**
-     * 并行文件系统或存储桶名称。
+     * 云存储名称。
      * @return resources
      */
     public List<String> getResources() {

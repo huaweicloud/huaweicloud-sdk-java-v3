@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 带宽信息响应
+ * 带宽信息响应。
  */
 public class Bandwidth {
 
@@ -51,7 +51,7 @@ public class Bandwidth {
     }
 
     /**
-     * 云手机服务器的带宽名称
+     * 云手机服务器的带宽名称。
      * @return bandWidthName
      */
     public String getBandWidthName() {
@@ -68,7 +68,7 @@ public class Bandwidth {
     }
 
     /**
-     * 云手机服务器的带宽唯一标识
+     * 云手机服务器的带宽唯一标识。
      * @return bandWidthId
      */
     public String getBandWidthId() {
@@ -85,7 +85,7 @@ public class Bandwidth {
     }
 
     /**
-     * 云手机服务器的带宽大小
+     * 云手机服务器的带宽大小。
      * minimum: 0
      * maximum: 8096
      * @return bandWidthSize
@@ -104,7 +104,7 @@ public class Bandwidth {
     }
 
     /**
-     * 云手机服务器带宽的计费方式  取值范围：  - 0，bandwidth, 按带宽计费  - 1，traffic, 按流量计费
+     * 云手机服务器带宽的计费方式。  - 0：bandwidth, 按带宽计费  - 1：traffic, 按流量计费
      * minimum: -128
      * maximum: 128
      * @return bandWidthChargeMode
@@ -123,7 +123,7 @@ public class Bandwidth {
     }
 
     /**
-     * 云手机服务器的带宽类型  - 0，per，独享带宽 - 1，whole，共享带宽
+     * 云手机服务器的带宽类型。  - 0：per，独享带宽 - 1：whole，共享带宽
      * minimum: -128
      * maximum: 128
      * @return bandWidthShareType
@@ -142,7 +142,7 @@ public class Bandwidth {
     }
 
     /**
-     * 带宽创建时间  时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * 带宽创建时间，  时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return createTime
      */
     public String getCreateTime() {
@@ -159,7 +159,7 @@ public class Bandwidth {
     }
 
     /**
-     * 带宽更新时间  时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * 带宽更新时间，  时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return updateTime
      */
     public String getUpdateTime() {

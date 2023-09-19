@@ -46,7 +46,7 @@ public class RunSyncCommandJob {
     }
 
     /**
-     * 云手机的唯一标识，云手机相关任务包含此字段
+     * 云手机的唯一标识，云手机相关任务包含此字段。
      * @return phoneId
      */
     public String getPhoneId() {
@@ -63,7 +63,7 @@ public class RunSyncCommandJob {
     }
 
     /**
-     * 任务的唯一标识
+     * 任务的唯一标识。
      * @return jobId
      */
     public String getJobId() {
@@ -99,7 +99,7 @@ public class RunSyncCommandJob {
     }
 
     /**
-     * 任务错误码
+     * 任务错误码。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -116,7 +116,7 @@ public class RunSyncCommandJob {
     }
 
     /**
-     * 任务错误码说明
+     * 任务错误码说明。
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -133,7 +133,7 @@ public class RunSyncCommandJob {
     }
 
     /**
-     * 任务执行返回内容，最长1024字节
+     * 任务执行返回内容，最长1024字节。
      * @return executeMsg
      */
     public String getExecuteMsg() {

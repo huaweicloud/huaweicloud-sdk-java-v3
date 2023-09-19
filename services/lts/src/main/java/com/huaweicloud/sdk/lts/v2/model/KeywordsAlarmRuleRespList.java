@@ -51,7 +51,7 @@ public class KeywordsAlarmRuleRespList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
 
-    private Object frequency;
+    private Frequency frequency;
 
     /**
      * 告警级别
@@ -383,20 +383,29 @@ public class KeywordsAlarmRuleRespList {
         this.keywordsRequests = keywordsRequests;
     }
 
-    public KeywordsAlarmRuleRespList withFrequency(Object frequency) {
+    public KeywordsAlarmRuleRespList withFrequency(Frequency frequency) {
         this.frequency = frequency;
         return this;
     }
 
+    public KeywordsAlarmRuleRespList withFrequency(Consumer<Frequency> frequencySetter) {
+        if (this.frequency == null) {
+            this.frequency = new Frequency();
+            frequencySetter.accept(this.frequency);
+        }
+
+        return this;
+    }
+
     /**
-     * 告警统计周期
+     * Get frequency
      * @return frequency
      */
-    public Object getFrequency() {
+    public Frequency getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(Object frequency) {
+    public void setFrequency(Frequency frequency) {
         this.frequency = frequency;
     }
 

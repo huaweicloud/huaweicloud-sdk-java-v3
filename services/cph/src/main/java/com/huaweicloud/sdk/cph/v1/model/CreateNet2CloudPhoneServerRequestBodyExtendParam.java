@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 计费模式参数
+ * 计费模式参数。
  */
 public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
 
@@ -46,7 +46,7 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
     }
 
     /**
-     * 计费类型  0 表示包周期
+     * 计费类型。  - 0：包周期
      * minimum: -128
      * maximum: 128
      * @return chargingMode
@@ -65,7 +65,7 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
     }
 
     /**
-     * 订购周期类型 2 表示月 3 表示年
+     * 订购周期类型。 - 2：月 - 3：年
      * minimum: -128
      * maximum: 128
      * @return periodType
@@ -84,7 +84,7 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
     }
 
     /**
-     * 订购周期数 当订购周期为月时，取值范围[1, 9]。 当订购周期为年时，取值范围[1,10]
+     * 订购周期数。 当订购周期为月时，取值范围[1, 9]。 当订购周期为年时，取值范围[1,10]。
      * minimum: -128
      * maximum: 128
      * @return periodNum
@@ -103,7 +103,7 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
     }
 
     /**
-     * 是否自动付款。默认不自动付款。 1 表示自动付款 0 表示不自动付款
+     * 是否自动付款。默认不自动付款。 - 1：自动付款 - 0：不自动付款
      * minimum: -128
      * maximum: 128
      * @return isAutoPay
@@ -122,7 +122,7 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
     }
 
     /**
-     * 是否自动续订。默认不自动续订。 1 表示自动续订 0 表示不自动续订
+     * 是否自动续订。默认不自动续订。 - 1：自动续订 - 0：不自动续订
      * minimum: -128
      * maximum: 128
      * @return isAutoRenew

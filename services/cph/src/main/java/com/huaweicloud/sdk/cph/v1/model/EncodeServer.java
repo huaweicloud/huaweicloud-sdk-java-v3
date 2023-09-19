@@ -53,13 +53,18 @@ public class EncodeServer {
 
     private List<EncodeServerAccessInfo> accessInfos = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encode_server_ipv6")
+
+    private String encodeServerIpv6;
+
     public EncodeServer withEncodeServerName(String encodeServerName) {
         this.encodeServerName = encodeServerName;
         return this;
     }
 
     /**
-     * 编码服务的名称，不大于64个字节
+     * 编码服务的名称，不大于64个字节。
      * @return encodeServerName
      */
     public String getEncodeServerName() {
@@ -76,7 +81,7 @@ public class EncodeServer {
     }
 
     /**
-     * 编码服务的唯一标识ID，不大于32个字节
+     * 编码服务的唯一标识ID，不大于32个字节。
      * @return encodeServerId
      */
     public String getEncodeServerId() {
@@ -93,7 +98,7 @@ public class EncodeServer {
     }
 
     /**
-     * 编码服务IP地址
+     * 编码服务IP地址。
      * @return encodeServerIp
      */
     public String getEncodeServerIp() {
@@ -110,7 +115,7 @@ public class EncodeServer {
     }
 
     /**
-     * 云手机服务器ID，不大于32个字节
+     * 云手机服务器ID，不大于32个字节。
      * @return serverId
      */
     public String getServerId() {
@@ -127,7 +132,7 @@ public class EncodeServer {
     }
 
     /**
-     * 编码服务登录密钥名称
+     * 编码服务登录密钥名称。
      * @return keypairName
      */
     public String getKeypairName() {
@@ -144,7 +149,7 @@ public class EncodeServer {
     }
 
     /**
-     * 编码服务类型 - 0：服务器 - 1：容器
+     * 编码服务类型。 - 0：服务器 - 1：容器
      * minimum: -128
      * maximum: 128
      * @return type
@@ -163,7 +168,7 @@ public class EncodeServer {
     }
 
     /**
-     * 编码服务状态 - 1：运行中 - 2：异常 - 3：重启中 - 0、4、5：创建中
+     * 编码服务状态。 - 1：运行中 - 2：异常 - 3：重启中 - 0、4、5：创建中
      * minimum: -128
      * maximum: 128
      * @return status
@@ -198,7 +203,7 @@ public class EncodeServer {
     }
 
     /**
-     * 编码服务的访问信息
+     * 编码服务的访问信息。
      * @return accessInfos
      */
     public List<EncodeServerAccessInfo> getAccessInfos() {
@@ -207,6 +212,23 @@ public class EncodeServer {
 
     public void setAccessInfos(List<EncodeServerAccessInfo> accessInfos) {
         this.accessInfos = accessInfos;
+    }
+
+    public EncodeServer withEncodeServerIpv6(String encodeServerIpv6) {
+        this.encodeServerIpv6 = encodeServerIpv6;
+        return this;
+    }
+
+    /**
+     * 编码服务IPv6地址。
+     * @return encodeServerIpv6
+     */
+    public String getEncodeServerIpv6() {
+        return encodeServerIpv6;
+    }
+
+    public void setEncodeServerIpv6(String encodeServerIpv6) {
+        this.encodeServerIpv6 = encodeServerIpv6;
     }
 
     @Override
@@ -222,13 +244,21 @@ public class EncodeServer {
             && Objects.equals(this.encodeServerId, that.encodeServerId)
             && Objects.equals(this.encodeServerIp, that.encodeServerIp) && Objects.equals(this.serverId, that.serverId)
             && Objects.equals(this.keypairName, that.keypairName) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.accessInfos, that.accessInfos);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.accessInfos, that.accessInfos)
+            && Objects.equals(this.encodeServerIpv6, that.encodeServerIpv6);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(encodeServerName, encodeServerId, encodeServerIp, serverId, keypairName, type, status, accessInfos);
+        return Objects.hash(encodeServerName,
+            encodeServerId,
+            encodeServerIp,
+            serverId,
+            keypairName,
+            type,
+            status,
+            accessInfos,
+            encodeServerIpv6);
     }
 
     @Override
@@ -243,6 +273,7 @@ public class EncodeServer {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    accessInfos: ").append(toIndentedString(accessInfos)).append("\n");
+        sb.append("    encodeServerIpv6: ").append(toIndentedString(encodeServerIpv6)).append("\n");
         sb.append("}");
         return sb.toString();
     }

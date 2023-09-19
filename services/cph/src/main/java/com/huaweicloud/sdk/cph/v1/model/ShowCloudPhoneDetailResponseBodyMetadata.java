@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 订单以及产品相关信息
+ * 订单以及产品相关信息。
  */
 public class ShowCloudPhoneDetailResponseBodyMetadata {
 
@@ -26,7 +26,7 @@ public class ShowCloudPhoneDetailResponseBodyMetadata {
     }
 
     /**
-     * 订单ID，不超过64个字节
+     * 订单ID，不超过64个字节。
      * @return orderId
      */
     public String getOrderId() {
@@ -43,7 +43,7 @@ public class ShowCloudPhoneDetailResponseBodyMetadata {
     }
 
     /**
-     * 产品ID，不超过64个字节
+     * 产品ID，不超过64个字节。
      * @return productId
      */
     public String getProductId() {

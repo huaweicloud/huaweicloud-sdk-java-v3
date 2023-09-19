@@ -40,7 +40,7 @@ public class RestartEncodeServerRequestBody {
     }
 
     /**
-     * 待重启的编码服务的ID
+     * 待重启的编码服务的ID。
      * @return encodeServerIds
      */
     public List<String> getEncodeServerIds() {

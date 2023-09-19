@@ -24,6 +24,11 @@ public class ListPictureModelingJobsResponse extends SdkResponse {
 
     private List<PictureModelingInfo> pictureModelingJobs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ListPictureModelingJobsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -77,6 +82,25 @@ public class ListPictureModelingJobsResponse extends SdkResponse {
         this.pictureModelingJobs = pictureModelingJobs;
     }
 
+    public ListPictureModelingJobsResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +111,13 @@ public class ListPictureModelingJobsResponse extends SdkResponse {
         }
         ListPictureModelingJobsResponse that = (ListPictureModelingJobsResponse) obj;
         return Objects.equals(this.count, that.count)
-            && Objects.equals(this.pictureModelingJobs, that.pictureModelingJobs);
+            && Objects.equals(this.pictureModelingJobs, that.pictureModelingJobs)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, pictureModelingJobs);
+        return Objects.hash(count, pictureModelingJobs, xRequestId);
     }
 
     @Override
@@ -101,6 +126,7 @@ public class ListPictureModelingJobsResponse extends SdkResponse {
         sb.append("class ListPictureModelingJobsResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    pictureModelingJobs: ").append(toIndentedString(pictureModelingJobs)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

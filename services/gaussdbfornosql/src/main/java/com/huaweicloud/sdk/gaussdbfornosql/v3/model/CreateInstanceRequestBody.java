@@ -103,6 +103,11 @@ public class CreateInstanceRequestBody {
 
     private String port;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone_detail")
+
+    private AvailabilityZoneDetail availabilityZoneDetail;
+
     public CreateInstanceRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -254,7 +259,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 实例类型。   - GaussDB(for Cassandra)支持集群类型，取值为“Cluster”。   - GaussDB(for Mongo)4.0版本支持副本集类型，取值为“ReplicaSet”。   - GaussDB(for Influx)支持集群类型，取值为“Cluster”。
+     * 实例类型。   - GaussDB(for Cassandra)支持集群类型，取值为“Cluster”。   - GaussDB(for Mongo)4.0版本支持副本集类型，取值为“ReplicaSet”。   - GaussDB(for Influx)支持集群类型，取值为“Cluster”。   - GaussDB(for Influx)支持单节点类型，取值为“InfluxdbSingle”。   - GaussDB(for redis)支持集群类型，取值为“Cluster”。   - GaussDB(for redis)支持主备类型，取值为“Replication”。
      * @return mode
      */
     public String getMode() {
@@ -461,6 +466,33 @@ public class CreateInstanceRequestBody {
         this.port = port;
     }
 
+    public CreateInstanceRequestBody withAvailabilityZoneDetail(AvailabilityZoneDetail availabilityZoneDetail) {
+        this.availabilityZoneDetail = availabilityZoneDetail;
+        return this;
+    }
+
+    public CreateInstanceRequestBody withAvailabilityZoneDetail(
+        Consumer<AvailabilityZoneDetail> availabilityZoneDetailSetter) {
+        if (this.availabilityZoneDetail == null) {
+            this.availabilityZoneDetail = new AvailabilityZoneDetail();
+            availabilityZoneDetailSetter.accept(this.availabilityZoneDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get availabilityZoneDetail
+     * @return availabilityZoneDetail
+     */
+    public AvailabilityZoneDetail getAvailabilityZoneDetail() {
+        return availabilityZoneDetail;
+    }
+
+    public void setAvailabilityZoneDetail(AvailabilityZoneDetail availabilityZoneDetail) {
+        this.availabilityZoneDetail = availabilityZoneDetail;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -480,7 +512,8 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
             && Objects.equals(this.sslOption, that.sslOption) && Objects.equals(this.chargeInfo, that.chargeInfo)
-            && Objects.equals(this.restoreInfo, that.restoreInfo) && Objects.equals(this.port, that.port);
+            && Objects.equals(this.restoreInfo, that.restoreInfo) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.availabilityZoneDetail, that.availabilityZoneDetail);
     }
 
     @Override
@@ -502,7 +535,8 @@ public class CreateInstanceRequestBody {
             sslOption,
             chargeInfo,
             restoreInfo,
-            port);
+            port,
+            availabilityZoneDetail);
     }
 
     @Override
@@ -527,6 +561,7 @@ public class CreateInstanceRequestBody {
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("    restoreInfo: ").append(toIndentedString(restoreInfo)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    availabilityZoneDetail: ").append(toIndentedString(availabilityZoneDetail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

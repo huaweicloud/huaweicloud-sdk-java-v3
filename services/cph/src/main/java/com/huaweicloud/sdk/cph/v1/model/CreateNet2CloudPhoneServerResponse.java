@@ -57,7 +57,7 @@ public class CreateNet2CloudPhoneServerResponse extends SdkResponse {
     }
 
     /**
-     * 订单ID，不超过64个字节
+     * 订单ID，不超过64个字节。
      * @return orderId
      */
     public String getOrderId() {
@@ -74,7 +74,7 @@ public class CreateNet2CloudPhoneServerResponse extends SdkResponse {
     }
 
     /**
-     * 产品ID，不超过64个字节
+     * 产品ID，不超过64个字节。
      * @return productId
      */
     public String getProductId() {
@@ -107,7 +107,7 @@ public class CreateNet2CloudPhoneServerResponse extends SdkResponse {
     }
 
     /**
-     * 服务器ID列表
+     * 服务器ID列表。
      * @return serverIds
      */
     public List<String> getServerIds() {

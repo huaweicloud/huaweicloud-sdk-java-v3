@@ -69,7 +69,7 @@ public class ListVolumesRequest {
     }
 
     /**
-     * 资源类型，当前只支持“obs”。
+     * 资源类型，当前只支持“obs”和“sfs”。
      * @return resourceType
      */
     public String getResourceType() {

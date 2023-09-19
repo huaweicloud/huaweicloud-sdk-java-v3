@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 搜索字段
+ * 搜索字段。
  */
 public class Match {
 

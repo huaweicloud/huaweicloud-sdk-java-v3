@@ -38,6 +38,16 @@ public class CreateTrackerResponse extends SdkResponse {
     private Boolean isSupportValidate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_organization_tracker")
+
+    private Boolean isOrganizationTracker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "management_event_selector")
+
+    private ManagementEventSelector managementEventSelector;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lts")
 
     private Lts lts;
@@ -297,6 +307,50 @@ public class CreateTrackerResponse extends SdkResponse {
         this.isSupportValidate = isSupportValidate;
     }
 
+    public CreateTrackerResponse withIsOrganizationTracker(Boolean isOrganizationTracker) {
+        this.isOrganizationTracker = isOrganizationTracker;
+        return this;
+    }
+
+    /**
+     * 是否应用到我的组织。 只针对管理类追踪器。设置为true时，ORG组织下所有成员当前区域的审计日志会转储到该追踪器配置的OBS桶或者LTS日志流，但是事件列表界面不支持查看其它组织成员的审计日志。
+     * @return isOrganizationTracker
+     */
+    public Boolean getIsOrganizationTracker() {
+        return isOrganizationTracker;
+    }
+
+    public void setIsOrganizationTracker(Boolean isOrganizationTracker) {
+        this.isOrganizationTracker = isOrganizationTracker;
+    }
+
+    public CreateTrackerResponse withManagementEventSelector(ManagementEventSelector managementEventSelector) {
+        this.managementEventSelector = managementEventSelector;
+        return this;
+    }
+
+    public CreateTrackerResponse withManagementEventSelector(
+        Consumer<ManagementEventSelector> managementEventSelectorSetter) {
+        if (this.managementEventSelector == null) {
+            this.managementEventSelector = new ManagementEventSelector();
+            managementEventSelectorSetter.accept(this.managementEventSelector);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get managementEventSelector
+     * @return managementEventSelector
+     */
+    public ManagementEventSelector getManagementEventSelector() {
+        return managementEventSelector;
+    }
+
+    public void setManagementEventSelector(ManagementEventSelector managementEventSelector) {
+        this.managementEventSelector = managementEventSelector;
+    }
+
     public CreateTrackerResponse withLts(Lts lts) {
         this.lts = lts;
         return this;
@@ -505,6 +559,8 @@ public class CreateTrackerResponse extends SdkResponse {
         CreateTrackerResponse that = (CreateTrackerResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.kmsId, that.kmsId) && Objects.equals(this.isSupportValidate, that.isSupportValidate)
+            && Objects.equals(this.isOrganizationTracker, that.isOrganizationTracker)
+            && Objects.equals(this.managementEventSelector, that.managementEventSelector)
             && Objects.equals(this.lts, that.lts) && Objects.equals(this.trackerType, that.trackerType)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.trackerName, that.trackerName) && Objects.equals(this.status, that.status)
@@ -519,6 +575,8 @@ public class CreateTrackerResponse extends SdkResponse {
             createTime,
             kmsId,
             isSupportValidate,
+            isOrganizationTracker,
+            managementEventSelector,
             lts,
             trackerType,
             domainId,
@@ -539,6 +597,8 @@ public class CreateTrackerResponse extends SdkResponse {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
         sb.append("    isSupportValidate: ").append(toIndentedString(isSupportValidate)).append("\n");
+        sb.append("    isOrganizationTracker: ").append(toIndentedString(isOrganizationTracker)).append("\n");
+        sb.append("    managementEventSelector: ").append(toIndentedString(managementEventSelector)).append("\n");
         sb.append("    lts: ").append(toIndentedString(lts)).append("\n");
         sb.append("    trackerType: ").append(toIndentedString(trackerType)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");

@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询资源实例请求体
+ * 查询资源实例请求体。
  */
 public class ListResourceInstancesRequestBody {
 

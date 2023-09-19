@@ -24,6 +24,11 @@ public class ListTtsaJobsResponse extends SdkResponse {
 
     private List<TTSAJob> ttsaJobs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ListTtsaJobsResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -76,6 +81,25 @@ public class ListTtsaJobsResponse extends SdkResponse {
         this.ttsaJobs = ttsaJobs;
     }
 
+    public ListTtsaJobsResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,12 +109,13 @@ public class ListTtsaJobsResponse extends SdkResponse {
             return false;
         }
         ListTtsaJobsResponse that = (ListTtsaJobsResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.ttsaJobs, that.ttsaJobs);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.ttsaJobs, that.ttsaJobs)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, ttsaJobs);
+        return Objects.hash(total, ttsaJobs, xRequestId);
     }
 
     @Override
@@ -99,6 +124,7 @@ public class ListTtsaJobsResponse extends SdkResponse {
         sb.append("class ListTtsaJobsResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    ttsaJobs: ").append(toIndentedString(ttsaJobs)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

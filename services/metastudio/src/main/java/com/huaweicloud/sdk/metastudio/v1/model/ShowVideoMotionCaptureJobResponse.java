@@ -216,6 +216,11 @@ public class ShowVideoMotionCaptureJobResponse extends SdkResponse {
 
     private String endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowVideoMotionCaptureJobResponse withMotionCaptureMode(MotionCaptureModeEnum motionCaptureMode) {
         this.motionCaptureMode = motionCaptureMode;
         return this;
@@ -353,6 +358,25 @@ public class ShowVideoMotionCaptureJobResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
+    public ShowVideoMotionCaptureJobResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -365,12 +389,13 @@ public class ShowVideoMotionCaptureJobResponse extends SdkResponse {
         return Objects.equals(this.motionCaptureMode, that.motionCaptureMode)
             && Objects.equals(this.inputInfo, that.inputInfo) && Objects.equals(this.outputInfo, that.outputInfo)
             && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(motionCaptureMode, inputInfo, outputInfo, jobId, state, startTime, endTime);
+        return Objects.hash(motionCaptureMode, inputInfo, outputInfo, jobId, state, startTime, endTime, xRequestId);
     }
 
     @Override
@@ -384,6 +409,7 @@ public class ShowVideoMotionCaptureJobResponse extends SdkResponse {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

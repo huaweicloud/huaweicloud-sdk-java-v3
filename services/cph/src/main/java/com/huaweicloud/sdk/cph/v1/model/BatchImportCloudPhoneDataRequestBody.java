@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 导入云手机数据请求体
+ * 导入云手机数据请求体。
  */
 public class BatchImportCloudPhoneDataRequestBody {
 
@@ -40,7 +40,7 @@ public class BatchImportCloudPhoneDataRequestBody {
     }
 
     /**
-     * 待导入数据的云手机信息
+     * 待导入数据的云手机信息。
      * @return restoreInfos
      */
     public List<RestoreInfo> getRestoreInfos() {

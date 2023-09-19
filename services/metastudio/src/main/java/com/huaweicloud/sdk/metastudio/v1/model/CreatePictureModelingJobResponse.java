@@ -21,6 +21,11 @@ public class CreatePictureModelingJobResponse extends SdkResponse {
 
     private String modelAssetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public CreatePictureModelingJobResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -55,6 +60,25 @@ public class CreatePictureModelingJobResponse extends SdkResponse {
         this.modelAssetId = modelAssetId;
     }
 
+    public CreatePictureModelingJobResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +88,13 @@ public class CreatePictureModelingJobResponse extends SdkResponse {
             return false;
         }
         CreatePictureModelingJobResponse that = (CreatePictureModelingJobResponse) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.modelAssetId, that.modelAssetId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.modelAssetId, that.modelAssetId)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, modelAssetId);
+        return Objects.hash(jobId, modelAssetId, xRequestId);
     }
 
     @Override
@@ -78,6 +103,7 @@ public class CreatePictureModelingJobResponse extends SdkResponse {
         sb.append("class CreatePictureModelingJobResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    modelAssetId: ").append(toIndentedString(modelAssetId)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

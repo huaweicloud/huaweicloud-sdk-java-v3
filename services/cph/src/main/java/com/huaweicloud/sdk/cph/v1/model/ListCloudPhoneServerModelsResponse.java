@@ -30,7 +30,7 @@ public class ListCloudPhoneServerModelsResponse extends SdkResponse {
     }
 
     /**
-     * 请求的唯一标识ID
+     * 请求的唯一标识ID。
      * @return requestId
      */
     public String getRequestId() {
@@ -63,7 +63,7 @@ public class ListCloudPhoneServerModelsResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器的规格信息
+     * 云手机服务器的规格信息。
      * @return serverModels
      */
     public List<ServerModel> getServerModels() {

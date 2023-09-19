@@ -310,6 +310,11 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
 
     private List<AssetFileInfo> files = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public UpdateDigitalAssetResponse withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
@@ -554,6 +559,25 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
         this.files = files;
     }
 
+    public UpdateDigitalAssetResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -568,7 +592,8 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetState, that.assetState)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
-            && Objects.equals(this.systemProperties, that.systemProperties) && Objects.equals(this.files, that.files);
+            && Objects.equals(this.systemProperties, that.systemProperties) && Objects.equals(this.files, that.files)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -583,7 +608,8 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
             tags,
             assetExtraMeta,
             systemProperties,
-            files);
+            files,
+            xRequestId);
     }
 
     @Override
@@ -601,6 +627,7 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
         sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");
         sb.append("    files: ").append(toIndentedString(files)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

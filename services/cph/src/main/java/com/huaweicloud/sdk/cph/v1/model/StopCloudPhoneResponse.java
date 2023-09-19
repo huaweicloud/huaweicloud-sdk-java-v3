@@ -63,7 +63,7 @@ public class StopCloudPhoneResponse extends SdkResponse {
     }
 
     /**
-     * 任务信息
+     * 任务信息。
      * @return jobs
      */
     public List<PhoneJob> getJobs() {

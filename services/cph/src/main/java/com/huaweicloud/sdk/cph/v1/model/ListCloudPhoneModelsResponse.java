@@ -63,7 +63,7 @@ public class ListCloudPhoneModelsResponse extends SdkResponse {
     }
 
     /**
-     * 云手机的规格信息
+     * 云手机的规格信息。
      * @return phoneModels
      */
     public List<PhoneModel> getPhoneModels() {

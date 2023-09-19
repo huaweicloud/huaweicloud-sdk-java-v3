@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 云手机服务器的属性描述，不超过512个字节
+ * 云手机服务器的属性描述，不超过512个字节。
  */
 public class ServerModelExtendSpec {
 
@@ -56,7 +56,7 @@ public class ServerModelExtendSpec {
     }
 
     /**
-     * 云手机服务器cpu类型
+     * 云手机服务器cpu类型。
      * @return cpu
      */
     public String getCpu() {
@@ -73,7 +73,7 @@ public class ServerModelExtendSpec {
     }
 
     /**
-     * 云手机服务器内存类型
+     * 云手机服务器内存类型。
      * @return memory
      */
     public String getMemory() {
@@ -90,7 +90,7 @@ public class ServerModelExtendSpec {
     }
 
     /**
-     * 云手机服务器磁盘类型
+     * 云手机服务器磁盘类型。
      * @return disk
      */
     public String getDisk() {
@@ -107,7 +107,7 @@ public class ServerModelExtendSpec {
     }
 
     /**
-     * 云手机服务器网络类型
+     * 云手机服务器网络类型。
      * @return networkInterface
      */
     public String getNetworkInterface() {
@@ -124,7 +124,7 @@ public class ServerModelExtendSpec {
     }
 
     /**
-     * 云手机服务器gpu类型
+     * 云手机服务器gpu类型。
      * @return gpu
      */
     public String getGpu() {
@@ -141,7 +141,7 @@ public class ServerModelExtendSpec {
     }
 
     /**
-     * 云手机服务器bms规格
+     * 云手机服务器bms规格。
      * @return bmsFlavor
      */
     public String getBmsFlavor() {
@@ -158,7 +158,7 @@ public class ServerModelExtendSpec {
     }
 
     /**
-     * 云手机服务器gpu数量
+     * 云手机服务器gpu数量。
      * minimum: 0
      * maximum: 1024
      * @return gpuCount
@@ -177,7 +177,7 @@ public class ServerModelExtendSpec {
     }
 
     /**
-     * 云手机服务器numa数量
+     * 云手机服务器numa数量。
      * minimum: 0
      * maximum: 1024
      * @return numaCount

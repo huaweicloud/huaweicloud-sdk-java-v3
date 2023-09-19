@@ -40,7 +40,7 @@ public class UpdateCloudPhonePropertyRequestBody {
     }
 
     /**
-     * 手机列表
+     * 手机列表。
      * @return phones
      */
     public List<Property> getPhones() {

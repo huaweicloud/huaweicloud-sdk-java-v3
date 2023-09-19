@@ -63,7 +63,7 @@ public class ShowBandwidthDetailResponse extends SdkResponse {
     }
 
     /**
-     * 带宽信息
+     * 带宽信息。
      * @return bandWidths
      */
     public List<Bandwidth> getBandWidths() {

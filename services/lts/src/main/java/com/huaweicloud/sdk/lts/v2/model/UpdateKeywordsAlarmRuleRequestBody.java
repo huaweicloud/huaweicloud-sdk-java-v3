@@ -41,7 +41,7 @@ public class UpdateKeywordsAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
 
-    private Object frequency;
+    private Frequency frequency;
 
     /**
      * 告警级别
@@ -230,7 +230,7 @@ public class UpdateKeywordsAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_save_rule")
 
-    private Object notificationSaveRule;
+    private SqlNotificationSaveRule notificationSaveRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_condition_count")
@@ -337,20 +337,29 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         this.keywordsRequests = keywordsRequests;
     }
 
-    public UpdateKeywordsAlarmRuleRequestBody withFrequency(Object frequency) {
+    public UpdateKeywordsAlarmRuleRequestBody withFrequency(Frequency frequency) {
         this.frequency = frequency;
         return this;
     }
 
+    public UpdateKeywordsAlarmRuleRequestBody withFrequency(Consumer<Frequency> frequencySetter) {
+        if (this.frequency == null) {
+            this.frequency = new Frequency();
+            frequencySetter.accept(this.frequency);
+        }
+
+        return this;
+    }
+
     /**
-     * 告警统计周期
+     * Get frequency
      * @return frequency
      */
-    public Object getFrequency() {
+    public Frequency getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(Object frequency) {
+    public void setFrequency(Frequency frequency) {
         this.frequency = frequency;
     }
 
@@ -425,20 +434,30 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         this.domainId = domainId;
     }
 
-    public UpdateKeywordsAlarmRuleRequestBody withNotificationSaveRule(Object notificationSaveRule) {
+    public UpdateKeywordsAlarmRuleRequestBody withNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
         this.notificationSaveRule = notificationSaveRule;
         return this;
     }
 
+    public UpdateKeywordsAlarmRuleRequestBody withNotificationSaveRule(
+        Consumer<SqlNotificationSaveRule> notificationSaveRuleSetter) {
+        if (this.notificationSaveRule == null) {
+            this.notificationSaveRule = new SqlNotificationSaveRule();
+            notificationSaveRuleSetter.accept(this.notificationSaveRule);
+        }
+
+        return this;
+    }
+
     /**
-     * 通知主题
+     * Get notificationSaveRule
      * @return notificationSaveRule
      */
-    public Object getNotificationSaveRule() {
+    public SqlNotificationSaveRule getNotificationSaveRule() {
         return notificationSaveRule;
     }
 
-    public void setNotificationSaveRule(Object notificationSaveRule) {
+    public void setNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
         this.notificationSaveRule = notificationSaveRule;
     }
 

@@ -26,7 +26,7 @@ public class PhoneProperty {
     }
 
     /**
-     * 云手机id
+     * 云手机id。
      * @return phoneId
      */
     public String getPhoneId() {
@@ -43,7 +43,7 @@ public class PhoneProperty {
     }
 
     /**
-     * 云手机属性列表
+     * 云手机属性列表，为Json格式字符串。
      * @return property
      */
     public String getProperty() {

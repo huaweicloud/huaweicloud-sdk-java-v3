@@ -72,7 +72,7 @@ public class Phone {
     }
 
     /**
-     * 云手机的名称，不超过65个字符
+     * 云手机的名称，不超过65个字符。
      * @return phoneName
      */
     public String getPhoneName() {
@@ -89,7 +89,7 @@ public class Phone {
     }
 
     /**
-     * 云手机所在的服务器ID，不超过32个字节
+     * 云手机所在的服务器ID，不超过32个字节。
      * @return serverId
      */
     public String getServerId() {
@@ -106,7 +106,7 @@ public class Phone {
     }
 
     /**
-     * 云手机的唯一标识，不超过32个字节
+     * 云手机的唯一标识，不超过32个字节。
      * @return phoneId
      */
     public String getPhoneId() {
@@ -123,7 +123,7 @@ public class Phone {
     }
 
     /**
-     * 云手机规格名称，不超过64个字节
+     * 云手机规格名称，不超过64个字节。
      * @return phoneModelName
      */
     public String getPhoneModelName() {
@@ -140,7 +140,7 @@ public class Phone {
     }
 
     /**
-     * 云手机镜像ID，不超过32个字节
+     * 云手机镜像ID，不超过32个字节。
      * @return imageId
      */
     public String getImageId() {
@@ -157,7 +157,7 @@ public class Phone {
     }
 
     /**
-     * 云手机是否开启VNC服务 - true表示开启 - false表示不开启
+     * 云手机是否开启VNC服务。 - true：开启 - false：不开启
      * @return vncEnable
      */
     public String getVncEnable() {
@@ -174,7 +174,7 @@ public class Phone {
     }
 
     /**
-     * 云手机状态 - 0: 创建中 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
+     * 云手机状态。 - 0: 创建中 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
      * minimum: -128
      * maximum: 128
      * @return status
@@ -193,7 +193,7 @@ public class Phone {
     }
 
     /**
-     * 云手机类型 - 0：普通云手机 - 1：试玩云手机
+     * 云手机类型。 - 0：普通云手机 - 1：试玩云手机
      * minimum: -128
      * maximum: 128
      * @return type
@@ -238,7 +238,7 @@ public class Phone {
     }
 
     /**
-     * 创建时间 时间格式为UTC
+     * 创建时间， 时间格式为UTC。
      * @return createTime
      */
     public String getCreateTime() {
@@ -255,7 +255,7 @@ public class Phone {
     }
 
     /**
-     * 更新时间 时间格式为UTC
+     * 更新时间， 时间格式为UTC。
      * @return updateTime
      */
     public String getUpdateTime() {

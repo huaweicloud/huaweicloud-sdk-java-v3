@@ -23,6 +23,9 @@ import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ExpandClusterRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ExpandClusterResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ExpandParam;
 import com.huaweicloud.sdk.mrs.v2.model.JobBatchDelete;
 import com.huaweicloud.sdk.mrs.v2.model.JobExecution;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
@@ -46,6 +49,9 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShrinkClusterRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShrinkClusterResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShrinkParam;
 import com.huaweicloud.sdk.mrs.v2.model.SqlExecutionReq;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobResponse;
@@ -492,6 +498,70 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateClusterReq.class),
             f -> f.withMarshaller(UpdateClusterNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExpandClusterRequest, ExpandClusterResponse> expandCluster =
+        genForexpandCluster();
+
+    private static HttpRequestDef<ExpandClusterRequest, ExpandClusterResponse> genForexpandCluster() {
+        // basic
+        HttpRequestDef.Builder<ExpandClusterRequest, ExpandClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExpandClusterRequest.class, ExpandClusterResponse.class)
+                .withName("ExpandCluster")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/expand")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ExpandParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExpandParam.class),
+            f -> f.withMarshaller(ExpandClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShrinkClusterRequest, ShrinkClusterResponse> shrinkCluster =
+        genForshrinkCluster();
+
+    private static HttpRequestDef<ShrinkClusterRequest, ShrinkClusterResponse> genForshrinkCluster() {
+        // basic
+        HttpRequestDef.Builder<ShrinkClusterRequest, ShrinkClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShrinkClusterRequest.class, ShrinkClusterResponse.class)
+                .withName("ShrinkCluster")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/shrink")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShrinkClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ShrinkParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShrinkParam.class),
+            f -> f.withMarshaller(ShrinkClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

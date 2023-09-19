@@ -63,7 +63,7 @@ public class ImportTrafficResponse extends SdkResponse {
     }
 
     /**
-     * 任务列表
+     * 任务列表。
      * @return jobs
      */
     public List<PhoneJob> getJobs() {

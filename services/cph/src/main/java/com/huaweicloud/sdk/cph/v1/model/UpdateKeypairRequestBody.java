@@ -40,7 +40,7 @@ public class UpdateKeypairRequestBody {
     }
 
     /**
-     * 待更改密钥对的云手机服务器信息
+     * 待更改密钥对的云手机服务器信息。
      * @return servers
      */
     public List<ServerKeypair> getServers() {

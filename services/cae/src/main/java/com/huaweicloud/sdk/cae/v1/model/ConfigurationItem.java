@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ConfigurationItem {
 
     /**
-     * 组件配置类型，当前CAE支持组件配置如下8类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。  - apm2：性能管理。  - log: 自定义日志路径。
+     * 组件配置类型，当前CAE支持组件配置如下11类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。  - apm2：性能管理。  - log: 自定义日志路径。  - customMetric: 自定义监控指标。
      */
     public static final class TypeEnum {
 
@@ -70,6 +70,11 @@ public class ConfigurationItem {
          */
         public static final TypeEnum LOG = new TypeEnum("log");
 
+        /**
+         * Enum CUSTOMMETRIC for value: "customMetric"
+         */
+        public static final TypeEnum CUSTOMMETRIC = new TypeEnum("customMetric");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -84,6 +89,7 @@ public class ConfigurationItem {
             map.put("lifecycle", LIFECYCLE);
             map.put("apm2", APM2);
             map.put("log", LOG);
+            map.put("customMetric", CUSTOMMETRIC);
             return Collections.unmodifiableMap(map);
         }
 
@@ -149,7 +155,7 @@ public class ConfigurationItem {
     }
 
     /**
-     * 组件配置类型，当前CAE支持组件配置如下8类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。  - apm2：性能管理。  - log: 自定义日志路径。
+     * 组件配置类型，当前CAE支持组件配置如下11类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。  - apm2：性能管理。  - log: 自定义日志路径。  - customMetric: 自定义监控指标。
      * @return type
      */
     public TypeEnum getType() {

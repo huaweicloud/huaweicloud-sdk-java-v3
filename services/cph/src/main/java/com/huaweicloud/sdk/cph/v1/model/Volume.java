@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 云手机服务器卷信息
+ * 云手机服务器卷信息。
  */
 public class Volume {
 
@@ -46,7 +46,7 @@ public class Volume {
     }
 
     /**
-     * 云手机服务器的硬盘名称
+     * 云手机服务器的硬盘名称。
      * @return volumeName
      */
     public String getVolumeName() {
@@ -63,7 +63,7 @@ public class Volume {
     }
 
     /**
-     * 云手机服务器的硬盘唯一标识
+     * 云手机服务器的硬盘唯一标识。
      * @return volumeId
      */
     public String getVolumeId() {
@@ -80,7 +80,7 @@ public class Volume {
     }
 
     /**
-     * 云手机服务器的硬盘大小，单位G
+     * 云手机服务器的硬盘大小，单位G。
      * minimum: 0
      * maximum: 8096
      * @return volumeSize
@@ -99,7 +99,7 @@ public class Volume {
     }
 
     /**
-     * 云手机服务器的硬盘类型
+     * 云手机服务器的硬盘类型。
      * @return volumeType
      */
     public String getVolumeType() {
@@ -116,7 +116,7 @@ public class Volume {
     }
 
     /**
-     * 硬盘创建时间  时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * 硬盘创建时间，  时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return createTime
      */
     public String getCreateTime() {
@@ -133,7 +133,7 @@ public class Volume {
     }
 
     /**
-     * 硬盘更新时间  时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * 硬盘更新时间，  时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return updateTime
      */
     public String getUpdateTime() {

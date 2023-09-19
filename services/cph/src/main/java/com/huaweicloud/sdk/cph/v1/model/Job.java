@@ -66,7 +66,7 @@ public class Job {
     }
 
     /**
-     * 云手机的唯一标识，云手机相关任务包含此字段
+     * 云手机的唯一标识，云手机相关任务包含此字段。
      * @return phoneId
      */
     public String getPhoneId() {
@@ -83,7 +83,7 @@ public class Job {
     }
 
     /**
-     * 云手机服务器的唯一标识ID，云手机服务器相关任务包含此字段
+     * 云手机服务器的唯一标识ID，云手机服务器相关任务包含此字段。
      * @return serverId
      */
     public String getServerId() {
@@ -100,7 +100,7 @@ public class Job {
     }
 
     /**
-     * （已废弃）云手机服务器的唯一标识ID，云手机服务 含此字段
+     * （已废弃）云手机服务器的唯一标识ID，云手机服务含此字段。
      * @return nodeId
      */
     public String getNodeId() {
@@ -117,7 +117,7 @@ public class Job {
     }
 
     /**
-     * 任务的唯一标识
+     * 任务的唯一标识。
      * @return jobId
      */
     public String getJobId() {
@@ -134,7 +134,7 @@ public class Job {
     }
 
     /**
-     * 任务处理开始时间 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * 任务处理开始时间， 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -151,7 +151,7 @@ public class Job {
     }
 
     /**
-     * 任务处理结束时间 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ
+     * 任务处理结束时间， 时间格式为UTC，YYYY-MM-DDTHH:MM:SSZ。
      * @return endTime
      */
     public String getEndTime() {
@@ -168,7 +168,7 @@ public class Job {
     }
 
     /**
-     * 任务状态 - 1 ：运行中 - 2 ： 成功 - -1 ：失败
+     * 任务状态。 - 1 ：运行中 - 2 ： 成功 - -1 ：失败
      * minimum: -128
      * maximum: 128
      * @return status
@@ -187,7 +187,7 @@ public class Job {
     }
 
     /**
-     * 任务错误码
+     * 任务错误码。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -204,7 +204,7 @@ public class Job {
     }
 
     /**
-     * 任务错误码说明
+     * 任务错误码说明。
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -221,7 +221,7 @@ public class Job {
     }
 
     /**
-     * 任务执行返回内容，最长1024个字节
+     * 任务执行返回内容，最长1024个字节。
      * @return executeMsg
      */
     public String getExecuteMsg() {

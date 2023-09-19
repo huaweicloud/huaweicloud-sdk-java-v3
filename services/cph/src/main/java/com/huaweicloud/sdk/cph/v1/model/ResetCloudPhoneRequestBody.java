@@ -29,7 +29,7 @@ public class ResetCloudPhoneRequestBody {
     }
 
     /**
-     * 云手机镜像
+     * 云手机镜像。
      * @return imageId
      */
     public String getImageId() {
@@ -62,7 +62,7 @@ public class ResetCloudPhoneRequestBody {
     }
 
     /**
-     * 云手机列表
+     * 云手机列表。
      * @return phones
      */
     public List<PhoneProperty> getPhones() {

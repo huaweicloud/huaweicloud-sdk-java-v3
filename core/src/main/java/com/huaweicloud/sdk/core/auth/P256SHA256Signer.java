@@ -72,15 +72,8 @@ public class P256SHA256Signer extends AKSKSigner {
     }
 
     public <T extends AbstractCredentials<T>> ISigningKey getSigningKey(T credentials) {
-        String key = algorithm + credentials.getAk();
-        if (SIGNING_KEY_CACHE.containsKey(key)) {
-            return SIGNING_KEY_CACHE.get(key);
-        }
-
         BigInteger privateInt = derivePrivateInt(credentials);
-        ISigningKey signingKey = generateSigningKey(privateInt);
-        SIGNING_KEY_CACHE.put(key, signingKey);
-        return signingKey;
+        return generateSigningKey(privateInt);
     }
 
     protected ISigningKey generateSigningKey(BigInteger candidate) {

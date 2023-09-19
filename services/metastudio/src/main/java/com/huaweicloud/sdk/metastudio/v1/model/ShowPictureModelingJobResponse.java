@@ -156,6 +156,11 @@ public class ShowPictureModelingJobResponse extends SdkResponse {
 
     private String modelCoverUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowPictureModelingJobResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -318,6 +323,25 @@ public class ShowPictureModelingJobResponse extends SdkResponse {
         this.modelCoverUrl = modelCoverUrl;
     }
 
+    public ShowPictureModelingJobResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -331,12 +355,14 @@ public class ShowPictureModelingJobResponse extends SdkResponse {
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.modelAssetId, that.modelAssetId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.styleId, that.styleId)
-            && Objects.equals(this.modelCoverUrl, that.modelCoverUrl);
+            && Objects.equals(this.modelCoverUrl, that.modelCoverUrl)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, state, startTime, endTime, errorInfo, modelAssetId, name, styleId, modelCoverUrl);
+        return Objects
+            .hash(jobId, state, startTime, endTime, errorInfo, modelAssetId, name, styleId, modelCoverUrl, xRequestId);
     }
 
     @Override
@@ -352,6 +378,7 @@ public class ShowPictureModelingJobResponse extends SdkResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    styleId: ").append(toIndentedString(styleId)).append("\n");
         sb.append("    modelCoverUrl: ").append(toIndentedString(modelCoverUrl)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

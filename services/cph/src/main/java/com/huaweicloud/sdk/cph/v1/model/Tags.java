@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资源标签列表
+ * 资源标签列表。
  */
 public class Tags {
 

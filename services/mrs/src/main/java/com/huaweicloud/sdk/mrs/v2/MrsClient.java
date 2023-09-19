@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ExpandClusterRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ExpandClusterResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
@@ -37,6 +39,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShrinkClusterRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShrinkClusterResponse;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingRequest;
@@ -439,6 +443,62 @@ public class MrsClient {
         UpdateClusterNameRequest request) {
         return new SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>(request, MrsMeta.updateClusterName,
             hcClient);
+    }
+
+    /**
+     * 扩容集群
+     *
+     * 对MRS集群进行扩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExpandClusterRequest 请求对象
+     * @return ExpandClusterResponse
+     */
+    public ExpandClusterResponse expandCluster(ExpandClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.expandCluster);
+    }
+
+    /**
+     * 扩容集群
+     *
+     * 对MRS集群进行扩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExpandClusterRequest 请求对象
+     * @return SyncInvoker<ExpandClusterRequest, ExpandClusterResponse>
+     */
+    public SyncInvoker<ExpandClusterRequest, ExpandClusterResponse> expandClusterInvoker(ExpandClusterRequest request) {
+        return new SyncInvoker<ExpandClusterRequest, ExpandClusterResponse>(request, MrsMeta.expandCluster, hcClient);
+    }
+
+    /**
+     * 缩容集群
+     *
+     * 对MRS集群进行缩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShrinkClusterRequest 请求对象
+     * @return ShrinkClusterResponse
+     */
+    public ShrinkClusterResponse shrinkCluster(ShrinkClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.shrinkCluster);
+    }
+
+    /**
+     * 缩容集群
+     *
+     * 对MRS集群进行缩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShrinkClusterRequest 请求对象
+     * @return SyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse>
+     */
+    public SyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse> shrinkClusterInvoker(ShrinkClusterRequest request) {
+        return new SyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse>(request, MrsMeta.shrinkCluster, hcClient);
     }
 
     /**

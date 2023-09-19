@@ -22,6 +22,11 @@ public class CreateVideoMotionCaptureJobResponse extends SdkResponse {
 
     private RTCRoomInfoList rtcRoomInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public CreateVideoMotionCaptureJobResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -65,6 +70,25 @@ public class CreateVideoMotionCaptureJobResponse extends SdkResponse {
         this.rtcRoomInfo = rtcRoomInfo;
     }
 
+    public CreateVideoMotionCaptureJobResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,12 +98,13 @@ public class CreateVideoMotionCaptureJobResponse extends SdkResponse {
             return false;
         }
         CreateVideoMotionCaptureJobResponse that = (CreateVideoMotionCaptureJobResponse) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, rtcRoomInfo);
+        return Objects.hash(jobId, rtcRoomInfo, xRequestId);
     }
 
     @Override
@@ -88,6 +113,7 @@ public class CreateVideoMotionCaptureJobResponse extends SdkResponse {
         sb.append("class CreateVideoMotionCaptureJobResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    rtcRoomInfo: ").append(toIndentedString(rtcRoomInfo)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

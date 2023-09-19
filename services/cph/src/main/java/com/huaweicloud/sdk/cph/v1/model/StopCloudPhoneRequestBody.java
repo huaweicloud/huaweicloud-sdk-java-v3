@@ -40,7 +40,7 @@ public class StopCloudPhoneRequestBody {
     }
 
     /**
-     * 云手机id列表
+     * 云手机id列表。
      * @return phoneIds
      */
     public List<String> getPhoneIds() {

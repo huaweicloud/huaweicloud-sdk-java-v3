@@ -29,7 +29,7 @@ public class BatchCreateTagsRequestBody {
     }
 
     /**
-     * 操作标识： - create，创建
+     * 操作标识。 - create：创建
      * @return action
      */
     public String getAction() {

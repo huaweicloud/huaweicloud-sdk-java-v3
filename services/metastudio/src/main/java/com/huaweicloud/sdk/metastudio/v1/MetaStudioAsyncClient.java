@@ -3,32 +3,60 @@ package com.huaweicloud.sdk.metastudio.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanBusinessCardRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataRequest;
@@ -37,18 +65,44 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.LiveEventReportResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.Show2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -270,6 +324,347 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 创建数字人名片制作
+     *
+     * 该接口用于数字人名片制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDigitalHumanBusinessCardRequest 请求对象
+     * @return CompletableFuture<CreateDigitalHumanBusinessCardResponse>
+     */
+    public CompletableFuture<CreateDigitalHumanBusinessCardResponse> createDigitalHumanBusinessCardAsync(
+        CreateDigitalHumanBusinessCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createDigitalHumanBusinessCard);
+    }
+
+    /**
+     * 创建数字人名片制作
+     *
+     * 该接口用于数字人名片制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDigitalHumanBusinessCardRequest 请求对象
+     * @return AsyncInvoker<CreateDigitalHumanBusinessCardRequest, CreateDigitalHumanBusinessCardResponse>
+     */
+    public AsyncInvoker<CreateDigitalHumanBusinessCardRequest, CreateDigitalHumanBusinessCardResponse> createDigitalHumanBusinessCardAsyncInvoker(
+        CreateDigitalHumanBusinessCardRequest request) {
+        return new AsyncInvoker<CreateDigitalHumanBusinessCardRequest, CreateDigitalHumanBusinessCardResponse>(request,
+            MetaStudioMeta.createDigitalHumanBusinessCard, hcClient);
+    }
+
+    /**
+     * 删除数字人名片制作任务
+     *
+     * 该接口用于删除数字人名片制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDigitalHumanBusinessCardRequest 请求对象
+     * @return CompletableFuture<DeleteDigitalHumanBusinessCardResponse>
+     */
+    public CompletableFuture<DeleteDigitalHumanBusinessCardResponse> deleteDigitalHumanBusinessCardAsync(
+        DeleteDigitalHumanBusinessCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteDigitalHumanBusinessCard);
+    }
+
+    /**
+     * 删除数字人名片制作任务
+     *
+     * 该接口用于删除数字人名片制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDigitalHumanBusinessCardRequest 请求对象
+     * @return AsyncInvoker<DeleteDigitalHumanBusinessCardRequest, DeleteDigitalHumanBusinessCardResponse>
+     */
+    public AsyncInvoker<DeleteDigitalHumanBusinessCardRequest, DeleteDigitalHumanBusinessCardResponse> deleteDigitalHumanBusinessCardAsyncInvoker(
+        DeleteDigitalHumanBusinessCardRequest request) {
+        return new AsyncInvoker<DeleteDigitalHumanBusinessCardRequest, DeleteDigitalHumanBusinessCardResponse>(request,
+            MetaStudioMeta.deleteDigitalHumanBusinessCard, hcClient);
+    }
+
+    /**
+     * 查询数字人名片制作任务列表
+     *
+     * 该接口用于查询数字人名片制作任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDigitalHumanBusinessCardRequest 请求对象
+     * @return CompletableFuture<ListDigitalHumanBusinessCardResponse>
+     */
+    public CompletableFuture<ListDigitalHumanBusinessCardResponse> listDigitalHumanBusinessCardAsync(
+        ListDigitalHumanBusinessCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listDigitalHumanBusinessCard);
+    }
+
+    /**
+     * 查询数字人名片制作任务列表
+     *
+     * 该接口用于查询数字人名片制作任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDigitalHumanBusinessCardRequest 请求对象
+     * @return AsyncInvoker<ListDigitalHumanBusinessCardRequest, ListDigitalHumanBusinessCardResponse>
+     */
+    public AsyncInvoker<ListDigitalHumanBusinessCardRequest, ListDigitalHumanBusinessCardResponse> listDigitalHumanBusinessCardAsyncInvoker(
+        ListDigitalHumanBusinessCardRequest request) {
+        return new AsyncInvoker<ListDigitalHumanBusinessCardRequest, ListDigitalHumanBusinessCardResponse>(request,
+            MetaStudioMeta.listDigitalHumanBusinessCard, hcClient);
+    }
+
+    /**
+     * 查询数字人名片制作任务详情
+     *
+     * 该接口用于查询数字人名片制作任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDigitalHumanBusinessCardRequest 请求对象
+     * @return CompletableFuture<ShowDigitalHumanBusinessCardResponse>
+     */
+    public CompletableFuture<ShowDigitalHumanBusinessCardResponse> showDigitalHumanBusinessCardAsync(
+        ShowDigitalHumanBusinessCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showDigitalHumanBusinessCard);
+    }
+
+    /**
+     * 查询数字人名片制作任务详情
+     *
+     * 该接口用于查询数字人名片制作任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDigitalHumanBusinessCardRequest 请求对象
+     * @return AsyncInvoker<ShowDigitalHumanBusinessCardRequest, ShowDigitalHumanBusinessCardResponse>
+     */
+    public AsyncInvoker<ShowDigitalHumanBusinessCardRequest, ShowDigitalHumanBusinessCardResponse> showDigitalHumanBusinessCardAsyncInvoker(
+        ShowDigitalHumanBusinessCardRequest request) {
+        return new AsyncInvoker<ShowDigitalHumanBusinessCardRequest, ShowDigitalHumanBusinessCardResponse>(request,
+            MetaStudioMeta.showDigitalHumanBusinessCard, hcClient);
+    }
+
+    /**
+     * 更新数字人名片制作
+     *
+     * 该接口用于更新数字人名片制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDigitalHumanBusinessCardRequest 请求对象
+     * @return CompletableFuture<UpdateDigitalHumanBusinessCardResponse>
+     */
+    public CompletableFuture<UpdateDigitalHumanBusinessCardResponse> updateDigitalHumanBusinessCardAsync(
+        UpdateDigitalHumanBusinessCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateDigitalHumanBusinessCard);
+    }
+
+    /**
+     * 更新数字人名片制作
+     *
+     * 该接口用于更新数字人名片制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDigitalHumanBusinessCardRequest 请求对象
+     * @return AsyncInvoker<UpdateDigitalHumanBusinessCardRequest, UpdateDigitalHumanBusinessCardResponse>
+     */
+    public AsyncInvoker<UpdateDigitalHumanBusinessCardRequest, UpdateDigitalHumanBusinessCardResponse> updateDigitalHumanBusinessCardAsyncInvoker(
+        UpdateDigitalHumanBusinessCardRequest request) {
+        return new AsyncInvoker<UpdateDigitalHumanBusinessCardRequest, UpdateDigitalHumanBusinessCardResponse>(request,
+            MetaStudioMeta.updateDigitalHumanBusinessCard, hcClient);
+    }
+
+    /**
+     * 取消等待中的分身数字人视频制作任务
+     *
+     * 该接口用于取消等待中的分身数字人视频制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Cancel2DDigitalHumanVideoRequest 请求对象
+     * @return CompletableFuture<Cancel2DDigitalHumanVideoResponse>
+     */
+    public CompletableFuture<Cancel2DDigitalHumanVideoResponse> cancel2DDigitalHumanVideoAsync(
+        Cancel2DDigitalHumanVideoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.cancel2DDigitalHumanVideo);
+    }
+
+    /**
+     * 取消等待中的分身数字人视频制作任务
+     *
+     * 该接口用于取消等待中的分身数字人视频制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Cancel2DDigitalHumanVideoRequest 请求对象
+     * @return AsyncInvoker<Cancel2DDigitalHumanVideoRequest, Cancel2DDigitalHumanVideoResponse>
+     */
+    public AsyncInvoker<Cancel2DDigitalHumanVideoRequest, Cancel2DDigitalHumanVideoResponse> cancel2DDigitalHumanVideoAsyncInvoker(
+        Cancel2DDigitalHumanVideoRequest request) {
+        return new AsyncInvoker<Cancel2DDigitalHumanVideoRequest, Cancel2DDigitalHumanVideoResponse>(request,
+            MetaStudioMeta.cancel2DDigitalHumanVideo, hcClient);
+    }
+
+    /**
+     * 创建分身数字人视频制作任务
+     *
+     * 该接口用于创建分身数字人视频制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Create2DDigitalHumanVideoRequest 请求对象
+     * @return CompletableFuture<Create2DDigitalHumanVideoResponse>
+     */
+    public CompletableFuture<Create2DDigitalHumanVideoResponse> create2DDigitalHumanVideoAsync(
+        Create2DDigitalHumanVideoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.create2DDigitalHumanVideo);
+    }
+
+    /**
+     * 创建分身数字人视频制作任务
+     *
+     * 该接口用于创建分身数字人视频制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Create2DDigitalHumanVideoRequest 请求对象
+     * @return AsyncInvoker<Create2DDigitalHumanVideoRequest, Create2DDigitalHumanVideoResponse>
+     */
+    public AsyncInvoker<Create2DDigitalHumanVideoRequest, Create2DDigitalHumanVideoResponse> create2DDigitalHumanVideoAsyncInvoker(
+        Create2DDigitalHumanVideoRequest request) {
+        return new AsyncInvoker<Create2DDigitalHumanVideoRequest, Create2DDigitalHumanVideoResponse>(request,
+            MetaStudioMeta.create2DDigitalHumanVideo, hcClient);
+    }
+
+    /**
+     * 查询分身数字人视频制作任务详情
+     *
+     * 该接口用于查询分身数字人视频制作任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Show2DDigitalHumanVideoRequest 请求对象
+     * @return CompletableFuture<Show2DDigitalHumanVideoResponse>
+     */
+    public CompletableFuture<Show2DDigitalHumanVideoResponse> show2DDigitalHumanVideoAsync(
+        Show2DDigitalHumanVideoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.show2DDigitalHumanVideo);
+    }
+
+    /**
+     * 查询分身数字人视频制作任务详情
+     *
+     * 该接口用于查询分身数字人视频制作任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param Show2DDigitalHumanVideoRequest 请求对象
+     * @return AsyncInvoker<Show2DDigitalHumanVideoRequest, Show2DDigitalHumanVideoResponse>
+     */
+    public AsyncInvoker<Show2DDigitalHumanVideoRequest, Show2DDigitalHumanVideoResponse> show2DDigitalHumanVideoAsyncInvoker(
+        Show2DDigitalHumanVideoRequest request) {
+        return new AsyncInvoker<Show2DDigitalHumanVideoRequest, Show2DDigitalHumanVideoResponse>(request,
+            MetaStudioMeta.show2DDigitalHumanVideo, hcClient);
+    }
+
+    /**
+     * 取消等待中的照片分身数字人视频制作任务
+     *
+     * 该接口用于取消等待中的照片分身数字人视频制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelPhotoDigitalHumanVideoRequest 请求对象
+     * @return CompletableFuture<CancelPhotoDigitalHumanVideoResponse>
+     */
+    public CompletableFuture<CancelPhotoDigitalHumanVideoResponse> cancelPhotoDigitalHumanVideoAsync(
+        CancelPhotoDigitalHumanVideoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.cancelPhotoDigitalHumanVideo);
+    }
+
+    /**
+     * 取消等待中的照片分身数字人视频制作任务
+     *
+     * 该接口用于取消等待中的照片分身数字人视频制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CancelPhotoDigitalHumanVideoRequest 请求对象
+     * @return AsyncInvoker<CancelPhotoDigitalHumanVideoRequest, CancelPhotoDigitalHumanVideoResponse>
+     */
+    public AsyncInvoker<CancelPhotoDigitalHumanVideoRequest, CancelPhotoDigitalHumanVideoResponse> cancelPhotoDigitalHumanVideoAsyncInvoker(
+        CancelPhotoDigitalHumanVideoRequest request) {
+        return new AsyncInvoker<CancelPhotoDigitalHumanVideoRequest, CancelPhotoDigitalHumanVideoResponse>(request,
+            MetaStudioMeta.cancelPhotoDigitalHumanVideo, hcClient);
+    }
+
+    /**
+     * 创建照片分身数字人视频制作任务
+     *
+     * 该接口用于创建照片分身数字人视频制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePhotoDigitalHumanVideoRequest 请求对象
+     * @return CompletableFuture<CreatePhotoDigitalHumanVideoResponse>
+     */
+    public CompletableFuture<CreatePhotoDigitalHumanVideoResponse> createPhotoDigitalHumanVideoAsync(
+        CreatePhotoDigitalHumanVideoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createPhotoDigitalHumanVideo);
+    }
+
+    /**
+     * 创建照片分身数字人视频制作任务
+     *
+     * 该接口用于创建照片分身数字人视频制作任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePhotoDigitalHumanVideoRequest 请求对象
+     * @return AsyncInvoker<CreatePhotoDigitalHumanVideoRequest, CreatePhotoDigitalHumanVideoResponse>
+     */
+    public AsyncInvoker<CreatePhotoDigitalHumanVideoRequest, CreatePhotoDigitalHumanVideoResponse> createPhotoDigitalHumanVideoAsyncInvoker(
+        CreatePhotoDigitalHumanVideoRequest request) {
+        return new AsyncInvoker<CreatePhotoDigitalHumanVideoRequest, CreatePhotoDigitalHumanVideoResponse>(request,
+            MetaStudioMeta.createPhotoDigitalHumanVideo, hcClient);
+    }
+
+    /**
+     * 查询照片分身数字人视频制作任务详情
+     *
+     * 该接口用于查询照片分身数字人视频制作任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPhotoDigitalHumanVideoRequest 请求对象
+     * @return CompletableFuture<ShowPhotoDigitalHumanVideoResponse>
+     */
+    public CompletableFuture<ShowPhotoDigitalHumanVideoResponse> showPhotoDigitalHumanVideoAsync(
+        ShowPhotoDigitalHumanVideoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showPhotoDigitalHumanVideo);
+    }
+
+    /**
+     * 查询照片分身数字人视频制作任务详情
+     *
+     * 该接口用于查询照片分身数字人视频制作任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPhotoDigitalHumanVideoRequest 请求对象
+     * @return AsyncInvoker<ShowPhotoDigitalHumanVideoRequest, ShowPhotoDigitalHumanVideoResponse>
+     */
+    public AsyncInvoker<ShowPhotoDigitalHumanVideoRequest, ShowPhotoDigitalHumanVideoResponse> showPhotoDigitalHumanVideoAsyncInvoker(
+        ShowPhotoDigitalHumanVideoRequest request) {
+        return new AsyncInvoker<ShowPhotoDigitalHumanVideoRequest, ShowPhotoDigitalHumanVideoResponse>(request,
+            MetaStudioMeta.showPhotoDigitalHumanVideo, hcClient);
+    }
+
+    /**
      * 确认文件已上传
      *
      * 资产文件上传完毕后，通过该接口确认上传完成。
@@ -477,6 +872,337 @@ public class MetaStudioAsyncClient {
         ShowPictureModelingJobRequest request) {
         return new AsyncInvoker<ShowPictureModelingJobRequest, ShowPictureModelingJobResponse>(request,
             MetaStudioMeta.showPictureModelingJob, hcClient);
+    }
+
+    /**
+     * 控制数字人直播过程
+     *
+     * 该接口用于控制数字人直播过程。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteSmartLiveCommandRequest 请求对象
+     * @return CompletableFuture<ExecuteSmartLiveCommandResponse>
+     */
+    public CompletableFuture<ExecuteSmartLiveCommandResponse> executeSmartLiveCommandAsync(
+        ExecuteSmartLiveCommandRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.executeSmartLiveCommand);
+    }
+
+    /**
+     * 控制数字人直播过程
+     *
+     * 该接口用于控制数字人直播过程。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteSmartLiveCommandRequest 请求对象
+     * @return AsyncInvoker<ExecuteSmartLiveCommandRequest, ExecuteSmartLiveCommandResponse>
+     */
+    public AsyncInvoker<ExecuteSmartLiveCommandRequest, ExecuteSmartLiveCommandResponse> executeSmartLiveCommandAsyncInvoker(
+        ExecuteSmartLiveCommandRequest request) {
+        return new AsyncInvoker<ExecuteSmartLiveCommandRequest, ExecuteSmartLiveCommandResponse>(request,
+            MetaStudioMeta.executeSmartLiveCommand, hcClient);
+    }
+
+    /**
+     * 查询数字人智能直播任务列表
+     *
+     * 该接口用于查询数字人智能直播任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmartLiveRequest 请求对象
+     * @return CompletableFuture<ListSmartLiveResponse>
+     */
+    public CompletableFuture<ListSmartLiveResponse> listSmartLiveAsync(ListSmartLiveRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listSmartLive);
+    }
+
+    /**
+     * 查询数字人智能直播任务列表
+     *
+     * 该接口用于查询数字人智能直播任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmartLiveRequest 请求对象
+     * @return AsyncInvoker<ListSmartLiveRequest, ListSmartLiveResponse>
+     */
+    public AsyncInvoker<ListSmartLiveRequest, ListSmartLiveResponse> listSmartLiveAsyncInvoker(
+        ListSmartLiveRequest request) {
+        return new AsyncInvoker<ListSmartLiveRequest, ListSmartLiveResponse>(request, MetaStudioMeta.listSmartLive,
+            hcClient);
+    }
+
+    /**
+     * 上报直播间事件
+     *
+     * 该接口用于上报直播间事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param LiveEventReportRequest 请求对象
+     * @return CompletableFuture<LiveEventReportResponse>
+     */
+    public CompletableFuture<LiveEventReportResponse> liveEventReportAsync(LiveEventReportRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.liveEventReport);
+    }
+
+    /**
+     * 上报直播间事件
+     *
+     * 该接口用于上报直播间事件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param LiveEventReportRequest 请求对象
+     * @return AsyncInvoker<LiveEventReportRequest, LiveEventReportResponse>
+     */
+    public AsyncInvoker<LiveEventReportRequest, LiveEventReportResponse> liveEventReportAsyncInvoker(
+        LiveEventReportRequest request) {
+        return new AsyncInvoker<LiveEventReportRequest, LiveEventReportResponse>(request,
+            MetaStudioMeta.liveEventReport, hcClient);
+    }
+
+    /**
+     * 查询数字人智能直播任务详情
+     *
+     * 该接口用于查询数字人智能直播任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSmartLiveRequest 请求对象
+     * @return CompletableFuture<ShowSmartLiveResponse>
+     */
+    public CompletableFuture<ShowSmartLiveResponse> showSmartLiveAsync(ShowSmartLiveRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showSmartLive);
+    }
+
+    /**
+     * 查询数字人智能直播任务详情
+     *
+     * 该接口用于查询数字人智能直播任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSmartLiveRequest 请求对象
+     * @return AsyncInvoker<ShowSmartLiveRequest, ShowSmartLiveResponse>
+     */
+    public AsyncInvoker<ShowSmartLiveRequest, ShowSmartLiveResponse> showSmartLiveAsyncInvoker(
+        ShowSmartLiveRequest request) {
+        return new AsyncInvoker<ShowSmartLiveRequest, ShowSmartLiveResponse>(request, MetaStudioMeta.showSmartLive,
+            hcClient);
+    }
+
+    /**
+     * 启动数字人智能直播任务
+     *
+     * 该接口用于启动数字人智能直播任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartSmartLiveRequest 请求对象
+     * @return CompletableFuture<StartSmartLiveResponse>
+     */
+    public CompletableFuture<StartSmartLiveResponse> startSmartLiveAsync(StartSmartLiveRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.startSmartLive);
+    }
+
+    /**
+     * 启动数字人智能直播任务
+     *
+     * 该接口用于启动数字人智能直播任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartSmartLiveRequest 请求对象
+     * @return AsyncInvoker<StartSmartLiveRequest, StartSmartLiveResponse>
+     */
+    public AsyncInvoker<StartSmartLiveRequest, StartSmartLiveResponse> startSmartLiveAsyncInvoker(
+        StartSmartLiveRequest request) {
+        return new AsyncInvoker<StartSmartLiveRequest, StartSmartLiveResponse>(request, MetaStudioMeta.startSmartLive,
+            hcClient);
+    }
+
+    /**
+     * 结束数字人智能直播任务
+     *
+     * 该接口用于结束数字人智能直播任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopSmartLiveRequest 请求对象
+     * @return CompletableFuture<StopSmartLiveResponse>
+     */
+    public CompletableFuture<StopSmartLiveResponse> stopSmartLiveAsync(StopSmartLiveRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.stopSmartLive);
+    }
+
+    /**
+     * 结束数字人智能直播任务
+     *
+     * 该接口用于结束数字人智能直播任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopSmartLiveRequest 请求对象
+     * @return AsyncInvoker<StopSmartLiveRequest, StopSmartLiveResponse>
+     */
+    public AsyncInvoker<StopSmartLiveRequest, StopSmartLiveResponse> stopSmartLiveAsyncInvoker(
+        StopSmartLiveRequest request) {
+        return new AsyncInvoker<StopSmartLiveRequest, StopSmartLiveResponse>(request, MetaStudioMeta.stopSmartLive,
+            hcClient);
+    }
+
+    /**
+     * 创建智能直播间
+     *
+     * 该接口用于创建智能直播间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSmartLiveRoomRequest 请求对象
+     * @return CompletableFuture<CreateSmartLiveRoomResponse>
+     */
+    public CompletableFuture<CreateSmartLiveRoomResponse> createSmartLiveRoomAsync(CreateSmartLiveRoomRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createSmartLiveRoom);
+    }
+
+    /**
+     * 创建智能直播间
+     *
+     * 该接口用于创建智能直播间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSmartLiveRoomRequest 请求对象
+     * @return AsyncInvoker<CreateSmartLiveRoomRequest, CreateSmartLiveRoomResponse>
+     */
+    public AsyncInvoker<CreateSmartLiveRoomRequest, CreateSmartLiveRoomResponse> createSmartLiveRoomAsyncInvoker(
+        CreateSmartLiveRoomRequest request) {
+        return new AsyncInvoker<CreateSmartLiveRoomRequest, CreateSmartLiveRoomResponse>(request,
+            MetaStudioMeta.createSmartLiveRoom, hcClient);
+    }
+
+    /**
+     * 删除智能直播间
+     *
+     * 该接口用于删除智能直播间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSmartLiveRoomRequest 请求对象
+     * @return CompletableFuture<DeleteSmartLiveRoomResponse>
+     */
+    public CompletableFuture<DeleteSmartLiveRoomResponse> deleteSmartLiveRoomAsync(DeleteSmartLiveRoomRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteSmartLiveRoom);
+    }
+
+    /**
+     * 删除智能直播间
+     *
+     * 该接口用于删除智能直播间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSmartLiveRoomRequest 请求对象
+     * @return AsyncInvoker<DeleteSmartLiveRoomRequest, DeleteSmartLiveRoomResponse>
+     */
+    public AsyncInvoker<DeleteSmartLiveRoomRequest, DeleteSmartLiveRoomResponse> deleteSmartLiveRoomAsyncInvoker(
+        DeleteSmartLiveRoomRequest request) {
+        return new AsyncInvoker<DeleteSmartLiveRoomRequest, DeleteSmartLiveRoomResponse>(request,
+            MetaStudioMeta.deleteSmartLiveRoom, hcClient);
+    }
+
+    /**
+     * 查询智能直播间列表
+     *
+     * 该接口用于智能直播间列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmartLiveRoomsRequest 请求对象
+     * @return CompletableFuture<ListSmartLiveRoomsResponse>
+     */
+    public CompletableFuture<ListSmartLiveRoomsResponse> listSmartLiveRoomsAsync(ListSmartLiveRoomsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listSmartLiveRooms);
+    }
+
+    /**
+     * 查询智能直播间列表
+     *
+     * 该接口用于智能直播间列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmartLiveRoomsRequest 请求对象
+     * @return AsyncInvoker<ListSmartLiveRoomsRequest, ListSmartLiveRoomsResponse>
+     */
+    public AsyncInvoker<ListSmartLiveRoomsRequest, ListSmartLiveRoomsResponse> listSmartLiveRoomsAsyncInvoker(
+        ListSmartLiveRoomsRequest request) {
+        return new AsyncInvoker<ListSmartLiveRoomsRequest, ListSmartLiveRoomsResponse>(request,
+            MetaStudioMeta.listSmartLiveRooms, hcClient);
+    }
+
+    /**
+     * 查询智能直播剧本详情
+     *
+     * 该接口用于查询智能直播剧本详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSmartLiveRoomRequest 请求对象
+     * @return CompletableFuture<ShowSmartLiveRoomResponse>
+     */
+    public CompletableFuture<ShowSmartLiveRoomResponse> showSmartLiveRoomAsync(ShowSmartLiveRoomRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showSmartLiveRoom);
+    }
+
+    /**
+     * 查询智能直播剧本详情
+     *
+     * 该接口用于查询智能直播剧本详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSmartLiveRoomRequest 请求对象
+     * @return AsyncInvoker<ShowSmartLiveRoomRequest, ShowSmartLiveRoomResponse>
+     */
+    public AsyncInvoker<ShowSmartLiveRoomRequest, ShowSmartLiveRoomResponse> showSmartLiveRoomAsyncInvoker(
+        ShowSmartLiveRoomRequest request) {
+        return new AsyncInvoker<ShowSmartLiveRoomRequest, ShowSmartLiveRoomResponse>(request,
+            MetaStudioMeta.showSmartLiveRoom, hcClient);
+    }
+
+    /**
+     * 更新智能直播间信息
+     *
+     * 该接口用于智能直播间信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSmartLiveRoomRequest 请求对象
+     * @return CompletableFuture<UpdateSmartLiveRoomResponse>
+     */
+    public CompletableFuture<UpdateSmartLiveRoomResponse> updateSmartLiveRoomAsync(UpdateSmartLiveRoomRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateSmartLiveRoom);
+    }
+
+    /**
+     * 更新智能直播间信息
+     *
+     * 该接口用于智能直播间信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSmartLiveRoomRequest 请求对象
+     * @return AsyncInvoker<UpdateSmartLiveRoomRequest, UpdateSmartLiveRoomResponse>
+     */
+    public AsyncInvoker<UpdateSmartLiveRoomRequest, UpdateSmartLiveRoomResponse> updateSmartLiveRoomAsyncInvoker(
+        UpdateSmartLiveRoomRequest request) {
+        return new AsyncInvoker<UpdateSmartLiveRoomRequest, UpdateSmartLiveRoomResponse>(request,
+            MetaStudioMeta.updateSmartLiveRoom, hcClient);
     }
 
     /**
@@ -748,6 +1474,156 @@ public class MetaStudioAsyncClient {
         StopVideoMotionCaptureJobRequest request) {
         return new AsyncInvoker<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse>(request,
             MetaStudioMeta.stopVideoMotionCaptureJob, hcClient);
+    }
+
+    /**
+     * 创建视频制作剧本
+     *
+     * 该接口用于创建视频制作剧本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoScriptsRequest 请求对象
+     * @return CompletableFuture<CreateVideoScriptsResponse>
+     */
+    public CompletableFuture<CreateVideoScriptsResponse> createVideoScriptsAsync(CreateVideoScriptsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createVideoScripts);
+    }
+
+    /**
+     * 创建视频制作剧本
+     *
+     * 该接口用于创建视频制作剧本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVideoScriptsRequest 请求对象
+     * @return AsyncInvoker<CreateVideoScriptsRequest, CreateVideoScriptsResponse>
+     */
+    public AsyncInvoker<CreateVideoScriptsRequest, CreateVideoScriptsResponse> createVideoScriptsAsyncInvoker(
+        CreateVideoScriptsRequest request) {
+        return new AsyncInvoker<CreateVideoScriptsRequest, CreateVideoScriptsResponse>(request,
+            MetaStudioMeta.createVideoScripts, hcClient);
+    }
+
+    /**
+     * 删除视频制作剧本
+     *
+     * 该接口用于删除视频制作剧本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVideoScriptRequest 请求对象
+     * @return CompletableFuture<DeleteVideoScriptResponse>
+     */
+    public CompletableFuture<DeleteVideoScriptResponse> deleteVideoScriptAsync(DeleteVideoScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteVideoScript);
+    }
+
+    /**
+     * 删除视频制作剧本
+     *
+     * 该接口用于删除视频制作剧本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVideoScriptRequest 请求对象
+     * @return AsyncInvoker<DeleteVideoScriptRequest, DeleteVideoScriptResponse>
+     */
+    public AsyncInvoker<DeleteVideoScriptRequest, DeleteVideoScriptResponse> deleteVideoScriptAsyncInvoker(
+        DeleteVideoScriptRequest request) {
+        return new AsyncInvoker<DeleteVideoScriptRequest, DeleteVideoScriptResponse>(request,
+            MetaStudioMeta.deleteVideoScript, hcClient);
+    }
+
+    /**
+     * 查询视频制作剧本列表
+     *
+     * 该接口用于查询视频制作剧本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVideoScriptsRequest 请求对象
+     * @return CompletableFuture<ListVideoScriptsResponse>
+     */
+    public CompletableFuture<ListVideoScriptsResponse> listVideoScriptsAsync(ListVideoScriptsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listVideoScripts);
+    }
+
+    /**
+     * 查询视频制作剧本列表
+     *
+     * 该接口用于查询视频制作剧本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVideoScriptsRequest 请求对象
+     * @return AsyncInvoker<ListVideoScriptsRequest, ListVideoScriptsResponse>
+     */
+    public AsyncInvoker<ListVideoScriptsRequest, ListVideoScriptsResponse> listVideoScriptsAsyncInvoker(
+        ListVideoScriptsRequest request) {
+        return new AsyncInvoker<ListVideoScriptsRequest, ListVideoScriptsResponse>(request,
+            MetaStudioMeta.listVideoScripts, hcClient);
+    }
+
+    /**
+     * 查询视频制作剧本详情
+     *
+     * 该接口用于查询视频制作剧本详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoScriptRequest 请求对象
+     * @return CompletableFuture<ShowVideoScriptResponse>
+     */
+    public CompletableFuture<ShowVideoScriptResponse> showVideoScriptAsync(ShowVideoScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showVideoScript);
+    }
+
+    /**
+     * 查询视频制作剧本详情
+     *
+     * 该接口用于查询视频制作剧本详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVideoScriptRequest 请求对象
+     * @return AsyncInvoker<ShowVideoScriptRequest, ShowVideoScriptResponse>
+     */
+    public AsyncInvoker<ShowVideoScriptRequest, ShowVideoScriptResponse> showVideoScriptAsyncInvoker(
+        ShowVideoScriptRequest request) {
+        return new AsyncInvoker<ShowVideoScriptRequest, ShowVideoScriptResponse>(request,
+            MetaStudioMeta.showVideoScript, hcClient);
+    }
+
+    /**
+     * 更新视频制作剧本
+     *
+     * 该接口用于更新视频制作剧本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVideoScriptRequest 请求对象
+     * @return CompletableFuture<UpdateVideoScriptResponse>
+     */
+    public CompletableFuture<UpdateVideoScriptResponse> updateVideoScriptAsync(UpdateVideoScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateVideoScript);
+    }
+
+    /**
+     * 更新视频制作剧本
+     *
+     * 该接口用于更新视频制作剧本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVideoScriptRequest 请求对象
+     * @return AsyncInvoker<UpdateVideoScriptRequest, UpdateVideoScriptResponse>
+     */
+    public AsyncInvoker<UpdateVideoScriptRequest, UpdateVideoScriptResponse> updateVideoScriptAsyncInvoker(
+        UpdateVideoScriptRequest request) {
+        return new AsyncInvoker<UpdateVideoScriptRequest, UpdateVideoScriptResponse>(request,
+            MetaStudioMeta.updateVideoScript, hcClient);
     }
 
 }

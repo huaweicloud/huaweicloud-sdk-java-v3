@@ -157,10 +157,16 @@ import com.huaweicloud.sdk.lts.v2.model.QueryLtsStructLogParamsNew;
 import com.huaweicloud.sdk.lts.v2.model.RegisterDmsKafkaInstanceRequest;
 import com.huaweicloud.sdk.lts.v2.model.RegisterDmsKafkaInstanceRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.RegisterDmsKafkaInstanceResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowAdminConfigRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowAdminConfigResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRuleRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRuleResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowLogConvergeConfigRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowLogConvergeConfigResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowMemberGroupAndStreamRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowMemberGroupAndStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowNotificationTemplateRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowNotificationTemplateResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowStructTemplateRequest;
@@ -182,6 +188,8 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateHostGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateKeywordsAlarmRuleRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateKeywordsAlarmRuleRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.UpdateKeywordsAlarmRuleResponse;
+import com.huaweicloud.sdk.lts.v2.model.UpdateLogConvergeConfigRequest;
+import com.huaweicloud.sdk.lts.v2.model.UpdateLogConvergeConfigResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupParams;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateLogGroupResponse;
@@ -197,9 +205,12 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateStructConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateStructConfigResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateStructTemplateRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateStructTemplateResponse;
+import com.huaweicloud.sdk.lts.v2.model.UpdateSwitchRequest;
+import com.huaweicloud.sdk.lts.v2.model.UpdateSwitchResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateTransferRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateTransferRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.UpdateTransferResponse;
+import com.huaweicloud.sdk.lts.v2.model.UpdatelogConvergeConfig;
 
 import java.util.List;
 
@@ -2332,6 +2343,124 @@ public class LtsMeta {
             TypeCasts.uncheckedConversion(UpdateAomMappingRequest.class),
             f -> f.withMarshaller(UpdateAomMappingRulesRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAdminConfigRequest, ShowAdminConfigResponse> showAdminConfig =
+        genForshowAdminConfig();
+
+    private static HttpRequestDef<ShowAdminConfigRequest, ShowAdminConfigResponse> genForshowAdminConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowAdminConfigRequest, ShowAdminConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAdminConfigRequest.class, ShowAdminConfigResponse.class)
+                .withName("ShowAdminConfig")
+                .withUri("/v1/{project_id}/lts/log-converge-config/switch")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse> showLogConvergeConfig =
+        genForshowLogConvergeConfig();
+
+    private static HttpRequestDef<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse> genForshowLogConvergeConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowLogConvergeConfigRequest, ShowLogConvergeConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowLogConvergeConfigRequest.class, ShowLogConvergeConfigResponse.class)
+            .withName("ShowLogConvergeConfig")
+            .withUri("/v1/{project_id}/lts/log-converge-config/{member_account_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("member_account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogConvergeConfigRequest::getMemberAccountId, (req, v) -> {
+                req.setMemberAccountId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse> showMemberGroupAndStream =
+        genForshowMemberGroupAndStream();
+
+    private static HttpRequestDef<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse> genForshowMemberGroupAndStream() {
+        // basic
+        HttpRequestDef.Builder<ShowMemberGroupAndStreamRequest, ShowMemberGroupAndStreamResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowMemberGroupAndStreamRequest.class, ShowMemberGroupAndStreamResponse.class)
+                .withName("ShowMemberGroupAndStream")
+                .withUri("/v1/{project_id}/lts/{member_account_id}/all-streams")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("member_account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMemberGroupAndStreamRequest::getMemberAccountId, (req, v) -> {
+                req.setMemberAccountId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse> updateLogConvergeConfig =
+        genForupdateLogConvergeConfig();
+
+    private static HttpRequestDef<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse> genForupdateLogConvergeConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogConvergeConfigRequest, UpdateLogConvergeConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateLogConvergeConfigRequest.class, UpdateLogConvergeConfigResponse.class)
+            .withName("UpdateLogConvergeConfig")
+            .withUri("/v1/{project_id}/lts/log-converge-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<UpdatelogConvergeConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatelogConvergeConfig.class),
+            f -> f.withMarshaller(UpdateLogConvergeConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSwitchRequest, UpdateSwitchResponse> updateSwitch = genForupdateSwitch();
+
+    private static HttpRequestDef<UpdateSwitchRequest, UpdateSwitchResponse> genForupdateSwitch() {
+        // basic
+        HttpRequestDef.Builder<UpdateSwitchRequest, UpdateSwitchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSwitchRequest.class, UpdateSwitchResponse.class)
+                .withName("UpdateSwitch")
+                .withUri("/v1/{project_id}/lts/log-converge-config/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("log_converge_switch",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSwitchRequest::getLogConvergeSwitch, (req, v) -> {
+                req.setLogConvergeSwitch(v);
             }));
 
         // response

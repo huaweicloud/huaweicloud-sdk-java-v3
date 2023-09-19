@@ -40,7 +40,7 @@ public class RestartCloudPhoneServerRequestBody {
     }
 
     /**
-     * 云手机服务器id列表
+     * 云手机服务器id列表。
      * @return serverIds
      */
     public List<String> getServerIds() {

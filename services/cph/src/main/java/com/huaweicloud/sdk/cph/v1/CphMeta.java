@@ -17,15 +17,9 @@ import com.huaweicloud.sdk.cph.v1.model.BatchExportCloudPhoneDataResponse;
 import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataRequest;
 import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.BatchImportCloudPhoneDataResponse;
-import com.huaweicloud.sdk.cph.v1.model.BatchMigrateCloudPhoneRequest;
-import com.huaweicloud.sdk.cph.v1.model.BatchMigrateCloudPhoneRequestBody;
-import com.huaweicloud.sdk.cph.v1.model.BatchMigrateCloudPhoneResponse;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelRequest;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelResponse;
-import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneServerRequest;
-import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneServerRequestBody;
-import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneServerResponse;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerResponse;
@@ -258,31 +252,6 @@ public class CphMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchMigrateCloudPhoneRequest, BatchMigrateCloudPhoneResponse> batchMigrateCloudPhone =
-        genForbatchMigrateCloudPhone();
-
-    private static HttpRequestDef<BatchMigrateCloudPhoneRequest, BatchMigrateCloudPhoneResponse> genForbatchMigrateCloudPhone() {
-        // basic
-        HttpRequestDef.Builder<BatchMigrateCloudPhoneRequest, BatchMigrateCloudPhoneResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, BatchMigrateCloudPhoneRequest.class, BatchMigrateCloudPhoneResponse.class)
-            .withName("BatchMigrateCloudPhone")
-            .withUri("/v1/{project_id}/cloud-phone/phones/batch-migrate")
-            .withContentType("application/json");
-
-        // requests
-        builder.<BatchMigrateCloudPhoneRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchMigrateCloudPhoneRequestBody.class),
-            f -> f.withMarshaller(BatchMigrateCloudPhoneRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ChangeCloudPhoneServerModelRequest, ChangeCloudPhoneServerModelResponse> changeCloudPhoneServerModel =
         genForchangeCloudPhoneServerModel();
 
@@ -303,31 +272,6 @@ public class CphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeCloudPhoneServerModelRequestBody.class),
             f -> f.withMarshaller(ChangeCloudPhoneServerModelRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateCloudPhoneServerRequest, CreateCloudPhoneServerResponse> createCloudPhoneServer =
-        genForcreateCloudPhoneServer();
-
-    private static HttpRequestDef<CreateCloudPhoneServerRequest, CreateCloudPhoneServerResponse> genForcreateCloudPhoneServer() {
-        // basic
-        HttpRequestDef.Builder<CreateCloudPhoneServerRequest, CreateCloudPhoneServerResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateCloudPhoneServerRequest.class, CreateCloudPhoneServerResponse.class)
-            .withName("CreateCloudPhoneServer")
-            .withUri("/v1/{project_id}/cloud-phone/phones")
-            .withContentType("application/json");
-
-        // requests
-        builder.<CreateCloudPhoneServerRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateCloudPhoneServerRequestBody.class),
-            f -> f.withMarshaller(CreateCloudPhoneServerRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -12,25 +12,25 @@ import java.util.Objects;
 public class CreateRocketMqMigrationTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "task_id")
 
-    private String body;
+    private String taskId;
 
-    public CreateRocketMqMigrationTaskResponse withBody(String body) {
-        this.body = body;
+    public CreateRocketMqMigrationTaskResponse withTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 任务ID
+     * @return taskId
      */
-    public String getBody() {
-        return body;
+    public String getTaskId() {
+        return taskId;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class CreateRocketMqMigrationTaskResponse extends SdkResponse {
             return false;
         }
         CreateRocketMqMigrationTaskResponse that = (CreateRocketMqMigrationTaskResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(taskId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateRocketMqMigrationTaskResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

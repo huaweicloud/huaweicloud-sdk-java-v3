@@ -31,7 +31,7 @@ public class RestoreInfo {
     }
 
     /**
-     * 云手机ID
+     * 云手机ID。
      * @return phoneId
      */
     public String getPhoneId() {
@@ -48,7 +48,7 @@ public class RestoreInfo {
     }
 
     /**
-     * 导出数据存储的OBS桶名。 合法的OBS桶名，3-63个字符，只能由小写字母、数字、中划线（-）和小数点（.）组成
+     * 导出数据存储的OBS桶名。 合法的OBS桶名，3-63个字符，只能由小写字母、数字、中划线（-）和小数点（.）组成。
      * @return bucketName
      */
     public String getBucketName() {
@@ -65,7 +65,7 @@ public class RestoreInfo {
     }
 
     /**
-     * 导出数据存储的OBS路径名。 符合OBS的路径名规范，最大长度1024字符
+     * 导出数据存储的OBS路径名。 符合OBS的路径名规范，最大长度1024字符。
      * @return objectPath
      */
     public String getObjectPath() {

@@ -14,7 +14,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.ConsumerGroup;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupResponse;
@@ -95,6 +94,7 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ShowTopicStatusRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowTopicStatusResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowUserResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroup;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceReq;
@@ -358,13 +358,6 @@ public class RocketMQMeta {
             }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateRocketMqMigrationTaskResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }
@@ -1412,10 +1405,10 @@ public class RocketMQMeta {
             f -> f.withMarshaller(UpdateConsumerGroupRequest::getGroup, (req, v) -> {
                 req.setGroup(v);
             }));
-        builder.<ConsumerGroup>withRequestField("body",
+        builder.<UpdateConsumerGroup>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ConsumerGroup.class),
+            TypeCasts.uncheckedConversion(UpdateConsumerGroup.class),
             f -> f.withMarshaller(UpdateConsumerGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

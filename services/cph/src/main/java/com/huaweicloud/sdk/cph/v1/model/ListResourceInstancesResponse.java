@@ -46,7 +46,7 @@ public class ListResourceInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 资源列表
+     * 资源列表。
      * @return resources
      */
     public List<Resource> getResources() {
@@ -63,7 +63,7 @@ public class ListResourceInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 资源总数
+     * 资源总数。
      * minimum: 0
      * maximum: 8096
      * @return totalCount

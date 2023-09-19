@@ -35,6 +35,11 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     private Integer maxPartitions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_max_partitions")
+
+    private Integer topicMaxPartitions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
 
     private List<TopicEntity> topics = null;
@@ -107,6 +112,23 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         this.maxPartitions = maxPartitions;
     }
 
+    public ListInstanceTopicsResponse withTopicMaxPartitions(Integer topicMaxPartitions) {
+        this.topicMaxPartitions = topicMaxPartitions;
+        return this;
+    }
+
+    /**
+     * 单个topic最大占用分区数。
+     * @return topicMaxPartitions
+     */
+    public Integer getTopicMaxPartitions() {
+        return topicMaxPartitions;
+    }
+
+    public void setTopicMaxPartitions(Integer topicMaxPartitions) {
+        this.topicMaxPartitions = topicMaxPartitions;
+    }
+
     public ListInstanceTopicsResponse withTopics(List<TopicEntity> topics) {
         this.topics = topics;
         return this;
@@ -151,12 +173,14 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         ListInstanceTopicsResponse that = (ListInstanceTopicsResponse) obj;
         return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
             && Objects.equals(this.remainPartitions, that.remainPartitions)
-            && Objects.equals(this.maxPartitions, that.maxPartitions) && Objects.equals(this.topics, that.topics);
+            && Objects.equals(this.maxPartitions, that.maxPartitions)
+            && Objects.equals(this.topicMaxPartitions, that.topicMaxPartitions)
+            && Objects.equals(this.topics, that.topics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, size, remainPartitions, maxPartitions, topics);
+        return Objects.hash(total, size, remainPartitions, maxPartitions, topicMaxPartitions, topics);
     }
 
     @Override
@@ -167,6 +191,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    remainPartitions: ").append(toIndentedString(remainPartitions)).append("\n");
         sb.append("    maxPartitions: ").append(toIndentedString(maxPartitions)).append("\n");
+        sb.append("    topicMaxPartitions: ").append(toIndentedString(topicMaxPartitions)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("}");
         return sb.toString();

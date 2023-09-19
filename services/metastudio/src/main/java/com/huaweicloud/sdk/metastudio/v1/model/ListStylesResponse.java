@@ -24,6 +24,11 @@ public class ListStylesResponse extends SdkResponse {
 
     private List<StyleInfo> styles = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ListStylesResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -76,6 +81,25 @@ public class ListStylesResponse extends SdkResponse {
         this.styles = styles;
     }
 
+    public ListStylesResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,12 +109,13 @@ public class ListStylesResponse extends SdkResponse {
             return false;
         }
         ListStylesResponse that = (ListStylesResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.styles, that.styles);
+        return Objects.equals(this.count, that.count) && Objects.equals(this.styles, that.styles)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, styles);
+        return Objects.hash(count, styles, xRequestId);
     }
 
     @Override
@@ -99,6 +124,7 @@ public class ListStylesResponse extends SdkResponse {
         sb.append("class ListStylesResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    styles: ").append(toIndentedString(styles)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

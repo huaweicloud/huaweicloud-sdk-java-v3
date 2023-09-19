@@ -84,7 +84,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 云手机服务器名称  不超过60个字符，只支持英文字母、数字、汉字、下划线和中划线。  批量购买会在服务器名称后自动添加序号，比如设置此参数为server-1，那么创建的云手机服务器名称会自动按序增加数字后缀，比如为server-1-0001
+     * 云手机服务器名称，  不超过60个字符，只支持英文字母、数字、汉字、下划线和中划线。  批量购买会在服务器名称后自动添加序号，比如设置此参数为server-1，那么创建的云手机服务器名称会自动按序增加数字后缀，比如为server-1-0001。
      * @return serverName
      */
     public String getServerName() {
@@ -101,7 +101,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 云手机服务器规格，不超过64个字节
+     * 云手机服务器规格，不超过64个字节。
      * @return serverModelName
      */
     public String getServerModelName() {
@@ -118,7 +118,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 云手机规格，不超过64个字节
+     * 云手机规格，不超过64个字节。
      * @return phoneModelName
      */
     public String getPhoneModelName() {
@@ -135,7 +135,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 云手机镜像ID，不超过32个字节
+     * 云手机镜像ID，不超过32个字节。
      * @return imageId
      */
     public String getImageId() {
@@ -152,7 +152,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 购买的云手机服务器个数，最多可购买10台
+     * 购买的云手机服务器个数，最多可购买10台。
      * minimum: 0
      * maximum: 1024
      * @return count
@@ -171,7 +171,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 密钥对名称，不超过64个字节，用于云手机ADB登录
+     * 密钥对名称，不超过64个字节，用于云手机ADB登录。
      * @return keypairName
      */
     public String getKeypairName() {
@@ -204,7 +204,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 云手机启用的应用端口，云手机服务会做端口转发
+     * 云手机启用的应用端口，云手机服务会做端口转发。
      * @return ports
      */
     public List<Port> getPorts() {
@@ -249,7 +249,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 租户自定义的VPC ID，为待创建的云服务器所属的虚拟私有云（简称VPC），需要指定已创建VPC的ID，UUID格式
+     * 租户自定义的VPC ID，为待创建的云服务器所属的虚拟私有云（简称VPC），需要指定已创建VPC的ID，UUID格式。
      * @return tenantVpcId
      */
     public String getTenantVpcId() {
@@ -282,7 +282,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 租户自定义的网卡的结构体，为待创建的云服务器的网卡信息
+     * 租户自定义的网卡的结构体，为待创建的云服务器的网卡信息。
      * @return nics
      */
     public List<Nic> getNics() {
@@ -354,7 +354,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 待创建云服务器所在的可用区，需要指定可用区（AZ）的名称
+     * 待创建云服务器所在的可用区，需要指定可用区（AZ）的名称。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

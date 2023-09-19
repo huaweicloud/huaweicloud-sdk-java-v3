@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -102,7 +104,7 @@ public class CreateServers {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_tags")
 
-    private List<SystemTags> serverTags = null;
+    private Map<String, List<SystemTags>> serverTags = null;
 
     public CreateServers withImageRef(UUID imageRef) {
         this.imageRef = imageRef;
@@ -486,22 +488,22 @@ public class CreateServers {
         this.schedulerHints = schedulerHints;
     }
 
-    public CreateServers withServerTags(List<SystemTags> serverTags) {
+    public CreateServers withServerTags(Map<String, List<SystemTags>> serverTags) {
         this.serverTags = serverTags;
         return this;
     }
 
-    public CreateServers addServerTagsItem(SystemTags serverTagsItem) {
+    public CreateServers putServerTagsItem(String key, List<SystemTags> serverTagsItem) {
         if (this.serverTags == null) {
-            this.serverTags = new ArrayList<>();
+            this.serverTags = new HashMap<>();
         }
-        this.serverTags.add(serverTagsItem);
+        this.serverTags.put(key, serverTagsItem);
         return this;
     }
 
-    public CreateServers withServerTags(Consumer<List<SystemTags>> serverTagsSetter) {
+    public CreateServers withServerTags(Consumer<Map<String, List<SystemTags>>> serverTagsSetter) {
         if (this.serverTags == null) {
-            this.serverTags = new ArrayList<>();
+            this.serverTags = new HashMap<>();
         }
         serverTagsSetter.accept(this.serverTags);
         return this;
@@ -511,11 +513,11 @@ public class CreateServers {
      * 裸金属服务器的标签。详情请参见表 server_tags字段数据结构说明。 说明：创建裸金属服务器时，一台裸金属服务器最多可以添加10个标签。其中，__type_baremetal为系统内部标签，因此实际能添加的标签为9个。
      * @return serverTags
      */
-    public List<SystemTags> getServerTags() {
+    public Map<String, List<SystemTags>> getServerTags() {
         return serverTags;
     }
 
-    public void setServerTags(List<SystemTags> serverTags) {
+    public void setServerTags(Map<String, List<SystemTags>> serverTags) {
         this.serverTags = serverTags;
     }
 

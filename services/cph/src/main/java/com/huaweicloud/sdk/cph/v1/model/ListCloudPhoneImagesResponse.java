@@ -63,7 +63,7 @@ public class ListCloudPhoneImagesResponse extends SdkResponse {
     }
 
     /**
-     * 手机镜像信息
+     * 手机镜像信息。
      * @return phoneImages
      */
     public List<PhoneImage> getPhoneImages() {

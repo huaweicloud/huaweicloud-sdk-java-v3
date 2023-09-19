@@ -76,7 +76,7 @@ public class PhoneModel {
     }
 
     /**
-     * 云手机服务器的规格名称，不超过64个字节
+     * 云手机服务器的规格名称，不超过64个字节。
      * @return serverModelName
      */
     public String getServerModelName() {
@@ -93,7 +93,7 @@ public class PhoneModel {
     }
 
     /**
-     * 云手机的规格名称，不超过64个字节
+     * 云手机的规格名称，不超过64个字节。
      * @return phoneModelName
      */
     public String getPhoneModelName() {
@@ -110,7 +110,7 @@ public class PhoneModel {
     }
 
     /**
-     * 规格状态 - 1 表示正常使用状态 - 0 表示已下线状态 已下线的规格不可用来购买云手机服务器
+     * 规格状态。 - 1 表示正常使用状态 - 0 表示已下线状态 已下线的规格不可用来购买云手机服务器
      * minimum: -128
      * maximum: 128
      * @return status
@@ -129,7 +129,7 @@ public class PhoneModel {
     }
 
     /**
-     * CPU核数
+     * CPU核数。
      * minimum: -128
      * maximum: 128
      * @return cpu
@@ -148,7 +148,7 @@ public class PhoneModel {
     }
 
     /**
-     * 内存大小，单位：MB
+     * 内存大小，单位：MB。
      * minimum: 0
      * maximum: 8096
      * @return memory
@@ -167,7 +167,7 @@ public class PhoneModel {
     }
 
     /**
-     * 系统存储大小，单位：GB
+     * 系统存储大小，单位：GB。
      * minimum: 0
      * maximum: 8096
      * @return disk
@@ -186,7 +186,7 @@ public class PhoneModel {
     }
 
     /**
-     * 分辨率，不超过16个字节
+     * 分辨率，不超过16个字节。
      * @return resolution
      */
     public String getResolution() {
@@ -203,7 +203,7 @@ public class PhoneModel {
     }
 
     /**
-     * 扩展描述，不超过512个字节
+     * 扩展描述，不超过512个字节。
      * @return extendSpec
      */
     public String getExtendSpec() {
@@ -220,7 +220,7 @@ public class PhoneModel {
     }
 
     /**
-     * 规格名称，不超过64个字节
+     * 规格名称，不超过64个字节。
      * @return specCode
      */
     public String getSpecCode() {
@@ -237,7 +237,7 @@ public class PhoneModel {
     }
 
     /**
-     * 当前云手机规格包含的云手机个数
+     * 当前云手机规格包含的云手机个数。
      * minimum: 0
      * maximum: 1024
      * @return phoneCapacity
@@ -273,7 +273,7 @@ public class PhoneModel {
     }
 
     /**
-     * 产品类型 - 0：云手机 - 1：云手游
+     * 产品类型。 - 0：云手机 - 1：云手游
      * minimum: 0
      * maximum: 1024
      * @return productType

@@ -40,7 +40,7 @@ public class BatchExportCloudPhoneDataRequestBody {
     }
 
     /**
-     * 待导出数据的云手机信息
+     * 待导出数据的云手机信息。
      * @return storageInfos
      */
     public List<StorageInfo> getStorageInfos() {

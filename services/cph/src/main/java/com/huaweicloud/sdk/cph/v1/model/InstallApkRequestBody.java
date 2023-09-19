@@ -39,7 +39,7 @@ public class InstallApkRequestBody {
     }
 
     /**
-     * 安装应用固定填写install。
+     * 安装单apk场景填写install，多apk场景填写install-multiple。
      * @return command
      */
     public String getCommand() {

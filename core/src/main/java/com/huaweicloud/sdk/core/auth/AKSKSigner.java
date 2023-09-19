@@ -43,7 +43,6 @@ import java.util.Objects;
 import java.util.SimpleTimeZone;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 /**
@@ -53,7 +52,6 @@ import java.util.stream.Collectors;
  */
 public class AKSKSigner implements IAKSKSigner {
     private static volatile AKSKSigner instance;
-    protected static final Map<String, ISigningKey> SIGNING_KEY_CACHE = new ConcurrentHashMap<>();
     protected AbstractHasher hasher = new SHA256Hasher();
     protected String algorithm = Constants.SDK_HMAC_SHA256;
     protected String contentHeader = Constants.X_SDK_CONTENT_SHA256;
@@ -147,14 +145,7 @@ public class AKSKSigner implements IAKSKSigner {
     }
 
     public <T extends AbstractCredentials<T>> ISigningKey getSigningKey(T credentials) {
-        String key = algorithm + credentials.getAk();
-        if (SIGNING_KEY_CACHE.containsKey(key)) {
-            return SIGNING_KEY_CACHE.get(key);
-        }
-
-        HmacSigningKey signingKey = new HmacSigningKey(hasher, credentials.getSk().getBytes(StandardCharsets.UTF_8));
-        SIGNING_KEY_CACHE.put(key, signingKey);
-        return signingKey;
+        return new HmacSigningKey(hasher, credentials.getSk().getBytes(StandardCharsets.UTF_8));
     }
 
     protected String extractTimeStamp(HttpRequest request, Map<String, String> authenticationHeaders) {

@@ -41,7 +41,7 @@ public class UpdateSqlAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
 
-    private Object frequency;
+    private Frequency frequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_expression")
@@ -235,7 +235,7 @@ public class UpdateSqlAlarmRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notification_save_rule")
 
-    private Object notificationSaveRule;
+    private SqlNotificationSaveRule notificationSaveRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_condition_count")
@@ -341,20 +341,29 @@ public class UpdateSqlAlarmRuleRequestBody {
         this.sqlRequests = sqlRequests;
     }
 
-    public UpdateSqlAlarmRuleRequestBody withFrequency(Object frequency) {
+    public UpdateSqlAlarmRuleRequestBody withFrequency(Frequency frequency) {
         this.frequency = frequency;
         return this;
     }
 
+    public UpdateSqlAlarmRuleRequestBody withFrequency(Consumer<Frequency> frequencySetter) {
+        if (this.frequency == null) {
+            this.frequency = new Frequency();
+            frequencySetter.accept(this.frequency);
+        }
+
+        return this;
+    }
+
     /**
-     * 告警统计周期
+     * Get frequency
      * @return frequency
      */
-    public Object getFrequency() {
+    public Frequency getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(Object frequency) {
+    public void setFrequency(Frequency frequency) {
         this.frequency = frequency;
     }
 
@@ -445,20 +454,30 @@ public class UpdateSqlAlarmRuleRequestBody {
         this.domainId = domainId;
     }
 
-    public UpdateSqlAlarmRuleRequestBody withNotificationSaveRule(Object notificationSaveRule) {
+    public UpdateSqlAlarmRuleRequestBody withNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
         this.notificationSaveRule = notificationSaveRule;
         return this;
     }
 
+    public UpdateSqlAlarmRuleRequestBody withNotificationSaveRule(
+        Consumer<SqlNotificationSaveRule> notificationSaveRuleSetter) {
+        if (this.notificationSaveRule == null) {
+            this.notificationSaveRule = new SqlNotificationSaveRule();
+            notificationSaveRuleSetter.accept(this.notificationSaveRule);
+        }
+
+        return this;
+    }
+
     /**
-     * 通知主题
+     * Get notificationSaveRule
      * @return notificationSaveRule
      */
-    public Object getNotificationSaveRule() {
+    public SqlNotificationSaveRule getNotificationSaveRule() {
         return notificationSaveRule;
     }
 
-    public void setNotificationSaveRule(Object notificationSaveRule) {
+    public void setNotificationSaveRule(SqlNotificationSaveRule notificationSaveRule) {
         this.notificationSaveRule = notificationSaveRule;
     }
 
