@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 账户类型 * &#39;USER&#39; - 用户 * &#39;USER_GROUP&#39; - 用户组
+ * 用户类型 * &#39;USER&#39; - 用户 * &#39;USER_GROUP&#39; - 用户组
  */
 public class AccountTypeEnum {
 

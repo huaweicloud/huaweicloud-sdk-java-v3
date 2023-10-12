@@ -33,6 +33,7 @@ import com.huaweicloud.sdk.dws.v2.model.CheckClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameResponse;
 import com.huaweicloud.sdk.dws.v2.model.ClusterCheckRequestBody;
+import com.huaweicloud.sdk.dws.v2.model.ClusterDescriptionInfo;
 import com.huaweicloud.sdk.dws.v2.model.ClusterShrinkReq;
 import com.huaweicloud.sdk.dws.v2.model.ConfigurationParameterValues;
 import com.huaweicloud.sdk.dws.v2.model.CopySnapshotRequest;
@@ -63,6 +64,7 @@ import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateWorkloadPlanResponse;
+import com.huaweicloud.sdk.dws.v2.model.DatabaseOmUserActionReq;
 import com.huaweicloud.sdk.dws.v2.model.DatabasePermissionReq;
 import com.huaweicloud.sdk.dws.v2.model.DatabaseUserInfoReq;
 import com.huaweicloud.sdk.dws.v2.model.DeleteAlarmSubRequest;
@@ -91,6 +93,8 @@ import com.huaweicloud.sdk.dws.v2.model.DisassociateElbResponse;
 import com.huaweicloud.sdk.dws.v2.model.DiskResp;
 import com.huaweicloud.sdk.dws.v2.model.EventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.EventSubUpdateRequest;
+import com.huaweicloud.sdk.dws.v2.model.ExecuteDatabaseOmUserActionRequest;
+import com.huaweicloud.sdk.dws.v2.model.ExecuteDatabaseOmUserActionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteRedistributionClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteRedistributionClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExpandInstanceStorage;
@@ -132,6 +136,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListClusterWorkloadRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterWorkloadResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClustersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClustersResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListConfigurationsAuditRecordsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListConfigurationsAuditRecordsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDataSourceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDataSourceResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUsersRequest;
@@ -199,14 +205,22 @@ import com.huaweicloud.sdk.dws.v2.model.RestoreClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.RestoreClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterResponse;
+import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoRequest;
+import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseOmUserStatusRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseOmUserStatusResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseUserRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseUserResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterDetailRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterDetailResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryRequest;
@@ -1252,6 +1266,41 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse> executeDatabaseOmUserAction =
+        genForexecuteDatabaseOmUserAction();
+
+    private static HttpRequestDef<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse> genForexecuteDatabaseOmUserAction() {
+        // basic
+        HttpRequestDef.Builder<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteDatabaseOmUserActionRequest.class,
+                    ExecuteDatabaseOmUserActionResponse.class)
+                .withName("ExecuteDatabaseOmUserAction")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/om-user/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteDatabaseOmUserActionRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<DatabaseOmUserActionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DatabaseOmUserActionReq.class),
+            f -> f.withMarshaller(ExecuteDatabaseOmUserActionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExecuteRedistributionClusterRequest, ExecuteRedistributionClusterResponse> executeRedistributionCluster =
         genForexecuteRedistributionCluster();
 
@@ -1835,6 +1884,69 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse> listConfigurationsAuditRecords =
+        genForlistConfigurationsAuditRecords();
+
+    private static HttpRequestDef<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse> genForlistConfigurationsAuditRecords() {
+        // basic
+        HttpRequestDef.Builder<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListConfigurationsAuditRecordsRequest.class,
+                    ListConfigurationsAuditRecordsResponse.class)
+                .withName("ListConfigurationsAuditRecords")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/configurations/audit-records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationsAuditRecordsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Long>withRequestField("action_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListConfigurationsAuditRecordsRequest::getActionTime, (req, v) -> {
+                req.setActionTime(v);
+            }));
+        builder.<String>withRequestField("filter_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationsAuditRecordsRequest::getFilterBy, (req, v) -> {
+                req.setFilterBy(v);
+            }));
+        builder.<String>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationsAuditRecordsRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigurationsAuditRecordsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigurationsAuditRecordsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
 
         // response
 
@@ -2728,6 +2840,111 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse> saveClusterDescriptionInfo =
+        genForsaveClusterDescriptionInfo();
+
+    private static HttpRequestDef<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse> genForsaveClusterDescriptionInfo() {
+        // basic
+        HttpRequestDef.Builder<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SaveClusterDescriptionInfoRequest.class,
+                    SaveClusterDescriptionInfoResponse.class)
+                .withName("SaveClusterDescriptionInfo")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/description")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveClusterDescriptionInfoRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveClusterDescriptionInfoRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            }));
+        builder.<ClusterDescriptionInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClusterDescriptionInfo.class),
+            f -> f.withMarshaller(SaveClusterDescriptionInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse> showClusterRedistribution =
+        genForshowClusterRedistribution();
+
+    private static HttpRequestDef<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse> genForshowClusterRedistribution() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowClusterRedistributionRequest.class,
+                    ShowClusterRedistributionResponse.class)
+                .withName("ShowClusterRedistribution")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/redistribution")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterRedistributionRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowClusterRedistributionRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowClusterRedistributionRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("db_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterRedistributionRequest::getDbName, (req, v) -> {
+                req.setDbName(v);
+            }));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterRedistributionRequest::getTableName, (req, v) -> {
+                req.setTableName(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterRedistributionRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse> showDatabaseAuthority =
         genForshowDatabaseAuthority();
 
@@ -2781,6 +2998,32 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDatabaseAuthorityRequest::getTable, (req, v) -> {
                 req.setTable(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse> showDatabaseOmUserStatus =
+        genForshowDatabaseOmUserStatus();
+
+    private static HttpRequestDef<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse> genForshowDatabaseOmUserStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowDatabaseOmUserStatusRequest.class, ShowDatabaseOmUserStatusResponse.class)
+                .withName("ShowDatabaseOmUserStatus")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/db-manager/om-user/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseOmUserStatusRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
             }));
 
         // response
@@ -2863,6 +3106,30 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDisasterProgressRequest::getDisasterRecoveryId, (req, v) -> {
                 req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForshowInstance();
+
+    private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForshowInstance() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceRequest, ShowInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceRequest.class, ShowInstanceResponse.class)
+                .withName("ShowInstance")
+                .withUri("/v2/{project_id}/instances/{instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response

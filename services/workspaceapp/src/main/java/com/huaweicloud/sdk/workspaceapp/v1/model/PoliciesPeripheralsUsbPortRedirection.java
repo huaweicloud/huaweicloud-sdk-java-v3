@@ -19,7 +19,7 @@ public class PoliciesPeripheralsUsbPortRedirection {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
-    private PoliciesPeripheralsUsbPortRedirectionOptions options;
+    private UsbPortRedirectionOptions options;
 
     public PoliciesPeripheralsUsbPortRedirection withUsbEnable(Boolean usbEnable) {
         this.usbEnable = usbEnable;
@@ -38,15 +38,14 @@ public class PoliciesPeripheralsUsbPortRedirection {
         this.usbEnable = usbEnable;
     }
 
-    public PoliciesPeripheralsUsbPortRedirection withOptions(PoliciesPeripheralsUsbPortRedirectionOptions options) {
+    public PoliciesPeripheralsUsbPortRedirection withOptions(UsbPortRedirectionOptions options) {
         this.options = options;
         return this;
     }
 
-    public PoliciesPeripheralsUsbPortRedirection withOptions(
-        Consumer<PoliciesPeripheralsUsbPortRedirectionOptions> optionsSetter) {
+    public PoliciesPeripheralsUsbPortRedirection withOptions(Consumer<UsbPortRedirectionOptions> optionsSetter) {
         if (this.options == null) {
-            this.options = new PoliciesPeripheralsUsbPortRedirectionOptions();
+            this.options = new UsbPortRedirectionOptions();
             optionsSetter.accept(this.options);
         }
 
@@ -57,11 +56,11 @@ public class PoliciesPeripheralsUsbPortRedirection {
      * Get options
      * @return options
      */
-    public PoliciesPeripheralsUsbPortRedirectionOptions getOptions() {
+    public UsbPortRedirectionOptions getOptions() {
         return options;
     }
 
-    public void setOptions(PoliciesPeripheralsUsbPortRedirectionOptions options) {
+    public void setOptions(UsbPortRedirectionOptions options) {
         this.options = options;
     }
 

@@ -15,6 +15,16 @@ public class RoutePolicy {
 
     private Integer maxSession;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_threshold")
+
+    private Integer cpuThreshold;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mem_threshold")
+
+    private Integer memThreshold;
+
     public RoutePolicy withMaxSession(Integer maxSession) {
         this.maxSession = maxSession;
         return this;
@@ -34,6 +44,44 @@ public class RoutePolicy {
         this.maxSession = maxSession;
     }
 
+    public RoutePolicy withCpuThreshold(Integer cpuThreshold) {
+        this.cpuThreshold = cpuThreshold;
+        return this;
+    }
+
+    /**
+     * cpu使用率阈值，单位为%
+     * minimum: 1
+     * maximum: 100
+     * @return cpuThreshold
+     */
+    public Integer getCpuThreshold() {
+        return cpuThreshold;
+    }
+
+    public void setCpuThreshold(Integer cpuThreshold) {
+        this.cpuThreshold = cpuThreshold;
+    }
+
+    public RoutePolicy withMemThreshold(Integer memThreshold) {
+        this.memThreshold = memThreshold;
+        return this;
+    }
+
+    /**
+     * 内存使用率阈值，单位为%
+     * minimum: 1
+     * maximum: 100
+     * @return memThreshold
+     */
+    public Integer getMemThreshold() {
+        return memThreshold;
+    }
+
+    public void setMemThreshold(Integer memThreshold) {
+        this.memThreshold = memThreshold;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -43,12 +91,13 @@ public class RoutePolicy {
             return false;
         }
         RoutePolicy that = (RoutePolicy) obj;
-        return Objects.equals(this.maxSession, that.maxSession);
+        return Objects.equals(this.maxSession, that.maxSession) && Objects.equals(this.cpuThreshold, that.cpuThreshold)
+            && Objects.equals(this.memThreshold, that.memThreshold);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maxSession);
+        return Objects.hash(maxSession, cpuThreshold, memThreshold);
     }
 
     @Override
@@ -56,6 +105,8 @@ public class RoutePolicy {
         StringBuilder sb = new StringBuilder();
         sb.append("class RoutePolicy {\n");
         sb.append("    maxSession: ").append(toIndentedString(maxSession)).append("\n");
+        sb.append("    cpuThreshold: ").append(toIndentedString(cpuThreshold)).append("\n");
+        sb.append("    memThreshold: ").append(toIndentedString(memThreshold)).append("\n");
         sb.append("}");
         return sb.toString();
     }

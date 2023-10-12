@@ -14,6 +14,10 @@ import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateSwitchoverTestRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayResponse;
@@ -26,6 +30,8 @@ import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceRequest;
@@ -36,6 +42,8 @@ import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesResponse;
@@ -47,18 +55,25 @@ import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceResponse;
+import com.huaweicloud.sdk.dc.v3.model.SwitchoverTestRequest;
+import com.huaweicloud.sdk.dc.v3.model.SwitchoverTestResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualGatewayRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualGatewayResponse;
@@ -327,20 +342,6 @@ public class DcMeta {
             f -> f.withMarshaller(ShowDirectConnectRequest::getDirectConnectId, (req, v) -> {
                 req.setDirectConnectId(v);
             }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowDirectConnectRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDirectConnectRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            }));
         builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -481,6 +482,30 @@ public class DcMeta {
             TypeCasts.uncheckedConversion(UpdateHostedDirectConnectRequestBody.class),
             f -> f.withMarshaller(UpdateHostedDirectConnectRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
+                .withName("ShowQuotas")
+                .withUri("/v3/{project_id}/dcaas/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getType, (req, v) -> {
+                req.setType(v);
             }));
 
         // response
@@ -813,6 +838,13 @@ public class DcMeta {
             f -> f.withMarshaller(ListVirtualGatewaysRequest::getId, (req, v) -> {
                 req.setId(v);
             }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirtualGatewaysRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<List<String>>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -890,6 +922,31 @@ public class DcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateVifPeerRequest, CreateVifPeerResponse> createVifPeer =
+        genForcreateVifPeer();
+
+    private static HttpRequestDef<CreateVifPeerRequest, CreateVifPeerResponse> genForcreateVifPeer() {
+        // basic
+        HttpRequestDef.Builder<CreateVifPeerRequest, CreateVifPeerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVifPeerRequest.class, CreateVifPeerResponse.class)
+                .withName("CreateVifPeer")
+                .withUri("/v3/{project_id}/dcaas/vif-peers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateVifPeerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateVifPeerRequestBody.class),
+            f -> f.withMarshaller(CreateVifPeerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateVirtualInterfaceRequest, CreateVirtualInterfaceResponse> createVirtualInterface =
         genForcreateVirtualInterface();
 
@@ -915,6 +972,31 @@ public class DcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteVifPeerRequest, DeleteVifPeerResponse> deleteVifPeer =
+        genFordeleteVifPeer();
+
+    private static HttpRequestDef<DeleteVifPeerRequest, DeleteVifPeerResponse> genFordeleteVifPeer() {
+        // basic
+        HttpRequestDef.Builder<DeleteVifPeerRequest, DeleteVifPeerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteVifPeerRequest.class, DeleteVifPeerResponse.class)
+                .withName("DeleteVifPeer")
+                .withUri("/v3/{project_id}/dcaas/vif-peers/{vif_peer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vif_peer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVifPeerRequest::getVifPeerId, (req, v) -> {
+                req.setVifPeerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse> deleteVirtualInterface =
         genFordeleteVirtualInterface();
 
@@ -933,6 +1015,69 @@ public class DcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVirtualInterfaceRequest::getVirtualInterfaceId, (req, v) -> {
                 req.setVirtualInterfaceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> listSwitchoverTestRecords =
+        genForlistSwitchoverTestRecords();
+
+    private static HttpRequestDef<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> genForlistSwitchoverTestRecords() {
+        // basic
+        HttpRequestDef.Builder<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSwitchoverTestRecordsRequest.class,
+                    ListSwitchoverTestRecordsResponse.class)
+                .withName("ListSwitchoverTestRecords")
+                .withUri("/v3/{project_id}/dcaas/switchover-test")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getFields, (req, v) -> {
+                req.setFields(v);
+            }));
+        builder.<List<ListSwitchoverTestRecordsRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<List<String>>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSwitchoverTestRecordsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
             }));
 
         // response
@@ -1053,6 +1198,63 @@ public class DcMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowVirtualInterfaceRequest::getFields, (req, v) -> {
                 req.setFields(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchoverTestRequest, SwitchoverTestResponse> switchoverTest =
+        genForswitchoverTest();
+
+    private static HttpRequestDef<SwitchoverTestRequest, SwitchoverTestResponse> genForswitchoverTest() {
+        // basic
+        HttpRequestDef.Builder<SwitchoverTestRequest, SwitchoverTestResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchoverTestRequest.class, SwitchoverTestResponse.class)
+                .withName("SwitchoverTest")
+                .withUri("/v3/{project_id}/dcaas/switchover-test")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateSwitchoverTestRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSwitchoverTestRequestBody.class),
+            f -> f.withMarshaller(SwitchoverTestRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVifPeerRequest, UpdateVifPeerResponse> updateVifPeer =
+        genForupdateVifPeer();
+
+    private static HttpRequestDef<UpdateVifPeerRequest, UpdateVifPeerResponse> genForupdateVifPeer() {
+        // basic
+        HttpRequestDef.Builder<UpdateVifPeerRequest, UpdateVifPeerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateVifPeerRequest.class, UpdateVifPeerResponse.class)
+                .withName("UpdateVifPeer")
+                .withUri("/v3/{project_id}/dcaas/vif-peers/{vif_peer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vif_peer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVifPeerRequest::getVifPeerId, (req, v) -> {
+                req.setVifPeerId(v);
+            }));
+        builder.<UpdateVifPeerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateVifPeerRequestBody.class),
+            f -> f.withMarshaller(UpdateVifPeerRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

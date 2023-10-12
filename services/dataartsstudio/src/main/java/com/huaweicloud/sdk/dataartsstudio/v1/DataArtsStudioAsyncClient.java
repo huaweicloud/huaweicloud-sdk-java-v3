@@ -65,6 +65,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
@@ -343,6 +347,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowGlossaryListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowGlossaryListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogRequest;
@@ -383,6 +391,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowWorkSpaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowWorkspaceDetailByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowWorkspaceDetailByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.StopFactorySupplementDataInstanceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.StopFactorySupplementDataInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateAppRequest;
@@ -1276,6 +1286,67 @@ public class DataArtsStudioAsyncClient {
         CreateDirectoryRequest request) {
         return new AsyncInvoker<CreateDirectoryRequest, CreateDirectoryResponse>(request,
             DataArtsStudioMeta.createDirectory, hcClient);
+    }
+
+    /**
+     * 创建环境变量
+     *
+     * 创建环境变量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFactoryEnvRequest 请求对象
+     * @return CompletableFuture<CreateFactoryEnvResponse>
+     */
+    public CompletableFuture<CreateFactoryEnvResponse> createFactoryEnvAsync(CreateFactoryEnvRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createFactoryEnv);
+    }
+
+    /**
+     * 创建环境变量
+     *
+     * 创建环境变量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFactoryEnvRequest 请求对象
+     * @return AsyncInvoker<CreateFactoryEnvRequest, CreateFactoryEnvResponse>
+     */
+    public AsyncInvoker<CreateFactoryEnvRequest, CreateFactoryEnvResponse> createFactoryEnvAsyncInvoker(
+        CreateFactoryEnvRequest request) {
+        return new AsyncInvoker<CreateFactoryEnvRequest, CreateFactoryEnvResponse>(request,
+            DataArtsStudioMeta.createFactoryEnv, hcClient);
+    }
+
+    /**
+     * 创建补数据实例的接口
+     *
+     * 创建一个补数据实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFactorySupplementDataInstanceRequest 请求对象
+     * @return CompletableFuture<CreateFactorySupplementDataInstanceResponse>
+     */
+    public CompletableFuture<CreateFactorySupplementDataInstanceResponse> createFactorySupplementDataInstanceAsync(
+        CreateFactorySupplementDataInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createFactorySupplementDataInstance);
+    }
+
+    /**
+     * 创建补数据实例的接口
+     *
+     * 创建一个补数据实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFactorySupplementDataInstanceRequest 请求对象
+     * @return AsyncInvoker<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse>
+     */
+    public AsyncInvoker<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> createFactorySupplementDataInstanceAsyncInvoker(
+        CreateFactorySupplementDataInstanceRequest request) {
+        return new AsyncInvoker<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse>(
+            request, DataArtsStudioMeta.createFactorySupplementDataInstance, hcClient);
     }
 
     /**
@@ -5163,6 +5234,67 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 查询环境变量信息
+     *
+     * 查询环境变量信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFactoryEnvRequest 请求对象
+     * @return CompletableFuture<ShowFactoryEnvResponse>
+     */
+    public CompletableFuture<ShowFactoryEnvResponse> showFactoryEnvAsync(ShowFactoryEnvRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showFactoryEnv);
+    }
+
+    /**
+     * 查询环境变量信息
+     *
+     * 查询环境变量信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFactoryEnvRequest 请求对象
+     * @return AsyncInvoker<ShowFactoryEnvRequest, ShowFactoryEnvResponse>
+     */
+    public AsyncInvoker<ShowFactoryEnvRequest, ShowFactoryEnvResponse> showFactoryEnvAsyncInvoker(
+        ShowFactoryEnvRequest request) {
+        return new AsyncInvoker<ShowFactoryEnvRequest, ShowFactoryEnvResponse>(request,
+            DataArtsStudioMeta.showFactoryEnv, hcClient);
+    }
+
+    /**
+     * 查询所有的补数据实例
+     *
+     * 查询所有的补数据实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFactorySupplementDataRequest 请求对象
+     * @return CompletableFuture<ShowFactorySupplementDataResponse>
+     */
+    public CompletableFuture<ShowFactorySupplementDataResponse> showFactorySupplementDataAsync(
+        ShowFactorySupplementDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showFactorySupplementData);
+    }
+
+    /**
+     * 查询所有的补数据实例
+     *
+     * 查询所有的补数据实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFactorySupplementDataRequest 请求对象
+     * @return AsyncInvoker<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse>
+     */
+    public AsyncInvoker<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse> showFactorySupplementDataAsyncInvoker(
+        ShowFactorySupplementDataRequest request) {
+        return new AsyncInvoker<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse>(request,
+            DataArtsStudioMeta.showFactorySupplementData, hcClient);
+    }
+
+    /**
      * 查询标签列表
      *
      * 查询标签列表
@@ -5764,6 +5896,37 @@ public class DataArtsStudioAsyncClient {
         ShowWorkspaceDetailByIdRequest request) {
         return new AsyncInvoker<ShowWorkspaceDetailByIdRequest, ShowWorkspaceDetailByIdResponse>(request,
             DataArtsStudioMeta.showWorkspaceDetailById, hcClient);
+    }
+
+    /**
+     * 停止一个补数据实例
+     *
+     * 停止一个补数据实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopFactorySupplementDataInstanceRequest 请求对象
+     * @return CompletableFuture<StopFactorySupplementDataInstanceResponse>
+     */
+    public CompletableFuture<StopFactorySupplementDataInstanceResponse> stopFactorySupplementDataInstanceAsync(
+        StopFactorySupplementDataInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.stopFactorySupplementDataInstance);
+    }
+
+    /**
+     * 停止一个补数据实例
+     *
+     * 停止一个补数据实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopFactorySupplementDataInstanceRequest 请求对象
+     * @return AsyncInvoker<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse>
+     */
+    public AsyncInvoker<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse> stopFactorySupplementDataInstanceAsyncInvoker(
+        StopFactorySupplementDataInstanceRequest request) {
+        return new AsyncInvoker<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse>(
+            request, DataArtsStudioMeta.stopFactorySupplementDataInstance, hcClient);
     }
 
     /**

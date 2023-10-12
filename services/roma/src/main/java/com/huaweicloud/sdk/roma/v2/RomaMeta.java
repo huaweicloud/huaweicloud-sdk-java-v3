@@ -27,6 +27,7 @@ import com.huaweicloud.sdk.roma.v2.model.ApiDebugInfo;
 import com.huaweicloud.sdk.roma.v2.model.ApiGroupBase;
 import com.huaweicloud.sdk.roma.v2.model.ApiGroupCheck;
 import com.huaweicloud.sdk.roma.v2.model.ApiGroupCreate;
+import com.huaweicloud.sdk.roma.v2.model.ApiOperPluginInfo;
 import com.huaweicloud.sdk.roma.v2.model.ApiVersion;
 import com.huaweicloud.sdk.roma.v2.model.AppAclCreate;
 import com.huaweicloud.sdk.roma.v2.model.AppCodeCreate;
@@ -45,11 +46,21 @@ import com.huaweicloud.sdk.roma.v2.model.AssociateRequestThrottlingPolicyV2Reque
 import com.huaweicloud.sdk.roma.v2.model.AssociateRequestThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.roma.v2.model.AssociateSignatureKeyV2Request;
 import com.huaweicloud.sdk.roma.v2.model.AssociateSignatureKeyV2Response;
+import com.huaweicloud.sdk.roma.v2.model.AttachApiToPluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.AttachApiToPluginResponse;
+import com.huaweicloud.sdk.roma.v2.model.AttachOrDetachCertsReqBody;
+import com.huaweicloud.sdk.roma.v2.model.AttachOrDetachDomainsReqBody;
+import com.huaweicloud.sdk.roma.v2.model.AttachPluginToApiRequest;
+import com.huaweicloud.sdk.roma.v2.model.AttachPluginToApiResponse;
 import com.huaweicloud.sdk.roma.v2.model.AuthorizerCreate;
 import com.huaweicloud.sdk.roma.v2.model.BaseSignature;
 import com.huaweicloud.sdk.roma.v2.model.BatchAddDeviceToGroupRequest;
 import com.huaweicloud.sdk.roma.v2.model.BatchAddDeviceToGroupRequestBody;
 import com.huaweicloud.sdk.roma.v2.model.BatchAddDeviceToGroupResponse;
+import com.huaweicloud.sdk.roma.v2.model.BatchAssociateCertsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.BatchAssociateCertsV2Response;
+import com.huaweicloud.sdk.roma.v2.model.BatchAssociateDomainsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.BatchAssociateDomainsV2Response;
 import com.huaweicloud.sdk.roma.v2.model.BatchDeleteAclV2Request;
 import com.huaweicloud.sdk.roma.v2.model.BatchDeleteAclV2Response;
 import com.huaweicloud.sdk.roma.v2.model.BatchDeleteApiAclBindingV2Request;
@@ -65,6 +76,10 @@ import com.huaweicloud.sdk.roma.v2.model.BatchDeleteRulesRequestBody;
 import com.huaweicloud.sdk.roma.v2.model.BatchDeleteRulesResponse;
 import com.huaweicloud.sdk.roma.v2.model.BatchDisableMembersRequest;
 import com.huaweicloud.sdk.roma.v2.model.BatchDisableMembersResponse;
+import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateCertsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateCertsV2Response;
+import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateDomainsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateDomainsV2Response;
 import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateThrottlingPolicyV2Request;
 import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.roma.v2.model.BatchEnableMembersRequest;
@@ -79,6 +94,7 @@ import com.huaweicloud.sdk.roma.v2.model.BatchStartOrStopTasksResponse;
 import com.huaweicloud.sdk.roma.v2.model.CancelingAuthorizationV2Request;
 import com.huaweicloud.sdk.roma.v2.model.CancelingAuthorizationV2Response;
 import com.huaweicloud.sdk.roma.v2.model.CertForm;
+import com.huaweicloud.sdk.roma.v2.model.CertificateForm;
 import com.huaweicloud.sdk.roma.v2.model.ChangeApiVersionV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ChangeApiVersionV2Response;
 import com.huaweicloud.sdk.roma.v2.model.CheckApiGroupsV2Request;
@@ -125,6 +141,8 @@ import com.huaweicloud.sdk.roma.v2.model.CreateAppQuotaResponse;
 import com.huaweicloud.sdk.roma.v2.model.CreateAppReq;
 import com.huaweicloud.sdk.roma.v2.model.CreateAuthorizingAppsV2Request;
 import com.huaweicloud.sdk.roma.v2.model.CreateAuthorizingAppsV2Response;
+import com.huaweicloud.sdk.roma.v2.model.CreateCertificateV2Request;
+import com.huaweicloud.sdk.roma.v2.model.CreateCertificateV2Response;
 import com.huaweicloud.sdk.roma.v2.model.CreateCommandRequest;
 import com.huaweicloud.sdk.roma.v2.model.CreateCommandRequestBody;
 import com.huaweicloud.sdk.roma.v2.model.CreateCommandResponse;
@@ -173,6 +191,8 @@ import com.huaweicloud.sdk.roma.v2.model.CreateNotificationRequestBody;
 import com.huaweicloud.sdk.roma.v2.model.CreateNotificationResponse;
 import com.huaweicloud.sdk.roma.v2.model.CreateOrDeletePublishRecordForApiV2Request;
 import com.huaweicloud.sdk.roma.v2.model.CreateOrDeletePublishRecordForApiV2Response;
+import com.huaweicloud.sdk.roma.v2.model.CreatePluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.CreatePluginResponse;
 import com.huaweicloud.sdk.roma.v2.model.CreateProductRequest;
 import com.huaweicloud.sdk.roma.v2.model.CreateProductRequestBody;
 import com.huaweicloud.sdk.roma.v2.model.CreateProductResponse;
@@ -242,6 +262,8 @@ import com.huaweicloud.sdk.roma.v2.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteAssetResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteBackendInstanceV2Request;
 import com.huaweicloud.sdk.roma.v2.model.DeleteBackendInstanceV2Response;
+import com.huaweicloud.sdk.roma.v2.model.DeleteCertificateV2Request;
+import com.huaweicloud.sdk.roma.v2.model.DeleteCertificateV2Response;
 import com.huaweicloud.sdk.roma.v2.model.DeleteCommandRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteCommandResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteCustomAuthorizerV2Request;
@@ -272,6 +294,8 @@ import com.huaweicloud.sdk.roma.v2.model.DeleteMultiTaskMappingRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteMultiTaskMappingResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteNotificationRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteNotificationResponse;
+import com.huaweicloud.sdk.roma.v2.model.DeletePluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.DeletePluginResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteProductRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteProductResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteProductTemplateRequest;
@@ -302,6 +326,10 @@ import com.huaweicloud.sdk.roma.v2.model.DeleteTaskRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteTaskResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteVpcChannelV2Request;
 import com.huaweicloud.sdk.roma.v2.model.DeleteVpcChannelV2Response;
+import com.huaweicloud.sdk.roma.v2.model.DetachApiFromPluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.DetachApiFromPluginResponse;
+import com.huaweicloud.sdk.roma.v2.model.DetachPluginFromApiRequest;
+import com.huaweicloud.sdk.roma.v2.model.DetachPluginFromApiResponse;
 import com.huaweicloud.sdk.roma.v2.model.DisassociateAppQuotaWithAppRequest;
 import com.huaweicloud.sdk.roma.v2.model.DisassociateAppQuotaWithAppResponse;
 import com.huaweicloud.sdk.roma.v2.model.DisassociateCertificateV2Request;
@@ -352,6 +380,10 @@ import com.huaweicloud.sdk.roma.v2.model.ListAclPolicyBindedToApiV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListAclPolicyBindedToApiV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListAclStrategiesV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListAclStrategiesV2Response;
+import com.huaweicloud.sdk.roma.v2.model.ListApiAttachablePluginsRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListApiAttachablePluginsResponse;
+import com.huaweicloud.sdk.roma.v2.model.ListApiAttachedPluginsRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListApiAttachedPluginsResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListApiGroupsV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListApiGroupsV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListApiRuntimeDefinitionV2Request;
@@ -392,8 +424,12 @@ import com.huaweicloud.sdk.roma.v2.model.ListAppsBindedToApiV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListAppsBindedToApiV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListAppsV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListAppsV2Response;
+import com.huaweicloud.sdk.roma.v2.model.ListAttachedDomainsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.ListAttachedDomainsV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListBackendInstancesV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListBackendInstancesV2Response;
+import com.huaweicloud.sdk.roma.v2.model.ListCertificatesV2Request;
+import com.huaweicloud.sdk.roma.v2.model.ListCertificatesV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListCommandsRequest;
 import com.huaweicloud.sdk.roma.v2.model.ListCommandsResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListCustomAuthorizersV2Request;
@@ -444,6 +480,12 @@ import com.huaweicloud.sdk.roma.v2.model.ListMqsInstanceTopicsRequest;
 import com.huaweicloud.sdk.roma.v2.model.ListMqsInstanceTopicsResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListNotificationRequest;
 import com.huaweicloud.sdk.roma.v2.model.ListNotificationResponse;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginAttachableApisRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginAttachableApisResponse;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginAttachedApisRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginAttachedApisResponse;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginsRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginsResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListProductTemplatesRequest;
 import com.huaweicloud.sdk.roma.v2.model.ListProductTemplatesResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListProductTopicsRequest;
@@ -503,6 +545,8 @@ import com.huaweicloud.sdk.roma.v2.model.MultiTaskRequestBody;
 import com.huaweicloud.sdk.roma.v2.model.MultiTaskResetBody;
 import com.huaweicloud.sdk.roma.v2.model.MultiTaskUpdateBody;
 import com.huaweicloud.sdk.roma.v2.model.OperateTasksBean;
+import com.huaweicloud.sdk.roma.v2.model.PluginCreate;
+import com.huaweicloud.sdk.roma.v2.model.PluginOperApiInfo;
 import com.huaweicloud.sdk.roma.v2.model.ProjectVpcCreate;
 import com.huaweicloud.sdk.roma.v2.model.ProjectVpcSync;
 import com.huaweicloud.sdk.roma.v2.model.PublishLiveDataApiV2Request;
@@ -550,6 +594,8 @@ import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfAppConfigV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfAppConfigV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfAppV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfAppV2Response;
+import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfCertificateV2Request;
+import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfCertificateV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfCustomAuthorizersV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfCustomAuthorizersV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfDomainNameCertificateV2Request;
@@ -582,6 +628,8 @@ import com.huaweicloud.sdk.roma.v2.model.ShowMqsInstanceRequest;
 import com.huaweicloud.sdk.roma.v2.model.ShowMqsInstanceResponse;
 import com.huaweicloud.sdk.roma.v2.model.ShowMqsInstanceTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.roma.v2.model.ShowMqsInstanceTopicAccessPolicyResponse;
+import com.huaweicloud.sdk.roma.v2.model.ShowPluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.ShowPluginResponse;
 import com.huaweicloud.sdk.roma.v2.model.ShowProductAuthenticationRequest;
 import com.huaweicloud.sdk.roma.v2.model.ShowProductAuthenticationResponse;
 import com.huaweicloud.sdk.roma.v2.model.ShowProductRequest;
@@ -631,6 +679,8 @@ import com.huaweicloud.sdk.roma.v2.model.UpdateAppReq;
 import com.huaweicloud.sdk.roma.v2.model.UpdateAppSecretReq;
 import com.huaweicloud.sdk.roma.v2.model.UpdateBackendInstancesV2Request;
 import com.huaweicloud.sdk.roma.v2.model.UpdateBackendInstancesV2Response;
+import com.huaweicloud.sdk.roma.v2.model.UpdateCertificateV2Request;
+import com.huaweicloud.sdk.roma.v2.model.UpdateCertificateV2Response;
 import com.huaweicloud.sdk.roma.v2.model.UpdateCommandRequest;
 import com.huaweicloud.sdk.roma.v2.model.UpdateCommandRequestBody;
 import com.huaweicloud.sdk.roma.v2.model.UpdateCommandResponse;
@@ -669,6 +719,8 @@ import com.huaweicloud.sdk.roma.v2.model.UpdateMultiTasksResponse;
 import com.huaweicloud.sdk.roma.v2.model.UpdateNotificationRequest;
 import com.huaweicloud.sdk.roma.v2.model.UpdateNotificationRequestBody;
 import com.huaweicloud.sdk.roma.v2.model.UpdateNotificationResponse;
+import com.huaweicloud.sdk.roma.v2.model.UpdatePluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.UpdatePluginResponse;
 import com.huaweicloud.sdk.roma.v2.model.UpdateProductRequest;
 import com.huaweicloud.sdk.roma.v2.model.UpdateProductRequestBody;
 import com.huaweicloud.sdk.roma.v2.model.UpdateProductResponse;
@@ -923,6 +975,84 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SignApiBinding.class),
             f -> f.withMarshaller(AssociateSignatureKeyV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> attachApiToPlugin =
+        genForattachApiToPlugin();
+
+    private static HttpRequestDef<AttachApiToPluginRequest, AttachApiToPluginResponse> genForattachApiToPlugin() {
+        // basic
+        HttpRequestDef.Builder<AttachApiToPluginRequest, AttachApiToPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachApiToPluginRequest.class, AttachApiToPluginResponse.class)
+                .withName("AttachApiToPlugin")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/plugins/{plugin_id}/attach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachApiToPluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachApiToPluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<PluginOperApiInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PluginOperApiInfo.class),
+            f -> f.withMarshaller(AttachApiToPluginRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> attachPluginToApi =
+        genForattachPluginToApi();
+
+    private static HttpRequestDef<AttachPluginToApiRequest, AttachPluginToApiResponse> genForattachPluginToApi() {
+        // basic
+        HttpRequestDef.Builder<AttachPluginToApiRequest, AttachPluginToApiResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachPluginToApiRequest.class, AttachPluginToApiResponse.class)
+                .withName("AttachPluginToApi")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/{api_id}/plugins/attach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachPluginToApiRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachPluginToApiRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<ApiOperPluginInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiOperPluginInfo.class),
+            f -> f.withMarshaller(AttachPluginToApiRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1932,6 +2062,37 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNotificationRequestBody.class),
             f -> f.withMarshaller(CreateNotificationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePluginRequest, CreatePluginResponse> createPlugin = genForcreatePlugin();
+
+    private static HttpRequestDef<CreatePluginRequest, CreatePluginResponse> genForcreatePlugin() {
+        // basic
+        HttpRequestDef.Builder<CreatePluginRequest, CreatePluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePluginRequest.class, CreatePluginResponse.class)
+                .withName("CreatePlugin")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/plugins")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<PluginCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PluginCreate.class),
+            f -> f.withMarshaller(CreatePluginRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3056,6 +3217,37 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeletePluginRequest, DeletePluginResponse> deletePlugin = genFordeletePlugin();
+
+    private static HttpRequestDef<DeletePluginRequest, DeletePluginResponse> genFordeletePlugin() {
+        // basic
+        HttpRequestDef.Builder<DeletePluginRequest, DeletePluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePluginRequest.class, DeletePluginResponse.class)
+                .withName("DeletePlugin")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/plugins/{plugin_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteProductRequest, DeleteProductResponse> deleteProduct =
         genFordeleteProduct();
 
@@ -3534,6 +3726,84 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> detachApiFromPlugin =
+        genFordetachApiFromPlugin();
+
+    private static HttpRequestDef<DetachApiFromPluginRequest, DetachApiFromPluginResponse> genFordetachApiFromPlugin() {
+        // basic
+        HttpRequestDef.Builder<DetachApiFromPluginRequest, DetachApiFromPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, DetachApiFromPluginRequest.class, DetachApiFromPluginResponse.class)
+                .withName("DetachApiFromPlugin")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/plugins/{plugin_id}/detach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<PluginOperApiInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PluginOperApiInfo.class),
+            f -> f.withMarshaller(DetachApiFromPluginRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> detachPluginFromApi =
+        genFordetachPluginFromApi();
+
+    private static HttpRequestDef<DetachPluginFromApiRequest, DetachPluginFromApiResponse> genFordetachPluginFromApi() {
+        // basic
+        HttpRequestDef.Builder<DetachPluginFromApiRequest, DetachPluginFromApiResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, DetachPluginFromApiRequest.class, DetachPluginFromApiResponse.class)
+                .withName("DetachPluginFromApi")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/{api_id}/plugins/detach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<ApiOperPluginInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiOperPluginInfo.class),
+            f -> f.withMarshaller(DetachPluginFromApiRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithApp =
         genFordisassociateAppQuotaWithApp();
 
@@ -3845,6 +4115,190 @@ public class RomaMeta {
             f -> f.withMarshaller(InstallMultiTasksResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }).withInnerContainerType(MultiTaskInitElement.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePlugins =
+        genForlistApiAttachablePlugins();
+
+    private static HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> genForlistApiAttachablePlugins() {
+        // basic
+        HttpRequestDef.Builder<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListApiAttachablePluginsRequest.class, ListApiAttachablePluginsResponse.class)
+                .withName("ListApiAttachablePlugins")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/{api_id}/attachable-plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("plugin_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginName, (req, v) -> {
+                req.setPluginName(v);
+            }));
+        builder.<String>withRequestField("plugin_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginType, (req, v) -> {
+                req.setPluginType(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<String>withRequestField("roma_app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getRomaAppId, (req, v) -> {
+                req.setRomaAppId(v);
+            }));
+        builder.<String>withRequestField("roma_app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachablePluginsRequest::getRomaAppName, (req, v) -> {
+                req.setRomaAppName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> listApiAttachedPlugins =
+        genForlistApiAttachedPlugins();
+
+    private static HttpRequestDef<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> genForlistApiAttachedPlugins() {
+        // basic
+        HttpRequestDef.Builder<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListApiAttachedPluginsRequest.class, ListApiAttachedPluginsResponse.class)
+            .withName("ListApiAttachedPlugins")
+            .withUri("/v2/{project_id}/apic/instances/{instance_id}/apis/{api_id}/attached-plugins")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("plugin_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginName, (req, v) -> {
+                req.setPluginName(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<String>withRequestField("env_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getEnvName, (req, v) -> {
+                req.setEnvName(v);
+            }));
+        builder.<String>withRequestField("plugin_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getPluginType, (req, v) -> {
+                req.setPluginType(v);
+            }));
+        builder.<String>withRequestField("roma_app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getRomaAppId, (req, v) -> {
+                req.setRomaAppId(v);
+            }));
+        builder.<String>withRequestField("roma_app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApiAttachedPluginsRequest::getRomaAppName, (req, v) -> {
+                req.setRomaAppName(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -5496,6 +5950,270 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNotificationRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> listPluginAttachableApis =
+        genForlistPluginAttachableApis();
+
+    private static HttpRequestDef<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> genForlistPluginAttachableApis() {
+        // basic
+        HttpRequestDef.Builder<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListPluginAttachableApisRequest.class, ListPluginAttachableApisResponse.class)
+                .withName("ListPluginAttachableApis")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/plugins/{plugin_id}/attachable-apis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("api_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiName, (req, v) -> {
+                req.setApiName(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("req_method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqMethod, (req, v) -> {
+                req.setReqMethod(v);
+            }));
+        builder.<String>withRequestField("req_uri",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqUri, (req, v) -> {
+                req.setReqUri(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> listPluginAttachedApis =
+        genForlistPluginAttachedApis();
+
+    private static HttpRequestDef<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> genForlistPluginAttachedApis() {
+        // basic
+        HttpRequestDef.Builder<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPluginAttachedApisRequest.class, ListPluginAttachedApisResponse.class)
+            .withName("ListPluginAttachedApis")
+            .withUri("/v2/{project_id}/apic/instances/{instance_id}/plugins/{plugin_id}/attached-apis")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("env_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getEnvId, (req, v) -> {
+                req.setEnvId(v);
+            }));
+        builder.<String>withRequestField("api_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiName, (req, v) -> {
+                req.setApiName(v);
+            }));
+        builder.<String>withRequestField("api_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getApiId, (req, v) -> {
+                req.setApiId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("req_method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqMethod, (req, v) -> {
+                req.setReqMethod(v);
+            }));
+        builder.<String>withRequestField("req_uri",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqUri, (req, v) -> {
+                req.setReqUri(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPluginsRequest, ListPluginsResponse> listPlugins = genForlistPlugins();
+
+    private static HttpRequestDef<ListPluginsRequest, ListPluginsResponse> genForlistPlugins() {
+        // basic
+        HttpRequestDef.Builder<ListPluginsRequest, ListPluginsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPluginsRequest.class, ListPluginsResponse.class)
+                .withName("ListPlugins")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/plugins")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPluginsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPluginsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("plugin_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPluginType, (req, v) -> {
+                req.setPluginType(v);
+            }));
+        builder.<String>withRequestField("plugin_scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPluginScope, (req, v) -> {
+                req.setPluginScope(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<String>withRequestField("plugin_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPluginName, (req, v) -> {
+                req.setPluginName(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
+            }));
+        builder.<String>withRequestField("roma_app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getRomaAppId, (req, v) -> {
+                req.setRomaAppId(v);
+            }));
+        builder.<String>withRequestField("roma_app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginsRequest::getRomaAppName, (req, v) -> {
+                req.setRomaAppName(v);
             }));
 
         // response
@@ -7984,6 +8702,37 @@ public class RomaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPluginRequest, ShowPluginResponse> showPlugin = genForshowPlugin();
+
+    private static HttpRequestDef<ShowPluginRequest, ShowPluginResponse> genForshowPlugin() {
+        // basic
+        HttpRequestDef.Builder<ShowPluginRequest, ShowPluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPluginRequest.class, ShowPluginResponse.class)
+                .withName("ShowPlugin")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/plugins/{plugin_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProductRequest, ShowProductResponse> showProduct = genForshowProduct();
 
     private static HttpRequestDef<ShowProductRequest, ShowProductResponse> genForshowProduct() {
@@ -9076,6 +9825,44 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNotificationRequestBody.class),
             f -> f.withMarshaller(UpdateNotificationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> updatePlugin = genForupdatePlugin();
+
+    private static HttpRequestDef<UpdatePluginRequest, UpdatePluginResponse> genForupdatePlugin() {
+        // basic
+        HttpRequestDef.Builder<UpdatePluginRequest, UpdatePluginResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePluginRequest.class, UpdatePluginResponse.class)
+                .withName("UpdatePlugin")
+                .withUri("/v2/{project_id}/apic/instances/{instance_id}/plugins/{plugin_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("plugin_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginRequest::getPluginId, (req, v) -> {
+                req.setPluginId(v);
+            }));
+        builder.<PluginCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PluginCreate.class),
+            f -> f.withMarshaller(UpdatePluginRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -10884,6 +11671,20 @@ public class RomaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisV2Request::getVpcChannelName, (req, v) -> {
                 req.setVpcChannelName(v);
+            }));
+        builder.<String>withRequestField("roma_app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisV2Request::getRomaAppName, (req, v) -> {
+                req.setRomaAppName(v);
+            }));
+        builder.<String>withRequestField("roma_app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisV2Request::getRomaAppId, (req, v) -> {
+                req.setRomaAppId(v);
             }));
 
         // response
@@ -12803,6 +13604,398 @@ public class RomaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportLiveDataApiDefinitionsV2RequestBody.class),
             f -> f.withMarshaller(ImportLiveDataApiDefinitionsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> batchAssociateCertsV2 =
+        genForbatchAssociateCertsV2();
+
+    private static HttpRequestDef<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> genForbatchAssociateCertsV2() {
+        // basic
+        HttpRequestDef.Builder<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchAssociateCertsV2Request.class, BatchAssociateCertsV2Response.class)
+            .withName("BatchAssociateCertsV2")
+            .withUri(
+                "/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificates/attach")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<AttachOrDetachCertsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachOrDetachCertsReqBody.class),
+            f -> f.withMarshaller(BatchAssociateCertsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> batchAssociateDomainsV2 =
+        genForbatchAssociateDomainsV2();
+
+    private static HttpRequestDef<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> genForbatchAssociateDomainsV2() {
+        // basic
+        HttpRequestDef.Builder<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchAssociateDomainsV2Request.class, BatchAssociateDomainsV2Response.class)
+            .withName("BatchAssociateDomainsV2")
+            .withUri("/v2/{project_id}/apic/certificates/{certificate_id}/domains/attach")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<AttachOrDetachDomainsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachOrDetachDomainsReqBody.class),
+            f -> f.withMarshaller(BatchAssociateDomainsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> batchDisassociateCertsV2 =
+        genForbatchDisassociateCertsV2();
+
+    private static HttpRequestDef<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> genForbatchDisassociateCertsV2() {
+        // basic
+        HttpRequestDef.Builder<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchDisassociateCertsV2Request.class, BatchDisassociateCertsV2Response.class)
+                .withName("BatchDisassociateCertsV2")
+                .withUri(
+                    "/v2/{project_id}/apic/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}/certificates/detach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<AttachOrDetachCertsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachOrDetachCertsReqBody.class),
+            f -> f.withMarshaller(BatchDisassociateCertsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2 =
+        genForbatchDisassociateDomainsV2();
+
+    private static HttpRequestDef<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> genForbatchDisassociateDomainsV2() {
+        // basic
+        HttpRequestDef.Builder<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDisassociateDomainsV2Request.class,
+                    BatchDisassociateDomainsV2Response.class)
+                .withName("BatchDisassociateDomainsV2")
+                .withUri("/v2/{project_id}/apic/certificates/{certificate_id}/domains/detach")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<AttachOrDetachDomainsReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachOrDetachDomainsReqBody.class),
+            f -> f.withMarshaller(BatchDisassociateDomainsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> createCertificateV2 =
+        genForcreateCertificateV2();
+
+    private static HttpRequestDef<CreateCertificateV2Request, CreateCertificateV2Response> genForcreateCertificateV2() {
+        // basic
+        HttpRequestDef.Builder<CreateCertificateV2Request, CreateCertificateV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCertificateV2Request.class, CreateCertificateV2Response.class)
+                .withName("CreateCertificateV2")
+                .withUri("/v2/{project_id}/apic/certificates")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CertificateForm>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CertificateForm.class),
+            f -> f.withMarshaller(CreateCertificateV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> deleteCertificateV2 =
+        genFordeleteCertificateV2();
+
+    private static HttpRequestDef<DeleteCertificateV2Request, DeleteCertificateV2Response> genFordeleteCertificateV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteCertificateV2Request, DeleteCertificateV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteCertificateV2Request.class, DeleteCertificateV2Response.class)
+            .withName("DeleteCertificateV2")
+            .withUri("/v2/{project_id}/apic/certificates/{certificate_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertificateV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> listAttachedDomainsV2 =
+        genForlistAttachedDomainsV2();
+
+    private static HttpRequestDef<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> genForlistAttachedDomainsV2() {
+        // basic
+        HttpRequestDef.Builder<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAttachedDomainsV2Request.class, ListAttachedDomainsV2Response.class)
+            .withName("ListAttachedDomainsV2")
+            .withUri("/v2/{project_id}/apic/certificates/{certificate_id}/attached-domains")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("url_domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAttachedDomainsV2Request::getUrlDomain, (req, v) -> {
+                req.setUrlDomain(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> listCertificatesV2 =
+        genForlistCertificatesV2();
+
+    private static HttpRequestDef<ListCertificatesV2Request, ListCertificatesV2Response> genForlistCertificatesV2() {
+        // basic
+        HttpRequestDef.Builder<ListCertificatesV2Request, ListCertificatesV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCertificatesV2Request.class, ListCertificatesV2Response.class)
+                .withName("ListCertificatesV2")
+                .withUri("/v2/{project_id}/apic/certificates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("common_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getCommonName, (req, v) -> {
+                req.setCommonName(v);
+            }));
+        builder.<String>withRequestField("signature_algorithm",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getSignatureAlgorithm, (req, v) -> {
+                req.setSignatureAlgorithm(v);
+            }));
+        builder.<ListCertificatesV2Request.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCertificatesV2Request.TypeEnum.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListCertificatesV2Request.AlgorithmTypeEnum>withRequestField("algorithm_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCertificatesV2Request.AlgorithmTypeEnum.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getAlgorithmType, (req, v) -> {
+                req.setAlgorithmType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2 =
+        genForshowDetailsOfCertificateV2();
+
+    private static HttpRequestDef<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> genForshowDetailsOfCertificateV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDetailsOfCertificateV2Request.class,
+                    ShowDetailsOfCertificateV2Response.class)
+                .withName("ShowDetailsOfCertificateV2")
+                .withUri("/v2/{project_id}/apic/certificates/{certificate_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfCertificateV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> updateCertificateV2 =
+        genForupdateCertificateV2();
+
+    private static HttpRequestDef<UpdateCertificateV2Request, UpdateCertificateV2Response> genForupdateCertificateV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateCertificateV2Request, UpdateCertificateV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateV2Request.class, UpdateCertificateV2Response.class)
+                .withName("UpdateCertificateV2")
+                .withUri("/v2/{project_id}/apic/certificates/{certificate_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCertificateV2Request::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<CertificateForm>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CertificateForm.class),
+            f -> f.withMarshaller(UpdateCertificateV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

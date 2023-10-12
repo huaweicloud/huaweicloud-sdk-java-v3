@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * UrlDomain
@@ -115,6 +118,21 @@ public class UrlDomain {
 
     private MinSslVersionEnum minSslVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verified_client_certificate_enabled")
+
+    private Boolean verifiedClientCertificateEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_has_trusted_root_ca")
+
+    private Boolean isHasTrustedRootCa;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ssl_infos")
+
+    private List<SslInfo> sslInfos = null;
+
     public UrlDomain withId(String id) {
         this.id = id;
         return this;
@@ -217,6 +235,73 @@ public class UrlDomain {
         this.minSslVersion = minSslVersion;
     }
 
+    public UrlDomain withVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启客户端证书校验。只有绑定证书时，该参数才生效。当绑定证书存在trusted_root_ca时，默认开启；当绑定证书不存在trusted_root_ca时，默认关闭。
+     * @return verifiedClientCertificateEnabled
+     */
+    public Boolean getVerifiedClientCertificateEnabled() {
+        return verifiedClientCertificateEnabled;
+    }
+
+    public void setVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+    }
+
+    public UrlDomain withIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+        return this;
+    }
+
+    /**
+     * 是否存在信任的根证书CA。当绑定证书存在trusted_root_ca时为true。  [暂不支持](tag:hcs;fcs;g42;Site)
+     * @return isHasTrustedRootCa
+     */
+    public Boolean getIsHasTrustedRootCa() {
+        return isHasTrustedRootCa;
+    }
+
+    public void setIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+    }
+
+    public UrlDomain withSslInfos(List<SslInfo> sslInfos) {
+        this.sslInfos = sslInfos;
+        return this;
+    }
+
+    public UrlDomain addSslInfosItem(SslInfo sslInfosItem) {
+        if (this.sslInfos == null) {
+            this.sslInfos = new ArrayList<>();
+        }
+        this.sslInfos.add(sslInfosItem);
+        return this;
+    }
+
+    public UrlDomain withSslInfos(Consumer<List<SslInfo>> sslInfosSetter) {
+        if (this.sslInfos == null) {
+            this.sslInfos = new ArrayList<>();
+        }
+        sslInfosSetter.accept(this.sslInfos);
+        return this;
+    }
+
+    /**
+     * SSL证书列表  [暂不支持](tag:hws;hws_hk;fcs;g42;Site)
+     * @return sslInfos
+     */
+    public List<SslInfo> getSslInfos() {
+        return sslInfos;
+    }
+
+    public void setSslInfos(List<SslInfo> sslInfos) {
+        this.sslInfos = sslInfos;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -228,12 +313,23 @@ public class UrlDomain {
         UrlDomain that = (UrlDomain) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.domain, that.domain)
             && Objects.equals(this.cnameStatus, that.cnameStatus) && Objects.equals(this.sslId, that.sslId)
-            && Objects.equals(this.sslName, that.sslName) && Objects.equals(this.minSslVersion, that.minSslVersion);
+            && Objects.equals(this.sslName, that.sslName) && Objects.equals(this.minSslVersion, that.minSslVersion)
+            && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled)
+            && Objects.equals(this.isHasTrustedRootCa, that.isHasTrustedRootCa)
+            && Objects.equals(this.sslInfos, that.sslInfos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, domain, cnameStatus, sslId, sslName, minSslVersion);
+        return Objects.hash(id,
+            domain,
+            cnameStatus,
+            sslId,
+            sslName,
+            minSslVersion,
+            verifiedClientCertificateEnabled,
+            isHasTrustedRootCa,
+            sslInfos);
     }
 
     @Override
@@ -246,6 +342,11 @@ public class UrlDomain {
         sb.append("    sslId: ").append(toIndentedString(sslId)).append("\n");
         sb.append("    sslName: ").append(toIndentedString(sslName)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    verifiedClientCertificateEnabled: ")
+            .append(toIndentedString(verifiedClientCertificateEnabled))
+            .append("\n");
+        sb.append("    isHasTrustedRootCa: ").append(toIndentedString(isHasTrustedRootCa)).append("\n");
+        sb.append("    sslInfos: ").append(toIndentedString(sslInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualInterfaceRequest;
@@ -19,6 +21,8 @@ import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceRequest;
@@ -29,6 +33,8 @@ import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysRequest;
@@ -39,16 +45,22 @@ import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceResponse;
+import com.huaweicloud.sdk.dc.v3.model.SwitchoverTestRequest;
+import com.huaweicloud.sdk.dc.v3.model.SwitchoverTestResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualInterfaceRequest;
@@ -312,7 +324,7 @@ public class DcClient {
     /**
      * 更新托管专线连接
      *
-     * 合作伙伴创建托管专线.
+     * 合作伙伴更新托管专线.
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -326,7 +338,7 @@ public class DcClient {
     /**
      * 更新托管专线连接
      *
-     * 合作伙伴创建托管专线.
+     * 合作伙伴更新托管专线.
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -337,6 +349,34 @@ public class DcClient {
         UpdateHostedDirectConnectRequest request) {
         return new SyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse>(request,
             DcMeta.updateHostedDirectConnect, hcClient);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 查询租户各类资源的使用情况，如Directconnect的使用量，虚拟接口的使用量等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return ShowQuotasResponse
+     */
+    public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.showQuotas);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 查询租户各类资源的使用情况，如Directconnect的使用量，虚拟接口的使用量等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
+        return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, DcMeta.showQuotas, hcClient);
     }
 
     /**
@@ -680,6 +720,34 @@ public class DcClient {
     }
 
     /**
+     * 创建虚拟接口对等体
+     *
+     * 每个虚拟接口可支持两个对等体，IPv4和IPv6对等体，在创建虚拟接口时默认创建IPv4对等体， 本接口一般用于增加ipv6对等体。创建虚拟接口对接体之后，可以通过虚拟接口查询配置结果 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVifPeerRequest 请求对象
+     * @return CreateVifPeerResponse
+     */
+    public CreateVifPeerResponse createVifPeer(CreateVifPeerRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.createVifPeer);
+    }
+
+    /**
+     * 创建虚拟接口对等体
+     *
+     * 每个虚拟接口可支持两个对等体，IPv4和IPv6对等体，在创建虚拟接口时默认创建IPv4对等体， 本接口一般用于增加ipv6对等体。创建虚拟接口对接体之后，可以通过虚拟接口查询配置结果 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVifPeerRequest 请求对象
+     * @return SyncInvoker<CreateVifPeerRequest, CreateVifPeerResponse>
+     */
+    public SyncInvoker<CreateVifPeerRequest, CreateVifPeerResponse> createVifPeerInvoker(CreateVifPeerRequest request) {
+        return new SyncInvoker<CreateVifPeerRequest, CreateVifPeerResponse>(request, DcMeta.createVifPeer, hcClient);
+    }
+
+    /**
      * 创建虚拟接口
      *
      * 虚拟接口配置物理专线上与客户互联的IP和路由等相关信息
@@ -710,6 +778,34 @@ public class DcClient {
     }
 
     /**
+     * 删除虚拟接口对应的对等体
+     *
+     * 删除虚拟接口对等体信息,虚拟接口到少要含一个对等体,最后一个对等体不能删除 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVifPeerRequest 请求对象
+     * @return DeleteVifPeerResponse
+     */
+    public DeleteVifPeerResponse deleteVifPeer(DeleteVifPeerRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.deleteVifPeer);
+    }
+
+    /**
+     * 删除虚拟接口对应的对等体
+     *
+     * 删除虚拟接口对等体信息,虚拟接口到少要含一个对等体,最后一个对等体不能删除 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteVifPeerRequest 请求对象
+     * @return SyncInvoker<DeleteVifPeerRequest, DeleteVifPeerResponse>
+     */
+    public SyncInvoker<DeleteVifPeerRequest, DeleteVifPeerResponse> deleteVifPeerInvoker(DeleteVifPeerRequest request) {
+        return new SyncInvoker<DeleteVifPeerRequest, DeleteVifPeerResponse>(request, DcMeta.deleteVifPeer, hcClient);
+    }
+
+    /**
      * 删除虚拟接口
      *
      * 删除虚拟接口
@@ -737,6 +833,36 @@ public class DcClient {
         DeleteVirtualInterfaceRequest request) {
         return new SyncInvoker<DeleteVirtualInterfaceRequest, DeleteVirtualInterfaceResponse>(request,
             DcMeta.deleteVirtualInterface, hcClient);
+    }
+
+    /**
+     * 查询虚拟接口倒换测试记录列表
+     *
+     * 查询倒换测试记录列表，只展示operate_status为COMPELTE的记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSwitchoverTestRecordsRequest 请求对象
+     * @return ListSwitchoverTestRecordsResponse
+     */
+    public ListSwitchoverTestRecordsResponse listSwitchoverTestRecords(ListSwitchoverTestRecordsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listSwitchoverTestRecords);
+    }
+
+    /**
+     * 查询虚拟接口倒换测试记录列表
+     *
+     * 查询倒换测试记录列表，只展示operate_status为COMPELTE的记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSwitchoverTestRecordsRequest 请求对象
+     * @return SyncInvoker<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse>
+     */
+    public SyncInvoker<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse> listSwitchoverTestRecordsInvoker(
+        ListSwitchoverTestRecordsRequest request) {
+        return new SyncInvoker<ListSwitchoverTestRecordsRequest, ListSwitchoverTestRecordsResponse>(request,
+            DcMeta.listSwitchoverTestRecords, hcClient);
     }
 
     /**
@@ -797,6 +923,63 @@ public class DcClient {
         ShowVirtualInterfaceRequest request) {
         return new SyncInvoker<ShowVirtualInterfaceRequest, ShowVirtualInterfaceResponse>(request,
             DcMeta.showVirtualInterface, hcClient);
+    }
+
+    /**
+     * 执行虚拟接口倒换测试
+     *
+     * 客户双专线接入，需要支持双线自动倒换，方便进行功能测试。 虚拟接口进行倒换测试会导致接口关闭，业务流量中断。 对于虚拟接口，支持“关闭接口”和“开放接口”两种操作。 1、关闭接口：下发shutdown命令，关闭接口； 2、开放接口：下发undo_shutdown命令，使能接口。 倒换测试选择shutdown时，虚拟接口的状态为ADMIN_SHUTDOWN，此状态不允许虚拟接口的其他操作。 倒换测试选择undo_shutdown时，虚拟接口的状态为ACTIVE。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchoverTestRequest 请求对象
+     * @return SwitchoverTestResponse
+     */
+    public SwitchoverTestResponse switchoverTest(SwitchoverTestRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.switchoverTest);
+    }
+
+    /**
+     * 执行虚拟接口倒换测试
+     *
+     * 客户双专线接入，需要支持双线自动倒换，方便进行功能测试。 虚拟接口进行倒换测试会导致接口关闭，业务流量中断。 对于虚拟接口，支持“关闭接口”和“开放接口”两种操作。 1、关闭接口：下发shutdown命令，关闭接口； 2、开放接口：下发undo_shutdown命令，使能接口。 倒换测试选择shutdown时，虚拟接口的状态为ADMIN_SHUTDOWN，此状态不允许虚拟接口的其他操作。 倒换测试选择undo_shutdown时，虚拟接口的状态为ACTIVE。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchoverTestRequest 请求对象
+     * @return SyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse>
+     */
+    public SyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse> switchoverTestInvoker(
+        SwitchoverTestRequest request) {
+        return new SyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse>(request, DcMeta.switchoverTest, hcClient);
+    }
+
+    /**
+     * 更新虚拟接口对等体
+     *
+     * 更新虚拟接口对等体信息,包括远端子网，名字和描述等。 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVifPeerRequest 请求对象
+     * @return UpdateVifPeerResponse
+     */
+    public UpdateVifPeerResponse updateVifPeer(UpdateVifPeerRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.updateVifPeer);
+    }
+
+    /**
+     * 更新虚拟接口对等体
+     *
+     * 更新虚拟接口对等体信息,包括远端子网，名字和描述等。 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateVifPeerRequest 请求对象
+     * @return SyncInvoker<UpdateVifPeerRequest, UpdateVifPeerResponse>
+     */
+    public SyncInvoker<UpdateVifPeerRequest, UpdateVifPeerResponse> updateVifPeerInvoker(UpdateVifPeerRequest request) {
+        return new SyncInvoker<UpdateVifPeerRequest, UpdateVifPeerResponse>(request, DcMeta.updateVifPeer, hcClient);
     }
 
     /**

@@ -191,6 +191,11 @@ public class VpcCreate {
     private MemberTypeEnum memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
 
     private String dictCode;
@@ -209,6 +214,11 @@ public class VpcCreate {
     @JsonProperty(value = "vpc_health_config")
 
     private VpcHealthConfig vpcHealthConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_info")
+
+    private MicroServiceCreate microserviceInfo;
 
     public VpcCreate withName(String name) {
         this.name = name;
@@ -276,6 +286,23 @@ public class VpcCreate {
 
     public void setMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
+    }
+
+    public VpcCreate withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型，默认为服务器类型。 - 2：服务器类型 - 3：微服务类型
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public VpcCreate withDictCode(String dictCode) {
@@ -387,6 +414,32 @@ public class VpcCreate {
         this.vpcHealthConfig = vpcHealthConfig;
     }
 
+    public VpcCreate withMicroserviceInfo(MicroServiceCreate microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+        return this;
+    }
+
+    public VpcCreate withMicroserviceInfo(Consumer<MicroServiceCreate> microserviceInfoSetter) {
+        if (this.microserviceInfo == null) {
+            this.microserviceInfo = new MicroServiceCreate();
+            microserviceInfoSetter.accept(this.microserviceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get microserviceInfo
+     * @return microserviceInfo
+     */
+    public MicroServiceCreate getMicroserviceInfo() {
+        return microserviceInfo;
+    }
+
+    public void setMicroserviceInfo(MicroServiceCreate microserviceInfo) {
+        this.microserviceInfo = microserviceInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -398,14 +451,24 @@ public class VpcCreate {
         VpcCreate that = (VpcCreate) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
             && Objects.equals(this.balanceStrategy, that.balanceStrategy)
-            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.dictCode, that.dictCode)
-            && Objects.equals(this.memberGroups, that.memberGroups) && Objects.equals(this.members, that.members)
-            && Objects.equals(this.vpcHealthConfig, that.vpcHealthConfig);
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dictCode, that.dictCode) && Objects.equals(this.memberGroups, that.memberGroups)
+            && Objects.equals(this.members, that.members) && Objects.equals(this.vpcHealthConfig, that.vpcHealthConfig)
+            && Objects.equals(this.microserviceInfo, that.microserviceInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, port, balanceStrategy, memberType, dictCode, memberGroups, members, vpcHealthConfig);
+        return Objects.hash(name,
+            port,
+            balanceStrategy,
+            memberType,
+            type,
+            dictCode,
+            memberGroups,
+            members,
+            vpcHealthConfig,
+            microserviceInfo);
     }
 
     @Override
@@ -416,10 +479,12 @@ public class VpcCreate {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    vpcHealthConfig: ").append(toIndentedString(vpcHealthConfig)).append("\n");
+        sb.append("    microserviceInfo: ").append(toIndentedString(microserviceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

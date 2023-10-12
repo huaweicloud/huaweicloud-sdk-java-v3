@@ -11,25 +11,25 @@ import java.util.Objects;
 public class CustomerUpgradeDatabaseVersionReqNew {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "delay")
+    @JsonProperty(value = "is_delayed")
 
-    private Boolean delay;
+    private Boolean isDelayed;
 
-    public CustomerUpgradeDatabaseVersionReqNew withDelay(Boolean delay) {
-        this.delay = delay;
+    public CustomerUpgradeDatabaseVersionReqNew withIsDelayed(Boolean isDelayed) {
+        this.isDelayed = isDelayed;
         return this;
     }
 
     /**
      * 是否延迟至可维护时间段内升级。 取值范围： - true：延迟升级。表示实例将在设置的可维护时间段内升级。 - false：立即升级，默认该方式。
-     * @return delay
+     * @return isDelayed
      */
-    public Boolean getDelay() {
-        return delay;
+    public Boolean getIsDelayed() {
+        return isDelayed;
     }
 
-    public void setDelay(Boolean delay) {
-        this.delay = delay;
+    public void setIsDelayed(Boolean isDelayed) {
+        this.isDelayed = isDelayed;
     }
 
     @Override
@@ -41,19 +41,19 @@ public class CustomerUpgradeDatabaseVersionReqNew {
             return false;
         }
         CustomerUpgradeDatabaseVersionReqNew that = (CustomerUpgradeDatabaseVersionReqNew) obj;
-        return Objects.equals(this.delay, that.delay);
+        return Objects.equals(this.isDelayed, that.isDelayed);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(delay);
+        return Objects.hash(isDelayed);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CustomerUpgradeDatabaseVersionReqNew {\n");
-        sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
+        sb.append("    isDelayed: ").append(toIndentedString(isDelayed)).append("\n");
         sb.append("}");
         return sb.toString();
     }

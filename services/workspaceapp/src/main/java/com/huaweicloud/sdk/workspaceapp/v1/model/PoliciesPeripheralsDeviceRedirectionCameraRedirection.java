@@ -19,7 +19,7 @@ public class PoliciesPeripheralsDeviceRedirectionCameraRedirection {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
-    private PoliciesPeripheralsDeviceRedirectionCameraRedirectionOptions options;
+    private CameraRedirectionOptions options;
 
     public PoliciesPeripheralsDeviceRedirectionCameraRedirection withVideoCompressEnable(Boolean videoCompressEnable) {
         this.videoCompressEnable = videoCompressEnable;
@@ -38,16 +38,15 @@ public class PoliciesPeripheralsDeviceRedirectionCameraRedirection {
         this.videoCompressEnable = videoCompressEnable;
     }
 
-    public PoliciesPeripheralsDeviceRedirectionCameraRedirection withOptions(
-        PoliciesPeripheralsDeviceRedirectionCameraRedirectionOptions options) {
+    public PoliciesPeripheralsDeviceRedirectionCameraRedirection withOptions(CameraRedirectionOptions options) {
         this.options = options;
         return this;
     }
 
     public PoliciesPeripheralsDeviceRedirectionCameraRedirection withOptions(
-        Consumer<PoliciesPeripheralsDeviceRedirectionCameraRedirectionOptions> optionsSetter) {
+        Consumer<CameraRedirectionOptions> optionsSetter) {
         if (this.options == null) {
-            this.options = new PoliciesPeripheralsDeviceRedirectionCameraRedirectionOptions();
+            this.options = new CameraRedirectionOptions();
             optionsSetter.accept(this.options);
         }
 
@@ -58,11 +57,11 @@ public class PoliciesPeripheralsDeviceRedirectionCameraRedirection {
      * Get options
      * @return options
      */
-    public PoliciesPeripheralsDeviceRedirectionCameraRedirectionOptions getOptions() {
+    public CameraRedirectionOptions getOptions() {
         return options;
     }
 
-    public void setOptions(PoliciesPeripheralsDeviceRedirectionCameraRedirectionOptions options) {
+    public void setOptions(CameraRedirectionOptions options) {
         this.options = options;
     }
 

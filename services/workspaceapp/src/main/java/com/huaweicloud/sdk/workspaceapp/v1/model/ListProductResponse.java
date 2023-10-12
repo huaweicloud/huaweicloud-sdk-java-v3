@@ -52,7 +52,7 @@ public class ListProductResponse extends SdkResponse {
     }
 
     /**
-     * 系统类型，当前仅支持Windows。 * `Linux` - * `Windows` - * `Other` - minLength: 0 maxLength: 32 example: Windows
+     * 系统类型，当前仅支持Windows。 * `Linux` - * `Windows` - * `Other` -
      * @return osType
      */
     public String getOsType() {

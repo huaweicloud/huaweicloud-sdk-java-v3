@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资源信息。
+ * 资源信息
  */
 public class Resource {
 

@@ -31,7 +31,7 @@ public class DeploymentGroupUpdateRequest {
     private String slaveClusterId;
 
     /**
-     * 自动连通性验证 0不执行 1每日 2每周
+     * 自动测试功能已下架，该字段已失效
      */
     public static final class AutoConnectionTestSwitchEnum {
 
@@ -170,7 +170,7 @@ public class DeploymentGroupUpdateRequest {
     }
 
     /**
-     * 自动连通性验证 0不执行 1每日 2每周
+     * 自动测试功能已下架，该字段已失效
      * @return autoConnectionTestSwitch
      */
     public AutoConnectionTestSwitchEnum getAutoConnectionTestSwitch() {

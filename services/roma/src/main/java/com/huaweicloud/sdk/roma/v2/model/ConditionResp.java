@@ -21,7 +21,7 @@ public class ConditionResp {
     private String reqParamName;
 
     /**
-     * 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET 
+     * 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET - reqPath：请求路径，废弃。如 /a/b - reqMethod：请求方法，废弃。如 GET 
      */
     public static final class SysParamNameEnum {
 
@@ -101,7 +101,7 @@ public class ConditionResp {
     private String cookieParamName;
 
     /**
-     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param时必选 
+     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param或cookie时必选 
      */
     public static final class ConditionTypeEnum {
 
@@ -182,7 +182,7 @@ public class ConditionResp {
     private ConditionTypeEnum conditionType;
 
     /**
-     * 策略类型 - param：参数 - source：源IP - system：系统参数
+     * 策略类型 - param：参数 - source：源IP - system：系统参数 - cookie: COOKIE参数
      */
     public static final class ConditionOriginEnum {
 
@@ -299,7 +299,7 @@ public class ConditionResp {
     }
 
     /**
-     * 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET 
+     * 系统参数名称。策略类型为system时必选。支持以下系统参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET - reqPath：请求路径，废弃。如 /a/b - reqMethod：请求方法，废弃。如 GET 
      * @return sysParamName
      */
     public SysParamNameEnum getSysParamName() {
@@ -333,7 +333,7 @@ public class ConditionResp {
     }
 
     /**
-     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param时必选 
+     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param或cookie时必选 
      * @return conditionType
      */
     public ConditionTypeEnum getConditionType() {
@@ -350,7 +350,7 @@ public class ConditionResp {
     }
 
     /**
-     * 策略类型 - param：参数 - source：源IP - system：系统参数
+     * 策略类型 - param：参数 - source：源IP - system：系统参数 - cookie: COOKIE参数
      * @return conditionOrigin
      */
     public ConditionOriginEnum getConditionOrigin() {
@@ -367,7 +367,7 @@ public class ConditionResp {
     }
 
     /**
-     * 策略值
+     * 策略值;策略类型为param，source,cookie时必填
      * @return conditionValue
      */
     public String getConditionValue() {

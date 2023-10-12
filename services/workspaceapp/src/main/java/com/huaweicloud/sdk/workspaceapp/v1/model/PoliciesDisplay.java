@@ -112,7 +112,7 @@ public class PoliciesDisplay {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
-    private PoliciesDisplayOptions options;
+    private DisplayOptions options;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rendering_acceleration_enable")
@@ -166,14 +166,14 @@ public class PoliciesDisplay {
         this.displayLevel = displayLevel;
     }
 
-    public PoliciesDisplay withOptions(PoliciesDisplayOptions options) {
+    public PoliciesDisplay withOptions(DisplayOptions options) {
         this.options = options;
         return this;
     }
 
-    public PoliciesDisplay withOptions(Consumer<PoliciesDisplayOptions> optionsSetter) {
+    public PoliciesDisplay withOptions(Consumer<DisplayOptions> optionsSetter) {
         if (this.options == null) {
-            this.options = new PoliciesDisplayOptions();
+            this.options = new DisplayOptions();
             optionsSetter.accept(this.options);
         }
 
@@ -184,11 +184,11 @@ public class PoliciesDisplay {
      * Get options
      * @return options
      */
-    public PoliciesDisplayOptions getOptions() {
+    public DisplayOptions getOptions() {
         return options;
     }
 
-    public void setOptions(PoliciesDisplayOptions options) {
+    public void setOptions(DisplayOptions options) {
         this.options = options;
     }
 

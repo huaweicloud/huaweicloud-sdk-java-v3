@@ -114,7 +114,7 @@ public class TimelineTrafficStatisticsRequestBody {
     }
 
     /**
-     * 查询流量类型值为：write，index，storage
+     * 查询流量类型值为：write，index，storage,basicTransfer，seniorTransfer
      * @return searchType
      */
     public String getSearchType() {

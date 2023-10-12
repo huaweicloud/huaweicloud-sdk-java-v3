@@ -23,13 +23,18 @@ public class PolicyStatement {
 
     private List<String> actions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roam_actions")
+
+    private List<String> roamActions = null;
+
     public PolicyStatement withPolicyStatementId(String policyStatementId) {
         this.policyStatementId = policyStatementId;
         return this;
     }
 
     /**
-     * 支持的访问策略,内置如下三种策略 * `读写` - 上传、编辑、下载 policy_statement_id: DEFAULT_1 * `只读` - 下载 policy_statement_id: DEFAULT_2 * `只写` - 上传、编辑 policy_statement_id: DEFAULT_3
+     * 支持的访问策略，内置如下四种策略: * `DEFAULT_1`：`客户端访问存储` - 上传、下载; `云端访问存储` - 读写   - action: PutObject、DeleteObject、GetObject   - roam_action: PutObject、DeleteObject、GetObject * `DEFAULT_2`：`客户端访问存储` - 下载; `云端访问存储` - 读写   - action: GetObject   - roam_action: PutObject、DeleteObject、GetObject * `DEFAULT_3`：`客户端访问存储` - 上传; `云端访问存储` - 读写   - action: PutObject、DeleteObject   - roam_action: PutObject、DeleteObject、GetObject * `DEFAULT_4`：`客户端访问存储` - 仅可查看列表,不允许上传下载; `云端访问存储` - 只读   - action:    - roam_action: GetObject
      * @return policyStatementId
      */
     public String getPolicyStatementId() {
@@ -62,7 +67,7 @@ public class PolicyStatement {
     }
 
     /**
-     * 可以进行操作的权限合集 * `PutObject` -  上传、修改、重命名、移动 * `GetObject` - 下载 * `DeleteObject` - 删除
+     * 客户端访问存储可操作的权限合集 * `PutObject` -  上传、修改、重命名、移动 * `GetObject` - 下载 * `DeleteObject` - 删除
      * @return actions
      */
     public List<String> getActions() {
@@ -71,6 +76,39 @@ public class PolicyStatement {
 
     public void setActions(List<String> actions) {
         this.actions = actions;
+    }
+
+    public PolicyStatement withRoamActions(List<String> roamActions) {
+        this.roamActions = roamActions;
+        return this;
+    }
+
+    public PolicyStatement addRoamActionsItem(String roamActionsItem) {
+        if (this.roamActions == null) {
+            this.roamActions = new ArrayList<>();
+        }
+        this.roamActions.add(roamActionsItem);
+        return this;
+    }
+
+    public PolicyStatement withRoamActions(Consumer<List<String>> roamActionsSetter) {
+        if (this.roamActions == null) {
+            this.roamActions = new ArrayList<>();
+        }
+        roamActionsSetter.accept(this.roamActions);
+        return this;
+    }
+
+    /**
+     * 云端访问存储可操作的权限合集 * `PutObject` -  上传、修改、重命名、移动 * `GetObject` - 下载 * `DeleteObject` - 删除
+     * @return roamActions
+     */
+    public List<String> getRoamActions() {
+        return roamActions;
+    }
+
+    public void setRoamActions(List<String> roamActions) {
+        this.roamActions = roamActions;
     }
 
     @Override
@@ -83,12 +121,12 @@ public class PolicyStatement {
         }
         PolicyStatement that = (PolicyStatement) obj;
         return Objects.equals(this.policyStatementId, that.policyStatementId)
-            && Objects.equals(this.actions, that.actions);
+            && Objects.equals(this.actions, that.actions) && Objects.equals(this.roamActions, that.roamActions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyStatementId, actions);
+        return Objects.hash(policyStatementId, actions, roamActions);
     }
 
     @Override
@@ -97,6 +135,7 @@ public class PolicyStatement {
         sb.append("class PolicyStatement {\n");
         sb.append("    policyStatementId: ").append(toIndentedString(policyStatementId)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    roamActions: ").append(toIndentedString(roamActions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class Urls {
 
     private String fileType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
     public Urls withId(Long id) {
         this.id = id;
         return this;
@@ -186,6 +191,23 @@ public class Urls {
         this.fileType = fileType;
     }
 
+    public Urls withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 目录刷新方式，all：刷新目录下全部资源；detect_modify_refresh：刷新目录下已变更的资源，默认值为all。
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -198,12 +220,13 @@ public class Urls {
         return Objects.equals(this.id, that.id) && Objects.equals(this.url, that.url)
             && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
             && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.modifyTime, that.modifyTime)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.fileType, that.fileType);
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.fileType, that.fileType)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, url, status, type, taskId, modifyTime, createTime, fileType);
+        return Objects.hash(id, url, status, type, taskId, modifyTime, createTime, fileType, mode);
     }
 
     @Override
@@ -218,6 +241,7 @@ public class Urls {
         sb.append("    modifyTime: ").append(toIndentedString(modifyTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

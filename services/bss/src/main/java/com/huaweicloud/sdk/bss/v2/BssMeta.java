@@ -143,6 +143,9 @@ import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerBillDetailRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerBillDetailResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerCouponsRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerCouponsResponse;
+import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerNewTagReq;
+import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerNewTagRequest;
+import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerNewTagResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomersRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomersResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListSubcustomerMonthlyBillsRequest;
@@ -3262,6 +3265,31 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubCustomerCouponsRequest::getIndirectPartnerId, (req, v) -> {
                 req.setIndirectPartnerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> listSubCustomerNewTag =
+        genForlistSubCustomerNewTag();
+
+    private static HttpRequestDef<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> genForlistSubCustomerNewTag() {
+        // basic
+        HttpRequestDef.Builder<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListSubCustomerNewTagRequest.class, ListSubCustomerNewTagResponse.class)
+            .withName("ListSubCustomerNewTag")
+            .withUri("/v2/partners/sub-customers/new-customers-tags/batch-query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListSubCustomerNewTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSubCustomerNewTagReq.class),
+            f -> f.withMarshaller(ListSubCustomerNewTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

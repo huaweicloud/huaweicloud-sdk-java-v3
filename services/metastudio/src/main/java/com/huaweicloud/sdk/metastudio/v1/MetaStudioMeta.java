@@ -25,6 +25,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardReq
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoResponse;
@@ -94,6 +97,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
@@ -1220,6 +1225,65 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse> createPhotoDetection =
+        genForcreatePhotoDetection();
+
+    private static HttpRequestDef<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse> genForcreatePhotoDetection() {
+        // basic
+        HttpRequestDef.Builder<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePhotoDetectionRequest.class, CreatePhotoDetectionResponse.class)
+            .withName("CreatePhotoDetection")
+            .withUri("/v1/{project_id}/photo-detection")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePhotoDetectionRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePhotoDetectionRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePhotoDetectionRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePhotoDetectionRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<CreatePhotoDetectionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePhotoDetectionReq.class),
+            f -> f.withMarshaller(CreatePhotoDetectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePhotoDetectionResponse::getXRequestId,
+                CreatePhotoDetectionResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePhotoDigitalHumanVideoRequest, CreatePhotoDigitalHumanVideoResponse> createPhotoDigitalHumanVideo =
         genForcreatePhotoDigitalHumanVideo();
 
@@ -1279,6 +1343,65 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(CreatePhotoDigitalHumanVideoResponse::getXRequestId,
                 CreatePhotoDigitalHumanVideoResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse> showPhotoDetection =
+        genForshowPhotoDetection();
+
+    private static HttpRequestDef<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse> genForshowPhotoDetection() {
+        // basic
+        HttpRequestDef.Builder<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPhotoDetectionRequest.class, ShowPhotoDetectionResponse.class)
+                .withName("ShowPhotoDetection")
+                .withUri("/v1/{project_id}/photo-detection/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPhotoDetectionRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPhotoDetectionRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPhotoDetectionRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPhotoDetectionRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPhotoDetectionRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPhotoDetectionResponse::getXRequestId,
+                ShowPhotoDetectionResponse::setXRequestId));
         return builder.build();
     }
 

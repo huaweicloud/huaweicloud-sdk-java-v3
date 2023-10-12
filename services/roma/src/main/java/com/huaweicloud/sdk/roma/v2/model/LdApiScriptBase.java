@@ -26,7 +26,7 @@ public class LdApiScriptBase {
     private String dsName;
 
     /**
-     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
+     * 数据源类型：  - oracle：oracle数据源类型  - mysql：mysql数据源类型  - mongodb：mongodb数据源类型  - redis：redis数据源类型  - postgresql：postgresql/opengauss数据源类型  - hive：hive数据源类型  - mssql：sqlserver数据源类型  - sqlserver：sqlserver数据源类型  - dws：dws数据源类型  - gauss100：gauss100数据源类型  - zenith：zenith数据源类型
      */
     public static final class DsTypeEnum {
 
@@ -71,11 +71,6 @@ public class LdApiScriptBase {
         public static final DsTypeEnum SQLSERVER = new DsTypeEnum("sqlserver");
 
         /**
-         * Enum GAUSS200 for value: "gauss200"
-         */
-        public static final DsTypeEnum GAUSS200 = new DsTypeEnum("gauss200");
-
-        /**
          * Enum DWS for value: "dws"
          */
         public static final DsTypeEnum DWS = new DsTypeEnum("dws");
@@ -102,7 +97,6 @@ public class LdApiScriptBase {
             map.put("hive", HIVE);
             map.put("mssql", MSSQL);
             map.put("sqlserver", SQLSERVER);
-            map.put("gauss200", GAUSS200);
             map.put("dws", DWS);
             map.put("gauss100", GAUSS100);
             map.put("zenith", ZENITH);
@@ -225,7 +219,7 @@ public class LdApiScriptBase {
     }
 
     /**
-     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
+     * 数据源类型：  - oracle：oracle数据源类型  - mysql：mysql数据源类型  - mongodb：mongodb数据源类型  - redis：redis数据源类型  - postgresql：postgresql/opengauss数据源类型  - hive：hive数据源类型  - mssql：sqlserver数据源类型  - sqlserver：sqlserver数据源类型  - dws：dws数据源类型  - gauss100：gauss100数据源类型  - zenith：zenith数据源类型
      * @return dsType
      */
     public DsTypeEnum getDsType() {
@@ -259,7 +253,7 @@ public class LdApiScriptBase {
     }
 
     /**
-     * 返回对象。  当api_type = data时，必选
+     * 返回对象。
      * @return objectName
      */
     public String getObjectName() {

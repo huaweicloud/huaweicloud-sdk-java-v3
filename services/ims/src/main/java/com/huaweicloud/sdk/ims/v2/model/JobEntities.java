@@ -29,6 +29,31 @@ public class JobEntities {
     private String imageName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "addition_error_code")
+
+    private String additionErrorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "addition_error_msg")
+
+    private String additionErrorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error")
+
+    private String error;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_code")
+
+    private String alarmCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_percent")
 
     private Double processPercent;
@@ -97,6 +122,91 @@ public class JobEntities {
 
     public void setImageName(String imageName) {
         this.imageName = imageName;
+    }
+
+    public JobEntities withAdditionErrorCode(String additionErrorCode) {
+        this.additionErrorCode = additionErrorCode;
+        return this;
+    }
+
+    /**
+     * 添加错误码
+     * @return additionErrorCode
+     */
+    public String getAdditionErrorCode() {
+        return additionErrorCode;
+    }
+
+    public void setAdditionErrorCode(String additionErrorCode) {
+        this.additionErrorCode = additionErrorCode;
+    }
+
+    public JobEntities withAdditionErrorMsg(String additionErrorMsg) {
+        this.additionErrorMsg = additionErrorMsg;
+        return this;
+    }
+
+    /**
+     * 添加错误消息
+     * @return additionErrorMsg
+     */
+    public String getAdditionErrorMsg() {
+        return additionErrorMsg;
+    }
+
+    public void setAdditionErrorMsg(String additionErrorMsg) {
+        this.additionErrorMsg = additionErrorMsg;
+    }
+
+    public JobEntities withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 错误码
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public JobEntities withError(String error) {
+        this.error = error;
+        return this;
+    }
+
+    /**
+     * 错误消息
+     * @return error
+     */
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    public JobEntities withAlarmCode(String alarmCode) {
+        this.alarmCode = alarmCode;
+        return this;
+    }
+
+    /**
+     * 告警代码
+     * @return alarmCode
+     */
+    public String getAlarmCode() {
+        return alarmCode;
+    }
+
+    public void setAlarmCode(String alarmCode) {
+        this.alarmCode = alarmCode;
     }
 
     public JobEntities withProcessPercent(Double processPercent) {
@@ -226,6 +336,10 @@ public class JobEntities {
         JobEntities that = (JobEntities) obj;
         return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.currentTask, that.currentTask)
             && Objects.equals(this.imageName, that.imageName)
+            && Objects.equals(this.additionErrorCode, that.additionErrorCode)
+            && Objects.equals(this.additionErrorMsg, that.additionErrorMsg)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.error, that.error)
+            && Objects.equals(this.alarmCode, that.alarmCode)
             && Objects.equals(this.processPercent, that.processPercent) && Objects.equals(this.results, that.results)
             && Objects.equals(this.subJobsResult, that.subJobsResult)
             && Objects.equals(this.subJobsList, that.subJobsList);
@@ -233,7 +347,18 @@ public class JobEntities {
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageId, currentTask, imageName, processPercent, results, subJobsResult, subJobsList);
+        return Objects.hash(imageId,
+            currentTask,
+            imageName,
+            additionErrorCode,
+            additionErrorMsg,
+            errorCode,
+            error,
+            alarmCode,
+            processPercent,
+            results,
+            subJobsResult,
+            subJobsList);
     }
 
     @Override
@@ -243,6 +368,11 @@ public class JobEntities {
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    currentTask: ").append(toIndentedString(currentTask)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
+        sb.append("    additionErrorCode: ").append(toIndentedString(additionErrorCode)).append("\n");
+        sb.append("    additionErrorMsg: ").append(toIndentedString(additionErrorMsg)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    alarmCode: ").append(toIndentedString(alarmCode)).append("\n");
         sb.append("    processPercent: ").append(toIndentedString(processPercent)).append("\n");
         sb.append("    results: ").append(toIndentedString(results)).append("\n");
         sb.append("    subJobsResult: ").append(toIndentedString(subJobsResult)).append("\n");

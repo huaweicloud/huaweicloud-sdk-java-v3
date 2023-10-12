@@ -17,6 +17,11 @@ public class ClusterDetailInstances {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resourceId")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -66,6 +71,23 @@ public class ClusterDetailInstances {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public ClusterDetailInstances withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 该实例对应的资源Id。
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
     }
 
     public ClusterDetailInstances withType(String type) {
@@ -205,15 +227,16 @@ public class ClusterDetailInstances {
             return false;
         }
         ClusterDetailInstances that = (ClusterDetailInstances) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.azCode, that.azCode)
-            && Objects.equals(this.ip, that.ip) && Objects.equals(this.volume, that.volume);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.azCode, that.azCode) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.volume, that.volume);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type, id, name, specCode, azCode, ip, volume);
+        return Objects.hash(status, resourceId, type, id, name, specCode, azCode, ip, volume);
     }
 
     @Override
@@ -221,6 +244,7 @@ public class ClusterDetailInstances {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClusterDetailInstances {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

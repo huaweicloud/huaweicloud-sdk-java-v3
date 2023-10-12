@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardReq
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobRequest;
@@ -77,6 +79,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
@@ -603,6 +607,37 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 创建照片检测任务
+     *
+     * 该接口用于创建照片检测任务，检测照片是否满足制作照片数字人的要求。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePhotoDetectionRequest 请求对象
+     * @return CompletableFuture<CreatePhotoDetectionResponse>
+     */
+    public CompletableFuture<CreatePhotoDetectionResponse> createPhotoDetectionAsync(
+        CreatePhotoDetectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createPhotoDetection);
+    }
+
+    /**
+     * 创建照片检测任务
+     *
+     * 该接口用于创建照片检测任务，检测照片是否满足制作照片数字人的要求。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePhotoDetectionRequest 请求对象
+     * @return AsyncInvoker<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse>
+     */
+    public AsyncInvoker<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse> createPhotoDetectionAsyncInvoker(
+        CreatePhotoDetectionRequest request) {
+        return new AsyncInvoker<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse>(request,
+            MetaStudioMeta.createPhotoDetection, hcClient);
+    }
+
+    /**
      * 创建照片分身数字人视频制作任务
      *
      * 该接口用于创建照片分身数字人视频制作任务。
@@ -631,6 +666,36 @@ public class MetaStudioAsyncClient {
         CreatePhotoDigitalHumanVideoRequest request) {
         return new AsyncInvoker<CreatePhotoDigitalHumanVideoRequest, CreatePhotoDigitalHumanVideoResponse>(request,
             MetaStudioMeta.createPhotoDigitalHumanVideo, hcClient);
+    }
+
+    /**
+     * 查询照片检测任务详情
+     *
+     * 该接口用于查询照片检测任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPhotoDetectionRequest 请求对象
+     * @return CompletableFuture<ShowPhotoDetectionResponse>
+     */
+    public CompletableFuture<ShowPhotoDetectionResponse> showPhotoDetectionAsync(ShowPhotoDetectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showPhotoDetection);
+    }
+
+    /**
+     * 查询照片检测任务详情
+     *
+     * 该接口用于查询照片检测任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPhotoDetectionRequest 请求对象
+     * @return AsyncInvoker<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse>
+     */
+    public AsyncInvoker<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse> showPhotoDetectionAsyncInvoker(
+        ShowPhotoDetectionRequest request) {
+        return new AsyncInvoker<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse>(request,
+            MetaStudioMeta.showPhotoDetection, hcClient);
     }
 
     /**

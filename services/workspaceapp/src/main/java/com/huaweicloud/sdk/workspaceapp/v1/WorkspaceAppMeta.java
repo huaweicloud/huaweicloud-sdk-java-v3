@@ -43,6 +43,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppServersRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppServersResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrUpdateStoragePolicyStatementReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrUpdateStoragePolicyStatementRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrUpdateStoragePolicyStatementResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePersistentStorageReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePersistentStorageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePersistentStorageResponse;
@@ -96,6 +99,10 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerGroupsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerGroupsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListServersRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListServersResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListSessionByUserNameRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListSessionByUserNameResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListSessionTypeRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListSessionTypeResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListShareFolderRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListShareFolderResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListStorageAssignmentRequest;
@@ -109,6 +116,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ListUserConnectionRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListUserConnectionResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListVolumeTypeRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListVolumeTypeResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.LogoffUserSessionReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.LogoffUserSessionRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.LogoffUserSessionResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppResponse;
@@ -120,6 +130,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPublishableAppRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPublishableAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UnpublishAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UnpublishAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UnpublishAppResponse;
@@ -146,6 +158,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateShareFolderAssignmentResp
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateTsviReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateUserFolderAssignmentRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateUserFolderAssignmentResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconRequestBody;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconResponse;
 
 @SuppressWarnings("unchecked")
 public class WorkspaceAppMeta {
@@ -171,14 +186,14 @@ public class WorkspaceAppMeta {
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPublishedAppRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPublishedAppRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
@@ -234,6 +249,31 @@ public class WorkspaceAppMeta {
             TypeCasts.uncheckedConversion(PublishAppReq.class),
             f -> f.withMarshaller(PublishAppRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPublishableAppRequest, ShowPublishableAppResponse> showPublishableApp =
+        genForshowPublishableApp();
+
+    private static HttpRequestDef<ShowPublishableAppRequest, ShowPublishableAppResponse> genForshowPublishableApp() {
+        // basic
+        HttpRequestDef.Builder<ShowPublishableAppRequest, ShowPublishableAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPublishableAppRequest.class, ShowPublishableAppResponse.class)
+                .withName("ShowPublishableApp")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}/publishable-app")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublishableAppRequest::getAppGroupId, (req, v) -> {
+                req.setAppGroupId(v);
             }));
 
         // response
@@ -310,6 +350,45 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UploadAppIconRequest, UploadAppIconResponse> uploadAppIcon =
+        genForuploadAppIcon();
+
+    private static HttpRequestDef<UploadAppIconRequest, UploadAppIconResponse> genForuploadAppIcon() {
+        // basic
+        HttpRequestDef.Builder<UploadAppIconRequest, UploadAppIconResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadAppIconRequest.class, UploadAppIconResponse.class)
+                .withName("UploadAppIcon")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}/apps/{app_id}/icon")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadAppIconRequest::getAppGroupId, (req, v) -> {
+                req.setAppGroupId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadAppIconRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<UploadAppIconRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UploadAppIconRequestBody.class),
+            f -> f.withMarshaller(UploadAppIconRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteAppGroupRequest, BatchDeleteAppGroupResponse> batchDeleteAppGroup =
         genForbatchDeleteAppGroup();
 
@@ -373,14 +452,14 @@ public class WorkspaceAppMeta {
         // requests
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppGroupRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppGroupRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
@@ -412,6 +491,13 @@ public class WorkspaceAppMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppGroupRequest::getAuthorizationType, (req, v) -> {
                 req.setAuthorizationType(v);
+            }));
+        builder.<String>withRequestField("app_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppGroupRequest::getAppType, (req, v) -> {
+                req.setAppType(v);
             }));
 
         // response
@@ -510,6 +596,24 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSessionTypeRequest, ListSessionTypeResponse> listSessionType =
+        genForlistSessionType();
+
+    private static HttpRequestDef<ListSessionTypeRequest, ListSessionTypeResponse> genForlistSessionType() {
+        // basic
+        HttpRequestDef.Builder<ListSessionTypeRequest, ListSessionTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSessionTypeRequest.class, ListSessionTypeResponse.class)
+                .withName("ListSessionType")
+                .withUri("/v1/{project_id}/session-type")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddAppGroupAuthorizationRequest, AddAppGroupAuthorizationResponse> addAppGroupAuthorization =
         genForaddAppGroupAuthorization();
 
@@ -595,14 +699,14 @@ public class WorkspaceAppMeta {
         // requests
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
@@ -662,6 +766,34 @@ public class WorkspaceAppMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse> createOrUpdateStoragePolicyStatement =
+        genForcreateOrUpdateStoragePolicyStatement();
+
+    private static HttpRequestDef<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse> genForcreateOrUpdateStoragePolicyStatement() {
+        // basic
+        HttpRequestDef.Builder<CreateOrUpdateStoragePolicyStatementRequest, CreateOrUpdateStoragePolicyStatementResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    CreateOrUpdateStoragePolicyStatementRequest.class,
+                    CreateOrUpdateStoragePolicyStatementResponse.class)
+                .withName("CreateOrUpdateStoragePolicyStatement")
+                .withUri("/v1/{project_id}/storages-policy/actions/create-statements")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateOrUpdateStoragePolicyStatementReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateOrUpdateStoragePolicyStatementReq.class),
+            f -> f.withMarshaller(CreateOrUpdateStoragePolicyStatementRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1203,14 +1335,14 @@ public class WorkspaceAppMeta {
         // requests
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPolicyGroupRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPolicyGroupRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
@@ -1249,14 +1381,14 @@ public class WorkspaceAppMeta {
         // requests
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPolicyTemplateRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPolicyTemplateRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
@@ -1700,14 +1832,14 @@ public class WorkspaceAppMeta {
         // requests
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
@@ -1880,14 +2012,14 @@ public class WorkspaceAppMeta {
         // requests
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServerGroupsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServerGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
@@ -1905,6 +2037,13 @@ public class WorkspaceAppMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServerGroupsRequest::getServerGroupId, (req, v) -> {
                 req.setServerGroupId(v);
+            }));
+        builder.<String>withRequestField("app_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServerGroupsRequest::getAppType, (req, v) -> {
+                req.setAppType(v);
             }));
 
         // response
@@ -1958,14 +2097,14 @@ public class WorkspaceAppMeta {
         // requests
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppConnectionRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppConnectionRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
@@ -1976,6 +2115,31 @@ public class WorkspaceAppMeta {
             TypeCasts.uncheckedConversion(ListAppConnectionReq.class),
             f -> f.withMarshaller(ListAppConnectionRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSessionByUserNameRequest, ListSessionByUserNameResponse> listSessionByUserName =
+        genForlistSessionByUserName();
+
+    private static HttpRequestDef<ListSessionByUserNameRequest, ListSessionByUserNameResponse> genForlistSessionByUserName() {
+        // basic
+        HttpRequestDef.Builder<ListSessionByUserNameRequest, ListSessionByUserNameResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSessionByUserNameRequest.class, ListSessionByUserNameResponse.class)
+            .withName("ListSessionByUserName")
+            .withUri("/v1/{project_id}/session/user-session-info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSessionByUserNameRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
             }));
 
         // response
@@ -1997,14 +2161,14 @@ public class WorkspaceAppMeta {
         // requests
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUserConnectionRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUserConnectionRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
@@ -2014,6 +2178,31 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListUserConnectionReq.class),
             f -> f.withMarshaller(ListUserConnectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<LogoffUserSessionRequest, LogoffUserSessionResponse> logoffUserSession =
+        genForlogoffUserSession();
+
+    private static HttpRequestDef<LogoffUserSessionRequest, LogoffUserSessionResponse> genForlogoffUserSession() {
+        // basic
+        HttpRequestDef.Builder<LogoffUserSessionRequest, LogoffUserSessionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, LogoffUserSessionRequest.class, LogoffUserSessionResponse.class)
+                .withName("LogoffUserSession")
+                .withUri("/v1/{project_id}/session/logoff")
+                .withContentType("application/json");
+
+        // requests
+        builder.<LogoffUserSessionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LogoffUserSessionReq.class),
+            f -> f.withMarshaller(LogoffUserSessionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

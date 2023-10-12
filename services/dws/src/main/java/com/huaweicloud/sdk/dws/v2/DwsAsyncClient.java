@@ -69,6 +69,8 @@ import com.huaweicloud.sdk.dws.v2.model.DisassociateEipRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbResponse;
+import com.huaweicloud.sdk.dws.v2.model.ExecuteDatabaseOmUserActionRequest;
+import com.huaweicloud.sdk.dws.v2.model.ExecuteDatabaseOmUserActionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteRedistributionClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteRedistributionClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExpandInstanceStorageRequest;
@@ -105,6 +107,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListClusterWorkloadRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterWorkloadResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClustersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClustersResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListConfigurationsAuditRecordsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListConfigurationsAuditRecordsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDataSourceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDataSourceResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUsersRequest;
@@ -163,14 +167,22 @@ import com.huaweicloud.sdk.dws.v2.model.RestoreClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterResponse;
+import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoRequest;
+import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseOmUserStatusRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseOmUserStatusResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseUserRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseUserResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterDetailRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterDetailResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryRequest;
@@ -1234,6 +1246,37 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 执行运维用户操作
+     *
+     * 进行数据库运维账户操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDatabaseOmUserActionRequest 请求对象
+     * @return CompletableFuture<ExecuteDatabaseOmUserActionResponse>
+     */
+    public CompletableFuture<ExecuteDatabaseOmUserActionResponse> executeDatabaseOmUserActionAsync(
+        ExecuteDatabaseOmUserActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.executeDatabaseOmUserAction);
+    }
+
+    /**
+     * 执行运维用户操作
+     *
+     * 进行数据库运维账户操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDatabaseOmUserActionRequest 请求对象
+     * @return AsyncInvoker<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse>
+     */
+    public AsyncInvoker<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse> executeDatabaseOmUserActionAsyncInvoker(
+        ExecuteDatabaseOmUserActionRequest request) {
+        return new AsyncInvoker<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse>(request,
+            DwsMeta.executeDatabaseOmUserAction, hcClient);
+    }
+
+    /**
      * 下发重分布
      *
      * 下发重分布
@@ -1779,6 +1822,37 @@ public class DwsAsyncClient {
     public AsyncInvoker<ListClustersRequest, ListClustersResponse> listClustersAsyncInvoker(
         ListClustersRequest request) {
         return new AsyncInvoker<ListClustersRequest, ListClustersResponse>(request, DwsMeta.listClusters, hcClient);
+    }
+
+    /**
+     * 查询参数修改审计记录
+     *
+     * 查询参数修改审计记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigurationsAuditRecordsRequest 请求对象
+     * @return CompletableFuture<ListConfigurationsAuditRecordsResponse>
+     */
+    public CompletableFuture<ListConfigurationsAuditRecordsResponse> listConfigurationsAuditRecordsAsync(
+        ListConfigurationsAuditRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listConfigurationsAuditRecords);
+    }
+
+    /**
+     * 查询参数修改审计记录
+     *
+     * 查询参数修改审计记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigurationsAuditRecordsRequest 请求对象
+     * @return AsyncInvoker<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse>
+     */
+    public AsyncInvoker<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse> listConfigurationsAuditRecordsAsyncInvoker(
+        ListConfigurationsAuditRecordsRequest request) {
+        return new AsyncInvoker<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse>(request,
+            DwsMeta.listConfigurationsAuditRecords, hcClient);
     }
 
     /**
@@ -2639,6 +2713,68 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 保存集群描述信息
+     *
+     * 保存集群描述信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SaveClusterDescriptionInfoRequest 请求对象
+     * @return CompletableFuture<SaveClusterDescriptionInfoResponse>
+     */
+    public CompletableFuture<SaveClusterDescriptionInfoResponse> saveClusterDescriptionInfoAsync(
+        SaveClusterDescriptionInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.saveClusterDescriptionInfo);
+    }
+
+    /**
+     * 保存集群描述信息
+     *
+     * 保存集群描述信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SaveClusterDescriptionInfoRequest 请求对象
+     * @return AsyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse>
+     */
+    public AsyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse> saveClusterDescriptionInfoAsyncInvoker(
+        SaveClusterDescriptionInfoRequest request) {
+        return new AsyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse>(request,
+            DwsMeta.saveClusterDescriptionInfo, hcClient);
+    }
+
+    /**
+     * 查询重分布详情
+     *
+     * 查询重分布详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterRedistributionRequest 请求对象
+     * @return CompletableFuture<ShowClusterRedistributionResponse>
+     */
+    public CompletableFuture<ShowClusterRedistributionResponse> showClusterRedistributionAsync(
+        ShowClusterRedistributionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.showClusterRedistribution);
+    }
+
+    /**
+     * 查询重分布详情
+     *
+     * 查询重分布详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterRedistributionRequest 请求对象
+     * @return AsyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse>
+     */
+    public AsyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse> showClusterRedistributionAsyncInvoker(
+        ShowClusterRedistributionRequest request) {
+        return new AsyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse>(request,
+            DwsMeta.showClusterRedistribution, hcClient);
+    }
+
+    /**
      * 查询数据库对象权限
      *
      * 查询数据库对象权限
@@ -2667,6 +2803,37 @@ public class DwsAsyncClient {
         ShowDatabaseAuthorityRequest request) {
         return new AsyncInvoker<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse>(request,
             DwsMeta.showDatabaseAuthority, hcClient);
+    }
+
+    /**
+     * 获得集群运维账户状态
+     *
+     * 获得数据库运维账户状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatabaseOmUserStatusRequest 请求对象
+     * @return CompletableFuture<ShowDatabaseOmUserStatusResponse>
+     */
+    public CompletableFuture<ShowDatabaseOmUserStatusResponse> showDatabaseOmUserStatusAsync(
+        ShowDatabaseOmUserStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.showDatabaseOmUserStatus);
+    }
+
+    /**
+     * 获得集群运维账户状态
+     *
+     * 获得数据库运维账户状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatabaseOmUserStatusRequest 请求对象
+     * @return AsyncInvoker<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse>
+     */
+    public AsyncInvoker<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse> showDatabaseOmUserStatusAsyncInvoker(
+        ShowDatabaseOmUserStatusRequest request) {
+        return new AsyncInvoker<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse>(request,
+            DwsMeta.showDatabaseOmUserStatus, hcClient);
     }
 
     /**
@@ -2758,6 +2925,35 @@ public class DwsAsyncClient {
         ShowDisasterProgressRequest request) {
         return new AsyncInvoker<ShowDisasterProgressRequest, ShowDisasterProgressResponse>(request,
             DwsMeta.showDisasterProgress, hcClient);
+    }
+
+    /**
+     * 查询单个实例
+     *
+     * 查询单个实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return CompletableFuture<ShowInstanceResponse>
+     */
+    public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.showInstance);
+    }
+
+    /**
+     * 查询单个实例
+     *
+     * 查询单个实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
+     */
+    public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
+        ShowInstanceRequest request) {
+        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, DwsMeta.showInstance, hcClient);
     }
 
     /**

@@ -36,6 +36,11 @@ public class AggregatedSourceStatus {
     private String sourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_name")
+
+    private String sourceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_type")
 
     private String sourceType;
@@ -125,6 +130,23 @@ public class AggregatedSourceStatus {
         this.sourceId = sourceId;
     }
 
+    public AggregatedSourceStatus withSourceName(String sourceName) {
+        this.sourceName = sourceName;
+        return this;
+    }
+
+    /**
+     * 账号名。
+     * @return sourceName
+     */
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+    }
+
     public AggregatedSourceStatus withSourceType(String sourceType) {
         this.sourceType = sourceType;
         return this;
@@ -155,12 +177,13 @@ public class AggregatedSourceStatus {
             && Objects.equals(this.lastErrorMessage, that.lastErrorMessage)
             && Objects.equals(this.lastUpdateStatus, that.lastUpdateStatus)
             && Objects.equals(this.lastUpdateTime, that.lastUpdateTime) && Objects.equals(this.sourceId, that.sourceId)
-            && Objects.equals(this.sourceType, that.sourceType);
+            && Objects.equals(this.sourceName, that.sourceName) && Objects.equals(this.sourceType, that.sourceType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lastErrorCode, lastErrorMessage, lastUpdateStatus, lastUpdateTime, sourceId, sourceType);
+        return Objects
+            .hash(lastErrorCode, lastErrorMessage, lastUpdateStatus, lastUpdateTime, sourceId, sourceName, sourceType);
     }
 
     @Override
@@ -172,6 +195,7 @@ public class AggregatedSourceStatus {
         sb.append("    lastUpdateStatus: ").append(toIndentedString(lastUpdateStatus)).append("\n");
         sb.append("    lastUpdateTime: ").append(toIndentedString(lastUpdateTime)).append("\n");
         sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
+        sb.append("    sourceName: ").append(toIndentedString(sourceName)).append("\n");
         sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
         sb.append("}");
         return sb.toString();

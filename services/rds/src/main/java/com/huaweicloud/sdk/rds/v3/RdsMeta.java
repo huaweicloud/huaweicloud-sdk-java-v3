@@ -6,6 +6,8 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.rds.v3.model.AddMsdtcRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.AddPostgresqlHbaConfRequest;
+import com.huaweicloud.sdk.rds.v3.model.AddPostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.AllowDbPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.AllowDbPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.AllowDbUserPrivilegeRequest;
@@ -103,6 +105,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
@@ -194,6 +198,10 @@ import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDbUserPaginatedRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDbUserPaginatedResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlExtensionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoHistoryRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoHistoryResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsRequest;
@@ -234,6 +242,8 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyCollationRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ModifyCollationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyDnsNameRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ModifyParamRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyProxyWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.MysqlReadOnlySwitch;
 import com.huaweicloud.sdk.rds.v3.model.OpenProxyRequest;
@@ -241,6 +251,8 @@ import com.huaweicloud.sdk.rds.v3.model.OpsWindowRequest;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlDatabaseForCreation;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlDatabaseSchemaReq;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlGrantRequest;
+import com.huaweicloud.sdk.rds.v3.model.PostgresqlHbaConf;
+import com.huaweicloud.sdk.rds.v3.model.PostgresqlHbaHistory;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlUserForCreation;
 import com.huaweicloud.sdk.rds.v3.model.PwdResetRequest;
 import com.huaweicloud.sdk.rds.v3.model.RecyclePolicyRequestBody;
@@ -410,8 +422,43 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UserForCreation;
 
+import java.time.OffsetDateTime;
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class RdsMeta {
+
+    public static final HttpRequestDef<AddPostgresqlHbaConfRequest, AddPostgresqlHbaConfResponse> addPostgresqlHbaConf =
+        genForaddPostgresqlHbaConf();
+
+    private static HttpRequestDef<AddPostgresqlHbaConfRequest, AddPostgresqlHbaConfResponse> genForaddPostgresqlHbaConf() {
+        // basic
+        HttpRequestDef.Builder<AddPostgresqlHbaConfRequest, AddPostgresqlHbaConfResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddPostgresqlHbaConfRequest.class, AddPostgresqlHbaConfResponse.class)
+            .withName("AddPostgresqlHbaConf")
+            .withUri("/v3/{project_id}/instances/{instance_id}/hba-info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddPostgresqlHbaConfRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<List<PostgresqlHbaConf>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(AddPostgresqlHbaConfRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(PostgresqlHbaConf.class));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<ApplyConfigurationAsyncRequest, ApplyConfigurationAsyncResponse> applyConfigurationAsync =
         genForapplyConfigurationAsync();
@@ -1083,6 +1130,38 @@ public class RdsMeta {
             f -> f.withMarshaller(DeleteManualBackupRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePostgresqlHbaConfRequest, DeletePostgresqlHbaConfResponse> deletePostgresqlHbaConf =
+        genFordeletePostgresqlHbaConf();
+
+    private static HttpRequestDef<DeletePostgresqlHbaConfRequest, DeletePostgresqlHbaConfResponse> genFordeletePostgresqlHbaConf() {
+        // basic
+        HttpRequestDef.Builder<DeletePostgresqlHbaConfRequest, DeletePostgresqlHbaConfResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeletePostgresqlHbaConfRequest.class, DeletePostgresqlHbaConfResponse.class)
+            .withName("DeletePostgresqlHbaConf")
+            .withUri("/v3/{project_id}/instances/{instance_id}/hba-info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePostgresqlHbaConfRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<List<PostgresqlHbaConf>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeletePostgresqlHbaConfRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(PostgresqlHbaConf.class));
 
         // response
 
@@ -2237,6 +2316,87 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPostgresqlHbaInfoRequest, ListPostgresqlHbaInfoResponse> listPostgresqlHbaInfo =
+        genForlistPostgresqlHbaInfo();
+
+    private static HttpRequestDef<ListPostgresqlHbaInfoRequest, ListPostgresqlHbaInfoResponse> genForlistPostgresqlHbaInfo() {
+        // basic
+        HttpRequestDef.Builder<ListPostgresqlHbaInfoRequest, ListPostgresqlHbaInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPostgresqlHbaInfoRequest.class, ListPostgresqlHbaInfoResponse.class)
+            .withName("ListPostgresqlHbaInfo")
+            .withUri("/v3/{project_id}/instances/{instance_id}/hba-info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPostgresqlHbaInfoRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+        builder.<List<PostgresqlHbaConf>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPostgresqlHbaInfoResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(PostgresqlHbaConf.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPostgresqlHbaInfoHistoryRequest, ListPostgresqlHbaInfoHistoryResponse> listPostgresqlHbaInfoHistory =
+        genForlistPostgresqlHbaInfoHistory();
+
+    private static HttpRequestDef<ListPostgresqlHbaInfoHistoryRequest, ListPostgresqlHbaInfoHistoryResponse> genForlistPostgresqlHbaInfoHistory() {
+        // basic
+        HttpRequestDef.Builder<ListPostgresqlHbaInfoHistoryRequest, ListPostgresqlHbaInfoHistoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPostgresqlHbaInfoHistoryRequest.class,
+                    ListPostgresqlHbaInfoHistoryResponse.class)
+                .withName("ListPostgresqlHbaInfoHistory")
+                .withUri("/v3/{project_id}/instances/{instance_id}/hba-info/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPostgresqlHbaInfoHistoryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListPostgresqlHbaInfoHistoryRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<OffsetDateTime>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListPostgresqlHbaInfoHistoryRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+
+        // response
+        builder.<List<PostgresqlHbaHistory>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPostgresqlHbaInfoHistoryResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(PostgresqlHbaHistory.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPredefinedTagRequest, ListPredefinedTagResponse> listPredefinedTag =
         genForlistPredefinedTag();
 
@@ -2888,6 +3048,38 @@ public class RdsMeta {
             f -> f.withMarshaller(MigrateFollowerRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyPostgresqlHbaConfRequest, ModifyPostgresqlHbaConfResponse> modifyPostgresqlHbaConf =
+        genFormodifyPostgresqlHbaConf();
+
+    private static HttpRequestDef<ModifyPostgresqlHbaConfRequest, ModifyPostgresqlHbaConfResponse> genFormodifyPostgresqlHbaConf() {
+        // basic
+        HttpRequestDef.Builder<ModifyPostgresqlHbaConfRequest, ModifyPostgresqlHbaConfResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ModifyPostgresqlHbaConfRequest.class, ModifyPostgresqlHbaConfResponse.class)
+            .withName("ModifyPostgresqlHbaConf")
+            .withUri("/v3/{project_id}/instances/{instance_id}/hba-info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyPostgresqlHbaConfRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<List<PostgresqlHbaConf>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ModifyPostgresqlHbaConfRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(PostgresqlHbaConf.class));
 
         // response
 

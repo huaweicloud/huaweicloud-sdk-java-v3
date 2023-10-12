@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ListAllAppRequestBody
@@ -110,6 +113,122 @@ public class ListAllAppRequestBody {
 
     private String sortBy;
 
+    /**
+     * 应用最后一次执行的状态
+     */
+    public static final class StatesEnum {
+
+        /**
+         * Enum ABORT for value: "abort"
+         */
+        public static final StatesEnum ABORT = new StatesEnum("abort");
+
+        /**
+         * Enum FAILED for value: "failed"
+         */
+        public static final StatesEnum FAILED = new StatesEnum("failed");
+
+        /**
+         * Enum NOT_STARTED for value: "not_started"
+         */
+        public static final StatesEnum NOT_STARTED = new StatesEnum("not_started");
+
+        /**
+         * Enum PENDING for value: "pending"
+         */
+        public static final StatesEnum PENDING = new StatesEnum("pending");
+
+        /**
+         * Enum RUNNING for value: "running"
+         */
+        public static final StatesEnum RUNNING = new StatesEnum("running");
+
+        /**
+         * Enum SUCCEEDED for value: "succeeded"
+         */
+        public static final StatesEnum SUCCEEDED = new StatesEnum("succeeded");
+
+        /**
+         * Enum TIMEOUT for value: "timeout"
+         */
+        public static final StatesEnum TIMEOUT = new StatesEnum("timeout");
+
+        /**
+         * Enum NOT_EXECUTED for value: "not_executed"
+         */
+        public static final StatesEnum NOT_EXECUTED = new StatesEnum("not_executed");
+
+        private static final Map<String, StatesEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatesEnum> createStaticFields() {
+            Map<String, StatesEnum> map = new HashMap<>();
+            map.put("abort", ABORT);
+            map.put("failed", FAILED);
+            map.put("not_started", NOT_STARTED);
+            map.put("pending", PENDING);
+            map.put("running", RUNNING);
+            map.put("succeeded", SUCCEEDED);
+            map.put("timeout", TIMEOUT);
+            map.put("not_executed", NOT_EXECUTED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatesEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatesEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatesEnum(value));
+        }
+
+        public static StatesEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatesEnum) {
+                return this.value.equals(((StatesEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "states")
+
+    private List<StatesEnum> states = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public ListAllAppRequestBody withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -195,6 +314,56 @@ public class ListAllAppRequestBody {
         this.sortBy = sortBy;
     }
 
+    public ListAllAppRequestBody withStates(List<StatesEnum> states) {
+        this.states = states;
+        return this;
+    }
+
+    public ListAllAppRequestBody addStatesItem(StatesEnum statesItem) {
+        if (this.states == null) {
+            this.states = new ArrayList<>();
+        }
+        this.states.add(statesItem);
+        return this;
+    }
+
+    public ListAllAppRequestBody withStates(Consumer<List<StatesEnum>> statesSetter) {
+        if (this.states == null) {
+            this.states = new ArrayList<>();
+        }
+        statesSetter.accept(this.states);
+        return this;
+    }
+
+    /**
+     * 应用状态列表，支持查询以下状态： abort: 部署中止 failed: 部署失败 not_started: 取消执行 pending: 排队中 running: 正在部署 succeeded: 部署成功 timeout: 部署超时 not_executed: 未执行 
+     * @return states
+     */
+    public List<StatesEnum> getStates() {
+        return states;
+    }
+
+    public void setStates(List<StatesEnum> states) {
+        this.states = states;
+    }
+
+    public ListAllAppRequestBody withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 应用的分组id，传入no_grouped为查询未分组的应用
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -206,12 +375,13 @@ public class ListAllAppRequestBody {
         ListAllAppRequestBody that = (ListAllAppRequestBody) obj;
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.page, that.page)
             && Objects.equals(this.size, that.size) && Objects.equals(this.sortName, that.sortName)
-            && Objects.equals(this.sortBy, that.sortBy);
+            && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.states, that.states)
+            && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, page, size, sortName, sortBy);
+        return Objects.hash(projectId, page, size, sortName, sortBy, states, groupId);
     }
 
     @Override
@@ -223,6 +393,8 @@ public class ListAllAppRequestBody {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    sortName: ").append(toIndentedString(sortName)).append("\n");
         sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
+        sb.append("    states: ").append(toIndentedString(states)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

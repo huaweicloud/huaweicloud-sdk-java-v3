@@ -96,6 +96,21 @@ public class CreateServerGroupReq {
 
     private Boolean isVdi;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_type")
+
+    private AppTypeEnum appType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_session_type")
+
+    private ExtraSessionTypeEnum extraSessionType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_session_size")
+
+    private Integer extraSessionSize;
+
     public CreateServerGroupReq withName(String name) {
         this.name = name;
         return this;
@@ -405,6 +420,58 @@ public class CreateServerGroupReq {
         this.isVdi = isVdi;
     }
 
+    public CreateServerGroupReq withAppType(AppTypeEnum appType) {
+        this.appType = appType;
+        return this;
+    }
+
+    /**
+     * Get appType
+     * @return appType
+     */
+    public AppTypeEnum getAppType() {
+        return appType;
+    }
+
+    public void setAppType(AppTypeEnum appType) {
+        this.appType = appType;
+    }
+
+    public CreateServerGroupReq withExtraSessionType(ExtraSessionTypeEnum extraSessionType) {
+        this.extraSessionType = extraSessionType;
+        return this;
+    }
+
+    /**
+     * Get extraSessionType
+     * @return extraSessionType
+     */
+    public ExtraSessionTypeEnum getExtraSessionType() {
+        return extraSessionType;
+    }
+
+    public void setExtraSessionType(ExtraSessionTypeEnum extraSessionType) {
+        this.extraSessionType = extraSessionType;
+    }
+
+    public CreateServerGroupReq withExtraSessionSize(Integer extraSessionSize) {
+        this.extraSessionSize = extraSessionSize;
+        return this;
+    }
+
+    /**
+     * 付费会话数，单位/个
+     * minimum: 1
+     * @return extraSessionSize
+     */
+    public Integer getExtraSessionSize() {
+        return extraSessionSize;
+    }
+
+    public void setExtraSessionSize(Integer extraSessionSize) {
+        this.extraSessionSize = extraSessionSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -423,7 +490,10 @@ public class CreateServerGroupReq {
             && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.ouName, that.ouName)
             && Objects.equals(this.clusterId, that.clusterId)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.ipVirtual, that.ipVirtual) && Objects.equals(this.isVdi, that.isVdi);
+            && Objects.equals(this.ipVirtual, that.ipVirtual) && Objects.equals(this.isVdi, that.isVdi)
+            && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.extraSessionType, that.extraSessionType)
+            && Objects.equals(this.extraSessionSize, that.extraSessionSize);
     }
 
     @Override
@@ -444,7 +514,10 @@ public class CreateServerGroupReq {
             clusterId,
             availabilityZone,
             ipVirtual,
-            isVdi);
+            isVdi,
+            appType,
+            extraSessionType,
+            extraSessionSize);
     }
 
     @Override
@@ -468,6 +541,9 @@ public class CreateServerGroupReq {
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    ipVirtual: ").append(toIndentedString(ipVirtual)).append("\n");
         sb.append("    isVdi: ").append(toIndentedString(isVdi)).append("\n");
+        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
+        sb.append("    extraSessionType: ").append(toIndentedString(extraSessionType)).append("\n");
+        sb.append("    extraSessionSize: ").append(toIndentedString(extraSessionSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

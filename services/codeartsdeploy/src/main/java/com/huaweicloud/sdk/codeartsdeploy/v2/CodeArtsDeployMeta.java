@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.codeartsdeploy.v2;
 
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ConfigInfo;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateAppRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateAppRequestBody;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.CreateAppResponse;
@@ -67,6 +68,8 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeploymentHostDetailReque
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeploymentHostDetailResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowEnvironmentDetailRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowEnvironmentDetailResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowExecutionParamsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowExecutionParamsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostClusterDetailRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostClusterDetailResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostDetailRequest;
@@ -86,6 +89,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class CodeArtsDeployMeta {
@@ -364,6 +369,45 @@ public class CodeArtsDeployMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowExecutionParamsRequest, ShowExecutionParamsResponse> showExecutionParams =
+        genForshowExecutionParams();
+
+    private static HttpRequestDef<ShowExecutionParamsRequest, ShowExecutionParamsResponse> genForshowExecutionParams() {
+        // basic
+        HttpRequestDef.Builder<ShowExecutionParamsRequest, ShowExecutionParamsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowExecutionParamsRequest.class, ShowExecutionParamsResponse.class)
+                .withName("ShowExecutionParams")
+                .withUri("/v2/history/tasks/{task_id}/params")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExecutionParamsRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<String>withRequestField("record_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExecutionParamsRequest::getRecordId, (req, v) -> {
+                req.setRecordId(v);
+            }));
+
+        // response
+        builder.<List<ConfigInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowExecutionParamsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ConfigInfo.class));
 
         return builder.build();
     }

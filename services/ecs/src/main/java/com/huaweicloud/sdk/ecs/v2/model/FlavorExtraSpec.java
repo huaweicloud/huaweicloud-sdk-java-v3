@@ -171,6 +171,16 @@ public class FlavorExtraSpec {
     private String quotaGpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quota:vif_max_num")
+
+    private String quotaVifMaxNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quota:sub_network_interface_max_num")
+
+    private String quotaSubNetworkInterfaceMaxNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs:instance_architecture")
 
     private String ecsInstanceArchitecture;
@@ -719,6 +729,40 @@ public class FlavorExtraSpec {
         this.quotaGpu = quotaGpu;
     }
 
+    public FlavorExtraSpec withQuotaVifMaxNum(String quotaVifMaxNum) {
+        this.quotaVifMaxNum = quotaVifMaxNum;
+        return this;
+    }
+
+    /**
+     * 最多支持的弹性网卡个数
+     * @return quotaVifMaxNum
+     */
+    public String getQuotaVifMaxNum() {
+        return quotaVifMaxNum;
+    }
+
+    public void setQuotaVifMaxNum(String quotaVifMaxNum) {
+        this.quotaVifMaxNum = quotaVifMaxNum;
+    }
+
+    public FlavorExtraSpec withQuotaSubNetworkInterfaceMaxNum(String quotaSubNetworkInterfaceMaxNum) {
+        this.quotaSubNetworkInterfaceMaxNum = quotaSubNetworkInterfaceMaxNum;
+        return this;
+    }
+
+    /**
+     * 最多支持的辅助弹性网卡个数
+     * @return quotaSubNetworkInterfaceMaxNum
+     */
+    public String getQuotaSubNetworkInterfaceMaxNum() {
+        return quotaSubNetworkInterfaceMaxNum;
+    }
+
+    public void setQuotaSubNetworkInterfaceMaxNum(String quotaSubNetworkInterfaceMaxNum) {
+        this.quotaSubNetworkInterfaceMaxNum = quotaSubNetworkInterfaceMaxNum;
+    }
+
     public FlavorExtraSpec withEcsInstanceArchitecture(String ecsInstanceArchitecture) {
         this.ecsInstanceArchitecture = ecsInstanceArchitecture;
         return this;
@@ -774,6 +818,8 @@ public class FlavorExtraSpec {
             && Objects.equals(this.condComputeLiveResizable, that.condComputeLiveResizable)
             && Objects.equals(this.condCompute, that.condCompute) && Objects.equals(this.infoGpuName, that.infoGpuName)
             && Objects.equals(this.infoCpuName, that.infoCpuName) && Objects.equals(this.quotaGpu, that.quotaGpu)
+            && Objects.equals(this.quotaVifMaxNum, that.quotaVifMaxNum)
+            && Objects.equals(this.quotaSubNetworkInterfaceMaxNum, that.quotaSubNetworkInterfaceMaxNum)
             && Objects.equals(this.ecsInstanceArchitecture, that.ecsInstanceArchitecture);
     }
 
@@ -811,6 +857,8 @@ public class FlavorExtraSpec {
             infoGpuName,
             infoCpuName,
             quotaGpu,
+            quotaVifMaxNum,
+            quotaSubNetworkInterfaceMaxNum,
             ecsInstanceArchitecture);
     }
 
@@ -852,6 +900,10 @@ public class FlavorExtraSpec {
         sb.append("    infoGpuName: ").append(toIndentedString(infoGpuName)).append("\n");
         sb.append("    infoCpuName: ").append(toIndentedString(infoCpuName)).append("\n");
         sb.append("    quotaGpu: ").append(toIndentedString(quotaGpu)).append("\n");
+        sb.append("    quotaVifMaxNum: ").append(toIndentedString(quotaVifMaxNum)).append("\n");
+        sb.append("    quotaSubNetworkInterfaceMaxNum: ")
+            .append(toIndentedString(quotaSubNetworkInterfaceMaxNum))
+            .append("\n");
         sb.append("    ecsInstanceArchitecture: ").append(toIndentedString(ecsInstanceArchitecture)).append("\n");
         sb.append("}");
         return sb.toString();

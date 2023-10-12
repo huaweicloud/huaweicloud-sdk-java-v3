@@ -62,6 +62,21 @@ public class BaseServerGroup {
     private Boolean isVdi;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_session_type")
+
+    private ExtraSessionTypeEnum extraSessionType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_session_size")
+
+    private Integer extraSessionSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_type")
+
+    private AppTypeEnum appType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private OffsetDateTime createTime;
@@ -70,6 +85,11 @@ public class BaseServerGroup {
     @JsonProperty(value = "update_time")
 
     private OffsetDateTime updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_mount_policy")
+
+    private StorageFolderMountType storageMountPolicy;
 
     public BaseServerGroup withId(String id) {
         this.id = id;
@@ -241,6 +261,57 @@ public class BaseServerGroup {
         this.isVdi = isVdi;
     }
 
+    public BaseServerGroup withExtraSessionType(ExtraSessionTypeEnum extraSessionType) {
+        this.extraSessionType = extraSessionType;
+        return this;
+    }
+
+    /**
+     * Get extraSessionType
+     * @return extraSessionType
+     */
+    public ExtraSessionTypeEnum getExtraSessionType() {
+        return extraSessionType;
+    }
+
+    public void setExtraSessionType(ExtraSessionTypeEnum extraSessionType) {
+        this.extraSessionType = extraSessionType;
+    }
+
+    public BaseServerGroup withExtraSessionSize(Integer extraSessionSize) {
+        this.extraSessionSize = extraSessionSize;
+        return this;
+    }
+
+    /**
+     * 付费会话个数
+     * @return extraSessionSize
+     */
+    public Integer getExtraSessionSize() {
+        return extraSessionSize;
+    }
+
+    public void setExtraSessionSize(Integer extraSessionSize) {
+        this.extraSessionSize = extraSessionSize;
+    }
+
+    public BaseServerGroup withAppType(AppTypeEnum appType) {
+        this.appType = appType;
+        return this;
+    }
+
+    /**
+     * Get appType
+     * @return appType
+     */
+    public AppTypeEnum getAppType() {
+        return appType;
+    }
+
+    public void setAppType(AppTypeEnum appType) {
+        this.appType = appType;
+    }
+
     public BaseServerGroup withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -275,6 +346,23 @@ public class BaseServerGroup {
         this.updateTime = updateTime;
     }
 
+    public BaseServerGroup withStorageMountPolicy(StorageFolderMountType storageMountPolicy) {
+        this.storageMountPolicy = storageMountPolicy;
+        return this;
+    }
+
+    /**
+     * Get storageMountPolicy
+     * @return storageMountPolicy
+     */
+    public StorageFolderMountType getStorageMountPolicy() {
+        return storageMountPolicy;
+    }
+
+    public void setStorageMountPolicy(StorageFolderMountType storageMountPolicy) {
+        this.storageMountPolicy = storageMountPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -289,7 +377,11 @@ public class BaseServerGroup {
             && Objects.equals(this.osType, that.osType) && Objects.equals(this.productId, that.productId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.systemDiskType, that.systemDiskType)
             && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.isVdi, that.isVdi)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.extraSessionType, that.extraSessionType)
+            && Objects.equals(this.extraSessionSize, that.extraSessionSize)
+            && Objects.equals(this.appType, that.appType) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.storageMountPolicy, that.storageMountPolicy);
     }
 
     @Override
@@ -304,8 +396,12 @@ public class BaseServerGroup {
             systemDiskType,
             systemDiskSize,
             isVdi,
+            extraSessionType,
+            extraSessionSize,
+            appType,
             createTime,
-            updateTime);
+            updateTime,
+            storageMountPolicy);
     }
 
     @Override
@@ -322,8 +418,12 @@ public class BaseServerGroup {
         sb.append("    systemDiskType: ").append(toIndentedString(systemDiskType)).append("\n");
         sb.append("    systemDiskSize: ").append(toIndentedString(systemDiskSize)).append("\n");
         sb.append("    isVdi: ").append(toIndentedString(isVdi)).append("\n");
+        sb.append("    extraSessionType: ").append(toIndentedString(extraSessionType)).append("\n");
+        sb.append("    extraSessionSize: ").append(toIndentedString(extraSessionSize)).append("\n");
+        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    storageMountPolicy: ").append(toIndentedString(storageMountPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

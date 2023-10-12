@@ -19,6 +19,16 @@ public class ListActiveAsyncInvocationsResponse extends SdkResponse {
 
     private List<ListFunctionAsyncInvocationsResult> invocations = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "next_marker")
+
+    private Integer nextMarker;
+
     public ListActiveAsyncInvocationsResponse withInvocations(List<ListFunctionAsyncInvocationsResult> invocations) {
         this.invocations = invocations;
         return this;
@@ -53,6 +63,40 @@ public class ListActiveAsyncInvocationsResponse extends SdkResponse {
         this.invocations = invocations;
     }
 
+    public ListActiveAsyncInvocationsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 查询数据总条数
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public ListActiveAsyncInvocationsResponse withNextMarker(Integer nextMarker) {
+        this.nextMarker = nextMarker;
+        return this;
+    }
+
+    /**
+     * 查询下一页的起始位置
+     * @return nextMarker
+     */
+    public Integer getNextMarker() {
+        return nextMarker;
+    }
+
+    public void setNextMarker(Integer nextMarker) {
+        this.nextMarker = nextMarker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -62,12 +106,13 @@ public class ListActiveAsyncInvocationsResponse extends SdkResponse {
             return false;
         }
         ListActiveAsyncInvocationsResponse that = (ListActiveAsyncInvocationsResponse) obj;
-        return Objects.equals(this.invocations, that.invocations);
+        return Objects.equals(this.invocations, that.invocations) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.nextMarker, that.nextMarker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(invocations);
+        return Objects.hash(invocations, count, nextMarker);
     }
 
     @Override
@@ -75,6 +120,8 @@ public class ListActiveAsyncInvocationsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListActiveAsyncInvocationsResponse {\n");
         sb.append("    invocations: ").append(toIndentedString(invocations)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    nextMarker: ").append(toIndentedString(nextMarker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

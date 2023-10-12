@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.imagesearch.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -22,7 +21,7 @@ public class SearchRestInfoImageInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
-    private BigDecimal category;
+    private Integer category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category_name")
@@ -51,7 +50,7 @@ public class SearchRestInfoImageInfo {
         this.box = box;
     }
 
-    public SearchRestInfoImageInfo withCategory(BigDecimal category) {
+    public SearchRestInfoImageInfo withCategory(Integer category) {
         this.category = category;
         return this;
     }
@@ -60,11 +59,11 @@ public class SearchRestInfoImageInfo {
      * 用于搜索的主体类目序号。
      * @return category
      */
-    public BigDecimal getCategory() {
+    public Integer getCategory() {
         return category;
     }
 
-    public void setCategory(BigDecimal category) {
+    public void setCategory(Integer category) {
         this.category = category;
     }
 

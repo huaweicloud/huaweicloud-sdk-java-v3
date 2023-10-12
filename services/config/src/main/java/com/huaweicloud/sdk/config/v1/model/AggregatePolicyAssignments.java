@@ -31,6 +31,11 @@ public class AggregatePolicyAssignments {
 
     private String accountId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_name")
+
+    private String accountName;
+
     public AggregatePolicyAssignments withPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
         return this;
@@ -108,6 +113,23 @@ public class AggregatePolicyAssignments {
         this.accountId = accountId;
     }
 
+    public AggregatePolicyAssignments withAccountName(String accountName) {
+        this.accountName = accountName;
+        return this;
+    }
+
+    /**
+     * 帐户名称
+     * @return accountName
+     */
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -119,12 +141,13 @@ public class AggregatePolicyAssignments {
         AggregatePolicyAssignments that = (AggregatePolicyAssignments) obj;
         return Objects.equals(this.policyAssignmentId, that.policyAssignmentId)
             && Objects.equals(this.policyAssignmentName, that.policyAssignmentName)
-            && Objects.equals(this.compliance, that.compliance) && Objects.equals(this.accountId, that.accountId);
+            && Objects.equals(this.compliance, that.compliance) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.accountName, that.accountName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyAssignmentId, policyAssignmentName, compliance, accountId);
+        return Objects.hash(policyAssignmentId, policyAssignmentName, compliance, accountId, accountName);
     }
 
     @Override
@@ -135,6 +158,7 @@ public class AggregatePolicyAssignments {
         sb.append("    policyAssignmentName: ").append(toIndentedString(policyAssignmentName)).append("\n");
         sb.append("    compliance: ").append(toIndentedString(compliance)).append("\n");
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+        sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

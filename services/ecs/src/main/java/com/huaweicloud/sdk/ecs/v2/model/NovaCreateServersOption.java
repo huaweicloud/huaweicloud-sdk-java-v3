@@ -184,7 +184,7 @@ public class NovaCreateServersOption {
     }
 
     /**
-     * 弹性云服务器自动释放时间。  时间格式例如：2020-01-19T03:30:52Z
+     * 弹性云服务器自动删除时间。  时间格式例如：2020-01-19T03:30:52Z
      * @return autoTerminateTime
      */
     public String getAutoTerminateTime() {

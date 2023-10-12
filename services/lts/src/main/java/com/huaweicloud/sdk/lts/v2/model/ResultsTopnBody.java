@@ -45,6 +45,21 @@ public class ResultsTopnBody {
 
     private String logStreamName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "basic_transfer")
+
+    private Double basicTransfer;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "senior_transfer")
+
+    private Double seniorTransfer;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_agency_transfer")
+
+    private Boolean isAgencyTransfer;
+
     public ResultsTopnBody withIndexTraffic(Double indexTraffic) {
         this.indexTraffic = indexTraffic;
         return this;
@@ -164,6 +179,57 @@ public class ResultsTopnBody {
         this.logStreamName = logStreamName;
     }
 
+    public ResultsTopnBody withBasicTransfer(Double basicTransfer) {
+        this.basicTransfer = basicTransfer;
+        return this;
+    }
+
+    /**
+     * 基础转储流量，byte, 查询数据类型中包含basicTransfer时返回
+     * @return basicTransfer
+     */
+    public Double getBasicTransfer() {
+        return basicTransfer;
+    }
+
+    public void setBasicTransfer(Double basicTransfer) {
+        this.basicTransfer = basicTransfer;
+    }
+
+    public ResultsTopnBody withSeniorTransfer(Double seniorTransfer) {
+        this.seniorTransfer = seniorTransfer;
+        return this;
+    }
+
+    /**
+     * 基础转储流量，byte, 查询数据类型中包含seniorTransfer时返回
+     * @return seniorTransfer
+     */
+    public Double getSeniorTransfer() {
+        return seniorTransfer;
+    }
+
+    public void setSeniorTransfer(Double seniorTransfer) {
+        this.seniorTransfer = seniorTransfer;
+    }
+
+    public ResultsTopnBody withIsAgencyTransfer(Boolean isAgencyTransfer) {
+        this.isAgencyTransfer = isAgencyTransfer;
+        return this;
+    }
+
+    /**
+     * 不是委托转储，true，是委托转储，则前端资源统计展示的流不能跳
+     * @return isAgencyTransfer
+     */
+    public Boolean getIsAgencyTransfer() {
+        return isAgencyTransfer;
+    }
+
+    public void setIsAgencyTransfer(Boolean isAgencyTransfer) {
+        this.isAgencyTransfer = isAgencyTransfer;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,12 +243,24 @@ public class ResultsTopnBody {
             && Objects.equals(this.writeTraffic, that.writeTraffic) && Objects.equals(this.logGroupId, that.logGroupId)
             && Objects.equals(this.logGroupName, that.logGroupName)
             && Objects.equals(this.logStreamId, that.logStreamId)
-            && Objects.equals(this.logStreamName, that.logStreamName);
+            && Objects.equals(this.logStreamName, that.logStreamName)
+            && Objects.equals(this.basicTransfer, that.basicTransfer)
+            && Objects.equals(this.seniorTransfer, that.seniorTransfer)
+            && Objects.equals(this.isAgencyTransfer, that.isAgencyTransfer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(indexTraffic, storage, writeTraffic, logGroupId, logGroupName, logStreamId, logStreamName);
+        return Objects.hash(indexTraffic,
+            storage,
+            writeTraffic,
+            logGroupId,
+            logGroupName,
+            logStreamId,
+            logStreamName,
+            basicTransfer,
+            seniorTransfer,
+            isAgencyTransfer);
     }
 
     @Override
@@ -196,6 +274,9 @@ public class ResultsTopnBody {
         sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
+        sb.append("    basicTransfer: ").append(toIndentedString(basicTransfer)).append("\n");
+        sb.append("    seniorTransfer: ").append(toIndentedString(seniorTransfer)).append("\n");
+        sb.append("    isAgencyTransfer: ").append(toIndentedString(isAgencyTransfer)).append("\n");
         sb.append("}");
         return sb.toString();
     }

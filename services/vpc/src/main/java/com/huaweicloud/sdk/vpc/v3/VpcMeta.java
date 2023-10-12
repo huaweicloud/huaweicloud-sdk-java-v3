@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
@@ -32,6 +35,15 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRuleRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcResponse;
@@ -47,6 +59,12 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
@@ -62,6 +80,12 @@ import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFilterRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFilterRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFiltersRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFiltersResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
@@ -70,6 +94,9 @@ import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrResponse;
@@ -85,6 +112,12 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
@@ -102,6 +135,15 @@ import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSubNetworkInterfaceRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRuleRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcResponse;
@@ -110,6 +152,41 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class VpcMeta {
+
+    public static final HttpRequestDef<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> addSourcesToTrafficMirrorSession =
+        genForaddSourcesToTrafficMirrorSession();
+
+    private static HttpRequestDef<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> genForaddSourcesToTrafficMirrorSession() {
+        // basic
+        HttpRequestDef.Builder<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    AddSourcesToTrafficMirrorSessionRequest.class,
+                    AddSourcesToTrafficMirrorSessionResponse.class)
+                .withName("AddSourcesToTrafficMirrorSession")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}/add-sources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_session_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddSourcesToTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
+                req.setTrafficMirrorSessionId(v);
+            }));
+        builder.<AddSourcesToTrafficMirrorSessionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddSourcesToTrafficMirrorSessionRequestBody.class),
+            f -> f.withMarshaller(AddSourcesToTrafficMirrorSessionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCreateSubNetworkInterfaceRequest, BatchCreateSubNetworkInterfaceResponse> batchCreateSubNetworkInterface =
         genForbatchCreateSubNetworkInterface();
@@ -217,6 +294,90 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse> createTrafficMirrorFilter =
+        genForcreateTrafficMirrorFilter();
+
+    private static HttpRequestDef<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse> genForcreateTrafficMirrorFilter() {
+        // basic
+        HttpRequestDef.Builder<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateTrafficMirrorFilterRequest.class,
+                    CreateTrafficMirrorFilterResponse.class)
+                .withName("CreateTrafficMirrorFilter")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-filters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTrafficMirrorFilterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTrafficMirrorFilterRequestBody.class),
+            f -> f.withMarshaller(CreateTrafficMirrorFilterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse> createTrafficMirrorFilterRule =
+        genForcreateTrafficMirrorFilterRule();
+
+    private static HttpRequestDef<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse> genForcreateTrafficMirrorFilterRule() {
+        // basic
+        HttpRequestDef.Builder<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateTrafficMirrorFilterRuleRequest.class,
+                    CreateTrafficMirrorFilterRuleResponse.class)
+                .withName("CreateTrafficMirrorFilterRule")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-filter-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTrafficMirrorFilterRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTrafficMirrorFilterRuleRequestBody.class),
+            f -> f.withMarshaller(CreateTrafficMirrorFilterRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse> createTrafficMirrorSession =
+        genForcreateTrafficMirrorSession();
+
+    private static HttpRequestDef<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse> genForcreateTrafficMirrorSession() {
+        // basic
+        HttpRequestDef.Builder<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateTrafficMirrorSessionRequest.class,
+                    CreateTrafficMirrorSessionResponse.class)
+                .withName("CreateTrafficMirrorSession")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-sessions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateTrafficMirrorSessionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTrafficMirrorSessionRequestBody.class),
+            f -> f.withMarshaller(CreateTrafficMirrorSessionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroup =
         genFordeleteSecurityGroup();
 
@@ -288,6 +449,90 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSubNetworkInterfaceRequest::getSubNetworkInterfaceId, (req, v) -> {
                 req.setSubNetworkInterfaceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> deleteTrafficMirrorFilter =
+        genFordeleteTrafficMirrorFilter();
+
+    private static HttpRequestDef<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> genFordeleteTrafficMirrorFilter() {
+        // basic
+        HttpRequestDef.Builder<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTrafficMirrorFilterRequest.class,
+                    DeleteTrafficMirrorFilterResponse.class)
+                .withName("DeleteTrafficMirrorFilter")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_filter_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrafficMirrorFilterRequest::getTrafficMirrorFilterId, (req, v) -> {
+                req.setTrafficMirrorFilterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse> deleteTrafficMirrorFilterRule =
+        genFordeleteTrafficMirrorFilterRule();
+
+    private static HttpRequestDef<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse> genFordeleteTrafficMirrorFilterRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTrafficMirrorFilterRuleRequest.class,
+                    DeleteTrafficMirrorFilterRuleResponse.class)
+                .withName("DeleteTrafficMirrorFilterRule")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_filter_rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrafficMirrorFilterRuleRequest::getTrafficMirrorFilterRuleId, (req, v) -> {
+                req.setTrafficMirrorFilterRuleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> deleteTrafficMirrorSession =
+        genFordeleteTrafficMirrorSession();
+
+    private static HttpRequestDef<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> genFordeleteTrafficMirrorSession() {
+        // basic
+        HttpRequestDef.Builder<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTrafficMirrorSessionRequest.class,
+                    DeleteTrafficMirrorSessionResponse.class)
+                .withName("DeleteTrafficMirrorSession")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_session_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
+                req.setTrafficMirrorSessionId(v);
             }));
 
         // response
@@ -525,6 +770,270 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse> listTrafficMirrorFilterRules =
+        genForlistTrafficMirrorFilterRules();
+
+    private static HttpRequestDef<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse> genForlistTrafficMirrorFilterRules() {
+        // basic
+        HttpRequestDef.Builder<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTrafficMirrorFilterRulesRequest.class,
+                    ListTrafficMirrorFilterRulesResponse.class)
+                .withName("ListTrafficMirrorFilterRules")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-filter-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<String>withRequestField("traffic_mirror_filter_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getTrafficMirrorFilterId, (req, v) -> {
+                req.setTrafficMirrorFilterId(v);
+            }));
+        builder.<String>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDirection, (req, v) -> {
+                req.setDirection(v);
+            }));
+        builder.<String>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
+            }));
+        builder.<String>withRequestField("source_cidr_block",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getSourceCidrBlock, (req, v) -> {
+                req.setSourceCidrBlock(v);
+            }));
+        builder.<String>withRequestField("destination_cidr_block",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDestinationCidrBlock, (req, v) -> {
+                req.setDestinationCidrBlock(v);
+            }));
+        builder.<String>withRequestField("source_port_range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getSourcePortRange, (req, v) -> {
+                req.setSourcePortRange(v);
+            }));
+        builder.<String>withRequestField("destination_port_range",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getDestinationPortRange, (req, v) -> {
+                req.setDestinationPortRange(v);
+            }));
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+        builder.<String>withRequestField("priority",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getPriority, (req, v) -> {
+                req.setPriority(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse> listTrafficMirrorFilters =
+        genForlistTrafficMirrorFilters();
+
+    private static HttpRequestDef<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse> genForlistTrafficMirrorFilters() {
+        // basic
+        HttpRequestDef.Builder<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListTrafficMirrorFiltersRequest.class, ListTrafficMirrorFiltersResponse.class)
+                .withName("ListTrafficMirrorFilters")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-filters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<String>withRequestField("created_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getCreatedAt, (req, v) -> {
+                req.setCreatedAt(v);
+            }));
+        builder.<String>withRequestField("updated_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getUpdatedAt, (req, v) -> {
+                req.setUpdatedAt(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> listTrafficMirrorSessions =
+        genForlistTrafficMirrorSessions();
+
+    private static HttpRequestDef<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> genForlistTrafficMirrorSessions() {
+        // basic
+        HttpRequestDef.Builder<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTrafficMirrorSessionsRequest.class,
+                    ListTrafficMirrorSessionsResponse.class)
+                .withName("ListTrafficMirrorSessions")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-sessions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<String>withRequestField("traffic_mirror_filter_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getTrafficMirrorFilterId, (req, v) -> {
+                req.setTrafficMirrorFilterId(v);
+            }));
+        builder.<String>withRequestField("traffic_mirror_target_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getTrafficMirrorTargetId, (req, v) -> {
+                req.setTrafficMirrorTargetId(v);
+            }));
+        builder.<String>withRequestField("traffic_mirror_target_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getTrafficMirrorTargetType, (req, v) -> {
+                req.setTrafficMirrorTargetType(v);
+            }));
+        builder.<String>withRequestField("virtual_network_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getVirtualNetworkId, (req, v) -> {
+                req.setVirtualNetworkId(v);
+            }));
+        builder.<String>withRequestField("packet_length",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getPacketLength, (req, v) -> {
+                req.setPacketLength(v);
+            }));
+        builder.<String>withRequestField("priority",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getPriority, (req, v) -> {
+                req.setPriority(v);
+            }));
+        builder.<String>withRequestField("enabled",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getEnabled, (req, v) -> {
+                req.setEnabled(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("created_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getCreatedAt, (req, v) -> {
+                req.setCreatedAt(v);
+            }));
+        builder.<String>withRequestField("updated_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getUpdatedAt, (req, v) -> {
+                req.setUpdatedAt(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> migrateSubNetworkInterface =
         genFormigrateSubNetworkInterface();
 
@@ -545,6 +1054,41 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MigrateSubNetworkInterfaceRequestBody.class),
             f -> f.withMarshaller(MigrateSubNetworkInterfaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> removeSourcesFromTrafficMirrorSession =
+        genForremoveSourcesFromTrafficMirrorSession();
+
+    private static HttpRequestDef<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> genForremoveSourcesFromTrafficMirrorSession() {
+        // basic
+        HttpRequestDef.Builder<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    RemoveSourcesFromTrafficMirrorSessionRequest.class,
+                    RemoveSourcesFromTrafficMirrorSessionResponse.class)
+                .withName("RemoveSourcesFromTrafficMirrorSession")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}/remove-sources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_session_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveSourcesFromTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
+                req.setTrafficMirrorSessionId(v);
+            }));
+        builder.<RemoveSourcesFromTrafficMirrorSessionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemoveSourcesFromTrafficMirrorSessionRequestBody.class),
+            f -> f.withMarshaller(RemoveSourcesFromTrafficMirrorSessionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -649,6 +1193,85 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse> showTrafficMirrorFilter =
+        genForshowTrafficMirrorFilter();
+
+    private static HttpRequestDef<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse> genForshowTrafficMirrorFilter() {
+        // basic
+        HttpRequestDef.Builder<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTrafficMirrorFilterRequest.class, ShowTrafficMirrorFilterResponse.class)
+            .withName("ShowTrafficMirrorFilter")
+            .withUri("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_filter_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrafficMirrorFilterRequest::getTrafficMirrorFilterId, (req, v) -> {
+                req.setTrafficMirrorFilterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse> showTrafficMirrorFilterRule =
+        genForshowTrafficMirrorFilterRule();
+
+    private static HttpRequestDef<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse> genForshowTrafficMirrorFilterRule() {
+        // basic
+        HttpRequestDef.Builder<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowTrafficMirrorFilterRuleRequest.class,
+                    ShowTrafficMirrorFilterRuleResponse.class)
+                .withName("ShowTrafficMirrorFilterRule")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_filter_rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrafficMirrorFilterRuleRequest::getTrafficMirrorFilterRuleId, (req, v) -> {
+                req.setTrafficMirrorFilterRuleId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> showTrafficMirrorSession =
+        genForshowTrafficMirrorSession();
+
+    private static HttpRequestDef<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> genForshowTrafficMirrorSession() {
+        // basic
+        HttpRequestDef.Builder<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowTrafficMirrorSessionRequest.class, ShowTrafficMirrorSessionResponse.class)
+                .withName("ShowTrafficMirrorSession")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_session_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
+                req.setTrafficMirrorSessionId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroup =
         genForupdateSecurityGroup();
 
@@ -708,6 +1331,111 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSubNetworkInterfaceRequestBody.class),
             f -> f.withMarshaller(UpdateSubNetworkInterfaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse> updateTrafficMirrorFilter =
+        genForupdateTrafficMirrorFilter();
+
+    private static HttpRequestDef<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse> genForupdateTrafficMirrorFilter() {
+        // basic
+        HttpRequestDef.Builder<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateTrafficMirrorFilterRequest.class,
+                    UpdateTrafficMirrorFilterResponse.class)
+                .withName("UpdateTrafficMirrorFilter")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_filter_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTrafficMirrorFilterRequest::getTrafficMirrorFilterId, (req, v) -> {
+                req.setTrafficMirrorFilterId(v);
+            }));
+        builder.<UpdateTrafficMirrorFilterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTrafficMirrorFilterRequestBody.class),
+            f -> f.withMarshaller(UpdateTrafficMirrorFilterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse> updateTrafficMirrorFilterRule =
+        genForupdateTrafficMirrorFilterRule();
+
+    private static HttpRequestDef<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse> genForupdateTrafficMirrorFilterRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateTrafficMirrorFilterRuleRequest.class,
+                    UpdateTrafficMirrorFilterRuleResponse.class)
+                .withName("UpdateTrafficMirrorFilterRule")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_filter_rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTrafficMirrorFilterRuleRequest::getTrafficMirrorFilterRuleId, (req, v) -> {
+                req.setTrafficMirrorFilterRuleId(v);
+            }));
+        builder.<UpdateTrafficMirrorFilterRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTrafficMirrorFilterRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateTrafficMirrorFilterRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> updateTrafficMirrorSession =
+        genForupdateTrafficMirrorSession();
+
+    private static HttpRequestDef<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> genForupdateTrafficMirrorSession() {
+        // basic
+        HttpRequestDef.Builder<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateTrafficMirrorSessionRequest.class,
+                    UpdateTrafficMirrorSessionResponse.class)
+                .withName("UpdateTrafficMirrorSession")
+                .withUri("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("traffic_mirror_session_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTrafficMirrorSessionRequest::getTrafficMirrorSessionId, (req, v) -> {
+                req.setTrafficMirrorSessionId(v);
+            }));
+        builder.<UpdateTrafficMirrorSessionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTrafficMirrorSessionRequestBody.class),
+            f -> f.withMarshaller(UpdateTrafficMirrorSessionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

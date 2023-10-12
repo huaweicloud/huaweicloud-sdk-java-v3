@@ -301,272 +301,10 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
 
     private StatusEnum status;
 
-    /**
-     * 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 - 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 - 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 - 41：重启超时
-     */
-    public static final class InstanceStatusEnum {
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final InstanceStatusEnum NUMBER_1 = new InstanceStatusEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final InstanceStatusEnum NUMBER_2 = new InstanceStatusEnum(2);
-
-        /**
-         * Enum NUMBER_3 for value: 3
-         */
-        public static final InstanceStatusEnum NUMBER_3 = new InstanceStatusEnum(3);
-
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
-        public static final InstanceStatusEnum NUMBER_4 = new InstanceStatusEnum(4);
-
-        /**
-         * Enum NUMBER_5 for value: 5
-         */
-        public static final InstanceStatusEnum NUMBER_5 = new InstanceStatusEnum(5);
-
-        /**
-         * Enum NUMBER_6 for value: 6
-         */
-        public static final InstanceStatusEnum NUMBER_6 = new InstanceStatusEnum(6);
-
-        /**
-         * Enum NUMBER_7 for value: 7
-         */
-        public static final InstanceStatusEnum NUMBER_7 = new InstanceStatusEnum(7);
-
-        /**
-         * Enum NUMBER_8 for value: 8
-         */
-        public static final InstanceStatusEnum NUMBER_8 = new InstanceStatusEnum(8);
-
-        /**
-         * Enum NUMBER_10 for value: 10
-         */
-        public static final InstanceStatusEnum NUMBER_10 = new InstanceStatusEnum(10);
-
-        /**
-         * Enum NUMBER_11 for value: 11
-         */
-        public static final InstanceStatusEnum NUMBER_11 = new InstanceStatusEnum(11);
-
-        /**
-         * Enum NUMBER_12 for value: 12
-         */
-        public static final InstanceStatusEnum NUMBER_12 = new InstanceStatusEnum(12);
-
-        /**
-         * Enum NUMBER_13 for value: 13
-         */
-        public static final InstanceStatusEnum NUMBER_13 = new InstanceStatusEnum(13);
-
-        /**
-         * Enum NUMBER_20 for value: 20
-         */
-        public static final InstanceStatusEnum NUMBER_20 = new InstanceStatusEnum(20);
-
-        /**
-         * Enum NUMBER_21 for value: 21
-         */
-        public static final InstanceStatusEnum NUMBER_21 = new InstanceStatusEnum(21);
-
-        /**
-         * Enum NUMBER_22 for value: 22
-         */
-        public static final InstanceStatusEnum NUMBER_22 = new InstanceStatusEnum(22);
-
-        /**
-         * Enum NUMBER_23 for value: 23
-         */
-        public static final InstanceStatusEnum NUMBER_23 = new InstanceStatusEnum(23);
-
-        /**
-         * Enum NUMBER_24 for value: 24
-         */
-        public static final InstanceStatusEnum NUMBER_24 = new InstanceStatusEnum(24);
-
-        /**
-         * Enum NUMBER_25 for value: 25
-         */
-        public static final InstanceStatusEnum NUMBER_25 = new InstanceStatusEnum(25);
-
-        /**
-         * Enum NUMBER_26 for value: 26
-         */
-        public static final InstanceStatusEnum NUMBER_26 = new InstanceStatusEnum(26);
-
-        /**
-         * Enum NUMBER_27 for value: 27
-         */
-        public static final InstanceStatusEnum NUMBER_27 = new InstanceStatusEnum(27);
-
-        /**
-         * Enum NUMBER_28 for value: 28
-         */
-        public static final InstanceStatusEnum NUMBER_28 = new InstanceStatusEnum(28);
-
-        /**
-         * Enum NUMBER_29 for value: 29
-         */
-        public static final InstanceStatusEnum NUMBER_29 = new InstanceStatusEnum(29);
-
-        /**
-         * Enum NUMBER_30 for value: 30
-         */
-        public static final InstanceStatusEnum NUMBER_30 = new InstanceStatusEnum(30);
-
-        /**
-         * Enum NUMBER_31 for value: 31
-         */
-        public static final InstanceStatusEnum NUMBER_31 = new InstanceStatusEnum(31);
-
-        /**
-         * Enum NUMBER_32 for value: 32
-         */
-        public static final InstanceStatusEnum NUMBER_32 = new InstanceStatusEnum(32);
-
-        /**
-         * Enum NUMBER_33 for value: 33
-         */
-        public static final InstanceStatusEnum NUMBER_33 = new InstanceStatusEnum(33);
-
-        /**
-         * Enum NUMBER_34 for value: 34
-         */
-        public static final InstanceStatusEnum NUMBER_34 = new InstanceStatusEnum(34);
-
-        /**
-         * Enum NUMBER_35 for value: 35
-         */
-        public static final InstanceStatusEnum NUMBER_35 = new InstanceStatusEnum(35);
-
-        /**
-         * Enum NUMBER_36 for value: 36
-         */
-        public static final InstanceStatusEnum NUMBER_36 = new InstanceStatusEnum(36);
-
-        /**
-         * Enum NUMBER_37 for value: 37
-         */
-        public static final InstanceStatusEnum NUMBER_37 = new InstanceStatusEnum(37);
-
-        /**
-         * Enum NUMBER_38 for value: 38
-         */
-        public static final InstanceStatusEnum NUMBER_38 = new InstanceStatusEnum(38);
-
-        /**
-         * Enum NUMBER_39 for value: 39
-         */
-        public static final InstanceStatusEnum NUMBER_39 = new InstanceStatusEnum(39);
-
-        /**
-         * Enum NUMBER_40 for value: 40
-         */
-        public static final InstanceStatusEnum NUMBER_40 = new InstanceStatusEnum(40);
-
-        /**
-         * Enum NUMBER_41 for value: 41
-         */
-        public static final InstanceStatusEnum NUMBER_41 = new InstanceStatusEnum(41);
-
-        private static final Map<Integer, InstanceStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, InstanceStatusEnum> createStaticFields() {
-            Map<Integer, InstanceStatusEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            map.put(3, NUMBER_3);
-            map.put(4, NUMBER_4);
-            map.put(5, NUMBER_5);
-            map.put(6, NUMBER_6);
-            map.put(7, NUMBER_7);
-            map.put(8, NUMBER_8);
-            map.put(10, NUMBER_10);
-            map.put(11, NUMBER_11);
-            map.put(12, NUMBER_12);
-            map.put(13, NUMBER_13);
-            map.put(20, NUMBER_20);
-            map.put(21, NUMBER_21);
-            map.put(22, NUMBER_22);
-            map.put(23, NUMBER_23);
-            map.put(24, NUMBER_24);
-            map.put(25, NUMBER_25);
-            map.put(26, NUMBER_26);
-            map.put(27, NUMBER_27);
-            map.put(28, NUMBER_28);
-            map.put(29, NUMBER_29);
-            map.put(30, NUMBER_30);
-            map.put(31, NUMBER_31);
-            map.put(32, NUMBER_32);
-            map.put(33, NUMBER_33);
-            map.put(34, NUMBER_34);
-            map.put(35, NUMBER_35);
-            map.put(36, NUMBER_36);
-            map.put(37, NUMBER_37);
-            map.put(38, NUMBER_38);
-            map.put(39, NUMBER_39);
-            map.put(40, NUMBER_40);
-            map.put(41, NUMBER_41);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        InstanceStatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static InstanceStatusEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceStatusEnum(value));
-        }
-
-        public static InstanceStatusEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof InstanceStatusEnum) {
-                return this.value.equals(((InstanceStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_status")
 
-    private InstanceStatusEnum instanceStatus;
+    private Integer instanceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -574,7 +312,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     private String type;
 
     /**
-     * 实例规格： - ROMA_BASIC：基础版实例 - ROMA_PROFESSIONAL：专业版实例 - ROMA_ENTERPRISE：企业版实例 - ROMA_PLATINUM：铂金版实例 [- ROMA_BASIC_IPV6：基础版IPV6实例](tag:hcs) [- ROMA_PROFESSIONAL_IPV6：专业版IPV6实例](tag:hcs) [- ROMA_ENTERPRISE_IPV6：企业版IPV6实例](tag:hcs) [- ROMA_PLATINUM_IPV6：铂金版IPV6实例](tag:hcs)
+     * 实例规格：  [- ROMA_BASIC：基础版实例](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)  [- ROMA_PROFESSIONAL：专业版实例](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)  [- ROMA_ENTERPRISE：企业版实例](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)  [- ROMA_PLATINUM：铂金版实例](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)  [- ROMA_BASIC_IPV6：基础版IPv6实例](tag:hcs,hcs_sm)  [- ROMA_PROFESSIONAL_IPV6：专业版IPv6实例](tag:hcs,hcs_sm)  [- ROMA_ENTERPRISE_IPV6：企业版IPv6实例](tag:hcs,hcs_sm)  [- ROMA_PLATINUM_IPV6：铂金版IPv6实例](tag:hcs,hcs_sm)  [ROMASITE_BASIC：Site版实例](tag:Site)
      */
     public static final class SpecEnum {
 
@@ -618,6 +356,11 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
          */
         public static final SpecEnum ROMA_PLATINUM_IPV6 = new SpecEnum("ROMA_PLATINUM_IPV6");
 
+        /**
+         * Enum ROMASITE_BASIC for value: "ROMASITE_BASIC"
+         */
+        public static final SpecEnum ROMASITE_BASIC = new SpecEnum("ROMASITE_BASIC");
+
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecEnum> createStaticFields() {
@@ -630,6 +373,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             map.put("ROMA_PROFESSIONAL_IPV6", ROMA_PROFESSIONAL_IPV6);
             map.put("ROMA_ENTERPRISE_IPV6", ROMA_ENTERPRISE_IPV6);
             map.put("ROMA_PLATINUM_IPV6", ROMA_PLATINUM_IPV6);
+            map.put("ROMASITE_BASIC", ROMASITE_BASIC);
             return Collections.unmodifiableMap(map);
         }
 
@@ -699,80 +443,10 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
 
     private String eipAddress;
 
-    /**
-     * 实例计费方式： - 0：按需计费 - 1：包周期计费
-     */
-    public static final class ChargingModeEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final ChargingModeEnum NUMBER_0 = new ChargingModeEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ChargingModeEnum NUMBER_1 = new ChargingModeEnum(1);
-
-        private static final Map<Integer, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ChargingModeEnum> createStaticFields() {
-            Map<Integer, ChargingModeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ChargingModeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ChargingModeEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
-        }
-
-        public static ChargingModeEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ChargingModeEnum) {
-                return this.value.equals(((ChargingModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
-    private ChargingModeEnum chargingMode;
+    private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cbc_metadata")
@@ -884,6 +558,87 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
 
     private String ingressIps;
 
+    /**
+     * 实例算法类型： - generalCipher：通用加密算法 - SMCompatible：SM系列商密算法兼容 - SMOnly：SM系列商密算法  [暂不支持](tag:hws,hws_hk,g42,Site)
+     */
+    public static final class CipherTypeEnum {
+
+        /**
+         * Enum GENERALCIPHER for value: "generalCipher"
+         */
+        public static final CipherTypeEnum GENERALCIPHER = new CipherTypeEnum("generalCipher");
+
+        /**
+         * Enum SMCOMPATIBLE for value: "SMCompatible"
+         */
+        public static final CipherTypeEnum SMCOMPATIBLE = new CipherTypeEnum("SMCompatible");
+
+        /**
+         * Enum SMONLY for value: "SMOnly"
+         */
+        public static final CipherTypeEnum SMONLY = new CipherTypeEnum("SMOnly");
+
+        private static final Map<String, CipherTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CipherTypeEnum> createStaticFields() {
+            Map<String, CipherTypeEnum> map = new HashMap<>();
+            map.put("generalCipher", GENERALCIPHER);
+            map.put("SMCompatible", SMCOMPATIBLE);
+            map.put("SMOnly", SMONLY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CipherTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CipherTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CipherTypeEnum(value));
+        }
+
+        public static CipherTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CipherTypeEnum) {
+                return this.value.equals(((CipherTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cipher_type")
+
+    private CipherTypeEnum cipherType;
+
     public ShowDetailsOfInstanceV2Response withId(String id) {
         this.id = id;
         return this;
@@ -952,7 +707,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.status = status;
     }
 
-    public ShowDetailsOfInstanceV2Response withInstanceStatus(InstanceStatusEnum instanceStatus) {
+    public ShowDetailsOfInstanceV2Response withInstanceStatus(Integer instanceStatus) {
         this.instanceStatus = instanceStatus;
         return this;
     }
@@ -961,11 +716,11 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
      * 实例状态对应编号 - 1：创建中 - 2：创建成功 - 3：创建失败 - 4：初始化中 - 5：注册中 - 6：运行中 - 7：初始化失败 - 8：注册失败 - 10：安装中 - 11：安装失败 - 12：升级中 - 13：升级失败 - 20：回滚中 - 21：回滚成功 - 22：回滚失败 - 23：删除中 - 24：删除失败 - 25：注销中 - 26：注销失败 - 27：创建超时 - 28：初始化超时 - 29：注册超时 - 30：安装超时 - 31：升级超时 - 32：回滚超时 - 33：删除超时 - 34：注销超时 - 35：启动中 - 36：冻结中 - 37：已冻结 - 38：重启中 - 39：重启失败 - 40：实例异常 - 41：重启超时
      * @return instanceStatus
      */
-    public InstanceStatusEnum getInstanceStatus() {
+    public Integer getInstanceStatus() {
         return instanceStatus;
     }
 
-    public void setInstanceStatus(InstanceStatusEnum instanceStatus) {
+    public void setInstanceStatus(Integer instanceStatus) {
         this.instanceStatus = instanceStatus;
     }
 
@@ -992,7 +747,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例规格： - ROMA_BASIC：基础版实例 - ROMA_PROFESSIONAL：专业版实例 - ROMA_ENTERPRISE：企业版实例 - ROMA_PLATINUM：铂金版实例 [- ROMA_BASIC_IPV6：基础版IPV6实例](tag:hcs) [- ROMA_PROFESSIONAL_IPV6：专业版IPV6实例](tag:hcs) [- ROMA_ENTERPRISE_IPV6：企业版IPV6实例](tag:hcs) [- ROMA_PLATINUM_IPV6：铂金版IPV6实例](tag:hcs)
+     * 实例规格：  [- ROMA_BASIC：基础版实例](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)  [- ROMA_PROFESSIONAL：专业版实例](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)  [- ROMA_ENTERPRISE：企业版实例](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)  [- ROMA_PLATINUM：铂金版实例](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)  [- ROMA_BASIC_IPV6：基础版IPv6实例](tag:hcs,hcs_sm)  [- ROMA_PROFESSIONAL_IPV6：专业版IPv6实例](tag:hcs,hcs_sm)  [- ROMA_ENTERPRISE_IPV6：企业版IPv6实例](tag:hcs,hcs_sm)  [- ROMA_PLATINUM_IPV6：铂金版IPv6实例](tag:hcs,hcs_sm)  [ROMASITE_BASIC：Site版实例](tag:Site)
      * @return spec
      */
     public SpecEnum getSpec() {
@@ -1054,20 +809,20 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.eipAddress = eipAddress;
     }
 
-    public ShowDetailsOfInstanceV2Response withChargingMode(ChargingModeEnum chargingMode) {
+    public ShowDetailsOfInstanceV2Response withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
 
     /**
-     * 实例计费方式： - 0：按需计费 - 1：包周期计费
+     * 实例计费方式[，暂未使用](tag:fcs,hcs,hcs_sm,Site) [0：按需计费](tag:hws,hws_hk,g42) [1：包周期计费](tag:hws,hws_hk)
      * @return chargingMode
      */
-    public ChargingModeEnum getChargingMode() {
+    public Integer getChargingMode() {
         return chargingMode;
     }
 
-    public void setChargingMode(ChargingModeEnum chargingMode) {
+    public void setChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
     }
 
@@ -1077,7 +832,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 包周期计费订单编号
+     * 计费订单编号，[包周期计费时使用。](tag:hws,hws_hk)[暂未使用。](tag:fcs,hcs,hcs_sm,g42,Site)
      * @return cbcMetadata
      */
     public String getCbcMetadata() {
@@ -1382,7 +1137,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 监听信息  [暂不支持](tag:public)
+     * 监听信息，暂不支持
      * @return listeners
      */
     public List<Listener> getListeners() {
@@ -1432,7 +1187,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例入口（IPV6）  当前仅部分region部分可用区支持IPv6
+     * 实例入口（IPv6）  当前仅部分region部分可用区支持IPv6
      * @return ingressIpV6
      */
     public String getIngressIpV6() {
@@ -1486,6 +1241,23 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         this.ingressIps = ingressIps;
     }
 
+    public ShowDetailsOfInstanceV2Response withCipherType(CipherTypeEnum cipherType) {
+        this.cipherType = cipherType;
+        return this;
+    }
+
+    /**
+     * 实例算法类型： - generalCipher：通用加密算法 - SMCompatible：SM系列商密算法兼容 - SMOnly：SM系列商密算法  [暂不支持](tag:hws,hws_hk,g42,Site)
+     * @return cipherType
+     */
+    public CipherTypeEnum getCipherType() {
+        return cipherType;
+    }
+
+    public void setCipherType(CipherTypeEnum cipherType) {
+        this.cipherType = cipherType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1517,7 +1289,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             && Objects.equals(this.listeners, that.listeners)
             && Objects.equals(this.supportedFeatures, that.supportedFeatures)
             && Objects.equals(this.ingressIpV6, that.ingressIpV6) && Objects.equals(this.nodeIps, that.nodeIps)
-            && Objects.equals(this.ingressIps, that.ingressIps);
+            && Objects.equals(this.ingressIps, that.ingressIps) && Objects.equals(this.cipherType, that.cipherType);
     }
 
     @Override
@@ -1554,7 +1326,8 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
             supportedFeatures,
             ingressIpV6,
             nodeIps,
-            ingressIps);
+            ingressIps,
+            cipherType);
     }
 
     @Override
@@ -1594,6 +1367,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
         sb.append("    ingressIpV6: ").append(toIndentedString(ingressIpV6)).append("\n");
         sb.append("    nodeIps: ").append(toIndentedString(nodeIps)).append("\n");
         sb.append("    ingressIps: ").append(toIndentedString(ingressIps)).append("\n");
+        sb.append("    cipherType: ").append(toIndentedString(cipherType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

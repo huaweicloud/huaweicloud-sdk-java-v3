@@ -20,11 +20,6 @@ public class ListAgentInvocationsRequest {
 
     private String instanceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_name")
-
-    private String instanceName;
-
     /**
      * 主机类型，ECS弹性云服务器，BMS裸金属服务器
      */
@@ -106,7 +101,7 @@ public class ListAgentInvocationsRequest {
     private String invocationId;
 
     /**
-     * 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退
+     * 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试
      */
     public static final class InvocationTypeEnum {
 
@@ -125,6 +120,11 @@ public class ListAgentInvocationsRequest {
          */
         public static final InvocationTypeEnum ROLLBACK = new InvocationTypeEnum("ROLLBACK");
 
+        /**
+         * Enum RETRY for value: "RETRY"
+         */
+        public static final InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
+
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, InvocationTypeEnum> createStaticFields() {
@@ -132,6 +132,7 @@ public class ListAgentInvocationsRequest {
             map.put("INSTALL", INSTALL);
             map.put("UPDATE", UPDATE);
             map.put("ROLLBACK", ROLLBACK);
+            map.put("RETRY", RETRY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -282,23 +283,6 @@ public class ListAgentInvocationsRequest {
         this.instanceId = instanceId;
     }
 
-    public ListAgentInvocationsRequest withInstanceName(String instanceName) {
-        this.instanceName = instanceName;
-        return this;
-    }
-
-    /**
-     * 主机名称
-     * @return instanceName
-     */
-    public String getInstanceName() {
-        return instanceName;
-    }
-
-    public void setInstanceName(String instanceName) {
-        this.instanceName = instanceName;
-    }
-
     public ListAgentInvocationsRequest withInstanceType(InstanceTypeEnum instanceType) {
         this.instanceType = instanceType;
         return this;
@@ -339,7 +323,7 @@ public class ListAgentInvocationsRequest {
     }
 
     /**
-     * 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退
+     * 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试
      * @return invocationType
      */
     public InvocationTypeEnum getInvocationType() {
@@ -414,8 +398,7 @@ public class ListAgentInvocationsRequest {
             return false;
         }
         ListAgentInvocationsRequest that = (ListAgentInvocationsRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
-            && Objects.equals(this.instanceType, that.instanceType)
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
             && Objects.equals(this.invocationId, that.invocationId)
             && Objects.equals(this.invocationType, that.invocationType)
             && Objects.equals(this.invocationTarget, that.invocationTarget) && Objects.equals(this.offset, that.offset)
@@ -424,14 +407,7 @@ public class ListAgentInvocationsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId,
-            instanceName,
-            instanceType,
-            invocationId,
-            invocationType,
-            invocationTarget,
-            offset,
-            limit);
+        return Objects.hash(instanceId, instanceType, invocationId, invocationType, invocationTarget, offset, limit);
     }
 
     @Override
@@ -439,7 +415,6 @@ public class ListAgentInvocationsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAgentInvocationsRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("    invocationId: ").append(toIndentedString(invocationId)).append("\n");
         sb.append("    invocationType: ").append(toIndentedString(invocationType)).append("\n");

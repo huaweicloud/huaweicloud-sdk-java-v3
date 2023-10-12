@@ -91,7 +91,7 @@ public class ListAppGroupAuthorizationRequest {
     }
 
     /**
-     * 应用授权用户(组),精确查询. 账户的格式必须为:<i>账户(组)</i>的形式
+     * 应用授权的用户(组)，精确查询。
      * @return account
      */
     public String getAccount() {

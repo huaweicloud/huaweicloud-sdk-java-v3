@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ReqParam
@@ -452,6 +455,11 @@ public class ReqParam {
     private PassThroughEnum passThrough;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "orchestrations")
+
+    private List<String> orchestrations = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -728,6 +736,39 @@ public class ReqParam {
         this.passThrough = passThrough;
     }
 
+    public ReqParam withOrchestrations(List<String> orchestrations) {
+        this.orchestrations = orchestrations;
+        return this;
+    }
+
+    public ReqParam addOrchestrationsItem(String orchestrationsItem) {
+        if (this.orchestrations == null) {
+            this.orchestrations = new ArrayList<>();
+        }
+        this.orchestrations.add(orchestrationsItem);
+        return this;
+    }
+
+    public ReqParam withOrchestrations(Consumer<List<String>> orchestrationsSetter) {
+        if (this.orchestrations == null) {
+            this.orchestrations = new ArrayList<>();
+        }
+        orchestrationsSetter.accept(this.orchestrations);
+        return this;
+    }
+
+    /**
+     * 请求参数编排规则列表[，该参数暂不支持](tag:hws,hws_hk,fcs,g42,Site)  请求参数匹配编排规则的生效优先级与列表顺序保持一致，列表中靠前的配置匹配优先级较高  每个API仅允许选择一个参数绑定编排规则，且编排规则不能重复，支持绑定的编排规则数量有配额限制，具体请参见产品介绍的“配额说明”章节
+     * @return orchestrations
+     */
+    public List<String> getOrchestrations() {
+        return orchestrations;
+    }
+
+    public void setOrchestrations(List<String> orchestrations) {
+        this.orchestrations = orchestrations;
+    }
+
     public ReqParam withId(String id) {
         this.id = id;
         return this;
@@ -762,7 +803,7 @@ public class ReqParam {
             && Objects.equals(this.maxNum, that.maxNum) && Objects.equals(this.minSize, that.minSize)
             && Objects.equals(this.maxSize, that.maxSize) && Objects.equals(this.regular, that.regular)
             && Objects.equals(this.jsonSchema, that.jsonSchema) && Objects.equals(this.passThrough, that.passThrough)
-            && Objects.equals(this.id, that.id);
+            && Objects.equals(this.orchestrations, that.orchestrations) && Objects.equals(this.id, that.id);
     }
 
     @Override
@@ -783,6 +824,7 @@ public class ReqParam {
             regular,
             jsonSchema,
             passThrough,
+            orchestrations,
             id);
     }
 
@@ -806,6 +848,7 @@ public class ReqParam {
         sb.append("    regular: ").append(toIndentedString(regular)).append("\n");
         sb.append("    jsonSchema: ").append(toIndentedString(jsonSchema)).append("\n");
         sb.append("    passThrough: ").append(toIndentedString(passThrough)).append("\n");
+        sb.append("    orchestrations: ").append(toIndentedString(orchestrations)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();

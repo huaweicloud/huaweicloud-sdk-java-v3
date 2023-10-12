@@ -99,7 +99,7 @@ public class CreateAclStrategyV2Response extends SdkResponse {
     }
 
     /**
-     * 对象类型： - IP - DOMAIN
+     * 对象类型： - IP - DOMAIN [Site自治版不支持DOMAIN类型。](tag:Site)
      * @return entityType
      */
     public String getEntityType() {

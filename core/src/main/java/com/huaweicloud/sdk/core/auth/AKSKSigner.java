@@ -28,6 +28,7 @@ import com.huaweicloud.sdk.core.utils.BinaryUtils;
 import com.huaweicloud.sdk.core.utils.SignUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
+import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -238,7 +239,20 @@ public class AKSKSigner implements IAKSKSigner {
         if (Objects.nonNull(request.getBodyAsString()) && !request.getBodyAsString().isEmpty()) {
             return hasher.hashHexString(request.getBodyAsString().getBytes(StandardCharsets.UTF_8));
         }
-
+        if (Objects.nonNull(request.getBody())) {
+            try {
+                int len = request.getBody().available();
+                byte[] body = new byte[len];
+                for (int i = 0; i < len; i++) {
+                    int byteRead = request.getBody().read();
+                    body[i] = (byte) byteRead;
+                }
+                request.getBody().reset();
+                return hasher.hashHexString(body);
+            } catch (IOException e) {
+                throw new SdkException(e);
+            }
+        }
         return emptyHash;
     }
 

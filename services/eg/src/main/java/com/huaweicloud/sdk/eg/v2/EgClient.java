@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.eg.v2.model.PutEventsRequest;
 import com.huaweicloud.sdk.eg.v2.model.PutEventsResponse;
+import com.huaweicloud.sdk.eg.v2.model.PutOfficialEventsRequest;
+import com.huaweicloud.sdk.eg.v2.model.PutOfficialEventsResponse;
 
 public class EgClient {
 
@@ -45,6 +47,36 @@ public class EgClient {
      */
     public SyncInvoker<PutEventsRequest, PutEventsResponse> putEventsInvoker(PutEventsRequest request) {
         return new SyncInvoker<PutEventsRequest, PutEventsResponse>(request, EgMeta.putEvents, hcClient);
+    }
+
+    /**
+     * 发布官方事件到事件通道
+     *
+     * 发布官方事件到事件通道。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PutOfficialEventsRequest 请求对象
+     * @return PutOfficialEventsResponse
+     */
+    public PutOfficialEventsResponse putOfficialEvents(PutOfficialEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, EgMeta.putOfficialEvents);
+    }
+
+    /**
+     * 发布官方事件到事件通道
+     *
+     * 发布官方事件到事件通道。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PutOfficialEventsRequest 请求对象
+     * @return SyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>
+     */
+    public SyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse> putOfficialEventsInvoker(
+        PutOfficialEventsRequest request) {
+        return new SyncInvoker<PutOfficialEventsRequest, PutOfficialEventsResponse>(request, EgMeta.putOfficialEvents,
+            hcClient);
     }
 
 }

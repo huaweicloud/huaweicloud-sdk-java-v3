@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 服务器的稳态，完成某个操作的稳定状态。 * &#x60;BUILD&#x60; - 创建APS实例,APS实例进入运行之前的状态 * &#x60;BUILD_FAIL&#x60; - 创建APS实例失败 * &#x60;REBOOT&#x60; - 实例正在进行重启操作 * &#x60;HARD_REBOOT&#x60; - 实例正在进行强制重启操作 * &#x60;REBUILD&#x60; - 实例正在重建中 * &#x60;REBUILD_FAIL&#x60; - 实例重建失败 * &#x60;MIGRATING&#x60; - 实例正在热迁移中 * &#x60;RESIZE&#x60; - 实例接收变更请求，开始进行变更操作 * &#x60;ACTIVE&#x60; - 实例正常运行状态 * &#x60;SHUTOFF&#x60; - 实例被正常停止 * &#x60;REVERT_RESIZE&#x60; - 实例正在回退变更规格的配置 * &#x60;VERIFY_RESIZE&#x60; - 实例正在校验变更完成后的配置。 * &#x60;ERROR&#x60; - 实例处于异常状态。 * &#x60;DELETING&#x60; - 实例删除中。 * &#x60;FREEZE&#x60; - 冻结 * &#x60;NULL&#x60; - 未设置
+ * 服务器的稳态，完成某个操作的稳定状态。 * &#x60;BUILD&#x60; - 创建APS实例,APS实例进入运行之前的状态 * &#x60;BUILD_FAIL&#x60; - 创建APS实例失败 * &#x60;REBOOT&#x60; - 实例正在进行重启操作 * &#x60;HARD_REBOOT&#x60; - 实例正在进行强制重启操作 * &#x60;REBUILD&#x60; - 实例正在重建中 * &#x60;REBUILD_FAIL&#x60; - 实例重建失败 * &#x60;MIGRATING&#x60; - 实例正在热迁移中 * &#x60;RESIZE&#x60; - 实例接收变更请求，开始进行变更操作 * &#x60;ACTIVE&#x60; - 实例正常运行状态 * &#x60;SHUTOFF&#x60; - 实例被正常停止 * &#x60;REVERT_RESIZE&#x60; - 实例正在回退变更规格的配置 * &#x60;VERIFY_RESIZE&#x60; - 实例正在校验变更完成后的配置。 * &#x60;ERROR&#x60; - 实例处于异常状态。 * &#x60;DELETING&#x60; - 实例删除中。 * &#x60;FREEZE&#x60; - 冻结 * &#x60;BUILD_IMAGE&#x60; - 生成镜像中 * &#x60;NULL&#x60; - 未设置
  */
 public class AppServerStatus {
 
@@ -88,6 +88,11 @@ public class AppServerStatus {
     public static final AppServerStatus FREEZE = new AppServerStatus("FREEZE");
 
     /**
+     * Enum BUILD_IMAGE for value: "BUILD_IMAGE"
+     */
+    public static final AppServerStatus BUILD_IMAGE = new AppServerStatus("BUILD_IMAGE");
+
+    /**
      * Enum NULL for value: "null"
      */
     public static final AppServerStatus NULL = new AppServerStatus("null");
@@ -111,6 +116,7 @@ public class AppServerStatus {
         map.put("ERROR", ERROR);
         map.put("DELETING", DELETING);
         map.put("FREEZE", FREEZE);
+        map.put("BUILD_IMAGE", BUILD_IMAGE);
         map.put("null", NULL);
         return Collections.unmodifiableMap(map);
     }

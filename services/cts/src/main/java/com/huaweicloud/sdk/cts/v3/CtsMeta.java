@@ -5,6 +5,15 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.cts.v3.model.BatchCreateResourceTagsRequest;
+import com.huaweicloud.sdk.cts.v3.model.BatchCreateResourceTagsRequestBody;
+import com.huaweicloud.sdk.cts.v3.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.cts.v3.model.BatchDeleteResourceTagsRequest;
+import com.huaweicloud.sdk.cts.v3.model.BatchDeleteResourceTagsRequestBody;
+import com.huaweicloud.sdk.cts.v3.model.BatchDeleteResourceTagsResponse;
+import com.huaweicloud.sdk.cts.v3.model.CheckObsBucketsRequest;
+import com.huaweicloud.sdk.cts.v3.model.CheckObsBucketsRequestBody;
+import com.huaweicloud.sdk.cts.v3.model.CheckObsBucketsResponse;
 import com.huaweicloud.sdk.cts.v3.model.CreateNotificationRequest;
 import com.huaweicloud.sdk.cts.v3.model.CreateNotificationRequestBody;
 import com.huaweicloud.sdk.cts.v3.model.CreateNotificationResponse;
@@ -17,12 +26,18 @@ import com.huaweicloud.sdk.cts.v3.model.DeleteTrackerRequest;
 import com.huaweicloud.sdk.cts.v3.model.DeleteTrackerResponse;
 import com.huaweicloud.sdk.cts.v3.model.ListNotificationsRequest;
 import com.huaweicloud.sdk.cts.v3.model.ListNotificationsResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListOperationsRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListOperationsResponse;
 import com.huaweicloud.sdk.cts.v3.model.ListQuotasRequest;
 import com.huaweicloud.sdk.cts.v3.model.ListQuotasResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListTraceResourcesRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListTraceResourcesResponse;
 import com.huaweicloud.sdk.cts.v3.model.ListTracesRequest;
 import com.huaweicloud.sdk.cts.v3.model.ListTracesResponse;
 import com.huaweicloud.sdk.cts.v3.model.ListTrackersRequest;
 import com.huaweicloud.sdk.cts.v3.model.ListTrackersResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListUserResourcesRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListUserResourcesResponse;
 import com.huaweicloud.sdk.cts.v3.model.UpdateNotificationRequest;
 import com.huaweicloud.sdk.cts.v3.model.UpdateNotificationRequestBody;
 import com.huaweicloud.sdk.cts.v3.model.UpdateNotificationResponse;
@@ -32,6 +47,116 @@ import com.huaweicloud.sdk.cts.v3.model.UpdateTrackerResponse;
 
 @SuppressWarnings("unchecked")
 public class CtsMeta {
+
+    public static final HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTags =
+        genForbatchCreateResourceTags();
+
+    private static HttpRequestDef<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> genForbatchCreateResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateResourceTagsRequest.class, BatchCreateResourceTagsResponse.class)
+            .withName("BatchCreateResourceTags")
+            .withUri("/v3/{project_id}/{resource_type}/{resource_id}/tags/create")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<BatchCreateResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<BatchCreateResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> batchDeleteResourceTags =
+        genForbatchDeleteResourceTags();
+
+    private static HttpRequestDef<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> genForbatchDeleteResourceTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeleteResourceTagsRequest.class, BatchDeleteResourceTagsResponse.class)
+            .withName("BatchDeleteResourceTags")
+            .withUri("/v3/{project_id}/{resource_type}/{resource_id}/tags/delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+        builder.<BatchDeleteResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+        builder.<BatchDeleteResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteResourceTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteResourceTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckObsBucketsRequest, CheckObsBucketsResponse> checkObsBuckets =
+        genForcheckObsBuckets();
+
+    private static HttpRequestDef<CheckObsBucketsRequest, CheckObsBucketsResponse> genForcheckObsBuckets() {
+        // basic
+        HttpRequestDef.Builder<CheckObsBucketsRequest, CheckObsBucketsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckObsBucketsRequest.class, CheckObsBucketsResponse.class)
+                .withName("CheckObsBuckets")
+                .withUri("/v3/{domain_id}/checkbucket")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckObsBucketsRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<CheckObsBucketsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckObsBucketsRequestBody.class),
+            f -> f.withMarshaller(CheckObsBucketsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateNotificationRequest, CreateNotificationResponse> createNotification =
         genForcreateNotification();
@@ -172,6 +297,38 @@ public class CtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListOperationsRequest, ListOperationsResponse> listOperations =
+        genForlistOperations();
+
+    private static HttpRequestDef<ListOperationsRequest, ListOperationsResponse> genForlistOperations() {
+        // basic
+        HttpRequestDef.Builder<ListOperationsRequest, ListOperationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOperationsRequest.class, ListOperationsResponse.class)
+                .withName("ListOperations")
+                .withUri("/v3/{project_id}/operations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationsRequest::getServiceType, (req, v) -> {
+                req.setServiceType(v);
+            }));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOperationsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
 
     private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
@@ -183,6 +340,31 @@ public class CtsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTraceResourcesRequest, ListTraceResourcesResponse> listTraceResources =
+        genForlistTraceResources();
+
+    private static HttpRequestDef<ListTraceResourcesRequest, ListTraceResourcesResponse> genForlistTraceResources() {
+        // basic
+        HttpRequestDef.Builder<ListTraceResourcesRequest, ListTraceResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTraceResourcesRequest.class, ListTraceResourcesResponse.class)
+                .withName("ListTraceResources")
+                .withUri("/v3/{domain_id}/resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTraceResourcesRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
 
         // response
 
@@ -329,6 +511,24 @@ public class CtsMeta {
             f -> f.withMarshaller(ListTrackersRequest::getTrackerType, (req, v) -> {
                 req.setTrackerType(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserResourcesRequest, ListUserResourcesResponse> listUserResources =
+        genForlistUserResources();
+
+    private static HttpRequestDef<ListUserResourcesRequest, ListUserResourcesResponse> genForlistUserResources() {
+        // basic
+        HttpRequestDef.Builder<ListUserResourcesRequest, ListUserResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserResourcesRequest.class, ListUserResourcesResponse.class)
+                .withName("ListUserResources")
+                .withUri("/v3/{project_id}/user-resources")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

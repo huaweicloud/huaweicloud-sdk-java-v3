@@ -25,7 +25,7 @@ public class ApiInfo {
     private String name;
 
     /**
-     * API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API
+     * API类型[，该参数暂未使用](tag:hcs,hcs_sm,fcs) - 1：公有API - 2：私有API
      */
     public static final class TypeEnum {
 
@@ -474,7 +474,7 @@ public class ApiInfo {
     private MatchModeEnum matchMode;
 
     /**
-     * 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     * 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端  仅控制默认后端类型，策略后端不受此字段控制
      */
     public static final class BackendTypeEnum {
 
@@ -610,7 +610,7 @@ public class ApiInfo {
     private String tag;
 
     /**
-     * 请求内容格式类型：  application/json application/xml multipart/form-date text/plain
+     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain
      */
     public static final class ContentTypeEnum {
 
@@ -625,9 +625,9 @@ public class ApiInfo {
         public static final ContentTypeEnum APPLICATION_XML = new ContentTypeEnum("application/xml");
 
         /**
-         * Enum MULTIPART_FORM_DATE for value: "multipart/form-date"
+         * Enum MULTIPART_FORM_DATA for value: "multipart/form-data"
          */
-        public static final ContentTypeEnum MULTIPART_FORM_DATE = new ContentTypeEnum("multipart/form-date");
+        public static final ContentTypeEnum MULTIPART_FORM_DATA = new ContentTypeEnum("multipart/form-data");
 
         /**
          * Enum TEXT_PLAIN for value: "text/plain"
@@ -640,7 +640,7 @@ public class ApiInfo {
             Map<String, ContentTypeEnum> map = new HashMap<>();
             map.put("application/json", APPLICATION_JSON);
             map.put("application/xml", APPLICATION_XML);
-            map.put("multipart/form-date", MULTIPART_FORM_DATE);
+            map.put("multipart/form-data", MULTIPART_FORM_DATA);
             map.put("text/plain", TEXT_PLAIN);
             return Collections.unmodifiableMap(map);
         }
@@ -702,7 +702,7 @@ public class ApiInfo {
     private String id;
 
     /**
-     * API状态   - 1： 有效
+     * API状态   - 1： 有效   - 2:  锁定
      */
     public static final class StatusEnum {
 
@@ -711,11 +711,17 @@ public class ApiInfo {
          */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
+
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Integer, StatusEnum> createStaticFields() {
             Map<Integer, StatusEnum> map = new HashMap<>();
             map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -893,7 +899,7 @@ public class ApiInfo {
     }
 
     /**
-     * API类型[，该参数暂未使用](tag:hcs;fcs;) - 1：公有API - 2：私有API
+     * API类型[，该参数暂未使用](tag:hcs,hcs_sm,fcs) - 1：公有API - 2：私有API
      * @return type
      */
     public TypeEnum getType() {
@@ -961,7 +967,7 @@ public class ApiInfo {
     }
 
     /**
-     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ .等特殊字符，总长度不超过512，且满足URI规范。  /apic/health_check为服务集成预置的健康检查路径，当req_method=GET时不支持req_uri=/apic/health_check。  > 需要服从URI规范。
      * @return reqUri
      */
     public String getReqUri() {
@@ -1055,7 +1061,7 @@ public class ApiInfo {
     }
 
     /**
-     * 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     * 后端类型[，site暂不支持函数工作流。](tag:Site) - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端  仅控制默认后端类型，策略后端不受此字段控制
      * @return backendType
      */
     public BackendTypeEnum getBackendType() {
@@ -1190,7 +1196,7 @@ public class ApiInfo {
     }
 
     /**
-     * 标签。  支持英文，数字，中文，特殊符号（-*#%.:_），且只能以中文或英文开头。支持输入多个标签，不同标签以英文逗号分割。  默认支持10个标签，如需扩大配额请联系技术工程师修改API_TAG_NUM_LIMIT配置。 
+     * 标签。  支持英文，数字，中文，特殊符号（-*#%.:_），且只能以中文或英文开头。  默认支持10个标签，如需扩大配额请联系技术工程师修改API_TAG_NUM_LIMIT配置。 
      * @return tags
      */
     public List<String> getTags() {
@@ -1275,7 +1281,7 @@ public class ApiInfo {
     }
 
     /**
-     * 请求内容格式类型：  application/json application/xml multipart/form-date text/plain
+     * 请求内容格式类型：  application/json application/xml multipart/form-data text/plain
      * @return contentType
      */
     public ContentTypeEnum getContentType() {
@@ -1309,7 +1315,7 @@ public class ApiInfo {
     }
 
     /**
-     * API状态   - 1： 有效
+     * API状态   - 1： 有效   - 2:  锁定
      * @return status
      */
     public StatusEnum getStatus() {
@@ -1326,7 +1332,7 @@ public class ApiInfo {
     }
 
     /**
-     * 是否需要编排
+     * 是否需要编排：1,是;2,否
      * @return arrangeNecessary
      */
     public Integer getArrangeNecessary() {
@@ -1699,7 +1705,7 @@ public class ApiInfo {
     }
 
     /**
-     * [函数工作流策略后端列表](tag:hws,hws_hk,hcs,fcs,g42)[暂不支持](tag:Site)
+     * [函数工作流策略后端列表](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)[暂不支持](tag:Site)
      * @return policyFunctions
      */
     public List<ApiPolicyFunctionResp> getPolicyFunctions() {

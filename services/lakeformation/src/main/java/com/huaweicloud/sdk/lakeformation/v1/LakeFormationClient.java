@@ -79,6 +79,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListGroupsForDomainRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListGroupsForDomainResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListInterfacesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListInterfacesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListLakeFormationInstanceTagsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListLakeFormationInstanceTagsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListLakeFormationInstancesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListLakeFormationInstancesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListObsBucketsRequest;
@@ -91,6 +93,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPolicyResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListQuotasRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListQuotasResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListRoleNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListRoleNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListRolesRequest;
@@ -1551,6 +1555,34 @@ public class LakeFormationClient {
     }
 
     /**
+     * 查询配额
+     *
+     * 查询用户的配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return ListQuotasResponse
+     */
+    public ListQuotasResponse listQuotas(ListQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, LakeFormationMeta.listQuotas);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 查询用户的配额信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQuotasRequest 请求对象
+     * @return SyncInvoker<ListQuotasRequest, ListQuotasResponse>
+     */
+    public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
+        return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, LakeFormationMeta.listQuotas, hcClient);
+    }
+
+    /**
      * 创建role
      *
      * 创建role
@@ -2222,6 +2254,37 @@ public class LakeFormationClient {
         BatchUpdateLakeFormationInstanceTagsRequest request) {
         return new SyncInvoker<BatchUpdateLakeFormationInstanceTagsRequest, BatchUpdateLakeFormationInstanceTagsResponse>(
             request, LakeFormationMeta.batchUpdateLakeFormationInstanceTags, hcClient);
+    }
+
+    /**
+     * 查询资源标签集合
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLakeFormationInstanceTagsRequest 请求对象
+     * @return ListLakeFormationInstanceTagsResponse
+     */
+    public ListLakeFormationInstanceTagsResponse listLakeFormationInstanceTags(
+        ListLakeFormationInstanceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, LakeFormationMeta.listLakeFormationInstanceTags);
+    }
+
+    /**
+     * 查询资源标签集合
+     *
+     * 查询租户在指定Project中实例类型的所有资源标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLakeFormationInstanceTagsRequest 请求对象
+     * @return SyncInvoker<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse>
+     */
+    public SyncInvoker<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse> listLakeFormationInstanceTagsInvoker(
+        ListLakeFormationInstanceTagsRequest request) {
+        return new SyncInvoker<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse>(request,
+            LakeFormationMeta.listLakeFormationInstanceTags, hcClient);
     }
 
     /**

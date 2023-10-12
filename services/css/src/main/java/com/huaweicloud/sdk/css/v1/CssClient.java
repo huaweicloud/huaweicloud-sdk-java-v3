@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.css.v1.model.ChangeModeRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeModeResponse;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupResponse;
+import com.huaweicloud.sdk.css.v1.model.CreateAiOpsRequest;
+import com.huaweicloud.sdk.css.v1.model.CreateAiOpsResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateAutoCreatePolicyRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateAutoCreatePolicyResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateBindPublicRequest;
@@ -21,18 +23,24 @@ import com.huaweicloud.sdk.css.v1.model.CreateClustersTagsRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateCnfRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateCnfResponse;
+import com.huaweicloud.sdk.css.v1.model.CreateElbListenerRequest;
+import com.huaweicloud.sdk.css.v1.model.CreateElbListenerResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateLoadIkThesaurusRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateLoadIkThesaurusResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateLogBackupRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateLogBackupResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateSnapshotRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateSnapshotResponse;
+import com.huaweicloud.sdk.css.v1.model.DeleteAiOpsRequest;
+import com.huaweicloud.sdk.css.v1.model.DeleteAiOpsResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteClusterRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteClustersTagsRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfResponse;
+import com.huaweicloud.sdk.css.v1.model.DeleteConfigRequest;
+import com.huaweicloud.sdk.css.v1.model.DeleteConfigResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteIkThesaurusRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteIkThesaurusResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteSnapshotRequest;
@@ -41,20 +49,34 @@ import com.huaweicloud.sdk.css.v1.model.DeleteTemplateRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteTemplateResponse;
 import com.huaweicloud.sdk.css.v1.model.DownloadCertRequest;
 import com.huaweicloud.sdk.css.v1.model.DownloadCertResponse;
+import com.huaweicloud.sdk.css.v1.model.EnableOrDisableElbRequest;
+import com.huaweicloud.sdk.css.v1.model.EnableOrDisableElbResponse;
 import com.huaweicloud.sdk.css.v1.model.ListActionsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListActionsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListAiOpsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListAiOpsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListCertsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListCertsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListClustersDetailsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListClustersDetailsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListClustersTagsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListConfsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListConfsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListElbCertsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListElbCertsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListElbsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListElbsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListImagesRequest;
+import com.huaweicloud.sdk.css.v1.model.ListImagesResponse;
 import com.huaweicloud.sdk.css.v1.model.ListLogsJobRequest;
 import com.huaweicloud.sdk.css.v1.model.ListLogsJobResponse;
 import com.huaweicloud.sdk.css.v1.model.ListPipelinesRequest;
 import com.huaweicloud.sdk.css.v1.model.ListPipelinesResponse;
+import com.huaweicloud.sdk.css.v1.model.ListSmnTopicsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListSmnTopicsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListSnapshotsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListSnapshotsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListTemplatesRequest;
@@ -69,12 +91,16 @@ import com.huaweicloud.sdk.css.v1.model.RestartClusterRequest;
 import com.huaweicloud.sdk.css.v1.model.RestartClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.RestoreSnapshotRequest;
 import com.huaweicloud.sdk.css.v1.model.RestoreSnapshotResponse;
+import com.huaweicloud.sdk.css.v1.model.RetryUpgradeTaskRequest;
+import com.huaweicloud.sdk.css.v1.model.RetryUpgradeTaskResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowAutoCreatePolicyRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowAutoCreatePolicyResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterDetailRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterTagRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterTagResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowElbDetailRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowElbDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowGetConfDetailRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowGetConfDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowGetLogSettingRequest;
@@ -101,6 +127,8 @@ import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistRequest;
 import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistResponse;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpRequest;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpResponse;
+import com.huaweicloud.sdk.css.v1.model.StopHotPipelineRequest;
+import com.huaweicloud.sdk.css.v1.model.StopHotPipelineResponse;
 import com.huaweicloud.sdk.css.v1.model.StopLogAutoBackupPolicyRequest;
 import com.huaweicloud.sdk.css.v1.model.StopLogAutoBackupPolicyResponse;
 import com.huaweicloud.sdk.css.v1.model.StopLogsRequest;
@@ -117,6 +145,8 @@ import com.huaweicloud.sdk.css.v1.model.StopVpecpRequest;
 import com.huaweicloud.sdk.css.v1.model.StopVpecpResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateAlterKibanaRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateAlterKibanaResponse;
+import com.huaweicloud.sdk.css.v1.model.UpdateAzByInstanceTypeRequest;
+import com.huaweicloud.sdk.css.v1.model.UpdateAzByInstanceTypeResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateBatchClustersTagsRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateBatchClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateCloseKibanaRequest;
@@ -125,6 +155,8 @@ import com.huaweicloud.sdk.css.v1.model.UpdateClusterNameRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateClusterNameResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateCnfRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateCnfResponse;
+import com.huaweicloud.sdk.css.v1.model.UpdateEsListenerRequest;
+import com.huaweicloud.sdk.css.v1.model.UpdateEsListenerResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateExtendClusterRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateExtendClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateExtendInstanceStorageRequest;
@@ -157,6 +189,10 @@ import com.huaweicloud.sdk.css.v1.model.UpdateVpcepWhitelistRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateVpcepWhitelistResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateYmlsRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateYmlsResponse;
+import com.huaweicloud.sdk.css.v1.model.UpgradeCoreRequest;
+import com.huaweicloud.sdk.css.v1.model.UpgradeCoreResponse;
+import com.huaweicloud.sdk.css.v1.model.UpgradeDetailRequest;
+import com.huaweicloud.sdk.css.v1.model.UpgradeDetailResponse;
 
 public class CssClient {
 
@@ -257,6 +293,34 @@ public class CssClient {
         ChangeSecurityGroupRequest request) {
         return new SyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse>(request,
             CssMeta.changeSecurityGroup, hcClient);
+    }
+
+    /**
+     * 创建一次集群检测任务
+     *
+     * 该接口用于创建一个集群检测任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAiOpsRequest 请求对象
+     * @return CreateAiOpsResponse
+     */
+    public CreateAiOpsResponse createAiOps(CreateAiOpsRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.createAiOps);
+    }
+
+    /**
+     * 创建一次集群检测任务
+     *
+     * 该接口用于创建一个集群检测任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAiOpsRequest 请求对象
+     * @return SyncInvoker<CreateAiOpsRequest, CreateAiOpsResponse>
+     */
+    public SyncInvoker<CreateAiOpsRequest, CreateAiOpsResponse> createAiOpsInvoker(CreateAiOpsRequest request) {
+        return new SyncInvoker<CreateAiOpsRequest, CreateAiOpsResponse>(request, CssMeta.createAiOps, hcClient);
     }
 
     /**
@@ -378,6 +442,36 @@ public class CssClient {
     }
 
     /**
+     * es监听器配置。
+     *
+     * 该接口用于es监听器配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateElbListenerRequest 请求对象
+     * @return CreateElbListenerResponse
+     */
+    public CreateElbListenerResponse createElbListener(CreateElbListenerRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.createElbListener);
+    }
+
+    /**
+     * es监听器配置。
+     *
+     * 该接口用于es监听器配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateElbListenerRequest 请求对象
+     * @return SyncInvoker<CreateElbListenerRequest, CreateElbListenerResponse>
+     */
+    public SyncInvoker<CreateElbListenerRequest, CreateElbListenerResponse> createElbListenerInvoker(
+        CreateElbListenerRequest request) {
+        return new SyncInvoker<CreateElbListenerRequest, CreateElbListenerResponse>(request, CssMeta.createElbListener,
+            hcClient);
+    }
+
+    /**
      * 加载自定义词库
      *
      * 该接口用于加载存放于OBS的自定义词库。
@@ -465,6 +559,34 @@ public class CssClient {
         CreateSnapshotRequest request) {
         return new SyncInvoker<CreateSnapshotRequest, CreateSnapshotResponse>(request, CssMeta.createSnapshot,
             hcClient);
+    }
+
+    /**
+     * 删除一个检测任务记录
+     *
+     * 该接口用于删除一个检测任务记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAiOpsRequest 请求对象
+     * @return DeleteAiOpsResponse
+     */
+    public DeleteAiOpsResponse deleteAiOps(DeleteAiOpsRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.deleteAiOps);
+    }
+
+    /**
+     * 删除一个检测任务记录
+     *
+     * 该接口用于删除一个检测任务记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAiOpsRequest 请求对象
+     * @return SyncInvoker<DeleteAiOpsRequest, DeleteAiOpsResponse>
+     */
+    public SyncInvoker<DeleteAiOpsRequest, DeleteAiOpsResponse> deleteAiOpsInvoker(DeleteAiOpsRequest request) {
+        return new SyncInvoker<DeleteAiOpsRequest, DeleteAiOpsResponse>(request, CssMeta.deleteAiOps, hcClient);
     }
 
     /**
@@ -618,6 +740,64 @@ public class CssClient {
     }
 
     /**
+     * 打开或关闭es负载均衡器
+     *
+     * 该接口打开或关闭es负载均衡器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableOrDisableElbRequest 请求对象
+     * @return EnableOrDisableElbResponse
+     */
+    public EnableOrDisableElbResponse enableOrDisableElb(EnableOrDisableElbRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.enableOrDisableElb);
+    }
+
+    /**
+     * 打开或关闭es负载均衡器
+     *
+     * 该接口打开或关闭es负载均衡器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableOrDisableElbRequest 请求对象
+     * @return SyncInvoker<EnableOrDisableElbRequest, EnableOrDisableElbResponse>
+     */
+    public SyncInvoker<EnableOrDisableElbRequest, EnableOrDisableElbResponse> enableOrDisableElbInvoker(
+        EnableOrDisableElbRequest request) {
+        return new SyncInvoker<EnableOrDisableElbRequest, EnableOrDisableElbResponse>(request,
+            CssMeta.enableOrDisableElb, hcClient);
+    }
+
+    /**
+     * 获取智能运维任务列表及详情
+     *
+     * 该接口用于获取智能运维任务列表及详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAiOpsRequest 请求对象
+     * @return ListAiOpsResponse
+     */
+    public ListAiOpsResponse listAiOps(ListAiOpsRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.listAiOps);
+    }
+
+    /**
+     * 获取智能运维任务列表及详情
+     *
+     * 该接口用于获取智能运维任务列表及详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAiOpsRequest 请求对象
+     * @return SyncInvoker<ListAiOpsRequest, ListAiOpsResponse>
+     */
+    public SyncInvoker<ListAiOpsRequest, ListAiOpsResponse> listAiOpsInvoker(ListAiOpsRequest request) {
+        return new SyncInvoker<ListAiOpsRequest, ListAiOpsResponse>(request, CssMeta.listAiOps, hcClient);
+    }
+
+    /**
      * 查询集群列表
      *
      * 该接口用于查询并显示集群列表以及集群的状态。
@@ -678,6 +858,62 @@ public class CssClient {
     }
 
     /**
+     * 查询证书列表
+     *
+     * 该接口用于查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListElbCertsRequest 请求对象
+     * @return ListElbCertsResponse
+     */
+    public ListElbCertsResponse listElbCerts(ListElbCertsRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.listElbCerts);
+    }
+
+    /**
+     * 查询证书列表
+     *
+     * 该接口用于查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListElbCertsRequest 请求对象
+     * @return SyncInvoker<ListElbCertsRequest, ListElbCertsResponse>
+     */
+    public SyncInvoker<ListElbCertsRequest, ListElbCertsResponse> listElbCertsInvoker(ListElbCertsRequest request) {
+        return new SyncInvoker<ListElbCertsRequest, ListElbCertsResponse>(request, CssMeta.listElbCerts, hcClient);
+    }
+
+    /**
+     * 查询集群支持的elbv3负载均衡器
+     *
+     * 展示查询集群支持的elbv3负载均衡器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListElbsRequest 请求对象
+     * @return ListElbsResponse
+     */
+    public ListElbsResponse listElbs(ListElbsRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.listElbs);
+    }
+
+    /**
+     * 查询集群支持的elbv3负载均衡器
+     *
+     * 展示查询集群支持的elbv3负载均衡器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListElbsRequest 请求对象
+     * @return SyncInvoker<ListElbsRequest, ListElbsResponse>
+     */
+    public SyncInvoker<ListElbsRequest, ListElbsResponse> listElbsInvoker(ListElbsRequest request) {
+        return new SyncInvoker<ListElbsRequest, ListElbsResponse>(request, CssMeta.listElbs, hcClient);
+    }
+
+    /**
      * 获取实例规格列表
      *
      * 该接口用于查询并显示支持的实例规格对应的ID。
@@ -706,6 +942,34 @@ public class CssClient {
     }
 
     /**
+     * 获取目标镜像ID
+     *
+     * 该接口用于获取当前集群的可升级目标镜像ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListImagesRequest 请求对象
+     * @return ListImagesResponse
+     */
+    public ListImagesResponse listImages(ListImagesRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.listImages);
+    }
+
+    /**
+     * 获取目标镜像ID
+     *
+     * 该接口用于获取当前集群的可升级目标镜像ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListImagesRequest 请求对象
+     * @return SyncInvoker<ListImagesRequest, ListImagesResponse>
+     */
+    public SyncInvoker<ListImagesRequest, ListImagesResponse> listImagesInvoker(ListImagesRequest request) {
+        return new SyncInvoker<ListImagesRequest, ListImagesResponse>(request, CssMeta.listImages, hcClient);
+    }
+
+    /**
      * 查询作业列表
      *
      * 该接口用于查询具体某个集群的日志任务记录列表。
@@ -731,6 +995,34 @@ public class CssClient {
      */
     public SyncInvoker<ListLogsJobRequest, ListLogsJobResponse> listLogsJobInvoker(ListLogsJobRequest request) {
         return new SyncInvoker<ListLogsJobRequest, ListLogsJobResponse>(request, CssMeta.listLogsJob, hcClient);
+    }
+
+    /**
+     * 获取智能运维告警可用的SMN主题
+     *
+     * 该接口用于获取智能运维告警可用的SMN主题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmnTopicsRequest 请求对象
+     * @return ListSmnTopicsResponse
+     */
+    public ListSmnTopicsResponse listSmnTopics(ListSmnTopicsRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.listSmnTopics);
+    }
+
+    /**
+     * 获取智能运维告警可用的SMN主题
+     *
+     * 该接口用于获取智能运维告警可用的SMN主题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSmnTopicsRequest 请求对象
+     * @return SyncInvoker<ListSmnTopicsRequest, ListSmnTopicsResponse>
+     */
+    public SyncInvoker<ListSmnTopicsRequest, ListSmnTopicsResponse> listSmnTopicsInvoker(ListSmnTopicsRequest request) {
+        return new SyncInvoker<ListSmnTopicsRequest, ListSmnTopicsResponse>(request, CssMeta.listSmnTopics, hcClient);
     }
 
     /**
@@ -906,6 +1198,36 @@ public class CssClient {
     }
 
     /**
+     * 重试升级失败任务
+     *
+     * 由于升级过程时间较长，可能由于网络等原因导致升级失败，可以通过该接口重试该任务或终止该任务的影响。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryUpgradeTaskRequest 请求对象
+     * @return RetryUpgradeTaskResponse
+     */
+    public RetryUpgradeTaskResponse retryUpgradeTask(RetryUpgradeTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.retryUpgradeTask);
+    }
+
+    /**
+     * 重试升级失败任务
+     *
+     * 由于升级过程时间较长，可能由于网络等原因导致升级失败，可以通过该接口重试该任务或终止该任务的影响。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryUpgradeTaskRequest 请求对象
+     * @return SyncInvoker<RetryUpgradeTaskRequest, RetryUpgradeTaskResponse>
+     */
+    public SyncInvoker<RetryUpgradeTaskRequest, RetryUpgradeTaskResponse> retryUpgradeTaskInvoker(
+        RetryUpgradeTaskRequest request) {
+        return new SyncInvoker<RetryUpgradeTaskRequest, RetryUpgradeTaskResponse>(request, CssMeta.retryUpgradeTask,
+            hcClient);
+    }
+
+    /**
      * 查询自动创建快照的策略
      *
      * 该接口用于查询自动创建快照策略。
@@ -993,6 +1315,34 @@ public class CssClient {
         ShowClusterTagRequest request) {
         return new SyncInvoker<ShowClusterTagRequest, ShowClusterTagResponse>(request, CssMeta.showClusterTag,
             hcClient);
+    }
+
+    /**
+     * 获取该esELB的信息，以及页面需要展示健康检查状态
+     *
+     * 该接口用于获取该esELB的信息，以及页面需要展示健康检查状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowElbDetailRequest 请求对象
+     * @return ShowElbDetailResponse
+     */
+    public ShowElbDetailResponse showElbDetail(ShowElbDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.showElbDetail);
+    }
+
+    /**
+     * 获取该esELB的信息，以及页面需要展示健康检查状态
+     *
+     * 该接口用于获取该esELB的信息，以及页面需要展示健康检查状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowElbDetailRequest 请求对象
+     * @return SyncInvoker<ShowElbDetailRequest, ShowElbDetailResponse>
+     */
+    public SyncInvoker<ShowElbDetailRequest, ShowElbDetailResponse> showElbDetailInvoker(ShowElbDetailRequest request) {
+        return new SyncInvoker<ShowElbDetailRequest, ShowElbDetailResponse>(request, CssMeta.showElbDetail, hcClient);
     }
 
     /**
@@ -1422,6 +1772,36 @@ public class CssClient {
     }
 
     /**
+     * 切换集群实例AZ
+     *
+     * 该接口通过指定节点类型切换AZ。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAzByInstanceTypeRequest 请求对象
+     * @return UpdateAzByInstanceTypeResponse
+     */
+    public UpdateAzByInstanceTypeResponse updateAzByInstanceType(UpdateAzByInstanceTypeRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.updateAzByInstanceType);
+    }
+
+    /**
+     * 切换集群实例AZ
+     *
+     * 该接口通过指定节点类型切换AZ。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAzByInstanceTypeRequest 请求对象
+     * @return SyncInvoker<UpdateAzByInstanceTypeRequest, UpdateAzByInstanceTypeResponse>
+     */
+    public SyncInvoker<UpdateAzByInstanceTypeRequest, UpdateAzByInstanceTypeResponse> updateAzByInstanceTypeInvoker(
+        UpdateAzByInstanceTypeRequest request) {
+        return new SyncInvoker<UpdateAzByInstanceTypeRequest, UpdateAzByInstanceTypeResponse>(request,
+            CssMeta.updateAzByInstanceType, hcClient);
+    }
+
+    /**
      * 批量添加或删除集群标签
      *
      * 该接口用于对集群批量添加或删除标签。
@@ -1478,6 +1858,36 @@ public class CssClient {
     public SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse> updateClusterNameInvoker(
         UpdateClusterNameRequest request) {
         return new SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>(request, CssMeta.updateClusterName,
+            hcClient);
+    }
+
+    /**
+     * 更新es监听器
+     *
+     * 该接口用于更新es监听器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEsListenerRequest 请求对象
+     * @return UpdateEsListenerResponse
+     */
+    public UpdateEsListenerResponse updateEsListener(UpdateEsListenerRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.updateEsListener);
+    }
+
+    /**
+     * 更新es监听器
+     *
+     * 该接口用于更新es监听器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEsListenerRequest 请求对象
+     * @return SyncInvoker<UpdateEsListenerRequest, UpdateEsListenerResponse>
+     */
+    public SyncInvoker<UpdateEsListenerRequest, UpdateEsListenerResponse> updateEsListenerInvoker(
+        UpdateEsListenerRequest request) {
+        return new SyncInvoker<UpdateEsListenerRequest, UpdateEsListenerResponse>(request, CssMeta.updateEsListener,
             hcClient);
     }
 
@@ -1945,6 +2355,62 @@ public class CssClient {
     }
 
     /**
+     * 集群内核升级
+     *
+     * 该接口用于将低版本的ES升级到高版本或同版本ES。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeCoreRequest 请求对象
+     * @return UpgradeCoreResponse
+     */
+    public UpgradeCoreResponse upgradeCore(UpgradeCoreRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.upgradeCore);
+    }
+
+    /**
+     * 集群内核升级
+     *
+     * 该接口用于将低版本的ES升级到高版本或同版本ES。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeCoreRequest 请求对象
+     * @return SyncInvoker<UpgradeCoreRequest, UpgradeCoreResponse>
+     */
+    public SyncInvoker<UpgradeCoreRequest, UpgradeCoreResponse> upgradeCoreInvoker(UpgradeCoreRequest request) {
+        return new SyncInvoker<UpgradeCoreRequest, UpgradeCoreResponse>(request, CssMeta.upgradeCore, hcClient);
+    }
+
+    /**
+     * 获取升级详情信息
+     *
+     * 由于升级过程时间较长，该接口可以展示当前升级（切换AZ）节点的各个阶段信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeDetailRequest 请求对象
+     * @return UpgradeDetailResponse
+     */
+    public UpgradeDetailResponse upgradeDetail(UpgradeDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.upgradeDetail);
+    }
+
+    /**
+     * 获取升级详情信息
+     *
+     * 由于升级过程时间较长，该接口可以展示当前升级（切换AZ）节点的各个阶段信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeDetailRequest 请求对象
+     * @return SyncInvoker<UpgradeDetailRequest, UpgradeDetailResponse>
+     */
+    public SyncInvoker<UpgradeDetailRequest, UpgradeDetailResponse> upgradeDetailInvoker(UpgradeDetailRequest request) {
+        return new SyncInvoker<UpgradeDetailRequest, UpgradeDetailResponse>(request, CssMeta.upgradeDetail, hcClient);
+    }
+
+    /**
      * 开启Kibana公网访问
      *
      * 该接口用于开启Kibana公网访问。
@@ -2179,6 +2645,34 @@ public class CssClient {
     }
 
     /**
+     * 删除配置文件V2
+     *
+     * 删除配置文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConfigRequest 请求对象
+     * @return DeleteConfigResponse
+     */
+    public DeleteConfigResponse deleteConfig(DeleteConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.deleteConfig);
+    }
+
+    /**
+     * 删除配置文件V2
+     *
+     * 删除配置文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConfigRequest 请求对象
+     * @return SyncInvoker<DeleteConfigRequest, DeleteConfigResponse>
+     */
+    public SyncInvoker<DeleteConfigRequest, DeleteConfigResponse> deleteConfigInvoker(DeleteConfigRequest request) {
+        return new SyncInvoker<DeleteConfigRequest, DeleteConfigResponse>(request, CssMeta.deleteConfig, hcClient);
+    }
+
+    /**
      * 删除自定义模板
      *
      * 该接口用于删除自定义模板。
@@ -2234,6 +2728,34 @@ public class CssClient {
      */
     public SyncInvoker<ListActionsRequest, ListActionsResponse> listActionsInvoker(ListActionsRequest request) {
         return new SyncInvoker<ListActionsRequest, ListActionsResponse>(request, CssMeta.listActions, hcClient);
+    }
+
+    /**
+     * 查询证书列表
+     *
+     * 该接口用于查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertsRequest 请求对象
+     * @return ListCertsResponse
+     */
+    public ListCertsResponse listCerts(ListCertsRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.listCerts);
+    }
+
+    /**
+     * 查询证书列表
+     *
+     * 该接口用于查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertsRequest 请求对象
+     * @return SyncInvoker<ListCertsRequest, ListCertsResponse>
+     */
+    public SyncInvoker<ListCertsRequest, ListCertsResponse> listCertsInvoker(ListCertsRequest request) {
+        return new SyncInvoker<ListCertsRequest, ListCertsResponse>(request, CssMeta.listCerts, hcClient);
     }
 
     /**
@@ -2406,6 +2928,36 @@ public class CssClient {
      */
     public SyncInvoker<StartPipelineRequest, StartPipelineResponse> startPipelineInvoker(StartPipelineRequest request) {
         return new SyncInvoker<StartPipelineRequest, StartPipelineResponse>(request, CssMeta.startPipeline, hcClient);
+    }
+
+    /**
+     * 热停止pipeline迁移数据。
+     *
+     * 该接口用于热停止pipeline迁移数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopHotPipelineRequest 请求对象
+     * @return StopHotPipelineResponse
+     */
+    public StopHotPipelineResponse stopHotPipeline(StopHotPipelineRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.stopHotPipeline);
+    }
+
+    /**
+     * 热停止pipeline迁移数据。
+     *
+     * 该接口用于热停止pipeline迁移数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopHotPipelineRequest 请求对象
+     * @return SyncInvoker<StopHotPipelineRequest, StopHotPipelineResponse>
+     */
+    public SyncInvoker<StopHotPipelineRequest, StopHotPipelineResponse> stopHotPipelineInvoker(
+        StopHotPipelineRequest request) {
+        return new SyncInvoker<StopHotPipelineRequest, StopHotPipelineResponse>(request, CssMeta.stopHotPipeline,
+            hcClient);
     }
 
     /**

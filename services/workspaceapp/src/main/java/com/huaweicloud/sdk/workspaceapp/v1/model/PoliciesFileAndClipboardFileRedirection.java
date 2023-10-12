@@ -100,7 +100,7 @@ public class PoliciesFileAndClipboardFileRedirection {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
-    private PoliciesFileAndClipboardFileRedirectionOptions options;
+    private FileRedirectionOptions options;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vm_send_file_client")
@@ -129,15 +129,14 @@ public class PoliciesFileAndClipboardFileRedirection {
         this.redirectionMode = redirectionMode;
     }
 
-    public PoliciesFileAndClipboardFileRedirection withOptions(PoliciesFileAndClipboardFileRedirectionOptions options) {
+    public PoliciesFileAndClipboardFileRedirection withOptions(FileRedirectionOptions options) {
         this.options = options;
         return this;
     }
 
-    public PoliciesFileAndClipboardFileRedirection withOptions(
-        Consumer<PoliciesFileAndClipboardFileRedirectionOptions> optionsSetter) {
+    public PoliciesFileAndClipboardFileRedirection withOptions(Consumer<FileRedirectionOptions> optionsSetter) {
         if (this.options == null) {
-            this.options = new PoliciesFileAndClipboardFileRedirectionOptions();
+            this.options = new FileRedirectionOptions();
             optionsSetter.accept(this.options);
         }
 
@@ -148,11 +147,11 @@ public class PoliciesFileAndClipboardFileRedirection {
      * Get options
      * @return options
      */
-    public PoliciesFileAndClipboardFileRedirectionOptions getOptions() {
+    public FileRedirectionOptions getOptions() {
         return options;
     }
 
-    public void setOptions(PoliciesFileAndClipboardFileRedirectionOptions options) {
+    public void setOptions(FileRedirectionOptions options) {
         this.options = options;
     }
 

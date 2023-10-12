@@ -279,7 +279,7 @@ public class ListVirtualInterfacesRequest {
     }
 
     /**
-     * 根据企业项目ID过滤中心网络列表。
+     * 根据企业项目ID过滤资源实例
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {

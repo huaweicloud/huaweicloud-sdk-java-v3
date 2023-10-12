@@ -193,6 +193,11 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     private MemberTypeEnum memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
 
     private String dictCode;
@@ -292,81 +297,6 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
 
     private MicroServiceInfo microserviceInfo;
 
-    /**
-     * vpc通道类型。 - BUILTIN：BUILTIN通道类型 - MICROSERVICE：微服务类型
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum BUILTIN for value: "BUILTIN"
-         */
-        public static final TypeEnum BUILTIN = new TypeEnum("BUILTIN");
-
-        /**
-         * Enum MICROSERVICE for value: "MICROSERVICE"
-         */
-        public static final TypeEnum MICROSERVICE = new TypeEnum("MICROSERVICE");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("BUILTIN", BUILTIN);
-            map.put("MICROSERVICE", MICROSERVICE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private TypeEnum type;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "members")
 
@@ -443,6 +373,23 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
 
     public void setMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
+    }
+
+    public ShowDetailsOfVpcChannelV2Response withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型：[暂不支持](tag:Site)  [2：BUILTIN通道类型](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)  [3：微服务类型](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public ShowDetailsOfVpcChannelV2Response withDictCode(String dictCode) {
@@ -535,7 +482,7 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     }
 
     /**
-     * 后端云服务器组列表。  [暂不支持](tag:Site)
+     * 后端云服务器组列表。[暂不支持。](tag:Site)
      * @return memberGroups
      */
     public List<MemberGroupInfo> getMemberGroups() {
@@ -570,23 +517,6 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
 
     public void setMicroserviceInfo(MicroServiceInfo microserviceInfo) {
         this.microserviceInfo = microserviceInfo;
-    }
-
-    public ShowDetailsOfVpcChannelV2Response withType(TypeEnum type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * vpc通道类型。 - BUILTIN：BUILTIN通道类型 - MICROSERVICE：微服务类型
-     * @return type
-     */
-    public TypeEnum getType() {
-        return type;
-    }
-
-    public void setType(TypeEnum type) {
-        this.type = type;
     }
 
     public ShowDetailsOfVpcChannelV2Response withMembers(List<VpcMemberInfo> members) {
@@ -659,10 +589,11 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         ShowDetailsOfVpcChannelV2Response that = (ShowDetailsOfVpcChannelV2Response) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
             && Objects.equals(this.balanceStrategy, that.balanceStrategy)
-            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.dictCode, that.dictCode)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.memberGroups, that.memberGroups)
-            && Objects.equals(this.microserviceInfo, that.microserviceInfo) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dictCode, that.dictCode) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.memberGroups, that.memberGroups)
+            && Objects.equals(this.microserviceInfo, that.microserviceInfo)
             && Objects.equals(this.members, that.members) && Objects.equals(this.vpcHealthConfig, that.vpcHealthConfig);
     }
 
@@ -672,13 +603,13 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
             port,
             balanceStrategy,
             memberType,
+            type,
             dictCode,
             createTime,
             id,
             status,
             memberGroups,
             microserviceInfo,
-            type,
             members,
             vpcHealthConfig);
     }
@@ -691,13 +622,13 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    memberGroups: ").append(toIndentedString(memberGroups)).append("\n");
         sb.append("    microserviceInfo: ").append(toIndentedString(microserviceInfo)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    vpcHealthConfig: ").append(toIndentedString(vpcHealthConfig)).append("\n");
         sb.append("}");

@@ -188,6 +188,11 @@ public class VpcBase {
     private MemberTypeEnum memberType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
 
     private String dictCode;
@@ -260,6 +265,23 @@ public class VpcBase {
         this.memberType = memberType;
     }
 
+    public VpcBase withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型，默认为服务器类型。 - 2：服务器类型 - 3：微服务类型
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
     public VpcBase withDictCode(String dictCode) {
         this.dictCode = dictCode;
         return this;
@@ -288,12 +310,13 @@ public class VpcBase {
         VpcBase that = (VpcBase) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
             && Objects.equals(this.balanceStrategy, that.balanceStrategy)
-            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.dictCode, that.dictCode);
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dictCode, that.dictCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, port, balanceStrategy, memberType, dictCode);
+        return Objects.hash(name, port, balanceStrategy, memberType, type, dictCode);
     }
 
     @Override
@@ -304,6 +327,7 @@ public class VpcBase {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -113,6 +113,11 @@ public class ExtensionInfo {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
     public ExtensionInfo withName(String name) {
         this.name = name;
         return this;
@@ -147,6 +152,23 @@ public class ExtensionInfo {
         this.status = status;
     }
 
+    public ExtensionInfo withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 插件版本
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -156,12 +178,13 @@ public class ExtensionInfo {
             return false;
         }
         ExtensionInfo that = (ExtensionInfo) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, status);
+        return Objects.hash(name, status, version);
     }
 
     @Override
@@ -170,6 +193,7 @@ public class ExtensionInfo {
         sb.append("class ExtensionInfo {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

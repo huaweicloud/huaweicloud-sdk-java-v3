@@ -26,7 +26,7 @@ public class CreateClusterInstanceVolumeBody {
     }
 
     /**
-     * 卷类型。  - COMMON：普通I/O。 - HIGH：高I/O。 - ULTRAHIGH：超高I/O。
+     * 卷类型。  - COMMON：普通I/O。 - HIGH：高I/O。 - ULTRAHIGH：超高I/O。 - ESSD：极速SSD。
      * @return volumeType
      */
     public String getVolumeType() {

@@ -26,6 +26,11 @@ public class PublicKibanaRespBody {
 
     private String publicKibanaIp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidthResourceId")
+
+    private String bandwidthResourceId;
+
     public PublicKibanaRespBody withEipSize(Integer eipSize) {
         this.eipSize = eipSize;
         return this;
@@ -86,6 +91,23 @@ public class PublicKibanaRespBody {
         this.publicKibanaIp = publicKibanaIp;
     }
 
+    public PublicKibanaRespBody withBandwidthResourceId(String bandwidthResourceId) {
+        this.bandwidthResourceId = bandwidthResourceId;
+        return this;
+    }
+
+    /**
+     * 当前kibana公网对应的资源Id。
+     * @return bandwidthResourceId
+     */
+    public String getBandwidthResourceId() {
+        return bandwidthResourceId;
+    }
+
+    public void setBandwidthResourceId(String bandwidthResourceId) {
+        this.bandwidthResourceId = bandwidthResourceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -97,12 +119,13 @@ public class PublicKibanaRespBody {
         PublicKibanaRespBody that = (PublicKibanaRespBody) obj;
         return Objects.equals(this.eipSize, that.eipSize)
             && Objects.equals(this.elbWhiteListResp, that.elbWhiteListResp)
-            && Objects.equals(this.publicKibanaIp, that.publicKibanaIp);
+            && Objects.equals(this.publicKibanaIp, that.publicKibanaIp)
+            && Objects.equals(this.bandwidthResourceId, that.bandwidthResourceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eipSize, elbWhiteListResp, publicKibanaIp);
+        return Objects.hash(eipSize, elbWhiteListResp, publicKibanaIp, bandwidthResourceId);
     }
 
     @Override
@@ -112,6 +135,7 @@ public class PublicKibanaRespBody {
         sb.append("    eipSize: ").append(toIndentedString(eipSize)).append("\n");
         sb.append("    elbWhiteListResp: ").append(toIndentedString(elbWhiteListResp)).append("\n");
         sb.append("    publicKibanaIp: ").append(toIndentedString(publicKibanaIp)).append("\n");
+        sb.append("    bandwidthResourceId: ").append(toIndentedString(bandwidthResourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

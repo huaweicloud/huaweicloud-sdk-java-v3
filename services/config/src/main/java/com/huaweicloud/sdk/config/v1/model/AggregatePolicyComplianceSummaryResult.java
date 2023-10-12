@@ -26,6 +26,11 @@ public class AggregatePolicyComplianceSummaryResult {
 
     private String groupName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_account_name")
+
+    private String groupAccountName;
+
     public AggregatePolicyComplianceSummaryResult withResourceDetails(PolicyComplianceSummaryUnit resourceDetails) {
         this.resourceDetails = resourceDetails;
         return this;
@@ -97,6 +102,23 @@ public class AggregatePolicyComplianceSummaryResult {
         this.groupName = groupName;
     }
 
+    public AggregatePolicyComplianceSummaryResult withGroupAccountName(String groupAccountName) {
+        this.groupAccountName = groupAccountName;
+        return this;
+    }
+
+    /**
+     * 账号名称
+     * @return groupAccountName
+     */
+    public String getGroupAccountName() {
+        return groupAccountName;
+    }
+
+    public void setGroupAccountName(String groupAccountName) {
+        this.groupAccountName = groupAccountName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class AggregatePolicyComplianceSummaryResult {
         AggregatePolicyComplianceSummaryResult that = (AggregatePolicyComplianceSummaryResult) obj;
         return Objects.equals(this.resourceDetails, that.resourceDetails)
             && Objects.equals(this.assignmentDetails, that.assignmentDetails)
-            && Objects.equals(this.groupName, that.groupName);
+            && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.groupAccountName, that.groupAccountName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceDetails, assignmentDetails, groupName);
+        return Objects.hash(resourceDetails, assignmentDetails, groupName, groupAccountName);
     }
 
     @Override
@@ -123,6 +146,7 @@ public class AggregatePolicyComplianceSummaryResult {
         sb.append("    resourceDetails: ").append(toIndentedString(resourceDetails)).append("\n");
         sb.append("    assignmentDetails: ").append(toIndentedString(assignmentDetails)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    groupAccountName: ").append(toIndentedString(groupAccountName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -176,6 +176,21 @@ public class FeatureInfoV2 {
          */
         public static final NameEnum THROTTLE_STRATEGY = new NameEnum("throttle_strategy");
 
+        /**
+         * Enum KAFKA_LOG_PLUGIN_OPTIONS for value: "kafka_log_plugin_options"
+         */
+        public static final NameEnum KAFKA_LOG_PLUGIN_OPTIONS = new NameEnum("kafka_log_plugin_options");
+
+        /**
+         * Enum GZIP for value: "gzip"
+         */
+        public static final NameEnum GZIP = new NameEnum("gzip");
+
+        /**
+         * Enum JS_INVOCABLE_CACHE_SIZE for value: "js_invocable_cache_size"
+         */
+        public static final NameEnum JS_INVOCABLE_CACHE_SIZE = new NameEnum("js_invocable_cache_size");
+
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, NameEnum> createStaticFields() {
@@ -210,6 +225,9 @@ public class FeatureInfoV2 {
             map.put("app_acl", APP_ACL);
             map.put("vpc_backup", VPC_BACKUP);
             map.put("throttle_strategy", THROTTLE_STRATEGY);
+            map.put("kafka_log_plugin_options", KAFKA_LOG_PLUGIN_OPTIONS);
+            map.put("gzip", GZIP);
+            map.put("js_invocable_cache_size", JS_INVOCABLE_CACHE_SIZE);
             return Collections.unmodifiableMap(map);
         }
 

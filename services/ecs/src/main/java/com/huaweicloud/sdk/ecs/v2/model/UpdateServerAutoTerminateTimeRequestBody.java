@@ -21,7 +21,7 @@ public class UpdateServerAutoTerminateTimeRequestBody {
     }
 
     /**
-     * 销毁时间
+     * 定时删除时间
      * @return autoTerminateTime
      */
     public String getAutoTerminateTime() {

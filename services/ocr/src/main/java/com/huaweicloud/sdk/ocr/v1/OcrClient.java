@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeCambodianIdCardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeCambodianIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeChileIdCardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeChileIdCardResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeColombiaIdCardRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeColombiaIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeCustomTemplateRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeCustomTemplateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeDriverLicenseRequest;
@@ -110,9 +112,9 @@ public class OcrClient {
     }
 
     /**
-     * 电子承兑汇票识别
+     * 承兑汇票识别
      *
-     * 识别电子承兑汇票识别中的关键字段, 并以json格式返回结构化结果
+     * 识别承兑汇票中的关键信息, 并以json格式返回结构化结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -124,9 +126,9 @@ public class OcrClient {
     }
 
     /**
-     * 电子承兑汇票识别
+     * 承兑汇票识别
      *
-     * 识别电子承兑汇票识别中的关键字段, 并以json格式返回结构化结果
+     * 识别承兑汇票中的关键信息, 并以json格式返回结构化结果。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -333,6 +335,36 @@ public class OcrClient {
         RecognizeChileIdCardRequest request) {
         return new SyncInvoker<RecognizeChileIdCardRequest, RecognizeChileIdCardResponse>(request,
             OcrMeta.recognizeChileIdCard, hcClient);
+    }
+
+    /**
+     * 哥伦比亚身份证识别
+     *
+     * 识别哥伦比亚身份证中的文字信息，并将识别的结构化结果返回给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeColombiaIdCardRequest 请求对象
+     * @return RecognizeColombiaIdCardResponse
+     */
+    public RecognizeColombiaIdCardResponse recognizeColombiaIdCard(RecognizeColombiaIdCardRequest request) {
+        return hcClient.syncInvokeHttp(request, OcrMeta.recognizeColombiaIdCard);
+    }
+
+    /**
+     * 哥伦比亚身份证识别
+     *
+     * 识别哥伦比亚身份证中的文字信息，并将识别的结构化结果返回给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizeColombiaIdCardRequest 请求对象
+     * @return SyncInvoker<RecognizeColombiaIdCardRequest, RecognizeColombiaIdCardResponse>
+     */
+    public SyncInvoker<RecognizeColombiaIdCardRequest, RecognizeColombiaIdCardResponse> recognizeColombiaIdCardInvoker(
+        RecognizeColombiaIdCardRequest request) {
+        return new SyncInvoker<RecognizeColombiaIdCardRequest, RecognizeColombiaIdCardResponse>(request,
+            OcrMeta.recognizeColombiaIdCard, hcClient);
     }
 
     /**
@@ -1516,7 +1548,7 @@ public class OcrClient {
     /**
      * 电子面单识别
      *
-     * 识别用户上传的韵达电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
+     * 识别用户上传的电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1530,7 +1562,7 @@ public class OcrClient {
     /**
      * 电子面单识别
      *
-     * 识别用户上传的韵达电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
+     * 识别用户上传的电子面单图片中的文字内容，并将识别的结果以json格式返回给用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

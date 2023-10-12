@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.workspaceapp.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -127,6 +128,16 @@ public class ProductInfo {
     @JsonProperty(value = "package_type")
 
     private String packageType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private OffsetDateTime expireTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_gpu_type")
+
+    private String supportGpuType;
 
     public ProductInfo withProductId(String productId) {
         this.productId = productId;
@@ -551,6 +562,40 @@ public class ProductInfo {
         this.packageType = packageType;
     }
 
+    public ProductInfo withExpireTime(OffsetDateTime expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * 产品套餐过期时间,产品将在改时间点后逐步下架
+     * @return expireTime
+     */
+    public OffsetDateTime getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(OffsetDateTime expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public ProductInfo withSupportGpuType(String supportGpuType) {
+        this.supportGpuType = supportGpuType;
+        return this;
+    }
+
+    /**
+     * 产品套餐支持的GPU类型
+     * @return supportGpuType
+     */
+    public String getSupportGpuType() {
+        return supportGpuType;
+    }
+
+    public void setSupportGpuType(String supportGpuType) {
+        this.supportGpuType = supportGpuType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -574,7 +619,9 @@ public class ProductInfo {
             && Objects.equals(this.sessions, that.sessions) && Objects.equals(this.status, that.status)
             && Objects.equals(this.condOperationAz, that.condOperationAz)
             && Objects.equals(this.subProductList, that.subProductList)
-            && Objects.equals(this.domainIds, that.domainIds) && Objects.equals(this.packageType, that.packageType);
+            && Objects.equals(this.domainIds, that.domainIds) && Objects.equals(this.packageType, that.packageType)
+            && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.supportGpuType, that.supportGpuType);
     }
 
     @Override
@@ -601,7 +648,9 @@ public class ProductInfo {
             condOperationAz,
             subProductList,
             domainIds,
-            packageType);
+            packageType,
+            expireTime,
+            supportGpuType);
     }
 
     @Override
@@ -631,6 +680,8 @@ public class ProductInfo {
         sb.append("    subProductList: ").append(toIndentedString(subProductList)).append("\n");
         sb.append("    domainIds: ").append(toIndentedString(domainIds)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
+        sb.append("    supportGpuType: ").append(toIndentedString(supportGpuType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

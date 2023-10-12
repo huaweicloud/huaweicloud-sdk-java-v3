@@ -138,6 +138,11 @@ public class ClusterList {
 
     private Boolean period;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidthResourceId")
+
+    private String bandwidthResourceId;
+
     public ClusterList withDatastore(ClusterListDatastore datastore) {
         this.datastore = datastore;
         return this;
@@ -647,6 +652,23 @@ public class ClusterList {
         this.period = period;
     }
 
+    public ClusterList withBandwidthResourceId(String bandwidthResourceId) {
+        this.bandwidthResourceId = bandwidthResourceId;
+        return this;
+    }
+
+    /**
+     * es公网访问的资源id。
+     * @return bandwidthResourceId
+     */
+    public String getBandwidthResourceId() {
+        return bandwidthResourceId;
+    }
+
+    public void setBandwidthResourceId(String bandwidthResourceId) {
+        this.bandwidthResourceId = bandwidthResourceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -672,7 +694,8 @@ public class ClusterList {
             && Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.actions, that.actions)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.failedReason, that.failedReason)
-            && Objects.equals(this.period, that.period);
+            && Objects.equals(this.period, that.period)
+            && Objects.equals(this.bandwidthResourceId, that.bandwidthResourceId);
     }
 
     @Override
@@ -701,7 +724,8 @@ public class ClusterList {
             enterpriseProjectId,
             tags,
             failedReason,
-            period);
+            period,
+            bandwidthResourceId);
     }
 
     @Override
@@ -733,6 +757,7 @@ public class ClusterList {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    bandwidthResourceId: ").append(toIndentedString(bandwidthResourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

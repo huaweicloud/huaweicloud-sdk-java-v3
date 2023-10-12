@@ -12,55 +12,70 @@ import java.util.Objects;
 
 public class CtsRegion {
 
-    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://cts.af-south-1.myhuaweicloud.com");
+    public static final Region AF_SOUTH_1 =
+        new Region("af-south-1", "https://cts.af-south-1.myhuaweicloud.com", "https://cts.af-south-1.myhuaweicloud.cn");
 
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://cts.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 =
+        new Region("cn-north-4", "https://cts.cn-north-4.myhuaweicloud.com", "https://cts.cn-north-4.myhuaweicloud.cn");
 
-    public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://cts.cn-north-1.myhuaweicloud.com");
+    public static final Region CN_NORTH_1 =
+        new Region("cn-north-1", "https://cts.cn-north-1.myhuaweicloud.com", "https://cts.cn-north-1.myhuaweicloud.cn");
 
-    public static final Region CN_EAST_2 = new Region("cn-east-2", "https://cts.cn-east-2.myhuaweicloud.com");
+    public static final Region CN_EAST_2 =
+        new Region("cn-east-2", "https://cts.cn-east-2.myhuaweicloud.com", "https://cts.cn-east-2.myhuaweicloud.cn");
 
-    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://cts.cn-east-3.myhuaweicloud.com");
+    public static final Region CN_EAST_3 =
+        new Region("cn-east-3", "https://cts.cn-east-3.myhuaweicloud.com", "https://cts.cn-east-3.myhuaweicloud.cn");
 
-    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://cts.cn-south-1.myhuaweicloud.com");
+    public static final Region CN_SOUTH_1 =
+        new Region("cn-south-1", "https://cts.cn-south-1.myhuaweicloud.com", "https://cts.cn-south-1.myhuaweicloud.cn");
 
-    public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://cts.cn-south-2.myhuaweicloud.cn");
+    public static final Region CN_SOUTH_2 =
+        new Region("cn-south-2", "https://cts.cn-south-2.myhuaweicloud.com", "https://cts.cn-south-2.myhuaweicloud.cn");
 
-    public static final Region CN_SOUTHWEST_2 =
-        new Region("cn-southwest-2", "https://cts.cn-southwest-2.myhuaweicloud.com");
+    public static final Region CN_SOUTHWEST_2 = new Region("cn-southwest-2",
+        "https://cts.cn-southwest-2.myhuaweicloud.com", "https://cts.cn-southwest-2.myhuaweicloud.cn");
 
-    public static final Region AP_SOUTHEAST_2 =
-        new Region("ap-southeast-2", "https://cts.ap-southeast-2.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_2 = new Region("ap-southeast-2",
+        "https://cts.ap-southeast-2.myhuaweicloud.com", "https://cts.ap-southeast-2.myhuaweicloud.cn");
 
-    public static final Region AP_SOUTHEAST_1 =
-        new Region("ap-southeast-1", "https://cts.ap-southeast-1.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
+        "https://cts.ap-southeast-1.myhuaweicloud.com", "https://cts.ap-southeast-1.myhuaweicloud.cn");
 
-    public static final Region AP_SOUTHEAST_3 =
-        new Region("ap-southeast-3", "https://cts.ap-southeast-3.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
+        "https://cts.ap-southeast-3.myhuaweicloud.com", "https://cts.ap-southeast-3.myhuaweicloud.cn");
 
-    public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://cts.cn-north-2.myhuaweicloud.com");
+    public static final Region CN_NORTH_2 =
+        new Region("cn-north-2", "https://cts.cn-north-2.myhuaweicloud.com", "https://cts.cn-north-2.myhuaweicloud.cn");
 
-    public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://cts.cn-north-9.myhuaweicloud.com");
+    public static final Region CN_NORTH_9 =
+        new Region("cn-north-9", "https://cts.cn-north-9.myhuaweicloud.com", "https://cts.cn-north-9.myhuaweicloud.cn");
 
-    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://cts.cn-south-4.myhuaweicloud.com");
+    public static final Region CN_SOUTH_4 =
+        new Region("cn-south-4", "https://cts.cn-south-4.myhuaweicloud.com", "https://cts.cn-south-4.myhuaweicloud.cn");
 
-    public static final Region RU_NORTHWEST_2 =
-        new Region("ru-northwest-2", "https://cts.ru-northwest-2.myhuaweicloud.com");
+    public static final Region RU_NORTHWEST_2 = new Region("ru-northwest-2",
+        "https://cts.ru-northwest-2.myhuaweicloud.com", "https://cts.ru-northwest-2.myhuaweicloud.cn");
 
-    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://cts.la-south-2.myhuaweicloud.com");
+    public static final Region LA_SOUTH_2 =
+        new Region("la-south-2", "https://cts.la-south-2.myhuaweicloud.com", "https://cts.la-south-2.myhuaweicloud.cn");
 
-    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://cts.sa-brazil-1.myhuaweicloud.com");
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://cts.sa-brazil-1.myhuaweicloud.com",
+        "https://cts.sa-brazil-1.myhuaweicloud.cn");
 
-    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://cts.la-north-2.myhuaweicloud.com");
+    public static final Region LA_NORTH_2 =
+        new Region("la-north-2", "https://cts.la-north-2.myhuaweicloud.com", "https://cts.la-north-2.myhuaweicloud.cn");
 
-    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://cts.na-mexico-1.myhuaweicloud.com");
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://cts.na-mexico-1.myhuaweicloud.com",
+        "https://cts.na-mexico-1.myhuaweicloud.cn");
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://cts.eu-west-101.myhuaweicloud.eu");
 
-    public static final Region AP_SOUTHEAST_4 =
-        new Region("ap-southeast-4", "https://cts.ap-southeast-4.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
+        "https://cts.ap-southeast-4.myhuaweicloud.com", "https://cts.ap-southeast-4.myhuaweicloud.cn");
 
-    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://cts.tr-west-1.myhuaweicloud.com");
+    public static final Region TR_WEST_1 =
+        new Region("tr-west-1", "https://cts.tr-west-1.myhuaweicloud.com", "https://cts.tr-west-1.myhuaweicloud.cn");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CTS");
 

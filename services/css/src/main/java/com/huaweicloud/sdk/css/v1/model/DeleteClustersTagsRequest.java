@@ -65,7 +65,7 @@ public class DeleteClustersTagsRequest {
     }
 
     /**
-     * 需要删除的标签名。
+     * 需要删除的标签名。如果标签名为中文需要经过url编码再调用该接口。
      * @return key
      */
     public String getKey() {

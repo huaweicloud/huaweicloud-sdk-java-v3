@@ -119,7 +119,7 @@ public class InvocationInfo {
     private List<String> elasticIps = null;
 
     /**
-     * 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚)
+     * 任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)
      */
     public static final class InvocationTypeEnum {
 
@@ -138,6 +138,11 @@ public class InvocationInfo {
          */
         public static final InvocationTypeEnum ROLLBACK = new InvocationTypeEnum("ROLLBACK");
 
+        /**
+         * Enum RETRY for value: "RETRY"
+         */
+        public static final InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
+
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, InvocationTypeEnum> createStaticFields() {
@@ -145,6 +150,7 @@ public class InvocationInfo {
             map.put("INSTALL", INSTALL);
             map.put("UPDATE", UPDATE);
             map.put("ROLLBACK", ROLLBACK);
+            map.put("RETRY", RETRY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -533,7 +539,7 @@ public class InvocationInfo {
     }
 
     /**
-     * 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚)
+     * 任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)
      * @return invocationType
      */
     public InvocationTypeEnum getInvocationType() {

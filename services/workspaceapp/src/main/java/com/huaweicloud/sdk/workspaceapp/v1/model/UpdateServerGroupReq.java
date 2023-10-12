@@ -27,6 +27,11 @@ public class UpdateServerGroupReq {
     private RoutePolicy routePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_mount_policy")
+
+    private StorageFolderMountType storageMountPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
 
     private String imageId;
@@ -55,6 +60,11 @@ public class UpdateServerGroupReq {
     @JsonProperty(value = "ou_name")
 
     private String ouName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_type")
+
+    private AppTypeEnum appType;
 
     public UpdateServerGroupReq withName(String name) {
         this.name = name;
@@ -114,6 +124,23 @@ public class UpdateServerGroupReq {
 
     public void setRoutePolicy(RoutePolicy routePolicy) {
         this.routePolicy = routePolicy;
+    }
+
+    public UpdateServerGroupReq withStorageMountPolicy(StorageFolderMountType storageMountPolicy) {
+        this.storageMountPolicy = storageMountPolicy;
+        return this;
+    }
+
+    /**
+     * Get storageMountPolicy
+     * @return storageMountPolicy
+     */
+    public StorageFolderMountType getStorageMountPolicy() {
+        return storageMountPolicy;
+    }
+
+    public void setStorageMountPolicy(StorageFolderMountType storageMountPolicy) {
+        this.storageMountPolicy = storageMountPolicy;
     }
 
     public UpdateServerGroupReq withImageId(String imageId) {
@@ -220,6 +247,23 @@ public class UpdateServerGroupReq {
         this.ouName = ouName;
     }
 
+    public UpdateServerGroupReq withAppType(AppTypeEnum appType) {
+        this.appType = appType;
+        return this;
+    }
+
+    /**
+     * Get appType
+     * @return appType
+     */
+    public AppTypeEnum getAppType() {
+        return appType;
+    }
+
+    public void setAppType(AppTypeEnum appType) {
+        this.appType = appType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -230,11 +274,13 @@ public class UpdateServerGroupReq {
         }
         UpdateServerGroupReq that = (UpdateServerGroupReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.routePolicy, that.routePolicy) && Objects.equals(this.imageId, that.imageId)
-            && Objects.equals(this.imageProductId, that.imageProductId)
+            && Objects.equals(this.routePolicy, that.routePolicy)
+            && Objects.equals(this.storageMountPolicy, that.storageMountPolicy)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageProductId, that.imageProductId)
             && Objects.equals(this.imageType, that.imageType)
             && Objects.equals(this.systemDiskType, that.systemDiskType)
-            && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.ouName, that.ouName);
+            && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.ouName, that.ouName)
+            && Objects.equals(this.appType, that.appType);
     }
 
     @Override
@@ -242,12 +288,14 @@ public class UpdateServerGroupReq {
         return Objects.hash(name,
             description,
             routePolicy,
+            storageMountPolicy,
             imageId,
             imageProductId,
             imageType,
             systemDiskType,
             systemDiskSize,
-            ouName);
+            ouName,
+            appType);
     }
 
     @Override
@@ -257,12 +305,14 @@ public class UpdateServerGroupReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    routePolicy: ").append(toIndentedString(routePolicy)).append("\n");
+        sb.append("    storageMountPolicy: ").append(toIndentedString(storageMountPolicy)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    imageProductId: ").append(toIndentedString(imageProductId)).append("\n");
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    systemDiskType: ").append(toIndentedString(systemDiskType)).append("\n");
         sb.append("    systemDiskSize: ").append(toIndentedString(systemDiskSize)).append("\n");
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
+        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -91,6 +91,11 @@ public class UrlDomainCreate {
     private MinSslVersionEnum minSslVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_http_redirect_to_https")
+
+    private Boolean isHttpRedirectToHttps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_domain")
 
     private String urlDomain;
@@ -110,6 +115,23 @@ public class UrlDomainCreate {
 
     public void setMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
+    }
+
+    public UrlDomainCreate withIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+        return this;
+    }
+
+    /**
+     * 是否开启http到https的重定向，false为关闭，true为开启，默认为false
+     * @return isHttpRedirectToHttps
+     */
+    public Boolean getIsHttpRedirectToHttps() {
+        return isHttpRedirectToHttps;
+    }
+
+    public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
     }
 
     public UrlDomainCreate withUrlDomain(String urlDomain) {
@@ -138,12 +160,14 @@ public class UrlDomainCreate {
             return false;
         }
         UrlDomainCreate that = (UrlDomainCreate) obj;
-        return Objects.equals(this.minSslVersion, that.minSslVersion) && Objects.equals(this.urlDomain, that.urlDomain);
+        return Objects.equals(this.minSslVersion, that.minSslVersion)
+            && Objects.equals(this.isHttpRedirectToHttps, that.isHttpRedirectToHttps)
+            && Objects.equals(this.urlDomain, that.urlDomain);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(minSslVersion, urlDomain);
+        return Objects.hash(minSslVersion, isHttpRedirectToHttps, urlDomain);
     }
 
     @Override
@@ -151,6 +175,7 @@ public class UrlDomainCreate {
         StringBuilder sb = new StringBuilder();
         sb.append("class UrlDomainCreate {\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
         sb.append("    urlDomain: ").append(toIndentedString(urlDomain)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -144,6 +144,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
 
     private Boolean period;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidthResourceId")
+
+    private String bandwidthResourceId;
+
     public ShowClusterDetailResponse withDatastore(ClusterDetailDatastore datastore) {
         this.datastore = datastore;
         return this;
@@ -670,6 +675,23 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.period = period;
     }
 
+    public ShowClusterDetailResponse withBandwidthResourceId(String bandwidthResourceId) {
+        this.bandwidthResourceId = bandwidthResourceId;
+        return this;
+    }
+
+    /**
+     * es公网访问的资源id
+     * @return bandwidthResourceId
+     */
+    public String getBandwidthResourceId() {
+        return bandwidthResourceId;
+    }
+
+    public void setBandwidthResourceId(String bandwidthResourceId) {
+        this.bandwidthResourceId = bandwidthResourceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -695,7 +717,8 @@ public class ShowClusterDetailResponse extends SdkResponse {
             && Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.actions, that.actions)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.failedReason, that.failedReason)
-            && Objects.equals(this.period, that.period);
+            && Objects.equals(this.period, that.period)
+            && Objects.equals(this.bandwidthResourceId, that.bandwidthResourceId);
     }
 
     @Override
@@ -725,7 +748,8 @@ public class ShowClusterDetailResponse extends SdkResponse {
             enterpriseProjectId,
             tags,
             failedReason,
-            period);
+            period,
+            bandwidthResourceId);
     }
 
     @Override
@@ -758,6 +782,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    bandwidthResourceId: ").append(toIndentedString(bandwidthResourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

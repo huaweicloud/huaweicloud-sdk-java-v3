@@ -21,6 +21,11 @@ public class CreateScalingConfigOption {
 
     private InstanceConfig instanceConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_scaling_configuration_id")
+
+    private String sourceScalingConfigurationId;
+
     public CreateScalingConfigOption withScalingConfigurationName(String scalingConfigurationName) {
         this.scalingConfigurationName = scalingConfigurationName;
         return this;
@@ -64,6 +69,23 @@ public class CreateScalingConfigOption {
         this.instanceConfig = instanceConfig;
     }
 
+    public CreateScalingConfigOption withSourceScalingConfigurationId(String sourceScalingConfigurationId) {
+        this.sourceScalingConfigurationId = sourceScalingConfigurationId;
+        return this;
+    }
+
+    /**
+     * 源伸缩配置ID，通过ID获取原有伸缩配置信息进行修改，传入需修改的配置字段若为null值不产生修改，其他任何值（包括空值）均覆盖原有值。注意：若传入instance_id则优先使用instance_id获取到的值进行修改。
+     * @return sourceScalingConfigurationId
+     */
+    public String getSourceScalingConfigurationId() {
+        return sourceScalingConfigurationId;
+    }
+
+    public void setSourceScalingConfigurationId(String sourceScalingConfigurationId) {
+        this.sourceScalingConfigurationId = sourceScalingConfigurationId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,12 +96,13 @@ public class CreateScalingConfigOption {
         }
         CreateScalingConfigOption that = (CreateScalingConfigOption) obj;
         return Objects.equals(this.scalingConfigurationName, that.scalingConfigurationName)
-            && Objects.equals(this.instanceConfig, that.instanceConfig);
+            && Objects.equals(this.instanceConfig, that.instanceConfig)
+            && Objects.equals(this.sourceScalingConfigurationId, that.sourceScalingConfigurationId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scalingConfigurationName, instanceConfig);
+        return Objects.hash(scalingConfigurationName, instanceConfig, sourceScalingConfigurationId);
     }
 
     @Override
@@ -88,6 +111,9 @@ public class CreateScalingConfigOption {
         sb.append("class CreateScalingConfigOption {\n");
         sb.append("    scalingConfigurationName: ").append(toIndentedString(scalingConfigurationName)).append("\n");
         sb.append("    instanceConfig: ").append(toIndentedString(instanceConfig)).append("\n");
+        sb.append("    sourceScalingConfigurationId: ")
+            .append(toIndentedString(sourceScalingConfigurationId))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

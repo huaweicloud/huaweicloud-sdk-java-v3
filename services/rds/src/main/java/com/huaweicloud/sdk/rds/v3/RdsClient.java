@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.rds.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.rds.v3.model.AddPostgresqlHbaConfRequest;
+import com.huaweicloud.sdk.rds.v3.model.AddPostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.AllowDbPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.AllowDbPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.AllowDbUserPrivilegeRequest;
@@ -79,6 +81,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDbUserRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDbUserResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlExtensionResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseExResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteSqlserverDatabaseRequest;
@@ -157,6 +161,10 @@ import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDbUserPaginatedRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDbUserPaginatedResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlExtensionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoHistoryRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoHistoryResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsRequest;
@@ -193,6 +201,8 @@ import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerRequest;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyCollationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyCollationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
@@ -341,6 +351,36 @@ public class RdsClient {
     public static ClientBuilder<RdsClient> newBuilder() {
         ClientBuilder<RdsClient> clientBuilder = new ClientBuilder<>(RdsClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 在pg_hba.conf文件最后新增单个或多个配置
+     *
+     * 以传入配置全量覆盖当前pg_hba.conf文件内容，入参为空时用默认配置覆盖当前文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddPostgresqlHbaConfRequest 请求对象
+     * @return AddPostgresqlHbaConfResponse
+     */
+    public AddPostgresqlHbaConfResponse addPostgresqlHbaConf(AddPostgresqlHbaConfRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.addPostgresqlHbaConf);
+    }
+
+    /**
+     * 在pg_hba.conf文件最后新增单个或多个配置
+     *
+     * 以传入配置全量覆盖当前pg_hba.conf文件内容，入参为空时用默认配置覆盖当前文件内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddPostgresqlHbaConfRequest 请求对象
+     * @return SyncInvoker<AddPostgresqlHbaConfRequest, AddPostgresqlHbaConfResponse>
+     */
+    public SyncInvoker<AddPostgresqlHbaConfRequest, AddPostgresqlHbaConfResponse> addPostgresqlHbaConfInvoker(
+        AddPostgresqlHbaConfRequest request) {
+        return new SyncInvoker<AddPostgresqlHbaConfRequest, AddPostgresqlHbaConfResponse>(request,
+            RdsMeta.addPostgresqlHbaConf, hcClient);
     }
 
     /**
@@ -903,6 +943,36 @@ public class RdsClient {
         DeleteManualBackupRequest request) {
         return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request,
             RdsMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 删除pg_hba.conf文件的单个或多个配置
+     *
+     * 删除pg_hba.conf文件的单个或多个配置，以priority做唯一标识
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlHbaConfRequest 请求对象
+     * @return DeletePostgresqlHbaConfResponse
+     */
+    public DeletePostgresqlHbaConfResponse deletePostgresqlHbaConf(DeletePostgresqlHbaConfRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deletePostgresqlHbaConf);
+    }
+
+    /**
+     * 删除pg_hba.conf文件的单个或多个配置
+     *
+     * 删除pg_hba.conf文件的单个或多个配置，以priority做唯一标识
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePostgresqlHbaConfRequest 请求对象
+     * @return SyncInvoker<DeletePostgresqlHbaConfRequest, DeletePostgresqlHbaConfResponse>
+     */
+    public SyncInvoker<DeletePostgresqlHbaConfRequest, DeletePostgresqlHbaConfResponse> deletePostgresqlHbaConfInvoker(
+        DeletePostgresqlHbaConfRequest request) {
+        return new SyncInvoker<DeletePostgresqlHbaConfRequest, DeletePostgresqlHbaConfResponse>(request,
+            RdsMeta.deletePostgresqlHbaConf, hcClient);
     }
 
     /**
@@ -1622,6 +1692,67 @@ public class RdsClient {
     }
 
     /**
+     * 查询实例的pg_hba.conf文件配置
+     *
+     * 查询实例的pg_hba.conf文件配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPostgresqlHbaInfoRequest 请求对象
+     * @return ListPostgresqlHbaInfoResponse
+     */
+    public ListPostgresqlHbaInfoResponse listPostgresqlHbaInfo(ListPostgresqlHbaInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listPostgresqlHbaInfo);
+    }
+
+    /**
+     * 查询实例的pg_hba.conf文件配置
+     *
+     * 查询实例的pg_hba.conf文件配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPostgresqlHbaInfoRequest 请求对象
+     * @return SyncInvoker<ListPostgresqlHbaInfoRequest, ListPostgresqlHbaInfoResponse>
+     */
+    public SyncInvoker<ListPostgresqlHbaInfoRequest, ListPostgresqlHbaInfoResponse> listPostgresqlHbaInfoInvoker(
+        ListPostgresqlHbaInfoRequest request) {
+        return new SyncInvoker<ListPostgresqlHbaInfoRequest, ListPostgresqlHbaInfoResponse>(request,
+            RdsMeta.listPostgresqlHbaInfo, hcClient);
+    }
+
+    /**
+     * 查询实例的pg_hba.conf文件修改历史
+     *
+     * 查询实例的pg_hba.conf文件修改历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPostgresqlHbaInfoHistoryRequest 请求对象
+     * @return ListPostgresqlHbaInfoHistoryResponse
+     */
+    public ListPostgresqlHbaInfoHistoryResponse listPostgresqlHbaInfoHistory(
+        ListPostgresqlHbaInfoHistoryRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listPostgresqlHbaInfoHistory);
+    }
+
+    /**
+     * 查询实例的pg_hba.conf文件修改历史
+     *
+     * 查询实例的pg_hba.conf文件修改历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPostgresqlHbaInfoHistoryRequest 请求对象
+     * @return SyncInvoker<ListPostgresqlHbaInfoHistoryRequest, ListPostgresqlHbaInfoHistoryResponse>
+     */
+    public SyncInvoker<ListPostgresqlHbaInfoHistoryRequest, ListPostgresqlHbaInfoHistoryResponse> listPostgresqlHbaInfoHistoryInvoker(
+        ListPostgresqlHbaInfoHistoryRequest request) {
+        return new SyncInvoker<ListPostgresqlHbaInfoHistoryRequest, ListPostgresqlHbaInfoHistoryResponse>(request,
+            RdsMeta.listPostgresqlHbaInfoHistory, hcClient);
+    }
+
+    /**
      * 
      *
      * 查询预定义标签
@@ -2073,6 +2204,36 @@ public class RdsClient {
         MigrateFollowerRequest request) {
         return new SyncInvoker<MigrateFollowerRequest, MigrateFollowerResponse>(request, RdsMeta.migrateFollower,
             hcClient);
+    }
+
+    /**
+     * 修改pg_hba.conf文件的单个或多个配置
+     *
+     * 修改/新增pg_hba.conf文件的单个或多个配置，以priority做唯一标识，priority不存在的新增，存在的修改
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyPostgresqlHbaConfRequest 请求对象
+     * @return ModifyPostgresqlHbaConfResponse
+     */
+    public ModifyPostgresqlHbaConfResponse modifyPostgresqlHbaConf(ModifyPostgresqlHbaConfRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.modifyPostgresqlHbaConf);
+    }
+
+    /**
+     * 修改pg_hba.conf文件的单个或多个配置
+     *
+     * 修改/新增pg_hba.conf文件的单个或多个配置，以priority做唯一标识，priority不存在的新增，存在的修改
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyPostgresqlHbaConfRequest 请求对象
+     * @return SyncInvoker<ModifyPostgresqlHbaConfRequest, ModifyPostgresqlHbaConfResponse>
+     */
+    public SyncInvoker<ModifyPostgresqlHbaConfRequest, ModifyPostgresqlHbaConfResponse> modifyPostgresqlHbaConfInvoker(
+        ModifyPostgresqlHbaConfRequest request) {
+        return new SyncInvoker<ModifyPostgresqlHbaConfRequest, ModifyPostgresqlHbaConfResponse>(request,
+            RdsMeta.modifyPostgresqlHbaConf, hcClient);
     }
 
     /**

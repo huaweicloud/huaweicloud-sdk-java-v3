@@ -3,10 +3,7 @@ package com.huaweicloud.sdk.cae.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 请求数据。
@@ -17,11 +14,6 @@ public class CreateApplicationRequestBodyMetadata {
     @JsonProperty(value = "name")
 
     private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "annotations")
-
-    private Map<String, String> annotations = null;
 
     public CreateApplicationRequestBodyMetadata withName(String name) {
         this.name = name;
@@ -40,39 +32,6 @@ public class CreateApplicationRequestBodyMetadata {
         this.name = name;
     }
 
-    public CreateApplicationRequestBodyMetadata withAnnotations(Map<String, String> annotations) {
-        this.annotations = annotations;
-        return this;
-    }
-
-    public CreateApplicationRequestBodyMetadata putAnnotationsItem(String key, String annotationsItem) {
-        if (this.annotations == null) {
-            this.annotations = new HashMap<>();
-        }
-        this.annotations.put(key, annotationsItem);
-        return this;
-    }
-
-    public CreateApplicationRequestBodyMetadata withAnnotations(Consumer<Map<String, String>> annotationsSetter) {
-        if (this.annotations == null) {
-            this.annotations = new HashMap<>();
-        }
-        annotationsSetter.accept(this.annotations);
-        return this;
-    }
-
-    /**
-     * 创建应用附加参数，当前只支持description参数。
-     * @return annotations
-     */
-    public Map<String, String> getAnnotations() {
-        return annotations;
-    }
-
-    public void setAnnotations(Map<String, String> annotations) {
-        this.annotations = annotations;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +41,12 @@ public class CreateApplicationRequestBodyMetadata {
             return false;
         }
         CreateApplicationRequestBodyMetadata that = (CreateApplicationRequestBodyMetadata) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.annotations, that.annotations);
+        return Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, annotations);
+        return Objects.hash(name);
     }
 
     @Override
@@ -95,7 +54,6 @@ public class CreateApplicationRequestBodyMetadata {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateApplicationRequestBodyMetadata {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("}");
         return sb.toString();
     }

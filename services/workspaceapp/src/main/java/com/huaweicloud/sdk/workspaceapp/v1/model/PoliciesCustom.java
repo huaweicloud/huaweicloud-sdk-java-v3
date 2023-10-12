@@ -19,7 +19,7 @@ public class PoliciesCustom {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
-    private PoliciesCustomOptions options;
+    private CustomOptions options;
 
     public PoliciesCustom withCustomConfiguration1Enable(Boolean customConfiguration1Enable) {
         this.customConfiguration1Enable = customConfiguration1Enable;
@@ -38,14 +38,14 @@ public class PoliciesCustom {
         this.customConfiguration1Enable = customConfiguration1Enable;
     }
 
-    public PoliciesCustom withOptions(PoliciesCustomOptions options) {
+    public PoliciesCustom withOptions(CustomOptions options) {
         this.options = options;
         return this;
     }
 
-    public PoliciesCustom withOptions(Consumer<PoliciesCustomOptions> optionsSetter) {
+    public PoliciesCustom withOptions(Consumer<CustomOptions> optionsSetter) {
         if (this.options == null) {
-            this.options = new PoliciesCustomOptions();
+            this.options = new CustomOptions();
             optionsSetter.accept(this.options);
         }
 
@@ -56,11 +56,11 @@ public class PoliciesCustom {
      * Get options
      * @return options
      */
-    public PoliciesCustomOptions getOptions() {
+    public CustomOptions getOptions() {
         return options;
     }
 
-    public void setOptions(PoliciesCustomOptions options) {
+    public void setOptions(CustomOptions options) {
         this.options = options;
     }
 

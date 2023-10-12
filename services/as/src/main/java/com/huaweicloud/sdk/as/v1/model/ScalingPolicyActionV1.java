@@ -152,7 +152,7 @@ public class ScalingPolicyActionV1 {
     }
 
     /**
-     * 操作实例百分比，将伸缩组容量增加、减少或设置为伸缩组当前实例个数的百分比。操作为ADD或REMOVE/REDUCE时取值范围为1到20000的整数，操作为SET时取值范围为0到20000的整数。当instance_number和instance_percentage参数均无配置时，则操作实例个数为1。配置参数时，instance_number和instance_percentage参数只能选其中一个进行配置。
+     * 操作实例百分比，将伸缩组容量增加、减少或设置为伸缩组当前实例个数的百分比。操作为ADD或REMOVE/REDUCE时取值范围为1到20000的整数，操作为SET时取值范围为0到20000的整数。  当instance_number和instance_percentage参数均无配置时，则操作实例个数为1。  配置参数时，instance_number和instance_percentage参数只能选其中一个进行配置。
      * minimum: 0
      * maximum: 100
      * @return instancePercentage

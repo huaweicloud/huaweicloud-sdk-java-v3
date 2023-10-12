@@ -65,19 +65,14 @@ public class VirtualInterface {
     public static final class ServiceTypeEnum {
 
         /**
-         * Enum VPC for value: "vpc"
-         */
-        public static final ServiceTypeEnum VPC = new ServiceTypeEnum("vpc");
-
-        /**
          * Enum VGW for value: "VGW"
          */
         public static final ServiceTypeEnum VGW = new ServiceTypeEnum("VGW");
 
         /**
-         * Enum GDWW for value: "GDWW"
+         * Enum GDGW for value: "GDGW"
          */
-        public static final ServiceTypeEnum GDWW = new ServiceTypeEnum("GDWW");
+        public static final ServiceTypeEnum GDGW = new ServiceTypeEnum("GDGW");
 
         /**
          * Enum LGW for value: "LGW"
@@ -88,9 +83,8 @@ public class VirtualInterface {
 
         private static Map<String, ServiceTypeEnum> createStaticFields() {
             Map<String, ServiceTypeEnum> map = new HashMap<>();
-            map.put("vpc", VPC);
             map.put("VGW", VGW);
-            map.put("GDWW", GDWW);
+            map.put("GDGW", GDGW);
             map.put("LGW", LGW);
             return Collections.unmodifiableMap(map);
         }

@@ -4,9 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
- * VehicleLicenseResult
+ * 
  */
 public class VehicleLicenseResult {
 
@@ -119,6 +120,21 @@ public class VehicleLicenseResult {
     @JsonProperty(value = "text_location")
 
     private Object textLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "energy_type")
+
+    private String energyType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "front")
+
+    private VehicleLicenseFront front;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "back")
+
+    private VehicleLicenseback back;
 
     public VehicleLicenseResult withNumber(String number) {
         this.number = number;
@@ -494,6 +510,75 @@ public class VehicleLicenseResult {
         this.textLocation = textLocation;
     }
 
+    public VehicleLicenseResult withEnergyType(String energyType) {
+        this.energyType = energyType;
+        return this;
+    }
+
+    /**
+     * 能源类型。 
+     * @return energyType
+     */
+    public String getEnergyType() {
+        return energyType;
+    }
+
+    public void setEnergyType(String energyType) {
+        this.energyType = energyType;
+    }
+
+    public VehicleLicenseResult withFront(VehicleLicenseFront front) {
+        this.front = front;
+        return this;
+    }
+
+    public VehicleLicenseResult withFront(Consumer<VehicleLicenseFront> frontSetter) {
+        if (this.front == null) {
+            this.front = new VehicleLicenseFront();
+            frontSetter.accept(this.front);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get front
+     * @return front
+     */
+    public VehicleLicenseFront getFront() {
+        return front;
+    }
+
+    public void setFront(VehicleLicenseFront front) {
+        this.front = front;
+    }
+
+    public VehicleLicenseResult withBack(VehicleLicenseback back) {
+        this.back = back;
+        return this;
+    }
+
+    public VehicleLicenseResult withBack(Consumer<VehicleLicenseback> backSetter) {
+        if (this.back == null) {
+            this.back = new VehicleLicenseback();
+            backSetter.accept(this.back);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get back
+     * @return back
+     */
+    public VehicleLicenseback getBack() {
+        return back;
+    }
+
+    public void setBack(VehicleLicenseback back) {
+        this.back = back;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -514,7 +599,9 @@ public class VehicleLicenseResult {
             && Objects.equals(this.approvedLoad, that.approvedLoad) && Objects.equals(this.dimension, that.dimension)
             && Objects.equals(this.tractionMass, that.tractionMass) && Objects.equals(this.remarks, that.remarks)
             && Objects.equals(this.inspectionRecord, that.inspectionRecord)
-            && Objects.equals(this.codeNumber, that.codeNumber) && Objects.equals(this.textLocation, that.textLocation);
+            && Objects.equals(this.codeNumber, that.codeNumber) && Objects.equals(this.textLocation, that.textLocation)
+            && Objects.equals(this.energyType, that.energyType) && Objects.equals(this.front, that.front)
+            && Objects.equals(this.back, that.back);
     }
 
     @Override
@@ -540,7 +627,10 @@ public class VehicleLicenseResult {
             remarks,
             inspectionRecord,
             codeNumber,
-            textLocation);
+            textLocation,
+            energyType,
+            front,
+            back);
     }
 
     @Override
@@ -569,6 +659,9 @@ public class VehicleLicenseResult {
         sb.append("    inspectionRecord: ").append(toIndentedString(inspectionRecord)).append("\n");
         sb.append("    codeNumber: ").append(toIndentedString(codeNumber)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
+        sb.append("    energyType: ").append(toIndentedString(energyType)).append("\n");
+        sb.append("    front: ").append(toIndentedString(front)).append("\n");
+        sb.append("    back: ").append(toIndentedString(back)).append("\n");
         sb.append("}");
         return sb.toString();
     }

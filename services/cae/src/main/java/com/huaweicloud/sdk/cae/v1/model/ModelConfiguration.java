@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ModelConfiguration
@@ -19,7 +20,7 @@ public class ModelConfiguration {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private ListComponentConfigurationsResponseData data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operated_at")
@@ -165,20 +166,29 @@ public class ModelConfiguration {
 
     private Boolean isActivated;
 
-    public ModelConfiguration withData(Object data) {
+    public ModelConfiguration withData(ListComponentConfigurationsResponseData data) {
         this.data = data;
         return this;
     }
 
+    public ModelConfiguration withData(Consumer<ListComponentConfigurationsResponseData> dataSetter) {
+        if (this.data == null) {
+            this.data = new ListComponentConfigurationsResponseData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 组件配置数据。
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public ListComponentConfigurationsResponseData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(ListComponentConfigurationsResponseData data) {
         this.data = data;
     }
 

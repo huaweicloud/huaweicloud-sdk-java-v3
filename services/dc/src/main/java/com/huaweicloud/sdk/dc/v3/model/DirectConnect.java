@@ -166,16 +166,6 @@ public class DirectConnect {
          */
         public static final TypeEnum HOSTED = new TypeEnum("hosted");
 
-        /**
-         * Enum ONESTOP_STANDARD for value: "onestop_standard"
-         */
-        public static final TypeEnum ONESTOP_STANDARD = new TypeEnum("onestop_standard");
-
-        /**
-         * Enum ONESTOP_HOSTED for value: "onestop_hosted"
-         */
-        public static final TypeEnum ONESTOP_HOSTED = new TypeEnum("onestop_hosted");
-
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -183,8 +173,6 @@ public class DirectConnect {
             map.put("standard", STANDARD);
             map.put("hosting", HOSTING);
             map.put("hosted", HOSTED);
-            map.put("onestop_standard", ONESTOP_STANDARD);
-            map.put("onestop_hosted", ONESTOP_HOSTED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -264,11 +252,6 @@ public class DirectConnect {
          */
         public static final ChargeModeEnum TRAFFIC = new ChargeModeEnum("traffic");
 
-        /**
-         * Enum PORT for value: "port"
-         */
-        public static final ChargeModeEnum PORT = new ChargeModeEnum("port");
-
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ChargeModeEnum> createStaticFields() {
@@ -276,7 +259,6 @@ public class DirectConnect {
             map.put("prepayment", PREPAYMENT);
             map.put("bandwidth", BANDWIDTH);
             map.put("traffic", TRAFFIC);
-            map.put("port", PORT);
             return Collections.unmodifiableMap(map);
         }
 

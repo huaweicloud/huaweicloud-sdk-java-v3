@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.css.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 实例磁盘信息。
@@ -19,6 +22,11 @@ public class ClusterVolumeRsp {
     @JsonProperty(value = "size")
 
     private Integer size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resourceIds")
+
+    private List<String> resourceIds = null;
 
     public ClusterVolumeRsp withType(String type) {
         this.type = type;
@@ -54,6 +62,39 @@ public class ClusterVolumeRsp {
         this.size = size;
     }
 
+    public ClusterVolumeRsp withResourceIds(List<String> resourceIds) {
+        this.resourceIds = resourceIds;
+        return this;
+    }
+
+    public ClusterVolumeRsp addResourceIdsItem(String resourceIdsItem) {
+        if (this.resourceIds == null) {
+            this.resourceIds = new ArrayList<>();
+        }
+        this.resourceIds.add(resourceIdsItem);
+        return this;
+    }
+
+    public ClusterVolumeRsp withResourceIds(Consumer<List<String>> resourceIdsSetter) {
+        if (this.resourceIds == null) {
+            this.resourceIds = new ArrayList<>();
+        }
+        resourceIdsSetter.accept(this.resourceIds);
+        return this;
+    }
+
+    /**
+     * 该实例拥有的磁盘对应的资源Id。
+     * @return resourceIds
+     */
+    public List<String> getResourceIds() {
+        return resourceIds;
+    }
+
+    public void setResourceIds(List<String> resourceIds) {
+        this.resourceIds = resourceIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +104,13 @@ public class ClusterVolumeRsp {
             return false;
         }
         ClusterVolumeRsp that = (ClusterVolumeRsp) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.resourceIds, that.resourceIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, size);
+        return Objects.hash(type, size, resourceIds);
     }
 
     @Override
@@ -77,6 +119,7 @@ public class ClusterVolumeRsp {
         sb.append("class ClusterVolumeRsp {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

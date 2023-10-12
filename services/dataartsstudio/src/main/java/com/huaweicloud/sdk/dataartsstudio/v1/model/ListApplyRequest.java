@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.dataartsstudio.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -14,6 +19,81 @@ public class ListApplyRequest {
     @JsonProperty(value = "workspace")
 
     private String workspace;
+
+    /**
+     * dlm版本类型
+     */
+    public static final class DlmTypeEnum {
+
+        /**
+         * Enum SHARED for value: "SHARED"
+         */
+        public static final DlmTypeEnum SHARED = new DlmTypeEnum("SHARED");
+
+        /**
+         * Enum EXCLUSIVE for value: "EXCLUSIVE"
+         */
+        public static final DlmTypeEnum EXCLUSIVE = new DlmTypeEnum("EXCLUSIVE");
+
+        private static final Map<String, DlmTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DlmTypeEnum> createStaticFields() {
+            Map<String, DlmTypeEnum> map = new HashMap<>();
+            map.put("SHARED", SHARED);
+            map.put("EXCLUSIVE", EXCLUSIVE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DlmTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DlmTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DlmTypeEnum(value));
+        }
+
+        public static DlmTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DlmTypeEnum) {
+                return this.value.equals(((DlmTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Dlm-Type")
+
+    private DlmTypeEnum dlmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
@@ -50,6 +130,23 @@ public class ListApplyRequest {
 
     public void setWorkspace(String workspace) {
         this.workspace = workspace;
+    }
+
+    public ListApplyRequest withDlmType(DlmTypeEnum dlmType) {
+        this.dlmType = dlmType;
+        return this;
+    }
+
+    /**
+     * dlm版本类型
+     * @return dlmType
+     */
+    public DlmTypeEnum getDlmType() {
+        return dlmType;
+    }
+
+    public void setDlmType(DlmTypeEnum dlmType) {
+        this.dlmType = dlmType;
     }
 
     public ListApplyRequest withOffset(Integer offset) {
@@ -129,14 +226,14 @@ public class ListApplyRequest {
             return false;
         }
         ListApplyRequest that = (ListApplyRequest) obj;
-        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.apiName, that.apiName)
-            && Objects.equals(this.queryType, that.queryType);
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dlmType, that.dlmType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.apiName, that.apiName) && Objects.equals(this.queryType, that.queryType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, offset, limit, apiName, queryType);
+        return Objects.hash(workspace, dlmType, offset, limit, apiName, queryType);
     }
 
     @Override
@@ -144,6 +241,7 @@ public class ListApplyRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListApplyRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    dlmType: ").append(toIndentedString(dlmType)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    apiName: ").append(toIndentedString(apiName)).append("\n");

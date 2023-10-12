@@ -139,6 +139,8 @@ public class ServiceStageClient {
      * 修改应用信息
      *
      * 此API通过应用ID修改应用信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApplicationRequest 请求对象
      * @return ChangeApplicationResponse
@@ -151,6 +153,8 @@ public class ServiceStageClient {
      * 修改应用信息
      *
      * 此API通过应用ID修改应用信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApplicationRequest 请求对象
      * @return SyncInvoker<ChangeApplicationRequest, ChangeApplicationResponse>
@@ -165,6 +169,8 @@ public class ServiceStageClient {
      * 修改应用配置信息
      *
      * 通过此API修改应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApplicationConfigurationRequest 请求对象
      * @return ChangeApplicationConfigurationResponse
@@ -178,6 +184,8 @@ public class ServiceStageClient {
      * 修改应用配置信息
      *
      * 通过此API修改应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApplicationConfigurationRequest 请求对象
      * @return SyncInvoker<ChangeApplicationConfigurationRequest, ChangeApplicationConfigurationResponse>
@@ -192,6 +200,8 @@ public class ServiceStageClient {
      * 根据组件ID修改组件信息
      *
      * 此API通过组件ID修改组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeComponentRequest 请求对象
      * @return ChangeComponentResponse
@@ -204,6 +214,8 @@ public class ServiceStageClient {
      * 根据组件ID修改组件信息
      *
      * 此API通过组件ID修改组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeComponentRequest 请求对象
      * @return SyncInvoker<ChangeComponentRequest, ChangeComponentResponse>
@@ -218,6 +230,8 @@ public class ServiceStageClient {
      * 修改环境信息
      *
      * 此API通过环境ID修改环境信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeEnvironmentRequest 请求对象
      * @return ChangeEnvironmentResponse
@@ -230,6 +244,8 @@ public class ServiceStageClient {
      * 修改环境信息
      *
      * 此API通过环境ID修改环境信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeEnvironmentRequest 请求对象
      * @return SyncInvoker<ChangeEnvironmentRequest, ChangeEnvironmentResponse>
@@ -244,6 +260,8 @@ public class ServiceStageClient {
      * 修改应用组件实例
      *
      * 通过此API修改应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeInstanceRequest 请求对象
      * @return ChangeInstanceResponse
@@ -256,6 +274,8 @@ public class ServiceStageClient {
      * 修改应用组件实例
      *
      * 通过此API修改应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeInstanceRequest 请求对象
      * @return SyncInvoker<ChangeInstanceRequest, ChangeInstanceResponse>
@@ -270,6 +290,8 @@ public class ServiceStageClient {
      * 修改环境资源
      *
      * 此API用来修改环境资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeResourceInEnvironmentRequest 请求对象
      * @return ChangeResourceInEnvironmentResponse
@@ -282,6 +304,8 @@ public class ServiceStageClient {
      * 修改环境资源
      *
      * 此API用来修改环境资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeResourceInEnvironmentRequest 请求对象
      * @return SyncInvoker<ChangeResourceInEnvironmentRequest, ChangeResourceInEnvironmentResponse>
@@ -298,6 +322,8 @@ public class ServiceStageClient {
      * 应用是一个功能相对完备的业务系统，由一个或多个特性相关的组件组成。
      * 
      * 此API用来创建应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return CreateApplicationResponse
@@ -312,6 +338,8 @@ public class ServiceStageClient {
      * 应用是一个功能相对完备的业务系统，由一个或多个特性相关的组件组成。
      * 
      * 此API用来创建应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return SyncInvoker<CreateApplicationRequest, CreateApplicationResponse>
@@ -354,6 +382,8 @@ public class ServiceStageClient {
      * 应用组件是组成应用的某个业务特性实现，以代码或者软件包为载体，可独立部署运行。
      * 
      * 此API用来在应用中创建组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentRequest 请求对象
      * @return CreateComponentResponse
@@ -368,6 +398,8 @@ public class ServiceStageClient {
      * 应用组件是组成应用的某个业务特性实现，以代码或者软件包为载体，可独立部署运行。
      * 
      * 此API用来在应用中创建组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentRequest 请求对象
      * @return SyncInvoker<CreateComponentRequest, CreateComponentResponse>
@@ -384,6 +416,8 @@ public class ServiceStageClient {
      * 环境是用于应用部署和运行的计算、存储、网络等基础设施的集合。Servicestage把相同VPC下的CCE集群加上多个ELB、RDS、DCS实例组合为一个环境，如：开发环境，测试环境，预生产环境，生产环境。环境内网络互通，可以按环境维度来管理资源、部署服务，减少具体基础设施运维管理的复杂性。
      * 
      * 此API用来创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentRequest 请求对象
      * @return CreateEnvironmentResponse
@@ -398,6 +432,8 @@ public class ServiceStageClient {
      * 环境是用于应用部署和运行的计算、存储、网络等基础设施的集合。Servicestage把相同VPC下的CCE集群加上多个ELB、RDS、DCS实例组合为一个环境，如：开发环境，测试环境，预生产环境，生产环境。环境内网络互通，可以按环境维度来管理资源、部署服务，减少具体基础设施运维管理的复杂性。
      * 
      * 此API用来创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentRequest 请求对象
      * @return SyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>
@@ -412,6 +448,8 @@ public class ServiceStageClient {
      * 创建组件实例
      *
      * 此API用来创建应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
@@ -424,6 +462,8 @@ public class ServiceStageClient {
      * 创建组件实例
      *
      * 此API用来创建应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -464,6 +504,8 @@ public class ServiceStageClient {
      * 根据应用ID删除应用
      *
      * 此API通过应用ID删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return DeleteApplicationResponse
@@ -476,6 +518,8 @@ public class ServiceStageClient {
      * 根据应用ID删除应用
      *
      * 此API通过应用ID删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return SyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
@@ -490,6 +534,8 @@ public class ServiceStageClient {
      * 删除应用配置
      *
      * 通过此API删除应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationConfigurationRequest 请求对象
      * @return DeleteApplicationConfigurationResponse
@@ -503,6 +549,8 @@ public class ServiceStageClient {
      * 删除应用配置
      *
      * 通过此API删除应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationConfigurationRequest 请求对象
      * @return SyncInvoker<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse>
@@ -517,6 +565,8 @@ public class ServiceStageClient {
      * 根据应用组件ID删除应用组件
      *
      * 此API通过应用组件ID删除应用组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentRequest 请求对象
      * @return DeleteComponentResponse
@@ -529,6 +579,8 @@ public class ServiceStageClient {
      * 根据应用组件ID删除应用组件
      *
      * 此API通过应用组件ID删除应用组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentRequest 请求对象
      * @return SyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
@@ -543,6 +595,8 @@ public class ServiceStageClient {
      * 根据环境ID删除环境
      *
      * 此API通过环境ID删除环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentRequest 请求对象
      * @return DeleteEnvironmentResponse
@@ -555,6 +609,8 @@ public class ServiceStageClient {
      * 根据环境ID删除环境
      *
      * 此API通过环境ID删除环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentRequest 请求对象
      * @return SyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>
@@ -569,6 +625,8 @@ public class ServiceStageClient {
      * 删除应用组件实例
      *
      * 通过此API删除应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return DeleteInstanceResponse
@@ -581,6 +639,8 @@ public class ServiceStageClient {
      * 删除应用组件实例
      *
      * 通过此API删除应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -673,6 +733,8 @@ public class ServiceStageClient {
      * 获取所有应用
      *
      * 通过此API可以获取所有已经创建的应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return ListApplicationsResponse
@@ -685,6 +747,8 @@ public class ServiceStageClient {
      * 获取所有应用
      *
      * 通过此API可以获取所有已经创建的应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return SyncInvoker<ListApplicationsRequest, ListApplicationsResponse>
@@ -699,6 +763,8 @@ public class ServiceStageClient {
      * 获取应用所有组件
      *
      * 通过此API获取应用下所有应用组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentsRequest 请求对象
      * @return ListComponentsResponse
@@ -711,6 +777,8 @@ public class ServiceStageClient {
      * 获取应用所有组件
      *
      * 通过此API获取应用下所有应用组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentsRequest 请求对象
      * @return SyncInvoker<ListComponentsRequest, ListComponentsResponse>
@@ -725,6 +793,8 @@ public class ServiceStageClient {
      * 获取所有环境
      *
      * 此API用来获取所有已经创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return ListEnvironmentsResponse
@@ -737,6 +807,8 @@ public class ServiceStageClient {
      * 获取所有环境
      *
      * 此API用来获取所有已经创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -751,6 +823,8 @@ public class ServiceStageClient {
      * 获取组件实例快照
      *
      * 通过此API获取应用组件实例快照信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceSnapshotsRequest 请求对象
      * @return ListInstanceSnapshotsResponse
@@ -763,6 +837,8 @@ public class ServiceStageClient {
      * 获取组件实例快照
      *
      * 通过此API获取应用组件实例快照信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceSnapshotsRequest 请求对象
      * @return SyncInvoker<ListInstanceSnapshotsRequest, ListInstanceSnapshotsResponse>
@@ -777,6 +853,8 @@ public class ServiceStageClient {
      * 获取应用组件实例
      *
      * 通过此API获取组件下的所有组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return ListInstancesResponse
@@ -789,6 +867,8 @@ public class ServiceStageClient {
      * 获取应用组件实例
      *
      * 通过此API获取组件下的所有组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -802,6 +882,8 @@ public class ServiceStageClient {
      * 获取应用配置
      *
      * 通过此API获取应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationConfigurationRequest 请求对象
      * @return ShowApplicationConfigurationResponse
@@ -815,6 +897,8 @@ public class ServiceStageClient {
      * 获取应用配置
      *
      * 通过此API获取应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationConfigurationRequest 请求对象
      * @return SyncInvoker<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse>
@@ -829,6 +913,8 @@ public class ServiceStageClient {
      * 根据应用ID获取应用详细信息
      *
      * 此API通过应用ID获取应用详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationDetailRequest 请求对象
      * @return ShowApplicationDetailResponse
@@ -841,6 +927,8 @@ public class ServiceStageClient {
      * 根据应用ID获取应用详细信息
      *
      * 此API通过应用ID获取应用详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationDetailRequest 请求对象
      * @return SyncInvoker<ShowApplicationDetailRequest, ShowApplicationDetailResponse>
@@ -855,6 +943,8 @@ public class ServiceStageClient {
      * 根据组件ID获取应用组件信息
      *
      * 通过组件ID获取应用组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowComponentDetailRequest 请求对象
      * @return ShowComponentDetailResponse
@@ -867,6 +957,8 @@ public class ServiceStageClient {
      * 根据组件ID获取应用组件信息
      *
      * 通过组件ID获取应用组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowComponentDetailRequest 请求对象
      * @return SyncInvoker<ShowComponentDetailRequest, ShowComponentDetailResponse>
@@ -881,6 +973,8 @@ public class ServiceStageClient {
      * 根据环境ID获取环境详细信息
      *
      * 此API通过环境ID获取环境详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnvironmentDetailRequest 请求对象
      * @return ShowEnvironmentDetailResponse
@@ -893,6 +987,8 @@ public class ServiceStageClient {
      * 根据环境ID获取环境详细信息
      *
      * 此API通过环境ID获取环境详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnvironmentDetailRequest 请求对象
      * @return SyncInvoker<ShowEnvironmentDetailRequest, ShowEnvironmentDetailResponse>
@@ -907,6 +1003,8 @@ public class ServiceStageClient {
      * 根据实例ID获取实例详细信息
      *
      * 此API通过实例ID获取实例详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceDetailRequest 请求对象
      * @return ShowInstanceDetailResponse
@@ -919,6 +1017,8 @@ public class ServiceStageClient {
      * 根据实例ID获取实例详细信息
      *
      * 此API通过实例ID获取实例详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceDetailRequest 请求对象
      * @return SyncInvoker<ShowInstanceDetailRequest, ShowInstanceDetailResponse>
@@ -933,6 +1033,8 @@ public class ServiceStageClient {
      * 获取部署任务详细信息
      *
      * 通过此API获取部署任务详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobDetailRequest 请求对象
      * @return ShowJobDetailResponse
@@ -945,6 +1047,8 @@ public class ServiceStageClient {
      * 获取部署任务详细信息
      *
      * 通过此API获取部署任务详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobDetailRequest 请求对象
      * @return SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
@@ -958,6 +1062,8 @@ public class ServiceStageClient {
      * 对组件实例的操作
      *
      * 通过此API获取对组件实例的操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceActionRequest 请求对象
      * @return UpdateInstanceActionResponse
@@ -970,6 +1076,8 @@ public class ServiceStageClient {
      * 对组件实例的操作
      *
      * 通过此API获取对组件实例的操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceActionRequest 请求对象
      * @return SyncInvoker<UpdateInstanceActionRequest, UpdateInstanceActionResponse>
@@ -1010,6 +1118,8 @@ public class ServiceStageClient {
      * 创建仓库文件
      *
      * 在指定仓库项目下创建文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFileRequest 请求对象
      * @return CreateFileResponse
@@ -1022,6 +1132,8 @@ public class ServiceStageClient {
      * 创建仓库文件
      *
      * 在指定仓库项目下创建文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFileRequest 请求对象
      * @return SyncInvoker<CreateFileRequest, CreateFileResponse>
@@ -1034,6 +1146,8 @@ public class ServiceStageClient {
      * 创建项目hook
      *
      * 创建指定项目的hook。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHookRequest 请求对象
      * @return CreateHookResponse
@@ -1046,6 +1160,8 @@ public class ServiceStageClient {
      * 创建项目hook
      *
      * 创建指定项目的hook。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHookRequest 请求对象
      * @return SyncInvoker<CreateHookRequest, CreateHookResponse>
@@ -1058,6 +1174,8 @@ public class ServiceStageClient {
      * 创建OAuth授权
      *
      * 创建指定Git仓库类型的OAuth授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOAuthRequest 请求对象
      * @return CreateOAuthResponse
@@ -1070,6 +1188,8 @@ public class ServiceStageClient {
      * 创建OAuth授权
      *
      * 创建指定Git仓库类型的OAuth授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOAuthRequest 请求对象
      * @return SyncInvoker<CreateOAuthRequest, CreateOAuthResponse>
@@ -1083,6 +1203,8 @@ public class ServiceStageClient {
      * 创建口令授权
      *
      * 创建指定Git仓库类型的口令授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePasswordAuthRequest 请求对象
      * @return CreatePasswordAuthResponse
@@ -1095,6 +1217,8 @@ public class ServiceStageClient {
      * 创建口令授权
      *
      * 创建指定Git仓库类型的口令授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePasswordAuthRequest 请求对象
      * @return SyncInvoker<CreatePasswordAuthRequest, CreatePasswordAuthResponse>
@@ -1109,6 +1233,8 @@ public class ServiceStageClient {
      * 创建私人令牌授权
      *
      * 创建指定Git仓库类型的私人令牌授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePersonalAuthRequest 请求对象
      * @return CreatePersonalAuthResponse
@@ -1121,6 +1247,8 @@ public class ServiceStageClient {
      * 创建私人令牌授权
      *
      * 创建指定Git仓库类型的私人令牌授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePersonalAuthRequest 请求对象
      * @return SyncInvoker<CreatePersonalAuthRequest, CreatePersonalAuthResponse>
@@ -1135,6 +1263,8 @@ public class ServiceStageClient {
      * 创建软件仓库项目
      *
      * 创建指定组织下的软件仓库项目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectRequest 请求对象
      * @return CreateProjectResponse
@@ -1147,6 +1277,8 @@ public class ServiceStageClient {
      * 创建软件仓库项目
      *
      * 创建指定组织下的软件仓库项目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectRequest 请求对象
      * @return SyncInvoker<CreateProjectRequest, CreateProjectResponse>
@@ -1160,6 +1292,8 @@ public class ServiceStageClient {
      * 创建项目tag标签
      *
      * 创建指定项目的tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return CreateTagResponse
@@ -1172,6 +1306,8 @@ public class ServiceStageClient {
      * 创建项目tag标签
      *
      * 创建指定项目的tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return SyncInvoker<CreateTagRequest, CreateTagResponse>
@@ -1184,6 +1320,8 @@ public class ServiceStageClient {
      * 删除仓库授权
      *
      * 通过名称删除仓库授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAuthorizeRequest 请求对象
      * @return DeleteAuthorizeResponse
@@ -1196,6 +1334,8 @@ public class ServiceStageClient {
      * 删除仓库授权
      *
      * 通过名称删除仓库授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAuthorizeRequest 请求对象
      * @return SyncInvoker<DeleteAuthorizeRequest, DeleteAuthorizeResponse>
@@ -1210,6 +1350,8 @@ public class ServiceStageClient {
      * 删除仓库文件
      *
      * 删除指定项目仓库下的文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFileRequest 请求对象
      * @return DeleteFileResponse
@@ -1222,6 +1364,8 @@ public class ServiceStageClient {
      * 删除仓库文件
      *
      * 删除指定项目仓库下的文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFileRequest 请求对象
      * @return SyncInvoker<DeleteFileRequest, DeleteFileResponse>
@@ -1234,6 +1378,8 @@ public class ServiceStageClient {
      * 删除项目hook
      *
      * 删除指定项目的hook。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHookRequest 请求对象
      * @return DeleteHookResponse
@@ -1246,6 +1392,8 @@ public class ServiceStageClient {
      * 删除项目hook
      *
      * 删除指定项目的hook。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHookRequest 请求对象
      * @return SyncInvoker<DeleteHookRequest, DeleteHookResponse>
@@ -1258,6 +1406,8 @@ public class ServiceStageClient {
      * 删除项目tag标签
      *
      * 删除指定项目的tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return DeleteTagResponse
@@ -1270,6 +1420,8 @@ public class ServiceStageClient {
      * 删除项目tag标签
      *
      * 删除指定项目的tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return SyncInvoker<DeleteTagRequest, DeleteTagResponse>
@@ -1282,6 +1434,8 @@ public class ServiceStageClient {
      * 获取仓库授权列表
      *
      * 获取所有Git仓库授权信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return ListAuthorizationsResponse
@@ -1294,6 +1448,8 @@ public class ServiceStageClient {
      * 获取仓库授权列表
      *
      * 获取所有Git仓库授权信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return SyncInvoker<ListAuthorizationsRequest, ListAuthorizationsResponse>
@@ -1308,6 +1464,8 @@ public class ServiceStageClient {
      * 获取项目分支
      *
      * 获取指定项目的所有分支列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBranchesRequest 请求对象
      * @return ListBranchesResponse
@@ -1320,6 +1478,8 @@ public class ServiceStageClient {
      * 获取项目分支
      *
      * 获取指定项目的所有分支列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBranchesRequest 请求对象
      * @return SyncInvoker<ListBranchesRequest, ListBranchesResponse>
@@ -1333,6 +1493,8 @@ public class ServiceStageClient {
      * 获取项目commit提交记录
      *
      * 获取指定项目的最近10次commit提交记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitsRequest 请求对象
      * @return ListCommitsResponse
@@ -1345,6 +1507,8 @@ public class ServiceStageClient {
      * 获取项目commit提交记录
      *
      * 获取指定项目的最近10次commit提交记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitsRequest 请求对象
      * @return SyncInvoker<ListCommitsRequest, ListCommitsResponse>
@@ -1358,6 +1522,8 @@ public class ServiceStageClient {
      * 获取项目hooks
      *
      * 获取指定项目的所有hooks
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHooksRequest 请求对象
      * @return ListHooksResponse
@@ -1370,6 +1536,8 @@ public class ServiceStageClient {
      * 获取项目hooks
      *
      * 获取指定项目的所有hooks
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHooksRequest 请求对象
      * @return SyncInvoker<ListHooksRequest, ListHooksResponse>
@@ -1382,6 +1550,8 @@ public class ServiceStageClient {
      * 获取仓库的namespaces
      *
      * 获取仓库的namespaces。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNamespacesRequest 请求对象
      * @return ListNamespacesResponse
@@ -1394,6 +1564,8 @@ public class ServiceStageClient {
      * 获取仓库的namespaces
      *
      * 获取仓库的namespaces。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNamespacesRequest 请求对象
      * @return SyncInvoker<ListNamespacesRequest, ListNamespacesResponse>
@@ -1408,6 +1580,8 @@ public class ServiceStageClient {
      * 获取组织下所有项目
      *
      * 获取指定组织下的所有项目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectsRequest 请求对象
      * @return ListProjectsResponse
@@ -1420,6 +1594,8 @@ public class ServiceStageClient {
      * 获取组织下所有项目
      *
      * 获取指定组织下的所有项目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectsRequest 请求对象
      * @return SyncInvoker<ListProjectsRequest, ListProjectsResponse>
@@ -1433,6 +1609,8 @@ public class ServiceStageClient {
      * 获取项目的所有tag标签
      *
      * 获取指定项目的所有tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return ListTagsResponse
@@ -1445,6 +1623,8 @@ public class ServiceStageClient {
      * 获取项目的所有tag标签
      *
      * 获取指定项目的所有tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return SyncInvoker<ListTagsRequest, ListTagsResponse>
@@ -1457,6 +1637,8 @@ public class ServiceStageClient {
      * 获取仓库文件列表
      *
      * 获取指定项目仓库的文件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTreesRequest 请求对象
      * @return ListTreesResponse
@@ -1469,6 +1651,8 @@ public class ServiceStageClient {
      * 获取仓库文件列表
      *
      * 获取指定项目仓库的文件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTreesRequest 请求对象
      * @return SyncInvoker<ListTreesRequest, ListTreesResponse>
@@ -1481,6 +1665,8 @@ public class ServiceStageClient {
      * 获取仓库文件内容
      *
      * 获取指定项目仓库下文件的内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowContentRequest 请求对象
      * @return ShowContentResponse
@@ -1493,6 +1679,8 @@ public class ServiceStageClient {
      * 获取仓库文件内容
      *
      * 获取指定项目仓库下文件的内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowContentRequest 请求对象
      * @return SyncInvoker<ShowContentRequest, ShowContentResponse>
@@ -1506,6 +1694,8 @@ public class ServiceStageClient {
      * 通过clone url 获取仓库信息
      *
      * 通过指定的clone url 获取仓库信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectDetailRequest 请求对象
      * @return ShowProjectDetailResponse
@@ -1518,6 +1708,8 @@ public class ServiceStageClient {
      * 通过clone url 获取仓库信息
      *
      * 通过指定的clone url 获取仓库信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectDetailRequest 请求对象
      * @return SyncInvoker<ShowProjectDetailRequest, ShowProjectDetailResponse>
@@ -1532,6 +1724,8 @@ public class ServiceStageClient {
      * 获取授权重定向URL
      *
      * 获取指定Git仓库类型的授权重定向URL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRedirectUrlRequest 请求对象
      * @return ShowRedirectUrlResponse
@@ -1544,6 +1738,8 @@ public class ServiceStageClient {
      * 获取授权重定向URL
      *
      * 获取指定Git仓库类型的授权重定向URL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRedirectUrlRequest 请求对象
      * @return SyncInvoker<ShowRedirectUrlRequest, ShowRedirectUrlResponse>
@@ -1558,6 +1754,8 @@ public class ServiceStageClient {
      * 更新仓库文件内容
      *
      * 更新指定项目仓库下的文件内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFileRequest 请求对象
      * @return UpdateFileResponse
@@ -1570,6 +1768,8 @@ public class ServiceStageClient {
      * 更新仓库文件内容
      *
      * 更新指定项目仓库下的文件内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFileRequest 请求对象
      * @return SyncInvoker<UpdateFileRequest, UpdateFileResponse>
@@ -1582,6 +1782,8 @@ public class ServiceStageClient {
      * 获取所有支持的应用资源规格
      *
      * 通过此API获取所用支持的应用资源规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return ListFlavorsResponse
@@ -1594,6 +1796,8 @@ public class ServiceStageClient {
      * 获取所有支持的应用资源规格
      *
      * 通过此API获取所用支持的应用资源规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -1607,6 +1811,8 @@ public class ServiceStageClient {
      * 获取所有支持的应用组件运行时类型
      *
      * 此API用来获取所有支持应用组件运行时类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuntimesRequest 请求对象
      * @return ListRuntimesResponse
@@ -1619,6 +1825,8 @@ public class ServiceStageClient {
      * 获取所有支持的应用组件运行时类型
      *
      * 此API用来获取所有支持应用组件运行时类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuntimesRequest 请求对象
      * @return SyncInvoker<ListRuntimesRequest, ListRuntimesResponse>
@@ -1632,6 +1840,8 @@ public class ServiceStageClient {
      * 获取所有支持的应用组件模板
      *
      * 此API用来获取所有内置应用组件模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return ListTemplatesResponse
@@ -1644,6 +1854,8 @@ public class ServiceStageClient {
      * 获取所有支持的应用组件模板
      *
      * 此API用来获取所有内置应用组件模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>

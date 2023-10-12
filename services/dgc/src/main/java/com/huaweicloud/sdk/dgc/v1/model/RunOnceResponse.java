@@ -14,9 +14,9 @@ public class RunOnceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceId")
 
-    private String instanceId;
+    private Long instanceId;
 
-    public RunOnceResponse withInstanceId(String instanceId) {
+    public RunOnceResponse withInstanceId(Long instanceId) {
         this.instanceId = instanceId;
         return this;
     }
@@ -25,11 +25,11 @@ public class RunOnceResponse extends SdkResponse {
      * 作业实例id
      * @return instanceId
      */
-    public String getInstanceId() {
+    public Long getInstanceId() {
         return instanceId;
     }
 
-    public void setInstanceId(String instanceId) {
+    public void setInstanceId(Long instanceId) {
         this.instanceId = instanceId;
     }
 

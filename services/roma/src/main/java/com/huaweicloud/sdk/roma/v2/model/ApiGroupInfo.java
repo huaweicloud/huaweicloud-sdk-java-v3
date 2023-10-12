@@ -30,7 +30,7 @@ public class ApiGroupInfo {
     private String name;
 
     /**
-     * 状态   - 1： 有效
+     * 状态   - 1： 有效   - 2:  锁定
      */
     public static final class StatusEnum {
 
@@ -39,11 +39,17 @@ public class ApiGroupInfo {
          */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
 
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
+
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Integer, StatusEnum> createStaticFields() {
             Map<Integer, StatusEnum> map = new HashMap<>();
             map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -208,7 +214,7 @@ public class ApiGroupInfo {
     }
 
     /**
-     * 状态   - 1： 有效
+     * 状态   - 1： 有效   - 2:  锁定
      * @return status
      */
     public StatusEnum getStatus() {
@@ -276,7 +282,7 @@ public class ApiGroupInfo {
     }
 
     /**
-     * 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中  ROMAConnect暂未对接云市场，此字段默认返回2
+     * 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中  [ROMA Connect](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)[ROMA Site](tag:Site)暂未对接云市场，此字段默认返回2
      * @return onSellStatus
      */
     public Integer getOnSellStatus() {

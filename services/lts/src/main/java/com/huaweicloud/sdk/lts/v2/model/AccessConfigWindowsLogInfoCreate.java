@@ -108,7 +108,7 @@ public class AccessConfigWindowsLogInfoCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_offset")
 
-    private AccessConfigTimeOffsetCreate timeOffset;
+    private AccessConfigTimeOffset timeOffset;
 
     /**
      * Gets or Sets eventLevel
@@ -236,14 +236,14 @@ public class AccessConfigWindowsLogInfoCreate {
         this.categorys = categorys;
     }
 
-    public AccessConfigWindowsLogInfoCreate withTimeOffset(AccessConfigTimeOffsetCreate timeOffset) {
+    public AccessConfigWindowsLogInfoCreate withTimeOffset(AccessConfigTimeOffset timeOffset) {
         this.timeOffset = timeOffset;
         return this;
     }
 
-    public AccessConfigWindowsLogInfoCreate withTimeOffset(Consumer<AccessConfigTimeOffsetCreate> timeOffsetSetter) {
+    public AccessConfigWindowsLogInfoCreate withTimeOffset(Consumer<AccessConfigTimeOffset> timeOffsetSetter) {
         if (this.timeOffset == null) {
-            this.timeOffset = new AccessConfigTimeOffsetCreate();
+            this.timeOffset = new AccessConfigTimeOffset();
             timeOffsetSetter.accept(this.timeOffset);
         }
 
@@ -254,11 +254,11 @@ public class AccessConfigWindowsLogInfoCreate {
      * Get timeOffset
      * @return timeOffset
      */
-    public AccessConfigTimeOffsetCreate getTimeOffset() {
+    public AccessConfigTimeOffset getTimeOffset() {
         return timeOffset;
     }
 
-    public void setTimeOffset(AccessConfigTimeOffsetCreate timeOffset) {
+    public void setTimeOffset(AccessConfigTimeOffset timeOffset) {
         this.timeOffset = timeOffset;
     }
 

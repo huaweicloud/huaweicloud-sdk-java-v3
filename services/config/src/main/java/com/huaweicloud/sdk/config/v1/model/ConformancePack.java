@@ -174,6 +174,11 @@ public class ConformancePack {
 
     private List<VarsStructure> varsStructure = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_by")
+
+    private String createdBy;
+
     public ConformancePack withId(String id) {
         this.id = id;
         return this;
@@ -360,6 +365,23 @@ public class ConformancePack {
         this.varsStructure = varsStructure;
     }
 
+    public ConformancePack withCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+        return this;
+    }
+
+    /**
+     * 创建者
+     * @return createdBy
+     */
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -374,7 +396,7 @@ public class ConformancePack {
             && Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.status, that.status)
             && Objects.equals(this.errorMessage, that.errorMessage)
-            && Objects.equals(this.varsStructure, that.varsStructure);
+            && Objects.equals(this.varsStructure, that.varsStructure) && Objects.equals(this.createdBy, that.createdBy);
     }
 
     @Override
@@ -388,7 +410,8 @@ public class ConformancePack {
             updatedAt,
             status,
             errorMessage,
-            varsStructure);
+            varsStructure,
+            createdBy);
     }
 
     @Override
@@ -405,6 +428,7 @@ public class ConformancePack {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("    varsStructure: ").append(toIndentedString(varsStructure)).append("\n");
+        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

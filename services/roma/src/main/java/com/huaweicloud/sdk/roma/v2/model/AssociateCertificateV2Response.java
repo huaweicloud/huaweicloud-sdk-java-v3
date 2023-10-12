@@ -6,10 +6,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -119,6 +122,16 @@ public class AssociateCertificateV2Response extends SdkResponse {
     private String minSslVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_http_redirect_to_https")
+
+    private Boolean isHttpRedirectToHttps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verified_client_certificate_enabled")
+
+    private Boolean verifiedClientCertificateEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_name")
 
     private String sslName;
@@ -127,6 +140,11 @@ public class AssociateCertificateV2Response extends SdkResponse {
     @JsonProperty(value = "ssl_id")
 
     private String sslId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ssl_infos")
+
+    private List<SslInfo> sslInfos = null;
 
     public AssociateCertificateV2Response withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
@@ -196,6 +214,41 @@ public class AssociateCertificateV2Response extends SdkResponse {
         this.minSslVersion = minSslVersion;
     }
 
+    public AssociateCertificateV2Response withIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+        return this;
+    }
+
+    /**
+     * 是否开启http到https的重定向，false为关闭，true为开启，默认为false
+     * @return isHttpRedirectToHttps
+     */
+    public Boolean getIsHttpRedirectToHttps() {
+        return isHttpRedirectToHttps;
+    }
+
+    public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+    }
+
+    public AssociateCertificateV2Response withVerifiedClientCertificateEnabled(
+        Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启客户端证书校验。只有绑定证书时，该参数才生效。当绑定证书存在trusted_root_ca时，默认开启；当绑定证书不存在trusted_root_ca时，默认关闭。
+     * @return verifiedClientCertificateEnabled
+     */
+    public Boolean getVerifiedClientCertificateEnabled() {
+        return verifiedClientCertificateEnabled;
+    }
+
+    public void setVerifiedClientCertificateEnabled(Boolean verifiedClientCertificateEnabled) {
+        this.verifiedClientCertificateEnabled = verifiedClientCertificateEnabled;
+    }
+
     public AssociateCertificateV2Response withSslName(String sslName) {
         this.sslName = sslName;
         return this;
@@ -230,6 +283,39 @@ public class AssociateCertificateV2Response extends SdkResponse {
         this.sslId = sslId;
     }
 
+    public AssociateCertificateV2Response withSslInfos(List<SslInfo> sslInfos) {
+        this.sslInfos = sslInfos;
+        return this;
+    }
+
+    public AssociateCertificateV2Response addSslInfosItem(SslInfo sslInfosItem) {
+        if (this.sslInfos == null) {
+            this.sslInfos = new ArrayList<>();
+        }
+        this.sslInfos.add(sslInfosItem);
+        return this;
+    }
+
+    public AssociateCertificateV2Response withSslInfos(Consumer<List<SslInfo>> sslInfosSetter) {
+        if (this.sslInfos == null) {
+            this.sslInfos = new ArrayList<>();
+        }
+        sslInfosSetter.accept(this.sslInfos);
+        return this;
+    }
+
+    /**
+     * SSL证书列表  [暂不支持](tag:hws;hws_hk;fcs;g42;Site)
+     * @return sslInfos
+     */
+    public List<SslInfo> getSslInfos() {
+        return sslInfos;
+    }
+
+    public void setSslInfos(List<SslInfo> sslInfos) {
+        this.sslInfos = sslInfos;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -241,12 +327,23 @@ public class AssociateCertificateV2Response extends SdkResponse {
         AssociateCertificateV2Response that = (AssociateCertificateV2Response) obj;
         return Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.id, that.id)
             && Objects.equals(this.status, that.status) && Objects.equals(this.minSslVersion, that.minSslVersion)
-            && Objects.equals(this.sslName, that.sslName) && Objects.equals(this.sslId, that.sslId);
+            && Objects.equals(this.isHttpRedirectToHttps, that.isHttpRedirectToHttps)
+            && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled)
+            && Objects.equals(this.sslName, that.sslName) && Objects.equals(this.sslId, that.sslId)
+            && Objects.equals(this.sslInfos, that.sslInfos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, id, status, minSslVersion, sslName, sslId);
+        return Objects.hash(urlDomain,
+            id,
+            status,
+            minSslVersion,
+            isHttpRedirectToHttps,
+            verifiedClientCertificateEnabled,
+            sslName,
+            sslId,
+            sslInfos);
     }
 
     @Override
@@ -257,8 +354,13 @@ public class AssociateCertificateV2Response extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
+        sb.append("    verifiedClientCertificateEnabled: ")
+            .append(toIndentedString(verifiedClientCertificateEnabled))
+            .append("\n");
         sb.append("    sslName: ").append(toIndentedString(sslName)).append("\n");
         sb.append("    sslId: ").append(toIndentedString(sslId)).append("\n");
+        sb.append("    sslInfos: ").append(toIndentedString(sslInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateConformancePackRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateConformancePackResponse;
+import com.huaweicloud.sdk.config.v1.model.CreateOrganizationConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.CreateOrganizationConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.CreatePolicyAssignmentsRequest;
@@ -26,6 +28,8 @@ import com.huaweicloud.sdk.config.v1.model.DeleteConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.DeleteConfigurationAggregatorResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteConformancePackRequest;
 import com.huaweicloud.sdk.config.v1.model.DeleteConformancePackResponse;
+import com.huaweicloud.sdk.config.v1.model.DeleteOrganizationConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.DeleteOrganizationConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.DeleteOrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.DeleteOrganizationPolicyAssignmentResponse;
 import com.huaweicloud.sdk.config.v1.model.DeletePendingAggregationRequestRequest;
@@ -64,6 +68,10 @@ import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceScoresRe
 import com.huaweicloud.sdk.config.v1.model.ListConformancePackComplianceScoresResponse;
 import com.huaweicloud.sdk.config.v1.model.ListConformancePacksRequest;
 import com.huaweicloud.sdk.config.v1.model.ListConformancePacksResponse;
+import com.huaweicloud.sdk.config.v1.model.ListOrganizationConformancePackStatusesRequest;
+import com.huaweicloud.sdk.config.v1.model.ListOrganizationConformancePackStatusesResponse;
+import com.huaweicloud.sdk.config.v1.model.ListOrganizationConformancePacksRequest;
+import com.huaweicloud.sdk.config.v1.model.ListOrganizationConformancePacksResponse;
 import com.huaweicloud.sdk.config.v1.model.ListOrganizationPolicyAssignmentsRequest;
 import com.huaweicloud.sdk.config.v1.model.ListOrganizationPolicyAssignmentsResponse;
 import com.huaweicloud.sdk.config.v1.model.ListPendingAggregationRequestsRequest;
@@ -114,6 +122,10 @@ import com.huaweicloud.sdk.config.v1.model.ShowConformancePackRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowEvaluationStateByAssignmentIdRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowEvaluationStateByAssignmentIdResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowOrganizationConformancePackDetailedStatusesRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowOrganizationConformancePackDetailedStatusesResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowOrganizationConformancePackRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowOrganizationConformancePackResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowOrganizationPolicyAssignmentDetailedStatusRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowOrganizationPolicyAssignmentDetailedStatusResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowOrganizationPolicyAssignmentRequest;
@@ -816,6 +828,37 @@ public class ConfigAsyncClient {
     }
 
     /**
+     * 创建组织合规规则包
+     *
+     * 创建新的组织合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOrganizationConformancePackRequest 请求对象
+     * @return CompletableFuture<CreateOrganizationConformancePackResponse>
+     */
+    public CompletableFuture<CreateOrganizationConformancePackResponse> createOrganizationConformancePackAsync(
+        CreateOrganizationConformancePackRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.createOrganizationConformancePack);
+    }
+
+    /**
+     * 创建组织合规规则包
+     *
+     * 创建新的组织合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOrganizationConformancePackRequest 请求对象
+     * @return AsyncInvoker<CreateOrganizationConformancePackRequest, CreateOrganizationConformancePackResponse>
+     */
+    public AsyncInvoker<CreateOrganizationConformancePackRequest, CreateOrganizationConformancePackResponse> createOrganizationConformancePackAsyncInvoker(
+        CreateOrganizationConformancePackRequest request) {
+        return new AsyncInvoker<CreateOrganizationConformancePackRequest, CreateOrganizationConformancePackResponse>(
+            request, ConfigMeta.createOrganizationConformancePack, hcClient);
+    }
+
+    /**
      * 删除合规规则包
      *
      * 删除用户的合规规则包。
@@ -844,6 +887,37 @@ public class ConfigAsyncClient {
         DeleteConformancePackRequest request) {
         return new AsyncInvoker<DeleteConformancePackRequest, DeleteConformancePackResponse>(request,
             ConfigMeta.deleteConformancePack, hcClient);
+    }
+
+    /**
+     * 删除组织合规规则包
+     *
+     * 删除用户的组织合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOrganizationConformancePackRequest 请求对象
+     * @return CompletableFuture<DeleteOrganizationConformancePackResponse>
+     */
+    public CompletableFuture<DeleteOrganizationConformancePackResponse> deleteOrganizationConformancePackAsync(
+        DeleteOrganizationConformancePackRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.deleteOrganizationConformancePack);
+    }
+
+    /**
+     * 删除组织合规规则包
+     *
+     * 删除用户的组织合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOrganizationConformancePackRequest 请求对象
+     * @return AsyncInvoker<DeleteOrganizationConformancePackRequest, DeleteOrganizationConformancePackResponse>
+     */
+    public AsyncInvoker<DeleteOrganizationConformancePackRequest, DeleteOrganizationConformancePackResponse> deleteOrganizationConformancePackAsyncInvoker(
+        DeleteOrganizationConformancePackRequest request) {
+        return new AsyncInvoker<DeleteOrganizationConformancePackRequest, DeleteOrganizationConformancePackResponse>(
+            request, ConfigMeta.deleteOrganizationConformancePack, hcClient);
     }
 
     /**
@@ -1002,6 +1076,68 @@ public class ConfigAsyncClient {
     }
 
     /**
+     * 查看组织合规规则包部署状态
+     *
+     * 列举用户的组织合规规则包部署状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrganizationConformancePackStatusesRequest 请求对象
+     * @return CompletableFuture<ListOrganizationConformancePackStatusesResponse>
+     */
+    public CompletableFuture<ListOrganizationConformancePackStatusesResponse> listOrganizationConformancePackStatusesAsync(
+        ListOrganizationConformancePackStatusesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listOrganizationConformancePackStatuses);
+    }
+
+    /**
+     * 查看组织合规规则包部署状态
+     *
+     * 列举用户的组织合规规则包部署状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrganizationConformancePackStatusesRequest 请求对象
+     * @return AsyncInvoker<ListOrganizationConformancePackStatusesRequest, ListOrganizationConformancePackStatusesResponse>
+     */
+    public AsyncInvoker<ListOrganizationConformancePackStatusesRequest, ListOrganizationConformancePackStatusesResponse> listOrganizationConformancePackStatusesAsyncInvoker(
+        ListOrganizationConformancePackStatusesRequest request) {
+        return new AsyncInvoker<ListOrganizationConformancePackStatusesRequest, ListOrganizationConformancePackStatusesResponse>(
+            request, ConfigMeta.listOrganizationConformancePackStatuses, hcClient);
+    }
+
+    /**
+     * 列举组织合规规则包
+     *
+     * 列举用户的组织合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrganizationConformancePacksRequest 请求对象
+     * @return CompletableFuture<ListOrganizationConformancePacksResponse>
+     */
+    public CompletableFuture<ListOrganizationConformancePacksResponse> listOrganizationConformancePacksAsync(
+        ListOrganizationConformancePacksRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listOrganizationConformancePacks);
+    }
+
+    /**
+     * 列举组织合规规则包
+     *
+     * 列举用户的组织合规规则包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOrganizationConformancePacksRequest 请求对象
+     * @return AsyncInvoker<ListOrganizationConformancePacksRequest, ListOrganizationConformancePacksResponse>
+     */
+    public AsyncInvoker<ListOrganizationConformancePacksRequest, ListOrganizationConformancePacksResponse> listOrganizationConformancePacksAsyncInvoker(
+        ListOrganizationConformancePacksRequest request) {
+        return new AsyncInvoker<ListOrganizationConformancePacksRequest, ListOrganizationConformancePacksResponse>(
+            request, ConfigMeta.listOrganizationConformancePacks, hcClient);
+    }
+
+    /**
      * 查看预定义合规规则包模板
      *
      * 根据ID获取单个预定义合规规则包模板。
@@ -1060,6 +1196,68 @@ public class ConfigAsyncClient {
         ShowConformancePackRequest request) {
         return new AsyncInvoker<ShowConformancePackRequest, ShowConformancePackResponse>(request,
             ConfigMeta.showConformancePack, hcClient);
+    }
+
+    /**
+     * 查看组织合规规则包
+     *
+     * 根据ID获取单个组织合规规则包详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationConformancePackRequest 请求对象
+     * @return CompletableFuture<ShowOrganizationConformancePackResponse>
+     */
+    public CompletableFuture<ShowOrganizationConformancePackResponse> showOrganizationConformancePackAsync(
+        ShowOrganizationConformancePackRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.showOrganizationConformancePack);
+    }
+
+    /**
+     * 查看组织合规规则包
+     *
+     * 根据ID获取单个组织合规规则包详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationConformancePackRequest 请求对象
+     * @return AsyncInvoker<ShowOrganizationConformancePackRequest, ShowOrganizationConformancePackResponse>
+     */
+    public AsyncInvoker<ShowOrganizationConformancePackRequest, ShowOrganizationConformancePackResponse> showOrganizationConformancePackAsyncInvoker(
+        ShowOrganizationConformancePackRequest request) {
+        return new AsyncInvoker<ShowOrganizationConformancePackRequest, ShowOrganizationConformancePackResponse>(
+            request, ConfigMeta.showOrganizationConformancePack, hcClient);
+    }
+
+    /**
+     * 查看组织合规规则包部署详细状态
+     *
+     * 查看指定组织合规规则包在成员账户中的部署状态详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationConformancePackDetailedStatusesRequest 请求对象
+     * @return CompletableFuture<ShowOrganizationConformancePackDetailedStatusesResponse>
+     */
+    public CompletableFuture<ShowOrganizationConformancePackDetailedStatusesResponse> showOrganizationConformancePackDetailedStatusesAsync(
+        ShowOrganizationConformancePackDetailedStatusesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.showOrganizationConformancePackDetailedStatuses);
+    }
+
+    /**
+     * 查看组织合规规则包部署详细状态
+     *
+     * 查看指定组织合规规则包在成员账户中的部署状态详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOrganizationConformancePackDetailedStatusesRequest 请求对象
+     * @return AsyncInvoker<ShowOrganizationConformancePackDetailedStatusesRequest, ShowOrganizationConformancePackDetailedStatusesResponse>
+     */
+    public AsyncInvoker<ShowOrganizationConformancePackDetailedStatusesRequest, ShowOrganizationConformancePackDetailedStatusesResponse> showOrganizationConformancePackDetailedStatusesAsyncInvoker(
+        ShowOrganizationConformancePackDetailedStatusesRequest request) {
+        return new AsyncInvoker<ShowOrganizationConformancePackDetailedStatusesRequest, ShowOrganizationConformancePackDetailedStatusesResponse>(
+            request, ConfigMeta.showOrganizationConformancePackDetailedStatuses, hcClient);
     }
 
     /**

@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
@@ -21,6 +23,12 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupRequest;
@@ -35,6 +43,12 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSecurityGroupRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
@@ -49,12 +63,20 @@ import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSubNetworkInterfacesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFilterRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFilterRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFiltersRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFiltersResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowAddressGroupRequest;
@@ -69,6 +91,12 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSubNetworkInterfacesQuantityResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
@@ -81,6 +109,12 @@ import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateSubNetworkInterfaceResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRuleRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRuleResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcResponse;
 
@@ -95,6 +129,37 @@ public class VpcClient {
     public static ClientBuilder<VpcClient> newBuilder() {
         ClientBuilder<VpcClient> clientBuilder = new ClientBuilder<>(VpcClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 流量镜像会话添加镜像源
+     *
+     * 流量镜像会话添加镜像源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddSourcesToTrafficMirrorSessionRequest 请求对象
+     * @return AddSourcesToTrafficMirrorSessionResponse
+     */
+    public AddSourcesToTrafficMirrorSessionResponse addSourcesToTrafficMirrorSession(
+        AddSourcesToTrafficMirrorSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.addSourcesToTrafficMirrorSession);
+    }
+
+    /**
+     * 流量镜像会话添加镜像源
+     *
+     * 流量镜像会话添加镜像源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddSourcesToTrafficMirrorSessionRequest 请求对象
+     * @return SyncInvoker<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse>
+     */
+    public SyncInvoker<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> addSourcesToTrafficMirrorSessionInvoker(
+        AddSourcesToTrafficMirrorSessionRequest request) {
+        return new SyncInvoker<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse>(
+            request, VpcMeta.addSourcesToTrafficMirrorSession, hcClient);
     }
 
     /**
@@ -219,6 +284,97 @@ public class VpcClient {
     }
 
     /**
+     * 创建流量镜像筛选条件
+     *
+     * 创建流量镜像筛选条件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficMirrorFilterRequest 请求对象
+     * @return CreateTrafficMirrorFilterResponse
+     */
+    public CreateTrafficMirrorFilterResponse createTrafficMirrorFilter(CreateTrafficMirrorFilterRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createTrafficMirrorFilter);
+    }
+
+    /**
+     * 创建流量镜像筛选条件
+     *
+     * 创建流量镜像筛选条件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficMirrorFilterRequest 请求对象
+     * @return SyncInvoker<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse>
+     */
+    public SyncInvoker<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse> createTrafficMirrorFilterInvoker(
+        CreateTrafficMirrorFilterRequest request) {
+        return new SyncInvoker<CreateTrafficMirrorFilterRequest, CreateTrafficMirrorFilterResponse>(request,
+            VpcMeta.createTrafficMirrorFilter, hcClient);
+    }
+
+    /**
+     * 创建流量镜像筛选规则
+     *
+     * 创建流量镜像筛选规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficMirrorFilterRuleRequest 请求对象
+     * @return CreateTrafficMirrorFilterRuleResponse
+     */
+    public CreateTrafficMirrorFilterRuleResponse createTrafficMirrorFilterRule(
+        CreateTrafficMirrorFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createTrafficMirrorFilterRule);
+    }
+
+    /**
+     * 创建流量镜像筛选规则
+     *
+     * 创建流量镜像筛选规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficMirrorFilterRuleRequest 请求对象
+     * @return SyncInvoker<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse>
+     */
+    public SyncInvoker<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse> createTrafficMirrorFilterRuleInvoker(
+        CreateTrafficMirrorFilterRuleRequest request) {
+        return new SyncInvoker<CreateTrafficMirrorFilterRuleRequest, CreateTrafficMirrorFilterRuleResponse>(request,
+            VpcMeta.createTrafficMirrorFilterRule, hcClient);
+    }
+
+    /**
+     * 创建流量镜像会话
+     *
+     * 创建流量镜像会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficMirrorSessionRequest 请求对象
+     * @return CreateTrafficMirrorSessionResponse
+     */
+    public CreateTrafficMirrorSessionResponse createTrafficMirrorSession(CreateTrafficMirrorSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createTrafficMirrorSession);
+    }
+
+    /**
+     * 创建流量镜像会话
+     *
+     * 创建流量镜像会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTrafficMirrorSessionRequest 请求对象
+     * @return SyncInvoker<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse>
+     */
+    public SyncInvoker<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse> createTrafficMirrorSessionInvoker(
+        CreateTrafficMirrorSessionRequest request) {
+        return new SyncInvoker<CreateTrafficMirrorSessionRequest, CreateTrafficMirrorSessionResponse>(request,
+            VpcMeta.createTrafficMirrorSession, hcClient);
+    }
+
+    /**
      * 删除安全组
      *
      * 删除安全组
@@ -306,6 +462,97 @@ public class VpcClient {
         DeleteSubNetworkInterfaceRequest request) {
         return new SyncInvoker<DeleteSubNetworkInterfaceRequest, DeleteSubNetworkInterfaceResponse>(request,
             VpcMeta.deleteSubNetworkInterface, hcClient);
+    }
+
+    /**
+     * 删除流量镜像筛选条件
+     *
+     * 删除流量镜像筛选条件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficMirrorFilterRequest 请求对象
+     * @return DeleteTrafficMirrorFilterResponse
+     */
+    public DeleteTrafficMirrorFilterResponse deleteTrafficMirrorFilter(DeleteTrafficMirrorFilterRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteTrafficMirrorFilter);
+    }
+
+    /**
+     * 删除流量镜像筛选条件
+     *
+     * 删除流量镜像筛选条件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficMirrorFilterRequest 请求对象
+     * @return SyncInvoker<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse>
+     */
+    public SyncInvoker<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse> deleteTrafficMirrorFilterInvoker(
+        DeleteTrafficMirrorFilterRequest request) {
+        return new SyncInvoker<DeleteTrafficMirrorFilterRequest, DeleteTrafficMirrorFilterResponse>(request,
+            VpcMeta.deleteTrafficMirrorFilter, hcClient);
+    }
+
+    /**
+     * 删除流量镜像筛选规则
+     *
+     * 删除流量镜像筛选规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficMirrorFilterRuleRequest 请求对象
+     * @return DeleteTrafficMirrorFilterRuleResponse
+     */
+    public DeleteTrafficMirrorFilterRuleResponse deleteTrafficMirrorFilterRule(
+        DeleteTrafficMirrorFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteTrafficMirrorFilterRule);
+    }
+
+    /**
+     * 删除流量镜像筛选规则
+     *
+     * 删除流量镜像筛选规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficMirrorFilterRuleRequest 请求对象
+     * @return SyncInvoker<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse>
+     */
+    public SyncInvoker<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse> deleteTrafficMirrorFilterRuleInvoker(
+        DeleteTrafficMirrorFilterRuleRequest request) {
+        return new SyncInvoker<DeleteTrafficMirrorFilterRuleRequest, DeleteTrafficMirrorFilterRuleResponse>(request,
+            VpcMeta.deleteTrafficMirrorFilterRule, hcClient);
+    }
+
+    /**
+     * 删除流量镜像会话
+     *
+     * 删除流量镜像会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficMirrorSessionRequest 请求对象
+     * @return DeleteTrafficMirrorSessionResponse
+     */
+    public DeleteTrafficMirrorSessionResponse deleteTrafficMirrorSession(DeleteTrafficMirrorSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteTrafficMirrorSession);
+    }
+
+    /**
+     * 删除流量镜像会话
+     *
+     * 删除流量镜像会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTrafficMirrorSessionRequest 请求对象
+     * @return SyncInvoker<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse>
+     */
+    public SyncInvoker<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> deleteTrafficMirrorSessionInvoker(
+        DeleteTrafficMirrorSessionRequest request) {
+        return new SyncInvoker<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse>(request,
+            VpcMeta.deleteTrafficMirrorSession, hcClient);
     }
 
     /**
@@ -399,6 +646,97 @@ public class VpcClient {
     }
 
     /**
+     * 查询流量镜像筛选规则列表
+     *
+     * 查询流量镜像筛选规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrafficMirrorFilterRulesRequest 请求对象
+     * @return ListTrafficMirrorFilterRulesResponse
+     */
+    public ListTrafficMirrorFilterRulesResponse listTrafficMirrorFilterRules(
+        ListTrafficMirrorFilterRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listTrafficMirrorFilterRules);
+    }
+
+    /**
+     * 查询流量镜像筛选规则列表
+     *
+     * 查询流量镜像筛选规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrafficMirrorFilterRulesRequest 请求对象
+     * @return SyncInvoker<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse>
+     */
+    public SyncInvoker<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse> listTrafficMirrorFilterRulesInvoker(
+        ListTrafficMirrorFilterRulesRequest request) {
+        return new SyncInvoker<ListTrafficMirrorFilterRulesRequest, ListTrafficMirrorFilterRulesResponse>(request,
+            VpcMeta.listTrafficMirrorFilterRules, hcClient);
+    }
+
+    /**
+     * 查询流量镜像筛选条件列表
+     *
+     * 查询流量镜像筛选条件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrafficMirrorFiltersRequest 请求对象
+     * @return ListTrafficMirrorFiltersResponse
+     */
+    public ListTrafficMirrorFiltersResponse listTrafficMirrorFilters(ListTrafficMirrorFiltersRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listTrafficMirrorFilters);
+    }
+
+    /**
+     * 查询流量镜像筛选条件列表
+     *
+     * 查询流量镜像筛选条件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrafficMirrorFiltersRequest 请求对象
+     * @return SyncInvoker<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse>
+     */
+    public SyncInvoker<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse> listTrafficMirrorFiltersInvoker(
+        ListTrafficMirrorFiltersRequest request) {
+        return new SyncInvoker<ListTrafficMirrorFiltersRequest, ListTrafficMirrorFiltersResponse>(request,
+            VpcMeta.listTrafficMirrorFilters, hcClient);
+    }
+
+    /**
+     * 查询流量镜像会话列表
+     *
+     * 查询流量镜像会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrafficMirrorSessionsRequest 请求对象
+     * @return ListTrafficMirrorSessionsResponse
+     */
+    public ListTrafficMirrorSessionsResponse listTrafficMirrorSessions(ListTrafficMirrorSessionsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listTrafficMirrorSessions);
+    }
+
+    /**
+     * 查询流量镜像会话列表
+     *
+     * 查询流量镜像会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrafficMirrorSessionsRequest 请求对象
+     * @return SyncInvoker<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse>
+     */
+    public SyncInvoker<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> listTrafficMirrorSessionsInvoker(
+        ListTrafficMirrorSessionsRequest request) {
+        return new SyncInvoker<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse>(request,
+            VpcMeta.listTrafficMirrorSessions, hcClient);
+    }
+
+    /**
      * 迁移辅助弹性网卡
      *
      * 批量迁移辅助弹性网卡
@@ -426,6 +764,37 @@ public class VpcClient {
         MigrateSubNetworkInterfaceRequest request) {
         return new SyncInvoker<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse>(request,
             VpcMeta.migrateSubNetworkInterface, hcClient);
+    }
+
+    /**
+     * 流量镜像会话移除镜像源
+     *
+     * 流量镜像会话移除镜像源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveSourcesFromTrafficMirrorSessionRequest 请求对象
+     * @return RemoveSourcesFromTrafficMirrorSessionResponse
+     */
+    public RemoveSourcesFromTrafficMirrorSessionResponse removeSourcesFromTrafficMirrorSession(
+        RemoveSourcesFromTrafficMirrorSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.removeSourcesFromTrafficMirrorSession);
+    }
+
+    /**
+     * 流量镜像会话移除镜像源
+     *
+     * 流量镜像会话移除镜像源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveSourcesFromTrafficMirrorSessionRequest 请求对象
+     * @return SyncInvoker<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse>
+     */
+    public SyncInvoker<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse> removeSourcesFromTrafficMirrorSessionInvoker(
+        RemoveSourcesFromTrafficMirrorSessionRequest request) {
+        return new SyncInvoker<RemoveSourcesFromTrafficMirrorSessionRequest, RemoveSourcesFromTrafficMirrorSessionResponse>(
+            request, VpcMeta.removeSourcesFromTrafficMirrorSession, hcClient);
     }
 
     /**
@@ -550,6 +919,96 @@ public class VpcClient {
     }
 
     /**
+     * 查询流量镜像筛选条件详情
+     *
+     * 查询流量镜像筛选条件详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrafficMirrorFilterRequest 请求对象
+     * @return ShowTrafficMirrorFilterResponse
+     */
+    public ShowTrafficMirrorFilterResponse showTrafficMirrorFilter(ShowTrafficMirrorFilterRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showTrafficMirrorFilter);
+    }
+
+    /**
+     * 查询流量镜像筛选条件详情
+     *
+     * 查询流量镜像筛选条件详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrafficMirrorFilterRequest 请求对象
+     * @return SyncInvoker<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse>
+     */
+    public SyncInvoker<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse> showTrafficMirrorFilterInvoker(
+        ShowTrafficMirrorFilterRequest request) {
+        return new SyncInvoker<ShowTrafficMirrorFilterRequest, ShowTrafficMirrorFilterResponse>(request,
+            VpcMeta.showTrafficMirrorFilter, hcClient);
+    }
+
+    /**
+     * 查询流量镜像筛选规则详情
+     *
+     * 查询流量镜像筛选规则详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrafficMirrorFilterRuleRequest 请求对象
+     * @return ShowTrafficMirrorFilterRuleResponse
+     */
+    public ShowTrafficMirrorFilterRuleResponse showTrafficMirrorFilterRule(ShowTrafficMirrorFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showTrafficMirrorFilterRule);
+    }
+
+    /**
+     * 查询流量镜像筛选规则详情
+     *
+     * 查询流量镜像筛选规则详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrafficMirrorFilterRuleRequest 请求对象
+     * @return SyncInvoker<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse>
+     */
+    public SyncInvoker<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse> showTrafficMirrorFilterRuleInvoker(
+        ShowTrafficMirrorFilterRuleRequest request) {
+        return new SyncInvoker<ShowTrafficMirrorFilterRuleRequest, ShowTrafficMirrorFilterRuleResponse>(request,
+            VpcMeta.showTrafficMirrorFilterRule, hcClient);
+    }
+
+    /**
+     * 查询流量镜像会话详情
+     *
+     * 查询流量镜像会话详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrafficMirrorSessionRequest 请求对象
+     * @return ShowTrafficMirrorSessionResponse
+     */
+    public ShowTrafficMirrorSessionResponse showTrafficMirrorSession(ShowTrafficMirrorSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showTrafficMirrorSession);
+    }
+
+    /**
+     * 查询流量镜像会话详情
+     *
+     * 查询流量镜像会话详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrafficMirrorSessionRequest 请求对象
+     * @return SyncInvoker<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse>
+     */
+    public SyncInvoker<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> showTrafficMirrorSessionInvoker(
+        ShowTrafficMirrorSessionRequest request) {
+        return new SyncInvoker<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse>(request,
+            VpcMeta.showTrafficMirrorSession, hcClient);
+    }
+
+    /**
      * 更新安全组
      *
      * 更新安全组
@@ -607,6 +1066,97 @@ public class VpcClient {
         UpdateSubNetworkInterfaceRequest request) {
         return new SyncInvoker<UpdateSubNetworkInterfaceRequest, UpdateSubNetworkInterfaceResponse>(request,
             VpcMeta.updateSubNetworkInterface, hcClient);
+    }
+
+    /**
+     * 更新流量镜像筛选条件
+     *
+     * 更新流量镜像筛选条件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficMirrorFilterRequest 请求对象
+     * @return UpdateTrafficMirrorFilterResponse
+     */
+    public UpdateTrafficMirrorFilterResponse updateTrafficMirrorFilter(UpdateTrafficMirrorFilterRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.updateTrafficMirrorFilter);
+    }
+
+    /**
+     * 更新流量镜像筛选条件
+     *
+     * 更新流量镜像筛选条件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficMirrorFilterRequest 请求对象
+     * @return SyncInvoker<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse>
+     */
+    public SyncInvoker<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse> updateTrafficMirrorFilterInvoker(
+        UpdateTrafficMirrorFilterRequest request) {
+        return new SyncInvoker<UpdateTrafficMirrorFilterRequest, UpdateTrafficMirrorFilterResponse>(request,
+            VpcMeta.updateTrafficMirrorFilter, hcClient);
+    }
+
+    /**
+     * 更新流量镜像筛选规则
+     *
+     * 更新流量镜像筛选规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficMirrorFilterRuleRequest 请求对象
+     * @return UpdateTrafficMirrorFilterRuleResponse
+     */
+    public UpdateTrafficMirrorFilterRuleResponse updateTrafficMirrorFilterRule(
+        UpdateTrafficMirrorFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.updateTrafficMirrorFilterRule);
+    }
+
+    /**
+     * 更新流量镜像筛选规则
+     *
+     * 更新流量镜像筛选规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficMirrorFilterRuleRequest 请求对象
+     * @return SyncInvoker<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse>
+     */
+    public SyncInvoker<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse> updateTrafficMirrorFilterRuleInvoker(
+        UpdateTrafficMirrorFilterRuleRequest request) {
+        return new SyncInvoker<UpdateTrafficMirrorFilterRuleRequest, UpdateTrafficMirrorFilterRuleResponse>(request,
+            VpcMeta.updateTrafficMirrorFilterRule, hcClient);
+    }
+
+    /**
+     * 更新流量镜像会话
+     *
+     * 更新流量镜像会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficMirrorSessionRequest 请求对象
+     * @return UpdateTrafficMirrorSessionResponse
+     */
+    public UpdateTrafficMirrorSessionResponse updateTrafficMirrorSession(UpdateTrafficMirrorSessionRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.updateTrafficMirrorSession);
+    }
+
+    /**
+     * 更新流量镜像会话
+     *
+     * 更新流量镜像会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTrafficMirrorSessionRequest 请求对象
+     * @return SyncInvoker<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse>
+     */
+    public SyncInvoker<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> updateTrafficMirrorSessionInvoker(
+        UpdateTrafficMirrorSessionRequest request) {
+        return new SyncInvoker<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse>(request,
+            VpcMeta.updateTrafficMirrorSession, hcClient);
     }
 
     /**

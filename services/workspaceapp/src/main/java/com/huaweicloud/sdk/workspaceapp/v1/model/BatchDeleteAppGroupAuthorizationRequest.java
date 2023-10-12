@@ -27,7 +27,7 @@ public class BatchDeleteAppGroupAuthorizationRequest {
     }
 
     /**
-     * 语言 - zh-cn：中文 - en-us：英文
+     * 语言 - zh-cn：中文 - en-us：英文 - fr-fr: 法文
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 账户详细信息
+ * 用户详细信息
  */
 public class AccountInfo {
 
@@ -30,13 +30,18 @@ public class AccountInfo {
 
     private String email;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "telephone_number")
+
+    private String telephoneNumber;
+
     public AccountInfo withAccount(String account) {
         this.account = account;
         return this;
     }
 
     /**
-     * 账户，账户的格式必须为:<i>账户(组)</i>的形式
+     * 用户(组)
      * @return account
      */
     public String getAccount() {
@@ -98,6 +103,23 @@ public class AccountInfo {
         this.email = email;
     }
 
+    public AccountInfo withTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
+        return this;
+    }
+
+    /**
+     * 手机
+     * @return telephoneNumber
+     */
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public void setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class AccountInfo {
         }
         AccountInfo that = (AccountInfo) obj;
         return Objects.equals(this.account, that.account) && Objects.equals(this.accountType, that.accountType)
-            && Objects.equals(this.domain, that.domain) && Objects.equals(this.email, that.email);
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.telephoneNumber, that.telephoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(account, accountType, domain, email);
+        return Objects.hash(account, accountType, domain, email, telephoneNumber);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class AccountInfo {
         sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
+        sb.append("    telephoneNumber: ").append(toIndentedString(telephoneNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

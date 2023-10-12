@@ -124,7 +124,7 @@ public class ThrottleSpecialCreate {
     }
 
     /**
-     * 特殊APP的编号[或特殊租户的帐号ID](tag:hws;hws_hk;hcs;fcs;g42;)
+     * 特殊APP的编号[或特殊租户的帐号ID](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)
      * @return objectId
      */
     public String getObjectId() {

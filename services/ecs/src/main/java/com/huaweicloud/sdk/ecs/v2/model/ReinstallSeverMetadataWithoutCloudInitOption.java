@@ -20,6 +20,11 @@ public class ReinstallSeverMetadataWithoutCloudInitOption {
 
     private String systemCmkid;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "BYOL")
+
+    private String byol;
+
     public ReinstallSeverMetadataWithoutCloudInitOption withSystemEncrypted(String systemEncrypted) {
         this.systemEncrypted = systemEncrypted;
         return this;
@@ -58,6 +63,23 @@ public class ReinstallSeverMetadataWithoutCloudInitOption {
         this.systemCmkid = systemCmkid;
     }
 
+    public ReinstallSeverMetadataWithoutCloudInitOption withByol(String byol) {
+        this.byol = byol;
+        return this;
+    }
+
+    /**
+     * 如果您已拥有操作系统或软件的许可证（一般是指按物理插槽数、物理内核数等进行认证的许可证），您可以通过自带许可（BYOL）的方式将业务完整迁移到云平台，继续使用您的许可证。 - true： 使用自有license - 其他值： 视为非法参数，接口报错
+     * @return byol
+     */
+    public String getByol() {
+        return byol;
+    }
+
+    public void setByol(String byol) {
+        this.byol = byol;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -68,12 +90,12 @@ public class ReinstallSeverMetadataWithoutCloudInitOption {
         }
         ReinstallSeverMetadataWithoutCloudInitOption that = (ReinstallSeverMetadataWithoutCloudInitOption) obj;
         return Objects.equals(this.systemEncrypted, that.systemEncrypted)
-            && Objects.equals(this.systemCmkid, that.systemCmkid);
+            && Objects.equals(this.systemCmkid, that.systemCmkid) && Objects.equals(this.byol, that.byol);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(systemEncrypted, systemCmkid);
+        return Objects.hash(systemEncrypted, systemCmkid, byol);
     }
 
     @Override
@@ -82,6 +104,7 @@ public class ReinstallSeverMetadataWithoutCloudInitOption {
         sb.append("class ReinstallSeverMetadataWithoutCloudInitOption {\n");
         sb.append("    systemEncrypted: ").append(toIndentedString(systemEncrypted)).append("\n");
         sb.append("    systemCmkid: ").append(toIndentedString(systemCmkid)).append("\n");
+        sb.append("    byol: ").append(toIndentedString(byol)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.imagesearch.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -14,14 +13,14 @@ public class DeleteInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
 
-    private BigDecimal totalNum;
+    private Integer totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delete_num")
 
-    private BigDecimal deleteNum;
+    private Integer deleteNum;
 
-    public DeleteInfo withTotalNum(BigDecimal totalNum) {
+    public DeleteInfo withTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
         return this;
     }
@@ -30,15 +29,15 @@ public class DeleteInfo {
      * 符合条件的结果总数。
      * @return totalNum
      */
-    public BigDecimal getTotalNum() {
+    public Integer getTotalNum() {
         return totalNum;
     }
 
-    public void setTotalNum(BigDecimal totalNum) {
+    public void setTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
     }
 
-    public DeleteInfo withDeleteNum(BigDecimal deleteNum) {
+    public DeleteInfo withDeleteNum(Integer deleteNum) {
         this.deleteNum = deleteNum;
         return this;
     }
@@ -47,11 +46,11 @@ public class DeleteInfo {
      * 本次删除的结果总数，目前一次请求最多删除100条结果。
      * @return deleteNum
      */
-    public BigDecimal getDeleteNum() {
+    public Integer getDeleteNum() {
         return deleteNum;
     }
 
-    public void setDeleteNum(BigDecimal deleteNum) {
+    public void setDeleteNum(Integer deleteNum) {
         this.deleteNum = deleteNum;
     }
 

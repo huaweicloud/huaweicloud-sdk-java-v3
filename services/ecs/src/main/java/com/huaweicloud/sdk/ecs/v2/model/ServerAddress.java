@@ -21,6 +21,11 @@ public class ServerAddress {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary")
+
+    private Boolean primary;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addr")
 
     private String addr;
@@ -127,6 +132,23 @@ public class ServerAddress {
         this.version = version;
     }
 
+    public ServerAddress withPrimary(Boolean primary) {
+        this.primary = primary;
+        return this;
+    }
+
+    /**
+     * 是否主网卡。  - true：是主网卡 - false：辅助网卡
+     * @return primary
+     */
+    public Boolean getPrimary() {
+        return primary;
+    }
+
+    public void setPrimary(Boolean primary) {
+        this.primary = primary;
+    }
+
     public ServerAddress withAddr(String addr) {
         this.addr = addr;
         return this;
@@ -204,15 +226,15 @@ public class ServerAddress {
             return false;
         }
         ServerAddress that = (ServerAddress) obj;
-        return Objects.equals(this.version, that.version) && Objects.equals(this.addr, that.addr)
-            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType)
+        return Objects.equals(this.version, that.version) && Objects.equals(this.primary, that.primary)
+            && Objects.equals(this.addr, that.addr) && Objects.equals(this.osEXTIPSType, that.osEXTIPSType)
             && Objects.equals(this.osEXTIPSMACMacAddr, that.osEXTIPSMACMacAddr)
             && Objects.equals(this.osEXTIPSPortId, that.osEXTIPSPortId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(version, addr, osEXTIPSType, osEXTIPSMACMacAddr, osEXTIPSPortId);
+        return Objects.hash(version, primary, addr, osEXTIPSType, osEXTIPSMACMacAddr, osEXTIPSPortId);
     }
 
     @Override
@@ -220,6 +242,7 @@ public class ServerAddress {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServerAddress {\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    osEXTIPSType: ").append(toIndentedString(osEXTIPSType)).append("\n");
         sb.append("    osEXTIPSMACMacAddr: ").append(toIndentedString(osEXTIPSMACMacAddr)).append("\n");

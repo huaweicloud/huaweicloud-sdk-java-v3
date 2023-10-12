@@ -801,6 +801,13 @@ public class SmsMeta {
             f -> f.withMarshaller(ShowCertKeyRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
             }));
+        builder.<Boolean>withRequestField("enable_ca_cert",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowCertKeyRequest::getEnableCaCert, (req, v) -> {
+                req.setEnableCaCert(v);
+            }));
 
         // response
 

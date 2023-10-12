@@ -1053,6 +1053,13 @@ public class CdnMeta {
             f -> f.withMarshaller(ShowHistoryTasksRequest::getFileType, (req, v) -> {
                 req.setFileType(v);
             }));
+        builder.<ShowHistoryTasksRequest.TaskTypeEnum>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.TaskTypeEnum.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getTaskType, (req, v) -> {
+                req.setTaskType(v);
+            }));
 
         // response
 

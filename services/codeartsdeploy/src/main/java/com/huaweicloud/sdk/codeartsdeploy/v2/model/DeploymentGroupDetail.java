@@ -252,7 +252,7 @@ public class DeploymentGroupDetail {
     }
 
     /**
-     * 自动连通性验证 0不执行 1每日 2每周
+     * 自动测试功能已下架，该字段已失效
      * @return autoConnectionTestSwitch
      */
     public Integer getAutoConnectionTestSwitch() {

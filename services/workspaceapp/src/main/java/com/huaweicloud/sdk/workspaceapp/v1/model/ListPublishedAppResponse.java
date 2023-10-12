@@ -65,7 +65,7 @@ public class ListPublishedAppResponse extends SdkResponse {
     }
 
     /**
-     * 发布的应用列表。
+     * 查发布的应用列表。
      * @return items
      */
     public List<App> getItems() {

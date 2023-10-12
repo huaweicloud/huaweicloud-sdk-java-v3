@@ -195,6 +195,11 @@ public class AlarmCondition {
          */
         public static final SuppressDurationEnum NUMBER_43200 = new SuppressDurationEnum(43200);
 
+        /**
+         * Enum NUMBER_86400 for value: 86400
+         */
+        public static final SuppressDurationEnum NUMBER_86400 = new SuppressDurationEnum(86400);
+
         private static final Map<Integer, SuppressDurationEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Integer, SuppressDurationEnum> createStaticFields() {
@@ -208,6 +213,7 @@ public class AlarmCondition {
             map.put(10800, NUMBER_10800);
             map.put(21600, NUMBER_21600);
             map.put(43200, NUMBER_43200);
+            map.put(86400, NUMBER_86400);
             return Collections.unmodifiableMap(map);
         }
 

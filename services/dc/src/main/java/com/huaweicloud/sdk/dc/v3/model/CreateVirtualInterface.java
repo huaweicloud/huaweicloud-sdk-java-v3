@@ -124,9 +124,9 @@ public class CreateVirtualInterface {
         public static final ServiceTypeEnum VGW = new ServiceTypeEnum("VGW");
 
         /**
-         * Enum GDWW for value: "GDWW"
+         * Enum GDGW for value: "GDGW"
          */
-        public static final ServiceTypeEnum GDWW = new ServiceTypeEnum("GDWW");
+        public static final ServiceTypeEnum GDGW = new ServiceTypeEnum("GDGW");
 
         /**
          * Enum LGW for value: "LGW"
@@ -139,7 +139,7 @@ public class CreateVirtualInterface {
             Map<String, ServiceTypeEnum> map = new HashMap<>();
             map.put("vpc", VPC);
             map.put("VGW", VGW);
-            map.put("GDWW", GDWW);
+            map.put("GDGW", GDGW);
             map.put("LGW", LGW);
             return Collections.unmodifiableMap(map);
         }

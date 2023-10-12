@@ -40,6 +40,11 @@ public class ListAppGroupRequest {
 
     private String authorizationType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_type")
+
+    private String appType;
+
     public ListAppGroupRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -146,6 +151,23 @@ public class ListAppGroupRequest {
         this.authorizationType = authorizationType;
     }
 
+    public ListAppGroupRequest withAppType(String appType) {
+        this.appType = appType;
+        return this;
+    }
+
+    /**
+     * 应用组类型(SESSION_DESKTOP_APP、COMMON_APP)
+     * @return appType
+     */
+    public String getAppType() {
+        return appType;
+    }
+
+    public void setAppType(String appType) {
+        this.appType = appType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -158,12 +180,13 @@ public class ListAppGroupRequest {
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.appServerGroupId, that.appServerGroupId)
             && Objects.equals(this.appGroupId, that.appGroupId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.authorizationType, that.authorizationType);
+            && Objects.equals(this.authorizationType, that.authorizationType)
+            && Objects.equals(this.appType, that.appType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, appServerGroupId, appGroupId, name, authorizationType);
+        return Objects.hash(limit, offset, appServerGroupId, appGroupId, name, authorizationType, appType);
     }
 
     @Override
@@ -176,6 +199,7 @@ public class ListAppGroupRequest {
         sb.append("    appGroupId: ").append(toIndentedString(appGroupId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    authorizationType: ").append(toIndentedString(authorizationType)).append("\n");
+        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

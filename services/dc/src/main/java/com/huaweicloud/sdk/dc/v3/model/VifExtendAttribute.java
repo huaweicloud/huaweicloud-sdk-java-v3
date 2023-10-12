@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 接口BFD/NQA等可靠性检测信息
+ * 接口BFD/NQA等可靠性检测信息,只有配置BFD和NQA的扩展参数才会显示扩展参数信息
  */
 public class VifExtendAttribute {
 

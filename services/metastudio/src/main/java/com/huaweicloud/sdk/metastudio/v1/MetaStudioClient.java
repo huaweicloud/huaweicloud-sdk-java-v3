@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardReq
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePictureModelingByUrlJobRequest;
@@ -77,6 +79,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
@@ -597,6 +601,36 @@ public class MetaStudioClient {
     }
 
     /**
+     * 创建照片检测任务
+     *
+     * 该接口用于创建照片检测任务，检测照片是否满足制作照片数字人的要求。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePhotoDetectionRequest 请求对象
+     * @return CreatePhotoDetectionResponse
+     */
+    public CreatePhotoDetectionResponse createPhotoDetection(CreatePhotoDetectionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createPhotoDetection);
+    }
+
+    /**
+     * 创建照片检测任务
+     *
+     * 该接口用于创建照片检测任务，检测照片是否满足制作照片数字人的要求。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePhotoDetectionRequest 请求对象
+     * @return SyncInvoker<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse>
+     */
+    public SyncInvoker<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse> createPhotoDetectionInvoker(
+        CreatePhotoDetectionRequest request) {
+        return new SyncInvoker<CreatePhotoDetectionRequest, CreatePhotoDetectionResponse>(request,
+            MetaStudioMeta.createPhotoDetection, hcClient);
+    }
+
+    /**
      * 创建照片分身数字人视频制作任务
      *
      * 该接口用于创建照片分身数字人视频制作任务。
@@ -625,6 +659,36 @@ public class MetaStudioClient {
         CreatePhotoDigitalHumanVideoRequest request) {
         return new SyncInvoker<CreatePhotoDigitalHumanVideoRequest, CreatePhotoDigitalHumanVideoResponse>(request,
             MetaStudioMeta.createPhotoDigitalHumanVideo, hcClient);
+    }
+
+    /**
+     * 查询照片检测任务详情
+     *
+     * 该接口用于查询照片检测任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPhotoDetectionRequest 请求对象
+     * @return ShowPhotoDetectionResponse
+     */
+    public ShowPhotoDetectionResponse showPhotoDetection(ShowPhotoDetectionRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showPhotoDetection);
+    }
+
+    /**
+     * 查询照片检测任务详情
+     *
+     * 该接口用于查询照片检测任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPhotoDetectionRequest 请求对象
+     * @return SyncInvoker<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse>
+     */
+    public SyncInvoker<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse> showPhotoDetectionInvoker(
+        ShowPhotoDetectionRequest request) {
+        return new SyncInvoker<ShowPhotoDetectionRequest, ShowPhotoDetectionResponse>(request,
+            MetaStudioMeta.showPhotoDetection, hcClient);
     }
 
     /**

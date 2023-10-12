@@ -191,126 +191,6 @@ public class ProjectVpcChannelInfo {
 
     private MemberTypeEnum memberType;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dict_code")
-
-    private String dictCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
-
-    private OffsetDateTime createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    /**
-     * VPC通道的状态。 - 1：正常 - 2：异常
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
-
-        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, StatusEnum> createStaticFields() {
-            Map<Integer, StatusEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        StatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private StatusEnum status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "member_groups")
-
-    private List<MemberGroupInfo> memberGroups = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
-
-    private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_name")
-
-    private String instanceName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "members")
-
-    private List<VpcMemberInfo> members = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vpc_health_config")
-
-    private VpcHealthConfigInfo vpcHealthConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "microservice_info")
-
-    private MicroServiceInfo microserviceInfo;
-
     /**
      * vpc通道类型。 - BUILTIN：BUILTIN通道类型 - MICROSERVICE：微服务类型
      */
@@ -386,6 +266,56 @@ public class ProjectVpcChannelInfo {
 
     private TypeEnum type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dict_code")
+
+    private String dictCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private OffsetDateTime createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "member_groups")
+
+    private List<MemberGroupInfo> memberGroups = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_name")
+
+    private String instanceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "members")
+
+    private List<VpcMemberInfo> members = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_health_config")
+
+    private VpcHealthConfigInfo vpcHealthConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_info")
+
+    private MicroServiceInfo microserviceInfo;
+
     public ProjectVpcChannelInfo withName(String name) {
         this.name = name;
         return this;
@@ -454,6 +384,23 @@ public class ProjectVpcChannelInfo {
         this.memberType = memberType;
     }
 
+    public ProjectVpcChannelInfo withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * vpc通道类型。 - BUILTIN：BUILTIN通道类型 - MICROSERVICE：微服务类型
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     public ProjectVpcChannelInfo withDictCode(String dictCode) {
         this.dictCode = dictCode;
         return this;
@@ -505,7 +452,7 @@ public class ProjectVpcChannelInfo {
         this.id = id;
     }
 
-    public ProjectVpcChannelInfo withStatus(StatusEnum status) {
+    public ProjectVpcChannelInfo withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -514,11 +461,11 @@ public class ProjectVpcChannelInfo {
      * VPC通道的状态。 - 1：正常 - 2：异常
      * @return status
      */
-    public StatusEnum getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -674,23 +621,6 @@ public class ProjectVpcChannelInfo {
         this.microserviceInfo = microserviceInfo;
     }
 
-    public ProjectVpcChannelInfo withType(TypeEnum type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * vpc通道类型。 - BUILTIN：BUILTIN通道类型 - MICROSERVICE：微服务类型
-     * @return type
-     */
-    public TypeEnum getType() {
-        return type;
-    }
-
-    public void setType(TypeEnum type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -702,12 +632,13 @@ public class ProjectVpcChannelInfo {
         ProjectVpcChannelInfo that = (ProjectVpcChannelInfo) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
             && Objects.equals(this.balanceStrategy, that.balanceStrategy)
-            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.dictCode, that.dictCode)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.memberGroups, that.memberGroups)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
-            && Objects.equals(this.members, that.members) && Objects.equals(this.vpcHealthConfig, that.vpcHealthConfig)
-            && Objects.equals(this.microserviceInfo, that.microserviceInfo) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dictCode, that.dictCode) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.memberGroups, that.memberGroups) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.members, that.members)
+            && Objects.equals(this.vpcHealthConfig, that.vpcHealthConfig)
+            && Objects.equals(this.microserviceInfo, that.microserviceInfo);
     }
 
     @Override
@@ -716,6 +647,7 @@ public class ProjectVpcChannelInfo {
             port,
             balanceStrategy,
             memberType,
+            type,
             dictCode,
             createTime,
             id,
@@ -725,8 +657,7 @@ public class ProjectVpcChannelInfo {
             instanceName,
             members,
             vpcHealthConfig,
-            microserviceInfo,
-            type);
+            microserviceInfo);
     }
 
     @Override
@@ -737,6 +668,7 @@ public class ProjectVpcChannelInfo {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -747,7 +679,6 @@ public class ProjectVpcChannelInfo {
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    vpcHealthConfig: ").append(toIndentedString(vpcHealthConfig)).append("\n");
         sb.append("    microserviceInfo: ").append(toIndentedString(microserviceInfo)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

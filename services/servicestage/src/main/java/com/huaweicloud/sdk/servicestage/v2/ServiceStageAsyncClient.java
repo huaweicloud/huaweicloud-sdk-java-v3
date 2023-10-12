@@ -141,6 +141,8 @@ public class ServiceStageAsyncClient {
      * 修改应用信息
      *
      * 此API通过应用ID修改应用信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApplicationRequest 请求对象
      * @return CompletableFuture<ChangeApplicationResponse>
@@ -153,6 +155,8 @@ public class ServiceStageAsyncClient {
      * 修改应用信息
      *
      * 此API通过应用ID修改应用信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApplicationRequest 请求对象
      * @return AsyncInvoker<ChangeApplicationRequest, ChangeApplicationResponse>
@@ -167,6 +171,8 @@ public class ServiceStageAsyncClient {
      * 修改应用配置信息
      *
      * 通过此API修改应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApplicationConfigurationRequest 请求对象
      * @return CompletableFuture<ChangeApplicationConfigurationResponse>
@@ -180,6 +186,8 @@ public class ServiceStageAsyncClient {
      * 修改应用配置信息
      *
      * 通过此API修改应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeApplicationConfigurationRequest 请求对象
      * @return AsyncInvoker<ChangeApplicationConfigurationRequest, ChangeApplicationConfigurationResponse>
@@ -194,6 +202,8 @@ public class ServiceStageAsyncClient {
      * 根据组件ID修改组件信息
      *
      * 此API通过组件ID修改组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeComponentRequest 请求对象
      * @return CompletableFuture<ChangeComponentResponse>
@@ -206,6 +216,8 @@ public class ServiceStageAsyncClient {
      * 根据组件ID修改组件信息
      *
      * 此API通过组件ID修改组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeComponentRequest 请求对象
      * @return AsyncInvoker<ChangeComponentRequest, ChangeComponentResponse>
@@ -220,6 +232,8 @@ public class ServiceStageAsyncClient {
      * 修改环境信息
      *
      * 此API通过环境ID修改环境信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeEnvironmentRequest 请求对象
      * @return CompletableFuture<ChangeEnvironmentResponse>
@@ -232,6 +246,8 @@ public class ServiceStageAsyncClient {
      * 修改环境信息
      *
      * 此API通过环境ID修改环境信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeEnvironmentRequest 请求对象
      * @return AsyncInvoker<ChangeEnvironmentRequest, ChangeEnvironmentResponse>
@@ -246,6 +262,8 @@ public class ServiceStageAsyncClient {
      * 修改应用组件实例
      *
      * 通过此API修改应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeInstanceRequest 请求对象
      * @return CompletableFuture<ChangeInstanceResponse>
@@ -258,6 +276,8 @@ public class ServiceStageAsyncClient {
      * 修改应用组件实例
      *
      * 通过此API修改应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeInstanceRequest 请求对象
      * @return AsyncInvoker<ChangeInstanceRequest, ChangeInstanceResponse>
@@ -272,6 +292,8 @@ public class ServiceStageAsyncClient {
      * 修改环境资源
      *
      * 此API用来修改环境资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeResourceInEnvironmentRequest 请求对象
      * @return CompletableFuture<ChangeResourceInEnvironmentResponse>
@@ -285,6 +307,8 @@ public class ServiceStageAsyncClient {
      * 修改环境资源
      *
      * 此API用来修改环境资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ChangeResourceInEnvironmentRequest 请求对象
      * @return AsyncInvoker<ChangeResourceInEnvironmentRequest, ChangeResourceInEnvironmentResponse>
@@ -301,6 +325,8 @@ public class ServiceStageAsyncClient {
      * 应用是一个功能相对完备的业务系统，由一个或多个特性相关的组件组成。
      * 
      * 此API用来创建应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return CompletableFuture<CreateApplicationResponse>
@@ -315,6 +341,8 @@ public class ServiceStageAsyncClient {
      * 应用是一个功能相对完备的业务系统，由一个或多个特性相关的组件组成。
      * 
      * 此API用来创建应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateApplicationRequest 请求对象
      * @return AsyncInvoker<CreateApplicationRequest, CreateApplicationResponse>
@@ -357,6 +385,8 @@ public class ServiceStageAsyncClient {
      * 应用组件是组成应用的某个业务特性实现，以代码或者软件包为载体，可独立部署运行。
      * 
      * 此API用来在应用中创建组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentRequest 请求对象
      * @return CompletableFuture<CreateComponentResponse>
@@ -371,6 +401,8 @@ public class ServiceStageAsyncClient {
      * 应用组件是组成应用的某个业务特性实现，以代码或者软件包为载体，可独立部署运行。
      * 
      * 此API用来在应用中创建组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateComponentRequest 请求对象
      * @return AsyncInvoker<CreateComponentRequest, CreateComponentResponse>
@@ -387,6 +419,8 @@ public class ServiceStageAsyncClient {
      * 环境是用于应用部署和运行的计算、存储、网络等基础设施的集合。Servicestage把相同VPC下的CCE集群加上多个ELB、RDS、DCS实例组合为一个环境，如：开发环境，测试环境，预生产环境，生产环境。环境内网络互通，可以按环境维度来管理资源、部署服务，减少具体基础设施运维管理的复杂性。
      * 
      * 此API用来创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentRequest 请求对象
      * @return CompletableFuture<CreateEnvironmentResponse>
@@ -401,6 +435,8 @@ public class ServiceStageAsyncClient {
      * 环境是用于应用部署和运行的计算、存储、网络等基础设施的集合。Servicestage把相同VPC下的CCE集群加上多个ELB、RDS、DCS实例组合为一个环境，如：开发环境，测试环境，预生产环境，生产环境。环境内网络互通，可以按环境维度来管理资源、部署服务，减少具体基础设施运维管理的复杂性。
      * 
      * 此API用来创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateEnvironmentRequest 请求对象
      * @return AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>
@@ -415,6 +451,8 @@ public class ServiceStageAsyncClient {
      * 创建组件实例
      *
      * 此API用来创建应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return CompletableFuture<CreateInstanceResponse>
@@ -427,6 +465,8 @@ public class ServiceStageAsyncClient {
      * 创建组件实例
      *
      * 此API用来创建应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateInstanceRequest 请求对象
      * @return AsyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
@@ -467,6 +507,8 @@ public class ServiceStageAsyncClient {
      * 根据应用ID删除应用
      *
      * 此API通过应用ID删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return CompletableFuture<DeleteApplicationResponse>
@@ -479,6 +521,8 @@ public class ServiceStageAsyncClient {
      * 根据应用ID删除应用
      *
      * 此API通过应用ID删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationRequest 请求对象
      * @return AsyncInvoker<DeleteApplicationRequest, DeleteApplicationResponse>
@@ -493,6 +537,8 @@ public class ServiceStageAsyncClient {
      * 删除应用配置
      *
      * 通过此API删除应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationConfigurationRequest 请求对象
      * @return CompletableFuture<DeleteApplicationConfigurationResponse>
@@ -506,6 +552,8 @@ public class ServiceStageAsyncClient {
      * 删除应用配置
      *
      * 通过此API删除应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteApplicationConfigurationRequest 请求对象
      * @return AsyncInvoker<DeleteApplicationConfigurationRequest, DeleteApplicationConfigurationResponse>
@@ -520,6 +568,8 @@ public class ServiceStageAsyncClient {
      * 根据应用组件ID删除应用组件
      *
      * 此API通过应用组件ID删除应用组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentRequest 请求对象
      * @return CompletableFuture<DeleteComponentResponse>
@@ -532,6 +582,8 @@ public class ServiceStageAsyncClient {
      * 根据应用组件ID删除应用组件
      *
      * 此API通过应用组件ID删除应用组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteComponentRequest 请求对象
      * @return AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
@@ -546,6 +598,8 @@ public class ServiceStageAsyncClient {
      * 根据环境ID删除环境
      *
      * 此API通过环境ID删除环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentRequest 请求对象
      * @return CompletableFuture<DeleteEnvironmentResponse>
@@ -558,6 +612,8 @@ public class ServiceStageAsyncClient {
      * 根据环境ID删除环境
      *
      * 此API通过环境ID删除环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteEnvironmentRequest 请求对象
      * @return AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>
@@ -572,6 +628,8 @@ public class ServiceStageAsyncClient {
      * 删除应用组件实例
      *
      * 通过此API删除应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return CompletableFuture<DeleteInstanceResponse>
@@ -584,6 +642,8 @@ public class ServiceStageAsyncClient {
      * 删除应用组件实例
      *
      * 通过此API删除应用组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
@@ -676,6 +736,8 @@ public class ServiceStageAsyncClient {
      * 获取所有应用
      *
      * 通过此API可以获取所有已经创建的应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return CompletableFuture<ListApplicationsResponse>
@@ -688,6 +750,8 @@ public class ServiceStageAsyncClient {
      * 获取所有应用
      *
      * 通过此API可以获取所有已经创建的应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListApplicationsRequest 请求对象
      * @return AsyncInvoker<ListApplicationsRequest, ListApplicationsResponse>
@@ -702,6 +766,8 @@ public class ServiceStageAsyncClient {
      * 获取应用所有组件
      *
      * 通过此API获取应用下所有应用组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentsRequest 请求对象
      * @return CompletableFuture<ListComponentsResponse>
@@ -714,6 +780,8 @@ public class ServiceStageAsyncClient {
      * 获取应用所有组件
      *
      * 通过此API获取应用下所有应用组件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListComponentsRequest 请求对象
      * @return AsyncInvoker<ListComponentsRequest, ListComponentsResponse>
@@ -728,6 +796,8 @@ public class ServiceStageAsyncClient {
      * 获取所有环境
      *
      * 此API用来获取所有已经创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return CompletableFuture<ListEnvironmentsResponse>
@@ -740,6 +810,8 @@ public class ServiceStageAsyncClient {
      * 获取所有环境
      *
      * 此API用来获取所有已经创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListEnvironmentsRequest 请求对象
      * @return AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>
@@ -754,6 +826,8 @@ public class ServiceStageAsyncClient {
      * 获取组件实例快照
      *
      * 通过此API获取应用组件实例快照信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceSnapshotsRequest 请求对象
      * @return CompletableFuture<ListInstanceSnapshotsResponse>
@@ -767,6 +841,8 @@ public class ServiceStageAsyncClient {
      * 获取组件实例快照
      *
      * 通过此API获取应用组件实例快照信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstanceSnapshotsRequest 请求对象
      * @return AsyncInvoker<ListInstanceSnapshotsRequest, ListInstanceSnapshotsResponse>
@@ -781,6 +857,8 @@ public class ServiceStageAsyncClient {
      * 获取应用组件实例
      *
      * 通过此API获取组件下的所有组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return CompletableFuture<ListInstancesResponse>
@@ -793,6 +871,8 @@ public class ServiceStageAsyncClient {
      * 获取应用组件实例
      *
      * 通过此API获取组件下的所有组件实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListInstancesRequest 请求对象
      * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
@@ -807,6 +887,8 @@ public class ServiceStageAsyncClient {
      * 获取应用配置
      *
      * 通过此API获取应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationConfigurationRequest 请求对象
      * @return CompletableFuture<ShowApplicationConfigurationResponse>
@@ -820,6 +902,8 @@ public class ServiceStageAsyncClient {
      * 获取应用配置
      *
      * 通过此API获取应用配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowApplicationConfigurationRequest, ShowApplicationConfigurationResponse>
@@ -834,6 +918,8 @@ public class ServiceStageAsyncClient {
      * 根据应用ID获取应用详细信息
      *
      * 此API通过应用ID获取应用详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationDetailRequest 请求对象
      * @return CompletableFuture<ShowApplicationDetailResponse>
@@ -847,6 +933,8 @@ public class ServiceStageAsyncClient {
      * 根据应用ID获取应用详细信息
      *
      * 此API通过应用ID获取应用详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowApplicationDetailRequest 请求对象
      * @return AsyncInvoker<ShowApplicationDetailRequest, ShowApplicationDetailResponse>
@@ -861,6 +949,8 @@ public class ServiceStageAsyncClient {
      * 根据组件ID获取应用组件信息
      *
      * 通过组件ID获取应用组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowComponentDetailRequest 请求对象
      * @return CompletableFuture<ShowComponentDetailResponse>
@@ -873,6 +963,8 @@ public class ServiceStageAsyncClient {
      * 根据组件ID获取应用组件信息
      *
      * 通过组件ID获取应用组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowComponentDetailRequest 请求对象
      * @return AsyncInvoker<ShowComponentDetailRequest, ShowComponentDetailResponse>
@@ -887,6 +979,8 @@ public class ServiceStageAsyncClient {
      * 根据环境ID获取环境详细信息
      *
      * 此API通过环境ID获取环境详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnvironmentDetailRequest 请求对象
      * @return CompletableFuture<ShowEnvironmentDetailResponse>
@@ -900,6 +994,8 @@ public class ServiceStageAsyncClient {
      * 根据环境ID获取环境详细信息
      *
      * 此API通过环境ID获取环境详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowEnvironmentDetailRequest 请求对象
      * @return AsyncInvoker<ShowEnvironmentDetailRequest, ShowEnvironmentDetailResponse>
@@ -914,6 +1010,8 @@ public class ServiceStageAsyncClient {
      * 根据实例ID获取实例详细信息
      *
      * 此API通过实例ID获取实例详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceDetailRequest 请求对象
      * @return CompletableFuture<ShowInstanceDetailResponse>
@@ -926,6 +1024,8 @@ public class ServiceStageAsyncClient {
      * 根据实例ID获取实例详细信息
      *
      * 此API通过实例ID获取实例详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowInstanceDetailRequest 请求对象
      * @return AsyncInvoker<ShowInstanceDetailRequest, ShowInstanceDetailResponse>
@@ -940,6 +1040,8 @@ public class ServiceStageAsyncClient {
      * 获取部署任务详细信息
      *
      * 通过此API获取部署任务详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobDetailRequest 请求对象
      * @return CompletableFuture<ShowJobDetailResponse>
@@ -952,6 +1054,8 @@ public class ServiceStageAsyncClient {
      * 获取部署任务详细信息
      *
      * 通过此API获取部署任务详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowJobDetailRequest 请求对象
      * @return AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
@@ -966,6 +1070,8 @@ public class ServiceStageAsyncClient {
      * 对组件实例的操作
      *
      * 通过此API获取对组件实例的操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceActionRequest 请求对象
      * @return CompletableFuture<UpdateInstanceActionResponse>
@@ -979,6 +1085,8 @@ public class ServiceStageAsyncClient {
      * 对组件实例的操作
      *
      * 通过此API获取对组件实例的操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateInstanceActionRequest 请求对象
      * @return AsyncInvoker<UpdateInstanceActionRequest, UpdateInstanceActionResponse>
@@ -1019,6 +1127,8 @@ public class ServiceStageAsyncClient {
      * 创建仓库文件
      *
      * 在指定仓库项目下创建文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFileRequest 请求对象
      * @return CompletableFuture<CreateFileResponse>
@@ -1031,6 +1141,8 @@ public class ServiceStageAsyncClient {
      * 创建仓库文件
      *
      * 在指定仓库项目下创建文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateFileRequest 请求对象
      * @return AsyncInvoker<CreateFileRequest, CreateFileResponse>
@@ -1043,6 +1155,8 @@ public class ServiceStageAsyncClient {
      * 创建项目hook
      *
      * 创建指定项目的hook。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHookRequest 请求对象
      * @return CompletableFuture<CreateHookResponse>
@@ -1055,6 +1169,8 @@ public class ServiceStageAsyncClient {
      * 创建项目hook
      *
      * 创建指定项目的hook。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateHookRequest 请求对象
      * @return AsyncInvoker<CreateHookRequest, CreateHookResponse>
@@ -1067,6 +1183,8 @@ public class ServiceStageAsyncClient {
      * 创建OAuth授权
      *
      * 创建指定Git仓库类型的OAuth授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOAuthRequest 请求对象
      * @return CompletableFuture<CreateOAuthResponse>
@@ -1079,6 +1197,8 @@ public class ServiceStageAsyncClient {
      * 创建OAuth授权
      *
      * 创建指定Git仓库类型的OAuth授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateOAuthRequest 请求对象
      * @return AsyncInvoker<CreateOAuthRequest, CreateOAuthResponse>
@@ -1092,6 +1212,8 @@ public class ServiceStageAsyncClient {
      * 创建口令授权
      *
      * 创建指定Git仓库类型的口令授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePasswordAuthRequest 请求对象
      * @return CompletableFuture<CreatePasswordAuthResponse>
@@ -1104,6 +1226,8 @@ public class ServiceStageAsyncClient {
      * 创建口令授权
      *
      * 创建指定Git仓库类型的口令授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePasswordAuthRequest 请求对象
      * @return AsyncInvoker<CreatePasswordAuthRequest, CreatePasswordAuthResponse>
@@ -1118,6 +1242,8 @@ public class ServiceStageAsyncClient {
      * 创建私人令牌授权
      *
      * 创建指定Git仓库类型的私人令牌授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePersonalAuthRequest 请求对象
      * @return CompletableFuture<CreatePersonalAuthResponse>
@@ -1130,6 +1256,8 @@ public class ServiceStageAsyncClient {
      * 创建私人令牌授权
      *
      * 创建指定Git仓库类型的私人令牌授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreatePersonalAuthRequest 请求对象
      * @return AsyncInvoker<CreatePersonalAuthRequest, CreatePersonalAuthResponse>
@@ -1144,6 +1272,8 @@ public class ServiceStageAsyncClient {
      * 创建软件仓库项目
      *
      * 创建指定组织下的软件仓库项目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectRequest 请求对象
      * @return CompletableFuture<CreateProjectResponse>
@@ -1156,6 +1286,8 @@ public class ServiceStageAsyncClient {
      * 创建软件仓库项目
      *
      * 创建指定组织下的软件仓库项目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateProjectRequest 请求对象
      * @return AsyncInvoker<CreateProjectRequest, CreateProjectResponse>
@@ -1170,6 +1302,8 @@ public class ServiceStageAsyncClient {
      * 创建项目tag标签
      *
      * 创建指定项目的tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return CompletableFuture<CreateTagResponse>
@@ -1182,6 +1316,8 @@ public class ServiceStageAsyncClient {
      * 创建项目tag标签
      *
      * 创建指定项目的tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateTagRequest 请求对象
      * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
@@ -1194,6 +1330,8 @@ public class ServiceStageAsyncClient {
      * 删除仓库授权
      *
      * 通过名称删除仓库授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAuthorizeRequest 请求对象
      * @return CompletableFuture<DeleteAuthorizeResponse>
@@ -1206,6 +1344,8 @@ public class ServiceStageAsyncClient {
      * 删除仓库授权
      *
      * 通过名称删除仓库授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteAuthorizeRequest 请求对象
      * @return AsyncInvoker<DeleteAuthorizeRequest, DeleteAuthorizeResponse>
@@ -1220,6 +1360,8 @@ public class ServiceStageAsyncClient {
      * 删除仓库文件
      *
      * 删除指定项目仓库下的文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFileRequest 请求对象
      * @return CompletableFuture<DeleteFileResponse>
@@ -1232,6 +1374,8 @@ public class ServiceStageAsyncClient {
      * 删除仓库文件
      *
      * 删除指定项目仓库下的文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteFileRequest 请求对象
      * @return AsyncInvoker<DeleteFileRequest, DeleteFileResponse>
@@ -1244,6 +1388,8 @@ public class ServiceStageAsyncClient {
      * 删除项目hook
      *
      * 删除指定项目的hook。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHookRequest 请求对象
      * @return CompletableFuture<DeleteHookResponse>
@@ -1256,6 +1402,8 @@ public class ServiceStageAsyncClient {
      * 删除项目hook
      *
      * 删除指定项目的hook。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteHookRequest 请求对象
      * @return AsyncInvoker<DeleteHookRequest, DeleteHookResponse>
@@ -1268,6 +1416,8 @@ public class ServiceStageAsyncClient {
      * 删除项目tag标签
      *
      * 删除指定项目的tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return CompletableFuture<DeleteTagResponse>
@@ -1280,6 +1430,8 @@ public class ServiceStageAsyncClient {
      * 删除项目tag标签
      *
      * 删除指定项目的tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param DeleteTagRequest 请求对象
      * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
@@ -1292,6 +1444,8 @@ public class ServiceStageAsyncClient {
      * 获取仓库授权列表
      *
      * 获取所有Git仓库授权信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return CompletableFuture<ListAuthorizationsResponse>
@@ -1304,6 +1458,8 @@ public class ServiceStageAsyncClient {
      * 获取仓库授权列表
      *
      * 获取所有Git仓库授权信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListAuthorizationsRequest 请求对象
      * @return AsyncInvoker<ListAuthorizationsRequest, ListAuthorizationsResponse>
@@ -1318,6 +1474,8 @@ public class ServiceStageAsyncClient {
      * 获取项目分支
      *
      * 获取指定项目的所有分支列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBranchesRequest 请求对象
      * @return CompletableFuture<ListBranchesResponse>
@@ -1330,6 +1488,8 @@ public class ServiceStageAsyncClient {
      * 获取项目分支
      *
      * 获取指定项目的所有分支列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListBranchesRequest 请求对象
      * @return AsyncInvoker<ListBranchesRequest, ListBranchesResponse>
@@ -1344,6 +1504,8 @@ public class ServiceStageAsyncClient {
      * 获取项目commit提交记录
      *
      * 获取指定项目的最近10次commit提交记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitsRequest 请求对象
      * @return CompletableFuture<ListCommitsResponse>
@@ -1356,6 +1518,8 @@ public class ServiceStageAsyncClient {
      * 获取项目commit提交记录
      *
      * 获取指定项目的最近10次commit提交记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListCommitsRequest 请求对象
      * @return AsyncInvoker<ListCommitsRequest, ListCommitsResponse>
@@ -1369,6 +1533,8 @@ public class ServiceStageAsyncClient {
      * 获取项目hooks
      *
      * 获取指定项目的所有hooks
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHooksRequest 请求对象
      * @return CompletableFuture<ListHooksResponse>
@@ -1381,6 +1547,8 @@ public class ServiceStageAsyncClient {
      * 获取项目hooks
      *
      * 获取指定项目的所有hooks
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListHooksRequest 请求对象
      * @return AsyncInvoker<ListHooksRequest, ListHooksResponse>
@@ -1393,6 +1561,8 @@ public class ServiceStageAsyncClient {
      * 获取仓库的namespaces
      *
      * 获取仓库的namespaces。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNamespacesRequest 请求对象
      * @return CompletableFuture<ListNamespacesResponse>
@@ -1405,6 +1575,8 @@ public class ServiceStageAsyncClient {
      * 获取仓库的namespaces
      *
      * 获取仓库的namespaces。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListNamespacesRequest 请求对象
      * @return AsyncInvoker<ListNamespacesRequest, ListNamespacesResponse>
@@ -1419,6 +1591,8 @@ public class ServiceStageAsyncClient {
      * 获取组织下所有项目
      *
      * 获取指定组织下的所有项目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectsRequest 请求对象
      * @return CompletableFuture<ListProjectsResponse>
@@ -1431,6 +1605,8 @@ public class ServiceStageAsyncClient {
      * 获取组织下所有项目
      *
      * 获取指定组织下的所有项目。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListProjectsRequest 请求对象
      * @return AsyncInvoker<ListProjectsRequest, ListProjectsResponse>
@@ -1445,6 +1621,8 @@ public class ServiceStageAsyncClient {
      * 获取项目的所有tag标签
      *
      * 获取指定项目的所有tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return CompletableFuture<ListTagsResponse>
@@ -1457,6 +1635,8 @@ public class ServiceStageAsyncClient {
      * 获取项目的所有tag标签
      *
      * 获取指定项目的所有tag标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTagsRequest 请求对象
      * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
@@ -1469,6 +1649,8 @@ public class ServiceStageAsyncClient {
      * 获取仓库文件列表
      *
      * 获取指定项目仓库的文件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTreesRequest 请求对象
      * @return CompletableFuture<ListTreesResponse>
@@ -1481,6 +1663,8 @@ public class ServiceStageAsyncClient {
      * 获取仓库文件列表
      *
      * 获取指定项目仓库的文件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTreesRequest 请求对象
      * @return AsyncInvoker<ListTreesRequest, ListTreesResponse>
@@ -1493,6 +1677,8 @@ public class ServiceStageAsyncClient {
      * 获取仓库文件内容
      *
      * 获取指定项目仓库下文件的内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowContentRequest 请求对象
      * @return CompletableFuture<ShowContentResponse>
@@ -1505,6 +1691,8 @@ public class ServiceStageAsyncClient {
      * 获取仓库文件内容
      *
      * 获取指定项目仓库下文件的内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowContentRequest 请求对象
      * @return AsyncInvoker<ShowContentRequest, ShowContentResponse>
@@ -1518,6 +1706,8 @@ public class ServiceStageAsyncClient {
      * 通过clone url 获取仓库信息
      *
      * 通过指定的clone url 获取仓库信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectDetailRequest 请求对象
      * @return CompletableFuture<ShowProjectDetailResponse>
@@ -1530,6 +1720,8 @@ public class ServiceStageAsyncClient {
      * 通过clone url 获取仓库信息
      *
      * 通过指定的clone url 获取仓库信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowProjectDetailRequest 请求对象
      * @return AsyncInvoker<ShowProjectDetailRequest, ShowProjectDetailResponse>
@@ -1544,6 +1736,8 @@ public class ServiceStageAsyncClient {
      * 获取授权重定向URL
      *
      * 获取指定Git仓库类型的授权重定向URL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRedirectUrlRequest 请求对象
      * @return CompletableFuture<ShowRedirectUrlResponse>
@@ -1556,6 +1750,8 @@ public class ServiceStageAsyncClient {
      * 获取授权重定向URL
      *
      * 获取指定Git仓库类型的授权重定向URL。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ShowRedirectUrlRequest 请求对象
      * @return AsyncInvoker<ShowRedirectUrlRequest, ShowRedirectUrlResponse>
@@ -1570,6 +1766,8 @@ public class ServiceStageAsyncClient {
      * 更新仓库文件内容
      *
      * 更新指定项目仓库下的文件内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFileRequest 请求对象
      * @return CompletableFuture<UpdateFileResponse>
@@ -1582,6 +1780,8 @@ public class ServiceStageAsyncClient {
      * 更新仓库文件内容
      *
      * 更新指定项目仓库下的文件内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param UpdateFileRequest 请求对象
      * @return AsyncInvoker<UpdateFileRequest, UpdateFileResponse>
@@ -1594,6 +1794,8 @@ public class ServiceStageAsyncClient {
      * 获取所有支持的应用资源规格
      *
      * 通过此API获取所用支持的应用资源规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return CompletableFuture<ListFlavorsResponse>
@@ -1606,6 +1808,8 @@ public class ServiceStageAsyncClient {
      * 获取所有支持的应用资源规格
      *
      * 通过此API获取所用支持的应用资源规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListFlavorsRequest 请求对象
      * @return AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
@@ -1619,6 +1823,8 @@ public class ServiceStageAsyncClient {
      * 获取所有支持的应用组件运行时类型
      *
      * 此API用来获取所有支持应用组件运行时类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuntimesRequest 请求对象
      * @return CompletableFuture<ListRuntimesResponse>
@@ -1631,6 +1837,8 @@ public class ServiceStageAsyncClient {
      * 获取所有支持的应用组件运行时类型
      *
      * 此API用来获取所有支持应用组件运行时类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListRuntimesRequest 请求对象
      * @return AsyncInvoker<ListRuntimesRequest, ListRuntimesResponse>
@@ -1645,6 +1853,8 @@ public class ServiceStageAsyncClient {
      * 获取所有支持的应用组件模板
      *
      * 此API用来获取所有内置应用组件模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return CompletableFuture<ListTemplatesResponse>
@@ -1657,6 +1867,8 @@ public class ServiceStageAsyncClient {
      * 获取所有支持的应用组件模板
      *
      * 此API用来获取所有内置应用组件模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param ListTemplatesRequest 请求对象
      * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>

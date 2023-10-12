@@ -160,7 +160,7 @@ public class ListAclStrategiesV2Request {
     }
 
     /**
-     * 作用的对象类型： - IP - DOMAIN
+     * 作用的对象类型： - IP - DOMAIN [Site不支持DOMAIN类型。](tag:Site)
      * @return entityType
      */
     public String getEntityType() {

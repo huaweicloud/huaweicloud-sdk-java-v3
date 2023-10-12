@@ -31,7 +31,7 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
     private String path;
 
     /**
-     * 后端API请求方法。  支持GET、PUT、POST、DELETE
+     * 后端API请求方法。  支持GET、PUT、POST、DELETE  更新后端API时，status=4为后端API的已部署状态，该状态下后端API请求方法不能修改。
      */
     public static final class MethodEnum {
 
@@ -437,7 +437,7 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
     }
 
     /**
-     * 后端API请求路径。  支持英文、数字、中划线、下划线、点等，且以斜杠（/）开头。
+     * 后端API请求路径。  支持英文、数字、中划线、下划线、点等，且以斜杠（/）开头。  更新后端API时，status=4为后端API的已部署状态，该状态下后端API请求路径不能修改。
      * @return path
      */
     public String getPath() {
@@ -454,7 +454,7 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
     }
 
     /**
-     * 后端API请求方法。  支持GET、PUT、POST、DELETE
+     * 后端API请求方法。  支持GET、PUT、POST、DELETE  更新后端API时，status=4为后端API的已部署状态，该状态下后端API请求方法不能修改。
      * @return method
      */
     public MethodEnum getMethod() {
@@ -539,7 +539,7 @@ public class CreateLiveDataApiV2Response extends SdkResponse {
     }
 
     /**
-     * 后端API归属的集成应用编号
+     * 后端API归属的集成应用编号  更新后端API时，status=4为后端API的已部署状态，该状态下后端API归属的集成应用编号不能修改。
      * @return romaAppId
      */
     public String getRomaAppId() {

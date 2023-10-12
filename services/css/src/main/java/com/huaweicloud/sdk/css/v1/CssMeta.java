@@ -20,6 +20,9 @@ import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupReq;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupResponse;
 import com.huaweicloud.sdk.css.v1.model.CloseKibanaPublicReq;
+import com.huaweicloud.sdk.css.v1.model.CreateAiOpsRequest;
+import com.huaweicloud.sdk.css.v1.model.CreateAiOpsRequestBody;
+import com.huaweicloud.sdk.css.v1.model.CreateAiOpsResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateAutoCreatePolicyRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateAutoCreatePolicyResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateBindPublicRequest;
@@ -32,6 +35,9 @@ import com.huaweicloud.sdk.css.v1.model.CreateClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateCnfReq;
 import com.huaweicloud.sdk.css.v1.model.CreateCnfRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateCnfResponse;
+import com.huaweicloud.sdk.css.v1.model.CreateElbListenerRequest;
+import com.huaweicloud.sdk.css.v1.model.CreateElbListenerResponse;
+import com.huaweicloud.sdk.css.v1.model.CreateEsListenerRequestBody;
 import com.huaweicloud.sdk.css.v1.model.CreateLoadIkThesaurusRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateLoadIkThesaurusResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateLogBackupRequest;
@@ -39,6 +45,8 @@ import com.huaweicloud.sdk.css.v1.model.CreateLogBackupResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateSnapshotReq;
 import com.huaweicloud.sdk.css.v1.model.CreateSnapshotRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateSnapshotResponse;
+import com.huaweicloud.sdk.css.v1.model.DeleteAiOpsRequest;
+import com.huaweicloud.sdk.css.v1.model.DeleteAiOpsResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteClusterRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteClustersTagsRequest;
@@ -46,6 +54,8 @@ import com.huaweicloud.sdk.css.v1.model.DeleteClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfReq;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfResponse;
+import com.huaweicloud.sdk.css.v1.model.DeleteConfigRequest;
+import com.huaweicloud.sdk.css.v1.model.DeleteConfigResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteIkThesaurusRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteIkThesaurusResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteSnapshotRequest;
@@ -55,23 +65,37 @@ import com.huaweicloud.sdk.css.v1.model.DeleteTemplateRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteTemplateResponse;
 import com.huaweicloud.sdk.css.v1.model.DownloadCertRequest;
 import com.huaweicloud.sdk.css.v1.model.DownloadCertResponse;
+import com.huaweicloud.sdk.css.v1.model.EnableOrDisableElbRequest;
+import com.huaweicloud.sdk.css.v1.model.EnableOrDisableElbResponse;
 import com.huaweicloud.sdk.css.v1.model.ExtendClusterReq;
 import com.huaweicloud.sdk.css.v1.model.GetLogBackupReq;
 import com.huaweicloud.sdk.css.v1.model.IndependentReq;
 import com.huaweicloud.sdk.css.v1.model.ListActionsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListActionsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListAiOpsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListAiOpsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListCertsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListCertsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListClustersDetailsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListClustersDetailsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListClustersTagsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListConfsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListConfsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListElbCertsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListElbCertsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListElbsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListElbsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListImagesRequest;
+import com.huaweicloud.sdk.css.v1.model.ListImagesResponse;
 import com.huaweicloud.sdk.css.v1.model.ListLogsJobRequest;
 import com.huaweicloud.sdk.css.v1.model.ListLogsJobResponse;
 import com.huaweicloud.sdk.css.v1.model.ListPipelinesRequest;
 import com.huaweicloud.sdk.css.v1.model.ListPipelinesResponse;
+import com.huaweicloud.sdk.css.v1.model.ListSmnTopicsRequest;
+import com.huaweicloud.sdk.css.v1.model.ListSmnTopicsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListSnapshotsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListSnapshotsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListTemplatesRequest;
@@ -90,6 +114,8 @@ import com.huaweicloud.sdk.css.v1.model.RestartClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.RestoreSnapshotReq;
 import com.huaweicloud.sdk.css.v1.model.RestoreSnapshotRequest;
 import com.huaweicloud.sdk.css.v1.model.RestoreSnapshotResponse;
+import com.huaweicloud.sdk.css.v1.model.RetryUpgradeTaskRequest;
+import com.huaweicloud.sdk.css.v1.model.RetryUpgradeTaskResponse;
 import com.huaweicloud.sdk.css.v1.model.RoleExtendReq;
 import com.huaweicloud.sdk.css.v1.model.SetRDSBackupCnfReq;
 import com.huaweicloud.sdk.css.v1.model.ShowAutoCreatePolicyRequest;
@@ -98,6 +124,8 @@ import com.huaweicloud.sdk.css.v1.model.ShowClusterDetailRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterTagRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowClusterTagResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowElbDetailRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowElbDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowGetConfDetailRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowGetConfDetailResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowGetLogSettingRequest;
@@ -133,6 +161,9 @@ import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistResponse;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpReq;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpRequest;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpResponse;
+import com.huaweicloud.sdk.css.v1.model.StopHotPipelineRequest;
+import com.huaweicloud.sdk.css.v1.model.StopHotPipelineRequestBody;
+import com.huaweicloud.sdk.css.v1.model.StopHotPipelineResponse;
 import com.huaweicloud.sdk.css.v1.model.StopLogAutoBackupPolicyRequest;
 import com.huaweicloud.sdk.css.v1.model.StopLogAutoBackupPolicyResponse;
 import com.huaweicloud.sdk.css.v1.model.StopLogsRequest;
@@ -151,6 +182,9 @@ import com.huaweicloud.sdk.css.v1.model.TagReq;
 import com.huaweicloud.sdk.css.v1.model.UnBindPublicReq;
 import com.huaweicloud.sdk.css.v1.model.UpdateAlterKibanaRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateAlterKibanaResponse;
+import com.huaweicloud.sdk.css.v1.model.UpdateAzByInstanceTypeReq;
+import com.huaweicloud.sdk.css.v1.model.UpdateAzByInstanceTypeRequest;
+import com.huaweicloud.sdk.css.v1.model.UpdateAzByInstanceTypeResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateBatchClustersTagsRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateBatchClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateCloseKibanaRequest;
@@ -160,6 +194,10 @@ import com.huaweicloud.sdk.css.v1.model.UpdateClusterNameRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateClusterNameResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateCnfRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateCnfResponse;
+import com.huaweicloud.sdk.css.v1.model.UpdateEsElbRequestBody;
+import com.huaweicloud.sdk.css.v1.model.UpdateEsListenerRequest;
+import com.huaweicloud.sdk.css.v1.model.UpdateEsListenerRequestBody;
+import com.huaweicloud.sdk.css.v1.model.UpdateEsListenerResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateExtendClusterRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateExtendClusterResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateExtendInstanceStorageRequest;
@@ -171,6 +209,7 @@ import com.huaweicloud.sdk.css.v1.model.UpdateFlavorReq;
 import com.huaweicloud.sdk.css.v1.model.UpdateFlavorRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateFlavorResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateInstanceRequest;
+import com.huaweicloud.sdk.css.v1.model.UpdateInstanceRequestBody;
 import com.huaweicloud.sdk.css.v1.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateLogSettingReq;
 import com.huaweicloud.sdk.css.v1.model.UpdateLogSettingRequest;
@@ -201,6 +240,11 @@ import com.huaweicloud.sdk.css.v1.model.UpdateVpcepWhitelistResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateYmlsReq;
 import com.huaweicloud.sdk.css.v1.model.UpdateYmlsRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateYmlsResponse;
+import com.huaweicloud.sdk.css.v1.model.UpgradeCoreRequest;
+import com.huaweicloud.sdk.css.v1.model.UpgradeCoreResponse;
+import com.huaweicloud.sdk.css.v1.model.UpgradeDetailRequest;
+import com.huaweicloud.sdk.css.v1.model.UpgradeDetailResponse;
+import com.huaweicloud.sdk.css.v1.model.UpgradingTheKernelBody;
 
 @SuppressWarnings("unchecked")
 public class CssMeta {
@@ -299,6 +343,37 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeSecurityGroupReq.class),
             f -> f.withMarshaller(ChangeSecurityGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAiOpsRequest, CreateAiOpsResponse> createAiOps = genForcreateAiOps();
+
+    private static HttpRequestDef<CreateAiOpsRequest, CreateAiOpsResponse> genForcreateAiOps() {
+        // basic
+        HttpRequestDef.Builder<CreateAiOpsRequest, CreateAiOpsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAiOpsRequest.class, CreateAiOpsResponse.class)
+                .withName("CreateAiOps")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ai-ops")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAiOpsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<CreateAiOpsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAiOpsRequestBody.class),
+            f -> f.withMarshaller(CreateAiOpsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -435,6 +510,38 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateElbListenerRequest, CreateElbListenerResponse> createElbListener =
+        genForcreateElbListener();
+
+    private static HttpRequestDef<CreateElbListenerRequest, CreateElbListenerResponse> genForcreateElbListener() {
+        // basic
+        HttpRequestDef.Builder<CreateElbListenerRequest, CreateElbListenerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateElbListenerRequest.class, CreateElbListenerResponse.class)
+                .withName("CreateElbListener")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/es-listeners")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateElbListenerRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<CreateEsListenerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateEsListenerRequestBody.class),
+            f -> f.withMarshaller(CreateElbListenerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateLoadIkThesaurusRequest, CreateLoadIkThesaurusResponse> createLoadIkThesaurus =
         genForcreateLoadIkThesaurus();
 
@@ -517,6 +624,37 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(CreateSnapshotReq.class),
             f -> f.withMarshaller(CreateSnapshotRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAiOpsRequest, DeleteAiOpsResponse> deleteAiOps = genFordeleteAiOps();
+
+    private static HttpRequestDef<DeleteAiOpsRequest, DeleteAiOpsResponse> genFordeleteAiOps() {
+        // basic
+        HttpRequestDef.Builder<DeleteAiOpsRequest, DeleteAiOpsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAiOpsRequest.class, DeleteAiOpsResponse.class)
+                .withName("DeleteAiOps")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ai-ops/{aiops_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAiOpsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("aiops_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAiOpsRequest::getAiopsId, (req, v) -> {
+                req.setAiopsId(v);
             }));
 
         // response
@@ -662,6 +800,76 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<EnableOrDisableElbRequest, EnableOrDisableElbResponse> enableOrDisableElb =
+        genForenableOrDisableElb();
+
+    private static HttpRequestDef<EnableOrDisableElbRequest, EnableOrDisableElbResponse> genForenableOrDisableElb() {
+        // basic
+        HttpRequestDef.Builder<EnableOrDisableElbRequest, EnableOrDisableElbResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableOrDisableElbRequest.class, EnableOrDisableElbResponse.class)
+                .withName("EnableOrDisableElb")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/loadbalancers/es-switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableOrDisableElbRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<UpdateEsElbRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateEsElbRequestBody.class),
+            f -> f.withMarshaller(EnableOrDisableElbRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiOpsRequest, ListAiOpsResponse> listAiOps = genForlistAiOps();
+
+    private static HttpRequestDef<ListAiOpsRequest, ListAiOpsResponse> genForlistAiOps() {
+        // basic
+        HttpRequestDef.Builder<ListAiOpsRequest, ListAiOpsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiOpsRequest.class, ListAiOpsResponse.class)
+                .withName("ListAiOps")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ai-ops")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiOpsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiOpsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiOpsRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClustersDetailsRequest, ListClustersDetailsResponse> listClustersDetails =
         genForlistClustersDetails();
 
@@ -719,6 +927,54 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListElbCertsRequest, ListElbCertsResponse> listElbCerts = genForlistElbCerts();
+
+    private static HttpRequestDef<ListElbCertsRequest, ListElbCertsResponse> genForlistElbCerts() {
+        // basic
+        HttpRequestDef.Builder<ListElbCertsRequest, ListElbCertsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListElbCertsRequest.class, ListElbCertsResponse.class)
+                .withName("ListElbCerts")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/elb/certificates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListElbCertsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListElbsRequest, ListElbsResponse> listElbs = genForlistElbs();
+
+    private static HttpRequestDef<ListElbsRequest, ListElbsResponse> genForlistElbs() {
+        // basic
+        HttpRequestDef.Builder<ListElbsRequest, ListElbsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListElbsRequest.class, ListElbsResponse.class)
+                .withName("ListElbs")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/loadbalancers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListElbsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
 
     private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
@@ -730,6 +986,37 @@ public class CssMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImagesRequest, ListImagesResponse> listImages = genForlistImages();
+
+    private static HttpRequestDef<ListImagesRequest, ListImagesResponse> genForlistImages() {
+        // basic
+        HttpRequestDef.Builder<ListImagesRequest, ListImagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImagesRequest.class, ListImagesResponse.class)
+                .withName("ListImages")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/target/{upgrade_type}/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("upgrade_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImagesRequest::getUpgradeType, (req, v) -> {
+                req.setUpgradeType(v);
+            }));
 
         // response
 
@@ -767,6 +1054,31 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListLogsJobRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSmnTopicsRequest, ListSmnTopicsResponse> listSmnTopics =
+        genForlistSmnTopics();
+
+    private static HttpRequestDef<ListSmnTopicsRequest, ListSmnTopicsResponse> genForlistSmnTopics() {
+        // basic
+        HttpRequestDef.Builder<ListSmnTopicsRequest, ListSmnTopicsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSmnTopicsRequest.class, ListSmnTopicsResponse.class)
+                .withName("ListSmnTopics")
+                .withUri("/v1.0/{project_id}/domains/{domain_id}/ai-ops/smn-topics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmnTopicsRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
             }));
 
         // response
@@ -957,6 +1269,45 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RetryUpgradeTaskRequest, RetryUpgradeTaskResponse> retryUpgradeTask =
+        genForretryUpgradeTask();
+
+    private static HttpRequestDef<RetryUpgradeTaskRequest, RetryUpgradeTaskResponse> genForretryUpgradeTask() {
+        // basic
+        HttpRequestDef.Builder<RetryUpgradeTaskRequest, RetryUpgradeTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RetryUpgradeTaskRequest.class, RetryUpgradeTaskResponse.class)
+                .withName("RetryUpgradeTask")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/upgrade/{action_id}/retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryUpgradeTaskRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("action_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryUpgradeTaskRequest::getActionId, (req, v) -> {
+                req.setActionId(v);
+            }));
+        builder.<String>withRequestField("retry_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryUpgradeTaskRequest::getRetryMode, (req, v) -> {
+                req.setRetryMode(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAutoCreatePolicyRequest, ShowAutoCreatePolicyResponse> showAutoCreatePolicy =
         genForshowAutoCreatePolicy();
 
@@ -1032,6 +1383,31 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterTagRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowElbDetailRequest, ShowElbDetailResponse> showElbDetail =
+        genForshowElbDetail();
+
+    private static HttpRequestDef<ShowElbDetailRequest, ShowElbDetailResponse> genForshowElbDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowElbDetailRequest, ShowElbDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowElbDetailRequest.class, ShowElbDetailResponse.class)
+                .withName("ShowElbDetail")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/es-listeners")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowElbDetailRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
             }));
 
         // response
@@ -1434,6 +1810,45 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAzByInstanceTypeRequest, UpdateAzByInstanceTypeResponse> updateAzByInstanceType =
+        genForupdateAzByInstanceType();
+
+    private static HttpRequestDef<UpdateAzByInstanceTypeRequest, UpdateAzByInstanceTypeResponse> genForupdateAzByInstanceType() {
+        // basic
+        HttpRequestDef.Builder<UpdateAzByInstanceTypeRequest, UpdateAzByInstanceTypeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateAzByInstanceTypeRequest.class, UpdateAzByInstanceTypeResponse.class)
+            .withName("UpdateAzByInstanceType")
+            .withUri("/v1.0/{project_id}/clusters/{cluster_id}/inst-type/{inst_type}/azmigrate")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAzByInstanceTypeRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<UpdateAzByInstanceTypeRequest.InstTypeEnum>withRequestField("inst_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAzByInstanceTypeRequest.InstTypeEnum.class),
+            f -> f.withMarshaller(UpdateAzByInstanceTypeRequest::getInstType, (req, v) -> {
+                req.setInstType(v);
+            }));
+        builder.<UpdateAzByInstanceTypeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAzByInstanceTypeReq.class),
+            f -> f.withMarshaller(UpdateAzByInstanceTypeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateBatchClustersTagsRequest, UpdateBatchClustersTagsResponse> updateBatchClustersTags =
         genForupdateBatchClustersTags();
 
@@ -1497,6 +1912,45 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateClusterNameReq.class),
             f -> f.withMarshaller(UpdateClusterNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEsListenerRequest, UpdateEsListenerResponse> updateEsListener =
+        genForupdateEsListener();
+
+    private static HttpRequestDef<UpdateEsListenerRequest, UpdateEsListenerResponse> genForupdateEsListener() {
+        // basic
+        HttpRequestDef.Builder<UpdateEsListenerRequest, UpdateEsListenerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEsListenerRequest.class, UpdateEsListenerResponse.class)
+                .withName("UpdateEsListener")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/es-listeners/{listener_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEsListenerRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("listener_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEsListenerRequest::getListenerId, (req, v) -> {
+                req.setListenerId(v);
+            }));
+        builder.<UpdateEsListenerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateEsListenerRequestBody.class),
+            f -> f.withMarshaller(UpdateEsListenerRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1667,6 +2121,13 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<UpdateInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstanceRequestBody.class),
+            f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1996,6 +2457,90 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpgradeCoreRequest, UpgradeCoreResponse> upgradeCore = genForupgradeCore();
+
+    private static HttpRequestDef<UpgradeCoreRequest, UpgradeCoreResponse> genForupgradeCore() {
+        // basic
+        HttpRequestDef.Builder<UpgradeCoreRequest, UpgradeCoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeCoreRequest.class, UpgradeCoreResponse.class)
+                .withName("UpgradeCore")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/inst-type/{inst_type}/image/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeCoreRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("inst_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeCoreRequest::getInstType, (req, v) -> {
+                req.setInstType(v);
+            }));
+        builder.<UpgradingTheKernelBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradingTheKernelBody.class),
+            f -> f.withMarshaller(UpgradeCoreRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeDetailRequest, UpgradeDetailResponse> upgradeDetail =
+        genForupgradeDetail();
+
+    private static HttpRequestDef<UpgradeDetailRequest, UpgradeDetailResponse> genForupgradeDetail() {
+        // basic
+        HttpRequestDef.Builder<UpgradeDetailRequest, UpgradeDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, UpgradeDetailRequest.class, UpgradeDetailResponse.class)
+                .withName("UpgradeDetail")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/upgrade/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDetailRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpgradeDetailRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpgradeDetailRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("action_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDetailRequest::getActionMode, (req, v) -> {
+                req.setActionMode(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartKibanaPublicRequest, StartKibanaPublicResponse> startKibanaPublic =
         genForstartKibanaPublic();
 
@@ -2248,6 +2793,37 @@ public class CssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteConfigRequest, DeleteConfigResponse> deleteConfig = genFordeleteConfig();
+
+    private static HttpRequestDef<DeleteConfigRequest, DeleteConfigResponse> genFordeleteConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteConfigRequest, DeleteConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteConfigRequest.class, DeleteConfigResponse.class)
+                .withName("DeleteConfig")
+                .withUri("/v2.0/{project_id}/clusters/{cluster_id}/lgsconf/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConfigRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<DeleteConfReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteConfReq.class),
+            f -> f.withMarshaller(DeleteConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate =
         genFordeleteTemplate();
 
@@ -2290,6 +2866,51 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListActionsRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCertsRequest, ListCertsResponse> listCerts = genForlistCerts();
+
+    private static HttpRequestDef<ListCertsRequest, ListCertsResponse> genForlistCerts() {
+        // basic
+        HttpRequestDef.Builder<ListCertsRequest, ListCertsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCertsRequest.class, ListCertsResponse.class)
+                .withName("ListCerts")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/certs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertsRequest::getStart, (req, v) -> {
+                req.setStart(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("certsType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertsRequest::getCertsType, (req, v) -> {
+                req.setCertsType(v);
             }));
 
         // response
@@ -2459,6 +3080,38 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartPipelineReq.class),
             f -> f.withMarshaller(StartPipelineRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopHotPipelineRequest, StopHotPipelineResponse> stopHotPipeline =
+        genForstopHotPipeline();
+
+    private static HttpRequestDef<StopHotPipelineRequest, StopHotPipelineResponse> genForstopHotPipeline() {
+        // basic
+        HttpRequestDef.Builder<StopHotPipelineRequest, StopHotPipelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopHotPipelineRequest.class, StopHotPipelineResponse.class)
+                .withName("StopHotPipeline")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/lgsconf/hot-stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopHotPipelineRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<StopHotPipelineRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StopHotPipelineRequestBody.class),
+            f -> f.withMarshaller(StopHotPipelineRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

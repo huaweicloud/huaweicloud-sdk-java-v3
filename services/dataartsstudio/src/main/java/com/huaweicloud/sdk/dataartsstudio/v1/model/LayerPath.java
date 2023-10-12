@@ -16,6 +16,11 @@ public class LayerPath {
     private String catalogId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
 
     private Integer order;
@@ -35,6 +40,23 @@ public class LayerPath {
 
     public void setCatalogId(String catalogId) {
         this.catalogId = catalogId;
+    }
+
+    public LayerPath withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 路径名
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public LayerPath withOrder(Integer order) {
@@ -63,12 +85,13 @@ public class LayerPath {
             return false;
         }
         LayerPath that = (LayerPath) obj;
-        return Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.order, that.order);
+        return Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.order, that.order);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(catalogId, order);
+        return Objects.hash(catalogId, name, order);
     }
 
     @Override
@@ -76,6 +99,7 @@ public class LayerPath {
         StringBuilder sb = new StringBuilder();
         sb.append("class LayerPath {\n");
         sb.append("    catalogId: ").append(toIndentedString(catalogId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("}");
         return sb.toString();

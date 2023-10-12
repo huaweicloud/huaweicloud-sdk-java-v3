@@ -182,7 +182,7 @@ public class UpdateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     }
 
     /**
-     * [作用的APP或租户的名称](tag:hws;hws_hk;hcs;fcs;g42;)[作用的APP或租户ID](tag:Site)
+     * [作用的APP或租户的名称](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)[作用的APP或租户ID](tag:Site)
      * @return objectName
      */
     public String getObjectName() {

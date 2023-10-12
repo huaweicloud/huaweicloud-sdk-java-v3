@@ -12,6 +12,7 @@ import com.huaweicloud.sdk.ocr.v1.model.BusinessCardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.BusinessLicenseRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.CambodianIdCardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.ChileIdCardRequestBody;
+import com.huaweicloud.sdk.ocr.v1.model.ColombiaIdCardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.CustomTemplateRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.DriverLicenseRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.ExitEntryPermitRequestBody;
@@ -51,6 +52,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeCambodianIdCardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeCambodianIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeChileIdCardRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeChileIdCardResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeColombiaIdCardRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeColombiaIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeCustomTemplateRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeCustomTemplateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeDriverLicenseRequest;
@@ -368,6 +371,38 @@ public class OcrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChileIdCardRequestBody.class),
             f -> f.withMarshaller(RecognizeChileIdCardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeColombiaIdCardRequest, RecognizeColombiaIdCardResponse> recognizeColombiaIdCard =
+        genForrecognizeColombiaIdCard();
+
+    private static HttpRequestDef<RecognizeColombiaIdCardRequest, RecognizeColombiaIdCardResponse> genForrecognizeColombiaIdCard() {
+        // basic
+        HttpRequestDef.Builder<RecognizeColombiaIdCardRequest, RecognizeColombiaIdCardResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeColombiaIdCardRequest.class, RecognizeColombiaIdCardResponse.class)
+            .withName("RecognizeColombiaIdCard")
+            .withUri("/v2/{project_id}/ocr/colombia-id-card")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeColombiaIdCardRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<ColombiaIdCardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ColombiaIdCardRequestBody.class),
+            f -> f.withMarshaller(RecognizeColombiaIdCardRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

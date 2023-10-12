@@ -11,17 +11,17 @@ import java.util.Objects;
 public class ChartConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "can_sort")
+    @JsonProperty(value = "canSort")
 
     private Boolean canSort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "can_search")
+    @JsonProperty(value = "canSearch")
 
     private Boolean canSearch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "pageSize")
 
     private Integer pageSize;
 

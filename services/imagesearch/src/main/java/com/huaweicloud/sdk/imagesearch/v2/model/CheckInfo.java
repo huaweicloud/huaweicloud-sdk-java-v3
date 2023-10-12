@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.imagesearch.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,19 +14,19 @@ public class CheckInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
 
-    private BigDecimal totalNum;
+    private Integer totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_num")
 
-    private BigDecimal returnNum;
+    private Integer returnNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_item")
 
     private SearchAfterParam lastItem;
 
-    public CheckInfo withTotalNum(BigDecimal totalNum) {
+    public CheckInfo withTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
         return this;
     }
@@ -36,15 +35,15 @@ public class CheckInfo {
      * 符合条件的结果总数。
      * @return totalNum
      */
-    public BigDecimal getTotalNum() {
+    public Integer getTotalNum() {
         return totalNum;
     }
 
-    public void setTotalNum(BigDecimal totalNum) {
+    public void setTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
     }
 
-    public CheckInfo withReturnNum(BigDecimal returnNum) {
+    public CheckInfo withReturnNum(Integer returnNum) {
         this.returnNum = returnNum;
         return this;
     }
@@ -53,11 +52,11 @@ public class CheckInfo {
      * 返回的结果总数。
      * @return returnNum
      */
-    public BigDecimal getReturnNum() {
+    public Integer getReturnNum() {
         return returnNum;
     }
 
-    public void setReturnNum(BigDecimal returnNum) {
+    public void setReturnNum(Integer returnNum) {
         this.returnNum = returnNum;
     }
 

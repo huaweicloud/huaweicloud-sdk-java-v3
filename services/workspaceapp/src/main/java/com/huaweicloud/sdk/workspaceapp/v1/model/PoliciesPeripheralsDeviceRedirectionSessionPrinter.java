@@ -19,7 +19,7 @@ public class PoliciesPeripheralsDeviceRedirectionSessionPrinter {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
-    private PoliciesPeripheralsDeviceRedirectionSessionPrinterOptions options;
+    private SessionPrinterOptions options;
 
     public PoliciesPeripheralsDeviceRedirectionSessionPrinter withSessionPrinterEnable(Boolean sessionPrinterEnable) {
         this.sessionPrinterEnable = sessionPrinterEnable;
@@ -38,16 +38,15 @@ public class PoliciesPeripheralsDeviceRedirectionSessionPrinter {
         this.sessionPrinterEnable = sessionPrinterEnable;
     }
 
-    public PoliciesPeripheralsDeviceRedirectionSessionPrinter withOptions(
-        PoliciesPeripheralsDeviceRedirectionSessionPrinterOptions options) {
+    public PoliciesPeripheralsDeviceRedirectionSessionPrinter withOptions(SessionPrinterOptions options) {
         this.options = options;
         return this;
     }
 
     public PoliciesPeripheralsDeviceRedirectionSessionPrinter withOptions(
-        Consumer<PoliciesPeripheralsDeviceRedirectionSessionPrinterOptions> optionsSetter) {
+        Consumer<SessionPrinterOptions> optionsSetter) {
         if (this.options == null) {
-            this.options = new PoliciesPeripheralsDeviceRedirectionSessionPrinterOptions();
+            this.options = new SessionPrinterOptions();
             optionsSetter.accept(this.options);
         }
 
@@ -58,11 +57,11 @@ public class PoliciesPeripheralsDeviceRedirectionSessionPrinter {
      * Get options
      * @return options
      */
-    public PoliciesPeripheralsDeviceRedirectionSessionPrinterOptions getOptions() {
+    public SessionPrinterOptions getOptions() {
         return options;
     }
 
-    public void setOptions(PoliciesPeripheralsDeviceRedirectionSessionPrinterOptions options) {
+    public void setOptions(SessionPrinterOptions options) {
         this.options = options;
     }
 

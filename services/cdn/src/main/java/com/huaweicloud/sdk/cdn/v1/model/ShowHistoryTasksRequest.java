@@ -126,7 +126,7 @@ public class ShowHistoryTasksRequest {
     private String orderType;
 
     /**
-     * 默认是文件file。file：文件,directory：目录。
+     * file：文件,directory：目录。
      */
     public static final class FileTypeEnum {
 
@@ -199,6 +199,81 @@ public class ShowHistoryTasksRequest {
     @JsonProperty(value = "file_type")
 
     private FileTypeEnum fileType;
+
+    /**
+     * 任务类型，refresh：刷新任务；preheating：预热任务
+     */
+    public static final class TaskTypeEnum {
+
+        /**
+         * Enum REFRESH for value: "refresh"
+         */
+        public static final TaskTypeEnum REFRESH = new TaskTypeEnum("refresh");
+
+        /**
+         * Enum PREHEATING for value: "preheating"
+         */
+        public static final TaskTypeEnum PREHEATING = new TaskTypeEnum("preheating");
+
+        private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TaskTypeEnum> createStaticFields() {
+            Map<String, TaskTypeEnum> map = new HashMap<>();
+            map.put("refresh", REFRESH);
+            map.put("preheating", PREHEATING);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TaskTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TaskTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
+        }
+
+        public static TaskTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TaskTypeEnum) {
+                return this.value.equals(((TaskTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_type")
+
+    private TaskTypeEnum taskType;
 
     public ShowHistoryTasksRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -346,7 +421,7 @@ public class ShowHistoryTasksRequest {
     }
 
     /**
-     * 默认是文件file。file：文件,directory：目录。
+     * file：文件,directory：目录。
      * @return fileType
      */
     public FileTypeEnum getFileType() {
@@ -355,6 +430,23 @@ public class ShowHistoryTasksRequest {
 
     public void setFileType(FileTypeEnum fileType) {
         this.fileType = fileType;
+    }
+
+    public ShowHistoryTasksRequest withTaskType(TaskTypeEnum taskType) {
+        this.taskType = taskType;
+        return this;
+    }
+
+    /**
+     * 任务类型，refresh：刷新任务；preheating：预热任务
+     * @return taskType
+     */
+    public TaskTypeEnum getTaskType() {
+        return taskType;
+    }
+
+    public void setTaskType(TaskTypeEnum taskType) {
+        this.taskType = taskType;
     }
 
     @Override
@@ -370,7 +462,8 @@ public class ShowHistoryTasksRequest {
             && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNumber, that.pageNumber)
             && Objects.equals(this.status, that.status) && Objects.equals(this.startDate, that.startDate)
             && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.orderField, that.orderField)
-            && Objects.equals(this.orderType, that.orderType) && Objects.equals(this.fileType, that.fileType);
+            && Objects.equals(this.orderType, that.orderType) && Objects.equals(this.fileType, that.fileType)
+            && Objects.equals(this.taskType, that.taskType);
     }
 
     @Override
@@ -383,7 +476,8 @@ public class ShowHistoryTasksRequest {
             endDate,
             orderField,
             orderType,
-            fileType);
+            fileType,
+            taskType);
     }
 
     @Override
@@ -399,6 +493,7 @@ public class ShowHistoryTasksRequest {
         sb.append("    orderField: ").append(toIndentedString(orderField)).append("\n");
         sb.append("    orderType: ").append(toIndentedString(orderType)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
+        sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

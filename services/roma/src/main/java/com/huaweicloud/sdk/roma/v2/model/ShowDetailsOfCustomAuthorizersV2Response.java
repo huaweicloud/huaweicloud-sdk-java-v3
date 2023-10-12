@@ -101,7 +101,7 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
     private TypeEnum type;
 
     /**
-     * 自定义认证函数类型： - LD：自定义后端函数 - FUNC：函数服务函数
+     * 自定义认证函数类型： - LD：自定义后端函数 - FUNC：[函数服务函数](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)[暂不支持](tag:Site)
      */
     public static final class AuthorizerTypeEnum {
 
@@ -179,6 +179,16 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
     @JsonProperty(value = "authorizer_uri")
 
     private String authorizerUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorizer_version")
+
+    private String authorizerVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorizer_alias_uri")
+
+    private String authorizerAliasUri;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "identities")
@@ -265,7 +275,7 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
     }
 
     /**
-     * 自定义认证函数类型： - LD：自定义后端函数 - FUNC：函数服务函数
+     * 自定义认证函数类型： - LD：自定义后端函数 - FUNC：[函数服务函数](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)[暂不支持](tag:Site)
      * @return authorizerType
      */
     public AuthorizerTypeEnum getAuthorizerType() {
@@ -291,6 +301,40 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
 
     public void setAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
+    }
+
+    public ShowDetailsOfCustomAuthorizersV2Response withAuthorizerVersion(String authorizerVersion) {
+        this.authorizerVersion = authorizerVersion;
+        return this;
+    }
+
+    /**
+     * 函数版本。  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return authorizerVersion
+     */
+    public String getAuthorizerVersion() {
+        return authorizerVersion;
+    }
+
+    public void setAuthorizerVersion(String authorizerVersion) {
+        this.authorizerVersion = authorizerVersion;
+    }
+
+    public ShowDetailsOfCustomAuthorizersV2Response withAuthorizerAliasUri(String authorizerAliasUri) {
+        this.authorizerAliasUri = authorizerAliasUri;
+        return this;
+    }
+
+    /**
+     * 函数别名地址。  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * @return authorizerAliasUri
+     */
+    public String getAuthorizerAliasUri() {
+        return authorizerAliasUri;
+    }
+
+    public void setAuthorizerAliasUri(String authorizerAliasUri) {
+        this.authorizerAliasUri = authorizerAliasUri;
     }
 
     public ShowDetailsOfCustomAuthorizersV2Response withIdentities(List<Identity> identities) {
@@ -474,6 +518,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.authorizerType, that.authorizerType)
             && Objects.equals(this.authorizerUri, that.authorizerUri)
+            && Objects.equals(this.authorizerVersion, that.authorizerVersion)
+            && Objects.equals(this.authorizerAliasUri, that.authorizerAliasUri)
             && Objects.equals(this.identities, that.identities) && Objects.equals(this.ttl, that.ttl)
             && Objects.equals(this.userData, that.userData) && Objects.equals(this.ldApiId, that.ldApiId)
             && Objects.equals(this.needBody, that.needBody) && Objects.equals(this.id, that.id)
@@ -487,6 +533,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
             type,
             authorizerType,
             authorizerUri,
+            authorizerVersion,
+            authorizerAliasUri,
             identities,
             ttl,
             userData,
@@ -506,6 +554,8 @@ public class ShowDetailsOfCustomAuthorizersV2Response extends SdkResponse {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    authorizerType: ").append(toIndentedString(authorizerType)).append("\n");
         sb.append("    authorizerUri: ").append(toIndentedString(authorizerUri)).append("\n");
+        sb.append("    authorizerVersion: ").append(toIndentedString(authorizerVersion)).append("\n");
+        sb.append("    authorizerAliasUri: ").append(toIndentedString(authorizerAliasUri)).append("\n");
         sb.append("    identities: ").append(toIndentedString(identities)).append("\n");
         sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");

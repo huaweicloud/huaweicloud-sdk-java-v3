@@ -39,6 +39,11 @@ public class PostAlarmsReqV2 {
     private List<List<Dimension>> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_template_id")
+
+    private String alarmTemplateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
     private List<Policy> policies = null;
@@ -82,11 +87,6 @@ public class PostAlarmsReqV2 {
     @JsonProperty(value = "notification_enabled")
 
     private Boolean notificationEnabled;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alarm_template_id")
-
-    private String alarmTemplateId;
 
     public PostAlarmsReqV2 withName(String name) {
         this.name = name;
@@ -189,6 +189,23 @@ public class PostAlarmsReqV2 {
         this.resources = resources;
     }
 
+    public PostAlarmsReqV2 withAlarmTemplateId(String alarmTemplateId) {
+        this.alarmTemplateId = alarmTemplateId;
+        return this;
+    }
+
+    /**
+     * 告警规则关联告警模板ID
+     * @return alarmTemplateId
+     */
+    public String getAlarmTemplateId() {
+        return alarmTemplateId;
+    }
+
+    public void setAlarmTemplateId(String alarmTemplateId) {
+        this.alarmTemplateId = alarmTemplateId;
+    }
+
     public PostAlarmsReqV2 withPolicies(List<Policy> policies) {
         this.policies = policies;
         return this;
@@ -211,7 +228,7 @@ public class PostAlarmsReqV2 {
     }
 
     /**
-     * 告警策略
+     * 告警策略，当alarm_template_id字段为空时必填，不为空时不填
      * @return policies
      */
     public List<Policy> getPolicies() {
@@ -390,23 +407,6 @@ public class PostAlarmsReqV2 {
         this.notificationEnabled = notificationEnabled;
     }
 
-    public PostAlarmsReqV2 withAlarmTemplateId(String alarmTemplateId) {
-        this.alarmTemplateId = alarmTemplateId;
-        return this;
-    }
-
-    /**
-     * 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化
-     * @return alarmTemplateId
-     */
-    public String getAlarmTemplateId() {
-        return alarmTemplateId;
-    }
-
-    public void setAlarmTemplateId(String alarmTemplateId) {
-        this.alarmTemplateId = alarmTemplateId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -419,15 +419,16 @@ public class PostAlarmsReqV2 {
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.namespace, that.namespace)
             && Objects.equals(this.resourceGroupId, that.resourceGroupId)
-            && Objects.equals(this.resources, that.resources) && Objects.equals(this.policies, that.policies)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.alarmNotifications, that.alarmNotifications)
+            && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.alarmTemplateId, that.alarmTemplateId)
+            && Objects.equals(this.policies, that.policies) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.alarmNotifications, that.alarmNotifications)
             && Objects.equals(this.okNotifications, that.okNotifications)
             && Objects.equals(this.notificationBeginTime, that.notificationBeginTime)
             && Objects.equals(this.notificationEndTime, that.notificationEndTime)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enabled, that.enabled)
-            && Objects.equals(this.notificationEnabled, that.notificationEnabled)
-            && Objects.equals(this.alarmTemplateId, that.alarmTemplateId);
+            && Objects.equals(this.notificationEnabled, that.notificationEnabled);
     }
 
     @Override
@@ -437,6 +438,7 @@ public class PostAlarmsReqV2 {
             namespace,
             resourceGroupId,
             resources,
+            alarmTemplateId,
             policies,
             type,
             alarmNotifications,
@@ -445,8 +447,7 @@ public class PostAlarmsReqV2 {
             notificationEndTime,
             enterpriseProjectId,
             enabled,
-            notificationEnabled,
-            alarmTemplateId);
+            notificationEnabled);
     }
 
     @Override
@@ -458,6 +459,7 @@ public class PostAlarmsReqV2 {
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    resourceGroupId: ").append(toIndentedString(resourceGroupId)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    alarmTemplateId: ").append(toIndentedString(alarmTemplateId)).append("\n");
         sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    alarmNotifications: ").append(toIndentedString(alarmNotifications)).append("\n");
@@ -467,7 +469,6 @@ public class PostAlarmsReqV2 {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    notificationEnabled: ").append(toIndentedString(notificationEnabled)).append("\n");
-        sb.append("    alarmTemplateId: ").append(toIndentedString(alarmTemplateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

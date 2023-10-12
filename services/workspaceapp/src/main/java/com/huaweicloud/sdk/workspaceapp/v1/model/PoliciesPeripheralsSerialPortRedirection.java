@@ -19,7 +19,7 @@ public class PoliciesPeripheralsSerialPortRedirection {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "options")
 
-    private PoliciesPeripheralsSerialPortRedirectionOptions options;
+    private SerialPortRedirectionOptions options;
 
     public PoliciesPeripheralsSerialPortRedirection withSerialPortEnable(Boolean serialPortEnable) {
         this.serialPortEnable = serialPortEnable;
@@ -38,16 +38,14 @@ public class PoliciesPeripheralsSerialPortRedirection {
         this.serialPortEnable = serialPortEnable;
     }
 
-    public PoliciesPeripheralsSerialPortRedirection withOptions(
-        PoliciesPeripheralsSerialPortRedirectionOptions options) {
+    public PoliciesPeripheralsSerialPortRedirection withOptions(SerialPortRedirectionOptions options) {
         this.options = options;
         return this;
     }
 
-    public PoliciesPeripheralsSerialPortRedirection withOptions(
-        Consumer<PoliciesPeripheralsSerialPortRedirectionOptions> optionsSetter) {
+    public PoliciesPeripheralsSerialPortRedirection withOptions(Consumer<SerialPortRedirectionOptions> optionsSetter) {
         if (this.options == null) {
-            this.options = new PoliciesPeripheralsSerialPortRedirectionOptions();
+            this.options = new SerialPortRedirectionOptions();
             optionsSetter.accept(this.options);
         }
 
@@ -58,11 +56,11 @@ public class PoliciesPeripheralsSerialPortRedirection {
      * Get options
      * @return options
      */
-    public PoliciesPeripheralsSerialPortRedirectionOptions getOptions() {
+    public SerialPortRedirectionOptions getOptions() {
         return options;
     }
 
-    public void setOptions(PoliciesPeripheralsSerialPortRedirectionOptions options) {
+    public void setOptions(SerialPortRedirectionOptions options) {
         this.options = options;
     }
 

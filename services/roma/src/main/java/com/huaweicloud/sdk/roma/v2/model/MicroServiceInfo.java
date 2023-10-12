@@ -22,8 +22,13 @@ public class MicroServiceInfo {
 
     private String id;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（暂不支持）
      */
     public static final class ServiceTypeEnum {
 
@@ -32,11 +37,17 @@ public class MicroServiceInfo {
          */
         public static final ServiceTypeEnum CSE = new ServiceTypeEnum("CSE");
 
+        /**
+         * Enum CCE for value: "CCE"
+         */
+        public static final ServiceTypeEnum CCE = new ServiceTypeEnum("CCE");
+
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceTypeEnum> createStaticFields() {
             Map<String, ServiceTypeEnum> map = new HashMap<>();
             map.put("CSE", CSE);
+            map.put("CCE", CCE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -97,6 +108,11 @@ public class MicroServiceInfo {
     private MicroServiceInfoCSE cseInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cce_info")
+
+    private MicroServiceInfoCCE cceInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private OffsetDateTime updateTime;
@@ -123,13 +139,30 @@ public class MicroServiceInfo {
         this.id = id;
     }
 
+    public MicroServiceInfo withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例编号
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
     public MicroServiceInfo withServiceType(ServiceTypeEnum serviceType) {
         this.serviceType = serviceType;
         return this;
     }
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（暂不支持）
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -164,6 +197,32 @@ public class MicroServiceInfo {
 
     public void setCseInfo(MicroServiceInfoCSE cseInfo) {
         this.cseInfo = cseInfo;
+    }
+
+    public MicroServiceInfo withCceInfo(MicroServiceInfoCCE cceInfo) {
+        this.cceInfo = cceInfo;
+        return this;
+    }
+
+    public MicroServiceInfo withCceInfo(Consumer<MicroServiceInfoCCE> cceInfoSetter) {
+        if (this.cceInfo == null) {
+            this.cceInfo = new MicroServiceInfoCCE();
+            cceInfoSetter.accept(this.cceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cceInfo
+     * @return cceInfo
+     */
+    public MicroServiceInfoCCE getCceInfo() {
+        return cceInfo;
+    }
+
+    public void setCceInfo(MicroServiceInfoCCE cceInfo) {
+        this.cceInfo = cceInfo;
     }
 
     public MicroServiceInfo withUpdateTime(OffsetDateTime updateTime) {
@@ -209,14 +268,15 @@ public class MicroServiceInfo {
             return false;
         }
         MicroServiceInfo that = (MicroServiceInfo) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.serviceType, that.serviceType)
-            && Objects.equals(this.cseInfo, that.cseInfo) && Objects.equals(this.updateTime, that.updateTime)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.cseInfo, that.cseInfo)
+            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, serviceType, cseInfo, updateTime, createTime);
+        return Objects.hash(id, instanceId, serviceType, cseInfo, cceInfo, updateTime, createTime);
     }
 
     @Override
@@ -224,8 +284,10 @@ public class MicroServiceInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class MicroServiceInfo {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
+        sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");

@@ -1,12 +1,17 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -14,6 +19,101 @@ import java.util.function.Consumer;
  * Response Object
  */
 public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    /**
+     * 证书类型  - global：全局证书 - instance：实例证书
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum GLOBAL for value: "global"
+         */
+        public static final TypeEnum GLOBAL = new TypeEnum("global");
+
+        /**
+         * Enum INSTANCE for value: "instance"
+         */
+        public static final TypeEnum INSTANCE = new TypeEnum("instance");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("global", GLOBAL);
+            map.put("instance", INSTANCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common_name")
@@ -24,6 +124,112 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     @JsonProperty(value = "san")
 
     private List<String> san = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "not_after")
+
+    private OffsetDateTime notAfter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "signature_algorithm")
+
+    private String signatureAlgorithm;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private OffsetDateTime createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private OffsetDateTime updateTime;
+
+    /**
+     * 证书算法类型： - RSA - ECC - SM2  [暂不支持](tag:hws;hws_hk;g42;Site)
+     */
+    public static final class AlgorithmTypeEnum {
+
+        /**
+         * Enum RSA for value: "RSA"
+         */
+        public static final AlgorithmTypeEnum RSA = new AlgorithmTypeEnum("RSA");
+
+        /**
+         * Enum ECC for value: "ECC"
+         */
+        public static final AlgorithmTypeEnum ECC = new AlgorithmTypeEnum("ECC");
+
+        /**
+         * Enum SM2 for value: "SM2"
+         */
+        public static final AlgorithmTypeEnum SM2 = new AlgorithmTypeEnum("SM2");
+
+        private static final Map<String, AlgorithmTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AlgorithmTypeEnum> createStaticFields() {
+            Map<String, AlgorithmTypeEnum> map = new HashMap<>();
+            map.put("RSA", RSA);
+            map.put("ECC", ECC);
+            map.put("SM2", SM2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AlgorithmTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AlgorithmTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlgorithmTypeEnum(value));
+        }
+
+        public static AlgorithmTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AlgorithmTypeEnum) {
+                return this.value.equals(((AlgorithmTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "algorithm_type")
+
+    private AlgorithmTypeEnum algorithmType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_has_trusted_root_ca")
+
+    private Boolean isHasTrustedRootCa;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
@@ -61,11 +267,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     private OffsetDateTime notBefore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "not_after")
-
-    private OffsetDateTime notAfter;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial_number")
 
     private String serialNumber;
@@ -75,10 +276,90 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     private List<String> issuer = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "signature_algorithm")
+    public ShowDetailsOfDomainNameCertificateV2Response withId(String id) {
+        this.id = id;
+        return this;
+    }
 
-    private String signatureAlgorithm;
+    /**
+     * 证书ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 证书名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 证书类型  - global：全局证书 - instance：实例证书
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例编码  - `type`为`global`时，缺省为common - `type`为`instance`时，为实例编码
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 租户项目编号
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
 
     public ShowDetailsOfDomainNameCertificateV2Response withCommonName(String commonName) {
         this.commonName = commonName;
@@ -86,7 +367,7 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     /**
-     * 证书域名
+     * 域名
      * @return commonName
      */
     public String getCommonName() {
@@ -119,7 +400,7 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     /**
-     * SAN域名
+     * san扩展域名
      * @return san
      */
     public List<String> getSan() {
@@ -130,13 +411,115 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.san = san;
     }
 
+    public ShowDetailsOfDomainNameCertificateV2Response withNotAfter(OffsetDateTime notAfter) {
+        this.notAfter = notAfter;
+        return this;
+    }
+
+    /**
+     * 有效期到
+     * @return notAfter
+     */
+    public OffsetDateTime getNotAfter() {
+        return notAfter;
+    }
+
+    public void setNotAfter(OffsetDateTime notAfter) {
+        this.notAfter = notAfter;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+        return this;
+    }
+
+    /**
+     * 签名算法
+     * @return signatureAlgorithm
+     */
+    public String getSignatureAlgorithm() {
+        return signatureAlgorithm;
+    }
+
+    public void setSignatureAlgorithm(String signatureAlgorithm) {
+        this.signatureAlgorithm = signatureAlgorithm;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withCreateTime(OffsetDateTime createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * @return createTime
+     */
+    public OffsetDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(OffsetDateTime createTime) {
+        this.createTime = createTime;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 更新时间
+     * @return updateTime
+     */
+    public OffsetDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
+        return this;
+    }
+
+    /**
+     * 证书算法类型： - RSA - ECC - SM2  [暂不支持](tag:hws;hws_hk;g42;Site)
+     * @return algorithmType
+     */
+    public AlgorithmTypeEnum getAlgorithmType() {
+        return algorithmType;
+    }
+
+    public void setAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
+    }
+
+    public ShowDetailsOfDomainNameCertificateV2Response withIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+        return this;
+    }
+
+    /**
+     * 是否存在信任的根证书CA。当绑定证书存在trusted_root_ca时为true。  [暂不支持](tag:fcs;hcs;g42;Site)
+     * @return isHasTrustedRootCa
+     */
+    public Boolean getIsHasTrustedRootCa() {
+        return isHasTrustedRootCa;
+    }
+
+    public void setIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+    }
+
     public ShowDetailsOfDomainNameCertificateV2Response withVersion(Integer version) {
         this.version = version;
         return this;
     }
 
     /**
-     * 证书版本
+     * 版本
      * @return version
      */
     public Integer getVersion() {
@@ -319,7 +702,7 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     /**
-     * 证书有效期起始时间
+     * 有效期从
      * @return notBefore
      */
     public OffsetDateTime getNotBefore() {
@@ -328,23 +711,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     public void setNotBefore(OffsetDateTime notBefore) {
         this.notBefore = notBefore;
-    }
-
-    public ShowDetailsOfDomainNameCertificateV2Response withNotAfter(OffsetDateTime notAfter) {
-        this.notAfter = notAfter;
-        return this;
-    }
-
-    /**
-     * 证书有效期截止时间
-     * @return notAfter
-     */
-    public OffsetDateTime getNotAfter() {
-        return notAfter;
-    }
-
-    public void setNotAfter(OffsetDateTime notAfter) {
-        this.notAfter = notAfter;
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withSerialNumber(String serialNumber) {
@@ -397,23 +763,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.issuer = issuer;
     }
 
-    public ShowDetailsOfDomainNameCertificateV2Response withSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-        return this;
-    }
-
-    /**
-     * 签名算法
-     * @return signatureAlgorithm
-     */
-    public String getSignatureAlgorithm() {
-        return signatureAlgorithm;
-    }
-
-    public void setSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -423,20 +772,36 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
             return false;
         }
         ShowDetailsOfDomainNameCertificateV2Response that = (ShowDetailsOfDomainNameCertificateV2Response) obj;
-        return Objects.equals(this.commonName, that.commonName) && Objects.equals(this.san, that.san)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.commonName, that.commonName)
+            && Objects.equals(this.san, that.san) && Objects.equals(this.notAfter, that.notAfter)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.algorithmType, that.algorithmType)
+            && Objects.equals(this.isHasTrustedRootCa, that.isHasTrustedRootCa)
             && Objects.equals(this.version, that.version) && Objects.equals(this.organization, that.organization)
             && Objects.equals(this.organizationalUnit, that.organizationalUnit)
             && Objects.equals(this.locality, that.locality) && Objects.equals(this.state, that.state)
             && Objects.equals(this.country, that.country) && Objects.equals(this.notBefore, that.notBefore)
-            && Objects.equals(this.notAfter, that.notAfter) && Objects.equals(this.serialNumber, that.serialNumber)
-            && Objects.equals(this.issuer, that.issuer)
-            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm);
+            && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.issuer, that.issuer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(commonName,
+        return Objects.hash(id,
+            name,
+            type,
+            instanceId,
+            projectId,
+            commonName,
             san,
+            notAfter,
+            signatureAlgorithm,
+            createTime,
+            updateTime,
+            algorithmType,
+            isHasTrustedRootCa,
             version,
             organization,
             organizationalUnit,
@@ -444,18 +809,27 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
             state,
             country,
             notBefore,
-            notAfter,
             serialNumber,
-            issuer,
-            signatureAlgorithm);
+            issuer);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDetailsOfDomainNameCertificateV2Response {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
         sb.append("    san: ").append(toIndentedString(san)).append("\n");
+        sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
+        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    algorithmType: ").append(toIndentedString(algorithmType)).append("\n");
+        sb.append("    isHasTrustedRootCa: ").append(toIndentedString(isHasTrustedRootCa)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
         sb.append("    organizationalUnit: ").append(toIndentedString(organizationalUnit)).append("\n");
@@ -463,10 +837,8 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    country: ").append(toIndentedString(country)).append("\n");
         sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
-        sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
         sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
         sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
-        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -38,6 +38,11 @@ public class WebImageRequestBody {
 
     private Boolean detectFont;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detect_text_direction")
+
+    private Boolean detectTextDirection;
+
     public WebImageRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -61,7 +66,7 @@ public class WebImageRequestBody {
     }
 
     /**
-     * 与image二选一 图片的URL路径，目前支持： - 公网http/https url - OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/api-ocr/ocr_03_0132.html)。 > 说明： - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。 
+     * 与image二选一 图片的URL路径，目前支持： - 公网http/https url - OBS提供的url，使用OBS数据需要进行授权。包括对服务授权、临时授权、匿名公开授权，详情参见[配置OBS访问权限](https://support.huaweicloud.com/api-ocr/ocr_03_0132.html)。 > 说明： - 接口响应时间依赖于图片的下载时间，如果图片下载时间过长，会返回接口调用失败。 - 请保证被检测图片所在的存储服务稳定可靠，推荐使用OBS服务存储图片数据。 - url中不能存在中文字符，若存在，中文需要进行utf8编码。 
      * @return url
      */
     public String getUrl() {
@@ -139,6 +144,23 @@ public class WebImageRequestBody {
         this.detectFont = detectFont;
     }
 
+    public WebImageRequestBody withDetectTextDirection(Boolean detectTextDirection) {
+        this.detectTextDirection = detectTextDirection;
+        return this;
+    }
+
+    /**
+     * 为Boolean类型，若不传该字段，默认为True，即检测每个字段的文字方向。为False时，则不检测文字方向。若图片中所有文字方向均是水平朝上时，建议将该值设为False，即不检测文字方向。 
+     * @return detectTextDirection
+     */
+    public Boolean getDetectTextDirection() {
+        return detectTextDirection;
+    }
+
+    public void setDetectTextDirection(Boolean detectTextDirection) {
+        this.detectTextDirection = detectTextDirection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -150,12 +172,13 @@ public class WebImageRequestBody {
         WebImageRequestBody that = (WebImageRequestBody) obj;
         return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
             && Objects.equals(this.detectDirection, that.detectDirection)
-            && Objects.equals(this.extractType, that.extractType) && Objects.equals(this.detectFont, that.detectFont);
+            && Objects.equals(this.extractType, that.extractType) && Objects.equals(this.detectFont, that.detectFont)
+            && Objects.equals(this.detectTextDirection, that.detectTextDirection);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, detectDirection, extractType, detectFont);
+        return Objects.hash(image, url, detectDirection, extractType, detectFont, detectTextDirection);
     }
 
     @Override
@@ -167,6 +190,7 @@ public class WebImageRequestBody {
         sb.append("    detectDirection: ").append(toIndentedString(detectDirection)).append("\n");
         sb.append("    extractType: ").append(toIndentedString(extractType)).append("\n");
         sb.append("    detectFont: ").append(toIndentedString(detectFont)).append("\n");
+        sb.append("    detectTextDirection: ").append(toIndentedString(detectTextDirection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

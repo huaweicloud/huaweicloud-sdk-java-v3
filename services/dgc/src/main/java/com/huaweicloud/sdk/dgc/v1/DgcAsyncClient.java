@@ -837,7 +837,7 @@ public class DgcAsyncClient {
     }
 
     /**
-     * 检查导入作业文件中的作业和脚本
+     * 查询作业文件
      *
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -850,7 +850,7 @@ public class DgcAsyncClient {
     }
 
     /**
-     * 检查导入作业文件中的作业和脚本
+     * 查询作业文件
      *
      * 
      * Please refer to HUAWEI cloud API Explorer for details.

@@ -14,9 +14,31 @@ import java.util.function.Consumer;
 public class ShrinkNodesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "migrate_data")
+
+    private String migrateData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shrinkNodes")
 
     private List<String> shrinkNodes = null;
+
+    public ShrinkNodesReq withMigrateData(String migrateData) {
+        this.migrateData = migrateData;
+        return this;
+    }
+
+    /**
+     * 是否迁移数据。 - \"true\"：迁移数据。 - \"false\"：不迁移数据。
+     * @return migrateData
+     */
+    public String getMigrateData() {
+        return migrateData;
+    }
+
+    public void setMigrateData(String migrateData) {
+        this.migrateData = migrateData;
+    }
 
     public ShrinkNodesReq withShrinkNodes(List<String> shrinkNodes) {
         this.shrinkNodes = shrinkNodes;
@@ -60,18 +82,19 @@ public class ShrinkNodesReq {
             return false;
         }
         ShrinkNodesReq that = (ShrinkNodesReq) obj;
-        return Objects.equals(this.shrinkNodes, that.shrinkNodes);
+        return Objects.equals(this.migrateData, that.migrateData) && Objects.equals(this.shrinkNodes, that.shrinkNodes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(shrinkNodes);
+        return Objects.hash(migrateData, shrinkNodes);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShrinkNodesReq {\n");
+        sb.append("    migrateData: ").append(toIndentedString(migrateData)).append("\n");
         sb.append("    shrinkNodes: ").append(toIndentedString(shrinkNodes)).append("\n");
         sb.append("}");
         return sb.toString();

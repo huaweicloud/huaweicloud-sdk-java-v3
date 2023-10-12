@@ -69,6 +69,8 @@ import com.huaweicloud.sdk.dws.v2.model.DisassociateEipRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbResponse;
+import com.huaweicloud.sdk.dws.v2.model.ExecuteDatabaseOmUserActionRequest;
+import com.huaweicloud.sdk.dws.v2.model.ExecuteDatabaseOmUserActionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteRedistributionClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteRedistributionClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExpandInstanceStorageRequest;
@@ -105,6 +107,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListClusterWorkloadRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterWorkloadResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClustersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClustersResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListConfigurationsAuditRecordsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListConfigurationsAuditRecordsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDataSourceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListDataSourceResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListDatabaseUsersRequest;
@@ -163,14 +167,22 @@ import com.huaweicloud.sdk.dws.v2.model.RestoreClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterResponse;
+import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoRequest;
+import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseOmUserStatusRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseOmUserStatusResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseUserRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseUserResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterDetailRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterDetailResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryRequest;
@@ -1216,6 +1228,36 @@ public class DwsClient {
     }
 
     /**
+     * 执行运维用户操作
+     *
+     * 进行数据库运维账户操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDatabaseOmUserActionRequest 请求对象
+     * @return ExecuteDatabaseOmUserActionResponse
+     */
+    public ExecuteDatabaseOmUserActionResponse executeDatabaseOmUserAction(ExecuteDatabaseOmUserActionRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.executeDatabaseOmUserAction);
+    }
+
+    /**
+     * 执行运维用户操作
+     *
+     * 进行数据库运维账户操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteDatabaseOmUserActionRequest 请求对象
+     * @return SyncInvoker<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse>
+     */
+    public SyncInvoker<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse> executeDatabaseOmUserActionInvoker(
+        ExecuteDatabaseOmUserActionRequest request) {
+        return new SyncInvoker<ExecuteDatabaseOmUserActionRequest, ExecuteDatabaseOmUserActionResponse>(request,
+            DwsMeta.executeDatabaseOmUserAction, hcClient);
+    }
+
+    /**
      * 下发重分布
      *
      * 下发重分布
@@ -1752,6 +1794,37 @@ public class DwsClient {
      */
     public SyncInvoker<ListClustersRequest, ListClustersResponse> listClustersInvoker(ListClustersRequest request) {
         return new SyncInvoker<ListClustersRequest, ListClustersResponse>(request, DwsMeta.listClusters, hcClient);
+    }
+
+    /**
+     * 查询参数修改审计记录
+     *
+     * 查询参数修改审计记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigurationsAuditRecordsRequest 请求对象
+     * @return ListConfigurationsAuditRecordsResponse
+     */
+    public ListConfigurationsAuditRecordsResponse listConfigurationsAuditRecords(
+        ListConfigurationsAuditRecordsRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listConfigurationsAuditRecords);
+    }
+
+    /**
+     * 查询参数修改审计记录
+     *
+     * 查询参数修改审计记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigurationsAuditRecordsRequest 请求对象
+     * @return SyncInvoker<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse>
+     */
+    public SyncInvoker<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse> listConfigurationsAuditRecordsInvoker(
+        ListConfigurationsAuditRecordsRequest request) {
+        return new SyncInvoker<ListConfigurationsAuditRecordsRequest, ListConfigurationsAuditRecordsResponse>(request,
+            DwsMeta.listConfigurationsAuditRecords, hcClient);
     }
 
     /**
@@ -2601,6 +2674,66 @@ public class DwsClient {
     }
 
     /**
+     * 保存集群描述信息
+     *
+     * 保存集群描述信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SaveClusterDescriptionInfoRequest 请求对象
+     * @return SaveClusterDescriptionInfoResponse
+     */
+    public SaveClusterDescriptionInfoResponse saveClusterDescriptionInfo(SaveClusterDescriptionInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.saveClusterDescriptionInfo);
+    }
+
+    /**
+     * 保存集群描述信息
+     *
+     * 保存集群描述信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SaveClusterDescriptionInfoRequest 请求对象
+     * @return SyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse>
+     */
+    public SyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse> saveClusterDescriptionInfoInvoker(
+        SaveClusterDescriptionInfoRequest request) {
+        return new SyncInvoker<SaveClusterDescriptionInfoRequest, SaveClusterDescriptionInfoResponse>(request,
+            DwsMeta.saveClusterDescriptionInfo, hcClient);
+    }
+
+    /**
+     * 查询重分布详情
+     *
+     * 查询重分布详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterRedistributionRequest 请求对象
+     * @return ShowClusterRedistributionResponse
+     */
+    public ShowClusterRedistributionResponse showClusterRedistribution(ShowClusterRedistributionRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showClusterRedistribution);
+    }
+
+    /**
+     * 查询重分布详情
+     *
+     * 查询重分布详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterRedistributionRequest 请求对象
+     * @return SyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse>
+     */
+    public SyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse> showClusterRedistributionInvoker(
+        ShowClusterRedistributionRequest request) {
+        return new SyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse>(request,
+            DwsMeta.showClusterRedistribution, hcClient);
+    }
+
+    /**
      * 查询数据库对象权限
      *
      * 查询数据库对象权限
@@ -2628,6 +2761,36 @@ public class DwsClient {
         ShowDatabaseAuthorityRequest request) {
         return new SyncInvoker<ShowDatabaseAuthorityRequest, ShowDatabaseAuthorityResponse>(request,
             DwsMeta.showDatabaseAuthority, hcClient);
+    }
+
+    /**
+     * 获得集群运维账户状态
+     *
+     * 获得数据库运维账户状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatabaseOmUserStatusRequest 请求对象
+     * @return ShowDatabaseOmUserStatusResponse
+     */
+    public ShowDatabaseOmUserStatusResponse showDatabaseOmUserStatus(ShowDatabaseOmUserStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showDatabaseOmUserStatus);
+    }
+
+    /**
+     * 获得集群运维账户状态
+     *
+     * 获得数据库运维账户状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatabaseOmUserStatusRequest 请求对象
+     * @return SyncInvoker<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse>
+     */
+    public SyncInvoker<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse> showDatabaseOmUserStatusInvoker(
+        ShowDatabaseOmUserStatusRequest request) {
+        return new SyncInvoker<ShowDatabaseOmUserStatusRequest, ShowDatabaseOmUserStatusResponse>(request,
+            DwsMeta.showDatabaseOmUserStatus, hcClient);
     }
 
     /**
@@ -2718,6 +2881,34 @@ public class DwsClient {
         ShowDisasterProgressRequest request) {
         return new SyncInvoker<ShowDisasterProgressRequest, ShowDisasterProgressResponse>(request,
             DwsMeta.showDisasterProgress, hcClient);
+    }
+
+    /**
+     * 查询单个实例
+     *
+     * 查询单个实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return ShowInstanceResponse
+     */
+    public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showInstance);
+    }
+
+    /**
+     * 查询单个实例
+     *
+     * 查询单个实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceRequest 请求对象
+     * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
+     */
+    public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
+        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, DwsMeta.showInstance, hcClient);
     }
 
     /**

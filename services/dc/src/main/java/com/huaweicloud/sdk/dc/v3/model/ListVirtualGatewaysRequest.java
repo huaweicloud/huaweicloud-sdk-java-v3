@@ -119,6 +119,11 @@ public class ListVirtualGatewaysRequest {
     private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private List<String> enterpriseProjectId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
     private List<String> vpcId = null;
@@ -275,6 +280,39 @@ public class ListVirtualGatewaysRequest {
         this.id = id;
     }
 
+    public ListVirtualGatewaysRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    public ListVirtualGatewaysRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
+
+    public ListVirtualGatewaysRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
+
+    /**
+     * 根据企业项目ID过滤资源实例
+     * @return enterpriseProjectId
+     */
+    public List<String> getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ListVirtualGatewaysRequest withVpcId(List<String> vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -320,12 +358,13 @@ public class ListVirtualGatewaysRequest {
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.fields, that.fields) && Objects.equals(this.sortDir, that.sortDir)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, fields, sortDir, sortKey, id, vpcId);
+        return Objects.hash(limit, marker, fields, sortDir, sortKey, id, enterpriseProjectId, vpcId);
     }
 
     @Override
@@ -338,6 +377,7 @@ public class ListVirtualGatewaysRequest {
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("}");
         return sb.toString();

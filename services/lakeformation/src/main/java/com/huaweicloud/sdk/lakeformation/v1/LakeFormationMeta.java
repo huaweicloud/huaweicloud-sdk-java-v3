@@ -98,6 +98,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListGroupsForDomainRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListGroupsForDomainResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListInterfacesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListInterfacesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListLakeFormationInstanceTagsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListLakeFormationInstanceTagsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListLakeFormationInstancesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListLakeFormationInstancesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListObsBucketsRequest;
@@ -110,6 +112,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPolicyResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListQuotasRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListQuotasResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListRoleNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListRoleNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListRolesRequest;
@@ -2320,6 +2324,35 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListQuotasRequest, ListQuotasResponse> listQuotas = genForlistQuotas();
+
+    private static HttpRequestDef<ListQuotasRequest, ListQuotasResponse> genForlistQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListQuotasRequest, ListQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotasRequest.class, ListQuotasResponse.class)
+                .withName("ListQuotas")
+                .withUri("/v1/{project_id}/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(ListQuotasResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListQuotasResponse::getXRequestId, ListQuotasResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRoleRequest, CreateRoleResponse> createRole = genForcreateRole();
 
     private static HttpRequestDef<CreateRoleRequest, CreateRoleResponse> genForcreateRole() {
@@ -3472,6 +3505,40 @@ public class LakeFormationMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse> listLakeFormationInstanceTags =
+        genForlistLakeFormationInstanceTags();
+
+    private static HttpRequestDef<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse> genForlistLakeFormationInstanceTags() {
+        // basic
+        HttpRequestDef.Builder<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListLakeFormationInstanceTagsRequest.class,
+                    ListLakeFormationInstanceTagsResponse.class)
+                .withName("ListLakeFormationInstanceTags")
+                .withUri("/v1/{project_id}/lakeformation-instance/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("use_predefine_tags",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListLakeFormationInstanceTagsRequest::getUsePredefineTags, (req, v) -> {
+                req.setUsePredefineTags(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListLakeFormationInstanceTagsResponse::getXRequestId,
+                ListLakeFormationInstanceTagsResponse::setXRequestId));
         return builder.build();
     }
 

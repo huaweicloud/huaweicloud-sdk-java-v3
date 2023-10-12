@@ -56,6 +56,8 @@ import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeploymentHostDetailReque
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowDeploymentHostDetailResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowEnvironmentDetailRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowEnvironmentDetailResponse;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowExecutionParamsRequest;
+import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowExecutionParamsResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostClusterDetailRequest;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostClusterDetailResponse;
 import com.huaweicloud.sdk.codeartsdeploy.v2.model.ShowHostDetailRequest;
@@ -209,7 +211,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 获取应用列表
      *
-     * 查询项目下应用列表
+     * 查询项目下应用列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -223,7 +225,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 获取应用列表
      *
-     * 查询项目下应用列表
+     * 查询项目下应用列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -238,7 +240,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
      *
-     * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
+     * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -253,7 +255,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
      *
-     * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表
+     * 根据开始时间和结束时间查询项目下指定应用的历史部署记录列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -358,6 +360,36 @@ public class CodeArtsDeployAsyncClient {
     }
 
     /**
+     * 查询部署记录的执行参数
+     *
+     * 查询部署记录的执行参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExecutionParamsRequest 请求对象
+     * @return CompletableFuture<ShowExecutionParamsResponse>
+     */
+    public CompletableFuture<ShowExecutionParamsResponse> showExecutionParamsAsync(ShowExecutionParamsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsDeployMeta.showExecutionParams);
+    }
+
+    /**
+     * 查询部署记录的执行参数
+     *
+     * 查询部署记录的执行参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExecutionParamsRequest 请求对象
+     * @return AsyncInvoker<ShowExecutionParamsRequest, ShowExecutionParamsResponse>
+     */
+    public AsyncInvoker<ShowExecutionParamsRequest, ShowExecutionParamsResponse> showExecutionParamsAsyncInvoker(
+        ShowExecutionParamsRequest request) {
+        return new AsyncInvoker<ShowExecutionParamsRequest, ShowExecutionParamsResponse>(request,
+            CodeArtsDeployMeta.showExecutionParams, hcClient);
+    }
+
+    /**
      * 部署应用
      *
      * 根据部署任务id部署应用。
@@ -390,7 +422,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 应用下创建环境
      *
-     * 应用下创建环境
+     * 应用下创建环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -404,7 +436,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 应用下创建环境
      *
-     * 应用下创建环境
+     * 应用下创建环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -420,7 +452,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 删除应用下的环境
      *
-     * 删除应用下的环境
+     * 删除应用下的环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -434,7 +466,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 删除应用下的环境
      *
-     * 删除应用下的环境
+     * 删除应用下的环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -450,7 +482,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 环境下删除主机
      *
-     * 环境下删除主机
+     * 环境下删除主机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -465,7 +497,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 环境下删除主机
      *
-     * 环境下删除主机
+     * 环境下删除主机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -481,7 +513,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 环境下导入主机
      *
-     * 环境下导入主机
+     * 环境下导入主机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -496,7 +528,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 环境下导入主机
      *
-     * 环境下导入主机
+     * 环境下导入主机。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -512,7 +544,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 查询应用下环境列表
      *
-     * 查询应用下环境列表
+     * 查询应用下环境列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -526,7 +558,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 查询应用下环境列表
      *
-     * 查询应用下环境列表
+     * 查询应用下环境列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -542,7 +574,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 查询环境详情
      *
-     * 查询环境详情
+     * 查询环境详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -557,7 +589,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 查询环境详情
      *
-     * 查询环境详情
+     * 查询环境详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -964,7 +996,7 @@ public class CodeArtsDeployAsyncClient {
     }
 
     /**
-     * 查询主机集群
+     * 查询主机集群详情
      *
      * 根据主机集群id查询主机集群详情。该接口于2024年09月30日后不再维护，推荐使用新版ShowHostClusterDetail接口。
      * 
@@ -979,7 +1011,7 @@ public class CodeArtsDeployAsyncClient {
     }
 
     /**
-     * 查询主机集群
+     * 查询主机集群详情
      *
      * 根据主机集群id查询主机集群详情。该接口于2024年09月30日后不再维护，推荐使用新版ShowHostClusterDetail接口。
      * 
@@ -995,7 +1027,7 @@ public class CodeArtsDeployAsyncClient {
     }
 
     /**
-     * 查询主机集群
+     * 查询主机集群详情
      *
      * 根据主机集群id查询主机集群详情。
      * 
@@ -1010,7 +1042,7 @@ public class CodeArtsDeployAsyncClient {
     }
 
     /**
-     * 查询主机集群
+     * 查询主机集群详情
      *
      * 根据主机集群id查询主机集群详情。
      * 
@@ -1059,7 +1091,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 获取指定应用的应用部署成功率
      *
-     * 获取指定应用的应用部署成功率
+     * 获取指定应用的应用部署成功率。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1073,7 +1105,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 获取指定应用的应用部署成功率
      *
-     * 获取指定应用的应用部署成功率
+     * 获取指定应用的应用部署成功率。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1089,7 +1121,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 获取指定项目的应用部署成功率
      *
-     * 获取指定项目的应用部署成功率
+     * 获取指定项目的应用部署成功率。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1104,7 +1136,7 @@ public class CodeArtsDeployAsyncClient {
     /**
      * 获取指定项目的应用部署成功率
      *
-     * 获取指定项目的应用部署成功率
+     * 获取指定项目的应用部署成功率。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

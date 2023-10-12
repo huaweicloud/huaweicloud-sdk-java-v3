@@ -30,6 +30,11 @@ public class ListServerGroupsRequest {
 
     private String serverGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_type")
+
+    private String appType;
+
     public ListServerGroupsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -102,6 +107,23 @@ public class ListServerGroupsRequest {
         this.serverGroupId = serverGroupId;
     }
 
+    public ListServerGroupsRequest withAppType(String appType) {
+        this.appType = appType;
+        return this;
+    }
+
+    /**
+     * 应用组类型(SESSION_DESKTOP_APP、COMMON_APP)
+     * @return appType
+     */
+    public String getAppType() {
+        return appType;
+    }
+
+    public void setAppType(String appType) {
+        this.appType = appType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -113,12 +135,12 @@ public class ListServerGroupsRequest {
         ListServerGroupsRequest that = (ListServerGroupsRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.serverGroupName, that.serverGroupName)
-            && Objects.equals(this.serverGroupId, that.serverGroupId);
+            && Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.appType, that.appType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, serverGroupName, serverGroupId);
+        return Objects.hash(offset, limit, serverGroupName, serverGroupId, appType);
     }
 
     @Override
@@ -129,6 +151,7 @@ public class ListServerGroupsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    serverGroupName: ").append(toIndentedString(serverGroupName)).append("\n");
         sb.append("    serverGroupId: ").append(toIndentedString(serverGroupId)).append("\n");
+        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

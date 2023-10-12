@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化
+ * 告警规则关联告警模板ID
  */
 public class AlarmTemplateID {
 

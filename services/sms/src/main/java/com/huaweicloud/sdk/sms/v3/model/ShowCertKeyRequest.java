@@ -15,6 +15,11 @@ public class ShowCertKeyRequest {
 
     private String taskId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_ca_cert")
+
+    private Boolean enableCaCert;
+
     public ShowCertKeyRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -32,6 +37,23 @@ public class ShowCertKeyRequest {
         this.taskId = taskId;
     }
 
+    public ShowCertKeyRequest withEnableCaCert(Boolean enableCaCert) {
+        this.enableCaCert = enableCaCert;
+        return this;
+    }
+
+    /**
+     * 是否生成ca证书
+     * @return enableCaCert
+     */
+    public Boolean getEnableCaCert() {
+        return enableCaCert;
+    }
+
+    public void setEnableCaCert(Boolean enableCaCert) {
+        this.enableCaCert = enableCaCert;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class ShowCertKeyRequest {
             return false;
         }
         ShowCertKeyRequest that = (ShowCertKeyRequest) obj;
-        return Objects.equals(this.taskId, that.taskId);
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.enableCaCert, that.enableCaCert);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId);
+        return Objects.hash(taskId, enableCaCert);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class ShowCertKeyRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCertKeyRequest {\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    enableCaCert: ").append(toIndentedString(enableCaCert)).append("\n");
         sb.append("}");
         return sb.toString();
     }

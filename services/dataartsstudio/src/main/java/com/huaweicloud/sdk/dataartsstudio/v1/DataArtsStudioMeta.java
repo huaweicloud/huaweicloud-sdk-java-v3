@@ -98,6 +98,11 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateConnectionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
@@ -168,6 +173,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspaceusersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspaceusersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DirectoryVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.EntityWithExtInfo;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.EnvRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionRequest;
@@ -395,6 +401,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowEntityInfoByGuidResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowGlossaryListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowGlossaryListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogRequest;
@@ -438,6 +448,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowWorkspaceDetailByIdRespon
 import com.huaweicloud.sdk.dataartsstudio.v1.model.StandElementFieldVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.StandElementFieldVOList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.StandElementValueVOList;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.StopFactorySupplementDataInstanceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.StopFactorySupplementDataInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SubjectParamsVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TableModelUpdateVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TableModelVO;
@@ -653,10 +665,17 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchApproveApplyRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<BatchApproveApplyRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchApproveApplyRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(BatchApproveApplyRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
         builder.<OpenApplyIdsForApproveApply>withRequestField("body",
             LocationType.Body,
@@ -1030,10 +1049,17 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmMessageRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ConfirmMessageRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConfirmMessageRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ConfirmMessageRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
         builder.<OpenApiParaForCheckMessage>withRequestField("body",
             LocationType.Body,
@@ -1182,7 +1208,7 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAppRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -1399,6 +1425,89 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateFactoryEnvRequest, CreateFactoryEnvResponse> createFactoryEnv =
+        genForcreateFactoryEnv();
+
+    private static HttpRequestDef<CreateFactoryEnvRequest, CreateFactoryEnvResponse> genForcreateFactoryEnv() {
+        // basic
+        HttpRequestDef.Builder<CreateFactoryEnvRequest, CreateFactoryEnvResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateFactoryEnvRequest.class, CreateFactoryEnvResponse.class)
+                .withName("CreateFactoryEnv")
+                .withUri("/v2/{project_id}/factory/env")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFactoryEnvRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<EnvRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnvRequestBody.class),
+            f -> f.withMarshaller(CreateFactoryEnvRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<Integer>withResponseField("status_code",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(CreateFactoryEnvResponse::getStatusCode, CreateFactoryEnvResponse::setStatusCode));
+        builder.<Boolean>withResponseField("is_success",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(CreateFactoryEnvResponse::getIsSuccess, CreateFactoryEnvResponse::setIsSuccess));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> createFactorySupplementDataInstance =
+        genForcreateFactorySupplementDataInstance();
+
+    private static HttpRequestDef<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> genForcreateFactorySupplementDataInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateFactorySupplementDataInstanceRequest.class,
+                    CreateFactorySupplementDataInstanceResponse.class)
+                .withName("CreateFactorySupplementDataInstance")
+                .withUri("/v2/{project_id}/factory/supplement-data")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFactorySupplementDataInstanceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<CreateFactorySupplementDataInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFactorySupplementDataInstanceRequestBody.class),
+            f -> f.withMarshaller(CreateFactorySupplementDataInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateFactorySupplementDataInstanceResponse::getXRequestId,
+                CreateFactorySupplementDataInstanceResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateManagerWorkSpaceRequest, CreateManagerWorkSpaceResponse> createManagerWorkSpace =
         genForcreateManagerWorkSpace();
 
@@ -1477,10 +1586,17 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateServiceCatalogRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<CreateServiceCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateServiceCatalogRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(CreateServiceCatalogRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
         builder.<ApiCatalogCreateParaDTO>withRequestField("body",
             LocationType.Body,
@@ -1802,7 +1918,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -2134,10 +2250,17 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteServiceCatalogRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<DeleteServiceCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteServiceCatalogRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(DeleteServiceCatalogRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
         builder.<ApiCatalogDeleteParaDTO>withRequestField("body",
             LocationType.Body,
@@ -2681,10 +2804,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllCatalogListRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ListAllCatalogListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListAllCatalogListRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ListAllCatalogListRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -2787,10 +2917,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApiCatalogListRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ListApiCatalogListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListApiCatalogListRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ListApiCatalogListRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -2860,7 +2997,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApiTopNRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -2920,7 +3057,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApicGroupsRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -2973,7 +3110,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApicInstancesRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -3046,7 +3183,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisTopRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -3105,10 +3242,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApplyRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ListApplyRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListApplyRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ListApplyRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -3203,7 +3347,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -3269,7 +3413,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsTopRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -3540,10 +3684,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCatalogListRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ListCatalogListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListCatalogListRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ListCatalogListRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -4877,10 +5028,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessageRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ListMessageRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListMessageRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ListMessageRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -5655,10 +5813,17 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(MigrateApiRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<MigrateApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MigrateApiRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(MigrateApiRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
         builder.<ApiMoveParaDTO>withRequestField("body",
             LocationType.Body,
@@ -5694,10 +5859,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(MigrateCatalogRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<MigrateCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MigrateCatalogRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(MigrateCatalogRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
         builder.<CatalogMoveParaDTO>withRequestField("body",
             LocationType.Body,
@@ -6075,10 +6247,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchAuthorizeAppRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<SearchAuthorizeAppRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchAuthorizeAppRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(SearchAuthorizeAppRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -6121,10 +6300,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchBindApiRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<SearchBindApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchBindApiRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(SearchBindApiRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -6474,10 +6660,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchIdByPathRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<SearchIdByPathRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchIdByPathRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(SearchIdByPathRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -6833,7 +7026,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiDashboardRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -6907,7 +7100,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApisDashboardRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -6974,7 +7167,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApisDetailRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -7027,7 +7220,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApisOverviewRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -7065,7 +7258,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppInfoRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -7104,10 +7297,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApplyDetailRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ShowApplyDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowApplyDetailRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ShowApplyDetailRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -7164,7 +7364,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppsDashboardRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -7224,7 +7424,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppsDetailRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -7277,7 +7477,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppsOverviewRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -7500,10 +7700,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCatalogDetailRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ShowCatalogDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowCatalogDetailRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ShowCatalogDetailRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -7963,6 +8170,121 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFactoryEnvRequest, ShowFactoryEnvResponse> showFactoryEnv =
+        genForshowFactoryEnv();
+
+    private static HttpRequestDef<ShowFactoryEnvRequest, ShowFactoryEnvResponse> genForshowFactoryEnv() {
+        // basic
+        HttpRequestDef.Builder<ShowFactoryEnvRequest, ShowFactoryEnvResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFactoryEnvRequest.class, ShowFactoryEnvResponse.class)
+                .withName("ShowFactoryEnv")
+                .withUri("/v2/{project_id}/factory/env")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryEnvRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse> showFactorySupplementData =
+        genForshowFactorySupplementData();
+
+    private static HttpRequestDef<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse> genForshowFactorySupplementData() {
+        // basic
+        HttpRequestDef.Builder<ShowFactorySupplementDataRequest, ShowFactorySupplementDataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowFactorySupplementDataRequest.class,
+                    ShowFactorySupplementDataResponse.class)
+                .withName("ShowFactorySupplementData")
+                .withUri("/v2/{project_id}/factory/supplement-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<String>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<String>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getSize, (req, v) -> {
+                req.setSize(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            }));
+        builder.<String>withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactorySupplementDataRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowFactorySupplementDataResponse::getXRequestId,
+                ShowFactorySupplementDataResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowGlossaryListRequest, ShowGlossaryListResponse> showGlossaryList =
         genForshowGlossaryList();
 
@@ -8150,10 +8472,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMessageDetailRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ShowMessageDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowMessageDetailRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ShowMessageDetailRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -8252,10 +8581,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPathByIdRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ShowPathByIdRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowPathByIdRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ShowPathByIdRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -8298,10 +8634,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPathObjectByIdRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ShowPathObjectByIdRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowPathObjectByIdRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ShowPathObjectByIdRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -8729,6 +9072,47 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse> stopFactorySupplementDataInstance =
+        genForstopFactorySupplementDataInstance();
+
+    private static HttpRequestDef<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse> genForstopFactorySupplementDataInstance() {
+        // basic
+        HttpRequestDef.Builder<StopFactorySupplementDataInstanceRequest, StopFactorySupplementDataInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    StopFactorySupplementDataInstanceRequest.class,
+                    StopFactorySupplementDataInstanceResponse.class)
+                .withName("StopFactorySupplementDataInstance")
+                .withUri("/v2/{project_id}/factory/supplement-data/{instance_name}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopFactorySupplementDataInstanceRequest::getInstanceName, (req, v) -> {
+                req.setInstanceName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopFactorySupplementDataInstanceRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StopFactorySupplementDataInstanceResponse::getXRequestId,
+                StopFactorySupplementDataInstanceResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForupdateApp();
 
     private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForupdateApp() {
@@ -8749,7 +9133,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAppRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -8827,10 +9211,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCatalogRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<UpdateCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateCatalogRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(UpdateCatalogRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
         builder.<ApiCatalogUpdateParaDTO>withRequestField("body",
             LocationType.Body,
@@ -9330,7 +9721,7 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AuthorizeActionApiToInstanceRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -9383,7 +9774,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -9421,7 +9812,7 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateApiRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -9473,7 +9864,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DebugApiRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -9564,7 +9955,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExecuteApiToInstanceRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -9616,10 +10007,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ListApisRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListApisRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ListApisRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -9697,7 +10095,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstanceListRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -9728,10 +10126,17 @@ public class DataArtsStudioMeta {
         // requests
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PublishApiRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<PublishApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PublishApiRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(PublishApiRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
         builder.<OpenApiParaForPublish>withRequestField("body",
             LocationType.Body,
@@ -9774,7 +10179,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PublishApiToInstanceRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -9834,7 +10239,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchDebugInfoRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -9887,7 +10292,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchPublishInfoRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
@@ -9925,10 +10330,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<ShowApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowApiRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(ShowApiRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
 
         // response
@@ -9956,10 +10368,17 @@ public class DataArtsStudioMeta {
             }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateApiRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+        builder.<UpdateApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateApiRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(UpdateApiRequest::getDlmType, (req, v) -> {
+                req.setDlmType(v);
             }));
         builder.<Api>withRequestField("body",
             LocationType.Body,

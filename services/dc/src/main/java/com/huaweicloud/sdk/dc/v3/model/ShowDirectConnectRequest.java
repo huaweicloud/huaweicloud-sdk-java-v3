@@ -19,16 +19,6 @@ public class ShowDirectConnectRequest {
     private String directConnectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "marker")
-
-    private String marker;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
 
     private List<String> fields = null;
@@ -48,42 +38,6 @@ public class ShowDirectConnectRequest {
 
     public void setDirectConnectId(String directConnectId) {
         this.directConnectId = directConnectId;
-    }
-
-    public ShowDirectConnectRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * 每页返回的个数。 取值范围：1~2000。
-     * minimum: 1
-     * maximum: 2000
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public ShowDirectConnectRequest withMarker(String marker) {
-        this.marker = marker;
-        return this;
-    }
-
-    /**
-     * 上一页最后一条资源记录的ID，为空时为查询第一页。 使用说明：必须与limit一起使用。
-     * @return marker
-     */
-    public String getMarker() {
-        return marker;
-    }
-
-    public void setMarker(String marker) {
-        this.marker = marker;
     }
 
     public ShowDirectConnectRequest withFields(List<String> fields) {
@@ -128,13 +82,12 @@ public class ShowDirectConnectRequest {
             return false;
         }
         ShowDirectConnectRequest that = (ShowDirectConnectRequest) obj;
-        return Objects.equals(this.directConnectId, that.directConnectId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.marker, that.marker) && Objects.equals(this.fields, that.fields);
+        return Objects.equals(this.directConnectId, that.directConnectId) && Objects.equals(this.fields, that.fields);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(directConnectId, limit, marker, fields);
+        return Objects.hash(directConnectId, fields);
     }
 
     @Override
@@ -142,8 +95,6 @@ public class ShowDirectConnectRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDirectConnectRequest {\n");
         sb.append("    directConnectId: ").append(toIndentedString(directConnectId)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
         sb.append("}");
         return sb.toString();

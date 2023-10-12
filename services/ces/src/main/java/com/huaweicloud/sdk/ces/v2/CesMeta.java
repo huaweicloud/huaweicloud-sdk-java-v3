@@ -12,14 +12,31 @@ import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmsRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteDashboardRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteNotificationMasksRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteNotificationMasksRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteNotificationMasksResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteOneClickAlarmsRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteOneClickAlarmsRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteOneClickAlarmsResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourceGroupsRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourceGroupsRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourceGroupsResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourcesResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmPoliciesRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmsRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMasksRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMasksRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMasksResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmPoliciesEnabledStateRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmPoliciesEnabledStateResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmRulesRequest;
@@ -30,6 +47,8 @@ import com.huaweicloud.sdk.ces.v2.model.CreateAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateDashboardRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.CreateDashboardWidgetsRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateDashboardWidgetsResponse;
+import com.huaweicloud.sdk.ces.v2.model.CreateOneClickAlarmRequest;
+import com.huaweicloud.sdk.ces.v2.model.CreateOneClickAlarmResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateOneDashboardRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateOneDashboardResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupRequest;
@@ -41,6 +60,7 @@ import com.huaweicloud.sdk.ces.v2.model.DeleteDashboardsRequest;
 import com.huaweicloud.sdk.ces.v2.model.DeleteDashboardsResponse;
 import com.huaweicloud.sdk.ces.v2.model.DeleteOneWidgetRequest;
 import com.huaweicloud.sdk.ces.v2.model.DeleteOneWidgetResponse;
+import com.huaweicloud.sdk.ces.v2.model.EnableOneClickAlarmRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.ListAgentDimensionInfoRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListAgentDimensionInfoResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmHistoriesRequest;
@@ -55,16 +75,28 @@ import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplateAssociationAlarmsReques
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplateAssociationAlarmsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplatesRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplatesResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListCesTargetProjectTagsRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListCesTargetProjectTagsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListDashboardInfosRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListDashboardInfosResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListDashboardWidgetsRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListDashboardWidgetsResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListNotificationMaskRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.ListNotificationMaskResourcesRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListNotificationMaskResourcesResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListNotificationMasksRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListNotificationMasksResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListOneClickAlarmRulesRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListOneClickAlarmRulesResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListOneClickAlarmsRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListOneClickAlarmsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsServicesResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsServicesResourcesResponse;
 import com.huaweicloud.sdk.ces.v2.model.PoliciesReqV2;
 import com.huaweicloud.sdk.ces.v2.model.PostAlarmsReqV2;
+import com.huaweicloud.sdk.ces.v2.model.PutAlarmNotificationReq;
 import com.huaweicloud.sdk.ces.v2.model.PutResourceGroupReq;
 import com.huaweicloud.sdk.ces.v2.model.ResourcesReq;
 import com.huaweicloud.sdk.ces.v2.model.ResourcesReqV2;
@@ -74,6 +106,8 @@ import com.huaweicloud.sdk.ces.v2.model.ShowResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowResourceGroupResponse;
 import com.huaweicloud.sdk.ces.v2.model.ShowWidgetRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowWidgetResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmNotificationsRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmNotificationsResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateRequest;
@@ -82,6 +116,11 @@ import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateWidgetInfo;
@@ -213,6 +252,62 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteNotificationMasksRequest, BatchDeleteNotificationMasksResponse> batchDeleteNotificationMasks =
+        genForbatchDeleteNotificationMasks();
+
+    private static HttpRequestDef<BatchDeleteNotificationMasksRequest, BatchDeleteNotificationMasksResponse> genForbatchDeleteNotificationMasks() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteNotificationMasksRequest, BatchDeleteNotificationMasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteNotificationMasksRequest.class,
+                    BatchDeleteNotificationMasksResponse.class)
+                .withName("BatchDeleteNotificationMasks")
+                .withUri("/v2/{project_id}/notification-masks/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteNotificationMasksRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteNotificationMasksRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteNotificationMasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteOneClickAlarmsRequest, BatchDeleteOneClickAlarmsResponse> batchDeleteOneClickAlarms =
+        genForbatchDeleteOneClickAlarms();
+
+    private static HttpRequestDef<BatchDeleteOneClickAlarmsRequest, BatchDeleteOneClickAlarmsResponse> genForbatchDeleteOneClickAlarms() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteOneClickAlarmsRequest, BatchDeleteOneClickAlarmsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteOneClickAlarmsRequest.class,
+                    BatchDeleteOneClickAlarmsResponse.class)
+                .withName("BatchDeleteOneClickAlarms")
+                .withUri("/v2/{project_id}/one-click-alarms/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteOneClickAlarmsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteOneClickAlarmsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteOneClickAlarmsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteResourceGroupsRequest, BatchDeleteResourceGroupsResponse> batchDeleteResourceGroups =
         genForbatchDeleteResourceGroups();
 
@@ -290,6 +385,139 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchEnableAlarmsRequestBody.class),
             f -> f.withMarshaller(BatchEnableAlarmRulesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateNotificationMaskTimeRequest, BatchUpdateNotificationMaskTimeResponse> batchUpdateNotificationMaskTime =
+        genForbatchUpdateNotificationMaskTime();
+
+    private static HttpRequestDef<BatchUpdateNotificationMaskTimeRequest, BatchUpdateNotificationMaskTimeResponse> genForbatchUpdateNotificationMaskTime() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateNotificationMaskTimeRequest, BatchUpdateNotificationMaskTimeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchUpdateNotificationMaskTimeRequest.class,
+                    BatchUpdateNotificationMaskTimeResponse.class)
+                .withName("BatchUpdateNotificationMaskTime")
+                .withUri("/v2/{project_id}/notification-masks/batch-update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchUpdateNotificationMaskTimeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateNotificationMaskTimeRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateNotificationMaskTimeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateNotificationMasksRequest, BatchUpdateNotificationMasksResponse> batchUpdateNotificationMasks =
+        genForbatchUpdateNotificationMasks();
+
+    private static HttpRequestDef<BatchUpdateNotificationMasksRequest, BatchUpdateNotificationMasksResponse> genForbatchUpdateNotificationMasks() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateNotificationMasksRequest, BatchUpdateNotificationMasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateNotificationMasksRequest.class,
+                    BatchUpdateNotificationMasksResponse.class)
+                .withName("BatchUpdateNotificationMasks")
+                .withUri("/v2/{project_id}/notification-masks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchUpdateNotificationMasksRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateNotificationMasksRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateNotificationMasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateOneClickAlarmPoliciesEnabledStateRequest, BatchUpdateOneClickAlarmPoliciesEnabledStateResponse> batchUpdateOneClickAlarmPoliciesEnabledState =
+        genForbatchUpdateOneClickAlarmPoliciesEnabledState();
+
+    private static HttpRequestDef<BatchUpdateOneClickAlarmPoliciesEnabledStateRequest, BatchUpdateOneClickAlarmPoliciesEnabledStateResponse> genForbatchUpdateOneClickAlarmPoliciesEnabledState() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateOneClickAlarmPoliciesEnabledStateRequest, BatchUpdateOneClickAlarmPoliciesEnabledStateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateOneClickAlarmPoliciesEnabledStateRequest.class,
+                    BatchUpdateOneClickAlarmPoliciesEnabledStateResponse.class)
+                .withName("BatchUpdateOneClickAlarmPoliciesEnabledState")
+                .withUri("/v2/{project_id}/one-click-alarms/{one_click_alarm_id}/alarms/{alarm_id}/policies/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("one_click_alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateOneClickAlarmPoliciesEnabledStateRequest::getOneClickAlarmId, (req, v) -> {
+                req.setOneClickAlarmId(v);
+            }));
+        builder.<String>withRequestField("alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateOneClickAlarmPoliciesEnabledStateRequest::getAlarmId, (req, v) -> {
+                req.setAlarmId(v);
+            }));
+        builder.<BatchEnableAlarmPoliciesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchEnableAlarmPoliciesRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateOneClickAlarmPoliciesEnabledStateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateOneClickAlarmsEnabledStateRequest, BatchUpdateOneClickAlarmsEnabledStateResponse> batchUpdateOneClickAlarmsEnabledState =
+        genForbatchUpdateOneClickAlarmsEnabledState();
+
+    private static HttpRequestDef<BatchUpdateOneClickAlarmsEnabledStateRequest, BatchUpdateOneClickAlarmsEnabledStateResponse> genForbatchUpdateOneClickAlarmsEnabledState() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateOneClickAlarmsEnabledStateRequest, BatchUpdateOneClickAlarmsEnabledStateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateOneClickAlarmsEnabledStateRequest.class,
+                    BatchUpdateOneClickAlarmsEnabledStateResponse.class)
+                .withName("BatchUpdateOneClickAlarmsEnabledState")
+                .withUri("/v2/{project_id}/one-click-alarms/{one_click_alarm_id}/alarm-rules/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("one_click_alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateOneClickAlarmsEnabledStateRequest::getOneClickAlarmId, (req, v) -> {
+                req.setOneClickAlarmId(v);
+            }));
+        builder.<BatchEnableAlarmsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchEnableAlarmsRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateOneClickAlarmsEnabledStateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -399,6 +627,31 @@ public class CesMeta {
             f -> f.withMarshaller(CreateDashboardWidgetsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }).withInnerContainerType(BaseWidgetInfo.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOneClickAlarmRequest, CreateOneClickAlarmResponse> createOneClickAlarm =
+        genForcreateOneClickAlarm();
+
+    private static HttpRequestDef<CreateOneClickAlarmRequest, CreateOneClickAlarmResponse> genForcreateOneClickAlarm() {
+        // basic
+        HttpRequestDef.Builder<CreateOneClickAlarmRequest, CreateOneClickAlarmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOneClickAlarmRequest.class, CreateOneClickAlarmResponse.class)
+                .withName("CreateOneClickAlarm")
+                .withUri("/v2/{project_id}/one-click-alarms")
+                .withContentType("application/json");
+
+        // requests
+        builder.<EnableOneClickAlarmRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnableOneClickAlarmRequestBody.class),
+            f -> f.withMarshaller(CreateOneClickAlarmRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 
@@ -926,6 +1179,32 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCesTargetProjectTagsRequest, ListCesTargetProjectTagsResponse> listCesTargetProjectTags =
+        genForlistCesTargetProjectTags();
+
+    private static HttpRequestDef<ListCesTargetProjectTagsRequest, ListCesTargetProjectTagsResponse> genForlistCesTargetProjectTags() {
+        // basic
+        HttpRequestDef.Builder<ListCesTargetProjectTagsRequest, ListCesTargetProjectTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListCesTargetProjectTagsRequest.class, ListCesTargetProjectTagsResponse.class)
+                .withName("ListCesTargetProjectTags")
+                .withUri("/v2/{project_id}/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListCesTargetProjectTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListCesTargetProjectTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListCesTargetProjectTagsRequest::getResourceType, (req, v) -> {
+                req.setResourceType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDashboardInfosRequest, ListDashboardInfosResponse> listDashboardInfos =
         genForlistDashboardInfos();
 
@@ -991,6 +1270,130 @@ public class CesMeta {
             f -> f.withMarshaller(ListDashboardWidgetsRequest::getDashboardId, (req, v) -> {
                 req.setDashboardId(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotificationMaskResourcesRequest, ListNotificationMaskResourcesResponse> listNotificationMaskResources =
+        genForlistNotificationMaskResources();
+
+    private static HttpRequestDef<ListNotificationMaskResourcesRequest, ListNotificationMaskResourcesResponse> genForlistNotificationMaskResources() {
+        // basic
+        HttpRequestDef.Builder<ListNotificationMaskResourcesRequest, ListNotificationMaskResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListNotificationMaskResourcesRequest.class,
+                    ListNotificationMaskResourcesResponse.class)
+                .withName("ListNotificationMaskResources")
+                .withUri("/v2/{project_id}/notification-masks/{notification_mask_id}/resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("notification_mask_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotificationMaskResourcesRequest::getNotificationMaskId, (req, v) -> {
+                req.setNotificationMaskId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotificationMaskResourcesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotificationMaskResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotificationMasksRequest, ListNotificationMasksResponse> listNotificationMasks =
+        genForlistNotificationMasks();
+
+    private static HttpRequestDef<ListNotificationMasksRequest, ListNotificationMasksResponse> genForlistNotificationMasks() {
+        // basic
+        HttpRequestDef.Builder<ListNotificationMasksRequest, ListNotificationMasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListNotificationMasksRequest.class, ListNotificationMasksResponse.class)
+            .withName("ListNotificationMasks")
+            .withUri("/v2/{project_id}/notification-masks/batch-query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotificationMasksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotificationMasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ListNotificationMaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListNotificationMaskRequestBody.class),
+            f -> f.withMarshaller(ListNotificationMasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOneClickAlarmRulesRequest, ListOneClickAlarmRulesResponse> listOneClickAlarmRules =
+        genForlistOneClickAlarmRules();
+
+    private static HttpRequestDef<ListOneClickAlarmRulesRequest, ListOneClickAlarmRulesResponse> genForlistOneClickAlarmRules() {
+        // basic
+        HttpRequestDef.Builder<ListOneClickAlarmRulesRequest, ListOneClickAlarmRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListOneClickAlarmRulesRequest.class, ListOneClickAlarmRulesResponse.class)
+            .withName("ListOneClickAlarmRules")
+            .withUri("/v2/{project_id}/one-click-alarms/{one_click_alarm_id}/alarms")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("one_click_alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOneClickAlarmRulesRequest::getOneClickAlarmId, (req, v) -> {
+                req.setOneClickAlarmId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOneClickAlarmsRequest, ListOneClickAlarmsResponse> listOneClickAlarms =
+        genForlistOneClickAlarms();
+
+    private static HttpRequestDef<ListOneClickAlarmsRequest, ListOneClickAlarmsResponse> genForlistOneClickAlarms() {
+        // basic
+        HttpRequestDef.Builder<ListOneClickAlarmsRequest, ListOneClickAlarmsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOneClickAlarmsRequest.class, ListOneClickAlarmsResponse.class)
+                .withName("ListOneClickAlarms")
+                .withUri("/v2/{project_id}/one-click-alarms")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1201,6 +1604,39 @@ public class CesMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAlarmNotificationsRequest, UpdateAlarmNotificationsResponse> updateAlarmNotifications =
+        genForupdateAlarmNotifications();
+
+    private static HttpRequestDef<UpdateAlarmNotificationsRequest, UpdateAlarmNotificationsResponse> genForupdateAlarmNotifications() {
+        // basic
+        HttpRequestDef.Builder<UpdateAlarmNotificationsRequest, UpdateAlarmNotificationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateAlarmNotificationsRequest.class, UpdateAlarmNotificationsResponse.class)
+                .withName("UpdateAlarmNotifications")
+                .withUri("/v2/{project_id}/alarms/{alarm_id}/notifications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAlarmNotificationsRequest::getAlarmId, (req, v) -> {
+                req.setAlarmId(v);
+            }));
+        builder.<PutAlarmNotificationReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PutAlarmNotificationReq.class),
+            f -> f.withMarshaller(UpdateAlarmNotificationsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAlarmRulePoliciesRequest, UpdateAlarmRulePoliciesResponse> updateAlarmRulePolicies =
         genForupdateAlarmRulePolicies();
 
@@ -1289,6 +1725,73 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDashboardRequestBody.class),
             f -> f.withMarshaller(UpdateDashboardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse> updateNotificationMasks =
+        genForupdateNotificationMasks();
+
+    private static HttpRequestDef<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse> genForupdateNotificationMasks() {
+        // basic
+        HttpRequestDef.Builder<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateNotificationMasksRequest.class, UpdateNotificationMasksResponse.class)
+            .withName("UpdateNotificationMasks")
+            .withUri("/v2/{project_id}/notification-masks/{notification_mask_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("notification_mask_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNotificationMasksRequest::getNotificationMaskId, (req, v) -> {
+                req.setNotificationMaskId(v);
+            }));
+        builder.<UpdateNotificationMasksRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNotificationMasksRequestBody.class),
+            f -> f.withMarshaller(UpdateNotificationMasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOneClickAlarmNotificationsRequest, UpdateOneClickAlarmNotificationsResponse> updateOneClickAlarmNotifications =
+        genForupdateOneClickAlarmNotifications();
+
+    private static HttpRequestDef<UpdateOneClickAlarmNotificationsRequest, UpdateOneClickAlarmNotificationsResponse> genForupdateOneClickAlarmNotifications() {
+        // basic
+        HttpRequestDef.Builder<UpdateOneClickAlarmNotificationsRequest, UpdateOneClickAlarmNotificationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateOneClickAlarmNotificationsRequest.class,
+                    UpdateOneClickAlarmNotificationsResponse.class)
+                .withName("UpdateOneClickAlarmNotifications")
+                .withUri("/v2/{project_id}/one-click-alarms/{one_click_alarm_id}/notifications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("one_click_alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOneClickAlarmNotificationsRequest::getOneClickAlarmId, (req, v) -> {
+                req.setOneClickAlarmId(v);
+            }));
+        builder.<PutAlarmNotificationReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PutAlarmNotificationReq.class),
+            f -> f.withMarshaller(UpdateOneClickAlarmNotificationsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -23,11 +23,6 @@ public class ComponentSnapshotItem {
     private Integer index;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "context")
 
     private ComponentSnapshotContext context;
@@ -74,23 +69,6 @@ public class ComponentSnapshotItem {
 
     public void setIndex(Integer index) {
         this.index = index;
-    }
-
-    public ComponentSnapshotItem withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 描述信息。
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public ComponentSnapshotItem withContext(ComponentSnapshotContext context) {
@@ -163,13 +141,13 @@ public class ComponentSnapshotItem {
         }
         ComponentSnapshotItem that = (ComponentSnapshotItem) obj;
         return Objects.equals(this.componentId, that.componentId) && Objects.equals(this.index, that.index)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.context, that.context)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.context, that.context) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(componentId, index, description, context, createdAt, updatedAt);
+        return Objects.hash(componentId, index, context, createdAt, updatedAt);
     }
 
     @Override
@@ -178,7 +156,6 @@ public class ComponentSnapshotItem {
         sb.append("class ComponentSnapshotItem {\n");
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    context: ").append(toIndentedString(context)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

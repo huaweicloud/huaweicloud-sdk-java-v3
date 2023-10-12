@@ -126,6 +126,8 @@ import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerBillDetailRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerBillDetailResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerCouponsRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerCouponsResponse;
+import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerNewTagRequest;
+import com.huaweicloud.sdk.bss.v2.model.ListSubCustomerNewTagResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomersRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListSubCustomersResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListSubcustomerMonthlyBillsRequest;
@@ -2401,6 +2403,44 @@ public class BssClient {
         ListSubCustomerCouponsRequest request) {
         return new SyncInvoker<ListSubCustomerCouponsRequest, ListSubCustomerCouponsResponse>(request,
             BssMeta.listSubCustomerCoupons, hcClient);
+    }
+
+    /**
+     * 查询客户新客标签
+     *
+     * 伙伴通过该接口可以查询客户的新客标签。
+     * 
+     * &gt;![](public_sys-resources/icon-caution.gif) **注意：** 
+     * &gt;-   新客标签失效后，new\\_customer\\_tag会变成N，且有效期过期。
+     * &gt;-   客户如果没有实名认证，则新客标签为空。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSubCustomerNewTagRequest 请求对象
+     * @return ListSubCustomerNewTagResponse
+     */
+    public ListSubCustomerNewTagResponse listSubCustomerNewTag(ListSubCustomerNewTagRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listSubCustomerNewTag);
+    }
+
+    /**
+     * 查询客户新客标签
+     *
+     * 伙伴通过该接口可以查询客户的新客标签。
+     * 
+     * &gt;![](public_sys-resources/icon-caution.gif) **注意：** 
+     * &gt;-   新客标签失效后，new\\_customer\\_tag会变成N，且有效期过期。
+     * &gt;-   客户如果没有实名认证，则新客标签为空。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSubCustomerNewTagRequest 请求对象
+     * @return SyncInvoker<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse>
+     */
+    public SyncInvoker<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse> listSubCustomerNewTagInvoker(
+        ListSubCustomerNewTagRequest request) {
+        return new SyncInvoker<ListSubCustomerNewTagRequest, ListSubCustomerNewTagResponse>(request,
+            BssMeta.listSubCustomerNewTag, hcClient);
     }
 
     /**

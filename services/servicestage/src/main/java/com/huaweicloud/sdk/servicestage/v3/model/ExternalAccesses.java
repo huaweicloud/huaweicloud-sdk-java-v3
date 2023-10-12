@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.servicestage.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -10,10 +15,80 @@ import java.util.Objects;
  */
 public class ExternalAccesses {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "prorocol")
+    /**
+     * Gets or Sets protocol
+     */
+    public static final class ProtocolEnum {
 
-    private String prorocol;
+        /**
+         * Enum HTTP for value: "http"
+         */
+        public static final ProtocolEnum HTTP = new ProtocolEnum("http");
+
+        /**
+         * Enum HTTPS for value: "https"
+         */
+        public static final ProtocolEnum HTTPS = new ProtocolEnum("https");
+
+        private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtocolEnum> createStaticFields() {
+            Map<String, ProtocolEnum> map = new HashMap<>();
+            map.put("http", HTTP);
+            map.put("https", HTTPS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
+        }
+
+        public static ProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtocolEnum) {
+                return this.value.equals(((ProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol")
+
+    private ProtocolEnum protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
@@ -25,21 +100,21 @@ public class ExternalAccesses {
 
     private Integer forwardPort;
 
-    public ExternalAccesses withProrocol(String prorocol) {
-        this.prorocol = prorocol;
+    public ExternalAccesses withProtocol(ProtocolEnum protocol) {
+        this.protocol = protocol;
         return this;
     }
 
     /**
-     * Get prorocol
-     * @return prorocol
+     * Get protocol
+     * @return protocol
      */
-    public String getProrocol() {
-        return prorocol;
+    public ProtocolEnum getProtocol() {
+        return protocol;
     }
 
-    public void setProrocol(String prorocol) {
-        this.prorocol = prorocol;
+    public void setProtocol(ProtocolEnum protocol) {
+        this.protocol = protocol;
     }
 
     public ExternalAccesses withAddress(String address) {
@@ -85,20 +160,20 @@ public class ExternalAccesses {
             return false;
         }
         ExternalAccesses that = (ExternalAccesses) obj;
-        return Objects.equals(this.prorocol, that.prorocol) && Objects.equals(this.address, that.address)
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.address, that.address)
             && Objects.equals(this.forwardPort, that.forwardPort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(prorocol, address, forwardPort);
+        return Objects.hash(protocol, address, forwardPort);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExternalAccesses {\n");
-        sb.append("    prorocol: ").append(toIndentedString(prorocol)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    forwardPort: ").append(toIndentedString(forwardPort)).append("\n");
         sb.append("}");

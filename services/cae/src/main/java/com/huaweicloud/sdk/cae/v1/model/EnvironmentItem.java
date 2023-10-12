@@ -235,7 +235,7 @@ public class EnvironmentItem {
     }
 
     /**
-     * 环境附加属性。 - cluster_id：CCE集群ID。 - description: 环境描述信息。 - enterprise_project_id：企业项目ID。 - group_name：主环境绑定的SWR组织名称。 - inbound_eip_addr：负载均衡绑定EIP地址。 - namespace：CCE集群命名空间。 - public_elb_id：ELB ID，主环境绑定的负载均衡ID。 - type：环境类型，当前仅支持exclusive类型。 - vpc_id：主环境绑定的VPC ID。
+     * 环境附加属性。 - cluster_id：CCE集群ID。 - enterprise_project_id：企业项目ID。 - group_name：主环境绑定的SWR组织名称。 - inbound_eip_addr：负载均衡绑定EIP地址。 - namespace：CCE集群命名空间。 - public_elb_id：ELB ID，主环境绑定的负载均衡ID。 - type：环境类型，当前仅支持exclusive类型。 - vpc_id：主环境绑定的VPC ID。
      * @return annotations
      */
     public Map<String, String> getAnnotations() {

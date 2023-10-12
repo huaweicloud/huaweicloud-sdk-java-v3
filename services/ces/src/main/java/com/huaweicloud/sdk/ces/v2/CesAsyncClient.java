@@ -8,12 +8,24 @@ import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmRulesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmRulesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteNotificationMasksRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteNotificationMasksResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteOneClickAlarmsRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteOneClickAlarmsResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourceGroupsRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourceGroupsResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteResourcesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchEnableAlarmRulesResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMaskTimeResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMasksRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMasksResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmPoliciesEnabledStateRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmPoliciesEnabledStateResponse;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmRulesRequest;
@@ -22,6 +34,8 @@ import com.huaweicloud.sdk.ces.v2.model.CreateAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateDashboardWidgetsRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateDashboardWidgetsResponse;
+import com.huaweicloud.sdk.ces.v2.model.CreateOneClickAlarmRequest;
+import com.huaweicloud.sdk.ces.v2.model.CreateOneClickAlarmResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateOneDashboardRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateOneDashboardResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupRequest;
@@ -46,10 +60,20 @@ import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplateAssociationAlarmsReques
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplateAssociationAlarmsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplatesRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListAlarmTemplatesResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListCesTargetProjectTagsRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListCesTargetProjectTagsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListDashboardInfosRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListDashboardInfosResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListDashboardWidgetsRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListDashboardWidgetsResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListNotificationMaskResourcesRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListNotificationMaskResourcesResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListNotificationMasksRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListNotificationMasksResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListOneClickAlarmRulesRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListOneClickAlarmRulesResponse;
+import com.huaweicloud.sdk.ces.v2.model.ListOneClickAlarmsRequest;
+import com.huaweicloud.sdk.ces.v2.model.ListOneClickAlarmsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsRequest;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsResponse;
 import com.huaweicloud.sdk.ces.v2.model.ListResourceGroupsServicesResourcesRequest;
@@ -60,12 +84,18 @@ import com.huaweicloud.sdk.ces.v2.model.ShowResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowResourceGroupResponse;
 import com.huaweicloud.sdk.ces.v2.model.ShowWidgetRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowWidgetResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmNotificationsRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmNotificationsResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmRulePoliciesResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -212,6 +242,68 @@ public class CesAsyncClient {
     }
 
     /**
+     * 批量删除告警通知屏蔽规则
+     *
+     * 批量删除告警通知屏蔽规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteNotificationMasksRequest 请求对象
+     * @return CompletableFuture<BatchDeleteNotificationMasksResponse>
+     */
+    public CompletableFuture<BatchDeleteNotificationMasksResponse> batchDeleteNotificationMasksAsync(
+        BatchDeleteNotificationMasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.batchDeleteNotificationMasks);
+    }
+
+    /**
+     * 批量删除告警通知屏蔽规则
+     *
+     * 批量删除告警通知屏蔽规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteNotificationMasksRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteNotificationMasksRequest, BatchDeleteNotificationMasksResponse>
+     */
+    public AsyncInvoker<BatchDeleteNotificationMasksRequest, BatchDeleteNotificationMasksResponse> batchDeleteNotificationMasksAsyncInvoker(
+        BatchDeleteNotificationMasksRequest request) {
+        return new AsyncInvoker<BatchDeleteNotificationMasksRequest, BatchDeleteNotificationMasksResponse>(request,
+            CesMeta.batchDeleteNotificationMasks, hcClient);
+    }
+
+    /**
+     * 批量删除一键告警
+     *
+     * 批量删除一键告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteOneClickAlarmsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteOneClickAlarmsResponse>
+     */
+    public CompletableFuture<BatchDeleteOneClickAlarmsResponse> batchDeleteOneClickAlarmsAsync(
+        BatchDeleteOneClickAlarmsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.batchDeleteOneClickAlarms);
+    }
+
+    /**
+     * 批量删除一键告警
+     *
+     * 批量删除一键告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteOneClickAlarmsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteOneClickAlarmsRequest, BatchDeleteOneClickAlarmsResponse>
+     */
+    public AsyncInvoker<BatchDeleteOneClickAlarmsRequest, BatchDeleteOneClickAlarmsResponse> batchDeleteOneClickAlarmsAsyncInvoker(
+        BatchDeleteOneClickAlarmsRequest request) {
+        return new AsyncInvoker<BatchDeleteOneClickAlarmsRequest, BatchDeleteOneClickAlarmsResponse>(request,
+            CesMeta.batchDeleteOneClickAlarms, hcClient);
+    }
+
+    /**
      * 批量删除资源分组
      *
      * 批量删除资源分组
@@ -302,6 +394,130 @@ public class CesAsyncClient {
         BatchEnableAlarmRulesRequest request) {
         return new AsyncInvoker<BatchEnableAlarmRulesRequest, BatchEnableAlarmRulesResponse>(request,
             CesMeta.batchEnableAlarmRules, hcClient);
+    }
+
+    /**
+     * 批量修改告警通知屏蔽规则的屏蔽时间
+     *
+     * 批量修改告警通知屏蔽规则的屏蔽时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateNotificationMaskTimeRequest 请求对象
+     * @return CompletableFuture<BatchUpdateNotificationMaskTimeResponse>
+     */
+    public CompletableFuture<BatchUpdateNotificationMaskTimeResponse> batchUpdateNotificationMaskTimeAsync(
+        BatchUpdateNotificationMaskTimeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.batchUpdateNotificationMaskTime);
+    }
+
+    /**
+     * 批量修改告警通知屏蔽规则的屏蔽时间
+     *
+     * 批量修改告警通知屏蔽规则的屏蔽时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateNotificationMaskTimeRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateNotificationMaskTimeRequest, BatchUpdateNotificationMaskTimeResponse>
+     */
+    public AsyncInvoker<BatchUpdateNotificationMaskTimeRequest, BatchUpdateNotificationMaskTimeResponse> batchUpdateNotificationMaskTimeAsyncInvoker(
+        BatchUpdateNotificationMaskTimeRequest request) {
+        return new AsyncInvoker<BatchUpdateNotificationMaskTimeRequest, BatchUpdateNotificationMaskTimeResponse>(
+            request, CesMeta.batchUpdateNotificationMaskTime, hcClient);
+    }
+
+    /**
+     * 批量设置告警通知屏蔽规则
+     *
+     * 批量设置告警通知屏蔽规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateNotificationMasksRequest 请求对象
+     * @return CompletableFuture<BatchUpdateNotificationMasksResponse>
+     */
+    public CompletableFuture<BatchUpdateNotificationMasksResponse> batchUpdateNotificationMasksAsync(
+        BatchUpdateNotificationMasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.batchUpdateNotificationMasks);
+    }
+
+    /**
+     * 批量设置告警通知屏蔽规则
+     *
+     * 批量设置告警通知屏蔽规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateNotificationMasksRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateNotificationMasksRequest, BatchUpdateNotificationMasksResponse>
+     */
+    public AsyncInvoker<BatchUpdateNotificationMasksRequest, BatchUpdateNotificationMasksResponse> batchUpdateNotificationMasksAsyncInvoker(
+        BatchUpdateNotificationMasksRequest request) {
+        return new AsyncInvoker<BatchUpdateNotificationMasksRequest, BatchUpdateNotificationMasksResponse>(request,
+            CesMeta.batchUpdateNotificationMasks, hcClient);
+    }
+
+    /**
+     * 批量修改一键告警关联告警规则策略的启用状态
+     *
+     * 批量修改一键告警关联告警规则策略的启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateOneClickAlarmPoliciesEnabledStateRequest 请求对象
+     * @return CompletableFuture<BatchUpdateOneClickAlarmPoliciesEnabledStateResponse>
+     */
+    public CompletableFuture<BatchUpdateOneClickAlarmPoliciesEnabledStateResponse> batchUpdateOneClickAlarmPoliciesEnabledStateAsync(
+        BatchUpdateOneClickAlarmPoliciesEnabledStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.batchUpdateOneClickAlarmPoliciesEnabledState);
+    }
+
+    /**
+     * 批量修改一键告警关联告警规则策略的启用状态
+     *
+     * 批量修改一键告警关联告警规则策略的启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateOneClickAlarmPoliciesEnabledStateRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateOneClickAlarmPoliciesEnabledStateRequest, BatchUpdateOneClickAlarmPoliciesEnabledStateResponse>
+     */
+    public AsyncInvoker<BatchUpdateOneClickAlarmPoliciesEnabledStateRequest, BatchUpdateOneClickAlarmPoliciesEnabledStateResponse> batchUpdateOneClickAlarmPoliciesEnabledStateAsyncInvoker(
+        BatchUpdateOneClickAlarmPoliciesEnabledStateRequest request) {
+        return new AsyncInvoker<BatchUpdateOneClickAlarmPoliciesEnabledStateRequest, BatchUpdateOneClickAlarmPoliciesEnabledStateResponse>(
+            request, CesMeta.batchUpdateOneClickAlarmPoliciesEnabledState, hcClient);
+    }
+
+    /**
+     * 批量修改一键告警关联告警规则的启用状态
+     *
+     * 批量修改一键告警关联告警规则的启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateOneClickAlarmsEnabledStateRequest 请求对象
+     * @return CompletableFuture<BatchUpdateOneClickAlarmsEnabledStateResponse>
+     */
+    public CompletableFuture<BatchUpdateOneClickAlarmsEnabledStateResponse> batchUpdateOneClickAlarmsEnabledStateAsync(
+        BatchUpdateOneClickAlarmsEnabledStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.batchUpdateOneClickAlarmsEnabledState);
+    }
+
+    /**
+     * 批量修改一键告警关联告警规则的启用状态
+     *
+     * 批量修改一键告警关联告警规则的启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchUpdateOneClickAlarmsEnabledStateRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateOneClickAlarmsEnabledStateRequest, BatchUpdateOneClickAlarmsEnabledStateResponse>
+     */
+    public AsyncInvoker<BatchUpdateOneClickAlarmsEnabledStateRequest, BatchUpdateOneClickAlarmsEnabledStateResponse> batchUpdateOneClickAlarmsEnabledStateAsyncInvoker(
+        BatchUpdateOneClickAlarmsEnabledStateRequest request) {
+        return new AsyncInvoker<BatchUpdateOneClickAlarmsEnabledStateRequest, BatchUpdateOneClickAlarmsEnabledStateResponse>(
+            request, CesMeta.batchUpdateOneClickAlarmsEnabledState, hcClient);
     }
 
     /**
@@ -423,6 +639,36 @@ public class CesAsyncClient {
         CreateDashboardWidgetsRequest request) {
         return new AsyncInvoker<CreateDashboardWidgetsRequest, CreateDashboardWidgetsResponse>(request,
             CesMeta.createDashboardWidgets, hcClient);
+    }
+
+    /**
+     * 创建一键告警
+     *
+     * 创建一键告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOneClickAlarmRequest 请求对象
+     * @return CompletableFuture<CreateOneClickAlarmResponse>
+     */
+    public CompletableFuture<CreateOneClickAlarmResponse> createOneClickAlarmAsync(CreateOneClickAlarmRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.createOneClickAlarm);
+    }
+
+    /**
+     * 创建一键告警
+     *
+     * 创建一键告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOneClickAlarmRequest 请求对象
+     * @return AsyncInvoker<CreateOneClickAlarmRequest, CreateOneClickAlarmResponse>
+     */
+    public AsyncInvoker<CreateOneClickAlarmRequest, CreateOneClickAlarmResponse> createOneClickAlarmAsyncInvoker(
+        CreateOneClickAlarmRequest request) {
+        return new AsyncInvoker<CreateOneClickAlarmRequest, CreateOneClickAlarmResponse>(request,
+            CesMeta.createOneClickAlarm, hcClient);
     }
 
     /**
@@ -791,6 +1037,37 @@ public class CesAsyncClient {
     }
 
     /**
+     * 查询CES指定项目指定资源类型标签列表
+     *
+     * 查询CES指定项目指定资源类型标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCesTargetProjectTagsRequest 请求对象
+     * @return CompletableFuture<ListCesTargetProjectTagsResponse>
+     */
+    public CompletableFuture<ListCesTargetProjectTagsResponse> listCesTargetProjectTagsAsync(
+        ListCesTargetProjectTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.listCesTargetProjectTags);
+    }
+
+    /**
+     * 查询CES指定项目指定资源类型标签列表
+     *
+     * 查询CES指定项目指定资源类型标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCesTargetProjectTagsRequest 请求对象
+     * @return AsyncInvoker<ListCesTargetProjectTagsRequest, ListCesTargetProjectTagsResponse>
+     */
+    public AsyncInvoker<ListCesTargetProjectTagsRequest, ListCesTargetProjectTagsResponse> listCesTargetProjectTagsAsyncInvoker(
+        ListCesTargetProjectTagsRequest request) {
+        return new AsyncInvoker<ListCesTargetProjectTagsRequest, ListCesTargetProjectTagsResponse>(request,
+            CesMeta.listCesTargetProjectTags, hcClient);
+    }
+
+    /**
      * 查询监控看板列表
      *
      * 查询监控看板列表
@@ -849,6 +1126,129 @@ public class CesAsyncClient {
         ListDashboardWidgetsRequest request) {
         return new AsyncInvoker<ListDashboardWidgetsRequest, ListDashboardWidgetsResponse>(request,
             CesMeta.listDashboardWidgets, hcClient);
+    }
+
+    /**
+     * 查询告警通知屏蔽资源列表
+     *
+     * 查询告警通知屏蔽资源列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotificationMaskResourcesRequest 请求对象
+     * @return CompletableFuture<ListNotificationMaskResourcesResponse>
+     */
+    public CompletableFuture<ListNotificationMaskResourcesResponse> listNotificationMaskResourcesAsync(
+        ListNotificationMaskResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.listNotificationMaskResources);
+    }
+
+    /**
+     * 查询告警通知屏蔽资源列表
+     *
+     * 查询告警通知屏蔽资源列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotificationMaskResourcesRequest 请求对象
+     * @return AsyncInvoker<ListNotificationMaskResourcesRequest, ListNotificationMaskResourcesResponse>
+     */
+    public AsyncInvoker<ListNotificationMaskResourcesRequest, ListNotificationMaskResourcesResponse> listNotificationMaskResourcesAsyncInvoker(
+        ListNotificationMaskResourcesRequest request) {
+        return new AsyncInvoker<ListNotificationMaskResourcesRequest, ListNotificationMaskResourcesResponse>(request,
+            CesMeta.listNotificationMaskResources, hcClient);
+    }
+
+    /**
+     * 查询告警通知屏蔽列表
+     *
+     * 批量查询指定类型的通知屏蔽规则，目前最多支持100个通知屏蔽规则的批量查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotificationMasksRequest 请求对象
+     * @return CompletableFuture<ListNotificationMasksResponse>
+     */
+    public CompletableFuture<ListNotificationMasksResponse> listNotificationMasksAsync(
+        ListNotificationMasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.listNotificationMasks);
+    }
+
+    /**
+     * 查询告警通知屏蔽列表
+     *
+     * 批量查询指定类型的通知屏蔽规则，目前最多支持100个通知屏蔽规则的批量查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNotificationMasksRequest 请求对象
+     * @return AsyncInvoker<ListNotificationMasksRequest, ListNotificationMasksResponse>
+     */
+    public AsyncInvoker<ListNotificationMasksRequest, ListNotificationMasksResponse> listNotificationMasksAsyncInvoker(
+        ListNotificationMasksRequest request) {
+        return new AsyncInvoker<ListNotificationMasksRequest, ListNotificationMasksResponse>(request,
+            CesMeta.listNotificationMasks, hcClient);
+    }
+
+    /**
+     * 查询一键告警关联告警规则列表
+     *
+     * 查询一键告警关联告警规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOneClickAlarmRulesRequest 请求对象
+     * @return CompletableFuture<ListOneClickAlarmRulesResponse>
+     */
+    public CompletableFuture<ListOneClickAlarmRulesResponse> listOneClickAlarmRulesAsync(
+        ListOneClickAlarmRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.listOneClickAlarmRules);
+    }
+
+    /**
+     * 查询一键告警关联告警规则列表
+     *
+     * 查询一键告警关联告警规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOneClickAlarmRulesRequest 请求对象
+     * @return AsyncInvoker<ListOneClickAlarmRulesRequest, ListOneClickAlarmRulesResponse>
+     */
+    public AsyncInvoker<ListOneClickAlarmRulesRequest, ListOneClickAlarmRulesResponse> listOneClickAlarmRulesAsyncInvoker(
+        ListOneClickAlarmRulesRequest request) {
+        return new AsyncInvoker<ListOneClickAlarmRulesRequest, ListOneClickAlarmRulesResponse>(request,
+            CesMeta.listOneClickAlarmRules, hcClient);
+    }
+
+    /**
+     * 查询一键告警列表
+     *
+     * 查询一键告警列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOneClickAlarmsRequest 请求对象
+     * @return CompletableFuture<ListOneClickAlarmsResponse>
+     */
+    public CompletableFuture<ListOneClickAlarmsResponse> listOneClickAlarmsAsync(ListOneClickAlarmsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.listOneClickAlarms);
+    }
+
+    /**
+     * 查询一键告警列表
+     *
+     * 查询一键告警列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOneClickAlarmsRequest 请求对象
+     * @return AsyncInvoker<ListOneClickAlarmsRequest, ListOneClickAlarmsResponse>
+     */
+    public AsyncInvoker<ListOneClickAlarmsRequest, ListOneClickAlarmsResponse> listOneClickAlarmsAsyncInvoker(
+        ListOneClickAlarmsRequest request) {
+        return new AsyncInvoker<ListOneClickAlarmsRequest, ListOneClickAlarmsResponse>(request,
+            CesMeta.listOneClickAlarms, hcClient);
     }
 
     /**
@@ -1001,6 +1401,37 @@ public class CesAsyncClient {
     }
 
     /**
+     * 修改告警规则告警通知信息
+     *
+     * 修改告警规则告警通知信息，告警策略&amp;资源请使用对应接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAlarmNotificationsRequest 请求对象
+     * @return CompletableFuture<UpdateAlarmNotificationsResponse>
+     */
+    public CompletableFuture<UpdateAlarmNotificationsResponse> updateAlarmNotificationsAsync(
+        UpdateAlarmNotificationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.updateAlarmNotifications);
+    }
+
+    /**
+     * 修改告警规则告警通知信息
+     *
+     * 修改告警规则告警通知信息，告警策略&amp;资源请使用对应接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAlarmNotificationsRequest 请求对象
+     * @return AsyncInvoker<UpdateAlarmNotificationsRequest, UpdateAlarmNotificationsResponse>
+     */
+    public AsyncInvoker<UpdateAlarmNotificationsRequest, UpdateAlarmNotificationsResponse> updateAlarmNotificationsAsyncInvoker(
+        UpdateAlarmNotificationsRequest request) {
+        return new AsyncInvoker<UpdateAlarmNotificationsRequest, UpdateAlarmNotificationsResponse>(request,
+            CesMeta.updateAlarmNotifications, hcClient);
+    }
+
+    /**
      * 修改告警规则策略(全量修改)
      *
      * 修改告警规则策略(全量修改)
@@ -1089,6 +1520,68 @@ public class CesAsyncClient {
         UpdateDashboardRequest request) {
         return new AsyncInvoker<UpdateDashboardRequest, UpdateDashboardResponse>(request, CesMeta.updateDashboard,
             hcClient);
+    }
+
+    /**
+     * 修改告警通知屏蔽规则
+     *
+     * 修改告警通知屏蔽规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNotificationMasksRequest 请求对象
+     * @return CompletableFuture<UpdateNotificationMasksResponse>
+     */
+    public CompletableFuture<UpdateNotificationMasksResponse> updateNotificationMasksAsync(
+        UpdateNotificationMasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.updateNotificationMasks);
+    }
+
+    /**
+     * 修改告警通知屏蔽规则
+     *
+     * 修改告警通知屏蔽规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNotificationMasksRequest 请求对象
+     * @return AsyncInvoker<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse>
+     */
+    public AsyncInvoker<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse> updateNotificationMasksAsyncInvoker(
+        UpdateNotificationMasksRequest request) {
+        return new AsyncInvoker<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse>(request,
+            CesMeta.updateNotificationMasks, hcClient);
+    }
+
+    /**
+     * 批量修改开启状态的一键告警关联告警规则的告警通知
+     *
+     * 批量修改开启状态的一键告警关联告警规则的告警通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateOneClickAlarmNotificationsRequest 请求对象
+     * @return CompletableFuture<UpdateOneClickAlarmNotificationsResponse>
+     */
+    public CompletableFuture<UpdateOneClickAlarmNotificationsResponse> updateOneClickAlarmNotificationsAsync(
+        UpdateOneClickAlarmNotificationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.updateOneClickAlarmNotifications);
+    }
+
+    /**
+     * 批量修改开启状态的一键告警关联告警规则的告警通知
+     *
+     * 批量修改开启状态的一键告警关联告警规则的告警通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateOneClickAlarmNotificationsRequest 请求对象
+     * @return AsyncInvoker<UpdateOneClickAlarmNotificationsRequest, UpdateOneClickAlarmNotificationsResponse>
+     */
+    public AsyncInvoker<UpdateOneClickAlarmNotificationsRequest, UpdateOneClickAlarmNotificationsResponse> updateOneClickAlarmNotificationsAsyncInvoker(
+        UpdateOneClickAlarmNotificationsRequest request) {
+        return new AsyncInvoker<UpdateOneClickAlarmNotificationsRequest, UpdateOneClickAlarmNotificationsResponse>(
+            request, CesMeta.updateOneClickAlarmNotifications, hcClient);
     }
 
     /**

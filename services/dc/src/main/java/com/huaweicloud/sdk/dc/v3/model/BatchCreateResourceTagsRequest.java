@@ -41,11 +41,6 @@ public class BatchCreateResourceTagsRequest {
          */
         public static final ResourceTypeEnum DC_VIF = new ResourceTypeEnum("dc-vif");
 
-        /**
-         * Enum DC_LAG for value: "dc-lag"
-         */
-        public static final ResourceTypeEnum DC_LAG = new ResourceTypeEnum("dc-lag");
-
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
@@ -53,7 +48,6 @@ public class BatchCreateResourceTagsRequest {
             map.put("dc-directconnect", DC_DIRECTCONNECT);
             map.put("dc-vgw", DC_VGW);
             map.put("dc-vif", DC_VIF);
-            map.put("dc-lag", DC_LAG);
             return Collections.unmodifiableMap(map);
         }
 

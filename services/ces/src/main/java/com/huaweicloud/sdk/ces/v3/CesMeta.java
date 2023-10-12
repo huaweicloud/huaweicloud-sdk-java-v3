@@ -89,13 +89,6 @@ public class CesMeta {
             f -> f.withMarshaller(ListAgentInvocationsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<String>withRequestField("instance_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentInvocationsRequest::getInstanceName, (req, v) -> {
-                req.setInstanceName(v);
-            }));
         builder.<ListAgentInvocationsRequest.InstanceTypeEnum>withRequestField("instance_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

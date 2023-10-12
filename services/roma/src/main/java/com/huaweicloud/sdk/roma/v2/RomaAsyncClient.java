@@ -19,8 +19,16 @@ import com.huaweicloud.sdk.roma.v2.model.AssociateRequestThrottlingPolicyV2Reque
 import com.huaweicloud.sdk.roma.v2.model.AssociateRequestThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.roma.v2.model.AssociateSignatureKeyV2Request;
 import com.huaweicloud.sdk.roma.v2.model.AssociateSignatureKeyV2Response;
+import com.huaweicloud.sdk.roma.v2.model.AttachApiToPluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.AttachApiToPluginResponse;
+import com.huaweicloud.sdk.roma.v2.model.AttachPluginToApiRequest;
+import com.huaweicloud.sdk.roma.v2.model.AttachPluginToApiResponse;
 import com.huaweicloud.sdk.roma.v2.model.BatchAddDeviceToGroupRequest;
 import com.huaweicloud.sdk.roma.v2.model.BatchAddDeviceToGroupResponse;
+import com.huaweicloud.sdk.roma.v2.model.BatchAssociateCertsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.BatchAssociateCertsV2Response;
+import com.huaweicloud.sdk.roma.v2.model.BatchAssociateDomainsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.BatchAssociateDomainsV2Response;
 import com.huaweicloud.sdk.roma.v2.model.BatchDeleteAclV2Request;
 import com.huaweicloud.sdk.roma.v2.model.BatchDeleteAclV2Response;
 import com.huaweicloud.sdk.roma.v2.model.BatchDeleteApiAclBindingV2Request;
@@ -33,6 +41,10 @@ import com.huaweicloud.sdk.roma.v2.model.BatchDeleteRulesRequest;
 import com.huaweicloud.sdk.roma.v2.model.BatchDeleteRulesResponse;
 import com.huaweicloud.sdk.roma.v2.model.BatchDisableMembersRequest;
 import com.huaweicloud.sdk.roma.v2.model.BatchDisableMembersResponse;
+import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateCertsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateCertsV2Response;
+import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateDomainsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateDomainsV2Response;
 import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateThrottlingPolicyV2Request;
 import com.huaweicloud.sdk.roma.v2.model.BatchDisassociateThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.roma.v2.model.BatchEnableMembersRequest;
@@ -89,6 +101,8 @@ import com.huaweicloud.sdk.roma.v2.model.CreateAppQuotaRequest;
 import com.huaweicloud.sdk.roma.v2.model.CreateAppQuotaResponse;
 import com.huaweicloud.sdk.roma.v2.model.CreateAuthorizingAppsV2Request;
 import com.huaweicloud.sdk.roma.v2.model.CreateAuthorizingAppsV2Response;
+import com.huaweicloud.sdk.roma.v2.model.CreateCertificateV2Request;
+import com.huaweicloud.sdk.roma.v2.model.CreateCertificateV2Response;
 import com.huaweicloud.sdk.roma.v2.model.CreateCommandRequest;
 import com.huaweicloud.sdk.roma.v2.model.CreateCommandResponse;
 import com.huaweicloud.sdk.roma.v2.model.CreateCommonTaskRequest;
@@ -129,6 +143,8 @@ import com.huaweicloud.sdk.roma.v2.model.CreateNotificationRequest;
 import com.huaweicloud.sdk.roma.v2.model.CreateNotificationResponse;
 import com.huaweicloud.sdk.roma.v2.model.CreateOrDeletePublishRecordForApiV2Request;
 import com.huaweicloud.sdk.roma.v2.model.CreateOrDeletePublishRecordForApiV2Response;
+import com.huaweicloud.sdk.roma.v2.model.CreatePluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.CreatePluginResponse;
 import com.huaweicloud.sdk.roma.v2.model.CreateProductRequest;
 import com.huaweicloud.sdk.roma.v2.model.CreateProductResponse;
 import com.huaweicloud.sdk.roma.v2.model.CreateProductTemplateRequest;
@@ -189,6 +205,8 @@ import com.huaweicloud.sdk.roma.v2.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteAssetResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteBackendInstanceV2Request;
 import com.huaweicloud.sdk.roma.v2.model.DeleteBackendInstanceV2Response;
+import com.huaweicloud.sdk.roma.v2.model.DeleteCertificateV2Request;
+import com.huaweicloud.sdk.roma.v2.model.DeleteCertificateV2Response;
 import com.huaweicloud.sdk.roma.v2.model.DeleteCommandRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteCommandResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteCustomAuthorizerV2Request;
@@ -219,6 +237,8 @@ import com.huaweicloud.sdk.roma.v2.model.DeleteMultiTaskMappingRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteMultiTaskMappingResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteNotificationRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteNotificationResponse;
+import com.huaweicloud.sdk.roma.v2.model.DeletePluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.DeletePluginResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteProductRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteProductResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteProductTemplateRequest;
@@ -249,6 +269,10 @@ import com.huaweicloud.sdk.roma.v2.model.DeleteTaskRequest;
 import com.huaweicloud.sdk.roma.v2.model.DeleteTaskResponse;
 import com.huaweicloud.sdk.roma.v2.model.DeleteVpcChannelV2Request;
 import com.huaweicloud.sdk.roma.v2.model.DeleteVpcChannelV2Response;
+import com.huaweicloud.sdk.roma.v2.model.DetachApiFromPluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.DetachApiFromPluginResponse;
+import com.huaweicloud.sdk.roma.v2.model.DetachPluginFromApiRequest;
+import com.huaweicloud.sdk.roma.v2.model.DetachPluginFromApiResponse;
 import com.huaweicloud.sdk.roma.v2.model.DisassociateAppQuotaWithAppRequest;
 import com.huaweicloud.sdk.roma.v2.model.DisassociateAppQuotaWithAppResponse;
 import com.huaweicloud.sdk.roma.v2.model.DisassociateCertificateV2Request;
@@ -285,6 +309,10 @@ import com.huaweicloud.sdk.roma.v2.model.ListAclPolicyBindedToApiV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListAclPolicyBindedToApiV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListAclStrategiesV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListAclStrategiesV2Response;
+import com.huaweicloud.sdk.roma.v2.model.ListApiAttachablePluginsRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListApiAttachablePluginsResponse;
+import com.huaweicloud.sdk.roma.v2.model.ListApiAttachedPluginsRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListApiAttachedPluginsResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListApiGroupsV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListApiGroupsV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListApiRuntimeDefinitionV2Request;
@@ -325,8 +353,12 @@ import com.huaweicloud.sdk.roma.v2.model.ListAppsBindedToApiV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListAppsBindedToApiV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListAppsV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListAppsV2Response;
+import com.huaweicloud.sdk.roma.v2.model.ListAttachedDomainsV2Request;
+import com.huaweicloud.sdk.roma.v2.model.ListAttachedDomainsV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListBackendInstancesV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ListBackendInstancesV2Response;
+import com.huaweicloud.sdk.roma.v2.model.ListCertificatesV2Request;
+import com.huaweicloud.sdk.roma.v2.model.ListCertificatesV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ListCommandsRequest;
 import com.huaweicloud.sdk.roma.v2.model.ListCommandsResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListCustomAuthorizersV2Request;
@@ -377,6 +409,12 @@ import com.huaweicloud.sdk.roma.v2.model.ListMqsInstanceTopicsRequest;
 import com.huaweicloud.sdk.roma.v2.model.ListMqsInstanceTopicsResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListNotificationRequest;
 import com.huaweicloud.sdk.roma.v2.model.ListNotificationResponse;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginAttachableApisRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginAttachableApisResponse;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginAttachedApisRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginAttachedApisResponse;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginsRequest;
+import com.huaweicloud.sdk.roma.v2.model.ListPluginsResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListProductTemplatesRequest;
 import com.huaweicloud.sdk.roma.v2.model.ListProductTemplatesResponse;
 import com.huaweicloud.sdk.roma.v2.model.ListProductTopicsRequest;
@@ -465,6 +503,8 @@ import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfAppConfigV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfAppConfigV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfAppV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfAppV2Response;
+import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfCertificateV2Request;
+import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfCertificateV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfCustomAuthorizersV2Request;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfCustomAuthorizersV2Response;
 import com.huaweicloud.sdk.roma.v2.model.ShowDetailsOfDomainNameCertificateV2Request;
@@ -497,6 +537,8 @@ import com.huaweicloud.sdk.roma.v2.model.ShowMqsInstanceRequest;
 import com.huaweicloud.sdk.roma.v2.model.ShowMqsInstanceResponse;
 import com.huaweicloud.sdk.roma.v2.model.ShowMqsInstanceTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.roma.v2.model.ShowMqsInstanceTopicAccessPolicyResponse;
+import com.huaweicloud.sdk.roma.v2.model.ShowPluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.ShowPluginResponse;
 import com.huaweicloud.sdk.roma.v2.model.ShowProductAuthenticationRequest;
 import com.huaweicloud.sdk.roma.v2.model.ShowProductAuthenticationResponse;
 import com.huaweicloud.sdk.roma.v2.model.ShowProductRequest;
@@ -537,6 +579,8 @@ import com.huaweicloud.sdk.roma.v2.model.UpdateAppQuotaRequest;
 import com.huaweicloud.sdk.roma.v2.model.UpdateAppQuotaResponse;
 import com.huaweicloud.sdk.roma.v2.model.UpdateBackendInstancesV2Request;
 import com.huaweicloud.sdk.roma.v2.model.UpdateBackendInstancesV2Response;
+import com.huaweicloud.sdk.roma.v2.model.UpdateCertificateV2Request;
+import com.huaweicloud.sdk.roma.v2.model.UpdateCertificateV2Response;
 import com.huaweicloud.sdk.roma.v2.model.UpdateCommandRequest;
 import com.huaweicloud.sdk.roma.v2.model.UpdateCommandResponse;
 import com.huaweicloud.sdk.roma.v2.model.UpdateCustomAuthorizerV2Request;
@@ -569,6 +613,8 @@ import com.huaweicloud.sdk.roma.v2.model.UpdateMultiTasksRequest;
 import com.huaweicloud.sdk.roma.v2.model.UpdateMultiTasksResponse;
 import com.huaweicloud.sdk.roma.v2.model.UpdateNotificationRequest;
 import com.huaweicloud.sdk.roma.v2.model.UpdateNotificationResponse;
+import com.huaweicloud.sdk.roma.v2.model.UpdatePluginRequest;
+import com.huaweicloud.sdk.roma.v2.model.UpdatePluginResponse;
 import com.huaweicloud.sdk.roma.v2.model.UpdateProductRequest;
 import com.huaweicloud.sdk.roma.v2.model.UpdateProductResponse;
 import com.huaweicloud.sdk.roma.v2.model.UpdateProductTemplateRequest;
@@ -720,7 +766,8 @@ public class RomaAsyncClient {
     /**
      * 绑定域名
      *
-     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
+     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。
+     * 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -734,7 +781,8 @@ public class RomaAsyncClient {
     /**
      * 绑定域名
      *
-     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
+     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。
+     * 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -752,7 +800,9 @@ public class RomaAsyncClient {
      *
      * 签名密钥创建后，需要绑定到API才能生效。
      * 
-     * 将签名密钥绑定到API后，则ROMA Connect APIC请求后端服务时就会使用这个签名密钥进行加密签名，后端服务可以校验这个签名来验证请求来源。
+     * 
+     * 将签名密钥绑定到API后，则服务集成请求后端服务时就会使用这个签名密钥进行加密签名，后端服务可以校验这个签名来验证请求来源。
+     * 
      * 
      * 将指定的签名密钥绑定到一个或多个已发布的API上。同一个API发布到不同的环境可以绑定不同的签名密钥；一个API在发布到特定环境后只能绑定一个签名密钥。
      * 
@@ -771,7 +821,9 @@ public class RomaAsyncClient {
      *
      * 签名密钥创建后，需要绑定到API才能生效。
      * 
-     * 将签名密钥绑定到API后，则ROMA Connect APIC请求后端服务时就会使用这个签名密钥进行加密签名，后端服务可以校验这个签名来验证请求来源。
+     * 
+     * 将签名密钥绑定到API后，则服务集成请求后端服务时就会使用这个签名密钥进行加密签名，后端服务可以校验这个签名来验证请求来源。
+     * 
      * 
      * 将指定的签名密钥绑定到一个或多个已发布的API上。同一个API发布到不同的环境可以绑定不同的签名密钥；一个API在发布到特定环境后只能绑定一个签名密钥。
      * 
@@ -784,6 +836,82 @@ public class RomaAsyncClient {
         AssociateSignatureKeyV2Request request) {
         return new AsyncInvoker<AssociateSignatureKeyV2Request, AssociateSignatureKeyV2Response>(request,
             RomaMeta.associateSignatureKeyV2, hcClient);
+    }
+
+    /**
+     * 插件绑定API
+     *
+     * 绑定插件到API上。
+     * - 只能选择发布状态的API
+     * - 绑定以后及时生效
+     * - 修改插件后及时生效
+     * - 相同类型的插件只能绑定一个，原来已经绑定的同类型插件，会直接覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachApiToPluginRequest 请求对象
+     * @return CompletableFuture<AttachApiToPluginResponse>
+     */
+    public CompletableFuture<AttachApiToPluginResponse> attachApiToPluginAsync(AttachApiToPluginRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.attachApiToPlugin);
+    }
+
+    /**
+     * 插件绑定API
+     *
+     * 绑定插件到API上。
+     * - 只能选择发布状态的API
+     * - 绑定以后及时生效
+     * - 修改插件后及时生效
+     * - 相同类型的插件只能绑定一个，原来已经绑定的同类型插件，会直接覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachApiToPluginRequest 请求对象
+     * @return AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>
+     */
+    public AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse> attachApiToPluginAsyncInvoker(
+        AttachApiToPluginRequest request) {
+        return new AsyncInvoker<AttachApiToPluginRequest, AttachApiToPluginResponse>(request,
+            RomaMeta.attachApiToPlugin, hcClient);
+    }
+
+    /**
+     * API绑定插件
+     *
+     * 绑定插件到API上。
+     * - 只能选择发布状态的API
+     * - 绑定以后及时生效
+     * - 修改插件后及时生效
+     * - 相同类型的插件只能绑定一个，原来已经绑定的同类型插件，会直接覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachPluginToApiRequest 请求对象
+     * @return CompletableFuture<AttachPluginToApiResponse>
+     */
+    public CompletableFuture<AttachPluginToApiResponse> attachPluginToApiAsync(AttachPluginToApiRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.attachPluginToApi);
+    }
+
+    /**
+     * API绑定插件
+     *
+     * 绑定插件到API上。
+     * - 只能选择发布状态的API
+     * - 绑定以后及时生效
+     * - 修改插件后及时生效
+     * - 相同类型的插件只能绑定一个，原来已经绑定的同类型插件，会直接覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AttachPluginToApiRequest 请求对象
+     * @return AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>
+     */
+    public AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse> attachPluginToApiAsyncInvoker(
+        AttachPluginToApiRequest request) {
+        return new AsyncInvoker<AttachPluginToApiRequest, AttachPluginToApiResponse>(request,
+            RomaMeta.attachPluginToApi, hcClient);
     }
 
     /**
@@ -1421,9 +1549,11 @@ public class RomaAsyncClient {
      *
      * 在实际的生产中，API提供者可能有多个环境，如开发环境、测试环境、生产环境等，用户可以自由将API发布到某个环境，供调用者调用。
      * 
+     * 
      * 对于不同的环境，API的版本、请求地址甚至于包括请求消息等均有可能不同。如：某个API，v1.0的版本为稳定版本，发布到了生产环境供生产使用，同时，该API正处于迭代中，v1.1的版本是开发人员交付测试人员进行测试的版本，发布在测试环境上，而v1.2的版本目前开发团队正处于开发过程中，可以发布到开发环境进行自测等。
      * 
-     * 为此，ROMA Connect APIC提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接入ROMA Connect APIC。
+     * 
+     * 为此，服务集成提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接服务集成。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1439,9 +1569,11 @@ public class RomaAsyncClient {
      *
      * 在实际的生产中，API提供者可能有多个环境，如开发环境、测试环境、生产环境等，用户可以自由将API发布到某个环境，供调用者调用。
      * 
+     * 
      * 对于不同的环境，API的版本、请求地址甚至于包括请求消息等均有可能不同。如：某个API，v1.0的版本为稳定版本，发布到了生产环境供生产使用，同时，该API正处于迭代中，v1.1的版本是开发人员交付测试人员进行测试的版本，发布在测试环境上，而v1.2的版本目前开发团队正处于开发过程中，可以发布到开发环境进行自测等。
      * 
-     * 为此，ROMA Connect APIC提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接入ROMA Connect APIC。
+     * 
+     * 为此，服务集成提供多环境管理功能，使租户能够最大化的模拟实际场景，低成本的接服务集成。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1459,9 +1591,12 @@ public class RomaAsyncClient {
      *
      * 将API发布到不同的环境后，对于不同的环境，可能会有不同的环境变量，比如，API的服务部署地址，请求的版本号等。
      * 
-     * 用户可以定义不同的环境变量，用户在定义API时，在API的定义中使用这些变量，当调用API时，ROMA Connect APIC会将这些变量替换成真实的变量值，以达到不同环境的区分效果。
+     * 
+     * 用户可以定义不同的环境变量，用户在定义API时，在API的定义中使用这些变量，当调用API时，服务集成会将这些变量替换成真实的变量值，以达到不同环境的区分效果。
+     * 
      * 
      * 环境变量定义在API分组上，该分组下的所有API都可以使用这些变量。
+     * 
      * &gt; 1.环境变量的变量名称必须保持唯一，即一个分组在同一个环境上不能有两个同名的变量
      *   2.环境变量区分大小写，即变量ABC与变量abc是两个不同的变量
      *   3.设置了环境变量后，使用到该变量的API的调试功能将不可使用。
@@ -1482,9 +1617,12 @@ public class RomaAsyncClient {
      *
      * 将API发布到不同的环境后，对于不同的环境，可能会有不同的环境变量，比如，API的服务部署地址，请求的版本号等。
      * 
-     * 用户可以定义不同的环境变量，用户在定义API时，在API的定义中使用这些变量，当调用API时，ROMA Connect APIC会将这些变量替换成真实的变量值，以达到不同环境的区分效果。
+     * 
+     * 用户可以定义不同的环境变量，用户在定义API时，在API的定义中使用这些变量，当调用API时，服务集成会将这些变量替换成真实的变量值，以达到不同环境的区分效果。
+     * 
      * 
      * 环境变量定义在API分组上，该分组下的所有API都可以使用这些变量。
+     * 
      * &gt; 1.环境变量的变量名称必须保持唯一，即一个分组在同一个环境上不能有两个同名的变量
      *   2.环境变量区分大小写，即变量ABC与变量abc是两个不同的变量
      *   3.设置了环境变量后，使用到该变量的API的调试功能将不可使用。
@@ -1719,6 +1857,39 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 创建插件
+     *
+     * 创建插件信息。
+     * - 插件不允许重名
+     * - 插件创建后未绑定API前是无意义的，绑定API后，对绑定的API即时生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePluginRequest 请求对象
+     * @return CompletableFuture<CreatePluginResponse>
+     */
+    public CompletableFuture<CreatePluginResponse> createPluginAsync(CreatePluginRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.createPlugin);
+    }
+
+    /**
+     * 创建插件
+     *
+     * 创建插件信息。
+     * - 插件不允许重名
+     * - 插件创建后未绑定API前是无意义的，绑定API后，对绑定的API即时生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePluginRequest 请求对象
+     * @return AsyncInvoker<CreatePluginRequest, CreatePluginResponse>
+     */
+    public AsyncInvoker<CreatePluginRequest, CreatePluginResponse> createPluginAsyncInvoker(
+        CreatePluginRequest request) {
+        return new AsyncInvoker<CreatePluginRequest, CreatePluginResponse>(request, RomaMeta.createPlugin, hcClient);
+    }
+
+    /**
      * 创建产品
      *
      * 创建产品
@@ -1872,7 +2043,8 @@ public class RomaAsyncClient {
     /**
      * 创建流控策略
      *
-     * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
+     * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。
+     * 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1887,7 +2059,8 @@ public class RomaAsyncClient {
     /**
      * 创建流控策略
      *
-     * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
+     * 当API上线后，系统会默认给每个API提供一个流控策略，API提供者可以根据自身API的服务能力及负载情况变更这个流控策略。
+     * 流控策略即限制API在一定长度的时间内，能够允许被访问的最大次数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1995,7 +2168,7 @@ public class RomaAsyncClient {
      * 
      * 其中，签名密钥就是API安全保护机制的一种。
      * 
-     * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则ROMA Connect APIC在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是ROMA Connect APIC发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
+     * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则服务集成在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是服务集成发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2014,7 +2187,7 @@ public class RomaAsyncClient {
      * 
      * 其中，签名密钥就是API安全保护机制的一种。
      * 
-     * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则ROMA Connect APIC在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是ROMA Connect APIC发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
+     * 租户创建一个签名密钥，并将签名密钥与API进行绑定，则服务集成在请求这个API时，就会使用绑定的签名密钥对请求参数进行数据加密，生成签名。当租户的后端服务收到请求时，可以校验这个签名，如果签名校验不通过，则该请求不是服务集成发出的请求，租户可以拒绝这个请求，从而保证API的安全性，避免API被未知来源的请求攻击。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2063,7 +2236,7 @@ public class RomaAsyncClient {
      * 
      * 如果想要对某个特定的APP进行特殊设置，例如设置所有APP每分钟的访问次数为500次，但想设置APP1每分钟的访问次数为800次，可以通过在流控策略中设置特殊APP来实现该功能。
      * 
-     * 为流控策略添加一个特殊设置的对象，可以是APP，也可以是租户。
+     * 为流控策略添加一个特殊设置的对象，[可以是APP，也可以是租户。](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)[对象为APP。](tag:Site)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2082,7 +2255,7 @@ public class RomaAsyncClient {
      * 
      * 如果想要对某个特定的APP进行特殊设置，例如设置所有APP每分钟的访问次数为500次，但想设置APP1每分钟的访问次数为800次，可以通过在流控策略中设置特殊APP来实现该功能。
      * 
-     * 为流控策略添加一个特殊设置的对象，可以是APP，也可以是租户。
+     * 为流控策略添加一个特殊设置的对象，[可以是APP，也可以是租户。](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)[对象为APP。](tag:Site)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2669,6 +2842,37 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 删除插件
+     *
+     * 删除插件。
+     * - 必须先解除API和插件的绑定关系，否则删除报错
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePluginRequest 请求对象
+     * @return CompletableFuture<DeletePluginResponse>
+     */
+    public CompletableFuture<DeletePluginResponse> deletePluginAsync(DeletePluginRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.deletePlugin);
+    }
+
+    /**
+     * 删除插件
+     *
+     * 删除插件。
+     * - 必须先解除API和插件的绑定关系，否则删除报错
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePluginRequest 请求对象
+     * @return AsyncInvoker<DeletePluginRequest, DeletePluginResponse>
+     */
+    public AsyncInvoker<DeletePluginRequest, DeletePluginResponse> deletePluginAsyncInvoker(
+        DeletePluginRequest request) {
+        return new AsyncInvoker<DeletePluginRequest, DeletePluginResponse>(request, RomaMeta.deletePlugin, hcClient);
+    }
+
+    /**
      * 删除产品
      *
      * 删除产品
@@ -3058,6 +3262,70 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 解除绑定插件的API
+     *
+     * 解除绑定在插件上的API
+     * - 解绑及时生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachApiFromPluginRequest 请求对象
+     * @return CompletableFuture<DetachApiFromPluginResponse>
+     */
+    public CompletableFuture<DetachApiFromPluginResponse> detachApiFromPluginAsync(DetachApiFromPluginRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.detachApiFromPlugin);
+    }
+
+    /**
+     * 解除绑定插件的API
+     *
+     * 解除绑定在插件上的API
+     * - 解绑及时生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachApiFromPluginRequest 请求对象
+     * @return AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>
+     */
+    public AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse> detachApiFromPluginAsyncInvoker(
+        DetachApiFromPluginRequest request) {
+        return new AsyncInvoker<DetachApiFromPluginRequest, DetachApiFromPluginResponse>(request,
+            RomaMeta.detachApiFromPlugin, hcClient);
+    }
+
+    /**
+     * 解除绑定API的插件
+     *
+     * 解除绑定在API上的插件
+     * - 解绑及时生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachPluginFromApiRequest 请求对象
+     * @return CompletableFuture<DetachPluginFromApiResponse>
+     */
+    public CompletableFuture<DetachPluginFromApiResponse> detachPluginFromApiAsync(DetachPluginFromApiRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.detachPluginFromApi);
+    }
+
+    /**
+     * 解除绑定API的插件
+     *
+     * 解除绑定在API上的插件
+     * - 解绑及时生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DetachPluginFromApiRequest 请求对象
+     * @return AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>
+     */
+    public AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse> detachPluginFromApiAsyncInvoker(
+        DetachPluginFromApiRequest request) {
+        return new AsyncInvoker<DetachPluginFromApiRequest, DetachPluginFromApiResponse>(request,
+            RomaMeta.detachPluginFromApi, hcClient);
+    }
+
+    /**
      * 解除客户端配额和客户端应用的绑定
      *
      * 解除客户端配额和客户端应用的绑定
@@ -3301,6 +3569,78 @@ public class RomaAsyncClient {
         InstallMultiTasksRequest request) {
         return new AsyncInvoker<InstallMultiTasksRequest, InstallMultiTasksResponse>(request,
             RomaMeta.installMultiTasks, hcClient);
+    }
+
+    /**
+     * 查询可绑定当前API的插件
+     *
+     * 查询可绑定当前API的插件信息。
+     * - 支持分页返回
+     * - 支持插件名称模糊查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListApiAttachablePluginsRequest 请求对象
+     * @return CompletableFuture<ListApiAttachablePluginsResponse>
+     */
+    public CompletableFuture<ListApiAttachablePluginsResponse> listApiAttachablePluginsAsync(
+        ListApiAttachablePluginsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listApiAttachablePlugins);
+    }
+
+    /**
+     * 查询可绑定当前API的插件
+     *
+     * 查询可绑定当前API的插件信息。
+     * - 支持分页返回
+     * - 支持插件名称模糊查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListApiAttachablePluginsRequest 请求对象
+     * @return AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>
+     */
+    public AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePluginsAsyncInvoker(
+        ListApiAttachablePluginsRequest request) {
+        return new AsyncInvoker<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse>(request,
+            RomaMeta.listApiAttachablePlugins, hcClient);
+    }
+
+    /**
+     * 查询API下绑定的插件
+     *
+     * 查询指定API下绑定的插件信息
+     * - 用于查询指定API下已经绑定的插件列表信息
+     * - 支持分页返回
+     * - 支持插件名称模糊查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListApiAttachedPluginsRequest 请求对象
+     * @return CompletableFuture<ListApiAttachedPluginsResponse>
+     */
+    public CompletableFuture<ListApiAttachedPluginsResponse> listApiAttachedPluginsAsync(
+        ListApiAttachedPluginsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listApiAttachedPlugins);
+    }
+
+    /**
+     * 查询API下绑定的插件
+     *
+     * 查询指定API下绑定的插件信息
+     * - 用于查询指定API下已经绑定的插件列表信息
+     * - 支持分页返回
+     * - 支持插件名称模糊查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListApiAttachedPluginsRequest 请求对象
+     * @return AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>
+     */
+    public AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse> listApiAttachedPluginsAsyncInvoker(
+        ListApiAttachedPluginsRequest request) {
+        return new AsyncInvoker<ListApiAttachedPluginsRequest, ListApiAttachedPluginsResponse>(request,
+            RomaMeta.listApiAttachedPlugins, hcClient);
     }
 
     /**
@@ -4185,6 +4525,124 @@ public class RomaAsyncClient {
         ListNotificationRequest request) {
         return new AsyncInvoker<ListNotificationRequest, ListNotificationResponse>(request, RomaMeta.listNotification,
             hcClient);
+    }
+
+    /**
+     * 查询可绑定当前插件的API
+     *
+     * 查询可绑定当前插件的API信息。
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * - 支持已绑定其他插件的API查询返回
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginAttachableApisRequest 请求对象
+     * @return CompletableFuture<ListPluginAttachableApisResponse>
+     */
+    public CompletableFuture<ListPluginAttachableApisResponse> listPluginAttachableApisAsync(
+        ListPluginAttachableApisRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listPluginAttachableApis);
+    }
+
+    /**
+     * 查询可绑定当前插件的API
+     *
+     * 查询可绑定当前插件的API信息。
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * - 支持已绑定其他插件的API查询返回
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginAttachableApisRequest 请求对象
+     * @return AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>
+     */
+    public AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse> listPluginAttachableApisAsyncInvoker(
+        ListPluginAttachableApisRequest request) {
+        return new AsyncInvoker<ListPluginAttachableApisRequest, ListPluginAttachableApisResponse>(request,
+            RomaMeta.listPluginAttachableApis, hcClient);
+    }
+
+    /**
+     * 查询插件下绑定的API
+     *
+     * 查询指定插件下绑定的API信息
+     * - 用于查询指定插件下已经绑定的API列表信息
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * - 绑定关系列表中返回的API在对应的环境中可能已经下线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginAttachedApisRequest 请求对象
+     * @return CompletableFuture<ListPluginAttachedApisResponse>
+     */
+    public CompletableFuture<ListPluginAttachedApisResponse> listPluginAttachedApisAsync(
+        ListPluginAttachedApisRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listPluginAttachedApis);
+    }
+
+    /**
+     * 查询插件下绑定的API
+     *
+     * 查询指定插件下绑定的API信息
+     * - 用于查询指定插件下已经绑定的API列表信息
+     * - 支持分页返回
+     * - 支持API名称模糊查询
+     * - 绑定关系列表中返回的API在对应的环境中可能已经下线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginAttachedApisRequest 请求对象
+     * @return AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>
+     */
+    public AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse> listPluginAttachedApisAsyncInvoker(
+        ListPluginAttachedApisRequest request) {
+        return new AsyncInvoker<ListPluginAttachedApisRequest, ListPluginAttachedApisResponse>(request,
+            RomaMeta.listPluginAttachedApis, hcClient);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询一组符合条件的API网关插件详情。
+     * - 支持分页
+     * - 支持根据插件类型查询
+     * - 支持根据插件可见范围查询
+     * - 支持根据插件编码查询
+     * - 支持根据名称模糊查询
+     * - 支持根据集成应用编号查询
+     * - 支持根据集成应用名称查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginsRequest 请求对象
+     * @return CompletableFuture<ListPluginsResponse>
+     */
+    public CompletableFuture<ListPluginsResponse> listPluginsAsync(ListPluginsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listPlugins);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询一组符合条件的API网关插件详情。
+     * - 支持分页
+     * - 支持根据插件类型查询
+     * - 支持根据插件可见范围查询
+     * - 支持根据插件编码查询
+     * - 支持根据名称模糊查询
+     * - 支持根据集成应用编号查询
+     * - 支持根据集成应用名称查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginsRequest 请求对象
+     * @return AsyncInvoker<ListPluginsRequest, ListPluginsResponse>
+     */
+    public AsyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsAsyncInvoker(ListPluginsRequest request) {
+        return new AsyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, RomaMeta.listPlugins, hcClient);
     }
 
     /**
@@ -5349,9 +5807,9 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 查看ROMA Connect实例详情
+     * 查看实例详情
      *
-     * 查看ROMA Connect实例详情
+     * 查看实例详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5364,9 +5822,9 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 查看ROMA Connect实例详情
+     * 查看实例详情
      *
-     * 查看ROMA Connect实例详情
+     * 查看实例详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5653,6 +6111,34 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 查询插件详情
+     *
+     * 查询插件详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginRequest 请求对象
+     * @return CompletableFuture<ShowPluginResponse>
+     */
+    public CompletableFuture<ShowPluginResponse> showPluginAsync(ShowPluginRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.showPlugin);
+    }
+
+    /**
+     * 查询插件详情
+     *
+     * 查询插件详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginRequest 请求对象
+     * @return AsyncInvoker<ShowPluginRequest, ShowPluginResponse>
+     */
+    public AsyncInvoker<ShowPluginRequest, ShowPluginResponse> showPluginAsyncInvoker(ShowPluginRequest request) {
+        return new AsyncInvoker<ShowPluginRequest, ShowPluginResponse>(request, RomaMeta.showPlugin, hcClient);
+    }
+
+    /**
      * 查询产品详情
      *
      * 查询产品详情
@@ -5832,9 +6318,9 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 查看ROMA Connect实例约束信息
+     * 查看实例约束信息
      *
-     * 查看ROMA Connect实例约束信息
+     * 查看实例约束信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5847,9 +6333,9 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 查看ROMA Connect实例约束信息
+     * 查看实例约束信息
      *
-     * 查看ROMA Connect实例约束信息
+     * 查看实例约束信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6517,6 +7003,39 @@ public class RomaAsyncClient {
     }
 
     /**
+     * 修改插件
+     *
+     * 修改插件信息。
+     * - 插件不允许重名
+     * - 插件不支持修改类型和可见范围
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePluginRequest 请求对象
+     * @return CompletableFuture<UpdatePluginResponse>
+     */
+    public CompletableFuture<UpdatePluginResponse> updatePluginAsync(UpdatePluginRequest request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.updatePlugin);
+    }
+
+    /**
+     * 修改插件
+     *
+     * 修改插件信息。
+     * - 插件不允许重名
+     * - 插件不支持修改类型和可见范围
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePluginRequest 请求对象
+     * @return AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse>
+     */
+    public AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse> updatePluginAsyncInvoker(
+        UpdatePluginRequest request) {
+        return new AsyncInvoker<UpdatePluginRequest, UpdatePluginResponse>(request, RomaMeta.updatePlugin, hcClient);
+    }
+
+    /**
      * 修改产品信息
      *
      * 修改产品信息
@@ -6973,7 +7492,7 @@ public class RomaAsyncClient {
     /**
      * 创建ACL策略
      *
-     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws;hws_hk;hcs;fcs;g42;)
+     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6987,7 +7506,7 @@ public class RomaAsyncClient {
     /**
      * 创建ACL策略
      *
-     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws;hws_hk;hcs;fcs;g42;)
+     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP[或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7124,7 +7643,9 @@ public class RomaAsyncClient {
      *
      * 将流控策略应用于API，则所有对该API的访问将会受到该流控策略的限制。
      * 
+     * 
      * 当一定时间内的访问次数超过流控策略设置的API最大访问次数限制后，后续的访问将会被拒绝，从而能够较好的保护后端API免受异常流量的冲击，保障服务的稳定运行。
+     * 
      * 
      * 为指定的API绑定流控策略，绑定时，需要指定在哪个环境上生效。同一个API发布到不同的环境可以绑定不同的流控策略；一个API在发布到特定环境后只能绑定一个默认的流控策略。
      * 
@@ -7143,7 +7664,9 @@ public class RomaAsyncClient {
      *
      * 将流控策略应用于API，则所有对该API的访问将会受到该流控策略的限制。
      * 
+     * 
      * 当一定时间内的访问次数超过流控策略设置的API最大访问次数限制后，后续的访问将会被拒绝，从而能够较好的保护后端API免受异常流量的冲击，保障服务的稳定运行。
+     * 
      * 
      * 为指定的API绑定流控策略，绑定时，需要指定在哪个环境上生效。同一个API发布到不同的环境可以绑定不同的流控策略；一个API在发布到特定环境后只能绑定一个默认的流控策略。
      * 
@@ -7350,8 +7873,7 @@ public class RomaAsyncClient {
      * 创建API
      *
      * 添加一个API，API即一个服务接口，具体的服务能力。
-     * 
-     * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了ROMA Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws;hws_hk;hcs;fcs;g42;)MOCK。
+     * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了[ROMA Connect](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)[ROMA Site](tag:Site)如何去访问真实的后端服务。API的真实后端服务目前支持的类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)MOCK。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7366,8 +7888,7 @@ public class RomaAsyncClient {
      * 创建API
      *
      * 添加一个API，API即一个服务接口，具体的服务能力。
-     * 
-     * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了ROMA Connect如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws;hws_hk;hcs;fcs;g42;)MOCK。
+     * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了[ROMA Connect](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)[ROMA Site](tag:Site)如何去访问真实的后端服务。API的真实后端服务目前支持的类型：传统的HTTP/HTTPS形式的web后端、[函数工作流、](tag:hws,hws_hk,hcs,hcs_sm,fcs,g42)MOCK。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7480,7 +8001,9 @@ public class RomaAsyncClient {
      * 删除API分组
      *
      * 删除指定的API分组。
+     * 
      * 分组下存在API时分组无法删除，需要删除所有分组下的API后，再删除分组。
+     * 
      * 删除分组时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -7496,7 +8019,9 @@ public class RomaAsyncClient {
      * 删除API分组
      *
      * 删除指定的API分组。
+     * 
      * 分组下存在API时分组无法删除，需要删除所有分组下的API后，再删除分组。
+     * 
      * 删除分组时，会一并删除直接或间接关联到该分组下的所有资源，包括独立域名、SSL证书等等。并会将外部域名与子域名的绑定关系进行解除（取决于域名cname方式）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -9213,7 +9738,313 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 添加或更新后端实例
+     * 域名绑定SSL证书
+     *
+     * 域名绑定SSL证书。[目前暂时仅支持单个绑定,请求体当中的certificate_ids里面有且只能有一个证书ID](tag:hws,hws_hk,fcs,g42,Site)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAssociateCertsV2Request 请求对象
+     * @return CompletableFuture<BatchAssociateCertsV2Response>
+     */
+    public CompletableFuture<BatchAssociateCertsV2Response> batchAssociateCertsV2Async(
+        BatchAssociateCertsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.batchAssociateCertsV2);
+    }
+
+    /**
+     * 域名绑定SSL证书
+     *
+     * 域名绑定SSL证书。[目前暂时仅支持单个绑定,请求体当中的certificate_ids里面有且只能有一个证书ID](tag:hws,hws_hk,fcs,g42,Site)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAssociateCertsV2Request 请求对象
+     * @return AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response>
+     */
+    public AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response> batchAssociateCertsV2AsyncInvoker(
+        BatchAssociateCertsV2Request request) {
+        return new AsyncInvoker<BatchAssociateCertsV2Request, BatchAssociateCertsV2Response>(request,
+            RomaMeta.batchAssociateCertsV2, hcClient);
+    }
+
+    /**
+     * SSL证书绑定域名
+     *
+     * SSL证书绑定域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAssociateDomainsV2Request 请求对象
+     * @return CompletableFuture<BatchAssociateDomainsV2Response>
+     */
+    public CompletableFuture<BatchAssociateDomainsV2Response> batchAssociateDomainsV2Async(
+        BatchAssociateDomainsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.batchAssociateDomainsV2);
+    }
+
+    /**
+     * SSL证书绑定域名
+     *
+     * SSL证书绑定域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAssociateDomainsV2Request 请求对象
+     * @return AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response>
+     */
+    public AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response> batchAssociateDomainsV2AsyncInvoker(
+        BatchAssociateDomainsV2Request request) {
+        return new AsyncInvoker<BatchAssociateDomainsV2Request, BatchAssociateDomainsV2Response>(request,
+            RomaMeta.batchAssociateDomainsV2, hcClient);
+    }
+
+    /**
+     * 域名解绑SSL证书
+     *
+     * 域名解绑SSL证书。目前暂时仅支持单个解绑,请求体当中的certificate_ids里面有且只能有一个证书ID
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociateCertsV2Request 请求对象
+     * @return CompletableFuture<BatchDisassociateCertsV2Response>
+     */
+    public CompletableFuture<BatchDisassociateCertsV2Response> batchDisassociateCertsV2Async(
+        BatchDisassociateCertsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.batchDisassociateCertsV2);
+    }
+
+    /**
+     * 域名解绑SSL证书
+     *
+     * 域名解绑SSL证书。目前暂时仅支持单个解绑,请求体当中的certificate_ids里面有且只能有一个证书ID
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociateCertsV2Request 请求对象
+     * @return AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response>
+     */
+    public AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response> batchDisassociateCertsV2AsyncInvoker(
+        BatchDisassociateCertsV2Request request) {
+        return new AsyncInvoker<BatchDisassociateCertsV2Request, BatchDisassociateCertsV2Response>(request,
+            RomaMeta.batchDisassociateCertsV2, hcClient);
+    }
+
+    /**
+     * SSL证书解绑域名
+     *
+     * SSL证书解绑域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociateDomainsV2Request 请求对象
+     * @return CompletableFuture<BatchDisassociateDomainsV2Response>
+     */
+    public CompletableFuture<BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2Async(
+        BatchDisassociateDomainsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.batchDisassociateDomainsV2);
+    }
+
+    /**
+     * SSL证书解绑域名
+     *
+     * SSL证书解绑域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociateDomainsV2Request 请求对象
+     * @return AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response>
+     */
+    public AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response> batchDisassociateDomainsV2AsyncInvoker(
+        BatchDisassociateDomainsV2Request request) {
+        return new AsyncInvoker<BatchDisassociateDomainsV2Request, BatchDisassociateDomainsV2Response>(request,
+            RomaMeta.batchDisassociateDomainsV2, hcClient);
+    }
+
+    /**
+     * 创建SSL证书
+     *
+     * 创建SSL证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateV2Request 请求对象
+     * @return CompletableFuture<CreateCertificateV2Response>
+     */
+    public CompletableFuture<CreateCertificateV2Response> createCertificateV2Async(CreateCertificateV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.createCertificateV2);
+    }
+
+    /**
+     * 创建SSL证书
+     *
+     * 创建SSL证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateV2Request 请求对象
+     * @return AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response>
+     */
+    public AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response> createCertificateV2AsyncInvoker(
+        CreateCertificateV2Request request) {
+        return new AsyncInvoker<CreateCertificateV2Request, CreateCertificateV2Response>(request,
+            RomaMeta.createCertificateV2, hcClient);
+    }
+
+    /**
+     * 删除SSL证书
+     *
+     * 删除ssl证书接口,删除时只有没有关联域名的证书才能被删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCertificateV2Request 请求对象
+     * @return CompletableFuture<DeleteCertificateV2Response>
+     */
+    public CompletableFuture<DeleteCertificateV2Response> deleteCertificateV2Async(DeleteCertificateV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.deleteCertificateV2);
+    }
+
+    /**
+     * 删除SSL证书
+     *
+     * 删除ssl证书接口,删除时只有没有关联域名的证书才能被删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCertificateV2Request 请求对象
+     * @return AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response>
+     */
+    public AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response> deleteCertificateV2AsyncInvoker(
+        DeleteCertificateV2Request request) {
+        return new AsyncInvoker<DeleteCertificateV2Request, DeleteCertificateV2Response>(request,
+            RomaMeta.deleteCertificateV2, hcClient);
+    }
+
+    /**
+     * 获取SSL证书已绑定域名列表
+     *
+     * 获取SSL证书已绑定域名列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAttachedDomainsV2Request 请求对象
+     * @return CompletableFuture<ListAttachedDomainsV2Response>
+     */
+    public CompletableFuture<ListAttachedDomainsV2Response> listAttachedDomainsV2Async(
+        ListAttachedDomainsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listAttachedDomainsV2);
+    }
+
+    /**
+     * 获取SSL证书已绑定域名列表
+     *
+     * 获取SSL证书已绑定域名列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAttachedDomainsV2Request 请求对象
+     * @return AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response>
+     */
+    public AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response> listAttachedDomainsV2AsyncInvoker(
+        ListAttachedDomainsV2Request request) {
+        return new AsyncInvoker<ListAttachedDomainsV2Request, ListAttachedDomainsV2Response>(request,
+            RomaMeta.listAttachedDomainsV2, hcClient);
+    }
+
+    /**
+     * 获取SSL证书列表
+     *
+     * 获取SSL证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertificatesV2Request 请求对象
+     * @return CompletableFuture<ListCertificatesV2Response>
+     */
+    public CompletableFuture<ListCertificatesV2Response> listCertificatesV2Async(ListCertificatesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.listCertificatesV2);
+    }
+
+    /**
+     * 获取SSL证书列表
+     *
+     * 获取SSL证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertificatesV2Request 请求对象
+     * @return AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response>
+     */
+    public AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response> listCertificatesV2AsyncInvoker(
+        ListCertificatesV2Request request) {
+        return new AsyncInvoker<ListCertificatesV2Request, ListCertificatesV2Response>(request,
+            RomaMeta.listCertificatesV2, hcClient);
+    }
+
+    /**
+     * 查看证书详情
+     *
+     * 查看证书详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailsOfCertificateV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfCertificateV2Response>
+     */
+    public CompletableFuture<ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2Async(
+        ShowDetailsOfCertificateV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.showDetailsOfCertificateV2);
+    }
+
+    /**
+     * 查看证书详情
+     *
+     * 查看证书详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailsOfCertificateV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response>
+     */
+    public AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response> showDetailsOfCertificateV2AsyncInvoker(
+        ShowDetailsOfCertificateV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfCertificateV2Request, ShowDetailsOfCertificateV2Response>(request,
+            RomaMeta.showDetailsOfCertificateV2, hcClient);
+    }
+
+    /**
+     * 修改SSL证书
+     *
+     * 修改SSL证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCertificateV2Request 请求对象
+     * @return CompletableFuture<UpdateCertificateV2Response>
+     */
+    public CompletableFuture<UpdateCertificateV2Response> updateCertificateV2Async(UpdateCertificateV2Request request) {
+        return hcClient.asyncInvokeHttp(request, RomaMeta.updateCertificateV2);
+    }
+
+    /**
+     * 修改SSL证书
+     *
+     * 修改SSL证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCertificateV2Request 请求对象
+     * @return AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response>
+     */
+    public AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response> updateCertificateV2AsyncInvoker(
+        UpdateCertificateV2Request request) {
+        return new AsyncInvoker<UpdateCertificateV2Request, UpdateCertificateV2Response>(request,
+            RomaMeta.updateCertificateV2, hcClient);
+    }
+
+    /**
+     * 添加后端实例
      *
      * 为指定的VPC通道添加后端实例
      * 
@@ -9230,7 +10061,7 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 添加或更新后端实例
+     * 添加后端实例
      *
      * 为指定的VPC通道添加后端实例
      * 
@@ -9308,9 +10139,9 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 添加或更新VPC通道后端服务器组
+     * 添加VPC通道后端服务器组
      *
-     * 在ROMA Connect APIC中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
+     * 在服务集成中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
@@ -9324,9 +10155,9 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 添加或更新VPC通道后端服务器组
+     * 添加VPC通道后端服务器组
      *
-     * 在ROMA Connect APIC中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
+     * 在服务集成中创建VPC通道后端服务器组，VPC通道后端实例可以选择是否关联后端实例服务器组，以便管理后端服务器节点。
      * 
      * 若指定名称的后端服务器组已存在，则更新对应后端服务器组信息。若请求体中包含多个重复名称的后端服务器定义，则使用第一个定义。
      * 
@@ -9406,7 +10237,7 @@ public class RomaAsyncClient {
     /**
      * 创建VPC通道
      *
-     * 在ROMA Connect APIC中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便ROMA Connect APIC直接访问私有VPC资源。
+     * 在服务集成中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便服务集成直接访问私有VPC资源。
      * &gt; 每个用户默认最多创建200个VPC通道，如需支持更多请联系技术支持调整配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -9421,7 +10252,7 @@ public class RomaAsyncClient {
     /**
      * 创建VPC通道
      *
-     * 在ROMA Connect APIC中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便ROMA Connect APIC直接访问私有VPC资源。
+     * 在服务集成中创建连接私有VPC资源的通道，并在创建API时将后端节点配置为使用这些VPC通道，以便服务集成直接访问私有VPC资源。
      * &gt; 每个用户默认最多创建200个VPC通道，如需支持更多请联系技术支持调整配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -9711,7 +10542,7 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 更新后端实例
+     * 修改后端实例
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
      * 
@@ -9726,7 +10557,7 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 更新后端实例
+     * 修改后端实例
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。若未指定修改的云服务器组，则进行全量覆盖。
      * 
@@ -9772,7 +10603,7 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 更新VPC通道后端服务器组
+     * 修改VPC通道后端服务器组
      *
      * 更新指定VPC通道后端服务器组
      * 
@@ -9786,7 +10617,7 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 更新VPC通道后端服务器组
+     * 修改VPC通道后端服务器组
      *
      * 更新指定VPC通道后端服务器组
      * 
@@ -9833,13 +10664,13 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 更新VPC通道
+     * 修改VPC通道
      *
      * 更新指定VPC通道的参数
      * 
-     * 使用传入的后端实例列表对VPC通道进行全量覆盖，若后端实例列表为空，则会全量删除已有的后端实例；
-     * 
      * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
+     * 
+     * 为保持兼容，传入的后端服务器列表为空时，不会删除已有的后端服务器，需要使用删除后端服务器接口进行删除；
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -9851,13 +10682,13 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 更新VPC通道
+     * 修改VPC通道
      *
      * 更新指定VPC通道的参数
      * 
-     * 使用传入的后端实例列表对VPC通道进行全量覆盖，若后端实例列表为空，则会全量删除已有的后端实例；
-     * 
      * 使用传入的后端服务器组列表对VPC通道进行全量覆盖，若后端服务器组列表为空，则会全量删除已有的服务器组；
+     * 
+     * 为保持兼容，传入的后端服务器列表为空时，不会删除已有的后端服务器，需要使用删除后端服务器接口进行删除；
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

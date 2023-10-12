@@ -47,6 +47,11 @@ public class BaseAppGroup {
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_type")
+
+    private AppTypeEnum appType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_at")
 
     private OffsetDateTime createAt;
@@ -170,6 +175,23 @@ public class BaseAppGroup {
         this.tenantId = tenantId;
     }
 
+    public BaseAppGroup withAppType(AppTypeEnum appType) {
+        this.appType = appType;
+        return this;
+    }
+
+    /**
+     * Get appType
+     * @return appType
+     */
+    public AppTypeEnum getAppType() {
+        return appType;
+    }
+
+    public void setAppType(AppTypeEnum appType) {
+        this.appType = appType;
+    }
+
     public BaseAppGroup withCreateAt(OffsetDateTime createAt) {
         this.createAt = createAt;
         return this;
@@ -201,13 +223,21 @@ public class BaseAppGroup {
             && Objects.equals(this.appServerGroupName, that.appServerGroupName)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.authorizationType, that.authorizationType)
-            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.createAt, that.createAt);
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.createAt, that.createAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, appServerGroupId, appServerGroupName, description, authorizationType, tenantId, createAt);
+        return Objects.hash(id,
+            name,
+            appServerGroupId,
+            appServerGroupName,
+            description,
+            authorizationType,
+            tenantId,
+            appType,
+            createAt);
     }
 
     @Override
@@ -221,6 +251,7 @@ public class BaseAppGroup {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    authorizationType: ").append(toIndentedString(authorizationType)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
         sb.append("}");
         return sb.toString();

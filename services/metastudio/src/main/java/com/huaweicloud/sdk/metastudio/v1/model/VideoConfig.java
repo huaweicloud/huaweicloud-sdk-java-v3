@@ -91,7 +91,7 @@ public class VideoConfig {
     private ClipModeEnum clipMode;
 
     /**
-     * 视频编码格式及视频文件格式。 * H264: h264编码，输出mp4文件 * VP8：vp8编码，输出webm文件 * VP9：vp9编码，输出webm文件
+     * 视频编码格式及视频文件格式。 * H264: h264编码，输出mp4文件 * VP8：vp8编码，输出webm文件
      */
     public static final class CodecEnum {
 
@@ -105,18 +105,12 @@ public class VideoConfig {
          */
         public static final CodecEnum VP8 = new CodecEnum("VP8");
 
-        /**
-         * Enum VP9 for value: "VP9"
-         */
-        public static final CodecEnum VP9 = new CodecEnum("VP9");
-
         private static final Map<String, CodecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CodecEnum> createStaticFields() {
             Map<String, CodecEnum> map = new HashMap<>();
             map.put("H264", H264);
             map.put("VP8", VP8);
-            map.put("VP9", VP9);
             return Collections.unmodifiableMap(map);
         }
 
@@ -187,7 +181,7 @@ public class VideoConfig {
     private Integer height;
 
     /**
-     * 帧率。  单位：FPS。
+     * 帧率。  单位：FPS。 > * 分身数字人帧率目前只支持25。
      */
     public static final class FrameRateEnum {
 
@@ -305,7 +299,7 @@ public class VideoConfig {
     }
 
     /**
-     * 视频编码格式及视频文件格式。 * H264: h264编码，输出mp4文件 * VP8：vp8编码，输出webm文件 * VP9：vp9编码，输出webm文件
+     * 视频编码格式及视频文件格式。 * H264: h264编码，输出mp4文件 * VP8：vp8编码，输出webm文件
      * @return codec
      */
     public CodecEnum getCodec() {
@@ -322,7 +316,7 @@ public class VideoConfig {
     }
 
     /**
-     * 输出平均码率。  单位：kbps。  最小值40，最大值30000。
+     * 输出平均码率。  单位：kbps。  最小值40，最大值30000。 > * 分身数字人视频制作采用质量优先，可能会超过设置的码率。 > * 分身数字人直播码率范围[1000, 8000]。
      * minimum: 40
      * maximum: 30000
      * @return bitrate
@@ -341,7 +335,7 @@ public class VideoConfig {
     }
 
     /**
-     * 视频宽度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280四种分辨率。 > * clip_mode=CROP，视频保留中间width宽度，裁掉左右两边。
+     * 视频宽度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280四种分辨率。 > * clip_mode=CROP，视频保留中间width宽度，裁掉左右两边。 > * 分身数字人直播目前只支持1080x1920。
      * minimum: 0
      * maximum: 2560
      * @return width
@@ -360,7 +354,7 @@ public class VideoConfig {
     }
 
     /**
-     * 视频高度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280四种分辨率。 > * clip_mode=CROP，视频保留底部height高度，裁掉顶部。
+     * 视频高度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280四种分辨率。 > * clip_mode=CROP，视频保留底部height高度，裁掉顶部。 > * 分身数字人直播目前只支持1080x1920。
      * minimum: 0
      * maximum: 2560
      * @return height
@@ -379,7 +373,7 @@ public class VideoConfig {
     }
 
     /**
-     * 帧率。  单位：FPS。
+     * 帧率。  单位：FPS。 > * 分身数字人帧率目前只支持25。
      * @return frameRate
      */
     public FrameRateEnum getFrameRate() {
@@ -413,7 +407,7 @@ public class VideoConfig {
     }
 
     /**
-     * 裁剪视频左上角像素点坐标。  clip_mode= CROP时生效。 > *横屏（16:9）视频像素为1920*1080；竖屏（9:16）视频像素为1080*1920。
+     * 裁剪视频左上角像素点坐标。  clip_mode= CROP时生效。 > *横屏（16:9）视频像素为1920x1080；竖屏（9:16）视频像素为1080x1920。
      * minimum: -1920
      * maximum: 3840
      * @return dx
@@ -432,7 +426,7 @@ public class VideoConfig {
     }
 
     /**
-     * 裁剪视频左上角像素点坐标。  clip_mode= CROP时生效。 > *横屏（16:9）视频像素为1920*1080；竖屏（9:16）视频像素为1080*1920。
+     * 裁剪视频左上角像素点坐标。  clip_mode= CROP时生效。 > *横屏（16:9）视频像素为1920x1080；竖屏（9:16）视频像素为1080x1920。
      * minimum: -1920
      * maximum: 3840
      * @return dy

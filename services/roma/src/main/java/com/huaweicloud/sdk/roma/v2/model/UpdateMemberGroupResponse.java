@@ -5,7 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -31,6 +34,21 @@ public class UpdateMemberGroupResponse extends SdkResponse {
     @JsonProperty(value = "dict_code")
 
     private String dictCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_version")
+
+    private String microserviceVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_port")
+
+    private Integer microservicePort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "microservice_labels")
+
+    private List<MicroserviceLabel> microserviceLabels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_id")
@@ -117,6 +135,76 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         this.dictCode = dictCode;
     }
 
+    public UpdateMemberGroupResponse withMicroserviceVersion(String microserviceVersion) {
+        this.microserviceVersion = microserviceVersion;
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的版本，仅VPC通道类型为微服务时支持。
+     * @return microserviceVersion
+     */
+    public String getMicroserviceVersion() {
+        return microserviceVersion;
+    }
+
+    public void setMicroserviceVersion(String microserviceVersion) {
+        this.microserviceVersion = microserviceVersion;
+    }
+
+    public UpdateMemberGroupResponse withMicroservicePort(Integer microservicePort) {
+        this.microservicePort = microservicePort;
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的端口号，仅VPC通道类型为微服务时支持。端口号为0时后端服务器组下的所有地址沿用原来负载端口继承逻辑。
+     * minimum: 0
+     * maximum: 65535
+     * @return microservicePort
+     */
+    public Integer getMicroservicePort() {
+        return microservicePort;
+    }
+
+    public void setMicroservicePort(Integer microservicePort) {
+        this.microservicePort = microservicePort;
+    }
+
+    public UpdateMemberGroupResponse withMicroserviceLabels(List<MicroserviceLabel> microserviceLabels) {
+        this.microserviceLabels = microserviceLabels;
+        return this;
+    }
+
+    public UpdateMemberGroupResponse addMicroserviceLabelsItem(MicroserviceLabel microserviceLabelsItem) {
+        if (this.microserviceLabels == null) {
+            this.microserviceLabels = new ArrayList<>();
+        }
+        this.microserviceLabels.add(microserviceLabelsItem);
+        return this;
+    }
+
+    public UpdateMemberGroupResponse withMicroserviceLabels(
+        Consumer<List<MicroserviceLabel>> microserviceLabelsSetter) {
+        if (this.microserviceLabels == null) {
+            this.microserviceLabels = new ArrayList<>();
+        }
+        microserviceLabelsSetter.accept(this.microserviceLabels);
+        return this;
+    }
+
+    /**
+     * VPC通道后端服务器组的标签，仅VPC通道类型为微服务时支持。
+     * @return microserviceLabels
+     */
+    public List<MicroserviceLabel> getMicroserviceLabels() {
+        return microserviceLabels;
+    }
+
+    public void setMicroserviceLabels(List<MicroserviceLabel> microserviceLabels) {
+        this.microserviceLabels = microserviceLabels;
+    }
+
     public UpdateMemberGroupResponse withMemberGroupId(String memberGroupId) {
         this.memberGroupId = memberGroupId;
         return this;
@@ -180,7 +268,11 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         return Objects.equals(this.memberGroupName, that.memberGroupName)
             && Objects.equals(this.memberGroupRemark, that.memberGroupRemark)
             && Objects.equals(this.memberGroupWeight, that.memberGroupWeight)
-            && Objects.equals(this.dictCode, that.dictCode) && Objects.equals(this.memberGroupId, that.memberGroupId)
+            && Objects.equals(this.dictCode, that.dictCode)
+            && Objects.equals(this.microserviceVersion, that.microserviceVersion)
+            && Objects.equals(this.microservicePort, that.microservicePort)
+            && Objects.equals(this.microserviceLabels, that.microserviceLabels)
+            && Objects.equals(this.memberGroupId, that.memberGroupId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
@@ -190,6 +282,9 @@ public class UpdateMemberGroupResponse extends SdkResponse {
             memberGroupRemark,
             memberGroupWeight,
             dictCode,
+            microserviceVersion,
+            microservicePort,
+            microserviceLabels,
             memberGroupId,
             createTime,
             updateTime);
@@ -203,6 +298,9 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         sb.append("    memberGroupRemark: ").append(toIndentedString(memberGroupRemark)).append("\n");
         sb.append("    memberGroupWeight: ").append(toIndentedString(memberGroupWeight)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
+        sb.append("    microserviceVersion: ").append(toIndentedString(microserviceVersion)).append("\n");
+        sb.append("    microservicePort: ").append(toIndentedString(microservicePort)).append("\n");
+        sb.append("    microserviceLabels: ").append(toIndentedString(microserviceLabels)).append("\n");
         sb.append("    memberGroupId: ").append(toIndentedString(memberGroupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

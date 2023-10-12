@@ -85,6 +85,16 @@ public class ListApisV2Request {
 
     private String vpcChannelName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roma_app_name")
+
+    private String romaAppName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roma_app_id")
+
+    private String romaAppId;
+
     public ListApisV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -342,6 +352,40 @@ public class ListApisV2Request {
         this.vpcChannelName = vpcChannelName;
     }
 
+    public ListApisV2Request withRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+        return this;
+    }
+
+    /**
+     * 集成应用名称
+     * @return romaAppName
+     */
+    public String getRomaAppName() {
+        return romaAppName;
+    }
+
+    public void setRomaAppName(String romaAppName) {
+        this.romaAppName = romaAppName;
+    }
+
+    public ListApisV2Request withRomaAppId(String romaAppId) {
+        this.romaAppId = romaAppId;
+        return this;
+    }
+
+    /**
+     * 集成应用编号
+     * @return romaAppId
+     */
+    public String getRomaAppId() {
+        return romaAppId;
+    }
+
+    public void setRomaAppId(String romaAppId) {
+        this.romaAppId = romaAppId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -359,7 +403,8 @@ public class ListApisV2Request {
             && Objects.equals(this.envId, that.envId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.preciseSearch, that.preciseSearch)
             && Objects.equals(this.vpcChannelId, that.vpcChannelId)
-            && Objects.equals(this.vpcChannelName, that.vpcChannelName);
+            && Objects.equals(this.vpcChannelName, that.vpcChannelName)
+            && Objects.equals(this.romaAppName, that.romaAppName) && Objects.equals(this.romaAppId, that.romaAppId);
     }
 
     @Override
@@ -378,7 +423,9 @@ public class ListApisV2Request {
             type,
             preciseSearch,
             vpcChannelId,
-            vpcChannelName);
+            vpcChannelName,
+            romaAppName,
+            romaAppId);
     }
 
     @Override
@@ -400,6 +447,8 @@ public class ListApisV2Request {
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
         sb.append("    vpcChannelId: ").append(toIndentedString(vpcChannelId)).append("\n");
         sb.append("    vpcChannelName: ").append(toIndentedString(vpcChannelName)).append("\n");
+        sb.append("    romaAppName: ").append(toIndentedString(romaAppName)).append("\n");
+        sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

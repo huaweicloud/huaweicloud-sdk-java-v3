@@ -45,7 +45,7 @@ public class PublishAppReq {
     }
 
     /**
-     * 账户(组),单次最多允许操作100个账户(组)
+     * 用户(组),单次最多允许操作100个用户(组)
      * @return accounts
      */
     public List<AccountInfo> getAccounts() {

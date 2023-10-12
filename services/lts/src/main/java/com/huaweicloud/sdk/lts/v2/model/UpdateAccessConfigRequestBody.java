@@ -21,7 +21,7 @@ public class UpdateAccessConfigRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_detail")
 
-    private AccessConfigDeatilCreate accessConfigDetail;
+    private AccessConfigDeatilUpdate accessConfigDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_group_info")
@@ -65,15 +65,15 @@ public class UpdateAccessConfigRequestBody {
         this.accessConfigId = accessConfigId;
     }
 
-    public UpdateAccessConfigRequestBody withAccessConfigDetail(AccessConfigDeatilCreate accessConfigDetail) {
+    public UpdateAccessConfigRequestBody withAccessConfigDetail(AccessConfigDeatilUpdate accessConfigDetail) {
         this.accessConfigDetail = accessConfigDetail;
         return this;
     }
 
     public UpdateAccessConfigRequestBody withAccessConfigDetail(
-        Consumer<AccessConfigDeatilCreate> accessConfigDetailSetter) {
+        Consumer<AccessConfigDeatilUpdate> accessConfigDetailSetter) {
         if (this.accessConfigDetail == null) {
-            this.accessConfigDetail = new AccessConfigDeatilCreate();
+            this.accessConfigDetail = new AccessConfigDeatilUpdate();
             accessConfigDetailSetter.accept(this.accessConfigDetail);
         }
 
@@ -84,11 +84,11 @@ public class UpdateAccessConfigRequestBody {
      * Get accessConfigDetail
      * @return accessConfigDetail
      */
-    public AccessConfigDeatilCreate getAccessConfigDetail() {
+    public AccessConfigDeatilUpdate getAccessConfigDetail() {
         return accessConfigDetail;
     }
 
-    public void setAccessConfigDetail(AccessConfigDeatilCreate accessConfigDetail) {
+    public void setAccessConfigDetail(AccessConfigDeatilUpdate accessConfigDetail) {
         this.accessConfigDetail = accessConfigDetail;
     }
 

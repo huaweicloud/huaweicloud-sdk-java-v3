@@ -16,6 +16,11 @@ import java.util.Objects;
 public class LdApiDeploy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ld_api_id")
+
+    private String ldApiId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_front_api")
 
     private Boolean deployFrontApi;
@@ -150,6 +155,23 @@ public class LdApiDeploy {
     @JsonProperty(value = "retry_count")
 
     private String retryCount;
+
+    public LdApiDeploy withLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
+        return this;
+    }
+
+    /**
+     * 后端API的编号
+     * @return ldApiId
+     */
+    public String getLdApiId() {
+        return ldApiId;
+    }
+
+    public void setLdApiId(String ldApiId) {
+        this.ldApiId = ldApiId;
+    }
 
     public LdApiDeploy withDeployFrontApi(Boolean deployFrontApi) {
         this.deployFrontApi = deployFrontApi;
@@ -344,7 +366,7 @@ public class LdApiDeploy {
     }
 
     /**
-     * ROMA Connect APIC请求后端服务的重试次数，默认为-1，范围[-1,10]
+     * 服务集成请求后端服务的重试次数，默认为-1，范围[-1,10]
      * @return retryCount
      */
     public String getRetryCount() {
@@ -364,17 +386,19 @@ public class LdApiDeploy {
             return false;
         }
         LdApiDeploy that = (LdApiDeploy) obj;
-        return Objects.equals(this.deployFrontApi, that.deployFrontApi) && Objects.equals(this.authType, that.authType)
-            && Objects.equals(this.authorizerId, that.authorizerId) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.envId, that.envId) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.backendTimeout, that.backendTimeout) && Objects.equals(this.path, that.path)
-            && Objects.equals(this.method, that.method) && Objects.equals(this.cors, that.cors)
-            && Objects.equals(this.romaAppId, that.romaAppId) && Objects.equals(this.retryCount, that.retryCount);
+        return Objects.equals(this.ldApiId, that.ldApiId) && Objects.equals(this.deployFrontApi, that.deployFrontApi)
+            && Objects.equals(this.authType, that.authType) && Objects.equals(this.authorizerId, that.authorizerId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.backendTimeout, that.backendTimeout)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.cors, that.cors) && Objects.equals(this.romaAppId, that.romaAppId)
+            && Objects.equals(this.retryCount, that.retryCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deployFrontApi,
+        return Objects.hash(ldApiId,
+            deployFrontApi,
             authType,
             authorizerId,
             groupId,
@@ -392,6 +416,7 @@ public class LdApiDeploy {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LdApiDeploy {\n");
+        sb.append("    ldApiId: ").append(toIndentedString(ldApiId)).append("\n");
         sb.append("    deployFrontApi: ").append(toIndentedString(deployFrontApi)).append("\n");
         sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("    authorizerId: ").append(toIndentedString(authorizerId)).append("\n");

@@ -51,6 +51,11 @@ public class ClusterListInstances {
 
     private ClusterVolumeRsp volume;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resourceId")
+
+    private String resourceId;
+
     public ClusterListInstances withStatus(String status) {
         this.status = status;
         return this;
@@ -196,6 +201,23 @@ public class ClusterListInstances {
         this.volume = volume;
     }
 
+    public ClusterListInstances withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 该实例对应的资源Id。
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -208,12 +230,13 @@ public class ClusterListInstances {
         return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.azCode, that.azCode)
-            && Objects.equals(this.ip, that.ip) && Objects.equals(this.volume, that.volume);
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type, id, name, specCode, azCode, ip, volume);
+        return Objects.hash(status, type, id, name, specCode, azCode, ip, volume, resourceId);
     }
 
     @Override
@@ -228,6 +251,7 @@ public class ClusterListInstances {
         sb.append("    azCode: ").append(toIndentedString(azCode)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

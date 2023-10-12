@@ -30,6 +30,11 @@ public class CreateAppGroupReq {
 
     private AuthorizationTypeEnum authorizationType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_type")
+
+    private AppTypeEnum appType;
+
     public CreateAppGroupReq withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +103,23 @@ public class CreateAppGroupReq {
         this.authorizationType = authorizationType;
     }
 
+    public CreateAppGroupReq withAppType(AppTypeEnum appType) {
+        this.appType = appType;
+        return this;
+    }
+
+    /**
+     * Get appType
+     * @return appType
+     */
+    public AppTypeEnum getAppType() {
+        return appType;
+    }
+
+    public void setAppType(AppTypeEnum appType) {
+        this.appType = appType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +131,13 @@ public class CreateAppGroupReq {
         CreateAppGroupReq that = (CreateAppGroupReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.appServerGroupId, that.appServerGroupId)
             && Objects.equals(this.description, that.description)
-            && Objects.equals(this.authorizationType, that.authorizationType);
+            && Objects.equals(this.authorizationType, that.authorizationType)
+            && Objects.equals(this.appType, that.appType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, appServerGroupId, description, authorizationType);
+        return Objects.hash(name, appServerGroupId, description, authorizationType, appType);
     }
 
     @Override
@@ -125,6 +148,7 @@ public class CreateAppGroupReq {
         sb.append("    appServerGroupId: ").append(toIndentedString(appServerGroupId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    authorizationType: ").append(toIndentedString(authorizationType)).append("\n");
+        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

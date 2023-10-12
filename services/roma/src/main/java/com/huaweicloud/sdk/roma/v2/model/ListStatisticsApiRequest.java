@@ -21,7 +21,7 @@ public class ListStatisticsApiRequest {
     private String instanceId;
 
     /**
-     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值  注意：mode = APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段
+     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值  注意：mode = APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段  mode = INSTANCE时，若不填写api_id或roma_app_id，则要求主帐号权限才能调用成功
      */
     public static final class ModeEnum {
 
@@ -118,7 +118,7 @@ public class ListStatisticsApiRequest {
     private String apiId;
 
     /**
-     * 查询统计周期 * minute：分钟 * hour：小时 * day：天
+     * 查询统计周期 * minute：分钟 * hour：小时 * day：天  例如，cycle=hour，duration=2h是指查询范围两小时以内，一小时一次数据采样，采样到的数据值为一小时内的累计值。
      */
     public static final class CycleEnum {
 
@@ -236,7 +236,7 @@ public class ListStatisticsApiRequest {
     }
 
     /**
-     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值  注意：mode = APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段
+     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值  注意：mode = APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段  mode = INSTANCE时，若不填写api_id或roma_app_id，则要求主帐号权限才能调用成功
      * @return mode
      */
     public ModeEnum getMode() {
@@ -287,7 +287,7 @@ public class ListStatisticsApiRequest {
     }
 
     /**
-     * 查询统计周期 * minute：分钟 * hour：小时 * day：天
+     * 查询统计周期 * minute：分钟 * hour：小时 * day：天  例如，cycle=hour，duration=2h是指查询范围两小时以内，一小时一次数据采样，采样到的数据值为一小时内的累计值。
      * @return cycle
      */
     public CycleEnum getCycle() {

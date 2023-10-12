@@ -3,6 +3,12 @@ package com.huaweicloud.sdk.cts.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.cts.v3.model.BatchCreateResourceTagsRequest;
+import com.huaweicloud.sdk.cts.v3.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.cts.v3.model.BatchDeleteResourceTagsRequest;
+import com.huaweicloud.sdk.cts.v3.model.BatchDeleteResourceTagsResponse;
+import com.huaweicloud.sdk.cts.v3.model.CheckObsBucketsRequest;
+import com.huaweicloud.sdk.cts.v3.model.CheckObsBucketsResponse;
 import com.huaweicloud.sdk.cts.v3.model.CreateNotificationRequest;
 import com.huaweicloud.sdk.cts.v3.model.CreateNotificationResponse;
 import com.huaweicloud.sdk.cts.v3.model.CreateTrackerRequest;
@@ -13,12 +19,18 @@ import com.huaweicloud.sdk.cts.v3.model.DeleteTrackerRequest;
 import com.huaweicloud.sdk.cts.v3.model.DeleteTrackerResponse;
 import com.huaweicloud.sdk.cts.v3.model.ListNotificationsRequest;
 import com.huaweicloud.sdk.cts.v3.model.ListNotificationsResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListOperationsRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListOperationsResponse;
 import com.huaweicloud.sdk.cts.v3.model.ListQuotasRequest;
 import com.huaweicloud.sdk.cts.v3.model.ListQuotasResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListTraceResourcesRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListTraceResourcesResponse;
 import com.huaweicloud.sdk.cts.v3.model.ListTracesRequest;
 import com.huaweicloud.sdk.cts.v3.model.ListTracesResponse;
 import com.huaweicloud.sdk.cts.v3.model.ListTrackersRequest;
 import com.huaweicloud.sdk.cts.v3.model.ListTrackersResponse;
+import com.huaweicloud.sdk.cts.v3.model.ListUserResourcesRequest;
+import com.huaweicloud.sdk.cts.v3.model.ListUserResourcesResponse;
 import com.huaweicloud.sdk.cts.v3.model.UpdateNotificationRequest;
 import com.huaweicloud.sdk.cts.v3.model.UpdateNotificationResponse;
 import com.huaweicloud.sdk.cts.v3.model.UpdateTrackerRequest;
@@ -35,6 +47,96 @@ public class CtsClient {
     public static ClientBuilder<CtsClient> newBuilder() {
         ClientBuilder<CtsClient> clientBuilder = new ClientBuilder<>(CtsClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 批量添加CTS资源标签
+     *
+     * 批量添加CTS资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceTagsRequest 请求对象
+     * @return BatchCreateResourceTagsResponse
+     */
+    public BatchCreateResourceTagsResponse batchCreateResourceTags(BatchCreateResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.batchCreateResourceTags);
+    }
+
+    /**
+     * 批量添加CTS资源标签
+     *
+     * 批量添加CTS资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateResourceTagsRequest 请求对象
+     * @return SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>
+     */
+    public SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse> batchCreateResourceTagsInvoker(
+        BatchCreateResourceTagsRequest request) {
+        return new SyncInvoker<BatchCreateResourceTagsRequest, BatchCreateResourceTagsResponse>(request,
+            CtsMeta.batchCreateResourceTags, hcClient);
+    }
+
+    /**
+     * 批量删除CTS资源标签
+     *
+     * 批量删除CTS资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteResourceTagsRequest 请求对象
+     * @return BatchDeleteResourceTagsResponse
+     */
+    public BatchDeleteResourceTagsResponse batchDeleteResourceTags(BatchDeleteResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.batchDeleteResourceTags);
+    }
+
+    /**
+     * 批量删除CTS资源标签
+     *
+     * 批量删除CTS资源标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteResourceTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse> batchDeleteResourceTagsInvoker(
+        BatchDeleteResourceTagsRequest request) {
+        return new SyncInvoker<BatchDeleteResourceTagsRequest, BatchDeleteResourceTagsResponse>(request,
+            CtsMeta.batchDeleteResourceTags, hcClient);
+    }
+
+    /**
+     * 检查已经配置OBS桶是否可以成功转储
+     *
+     * 检查已经配置OBS桶是否可以成功转储。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckObsBucketsRequest 请求对象
+     * @return CheckObsBucketsResponse
+     */
+    public CheckObsBucketsResponse checkObsBuckets(CheckObsBucketsRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.checkObsBuckets);
+    }
+
+    /**
+     * 检查已经配置OBS桶是否可以成功转储
+     *
+     * 检查已经配置OBS桶是否可以成功转储。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckObsBucketsRequest 请求对象
+     * @return SyncInvoker<CheckObsBucketsRequest, CheckObsBucketsResponse>
+     */
+    public SyncInvoker<CheckObsBucketsRequest, CheckObsBucketsResponse> checkObsBucketsInvoker(
+        CheckObsBucketsRequest request) {
+        return new SyncInvoker<CheckObsBucketsRequest, CheckObsBucketsResponse>(request, CtsMeta.checkObsBuckets,
+            hcClient);
     }
 
     /**
@@ -186,6 +288,36 @@ public class CtsClient {
     }
 
     /**
+     * 查询云服务的全量操作列表
+     *
+     * 查询云服务的全量操作列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOperationsRequest 请求对象
+     * @return ListOperationsResponse
+     */
+    public ListOperationsResponse listOperations(ListOperationsRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.listOperations);
+    }
+
+    /**
+     * 查询云服务的全量操作列表
+     *
+     * 查询云服务的全量操作列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOperationsRequest 请求对象
+     * @return SyncInvoker<ListOperationsRequest, ListOperationsResponse>
+     */
+    public SyncInvoker<ListOperationsRequest, ListOperationsResponse> listOperationsInvoker(
+        ListOperationsRequest request) {
+        return new SyncInvoker<ListOperationsRequest, ListOperationsResponse>(request, CtsMeta.listOperations,
+            hcClient);
+    }
+
+    /**
      * 查询租户追踪器配额信息
      *
      * 查询租户追踪器配额信息。
@@ -211,6 +343,36 @@ public class CtsClient {
      */
     public SyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasInvoker(ListQuotasRequest request) {
         return new SyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, CtsMeta.listQuotas, hcClient);
+    }
+
+    /**
+     * 查询事件的资源类型列表
+     *
+     * 查询事件的资源类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTraceResourcesRequest 请求对象
+     * @return ListTraceResourcesResponse
+     */
+    public ListTraceResourcesResponse listTraceResources(ListTraceResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.listTraceResources);
+    }
+
+    /**
+     * 查询事件的资源类型列表
+     *
+     * 查询事件的资源类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTraceResourcesRequest 请求对象
+     * @return SyncInvoker<ListTraceResourcesRequest, ListTraceResourcesResponse>
+     */
+    public SyncInvoker<ListTraceResourcesRequest, ListTraceResourcesResponse> listTraceResourcesInvoker(
+        ListTraceResourcesRequest request) {
+        return new SyncInvoker<ListTraceResourcesRequest, ListTraceResourcesResponse>(request,
+            CtsMeta.listTraceResources, hcClient);
     }
 
     /**
@@ -267,6 +429,36 @@ public class CtsClient {
      */
     public SyncInvoker<ListTrackersRequest, ListTrackersResponse> listTrackersInvoker(ListTrackersRequest request) {
         return new SyncInvoker<ListTrackersRequest, ListTrackersResponse>(request, CtsMeta.listTrackers, hcClient);
+    }
+
+    /**
+     * 查询30天事件的操作用户列表
+     *
+     * 查询30天事件的操作用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUserResourcesRequest 请求对象
+     * @return ListUserResourcesResponse
+     */
+    public ListUserResourcesResponse listUserResources(ListUserResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, CtsMeta.listUserResources);
+    }
+
+    /**
+     * 查询30天事件的操作用户列表
+     *
+     * 查询30天事件的操作用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUserResourcesRequest 请求对象
+     * @return SyncInvoker<ListUserResourcesRequest, ListUserResourcesResponse>
+     */
+    public SyncInvoker<ListUserResourcesRequest, ListUserResourcesResponse> listUserResourcesInvoker(
+        ListUserResourcesRequest request) {
+        return new SyncInvoker<ListUserResourcesRequest, ListUserResourcesResponse>(request, CtsMeta.listUserResources,
+            hcClient);
     }
 
     /**

@@ -90,6 +90,11 @@ public class UrlDomainBase {
 
     private MinSslVersionEnum minSslVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_http_redirect_to_https")
+
+    private Boolean isHttpRedirectToHttps;
+
     public UrlDomainBase withMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
         return this;
@@ -107,6 +112,23 @@ public class UrlDomainBase {
         this.minSslVersion = minSslVersion;
     }
 
+    public UrlDomainBase withIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+        return this;
+    }
+
+    /**
+     * 是否开启http到https的重定向，false为关闭，true为开启，默认为false
+     * @return isHttpRedirectToHttps
+     */
+    public Boolean getIsHttpRedirectToHttps() {
+        return isHttpRedirectToHttps;
+    }
+
+    public void setIsHttpRedirectToHttps(Boolean isHttpRedirectToHttps) {
+        this.isHttpRedirectToHttps = isHttpRedirectToHttps;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -116,12 +138,13 @@ public class UrlDomainBase {
             return false;
         }
         UrlDomainBase that = (UrlDomainBase) obj;
-        return Objects.equals(this.minSslVersion, that.minSslVersion);
+        return Objects.equals(this.minSslVersion, that.minSslVersion)
+            && Objects.equals(this.isHttpRedirectToHttps, that.isHttpRedirectToHttps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(minSslVersion);
+        return Objects.hash(minSslVersion, isHttpRedirectToHttps);
     }
 
     @Override
@@ -129,6 +152,7 @@ public class UrlDomainBase {
         StringBuilder sb = new StringBuilder();
         sb.append("class UrlDomainBase {\n");
         sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
+        sb.append("    isHttpRedirectToHttps: ").append(toIndentedString(isHttpRedirectToHttps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

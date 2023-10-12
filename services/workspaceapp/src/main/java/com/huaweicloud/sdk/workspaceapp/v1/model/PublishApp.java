@@ -135,7 +135,7 @@ public class PublishApp {
     }
 
     /**
-     * 图片的默认大小当前限制为20KB,即<code>1024 * 8</code>字节 如果数据格式为data;image/png;base64,iVBORw0KGgoAAAANS时实际大小约为 字段约为<code>size * 4/3 + 4bytes</code>,因此设置字段上限为 <code>1024 * 8 * 1.34</code>
+     * > - 图片的默认大小当前限制为8KB，即1024 * 8字节。 > - 如果数据格式为data;image/png;base64,iVBORw0KGgoAAAANS时实际大小约为字段约为：size * 4/3 + 4bytes。
      * @return iconUri
      */
     public String getIconUri() {

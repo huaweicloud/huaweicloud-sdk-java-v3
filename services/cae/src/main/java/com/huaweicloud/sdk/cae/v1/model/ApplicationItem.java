@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 应用信息。
@@ -23,11 +20,6 @@ public class ApplicationItem {
     @JsonProperty(value = "name")
 
     private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "annotations")
-
-    private Map<String, String> annotations = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
@@ -71,39 +63,6 @@ public class ApplicationItem {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ApplicationItem withAnnotations(Map<String, String> annotations) {
-        this.annotations = annotations;
-        return this;
-    }
-
-    public ApplicationItem putAnnotationsItem(String key, String annotationsItem) {
-        if (this.annotations == null) {
-            this.annotations = new HashMap<>();
-        }
-        this.annotations.put(key, annotationsItem);
-        return this;
-    }
-
-    public ApplicationItem withAnnotations(Consumer<Map<String, String>> annotationsSetter) {
-        if (this.annotations == null) {
-            this.annotations = new HashMap<>();
-        }
-        annotationsSetter.accept(this.annotations);
-        return this;
-    }
-
-    /**
-     * 应用附加属性，当前只支持description参数。
-     * @return annotations
-     */
-    public Map<String, String> getAnnotations() {
-        return annotations;
-    }
-
-    public void setAnnotations(Map<String, String> annotations) {
-        this.annotations = annotations;
     }
 
     public ApplicationItem withCreatedAt(OffsetDateTime createdAt) {
@@ -150,13 +109,12 @@ public class ApplicationItem {
         }
         ApplicationItem that = (ApplicationItem) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.annotations, that.annotations) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, annotations, createdAt, updatedAt);
+        return Objects.hash(id, name, createdAt, updatedAt);
     }
 
     @Override
@@ -165,7 +123,6 @@ public class ApplicationItem {
         sb.append("class ApplicationItem {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
