@@ -337,6 +337,92 @@ public class ListAttackLogsRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_host")
+
+    private String dstHost;
+
+    /**
+     * log_type
+     */
+    public static final class LogTypeEnum {
+
+        /**
+         * Enum INTERNET for value: "internet"
+         */
+        public static final LogTypeEnum INTERNET = new LogTypeEnum("internet");
+
+        /**
+         * Enum NAT for value: "nat"
+         */
+        public static final LogTypeEnum NAT = new LogTypeEnum("nat");
+
+        /**
+         * Enum VPC for value: "vpc"
+         */
+        public static final LogTypeEnum VPC = new LogTypeEnum("vpc");
+
+        private static final Map<String, LogTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LogTypeEnum> createStaticFields() {
+            Map<String, LogTypeEnum> map = new HashMap<>();
+            map.put("internet", INTERNET);
+            map.put("nat", NAT);
+            map.put("vpc", VPC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LogTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LogTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogTypeEnum(value));
+        }
+
+        public static LogTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LogTypeEnum) {
+                return this.value.equals(((LogTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_type")
+
+    private LogTypeEnum logType;
+
     public ListAttackLogsRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
@@ -534,7 +620,7 @@ public class ListAttackLogsRequest {
     }
 
     /**
-     * 每页显示个数
+     * 每页显示个数，范围为1-1024
      * @return limit
      */
     public Integer getLimit() {
@@ -681,6 +767,40 @@ public class ListAttackLogsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListAttackLogsRequest withDstHost(String dstHost) {
+        this.dstHost = dstHost;
+        return this;
+    }
+
+    /**
+     * 目标主机
+     * @return dstHost
+     */
+    public String getDstHost() {
+        return dstHost;
+    }
+
+    public void setDstHost(String dstHost) {
+        this.dstHost = dstHost;
+    }
+
+    public ListAttackLogsRequest withLogType(LogTypeEnum logType) {
+        this.logType = logType;
+        return this;
+    }
+
+    /**
+     * log_type
+     * @return logType
+     */
+    public LogTypeEnum getLogType() {
+        return logType;
+    }
+
+    public void setLogType(LogTypeEnum logType) {
+        this.logType = logType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -700,7 +820,8 @@ public class ListAttackLogsRequest {
             && Objects.equals(this.direction, that.direction) && Objects.equals(this.attackType, that.attackType)
             && Objects.equals(this.attackRule, that.attackRule) && Objects.equals(this.level, that.level)
             && Objects.equals(this.source, that.source)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.logType, that.logType);
     }
 
     @Override
@@ -724,7 +845,9 @@ public class ListAttackLogsRequest {
             attackRule,
             level,
             source,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            dstHost,
+            logType);
     }
 
     @Override
@@ -751,6 +874,8 @@ public class ListAttackLogsRequest {
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
+        sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

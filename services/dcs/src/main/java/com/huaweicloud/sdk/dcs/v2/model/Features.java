@@ -25,6 +25,11 @@ public class Features {
 
     private Boolean supportSsl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_audit_log")
+
+    private Boolean supportAuditLog;
+
     public Features withSupportAcl(Boolean supportAcl) {
         this.supportAcl = supportAcl;
         return this;
@@ -76,6 +81,23 @@ public class Features {
         this.supportSsl = supportSsl;
     }
 
+    public Features withSupportAuditLog(Boolean supportAuditLog) {
+        this.supportAuditLog = supportAuditLog;
+        return this;
+    }
+
+    /**
+     * 是否支持审计日志 - true: 是 - false: 否 
+     * @return supportAuditLog
+     */
+    public Boolean getSupportAuditLog() {
+        return supportAuditLog;
+    }
+
+    public void setSupportAuditLog(Boolean supportAuditLog) {
+        this.supportAuditLog = supportAuditLog;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +109,13 @@ public class Features {
         Features that = (Features) obj;
         return Objects.equals(this.supportAcl, that.supportAcl)
             && Objects.equals(this.supportTransparentClientIp, that.supportTransparentClientIp)
-            && Objects.equals(this.supportSsl, that.supportSsl);
+            && Objects.equals(this.supportSsl, that.supportSsl)
+            && Objects.equals(this.supportAuditLog, that.supportAuditLog);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(supportAcl, supportTransparentClientIp, supportSsl);
+        return Objects.hash(supportAcl, supportTransparentClientIp, supportSsl, supportAuditLog);
     }
 
     @Override
@@ -102,6 +125,7 @@ public class Features {
         sb.append("    supportAcl: ").append(toIndentedString(supportAcl)).append("\n");
         sb.append("    supportTransparentClientIp: ").append(toIndentedString(supportTransparentClientIp)).append("\n");
         sb.append("    supportSsl: ").append(toIndentedString(supportSsl)).append("\n");
+        sb.append("    supportAuditLog: ").append(toIndentedString(supportAuditLog)).append("\n");
         sb.append("}");
         return sb.toString();
     }

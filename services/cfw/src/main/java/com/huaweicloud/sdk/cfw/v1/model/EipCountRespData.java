@@ -25,6 +25,11 @@ public class EipCountRespData {
 
     private Integer eipProtected;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eip_protected_self")
+
+    private Integer eipProtectedSelf;
+
     public EipCountRespData withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -66,7 +71,7 @@ public class EipCountRespData {
     }
 
     /**
-     * EIP防护数
+     * 该账号下所有墙防护EIP总数量
      * minimum: 0
      * @return eipProtected
      */
@@ -76,6 +81,23 @@ public class EipCountRespData {
 
     public void setEipProtected(Integer eipProtected) {
         this.eipProtected = eipProtected;
+    }
+
+    public EipCountRespData withEipProtectedSelf(Integer eipProtectedSelf) {
+        this.eipProtectedSelf = eipProtectedSelf;
+        return this;
+    }
+
+    /**
+     * 该当前防火墙防护EIP数量
+     * @return eipProtectedSelf
+     */
+    public Integer getEipProtectedSelf() {
+        return eipProtectedSelf;
+    }
+
+    public void setEipProtectedSelf(Integer eipProtectedSelf) {
+        this.eipProtectedSelf = eipProtectedSelf;
     }
 
     @Override
@@ -88,12 +110,13 @@ public class EipCountRespData {
         }
         EipCountRespData that = (EipCountRespData) obj;
         return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.eipTotal, that.eipTotal)
-            && Objects.equals(this.eipProtected, that.eipProtected);
+            && Objects.equals(this.eipProtected, that.eipProtected)
+            && Objects.equals(this.eipProtectedSelf, that.eipProtectedSelf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, eipTotal, eipProtected);
+        return Objects.hash(objectId, eipTotal, eipProtected, eipProtectedSelf);
     }
 
     @Override
@@ -103,6 +126,7 @@ public class EipCountRespData {
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    eipTotal: ").append(toIndentedString(eipTotal)).append("\n");
         sb.append("    eipProtected: ").append(toIndentedString(eipProtected)).append("\n");
+        sb.append("    eipProtectedSelf: ").append(toIndentedString(eipProtectedSelf)).append("\n");
         sb.append("}");
         return sb.toString();
     }

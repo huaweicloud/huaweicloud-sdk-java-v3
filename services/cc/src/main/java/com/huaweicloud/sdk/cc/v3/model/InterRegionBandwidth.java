@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 域间带宽实例。
+ * InterRegionBandwidth
  */
 public class InterRegionBandwidth {
 
@@ -35,11 +35,6 @@ public class InterRegionBandwidth {
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bandwidth_package_id")
-
-    private String bandwidthPackageId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -53,6 +48,11 @@ public class InterRegionBandwidth {
     @JsonProperty(value = "cloud_connection_id")
 
     private String cloudConnectionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth_package_id")
+
+    private String bandwidthPackageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inter_regions")
@@ -70,7 +70,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 域间带宽实例的ID。
+     * 资源ID标识符。
      * @return id
      */
     public String getId() {
@@ -87,7 +87,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 域间带宽实例的名字。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -104,7 +104,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 域间带宽实例的描述。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -121,7 +121,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 帐号ID。
+     * 实例所属帐号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -132,30 +132,13 @@ public class InterRegionBandwidth {
         this.domainId = domainId;
     }
 
-    public InterRegionBandwidth withBandwidthPackageId(String bandwidthPackageId) {
-        this.bandwidthPackageId = bandwidthPackageId;
-        return this;
-    }
-
-    /**
-     * 带宽包实例的ID。
-     * @return bandwidthPackageId
-     */
-    public String getBandwidthPackageId() {
-        return bandwidthPackageId;
-    }
-
-    public void setBandwidthPackageId(String bandwidthPackageId) {
-        this.bandwidthPackageId = bandwidthPackageId;
-    }
-
     public InterRegionBandwidth withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
     /**
-     * 域间带宽实例的创建时间。
+     * 实例创建时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -172,7 +155,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 域间带宽实例的更新时间。
+     * 实例更新时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss。
      * @return updatedAt
      */
     public OffsetDateTime getUpdatedAt() {
@@ -189,7 +172,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 云连接实例的ID。
+     * 资源ID标识符。
      * @return cloudConnectionId
      */
     public String getCloudConnectionId() {
@@ -198,6 +181,23 @@ public class InterRegionBandwidth {
 
     public void setCloudConnectionId(String cloudConnectionId) {
         this.cloudConnectionId = cloudConnectionId;
+    }
+
+    public InterRegionBandwidth withBandwidthPackageId(String bandwidthPackageId) {
+        this.bandwidthPackageId = bandwidthPackageId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return bandwidthPackageId
+     */
+    public String getBandwidthPackageId() {
+        return bandwidthPackageId;
+    }
+
+    public void setBandwidthPackageId(String bandwidthPackageId) {
+        this.bandwidthPackageId = bandwidthPackageId;
     }
 
     public InterRegionBandwidth withInterRegions(List<InterRegion> interRegions) {
@@ -263,9 +263,9 @@ public class InterRegionBandwidth {
         InterRegionBandwidth that = (InterRegionBandwidth) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.bandwidthPackageId, that.bandwidthPackageId)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.bandwidthPackageId, that.bandwidthPackageId)
             && Objects.equals(this.interRegions, that.interRegions) && Objects.equals(this.bandwidth, that.bandwidth);
     }
 
@@ -275,10 +275,10 @@ public class InterRegionBandwidth {
             name,
             description,
             domainId,
-            bandwidthPackageId,
             createdAt,
             updatedAt,
             cloudConnectionId,
+            bandwidthPackageId,
             interRegions,
             bandwidth);
     }
@@ -291,10 +291,10 @@ public class InterRegionBandwidth {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    bandwidthPackageId: ").append(toIndentedString(bandwidthPackageId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
+        sb.append("    bandwidthPackageId: ").append(toIndentedString(bandwidthPackageId)).append("\n");
         sb.append("    interRegions: ").append(toIndentedString(interRegions)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("}");

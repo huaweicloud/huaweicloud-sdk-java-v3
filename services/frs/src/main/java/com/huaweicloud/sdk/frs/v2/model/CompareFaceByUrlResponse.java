@@ -27,6 +27,11 @@ public class CompareFaceByUrlResponse extends SdkResponse {
 
     private Double similarity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public CompareFaceByUrlResponse withImage1Face(CompareFace image1Face) {
         this.image1Face = image1Face;
         return this;
@@ -96,6 +101,25 @@ public class CompareFaceByUrlResponse extends SdkResponse {
         this.similarity = similarity;
     }
 
+    public CompareFaceByUrlResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +130,12 @@ public class CompareFaceByUrlResponse extends SdkResponse {
         }
         CompareFaceByUrlResponse that = (CompareFaceByUrlResponse) obj;
         return Objects.equals(this.image1Face, that.image1Face) && Objects.equals(this.image2Face, that.image2Face)
-            && Objects.equals(this.similarity, that.similarity);
+            && Objects.equals(this.similarity, that.similarity) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image1Face, image2Face, similarity);
+        return Objects.hash(image1Face, image2Face, similarity, xRequestId);
     }
 
     @Override
@@ -121,6 +145,7 @@ public class CompareFaceByUrlResponse extends SdkResponse {
         sb.append("    image1Face: ").append(toIndentedString(image1Face)).append("\n");
         sb.append("    image2Face: ").append(toIndentedString(image2Face)).append("\n");
         sb.append("    similarity: ").append(toIndentedString(similarity)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

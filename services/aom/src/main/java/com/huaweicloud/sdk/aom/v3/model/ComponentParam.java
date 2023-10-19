@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -20,10 +25,80 @@ public class ComponentParam {
 
     private String modelId;
 
+    /**
+     * 应用、子应用，取值：APPLICATION、SUB_APPLICATION ，不区分大小写
+     */
+    public static final class ModelTypeEnum {
+
+        /**
+         * Enum APPLICATION for value: "APPLICATION"
+         */
+        public static final ModelTypeEnum APPLICATION = new ModelTypeEnum("APPLICATION");
+
+        /**
+         * Enum SUB_APPLICATION for value: "SUB_APPLICATION"
+         */
+        public static final ModelTypeEnum SUB_APPLICATION = new ModelTypeEnum("SUB_APPLICATION");
+
+        private static final Map<String, ModelTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ModelTypeEnum> createStaticFields() {
+            Map<String, ModelTypeEnum> map = new HashMap<>();
+            map.put("APPLICATION", APPLICATION);
+            map.put("SUB_APPLICATION", SUB_APPLICATION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ModelTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ModelTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModelTypeEnum(value));
+        }
+
+        public static ModelTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ModelTypeEnum) {
+                return this.value.equals(((ModelTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_type")
 
-    private String modelType;
+    private ModelTypeEnum modelType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -36,7 +111,7 @@ public class ComponentParam {
     }
 
     /**
-     * 组件描述
+     * 组件描述：最大255字符
      * @return description
      */
     public String getDescription() {
@@ -53,7 +128,7 @@ public class ComponentParam {
     }
 
     /**
-     * 应用Id、子应用Id；id长度不能超过36位，由大小写字母、数字组成
+     * 应用Id、子应用Id,id长度不能超过36位，由大小写字母、数字组成
      * @return modelId
      */
     public String getModelId() {
@@ -64,20 +139,20 @@ public class ComponentParam {
         this.modelId = modelId;
     }
 
-    public ComponentParam withModelType(String modelType) {
+    public ComponentParam withModelType(ModelTypeEnum modelType) {
         this.modelType = modelType;
         return this;
     }
 
     /**
-     * 应用、子应用，取值：APPLICATION、SUB_APPLICATION
+     * 应用、子应用，取值：APPLICATION、SUB_APPLICATION ，不区分大小写
      * @return modelType
      */
-    public String getModelType() {
+    public ModelTypeEnum getModelType() {
         return modelType;
     }
 
-    public void setModelType(String modelType) {
+    public void setModelType(ModelTypeEnum modelType) {
         this.modelType = modelType;
     }
 

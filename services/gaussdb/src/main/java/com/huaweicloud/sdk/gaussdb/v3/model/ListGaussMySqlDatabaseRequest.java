@@ -30,6 +30,16 @@ public class ListGaussMySqlDatabaseRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charset")
+
+    private String charset;
+
     public ListGaussMySqlDatabaseRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -100,6 +110,40 @@ public class ListGaussMySqlDatabaseRequest {
         this.limit = limit;
     }
 
+    public ListGaussMySqlDatabaseRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 数据库名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ListGaussMySqlDatabaseRequest withCharset(String charset) {
+        this.charset = charset;
+        return this;
+    }
+
+    /**
+     * 数据库使用的字符集，如utf8mb4、gbk等。
+     * @return charset
+     */
+    public String getCharset() {
+        return charset;
+    }
+
+    public void setCharset(String charset) {
+        this.charset = charset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +154,13 @@ public class ListGaussMySqlDatabaseRequest {
         }
         ListGaussMySqlDatabaseRequest that = (ListGaussMySqlDatabaseRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.charset, that.charset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, offset, limit);
+        return Objects.hash(xLanguage, instanceId, offset, limit, name, charset);
     }
 
     @Override
@@ -126,6 +171,8 @@ public class ListGaussMySqlDatabaseRequest {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    charset: ").append(toIndentedString(charset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

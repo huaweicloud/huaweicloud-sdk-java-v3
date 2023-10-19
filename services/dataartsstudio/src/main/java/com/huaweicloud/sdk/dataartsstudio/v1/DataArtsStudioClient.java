@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ChangeCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ChangeCatalogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ChangeResourceRequest;
@@ -249,6 +251,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.MigrateCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.MigrateCatalogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifyCustomizedFieldsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifyCustomizedFieldsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ParseUserBehaviorRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ParseUserBehaviorResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiRequest;
@@ -333,6 +337,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailRequ
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataSetsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataSetsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdRequest;
@@ -377,6 +383,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableModelByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableModelByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTagsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTagsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTaskInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTaskInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTaskListRequest;
@@ -740,6 +748,36 @@ public class DataArtsStudioClient {
     public SyncInvoker<BatchPublishRequest, BatchPublishResponse> batchPublishInvoker(BatchPublishRequest request) {
         return new SyncInvoker<BatchPublishRequest, BatchPublishResponse>(request, DataArtsStudioMeta.batchPublish,
             hcClient);
+    }
+
+    /**
+     * 元数据实时同步接口(邀测)
+     *
+     * 元数据实时同步接口，支持批量。该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchSyncMetadataRequest 请求对象
+     * @return BatchSyncMetadataResponse
+     */
+    public BatchSyncMetadataResponse batchSyncMetadata(BatchSyncMetadataRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.batchSyncMetadata);
+    }
+
+    /**
+     * 元数据实时同步接口(邀测)
+     *
+     * 元数据实时同步接口，支持批量。该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchSyncMetadataRequest 请求对象
+     * @return SyncInvoker<BatchSyncMetadataRequest, BatchSyncMetadataResponse>
+     */
+    public SyncInvoker<BatchSyncMetadataRequest, BatchSyncMetadataResponse> batchSyncMetadataInvoker(
+        BatchSyncMetadataRequest request) {
+        return new SyncInvoker<BatchSyncMetadataRequest, BatchSyncMetadataResponse>(request,
+            DataArtsStudioMeta.batchSyncMetadata, hcClient);
     }
 
     /**
@@ -3862,6 +3900,36 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 用户行为分析
+     *
+     * 用户行为分析
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ParseUserBehaviorRequest 请求对象
+     * @return ParseUserBehaviorResponse
+     */
+    public ParseUserBehaviorResponse parseUserBehavior(ParseUserBehaviorRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.parseUserBehavior);
+    }
+
+    /**
+     * 用户行为分析
+     *
+     * 用户行为分析
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ParseUserBehaviorRequest 请求对象
+     * @return SyncInvoker<ParseUserBehaviorRequest, ParseUserBehaviorResponse>
+     */
+    public SyncInvoker<ParseUserBehaviorRequest, ParseUserBehaviorResponse> parseUserBehaviorInvoker(
+        ParseUserBehaviorRequest request) {
+        return new SyncInvoker<ParseUserBehaviorRequest, ParseUserBehaviorResponse>(request,
+            DataArtsStudioMeta.parseUserBehavior, hcClient);
+    }
+
+    /**
      * DataArtsStudio实例一键购买接口
      *
      * DataArtsStudio实例一键购买接口
@@ -4971,6 +5039,35 @@ public class DataArtsStudioClient {
     }
 
     /**
+     * 资产搜索
+     *
+     * 资产搜索
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDataSetsRequest 请求对象
+     * @return ShowDataSetsResponse
+     */
+    public ShowDataSetsResponse showDataSets(ShowDataSetsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showDataSets);
+    }
+
+    /**
+     * 资产搜索
+     *
+     * 资产搜索
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDataSetsRequest 请求对象
+     * @return SyncInvoker<ShowDataSetsRequest, ShowDataSetsResponse>
+     */
+    public SyncInvoker<ShowDataSetsRequest, ShowDataSetsResponse> showDataSetsInvoker(ShowDataSetsRequest request) {
+        return new SyncInvoker<ShowDataSetsRequest, ShowDataSetsResponse>(request, DataArtsStudioMeta.showDataSets,
+            hcClient);
+    }
+
+    /**
      * 查询单个数据连接信息
      *
      * 查询单个数据连接信息
@@ -5626,6 +5723,34 @@ public class DataArtsStudioClient {
         ShowTableModelByIdRequest request) {
         return new SyncInvoker<ShowTableModelByIdRequest, ShowTableModelByIdResponse>(request,
             DataArtsStudioMeta.showTableModelById, hcClient);
+    }
+
+    /**
+     * 搜索查询标签分页展示
+     *
+     * 搜索查询标签分页展示
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTagsRequest 请求对象
+     * @return ShowTagsResponse
+     */
+    public ShowTagsResponse showTags(ShowTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showTags);
+    }
+
+    /**
+     * 搜索查询标签分页展示
+     *
+     * 搜索查询标签分页展示
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTagsRequest 请求对象
+     * @return SyncInvoker<ShowTagsRequest, ShowTagsResponse>
+     */
+    public SyncInvoker<ShowTagsRequest, ShowTagsResponse> showTagsInvoker(ShowTagsRequest request) {
+        return new SyncInvoker<ShowTagsRequest, ShowTagsResponse>(request, DataArtsStudioMeta.showTags, hcClient);
     }
 
     /**

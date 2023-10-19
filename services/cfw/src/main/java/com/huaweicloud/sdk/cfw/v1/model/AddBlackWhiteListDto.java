@@ -45,6 +45,11 @@ public class AddBlackWhiteListDto {
 
     private String port;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public AddBlackWhiteListDto withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -164,6 +169,23 @@ public class AddBlackWhiteListDto {
         this.port = port;
     }
 
+    public AddBlackWhiteListDto withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +198,12 @@ public class AddBlackWhiteListDto {
         return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.listType, that.listType)
             && Objects.equals(this.direction, that.direction) && Objects.equals(this.addressType, that.addressType)
             && Objects.equals(this.address, that.address) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.port, that.port);
+            && Objects.equals(this.port, that.port) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, listType, direction, addressType, address, protocol, port);
+        return Objects.hash(objectId, listType, direction, addressType, address, protocol, port, description);
     }
 
     @Override
@@ -195,6 +217,7 @@ public class AddBlackWhiteListDto {
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

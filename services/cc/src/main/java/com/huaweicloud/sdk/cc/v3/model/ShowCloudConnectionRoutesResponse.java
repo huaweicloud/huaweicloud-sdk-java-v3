@@ -13,14 +13,31 @@ import java.util.function.Consumer;
 public class ShowCloudConnectionRoutesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_connection_route")
 
     private CloudConnectionRoute cloudConnectionRoute;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    public ShowCloudConnectionRoutesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
 
-    private String requestId;
+    /**
+     * 资源ID标识符。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public ShowCloudConnectionRoutesResponse withCloudConnectionRoute(CloudConnectionRoute cloudConnectionRoute) {
         this.cloudConnectionRoute = cloudConnectionRoute;
@@ -49,23 +66,6 @@ public class ShowCloudConnectionRoutesResponse extends SdkResponse {
         this.cloudConnectionRoute = cloudConnectionRoute;
     }
 
-    public ShowCloudConnectionRoutesResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -75,21 +75,21 @@ public class ShowCloudConnectionRoutesResponse extends SdkResponse {
             return false;
         }
         ShowCloudConnectionRoutesResponse that = (ShowCloudConnectionRoutesResponse) obj;
-        return Objects.equals(this.cloudConnectionRoute, that.cloudConnectionRoute)
-            && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.cloudConnectionRoute, that.cloudConnectionRoute);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudConnectionRoute, requestId);
+        return Objects.hash(requestId, cloudConnectionRoute);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCloudConnectionRoutesResponse {\n");
-        sb.append("    cloudConnectionRoute: ").append(toIndentedString(cloudConnectionRoute)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    cloudConnectionRoute: ").append(toIndentedString(cloudConnectionRoute)).append("\n");
         sb.append("}");
         return sb.toString();
     }

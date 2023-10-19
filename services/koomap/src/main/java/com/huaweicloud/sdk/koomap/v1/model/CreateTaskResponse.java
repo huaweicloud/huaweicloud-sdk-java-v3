@@ -209,7 +209,7 @@ public class CreateTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务状态。包括INIT（初始化）、RUNNING（运行中）、SUCCESS（执行成功）、ARCHIVED（已归档）、FAILED（执行失败）、STOPPING（停止中）、STOP_SUCCESS（已停止）、STOP_FAILED（停止失败）。
+     * 任务状态。包括INIT（初始化）、RUNNING（运行中）、SUCCESS（执行成功）、ARCHIVED（已归档）、FAILED（执行失败）、STOPPING（停止中）、STOP_SUCCESS（已停止）、STOP_FAILED（停止失败）、START_RUNNING（等待中）。
      * @return taskStatus
      */
     public String getTaskStatus() {

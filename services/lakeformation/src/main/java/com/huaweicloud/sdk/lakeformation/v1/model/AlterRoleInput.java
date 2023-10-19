@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * role信息
+ * 角色信息
  */
 public class AlterRoleInput {
 
@@ -26,7 +26,7 @@ public class AlterRoleInput {
     }
 
     /**
-     * 描述信息
+     * 描述信息。最大长度为4000个字符。
      * @return description
      */
     public String getDescription() {
@@ -43,7 +43,7 @@ public class AlterRoleInput {
     }
 
     /**
-     * 角色名称
+     * 角色名称。只能包含字母、数字和下划线，且长度为1~255个字符。
      * @return roleName
      */
     public String getRoleName() {

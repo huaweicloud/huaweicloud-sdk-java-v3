@@ -44,6 +44,21 @@ public class CloudConnection {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private OffsetDateTime createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private OffsetDateTime updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<Tag> tags = null;
+
     /**
      * 云连接实例的状态。ACTIVE：表示状态可用。
      */
@@ -118,16 +133,6 @@ public class CloudConnection {
 
     private Boolean adminStateUp;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "created_at")
-
-    private OffsetDateTime createdAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updated_at")
-
-    private OffsetDateTime updatedAt;
-
     /**
      * 云连接使用场景。 - VPC：虚拟私有云。
      */
@@ -198,11 +203,6 @@ public class CloudConnection {
     private UsedSceneEnum usedScene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
-
-    private List<Tag> tags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_instance_number")
 
     private Integer networkInstanceNumber;
@@ -223,7 +223,7 @@ public class CloudConnection {
     }
 
     /**
-     * 云连接实例的ID。
+     * 资源ID标识符。
      * @return id
      */
     public String getId() {
@@ -240,7 +240,7 @@ public class CloudConnection {
     }
 
     /**
-     * 云连接实例的名字。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -257,7 +257,7 @@ public class CloudConnection {
     }
 
     /**
-     * 云连接实例的描述。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -274,7 +274,7 @@ public class CloudConnection {
     }
 
     /**
-     * 帐号ID。
+     * 实例所属帐号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -291,7 +291,7 @@ public class CloudConnection {
     }
 
     /**
-     * 云连接实例的企业项目ID。
+     * 实例所属企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -300,6 +300,73 @@ public class CloudConnection {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CloudConnection withCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 实例创建时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss。
+     * @return createdAt
+     */
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public CloudConnection withUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 实例更新时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss。
+     * @return updatedAt
+     */
+    public OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public CloudConnection withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CloudConnection addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CloudConnection withTags(Consumer<List<Tag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 实例标签。
+     * @return tags
+     */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 
     public CloudConnection withStatus(StatusEnum status) {
@@ -336,40 +403,6 @@ public class CloudConnection {
         this.adminStateUp = adminStateUp;
     }
 
-    public CloudConnection withCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    /**
-     * 云连接实例的创建时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss
-     * @return createdAt
-     */
-    public OffsetDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public CloudConnection withUpdatedAt(OffsetDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    /**
-     * 云连接实例的更新时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss
-     * @return updatedAt
-     */
-    public OffsetDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(OffsetDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public CloudConnection withUsedScene(UsedSceneEnum usedScene) {
         this.usedScene = usedScene;
         return this;
@@ -385,39 +418,6 @@ public class CloudConnection {
 
     public void setUsedScene(UsedSceneEnum usedScene) {
         this.usedScene = usedScene;
-    }
-
-    public CloudConnection withTags(List<Tag> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public CloudConnection addTagsItem(Tag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public CloudConnection withTags(Consumer<List<Tag>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * 标签列表。
-     * @return tags
-     */
-    public List<Tag> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<Tag> tags) {
-        this.tags = tags;
     }
 
     public CloudConnection withNetworkInstanceNumber(Integer networkInstanceNumber) {
@@ -489,9 +489,9 @@ public class CloudConnection {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.usedScene, that.usedScene) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.usedScene, that.usedScene)
             && Objects.equals(this.networkInstanceNumber, that.networkInstanceNumber)
             && Objects.equals(this.bandwidthPackageNumber, that.bandwidthPackageNumber)
             && Objects.equals(this.interRegionBandwidthNumber, that.interRegionBandwidthNumber);
@@ -504,12 +504,12 @@ public class CloudConnection {
             description,
             domainId,
             enterpriseProjectId,
-            status,
-            adminStateUp,
             createdAt,
             updatedAt,
-            usedScene,
             tags,
+            status,
+            adminStateUp,
+            usedScene,
             networkInstanceNumber,
             bandwidthPackageNumber,
             interRegionBandwidthNumber);
@@ -524,12 +524,12 @@ public class CloudConnection {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-        sb.append("    usedScene: ").append(toIndentedString(usedScene)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    usedScene: ").append(toIndentedString(usedScene)).append("\n");
         sb.append("    networkInstanceNumber: ").append(toIndentedString(networkInstanceNumber)).append("\n");
         sb.append("    bandwidthPackageNumber: ").append(toIndentedString(bandwidthPackageNumber)).append("\n");
         sb.append("    interRegionBandwidthNumber: ").append(toIndentedString(interRegionBandwidthNumber)).append("\n");

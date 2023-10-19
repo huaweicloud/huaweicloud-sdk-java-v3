@@ -24,11 +24,6 @@ public class ListCloudConnectionRoutesRequest {
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_connection_id")
 
     private List<String> cloudConnectionId = null;
@@ -43,15 +38,20 @@ public class ListCloudConnectionRoutesRequest {
 
     private String regionId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
     public ListCloudConnectionRoutesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 分页查询时，每页返回的个数。
+     * 每页返回的个数。 取值范围：1~1000。
      * minimum: 1
-     * maximum: 2000
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -68,7 +68,7 @@ public class ListCloudConnectionRoutesRequest {
     }
 
     /**
-     * 分页查询时，上一页最后一条记录的ID，为空时为查询第一页。 使用说明：必须与limit一起使用。
+     * 翻页信息，从上次API调用返回的翻页数据中获取，可填写前一页marker或者后一页marker，填入前一页previous_marker就向前翻页，后一页next_marker就向翻页。 翻页过程中，查询条件不能修改，包括过滤条件，排序条件，limit。
      * @return marker
      */
     public String getMarker() {
@@ -77,23 +77,6 @@ public class ListCloudConnectionRoutesRequest {
 
     public void setMarker(String marker) {
         this.marker = marker;
-    }
-
-    public ListCloudConnectionRoutesRequest withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * 根据云连接路由ID过滤云连接路由条目列表。
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public ListCloudConnectionRoutesRequest withCloudConnectionId(List<String> cloudConnectionId) {
@@ -118,7 +101,7 @@ public class ListCloudConnectionRoutesRequest {
     }
 
     /**
-     * 根据云连接实例ID过滤云连接路由条目列表。
+     * 根据云连接的ID过滤列表。
      * @return cloudConnectionId
      */
     public List<String> getCloudConnectionId() {
@@ -179,6 +162,23 @@ public class ListCloudConnectionRoutesRequest {
         this.regionId = regionId;
     }
 
+    public ListCloudConnectionRoutesRequest withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 根据id查询。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -189,13 +189,14 @@ public class ListCloudConnectionRoutesRequest {
         }
         ListCloudConnectionRoutesRequest that = (ListCloudConnectionRoutesRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.regionId, that.regionId);
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, id, cloudConnectionId, instanceId, regionId);
+        return Objects.hash(limit, marker, cloudConnectionId, instanceId, regionId, id);
     }
 
     @Override
@@ -204,10 +205,10 @@ public class ListCloudConnectionRoutesRequest {
         sb.append("class ListCloudConnectionRoutesRequest {\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

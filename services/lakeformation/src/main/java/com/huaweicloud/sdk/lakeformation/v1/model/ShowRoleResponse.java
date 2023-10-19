@@ -1,13 +1,15 @@
 package com.huaweicloud.sdk.lakeformation.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -15,72 +17,163 @@ import java.util.function.Consumer;
 public class ShowRoleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "role")
+    @JsonProperty(value = "role_name")
 
-    private Role role;
+    private String roleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_roles")
+    @JsonProperty(value = "description")
 
-    private List<UserRole> userRoles = null;
+    private String description;
 
-    public ShowRoleResponse withRole(Role role) {
-        this.role = role;
-        return this;
-    }
+    /**
+     * 主体来源 IAM云用户 SAML联邦 LDAP ld用户 LOCAL 本地用户 AGENTTENANT 委托 OTHER 其它
+     */
+    public static final class PrincipalSourceEnum {
 
-    public ShowRoleResponse withRole(Consumer<Role> roleSetter) {
-        if (this.role == null) {
-            this.role = new Role();
-            roleSetter.accept(this.role);
+        /**
+         * Enum IAM for value: "IAM"
+         */
+        public static final PrincipalSourceEnum IAM = new PrincipalSourceEnum("IAM");
+
+        /**
+         * Enum SAML for value: "SAML"
+         */
+        public static final PrincipalSourceEnum SAML = new PrincipalSourceEnum("SAML");
+
+        /**
+         * Enum LDAP for value: "LDAP"
+         */
+        public static final PrincipalSourceEnum LDAP = new PrincipalSourceEnum("LDAP");
+
+        /**
+         * Enum LOCAL for value: "LOCAL"
+         */
+        public static final PrincipalSourceEnum LOCAL = new PrincipalSourceEnum("LOCAL");
+
+        /**
+         * Enum AGENTTENANT for value: "AGENTTENANT"
+         */
+        public static final PrincipalSourceEnum AGENTTENANT = new PrincipalSourceEnum("AGENTTENANT");
+
+        /**
+         * Enum OTHER for value: "OTHER"
+         */
+        public static final PrincipalSourceEnum OTHER = new PrincipalSourceEnum("OTHER");
+
+        private static final Map<String, PrincipalSourceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PrincipalSourceEnum> createStaticFields() {
+            Map<String, PrincipalSourceEnum> map = new HashMap<>();
+            map.put("IAM", IAM);
+            map.put("SAML", SAML);
+            map.put("LDAP", LDAP);
+            map.put("LOCAL", LOCAL);
+            map.put("AGENTTENANT", AGENTTENANT);
+            map.put("OTHER", OTHER);
+            return Collections.unmodifiableMap(map);
         }
 
+        private String value;
+
+        PrincipalSourceEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PrincipalSourceEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrincipalSourceEnum(value));
+        }
+
+        public static PrincipalSourceEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PrincipalSourceEnum) {
+                return this.value.equals(((PrincipalSourceEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "principal_source")
+
+    private PrincipalSourceEnum principalSource;
+
+    public ShowRoleResponse withRoleName(String roleName) {
+        this.roleName = roleName;
         return this;
     }
 
     /**
-     * Get role
-     * @return role
+     * 角色名称。只能包含字母、数字和下划线，且长度为1~255个字符。
+     * @return roleName
      */
-    public Role getRole() {
-        return role;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
-    public ShowRoleResponse withUserRoles(List<UserRole> userRoles) {
-        this.userRoles = userRoles;
-        return this;
-    }
-
-    public ShowRoleResponse addUserRolesItem(UserRole userRolesItem) {
-        if (this.userRoles == null) {
-            this.userRoles = new ArrayList<>();
-        }
-        this.userRoles.add(userRolesItem);
-        return this;
-    }
-
-    public ShowRoleResponse withUserRoles(Consumer<List<UserRole>> userRolesSetter) {
-        if (this.userRoles == null) {
-            this.userRoles = new ArrayList<>();
-        }
-        userRolesSetter.accept(this.userRoles);
+    public ShowRoleResponse withDescription(String description) {
+        this.description = description;
         return this;
     }
 
     /**
-     * 角色包含的用户或者用户组信息
-     * @return userRoles
+     * 描述信息。最大长度为4000个字符。当无描述信息时，则description值为null，当值为null时，响应Body无该参数。
+     * @return description
      */
-    public List<UserRole> getUserRoles() {
-        return userRoles;
+    public String getDescription() {
+        return description;
     }
 
-    public void setUserRoles(List<UserRole> userRoles) {
-        this.userRoles = userRoles;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ShowRoleResponse withPrincipalSource(PrincipalSourceEnum principalSource) {
+        this.principalSource = principalSource;
+        return this;
+    }
+
+    /**
+     * 主体来源 IAM云用户 SAML联邦 LDAP ld用户 LOCAL 本地用户 AGENTTENANT 委托 OTHER 其它
+     * @return principalSource
+     */
+    public PrincipalSourceEnum getPrincipalSource() {
+        return principalSource;
+    }
+
+    public void setPrincipalSource(PrincipalSourceEnum principalSource) {
+        this.principalSource = principalSource;
     }
 
     @Override
@@ -92,20 +185,22 @@ public class ShowRoleResponse extends SdkResponse {
             return false;
         }
         ShowRoleResponse that = (ShowRoleResponse) obj;
-        return Objects.equals(this.role, that.role) && Objects.equals(this.userRoles, that.userRoles);
+        return Objects.equals(this.roleName, that.roleName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.principalSource, that.principalSource);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(role, userRoles);
+        return Objects.hash(roleName, description, principalSource);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRoleResponse {\n");
-        sb.append("    role: ").append(toIndentedString(role)).append("\n");
-        sb.append("    userRoles: ").append(toIndentedString(userRoles)).append("\n");
+        sb.append("    roleName: ").append(toIndentedString(roleName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    principalSource: ").append(toIndentedString(principalSource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

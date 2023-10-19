@@ -24,6 +24,11 @@ public class DetectLiveByFileResponse extends SdkResponse {
 
     private List<WarningList> warningList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public DetectLiveByFileResponse withVideoResult(LiveDetectRespVideoresult videoResult) {
         this.videoResult = videoResult;
         return this;
@@ -83,6 +88,25 @@ public class DetectLiveByFileResponse extends SdkResponse {
         this.warningList = warningList;
     }
 
+    public DetectLiveByFileResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -92,12 +116,13 @@ public class DetectLiveByFileResponse extends SdkResponse {
             return false;
         }
         DetectLiveByFileResponse that = (DetectLiveByFileResponse) obj;
-        return Objects.equals(this.videoResult, that.videoResult) && Objects.equals(this.warningList, that.warningList);
+        return Objects.equals(this.videoResult, that.videoResult) && Objects.equals(this.warningList, that.warningList)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(videoResult, warningList);
+        return Objects.hash(videoResult, warningList, xRequestId);
     }
 
     @Override
@@ -106,6 +131,7 @@ public class DetectLiveByFileResponse extends SdkResponse {
         sb.append("class DetectLiveByFileResponse {\n");
         sb.append("    videoResult: ").append(toIndentedString(videoResult)).append("\n");
         sb.append("    warningList: ").append(toIndentedString(warningList)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

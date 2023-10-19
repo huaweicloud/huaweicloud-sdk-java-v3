@@ -452,6 +452,11 @@ public class UpdateRuleAclDto {
 
     private TypeEnum type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag")
+
+    private TagsVO tag;
+
     public UpdateRuleAclDto withAddressType(AddressTypeEnum addressType) {
         this.addressType = addressType;
         return this;
@@ -760,6 +765,32 @@ public class UpdateRuleAclDto {
         this.type = type;
     }
 
+    public UpdateRuleAclDto withTag(TagsVO tag) {
+        this.tag = tag;
+        return this;
+    }
+
+    public UpdateRuleAclDto withTag(Consumer<TagsVO> tagSetter) {
+        if (this.tag == null) {
+            this.tag = new TagsVO();
+            tagSetter.accept(this.tag);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get tag
+     * @return tag
+     */
+    public TagsVO getTag() {
+        return tag;
+    }
+
+    public void setTag(TagsVO tag) {
+        this.tag = tag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -779,7 +810,8 @@ public class UpdateRuleAclDto {
             && Objects.equals(this.longConnectTime, that.longConnectTime)
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
-            && Objects.equals(this.service, that.service) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.service, that.service) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override
@@ -799,7 +831,8 @@ public class UpdateRuleAclDto {
             source,
             destination,
             service,
-            type);
+            type,
+            tag);
     }
 
     @Override
@@ -822,6 +855,7 @@ public class UpdateRuleAclDto {
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

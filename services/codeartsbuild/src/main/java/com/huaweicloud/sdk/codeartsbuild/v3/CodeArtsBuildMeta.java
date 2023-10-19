@@ -1,7 +1,15 @@
 package com.huaweicloud.sdk.codeartsbuild.v3;
 
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DeleteBuildJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DeleteBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableBuildJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableBuildJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadLogByRecordIdRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadLogByRecordIdResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ResumeBuildJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ResumeBuildJobResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobResponse;
@@ -19,6 +27,10 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListHistoryRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListHistoryResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordInfoResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopBuildJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopBuildJobResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -27,6 +39,56 @@ import com.huaweicloud.sdk.core.http.LocationType;
 
 @SuppressWarnings("unchecked")
 public class CodeArtsBuildMeta {
+
+    public static final HttpRequestDef<DeleteBuildJobRequest, DeleteBuildJobResponse> deleteBuildJob =
+        genFordeleteBuildJob();
+
+    private static HttpRequestDef<DeleteBuildJobRequest, DeleteBuildJobResponse> genFordeleteBuildJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteBuildJobRequest, DeleteBuildJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteBuildJobRequest.class, DeleteBuildJobResponse.class)
+                .withName("DeleteBuildJob")
+                .withUri("/v3/jobs/{job_id}/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBuildJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisableBuildJobRequest, DisableBuildJobResponse> disableBuildJob =
+        genFordisableBuildJob();
+
+    private static HttpRequestDef<DisableBuildJobRequest, DisableBuildJobResponse> genFordisableBuildJob() {
+        // basic
+        HttpRequestDef.Builder<DisableBuildJobRequest, DisableBuildJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableBuildJobRequest.class, DisableBuildJobResponse.class)
+                .withName("DisableBuildJob")
+                .withUri("/v3/jobs/{job_id}/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableBuildJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> downloadKeystore =
         genFordownloadKeystore();
@@ -53,6 +115,56 @@ public class CodeArtsBuildMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadKeystoreRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse> downloadLogByRecordId =
+        genFordownloadLogByRecordId();
+
+    private static HttpRequestDef<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse> genFordownloadLogByRecordId() {
+        // basic
+        HttpRequestDef.Builder<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadLogByRecordIdRequest.class, DownloadLogByRecordIdResponse.class)
+            .withName("DownloadLogByRecordId")
+            .withUri("/v3/{record_id}/download-log")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("record_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadLogByRecordIdRequest::getRecordId, (req, v) -> {
+                req.setRecordId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResumeBuildJobRequest, ResumeBuildJobResponse> resumeBuildJob =
+        genForresumeBuildJob();
+
+    private static HttpRequestDef<ResumeBuildJobRequest, ResumeBuildJobResponse> genForresumeBuildJob() {
+        // basic
+        HttpRequestDef.Builder<ResumeBuildJobRequest, ResumeBuildJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResumeBuildJobRequest.class, ResumeBuildJobResponse.class)
+                .withName("ResumeBuildJob")
+                .withUri("/v3/jobs/{job_id}/recover")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumeBuildJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
             }));
 
         // response
@@ -343,6 +455,69 @@ public class CodeArtsBuildMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowListPeriodHistoryRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRecordInfoRequest, ShowRecordInfoResponse> showRecordInfo =
+        genForshowRecordInfo();
+
+    private static HttpRequestDef<ShowRecordInfoRequest, ShowRecordInfoResponse> genForshowRecordInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowRecordInfoRequest, ShowRecordInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRecordInfoRequest.class, ShowRecordInfoResponse.class)
+                .withName("ShowRecordInfo")
+                .withUri("/v3/jobs/{job_id}/{build_no}/record-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRecordInfoRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<Integer>withRequestField("build_no",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowRecordInfoRequest::getBuildNo, (req, v) -> {
+                req.setBuildNo(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopBuildJobRequest, StopBuildJobResponse> stopBuildJob = genForstopBuildJob();
+
+    private static HttpRequestDef<StopBuildJobRequest, StopBuildJobResponse> genForstopBuildJob() {
+        // basic
+        HttpRequestDef.Builder<StopBuildJobRequest, StopBuildJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopBuildJobRequest.class, StopBuildJobResponse.class)
+                .withName("StopBuildJob")
+                .withUri("/v3/jobs/{job_id}/{build_no}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBuildJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<Integer>withRequestField("build_no",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(StopBuildJobRequest::getBuildNo, (req, v) -> {
+                req.setBuildNo(v);
             }));
 
         // response

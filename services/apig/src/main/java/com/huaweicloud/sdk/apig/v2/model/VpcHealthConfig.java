@@ -401,7 +401,7 @@ public class VpcHealthConfig {
 
     /**
      * 间隔时间：连续两次检查的间隔时间，单位为秒。必须大于timeout字段取值。
-     * minimum: 5
+     * minimum: 1
      * maximum: 300
      * @return timeInterval
      */

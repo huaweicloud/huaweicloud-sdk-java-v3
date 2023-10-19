@@ -54,6 +54,16 @@ public class Spec {
     private String usageFactor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "usage_value")
+
+    private Integer usageValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "free_usage_value")
+
+    private Integer freeUsageValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stride_num_whitelist")
 
     private List<Integer> strideNumWhitelist = null;
@@ -64,7 +74,7 @@ public class Spec {
     }
 
     /**
-     * 规格编码
+     * 规格编码。lakeformation.unit.basic.qps：每秒查询率（QPS）产品
      * @return specCode
      */
     public String getSpecCode() {
@@ -99,6 +109,8 @@ public class Spec {
 
     /**
      * 步长
+     * minimum: 0
+     * maximum: 2147483647
      * @return stride
      */
     public Integer getStride() {
@@ -133,6 +145,8 @@ public class Spec {
 
     /**
      * 最小步数
+     * minimum: 0
+     * maximum: 2147483647
      * @return minStrideNum
      */
     public Integer getMinStrideNum() {
@@ -150,6 +164,8 @@ public class Spec {
 
     /**
      * 最大步数
+     * minimum: 0
+     * maximum: 2147483647
      * @return maxStrideNum
      */
     public Integer getMaxStrideNum() {
@@ -167,6 +183,8 @@ public class Spec {
 
     /**
      * 使用量单位标识
+     * minimum: 0
+     * maximum: 2147483647
      * @return usageMeasureId
      */
     public Integer getUsageMeasureId() {
@@ -192,6 +210,44 @@ public class Spec {
 
     public void setUsageFactor(String usageFactor) {
         this.usageFactor = usageFactor;
+    }
+
+    public Spec withUsageValue(Integer usageValue) {
+        this.usageValue = usageValue;
+        return this;
+    }
+
+    /**
+     * 使用量，包含免费额度和单位额度，例如api调用次数，单位是次，前100万次调用免费，计费标准是5元每100万次，这里返回200万，元数据个数，单位是万个，前100万个免费，计费标准是5元每10万个，这里返回110
+     * minimum: 0
+     * maximum: 10000000
+     * @return usageValue
+     */
+    public Integer getUsageValue() {
+        return usageValue;
+    }
+
+    public void setUsageValue(Integer usageValue) {
+        this.usageValue = usageValue;
+    }
+
+    public Spec withFreeUsageValue(Integer freeUsageValue) {
+        this.freeUsageValue = freeUsageValue;
+        return this;
+    }
+
+    /**
+     * 免费使用额度，例如api调用次数，单位是次，前100万次调用免费，这里返回100万，元数据个数，单位是万个，前100万个免费，这里返回100
+     * minimum: 0
+     * maximum: 5000000
+     * @return freeUsageValue
+     */
+    public Integer getFreeUsageValue() {
+        return freeUsageValue;
+    }
+
+    public void setFreeUsageValue(Integer freeUsageValue) {
+        this.freeUsageValue = freeUsageValue;
     }
 
     public Spec withStrideNumWhitelist(List<Integer> strideNumWhitelist) {
@@ -241,7 +297,8 @@ public class Spec {
             && Objects.equals(this.minStrideNum, that.minStrideNum)
             && Objects.equals(this.maxStrideNum, that.maxStrideNum)
             && Objects.equals(this.usageMeasureId, that.usageMeasureId)
-            && Objects.equals(this.usageFactor, that.usageFactor)
+            && Objects.equals(this.usageFactor, that.usageFactor) && Objects.equals(this.usageValue, that.usageValue)
+            && Objects.equals(this.freeUsageValue, that.freeUsageValue)
             && Objects.equals(this.strideNumWhitelist, that.strideNumWhitelist);
     }
 
@@ -255,6 +312,8 @@ public class Spec {
             maxStrideNum,
             usageMeasureId,
             usageFactor,
+            usageValue,
+            freeUsageValue,
             strideNumWhitelist);
     }
 
@@ -270,6 +329,8 @@ public class Spec {
         sb.append("    maxStrideNum: ").append(toIndentedString(maxStrideNum)).append("\n");
         sb.append("    usageMeasureId: ").append(toIndentedString(usageMeasureId)).append("\n");
         sb.append("    usageFactor: ").append(toIndentedString(usageFactor)).append("\n");
+        sb.append("    usageValue: ").append(toIndentedString(usageValue)).append("\n");
+        sb.append("    freeUsageValue: ").append(toIndentedString(freeUsageValue)).append("\n");
         sb.append("    strideNumWhitelist: ").append(toIndentedString(strideNumWhitelist)).append("\n");
         sb.append("}");
         return sb.toString();

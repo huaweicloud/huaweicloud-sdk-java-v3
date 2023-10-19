@@ -163,6 +163,7 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
+import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("unchecked")
@@ -812,10 +813,10 @@ public class CbrMeta {
             f -> f.withMarshaller(ListAgentRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
             }));
-        builder.<String>withRequestField("agent_id",
+        builder.<List<String>>withRequestField("agent_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAgentRequest::getAgentId, (req, v) -> {
                 req.setAgentId(v);
             }));
@@ -1385,10 +1386,10 @@ public class CbrMeta {
             f -> f.withMarshaller(ListVaultRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             }));
-        builder.<String>withRequestField("id",
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListVaultRequest::getId, (req, v) -> {
                 req.setId(v);
             }));

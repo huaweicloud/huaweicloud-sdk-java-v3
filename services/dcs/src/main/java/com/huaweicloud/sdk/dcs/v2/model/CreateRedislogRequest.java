@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -15,10 +20,92 @@ public class CreateRedislogRequest {
 
     private String instanceId;
 
+    /**
+     * 日期偏移量，表示从过去的n天开始查询，例如：传入0则表示查询今天的日志，传入7则表示查询过去7天的日志。当前支持0，1，3，7。
+     */
+    public static final class QueryTimeEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final QueryTimeEnum NUMBER_0 = new QueryTimeEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final QueryTimeEnum NUMBER_1 = new QueryTimeEnum(1);
+
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final QueryTimeEnum NUMBER_3 = new QueryTimeEnum(3);
+
+        /**
+         * Enum NUMBER_7 for value: 7
+         */
+        public static final QueryTimeEnum NUMBER_7 = new QueryTimeEnum(7);
+
+        private static final Map<Integer, QueryTimeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, QueryTimeEnum> createStaticFields() {
+            Map<Integer, QueryTimeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(3, NUMBER_3);
+            map.put(7, NUMBER_7);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        QueryTimeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static QueryTimeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTimeEnum(value));
+        }
+
+        public static QueryTimeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof QueryTimeEnum) {
+                return this.value.equals(((QueryTimeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_time")
 
-    private Integer queryTime;
+    private QueryTimeEnum queryTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_type")
@@ -47,20 +134,20 @@ public class CreateRedislogRequest {
         this.instanceId = instanceId;
     }
 
-    public CreateRedislogRequest withQueryTime(Integer queryTime) {
+    public CreateRedislogRequest withQueryTime(QueryTimeEnum queryTime) {
         this.queryTime = queryTime;
         return this;
     }
 
     /**
-     * 日期偏移量，表示从过去的n天开始查询，例如：传入0则表示查询今天的日志，传入7则表示查询过去7天的日志。最大支持0-7。
+     * 日期偏移量，表示从过去的n天开始查询，例如：传入0则表示查询今天的日志，传入7则表示查询过去7天的日志。当前支持0，1，3，7。
      * @return queryTime
      */
-    public Integer getQueryTime() {
+    public QueryTimeEnum getQueryTime() {
         return queryTime;
     }
 
-    public void setQueryTime(Integer queryTime) {
+    public void setQueryTime(QueryTimeEnum queryTime) {
         this.queryTime = queryTime;
     }
 

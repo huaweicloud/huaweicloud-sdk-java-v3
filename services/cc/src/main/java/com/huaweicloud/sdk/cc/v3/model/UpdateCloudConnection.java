@@ -26,7 +26,7 @@ public class UpdateCloudConnection {
     }
 
     /**
-     * 云连接实例的名字。只能由中文、英文字母、数字、下划线、中划线、点组成。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class UpdateCloudConnection {
     }
 
     /**
-     * 云连接实例的描述。不支持 <>。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {

@@ -111,7 +111,7 @@ public class UpdateBandwidthPackage {
     }
 
     /**
-     * 带宽包实例的名字。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -128,7 +128,7 @@ public class UpdateBandwidthPackage {
     }
 
     /**
-     * 带宽包实例的描述。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {

@@ -7,10 +7,18 @@ import com.huaweicloud.sdk.lakeformation.v1.model.AddPartitionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.AddPartitionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ApplyForAccessRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ApplyForAccessResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.AssociatePrincipalsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.AssociatePrincipalsResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.AssociateRolesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.AssociateRolesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.AuthorizeAccessServiceRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.AuthorizeAccessServiceResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchAuthorizeInterfaceRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchAuthorizeInterfaceResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchCancelAuthorizationInterfaceRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchCancelAuthorizationInterfaceResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.BatchCheckPermissionRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.BatchCheckPermissionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchCreateConstraintRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchCreateConstraintResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchDeletePartitionRequest;
@@ -27,6 +35,10 @@ import com.huaweicloud.sdk.lakeformation.v1.model.BatchUpdatePartitionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchUpdatePartitionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CountMetaObjRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CountMetaObjResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateAccessClientRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateAccessClientResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateAgreementRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateAgreementResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateCatalogRequest;
@@ -41,6 +53,12 @@ import com.huaweicloud.sdk.lakeformation.v1.model.CreateRoleRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateRoleResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateTableResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAccessClientRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAccessClientResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAgencyRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAgencyResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAgreementRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAgreementResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAllTablesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAllTablesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteCatalogRequest;
@@ -61,18 +79,24 @@ import com.huaweicloud.sdk.lakeformation.v1.model.DeleteTableColumnStatisticsReq
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteTableColumnStatisticsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteTableRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteTableResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListAccessClientInfosRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListAccessClientInfosResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListAccessInfosRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListAccessInfosResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListAllFunctionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListAllFunctionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListCatalogsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListCatalogsResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListConfigsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListConfigsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListConstraintsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListConstraintsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabaseNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabaseNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabasesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionNamesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListGroupsForDomainRequest;
@@ -89,10 +113,14 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListObsObjectRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListObsObjectResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionNamesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionNamesWithoutLimitRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionNamesWithoutLimitResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPolicyResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListPrincipalsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListPrincipalsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListQuotasRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListQuotasResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListRoleNamesRequest;
@@ -111,18 +139,34 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListTablesByNameRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListTablesByNameResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListTablesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListTablesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListUserRolesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListUserRolesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListUsersRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListUsersResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.MoveLakeFormationInstanceOutRecycleBinRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.MoveLakeFormationInstanceOutRecycleBinResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.RevokePrincipalsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.RevokePrincipalsResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.RevokeRolesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.RevokeRolesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.SetPartitionColumnStatisticsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.SetPartitionColumnStatisticsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.SetTableColumnStatisticsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.SetTableColumnStatisticsResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessClientRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessClientResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessServiceRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessServiceResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementRuleRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementRuleResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowCatalogRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowCatalogResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowCredentialRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowCredentialResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatabaseResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowFunctionRequest;
@@ -135,16 +179,26 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ShowSyncPolicyRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowSyncPolicyResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowTableRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowTableResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateAccessClientRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateAccessClientResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateCatalogRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateCatalogResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatabaseResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateFunctionResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceDefaultRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceDefaultResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceScaleRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceScaleResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdatePrincipalsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdatePrincipalsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateRoleRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateRoleResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateRolesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateRolesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateTableRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateTableResponse;
 
@@ -256,6 +310,132 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 批量鉴权
+     *
+     * 批量鉴权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCheckPermissionRequest 请求对象
+     * @return CompletableFuture<BatchCheckPermissionResponse>
+     */
+    public CompletableFuture<BatchCheckPermissionResponse> batchCheckPermissionAsync(
+        BatchCheckPermissionRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.batchCheckPermission);
+    }
+
+    /**
+     * 批量鉴权
+     *
+     * 批量鉴权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCheckPermissionRequest 请求对象
+     * @return AsyncInvoker<BatchCheckPermissionRequest, BatchCheckPermissionResponse>
+     */
+    public AsyncInvoker<BatchCheckPermissionRequest, BatchCheckPermissionResponse> batchCheckPermissionAsyncInvoker(
+        BatchCheckPermissionRequest request) {
+        return new AsyncInvoker<BatchCheckPermissionRequest, BatchCheckPermissionResponse>(request,
+            LakeFormationMeta.batchCheckPermission, hcClient);
+    }
+
+    /**
+     * 创建服务接入客户端
+     *
+     * 创建服务接入客户端。
+     * 其他限制：
+     *   同一个实例下默认最多创建20个接入客户端。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAccessClientRequest 请求对象
+     * @return CompletableFuture<CreateAccessClientResponse>
+     */
+    public CompletableFuture<CreateAccessClientResponse> createAccessClientAsync(CreateAccessClientRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.createAccessClient);
+    }
+
+    /**
+     * 创建服务接入客户端
+     *
+     * 创建服务接入客户端。
+     * 其他限制：
+     *   同一个实例下默认最多创建20个接入客户端。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAccessClientRequest 请求对象
+     * @return AsyncInvoker<CreateAccessClientRequest, CreateAccessClientResponse>
+     */
+    public AsyncInvoker<CreateAccessClientRequest, CreateAccessClientResponse> createAccessClientAsyncInvoker(
+        CreateAccessClientRequest request) {
+        return new AsyncInvoker<CreateAccessClientRequest, CreateAccessClientResponse>(request,
+            LakeFormationMeta.createAccessClient, hcClient);
+    }
+
+    /**
+     * 删除服务接入客户端
+     *
+     * 根据ID删除服务接入客户端
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAccessClientRequest 请求对象
+     * @return CompletableFuture<DeleteAccessClientResponse>
+     */
+    public CompletableFuture<DeleteAccessClientResponse> deleteAccessClientAsync(DeleteAccessClientRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.deleteAccessClient);
+    }
+
+    /**
+     * 删除服务接入客户端
+     *
+     * 根据ID删除服务接入客户端
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAccessClientRequest 请求对象
+     * @return AsyncInvoker<DeleteAccessClientRequest, DeleteAccessClientResponse>
+     */
+    public AsyncInvoker<DeleteAccessClientRequest, DeleteAccessClientResponse> deleteAccessClientAsyncInvoker(
+        DeleteAccessClientRequest request) {
+        return new AsyncInvoker<DeleteAccessClientRequest, DeleteAccessClientResponse>(request,
+            LakeFormationMeta.deleteAccessClient, hcClient);
+    }
+
+    /**
+     * 获取服务接入客户端信息列表
+     *
+     * 根据LakeFormation实例获取服务实例相关的接入客户端信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAccessClientInfosRequest 请求对象
+     * @return CompletableFuture<ListAccessClientInfosResponse>
+     */
+    public CompletableFuture<ListAccessClientInfosResponse> listAccessClientInfosAsync(
+        ListAccessClientInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.listAccessClientInfos);
+    }
+
+    /**
+     * 获取服务接入客户端信息列表
+     *
+     * 根据LakeFormation实例获取服务实例相关的接入客户端信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAccessClientInfosRequest 请求对象
+     * @return AsyncInvoker<ListAccessClientInfosRequest, ListAccessClientInfosResponse>
+     */
+    public AsyncInvoker<ListAccessClientInfosRequest, ListAccessClientInfosResponse> listAccessClientInfosAsyncInvoker(
+        ListAccessClientInfosRequest request) {
+        return new AsyncInvoker<ListAccessClientInfosRequest, ListAccessClientInfosResponse>(request,
+            LakeFormationMeta.listAccessClientInfos, hcClient);
+    }
+
+    /**
      * 获取服务接入信息
      *
      * 根据LakeFormation实例获取服务实例相关的接入信息。
@@ -344,6 +524,36 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 获取服务接入客户端详情
+     *
+     * 根据ID获取服务接入客户端详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAccessClientRequest 请求对象
+     * @return CompletableFuture<ShowAccessClientResponse>
+     */
+    public CompletableFuture<ShowAccessClientResponse> showAccessClientAsync(ShowAccessClientRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.showAccessClient);
+    }
+
+    /**
+     * 获取服务接入客户端详情
+     *
+     * 根据ID获取服务接入客户端详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAccessClientRequest 请求对象
+     * @return AsyncInvoker<ShowAccessClientRequest, ShowAccessClientResponse>
+     */
+    public AsyncInvoker<ShowAccessClientRequest, ShowAccessClientResponse> showAccessClientAsyncInvoker(
+        ShowAccessClientRequest request) {
+        return new AsyncInvoker<ShowAccessClientRequest, ShowAccessClientResponse>(request,
+            LakeFormationMeta.showAccessClient, hcClient);
+    }
+
+    /**
      * 获取同步权限策略
      *
      * 获取同步权限策略
@@ -374,9 +584,127 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 更新服务接入客户端
+     *
+     * 根据ID更新服务接入客户端
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAccessClientRequest 请求对象
+     * @return CompletableFuture<UpdateAccessClientResponse>
+     */
+    public CompletableFuture<UpdateAccessClientResponse> updateAccessClientAsync(UpdateAccessClientRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.updateAccessClient);
+    }
+
+    /**
+     * 更新服务接入客户端
+     *
+     * 根据ID更新服务接入客户端
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAccessClientRequest 请求对象
+     * @return AsyncInvoker<UpdateAccessClientRequest, UpdateAccessClientResponse>
+     */
+    public AsyncInvoker<UpdateAccessClientRequest, UpdateAccessClientResponse> updateAccessClientAsyncInvoker(
+        UpdateAccessClientRequest request) {
+        return new AsyncInvoker<UpdateAccessClientRequest, UpdateAccessClientResponse>(request,
+            LakeFormationMeta.updateAccessClient, hcClient);
+    }
+
+    /**
+     * 创建委托
+     *
+     * 创建委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAgencyRequest 请求对象
+     * @return CompletableFuture<CreateAgencyResponse>
+     */
+    public CompletableFuture<CreateAgencyResponse> createAgencyAsync(CreateAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.createAgency);
+    }
+
+    /**
+     * 创建委托
+     *
+     * 创建委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAgencyRequest 请求对象
+     * @return AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
+     */
+    public AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyAsyncInvoker(
+        CreateAgencyRequest request) {
+        return new AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse>(request, LakeFormationMeta.createAgency,
+            hcClient);
+    }
+
+    /**
+     * 删除委托
+     *
+     * 删除委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAgencyRequest 请求对象
+     * @return CompletableFuture<DeleteAgencyResponse>
+     */
+    public CompletableFuture<DeleteAgencyResponse> deleteAgencyAsync(DeleteAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.deleteAgency);
+    }
+
+    /**
+     * 删除委托
+     *
+     * 删除委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAgencyRequest 请求对象
+     * @return AsyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse>
+     */
+    public AsyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgencyAsyncInvoker(
+        DeleteAgencyRequest request) {
+        return new AsyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse>(request, LakeFormationMeta.deleteAgency,
+            hcClient);
+    }
+
+    /**
+     * 委托查询
+     *
+     * 委托查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgencyRequest 请求对象
+     * @return CompletableFuture<ShowAgencyResponse>
+     */
+    public CompletableFuture<ShowAgencyResponse> showAgencyAsync(ShowAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.showAgency);
+    }
+
+    /**
+     * 委托查询
+     *
+     * 委托查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgencyRequest 请求对象
+     * @return AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
+     */
+    public AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyAsyncInvoker(ShowAgencyRequest request) {
+        return new AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse>(request, LakeFormationMeta.showAgency, hcClient);
+    }
+
+    /**
      * 创建catalog
      *
-     * 创建catalog，会在catalog下创建默认数据库，默认数据库名字为：default
+     * 创建catalog，会在catalog下创建默认数据库，默认数据库名称为：default
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -390,7 +718,7 @@ public class LakeFormationAsyncClient {
     /**
      * 创建catalog
      *
-     * 创建catalog，会在catalog下创建默认数据库，默认数据库名字为：default
+     * 创建catalog，会在catalog下创建默认数据库，默认数据库名称为：default
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -522,6 +850,65 @@ public class LakeFormationAsyncClient {
         UpdateCatalogRequest request) {
         return new AsyncInvoker<UpdateCatalogRequest, UpdateCatalogResponse>(request, LakeFormationMeta.updateCatalog,
             hcClient);
+    }
+
+    /**
+     * 获取所有用户可见的租户面配置
+     *
+     * 获取所有用户可见的租户面配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigsRequest 请求对象
+     * @return CompletableFuture<ListConfigsResponse>
+     */
+    public CompletableFuture<ListConfigsResponse> listConfigsAsync(ListConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.listConfigs);
+    }
+
+    /**
+     * 获取所有用户可见的租户面配置
+     *
+     * 获取所有用户可见的租户面配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListConfigsRequest 请求对象
+     * @return AsyncInvoker<ListConfigsRequest, ListConfigsResponse>
+     */
+    public AsyncInvoker<ListConfigsRequest, ListConfigsResponse> listConfigsAsyncInvoker(ListConfigsRequest request) {
+        return new AsyncInvoker<ListConfigsRequest, ListConfigsResponse>(request, LakeFormationMeta.listConfigs,
+            hcClient);
+    }
+
+    /**
+     * 获取临时密钥和securityToken
+     *
+     * 获取临时密钥和securityToken，失效时间大于等于1小时，请在1小时内更新
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCredentialRequest 请求对象
+     * @return CompletableFuture<ShowCredentialResponse>
+     */
+    public CompletableFuture<ShowCredentialResponse> showCredentialAsync(ShowCredentialRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.showCredential);
+    }
+
+    /**
+     * 获取临时密钥和securityToken
+     *
+     * 获取临时密钥和securityToken，失效时间大于等于1小时，请在1小时内更新
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCredentialRequest 请求对象
+     * @return AsyncInvoker<ShowCredentialRequest, ShowCredentialResponse>
+     */
+    public AsyncInvoker<ShowCredentialRequest, ShowCredentialResponse> showCredentialAsyncInvoker(
+        ShowCredentialRequest request) {
+        return new AsyncInvoker<ShowCredentialRequest, ShowCredentialResponse>(request,
+            LakeFormationMeta.showCredential, hcClient);
     }
 
     /**
@@ -801,6 +1188,36 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 列举库下所有函数名称
+     *
+     * 查询数据库下的所有函数名称列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFunctionNamesRequest 请求对象
+     * @return CompletableFuture<ListFunctionNamesResponse>
+     */
+    public CompletableFuture<ListFunctionNamesResponse> listFunctionNamesAsync(ListFunctionNamesRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.listFunctionNames);
+    }
+
+    /**
+     * 列举库下所有函数名称
+     *
+     * 查询数据库下的所有函数名称列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFunctionNamesRequest 请求对象
+     * @return AsyncInvoker<ListFunctionNamesRequest, ListFunctionNamesResponse>
+     */
+    public AsyncInvoker<ListFunctionNamesRequest, ListFunctionNamesResponse> listFunctionNamesAsyncInvoker(
+        ListFunctionNamesRequest request) {
+        return new AsyncInvoker<ListFunctionNamesRequest, ListFunctionNamesResponse>(request,
+            LakeFormationMeta.listFunctionNames, hcClient);
+    }
+
+    /**
      * 列举函数
      *
      * 列举函数
@@ -891,6 +1308,37 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 接入服务授权
+     *
+     * 接入服务授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AuthorizeAccessServiceRequest 请求对象
+     * @return CompletableFuture<AuthorizeAccessServiceResponse>
+     */
+    public CompletableFuture<AuthorizeAccessServiceResponse> authorizeAccessServiceAsync(
+        AuthorizeAccessServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.authorizeAccessService);
+    }
+
+    /**
+     * 接入服务授权
+     *
+     * 接入服务授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AuthorizeAccessServiceRequest 请求对象
+     * @return AsyncInvoker<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse>
+     */
+    public AsyncInvoker<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse> authorizeAccessServiceAsyncInvoker(
+        AuthorizeAccessServiceRequest request) {
+        return new AsyncInvoker<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse>(request,
+            LakeFormationMeta.authorizeAccessService, hcClient);
+    }
+
+    /**
      * 注册租户协议
      *
      * 用户授权并委托
@@ -918,6 +1366,66 @@ public class LakeFormationAsyncClient {
         CreateAgreementRequest request) {
         return new AsyncInvoker<CreateAgreementRequest, CreateAgreementResponse>(request,
             LakeFormationMeta.createAgreement, hcClient);
+    }
+
+    /**
+     * 删除租户协议
+     *
+     * 用户取消授权，同时有权限用户删除委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAgreementRequest 请求对象
+     * @return CompletableFuture<DeleteAgreementResponse>
+     */
+    public CompletableFuture<DeleteAgreementResponse> deleteAgreementAsync(DeleteAgreementRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.deleteAgreement);
+    }
+
+    /**
+     * 删除租户协议
+     *
+     * 用户取消授权，同时有权限用户删除委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAgreementRequest 请求对象
+     * @return AsyncInvoker<DeleteAgreementRequest, DeleteAgreementResponse>
+     */
+    public AsyncInvoker<DeleteAgreementRequest, DeleteAgreementResponse> deleteAgreementAsyncInvoker(
+        DeleteAgreementRequest request) {
+        return new AsyncInvoker<DeleteAgreementRequest, DeleteAgreementResponse>(request,
+            LakeFormationMeta.deleteAgreement, hcClient);
+    }
+
+    /**
+     * 查询租户当前的接入服务授权
+     *
+     * 查询租户当前的接入服务授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAccessServiceRequest 请求对象
+     * @return CompletableFuture<ShowAccessServiceResponse>
+     */
+    public CompletableFuture<ShowAccessServiceResponse> showAccessServiceAsync(ShowAccessServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.showAccessService);
+    }
+
+    /**
+     * 查询租户当前的接入服务授权
+     *
+     * 查询租户当前的接入服务授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAccessServiceRequest 请求对象
+     * @return AsyncInvoker<ShowAccessServiceRequest, ShowAccessServiceResponse>
+     */
+    public AsyncInvoker<ShowAccessServiceRequest, ShowAccessServiceResponse> showAccessServiceAsyncInvoker(
+        ShowAccessServiceRequest request) {
+        return new AsyncInvoker<ShowAccessServiceRequest, ShowAccessServiceResponse>(request,
+            LakeFormationMeta.showAccessService, hcClient);
     }
 
     /**
@@ -1197,6 +1705,68 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 设为默认实例
+     *
+     * 设为默认实例，只有非默认实例可以设置为默认实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLakeFormationInstanceDefaultRequest 请求对象
+     * @return CompletableFuture<UpdateLakeFormationInstanceDefaultResponse>
+     */
+    public CompletableFuture<UpdateLakeFormationInstanceDefaultResponse> updateLakeFormationInstanceDefaultAsync(
+        UpdateLakeFormationInstanceDefaultRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.updateLakeFormationInstanceDefault);
+    }
+
+    /**
+     * 设为默认实例
+     *
+     * 设为默认实例，只有非默认实例可以设置为默认实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLakeFormationInstanceDefaultRequest 请求对象
+     * @return AsyncInvoker<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse>
+     */
+    public AsyncInvoker<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse> updateLakeFormationInstanceDefaultAsyncInvoker(
+        UpdateLakeFormationInstanceDefaultRequest request) {
+        return new AsyncInvoker<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse>(
+            request, LakeFormationMeta.updateLakeFormationInstanceDefault, hcClient);
+    }
+
+    /**
+     * 变更实例规格
+     *
+     * 变更LakeFormation实例规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLakeFormationInstanceScaleRequest 请求对象
+     * @return CompletableFuture<UpdateLakeFormationInstanceScaleResponse>
+     */
+    public CompletableFuture<UpdateLakeFormationInstanceScaleResponse> updateLakeFormationInstanceScaleAsync(
+        UpdateLakeFormationInstanceScaleRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.updateLakeFormationInstanceScale);
+    }
+
+    /**
+     * 变更实例规格
+     *
+     * 变更LakeFormation实例规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLakeFormationInstanceScaleRequest 请求对象
+     * @return AsyncInvoker<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse>
+     */
+    public AsyncInvoker<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse> updateLakeFormationInstanceScaleAsyncInvoker(
+        UpdateLakeFormationInstanceScaleRequest request) {
+        return new AsyncInvoker<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse>(
+            request, LakeFormationMeta.updateLakeFormationInstanceScale, hcClient);
+    }
+
+    /**
      * 查询OBS桶列表
      *
      * 查询OBS桶列表
@@ -1449,6 +2019,39 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 列举全量分区值列表
+     *
+     * 遍历分区名称列表信息,返回全量的数据。
+     * 对于事务表，支持基于表的特定版本遍历分区名称列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPartitionNamesWithoutLimitRequest 请求对象
+     * @return CompletableFuture<ListPartitionNamesWithoutLimitResponse>
+     */
+    public CompletableFuture<ListPartitionNamesWithoutLimitResponse> listPartitionNamesWithoutLimitAsync(
+        ListPartitionNamesWithoutLimitRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.listPartitionNamesWithoutLimit);
+    }
+
+    /**
+     * 列举全量分区值列表
+     *
+     * 遍历分区名称列表信息,返回全量的数据。
+     * 对于事务表，支持基于表的特定版本遍历分区名称列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPartitionNamesWithoutLimitRequest 请求对象
+     * @return AsyncInvoker<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse>
+     */
+    public AsyncInvoker<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse> listPartitionNamesWithoutLimitAsyncInvoker(
+        ListPartitionNamesWithoutLimitRequest request) {
+        return new AsyncInvoker<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse>(request,
+            LakeFormationMeta.listPartitionNamesWithoutLimit, hcClient);
+    }
+
+    /**
      * 列举分区信息
      *
      * 遍历指定数据表下的分区列表，对于事务表，支持基于表的特定版本遍历分区列表。
@@ -1606,6 +2209,36 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 将一个或者多个用户/用户组加入角色
+     *
+     * 将一个或者多个用户/用户组加入角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociatePrincipalsRequest 请求对象
+     * @return CompletableFuture<AssociatePrincipalsResponse>
+     */
+    public CompletableFuture<AssociatePrincipalsResponse> associatePrincipalsAsync(AssociatePrincipalsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.associatePrincipals);
+    }
+
+    /**
+     * 将一个或者多个用户/用户组加入角色
+     *
+     * 将一个或者多个用户/用户组加入角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociatePrincipalsRequest 请求对象
+     * @return AsyncInvoker<AssociatePrincipalsRequest, AssociatePrincipalsResponse>
+     */
+    public AsyncInvoker<AssociatePrincipalsRequest, AssociatePrincipalsResponse> associatePrincipalsAsyncInvoker(
+        AssociatePrincipalsRequest request) {
+        return new AsyncInvoker<AssociatePrincipalsRequest, AssociatePrincipalsResponse>(request,
+            LakeFormationMeta.associatePrincipals, hcClient);
+    }
+
+    /**
      * 创建role
      *
      * 创建role
@@ -1659,6 +2292,36 @@ public class LakeFormationAsyncClient {
      */
     public AsyncInvoker<DeleteRoleRequest, DeleteRoleResponse> deleteRoleAsyncInvoker(DeleteRoleRequest request) {
         return new AsyncInvoker<DeleteRoleRequest, DeleteRoleResponse>(request, LakeFormationMeta.deleteRole, hcClient);
+    }
+
+    /**
+     * 查询角色下的用户/用户组
+     *
+     * 查询角色下的用户/用户组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPrincipalsRequest 请求对象
+     * @return CompletableFuture<ListPrincipalsResponse>
+     */
+    public CompletableFuture<ListPrincipalsResponse> listPrincipalsAsync(ListPrincipalsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.listPrincipals);
+    }
+
+    /**
+     * 查询角色下的用户/用户组
+     *
+     * 查询角色下的用户/用户组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPrincipalsRequest 请求对象
+     * @return AsyncInvoker<ListPrincipalsRequest, ListPrincipalsResponse>
+     */
+    public AsyncInvoker<ListPrincipalsRequest, ListPrincipalsResponse> listPrincipalsAsyncInvoker(
+        ListPrincipalsRequest request) {
+        return new AsyncInvoker<ListPrincipalsRequest, ListPrincipalsResponse>(request,
+            LakeFormationMeta.listPrincipals, hcClient);
     }
 
     /**
@@ -1720,6 +2383,36 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 将一个或者多个用户/用户组从角色移除
+     *
+     * 将一个或者多个用户/用户组从角色移除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokePrincipalsRequest 请求对象
+     * @return CompletableFuture<RevokePrincipalsResponse>
+     */
+    public CompletableFuture<RevokePrincipalsResponse> revokePrincipalsAsync(RevokePrincipalsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.revokePrincipals);
+    }
+
+    /**
+     * 将一个或者多个用户/用户组从角色移除
+     *
+     * 将一个或者多个用户/用户组从角色移除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokePrincipalsRequest 请求对象
+     * @return AsyncInvoker<RevokePrincipalsRequest, RevokePrincipalsResponse>
+     */
+    public AsyncInvoker<RevokePrincipalsRequest, RevokePrincipalsResponse> revokePrincipalsAsyncInvoker(
+        RevokePrincipalsRequest request) {
+        return new AsyncInvoker<RevokePrincipalsRequest, RevokePrincipalsResponse>(request,
+            LakeFormationMeta.revokePrincipals, hcClient);
+    }
+
+    /**
      * 获取角色
      *
      * 获取角色
@@ -1745,6 +2438,36 @@ public class LakeFormationAsyncClient {
      */
     public AsyncInvoker<ShowRoleRequest, ShowRoleResponse> showRoleAsyncInvoker(ShowRoleRequest request) {
         return new AsyncInvoker<ShowRoleRequest, ShowRoleResponse>(request, LakeFormationMeta.showRole, hcClient);
+    }
+
+    /**
+     * 更新角色中的principals
+     *
+     * 更新角色中的principals
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePrincipalsRequest 请求对象
+     * @return CompletableFuture<UpdatePrincipalsResponse>
+     */
+    public CompletableFuture<UpdatePrincipalsResponse> updatePrincipalsAsync(UpdatePrincipalsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.updatePrincipals);
+    }
+
+    /**
+     * 更新角色中的principals
+     *
+     * 更新角色中的principals
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePrincipalsRequest 请求对象
+     * @return AsyncInvoker<UpdatePrincipalsRequest, UpdatePrincipalsResponse>
+     */
+    public AsyncInvoker<UpdatePrincipalsRequest, UpdatePrincipalsResponse> updatePrincipalsAsyncInvoker(
+        UpdatePrincipalsRequest request) {
+        return new AsyncInvoker<UpdatePrincipalsRequest, UpdatePrincipalsResponse>(request,
+            LakeFormationMeta.updatePrincipals, hcClient);
     }
 
     /**
@@ -2314,6 +3037,152 @@ public class LakeFormationAsyncClient {
         ListLakeFormationInstanceTagsRequest request) {
         return new AsyncInvoker<ListLakeFormationInstanceTagsRequest, ListLakeFormationInstanceTagsResponse>(request,
             LakeFormationMeta.listLakeFormationInstanceTags, hcClient);
+    }
+
+    /**
+     * 将多个角色授予User
+     *
+     * 将多个角色授予User
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateRolesRequest 请求对象
+     * @return CompletableFuture<AssociateRolesResponse>
+     */
+    public CompletableFuture<AssociateRolesResponse> associateRolesAsync(AssociateRolesRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.associateRoles);
+    }
+
+    /**
+     * 将多个角色授予User
+     *
+     * 将多个角色授予User
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateRolesRequest 请求对象
+     * @return AsyncInvoker<AssociateRolesRequest, AssociateRolesResponse>
+     */
+    public AsyncInvoker<AssociateRolesRequest, AssociateRolesResponse> associateRolesAsyncInvoker(
+        AssociateRolesRequest request) {
+        return new AsyncInvoker<AssociateRolesRequest, AssociateRolesResponse>(request,
+            LakeFormationMeta.associateRoles, hcClient);
+    }
+
+    /**
+     * 查询用户的角色列表
+     *
+     * 查询用户的角色列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUserRolesRequest 请求对象
+     * @return CompletableFuture<ListUserRolesResponse>
+     */
+    public CompletableFuture<ListUserRolesResponse> listUserRolesAsync(ListUserRolesRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.listUserRoles);
+    }
+
+    /**
+     * 查询用户的角色列表
+     *
+     * 查询用户的角色列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUserRolesRequest 请求对象
+     * @return AsyncInvoker<ListUserRolesRequest, ListUserRolesResponse>
+     */
+    public AsyncInvoker<ListUserRolesRequest, ListUserRolesResponse> listUserRolesAsyncInvoker(
+        ListUserRolesRequest request) {
+        return new AsyncInvoker<ListUserRolesRequest, ListUserRolesResponse>(request, LakeFormationMeta.listUserRoles,
+            hcClient);
+    }
+
+    /**
+     * 获取用户列表
+     *
+     * 获取用户列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsersRequest 请求对象
+     * @return CompletableFuture<ListUsersResponse>
+     */
+    public CompletableFuture<ListUsersResponse> listUsersAsync(ListUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.listUsers);
+    }
+
+    /**
+     * 获取用户列表
+     *
+     * 获取用户列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsersRequest 请求对象
+     * @return AsyncInvoker<ListUsersRequest, ListUsersResponse>
+     */
+    public AsyncInvoker<ListUsersRequest, ListUsersResponse> listUsersAsyncInvoker(ListUsersRequest request) {
+        return new AsyncInvoker<ListUsersRequest, ListUsersResponse>(request, LakeFormationMeta.listUsers, hcClient);
+    }
+
+    /**
+     * 将一个或者多个角色从用户移除
+     *
+     * 将一个或者多个角色从用户移除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokeRolesRequest 请求对象
+     * @return CompletableFuture<RevokeRolesResponse>
+     */
+    public CompletableFuture<RevokeRolesResponse> revokeRolesAsync(RevokeRolesRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.revokeRoles);
+    }
+
+    /**
+     * 将一个或者多个角色从用户移除
+     *
+     * 将一个或者多个角色从用户移除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokeRolesRequest 请求对象
+     * @return AsyncInvoker<RevokeRolesRequest, RevokeRolesResponse>
+     */
+    public AsyncInvoker<RevokeRolesRequest, RevokeRolesResponse> revokeRolesAsyncInvoker(RevokeRolesRequest request) {
+        return new AsyncInvoker<RevokeRolesRequest, RevokeRolesResponse>(request, LakeFormationMeta.revokeRoles,
+            hcClient);
+    }
+
+    /**
+     * 更新用户中的角色
+     *
+     * 更新用户中的角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateRolesRequest 请求对象
+     * @return CompletableFuture<UpdateRolesResponse>
+     */
+    public CompletableFuture<UpdateRolesResponse> updateRolesAsync(UpdateRolesRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.updateRoles);
+    }
+
+    /**
+     * 更新用户中的角色
+     *
+     * 更新用户中的角色
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateRolesRequest 请求对象
+     * @return AsyncInvoker<UpdateRolesRequest, UpdateRolesResponse>
+     */
+    public AsyncInvoker<UpdateRolesRequest, UpdateRolesResponse> updateRolesAsyncInvoker(UpdateRolesRequest request) {
+        return new AsyncInvoker<UpdateRolesRequest, UpdateRolesResponse>(request, LakeFormationMeta.updateRoles,
+            hcClient);
     }
 
     /**

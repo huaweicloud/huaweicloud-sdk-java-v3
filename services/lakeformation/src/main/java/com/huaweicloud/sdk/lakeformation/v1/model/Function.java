@@ -35,7 +35,7 @@ public class Function {
     private String functionName;
 
     /**
-     * 函数类型
+     * 函数类型,JAVA
      */
     public static final class FunctionTypeEnum {
 
@@ -109,7 +109,7 @@ public class Function {
     private String owner;
 
     /**
-     * 所有者类型
+     * 所有者类型,USER-用户,GROUP-组,ROLE-角色
      */
     public static final class OwnerTypeEnum {
 
@@ -189,6 +189,105 @@ public class Function {
 
     private OwnerTypeEnum ownerType;
 
+    /**
+     * 所有者授权来源类型,IAM-云用户,SAML-联邦,LDAP-ld用户,LOCAL-本地用户,AGENTTENANT-委托,OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     */
+    public static final class OwnerAuthSourceTypeEnum {
+
+        /**
+         * Enum IAM for value: "IAM"
+         */
+        public static final OwnerAuthSourceTypeEnum IAM = new OwnerAuthSourceTypeEnum("IAM");
+
+        /**
+         * Enum SAML for value: "SAML"
+         */
+        public static final OwnerAuthSourceTypeEnum SAML = new OwnerAuthSourceTypeEnum("SAML");
+
+        /**
+         * Enum LDAP for value: "LDAP"
+         */
+        public static final OwnerAuthSourceTypeEnum LDAP = new OwnerAuthSourceTypeEnum("LDAP");
+
+        /**
+         * Enum LOCAL for value: "LOCAL"
+         */
+        public static final OwnerAuthSourceTypeEnum LOCAL = new OwnerAuthSourceTypeEnum("LOCAL");
+
+        /**
+         * Enum AGENTTENANT for value: "AGENTTENANT"
+         */
+        public static final OwnerAuthSourceTypeEnum AGENTTENANT = new OwnerAuthSourceTypeEnum("AGENTTENANT");
+
+        /**
+         * Enum OTHER for value: "OTHER"
+         */
+        public static final OwnerAuthSourceTypeEnum OTHER = new OwnerAuthSourceTypeEnum("OTHER");
+
+        private static final Map<String, OwnerAuthSourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OwnerAuthSourceTypeEnum> createStaticFields() {
+            Map<String, OwnerAuthSourceTypeEnum> map = new HashMap<>();
+            map.put("IAM", IAM);
+            map.put("SAML", SAML);
+            map.put("LDAP", LDAP);
+            map.put("LOCAL", LOCAL);
+            map.put("AGENTTENANT", AGENTTENANT);
+            map.put("OTHER", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OwnerAuthSourceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OwnerAuthSourceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OwnerAuthSourceTypeEnum(value));
+        }
+
+        public static OwnerAuthSourceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OwnerAuthSourceTypeEnum) {
+                return this.value.equals(((OwnerAuthSourceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner_auth_source_type")
+
+    private OwnerAuthSourceTypeEnum ownerAuthSourceType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "class_name")
 
@@ -210,7 +309,7 @@ public class Function {
     }
 
     /**
-     * catalog名字
+     * catalog名称
      * @return catalogName
      */
     public String getCatalogName() {
@@ -227,7 +326,7 @@ public class Function {
     }
 
     /**
-     * 数据库名字
+     * 数据库名称
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -244,7 +343,7 @@ public class Function {
     }
 
     /**
-     * 函数名
+     * 函数名称。只能包含字母、数字和下划线，且长度为1~256个字符。
      * @return functionName
      */
     public String getFunctionName() {
@@ -261,7 +360,7 @@ public class Function {
     }
 
     /**
-     * 函数类型
+     * 函数类型,JAVA
      * @return functionType
      */
     public FunctionTypeEnum getFunctionType() {
@@ -278,7 +377,7 @@ public class Function {
     }
 
     /**
-     * 函数所有者
+     * 函数所有者。只能包含字母、数字和下划线，且长度为1~256个字符。
      * @return owner
      */
     public String getOwner() {
@@ -295,7 +394,7 @@ public class Function {
     }
 
     /**
-     * 所有者类型
+     * 所有者类型,USER-用户,GROUP-组,ROLE-角色
      * @return ownerType
      */
     public OwnerTypeEnum getOwnerType() {
@@ -304,6 +403,23 @@ public class Function {
 
     public void setOwnerType(OwnerTypeEnum ownerType) {
         this.ownerType = ownerType;
+    }
+
+    public Function withOwnerAuthSourceType(OwnerAuthSourceTypeEnum ownerAuthSourceType) {
+        this.ownerAuthSourceType = ownerAuthSourceType;
+        return this;
+    }
+
+    /**
+     * 所有者授权来源类型,IAM-云用户,SAML-联邦,LDAP-ld用户,LOCAL-本地用户,AGENTTENANT-委托,OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     * @return ownerAuthSourceType
+     */
+    public OwnerAuthSourceTypeEnum getOwnerAuthSourceType() {
+        return ownerAuthSourceType;
+    }
+
+    public void setOwnerAuthSourceType(OwnerAuthSourceTypeEnum ownerAuthSourceType) {
+        this.ownerAuthSourceType = ownerAuthSourceType;
     }
 
     public Function withClassName(String className) {
@@ -386,8 +502,10 @@ public class Function {
             && Objects.equals(this.databaseName, that.databaseName)
             && Objects.equals(this.functionName, that.functionName)
             && Objects.equals(this.functionType, that.functionType) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.ownerType, that.ownerType) && Objects.equals(this.className, that.className)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.resourceUris, that.resourceUris);
+            && Objects.equals(this.ownerType, that.ownerType)
+            && Objects.equals(this.ownerAuthSourceType, that.ownerAuthSourceType)
+            && Objects.equals(this.className, that.className) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.resourceUris, that.resourceUris);
     }
 
     @Override
@@ -398,6 +516,7 @@ public class Function {
             functionType,
             owner,
             ownerType,
+            ownerAuthSourceType,
             className,
             createTime,
             resourceUris);
@@ -413,6 +532,7 @@ public class Function {
         sb.append("    functionType: ").append(toIndentedString(functionType)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    ownerType: ").append(toIndentedString(ownerType)).append("\n");
+        sb.append("    ownerAuthSourceType: ").append(toIndentedString(ownerAuthSourceType)).append("\n");
         sb.append("    className: ").append(toIndentedString(className)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    resourceUris: ").append(toIndentedString(resourceUris)).append("\n");

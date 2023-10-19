@@ -25,6 +25,11 @@ public class ChangeSeversOsMetadata {
 
     private String userData;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "BYOL")
+
+    private String byol;
+
     public ChangeSeversOsMetadata withSystemEncrypted(String systemEncrypted) {
         this.systemEncrypted = systemEncrypted;
         return this;
@@ -80,6 +85,23 @@ public class ChangeSeversOsMetadata {
         this.userData = userData;
     }
 
+    public ChangeSeversOsMetadata withByol(String byol) {
+        this.byol = byol;
+        return this;
+    }
+
+    /**
+     * 如果您已拥有操作系统或软件的许可证（一般是指按物理插槽数、物理内核数等进行认证的许可证），您可以通过自带许可（BYOL）的方式将业务完整迁移到云平台，继续使用您的许可证。 - true： 使用自有license - 其他值： 视为非法参数，接口报错
+     * @return byol
+     */
+    public String getByol() {
+        return byol;
+    }
+
+    public void setByol(String byol) {
+        this.byol = byol;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -90,12 +112,13 @@ public class ChangeSeversOsMetadata {
         }
         ChangeSeversOsMetadata that = (ChangeSeversOsMetadata) obj;
         return Objects.equals(this.systemEncrypted, that.systemEncrypted)
-            && Objects.equals(this.systemCmkid, that.systemCmkid) && Objects.equals(this.userData, that.userData);
+            && Objects.equals(this.systemCmkid, that.systemCmkid) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.byol, that.byol);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(systemEncrypted, systemCmkid, userData);
+        return Objects.hash(systemEncrypted, systemCmkid, userData, byol);
     }
 
     @Override
@@ -105,6 +128,7 @@ public class ChangeSeversOsMetadata {
         sb.append("    systemEncrypted: ").append(toIndentedString(systemEncrypted)).append("\n");
         sb.append("    systemCmkid: ").append(toIndentedString(systemCmkid)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    byol: ").append(toIndentedString(byol)).append("\n");
         sb.append("}");
         return sb.toString();
     }

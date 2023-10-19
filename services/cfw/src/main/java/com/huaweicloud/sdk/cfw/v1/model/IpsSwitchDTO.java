@@ -21,7 +21,7 @@ public class IpsSwitchDTO {
     private String objectId;
 
     /**
-     * 补丁类型，1-基础补丁 2=虚拟补丁
+     * 补丁类型，仅支持虚拟补丁，值为2。
      */
     public static final class IpsTypeEnum {
 
@@ -123,7 +123,7 @@ public class IpsSwitchDTO {
     }
 
     /**
-     * 补丁类型，1-基础补丁 2=虚拟补丁
+     * 补丁类型，仅支持虚拟补丁，值为2。
      * @return ipsType
      */
     public IpsTypeEnum getIpsType() {

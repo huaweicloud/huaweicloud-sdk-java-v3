@@ -49,12 +49,16 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BehaviorRestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BizCatalogVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BizMetricVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BulkSecurityLevel;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BusinessAssetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogLevelVOList;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogMetaDataEventRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogMoveParaDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogParamsVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CategoryDetailVO;
@@ -301,6 +305,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenBulkClassifications;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenClassification;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenEntitySearchRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OrderReq;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ParseUserBehaviorRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ParseUserBehaviorResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiRequest;
@@ -334,6 +340,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchDwByTypeResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchIdByPathResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchParameter;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchParametersExt;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchPublishInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchPublishInfoResponse;
@@ -387,6 +394,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailRequ
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataSetsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataSetsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdRequest;
@@ -431,6 +440,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableModelByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableModelByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTagsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTagsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTaskInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTaskInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTaskListRequest;
@@ -453,6 +464,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.StopFactorySupplementDataInst
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SubjectParamsVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TableModelUpdateVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TableModelVO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.TagRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TemplateListRO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TemplateRO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateApiRequest;
@@ -846,6 +858,31 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApprovalBatchParam.class),
             f -> f.withMarshaller(BatchPublishRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSyncMetadataRequest, BatchSyncMetadataResponse> batchSyncMetadata =
+        genForbatchSyncMetadata();
+
+    private static HttpRequestDef<BatchSyncMetadataRequest, BatchSyncMetadataResponse> genForbatchSyncMetadata() {
+        // basic
+        HttpRequestDef.Builder<BatchSyncMetadataRequest, BatchSyncMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchSyncMetadataRequest.class, BatchSyncMetadataResponse.class)
+                .withName("BatchSyncMetadata")
+                .withUri("/v1/{project_id}/metadata/async-bulk")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CatalogMetaDataEventRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CatalogMetaDataEventRequest.class),
+            f -> f.withMarshaller(BatchSyncMetadataRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -5916,6 +5953,45 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ParseUserBehaviorRequest, ParseUserBehaviorResponse> parseUserBehavior =
+        genForparseUserBehavior();
+
+    private static HttpRequestDef<ParseUserBehaviorRequest, ParseUserBehaviorResponse> genForparseUserBehavior() {
+        // basic
+        HttpRequestDef.Builder<ParseUserBehaviorRequest, ParseUserBehaviorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ParseUserBehaviorRequest.class, ParseUserBehaviorResponse.class)
+                .withName("ParseUserBehavior")
+                .withUri("/v3/{project_id}/datamap/uba")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ParseUserBehaviorRequest::getInstance, (req, v) -> {
+                req.setInstance(v);
+            }));
+        builder.<BehaviorRestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BehaviorRestBody.class),
+            f -> f.withMarshaller(ParseUserBehaviorRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ParseUserBehaviorResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PayForDgcOneKeyRequest, PayForDgcOneKeyResponse> payForDgcOneKey =
         genForpayForDgcOneKey();
 
@@ -7916,6 +7992,37 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDataSetsRequest, ShowDataSetsResponse> showDataSets = genForshowDataSets();
+
+    private static HttpRequestDef<ShowDataSetsRequest, ShowDataSetsResponse> genForshowDataSets() {
+        // basic
+        HttpRequestDef.Builder<ShowDataSetsRequest, ShowDataSetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowDataSetsRequest.class, ShowDataSetsResponse.class)
+                .withName("ShowDataSets")
+                .withUri("/v3/{project_id}/datamap/entities/search")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataSetsRequest::getInstance, (req, v) -> {
+                req.setInstance(v);
+            }));
+        builder.<SearchParameter>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchParameter.class),
+            f -> f.withMarshaller(ShowDataSetsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDataconnectionRequest, ShowDataconnectionResponse> showDataconnection =
         genForshowDataconnection();
 
@@ -8826,6 +8933,37 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTableModelByIdRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForshowTags();
+
+    private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForshowTags() {
+        // basic
+        HttpRequestDef.Builder<ShowTagsRequest, ShowTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowTagsRequest.class, ShowTagsResponse.class)
+                .withName("ShowTags")
+                .withUri("/v3/{project_id}/datamap/tags/search")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTagsRequest::getInstance, (req, v) -> {
+                req.setInstance(v);
+            }));
+        builder.<TagRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagRequest.class),
+            f -> f.withMarshaller(ShowTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

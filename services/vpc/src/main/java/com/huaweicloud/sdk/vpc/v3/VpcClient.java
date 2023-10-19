@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateAddressGroupRequest;
@@ -160,6 +162,37 @@ public class VpcClient {
         AddSourcesToTrafficMirrorSessionRequest request) {
         return new SyncInvoker<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse>(
             request, VpcMeta.addSourcesToTrafficMirrorSession, hcClient);
+    }
+
+    /**
+     * 批量创建安全组规则
+     *
+     * 在特定安全组下批量创建安全组规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateSecurityGroupRulesRequest 请求对象
+     * @return BatchCreateSecurityGroupRulesResponse
+     */
+    public BatchCreateSecurityGroupRulesResponse batchCreateSecurityGroupRules(
+        BatchCreateSecurityGroupRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.batchCreateSecurityGroupRules);
+    }
+
+    /**
+     * 批量创建安全组规则
+     *
+     * 在特定安全组下批量创建安全组规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateSecurityGroupRulesRequest 请求对象
+     * @return SyncInvoker<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse>
+     */
+    public SyncInvoker<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> batchCreateSecurityGroupRulesInvoker(
+        BatchCreateSecurityGroupRulesRequest request) {
+        return new SyncInvoker<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse>(request,
+            VpcMeta.batchCreateSecurityGroupRules, hcClient);
     }
 
     /**

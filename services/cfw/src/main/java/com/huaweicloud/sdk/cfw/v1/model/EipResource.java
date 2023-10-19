@@ -145,6 +145,31 @@ public class EipResource {
 
     private String fwEnterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_id")
+
+    private String objectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner")
+
+    private String owner;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_domain_id")
+
+    private String fwDomainId;
+
     public EipResource withId(String id) {
         this.id = id;
         return this;
@@ -349,6 +374,91 @@ public class EipResource {
         this.fwEnterpriseProjectId = fwEnterpriseProjectId;
     }
 
+    public EipResource withObjectId(String objectId) {
+        this.objectId = objectId;
+        return this;
+    }
+
+    /**
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用查询防火墙实例接口获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。具体可参考APIExlorer和帮助中心FAQ。
+     * @return objectId
+     */
+    public String getObjectId() {
+        return objectId;
+    }
+
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
+    }
+
+    public EipResource withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
+    public EipResource withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * EIP所属用户
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public EipResource withOwner(String owner) {
+        this.owner = owner;
+        return this;
+    }
+
+    /**
+     * 所属用户的名称
+     * @return owner
+     */
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public EipResource withFwDomainId(String fwDomainId) {
+        this.fwDomainId = fwDomainId;
+        return this;
+    }
+
+    /**
+     * 防火墙所属用户
+     * @return fwDomainId
+     */
+    public String getFwDomainId() {
+        return fwDomainId;
+    }
+
+    public void setFwDomainId(String fwDomainId) {
+        this.fwDomainId = fwDomainId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -366,7 +476,10 @@ public class EipResource {
             && Objects.equals(this.associateInstanceType, that.associateInstanceType)
             && Objects.equals(this.fwInstanceName, that.fwInstanceName)
             && Objects.equals(this.fwInstanceId, that.fwInstanceId)
-            && Objects.equals(this.fwEnterpriseProjectId, that.fwEnterpriseProjectId);
+            && Objects.equals(this.fwEnterpriseProjectId, that.fwEnterpriseProjectId)
+            && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.fwDomainId, that.fwDomainId);
     }
 
     @Override
@@ -382,7 +495,12 @@ public class EipResource {
             associateInstanceType,
             fwInstanceName,
             fwInstanceId,
-            fwEnterpriseProjectId);
+            fwEnterpriseProjectId,
+            objectId,
+            tags,
+            domainId,
+            owner,
+            fwDomainId);
     }
 
     @Override
@@ -401,6 +519,11 @@ public class EipResource {
         sb.append("    fwInstanceName: ").append(toIndentedString(fwInstanceName)).append("\n");
         sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("    fwEnterpriseProjectId: ").append(toIndentedString(fwEnterpriseProjectId)).append("\n");
+        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    fwDomainId: ").append(toIndentedString(fwDomainId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

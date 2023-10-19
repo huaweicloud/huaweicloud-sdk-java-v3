@@ -70,7 +70,7 @@ public class AppCreate {
     }
 
     /**
-     * APP的key。支持英文，数字，“_”,“-”,且只能以英文或数字开头，8 ~ 64个字符。
+     * APP的key。支持英文，数字，“_”，“-”，且只能以英文或数字开头，8 ~ 200个字符。
      * @return appKey
      */
     public String getAppKey() {
@@ -87,7 +87,7 @@ public class AppCreate {
     }
 
     /**
-     * 密钥。支持英文，数字，“_”,“-”,“_”,“!”,“@”,“#”,“$”,“%”且只能以英文或数字开头，8 ~ 64个字符。
+     * 密钥。支持英文，数字，“_”，“-”，“!”，“@”，“#”，“$”，“%”，且只能以英文或数字开头，8 ~ 128个字符。
      * @return appSecret
      */
     public String getAppSecret() {

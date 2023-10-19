@@ -229,6 +229,16 @@ public class GetFirewallInstanceResponseRecord {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_url_filtering")
+
+    private Boolean supportUrlFiltering;
+
     public GetFirewallInstanceResponseRecord withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -541,6 +551,40 @@ public class GetFirewallInstanceResponseRecord {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public GetFirewallInstanceResponseRecord withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 资源id
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public GetFirewallInstanceResponseRecord withSupportUrlFiltering(Boolean supportUrlFiltering) {
+        this.supportUrlFiltering = supportUrlFiltering;
+        return this;
+    }
+
+    /**
+     * 是否支持url过滤，true表示是，false表示不是
+     * @return supportUrlFiltering
+     */
+    public Boolean getSupportUrlFiltering() {
+        return supportUrlFiltering;
+    }
+
+    public void setSupportUrlFiltering(Boolean supportUrlFiltering) {
+        this.supportUrlFiltering = supportUrlFiltering;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -559,7 +603,9 @@ public class GetFirewallInstanceResponseRecord {
             && Objects.equals(this.supportIpv6, that.supportIpv6)
             && Objects.equals(this.featureToggle, that.featureToggle) && Objects.equals(this.resources, that.resources)
             && Objects.equals(this.fwInstanceName, that.fwInstanceName)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.supportUrlFiltering, that.supportUrlFiltering);
     }
 
     @Override
@@ -578,7 +624,9 @@ public class GetFirewallInstanceResponseRecord {
             featureToggle,
             resources,
             fwInstanceName,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            resourceId,
+            supportUrlFiltering);
     }
 
     @Override
@@ -600,6 +648,8 @@ public class GetFirewallInstanceResponseRecord {
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    fwInstanceName: ").append(toIndentedString(fwInstanceName)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    supportUrlFiltering: ").append(toIndentedString(supportUrlFiltering)).append("\n");
         sb.append("}");
         return sb.toString();
     }

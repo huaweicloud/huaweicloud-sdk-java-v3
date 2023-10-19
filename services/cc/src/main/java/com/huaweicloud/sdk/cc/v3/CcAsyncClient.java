@@ -1,59 +1,89 @@
 package com.huaweicloud.sdk.cc.v3;
 
+import com.huaweicloud.sdk.cc.v3.model.ApplyCentralNetworkPolicyRequest;
+import com.huaweicloud.sdk.cc.v3.model.ApplyCentralNetworkPolicyResponse;
 import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageResponse;
-import com.huaweicloud.sdk.cc.v3.model.BatchCreateDeleteTagsRequest;
-import com.huaweicloud.sdk.cc.v3.model.BatchCreateDeleteTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateAuthorisationRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateAuthorisationResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkGdgwAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkGdgwAttachmentResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkPolicyRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkPolicyResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateCloudConnectionResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceResponse;
-import com.huaweicloud.sdk.cc.v3.model.CreateTagRequest;
-import com.huaweicloud.sdk.cc.v3.model.CreateTagResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteAuthorisationRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteAuthorisationResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkAttachmentResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkPolicyRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkPolicyResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteCloudConnectionResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceResponse;
-import com.huaweicloud.sdk.cc.v3.model.DeleteTagRequest;
-import com.huaweicloud.sdk.cc.v3.model.DeleteTagResponse;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageTagsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesByTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesByTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkAttachmentsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkAttachmentsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkGdgwAttachmentsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkGdgwAttachmentsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkPoliciesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkPoliciesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkPolicyChangeSetRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkPolicyChangeSetResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkQuotasRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkQuotasResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkTagsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionQuotasRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionQuotasResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionRoutesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionRoutesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionTagsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsByTagsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsByTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionsResponse;
-import com.huaweicloud.sdk.cc.v3.model.ListDomainTagsRequest;
-import com.huaweicloud.sdk.cc.v3.model.ListDomainTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListInterRegionBandwidthsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListInterRegionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsResponse;
-import com.huaweicloud.sdk.cc.v3.model.ListQuotasRequest;
-import com.huaweicloud.sdk.cc.v3.model.ListQuotasResponse;
-import com.huaweicloud.sdk.cc.v3.model.ListResourceByFilterTagRequest;
-import com.huaweicloud.sdk.cc.v3.model.ListResourceByFilterTagResponse;
-import com.huaweicloud.sdk.cc.v3.model.ListTagsRequest;
-import com.huaweicloud.sdk.cc.v3.model.ListTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkGdgwAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkGdgwAttachmentResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowCloudConnectionRoutesRequest;
@@ -62,10 +92,28 @@ import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.TagBandwidthPackageRequest;
+import com.huaweicloud.sdk.cc.v3.model.TagBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.TagCentralNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.TagCentralNetworkResponse;
+import com.huaweicloud.sdk.cc.v3.model.TagCloudConnectionRequest;
+import com.huaweicloud.sdk.cc.v3.model.TagCloudConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.UntagBandwidthPackageRequest;
+import com.huaweicloud.sdk.cc.v3.model.UntagBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.UntagCentralNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.UntagCentralNetworkResponse;
+import com.huaweicloud.sdk.cc.v3.model.UntagCloudConnectionRequest;
+import com.huaweicloud.sdk.cc.v3.model.UntagCloudConnectionResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateAuthorisationRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateAuthorisationResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateBandwidthPackageResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkConnectionRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkConnectionResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkGdgwAttachmentRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkGdgwAttachmentResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateCentralNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCloudConnectionRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateCloudConnectionResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthRequest;
@@ -370,6 +418,37 @@ public class CcAsyncClient {
     }
 
     /**
+     * 查询带宽包的标签信息
+     *
+     * 查询带宽包的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthPackageTagsRequest 请求对象
+     * @return CompletableFuture<ListBandwidthPackageTagsResponse>
+     */
+    public CompletableFuture<ListBandwidthPackageTagsResponse> listBandwidthPackageTagsAsync(
+        ListBandwidthPackageTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listBandwidthPackageTags);
+    }
+
+    /**
+     * 查询带宽包的标签信息
+     *
+     * 查询带宽包的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthPackageTagsRequest 请求对象
+     * @return AsyncInvoker<ListBandwidthPackageTagsRequest, ListBandwidthPackageTagsResponse>
+     */
+    public AsyncInvoker<ListBandwidthPackageTagsRequest, ListBandwidthPackageTagsResponse> listBandwidthPackageTagsAsyncInvoker(
+        ListBandwidthPackageTagsRequest request) {
+        return new AsyncInvoker<ListBandwidthPackageTagsRequest, ListBandwidthPackageTagsResponse>(request,
+            CcMeta.listBandwidthPackageTags, hcClient);
+    }
+
+    /**
      * 查询带宽包列表
      *
      * 查询带宽包列表。
@@ -400,6 +479,37 @@ public class CcAsyncClient {
         ListBandwidthPackagesRequest request) {
         return new AsyncInvoker<ListBandwidthPackagesRequest, ListBandwidthPackagesResponse>(request,
             CcMeta.listBandwidthPackages, hcClient);
+    }
+
+    /**
+     * 通过标签过滤带宽包实例
+     *
+     * 通过标签过滤带宽包实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthPackagesByTagsRequest 请求对象
+     * @return CompletableFuture<ListBandwidthPackagesByTagsResponse>
+     */
+    public CompletableFuture<ListBandwidthPackagesByTagsResponse> listBandwidthPackagesByTagsAsync(
+        ListBandwidthPackagesByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listBandwidthPackagesByTags);
+    }
+
+    /**
+     * 通过标签过滤带宽包实例
+     *
+     * 通过标签过滤带宽包实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthPackagesByTagsRequest 请求对象
+     * @return AsyncInvoker<ListBandwidthPackagesByTagsRequest, ListBandwidthPackagesByTagsResponse>
+     */
+    public AsyncInvoker<ListBandwidthPackagesByTagsRequest, ListBandwidthPackagesByTagsResponse> listBandwidthPackagesByTagsAsyncInvoker(
+        ListBandwidthPackagesByTagsRequest request) {
+        return new AsyncInvoker<ListBandwidthPackagesByTagsRequest, ListBandwidthPackagesByTagsResponse>(request,
+            CcMeta.listBandwidthPackagesByTags, hcClient);
     }
 
     /**
@@ -434,6 +544,67 @@ public class CcAsyncClient {
     }
 
     /**
+     * 创建带宽包标签
+     *
+     * 创建带宽包标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param TagBandwidthPackageRequest 请求对象
+     * @return CompletableFuture<TagBandwidthPackageResponse>
+     */
+    public CompletableFuture<TagBandwidthPackageResponse> tagBandwidthPackageAsync(TagBandwidthPackageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.tagBandwidthPackage);
+    }
+
+    /**
+     * 创建带宽包标签
+     *
+     * 创建带宽包标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param TagBandwidthPackageRequest 请求对象
+     * @return AsyncInvoker<TagBandwidthPackageRequest, TagBandwidthPackageResponse>
+     */
+    public AsyncInvoker<TagBandwidthPackageRequest, TagBandwidthPackageResponse> tagBandwidthPackageAsyncInvoker(
+        TagBandwidthPackageRequest request) {
+        return new AsyncInvoker<TagBandwidthPackageRequest, TagBandwidthPackageResponse>(request,
+            CcMeta.tagBandwidthPackage, hcClient);
+    }
+
+    /**
+     * 删除带宽包标签
+     *
+     * 删除带宽包标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UntagBandwidthPackageRequest 请求对象
+     * @return CompletableFuture<UntagBandwidthPackageResponse>
+     */
+    public CompletableFuture<UntagBandwidthPackageResponse> untagBandwidthPackageAsync(
+        UntagBandwidthPackageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.untagBandwidthPackage);
+    }
+
+    /**
+     * 删除带宽包标签
+     *
+     * 删除带宽包标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UntagBandwidthPackageRequest 请求对象
+     * @return AsyncInvoker<UntagBandwidthPackageRequest, UntagBandwidthPackageResponse>
+     */
+    public AsyncInvoker<UntagBandwidthPackageRequest, UntagBandwidthPackageResponse> untagBandwidthPackageAsyncInvoker(
+        UntagBandwidthPackageRequest request) {
+        return new AsyncInvoker<UntagBandwidthPackageRequest, UntagBandwidthPackageResponse>(request,
+            CcMeta.untagBandwidthPackage, hcClient);
+    }
+
+    /**
      * 更新带宽包实例
      *
      * 更新带宽包实例。
@@ -462,6 +633,692 @@ public class CcAsyncClient {
         UpdateBandwidthPackageRequest request) {
         return new AsyncInvoker<UpdateBandwidthPackageRequest, UpdateBandwidthPackageResponse>(request,
             CcMeta.updateBandwidthPackage, hcClient);
+    }
+
+    /**
+     * 应用中心网络策略
+     *
+     * 应用中心网络策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ApplyCentralNetworkPolicyRequest 请求对象
+     * @return CompletableFuture<ApplyCentralNetworkPolicyResponse>
+     */
+    public CompletableFuture<ApplyCentralNetworkPolicyResponse> applyCentralNetworkPolicyAsync(
+        ApplyCentralNetworkPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.applyCentralNetworkPolicy);
+    }
+
+    /**
+     * 应用中心网络策略
+     *
+     * 应用中心网络策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ApplyCentralNetworkPolicyRequest 请求对象
+     * @return AsyncInvoker<ApplyCentralNetworkPolicyRequest, ApplyCentralNetworkPolicyResponse>
+     */
+    public AsyncInvoker<ApplyCentralNetworkPolicyRequest, ApplyCentralNetworkPolicyResponse> applyCentralNetworkPolicyAsyncInvoker(
+        ApplyCentralNetworkPolicyRequest request) {
+        return new AsyncInvoker<ApplyCentralNetworkPolicyRequest, ApplyCentralNetworkPolicyResponse>(request,
+            CcMeta.applyCentralNetworkPolicy, hcClient);
+    }
+
+    /**
+     * 创建中心网络
+     *
+     * 创建中心网络。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCentralNetworkRequest 请求对象
+     * @return CompletableFuture<CreateCentralNetworkResponse>
+     */
+    public CompletableFuture<CreateCentralNetworkResponse> createCentralNetworkAsync(
+        CreateCentralNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.createCentralNetwork);
+    }
+
+    /**
+     * 创建中心网络
+     *
+     * 创建中心网络。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCentralNetworkRequest 请求对象
+     * @return AsyncInvoker<CreateCentralNetworkRequest, CreateCentralNetworkResponse>
+     */
+    public AsyncInvoker<CreateCentralNetworkRequest, CreateCentralNetworkResponse> createCentralNetworkAsyncInvoker(
+        CreateCentralNetworkRequest request) {
+        return new AsyncInvoker<CreateCentralNetworkRequest, CreateCentralNetworkResponse>(request,
+            CcMeta.createCentralNetwork, hcClient);
+    }
+
+    /**
+     * 创建一个新版本的中心网络策略
+     *
+     * 创建一份只读的中心网络的策略。如果您有策略文档内容改动，需要基于此版本重新创建一个新版本的策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCentralNetworkPolicyRequest 请求对象
+     * @return CompletableFuture<CreateCentralNetworkPolicyResponse>
+     */
+    public CompletableFuture<CreateCentralNetworkPolicyResponse> createCentralNetworkPolicyAsync(
+        CreateCentralNetworkPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.createCentralNetworkPolicy);
+    }
+
+    /**
+     * 创建一个新版本的中心网络策略
+     *
+     * 创建一份只读的中心网络的策略。如果您有策略文档内容改动，需要基于此版本重新创建一个新版本的策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCentralNetworkPolicyRequest 请求对象
+     * @return AsyncInvoker<CreateCentralNetworkPolicyRequest, CreateCentralNetworkPolicyResponse>
+     */
+    public AsyncInvoker<CreateCentralNetworkPolicyRequest, CreateCentralNetworkPolicyResponse> createCentralNetworkPolicyAsyncInvoker(
+        CreateCentralNetworkPolicyRequest request) {
+        return new AsyncInvoker<CreateCentralNetworkPolicyRequest, CreateCentralNetworkPolicyResponse>(request,
+            CcMeta.createCentralNetworkPolicy, hcClient);
+    }
+
+    /**
+     * 删除中心网络
+     *
+     * 删除中心网络，请先清除附件后再删除中心网络。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCentralNetworkRequest 请求对象
+     * @return CompletableFuture<DeleteCentralNetworkResponse>
+     */
+    public CompletableFuture<DeleteCentralNetworkResponse> deleteCentralNetworkAsync(
+        DeleteCentralNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.deleteCentralNetwork);
+    }
+
+    /**
+     * 删除中心网络
+     *
+     * 删除中心网络，请先清除附件后再删除中心网络。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCentralNetworkRequest 请求对象
+     * @return AsyncInvoker<DeleteCentralNetworkRequest, DeleteCentralNetworkResponse>
+     */
+    public AsyncInvoker<DeleteCentralNetworkRequest, DeleteCentralNetworkResponse> deleteCentralNetworkAsyncInvoker(
+        DeleteCentralNetworkRequest request) {
+        return new AsyncInvoker<DeleteCentralNetworkRequest, DeleteCentralNetworkResponse>(request,
+            CcMeta.deleteCentralNetwork, hcClient);
+    }
+
+    /**
+     * 删除中心网络策略版本
+     *
+     * 删除中心网络策略版本。您无法删除正在被应用的中心策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCentralNetworkPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteCentralNetworkPolicyResponse>
+     */
+    public CompletableFuture<DeleteCentralNetworkPolicyResponse> deleteCentralNetworkPolicyAsync(
+        DeleteCentralNetworkPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.deleteCentralNetworkPolicy);
+    }
+
+    /**
+     * 删除中心网络策略版本
+     *
+     * 删除中心网络策略版本。您无法删除正在被应用的中心策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCentralNetworkPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteCentralNetworkPolicyRequest, DeleteCentralNetworkPolicyResponse>
+     */
+    public AsyncInvoker<DeleteCentralNetworkPolicyRequest, DeleteCentralNetworkPolicyResponse> deleteCentralNetworkPolicyAsyncInvoker(
+        DeleteCentralNetworkPolicyRequest request) {
+        return new AsyncInvoker<DeleteCentralNetworkPolicyRequest, DeleteCentralNetworkPolicyResponse>(request,
+            CcMeta.deleteCentralNetworkPolicy, hcClient);
+    }
+
+    /**
+     * 查询所有版本的中心网络策略列表
+     *
+     * 查询所有版本的中心网络策略列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkPoliciesRequest 请求对象
+     * @return CompletableFuture<ListCentralNetworkPoliciesResponse>
+     */
+    public CompletableFuture<ListCentralNetworkPoliciesResponse> listCentralNetworkPoliciesAsync(
+        ListCentralNetworkPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCentralNetworkPolicies);
+    }
+
+    /**
+     * 查询所有版本的中心网络策略列表
+     *
+     * 查询所有版本的中心网络策略列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListCentralNetworkPoliciesRequest, ListCentralNetworkPoliciesResponse>
+     */
+    public AsyncInvoker<ListCentralNetworkPoliciesRequest, ListCentralNetworkPoliciesResponse> listCentralNetworkPoliciesAsyncInvoker(
+        ListCentralNetworkPoliciesRequest request) {
+        return new AsyncInvoker<ListCentralNetworkPoliciesRequest, ListCentralNetworkPoliciesResponse>(request,
+            CcMeta.listCentralNetworkPolicies, hcClient);
+    }
+
+    /**
+     * 查询中心网络策略变化集
+     *
+     * 查询与当前应用中心网络策略的变化集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkPolicyChangeSetRequest 请求对象
+     * @return CompletableFuture<ListCentralNetworkPolicyChangeSetResponse>
+     */
+    public CompletableFuture<ListCentralNetworkPolicyChangeSetResponse> listCentralNetworkPolicyChangeSetAsync(
+        ListCentralNetworkPolicyChangeSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCentralNetworkPolicyChangeSet);
+    }
+
+    /**
+     * 查询中心网络策略变化集
+     *
+     * 查询与当前应用中心网络策略的变化集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkPolicyChangeSetRequest 请求对象
+     * @return AsyncInvoker<ListCentralNetworkPolicyChangeSetRequest, ListCentralNetworkPolicyChangeSetResponse>
+     */
+    public AsyncInvoker<ListCentralNetworkPolicyChangeSetRequest, ListCentralNetworkPolicyChangeSetResponse> listCentralNetworkPolicyChangeSetAsyncInvoker(
+        ListCentralNetworkPolicyChangeSetRequest request) {
+        return new AsyncInvoker<ListCentralNetworkPolicyChangeSetRequest, ListCentralNetworkPolicyChangeSetResponse>(
+            request, CcMeta.listCentralNetworkPolicyChangeSet, hcClient);
+    }
+
+    /**
+     * 查询中心网络的标签信息
+     *
+     * 查询中心网络的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkTagsRequest 请求对象
+     * @return CompletableFuture<ListCentralNetworkTagsResponse>
+     */
+    public CompletableFuture<ListCentralNetworkTagsResponse> listCentralNetworkTagsAsync(
+        ListCentralNetworkTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCentralNetworkTags);
+    }
+
+    /**
+     * 查询中心网络的标签信息
+     *
+     * 查询中心网络的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkTagsRequest 请求对象
+     * @return AsyncInvoker<ListCentralNetworkTagsRequest, ListCentralNetworkTagsResponse>
+     */
+    public AsyncInvoker<ListCentralNetworkTagsRequest, ListCentralNetworkTagsResponse> listCentralNetworkTagsAsyncInvoker(
+        ListCentralNetworkTagsRequest request) {
+        return new AsyncInvoker<ListCentralNetworkTagsRequest, ListCentralNetworkTagsResponse>(request,
+            CcMeta.listCentralNetworkTags, hcClient);
+    }
+
+    /**
+     * 查询中心网络列表
+     *
+     * 查询中心网络列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworksRequest 请求对象
+     * @return CompletableFuture<ListCentralNetworksResponse>
+     */
+    public CompletableFuture<ListCentralNetworksResponse> listCentralNetworksAsync(ListCentralNetworksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCentralNetworks);
+    }
+
+    /**
+     * 查询中心网络列表
+     *
+     * 查询中心网络列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworksRequest 请求对象
+     * @return AsyncInvoker<ListCentralNetworksRequest, ListCentralNetworksResponse>
+     */
+    public AsyncInvoker<ListCentralNetworksRequest, ListCentralNetworksResponse> listCentralNetworksAsyncInvoker(
+        ListCentralNetworksRequest request) {
+        return new AsyncInvoker<ListCentralNetworksRequest, ListCentralNetworksResponse>(request,
+            CcMeta.listCentralNetworks, hcClient);
+    }
+
+    /**
+     * 查询中心网络详情
+     *
+     * 查询中心网络详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCentralNetworkRequest 请求对象
+     * @return CompletableFuture<ShowCentralNetworkResponse>
+     */
+    public CompletableFuture<ShowCentralNetworkResponse> showCentralNetworkAsync(ShowCentralNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.showCentralNetwork);
+    }
+
+    /**
+     * 查询中心网络详情
+     *
+     * 查询中心网络详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCentralNetworkRequest 请求对象
+     * @return AsyncInvoker<ShowCentralNetworkRequest, ShowCentralNetworkResponse>
+     */
+    public AsyncInvoker<ShowCentralNetworkRequest, ShowCentralNetworkResponse> showCentralNetworkAsyncInvoker(
+        ShowCentralNetworkRequest request) {
+        return new AsyncInvoker<ShowCentralNetworkRequest, ShowCentralNetworkResponse>(request,
+            CcMeta.showCentralNetwork, hcClient);
+    }
+
+    /**
+     * 创建中心网络标签
+     *
+     * 创建中心网络标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param TagCentralNetworkRequest 请求对象
+     * @return CompletableFuture<TagCentralNetworkResponse>
+     */
+    public CompletableFuture<TagCentralNetworkResponse> tagCentralNetworkAsync(TagCentralNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.tagCentralNetwork);
+    }
+
+    /**
+     * 创建中心网络标签
+     *
+     * 创建中心网络标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param TagCentralNetworkRequest 请求对象
+     * @return AsyncInvoker<TagCentralNetworkRequest, TagCentralNetworkResponse>
+     */
+    public AsyncInvoker<TagCentralNetworkRequest, TagCentralNetworkResponse> tagCentralNetworkAsyncInvoker(
+        TagCentralNetworkRequest request) {
+        return new AsyncInvoker<TagCentralNetworkRequest, TagCentralNetworkResponse>(request, CcMeta.tagCentralNetwork,
+            hcClient);
+    }
+
+    /**
+     * 删除中心网络标签
+     *
+     * 删除中心网络标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UntagCentralNetworkRequest 请求对象
+     * @return CompletableFuture<UntagCentralNetworkResponse>
+     */
+    public CompletableFuture<UntagCentralNetworkResponse> untagCentralNetworkAsync(UntagCentralNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.untagCentralNetwork);
+    }
+
+    /**
+     * 删除中心网络标签
+     *
+     * 删除中心网络标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UntagCentralNetworkRequest 请求对象
+     * @return AsyncInvoker<UntagCentralNetworkRequest, UntagCentralNetworkResponse>
+     */
+    public AsyncInvoker<UntagCentralNetworkRequest, UntagCentralNetworkResponse> untagCentralNetworkAsyncInvoker(
+        UntagCentralNetworkRequest request) {
+        return new AsyncInvoker<UntagCentralNetworkRequest, UntagCentralNetworkResponse>(request,
+            CcMeta.untagCentralNetwork, hcClient);
+    }
+
+    /**
+     * 更新中心网络详情
+     *
+     * 更新中心网络详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCentralNetworkRequest 请求对象
+     * @return CompletableFuture<UpdateCentralNetworkResponse>
+     */
+    public CompletableFuture<UpdateCentralNetworkResponse> updateCentralNetworkAsync(
+        UpdateCentralNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.updateCentralNetwork);
+    }
+
+    /**
+     * 更新中心网络详情
+     *
+     * 更新中心网络详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCentralNetworkRequest 请求对象
+     * @return AsyncInvoker<UpdateCentralNetworkRequest, UpdateCentralNetworkResponse>
+     */
+    public AsyncInvoker<UpdateCentralNetworkRequest, UpdateCentralNetworkResponse> updateCentralNetworkAsyncInvoker(
+        UpdateCentralNetworkRequest request) {
+        return new AsyncInvoker<UpdateCentralNetworkRequest, UpdateCentralNetworkResponse>(request,
+            CcMeta.updateCentralNetwork, hcClient);
+    }
+
+    /**
+     * 创建中心网络GDGW附件
+     *
+     * 创建中心网络的GDGW附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCentralNetworkGdgwAttachmentRequest 请求对象
+     * @return CompletableFuture<CreateCentralNetworkGdgwAttachmentResponse>
+     */
+    public CompletableFuture<CreateCentralNetworkGdgwAttachmentResponse> createCentralNetworkGdgwAttachmentAsync(
+        CreateCentralNetworkGdgwAttachmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.createCentralNetworkGdgwAttachment);
+    }
+
+    /**
+     * 创建中心网络GDGW附件
+     *
+     * 创建中心网络的GDGW附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCentralNetworkGdgwAttachmentRequest 请求对象
+     * @return AsyncInvoker<CreateCentralNetworkGdgwAttachmentRequest, CreateCentralNetworkGdgwAttachmentResponse>
+     */
+    public AsyncInvoker<CreateCentralNetworkGdgwAttachmentRequest, CreateCentralNetworkGdgwAttachmentResponse> createCentralNetworkGdgwAttachmentAsyncInvoker(
+        CreateCentralNetworkGdgwAttachmentRequest request) {
+        return new AsyncInvoker<CreateCentralNetworkGdgwAttachmentRequest, CreateCentralNetworkGdgwAttachmentResponse>(
+            request, CcMeta.createCentralNetworkGdgwAttachment, hcClient);
+    }
+
+    /**
+     * 删除中心网络附件
+     *
+     * 删除中心网络附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCentralNetworkAttachmentRequest 请求对象
+     * @return CompletableFuture<DeleteCentralNetworkAttachmentResponse>
+     */
+    public CompletableFuture<DeleteCentralNetworkAttachmentResponse> deleteCentralNetworkAttachmentAsync(
+        DeleteCentralNetworkAttachmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.deleteCentralNetworkAttachment);
+    }
+
+    /**
+     * 删除中心网络附件
+     *
+     * 删除中心网络附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCentralNetworkAttachmentRequest 请求对象
+     * @return AsyncInvoker<DeleteCentralNetworkAttachmentRequest, DeleteCentralNetworkAttachmentResponse>
+     */
+    public AsyncInvoker<DeleteCentralNetworkAttachmentRequest, DeleteCentralNetworkAttachmentResponse> deleteCentralNetworkAttachmentAsyncInvoker(
+        DeleteCentralNetworkAttachmentRequest request) {
+        return new AsyncInvoker<DeleteCentralNetworkAttachmentRequest, DeleteCentralNetworkAttachmentResponse>(request,
+            CcMeta.deleteCentralNetworkAttachment, hcClient);
+    }
+
+    /**
+     * 查询中心网络附件列表
+     *
+     * 查询中心网络附件列表，分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkAttachmentsRequest 请求对象
+     * @return CompletableFuture<ListCentralNetworkAttachmentsResponse>
+     */
+    public CompletableFuture<ListCentralNetworkAttachmentsResponse> listCentralNetworkAttachmentsAsync(
+        ListCentralNetworkAttachmentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCentralNetworkAttachments);
+    }
+
+    /**
+     * 查询中心网络附件列表
+     *
+     * 查询中心网络附件列表，分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkAttachmentsRequest 请求对象
+     * @return AsyncInvoker<ListCentralNetworkAttachmentsRequest, ListCentralNetworkAttachmentsResponse>
+     */
+    public AsyncInvoker<ListCentralNetworkAttachmentsRequest, ListCentralNetworkAttachmentsResponse> listCentralNetworkAttachmentsAsyncInvoker(
+        ListCentralNetworkAttachmentsRequest request) {
+        return new AsyncInvoker<ListCentralNetworkAttachmentsRequest, ListCentralNetworkAttachmentsResponse>(request,
+            CcMeta.listCentralNetworkAttachments, hcClient);
+    }
+
+    /**
+     * 查询中心网络GDGW附件列表
+     *
+     * 查询中心网络GDGW附件列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkGdgwAttachmentsRequest 请求对象
+     * @return CompletableFuture<ListCentralNetworkGdgwAttachmentsResponse>
+     */
+    public CompletableFuture<ListCentralNetworkGdgwAttachmentsResponse> listCentralNetworkGdgwAttachmentsAsync(
+        ListCentralNetworkGdgwAttachmentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCentralNetworkGdgwAttachments);
+    }
+
+    /**
+     * 查询中心网络GDGW附件列表
+     *
+     * 查询中心网络GDGW附件列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkGdgwAttachmentsRequest 请求对象
+     * @return AsyncInvoker<ListCentralNetworkGdgwAttachmentsRequest, ListCentralNetworkGdgwAttachmentsResponse>
+     */
+    public AsyncInvoker<ListCentralNetworkGdgwAttachmentsRequest, ListCentralNetworkGdgwAttachmentsResponse> listCentralNetworkGdgwAttachmentsAsyncInvoker(
+        ListCentralNetworkGdgwAttachmentsRequest request) {
+        return new AsyncInvoker<ListCentralNetworkGdgwAttachmentsRequest, ListCentralNetworkGdgwAttachmentsResponse>(
+            request, CcMeta.listCentralNetworkGdgwAttachments, hcClient);
+    }
+
+    /**
+     * 查询中心网络GDGW附件详情
+     *
+     * 查询中心网络GDGW附件详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCentralNetworkGdgwAttachmentRequest 请求对象
+     * @return CompletableFuture<ShowCentralNetworkGdgwAttachmentResponse>
+     */
+    public CompletableFuture<ShowCentralNetworkGdgwAttachmentResponse> showCentralNetworkGdgwAttachmentAsync(
+        ShowCentralNetworkGdgwAttachmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.showCentralNetworkGdgwAttachment);
+    }
+
+    /**
+     * 查询中心网络GDGW附件详情
+     *
+     * 查询中心网络GDGW附件详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCentralNetworkGdgwAttachmentRequest 请求对象
+     * @return AsyncInvoker<ShowCentralNetworkGdgwAttachmentRequest, ShowCentralNetworkGdgwAttachmentResponse>
+     */
+    public AsyncInvoker<ShowCentralNetworkGdgwAttachmentRequest, ShowCentralNetworkGdgwAttachmentResponse> showCentralNetworkGdgwAttachmentAsyncInvoker(
+        ShowCentralNetworkGdgwAttachmentRequest request) {
+        return new AsyncInvoker<ShowCentralNetworkGdgwAttachmentRequest, ShowCentralNetworkGdgwAttachmentResponse>(
+            request, CcMeta.showCentralNetworkGdgwAttachment, hcClient);
+    }
+
+    /**
+     * 更新中心网络GDGW附件
+     *
+     * 更新中心网络GDGW附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCentralNetworkGdgwAttachmentRequest 请求对象
+     * @return CompletableFuture<UpdateCentralNetworkGdgwAttachmentResponse>
+     */
+    public CompletableFuture<UpdateCentralNetworkGdgwAttachmentResponse> updateCentralNetworkGdgwAttachmentAsync(
+        UpdateCentralNetworkGdgwAttachmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.updateCentralNetworkGdgwAttachment);
+    }
+
+    /**
+     * 更新中心网络GDGW附件
+     *
+     * 更新中心网络GDGW附件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCentralNetworkGdgwAttachmentRequest 请求对象
+     * @return AsyncInvoker<UpdateCentralNetworkGdgwAttachmentRequest, UpdateCentralNetworkGdgwAttachmentResponse>
+     */
+    public AsyncInvoker<UpdateCentralNetworkGdgwAttachmentRequest, UpdateCentralNetworkGdgwAttachmentResponse> updateCentralNetworkGdgwAttachmentAsyncInvoker(
+        UpdateCentralNetworkGdgwAttachmentRequest request) {
+        return new AsyncInvoker<UpdateCentralNetworkGdgwAttachmentRequest, UpdateCentralNetworkGdgwAttachmentResponse>(
+            request, CcMeta.updateCentralNetworkGdgwAttachment, hcClient);
+    }
+
+    /**
+     * 查询中心网络连接列表
+     *
+     * 查询中心网络连接列表接口。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkConnectionsRequest 请求对象
+     * @return CompletableFuture<ListCentralNetworkConnectionsResponse>
+     */
+    public CompletableFuture<ListCentralNetworkConnectionsResponse> listCentralNetworkConnectionsAsync(
+        ListCentralNetworkConnectionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCentralNetworkConnections);
+    }
+
+    /**
+     * 查询中心网络连接列表
+     *
+     * 查询中心网络连接列表接口。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkConnectionsRequest 请求对象
+     * @return AsyncInvoker<ListCentralNetworkConnectionsRequest, ListCentralNetworkConnectionsResponse>
+     */
+    public AsyncInvoker<ListCentralNetworkConnectionsRequest, ListCentralNetworkConnectionsResponse> listCentralNetworkConnectionsAsyncInvoker(
+        ListCentralNetworkConnectionsRequest request) {
+        return new AsyncInvoker<ListCentralNetworkConnectionsRequest, ListCentralNetworkConnectionsResponse>(request,
+            CcMeta.listCentralNetworkConnections, hcClient);
+    }
+
+    /**
+     * 更新中心网络连接接口
+     *
+     * 更新中心网络连接接口（仅支持更新带宽）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCentralNetworkConnectionRequest 请求对象
+     * @return CompletableFuture<UpdateCentralNetworkConnectionResponse>
+     */
+    public CompletableFuture<UpdateCentralNetworkConnectionResponse> updateCentralNetworkConnectionAsync(
+        UpdateCentralNetworkConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.updateCentralNetworkConnection);
+    }
+
+    /**
+     * 更新中心网络连接接口
+     *
+     * 更新中心网络连接接口（仅支持更新带宽）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCentralNetworkConnectionRequest 请求对象
+     * @return AsyncInvoker<UpdateCentralNetworkConnectionRequest, UpdateCentralNetworkConnectionResponse>
+     */
+    public AsyncInvoker<UpdateCentralNetworkConnectionRequest, UpdateCentralNetworkConnectionResponse> updateCentralNetworkConnectionAsyncInvoker(
+        UpdateCentralNetworkConnectionRequest request) {
+        return new AsyncInvoker<UpdateCentralNetworkConnectionRequest, UpdateCentralNetworkConnectionResponse>(request,
+            CcMeta.updateCentralNetworkConnection, hcClient);
+    }
+
+    /**
+     * 查询中心网络配额
+     *
+     * 查询中心网络配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkQuotasRequest 请求对象
+     * @return CompletableFuture<ListCentralNetworkQuotasResponse>
+     */
+    public CompletableFuture<ListCentralNetworkQuotasResponse> listCentralNetworkQuotasAsync(
+        ListCentralNetworkQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCentralNetworkQuotas);
+    }
+
+    /**
+     * 查询中心网络配额
+     *
+     * 查询中心网络配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkQuotasRequest 请求对象
+     * @return AsyncInvoker<ListCentralNetworkQuotasRequest, ListCentralNetworkQuotasResponse>
+     */
+    public AsyncInvoker<ListCentralNetworkQuotasRequest, ListCentralNetworkQuotasResponse> listCentralNetworkQuotasAsyncInvoker(
+        ListCentralNetworkQuotasRequest request) {
+        return new AsyncInvoker<ListCentralNetworkQuotasRequest, ListCentralNetworkQuotasResponse>(request,
+            CcMeta.listCentralNetworkQuotas, hcClient);
     }
 
     /**
@@ -527,6 +1384,37 @@ public class CcAsyncClient {
     }
 
     /**
+     * 查询云连接实例的标签信息
+     *
+     * 查询云连接实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudConnectionTagsRequest 请求对象
+     * @return CompletableFuture<ListCloudConnectionTagsResponse>
+     */
+    public CompletableFuture<ListCloudConnectionTagsResponse> listCloudConnectionTagsAsync(
+        ListCloudConnectionTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCloudConnectionTags);
+    }
+
+    /**
+     * 查询云连接实例的标签信息
+     *
+     * 查询云连接实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudConnectionTagsRequest 请求对象
+     * @return AsyncInvoker<ListCloudConnectionTagsRequest, ListCloudConnectionTagsResponse>
+     */
+    public AsyncInvoker<ListCloudConnectionTagsRequest, ListCloudConnectionTagsResponse> listCloudConnectionTagsAsyncInvoker(
+        ListCloudConnectionTagsRequest request) {
+        return new AsyncInvoker<ListCloudConnectionTagsRequest, ListCloudConnectionTagsResponse>(request,
+            CcMeta.listCloudConnectionTags, hcClient);
+    }
+
+    /**
      * 查询云连接列表
      *
      * 查询云连接列表。
@@ -560,6 +1448,37 @@ public class CcAsyncClient {
     }
 
     /**
+     * 通过标签过滤云连接实例
+     *
+     * 通过标签过滤云连接实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudConnectionsByTagsRequest 请求对象
+     * @return CompletableFuture<ListCloudConnectionsByTagsResponse>
+     */
+    public CompletableFuture<ListCloudConnectionsByTagsResponse> listCloudConnectionsByTagsAsync(
+        ListCloudConnectionsByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCloudConnectionsByTags);
+    }
+
+    /**
+     * 通过标签过滤云连接实例
+     *
+     * 通过标签过滤云连接实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudConnectionsByTagsRequest 请求对象
+     * @return AsyncInvoker<ListCloudConnectionsByTagsRequest, ListCloudConnectionsByTagsResponse>
+     */
+    public AsyncInvoker<ListCloudConnectionsByTagsRequest, ListCloudConnectionsByTagsResponse> listCloudConnectionsByTagsAsyncInvoker(
+        ListCloudConnectionsByTagsRequest request) {
+        return new AsyncInvoker<ListCloudConnectionsByTagsRequest, ListCloudConnectionsByTagsResponse>(request,
+            CcMeta.listCloudConnectionsByTags, hcClient);
+    }
+
+    /**
      * 查询云连接实例
      *
      * 查询云连接实例。
@@ -587,6 +1506,67 @@ public class CcAsyncClient {
         ShowCloudConnectionRequest request) {
         return new AsyncInvoker<ShowCloudConnectionRequest, ShowCloudConnectionResponse>(request,
             CcMeta.showCloudConnection, hcClient);
+    }
+
+    /**
+     * 创建云连接实例标签
+     *
+     * 创建云连接实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param TagCloudConnectionRequest 请求对象
+     * @return CompletableFuture<TagCloudConnectionResponse>
+     */
+    public CompletableFuture<TagCloudConnectionResponse> tagCloudConnectionAsync(TagCloudConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.tagCloudConnection);
+    }
+
+    /**
+     * 创建云连接实例标签
+     *
+     * 创建云连接实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param TagCloudConnectionRequest 请求对象
+     * @return AsyncInvoker<TagCloudConnectionRequest, TagCloudConnectionResponse>
+     */
+    public AsyncInvoker<TagCloudConnectionRequest, TagCloudConnectionResponse> tagCloudConnectionAsyncInvoker(
+        TagCloudConnectionRequest request) {
+        return new AsyncInvoker<TagCloudConnectionRequest, TagCloudConnectionResponse>(request,
+            CcMeta.tagCloudConnection, hcClient);
+    }
+
+    /**
+     * 删除云连接实例标签
+     *
+     * 删除云连接实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UntagCloudConnectionRequest 请求对象
+     * @return CompletableFuture<UntagCloudConnectionResponse>
+     */
+    public CompletableFuture<UntagCloudConnectionResponse> untagCloudConnectionAsync(
+        UntagCloudConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.untagCloudConnection);
+    }
+
+    /**
+     * 删除云连接实例标签
+     *
+     * 删除云连接实例标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UntagCloudConnectionRequest 请求对象
+     * @return AsyncInvoker<UntagCloudConnectionRequest, UntagCloudConnectionResponse>
+     */
+    public AsyncInvoker<UntagCloudConnectionRequest, UntagCloudConnectionResponse> untagCloudConnectionAsyncInvoker(
+        UntagCloudConnectionRequest request) {
+        return new AsyncInvoker<UntagCloudConnectionRequest, UntagCloudConnectionResponse>(request,
+            CcMeta.untagCloudConnection, hcClient);
     }
 
     /**
@@ -618,6 +1598,37 @@ public class CcAsyncClient {
         UpdateCloudConnectionRequest request) {
         return new AsyncInvoker<UpdateCloudConnectionRequest, UpdateCloudConnectionResponse>(request,
             CcMeta.updateCloudConnection, hcClient);
+    }
+
+    /**
+     * 查询云连接配额
+     *
+     * 查询云连接配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudConnectionQuotasRequest 请求对象
+     * @return CompletableFuture<ListCloudConnectionQuotasResponse>
+     */
+    public CompletableFuture<ListCloudConnectionQuotasResponse> listCloudConnectionQuotasAsync(
+        ListCloudConnectionQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listCloudConnectionQuotas);
+    }
+
+    /**
+     * 查询云连接配额
+     *
+     * 查询云连接配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCloudConnectionQuotasRequest 请求对象
+     * @return AsyncInvoker<ListCloudConnectionQuotasRequest, ListCloudConnectionQuotasResponse>
+     */
+    public AsyncInvoker<ListCloudConnectionQuotasRequest, ListCloudConnectionQuotasResponse> listCloudConnectionQuotasAsyncInvoker(
+        ListCloudConnectionQuotasRequest request) {
+        return new AsyncInvoker<ListCloudConnectionQuotasRequest, ListCloudConnectionQuotasResponse>(request,
+            CcMeta.listCloudConnectionQuotas, hcClient);
     }
 
     /**
@@ -997,210 +2008,6 @@ public class CcAsyncClient {
         UpdateNetworkInstanceRequest request) {
         return new AsyncInvoker<UpdateNetworkInstanceRequest, UpdateNetworkInstanceResponse>(request,
             CcMeta.updateNetworkInstance, hcClient);
-    }
-
-    /**
-     * 查询配额
-     *
-     * 查询配额
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotasRequest 请求对象
-     * @return CompletableFuture<ListQuotasResponse>
-     */
-    public CompletableFuture<ListQuotasResponse> listQuotasAsync(ListQuotasRequest request) {
-        return hcClient.asyncInvokeHttp(request, CcMeta.listQuotas);
-    }
-
-    /**
-     * 查询配额
-     *
-     * 查询配额
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListQuotasRequest 请求对象
-     * @return AsyncInvoker<ListQuotasRequest, ListQuotasResponse>
-     */
-    public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
-        return new AsyncInvoker<ListQuotasRequest, ListQuotasResponse>(request, CcMeta.listQuotas, hcClient);
-    }
-
-    /**
-     * 批量创建和删除资源标签
-     *
-     * 批量创建和删除标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param BatchCreateDeleteTagsRequest 请求对象
-     * @return CompletableFuture<BatchCreateDeleteTagsResponse>
-     */
-    public CompletableFuture<BatchCreateDeleteTagsResponse> batchCreateDeleteTagsAsync(
-        BatchCreateDeleteTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CcMeta.batchCreateDeleteTags);
-    }
-
-    /**
-     * 批量创建和删除资源标签
-     *
-     * 批量创建和删除标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param BatchCreateDeleteTagsRequest 请求对象
-     * @return AsyncInvoker<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse>
-     */
-    public AsyncInvoker<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse> batchCreateDeleteTagsAsyncInvoker(
-        BatchCreateDeleteTagsRequest request) {
-        return new AsyncInvoker<BatchCreateDeleteTagsRequest, BatchCreateDeleteTagsResponse>(request,
-            CcMeta.batchCreateDeleteTags, hcClient);
-    }
-
-    /**
-     * 添加资源标签
-     *
-     * 添加资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateTagRequest 请求对象
-     * @return CompletableFuture<CreateTagResponse>
-     */
-    public CompletableFuture<CreateTagResponse> createTagAsync(CreateTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, CcMeta.createTag);
-    }
-
-    /**
-     * 添加资源标签
-     *
-     * 添加资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateTagRequest 请求对象
-     * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
-     */
-    public AsyncInvoker<CreateTagRequest, CreateTagResponse> createTagAsyncInvoker(CreateTagRequest request) {
-        return new AsyncInvoker<CreateTagRequest, CreateTagResponse>(request, CcMeta.createTag, hcClient);
-    }
-
-    /**
-     * 删除资源标签
-     *
-     * 删除资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteTagRequest 请求对象
-     * @return CompletableFuture<DeleteTagResponse>
-     */
-    public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, CcMeta.deleteTag);
-    }
-
-    /**
-     * 删除资源标签
-     *
-     * 删除资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteTagRequest 请求对象
-     * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
-     */
-    public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
-        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, CcMeta.deleteTag, hcClient);
-    }
-
-    /**
-     * 查询账户资源标签
-     *
-     * 查询账户资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListDomainTagsRequest 请求对象
-     * @return CompletableFuture<ListDomainTagsResponse>
-     */
-    public CompletableFuture<ListDomainTagsResponse> listDomainTagsAsync(ListDomainTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CcMeta.listDomainTags);
-    }
-
-    /**
-     * 查询账户资源标签
-     *
-     * 查询账户资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListDomainTagsRequest 请求对象
-     * @return AsyncInvoker<ListDomainTagsRequest, ListDomainTagsResponse>
-     */
-    public AsyncInvoker<ListDomainTagsRequest, ListDomainTagsResponse> listDomainTagsAsyncInvoker(
-        ListDomainTagsRequest request) {
-        return new AsyncInvoker<ListDomainTagsRequest, ListDomainTagsResponse>(request, CcMeta.listDomainTags,
-            hcClient);
-    }
-
-    /**
-     * 查询资源实例
-     *
-     * 查询资源实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListResourceByFilterTagRequest 请求对象
-     * @return CompletableFuture<ListResourceByFilterTagResponse>
-     */
-    public CompletableFuture<ListResourceByFilterTagResponse> listResourceByFilterTagAsync(
-        ListResourceByFilterTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, CcMeta.listResourceByFilterTag);
-    }
-
-    /**
-     * 查询资源实例
-     *
-     * 查询资源实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListResourceByFilterTagRequest 请求对象
-     * @return AsyncInvoker<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse>
-     */
-    public AsyncInvoker<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse> listResourceByFilterTagAsyncInvoker(
-        ListResourceByFilterTagRequest request) {
-        return new AsyncInvoker<ListResourceByFilterTagRequest, ListResourceByFilterTagResponse>(request,
-            CcMeta.listResourceByFilterTag, hcClient);
-    }
-
-    /**
-     * 查询资源标签
-     *
-     * 查询资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListTagsRequest 请求对象
-     * @return CompletableFuture<ListTagsResponse>
-     */
-    public CompletableFuture<ListTagsResponse> listTagsAsync(ListTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CcMeta.listTags);
-    }
-
-    /**
-     * 查询资源标签
-     *
-     * 查询资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListTagsRequest 请求对象
-     * @return AsyncInvoker<ListTagsRequest, ListTagsResponse>
-     */
-    public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
-        return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, CcMeta.listTags, hcClient);
     }
 
 }

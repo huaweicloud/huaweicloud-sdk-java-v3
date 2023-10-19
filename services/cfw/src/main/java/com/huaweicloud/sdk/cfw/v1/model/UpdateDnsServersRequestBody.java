@@ -18,6 +18,11 @@ public class UpdateDnsServersRequestBody {
 
     private List<UpdateDnsServersRequestBodyDnsServer> dnsServer = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "health_check_domain_name")
+
+    private String healthCheckDomainName;
+
     public UpdateDnsServersRequestBody withDnsServer(List<UpdateDnsServersRequestBodyDnsServer> dnsServer) {
         this.dnsServer = dnsServer;
         return this;
@@ -52,6 +57,23 @@ public class UpdateDnsServersRequestBody {
         this.dnsServer = dnsServer;
     }
 
+    public UpdateDnsServersRequestBody withHealthCheckDomainName(String healthCheckDomainName) {
+        this.healthCheckDomainName = healthCheckDomainName;
+        return this;
+    }
+
+    /**
+     * 健康检查域名
+     * @return healthCheckDomainName
+     */
+    public String getHealthCheckDomainName() {
+        return healthCheckDomainName;
+    }
+
+    public void setHealthCheckDomainName(String healthCheckDomainName) {
+        this.healthCheckDomainName = healthCheckDomainName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,13 @@ public class UpdateDnsServersRequestBody {
             return false;
         }
         UpdateDnsServersRequestBody that = (UpdateDnsServersRequestBody) obj;
-        return Objects.equals(this.dnsServer, that.dnsServer);
+        return Objects.equals(this.dnsServer, that.dnsServer)
+            && Objects.equals(this.healthCheckDomainName, that.healthCheckDomainName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dnsServer);
+        return Objects.hash(dnsServer, healthCheckDomainName);
     }
 
     @Override
@@ -74,6 +97,7 @@ public class UpdateDnsServersRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDnsServersRequestBody {\n");
         sb.append("    dnsServer: ").append(toIndentedString(dnsServer)).append("\n");
+        sb.append("    healthCheckDomainName: ").append(toIndentedString(healthCheckDomainName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

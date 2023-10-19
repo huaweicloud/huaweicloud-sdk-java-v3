@@ -115,7 +115,7 @@ public class DataInfo {
     }
 
     /**
-     * 卫星影像等级。 目前只支持L1、L1A、L1B、L2、L3、L4、L5、clip（矢量切割）、tile（金字塔切割）。
+     * 卫星影像等级。 目前只支持L1、L1A、L1B、L2、L4、L5、clip（矢量切割）、tile（金字塔切割）。
      * @return imageLevel
      */
     public String getImageLevel() {
@@ -132,7 +132,7 @@ public class DataInfo {
     }
 
     /**
-     * 卫星影像厂商 。 目前只支持21世纪、资源卫星中心、长光卫星、四维绘测、其他。
+     * 卫星影像厂商 。 目前只支持北京世纪空间、资源卫星中心、长光卫星、四维测绘、其他。
      * @return imageProducer
      */
     public String getImageProducer() {
@@ -149,7 +149,7 @@ public class DataInfo {
     }
 
     /**
-     * 卫星影像迁移状态。 当前仅支持完成（0）、迁入中（1）、迁入失败（2）、迁出中（3）、迁出失败（4）。
+     * 卫星影像迁移状态。 当前仅支持完成（0）、迁入中（1）、迁入失败（2）、迁出中（3）、迁出失败（4）、删除中（6）、卫星影像正在被任务使用导致删除失败（7）、网络错误导致删除失败（8）。
      * @return imageStatus
      */
     public String getImageStatus() {

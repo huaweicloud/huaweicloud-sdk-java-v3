@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 一个key/value键值对
+ * 资源标签。
  */
 public class Tag {
 
@@ -26,7 +26,7 @@ public class Tag {
     }
 
     /**
-     * 键
+     * 标签键，最大长度128个unicode字符，格式为大小写字母，数字，中划线“-”，下划线“_”，中文。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class Tag {
     }
 
     /**
-     * 值
+     * 标签值，最大长度255个unicode字符，格式为大小写字母，数字，中划线“-”，下划线“_”，点“.”，中文。
      * @return value
      */
     public String getValue() {

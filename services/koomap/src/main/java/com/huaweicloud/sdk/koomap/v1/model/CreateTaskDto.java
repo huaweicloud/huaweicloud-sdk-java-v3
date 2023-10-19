@@ -55,6 +55,21 @@ public class CreateTaskDto {
 
     private Map<String, String> dataAlias = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "coordination")
+
+    private String coordination;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_description")
+
+    private Map<String, String> dataDescription = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "csv_path")
+
+    private List<String> csvPath = null;
+
     public CreateTaskDto withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
@@ -223,6 +238,89 @@ public class CreateTaskDto {
         this.dataAlias = dataAlias;
     }
 
+    public CreateTaskDto withCoordination(String coordination) {
+        this.coordination = coordination;
+        return this;
+    }
+
+    /**
+     * 成果影像坐标。
+     * @return coordination
+     */
+    public String getCoordination() {
+        return coordination;
+    }
+
+    public void setCoordination(String coordination) {
+        this.coordination = coordination;
+    }
+
+    public CreateTaskDto withDataDescription(Map<String, String> dataDescription) {
+        this.dataDescription = dataDescription;
+        return this;
+    }
+
+    public CreateTaskDto putDataDescriptionItem(String key, String dataDescriptionItem) {
+        if (this.dataDescription == null) {
+            this.dataDescription = new HashMap<>();
+        }
+        this.dataDescription.put(key, dataDescriptionItem);
+        return this;
+    }
+
+    public CreateTaskDto withDataDescription(Consumer<Map<String, String>> dataDescriptionSetter) {
+        if (this.dataDescription == null) {
+            this.dataDescription = new HashMap<>();
+        }
+        dataDescriptionSetter.accept(this.dataDescription);
+        return this;
+    }
+
+    /**
+     * 成果影像描述。
+     * @return dataDescription
+     */
+    public Map<String, String> getDataDescription() {
+        return dataDescription;
+    }
+
+    public void setDataDescription(Map<String, String> dataDescription) {
+        this.dataDescription = dataDescription;
+    }
+
+    public CreateTaskDto withCsvPath(List<String> csvPath) {
+        this.csvPath = csvPath;
+        return this;
+    }
+
+    public CreateTaskDto addCsvPathItem(String csvPathItem) {
+        if (this.csvPath == null) {
+            this.csvPath = new ArrayList<>();
+        }
+        this.csvPath.add(csvPathItem);
+        return this;
+    }
+
+    public CreateTaskDto withCsvPath(Consumer<List<String>> csvPathSetter) {
+        if (this.csvPath == null) {
+            this.csvPath = new ArrayList<>();
+        }
+        csvPathSetter.accept(this.csvPath);
+        return this;
+    }
+
+    /**
+     * 生产资料（csv文件）存储在OBS桶内的路径。
+     * @return csvPath
+     */
+    public List<String> getCsvPath() {
+        return csvPath;
+    }
+
+    public void setCsvPath(List<String> csvPath) {
+        this.csvPath = csvPath;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -236,13 +334,23 @@ public class CreateTaskDto {
             && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.dataIds, that.dataIds)
             && Objects.equals(this.shapeId, that.shapeId) && Objects.equals(this.productionLevel, that.productionLevel)
             && Objects.equals(this.taskDescription, that.taskDescription)
-            && Objects.equals(this.dataAlias, that.dataAlias);
+            && Objects.equals(this.dataAlias, that.dataAlias) && Objects.equals(this.coordination, that.coordination)
+            && Objects.equals(this.dataDescription, that.dataDescription) && Objects.equals(this.csvPath, that.csvPath);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(taskName, taskType, workspaceId, dataIds, shapeId, productionLevel, taskDescription, dataAlias);
+        return Objects.hash(taskName,
+            taskType,
+            workspaceId,
+            dataIds,
+            shapeId,
+            productionLevel,
+            taskDescription,
+            dataAlias,
+            coordination,
+            dataDescription,
+            csvPath);
     }
 
     @Override
@@ -257,6 +365,9 @@ public class CreateTaskDto {
         sb.append("    productionLevel: ").append(toIndentedString(productionLevel)).append("\n");
         sb.append("    taskDescription: ").append(toIndentedString(taskDescription)).append("\n");
         sb.append("    dataAlias: ").append(toIndentedString(dataAlias)).append("\n");
+        sb.append("    coordination: ").append(toIndentedString(coordination)).append("\n");
+        sb.append("    dataDescription: ").append(toIndentedString(dataDescription)).append("\n");
+        sb.append("    csvPath: ").append(toIndentedString(csvPath)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -122,6 +122,31 @@ public class Flavor {
 
     private Integer logStorage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_concurrent")
+
+    private Integer sessionConcurrent;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_create")
+
+    private Integer sessionCreate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_rule_count")
+
+    private Integer totalRuleCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_rule_count")
+
+    private Integer usedRuleCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_bandwith")
+
+    private Integer vpcBandwith;
+
     public Flavor withVersion(VersionEnum version) {
         this.version = version;
         return this;
@@ -210,6 +235,91 @@ public class Flavor {
         this.logStorage = logStorage;
     }
 
+    public Flavor withSessionConcurrent(Integer sessionConcurrent) {
+        this.sessionConcurrent = sessionConcurrent;
+        return this;
+    }
+
+    /**
+     * 目前的会话数
+     * @return sessionConcurrent
+     */
+    public Integer getSessionConcurrent() {
+        return sessionConcurrent;
+    }
+
+    public void setSessionConcurrent(Integer sessionConcurrent) {
+        this.sessionConcurrent = sessionConcurrent;
+    }
+
+    public Flavor withSessionCreate(Integer sessionCreate) {
+        this.sessionCreate = sessionCreate;
+        return this;
+    }
+
+    /**
+     * 创建会话数
+     * @return sessionCreate
+     */
+    public Integer getSessionCreate() {
+        return sessionCreate;
+    }
+
+    public void setSessionCreate(Integer sessionCreate) {
+        this.sessionCreate = sessionCreate;
+    }
+
+    public Flavor withTotalRuleCount(Integer totalRuleCount) {
+        this.totalRuleCount = totalRuleCount;
+        return this;
+    }
+
+    /**
+     * 总计规则数
+     * @return totalRuleCount
+     */
+    public Integer getTotalRuleCount() {
+        return totalRuleCount;
+    }
+
+    public void setTotalRuleCount(Integer totalRuleCount) {
+        this.totalRuleCount = totalRuleCount;
+    }
+
+    public Flavor withUsedRuleCount(Integer usedRuleCount) {
+        this.usedRuleCount = usedRuleCount;
+        return this;
+    }
+
+    /**
+     * 已使用规则数
+     * @return usedRuleCount
+     */
+    public Integer getUsedRuleCount() {
+        return usedRuleCount;
+    }
+
+    public void setUsedRuleCount(Integer usedRuleCount) {
+        this.usedRuleCount = usedRuleCount;
+    }
+
+    public Flavor withVpcBandwith(Integer vpcBandwith) {
+        this.vpcBandwith = vpcBandwith;
+        return this;
+    }
+
+    /**
+     * vpc间带宽
+     * @return vpcBandwith
+     */
+    public Integer getVpcBandwith() {
+        return vpcBandwith;
+    }
+
+    public void setVpcBandwith(Integer vpcBandwith) {
+        this.vpcBandwith = vpcBandwith;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -221,12 +331,26 @@ public class Flavor {
         Flavor that = (Flavor) obj;
         return Objects.equals(this.version, that.version) && Objects.equals(this.eipCount, that.eipCount)
             && Objects.equals(this.vpcCount, that.vpcCount) && Objects.equals(this.bandwidth, that.bandwidth)
-            && Objects.equals(this.logStorage, that.logStorage);
+            && Objects.equals(this.logStorage, that.logStorage)
+            && Objects.equals(this.sessionConcurrent, that.sessionConcurrent)
+            && Objects.equals(this.sessionCreate, that.sessionCreate)
+            && Objects.equals(this.totalRuleCount, that.totalRuleCount)
+            && Objects.equals(this.usedRuleCount, that.usedRuleCount)
+            && Objects.equals(this.vpcBandwith, that.vpcBandwith);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(version, eipCount, vpcCount, bandwidth, logStorage);
+        return Objects.hash(version,
+            eipCount,
+            vpcCount,
+            bandwidth,
+            logStorage,
+            sessionConcurrent,
+            sessionCreate,
+            totalRuleCount,
+            usedRuleCount,
+            vpcBandwith);
     }
 
     @Override
@@ -238,6 +362,11 @@ public class Flavor {
         sb.append("    vpcCount: ").append(toIndentedString(vpcCount)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("    logStorage: ").append(toIndentedString(logStorage)).append("\n");
+        sb.append("    sessionConcurrent: ").append(toIndentedString(sessionConcurrent)).append("\n");
+        sb.append("    sessionCreate: ").append(toIndentedString(sessionCreate)).append("\n");
+        sb.append("    totalRuleCount: ").append(toIndentedString(totalRuleCount)).append("\n");
+        sb.append("    usedRuleCount: ").append(toIndentedString(usedRuleCount)).append("\n");
+        sb.append("    vpcBandwith: ").append(toIndentedString(vpcBandwith)).append("\n");
         sb.append("}");
         return sb.toString();
     }

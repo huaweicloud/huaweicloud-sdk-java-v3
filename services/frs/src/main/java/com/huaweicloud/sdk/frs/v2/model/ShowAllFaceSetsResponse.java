@@ -19,6 +19,11 @@ public class ShowAllFaceSetsResponse extends SdkResponse {
 
     private List<FaceSetInfo> faceSetsInfo = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowAllFaceSetsResponse withFaceSetsInfo(List<FaceSetInfo> faceSetsInfo) {
         this.faceSetsInfo = faceSetsInfo;
         return this;
@@ -52,6 +57,25 @@ public class ShowAllFaceSetsResponse extends SdkResponse {
         this.faceSetsInfo = faceSetsInfo;
     }
 
+    public ShowAllFaceSetsResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +85,12 @@ public class ShowAllFaceSetsResponse extends SdkResponse {
             return false;
         }
         ShowAllFaceSetsResponse that = (ShowAllFaceSetsResponse) obj;
-        return Objects.equals(this.faceSetsInfo, that.faceSetsInfo);
+        return Objects.equals(this.faceSetsInfo, that.faceSetsInfo) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(faceSetsInfo);
+        return Objects.hash(faceSetsInfo, xRequestId);
     }
 
     @Override
@@ -74,6 +98,7 @@ public class ShowAllFaceSetsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAllFaceSetsResponse {\n");
         sb.append("    faceSetsInfo: ").append(toIndentedString(faceSetsInfo)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.koomap.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -23,7 +26,7 @@ public class ListTaskInfoRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_status")
 
-    private String taskStatus;
+    private List<String> taskStatus = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time_start")
@@ -79,20 +82,36 @@ public class ListTaskInfoRequest {
         this.workspaceId = workspaceId;
     }
 
-    public ListTaskInfoRequest withTaskStatus(String taskStatus) {
+    public ListTaskInfoRequest withTaskStatus(List<String> taskStatus) {
         this.taskStatus = taskStatus;
         return this;
     }
 
+    public ListTaskInfoRequest addTaskStatusItem(String taskStatusItem) {
+        if (this.taskStatus == null) {
+            this.taskStatus = new ArrayList<>();
+        }
+        this.taskStatus.add(taskStatusItem);
+        return this;
+    }
+
+    public ListTaskInfoRequest withTaskStatus(Consumer<List<String>> taskStatusSetter) {
+        if (this.taskStatus == null) {
+            this.taskStatus = new ArrayList<>();
+        }
+        taskStatusSetter.accept(this.taskStatus);
+        return this;
+    }
+
     /**
-     * 任务状态。包括INIT（初始化）、RUNNING（运行中）、SUCCESS（执行成功）、ARCHIVED（已归档）、FAILED（执行失败）、STOPPING（停止中）、STOP_SUCCESS（已停止）、STOP_FAILED（停止失败）。
+     * 任务状态。包括INIT（初始化）、RUNNING（运行中）、SUCCESS（执行成功）、ARCHIVED（已归档）、FAILED（执行失败）、STOPPING（停止中）、STOP_SUCCESS（已停止）、STOP_FAILD（停止失败）、START_RUNNING（等待中）。
      * @return taskStatus
      */
-    public String getTaskStatus() {
+    public List<String> getTaskStatus() {
         return taskStatus;
     }
 
-    public void setTaskStatus(String taskStatus) {
+    public void setTaskStatus(List<String> taskStatus) {
         this.taskStatus = taskStatus;
     }
 

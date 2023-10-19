@@ -253,6 +253,11 @@ public class ListFlowLogsRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_host")
+
+    private String dstHost;
+
     public ListFlowLogsRequest withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -501,7 +506,7 @@ public class ListFlowLogsRequest {
     }
 
     /**
-     * 每页显示个数
+     * 每页显示个数，范围为1-1024
      * minimum: 1
      * maximum: 1024
      * @return limit
@@ -531,6 +536,23 @@ public class ListFlowLogsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListFlowLogsRequest withDstHost(String dstHost) {
+        this.dstHost = dstHost;
+        return this;
+    }
+
+    /**
+     * 目的主机
+     * @return dstHost
+     */
+    public String getDstHost() {
+        return dstHost;
+    }
+
+    public void setDstHost(String dstHost) {
+        this.dstHost = dstHost;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -548,7 +570,8 @@ public class ListFlowLogsRequest {
             && Objects.equals(this.app, that.app) && Objects.equals(this.logId, that.logId)
             && Objects.equals(this.nextDate, that.nextDate) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.dstHost, that.dstHost);
     }
 
     @Override
@@ -568,7 +591,8 @@ public class ListFlowLogsRequest {
             nextDate,
             offset,
             limit,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            dstHost);
     }
 
     @Override
@@ -591,6 +615,7 @@ public class ListFlowLogsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
         sb.append("}");
         return sb.toString();
     }

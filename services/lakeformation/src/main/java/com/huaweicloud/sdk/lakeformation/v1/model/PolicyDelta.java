@@ -16,6 +16,11 @@ public class PolicyDelta {
 
     private Policy policy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "change_type")
+
+    private Integer changeType;
+
     public PolicyDelta withPolicy(Policy policy) {
         this.policy = policy;
         return this;
@@ -42,6 +47,25 @@ public class PolicyDelta {
         this.policy = policy;
     }
 
+    public PolicyDelta withChangeType(Integer changeType) {
+        this.changeType = changeType;
+        return this;
+    }
+
+    /**
+     * 变更类型
+     * minimum: 0
+     * maximum: 2147483647
+     * @return changeType
+     */
+    public Integer getChangeType() {
+        return changeType;
+    }
+
+    public void setChangeType(Integer changeType) {
+        this.changeType = changeType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -51,12 +75,12 @@ public class PolicyDelta {
             return false;
         }
         PolicyDelta that = (PolicyDelta) obj;
-        return Objects.equals(this.policy, that.policy);
+        return Objects.equals(this.policy, that.policy) && Objects.equals(this.changeType, that.changeType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policy);
+        return Objects.hash(policy, changeType);
     }
 
     @Override
@@ -64,6 +88,7 @@ public class PolicyDelta {
         StringBuilder sb = new StringBuilder();
         sb.append("class PolicyDelta {\n");
         sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
+        sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

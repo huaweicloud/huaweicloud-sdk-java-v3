@@ -25,7 +25,7 @@ public class TableInput {
     private String tableName;
 
     /**
-     * 表类型
+     * 表类型,MANAGED_TABLE-内表,EXTERNAL_TABLE-外表,VIRTUAL_VIEW-视图,MATERIALIZED_VIEW-物化视图
      */
     public static final class TableTypeEnum {
 
@@ -117,7 +117,7 @@ public class TableInput {
     private String owner;
 
     /**
-     * 所有者类型
+     * 所有者类型,USER-用户,GROUP-组,ROLE-角色
      */
     public static final class OwnerTypeEnum {
 
@@ -247,13 +247,18 @@ public class TableInput {
 
     private String viewOriginalText;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ignore_obs_checked")
+
+    private Boolean ignoreObsChecked;
+
     public TableInput withTableName(String tableName) {
         this.tableName = tableName;
         return this;
     }
 
     /**
-     * 表名字
+     * 表名称。只能包含中文、字母、数字和下划线，且长度为1~256个字符。
      * @return tableName
      */
     public String getTableName() {
@@ -270,7 +275,7 @@ public class TableInput {
     }
 
     /**
-     * 表类型
+     * 表类型,MANAGED_TABLE-内表,EXTERNAL_TABLE-外表,VIRTUAL_VIEW-视图,MATERIALIZED_VIEW-物化视图
      * @return tableType
      */
     public TableTypeEnum getTableType() {
@@ -287,7 +292,7 @@ public class TableInput {
     }
 
     /**
-     * 表所有者
+     * 表所有者。只能包含字母、数字和下划线，且长度为1~49个字符。
      * @return owner
      */
     public String getOwner() {
@@ -304,7 +309,7 @@ public class TableInput {
     }
 
     /**
-     * 所有者类型
+     * 所有者类型,USER-用户,GROUP-组,ROLE-角色
      * @return ownerType
      */
     public OwnerTypeEnum getOwnerType() {
@@ -406,6 +411,8 @@ public class TableInput {
 
     /**
      * 表保留时间
+     * minimum: 0
+     * maximum: 2147483647
      * @return retention
      */
     public Integer getRetention() {
@@ -481,7 +488,7 @@ public class TableInput {
     }
 
     /**
-     * 表描述信息
+     * 表描述信息。由用户创建表时输入，最大长度为4000个字符。
      * @return comments
      */
     public String getComments() {
@@ -526,6 +533,23 @@ public class TableInput {
         this.viewOriginalText = viewOriginalText;
     }
 
+    public TableInput withIgnoreObsChecked(Boolean ignoreObsChecked) {
+        this.ignoreObsChecked = ignoreObsChecked;
+        return this;
+    }
+
+    /**
+     * 是否忽略内表建表时对Obs路径的限制
+     * @return ignoreObsChecked
+     */
+    public Boolean getIgnoreObsChecked() {
+        return ignoreObsChecked;
+    }
+
+    public void setIgnoreObsChecked(Boolean ignoreObsChecked) {
+        this.ignoreObsChecked = ignoreObsChecked;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -544,7 +568,8 @@ public class TableInput {
             && Objects.equals(this.storageDescriptor, that.storageDescriptor)
             && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.comments, that.comments)
             && Objects.equals(this.viewExpandedText, that.viewExpandedText)
-            && Objects.equals(this.viewOriginalText, that.viewOriginalText);
+            && Objects.equals(this.viewOriginalText, that.viewOriginalText)
+            && Objects.equals(this.ignoreObsChecked, that.ignoreObsChecked);
     }
 
     @Override
@@ -562,7 +587,8 @@ public class TableInput {
             parameters,
             comments,
             viewExpandedText,
-            viewOriginalText);
+            viewOriginalText,
+            ignoreObsChecked);
     }
 
     @Override
@@ -583,6 +609,7 @@ public class TableInput {
         sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
         sb.append("    viewExpandedText: ").append(toIndentedString(viewExpandedText)).append("\n");
         sb.append("    viewOriginalText: ").append(toIndentedString(viewOriginalText)).append("\n");
+        sb.append("    ignoreObsChecked: ").append(toIndentedString(ignoreObsChecked)).append("\n");
         sb.append("}");
         return sb.toString();
     }

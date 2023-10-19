@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * role 响应
+ * 角色响应
  */
 public class Role {
 
@@ -26,7 +26,7 @@ public class Role {
     private String description;
 
     /**
-     * 主体来源 IAM云用户 SAML联邦 LDAP ld用户 LOCAL 本地用户 OTHER 其它
+     * 主体来源 IAM云用户 SAML联邦 LDAP ld用户 LOCAL 本地用户 AGENTTENANT 委托 OTHER 其它
      */
     public static final class PrincipalSourceEnum {
 
@@ -51,6 +51,11 @@ public class Role {
         public static final PrincipalSourceEnum LOCAL = new PrincipalSourceEnum("LOCAL");
 
         /**
+         * Enum AGENTTENANT for value: "AGENTTENANT"
+         */
+        public static final PrincipalSourceEnum AGENTTENANT = new PrincipalSourceEnum("AGENTTENANT");
+
+        /**
          * Enum OTHER for value: "OTHER"
          */
         public static final PrincipalSourceEnum OTHER = new PrincipalSourceEnum("OTHER");
@@ -63,6 +68,7 @@ public class Role {
             map.put("SAML", SAML);
             map.put("LDAP", LDAP);
             map.put("LOCAL", LOCAL);
+            map.put("AGENTTENANT", AGENTTENANT);
             map.put("OTHER", OTHER);
             return Collections.unmodifiableMap(map);
         }
@@ -124,7 +130,7 @@ public class Role {
     }
 
     /**
-     * role名字
+     * 角色名称。只能包含字母、数字和下划线，且长度为1~255个字符。
      * @return roleName
      */
     public String getRoleName() {
@@ -141,7 +147,7 @@ public class Role {
     }
 
     /**
-     * 描述信息
+     * 描述信息。最大长度为4000个字符。当无描述信息时，则description值为null，当值为null时，响应Body无该参数。
      * @return description
      */
     public String getDescription() {
@@ -158,7 +164,7 @@ public class Role {
     }
 
     /**
-     * 主体来源 IAM云用户 SAML联邦 LDAP ld用户 LOCAL 本地用户 OTHER 其它
+     * 主体来源 IAM云用户 SAML联邦 LDAP ld用户 LOCAL 本地用户 AGENTTENANT 委托 OTHER 其它
      * @return principalSource
      */
     public PrincipalSourceEnum getPrincipalSource() {

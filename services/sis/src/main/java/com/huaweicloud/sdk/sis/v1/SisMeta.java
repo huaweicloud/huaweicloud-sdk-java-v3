@@ -13,8 +13,6 @@ import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyRequest;
 import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyResponse;
 import com.huaweicloud.sdk.sis.v1.model.PostCreateVocabReq;
 import com.huaweicloud.sdk.sis.v1.model.PostCustomTTSReq;
-import com.huaweicloud.sdk.sis.v1.model.PostMultiModalAssessmentReq;
-import com.huaweicloud.sdk.sis.v1.model.PostShortAudioAssessmentReq;
 import com.huaweicloud.sdk.sis.v1.model.PostShortAudioReq;
 import com.huaweicloud.sdk.sis.v1.model.PostTranscriberJobs;
 import com.huaweicloud.sdk.sis.v1.model.PushTranscriberJobsRequest;
@@ -24,10 +22,6 @@ import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrRequest;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrResponse;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioRequest;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioResponse;
-import com.huaweicloud.sdk.sis.v1.model.RunAudioAssessmentRequest;
-import com.huaweicloud.sdk.sis.v1.model.RunAudioAssessmentResponse;
-import com.huaweicloud.sdk.sis.v1.model.RunMultiModalAssessmentRequest;
-import com.huaweicloud.sdk.sis.v1.model.RunMultiModalAssessmentResponse;
 import com.huaweicloud.sdk.sis.v1.model.RunTtsRequest;
 import com.huaweicloud.sdk.sis.v1.model.RunTtsResponse;
 import com.huaweicloud.sdk.sis.v1.model.ShowVocabulariesParams;
@@ -246,56 +240,6 @@ public class SisMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostShortAudioReq.class),
             f -> f.withMarshaller(RecognizeShortAudioRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<RunAudioAssessmentRequest, RunAudioAssessmentResponse> runAudioAssessment =
-        genForrunAudioAssessment();
-
-    private static HttpRequestDef<RunAudioAssessmentRequest, RunAudioAssessmentResponse> genForrunAudioAssessment() {
-        // basic
-        HttpRequestDef.Builder<RunAudioAssessmentRequest, RunAudioAssessmentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RunAudioAssessmentRequest.class, RunAudioAssessmentResponse.class)
-                .withName("RunAudioAssessment")
-                .withUri("/v1/{project_id}/assessment/audio")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<PostShortAudioAssessmentReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(PostShortAudioAssessmentReq.class),
-            f -> f.withMarshaller(RunAudioAssessmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<RunMultiModalAssessmentRequest, RunMultiModalAssessmentResponse> runMultiModalAssessment =
-        genForrunMultiModalAssessment();
-
-    private static HttpRequestDef<RunMultiModalAssessmentRequest, RunMultiModalAssessmentResponse> genForrunMultiModalAssessment() {
-        // basic
-        HttpRequestDef.Builder<RunMultiModalAssessmentRequest, RunMultiModalAssessmentResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, RunMultiModalAssessmentRequest.class, RunMultiModalAssessmentResponse.class)
-            .withName("RunMultiModalAssessment")
-            .withUri("/v1/{project_id}/assessment/video")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<PostMultiModalAssessmentReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(PostMultiModalAssessmentReq.class),
-            f -> f.withMarshaller(RunMultiModalAssessmentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

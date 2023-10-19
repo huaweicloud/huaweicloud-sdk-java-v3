@@ -16,6 +16,11 @@ public class DeleteFaceSetResponse extends SdkResponse {
 
     private String faceSetName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public DeleteFaceSetResponse withFaceSetName(String faceSetName) {
         this.faceSetName = faceSetName;
         return this;
@@ -33,6 +38,25 @@ public class DeleteFaceSetResponse extends SdkResponse {
         this.faceSetName = faceSetName;
     }
 
+    public DeleteFaceSetResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +66,12 @@ public class DeleteFaceSetResponse extends SdkResponse {
             return false;
         }
         DeleteFaceSetResponse that = (DeleteFaceSetResponse) obj;
-        return Objects.equals(this.faceSetName, that.faceSetName);
+        return Objects.equals(this.faceSetName, that.faceSetName) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(faceSetName);
+        return Objects.hash(faceSetName, xRequestId);
     }
 
     @Override
@@ -55,6 +79,7 @@ public class DeleteFaceSetResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteFaceSetResponse {\n");
         sb.append("    faceSetName: ").append(toIndentedString(faceSetName)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -27,9 +27,19 @@ public class Authorisation {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
+    @JsonProperty(value = "instance_id")
 
-    private String status;
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
@@ -47,9 +57,14 @@ public class Authorisation {
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
+    @JsonProperty(value = "cloud_connection_id")
 
-    private String instanceId;
+    private String cloudConnectionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_type")
@@ -57,24 +72,9 @@ public class Authorisation {
     private String instanceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region_id")
-
-    private String regionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_connection_domain_id")
 
     private String cloudConnectionDomainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_connection_id")
-
-    private String cloudConnectionId;
 
     public Authorisation withId(String id) {
         this.id = id;
@@ -82,7 +82,7 @@ public class Authorisation {
     }
 
     /**
-     * 授权的ID。
+     * 资源ID标识符。
      * @return id
      */
     public String getId() {
@@ -99,7 +99,7 @@ public class Authorisation {
     }
 
     /**
-     * 授权的名称。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -116,7 +116,7 @@ public class Authorisation {
     }
 
     /**
-     * 授权的描述信息。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -125,6 +125,125 @@ public class Authorisation {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Authorisation withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public Authorisation withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 实例所属项目ID。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public Authorisation withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * RegionID。
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    public Authorisation withCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 实例创建时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss。
+     * @return createdAt
+     */
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Authorisation withUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 实例更新时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss。
+     * @return updatedAt
+     */
+    public OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Authorisation withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 实例所属帐号ID。
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public Authorisation withCloudConnectionId(String cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return cloudConnectionId
+     */
+    public String getCloudConnectionId() {
+        return cloudConnectionId;
+    }
+
+    public void setCloudConnectionId(String cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
     }
 
     public Authorisation withStatus(String status) {
@@ -144,74 +263,6 @@ public class Authorisation {
         this.status = status;
     }
 
-    public Authorisation withCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    /**
-     * 创建授权的时间。
-     * @return createdAt
-     */
-    public OffsetDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Authorisation withUpdatedAt(OffsetDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    /**
-     * 更新授权的时间。
-     * @return updatedAt
-     */
-    public OffsetDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(OffsetDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public Authorisation withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    /**
-     * 授权者的账户ID。
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
-
-    public Authorisation withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * 授权实例的ID。
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
     public Authorisation withInstanceType(String instanceType) {
         this.instanceType = instanceType;
         return this;
@@ -227,40 +278,6 @@ public class Authorisation {
 
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
-    }
-
-    public Authorisation withRegionId(String regionId) {
-        this.regionId = regionId;
-        return this;
-    }
-
-    /**
-     * 授权实例所属Region。
-     * @return regionId
-     */
-    public String getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(String regionId) {
-        this.regionId = regionId;
-    }
-
-    public Authorisation withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 授权实例所属项目ID。
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
     }
 
     public Authorisation withCloudConnectionDomainId(String cloudConnectionDomainId) {
@@ -280,23 +297,6 @@ public class Authorisation {
         this.cloudConnectionDomainId = cloudConnectionDomainId;
     }
 
-    public Authorisation withCloudConnectionId(String cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
-        return this;
-    }
-
-    /**
-     * 被授权云连接实例ID。
-     * @return cloudConnectionId
-     */
-    public String getCloudConnectionId() {
-        return cloudConnectionId;
-    }
-
-    public void setCloudConnectionId(String cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -307,13 +307,13 @@ public class Authorisation {
         }
         Authorisation that = (Authorisation) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.regionId, that.regionId)
-            && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.cloudConnectionDomainId, that.cloudConnectionDomainId)
-            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId);
+            && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.cloudConnectionDomainId, that.cloudConnectionDomainId);
     }
 
     @Override
@@ -321,16 +321,16 @@ public class Authorisation {
         return Objects.hash(id,
             name,
             description,
-            status,
+            instanceId,
+            projectId,
+            regionId,
             createdAt,
             updatedAt,
             domainId,
-            instanceId,
+            cloudConnectionId,
+            status,
             instanceType,
-            regionId,
-            projectId,
-            cloudConnectionDomainId,
-            cloudConnectionId);
+            cloudConnectionDomainId);
     }
 
     @Override
@@ -340,16 +340,16 @@ public class Authorisation {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
-        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    cloudConnectionDomainId: ").append(toIndentedString(cloudConnectionDomainId)).append("\n");
         sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    cloudConnectionDomainId: ").append(toIndentedString(cloudConnectionDomainId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

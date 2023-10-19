@@ -68,6 +68,16 @@ public class GetEastWestFirewallResponseBody {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ew_vpc_route_limit")
+
+    private Integer ewVpcRouteLimit;
+
     public GetEastWestFirewallResponseBody withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -304,7 +314,7 @@ public class GetEastWestFirewallResponseBody {
     }
 
     /**
-     * 每页显示个数
+     * 每页显示个数，范围为1-1024
      * @return limit
      */
     public Integer getLimit() {
@@ -313,6 +323,40 @@ public class GetEastWestFirewallResponseBody {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public GetEastWestFirewallResponseBody withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 防护模式
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public GetEastWestFirewallResponseBody withEwVpcRouteLimit(Integer ewVpcRouteLimit) {
+        this.ewVpcRouteLimit = ewVpcRouteLimit;
+        return this;
+    }
+
+    /**
+     * 东西向路由限制
+     * @return ewVpcRouteLimit
+     */
+    public Integer getEwVpcRouteLimit() {
+        return ewVpcRouteLimit;
+    }
+
+    public void setEwVpcRouteLimit(Integer ewVpcRouteLimit) {
+        this.ewVpcRouteLimit = ewVpcRouteLimit;
     }
 
     @Override
@@ -330,7 +374,8 @@ public class GetEastWestFirewallResponseBody {
             && Objects.equals(this.firewallAssociatedSubnets, that.firewallAssociatedSubnets)
             && Objects.equals(this.er, that.er) && Objects.equals(this.inspectionVpc, that.inspectionVpc)
             && Objects.equals(this.protectInfos, that.protectInfos) && Objects.equals(this.total, that.total)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.ewVpcRouteLimit, that.ewVpcRouteLimit);
     }
 
     @Override
@@ -345,7 +390,9 @@ public class GetEastWestFirewallResponseBody {
             protectInfos,
             total,
             offset,
-            limit);
+            limit,
+            mode,
+            ewVpcRouteLimit);
     }
 
     @Override
@@ -363,6 +410,8 @@ public class GetEastWestFirewallResponseBody {
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    ewVpcRouteLimit: ").append(toIndentedString(ewVpcRouteLimit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

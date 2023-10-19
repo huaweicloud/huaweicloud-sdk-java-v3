@@ -19,15 +19,20 @@ import com.huaweicloud.sdk.apig.v2.model.ApiAclCreate;
 import com.huaweicloud.sdk.apig.v2.model.ApiActionInfo;
 import com.huaweicloud.sdk.apig.v2.model.ApiAuthCreate;
 import com.huaweicloud.sdk.apig.v2.model.ApiBatchPublish;
+import com.huaweicloud.sdk.apig.v2.model.ApiCheckInfoV2;
 import com.huaweicloud.sdk.apig.v2.model.ApiCreate;
 import com.huaweicloud.sdk.apig.v2.model.ApiDebugInfo;
 import com.huaweicloud.sdk.apig.v2.model.ApiGroupBase;
 import com.huaweicloud.sdk.apig.v2.model.ApiGroupCreate;
 import com.huaweicloud.sdk.apig.v2.model.ApiOperPluginInfo;
 import com.huaweicloud.sdk.apig.v2.model.ApiVersion;
+import com.huaweicloud.sdk.apig.v2.model.AppAclCreate;
 import com.huaweicloud.sdk.apig.v2.model.AppCodeCreate;
 import com.huaweicloud.sdk.apig.v2.model.AppCreate;
+import com.huaweicloud.sdk.apig.v2.model.AppQuotaCreate;
 import com.huaweicloud.sdk.apig.v2.model.AppResetCreate;
+import com.huaweicloud.sdk.apig.v2.model.AssociateAppsForAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.AssociateAppsForAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.AssociateCertificateV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AssociateCertificateV2Response;
 import com.huaweicloud.sdk.apig.v2.model.AssociateDomainV2Request;
@@ -72,6 +77,8 @@ import com.huaweicloud.sdk.apig.v2.model.CertForm;
 import com.huaweicloud.sdk.apig.v2.model.CertificateForm;
 import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CheckApisV2Request;
+import com.huaweicloud.sdk.apig.v2.model.CheckApisV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CheckAppV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CheckAppV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ConnectionActionReq;
@@ -89,6 +96,9 @@ import com.huaweicloud.sdk.apig.v2.model.CreateAppCodeAutoV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateAppCodeAutoV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CreateAppCodeV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateAppCodeV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CreateAppQuotaBindingApp;
+import com.huaweicloud.sdk.apig.v2.model.CreateAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreateAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateAuthorizingAppsV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateAuthorizingAppsV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CreateCertificateV2Request;
@@ -109,8 +119,14 @@ import com.huaweicloud.sdk.apig.v2.model.CreateMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.CreateMemberGroupResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrDeletePublishRecordForApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrDeletePublishRecordForApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CreateOrderRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreateOrderResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreatePluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.CreatePluginResponse;
+import com.huaweicloud.sdk.apig.v2.model.CreatePostPayResizeOrderRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreatePostPayResizeOrderResponse;
+import com.huaweicloud.sdk.apig.v2.model.CreatePrepayResizeRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreatePrepayResizeResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateRequestThrottlingPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateRequestThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CreateSignatureKeyV2Request;
@@ -131,8 +147,12 @@ import com.huaweicloud.sdk.apig.v2.model.DeleteApiGroupV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteApiGroupV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAppAclRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAppAclResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAppCodeV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAppCodeV2Response;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAppV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAppV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteBackendInstanceV2Request;
@@ -169,6 +189,8 @@ import com.huaweicloud.sdk.apig.v2.model.DetachApiFromPluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.DetachApiFromPluginResponse;
 import com.huaweicloud.sdk.apig.v2.model.DetachPluginFromApiRequest;
 import com.huaweicloud.sdk.apig.v2.model.DetachPluginFromApiResponse;
+import com.huaweicloud.sdk.apig.v2.model.DisassociateAppQuotaWithAppRequest;
+import com.huaweicloud.sdk.apig.v2.model.DisassociateAppQuotaWithAppResponse;
 import com.huaweicloud.sdk.apig.v2.model.DisassociateCertificateV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DisassociateCertificateV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DisassociateDomainV2Request;
@@ -180,6 +202,7 @@ import com.huaweicloud.sdk.apig.v2.model.DisassociateSignatureKeyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.EipBindReq;
 import com.huaweicloud.sdk.apig.v2.model.EndpointPermissionList;
 import com.huaweicloud.sdk.apig.v2.model.EnvCreate;
+import com.huaweicloud.sdk.apig.v2.model.EnvVariableBase;
 import com.huaweicloud.sdk.apig.v2.model.EnvVariableCreate;
 import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ExportApiDefinitionsV2Response;
@@ -190,8 +213,10 @@ import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsV2RequestBody;
 import com.huaweicloud.sdk.apig.v2.model.ImportApiDefinitionsV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ImportMicroserviceRequest;
 import com.huaweicloud.sdk.apig.v2.model.ImportMicroserviceResponse;
+import com.huaweicloud.sdk.apig.v2.model.InstanceChangeOrderReq;
 import com.huaweicloud.sdk.apig.v2.model.InstanceCreateReq;
 import com.huaweicloud.sdk.apig.v2.model.InstanceModReq;
+import com.huaweicloud.sdk.apig.v2.model.InstanceOrderReq;
 import com.huaweicloud.sdk.apig.v2.model.ListAclPolicyBindedToApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListAclPolicyBindedToApiV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListAclStrategiesV2Request;
@@ -234,6 +259,12 @@ import com.huaweicloud.sdk.apig.v2.model.ListAppCodesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListAppCodesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListAppQuantitiesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListAppQuantitiesV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotaBindableAppsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotaBindableAppsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotaBoundAppsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotaBoundAppsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotasRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotasResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListAppsBindedToApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListAppsBindedToApiV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListAppsV2Request;
@@ -314,15 +345,22 @@ import com.huaweicloud.sdk.apig.v2.model.RemoveIngressEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.RemoveIngressEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ResettingAppSecretV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ResettingAppSecretV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ResizeInstanceReq;
 import com.huaweicloud.sdk.apig.v2.model.ResponseInfo;
 import com.huaweicloud.sdk.apig.v2.model.ResponseInfoResp;
 import com.huaweicloud.sdk.apig.v2.model.ResponsesCreate;
+import com.huaweicloud.sdk.apig.v2.model.ShowAppBoundAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowAppBoundAppQuotaResponse;
+import com.huaweicloud.sdk.apig.v2.model.ShowAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiGroupV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiGroupV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppAclRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppAclResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppCodeV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppCodeV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppV2Request;
@@ -351,6 +389,8 @@ import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfVpcChannelV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfVpcChannelV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowPluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowPluginResponse;
+import com.huaweicloud.sdk.apig.v2.model.ShowRestrictionOfInstanceV2Request;
+import com.huaweicloud.sdk.apig.v2.model.ShowRestrictionOfInstanceV2Response;
 import com.huaweicloud.sdk.apig.v2.model.SignApiBinding;
 import com.huaweicloud.sdk.apig.v2.model.ThrottleApiBindingCreate;
 import com.huaweicloud.sdk.apig.v2.model.ThrottleBaseInfo;
@@ -364,6 +404,10 @@ import com.huaweicloud.sdk.apig.v2.model.UpdateApiGroupV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateApiGroupV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.UpdateAppAclRequest;
+import com.huaweicloud.sdk.apig.v2.model.UpdateAppAclResponse;
+import com.huaweicloud.sdk.apig.v2.model.UpdateAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.UpdateAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.UpdateAppV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateAppV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateBackendInstancesV2Request;
@@ -378,6 +422,8 @@ import com.huaweicloud.sdk.apig.v2.model.UpdateEngressEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateEngressEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateEnvironmentV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateEnvironmentV2Response;
+import com.huaweicloud.sdk.apig.v2.model.UpdateEnvironmentVariableV2Request;
+import com.huaweicloud.sdk.apig.v2.model.UpdateEnvironmentVariableV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateGatewayResponseTypeV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateGatewayResponseTypeV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateGatewayResponseV2Request;
@@ -583,6 +629,46 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenIngressEipReq.class),
             f -> f.withMarshaller(AddIngressEipV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> associateAppsForAppQuota =
+        genForassociateAppsForAppQuota();
+
+    private static HttpRequestDef<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> genForassociateAppsForAppQuota() {
+        // basic
+        HttpRequestDef.Builder<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, AssociateAppsForAppQuotaRequest.class, AssociateAppsForAppQuotaResponse.class)
+                .withName("AssociateAppsForAppQuota")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-quotas/{app_quota_id}/binding-apps")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_quota_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getAppQuotaId, (req, v) -> {
+                req.setAppQuotaId(v);
+            }));
+        builder.<CreateAppQuotaBindingApp>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAppQuotaBindingApp.class),
+            f -> f.withMarshaller(AssociateAppsForAppQuotaRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -822,6 +908,172 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckAppV2Request, CheckAppV2Response> checkAppV2 = genForcheckAppV2();
+
+    private static HttpRequestDef<CheckAppV2Request, CheckAppV2Response> genForcheckAppV2() {
+        // basic
+        HttpRequestDef.Builder<CheckAppV2Request, CheckAppV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckAppV2Request.class, CheckAppV2Response.class)
+                .withName("CheckAppV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/validation/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckAppV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckAppV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAnAppV2Request, CreateAnAppV2Response> createAnAppV2 =
+        genForcreateAnAppV2();
+
+    private static HttpRequestDef<CreateAnAppV2Request, CreateAnAppV2Response> genForcreateAnAppV2() {
+        // basic
+        HttpRequestDef.Builder<CreateAnAppV2Request, CreateAnAppV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAnAppV2Request.class, CreateAnAppV2Response.class)
+                .withName("CreateAnAppV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAnAppV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AppCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppCreate.class),
+            f -> f.withMarshaller(CreateAnAppV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2 =
+        genForcreateAppCodeAutoV2();
+
+    private static HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> genForcreateAppCodeAutoV2() {
+        // basic
+        HttpRequestDef.Builder<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateAppCodeAutoV2Request.class, CreateAppCodeAutoV2Response.class)
+                .withName("CreateAppCodeAutoV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2 =
+        genForcreateAppCodeV2();
+
+    private static HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> genForcreateAppCodeV2() {
+        // basic
+        HttpRequestDef.Builder<CreateAppCodeV2Request, CreateAppCodeV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAppCodeV2Request.class, CreateAppCodeV2Response.class)
+                .withName("CreateAppCodeV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppCodeV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppCodeV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<AppCodeCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppCodeCreate.class),
+            f -> f.withMarshaller(CreateAppCodeV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAppQuotaRequest, CreateAppQuotaResponse> createAppQuota =
+        genForcreateAppQuota();
+
+    private static HttpRequestDef<CreateAppQuotaRequest, CreateAppQuotaResponse> genForcreateAppQuota() {
+        // basic
+        HttpRequestDef.Builder<CreateAppQuotaRequest, CreateAppQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAppQuotaRequest.class, CreateAppQuotaResponse.class)
+                .withName("CreateAppQuota")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-quotas")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAppQuotaRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AppQuotaCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppQuotaCreate.class),
+            f -> f.withMarshaller(CreateAppQuotaRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomAuthorizerV2Request, CreateCustomAuthorizerV2Response> createCustomAuthorizerV2 =
         genForcreateCustomAuthorizerV2();
 
@@ -1018,6 +1270,30 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateOrderRequest, CreateOrderResponse> createOrder = genForcreateOrder();
+
+    private static HttpRequestDef<CreateOrderRequest, CreateOrderResponse> genForcreateOrder() {
+        // basic
+        HttpRequestDef.Builder<CreateOrderRequest, CreateOrderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOrderRequest.class, CreateOrderResponse.class)
+                .withName("CreateOrder")
+                .withUri("/v2/{project_id}/apigw/prepay-instances")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<InstanceOrderReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceOrderReq.class),
+            f -> f.withMarshaller(CreateOrderRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePluginRequest, CreatePluginResponse> createPlugin = genForcreatePlugin();
 
     private static HttpRequestDef<CreatePluginRequest, CreatePluginResponse> genForcreatePlugin() {
@@ -1041,6 +1317,71 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PluginCreate.class),
             f -> f.withMarshaller(CreatePluginRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> createPostPayResizeOrder =
+        genForcreatePostPayResizeOrder();
+
+    private static HttpRequestDef<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> genForcreatePostPayResizeOrder() {
+        // basic
+        HttpRequestDef.Builder<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreatePostPayResizeOrderRequest.class, CreatePostPayResizeOrderResponse.class)
+                .withName("CreatePostPayResizeOrder")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/postpaid-resize")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePostPayResizeOrderRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ResizeInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeInstanceReq.class),
+            f -> f.withMarshaller(CreatePostPayResizeOrderRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePrepayResizeRequest, CreatePrepayResizeResponse> createPrepayResize =
+        genForcreatePrepayResize();
+
+    private static HttpRequestDef<CreatePrepayResizeRequest, CreatePrepayResizeResponse> genForcreatePrepayResize() {
+        // basic
+        HttpRequestDef.Builder<CreatePrepayResizeRequest, CreatePrepayResizeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePrepayResizeRequest.class, CreatePrepayResizeResponse.class)
+                .withName("CreatePrepayResize")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/prepay-resize")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrepayResizeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<InstanceChangeOrderReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstanceChangeOrderReq.class),
+            f -> f.withMarshaller(CreatePrepayResizeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1151,6 +1492,139 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(ThrottleSpecialCreate.class),
             f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> deleteAppAcl = genFordeleteAppAcl();
+
+    private static HttpRequestDef<DeleteAppAclRequest, DeleteAppAclResponse> genFordeleteAppAcl() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppAclRequest, DeleteAppAclResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppAclRequest.class, DeleteAppAclResponse.class)
+                .withName("DeleteAppAcl")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-acl")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppAclRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppAclRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2 =
+        genFordeleteAppCodeV2();
+
+    private static HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> genFordeleteAppCodeV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppCodeV2Request, DeleteAppCodeV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppCodeV2Request.class, DeleteAppCodeV2Response.class)
+                .withName("DeleteAppCodeV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes/{app_code_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("app_code_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppCodeId, (req, v) -> {
+                req.setAppCodeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppQuotaRequest, DeleteAppQuotaResponse> deleteAppQuota =
+        genFordeleteAppQuota();
+
+    private static HttpRequestDef<DeleteAppQuotaRequest, DeleteAppQuotaResponse> genFordeleteAppQuota() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppQuotaRequest, DeleteAppQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppQuotaRequest.class, DeleteAppQuotaResponse.class)
+                .withName("DeleteAppQuota")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-quotas/{app_quota_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppQuotaRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_quota_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppQuotaRequest::getAppQuotaId, (req, v) -> {
+                req.setAppQuotaId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppV2Request, DeleteAppV2Response> deleteAppV2 = genFordeleteAppV2();
+
+    private static HttpRequestDef<DeleteAppV2Request, DeleteAppV2Response> genFordeleteAppV2() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppV2Request, DeleteAppV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppV2Request.class, DeleteAppV2Response.class)
+                .withName("DeleteAppV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
             }));
 
         // response
@@ -1628,6 +2102,48 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(ApiOperPluginInfo.class),
             f -> f.withMarshaller(DetachPluginFromApiRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithApp =
+        genFordisassociateAppQuotaWithApp();
+
+    private static HttpRequestDef<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> genFordisassociateAppQuotaWithApp() {
+        // basic
+        HttpRequestDef.Builder<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DisassociateAppQuotaWithAppRequest.class,
+                    DisassociateAppQuotaWithAppResponse.class)
+                .withName("DisassociateAppQuotaWithApp")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-quotas/{app_quota_id}/bound-apps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_quota_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppQuotaId, (req, v) -> {
+                req.setAppQuotaId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateAppQuotaWithAppRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
             }));
 
         // response
@@ -2154,6 +2670,52 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2 =
+        genForlistAppCodesV2();
+
+    private static HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> genForlistAppCodesV2() {
+        // basic
+        HttpRequestDef.Builder<ListAppCodesV2Request, ListAppCodesV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAppCodesV2Request.class, ListAppCodesV2Response.class)
+                .withName("ListAppCodesV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppCodesV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppCodesV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppCodesV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppCodesV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response> listAppQuantitiesV2 =
         genForlistAppQuantitiesV2();
 
@@ -2172,6 +2734,239 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppQuantitiesV2Request::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> listAppQuotaBindableApps =
+        genForlistAppQuotaBindableApps();
+
+    private static HttpRequestDef<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> genForlistAppQuotaBindableApps() {
+        // basic
+        HttpRequestDef.Builder<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListAppQuotaBindableAppsRequest.class, ListAppQuotaBindableAppsResponse.class)
+                .withName("ListAppQuotaBindableApps")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-quotas/{app_quota_id}/bindable-apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_quota_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppQuotaId, (req, v) -> {
+                req.setAppQuotaId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppQuotaBindableAppsRequest::getAppName, (req, v) -> {
+                req.setAppName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> listAppQuotaBoundApps =
+        genForlistAppQuotaBoundApps();
+
+    private static HttpRequestDef<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> genForlistAppQuotaBoundApps() {
+        // basic
+        HttpRequestDef.Builder<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAppQuotaBoundAppsRequest.class, ListAppQuotaBoundAppsResponse.class)
+            .withName("ListAppQuotaBoundApps")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-quotas/{app_quota_id}/bound-apps")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_quota_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppQuotaId, (req, v) -> {
+                req.setAppQuotaId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppQuotaBoundAppsRequest::getAppName, (req, v) -> {
+                req.setAppName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppQuotasRequest, ListAppQuotasResponse> listAppQuotas =
+        genForlistAppQuotas();
+
+    private static HttpRequestDef<ListAppQuotasRequest, ListAppQuotasResponse> genForlistAppQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListAppQuotasRequest, ListAppQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAppQuotasRequest.class, ListAppQuotasResponse.class)
+                .withName("ListAppQuotas")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppQuotasRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppQuotasRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppQuotasRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppQuotasRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAppsV2Request, ListAppsV2Response> listAppsV2 = genForlistAppsV2();
+
+    private static HttpRequestDef<ListAppsV2Request, ListAppsV2Response> genForlistAppsV2() {
+        // basic
+        HttpRequestDef.Builder<ListAppsV2Request, ListAppsV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAppsV2Request.class, ListAppsV2Response.class)
+                .withName("ListAppsV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppsV2Request::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppsV2Request::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppsV2Request::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppsV2Request::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAppsV2Request::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("app_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppsV2Request::getAppKey, (req, v) -> {
+                req.setAppKey(v);
+            }));
+        builder.<String>withRequestField("creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppsV2Request::getCreator, (req, v) -> {
+                req.setCreator(v);
+            }));
+        builder.<String>withRequestField("precise_search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppsV2Request::getPreciseSearch, (req, v) -> {
+                req.setPreciseSearch(v);
             }));
 
         // response
@@ -3512,6 +4307,211 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResettingAppSecretV2Request, ResettingAppSecretV2Response> resettingAppSecretV2 =
+        genForresettingAppSecretV2();
+
+    private static HttpRequestDef<ResettingAppSecretV2Request, ResettingAppSecretV2Response> genForresettingAppSecretV2() {
+        // basic
+        HttpRequestDef.Builder<ResettingAppSecretV2Request, ResettingAppSecretV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ResettingAppSecretV2Request.class, ResettingAppSecretV2Response.class)
+            .withName("ResettingAppSecretV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/secret/{app_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResettingAppSecretV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResettingAppSecretV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<AppResetCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppResetCreate.class),
+            f -> f.withMarshaller(ResettingAppSecretV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> showAppBoundAppQuota =
+        genForshowAppBoundAppQuota();
+
+    private static HttpRequestDef<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> genForshowAppBoundAppQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAppBoundAppQuotaRequest.class, ShowAppBoundAppQuotaResponse.class)
+            .withName("ShowAppBoundAppQuota")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/bound-quota")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppBoundAppQuotaRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuota = genForshowAppQuota();
+
+    private static HttpRequestDef<ShowAppQuotaRequest, ShowAppQuotaResponse> genForshowAppQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowAppQuotaRequest, ShowAppQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAppQuotaRequest.class, ShowAppQuotaResponse.class)
+                .withName("ShowAppQuota")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-quotas/{app_quota_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppQuotaRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_quota_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppQuotaRequest::getAppQuotaId, (req, v) -> {
+                req.setAppQuotaId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> showDetailsOfAppAcl =
+        genForshowDetailsOfAppAcl();
+
+    private static HttpRequestDef<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> genForshowDetailsOfAppAcl() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppAclRequest.class, ShowDetailsOfAppAclResponse.class)
+                .withName("ShowDetailsOfAppAcl")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-acl")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppAclRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2 =
+        genForshowDetailsOfAppCodeV2();
+
+    private static HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> genForshowDetailsOfAppCodeV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDetailsOfAppCodeV2Request.class, ShowDetailsOfAppCodeV2Response.class)
+            .withName("ShowDetailsOfAppCodeV2")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes/{app_code_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("app_code_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppCodeId, (req, v) -> {
+                req.setAppCodeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2 =
+        genForshowDetailsOfAppV2();
+
+    private static HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> genForshowDetailsOfAppV2() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppV2Request.class, ShowDetailsOfAppV2Response.class)
+                .withName("ShowDetailsOfAppV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDetailsOfCustomAuthorizersV2Request, ShowDetailsOfCustomAuthorizersV2Response> showDetailsOfCustomAuthorizersV2 =
         genForshowDetailsOfCustomAuthorizersV2();
 
@@ -3851,6 +4851,149 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2 =
+        genForshowRestrictionOfInstanceV2();
+
+    private static HttpRequestDef<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> genForshowRestrictionOfInstanceV2() {
+        // basic
+        HttpRequestDef.Builder<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRestrictionOfInstanceV2Request.class,
+                    ShowRestrictionOfInstanceV2Response.class)
+                .withName("ShowRestrictionOfInstanceV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/restriction")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestrictionOfInstanceV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> updateAppAcl = genForupdateAppAcl();
+
+    private static HttpRequestDef<UpdateAppAclRequest, UpdateAppAclResponse> genForupdateAppAcl() {
+        // basic
+        HttpRequestDef.Builder<UpdateAppAclRequest, UpdateAppAclResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAppAclRequest.class, UpdateAppAclResponse.class)
+                .withName("UpdateAppAcl")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-acl")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppAclRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppAclRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<AppAclCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppAclCreate.class),
+            f -> f.withMarshaller(UpdateAppAclRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAppQuotaRequest, UpdateAppQuotaResponse> updateAppQuota =
+        genForupdateAppQuota();
+
+    private static HttpRequestDef<UpdateAppQuotaRequest, UpdateAppQuotaResponse> genForupdateAppQuota() {
+        // basic
+        HttpRequestDef.Builder<UpdateAppQuotaRequest, UpdateAppQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAppQuotaRequest.class, UpdateAppQuotaResponse.class)
+                .withName("UpdateAppQuota")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/app-quotas/{app_quota_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppQuotaRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_quota_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppQuotaRequest::getAppQuotaId, (req, v) -> {
+                req.setAppQuotaId(v);
+            }));
+        builder.<AppQuotaCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppQuotaCreate.class),
+            f -> f.withMarshaller(UpdateAppQuotaRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAppV2Request, UpdateAppV2Response> updateAppV2 = genForupdateAppV2();
+
+    private static HttpRequestDef<UpdateAppV2Request, UpdateAppV2Response> genForupdateAppV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateAppV2Request, UpdateAppV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAppV2Request.class, UpdateAppV2Response.class)
+                .withName("UpdateAppV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppV2Request::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<AppCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AppCreate.class),
+            f -> f.withMarshaller(UpdateAppV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateCustomAuthorizerV2Request, UpdateCustomAuthorizerV2Response> updateCustomAuthorizerV2 =
         genForupdateCustomAuthorizerV2();
 
@@ -4000,6 +5143,48 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvCreate.class),
             f -> f.withMarshaller(UpdateEnvironmentV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2 =
+        genForupdateEnvironmentVariableV2();
+
+    private static HttpRequestDef<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> genForupdateEnvironmentVariableV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateEnvironmentVariableV2Request.class,
+                    UpdateEnvironmentVariableV2Response.class)
+                .withName("UpdateEnvironmentVariableV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/env-variables/{env_variable_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("env_variable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getEnvVariableId, (req, v) -> {
+                req.setEnvVariableId(v);
+            }));
+        builder.<EnvVariableBase>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnvVariableBase.class),
+            f -> f.withMarshaller(UpdateEnvironmentVariableV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -4750,6 +5935,37 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApiVersion.class),
             f -> f.withMarshaller(ChangeApiVersionV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckApisV2Request, CheckApisV2Response> checkApisV2 = genForcheckApisV2();
+
+    private static HttpRequestDef<CheckApisV2Request, CheckApisV2Response> genForcheckApisV2() {
+        // basic
+        HttpRequestDef.Builder<CheckApisV2Request, CheckApisV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckApisV2Request.class, CheckApisV2Response.class)
+                .withName("CheckApisV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apis/check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckApisV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ApiCheckInfoV2>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiCheckInfoV2.class),
+            f -> f.withMarshaller(CheckApisV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -6063,140 +7279,6 @@ public class ApigMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckAppV2Request, CheckAppV2Response> checkAppV2 = genForcheckAppV2();
-
-    private static HttpRequestDef<CheckAppV2Request, CheckAppV2Response> genForcheckAppV2() {
-        // basic
-        HttpRequestDef.Builder<CheckAppV2Request, CheckAppV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, CheckAppV2Request.class, CheckAppV2Response.class)
-                .withName("CheckAppV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/validation/{app_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateAnAppV2Request, CreateAnAppV2Response> createAnAppV2 =
-        genForcreateAnAppV2();
-
-    private static HttpRequestDef<CreateAnAppV2Request, CreateAnAppV2Response> genForcreateAnAppV2() {
-        // basic
-        HttpRequestDef.Builder<CreateAnAppV2Request, CreateAnAppV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAnAppV2Request.class, CreateAnAppV2Response.class)
-                .withName("CreateAnAppV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAnAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<AppCreate>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppCreate.class),
-            f -> f.withMarshaller(CreateAnAppV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2 =
-        genForcreateAppCodeAutoV2();
-
-    private static HttpRequestDef<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> genForcreateAppCodeAutoV2() {
-        // basic
-        HttpRequestDef.Builder<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, CreateAppCodeAutoV2Request.class, CreateAppCodeAutoV2Response.class)
-                .withName("CreateAppCodeAutoV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeAutoV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2 =
-        genForcreateAppCodeV2();
-
-    private static HttpRequestDef<CreateAppCodeV2Request, CreateAppCodeV2Response> genForcreateAppCodeV2() {
-        // basic
-        HttpRequestDef.Builder<CreateAppCodeV2Request, CreateAppCodeV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAppCodeV2Request.class, CreateAppCodeV2Response.class)
-                .withName("CreateAppCodeV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAppCodeV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
-        builder.<AppCodeCreate>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppCodeCreate.class),
-            f -> f.withMarshaller(CreateAppCodeV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response> createAuthorizingAppsV2 =
         genForcreateAuthorizingAppsV2();
 
@@ -6222,76 +7304,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(ApiAuthCreate.class),
             f -> f.withMarshaller(CreateAuthorizingAppsV2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2 =
-        genFordeleteAppCodeV2();
-
-    private static HttpRequestDef<DeleteAppCodeV2Request, DeleteAppCodeV2Response> genFordeleteAppCodeV2() {
-        // basic
-        HttpRequestDef.Builder<DeleteAppCodeV2Request, DeleteAppCodeV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppCodeV2Request.class, DeleteAppCodeV2Response.class)
-                .withName("DeleteAppCodeV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes/{app_code_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppCodeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
-        builder.<String>withRequestField("app_code_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppCodeV2Request::getAppCodeId, (req, v) -> {
-                req.setAppCodeId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteAppV2Request, DeleteAppV2Response> deleteAppV2 = genFordeleteAppV2();
-
-    private static HttpRequestDef<DeleteAppV2Request, DeleteAppV2Response> genFordeleteAppV2() {
-        // basic
-        HttpRequestDef.Builder<DeleteAppV2Request, DeleteAppV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppV2Request.class, DeleteAppV2Response.class)
-                .withName("DeleteAppV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
             }));
 
         // response
@@ -6454,52 +7466,6 @@ public class ApigMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2 =
-        genForlistAppCodesV2();
-
-    private static HttpRequestDef<ListAppCodesV2Request, ListAppCodesV2Response> genForlistAppCodesV2() {
-        // basic
-        HttpRequestDef.Builder<ListAppCodesV2Request, ListAppCodesV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAppCodesV2Request.class, ListAppCodesV2Response.class)
-                .withName("ListAppCodesV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppCodesV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response> listAppsBindedToApiV2 =
         genForlistAppsBindedToApiV2();
 
@@ -6560,234 +7526,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsBindedToApiV2Request::getEnvId, (req, v) -> {
                 req.setEnvId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListAppsV2Request, ListAppsV2Response> listAppsV2 = genForlistAppsV2();
-
-    private static HttpRequestDef<ListAppsV2Request, ListAppsV2Response> genForlistAppsV2() {
-        // basic
-        HttpRequestDef.Builder<ListAppsV2Request, ListAppsV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAppsV2Request.class, ListAppsV2Response.class)
-                .withName("ListAppsV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAppsV2Request::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsV2Request::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<String>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getId, (req, v) -> {
-                req.setId(v);
-            }));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getName, (req, v) -> {
-                req.setName(v);
-            }));
-        builder.<Integer>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAppsV2Request::getStatus, (req, v) -> {
-                req.setStatus(v);
-            }));
-        builder.<String>withRequestField("app_key",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getAppKey, (req, v) -> {
-                req.setAppKey(v);
-            }));
-        builder.<String>withRequestField("creator",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getCreator, (req, v) -> {
-                req.setCreator(v);
-            }));
-        builder.<String>withRequestField("precise_search",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAppsV2Request::getPreciseSearch, (req, v) -> {
-                req.setPreciseSearch(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ResettingAppSecretV2Request, ResettingAppSecretV2Response> resettingAppSecretV2 =
-        genForresettingAppSecretV2();
-
-    private static HttpRequestDef<ResettingAppSecretV2Request, ResettingAppSecretV2Response> genForresettingAppSecretV2() {
-        // basic
-        HttpRequestDef.Builder<ResettingAppSecretV2Request, ResettingAppSecretV2Response> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, ResettingAppSecretV2Request.class, ResettingAppSecretV2Response.class)
-            .withName("ResettingAppSecretV2")
-            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/secret/{app_id}")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResettingAppSecretV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResettingAppSecretV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
-        builder.<AppResetCreate>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppResetCreate.class),
-            f -> f.withMarshaller(ResettingAppSecretV2Request::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2 =
-        genForshowDetailsOfAppCodeV2();
-
-    private static HttpRequestDef<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> genForshowDetailsOfAppCodeV2() {
-        // basic
-        HttpRequestDef.Builder<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowDetailsOfAppCodeV2Request.class, ShowDetailsOfAppCodeV2Response.class)
-            .withName("ShowDetailsOfAppCodeV2")
-            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/app-codes/{app_code_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
-        builder.<String>withRequestField("app_code_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppCodeV2Request::getAppCodeId, (req, v) -> {
-                req.setAppCodeId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2 =
-        genForshowDetailsOfAppV2();
-
-    private static HttpRequestDef<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> genForshowDetailsOfAppV2() {
-        // basic
-        HttpRequestDef.Builder<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowDetailsOfAppV2Request.class, ShowDetailsOfAppV2Response.class)
-                .withName("ShowDetailsOfAppV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDetailsOfAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateAppV2Request, UpdateAppV2Response> updateAppV2 = genForupdateAppV2();
-
-    private static HttpRequestDef<UpdateAppV2Request, UpdateAppV2Response> genForupdateAppV2() {
-        // basic
-        HttpRequestDef.Builder<UpdateAppV2Request, UpdateAppV2Response> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateAppV2Request.class, UpdateAppV2Response.class)
-                .withName("UpdateAppV2")
-                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppV2Request::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAppV2Request::getAppId, (req, v) -> {
-                req.setAppId(v);
-            }));
-        builder.<AppCreate>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppCreate.class),
-            f -> f.withMarshaller(UpdateAppV2Request::getBody, (req, v) -> {
-                req.setBody(v);
             }));
 
         // response

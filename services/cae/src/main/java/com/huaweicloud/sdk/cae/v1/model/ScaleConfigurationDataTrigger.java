@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class ScaleConfigurationDataTrigger {
 
     /**
-     * 指标类型，支持cpu、memory。
+     * 指标类型，支持cpu、memory、cron。
      */
     public static final class TypeEnum {
 
@@ -31,12 +31,18 @@ public class ScaleConfigurationDataTrigger {
          */
         public static final TypeEnum MEMORY = new TypeEnum("memory");
 
+        /**
+         * Enum CRON for value: "cron"
+         */
+        public static final TypeEnum CRON = new TypeEnum("cron");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("cpu", CPU);
             map.put("memory", MEMORY);
+            map.put("cron", CRON);
             return Collections.unmodifiableMap(map);
         }
 
@@ -94,7 +100,7 @@ public class ScaleConfigurationDataTrigger {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private ScaleConfigurationDataTriggerMetadata metadata;
+    private ScalingTriggerMeta metadata;
 
     public ScaleConfigurationDataTrigger withType(TypeEnum type) {
         this.type = type;
@@ -102,7 +108,7 @@ public class ScaleConfigurationDataTrigger {
     }
 
     /**
-     * 指标类型，支持cpu、memory。
+     * 指标类型，支持cpu、memory、cron。
      * @return type
      */
     public TypeEnum getType() {
@@ -113,14 +119,14 @@ public class ScaleConfigurationDataTrigger {
         this.type = type;
     }
 
-    public ScaleConfigurationDataTrigger withMetadata(ScaleConfigurationDataTriggerMetadata metadata) {
+    public ScaleConfigurationDataTrigger withMetadata(ScalingTriggerMeta metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ScaleConfigurationDataTrigger withMetadata(Consumer<ScaleConfigurationDataTriggerMetadata> metadataSetter) {
+    public ScaleConfigurationDataTrigger withMetadata(Consumer<ScalingTriggerMeta> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new ScaleConfigurationDataTriggerMetadata();
+            this.metadata = new ScalingTriggerMeta();
             metadataSetter.accept(this.metadata);
         }
 
@@ -131,11 +137,11 @@ public class ScaleConfigurationDataTrigger {
      * Get metadata
      * @return metadata
      */
-    public ScaleConfigurationDataTriggerMetadata getMetadata() {
+    public ScalingTriggerMeta getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(ScaleConfigurationDataTriggerMetadata metadata) {
+    public void setMetadata(ScalingTriggerMeta metadata) {
         this.metadata = metadata;
     }
 

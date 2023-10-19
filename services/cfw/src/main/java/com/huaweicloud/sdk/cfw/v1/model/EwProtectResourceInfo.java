@@ -40,6 +40,11 @@ public class EwProtectResourceInfo {
 
     private String protectedResourceProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protected_resource_mode")
+
+    private String protectedResourceMode;
+
     public EwProtectResourceInfo withProtectedResourceType(Integer protectedResourceType) {
         this.protectedResourceType = protectedResourceType;
         return this;
@@ -142,6 +147,23 @@ public class EwProtectResourceInfo {
         this.protectedResourceProjectId = protectedResourceProjectId;
     }
 
+    public EwProtectResourceInfo withProtectedResourceMode(String protectedResourceMode) {
+        this.protectedResourceMode = protectedResourceMode;
+        return this;
+    }
+
+    /**
+     * 防护资源模式
+     * @return protectedResourceMode
+     */
+    public String getProtectedResourceMode() {
+        return protectedResourceMode;
+    }
+
+    public void setProtectedResourceMode(String protectedResourceMode) {
+        this.protectedResourceMode = protectedResourceMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -156,7 +178,8 @@ public class EwProtectResourceInfo {
             && Objects.equals(this.protectedResourceId, that.protectedResourceId)
             && Objects.equals(this.protectedResourceNatName, that.protectedResourceNatName)
             && Objects.equals(this.protectedResourceNatId, that.protectedResourceNatId)
-            && Objects.equals(this.protectedResourceProjectId, that.protectedResourceProjectId);
+            && Objects.equals(this.protectedResourceProjectId, that.protectedResourceProjectId)
+            && Objects.equals(this.protectedResourceMode, that.protectedResourceMode);
     }
 
     @Override
@@ -166,7 +189,8 @@ public class EwProtectResourceInfo {
             protectedResourceId,
             protectedResourceNatName,
             protectedResourceNatId,
-            protectedResourceProjectId);
+            protectedResourceProjectId,
+            protectedResourceMode);
     }
 
     @Override
@@ -179,6 +203,7 @@ public class EwProtectResourceInfo {
         sb.append("    protectedResourceNatName: ").append(toIndentedString(protectedResourceNatName)).append("\n");
         sb.append("    protectedResourceNatId: ").append(toIndentedString(protectedResourceNatId)).append("\n");
         sb.append("    protectedResourceProjectId: ").append(toIndentedString(protectedResourceProjectId)).append("\n");
+        sb.append("    protectedResourceMode: ").append(toIndentedString(protectedResourceMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

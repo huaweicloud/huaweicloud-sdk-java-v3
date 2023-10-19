@@ -6,6 +6,7 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.koomap.v1.model.CheckImageDataDto;
+import com.huaweicloud.sdk.koomap.v1.model.CheckImageResultDto;
 import com.huaweicloud.sdk.koomap.v1.model.CreateTaskDto;
 import com.huaweicloud.sdk.koomap.v1.model.CreateTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.CreateTaskResponse;
@@ -25,10 +26,15 @@ import com.huaweicloud.sdk.koomap.v1.model.ListUsageInfoRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListUsageInfoResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListWorkspaceResponse;
+import com.huaweicloud.sdk.koomap.v1.model.NaviServiceReq;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StartNaviRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StartNaviResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StartTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartTaskResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StartVpsRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StartVpsResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StopTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StopTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.UpdateTaskArchivedStatusRequest;
@@ -38,6 +44,7 @@ import com.huaweicloud.sdk.koomap.v1.model.UpdateWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.UpdateWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ValidateImageRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ValidateImageResponse;
+import com.huaweicloud.sdk.koomap.v1.model.VpsServiceReq;
 
 import java.util.List;
 
@@ -206,10 +213,10 @@ public class KooMapMeta {
             f -> f.withMarshaller(ListTaskInfoRequest::getWorkspaceId, (req, v) -> {
                 req.setWorkspaceId(v);
             }));
-        builder.<String>withRequestField("task_status",
+        builder.<List<String>>withRequestField("task_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTaskInfoRequest::getTaskStatus, (req, v) -> {
                 req.setTaskStatus(v);
             }));
@@ -378,6 +385,63 @@ public class KooMapMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StartNaviRequest, StartNaviResponse> startNavi = genForstartNavi();
+
+    private static HttpRequestDef<StartNaviRequest, StartNaviResponse> genForstartNavi() {
+        // basic
+        HttpRequestDef.Builder<StartNaviRequest, StartNaviResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartNaviRequest.class, StartNaviResponse.class)
+                .withName("StartNavi")
+                .withUri("/v1/algo/navi")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Trace-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartNaviRequest::getXTraceId, (req, v) -> {
+                req.setXTraceId(v);
+            }));
+        builder.<String>withRequestField("App-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartNaviRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("Uuid",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartNaviRequest::getUuid, (req, v) -> {
+                req.setUuid(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartNaviRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<NaviServiceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NaviServiceReq.class),
+            f -> f.withMarshaller(StartNaviRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Trace-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StartNaviResponse::getXTraceId, StartNaviResponse::setXTraceId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartTaskRequest, StartTaskResponse> startTask = genForstartTask();
 
     private static HttpRequestDef<StartTaskRequest, StartTaskResponse> genForstartTask() {
@@ -406,6 +470,63 @@ public class KooMapMeta {
                 response.setBody(data);
             }));
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartVpsRequest, StartVpsResponse> startVps = genForstartVps();
+
+    private static HttpRequestDef<StartVpsRequest, StartVpsResponse> genForstartVps() {
+        // basic
+        HttpRequestDef.Builder<StartVpsRequest, StartVpsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartVpsRequest.class, StartVpsResponse.class)
+                .withName("StartVps")
+                .withUri("/v1/algo/vps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Trace-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartVpsRequest::getXTraceId, (req, v) -> {
+                req.setXTraceId(v);
+            }));
+        builder.<String>withRequestField("App-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartVpsRequest::getAppId, (req, v) -> {
+                req.setAppId(v);
+            }));
+        builder.<String>withRequestField("Uuid",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartVpsRequest::getUuid, (req, v) -> {
+                req.setUuid(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartVpsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<VpsServiceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VpsServiceReq.class),
+            f -> f.withMarshaller(StartVpsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Trace-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StartVpsResponse::getXTraceId, StartVpsResponse::setXTraceId));
         return builder.build();
     }
 
@@ -533,13 +654,13 @@ public class KooMapMeta {
             }));
 
         // response
-        builder.<List<String>>withResponseField("body",
+        builder.<List<CheckImageResultDto>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ValidateImageResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(String.class));
+            }).withInnerContainerType(CheckImageResultDto.class));
 
         return builder.build();
     }

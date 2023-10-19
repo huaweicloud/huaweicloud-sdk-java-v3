@@ -139,6 +139,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddFacesByBase64Response::getXRequestId, AddFacesByBase64Response::setXRequestId));
         return builder.build();
     }
 
@@ -178,6 +183,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddFacesByFileResponse::getXRequestId, AddFacesByFileResponse::setXRequestId));
         return builder.build();
     }
 
@@ -217,6 +227,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddFacesByUrlResponse::getXRequestId, AddFacesByUrlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -256,6 +271,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteFacesResponse::getXRequestId, BatchDeleteFacesResponse::setXRequestId));
         return builder.build();
     }
 
@@ -288,6 +308,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CompareFaceByBase64Response::getXRequestId,
+                CompareFaceByBase64Response::setXRequestId));
         return builder.build();
     }
 
@@ -320,6 +346,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CompareFaceByFileResponse::getXRequestId, CompareFaceByFileResponse::setXRequestId));
         return builder.build();
     }
 
@@ -352,6 +383,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CompareFaceByUrlResponse::getXRequestId, CompareFaceByUrlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -384,6 +420,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateFaceSetResponse::getXRequestId, CreateFaceSetResponse::setXRequestId));
         return builder.build();
     }
 
@@ -426,6 +467,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteFaceByExternalImageIdResponse::getXRequestId,
+                DeleteFaceByExternalImageIdResponse::setXRequestId));
         return builder.build();
     }
 
@@ -465,6 +512,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteFaceByFaceIdResponse::getXRequestId,
+                DeleteFaceByFaceIdResponse::setXRequestId));
         return builder.build();
     }
 
@@ -497,6 +550,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteFaceSetResponse::getXRequestId, DeleteFaceSetResponse::setXRequestId));
         return builder.build();
     }
 
@@ -529,6 +587,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectFaceByBase64Response::getXRequestId,
+                DetectFaceByBase64Response::setXRequestId));
         return builder.build();
     }
 
@@ -561,6 +625,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectFaceByBase64IntlResponse::getXRequestId,
+                DetectFaceByBase64IntlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -593,6 +663,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectFaceByFileResponse::getXRequestId, DetectFaceByFileResponse::setXRequestId));
         return builder.build();
     }
 
@@ -625,6 +700,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectFaceByFileIntlResponse::getXRequestId,
+                DetectFaceByFileIntlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -657,6 +738,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectFaceByUrlResponse::getXRequestId, DetectFaceByUrlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -689,6 +775,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectFaceByUrlIntlResponse::getXRequestId,
+                DetectFaceByUrlIntlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -721,6 +813,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectLiveByBase64Response::getXRequestId,
+                DetectLiveByBase64Response::setXRequestId));
         return builder.build();
     }
 
@@ -753,6 +851,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectLiveByBase64IntlResponse::getXRequestId,
+                DetectLiveByBase64IntlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -785,6 +889,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectLiveByFileResponse::getXRequestId, DetectLiveByFileResponse::setXRequestId));
         return builder.build();
     }
 
@@ -817,6 +926,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectLiveByFileIntlResponse::getXRequestId,
+                DetectLiveByFileIntlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -849,6 +964,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectLiveByUrlResponse::getXRequestId, DetectLiveByUrlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -881,6 +1001,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectLiveByUrlIntlResponse::getXRequestId,
+                DetectLiveByUrlIntlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -913,6 +1039,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectLiveFaceByBase64Response::getXRequestId,
+                DetectLiveFaceByBase64Response::setXRequestId));
         return builder.build();
     }
 
@@ -945,6 +1077,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectLiveFaceByFileResponse::getXRequestId,
+                DetectLiveFaceByFileResponse::setXRequestId));
         return builder.build();
     }
 
@@ -977,6 +1115,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectLiveFaceByUrlResponse::getXRequestId,
+                DetectLiveFaceByUrlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1016,6 +1160,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchFaceByBase64Response::getXRequestId,
+                SearchFaceByBase64Response::setXRequestId));
         return builder.build();
     }
 
@@ -1055,6 +1205,12 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchFaceByFaceIdResponse::getXRequestId,
+                SearchFaceByFaceIdResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1094,6 +1250,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchFaceByFileResponse::getXRequestId, SearchFaceByFileResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1133,6 +1294,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchFaceByUrlResponse::getXRequestId, SearchFaceByUrlResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1158,6 +1324,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAllFaceSetsResponse::getXRequestId, ShowAllFaceSetsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1189,6 +1360,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowFaceSetResponse::getXRequestId, ShowFaceSetResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1228,6 +1404,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowFacesByFaceIdResponse::getXRequestId, ShowFacesByFaceIdResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1274,6 +1455,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowFacesByLimitResponse::getXRequestId, ShowFacesByLimitResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1312,6 +1498,11 @@ public class FrsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateFaceResponse::getXRequestId, UpdateFaceResponse::setXRequestId));
         return builder.build();
     }
 

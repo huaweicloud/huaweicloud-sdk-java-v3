@@ -49,7 +49,7 @@ public class ShowTaskOverviewResponse extends SdkResponse {
     }
 
     /**
-     * 空间下已处理完成任务数量。
+     * 空间下已处理完成任务，已归档任务总数量。
      * @return finished
      */
     public Integer getFinished() {

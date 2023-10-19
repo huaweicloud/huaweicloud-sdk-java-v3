@@ -783,7 +783,7 @@ public class DgcAsyncClient {
     }
 
     /**
-     * 单次执行作业
+     * 立即执行作业
      *
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -796,7 +796,7 @@ public class DgcAsyncClient {
     }
 
     /**
-     * 单次执行作业
+     * 立即执行作业
      *
      * 
      * Please refer to HUAWEI cloud API Explorer for details.

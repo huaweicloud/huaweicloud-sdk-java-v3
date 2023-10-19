@@ -15,9 +15,9 @@ import java.util.function.Consumer;
 public class ListAuthorisationsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "authorisations")
+    @JsonProperty(value = "request_id")
 
-    private List<Authorisation> authorisations = null;
+    private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
@@ -25,41 +25,25 @@ public class ListAuthorisationsResponse extends SdkResponse {
     private PageInfo pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    @JsonProperty(value = "authorisations")
 
-    private String requestId;
+    private List<Authorisation> authorisations = null;
 
-    public ListAuthorisationsResponse withAuthorisations(List<Authorisation> authorisations) {
-        this.authorisations = authorisations;
-        return this;
-    }
-
-    public ListAuthorisationsResponse addAuthorisationsItem(Authorisation authorisationsItem) {
-        if (this.authorisations == null) {
-            this.authorisations = new ArrayList<>();
-        }
-        this.authorisations.add(authorisationsItem);
-        return this;
-    }
-
-    public ListAuthorisationsResponse withAuthorisations(Consumer<List<Authorisation>> authorisationsSetter) {
-        if (this.authorisations == null) {
-            this.authorisations = new ArrayList<>();
-        }
-        authorisationsSetter.accept(this.authorisations);
+    public ListAuthorisationsResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * 授权的详细信息。
-     * @return authorisations
+     * 资源ID标识符。
+     * @return requestId
      */
-    public List<Authorisation> getAuthorisations() {
-        return authorisations;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setAuthorisations(List<Authorisation> authorisations) {
-        this.authorisations = authorisations;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     public ListAuthorisationsResponse withPageInfo(PageInfo pageInfo) {
@@ -88,21 +72,37 @@ public class ListAuthorisationsResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    public ListAuthorisationsResponse withRequestId(String requestId) {
-        this.requestId = requestId;
+    public ListAuthorisationsResponse withAuthorisations(List<Authorisation> authorisations) {
+        this.authorisations = authorisations;
+        return this;
+    }
+
+    public ListAuthorisationsResponse addAuthorisationsItem(Authorisation authorisationsItem) {
+        if (this.authorisations == null) {
+            this.authorisations = new ArrayList<>();
+        }
+        this.authorisations.add(authorisationsItem);
+        return this;
+    }
+
+    public ListAuthorisationsResponse withAuthorisations(Consumer<List<Authorisation>> authorisationsSetter) {
+        if (this.authorisations == null) {
+            this.authorisations = new ArrayList<>();
+        }
+        authorisationsSetter.accept(this.authorisations);
         return this;
     }
 
     /**
-     * 请求ID。
-     * @return requestId
+     * 授权实例列表。
+     * @return authorisations
      */
-    public String getRequestId() {
-        return requestId;
+    public List<Authorisation> getAuthorisations() {
+        return authorisations;
     }
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
+    public void setAuthorisations(List<Authorisation> authorisations) {
+        this.authorisations = authorisations;
     }
 
     @Override
@@ -114,22 +114,22 @@ public class ListAuthorisationsResponse extends SdkResponse {
             return false;
         }
         ListAuthorisationsResponse that = (ListAuthorisationsResponse) obj;
-        return Objects.equals(this.authorisations, that.authorisations) && Objects.equals(this.pageInfo, that.pageInfo)
-            && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.authorisations, that.authorisations);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorisations, pageInfo, requestId);
+        return Objects.hash(requestId, pageInfo, authorisations);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAuthorisationsResponse {\n");
-        sb.append("    authorisations: ").append(toIndentedString(authorisations)).append("\n");
-        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    authorisations: ").append(toIndentedString(authorisations)).append("\n");
         sb.append("}");
         return sb.toString();
     }

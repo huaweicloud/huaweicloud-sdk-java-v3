@@ -49,7 +49,8 @@ public class EnvRegionProvider implements IRegionProvider {
             return null;
         }
 
-        region = new Region(regionId, endpoint);
+        String[] endpoints = endpoint.split(",");
+        region = new Region(regionId, endpoints);
         EnvRegionCache.getInstance().value.put(serviceName + regionId, region);
         return region;
     }

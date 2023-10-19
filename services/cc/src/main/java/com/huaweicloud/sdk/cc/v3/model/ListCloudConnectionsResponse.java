@@ -15,9 +15,9 @@ import java.util.function.Consumer;
 public class ListCloudConnectionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_connections")
+    @JsonProperty(value = "request_id")
 
-    private List<CloudConnection> cloudConnections = null;
+    private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
@@ -25,9 +25,52 @@ public class ListCloudConnectionsResponse extends SdkResponse {
     private PageInfo pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    @JsonProperty(value = "cloud_connections")
 
-    private String requestId;
+    private List<CloudConnection> cloudConnections = null;
+
+    public ListCloudConnectionsResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public ListCloudConnectionsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListCloudConnectionsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
 
     public ListCloudConnectionsResponse withCloudConnections(List<CloudConnection> cloudConnections) {
         this.cloudConnections = cloudConnections;
@@ -62,49 +105,6 @@ public class ListCloudConnectionsResponse extends SdkResponse {
         this.cloudConnections = cloudConnections;
     }
 
-    public ListCloudConnectionsResponse withPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-        return this;
-    }
-
-    public ListCloudConnectionsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
-        if (this.pageInfo == null) {
-            this.pageInfo = new PageInfo();
-            pageInfoSetter.accept(this.pageInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get pageInfo
-     * @return pageInfo
-     */
-    public PageInfo getPageInfo() {
-        return pageInfo;
-    }
-
-    public void setPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-    }
-
-    public ListCloudConnectionsResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -114,22 +114,22 @@ public class ListCloudConnectionsResponse extends SdkResponse {
             return false;
         }
         ListCloudConnectionsResponse that = (ListCloudConnectionsResponse) obj;
-        return Objects.equals(this.cloudConnections, that.cloudConnections)
-            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.cloudConnections, that.cloudConnections);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudConnections, pageInfo, requestId);
+        return Objects.hash(requestId, pageInfo, cloudConnections);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCloudConnectionsResponse {\n");
-        sb.append("    cloudConnections: ").append(toIndentedString(cloudConnections)).append("\n");
-        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    cloudConnections: ").append(toIndentedString(cloudConnections)).append("\n");
         sb.append("}");
         return sb.toString();
     }

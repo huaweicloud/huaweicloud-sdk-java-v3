@@ -31,6 +31,26 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     private Integer hitTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_region_id")
+
+    private String srcRegionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_region_name")
+
+    private String srcRegionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_region_id")
+
+    private String dstRegionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_region_name")
+
+    private String dstRegionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_id")
 
     private String logId;
@@ -64,6 +84,11 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     @JsonProperty(value = "app")
 
     private String app;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_host")
+
+    private String dstHost;
 
     public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withAction(String action) {
         this.action = action;
@@ -131,6 +156,74 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
 
     public void setHitTime(Integer hitTime) {
         this.hitTime = hitTime;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withSrcRegionId(String srcRegionId) {
+        this.srcRegionId = srcRegionId;
+        return this;
+    }
+
+    /**
+     * 源区域id
+     * @return srcRegionId
+     */
+    public String getSrcRegionId() {
+        return srcRegionId;
+    }
+
+    public void setSrcRegionId(String srcRegionId) {
+        this.srcRegionId = srcRegionId;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+        return this;
+    }
+
+    /**
+     * 源区域name
+     * @return srcRegionName
+     */
+    public String getSrcRegionName() {
+        return srcRegionName;
+    }
+
+    public void setSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withDstRegionId(String dstRegionId) {
+        this.dstRegionId = dstRegionId;
+        return this;
+    }
+
+    /**
+     * 目的区域id
+     * @return dstRegionId
+     */
+    public String getDstRegionId() {
+        return dstRegionId;
+    }
+
+    public void setDstRegionId(String dstRegionId) {
+        this.dstRegionId = dstRegionId;
+    }
+
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+        return this;
+    }
+
+    /**
+     * 目的区域name
+     * @return dstRegionName
+     */
+    public String getDstRegionName() {
+        return dstRegionName;
+    }
+
+    public void setDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
     }
 
     public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withLogId(String logId) {
@@ -252,6 +345,23 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
         this.app = app;
     }
 
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withDstHost(String dstHost) {
+        this.dstHost = dstHost;
+        return this;
+    }
+
+    /**
+     * 目标主机
+     * @return dstHost
+     */
+    public String getDstHost() {
+        return dstHost;
+    }
+
+    public void setDstHost(String dstHost) {
+        this.dstHost = dstHost;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -264,15 +374,34 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
             (HttpQueryCfwAccessControllerLogsResponseDTODataRecords) obj;
         return Objects.equals(this.action, that.action) && Objects.equals(this.ruleName, that.ruleName)
             && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.hitTime, that.hitTime)
-            && Objects.equals(this.logId, that.logId) && Objects.equals(this.srcIp, that.srcIp)
-            && Objects.equals(this.srcPort, that.srcPort) && Objects.equals(this.dstIp, that.dstIp)
-            && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.app, that.app);
+            && Objects.equals(this.srcRegionId, that.srcRegionId)
+            && Objects.equals(this.srcRegionName, that.srcRegionName)
+            && Objects.equals(this.dstRegionId, that.dstRegionId)
+            && Objects.equals(this.dstRegionName, that.dstRegionName) && Objects.equals(this.logId, that.logId)
+            && Objects.equals(this.srcIp, that.srcIp) && Objects.equals(this.srcPort, that.srcPort)
+            && Objects.equals(this.dstIp, that.dstIp) && Objects.equals(this.dstPort, that.dstPort)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.dstHost, that.dstHost);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, ruleName, ruleId, hitTime, logId, srcIp, srcPort, dstIp, dstPort, protocol, app);
+        return Objects.hash(action,
+            ruleName,
+            ruleId,
+            hitTime,
+            srcRegionId,
+            srcRegionName,
+            dstRegionId,
+            dstRegionName,
+            logId,
+            srcIp,
+            srcPort,
+            dstIp,
+            dstPort,
+            protocol,
+            app,
+            dstHost);
     }
 
     @Override
@@ -283,6 +412,10 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
         sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    hitTime: ").append(toIndentedString(hitTime)).append("\n");
+        sb.append("    srcRegionId: ").append(toIndentedString(srcRegionId)).append("\n");
+        sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
+        sb.append("    dstRegionId: ").append(toIndentedString(dstRegionId)).append("\n");
+        sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
         sb.append("    logId: ").append(toIndentedString(logId)).append("\n");
         sb.append("    srcIp: ").append(toIndentedString(srcIp)).append("\n");
         sb.append("    srcPort: ").append(toIndentedString(srcPort)).append("\n");
@@ -290,6 +423,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
         sb.append("    dstPort: ").append(toIndentedString(dstPort)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
+        sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
         sb.append("}");
         return sb.toString();
     }

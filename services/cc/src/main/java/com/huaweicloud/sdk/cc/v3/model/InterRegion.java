@@ -36,7 +36,7 @@ public class InterRegion {
     }
 
     /**
-     * 域间实例的ID。
+     * 资源ID标识符。
      * @return id
      */
     public String getId() {
@@ -53,7 +53,7 @@ public class InterRegion {
     }
 
     /**
-     * 域间实例本段的项目ID。
+     * 实例所属项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -70,7 +70,7 @@ public class InterRegion {
     }
 
     /**
-     * 域间实例本段的RegionID。
+     * 域间实例本端的RegionID。
      * @return localRegionId
      */
     public String getLocalRegionId() {
@@ -87,7 +87,7 @@ public class InterRegion {
     }
 
     /**
-     * 域间实例对段的RegionID。
+     * 域间实例对端的RegionID。
      * @return remoteRegionId
      */
     public String getRemoteRegionId() {

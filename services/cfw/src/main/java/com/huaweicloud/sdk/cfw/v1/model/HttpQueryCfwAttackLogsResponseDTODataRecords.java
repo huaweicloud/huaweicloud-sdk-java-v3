@@ -183,6 +183,31 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
 
     private List<PacketMessage> packetMessages = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_host")
+
+    private String dstHost;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_region_id")
+
+    private String srcRegionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_region_name")
+
+    private String srcRegionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_region_id")
+
+    private String dstRegionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_region_name")
+
+    private String dstRegionName;
+
     public HttpQueryCfwAttackLogsResponseDTODataRecords withDirection(DirectionEnum direction) {
         this.direction = direction;
         return this;
@@ -536,6 +561,91 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         this.packetMessages = packetMessages;
     }
 
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withDstHost(String dstHost) {
+        this.dstHost = dstHost;
+        return this;
+    }
+
+    /**
+     * 目标主机
+     * @return dstHost
+     */
+    public String getDstHost() {
+        return dstHost;
+    }
+
+    public void setDstHost(String dstHost) {
+        this.dstHost = dstHost;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withSrcRegionId(String srcRegionId) {
+        this.srcRegionId = srcRegionId;
+        return this;
+    }
+
+    /**
+     * 源区域id
+     * @return srcRegionId
+     */
+    public String getSrcRegionId() {
+        return srcRegionId;
+    }
+
+    public void setSrcRegionId(String srcRegionId) {
+        this.srcRegionId = srcRegionId;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+        return this;
+    }
+
+    /**
+     * 源区域名称
+     * @return srcRegionName
+     */
+    public String getSrcRegionName() {
+        return srcRegionName;
+    }
+
+    public void setSrcRegionName(String srcRegionName) {
+        this.srcRegionName = srcRegionName;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withDstRegionId(String dstRegionId) {
+        this.dstRegionId = dstRegionId;
+        return this;
+    }
+
+    /**
+     * 目的区域id
+     * @return dstRegionId
+     */
+    public String getDstRegionId() {
+        return dstRegionId;
+    }
+
+    public void setDstRegionId(String dstRegionId) {
+        this.dstRegionId = dstRegionId;
+    }
+
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+        return this;
+    }
+
+    /**
+     * 目的区域名称
+     * @return dstRegionName
+     */
+    public String getDstRegionName() {
+        return dstRegionName;
+    }
+
+    public void setDstRegionName(String dstRegionName) {
+        this.dstRegionName = dstRegionName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -554,7 +664,11 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
             && Objects.equals(this.srcPort, that.srcPort) && Objects.equals(this.dstIp, that.dstIp)
             && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.packet, that.packet) && Objects.equals(this.app, that.app)
-            && Objects.equals(this.packetMessages, that.packetMessages);
+            && Objects.equals(this.packetMessages, that.packetMessages) && Objects.equals(this.dstHost, that.dstHost)
+            && Objects.equals(this.srcRegionId, that.srcRegionId)
+            && Objects.equals(this.srcRegionName, that.srcRegionName)
+            && Objects.equals(this.dstRegionId, that.dstRegionId)
+            && Objects.equals(this.dstRegionName, that.dstRegionName);
     }
 
     @Override
@@ -577,7 +691,12 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
             protocol,
             packet,
             app,
-            packetMessages);
+            packetMessages,
+            dstHost,
+            srcRegionId,
+            srcRegionName,
+            dstRegionId,
+            dstRegionName);
     }
 
     @Override
@@ -603,6 +722,11 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         sb.append("    packet: ").append(toIndentedString(packet)).append("\n");
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    packetMessages: ").append(toIndentedString(packetMessages)).append("\n");
+        sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
+        sb.append("    srcRegionId: ").append(toIndentedString(srcRegionId)).append("\n");
+        sb.append("    srcRegionName: ").append(toIndentedString(srcRegionName)).append("\n");
+        sb.append("    dstRegionId: ").append(toIndentedString(dstRegionId)).append("\n");
+        sb.append("    dstRegionName: ").append(toIndentedString(dstRegionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

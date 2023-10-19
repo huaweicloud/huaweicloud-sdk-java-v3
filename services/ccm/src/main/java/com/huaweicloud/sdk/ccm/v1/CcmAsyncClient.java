@@ -18,6 +18,8 @@ import com.huaweicloud.sdk.ccm.v1.model.CreateCertTagRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertTagResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityObsAgencyRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityObsAgencyResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityOrderRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityOrderResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateByCsrRequest;
@@ -404,6 +406,37 @@ public class CcmAsyncClient {
     }
 
     /**
+     * 购买CA
+     *
+     * 购买CA。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateAuthorityOrderRequest 请求对象
+     * @return CompletableFuture<CreateCertificateAuthorityOrderResponse>
+     */
+    public CompletableFuture<CreateCertificateAuthorityOrderResponse> createCertificateAuthorityOrderAsync(
+        CreateCertificateAuthorityOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcmMeta.createCertificateAuthorityOrder);
+    }
+
+    /**
+     * 购买CA
+     *
+     * 购买CA。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateAuthorityOrderRequest 请求对象
+     * @return AsyncInvoker<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse>
+     */
+    public AsyncInvoker<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse> createCertificateAuthorityOrderAsyncInvoker(
+        CreateCertificateAuthorityOrderRequest request) {
+        return new AsyncInvoker<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse>(
+            request, CcmMeta.createCertificateAuthorityOrder, hcClient);
+    }
+
+    /**
      * 通过CSR签发证书
      *
      * 通过CSR签发证书。功能约束如下：
@@ -597,10 +630,10 @@ public class CcmAsyncClient {
      *       - is_compressed为true、is_sm_standard为true时，返回文件压缩包，命名为：证书名称_type字段小写字母.zip，如”test_apache.zip“。
      *         - 系统生成密钥签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；
-     *           - type &#x3D; \&quot;**OTHER**\&quot;时，压缩包中包含五个文件：**chain.pem**（证书链，内容为PEM格式）、**signCert.key**（签名证书密钥文件，内容为PEM格式，若导出证书时设置密码，则为加密后的私钥）、**signCert.pem**（签名证书，内容为PEM格式）、**encSm2EnvelopedKey.key**（加密证书的国密标准SM2数字信封文件，内容为BASE64编码）、**encCert.pem**（加密证书，内容为PEM格式）。
+     *           - type &#x3D; \&quot;**OTHER**\&quot;时，压缩包中包含六个文件：**chain.pem**（证书链，内容为PEM格式）、**signCert.key**（签名证书密钥文件，内容为PEM格式，若导出证书时设置密码，则为加密后的私钥）、**signCert.pem**（签名证书，内容为PEM格式）、**encSm2EnvelopedKey.key**（加密证书的国密GMT0009标准规范数字信封文件，内容为BASE64编码）、**signedAndEnvelopedData.key**（加密证书的国密GMT0010标准规范数字信封文件，内容为BASE64编码）、**encCert.pem**（加密证书，内容为PEM格式）。
      *         - 导入CSR签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；
-     *           - type &#x3D; \&quot;**OTHER**\&quot;时，压缩包中包含四个文件：**chain.pem**（证书链，内容为PEM格式）、**signCert.pem**（签名证书，内容为PEM格式）、**encSm2EnvelopedKey.key**（加密证书的国密标准SM2数字信封文件，内容为BASE64编码）、**encCert.pem**（加密证书，内容为PEM格式）。
+     *           - type &#x3D; \&quot;**OTHER**\&quot;时，压缩包中包含五个文件：**chain.pem**（证书链，内容为PEM格式）、**signCert.pem**（签名证书，内容为PEM格式）、**encSm2EnvelopedKey.key**（加密证书的国密GMT0009标准规范数字信封文件，内容为BASE64编码）、**signedAndEnvelopedData.key**（加密证书的国密GMT0010标准规范数字信封文件，内容为BASE64编码）、**encCert.pem**（加密证书，内容为PEM格式）。
      *       - is_compressed为true、is_sm_standard为false时，返回文件压缩包，命名为：证书名称_type字段小写字母.zip，如”test_apache.zip“。
      *         - 系统生成密钥签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；
@@ -616,14 +649,16 @@ public class CcmAsyncClient {
      *             - **certificate**（签名证书内容，PEM格式）；
      *             - **private_key**（签名证书私钥，PEM格式，若导出证书时设置密码，则为加密后的私钥）；
      *             - **enc_certificate**（加密证书内容，PEM格式）；
-     *             - **enc_sm2_enveloped_key**（加密证书的国密GMT0009标准规范SM2数字信封文件，BASE64编码）。
+     *             - **enc_sm2_enveloped_key**（加密证书的国密GMT0009标准规范数字信封文件，BASE64编码）；
+     *             - **signed_and_enveloped_data**（加密证书的国密GMT0010标准规范数字信封文件，BASE64编码）。
      *         - 导入CSR签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；
      *           - type &#x3D; \&quot;**OTHER**\&quot;时，返回参数如下：
      *             - **certificate_chain**（证书链，PEM格式）；
      *             - **certificate**（签名证书内容，PEM格式）；
      *             - **enc_certificate**（加密证书内容，PEM格式）；
-     *             - **enc_sm2_enveloped_key**（加密证书的国密GMT0009标准规范SM2数字信封文件，BASE64编码）。
+     *             - **enc_sm2_enveloped_key**（加密证书的国密GMT0009标准规范数字信封文件，BASE64编码）；
+     *             - **signed_and_enveloped_data**（加密证书的国密GMT0010标准规范数字信封文件，BASE64编码）。
      *       - is_compressed为false、is_sm_standard为false时，返回json格式，返回的具体参数如下：
      *         - 系统生成密钥签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；
@@ -684,10 +719,10 @@ public class CcmAsyncClient {
      *       - is_compressed为true、is_sm_standard为true时，返回文件压缩包，命名为：证书名称_type字段小写字母.zip，如”test_apache.zip“。
      *         - 系统生成密钥签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；
-     *           - type &#x3D; \&quot;**OTHER**\&quot;时，压缩包中包含五个文件：**chain.pem**（证书链，内容为PEM格式）、**signCert.key**（签名证书密钥文件，内容为PEM格式，若导出证书时设置密码，则为加密后的私钥）、**signCert.pem**（签名证书，内容为PEM格式）、**encSm2EnvelopedKey.key**（加密证书的国密标准SM2数字信封文件，内容为BASE64编码）、**encCert.pem**（加密证书，内容为PEM格式）。
+     *           - type &#x3D; \&quot;**OTHER**\&quot;时，压缩包中包含六个文件：**chain.pem**（证书链，内容为PEM格式）、**signCert.key**（签名证书密钥文件，内容为PEM格式，若导出证书时设置密码，则为加密后的私钥）、**signCert.pem**（签名证书，内容为PEM格式）、**encSm2EnvelopedKey.key**（加密证书的国密GMT0009标准规范数字信封文件，内容为BASE64编码）、**signedAndEnvelopedData.key**（加密证书的国密GMT0010标准规范数字信封文件，内容为BASE64编码）、**encCert.pem**（加密证书，内容为PEM格式）。
      *         - 导入CSR签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；
-     *           - type &#x3D; \&quot;**OTHER**\&quot;时，压缩包中包含四个文件：**chain.pem**（证书链，内容为PEM格式）、**signCert.pem**（签名证书，内容为PEM格式）、**encSm2EnvelopedKey.key**（加密证书的国密标准SM2数字信封文件，内容为BASE64编码）、**encCert.pem**（加密证书，内容为PEM格式）。
+     *           - type &#x3D; \&quot;**OTHER**\&quot;时，压缩包中包含五个文件：**chain.pem**（证书链，内容为PEM格式）、**signCert.pem**（签名证书，内容为PEM格式）、**encSm2EnvelopedKey.key**（加密证书的国密GMT0009标准规范数字信封文件，内容为BASE64编码）、**signedAndEnvelopedData.key**（加密证书的国密GMT0010标准规范数字信封文件，内容为BASE64编码）、**encCert.pem**（加密证书，内容为PEM格式）。
      *       - is_compressed为true、is_sm_standard为false时，返回文件压缩包，命名为：证书名称_type字段小写字母.zip，如”test_apache.zip“。
      *         - 系统生成密钥签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；
@@ -703,14 +738,16 @@ public class CcmAsyncClient {
      *             - **certificate**（签名证书内容，PEM格式）；
      *             - **private_key**（签名证书私钥，PEM格式，若导出证书时设置密码，则为加密后的私钥）；
      *             - **enc_certificate**（加密证书内容，PEM格式）；
-     *             - **enc_sm2_enveloped_key**（加密证书的国密GMT0009标准规范SM2数字信封文件，BASE64编码）。
+     *             - **enc_sm2_enveloped_key**（加密证书的国密GMT0009标准规范数字信封文件，BASE64编码）；
+     *             - **signed_and_enveloped_data**（加密证书的国密GMT0010标准规范数字信封文件，BASE64编码）。
      *         - 导入CSR签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；
      *           - type &#x3D; \&quot;**OTHER**\&quot;时，返回参数如下：
      *             - **certificate_chain**（证书链，PEM格式）；
      *             - **certificate**（签名证书内容，PEM格式）；
      *             - **enc_certificate**（加密证书内容，PEM格式）；
-     *             - **enc_sm2_enveloped_key**（加密证书的国密GMT0009标准规范SM2数字信封文件，BASE64编码）。
+     *             - **enc_sm2_enveloped_key**（加密证书的国密GMT0009标准规范数字信封文件，BASE64编码）；
+     *             - **signed_and_enveloped_data**（加密证书的国密GMT0010标准规范数字信封文件，BASE64编码）。
      *       - is_compressed为false、is_sm_standard为false时，返回json格式，返回的具体参数如下：
      *         - 系统生成密钥签发证书
      *           - type &#x3D; \&quot;**APACHE**\&quot;或\&quot;**IIS**\&quot;或\&quot;**NGINX**\&quot;或\&quot;**TOMCAT**\&quot;时，暂时未定义；

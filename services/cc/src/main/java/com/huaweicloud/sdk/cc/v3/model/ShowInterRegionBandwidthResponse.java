@@ -13,14 +13,31 @@ import java.util.function.Consumer;
 public class ShowInterRegionBandwidthResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inter_region_bandwidth")
 
     private InterRegionBandwidth interRegionBandwidth;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    public ShowInterRegionBandwidthResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
 
-    private String requestId;
+    /**
+     * 资源ID标识符。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public ShowInterRegionBandwidthResponse withInterRegionBandwidth(InterRegionBandwidth interRegionBandwidth) {
         this.interRegionBandwidth = interRegionBandwidth;
@@ -49,23 +66,6 @@ public class ShowInterRegionBandwidthResponse extends SdkResponse {
         this.interRegionBandwidth = interRegionBandwidth;
     }
 
-    public ShowInterRegionBandwidthResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -75,21 +75,21 @@ public class ShowInterRegionBandwidthResponse extends SdkResponse {
             return false;
         }
         ShowInterRegionBandwidthResponse that = (ShowInterRegionBandwidthResponse) obj;
-        return Objects.equals(this.interRegionBandwidth, that.interRegionBandwidth)
-            && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.interRegionBandwidth, that.interRegionBandwidth);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(interRegionBandwidth, requestId);
+        return Objects.hash(requestId, interRegionBandwidth);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInterRegionBandwidthResponse {\n");
-        sb.append("    interRegionBandwidth: ").append(toIndentedString(interRegionBandwidth)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    interRegionBandwidth: ").append(toIndentedString(interRegionBandwidth)).append("\n");
         sb.append("}");
         return sb.toString();
     }

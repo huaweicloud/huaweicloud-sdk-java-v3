@@ -15,9 +15,9 @@ import java.util.function.Consumer;
 public class ListNetworkInstancesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "network_instances")
+    @JsonProperty(value = "request_id")
 
-    private List<NetworkInstance> networkInstances = null;
+    private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
@@ -25,9 +25,52 @@ public class ListNetworkInstancesResponse extends SdkResponse {
     private PageInfo pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    @JsonProperty(value = "network_instances")
 
-    private String requestId;
+    private List<NetworkInstance> networkInstances = null;
+
+    public ListNetworkInstancesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public ListNetworkInstancesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListNetworkInstancesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
 
     public ListNetworkInstancesResponse withNetworkInstances(List<NetworkInstance> networkInstances) {
         this.networkInstances = networkInstances;
@@ -62,49 +105,6 @@ public class ListNetworkInstancesResponse extends SdkResponse {
         this.networkInstances = networkInstances;
     }
 
-    public ListNetworkInstancesResponse withPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-        return this;
-    }
-
-    public ListNetworkInstancesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
-        if (this.pageInfo == null) {
-            this.pageInfo = new PageInfo();
-            pageInfoSetter.accept(this.pageInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get pageInfo
-     * @return pageInfo
-     */
-    public PageInfo getPageInfo() {
-        return pageInfo;
-    }
-
-    public void setPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-    }
-
-    public ListNetworkInstancesResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -114,22 +114,22 @@ public class ListNetworkInstancesResponse extends SdkResponse {
             return false;
         }
         ListNetworkInstancesResponse that = (ListNetworkInstancesResponse) obj;
-        return Objects.equals(this.networkInstances, that.networkInstances)
-            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.networkInstances, that.networkInstances);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(networkInstances, pageInfo, requestId);
+        return Objects.hash(requestId, pageInfo, networkInstances);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNetworkInstancesResponse {\n");
-        sb.append("    networkInstances: ").append(toIndentedString(networkInstances)).append("\n");
-        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    networkInstances: ").append(toIndentedString(networkInstances)).append("\n");
         sb.append("}");
         return sb.toString();
     }

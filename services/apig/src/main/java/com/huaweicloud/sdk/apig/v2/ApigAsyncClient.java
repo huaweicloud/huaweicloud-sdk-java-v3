@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.apig.v2.model.AddIngressEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddIngressEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.AddingBackendInstancesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddingBackendInstancesV2Response;
+import com.huaweicloud.sdk.apig.v2.model.AssociateAppsForAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.AssociateAppsForAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.AssociateCertificateV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AssociateCertificateV2Response;
 import com.huaweicloud.sdk.apig.v2.model.AssociateDomainV2Request;
@@ -50,6 +52,8 @@ import com.huaweicloud.sdk.apig.v2.model.CancelingAuthorizationV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CancelingAuthorizationV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CheckApisV2Request;
+import com.huaweicloud.sdk.apig.v2.model.CheckApisV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CheckAppV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CheckAppV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CreateAclStrategyV2Request;
@@ -66,6 +70,8 @@ import com.huaweicloud.sdk.apig.v2.model.CreateAppCodeAutoV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateAppCodeAutoV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CreateAppCodeV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateAppCodeV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CreateAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreateAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateAuthorizingAppsV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateAuthorizingAppsV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CreateCertificateV2Request;
@@ -86,8 +92,14 @@ import com.huaweicloud.sdk.apig.v2.model.CreateMemberGroupRequest;
 import com.huaweicloud.sdk.apig.v2.model.CreateMemberGroupResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrDeletePublishRecordForApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateOrDeletePublishRecordForApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CreateOrderRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreateOrderResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreatePluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.CreatePluginResponse;
+import com.huaweicloud.sdk.apig.v2.model.CreatePostPayResizeOrderRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreatePostPayResizeOrderResponse;
+import com.huaweicloud.sdk.apig.v2.model.CreatePrepayResizeRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreatePrepayResizeResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateRequestThrottlingPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateRequestThrottlingPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CreateSignatureKeyV2Request;
@@ -108,8 +120,12 @@ import com.huaweicloud.sdk.apig.v2.model.DeleteApiGroupV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteApiGroupV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAppAclRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAppAclResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAppCodeV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAppCodeV2Response;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAppV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAppV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteBackendInstanceV2Request;
@@ -146,6 +162,8 @@ import com.huaweicloud.sdk.apig.v2.model.DetachApiFromPluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.DetachApiFromPluginResponse;
 import com.huaweicloud.sdk.apig.v2.model.DetachPluginFromApiRequest;
 import com.huaweicloud.sdk.apig.v2.model.DetachPluginFromApiResponse;
+import com.huaweicloud.sdk.apig.v2.model.DisassociateAppQuotaWithAppRequest;
+import com.huaweicloud.sdk.apig.v2.model.DisassociateAppQuotaWithAppResponse;
 import com.huaweicloud.sdk.apig.v2.model.DisassociateCertificateV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DisassociateCertificateV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DisassociateDomainV2Request;
@@ -202,6 +220,12 @@ import com.huaweicloud.sdk.apig.v2.model.ListAppCodesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListAppCodesV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListAppQuantitiesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListAppQuantitiesV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotaBindableAppsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotaBindableAppsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotaBoundAppsRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotaBoundAppsResponse;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotasRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListAppQuotasResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListAppsBindedToApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListAppsBindedToApiV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListAppsV2Request;
@@ -274,12 +298,18 @@ import com.huaweicloud.sdk.apig.v2.model.RemoveIngressEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.RemoveIngressEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ResettingAppSecretV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ResettingAppSecretV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ShowAppBoundAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowAppBoundAppQuotaResponse;
+import com.huaweicloud.sdk.apig.v2.model.ShowAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiGroupV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiGroupV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppAclRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppAclResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppCodeV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppCodeV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAppV2Request;
@@ -308,12 +338,18 @@ import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfVpcChannelV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfVpcChannelV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowPluginRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowPluginResponse;
+import com.huaweicloud.sdk.apig.v2.model.ShowRestrictionOfInstanceV2Request;
+import com.huaweicloud.sdk.apig.v2.model.ShowRestrictionOfInstanceV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateAclStrategyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateAclStrategyV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateApiGroupV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateApiGroupV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateApiV2Response;
+import com.huaweicloud.sdk.apig.v2.model.UpdateAppAclRequest;
+import com.huaweicloud.sdk.apig.v2.model.UpdateAppAclResponse;
+import com.huaweicloud.sdk.apig.v2.model.UpdateAppQuotaRequest;
+import com.huaweicloud.sdk.apig.v2.model.UpdateAppQuotaResponse;
 import com.huaweicloud.sdk.apig.v2.model.UpdateAppV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateAppV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateBackendInstancesV2Request;
@@ -328,6 +364,8 @@ import com.huaweicloud.sdk.apig.v2.model.UpdateEngressEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateEngressEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateEnvironmentV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateEnvironmentV2Response;
+import com.huaweicloud.sdk.apig.v2.model.UpdateEnvironmentVariableV2Request;
+import com.huaweicloud.sdk.apig.v2.model.UpdateEnvironmentVariableV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateGatewayResponseTypeV2Request;
 import com.huaweicloud.sdk.apig.v2.model.UpdateGatewayResponseTypeV2Response;
 import com.huaweicloud.sdk.apig.v2.model.UpdateGatewayResponseV2Request;
@@ -520,6 +558,37 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 凭据配额绑定凭据列表
+     *
+     * 凭据配额绑定凭据列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateAppsForAppQuotaRequest 请求对象
+     * @return CompletableFuture<AssociateAppsForAppQuotaResponse>
+     */
+    public CompletableFuture<AssociateAppsForAppQuotaResponse> associateAppsForAppQuotaAsync(
+        AssociateAppsForAppQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.associateAppsForAppQuota);
+    }
+
+    /**
+     * 凭据配额绑定凭据列表
+     *
+     * 凭据配额绑定凭据列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateAppsForAppQuotaRequest 请求对象
+     * @return AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>
+     */
+    public AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse> associateAppsForAppQuotaAsyncInvoker(
+        AssociateAppsForAppQuotaRequest request) {
+        return new AsyncInvoker<AssociateAppsForAppQuotaRequest, AssociateAppsForAppQuotaResponse>(request,
+            ApigMeta.associateAppsForAppQuota, hcClient);
+    }
+
+    /**
      * 绑定域名证书
      *
      * 如果创建API时，“定义API请求”使用HTTPS请求协议，那么在独立域名中需要添加SSL证书。
@@ -636,7 +705,7 @@ public class ApigAsyncClient {
      * - 只能选择发布状态的API
      * - 绑定以后及时生效
      * - 修改插件后及时生效
-     * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
+     * - 相同类型的插件只能绑定一个，如果再次绑定同类型的插件，那么已绑定的同类型插件将直接被覆盖。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -654,7 +723,7 @@ public class ApigAsyncClient {
      * - 只能选择发布状态的API
      * - 绑定以后及时生效
      * - 修改插件后及时生效
-     * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
+     * - 相同类型的插件只能绑定一个，如果再次绑定同类型的插件，那么已绑定的同类型插件将直接被覆盖。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -674,7 +743,7 @@ public class ApigAsyncClient {
      * - 只能选择发布状态的API
      * - 绑定以后及时生效
      * - 修改插件后及时生效
-     * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
+     * - 相同类型的插件只能绑定一个，如果再次绑定同类型的插件，那么已绑定的同类型插件将直接被覆盖。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -692,7 +761,7 @@ public class ApigAsyncClient {
      * - 只能选择发布状态的API
      * - 绑定以后及时生效
      * - 修改插件后及时生效
-     * - 相同类型的插件只能绑定一个，原来已经绑定的通类型插件，会直接覆盖。
+     * - 相同类型的插件只能绑定一个，如果再次绑定同类型的插件，那么已绑定的同类型插件将直接被覆盖。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -734,6 +803,157 @@ public class ApigAsyncClient {
         BatchCreateOrDeleteInstanceTagsRequest request) {
         return new AsyncInvoker<BatchCreateOrDeleteInstanceTagsRequest, BatchCreateOrDeleteInstanceTagsResponse>(
             request, ApigMeta.batchCreateOrDeleteInstanceTags, hcClient);
+    }
+
+    /**
+     * 校验APP
+     *
+     * 校验app是否存在，非APP所有者可以调用该接口校验APP是否真实存在。这个接口只展示app的基本信息id 、name、
+     * remark，其他信息不显示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckAppV2Request 请求对象
+     * @return CompletableFuture<CheckAppV2Response>
+     */
+    public CompletableFuture<CheckAppV2Response> checkAppV2Async(CheckAppV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.checkAppV2);
+    }
+
+    /**
+     * 校验APP
+     *
+     * 校验app是否存在，非APP所有者可以调用该接口校验APP是否真实存在。这个接口只展示app的基本信息id 、name、
+     * remark，其他信息不显示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckAppV2Request 请求对象
+     * @return AsyncInvoker<CheckAppV2Request, CheckAppV2Response>
+     */
+    public AsyncInvoker<CheckAppV2Request, CheckAppV2Response> checkAppV2AsyncInvoker(CheckAppV2Request request) {
+        return new AsyncInvoker<CheckAppV2Request, CheckAppV2Response>(request, ApigMeta.checkAppV2, hcClient);
+    }
+
+    /**
+     * 创建APP
+     *
+     * APP即应用，是一个可以访问API的身份标识。将API授权给APP后，APP即可调用API。
+     * 创建一个APP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAnAppV2Request 请求对象
+     * @return CompletableFuture<CreateAnAppV2Response>
+     */
+    public CompletableFuture<CreateAnAppV2Response> createAnAppV2Async(CreateAnAppV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createAnAppV2);
+    }
+
+    /**
+     * 创建APP
+     *
+     * APP即应用，是一个可以访问API的身份标识。将API授权给APP后，APP即可调用API。
+     * 创建一个APP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAnAppV2Request 请求对象
+     * @return AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>
+     */
+    public AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response> createAnAppV2AsyncInvoker(
+        CreateAnAppV2Request request) {
+        return new AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>(request, ApigMeta.createAnAppV2, hcClient);
+    }
+
+    /**
+     * 自动生成APP Code
+     *
+     * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAppCodeAutoV2Request 请求对象
+     * @return CompletableFuture<CreateAppCodeAutoV2Response>
+     */
+    public CompletableFuture<CreateAppCodeAutoV2Response> createAppCodeAutoV2Async(CreateAppCodeAutoV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createAppCodeAutoV2);
+    }
+
+    /**
+     * 自动生成APP Code
+     *
+     * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAppCodeAutoV2Request 请求对象
+     * @return AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>
+     */
+    public AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2AsyncInvoker(
+        CreateAppCodeAutoV2Request request) {
+        return new AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>(request,
+            ApigMeta.createAppCodeAutoV2, hcClient);
+    }
+
+    /**
+     * 创建APP Code
+     *
+     * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAppCodeV2Request 请求对象
+     * @return CompletableFuture<CreateAppCodeV2Response>
+     */
+    public CompletableFuture<CreateAppCodeV2Response> createAppCodeV2Async(CreateAppCodeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createAppCodeV2);
+    }
+
+    /**
+     * 创建APP Code
+     *
+     * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAppCodeV2Request 请求对象
+     * @return AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>
+     */
+    public AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2AsyncInvoker(
+        CreateAppCodeV2Request request) {
+        return new AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>(request, ApigMeta.createAppCodeV2,
+            hcClient);
+    }
+
+    /**
+     * 创建凭据配额
+     *
+     * 创建凭据配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAppQuotaRequest 请求对象
+     * @return CompletableFuture<CreateAppQuotaResponse>
+     */
+    public CompletableFuture<CreateAppQuotaResponse> createAppQuotaAsync(CreateAppQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createAppQuota);
+    }
+
+    /**
+     * 创建凭据配额
+     *
+     * 创建凭据配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAppQuotaRequest 请求对象
+     * @return AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>
+     */
+    public AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse> createAppQuotaAsyncInvoker(
+        CreateAppQuotaRequest request) {
+        return new AsyncInvoker<CreateAppQuotaRequest, CreateAppQuotaResponse>(request, ApigMeta.createAppQuota,
+            hcClient);
     }
 
     /**
@@ -928,9 +1148,9 @@ public class ApigAsyncClient {
     }
 
     /**
-     * 创建专享版实例
+     * 创建专享版实例（按需）
      *
-     * 创建专享版实例
+     * 创建按需专享版实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -942,9 +1162,9 @@ public class ApigAsyncClient {
     }
 
     /**
-     * 创建专享版实例
+     * 创建专享版实例（按需）
      *
-     * 创建专享版实例
+     * 创建按需专享版实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -955,6 +1175,34 @@ public class ApigAsyncClient {
         CreateInstanceV2Request request) {
         return new AsyncInvoker<CreateInstanceV2Request, CreateInstanceV2Response>(request, ApigMeta.createInstanceV2,
             hcClient);
+    }
+
+    /**
+     * 创建专享版实例（包周期）
+     *
+     * 创建包周期专享版实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOrderRequest 请求对象
+     * @return CompletableFuture<CreateOrderResponse>
+     */
+    public CompletableFuture<CreateOrderResponse> createOrderAsync(CreateOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createOrder);
+    }
+
+    /**
+     * 创建专享版实例（包周期）
+     *
+     * 创建包周期专享版实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOrderRequest 请求对象
+     * @return AsyncInvoker<CreateOrderRequest, CreateOrderResponse>
+     */
+    public AsyncInvoker<CreateOrderRequest, CreateOrderResponse> createOrderAsyncInvoker(CreateOrderRequest request) {
+        return new AsyncInvoker<CreateOrderRequest, CreateOrderResponse>(request, ApigMeta.createOrder, hcClient);
     }
 
     /**
@@ -988,6 +1236,67 @@ public class ApigAsyncClient {
     public AsyncInvoker<CreatePluginRequest, CreatePluginResponse> createPluginAsyncInvoker(
         CreatePluginRequest request) {
         return new AsyncInvoker<CreatePluginRequest, CreatePluginResponse>(request, ApigMeta.createPlugin, hcClient);
+    }
+
+    /**
+     * 按需规格变更
+     *
+     * 创建按需规格变更订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePostPayResizeOrderRequest 请求对象
+     * @return CompletableFuture<CreatePostPayResizeOrderResponse>
+     */
+    public CompletableFuture<CreatePostPayResizeOrderResponse> createPostPayResizeOrderAsync(
+        CreatePostPayResizeOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createPostPayResizeOrder);
+    }
+
+    /**
+     * 按需规格变更
+     *
+     * 创建按需规格变更订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePostPayResizeOrderRequest 请求对象
+     * @return AsyncInvoker<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse>
+     */
+    public AsyncInvoker<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse> createPostPayResizeOrderAsyncInvoker(
+        CreatePostPayResizeOrderRequest request) {
+        return new AsyncInvoker<CreatePostPayResizeOrderRequest, CreatePostPayResizeOrderResponse>(request,
+            ApigMeta.createPostPayResizeOrder, hcClient);
+    }
+
+    /**
+     * 创建包周期规格变更订单
+     *
+     * 创建包周期规格变更订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePrepayResizeRequest 请求对象
+     * @return CompletableFuture<CreatePrepayResizeResponse>
+     */
+    public CompletableFuture<CreatePrepayResizeResponse> createPrepayResizeAsync(CreatePrepayResizeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.createPrepayResize);
+    }
+
+    /**
+     * 创建包周期规格变更订单
+     *
+     * 创建包周期规格变更订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePrepayResizeRequest 请求对象
+     * @return AsyncInvoker<CreatePrepayResizeRequest, CreatePrepayResizeResponse>
+     */
+    public AsyncInvoker<CreatePrepayResizeRequest, CreatePrepayResizeResponse> createPrepayResizeAsyncInvoker(
+        CreatePrepayResizeRequest request) {
+        return new AsyncInvoker<CreatePrepayResizeRequest, CreatePrepayResizeResponse>(request,
+            ApigMeta.createPrepayResize, hcClient);
     }
 
     /**
@@ -1103,6 +1412,125 @@ public class ApigAsyncClient {
         CreateSpecialThrottlingConfigurationV2Request request) {
         return new AsyncInvoker<CreateSpecialThrottlingConfigurationV2Request, CreateSpecialThrottlingConfigurationV2Response>(
             request, ApigMeta.createSpecialThrottlingConfigurationV2, hcClient);
+    }
+
+    /**
+     * 删除APP的访问控制
+     *
+     * 删除凭据的访问控制信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppAclRequest 请求对象
+     * @return CompletableFuture<DeleteAppAclResponse>
+     */
+    public CompletableFuture<DeleteAppAclResponse> deleteAppAclAsync(DeleteAppAclRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteAppAcl);
+    }
+
+    /**
+     * 删除APP的访问控制
+     *
+     * 删除凭据的访问控制信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppAclRequest 请求对象
+     * @return AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>
+     */
+    public AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse> deleteAppAclAsyncInvoker(
+        DeleteAppAclRequest request) {
+        return new AsyncInvoker<DeleteAppAclRequest, DeleteAppAclResponse>(request, ApigMeta.deleteAppAcl, hcClient);
+    }
+
+    /**
+     * 删除APP Code
+     *
+     * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppCodeV2Request 请求对象
+     * @return CompletableFuture<DeleteAppCodeV2Response>
+     */
+    public CompletableFuture<DeleteAppCodeV2Response> deleteAppCodeV2Async(DeleteAppCodeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteAppCodeV2);
+    }
+
+    /**
+     * 删除APP Code
+     *
+     * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppCodeV2Request 请求对象
+     * @return AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>
+     */
+    public AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2AsyncInvoker(
+        DeleteAppCodeV2Request request) {
+        return new AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>(request, ApigMeta.deleteAppCodeV2,
+            hcClient);
+    }
+
+    /**
+     * 删除凭据配额
+     *
+     * 删除凭据配额。删除凭据配额时，同时删除凭据配额和凭据的关联关系
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppQuotaRequest 请求对象
+     * @return CompletableFuture<DeleteAppQuotaResponse>
+     */
+    public CompletableFuture<DeleteAppQuotaResponse> deleteAppQuotaAsync(DeleteAppQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteAppQuota);
+    }
+
+    /**
+     * 删除凭据配额
+     *
+     * 删除凭据配额。删除凭据配额时，同时删除凭据配额和凭据的关联关系
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppQuotaRequest 请求对象
+     * @return AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>
+     */
+    public AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse> deleteAppQuotaAsyncInvoker(
+        DeleteAppQuotaRequest request) {
+        return new AsyncInvoker<DeleteAppQuotaRequest, DeleteAppQuotaResponse>(request, ApigMeta.deleteAppQuota,
+            hcClient);
+    }
+
+    /**
+     * 删除APP
+     *
+     * 删除指定的APP。
+     * APP删除后，将无法再调用任何API[；其中，云商店自动创建的APP无法被删除](tag:hws)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppV2Request 请求对象
+     * @return CompletableFuture<DeleteAppV2Response>
+     */
+    public CompletableFuture<DeleteAppV2Response> deleteAppV2Async(DeleteAppV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteAppV2);
+    }
+
+    /**
+     * 删除APP
+     *
+     * 删除指定的APP。
+     * APP删除后，将无法再调用任何API[；其中，云商店自动创建的APP无法被删除](tag:hws)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAppV2Request 请求对象
+     * @return AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response>
+     */
+    public AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response> deleteAppV2AsyncInvoker(DeleteAppV2Request request) {
+        return new AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response>(request, ApigMeta.deleteAppV2, hcClient);
     }
 
     /**
@@ -1517,6 +1945,37 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 解除凭据配额和凭据的绑定
+     *
+     * 解除凭据配额和凭据的绑定
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateAppQuotaWithAppRequest 请求对象
+     * @return CompletableFuture<DisassociateAppQuotaWithAppResponse>
+     */
+    public CompletableFuture<DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithAppAsync(
+        DisassociateAppQuotaWithAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.disassociateAppQuotaWithApp);
+    }
+
+    /**
+     * 解除凭据配额和凭据的绑定
+     *
+     * 解除凭据配额和凭据的绑定
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateAppQuotaWithAppRequest 请求对象
+     * @return AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>
+     */
+    public AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse> disassociateAppQuotaWithAppAsyncInvoker(
+        DisassociateAppQuotaWithAppRequest request) {
+        return new AsyncInvoker<DisassociateAppQuotaWithAppRequest, DisassociateAppQuotaWithAppResponse>(request,
+            ApigMeta.disassociateAppQuotaWithApp, hcClient);
+    }
+
+    /**
      * 删除域名证书
      *
      * 如果域名证书不再需要或者已过期，则可以删除证书内容。
@@ -1835,6 +2294,36 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 查询APP Code列表
+     *
+     * 查询App Code列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppCodesV2Request 请求对象
+     * @return CompletableFuture<ListAppCodesV2Response>
+     */
+    public CompletableFuture<ListAppCodesV2Response> listAppCodesV2Async(ListAppCodesV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listAppCodesV2);
+    }
+
+    /**
+     * 查询APP Code列表
+     *
+     * 查询App Code列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppCodesV2Request 请求对象
+     * @return AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>
+     */
+    public AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2AsyncInvoker(
+        ListAppCodesV2Request request) {
+        return new AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>(request, ApigMeta.listAppCodesV2,
+            hcClient);
+    }
+
+    /**
      * 查询APP概况
      *
      * 查询租户名下的APP概况：已进行API访问授权的APP个数，未进行API访问授权的APP个数。
@@ -1862,6 +2351,125 @@ public class ApigAsyncClient {
         ListAppQuantitiesV2Request request) {
         return new AsyncInvoker<ListAppQuantitiesV2Request, ListAppQuantitiesV2Response>(request,
             ApigMeta.listAppQuantitiesV2, hcClient);
+    }
+
+    /**
+     * 查询凭据配额可绑定的凭据列表
+     *
+     * 查询凭据配额可绑定的凭据列表。支持按凭据名称模糊搜索
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppQuotaBindableAppsRequest 请求对象
+     * @return CompletableFuture<ListAppQuotaBindableAppsResponse>
+     */
+    public CompletableFuture<ListAppQuotaBindableAppsResponse> listAppQuotaBindableAppsAsync(
+        ListAppQuotaBindableAppsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listAppQuotaBindableApps);
+    }
+
+    /**
+     * 查询凭据配额可绑定的凭据列表
+     *
+     * 查询凭据配额可绑定的凭据列表。支持按凭据名称模糊搜索
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppQuotaBindableAppsRequest 请求对象
+     * @return AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>
+     */
+    public AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse> listAppQuotaBindableAppsAsyncInvoker(
+        ListAppQuotaBindableAppsRequest request) {
+        return new AsyncInvoker<ListAppQuotaBindableAppsRequest, ListAppQuotaBindableAppsResponse>(request,
+            ApigMeta.listAppQuotaBindableApps, hcClient);
+    }
+
+    /**
+     * 查询凭据配额已绑定的凭据列表
+     *
+     * 查询凭据配额已绑定的凭据列表。支持按凭据名称模糊匹配
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppQuotaBoundAppsRequest 请求对象
+     * @return CompletableFuture<ListAppQuotaBoundAppsResponse>
+     */
+    public CompletableFuture<ListAppQuotaBoundAppsResponse> listAppQuotaBoundAppsAsync(
+        ListAppQuotaBoundAppsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listAppQuotaBoundApps);
+    }
+
+    /**
+     * 查询凭据配额已绑定的凭据列表
+     *
+     * 查询凭据配额已绑定的凭据列表。支持按凭据名称模糊匹配
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppQuotaBoundAppsRequest 请求对象
+     * @return AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>
+     */
+    public AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse> listAppQuotaBoundAppsAsyncInvoker(
+        ListAppQuotaBoundAppsRequest request) {
+        return new AsyncInvoker<ListAppQuotaBoundAppsRequest, ListAppQuotaBoundAppsResponse>(request,
+            ApigMeta.listAppQuotaBoundApps, hcClient);
+    }
+
+    /**
+     * 获取凭据配额列表
+     *
+     * 获取凭据配额列表。支持根据名称模糊查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppQuotasRequest 请求对象
+     * @return CompletableFuture<ListAppQuotasResponse>
+     */
+    public CompletableFuture<ListAppQuotasResponse> listAppQuotasAsync(ListAppQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listAppQuotas);
+    }
+
+    /**
+     * 获取凭据配额列表
+     *
+     * 获取凭据配额列表。支持根据名称模糊查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppQuotasRequest 请求对象
+     * @return AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>
+     */
+    public AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse> listAppQuotasAsyncInvoker(
+        ListAppQuotasRequest request) {
+        return new AsyncInvoker<ListAppQuotasRequest, ListAppQuotasResponse>(request, ApigMeta.listAppQuotas, hcClient);
+    }
+
+    /**
+     * 查询APP列表
+     *
+     * 查询APP列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppsV2Request 请求对象
+     * @return CompletableFuture<ListAppsV2Response>
+     */
+    public CompletableFuture<ListAppsV2Response> listAppsV2Async(ListAppsV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.listAppsV2);
+    }
+
+    /**
+     * 查询APP列表
+     *
+     * 查询APP列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAppsV2Request 请求对象
+     * @return AsyncInvoker<ListAppsV2Request, ListAppsV2Response>
+     */
+    public AsyncInvoker<ListAppsV2Request, ListAppsV2Response> listAppsV2AsyncInvoker(ListAppsV2Request request) {
+        return new AsyncInvoker<ListAppsV2Request, ListAppsV2Response>(request, ApigMeta.listAppsV2, hcClient);
     }
 
     /**
@@ -2716,6 +3324,188 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 重置密钥
+     *
+     * 重置指定APP的密钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResettingAppSecretV2Request 请求对象
+     * @return CompletableFuture<ResettingAppSecretV2Response>
+     */
+    public CompletableFuture<ResettingAppSecretV2Response> resettingAppSecretV2Async(
+        ResettingAppSecretV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.resettingAppSecretV2);
+    }
+
+    /**
+     * 重置密钥
+     *
+     * 重置指定APP的密钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResettingAppSecretV2Request 请求对象
+     * @return AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response>
+     */
+    public AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response> resettingAppSecretV2AsyncInvoker(
+        ResettingAppSecretV2Request request) {
+        return new AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response>(request,
+            ApigMeta.resettingAppSecretV2, hcClient);
+    }
+
+    /**
+     * 查询凭据关联的凭据配额
+     *
+     * 查看指定凭据关联的凭据配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAppBoundAppQuotaRequest 请求对象
+     * @return CompletableFuture<ShowAppBoundAppQuotaResponse>
+     */
+    public CompletableFuture<ShowAppBoundAppQuotaResponse> showAppBoundAppQuotaAsync(
+        ShowAppBoundAppQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showAppBoundAppQuota);
+    }
+
+    /**
+     * 查询凭据关联的凭据配额
+     *
+     * 查看指定凭据关联的凭据配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAppBoundAppQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>
+     */
+    public AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse> showAppBoundAppQuotaAsyncInvoker(
+        ShowAppBoundAppQuotaRequest request) {
+        return new AsyncInvoker<ShowAppBoundAppQuotaRequest, ShowAppBoundAppQuotaResponse>(request,
+            ApigMeta.showAppBoundAppQuota, hcClient);
+    }
+
+    /**
+     * 获取凭据配额详情
+     *
+     * 获取凭据配额详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAppQuotaRequest 请求对象
+     * @return CompletableFuture<ShowAppQuotaResponse>
+     */
+    public CompletableFuture<ShowAppQuotaResponse> showAppQuotaAsync(ShowAppQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showAppQuota);
+    }
+
+    /**
+     * 获取凭据配额详情
+     *
+     * 获取凭据配额详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAppQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>
+     */
+    public AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse> showAppQuotaAsyncInvoker(
+        ShowAppQuotaRequest request) {
+        return new AsyncInvoker<ShowAppQuotaRequest, ShowAppQuotaResponse>(request, ApigMeta.showAppQuota, hcClient);
+    }
+
+    /**
+     * 查看APP的访问控制详情
+     *
+     * 查看APP的访问控制详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailsOfAppAclRequest 请求对象
+     * @return CompletableFuture<ShowDetailsOfAppAclResponse>
+     */
+    public CompletableFuture<ShowDetailsOfAppAclResponse> showDetailsOfAppAclAsync(ShowDetailsOfAppAclRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfAppAcl);
+    }
+
+    /**
+     * 查看APP的访问控制详情
+     *
+     * 查看APP的访问控制详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailsOfAppAclRequest 请求对象
+     * @return AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>
+     */
+    public AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> showDetailsOfAppAclAsyncInvoker(
+        ShowDetailsOfAppAclRequest request) {
+        return new AsyncInvoker<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse>(request,
+            ApigMeta.showDetailsOfAppAcl, hcClient);
+    }
+
+    /**
+     * 查看APP Code详情
+     *
+     * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfAppCodeV2Response>
+     */
+    public CompletableFuture<ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2Async(
+        ShowDetailsOfAppCodeV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfAppCodeV2);
+    }
+
+    /**
+     * 查看APP Code详情
+     *
+     * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailsOfAppCodeV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>
+     */
+    public AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2AsyncInvoker(
+        ShowDetailsOfAppCodeV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>(request,
+            ApigMeta.showDetailsOfAppCodeV2, hcClient);
+    }
+
+    /**
+     * 查看APP详情
+     *
+     * 查看指定APP的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailsOfAppV2Request 请求对象
+     * @return CompletableFuture<ShowDetailsOfAppV2Response>
+     */
+    public CompletableFuture<ShowDetailsOfAppV2Response> showDetailsOfAppV2Async(ShowDetailsOfAppV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfAppV2);
+    }
+
+    /**
+     * 查看APP详情
+     *
+     * 查看指定APP的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDetailsOfAppV2Request 请求对象
+     * @return AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>
+     */
+    public AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2AsyncInvoker(
+        ShowDetailsOfAppV2Request request) {
+        return new AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>(request,
+            ApigMeta.showDetailsOfAppV2, hcClient);
+    }
+
+    /**
      * 查看自定义认证详情
      *
      * 查看自定义认证详情
@@ -2992,6 +3782,124 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 查看实例约束信息
+     *
+     * 查看实例约束信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @return CompletableFuture<ShowRestrictionOfInstanceV2Response>
+     */
+    public CompletableFuture<ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2Async(
+        ShowRestrictionOfInstanceV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.showRestrictionOfInstanceV2);
+    }
+
+    /**
+     * 查看实例约束信息
+     *
+     * 查看实例约束信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRestrictionOfInstanceV2Request 请求对象
+     * @return AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>
+     */
+    public AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response> showRestrictionOfInstanceV2AsyncInvoker(
+        ShowRestrictionOfInstanceV2Request request) {
+        return new AsyncInvoker<ShowRestrictionOfInstanceV2Request, ShowRestrictionOfInstanceV2Response>(request,
+            ApigMeta.showRestrictionOfInstanceV2, hcClient);
+    }
+
+    /**
+     * 设置APP的访问控制
+     *
+     * 设置凭据的访问控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAppAclRequest 请求对象
+     * @return CompletableFuture<UpdateAppAclResponse>
+     */
+    public CompletableFuture<UpdateAppAclResponse> updateAppAclAsync(UpdateAppAclRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateAppAcl);
+    }
+
+    /**
+     * 设置APP的访问控制
+     *
+     * 设置凭据的访问控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAppAclRequest 请求对象
+     * @return AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>
+     */
+    public AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse> updateAppAclAsyncInvoker(
+        UpdateAppAclRequest request) {
+        return new AsyncInvoker<UpdateAppAclRequest, UpdateAppAclResponse>(request, ApigMeta.updateAppAcl, hcClient);
+    }
+
+    /**
+     * 修改凭据配额
+     *
+     * 修改凭据配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAppQuotaRequest 请求对象
+     * @return CompletableFuture<UpdateAppQuotaResponse>
+     */
+    public CompletableFuture<UpdateAppQuotaResponse> updateAppQuotaAsync(UpdateAppQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateAppQuota);
+    }
+
+    /**
+     * 修改凭据配额
+     *
+     * 修改凭据配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAppQuotaRequest 请求对象
+     * @return AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>
+     */
+    public AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse> updateAppQuotaAsyncInvoker(
+        UpdateAppQuotaRequest request) {
+        return new AsyncInvoker<UpdateAppQuotaRequest, UpdateAppQuotaResponse>(request, ApigMeta.updateAppQuota,
+            hcClient);
+    }
+
+    /**
+     * 修改APP
+     *
+     * 修改指定APP的信息。其中可修改的属性为：name、remark，当支持用户自定义key和secret的开关开启时，app_key和app_secret也支持修改，其它属性不可修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAppV2Request 请求对象
+     * @return CompletableFuture<UpdateAppV2Response>
+     */
+    public CompletableFuture<UpdateAppV2Response> updateAppV2Async(UpdateAppV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateAppV2);
+    }
+
+    /**
+     * 修改APP
+     *
+     * 修改指定APP的信息。其中可修改的属性为：name、remark，当支持用户自定义key和secret的开关开启时，app_key和app_secret也支持修改，其它属性不可修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAppV2Request 请求对象
+     * @return AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response>
+     */
+    public AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response> updateAppV2AsyncInvoker(UpdateAppV2Request request) {
+        return new AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response>(request, ApigMeta.updateAppV2, hcClient);
+    }
+
+    /**
      * 修改自定义认证
      *
      * 修改自定义认证
@@ -3110,6 +4018,37 @@ public class ApigAsyncClient {
         UpdateEnvironmentV2Request request) {
         return new AsyncInvoker<UpdateEnvironmentV2Request, UpdateEnvironmentV2Response>(request,
             ApigMeta.updateEnvironmentV2, hcClient);
+    }
+
+    /**
+     * 修改变量
+     *
+     * 修改环境变量。环境变量引用位置为api的后端服务地址时，修改对应环境变量会将使用该变量的所有api重新发布。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEnvironmentVariableV2Request 请求对象
+     * @return CompletableFuture<UpdateEnvironmentVariableV2Response>
+     */
+    public CompletableFuture<UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2Async(
+        UpdateEnvironmentVariableV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.updateEnvironmentVariableV2);
+    }
+
+    /**
+     * 修改变量
+     *
+     * 修改环境变量。环境变量引用位置为api的后端服务地址时，修改对应环境变量会将使用该变量的所有api重新发布。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEnvironmentVariableV2Request 请求对象
+     * @return AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>
+     */
+    public AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response> updateEnvironmentVariableV2AsyncInvoker(
+        UpdateEnvironmentVariableV2Request request) {
+        return new AsyncInvoker<UpdateEnvironmentVariableV2Request, UpdateEnvironmentVariableV2Response>(request,
+            ApigMeta.updateEnvironmentVariableV2, hcClient);
     }
 
     /**
@@ -3683,6 +4622,34 @@ public class ApigAsyncClient {
     }
 
     /**
+     * 校验API定义
+     *
+     * 校验API定义。校验API的路径或名称是否已存在
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckApisV2Request 请求对象
+     * @return CompletableFuture<CheckApisV2Response>
+     */
+    public CompletableFuture<CheckApisV2Response> checkApisV2Async(CheckApisV2Request request) {
+        return hcClient.asyncInvokeHttp(request, ApigMeta.checkApisV2);
+    }
+
+    /**
+     * 校验API定义
+     *
+     * 校验API定义。校验API的路径或名称是否已存在
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckApisV2Request 请求对象
+     * @return AsyncInvoker<CheckApisV2Request, CheckApisV2Response>
+     */
+    public AsyncInvoker<CheckApisV2Request, CheckApisV2Response> checkApisV2AsyncInvoker(CheckApisV2Request request) {
+        return new AsyncInvoker<CheckApisV2Request, CheckApisV2Response>(request, ApigMeta.checkApisV2, hcClient);
+    }
+
+    /**
      * 创建API分组
      *
      * API分组是API的管理单元，一个API分组等同于一个服务入口，创建API分组时，返回一个子域名作为访问入口。建议一个API分组下的API具有一定的相关性。
@@ -3718,7 +4685,7 @@ public class ApigAsyncClient {
      * 添加一个API，API即一个服务接口，具体的服务能力。
      * 
      * 
-     * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了API网关如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、函数工作流、MOCK。
+     * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了API网关如何去访问真实的后端服务。API的真实后端服务目前支持四种类型：传统的HTTP/HTTPS形式的web后端、GRPC后端、函数工作流、MOCK。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3735,7 +4702,7 @@ public class ApigAsyncClient {
      * 添加一个API，API即一个服务接口，具体的服务能力。
      * 
      * 
-     * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了API网关如何去访问真实的后端服务。API的真实后端服务目前支持三种类型：传统的HTTP/HTTPS形式的web后端、函数工作流、MOCK。
+     * API分为两部分，第一部分为面向API使用者的API接口，定义了使用者如何调用这个API。第二部分面向API提供者，由API提供者定义这个API的真实的后端情况，定义了API网关如何去访问真实的后端服务。API的真实后端服务目前支持四种类型：传统的HTTP/HTTPS形式的web后端、GRPC后端、函数工作流、MOCK。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4545,127 +5512,6 @@ public class ApigAsyncClient {
     }
 
     /**
-     * 校验APP
-     *
-     * 校验app是否存在，非APP所有者可以调用该接口校验APP是否真实存在。这个接口只展示app的基本信息id 、name、
-     * remark，其他信息不显示。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CheckAppV2Request 请求对象
-     * @return CompletableFuture<CheckAppV2Response>
-     */
-    public CompletableFuture<CheckAppV2Response> checkAppV2Async(CheckAppV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.checkAppV2);
-    }
-
-    /**
-     * 校验APP
-     *
-     * 校验app是否存在，非APP所有者可以调用该接口校验APP是否真实存在。这个接口只展示app的基本信息id 、name、
-     * remark，其他信息不显示。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CheckAppV2Request 请求对象
-     * @return AsyncInvoker<CheckAppV2Request, CheckAppV2Response>
-     */
-    public AsyncInvoker<CheckAppV2Request, CheckAppV2Response> checkAppV2AsyncInvoker(CheckAppV2Request request) {
-        return new AsyncInvoker<CheckAppV2Request, CheckAppV2Response>(request, ApigMeta.checkAppV2, hcClient);
-    }
-
-    /**
-     * 创建APP
-     *
-     * APP即应用，是一个可以访问API的身份标识。将API授权给APP后，APP即可调用API。
-     * 创建一个APP。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateAnAppV2Request 请求对象
-     * @return CompletableFuture<CreateAnAppV2Response>
-     */
-    public CompletableFuture<CreateAnAppV2Response> createAnAppV2Async(CreateAnAppV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.createAnAppV2);
-    }
-
-    /**
-     * 创建APP
-     *
-     * APP即应用，是一个可以访问API的身份标识。将API授权给APP后，APP即可调用API。
-     * 创建一个APP。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateAnAppV2Request 请求对象
-     * @return AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>
-     */
-    public AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response> createAnAppV2AsyncInvoker(
-        CreateAnAppV2Request request) {
-        return new AsyncInvoker<CreateAnAppV2Request, CreateAnAppV2Response>(request, ApigMeta.createAnAppV2, hcClient);
-    }
-
-    /**
-     * 自动生成APP Code
-     *
-     * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateAppCodeAutoV2Request 请求对象
-     * @return CompletableFuture<CreateAppCodeAutoV2Response>
-     */
-    public CompletableFuture<CreateAppCodeAutoV2Response> createAppCodeAutoV2Async(CreateAppCodeAutoV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.createAppCodeAutoV2);
-    }
-
-    /**
-     * 自动生成APP Code
-     *
-     * 创建App Code时，可以不指定具体值，由后台自动生成随机字符串填充。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateAppCodeAutoV2Request 请求对象
-     * @return AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>
-     */
-    public AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response> createAppCodeAutoV2AsyncInvoker(
-        CreateAppCodeAutoV2Request request) {
-        return new AsyncInvoker<CreateAppCodeAutoV2Request, CreateAppCodeAutoV2Response>(request,
-            ApigMeta.createAppCodeAutoV2, hcClient);
-    }
-
-    /**
-     * 创建APP Code
-     *
-     * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateAppCodeV2Request 请求对象
-     * @return CompletableFuture<CreateAppCodeV2Response>
-     */
-    public CompletableFuture<CreateAppCodeV2Response> createAppCodeV2Async(CreateAppCodeV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.createAppCodeV2);
-    }
-
-    /**
-     * 创建APP Code
-     *
-     * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateAppCodeV2Request 请求对象
-     * @return AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>
-     */
-    public AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response> createAppCodeV2AsyncInvoker(
-        CreateAppCodeV2Request request) {
-        return new AsyncInvoker<CreateAppCodeV2Request, CreateAppCodeV2Response>(request, ApigMeta.createAppCodeV2,
-            hcClient);
-    }
-
-    /**
      * APP授权
      *
      * APP创建成功后，还不能访问API，如果想要访问某个环境上的API，需要将该API在该环境上授权给APP。授权成功后，APP即可访问该环境上的这个API。
@@ -4694,66 +5540,6 @@ public class ApigAsyncClient {
         CreateAuthorizingAppsV2Request request) {
         return new AsyncInvoker<CreateAuthorizingAppsV2Request, CreateAuthorizingAppsV2Response>(request,
             ApigMeta.createAuthorizingAppsV2, hcClient);
-    }
-
-    /**
-     * 删除APP Code
-     *
-     * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteAppCodeV2Request 请求对象
-     * @return CompletableFuture<DeleteAppCodeV2Response>
-     */
-    public CompletableFuture<DeleteAppCodeV2Response> deleteAppCodeV2Async(DeleteAppCodeV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteAppCodeV2);
-    }
-
-    /**
-     * 删除APP Code
-     *
-     * 删除App Code，App Code删除后，将无法再通过简易认证访问对应的API。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteAppCodeV2Request 请求对象
-     * @return AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>
-     */
-    public AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response> deleteAppCodeV2AsyncInvoker(
-        DeleteAppCodeV2Request request) {
-        return new AsyncInvoker<DeleteAppCodeV2Request, DeleteAppCodeV2Response>(request, ApigMeta.deleteAppCodeV2,
-            hcClient);
-    }
-
-    /**
-     * 删除APP
-     *
-     * 删除指定的APP。
-     * APP删除后，将无法再调用任何API[；其中，云商店自动创建的APP无法被删除](tag:hws)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteAppV2Request 请求对象
-     * @return CompletableFuture<DeleteAppV2Response>
-     */
-    public CompletableFuture<DeleteAppV2Response> deleteAppV2Async(DeleteAppV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.deleteAppV2);
-    }
-
-    /**
-     * 删除APP
-     *
-     * 删除指定的APP。
-     * APP删除后，将无法再调用任何API[；其中，云商店自动创建的APP无法被删除](tag:hws)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteAppV2Request 请求对象
-     * @return AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response>
-     */
-    public AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response> deleteAppV2AsyncInvoker(DeleteAppV2Request request) {
-        return new AsyncInvoker<DeleteAppV2Request, DeleteAppV2Response>(request, ApigMeta.deleteAppV2, hcClient);
     }
 
     /**
@@ -4819,36 +5605,6 @@ public class ApigAsyncClient {
     }
 
     /**
-     * 查询APP Code列表
-     *
-     * 查询App Code列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListAppCodesV2Request 请求对象
-     * @return CompletableFuture<ListAppCodesV2Response>
-     */
-    public CompletableFuture<ListAppCodesV2Response> listAppCodesV2Async(ListAppCodesV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.listAppCodesV2);
-    }
-
-    /**
-     * 查询APP Code列表
-     *
-     * 查询App Code列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListAppCodesV2Request 请求对象
-     * @return AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>
-     */
-    public AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response> listAppCodesV2AsyncInvoker(
-        ListAppCodesV2Request request) {
-        return new AsyncInvoker<ListAppCodesV2Request, ListAppCodesV2Response>(request, ApigMeta.listAppCodesV2,
-            hcClient);
-    }
-
-    /**
      * 查看API已绑定的APP列表
      *
      * 查询API绑定的APP列表。
@@ -4877,154 +5633,6 @@ public class ApigAsyncClient {
         ListAppsBindedToApiV2Request request) {
         return new AsyncInvoker<ListAppsBindedToApiV2Request, ListAppsBindedToApiV2Response>(request,
             ApigMeta.listAppsBindedToApiV2, hcClient);
-    }
-
-    /**
-     * 查询APP列表
-     *
-     * 查询APP列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListAppsV2Request 请求对象
-     * @return CompletableFuture<ListAppsV2Response>
-     */
-    public CompletableFuture<ListAppsV2Response> listAppsV2Async(ListAppsV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.listAppsV2);
-    }
-
-    /**
-     * 查询APP列表
-     *
-     * 查询APP列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListAppsV2Request 请求对象
-     * @return AsyncInvoker<ListAppsV2Request, ListAppsV2Response>
-     */
-    public AsyncInvoker<ListAppsV2Request, ListAppsV2Response> listAppsV2AsyncInvoker(ListAppsV2Request request) {
-        return new AsyncInvoker<ListAppsV2Request, ListAppsV2Response>(request, ApigMeta.listAppsV2, hcClient);
-    }
-
-    /**
-     * 重置密钥
-     *
-     * 重置指定APP的密钥。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResettingAppSecretV2Request 请求对象
-     * @return CompletableFuture<ResettingAppSecretV2Response>
-     */
-    public CompletableFuture<ResettingAppSecretV2Response> resettingAppSecretV2Async(
-        ResettingAppSecretV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.resettingAppSecretV2);
-    }
-
-    /**
-     * 重置密钥
-     *
-     * 重置指定APP的密钥。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResettingAppSecretV2Request 请求对象
-     * @return AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response>
-     */
-    public AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response> resettingAppSecretV2AsyncInvoker(
-        ResettingAppSecretV2Request request) {
-        return new AsyncInvoker<ResettingAppSecretV2Request, ResettingAppSecretV2Response>(request,
-            ApigMeta.resettingAppSecretV2, hcClient);
-    }
-
-    /**
-     * 查看APP Code详情
-     *
-     * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDetailsOfAppCodeV2Request 请求对象
-     * @return CompletableFuture<ShowDetailsOfAppCodeV2Response>
-     */
-    public CompletableFuture<ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2Async(
-        ShowDetailsOfAppCodeV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfAppCodeV2);
-    }
-
-    /**
-     * 查看APP Code详情
-     *
-     * App Code为APP应用下的子模块，创建App Code之后，可以实现简易的APP认证。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDetailsOfAppCodeV2Request 请求对象
-     * @return AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>
-     */
-    public AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response> showDetailsOfAppCodeV2AsyncInvoker(
-        ShowDetailsOfAppCodeV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfAppCodeV2Request, ShowDetailsOfAppCodeV2Response>(request,
-            ApigMeta.showDetailsOfAppCodeV2, hcClient);
-    }
-
-    /**
-     * 查看APP详情
-     *
-     * 查看指定APP的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDetailsOfAppV2Request 请求对象
-     * @return CompletableFuture<ShowDetailsOfAppV2Response>
-     */
-    public CompletableFuture<ShowDetailsOfAppV2Response> showDetailsOfAppV2Async(ShowDetailsOfAppV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.showDetailsOfAppV2);
-    }
-
-    /**
-     * 查看APP详情
-     *
-     * 查看指定APP的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDetailsOfAppV2Request 请求对象
-     * @return AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>
-     */
-    public AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response> showDetailsOfAppV2AsyncInvoker(
-        ShowDetailsOfAppV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfAppV2Request, ShowDetailsOfAppV2Response>(request,
-            ApigMeta.showDetailsOfAppV2, hcClient);
-    }
-
-    /**
-     * 修改APP
-     *
-     * 修改指定APP的信息。其中可修改的属性为：name、remark，当支持用户自定义key和secret的开关开启时，app_key和app_secret也支持修改，其它属性不可修改。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateAppV2Request 请求对象
-     * @return CompletableFuture<UpdateAppV2Response>
-     */
-    public CompletableFuture<UpdateAppV2Response> updateAppV2Async(UpdateAppV2Request request) {
-        return hcClient.asyncInvokeHttp(request, ApigMeta.updateAppV2);
-    }
-
-    /**
-     * 修改APP
-     *
-     * 修改指定APP的信息。其中可修改的属性为：name、remark，当支持用户自定义key和secret的开关开启时，app_key和app_secret也支持修改，其它属性不可修改。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateAppV2Request 请求对象
-     * @return AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response>
-     */
-    public AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response> updateAppV2AsyncInvoker(UpdateAppV2Request request) {
-        return new AsyncInvoker<UpdateAppV2Request, UpdateAppV2Response>(request, ApigMeta.updateAppV2, hcClient);
     }
 
     /**

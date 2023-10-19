@@ -130,7 +130,7 @@ public class CreateEndpointGroupOption {
     }
 
     /**
-     * 关联监听器列表。
+     * 关联监听器列表。一个终端节点组下仅支持关联一个监听器。
      * @return listeners
      */
     public List<Id> getListeners() {

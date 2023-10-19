@@ -16,14 +16,14 @@ public class LifeCycleConfigurationExec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
 
-    private List<Object> command = null;
+    private List<String> command = null;
 
-    public LifeCycleConfigurationExec withCommand(List<Object> command) {
+    public LifeCycleConfigurationExec withCommand(List<String> command) {
         this.command = command;
         return this;
     }
 
-    public LifeCycleConfigurationExec addCommandItem(Object commandItem) {
+    public LifeCycleConfigurationExec addCommandItem(String commandItem) {
         if (this.command == null) {
             this.command = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class LifeCycleConfigurationExec {
         return this;
     }
 
-    public LifeCycleConfigurationExec withCommand(Consumer<List<Object>> commandSetter) {
+    public LifeCycleConfigurationExec withCommand(Consumer<List<String>> commandSetter) {
         if (this.command == null) {
             this.command = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class LifeCycleConfigurationExec {
      * shell语句。
      * @return command
      */
-    public List<Object> getCommand() {
+    public List<String> getCommand() {
         return command;
     }
 
-    public void setCommand(List<Object> command) {
+    public void setCommand(List<String> command) {
         this.command = command;
     }
 

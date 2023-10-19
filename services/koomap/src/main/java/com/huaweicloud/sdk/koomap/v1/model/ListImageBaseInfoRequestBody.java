@@ -121,7 +121,7 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 卫星影像迁移状态。 当前仅支持完成（0）、迁入中（1）、迁入失败（2）、迁出中（3）、迁出失败（4）。
+     * 卫星影像迁移状态。 当前仅支持完成（0）、迁入中（1）、迁入失败（2）、迁出中（3）、迁出失败（4）、删除中（6）、卫星影像正在被任务使用导致删除失败（7）、网络错误导致删除失败（8）。
      * @return imageStatus
      */
     public String getImageStatus() {
@@ -172,7 +172,7 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 卫星影像等级列表。 当前仅支持L1、L1A、L1B、L2、L3、L4、L5、clip（矢量切割）、tile（金字塔切割）。等级之间以“,”隔开。
+     * 卫星影像等级列表。 当前仅支持L1、L1A、L1B、L2、L4、L5、clip（矢量切割）、tile（金字塔切割）。等级之间以“,”隔开。
      * @return imageLevels
      */
     public String getImageLevels() {

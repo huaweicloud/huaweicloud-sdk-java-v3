@@ -29,7 +29,7 @@ public class DatabaseInput {
     private String owner;
 
     /**
-     * 所有者类型
+     * 所有者类型,USER-用户,GROUP-组,ROLE-角色。LakeFormation服务分为一期和二期，一期响应Body无该参数。
      */
     public static final class OwnerTypeEnum {
 
@@ -109,6 +109,105 @@ public class DatabaseInput {
 
     private OwnerTypeEnum ownerType;
 
+    /**
+     * 所有者来源,IAM-云用户,SAML-联邦,LDAP-ld用户,LOCAL-本地用户,AGENTTENANT-委托,OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     */
+    public static final class OwnerAuthSourceTypeEnum {
+
+        /**
+         * Enum IAM for value: "IAM"
+         */
+        public static final OwnerAuthSourceTypeEnum IAM = new OwnerAuthSourceTypeEnum("IAM");
+
+        /**
+         * Enum SAML for value: "SAML"
+         */
+        public static final OwnerAuthSourceTypeEnum SAML = new OwnerAuthSourceTypeEnum("SAML");
+
+        /**
+         * Enum LDAP for value: "LDAP"
+         */
+        public static final OwnerAuthSourceTypeEnum LDAP = new OwnerAuthSourceTypeEnum("LDAP");
+
+        /**
+         * Enum LOCAL for value: "LOCAL"
+         */
+        public static final OwnerAuthSourceTypeEnum LOCAL = new OwnerAuthSourceTypeEnum("LOCAL");
+
+        /**
+         * Enum AGENTTENANT for value: "AGENTTENANT"
+         */
+        public static final OwnerAuthSourceTypeEnum AGENTTENANT = new OwnerAuthSourceTypeEnum("AGENTTENANT");
+
+        /**
+         * Enum OTHER for value: "OTHER"
+         */
+        public static final OwnerAuthSourceTypeEnum OTHER = new OwnerAuthSourceTypeEnum("OTHER");
+
+        private static final Map<String, OwnerAuthSourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OwnerAuthSourceTypeEnum> createStaticFields() {
+            Map<String, OwnerAuthSourceTypeEnum> map = new HashMap<>();
+            map.put("IAM", IAM);
+            map.put("SAML", SAML);
+            map.put("LDAP", LDAP);
+            map.put("LOCAL", LOCAL);
+            map.put("AGENTTENANT", AGENTTENANT);
+            map.put("OTHER", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OwnerAuthSourceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OwnerAuthSourceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OwnerAuthSourceTypeEnum(value));
+        }
+
+        public static OwnerAuthSourceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OwnerAuthSourceTypeEnum) {
+                return this.value.equals(((OwnerAuthSourceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner_auth_source_type")
+
+    private OwnerAuthSourceTypeEnum ownerAuthSourceType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
@@ -140,7 +239,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 数据库名字
+     * 数据库名称。只能包含中文、字母、数字和下划线，且长度为1~128个字符。
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -157,7 +256,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 数据库所有者
+     * 数据库所有者。长度为0~128个字符。
      * @return owner
      */
     public String getOwner() {
@@ -174,7 +273,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 所有者类型
+     * 所有者类型,USER-用户,GROUP-组,ROLE-角色。LakeFormation服务分为一期和二期，一期响应Body无该参数。
      * @return ownerType
      */
     public OwnerTypeEnum getOwnerType() {
@@ -185,13 +284,30 @@ public class DatabaseInput {
         this.ownerType = ownerType;
     }
 
+    public DatabaseInput withOwnerAuthSourceType(OwnerAuthSourceTypeEnum ownerAuthSourceType) {
+        this.ownerAuthSourceType = ownerAuthSourceType;
+        return this;
+    }
+
+    /**
+     * 所有者来源,IAM-云用户,SAML-联邦,LDAP-ld用户,LOCAL-本地用户,AGENTTENANT-委托,OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     * @return ownerAuthSourceType
+     */
+    public OwnerAuthSourceTypeEnum getOwnerAuthSourceType() {
+        return ownerAuthSourceType;
+    }
+
+    public void setOwnerAuthSourceType(OwnerAuthSourceTypeEnum ownerAuthSourceType) {
+        this.ownerAuthSourceType = ownerAuthSourceType;
+    }
+
     public DatabaseInput withDescription(String description) {
         this.description = description;
         return this;
     }
 
     /**
-     * 数据库描述信息
+     * 数据库描述信息。由用户创建数据库时输入，最大长度为4000个字符。
      * @return description
      */
     public String getDescription() {
@@ -208,7 +324,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 数据库位置
+     * 数据库路径地址。例如obs://location/uri/
      * @return location
      */
     public String getLocation() {
@@ -328,8 +444,10 @@ public class DatabaseInput {
         }
         DatabaseInput that = (DatabaseInput) obj;
         return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.ownerType, that.ownerType) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.location, that.location) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.ownerType, that.ownerType)
+            && Objects.equals(this.ownerAuthSourceType, that.ownerAuthSourceType)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.parameters, that.parameters)
             && Objects.equals(this.tableLocationList, that.tableLocationList)
             && Objects.equals(this.functionLocationList, that.functionLocationList);
     }
@@ -339,6 +457,7 @@ public class DatabaseInput {
         return Objects.hash(databaseName,
             owner,
             ownerType,
+            ownerAuthSourceType,
             description,
             location,
             parameters,
@@ -353,6 +472,7 @@ public class DatabaseInput {
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    ownerType: ").append(toIndentedString(ownerType)).append("\n");
+        sb.append("    ownerAuthSourceType: ").append(toIndentedString(ownerAuthSourceType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");

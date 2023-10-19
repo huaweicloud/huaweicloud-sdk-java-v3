@@ -32,7 +32,7 @@ public class ListResourceUnderNodeRequest {
     }
 
     /**
-     * 云服务资源；同rms服务的provider
+     * 云服务资源,同rms服务的provider
      * @return rfResourceType
      */
     public String getRfResourceType() {
@@ -49,7 +49,7 @@ public class ListResourceUnderNodeRequest {
     }
 
     /**
-     * 云服务资源类型；同rms服务的type
+     * 云服务资源类型,同rms服务的type
      * @return type
      */
     public String getType() {

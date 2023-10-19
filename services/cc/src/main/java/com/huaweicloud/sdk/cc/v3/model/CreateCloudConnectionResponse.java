@@ -13,14 +13,31 @@ import java.util.function.Consumer;
 public class CreateCloudConnectionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_connection")
 
     private CloudConnection cloudConnection;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    public CreateCloudConnectionResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
 
-    private String requestId;
+    /**
+     * 资源ID标识符。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public CreateCloudConnectionResponse withCloudConnection(CloudConnection cloudConnection) {
         this.cloudConnection = cloudConnection;
@@ -48,23 +65,6 @@ public class CreateCloudConnectionResponse extends SdkResponse {
         this.cloudConnection = cloudConnection;
     }
 
-    public CreateCloudConnectionResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,21 +74,21 @@ public class CreateCloudConnectionResponse extends SdkResponse {
             return false;
         }
         CreateCloudConnectionResponse that = (CreateCloudConnectionResponse) obj;
-        return Objects.equals(this.cloudConnection, that.cloudConnection)
-            && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.cloudConnection, that.cloudConnection);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cloudConnection, requestId);
+        return Objects.hash(requestId, cloudConnection);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCloudConnectionResponse {\n");
-        sb.append("    cloudConnection: ").append(toIndentedString(cloudConnection)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    cloudConnection: ").append(toIndentedString(cloudConnection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

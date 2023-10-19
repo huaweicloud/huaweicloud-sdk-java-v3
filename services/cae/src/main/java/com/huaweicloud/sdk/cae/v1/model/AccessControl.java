@@ -16,19 +16,19 @@ public class AccessControl {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "black")
 
-    private List<Object> black = null;
+    private List<String> black = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "white")
 
-    private List<Object> white = null;
+    private List<String> white = null;
 
-    public AccessControl withBlack(List<Object> black) {
+    public AccessControl withBlack(List<String> black) {
         this.black = black;
         return this;
     }
 
-    public AccessControl addBlackItem(Object blackItem) {
+    public AccessControl addBlackItem(String blackItem) {
         if (this.black == null) {
             this.black = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class AccessControl {
         return this;
     }
 
-    public AccessControl withBlack(Consumer<List<Object>> blackSetter) {
+    public AccessControl withBlack(Consumer<List<String>> blackSetter) {
         if (this.black == null) {
             this.black = new ArrayList<>();
         }
@@ -48,20 +48,20 @@ public class AccessControl {
      * 黑名单数组。 1.每行一个IP地址或网段，以回车结束。 2.每个IP地址组最多可添加300个IP地址或网段。
      * @return black
      */
-    public List<Object> getBlack() {
+    public List<String> getBlack() {
         return black;
     }
 
-    public void setBlack(List<Object> black) {
+    public void setBlack(List<String> black) {
         this.black = black;
     }
 
-    public AccessControl withWhite(List<Object> white) {
+    public AccessControl withWhite(List<String> white) {
         this.white = white;
         return this;
     }
 
-    public AccessControl addWhiteItem(Object whiteItem) {
+    public AccessControl addWhiteItem(String whiteItem) {
         if (this.white == null) {
             this.white = new ArrayList<>();
         }
@@ -69,7 +69,7 @@ public class AccessControl {
         return this;
     }
 
-    public AccessControl withWhite(Consumer<List<Object>> whiteSetter) {
+    public AccessControl withWhite(Consumer<List<String>> whiteSetter) {
         if (this.white == null) {
             this.white = new ArrayList<>();
         }
@@ -81,11 +81,11 @@ public class AccessControl {
      * 白名单数组。 1.每行一个IP地址或网段，以回车结束。 2.每个IP地址组最多可添加300个IP地址或网段。
      * @return white
      */
-    public List<Object> getWhite() {
+    public List<String> getWhite() {
         return white;
     }
 
-    public void setWhite(List<Object> white) {
+    public void setWhite(List<String> white) {
         this.white = white;
     }
 

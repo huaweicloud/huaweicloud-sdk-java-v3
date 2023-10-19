@@ -15,41 +15,41 @@ import java.util.function.Consumer;
 public class ListStructuredLogsWithTimeRangeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "context")
+    @JsonProperty(value = "result")
 
-    private List<String> context = null;
+    private List<Object> result = null;
 
-    public ListStructuredLogsWithTimeRangeResponse withContext(List<String> context) {
-        this.context = context;
+    public ListStructuredLogsWithTimeRangeResponse withResult(List<Object> result) {
+        this.result = result;
         return this;
     }
 
-    public ListStructuredLogsWithTimeRangeResponse addContextItem(String contextItem) {
-        if (this.context == null) {
-            this.context = new ArrayList<>();
+    public ListStructuredLogsWithTimeRangeResponse addResultItem(Object resultItem) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
         }
-        this.context.add(contextItem);
+        this.result.add(resultItem);
         return this;
     }
 
-    public ListStructuredLogsWithTimeRangeResponse withContext(Consumer<List<String>> contextSetter) {
-        if (this.context == null) {
-            this.context = new ArrayList<>();
+    public ListStructuredLogsWithTimeRangeResponse withResult(Consumer<List<Object>> resultSetter) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
         }
-        contextSetter.accept(this.context);
+        resultSetter.accept(this.result);
         return this;
     }
 
     /**
      * 查询结构化日志结果信息。 此处仅为示例，具体参数名称取决于查询的字段。
-     * @return context
+     * @return result
      */
-    public List<String> getContext() {
-        return context;
+    public List<Object> getResult() {
+        return result;
     }
 
-    public void setContext(List<String> context) {
-        this.context = context;
+    public void setResult(List<Object> result) {
+        this.result = result;
     }
 
     @Override
@@ -61,19 +61,19 @@ public class ListStructuredLogsWithTimeRangeResponse extends SdkResponse {
             return false;
         }
         ListStructuredLogsWithTimeRangeResponse that = (ListStructuredLogsWithTimeRangeResponse) obj;
-        return Objects.equals(this.context, that.context);
+        return Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(context);
+        return Objects.hash(result);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListStructuredLogsWithTimeRangeResponse {\n");
-        sb.append("    context: ").append(toIndentedString(context)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();
     }

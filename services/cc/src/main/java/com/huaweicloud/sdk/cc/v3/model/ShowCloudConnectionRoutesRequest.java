@@ -21,7 +21,7 @@ public class ShowCloudConnectionRoutesRequest {
     }
 
     /**
-     * 云连接路由实例ID。
+     * 资源的Id。
      * @return id
      */
     public String getId() {

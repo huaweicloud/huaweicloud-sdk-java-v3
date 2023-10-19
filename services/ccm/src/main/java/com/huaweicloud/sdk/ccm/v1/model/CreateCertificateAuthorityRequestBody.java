@@ -63,6 +63,11 @@ public class CreateCertificateAuthorityRequestBody {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ca_id")
+
+    private String caId;
+
     public CreateCertificateAuthorityRequestBody withType(String type) {
         this.type = type;
         return this;
@@ -280,6 +285,23 @@ public class CreateCertificateAuthorityRequestBody {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateCertificateAuthorityRequestBody withCaId(String caId) {
+        this.caId = caId;
+        return this;
+    }
+
+    /**
+     * CA证书ID。如果为空，则创建按需CA；如果不为空，则保存包周期CA信息。
+     * @return caId
+     */
+    public String getCaId() {
+        return caId;
+    }
+
+    public void setCaId(String caId) {
+        this.caId = caId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -295,7 +317,8 @@ public class CreateCertificateAuthorityRequestBody {
             && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
             && Objects.equals(this.keyUsages, that.keyUsages)
             && Objects.equals(this.crlConfiguration, that.crlConfiguration)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.caId, that.caId);
     }
 
     @Override
@@ -309,7 +332,8 @@ public class CreateCertificateAuthorityRequestBody {
             signatureAlgorithm,
             keyUsages,
             crlConfiguration,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            caId);
     }
 
     @Override
@@ -326,6 +350,7 @@ public class CreateCertificateAuthorityRequestBody {
         sb.append("    keyUsages: ").append(toIndentedString(keyUsages)).append("\n");
         sb.append("    crlConfiguration: ").append(toIndentedString(crlConfiguration)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    caId: ").append(toIndentedString(caId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

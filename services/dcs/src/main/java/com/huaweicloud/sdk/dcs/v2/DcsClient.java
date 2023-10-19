@@ -15,10 +15,14 @@ import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountRequest;
+import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAutoExpireScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAutoExpireScanTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateBigkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateBigkeyScanTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestRequest;
+import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateDiagnosisTaskRequest;
@@ -35,12 +39,16 @@ import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogDownloadLinkRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogDownloadLinkResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteAclAccountRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteAclAccountResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackgroundTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackgroundTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackupFileRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackupFileResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBigkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBigkeyScanTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteConfigTemplateRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameRequest;
@@ -51,6 +59,8 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteClusterSwitchoverRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteClusterSwitchoverResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListBackgroundTaskRequest;
@@ -97,6 +107,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ListStatisticsOfRunningInstancesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListStatisticsOfRunningInstancesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListTagsOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListTagsOfTenantResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ResizeInstanceRequest;
@@ -111,6 +123,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowConfigTemplateRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowDiagnosisTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowDiagnosisTaskDetailsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyAutoscanConfigRequest;
@@ -131,14 +145,24 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowTagsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowTagsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskSyncRequest;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskSyncResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountPassWordRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountPassWordResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRoleRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRoleResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigTemplateRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigurationsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigurationsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigRequest;
@@ -352,6 +376,40 @@ public class DcsClient {
     }
 
     /**
+     * 创建ACL账号
+     *
+     * \&quot;为redis4.0/5.0实例（Cluster集群实例除外）创建权限访问账号，包含读写和只读权限。
+     * 如果实例默认账号已开启免密访问，您创建的普通账号不能使用，如需使用普通账号请先关闭默认账号的免密访问。
+     * 单机、主备实例默认账号的密码不能带有冒号(:)，否则无法创建普通账号。\&quot;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAclAccountRequest 请求对象
+     * @return CreateAclAccountResponse
+     */
+    public CreateAclAccountResponse createAclAccount(CreateAclAccountRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.createAclAccount);
+    }
+
+    /**
+     * 创建ACL账号
+     *
+     * \&quot;为redis4.0/5.0实例（Cluster集群实例除外）创建权限访问账号，包含读写和只读权限。
+     * 如果实例默认账号已开启免密访问，您创建的普通账号不能使用，如需使用普通账号请先关闭默认账号的免密访问。
+     * 单机、主备实例默认账号的密码不能带有冒号(:)，否则无法创建普通账号。\&quot;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAclAccountRequest 请求对象
+     * @return SyncInvoker<CreateAclAccountRequest, CreateAclAccountResponse>
+     */
+    public SyncInvoker<CreateAclAccountRequest, CreateAclAccountResponse> createAclAccountInvoker(
+        CreateAclAccountRequest request) {
+        return new SyncInvoker<CreateAclAccountRequest, CreateAclAccountResponse>(request, DcsMeta.createAclAccount,
+            hcClient);
+    }
+
+    /**
      * 创建过期key扫描任务
      *
      * 创建过期key扫描任务（Redis 3.0 不支持过期key扫描）。
@@ -413,6 +471,36 @@ public class DcsClient {
         CreateBigkeyScanTaskRequest request) {
         return new SyncInvoker<CreateBigkeyScanTaskRequest, CreateBigkeyScanTaskResponse>(request,
             DcsMeta.createBigkeyScanTask, hcClient);
+    }
+
+    /**
+     * 创建备份导入页面实例连接测试
+     *
+     * 创建备份导入页面实例连接测试
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateConnectivityTestRequest 请求对象
+     * @return CreateConnectivityTestResponse
+     */
+    public CreateConnectivityTestResponse createConnectivityTest(CreateConnectivityTestRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.createConnectivityTest);
+    }
+
+    /**
+     * 创建备份导入页面实例连接测试
+     *
+     * 创建备份导入页面实例连接测试
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateConnectivityTestRequest 请求对象
+     * @return SyncInvoker<CreateConnectivityTestRequest, CreateConnectivityTestResponse>
+     */
+    public SyncInvoker<CreateConnectivityTestRequest, CreateConnectivityTestResponse> createConnectivityTestInvoker(
+        CreateConnectivityTestRequest request) {
+        return new SyncInvoker<CreateConnectivityTestRequest, CreateConnectivityTestResponse>(request,
+            DcsMeta.createConnectivityTest, hcClient);
     }
 
     /**
@@ -660,6 +748,36 @@ public class DcsClient {
     }
 
     /**
+     * 删除ACL账号
+     *
+     * 删除所创建的ACL普通账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAclAccountRequest 请求对象
+     * @return DeleteAclAccountResponse
+     */
+    public DeleteAclAccountResponse deleteAclAccount(DeleteAclAccountRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.deleteAclAccount);
+    }
+
+    /**
+     * 删除ACL账号
+     *
+     * 删除所创建的ACL普通账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAclAccountRequest 请求对象
+     * @return SyncInvoker<DeleteAclAccountRequest, DeleteAclAccountResponse>
+     */
+    public SyncInvoker<DeleteAclAccountRequest, DeleteAclAccountResponse> deleteAclAccountInvoker(
+        DeleteAclAccountRequest request) {
+        return new SyncInvoker<DeleteAclAccountRequest, DeleteAclAccountResponse>(request, DcsMeta.deleteAclAccount,
+            hcClient);
+    }
+
+    /**
      * 删除后台任务
      *
      * 删除后台任务
@@ -747,6 +865,36 @@ public class DcsClient {
         DeleteBigkeyScanTaskRequest request) {
         return new SyncInvoker<DeleteBigkeyScanTaskRequest, DeleteBigkeyScanTaskResponse>(request,
             DcsMeta.deleteBigkeyScanTask, hcClient);
+    }
+
+    /**
+     * 删除自定义模板
+     *
+     * 删除自定义模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConfigTemplateRequest 请求对象
+     * @return DeleteConfigTemplateResponse
+     */
+    public DeleteConfigTemplateResponse deleteConfigTemplate(DeleteConfigTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.deleteConfigTemplate);
+    }
+
+    /**
+     * 删除自定义模板
+     *
+     * 删除自定义模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteConfigTemplateRequest 请求对象
+     * @return SyncInvoker<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse>
+     */
+    public SyncInvoker<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> deleteConfigTemplateInvoker(
+        DeleteConfigTemplateRequest request) {
+        return new SyncInvoker<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse>(request,
+            DcsMeta.deleteConfigTemplate, hcClient);
     }
 
     /**
@@ -901,6 +1049,36 @@ public class DcsClient {
         ExecuteClusterSwitchoverRequest request) {
         return new SyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse>(request,
             DcsMeta.executeClusterSwitchover, hcClient);
+    }
+
+    /**
+     * 查询ACL账户列表
+     *
+     * 查询ACL账户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAclAccountsRequest 请求对象
+     * @return ListAclAccountsResponse
+     */
+    public ListAclAccountsResponse listAclAccounts(ListAclAccountsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.listAclAccounts);
+    }
+
+    /**
+     * 查询ACL账户列表
+     *
+     * 查询ACL账户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAclAccountsRequest 请求对象
+     * @return SyncInvoker<ListAclAccountsRequest, ListAclAccountsResponse>
+     */
+    public SyncInvoker<ListAclAccountsRequest, ListAclAccountsResponse> listAclAccountsInvoker(
+        ListAclAccountsRequest request) {
+        return new SyncInvoker<ListAclAccountsRequest, ListAclAccountsResponse>(request, DcsMeta.listAclAccounts,
+            hcClient);
     }
 
     /**
@@ -1593,6 +1771,36 @@ public class DcsClient {
     }
 
     /**
+     * 重置ACL账号密码
+     *
+     * 重置ACL账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetAclAccountPassWordRequest 请求对象
+     * @return ResetAclAccountPassWordResponse
+     */
+    public ResetAclAccountPassWordResponse resetAclAccountPassWord(ResetAclAccountPassWordRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.resetAclAccountPassWord);
+    }
+
+    /**
+     * 重置ACL账号密码
+     *
+     * 重置ACL账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetAclAccountPassWordRequest 请求对象
+     * @return SyncInvoker<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse>
+     */
+    public SyncInvoker<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> resetAclAccountPassWordInvoker(
+        ResetAclAccountPassWordRequest request) {
+        return new SyncInvoker<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse>(request,
+            DcsMeta.resetAclAccountPassWord, hcClient);
+    }
+
+    /**
      * 重置密码
      *
      * 重置缓存实例的密码。
@@ -1804,6 +2012,36 @@ public class DcsClient {
         ShowBigkeyScanTaskDetailsRequest request) {
         return new SyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse>(request,
             DcsMeta.showBigkeyScanTaskDetails, hcClient);
+    }
+
+    /**
+     * 查询参数模板详情
+     *
+     * 查询参数模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigTemplateRequest 请求对象
+     * @return ShowConfigTemplateResponse
+     */
+    public ShowConfigTemplateResponse showConfigTemplate(ShowConfigTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showConfigTemplate);
+    }
+
+    /**
+     * 查询参数模板详情
+     *
+     * 查询参数模板详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigTemplateRequest 请求对象
+     * @return SyncInvoker<ShowConfigTemplateRequest, ShowConfigTemplateResponse>
+     */
+    public SyncInvoker<ShowConfigTemplateRequest, ShowConfigTemplateResponse> showConfigTemplateInvoker(
+        ShowConfigTemplateRequest request) {
+        return new SyncInvoker<ShowConfigTemplateRequest, ShowConfigTemplateResponse>(request,
+            DcsMeta.showConfigTemplate, hcClient);
     }
 
     /**
@@ -2077,6 +2315,36 @@ public class DcsClient {
     }
 
     /**
+     * 获取副本状态
+     *
+     * 获取副本状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReplicationStatesRequest 请求对象
+     * @return ShowReplicationStatesResponse
+     */
+    public ShowReplicationStatesResponse showReplicationStates(ShowReplicationStatesRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showReplicationStates);
+    }
+
+    /**
+     * 获取副本状态
+     *
+     * 获取副本状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReplicationStatesRequest 请求对象
+     * @return SyncInvoker<ShowReplicationStatesRequest, ShowReplicationStatesResponse>
+     */
+    public SyncInvoker<ShowReplicationStatesRequest, ShowReplicationStatesResponse> showReplicationStatesInvoker(
+        ShowReplicationStatesRequest request) {
+        return new SyncInvoker<ShowReplicationStatesRequest, ShowReplicationStatesResponse>(request,
+            DcsMeta.showReplicationStates, hcClient);
+    }
+
+    /**
      * 查询单个实例标签
      *
      * 通过实例ID查询标签。
@@ -2165,6 +2433,96 @@ public class DcsClient {
     }
 
     /**
+     * 修改ACL账号密码
+     *
+     * 修改ACL账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAclAccountPassWordRequest 请求对象
+     * @return UpdateAclAccountPassWordResponse
+     */
+    public UpdateAclAccountPassWordResponse updateAclAccountPassWord(UpdateAclAccountPassWordRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.updateAclAccountPassWord);
+    }
+
+    /**
+     * 修改ACL账号密码
+     *
+     * 修改ACL账号密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAclAccountPassWordRequest 请求对象
+     * @return SyncInvoker<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse>
+     */
+    public SyncInvoker<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> updateAclAccountPassWordInvoker(
+        UpdateAclAccountPassWordRequest request) {
+        return new SyncInvoker<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse>(request,
+            DcsMeta.updateAclAccountPassWord, hcClient);
+    }
+
+    /**
+     * ACL账号修改备注
+     *
+     * ACL账号修改备注
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAclAccountRemarkRequest 请求对象
+     * @return UpdateAclAccountRemarkResponse
+     */
+    public UpdateAclAccountRemarkResponse updateAclAccountRemark(UpdateAclAccountRemarkRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.updateAclAccountRemark);
+    }
+
+    /**
+     * ACL账号修改备注
+     *
+     * ACL账号修改备注
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAclAccountRemarkRequest 请求对象
+     * @return SyncInvoker<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse>
+     */
+    public SyncInvoker<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse> updateAclAccountRemarkInvoker(
+        UpdateAclAccountRemarkRequest request) {
+        return new SyncInvoker<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse>(request,
+            DcsMeta.updateAclAccountRemark, hcClient);
+    }
+
+    /**
+     * 修改ACL角色
+     *
+     * 修改用户的类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAclAccountRoleRequest 请求对象
+     * @return UpdateAclAccountRoleResponse
+     */
+    public UpdateAclAccountRoleResponse updateAclAccountRole(UpdateAclAccountRoleRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.updateAclAccountRole);
+    }
+
+    /**
+     * 修改ACL角色
+     *
+     * 修改用户的类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAclAccountRoleRequest 请求对象
+     * @return SyncInvoker<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse>
+     */
+    public SyncInvoker<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse> updateAclAccountRoleInvoker(
+        UpdateAclAccountRoleRequest request) {
+        return new SyncInvoker<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse>(request,
+            DcsMeta.updateAclAccountRole, hcClient);
+    }
+
+    /**
      * 设置大key自动分析配置
      *
      * 设置大key自动分析配置。
@@ -2192,6 +2550,36 @@ public class DcsClient {
         UpdateBigkeyAutoscanConfigRequest request) {
         return new SyncInvoker<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse>(request,
             DcsMeta.updateBigkeyAutoscanConfig, hcClient);
+    }
+
+    /**
+     * 修改自定义模板
+     *
+     * 修改自定义模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateConfigTemplateRequest 请求对象
+     * @return UpdateConfigTemplateResponse
+     */
+    public UpdateConfigTemplateResponse updateConfigTemplate(UpdateConfigTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.updateConfigTemplate);
+    }
+
+    /**
+     * 修改自定义模板
+     *
+     * 修改自定义模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateConfigTemplateRequest 请求对象
+     * @return SyncInvoker<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse>
+     */
+    public SyncInvoker<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse> updateConfigTemplateInvoker(
+        UpdateConfigTemplateRequest request) {
+        return new SyncInvoker<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse>(request,
+            DcsMeta.updateConfigTemplate, hcClient);
     }
 
     /**

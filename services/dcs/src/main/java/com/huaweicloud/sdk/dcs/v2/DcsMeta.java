@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.dcs.v2.model.AclAccountModifyPasswordBody;
+import com.huaweicloud.sdk.dcs.v2.model.AclAccountResetPasswordBody;
+import com.huaweicloud.sdk.dcs.v2.model.AclAccountRoleModifyBody;
 import com.huaweicloud.sdk.dcs.v2.model.AutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BackupInstanceBody;
 import com.huaweicloud.sdk.dcs.v2.model.BatchCreateOrDeleteTagsRequest;
@@ -22,10 +25,16 @@ import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountRequest;
+import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAutoExpireScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAutoExpireScanTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateBigkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateBigkeyScanTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestRequest;
+import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateBody;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateResponse;
@@ -48,12 +57,16 @@ import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogDownloadLinkRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogDownloadLinkResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteAclAccountRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteAclAccountResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackgroundTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackgroundTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackupFileRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackupFileResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBigkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBigkeyScanTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteConfigTemplateRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameRequest;
@@ -66,6 +79,9 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DownloadBackupFilesReq;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteClusterSwitchoverRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteClusterSwitchoverResponse;
+import com.huaweicloud.sdk.dcs.v2.model.InstanceReplicationListInfo;
+import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListBackgroundTaskRequest;
@@ -117,6 +133,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ModifyInstancePasswordBody;
 import com.huaweicloud.sdk.dcs.v2.model.ModifyIpWhitelistBody;
 import com.huaweicloud.sdk.dcs.v2.model.ModifyRedisConfigBody;
 import com.huaweicloud.sdk.dcs.v2.model.PriorityBody;
+import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ResetInstancePasswordBody;
 import com.huaweicloud.sdk.dcs.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ResetPasswordResponse;
@@ -135,6 +153,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowConfigTemplateRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowDiagnosisTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowDiagnosisTaskDetailsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyAutoscanConfigRequest;
@@ -155,16 +175,28 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowTagsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowTagsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskSyncRequest;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskSyncResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountPassWordRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountPassWordResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRoleRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRoleResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigTemplateRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigurationsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigurationsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateCustomTemplateBody;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthRequest;
@@ -177,6 +209,8 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityResponse;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DcsMeta {
@@ -361,6 +395,38 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAclAccountRequest, CreateAclAccountResponse> createAclAccount =
+        genForcreateAclAccount();
+
+    private static HttpRequestDef<CreateAclAccountRequest, CreateAclAccountResponse> genForcreateAclAccount() {
+        // basic
+        HttpRequestDef.Builder<CreateAclAccountRequest, CreateAclAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAclAccountRequest.class, CreateAclAccountResponse.class)
+                .withName("CreateAclAccount")
+                .withUri("/v2/{project_id}/instances/{instance_id}/accounts")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAclAccountRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateAclAccountRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAclAccountRequestBody.class),
+            f -> f.withMarshaller(CreateAclAccountRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAutoExpireScanTaskRequest, CreateAutoExpireScanTaskResponse> createAutoExpireScanTask =
         genForcreateAutoExpireScanTask();
 
@@ -405,6 +471,38 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateBigkeyScanTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateConnectivityTestRequest, CreateConnectivityTestResponse> createConnectivityTest =
+        genForcreateConnectivityTest();
+
+    private static HttpRequestDef<CreateConnectivityTestRequest, CreateConnectivityTestResponse> genForcreateConnectivityTest() {
+        // basic
+        HttpRequestDef.Builder<CreateConnectivityTestRequest, CreateConnectivityTestResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateConnectivityTestRequest.class, CreateConnectivityTestResponse.class)
+            .withName("CreateConnectivityTest")
+            .withUri("/v2/{project_id}/instance/{instance_id}/connectivity-test")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateConnectivityTestRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateConnectivityTestRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateConnectivityTestRequestBody.class),
+            f -> f.withMarshaller(CreateConnectivityTestRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -591,10 +689,10 @@ public class DcsMeta {
             f -> f.withMarshaller(CreateRedislogRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<Integer>withRequestField("query_time",
+        builder.<CreateRedislogRequest.QueryTimeEnum>withRequestField("query_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(CreateRedislogRequest.QueryTimeEnum.class),
             f -> f.withMarshaller(CreateRedislogRequest::getQueryTime, (req, v) -> {
                 req.setQueryTime(v);
             }));
@@ -646,6 +744,38 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateRedislogDownloadLinkRequest::getId, (req, v) -> {
                 req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAclAccountRequest, DeleteAclAccountResponse> deleteAclAccount =
+        genFordeleteAclAccount();
+
+    private static HttpRequestDef<DeleteAclAccountRequest, DeleteAclAccountResponse> genFordeleteAclAccount() {
+        // basic
+        HttpRequestDef.Builder<DeleteAclAccountRequest, DeleteAclAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAclAccountRequest.class, DeleteAclAccountResponse.class)
+                .withName("DeleteAclAccount")
+                .withUri("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAclAccountRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAclAccountRequest::getAccountId, (req, v) -> {
+                req.setAccountId(v);
             }));
 
         // response
@@ -742,6 +872,31 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBigkeyScanTaskRequest::getBigkeyId, (req, v) -> {
                 req.setBigkeyId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> deleteConfigTemplate =
+        genFordeleteConfigTemplate();
+
+    private static HttpRequestDef<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> genFordeleteConfigTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteConfigTemplateRequest.class, DeleteConfigTemplateResponse.class)
+            .withName("DeleteConfigTemplate")
+            .withUri("/v2/{project_id}/config-templates/{template_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConfigTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
             }));
 
         // response
@@ -904,6 +1059,31 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAclAccountsRequest, ListAclAccountsResponse> listAclAccounts =
+        genForlistAclAccounts();
+
+    private static HttpRequestDef<ListAclAccountsRequest, ListAclAccountsResponse> genForlistAclAccounts() {
+        // basic
+        HttpRequestDef.Builder<ListAclAccountsRequest, ListAclAccountsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAclAccountsRequest.class, ListAclAccountsResponse.class)
+                .withName("ListAclAccounts")
+                .withUri("/v2/{project_id}/instances/{instance_id}/accounts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAclAccountsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response
@@ -1892,6 +2072,45 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> resetAclAccountPassWord =
+        genForresetAclAccountPassWord();
+
+    private static HttpRequestDef<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> genForresetAclAccountPassWord() {
+        // basic
+        HttpRequestDef.Builder<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ResetAclAccountPassWordRequest.class, ResetAclAccountPassWordResponse.class)
+            .withName("ResetAclAccountPassWord")
+            .withUri("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}/password/reset")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetAclAccountPassWordRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetAclAccountPassWordRequest::getAccountId, (req, v) -> {
+                req.setAccountId(v);
+            }));
+        builder.<AclAccountResetPasswordBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AclAccountResetPasswordBody.class),
+            f -> f.withMarshaller(ResetAclAccountPassWordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
         genForresetPassword();
 
@@ -2099,6 +2318,38 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBigkeyScanTaskDetailsRequest::getBigkeyId, (req, v) -> {
                 req.setBigkeyId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConfigTemplateRequest, ShowConfigTemplateResponse> showConfigTemplate =
+        genForshowConfigTemplate();
+
+    private static HttpRequestDef<ShowConfigTemplateRequest, ShowConfigTemplateResponse> genForshowConfigTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigTemplateRequest, ShowConfigTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConfigTemplateRequest.class, ShowConfigTemplateResponse.class)
+                .withName("ShowConfigTemplate")
+                .withUri("/v2/{project_id}/config-templates/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+        builder.<ShowConfigTemplateRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowConfigTemplateRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowConfigTemplateRequest::getType, (req, v) -> {
+                req.setType(v);
             }));
 
         // response
@@ -2331,6 +2582,45 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowReplicationStatesRequest, ShowReplicationStatesResponse> showReplicationStates =
+        genForshowReplicationStates();
+
+    private static HttpRequestDef<ShowReplicationStatesRequest, ShowReplicationStatesResponse> genForshowReplicationStates() {
+        // basic
+        HttpRequestDef.Builder<ShowReplicationStatesRequest, ShowReplicationStatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowReplicationStatesRequest.class, ShowReplicationStatesResponse.class)
+            .withName("ShowReplicationStates")
+            .withUri("/v2/{project_id}/instance/{instance_id}/groups/{group_id}/group-nodes-state")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplicationStatesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplicationStatesRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+
+        // response
+        builder.<List<InstanceReplicationListInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowReplicationStatesResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(InstanceReplicationListInfo.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTagsRequest, ShowTagsResponse> showTags = genForshowTags();
 
     private static HttpRequestDef<ShowTagsRequest, ShowTagsResponse> genForshowTags() {
@@ -2405,6 +2695,124 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> updateAclAccountPassWord =
+        genForupdateAclAccountPassWord();
+
+    private static HttpRequestDef<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> genForupdateAclAccountPassWord() {
+        // basic
+        HttpRequestDef.Builder<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateAclAccountPassWordRequest.class, UpdateAclAccountPassWordResponse.class)
+                .withName("UpdateAclAccountPassWord")
+                .withUri("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}/password/modify")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclAccountPassWordRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclAccountPassWordRequest::getAccountId, (req, v) -> {
+                req.setAccountId(v);
+            }));
+        builder.<AclAccountModifyPasswordBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AclAccountModifyPasswordBody.class),
+            f -> f.withMarshaller(UpdateAclAccountPassWordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse> updateAclAccountRemark =
+        genForupdateAclAccountRemark();
+
+    private static HttpRequestDef<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse> genForupdateAclAccountRemark() {
+        // basic
+        HttpRequestDef.Builder<UpdateAclAccountRemarkRequest, UpdateAclAccountRemarkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAclAccountRemarkRequest.class, UpdateAclAccountRemarkResponse.class)
+            .withName("UpdateAclAccountRemark")
+            .withUri("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclAccountRemarkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclAccountRemarkRequest::getAccountId, (req, v) -> {
+                req.setAccountId(v);
+            }));
+        builder.<UpdateAclAccountRemarkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateAclAccountRemarkRequestBody.class),
+            f -> f.withMarshaller(UpdateAclAccountRemarkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse> updateAclAccountRole =
+        genForupdateAclAccountRole();
+
+    private static HttpRequestDef<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse> genForupdateAclAccountRole() {
+        // basic
+        HttpRequestDef.Builder<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAclAccountRoleRequest.class, UpdateAclAccountRoleResponse.class)
+            .withName("UpdateAclAccountRole")
+            .withUri("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}/role")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclAccountRoleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclAccountRoleRequest::getAccountId, (req, v) -> {
+                req.setAccountId(v);
+            }));
+        builder.<AclAccountRoleModifyBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AclAccountRoleModifyBody.class),
+            f -> f.withMarshaller(UpdateAclAccountRoleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> updateBigkeyAutoscanConfig =
         genForupdateBigkeyAutoscanConfig();
 
@@ -2432,6 +2840,38 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AutoscanConfigRequest.class),
             f -> f.withMarshaller(UpdateBigkeyAutoscanConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse> updateConfigTemplate =
+        genForupdateConfigTemplate();
+
+    private static HttpRequestDef<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse> genForupdateConfigTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateConfigTemplateRequest, UpdateConfigTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateConfigTemplateRequest.class, UpdateConfigTemplateResponse.class)
+            .withName("UpdateConfigTemplate")
+            .withUri("/v2/{project_id}/config-templates/{template_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConfigTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+        builder.<UpdateCustomTemplateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateCustomTemplateBody.class),
+            f -> f.withMarshaller(UpdateConfigTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

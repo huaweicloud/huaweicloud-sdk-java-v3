@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.ccm.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -30,6 +32,31 @@ public class IssueCertificateAuthorityCertificateRequestBody {
     @JsonProperty(value = "validity")
 
     private Validity validity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "distinguished_name")
+
+    private DistinguishedName distinguishedName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_algorithm")
+
+    private String keyAlgorithm;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_usages")
+
+    private List<String> keyUsages = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "crl_configuration")
+
+    private CrlConfiguration crlConfiguration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -115,6 +142,127 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         this.validity = validity;
     }
 
+    public IssueCertificateAuthorityCertificateRequestBody withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 创建的CA类型。（如果激活包周期CA，为必填值） - **ROOT** : 根CA - **SUBORDINATE** : 从属CA
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public IssueCertificateAuthorityCertificateRequestBody withDistinguishedName(DistinguishedName distinguishedName) {
+        this.distinguishedName = distinguishedName;
+        return this;
+    }
+
+    public IssueCertificateAuthorityCertificateRequestBody withDistinguishedName(
+        Consumer<DistinguishedName> distinguishedNameSetter) {
+        if (this.distinguishedName == null) {
+            this.distinguishedName = new DistinguishedName();
+            distinguishedNameSetter.accept(this.distinguishedName);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get distinguishedName
+     * @return distinguishedName
+     */
+    public DistinguishedName getDistinguishedName() {
+        return distinguishedName;
+    }
+
+    public void setDistinguishedName(DistinguishedName distinguishedName) {
+        this.distinguishedName = distinguishedName;
+    }
+
+    public IssueCertificateAuthorityCertificateRequestBody withKeyAlgorithm(String keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm;
+        return this;
+    }
+
+    /**
+     * 密钥算法（如果激活包周期CA，为必填值），可选值如下：   - **RSA2048** : RSA算法，密钥长度2048位；   - **RSA4096** : RSA算法，密钥长度4096位；   - **EC256** : 椭圆曲线算法（Elliptic Curve Digital Signature Algorithm (ECDSA)），密钥长度256位；   - **EC384** : 椭圆曲线算法（Elliptic Curve Digital Signature Algorithm (ECDSA)），密钥长度384位；   - **SM2** : 国家密码管理局颁发的椭圆曲线算法（签名哈希算法SM3），密钥长度256位。（中国站）
+     * @return keyAlgorithm
+     */
+    public String getKeyAlgorithm() {
+        return keyAlgorithm;
+    }
+
+    public void setKeyAlgorithm(String keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm;
+    }
+
+    public IssueCertificateAuthorityCertificateRequestBody withKeyUsages(List<String> keyUsages) {
+        this.keyUsages = keyUsages;
+        return this;
+    }
+
+    public IssueCertificateAuthorityCertificateRequestBody addKeyUsagesItem(String keyUsagesItem) {
+        if (this.keyUsages == null) {
+            this.keyUsages = new ArrayList<>();
+        }
+        this.keyUsages.add(keyUsagesItem);
+        return this;
+    }
+
+    public IssueCertificateAuthorityCertificateRequestBody withKeyUsages(Consumer<List<String>> keyUsagesSetter) {
+        if (this.keyUsages == null) {
+            this.keyUsages = new ArrayList<>();
+        }
+        keyUsagesSetter.accept(this.keyUsages);
+        return this;
+    }
+
+    /**
+     * 密钥用法，具体标准参见RFC 5280中:[4.2.1.3节](https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.3)。   - **digitalSignature** : 数字签名；   - **nonRepudiation** : 不可抵赖；   - **keyEncipherment** : 密钥用于加密密钥数据；   - **dataEncipherment** : 用于加密数据；   - **keyAgreement** : 密钥协商；   - **keyCertSign** : 签发证书；   - **cRLSign** : 签发吊销列表；   - **encipherOnly** : 仅用于加密；   - **decipherOnly** : 仅用于解密。 > 缺省值如下： > - 根CA证书：默认为**[digitalSignature,keyCertSign,cRLSign]**，忽略用户传入值； > - 从属CA证书：默认为**[digitalSignature,keyCertSign,cRLSign]**，支持用户自定义。
+     * @return keyUsages
+     */
+    public List<String> getKeyUsages() {
+        return keyUsages;
+    }
+
+    public void setKeyUsages(List<String> keyUsages) {
+        this.keyUsages = keyUsages;
+    }
+
+    public IssueCertificateAuthorityCertificateRequestBody withCrlConfiguration(CrlConfiguration crlConfiguration) {
+        this.crlConfiguration = crlConfiguration;
+        return this;
+    }
+
+    public IssueCertificateAuthorityCertificateRequestBody withCrlConfiguration(
+        Consumer<CrlConfiguration> crlConfigurationSetter) {
+        if (this.crlConfiguration == null) {
+            this.crlConfiguration = new CrlConfiguration();
+            crlConfigurationSetter.accept(this.crlConfiguration);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get crlConfiguration
+     * @return crlConfiguration
+     */
+    public CrlConfiguration getCrlConfiguration() {
+        return crlConfiguration;
+    }
+
+    public void setCrlConfiguration(CrlConfiguration crlConfiguration) {
+        this.crlConfiguration = crlConfiguration;
+    }
+
     public IssueCertificateAuthorityCertificateRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -143,13 +291,25 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         IssueCertificateAuthorityCertificateRequestBody that = (IssueCertificateAuthorityCertificateRequestBody) obj;
         return Objects.equals(this.issuerId, that.issuerId) && Objects.equals(this.pathLength, that.pathLength)
             && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
-            && Objects.equals(this.validity, that.validity)
+            && Objects.equals(this.validity, that.validity) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.distinguishedName, that.distinguishedName)
+            && Objects.equals(this.keyAlgorithm, that.keyAlgorithm) && Objects.equals(this.keyUsages, that.keyUsages)
+            && Objects.equals(this.crlConfiguration, that.crlConfiguration)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(issuerId, pathLength, signatureAlgorithm, validity, enterpriseProjectId);
+        return Objects.hash(issuerId,
+            pathLength,
+            signatureAlgorithm,
+            validity,
+            type,
+            distinguishedName,
+            keyAlgorithm,
+            keyUsages,
+            crlConfiguration,
+            enterpriseProjectId);
     }
 
     @Override
@@ -160,6 +320,11 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         sb.append("    pathLength: ").append(toIndentedString(pathLength)).append("\n");
         sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
+        sb.append("    keyAlgorithm: ").append(toIndentedString(keyAlgorithm)).append("\n");
+        sb.append("    keyUsages: ").append(toIndentedString(keyUsages)).append("\n");
+        sb.append("    crlConfiguration: ").append(toIndentedString(crlConfiguration)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -16,11 +16,6 @@ import java.util.function.Consumer;
  */
 public class ConfigurationItem {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data")
-
-    private ConfigurationData data;
-
     /**
      * 组件配置类型，当前CAE支持组件配置如下11类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。  - apm2：性能管理。  - log: 自定义日志路径。  - customMetric: 自定义监控指标。
      */
@@ -150,6 +145,28 @@ public class ConfigurationItem {
 
     private TypeEnum type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private ConfigurationData data;
+
+    public ConfigurationItem withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 组件配置类型，当前CAE支持组件配置如下11类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。  - apm2：性能管理。  - log: 自定义日志路径。  - customMetric: 自定义监控指标。
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     public ConfigurationItem withData(ConfigurationData data) {
         this.data = data;
         return this;
@@ -176,23 +193,6 @@ public class ConfigurationItem {
         this.data = data;
     }
 
-    public ConfigurationItem withType(TypeEnum type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 组件配置类型，当前CAE支持组件配置如下11类。  - rds：云数据库RDS。  - cse：微服务引擎CSE。  - env：环境变量。  - access：访问方式。  - scaling：伸缩策略。  - volume：云存储配置。  - healthCheck：健康检查。  - lifecycle：生命周期管理。  - apm2：性能管理。  - log: 自定义日志路径。  - customMetric: 自定义监控指标。
-     * @return type
-     */
-    public TypeEnum getType() {
-        return type;
-    }
-
-    public void setType(TypeEnum type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -202,20 +202,20 @@ public class ConfigurationItem {
             return false;
         }
         ConfigurationItem that = (ConfigurationItem) obj;
-        return Objects.equals(this.data, that.data) && Objects.equals(this.type, that.type);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, type);
+        return Objects.hash(type, data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfigurationItem {\n");
-        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

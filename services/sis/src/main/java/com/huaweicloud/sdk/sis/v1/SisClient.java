@@ -15,10 +15,6 @@ import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrRequest;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrResponse;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioRequest;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioResponse;
-import com.huaweicloud.sdk.sis.v1.model.RunAudioAssessmentRequest;
-import com.huaweicloud.sdk.sis.v1.model.RunAudioAssessmentResponse;
-import com.huaweicloud.sdk.sis.v1.model.RunMultiModalAssessmentRequest;
-import com.huaweicloud.sdk.sis.v1.model.RunMultiModalAssessmentResponse;
 import com.huaweicloud.sdk.sis.v1.model.RunTtsRequest;
 import com.huaweicloud.sdk.sis.v1.model.RunTtsResponse;
 import com.huaweicloud.sdk.sis.v1.model.ShowVocabulariesRequest;
@@ -239,66 +235,6 @@ public class SisClient {
         RecognizeShortAudioRequest request) {
         return new SyncInvoker<RecognizeShortAudioRequest, RecognizeShortAudioResponse>(request,
             SisMeta.recognizeShortAudio, hcClient);
-    }
-
-    /**
-     * 语音评测
-     *
-     * 口语评测接口，基于一小段朗读语音和预期文本，评价朗读者发音质量。当前仅支持华北-北京四。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunAudioAssessmentRequest 请求对象
-     * @return RunAudioAssessmentResponse
-     */
-    public RunAudioAssessmentResponse runAudioAssessment(RunAudioAssessmentRequest request) {
-        return hcClient.syncInvokeHttp(request, SisMeta.runAudioAssessment);
-    }
-
-    /**
-     * 语音评测
-     *
-     * 口语评测接口，基于一小段朗读语音和预期文本，评价朗读者发音质量。当前仅支持华北-北京四。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunAudioAssessmentRequest 请求对象
-     * @return SyncInvoker<RunAudioAssessmentRequest, RunAudioAssessmentResponse>
-     */
-    public SyncInvoker<RunAudioAssessmentRequest, RunAudioAssessmentResponse> runAudioAssessmentInvoker(
-        RunAudioAssessmentRequest request) {
-        return new SyncInvoker<RunAudioAssessmentRequest, RunAudioAssessmentResponse>(request,
-            SisMeta.runAudioAssessment, hcClient);
-    }
-
-    /**
-     * 多模态评测
-     *
-     * 多模态评测接口，根据朗读视频数据、视频对应的音频数据和试题文本，综合给出朗读者口语的评测分数。当前仅支持华北-北京四。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunMultiModalAssessmentRequest 请求对象
-     * @return RunMultiModalAssessmentResponse
-     */
-    public RunMultiModalAssessmentResponse runMultiModalAssessment(RunMultiModalAssessmentRequest request) {
-        return hcClient.syncInvokeHttp(request, SisMeta.runMultiModalAssessment);
-    }
-
-    /**
-     * 多模态评测
-     *
-     * 多模态评测接口，根据朗读视频数据、视频对应的音频数据和试题文本，综合给出朗读者口语的评测分数。当前仅支持华北-北京四。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RunMultiModalAssessmentRequest 请求对象
-     * @return SyncInvoker<RunMultiModalAssessmentRequest, RunMultiModalAssessmentResponse>
-     */
-    public SyncInvoker<RunMultiModalAssessmentRequest, RunMultiModalAssessmentResponse> runMultiModalAssessmentInvoker(
-        RunMultiModalAssessmentRequest request) {
-        return new SyncInvoker<RunMultiModalAssessmentRequest, RunMultiModalAssessmentResponse>(request,
-            SisMeta.runMultiModalAssessment, hcClient);
     }
 
     /**

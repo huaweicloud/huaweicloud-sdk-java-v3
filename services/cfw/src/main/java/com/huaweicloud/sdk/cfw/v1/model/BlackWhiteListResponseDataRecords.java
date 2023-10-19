@@ -40,6 +40,11 @@ public class BlackWhiteListResponseDataRecords {
 
     private String port;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public BlackWhiteListResponseDataRecords withListId(String listId) {
         this.listId = listId;
         return this;
@@ -142,6 +147,23 @@ public class BlackWhiteListResponseDataRecords {
         this.port = port;
     }
 
+    public BlackWhiteListResponseDataRecords withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +175,13 @@ public class BlackWhiteListResponseDataRecords {
         BlackWhiteListResponseDataRecords that = (BlackWhiteListResponseDataRecords) obj;
         return Objects.equals(this.listId, that.listId) && Objects.equals(this.direction, that.direction)
             && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.address, that.address)
-            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.port, that.port);
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(listId, direction, addressType, address, protocol, port);
+        return Objects.hash(listId, direction, addressType, address, protocol, port, description);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class BlackWhiteListResponseDataRecords {
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

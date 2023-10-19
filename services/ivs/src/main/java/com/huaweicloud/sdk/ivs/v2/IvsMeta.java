@@ -59,6 +59,12 @@ public class IvsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectExtentionByIdCardImageResponse::getXRequestId,
+                DetectExtentionByIdCardImageResponse::setXRequestId));
         return builder.build();
     }
 
@@ -94,6 +100,12 @@ public class IvsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectExtentionByNameAndIdResponse::getXRequestId,
+                DetectExtentionByNameAndIdResponse::setXRequestId));
         return builder.build();
     }
 
@@ -129,6 +141,12 @@ public class IvsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectStandardByIdCardImageResponse::getXRequestId,
+                DetectStandardByIdCardImageResponse::setXRequestId));
         return builder.build();
     }
 
@@ -164,6 +182,12 @@ public class IvsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectStandardByNameAndIdResponse::getXRequestId,
+                DetectStandardByNameAndIdResponse::setXRequestId));
         return builder.build();
     }
 
@@ -199,6 +223,12 @@ public class IvsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectStandardByVideoAndIdCardImageResponse::getXRequestId,
+                DetectStandardByVideoAndIdCardImageResponse::setXRequestId));
         return builder.build();
     }
 
@@ -234,6 +264,12 @@ public class IvsMeta {
 
         // response
 
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DetectStandardByVideoAndNameAndIdResponse::getXRequestId,
+                DetectStandardByVideoAndNameAndIdResponse::setXRequestId));
         return builder.build();
     }
 

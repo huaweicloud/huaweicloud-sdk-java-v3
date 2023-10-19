@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 生命周期管理组件配置启动后处理。
+ * - type为\&quot;lifecycle\&quot;时，配置此参数。 - 参数含义：生命周期管理组件配置启动后处理。
  */
 public class ConfigurationDataSpecPostStart {
 

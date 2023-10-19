@@ -39,7 +39,7 @@ public class GetFirewallInstanceData {
     }
 
     /**
-     * 每页显示个数
+     * 每页显示个数，范围为1-1024
      * @return limit
      */
     public Integer getLimit() {

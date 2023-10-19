@@ -13,14 +13,31 @@ import java.util.function.Consumer;
 public class CreateNetworkInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_instance")
 
     private NetworkInstance networkInstance;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    public CreateNetworkInstanceResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
 
-    private String requestId;
+    /**
+     * 资源ID标识符。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public CreateNetworkInstanceResponse withNetworkInstance(NetworkInstance networkInstance) {
         this.networkInstance = networkInstance;
@@ -48,23 +65,6 @@ public class CreateNetworkInstanceResponse extends SdkResponse {
         this.networkInstance = networkInstance;
     }
 
-    public CreateNetworkInstanceResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,21 +74,21 @@ public class CreateNetworkInstanceResponse extends SdkResponse {
             return false;
         }
         CreateNetworkInstanceResponse that = (CreateNetworkInstanceResponse) obj;
-        return Objects.equals(this.networkInstance, that.networkInstance)
-            && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.networkInstance, that.networkInstance);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(networkInstance, requestId);
+        return Objects.hash(requestId, networkInstance);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateNetworkInstanceResponse {\n");
-        sb.append("    networkInstance: ").append(toIndentedString(networkInstance)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    networkInstance: ").append(toIndentedString(networkInstance)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -26,6 +26,11 @@ public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
 
     private String faceSetName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public DeleteFaceByExternalImageIdResponse withFaceNumber(Integer faceNumber) {
         this.faceNumber = faceNumber;
         return this;
@@ -77,6 +82,25 @@ public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
         this.faceSetName = faceSetName;
     }
 
+    public DeleteFaceByExternalImageIdResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +111,12 @@ public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
         }
         DeleteFaceByExternalImageIdResponse that = (DeleteFaceByExternalImageIdResponse) obj;
         return Objects.equals(this.faceNumber, that.faceNumber) && Objects.equals(this.faceSetId, that.faceSetId)
-            && Objects.equals(this.faceSetName, that.faceSetName);
+            && Objects.equals(this.faceSetName, that.faceSetName) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(faceNumber, faceSetId, faceSetName);
+        return Objects.hash(faceNumber, faceSetId, faceSetName, xRequestId);
     }
 
     @Override
@@ -102,6 +126,7 @@ public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
         sb.append("    faceNumber: ").append(toIndentedString(faceNumber)).append("\n");
         sb.append("    faceSetId: ").append(toIndentedString(faceSetId)).append("\n");
         sb.append("    faceSetName: ").append(toIndentedString(faceSetName)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

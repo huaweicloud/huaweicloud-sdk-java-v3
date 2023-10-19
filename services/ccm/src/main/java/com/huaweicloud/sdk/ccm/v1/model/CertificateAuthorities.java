@@ -101,6 +101,16 @@ public class CertificateAuthorities {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "free_quota")
+
+    private Integer freeQuota;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charging_mode")
+
+    private Integer chargingMode;
+
     public CertificateAuthorities withCaId(String caId) {
         this.caId = caId;
         return this;
@@ -427,6 +437,40 @@ public class CertificateAuthorities {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CertificateAuthorities withFreeQuota(Integer freeQuota) {
+        this.freeQuota = freeQuota;
+        return this;
+    }
+
+    /**
+     * 免费证书配额。
+     * @return freeQuota
+     */
+    public Integer getFreeQuota() {
+        return freeQuota;
+    }
+
+    public void setFreeQuota(Integer freeQuota) {
+        this.freeQuota = freeQuota;
+    }
+
+    public CertificateAuthorities withChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
+        return this;
+    }
+
+    /**
+     * 计费模式:   - **0** : 包周期；   - **1** : 按需。
+     * @return chargingMode
+     */
+    public Integer getChargingMode() {
+        return chargingMode;
+    }
+
+    public void setChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -447,7 +491,8 @@ public class CertificateAuthorities {
             && Objects.equals(this.notAfter, that.notAfter)
             && Objects.equals(this.distinguishedName, that.distinguishedName)
             && Objects.equals(this.crlConfiguration, that.crlConfiguration)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.freeQuota, that.freeQuota) && Objects.equals(this.chargingMode, that.chargingMode);
     }
 
     @Override
@@ -469,7 +514,9 @@ public class CertificateAuthorities {
             notAfter,
             distinguishedName,
             crlConfiguration,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            freeQuota,
+            chargingMode);
     }
 
     @Override
@@ -494,6 +541,8 @@ public class CertificateAuthorities {
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("    crlConfiguration: ").append(toIndentedString(crlConfiguration)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    freeQuota: ").append(toIndentedString(freeQuota)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

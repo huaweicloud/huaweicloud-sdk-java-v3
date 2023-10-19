@@ -39,6 +39,41 @@ public class NetworkInstance {
 
     private String domainId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private OffsetDateTime createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private OffsetDateTime updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_connection_id")
+
+    private String cloudConnectionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_domain_id")
+
+    private String instanceDomainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
     /**
      * 网络实例的状态。 - ACTIVE：处理成功。 - PENDING：处理中。 - ERROR：处理失败。
      */
@@ -107,16 +142,6 @@ public class NetworkInstance {
     @JsonProperty(value = "status")
 
     private StatusEnum status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "created_at")
-
-    private OffsetDateTime createdAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updated_at")
-
-    private OffsetDateTime updatedAt;
 
     /**
      * 网络实例的类型。 - vpc：虚拟私有云。 - vgw：虚拟网关。
@@ -194,31 +219,6 @@ public class NetworkInstance {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_connection_id")
-
-    private String cloudConnectionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
-
-    private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_domain_id")
-
-    private String instanceDomainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region_id")
-
-    private String regionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidrs")
 
     private List<String> cidrs = null;
@@ -229,7 +229,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例的ID。
+     * 资源ID标识符。
      * @return id
      */
     public String getId() {
@@ -246,7 +246,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例的名字。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -263,7 +263,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 网络实例的描述。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -280,7 +280,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 帐号ID。
+     * 实例所属帐号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -289,6 +289,125 @@ public class NetworkInstance {
 
     public void setDomainId(String domainId) {
         this.domainId = domainId;
+    }
+
+    public NetworkInstance withCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 实例创建时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss。
+     * @return createdAt
+     */
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public NetworkInstance withUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 实例更新时间。UTC时间格式，yyyy-MM-ddTHH:mm:ss。
+     * @return updatedAt
+     */
+    public OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public NetworkInstance withCloudConnectionId(String cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return cloudConnectionId
+     */
+    public String getCloudConnectionId() {
+        return cloudConnectionId;
+    }
+
+    public void setCloudConnectionId(String cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
+    }
+
+    public NetworkInstance withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public NetworkInstance withInstanceDomainId(String instanceDomainId) {
+        this.instanceDomainId = instanceDomainId;
+        return this;
+    }
+
+    /**
+     * 实例所属帐号ID。
+     * @return instanceDomainId
+     */
+    public String getInstanceDomainId() {
+        return instanceDomainId;
+    }
+
+    public void setInstanceDomainId(String instanceDomainId) {
+        this.instanceDomainId = instanceDomainId;
+    }
+
+    public NetworkInstance withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * RegionID。
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    public NetworkInstance withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 实例所属项目ID。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public NetworkInstance withStatus(StatusEnum status) {
@@ -308,40 +427,6 @@ public class NetworkInstance {
         this.status = status;
     }
 
-    public NetworkInstance withCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    /**
-     * 网络实例的创建时间。 UTC时间格式，yyyy-MM-ddTHH:mm:ss
-     * @return createdAt
-     */
-    public OffsetDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public NetworkInstance withUpdatedAt(OffsetDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    /**
-     * 网络实例的更新时间。 UTC时间格式，yyyy-MM-ddTHH:mm:ss
-     * @return updatedAt
-     */
-    public OffsetDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(OffsetDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public NetworkInstance withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -357,91 +442,6 @@ public class NetworkInstance {
 
     public void setType(TypeEnum type) {
         this.type = type;
-    }
-
-    public NetworkInstance withCloudConnectionId(String cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
-        return this;
-    }
-
-    /**
-     * 云连接实例ID。
-     * @return cloudConnectionId
-     */
-    public String getCloudConnectionId() {
-        return cloudConnectionId;
-    }
-
-    public void setCloudConnectionId(String cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
-    }
-
-    public NetworkInstance withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * 网络实例的ID。
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    public NetworkInstance withInstanceDomainId(String instanceDomainId) {
-        this.instanceDomainId = instanceDomainId;
-        return this;
-    }
-
-    /**
-     * 网络实例所属账户ID。
-     * @return instanceDomainId
-     */
-    public String getInstanceDomainId() {
-        return instanceDomainId;
-    }
-
-    public void setInstanceDomainId(String instanceDomainId) {
-        this.instanceDomainId = instanceDomainId;
-    }
-
-    public NetworkInstance withRegionId(String regionId) {
-        this.regionId = regionId;
-        return this;
-    }
-
-    /**
-     * 网络实例所在Region的ID。
-     * @return regionId
-     */
-    public String getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(String regionId) {
-        this.regionId = regionId;
-    }
-
-    public NetworkInstance withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 网络实例所在租户的项目ID。
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
     }
 
     public NetworkInstance withCidrs(List<String> cidrs) {
@@ -488,12 +488,12 @@ public class NetworkInstance {
         NetworkInstance that = (NetworkInstance) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
             && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.instanceDomainId, that.instanceDomainId)
             && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
             && Objects.equals(this.cidrs, that.cidrs);
     }
 
@@ -503,15 +503,15 @@ public class NetworkInstance {
             name,
             description,
             domainId,
-            status,
             createdAt,
             updatedAt,
-            type,
             cloudConnectionId,
             instanceId,
             instanceDomainId,
             regionId,
             projectId,
+            status,
+            type,
             cidrs);
     }
 
@@ -523,15 +523,15 @@ public class NetworkInstance {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    instanceDomainId: ").append(toIndentedString(instanceDomainId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    cidrs: ").append(toIndentedString(cidrs)).append("\n");
         sb.append("}");
         return sb.toString();

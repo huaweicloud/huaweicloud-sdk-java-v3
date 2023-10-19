@@ -108,7 +108,7 @@ public class AggregatePolicyComplianceSummaryResult {
     }
 
     /**
-     * 账号名称
+     * 帐号名称
      * @return groupAccountName
      */
     public String getGroupAccountName() {

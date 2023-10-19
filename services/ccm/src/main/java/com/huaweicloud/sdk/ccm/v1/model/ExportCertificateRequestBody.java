@@ -70,7 +70,7 @@ public class ExportCertificateRequestBody {
     }
 
     /**
-     * 是否国密GMT0009标准规范。当证书算法为SM2时传入才有效，若不传入，则默认为false。   - **true**   - **false**
+     * 是否国密GMT0009标准规范和国密GMT0010标准规范。当证书算法为SM2时传入才有效，若不传入，则默认为false。   - **true**   - **false**
      * @return isSmStandard
      */
     public String getIsSmStandard() {

@@ -27,7 +27,7 @@ public class DisassociateBandwidthPackageRequest {
     }
 
     /**
-     * 带宽包实例ID。
+     * 资源的Id。
      * @return id
      */
     public String getId() {

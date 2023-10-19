@@ -70,7 +70,7 @@ public class MemberGroupInfo {
     }
 
     /**
-     * VPC通道后端服务器组名称
+     * VPC通道后端服务器组名称。支持汉字、英文、数字、下划线、中划线、点，且只能以英文和汉字开头，3-64字符。 > 中文字符必须为UTF-8或者unicode编码。
      * @return memberGroupName
      */
     public String getMemberGroupName() {
@@ -87,7 +87,7 @@ public class MemberGroupInfo {
     }
 
     /**
-     * VPC通道后端服务器组描述
+     * VPC通道后端服务器组描述。
      * @return memberGroupRemark
      */
     public String getMemberGroupRemark() {

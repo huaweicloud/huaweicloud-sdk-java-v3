@@ -26,7 +26,7 @@ public class WaterfallPageListParam {
     }
 
     /**
-     * 页面的分页标志位；为分页的最后一条记录的id
+     * 页面的分页标志位,为分页的最后一条记录的id
      * @return marker
      */
     public String getMarker() {
@@ -43,9 +43,7 @@ public class WaterfallPageListParam {
     }
 
     /**
-     * 查询返回记录的数量限制
-     * minimum: 1
-     * maximum: 100
+     * 查询返回记录的数量限制。limit可以为空，如果值小于1或者大于100，则会使用默认值100
      * @return limit
      */
     public Integer getLimit() {

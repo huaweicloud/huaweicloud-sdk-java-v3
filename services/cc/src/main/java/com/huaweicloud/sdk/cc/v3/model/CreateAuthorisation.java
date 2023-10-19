@@ -30,6 +30,21 @@ public class CreateAuthorisation {
 
     private String instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_connection_id")
+
+    private String cloudConnectionId;
+
     /**
      * 授权网络实例的类型: - vpc：虚拟私有云
      */
@@ -100,24 +115,9 @@ public class CreateAuthorisation {
     private InstanceTypeEnum instanceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region_id")
-
-    private String regionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cloud_connection_domain_id")
 
     private String cloudConnectionDomainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_connection_id")
-
-    private String cloudConnectionId;
 
     public CreateAuthorisation withName(String name) {
         this.name = name;
@@ -125,7 +125,7 @@ public class CreateAuthorisation {
     }
 
     /**
-     * 授权的名称。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -142,7 +142,7 @@ public class CreateAuthorisation {
     }
 
     /**
-     * 授权的描述信息。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -159,7 +159,7 @@ public class CreateAuthorisation {
     }
 
     /**
-     * 授权网络实例的ID。
+     * 资源ID标识符。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -168,6 +168,57 @@ public class CreateAuthorisation {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public CreateAuthorisation withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 实例所属项目ID。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public CreateAuthorisation withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * RegionID。
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    public CreateAuthorisation withCloudConnectionId(String cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return cloudConnectionId
+     */
+    public String getCloudConnectionId() {
+        return cloudConnectionId;
+    }
+
+    public void setCloudConnectionId(String cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
     }
 
     public CreateAuthorisation withInstanceType(InstanceTypeEnum instanceType) {
@@ -187,40 +238,6 @@ public class CreateAuthorisation {
         this.instanceType = instanceType;
     }
 
-    public CreateAuthorisation withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 授权网络实例所属项目。
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
-    public CreateAuthorisation withRegionId(String regionId) {
-        this.regionId = regionId;
-        return this;
-    }
-
-    /**
-     * 授权实例所属Region。
-     * @return regionId
-     */
-    public String getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(String regionId) {
-        this.regionId = regionId;
-    }
-
     public CreateAuthorisation withCloudConnectionDomainId(String cloudConnectionDomainId) {
         this.cloudConnectionDomainId = cloudConnectionDomainId;
         return this;
@@ -238,23 +255,6 @@ public class CreateAuthorisation {
         this.cloudConnectionDomainId = cloudConnectionDomainId;
     }
 
-    public CreateAuthorisation withCloudConnectionId(String cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
-        return this;
-    }
-
-    /**
-     * 被授权云连接实例ID。
-     * @return cloudConnectionId
-     */
-    public String getCloudConnectionId() {
-        return cloudConnectionId;
-    }
-
-    public void setCloudConnectionId(String cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -265,10 +265,11 @@ public class CreateAuthorisation {
         }
         CreateAuthorisation that = (CreateAuthorisation) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
-            && Objects.equals(this.cloudConnectionDomainId, that.cloudConnectionDomainId)
-            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId);
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.cloudConnectionDomainId, that.cloudConnectionDomainId);
     }
 
     @Override
@@ -276,11 +277,11 @@ public class CreateAuthorisation {
         return Objects.hash(name,
             description,
             instanceId,
-            instanceType,
             projectId,
             regionId,
-            cloudConnectionDomainId,
-            cloudConnectionId);
+            cloudConnectionId,
+            instanceType,
+            cloudConnectionDomainId);
     }
 
     @Override
@@ -290,11 +291,11 @@ public class CreateAuthorisation {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
-        sb.append("    cloudConnectionDomainId: ").append(toIndentedString(cloudConnectionDomainId)).append("\n");
         sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    cloudConnectionDomainId: ").append(toIndentedString(cloudConnectionDomainId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

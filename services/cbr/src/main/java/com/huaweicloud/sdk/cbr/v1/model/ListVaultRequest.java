@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -193,7 +196,7 @@ public class ListVaultRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private String id;
+    private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
@@ -331,8 +334,24 @@ public class ListVaultRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListVaultRequest withId(String id) {
+    public ListVaultRequest withId(List<String> id) {
         this.id = id;
+        return this;
+    }
+
+    public ListVaultRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
+
+    public ListVaultRequest withId(Consumer<List<String>> idSetter) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
         return this;
     }
 
@@ -340,11 +359,11 @@ public class ListVaultRequest {
      * 存储库ID
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 

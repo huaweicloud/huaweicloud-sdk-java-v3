@@ -13,14 +13,31 @@ import java.util.function.Consumer;
 public class UpdateAuthorisationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorisation")
 
     private Authorisation authorisation;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    public UpdateAuthorisationResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
 
-    private String requestId;
+    /**
+     * 资源ID标识符。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public UpdateAuthorisationResponse withAuthorisation(Authorisation authorisation) {
         this.authorisation = authorisation;
@@ -48,23 +65,6 @@ public class UpdateAuthorisationResponse extends SdkResponse {
         this.authorisation = authorisation;
     }
 
-    public UpdateAuthorisationResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,20 +74,20 @@ public class UpdateAuthorisationResponse extends SdkResponse {
             return false;
         }
         UpdateAuthorisationResponse that = (UpdateAuthorisationResponse) obj;
-        return Objects.equals(this.authorisation, that.authorisation) && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.authorisation, that.authorisation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorisation, requestId);
+        return Objects.hash(requestId, authorisation);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateAuthorisationResponse {\n");
-        sb.append("    authorisation: ").append(toIndentedString(authorisation)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    authorisation: ").append(toIndentedString(authorisation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

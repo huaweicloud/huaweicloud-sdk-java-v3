@@ -21,8 +21,12 @@ import com.huaweicloud.sdk.koomap.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ListWorkspaceResponse;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewRequest;
 import com.huaweicloud.sdk.koomap.v1.model.ShowTaskOverviewResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StartNaviRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StartNaviResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StartTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StartTaskResponse;
+import com.huaweicloud.sdk.koomap.v1.model.StartVpsRequest;
+import com.huaweicloud.sdk.koomap.v1.model.StartVpsResponse;
 import com.huaweicloud.sdk.koomap.v1.model.StopTaskRequest;
 import com.huaweicloud.sdk.koomap.v1.model.StopTaskResponse;
 import com.huaweicloud.sdk.koomap.v1.model.UpdateTaskArchivedStatusRequest;
@@ -228,7 +232,7 @@ public class KooMapAsyncClient {
      * 查询用量
      *
      * 您可以查询时空专属服务或卫星影像处理服务的用量统计。
-     * - 时空专属存储：统计导入的原始影像、矢量数据和处理成功后的成果影像存储总量。
+     * - 时空专属存储：统计导入的原始影像、矢量数据、生产资料和处理成功后的成果影像存储总量。
      * - 卫星影像处理服务：统计L2、L4、L5等级处理成功的成果影像存储用量、成功处理的次数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -244,7 +248,7 @@ public class KooMapAsyncClient {
      * 查询用量
      *
      * 您可以查询时空专属服务或卫星影像处理服务的用量统计。
-     * - 时空专属存储：统计导入的原始影像、矢量数据和处理成功后的成果影像存储总量。
+     * - 时空专属存储：统计导入的原始影像、矢量数据、生产资料和处理成功后的成果影像存储总量。
      * - 卫星影像处理服务：统计L2、L4、L5等级处理成功的成果影像存储用量、成功处理的次数。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -291,7 +295,7 @@ public class KooMapAsyncClient {
     /**
      * 查看任务概览
      *
-     * 查看工作共享空间下的所有任务概览，包括全部任务数量、处理完成任务数量和执行中任务数量。
+     * 查看工作共享空间下的任务概览，包括全部任务数量以及成功、执行中、失败、已归档状态的任务数量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -305,7 +309,7 @@ public class KooMapAsyncClient {
     /**
      * 查看任务概览
      *
-     * 查看工作共享空间下的所有任务概览，包括全部任务数量、处理完成任务数量和执行中任务数量。
+     * 查看工作共享空间下的任务概览，包括全部任务数量以及成功、执行中、失败、已归档状态的任务数量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -316,6 +320,34 @@ public class KooMapAsyncClient {
         ShowTaskOverviewRequest request) {
         return new AsyncInvoker<ShowTaskOverviewRequest, ShowTaskOverviewResponse>(request, KooMapMeta.showTaskOverview,
             hcClient);
+    }
+
+    /**
+     * AR导航
+     *
+     * AR导航是新型的地图导航方法，基于摄像头实时捕捉的实景画面，将地图导航信息通过数字内容的形态叠加在实景画面中，生成虚拟的3D导航指引。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartNaviRequest 请求对象
+     * @return CompletableFuture<StartNaviResponse>
+     */
+    public CompletableFuture<StartNaviResponse> startNaviAsync(StartNaviRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooMapMeta.startNavi);
+    }
+
+    /**
+     * AR导航
+     *
+     * AR导航是新型的地图导航方法，基于摄像头实时捕捉的实景画面，将地图导航信息通过数字内容的形态叠加在实景画面中，生成虚拟的3D导航指引。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartNaviRequest 请求对象
+     * @return AsyncInvoker<StartNaviRequest, StartNaviResponse>
+     */
+    public AsyncInvoker<StartNaviRequest, StartNaviResponse> startNaviAsyncInvoker(StartNaviRequest request) {
+        return new AsyncInvoker<StartNaviRequest, StartNaviResponse>(request, KooMapMeta.startNavi, hcClient);
     }
 
     /**
@@ -344,6 +376,34 @@ public class KooMapAsyncClient {
      */
     public AsyncInvoker<StartTaskRequest, StartTaskResponse> startTaskAsyncInvoker(StartTaskRequest request) {
         return new AsyncInvoker<StartTaskRequest, StartTaskResponse>(request, KooMapMeta.startTask, hcClient);
+    }
+
+    /**
+     * 视觉定位
+     *
+     * 视觉定位是根据图像耦合GPS数据确定设备的位置的一项技术。首先通过拍摄一系列具有已知位置的图像并分析它们的关键视觉特征（例如建筑物或桥梁的轮廓）来创建地图，以创建这些视觉特征的大规模且可快速搜索的索引。将设备图像中的特征与索引中的特征进行比较，可获得目标设备的位姿。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartVpsRequest 请求对象
+     * @return CompletableFuture<StartVpsResponse>
+     */
+    public CompletableFuture<StartVpsResponse> startVpsAsync(StartVpsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KooMapMeta.startVps);
+    }
+
+    /**
+     * 视觉定位
+     *
+     * 视觉定位是根据图像耦合GPS数据确定设备的位置的一项技术。首先通过拍摄一系列具有已知位置的图像并分析它们的关键视觉特征（例如建筑物或桥梁的轮廓）来创建地图，以创建这些视觉特征的大规模且可快速搜索的索引。将设备图像中的特征与索引中的特征进行比较，可获得目标设备的位姿。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartVpsRequest 请求对象
+     * @return AsyncInvoker<StartVpsRequest, StartVpsResponse>
+     */
+    public AsyncInvoker<StartVpsRequest, StartVpsResponse> startVpsAsyncInvoker(StartVpsRequest request) {
+        return new AsyncInvoker<StartVpsRequest, StartVpsResponse>(request, KooMapMeta.startVps, hcClient);
     }
 
     /**

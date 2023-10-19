@@ -27,7 +27,7 @@ public class UpdateNetworkInstanceRequest {
     }
 
     /**
-     * 网络实例ID。
+     * 资源的Id。
      * @return id
      */
     public String getId() {

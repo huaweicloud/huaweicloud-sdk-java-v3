@@ -26,7 +26,7 @@ public class UpdateAuthorisation {
     }
 
     /**
-     * 授权的名称。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class UpdateAuthorisation {
     }
 
     /**
-     * 授权的描述信息。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {

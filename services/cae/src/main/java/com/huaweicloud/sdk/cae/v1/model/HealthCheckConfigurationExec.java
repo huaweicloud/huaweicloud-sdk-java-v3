@@ -16,14 +16,14 @@ public class HealthCheckConfigurationExec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
 
-    private List<Object> command = null;
+    private List<String> command = null;
 
-    public HealthCheckConfigurationExec withCommand(List<Object> command) {
+    public HealthCheckConfigurationExec withCommand(List<String> command) {
         this.command = command;
         return this;
     }
 
-    public HealthCheckConfigurationExec addCommandItem(Object commandItem) {
+    public HealthCheckConfigurationExec addCommandItem(String commandItem) {
         if (this.command == null) {
             this.command = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class HealthCheckConfigurationExec {
         return this;
     }
 
-    public HealthCheckConfigurationExec withCommand(Consumer<List<Object>> commandSetter) {
+    public HealthCheckConfigurationExec withCommand(Consumer<List<String>> commandSetter) {
         if (this.command == null) {
             this.command = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class HealthCheckConfigurationExec {
      * shell语句。
      * @return command
      */
-    public List<Object> getCommand() {
+    public List<String> getCommand() {
         return command;
     }
 
-    public void setCommand(List<Object> command) {
+    public void setCommand(List<String> command) {
         this.command = command;
     }
 

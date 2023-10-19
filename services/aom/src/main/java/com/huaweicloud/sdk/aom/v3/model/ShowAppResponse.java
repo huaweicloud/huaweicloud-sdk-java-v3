@@ -153,7 +153,7 @@ public class ShowAppResponse extends SdkResponse {
     }
 
     /**
-     * aomId
+     * aomId，如果为空则不显示
      * @return aomId
      */
     public String getAomId() {

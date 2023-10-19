@@ -17,14 +17,14 @@ public class ValidateImageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<String> body = null;
+    private List<CheckImageResultDto> body = null;
 
-    public ValidateImageResponse withBody(List<String> body) {
+    public ValidateImageResponse withBody(List<CheckImageResultDto> body) {
         this.body = body;
         return this;
     }
 
-    public ValidateImageResponse addBodyItem(String bodyItem) {
+    public ValidateImageResponse addBodyItem(CheckImageResultDto bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ValidateImageResponse extends SdkResponse {
         return this;
     }
 
-    public ValidateImageResponse withBody(Consumer<List<String>> bodySetter) {
+    public ValidateImageResponse withBody(Consumer<List<CheckImageResultDto>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class ValidateImageResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public List<String> getBody() {
+    public List<CheckImageResultDto> getBody() {
         return body;
     }
 
-    public void setBody(List<String> body) {
+    public void setBody(List<CheckImageResultDto> body) {
         this.body = body;
     }
 

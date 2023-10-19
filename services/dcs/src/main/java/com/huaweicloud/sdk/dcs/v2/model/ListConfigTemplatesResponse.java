@@ -20,9 +20,9 @@ public class ListConfigTemplatesResponse extends SdkResponse {
     private Integer templateNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "config_templates")
+    @JsonProperty(value = "templates")
 
-    private List<ConfigTemplatesListInfo> configTemplates = null;
+    private List<ConfigTemplatesListInfo> templates = null;
 
     public ListConfigTemplatesResponse withTemplateNum(Integer templateNum) {
         this.templateNum = templateNum;
@@ -41,38 +41,37 @@ public class ListConfigTemplatesResponse extends SdkResponse {
         this.templateNum = templateNum;
     }
 
-    public ListConfigTemplatesResponse withConfigTemplates(List<ConfigTemplatesListInfo> configTemplates) {
-        this.configTemplates = configTemplates;
+    public ListConfigTemplatesResponse withTemplates(List<ConfigTemplatesListInfo> templates) {
+        this.templates = templates;
         return this;
     }
 
-    public ListConfigTemplatesResponse addConfigTemplatesItem(ConfigTemplatesListInfo configTemplatesItem) {
-        if (this.configTemplates == null) {
-            this.configTemplates = new ArrayList<>();
+    public ListConfigTemplatesResponse addTemplatesItem(ConfigTemplatesListInfo templatesItem) {
+        if (this.templates == null) {
+            this.templates = new ArrayList<>();
         }
-        this.configTemplates.add(configTemplatesItem);
+        this.templates.add(templatesItem);
         return this;
     }
 
-    public ListConfigTemplatesResponse withConfigTemplates(
-        Consumer<List<ConfigTemplatesListInfo>> configTemplatesSetter) {
-        if (this.configTemplates == null) {
-            this.configTemplates = new ArrayList<>();
+    public ListConfigTemplatesResponse withTemplates(Consumer<List<ConfigTemplatesListInfo>> templatesSetter) {
+        if (this.templates == null) {
+            this.templates = new ArrayList<>();
         }
-        configTemplatesSetter.accept(this.configTemplates);
+        templatesSetter.accept(this.templates);
         return this;
     }
 
     /**
      * 模板的详情数组。
-     * @return configTemplates
+     * @return templates
      */
-    public List<ConfigTemplatesListInfo> getConfigTemplates() {
-        return configTemplates;
+    public List<ConfigTemplatesListInfo> getTemplates() {
+        return templates;
     }
 
-    public void setConfigTemplates(List<ConfigTemplatesListInfo> configTemplates) {
-        this.configTemplates = configTemplates;
+    public void setTemplates(List<ConfigTemplatesListInfo> templates) {
+        this.templates = templates;
     }
 
     @Override
@@ -84,13 +83,12 @@ public class ListConfigTemplatesResponse extends SdkResponse {
             return false;
         }
         ListConfigTemplatesResponse that = (ListConfigTemplatesResponse) obj;
-        return Objects.equals(this.templateNum, that.templateNum)
-            && Objects.equals(this.configTemplates, that.configTemplates);
+        return Objects.equals(this.templateNum, that.templateNum) && Objects.equals(this.templates, that.templates);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateNum, configTemplates);
+        return Objects.hash(templateNum, templates);
     }
 
     @Override
@@ -98,7 +96,7 @@ public class ListConfigTemplatesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListConfigTemplatesResponse {\n");
         sb.append("    templateNum: ").append(toIndentedString(templateNum)).append("\n");
-        sb.append("    configTemplates: ").append(toIndentedString(configTemplates)).append("\n");
+        sb.append("    templates: ").append(toIndentedString(templates)).append("\n");
         sb.append("}");
         return sb.toString();
     }

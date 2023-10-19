@@ -32,6 +32,7 @@ import org.yaml.snakeyaml.constructor.SafeConstructor;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -77,6 +78,7 @@ public class ProfileRegionCache {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private static Map<String, Region> resolveRegions(String filepath) {
         Map<String, Region> result = new LinkedHashMap<>();
         Yaml yaml = new Yaml(new SafeConstructor(new LoaderOptions()));
@@ -102,11 +104,28 @@ public class ProfileRegionCache {
                 if (!(o instanceof Map)) {
                     continue;
                 }
-                Map<?, ?> regionMap = (Map<?, ?>) o;
-                String id = (String) regionMap.get("id");
-                String endpoint = (String) regionMap.get("endpoint");
-                if (!StringUtils.isEmpty(id) && !StringUtils.isEmpty(endpoint)) {
-                    result.put(next.getKey().toString().toUpperCase(Locale.ROOT) + id, new Region(id, endpoint));
+                try {
+                    Map<?, ?> regionMap = (Map<?, ?>) o;
+                    String id = (String) regionMap.get("id");
+                    if (StringUtils.isEmpty(id)) {
+                        continue;
+                    }
+
+                    String endpoint = (String) regionMap.get("endpoint");
+                    List<String> endpoints = (List<String>) regionMap.get("endpoints");
+                    if (Objects.isNull(endpoints)) {
+                        endpoints = new ArrayList<>();
+                    }
+                    if (!StringUtils.isEmpty(endpoint)) {
+                        endpoints.add(endpoint);
+                    }
+
+                    if (!endpoints.isEmpty()) {
+                        Region region = new Region(id, endpoints.toArray(new String[0]));
+                        result.put(next.getKey().toString().toUpperCase(Locale.ROOT) + id, region);
+                    }
+                } catch (ClassCastException e) {
+                    throw new SdkException(String.format("failed to resolve file '%s'", filepath), e);
                 }
             }
         }

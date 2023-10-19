@@ -15,9 +15,9 @@ import java.util.function.Consumer;
 public class ListPermissionsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "permissions")
+    @JsonProperty(value = "request_id")
 
-    private List<Permission> permissions = null;
+    private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
@@ -25,41 +25,25 @@ public class ListPermissionsResponse extends SdkResponse {
     private PageInfo pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    @JsonProperty(value = "permissions")
 
-    private String requestId;
+    private List<Permission> permissions = null;
 
-    public ListPermissionsResponse withPermissions(List<Permission> permissions) {
-        this.permissions = permissions;
-        return this;
-    }
-
-    public ListPermissionsResponse addPermissionsItem(Permission permissionsItem) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
-        this.permissions.add(permissionsItem);
-        return this;
-    }
-
-    public ListPermissionsResponse withPermissions(Consumer<List<Permission>> permissionsSetter) {
-        if (this.permissions == null) {
-            this.permissions = new ArrayList<>();
-        }
-        permissionsSetter.accept(this.permissions);
+    public ListPermissionsResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * 权限的详细信息。
-     * @return permissions
+     * 资源ID标识符。
+     * @return requestId
      */
-    public List<Permission> getPermissions() {
-        return permissions;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setPermissions(List<Permission> permissions) {
-        this.permissions = permissions;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     public ListPermissionsResponse withPageInfo(PageInfo pageInfo) {
@@ -88,21 +72,37 @@ public class ListPermissionsResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    public ListPermissionsResponse withRequestId(String requestId) {
-        this.requestId = requestId;
+    public ListPermissionsResponse withPermissions(List<Permission> permissions) {
+        this.permissions = permissions;
+        return this;
+    }
+
+    public ListPermissionsResponse addPermissionsItem(Permission permissionsItem) {
+        if (this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
+        this.permissions.add(permissionsItem);
+        return this;
+    }
+
+    public ListPermissionsResponse withPermissions(Consumer<List<Permission>> permissionsSetter) {
+        if (this.permissions == null) {
+            this.permissions = new ArrayList<>();
+        }
+        permissionsSetter.accept(this.permissions);
         return this;
     }
 
     /**
-     * 请求ID。
-     * @return requestId
+     * 权限实例列表。
+     * @return permissions
      */
-    public String getRequestId() {
-        return requestId;
+    public List<Permission> getPermissions() {
+        return permissions;
     }
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
+    public void setPermissions(List<Permission> permissions) {
+        this.permissions = permissions;
     }
 
     @Override
@@ -114,22 +114,22 @@ public class ListPermissionsResponse extends SdkResponse {
             return false;
         }
         ListPermissionsResponse that = (ListPermissionsResponse) obj;
-        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.pageInfo, that.pageInfo)
-            && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.permissions, that.permissions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(permissions, pageInfo, requestId);
+        return Objects.hash(requestId, pageInfo, permissions);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPermissionsResponse {\n");
-        sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
-        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -30,6 +30,11 @@ public class DnsServersResponseDTO {
 
     private String serverIp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "health_check_domain_name")
+
+    private String healthCheckDomainName;
+
     public DnsServersResponseDTO withId(Integer id) {
         this.id = id;
         return this;
@@ -98,6 +103,23 @@ public class DnsServersResponseDTO {
         this.serverIp = serverIp;
     }
 
+    public DnsServersResponseDTO withHealthCheckDomainName(String healthCheckDomainName) {
+        this.healthCheckDomainName = healthCheckDomainName;
+        return this;
+    }
+
+    /**
+     * 健康检查域名
+     * @return healthCheckDomainName
+     */
+    public String getHealthCheckDomainName() {
+        return healthCheckDomainName;
+    }
+
+    public void setHealthCheckDomainName(String healthCheckDomainName) {
+        this.healthCheckDomainName = healthCheckDomainName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class DnsServersResponseDTO {
         }
         DnsServersResponseDTO that = (DnsServersResponseDTO) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.isApplied, that.isApplied)
-            && Objects.equals(this.isCustomized, that.isCustomized) && Objects.equals(this.serverIp, that.serverIp);
+            && Objects.equals(this.isCustomized, that.isCustomized) && Objects.equals(this.serverIp, that.serverIp)
+            && Objects.equals(this.healthCheckDomainName, that.healthCheckDomainName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, isApplied, isCustomized, serverIp);
+        return Objects.hash(id, isApplied, isCustomized, serverIp, healthCheckDomainName);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class DnsServersResponseDTO {
         sb.append("    isApplied: ").append(toIndentedString(isApplied)).append("\n");
         sb.append("    isCustomized: ").append(toIndentedString(isCustomized)).append("\n");
         sb.append("    serverIp: ").append(toIndentedString(serverIp)).append("\n");
+        sb.append("    healthCheckDomainName: ").append(toIndentedString(healthCheckDomainName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

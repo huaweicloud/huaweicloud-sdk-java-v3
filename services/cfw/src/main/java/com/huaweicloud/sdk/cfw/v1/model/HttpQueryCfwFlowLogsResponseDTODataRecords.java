@@ -145,6 +145,11 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
 
     private String protocol;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_host")
+
+    private String dstHost;
+
     public HttpQueryCfwFlowLogsResponseDTODataRecords withBytes(Integer bytes) {
         this.bytes = bytes;
         return this;
@@ -349,6 +354,23 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
         this.protocol = protocol;
     }
 
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withDstHost(String dstHost) {
+        this.dstHost = dstHost;
+        return this;
+    }
+
+    /**
+     * 目标主机
+     * @return dstHost
+     */
+    public String getDstHost() {
+        return dstHost;
+    }
+
+    public void setDstHost(String dstHost) {
+        this.dstHost = dstHost;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -363,13 +385,25 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.logId, that.logId)
             && Objects.equals(this.srcIp, that.srcIp) && Objects.equals(this.srcPort, that.srcPort)
             && Objects.equals(this.dstIp, that.dstIp) && Objects.equals(this.app, that.app)
-            && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol);
+            && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.dstHost, that.dstHost);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(bytes, direction, packets, startTime, endTime, logId, srcIp, srcPort, dstIp, app, dstPort, protocol);
+        return Objects.hash(bytes,
+            direction,
+            packets,
+            startTime,
+            endTime,
+            logId,
+            srcIp,
+            srcPort,
+            dstIp,
+            app,
+            dstPort,
+            protocol,
+            dstHost);
     }
 
     @Override
@@ -388,6 +422,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    dstPort: ").append(toIndentedString(dstPort)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
         sb.append("}");
         return sb.toString();
     }

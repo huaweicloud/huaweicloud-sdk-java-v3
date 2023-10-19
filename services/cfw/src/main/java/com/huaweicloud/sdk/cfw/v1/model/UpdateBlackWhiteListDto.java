@@ -120,6 +120,11 @@ public class UpdateBlackWhiteListDto {
 
     private String objectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public UpdateBlackWhiteListDto withDirection(Integer direction) {
         this.direction = direction;
         return this;
@@ -239,6 +244,23 @@ public class UpdateBlackWhiteListDto {
         this.objectId = objectId;
     }
 
+    public UpdateBlackWhiteListDto withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -251,12 +273,12 @@ public class UpdateBlackWhiteListDto {
         return Objects.equals(this.direction, that.direction) && Objects.equals(this.addressType, that.addressType)
             && Objects.equals(this.address, that.address) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.port, that.port) && Objects.equals(this.listType, that.listType)
-            && Objects.equals(this.objectId, that.objectId);
+            && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(direction, addressType, address, protocol, port, listType, objectId);
+        return Objects.hash(direction, addressType, address, protocol, port, listType, objectId, description);
     }
 
     @Override
@@ -270,6 +292,7 @@ public class UpdateBlackWhiteListDto {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    listType: ").append(toIndentedString(listType)).append("\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

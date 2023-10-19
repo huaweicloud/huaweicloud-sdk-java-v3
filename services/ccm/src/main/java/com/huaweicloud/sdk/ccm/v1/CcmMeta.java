@@ -19,6 +19,9 @@ import com.huaweicloud.sdk.ccm.v1.model.CreateCertTagRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertTagResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityObsAgencyRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityObsAgencyResponse;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityOrderRequest;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityOrderRequestBody;
+import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityOrderResponse;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityRequest;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityRequestBody;
 import com.huaweicloud.sdk.ccm.v1.model.CreateCertificateAuthorityResponse;
@@ -388,6 +391,34 @@ public class CcmMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse> createCertificateAuthorityOrder =
+        genForcreateCertificateAuthorityOrder();
+
+    private static HttpRequestDef<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse> genForcreateCertificateAuthorityOrder() {
+        // basic
+        HttpRequestDef.Builder<CreateCertificateAuthorityOrderRequest, CreateCertificateAuthorityOrderResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateCertificateAuthorityOrderRequest.class,
+                    CreateCertificateAuthorityOrderResponse.class)
+                .withName("CreateCertificateAuthorityOrder")
+                .withUri("/v1/private-certificate-authorities/order")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateCertificateAuthorityOrderRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCertificateAuthorityOrderRequestBody.class),
+            f -> f.withMarshaller(CreateCertificateAuthorityOrderRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 

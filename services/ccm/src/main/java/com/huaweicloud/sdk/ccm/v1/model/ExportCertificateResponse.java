@@ -41,6 +41,11 @@ public class ExportCertificateResponse extends SdkResponse {
 
     private String encSm2EnvelopedKey;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "signed_and_enveloped_data")
+
+    private String signedAndEnvelopedData;
+
     public ExportCertificateResponse withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
@@ -143,6 +148,23 @@ public class ExportCertificateResponse extends SdkResponse {
         this.encSm2EnvelopedKey = encSm2EnvelopedKey;
     }
 
+    public ExportCertificateResponse withSignedAndEnvelopedData(String signedAndEnvelopedData) {
+        this.signedAndEnvelopedData = signedAndEnvelopedData;
+        return this;
+    }
+
+    /**
+     * 加密私钥的国密GMT0010标准规范签名数字信封。
+     * @return signedAndEnvelopedData
+     */
+    public String getSignedAndEnvelopedData() {
+        return signedAndEnvelopedData;
+    }
+
+    public void setSignedAndEnvelopedData(String signedAndEnvelopedData) {
+        this.signedAndEnvelopedData = signedAndEnvelopedData;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -156,13 +178,19 @@ public class ExportCertificateResponse extends SdkResponse {
             && Objects.equals(this.certificateChain, that.certificateChain)
             && Objects.equals(this.encCertificate, that.encCertificate)
             && Objects.equals(this.encPrivateKey, that.encPrivateKey)
-            && Objects.equals(this.encSm2EnvelopedKey, that.encSm2EnvelopedKey);
+            && Objects.equals(this.encSm2EnvelopedKey, that.encSm2EnvelopedKey)
+            && Objects.equals(this.signedAndEnvelopedData, that.signedAndEnvelopedData);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(privateKey, certificate, certificateChain, encCertificate, encPrivateKey, encSm2EnvelopedKey);
+        return Objects.hash(privateKey,
+            certificate,
+            certificateChain,
+            encCertificate,
+            encPrivateKey,
+            encSm2EnvelopedKey,
+            signedAndEnvelopedData);
     }
 
     @Override
@@ -175,6 +203,7 @@ public class ExportCertificateResponse extends SdkResponse {
         sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
         sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
         sb.append("    encSm2EnvelopedKey: ").append(toIndentedString(encSm2EnvelopedKey)).append("\n");
+        sb.append("    signedAndEnvelopedData: ").append(toIndentedString(signedAndEnvelopedData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

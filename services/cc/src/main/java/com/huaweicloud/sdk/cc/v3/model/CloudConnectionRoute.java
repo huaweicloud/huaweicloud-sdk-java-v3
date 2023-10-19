@@ -31,14 +31,19 @@ public class CloudConnectionRoute {
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
+    @JsonProperty(value = "region_id")
 
-    private String instanceId;
+    private String regionId;
 
     /**
      * 路由条目下一跳指向的网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。
@@ -116,11 +121,6 @@ public class CloudConnectionRoute {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region_id")
-
-    private String regionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "destination")
 
     private String destination;
@@ -131,7 +131,7 @@ public class CloudConnectionRoute {
     }
 
     /**
-     * 云连接实例路由的ID。
+     * 资源ID标识符。
      * @return id
      */
     public String getId() {
@@ -148,7 +148,7 @@ public class CloudConnectionRoute {
     }
 
     /**
-     * 云连接实例的ID。
+     * 资源ID标识符。
      * @return cloudConnectionId
      */
     public String getCloudConnectionId() {
@@ -165,7 +165,7 @@ public class CloudConnectionRoute {
     }
 
     /**
-     * 帐号ID。
+     * 实例所属帐号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -176,13 +176,30 @@ public class CloudConnectionRoute {
         this.domainId = domainId;
     }
 
+    public CloudConnectionRoute withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
     public CloudConnectionRoute withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
     /**
-     * 网络实例的项目ID。
+     * 实例所属项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -193,21 +210,21 @@ public class CloudConnectionRoute {
         this.projectId = projectId;
     }
 
-    public CloudConnectionRoute withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public CloudConnectionRoute withRegionId(String regionId) {
+        this.regionId = regionId;
         return this;
     }
 
     /**
-     * 路由条目下一跳指向的网络实例的ID。
-     * @return instanceId
+     * RegionID。
+     * @return regionId
      */
-    public String getInstanceId() {
-        return instanceId;
+    public String getRegionId() {
+        return regionId;
     }
 
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
     }
 
     public CloudConnectionRoute withType(TypeEnum type) {
@@ -225,23 +242,6 @@ public class CloudConnectionRoute {
 
     public void setType(TypeEnum type) {
         this.type = type;
-    }
-
-    public CloudConnectionRoute withRegionId(String regionId) {
-        this.regionId = regionId;
-        return this;
-    }
-
-    /**
-     * Region的ID。
-     * @return regionId
-     */
-    public String getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(String regionId) {
-        this.regionId = regionId;
     }
 
     public CloudConnectionRoute withDestination(String destination) {
@@ -271,14 +271,14 @@ public class CloudConnectionRoute {
         }
         CloudConnectionRoute that = (CloudConnectionRoute) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.destination, that.destination);
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.destination, that.destination);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cloudConnectionId, domainId, projectId, instanceId, type, regionId, destination);
+        return Objects.hash(id, cloudConnectionId, domainId, instanceId, projectId, regionId, type, destination);
     }
 
     @Override
@@ -288,10 +288,10 @@ public class CloudConnectionRoute {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("}");
         return sb.toString();

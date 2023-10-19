@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cbr.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -28,7 +31,7 @@ public class ListAgentRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_id")
 
-    private String agentId;
+    private List<String> agentId = null;
 
     public ListAgentRequest withLimit(String limit) {
         this.limit = limit;
@@ -81,8 +84,24 @@ public class ListAgentRequest {
         this.status = status;
     }
 
-    public ListAgentRequest withAgentId(String agentId) {
+    public ListAgentRequest withAgentId(List<String> agentId) {
         this.agentId = agentId;
+        return this;
+    }
+
+    public ListAgentRequest addAgentIdItem(String agentIdItem) {
+        if (this.agentId == null) {
+            this.agentId = new ArrayList<>();
+        }
+        this.agentId.add(agentIdItem);
+        return this;
+    }
+
+    public ListAgentRequest withAgentId(Consumer<List<String>> agentIdSetter) {
+        if (this.agentId == null) {
+            this.agentId = new ArrayList<>();
+        }
+        agentIdSetter.accept(this.agentId);
         return this;
     }
 
@@ -90,11 +109,11 @@ public class ListAgentRequest {
      * 客户端ID
      * @return agentId
      */
-    public String getAgentId() {
+    public List<String> getAgentId() {
         return agentId;
     }
 
-    public void setAgentId(String agentId) {
+    public void setAgentId(List<String> agentId) {
         this.agentId = agentId;
     }
 

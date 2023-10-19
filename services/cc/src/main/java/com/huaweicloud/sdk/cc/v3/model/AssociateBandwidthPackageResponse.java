@@ -13,14 +13,31 @@ import java.util.function.Consumer;
 public class AssociateBandwidthPackageResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_package")
 
     private BandwidthPackage bandwidthPackage;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    public AssociateBandwidthPackageResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
 
-    private String requestId;
+    /**
+     * 资源ID标识符。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public AssociateBandwidthPackageResponse withBandwidthPackage(BandwidthPackage bandwidthPackage) {
         this.bandwidthPackage = bandwidthPackage;
@@ -48,23 +65,6 @@ public class AssociateBandwidthPackageResponse extends SdkResponse {
         this.bandwidthPackage = bandwidthPackage;
     }
 
-    public AssociateBandwidthPackageResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,21 +74,21 @@ public class AssociateBandwidthPackageResponse extends SdkResponse {
             return false;
         }
         AssociateBandwidthPackageResponse that = (AssociateBandwidthPackageResponse) obj;
-        return Objects.equals(this.bandwidthPackage, that.bandwidthPackage)
-            && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.bandwidthPackage, that.bandwidthPackage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthPackage, requestId);
+        return Objects.hash(requestId, bandwidthPackage);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AssociateBandwidthPackageResponse {\n");
-        sb.append("    bandwidthPackage: ").append(toIndentedString(bandwidthPackage)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    bandwidthPackage: ").append(toIndentedString(bandwidthPackage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

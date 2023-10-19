@@ -31,7 +31,7 @@ public class CreateCloudConnection {
     }
 
     /**
-     * 云连接实例的名字。只能由中文、英文字母、数字、下划线、中划线、点组成。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -48,7 +48,7 @@ public class CreateCloudConnection {
     }
 
     /**
-     * 云连接实例的描述。不支持 <>。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -65,7 +65,7 @@ public class CreateCloudConnection {
     }
 
     /**
-     * 云连接实例所属的企业项目ID。企业项目账号必填；非企业项目账号不填。
+     * 实例所属企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

@@ -29,6 +29,11 @@ public class ShowFacesByFaceIdResponse extends SdkResponse {
 
     private List<FaceSetFace> faces = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public ShowFacesByFaceIdResponse withFaceSetId(String faceSetId) {
         this.faceSetId = faceSetId;
         return this;
@@ -96,6 +101,25 @@ public class ShowFacesByFaceIdResponse extends SdkResponse {
         this.faces = faces;
     }
 
+    public ShowFacesByFaceIdResponse withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +130,12 @@ public class ShowFacesByFaceIdResponse extends SdkResponse {
         }
         ShowFacesByFaceIdResponse that = (ShowFacesByFaceIdResponse) obj;
         return Objects.equals(this.faceSetId, that.faceSetId) && Objects.equals(this.faceSetName, that.faceSetName)
-            && Objects.equals(this.faces, that.faces);
+            && Objects.equals(this.faces, that.faces) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(faceSetId, faceSetName, faces);
+        return Objects.hash(faceSetId, faceSetName, faces, xRequestId);
     }
 
     @Override
@@ -121,6 +145,7 @@ public class ShowFacesByFaceIdResponse extends SdkResponse {
         sb.append("    faceSetId: ").append(toIndentedString(faceSetId)).append("\n");
         sb.append("    faceSetName: ").append(toIndentedString(faceSetName)).append("\n");
         sb.append("    faces: ").append(toIndentedString(faces)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

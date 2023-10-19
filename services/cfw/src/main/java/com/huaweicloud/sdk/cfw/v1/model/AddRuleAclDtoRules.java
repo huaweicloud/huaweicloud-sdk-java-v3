@@ -377,6 +377,11 @@ public class AddRuleAclDtoRules {
 
     private RuleServiceDto service;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag")
+
+    private TagsVO tag;
+
     public AddRuleAclDtoRules withName(String name) {
         this.name = name;
         return this;
@@ -668,6 +673,32 @@ public class AddRuleAclDtoRules {
         this.service = service;
     }
 
+    public AddRuleAclDtoRules withTag(TagsVO tag) {
+        this.tag = tag;
+        return this;
+    }
+
+    public AddRuleAclDtoRules withTag(Consumer<TagsVO> tagSetter) {
+        if (this.tag == null) {
+            this.tag = new TagsVO();
+            tagSetter.accept(this.tag);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get tag
+     * @return tag
+     */
+    public TagsVO getTag() {
+        return tag;
+    }
+
+    public void setTag(TagsVO tag) {
+        this.tag = tag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -686,7 +717,7 @@ public class AddRuleAclDtoRules {
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.description, that.description) && Objects.equals(this.direction, that.direction)
             && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
-            && Objects.equals(this.service, that.service);
+            && Objects.equals(this.service, that.service) && Objects.equals(this.tag, that.tag);
     }
 
     @Override
@@ -705,7 +736,8 @@ public class AddRuleAclDtoRules {
             direction,
             source,
             destination,
-            service);
+            service,
+            tag);
     }
 
     @Override
@@ -727,6 +759,7 @@ public class AddRuleAclDtoRules {
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    service: ").append(toIndentedString(service)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

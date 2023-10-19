@@ -63,7 +63,7 @@ public class AddServiceItemsUsingPOSTRequestBodyServiceItems {
     }
 
     /**
-     * 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+     * 协议类型:TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1，手动类型不为空，自动类型为空
      * @return protocol
      */
     public Integer getProtocol() {

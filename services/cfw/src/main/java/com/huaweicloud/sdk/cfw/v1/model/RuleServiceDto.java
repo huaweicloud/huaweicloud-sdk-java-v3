@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cfw.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * RuleServiceDto
@@ -39,6 +42,21 @@ public class RuleServiceDto {
     @JsonProperty(value = "service_set_name")
 
     private String serviceSetName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_service")
+
+    private List<ServiceItem> customService = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_group")
+
+    private List<String> serviceGroup = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_group_names")
+
+    private List<AddressGroupVO> serviceGroupNames = null;
 
     public RuleServiceDto withType(Integer type) {
         this.type = type;
@@ -142,6 +160,105 @@ public class RuleServiceDto {
         this.serviceSetName = serviceSetName;
     }
 
+    public RuleServiceDto withCustomService(List<ServiceItem> customService) {
+        this.customService = customService;
+        return this;
+    }
+
+    public RuleServiceDto addCustomServiceItem(ServiceItem customServiceItem) {
+        if (this.customService == null) {
+            this.customService = new ArrayList<>();
+        }
+        this.customService.add(customServiceItem);
+        return this;
+    }
+
+    public RuleServiceDto withCustomService(Consumer<List<ServiceItem>> customServiceSetter) {
+        if (this.customService == null) {
+            this.customService = new ArrayList<>();
+        }
+        customServiceSetter.accept(this.customService);
+        return this;
+    }
+
+    /**
+     * 自定义服务
+     * @return customService
+     */
+    public List<ServiceItem> getCustomService() {
+        return customService;
+    }
+
+    public void setCustomService(List<ServiceItem> customService) {
+        this.customService = customService;
+    }
+
+    public RuleServiceDto withServiceGroup(List<String> serviceGroup) {
+        this.serviceGroup = serviceGroup;
+        return this;
+    }
+
+    public RuleServiceDto addServiceGroupItem(String serviceGroupItem) {
+        if (this.serviceGroup == null) {
+            this.serviceGroup = new ArrayList<>();
+        }
+        this.serviceGroup.add(serviceGroupItem);
+        return this;
+    }
+
+    public RuleServiceDto withServiceGroup(Consumer<List<String>> serviceGroupSetter) {
+        if (this.serviceGroup == null) {
+            this.serviceGroup = new ArrayList<>();
+        }
+        serviceGroupSetter.accept(this.serviceGroup);
+        return this;
+    }
+
+    /**
+     * 服务组列表
+     * @return serviceGroup
+     */
+    public List<String> getServiceGroup() {
+        return serviceGroup;
+    }
+
+    public void setServiceGroup(List<String> serviceGroup) {
+        this.serviceGroup = serviceGroup;
+    }
+
+    public RuleServiceDto withServiceGroupNames(List<AddressGroupVO> serviceGroupNames) {
+        this.serviceGroupNames = serviceGroupNames;
+        return this;
+    }
+
+    public RuleServiceDto addServiceGroupNamesItem(AddressGroupVO serviceGroupNamesItem) {
+        if (this.serviceGroupNames == null) {
+            this.serviceGroupNames = new ArrayList<>();
+        }
+        this.serviceGroupNames.add(serviceGroupNamesItem);
+        return this;
+    }
+
+    public RuleServiceDto withServiceGroupNames(Consumer<List<AddressGroupVO>> serviceGroupNamesSetter) {
+        if (this.serviceGroupNames == null) {
+            this.serviceGroupNames = new ArrayList<>();
+        }
+        serviceGroupNamesSetter.accept(this.serviceGroupNames);
+        return this;
+    }
+
+    /**
+     * 服务组名称列表
+     * @return serviceGroupNames
+     */
+    public List<AddressGroupVO> getServiceGroupNames() {
+        return serviceGroupNames;
+    }
+
+    public void setServiceGroupNames(List<AddressGroupVO> serviceGroupNames) {
+        this.serviceGroupNames = serviceGroupNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +271,23 @@ public class RuleServiceDto {
         return Objects.equals(this.type, that.type) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.sourcePort, that.sourcePort) && Objects.equals(this.destPort, that.destPort)
             && Objects.equals(this.serviceSetId, that.serviceSetId)
-            && Objects.equals(this.serviceSetName, that.serviceSetName);
+            && Objects.equals(this.serviceSetName, that.serviceSetName)
+            && Objects.equals(this.customService, that.customService)
+            && Objects.equals(this.serviceGroup, that.serviceGroup)
+            && Objects.equals(this.serviceGroupNames, that.serviceGroupNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, protocol, sourcePort, destPort, serviceSetId, serviceSetName);
+        return Objects.hash(type,
+            protocol,
+            sourcePort,
+            destPort,
+            serviceSetId,
+            serviceSetName,
+            customService,
+            serviceGroup,
+            serviceGroupNames);
     }
 
     @Override
@@ -172,6 +300,9 @@ public class RuleServiceDto {
         sb.append("    destPort: ").append(toIndentedString(destPort)).append("\n");
         sb.append("    serviceSetId: ").append(toIndentedString(serviceSetId)).append("\n");
         sb.append("    serviceSetName: ").append(toIndentedString(serviceSetName)).append("\n");
+        sb.append("    customService: ").append(toIndentedString(customService)).append("\n");
+        sb.append("    serviceGroup: ").append(toIndentedString(serviceGroup)).append("\n");
+        sb.append("    serviceGroupNames: ").append(toIndentedString(serviceGroupNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

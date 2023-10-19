@@ -19,6 +19,11 @@ public class SearchFaceByBase64Response extends SdkResponse {
 
     private List<SearchFace> faces = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+
+    private String xRequestId;
+
     public SearchFaceByBase64Response withFaces(List<SearchFace> faces) {
         this.faces = faces;
         return this;
@@ -52,6 +57,25 @@ public class SearchFaceByBase64Response extends SdkResponse {
         this.faces = faces;
     }
 
+    public SearchFaceByBase64Response withXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+        return this;
+    }
+
+    /**
+     * Get xRequestId
+     * @return xRequestId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Request-Id")
+    public String getXRequestId() {
+        return xRequestId;
+    }
+
+    public void setXRequestId(String xRequestId) {
+        this.xRequestId = xRequestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +85,12 @@ public class SearchFaceByBase64Response extends SdkResponse {
             return false;
         }
         SearchFaceByBase64Response that = (SearchFaceByBase64Response) obj;
-        return Objects.equals(this.faces, that.faces);
+        return Objects.equals(this.faces, that.faces) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(faces);
+        return Objects.hash(faces, xRequestId);
     }
 
     @Override
@@ -74,6 +98,7 @@ public class SearchFaceByBase64Response extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class SearchFaceByBase64Response {\n");
         sb.append("    faces: ").append(toIndentedString(faces)).append("\n");
+        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

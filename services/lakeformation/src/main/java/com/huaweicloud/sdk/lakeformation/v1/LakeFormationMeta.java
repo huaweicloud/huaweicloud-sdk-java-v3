@@ -5,20 +5,30 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.lakeformation.v1.model.AccessClientRequestBody;
 import com.huaweicloud.sdk.lakeformation.v1.model.AccessPolicyInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AccessRequestInfo;
 import com.huaweicloud.sdk.lakeformation.v1.model.AddPartitionInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AddPartitionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.AddPartitionsResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.AgencyRequestBody;
 import com.huaweicloud.sdk.lakeformation.v1.model.AlterPartitionsInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AlterRoleInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AlterTableInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.ApplyForAccessRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ApplyForAccessResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.AssociatePrincipalsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.AssociatePrincipalsResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.AssociateRolesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.AssociateRolesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.AuthorizeAccessServiceRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.AuthorizeAccessServiceResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchAuthorizeInterfaceRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchAuthorizeInterfaceResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchCancelAuthorizationInterfaceRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchCancelAuthorizationInterfaceResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.BatchCheckPermissionRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.BatchCheckPermissionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchCreateConstraintRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchCreateConstraintResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchDeletePartitionRequest;
@@ -36,9 +46,15 @@ import com.huaweicloud.sdk.lakeformation.v1.model.BatchUpdatePartitionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.BatchUpdateTagsRequestBody;
 import com.huaweicloud.sdk.lakeformation.v1.model.Catalog;
 import com.huaweicloud.sdk.lakeformation.v1.model.CatalogInput;
+import com.huaweicloud.sdk.lakeformation.v1.model.CheckPermissionInput;
+import com.huaweicloud.sdk.lakeformation.v1.model.CheckPermissionResult;
 import com.huaweicloud.sdk.lakeformation.v1.model.ColumnStatisticsObj;
 import com.huaweicloud.sdk.lakeformation.v1.model.CountMetaObjRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CountMetaObjResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateAccessClientRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateAccessClientResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateAgreementRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateAgreementResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateCatalogRequest;
@@ -55,6 +71,12 @@ import com.huaweicloud.sdk.lakeformation.v1.model.CreateRoleResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateTableResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DatabaseInput;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAccessClientRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAccessClientResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAgencyRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAgencyResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAgreementRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAgreementResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAllTablesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteAllTablesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteCatalogRequest;
@@ -80,18 +102,26 @@ import com.huaweicloud.sdk.lakeformation.v1.model.FunctionInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.GetPartitionColumnStatisticsInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.GetPartitionsByValuesInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.GetTableColumnStatisticsInput;
+import com.huaweicloud.sdk.lakeformation.v1.model.GrantAccessServiceRequestBody;
+import com.huaweicloud.sdk.lakeformation.v1.model.IdentityInput;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListAccessClientInfosRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListAccessClientInfosResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListAccessInfosRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListAccessInfosResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListAllFunctionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListAllFunctionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListCatalogsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListCatalogsResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListConfigsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListConfigsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListConstraintsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListConstraintsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabaseNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabaseNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabasesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionNamesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListGroupsForDomainRequest;
@@ -108,10 +138,14 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListObsObjectRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListObsObjectResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionNamesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionNamesWithoutLimitRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionNamesWithoutLimitResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPartitionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListPolicyResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListPrincipalsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListPrincipalsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListQuotasRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListQuotasResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListRoleNamesRequest;
@@ -131,22 +165,41 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListTablesByNameRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListTablesByNameResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListTablesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListTablesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListUserRolesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListUserRolesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListUsersRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListUsersResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.MergeTableColumnStatisticInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.MoveLakeFormationInstanceOutRecycleBinRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.MoveLakeFormationInstanceOutRecycleBinResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.Partition;
+import com.huaweicloud.sdk.lakeformation.v1.model.Principal;
+import com.huaweicloud.sdk.lakeformation.v1.model.RevokePrincipalsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.RevokePrincipalsResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.RevokeRolesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.RevokeRolesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.Role;
+import com.huaweicloud.sdk.lakeformation.v1.model.RoleInfoInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.RoleInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.SetPartitionColumnStatisticsInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.SetPartitionColumnStatisticsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.SetPartitionColumnStatisticsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.SetTableColumnStatisticsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.SetTableColumnStatisticsResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessClientRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessClientResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessServiceRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessServiceResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementRuleRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementRuleResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowCatalogRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowCatalogResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowCredentialRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowCredentialResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatabaseResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowFunctionRequest;
@@ -164,6 +217,9 @@ import com.huaweicloud.sdk.lakeformation.v1.model.TableConstraintsInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.TableInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.TenantAgreementBody;
 import com.huaweicloud.sdk.lakeformation.v1.model.TruncatePartitionInput;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateAccessClientRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateAccessClientRequestBody;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateAccessClientResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateCatalogRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateCatalogResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatabaseRequest;
@@ -171,10 +227,19 @@ import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatabaseResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateFunctionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstance;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceDefaultRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceDefaultResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceScale;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceScaleRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceScaleResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdatePrincipalsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdatePrincipalsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateRoleRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateRoleResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateRolesRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateRolesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateTableRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateTableResponse;
 
@@ -275,6 +340,162 @@ public class LakeFormationMeta {
             TypeCasts.uncheckedConversion(AccessPolicyInput.class),
             f -> f.withMarshaller(BatchCancelAuthorizationInterfaceRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCheckPermissionRequest, BatchCheckPermissionResponse> batchCheckPermission =
+        genForbatchCheckPermission();
+
+    private static HttpRequestDef<BatchCheckPermissionRequest, BatchCheckPermissionResponse> genForbatchCheckPermission() {
+        // basic
+        HttpRequestDef.Builder<BatchCheckPermissionRequest, BatchCheckPermissionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCheckPermissionRequest.class, BatchCheckPermissionResponse.class)
+            .withName("BatchCheckPermission")
+            .withUri("/v1/{project_id}/instances/{instance_id}/policies/check-permission")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCheckPermissionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CheckPermissionInput>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckPermissionInput.class),
+            f -> f.withMarshaller(BatchCheckPermissionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<List<CheckPermissionResult>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchCheckPermissionResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(CheckPermissionResult.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAccessClientRequest, CreateAccessClientResponse> createAccessClient =
+        genForcreateAccessClient();
+
+    private static HttpRequestDef<CreateAccessClientRequest, CreateAccessClientResponse> genForcreateAccessClient() {
+        // basic
+        HttpRequestDef.Builder<CreateAccessClientRequest, CreateAccessClientResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAccessClientRequest.class, CreateAccessClientResponse.class)
+                .withName("CreateAccessClient")
+                .withUri("/v1/{project_id}/instances/{instance_id}/access-clients")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAccessClientRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<AccessClientRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AccessClientRequestBody.class),
+            f -> f.withMarshaller(CreateAccessClientRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAccessClientRequest, DeleteAccessClientResponse> deleteAccessClient =
+        genFordeleteAccessClient();
+
+    private static HttpRequestDef<DeleteAccessClientRequest, DeleteAccessClientResponse> genFordeleteAccessClient() {
+        // basic
+        HttpRequestDef.Builder<DeleteAccessClientRequest, DeleteAccessClientResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccessClientRequest.class, DeleteAccessClientResponse.class)
+                .withName("DeleteAccessClient")
+                .withUri("/v1/{project_id}/instances/{instance_id}/access-clients/{client_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAccessClientRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("client_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAccessClientRequest::getClientId, (req, v) -> {
+                req.setClientId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAccessClientInfosRequest, ListAccessClientInfosResponse> listAccessClientInfos =
+        genForlistAccessClientInfos();
+
+    private static HttpRequestDef<ListAccessClientInfosRequest, ListAccessClientInfosResponse> genForlistAccessClientInfos() {
+        // basic
+        HttpRequestDef.Builder<ListAccessClientInfosRequest, ListAccessClientInfosResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAccessClientInfosRequest.class, ListAccessClientInfosResponse.class)
+            .withName("ListAccessClientInfos")
+            .withUri("/v1/{project_id}/instances/{instance_id}/access-clients")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAccessClientInfosRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -447,6 +668,38 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAccessClientRequest, ShowAccessClientResponse> showAccessClient =
+        genForshowAccessClient();
+
+    private static HttpRequestDef<ShowAccessClientRequest, ShowAccessClientResponse> genForshowAccessClient() {
+        // basic
+        HttpRequestDef.Builder<ShowAccessClientRequest, ShowAccessClientResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAccessClientRequest.class, ShowAccessClientResponse.class)
+                .withName("ShowAccessClient")
+                .withUri("/v1/{project_id}/instances/{instance_id}/access-clients/{client_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccessClientRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("client_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccessClientRequest::getClientId, (req, v) -> {
+                req.setClientId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSyncPolicyRequest, ShowSyncPolicyResponse> showSyncPolicy =
         genForshowSyncPolicy();
 
@@ -486,6 +739,122 @@ public class LakeFormationMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowSyncPolicyRequest::getIsReturnPolicyData, (req, v) -> {
                 req.setIsReturnPolicyData(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAccessClientRequest, UpdateAccessClientResponse> updateAccessClient =
+        genForupdateAccessClient();
+
+    private static HttpRequestDef<UpdateAccessClientRequest, UpdateAccessClientResponse> genForupdateAccessClient() {
+        // basic
+        HttpRequestDef.Builder<UpdateAccessClientRequest, UpdateAccessClientResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAccessClientRequest.class, UpdateAccessClientResponse.class)
+                .withName("UpdateAccessClient")
+                .withUri("/v1/{project_id}/instances/{instance_id}/access-clients/{client_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAccessClientRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("client_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAccessClientRequest::getClientId, (req, v) -> {
+                req.setClientId(v);
+            }));
+        builder.<UpdateAccessClientRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAccessClientRequestBody.class),
+            f -> f.withMarshaller(UpdateAccessClientRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForcreateAgency();
+
+    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForcreateAgency() {
+        // basic
+        HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
+                .withName("CreateAgency")
+                .withUri("/v1/{project_id}/agency")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AgencyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AgencyRequestBody.class),
+            f -> f.withMarshaller(CreateAgencyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgency = genFordeleteAgency();
+
+    private static HttpRequestDef<DeleteAgencyRequest, DeleteAgencyResponse> genFordeleteAgency() {
+        // basic
+        HttpRequestDef.Builder<DeleteAgencyRequest, DeleteAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAgencyRequest.class, DeleteAgencyResponse.class)
+                .withName("DeleteAgency")
+                .withUri("/v1/{project_id}/agency")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AgencyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AgencyRequestBody.class),
+            f -> f.withMarshaller(DeleteAgencyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAgencyResponse::getXRequestId, DeleteAgencyResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> showAgency = genForshowAgency();
+
+    private static HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> genForshowAgency() {
+        // basic
+        HttpRequestDef.Builder<ShowAgencyRequest, ShowAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAgencyRequest.class, ShowAgencyResponse.class)
+                .withName("ShowAgency")
+                .withUri("/v1/{project_id}/agency")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowAgencyRequest.AgencyTypeEnum>withRequestField("agency_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAgencyRequest.AgencyTypeEnum.class),
+            f -> f.withMarshaller(ShowAgencyRequest::getAgencyType, (req, v) -> {
+                req.setAgencyType(v);
             }));
 
         // response
@@ -650,6 +1019,76 @@ public class LakeFormationMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogInput.class),
             f -> f.withMarshaller(UpdateCatalogRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConfigsRequest, ListConfigsResponse> listConfigs = genForlistConfigs();
+
+    private static HttpRequestDef<ListConfigsRequest, ListConfigsResponse> genForlistConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListConfigsRequest, ListConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConfigsRequest.class, ListConfigsResponse.class)
+                .withName("ListConfigs")
+                .withUri("/v1/{project_id}/instances/{instance_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConfigsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> showCredential =
+        genForshowCredential();
+
+    private static HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> genForshowCredential() {
+        // basic
+        HttpRequestDef.Builder<ShowCredentialRequest, ShowCredentialResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowCredentialRequest.class, ShowCredentialResponse.class)
+                .withName("ShowCredential")
+                .withUri("/v1/{project_id}/instances/{instance_id}/credential")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCredentialRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<IdentityInput>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IdentityInput.class),
+            f -> f.withMarshaller(ShowCredentialRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1087,6 +1526,65 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFunctionNamesRequest, ListFunctionNamesResponse> listFunctionNames =
+        genForlistFunctionNames();
+
+    private static HttpRequestDef<ListFunctionNamesRequest, ListFunctionNamesResponse> genForlistFunctionNames() {
+        // basic
+        HttpRequestDef.Builder<ListFunctionNamesRequest, ListFunctionNamesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListFunctionNamesRequest.class, ListFunctionNamesResponse.class)
+            .withName("ListFunctionNames")
+            .withUri(
+                "/v1/{project_id}/instances/{instance_id}/catalogs/{catalog_name}/databases/{database_name}/functions/names")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionNamesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("catalog_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionNamesRequest::getCatalogName, (req, v) -> {
+                req.setCatalogName(v);
+            }));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionNamesRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<String>withRequestField("function_pattern",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionNamesRequest::getFunctionPattern, (req, v) -> {
+                req.setFunctionPattern(v);
+            }));
+
+        // response
+        builder.<List<String>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFunctionNamesResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(String.class));
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFunctionNamesResponse::getXRequestId, ListFunctionNamesResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFunctionsRequest, ListFunctionsResponse> listFunctions =
         genForlistFunctions();
 
@@ -1255,6 +1753,37 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse> authorizeAccessService =
+        genForauthorizeAccessService();
+
+    private static HttpRequestDef<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse> genForauthorizeAccessService() {
+        // basic
+        HttpRequestDef.Builder<AuthorizeAccessServiceRequest, AuthorizeAccessServiceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AuthorizeAccessServiceRequest.class, AuthorizeAccessServiceResponse.class)
+            .withName("AuthorizeAccessService")
+            .withUri("/v1/{project_id}/access-service")
+            .withContentType("application/json");
+
+        // requests
+        builder.<GrantAccessServiceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GrantAccessServiceRequestBody.class),
+            f -> f.withMarshaller(AuthorizeAccessServiceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AuthorizeAccessServiceResponse::getXRequestId,
+                AuthorizeAccessServiceResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAgreementRequest, CreateAgreementResponse> createAgreement =
         genForcreateAgreement();
 
@@ -1282,6 +1811,52 @@ public class LakeFormationMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(CreateAgreementResponse::getXRequestId, CreateAgreementResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAgreementRequest, DeleteAgreementResponse> deleteAgreement =
+        genFordeleteAgreement();
+
+    private static HttpRequestDef<DeleteAgreementRequest, DeleteAgreementResponse> genFordeleteAgreement() {
+        // basic
+        HttpRequestDef.Builder<DeleteAgreementRequest, DeleteAgreementResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAgreementRequest.class, DeleteAgreementResponse.class)
+                .withName("DeleteAgreement")
+                .withUri("/v1/{project_id}/agreement")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAgreementResponse::getXRequestId, DeleteAgreementResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAccessServiceRequest, ShowAccessServiceResponse> showAccessService =
+        genForshowAccessService();
+
+    private static HttpRequestDef<ShowAccessServiceRequest, ShowAccessServiceResponse> genForshowAccessService() {
+        // basic
+        HttpRequestDef.Builder<ShowAccessServiceRequest, ShowAccessServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAccessServiceRequest.class, ShowAccessServiceResponse.class)
+                .withName("ShowAccessService")
+                .withUri("/v1/{project_id}/access-service")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAccessServiceResponse::getXRequestId, ShowAccessServiceResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1599,6 +2174,81 @@ public class LakeFormationMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse> updateLakeFormationInstanceDefault =
+        genForupdateLakeFormationInstanceDefault();
+
+    private static HttpRequestDef<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse> genForupdateLakeFormationInstanceDefault() {
+        // basic
+        HttpRequestDef.Builder<UpdateLakeFormationInstanceDefaultRequest, UpdateLakeFormationInstanceDefaultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateLakeFormationInstanceDefaultRequest.class,
+                    UpdateLakeFormationInstanceDefaultResponse.class)
+                .withName("UpdateLakeFormationInstanceDefault")
+                .withUri("/v1/{project_id}/instances/{instance_id}/default")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLakeFormationInstanceDefaultRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateLakeFormationInstanceDefaultResponse::getXRequestId,
+                UpdateLakeFormationInstanceDefaultResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse> updateLakeFormationInstanceScale =
+        genForupdateLakeFormationInstanceScale();
+
+    private static HttpRequestDef<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse> genForupdateLakeFormationInstanceScale() {
+        // basic
+        HttpRequestDef.Builder<UpdateLakeFormationInstanceScaleRequest, UpdateLakeFormationInstanceScaleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateLakeFormationInstanceScaleRequest.class,
+                    UpdateLakeFormationInstanceScaleResponse.class)
+                .withName("UpdateLakeFormationInstanceScale")
+                .withUri("/v1/{project_id}/instances/{instance_id}/scale")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLakeFormationInstanceScaleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateLakeFormationInstanceScale>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLakeFormationInstanceScale.class),
+            f -> f.withMarshaller(UpdateLakeFormationInstanceScaleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateLakeFormationInstanceScaleResponse::getXRequestId,
+                UpdateLakeFormationInstanceScaleResponse::setXRequestId));
         return builder.build();
     }
 
@@ -2064,6 +2714,70 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse> listPartitionNamesWithoutLimit =
+        genForlistPartitionNamesWithoutLimit();
+
+    private static HttpRequestDef<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse> genForlistPartitionNamesWithoutLimit() {
+        // basic
+        HttpRequestDef.Builder<ListPartitionNamesWithoutLimitRequest, ListPartitionNamesWithoutLimitResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPartitionNamesWithoutLimitRequest.class,
+                    ListPartitionNamesWithoutLimitResponse.class)
+                .withName("ListPartitionNamesWithoutLimit")
+                .withUri(
+                    "/v1/{project_id}/instances/{instance_id}/catalogs/{catalog_name}/databases/{database_name}/tables/{table_name}/partitions/names")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("catalog_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getCatalogName, (req, v) -> {
+                req.setCatalogName(v);
+            }));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<String>withRequestField("table_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getTableName, (req, v) -> {
+                req.setTableName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+        builder.<List<String>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPartitionNamesWithoutLimitResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(String.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> listPartitions =
         genForlistPartitions();
 
@@ -2353,6 +3067,45 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociatePrincipalsRequest, AssociatePrincipalsResponse> associatePrincipals =
+        genForassociatePrincipals();
+
+    private static HttpRequestDef<AssociatePrincipalsRequest, AssociatePrincipalsResponse> genForassociatePrincipals() {
+        // basic
+        HttpRequestDef.Builder<AssociatePrincipalsRequest, AssociatePrincipalsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociatePrincipalsRequest.class, AssociatePrincipalsResponse.class)
+                .withName("AssociatePrincipals")
+                .withUri("/v1/{project_id}/instances/{instance_id}/roles/{role_name}/grant-principals")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociatePrincipalsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("role_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociatePrincipalsRequest::getRoleName, (req, v) -> {
+                req.setRoleName(v);
+            }));
+        builder.<List<Principal>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(AssociatePrincipalsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(Principal.class));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateRoleRequest, CreateRoleResponse> createRole = genForcreateRole();
 
     private static HttpRequestDef<CreateRoleRequest, CreateRoleResponse> genForcreateRole() {
@@ -2408,6 +3161,66 @@ public class LakeFormationMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRoleRequest::getRoleName, (req, v) -> {
                 req.setRoleName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPrincipalsRequest, ListPrincipalsResponse> listPrincipals =
+        genForlistPrincipals();
+
+    private static HttpRequestDef<ListPrincipalsRequest, ListPrincipalsResponse> genForlistPrincipals() {
+        // basic
+        HttpRequestDef.Builder<ListPrincipalsRequest, ListPrincipalsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPrincipalsRequest.class, ListPrincipalsResponse.class)
+                .withName("ListPrincipals")
+                .withUri("/v1/{project_id}/instances/{instance_id}/roles/{role_name}/principals")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrincipalsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("role_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrincipalsRequest::getRoleName, (req, v) -> {
+                req.setRoleName(v);
+            }));
+        builder.<String>withRequestField("principal_pattern",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrincipalsRequest::getPrincipalPattern, (req, v) -> {
+                req.setPrincipalPattern(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrincipalsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrincipalsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Boolean>withRequestField("reverse_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPrincipalsRequest::getReversePage, (req, v) -> {
+                req.setReversePage(v);
             }));
 
         // response
@@ -2499,6 +3312,45 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RevokePrincipalsRequest, RevokePrincipalsResponse> revokePrincipals =
+        genForrevokePrincipals();
+
+    private static HttpRequestDef<RevokePrincipalsRequest, RevokePrincipalsResponse> genForrevokePrincipals() {
+        // basic
+        HttpRequestDef.Builder<RevokePrincipalsRequest, RevokePrincipalsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RevokePrincipalsRequest.class, RevokePrincipalsResponse.class)
+                .withName("RevokePrincipals")
+                .withUri("/v1/{project_id}/instances/{instance_id}/roles/{role_name}/revoke-principals")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokePrincipalsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("role_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokePrincipalsRequest::getRoleName, (req, v) -> {
+                req.setRoleName(v);
+            }));
+        builder.<List<Principal>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(RevokePrincipalsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(Principal.class));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRoleRequest, ShowRoleResponse> showRole = genForshowRole();
 
     private static HttpRequestDef<ShowRoleRequest, ShowRoleResponse> genForshowRole() {
@@ -2526,6 +3378,52 @@ public class LakeFormationMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePrincipalsRequest, UpdatePrincipalsResponse> updatePrincipals =
+        genForupdatePrincipals();
+
+    private static HttpRequestDef<UpdatePrincipalsRequest, UpdatePrincipalsResponse> genForupdatePrincipals() {
+        // basic
+        HttpRequestDef.Builder<UpdatePrincipalsRequest, UpdatePrincipalsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePrincipalsRequest.class, UpdatePrincipalsResponse.class)
+                .withName("UpdatePrincipals")
+                .withUri("/v1/{project_id}/instances/{instance_id}/roles/{role_name}/update-principals")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrincipalsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("role_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrincipalsRequest::getRoleName, (req, v) -> {
+                req.setRoleName(v);
+            }));
+        builder.<List<Principal>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(UpdatePrincipalsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(Principal.class));
+
+        // response
+        builder.<List<Principal>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(UpdatePrincipalsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(Principal.class));
 
         return builder.build();
     }
@@ -3539,6 +4437,247 @@ public class LakeFormationMeta {
             String.class,
             f -> f.withMarshaller(ListLakeFormationInstanceTagsResponse::getXRequestId,
                 ListLakeFormationInstanceTagsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateRolesRequest, AssociateRolesResponse> associateRoles =
+        genForassociateRoles();
+
+    private static HttpRequestDef<AssociateRolesRequest, AssociateRolesResponse> genForassociateRoles() {
+        // basic
+        HttpRequestDef.Builder<AssociateRolesRequest, AssociateRolesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociateRolesRequest.class, AssociateRolesResponse.class)
+                .withName("AssociateRoles")
+                .withUri("/v1/{project_id}/instances/{instance_id}/users/{user_name}/grant-roles")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRolesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRolesRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<List<RoleInfoInput>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(AssociateRolesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(RoleInfoInput.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserRolesRequest, ListUserRolesResponse> listUserRoles =
+        genForlistUserRoles();
+
+    private static HttpRequestDef<ListUserRolesRequest, ListUserRolesResponse> genForlistUserRoles() {
+        // basic
+        HttpRequestDef.Builder<ListUserRolesRequest, ListUserRolesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserRolesRequest.class, ListUserRolesResponse.class)
+                .withName("ListUserRoles")
+                .withUri("/v1/{project_id}/instances/{instance_id}/users/{user_name}/roles")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserRolesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserRolesRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<String>withRequestField("role_pattern",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserRolesRequest::getRolePattern, (req, v) -> {
+                req.setRolePattern(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserRolesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserRolesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Boolean>withRequestField("reverse_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListUserRolesRequest::getReversePage, (req, v) -> {
+                req.setReversePage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForlistUsers();
+
+    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForlistUsers() {
+        // basic
+        HttpRequestDef.Builder<ListUsersRequest, ListUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUsersRequest.class, ListUsersResponse.class)
+                .withName("ListUsers")
+                .withUri("/v1/{project_id}/instances/{instance_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("user_source",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersRequest::getUserSource, (req, v) -> {
+                req.setUserSource(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUsersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Boolean>withRequestField("reverse_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListUsersRequest::getReversePage, (req, v) -> {
+                req.setReversePage(v);
+            }));
+        builder.<String>withRequestField("user_name_pattern",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersRequest::getUserNamePattern, (req, v) -> {
+                req.setUserNamePattern(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RevokeRolesRequest, RevokeRolesResponse> revokeRoles = genForrevokeRoles();
+
+    private static HttpRequestDef<RevokeRolesRequest, RevokeRolesResponse> genForrevokeRoles() {
+        // basic
+        HttpRequestDef.Builder<RevokeRolesRequest, RevokeRolesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RevokeRolesRequest.class, RevokeRolesResponse.class)
+                .withName("RevokeRoles")
+                .withUri("/v1/{project_id}/instances/{instance_id}/users/{user_name}/revoke-roles")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeRolesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeRolesRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<List<RoleInfoInput>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(RevokeRolesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(RoleInfoInput.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRolesRequest, UpdateRolesResponse> updateRoles = genForupdateRoles();
+
+    private static HttpRequestDef<UpdateRolesRequest, UpdateRolesResponse> genForupdateRoles() {
+        // basic
+        HttpRequestDef.Builder<UpdateRolesRequest, UpdateRolesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRolesRequest.class, UpdateRolesResponse.class)
+                .withName("UpdateRoles")
+                .withUri("/v1/{project_id}/instances/{instance_id}/users/{user_name}/update-roles")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRolesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRolesRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            }));
+        builder.<List<RoleInfoInput>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(UpdateRolesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(RoleInfoInput.class));
+
+        // response
+        builder.<List<Role>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(UpdateRolesResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(Role.class));
+
         return builder.build();
     }
 

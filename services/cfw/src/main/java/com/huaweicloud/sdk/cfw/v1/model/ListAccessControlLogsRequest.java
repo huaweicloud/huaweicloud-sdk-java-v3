@@ -171,6 +171,21 @@ public class ListAccessControlLogsRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_host")
+
+    private String dstHost;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_name")
+
+    private String ruleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private String action;
+
     public ListAccessControlLogsRequest withFwInstanceId(String fwInstanceId) {
         this.fwInstanceId = fwInstanceId;
         return this;
@@ -398,7 +413,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 每页显示个数
+     * 每页显示个数，范围为1-1024
      * @return limit
      */
     public Integer getLimit() {
@@ -443,6 +458,57 @@ public class ListAccessControlLogsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListAccessControlLogsRequest withDstHost(String dstHost) {
+        this.dstHost = dstHost;
+        return this;
+    }
+
+    /**
+     * 目标主机
+     * @return dstHost
+     */
+    public String getDstHost() {
+        return dstHost;
+    }
+
+    public void setDstHost(String dstHost) {
+        this.dstHost = dstHost;
+    }
+
+    public ListAccessControlLogsRequest withRuleName(String ruleName) {
+        this.ruleName = ruleName;
+        return this;
+    }
+
+    /**
+     * 规则名称
+     * @return ruleName
+     */
+    public String getRuleName() {
+        return ruleName;
+    }
+
+    public void setRuleName(String ruleName) {
+        this.ruleName = ruleName;
+    }
+
+    public ListAccessControlLogsRequest withAction(String action) {
+        this.action = action;
+        return this;
+    }
+
+    /**
+     * 动作0：permit,1：deny
+     * @return action
+     */
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -460,7 +526,9 @@ public class ListAccessControlLogsRequest {
             && Objects.equals(this.logId, that.logId) && Objects.equals(this.nextDate, that.nextDate)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.logType, that.logType)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.dstHost, that.dstHost) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override
@@ -480,7 +548,10 @@ public class ListAccessControlLogsRequest {
             offset,
             limit,
             logType,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            dstHost,
+            ruleName,
+            action);
     }
 
     @Override
@@ -503,6 +574,9 @@ public class ListAccessControlLogsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    dstHost: ").append(toIndentedString(dstHost)).append("\n");
+        sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();
     }

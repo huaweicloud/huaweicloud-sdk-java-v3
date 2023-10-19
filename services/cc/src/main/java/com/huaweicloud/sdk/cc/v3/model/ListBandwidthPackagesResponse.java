@@ -15,9 +15,9 @@ import java.util.function.Consumer;
 public class ListBandwidthPackagesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bandwidth_packages")
+    @JsonProperty(value = "request_id")
 
-    private List<BandwidthPackage> bandwidthPackages = null;
+    private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
@@ -25,9 +25,52 @@ public class ListBandwidthPackagesResponse extends SdkResponse {
     private PageInfo pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
+    @JsonProperty(value = "bandwidth_packages")
 
-    private String requestId;
+    private List<BandwidthPackage> bandwidthPackages = null;
+
+    public ListBandwidthPackagesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public ListBandwidthPackagesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListBandwidthPackagesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
 
     public ListBandwidthPackagesResponse withBandwidthPackages(List<BandwidthPackage> bandwidthPackages) {
         this.bandwidthPackages = bandwidthPackages;
@@ -63,49 +106,6 @@ public class ListBandwidthPackagesResponse extends SdkResponse {
         this.bandwidthPackages = bandwidthPackages;
     }
 
-    public ListBandwidthPackagesResponse withPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-        return this;
-    }
-
-    public ListBandwidthPackagesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
-        if (this.pageInfo == null) {
-            this.pageInfo = new PageInfo();
-            pageInfoSetter.accept(this.pageInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get pageInfo
-     * @return pageInfo
-     */
-    public PageInfo getPageInfo() {
-        return pageInfo;
-    }
-
-    public void setPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-    }
-
-    public ListBandwidthPackagesResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -115,22 +115,22 @@ public class ListBandwidthPackagesResponse extends SdkResponse {
             return false;
         }
         ListBandwidthPackagesResponse that = (ListBandwidthPackagesResponse) obj;
-        return Objects.equals(this.bandwidthPackages, that.bandwidthPackages)
-            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.bandwidthPackages, that.bandwidthPackages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthPackages, pageInfo, requestId);
+        return Objects.hash(requestId, pageInfo, bandwidthPackages);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBandwidthPackagesResponse {\n");
-        sb.append("    bandwidthPackages: ").append(toIndentedString(bandwidthPackages)).append("\n");
-        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    bandwidthPackages: ").append(toIndentedString(bandwidthPackages)).append("\n");
         sb.append("}");
         return sb.toString();
     }

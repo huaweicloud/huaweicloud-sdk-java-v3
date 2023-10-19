@@ -19,11 +19,6 @@ import java.util.function.Consumer;
 public class ConfigurationDataSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip")
-
-    private String ip;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rds_id")
 
     private String rdsId;
@@ -74,6 +69,11 @@ public class ConfigurationDataSpec {
     private Map<String, String> envs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
     private List<AccessConfigurationDataItems> items = null;
@@ -121,7 +121,7 @@ public class ConfigurationDataSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_paths")
 
-    private List<Object> logPaths = null;
+    private List<String> logPaths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_key")
@@ -139,7 +139,7 @@ public class ConfigurationDataSpec {
     private String business;
 
     /**
-     * 性能管理配置升级策略。 - 重启自动升级：每次都尝试重新下载镜像。 - 手动升级: 如果本地有该镜像，则继续使用本地镜像，不下载镜像。
+     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置升级策略。 - 重启自动升级：每次都尝试重新下载镜像。 - 手动升级: 如果本地有该镜像，则继续使用本地镜像，不下载镜像。
      */
     public static final class ImagePullPolicyEnum {
 
@@ -231,24 +231,7 @@ public class ConfigurationDataSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
 
-    private List<Object> metrics = null;
-
-    public ConfigurationDataSpec withIp(String ip) {
-        this.ip = ip;
-        return this;
-    }
-
-    /**
-     * 弹性公网IP。
-     * @return ip
-     */
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
+    private List<String> metrics = null;
 
     public ConfigurationDataSpec withRdsId(String rdsId) {
         this.rdsId = rdsId;
@@ -256,7 +239,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * RDS数据库实例ID。
+     * - type为\"rds\"时，配置此参数。 - 参数含义：RDS数据库实例ID。
      * @return rdsId
      */
     public String getRdsId() {
@@ -273,7 +256,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * RDS数据库名称。
+     * - type为\"rds\"时，配置此参数。 - 参数含义：RDS数据库名称。
      * @return rdsDbName
      */
     public String getRdsDbName() {
@@ -290,7 +273,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * RDS数据库地址。
+     * - type为\"rds\"时，配置此参数。 - 参数含义：RDS数据库地址。
      * @return rdsAddress
      */
     public String getRdsAddress() {
@@ -307,7 +290,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * RDS数据库用户名称。
+     * - type为\"rds\"时，配置此参数。 - 参数含义：RDS数据库用户名称。
      * @return rdsUsername
      */
     public String getRdsUsername() {
@@ -324,7 +307,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * RDS数据库密码。
+     * - type为\"rds\"时，配置此参数。 - 参数含义：RDS数据库密码。
      * @return rdsPassword
      */
     public String getRdsPassword() {
@@ -341,7 +324,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * RDS数据库端口
+     * - type为\"rds\"时，配置此参数。 - 参数含义：RDS数据库端口
      * @return rdsPort
      */
     public String getRdsPort() {
@@ -358,7 +341,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * CSE配置中心地址。
+     * - type为\"cse\"时，配置此参数。 - 参数含义：CSE配置中心地址。
      * @return configCenterAddr
      */
     public String getConfigCenterAddr() {
@@ -375,7 +358,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * CSE服务注册发现地址。
+     * - type为\"cse\"时，配置此参数。 - 参数含义：CSE服务注册发现地址。
      * @return serviceCenterAddr
      */
     public String getServiceCenterAddr() {
@@ -392,7 +375,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * CSE引擎ID。
+     * - type为\"cse\"时，配置此参数。 - 参数含义：CSE引擎ID。
      * @return cseId
      */
     public String getCseId() {
@@ -436,6 +419,23 @@ public class ConfigurationDataSpec {
         this.envs = envs;
     }
 
+    public ConfigurationDataSpec withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * 弹性公网IP，响应体参数，未配置域名时返回此参数。
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     public ConfigurationDataSpec withItems(List<AccessConfigurationDataItems> items) {
         this.items = items;
         return this;
@@ -458,7 +458,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 访问方式配置列表。
+     * - type为\"access\"时，配置此参数。 - 参数含义：访问方式配置列表。
      * @return items
      */
     public List<AccessConfigurationDataItems> getItems() {
@@ -475,7 +475,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 伸缩策略配置最大伸缩个数。
+     * - type为\"scaling\"时，配置此参数。 - 参数含义：伸缩策略配置最大伸缩个数。
      * @return maxReplicaCount
      */
     public Integer getMaxReplicaCount() {
@@ -508,7 +508,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 伸缩策略配置触发器列表。
+     * - type为\"scaling\"时，配置此参数。 - 参数含义：伸缩策略配置触发器列表。
      * @return triggers
      */
     public List<ScaleConfigurationDataTrigger> getTriggers() {
@@ -541,7 +541,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 云存储配置列表。
+     * - type为\"volume\"时，配置此参数。 - 参数含义：云存储配置列表。
      * @return volumes
      */
     public List<VolumeConfigurationDataVolume> getVolumes() {
@@ -684,12 +684,12 @@ public class ConfigurationDataSpec {
         this.preStop = preStop;
     }
 
-    public ConfigurationDataSpec withLogPaths(List<Object> logPaths) {
+    public ConfigurationDataSpec withLogPaths(List<String> logPaths) {
         this.logPaths = logPaths;
         return this;
     }
 
-    public ConfigurationDataSpec addLogPathsItem(Object logPathsItem) {
+    public ConfigurationDataSpec addLogPathsItem(String logPathsItem) {
         if (this.logPaths == null) {
             this.logPaths = new ArrayList<>();
         }
@@ -697,7 +697,7 @@ public class ConfigurationDataSpec {
         return this;
     }
 
-    public ConfigurationDataSpec withLogPaths(Consumer<List<Object>> logPathsSetter) {
+    public ConfigurationDataSpec withLogPaths(Consumer<List<String>> logPathsSetter) {
         if (this.logPaths == null) {
             this.logPaths = new ArrayList<>();
         }
@@ -706,14 +706,14 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 自定义日志路径。
+     * - type为\"log\"时，配置此参数。 - 参数含义：自定义日志路径数组。
      * @return logPaths
      */
-    public List<Object> getLogPaths() {
+    public List<String> getLogPaths() {
         return logPaths;
     }
 
-    public void setLogPaths(List<Object> logPaths) {
+    public void setLogPaths(List<String> logPaths) {
         this.logPaths = logPaths;
     }
 
@@ -723,7 +723,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 性能管理配置访问密钥Key。
+     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置访问密钥Key。
      * @return accessKey
      */
     public String getAccessKey() {
@@ -740,7 +740,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 性能管理配置访问密钥value。
+     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置访问密钥value。
      * @return accessValue
      */
     public String getAccessValue() {
@@ -757,7 +757,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 性能管理配置应用。
+     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置应用。
      * @return business
      */
     public String getBusiness() {
@@ -774,7 +774,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 性能管理配置升级策略。 - 重启自动升级：每次都尝试重新下载镜像。 - 手动升级: 如果本地有该镜像，则继续使用本地镜像，不下载镜像。
+     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置升级策略。 - 重启自动升级：每次都尝试重新下载镜像。 - 手动升级: 如果本地有该镜像，则继续使用本地镜像，不下载镜像。
      * @return imagePullPolicy
      */
     public ImagePullPolicyEnum getImagePullPolicy() {
@@ -791,7 +791,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 性能管理配置探针版本。
+     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置探针版本。
      * @return version
      */
     public String getVersion() {
@@ -808,7 +808,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 自定义监控指标配置采集路径。
+     * - type为\"customMetric\"时，配置此参数。 - 参数含义：自定义监控指标配置采集路径。
      * @return path
      */
     public String getPath() {
@@ -825,7 +825,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 自定义监控指标配置采集端口。
+     * - type为\"customMetric\"时，配置此参数。 - 参数含义：自定义监控指标配置采集端口。
      * @return port
      */
     public String getPort() {
@@ -836,12 +836,12 @@ public class ConfigurationDataSpec {
         this.port = port;
     }
 
-    public ConfigurationDataSpec withMetrics(List<Object> metrics) {
+    public ConfigurationDataSpec withMetrics(List<String> metrics) {
         this.metrics = metrics;
         return this;
     }
 
-    public ConfigurationDataSpec addMetricsItem(Object metricsItem) {
+    public ConfigurationDataSpec addMetricsItem(String metricsItem) {
         if (this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
@@ -849,7 +849,7 @@ public class ConfigurationDataSpec {
         return this;
     }
 
-    public ConfigurationDataSpec withMetrics(Consumer<List<Object>> metricsSetter) {
+    public ConfigurationDataSpec withMetrics(Consumer<List<String>> metricsSetter) {
         if (this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
@@ -858,14 +858,14 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * 自定义监控指标配置指标名称。
+     * - type为\"customMetric\"时，配置此参数。 - 参数含义：自定义监控指标配置指标名称。
      * @return metrics
      */
-    public List<Object> getMetrics() {
+    public List<String> getMetrics() {
         return metrics;
     }
 
-    public void setMetrics(List<Object> metrics) {
+    public void setMetrics(List<String> metrics) {
         this.metrics = metrics;
     }
 
@@ -878,14 +878,13 @@ public class ConfigurationDataSpec {
             return false;
         }
         ConfigurationDataSpec that = (ConfigurationDataSpec) obj;
-        return Objects.equals(this.ip, that.ip) && Objects.equals(this.rdsId, that.rdsId)
-            && Objects.equals(this.rdsDbName, that.rdsDbName) && Objects.equals(this.rdsAddress, that.rdsAddress)
-            && Objects.equals(this.rdsUsername, that.rdsUsername) && Objects.equals(this.rdsPassword, that.rdsPassword)
-            && Objects.equals(this.rdsPort, that.rdsPort)
+        return Objects.equals(this.rdsId, that.rdsId) && Objects.equals(this.rdsDbName, that.rdsDbName)
+            && Objects.equals(this.rdsAddress, that.rdsAddress) && Objects.equals(this.rdsUsername, that.rdsUsername)
+            && Objects.equals(this.rdsPassword, that.rdsPassword) && Objects.equals(this.rdsPort, that.rdsPort)
             && Objects.equals(this.configCenterAddr, that.configCenterAddr)
             && Objects.equals(this.serviceCenterAddr, that.serviceCenterAddr) && Objects.equals(this.cseId, that.cseId)
-            && Objects.equals(this.envs, that.envs) && Objects.equals(this.items, that.items)
-            && Objects.equals(this.maxReplicaCount, that.maxReplicaCount)
+            && Objects.equals(this.envs, that.envs) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.items, that.items) && Objects.equals(this.maxReplicaCount, that.maxReplicaCount)
             && Objects.equals(this.triggers, that.triggers) && Objects.equals(this.volumes, that.volumes)
             && Objects.equals(this.livenessProbe, that.livenessProbe)
             && Objects.equals(this.startupProbe, that.startupProbe)
@@ -900,8 +899,7 @@ public class ConfigurationDataSpec {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ip,
-            rdsId,
+        return Objects.hash(rdsId,
             rdsDbName,
             rdsAddress,
             rdsUsername,
@@ -911,6 +909,7 @@ public class ConfigurationDataSpec {
             serviceCenterAddr,
             cseId,
             envs,
+            ip,
             items,
             maxReplicaCount,
             triggers,
@@ -935,7 +934,6 @@ public class ConfigurationDataSpec {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfigurationDataSpec {\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    rdsId: ").append(toIndentedString(rdsId)).append("\n");
         sb.append("    rdsDbName: ").append(toIndentedString(rdsDbName)).append("\n");
         sb.append("    rdsAddress: ").append(toIndentedString(rdsAddress)).append("\n");
@@ -946,6 +944,7 @@ public class ConfigurationDataSpec {
         sb.append("    serviceCenterAddr: ").append(toIndentedString(serviceCenterAddr)).append("\n");
         sb.append("    cseId: ").append(toIndentedString(cseId)).append("\n");
         sb.append("    envs: ").append(toIndentedString(envs)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("    maxReplicaCount: ").append(toIndentedString(maxReplicaCount)).append("\n");
         sb.append("    triggers: ").append(toIndentedString(triggers)).append("\n");

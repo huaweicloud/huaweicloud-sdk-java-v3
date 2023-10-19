@@ -38,6 +38,16 @@ public class ListBandwidthPackagesRequest {
 
     private List<String> name = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private List<String> enterpriseProjectId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_connection_id")
+
+    private List<String> cloudConnectionId = null;
+
     /**
      * Gets or Sets status
      */
@@ -108,11 +118,6 @@ public class ListBandwidthPackagesRequest {
     private List<StatusEnum> status = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private List<String> enterpriseProjectId = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billing_mode")
 
     private List<String> billingMode = null;
@@ -128,9 +133,9 @@ public class ListBandwidthPackagesRequest {
     }
 
     /**
-     * 分页查询时，每页返回的个数。
+     * 每页返回的个数。 取值范围：1~1000。
      * minimum: 1
-     * maximum: 2000
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -147,7 +152,7 @@ public class ListBandwidthPackagesRequest {
     }
 
     /**
-     * 分页查询时，上一页最后一条记录的ID，为空时为查询第一页。 使用说明：必须与limit一起使用。
+     * 翻页信息，从上次API调用返回的翻页数据中获取，可填写前一页marker或者后一页marker，填入前一页previous_marker就向前翻页，后一页next_marker就向翻页。 翻页过程中，查询条件不能修改，包括过滤条件，排序条件，limit。
      * @return marker
      */
     public String getMarker() {
@@ -180,7 +185,7 @@ public class ListBandwidthPackagesRequest {
     }
 
     /**
-     * 根据ID过滤带宽包实例列表。
+     * 根据id查询，可查询多个id。
      * @return id
      */
     public List<String> getId() {
@@ -213,7 +218,7 @@ public class ListBandwidthPackagesRequest {
     }
 
     /**
-     * 根据名称过滤带宽包实例列表。
+     * 根据名字查询，可查询多个名字。
      * @return name
      */
     public List<String> getName() {
@@ -222,6 +227,72 @@ public class ListBandwidthPackagesRequest {
 
     public void setName(List<String> name) {
         this.name = name;
+    }
+
+    public ListBandwidthPackagesRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    public ListBandwidthPackagesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
+
+    public ListBandwidthPackagesRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
+
+    /**
+     * 根据企业项目ID过滤列表。
+     * @return enterpriseProjectId
+     */
+    public List<String> getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListBandwidthPackagesRequest withCloudConnectionId(List<String> cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
+        return this;
+    }
+
+    public ListBandwidthPackagesRequest addCloudConnectionIdItem(String cloudConnectionIdItem) {
+        if (this.cloudConnectionId == null) {
+            this.cloudConnectionId = new ArrayList<>();
+        }
+        this.cloudConnectionId.add(cloudConnectionIdItem);
+        return this;
+    }
+
+    public ListBandwidthPackagesRequest withCloudConnectionId(Consumer<List<String>> cloudConnectionIdSetter) {
+        if (this.cloudConnectionId == null) {
+            this.cloudConnectionId = new ArrayList<>();
+        }
+        cloudConnectionIdSetter.accept(this.cloudConnectionId);
+        return this;
+    }
+
+    /**
+     * 根据云连接的ID过滤列表。
+     * @return cloudConnectionId
+     */
+    public List<String> getCloudConnectionId() {
+        return cloudConnectionId;
+    }
+
+    public void setCloudConnectionId(List<String> cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
     }
 
     public ListBandwidthPackagesRequest withStatus(List<StatusEnum> status) {
@@ -255,39 +326,6 @@ public class ListBandwidthPackagesRequest {
 
     public void setStatus(List<StatusEnum> status) {
         this.status = status;
-    }
-
-    public ListBandwidthPackagesRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    public ListBandwidthPackagesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if (this.enterpriseProjectId == null) {
-            this.enterpriseProjectId = new ArrayList<>();
-        }
-        this.enterpriseProjectId.add(enterpriseProjectIdItem);
-        return this;
-    }
-
-    public ListBandwidthPackagesRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if (this.enterpriseProjectId == null) {
-            this.enterpriseProjectId = new ArrayList<>();
-        }
-        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
-        return this;
-    }
-
-    /**
-     * 根据企业项目ID过滤带宽包实例列表。
-     * @return enterpriseProjectId
-     */
-    public List<String> getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public ListBandwidthPackagesRequest withBillingMode(List<String> billingMode) {
@@ -367,14 +405,16 @@ public class ListBandwidthPackagesRequest {
         ListBandwidthPackagesRequest that = (ListBandwidthPackagesRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.status, that.status)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.billingMode, that.billingMode) && Objects.equals(this.resourceId, that.resourceId);
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.billingMode, that.billingMode)
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, id, name, status, enterpriseProjectId, billingMode, resourceId);
+        return Objects
+            .hash(limit, marker, id, name, enterpriseProjectId, cloudConnectionId, status, billingMode, resourceId);
     }
 
     @Override
@@ -385,8 +425,9 @@ public class ListBandwidthPackagesRequest {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    billingMode: ").append(toIndentedString(billingMode)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("}");

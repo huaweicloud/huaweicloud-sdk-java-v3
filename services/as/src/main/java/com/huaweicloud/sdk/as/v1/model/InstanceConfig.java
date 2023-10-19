@@ -382,7 +382,7 @@ public class InstanceConfig {
     }
 
     /**
-     * 登录云服务器的SSH密钥名称。  获取密钥对方式请参考[创建及导入SSH密钥对](https://support.huaweicloud.com/api-dew/CreateKeypair.html)。  说明： 当key_name与user_data同时指定时，user_data只做用户数据注入。
+     * 登录云服务器的SSH密钥名称。获取密钥对方式请参考[创建及导入SSH密钥对](https://support.huaweicloud.com/api-dew/CreateKeypair.html)。说明：当key_name与user_data同时指定时，user_data只做用户数据注入。
      * @return keyName
      */
     public String getKeyName() {

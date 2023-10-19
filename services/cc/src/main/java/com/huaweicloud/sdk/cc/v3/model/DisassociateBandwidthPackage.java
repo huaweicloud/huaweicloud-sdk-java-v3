@@ -21,7 +21,7 @@ public class DisassociateBandwidthPackage {
     private String resourceId;
 
     /**
-     * 带宽包实例待解关联的资源实例类型，cloud_connection：表示为云连接实例。
+     * 带宽包实例绑定的资源类型。 cloud_connection: 云连接实例。
      */
     public static final class ResourceTypeEnum {
 
@@ -95,7 +95,7 @@ public class DisassociateBandwidthPackage {
     }
 
     /**
-     * 带宽包实例待解关联的资源实例ID。
+     * 带宽包实例绑定的资源ID。
      * @return resourceId
      */
     public String getResourceId() {
@@ -112,7 +112,7 @@ public class DisassociateBandwidthPackage {
     }
 
     /**
-     * 带宽包实例待解关联的资源实例类型，cloud_connection：表示为云连接实例。
+     * 带宽包实例绑定的资源类型。 cloud_connection: 云连接实例。
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

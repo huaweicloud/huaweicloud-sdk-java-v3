@@ -36,7 +36,7 @@ public class BizAppParam {
     private String name;
 
     /**
-     * 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY
+     * 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY。创建应用必填，修改应用非必填
      */
     public static final class RegisterTypeEnum {
 
@@ -46,17 +46,22 @@ public class BizAppParam {
         public static final RegisterTypeEnum API = new RegisterTypeEnum("API");
 
         /**
-         * Enum CONSOLESERVICE_DISCOVERY for value: "CONSOLESERVICE_DISCOVERY"
+         * Enum CONSOLE for value: "CONSOLE"
          */
-        public static final RegisterTypeEnum CONSOLESERVICE_DISCOVERY =
-            new RegisterTypeEnum("CONSOLESERVICE_DISCOVERY");
+        public static final RegisterTypeEnum CONSOLE = new RegisterTypeEnum("CONSOLE");
+
+        /**
+         * Enum SERVICE_DISCOVERY for value: "SERVICE_DISCOVERY"
+         */
+        public static final RegisterTypeEnum SERVICE_DISCOVERY = new RegisterTypeEnum("SERVICE_DISCOVERY");
 
         private static final Map<String, RegisterTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RegisterTypeEnum> createStaticFields() {
             Map<String, RegisterTypeEnum> map = new HashMap<>();
             map.put("API", API);
-            map.put("CONSOLESERVICE_DISCOVERY", CONSOLESERVICE_DISCOVERY);
+            map.put("CONSOLE", CONSOLE);
+            map.put("SERVICE_DISCOVERY", SERVICE_DISCOVERY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -117,7 +122,7 @@ public class BizAppParam {
     }
 
     /**
-     * 应用描述
+     * 描述：最大255字符
      * @return description
      */
     public String getDescription() {
@@ -134,7 +139,7 @@ public class BizAppParam {
     }
 
     /**
-     * 应用名称.字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点
+     * 显示名：字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点
      * @return displayName
      */
     public String getDisplayName() {
@@ -168,7 +173,7 @@ public class BizAppParam {
     }
 
     /**
-     * 唯一标识.字符集长度2-64，仅支持字符集：英文字母、数字、下划线、中划线、点
+     * 名称：字符集长度2-64，仅支持字符集：英文字母、数字、下划线、中划线、点
      * @return name
      */
     public String getName() {
@@ -185,7 +190,7 @@ public class BizAppParam {
     }
 
     /**
-     * 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY
+     * 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY。创建应用必填，修改应用非必填
      * @return registerType
      */
     public RegisterTypeEnum getRegisterType() {

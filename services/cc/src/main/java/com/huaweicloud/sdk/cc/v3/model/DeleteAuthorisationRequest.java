@@ -21,7 +21,7 @@ public class DeleteAuthorisationRequest {
     }
 
     /**
-     * 授权ID。
+     * 资源的Id。
      * @return id
      */
     public String getId() {

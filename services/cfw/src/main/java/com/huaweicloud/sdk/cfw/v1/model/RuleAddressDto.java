@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.cfw.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 规则地址dto
@@ -39,6 +42,41 @@ public class RuleAddressDto {
     @JsonProperty(value = "domain_address_name")
 
     private String domainAddressName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_list_json")
+
+    private String regionListJson;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_list")
+
+    private List<IpRegionDto> regionList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_set_id")
+
+    private String domainSetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_set_name")
+
+    private String domainSetName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_address")
+
+    private List<String> ipAddress = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_group")
+
+    private List<String> addressGroup = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_group_names")
+
+    private List<AddressGroupVO> addressGroupNames = null;
 
     public RuleAddressDto withType(Integer type) {
         this.type = type;
@@ -142,6 +180,189 @@ public class RuleAddressDto {
         this.domainAddressName = domainAddressName;
     }
 
+    public RuleAddressDto withRegionListJson(String regionListJson) {
+        this.regionListJson = regionListJson;
+        return this;
+    }
+
+    /**
+     * 规则region列表json值
+     * @return regionListJson
+     */
+    public String getRegionListJson() {
+        return regionListJson;
+    }
+
+    public void setRegionListJson(String regionListJson) {
+        this.regionListJson = regionListJson;
+    }
+
+    public RuleAddressDto withRegionList(List<IpRegionDto> regionList) {
+        this.regionList = regionList;
+        return this;
+    }
+
+    public RuleAddressDto addRegionListItem(IpRegionDto regionListItem) {
+        if (this.regionList == null) {
+            this.regionList = new ArrayList<>();
+        }
+        this.regionList.add(regionListItem);
+        return this;
+    }
+
+    public RuleAddressDto withRegionList(Consumer<List<IpRegionDto>> regionListSetter) {
+        if (this.regionList == null) {
+            this.regionList = new ArrayList<>();
+        }
+        regionListSetter.accept(this.regionList);
+        return this;
+    }
+
+    /**
+     * 规则region列表
+     * @return regionList
+     */
+    public List<IpRegionDto> getRegionList() {
+        return regionList;
+    }
+
+    public void setRegionList(List<IpRegionDto> regionList) {
+        this.regionList = regionList;
+    }
+
+    public RuleAddressDto withDomainSetId(String domainSetId) {
+        this.domainSetId = domainSetId;
+        return this;
+    }
+
+    /**
+     * 域名组id
+     * @return domainSetId
+     */
+    public String getDomainSetId() {
+        return domainSetId;
+    }
+
+    public void setDomainSetId(String domainSetId) {
+        this.domainSetId = domainSetId;
+    }
+
+    public RuleAddressDto withDomainSetName(String domainSetName) {
+        this.domainSetName = domainSetName;
+        return this;
+    }
+
+    /**
+     * 域名组名称
+     * @return domainSetName
+     */
+    public String getDomainSetName() {
+        return domainSetName;
+    }
+
+    public void setDomainSetName(String domainSetName) {
+        this.domainSetName = domainSetName;
+    }
+
+    public RuleAddressDto withIpAddress(List<String> ipAddress) {
+        this.ipAddress = ipAddress;
+        return this;
+    }
+
+    public RuleAddressDto addIpAddressItem(String ipAddressItem) {
+        if (this.ipAddress == null) {
+            this.ipAddress = new ArrayList<>();
+        }
+        this.ipAddress.add(ipAddressItem);
+        return this;
+    }
+
+    public RuleAddressDto withIpAddress(Consumer<List<String>> ipAddressSetter) {
+        if (this.ipAddress == null) {
+            this.ipAddress = new ArrayList<>();
+        }
+        ipAddressSetter.accept(this.ipAddress);
+        return this;
+    }
+
+    /**
+     * IP地址列表
+     * @return ipAddress
+     */
+    public List<String> getIpAddress() {
+        return ipAddress;
+    }
+
+    public void setIpAddress(List<String> ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
+    public RuleAddressDto withAddressGroup(List<String> addressGroup) {
+        this.addressGroup = addressGroup;
+        return this;
+    }
+
+    public RuleAddressDto addAddressGroupItem(String addressGroupItem) {
+        if (this.addressGroup == null) {
+            this.addressGroup = new ArrayList<>();
+        }
+        this.addressGroup.add(addressGroupItem);
+        return this;
+    }
+
+    public RuleAddressDto withAddressGroup(Consumer<List<String>> addressGroupSetter) {
+        if (this.addressGroup == null) {
+            this.addressGroup = new ArrayList<>();
+        }
+        addressGroupSetter.accept(this.addressGroup);
+        return this;
+    }
+
+    /**
+     * 地址组列表
+     * @return addressGroup
+     */
+    public List<String> getAddressGroup() {
+        return addressGroup;
+    }
+
+    public void setAddressGroup(List<String> addressGroup) {
+        this.addressGroup = addressGroup;
+    }
+
+    public RuleAddressDto withAddressGroupNames(List<AddressGroupVO> addressGroupNames) {
+        this.addressGroupNames = addressGroupNames;
+        return this;
+    }
+
+    public RuleAddressDto addAddressGroupNamesItem(AddressGroupVO addressGroupNamesItem) {
+        if (this.addressGroupNames == null) {
+            this.addressGroupNames = new ArrayList<>();
+        }
+        this.addressGroupNames.add(addressGroupNamesItem);
+        return this;
+    }
+
+    public RuleAddressDto withAddressGroupNames(Consumer<List<AddressGroupVO>> addressGroupNamesSetter) {
+        if (this.addressGroupNames == null) {
+            this.addressGroupNames = new ArrayList<>();
+        }
+        addressGroupNamesSetter.accept(this.addressGroupNames);
+        return this;
+    }
+
+    /**
+     * 地址组名称列表
+     * @return addressGroupNames
+     */
+    public List<AddressGroupVO> getAddressGroupNames() {
+        return addressGroupNames;
+    }
+
+    public void setAddressGroupNames(List<AddressGroupVO> addressGroupNames) {
+        this.addressGroupNames = addressGroupNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +375,29 @@ public class RuleAddressDto {
         return Objects.equals(this.type, that.type) && Objects.equals(this.addressType, that.addressType)
             && Objects.equals(this.address, that.address) && Objects.equals(this.addressSetId, that.addressSetId)
             && Objects.equals(this.addressSetName, that.addressSetName)
-            && Objects.equals(this.domainAddressName, that.domainAddressName);
+            && Objects.equals(this.domainAddressName, that.domainAddressName)
+            && Objects.equals(this.regionListJson, that.regionListJson)
+            && Objects.equals(this.regionList, that.regionList) && Objects.equals(this.domainSetId, that.domainSetId)
+            && Objects.equals(this.domainSetName, that.domainSetName) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.addressGroup, that.addressGroup)
+            && Objects.equals(this.addressGroupNames, that.addressGroupNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, addressType, address, addressSetId, addressSetName, domainAddressName);
+        return Objects.hash(type,
+            addressType,
+            address,
+            addressSetId,
+            addressSetName,
+            domainAddressName,
+            regionListJson,
+            regionList,
+            domainSetId,
+            domainSetName,
+            ipAddress,
+            addressGroup,
+            addressGroupNames);
     }
 
     @Override
@@ -172,6 +410,13 @@ public class RuleAddressDto {
         sb.append("    addressSetId: ").append(toIndentedString(addressSetId)).append("\n");
         sb.append("    addressSetName: ").append(toIndentedString(addressSetName)).append("\n");
         sb.append("    domainAddressName: ").append(toIndentedString(domainAddressName)).append("\n");
+        sb.append("    regionListJson: ").append(toIndentedString(regionListJson)).append("\n");
+        sb.append("    regionList: ").append(toIndentedString(regionList)).append("\n");
+        sb.append("    domainSetId: ").append(toIndentedString(domainSetId)).append("\n");
+        sb.append("    domainSetName: ").append(toIndentedString(domainSetName)).append("\n");
+        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+        sb.append("    addressGroup: ").append(toIndentedString(addressGroup)).append("\n");
+        sb.append("    addressGroupNames: ").append(toIndentedString(addressGroupNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

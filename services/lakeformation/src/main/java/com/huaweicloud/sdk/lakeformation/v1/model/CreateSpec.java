@@ -11,6 +11,11 @@ import java.util.Objects;
 public class CreateSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_id")
+
+    private String productId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
 
     private String specCode;
@@ -20,13 +25,30 @@ public class CreateSpec {
 
     private Integer strideNum;
 
+    public CreateSpec withProductId(String productId) {
+        this.productId = productId;
+        return this;
+    }
+
+    /**
+     * 商品ID。由系统自动生成，如OFFI8XXXXXXXXXXXXXXXX4。
+     * @return productId
+     */
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
     public CreateSpec withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
 
     /**
-     * 规格编码
+     * 规格编码。由系统自动生成，例如lakeformation.unit.basic.qps。
      * @return specCode
      */
     public String getSpecCode() {
@@ -43,7 +65,9 @@ public class CreateSpec {
     }
 
     /**
-     * 步数
+     * 步数。QPS为每秒最大请求数步长，最小为5，步长为1。
+     * minimum: 0
+     * maximum: 2147483647
      * @return strideNum
      */
     public Integer getStrideNum() {
@@ -63,18 +87,20 @@ public class CreateSpec {
             return false;
         }
         CreateSpec that = (CreateSpec) obj;
-        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.strideNum, that.strideNum);
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.strideNum, that.strideNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specCode, strideNum);
+        return Objects.hash(productId, specCode, strideNum);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateSpec {\n");
+        sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    strideNum: ").append(toIndentedString(strideNum)).append("\n");
         sb.append("}");

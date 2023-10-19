@@ -28,6 +28,31 @@ public class CreateNetworkInstance {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_domain_id")
+
+    private String instanceDomainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_connection_id")
+
+    private String cloudConnectionId;
+
     /**
      * 添加到云连接网络实例的类型，有效值： - vpc：虚拟私有云。 - vgw：虚拟网关。
      */
@@ -104,31 +129,6 @@ public class CreateNetworkInstance {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
-
-    private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_domain_id")
-
-    private String instanceDomainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region_id")
-
-    private String regionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_connection_id")
-
-    private String cloudConnectionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cidrs")
 
     private List<String> cidrs = null;
@@ -139,7 +139,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 网络实例的名字。只能由中文、英文字母、数字、下划线、中划线、点组成。
+     * 实例名字。
      * @return name
      */
     public String getName() {
@@ -156,7 +156,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 网络实例的描述。不支持 <>。
+     * 实例描述。不支持 <>。
      * @return description
      */
     public String getDescription() {
@@ -165,6 +165,91 @@ public class CreateNetworkInstance {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public CreateNetworkInstance withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public CreateNetworkInstance withInstanceDomainId(String instanceDomainId) {
+        this.instanceDomainId = instanceDomainId;
+        return this;
+    }
+
+    /**
+     * 实例所属帐号ID。
+     * @return instanceDomainId
+     */
+    public String getInstanceDomainId() {
+        return instanceDomainId;
+    }
+
+    public void setInstanceDomainId(String instanceDomainId) {
+        this.instanceDomainId = instanceDomainId;
+    }
+
+    public CreateNetworkInstance withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 实例所属项目ID。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public CreateNetworkInstance withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * RegionID。
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    public CreateNetworkInstance withCloudConnectionId(String cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
+        return this;
+    }
+
+    /**
+     * 资源ID标识符。
+     * @return cloudConnectionId
+     */
+    public String getCloudConnectionId() {
+        return cloudConnectionId;
+    }
+
+    public void setCloudConnectionId(String cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
     }
 
     public CreateNetworkInstance withType(TypeEnum type) {
@@ -182,91 +267,6 @@ public class CreateNetworkInstance {
 
     public void setType(TypeEnum type) {
         this.type = type;
-    }
-
-    public CreateNetworkInstance withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * 添加到云连接网络实例的ID，VPC或者VGW的ID。
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    public CreateNetworkInstance withInstanceDomainId(String instanceDomainId) {
-        this.instanceDomainId = instanceDomainId;
-        return this;
-    }
-
-    /**
-     * 网络实例的账户ID。跨账号加载必填；同账号下资源加载不填。
-     * @return instanceDomainId
-     */
-    public String getInstanceDomainId() {
-        return instanceDomainId;
-    }
-
-    public void setInstanceDomainId(String instanceDomainId) {
-        this.instanceDomainId = instanceDomainId;
-    }
-
-    public CreateNetworkInstance withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 网络实例的项目ID。
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
-    public CreateNetworkInstance withRegionId(String regionId) {
-        this.regionId = regionId;
-        return this;
-    }
-
-    /**
-     * 网络实例的RegionID。
-     * @return regionId
-     */
-    public String getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(String regionId) {
-        this.regionId = regionId;
-    }
-
-    public CreateNetworkInstance withCloudConnectionId(String cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
-        return this;
-    }
-
-    /**
-     * 云连接实例ID。
-     * @return cloudConnectionId
-     */
-    public String getCloudConnectionId() {
-        return cloudConnectionId;
-    }
-
-    public void setCloudConnectionId(String cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
     }
 
     public CreateNetworkInstance withCidrs(List<String> cidrs) {
@@ -312,16 +312,17 @@ public class CreateNetworkInstance {
         }
         CreateNetworkInstance that = (CreateNetworkInstance) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.instanceDomainId, that.instanceDomainId)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
-            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId) && Objects.equals(this.cidrs, that.cidrs);
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.cidrs, that.cidrs);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(name, description, type, instanceId, instanceDomainId, projectId, regionId, cloudConnectionId, cidrs);
+            .hash(name, description, instanceId, instanceDomainId, projectId, regionId, cloudConnectionId, type, cidrs);
     }
 
     @Override
@@ -330,12 +331,12 @@ public class CreateNetworkInstance {
         sb.append("class CreateNetworkInstance {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    instanceDomainId: ").append(toIndentedString(instanceDomainId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    cidrs: ").append(toIndentedString(cidrs)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -27,7 +27,7 @@ public class UpdateCloudConnectionRequest {
     }
 
     /**
-     * 云连接实例ID。
+     * 资源的Id。
      * @return id
      */
     public String getId() {

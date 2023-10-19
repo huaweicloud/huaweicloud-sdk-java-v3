@@ -31,7 +31,7 @@ public class PageInfo {
     }
 
     /**
-     * 下一页的marker，值为资源的uuid，为空时表示最后一页。
+     * 向后分页标识符。
      * @return nextMarker
      */
     public String getNextMarker() {
@@ -48,7 +48,7 @@ public class PageInfo {
     }
 
     /**
-     * 上一页的marker，值为资源的uuid，为空时表示第一页。
+     * 向前分页标识符。
      * @return previousMarker
      */
     public String getPreviousMarker() {

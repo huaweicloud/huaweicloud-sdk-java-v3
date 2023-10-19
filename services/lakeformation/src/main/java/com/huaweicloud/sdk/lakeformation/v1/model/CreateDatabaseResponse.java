@@ -35,7 +35,7 @@ public class CreateDatabaseResponse extends SdkResponse {
     private String owner;
 
     /**
-     * 所有者类型
+     * 所有者类型,USER-用户,GROUP-组,ROLE-角色
      */
     public static final class OwnerTypeEnum {
 
@@ -115,6 +115,105 @@ public class CreateDatabaseResponse extends SdkResponse {
 
     private OwnerTypeEnum ownerType;
 
+    /**
+     * 所有者授权来源类型,IAM-云用户,SAML-联邦,LDAP-ld用户,LOCAL-本地用户,AGENTTENANT-委托,OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     */
+    public static final class OwnerAuthSourceTypeEnum {
+
+        /**
+         * Enum IAM for value: "IAM"
+         */
+        public static final OwnerAuthSourceTypeEnum IAM = new OwnerAuthSourceTypeEnum("IAM");
+
+        /**
+         * Enum SAML for value: "SAML"
+         */
+        public static final OwnerAuthSourceTypeEnum SAML = new OwnerAuthSourceTypeEnum("SAML");
+
+        /**
+         * Enum LDAP for value: "LDAP"
+         */
+        public static final OwnerAuthSourceTypeEnum LDAP = new OwnerAuthSourceTypeEnum("LDAP");
+
+        /**
+         * Enum LOCAL for value: "LOCAL"
+         */
+        public static final OwnerAuthSourceTypeEnum LOCAL = new OwnerAuthSourceTypeEnum("LOCAL");
+
+        /**
+         * Enum AGENTTENANT for value: "AGENTTENANT"
+         */
+        public static final OwnerAuthSourceTypeEnum AGENTTENANT = new OwnerAuthSourceTypeEnum("AGENTTENANT");
+
+        /**
+         * Enum OTHER for value: "OTHER"
+         */
+        public static final OwnerAuthSourceTypeEnum OTHER = new OwnerAuthSourceTypeEnum("OTHER");
+
+        private static final Map<String, OwnerAuthSourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OwnerAuthSourceTypeEnum> createStaticFields() {
+            Map<String, OwnerAuthSourceTypeEnum> map = new HashMap<>();
+            map.put("IAM", IAM);
+            map.put("SAML", SAML);
+            map.put("LDAP", LDAP);
+            map.put("LOCAL", LOCAL);
+            map.put("AGENTTENANT", AGENTTENANT);
+            map.put("OTHER", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OwnerAuthSourceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OwnerAuthSourceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OwnerAuthSourceTypeEnum(value));
+        }
+
+        public static OwnerAuthSourceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OwnerAuthSourceTypeEnum) {
+                return this.value.equals(((OwnerAuthSourceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner_auth_source_type")
+
+    private OwnerAuthSourceTypeEnum ownerAuthSourceType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
@@ -146,7 +245,7 @@ public class CreateDatabaseResponse extends SdkResponse {
     }
 
     /**
-     * catalog名字
+     * catalog名称
      * @return catalogName
      */
     public String getCatalogName() {
@@ -163,7 +262,7 @@ public class CreateDatabaseResponse extends SdkResponse {
     }
 
     /**
-     * 数据库名
+     * 数据库名称
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -197,7 +296,7 @@ public class CreateDatabaseResponse extends SdkResponse {
     }
 
     /**
-     * 所有者类型
+     * 所有者类型,USER-用户,GROUP-组,ROLE-角色
      * @return ownerType
      */
     public OwnerTypeEnum getOwnerType() {
@@ -206,6 +305,23 @@ public class CreateDatabaseResponse extends SdkResponse {
 
     public void setOwnerType(OwnerTypeEnum ownerType) {
         this.ownerType = ownerType;
+    }
+
+    public CreateDatabaseResponse withOwnerAuthSourceType(OwnerAuthSourceTypeEnum ownerAuthSourceType) {
+        this.ownerAuthSourceType = ownerAuthSourceType;
+        return this;
+    }
+
+    /**
+     * 所有者授权来源类型,IAM-云用户,SAML-联邦,LDAP-ld用户,LOCAL-本地用户,AGENTTENANT-委托,OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     * @return ownerAuthSourceType
+     */
+    public OwnerAuthSourceTypeEnum getOwnerAuthSourceType() {
+        return ownerAuthSourceType;
+    }
+
+    public void setOwnerAuthSourceType(OwnerAuthSourceTypeEnum ownerAuthSourceType) {
+        this.ownerAuthSourceType = ownerAuthSourceType;
     }
 
     public CreateDatabaseResponse withDescription(String description) {
@@ -231,7 +347,7 @@ public class CreateDatabaseResponse extends SdkResponse {
     }
 
     /**
-     * 数据库路径地址
+     * 数据库路径地址。例如obs://location/uri/
      * @return location
      */
     public String getLocation() {
@@ -297,7 +413,7 @@ public class CreateDatabaseResponse extends SdkResponse {
     }
 
     /**
-     * 表路径列表
+     * 表路径列表。LakeFormation服务分为一期和二期，一期响应Body无该参数，二期默认为null。当值为null时，响应Body无该参数。
      * @return tableLocationList
      */
     public List<String> getTableLocationList() {
@@ -330,7 +446,7 @@ public class CreateDatabaseResponse extends SdkResponse {
     }
 
     /**
-     * 函数路径列表
+     * 函数路径列表。默认为null，当值为null时，响应Body无该参数。
      * @return functionLocationList
      */
     public List<String> getFunctionLocationList() {
@@ -352,8 +468,10 @@ public class CreateDatabaseResponse extends SdkResponse {
         CreateDatabaseResponse that = (CreateDatabaseResponse) obj;
         return Objects.equals(this.catalogName, that.catalogName)
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.ownerType, that.ownerType) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.location, that.location) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.ownerType, that.ownerType)
+            && Objects.equals(this.ownerAuthSourceType, that.ownerAuthSourceType)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.parameters, that.parameters)
             && Objects.equals(this.tableLocationList, that.tableLocationList)
             && Objects.equals(this.functionLocationList, that.functionLocationList);
     }
@@ -364,6 +482,7 @@ public class CreateDatabaseResponse extends SdkResponse {
             databaseName,
             owner,
             ownerType,
+            ownerAuthSourceType,
             description,
             location,
             parameters,
@@ -379,6 +498,7 @@ public class CreateDatabaseResponse extends SdkResponse {
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    ownerType: ").append(toIndentedString(ownerType)).append("\n");
+        sb.append("    ownerAuthSourceType: ").append(toIndentedString(ownerAuthSourceType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");

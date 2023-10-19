@@ -17,6 +17,9 @@ import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AssociateSubnetFirewallResponse;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequest;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.BatchCreateSubNetworkInterfaceResponse;
@@ -180,6 +183,41 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddSourcesToTrafficMirrorSessionRequestBody.class),
             f -> f.withMarshaller(AddSourcesToTrafficMirrorSessionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> batchCreateSecurityGroupRules =
+        genForbatchCreateSecurityGroupRules();
+
+    private static HttpRequestDef<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> genForbatchCreateSecurityGroupRules() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateSecurityGroupRulesRequest, BatchCreateSecurityGroupRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateSecurityGroupRulesRequest.class,
+                    BatchCreateSecurityGroupRulesResponse.class)
+                .withName("BatchCreateSecurityGroupRules")
+                .withUri("/v3/{project_id}/vpc/security-groups/{security_group_id}/security-group-rules/batch-create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("security_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
+                req.setSecurityGroupId(v);
+            }));
+        builder.<BatchCreateSecurityGroupRulesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateSecurityGroupRulesRequestBody.class),
+            f -> f.withMarshaller(BatchCreateSecurityGroupRulesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

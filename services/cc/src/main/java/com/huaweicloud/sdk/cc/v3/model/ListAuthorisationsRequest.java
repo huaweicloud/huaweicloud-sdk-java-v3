@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.cc.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -48,74 +43,10 @@ public class ListAuthorisationsRequest {
 
     private List<String> cloudConnectionId = null;
 
-    /**
-     * Gets or Sets instanceId
-     */
-    public static final class InstanceIdEnum {
-
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
-        public static final InstanceIdEnum ACTIVE = new InstanceIdEnum("ACTIVE");
-
-        private static final Map<String, InstanceIdEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, InstanceIdEnum> createStaticFields() {
-            Map<String, InstanceIdEnum> map = new HashMap<>();
-            map.put("ACTIVE", ACTIVE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        InstanceIdEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static InstanceIdEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceIdEnum(value));
-        }
-
-        public static InstanceIdEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof InstanceIdEnum) {
-                return this.value.equals(((InstanceIdEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    private List<InstanceIdEnum> instanceId = null;
+    private List<String> instanceId = null;
 
     public ListAuthorisationsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -123,9 +54,9 @@ public class ListAuthorisationsRequest {
     }
 
     /**
-     * 分页查询时，每页返回的个数。
+     * 每页返回的个数。 取值范围：1~1000。
      * minimum: 1
-     * maximum: 2000
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -142,7 +73,7 @@ public class ListAuthorisationsRequest {
     }
 
     /**
-     * 分页查询时，上一页最后一条记录的ID，为空时为查询第一页。 使用说明：必须与limit一起使用。
+     * 翻页信息，从上次API调用返回的翻页数据中获取，可填写前一页marker或者后一页marker，填入前一页previous_marker就向前翻页，后一页next_marker就向翻页。 翻页过程中，查询条件不能修改，包括过滤条件，排序条件，limit。
      * @return marker
      */
     public String getMarker() {
@@ -175,7 +106,7 @@ public class ListAuthorisationsRequest {
     }
 
     /**
-     * 根据ID过滤授权列表。
+     * 根据id查询，可查询多个id。
      * @return id
      */
     public List<String> getId() {
@@ -208,7 +139,7 @@ public class ListAuthorisationsRequest {
     }
 
     /**
-     * 根据名称过滤授权列表。
+     * 根据名字查询，可查询多个名字。
      * @return name
      */
     public List<String> getName() {
@@ -241,7 +172,7 @@ public class ListAuthorisationsRequest {
     }
 
     /**
-     * 根据描述过滤授权列表。
+     * 根据描述查询，可查询多个描述。
      * @return description
      */
     public List<String> getDescription() {
@@ -274,7 +205,7 @@ public class ListAuthorisationsRequest {
     }
 
     /**
-     * 根据云连接实例ID过滤授权列表。
+     * 根据云连接的ID过滤列表。
      * @return cloudConnectionId
      */
     public List<String> getCloudConnectionId() {
@@ -285,12 +216,12 @@ public class ListAuthorisationsRequest {
         this.cloudConnectionId = cloudConnectionId;
     }
 
-    public ListAuthorisationsRequest withInstanceId(List<InstanceIdEnum> instanceId) {
+    public ListAuthorisationsRequest withInstanceId(List<String> instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    public ListAuthorisationsRequest addInstanceIdItem(InstanceIdEnum instanceIdItem) {
+    public ListAuthorisationsRequest addInstanceIdItem(String instanceIdItem) {
         if (this.instanceId == null) {
             this.instanceId = new ArrayList<>();
         }
@@ -298,7 +229,7 @@ public class ListAuthorisationsRequest {
         return this;
     }
 
-    public ListAuthorisationsRequest withInstanceId(Consumer<List<InstanceIdEnum>> instanceIdSetter) {
+    public ListAuthorisationsRequest withInstanceId(Consumer<List<String>> instanceIdSetter) {
         if (this.instanceId == null) {
             this.instanceId = new ArrayList<>();
         }
@@ -310,11 +241,11 @@ public class ListAuthorisationsRequest {
      * 根据实例ID过滤授权列表。
      * @return instanceId
      */
-    public List<InstanceIdEnum> getInstanceId() {
+    public List<String> getInstanceId() {
         return instanceId;
     }
 
-    public void setInstanceId(List<InstanceIdEnum> instanceId) {
+    public void setInstanceId(List<String> instanceId) {
         this.instanceId = instanceId;
     }
 

@@ -1,9 +1,12 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,10 +38,92 @@ public class PageResourceListParam {
 
     private Boolean ciRelationships;
 
+    /**
+     * 节点类型，取值：application、sub_application、component、environment
+     */
+    public static final class CiTypeEnum {
+
+        /**
+         * Enum APPLICATION for value: "APPLICATION"
+         */
+        public static final CiTypeEnum APPLICATION = new CiTypeEnum("APPLICATION");
+
+        /**
+         * Enum SUB_APPLICATION for value: "SUB_APPLICATION"
+         */
+        public static final CiTypeEnum SUB_APPLICATION = new CiTypeEnum("SUB_APPLICATION");
+
+        /**
+         * Enum COMPONENT for value: "COMPONENT"
+         */
+        public static final CiTypeEnum COMPONENT = new CiTypeEnum("COMPONENT");
+
+        /**
+         * Enum ENVIRONMENT for value: "ENVIRONMENT"
+         */
+        public static final CiTypeEnum ENVIRONMENT = new CiTypeEnum("ENVIRONMENT");
+
+        private static final Map<String, CiTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CiTypeEnum> createStaticFields() {
+            Map<String, CiTypeEnum> map = new HashMap<>();
+            map.put("APPLICATION", APPLICATION);
+            map.put("SUB_APPLICATION", SUB_APPLICATION);
+            map.put("COMPONENT", COMPONENT);
+            map.put("ENVIRONMENT", ENVIRONMENT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CiTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CiTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CiTypeEnum(value));
+        }
+
+        public static CiTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CiTypeEnum) {
+                return this.value.equals(((CiTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ci_type")
 
-    private String ciType;
+    private CiTypeEnum ciType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ci_region")
@@ -61,7 +146,7 @@ public class PageResourceListParam {
     }
 
     /**
-     * 页面的分页标志位；为分页的最后一条记录的id
+     * 页面的分页标志位,为分页的最后一条记录的id
      * @return marker
      */
     public String getMarker() {
@@ -78,9 +163,7 @@ public class PageResourceListParam {
     }
 
     /**
-     * 查询返回记录的数量限制
-     * minimum: 1
-     * maximum: 100
+     * 查询返回记录的数量限制。limit可以为空，如果值小于1或者大于100，则会使用默认值100
      * @return limit
      */
     public Integer getLimit() {
@@ -113,7 +196,7 @@ public class PageResourceListParam {
     }
 
     /**
-     * 关键字模糊搜索
+     * 关键字模糊搜索。Key取值：NAME、RESOURCE_ID
      * @return keywords
      */
     public Map<String, String> getKeywords() {
@@ -141,7 +224,7 @@ public class PageResourceListParam {
         this.ciRelationships = ciRelationships;
     }
 
-    public PageResourceListParam withCiType(String ciType) {
+    public PageResourceListParam withCiType(CiTypeEnum ciType) {
         this.ciType = ciType;
         return this;
     }
@@ -150,11 +233,11 @@ public class PageResourceListParam {
      * 节点类型，取值：application、sub_application、component、environment
      * @return ciType
      */
-    public String getCiType() {
+    public CiTypeEnum getCiType() {
         return ciType;
     }
 
-    public void setCiType(String ciType) {
+    public void setCiType(CiTypeEnum ciType) {
         this.ciType = ciType;
     }
 

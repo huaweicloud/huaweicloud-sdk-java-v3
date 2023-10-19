@@ -136,7 +136,7 @@ public class AggregatedSourceStatus {
     }
 
     /**
-     * 账号名。
+     * 帐号名。
      * @return sourceName
      */
     public String getSourceName() {

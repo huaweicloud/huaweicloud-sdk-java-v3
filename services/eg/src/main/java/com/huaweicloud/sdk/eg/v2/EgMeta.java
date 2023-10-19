@@ -85,6 +85,13 @@ public class EgMeta {
             }));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PutOfficialEventsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         builder.<String>withResponseField("X-Request-Id",
             LocationType.Header,

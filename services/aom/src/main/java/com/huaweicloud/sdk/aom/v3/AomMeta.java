@@ -9,12 +9,16 @@ import com.huaweicloud.sdk.aom.v3.model.CreateComponentRequest;
 import com.huaweicloud.sdk.aom.v3.model.CreateComponentResponse;
 import com.huaweicloud.sdk.aom.v3.model.CreateEnvRequest;
 import com.huaweicloud.sdk.aom.v3.model.CreateEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.CreateSubAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.CreateSubAppResponse;
 import com.huaweicloud.sdk.aom.v3.model.DeleteAppRequest;
 import com.huaweicloud.sdk.aom.v3.model.DeleteAppResponse;
 import com.huaweicloud.sdk.aom.v3.model.DeleteComponentRequest;
 import com.huaweicloud.sdk.aom.v3.model.DeleteComponentResponse;
 import com.huaweicloud.sdk.aom.v3.model.DeleteEnvRequest;
 import com.huaweicloud.sdk.aom.v3.model.DeleteEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.DeleteSubAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.DeleteSubAppResponse;
 import com.huaweicloud.sdk.aom.v3.model.EnvParam;
 import com.huaweicloud.sdk.aom.v3.model.ListResourceUnderNodeRequest;
 import com.huaweicloud.sdk.aom.v3.model.ListResourceUnderNodeResponse;
@@ -31,12 +35,16 @@ import com.huaweicloud.sdk.aom.v3.model.ShowEnvByNameRequest;
 import com.huaweicloud.sdk.aom.v3.model.ShowEnvByNameResponse;
 import com.huaweicloud.sdk.aom.v3.model.ShowEnvRequest;
 import com.huaweicloud.sdk.aom.v3.model.ShowEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.SubAppCreateParam;
+import com.huaweicloud.sdk.aom.v3.model.SubAppUpdateParam;
 import com.huaweicloud.sdk.aom.v3.model.UpdateAppRequest;
 import com.huaweicloud.sdk.aom.v3.model.UpdateAppResponse;
 import com.huaweicloud.sdk.aom.v3.model.UpdateComponentRequest;
 import com.huaweicloud.sdk.aom.v3.model.UpdateComponentResponse;
 import com.huaweicloud.sdk.aom.v3.model.UpdateEnvRequest;
 import com.huaweicloud.sdk.aom.v3.model.UpdateEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.UpdateSubAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.UpdateSubAppResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -126,6 +134,37 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSubAppRequest, CreateSubAppResponse> createSubApp = genForcreateSubApp();
+
+    private static HttpRequestDef<CreateSubAppRequest, CreateSubAppResponse> genForcreateSubApp() {
+        // basic
+        HttpRequestDef.Builder<CreateSubAppRequest, CreateSubAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSubAppRequest.class, CreateSubAppResponse.class)
+                .withName("CreateSubApp")
+                .withUri("/v1/sub-applications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SubAppCreateParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SubAppCreateParam.class),
+            f -> f.withMarshaller(CreateSubAppRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSubAppResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAppRequest, DeleteAppResponse> deleteApp = genFordeleteApp();
 
     private static HttpRequestDef<DeleteAppRequest, DeleteAppResponse> genFordeleteApp() {
@@ -209,6 +248,37 @@ public class AomMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSubAppRequest, DeleteSubAppResponse> deleteSubApp = genFordeleteSubApp();
+
+    private static HttpRequestDef<DeleteSubAppRequest, DeleteSubAppResponse> genFordeleteSubApp() {
+        // basic
+        HttpRequestDef.Builder<DeleteSubAppRequest, DeleteSubAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSubAppRequest.class, DeleteSubAppResponse.class)
+                .withName("DeleteSubApp")
+                .withUri("/v1/sub-applications/{sub_app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubAppRequest::getSubAppId, (req, v) -> {
+                req.setSubAppId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteSubAppResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -514,6 +584,37 @@ public class AomMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvParam.class),
             f -> f.withMarshaller(UpdateEnvRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSubAppRequest, UpdateSubAppResponse> updateSubApp = genForupdateSubApp();
+
+    private static HttpRequestDef<UpdateSubAppRequest, UpdateSubAppResponse> genForupdateSubApp() {
+        // basic
+        HttpRequestDef.Builder<UpdateSubAppRequest, UpdateSubAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSubAppRequest.class, UpdateSubAppResponse.class)
+                .withName("UpdateSubApp")
+                .withUri("/v1/sub-applications/{sub_app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSubAppRequest::getSubAppId, (req, v) -> {
+                req.setSubAppId(v);
+            }));
+        builder.<SubAppUpdateParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SubAppUpdateParam.class),
+            f -> f.withMarshaller(UpdateSubAppRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -21,7 +21,7 @@ public class DeleteNetworkInstanceRequest {
     }
 
     /**
-     * 网络实例ID。
+     * 资源的Id。
      * @return id
      */
     public String getId() {

@@ -6,12 +6,16 @@ import com.huaweicloud.sdk.aom.v3.model.CreateComponentRequest;
 import com.huaweicloud.sdk.aom.v3.model.CreateComponentResponse;
 import com.huaweicloud.sdk.aom.v3.model.CreateEnvRequest;
 import com.huaweicloud.sdk.aom.v3.model.CreateEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.CreateSubAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.CreateSubAppResponse;
 import com.huaweicloud.sdk.aom.v3.model.DeleteAppRequest;
 import com.huaweicloud.sdk.aom.v3.model.DeleteAppResponse;
 import com.huaweicloud.sdk.aom.v3.model.DeleteComponentRequest;
 import com.huaweicloud.sdk.aom.v3.model.DeleteComponentResponse;
 import com.huaweicloud.sdk.aom.v3.model.DeleteEnvRequest;
 import com.huaweicloud.sdk.aom.v3.model.DeleteEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.DeleteSubAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.DeleteSubAppResponse;
 import com.huaweicloud.sdk.aom.v3.model.ListResourceUnderNodeRequest;
 import com.huaweicloud.sdk.aom.v3.model.ListResourceUnderNodeResponse;
 import com.huaweicloud.sdk.aom.v3.model.ShowAppByNameRequest;
@@ -32,6 +36,8 @@ import com.huaweicloud.sdk.aom.v3.model.UpdateComponentRequest;
 import com.huaweicloud.sdk.aom.v3.model.UpdateComponentResponse;
 import com.huaweicloud.sdk.aom.v3.model.UpdateEnvRequest;
 import com.huaweicloud.sdk.aom.v3.model.UpdateEnvResponse;
+import com.huaweicloud.sdk.aom.v3.model.UpdateSubAppRequest;
+import com.huaweicloud.sdk.aom.v3.model.UpdateSubAppResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -52,7 +58,7 @@ public class AomClient {
     /**
      * 新增应用
      *
-     * 新增应用。（注：接口目前开放的region为：上海一）。
+     * 新增应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -66,7 +72,7 @@ public class AomClient {
     /**
      * 新增应用
      *
-     * 新增应用。（注：接口目前开放的region为：上海一）。
+     * 新增应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -80,7 +86,7 @@ public class AomClient {
     /**
      * 新增组件
      *
-     * 新增组件。（注：接口目前开放的region为：上海一）。
+     * 新增组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -94,7 +100,7 @@ public class AomClient {
     /**
      * 新增组件
      *
-     * 新增组件。（注：接口目前开放的region为：上海一）。
+     * 新增组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -110,7 +116,7 @@ public class AomClient {
     /**
      * 创建环境
      *
-     * 创建环境。（注：接口目前开放的region为：上海一）。
+     * 创建环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -124,7 +130,7 @@ public class AomClient {
     /**
      * 创建环境
      *
-     * 创建环境。（注：接口目前开放的region为：上海一）。
+     * 创建环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -136,9 +142,37 @@ public class AomClient {
     }
 
     /**
+     * 新增子应用
+     *
+     * 新增子应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSubAppRequest 请求对象
+     * @return CreateSubAppResponse
+     */
+    public CreateSubAppResponse createSubApp(CreateSubAppRequest request) {
+        return hcClient.syncInvokeHttp(request, AomMeta.createSubApp);
+    }
+
+    /**
+     * 新增子应用
+     *
+     * 新增子应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSubAppRequest 请求对象
+     * @return SyncInvoker<CreateSubAppRequest, CreateSubAppResponse>
+     */
+    public SyncInvoker<CreateSubAppRequest, CreateSubAppResponse> createSubAppInvoker(CreateSubAppRequest request) {
+        return new SyncInvoker<CreateSubAppRequest, CreateSubAppResponse>(request, AomMeta.createSubApp, hcClient);
+    }
+
+    /**
      * 删除应用
      *
-     * 删除应用。（注：接口目前开放的region为：上海一）。
+     * 删除应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -152,7 +186,7 @@ public class AomClient {
     /**
      * 删除应用
      *
-     * 删除应用。（注：接口目前开放的region为：上海一）。
+     * 删除应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -166,7 +200,7 @@ public class AomClient {
     /**
      * 删除组件
      *
-     * 删除组件。（注：接口目前开放的region为：上海一）。
+     * 删除组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -180,7 +214,7 @@ public class AomClient {
     /**
      * 删除组件
      *
-     * 删除组件。（注：接口目前开放的region为：上海一）。
+     * 删除组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -196,7 +230,7 @@ public class AomClient {
     /**
      * 删除环境
      *
-     * 删除环境。（注：接口目前开放的region为：上海一）。
+     * 删除环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -210,7 +244,7 @@ public class AomClient {
     /**
      * 删除环境
      *
-     * 删除环境。（注：接口目前开放的region为：上海一）。
+     * 删除环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -222,9 +256,37 @@ public class AomClient {
     }
 
     /**
+     * 删除子应用
+     *
+     * 删除子应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSubAppRequest 请求对象
+     * @return DeleteSubAppResponse
+     */
+    public DeleteSubAppResponse deleteSubApp(DeleteSubAppRequest request) {
+        return hcClient.syncInvokeHttp(request, AomMeta.deleteSubApp);
+    }
+
+    /**
+     * 删除子应用
+     *
+     * 删除子应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSubAppRequest 请求对象
+     * @return SyncInvoker<DeleteSubAppRequest, DeleteSubAppResponse>
+     */
+    public SyncInvoker<DeleteSubAppRequest, DeleteSubAppResponse> deleteSubAppInvoker(DeleteSubAppRequest request) {
+        return new SyncInvoker<DeleteSubAppRequest, DeleteSubAppResponse>(request, AomMeta.deleteSubApp, hcClient);
+    }
+
+    /**
      * 查询绑定在节点上的资源列表
      *
-     * 查询绑定在节点上的资源列表。（注：接口目前开放的region为：上海一）。
+     * 查询绑定在节点上的资源列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -238,7 +300,7 @@ public class AomClient {
     /**
      * 查询绑定在节点上的资源列表
      *
-     * 查询绑定在节点上的资源列表。（注：接口目前开放的region为：上海一）。
+     * 查询绑定在节点上的资源列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -254,7 +316,7 @@ public class AomClient {
     /**
      * 查询应用详情
      *
-     * 获取应用详情。（注：接口目前开放的region为：上海一）。
+     * 查询应用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -268,7 +330,7 @@ public class AomClient {
     /**
      * 查询应用详情
      *
-     * 获取应用详情。（注：接口目前开放的region为：上海一）。
+     * 查询应用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -282,7 +344,7 @@ public class AomClient {
     /**
      * 根据应用名称查询应用详情
      *
-     * 获取应用详情。（注：接口目前开放的region为：上海一）。
+     * 查询应用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -296,7 +358,7 @@ public class AomClient {
     /**
      * 根据应用名称查询应用详情
      *
-     * 获取应用详情。（注：接口目前开放的region为：上海一）。
+     * 查询应用详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -310,7 +372,7 @@ public class AomClient {
     /**
      * 查询组件详情
      *
-     * 查询组件详情。（注：接口目前开放的region为：上海一）。
+     * 查询组件详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -324,7 +386,7 @@ public class AomClient {
     /**
      * 查询组件详情
      *
-     * 查询组件详情。（注：接口目前开放的region为：上海一）。
+     * 查询组件详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -338,7 +400,7 @@ public class AomClient {
     /**
      * 根据组件名称查询组件详情
      *
-     * 查询组件详情。（注：接口目前开放的region为：上海一）。
+     * 查询组件详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -352,7 +414,7 @@ public class AomClient {
     /**
      * 根据组件名称查询组件详情
      *
-     * 查询组件详情。（注：接口目前开放的region为：上海一）。
+     * 查询组件详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -368,7 +430,7 @@ public class AomClient {
     /**
      * 查询环境详情
      *
-     * 查询环境详情。（注：接口目前开放的region为：上海一）。
+     * 查询环境详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -382,7 +444,7 @@ public class AomClient {
     /**
      * 查询环境详情
      *
-     * 查询环境详情。（注：接口目前开放的region为：上海一）。
+     * 查询环境详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -396,7 +458,7 @@ public class AomClient {
     /**
      * 根据环境名称查询环境详情
      *
-     * 查询环境详情。（注：接口目前开放的region为：上海一）。
+     * 查询环境详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -410,7 +472,7 @@ public class AomClient {
     /**
      * 根据环境名称查询环境详情
      *
-     * 查询环境详情。（注：接口目前开放的region为：上海一）。
+     * 查询环境详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -424,7 +486,7 @@ public class AomClient {
     /**
      * 修改应用
      *
-     * 修改应用。（注：接口目前开放的region为：上海一）。
+     * 修改应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -438,7 +500,7 @@ public class AomClient {
     /**
      * 修改应用
      *
-     * 修改应用。（注：接口目前开放的region为：上海一）。
+     * 修改应用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -452,7 +514,7 @@ public class AomClient {
     /**
      * 修改组件
      *
-     * 修改组件。（注：接口目前开放的region为：上海一）。
+     * 修改组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -466,7 +528,7 @@ public class AomClient {
     /**
      * 修改组件
      *
-     * 修改组件。（注：接口目前开放的region为：上海一）。
+     * 修改组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -482,7 +544,7 @@ public class AomClient {
     /**
      * 修改环境
      *
-     * 修改环境。（注：接口目前开放的region为：上海一）。
+     * 修改环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -496,7 +558,7 @@ public class AomClient {
     /**
      * 修改环境
      *
-     * 修改环境。（注：接口目前开放的region为：上海一）。
+     * 修改环境。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -505,6 +567,34 @@ public class AomClient {
      */
     public SyncInvoker<UpdateEnvRequest, UpdateEnvResponse> updateEnvInvoker(UpdateEnvRequest request) {
         return new SyncInvoker<UpdateEnvRequest, UpdateEnvResponse>(request, AomMeta.updateEnv, hcClient);
+    }
+
+    /**
+     * 修改子应用
+     *
+     * 修改子应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSubAppRequest 请求对象
+     * @return UpdateSubAppResponse
+     */
+    public UpdateSubAppResponse updateSubApp(UpdateSubAppRequest request) {
+        return hcClient.syncInvokeHttp(request, AomMeta.updateSubApp);
+    }
+
+    /**
+     * 修改子应用
+     *
+     * 修改子应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSubAppRequest 请求对象
+     * @return SyncInvoker<UpdateSubAppRequest, UpdateSubAppResponse>
+     */
+    public SyncInvoker<UpdateSubAppRequest, UpdateSubAppResponse> updateSubAppInvoker(UpdateSubAppRequest request) {
+        return new SyncInvoker<UpdateSubAppRequest, UpdateSubAppResponse>(request, AomMeta.updateSubApp, hcClient);
     }
 
 }

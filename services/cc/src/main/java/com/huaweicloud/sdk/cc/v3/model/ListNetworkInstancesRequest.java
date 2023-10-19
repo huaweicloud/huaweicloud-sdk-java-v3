@@ -43,6 +43,11 @@ public class ListNetworkInstancesRequest {
 
     private List<String> description = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_connection_id")
+
+    private List<String> cloudConnectionId = null;
+
     /**
      * Gets or Sets status
      */
@@ -118,11 +123,6 @@ public class ListNetworkInstancesRequest {
     private List<String> type = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloud_connection_id")
-
-    private List<String> cloudConnectionId = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
     private List<String> instanceId = null;
@@ -138,9 +138,9 @@ public class ListNetworkInstancesRequest {
     }
 
     /**
-     * 分页查询时，每页返回的个数。
+     * 每页返回的个数。 取值范围：1~1000。
      * minimum: 1
-     * maximum: 2000
+     * maximum: 1000
      * @return limit
      */
     public Integer getLimit() {
@@ -157,7 +157,7 @@ public class ListNetworkInstancesRequest {
     }
 
     /**
-     * 分页查询时，上一页最后一条记录的ID，为空时为查询第一页。 使用说明：必须与limit一起使用。
+     * 翻页信息，从上次API调用返回的翻页数据中获取，可填写前一页marker或者后一页marker，填入前一页previous_marker就向前翻页，后一页next_marker就向翻页。 翻页过程中，查询条件不能修改，包括过滤条件，排序条件，limit。
      * @return marker
      */
     public String getMarker() {
@@ -190,7 +190,7 @@ public class ListNetworkInstancesRequest {
     }
 
     /**
-     * 根据ID过滤网络实例列表。
+     * 根据id查询，可查询多个id。
      * @return id
      */
     public List<String> getId() {
@@ -223,7 +223,7 @@ public class ListNetworkInstancesRequest {
     }
 
     /**
-     * 根据名称过滤网络实例列表。
+     * 根据名字查询，可查询多个名字。
      * @return name
      */
     public List<String> getName() {
@@ -256,7 +256,7 @@ public class ListNetworkInstancesRequest {
     }
 
     /**
-     * 根据描述过滤网络实例列表。
+     * 根据描述查询，可查询多个描述。
      * @return description
      */
     public List<String> getDescription() {
@@ -265,6 +265,39 @@ public class ListNetworkInstancesRequest {
 
     public void setDescription(List<String> description) {
         this.description = description;
+    }
+
+    public ListNetworkInstancesRequest withCloudConnectionId(List<String> cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
+        return this;
+    }
+
+    public ListNetworkInstancesRequest addCloudConnectionIdItem(String cloudConnectionIdItem) {
+        if (this.cloudConnectionId == null) {
+            this.cloudConnectionId = new ArrayList<>();
+        }
+        this.cloudConnectionId.add(cloudConnectionIdItem);
+        return this;
+    }
+
+    public ListNetworkInstancesRequest withCloudConnectionId(Consumer<List<String>> cloudConnectionIdSetter) {
+        if (this.cloudConnectionId == null) {
+            this.cloudConnectionId = new ArrayList<>();
+        }
+        cloudConnectionIdSetter.accept(this.cloudConnectionId);
+        return this;
+    }
+
+    /**
+     * 根据云连接的ID过滤列表。
+     * @return cloudConnectionId
+     */
+    public List<String> getCloudConnectionId() {
+        return cloudConnectionId;
+    }
+
+    public void setCloudConnectionId(List<String> cloudConnectionId) {
+        this.cloudConnectionId = cloudConnectionId;
     }
 
     public ListNetworkInstancesRequest withStatus(List<StatusEnum> status) {
@@ -331,39 +364,6 @@ public class ListNetworkInstancesRequest {
 
     public void setType(List<String> type) {
         this.type = type;
-    }
-
-    public ListNetworkInstancesRequest withCloudConnectionId(List<String> cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
-        return this;
-    }
-
-    public ListNetworkInstancesRequest addCloudConnectionIdItem(String cloudConnectionIdItem) {
-        if (this.cloudConnectionId == null) {
-            this.cloudConnectionId = new ArrayList<>();
-        }
-        this.cloudConnectionId.add(cloudConnectionIdItem);
-        return this;
-    }
-
-    public ListNetworkInstancesRequest withCloudConnectionId(Consumer<List<String>> cloudConnectionIdSetter) {
-        if (this.cloudConnectionId == null) {
-            this.cloudConnectionId = new ArrayList<>();
-        }
-        cloudConnectionIdSetter.accept(this.cloudConnectionId);
-        return this;
-    }
-
-    /**
-     * 根据云连接实例ID过滤网络实例列表。
-     * @return cloudConnectionId
-     */
-    public List<String> getCloudConnectionId() {
-        return cloudConnectionId;
-    }
-
-    public void setCloudConnectionId(List<String> cloudConnectionId) {
-        this.cloudConnectionId = cloudConnectionId;
     }
 
     public ListNetworkInstancesRequest withInstanceId(List<String> instanceId) {
@@ -443,15 +443,16 @@ public class ListNetworkInstancesRequest {
         ListNetworkInstancesRequest that = (ListNetworkInstancesRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
             && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(limit, marker, id, name, description, status, type, cloudConnectionId, instanceId, regionId);
+            .hash(limit, marker, id, name, description, cloudConnectionId, status, type, instanceId, regionId);
     }
 
     @Override
@@ -463,9 +464,9 @@ public class ListNetworkInstancesRequest {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    cloudConnectionId: ").append(toIndentedString(cloudConnectionId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("}");
