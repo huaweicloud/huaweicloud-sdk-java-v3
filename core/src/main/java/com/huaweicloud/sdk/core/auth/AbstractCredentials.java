@@ -41,7 +41,7 @@ import java.util.function.Function;
 
 /**
  * @param <T> derived class such as BasicCredentials and
- *                   GlobalCredentials
+ *            GlobalCredentials
  * @author HuaweiCloud_SDK
  */
 public abstract class AbstractCredentials<T extends AbstractCredentials<T>> implements ICredential {
@@ -192,9 +192,13 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         return toDerivedT();
     }
 
-    protected String getDefaultIamEndpoint() {
-        String iamEndpointEnv = System.getenv(Constants.IAM_ENDPOINT_ENV_NAME);
-        return StringUtils.isEmpty(iamEndpointEnv) ? Constants.DEFAULT_IAM_ENDPOINT : iamEndpointEnv;
+    protected String getUsedIamEndpoint() {
+        if (!StringUtils.isEmpty(iamEndpoint)) {
+            return iamEndpoint;
+        }
+
+        String env = System.getenv(Constants.IAM_ENDPOINT_ENV_NAME);
+        return StringUtils.isEmpty(env) ? Constants.DEFAULT_IAM_ENDPOINT : env;
     }
 
     protected boolean isDerivedAuth(HttpRequest httpRequest) {
@@ -255,7 +259,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         }
         return expiredAt - TimeUtils.getTimeInMillis() < 60000;
     }
-    
+
     @SuppressWarnings("unchecked")
     private T toDerivedT() {
         return (T) this;

@@ -3330,6 +3330,13 @@ public class DliMeta {
             f -> f.withMarshaller(ListBatchesRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
             }));
+        builder.<String>withRequestField("job-name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBatchesRequest::getJobName, (req, v) -> {
+                req.setJobName(v);
+            }));
         builder.<String>withRequestField("job-id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

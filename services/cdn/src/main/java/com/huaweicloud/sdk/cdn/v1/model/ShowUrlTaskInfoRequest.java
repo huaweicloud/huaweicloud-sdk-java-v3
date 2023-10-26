@@ -56,7 +56,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 起始时间戳（毫秒），默认当天00:00
+     * 起始时间戳（毫秒），默认当天00:00。
      * @return startTime
      */
     public Long getStartTime() {
@@ -73,7 +73,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 结束时间戳（毫秒），默认次日00:00
+     * 结束时间戳（毫秒），默认次日00:00。
      * @return endTime
      */
     public Long getEndTime() {
@@ -90,7 +90,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 偏移量
+     * 偏移量：特定数据字段与起始数据字段位置的距离。
      * @return offset
      */
     public Integer getOffset() {
@@ -107,7 +107,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 单次查询数据条数，上限为100
+     * 单次查询数据条数，上限为100。
      * @return limit
      */
     public Integer getLimit() {
@@ -124,7 +124,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 刷新预热url
+     * 刷新预热url。
      * @return url
      */
     public String getUrl() {
@@ -141,7 +141,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 任务类型，REFRESH：刷新任务；PREHEATING：预热任务
+     * 任务类型，REFRESH：刷新任务；PREHEATING：预热任务。
      * @return taskType
      */
     public String getTaskType() {
@@ -158,7 +158,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * url状态，状态类型：processing：处理中；succeed：完成；failed：失败；waiting：等待；refreshing：刷新中; preheating : 预热中
+     * url状态，状态类型：processing：处理中；succeed：完成；failed：失败；waiting：等待；refreshing：刷新中; preheating : 预热中。
      * @return status
      */
     public String getStatus() {
@@ -175,7 +175,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 文件类型，file:文件;directory:目录
+     * 文件类型，file:文件;directory:目录。
      * @return fileType
      */
     public String getFileType() {

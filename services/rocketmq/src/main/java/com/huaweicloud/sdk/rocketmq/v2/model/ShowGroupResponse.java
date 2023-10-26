@@ -36,6 +36,11 @@ public class ShowGroupResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_desc")
+
+    private String groupDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_max_time")
 
     private BigDecimal retryMaxTime;
@@ -139,6 +144,23 @@ public class ShowGroupResponse extends SdkResponse {
         this.name = name;
     }
 
+    public ShowGroupResponse withGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+        return this;
+    }
+
+    /**
+     * 消费组描述。
+     * @return groupDesc
+     */
+    public String getGroupDesc() {
+        return groupDesc;
+    }
+
+    public void setGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+    }
+
     public ShowGroupResponse withRetryMaxTime(BigDecimal retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
         return this;
@@ -234,13 +256,14 @@ public class ShowGroupResponse extends SdkResponse {
         ShowGroupResponse that = (ShowGroupResponse) obj;
         return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.broadcast, that.broadcast)
             && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.retryMaxTime, that.retryMaxTime) && Objects.equals(this.appId, that.appId)
-            && Objects.equals(this.appName, that.appName) && Objects.equals(this.permissions, that.permissions);
+            && Objects.equals(this.groupDesc, that.groupDesc) && Objects.equals(this.retryMaxTime, that.retryMaxTime)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.permissions, that.permissions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, broadcast, brokers, name, retryMaxTime, appId, appName, permissions);
+        return Objects.hash(enabled, broadcast, brokers, name, groupDesc, retryMaxTime, appId, appName, permissions);
     }
 
     @Override
@@ -251,6 +274,7 @@ public class ShowGroupResponse extends SdkResponse {
         sb.append("    broadcast: ").append(toIndentedString(broadcast)).append("\n");
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    groupDesc: ").append(toIndentedString(groupDesc)).append("\n");
         sb.append("    retryMaxTime: ").append(toIndentedString(retryMaxTime)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");

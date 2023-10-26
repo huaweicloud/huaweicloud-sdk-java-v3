@@ -26,6 +26,11 @@ public class ListBatchesRequest {
     private Integer from;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job-name")
+
+    private String jobName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job-id")
 
     private String jobId;
@@ -104,6 +109,23 @@ public class ListBatchesRequest {
 
     public void setFrom(Integer from) {
         this.from = from;
+    }
+
+    public ListBatchesRequest withJobName(String jobName) {
+        this.jobName = jobName;
+        return this;
+    }
+
+    /**
+     * 批处理作业的名称。
+     * @return jobName
+     */
+    public String getJobName() {
+        return jobName;
+    }
+
+    public void setJobName(String jobName) {
+        this.jobName = jobName;
     }
 
     public ListBatchesRequest withJobId(String jobId) {
@@ -218,15 +240,15 @@ public class ListBatchesRequest {
         }
         ListBatchesRequest that = (ListBatchesRequest) obj;
         return Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.end, that.end)
-            && Objects.equals(this.from, that.from) && Objects.equals(this.jobId, that.jobId)
-            && Objects.equals(this.order, that.order) && Objects.equals(this.queueName, that.queueName)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.start, that.start)
-            && Objects.equals(this.state, that.state);
+            && Objects.equals(this.from, that.from) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.state, that.state);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterName, end, from, jobId, order, queueName, size, start, state);
+        return Objects.hash(clusterName, end, from, jobName, jobId, order, queueName, size, start, state);
     }
 
     @Override
@@ -236,6 +258,7 @@ public class ListBatchesRequest {
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    end: ").append(toIndentedString(end)).append("\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");
+        sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");

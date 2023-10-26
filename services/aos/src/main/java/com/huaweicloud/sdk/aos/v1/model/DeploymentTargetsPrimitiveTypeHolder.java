@@ -14,18 +14,17 @@ public class DeploymentTargetsPrimitiveTypeHolder {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deployment_targets")
 
-    private DeploymentTargetsPrimitiveTypeHolderDeploymentTargets deploymentTargets;
+    private DeploymentTargets deploymentTargets;
 
-    public DeploymentTargetsPrimitiveTypeHolder withDeploymentTargets(
-        DeploymentTargetsPrimitiveTypeHolderDeploymentTargets deploymentTargets) {
+    public DeploymentTargetsPrimitiveTypeHolder withDeploymentTargets(DeploymentTargets deploymentTargets) {
         this.deploymentTargets = deploymentTargets;
         return this;
     }
 
     public DeploymentTargetsPrimitiveTypeHolder withDeploymentTargets(
-        Consumer<DeploymentTargetsPrimitiveTypeHolderDeploymentTargets> deploymentTargetsSetter) {
+        Consumer<DeploymentTargets> deploymentTargetsSetter) {
         if (this.deploymentTargets == null) {
-            this.deploymentTargets = new DeploymentTargetsPrimitiveTypeHolderDeploymentTargets();
+            this.deploymentTargets = new DeploymentTargets();
             deploymentTargetsSetter.accept(this.deploymentTargets);
         }
 
@@ -36,11 +35,11 @@ public class DeploymentTargetsPrimitiveTypeHolder {
      * Get deploymentTargets
      * @return deploymentTargets
      */
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets getDeploymentTargets() {
+    public DeploymentTargets getDeploymentTargets() {
         return deploymentTargets;
     }
 
-    public void setDeploymentTargets(DeploymentTargetsPrimitiveTypeHolderDeploymentTargets deploymentTargets) {
+    public void setDeploymentTargets(DeploymentTargets deploymentTargets) {
         this.deploymentTargets = deploymentTargets;
     }
 

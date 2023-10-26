@@ -116,9 +116,9 @@ import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardResponse;
-import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMaskRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMaskResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksRequestBody;
-import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupRequest;
@@ -1733,14 +1733,14 @@ public class CesMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse> updateNotificationMasks =
-        genForupdateNotificationMasks();
+    public static final HttpRequestDef<UpdateNotificationMaskRequest, UpdateNotificationMaskResponse> updateNotificationMask =
+        genForupdateNotificationMask();
 
-    private static HttpRequestDef<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse> genForupdateNotificationMasks() {
+    private static HttpRequestDef<UpdateNotificationMaskRequest, UpdateNotificationMaskResponse> genForupdateNotificationMask() {
         // basic
-        HttpRequestDef.Builder<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateNotificationMasksRequest.class, UpdateNotificationMasksResponse.class)
-            .withName("UpdateNotificationMasks")
+        HttpRequestDef.Builder<UpdateNotificationMaskRequest, UpdateNotificationMaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateNotificationMaskRequest.class, UpdateNotificationMaskResponse.class)
+            .withName("UpdateNotificationMask")
             .withUri("/v2/{project_id}/notification-masks/{notification_mask_id}")
             .withContentType("application/json");
 
@@ -1749,14 +1749,14 @@ public class CesMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNotificationMasksRequest::getNotificationMaskId, (req, v) -> {
+            f -> f.withMarshaller(UpdateNotificationMaskRequest::getNotificationMaskId, (req, v) -> {
                 req.setNotificationMaskId(v);
             }));
         builder.<UpdateNotificationMasksRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNotificationMasksRequestBody.class),
-            f -> f.withMarshaller(UpdateNotificationMasksRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateNotificationMaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

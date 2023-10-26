@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.ces.v2.model;
+package com.huaweicloud.sdk.sfsturbo.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,43 +9,43 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class UpdateNotificationMasksRequest {
+public class CreateBackendTargetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "notification_mask_id")
+    @JsonProperty(value = "share_id")
 
-    private String notificationMaskId;
+    private String shareId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateNotificationMasksRequestBody body;
+    private CreateBackendTargetRequestBody body;
 
-    public UpdateNotificationMasksRequest withNotificationMaskId(String notificationMaskId) {
-        this.notificationMaskId = notificationMaskId;
+    public CreateBackendTargetRequest withShareId(String shareId) {
+        this.shareId = shareId;
         return this;
     }
 
     /**
-     * 屏蔽规则ID
-     * @return notificationMaskId
+     * 文件系统id
+     * @return shareId
      */
-    public String getNotificationMaskId() {
-        return notificationMaskId;
+    public String getShareId() {
+        return shareId;
     }
 
-    public void setNotificationMaskId(String notificationMaskId) {
-        this.notificationMaskId = notificationMaskId;
+    public void setShareId(String shareId) {
+        this.shareId = shareId;
     }
 
-    public UpdateNotificationMasksRequest withBody(UpdateNotificationMasksRequestBody body) {
+    public CreateBackendTargetRequest withBody(CreateBackendTargetRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateNotificationMasksRequest withBody(Consumer<UpdateNotificationMasksRequestBody> bodySetter) {
+    public CreateBackendTargetRequest withBody(Consumer<CreateBackendTargetRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateNotificationMasksRequestBody();
+            this.body = new CreateBackendTargetRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateNotificationMasksRequest {
      * Get body
      * @return body
      */
-    public UpdateNotificationMasksRequestBody getBody() {
+    public CreateBackendTargetRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateNotificationMasksRequestBody body) {
+    public void setBody(CreateBackendTargetRequestBody body) {
         this.body = body;
     }
 
@@ -72,20 +72,20 @@ public class UpdateNotificationMasksRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNotificationMasksRequest that = (UpdateNotificationMasksRequest) obj;
-        return Objects.equals(this.notificationMaskId, that.notificationMaskId) && Objects.equals(this.body, that.body);
+        CreateBackendTargetRequest that = (CreateBackendTargetRequest) obj;
+        return Objects.equals(this.shareId, that.shareId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(notificationMaskId, body);
+        return Objects.hash(shareId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateNotificationMasksRequest {\n");
-        sb.append("    notificationMaskId: ").append(toIndentedString(notificationMaskId)).append("\n");
+        sb.append("class CreateBackendTargetRequest {\n");
+        sb.append("    shareId: ").append(toIndentedString(shareId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

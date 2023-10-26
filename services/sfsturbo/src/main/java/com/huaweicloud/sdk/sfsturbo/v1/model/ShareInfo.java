@@ -13,9 +13,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Shares
+ * 文件系统详情
  */
-public class Shares {
+public class ShareInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_progress")
@@ -192,12 +192,12 @@ public class Shares {
 
     private String vpcId;
 
-    public Shares withActionProgress(ActionProgress actionProgress) {
+    public ShareInfo withActionProgress(ActionProgress actionProgress) {
         this.actionProgress = actionProgress;
         return this;
     }
 
-    public Shares withActionProgress(Consumer<ActionProgress> actionProgressSetter) {
+    public ShareInfo withActionProgress(Consumer<ActionProgress> actionProgressSetter) {
         if (this.actionProgress == null) {
             this.actionProgress = new ActionProgress();
             actionProgressSetter.accept(this.actionProgress);
@@ -218,7 +218,7 @@ public class Shares {
         this.actionProgress = actionProgress;
     }
 
-    public Shares withVersion(String version) {
+    public ShareInfo withVersion(String version) {
         this.version = version;
         return this;
     }
@@ -235,7 +235,7 @@ public class Shares {
         this.version = version;
     }
 
-    public Shares withAvailCapacity(String availCapacity) {
+    public ShareInfo withAvailCapacity(String availCapacity) {
         this.availCapacity = availCapacity;
         return this;
     }
@@ -252,7 +252,7 @@ public class Shares {
         this.availCapacity = availCapacity;
     }
 
-    public Shares withAvailabilityZone(String availabilityZone) {
+    public ShareInfo withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
@@ -269,7 +269,7 @@ public class Shares {
         this.availabilityZone = availabilityZone;
     }
 
-    public Shares withAzName(String azName) {
+    public ShareInfo withAzName(String azName) {
         this.azName = azName;
         return this;
     }
@@ -286,7 +286,7 @@ public class Shares {
         this.azName = azName;
     }
 
-    public Shares withCreatedAt(OffsetDateTime createdAt) {
+    public ShareInfo withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -303,7 +303,7 @@ public class Shares {
         this.createdAt = createdAt;
     }
 
-    public Shares withCryptKeyId(String cryptKeyId) {
+    public ShareInfo withCryptKeyId(String cryptKeyId) {
         this.cryptKeyId = cryptKeyId;
         return this;
     }
@@ -320,7 +320,7 @@ public class Shares {
         this.cryptKeyId = cryptKeyId;
     }
 
-    public Shares withExpandType(String expandType) {
+    public ShareInfo withExpandType(String expandType) {
         this.expandType = expandType;
         return this;
     }
@@ -337,7 +337,7 @@ public class Shares {
         this.expandType = expandType;
     }
 
-    public Shares withExportLocation(String exportLocation) {
+    public ShareInfo withExportLocation(String exportLocation) {
         this.exportLocation = exportLocation;
         return this;
     }
@@ -354,7 +354,7 @@ public class Shares {
         this.exportLocation = exportLocation;
     }
 
-    public Shares withId(String id) {
+    public ShareInfo withId(String id) {
         this.id = id;
         return this;
     }
@@ -371,7 +371,7 @@ public class Shares {
         this.id = id;
     }
 
-    public Shares withName(String name) {
+    public ShareInfo withName(String name) {
         this.name = name;
         return this;
     }
@@ -388,7 +388,7 @@ public class Shares {
         this.name = name;
     }
 
-    public Shares withPayModel(PayModelEnum payModel) {
+    public ShareInfo withPayModel(PayModelEnum payModel) {
         this.payModel = payModel;
         return this;
     }
@@ -405,7 +405,7 @@ public class Shares {
         this.payModel = payModel;
     }
 
-    public Shares withRegion(String region) {
+    public ShareInfo withRegion(String region) {
         this.region = region;
         return this;
     }
@@ -422,7 +422,7 @@ public class Shares {
         this.region = region;
     }
 
-    public Shares withSecurityGroupId(String securityGroupId) {
+    public ShareInfo withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
@@ -439,7 +439,7 @@ public class Shares {
         this.securityGroupId = securityGroupId;
     }
 
-    public Shares withShareProto(String shareProto) {
+    public ShareInfo withShareProto(String shareProto) {
         this.shareProto = shareProto;
         return this;
     }
@@ -456,7 +456,7 @@ public class Shares {
         this.shareProto = shareProto;
     }
 
-    public Shares withShareType(String shareType) {
+    public ShareInfo withShareType(String shareType) {
         this.shareType = shareType;
         return this;
     }
@@ -473,7 +473,7 @@ public class Shares {
         this.shareType = shareType;
     }
 
-    public Shares withSize(String size) {
+    public ShareInfo withSize(String size) {
         this.size = size;
         return this;
     }
@@ -490,13 +490,13 @@ public class Shares {
         this.size = size;
     }
 
-    public Shares withStatus(String status) {
+    public ShareInfo withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * SFS Turbo文件系统的状态。'100'表示创建中，'200'表示可用，'303'表示创建失败。
+     * SFS Turbo文件系统的状态。'100'表示创建中，'200'表示可用，'303'表示创建失败，'800'表示实例被冻结。
      * @return status
      */
     public String getStatus() {
@@ -507,13 +507,13 @@ public class Shares {
         this.status = status;
     }
 
-    public Shares withSubStatus(String subStatus) {
+    public ShareInfo withSubStatus(String subStatus) {
         this.subStatus = subStatus;
         return this;
     }
 
     /**
-     * SFS Turbo文件系统的子状态。'121'表示扩容中，'221'表示扩容成功，'321'表示扩容失败。
+     * SFS Turbo文件系统的子状态。 '121'表示扩容中；'132'表示修改安全组中；'137'表示添加VPC中；'138'表示删除VPC中；'150'表示配置联动后端中；'151'表示删除联动后端配置中； '221'表示扩容成功；'232'表示修改安全组成功；'237'表示添加VPC成功；'238'表示删除VPC成功；'250'表示配置联动后端成功；'251'表示删除联动后端配置成功； '321'表示扩容失败；'332'表示修改安全组失败；'337'表示添加VPC失败；'338'表示删除VPC失败；'350'表示配置联动后端失败；'351'表示删除联动后端配置失败； 
      * @return subStatus
      */
     public String getSubStatus() {
@@ -524,7 +524,7 @@ public class Shares {
         this.subStatus = subStatus;
     }
 
-    public Shares withSubnetId(String subnetId) {
+    public ShareInfo withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
@@ -541,7 +541,7 @@ public class Shares {
         this.subnetId = subnetId;
     }
 
-    public Shares withVpcId(String vpcId) {
+    public ShareInfo withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
@@ -566,7 +566,7 @@ public class Shares {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Shares that = (Shares) obj;
+        ShareInfo that = (ShareInfo) obj;
         return Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.version, that.version)
             && Objects.equals(this.availCapacity, that.availCapacity)
             && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.azName, that.azName)
@@ -609,7 +609,7 @@ public class Shares {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Shares {\n");
+        sb.append("class ShareInfo {\n");
         sb.append("    actionProgress: ").append(toIndentedString(actionProgress)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    availCapacity: ").append(toIndentedString(availCapacity)).append("\n");

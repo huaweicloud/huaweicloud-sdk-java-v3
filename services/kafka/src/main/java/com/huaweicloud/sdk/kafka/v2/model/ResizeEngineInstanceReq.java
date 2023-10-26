@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.kafka.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 实例规格变更请求体。
@@ -34,6 +37,16 @@ public class ResizeEngineInstanceReq {
     @JsonProperty(value = "publicip_id")
 
     private String publicipId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenant_ips")
+
+    private List<String> tenantIps = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "second_tenant_subnet_id")
+
+    private String secondTenantSubnetId;
 
     public ResizeEngineInstanceReq withOperType(String operType) {
         this.operType = operType;
@@ -120,6 +133,56 @@ public class ResizeEngineInstanceReq {
         this.publicipId = publicipId;
     }
 
+    public ResizeEngineInstanceReq withTenantIps(List<String> tenantIps) {
+        this.tenantIps = tenantIps;
+        return this;
+    }
+
+    public ResizeEngineInstanceReq addTenantIpsItem(String tenantIpsItem) {
+        if (this.tenantIps == null) {
+            this.tenantIps = new ArrayList<>();
+        }
+        this.tenantIps.add(tenantIpsItem);
+        return this;
+    }
+
+    public ResizeEngineInstanceReq withTenantIps(Consumer<List<String>> tenantIpsSetter) {
+        if (this.tenantIps == null) {
+            this.tenantIps = new ArrayList<>();
+        }
+        tenantIpsSetter.accept(this.tenantIps);
+        return this;
+    }
+
+    /**
+     * 指定的内网IP地址，仅支持指定IPv4。  指定的IP数量只能小于等于新增节点数量。  当指定IP小于节点数量时，未指定的节点随机分配内网IP地址。
+     * @return tenantIps
+     */
+    public List<String> getTenantIps() {
+        return tenantIps;
+    }
+
+    public void setTenantIps(List<String> tenantIps) {
+        this.tenantIps = tenantIps;
+    }
+
+    public ResizeEngineInstanceReq withSecondTenantSubnetId(String secondTenantSubnetId) {
+        this.secondTenantSubnetId = secondTenantSubnetId;
+        return this;
+    }
+
+    /**
+     * 实例扩容时新节点使用备用子网的id  当实例扩容使用备用子网，则传入此值  需要联系客服添加白名单才能传入此值
+     * @return secondTenantSubnetId
+     */
+    public String getSecondTenantSubnetId() {
+        return secondTenantSubnetId;
+    }
+
+    public void setSecondTenantSubnetId(String secondTenantSubnetId) {
+        this.secondTenantSubnetId = secondTenantSubnetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +195,15 @@ public class ResizeEngineInstanceReq {
         return Objects.equals(this.operType, that.operType)
             && Objects.equals(this.newStorageSpace, that.newStorageSpace)
             && Objects.equals(this.newBrokerNum, that.newBrokerNum)
-            && Objects.equals(this.newProductId, that.newProductId) && Objects.equals(this.publicipId, that.publicipId);
+            && Objects.equals(this.newProductId, that.newProductId) && Objects.equals(this.publicipId, that.publicipId)
+            && Objects.equals(this.tenantIps, that.tenantIps)
+            && Objects.equals(this.secondTenantSubnetId, that.secondTenantSubnetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operType, newStorageSpace, newBrokerNum, newProductId, publicipId);
+        return Objects
+            .hash(operType, newStorageSpace, newBrokerNum, newProductId, publicipId, tenantIps, secondTenantSubnetId);
     }
 
     @Override
@@ -149,6 +215,8 @@ public class ResizeEngineInstanceReq {
         sb.append("    newBrokerNum: ").append(toIndentedString(newBrokerNum)).append("\n");
         sb.append("    newProductId: ").append(toIndentedString(newProductId)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
+        sb.append("    tenantIps: ").append(toIndentedString(tenantIps)).append("\n");
+        sb.append("    secondTenantSubnetId: ").append(toIndentedString(secondTenantSubnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

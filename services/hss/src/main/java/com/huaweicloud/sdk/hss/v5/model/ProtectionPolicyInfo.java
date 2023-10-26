@@ -34,6 +34,11 @@ public class ProtectionPolicyInfo {
     private String baitProtectionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_mode")
+
+    private String deployMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protection_directory")
 
     private String protectionDirectory;
@@ -72,6 +77,11 @@ public class ProtectionPolicyInfo {
     @JsonProperty(value = "process_whitelist")
 
     private List<TrustProcessInfo> processWhitelist = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_policy")
+
+    private Integer defaultPolicy;
 
     public ProtectionPolicyInfo withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -139,6 +149,23 @@ public class ProtectionPolicyInfo {
 
     public void setBaitProtectionStatus(String baitProtectionStatus) {
         this.baitProtectionStatus = baitProtectionStatus;
+    }
+
+    public ProtectionPolicyInfo withDeployMode(String deployMode) {
+        this.deployMode = deployMode;
+        return this;
+    }
+
+    /**
+     * 是否开启动态诱饵防护，包含如下2种, 默认为关闭动态诱饵防护。   - opened ：开启。   - closed ：关闭。
+     * @return deployMode
+     */
+    public String getDeployMode() {
+        return deployMode;
+    }
+
+    public void setDeployMode(String deployMode) {
+        this.deployMode = deployMode;
     }
 
     public ProtectionPolicyInfo withProtectionDirectory(String protectionDirectory) {
@@ -295,6 +322,25 @@ public class ProtectionPolicyInfo {
         this.processWhitelist = processWhitelist;
     }
 
+    public ProtectionPolicyInfo withDefaultPolicy(Integer defaultPolicy) {
+        this.defaultPolicy = defaultPolicy;
+        return this;
+    }
+
+    /**
+     * 是否为默认策略，包含如下2种。   - 0 ：非默认策略。   - 1 ：默认策略
+     * minimum: 0
+     * maximum: 10
+     * @return defaultPolicy
+     */
+    public Integer getDefaultPolicy() {
+        return defaultPolicy;
+    }
+
+    public void setDefaultPolicy(Integer defaultPolicy) {
+        this.defaultPolicy = defaultPolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -307,6 +353,7 @@ public class ProtectionPolicyInfo {
         return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.policyName, that.policyName)
             && Objects.equals(this.protectionMode, that.protectionMode)
             && Objects.equals(this.baitProtectionStatus, that.baitProtectionStatus)
+            && Objects.equals(this.deployMode, that.deployMode)
             && Objects.equals(this.protectionDirectory, that.protectionDirectory)
             && Objects.equals(this.protectionType, that.protectionType)
             && Objects.equals(this.excludeDirectory, that.excludeDirectory)
@@ -314,7 +361,8 @@ public class ProtectionPolicyInfo {
             && Objects.equals(this.runtimeDetectionDirectory, that.runtimeDetectionDirectory)
             && Objects.equals(this.countAssociatedServer, that.countAssociatedServer)
             && Objects.equals(this.operatingSystem, that.operatingSystem)
-            && Objects.equals(this.processWhitelist, that.processWhitelist);
+            && Objects.equals(this.processWhitelist, that.processWhitelist)
+            && Objects.equals(this.defaultPolicy, that.defaultPolicy);
     }
 
     @Override
@@ -323,6 +371,7 @@ public class ProtectionPolicyInfo {
             policyName,
             protectionMode,
             baitProtectionStatus,
+            deployMode,
             protectionDirectory,
             protectionType,
             excludeDirectory,
@@ -330,7 +379,8 @@ public class ProtectionPolicyInfo {
             runtimeDetectionDirectory,
             countAssociatedServer,
             operatingSystem,
-            processWhitelist);
+            processWhitelist,
+            defaultPolicy);
     }
 
     @Override
@@ -341,6 +391,7 @@ public class ProtectionPolicyInfo {
         sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
         sb.append("    protectionMode: ").append(toIndentedString(protectionMode)).append("\n");
         sb.append("    baitProtectionStatus: ").append(toIndentedString(baitProtectionStatus)).append("\n");
+        sb.append("    deployMode: ").append(toIndentedString(deployMode)).append("\n");
         sb.append("    protectionDirectory: ").append(toIndentedString(protectionDirectory)).append("\n");
         sb.append("    protectionType: ").append(toIndentedString(protectionType)).append("\n");
         sb.append("    excludeDirectory: ").append(toIndentedString(excludeDirectory)).append("\n");
@@ -349,6 +400,7 @@ public class ProtectionPolicyInfo {
         sb.append("    countAssociatedServer: ").append(toIndentedString(countAssociatedServer)).append("\n");
         sb.append("    operatingSystem: ").append(toIndentedString(operatingSystem)).append("\n");
         sb.append("    processWhitelist: ").append(toIndentedString(processWhitelist)).append("\n");
+        sb.append("    defaultPolicy: ").append(toIndentedString(defaultPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

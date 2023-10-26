@@ -7,6 +7,7 @@ import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.AttachmentInstanceTypeEnum;
 import com.huaweicloud.sdk.cc.v3.model.BandwidthTypeEnum;
+import com.huaweicloud.sdk.cc.v3.model.CentralNetworkCapabilityEnum;
 import com.huaweicloud.sdk.cc.v3.model.CentralNetworkConnectionStateEnum;
 import com.huaweicloud.sdk.cc.v3.model.CentralNetworkPolicyStateEnum;
 import com.huaweicloud.sdk.cc.v3.model.CentralNetworkQuotaKeyEnum;
@@ -66,6 +67,8 @@ import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkAttachmentsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkAttachmentsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkCapabilitiesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkCapabilitiesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkGdgwAttachmentsRequest;
@@ -1612,6 +1615,34 @@ public class CcMeta {
             TypeCasts.uncheckedConversion(UpdateCentralNetworkGdgwAttachmentRequestBody.class),
             f -> f.withMarshaller(UpdateCentralNetworkGdgwAttachmentRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse> listCentralNetworkCapabilities =
+        genForlistCentralNetworkCapabilities();
+
+    private static HttpRequestDef<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse> genForlistCentralNetworkCapabilities() {
+        // basic
+        HttpRequestDef.Builder<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCentralNetworkCapabilitiesRequest.class,
+                    ListCentralNetworkCapabilitiesResponse.class)
+                .withName("ListCentralNetworkCapabilities")
+                .withUri("/v3/{domain_id}/gcn/capabilities")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<CentralNetworkCapabilityEnum>>withRequestField("capability",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCentralNetworkCapabilitiesRequest::getCapability, (req, v) -> {
+                req.setCapability(v);
             }));
 
         // response

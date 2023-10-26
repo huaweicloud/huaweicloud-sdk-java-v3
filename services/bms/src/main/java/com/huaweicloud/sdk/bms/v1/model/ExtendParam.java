@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ExtendParam {
 
     /**
-     * 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
+     * 计费模式。取值范围：prePaid：预付费，即包年包月; postPaid-后付费，即按需付费。默认值是prePaid。
      */
     public static final class ChargingModeEnum {
 
@@ -25,11 +25,17 @@ public class ExtendParam {
          */
         public static final ChargingModeEnum PREPAID = new ChargingModeEnum("prePaid");
 
+        /**
+         * Enum POSTPAID for value: "postPaid"
+         */
+        public static final ChargingModeEnum POSTPAID = new ChargingModeEnum("postPaid");
+
         private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ChargingModeEnum> createStaticFields() {
             Map<String, ChargingModeEnum> map = new HashMap<>();
             map.put("prePaid", PREPAID);
+            map.put("postPaid", POSTPAID);
             return Collections.unmodifiableMap(map);
         }
 
@@ -190,7 +196,7 @@ public class ExtendParam {
     }
 
     /**
-     * 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
+     * 计费模式。取值范围：prePaid：预付费，即包年包月; postPaid-后付费，即按需付费。默认值是prePaid。
      * @return chargingMode
      */
     public ChargingModeEnum getChargingMode() {

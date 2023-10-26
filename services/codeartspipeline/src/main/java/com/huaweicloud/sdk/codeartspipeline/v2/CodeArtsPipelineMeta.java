@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.codeartspipeline.v2;
 
+import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusRequest;
@@ -8,6 +10,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdR
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineQuery;
@@ -27,10 +31,15 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipleineBuildResultResp
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineByTemplateDTO;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineExecuteStates;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineLatestRun;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineResponse;
@@ -62,6 +71,60 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class CodeArtsPipelineMeta {
+
+    public static final HttpRequestDef<AcceptManualReviewRequest, AcceptManualReviewResponse> acceptManualReview =
+        genForacceptManualReview();
+
+    private static HttpRequestDef<AcceptManualReviewRequest, AcceptManualReviewResponse> genForacceptManualReview() {
+        // basic
+        HttpRequestDef.Builder<AcceptManualReviewRequest, AcceptManualReviewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AcceptManualReviewRequest.class, AcceptManualReviewResponse.class)
+            .withName("AcceptManualReview")
+            .withUri(
+                "/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/jobs/{job_run_id}/steps/{step_run_id}/pass")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptManualReviewRequest::getJobRunId, (req, v) -> {
+                req.setJobRunId(v);
+            }));
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptManualReviewRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptManualReviewRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptManualReviewRequest::getPipelineRunId, (req, v) -> {
+                req.setPipelineRunId(v);
+            }));
+        builder.<String>withRequestField("step_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptManualReviewRequest::getStepRunId, (req, v) -> {
+                req.setStepRunId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatus =
         genForbatchShowPipelinesLatestStatus();
@@ -205,6 +268,45 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PipelineByTemplateDTO.class),
             f -> f.withMarshaller(CreatePipelineByTemplateIdRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePipelineNewRequest, CreatePipelineNewResponse> createPipelineNew =
+        genForcreatePipelineNew();
+
+    private static HttpRequestDef<CreatePipelineNewRequest, CreatePipelineNewResponse> genForcreatePipelineNew() {
+        // basic
+        HttpRequestDef.Builder<CreatePipelineNewRequest, CreatePipelineNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePipelineNewRequest.class, CreatePipelineNewResponse.class)
+                .withName("CreatePipelineNew")
+                .withUri("/v5/{project_id}/api/pipelines")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePipelineNewRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("component_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePipelineNewRequest::getComponentId, (req, v) -> {
+                req.setComponentId(v);
+            }));
+        builder.<PipelineDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PipelineDTO.class),
+            f -> f.withMarshaller(CreatePipelineNewRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -493,6 +595,60 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RejectManualReviewRequest, RejectManualReviewResponse> rejectManualReview =
+        genForrejectManualReview();
+
+    private static HttpRequestDef<RejectManualReviewRequest, RejectManualReviewResponse> genForrejectManualReview() {
+        // basic
+        HttpRequestDef.Builder<RejectManualReviewRequest, RejectManualReviewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RejectManualReviewRequest.class, RejectManualReviewResponse.class)
+            .withName("RejectManualReview")
+            .withUri(
+                "/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/jobs/{job_run_id}/steps/{step_run_id}/refuse")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RejectManualReviewRequest::getJobRunId, (req, v) -> {
+                req.setJobRunId(v);
+            }));
+        builder.<String>withRequestField("step_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RejectManualReviewRequest::getStepRunId, (req, v) -> {
+                req.setStepRunId(v);
+            }));
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RejectManualReviewRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RejectManualReviewRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RejectManualReviewRequest::getPipelineRunId, (req, v) -> {
+                req.setPipelineRunId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RemovePipelineRequest, RemovePipelineResponse> removePipeline =
         genForremovePipeline();
 
@@ -511,6 +667,45 @@ public class CodeArtsPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RemovePipelineRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryPipelineRunRequest, RetryPipelineRunResponse> retryPipelineRun =
+        genForretryPipelineRun();
+
+    private static HttpRequestDef<RetryPipelineRunRequest, RetryPipelineRunResponse> genForretryPipelineRun() {
+        // basic
+        HttpRequestDef.Builder<RetryPipelineRunRequest, RetryPipelineRunResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RetryPipelineRunRequest.class, RetryPipelineRunResponse.class)
+                .withName("RetryPipelineRun")
+                .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/retry")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryPipelineRunRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryPipelineRunRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryPipelineRunRequest::getPipelineRunId, (req, v) -> {
+                req.setPipelineRunId(v);
             }));
 
         // response

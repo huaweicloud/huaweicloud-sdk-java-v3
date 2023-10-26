@@ -92,8 +92,8 @@ import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateDashboardResponse;
-import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksRequest;
-import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMaskRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMaskResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupRequest;
@@ -1529,12 +1529,12 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationMasksRequest 请求对象
-     * @return CompletableFuture<UpdateNotificationMasksResponse>
+     * @param UpdateNotificationMaskRequest 请求对象
+     * @return CompletableFuture<UpdateNotificationMaskResponse>
      */
-    public CompletableFuture<UpdateNotificationMasksResponse> updateNotificationMasksAsync(
-        UpdateNotificationMasksRequest request) {
-        return hcClient.asyncInvokeHttp(request, CesMeta.updateNotificationMasks);
+    public CompletableFuture<UpdateNotificationMaskResponse> updateNotificationMaskAsync(
+        UpdateNotificationMaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CesMeta.updateNotificationMask);
     }
 
     /**
@@ -1544,13 +1544,13 @@ public class CesAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UpdateNotificationMasksRequest 请求对象
-     * @return AsyncInvoker<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse>
+     * @param UpdateNotificationMaskRequest 请求对象
+     * @return AsyncInvoker<UpdateNotificationMaskRequest, UpdateNotificationMaskResponse>
      */
-    public AsyncInvoker<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse> updateNotificationMasksAsyncInvoker(
-        UpdateNotificationMasksRequest request) {
-        return new AsyncInvoker<UpdateNotificationMasksRequest, UpdateNotificationMasksResponse>(request,
-            CesMeta.updateNotificationMasks, hcClient);
+    public AsyncInvoker<UpdateNotificationMaskRequest, UpdateNotificationMaskResponse> updateNotificationMaskAsyncInvoker(
+        UpdateNotificationMaskRequest request) {
+        return new AsyncInvoker<UpdateNotificationMaskRequest, UpdateNotificationMaskResponse>(request,
+            CesMeta.updateNotificationMask, hcClient);
     }
 
     /**

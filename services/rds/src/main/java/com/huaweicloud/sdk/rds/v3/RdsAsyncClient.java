@@ -129,10 +129,14 @@ import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
@@ -1370,6 +1374,37 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 获取诊断后的实例数量
+     *
+     * 获取诊断后的实例数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceDiagnosisRequest 请求对象
+     * @return CompletableFuture<ListInstanceDiagnosisResponse>
+     */
+    public CompletableFuture<ListInstanceDiagnosisResponse> listInstanceDiagnosisAsync(
+        ListInstanceDiagnosisRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstanceDiagnosis);
+    }
+
+    /**
+     * 获取诊断后的实例数量
+     *
+     * 获取诊断后的实例数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceDiagnosisRequest 请求对象
+     * @return AsyncInvoker<ListInstanceDiagnosisRequest, ListInstanceDiagnosisResponse>
+     */
+    public AsyncInvoker<ListInstanceDiagnosisRequest, ListInstanceDiagnosisResponse> listInstanceDiagnosisAsyncInvoker(
+        ListInstanceDiagnosisRequest request) {
+        return new AsyncInvoker<ListInstanceDiagnosisRequest, ListInstanceDiagnosisResponse>(request,
+            RdsMeta.listInstanceDiagnosis, hcClient);
+    }
+
+    /**
      * 查询实例参数修改历史
      *
      * 实例参数修改历史。
@@ -1457,6 +1492,37 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
         return new AsyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, RdsMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 获取指定诊断项的诊断结果
+     *
+     * 获取指定诊断项的诊断结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesInfoDiagnosisRequest 请求对象
+     * @return CompletableFuture<ListInstancesInfoDiagnosisResponse>
+     */
+    public CompletableFuture<ListInstancesInfoDiagnosisResponse> listInstancesInfoDiagnosisAsync(
+        ListInstancesInfoDiagnosisRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstancesInfoDiagnosis);
+    }
+
+    /**
+     * 获取指定诊断项的诊断结果
+     *
+     * 获取指定诊断项的诊断结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesInfoDiagnosisRequest 请求对象
+     * @return AsyncInvoker<ListInstancesInfoDiagnosisRequest, ListInstancesInfoDiagnosisResponse>
+     */
+    public AsyncInvoker<ListInstancesInfoDiagnosisRequest, ListInstancesInfoDiagnosisResponse> listInstancesInfoDiagnosisAsyncInvoker(
+        ListInstancesInfoDiagnosisRequest request) {
+        return new AsyncInvoker<ListInstancesInfoDiagnosisRequest, ListInstancesInfoDiagnosisResponse>(request,
+            RdsMeta.listInstancesInfoDiagnosis, hcClient);
     }
 
     /**

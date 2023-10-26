@@ -98,6 +98,31 @@ public class HostVulInfo {
 
     private Long firstScanTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_name")
+
+    private String appName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_version")
+
+    private String appVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_path")
+
+    private String appPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_restore")
+
+    private Boolean supportRestore;
+
     public HostVulInfo withVulName(String vulName) {
         this.vulName = vulName;
         return this;
@@ -257,7 +282,7 @@ public class HostVulInfo {
     }
 
     /**
-     * 危险程度   - Critical : 致命   - High : 高危   - Medium : 中危   - Low : 低危
+     * 危险程度   - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危   - High : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危   - Medium : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危   - Low : 漏洞cvss评分小于4；对应控制台页面的低危
      * @return severityLevel
      */
     public String getSeverityLevel() {
@@ -441,6 +466,91 @@ public class HostVulInfo {
         this.firstScanTime = firstScanTime;
     }
 
+    public HostVulInfo withAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+
+    /**
+     * 软件名称
+     * @return appName
+     */
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    public HostVulInfo withAppVersion(String appVersion) {
+        this.appVersion = appVersion;
+        return this;
+    }
+
+    /**
+     * 软件版本
+     * @return appVersion
+     */
+    public String getAppVersion() {
+        return appVersion;
+    }
+
+    public void setAppVersion(String appVersion) {
+        this.appVersion = appVersion;
+    }
+
+    public HostVulInfo withAppPath(String appPath) {
+        this.appPath = appPath;
+        return this;
+    }
+
+    /**
+     * 软件路径
+     * @return appPath
+     */
+    public String getAppPath() {
+        return appPath;
+    }
+
+    public void setAppPath(String appPath) {
+        this.appPath = appPath;
+    }
+
+    public HostVulInfo withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 主机配额
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public HostVulInfo withSupportRestore(Boolean supportRestore) {
+        this.supportRestore = supportRestore;
+        return this;
+    }
+
+    /**
+     * 是否可以回滚到修复漏洞时创建的备份
+     * @return supportRestore
+     */
+    public Boolean getSupportRestore() {
+        return supportRestore;
+    }
+
+    public void setSupportRestore(Boolean supportRestore) {
+        this.supportRestore = supportRestore;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -460,7 +570,9 @@ public class HostVulInfo {
             && Objects.equals(this.status, that.status) && Objects.equals(this.repairSuccessNum, that.repairSuccessNum)
             && Objects.equals(this.cveList, that.cveList)
             && Objects.equals(this.isAffectBusiness, that.isAffectBusiness)
-            && Objects.equals(this.firstScanTime, that.firstScanTime);
+            && Objects.equals(this.firstScanTime, that.firstScanTime) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.appPath, that.appPath)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.supportRestore, that.supportRestore);
     }
 
     @Override
@@ -481,7 +593,12 @@ public class HostVulInfo {
             repairSuccessNum,
             cveList,
             isAffectBusiness,
-            firstScanTime);
+            firstScanTime,
+            appName,
+            appVersion,
+            appPath,
+            version,
+            supportRestore);
     }
 
     @Override
@@ -505,6 +622,11 @@ public class HostVulInfo {
         sb.append("    cveList: ").append(toIndentedString(cveList)).append("\n");
         sb.append("    isAffectBusiness: ").append(toIndentedString(isAffectBusiness)).append("\n");
         sb.append("    firstScanTime: ").append(toIndentedString(firstScanTime)).append("\n");
+        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    appVersion: ").append(toIndentedString(appVersion)).append("\n");
+        sb.append("    appPath: ").append(toIndentedString(appPath)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    supportRestore: ").append(toIndentedString(supportRestore)).append("\n");
         sb.append("}");
         return sb.toString();
     }

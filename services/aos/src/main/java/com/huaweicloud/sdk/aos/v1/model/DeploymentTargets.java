@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 /**
  * 部署目标信息。
  */
-public class DeploymentTargetsPrimitiveTypeHolderDeploymentTargets {
+public class DeploymentTargets {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regions")
@@ -28,12 +28,12 @@ public class DeploymentTargetsPrimitiveTypeHolderDeploymentTargets {
 
     private String domainIdsUri;
 
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets withRegions(List<String> regions) {
+    public DeploymentTargets withRegions(List<String> regions) {
         this.regions = regions;
         return this;
     }
 
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets addRegionsItem(String regionsItem) {
+    public DeploymentTargets addRegionsItem(String regionsItem) {
         if (this.regions == null) {
             this.regions = new ArrayList<>();
         }
@@ -41,7 +41,7 @@ public class DeploymentTargetsPrimitiveTypeHolderDeploymentTargets {
         return this;
     }
 
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets withRegions(Consumer<List<String>> regionsSetter) {
+    public DeploymentTargets withRegions(Consumer<List<String>> regionsSetter) {
         if (this.regions == null) {
             this.regions = new ArrayList<>();
         }
@@ -61,12 +61,12 @@ public class DeploymentTargetsPrimitiveTypeHolderDeploymentTargets {
         this.regions = regions;
     }
 
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets withDomainIds(List<String> domainIds) {
+    public DeploymentTargets withDomainIds(List<String> domainIds) {
         this.domainIds = domainIds;
         return this;
     }
 
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets addDomainIdsItem(String domainIdsItem) {
+    public DeploymentTargets addDomainIdsItem(String domainIdsItem) {
         if (this.domainIds == null) {
             this.domainIds = new ArrayList<>();
         }
@@ -74,7 +74,7 @@ public class DeploymentTargetsPrimitiveTypeHolderDeploymentTargets {
         return this;
     }
 
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets withDomainIds(Consumer<List<String>> domainIdsSetter) {
+    public DeploymentTargets withDomainIds(Consumer<List<String>> domainIdsSetter) {
         if (this.domainIds == null) {
             this.domainIds = new ArrayList<>();
         }
@@ -94,7 +94,7 @@ public class DeploymentTargetsPrimitiveTypeHolderDeploymentTargets {
         this.domainIds = domainIds;
     }
 
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets withDomainIdsUri(String domainIdsUri) {
+    public DeploymentTargets withDomainIdsUri(String domainIdsUri) {
         this.domainIdsUri = domainIdsUri;
         return this;
     }
@@ -119,8 +119,7 @@ public class DeploymentTargetsPrimitiveTypeHolderDeploymentTargets {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentTargetsPrimitiveTypeHolderDeploymentTargets that =
-            (DeploymentTargetsPrimitiveTypeHolderDeploymentTargets) obj;
+        DeploymentTargets that = (DeploymentTargets) obj;
         return Objects.equals(this.regions, that.regions) && Objects.equals(this.domainIds, that.domainIds)
             && Objects.equals(this.domainIdsUri, that.domainIdsUri);
     }
@@ -133,7 +132,7 @@ public class DeploymentTargetsPrimitiveTypeHolderDeploymentTargets {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeploymentTargetsPrimitiveTypeHolderDeploymentTargets {\n");
+        sb.append("class DeploymentTargets {\n");
         sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
         sb.append("    domainIds: ").append(toIndentedString(domainIds)).append("\n");
         sb.append("    domainIdsUri: ").append(toIndentedString(domainIdsUri)).append("\n");

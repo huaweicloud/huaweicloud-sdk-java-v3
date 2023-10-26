@@ -100,8 +100,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
                 return this;
             }
 
-            String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? getDefaultIamEndpoint() : getIamEndpoint();
-            HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(iamEndpoint));
+            HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(getUsedIamEndpoint()));
 
             Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
             setDerivedPredicate(null);
@@ -173,8 +172,8 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     @Override
     protected void updateAuthTokenByIdToken(HttpClient httpClient) {
-        String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
-        HttpRequest httpRequest = Iam.getDomainTokenWithIdTokenRequest(iamEndpoint, getIdpId(), getIdToken(), domainId);
+        HttpRequest httpRequest = Iam.getDomainTokenWithIdTokenRequest(
+                getUsedIamEndpoint(), getIdpId(), getIdToken(), domainId);
         CreateTokenWithIdTokenResponse response = Iam.createTokenWithIdToken(httpClient, httpRequest);
         authToken = response.getSubjectToken();
         try {

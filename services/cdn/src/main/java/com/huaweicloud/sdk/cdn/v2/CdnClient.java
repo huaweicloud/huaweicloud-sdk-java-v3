@@ -2,6 +2,10 @@ package com.huaweicloud.sdk.cdn.v2;
 
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
@@ -22,10 +26,16 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -75,6 +85,66 @@ public class CdnClient {
         BatchCopyDomainRequest request) {
         return new SyncInvoker<BatchCopyDomainRequest, BatchCopyDomainResponse>(request, CdnMeta.batchCopyDomain,
             hcClient);
+    }
+
+    /**
+     * 创建预热缓存任务
+     *
+     * 创建预热任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePreheatingTasksRequest 请求对象
+     * @return CreatePreheatingTasksResponse
+     */
+    public CreatePreheatingTasksResponse createPreheatingTasks(CreatePreheatingTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.createPreheatingTasks);
+    }
+
+    /**
+     * 创建预热缓存任务
+     *
+     * 创建预热任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePreheatingTasksRequest 请求对象
+     * @return SyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse>
+     */
+    public SyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> createPreheatingTasksInvoker(
+        CreatePreheatingTasksRequest request) {
+        return new SyncInvoker<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse>(request,
+            CdnMeta.createPreheatingTasks, hcClient);
+    }
+
+    /**
+     * 创建刷新缓存任务
+     *
+     * 创建刷新缓存任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRefreshTasksRequest 请求对象
+     * @return CreateRefreshTasksResponse
+     */
+    public CreateRefreshTasksResponse createRefreshTasks(CreateRefreshTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.createRefreshTasks);
+    }
+
+    /**
+     * 创建刷新缓存任务
+     *
+     * 创建刷新缓存任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRefreshTasksRequest 请求对象
+     * @return SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse>
+     */
+    public SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse> createRefreshTasksInvoker(
+        CreateRefreshTasksRequest request) {
+        return new SyncInvoker<CreateRefreshTasksRequest, CreateRefreshTasksResponse>(request,
+            CdnMeta.createRefreshTasks, hcClient);
     }
 
     /**
@@ -520,6 +590,66 @@ public class CdnClient {
     }
 
     /**
+     * 查询刷新预热任务详情
+     *
+     * 查询刷新预热任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHistoryTaskDetailsRequest 请求对象
+     * @return ShowHistoryTaskDetailsResponse
+     */
+    public ShowHistoryTaskDetailsResponse showHistoryTaskDetails(ShowHistoryTaskDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showHistoryTaskDetails);
+    }
+
+    /**
+     * 查询刷新预热任务详情
+     *
+     * 查询刷新预热任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHistoryTaskDetailsRequest 请求对象
+     * @return SyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse>
+     */
+    public SyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> showHistoryTaskDetailsInvoker(
+        ShowHistoryTaskDetailsRequest request) {
+        return new SyncInvoker<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse>(request,
+            CdnMeta.showHistoryTaskDetails, hcClient);
+    }
+
+    /**
+     * 查询刷新预热任务
+     *
+     * 查询刷新预热任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHistoryTasksRequest 请求对象
+     * @return ShowHistoryTasksResponse
+     */
+    public ShowHistoryTasksResponse showHistoryTasks(ShowHistoryTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showHistoryTasks);
+    }
+
+    /**
+     * 查询刷新预热任务
+     *
+     * 查询刷新预热任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHistoryTasksRequest 请求对象
+     * @return SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse>
+     */
+    public SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse> showHistoryTasksInvoker(
+        ShowHistoryTasksRequest request) {
+        return new SyncInvoker<ShowHistoryTasksRequest, ShowHistoryTasksResponse>(request, CdnMeta.showHistoryTasks,
+            hcClient);
+    }
+
+    /**
      * 查询TOP域名
      *
      * - 查询TOP域名。
@@ -623,6 +753,36 @@ public class CdnClient {
      */
     public SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse> showTopUrlInvoker(ShowTopUrlRequest request) {
         return new SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>(request, CdnMeta.showTopUrl, hcClient);
+    }
+
+    /**
+     * 查询刷新预热URL记录
+     *
+     * 查询刷新预热URL记录。如需此接口，请提交工单开通。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUrlTaskInfoRequest 请求对象
+     * @return ShowUrlTaskInfoResponse
+     */
+    public ShowUrlTaskInfoResponse showUrlTaskInfo(ShowUrlTaskInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showUrlTaskInfo);
+    }
+
+    /**
+     * 查询刷新预热URL记录
+     *
+     * 查询刷新预热URL记录。如需此接口，请提交工单开通。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUrlTaskInfoRequest 请求对象
+     * @return SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse>
+     */
+    public SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> showUrlTaskInfoInvoker(
+        ShowUrlTaskInfoRequest request) {
+        return new SyncInvoker<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse>(request, CdnMeta.showUrlTaskInfo,
+            hcClient);
     }
 
     /**

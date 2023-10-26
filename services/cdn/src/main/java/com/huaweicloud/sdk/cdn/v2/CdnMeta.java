@@ -3,6 +3,10 @@ package com.huaweicloud.sdk.cdn.v2;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreatePreheatingTasksResponse;
+import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksRequest;
+import com.huaweicloud.sdk.cdn.v2.model.CreateRefreshTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelRequest;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadRegionCarrierExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelRequest;
@@ -10,6 +14,8 @@ import com.huaweicloud.sdk.cdn.v2.model.DownloadStatisticsExcelResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyDomainConfigRequestBody;
+import com.huaweicloud.sdk.cdn.v2.model.PreheatingTaskRequest;
+import com.huaweicloud.sdk.cdn.v2.model.RefreshTaskRequest;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesBody;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesResponse;
@@ -25,10 +31,16 @@ import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainLocationStatsResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowDomainStatsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTaskDetailsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowHistoryTasksResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopDomainNamesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ShowTopUrlResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ShowUrlTaskInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigRequest;
 import com.huaweicloud.sdk.cdn.v2.model.UpdateDomainFullConfigResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
@@ -57,6 +69,70 @@ public class CdnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCopyDRequestBody.class),
             f -> f.withMarshaller(BatchCopyDomainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> createPreheatingTasks =
+        genForcreatePreheatingTasks();
+
+    private static HttpRequestDef<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> genForcreatePreheatingTasks() {
+        // basic
+        HttpRequestDef.Builder<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePreheatingTasksRequest.class, CreatePreheatingTasksResponse.class)
+            .withName("CreatePreheatingTasks")
+            .withUri("/v1.0/cdn/content/preheating-tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePreheatingTasksRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<PreheatingTaskRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PreheatingTaskRequest.class),
+            f -> f.withMarshaller(CreatePreheatingTasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRefreshTasksRequest, CreateRefreshTasksResponse> createRefreshTasks =
+        genForcreateRefreshTasks();
+
+    private static HttpRequestDef<CreateRefreshTasksRequest, CreateRefreshTasksResponse> genForcreateRefreshTasks() {
+        // basic
+        HttpRequestDef.Builder<CreateRefreshTasksRequest, CreateRefreshTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRefreshTasksRequest.class, CreateRefreshTasksResponse.class)
+                .withName("CreateRefreshTasks")
+                .withUri("/v1.0/cdn/content/refresh-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRefreshTasksRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<RefreshTaskRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RefreshTaskRequest.class),
+            f -> f.withMarshaller(CreateRefreshTasksRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -681,6 +757,161 @@ public class CdnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> showHistoryTaskDetails =
+        genForshowHistoryTaskDetails();
+
+    private static HttpRequestDef<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> genForshowHistoryTaskDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowHistoryTaskDetailsRequest, ShowHistoryTaskDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowHistoryTaskDetailsRequest.class, ShowHistoryTaskDetailsResponse.class)
+            .withName("ShowHistoryTaskDetails")
+            .withUri("/v1.0/cdn/historytasks/{history_tasks_id}/detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("history_tasks_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getHistoryTasksId, (req, v) -> {
+                req.setHistoryTasksId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            }));
+        builder.<Integer>withRequestField("page_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getPageNumber, (req, v) -> {
+                req.setPageNumber(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("url",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getUrl, (req, v) -> {
+                req.setUrl(v);
+            }));
+        builder.<Long>withRequestField("create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getCreateTime, (req, v) -> {
+                req.setCreateTime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHistoryTasksRequest, ShowHistoryTasksResponse> showHistoryTasks =
+        genForshowHistoryTasks();
+
+    private static HttpRequestDef<ShowHistoryTasksRequest, ShowHistoryTasksResponse> genForshowHistoryTasks() {
+        // basic
+        HttpRequestDef.Builder<ShowHistoryTasksRequest, ShowHistoryTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHistoryTasksRequest.class, ShowHistoryTasksResponse.class)
+                .withName("ShowHistoryTasks")
+                .withUri("/v1.0/cdn/historytasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            }));
+        builder.<Integer>withRequestField("page_number",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getPageNumber, (req, v) -> {
+                req.setPageNumber(v);
+            }));
+        builder.<ShowHistoryTasksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<Long>withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            }));
+        builder.<Long>withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            }));
+        builder.<String>withRequestField("order_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getOrderField, (req, v) -> {
+                req.setOrderField(v);
+            }));
+        builder.<String>withRequestField("order_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getOrderType, (req, v) -> {
+                req.setOrderType(v);
+            }));
+        builder.<ShowHistoryTasksRequest.FileTypeEnum>withRequestField("file_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.FileTypeEnum.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getFileType, (req, v) -> {
+                req.setFileType(v);
+            }));
+        builder.<ShowHistoryTasksRequest.TaskTypeEnum>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowHistoryTasksRequest.TaskTypeEnum.class),
+            f -> f.withMarshaller(ShowHistoryTasksRequest::getTaskType, (req, v) -> {
+                req.setTaskType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse> showTopDomainNames =
         genForshowTopDomainNames();
 
@@ -797,6 +1028,85 @@ public class CdnMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> showUrlTaskInfo =
+        genForshowUrlTaskInfo();
+
+    private static HttpRequestDef<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> genForshowUrlTaskInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowUrlTaskInfoRequest, ShowUrlTaskInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUrlTaskInfoRequest.class, ShowUrlTaskInfoResponse.class)
+                .withName("ShowUrlTaskInfo")
+                .withUri("/v1.0/cdn/contentgateway/url-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("url",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getUrl, (req, v) -> {
+                req.setUrl(v);
+            }));
+        builder.<String>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getTaskType, (req, v) -> {
+                req.setTaskType(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("file_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUrlTaskInfoRequest::getFileType, (req, v) -> {
+                req.setFileType(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowUrlTaskInfoResponse::getXRequestId, ShowUrlTaskInfoResponse::setXRequestId));
         return builder.build();
     }
 

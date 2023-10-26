@@ -136,7 +136,7 @@ public class BatchAddSharedTagsRequestBody {
     }
 
     /**
-     * 标签列表。 用户权限时该字段必选，op_service权限时和sys_tags二选一。
+     * 标签列表。 用户权限时该字段必选。如果有op_service权限时，tags和sys_tags二选一。
      * @return tags
      */
     public List<ResourceTag> getTags() {

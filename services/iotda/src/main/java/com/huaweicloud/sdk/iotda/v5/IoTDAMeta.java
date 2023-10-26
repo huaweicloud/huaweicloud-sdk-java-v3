@@ -2519,6 +2519,13 @@ public class IoTDAMeta {
             f -> f.withMarshaller(ListProductsRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
             }));
+        builder.<String>withRequestField("product_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductsRequest::getProductName, (req, v) -> {
+                req.setProductName(v);
+            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

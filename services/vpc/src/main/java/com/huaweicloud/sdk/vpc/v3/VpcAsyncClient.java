@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.AddSecurityGroupsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AddSecurityGroupsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddVpcExtendCidrRequest;
@@ -77,6 +79,8 @@ import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSecurityGroupsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSecurityGroupsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveVpcExtendCidrRequest;
@@ -133,6 +137,36 @@ public class VpcAsyncClient {
     public static ClientBuilder<VpcAsyncClient> newBuilder() {
         ClientBuilder<VpcAsyncClient> clientBuilder = new ClientBuilder<>(VpcAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 端口插入安全组
+     *
+     * 端口插入安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddSecurityGroupsRequest 请求对象
+     * @return CompletableFuture<AddSecurityGroupsResponse>
+     */
+    public CompletableFuture<AddSecurityGroupsResponse> addSecurityGroupsAsync(AddSecurityGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.addSecurityGroups);
+    }
+
+    /**
+     * 端口插入安全组
+     *
+     * 端口插入安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddSecurityGroupsRequest 请求对象
+     * @return AsyncInvoker<AddSecurityGroupsRequest, AddSecurityGroupsResponse>
+     */
+    public AsyncInvoker<AddSecurityGroupsRequest, AddSecurityGroupsResponse> addSecurityGroupsAsyncInvoker(
+        AddSecurityGroupsRequest request) {
+        return new AsyncInvoker<AddSecurityGroupsRequest, AddSecurityGroupsResponse>(request, VpcMeta.addSecurityGroups,
+            hcClient);
     }
 
     /**
@@ -812,6 +846,37 @@ public class VpcAsyncClient {
         MigrateSubNetworkInterfaceRequest request) {
         return new AsyncInvoker<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse>(request,
             VpcMeta.migrateSubNetworkInterface, hcClient);
+    }
+
+    /**
+     * 端口移除安全组
+     *
+     * 端口移除安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveSecurityGroupsRequest 请求对象
+     * @return CompletableFuture<RemoveSecurityGroupsResponse>
+     */
+    public CompletableFuture<RemoveSecurityGroupsResponse> removeSecurityGroupsAsync(
+        RemoveSecurityGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcMeta.removeSecurityGroups);
+    }
+
+    /**
+     * 端口移除安全组
+     *
+     * 端口移除安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveSecurityGroupsRequest 请求对象
+     * @return AsyncInvoker<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse>
+     */
+    public AsyncInvoker<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse> removeSecurityGroupsAsyncInvoker(
+        RemoveSecurityGroupsRequest request) {
+        return new AsyncInvoker<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse>(request,
+            VpcMeta.removeSecurityGroups, hcClient);
     }
 
     /**

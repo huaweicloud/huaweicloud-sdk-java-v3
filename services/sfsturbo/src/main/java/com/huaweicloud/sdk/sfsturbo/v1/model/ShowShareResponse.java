@@ -497,7 +497,7 @@ public class ShowShareResponse extends SdkResponse {
     }
 
     /**
-     * SFS Turbo文件系统的状态。'100'表示创建中，'200'表示可用，'303'表示创建失败。
+     * SFS Turbo文件系统的状态。'100'表示创建中，'200'表示可用，'303'表示创建失败，'800'表示实例被冻结。
      * @return status
      */
     public String getStatus() {
@@ -514,7 +514,7 @@ public class ShowShareResponse extends SdkResponse {
     }
 
     /**
-     * SFS Turbo文件系统的子状态。'121'表示扩容中，'221'表示扩容成功，'321'表示扩容失败。
+     * SFS Turbo文件系统的子状态。 '121'表示扩容中；'132'表示修改安全组中；'137'表示添加VPC中；'138'表示删除VPC中；'150'表示配置联动后端中；'151'表示删除联动后端配置中； '221'表示扩容成功；'232'表示修改安全组成功；'237'表示添加VPC成功；'238'表示删除VPC成功；'250'表示配置联动后端成功；'251'表示删除联动后端配置成功； '321'表示扩容失败；'332'表示修改安全组失败；'337'表示添加VPC失败；'338'表示删除VPC失败；'350'表示配置联动后端失败；'351'表示删除联动后端配置失败； 
      * @return subStatus
      */
     public String getSubStatus() {

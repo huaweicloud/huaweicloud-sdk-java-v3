@@ -112,6 +112,11 @@ public class ProtectionServerInfo {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_source")
+
+    private String hostSource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vault_id")
 
     private String vaultId;
@@ -519,6 +524,23 @@ public class ProtectionServerInfo {
         this.version = version;
     }
 
+    public ProtectionServerInfo withHostSource(String hostSource) {
+        this.hostSource = hostSource;
+        return this;
+    }
+
+    /**
+     * 服务器类型，包含如下3种输入。   - ecs ：ecs。   - outside ：线下主机。   - workspace ：云桌面。
+     * @return hostSource
+     */
+    public String getHostSource() {
+        return hostSource;
+    }
+
+    public void setHostSource(String hostSource) {
+        this.hostSource = hostSource;
+    }
+
     public ProtectionServerInfo withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
@@ -737,8 +759,9 @@ public class ProtectionServerInfo {
             && Objects.equals(this.countProtectEvent, that.countProtectEvent)
             && Objects.equals(this.countBackuped, that.countBackuped)
             && Objects.equals(this.agentStatus, that.agentStatus) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.vaultId, that.vaultId) && Objects.equals(this.vaultName, that.vaultName)
-            && Objects.equals(this.vaultSize, that.vaultSize) && Objects.equals(this.vaultUsed, that.vaultUsed)
+            && Objects.equals(this.hostSource, that.hostSource) && Objects.equals(this.vaultId, that.vaultId)
+            && Objects.equals(this.vaultName, that.vaultName) && Objects.equals(this.vaultSize, that.vaultSize)
+            && Objects.equals(this.vaultUsed, that.vaultUsed)
             && Objects.equals(this.vaultAllocated, that.vaultAllocated)
             && Objects.equals(this.vaultChargingMode, that.vaultChargingMode)
             && Objects.equals(this.vaultStatus, that.vaultStatus)
@@ -770,6 +793,7 @@ public class ProtectionServerInfo {
             countBackuped,
             agentStatus,
             version,
+            hostSource,
             vaultId,
             vaultName,
             vaultSize,
@@ -807,6 +831,7 @@ public class ProtectionServerInfo {
         sb.append("    countBackuped: ").append(toIndentedString(countBackuped)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    hostSource: ").append(toIndentedString(hostSource)).append("\n");
         sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
         sb.append("    vaultName: ").append(toIndentedString(vaultName)).append("\n");
         sb.append("    vaultSize: ").append(toIndentedString(vaultSize)).append("\n");

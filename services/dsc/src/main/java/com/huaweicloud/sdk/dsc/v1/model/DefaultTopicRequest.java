@@ -36,7 +36,7 @@ public class DefaultTopicRequest {
     }
 
     /**
-     * 告警主题id
+     * DSC告警主题ID（非消息通知服务主题ID）
      * @return id
      */
     public String getId() {

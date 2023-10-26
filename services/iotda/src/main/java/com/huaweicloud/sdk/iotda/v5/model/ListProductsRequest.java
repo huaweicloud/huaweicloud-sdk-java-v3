@@ -31,6 +31,11 @@ public class ListProductsRequest {
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_name")
+
+    private String productName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -105,6 +110,23 @@ public class ListProductsRequest {
         this.appId = appId;
     }
 
+    public ListProductsRequest withProductName(String productName) {
+        this.productName = productName;
+        return this;
+    }
+
+    /**
+     * **参数说明**：产品名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * @return productName
+     */
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
     public ListProductsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -135,12 +157,12 @@ public class ListProductsRequest {
         ListProductsRequest that = (ListProductsRequest) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.marker, that.marker) && Objects.equals(this.appId, that.appId)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.productName, that.productName) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, limit, marker, appId, offset);
+        return Objects.hash(instanceId, limit, marker, appId, productName, offset);
     }
 
     @Override
@@ -151,6 +173,7 @@ public class ListProductsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();

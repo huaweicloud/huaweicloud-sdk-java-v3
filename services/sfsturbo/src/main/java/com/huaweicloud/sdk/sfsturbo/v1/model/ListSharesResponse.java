@@ -17,19 +17,19 @@ public class ListSharesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shares")
 
-    private List<Shares> shares = null;
+    private List<ShareInfo> shares = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ListSharesResponse withShares(List<Shares> shares) {
+    public ListSharesResponse withShares(List<ShareInfo> shares) {
         this.shares = shares;
         return this;
     }
 
-    public ListSharesResponse addSharesItem(Shares sharesItem) {
+    public ListSharesResponse addSharesItem(ShareInfo sharesItem) {
         if (this.shares == null) {
             this.shares = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListSharesResponse extends SdkResponse {
         return this;
     }
 
-    public ListSharesResponse withShares(Consumer<List<Shares>> sharesSetter) {
+    public ListSharesResponse withShares(Consumer<List<ShareInfo>> sharesSetter) {
         if (this.shares == null) {
             this.shares = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListSharesResponse extends SdkResponse {
      * SFS Turbo文件系统的列表。
      * @return shares
      */
-    public List<Shares> getShares() {
+    public List<ShareInfo> getShares() {
         return shares;
     }
 
-    public void setShares(List<Shares> shares) {
+    public void setShares(List<ShareInfo> shares) {
         this.shares = shares;
     }
 

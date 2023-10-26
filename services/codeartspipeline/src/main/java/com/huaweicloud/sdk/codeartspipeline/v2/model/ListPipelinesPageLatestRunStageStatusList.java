@@ -35,6 +35,11 @@ public class ListPipelinesPageLatestRunStageStatusList {
 
     private String endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
     public ListPipelinesPageLatestRunStageStatusList withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +125,23 @@ public class ListPipelinesPageLatestRunStageStatusList {
         this.endTime = endTime;
     }
 
+    public ListPipelinesPageLatestRunStageStatusList withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 阶段ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,12 @@ public class ListPipelinesPageLatestRunStageStatusList {
         ListPipelinesPageLatestRunStageStatusList that = (ListPipelinesPageLatestRunStageStatusList) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.sequence, that.sequence)
             && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, sequence, status, startTime, endTime);
+        return Objects.hash(name, sequence, status, startTime, endTime, id);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class ListPipelinesPageLatestRunStageStatusList {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -86,6 +86,11 @@ public class ListHostStatusRequest {
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_intrusion")
+
+    private Boolean hasIntrusion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_group_id")
 
     private String policyGroupId;
@@ -129,6 +134,11 @@ public class ListHostStatusRequest {
     @JsonProperty(value = "server_group")
 
     private String serverGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_upgradable")
+
+    private Boolean agentUpgradable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -395,6 +405,23 @@ public class ListHostStatusRequest {
         this.region = region;
     }
 
+    public ListHostStatusRequest withHasIntrusion(Boolean hasIntrusion) {
+        this.hasIntrusion = hasIntrusion;
+        return this;
+    }
+
+    /**
+     * 存在告警事件
+     * @return hasIntrusion
+     */
+    public Boolean getHasIntrusion() {
+        return hasIntrusion;
+    }
+
+    public void setHasIntrusion(Boolean hasIntrusion) {
+        this.hasIntrusion = hasIntrusion;
+    }
+
     public ListHostStatusRequest withPolicyGroupId(String policyGroupId) {
         this.policyGroupId = policyGroupId;
         return this;
@@ -548,6 +575,23 @@ public class ListHostStatusRequest {
         this.serverGroup = serverGroup;
     }
 
+    public ListHostStatusRequest withAgentUpgradable(Boolean agentUpgradable) {
+        this.agentUpgradable = agentUpgradable;
+        return this;
+    }
+
+    /**
+     * agent是否可升级
+     * @return agentUpgradable
+     */
+    public Boolean getAgentUpgradable() {
+        return agentUpgradable;
+    }
+
+    public void setAgentUpgradable(Boolean agentUpgradable) {
+        this.agentUpgradable = agentUpgradable;
+    }
+
     public ListHostStatusRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -603,13 +647,15 @@ public class ListHostStatusRequest {
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.ipAddr, that.ipAddr)
             && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.hasIntrusion, that.hasIntrusion)
             && Objects.equals(this.policyGroupId, that.policyGroupId)
             && Objects.equals(this.policyGroupName, that.policyGroupName)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.refresh, that.refresh)
             && Objects.equals(this.aboveVersion, that.aboveVersion)
             && Objects.equals(this.outsideHost, that.outsideHost) && Objects.equals(this.assetValue, that.assetValue)
             && Objects.equals(this.label, that.label) && Objects.equals(this.serverGroup, that.serverGroup)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.agentUpgradable, that.agentUpgradable) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
@@ -629,6 +675,7 @@ public class ListHostStatusRequest {
             groupId,
             groupName,
             region,
+            hasIntrusion,
             policyGroupId,
             policyGroupName,
             chargingMode,
@@ -638,6 +685,7 @@ public class ListHostStatusRequest {
             assetValue,
             label,
             serverGroup,
+            agentUpgradable,
             limit,
             offset);
     }
@@ -661,6 +709,7 @@ public class ListHostStatusRequest {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    hasIntrusion: ").append(toIndentedString(hasIntrusion)).append("\n");
         sb.append("    policyGroupId: ").append(toIndentedString(policyGroupId)).append("\n");
         sb.append("    policyGroupName: ").append(toIndentedString(policyGroupName)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
@@ -670,6 +719,7 @@ public class ListHostStatusRequest {
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("    serverGroup: ").append(toIndentedString(serverGroup)).append("\n");
+        sb.append("    agentUpgradable: ").append(toIndentedString(agentUpgradable)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

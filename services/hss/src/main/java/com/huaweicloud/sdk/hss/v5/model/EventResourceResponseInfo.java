@@ -56,6 +56,36 @@ public class EventResourceResponseInfo {
     private String containerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_status")
+
+    private String containerStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pod_uid")
+
+    private String podUid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pod_name")
+
+    private String podName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_name")
+
+    private String clusterName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
 
     private String imageId;
@@ -258,6 +288,108 @@ public class EventResourceResponseInfo {
         this.containerId = containerId;
     }
 
+    public EventResourceResponseInfo withContainerStatus(String containerStatus) {
+        this.containerStatus = containerStatus;
+        return this;
+    }
+
+    /**
+     * 容器状态
+     * @return containerStatus
+     */
+    public String getContainerStatus() {
+        return containerStatus;
+    }
+
+    public void setContainerStatus(String containerStatus) {
+        this.containerStatus = containerStatus;
+    }
+
+    public EventResourceResponseInfo withPodUid(String podUid) {
+        this.podUid = podUid;
+        return this;
+    }
+
+    /**
+     * pod uid
+     * @return podUid
+     */
+    public String getPodUid() {
+        return podUid;
+    }
+
+    public void setPodUid(String podUid) {
+        this.podUid = podUid;
+    }
+
+    public EventResourceResponseInfo withPodName(String podName) {
+        this.podName = podName;
+        return this;
+    }
+
+    /**
+     * pod name
+     * @return podName
+     */
+    public String getPodName() {
+        return podName;
+    }
+
+    public void setPodName(String podName) {
+        this.podName = podName;
+    }
+
+    public EventResourceResponseInfo withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    /**
+     * namespace
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public EventResourceResponseInfo withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * 集群id
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    public EventResourceResponseInfo withClusterName(String clusterName) {
+        this.clusterName = clusterName;
+        return this;
+    }
+
+    /**
+     * 集群名称
+     * @return clusterName
+     */
+    public String getClusterName() {
+        return clusterName;
+    }
+
+    public void setClusterName(String clusterName) {
+        this.clusterName = clusterName;
+    }
+
     public EventResourceResponseInfo withImageId(String imageId) {
         this.imageId = imageId;
         return this;
@@ -442,6 +574,9 @@ public class EventResourceResponseInfo {
             && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.cloudId, that.cloudId) && Objects.equals(this.vmName, that.vmName)
             && Objects.equals(this.vmUuid, that.vmUuid) && Objects.equals(this.containerId, that.containerId)
+            && Objects.equals(this.containerStatus, that.containerStatus) && Objects.equals(this.podUid, that.podUid)
+            && Objects.equals(this.podName, that.podName) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageName, that.imageName)
             && Objects.equals(this.hostAttr, that.hostAttr) && Objects.equals(this.service, that.service)
             && Objects.equals(this.microService, that.microService) && Objects.equals(this.sysArch, that.sysArch)
@@ -460,6 +595,12 @@ public class EventResourceResponseInfo {
             vmName,
             vmUuid,
             containerId,
+            containerStatus,
+            podUid,
+            podName,
+            namespace,
+            clusterId,
+            clusterName,
             imageId,
             imageName,
             hostAttr,
@@ -485,6 +626,12 @@ public class EventResourceResponseInfo {
         sb.append("    vmName: ").append(toIndentedString(vmName)).append("\n");
         sb.append("    vmUuid: ").append(toIndentedString(vmUuid)).append("\n");
         sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
+        sb.append("    containerStatus: ").append(toIndentedString(containerStatus)).append("\n");
+        sb.append("    podUid: ").append(toIndentedString(podUid)).append("\n");
+        sb.append("    podName: ").append(toIndentedString(podName)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    hostAttr: ").append(toIndentedString(hostAttr)).append("\n");

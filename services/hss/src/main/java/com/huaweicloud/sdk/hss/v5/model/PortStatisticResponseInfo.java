@@ -25,6 +25,11 @@ public class PortStatisticResponseInfo {
 
     private Integer num;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
     public PortStatisticResponseInfo withPort(Integer port) {
         this.port = port;
         return this;
@@ -80,6 +85,23 @@ public class PortStatisticResponseInfo {
         this.num = num;
     }
 
+    public PortStatisticResponseInfo withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 危险类型:danger/unknown
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -90,12 +112,12 @@ public class PortStatisticResponseInfo {
         }
         PortStatisticResponseInfo that = (PortStatisticResponseInfo) obj;
         return Objects.equals(this.port, that.port) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.num, that.num);
+            && Objects.equals(this.num, that.num) && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(port, type, num);
+        return Objects.hash(port, type, num, status);
     }
 
     @Override
@@ -105,6 +127,7 @@ public class PortStatisticResponseInfo {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

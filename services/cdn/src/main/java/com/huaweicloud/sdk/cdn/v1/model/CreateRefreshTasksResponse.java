@@ -22,7 +22,7 @@ public class CreateRefreshTasksResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID
+     * 任务ID。
      * @return refreshTask
      */
     public String getRefreshTask() {

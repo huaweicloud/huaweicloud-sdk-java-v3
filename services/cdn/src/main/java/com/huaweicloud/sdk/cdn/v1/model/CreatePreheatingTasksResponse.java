@@ -22,7 +22,7 @@ public class CreatePreheatingTasksResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID
+     * 任务ID。
      * @return preheatingTask
      */
     public String getPreheatingTask() {

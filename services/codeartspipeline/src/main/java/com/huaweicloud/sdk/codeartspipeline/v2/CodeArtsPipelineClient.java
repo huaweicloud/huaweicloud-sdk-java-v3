@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.codeartspipeline.v2;
 
+import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusRequest;
@@ -8,6 +10,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdR
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineRunsRequest;
@@ -22,8 +26,12 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipleineBuildResultRequ
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipleineBuildResultResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
@@ -57,6 +65,36 @@ public class CodeArtsPipelineClient {
     public static ClientBuilder<CodeArtsPipelineClient> newBuilder() {
         ClientBuilder<CodeArtsPipelineClient> clientBuilder = new ClientBuilder<>(CodeArtsPipelineClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 通过人工审核
+     *
+     * 通过人工审核
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AcceptManualReviewRequest 请求对象
+     * @return AcceptManualReviewResponse
+     */
+    public AcceptManualReviewResponse acceptManualReview(AcceptManualReviewRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.acceptManualReview);
+    }
+
+    /**
+     * 通过人工审核
+     *
+     * 通过人工审核
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AcceptManualReviewRequest 请求对象
+     * @return SyncInvoker<AcceptManualReviewRequest, AcceptManualReviewResponse>
+     */
+    public SyncInvoker<AcceptManualReviewRequest, AcceptManualReviewResponse> acceptManualReviewInvoker(
+        AcceptManualReviewRequest request) {
+        return new SyncInvoker<AcceptManualReviewRequest, AcceptManualReviewResponse>(request,
+            CodeArtsPipelineMeta.acceptManualReview, hcClient);
     }
 
     /**
@@ -178,6 +216,36 @@ public class CodeArtsPipelineClient {
         CreatePipelineByTemplateIdRequest request) {
         return new SyncInvoker<CreatePipelineByTemplateIdRequest, CreatePipelineByTemplateIdResponse>(request,
             CodeArtsPipelineMeta.createPipelineByTemplateId, hcClient);
+    }
+
+    /**
+     * 创建流水线
+     *
+     * 创建流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineNewRequest 请求对象
+     * @return CreatePipelineNewResponse
+     */
+    public CreatePipelineNewResponse createPipelineNew(CreatePipelineNewRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.createPipelineNew);
+    }
+
+    /**
+     * 创建流水线
+     *
+     * 创建流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineNewRequest 请求对象
+     * @return SyncInvoker<CreatePipelineNewRequest, CreatePipelineNewResponse>
+     */
+    public SyncInvoker<CreatePipelineNewRequest, CreatePipelineNewResponse> createPipelineNewInvoker(
+        CreatePipelineNewRequest request) {
+        return new SyncInvoker<CreatePipelineNewRequest, CreatePipelineNewResponse>(request,
+            CodeArtsPipelineMeta.createPipelineNew, hcClient);
     }
 
     /**
@@ -389,6 +457,36 @@ public class CodeArtsPipelineClient {
     }
 
     /**
+     * 驳回人工审核
+     *
+     * 驳回人工审核
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RejectManualReviewRequest 请求对象
+     * @return RejectManualReviewResponse
+     */
+    public RejectManualReviewResponse rejectManualReview(RejectManualReviewRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.rejectManualReview);
+    }
+
+    /**
+     * 驳回人工审核
+     *
+     * 驳回人工审核
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RejectManualReviewRequest 请求对象
+     * @return SyncInvoker<RejectManualReviewRequest, RejectManualReviewResponse>
+     */
+    public SyncInvoker<RejectManualReviewRequest, RejectManualReviewResponse> rejectManualReviewInvoker(
+        RejectManualReviewRequest request) {
+        return new SyncInvoker<RejectManualReviewRequest, RejectManualReviewResponse>(request,
+            CodeArtsPipelineMeta.rejectManualReview, hcClient);
+    }
+
+    /**
      * 删除流水线
      *
      * 根据id删除流水线
@@ -416,6 +514,36 @@ public class CodeArtsPipelineClient {
         RemovePipelineRequest request) {
         return new SyncInvoker<RemovePipelineRequest, RemovePipelineResponse>(request,
             CodeArtsPipelineMeta.removePipeline, hcClient);
+    }
+
+    /**
+     * 重试运行流水线
+     *
+     * 重试运行流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryPipelineRunRequest 请求对象
+     * @return RetryPipelineRunResponse
+     */
+    public RetryPipelineRunResponse retryPipelineRun(RetryPipelineRunRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.retryPipelineRun);
+    }
+
+    /**
+     * 重试运行流水线
+     *
+     * 重试运行流水线
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RetryPipelineRunRequest 请求对象
+     * @return SyncInvoker<RetryPipelineRunRequest, RetryPipelineRunResponse>
+     */
+    public SyncInvoker<RetryPipelineRunRequest, RetryPipelineRunResponse> retryPipelineRunInvoker(
+        RetryPipelineRunRequest request) {
+        return new SyncInvoker<RetryPipelineRunRequest, RetryPipelineRunResponse>(request,
+            CodeArtsPipelineMeta.retryPipelineRun, hcClient);
     }
 
     /**

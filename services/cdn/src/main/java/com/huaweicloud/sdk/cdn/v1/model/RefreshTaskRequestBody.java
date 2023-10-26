@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class RefreshTaskRequestBody {
 
     /**
-     * 刷新的类型，其值可以为file 或directory，默认为file
+     * 刷新的类型，其值可以为file：文件，或directory：目录，默认为file。
      */
     public static final class TypeEnum {
 
@@ -169,6 +169,11 @@ public class RefreshTaskRequestBody {
     private ModeEnum mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "zh_url_encode")
+
+    private Boolean zhUrlEncode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "urls")
 
     private List<String> urls = null;
@@ -179,7 +184,7 @@ public class RefreshTaskRequestBody {
     }
 
     /**
-     * 刷新的类型，其值可以为file 或directory，默认为file
+     * 刷新的类型，其值可以为file：文件，或directory：目录，默认为file。
      * @return type
      */
     public TypeEnum getType() {
@@ -207,6 +212,23 @@ public class RefreshTaskRequestBody {
         this.mode = mode;
     }
 
+    public RefreshTaskRequestBody withZhUrlEncode(Boolean zhUrlEncode) {
+        this.zhUrlEncode = zhUrlEncode;
+        return this;
+    }
+
+    /**
+     * 是否对url中的中文字符进行编码后刷新，false代表不开启，true代表开启，开启后仅刷新转码后的URL。
+     * @return zhUrlEncode
+     */
+    public Boolean getZhUrlEncode() {
+        return zhUrlEncode;
+    }
+
+    public void setZhUrlEncode(Boolean zhUrlEncode) {
+        this.zhUrlEncode = zhUrlEncode;
+    }
+
     public RefreshTaskRequestBody withUrls(List<String> urls) {
         this.urls = urls;
         return this;
@@ -229,7 +251,7 @@ public class RefreshTaskRequestBody {
     }
 
     /**
-     * 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url。 >   如果您需要刷新的URL中有中文，请同时刷新中文URL和转码后的URL。
+     * 需要刷新的URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为4096字符，单次最多输入1000个url，如果输入的是目录，支持100个目录刷新。  >   如果您需要刷新的URL中有中文，请同时刷新中文URL和转码后的URL。 
      * @return urls
      */
     public List<String> getUrls() {
@@ -250,12 +272,12 @@ public class RefreshTaskRequestBody {
         }
         RefreshTaskRequestBody that = (RefreshTaskRequestBody) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.mode, that.mode)
-            && Objects.equals(this.urls, that.urls);
+            && Objects.equals(this.zhUrlEncode, that.zhUrlEncode) && Objects.equals(this.urls, that.urls);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, mode, urls);
+        return Objects.hash(type, mode, zhUrlEncode, urls);
     }
 
     @Override
@@ -264,6 +286,7 @@ public class RefreshTaskRequestBody {
         sb.append("class RefreshTaskRequestBody {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    zhUrlEncode: ").append(toIndentedString(zhUrlEncode)).append("\n");
         sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
         sb.append("}");
         return sb.toString();

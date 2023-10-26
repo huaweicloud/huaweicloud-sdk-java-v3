@@ -36,6 +36,9 @@ public class AomRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://aom.ap-southeast-3.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://aom.ap-southeast-4.myhuaweicloud.com");
+
     public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://aom.cn-north-2.myhuaweicloud.com");
 
     public static final Region RU_NORTHWEST_2 =
@@ -55,6 +58,8 @@ public class AomRegion {
 
     public static final Region TR_WEST_1 = new Region("tr-west-1", "https://aom.tr-west-1.myhuaweicloud.com");
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://aom.eu-west-101.myhuaweicloud.eu");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("AOM");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -71,6 +76,7 @@ public class AomRegion {
         map.put("af-south-1", AF_SOUTH_1);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("cn-north-2", CN_NORTH_2);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
         map.put("la-south-2", LA_SOUTH_2);
@@ -80,6 +86,7 @@ public class AomRegion {
         map.put("cn-south-2", CN_SOUTH_2);
         map.put("na-mexico-1", NA_MEXICO_1);
         map.put("tr-west-1", TR_WEST_1);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

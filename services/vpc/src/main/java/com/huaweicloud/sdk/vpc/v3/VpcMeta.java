@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AddFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.AddSecurityGroupsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.AddSecurityGroupsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.AddSecurityGroupsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.AddSourcesToTrafficMirrorSessionResponse;
@@ -97,6 +100,9 @@ import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveFirewallRulesResponse;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSecurityGroupsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSecurityGroupsRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.RemoveSecurityGroupsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.RemoveSourcesFromTrafficMirrorSessionResponse;
@@ -155,6 +161,38 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class VpcMeta {
+
+    public static final HttpRequestDef<AddSecurityGroupsRequest, AddSecurityGroupsResponse> addSecurityGroups =
+        genForaddSecurityGroups();
+
+    private static HttpRequestDef<AddSecurityGroupsRequest, AddSecurityGroupsResponse> genForaddSecurityGroups() {
+        // basic
+        HttpRequestDef.Builder<AddSecurityGroupsRequest, AddSecurityGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AddSecurityGroupsRequest.class, AddSecurityGroupsResponse.class)
+                .withName("AddSecurityGroups")
+                .withUri("/v3/{project_id}/ports/{port_id}/insert-security-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddSecurityGroupsRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            }));
+        builder.<AddSecurityGroupsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddSecurityGroupsRequestBody.class),
+            f -> f.withMarshaller(AddSecurityGroupsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<AddSourcesToTrafficMirrorSessionRequest, AddSourcesToTrafficMirrorSessionResponse> addSourcesToTrafficMirrorSession =
         genForaddSourcesToTrafficMirrorSession();
@@ -1092,6 +1130,38 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MigrateSubNetworkInterfaceRequestBody.class),
             f -> f.withMarshaller(MigrateSubNetworkInterfaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse> removeSecurityGroups =
+        genForremoveSecurityGroups();
+
+    private static HttpRequestDef<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse> genForremoveSecurityGroups() {
+        // basic
+        HttpRequestDef.Builder<RemoveSecurityGroupsRequest, RemoveSecurityGroupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, RemoveSecurityGroupsRequest.class, RemoveSecurityGroupsResponse.class)
+            .withName("RemoveSecurityGroups")
+            .withUri("/v3/{project_id}/ports/{port_id}/remove-security-groups")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveSecurityGroupsRequest::getPortId, (req, v) -> {
+                req.setPortId(v);
+            }));
+        builder.<RemoveSecurityGroupsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemoveSecurityGroupsRequestBody.class),
+            f -> f.withMarshaller(RemoveSecurityGroupsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

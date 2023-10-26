@@ -33,6 +33,11 @@ public class PipelineByTemplateDTO {
 
     private List<CodeSource> sources = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "variables")
+
+    private List<PipelineByTemplateDTOVariables> variables = null;
+
     public PipelineByTemplateDTO withName(String name) {
         this.name = name;
         return this;
@@ -117,6 +122,39 @@ public class PipelineByTemplateDTO {
         this.sources = sources;
     }
 
+    public PipelineByTemplateDTO withVariables(List<PipelineByTemplateDTOVariables> variables) {
+        this.variables = variables;
+        return this;
+    }
+
+    public PipelineByTemplateDTO addVariablesItem(PipelineByTemplateDTOVariables variablesItem) {
+        if (this.variables == null) {
+            this.variables = new ArrayList<>();
+        }
+        this.variables.add(variablesItem);
+        return this;
+    }
+
+    public PipelineByTemplateDTO withVariables(Consumer<List<PipelineByTemplateDTOVariables>> variablesSetter) {
+        if (this.variables == null) {
+            this.variables = new ArrayList<>();
+        }
+        variablesSetter.accept(this.variables);
+        return this;
+    }
+
+    /**
+     * 流水线参数
+     * @return variables
+     */
+    public List<PipelineByTemplateDTOVariables> getVariables() {
+        return variables;
+    }
+
+    public void setVariables(List<PipelineByTemplateDTOVariables> variables) {
+        this.variables = variables;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +165,13 @@ public class PipelineByTemplateDTO {
         }
         PipelineByTemplateDTO that = (PipelineByTemplateDTO) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.isPublish, that.isPublish) && Objects.equals(this.sources, that.sources);
+            && Objects.equals(this.isPublish, that.isPublish) && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.variables, that.variables);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, isPublish, sources);
+        return Objects.hash(name, description, isPublish, sources, variables);
     }
 
     @Override
@@ -143,6 +182,7 @@ public class PipelineByTemplateDTO {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    isPublish: ").append(toIndentedString(isPublish)).append("\n");
         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
+        sb.append("    variables: ").append(toIndentedString(variables)).append("\n");
         sb.append("}");
         return sb.toString();
     }

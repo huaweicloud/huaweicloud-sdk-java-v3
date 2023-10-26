@@ -9,38 +9,76 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateBackendTargetRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateBackendTargetResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRuleRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteBackendTargetRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteBackendTargetResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeletePermRuleRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeletePermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteSharedTagRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteSharedTagResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ExpandShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ExpandShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListBackendTargetsRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListBackendTargetsResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListFsTasksRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListFsTasksResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListHpcCacheTasksRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListHpcCacheTasksResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.SetHpcCacheBackendRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.SetHpcCacheBackendResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowBackendTargetInfoRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowBackendTargetInfoResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirUsageRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirUsageResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowHpcCacheTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowHpcCacheTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -156,9 +194,39 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 创建文件系统后端存储库
+     *
+     * 创建文件系统后端存储库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBackendTargetRequest 请求对象
+     * @return CompletableFuture<CreateBackendTargetResponse>
+     */
+    public CompletableFuture<CreateBackendTargetResponse> createBackendTargetAsync(CreateBackendTargetRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.createBackendTarget);
+    }
+
+    /**
+     * 创建文件系统后端存储库
+     *
+     * 创建文件系统后端存储库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBackendTargetRequest 请求对象
+     * @return AsyncInvoker<CreateBackendTargetRequest, CreateBackendTargetResponse>
+     */
+    public AsyncInvoker<CreateBackendTargetRequest, CreateBackendTargetResponse> createBackendTargetAsyncInvoker(
+        CreateBackendTargetRequest request) {
+        return new AsyncInvoker<CreateBackendTargetRequest, CreateBackendTargetResponse>(request,
+            SFSTurboMeta.createBackendTarget, hcClient);
+    }
+
+    /**
      * 创建目录
      *
-     * 创建目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 创建目录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -172,7 +240,7 @@ public class SFSTurboAsyncClient {
     /**
      * 创建目录
      *
-     * 创建目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 创建目录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -186,7 +254,7 @@ public class SFSTurboAsyncClient {
     /**
      * 创建目标文件夹quota
      *
-     * 创建目标文件夹quota。只支持对空目录设置目录quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 创建目标文件夹quota。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -200,7 +268,7 @@ public class SFSTurboAsyncClient {
     /**
      * 创建目标文件夹quota
      *
-     * 创建目标文件夹quota。只支持对空目录设置目录quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 创建目标文件夹quota。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -211,6 +279,96 @@ public class SFSTurboAsyncClient {
         CreateFsDirQuotaRequest request) {
         return new AsyncInvoker<CreateFsDirQuotaRequest, CreateFsDirQuotaResponse>(request,
             SFSTurboMeta.createFsDirQuota, hcClient);
+    }
+
+    /**
+     * 创建文件系统异步任务
+     *
+     * 创建文件系统异步任务（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsTaskRequest 请求对象
+     * @return CompletableFuture<CreateFsTaskResponse>
+     */
+    public CompletableFuture<CreateFsTaskResponse> createFsTaskAsync(CreateFsTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.createFsTask);
+    }
+
+    /**
+     * 创建文件系统异步任务
+     *
+     * 创建文件系统异步任务（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFsTaskRequest 请求对象
+     * @return AsyncInvoker<CreateFsTaskRequest, CreateFsTaskResponse>
+     */
+    public AsyncInvoker<CreateFsTaskRequest, CreateFsTaskResponse> createFsTaskAsyncInvoker(
+        CreateFsTaskRequest request) {
+        return new AsyncInvoker<CreateFsTaskRequest, CreateFsTaskResponse>(request, SFSTurboMeta.createFsTask,
+            hcClient);
+    }
+
+    /**
+     * 创建SFSTurbo 和 OBS 之间的联动任务
+     *
+     * 创建SFSTurbo 和 OBS 之间的联动任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateHpcCacheTaskRequest 请求对象
+     * @return CompletableFuture<CreateHpcCacheTaskResponse>
+     */
+    public CompletableFuture<CreateHpcCacheTaskResponse> createHpcCacheTaskAsync(CreateHpcCacheTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.createHpcCacheTask);
+    }
+
+    /**
+     * 创建SFSTurbo 和 OBS 之间的联动任务
+     *
+     * 创建SFSTurbo 和 OBS 之间的联动任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateHpcCacheTaskRequest 请求对象
+     * @return AsyncInvoker<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse>
+     */
+    public AsyncInvoker<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse> createHpcCacheTaskAsyncInvoker(
+        CreateHpcCacheTaskRequest request) {
+        return new AsyncInvoker<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse>(request,
+            SFSTurboMeta.createHpcCacheTask, hcClient);
+    }
+
+    /**
+     * 创建权限规则
+     *
+     * 创建权限规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePermRuleRequest 请求对象
+     * @return CompletableFuture<CreatePermRuleResponse>
+     */
+    public CompletableFuture<CreatePermRuleResponse> createPermRuleAsync(CreatePermRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.createPermRule);
+    }
+
+    /**
+     * 创建权限规则
+     *
+     * 创建权限规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePermRuleRequest 请求对象
+     * @return AsyncInvoker<CreatePermRuleRequest, CreatePermRuleResponse>
+     */
+    public AsyncInvoker<CreatePermRuleRequest, CreatePermRuleResponse> createPermRuleAsyncInvoker(
+        CreatePermRuleRequest request) {
+        return new AsyncInvoker<CreatePermRuleRequest, CreatePermRuleResponse>(request, SFSTurboMeta.createPermRule,
+            hcClient);
     }
 
     /**
@@ -278,9 +436,39 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 删除文件系统后端存储库
+     *
+     * 删除文件系统后端存储库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBackendTargetRequest 请求对象
+     * @return CompletableFuture<DeleteBackendTargetResponse>
+     */
+    public CompletableFuture<DeleteBackendTargetResponse> deleteBackendTargetAsync(DeleteBackendTargetRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.deleteBackendTarget);
+    }
+
+    /**
+     * 删除文件系统后端存储库
+     *
+     * 删除文件系统后端存储库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBackendTargetRequest 请求对象
+     * @return AsyncInvoker<DeleteBackendTargetRequest, DeleteBackendTargetResponse>
+     */
+    public AsyncInvoker<DeleteBackendTargetRequest, DeleteBackendTargetResponse> deleteBackendTargetAsyncInvoker(
+        DeleteBackendTargetRequest request) {
+        return new AsyncInvoker<DeleteBackendTargetRequest, DeleteBackendTargetResponse>(request,
+            SFSTurboMeta.deleteBackendTarget, hcClient);
+    }
+
+    /**
      * 删除文件系统目录
      *
-     * 删除文件系统目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 删除文件系统目录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -294,7 +482,7 @@ public class SFSTurboAsyncClient {
     /**
      * 删除文件系统目录
      *
-     * 删除文件系统目录 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 删除文件系统目录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -308,7 +496,7 @@ public class SFSTurboAsyncClient {
     /**
      * 删除目标文件夹quota
      *
-     * 删除目标文件夹quota。只支持对空目录进行删除quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 删除目标文件夹quota。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -322,7 +510,7 @@ public class SFSTurboAsyncClient {
     /**
      * 删除目标文件夹quota
      *
-     * 删除目标文件夹quota。只支持对空目录进行删除quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 删除目标文件夹quota。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -333,6 +521,66 @@ public class SFSTurboAsyncClient {
         DeleteFsDirQuotaRequest request) {
         return new AsyncInvoker<DeleteFsDirQuotaRequest, DeleteFsDirQuotaResponse>(request,
             SFSTurboMeta.deleteFsDirQuota, hcClient);
+    }
+
+    /**
+     * 取消/删除文件系统异步任务
+     *
+     * 如果异步任务正在执行，则取消并删除任务；否则，删除任务。（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsTaskRequest 请求对象
+     * @return CompletableFuture<DeleteFsTaskResponse>
+     */
+    public CompletableFuture<DeleteFsTaskResponse> deleteFsTaskAsync(DeleteFsTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.deleteFsTask);
+    }
+
+    /**
+     * 取消/删除文件系统异步任务
+     *
+     * 如果异步任务正在执行，则取消并删除任务；否则，删除任务。（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFsTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteFsTaskRequest, DeleteFsTaskResponse>
+     */
+    public AsyncInvoker<DeleteFsTaskRequest, DeleteFsTaskResponse> deleteFsTaskAsyncInvoker(
+        DeleteFsTaskRequest request) {
+        return new AsyncInvoker<DeleteFsTaskRequest, DeleteFsTaskResponse>(request, SFSTurboMeta.deleteFsTask,
+            hcClient);
+    }
+
+    /**
+     * 删除权限规则
+     *
+     * 删除权限规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePermRuleRequest 请求对象
+     * @return CompletableFuture<DeletePermRuleResponse>
+     */
+    public CompletableFuture<DeletePermRuleResponse> deletePermRuleAsync(DeletePermRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.deletePermRule);
+    }
+
+    /**
+     * 删除权限规则
+     *
+     * 删除权限规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePermRuleRequest 请求对象
+     * @return AsyncInvoker<DeletePermRuleRequest, DeletePermRuleResponse>
+     */
+    public AsyncInvoker<DeletePermRuleRequest, DeletePermRuleResponse> deletePermRuleAsyncInvoker(
+        DeletePermRuleRequest request) {
+        return new AsyncInvoker<DeletePermRuleRequest, DeletePermRuleResponse>(request, SFSTurboMeta.deletePermRule,
+            hcClient);
     }
 
     /**
@@ -422,6 +670,124 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 查询文件系统后端存储库列表
+     *
+     * 查询文件系统后端存储库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBackendTargetsRequest 请求对象
+     * @return CompletableFuture<ListBackendTargetsResponse>
+     */
+    public CompletableFuture<ListBackendTargetsResponse> listBackendTargetsAsync(ListBackendTargetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.listBackendTargets);
+    }
+
+    /**
+     * 查询文件系统后端存储库列表
+     *
+     * 查询文件系统后端存储库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBackendTargetsRequest 请求对象
+     * @return AsyncInvoker<ListBackendTargetsRequest, ListBackendTargetsResponse>
+     */
+    public AsyncInvoker<ListBackendTargetsRequest, ListBackendTargetsResponse> listBackendTargetsAsyncInvoker(
+        ListBackendTargetsRequest request) {
+        return new AsyncInvoker<ListBackendTargetsRequest, ListBackendTargetsResponse>(request,
+            SFSTurboMeta.listBackendTargets, hcClient);
+    }
+
+    /**
+     * 获取文件系统异步任务列表
+     *
+     * 获取文件系统异步任务列表（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFsTasksRequest 请求对象
+     * @return CompletableFuture<ListFsTasksResponse>
+     */
+    public CompletableFuture<ListFsTasksResponse> listFsTasksAsync(ListFsTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.listFsTasks);
+    }
+
+    /**
+     * 获取文件系统异步任务列表
+     *
+     * 获取文件系统异步任务列表（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFsTasksRequest 请求对象
+     * @return AsyncInvoker<ListFsTasksRequest, ListFsTasksResponse>
+     */
+    public AsyncInvoker<ListFsTasksRequest, ListFsTasksResponse> listFsTasksAsyncInvoker(ListFsTasksRequest request) {
+        return new AsyncInvoker<ListFsTasksRequest, ListFsTasksResponse>(request, SFSTurboMeta.listFsTasks, hcClient);
+    }
+
+    /**
+     * 查询联动任务详情列表
+     *
+     * 查询联动任务详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListHpcCacheTasksRequest 请求对象
+     * @return CompletableFuture<ListHpcCacheTasksResponse>
+     */
+    public CompletableFuture<ListHpcCacheTasksResponse> listHpcCacheTasksAsync(ListHpcCacheTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.listHpcCacheTasks);
+    }
+
+    /**
+     * 查询联动任务详情列表
+     *
+     * 查询联动任务详情列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListHpcCacheTasksRequest 请求对象
+     * @return AsyncInvoker<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse>
+     */
+    public AsyncInvoker<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse> listHpcCacheTasksAsyncInvoker(
+        ListHpcCacheTasksRequest request) {
+        return new AsyncInvoker<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse>(request,
+            SFSTurboMeta.listHpcCacheTasks, hcClient);
+    }
+
+    /**
+     * 查询文件系统的权限规则列表
+     *
+     * 查询文件系统的权限规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPermRulesRequest 请求对象
+     * @return CompletableFuture<ListPermRulesResponse>
+     */
+    public CompletableFuture<ListPermRulesResponse> listPermRulesAsync(ListPermRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.listPermRules);
+    }
+
+    /**
+     * 查询文件系统的权限规则列表
+     *
+     * 查询文件系统的权限规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPermRulesRequest 请求对象
+     * @return AsyncInvoker<ListPermRulesRequest, ListPermRulesResponse>
+     */
+    public AsyncInvoker<ListPermRulesRequest, ListPermRulesResponse> listPermRulesAsyncInvoker(
+        ListPermRulesRequest request) {
+        return new AsyncInvoker<ListPermRulesRequest, ListPermRulesResponse>(request, SFSTurboMeta.listPermRules,
+            hcClient);
+    }
+
+    /**
      * 查询租户所有共享的标签
      *
      * 查询租户所有共享的标签集合。
@@ -480,9 +846,70 @@ public class SFSTurboAsyncClient {
     }
 
     /**
+     * 配置hpc缓存型后端信息
+     *
+     * 配置hpc缓存型后端信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetHpcCacheBackendRequest 请求对象
+     * @return CompletableFuture<SetHpcCacheBackendResponse>
+     */
+    public CompletableFuture<SetHpcCacheBackendResponse> setHpcCacheBackendAsync(SetHpcCacheBackendRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.setHpcCacheBackend);
+    }
+
+    /**
+     * 配置hpc缓存型后端信息
+     *
+     * 配置hpc缓存型后端信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetHpcCacheBackendRequest 请求对象
+     * @return AsyncInvoker<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse>
+     */
+    public AsyncInvoker<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse> setHpcCacheBackendAsyncInvoker(
+        SetHpcCacheBackendRequest request) {
+        return new AsyncInvoker<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse>(request,
+            SFSTurboMeta.setHpcCacheBackend, hcClient);
+    }
+
+    /**
+     * 获取文件系统后端存储库详细信息
+     *
+     * 获取文件系统后端存储库详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBackendTargetInfoRequest 请求对象
+     * @return CompletableFuture<ShowBackendTargetInfoResponse>
+     */
+    public CompletableFuture<ShowBackendTargetInfoResponse> showBackendTargetInfoAsync(
+        ShowBackendTargetInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showBackendTargetInfo);
+    }
+
+    /**
+     * 获取文件系统后端存储库详细信息
+     *
+     * 获取文件系统后端存储库详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBackendTargetInfoRequest 请求对象
+     * @return AsyncInvoker<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse>
+     */
+    public AsyncInvoker<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> showBackendTargetInfoAsyncInvoker(
+        ShowBackendTargetInfoRequest request) {
+        return new AsyncInvoker<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse>(request,
+            SFSTurboMeta.showBackendTargetInfo, hcClient);
+    }
+
+    /**
      * 查询目录是否存在
      *
-     * 查询目录是否存在 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 查询目录是否存在
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -496,7 +923,7 @@ public class SFSTurboAsyncClient {
     /**
      * 查询目录是否存在
      *
-     * 查询目录是否存在 (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 查询目录是否存在
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -510,7 +937,7 @@ public class SFSTurboAsyncClient {
     /**
      * 查询目标文件夹quota
      *
-     * 查询目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 查询目标文件夹quota
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -524,7 +951,7 @@ public class SFSTurboAsyncClient {
     /**
      * 查询目标文件夹quota
      *
-     * 查询目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 查询目标文件夹quota
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -534,6 +961,124 @@ public class SFSTurboAsyncClient {
     public AsyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse> showFsDirQuotaAsyncInvoker(
         ShowFsDirQuotaRequest request) {
         return new AsyncInvoker<ShowFsDirQuotaRequest, ShowFsDirQuotaResponse>(request, SFSTurboMeta.showFsDirQuota,
+            hcClient);
+    }
+
+    /**
+     * 查询目录资源使用情况
+     *
+     * 查询目录资源使用情况(包括子目录的资源)。后端有5min的缓存时间，查询的数据可能有延迟。（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirUsageRequest 请求对象
+     * @return CompletableFuture<ShowFsDirUsageResponse>
+     */
+    public CompletableFuture<ShowFsDirUsageResponse> showFsDirUsageAsync(ShowFsDirUsageRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showFsDirUsage);
+    }
+
+    /**
+     * 查询目录资源使用情况
+     *
+     * 查询目录资源使用情况(包括子目录的资源)。后端有5min的缓存时间，查询的数据可能有延迟。（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsDirUsageRequest 请求对象
+     * @return AsyncInvoker<ShowFsDirUsageRequest, ShowFsDirUsageResponse>
+     */
+    public AsyncInvoker<ShowFsDirUsageRequest, ShowFsDirUsageResponse> showFsDirUsageAsyncInvoker(
+        ShowFsDirUsageRequest request) {
+        return new AsyncInvoker<ShowFsDirUsageRequest, ShowFsDirUsageResponse>(request, SFSTurboMeta.showFsDirUsage,
+            hcClient);
+    }
+
+    /**
+     * 获取文件系统异步任务详情
+     *
+     * 获取文件系统异步任务详情（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsTaskRequest 请求对象
+     * @return CompletableFuture<ShowFsTaskResponse>
+     */
+    public CompletableFuture<ShowFsTaskResponse> showFsTaskAsync(ShowFsTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showFsTask);
+    }
+
+    /**
+     * 获取文件系统异步任务详情
+     *
+     * 获取文件系统异步任务详情（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFsTaskRequest 请求对象
+     * @return AsyncInvoker<ShowFsTaskRequest, ShowFsTaskResponse>
+     */
+    public AsyncInvoker<ShowFsTaskRequest, ShowFsTaskResponse> showFsTaskAsyncInvoker(ShowFsTaskRequest request) {
+        return new AsyncInvoker<ShowFsTaskRequest, ShowFsTaskResponse>(request, SFSTurboMeta.showFsTask, hcClient);
+    }
+
+    /**
+     * 查询联动任务详情
+     *
+     * 查询联动任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHpcCacheTaskRequest 请求对象
+     * @return CompletableFuture<ShowHpcCacheTaskResponse>
+     */
+    public CompletableFuture<ShowHpcCacheTaskResponse> showHpcCacheTaskAsync(ShowHpcCacheTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showHpcCacheTask);
+    }
+
+    /**
+     * 查询联动任务详情
+     *
+     * 查询联动任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowHpcCacheTaskRequest 请求对象
+     * @return AsyncInvoker<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse>
+     */
+    public AsyncInvoker<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse> showHpcCacheTaskAsyncInvoker(
+        ShowHpcCacheTaskRequest request) {
+        return new AsyncInvoker<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse>(request,
+            SFSTurboMeta.showHpcCacheTask, hcClient);
+    }
+
+    /**
+     * 查询文件系统的某一个权限规则
+     *
+     * 查询文件系统的某一个权限规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPermRuleRequest 请求对象
+     * @return CompletableFuture<ShowPermRuleResponse>
+     */
+    public CompletableFuture<ShowPermRuleResponse> showPermRuleAsync(ShowPermRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showPermRule);
+    }
+
+    /**
+     * 查询文件系统的某一个权限规则
+     *
+     * 查询文件系统的某一个权限规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPermRuleRequest 请求对象
+     * @return AsyncInvoker<ShowPermRuleRequest, ShowPermRuleResponse>
+     */
+    public AsyncInvoker<ShowPermRuleRequest, ShowPermRuleResponse> showPermRuleAsyncInvoker(
+        ShowPermRuleRequest request) {
+        return new AsyncInvoker<ShowPermRuleRequest, ShowPermRuleResponse>(request, SFSTurboMeta.showPermRule,
             hcClient);
     }
 
@@ -598,7 +1143,7 @@ public class SFSTurboAsyncClient {
     /**
      * 更新目标文件夹quota
      *
-     * 更新目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 更新目标文件夹quota
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -612,7 +1157,7 @@ public class SFSTurboAsyncClient {
     /**
      * 更新目标文件夹quota
      *
-     * 更新目标文件夹quota (目前已上线的局点：上海一、上海二、北京二、北京四、乌兰察布一、广州、贵阳一、中国-香港、亚太-新加坡、亚太-曼谷)
+     * 更新目标文件夹quota
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -623,6 +1168,66 @@ public class SFSTurboAsyncClient {
         UpdateFsDirQuotaRequest request) {
         return new AsyncInvoker<UpdateFsDirQuotaRequest, UpdateFsDirQuotaResponse>(request,
             SFSTurboMeta.updateFsDirQuota, hcClient);
+    }
+
+    /**
+     * 更新文件系统
+     *
+     * 设置文件系统冷数据淘汰时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateHpcShareRequest 请求对象
+     * @return CompletableFuture<UpdateHpcShareResponse>
+     */
+    public CompletableFuture<UpdateHpcShareResponse> updateHpcShareAsync(UpdateHpcShareRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.updateHpcShare);
+    }
+
+    /**
+     * 更新文件系统
+     *
+     * 设置文件系统冷数据淘汰时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateHpcShareRequest 请求对象
+     * @return AsyncInvoker<UpdateHpcShareRequest, UpdateHpcShareResponse>
+     */
+    public AsyncInvoker<UpdateHpcShareRequest, UpdateHpcShareResponse> updateHpcShareAsyncInvoker(
+        UpdateHpcShareRequest request) {
+        return new AsyncInvoker<UpdateHpcShareRequest, UpdateHpcShareResponse>(request, SFSTurboMeta.updateHpcShare,
+            hcClient);
+    }
+
+    /**
+     * 修改权限规则
+     *
+     * 修改权限规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePermRuleRequest 请求对象
+     * @return CompletableFuture<UpdatePermRuleResponse>
+     */
+    public CompletableFuture<UpdatePermRuleResponse> updatePermRuleAsync(UpdatePermRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.updatePermRule);
+    }
+
+    /**
+     * 修改权限规则
+     *
+     * 修改权限规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePermRuleRequest 请求对象
+     * @return AsyncInvoker<UpdatePermRuleRequest, UpdatePermRuleResponse>
+     */
+    public AsyncInvoker<UpdatePermRuleRequest, UpdatePermRuleResponse> updatePermRuleAsyncInvoker(
+        UpdatePermRuleRequest request) {
+        return new AsyncInvoker<UpdatePermRuleRequest, UpdatePermRuleResponse>(request, SFSTurboMeta.updatePermRule,
+            hcClient);
     }
 
 }

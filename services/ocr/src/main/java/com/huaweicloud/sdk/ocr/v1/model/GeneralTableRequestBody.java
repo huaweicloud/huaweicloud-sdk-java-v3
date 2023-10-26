@@ -45,6 +45,11 @@ public class GeneralTableRequestBody {
 
     private Boolean returnRectificationMatrix;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "with_borders")
+
+    private Boolean withBorders;
+
     public GeneralTableRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -164,6 +169,23 @@ public class GeneralTableRequestBody {
         this.returnRectificationMatrix = returnRectificationMatrix;
     }
 
+    public GeneralTableRequestBody withWithBorders(Boolean withBorders) {
+        this.withBorders = withBorders;
+        return this;
+    }
+
+    /**
+     * 可选值包括： - true：输入图像仅包含有线表格，仅进行有线表格识别。 - false: 输入图像可能包含无线表格，同时进行有线表格与无线表格识别。  未传入该参数时默认为false，即同时进行有线表格与无线表格识别。当确认输入仅包含有线表格时，该参数设为true可达到更优识别效果。 
+     * @return withBorders
+     */
+    public Boolean getWithBorders() {
+        return withBorders;
+    }
+
+    public void setWithBorders(Boolean withBorders) {
+        this.withBorders = withBorders;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,7 +200,8 @@ public class GeneralTableRequestBody {
             && Objects.equals(this.returnCharLocation, that.returnCharLocation)
             && Objects.equals(this.returnConfidence, that.returnConfidence)
             && Objects.equals(this.returnExcel, that.returnExcel)
-            && Objects.equals(this.returnRectificationMatrix, that.returnRectificationMatrix);
+            && Objects.equals(this.returnRectificationMatrix, that.returnRectificationMatrix)
+            && Objects.equals(this.withBorders, that.withBorders);
     }
 
     @Override
@@ -189,7 +212,8 @@ public class GeneralTableRequestBody {
             returnCharLocation,
             returnConfidence,
             returnExcel,
-            returnRectificationMatrix);
+            returnRectificationMatrix,
+            withBorders);
     }
 
     @Override
@@ -203,6 +227,7 @@ public class GeneralTableRequestBody {
         sb.append("    returnConfidence: ").append(toIndentedString(returnConfidence)).append("\n");
         sb.append("    returnExcel: ").append(toIndentedString(returnExcel)).append("\n");
         sb.append("    returnRectificationMatrix: ").append(toIndentedString(returnRectificationMatrix)).append("\n");
+        sb.append("    withBorders: ").append(toIndentedString(withBorders)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -43,6 +43,16 @@ public class ChangeVulStatusRequestInfo {
 
     private List<HostVulOperateInfo> hostDataList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_info_id")
+
+    private String backupInfoId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_backup_hosts")
+
+    private List<ChangeVulStatusRequestInfoCustomBackupHosts> customBackupHosts = null;
+
     public ChangeVulStatusRequestInfo withOperateType(String operateType) {
         this.operateType = operateType;
         return this;
@@ -177,6 +187,59 @@ public class ChangeVulStatusRequestInfo {
         this.hostDataList = hostDataList;
     }
 
+    public ChangeVulStatusRequestInfo withBackupInfoId(String backupInfoId) {
+        this.backupInfoId = backupInfoId;
+        return this;
+    }
+
+    /**
+     * 本次漏洞处理的备份信息id，若不传该参数，则不进行备份
+     * @return backupInfoId
+     */
+    public String getBackupInfoId() {
+        return backupInfoId;
+    }
+
+    public void setBackupInfoId(String backupInfoId) {
+        this.backupInfoId = backupInfoId;
+    }
+
+    public ChangeVulStatusRequestInfo withCustomBackupHosts(
+        List<ChangeVulStatusRequestInfoCustomBackupHosts> customBackupHosts) {
+        this.customBackupHosts = customBackupHosts;
+        return this;
+    }
+
+    public ChangeVulStatusRequestInfo addCustomBackupHostsItem(
+        ChangeVulStatusRequestInfoCustomBackupHosts customBackupHostsItem) {
+        if (this.customBackupHosts == null) {
+            this.customBackupHosts = new ArrayList<>();
+        }
+        this.customBackupHosts.add(customBackupHostsItem);
+        return this;
+    }
+
+    public ChangeVulStatusRequestInfo withCustomBackupHosts(
+        Consumer<List<ChangeVulStatusRequestInfoCustomBackupHosts>> customBackupHostsSetter) {
+        if (this.customBackupHosts == null) {
+            this.customBackupHosts = new ArrayList<>();
+        }
+        customBackupHostsSetter.accept(this.customBackupHosts);
+        return this;
+    }
+
+    /**
+     * 自定义备份主机使用的存储库及备份名称；不在该列表中的主机备份时系统会自动选取剩余空间最大的存储库，并自动生成备份名称
+     * @return customBackupHosts
+     */
+    public List<ChangeVulStatusRequestInfoCustomBackupHosts> getCustomBackupHosts() {
+        return customBackupHosts;
+    }
+
+    public void setCustomBackupHosts(List<ChangeVulStatusRequestInfoCustomBackupHosts> customBackupHosts) {
+        this.customBackupHosts = customBackupHosts;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -188,12 +251,15 @@ public class ChangeVulStatusRequestInfo {
         ChangeVulStatusRequestInfo that = (ChangeVulStatusRequestInfo) obj;
         return Objects.equals(this.operateType, that.operateType) && Objects.equals(this.remark, that.remark)
             && Objects.equals(this.selectType, that.selectType) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.dataList, that.dataList) && Objects.equals(this.hostDataList, that.hostDataList);
+            && Objects.equals(this.dataList, that.dataList) && Objects.equals(this.hostDataList, that.hostDataList)
+            && Objects.equals(this.backupInfoId, that.backupInfoId)
+            && Objects.equals(this.customBackupHosts, that.customBackupHosts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operateType, remark, selectType, type, dataList, hostDataList);
+        return Objects
+            .hash(operateType, remark, selectType, type, dataList, hostDataList, backupInfoId, customBackupHosts);
     }
 
     @Override
@@ -206,6 +272,8 @@ public class ChangeVulStatusRequestInfo {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dataList: ").append(toIndentedString(dataList)).append("\n");
         sb.append("    hostDataList: ").append(toIndentedString(hostDataList)).append("\n");
+        sb.append("    backupInfoId: ").append(toIndentedString(backupInfoId)).append("\n");
+        sb.append("    customBackupHosts: ").append(toIndentedString(customBackupHosts)).append("\n");
         sb.append("}");
         return sb.toString();
     }

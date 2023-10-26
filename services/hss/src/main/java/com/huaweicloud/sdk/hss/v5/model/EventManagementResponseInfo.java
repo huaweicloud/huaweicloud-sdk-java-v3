@@ -184,6 +184,16 @@ public class EventManagementResponseInfo {
     private String recommendation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_abstract")
+
+    private String eventAbstract;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process_info_list")
 
     private List<EventProcessResponseInfo> processInfoList = null;
@@ -202,6 +212,11 @@ public class EventManagementResponseInfo {
     @JsonProperty(value = "event_details")
 
     private String eventDetails;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag_list")
+
+    private List<String> tagList = null;
 
     public EventManagementResponseInfo withEventId(String eventId) {
         this.eventId = eventId;
@@ -243,7 +258,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 事件类型，包含如下:   - 1001 : 通用恶意软件   - 1002 : 病毒   - 1003 : 蠕虫   - 1004 : 木马   - 1005 : 僵尸网络   - 1006 : 后门   - 1010 : Rootkit   - 1011 : 勒索软件   - 1012 ：黑客工具   - 1015 : Webshell   - 1016 : 挖矿   - 1017 : 反弹Shell   - 2001 : 一般漏洞利用   - 2012 : 远程代码执行   - 2047 : Redis漏洞利用   - 2048 : Hadoop漏洞利用   - 2049 : MySQL漏洞利用   - 3002 : 文件提权   - 3003 : 进程提权   - 3004 : 关键文件变更   - 3005 : 文件/目录变更   - 3007 : 进程异常行为   - 3015 : 高危命令执行   - 3018 : 异常Shell   - 3027 : Crontab可疑任务   - 3029 ：系统安全防护被禁用   - 3030 ：备份删除   - 3031 ：异常注册表操作   - 3036 : 容器镜像阻断   - 4002 : 暴力破解   - 4004 : 异常登录   - 4006 : 非法系统账号   - 4014 ：用户账号添加   - 4020 ：用户密码窃取   - 6002 : 端口扫描   - 6003 ：主机扫描   - 13001 : Kubernetes事件删除   - 13002 : Pod异常行为   - 13003 : 枚举用户信息   - 13004 : 绑定集群用户角色
+     * 事件类型，包含如下:   - 1001 : 通用恶意软件   - 1002 : 病毒   - 1003 : 蠕虫   - 1004 : 木马   - 1005 : 僵尸网络   - 1006 : 后门   - 1010 : Rootkit   - 1011 : 勒索软件   - 1012 ：黑客工具   - 1015 : Webshell   - 1016 : 挖矿   - 1017 : 反弹Shell   - 2001 : 一般漏洞利用   - 2012 : 远程代码执行   - 2047 : Redis漏洞利用   - 2048 : Hadoop漏洞利用   - 2049 : MySQL漏洞利用   - 3002 : 文件提权   - 3003 : 进程提权   - 3004 : 关键文件变更   - 3005 : 文件/目录变更   - 3007 : 进程异常行为   - 3015 : 高危命令执行   - 3018 : 异常Shell   - 3027 : Crontab可疑任务   - 3029 ：系统安全防护被禁用   - 3030 ：备份删除   - 3031 ：异常注册表操作   - 3036 : 容器镜像阻断   - 4002 : 暴力破解   - 4004 : 异常登录   - 4006 : 非法系统账号   - 4014 : 用户账号添加   - 4020 : 用户密码窃取   - 6002 : 端口扫描   - 6003 : 主机扫描   - 13001 : Kubernetes事件删除   - 13002 : Pod异常行为   - 13003 : 枚举用户信息   - 13004 : 绑定集群用户角色
      * minimum: 1000
      * maximum: 30000
      * @return eventType
@@ -829,6 +844,40 @@ public class EventManagementResponseInfo {
         this.recommendation = recommendation;
     }
 
+    public EventManagementResponseInfo withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 告警说明
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public EventManagementResponseInfo withEventAbstract(String eventAbstract) {
+        this.eventAbstract = eventAbstract;
+        return this;
+    }
+
+    /**
+     * 告警摘要
+     * @return eventAbstract
+     */
+    public String getEventAbstract() {
+        return eventAbstract;
+    }
+
+    public void setEventAbstract(String eventAbstract) {
+        this.eventAbstract = eventAbstract;
+    }
+
     public EventManagementResponseInfo withProcessInfoList(List<EventProcessResponseInfo> processInfoList) {
         this.processInfoList = processInfoList;
         return this;
@@ -946,6 +995,39 @@ public class EventManagementResponseInfo {
         this.eventDetails = eventDetails;
     }
 
+    public EventManagementResponseInfo withTagList(List<String> tagList) {
+        this.tagList = tagList;
+        return this;
+    }
+
+    public EventManagementResponseInfo addTagListItem(String tagListItem) {
+        if (this.tagList == null) {
+            this.tagList = new ArrayList<>();
+        }
+        this.tagList.add(tagListItem);
+        return this;
+    }
+
+    public EventManagementResponseInfo withTagList(Consumer<List<String>> tagListSetter) {
+        if (this.tagList == null) {
+            this.tagList = new ArrayList<>();
+        }
+        tagListSetter.accept(this.tagList);
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tagList
+     */
+    public List<String> getTagList() {
+        return tagList;
+    }
+
+    public void setTagList(List<String> tagList) {
+        this.tagList = tagList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -975,10 +1057,12 @@ public class EventManagementResponseInfo {
             && Objects.equals(this.appInfo, that.appInfo) && Objects.equals(this.systemInfo, that.systemInfo)
             && Objects.equals(this.extendInfo, that.extendInfo)
             && Objects.equals(this.recommendation, that.recommendation)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.eventAbstract, that.eventAbstract)
             && Objects.equals(this.processInfoList, that.processInfoList)
             && Objects.equals(this.userInfoList, that.userInfoList)
             && Objects.equals(this.fileInfoList, that.fileInfoList)
-            && Objects.equals(this.eventDetails, that.eventDetails);
+            && Objects.equals(this.eventDetails, that.eventDetails) && Objects.equals(this.tagList, that.tagList);
     }
 
     @Override
@@ -1017,10 +1101,13 @@ public class EventManagementResponseInfo {
             systemInfo,
             extendInfo,
             recommendation,
+            description,
+            eventAbstract,
             processInfoList,
             userInfoList,
             fileInfoList,
-            eventDetails);
+            eventDetails,
+            tagList);
     }
 
     @Override
@@ -1061,10 +1148,13 @@ public class EventManagementResponseInfo {
         sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
         sb.append("    extendInfo: ").append(toIndentedString(extendInfo)).append("\n");
         sb.append("    recommendation: ").append(toIndentedString(recommendation)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    eventAbstract: ").append(toIndentedString(eventAbstract)).append("\n");
         sb.append("    processInfoList: ").append(toIndentedString(processInfoList)).append("\n");
         sb.append("    userInfoList: ").append(toIndentedString(userInfoList)).append("\n");
         sb.append("    fileInfoList: ").append(toIndentedString(fileInfoList)).append("\n");
         sb.append("    eventDetails: ").append(toIndentedString(eventDetails)).append("\n");
+        sb.append("    tagList: ").append(toIndentedString(tagList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

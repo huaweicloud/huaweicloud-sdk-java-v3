@@ -21,7 +21,7 @@ public class TasksObject {
     private String id;
 
     /**
-     * 任务的类型， 其值可以为refresh或preheating。
+     * 任务的类型， 其值可以为refresh：刷新任务，或preheating：预热任务。
      */
     public static final class TaskTypeEnum {
 
@@ -223,7 +223,7 @@ public class TasksObject {
     }
 
     /**
-     * 任务的类型， 其值可以为refresh或preheating。
+     * 任务的类型， 其值可以为refresh：刷新任务，或preheating：预热任务。
      * @return taskType
      */
     public TaskTypeEnum getTaskType() {

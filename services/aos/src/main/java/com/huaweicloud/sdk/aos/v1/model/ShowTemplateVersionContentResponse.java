@@ -12,9 +12,31 @@ import java.util.Objects;
 public class ShowTemplateVersionContentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private String body;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Location")
 
     private String location;
+
+    public ShowTemplateVersionContentResponse withBody(String body) {
+        this.body = body;
+        return this;
+    }
+
+    /**
+     * 空响应体
+     * @return body
+     */
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
 
     public ShowTemplateVersionContentResponse withLocation(String location) {
         this.location = location;
@@ -42,18 +64,19 @@ public class ShowTemplateVersionContentResponse extends SdkResponse {
             return false;
         }
         ShowTemplateVersionContentResponse that = (ShowTemplateVersionContentResponse) obj;
-        return Objects.equals(this.location, that.location);
+        return Objects.equals(this.body, that.body) && Objects.equals(this.location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(location);
+        return Objects.hash(body, location);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTemplateVersionContentResponse {\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("}");
         return sb.toString();

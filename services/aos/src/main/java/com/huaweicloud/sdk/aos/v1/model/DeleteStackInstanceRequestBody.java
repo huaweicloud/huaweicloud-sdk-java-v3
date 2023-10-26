@@ -19,7 +19,7 @@ public class DeleteStackInstanceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deployment_targets")
 
-    private DeploymentTargetsPrimitiveTypeHolderDeploymentTargets deploymentTargets;
+    private DeploymentTargets deploymentTargets;
 
     public DeleteStackInstanceRequestBody withStackSetId(String stackSetId) {
         this.stackSetId = stackSetId;
@@ -38,16 +38,14 @@ public class DeleteStackInstanceRequestBody {
         this.stackSetId = stackSetId;
     }
 
-    public DeleteStackInstanceRequestBody withDeploymentTargets(
-        DeploymentTargetsPrimitiveTypeHolderDeploymentTargets deploymentTargets) {
+    public DeleteStackInstanceRequestBody withDeploymentTargets(DeploymentTargets deploymentTargets) {
         this.deploymentTargets = deploymentTargets;
         return this;
     }
 
-    public DeleteStackInstanceRequestBody withDeploymentTargets(
-        Consumer<DeploymentTargetsPrimitiveTypeHolderDeploymentTargets> deploymentTargetsSetter) {
+    public DeleteStackInstanceRequestBody withDeploymentTargets(Consumer<DeploymentTargets> deploymentTargetsSetter) {
         if (this.deploymentTargets == null) {
-            this.deploymentTargets = new DeploymentTargetsPrimitiveTypeHolderDeploymentTargets();
+            this.deploymentTargets = new DeploymentTargets();
             deploymentTargetsSetter.accept(this.deploymentTargets);
         }
 
@@ -58,11 +56,11 @@ public class DeleteStackInstanceRequestBody {
      * Get deploymentTargets
      * @return deploymentTargets
      */
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets getDeploymentTargets() {
+    public DeploymentTargets getDeploymentTargets() {
         return deploymentTargets;
     }
 
-    public void setDeploymentTargets(DeploymentTargetsPrimitiveTypeHolderDeploymentTargets deploymentTargets) {
+    public void setDeploymentTargets(DeploymentTargets deploymentTargets) {
         this.deploymentTargets = deploymentTargets;
     }
 

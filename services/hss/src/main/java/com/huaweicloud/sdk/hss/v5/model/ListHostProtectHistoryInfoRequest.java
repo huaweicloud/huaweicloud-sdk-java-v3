@@ -45,6 +45,26 @@ public class ListHostProtectHistoryInfoRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_name")
+
+    private String hostName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_ip")
+
+    private String hostIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_path")
+
+    private String filePath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_operation")
+
+    private String fileOperation;
+
     public ListHostProtectHistoryInfoRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -172,6 +192,74 @@ public class ListHostProtectHistoryInfoRequest {
         this.offset = offset;
     }
 
+    public ListHostProtectHistoryInfoRequest withHostName(String hostName) {
+        this.hostName = hostName;
+        return this;
+    }
+
+    /**
+     * 服务器名称
+     * @return hostName
+     */
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+
+    public ListHostProtectHistoryInfoRequest withHostIp(String hostIp) {
+        this.hostIp = hostIp;
+        return this;
+    }
+
+    /**
+     * 服务器ip
+     * @return hostIp
+     */
+    public String getHostIp() {
+        return hostIp;
+    }
+
+    public void setHostIp(String hostIp) {
+        this.hostIp = hostIp;
+    }
+
+    public ListHostProtectHistoryInfoRequest withFilePath(String filePath) {
+        this.filePath = filePath;
+        return this;
+    }
+
+    /**
+     * 防护文件
+     * @return filePath
+     */
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public ListHostProtectHistoryInfoRequest withFileOperation(String fileOperation) {
+        this.fileOperation = fileOperation;
+        return this;
+    }
+
+    /**
+     * 文件操作类型   - add: 新增   - delete: 删除   - modify: 修改内容   - attribute: 修改属性
+     * @return fileOperation
+     */
+    public String getFileOperation() {
+        return fileOperation;
+    }
+
+    public void setFileOperation(String fileOperation) {
+        this.fileOperation = fileOperation;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -185,12 +273,24 @@ public class ListHostProtectHistoryInfoRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.fileOperation, that.fileOperation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, enterpriseProjectId, hostId, startTime, endTime, limit, offset);
+        return Objects.hash(region,
+            enterpriseProjectId,
+            hostId,
+            startTime,
+            endTime,
+            limit,
+            offset,
+            hostName,
+            hostIp,
+            filePath,
+            fileOperation);
     }
 
     @Override
@@ -204,6 +304,10 @@ public class ListHostProtectHistoryInfoRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
+        sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
+        sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
+        sb.append("    fileOperation: ").append(toIndentedString(fileOperation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

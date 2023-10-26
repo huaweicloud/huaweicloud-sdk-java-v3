@@ -53,7 +53,7 @@ public class LtsRegion {
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://lts.ap-southeast-4.myhuaweicloud.com");
 
-    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://lts.ae-ad-1.g42cloud.com");
+    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://lts.ae-ad-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("LTS");
 

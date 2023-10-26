@@ -60,6 +60,16 @@ public class EventDetailRequestInfo {
 
     private String loginUserName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_id")
+
+    private String containerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_name")
+
+    private String containerName;
+
     public EventDetailRequestInfo withAgentId(String agentId) {
         this.agentId = agentId;
         return this;
@@ -232,6 +242,40 @@ public class EventDetailRequestInfo {
         this.loginUserName = loginUserName;
     }
 
+    public EventDetailRequestInfo withContainerId(String containerId) {
+        this.containerId = containerId;
+        return this;
+    }
+
+    /**
+     * 容器ID
+     * @return containerId
+     */
+    public String getContainerId() {
+        return containerId;
+    }
+
+    public void setContainerId(String containerId) {
+        this.containerId = containerId;
+    }
+
+    public EventDetailRequestInfo withContainerName(String containerName) {
+        this.containerName = containerName;
+        return this;
+    }
+
+    /**
+     * 容器名称
+     * @return containerName
+     */
+    public String getContainerName() {
+        return containerName;
+    }
+
+    public void setContainerName(String containerName) {
+        this.containerName = containerName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,13 +289,25 @@ public class EventDetailRequestInfo {
             && Objects.equals(this.fileHash, that.fileHash) && Objects.equals(this.filePath, that.filePath)
             && Objects.equals(this.fileAttr, that.fileAttr) && Objects.equals(this.keyword, that.keyword)
             && Objects.equals(this.hash, that.hash) && Objects.equals(this.privateIp, that.privateIp)
-            && Objects.equals(this.loginIp, that.loginIp) && Objects.equals(this.loginUserName, that.loginUserName);
+            && Objects.equals(this.loginIp, that.loginIp) && Objects.equals(this.loginUserName, that.loginUserName)
+            && Objects.equals(this.containerId, that.containerId)
+            && Objects.equals(this.containerName, that.containerName);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(agentId, processPid, fileHash, filePath, fileAttr, keyword, hash, privateIp, loginIp, loginUserName);
+        return Objects.hash(agentId,
+            processPid,
+            fileHash,
+            filePath,
+            fileAttr,
+            keyword,
+            hash,
+            privateIp,
+            loginIp,
+            loginUserName,
+            containerId,
+            containerName);
     }
 
     @Override
@@ -268,6 +324,8 @@ public class EventDetailRequestInfo {
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    loginIp: ").append(toIndentedString(loginIp)).append("\n");
         sb.append("    loginUserName: ").append(toIndentedString(loginUserName)).append("\n");
+        sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
+        sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

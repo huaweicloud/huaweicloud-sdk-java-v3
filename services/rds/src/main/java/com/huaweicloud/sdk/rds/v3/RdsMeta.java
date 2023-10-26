@@ -165,10 +165,14 @@ import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
@@ -1778,6 +1782,31 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceDiagnosisRequest, ListInstanceDiagnosisResponse> listInstanceDiagnosis =
+        genForlistInstanceDiagnosis();
+
+    private static HttpRequestDef<ListInstanceDiagnosisRequest, ListInstanceDiagnosisResponse> genForlistInstanceDiagnosis() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceDiagnosisRequest, ListInstanceDiagnosisResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstanceDiagnosisRequest.class, ListInstanceDiagnosisResponse.class)
+            .withName("ListInstanceDiagnosis")
+            .withUri("/v3/{project_id}/instances/diagnosis")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListInstanceDiagnosisRequest.EngineEnum>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstanceDiagnosisRequest.EngineEnum.class),
+            f -> f.withMarshaller(ListInstanceDiagnosisRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceParamHistoriesRequest, ListInstanceParamHistoriesResponse> listInstanceParamHistories =
         genForlistInstanceParamHistories();
 
@@ -1954,6 +1983,55 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(ListInstancesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesInfoDiagnosisRequest, ListInstancesInfoDiagnosisResponse> listInstancesInfoDiagnosis =
+        genForlistInstancesInfoDiagnosis();
+
+    private static HttpRequestDef<ListInstancesInfoDiagnosisRequest, ListInstancesInfoDiagnosisResponse> genForlistInstancesInfoDiagnosis() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesInfoDiagnosisRequest, ListInstancesInfoDiagnosisResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstancesInfoDiagnosisRequest.class,
+                    ListInstancesInfoDiagnosisResponse.class)
+                .withName("ListInstancesInfoDiagnosis")
+                .withUri("/v3/{project_id}/instances/diagnosis/info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListInstancesInfoDiagnosisRequest.EngineEnum>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstancesInfoDiagnosisRequest.EngineEnum.class),
+            f -> f.withMarshaller(ListInstancesInfoDiagnosisRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<ListInstancesInfoDiagnosisRequest.DiagnosisEnum>withRequestField("diagnosis",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstancesInfoDiagnosisRequest.DiagnosisEnum.class),
+            f -> f.withMarshaller(ListInstancesInfoDiagnosisRequest::getDiagnosis, (req, v) -> {
+                req.setDiagnosis(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesInfoDiagnosisRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesInfoDiagnosisRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response

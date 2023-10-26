@@ -87,7 +87,7 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 任务类型，REFRESH：刷新任务；PREHEATING：预热任务。
+     * 任务类型，refresh：刷新任务；preheating：预热任务。
      * @return taskType
      */
     public String getTaskType() {

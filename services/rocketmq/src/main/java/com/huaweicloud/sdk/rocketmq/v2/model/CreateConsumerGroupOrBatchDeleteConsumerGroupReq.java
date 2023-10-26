@@ -40,6 +40,11 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_desc")
+
+    private String groupDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_max_time")
 
     private BigDecimal retryMaxTime;
@@ -166,6 +171,23 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         this.name = name;
     }
 
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+        return this;
+    }
+
+    /**
+     * 消费组描述，长度0~200个字符。
+     * @return groupDesc
+     */
+    public String getGroupDesc() {
+        return groupDesc;
+    }
+
+    public void setGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+    }
+
     public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withRetryMaxTime(BigDecimal retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
         return this;
@@ -211,13 +233,14 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         CreateConsumerGroupOrBatchDeleteConsumerGroupReq that = (CreateConsumerGroupOrBatchDeleteConsumerGroupReq) obj;
         return Objects.equals(this.groups, that.groups) && Objects.equals(this.enabled, that.enabled)
             && Objects.equals(this.broadcast, that.broadcast) && Objects.equals(this.brokers, that.brokers)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.retryMaxTime, that.retryMaxTime)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.groupDesc, that.groupDesc)
+            && Objects.equals(this.retryMaxTime, that.retryMaxTime)
             && Objects.equals(this.fromBeginning, that.fromBeginning);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groups, enabled, broadcast, brokers, name, retryMaxTime, fromBeginning);
+        return Objects.hash(groups, enabled, broadcast, brokers, name, groupDesc, retryMaxTime, fromBeginning);
     }
 
     @Override
@@ -229,6 +252,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
         sb.append("    broadcast: ").append(toIndentedString(broadcast)).append("\n");
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    groupDesc: ").append(toIndentedString(groupDesc)).append("\n");
         sb.append("    retryMaxTime: ").append(toIndentedString(retryMaxTime)).append("\n");
         sb.append("    fromBeginning: ").append(toIndentedString(fromBeginning)).append("\n");
         sb.append("}");

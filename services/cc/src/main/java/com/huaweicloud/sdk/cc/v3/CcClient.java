@@ -48,6 +48,8 @@ import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkAttachmentsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkAttachmentsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkCapabilitiesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkCapabilitiesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkConnectionsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworkGdgwAttachmentsRequest;
@@ -1205,6 +1207,37 @@ public class CcClient {
         UpdateCentralNetworkGdgwAttachmentRequest request) {
         return new SyncInvoker<UpdateCentralNetworkGdgwAttachmentRequest, UpdateCentralNetworkGdgwAttachmentResponse>(
             request, CcMeta.updateCentralNetworkGdgwAttachment, hcClient);
+    }
+
+    /**
+     * 查询中心网络能力列表
+     *
+     * 查询中心网络能力列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkCapabilitiesRequest 请求对象
+     * @return ListCentralNetworkCapabilitiesResponse
+     */
+    public ListCentralNetworkCapabilitiesResponse listCentralNetworkCapabilities(
+        ListCentralNetworkCapabilitiesRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listCentralNetworkCapabilities);
+    }
+
+    /**
+     * 查询中心网络能力列表
+     *
+     * 查询中心网络能力列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCentralNetworkCapabilitiesRequest 请求对象
+     * @return SyncInvoker<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse>
+     */
+    public SyncInvoker<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse> listCentralNetworkCapabilitiesInvoker(
+        ListCentralNetworkCapabilitiesRequest request) {
+        return new SyncInvoker<ListCentralNetworkCapabilitiesRequest, ListCentralNetworkCapabilitiesResponse>(request,
+            CcMeta.listCentralNetworkCapabilities, hcClient);
     }
 
     /**

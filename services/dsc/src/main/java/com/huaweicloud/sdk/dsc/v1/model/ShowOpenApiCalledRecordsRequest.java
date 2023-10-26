@@ -60,7 +60,7 @@ public class ShowOpenApiCalledRecordsRequest {
     }
 
     /**
-     * 需要查询调用记录的URL，例如：/v1/{project_id}/sdg/database/watermark/embed。
+     * 需要查询调用记录的URL，例如：/v1/{project_id}/sdg/database/watermark/embed
      * @return calledUrl
      */
     public String getCalledUrl() {

@@ -59,6 +59,11 @@ public class NatRegion {
 
     public static final Region EU_WEST_0 = new Region("eu-west-0", "https://nat.eu-west-0.myhuaweicloud.com");
 
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://nat.tr-west-1.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://nat.ap-southeast-4.myhuaweicloud.cn");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("NAT");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -86,6 +91,8 @@ public class NatRegion {
         map.put("me-east-1", ME_EAST_1);
         map.put("ae-ad-1", AE_AD_1);
         map.put("eu-west-0", EU_WEST_0);
+        map.put("tr-west-1", TR_WEST_1);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
         return Collections.unmodifiableMap(map);
     }
 

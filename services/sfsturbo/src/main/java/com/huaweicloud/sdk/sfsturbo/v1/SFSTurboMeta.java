@@ -14,24 +14,41 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeSecurityGroupResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameReq;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ChangeShareNameResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateBackendTargetRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateBackendTargetRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateBackendTargetResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirQuotaRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsDirResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateFsTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskReq;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreateHpcCacheTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRuleRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRuleResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.CreatePermRulesRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.CreateSharedTagResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteBackendTargetRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteBackendTargetResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirQuotaRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeletePermRuleRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeletePermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteSharedTagRequest;
@@ -39,14 +56,37 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteSharedTagResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ExpandShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ExpandShareRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ExpandShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.FsDirReq;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListBackendTargetsRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListBackendTargetsResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListFsTasksRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListFsTasksResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListHpcCacheTasksRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListHpcCacheTasksResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.OnePermRuleRequestInfo;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ReqConfigHpcCacheBackend;
+import com.huaweicloud.sdk.sfsturbo.v1.model.SetHpcCacheBackendRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.SetHpcCacheBackendResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowBackendTargetInfoRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowBackendTargetInfoResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirUsageRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsDirUsageResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowFsTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowHpcCacheTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowHpcCacheTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsRequest;
@@ -54,6 +94,11 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateFsDirQuotaResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleResponse;
 
 @SuppressWarnings("unchecked")
 public class SFSTurboMeta {
@@ -154,6 +199,44 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateBackendTargetRequest, CreateBackendTargetResponse> createBackendTarget =
+        genForcreateBackendTarget();
+
+    private static HttpRequestDef<CreateBackendTargetRequest, CreateBackendTargetResponse> genForcreateBackendTarget() {
+        // basic
+        HttpRequestDef.Builder<CreateBackendTargetRequest, CreateBackendTargetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBackendTargetRequest.class, CreateBackendTargetResponse.class)
+                .withName("CreateBackendTarget")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/targets")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBackendTargetRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<CreateBackendTargetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBackendTargetRequestBody.class),
+            f -> f.withMarshaller(CreateBackendTargetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateBackendTargetResponse::getXRequestId,
+                CreateBackendTargetResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateFsDirRequest, CreateFsDirResponse> createFsDir = genForcreateFsDir();
 
     private static HttpRequestDef<CreateFsDirRequest, CreateFsDirResponse> genForcreateFsDir() {
@@ -209,6 +292,114 @@ public class SFSTurboMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFsDirQuotaRequestBody.class),
             f -> f.withMarshaller(CreateFsDirQuotaRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFsTaskRequest, CreateFsTaskResponse> createFsTask = genForcreateFsTask();
+
+    private static HttpRequestDef<CreateFsTaskRequest, CreateFsTaskResponse> genForcreateFsTask() {
+        // basic
+        HttpRequestDef.Builder<CreateFsTaskRequest, CreateFsTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFsTaskRequest.class, CreateFsTaskResponse.class)
+                .withName("CreateFsTask")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/{feature}/tasks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFsTaskRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("feature",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFsTaskRequest::getFeature, (req, v) -> {
+                req.setFeature(v);
+            }));
+        builder.<FsDirReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(FsDirReq.class),
+            f -> f.withMarshaller(CreateFsTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse> createHpcCacheTask =
+        genForcreateHpcCacheTask();
+
+    private static HttpRequestDef<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse> genForcreateHpcCacheTask() {
+        // basic
+        HttpRequestDef.Builder<CreateHpcCacheTaskRequest, CreateHpcCacheTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateHpcCacheTaskRequest.class, CreateHpcCacheTaskResponse.class)
+                .withName("CreateHpcCacheTask")
+                .withUri("/v1/{project_id}/sfs-turbo/{share_id}/hpc-cache/task")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateHpcCacheTaskRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<CreateHpcCacheTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateHpcCacheTaskReq.class),
+            f -> f.withMarshaller(CreateHpcCacheTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateHpcCacheTaskResponse::getXRequestId,
+                CreateHpcCacheTaskResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePermRuleRequest, CreatePermRuleResponse> createPermRule =
+        genForcreatePermRule();
+
+    private static HttpRequestDef<CreatePermRuleRequest, CreatePermRuleResponse> genForcreatePermRule() {
+        // basic
+        HttpRequestDef.Builder<CreatePermRuleRequest, CreatePermRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePermRuleRequest.class, CreatePermRuleResponse.class)
+                .withName("CreatePermRule")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/perm-rules")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePermRuleRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<CreatePermRulesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePermRulesRequestBody.class),
+            f -> f.withMarshaller(CreatePermRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -273,6 +464,51 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteBackendTargetRequest, DeleteBackendTargetResponse> deleteBackendTarget =
+        genFordeleteBackendTarget();
+
+    private static HttpRequestDef<DeleteBackendTargetRequest, DeleteBackendTargetResponse> genFordeleteBackendTarget() {
+        // basic
+        HttpRequestDef.Builder<DeleteBackendTargetRequest, DeleteBackendTargetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteBackendTargetRequest.class, DeleteBackendTargetResponse.class)
+            .withName("DeleteBackendTarget")
+            .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/targets/{target_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackendTargetRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("target_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackendTargetRequest::getTargetId, (req, v) -> {
+                req.setTargetId(v);
+            }));
+        builder.<Boolean>withRequestField("delete_data_in_file_system",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteBackendTargetRequest::getDeleteDataInFileSystem, (req, v) -> {
+                req.setDeleteDataInFileSystem(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBackendTargetResponse::getXRequestId,
+                DeleteBackendTargetResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteFsDirRequest, DeleteFsDirResponse> deleteFsDir = genFordeleteFsDir();
 
     private static HttpRequestDef<DeleteFsDirRequest, DeleteFsDirResponse> genFordeleteFsDir() {
@@ -329,6 +565,76 @@ public class SFSTurboMeta {
             TypeCasts.uncheckedConversion(DeleteFsDirQuotaRequestBody.class),
             f -> f.withMarshaller(DeleteFsDirQuotaRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFsTaskRequest, DeleteFsTaskResponse> deleteFsTask = genFordeleteFsTask();
+
+    private static HttpRequestDef<DeleteFsTaskRequest, DeleteFsTaskResponse> genFordeleteFsTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteFsTaskRequest, DeleteFsTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFsTaskRequest.class, DeleteFsTaskResponse.class)
+                .withName("DeleteFsTask")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/{feature}/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFsTaskRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("feature",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFsTaskRequest::getFeature, (req, v) -> {
+                req.setFeature(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFsTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePermRuleRequest, DeletePermRuleResponse> deletePermRule =
+        genFordeletePermRule();
+
+    private static HttpRequestDef<DeletePermRuleRequest, DeletePermRuleResponse> genFordeletePermRule() {
+        // basic
+        HttpRequestDef.Builder<DeletePermRuleRequest, DeletePermRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePermRuleRequest.class, DeletePermRuleResponse.class)
+                .withName("DeletePermRule")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/perm-rules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePermRuleRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePermRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
             }));
 
         // response
@@ -423,6 +729,179 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListBackendTargetsRequest, ListBackendTargetsResponse> listBackendTargets =
+        genForlistBackendTargets();
+
+    private static HttpRequestDef<ListBackendTargetsRequest, ListBackendTargetsResponse> genForlistBackendTargets() {
+        // basic
+        HttpRequestDef.Builder<ListBackendTargetsRequest, ListBackendTargetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBackendTargetsRequest.class, ListBackendTargetsResponse.class)
+                .withName("ListBackendTargets")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/targets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendTargetsRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackendTargetsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackendTargetsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBackendTargetsResponse::getXRequestId,
+                ListBackendTargetsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFsTasksRequest, ListFsTasksResponse> listFsTasks = genForlistFsTasks();
+
+    private static HttpRequestDef<ListFsTasksRequest, ListFsTasksResponse> genForlistFsTasks() {
+        // basic
+        HttpRequestDef.Builder<ListFsTasksRequest, ListFsTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFsTasksRequest.class, ListFsTasksResponse.class)
+                .withName("ListFsTasks")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/{feature}/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFsTasksRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("feature",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFsTasksRequest::getFeature, (req, v) -> {
+                req.setFeature(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFsTasksRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFsTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse> listHpcCacheTasks =
+        genForlistHpcCacheTasks();
+
+    private static HttpRequestDef<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse> genForlistHpcCacheTasks() {
+        // basic
+        HttpRequestDef.Builder<ListHpcCacheTasksRequest, ListHpcCacheTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHpcCacheTasksRequest.class, ListHpcCacheTasksResponse.class)
+                .withName("ListHpcCacheTasks")
+                .withUri("/v1/{project_id}/sfs-turbo/{share_id}/hpc-cache/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListHpcCacheTasksResponse::getXRequestId, ListHpcCacheTasksResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPermRulesRequest, ListPermRulesResponse> listPermRules =
+        genForlistPermRules();
+
+    private static HttpRequestDef<ListPermRulesRequest, ListPermRulesResponse> genForlistPermRules() {
+        // basic
+        HttpRequestDef.Builder<ListPermRulesRequest, ListPermRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPermRulesRequest.class, ListPermRulesResponse.class)
+                .withName("ListPermRules")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/perm-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPermRulesRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSharedTagsRequest, ListSharedTagsResponse> listSharedTags =
         genForlistSharedTags();
 
@@ -469,6 +948,82 @@ public class SFSTurboMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse> setHpcCacheBackend =
+        genForsetHpcCacheBackend();
+
+    private static HttpRequestDef<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse> genForsetHpcCacheBackend() {
+        // basic
+        HttpRequestDef.Builder<SetHpcCacheBackendRequest, SetHpcCacheBackendResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetHpcCacheBackendRequest.class, SetHpcCacheBackendResponse.class)
+                .withName("SetHpcCacheBackend")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetHpcCacheBackendRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<ReqConfigHpcCacheBackend>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReqConfigHpcCacheBackend.class),
+            f -> f.withMarshaller(SetHpcCacheBackendRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetHpcCacheBackendResponse::getXRequestId,
+                SetHpcCacheBackendResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> showBackendTargetInfo =
+        genForshowBackendTargetInfo();
+
+    private static HttpRequestDef<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> genForshowBackendTargetInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowBackendTargetInfoRequest, ShowBackendTargetInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowBackendTargetInfoRequest.class, ShowBackendTargetInfoResponse.class)
+            .withName("ShowBackendTargetInfo")
+            .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/targets/{target_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackendTargetInfoRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("target_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackendTargetInfoRequest::getTargetId, (req, v) -> {
+                req.setTargetId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowBackendTargetInfoResponse::getXRequestId,
+                ShowBackendTargetInfoResponse::setXRequestId));
         return builder.build();
     }
 
@@ -528,6 +1083,149 @@ public class SFSTurboMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFsDirQuotaRequest::getPath, (req, v) -> {
                 req.setPath(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFsDirUsageRequest, ShowFsDirUsageResponse> showFsDirUsage =
+        genForshowFsDirUsage();
+
+    private static HttpRequestDef<ShowFsDirUsageRequest, ShowFsDirUsageResponse> genForshowFsDirUsage() {
+        // basic
+        HttpRequestDef.Builder<ShowFsDirUsageRequest, ShowFsDirUsageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFsDirUsageRequest.class, ShowFsDirUsageResponse.class)
+                .withName("ShowFsDirUsage")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/dir-usage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFsDirUsageRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("path",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFsDirUsageRequest::getPath, (req, v) -> {
+                req.setPath(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowFsDirUsageResponse::getXRequestId, ShowFsDirUsageResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFsTaskRequest, ShowFsTaskResponse> showFsTask = genForshowFsTask();
+
+    private static HttpRequestDef<ShowFsTaskRequest, ShowFsTaskResponse> genForshowFsTask() {
+        // basic
+        HttpRequestDef.Builder<ShowFsTaskRequest, ShowFsTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFsTaskRequest.class, ShowFsTaskResponse.class)
+                .withName("ShowFsTask")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/{feature}/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFsTaskRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("feature",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFsTaskRequest::getFeature, (req, v) -> {
+                req.setFeature(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFsTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse> showHpcCacheTask =
+        genForshowHpcCacheTask();
+
+    private static HttpRequestDef<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse> genForshowHpcCacheTask() {
+        // basic
+        HttpRequestDef.Builder<ShowHpcCacheTaskRequest, ShowHpcCacheTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHpcCacheTaskRequest.class, ShowHpcCacheTaskResponse.class)
+                .withName("ShowHpcCacheTask")
+                .withUri("/v1/{project_id}/sfs-turbo/{share_id}/hpc-cache/task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHpcCacheTaskRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHpcCacheTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowHpcCacheTaskResponse::getXRequestId, ShowHpcCacheTaskResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPermRuleRequest, ShowPermRuleResponse> showPermRule = genForshowPermRule();
+
+    private static HttpRequestDef<ShowPermRuleRequest, ShowPermRuleResponse> genForshowPermRule() {
+        // basic
+        HttpRequestDef.Builder<ShowPermRuleRequest, ShowPermRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPermRuleRequest.class, ShowPermRuleResponse.class)
+                .withName("ShowPermRule")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/perm-rules/{rule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPermRuleRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPermRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
             }));
 
         // response
@@ -608,6 +1306,82 @@ public class SFSTurboMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFsDirQuotaRequestBody.class),
             f -> f.withMarshaller(UpdateFsDirQuotaRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHpcShareRequest, UpdateHpcShareResponse> updateHpcShare =
+        genForupdateHpcShare();
+
+    private static HttpRequestDef<UpdateHpcShareRequest, UpdateHpcShareResponse> genForupdateHpcShare() {
+        // basic
+        HttpRequestDef.Builder<UpdateHpcShareRequest, UpdateHpcShareResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHpcShareRequest.class, UpdateHpcShareResponse.class)
+                .withName("UpdateHpcShare")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHpcShareRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<UpdateHpcShareRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateHpcShareRequestBody.class),
+            f -> f.withMarshaller(UpdateHpcShareRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateHpcShareResponse::getXRequestId, UpdateHpcShareResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePermRuleRequest, UpdatePermRuleResponse> updatePermRule =
+        genForupdatePermRule();
+
+    private static HttpRequestDef<UpdatePermRuleRequest, UpdatePermRuleResponse> genForupdatePermRule() {
+        // basic
+        HttpRequestDef.Builder<UpdatePermRuleRequest, UpdatePermRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePermRuleRequest.class, UpdatePermRuleResponse.class)
+                .withName("UpdatePermRule")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/fs/perm-rules/{rule_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePermRuleRequest::getShareId, (req, v) -> {
+                req.setShareId(v);
+            }));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePermRuleRequest::getRuleId, (req, v) -> {
+                req.setRuleId(v);
+            }));
+        builder.<OnePermRuleRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OnePermRuleRequestInfo.class),
+            f -> f.withMarshaller(UpdatePermRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

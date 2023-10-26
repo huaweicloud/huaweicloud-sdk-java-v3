@@ -114,11 +114,6 @@ public class CreateInstanceRequestBody {
     private Boolean shared;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specs")
 
     private List<CreateSpec> specs = null;
@@ -213,23 +208,6 @@ public class CreateInstanceRequestBody {
         this.shared = shared;
     }
 
-    public CreateInstanceRequestBody withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 包周期订购时的订单ID。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
     public CreateInstanceRequestBody withSpecs(List<CreateSpec> specs) {
         this.specs = specs;
         return this;
@@ -308,13 +286,12 @@ public class CreateInstanceRequestBody {
         return Objects.equals(this.name, that.name) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.shared, that.shared)
-            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.specs, that.specs)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.specs, that.specs) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, chargeMode, enterpriseProjectId, description, shared, orderId, specs, tags);
+        return Objects.hash(name, chargeMode, enterpriseProjectId, description, shared, specs, tags);
     }
 
     @Override
@@ -326,7 +303,6 @@ public class CreateInstanceRequestBody {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    specs: ").append(toIndentedString(specs)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");

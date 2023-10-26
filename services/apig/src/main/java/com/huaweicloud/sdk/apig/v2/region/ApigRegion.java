@@ -58,7 +58,7 @@ public class ApigRegion {
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://apig.eu-west-101.myhuaweicloud.eu");
 
-    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://apig.ae-ad-1.g42cloud.com");
+    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://apig.ae-ad-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("APIG");
 

@@ -126,7 +126,7 @@ public class ShowHistoryTasksRequest {
     private String orderType;
 
     /**
-     * file：文件,directory：目录。
+     * 默认是文件file。file：文件,directory：目录。
      */
     public static final class FileTypeEnum {
 
@@ -387,7 +387,7 @@ public class ShowHistoryTasksRequest {
     }
 
     /**
-     * 用来排序的字段，支持的字段有“task_type”，“total”，“processing”， “succeed”，“failed”，“create_time”。order_field和order_type必须同时传值，否则使用默认值\"create_time\" 和 \"desc\"。
+     * 用来排序的字段，支持的字段有“task_type”：任务的类型，“total”：url总数，“processing”：处理中的url个数， “succeed”：成功处理的url个数，“failed”：处理失败的url个数，“create_time”：任务的创建时间。order_field和order_type必须同时传值，否则使用默认值\"create_time\" 和 \"desc\"：降序。
      * @return orderField
      */
     public String getOrderField() {
@@ -404,7 +404,7 @@ public class ShowHistoryTasksRequest {
     }
 
     /**
-     * desc 或者asc。默认值desc。
+     * desc：降序，或者asc：升序。默认值desc。
      * @return orderType
      */
     public String getOrderType() {
@@ -421,7 +421,7 @@ public class ShowHistoryTasksRequest {
     }
 
     /**
-     * file：文件,directory：目录。
+     * 默认是文件file。file：文件,directory：目录。
      * @return fileType
      */
     public FileTypeEnum getFileType() {

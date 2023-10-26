@@ -21,7 +21,7 @@ public class DeleteFsDirRequestBody {
     }
 
     /**
-     * 合法的的目录全路径
+     * 合法的目录全路径
      * @return path
      */
     public String getPath() {

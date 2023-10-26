@@ -16,6 +16,11 @@ public class ListPortStatisticsRequest {
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port_string")
+
+    private String portString;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -24,6 +29,16 @@ public class ListPortStatisticsRequest {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key")
+
+    private String sortKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private String sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -41,7 +56,7 @@ public class ListPortStatisticsRequest {
     }
 
     /**
-     * 端口号
+     * 端口号，精确匹配
      * minimum: 1
      * maximum: 65535
      * @return port
@@ -52,6 +67,23 @@ public class ListPortStatisticsRequest {
 
     public void setPort(Integer port) {
         this.port = port;
+    }
+
+    public ListPortStatisticsRequest withPortString(String portString) {
+        this.portString = portString;
+        return this;
+    }
+
+    /**
+     * 端口字符串，用来进行模糊匹配
+     * @return portString
+     */
+    public String getPortString() {
+        return portString;
+    }
+
+    public void setPortString(String portString) {
+        this.portString = portString;
     }
 
     public ListPortStatisticsRequest withType(String type) {
@@ -86,6 +118,40 @@ public class ListPortStatisticsRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListPortStatisticsRequest withSortKey(String sortKey) {
+        this.sortKey = sortKey;
+        return this;
+    }
+
+    /**
+     * 排序的key值，目前支持按照端口号port排序
+     * @return sortKey
+     */
+    public String getSortKey() {
+        return sortKey;
+    }
+
+    public void setSortKey(String sortKey) {
+        this.sortKey = sortKey;
+    }
+
+    public ListPortStatisticsRequest withSortDir(String sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /**
+     * 升序还是降序，默认升序，asc
+     * @return sortDir
+     */
+    public String getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(String sortDir) {
+        this.sortDir = sortDir;
     }
 
     public ListPortStatisticsRequest withLimit(Integer limit) {
@@ -135,14 +201,16 @@ public class ListPortStatisticsRequest {
             return false;
         }
         ListPortStatisticsRequest that = (ListPortStatisticsRequest) obj;
-        return Objects.equals(this.port, that.port) && Objects.equals(this.type, that.type)
+        return Objects.equals(this.port, that.port) && Objects.equals(this.portString, that.portString)
+            && Objects.equals(this.type, that.type)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(port, type, enterpriseProjectId, limit, offset);
+        return Objects.hash(port, portString, type, enterpriseProjectId, sortKey, sortDir, limit, offset);
     }
 
     @Override
@@ -150,8 +218,11 @@ public class ListPortStatisticsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPortStatisticsRequest {\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    portString: ").append(toIndentedString(portString)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

@@ -54,6 +54,9 @@ public class HssRegion {
 
     public static final Region CN_NORTH_2 = new Region("cn-north-2", "https://hss.cn-north-2.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://hss.ap-southeast-4.myhuaweicloud.com");
+
     public static final Region AE_AD_1 = new Region("ae-ad-1", "https://hss.ae-ad-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("HSS");
@@ -81,6 +84,7 @@ public class HssRegion {
         map.put("la-north-2", LA_NORTH_2);
         map.put("tr-west-1", TR_WEST_1);
         map.put("cn-north-2", CN_NORTH_2);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("ae-ad-1", AE_AD_1);
         return Collections.unmodifiableMap(map);
     }

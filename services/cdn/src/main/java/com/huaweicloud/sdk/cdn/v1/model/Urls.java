@@ -61,7 +61,7 @@ public class Urls {
     }
 
     /**
-     * urlid
+     * url id。
      * @return id
      */
     public Long getId() {
@@ -95,7 +95,7 @@ public class Urls {
     }
 
     /**
-     * url状态。
+     * url状态，状态类型：processing：处理中；succeed：完成；failed：失败；waiting：等待；refreshing：刷新中; preheating : 预热中。
      * @return status
      */
     public String getStatus() {
@@ -112,7 +112,7 @@ public class Urls {
     }
 
     /**
-     * 任务类型。
+     * 任务类型，REFRESH：刷新任务；PREHEATING：预热任务。
      * @return type
      */
     public String getType() {
@@ -180,7 +180,7 @@ public class Urls {
     }
 
     /**
-     * 文件类型，目录还是文件。
+     * 文件类型，directory：目录，或file：文件。
      * @return fileType
      */
     public String getFileType() {

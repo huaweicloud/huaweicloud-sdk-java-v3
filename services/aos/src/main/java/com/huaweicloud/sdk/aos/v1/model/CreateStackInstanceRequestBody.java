@@ -19,7 +19,7 @@ public class CreateStackInstanceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deployment_targets")
 
-    private DeploymentTargetsPrimitiveTypeHolderDeploymentTargets deploymentTargets;
+    private DeploymentTargets deploymentTargets;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "var_overrides")
@@ -43,16 +43,14 @@ public class CreateStackInstanceRequestBody {
         this.stackSetId = stackSetId;
     }
 
-    public CreateStackInstanceRequestBody withDeploymentTargets(
-        DeploymentTargetsPrimitiveTypeHolderDeploymentTargets deploymentTargets) {
+    public CreateStackInstanceRequestBody withDeploymentTargets(DeploymentTargets deploymentTargets) {
         this.deploymentTargets = deploymentTargets;
         return this;
     }
 
-    public CreateStackInstanceRequestBody withDeploymentTargets(
-        Consumer<DeploymentTargetsPrimitiveTypeHolderDeploymentTargets> deploymentTargetsSetter) {
+    public CreateStackInstanceRequestBody withDeploymentTargets(Consumer<DeploymentTargets> deploymentTargetsSetter) {
         if (this.deploymentTargets == null) {
-            this.deploymentTargets = new DeploymentTargetsPrimitiveTypeHolderDeploymentTargets();
+            this.deploymentTargets = new DeploymentTargets();
             deploymentTargetsSetter.accept(this.deploymentTargets);
         }
 
@@ -63,11 +61,11 @@ public class CreateStackInstanceRequestBody {
      * Get deploymentTargets
      * @return deploymentTargets
      */
-    public DeploymentTargetsPrimitiveTypeHolderDeploymentTargets getDeploymentTargets() {
+    public DeploymentTargets getDeploymentTargets() {
         return deploymentTargets;
     }
 
-    public void setDeploymentTargets(DeploymentTargetsPrimitiveTypeHolderDeploymentTargets deploymentTargets) {
+    public void setDeploymentTargets(DeploymentTargets deploymentTargets) {
         this.deploymentTargets = deploymentTargets;
     }
 

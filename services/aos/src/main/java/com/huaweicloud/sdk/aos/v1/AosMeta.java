@@ -76,6 +76,8 @@ import com.huaweicloud.sdk.aos.v1.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesRequest;
 import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetOperationMetadataRequest;
@@ -88,6 +90,9 @@ import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionContentRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionContentResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequest;
+import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackResponse;
@@ -1309,6 +1314,52 @@ public class AosMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowStackInstanceRequest, ShowStackInstanceResponse> showStackInstance =
+        genForshowStackInstance();
+
+    private static HttpRequestDef<ShowStackInstanceRequest, ShowStackInstanceResponse> genForshowStackInstance() {
+        // basic
+        HttpRequestDef.Builder<ShowStackInstanceRequest, ShowStackInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowStackInstanceRequest.class, ShowStackInstanceResponse.class)
+                .withName("ShowStackInstance")
+                .withUri("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_set_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStackInstanceRequest::getStackSetName, (req, v) -> {
+                req.setStackSetName(v);
+            }));
+        builder.<String>withRequestField("stack_instance_addr",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStackInstanceRequest::getStackInstanceAddr, (req, v) -> {
+                req.setStackInstanceAddr(v);
+            }));
+        builder.<String>withRequestField("stack_set_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStackInstanceRequest::getStackSetId, (req, v) -> {
+                req.setStackSetId(v);
+            }));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStackInstanceRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowStackSetMetadataRequest, ShowStackSetMetadataResponse> showStackSetMetadata =
         genForshowStackSetMetadata();
 
@@ -1442,6 +1493,45 @@ public class AosMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateStackInstancesRequest, UpdateStackInstancesResponse> updateStackInstances =
+        genForupdateStackInstances();
+
+    private static HttpRequestDef<UpdateStackInstancesRequest, UpdateStackInstancesResponse> genForupdateStackInstances() {
+        // basic
+        HttpRequestDef.Builder<UpdateStackInstancesRequest, UpdateStackInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PATCH, UpdateStackInstancesRequest.class, UpdateStackInstancesResponse.class)
+            .withName("UpdateStackInstances")
+            .withUri("/v1/stack-sets/{stack_set_name}/stack-instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_set_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStackInstancesRequest::getStackSetName, (req, v) -> {
+                req.setStackSetName(v);
+            }));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStackInstancesRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            }));
+        builder.<UpdateStackInstancesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateStackInstancesRequestBody.class),
+            f -> f.withMarshaller(UpdateStackInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateStackSetRequest, UpdateStackSetResponse> updateStackSet =
         genForupdateStackSet();
 
@@ -1548,6 +1638,13 @@ public class AosMeta {
             }));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTemplateResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -1594,6 +1691,13 @@ public class AosMeta {
             }));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTemplateVersionResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -1746,6 +1850,13 @@ public class AosMeta {
             }));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowTemplateVersionContentResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         builder.<String>withResponseField("Location",
             LocationType.Header,
@@ -1840,6 +1951,13 @@ public class AosMeta {
             }));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateTemplateMetadataResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

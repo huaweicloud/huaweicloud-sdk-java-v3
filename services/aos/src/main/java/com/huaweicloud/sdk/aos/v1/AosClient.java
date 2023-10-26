@@ -64,6 +64,8 @@ import com.huaweicloud.sdk.aos.v1.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesRequest;
 import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetOperationMetadataRequest;
@@ -76,6 +78,8 @@ import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionContentRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionContentResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequest;
+import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackSetRequest;
@@ -1292,7 +1296,7 @@ public class AosClient {
      * 
      * 此API用于删除指定资源栈集下指定局点（region）或指定成员账户（domain_id）的资源栈实例，并返回资源栈集操作ID（stack_set_operation_id）
      * 
-     * **请谨慎操作，删除资源栈实例将会删除与该资源栈实例相关的堆栈以及堆栈所管理的一切资源。
+     * **请谨慎操作，删除资源栈实例将会删除与该资源栈实例相关的堆栈以及堆栈所管理的一切资源。**
      * 
      * * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态
      * 
@@ -1312,7 +1316,7 @@ public class AosClient {
      * 
      * 此API用于删除指定资源栈集下指定局点（region）或指定成员账户（domain_id）的资源栈实例，并返回资源栈集操作ID（stack_set_operation_id）
      * 
-     * **请谨慎操作，删除资源栈实例将会删除与该资源栈实例相关的堆栈以及堆栈所管理的一切资源。
+     * **请谨慎操作，删除资源栈实例将会删除与该资源栈实例相关的堆栈以及堆栈所管理的一切资源。**
      * 
      * * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态
      * 
@@ -1550,6 +1554,40 @@ public class AosClient {
     }
 
     /**
+     * 获取资源栈实例
+     *
+     * 获取资源栈实例（ShowStackInstance）
+     * 
+     * 用户可以使用此API获取资源栈实例的详细信息，包括关联资源栈名称与id，创建时间，参数覆盖等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStackInstanceRequest 请求对象
+     * @return ShowStackInstanceResponse
+     */
+    public ShowStackInstanceResponse showStackInstance(ShowStackInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, AosMeta.showStackInstance);
+    }
+
+    /**
+     * 获取资源栈实例
+     *
+     * 获取资源栈实例（ShowStackInstance）
+     * 
+     * 用户可以使用此API获取资源栈实例的详细信息，包括关联资源栈名称与id，创建时间，参数覆盖等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStackInstanceRequest 请求对象
+     * @return SyncInvoker<ShowStackInstanceRequest, ShowStackInstanceResponse>
+     */
+    public SyncInvoker<ShowStackInstanceRequest, ShowStackInstanceResponse> showStackInstanceInvoker(
+        ShowStackInstanceRequest request) {
+        return new SyncInvoker<ShowStackInstanceRequest, ShowStackInstanceResponse>(request, AosMeta.showStackInstance,
+            hcClient);
+    }
+
+    /**
      * 获取资源栈集元数据
      *
      * 获取资源栈集元数据（ShowStackSetMetadata）
@@ -1660,6 +1698,60 @@ public class AosClient {
         ShowStackSetTemplateRequest request) {
         return new SyncInvoker<ShowStackSetTemplateRequest, ShowStackSetTemplateResponse>(request,
             AosMeta.showStackSetTemplate, hcClient);
+    }
+
+    /**
+     * 更新资源栈实例
+     *
+     * 更新资源栈实例（UpdateStackInstances）
+     * 
+     * 此API用于更新并部署指定资源栈实例集合，并返回资源栈集操作ID（stack_set_operation_id）
+     * 
+     * 此API可以通过var_overrides参数，更新指定资源栈实例的参数值，进行参数覆盖。若var_overrides参数未给与，则默认使用当前资源栈集中记录的参数进行部署，详见：var_overrides参数描述。用户只可以更新已经存在的资源栈实例，如果用户想要增加额外的资源栈实例，请使用CreateStackInstances API。
+     * 
+     * 通过DeployStackSet API更新资源栈集参数后，资源栈实例中已经被覆盖的参数不会被更新，仍然保留覆盖值。
+     * 
+     * 用户只能覆盖已经在资源栈集中记录的参数，如果用户想要增加可以覆盖的参数，需要先通过DeployStackSet API更新资源栈集记录的参数集合。
+     * 
+     * * 当触发的部署失败时，资源栈实例不会自动回滚参数覆盖，但部署失败的资源栈会默认自动回滚，已经部署成功的资源栈不会触发回滚。
+     * 
+     * * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateStackInstancesRequest 请求对象
+     * @return UpdateStackInstancesResponse
+     */
+    public UpdateStackInstancesResponse updateStackInstances(UpdateStackInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, AosMeta.updateStackInstances);
+    }
+
+    /**
+     * 更新资源栈实例
+     *
+     * 更新资源栈实例（UpdateStackInstances）
+     * 
+     * 此API用于更新并部署指定资源栈实例集合，并返回资源栈集操作ID（stack_set_operation_id）
+     * 
+     * 此API可以通过var_overrides参数，更新指定资源栈实例的参数值，进行参数覆盖。若var_overrides参数未给与，则默认使用当前资源栈集中记录的参数进行部署，详见：var_overrides参数描述。用户只可以更新已经存在的资源栈实例，如果用户想要增加额外的资源栈实例，请使用CreateStackInstances API。
+     * 
+     * 通过DeployStackSet API更新资源栈集参数后，资源栈实例中已经被覆盖的参数不会被更新，仍然保留覆盖值。
+     * 
+     * 用户只能覆盖已经在资源栈集中记录的参数，如果用户想要增加可以覆盖的参数，需要先通过DeployStackSet API更新资源栈集记录的参数集合。
+     * 
+     * * 当触发的部署失败时，资源栈实例不会自动回滚参数覆盖，但部署失败的资源栈会默认自动回滚，已经部署成功的资源栈不会触发回滚。
+     * 
+     * * 用户可以根据资源栈集操作ID（stack_set_operation_id），通过ShowStackSetOperationMetadata API获取资源栈集操作状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateStackInstancesRequest 请求对象
+     * @return SyncInvoker<UpdateStackInstancesRequest, UpdateStackInstancesResponse>
+     */
+    public SyncInvoker<UpdateStackInstancesRequest, UpdateStackInstancesResponse> updateStackInstancesInvoker(
+        UpdateStackInstancesRequest request) {
+        return new SyncInvoker<UpdateStackInstancesRequest, UpdateStackInstancesResponse>(request,
+            AosMeta.updateStackInstances, hcClient);
     }
 
     /**

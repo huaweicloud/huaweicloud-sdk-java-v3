@@ -113,6 +113,11 @@ public class VulHostInfo {
 
     private Long scanTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_restore")
+
+    private Boolean supportRestore;
+
     public VulHostInfo withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -136,7 +141,7 @@ public class VulHostInfo {
     }
 
     /**
-     * 危险程度   - Critical : 高危   - High : 中危   - Medium : 中危   - Low : 低危
+     * 危险程度   - Critical : 漏洞cvss评分大于等于9；对应控制台页面的高危   - High : 漏洞cvss评分大于等于7，小于9；对应控制台页面的中危   - Medium : 漏洞cvss评分大于等于4，小于7；对应控制台页面的中危   - Low : 漏洞cvss评分小于4；对应控制台页面的低危
      * @return severityLevel
      */
     public String getSeverityLevel() {
@@ -475,6 +480,23 @@ public class VulHostInfo {
         this.scanTime = scanTime;
     }
 
+    public VulHostInfo withSupportRestore(Boolean supportRestore) {
+        this.supportRestore = supportRestore;
+        return this;
+    }
+
+    /**
+     * 是否可以回滚到修复漏洞时创建的备份
+     * @return supportRestore
+     */
+    public Boolean getSupportRestore() {
+        return supportRestore;
+    }
+
+    public void setSupportRestore(Boolean supportRestore) {
+        this.supportRestore = supportRestore;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -494,7 +516,8 @@ public class VulHostInfo {
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.assetValue, that.assetValue)
             && Objects.equals(this.isAffectBusiness, that.isAffectBusiness)
-            && Objects.equals(this.firstScanTime, that.firstScanTime) && Objects.equals(this.scanTime, that.scanTime);
+            && Objects.equals(this.firstScanTime, that.firstScanTime) && Objects.equals(this.scanTime, that.scanTime)
+            && Objects.equals(this.supportRestore, that.supportRestore);
     }
 
     @Override
@@ -518,7 +541,8 @@ public class VulHostInfo {
             assetValue,
             isAffectBusiness,
             firstScanTime,
-            scanTime);
+            scanTime,
+            supportRestore);
     }
 
     @Override
@@ -545,6 +569,7 @@ public class VulHostInfo {
         sb.append("    isAffectBusiness: ").append(toIndentedString(isAffectBusiness)).append("\n");
         sb.append("    firstScanTime: ").append(toIndentedString(firstScanTime)).append("\n");
         sb.append("    scanTime: ").append(toIndentedString(scanTime)).append("\n");
+        sb.append("    supportRestore: ").append(toIndentedString(supportRestore)).append("\n");
         sb.append("}");
         return sb.toString();
     }

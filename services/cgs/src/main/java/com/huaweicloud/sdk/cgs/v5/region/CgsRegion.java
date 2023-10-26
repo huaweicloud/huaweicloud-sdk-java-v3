@@ -14,6 +14,8 @@ public class CgsRegion {
 
     public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://cgs.cn-south-4.myhuaweicloud.com");
 
+    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://hss.ae-ad-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CGS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -21,6 +23,7 @@ public class CgsRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-south-4", CN_SOUTH_4);
+        map.put("ae-ad-1", AE_AD_1);
         return Collections.unmodifiableMap(map);
     }
 

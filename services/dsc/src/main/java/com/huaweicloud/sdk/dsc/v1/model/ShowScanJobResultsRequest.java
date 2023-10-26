@@ -195,7 +195,7 @@ public class ShowScanJobResultsRequest {
     }
 
     /**
-     * 预留，待启用
+     * 起始时间（预留，待启用）
      * @return startTime
      */
     public String getStartTime() {
@@ -212,7 +212,7 @@ public class ShowScanJobResultsRequest {
     }
 
     /**
-     * 预留，待启用
+     * 结束时间（预留，待启用）
      * @return endTime
      */
     public String getEndTime() {

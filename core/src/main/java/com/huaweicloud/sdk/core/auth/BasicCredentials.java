@@ -108,8 +108,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                 return this;
             }
 
-            String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? getDefaultIamEndpoint() : getIamEndpoint();
-            HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(iamEndpoint));
+            HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(getUsedIamEndpoint()));
 
             Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
             setDerivedPredicate(null);
@@ -259,9 +258,8 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     @Override
     protected void updateAuthTokenByIdToken(HttpClient httpClient) {
-        String iamEndpoint = StringUtils.isEmpty(getIamEndpoint()) ? Constants.DEFAULT_IAM_ENDPOINT : getIamEndpoint();
         HttpRequest httpRequest = Iam.getProjectTokenWithIdTokenRequest(
-                iamEndpoint, getIdpId(), getIdToken(), projectId);
+                getUsedIamEndpoint(), getIdpId(), getIdToken(), projectId);
         CreateTokenWithIdTokenResponse response = Iam.createTokenWithIdToken(httpClient, httpRequest);
         authToken = response.getSubjectToken();
         try {
