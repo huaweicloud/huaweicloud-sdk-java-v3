@@ -1,9 +1,13 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -14,47 +18,133 @@ import java.util.function.Consumer;
  */
 public class ListAlertRuleMetricsResponse extends SdkResponse {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    /**
+     * 指标类型，分组数量。Metric category. GROUP_COUNT.
+     */
+    public static final class CategoryEnum {
 
-    private Map<String, AlertRuleMetric> body = null;
+        /**
+         * Enum GROUP_COUNT for value: "GROUP_COUNT"
+         */
+        public static final CategoryEnum GROUP_COUNT = new CategoryEnum("GROUP_COUNT");
+
+        private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CategoryEnum> createStaticFields() {
+            Map<String, CategoryEnum> map = new HashMap<>();
+            map.put("GROUP_COUNT", GROUP_COUNT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CategoryEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CategoryEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
+        }
+
+        public static CategoryEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CategoryEnum) {
+                return this.value.equals(((CategoryEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private CategoryEnum category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metric")
+
+    private Map<String, BigDecimal> metric = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
 
     private String xRequestId;
 
-    public ListAlertRuleMetricsResponse withBody(Map<String, AlertRuleMetric> body) {
-        this.body = body;
-        return this;
-    }
-
-    public ListAlertRuleMetricsResponse putBodyItem(String key, AlertRuleMetric bodyItem) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
-        }
-        this.body.put(key, bodyItem);
-        return this;
-    }
-
-    public ListAlertRuleMetricsResponse withBody(Consumer<Map<String, AlertRuleMetric>> bodySetter) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
-        }
-        bodySetter.accept(this.body);
+    public ListAlertRuleMetricsResponse withCategory(CategoryEnum category) {
+        this.category = category;
         return this;
     }
 
     /**
-     * ListAlertRuleMetricsResponseBody
-     * @return body
+     * 指标类型，分组数量。Metric category. GROUP_COUNT.
+     * @return category
      */
-    public Map<String, AlertRuleMetric> getBody() {
-        return body;
+    public CategoryEnum getCategory() {
+        return category;
     }
 
-    public void setBody(Map<String, AlertRuleMetric> body) {
-        this.body = body;
+    public void setCategory(CategoryEnum category) {
+        this.category = category;
+    }
+
+    public ListAlertRuleMetricsResponse withMetric(Map<String, BigDecimal> metric) {
+        this.metric = metric;
+        return this;
+    }
+
+    public ListAlertRuleMetricsResponse putMetricItem(String key, BigDecimal metricItem) {
+        if (this.metric == null) {
+            this.metric = new HashMap<>();
+        }
+        this.metric.put(key, metricItem);
+        return this;
+    }
+
+    public ListAlertRuleMetricsResponse withMetric(Consumer<Map<String, BigDecimal>> metricSetter) {
+        if (this.metric == null) {
+            this.metric = new HashMap<>();
+        }
+        metricSetter.accept(this.metric);
+        return this;
+    }
+
+    /**
+     * 指标值。Metric value.
+     * @return metric
+     */
+    public Map<String, BigDecimal> getMetric() {
+        return metric;
+    }
+
+    public void setMetric(Map<String, BigDecimal> metric) {
+        this.metric = metric;
     }
 
     public ListAlertRuleMetricsResponse withXRequestId(String xRequestId) {
@@ -85,19 +175,21 @@ public class ListAlertRuleMetricsResponse extends SdkResponse {
             return false;
         }
         ListAlertRuleMetricsResponse that = (ListAlertRuleMetricsResponse) obj;
-        return Objects.equals(this.body, that.body) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.category, that.category) && Objects.equals(this.metric, that.metric)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body, xRequestId);
+        return Objects.hash(category, metric, xRequestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAlertRuleMetricsResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

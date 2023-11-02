@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -11,25 +12,34 @@ import java.util.Objects;
 public class DeleteTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
+    @JsonProperty(value = "body")
 
-    private String taskId;
+    private IdDto body;
 
-    public DeleteTaskRequest withTaskId(String taskId) {
-        this.taskId = taskId;
+    public DeleteTaskRequest withBody(IdDto body) {
+        this.body = body;
+        return this;
+    }
+
+    public DeleteTaskRequest withBody(Consumer<IdDto> bodySetter) {
+        if (this.body == null) {
+            this.body = new IdDto();
+            bodySetter.accept(this.body);
+        }
+
         return this;
     }
 
     /**
-     * 待删除的任务ID。
-     * @return taskId
+     * Get body
+     * @return body
      */
-    public String getTaskId() {
-        return taskId;
+    public IdDto getBody() {
+        return body;
     }
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
+    public void setBody(IdDto body) {
+        this.body = body;
     }
 
     @Override
@@ -41,19 +51,19 @@ public class DeleteTaskRequest {
             return false;
         }
         DeleteTaskRequest that = (DeleteTaskRequest) obj;
-        return Objects.equals(this.taskId, that.taskId);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteTaskRequest {\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

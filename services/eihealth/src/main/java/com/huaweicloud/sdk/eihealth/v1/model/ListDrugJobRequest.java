@@ -89,7 +89,7 @@ public class ListDrugJobRequest {
     }
 
     /**
-     * 盘古辅助制药平台项目ID。
+     * 平台项目ID。
      * @return eihealthProjectId
      */
     public String getEihealthProjectId() {
@@ -161,7 +161,7 @@ public class ListDrugJobRequest {
     }
 
     /**
-     * 排序规则 目前默认时间降序，支持根据status
+     * 排序规则 目前默认时间降序，支持根据create_time|finish_time|running_time|total_time排序
      * @return sortKey
      */
     public String getSortKey() {
@@ -277,7 +277,7 @@ public class ListDrugJobRequest {
     }
 
     /**
-     * 作业类型列表, 支持DOCKING|OPTIMIZATION|SYNTHESIS|FEP
+     * 作业类型列表, 支持DOCKING|OPTIMIZATION|SYNTHESIS|FEP|POCKET_DETECTION|ADMET
      * @return typeList
      */
     public List<String> getTypeList() {

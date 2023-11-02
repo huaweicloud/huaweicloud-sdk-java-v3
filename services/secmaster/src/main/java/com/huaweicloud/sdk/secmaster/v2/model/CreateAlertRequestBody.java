@@ -7,23 +7,23 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateAlertRequestBody
+ * 创建告警请求body体
  */
 public class CreateAlertRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_object")
 
-    private CreateAlert dataObject;
+    private Alert dataObject;
 
-    public CreateAlertRequestBody withDataObject(CreateAlert dataObject) {
+    public CreateAlertRequestBody withDataObject(Alert dataObject) {
         this.dataObject = dataObject;
         return this;
     }
 
-    public CreateAlertRequestBody withDataObject(Consumer<CreateAlert> dataObjectSetter) {
+    public CreateAlertRequestBody withDataObject(Consumer<Alert> dataObjectSetter) {
         if (this.dataObject == null) {
-            this.dataObject = new CreateAlert();
+            this.dataObject = new Alert();
             dataObjectSetter.accept(this.dataObject);
         }
 
@@ -34,11 +34,11 @@ public class CreateAlertRequestBody {
      * Get dataObject
      * @return dataObject
      */
-    public CreateAlert getDataObject() {
+    public Alert getDataObject() {
         return dataObject;
     }
 
-    public void setDataObject(CreateAlert dataObject) {
+    public void setDataObject(Alert dataObject) {
         this.dataObject = dataObject;
     }
 

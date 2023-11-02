@@ -40,7 +40,7 @@ public class ListPlaybookApprovesResponse extends SdkResponse {
     }
 
     /**
-     * Error code
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -57,7 +57,7 @@ public class ListPlaybookApprovesResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 响应消息
      * @return message
      */
     public String getMessage() {
@@ -90,7 +90,7 @@ public class ListPlaybookApprovesResponse extends SdkResponse {
     }
 
     /**
-     * Get data
+     * 剧本审核详情
      * @return data
      */
     public List<ApproveOpinionDetail> getData() {

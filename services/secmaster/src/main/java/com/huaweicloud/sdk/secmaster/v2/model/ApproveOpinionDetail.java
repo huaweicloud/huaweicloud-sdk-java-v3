@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Approve Detail
+ * 审核详情信息
  */
 public class ApproveOpinionDetail {
 
@@ -26,7 +26,7 @@ public class ApproveOpinionDetail {
     }
 
     /**
-     * Approve Result.
+     * 审核结果
      * @return result
      */
     public String getResult() {
@@ -43,7 +43,7 @@ public class ApproveOpinionDetail {
     }
 
     /**
-     * Approve content.
+     * 审核内容
      * @return content
      */
     public String getContent() {

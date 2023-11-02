@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Action Instance
+ * 流程实例
  */
 public class ActionInstanceInfo {
 

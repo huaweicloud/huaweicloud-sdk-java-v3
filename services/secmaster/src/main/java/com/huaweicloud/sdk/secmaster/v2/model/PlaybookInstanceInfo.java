@@ -39,7 +39,7 @@ public class PlaybookInstanceInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataobject")
 
-    private DataclassInfoRef dataobject;
+    private DataobjectInfo dataobject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -67,7 +67,7 @@ public class PlaybookInstanceInfo {
     }
 
     /**
-     * Id value
+     * 剧本实例ID
      * @return id
      */
     public String getId() {
@@ -84,7 +84,7 @@ public class PlaybookInstanceInfo {
     }
 
     /**
-     * The name, display only
+     * 剧本实例名称
      * @return name
      */
     public String getName() {
@@ -101,7 +101,7 @@ public class PlaybookInstanceInfo {
     }
 
     /**
-     * Project id value
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -164,14 +164,14 @@ public class PlaybookInstanceInfo {
         this.dataclass = dataclass;
     }
 
-    public PlaybookInstanceInfo withDataobject(DataclassInfoRef dataobject) {
+    public PlaybookInstanceInfo withDataobject(DataobjectInfo dataobject) {
         this.dataobject = dataobject;
         return this;
     }
 
-    public PlaybookInstanceInfo withDataobject(Consumer<DataclassInfoRef> dataobjectSetter) {
+    public PlaybookInstanceInfo withDataobject(Consumer<DataobjectInfo> dataobjectSetter) {
         if (this.dataobject == null) {
-            this.dataobject = new DataclassInfoRef();
+            this.dataobject = new DataobjectInfo();
             dataobjectSetter.accept(this.dataobject);
         }
 
@@ -182,11 +182,11 @@ public class PlaybookInstanceInfo {
      * Get dataobject
      * @return dataobject
      */
-    public DataclassInfoRef getDataobject() {
+    public DataobjectInfo getDataobject() {
         return dataobject;
     }
 
-    public void setDataobject(DataclassInfoRef dataobject) {
+    public void setDataobject(DataobjectInfo dataobject) {
         this.dataobject = dataobject;
     }
 
@@ -196,7 +196,7 @@ public class PlaybookInstanceInfo {
     }
 
     /**
-     * Playbook instance status. RUNNING、FINISHED、FAILED、RETRYING、 TERMINATING、TERMINATED
+     * 剧本实例状态. (RUNNING--运行中、FINISHED--成功、FAILED--失败、RETRYING--重试中、TERMINATING--终止中、TERMINATED--已终止)
      * @return status
      */
     public String getStatus() {
@@ -213,7 +213,7 @@ public class PlaybookInstanceInfo {
     }
 
     /**
-     * trigger type. DEBUG, TIMER, EVENT, MANUAL
+     * 触发类型. TIMER--定时触发, EVENT--事件触发
      * @return triggerType
      */
     public String getTriggerType() {
@@ -230,7 +230,7 @@ public class PlaybookInstanceInfo {
     }
 
     /**
-     * Create time
+     * 创建时间
      * @return startTime
      */
     public String getStartTime() {
@@ -247,7 +247,7 @@ public class PlaybookInstanceInfo {
     }
 
     /**
-     * Update time
+     * 更新时间
      * @return endTime
      */
     public String getEndTime() {

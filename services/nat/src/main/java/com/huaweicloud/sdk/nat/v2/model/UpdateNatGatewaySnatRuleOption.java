@@ -21,6 +21,11 @@ public class UpdateNatGatewaySnatRuleOption {
     private String publicIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eip_id")
+
+    private String globalEipId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -48,7 +53,7 @@ public class UpdateNatGatewaySnatRuleOption {
     }
 
     /**
-     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。 约束：弹性公网IP的id个数不能超过20个 
+     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 约束：弹性公网IP的id个数不能超过20个 
      * @return publicIpAddress
      */
     public String getPublicIpAddress() {
@@ -57,6 +62,23 @@ public class UpdateNatGatewaySnatRuleOption {
 
     public void setPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
+    }
+
+    public UpdateNatGatewaySnatRuleOption withGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+        return this;
+    }
+
+    /**
+     * 全域弹性公网IP的id。
+     * @return globalEipId
+     */
+    public String getGlobalEipId() {
+        return globalEipId;
+    }
+
+    public void setGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
     }
 
     public UpdateNatGatewaySnatRuleOption withDescription(String description) {
@@ -87,12 +109,12 @@ public class UpdateNatGatewaySnatRuleOption {
         UpdateNatGatewaySnatRuleOption that = (UpdateNatGatewaySnatRuleOption) obj;
         return Objects.equals(this.natGatewayId, that.natGatewayId)
             && Objects.equals(this.publicIpAddress, that.publicIpAddress)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.globalEipId, that.globalEipId) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(natGatewayId, publicIpAddress, description);
+        return Objects.hash(natGatewayId, publicIpAddress, globalEipId, description);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class UpdateNatGatewaySnatRuleOption {
         sb.append("class UpdateNatGatewaySnatRuleOption {\n");
         sb.append("    natGatewayId: ").append(toIndentedString(natGatewayId)).append("\n");
         sb.append("    publicIpAddress: ").append(toIndentedString(publicIpAddress)).append("\n");
+        sb.append("    globalEipId: ").append(toIndentedString(globalEipId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

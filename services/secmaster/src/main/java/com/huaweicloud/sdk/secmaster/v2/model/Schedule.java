@@ -21,7 +21,7 @@ public class Schedule {
     private Integer frequencyInterval;
 
     /**
-     * frequency_unit. MINUTE, HOUR, DAY.
+     * 调度间隔单位，分钟、小时、天。Frequency unit. MINUTE, HOUR, DAY.
      */
     public static final class FrequencyUnitEnum {
 
@@ -107,7 +107,7 @@ public class Schedule {
     private Integer periodInterval;
 
     /**
-     * period_unit. MINUTE, HOUR, DAY.
+     * 时间窗口单位，分钟、小时、天。Period unit. MINUTE, HOUR, DAY.
      */
     public static final class PeriodUnitEnum {
 
@@ -203,7 +203,7 @@ public class Schedule {
     }
 
     /**
-     * frequency_interval
+     * 调度间隔。Frequency interval.
      * minimum: 1
      * maximum: 60
      * @return frequencyInterval
@@ -222,7 +222,7 @@ public class Schedule {
     }
 
     /**
-     * frequency_unit. MINUTE, HOUR, DAY.
+     * 调度间隔单位，分钟、小时、天。Frequency unit. MINUTE, HOUR, DAY.
      * @return frequencyUnit
      */
     public FrequencyUnitEnum getFrequencyUnit() {
@@ -239,7 +239,7 @@ public class Schedule {
     }
 
     /**
-     * frequency_interval
+     * 时间窗口间隔。Period interval.
      * minimum: 1
      * maximum: 60
      * @return periodInterval
@@ -258,7 +258,7 @@ public class Schedule {
     }
 
     /**
-     * period_unit. MINUTE, HOUR, DAY.
+     * 时间窗口单位，分钟、小时、天。Period unit. MINUTE, HOUR, DAY.
      * @return periodUnit
      */
     public PeriodUnitEnum getPeriodUnit() {
@@ -275,7 +275,7 @@ public class Schedule {
     }
 
     /**
-     * delay_interval
+     * 延迟间隔。Delay interval
      * minimum: 0
      * maximum: 10
      * @return delayInterval
@@ -294,7 +294,7 @@ public class Schedule {
     }
 
     /**
-     * overtime_interval
+     * 超时间隔。Overtime interval
      * minimum: 0
      * maximum: 10
      * @return overtimeInterval

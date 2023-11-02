@@ -141,6 +141,11 @@ public class UpdateNatGatewayDnatRuleOption {
 
     private String externalServicePortRange;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eip_id")
+
+    private String globalEipId;
+
     public UpdateNatGatewayDnatRuleOption withNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
         return this;
@@ -315,6 +320,23 @@ public class UpdateNatGatewayDnatRuleOption {
         this.externalServicePortRange = externalServicePortRange;
     }
 
+    public UpdateNatGatewayDnatRuleOption withGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+        return this;
+    }
+
+    /**
+     * 全域弹性公网IP的id。
+     * @return globalEipId
+     */
+    public String getGlobalEipId() {
+        return globalEipId;
+    }
+
+    public void setGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -331,7 +353,8 @@ public class UpdateNatGatewayDnatRuleOption {
             && Objects.equals(this.internalServicePort, that.internalServicePort)
             && Objects.equals(this.externalServicePort, that.externalServicePort)
             && Objects.equals(this.internalServicePortRange, that.internalServicePortRange)
-            && Objects.equals(this.externalServicePortRange, that.externalServicePortRange);
+            && Objects.equals(this.externalServicePortRange, that.externalServicePortRange)
+            && Objects.equals(this.globalEipId, that.globalEipId);
     }
 
     @Override
@@ -345,7 +368,8 @@ public class UpdateNatGatewayDnatRuleOption {
             internalServicePort,
             externalServicePort,
             internalServicePortRange,
-            externalServicePortRange);
+            externalServicePortRange,
+            globalEipId);
     }
 
     @Override
@@ -362,6 +386,7 @@ public class UpdateNatGatewayDnatRuleOption {
         sb.append("    externalServicePort: ").append(toIndentedString(externalServicePort)).append("\n");
         sb.append("    internalServicePortRange: ").append(toIndentedString(internalServicePortRange)).append("\n");
         sb.append("    externalServicePortRange: ").append(toIndentedString(externalServicePortRange)).append("\n");
+        sb.append("    globalEipId: ").append(toIndentedString(globalEipId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

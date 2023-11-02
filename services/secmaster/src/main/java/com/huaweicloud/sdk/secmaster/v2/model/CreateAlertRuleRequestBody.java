@@ -39,7 +39,7 @@ public class CreateAlertRuleRequestBody {
     private String query;
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      */
     public static final class QueryTypeEnum {
 
@@ -48,17 +48,11 @@ public class CreateAlertRuleRequestBody {
          */
         public static final QueryTypeEnum SQL = new QueryTypeEnum("SQL");
 
-        /**
-         * Enum CBSL for value: "CBSL"
-         */
-        public static final QueryTypeEnum CBSL = new QueryTypeEnum("CBSL");
-
         private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, QueryTypeEnum> createStaticFields() {
             Map<String, QueryTypeEnum> map = new HashMap<>();
             map.put("SQL", SQL);
-            map.put("CBSL", CBSL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -114,7 +108,7 @@ public class CreateAlertRuleRequestBody {
     private QueryTypeEnum queryType;
 
     /**
-     * status. ENABLED, DISABLED
+     * 启用状态，启用、停用。Status, enabled, disabled.
      */
     public static final class StatusEnum {
 
@@ -189,7 +183,7 @@ public class CreateAlertRuleRequestBody {
     private StatusEnum status;
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      */
     public static final class SeverityEnum {
 
@@ -282,11 +276,6 @@ public class CreateAlertRuleRequestBody {
     private SeverityEnum severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "accumulated_times")
-
-    private Integer accumulatedTimes;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_properties")
 
     private Map<String, String> customProperties = null;
@@ -327,7 +316,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * pipe_id
+     * 数据管道 ID。Pipe ID.
      * @return pipeId
      */
     public String getPipeId() {
@@ -344,7 +333,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * rule_name
+     * 告警规则名称。Alert rule name.
      * @return ruleName
      */
     public String getRuleName() {
@@ -361,7 +350,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * description
+     * 描述。Description.
      * @return description
      */
     public String getDescription() {
@@ -378,7 +367,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * query
+     * 查询语句。Query.
      * @return query
      */
     public String getQuery() {
@@ -395,7 +384,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      * @return queryType
      */
     public QueryTypeEnum getQueryType() {
@@ -412,7 +401,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * status. ENABLED, DISABLED
+     * 启用状态，启用、停用。Status, enabled, disabled.
      * @return status
      */
     public StatusEnum getStatus() {
@@ -429,7 +418,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      * @return severity
      */
     public SeverityEnum getSeverity() {
@@ -438,25 +427,6 @@ public class CreateAlertRuleRequestBody {
 
     public void setSeverity(SeverityEnum severity) {
         this.severity = severity;
-    }
-
-    public CreateAlertRuleRequestBody withAccumulatedTimes(Integer accumulatedTimes) {
-        this.accumulatedTimes = accumulatedTimes;
-        return this;
-    }
-
-    /**
-     * accumulated_times
-     * minimum: 1
-     * maximum: 1000
-     * @return accumulatedTimes
-     */
-    public Integer getAccumulatedTimes() {
-        return accumulatedTimes;
-    }
-
-    public void setAccumulatedTimes(Integer accumulatedTimes) {
-        this.accumulatedTimes = accumulatedTimes;
     }
 
     public CreateAlertRuleRequestBody withCustomProperties(Map<String, String> customProperties) {
@@ -481,7 +451,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * custom_properties
+     * 自定义扩展信息。Custom properties.
      * @return customProperties
      */
     public Map<String, String> getCustomProperties() {
@@ -514,7 +484,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * alert_type
+     * 告警类型。Alert type.
      * @return alertType
      */
     public Map<String, String> getAlertType() {
@@ -531,7 +501,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * event_grouping
+     * 告警分组。Event grouping.
      * @return eventGrouping
      */
     public Boolean getEventGrouping() {
@@ -548,7 +518,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * suspression
+     * 告警抑制。Suspression.
      * @return suspression
      */
     public Boolean getSuspression() {
@@ -565,7 +535,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * simulation
+     * 模拟告警。Simulation.
      * @return simulation
      */
     public Boolean getSimulation() {
@@ -624,7 +594,7 @@ public class CreateAlertRuleRequestBody {
     }
 
     /**
-     * triggers
+     * 告警触发规则。Alert triggers.
      * @return triggers
      */
     public List<AlertRuleTrigger> getTriggers() {
@@ -648,7 +618,6 @@ public class CreateAlertRuleRequestBody {
             && Objects.equals(this.description, that.description) && Objects.equals(this.query, that.query)
             && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.status, that.status)
             && Objects.equals(this.severity, that.severity)
-            && Objects.equals(this.accumulatedTimes, that.accumulatedTimes)
             && Objects.equals(this.customProperties, that.customProperties)
             && Objects.equals(this.alertType, that.alertType) && Objects.equals(this.eventGrouping, that.eventGrouping)
             && Objects.equals(this.suspression, that.suspression) && Objects.equals(this.simulation, that.simulation)
@@ -664,7 +633,6 @@ public class CreateAlertRuleRequestBody {
             queryType,
             status,
             severity,
-            accumulatedTimes,
             customProperties,
             alertType,
             eventGrouping,
@@ -685,7 +653,6 @@ public class CreateAlertRuleRequestBody {
         sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
-        sb.append("    accumulatedTimes: ").append(toIndentedString(accumulatedTimes)).append("\n");
         sb.append("    customProperties: ").append(toIndentedString(customProperties)).append("\n");
         sb.append("    alertType: ").append(toIndentedString(alertType)).append("\n");
         sb.append("    eventGrouping: ").append(toIndentedString(eventGrouping)).append("\n");

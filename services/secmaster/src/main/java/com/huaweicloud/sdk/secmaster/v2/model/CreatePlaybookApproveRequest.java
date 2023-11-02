@@ -32,7 +32,7 @@ public class CreatePlaybookApproveRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -49,7 +49,7 @@ public class CreatePlaybookApproveRequest {
     }
 
     /**
-     * version Id value
+     * 版本ID
      * @return versionId
      */
     public String getVersionId() {

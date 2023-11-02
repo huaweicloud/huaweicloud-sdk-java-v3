@@ -32,7 +32,7 @@ public class UpdateIndicatorRequest {
     }
 
     /**
-     * workspace id
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -49,7 +49,7 @@ public class UpdateIndicatorRequest {
     }
 
     /**
-     * ID of indicator
+     * 情报ID
      * @return indicatorId
      */
     public String getIndicatorId() {

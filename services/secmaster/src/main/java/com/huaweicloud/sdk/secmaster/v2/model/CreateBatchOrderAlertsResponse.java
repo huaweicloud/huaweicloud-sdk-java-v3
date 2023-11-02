@@ -25,7 +25,7 @@ public class CreateBatchOrderAlertsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private BatchOrderAlertResult data;
+    private BatchOperateAlertResult data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
@@ -38,7 +38,7 @@ public class CreateBatchOrderAlertsResponse extends SdkResponse {
     }
 
     /**
-     * Id value
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -55,7 +55,7 @@ public class CreateBatchOrderAlertsResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -66,14 +66,14 @@ public class CreateBatchOrderAlertsResponse extends SdkResponse {
         this.message = message;
     }
 
-    public CreateBatchOrderAlertsResponse withData(BatchOrderAlertResult data) {
+    public CreateBatchOrderAlertsResponse withData(BatchOperateAlertResult data) {
         this.data = data;
         return this;
     }
 
-    public CreateBatchOrderAlertsResponse withData(Consumer<BatchOrderAlertResult> dataSetter) {
+    public CreateBatchOrderAlertsResponse withData(Consumer<BatchOperateAlertResult> dataSetter) {
         if (this.data == null) {
-            this.data = new BatchOrderAlertResult();
+            this.data = new BatchOperateAlertResult();
             dataSetter.accept(this.data);
         }
 
@@ -84,11 +84,11 @@ public class CreateBatchOrderAlertsResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public BatchOrderAlertResult getData() {
+    public BatchOperateAlertResult getData() {
         return data;
     }
 
-    public void setData(BatchOrderAlertResult data) {
+    public void setData(BatchOperateAlertResult data) {
         this.data = data;
     }
 

@@ -35,7 +35,7 @@ public class ListPlaybookAuditLogsResponse extends SdkResponse {
     }
 
     /**
-     * tatal count
+     * 总条数
      * minimum: 0
      * maximum: 99999
      * @return count
@@ -70,7 +70,7 @@ public class ListPlaybookAuditLogsResponse extends SdkResponse {
     }
 
     /**
-     * list of informations of Audit Log Info
+     * 审计日志列表信息
      * @return auditLogs
      */
     public List<AuditLogInfo> getAuditLogs() {

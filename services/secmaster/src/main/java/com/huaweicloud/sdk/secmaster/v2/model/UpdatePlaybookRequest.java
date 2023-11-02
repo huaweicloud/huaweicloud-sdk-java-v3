@@ -32,7 +32,7 @@ public class UpdatePlaybookRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -49,7 +49,7 @@ public class UpdatePlaybookRequest {
     }
 
     /**
-     * ID of playbook
+     * 剧本ID
      * @return playbookId
      */
     public String getPlaybookId() {

@@ -38,7 +38,7 @@ public class CreatePlaybookApproveResponse extends SdkResponse {
     }
 
     /**
-     * Error code
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -55,7 +55,7 @@ public class CreatePlaybookApproveResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 响应消息
      * @return message
      */
     public String getMessage() {

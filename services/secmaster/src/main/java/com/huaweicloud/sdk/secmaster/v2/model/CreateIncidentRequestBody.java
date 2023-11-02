@@ -7,23 +7,23 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateIncidentRequestBody
+ * 创建事件请求body体
  */
 public class CreateIncidentRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_object")
 
-    private CreateIncident dataObject;
+    private Incident dataObject;
 
-    public CreateIncidentRequestBody withDataObject(CreateIncident dataObject) {
+    public CreateIncidentRequestBody withDataObject(Incident dataObject) {
         this.dataObject = dataObject;
         return this;
     }
 
-    public CreateIncidentRequestBody withDataObject(Consumer<CreateIncident> dataObjectSetter) {
+    public CreateIncidentRequestBody withDataObject(Consumer<Incident> dataObjectSetter) {
         if (this.dataObject == null) {
-            this.dataObject = new CreateIncident();
+            this.dataObject = new Incident();
             dataObjectSetter.accept(this.dataObject);
         }
 
@@ -34,11 +34,11 @@ public class CreateIncidentRequestBody {
      * Get dataObject
      * @return dataObject
      */
-    public CreateIncident getDataObject() {
+    public Incident getDataObject() {
         return dataObject;
     }
 
-    public void setDataObject(CreateIncident dataObject) {
+    public void setDataObject(Incident dataObject) {
         this.dataObject = dataObject;
     }
 

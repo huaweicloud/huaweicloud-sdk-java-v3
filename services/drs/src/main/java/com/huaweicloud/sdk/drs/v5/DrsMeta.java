@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.drs.v5.model.CollectDbObjectsAsyncRequest;
 import com.huaweicloud.sdk.drs.v5.model.CollectDbObjectsAsyncResponse;
 import com.huaweicloud.sdk.drs.v5.model.CollectDbObjectsInfoRequest;
 import com.huaweicloud.sdk.drs.v5.model.CollectDbObjectsInfoResponse;
+import com.huaweicloud.sdk.drs.v5.model.CollectPositionAsyncRequest;
+import com.huaweicloud.sdk.drs.v5.model.CollectPositionAsyncResponse;
 import com.huaweicloud.sdk.drs.v5.model.CommitAsyncJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CommitAsyncJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.CopyJobRequest;
@@ -66,6 +68,7 @@ import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ModifyStartPositionReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryColumnReq;
+import com.huaweicloud.sdk.drs.v5.model.QueryDbPositionReq;
 import com.huaweicloud.sdk.drs.v5.model.QuerySelectObjectInfoReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryUserSelectedObjectInfoReq;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
@@ -106,6 +109,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowMonitorDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowMonitorDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowObjectMappingRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowObjectMappingResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
@@ -486,6 +491,45 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QuerySelectObjectInfoReq.class),
             f -> f.withMarshaller(CollectDbObjectsInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectPositionAsyncRequest, CollectPositionAsyncResponse> collectPositionAsync =
+        genForcollectPositionAsync();
+
+    private static HttpRequestDef<CollectPositionAsyncRequest, CollectPositionAsyncResponse> genForcollectPositionAsync() {
+        // basic
+        HttpRequestDef.Builder<CollectPositionAsyncRequest, CollectPositionAsyncResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CollectPositionAsyncRequest.class, CollectPositionAsyncResponse.class)
+            .withName("CollectPositionAsync")
+            .withUri("/v5/{project_id}/jobs/{job_id}/collect-db-position")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectPositionAsyncRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<CollectPositionAsyncRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CollectPositionAsyncRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CollectPositionAsyncRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<QueryDbPositionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryDbPositionReq.class),
+            f -> f.withMarshaller(CollectPositionAsyncRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2029,6 +2073,45 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(QueryUserSelectedObjectInfoReq.class),
             f -> f.withMarshaller(ShowObjectMappingRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPositionResultRequest, ShowPositionResultResponse> showPositionResult =
+        genForshowPositionResult();
+
+    private static HttpRequestDef<ShowPositionResultRequest, ShowPositionResultResponse> genForshowPositionResult() {
+        // basic
+        HttpRequestDef.Builder<ShowPositionResultRequest, ShowPositionResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPositionResultRequest.class, ShowPositionResultResponse.class)
+                .withName("ShowPositionResult")
+                .withUri("/v5/{project_id}/jobs/{job_id}/db-position")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPositionResultRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<String>withRequestField("query_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPositionResultRequest::getQueryId, (req, v) -> {
+                req.setQueryId(v);
+            }));
+        builder.<ShowPositionResultRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowPositionResultRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowPositionResultRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             }));
 
         // response

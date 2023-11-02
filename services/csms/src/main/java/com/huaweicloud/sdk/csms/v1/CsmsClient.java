@@ -41,6 +41,8 @@ import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.RotateSecretRequest;
+import com.huaweicloud.sdk.csms.v1.model.RotateSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretRequest;
@@ -641,6 +643,34 @@ public class CsmsClient {
      */
     public SyncInvoker<RestoreSecretRequest, RestoreSecretResponse> restoreSecretInvoker(RestoreSecretRequest request) {
         return new SyncInvoker<RestoreSecretRequest, RestoreSecretResponse>(request, CsmsMeta.restoreSecret, hcClient);
+    }
+
+    /**
+     * 轮转凭据
+     *
+     * 立即执行轮转凭据。在指定的凭据中，创建一个新的凭据版本，用于加密存储后台随机产生的凭据值。同时将新创建的凭据版本标记为SYSCURRENT状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RotateSecretRequest 请求对象
+     * @return RotateSecretResponse
+     */
+    public RotateSecretResponse rotateSecret(RotateSecretRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.rotateSecret);
+    }
+
+    /**
+     * 轮转凭据
+     *
+     * 立即执行轮转凭据。在指定的凭据中，创建一个新的凭据版本，用于加密存储后台随机产生的凭据值。同时将新创建的凭据版本标记为SYSCURRENT状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RotateSecretRequest 请求对象
+     * @return SyncInvoker<RotateSecretRequest, RotateSecretResponse>
+     */
+    public SyncInvoker<RotateSecretRequest, RotateSecretResponse> rotateSecretInvoker(RotateSecretRequest request) {
+        return new SyncInvoker<RotateSecretRequest, RotateSecretResponse>(request, CsmsMeta.rotateSecret, hcClient);
     }
 
     /**

@@ -66,9 +66,19 @@ public class CreateTaskDto {
     private Map<String, String> dataDescription = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "csv_path")
+    @JsonProperty(value = "csv_ids")
 
-    private List<String> csvPath = null;
+    private List<String> csvIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isClip")
+
+    private String isClip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isTile")
+
+    private String isTile;
 
     public CreateTaskDto withTaskName(String taskName) {
         this.taskName = taskName;
@@ -93,7 +103,7 @@ public class CreateTaskDto {
     }
 
     /**
-     * 任务类型，当前仅支持ORSIP（卫星影像处理）。
+     * 任务类型，当前仅支持ORSIP（卫星影像生产）。
      * @return taskType
      */
     public String getTaskType() {
@@ -160,7 +170,7 @@ public class CreateTaskDto {
     }
 
     /**
-     * shape文件ID，当处理任务类型为clip或both时必填。
+     * 矢量数据文件ID，“isClip”为“1”时必填。
      * @return shapeId
      */
     public String getShapeId() {
@@ -177,7 +187,7 @@ public class CreateTaskDto {
     }
 
     /**
-     * 任务输出结果影像级别，当前支持以下级别： L2、L4、L5、clip（包含L5影像、矢量切割）、tile（包含L5影像、金字塔切割）、both（包含L5影像、金字塔切割和矢量切割影像）。
+     * 任务输出结果影像级别，当前支持以下级别： L2、L3、L4、L5。
      * @return productionLevel
      */
     public String getProductionLevel() {
@@ -288,37 +298,71 @@ public class CreateTaskDto {
         this.dataDescription = dataDescription;
     }
 
-    public CreateTaskDto withCsvPath(List<String> csvPath) {
-        this.csvPath = csvPath;
+    public CreateTaskDto withCsvIds(List<String> csvIds) {
+        this.csvIds = csvIds;
         return this;
     }
 
-    public CreateTaskDto addCsvPathItem(String csvPathItem) {
-        if (this.csvPath == null) {
-            this.csvPath = new ArrayList<>();
+    public CreateTaskDto addCsvIdsItem(String csvIdsItem) {
+        if (this.csvIds == null) {
+            this.csvIds = new ArrayList<>();
         }
-        this.csvPath.add(csvPathItem);
+        this.csvIds.add(csvIdsItem);
         return this;
     }
 
-    public CreateTaskDto withCsvPath(Consumer<List<String>> csvPathSetter) {
-        if (this.csvPath == null) {
-            this.csvPath = new ArrayList<>();
+    public CreateTaskDto withCsvIds(Consumer<List<String>> csvIdsSetter) {
+        if (this.csvIds == null) {
+            this.csvIds = new ArrayList<>();
         }
-        csvPathSetter.accept(this.csvPath);
+        csvIdsSetter.accept(this.csvIds);
         return this;
     }
 
     /**
-     * 生产资料（csv文件）存储在OBS桶内的路径。
-     * @return csvPath
+     * 生产资料（csv文件）ID。
+     * @return csvIds
      */
-    public List<String> getCsvPath() {
-        return csvPath;
+    public List<String> getCsvIds() {
+        return csvIds;
     }
 
-    public void setCsvPath(List<String> csvPath) {
-        this.csvPath = csvPath;
+    public void setCsvIds(List<String> csvIds) {
+        this.csvIds = csvIds;
+    }
+
+    public CreateTaskDto withIsClip(String isClip) {
+        this.isClip = isClip;
+        return this;
+    }
+
+    /**
+     * 是否为矢量切割。 - 0：否 - 1：是
+     * @return isClip
+     */
+    public String getIsClip() {
+        return isClip;
+    }
+
+    public void setIsClip(String isClip) {
+        this.isClip = isClip;
+    }
+
+    public CreateTaskDto withIsTile(String isTile) {
+        this.isTile = isTile;
+        return this;
+    }
+
+    /**
+     * 是否为金字塔切割。 - 0：否 - 1：是
+     * @return isTile
+     */
+    public String getIsTile() {
+        return isTile;
+    }
+
+    public void setIsTile(String isTile) {
+        this.isTile = isTile;
     }
 
     @Override
@@ -335,7 +379,8 @@ public class CreateTaskDto {
             && Objects.equals(this.shapeId, that.shapeId) && Objects.equals(this.productionLevel, that.productionLevel)
             && Objects.equals(this.taskDescription, that.taskDescription)
             && Objects.equals(this.dataAlias, that.dataAlias) && Objects.equals(this.coordination, that.coordination)
-            && Objects.equals(this.dataDescription, that.dataDescription) && Objects.equals(this.csvPath, that.csvPath);
+            && Objects.equals(this.dataDescription, that.dataDescription) && Objects.equals(this.csvIds, that.csvIds)
+            && Objects.equals(this.isClip, that.isClip) && Objects.equals(this.isTile, that.isTile);
     }
 
     @Override
@@ -350,7 +395,9 @@ public class CreateTaskDto {
             dataAlias,
             coordination,
             dataDescription,
-            csvPath);
+            csvIds,
+            isClip,
+            isTile);
     }
 
     @Override
@@ -367,7 +414,9 @@ public class CreateTaskDto {
         sb.append("    dataAlias: ").append(toIndentedString(dataAlias)).append("\n");
         sb.append("    coordination: ").append(toIndentedString(coordination)).append("\n");
         sb.append("    dataDescription: ").append(toIndentedString(dataDescription)).append("\n");
-        sb.append("    csvPath: ").append(toIndentedString(csvPath)).append("\n");
+        sb.append("    csvIds: ").append(toIndentedString(csvIds)).append("\n");
+        sb.append("    isClip: ").append(toIndentedString(isClip)).append("\n");
+        sb.append("    isTile: ").append(toIndentedString(isTile)).append("\n");
         sb.append("}");
         return sb.toString();
     }

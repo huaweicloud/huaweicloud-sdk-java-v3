@@ -16,7 +16,7 @@ import java.util.Objects;
 public class AlertRuleTrigger {
 
     /**
-     * mode. COUNT.
+     * 模式，数量。Mode. COUNT.
      */
     public static final class ModeEnum {
 
@@ -85,7 +85,7 @@ public class AlertRuleTrigger {
     private ModeEnum mode;
 
     /**
-     * operator. EQ equal, NE not equal, GT greater than, LT less than.
+     * 操作符，等于、不等于、大于、小于。 operator. EQ equal, NE not equal, GT greater than, LT less than.
      */
     public static final class OperatorEnum {
 
@@ -177,7 +177,7 @@ public class AlertRuleTrigger {
     private String expression;
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      */
     public static final class SeverityEnum {
 
@@ -280,7 +280,7 @@ public class AlertRuleTrigger {
     }
 
     /**
-     * mode. COUNT.
+     * 模式，数量。Mode. COUNT.
      * @return mode
      */
     public ModeEnum getMode() {
@@ -297,7 +297,7 @@ public class AlertRuleTrigger {
     }
 
     /**
-     * operator. EQ equal, NE not equal, GT greater than, LT less than.
+     * 操作符，等于、不等于、大于、小于。 operator. EQ equal, NE not equal, GT greater than, LT less than.
      * @return operator
      */
     public OperatorEnum getOperator() {
@@ -331,7 +331,7 @@ public class AlertRuleTrigger {
     }
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      * @return severity
      */
     public SeverityEnum getSeverity() {

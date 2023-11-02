@@ -23,8 +23,6 @@ import com.huaweicloud.sdk.dcs.v2.model.CreateAutoExpireScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAutoExpireScanTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateBigkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateBigkeyScanTaskResponse;
-import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestRequest;
-import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateDiagnosisTaskRequest;
@@ -37,12 +35,12 @@ import com.huaweicloud.sdk.dcs.v2.model.CreateMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskResponse;
-import com.huaweicloud.sdk.dcs.v2.model.CreateOrUpdateBackUpInfoRequest;
-import com.huaweicloud.sdk.dcs.v2.model.CreateOrUpdateBackUpInfoResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogDownloadLinkRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogDownloadLinkResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogResponse;
+import com.huaweicloud.sdk.dcs.v2.model.CreateResizeOrderRequest;
+import com.huaweicloud.sdk.dcs.v2.model.CreateResizeOrderResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteAclAccountRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteAclAccountResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackgroundTaskRequest;
@@ -67,6 +65,10 @@ import com.huaweicloud.sdk.dcs.v2.model.ExecuteClusterSwitchoverRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteClusterSwitchoverResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteCommandMobilizationRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteCommandMobilizationResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ExportExcelJobRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ExportExcelJobResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListAvailableZonesRequest;
@@ -95,6 +97,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ListGroupReplicationInfoRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListGroupReplicationInfoResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListHotKeyScanTasksRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListHotKeyScanTasksResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ListInstanceOperationsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ListInstanceOperationsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListMaintenanceWindowsRequest;
@@ -135,18 +139,20 @@ import com.huaweicloud.sdk.dcs.v2.model.ScanExpireKeyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ScanExpireKeyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskResponse;
-import com.huaweicloud.sdk.dcs.v2.model.ShowBackUpInfoRequest;
-import com.huaweicloud.sdk.dcs.v2.model.ShowBackUpInfoResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBackgroundTaskProgressRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBackgroundTaskProgressResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowConfigHistoryDetailRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowConfigHistoryDetailResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowConfigTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowDiagnosisTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowDiagnosisTaskDetailsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowExpireAutoScanConfigRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowExpireAutoScanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowExpireKeyScanInfoRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowExpireKeyScanInfoResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyAutoscanConfigRequest;
@@ -163,8 +169,6 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsResponse;
-import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
-import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesRequest;
@@ -181,18 +185,24 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountPassWordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountPassWordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkResponse;
-import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRoleRequest;
-import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRoleResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateClientIpTransparentTransmissionRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateClientIpTransparentTransmissionResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigurationsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigurationsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateExpireAutoScanConfigRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateExpireAutoScanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistRequest;
@@ -540,37 +550,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 创建备份导入页面实例连接测试
-     *
-     * 创建备份导入页面实例连接测试
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateConnectivityTestRequest 请求对象
-     * @return CompletableFuture<CreateConnectivityTestResponse>
-     */
-    public CompletableFuture<CreateConnectivityTestResponse> createConnectivityTestAsync(
-        CreateConnectivityTestRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.createConnectivityTest);
-    }
-
-    /**
-     * 创建备份导入页面实例连接测试
-     *
-     * 创建备份导入页面实例连接测试
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateConnectivityTestRequest 请求对象
-     * @return AsyncInvoker<CreateConnectivityTestRequest, CreateConnectivityTestResponse>
-     */
-    public AsyncInvoker<CreateConnectivityTestRequest, CreateConnectivityTestResponse> createConnectivityTestAsyncInvoker(
-        CreateConnectivityTestRequest request) {
-        return new AsyncInvoker<CreateConnectivityTestRequest, CreateConnectivityTestResponse>(request,
-            DcsMeta.createConnectivityTest, hcClient);
-    }
-
-    /**
      * 创建自定义模板
      *
      * 创建自定义模板
@@ -758,37 +737,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 新增/修改高级备份信息
-     *
-     * 新增/修改高级备份信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateOrUpdateBackUpInfoRequest 请求对象
-     * @return CompletableFuture<CreateOrUpdateBackUpInfoResponse>
-     */
-    public CompletableFuture<CreateOrUpdateBackUpInfoResponse> createOrUpdateBackUpInfoAsync(
-        CreateOrUpdateBackUpInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.createOrUpdateBackUpInfo);
-    }
-
-    /**
-     * 新增/修改高级备份信息
-     *
-     * 新增/修改高级备份信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateOrUpdateBackUpInfoRequest 请求对象
-     * @return AsyncInvoker<CreateOrUpdateBackUpInfoRequest, CreateOrUpdateBackUpInfoResponse>
-     */
-    public AsyncInvoker<CreateOrUpdateBackUpInfoRequest, CreateOrUpdateBackUpInfoResponse> createOrUpdateBackUpInfoAsyncInvoker(
-        CreateOrUpdateBackUpInfoRequest request) {
-        return new AsyncInvoker<CreateOrUpdateBackUpInfoRequest, CreateOrUpdateBackUpInfoResponse>(request,
-            DcsMeta.createOrUpdateBackUpInfo, hcClient);
-    }
-
-    /**
      * 采集Redis运行日志
      *
      * 采集Redis运行日志。
@@ -847,6 +795,36 @@ public class DcsAsyncClient {
         CreateRedislogDownloadLinkRequest request) {
         return new AsyncInvoker<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse>(request,
             DcsMeta.createRedislogDownloadLink, hcClient);
+    }
+
+    /**
+     * 包周期实例变更规格
+     *
+     * 包周期实例变更规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateResizeOrderRequest 请求对象
+     * @return CompletableFuture<CreateResizeOrderResponse>
+     */
+    public CompletableFuture<CreateResizeOrderResponse> createResizeOrderAsync(CreateResizeOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.createResizeOrder);
+    }
+
+    /**
+     * 包周期实例变更规格
+     *
+     * 包周期实例变更规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateResizeOrderRequest 请求对象
+     * @return AsyncInvoker<CreateResizeOrderRequest, CreateResizeOrderResponse>
+     */
+    public AsyncInvoker<CreateResizeOrderRequest, CreateResizeOrderResponse> createResizeOrderAsyncInvoker(
+        CreateResizeOrderRequest request) {
+        return new AsyncInvoker<CreateResizeOrderRequest, CreateResizeOrderResponse>(request, DcsMeta.createResizeOrder,
+            hcClient);
     }
 
     /**
@@ -1219,6 +1197,66 @@ public class DcsAsyncClient {
         ExecuteCommandMobilizationRequest request) {
         return new AsyncInvoker<ExecuteCommandMobilizationRequest, ExecuteCommandMobilizationResponse>(request,
             DcsMeta.executeCommandMobilization, hcClient);
+    }
+
+    /**
+     * 查询实例列表导出任务详情
+     *
+     * 查询实例列表导出任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExportExcelJobRequest 请求对象
+     * @return CompletableFuture<ExportExcelJobResponse>
+     */
+    public CompletableFuture<ExportExcelJobResponse> exportExcelJobAsync(ExportExcelJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.exportExcelJob);
+    }
+
+    /**
+     * 查询实例列表导出任务详情
+     *
+     * 查询实例列表导出任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExportExcelJobRequest 请求对象
+     * @return AsyncInvoker<ExportExcelJobRequest, ExportExcelJobResponse>
+     */
+    public AsyncInvoker<ExportExcelJobRequest, ExportExcelJobResponse> exportExcelJobAsyncInvoker(
+        ExportExcelJobRequest request) {
+        return new AsyncInvoker<ExportExcelJobRequest, ExportExcelJobResponse>(request, DcsMeta.exportExcelJob,
+            hcClient);
+    }
+
+    /**
+     * 异步导出实例资源
+     *
+     * 异步导出实例资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExportInstancesTaskRequest 请求对象
+     * @return CompletableFuture<ExportInstancesTaskResponse>
+     */
+    public CompletableFuture<ExportInstancesTaskResponse> exportInstancesTaskAsync(ExportInstancesTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.exportInstancesTask);
+    }
+
+    /**
+     * 异步导出实例资源
+     *
+     * 异步导出实例资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExportInstancesTaskRequest 请求对象
+     * @return AsyncInvoker<ExportInstancesTaskRequest, ExportInstancesTaskResponse>
+     */
+    public AsyncInvoker<ExportInstancesTaskRequest, ExportInstancesTaskResponse> exportInstancesTaskAsyncInvoker(
+        ExportInstancesTaskRequest request) {
+        return new AsyncInvoker<ExportInstancesTaskRequest, ExportInstancesTaskResponse>(request,
+            DcsMeta.exportInstancesTask, hcClient);
     }
 
     /**
@@ -1638,6 +1676,37 @@ public class DcsAsyncClient {
         ListHotKeyScanTasksRequest request) {
         return new AsyncInvoker<ListHotKeyScanTasksRequest, ListHotKeyScanTasksResponse>(request,
             DcsMeta.listHotKeyScanTasks, hcClient);
+    }
+
+    /**
+     * 查询实例是否可以扩容
+     *
+     * 查询实例是否可以扩容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceOperationsRequest 请求对象
+     * @return CompletableFuture<ListInstanceOperationsResponse>
+     */
+    public CompletableFuture<ListInstanceOperationsResponse> listInstanceOperationsAsync(
+        ListInstanceOperationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.listInstanceOperations);
+    }
+
+    /**
+     * 查询实例是否可以扩容
+     *
+     * 查询实例是否可以扩容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceOperationsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceOperationsRequest, ListInstanceOperationsResponse>
+     */
+    public AsyncInvoker<ListInstanceOperationsRequest, ListInstanceOperationsResponse> listInstanceOperationsAsyncInvoker(
+        ListInstanceOperationsRequest request) {
+        return new AsyncInvoker<ListInstanceOperationsRequest, ListInstanceOperationsResponse>(request,
+            DcsMeta.listInstanceOperations, hcClient);
     }
 
     /**
@@ -2252,36 +2321,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 查询高级备份信息
-     *
-     * 查询高级备份信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowBackUpInfoRequest 请求对象
-     * @return CompletableFuture<ShowBackUpInfoResponse>
-     */
-    public CompletableFuture<ShowBackUpInfoResponse> showBackUpInfoAsync(ShowBackUpInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.showBackUpInfo);
-    }
-
-    /**
-     * 查询高级备份信息
-     *
-     * 查询高级备份信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowBackUpInfoRequest 请求对象
-     * @return AsyncInvoker<ShowBackUpInfoRequest, ShowBackUpInfoResponse>
-     */
-    public AsyncInvoker<ShowBackUpInfoRequest, ShowBackUpInfoResponse> showBackUpInfoAsyncInvoker(
-        ShowBackUpInfoRequest request) {
-        return new AsyncInvoker<ShowBackUpInfoRequest, ShowBackUpInfoResponse>(request, DcsMeta.showBackUpInfo,
-            hcClient);
-    }
-
-    /**
      * 查询后台任务详细信息
      *
      * 查询后台任务详细信息
@@ -2375,6 +2414,37 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询实例参数修改记录详情
+     *
+     * 查询实例参数修改记录详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigHistoryDetailRequest 请求对象
+     * @return CompletableFuture<ShowConfigHistoryDetailResponse>
+     */
+    public CompletableFuture<ShowConfigHistoryDetailResponse> showConfigHistoryDetailAsync(
+        ShowConfigHistoryDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showConfigHistoryDetail);
+    }
+
+    /**
+     * 查询实例参数修改记录详情
+     *
+     * 查询实例参数修改记录详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConfigHistoryDetailRequest 请求对象
+     * @return AsyncInvoker<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse>
+     */
+    public AsyncInvoker<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse> showConfigHistoryDetailAsyncInvoker(
+        ShowConfigHistoryDetailRequest request) {
+        return new AsyncInvoker<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse>(request,
+            DcsMeta.showConfigHistoryDetail, hcClient);
+    }
+
+    /**
      * 查询参数模板详情
      *
      * 查询参数模板详情
@@ -2433,6 +2503,37 @@ public class DcsAsyncClient {
         ShowDiagnosisTaskDetailsRequest request) {
         return new AsyncInvoker<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse>(request,
             DcsMeta.showDiagnosisTaskDetails, hcClient);
+    }
+
+    /**
+     * 查询自动扫描配置
+     *
+     * 查询自动扫描配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExpireAutoScanConfigRequest 请求对象
+     * @return CompletableFuture<ShowExpireAutoScanConfigResponse>
+     */
+    public CompletableFuture<ShowExpireAutoScanConfigResponse> showExpireAutoScanConfigAsync(
+        ShowExpireAutoScanConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showExpireAutoScanConfig);
+    }
+
+    /**
+     * 查询自动扫描配置
+     *
+     * 查询自动扫描配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowExpireAutoScanConfigRequest 请求对象
+     * @return AsyncInvoker<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse>
+     */
+    public AsyncInvoker<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse> showExpireAutoScanConfigAsyncInvoker(
+        ShowExpireAutoScanConfigRequest request) {
+        return new AsyncInvoker<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse>(request,
+            DcsMeta.showExpireAutoScanConfig, hcClient);
     }
 
     /**
@@ -2647,41 +2748,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 查询实例节点信息
-     *
-     * 查询指定实例的节点信息。
-     * 仅支持Redis4.0和Redis5.0实例查询。
-     * 创建中实例不返回节点信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowNodesInformationRequest 请求对象
-     * @return CompletableFuture<ShowNodesInformationResponse>
-     */
-    public CompletableFuture<ShowNodesInformationResponse> showNodesInformationAsync(
-        ShowNodesInformationRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.showNodesInformation);
-    }
-
-    /**
-     * 查询实例节点信息
-     *
-     * 查询指定实例的节点信息。
-     * 仅支持Redis4.0和Redis5.0实例查询。
-     * 创建中实例不返回节点信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowNodesInformationRequest 请求对象
-     * @return AsyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse>
-     */
-    public AsyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse> showNodesInformationAsyncInvoker(
-        ShowNodesInformationRequest request) {
-        return new AsyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse>(request,
-            DcsMeta.showNodesInformation, hcClient);
-    }
-
-    /**
      * 查询租户配额
      *
      * 查询租户默认可以创建的实例数和总内存的配额限制，以及可以申请配额的最大值和最小值。不同的租户在不同的区域配额可能不同。
@@ -2863,6 +2929,36 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 修改ACL角色
+     *
+     * 修改用户的类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAclAccountRequest 请求对象
+     * @return CompletableFuture<UpdateAclAccountResponse>
+     */
+    public CompletableFuture<UpdateAclAccountResponse> updateAclAccountAsync(UpdateAclAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.updateAclAccount);
+    }
+
+    /**
+     * 修改ACL角色
+     *
+     * 修改用户的类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAclAccountRequest 请求对象
+     * @return AsyncInvoker<UpdateAclAccountRequest, UpdateAclAccountResponse>
+     */
+    public AsyncInvoker<UpdateAclAccountRequest, UpdateAclAccountResponse> updateAclAccountAsyncInvoker(
+        UpdateAclAccountRequest request) {
+        return new AsyncInvoker<UpdateAclAccountRequest, UpdateAclAccountResponse>(request, DcsMeta.updateAclAccount,
+            hcClient);
+    }
+
+    /**
      * 修改ACL账号密码
      *
      * 修改ACL账号密码。
@@ -2925,37 +3021,6 @@ public class DcsAsyncClient {
     }
 
     /**
-     * 修改ACL角色
-     *
-     * 修改用户的类型。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateAclAccountRoleRequest 请求对象
-     * @return CompletableFuture<UpdateAclAccountRoleResponse>
-     */
-    public CompletableFuture<UpdateAclAccountRoleResponse> updateAclAccountRoleAsync(
-        UpdateAclAccountRoleRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.updateAclAccountRole);
-    }
-
-    /**
-     * 修改ACL角色
-     *
-     * 修改用户的类型。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateAclAccountRoleRequest 请求对象
-     * @return AsyncInvoker<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse>
-     */
-    public AsyncInvoker<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse> updateAclAccountRoleAsyncInvoker(
-        UpdateAclAccountRoleRequest request) {
-        return new AsyncInvoker<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse>(request,
-            DcsMeta.updateAclAccountRole, hcClient);
-    }
-
-    /**
      * 设置大key自动分析配置
      *
      * 设置大key自动分析配置。
@@ -2984,6 +3049,37 @@ public class DcsAsyncClient {
         UpdateBigkeyAutoscanConfigRequest request) {
         return new AsyncInvoker<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse>(request,
             DcsMeta.updateBigkeyAutoscanConfig, hcClient);
+    }
+
+    /**
+     * 开启或关闭客户端ip透传
+     *
+     * 开启或关闭客户端ip透传
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClientIpTransparentTransmissionRequest 请求对象
+     * @return CompletableFuture<UpdateClientIpTransparentTransmissionResponse>
+     */
+    public CompletableFuture<UpdateClientIpTransparentTransmissionResponse> updateClientIpTransparentTransmissionAsync(
+        UpdateClientIpTransparentTransmissionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.updateClientIpTransparentTransmission);
+    }
+
+    /**
+     * 开启或关闭客户端ip透传
+     *
+     * 开启或关闭客户端ip透传
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClientIpTransparentTransmissionRequest 请求对象
+     * @return AsyncInvoker<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse>
+     */
+    public AsyncInvoker<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse> updateClientIpTransparentTransmissionAsyncInvoker(
+        UpdateClientIpTransparentTransmissionRequest request) {
+        return new AsyncInvoker<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse>(
+            request, DcsMeta.updateClientIpTransparentTransmission, hcClient);
     }
 
     /**
@@ -3046,6 +3142,37 @@ public class DcsAsyncClient {
         UpdateConfigurationsRequest request) {
         return new AsyncInvoker<UpdateConfigurationsRequest, UpdateConfigurationsResponse>(request,
             DcsMeta.updateConfigurations, hcClient);
+    }
+
+    /**
+     * 修改自动扫描配置
+     *
+     * 修改自动扫描配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateExpireAutoScanConfigRequest 请求对象
+     * @return CompletableFuture<UpdateExpireAutoScanConfigResponse>
+     */
+    public CompletableFuture<UpdateExpireAutoScanConfigResponse> updateExpireAutoScanConfigAsync(
+        UpdateExpireAutoScanConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.updateExpireAutoScanConfig);
+    }
+
+    /**
+     * 修改自动扫描配置
+     *
+     * 修改自动扫描配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateExpireAutoScanConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse>
+     */
+    public AsyncInvoker<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse> updateExpireAutoScanConfigAsyncInvoker(
+        UpdateExpireAutoScanConfigRequest request) {
+        return new AsyncInvoker<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse>(request,
+            DcsMeta.updateExpireAutoScanConfig, hcClient);
     }
 
     /**
@@ -3138,6 +3265,37 @@ public class DcsAsyncClient {
         UpdateInstanceBandwidthRequest request) {
         return new AsyncInvoker<UpdateInstanceBandwidthRequest, UpdateInstanceBandwidthResponse>(request,
             DcsMeta.updateInstanceBandwidth, hcClient);
+    }
+
+    /**
+     * 异步修改实例配置参数
+     *
+     * 为了确保分布式缓存服务发挥出最优性能，您可以根据自己的业务情况对DCS缓存实例的运行参数进行调整。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInstanceConfigRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceConfigResponse>
+     */
+    public CompletableFuture<UpdateInstanceConfigResponse> updateInstanceConfigAsync(
+        UpdateInstanceConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.updateInstanceConfig);
+    }
+
+    /**
+     * 异步修改实例配置参数
+     *
+     * 为了确保分布式缓存服务发挥出最优性能，您可以根据自己的业务情况对DCS缓存实例的运行参数进行调整。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInstanceConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse>
+     */
+    public AsyncInvoker<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> updateInstanceConfigAsyncInvoker(
+        UpdateInstanceConfigRequest request) {
+        return new AsyncInvoker<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse>(request,
+            DcsMeta.updateInstanceConfig, hcClient);
     }
 
     /**

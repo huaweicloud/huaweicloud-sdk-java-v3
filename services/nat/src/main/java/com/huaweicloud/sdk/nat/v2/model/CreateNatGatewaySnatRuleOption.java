@@ -40,6 +40,11 @@ public class CreateNatGatewaySnatRuleOption {
 
     private String floatingIpId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eip_id")
+
+    private String globalEipId;
+
     public CreateNatGatewaySnatRuleOption withNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
         return this;
@@ -115,6 +120,8 @@ public class CreateNatGatewaySnatRuleOption {
 
     /**
      * 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC） 
+     * minimum: 0
+     * maximum: 1
      * @return sourceType
      */
     public Integer getSourceType() {
@@ -142,6 +149,23 @@ public class CreateNatGatewaySnatRuleOption {
         this.floatingIpId = floatingIpId;
     }
 
+    public CreateNatGatewaySnatRuleOption withGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+        return this;
+    }
+
+    /**
+     * 全域弹性公网IP的id。
+     * @return globalEipId
+     */
+    public String getGlobalEipId() {
+        return globalEipId;
+    }
+
+    public void setGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +177,13 @@ public class CreateNatGatewaySnatRuleOption {
         CreateNatGatewaySnatRuleOption that = (CreateNatGatewaySnatRuleOption) obj;
         return Objects.equals(this.natGatewayId, that.natGatewayId) && Objects.equals(this.cidr, that.cidr)
             && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.floatingIpId, that.floatingIpId);
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.floatingIpId, that.floatingIpId)
+            && Objects.equals(this.globalEipId, that.globalEipId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(natGatewayId, cidr, networkId, description, sourceType, floatingIpId);
+        return Objects.hash(natGatewayId, cidr, networkId, description, sourceType, floatingIpId, globalEipId);
     }
 
     @Override
@@ -171,6 +196,7 @@ public class CreateNatGatewaySnatRuleOption {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
         sb.append("    floatingIpId: ").append(toIndentedString(floatingIpId)).append("\n");
+        sb.append("    globalEipId: ").append(toIndentedString(globalEipId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

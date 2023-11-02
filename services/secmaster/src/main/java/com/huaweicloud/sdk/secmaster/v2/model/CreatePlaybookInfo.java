@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Information of playbook
+ * 剧本创建参数信息
  */
 public class CreatePlaybookInfo {
 
@@ -26,26 +26,6 @@ public class CreatePlaybookInfo {
     private String workspaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "approve_role")
-
-    private String approveRole;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_role")
-
-    private String userRole;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "edit_role")
-
-    private String editRole;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "owner_id")
-
-    private String ownerId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
     private Boolean enabled;
@@ -56,7 +36,7 @@ public class CreatePlaybookInfo {
     }
 
     /**
-     * The name, display only
+     * 剧本名称
      * @return name
      */
     public String getName() {
@@ -73,7 +53,7 @@ public class CreatePlaybookInfo {
     }
 
     /**
-     * The description, display only
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -90,7 +70,7 @@ public class CreatePlaybookInfo {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -101,81 +81,13 @@ public class CreatePlaybookInfo {
         this.workspaceId = workspaceId;
     }
 
-    public CreatePlaybookInfo withApproveRole(String approveRole) {
-        this.approveRole = approveRole;
-        return this;
-    }
-
-    /**
-     * Role required for approve
-     * @return approveRole
-     */
-    public String getApproveRole() {
-        return approveRole;
-    }
-
-    public void setApproveRole(String approveRole) {
-        this.approveRole = approveRole;
-    }
-
-    public CreatePlaybookInfo withUserRole(String userRole) {
-        this.userRole = userRole;
-        return this;
-    }
-
-    /**
-     * Role required for use
-     * @return userRole
-     */
-    public String getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
-    }
-
-    public CreatePlaybookInfo withEditRole(String editRole) {
-        this.editRole = editRole;
-        return this;
-    }
-
-    /**
-     * Role required for edit
-     * @return editRole
-     */
-    public String getEditRole() {
-        return editRole;
-    }
-
-    public void setEditRole(String editRole) {
-        this.editRole = editRole;
-    }
-
-    public CreatePlaybookInfo withOwnerId(String ownerId) {
-        this.ownerId = ownerId;
-        return this;
-    }
-
-    /**
-     * Owner id
-     * @return ownerId
-     */
-    public String getOwnerId() {
-        return ownerId;
-    }
-
-    public void setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
-    }
-
     public CreatePlaybookInfo withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
     /**
-     * If is enabled, false for disenabled, true for enabled
+     * 是否启用，默认传false
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -196,14 +108,12 @@ public class CreatePlaybookInfo {
         }
         CreatePlaybookInfo that = (CreatePlaybookInfo) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.approveRole, that.approveRole)
-            && Objects.equals(this.userRole, that.userRole) && Objects.equals(this.editRole, that.editRole)
-            && Objects.equals(this.ownerId, that.ownerId) && Objects.equals(this.enabled, that.enabled);
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, workspaceId, approveRole, userRole, editRole, ownerId, enabled);
+        return Objects.hash(name, description, workspaceId, enabled);
     }
 
     @Override
@@ -213,10 +123,6 @@ public class CreatePlaybookInfo {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
-        sb.append("    approveRole: ").append(toIndentedString(approveRole)).append("\n");
-        sb.append("    userRole: ").append(toIndentedString(userRole)).append("\n");
-        sb.append("    editRole: ").append(toIndentedString(editRole)).append("\n");
-        sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("}");
         return sb.toString();

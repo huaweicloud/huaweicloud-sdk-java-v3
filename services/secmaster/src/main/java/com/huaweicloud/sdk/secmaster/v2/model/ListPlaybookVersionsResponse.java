@@ -55,7 +55,7 @@ public class ListPlaybookVersionsResponse extends SdkResponse {
     }
 
     /**
-     * Error code
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -72,7 +72,7 @@ public class ListPlaybookVersionsResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -89,7 +89,7 @@ public class ListPlaybookVersionsResponse extends SdkResponse {
     }
 
     /**
-     * current page count
+     * 分页查询数据大小
      * minimum: 0
      * maximum: 9999
      * @return size
@@ -108,7 +108,7 @@ public class ListPlaybookVersionsResponse extends SdkResponse {
     }
 
     /**
-     * current page size
+     * 当前页码
      * minimum: 0
      * maximum: 100
      * @return page
@@ -127,7 +127,7 @@ public class ListPlaybookVersionsResponse extends SdkResponse {
     }
 
     /**
-     * tatal count
+     * 总数
      * minimum: 0
      * maximum: 99999
      * @return total
@@ -162,7 +162,7 @@ public class ListPlaybookVersionsResponse extends SdkResponse {
     }
 
     /**
-     * list of informations of playbook version
+     * 剧本版本列表信息
      * @return data
      */
     public List<PlaybookVersionListEntity> getData() {

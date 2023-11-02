@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Selector
+ * 选择器
  */
 public class Selector {
 
@@ -15,11 +15,6 @@ public class Selector {
     @JsonProperty(value = "fieldSelector")
 
     private FieldSelector fieldSelector;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "labelSelector")
-
-    private LabelSelector labelSelector;
 
     public Selector withFieldSelector(FieldSelector fieldSelector) {
         this.fieldSelector = fieldSelector;
@@ -47,32 +42,6 @@ public class Selector {
         this.fieldSelector = fieldSelector;
     }
 
-    public Selector withLabelSelector(LabelSelector labelSelector) {
-        this.labelSelector = labelSelector;
-        return this;
-    }
-
-    public Selector withLabelSelector(Consumer<LabelSelector> labelSelectorSetter) {
-        if (this.labelSelector == null) {
-            this.labelSelector = new LabelSelector();
-            labelSelectorSetter.accept(this.labelSelector);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get labelSelector
-     * @return labelSelector
-     */
-    public LabelSelector getLabelSelector() {
-        return labelSelector;
-    }
-
-    public void setLabelSelector(LabelSelector labelSelector) {
-        this.labelSelector = labelSelector;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,13 +51,12 @@ public class Selector {
             return false;
         }
         Selector that = (Selector) obj;
-        return Objects.equals(this.fieldSelector, that.fieldSelector)
-            && Objects.equals(this.labelSelector, that.labelSelector);
+        return Objects.equals(this.fieldSelector, that.fieldSelector);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fieldSelector, labelSelector);
+        return Objects.hash(fieldSelector);
     }
 
     @Override
@@ -96,7 +64,6 @@ public class Selector {
         StringBuilder sb = new StringBuilder();
         sb.append("class Selector {\n");
         sb.append("    fieldSelector: ").append(toIndentedString(fieldSelector)).append("\n");
-        sb.append("    labelSelector: ").append(toIndentedString(labelSelector)).append("\n");
         sb.append("}");
         return sb.toString();
     }

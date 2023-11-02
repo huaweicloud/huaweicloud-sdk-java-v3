@@ -26,7 +26,7 @@ public class ShowIndicatorDetailRequest {
     }
 
     /**
-     * workspace id
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -43,7 +43,7 @@ public class ShowIndicatorDetailRequest {
     }
 
     /**
-     * ID of indicator
+     * 情报指标ID
      * @return indicatorId
      */
     public String getIndicatorId() {

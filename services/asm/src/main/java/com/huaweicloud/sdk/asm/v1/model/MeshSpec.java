@@ -5,14 +5,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 网格参数定义。
+ * 网格参数定义
  */
 public class MeshSpec {
 
@@ -22,14 +24,9 @@ public class MeshSpec {
     private String region;
 
     /**
-     * 网格类型：  Managed：企业版网格  InCluster：基础版网格
+     * 网格类型： InCluster：基础版网格
      */
     public static final class TypeEnum {
-
-        /**
-         * Enum MANAGED for value: "Managed"
-         */
-        public static final TypeEnum MANAGED = new TypeEnum("Managed");
 
         /**
          * Enum INCLUSTER for value: "InCluster"
@@ -40,7 +37,6 @@ public class MeshSpec {
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
-            map.put("Managed", MANAGED);
             map.put("InCluster", INCLUSTER);
             return Collections.unmodifiableMap(map);
         }
@@ -106,13 +102,18 @@ public class MeshSpec {
 
     private MeshExtendParams extendParams;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<MeshTags> tags = null;
+
     public MeshSpec withRegion(String region) {
         this.region = region;
         return this;
     }
 
     /**
-     * 网格控制面组件所在的region。 创建企业版网格时需要填写该参数，选择控制面组件所在的region； 创建基础版时网格组件安装在用户所提供的集群中，不需要填写该参数。
+     * 网格控制面组件所在的region 可选参数
      * @return region
      */
     public String getRegion() {
@@ -129,7 +130,7 @@ public class MeshSpec {
     }
 
     /**
-     * 网格类型：  Managed：企业版网格  InCluster：基础版网格
+     * 网格类型： InCluster：基础版网格
      * @return type
      */
     public TypeEnum getType() {
@@ -183,6 +184,39 @@ public class MeshSpec {
         this.extendParams = extendParams;
     }
 
+    public MeshSpec withTags(List<MeshTags> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public MeshSpec addTagsItem(MeshTags tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public MeshSpec withTags(Consumer<List<MeshTags>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 网格资源标签
+     * @return tags
+     */
+    public List<MeshTags> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<MeshTags> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -193,12 +227,13 @@ public class MeshSpec {
         }
         MeshSpec that = (MeshSpec) obj;
         return Objects.equals(this.region, that.region) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.extendParams, that.extendParams);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.extendParams, that.extendParams)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, type, version, extendParams);
+        return Objects.hash(region, type, version, extendParams, tags);
     }
 
     @Override
@@ -209,6 +244,7 @@ public class MeshSpec {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    extendParams: ").append(toIndentedString(extendParams)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

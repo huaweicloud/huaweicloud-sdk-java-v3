@@ -37,7 +37,7 @@ public class UpdatePlaybookActionRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -54,7 +54,7 @@ public class UpdatePlaybookActionRequest {
     }
 
     /**
-     * version Id value
+     * 剧本版本ID
      * @return versionId
      */
     public String getVersionId() {
@@ -71,7 +71,7 @@ public class UpdatePlaybookActionRequest {
     }
 
     /**
-     * ID of action
+     * 剧本动作ID
      * @return actionId
      */
     public String getActionId() {

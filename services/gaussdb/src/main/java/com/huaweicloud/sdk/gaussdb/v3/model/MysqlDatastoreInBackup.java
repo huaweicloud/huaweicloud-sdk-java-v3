@@ -43,7 +43,7 @@ public class MysqlDatastoreInBackup {
     }
 
     /**
-     * 数据库版本。  数据库支持的版本信息，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlEngineVersion.html)返回的name字段。
+     * 数据库版本。  数据库支持的版本信息，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlEngineVersion.html)返回的name字段。
      * @return version
      */
     public String getVersion() {

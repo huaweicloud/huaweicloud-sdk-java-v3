@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * delete indicator request body
+ * 删除指标请求参数
  */
 public class DeleteIndicatorRequestBody {
 
@@ -40,7 +40,7 @@ public class DeleteIndicatorRequestBody {
     }
 
     /**
-     * id list
+     * 指标ID列表
      * @return batchIds
      */
     public List<String> getBatchIds() {

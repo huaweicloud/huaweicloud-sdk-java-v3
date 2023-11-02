@@ -26,7 +26,7 @@ public class CreateIndicatorDetailIndicatorType {
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "layoutId")
+    @JsonProperty(value = "layout_id")
 
     private String layoutId;
 
@@ -36,7 +36,7 @@ public class CreateIndicatorDetailIndicatorType {
     }
 
     /**
-     * indicator_type
+     * 指标类型
      * @return indicatorType
      */
     public String getIndicatorType() {
@@ -53,7 +53,7 @@ public class CreateIndicatorDetailIndicatorType {
     }
 
     /**
-     * id
+     * 情报类型ID
      * @return id
      */
     public String getId() {
@@ -70,7 +70,7 @@ public class CreateIndicatorDetailIndicatorType {
     }
 
     /**
-     * category
+     * 目录
      * @return category
      */
     public String getCategory() {
@@ -87,7 +87,7 @@ public class CreateIndicatorDetailIndicatorType {
     }
 
     /**
-     * layoutId
+     * 布局ID
      * @return layoutId
      */
     public String getLayoutId() {

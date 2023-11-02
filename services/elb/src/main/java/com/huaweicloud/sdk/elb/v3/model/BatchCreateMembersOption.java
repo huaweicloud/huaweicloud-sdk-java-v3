@@ -41,7 +41,7 @@ public class BatchCreateMembersOption {
     }
 
     /**
-     * 后端服务器名称。
+     * 后端服务器名称。注意：该名称并非ECS名称。
      * @return name
      */
     public String getName() {

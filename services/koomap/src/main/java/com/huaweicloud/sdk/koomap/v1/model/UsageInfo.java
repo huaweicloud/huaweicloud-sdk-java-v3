@@ -66,7 +66,7 @@ public class UsageInfo {
     }
 
     /**
-     * 用量度量名称，通常与KooMap的计费项保持一致。当前支持以下用量度量名称： - 时空专属存储 - 基础处理：色彩增强与粗纠正L2 - 基础处理：正射纠正L4 - 基础处理：影像镶嵌L5
+     * 用量度量名称，通常与KooMap的计费项保持一致。当前支持以下用量度量名称： - 时空专属存储 - 基础处理：色彩增强与粗纠正L2 - 基础处理：色彩增强与精纠正L3 - 基础处理：正射纠正L4 - 基础处理：影像镶嵌L5
      * @return usageMeasureName
      */
     public String getUsageMeasureName() {
@@ -134,7 +134,7 @@ public class UsageInfo {
     }
 
     /**
-     * 用量子类型，用于区分同一用量类型下的多个子用量，目前usage_type为“TASK”时才需要设置该值。 - L2：L2等级处理服务。 - L4：L4等级处理服务。 - L5：L5等级处理服务。
+     * 用量子类型，用于区分同一用量类型下的多个子用量，目前usage_type为“TASK”时才需要设置该值。 - L2：L2等级生产服务 - L3：L3等级生产服务 - L4：L4等级生产服务 - L5：L5等级生产服务
      * @return usageSubtype
      */
     public String getUsageSubtype() {

@@ -1068,7 +1068,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -1101,7 +1101,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type=ipv4&elb_virsubnet_type=dualstack*。
+     * 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type=ipv4&elb_virsubnet_type=dualstack*。  [不支持dualstack。](tag:dt,dt_test)
      * @return elbVirsubnetType
      */
     public List<String> getElbVirsubnetType() {

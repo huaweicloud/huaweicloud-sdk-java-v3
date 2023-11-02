@@ -50,13 +50,23 @@ public class ShowGaussMySqlBackupListRequest {
 
     private String endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_name")
+
+    private String instanceName;
+
     public ShowGaussMySqlBackupListRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
     /**
-     * 语言。
+     * 请求语言类型。默认en-us。 取值范围： - en-us - zh-cn
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,7 +85,7 @@ public class ShowGaussMySqlBackupListRequest {
     }
 
     /**
-     * 实例ID。
+     * 实例ID，严格匹配UUID规则。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -109,7 +119,7 @@ public class ShowGaussMySqlBackupListRequest {
     }
 
     /**
-     * 备份类型，取值：  - \"auto\"：自动全量备份。 - \"manual\"：手动全量备份。
+     * 备份类型。  取值范围： - auto：自动全量备份。 - manual：手动全量备份。
      * @return backupType
      */
     public String getBackupType() {
@@ -188,6 +198,40 @@ public class ShowGaussMySqlBackupListRequest {
         this.endTime = endTime;
     }
 
+    public ShowGaussMySqlBackupListRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 备份名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ShowGaussMySqlBackupListRequest withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+        return this;
+    }
+
+    /**
+     * 实例名称。
+     * @return instanceName
+     */
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -200,12 +244,14 @@ public class ShowGaussMySqlBackupListRequest {
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupType, that.backupType)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.instanceName, that.instanceName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, backupId, backupType, offset, limit, beginTime, endTime);
+        return Objects
+            .hash(xLanguage, instanceId, backupId, backupType, offset, limit, beginTime, endTime, name, instanceName);
     }
 
     @Override
@@ -220,6 +266,8 @@ public class ShowGaussMySqlBackupListRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -75,6 +75,11 @@ public class ListApisV2Request {
 
     private String preciseSearch;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_channel_name")
+
+    private String vpcChannelName;
+
     public ListApisV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -298,6 +303,23 @@ public class ListApisV2Request {
         this.preciseSearch = preciseSearch;
     }
 
+    public ListApisV2Request withVpcChannelName(String vpcChannelName) {
+        this.vpcChannelName = vpcChannelName;
+        return this;
+    }
+
+    /**
+     * 负载通道名称。
+     * @return vpcChannelName
+     */
+    public String getVpcChannelName() {
+        return vpcChannelName;
+    }
+
+    public void setVpcChannelName(String vpcChannelName) {
+        this.vpcChannelName = vpcChannelName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -313,7 +335,8 @@ public class ListApisV2Request {
             && Objects.equals(this.reqProtocol, that.reqProtocol) && Objects.equals(this.reqMethod, that.reqMethod)
             && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.authType, that.authType)
             && Objects.equals(this.envId, that.envId) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.preciseSearch, that.preciseSearch);
+            && Objects.equals(this.preciseSearch, that.preciseSearch)
+            && Objects.equals(this.vpcChannelName, that.vpcChannelName);
     }
 
     @Override
@@ -330,7 +353,8 @@ public class ListApisV2Request {
             authType,
             envId,
             type,
-            preciseSearch);
+            preciseSearch,
+            vpcChannelName);
     }
 
     @Override
@@ -350,6 +374,7 @@ public class ListApisV2Request {
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
+        sb.append("    vpcChannelName: ").append(toIndentedString(vpcChannelName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

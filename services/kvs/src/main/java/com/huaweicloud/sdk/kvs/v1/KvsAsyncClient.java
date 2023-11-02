@@ -137,6 +137,34 @@ public class KvsAsyncClient {
     }
 
     /**
+     * 更新指定kv的sortkey 并更新部分字段
+     *
+     * rename kv
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RenameKvRequest 请求对象
+     * @return CompletableFuture<RenameKvResponse>
+     */
+    public CompletableFuture<RenameKvResponse> renameKvAsync(RenameKvRequest request) {
+        return hcClient.asyncInvokeHttp(request, KvsMeta.renameKv);
+    }
+
+    /**
+     * 更新指定kv的sortkey 并更新部分字段
+     *
+     * rename kv
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RenameKvRequest 请求对象
+     * @return AsyncInvoker<RenameKvRequest, RenameKvResponse>
+     */
+    public AsyncInvoker<RenameKvRequest, RenameKvResponse> renameKvAsyncInvoker(RenameKvRequest request) {
+        return new AsyncInvoker<RenameKvRequest, RenameKvResponse>(request, KvsMeta.renameKv, hcClient);
+    }
+
+    /**
      * 批量查询kv
      *
      * batch get kv
@@ -275,34 +303,6 @@ public class KvsAsyncClient {
      */
     public AsyncInvoker<PutKvRequest, PutKvResponse> putKvAsyncInvoker(PutKvRequest request) {
         return new AsyncInvoker<PutKvRequest, PutKvResponse>(request, KvsMeta.putKv, hcClient);
-    }
-
-    /**
-     * 更新指定kv的sortkey 并更新部分字段
-     *
-     * rename kv
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RenameKvRequest 请求对象
-     * @return CompletableFuture<RenameKvResponse>
-     */
-    public CompletableFuture<RenameKvResponse> renameKvAsync(RenameKvRequest request) {
-        return hcClient.asyncInvokeHttp(request, KvsMeta.renameKv);
-    }
-
-    /**
-     * 更新指定kv的sortkey 并更新部分字段
-     *
-     * rename kv
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RenameKvRequest 请求对象
-     * @return AsyncInvoker<RenameKvRequest, RenameKvResponse>
-     */
-    public AsyncInvoker<RenameKvRequest, RenameKvResponse> renameKvAsyncInvoker(RenameKvRequest request) {
-        return new AsyncInvoker<RenameKvRequest, RenameKvResponse>(request, KvsMeta.renameKv, hcClient);
     }
 
     /**

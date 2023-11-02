@@ -36,7 +36,7 @@ public class ShowTaskEventsRequest {
     }
 
     /**
-     * 医疗智能体平台项目ID，您可以在EIHealth平台单击所需的项目名称，进入项目设置页面查看。
+     * 平台项目ID，您可以在平台单击所需的项目名称，进入项目设置页面查看。
      * @return eihealthProjectId
      */
     public String getEihealthProjectId() {

@@ -36,7 +36,7 @@ public class ListPlaybookActionsRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -53,7 +53,7 @@ public class ListPlaybookActionsRequest {
     }
 
     /**
-     * version Id value
+     * 剧本版本ID
      * @return versionId
      */
     public String getVersionId() {
@@ -70,7 +70,7 @@ public class ListPlaybookActionsRequest {
     }
 
     /**
-     * request limit size
+     * 分页查询参数，用于指定一次查询最多的结果数，从1开始
      * minimum: 0
      * maximum: 999999
      * @return limit
@@ -89,7 +89,7 @@ public class ListPlaybookActionsRequest {
     }
 
     /**
-     * request offset, from 0
+     * 分页查询参数。用于指定查询结果的起始位置，从0开始
      * minimum: 1
      * maximum: 999999
      * @return offset

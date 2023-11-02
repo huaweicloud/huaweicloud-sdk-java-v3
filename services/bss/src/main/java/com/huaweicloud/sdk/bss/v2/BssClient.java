@@ -22,14 +22,10 @@ import com.huaweicloud.sdk.bss.v2.model.CreatePartnerCouponsRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreatePartnerCouponsResponse;
 import com.huaweicloud.sdk.bss.v2.model.CreatePersonalRealnameAuthRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreatePersonalRealnameAuthResponse;
-import com.huaweicloud.sdk.bss.v2.model.CreatePostalRequest;
-import com.huaweicloud.sdk.bss.v2.model.CreatePostalResponse;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubCustomerRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubCustomerResponse;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubEnterpriseAccountRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubEnterpriseAccountResponse;
-import com.huaweicloud.sdk.bss.v2.model.DeletePostalRequest;
-import com.huaweicloud.sdk.bss.v2.model.DeletePostalResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListCitiesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListCitiesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListConsumeSubCustomersRequest;
@@ -100,8 +96,6 @@ import com.huaweicloud.sdk.bss.v2.model.ListPartnerCouponsRecordRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListPartnerCouponsRecordResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListPayPerUseCustomerResourcesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListPayPerUseCustomerResourcesResponse;
-import com.huaweicloud.sdk.bss.v2.model.ListPostalAddressRequest;
-import com.huaweicloud.sdk.bss.v2.model.ListPostalAddressResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListProvincesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListProvincesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListQuotaCouponsRequest;
@@ -174,8 +168,6 @@ import com.huaweicloud.sdk.bss.v2.model.UpdateIndirectPartnerAccountRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdateIndirectPartnerAccountResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandResponse;
-import com.huaweicloud.sdk.bss.v2.model.UpdatePostalRequest;
-import com.huaweicloud.sdk.bss.v2.model.UpdatePostalResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdateSubEnterpriseAmountRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdateSubEnterpriseAmountResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -625,38 +617,6 @@ public class BssClient {
     }
 
     /**
-     * 新增邮寄地址
-     *
-     * 伙伴可以新增自己的邮寄地址信息。
-     * 
-     * 伙伴登录伙伴中心新增邮寄地址请参见[向华为云索取发票](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072435143.html)，进入索取发票页面，选择纸质发票，即可设置邮件地址。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreatePostalRequest 请求对象
-     * @return CreatePostalResponse
-     */
-    public CreatePostalResponse createPostal(CreatePostalRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.createPostal);
-    }
-
-    /**
-     * 新增邮寄地址
-     *
-     * 伙伴可以新增自己的邮寄地址信息。
-     * 
-     * 伙伴登录伙伴中心新增邮寄地址请参见[向华为云索取发票](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072435143.html)，进入索取发票页面，选择纸质发票，即可设置邮件地址。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreatePostalRequest 请求对象
-     * @return SyncInvoker<CreatePostalRequest, CreatePostalResponse>
-     */
-    public SyncInvoker<CreatePostalRequest, CreatePostalResponse> createPostalInvoker(CreatePostalRequest request) {
-        return new SyncInvoker<CreatePostalRequest, CreatePostalResponse>(request, BssMeta.createPostal, hcClient);
-    }
-
-    /**
      * 创建客户
      *
      * 在伙伴销售平台创建客户时同步创建华为云账号，并将客户在伙伴销售平台上的账号与华为云账号进行映射。同时，创建的华为云账号与伙伴账号关联绑定。
@@ -732,38 +692,6 @@ public class BssClient {
         CreateSubEnterpriseAccountRequest request) {
         return new SyncInvoker<CreateSubEnterpriseAccountRequest, CreateSubEnterpriseAccountResponse>(request,
             BssMeta.createSubEnterpriseAccount, hcClient);
-    }
-
-    /**
-     * 删除邮寄地址
-     *
-     * 伙伴可以删除自己的邮寄地址信息。
-     * 
-     * 伙伴登录伙伴中心修改邮寄地址请参见[向华为云索取发票](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072435143.html)，进入索取发票页面，选择删除邮寄地址，即可删除邮件地址。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeletePostalRequest 请求对象
-     * @return DeletePostalResponse
-     */
-    public DeletePostalResponse deletePostal(DeletePostalRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.deletePostal);
-    }
-
-    /**
-     * 删除邮寄地址
-     *
-     * 伙伴可以删除自己的邮寄地址信息。
-     * 
-     * 伙伴登录伙伴中心修改邮寄地址请参见[向华为云索取发票](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072435143.html)，进入索取发票页面，选择删除邮寄地址，即可删除邮件地址。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeletePostalRequest 请求对象
-     * @return SyncInvoker<DeletePostalRequest, DeletePostalResponse>
-     */
-    public SyncInvoker<DeletePostalRequest, DeletePostalResponse> deletePostalInvoker(DeletePostalRequest request) {
-        return new SyncInvoker<DeletePostalRequest, DeletePostalResponse>(request, BssMeta.deletePostal, hcClient);
     }
 
     /**
@@ -1961,40 +1889,6 @@ public class BssClient {
         ListPayPerUseCustomerResourcesRequest request) {
         return new SyncInvoker<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse>(request,
             BssMeta.listPayPerUseCustomerResources, hcClient);
-    }
-
-    /**
-     * 查询邮寄地址
-     *
-     * 伙伴可以查询自己的邮寄地址信息。
-     * 
-     * 伙伴登录伙伴中心查询邮寄地址请参见[向华为云索取发票](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072435143.html)，进入索取发票页面，即可查看邮寄地址。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListPostalAddressRequest 请求对象
-     * @return ListPostalAddressResponse
-     */
-    public ListPostalAddressResponse listPostalAddress(ListPostalAddressRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.listPostalAddress);
-    }
-
-    /**
-     * 查询邮寄地址
-     *
-     * 伙伴可以查询自己的邮寄地址信息。
-     * 
-     * 伙伴登录伙伴中心查询邮寄地址请参见[向华为云索取发票](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072435143.html)，进入索取发票页面，即可查看邮寄地址。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListPostalAddressRequest 请求对象
-     * @return SyncInvoker<ListPostalAddressRequest, ListPostalAddressResponse>
-     */
-    public SyncInvoker<ListPostalAddressRequest, ListPostalAddressResponse> listPostalAddressInvoker(
-        ListPostalAddressRequest request) {
-        return new SyncInvoker<ListPostalAddressRequest, ListPostalAddressResponse>(request, BssMeta.listPostalAddress,
-            hcClient);
     }
 
     /**
@@ -3276,38 +3170,6 @@ public class BssClient {
         UpdatePeriodToOnDemandRequest request) {
         return new SyncInvoker<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse>(request,
             BssMeta.updatePeriodToOnDemand, hcClient);
-    }
-
-    /**
-     * 修改邮寄地址
-     *
-     * 伙伴可以修改自己的邮寄地址信息。
-     * 
-     * 伙伴登录伙伴中心修改邮寄地址请参见[向华为云索取发票](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072435143.html)，进入索取发票页面，选择修改邮寄地址，即可修改邮件地址。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdatePostalRequest 请求对象
-     * @return UpdatePostalResponse
-     */
-    public UpdatePostalResponse updatePostal(UpdatePostalRequest request) {
-        return hcClient.syncInvokeHttp(request, BssMeta.updatePostal);
-    }
-
-    /**
-     * 修改邮寄地址
-     *
-     * 伙伴可以修改自己的邮寄地址信息。
-     * 
-     * 伙伴登录伙伴中心修改邮寄地址请参见[向华为云索取发票](https://support.huaweicloud.com/usermanual-bpconsole/zh-cn_topic_0072435143.html)，进入索取发票页面，选择修改邮寄地址，即可修改邮件地址。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdatePostalRequest 请求对象
-     * @return SyncInvoker<UpdatePostalRequest, UpdatePostalResponse>
-     */
-    public SyncInvoker<UpdatePostalRequest, UpdatePostalResponse> updatePostalInvoker(UpdatePostalRequest request) {
-        return new SyncInvoker<UpdatePostalRequest, UpdatePostalResponse>(request, BssMeta.updatePostal, hcClient);
     }
 
     /**

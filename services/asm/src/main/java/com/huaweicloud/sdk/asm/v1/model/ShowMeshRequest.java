@@ -16,11 +16,6 @@ public class ShowMeshRequest {
     private String meshId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apply-DomainID")
-
-    private String xApplyDomainID;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Apply-ProjectID")
 
     private String xApplyProjectID;
@@ -40,25 +35,6 @@ public class ShowMeshRequest {
 
     public void setMeshId(String meshId) {
         this.meshId = meshId;
-    }
-
-    public ShowMeshRequest withXApplyDomainID(String xApplyDomainID) {
-        this.xApplyDomainID = xApplyDomainID;
-        return this;
-    }
-
-    /**
-     * 网格所属DomainID
-     * @return xApplyDomainID
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apply-DomainID")
-    public String getXApplyDomainID() {
-        return xApplyDomainID;
-    }
-
-    public void setXApplyDomainID(String xApplyDomainID) {
-        this.xApplyDomainID = xApplyDomainID;
     }
 
     public ShowMeshRequest withXApplyProjectID(String xApplyProjectID) {
@@ -89,13 +65,12 @@ public class ShowMeshRequest {
             return false;
         }
         ShowMeshRequest that = (ShowMeshRequest) obj;
-        return Objects.equals(this.meshId, that.meshId) && Objects.equals(this.xApplyDomainID, that.xApplyDomainID)
-            && Objects.equals(this.xApplyProjectID, that.xApplyProjectID);
+        return Objects.equals(this.meshId, that.meshId) && Objects.equals(this.xApplyProjectID, that.xApplyProjectID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(meshId, xApplyDomainID, xApplyProjectID);
+        return Objects.hash(meshId, xApplyProjectID);
     }
 
     @Override
@@ -103,7 +78,6 @@ public class ShowMeshRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMeshRequest {\n");
         sb.append("    meshId: ").append(toIndentedString(meshId)).append("\n");
-        sb.append("    xApplyDomainID: ").append(toIndentedString(xApplyDomainID)).append("\n");
         sb.append("    xApplyProjectID: ").append(toIndentedString(xApplyProjectID)).append("\n");
         sb.append("}");
         return sb.toString();

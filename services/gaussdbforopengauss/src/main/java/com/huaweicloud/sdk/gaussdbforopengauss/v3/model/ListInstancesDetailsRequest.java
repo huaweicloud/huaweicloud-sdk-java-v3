@@ -202,6 +202,81 @@ public class ListInstancesDetailsRequest {
 
     private List<String> tags = null;
 
+    /**
+     * 计费模式。  取值范围：  postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
+     */
+    public static final class ChargeModeEnum {
+
+        /**
+         * Enum POSTPAID for value: "postPaid"
+         */
+        public static final ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
+
+        /**
+         * Enum PREPAID for value: "prePaid"
+         */
+        public static final ChargeModeEnum PREPAID = new ChargeModeEnum("prePaid");
+
+        private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargeModeEnum> createStaticFields() {
+            Map<String, ChargeModeEnum> map = new HashMap<>();
+            map.put("postPaid", POSTPAID);
+            map.put("prePaid", PREPAID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ChargeModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ChargeModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
+        }
+
+        public static ChargeModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ChargeModeEnum) {
+                return this.value.equals(((ChargeModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_mode")
+
+    private ChargeModeEnum chargeMode;
+
     public ListInstancesDetailsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -390,6 +465,23 @@ public class ListInstancesDetailsRequest {
         this.tags = tags;
     }
 
+    public ListInstancesDetailsRequest withChargeMode(ChargeModeEnum chargeMode) {
+        this.chargeMode = chargeMode;
+        return this;
+    }
+
+    /**
+     * 计费模式。  取值范围：  postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
+     * @return chargeMode
+     */
+    public ChargeModeEnum getChargeMode() {
+        return chargeMode;
+    }
+
+    public void setChargeMode(ChargeModeEnum chargeMode) {
+        this.chargeMode = chargeMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -403,12 +495,13 @@ public class ListInstancesDetailsRequest {
             && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.chargeMode, that.chargeMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, id, name, type, datastoreType, vpcId, subnetId, offset, limit, tags);
+        return Objects.hash(xLanguage, id, name, type, datastoreType, vpcId, subnetId, offset, limit, tags, chargeMode);
     }
 
     @Override
@@ -425,6 +518,7 @@ public class ListInstancesDetailsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

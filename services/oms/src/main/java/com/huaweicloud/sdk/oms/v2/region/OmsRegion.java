@@ -49,6 +49,8 @@ public class OmsRegion {
 
     public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://oms.sa-brazil-1.myhuaweicloud.com");
 
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://oms.me-east-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("OMS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -71,6 +73,7 @@ public class OmsRegion {
         map.put("la-north-2", LA_NORTH_2);
         map.put("tr-west-1", TR_WEST_1);
         map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("me-east-1", ME_EAST_1);
         return Collections.unmodifiableMap(map);
     }
 

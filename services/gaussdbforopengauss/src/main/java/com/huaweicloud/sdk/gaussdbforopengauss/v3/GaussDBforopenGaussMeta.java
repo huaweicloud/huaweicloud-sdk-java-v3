@@ -37,6 +37,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceRes
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DbUserPwdRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobRequest;
@@ -647,6 +649,45 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteConfigurationRequest.XLanguageEnum.class),
             f -> f.withMarshaller(DeleteConfigurationRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabase =
+        genFordeleteDatabase();
+
+    private static HttpRequestDef<DeleteDatabaseRequest, DeleteDatabaseResponse> genFordeleteDatabase() {
+        // basic
+        HttpRequestDef.Builder<DeleteDatabaseRequest, DeleteDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDatabaseRequest.class, DeleteDatabaseResponse.class)
+                .withName("DeleteDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatabaseRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatabaseRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<DeleteDatabaseRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteDatabaseRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteDatabaseRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -1756,6 +1797,13 @@ public class GaussDBforopenGaussMeta {
             f -> f.withMarshaller(ListInstancesRequest::getTags, (req, v) -> {
                 req.setTags(v);
             }));
+        builder.<ListInstancesRequest.ChargeModeEnum>withRequestField("charge_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesRequest.ChargeModeEnum.class),
+            f -> f.withMarshaller(ListInstancesRequest::getChargeMode, (req, v) -> {
+                req.setChargeMode(v);
+            }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1843,6 +1891,13 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListInstancesDetailsRequest::getTags, (req, v) -> {
                 req.setTags(v);
+            }));
+        builder.<ListInstancesDetailsRequest.ChargeModeEnum>withRequestField("charge_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.ChargeModeEnum.class),
+            f -> f.withMarshaller(ListInstancesDetailsRequest::getChargeMode, (req, v) -> {
+                req.setChargeMode(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,

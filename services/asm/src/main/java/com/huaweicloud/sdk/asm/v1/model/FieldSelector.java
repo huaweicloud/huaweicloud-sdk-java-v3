@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * FieldSelector
+ * “字段选择器（Field selectors）”允许你根据一个或多个资源字段的值筛选 Kubernetes 对象
  */
 public class FieldSelector {
 
@@ -34,7 +34,7 @@ public class FieldSelector {
     }
 
     /**
-     * Get key
+     * Key值
      * @return key
      */
     public String getKey() {
@@ -51,7 +51,7 @@ public class FieldSelector {
     }
 
     /**
-     * Get operator
+     * 可以在字段选择器中使用=、==和!= 操作符（= 和 == 意思相同）
      * @return operator
      */
     public String getOperator() {
@@ -84,7 +84,7 @@ public class FieldSelector {
     }
 
     /**
-     * Get values
+     * Value值
      * @return values
      */
     public List<String> getValues() {

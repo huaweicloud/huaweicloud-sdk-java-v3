@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * operation of playbook
+ * 操作剧本实例请求参数
  */
 public class OperationPlaybookInfo {
 
@@ -21,7 +21,7 @@ public class OperationPlaybookInfo {
     }
 
     /**
-     * 重试： RETRY  终止： TERMINATE
+     * 操作类型。重试： RETRY  终止： TERMINATE
      * @return operation
      */
     public String getOperation() {

@@ -94,7 +94,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 未售罄的LB规格类别。  取值：L4 表示网络型LB未售罄；L7 表示应用型LB未售罄。
+     * [当前可用区可用的LB规格类别列表。](tag:,hws_hk,ctc,hcs,cmcc,hws_ocb,tm,hws_eu,hcso_dt,dt,dt_test,hws_ocb,ocb,fcs,g42,hk_g42,hws_g42) [当前可用区未售罄的LB规格类别列表。](tag:hws)  取值：L4-表示当前可用区可创建网络型的LB；L7-表示当前可用区可创建应用型的LB。
      * @return protocol
      */
     public List<String> getProtocol() {

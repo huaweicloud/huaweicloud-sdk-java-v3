@@ -124,7 +124,7 @@ public class NatGatewayResponseBody {
     private SpecEnum spec;
 
     /**
-     * 公网NAT网关实例的状态。
+     * 公网NAT网关实例的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"INACTIVE\"：不可用
      */
     public static final class StatusEnum {
 
@@ -246,6 +246,26 @@ public class NatGatewayResponseBody {
 
     private SessionConfiguration sessionConf;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ngport_ip_address")
+
+    private String ngportIpAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "billing_info")
+
+    private String billingInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dnat_rules_limit")
+
+    private Long dnatRulesLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snat_rule_public_ip_limit")
+
+    private Integer snatRulePublicIpLimit;
+
     public NatGatewayResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -337,7 +357,7 @@ public class NatGatewayResponseBody {
     }
 
     /**
-     * 公网NAT网关实例的状态。
+     * 公网NAT网关实例的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"INACTIVE\"：不可用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -459,6 +479,78 @@ public class NatGatewayResponseBody {
         this.sessionConf = sessionConf;
     }
 
+    public NatGatewayResponseBody withNgportIpAddress(String ngportIpAddress) {
+        this.ngportIpAddress = ngportIpAddress;
+        return this;
+    }
+
+    /**
+     * 公网NAT网关私有IP地址，由VPC中子网分配。
+     * @return ngportIpAddress
+     */
+    public String getNgportIpAddress() {
+        return ngportIpAddress;
+    }
+
+    public void setNgportIpAddress(String ngportIpAddress) {
+        this.ngportIpAddress = ngportIpAddress;
+    }
+
+    public NatGatewayResponseBody withBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
+        return this;
+    }
+
+    /**
+     * 订单信息。
+     * @return billingInfo
+     */
+    public String getBillingInfo() {
+        return billingInfo;
+    }
+
+    public void setBillingInfo(String billingInfo) {
+        this.billingInfo = billingInfo;
+    }
+
+    public NatGatewayResponseBody withDnatRulesLimit(Long dnatRulesLimit) {
+        this.dnatRulesLimit = dnatRulesLimit;
+        return this;
+    }
+
+    /**
+     * 公网NAT网关下DNAT规则数量限制，默认为200。
+     * minimum: 1
+     * maximum: 100000
+     * @return dnatRulesLimit
+     */
+    public Long getDnatRulesLimit() {
+        return dnatRulesLimit;
+    }
+
+    public void setDnatRulesLimit(Long dnatRulesLimit) {
+        this.dnatRulesLimit = dnatRulesLimit;
+    }
+
+    public NatGatewayResponseBody withSnatRulePublicIpLimit(Integer snatRulePublicIpLimit) {
+        this.snatRulePublicIpLimit = snatRulePublicIpLimit;
+        return this;
+    }
+
+    /**
+     * 公网NAT网关下SNAT规则EIP池中EIP数量限制，默认为20。
+     * minimum: 1
+     * maximum: 100
+     * @return snatRulePublicIpLimit
+     */
+    public Integer getSnatRulePublicIpLimit() {
+        return snatRulePublicIpLimit;
+    }
+
+    public void setSnatRulePublicIpLimit(Integer snatRulePublicIpLimit) {
+        this.snatRulePublicIpLimit = snatRulePublicIpLimit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -475,7 +567,11 @@ public class NatGatewayResponseBody {
             && Objects.equals(this.routerId, that.routerId)
             && Objects.equals(this.internalNetworkId, that.internalNetworkId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.sessionConf, that.sessionConf);
+            && Objects.equals(this.sessionConf, that.sessionConf)
+            && Objects.equals(this.ngportIpAddress, that.ngportIpAddress)
+            && Objects.equals(this.billingInfo, that.billingInfo)
+            && Objects.equals(this.dnatRulesLimit, that.dnatRulesLimit)
+            && Objects.equals(this.snatRulePublicIpLimit, that.snatRulePublicIpLimit);
     }
 
     @Override
@@ -491,7 +587,11 @@ public class NatGatewayResponseBody {
             routerId,
             internalNetworkId,
             enterpriseProjectId,
-            sessionConf);
+            sessionConf,
+            ngportIpAddress,
+            billingInfo,
+            dnatRulesLimit,
+            snatRulePublicIpLimit);
     }
 
     @Override
@@ -510,6 +610,10 @@ public class NatGatewayResponseBody {
         sb.append("    internalNetworkId: ").append(toIndentedString(internalNetworkId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sessionConf: ").append(toIndentedString(sessionConf)).append("\n");
+        sb.append("    ngportIpAddress: ").append(toIndentedString(ngportIpAddress)).append("\n");
+        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
+        sb.append("    dnatRulesLimit: ").append(toIndentedString(dnatRulesLimit)).append("\n");
+        sb.append("    snatRulePublicIpLimit: ").append(toIndentedString(snatRulePublicIpLimit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

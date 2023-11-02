@@ -36,172 +36,20 @@ public class Backups {
 
     private String endTime;
 
-    /**
-     * 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum BUILDING for value: "BUILDING"
-         */
-        public static final StatusEnum BUILDING = new StatusEnum("BUILDING");
-
-        /**
-         * Enum COMPLETED for value: "COMPLETED"
-         */
-        public static final StatusEnum COMPLETED = new StatusEnum("COMPLETED");
-
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
-        public static final StatusEnum FAILED = new StatusEnum("FAILED");
-
-        /**
-         * Enum AVAILABLE for value: "AVAILABLE"
-         */
-        public static final StatusEnum AVAILABLE = new StatusEnum("AVAILABLE");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("BUILDING", BUILDING);
-            map.put("COMPLETED", COMPLETED);
-            map.put("FAILED", FAILED);
-            map.put("AVAILABLE", AVAILABLE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "take_up_time")
 
     private Integer takeUpTime;
 
-    /**
-     * 备份类型，取值：  - auto：自动全量备份。 - manual：手动全量备份。
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum AUTO for value: "auto"
-         */
-        public static final TypeEnum AUTO = new TypeEnum("auto");
-
-        /**
-         * Enum MANUAL for value: "manual"
-         */
-        public static final TypeEnum MANUAL = new TypeEnum("manual");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("auto", AUTO);
-            map.put("manual", MANUAL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private TypeEnum type;
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
@@ -218,8 +66,13 @@ public class Backups {
 
     private String instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_name")
+
+    private String instanceName;
+
     /**
-     * 备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。
+     * 备份级别。当开启一级备份开关时，返回该参数。
      */
     public static final class BackupLevelEnum {
 
@@ -372,7 +225,7 @@ public class Backups {
         this.endTime = endTime;
     }
 
-    public Backups withStatus(StatusEnum status) {
+    public Backups withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -381,11 +234,11 @@ public class Backups {
      * 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
      * @return status
      */
-    public StatusEnum getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -395,7 +248,7 @@ public class Backups {
     }
 
     /**
-     * 备份花费时间(单位：minutes)
+     * 备份花费时间（单位：minutes）
      * @return takeUpTime
      */
     public Integer getTakeUpTime() {
@@ -406,7 +259,7 @@ public class Backups {
         this.takeUpTime = takeUpTime;
     }
 
-    public Backups withType(TypeEnum type) {
+    public Backups withType(String type) {
         this.type = type;
         return this;
     }
@@ -415,11 +268,11 @@ public class Backups {
      * 备份类型，取值：  - auto：自动全量备份。 - manual：手动全量备份。
      * @return type
      */
-    public TypeEnum getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -429,7 +282,7 @@ public class Backups {
     }
 
     /**
-     * 备份大小，(单位：MB)
+     * 备份大小（单位：MB）。
      * @return size
      */
     public Long getSize() {
@@ -472,7 +325,7 @@ public class Backups {
     }
 
     /**
-     * 实例ID。
+     * 实例ID，严格匹配UUID规则。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -483,13 +336,30 @@ public class Backups {
         this.instanceId = instanceId;
     }
 
+    public Backups withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+        return this;
+    }
+
+    /**
+     * 实例名称。
+     * @return instanceName
+     */
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
+
     public Backups withBackupLevel(BackupLevelEnum backupLevel) {
         this.backupLevel = backupLevel;
         return this;
     }
 
     /**
-     * 备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。
+     * 备份级别。当开启一级备份开关时，返回该参数。
      * @return backupLevel
      */
     public BackupLevelEnum getBackupLevel() {
@@ -506,7 +376,7 @@ public class Backups {
     }
 
     /**
-     * 备份文件描述信息
+     * 备份文件描述信息。
      * @return description
      */
     public String getDescription() {
@@ -531,6 +401,7 @@ public class Backups {
             && Objects.equals(this.status, that.status) && Objects.equals(this.takeUpTime, that.takeUpTime)
             && Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
             && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceName, that.instanceName)
             && Objects.equals(this.backupLevel, that.backupLevel) && Objects.equals(this.description, that.description);
     }
 
@@ -546,6 +417,7 @@ public class Backups {
             size,
             datastore,
             instanceId,
+            instanceName,
             backupLevel,
             description);
     }
@@ -564,6 +436,7 @@ public class Backups {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    backupLevel: ").append(toIndentedString(backupLevel)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");

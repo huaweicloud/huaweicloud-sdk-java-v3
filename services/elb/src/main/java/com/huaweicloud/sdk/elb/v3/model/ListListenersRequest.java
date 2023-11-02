@@ -134,6 +134,11 @@ public class ListListenersRequest {
     private Boolean transparentClientIpEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_protocol_enable")
+
+    private Boolean proxyProtocolEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enhance_l7policy_enable")
 
     private Boolean enhanceL7policyEnable;
@@ -256,7 +261,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC。  说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hws_eu,hcso_dt)  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
+     * 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC。](tag:hws,hws_hk,ocb,ctc,hcs,cmcc,hws_ocb,fcs) [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS。](tag:tm,g42,hk_g42,dt,dt_test) [取值：TCP、UDP、HTTP、HTTPS。](tag:hws_eu,hcso_dt)  [说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,ctc,hcs,g42,cmcc,hws_ocb,fcs,tm,g42,hk_g42,dt,dt_test)  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -521,7 +526,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
+     * 客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  使用说明： - 仅HTTPS协议监听器有效。 [- QUIC监听器不能设置该字段，固定返回为true。](tag:hws,hws_hk,ocb,ctc,hcs,cmcc,hws_ocb,fcs) - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。
      * @return http2Enable
      */
     public Boolean getHttp2Enable() {
@@ -830,13 +835,30 @@ public class ListListenersRequest {
         this.transparentClientIpEnable = transparentClientIpEnable;
     }
 
+    public ListListenersRequest withProxyProtocolEnable(Boolean proxyProtocolEnable) {
+        this.proxyProtocolEnable = proxyProtocolEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启proxy_protocol。仅TLS监听器可指定，其他协议的监听器该字段不生效，proxy_protocol不开启。
+     * @return proxyProtocolEnable
+     */
+    public Boolean getProxyProtocolEnable() {
+        return proxyProtocolEnable;
+    }
+
+    public void setProxyProtocolEnable(Boolean proxyProtocolEnable) {
+        this.proxyProtocolEnable = proxyProtocolEnable;
+    }
+
     public ListListenersRequest withEnhanceL7policyEnable(Boolean enhanceL7policyEnable) {
         this.enhanceL7policyEnable = enhanceL7policyEnable;
         return this;
     }
 
     /**
-     * 是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  取值：true开启，false不开启。  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * 是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  取值：true开启，false不开启。
      * @return enhanceL7policyEnable
      */
     public Boolean getEnhanceL7policyEnable() {
@@ -942,6 +964,7 @@ public class ListListenersRequest {
             && Objects.equals(this.clientTimeout, that.clientTimeout)
             && Objects.equals(this.keepaliveTimeout, that.keepaliveTimeout)
             && Objects.equals(this.transparentClientIpEnable, that.transparentClientIpEnable)
+            && Objects.equals(this.proxyProtocolEnable, that.proxyProtocolEnable)
             && Objects.equals(this.enhanceL7policyEnable, that.enhanceL7policyEnable)
             && Objects.equals(this.memberInstanceId, that.memberInstanceId)
             && Objects.equals(this.protectionStatus, that.protectionStatus);
@@ -973,6 +996,7 @@ public class ListListenersRequest {
             clientTimeout,
             keepaliveTimeout,
             transparentClientIpEnable,
+            proxyProtocolEnable,
             enhanceL7policyEnable,
             memberInstanceId,
             protectionStatus);
@@ -1006,6 +1030,7 @@ public class ListListenersRequest {
         sb.append("    clientTimeout: ").append(toIndentedString(clientTimeout)).append("\n");
         sb.append("    keepaliveTimeout: ").append(toIndentedString(keepaliveTimeout)).append("\n");
         sb.append("    transparentClientIpEnable: ").append(toIndentedString(transparentClientIpEnable)).append("\n");
+        sb.append("    proxyProtocolEnable: ").append(toIndentedString(proxyProtocolEnable)).append("\n");
         sb.append("    enhanceL7policyEnable: ").append(toIndentedString(enhanceL7policyEnable)).append("\n");
         sb.append("    memberInstanceId: ").append(toIndentedString(memberInstanceId)).append("\n");
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");

@@ -35,7 +35,7 @@ public class ListAlertRulesResponse extends SdkResponse {
     }
 
     /**
-     * total count
+     * 总数量。Total count.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return count
@@ -70,7 +70,7 @@ public class ListAlertRulesResponse extends SdkResponse {
     }
 
     /**
-     * rules
+     * 告警模型。Alert rules.
      * @return records
      */
     public List<AlertRule> getRecords() {

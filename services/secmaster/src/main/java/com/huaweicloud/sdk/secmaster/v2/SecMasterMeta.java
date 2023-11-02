@@ -5,7 +5,6 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.secmaster.v2.model.AlertRuleMetric;
 import com.huaweicloud.sdk.secmaster.v2.model.ApprovePlaybookInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.AuditLogInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertRequest;
@@ -31,8 +30,9 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleSimulationRequestBo
 import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleSimulationResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentResponse;
@@ -50,18 +50,17 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateRelation;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateRuleInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.DataobjectSearch;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlert;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncident;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteIndicatorRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteIndicatorRequestBody;
@@ -88,10 +87,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentTypesRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentTypesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListIndicatorsRequest;
@@ -154,7 +151,6 @@ import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionResponse;
 
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class SecMasterMeta {
@@ -274,7 +270,7 @@ public class SecMasterMeta {
             }));
         builder.<OperationPlaybookInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperationPlaybookInfo.class),
             f -> f.withMarshaller(ChangePlaybookInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -319,7 +315,7 @@ public class SecMasterMeta {
             }));
         builder.<CopyPlaybookInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CopyPlaybookInfo.class),
             f -> f.withMarshaller(CopyPlaybookVersionRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -488,15 +484,17 @@ public class SecMasterMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDataobjectRelationRequest, CreateDataobjectRelationResponse> createDataobjectRelation =
-        genForcreateDataobjectRelation();
+    public static final HttpRequestDef<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse> createDataobjectRelations =
+        genForcreateDataobjectRelations();
 
-    private static HttpRequestDef<CreateDataobjectRelationRequest, CreateDataobjectRelationResponse> genForcreateDataobjectRelation() {
+    private static HttpRequestDef<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse> genForcreateDataobjectRelations() {
         // basic
-        HttpRequestDef.Builder<CreateDataobjectRelationRequest, CreateDataobjectRelationResponse> builder =
+        HttpRequestDef.Builder<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse> builder =
             HttpRequestDef
-                .builder(HttpMethod.POST, CreateDataobjectRelationRequest.class, CreateDataobjectRelationResponse.class)
-                .withName("CreateDataobjectRelation")
+                .builder(HttpMethod.POST,
+                    CreateDataobjectRelationsRequest.class,
+                    CreateDataobjectRelationsResponse.class)
+                .withName("CreateDataobjectRelations")
                 .withUri(
                     "/v1/{project_id}/workspaces/{workspace_id}/soc/{dataclass_type}/{data_object_id}/{related_dataclass_type}")
                 .withContentType("application/json");
@@ -506,35 +504,35 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataobjectRelationRequest::getWorkspaceId, (req, v) -> {
+            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getWorkspaceId, (req, v) -> {
                 req.setWorkspaceId(v);
             }));
         builder.<String>withRequestField("dataclass_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataobjectRelationRequest::getDataclassType, (req, v) -> {
+            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getDataclassType, (req, v) -> {
                 req.setDataclassType(v);
             }));
         builder.<String>withRequestField("data_object_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataobjectRelationRequest::getDataObjectId, (req, v) -> {
+            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getDataObjectId, (req, v) -> {
                 req.setDataObjectId(v);
             }));
         builder.<String>withRequestField("related_dataclass_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataobjectRelationRequest::getRelatedDataclassType, (req, v) -> {
+            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getRelatedDataclassType, (req, v) -> {
                 req.setRelatedDataclassType(v);
             }));
-        builder.<CreateRelation>withRequestField("body",
+        builder.<CreateDataobjectRelationsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateRelation.class),
-            f -> f.withMarshaller(CreateDataobjectRelationRequest::getBody, (req, v) -> {
+            TypeCasts.uncheckedConversion(CreateDataobjectRelationsRequestBody.class),
+            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -544,8 +542,8 @@ public class SecMasterMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateDataobjectRelationResponse::getXRequestId,
-                CreateDataobjectRelationResponse::setXRequestId));
+            f -> f.withMarshaller(CreateDataobjectRelationsResponse::getXRequestId,
+                CreateDataobjectRelationsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -644,7 +642,7 @@ public class SecMasterMeta {
             }));
         builder.<CreatePlaybookInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePlaybookInfo.class),
             f -> f.withMarshaller(CreatePlaybookRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -688,7 +686,7 @@ public class SecMasterMeta {
             }));
         builder.<List<CreateAction>>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreatePlaybookActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -823,7 +821,7 @@ public class SecMasterMeta {
             }));
         builder.<CreatePlaybookVersionInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePlaybookVersionInfo.class),
             f -> f.withMarshaller(CreatePlaybookVersionRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -858,10 +856,10 @@ public class SecMasterMeta {
             f -> f.withMarshaller(DeleteAlertRequest::getWorkspaceId, (req, v) -> {
                 req.setWorkspaceId(v);
             }));
-        builder.<DeleteAlert>withRequestField("body",
+        builder.<DeleteAlertRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteAlert.class),
+            TypeCasts.uncheckedConversion(DeleteAlertRequestBody.class),
             f -> f.withMarshaller(DeleteAlertRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -913,17 +911,17 @@ public class SecMasterMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDataobjectRelationRequest, DeleteDataobjectRelationResponse> deleteDataobjectRelation =
-        genFordeleteDataobjectRelation();
+    public static final HttpRequestDef<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse> deleteDataobjectRelations =
+        genFordeleteDataobjectRelations();
 
-    private static HttpRequestDef<DeleteDataobjectRelationRequest, DeleteDataobjectRelationResponse> genFordeleteDataobjectRelation() {
+    private static HttpRequestDef<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse> genFordeleteDataobjectRelations() {
         // basic
-        HttpRequestDef.Builder<DeleteDataobjectRelationRequest, DeleteDataobjectRelationResponse> builder =
+        HttpRequestDef.Builder<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.DELETE,
-                    DeleteDataobjectRelationRequest.class,
-                    DeleteDataobjectRelationResponse.class)
-                .withName("DeleteDataobjectRelation")
+                    DeleteDataobjectRelationsRequest.class,
+                    DeleteDataobjectRelationsResponse.class)
+                .withName("DeleteDataobjectRelations")
                 .withUri(
                     "/v1/{project_id}/workspaces/{workspace_id}/soc/{dataclass_type}/{data_object_id}/{related_dataclass_type}")
                 .withContentType("application/json");
@@ -933,35 +931,35 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationRequest::getWorkspaceId, (req, v) -> {
+            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getWorkspaceId, (req, v) -> {
                 req.setWorkspaceId(v);
             }));
         builder.<String>withRequestField("dataclass_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationRequest::getDataclassType, (req, v) -> {
+            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getDataclassType, (req, v) -> {
                 req.setDataclassType(v);
             }));
         builder.<String>withRequestField("data_object_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationRequest::getDataObjectId, (req, v) -> {
+            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getDataObjectId, (req, v) -> {
                 req.setDataObjectId(v);
             }));
         builder.<String>withRequestField("related_dataclass_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationRequest::getRelatedDataclassType, (req, v) -> {
+            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getRelatedDataclassType, (req, v) -> {
                 req.setRelatedDataclassType(v);
             }));
-        builder.<CreateRelation>withRequestField("body",
+        builder.<CreateDataobjectRelationsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateRelation.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationRequest::getBody, (req, v) -> {
+            TypeCasts.uncheckedConversion(CreateDataobjectRelationsRequestBody.class),
+            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -971,8 +969,8 @@ public class SecMasterMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDataobjectRelationResponse::getXRequestId,
-                DeleteDataobjectRelationResponse::setXRequestId));
+            f -> f.withMarshaller(DeleteDataobjectRelationsResponse::getXRequestId,
+                DeleteDataobjectRelationsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -995,10 +993,10 @@ public class SecMasterMeta {
             f -> f.withMarshaller(DeleteIncidentRequest::getWorkspaceId, (req, v) -> {
                 req.setWorkspaceId(v);
             }));
-        builder.<DeleteIncident>withRequestField("body",
+        builder.<DeleteIncidentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteIncident.class),
+            TypeCasts.uncheckedConversion(DeleteIncidentRequestBody.class),
             f -> f.withMarshaller(DeleteIncidentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
@@ -1312,13 +1310,6 @@ public class SecMasterMeta {
             }));
 
         // response
-        builder.<Map<String, AlertRuleMetric>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(ListAlertRuleMetricsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(AlertRuleMetric.class));
 
         builder.<String>withResponseField("X-request-id",
             LocationType.Header,
@@ -1524,14 +1515,14 @@ public class SecMasterMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDataobjectRelationRequest, ListDataobjectRelationResponse> listDataobjectRelation =
-        genForlistDataobjectRelation();
+    public static final HttpRequestDef<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> listDataobjectRelations =
+        genForlistDataobjectRelations();
 
-    private static HttpRequestDef<ListDataobjectRelationRequest, ListDataobjectRelationResponse> genForlistDataobjectRelation() {
+    private static HttpRequestDef<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> genForlistDataobjectRelations() {
         // basic
-        HttpRequestDef.Builder<ListDataobjectRelationRequest, ListDataobjectRelationResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ListDataobjectRelationRequest.class, ListDataobjectRelationResponse.class)
-            .withName("ListDataobjectRelation")
+        HttpRequestDef.Builder<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListDataobjectRelationsRequest.class, ListDataobjectRelationsResponse.class)
+            .withName("ListDataobjectRelations")
             .withUri(
                 "/v1/{project_id}/workspaces/{workspace_id}/soc/{dataclass_type}/{data_object_id}/{related_dataclass_type}/search")
             .withContentType("application/json");
@@ -1541,35 +1532,35 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataobjectRelationRequest::getWorkspaceId, (req, v) -> {
+            f -> f.withMarshaller(ListDataobjectRelationsRequest::getWorkspaceId, (req, v) -> {
                 req.setWorkspaceId(v);
             }));
         builder.<String>withRequestField("dataclass_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataobjectRelationRequest::getDataclassType, (req, v) -> {
+            f -> f.withMarshaller(ListDataobjectRelationsRequest::getDataclassType, (req, v) -> {
                 req.setDataclassType(v);
             }));
         builder.<String>withRequestField("data_object_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataobjectRelationRequest::getDataObjectId, (req, v) -> {
+            f -> f.withMarshaller(ListDataobjectRelationsRequest::getDataObjectId, (req, v) -> {
                 req.setDataObjectId(v);
             }));
         builder.<String>withRequestField("related_dataclass_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataobjectRelationRequest::getRelatedDataclassType, (req, v) -> {
+            f -> f.withMarshaller(ListDataobjectRelationsRequest::getRelatedDataclassType, (req, v) -> {
                 req.setRelatedDataclassType(v);
             }));
         builder.<DataobjectSearch>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DataobjectSearch.class),
-            f -> f.withMarshaller(ListDataobjectRelationRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(ListDataobjectRelationsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1579,101 +1570,8 @@ public class SecMasterMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListDataobjectRelationResponse::getXRequestId,
-                ListDataobjectRelationResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListIncidentTypesRequest, ListIncidentTypesResponse> listIncidentTypes =
-        genForlistIncidentTypes();
-
-    private static HttpRequestDef<ListIncidentTypesRequest, ListIncidentTypesResponse> genForlistIncidentTypes() {
-        // basic
-        HttpRequestDef.Builder<ListIncidentTypesRequest, ListIncidentTypesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListIncidentTypesRequest.class, ListIncidentTypesResponse.class)
-                .withName("ListIncidentTypes")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/incidents/types")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getWorkspaceId, (req, v) -> {
-                req.setWorkspaceId(v);
-            }));
-        builder.<String>withRequestField("parent_business_code",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getParentBusinessCode, (req, v) -> {
-                req.setParentBusinessCode(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<String>withRequestField("order",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
-        builder.<String>withRequestField("sortby",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getSortby, (req, v) -> {
-                req.setSortby(v);
-            }));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getName, (req, v) -> {
-                req.setName(v);
-            }));
-        builder.<Boolean>withRequestField("enabled",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getEnabled, (req, v) -> {
-                req.setEnabled(v);
-            }));
-        builder.<String>withRequestField("layout_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getLayoutName, (req, v) -> {
-                req.setLayoutName(v);
-            }));
-        builder.<Boolean>withRequestField("is_built_in",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListIncidentTypesRequest::getIsBuiltIn, (req, v) -> {
-                req.setIsBuiltIn(v);
-            }));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIncidentTypesResponse::getXRequestId, ListIncidentTypesResponse::setXRequestId));
+            f -> f.withMarshaller(ListDataobjectRelationsResponse::getXRequestId,
+                ListDataobjectRelationsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1733,27 +1631,6 @@ public class SecMasterMeta {
             f -> f.withMarshaller(ListIndicatorsRequest::getWorkspaceId, (req, v) -> {
                 req.setWorkspaceId(v);
             }));
-        builder.<String>withRequestField("order",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIndicatorsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
-        builder.<String>withRequestField("from_date",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIndicatorsRequest::getFromDate, (req, v) -> {
-                req.setFromDate(v);
-            }));
-        builder.<String>withRequestField("to_date",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIndicatorsRequest::getToDate, (req, v) -> {
-                req.setToDate(v);
-            }));
         builder.<IndicatorListSearchRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1800,14 +1677,14 @@ public class SecMasterMeta {
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPlaybookActionsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPlaybookActionsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
@@ -1961,13 +1838,6 @@ public class SecMasterMeta {
             f -> f.withMarshaller(ListPlaybookInstancesRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
             }));
-        builder.<String>withRequestField("date_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getDateType, (req, v) -> {
-                req.setDateType(v);
-            }));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2019,14 +1889,14 @@ public class SecMasterMeta {
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPlaybookInstancesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPlaybookInstancesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
@@ -2090,13 +1960,6 @@ public class SecMasterMeta {
             f -> f.withMarshaller(ListPlaybookVersionsRequest::getVersionType, (req, v) -> {
                 req.setVersionType(v);
             }));
-        builder.<String>withRequestField("approve_role",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookVersionsRequest::getApproveRole, (req, v) -> {
-                req.setApproveRole(v);
-            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2149,13 +2012,6 @@ public class SecMasterMeta {
             f -> f.withMarshaller(ListPlaybooksRequest::getSearchTxt, (req, v) -> {
                 req.setSearchTxt(v);
             }));
-        builder.<String>withRequestField("component_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybooksRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
         builder.<Boolean>withRequestField("enabled",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2165,14 +2021,14 @@ public class SecMasterMeta {
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPlaybooksRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPlaybooksRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
@@ -2496,10 +2352,10 @@ public class SecMasterMeta {
             f -> f.withMarshaller(ShowPlaybookMonitorsRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
             }));
-        builder.<String>withRequestField("version_query_type",
+        builder.<ShowPlaybookMonitorsRequest.VersionQueryTypeEnum>withRequestField("version_query_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ShowPlaybookMonitorsRequest.VersionQueryTypeEnum.class),
             f -> f.withMarshaller(ShowPlaybookMonitorsRequest::getVersionQueryType, (req, v) -> {
                 req.setVersionQueryType(v);
             }));
@@ -2842,7 +2698,7 @@ public class SecMasterMeta {
             }));
         builder.<ModifyActionInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyActionInfo.class),
             f -> f.withMarshaller(UpdatePlaybookActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -2895,7 +2751,7 @@ public class SecMasterMeta {
             }));
         builder.<ModifyRuleInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyRuleInfo.class),
             f -> f.withMarshaller(UpdatePlaybookRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);

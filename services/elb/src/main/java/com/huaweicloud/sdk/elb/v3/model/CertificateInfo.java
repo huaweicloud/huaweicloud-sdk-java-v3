@@ -188,7 +188,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 服务器证书的私钥。PEM编码格式。 当type为client时，该参数被忽略，不影响证书的创建和使用。 当type为server时，该字段必须符合格式要求，且私钥必须是有效的。
+     * HTTPS协议监听器使用的证书私钥。取值范围：PEM编码格式，最大长度8192字符。  使用说明： - 仅当type为server时该字段有效且必选。 - 当type为client时该字段无效，不需要传入。如果传入则必须是符合PEM格式的字符串，但仍然不会生效。
      * @return privateKey
      */
     public String getPrivateKey() {

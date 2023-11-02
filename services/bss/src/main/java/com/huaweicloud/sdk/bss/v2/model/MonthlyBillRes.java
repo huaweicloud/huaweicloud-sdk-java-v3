@@ -179,6 +179,11 @@ public class MonthlyBillRes {
     private String tradeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_spec_desc")
 
     private String productSpecDesc;
@@ -784,6 +789,23 @@ public class MonthlyBillRes {
         this.tradeId = tradeId;
     }
 
+    public MonthlyBillRes withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 唯一标识。 账单类型为1，2，3，4，8时，存在唯一标识其它场景下，不存在唯一标识。 该字段为预留字段。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public MonthlyBillRes withProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
         return this;
@@ -987,7 +1009,8 @@ public class MonthlyBillRes {
             && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.periodType, that.periodType)
             && Objects.equals(this.rootResourceId, that.rootResourceId)
             && Objects.equals(this.parentResourceId, that.parentResourceId)
-            && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.productSpecDesc, that.productSpecDesc)
+            && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.productSpecDesc, that.productSpecDesc)
             && Objects.equals(this.subServiceTypeCode, that.subServiceTypeCode)
             && Objects.equals(this.subServiceTypeName, that.subServiceTypeName)
             && Objects.equals(this.subResourceTypeCode, that.subResourceTypeCode)
@@ -1032,6 +1055,7 @@ public class MonthlyBillRes {
             rootResourceId,
             parentResourceId,
             tradeId,
+            id,
             productSpecDesc,
             subServiceTypeCode,
             subServiceTypeName,
@@ -1080,6 +1104,7 @@ public class MonthlyBillRes {
         sb.append("    rootResourceId: ").append(toIndentedString(rootResourceId)).append("\n");
         sb.append("    parentResourceId: ").append(toIndentedString(parentResourceId)).append("\n");
         sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    productSpecDesc: ").append(toIndentedString(productSpecDesc)).append("\n");
         sb.append("    subServiceTypeCode: ").append(toIndentedString(subServiceTypeCode)).append("\n");
         sb.append("    subServiceTypeName: ").append(toIndentedString(subServiceTypeName)).append("\n");

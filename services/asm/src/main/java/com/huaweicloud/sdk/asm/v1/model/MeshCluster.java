@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.asm.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -31,150 +26,6 @@ public class MeshCluster {
 
     private String projectID;
 
-    /**
-     * 集群提供方
-     */
-    public static final class ProviderEnum {
-
-        /**
-         * Enum CCE for value: "CCE"
-         */
-        public static final ProviderEnum CCE = new ProviderEnum("CCE");
-
-        private static final Map<String, ProviderEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ProviderEnum> createStaticFields() {
-            Map<String, ProviderEnum> map = new HashMap<>();
-            map.put("CCE", CCE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ProviderEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProviderEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderEnum(value));
-        }
-
-        public static ProviderEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProviderEnum) {
-                return this.value.equals(((ProviderEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "provider")
-
-    private ProviderEnum provider;
-
-    /**
-     * 集群代理模式
-     */
-    public static final class ProxyModeEnum {
-
-        /**
-         * Enum SIDECAR for value: "sidecar"
-         */
-        public static final ProxyModeEnum SIDECAR = new ProxyModeEnum("sidecar");
-
-        /**
-         * Enum NODE for value: "node"
-         */
-        public static final ProxyModeEnum NODE = new ProxyModeEnum("node");
-
-        private static final Map<String, ProxyModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ProxyModeEnum> createStaticFields() {
-            Map<String, ProxyModeEnum> map = new HashMap<>();
-            map.put("sidecar", SIDECAR);
-            map.put("node", NODE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ProxyModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProxyModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProxyModeEnum(value));
-        }
-
-        public static ProxyModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProxyModeEnum) {
-                return this.value.equals(((ProxyModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "proxyMode")
-
-    private ProxyModeEnum proxyMode;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "injection")
 
@@ -191,7 +42,7 @@ public class MeshCluster {
     }
 
     /**
-     * 集群ID，资源唯一标识，通过该ID查询需要添加的集群。
+     * 集群ID，资源唯一标识，通过该ID查询需要添加的集群
      * @return clusterID
      */
     public String getClusterID() {
@@ -234,40 +85,6 @@ public class MeshCluster {
 
     public void setProjectID(String projectID) {
         this.projectID = projectID;
-    }
-
-    public MeshCluster withProvider(ProviderEnum provider) {
-        this.provider = provider;
-        return this;
-    }
-
-    /**
-     * 集群提供方
-     * @return provider
-     */
-    public ProviderEnum getProvider() {
-        return provider;
-    }
-
-    public void setProvider(ProviderEnum provider) {
-        this.provider = provider;
-    }
-
-    public MeshCluster withProxyMode(ProxyModeEnum proxyMode) {
-        this.proxyMode = proxyMode;
-        return this;
-    }
-
-    /**
-     * 集群代理模式
-     * @return proxyMode
-     */
-    public ProxyModeEnum getProxyMode() {
-        return proxyMode;
-    }
-
-    public void setProxyMode(ProxyModeEnum proxyMode) {
-        this.proxyMode = proxyMode;
     }
 
     public MeshCluster withInjection(InjectionConfig injection) {
@@ -332,14 +149,13 @@ public class MeshCluster {
         }
         MeshCluster that = (MeshCluster) obj;
         return Objects.equals(this.clusterID, that.clusterID) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.projectID, that.projectID) && Objects.equals(this.provider, that.provider)
-            && Objects.equals(this.proxyMode, that.proxyMode) && Objects.equals(this.injection, that.injection)
+            && Objects.equals(this.projectID, that.projectID) && Objects.equals(this.injection, that.injection)
             && Objects.equals(this.installation, that.installation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterID, region, projectID, provider, proxyMode, injection, installation);
+        return Objects.hash(clusterID, region, projectID, injection, installation);
     }
 
     @Override
@@ -349,8 +165,6 @@ public class MeshCluster {
         sb.append("    clusterID: ").append(toIndentedString(clusterID)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    projectID: ").append(toIndentedString(projectID)).append("\n");
-        sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-        sb.append("    proxyMode: ").append(toIndentedString(proxyMode)).append("\n");
         sb.append("    injection: ").append(toIndentedString(injection)).append("\n");
         sb.append("    installation: ").append(toIndentedString(installation)).append("\n");
         sb.append("}");

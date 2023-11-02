@@ -41,7 +41,7 @@ public class BatchUpdateMembersOption {
     }
 
     /**
-     * 后端服务器端口
+     * 后端服务器ID。 >此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
      * @return id
      */
     public String getId() {
@@ -75,7 +75,7 @@ public class BatchUpdateMembersOption {
     }
 
     /**
-     * 后端服务器名称。
+     * 后端服务器名称。注意：该名称并非ECS名称。
      * @return name
      */
     public String getName() {

@@ -1,6 +1,5 @@
 package com.huaweicloud.sdk.bss.v2;
 
-import com.huaweicloud.sdk.bss.v2.model.AddPostalReq;
 import com.huaweicloud.sdk.bss.v2.model.AdjustAccountReq;
 import com.huaweicloud.sdk.bss.v2.model.AdjustCouponQuotasReq;
 import com.huaweicloud.sdk.bss.v2.model.AdjustToIndirectPartnerReq;
@@ -33,15 +32,11 @@ import com.huaweicloud.sdk.bss.v2.model.CreatePartnerCouponsRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreatePartnerCouponsResponse;
 import com.huaweicloud.sdk.bss.v2.model.CreatePersonalRealnameAuthRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreatePersonalRealnameAuthResponse;
-import com.huaweicloud.sdk.bss.v2.model.CreatePostalRequest;
-import com.huaweicloud.sdk.bss.v2.model.CreatePostalResponse;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubCustomerReqV2;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubCustomerRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubCustomerResponse;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubEnterpriseAccountRequest;
 import com.huaweicloud.sdk.bss.v2.model.CreateSubEnterpriseAccountResponse;
-import com.huaweicloud.sdk.bss.v2.model.DeletePostalRequest;
-import com.huaweicloud.sdk.bss.v2.model.DeletePostalResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListCitiesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListCitiesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListConsumeSubCustomersReq;
@@ -116,8 +111,6 @@ import com.huaweicloud.sdk.bss.v2.model.ListPartnerCouponsRecordRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListPartnerCouponsRecordResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListPayPerUseCustomerResourcesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListPayPerUseCustomerResourcesResponse;
-import com.huaweicloud.sdk.bss.v2.model.ListPostalAddressRequest;
-import com.huaweicloud.sdk.bss.v2.model.ListPostalAddressResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListProvincesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListProvincesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListQuotaCouponsRequest;
@@ -215,9 +208,6 @@ import com.huaweicloud.sdk.bss.v2.model.UpdateIndirectPartnerAccountRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdateIndirectPartnerAccountResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandResponse;
-import com.huaweicloud.sdk.bss.v2.model.UpdatePostalReq;
-import com.huaweicloud.sdk.bss.v2.model.UpdatePostalRequest;
-import com.huaweicloud.sdk.bss.v2.model.UpdatePostalResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdateSubEnterpriseAmountRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdateSubEnterpriseAmountResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
@@ -520,37 +510,6 @@ public class BssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePostalRequest, CreatePostalResponse> createPostal = genForcreatePostal();
-
-    private static HttpRequestDef<CreatePostalRequest, CreatePostalResponse> genForcreatePostal() {
-        // basic
-        HttpRequestDef.Builder<CreatePostalRequest, CreatePostalResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePostalRequest.class, CreatePostalResponse.class)
-                .withName("CreatePostal")
-                .withUri("/v2/customers/postal-addresses")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePostalRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
-        builder.<AddPostalReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AddPostalReq.class),
-            f -> f.withMarshaller(CreatePostalRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateSubCustomerRequest, CreateSubCustomerResponse> createSubCustomer =
         genForcreateSubCustomer();
 
@@ -597,30 +556,6 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(CreateSubCustomerReqV2.class),
             f -> f.withMarshaller(CreateSubEnterpriseAccountRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeletePostalRequest, DeletePostalResponse> deletePostal = genFordeletePostal();
-
-    private static HttpRequestDef<DeletePostalRequest, DeletePostalResponse> genFordeletePostal() {
-        // basic
-        HttpRequestDef.Builder<DeletePostalRequest, DeletePostalResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeletePostalRequest.class, DeletePostalResponse.class)
-                .withName("DeletePostal")
-                .withUri("/v2/customers/postal-addresses/{address_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("address_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePostalRequest::getAddressId, (req, v) -> {
-                req.setAddressId(v);
             }));
 
         // response
@@ -2579,38 +2514,6 @@ public class BssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPostalAddressRequest, ListPostalAddressResponse> listPostalAddress =
-        genForlistPostalAddress();
-
-    private static HttpRequestDef<ListPostalAddressRequest, ListPostalAddressResponse> genForlistPostalAddress() {
-        // basic
-        HttpRequestDef.Builder<ListPostalAddressRequest, ListPostalAddressResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPostalAddressRequest.class, ListPostalAddressResponse.class)
-                .withName("ListPostalAddress")
-                .withUri("/v2/customers/postal-addresses")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPostalAddressRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPostalAddressRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListProvincesRequest, ListProvincesResponse> listProvinces =
         genForlistProvinces();
 
@@ -4041,37 +3944,6 @@ public class BssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PeriodToOnDemandReq.class),
             f -> f.withMarshaller(UpdatePeriodToOnDemandRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdatePostalRequest, UpdatePostalResponse> updatePostal = genForupdatePostal();
-
-    private static HttpRequestDef<UpdatePostalRequest, UpdatePostalResponse> genForupdatePostal() {
-        // basic
-        HttpRequestDef.Builder<UpdatePostalRequest, UpdatePostalResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdatePostalRequest.class, UpdatePostalResponse.class)
-                .withName("UpdatePostal")
-                .withUri("/v2/customers/postal-addresses")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePostalRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            }));
-        builder.<UpdatePostalReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdatePostalReq.class),
-            f -> f.withMarshaller(UpdatePostalRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

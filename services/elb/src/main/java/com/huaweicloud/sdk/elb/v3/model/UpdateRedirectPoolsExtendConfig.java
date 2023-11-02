@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 转发到的后端主机组的URL配置。
+ * 转发到的后端主机组的配置。当action为REDIRECT_TO_POOL时生效。
  */
 public class UpdateRedirectPoolsExtendConfig {
 

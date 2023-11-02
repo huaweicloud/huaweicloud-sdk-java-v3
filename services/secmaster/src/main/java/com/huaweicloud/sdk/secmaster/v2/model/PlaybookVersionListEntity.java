@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Information of playbook version
+ * 剧本版本详情信息
  */
 public class PlaybookVersionListEntity {
 
@@ -54,11 +54,6 @@ public class PlaybookVersionListEntity {
     @JsonProperty(value = "version")
 
     private String version;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "run_mode")
-
-    private String runMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
@@ -125,18 +120,13 @@ public class PlaybookVersionListEntity {
 
     private String approveName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataobject_id")
-
-    private String dataobjectId;
-
     public PlaybookVersionListEntity withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * Id value
+     * 剧本版本ID
      * @return id
      */
     public String getId() {
@@ -153,7 +143,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * The description, display only
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -170,7 +160,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * Create time
+     * 创建时间
      * @return createTime
      */
     public String getCreateTime() {
@@ -187,7 +177,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * Update time
+     * 更新时间
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -204,7 +194,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * Project id value
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -221,7 +211,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * Creator id value
+     * 创建者ID
      * @return creatorId
      */
     public String getCreatorId() {
@@ -238,7 +228,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * Modifier id value
+     * 修改者ID
      * @return modifierId
      */
     public String getModifierId() {
@@ -255,7 +245,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * Playbook id.
+     * 剧本ID
      * @return playbookId
      */
     public String getPlaybookId() {
@@ -272,7 +262,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * version
+     * 版本号
      * @return version
      */
     public String getVersion() {
@@ -283,30 +273,13 @@ public class PlaybookVersionListEntity {
         this.version = version;
     }
 
-    public PlaybookVersionListEntity withRunMode(String runMode) {
-        this.runMode = runMode;
-        return this;
-    }
-
-    /**
-     * Run mode of this playbook. automatic, manual
-     * @return runMode
-     */
-    public String getRunMode() {
-        return runMode;
-    }
-
-    public void setRunMode(String runMode) {
-        this.runMode = runMode;
-    }
-
     public PlaybookVersionListEntity withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
     /**
-     * If is enabled, false for disenabled, true for enabled
+     * 是否激活
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -323,7 +296,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * Status of approvement. editing, approving, unpassed, published
+     * 状态. (EDITING--编辑中, APPROVING--审核中, UNPASSED--审核不通过, PUBLISHED--审核通过)
      * @return status
      */
     public String getStatus() {
@@ -340,7 +313,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * Strategy of action. sync or async
+     * 执行策略. 目前仅支持异步并发执行，对应值为ASYNC
      * @return actionStrategy
      */
     public String getActionStrategy() {
@@ -357,7 +330,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * If the condition filter is enabled.
+     * 过滤规则是否启用
      * @return ruleEnable
      */
     public Boolean getRuleEnable() {
@@ -374,7 +347,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * bind dataclass id
+     * 数据类ID
      * @return dataclassId
      */
     public String getDataclassId() {
@@ -391,7 +364,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * Strategy of action. event, timer
+     * 触发方式. EVENT--事件触发, TIMER--定时触发
      * @return triggerType
      */
     public String getTriggerType() {
@@ -408,7 +381,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * if trigger when dataobject is created
+     * 标识数据对象是否创建时触发剧本
      * @return dataobjectCreate
      */
     public Boolean getDataobjectCreate() {
@@ -425,7 +398,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * if trigger when dataobject is updated
+     * 标识数据对象是否更新时触发剧本
      * @return dataobjectUpdate
      */
     public Boolean getDataobjectUpdate() {
@@ -442,7 +415,7 @@ public class PlaybookVersionListEntity {
     }
 
     /**
-     * if trigger when dataobject is deleted
+     * 标识数据对象是否删除时触发剧本
      * @return dataobjectDelete
      */
     public Boolean getDataobjectDelete() {
@@ -523,23 +496,6 @@ public class PlaybookVersionListEntity {
         this.approveName = approveName;
     }
 
-    public PlaybookVersionListEntity withDataobjectId(String dataobjectId) {
-        this.dataobjectId = dataobjectId;
-        return this;
-    }
-
-    /**
-     * dataobject id
-     * @return dataobjectId
-     */
-    public String getDataobjectId() {
-        return dataobjectId;
-    }
-
-    public void setDataobjectId(String dataobjectId) {
-        this.dataobjectId = dataobjectId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -553,9 +509,8 @@ public class PlaybookVersionListEntity {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.creatorId, that.creatorId)
             && Objects.equals(this.modifierId, that.modifierId) && Objects.equals(this.playbookId, that.playbookId)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.runMode, that.runMode)
-            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.actionStrategy, that.actionStrategy)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.actionStrategy, that.actionStrategy)
             && Objects.equals(this.ruleEnable, that.ruleEnable) && Objects.equals(this.dataclassId, that.dataclassId)
             && Objects.equals(this.triggerType, that.triggerType)
             && Objects.equals(this.dataobjectCreate, that.dataobjectCreate)
@@ -563,8 +518,7 @@ public class PlaybookVersionListEntity {
             && Objects.equals(this.dataobjectDelete, that.dataobjectDelete)
             && Objects.equals(this.versionType, that.versionType) && Objects.equals(this.ruleId, that.ruleId)
             && Objects.equals(this.dataclassName, that.dataclassName)
-            && Objects.equals(this.approveName, that.approveName)
-            && Objects.equals(this.dataobjectId, that.dataobjectId);
+            && Objects.equals(this.approveName, that.approveName);
     }
 
     @Override
@@ -578,7 +532,6 @@ public class PlaybookVersionListEntity {
             modifierId,
             playbookId,
             version,
-            runMode,
             enabled,
             status,
             actionStrategy,
@@ -591,8 +544,7 @@ public class PlaybookVersionListEntity {
             versionType,
             ruleId,
             dataclassName,
-            approveName,
-            dataobjectId);
+            approveName);
     }
 
     @Override
@@ -608,7 +560,6 @@ public class PlaybookVersionListEntity {
         sb.append("    modifierId: ").append(toIndentedString(modifierId)).append("\n");
         sb.append("    playbookId: ").append(toIndentedString(playbookId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    runMode: ").append(toIndentedString(runMode)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    actionStrategy: ").append(toIndentedString(actionStrategy)).append("\n");
@@ -622,7 +573,6 @@ public class PlaybookVersionListEntity {
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    dataclassName: ").append(toIndentedString(dataclassName)).append("\n");
         sb.append("    approveName: ").append(toIndentedString(approveName)).append("\n");
-        sb.append("    dataobjectId: ").append(toIndentedString(dataobjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

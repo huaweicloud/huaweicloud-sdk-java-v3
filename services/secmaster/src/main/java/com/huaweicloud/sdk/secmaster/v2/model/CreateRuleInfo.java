@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Information of rule
+ * 创建剧本触发规则参数
  */
 public class CreateRuleInfo {
 

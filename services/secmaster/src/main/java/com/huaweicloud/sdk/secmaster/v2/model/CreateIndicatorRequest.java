@@ -27,7 +27,7 @@ public class CreateIndicatorRequest {
     }
 
     /**
-     * workspace id
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {

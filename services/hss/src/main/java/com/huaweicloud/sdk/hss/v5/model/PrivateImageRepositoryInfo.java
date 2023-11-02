@@ -99,9 +99,9 @@ public class PrivateImageRepositoryInfo {
     private String sharedStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scanable")
+    @JsonProperty(value = "scannable")
 
-    private Boolean scanable;
+    private Boolean scannable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "association_images")
@@ -411,21 +411,21 @@ public class PrivateImageRepositoryInfo {
         this.sharedStatus = sharedStatus;
     }
 
-    public PrivateImageRepositoryInfo withScanable(Boolean scanable) {
-        this.scanable = scanable;
+    public PrivateImageRepositoryInfo withScannable(Boolean scannable) {
+        this.scannable = scannable;
         return this;
     }
 
     /**
      * 是否可扫描
-     * @return scanable
+     * @return scannable
      */
-    public Boolean getScanable() {
-        return scanable;
+    public Boolean getScannable() {
+        return scannable;
     }
 
-    public void setScanable(Boolean scanable) {
-        this.scanable = scanable;
+    public void setScannable(Boolean scannable) {
+        this.scannable = scannable;
     }
 
     public PrivateImageRepositoryInfo withAssociationImages(List<AssociateImages> associationImages) {
@@ -481,7 +481,7 @@ public class PrivateImageRepositoryInfo {
             && Objects.equals(this.unsafeSettingNum, that.unsafeSettingNum)
             && Objects.equals(this.maliciousFileNum, that.maliciousFileNum)
             && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.sharedStatus, that.sharedStatus)
-            && Objects.equals(this.scanable, that.scanable)
+            && Objects.equals(this.scannable, that.scannable)
             && Objects.equals(this.associationImages, that.associationImages);
     }
 
@@ -504,7 +504,7 @@ public class PrivateImageRepositoryInfo {
             maliciousFileNum,
             domainName,
             sharedStatus,
-            scanable,
+            scannable,
             associationImages);
     }
 
@@ -529,7 +529,7 @@ public class PrivateImageRepositoryInfo {
         sb.append("    maliciousFileNum: ").append(toIndentedString(maliciousFileNum)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    sharedStatus: ").append(toIndentedString(sharedStatus)).append("\n");
-        sb.append("    scanable: ").append(toIndentedString(scanable)).append("\n");
+        sb.append("    scannable: ").append(toIndentedString(scannable)).append("\n");
         sb.append("    associationImages: ").append(toIndentedString(associationImages)).append("\n");
         sb.append("}");
         return sb.toString();

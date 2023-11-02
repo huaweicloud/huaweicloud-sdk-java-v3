@@ -36,11 +36,6 @@ public class ListPlaybookVersionsRequest {
     private Integer versionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "approve_role")
-
-    private String approveRole;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -56,7 +51,7 @@ public class ListPlaybookVersionsRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -73,7 +68,7 @@ public class ListPlaybookVersionsRequest {
     }
 
     /**
-     * ID of playbook
+     * 剧本ID
      * @return playbookId
      */
     public String getPlaybookId() {
@@ -139,30 +134,13 @@ public class ListPlaybookVersionsRequest {
         this.versionType = versionType;
     }
 
-    public ListPlaybookVersionsRequest withApproveRole(String approveRole) {
-        this.approveRole = approveRole;
-        return this;
-    }
-
-    /**
-     * 审核角色
-     * @return approveRole
-     */
-    public String getApproveRole() {
-        return approveRole;
-    }
-
-    public void setApproveRole(String approveRole) {
-        this.approveRole = approveRole;
-    }
-
     public ListPlaybookVersionsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * request offset, from 0
+     * 分页查询参数。用于指定查询结果的起始位置，从0开始
      * minimum: 0
      * maximum: 999999
      * @return offset
@@ -181,7 +159,7 @@ public class ListPlaybookVersionsRequest {
     }
 
     /**
-     * request limit size
+     * 分页查询参数，用于指定一次查询最多的结果数，从1开始
      * minimum: 1
      * maximum: 999999
      * @return limit
@@ -205,13 +183,13 @@ public class ListPlaybookVersionsRequest {
         ListPlaybookVersionsRequest that = (ListPlaybookVersionsRequest) obj;
         return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.playbookId, that.playbookId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.enabled, that.enabled)
-            && Objects.equals(this.versionType, that.versionType) && Objects.equals(this.approveRole, that.approveRole)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.versionType, that.versionType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspaceId, playbookId, status, enabled, versionType, approveRole, offset, limit);
+        return Objects.hash(workspaceId, playbookId, status, enabled, versionType, offset, limit);
     }
 
     @Override
@@ -223,7 +201,6 @@ public class ListPlaybookVersionsRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    versionType: ").append(toIndentedString(versionType)).append("\n");
-        sb.append("    approveRole: ").append(toIndentedString(approveRole)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

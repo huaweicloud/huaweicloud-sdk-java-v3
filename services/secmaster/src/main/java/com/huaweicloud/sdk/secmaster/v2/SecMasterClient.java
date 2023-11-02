@@ -19,8 +19,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleSimulationRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleSimulationResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIndicatorRequest;
@@ -39,8 +39,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteIndicatorRequest;
@@ -65,10 +65,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentTypesRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentTypesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListIndicatorsRequest;
@@ -136,7 +134,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新告警（仅支持华东-上海一使用）
+     * 更新告警
      *
      * 编辑告警，根据实际修改的属性更新，未修改的列不更新
      * 
@@ -150,7 +148,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新告警（仅支持华东-上海一使用）
+     * 更新告警
      *
      * 编辑告警，根据实际修改的属性更新，未修改的列不更新
      * 
@@ -164,7 +162,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新事件（仅支持华东-上海一使用）
+     * 更新事件
      *
      * 编辑事件，根据实际修改的属性更新，未修改的列不更新
      * 
@@ -178,7 +176,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新事件（仅支持华东-上海一使用）
+     * 更新事件
      *
      * 编辑事件，根据实际修改的属性更新，未修改的列不更新
      * 
@@ -194,9 +192,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 操作剧本实例（仅支持华东-上海一使用）
+     * 操作剧本实例
      *
-     * Operation Playbook Instance.
+     * 操作剧本实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -208,9 +206,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 操作剧本实例（仅支持华东-上海一使用）
+     * 操作剧本实例
      *
-     * Operation Playbook Instance.
+     * 操作剧本实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -224,9 +222,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 克隆剧本及版本（仅支持华东-上海一使用）
+     * 克隆剧本及版本
      *
-     * Copy Playbook and version to a new one
+     * 克隆剧本及版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -238,9 +236,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 克隆剧本及版本（仅支持华东-上海一使用）
+     * 克隆剧本及版本
      *
-     * Copy Playbook and version to a new one
+     * 克隆剧本及版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -254,7 +252,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建告警（仅支持华东-上海一使用）
+     * 创建告警
      *
      * 创建告警
      * 
@@ -268,7 +266,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建告警（仅支持华东-上海一使用）
+     * 创建告警
      *
      * 创建告警
      * 
@@ -282,7 +280,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建告警规则（仅支持华东-上海一使用）
+     * 创建告警规则
      *
      * Create alert rule
      * 
@@ -296,7 +294,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建告警规则（仅支持华东-上海一使用）
+     * 创建告警规则
      *
      * Create alert rule
      * 
@@ -312,7 +310,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 模拟告警规则（仅支持华东-上海一使用）
+     * 模拟告警规则
      *
      * Simulate alert rule
      * 
@@ -326,7 +324,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 模拟告警规则（仅支持华东-上海一使用）
+     * 模拟告警规则
      *
      * Simulate alert rule
      * 
@@ -342,7 +340,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 告警转事件（仅支持华东-上海一使用）
+     * 告警转事件
      *
      * 告警转事件
      * 
@@ -356,7 +354,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 告警转事件（仅支持华东-上海一使用）
+     * 告警转事件
      *
      * 告警转事件
      * 
@@ -372,37 +370,37 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建Dataobject关系
+     * 关联Dataobject
      *
-     * Create Dataobject Relation
+     * 关联Dataobject
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataobjectRelationRequest 请求对象
-     * @return CreateDataobjectRelationResponse
+     * @param CreateDataobjectRelationsRequest 请求对象
+     * @return CreateDataobjectRelationsResponse
      */
-    public CreateDataobjectRelationResponse createDataobjectRelation(CreateDataobjectRelationRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createDataobjectRelation);
+    public CreateDataobjectRelationsResponse createDataobjectRelations(CreateDataobjectRelationsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createDataobjectRelations);
     }
 
     /**
-     * 创建Dataobject关系
+     * 关联Dataobject
      *
-     * Create Dataobject Relation
+     * 关联Dataobject
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateDataobjectRelationRequest 请求对象
-     * @return SyncInvoker<CreateDataobjectRelationRequest, CreateDataobjectRelationResponse>
+     * @param CreateDataobjectRelationsRequest 请求对象
+     * @return SyncInvoker<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse>
      */
-    public SyncInvoker<CreateDataobjectRelationRequest, CreateDataobjectRelationResponse> createDataobjectRelationInvoker(
-        CreateDataobjectRelationRequest request) {
-        return new SyncInvoker<CreateDataobjectRelationRequest, CreateDataobjectRelationResponse>(request,
-            SecMasterMeta.createDataobjectRelation, hcClient);
+    public SyncInvoker<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse> createDataobjectRelationsInvoker(
+        CreateDataobjectRelationsRequest request) {
+        return new SyncInvoker<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse>(request,
+            SecMasterMeta.createDataobjectRelations, hcClient);
     }
 
     /**
-     * 创建事件（仅支持华东-上海一使用）
+     * 创建事件
      *
      * 创建事件
      * 
@@ -416,7 +414,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建事件（仅支持华东-上海一使用）
+     * 创建事件
      *
      * 创建事件
      * 
@@ -434,7 +432,7 @@ public class SecMasterClient {
     /**
      * 创建指标
      *
-     * 创建指标（仅支持华东-上海一使用）
+     * 创建指标
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -448,7 +446,7 @@ public class SecMasterClient {
     /**
      * 创建指标
      *
-     * 创建指标（仅支持华东-上海一使用）
+     * 创建指标
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -462,9 +460,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建剧本（仅支持华东-上海一使用）
+     * 创建剧本
      *
-     * Create playbook.
+     * 创建剧本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -476,9 +474,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建剧本（仅支持华东-上海一使用）
+     * 创建剧本
      *
-     * Create playbook.
+     * 创建剧本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -492,9 +490,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建剧本动作（仅支持华东-上海一使用）
+     * 创建剧本动作
      *
-     * Create action.
+     * 创建剧本动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -506,9 +504,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建剧本动作（仅支持华东-上海一使用）
+     * 创建剧本动作
      *
-     * Create action.
+     * 创建剧本动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -522,9 +520,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 审核剧本（仅支持华东-上海一使用）
+     * 审核剧本
      *
-     * Create playbook approve.
+     * 审核剧本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -536,9 +534,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 审核剧本（仅支持华东-上海一使用）
+     * 审核剧本
      *
-     * Create playbook approve.
+     * 审核剧本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -552,9 +550,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建剧本规则（仅支持华东-上海一使用）
+     * 创建剧本规则
      *
-     * Create rule.
+     * 创建剧本规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -566,9 +564,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建剧本规则（仅支持华东-上海一使用）
+     * 创建剧本规则
      *
-     * Create rule.
+     * 创建剧本规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -582,9 +580,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建剧本版本（仅支持华东-上海一使用）
+     * 创建剧本版本
      *
-     * Create playbook version.
+     * 创建剧本版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -596,9 +594,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建剧本版本（仅支持华东-上海一使用）
+     * 创建剧本版本
      *
-     * Create playbook version.
+     * 创建剧本版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -612,7 +610,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除告警（仅支持华东-上海一使用）
+     * 删除告警
      *
      * 删除告警
      * 
@@ -626,7 +624,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除告警（仅支持华东-上海一使用）
+     * 删除告警
      *
      * 删除告警
      * 
@@ -640,7 +638,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除告警规则（仅支持华东-上海一使用）
+     * 删除告警规则
      *
      * Delete alert rule
      * 
@@ -654,7 +652,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除告警规则（仅支持华东-上海一使用）
+     * 删除告警规则
      *
      * Delete alert rule
      * 
@@ -670,39 +668,39 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除Dataobject关系
+     * 取消关联Dataobject
      *
-     * Delete Dataobject Relation
+     * 取消关联Dataobject
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataobjectRelationRequest 请求对象
-     * @return DeleteDataobjectRelationResponse
+     * @param DeleteDataobjectRelationsRequest 请求对象
+     * @return DeleteDataobjectRelationsResponse
      */
-    public DeleteDataobjectRelationResponse deleteDataobjectRelation(DeleteDataobjectRelationRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteDataobjectRelation);
+    public DeleteDataobjectRelationsResponse deleteDataobjectRelations(DeleteDataobjectRelationsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteDataobjectRelations);
     }
 
     /**
-     * 删除Dataobject关系
+     * 取消关联Dataobject
      *
-     * Delete Dataobject Relation
+     * 取消关联Dataobject
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DeleteDataobjectRelationRequest 请求对象
-     * @return SyncInvoker<DeleteDataobjectRelationRequest, DeleteDataobjectRelationResponse>
+     * @param DeleteDataobjectRelationsRequest 请求对象
+     * @return SyncInvoker<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse>
      */
-    public SyncInvoker<DeleteDataobjectRelationRequest, DeleteDataobjectRelationResponse> deleteDataobjectRelationInvoker(
-        DeleteDataobjectRelationRequest request) {
-        return new SyncInvoker<DeleteDataobjectRelationRequest, DeleteDataobjectRelationResponse>(request,
-            SecMasterMeta.deleteDataobjectRelation, hcClient);
+    public SyncInvoker<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse> deleteDataobjectRelationsInvoker(
+        DeleteDataobjectRelationsRequest request) {
+        return new SyncInvoker<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse>(request,
+            SecMasterMeta.deleteDataobjectRelations, hcClient);
     }
 
     /**
-     * 创建事件（仅支持华东-上海一使用）
+     * 删除事件
      *
-     * 创建事件
+     * 删除事件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -714,9 +712,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建事件（仅支持华东-上海一使用）
+     * 删除事件
      *
-     * 创建事件
+     * 删除事件
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -732,7 +730,7 @@ public class SecMasterClient {
     /**
      * 删除指标
      *
-     * 删除指标（仅支持华东-上海一使用）
+     * 删除指标
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -746,7 +744,7 @@ public class SecMasterClient {
     /**
      * 删除指标
      *
-     * 删除指标（仅支持华东-上海一使用）
+     * 删除指标
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -760,9 +758,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除剧本（仅支持华东-上海一使用）
+     * 删除剧本
      *
-     * Delete playbook.
+     * 删除剧本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -774,9 +772,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除剧本（仅支持华东-上海一使用）
+     * 删除剧本
      *
-     * Delete playbook.
+     * 删除剧本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -790,9 +788,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除剧本动作（仅支持华东-上海一使用）
+     * 删除剧本动作
      *
-     * Delete action.
+     * 删除剧本动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -804,9 +802,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除剧本动作（仅支持华东-上海一使用）
+     * 删除剧本动作
      *
-     * Delete action.
+     * 删除剧本动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -820,9 +818,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除剧本规则（仅支持华东-上海一使用）
+     * 删除剧本规则
      *
-     * Delete rule.
+     * 删除剧本规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -834,9 +832,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除剧本规则（仅支持华东-上海一使用）
+     * 删除剧本规则
      *
-     * Delete rule.
+     * 删除剧本规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -850,9 +848,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除剧本版本（仅支持华东-上海一使用）
+     * 删除剧本版本
      *
-     * Delete playbook version.
+     * 删除剧本版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -864,9 +862,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 删除剧本版本（仅支持华东-上海一使用）
+     * 删除剧本版本
      *
-     * Delete playbook version.
+     * 删除剧本版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -880,7 +878,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 停用告警规则（仅支持华东-上海一使用）
+     * 停用告警规则
      *
      * Disable alert rule
      * 
@@ -894,7 +892,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 停用告警规则（仅支持华东-上海一使用）
+     * 停用告警规则
      *
      * Disable alert rule
      * 
@@ -910,7 +908,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 启用告警规则（仅支持华东-上海一使用）
+     * 启用告警规则
      *
      * Enable alert rule
      * 
@@ -924,7 +922,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 启用告警规则（仅支持华东-上海一使用）
+     * 启用告警规则
      *
      * Enable alert rule
      * 
@@ -940,7 +938,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 告警规则总览（仅支持华东-上海一使用）
+     * 告警规则总览
      *
      * List alert rule metrics
      * 
@@ -954,7 +952,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 告警规则总览（仅支持华东-上海一使用）
+     * 告警规则总览
      *
      * List alert rule metrics
      * 
@@ -970,7 +968,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 列出告警规则模板（仅支持华东-上海一使用）
+     * 列出告警规则模板
      *
      * List alert rule templates
      * 
@@ -984,7 +982,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 列出告警规则模板（仅支持华东-上海一使用）
+     * 列出告警规则模板
      *
      * List alert rule templates
      * 
@@ -1000,7 +998,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 列出告警规则（仅支持华东-上海一使用）
+     * 列出告警规则
      *
      * List alert rules
      * 
@@ -1014,7 +1012,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 列出告警规则（仅支持华东-上海一使用）
+     * 列出告警规则
      *
      * List alert rules
      * 
@@ -1030,7 +1028,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 搜索告警列表（仅支持华东-上海一使用）
+     * 搜索告警列表
      *
      * 搜索告警列表
      * 
@@ -1044,7 +1042,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 搜索告警列表（仅支持华东-上海一使用）
+     * 搜索告警列表
      *
      * 搜索告警列表
      * 
@@ -1058,67 +1056,37 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询Dataobject关系列表
+     * 查询关联Dataobject列表
      *
-     * List Dataobject Relation
+     * 查询关联Dataobject列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataobjectRelationRequest 请求对象
-     * @return ListDataobjectRelationResponse
+     * @param ListDataobjectRelationsRequest 请求对象
+     * @return ListDataobjectRelationsResponse
      */
-    public ListDataobjectRelationResponse listDataobjectRelation(ListDataobjectRelationRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listDataobjectRelation);
+    public ListDataobjectRelationsResponse listDataobjectRelations(ListDataobjectRelationsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listDataobjectRelations);
     }
 
     /**
-     * 查询Dataobject关系列表
+     * 查询关联Dataobject列表
      *
-     * List Dataobject Relation
+     * 查询关联Dataobject列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ListDataobjectRelationRequest 请求对象
-     * @return SyncInvoker<ListDataobjectRelationRequest, ListDataobjectRelationResponse>
+     * @param ListDataobjectRelationsRequest 请求对象
+     * @return SyncInvoker<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse>
      */
-    public SyncInvoker<ListDataobjectRelationRequest, ListDataobjectRelationResponse> listDataobjectRelationInvoker(
-        ListDataobjectRelationRequest request) {
-        return new SyncInvoker<ListDataobjectRelationRequest, ListDataobjectRelationResponse>(request,
-            SecMasterMeta.listDataobjectRelation, hcClient);
+    public SyncInvoker<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> listDataobjectRelationsInvoker(
+        ListDataobjectRelationsRequest request) {
+        return new SyncInvoker<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse>(request,
+            SecMasterMeta.listDataobjectRelations, hcClient);
     }
 
     /**
-     * 获取事件的类型列表（仅支持华东-上海一使用）
-     *
-     * 获取事件的类型列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListIncidentTypesRequest 请求对象
-     * @return ListIncidentTypesResponse
-     */
-    public ListIncidentTypesResponse listIncidentTypes(ListIncidentTypesRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listIncidentTypes);
-    }
-
-    /**
-     * 获取事件的类型列表（仅支持华东-上海一使用）
-     *
-     * 获取事件的类型列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListIncidentTypesRequest 请求对象
-     * @return SyncInvoker<ListIncidentTypesRequest, ListIncidentTypesResponse>
-     */
-    public SyncInvoker<ListIncidentTypesRequest, ListIncidentTypesResponse> listIncidentTypesInvoker(
-        ListIncidentTypesRequest request) {
-        return new SyncInvoker<ListIncidentTypesRequest, ListIncidentTypesResponse>(request,
-            SecMasterMeta.listIncidentTypes, hcClient);
-    }
-
-    /**
-     * 搜索事件列表（仅支持华东-上海一使用）
+     * 搜索事件列表
      *
      * 搜索事件列表
      * 
@@ -1132,7 +1100,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 搜索事件列表（仅支持华东-上海一使用）
+     * 搜索事件列表
      *
      * 搜索事件列表
      * 
@@ -1147,9 +1115,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询指标列表（仅支持华东-上海一使用）
+     * 查询指标列表
      *
-     * List all indicators
+     * 查询指标列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1161,9 +1129,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询指标列表（仅支持华东-上海一使用）
+     * 查询指标列表
      *
-     * List all indicators
+     * 查询指标列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1177,9 +1145,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本动作（仅支持华东-上海一使用）
+     * 查询剧本动作
      *
-     * List all actions.
+     * 查询剧本动作列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1191,9 +1159,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本动作（仅支持华东-上海一使用）
+     * 查询剧本动作
      *
-     * List all actions.
+     * 查询剧本动作列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1207,9 +1175,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本审核结果（仅支持华东-上海一使用）
+     * 查询剧本审核结果
      *
-     * List approves.
+     * 查询剧本审核结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1221,9 +1189,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本审核结果（仅支持华东-上海一使用）
+     * 查询剧本审核结果
      *
-     * List approves.
+     * 查询剧本审核结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1237,9 +1205,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本实例审计日志（仅支持华东-上海一使用）
+     * 查询剧本实例审计日志
      *
-     * List audit logs.
+     * 查询剧本实例审计日志
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1251,9 +1219,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本实例审计日志（仅支持华东-上海一使用）
+     * 查询剧本实例审计日志
      *
-     * List audit logs.
+     * 查询剧本实例审计日志
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1267,9 +1235,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本实例列表（仅支持华东-上海一使用）
+     * 查询剧本实例列表
      *
-     * List playbook instances
+     * 查询剧本实例列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1281,9 +1249,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本实例列表（仅支持华东-上海一使用）
+     * 查询剧本实例列表
      *
-     * List playbook instances
+     * 查询剧本实例列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1297,9 +1265,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本版本列表（仅支持华东-上海一使用）
+     * 查询剧本版本列表
      *
-     * List all versions of playbook.
+     * 查询剧本版本列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1311,9 +1279,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本版本列表（仅支持华东-上海一使用）
+     * 查询剧本版本列表
      *
-     * List all versions of playbook.
+     * 查询剧本版本列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1327,9 +1295,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本列表（仅支持华东-上海一使用）
+     * 查询剧本列表
      *
-     * List all playbooks.
+     * 查询剧本列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1341,9 +1309,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本列表（仅支持华东-上海一使用）
+     * 查询剧本列表
      *
-     * List all playbooks.
+     * 查询剧本列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1356,7 +1324,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 获取告警详情（仅支持华东-上海一使用）
+     * 获取告警详情
      *
      * 获取告警详情
      * 
@@ -1370,7 +1338,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 获取告警详情（仅支持华东-上海一使用）
+     * 获取告警详情
      *
      * 获取告警详情
      * 
@@ -1384,9 +1352,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查看告警规则（仅支持华东-上海一使用）
+     * 查看告警规则
      *
-     * Get alert rule
+     * 查看告警规则 Get alert rule
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1398,9 +1366,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查看告警规则（仅支持华东-上海一使用）
+     * 查看告警规则
      *
-     * Get alert rule
+     * 查看告警规则 Get alert rule
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1413,7 +1381,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 查看告警规则模板（仅支持华东-上海一使用）
+     * 查看告警规则模板
      *
      * List alert rule templates
      * 
@@ -1427,7 +1395,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 查看告警规则模板（仅支持华东-上海一使用）
+     * 查看告警规则模板
      *
      * List alert rule templates
      * 
@@ -1443,7 +1411,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 获取事件详情（仅支持华东-上海一使用）
+     * 获取事件详情
      *
      * 获取事件详情
      * 
@@ -1457,7 +1425,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 获取事件详情（仅支持华东-上海一使用）
+     * 获取事件详情
      *
      * 获取事件详情
      * 
@@ -1474,7 +1442,7 @@ public class SecMasterClient {
     /**
      * 查询指标详情
      *
-     * 查询指标详情（仅支持华东-上海一使用）
+     * 查询指标详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1488,7 +1456,7 @@ public class SecMasterClient {
     /**
      * 查询指标详情
      *
-     * 查询指标详情（仅支持华东-上海一使用）
+     * 查询指标详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1502,9 +1470,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本详情（仅支持华东-上海一使用）
+     * 查询剧本详情
      *
-     * Show playbook
+     * 查询剧本详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1516,9 +1484,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本详情（仅支持华东-上海一使用）
+     * 查询剧本详情
      *
-     * Show playbook
+     * 查询剧本详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1531,7 +1499,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本实例详情（仅支持华东-上海一使用）
+     * 查询剧本实例详情
      *
      * Show playbook instance
      * 
@@ -1545,7 +1513,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本实例详情（仅支持华东-上海一使用）
+     * 查询剧本实例详情
      *
      * Show playbook instance
      * 
@@ -1561,7 +1529,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 剧本运行监控（仅支持华东-上海一使用）
+     * 剧本运行监控
      *
      * 剧本运行监控
      * 
@@ -1575,7 +1543,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 剧本运行监控（仅支持华东-上海一使用）
+     * 剧本运行监控
      *
      * 剧本运行监控
      * 
@@ -1591,9 +1559,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本规则详情（仅支持华东-上海一使用）
+     * 查询剧本规则详情
      *
-     * Show rule formation.
+     * 查询剧本规则详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1605,9 +1573,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本规则详情（仅支持华东-上海一使用）
+     * 查询剧本规则详情
      *
-     * Show rule formation.
+     * 查询剧本规则详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1621,7 +1589,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 剧本数据统计（仅支持华东-上海一使用）
+     * 剧本数据统计
      *
      * 剧本统计数据
      * 
@@ -1635,7 +1603,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 剧本数据统计（仅支持华东-上海一使用）
+     * 剧本数据统计
      *
      * 剧本统计数据
      * 
@@ -1651,9 +1619,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本拓扑关系（仅支持华东-上海一使用）
+     * 查询剧本拓扑关系
      *
-     * Show playbook Topology
+     * 查询剧本拓扑关系
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1665,9 +1633,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本拓扑关系（仅支持华东-上海一使用）
+     * 查询剧本拓扑关系
      *
-     * Show playbook Topology
+     * 查询剧本拓扑关系
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1681,7 +1649,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本版本详情（仅支持华东-上海一使用）
+     * 查询剧本版本详情
      *
      * Show playbook version version
      * 
@@ -1695,7 +1663,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 查询剧本版本详情（仅支持华东-上海一使用）
+     * 查询剧本版本详情
      *
      * Show playbook version version
      * 
@@ -1711,7 +1679,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新告警规则（仅支持华东-上海一使用）
+     * 更新告警规则
      *
      * Update alert rule
      * 
@@ -1725,7 +1693,7 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新告警规则（仅支持华东-上海一使用）
+     * 更新告警规则
      *
      * Update alert rule
      * 
@@ -1743,7 +1711,7 @@ public class SecMasterClient {
     /**
      * 更新指标
      *
-     * 更新指标（仅支持华东-上海一使用）
+     * 更新指标
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1757,7 +1725,7 @@ public class SecMasterClient {
     /**
      * 更新指标
      *
-     * 更新指标（仅支持华东-上海一使用）
+     * 更新指标
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1771,9 +1739,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 修改剧本（仅支持华东-上海一使用）
+     * 修改剧本
      *
-     * Update playbook.
+     * 修改剧本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1785,9 +1753,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 修改剧本（仅支持华东-上海一使用）
+     * 修改剧本
      *
-     * Update playbook.
+     * 修改剧本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1801,9 +1769,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新剧本动作（仅支持华东-上海一使用）
+     * 更新剧本动作
      *
-     * Update action.
+     * 更新剧本动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1815,9 +1783,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新剧本动作（仅支持华东-上海一使用）
+     * 更新剧本动作
      *
-     * Update action.
+     * 更新剧本动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1831,9 +1799,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新剧本规则（仅支持华东-上海一使用）
+     * 更新剧本规则
      *
-     * Update rule.
+     * 更新剧本规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1845,9 +1813,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新剧本规则（仅支持华东-上海一使用）
+     * 更新剧本规则
      *
-     * Update rule.
+     * 更新剧本规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1861,9 +1829,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新剧本版本（仅支持华东-上海一使用）
+     * 更新剧本版本
      *
-     * Update playbook version.
+     * 更新剧本版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1875,9 +1843,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新剧本版本（仅支持华东-上海一使用）
+     * 更新剧本版本
      *
-     * Update playbook version.
+     * 更新剧本版本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

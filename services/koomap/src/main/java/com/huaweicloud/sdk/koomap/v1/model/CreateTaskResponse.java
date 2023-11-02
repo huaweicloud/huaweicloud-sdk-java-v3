@@ -101,6 +101,26 @@ public class CreateTaskResponse extends SdkResponse {
 
     private String domainId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fail_message")
+
+    private String failMessage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frozen_tag")
+
+    private String frozenTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isClip")
+
+    private String isClip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isTile")
+
+    private String isTile;
+
     public CreateTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -124,7 +144,7 @@ public class CreateTaskResponse extends SdkResponse {
     }
 
     /**
-     * 所属工作共享空间ID。
+     * 工作共享空间ID。
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -226,7 +246,7 @@ public class CreateTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务类型。 当前仅支持ORSIP（卫星影像处理）。
+     * 任务类型。 当前仅支持ORSIP（卫星影像生产）。
      * @return taskType
      */
     public String getTaskType() {
@@ -311,7 +331,7 @@ public class CreateTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务输出结果影像级别，当前支持以下级别： L2、L4、L5、clip（包含L5影像、矢量切割）、tile（包含L5影像、金字塔切割）、both（包含L5影像、金字塔切割和矢量切割影像）。
+     * 任务输出结果影像级别，当前支持以下级别： L2、L3、L4、L5。
      * @return productionLevel
      */
     public String getProductionLevel() {
@@ -345,7 +365,7 @@ public class CreateTaskResponse extends SdkResponse {
     }
 
     /**
-     * 影像ID。
+     * 矢量数据文件ID，“isClip”为“1”时必填。
      * @return shapeId
      */
     public String getShapeId() {
@@ -407,6 +427,74 @@ public class CreateTaskResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
+    public CreateTaskResponse withFailMessage(String failMessage) {
+        this.failMessage = failMessage;
+        return this;
+    }
+
+    /**
+     * 任务失败原因。
+     * @return failMessage
+     */
+    public String getFailMessage() {
+        return failMessage;
+    }
+
+    public void setFailMessage(String failMessage) {
+        this.failMessage = failMessage;
+    }
+
+    public CreateTaskResponse withFrozenTag(String frozenTag) {
+        this.frozenTag = frozenTag;
+        return this;
+    }
+
+    /**
+     * 任务冻结状态。当前仅支持frozen（冻结中）。
+     * @return frozenTag
+     */
+    public String getFrozenTag() {
+        return frozenTag;
+    }
+
+    public void setFrozenTag(String frozenTag) {
+        this.frozenTag = frozenTag;
+    }
+
+    public CreateTaskResponse withIsClip(String isClip) {
+        this.isClip = isClip;
+        return this;
+    }
+
+    /**
+     * 是否为矢量切割。 - 0：否 - 1：是
+     * @return isClip
+     */
+    public String getIsClip() {
+        return isClip;
+    }
+
+    public void setIsClip(String isClip) {
+        this.isClip = isClip;
+    }
+
+    public CreateTaskResponse withIsTile(String isTile) {
+        this.isTile = isTile;
+        return this;
+    }
+
+    /**
+     * 是否为金字塔切割。 - 0：否 - 1：是
+     * @return isTile
+     */
+    public String getIsTile() {
+        return isTile;
+    }
+
+    public void setIsTile(String isTile) {
+        this.isTile = isTile;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -427,7 +515,9 @@ public class CreateTaskResponse extends SdkResponse {
             && Objects.equals(this.productionLevel, that.productionLevel)
             && Objects.equals(this.taskProgress, that.taskProgress) && Objects.equals(this.shapeId, that.shapeId)
             && Objects.equals(this.isDeleted, that.isDeleted) && Objects.equals(this.imageUrl, that.imageUrl)
-            && Objects.equals(this.domainId, that.domainId);
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.failMessage, that.failMessage)
+            && Objects.equals(this.frozenTag, that.frozenTag) && Objects.equals(this.isClip, that.isClip)
+            && Objects.equals(this.isTile, that.isTile);
     }
 
     @Override
@@ -449,7 +539,11 @@ public class CreateTaskResponse extends SdkResponse {
             shapeId,
             isDeleted,
             imageUrl,
-            domainId);
+            domainId,
+            failMessage,
+            frozenTag,
+            isClip,
+            isTile);
     }
 
     @Override
@@ -474,6 +568,10 @@ public class CreateTaskResponse extends SdkResponse {
         sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
         sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    failMessage: ").append(toIndentedString(failMessage)).append("\n");
+        sb.append("    frozenTag: ").append(toIndentedString(frozenTag)).append("\n");
+        sb.append("    isClip: ").append(toIndentedString(isClip)).append("\n");
+        sb.append("    isTile: ").append(toIndentedString(isTile)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,6 +24,11 @@ public class CreateOptmJobReq {
     private String smiles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "molecule_file")
+
+    private DrugFile moleculeFile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "binding_site")
 
     private BindSiteDto bindingSite;
@@ -37,6 +42,16 @@ public class CreateOptmJobReq {
     @JsonProperty(value = "strong_constraints")
 
     private List<StrongConstraintDto> strongConstraints = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sampler_mixin_weight")
+
+    private Float samplerMixinWeight;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_ids")
+
+    private List<String> modelIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num_trials")
@@ -84,6 +99,32 @@ public class CreateOptmJobReq {
 
     public void setSmiles(String smiles) {
         this.smiles = smiles;
+    }
+
+    public CreateOptmJobReq withMoleculeFile(DrugFile moleculeFile) {
+        this.moleculeFile = moleculeFile;
+        return this;
+    }
+
+    public CreateOptmJobReq withMoleculeFile(Consumer<DrugFile> moleculeFileSetter) {
+        if (this.moleculeFile == null) {
+            this.moleculeFile = new DrugFile();
+            moleculeFileSetter.accept(this.moleculeFile);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get moleculeFile
+     * @return moleculeFile
+     */
+    public DrugFile getMoleculeFile() {
+        return moleculeFile;
+    }
+
+    public void setMoleculeFile(DrugFile moleculeFile) {
+        this.moleculeFile = moleculeFile;
     }
 
     public CreateOptmJobReq withBindingSite(BindSiteDto bindingSite) {
@@ -178,6 +219,58 @@ public class CreateOptmJobReq {
         this.strongConstraints = strongConstraints;
     }
 
+    public CreateOptmJobReq withSamplerMixinWeight(Float samplerMixinWeight) {
+        this.samplerMixinWeight = samplerMixinWeight;
+        return this;
+    }
+
+    /**
+     * 初始化采样权重，参数范围(0.5, 1)，不包含0.5和1，默认为0.6
+     * minimum: 0.5
+     * maximum: 1
+     * @return samplerMixinWeight
+     */
+    public Float getSamplerMixinWeight() {
+        return samplerMixinWeight;
+    }
+
+    public void setSamplerMixinWeight(Float samplerMixinWeight) {
+        this.samplerMixinWeight = samplerMixinWeight;
+    }
+
+    public CreateOptmJobReq withModelIds(List<String> modelIds) {
+        this.modelIds = modelIds;
+        return this;
+    }
+
+    public CreateOptmJobReq addModelIdsItem(String modelIdsItem) {
+        if (this.modelIds == null) {
+            this.modelIds = new ArrayList<>();
+        }
+        this.modelIds.add(modelIdsItem);
+        return this;
+    }
+
+    public CreateOptmJobReq withModelIds(Consumer<List<String>> modelIdsSetter) {
+        if (this.modelIds == null) {
+            this.modelIds = new ArrayList<>();
+        }
+        modelIdsSetter.accept(this.modelIds);
+        return this;
+    }
+
+    /**
+     * 模型id列表
+     * @return modelIds
+     */
+    public List<String> getModelIds() {
+        return modelIds;
+    }
+
+    public void setModelIds(List<String> modelIds) {
+        this.modelIds = modelIds;
+    }
+
     public CreateOptmJobReq withNumTrials(Integer numTrials) {
         this.numTrials = numTrials;
         return this;
@@ -207,15 +300,25 @@ public class CreateOptmJobReq {
         }
         CreateOptmJobReq that = (CreateOptmJobReq) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.smiles, that.smiles)
+            && Objects.equals(this.moleculeFile, that.moleculeFile)
             && Objects.equals(this.bindingSite, that.bindingSite)
             && Objects.equals(this.weakConstraints, that.weakConstraints)
             && Objects.equals(this.strongConstraints, that.strongConstraints)
-            && Objects.equals(this.numTrials, that.numTrials);
+            && Objects.equals(this.samplerMixinWeight, that.samplerMixinWeight)
+            && Objects.equals(this.modelIds, that.modelIds) && Objects.equals(this.numTrials, that.numTrials);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, smiles, bindingSite, weakConstraints, strongConstraints, numTrials);
+        return Objects.hash(basicInfo,
+            smiles,
+            moleculeFile,
+            bindingSite,
+            weakConstraints,
+            strongConstraints,
+            samplerMixinWeight,
+            modelIds,
+            numTrials);
     }
 
     @Override
@@ -224,9 +327,12 @@ public class CreateOptmJobReq {
         sb.append("class CreateOptmJobReq {\n");
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    smiles: ").append(toIndentedString(smiles)).append("\n");
+        sb.append("    moleculeFile: ").append(toIndentedString(moleculeFile)).append("\n");
         sb.append("    bindingSite: ").append(toIndentedString(bindingSite)).append("\n");
         sb.append("    weakConstraints: ").append(toIndentedString(weakConstraints)).append("\n");
         sb.append("    strongConstraints: ").append(toIndentedString(strongConstraints)).append("\n");
+        sb.append("    samplerMixinWeight: ").append(toIndentedString(samplerMixinWeight)).append("\n");
+        sb.append("    modelIds: ").append(toIndentedString(modelIds)).append("\n");
         sb.append("    numTrials: ").append(toIndentedString(numTrials)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -25,7 +25,7 @@ public class ShowAlertResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private ShowAlertDetail data;
+    private AlertDetail data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
@@ -38,7 +38,7 @@ public class ShowAlertResponse extends SdkResponse {
     }
 
     /**
-     * Id value
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -55,7 +55,7 @@ public class ShowAlertResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -66,14 +66,14 @@ public class ShowAlertResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowAlertResponse withData(ShowAlertDetail data) {
+    public ShowAlertResponse withData(AlertDetail data) {
         this.data = data;
         return this;
     }
 
-    public ShowAlertResponse withData(Consumer<ShowAlertDetail> dataSetter) {
+    public ShowAlertResponse withData(Consumer<AlertDetail> dataSetter) {
         if (this.data == null) {
-            this.data = new ShowAlertDetail();
+            this.data = new AlertDetail();
             dataSetter.accept(this.data);
         }
 
@@ -84,11 +84,11 @@ public class ShowAlertResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public ShowAlertDetail getData() {
+    public AlertDetail getData() {
         return data;
     }
 
-    public void setData(ShowAlertDetail data) {
+    public void setData(AlertDetail data) {
         this.data = data;
     }
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -11,31 +12,14 @@ import java.util.Objects;
 public class UpdateTaskArchivedStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
-
-    private String taskId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "archived")
 
     private Boolean archived;
 
-    public UpdateTaskArchivedStatusRequest withTaskId(String taskId) {
-        this.taskId = taskId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
 
-    /**
-     * 任务ID。
-     * @return taskId
-     */
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
+    private IdDto body;
 
     public UpdateTaskArchivedStatusRequest withArchived(Boolean archived) {
         this.archived = archived;
@@ -54,6 +38,32 @@ public class UpdateTaskArchivedStatusRequest {
         this.archived = archived;
     }
 
+    public UpdateTaskArchivedStatusRequest withBody(IdDto body) {
+        this.body = body;
+        return this;
+    }
+
+    public UpdateTaskArchivedStatusRequest withBody(Consumer<IdDto> bodySetter) {
+        if (this.body == null) {
+            this.body = new IdDto();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public IdDto getBody() {
+        return body;
+    }
+
+    public void setBody(IdDto body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,20 +73,20 @@ public class UpdateTaskArchivedStatusRequest {
             return false;
         }
         UpdateTaskArchivedStatusRequest that = (UpdateTaskArchivedStatusRequest) obj;
-        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.archived, that.archived);
+        return Objects.equals(this.archived, that.archived) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, archived);
+        return Objects.hash(archived, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateTaskArchivedStatusRequest {\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

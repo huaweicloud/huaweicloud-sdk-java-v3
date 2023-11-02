@@ -50,7 +50,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     private String query;
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      */
     public static final class QueryTypeEnum {
 
@@ -59,17 +59,11 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
          */
         public static final QueryTypeEnum SQL = new QueryTypeEnum("SQL");
 
-        /**
-         * Enum CBSL for value: "CBSL"
-         */
-        public static final QueryTypeEnum CBSL = new QueryTypeEnum("CBSL");
-
         private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, QueryTypeEnum> createStaticFields() {
             Map<String, QueryTypeEnum> map = new HashMap<>();
             map.put("SQL", SQL);
-            map.put("CBSL", CBSL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -125,7 +119,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     private QueryTypeEnum queryType;
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      */
     public static final class SeverityEnum {
 
@@ -248,7 +242,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * template_id
+     * 告警规则模板 ID。Alert rule template ID.
      * @return templateId
      */
     public String getTemplateId() {
@@ -265,7 +259,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * update_time
+     * 更新时间。Update time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return updateTime
@@ -284,7 +278,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * template_name
+     * 告警规则模板名称。Alert rule template name.
      * @return templateName
      */
     public String getTemplateName() {
@@ -301,7 +295,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * data_source
+     * 数据源。Data source.
      * @return dataSource
      */
     public String getDataSource() {
@@ -318,7 +312,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * version
+     * 版本。Version
      * @return version
      */
     public String getVersion() {
@@ -335,7 +329,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * query
+     * 查询语句。Query.
      * @return query
      */
     public String getQuery() {
@@ -352,7 +346,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      * @return queryType
      */
     public QueryTypeEnum getQueryType() {
@@ -369,7 +363,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      * @return severity
      */
     public SeverityEnum getSeverity() {
@@ -402,7 +396,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * custom_properties
+     * 自定义扩展信息。Custom properties.
      * @return customProperties
      */
     public Map<String, String> getCustomProperties() {
@@ -419,7 +413,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * event_grouping
+     * 告警分组。Event grouping.
      * @return eventGrouping
      */
     public Boolean getEventGrouping() {
@@ -478,7 +472,7 @@ public class ShowAlertRuleTemplateResponse extends SdkResponse {
     }
 
     /**
-     * triggers
+     * 告警触发规则。Alert triggers.
      * @return triggers
      */
     public List<AlertRuleTrigger> getTriggers() {

@@ -74,7 +74,7 @@ public class ListNatGatewaySnatRulesRequest {
     private Integer sourceType;
 
     /**
-     * 功能说明：SNAT规则的状态。
+     * SNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
      */
     public static final class StatusEnum {
 
@@ -231,7 +231,7 @@ public class ListNatGatewaySnatRulesRequest {
     }
 
     /**
-     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
+     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。
      * @return floatingIpAddress
      */
     public String getFloatingIpAddress() {
@@ -367,6 +367,8 @@ public class ListNatGatewaySnatRulesRequest {
 
     /**
      * 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC）
+     * minimum: 0
+     * maximum: 1
      * @return sourceType
      */
     public Integer getSourceType() {
@@ -383,7 +385,7 @@ public class ListNatGatewaySnatRulesRequest {
     }
 
     /**
-     * 功能说明：SNAT规则的状态。
+     * SNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
      * @return status
      */
     public StatusEnum getStatus() {

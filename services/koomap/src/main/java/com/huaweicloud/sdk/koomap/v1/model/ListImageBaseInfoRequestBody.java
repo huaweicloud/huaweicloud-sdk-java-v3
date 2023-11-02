@@ -55,6 +55,21 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
     private String isProduct;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order")
+
+    private String order;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_type")
+
+    private String imageType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -121,7 +136,7 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 卫星影像迁移状态。 当前仅支持完成（0）、迁入中（1）、迁入失败（2）、迁出中（3）、迁出失败（4）、删除中（6）、卫星影像正在被任务使用导致删除失败（7）、网络错误导致删除失败（8）。
+     * 卫星影像迁移状态列表。 当前仅支持完成（0）、迁入中（1）、迁入失败（2）、迁出中（3）、迁出失败（4）、删除中（6）、卫星影像正在被任务使用导致删除失败（7）、网络错误导致删除失败（8）。状态之间以“,”隔开。
      * @return imageStatus
      */
     public String getImageStatus() {
@@ -172,7 +187,7 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 卫星影像等级列表。 当前仅支持L1、L1A、L1B、L2、L4、L5、clip（矢量切割）、tile（金字塔切割）。等级之间以“,”隔开。
+     * 卫星影像等级列表。 当前仅支持L1、L1A、L1B、L2、L3、L4、L5。等级之间以“,”隔开。
      * @return imageLevels
      */
     public String getImageLevels() {
@@ -198,6 +213,57 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
 
     public void setIsProduct(String isProduct) {
         this.isProduct = isProduct;
+    }
+
+    public ListImageBaseInfoRequestBody withOrder(String order) {
+        this.order = order;
+        return this;
+    }
+
+    /**
+     * 卫星影像排序规则。 当前仅支持影像名称正序（1）、影像名称倒序（-1）、影像别名正序（2）、影像别名倒序（-2）、影像上传日期正序（3）、影像上传日期倒序（-3）。
+     * @return order
+     */
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    public ListImageBaseInfoRequestBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 卫星影像描述。  格式为中英文、数字、下划线、中划线，长度为255个字符以内。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ListImageBaseInfoRequestBody withImageType(String imageType) {
+        this.imageType = imageType;
+        return this;
+    }
+
+    /**
+     * 卫星影像类型。当前仅支持全色（0）、多光谱（1）。
+     * @return imageType
+     */
+    public String getImageType() {
+        return imageType;
+    }
+
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
     }
 
     public ListImageBaseInfoRequestBody withLimit(Integer limit) {
@@ -268,6 +334,15 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
                 if (isProduct != null) {
                     put("is_product", new FormDataPart<>(isProduct));
                 }
+                if (order != null) {
+                    put("order", new FormDataPart<>(order));
+                }
+                if (description != null) {
+                    put("description", new FormDataPart<>(description));
+                }
+                if (imageType != null) {
+                    put("image_type", new FormDataPart<>(imageType));
+                }
                 put("limit", new FormDataPart<>(limit));
                 put("offset", new FormDataPart<>(offset));
             }
@@ -287,7 +362,9 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
             && Objects.equals(this.imageDateTo, that.imageDateTo) && Objects.equals(this.imageStatus, that.imageStatus)
             && Objects.equals(this.rawAlias, that.rawAlias) && Objects.equals(this.imageAlias, that.imageAlias)
             && Objects.equals(this.imageLevels, that.imageLevels) && Objects.equals(this.isProduct, that.isProduct)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.order, that.order) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
@@ -300,6 +377,9 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
             imageAlias,
             imageLevels,
             isProduct,
+            order,
+            description,
+            imageType,
             limit,
             offset);
     }
@@ -316,6 +396,9 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
         sb.append("    imageAlias: ").append(toIndentedString(imageAlias)).append("\n");
         sb.append("    imageLevels: ").append(toIndentedString(imageLevels)).append("\n");
         sb.append("    isProduct: ").append(toIndentedString(isProduct)).append("\n");
+        sb.append("    order: ").append(toIndentedString(order)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

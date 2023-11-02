@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 环境信息
+ * 事件产生的环境坐标信息
  */
 public class IncidentEnvironment {
 
@@ -26,6 +26,11 @@ public class IncidentEnvironment {
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cross_workspace_id")
+
+    private String crossWorkspaceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
@@ -36,7 +41,7 @@ public class IncidentEnvironment {
     }
 
     /**
-     * The name, display only
+     * 环境供应商：HWCP/HWC/AWS/Azure/GCP
      * @return vendorType
      */
     public String getVendorType() {
@@ -53,7 +58,7 @@ public class IncidentEnvironment {
     }
 
     /**
-     * Id value
+     * 租户id
      * @return domainId
      */
     public String getDomainId() {
@@ -70,7 +75,7 @@ public class IncidentEnvironment {
     }
 
     /**
-     * Id value
+     * 区域id，全局服务global
      * @return regionId
      */
     public String getRegionId() {
@@ -81,13 +86,30 @@ public class IncidentEnvironment {
         this.regionId = regionId;
     }
 
+    public IncidentEnvironment withCrossWorkspaceId(String crossWorkspaceId) {
+        this.crossWorkspaceId = crossWorkspaceId;
+        return this;
+    }
+
+    /**
+     * 数据投递前的源工作空间id，在源空间下值为null，投递后为被委托用户的id
+     * @return crossWorkspaceId
+     */
+    public String getCrossWorkspaceId() {
+        return crossWorkspaceId;
+    }
+
+    public void setCrossWorkspaceId(String crossWorkspaceId) {
+        this.crossWorkspaceId = crossWorkspaceId;
+    }
+
     public IncidentEnvironment withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
     /**
-     * Id value
+     * 项目id， 全局服务默认null
      * @return projectId
      */
     public String getProjectId() {
@@ -108,12 +130,14 @@ public class IncidentEnvironment {
         }
         IncidentEnvironment that = (IncidentEnvironment) obj;
         return Objects.equals(this.vendorType, that.vendorType) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId);
+            && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.crossWorkspaceId, that.crossWorkspaceId)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vendorType, domainId, regionId, projectId);
+        return Objects.hash(vendorType, domainId, regionId, crossWorkspaceId, projectId);
     }
 
     @Override
@@ -123,6 +147,7 @@ public class IncidentEnvironment {
         sb.append("    vendorType: ").append(toIndentedString(vendorType)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+        sb.append("    crossWorkspaceId: ").append(toIndentedString(crossWorkspaceId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("}");
         return sb.toString();

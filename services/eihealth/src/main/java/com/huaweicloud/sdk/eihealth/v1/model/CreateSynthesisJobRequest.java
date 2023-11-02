@@ -27,7 +27,7 @@ public class CreateSynthesisJobRequest {
     }
 
     /**
-     * 盘古辅助制药平台项目ID。
+     * 平台项目ID。
      * @return eihealthProjectId
      */
     public String getEihealthProjectId() {

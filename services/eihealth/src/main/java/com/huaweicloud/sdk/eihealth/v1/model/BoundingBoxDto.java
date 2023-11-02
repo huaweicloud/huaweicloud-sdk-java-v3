@@ -23,6 +23,11 @@ public class BoundingBoxDto {
 
     private List<Float> size = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "padding")
+
+    private Integer padding;
+
     public BoundingBoxDto withCenter(List<Float> center) {
         this.center = center;
         return this;
@@ -45,7 +50,7 @@ public class BoundingBoxDto {
     }
 
     /**
-     * 口袋中心坐标; x, y, z轴的坐标
+     * 口袋中心坐标； x, y, z轴的坐标
      * @return center
      */
     public List<Float> getCenter() {
@@ -78,7 +83,7 @@ public class BoundingBoxDto {
     }
 
     /**
-     * 口袋尺寸大小;  x, y, z轴的大小
+     * 口袋尺寸大小；  x, y, z轴的大小
      * @return size
      */
     public List<Float> getSize() {
@@ -87,6 +92,25 @@ public class BoundingBoxDto {
 
     public void setSize(List<Float> size) {
         this.size = size;
+    }
+
+    public BoundingBoxDto withPadding(Integer padding) {
+        this.padding = padding;
+        return this;
+    }
+
+    /**
+     * 填充
+     * minimum: 0
+     * maximum: 20
+     * @return padding
+     */
+    public Integer getPadding() {
+        return padding;
+    }
+
+    public void setPadding(Integer padding) {
+        this.padding = padding;
     }
 
     @Override
@@ -98,12 +122,13 @@ public class BoundingBoxDto {
             return false;
         }
         BoundingBoxDto that = (BoundingBoxDto) obj;
-        return Objects.equals(this.center, that.center) && Objects.equals(this.size, that.size);
+        return Objects.equals(this.center, that.center) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.padding, that.padding);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(center, size);
+        return Objects.hash(center, size, padding);
     }
 
     @Override
@@ -112,6 +137,7 @@ public class BoundingBoxDto {
         sb.append("class BoundingBoxDto {\n");
         sb.append("    center: ").append(toIndentedString(center)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    padding: ").append(toIndentedString(padding)).append("\n");
         sb.append("}");
         return sb.toString();
     }

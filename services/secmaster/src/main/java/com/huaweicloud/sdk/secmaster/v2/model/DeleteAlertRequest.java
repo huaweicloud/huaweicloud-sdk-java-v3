@@ -19,7 +19,7 @@ public class DeleteAlertRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DeleteAlert body;
+    private DeleteAlertRequestBody body;
 
     public DeleteAlertRequest withWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
@@ -27,7 +27,7 @@ public class DeleteAlertRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间id
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -38,14 +38,14 @@ public class DeleteAlertRequest {
         this.workspaceId = workspaceId;
     }
 
-    public DeleteAlertRequest withBody(DeleteAlert body) {
+    public DeleteAlertRequest withBody(DeleteAlertRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public DeleteAlertRequest withBody(Consumer<DeleteAlert> bodySetter) {
+    public DeleteAlertRequest withBody(Consumer<DeleteAlertRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new DeleteAlert();
+            this.body = new DeleteAlertRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class DeleteAlertRequest {
      * Get body
      * @return body
      */
-    public DeleteAlert getBody() {
+    public DeleteAlertRequestBody getBody() {
         return body;
     }
 
-    public void setBody(DeleteAlert body) {
+    public void setBody(DeleteAlertRequestBody body) {
         this.body = body;
     }
 

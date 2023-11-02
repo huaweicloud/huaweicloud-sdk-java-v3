@@ -32,7 +32,7 @@ public class DeleteAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * rule_id
+     * 告警规则 ID。Alert rule ID.
      * @return ruleId
      */
     public String getRuleId() {
@@ -49,7 +49,7 @@ public class DeleteAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * delete_time
+     * 删除时间。Delete time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return deleteTime

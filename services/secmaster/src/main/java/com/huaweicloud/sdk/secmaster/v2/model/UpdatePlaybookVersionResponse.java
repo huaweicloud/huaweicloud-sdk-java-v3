@@ -38,7 +38,7 @@ public class UpdatePlaybookVersionResponse extends SdkResponse {
     }
 
     /**
-     * Error code
+     * 错误码
      * @return code
      */
     public String getCode() {

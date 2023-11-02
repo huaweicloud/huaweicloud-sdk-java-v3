@@ -27,7 +27,7 @@ public class CreateIncidentRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间id
      * @return workspaceId
      */
     public String getWorkspaceId() {

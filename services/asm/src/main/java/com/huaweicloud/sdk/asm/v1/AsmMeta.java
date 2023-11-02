@@ -91,13 +91,6 @@ public class AsmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Apply-DomainID",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMeshesRequest::getXApplyDomainID, (req, v) -> {
-                req.setXApplyDomainID(v);
-            }));
         builder.<String>withRequestField("X-Apply-ProjectID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -128,13 +121,6 @@ public class AsmMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMeshRequest::getMeshId, (req, v) -> {
                 req.setMeshId(v);
-            }));
-        builder.<String>withRequestField("X-Apply-DomainID",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeshRequest::getXApplyDomainID, (req, v) -> {
-                req.setXApplyDomainID(v);
             }));
         builder.<String>withRequestField("X-Apply-ProjectID",
             LocationType.Header,

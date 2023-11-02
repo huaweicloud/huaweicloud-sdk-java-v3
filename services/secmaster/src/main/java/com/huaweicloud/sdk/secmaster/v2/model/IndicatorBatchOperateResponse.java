@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * indicator batch operation response
+ * 情报响应参数
  */
 public class IndicatorBatchOperateResponse {
 
@@ -45,7 +45,7 @@ public class IndicatorBatchOperateResponse {
     }
 
     /**
-     * id list
+     * 成功ID列表
      * @return successIds
      */
     public List<String> getSuccessIds() {
@@ -78,7 +78,7 @@ public class IndicatorBatchOperateResponse {
     }
 
     /**
-     * id list
+     * 失败ID列表
      * @return errorIds
      */
     public List<String> getErrorIds() {

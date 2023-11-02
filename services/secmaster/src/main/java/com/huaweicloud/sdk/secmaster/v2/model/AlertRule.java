@@ -69,7 +69,7 @@ public class AlertRule {
     private String query;
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      */
     public static final class QueryTypeEnum {
 
@@ -78,17 +78,11 @@ public class AlertRule {
          */
         public static final QueryTypeEnum SQL = new QueryTypeEnum("SQL");
 
-        /**
-         * Enum CBSL for value: "CBSL"
-         */
-        public static final QueryTypeEnum CBSL = new QueryTypeEnum("CBSL");
-
         private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, QueryTypeEnum> createStaticFields() {
             Map<String, QueryTypeEnum> map = new HashMap<>();
             map.put("SQL", SQL);
-            map.put("CBSL", CBSL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -144,7 +138,7 @@ public class AlertRule {
     private QueryTypeEnum queryType;
 
     /**
-     * status. ENABLED, DISABLED
+     * 启用状态，启用、停用。Status, enabled, disabled.
      */
     public static final class StatusEnum {
 
@@ -219,7 +213,7 @@ public class AlertRule {
     private StatusEnum status;
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      */
     public static final class SeverityEnum {
 
@@ -312,11 +306,6 @@ public class AlertRule {
     private SeverityEnum severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "accumulated_times")
-
-    private Integer accumulatedTimes;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_properties")
 
     private Map<String, String> customProperties = null;
@@ -342,7 +331,7 @@ public class AlertRule {
     }
 
     /**
-     * rule_id
+     * 告警规则 ID。Alert rule ID.
      * @return ruleId
      */
     public String getRuleId() {
@@ -359,7 +348,7 @@ public class AlertRule {
     }
 
     /**
-     * pipe_id
+     * 数据管道 ID。Pipe ID.
      * @return pipeId
      */
     public String getPipeId() {
@@ -376,7 +365,7 @@ public class AlertRule {
     }
 
     /**
-     * pipe_name
+     * 数据管道名称。Pipe name.
      * @return pipeName
      */
     public String getPipeName() {
@@ -393,7 +382,7 @@ public class AlertRule {
     }
 
     /**
-     * create_by
+     * 创建人。Create by.
      * @return createBy
      */
     public String getCreateBy() {
@@ -410,7 +399,7 @@ public class AlertRule {
     }
 
     /**
-     * create_time
+     * 创建时间。Create time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return createTime
@@ -429,7 +418,7 @@ public class AlertRule {
     }
 
     /**
-     * update_by
+     * 更新人。Update by.
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -446,7 +435,7 @@ public class AlertRule {
     }
 
     /**
-     * update_time
+     * 更新时间。Update time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return updateTime
@@ -465,7 +454,7 @@ public class AlertRule {
     }
 
     /**
-     * delete_time
+     * 删除时间。Delete time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return deleteTime
@@ -484,7 +473,7 @@ public class AlertRule {
     }
 
     /**
-     * rule_name
+     * 告警规则名称。Alert rule name.
      * @return ruleName
      */
     public String getRuleName() {
@@ -501,7 +490,7 @@ public class AlertRule {
     }
 
     /**
-     * query
+     * 查询语句。Query.
      * @return query
      */
     public String getQuery() {
@@ -518,7 +507,7 @@ public class AlertRule {
     }
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      * @return queryType
      */
     public QueryTypeEnum getQueryType() {
@@ -535,7 +524,7 @@ public class AlertRule {
     }
 
     /**
-     * status. ENABLED, DISABLED
+     * 启用状态，启用、停用。Status, enabled, disabled.
      * @return status
      */
     public StatusEnum getStatus() {
@@ -552,7 +541,7 @@ public class AlertRule {
     }
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      * @return severity
      */
     public SeverityEnum getSeverity() {
@@ -561,25 +550,6 @@ public class AlertRule {
 
     public void setSeverity(SeverityEnum severity) {
         this.severity = severity;
-    }
-
-    public AlertRule withAccumulatedTimes(Integer accumulatedTimes) {
-        this.accumulatedTimes = accumulatedTimes;
-        return this;
-    }
-
-    /**
-     * accumulated_times
-     * minimum: 1
-     * maximum: 1000
-     * @return accumulatedTimes
-     */
-    public Integer getAccumulatedTimes() {
-        return accumulatedTimes;
-    }
-
-    public void setAccumulatedTimes(Integer accumulatedTimes) {
-        this.accumulatedTimes = accumulatedTimes;
     }
 
     public AlertRule withCustomProperties(Map<String, String> customProperties) {
@@ -604,7 +574,7 @@ public class AlertRule {
     }
 
     /**
-     * custom_properties
+     * 自定义扩展信息。Custom properties.
      * @return customProperties
      */
     public Map<String, String> getCustomProperties() {
@@ -621,7 +591,7 @@ public class AlertRule {
     }
 
     /**
-     * event_grouping
+     * 告警分组。Event grouping.
      * @return eventGrouping
      */
     public Boolean getEventGrouping() {
@@ -680,7 +650,7 @@ public class AlertRule {
     }
 
     /**
-     * triggers
+     * 告警触发规则。Alert triggers.
      * @return triggers
      */
     public List<AlertRuleTrigger> getTriggers() {
@@ -707,7 +677,6 @@ public class AlertRule {
             && Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.query, that.query)
             && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.status, that.status)
             && Objects.equals(this.severity, that.severity)
-            && Objects.equals(this.accumulatedTimes, that.accumulatedTimes)
             && Objects.equals(this.customProperties, that.customProperties)
             && Objects.equals(this.eventGrouping, that.eventGrouping) && Objects.equals(this.schedule, that.schedule)
             && Objects.equals(this.triggers, that.triggers);
@@ -728,7 +697,6 @@ public class AlertRule {
             queryType,
             status,
             severity,
-            accumulatedTimes,
             customProperties,
             eventGrouping,
             schedule,
@@ -752,7 +720,6 @@ public class AlertRule {
         sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
-        sb.append("    accumulatedTimes: ").append(toIndentedString(accumulatedTimes)).append("\n");
         sb.append("    customProperties: ").append(toIndentedString(customProperties)).append("\n");
         sb.append("    eventGrouping: ").append(toIndentedString(eventGrouping)).append("\n");
         sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");

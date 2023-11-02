@@ -350,7 +350,7 @@ public class ListNatGatewaysRequest {
     }
 
     /**
-     * 公网NAT网关实例的状态。
+     * 公网NAT网关实例的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"INACTIVE\"：不可用
      * @return status
      */
     public List<StatusEnum> getStatus() {

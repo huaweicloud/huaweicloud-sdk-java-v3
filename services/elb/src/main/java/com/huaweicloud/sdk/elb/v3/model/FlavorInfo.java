@@ -97,7 +97,7 @@ public class FlavorInfo {
     }
 
     /**
-     * 带宽。单位：Mbit/s。
+     * 带宽。单位：Kbit/s。
      * @return bandwidth
      */
     public Integer getBandwidth() {

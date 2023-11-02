@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.dws.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.dws.v2.model.AddSnapshotCrossRegionPolicyRequest;
+import com.huaweicloud.sdk.dws.v2.model.AddSnapshotCrossRegionPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadQueueResponse;
 import com.huaweicloud.sdk.dws.v2.model.AssociateEipRequest;
@@ -23,6 +25,8 @@ import com.huaweicloud.sdk.dws.v2.model.CheckClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameResponse;
+import com.huaweicloud.sdk.dws.v2.model.CheckTableRestoreRequest;
+import com.huaweicloud.sdk.dws.v2.model.CheckTableRestoreResponse;
 import com.huaweicloud.sdk.dws.v2.model.CopySnapshotRequest;
 import com.huaweicloud.sdk.dws.v2.model.CopySnapshotResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateAlarmSubRequest;
@@ -59,16 +63,22 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbResponse;
+import com.huaweicloud.sdk.dws.v2.model.ExecuteClusterUpgradeActionRequest;
+import com.huaweicloud.sdk.dws.v2.model.ExecuteClusterUpgradeActionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteDatabaseOmUserActionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteDatabaseOmUserActionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteRedistributionClusterRequest;
@@ -141,6 +151,10 @@ import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListQuotasResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionPolicyRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionPolicyResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotPolicyRequest;
@@ -153,6 +167,10 @@ import com.huaweicloud.sdk.dws.v2.model.ListStatisticsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListStatisticsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListTagsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListTagsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListUpdatableVersionRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListUpdatableVersionResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListUpdateRecordRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListUpdateRecordResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListWorkloadQueueResponse;
 import com.huaweicloud.sdk.dws.v2.model.PauseDisasterRecoveryRequest;
@@ -167,6 +185,8 @@ import com.huaweicloud.sdk.dws.v2.model.RestoreClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterResponse;
+import com.huaweicloud.sdk.dws.v2.model.RestoreTableRequest;
+import com.huaweicloud.sdk.dws.v2.model.RestoreTableResponse;
 import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoRequest;
 import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionRequest;
@@ -183,10 +203,16 @@ import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryResponse;
+import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanResponse;
+import com.huaweicloud.sdk.dws.v2.model.StopWorkloadPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.StopWorkloadPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.SwitchFailoverDisasterRequest;
 import com.huaweicloud.sdk.dws.v2.model.SwitchFailoverDisasterResponse;
 import com.huaweicloud.sdk.dws.v2.model.SwitchOverClusterRequest;
@@ -225,6 +251,37 @@ public class DwsClient {
     public static ClientBuilder<DwsClient> newBuilder() {
         ClientBuilder<DwsClient> clientBuilder = new ClientBuilder<>(DwsClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 设置跨区域备份配置
+     *
+     * 该接口用于设置跨区域备份配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddSnapshotCrossRegionPolicyRequest 请求对象
+     * @return AddSnapshotCrossRegionPolicyResponse
+     */
+    public AddSnapshotCrossRegionPolicyResponse addSnapshotCrossRegionPolicy(
+        AddSnapshotCrossRegionPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.addSnapshotCrossRegionPolicy);
+    }
+
+    /**
+     * 设置跨区域备份配置
+     *
+     * 该接口用于设置跨区域备份配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddSnapshotCrossRegionPolicyRequest 请求对象
+     * @return SyncInvoker<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse>
+     */
+    public SyncInvoker<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse> addSnapshotCrossRegionPolicyInvoker(
+        AddSnapshotCrossRegionPolicyRequest request) {
+        return new SyncInvoker<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse>(request,
+            DwsMeta.addSnapshotCrossRegionPolicy, hcClient);
     }
 
     /**
@@ -532,6 +589,36 @@ public class DwsClient {
     public SyncInvoker<CheckDisasterNameRequest, CheckDisasterNameResponse> checkDisasterNameInvoker(
         CheckDisasterNameRequest request) {
         return new SyncInvoker<CheckDisasterNameRequest, CheckDisasterNameResponse>(request, DwsMeta.checkDisasterName,
+            hcClient);
+    }
+
+    /**
+     * 用户恢复表名检测
+     *
+     * 该接口用于用户恢复表名检测
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckTableRestoreRequest 请求对象
+     * @return CheckTableRestoreResponse
+     */
+    public CheckTableRestoreResponse checkTableRestore(CheckTableRestoreRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.checkTableRestore);
+    }
+
+    /**
+     * 用户恢复表名检测
+     *
+     * 该接口用于用户恢复表名检测
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckTableRestoreRequest 请求对象
+     * @return SyncInvoker<CheckTableRestoreRequest, CheckTableRestoreResponse>
+     */
+    public SyncInvoker<CheckTableRestoreRequest, CheckTableRestoreResponse> checkTableRestoreInvoker(
+        CheckTableRestoreRequest request) {
+        return new SyncInvoker<CheckTableRestoreRequest, CheckTableRestoreResponse>(request, DwsMeta.checkTableRestore,
             hcClient);
     }
 
@@ -1108,6 +1195,37 @@ public class DwsClient {
     }
 
     /**
+     * 删除跨区域备份配置
+     *
+     * 该接口用于删除跨区域备份配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSnapshotCrossRegionPolicyRequest 请求对象
+     * @return DeleteSnapshotCrossRegionPolicyResponse
+     */
+    public DeleteSnapshotCrossRegionPolicyResponse deleteSnapshotCrossRegionPolicy(
+        DeleteSnapshotCrossRegionPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.deleteSnapshotCrossRegionPolicy);
+    }
+
+    /**
+     * 删除跨区域备份配置
+     *
+     * 该接口用于删除跨区域备份配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSnapshotCrossRegionPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse>
+     */
+    public SyncInvoker<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse> deleteSnapshotCrossRegionPolicyInvoker(
+        DeleteSnapshotCrossRegionPolicyRequest request) {
+        return new SyncInvoker<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse>(request,
+            DwsMeta.deleteSnapshotCrossRegionPolicy, hcClient);
+    }
+
+    /**
      * 删除快照策略
      *
      * 该接口用于删除一个快照策略。
@@ -1135,6 +1253,36 @@ public class DwsClient {
         DeleteSnapshotPolicyRequest request) {
         return new SyncInvoker<DeleteSnapshotPolicyRequest, DeleteSnapshotPolicyResponse>(request,
             DwsMeta.deleteSnapshotPolicy, hcClient);
+    }
+
+    /**
+     * 删除工作负载计划
+     *
+     * 删除工作负载计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteWorkloadPlanRequest 请求对象
+     * @return DeleteWorkloadPlanResponse
+     */
+    public DeleteWorkloadPlanResponse deleteWorkloadPlan(DeleteWorkloadPlanRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.deleteWorkloadPlan);
+    }
+
+    /**
+     * 删除工作负载计划
+     *
+     * 删除工作负载计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteWorkloadPlanRequest 请求对象
+     * @return SyncInvoker<DeleteWorkloadPlanRequest, DeleteWorkloadPlanResponse>
+     */
+    public SyncInvoker<DeleteWorkloadPlanRequest, DeleteWorkloadPlanResponse> deleteWorkloadPlanInvoker(
+        DeleteWorkloadPlanRequest request) {
+        return new SyncInvoker<DeleteWorkloadPlanRequest, DeleteWorkloadPlanResponse>(request,
+            DwsMeta.deleteWorkloadPlan, hcClient);
     }
 
     /**
@@ -1225,6 +1373,36 @@ public class DwsClient {
         DisassociateElbRequest request) {
         return new SyncInvoker<DisassociateElbRequest, DisassociateElbResponse>(request, DwsMeta.disassociateElb,
             hcClient);
+    }
+
+    /**
+     * 下发集群升级相关操作
+     *
+     * 下发集群升级相关操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteClusterUpgradeActionRequest 请求对象
+     * @return ExecuteClusterUpgradeActionResponse
+     */
+    public ExecuteClusterUpgradeActionResponse executeClusterUpgradeAction(ExecuteClusterUpgradeActionRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.executeClusterUpgradeAction);
+    }
+
+    /**
+     * 下发集群升级相关操作
+     *
+     * 下发集群升级相关操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteClusterUpgradeActionRequest 请求对象
+     * @return SyncInvoker<ExecuteClusterUpgradeActionRequest, ExecuteClusterUpgradeActionResponse>
+     */
+    public SyncInvoker<ExecuteClusterUpgradeActionRequest, ExecuteClusterUpgradeActionResponse> executeClusterUpgradeActionInvoker(
+        ExecuteClusterUpgradeActionRequest request) {
+        return new SyncInvoker<ExecuteClusterUpgradeActionRequest, ExecuteClusterUpgradeActionResponse>(request,
+            DwsMeta.executeClusterUpgradeAction, hcClient);
     }
 
     /**
@@ -2292,6 +2470,67 @@ public class DwsClient {
     }
 
     /**
+     * 获取跨区域快照可用region
+     *
+     * 该接口用于获取跨区域快照可用region
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotCrossRegionRequest 请求对象
+     * @return ListSnapshotCrossRegionResponse
+     */
+    public ListSnapshotCrossRegionResponse listSnapshotCrossRegion(ListSnapshotCrossRegionRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listSnapshotCrossRegion);
+    }
+
+    /**
+     * 获取跨区域快照可用region
+     *
+     * 该接口用于获取跨区域快照可用region
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotCrossRegionRequest 请求对象
+     * @return SyncInvoker<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse>
+     */
+    public SyncInvoker<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse> listSnapshotCrossRegionInvoker(
+        ListSnapshotCrossRegionRequest request) {
+        return new SyncInvoker<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse>(request,
+            DwsMeta.listSnapshotCrossRegion, hcClient);
+    }
+
+    /**
+     * 查询所有跨区域快照配置
+     *
+     * 该接口用于查询所有跨区域快照配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotCrossRegionPolicyRequest 请求对象
+     * @return ListSnapshotCrossRegionPolicyResponse
+     */
+    public ListSnapshotCrossRegionPolicyResponse listSnapshotCrossRegionPolicy(
+        ListSnapshotCrossRegionPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listSnapshotCrossRegionPolicy);
+    }
+
+    /**
+     * 查询所有跨区域快照配置
+     *
+     * 该接口用于查询所有跨区域快照配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSnapshotCrossRegionPolicyRequest 请求对象
+     * @return SyncInvoker<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse>
+     */
+    public SyncInvoker<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse> listSnapshotCrossRegionPolicyInvoker(
+        ListSnapshotCrossRegionPolicyRequest request) {
+        return new SyncInvoker<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse>(request,
+            DwsMeta.listSnapshotCrossRegionPolicy, hcClient);
+    }
+
+    /**
      * 查询快照详情
      *
      * 该接口用于使用快照ID查询快照详情。
@@ -2465,6 +2704,66 @@ public class DwsClient {
      */
     public SyncInvoker<ListTagsRequest, ListTagsResponse> listTagsInvoker(ListTagsRequest request) {
         return new SyncInvoker<ListTagsRequest, ListTagsResponse>(request, DwsMeta.listTags, hcClient);
+    }
+
+    /**
+     * 获取集群可升级的目标版本
+     *
+     * 获取集群可升级的目标版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpdatableVersionRequest 请求对象
+     * @return ListUpdatableVersionResponse
+     */
+    public ListUpdatableVersionResponse listUpdatableVersion(ListUpdatableVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listUpdatableVersion);
+    }
+
+    /**
+     * 获取集群可升级的目标版本
+     *
+     * 获取集群可升级的目标版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpdatableVersionRequest 请求对象
+     * @return SyncInvoker<ListUpdatableVersionRequest, ListUpdatableVersionResponse>
+     */
+    public SyncInvoker<ListUpdatableVersionRequest, ListUpdatableVersionResponse> listUpdatableVersionInvoker(
+        ListUpdatableVersionRequest request) {
+        return new SyncInvoker<ListUpdatableVersionRequest, ListUpdatableVersionResponse>(request,
+            DwsMeta.listUpdatableVersion, hcClient);
+    }
+
+    /**
+     * 获取集群升级记录
+     *
+     * 通过此api获取当前集群升级记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpdateRecordRequest 请求对象
+     * @return ListUpdateRecordResponse
+     */
+    public ListUpdateRecordResponse listUpdateRecord(ListUpdateRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.listUpdateRecord);
+    }
+
+    /**
+     * 获取集群升级记录
+     *
+     * 通过此api获取当前集群升级记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpdateRecordRequest 请求对象
+     * @return SyncInvoker<ListUpdateRecordRequest, ListUpdateRecordResponse>
+     */
+    public SyncInvoker<ListUpdateRecordRequest, ListUpdateRecordResponse> listUpdateRecordInvoker(
+        ListUpdateRecordRequest request) {
+        return new SyncInvoker<ListUpdateRecordRequest, ListUpdateRecordResponse>(request, DwsMeta.listUpdateRecord,
+            hcClient);
     }
 
     /**
@@ -2671,6 +2970,34 @@ public class DwsClient {
         RestoreDisasterRequest request) {
         return new SyncInvoker<RestoreDisasterRequest, RestoreDisasterResponse>(request, DwsMeta.restoreDisaster,
             hcClient);
+    }
+
+    /**
+     * 恢复表
+     *
+     * 该接口用于恢复表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreTableRequest 请求对象
+     * @return RestoreTableResponse
+     */
+    public RestoreTableResponse restoreTable(RestoreTableRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.restoreTable);
+    }
+
+    /**
+     * 恢复表
+     *
+     * 该接口用于恢复表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreTableRequest 请求对象
+     * @return SyncInvoker<RestoreTableRequest, RestoreTableResponse>
+     */
+    public SyncInvoker<RestoreTableRequest, RestoreTableResponse> restoreTableInvoker(RestoreTableRequest request) {
+        return new SyncInvoker<RestoreTableRequest, RestoreTableResponse>(request, DwsMeta.restoreTable, hcClient);
     }
 
     /**
@@ -2912,6 +3239,36 @@ public class DwsClient {
     }
 
     /**
+     * 查询某个工作负载计划详细信息
+     *
+     * 查询某个工作负载计划详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowWorkloadPlanRequest 请求对象
+     * @return ShowWorkloadPlanResponse
+     */
+    public ShowWorkloadPlanResponse showWorkloadPlan(ShowWorkloadPlanRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showWorkloadPlan);
+    }
+
+    /**
+     * 查询某个工作负载计划详细信息
+     *
+     * 查询某个工作负载计划详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowWorkloadPlanRequest 请求对象
+     * @return SyncInvoker<ShowWorkloadPlanRequest, ShowWorkloadPlanResponse>
+     */
+    public SyncInvoker<ShowWorkloadPlanRequest, ShowWorkloadPlanResponse> showWorkloadPlanInvoker(
+        ShowWorkloadPlanRequest request) {
+        return new SyncInvoker<ShowWorkloadPlanRequest, ShowWorkloadPlanResponse>(request, DwsMeta.showWorkloadPlan,
+            hcClient);
+    }
+
+    /**
      * 集群缩容
      *
      * 该接口用于缩容集群。
@@ -2967,6 +3324,66 @@ public class DwsClient {
         StartDisasterRecoveryRequest request) {
         return new SyncInvoker<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse>(request,
             DwsMeta.startDisasterRecovery, hcClient);
+    }
+
+    /**
+     * 启动工作负载计划
+     *
+     * 启动工作负载计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartWorkloadPlanRequest 请求对象
+     * @return StartWorkloadPlanResponse
+     */
+    public StartWorkloadPlanResponse startWorkloadPlan(StartWorkloadPlanRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.startWorkloadPlan);
+    }
+
+    /**
+     * 启动工作负载计划
+     *
+     * 启动工作负载计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartWorkloadPlanRequest 请求对象
+     * @return SyncInvoker<StartWorkloadPlanRequest, StartWorkloadPlanResponse>
+     */
+    public SyncInvoker<StartWorkloadPlanRequest, StartWorkloadPlanResponse> startWorkloadPlanInvoker(
+        StartWorkloadPlanRequest request) {
+        return new SyncInvoker<StartWorkloadPlanRequest, StartWorkloadPlanResponse>(request, DwsMeta.startWorkloadPlan,
+            hcClient);
+    }
+
+    /**
+     * 停止工作负载计划
+     *
+     * 停止工作负载计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopWorkloadPlanRequest 请求对象
+     * @return StopWorkloadPlanResponse
+     */
+    public StopWorkloadPlanResponse stopWorkloadPlan(StopWorkloadPlanRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.stopWorkloadPlan);
+    }
+
+    /**
+     * 停止工作负载计划
+     *
+     * 停止工作负载计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopWorkloadPlanRequest 请求对象
+     * @return SyncInvoker<StopWorkloadPlanRequest, StopWorkloadPlanResponse>
+     */
+    public SyncInvoker<StopWorkloadPlanRequest, StopWorkloadPlanResponse> stopWorkloadPlanInvoker(
+        StopWorkloadPlanRequest request) {
+        return new SyncInvoker<StopWorkloadPlanRequest, StopWorkloadPlanResponse>(request, DwsMeta.stopWorkloadPlan,
+            hcClient);
     }
 
     /**

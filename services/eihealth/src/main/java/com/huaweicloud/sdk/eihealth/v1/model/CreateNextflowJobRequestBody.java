@@ -43,6 +43,11 @@ public class CreateNextflowJobRequestBody implements SdkFormDataBody {
 
     private FormDataFilePart params;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
     public CreateNextflowJobRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -144,6 +149,25 @@ public class CreateNextflowJobRequestBody implements SdkFormDataBody {
         this.params = params;
     }
 
+    public CreateNextflowJobRequestBody withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 作业的优先级,取值范围[0,9]，0最低，默认数值0
+     * minimum: 0
+     * maximum: 9
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
     public CreateNextflowJobRequestBody withParams(InputStream inputStream, String fileName, String contentType) {
         this.params = new FormDataFilePart(inputStream, fileName).withContentType(contentType);
         return this;
@@ -177,6 +201,9 @@ public class CreateNextflowJobRequestBody implements SdkFormDataBody {
                 if (params != null) {
                     put("params", params);
                 }
+                if (priority != null) {
+                    put("priority", new FormDataPart<>(priority));
+                }
             }
         };
     }
@@ -192,12 +219,12 @@ public class CreateNextflowJobRequestBody implements SdkFormDataBody {
         CreateNextflowJobRequestBody that = (CreateNextflowJobRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.labels, that.labels) && Objects.equals(this.workflowId, that.workflowId)
-            && Objects.equals(this.params, that.params);
+            && Objects.equals(this.params, that.params) && Objects.equals(this.priority, that.priority);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, labels, workflowId, params);
+        return Objects.hash(name, description, labels, workflowId, params, priority);
     }
 
     @Override
@@ -209,6 +236,7 @@ public class CreateNextflowJobRequestBody implements SdkFormDataBody {
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
         sb.append("    params: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

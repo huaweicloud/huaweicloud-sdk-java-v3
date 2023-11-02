@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -178,7 +179,7 @@ public class CreateRocketMqMigrationTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private String body;
+    private Map<String, Object> body = null;
 
     public CreateRocketMqMigrationTaskRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -248,20 +249,36 @@ public class CreateRocketMqMigrationTaskRequest {
         this.type = type;
     }
 
-    public CreateRocketMqMigrationTaskRequest withBody(String body) {
+    public CreateRocketMqMigrationTaskRequest withBody(Map<String, Object> body) {
         this.body = body;
         return this;
     }
 
+    public CreateRocketMqMigrationTaskRequest putBodyItem(String key, Object bodyItem) {
+        if (this.body == null) {
+            this.body = new HashMap<>();
+        }
+        this.body.put(key, bodyItem);
+        return this;
+    }
+
+    public CreateRocketMqMigrationTaskRequest withBody(Consumer<Map<String, Object>> bodySetter) {
+        if (this.body == null) {
+            this.body = new HashMap<>();
+        }
+        bodySetter.accept(this.body);
+        return this;
+    }
+
     /**
-     * Get body
+     * 元数据json文件。
      * @return body
      */
-    public String getBody() {
+    public Map<String, Object> getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    public void setBody(Map<String, Object> body) {
         this.body = body;
     }
 

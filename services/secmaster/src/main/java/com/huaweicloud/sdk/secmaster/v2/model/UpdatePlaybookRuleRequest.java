@@ -37,7 +37,7 @@ public class UpdatePlaybookRuleRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -54,7 +54,7 @@ public class UpdatePlaybookRuleRequest {
     }
 
     /**
-     * version Id value
+     * 剧本版本ID
      * @return versionId
      */
     public String getVersionId() {
@@ -71,7 +71,7 @@ public class UpdatePlaybookRuleRequest {
     }
 
     /**
-     * rule_id
+     * 剧本规则ID
      * @return ruleId
      */
     public String getRuleId() {

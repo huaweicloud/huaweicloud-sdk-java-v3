@@ -41,7 +41,7 @@ public class ModifyActionInfo {
     }
 
     /**
-     * The name, display only
+     * 名称
      * @return name
      */
     public String getName() {
@@ -58,7 +58,7 @@ public class ModifyActionInfo {
     }
 
     /**
-     * The description, display only
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -75,7 +75,7 @@ public class ModifyActionInfo {
     }
 
     /**
-     * Type of this action, script or aopworkflow.
+     * 类型，默认AOP_WORKFLOW.
      * @return actionType
      */
     public String getActionType() {
@@ -92,7 +92,7 @@ public class ModifyActionInfo {
     }
 
     /**
-     * action id.
+     * 剧本动作ID
      * @return actionId
      */
     public String getActionId() {
@@ -109,7 +109,7 @@ public class ModifyActionInfo {
     }
 
     /**
-     * sort_order
+     * 排序方式
      * @return sortOrder
      */
     public String getSortOrder() {

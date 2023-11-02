@@ -26,7 +26,7 @@ public class DeletePlaybookRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {

@@ -29,7 +29,7 @@ public class EnableAlertRuleRequest {
     }
 
     /**
-     * workspace_id
+     * 工作空间 ID。Workspace ID.
      * @return workspaceId
      */
     public String getWorkspaceId() {

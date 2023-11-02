@@ -32,6 +32,8 @@ import com.huaweicloud.sdk.core.internal.model.CreateTokenWithIdTokenResponse;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsResponse;
 import com.huaweicloud.sdk.core.utils.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -100,23 +102,25 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
                 return this;
             }
 
-            HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(getUsedIamEndpoint()));
+            String iamEndpoint = getUsedIamEndpoint();
+            HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(iamEndpoint));
 
             Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
             setDerivedPredicate(null);
 
+            Logger logger = LoggerFactory.getLogger(hcClient.getClass());
+            logger.info("domain id not found in BasicCredentials," +
+                    " trying to obtain domain id from IAM service: " + iamEndpoint);
             KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
             KeystoneListAuthDomainsResponse response = inner.syncInvokeHttp(request,
                     InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
             if (Objects.isNull(response)
                     || Objects.isNull(response.getDomains())
                     || response.getDomains().size() == 0) {
-                throw new SdkException("No domain id found, please select one of the following solutions:\n\t"
-                        + "1. Manually specify domain_id when initializing the credentials.\n\t"
-                        + "2. Use the domain account to grant the current account permissions of the IAM service.\n\t"
-                        + "3. Use AK/SK of the domain account.");
+                throw new SdkException(Constants.ErrorMessage.NO_DOMAIN_ID_FOUND);
             }
             domainId = response.getDomains().get(0).getId();
+            logger.info("success to obtain domain id: " + domainId);
             AuthCache.putAuth(akWithName, domainId);
 
             setDerivedPredicate(derivedPredicate);

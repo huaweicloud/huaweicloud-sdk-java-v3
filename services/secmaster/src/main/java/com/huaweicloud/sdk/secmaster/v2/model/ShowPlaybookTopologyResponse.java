@@ -35,7 +35,7 @@ public class ShowPlaybookTopologyResponse extends SdkResponse {
     }
 
     /**
-     * tatal count
+     * 总数
      * minimum: 0
      * maximum: 99999
      * @return count
@@ -70,7 +70,7 @@ public class ShowPlaybookTopologyResponse extends SdkResponse {
     }
 
     /**
-     * Playbook action instances list
+     * 流程实例列表
      * @return actionInstances
      */
     public List<ActionInstanceInfo> getActionInstances() {

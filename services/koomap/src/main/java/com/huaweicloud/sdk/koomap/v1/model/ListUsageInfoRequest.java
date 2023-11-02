@@ -31,7 +31,7 @@ public class ListUsageInfoRequest {
     }
 
     /**
-     * 查询的用量类型。 - DATA：时空专属存储服务占用空间大小。 - TASK：完成处理的成果影像数据大小以及完成处理任务次数。
+     * 查询的用量类型。 - DATA：时空专属存储服务占用空间大小。 - TASK：成功处理的成果影像数据大小以及成功处理任务次数。
      * @return usageType
      */
     public String getUsageType() {

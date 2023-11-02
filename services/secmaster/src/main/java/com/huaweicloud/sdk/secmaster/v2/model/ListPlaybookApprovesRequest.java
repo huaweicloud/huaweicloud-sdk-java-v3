@@ -31,7 +31,7 @@ public class ListPlaybookApprovesRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -48,7 +48,7 @@ public class ListPlaybookApprovesRequest {
     }
 
     /**
-     * Resource Id, PlaybookId or AopworkflowId
+     * 资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -65,7 +65,7 @@ public class ListPlaybookApprovesRequest {
     }
 
     /**
-     * PLAYBOOK, AOP_WORKFLOW
+     * 审核类型。（PLAYBOOK-剧本, AOP_WORKFLOW--流程)
      * @return approveType
      */
     public String getApproveType() {

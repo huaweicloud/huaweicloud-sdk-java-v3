@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Information of playbook version
+ * 创建剧本版本请求参数
  */
 public class CreatePlaybookVersionInfo {
 
@@ -79,7 +79,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * The description, display only
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -96,7 +96,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -113,7 +113,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * Playbook id.
+     * 剧本ID
      * @return playbookId
      */
     public String getPlaybookId() {
@@ -146,7 +146,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * Information of actions.
+     * 关联流程列表
      * @return actions
      */
     public List<ActionInfo> getActions() {
@@ -163,7 +163,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * dataclass id.
+     * 数据类ID
      * @return dataclassId
      */
     public String getDataclassId() {
@@ -214,7 +214,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * Strategy of action. event, timer
+     * 触发方式. EVENT--事件触发, TIMER--定时触发
      * @return triggerType
      */
     public String getTriggerType() {
@@ -231,7 +231,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * if trigger when dataobject is created
+     * 标识数据对象是否创建时触发剧本
      * @return dataobjectCreate
      */
     public Boolean getDataobjectCreate() {
@@ -248,7 +248,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * if trigger when dataobject is updated
+     * 标识数据对象是否更新时触发剧本
      * @return dataobjectUpdate
      */
     public Boolean getDataobjectUpdate() {
@@ -265,7 +265,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * if trigger when dataobject is deleted
+     * 标识数据对象是否删除时触发剧本
      * @return dataobjectDelete
      */
     public Boolean getDataobjectDelete() {
@@ -282,7 +282,7 @@ public class CreatePlaybookVersionInfo {
     }
 
     /**
-     * Strategy of action. sync or async
+     * 执行策略. 目前仅支持异步并发执行，对应值为ASYNC
      * @return actionStrategy
      */
     public String getActionStrategy() {

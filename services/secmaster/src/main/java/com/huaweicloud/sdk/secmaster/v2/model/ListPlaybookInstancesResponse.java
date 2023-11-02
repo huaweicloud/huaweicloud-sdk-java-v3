@@ -35,7 +35,7 @@ public class ListPlaybookInstancesResponse extends SdkResponse {
     }
 
     /**
-     * tatal count
+     * 总数
      * minimum: 0
      * maximum: 99999
      * @return count
@@ -70,7 +70,7 @@ public class ListPlaybookInstancesResponse extends SdkResponse {
     }
 
     /**
-     * list of informations of PlaybookInstanceInfo
+     * 剧本实例列表信息
      * @return instances
      */
     public List<PlaybookInstanceInfo> getInstances() {

@@ -12,31 +12,9 @@ import java.util.function.Consumer;
 public class InjectionConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "restartPod")
-
-    private Boolean restartPod;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespaces")
 
     private Selector namespaces;
-
-    public InjectionConfig withRestartPod(Boolean restartPod) {
-        this.restartPod = restartPod;
-        return this;
-    }
-
-    /**
-     * 是否重启pod
-     * @return restartPod
-     */
-    public Boolean getRestartPod() {
-        return restartPod;
-    }
-
-    public void setRestartPod(Boolean restartPod) {
-        this.restartPod = restartPod;
-    }
 
     public InjectionConfig withNamespaces(Selector namespaces) {
         this.namespaces = namespaces;
@@ -73,19 +51,18 @@ public class InjectionConfig {
             return false;
         }
         InjectionConfig that = (InjectionConfig) obj;
-        return Objects.equals(this.restartPod, that.restartPod) && Objects.equals(this.namespaces, that.namespaces);
+        return Objects.equals(this.namespaces, that.namespaces);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(restartPod, namespaces);
+        return Objects.hash(namespaces);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InjectionConfig {\n");
-        sb.append("    restartPod: ").append(toIndentedString(restartPod)).append("\n");
         sb.append("    namespaces: ").append(toIndentedString(namespaces)).append("\n");
         sb.append("}");
         return sb.toString();

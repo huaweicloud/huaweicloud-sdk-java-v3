@@ -25,7 +25,7 @@ public class DeleteIncidentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private BatchOrderAlertResult data;
+    private DeleteIncidentResponseBodyData data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
@@ -38,7 +38,7 @@ public class DeleteIncidentResponse extends SdkResponse {
     }
 
     /**
-     * Id value
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -55,7 +55,7 @@ public class DeleteIncidentResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -66,14 +66,14 @@ public class DeleteIncidentResponse extends SdkResponse {
         this.message = message;
     }
 
-    public DeleteIncidentResponse withData(BatchOrderAlertResult data) {
+    public DeleteIncidentResponse withData(DeleteIncidentResponseBodyData data) {
         this.data = data;
         return this;
     }
 
-    public DeleteIncidentResponse withData(Consumer<BatchOrderAlertResult> dataSetter) {
+    public DeleteIncidentResponse withData(Consumer<DeleteIncidentResponseBodyData> dataSetter) {
         if (this.data == null) {
-            this.data = new BatchOrderAlertResult();
+            this.data = new DeleteIncidentResponseBodyData();
             dataSetter.accept(this.data);
         }
 
@@ -84,11 +84,11 @@ public class DeleteIncidentResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public BatchOrderAlertResult getData() {
+    public DeleteIncidentResponseBodyData getData() {
         return data;
     }
 
-    public void setData(BatchOrderAlertResult data) {
+    public void setData(DeleteIncidentResponseBodyData data) {
         this.data = data;
     }
 

@@ -29,7 +29,7 @@ public class CreateAlertRuleSimulationRequestBody {
     private String query;
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      */
     public static final class QueryTypeEnum {
 
@@ -38,17 +38,11 @@ public class CreateAlertRuleSimulationRequestBody {
          */
         public static final QueryTypeEnum SQL = new QueryTypeEnum("SQL");
 
-        /**
-         * Enum CBSL for value: "CBSL"
-         */
-        public static final QueryTypeEnum CBSL = new QueryTypeEnum("CBSL");
-
         private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, QueryTypeEnum> createStaticFields() {
             Map<String, QueryTypeEnum> map = new HashMap<>();
             map.put("SQL", SQL);
-            map.put("CBSL", CBSL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -129,7 +123,7 @@ public class CreateAlertRuleSimulationRequestBody {
     }
 
     /**
-     * pipe_id
+     * 数据管道 ID。Pipe ID.
      * @return pipeId
      */
     public String getPipeId() {
@@ -146,7 +140,7 @@ public class CreateAlertRuleSimulationRequestBody {
     }
 
     /**
-     * query
+     * 查询语句。Query.
      * @return query
      */
     public String getQuery() {
@@ -163,7 +157,7 @@ public class CreateAlertRuleSimulationRequestBody {
     }
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      * @return queryType
      */
     public QueryTypeEnum getQueryType() {
@@ -180,7 +174,7 @@ public class CreateAlertRuleSimulationRequestBody {
     }
 
     /**
-     * from
+     * 开始时间。Start time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return from
@@ -199,7 +193,7 @@ public class CreateAlertRuleSimulationRequestBody {
     }
 
     /**
-     * from
+     * 结束时间。End time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return to
@@ -218,7 +212,7 @@ public class CreateAlertRuleSimulationRequestBody {
     }
 
     /**
-     * event_grouping
+     * 告警分组。Event grouping.
      * @return eventGrouping
      */
     public Boolean getEventGrouping() {
@@ -251,7 +245,7 @@ public class CreateAlertRuleSimulationRequestBody {
     }
 
     /**
-     * triggers
+     * 告警触发规则。Alert triggers.
      * @return triggers
      */
     public List<AlertRuleTrigger> getTriggers() {

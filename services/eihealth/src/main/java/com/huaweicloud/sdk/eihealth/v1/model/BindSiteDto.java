@@ -14,7 +14,7 @@ public class BindSiteDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "receptor")
 
-    private DrugFile receptor;
+    private ReceptorDrugFile receptor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bounding_box")
@@ -36,14 +36,14 @@ public class BindSiteDto {
 
     private Boolean removeLigand;
 
-    public BindSiteDto withReceptor(DrugFile receptor) {
+    public BindSiteDto withReceptor(ReceptorDrugFile receptor) {
         this.receptor = receptor;
         return this;
     }
 
-    public BindSiteDto withReceptor(Consumer<DrugFile> receptorSetter) {
+    public BindSiteDto withReceptor(Consumer<ReceptorDrugFile> receptorSetter) {
         if (this.receptor == null) {
-            this.receptor = new DrugFile();
+            this.receptor = new ReceptorDrugFile();
             receptorSetter.accept(this.receptor);
         }
 
@@ -54,11 +54,11 @@ public class BindSiteDto {
      * Get receptor
      * @return receptor
      */
-    public DrugFile getReceptor() {
+    public ReceptorDrugFile getReceptor() {
         return receptor;
     }
 
-    public void setReceptor(DrugFile receptor) {
+    public void setReceptor(ReceptorDrugFile receptor) {
         this.receptor = receptor;
     }
 

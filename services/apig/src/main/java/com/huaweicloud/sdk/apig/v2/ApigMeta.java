@@ -6690,6 +6690,13 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisV2Request::getPreciseSearch, (req, v) -> {
                 req.setPreciseSearch(v);
             }));
+        builder.<String>withRequestField("vpc_channel_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisV2Request::getVpcChannelName, (req, v) -> {
+                req.setVpcChannelName(v);
+            }));
 
         // response
 

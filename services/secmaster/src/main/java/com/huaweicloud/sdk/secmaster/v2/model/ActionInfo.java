@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Action info
+ * 剧本流程动作信息
  */
 public class ActionInfo {
 
@@ -36,11 +36,6 @@ public class ActionInfo {
     private String actionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sort_order")
-
-    private Integer sortOrder;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "playbook_id")
 
     private String playbookId;
@@ -61,7 +56,7 @@ public class ActionInfo {
     }
 
     /**
-     * Id value
+     * 剧本流程动作ID
      * @return id
      */
     public String getId() {
@@ -78,7 +73,7 @@ public class ActionInfo {
     }
 
     /**
-     * The name, display only
+     * 流程动作名称
      * @return name
      */
     public String getName() {
@@ -95,7 +90,7 @@ public class ActionInfo {
     }
 
     /**
-     * The description, display only
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -112,7 +107,7 @@ public class ActionInfo {
     }
 
     /**
-     * Type of action, aopworkflow, Script, Task and so on.
+     * 流程动作类型
      * @return actionType
      */
     public String getActionType() {
@@ -129,7 +124,7 @@ public class ActionInfo {
     }
 
     /**
-     * action id
+     * 流程ID
      * @return actionId
      */
     public String getActionId() {
@@ -138,25 +133,6 @@ public class ActionInfo {
 
     public void setActionId(String actionId) {
         this.actionId = actionId;
-    }
-
-    public ActionInfo withSortOrder(Integer sortOrder) {
-        this.sortOrder = sortOrder;
-        return this;
-    }
-
-    /**
-     * sort_order
-     * minimum: 0
-     * maximum: 21312312312
-     * @return sortOrder
-     */
-    public Integer getSortOrder() {
-        return sortOrder;
-    }
-
-    public void setSortOrder(Integer sortOrder) {
-        this.sortOrder = sortOrder;
     }
 
     public ActionInfo withPlaybookId(String playbookId) {
@@ -199,7 +175,7 @@ public class ActionInfo {
     }
 
     /**
-     * project_id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -221,16 +197,14 @@ public class ActionInfo {
         ActionInfo that = (ActionInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.actionType, that.actionType)
-            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.sortOrder, that.sortOrder)
-            && Objects.equals(this.playbookId, that.playbookId)
+            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.playbookId, that.playbookId)
             && Objects.equals(this.playbookVersionId, that.playbookVersionId)
             && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, description, actionType, actionId, sortOrder, playbookId, playbookVersionId, projectId);
+        return Objects.hash(id, name, description, actionType, actionId, playbookId, playbookVersionId, projectId);
     }
 
     @Override
@@ -242,7 +216,6 @@ public class ActionInfo {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
         sb.append("    actionId: ").append(toIndentedString(actionId)).append("\n");
-        sb.append("    sortOrder: ").append(toIndentedString(sortOrder)).append("\n");
         sb.append("    playbookId: ").append(toIndentedString(playbookId)).append("\n");
         sb.append("    playbookVersionId: ").append(toIndentedString(playbookVersionId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");

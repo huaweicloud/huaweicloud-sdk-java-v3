@@ -38,7 +38,7 @@ public class CreateIndicatorResponse extends SdkResponse {
     }
 
     /**
-     * Id value
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -55,7 +55,7 @@ public class CreateIndicatorResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {

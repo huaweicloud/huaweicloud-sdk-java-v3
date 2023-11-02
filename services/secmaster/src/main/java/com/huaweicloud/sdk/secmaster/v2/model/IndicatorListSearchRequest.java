@@ -24,11 +24,6 @@ public class IndicatorListSearchRequest {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataclass_id")
 
     private String dataclassId;
@@ -53,6 +48,16 @@ public class IndicatorListSearchRequest {
 
     private String sortBy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from_date")
+
+    private String fromDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "to_date")
+
+    private String toDate;
+
     public IndicatorListSearchRequest withIds(List<String> ids) {
         this.ids = ids;
         return this;
@@ -75,7 +80,7 @@ public class IndicatorListSearchRequest {
     }
 
     /**
-     * id list
+     * 指标ID列表
      * @return ids
      */
     public List<String> getIds() {
@@ -103,23 +108,6 @@ public class IndicatorListSearchRequest {
         this.name = name;
     }
 
-    public IndicatorListSearchRequest withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 类型（SIMULATION,PLAYBOOK,MANUAL,INSTANCE,DATA_SOURCE）
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public IndicatorListSearchRequest withDataclassId(String dataclassId) {
         this.dataclassId = dataclassId;
         return this;
@@ -143,7 +131,7 @@ public class IndicatorListSearchRequest {
     }
 
     /**
-     * search condition
+     * 查询条件
      * @return condition
      */
     public String getCondition() {
@@ -209,6 +197,40 @@ public class IndicatorListSearchRequest {
         this.sortBy = sortBy;
     }
 
+    public IndicatorListSearchRequest withFromDate(String fromDate) {
+        this.fromDate = fromDate;
+        return this;
+    }
+
+    /**
+     * 查询起始时间
+     * @return fromDate
+     */
+    public String getFromDate() {
+        return fromDate;
+    }
+
+    public void setFromDate(String fromDate) {
+        this.fromDate = fromDate;
+    }
+
+    public IndicatorListSearchRequest withToDate(String toDate) {
+        this.toDate = toDate;
+        return this;
+    }
+
+    /**
+     * 查询截止时间
+     * @return toDate
+     */
+    public String getToDate() {
+        return toDate;
+    }
+
+    public void setToDate(String toDate) {
+        this.toDate = toDate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -219,14 +241,15 @@ public class IndicatorListSearchRequest {
         }
         IndicatorListSearchRequest that = (IndicatorListSearchRequest) obj;
         return Objects.equals(this.ids, that.ids) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.dataclassId, that.dataclassId)
-            && Objects.equals(this.condition, that.condition) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortBy, that.sortBy);
+            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.fromDate, that.fromDate)
+            && Objects.equals(this.toDate, that.toDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ids, name, type, dataclassId, condition, offset, limit, sortBy);
+        return Objects.hash(ids, name, dataclassId, condition, offset, limit, sortBy, fromDate, toDate);
     }
 
     @Override
@@ -235,12 +258,13 @@ public class IndicatorListSearchRequest {
         sb.append("class IndicatorListSearchRequest {\n");
         sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
         sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
+        sb.append("    fromDate: ").append(toIndentedString(fromDate)).append("\n");
+        sb.append("    toDate: ").append(toIndentedString(toDate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

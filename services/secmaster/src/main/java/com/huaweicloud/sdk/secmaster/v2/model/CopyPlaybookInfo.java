@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Copy playbook
+ * 复制剧本信息
  */
 public class CopyPlaybookInfo {
 

@@ -44,6 +44,11 @@ public class ShowFepJobResponse extends SdkResponse {
 
     private JobResult jobResult;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "part_failed_reason")
+
+    private List<FailedReasonRecord> partFailedReason = null;
+
     public ShowFepJobResponse withBasicInfo(DrugJobDto basicInfo) {
         this.basicInfo = basicInfo;
         return this;
@@ -207,6 +212,39 @@ public class ShowFepJobResponse extends SdkResponse {
         this.jobResult = jobResult;
     }
 
+    public ShowFepJobResponse withPartFailedReason(List<FailedReasonRecord> partFailedReason) {
+        this.partFailedReason = partFailedReason;
+        return this;
+    }
+
+    public ShowFepJobResponse addPartFailedReasonItem(FailedReasonRecord partFailedReasonItem) {
+        if (this.partFailedReason == null) {
+            this.partFailedReason = new ArrayList<>();
+        }
+        this.partFailedReason.add(partFailedReasonItem);
+        return this;
+    }
+
+    public ShowFepJobResponse withPartFailedReason(Consumer<List<FailedReasonRecord>> partFailedReasonSetter) {
+        if (this.partFailedReason == null) {
+            this.partFailedReason = new ArrayList<>();
+        }
+        partFailedReasonSetter.accept(this.partFailedReason);
+        return this;
+    }
+
+    /**
+     * 部分失败原因和数量
+     * @return partFailedReason
+     */
+    public List<FailedReasonRecord> getPartFailedReason() {
+        return partFailedReason;
+    }
+
+    public void setPartFailedReason(List<FailedReasonRecord> partFailedReason) {
+        this.partFailedReason = partFailedReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -218,12 +256,13 @@ public class ShowFepJobResponse extends SdkResponse {
         ShowFepJobResponse that = (ShowFepJobResponse) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptor, that.receptor)
             && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.graph, that.graph)
-            && Objects.equals(this.params, that.params) && Objects.equals(this.jobResult, that.jobResult);
+            && Objects.equals(this.params, that.params) && Objects.equals(this.jobResult, that.jobResult)
+            && Objects.equals(this.partFailedReason, that.partFailedReason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, receptor, ligands, graph, params, jobResult);
+        return Objects.hash(basicInfo, receptor, ligands, graph, params, jobResult, partFailedReason);
     }
 
     @Override
@@ -236,6 +275,7 @@ public class ShowFepJobResponse extends SdkResponse {
         sb.append("    graph: ").append(toIndentedString(graph)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    jobResult: ").append(toIndentedString(jobResult)).append("\n");
+        sb.append("    partFailedReason: ").append(toIndentedString(partFailedReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

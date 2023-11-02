@@ -9,26 +9,26 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * search condition
+ * 搜索条件表达式
  */
 public class DataobjectSearchCondition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
 
-    private List<ConditonInfo> conditions = null;
+    private List<DataobjectSearchConditionConditions> conditions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logics")
 
-    private List<String> logics = null;
+    private List<DataobjectSearchConditionLogics> logics = null;
 
-    public DataobjectSearchCondition withConditions(List<ConditonInfo> conditions) {
+    public DataobjectSearchCondition withConditions(List<DataobjectSearchConditionConditions> conditions) {
         this.conditions = conditions;
         return this;
     }
 
-    public DataobjectSearchCondition addConditionsItem(ConditonInfo conditionsItem) {
+    public DataobjectSearchCondition addConditionsItem(DataobjectSearchConditionConditions conditionsItem) {
         if (this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -36,7 +36,8 @@ public class DataobjectSearchCondition {
         return this;
     }
 
-    public DataobjectSearchCondition withConditions(Consumer<List<ConditonInfo>> conditionsSetter) {
+    public DataobjectSearchCondition withConditions(
+        Consumer<List<DataobjectSearchConditionConditions>> conditionsSetter) {
         if (this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -45,23 +46,23 @@ public class DataobjectSearchCondition {
     }
 
     /**
-     * conditions
+     * 表达式列表
      * @return conditions
      */
-    public List<ConditonInfo> getConditions() {
+    public List<DataobjectSearchConditionConditions> getConditions() {
         return conditions;
     }
 
-    public void setConditions(List<ConditonInfo> conditions) {
+    public void setConditions(List<DataobjectSearchConditionConditions> conditions) {
         this.conditions = conditions;
     }
 
-    public DataobjectSearchCondition withLogics(List<String> logics) {
+    public DataobjectSearchCondition withLogics(List<DataobjectSearchConditionLogics> logics) {
         this.logics = logics;
         return this;
     }
 
-    public DataobjectSearchCondition addLogicsItem(String logicsItem) {
+    public DataobjectSearchCondition addLogicsItem(DataobjectSearchConditionLogics logicsItem) {
         if (this.logics == null) {
             this.logics = new ArrayList<>();
         }
@@ -69,7 +70,7 @@ public class DataobjectSearchCondition {
         return this;
     }
 
-    public DataobjectSearchCondition withLogics(Consumer<List<String>> logicsSetter) {
+    public DataobjectSearchCondition withLogics(Consumer<List<DataobjectSearchConditionLogics>> logicsSetter) {
         if (this.logics == null) {
             this.logics = new ArrayList<>();
         }
@@ -78,14 +79,14 @@ public class DataobjectSearchCondition {
     }
 
     /**
-     * conditions
+     * 表达式逻辑
      * @return logics
      */
-    public List<String> getLogics() {
+    public List<DataobjectSearchConditionLogics> getLogics() {
         return logics;
     }
 
-    public void setLogics(List<String> logics) {
+    public void setLogics(List<DataobjectSearchConditionLogics> logics) {
         this.logics = logics;
     }
 

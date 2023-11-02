@@ -1,13 +1,18 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Dataobject Search
+ * 搜索告警列表条件
  */
 public class DataobjectSearch {
 
@@ -26,10 +31,80 @@ public class DataobjectSearch {
 
     private String sortBy;
 
+    /**
+     * 排序方式：DESC | ASC
+     */
+    public static final class OrderEnum {
+
+        /**
+         * Enum DESC for value: "DESC"
+         */
+        public static final OrderEnum DESC = new OrderEnum("DESC");
+
+        /**
+         * Enum ASC for value: "ASC"
+         */
+        public static final OrderEnum ASC = new OrderEnum("ASC");
+
+        private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OrderEnum> createStaticFields() {
+            Map<String, OrderEnum> map = new HashMap<>();
+            map.put("DESC", DESC);
+            map.put("ASC", ASC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OrderEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OrderEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
+        }
+
+        public static OrderEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OrderEnum) {
+                return this.value.equals(((OrderEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
 
-    private String order;
+    private OrderEnum order;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from_date")
@@ -52,7 +127,7 @@ public class DataobjectSearch {
     }
 
     /**
-     * limit
+     * 分页大小
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -71,7 +146,7 @@ public class DataobjectSearch {
     }
 
     /**
-     * offset
+     * 偏移量
      * minimum: 0
      * maximum: 1000
      * @return offset
@@ -90,7 +165,7 @@ public class DataobjectSearch {
     }
 
     /**
-     * sortby
+     * 排序字段：create_time | update_time
      * @return sortBy
      */
     public String getSortBy() {
@@ -101,20 +176,20 @@ public class DataobjectSearch {
         this.sortBy = sortBy;
     }
 
-    public DataobjectSearch withOrder(String order) {
+    public DataobjectSearch withOrder(OrderEnum order) {
         this.order = order;
         return this;
     }
 
     /**
-     * order
+     * 排序方式：DESC | ASC
      * @return order
      */
-    public String getOrder() {
+    public OrderEnum getOrder() {
         return order;
     }
 
-    public void setOrder(String order) {
+    public void setOrder(OrderEnum order) {
         this.order = order;
     }
 
@@ -124,7 +199,7 @@ public class DataobjectSearch {
     }
 
     /**
-     * search start time
+     * 搜索开始时间
      * @return fromDate
      */
     public String getFromDate() {
@@ -141,7 +216,7 @@ public class DataobjectSearch {
     }
 
     /**
-     * search end time
+     * 搜索结束时间
      * @return toDate
      */
     public String getToDate() {

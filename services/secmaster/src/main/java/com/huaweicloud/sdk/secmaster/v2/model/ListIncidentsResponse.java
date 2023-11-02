@@ -47,7 +47,7 @@ public class ListIncidentsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<ListIncidentDetail> data = null;
+    private List<IncidentDetail> data = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
@@ -60,7 +60,7 @@ public class ListIncidentsResponse extends SdkResponse {
     }
 
     /**
-     * Id value
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -77,7 +77,7 @@ public class ListIncidentsResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -94,9 +94,9 @@ public class ListIncidentsResponse extends SdkResponse {
     }
 
     /**
-     * tatal count
+     * 事件总数
      * minimum: 0
-     * maximum: 99999
+     * maximum: 10000
      * @return total
      */
     public Integer getTotal() {
@@ -113,9 +113,9 @@ public class ListIncidentsResponse extends SdkResponse {
     }
 
     /**
-     * 当前页大小
+     * 分页大小
      * minimum: 0
-     * maximum: 1000
+     * maximum: 10000
      * @return limit
      */
     public Integer getLimit() {
@@ -132,9 +132,9 @@ public class ListIncidentsResponse extends SdkResponse {
     }
 
     /**
-     * 当前页码
+     * 偏移量
      * minimum: 0
-     * maximum: 1000
+     * maximum: 10000
      * @return offset
      */
     public Integer getOffset() {
@@ -151,7 +151,7 @@ public class ListIncidentsResponse extends SdkResponse {
     }
 
     /**
-     * success
+     * 是否成功
      * @return success
      */
     public Boolean getSuccess() {
@@ -162,12 +162,12 @@ public class ListIncidentsResponse extends SdkResponse {
         this.success = success;
     }
 
-    public ListIncidentsResponse withData(List<ListIncidentDetail> data) {
+    public ListIncidentsResponse withData(List<IncidentDetail> data) {
         this.data = data;
         return this;
     }
 
-    public ListIncidentsResponse addDataItem(ListIncidentDetail dataItem) {
+    public ListIncidentsResponse addDataItem(IncidentDetail dataItem) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -175,7 +175,7 @@ public class ListIncidentsResponse extends SdkResponse {
         return this;
     }
 
-    public ListIncidentsResponse withData(Consumer<List<ListIncidentDetail>> dataSetter) {
+    public ListIncidentsResponse withData(Consumer<List<IncidentDetail>> dataSetter) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -187,11 +187,11 @@ public class ListIncidentsResponse extends SdkResponse {
      * 事件列表
      * @return data
      */
-    public List<ListIncidentDetail> getData() {
+    public List<IncidentDetail> getData() {
         return data;
     }
 
-    public void setData(List<ListIncidentDetail> data) {
+    public void setData(List<IncidentDetail> data) {
         this.data = data;
     }
 

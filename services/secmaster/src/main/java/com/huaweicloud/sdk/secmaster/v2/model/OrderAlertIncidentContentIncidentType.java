@@ -16,19 +16,14 @@ public class OrderAlertIncidentContentIncidentType {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "layoutId")
+    @JsonProperty(value = "category")
 
-    private String layoutId;
+    private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_type")
 
     private String incidentType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "category")
-
-    private String category;
 
     public OrderAlertIncidentContentIncidentType withId(String id) {
         this.id = id;
@@ -36,7 +31,7 @@ public class OrderAlertIncidentContentIncidentType {
     }
 
     /**
-     * Id value
+     * 事件类型id
      * @return id
      */
     public String getId() {
@@ -47,47 +42,13 @@ public class OrderAlertIncidentContentIncidentType {
         this.id = id;
     }
 
-    public OrderAlertIncidentContentIncidentType withLayoutId(String layoutId) {
-        this.layoutId = layoutId;
-        return this;
-    }
-
-    /**
-     * Id value
-     * @return layoutId
-     */
-    public String getLayoutId() {
-        return layoutId;
-    }
-
-    public void setLayoutId(String layoutId) {
-        this.layoutId = layoutId;
-    }
-
-    public OrderAlertIncidentContentIncidentType withIncidentType(String incidentType) {
-        this.incidentType = incidentType;
-        return this;
-    }
-
-    /**
-     * Id value
-     * @return incidentType
-     */
-    public String getIncidentType() {
-        return incidentType;
-    }
-
-    public void setIncidentType(String incidentType) {
-        this.incidentType = incidentType;
-    }
-
     public OrderAlertIncidentContentIncidentType withCategory(String category) {
         this.category = category;
         return this;
     }
 
     /**
-     * Id value
+     * 事件类型父类
      * @return category
      */
     public String getCategory() {
@@ -96,6 +57,23 @@ public class OrderAlertIncidentContentIncidentType {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public OrderAlertIncidentContentIncidentType withIncidentType(String incidentType) {
+        this.incidentType = incidentType;
+        return this;
+    }
+
+    /**
+     * 事件类型子类
+     * @return incidentType
+     */
+    public String getIncidentType() {
+        return incidentType;
+    }
+
+    public void setIncidentType(String incidentType) {
+        this.incidentType = incidentType;
     }
 
     @Override
@@ -107,13 +85,13 @@ public class OrderAlertIncidentContentIncidentType {
             return false;
         }
         OrderAlertIncidentContentIncidentType that = (OrderAlertIncidentContentIncidentType) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.layoutId, that.layoutId)
-            && Objects.equals(this.incidentType, that.incidentType) && Objects.equals(this.category, that.category);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.incidentType, that.incidentType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, layoutId, incidentType, category);
+        return Objects.hash(id, category, incidentType);
     }
 
     @Override
@@ -121,9 +99,8 @@ public class OrderAlertIncidentContentIncidentType {
         StringBuilder sb = new StringBuilder();
         sb.append("class OrderAlertIncidentContentIncidentType {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    layoutId: ").append(toIndentedString(layoutId)).append("\n");
-        sb.append("    incidentType: ").append(toIndentedString(incidentType)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    incidentType: ").append(toIndentedString(incidentType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

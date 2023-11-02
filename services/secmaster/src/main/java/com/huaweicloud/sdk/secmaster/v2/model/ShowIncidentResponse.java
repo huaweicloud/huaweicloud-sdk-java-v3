@@ -25,7 +25,7 @@ public class ShowIncidentResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private ShowIncidentDetail data;
+    private IncidentDetail data;
 
     public ShowIncidentResponse withCode(String code) {
         this.code = code;
@@ -33,7 +33,7 @@ public class ShowIncidentResponse extends SdkResponse {
     }
 
     /**
-     * Id value
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -50,7 +50,7 @@ public class ShowIncidentResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -61,14 +61,14 @@ public class ShowIncidentResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowIncidentResponse withData(ShowIncidentDetail data) {
+    public ShowIncidentResponse withData(IncidentDetail data) {
         this.data = data;
         return this;
     }
 
-    public ShowIncidentResponse withData(Consumer<ShowIncidentDetail> dataSetter) {
+    public ShowIncidentResponse withData(Consumer<IncidentDetail> dataSetter) {
         if (this.data == null) {
-            this.data = new ShowIncidentDetail();
+            this.data = new IncidentDetail();
             dataSetter.accept(this.data);
         }
 
@@ -79,11 +79,11 @@ public class ShowIncidentResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public ShowIncidentDetail getData() {
+    public IncidentDetail getData() {
         return data;
     }
 
-    public void setData(ShowIncidentDetail data) {
+    public void setData(IncidentDetail data) {
         this.data = data;
     }
 

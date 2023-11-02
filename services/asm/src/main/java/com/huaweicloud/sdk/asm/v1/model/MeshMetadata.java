@@ -35,9 +35,9 @@ public class MeshMetadata {
     private Map<String, String> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "createTimestamp")
+    @JsonProperty(value = "creationTimestamp")
 
-    private OffsetDateTime createTimestamp;
+    private OffsetDateTime creationTimestamp;
 
     public MeshMetadata withName(String name) {
         this.name = name;
@@ -45,7 +45,7 @@ public class MeshMetadata {
     }
 
     /**
-     * 网格名称。 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围4-64位，且不能以中划线(-)结尾。
+     * 网格名称。 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围4-64位，且不能以中划线(-)结尾
      * @return name
      */
     public String getName() {
@@ -128,7 +128,7 @@ public class MeshMetadata {
     }
 
     /**
-     * 网格标签，由key/value组成：   ```  \"annotations\": {    \"key1\" : \"value1\",    \"key2\" : \"value2\" }  ```
+     * 网格标签，由key/value组成：   ```  \"labels\": {    \"key1\" : \"value1\",    \"key2\" : \"value2\" }  ```
      * @return labels
      */
     public Map<String, String> getLabels() {
@@ -139,21 +139,21 @@ public class MeshMetadata {
         this.labels = labels;
     }
 
-    public MeshMetadata withCreateTimestamp(OffsetDateTime createTimestamp) {
-        this.createTimestamp = createTimestamp;
+    public MeshMetadata withCreationTimestamp(OffsetDateTime creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
         return this;
     }
 
     /**
      * 网格创建时间
-     * @return createTimestamp
+     * @return creationTimestamp
      */
-    public OffsetDateTime getCreateTimestamp() {
-        return createTimestamp;
+    public OffsetDateTime getCreationTimestamp() {
+        return creationTimestamp;
     }
 
-    public void setCreateTimestamp(OffsetDateTime createTimestamp) {
-        this.createTimestamp = createTimestamp;
+    public void setCreationTimestamp(OffsetDateTime creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
     }
 
     @Override
@@ -167,12 +167,12 @@ public class MeshMetadata {
         MeshMetadata that = (MeshMetadata) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.uid, that.uid)
             && Objects.equals(this.annotations, that.annotations) && Objects.equals(this.labels, that.labels)
-            && Objects.equals(this.createTimestamp, that.createTimestamp);
+            && Objects.equals(this.creationTimestamp, that.creationTimestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, uid, annotations, labels, createTimestamp);
+        return Objects.hash(name, uid, annotations, labels, creationTimestamp);
     }
 
     @Override
@@ -183,7 +183,7 @@ public class MeshMetadata {
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
-        sb.append("    createTimestamp: ").append(toIndentedString(createTimestamp)).append("\n");
+        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

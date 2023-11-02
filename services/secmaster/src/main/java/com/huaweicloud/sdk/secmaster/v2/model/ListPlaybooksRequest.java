@@ -21,11 +21,6 @@ public class ListPlaybooksRequest {
     private String searchTxt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "component_id")
-
-    private String componentId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
     private Boolean enabled;
@@ -61,7 +56,7 @@ public class ListPlaybooksRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -89,23 +84,6 @@ public class ListPlaybooksRequest {
         this.searchTxt = searchTxt;
     }
 
-    public ListPlaybooksRequest withComponentId(String componentId) {
-        this.componentId = componentId;
-        return this;
-    }
-
-    /**
-     * component id.
-     * @return componentId
-     */
-    public String getComponentId() {
-        return componentId;
-    }
-
-    public void setComponentId(String componentId) {
-        this.componentId = componentId;
-    }
-
     public ListPlaybooksRequest withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -129,7 +107,7 @@ public class ListPlaybooksRequest {
     }
 
     /**
-     * request offset, from 0
+     * 分页查询参数。用于指定查询结果的起始位置，从0开始
      * minimum: 0
      * maximum: 999999
      * @return offset
@@ -148,7 +126,7 @@ public class ListPlaybooksRequest {
     }
 
     /**
-     * request limit size
+     * 分页查询参数，用于指定一次查询最多的结果数，从1开始
      * minimum: 1
      * maximum: 999999
      * @return limit
@@ -222,16 +200,14 @@ public class ListPlaybooksRequest {
         }
         ListPlaybooksRequest that = (ListPlaybooksRequest) obj;
         return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.searchTxt, that.searchTxt)
-            && Objects.equals(this.componentId, that.componentId) && Objects.equals(this.enabled, that.enabled)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.description, that.description)
             && Objects.equals(this.dataclassName, that.dataclassName) && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(workspaceId, searchTxt, componentId, enabled, offset, limit, description, dataclassName, name);
+        return Objects.hash(workspaceId, searchTxt, enabled, offset, limit, description, dataclassName, name);
     }
 
     @Override
@@ -240,7 +216,6 @@ public class ListPlaybooksRequest {
         sb.append("class ListPlaybooksRequest {\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    searchTxt: ").append(toIndentedString(searchTxt)).append("\n");
-        sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

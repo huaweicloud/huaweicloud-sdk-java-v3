@@ -50,6 +50,8 @@ import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.RotateSecretRequest;
+import com.huaweicloud.sdk.csms.v1.model.RotateSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretRequest;
@@ -611,6 +613,30 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreSecretRequest::getSecretName, (req, v) -> {
+                req.setSecretName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RotateSecretRequest, RotateSecretResponse> rotateSecret = genForrotateSecret();
+
+    private static HttpRequestDef<RotateSecretRequest, RotateSecretResponse> genForrotateSecret() {
+        // basic
+        HttpRequestDef.Builder<RotateSecretRequest, RotateSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RotateSecretRequest.class, RotateSecretResponse.class)
+                .withName("RotateSecret")
+                .withUri("/v1/{project_id}/secrets/{secret_name}/rotate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("secret_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RotateSecretRequest::getSecretName, (req, v) -> {
                 req.setSecretName(v);
             }));
 

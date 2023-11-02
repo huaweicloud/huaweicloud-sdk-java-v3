@@ -22,7 +22,7 @@ public class RecognizeDrugReceptorPocketResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pockets")
 
-    private List<BoundingBoxDto> pockets = null;
+    private List<DrugBoundingBoxDto> pockets = null;
 
     public RecognizeDrugReceptorPocketResponse withMode(RecognizeReceptorPocketMode mode) {
         this.mode = mode;
@@ -41,12 +41,12 @@ public class RecognizeDrugReceptorPocketResponse extends SdkResponse {
         this.mode = mode;
     }
 
-    public RecognizeDrugReceptorPocketResponse withPockets(List<BoundingBoxDto> pockets) {
+    public RecognizeDrugReceptorPocketResponse withPockets(List<DrugBoundingBoxDto> pockets) {
         this.pockets = pockets;
         return this;
     }
 
-    public RecognizeDrugReceptorPocketResponse addPocketsItem(BoundingBoxDto pocketsItem) {
+    public RecognizeDrugReceptorPocketResponse addPocketsItem(DrugBoundingBoxDto pocketsItem) {
         if (this.pockets == null) {
             this.pockets = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class RecognizeDrugReceptorPocketResponse extends SdkResponse {
         return this;
     }
 
-    public RecognizeDrugReceptorPocketResponse withPockets(Consumer<List<BoundingBoxDto>> pocketsSetter) {
+    public RecognizeDrugReceptorPocketResponse withPockets(Consumer<List<DrugBoundingBoxDto>> pocketsSetter) {
         if (this.pockets == null) {
             this.pockets = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class RecognizeDrugReceptorPocketResponse extends SdkResponse {
      * 口袋列表
      * @return pockets
      */
-    public List<BoundingBoxDto> getPockets() {
+    public List<DrugBoundingBoxDto> getPockets() {
         return pockets;
     }
 
-    public void setPockets(List<BoundingBoxDto> pockets) {
+    public void setPockets(List<DrugBoundingBoxDto> pockets) {
         this.pockets = pockets;
     }
 

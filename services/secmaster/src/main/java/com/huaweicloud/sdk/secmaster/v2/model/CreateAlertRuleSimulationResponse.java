@@ -32,7 +32,7 @@ public class CreateAlertRuleSimulationResponse extends SdkResponse {
     }
 
     /**
-     * alert_count
+     * 告警数量。Alert count.
      * minimum: 0
      * maximum: 100
      * @return alertCount
@@ -51,7 +51,7 @@ public class CreateAlertRuleSimulationResponse extends SdkResponse {
     }
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      * @return severity
      */
     public String getSeverity() {

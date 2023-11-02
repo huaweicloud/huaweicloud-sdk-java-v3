@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceReq
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobRequest;
@@ -549,6 +551,36 @@ public class GaussDBforopenGaussClient {
         DeleteConfigurationRequest request) {
         return new SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>(request,
             GaussDBforopenGaussMeta.deleteConfiguration, hcClient);
+    }
+
+    /**
+     * 删除数据库
+     *
+     * 删除指定实例的数据库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDatabaseRequest 请求对象
+     * @return DeleteDatabaseResponse
+     */
+    public DeleteDatabaseResponse deleteDatabase(DeleteDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.deleteDatabase);
+    }
+
+    /**
+     * 删除数据库
+     *
+     * 删除指定实例的数据库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDatabaseRequest 请求对象
+     * @return SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>
+     */
+    public SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabaseInvoker(
+        DeleteDatabaseRequest request) {
+        return new SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>(request,
+            GaussDBforopenGaussMeta.deleteDatabase, hcClient);
     }
 
     /**

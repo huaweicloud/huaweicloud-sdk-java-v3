@@ -106,6 +106,30 @@ public class KvsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RenameKvRequest, RenameKvResponse> renameKv = genForrenameKv();
+
+    private static HttpRequestDef<RenameKvRequest, RenameKvResponse> genForrenameKv() {
+        // basic
+        HttpRequestDef.Builder<RenameKvRequest, RenameKvResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RenameKvRequest.class, RenameKvResponse.class)
+                .withName("RenameKv")
+                .withUri("/v1/{project_id}/rename-kv")
+                .withContentType("application/bson");
+
+        // requests
+        builder.<String>withRequestField("store_name",
+            LocationType.Cname,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RenameKvRequest::getStoreName, (req, v) -> {
+                req.setStoreName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> batchGetKv = genForbatchGetKv();
 
     private static HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> genForbatchGetKv() {
@@ -218,30 +242,6 @@ public class KvsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PutKvRequest::getStoreName, (req, v) -> {
-                req.setStoreName(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<RenameKvRequest, RenameKvResponse> renameKv = genForrenameKv();
-
-    private static HttpRequestDef<RenameKvRequest, RenameKvResponse> genForrenameKv() {
-        // basic
-        HttpRequestDef.Builder<RenameKvRequest, RenameKvResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RenameKvRequest.class, RenameKvResponse.class)
-                .withName("RenameKv")
-                .withUri("/v1/{project_id}/rename-kv")
-                .withContentType("application/bson");
-
-        // requests
-        builder.<String>withRequestField("store_name",
-            LocationType.Cname,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RenameKvRequest::getStoreName, (req, v) -> {
                 req.setStoreName(v);
             }));
 

@@ -35,7 +35,7 @@ public class ListMeshesResponse extends SdkResponse {
     }
 
     /**
-     * Get apiVersion
+     * API版本，固定值“v1”，该值不可修改
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -52,7 +52,7 @@ public class ListMeshesResponse extends SdkResponse {
     }
 
     /**
-     * Get kind
+     * API类型，固定值“MeshList”，该值不可修改
      * @return kind
      */
     public String getKind() {
@@ -85,7 +85,7 @@ public class ListMeshesResponse extends SdkResponse {
     }
 
     /**
-     * Get items
+     * 网格列表
      * @return items
      */
     public List<Mesh> getItems() {

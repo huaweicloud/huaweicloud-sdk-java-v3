@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Response of Playbook Info Ref
+ * 剧本信息
  */
 public class PlaybookInfoRef {
 
@@ -36,7 +36,7 @@ public class PlaybookInfoRef {
     }
 
     /**
-     * Id value
+     * 剧本ID
      * @return id
      */
     public String getId() {
@@ -53,7 +53,7 @@ public class PlaybookInfoRef {
     }
 
     /**
-     * Id value
+     * 剧本版本ID
      * @return versionId
      */
     public String getVersionId() {
@@ -70,7 +70,7 @@ public class PlaybookInfoRef {
     }
 
     /**
-     * Id value
+     * 名称
      * @return name
      */
     public String getName() {
@@ -87,7 +87,7 @@ public class PlaybookInfoRef {
     }
 
     /**
-     * version
+     * 版本
      * @return version
      */
     public String getVersion() {

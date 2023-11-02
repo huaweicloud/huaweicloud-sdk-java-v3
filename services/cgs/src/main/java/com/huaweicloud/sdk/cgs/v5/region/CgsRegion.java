@@ -14,7 +14,7 @@ public class CgsRegion {
 
     public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://cgs.cn-south-4.myhuaweicloud.com");
 
-    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://hss.ae-ad-1.myhuaweicloud.com");
+    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://cgs.ae-ad-1.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CGS");
 

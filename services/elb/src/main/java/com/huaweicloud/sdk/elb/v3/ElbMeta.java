@@ -1769,6 +1769,13 @@ public class ElbMeta {
             f -> f.withMarshaller(ListListenersRequest::getTransparentClientIpEnable, (req, v) -> {
                 req.setTransparentClientIpEnable(v);
             }));
+        builder.<Boolean>withRequestField("proxy_protocol_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListListenersRequest::getProxyProtocolEnable, (req, v) -> {
+                req.setProxyProtocolEnable(v);
+            }));
         builder.<Boolean>withRequestField("enhance_l7policy_enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

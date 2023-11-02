@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Information of playbook
+ * 剧本详情信息
  */
 public class PlaybookInfo {
 
@@ -106,7 +106,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * Id value
+     * 剧本ID
      * @return id
      */
     public String getId() {
@@ -123,7 +123,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * The name, display only
+     * 剧本名称
      * @return name
      */
     public String getName() {
@@ -140,7 +140,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * The description, display only
+     * 描述信息
      * @return description
      */
     public String getDescription() {
@@ -157,7 +157,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * Create time
+     * 剧本创建时间
      * @return createTime
      */
     public String getCreateTime() {
@@ -174,7 +174,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * Update time
+     * 剧本更新时间
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -191,7 +191,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * Project id value
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -208,7 +208,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * version Id value
+     * 剧本版本ID
      * @return versionId
      */
     public String getVersionId() {
@@ -225,7 +225,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * If is enabled, false for disenabled, true for enabled
+     * 是否启用
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -242,7 +242,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -259,7 +259,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * Role required for approve
+     * 审核用户角色
      * @return approveRole
      */
     public String getApproveRole() {
@@ -293,7 +293,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * Role required for edit
+     * 编辑用户角色
      * @return editRole
      */
     public String getEditRole() {
@@ -310,7 +310,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * Owner id
+     * 所有者ID
      * @return ownerId
      */
     public String getOwnerId() {
@@ -327,7 +327,7 @@ public class PlaybookInfo {
     }
 
     /**
-     * version
+     * 版本号
      * @return version
      */
     public String getVersion() {

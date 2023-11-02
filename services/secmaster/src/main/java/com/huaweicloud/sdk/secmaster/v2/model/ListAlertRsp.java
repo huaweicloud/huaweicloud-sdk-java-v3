@@ -91,7 +91,7 @@ public class ListAlertRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_list")
 
-    private List<ShowAlertRspNetworkList> networkList = null;
+    private List<ListAlertRspNetworkList> networkList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_list")
@@ -116,7 +116,7 @@ public class ListAlertRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sla")
 
-    private Integer sla;
+    private String sla;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
@@ -146,7 +146,7 @@ public class ListAlertRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simulation")
 
-    private Boolean simulation;
+    private String simulation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actor")
@@ -186,7 +186,7 @@ public class ListAlertRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process")
 
-    private List<ShowAlertRspProcess> process = null;
+    private List<ListAlertRspProcess> process = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_info")
@@ -492,12 +492,12 @@ public class ListAlertRsp {
         this.alertType = alertType;
     }
 
-    public ListAlertRsp withNetworkList(List<ShowAlertRspNetworkList> networkList) {
+    public ListAlertRsp withNetworkList(List<ListAlertRspNetworkList> networkList) {
         this.networkList = networkList;
         return this;
     }
 
-    public ListAlertRsp addNetworkListItem(ShowAlertRspNetworkList networkListItem) {
+    public ListAlertRsp addNetworkListItem(ListAlertRspNetworkList networkListItem) {
         if (this.networkList == null) {
             this.networkList = new ArrayList<>();
         }
@@ -505,7 +505,7 @@ public class ListAlertRsp {
         return this;
     }
 
-    public ListAlertRsp withNetworkList(Consumer<List<ShowAlertRspNetworkList>> networkListSetter) {
+    public ListAlertRsp withNetworkList(Consumer<List<ListAlertRspNetworkList>> networkListSetter) {
         if (this.networkList == null) {
             this.networkList = new ArrayList<>();
         }
@@ -517,11 +517,11 @@ public class ListAlertRsp {
      * network_list
      * @return networkList
      */
-    public List<ShowAlertRspNetworkList> getNetworkList() {
+    public List<ListAlertRspNetworkList> getNetworkList() {
         return networkList;
     }
 
-    public void setNetworkList(List<ShowAlertRspNetworkList> networkList) {
+    public void setNetworkList(List<ListAlertRspNetworkList> networkList) {
         this.networkList = networkList;
     }
 
@@ -618,22 +618,20 @@ public class ListAlertRsp {
         this.handleStatus = handleStatus;
     }
 
-    public ListAlertRsp withSla(Integer sla) {
+    public ListAlertRsp withSla(String sla) {
         this.sla = sla;
         return this;
     }
 
     /**
      * sla
-     * minimum: 0
-     * maximum: 65535
      * @return sla
      */
-    public Integer getSla() {
+    public String getSla() {
         return sla;
     }
 
-    public void setSla(Integer sla) {
+    public void setSla(String sla) {
         this.sla = sla;
     }
 
@@ -722,7 +720,7 @@ public class ListAlertRsp {
         this.ppdrPhase = ppdrPhase;
     }
 
-    public ListAlertRsp withSimulation(Boolean simulation) {
+    public ListAlertRsp withSimulation(String simulation) {
         this.simulation = simulation;
         return this;
     }
@@ -731,11 +729,11 @@ public class ListAlertRsp {
      * 是否为调试事件.
      * @return simulation
      */
-    public Boolean getSimulation() {
+    public String getSimulation() {
         return simulation;
     }
 
-    public void setSimulation(Boolean simulation) {
+    public void setSimulation(String simulation) {
         this.simulation = simulation;
     }
 
@@ -867,12 +865,12 @@ public class ListAlertRsp {
         this.systemInfo = systemInfo;
     }
 
-    public ListAlertRsp withProcess(List<ShowAlertRspProcess> process) {
+    public ListAlertRsp withProcess(List<ListAlertRspProcess> process) {
         this.process = process;
         return this;
     }
 
-    public ListAlertRsp addProcessItem(ShowAlertRspProcess processItem) {
+    public ListAlertRsp addProcessItem(ListAlertRspProcess processItem) {
         if (this.process == null) {
             this.process = new ArrayList<>();
         }
@@ -880,7 +878,7 @@ public class ListAlertRsp {
         return this;
     }
 
-    public ListAlertRsp withProcess(Consumer<List<ShowAlertRspProcess>> processSetter) {
+    public ListAlertRsp withProcess(Consumer<List<ListAlertRspProcess>> processSetter) {
         if (this.process == null) {
             this.process = new ArrayList<>();
         }
@@ -892,11 +890,11 @@ public class ListAlertRsp {
      * 进程信息
      * @return process
      */
-    public List<ShowAlertRspProcess> getProcess() {
+    public List<ListAlertRspProcess> getProcess() {
         return process;
     }
 
-    public void setProcess(List<ShowAlertRspProcess> process) {
+    public void setProcess(List<ListAlertRspProcess> process) {
         this.process = process;
     }
 

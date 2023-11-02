@@ -16,6 +16,11 @@ public class CreateLigandSvgReq {
     private String smiles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scaffold")
+
+    private String scaffold;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
     private Integer size;
@@ -87,6 +92,23 @@ public class CreateLigandSvgReq {
         this.smiles = smiles;
     }
 
+    public CreateLigandSvgReq withScaffold(String scaffold) {
+        this.scaffold = scaffold;
+        return this;
+    }
+
+    /**
+     * 分子骨架smiles表达式
+     * @return scaffold
+     */
+    public String getScaffold() {
+        return scaffold;
+    }
+
+    public void setScaffold(String scaffold) {
+        this.scaffold = scaffold;
+    }
+
     public CreateLigandSvgReq withSize(Integer size) {
         this.size = size;
         return this;
@@ -150,7 +172,7 @@ public class CreateLigandSvgReq {
     }
 
     /**
-     * alerts
+     * 高亮子结构编号
      * @return alerts
      */
     public String getAlerts() {
@@ -167,7 +189,7 @@ public class CreateLigandSvgReq {
     }
 
     /**
-     * ncols
+     * 显示的列数
      * minimum: 0
      * maximum: 100000
      * @return ncols
@@ -186,7 +208,7 @@ public class CreateLigandSvgReq {
     }
 
     /**
-     * bgopacity
+     * 背景透明度
      * minimum: 0
      * maximum: 1
      * @return bgopacity
@@ -205,7 +227,7 @@ public class CreateLigandSvgReq {
     }
 
     /**
-     * bgcolor
+     * 背景颜色
      * @return bgcolor
      */
     public String getBgcolor() {
@@ -222,7 +244,7 @@ public class CreateLigandSvgReq {
     }
 
     /**
-     * fgcolor
+     * 前景色
      * @return fgcolor
      */
     public String getFgcolor() {
@@ -239,7 +261,7 @@ public class CreateLigandSvgReq {
     }
 
     /**
-     * ccolor
+     * 碳颜色
      * @return ccolor
      */
     public String getCcolor() {
@@ -256,7 +278,7 @@ public class CreateLigandSvgReq {
     }
 
     /**
-     * ncolor
+     * 氮颜色
      * @return ncolor
      */
     public String getNcolor() {
@@ -273,7 +295,7 @@ public class CreateLigandSvgReq {
     }
 
     /**
-     * ocolor
+     * 氧颜色
      * @return ocolor
      */
     public String getOcolor() {
@@ -293,18 +315,30 @@ public class CreateLigandSvgReq {
             return false;
         }
         CreateLigandSvgReq that = (CreateLigandSvgReq) obj;
-        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.height, that.height) && Objects.equals(this.width, that.width)
-            && Objects.equals(this.alerts, that.alerts) && Objects.equals(this.ncols, that.ncols)
-            && Objects.equals(this.bgopacity, that.bgopacity) && Objects.equals(this.bgcolor, that.bgcolor)
-            && Objects.equals(this.fgcolor, that.fgcolor) && Objects.equals(this.ccolor, that.ccolor)
-            && Objects.equals(this.ncolor, that.ncolor) && Objects.equals(this.ocolor, that.ocolor);
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.scaffold, that.scaffold)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.width, that.width) && Objects.equals(this.alerts, that.alerts)
+            && Objects.equals(this.ncols, that.ncols) && Objects.equals(this.bgopacity, that.bgopacity)
+            && Objects.equals(this.bgcolor, that.bgcolor) && Objects.equals(this.fgcolor, that.fgcolor)
+            && Objects.equals(this.ccolor, that.ccolor) && Objects.equals(this.ncolor, that.ncolor)
+            && Objects.equals(this.ocolor, that.ocolor);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(smiles, size, height, width, alerts, ncols, bgopacity, bgcolor, fgcolor, ccolor, ncolor, ocolor);
+        return Objects.hash(smiles,
+            scaffold,
+            size,
+            height,
+            width,
+            alerts,
+            ncols,
+            bgopacity,
+            bgcolor,
+            fgcolor,
+            ccolor,
+            ncolor,
+            ocolor);
     }
 
     @Override
@@ -312,6 +346,7 @@ public class CreateLigandSvgReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateLigandSvgReq {\n");
         sb.append("    smiles: ").append(toIndentedString(smiles)).append("\n");
+        sb.append("    scaffold: ").append(toIndentedString(scaffold)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");

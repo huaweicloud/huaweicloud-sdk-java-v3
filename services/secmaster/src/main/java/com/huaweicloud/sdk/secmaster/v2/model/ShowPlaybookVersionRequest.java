@@ -26,7 +26,7 @@ public class ShowPlaybookVersionRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -43,7 +43,7 @@ public class ShowPlaybookVersionRequest {
     }
 
     /**
-     * version Id value
+     * 剧本版本ID
      * @return versionId
      */
     public String getVersionId() {

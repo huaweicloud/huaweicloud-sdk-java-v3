@@ -21,11 +21,6 @@ public class ListPlaybookInstancesRequest {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "date_type")
-
-    private String dateType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -76,7 +71,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -93,7 +88,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * Playbook instance status. RUNNING、FINISHED、FAILED、RETRYING、 TERMINATING、TERMINATED
+     * 剧本实例状态. (RUNNING--运行中、FINISHED--成功、FAILED--失败、RETRYING--重试中、TERMINATING--终止中、TERMINATED--已终止)
      * @return status
      */
     public String getStatus() {
@@ -104,30 +99,13 @@ public class ListPlaybookInstancesRequest {
         this.status = status;
     }
 
-    public ListPlaybookInstancesRequest withDateType(String dateType) {
-        this.dateType = dateType;
-        return this;
-    }
-
-    /**
-     * date type, START END
-     * @return dateType
-     */
-    public String getDateType() {
-        return dateType;
-    }
-
-    public void setDateType(String dateType) {
-        this.dateType = dateType;
-    }
-
     public ListPlaybookInstancesRequest withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * name
+     * 实例名称
      * @return name
      */
     public String getName() {
@@ -144,7 +122,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * Playbook name.
+     * 剧本名称
      * @return playbookName
      */
     public String getPlaybookName() {
@@ -161,7 +139,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * Dataclass name.
+     * 数据类名称
      * @return dataclassName
      */
     public String getDataclassName() {
@@ -178,7 +156,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * Dataobject name.
+     * 数据对象名称
      * @return dataobjectName
      */
     public String getDataobjectName() {
@@ -195,7 +173,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * trigger type. DEBUG, TIMER, EVENT, MANUAL
+     * 触发类型. TIMER--定时触发, EVENT--事件触发
      * @return triggerType
      */
     public String getTriggerType() {
@@ -212,7 +190,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * 起始时间
+     * 查询起始时间
      * @return fromDate
      */
     public String getFromDate() {
@@ -229,7 +207,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * 结束时间
+     * 查询结束时间
      * @return toDate
      */
     public String getToDate() {
@@ -246,7 +224,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * request limit size
+     * 分页查询参数，用于指定一次查询最多的结果数，从1开始
      * minimum: 1
      * maximum: 999999
      * @return limit
@@ -265,7 +243,7 @@ public class ListPlaybookInstancesRequest {
     }
 
     /**
-     * request offset, from 0
+     * 分页查询参数。用于指定查询结果的起始位置，从0开始
      * minimum: 0
      * maximum: 999999
      * @return offset
@@ -288,8 +266,7 @@ public class ListPlaybookInstancesRequest {
         }
         ListPlaybookInstancesRequest that = (ListPlaybookInstancesRequest) obj;
         return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.dateType, that.dateType) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.playbookName, that.playbookName)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.playbookName, that.playbookName)
             && Objects.equals(this.dataclassName, that.dataclassName)
             && Objects.equals(this.dataobjectName, that.dataobjectName)
             && Objects.equals(this.triggerType, that.triggerType) && Objects.equals(this.fromDate, that.fromDate)
@@ -301,7 +278,6 @@ public class ListPlaybookInstancesRequest {
     public int hashCode() {
         return Objects.hash(workspaceId,
             status,
-            dateType,
             name,
             playbookName,
             dataclassName,
@@ -319,7 +295,6 @@ public class ListPlaybookInstancesRequest {
         sb.append("class ListPlaybookInstancesRequest {\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    dateType: ").append(toIndentedString(dateType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    playbookName: ").append(toIndentedString(playbookName)).append("\n");
         sb.append("    dataclassName: ").append(toIndentedString(dataclassName)).append("\n");

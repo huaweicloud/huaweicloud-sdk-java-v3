@@ -70,10 +70,16 @@ import com.huaweicloud.sdk.cloudide.v2.model.ShowPriceRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.ShowPriceResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.ShowResultRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.ShowResultResponse;
+import com.huaweicloud.sdk.cloudide.v2.model.StartChatRequest;
+import com.huaweicloud.sdk.cloudide.v2.model.StartChatResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.StartInstanceRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.StartInstanceResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.StopInstanceRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.StopInstanceResponse;
+import com.huaweicloud.sdk.cloudide.v2.model.SyncChatRequest;
+import com.huaweicloud.sdk.cloudide.v2.model.SyncChatResponse;
+import com.huaweicloud.sdk.cloudide.v2.model.SyncGetChatResultRequest;
+import com.huaweicloud.sdk.cloudide.v2.model.SyncGetChatResultResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.UpdateInstanceActivityRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.UpdateInstanceActivityResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.UpdateInstanceRequest;
@@ -951,6 +957,100 @@ public class CloudIDEAsyncClient {
      */
     public AsyncInvoker<ShowResultRequest, ShowResultResponse> showResultAsyncInvoker(ShowResultRequest request) {
         return new AsyncInvoker<ShowResultRequest, ShowResultResponse>(request, CloudIDEMeta.showResult, hcClient);
+    }
+
+    /**
+     * start_chat_codebreezetsbot_v1_devmind_tsbot_start_chat_post接口
+     *
+     * 开启对话
+     * :param data: example: {\&quot;user_type\&quot;: \&quot;IDE\&quot;}
+     * :return:
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartChatRequest 请求对象
+     * @return CompletableFuture<StartChatResponse>
+     */
+    public CompletableFuture<StartChatResponse> startChatAsync(StartChatRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.startChat);
+    }
+
+    /**
+     * start_chat_codebreezetsbot_v1_devmind_tsbot_start_chat_post接口
+     *
+     * 开启对话
+     * :param data: example: {\&quot;user_type\&quot;: \&quot;IDE\&quot;}
+     * :return:
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StartChatRequest 请求对象
+     * @return AsyncInvoker<StartChatRequest, StartChatResponse>
+     */
+    public AsyncInvoker<StartChatRequest, StartChatResponse> startChatAsyncInvoker(StartChatRequest request) {
+        return new AsyncInvoker<StartChatRequest, StartChatResponse>(request, CloudIDEMeta.startChat, hcClient);
+    }
+
+    /**
+     * async_chat_codebreezetsbot_v1_devmind_tsbot_async_chat_post接口
+     *
+     * 异步聊天请求
+     * :param data: ChatRequestMessage
+     * :return:
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SyncChatRequest 请求对象
+     * @return CompletableFuture<SyncChatResponse>
+     */
+    public CompletableFuture<SyncChatResponse> syncChatAsync(SyncChatRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.syncChat);
+    }
+
+    /**
+     * async_chat_codebreezetsbot_v1_devmind_tsbot_async_chat_post接口
+     *
+     * 异步聊天请求
+     * :param data: ChatRequestMessage
+     * :return:
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SyncChatRequest 请求对象
+     * @return AsyncInvoker<SyncChatRequest, SyncChatResponse>
+     */
+    public AsyncInvoker<SyncChatRequest, SyncChatResponse> syncChatAsyncInvoker(SyncChatRequest request) {
+        return new AsyncInvoker<SyncChatRequest, SyncChatResponse>(request, CloudIDEMeta.syncChat, hcClient);
+    }
+
+    /**
+     * async_get_chat_result_codebreezetsbot_v1_devmind_tsbot_async_get_chat_result_post接口
+     *
+     * 异步聊天获取结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SyncGetChatResultRequest 请求对象
+     * @return CompletableFuture<SyncGetChatResultResponse>
+     */
+    public CompletableFuture<SyncGetChatResultResponse> syncGetChatResultAsync(SyncGetChatResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudIDEMeta.syncGetChatResult);
+    }
+
+    /**
+     * async_get_chat_result_codebreezetsbot_v1_devmind_tsbot_async_get_chat_result_post接口
+     *
+     * 异步聊天获取结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SyncGetChatResultRequest 请求对象
+     * @return AsyncInvoker<SyncGetChatResultRequest, SyncGetChatResultResponse>
+     */
+    public AsyncInvoker<SyncGetChatResultRequest, SyncGetChatResultResponse> syncGetChatResultAsyncInvoker(
+        SyncGetChatResultRequest request) {
+        return new AsyncInvoker<SyncGetChatResultRequest, SyncGetChatResultResponse>(request,
+            CloudIDEMeta.syncGetChatResult, hcClient);
     }
 
     /**

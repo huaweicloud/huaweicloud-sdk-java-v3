@@ -19,7 +19,7 @@ public class DeleteIncidentRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DeleteIncident body;
+    private DeleteIncidentRequestBody body;
 
     public DeleteIncidentRequest withWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
@@ -27,7 +27,7 @@ public class DeleteIncidentRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间id
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -38,14 +38,14 @@ public class DeleteIncidentRequest {
         this.workspaceId = workspaceId;
     }
 
-    public DeleteIncidentRequest withBody(DeleteIncident body) {
+    public DeleteIncidentRequest withBody(DeleteIncidentRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public DeleteIncidentRequest withBody(Consumer<DeleteIncident> bodySetter) {
+    public DeleteIncidentRequest withBody(Consumer<DeleteIncidentRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new DeleteIncident();
+            this.body = new DeleteIncidentRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class DeleteIncidentRequest {
      * Get body
      * @return body
      */
-    public DeleteIncident getBody() {
+    public DeleteIncidentRequestBody getBody() {
         return body;
     }
 
-    public void setBody(DeleteIncident body) {
+    public void setBody(DeleteIncidentRequestBody body) {
         this.body = body;
     }
 

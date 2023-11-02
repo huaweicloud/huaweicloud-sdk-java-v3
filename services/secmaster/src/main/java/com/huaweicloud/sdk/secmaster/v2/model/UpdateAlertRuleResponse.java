@@ -70,7 +70,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     private String query;
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      */
     public static final class QueryTypeEnum {
 
@@ -79,17 +79,11 @@ public class UpdateAlertRuleResponse extends SdkResponse {
          */
         public static final QueryTypeEnum SQL = new QueryTypeEnum("SQL");
 
-        /**
-         * Enum CBSL for value: "CBSL"
-         */
-        public static final QueryTypeEnum CBSL = new QueryTypeEnum("CBSL");
-
         private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, QueryTypeEnum> createStaticFields() {
             Map<String, QueryTypeEnum> map = new HashMap<>();
             map.put("SQL", SQL);
-            map.put("CBSL", CBSL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -145,7 +139,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     private QueryTypeEnum queryType;
 
     /**
-     * status. ENABLED, DISABLED
+     * 启用状态，启用、停用。Status, enabled, disabled.
      */
     public static final class StatusEnum {
 
@@ -220,7 +214,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     private StatusEnum status;
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      */
     public static final class SeverityEnum {
 
@@ -313,11 +307,6 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     private SeverityEnum severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "accumulated_times")
-
-    private Integer accumulatedTimes;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_properties")
 
     private Map<String, String> customProperties = null;
@@ -348,7 +337,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * rule_id
+     * 告警规则 ID。Alert rule ID.
      * @return ruleId
      */
     public String getRuleId() {
@@ -365,7 +354,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * pipe_id
+     * 数据管道 ID。Pipe ID.
      * @return pipeId
      */
     public String getPipeId() {
@@ -382,7 +371,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * pipe_name
+     * 数据管道名称。Pipe name.
      * @return pipeName
      */
     public String getPipeName() {
@@ -399,7 +388,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * create_by
+     * 创建人。Create by.
      * @return createBy
      */
     public String getCreateBy() {
@@ -416,7 +405,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * create_time
+     * 创建时间。Create time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return createTime
@@ -435,7 +424,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * update_by
+     * 更新人。Update by.
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -452,7 +441,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * update_time
+     * 更新时间。Update time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return updateTime
@@ -471,7 +460,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * delete_time
+     * 删除时间。Delete time.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return deleteTime
@@ -490,7 +479,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * rule_name
+     * 告警规则名称。Alert rule name.
      * @return ruleName
      */
     public String getRuleName() {
@@ -507,7 +496,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * query
+     * 查询语句。Query.
      * @return query
      */
     public String getQuery() {
@@ -524,7 +513,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * query_type. SQL, CBSL.
+     * 查询语法，SQL。Query type. SQL.
      * @return queryType
      */
     public QueryTypeEnum getQueryType() {
@@ -541,7 +530,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * status. ENABLED, DISABLED
+     * 启用状态，启用、停用。Status, enabled, disabled.
      * @return status
      */
     public StatusEnum getStatus() {
@@ -558,7 +547,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      * @return severity
      */
     public SeverityEnum getSeverity() {
@@ -567,25 +556,6 @@ public class UpdateAlertRuleResponse extends SdkResponse {
 
     public void setSeverity(SeverityEnum severity) {
         this.severity = severity;
-    }
-
-    public UpdateAlertRuleResponse withAccumulatedTimes(Integer accumulatedTimes) {
-        this.accumulatedTimes = accumulatedTimes;
-        return this;
-    }
-
-    /**
-     * accumulated_times
-     * minimum: 1
-     * maximum: 1000
-     * @return accumulatedTimes
-     */
-    public Integer getAccumulatedTimes() {
-        return accumulatedTimes;
-    }
-
-    public void setAccumulatedTimes(Integer accumulatedTimes) {
-        this.accumulatedTimes = accumulatedTimes;
     }
 
     public UpdateAlertRuleResponse withCustomProperties(Map<String, String> customProperties) {
@@ -610,7 +580,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * custom_properties
+     * 自定义扩展信息。Custom properties.
      * @return customProperties
      */
     public Map<String, String> getCustomProperties() {
@@ -627,7 +597,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * event_grouping
+     * 告警分组。Event grouping.
      * @return eventGrouping
      */
     public Boolean getEventGrouping() {
@@ -686,7 +656,7 @@ public class UpdateAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * triggers
+     * 告警触发规则。Alert triggers.
      * @return triggers
      */
     public List<AlertRuleTrigger> getTriggers() {
@@ -732,7 +702,6 @@ public class UpdateAlertRuleResponse extends SdkResponse {
             && Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.query, that.query)
             && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.status, that.status)
             && Objects.equals(this.severity, that.severity)
-            && Objects.equals(this.accumulatedTimes, that.accumulatedTimes)
             && Objects.equals(this.customProperties, that.customProperties)
             && Objects.equals(this.eventGrouping, that.eventGrouping) && Objects.equals(this.schedule, that.schedule)
             && Objects.equals(this.triggers, that.triggers) && Objects.equals(this.xRequestId, that.xRequestId);
@@ -753,7 +722,6 @@ public class UpdateAlertRuleResponse extends SdkResponse {
             queryType,
             status,
             severity,
-            accumulatedTimes,
             customProperties,
             eventGrouping,
             schedule,
@@ -778,7 +746,6 @@ public class UpdateAlertRuleResponse extends SdkResponse {
         sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
-        sb.append("    accumulatedTimes: ").append(toIndentedString(accumulatedTimes)).append("\n");
         sb.append("    customProperties: ").append(toIndentedString(customProperties)).append("\n");
         sb.append("    eventGrouping: ").append(toIndentedString(eventGrouping)).append("\n");
         sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");

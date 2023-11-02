@@ -12,19 +12,29 @@ import java.util.function.Consumer;
 public class IncidentDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_object")
-
-    private Incident dataObject;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
+    @JsonProperty(value = "data_object")
 
-    private String updateTime;
+    private Incident dataObject;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dataclass_ref")
+
+    private AlertDetailDataclassRef dataclassRef;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "format_version")
+
+    private Integer formatVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -32,34 +42,36 @@ public class IncidentDetail {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private String updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private Integer version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspace_id")
 
     private String workspaceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataclass_id")
+    public IncidentDetail withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
 
-    private String dataclassId;
+    /**
+     * 记录时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "layout_id")
-
-    private String layoutId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataclass")
-
-    private ShowAlertDetailDataclassRef dataclass;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
 
     public IncidentDetail withDataObject(Incident dataObject) {
         this.dataObject = dataObject;
@@ -87,38 +99,66 @@ public class IncidentDetail {
         this.dataObject = dataObject;
     }
 
-    public IncidentDetail withCreateTime(String createTime) {
-        this.createTime = createTime;
+    public IncidentDetail withDataclassRef(AlertDetailDataclassRef dataclassRef) {
+        this.dataclassRef = dataclassRef;
+        return this;
+    }
+
+    public IncidentDetail withDataclassRef(Consumer<AlertDetailDataclassRef> dataclassRefSetter) {
+        if (this.dataclassRef == null) {
+            this.dataclassRef = new AlertDetailDataclassRef();
+            dataclassRefSetter.accept(this.dataclassRef);
+        }
+
         return this;
     }
 
     /**
-     * Create time
-     * @return createTime
+     * Get dataclassRef
+     * @return dataclassRef
      */
-    public String getCreateTime() {
-        return createTime;
+    public AlertDetailDataclassRef getDataclassRef() {
+        return dataclassRef;
     }
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
+    public void setDataclassRef(AlertDetailDataclassRef dataclassRef) {
+        this.dataclassRef = dataclassRef;
     }
 
-    public IncidentDetail withUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
+    public IncidentDetail withFormatVersion(Integer formatVersion) {
+        this.formatVersion = formatVersion;
         return this;
     }
 
     /**
-     * Update time
-     * @return updateTime
+     * 格式版本
+     * minimum: 0
+     * maximum: 999
+     * @return formatVersion
      */
-    public String getUpdateTime() {
-        return updateTime;
+    public Integer getFormatVersion() {
+        return formatVersion;
     }
 
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
+    public void setFormatVersion(Integer formatVersion) {
+        this.formatVersion = formatVersion;
+    }
+
+    public IncidentDetail withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 事件唯一标识，UUID格式，最大36个字符
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public IncidentDetail withProjectId(String projectId) {
@@ -127,7 +167,7 @@ public class IncidentDetail {
     }
 
     /**
-     * Id value
+     * 当前项目的id
      * @return projectId
      */
     public String getProjectId() {
@@ -138,13 +178,49 @@ public class IncidentDetail {
         this.projectId = projectId;
     }
 
+    public IncidentDetail withUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 更新时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为告警发生时区，无法解析时区的时间，默认时区填东八区
+     * @return updateTime
+     */
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public IncidentDetail withVersion(Integer version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 版本
+     * minimum: 0
+     * maximum: 999
+     * @return version
+     */
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     public IncidentDetail withWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
         return this;
     }
 
     /**
-     * Id value
+     * 当前的工作空间id
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -153,100 +229,6 @@ public class IncidentDetail {
 
     public void setWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
-    }
-
-    public IncidentDetail withDataclassId(String dataclassId) {
-        this.dataclassId = dataclassId;
-        return this;
-    }
-
-    /**
-     * Id value
-     * @return dataclassId
-     */
-    public String getDataclassId() {
-        return dataclassId;
-    }
-
-    public void setDataclassId(String dataclassId) {
-        this.dataclassId = dataclassId;
-    }
-
-    public IncidentDetail withLayoutId(String layoutId) {
-        this.layoutId = layoutId;
-        return this;
-    }
-
-    /**
-     * Id value
-     * @return layoutId
-     */
-    public String getLayoutId() {
-        return layoutId;
-    }
-
-    public void setLayoutId(String layoutId) {
-        this.layoutId = layoutId;
-    }
-
-    public IncidentDetail withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * The name, display only
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public IncidentDetail withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * The name, display only
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public IncidentDetail withDataclass(ShowAlertDetailDataclassRef dataclass) {
-        this.dataclass = dataclass;
-        return this;
-    }
-
-    public IncidentDetail withDataclass(Consumer<ShowAlertDetailDataclassRef> dataclassSetter) {
-        if (this.dataclass == null) {
-            this.dataclass = new ShowAlertDetailDataclassRef();
-            dataclassSetter.accept(this.dataclass);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get dataclass
-     * @return dataclass
-     */
-    public ShowAlertDetailDataclassRef getDataclass() {
-        return dataclass;
-    }
-
-    public void setDataclass(ShowAlertDetailDataclassRef dataclass) {
-        this.dataclass = dataclass;
     }
 
     @Override
@@ -258,41 +240,32 @@ public class IncidentDetail {
             return false;
         }
         IncidentDetail that = (IncidentDetail) obj;
-        return Objects.equals(this.dataObject, that.dataObject) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.dataclassId, that.dataclassId)
-            && Objects.equals(this.layoutId, that.layoutId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.dataclass, that.dataclass);
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.dataObject, that.dataObject)
+            && Objects.equals(this.dataclassRef, that.dataclassRef)
+            && Objects.equals(this.formatVersion, that.formatVersion) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dataObject,
-            createTime,
-            updateTime,
-            projectId,
-            workspaceId,
-            dataclassId,
-            layoutId,
-            name,
-            type,
-            dataclass);
+        return Objects
+            .hash(createTime, dataObject, dataclassRef, formatVersion, id, projectId, updateTime, version, workspaceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class IncidentDetail {\n");
-        sb.append("    dataObject: ").append(toIndentedString(dataObject)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    dataObject: ").append(toIndentedString(dataObject)).append("\n");
+        sb.append("    dataclassRef: ").append(toIndentedString(dataclassRef)).append("\n");
+        sb.append("    formatVersion: ").append(toIndentedString(formatVersion)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
-        sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
-        sb.append("    layoutId: ").append(toIndentedString(layoutId)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    dataclass: ").append(toIndentedString(dataclass)).append("\n");
         sb.append("}");
         return sb.toString();
     }

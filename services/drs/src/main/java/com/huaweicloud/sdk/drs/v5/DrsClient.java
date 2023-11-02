@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.drs.v5.model.CollectDbObjectsAsyncRequest;
 import com.huaweicloud.sdk.drs.v5.model.CollectDbObjectsAsyncResponse;
 import com.huaweicloud.sdk.drs.v5.model.CollectDbObjectsInfoRequest;
 import com.huaweicloud.sdk.drs.v5.model.CollectDbObjectsInfoResponse;
+import com.huaweicloud.sdk.drs.v5.model.CollectPositionAsyncRequest;
+import com.huaweicloud.sdk.drs.v5.model.CollectPositionAsyncResponse;
 import com.huaweicloud.sdk.drs.v5.model.CommitAsyncJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CommitAsyncJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.CopyJobRequest;
@@ -89,6 +91,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowMonitorDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowMonitorDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowObjectMappingRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowObjectMappingResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
@@ -403,6 +407,36 @@ public class DrsClient {
         CollectDbObjectsInfoRequest request) {
         return new SyncInvoker<CollectDbObjectsInfoRequest, CollectDbObjectsInfoResponse>(request,
             DrsMeta.collectDbObjectsInfo, hcClient);
+    }
+
+    /**
+     * 采集数据库位点信息
+     *
+     * 采集数据库位点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectPositionAsyncRequest 请求对象
+     * @return CollectPositionAsyncResponse
+     */
+    public CollectPositionAsyncResponse collectPositionAsync(CollectPositionAsyncRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.collectPositionAsync);
+    }
+
+    /**
+     * 采集数据库位点信息
+     *
+     * 采集数据库位点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectPositionAsyncRequest 请求对象
+     * @return SyncInvoker<CollectPositionAsyncRequest, CollectPositionAsyncResponse>
+     */
+    public SyncInvoker<CollectPositionAsyncRequest, CollectPositionAsyncResponse> collectPositionAsyncInvoker(
+        CollectPositionAsyncRequest request) {
+        return new SyncInvoker<CollectPositionAsyncRequest, CollectPositionAsyncResponse>(request,
+            DrsMeta.collectPositionAsync, hcClient);
     }
 
     /**
@@ -1409,6 +1443,36 @@ public class DrsClient {
         ShowObjectMappingRequest request) {
         return new SyncInvoker<ShowObjectMappingRequest, ShowObjectMappingResponse>(request, DrsMeta.showObjectMapping,
             hcClient);
+    }
+
+    /**
+     * 获取查询数据库位点的结果
+     *
+     * 获取查询数据库位点的结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPositionResultRequest 请求对象
+     * @return ShowPositionResultResponse
+     */
+    public ShowPositionResultResponse showPositionResult(ShowPositionResultRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.showPositionResult);
+    }
+
+    /**
+     * 获取查询数据库位点的结果
+     *
+     * 获取查询数据库位点的结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPositionResultRequest 请求对象
+     * @return SyncInvoker<ShowPositionResultRequest, ShowPositionResultResponse>
+     */
+    public SyncInvoker<ShowPositionResultRequest, ShowPositionResultResponse> showPositionResultInvoker(
+        ShowPositionResultRequest request) {
+        return new SyncInvoker<ShowPositionResultRequest, ShowPositionResultResponse>(request,
+            DrsMeta.showPositionResult, hcClient);
     }
 
     /**

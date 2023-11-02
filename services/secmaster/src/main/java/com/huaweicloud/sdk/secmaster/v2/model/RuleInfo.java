@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Information of rule
+ * 剧本触发规格信息
  */
 public class RuleInfo {
 
@@ -31,7 +31,7 @@ public class RuleInfo {
     }
 
     /**
-     * Id value
+     * 规则ID
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class RuleInfo {
     }
 
     /**
-     * Project id value
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -65,7 +65,7 @@ public class RuleInfo {
     }
 
     /**
-     * Project id value
+     * 触发规则
      * @return rule
      */
     public String getRule() {

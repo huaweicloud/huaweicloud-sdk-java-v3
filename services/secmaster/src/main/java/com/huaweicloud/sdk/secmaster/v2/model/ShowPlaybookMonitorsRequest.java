@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -25,10 +30,75 @@ public class ShowPlaybookMonitorsRequest {
 
     private String startTime;
 
+    /**
+     * 统计剧本版本类型（ALL:全部，VALID:有效的，DELETED:已删除）
+     */
+    public static final class VersionQueryTypeEnum {
+
+        /**
+         * Enum ALL_VALID_DELETED_ for value: "ALL:全部，VALID:有效的，DELETED:已删除"
+         */
+        public static final VersionQueryTypeEnum ALL_VALID_DELETED_ =
+            new VersionQueryTypeEnum("ALL:全部，VALID:有效的，DELETED:已删除");
+
+        private static final Map<String, VersionQueryTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VersionQueryTypeEnum> createStaticFields() {
+            Map<String, VersionQueryTypeEnum> map = new HashMap<>();
+            map.put("ALL:全部，VALID:有效的，DELETED:已删除", ALL_VALID_DELETED_);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        VersionQueryTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VersionQueryTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VersionQueryTypeEnum(value));
+        }
+
+        public static VersionQueryTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VersionQueryTypeEnum) {
+                return this.value.equals(((VersionQueryTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version_query_type")
 
-    private String versionQueryType;
+    private VersionQueryTypeEnum versionQueryType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
@@ -41,7 +111,7 @@ public class ShowPlaybookMonitorsRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -58,7 +128,7 @@ public class ShowPlaybookMonitorsRequest {
     }
 
     /**
-     * ID of playbook
+     * 剧本ID
      * @return playbookId
      */
     public String getPlaybookId() {
@@ -86,7 +156,7 @@ public class ShowPlaybookMonitorsRequest {
         this.startTime = startTime;
     }
 
-    public ShowPlaybookMonitorsRequest withVersionQueryType(String versionQueryType) {
+    public ShowPlaybookMonitorsRequest withVersionQueryType(VersionQueryTypeEnum versionQueryType) {
         this.versionQueryType = versionQueryType;
         return this;
     }
@@ -95,11 +165,11 @@ public class ShowPlaybookMonitorsRequest {
      * 统计剧本版本类型（ALL:全部，VALID:有效的，DELETED:已删除）
      * @return versionQueryType
      */
-    public String getVersionQueryType() {
+    public VersionQueryTypeEnum getVersionQueryType() {
         return versionQueryType;
     }
 
-    public void setVersionQueryType(String versionQueryType) {
+    public void setVersionQueryType(VersionQueryTypeEnum versionQueryType) {
         this.versionQueryType = versionQueryType;
     }
 

@@ -7,14 +7,14 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * indicator detail
+ * 情报详情信息
  */
 public class CreateIndicatorDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source")
 
-    private CreateAlertDataSource dataSource;
+    private CreateIndicatorDetailDataSource dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verdict")
@@ -49,7 +49,7 @@ public class CreateIndicatorDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment")
 
-    private ShowAlertRspEnvironment environment;
+    private CreateIndicatorDetailEnvironment environment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defanged")
@@ -87,11 +87,6 @@ public class CreateIndicatorDetail {
     private String dataclassId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_object")
 
     private IndicatorDataObjectDetail dataObject;
@@ -126,14 +121,14 @@ public class CreateIndicatorDetail {
 
     private String updateTime;
 
-    public CreateIndicatorDetail withDataSource(CreateAlertDataSource dataSource) {
+    public CreateIndicatorDetail withDataSource(CreateIndicatorDetailDataSource dataSource) {
         this.dataSource = dataSource;
         return this;
     }
 
-    public CreateIndicatorDetail withDataSource(Consumer<CreateAlertDataSource> dataSourceSetter) {
+    public CreateIndicatorDetail withDataSource(Consumer<CreateIndicatorDetailDataSource> dataSourceSetter) {
         if (this.dataSource == null) {
-            this.dataSource = new CreateAlertDataSource();
+            this.dataSource = new CreateIndicatorDetailDataSource();
             dataSourceSetter.accept(this.dataSource);
         }
 
@@ -144,11 +139,11 @@ public class CreateIndicatorDetail {
      * Get dataSource
      * @return dataSource
      */
-    public CreateAlertDataSource getDataSource() {
+    public CreateIndicatorDetailDataSource getDataSource() {
         return dataSource;
     }
 
-    public void setDataSource(CreateAlertDataSource dataSource) {
+    public void setDataSource(CreateIndicatorDetailDataSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -256,14 +251,14 @@ public class CreateIndicatorDetail {
         this.granularMarking = granularMarking;
     }
 
-    public CreateIndicatorDetail withEnvironment(ShowAlertRspEnvironment environment) {
+    public CreateIndicatorDetail withEnvironment(CreateIndicatorDetailEnvironment environment) {
         this.environment = environment;
         return this;
     }
 
-    public CreateIndicatorDetail withEnvironment(Consumer<ShowAlertRspEnvironment> environmentSetter) {
+    public CreateIndicatorDetail withEnvironment(Consumer<CreateIndicatorDetailEnvironment> environmentSetter) {
         if (this.environment == null) {
-            this.environment = new ShowAlertRspEnvironment();
+            this.environment = new CreateIndicatorDetailEnvironment();
             environmentSetter.accept(this.environment);
         }
 
@@ -274,11 +269,11 @@ public class CreateIndicatorDetail {
      * Get environment
      * @return environment
      */
-    public ShowAlertRspEnvironment getEnvironment() {
+    public CreateIndicatorDetailEnvironment getEnvironment() {
         return environment;
     }
 
-    public void setEnvironment(ShowAlertRspEnvironment environment) {
+    public void setEnvironment(CreateIndicatorDetailEnvironment environment) {
         this.environment = environment;
     }
 
@@ -305,7 +300,7 @@ public class CreateIndicatorDetail {
     }
 
     /**
-     * Create time
+     * 首次发生时间
      * @return firstReportTime
      */
     public String getFirstReportTime() {
@@ -322,7 +317,7 @@ public class CreateIndicatorDetail {
     }
 
     /**
-     * Update time
+     * 最近发生时间
      * @return lastReportTime
      */
     public String getLastReportTime() {
@@ -408,23 +403,6 @@ public class CreateIndicatorDetail {
 
     public void setDataclassId(String dataclassId) {
         this.dataclassId = dataclassId;
-    }
-
-    public CreateIndicatorDetail withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 类型（SIMULATION,PLAYBOOK,MANUAL,INSTANCE,DATA_SOURCE）
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public CreateIndicatorDetail withDataObject(IndicatorDataObjectDetail dataObject) {
@@ -581,11 +559,10 @@ public class CreateIndicatorDetail {
             && Objects.equals(this.firstReportTime, that.firstReportTime)
             && Objects.equals(this.lastReportTime, that.lastReportTime) && Objects.equals(this.id, that.id)
             && Objects.equals(this.indicatorType, that.indicatorType) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.dataObject, that.dataObject) && Objects.equals(this.workspaceId, that.workspaceId)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.layoutId, that.layoutId)
-            && Objects.equals(this.dataclass, that.dataclass) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.dataObject, that.dataObject)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.layoutId, that.layoutId) && Objects.equals(this.dataclass, that.dataclass)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
@@ -605,7 +582,6 @@ public class CreateIndicatorDetail {
             indicatorType,
             name,
             dataclassId,
-            type,
             dataObject,
             workspaceId,
             projectId,
@@ -634,7 +610,6 @@ public class CreateIndicatorDetail {
         sb.append("    indicatorType: ").append(toIndentedString(indicatorType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dataObject: ").append(toIndentedString(dataObject)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");

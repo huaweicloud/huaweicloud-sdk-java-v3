@@ -407,7 +407,7 @@ public class CoditionResp {
     }
 
     /**
-     * 策略值;策略类型为param,source,cookie,frontend_authorizer时必填
+     * 策略值;
      * @return conditionValue
      */
     public String getConditionValue() {

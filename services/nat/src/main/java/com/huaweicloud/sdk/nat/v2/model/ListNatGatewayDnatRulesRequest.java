@@ -257,7 +257,7 @@ public class ListNatGatewayDnatRulesRequest {
     }
 
     /**
-     * Dnat规则的状态。
+     * DNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
      * @return status
      */
     public List<StatusEnum> getStatus() {

@@ -29,6 +29,11 @@ public class DrugJobDto {
     private List<String> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -148,6 +153,23 @@ public class DrugJobDto {
 
     public void setLabels(List<String> labels) {
         this.labels = labels;
+    }
+
+    public DrugJobDto withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 作业的优先级,取值范围[0,9]，0最低，默认数值0
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public DrugJobDto withStatus(String status) {
@@ -356,11 +378,11 @@ public class DrugJobDto {
         }
         DrugJobDto that = (DrugJobDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.labels, that.labels) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.finishTime, that.finishTime) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.failedMessage, that.failedMessage) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.outputDir, that.outputDir)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.failedMessage, that.failedMessage)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.outputDir, that.outputDir)
             && Objects.equals(this.expectChargeNum, that.expectChargeNum)
             && Objects.equals(this.realChargeNum, that.realChargeNum) && Objects.equals(this.progress, that.progress);
     }
@@ -370,6 +392,7 @@ public class DrugJobDto {
         return Objects.hash(id,
             name,
             labels,
+            priority,
             status,
             type,
             createTime,
@@ -390,6 +413,7 @@ public class DrugJobDto {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

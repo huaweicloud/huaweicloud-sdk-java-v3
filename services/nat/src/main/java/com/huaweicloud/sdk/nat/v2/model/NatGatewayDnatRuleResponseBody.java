@@ -66,7 +66,7 @@ public class NatGatewayDnatRuleResponseBody {
     private Integer externalServicePort;
 
     /**
-     * 功能说明：DNAT规则的状态。
+     * DNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
      */
     public static final class StatusEnum {
 
@@ -265,6 +265,16 @@ public class NatGatewayDnatRuleResponseBody {
 
     private String createdAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eip_id")
+
+    private String globalEipId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eip_address")
+
+    private String globalEipAddress;
+
     public NatGatewayDnatRuleResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -443,7 +453,7 @@ public class NatGatewayDnatRuleResponseBody {
     }
 
     /**
-     * 功能说明：DNAT规则的状态。
+     * DNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -539,6 +549,40 @@ public class NatGatewayDnatRuleResponseBody {
         this.createdAt = createdAt;
     }
 
+    public NatGatewayDnatRuleResponseBody withGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+        return this;
+    }
+
+    /**
+     * 全域弹性公网IP的id。
+     * @return globalEipId
+     */
+    public String getGlobalEipId() {
+        return globalEipId;
+    }
+
+    public void setGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+    }
+
+    public NatGatewayDnatRuleResponseBody withGlobalEipAddress(String globalEipAddress) {
+        this.globalEipAddress = globalEipAddress;
+        return this;
+    }
+
+    /**
+     * 全域弹性公网IP的地址。
+     * @return globalEipAddress
+     */
+    public String getGlobalEipAddress() {
+        return globalEipAddress;
+    }
+
+    public void setGlobalEipAddress(String globalEipAddress) {
+        this.globalEipAddress = globalEipAddress;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -559,7 +603,9 @@ public class NatGatewayDnatRuleResponseBody {
             && Objects.equals(this.status, that.status) && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.internalServicePortRange, that.internalServicePortRange)
             && Objects.equals(this.externalServicePortRange, that.externalServicePortRange)
-            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.globalEipId, that.globalEipId)
+            && Objects.equals(this.globalEipAddress, that.globalEipAddress);
     }
 
     @Override
@@ -579,7 +625,9 @@ public class NatGatewayDnatRuleResponseBody {
             internalServicePortRange,
             externalServicePortRange,
             protocol,
-            createdAt);
+            createdAt,
+            globalEipId,
+            globalEipAddress);
     }
 
     @Override
@@ -602,6 +650,8 @@ public class NatGatewayDnatRuleResponseBody {
         sb.append("    externalServicePortRange: ").append(toIndentedString(externalServicePortRange)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    globalEipId: ").append(toIndentedString(globalEipId)).append("\n");
+        sb.append("    globalEipAddress: ").append(toIndentedString(globalEipAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

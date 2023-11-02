@@ -55,7 +55,7 @@ public class ListPlaybookActionsResponse extends SdkResponse {
     }
 
     /**
-     * Error code
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -72,7 +72,7 @@ public class ListPlaybookActionsResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -89,7 +89,7 @@ public class ListPlaybookActionsResponse extends SdkResponse {
     }
 
     /**
-     * tatal count
+     * 总数
      * minimum: 0
      * maximum: 99999
      * @return total
@@ -108,7 +108,7 @@ public class ListPlaybookActionsResponse extends SdkResponse {
     }
 
     /**
-     * current page count
+     * 分页大小
      * minimum: 0
      * maximum: 9999
      * @return size
@@ -127,7 +127,7 @@ public class ListPlaybookActionsResponse extends SdkResponse {
     }
 
     /**
-     * current page size
+     * 当前页数
      * minimum: 0
      * maximum: 100
      * @return page
@@ -162,7 +162,7 @@ public class ListPlaybookActionsResponse extends SdkResponse {
     }
 
     /**
-     * list of informations of playbook action
+     * 剧本动作列表信息
      * @return data
      */
     public List<ActionInfo> getData() {

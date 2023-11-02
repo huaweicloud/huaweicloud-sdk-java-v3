@@ -94,6 +94,16 @@ public class ShowPrivateZoneResponse extends SdkResponse {
 
     private List<Router> routers = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_pattern")
+
+    private String proxyPattern;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ShowPrivateZoneResponse withId(String id) {
         this.id = id;
         return this;
@@ -407,6 +417,40 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         this.routers = routers;
     }
 
+    public ShowPrivateZoneResponse withProxyPattern(String proxyPattern) {
+        this.proxyPattern = proxyPattern;
+        return this;
+    }
+
+    /**
+     * 内网Zone的子域名递归解析代理模式。 取值范围： AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
+     * @return proxyPattern
+     */
+    public String getProxyPattern() {
+        return proxyPattern;
+    }
+
+    public void setProxyPattern(String proxyPattern) {
+        this.proxyPattern = proxyPattern;
+    }
+
+    public ShowPrivateZoneResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 域名关联的企业项目ID，长度不超过36个字符。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -423,7 +467,9 @@ public class ShowPrivateZoneResponse extends SdkResponse {
             && Objects.equals(this.recordNum, that.recordNum) && Objects.equals(this.poolId, that.poolId)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.links, that.links)
-            && Objects.equals(this.masters, that.masters) && Objects.equals(this.routers, that.routers);
+            && Objects.equals(this.masters, that.masters) && Objects.equals(this.routers, that.routers)
+            && Objects.equals(this.proxyPattern, that.proxyPattern)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -443,7 +489,9 @@ public class ShowPrivateZoneResponse extends SdkResponse {
             updatedAt,
             links,
             masters,
-            routers);
+            routers,
+            proxyPattern,
+            enterpriseProjectId);
     }
 
     @Override
@@ -466,6 +514,8 @@ public class ShowPrivateZoneResponse extends SdkResponse {
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    masters: ").append(toIndentedString(masters)).append("\n");
         sb.append("    routers: ").append(toIndentedString(routers)).append("\n");
+        sb.append("    proxyPattern: ").append(toIndentedString(proxyPattern)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

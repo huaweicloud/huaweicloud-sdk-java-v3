@@ -28,6 +28,11 @@ public class CheckImageDataDto {
 
     private String taskName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "coordination")
+
+    private String coordination;
+
     public CheckImageDataDto withDataIds(List<String> dataIds) {
         this.dataIds = dataIds;
         return this;
@@ -67,7 +72,7 @@ public class CheckImageDataDto {
     }
 
     /**
-     * 处理等级，当前支持以下等级： L2、L4、L5、clip（包含L5影像、矢量切割）、tile（包含L5影像、金字塔切割）、both（包含L5影像、金字塔切割和矢量切割影像）。
+     * 处理等级，当前支持以下等级： L2、L3、L4、L5。
      * @return productionLevel
      */
     public String getProductionLevel() {
@@ -95,6 +100,23 @@ public class CheckImageDataDto {
         this.taskName = taskName;
     }
 
+    public CheckImageDataDto withCoordination(String coordination) {
+        this.coordination = coordination;
+        return this;
+    }
+
+    /**
+     * 坐标系。
+     * @return coordination
+     */
+    public String getCoordination() {
+        return coordination;
+    }
+
+    public void setCoordination(String coordination) {
+        this.coordination = coordination;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +127,12 @@ public class CheckImageDataDto {
         }
         CheckImageDataDto that = (CheckImageDataDto) obj;
         return Objects.equals(this.dataIds, that.dataIds) && Objects.equals(this.productionLevel, that.productionLevel)
-            && Objects.equals(this.taskName, that.taskName);
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.coordination, that.coordination);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dataIds, productionLevel, taskName);
+        return Objects.hash(dataIds, productionLevel, taskName, coordination);
     }
 
     @Override
@@ -120,6 +142,7 @@ public class CheckImageDataDto {
         sb.append("    dataIds: ").append(toIndentedString(dataIds)).append("\n");
         sb.append("    productionLevel: ").append(toIndentedString(productionLevel)).append("\n");
         sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
+        sb.append("    coordination: ").append(toIndentedString(coordination)).append("\n");
         sb.append("}");
         return sb.toString();
     }

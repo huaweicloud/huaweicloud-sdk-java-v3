@@ -60,7 +60,7 @@ public class ListAlertsResponse extends SdkResponse {
     }
 
     /**
-     * Id value
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -77,7 +77,7 @@ public class ListAlertsResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -94,9 +94,9 @@ public class ListAlertsResponse extends SdkResponse {
     }
 
     /**
-     * tatal count
+     * 告警总数
      * minimum: 0
-     * maximum: 99999
+     * maximum: 10000
      * @return total
      */
     public Integer getTotal() {
@@ -113,9 +113,9 @@ public class ListAlertsResponse extends SdkResponse {
     }
 
     /**
-     * 当前页大小
+     * 分页大小
      * minimum: 0
-     * maximum: 1000
+     * maximum: 10000
      * @return limit
      */
     public Integer getLimit() {
@@ -132,9 +132,9 @@ public class ListAlertsResponse extends SdkResponse {
     }
 
     /**
-     * 当前页码
+     * 偏移量
      * minimum: 0
-     * maximum: 1000
+     * maximum: 10000
      * @return offset
      */
     public Integer getOffset() {
@@ -151,7 +151,7 @@ public class ListAlertsResponse extends SdkResponse {
     }
 
     /**
-     * success
+     * 是否成功
      * @return success
      */
     public Boolean getSuccess() {

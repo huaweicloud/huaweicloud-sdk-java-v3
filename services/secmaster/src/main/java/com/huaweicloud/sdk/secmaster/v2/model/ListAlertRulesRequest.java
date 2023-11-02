@@ -39,7 +39,7 @@ public class ListAlertRulesRequest {
     private String sortKey;
 
     /**
-     * sort_dir. asc, desc
+     * 排序顺序，顺序、逆序。Sort direction, asc, desc。
      */
     public static final class SortDirEnum {
 
@@ -302,7 +302,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * workspace_id
+     * 工作空间 ID。Workspace ID.
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -319,7 +319,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * offset
+     * 偏移量。Offset.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return offset
@@ -338,7 +338,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * limit
+     * 条数。Limit.
      * minimum: 10
      * maximum: 50
      * @return limit
@@ -357,7 +357,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * sort_key
+     * 排序字段。Sort key
      * @return sortKey
      */
     public String getSortKey() {
@@ -374,7 +374,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * sort_dir. asc, desc
+     * 排序顺序，顺序、逆序。Sort direction, asc, desc。
      * @return sortDir
      */
     public SortDirEnum getSortDir() {
@@ -391,7 +391,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * pipe_id
+     * 数据管道 ID。Pipe ID.
      * @return pipeId
      */
     public String getPipeId() {
@@ -408,7 +408,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * rule_name
+     * 告警规则名称。Alert rule name.
      * @return ruleName
      */
     public String getRuleName() {
@@ -425,7 +425,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * rule_id
+     * 告警规则 ID。Alert rule ID.
      * @return ruleId
      */
     public String getRuleId() {
@@ -458,7 +458,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * status. ENABLED, DISABLED
+     * 启用状态，启用、停用。Status, enabled, disabled.
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -491,7 +491,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      * @return severity
      */
     public List<SeverityEnum> getSeverity() {

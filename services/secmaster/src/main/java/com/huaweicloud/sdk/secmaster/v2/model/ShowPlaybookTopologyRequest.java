@@ -26,7 +26,7 @@ public class ShowPlaybookTopologyRequest {
     }
 
     /**
-     * ID of workspace
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -43,7 +43,7 @@ public class ShowPlaybookTopologyRequest {
     }
 
     /**
-     * instance _id
+     * 剧本实例ID
      * @return instanceId
      */
     public String getInstanceId() {

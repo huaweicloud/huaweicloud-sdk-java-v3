@@ -11,33 +11,9 @@ import java.util.Objects;
 public class ListMeshesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apply-DomainID")
-
-    private String xApplyDomainID;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Apply-ProjectID")
 
     private String xApplyProjectID;
-
-    public ListMeshesRequest withXApplyDomainID(String xApplyDomainID) {
-        this.xApplyDomainID = xApplyDomainID;
-        return this;
-    }
-
-    /**
-     * 网格所属DomainID
-     * @return xApplyDomainID
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apply-DomainID")
-    public String getXApplyDomainID() {
-        return xApplyDomainID;
-    }
-
-    public void setXApplyDomainID(String xApplyDomainID) {
-        this.xApplyDomainID = xApplyDomainID;
-    }
 
     public ListMeshesRequest withXApplyProjectID(String xApplyProjectID) {
         this.xApplyProjectID = xApplyProjectID;
@@ -67,20 +43,18 @@ public class ListMeshesRequest {
             return false;
         }
         ListMeshesRequest that = (ListMeshesRequest) obj;
-        return Objects.equals(this.xApplyDomainID, that.xApplyDomainID)
-            && Objects.equals(this.xApplyProjectID, that.xApplyProjectID);
+        return Objects.equals(this.xApplyProjectID, that.xApplyProjectID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xApplyDomainID, xApplyProjectID);
+        return Objects.hash(xApplyProjectID);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListMeshesRequest {\n");
-        sb.append("    xApplyDomainID: ").append(toIndentedString(xApplyDomainID)).append("\n");
         sb.append("    xApplyProjectID: ").append(toIndentedString(xApplyProjectID)).append("\n");
         sb.append("}");
         return sb.toString();

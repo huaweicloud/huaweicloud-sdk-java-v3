@@ -45,7 +45,7 @@ public class ListIndicatorsResponse extends SdkResponse {
     }
 
     /**
-     * Id value
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -62,7 +62,7 @@ public class ListIndicatorsResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 错误信息
      * @return message
      */
     public String getMessage() {
@@ -79,7 +79,7 @@ public class ListIndicatorsResponse extends SdkResponse {
     }
 
     /**
-     * tatal count
+     * 总数
      * minimum: 0
      * maximum: 99999
      * @return total
@@ -114,7 +114,7 @@ public class ListIndicatorsResponse extends SdkResponse {
     }
 
     /**
-     * list of informations of indicator
+     * 指标列表数据
      * @return data
      */
     public List<IndicatorDetail> getData() {

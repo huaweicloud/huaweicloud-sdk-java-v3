@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class WeakConstraintDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -42,6 +47,23 @@ public class WeakConstraintDto {
     @JsonProperty(value = "quantiles")
 
     private List<Float> quantiles = null;
+
+    public WeakConstraintDto withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 自定义模型id，仅弱约束为模型时填写
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public WeakConstraintDto withName(String name) {
         this.name = name;
@@ -195,20 +217,22 @@ public class WeakConstraintDto {
             return false;
         }
         WeakConstraintDto that = (WeakConstraintDto) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.bool, that.bool) && Objects.equals(this.range, that.range)
-            && Objects.equals(this.struct, that.struct) && Objects.equals(this.quantiles, that.quantiles);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.bool, that.bool)
+            && Objects.equals(this.range, that.range) && Objects.equals(this.struct, that.struct)
+            && Objects.equals(this.quantiles, that.quantiles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, bool, range, struct, quantiles);
+        return Objects.hash(id, name, type, bool, range, struct, quantiles);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class WeakConstraintDto {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    bool: ").append(toIndentedString(bool)).append("\n");

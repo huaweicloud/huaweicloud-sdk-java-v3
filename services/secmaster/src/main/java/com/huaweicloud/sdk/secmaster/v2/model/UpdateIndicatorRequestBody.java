@@ -12,31 +12,9 @@ import java.util.function.Consumer;
 public class UpdateIndicatorRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "trigger_flag")
-
-    private Boolean triggerFlag;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_object")
 
     private IndicatorDataObjectDetail dataObject;
-
-    public UpdateIndicatorRequestBody withTriggerFlag(Boolean triggerFlag) {
-        this.triggerFlag = triggerFlag;
-        return this;
-    }
-
-    /**
-     * 触发标志
-     * @return triggerFlag
-     */
-    public Boolean getTriggerFlag() {
-        return triggerFlag;
-    }
-
-    public void setTriggerFlag(Boolean triggerFlag) {
-        this.triggerFlag = triggerFlag;
-    }
 
     public UpdateIndicatorRequestBody withDataObject(IndicatorDataObjectDetail dataObject) {
         this.dataObject = dataObject;
@@ -73,19 +51,18 @@ public class UpdateIndicatorRequestBody {
             return false;
         }
         UpdateIndicatorRequestBody that = (UpdateIndicatorRequestBody) obj;
-        return Objects.equals(this.triggerFlag, that.triggerFlag) && Objects.equals(this.dataObject, that.dataObject);
+        return Objects.equals(this.dataObject, that.dataObject);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(triggerFlag, dataObject);
+        return Objects.hash(dataObject);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateIndicatorRequestBody {\n");
-        sb.append("    triggerFlag: ").append(toIndentedString(triggerFlag)).append("\n");
         sb.append("    dataObject: ").append(toIndentedString(dataObject)).append("\n");
         sb.append("}");
         return sb.toString();

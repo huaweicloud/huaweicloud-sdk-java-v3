@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Response of Dataclass Info Ref
+ * 数据类信息
  */
 public class DataclassInfoRef {
 
@@ -26,7 +26,7 @@ public class DataclassInfoRef {
     }
 
     /**
-     * Id value
+     * 数据类ID
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class DataclassInfoRef {
     }
 
     /**
-     * Id value
+     * 数据类名称
      * @return name
      */
     public String getName() {

@@ -118,6 +118,11 @@ public class MysqlProxyV3 {
 
     private String consistenceMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
     public MysqlProxyV3 withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -480,7 +485,7 @@ public class MysqlProxyV3 {
     }
 
     /**
-     * 一致性模式。默认值为空，此时以会话一致性参数session_consistence为准。 - session: 会话一致性 - global: 全局一致性 - eventual: 最终一致性
+     * 一致性模式。默认值为空，此时以会话一致性参数session_consistence为准。 - session: 会话一致性。 - global: 全局一致性。 - eventual: 最终一致性。
      * @return consistenceMode
      */
     public String getConsistenceMode() {
@@ -489,6 +494,23 @@ public class MysqlProxyV3 {
 
     public void setConsistenceMode(String consistenceMode) {
         this.consistenceMode = consistenceMode;
+    }
+
+    public MysqlProxyV3 withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 数据库代理所属的子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
     }
 
     @Override
@@ -513,7 +535,8 @@ public class MysqlProxyV3 {
             && Objects.equals(this.switchConnectionPoolTypeEnabled, that.switchConnectionPoolTypeEnabled)
             && Objects.equals(this.routeMode, that.routeMode)
             && Objects.equals(this.balanceRouteModeEnabled, that.balanceRouteModeEnabled)
-            && Objects.equals(this.consistenceMode, that.consistenceMode);
+            && Objects.equals(this.consistenceMode, that.consistenceMode)
+            && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override
@@ -538,7 +561,8 @@ public class MysqlProxyV3 {
             switchConnectionPoolTypeEnabled,
             routeMode,
             balanceRouteModeEnabled,
-            consistenceMode);
+            consistenceMode,
+            subnetId);
     }
 
     @Override
@@ -568,6 +592,7 @@ public class MysqlProxyV3 {
         sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
         sb.append("    balanceRouteModeEnabled: ").append(toIndentedString(balanceRouteModeEnabled)).append("\n");
         sb.append("    consistenceMode: ").append(toIndentedString(consistenceMode)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

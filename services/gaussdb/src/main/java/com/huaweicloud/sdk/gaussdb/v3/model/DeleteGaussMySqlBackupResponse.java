@@ -12,25 +12,47 @@ import java.util.Objects;
 public class DeleteGaussMySqlBackupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job_id")
+    @JsonProperty(value = "backup_id")
 
-    private String jobId;
+    private String backupId;
 
-    public DeleteGaussMySqlBackupResponse withJobId(String jobId) {
-        this.jobId = jobId;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_name")
+
+    private String backupName;
+
+    public DeleteGaussMySqlBackupResponse withBackupId(String backupId) {
+        this.backupId = backupId;
         return this;
     }
 
     /**
-     * 任务ID。
-     * @return jobId
+     * 备份ID。
+     * @return backupId
      */
-    public String getJobId() {
-        return jobId;
+    public String getBackupId() {
+        return backupId;
     }
 
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
+    public void setBackupId(String backupId) {
+        this.backupId = backupId;
+    }
+
+    public DeleteGaussMySqlBackupResponse withBackupName(String backupName) {
+        this.backupName = backupName;
+        return this;
+    }
+
+    /**
+     * 备份名称。
+     * @return backupName
+     */
+    public String getBackupName() {
+        return backupName;
+    }
+
+    public void setBackupName(String backupName) {
+        this.backupName = backupName;
     }
 
     @Override
@@ -42,19 +64,20 @@ public class DeleteGaussMySqlBackupResponse extends SdkResponse {
             return false;
         }
         DeleteGaussMySqlBackupResponse that = (DeleteGaussMySqlBackupResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupName, that.backupName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(backupId, backupName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteGaussMySqlBackupResponse {\n");
-        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
+        sb.append("    backupName: ").append(toIndentedString(backupName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -26,7 +26,7 @@ public class DataClassRefPojo {
     }
 
     /**
-     * 唯一标识ID
+     * 数据类ID
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class DataClassRefPojo {
     }
 
     /**
-     * 唯一标识ID
+     * 数据类名称
      * @return name
      */
     public String getName() {

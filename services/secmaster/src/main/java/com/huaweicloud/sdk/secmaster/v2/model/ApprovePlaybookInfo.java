@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * approve of playbook
+ * 审核详情
  */
 public class ApprovePlaybookInfo {
 

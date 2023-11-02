@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Information of playbook version
+ * 剧本版本信息
  */
 public class ModifyPlaybookVersionInfo {
 
@@ -81,7 +81,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * The description, display only
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -98,7 +98,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -115,7 +115,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * Playbook id.
+     * 剧本ID
      * @return playbookId
      */
     public String getPlaybookId() {
@@ -132,7 +132,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * dataclass id.
+     * 数据类ID
      * @return dataclassId
      */
     public String getDataclassId() {
@@ -149,7 +149,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * If the condition filter is enabled.
+     * 是否启用触发条件过滤器
      * @return ruleEnable
      */
     public Boolean getRuleEnable() {
@@ -166,7 +166,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * If is enabled, false for disenabled, true for enabled
+     * 是否激活。(false:未激活, true:已激活)
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -183,7 +183,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * 状态
+     * 状态(APPROVING:审核中，EDITING-编辑中，UNPASSED-审核未通过，PUBLISHED-已发布)
      * @return status
      */
     public String getStatus() {
@@ -217,7 +217,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * Strategy of action. event, timer
+     * 触发方式. EVENT--事件触发, TIMER--定时触发
      * @return triggerType
      */
     public String getTriggerType() {
@@ -234,7 +234,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * if trigger when dataobject is created
+     * 数据对象是否创建时触发剧本
      * @return dataobjectCreate
      */
     public Boolean getDataobjectCreate() {
@@ -251,7 +251,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * if trigger when dataobject is updated
+     * 数据对象是否更新时触发剧本
      * @return dataobjectUpdate
      */
     public Boolean getDataobjectUpdate() {
@@ -268,7 +268,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * if trigger when dataobject is deleted
+     * 数据对象是否删除时触发剧本
      * @return dataobjectDelete
      */
     public Boolean getDataobjectDelete() {
@@ -285,7 +285,7 @@ public class ModifyPlaybookVersionInfo {
     }
 
     /**
-     * Strategy of action. sync or async
+     * 执行策略. 目前仅支持异步并发执行，对应值为ASYNC
      * @return actionStrategy
      */
     public String getActionStrategy() {

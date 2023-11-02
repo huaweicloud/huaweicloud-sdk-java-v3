@@ -51,7 +51,7 @@ public class CreateNatGatewaySnatRuleResponseBody {
     private String description;
 
     /**
-     * 功能说明：SNAT规则的状态。
+     * SNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
      */
     public static final class StatusEnum {
 
@@ -169,6 +169,16 @@ public class CreateNatGatewaySnatRuleResponseBody {
 
     private String floatingIpAddress;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eip_id")
+
+    private String globalEipId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_eip_address")
+
+    private String globalEipAddress;
+
     public CreateNatGatewaySnatRuleResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -244,6 +254,8 @@ public class CreateNatGatewaySnatRuleResponseBody {
 
     /**
      * 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC）
+     * minimum: 0
+     * maximum: 1
      * @return sourceType
      */
     public Integer getSourceType() {
@@ -294,7 +306,7 @@ public class CreateNatGatewaySnatRuleResponseBody {
     }
 
     /**
-     * 功能说明：SNAT规则的状态。
+     * SNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -362,7 +374,7 @@ public class CreateNatGatewaySnatRuleResponseBody {
     }
 
     /**
-     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
+     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。
      * @return floatingIpAddress
      */
     public String getFloatingIpAddress() {
@@ -371,6 +383,40 @@ public class CreateNatGatewaySnatRuleResponseBody {
 
     public void setFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
+    }
+
+    public CreateNatGatewaySnatRuleResponseBody withGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+        return this;
+    }
+
+    /**
+     * 全域弹性公网IP的id。
+     * @return globalEipId
+     */
+    public String getGlobalEipId() {
+        return globalEipId;
+    }
+
+    public void setGlobalEipId(String globalEipId) {
+        this.globalEipId = globalEipId;
+    }
+
+    public CreateNatGatewaySnatRuleResponseBody withGlobalEipAddress(String globalEipAddress) {
+        this.globalEipAddress = globalEipAddress;
+        return this;
+    }
+
+    /**
+     * 全域弹性公网IP的地址。
+     * @return globalEipAddress
+     */
+    public String getGlobalEipAddress() {
+        return globalEipAddress;
+    }
+
+    public void setGlobalEipAddress(String globalEipAddress) {
+        this.globalEipAddress = globalEipAddress;
     }
 
     @Override
@@ -388,7 +434,9 @@ public class CreateNatGatewaySnatRuleResponseBody {
             && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.networkId, that.networkId)
             && Objects.equals(this.adminStateUp, that.adminStateUp)
-            && Objects.equals(this.floatingIpAddress, that.floatingIpAddress);
+            && Objects.equals(this.floatingIpAddress, that.floatingIpAddress)
+            && Objects.equals(this.globalEipId, that.globalEipId)
+            && Objects.equals(this.globalEipAddress, that.globalEipAddress);
     }
 
     @Override
@@ -404,7 +452,9 @@ public class CreateNatGatewaySnatRuleResponseBody {
             createdAt,
             networkId,
             adminStateUp,
-            floatingIpAddress);
+            floatingIpAddress,
+            globalEipId,
+            globalEipAddress);
     }
 
     @Override
@@ -423,6 +473,8 @@ public class CreateNatGatewaySnatRuleResponseBody {
         sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    floatingIpAddress: ").append(toIndentedString(floatingIpAddress)).append("\n");
+        sb.append("    globalEipId: ").append(toIndentedString(globalEipId)).append("\n");
+        sb.append("    globalEipAddress: ").append(toIndentedString(globalEipAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

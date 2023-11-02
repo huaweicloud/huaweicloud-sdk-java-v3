@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 创建配体相似度图的模式：中心模式
+ * 创建配体相似度图的模式：中心模式、自由模式
  */
 public class LigandSimilarityGraphMode {
 
@@ -17,11 +17,17 @@ public class LigandSimilarityGraphMode {
      */
     public static final LigandSimilarityGraphMode CENTER = new LigandSimilarityGraphMode("CENTER");
 
+    /**
+     * Enum FREE for value: "FREE"
+     */
+    public static final LigandSimilarityGraphMode FREE = new LigandSimilarityGraphMode("FREE");
+
     private static final Map<String, LigandSimilarityGraphMode> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, LigandSimilarityGraphMode> createStaticFields() {
         Map<String, LigandSimilarityGraphMode> map = new HashMap<>();
         map.put("CENTER", CENTER);
+        map.put("FREE", FREE);
         return Collections.unmodifiableMap(map);
     }
 

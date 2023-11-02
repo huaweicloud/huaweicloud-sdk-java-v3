@@ -24,6 +24,11 @@ public class ListTaskInfoResponse extends SdkResponse {
 
     private List<TaskVo> data = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "taskNumVo")
+
+    private TaskNumVo taskNumVo;
+
     public ListTaskInfoResponse withPage(Page page) {
         this.page = page;
         return this;
@@ -83,6 +88,32 @@ public class ListTaskInfoResponse extends SdkResponse {
         this.data = data;
     }
 
+    public ListTaskInfoResponse withTaskNumVo(TaskNumVo taskNumVo) {
+        this.taskNumVo = taskNumVo;
+        return this;
+    }
+
+    public ListTaskInfoResponse withTaskNumVo(Consumer<TaskNumVo> taskNumVoSetter) {
+        if (this.taskNumVo == null) {
+            this.taskNumVo = new TaskNumVo();
+            taskNumVoSetter.accept(this.taskNumVo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get taskNumVo
+     * @return taskNumVo
+     */
+    public TaskNumVo getTaskNumVo() {
+        return taskNumVo;
+    }
+
+    public void setTaskNumVo(TaskNumVo taskNumVo) {
+        this.taskNumVo = taskNumVo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -92,12 +123,13 @@ public class ListTaskInfoResponse extends SdkResponse {
             return false;
         }
         ListTaskInfoResponse that = (ListTaskInfoResponse) obj;
-        return Objects.equals(this.page, that.page) && Objects.equals(this.data, that.data);
+        return Objects.equals(this.page, that.page) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.taskNumVo, that.taskNumVo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(page, data);
+        return Objects.hash(page, data, taskNumVo);
     }
 
     @Override
@@ -106,6 +138,7 @@ public class ListTaskInfoResponse extends SdkResponse {
         sb.append("class ListTaskInfoResponse {\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
+        sb.append("    taskNumVo: ").append(toIndentedString(taskNumVo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

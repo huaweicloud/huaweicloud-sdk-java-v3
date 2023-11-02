@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.cloudide.v2.model.AddExtensionEvaluationRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.AddExtensionEvaluationResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.AddExtensionStarRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.AddExtensionStarResponse;
+import com.huaweicloud.sdk.cloudide.v2.model.ChatRequestMessage;
+import com.huaweicloud.sdk.cloudide.v2.model.ChatResultRequestMessage;
 import com.huaweicloud.sdk.cloudide.v2.model.CheckInstanceAccessRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.CheckInstanceAccessResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.CheckMaliciousExtensionEvaluationRequest;
@@ -85,11 +87,18 @@ import com.huaweicloud.sdk.cloudide.v2.model.ShowPriceRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.ShowPriceResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.ShowResultRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.ShowResultResponse;
+import com.huaweicloud.sdk.cloudide.v2.model.StartChatRequest;
+import com.huaweicloud.sdk.cloudide.v2.model.StartChatRequestMessage;
+import com.huaweicloud.sdk.cloudide.v2.model.StartChatResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.StartInstanceParam;
 import com.huaweicloud.sdk.cloudide.v2.model.StartInstanceRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.StartInstanceResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.StopInstanceRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.StopInstanceResponse;
+import com.huaweicloud.sdk.cloudide.v2.model.SyncChatRequest;
+import com.huaweicloud.sdk.cloudide.v2.model.SyncChatResponse;
+import com.huaweicloud.sdk.cloudide.v2.model.SyncGetChatResultRequest;
+import com.huaweicloud.sdk.cloudide.v2.model.SyncGetChatResultResponse;
 import com.huaweicloud.sdk.cloudide.v2.model.TaskModelMarketPlace;
 import com.huaweicloud.sdk.cloudide.v2.model.UpdateInstanceActivityRequest;
 import com.huaweicloud.sdk.cloudide.v2.model.UpdateInstanceActivityResponse;
@@ -955,6 +964,79 @@ public class CloudIDEMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResultRequest::getRequestId, (req, v) -> {
                 req.setRequestId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartChatRequest, StartChatResponse> startChat = genForstartChat();
+
+    private static HttpRequestDef<StartChatRequest, StartChatResponse> genForstartChat() {
+        // basic
+        HttpRequestDef.Builder<StartChatRequest, StartChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartChatRequest.class, StartChatResponse.class)
+                .withName("StartChat")
+                .withUri("/v1/codebreezetsbot/devmind/tsbot/start-chat")
+                .withContentType("application/json");
+
+        // requests
+        builder.<StartChatRequestMessage>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartChatRequestMessage.class),
+            f -> f.withMarshaller(StartChatRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncChatRequest, SyncChatResponse> syncChat = genForsyncChat();
+
+    private static HttpRequestDef<SyncChatRequest, SyncChatResponse> genForsyncChat() {
+        // basic
+        HttpRequestDef.Builder<SyncChatRequest, SyncChatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SyncChatRequest.class, SyncChatResponse.class)
+                .withName("SyncChat")
+                .withUri("/v1/codebreezetsbot/devmind/tsbot/async-chat")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ChatRequestMessage>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChatRequestMessage.class),
+            f -> f.withMarshaller(SyncChatRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncGetChatResultRequest, SyncGetChatResultResponse> syncGetChatResult =
+        genForsyncGetChatResult();
+
+    private static HttpRequestDef<SyncGetChatResultRequest, SyncGetChatResultResponse> genForsyncGetChatResult() {
+        // basic
+        HttpRequestDef.Builder<SyncGetChatResultRequest, SyncGetChatResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SyncGetChatResultRequest.class, SyncGetChatResultResponse.class)
+                .withName("SyncGetChatResult")
+                .withUri("/v1/codebreezetsbot/devmind/tsbot/async-get-chat-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ChatResultRequestMessage>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChatResultRequestMessage.class),
+            f -> f.withMarshaller(SyncGetChatResultRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

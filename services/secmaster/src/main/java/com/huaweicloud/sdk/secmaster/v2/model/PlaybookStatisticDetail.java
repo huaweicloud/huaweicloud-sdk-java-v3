@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * statistics of playbook
+ * 剧本状态统计信息
  */
 public class PlaybookStatisticDetail {
 

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Condition define
+ * 条件定义
  */
 public class ConditionItem {
 
@@ -34,7 +34,7 @@ public class ConditionItem {
     }
 
     /**
-     * Name of the condition.
+     * 条件名称
      * @return name
      */
     public String getName() {
@@ -51,7 +51,7 @@ public class ConditionItem {
     }
 
     /**
-     * Detail of the condition.
+     * 条件详情
      * @return detail
      */
     public String getDetail() {
@@ -84,7 +84,7 @@ public class ConditionItem {
     }
 
     /**
-     * Detail of the condition.
+     * 条件表达式数据
      * @return data
      */
     public List<String> getData() {

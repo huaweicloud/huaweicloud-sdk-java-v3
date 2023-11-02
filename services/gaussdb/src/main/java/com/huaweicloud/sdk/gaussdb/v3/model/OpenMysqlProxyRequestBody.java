@@ -118,6 +118,11 @@ public class OpenMysqlProxyRequestBody {
 
     private List<NodesWeight> nodesReadWeight = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
     public OpenMysqlProxyRequestBody withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -225,7 +230,7 @@ public class OpenMysqlProxyRequestBody {
     }
 
     /**
-     * 数据库节点的读权重设置。
+     * 数据库节点的读权重设置。  在proxy_mode为readonly时，只能为只读节点选择权重。
      * @return nodesReadWeight
      */
     public List<NodesWeight> getNodesReadWeight() {
@@ -234,6 +239,23 @@ public class OpenMysqlProxyRequestBody {
 
     public void setNodesReadWeight(List<NodesWeight> nodesReadWeight) {
         this.nodesReadWeight = nodesReadWeight;
+    }
+
+    public OpenMysqlProxyRequestBody withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 数据库VPC下的子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
     }
 
     @Override
@@ -248,12 +270,13 @@ public class OpenMysqlProxyRequestBody {
         return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.nodeNum, that.nodeNum)
             && Objects.equals(this.proxyName, that.proxyName) && Objects.equals(this.proxyMode, that.proxyMode)
             && Objects.equals(this.routeMode, that.routeMode)
-            && Objects.equals(this.nodesReadWeight, that.nodesReadWeight);
+            && Objects.equals(this.nodesReadWeight, that.nodesReadWeight)
+            && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef, nodeNum, proxyName, proxyMode, routeMode, nodesReadWeight);
+        return Objects.hash(flavorRef, nodeNum, proxyName, proxyMode, routeMode, nodesReadWeight, subnetId);
     }
 
     @Override
@@ -266,6 +289,7 @@ public class OpenMysqlProxyRequestBody {
         sb.append("    proxyMode: ").append(toIndentedString(proxyMode)).append("\n");
         sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
         sb.append("    nodesReadWeight: ").append(toIndentedString(nodesReadWeight)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

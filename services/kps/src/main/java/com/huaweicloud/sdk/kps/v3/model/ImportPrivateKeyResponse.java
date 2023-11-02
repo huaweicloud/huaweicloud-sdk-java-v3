@@ -15,16 +15,16 @@ public class ImportPrivateKeyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keypair")
 
-    private KeypairBean keypair;
+    private ImportPrivateKeyAction keypair;
 
-    public ImportPrivateKeyResponse withKeypair(KeypairBean keypair) {
+    public ImportPrivateKeyResponse withKeypair(ImportPrivateKeyAction keypair) {
         this.keypair = keypair;
         return this;
     }
 
-    public ImportPrivateKeyResponse withKeypair(Consumer<KeypairBean> keypairSetter) {
+    public ImportPrivateKeyResponse withKeypair(Consumer<ImportPrivateKeyAction> keypairSetter) {
         if (this.keypair == null) {
-            this.keypair = new KeypairBean();
+            this.keypair = new ImportPrivateKeyAction();
             keypairSetter.accept(this.keypair);
         }
 
@@ -35,11 +35,11 @@ public class ImportPrivateKeyResponse extends SdkResponse {
      * Get keypair
      * @return keypair
      */
-    public KeypairBean getKeypair() {
+    public ImportPrivateKeyAction getKeypair() {
         return keypair;
     }
 
-    public void setKeypair(KeypairBean keypair) {
+    public void setKeypair(ImportPrivateKeyAction keypair) {
         this.keypair = keypair;
     }
 

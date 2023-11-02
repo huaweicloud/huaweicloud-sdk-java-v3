@@ -1,15 +1,20 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 事件详情
+ * 事件实体信息
  */
 public class Incident {
 
@@ -19,14 +24,39 @@ public class Incident {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace_id")
+
+    private String workspaceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private String labels;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment")
 
     private IncidentEnvironment environment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "datasource")
+    @JsonProperty(value = "data_source")
 
-    private IncidentDatasource datasource;
+    private AlertDataSource dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_observed_time")
@@ -73,10 +103,98 @@ public class Incident {
 
     private Integer confidence;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "serverity")
+    /**
+     * 严重性等级，取值范围：Tips | Low | Medium | High | Fatal 说明： 0: Tips – 未发现任何问题。 1: Low – 无需针对问题执行任何操作。 2: Medium – 问题需要处理，但不紧急。 3: High – 问题必须优先处理。 4: Fatal – 问题必须立即处理，以防止产生进一步的损害
+     */
+    public static final class SeverityEnum {
 
-    private String serverity;
+        /**
+         * Enum TIPS for value: "Tips"
+         */
+        public static final SeverityEnum TIPS = new SeverityEnum("Tips");
+
+        /**
+         * Enum LOW for value: "Low"
+         */
+        public static final SeverityEnum LOW = new SeverityEnum("Low");
+
+        /**
+         * Enum MEDIUM for value: "Medium"
+         */
+        public static final SeverityEnum MEDIUM = new SeverityEnum("Medium");
+
+        /**
+         * Enum HIGH for value: "High"
+         */
+        public static final SeverityEnum HIGH = new SeverityEnum("High");
+
+        /**
+         * Enum FATAL for value: "Fatal"
+         */
+        public static final SeverityEnum FATAL = new SeverityEnum("Fatal");
+
+        private static final Map<String, SeverityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SeverityEnum> createStaticFields() {
+            Map<String, SeverityEnum> map = new HashMap<>();
+            map.put("Tips", TIPS);
+            map.put("Low", LOW);
+            map.put("Medium", MEDIUM);
+            map.put("High", HIGH);
+            map.put("Fatal", FATAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SeverityEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SeverityEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
+        }
+
+        public static SeverityEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SeverityEnum) {
+                return this.value.equals(((SeverityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity")
+
+    private SeverityEnum severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "criticality")
@@ -86,32 +204,184 @@ public class Incident {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "incident_type")
 
-    private Object incidentType;
+    private IncidentIncidentType incidentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_list")
 
-    private List<CreateIncidentNetworkList> networkList = null;
+    private List<AlertNetworkList> networkList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_list")
 
-    private List<CreateIncidentResourceList> resourceList = null;
+    private List<AlertResourceList> resourceList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remediation")
 
-    private ShowAlertRspRemediation remediation;
+    private AlertRemediation remediation;
+
+    /**
+     * 验证状态，标识事件的准确性。可选类型如下： Unknown – 未知 True_Positive – 确认 False_Positive – 误报 默认填写Unknown
+     */
+    public static final class VerificationStateEnum {
+
+        /**
+         * Enum UNKNOWN for value: "Unknown"
+         */
+        public static final VerificationStateEnum UNKNOWN = new VerificationStateEnum("Unknown");
+
+        /**
+         * Enum TRUE_POSITIVE for value: "True_Positive"
+         */
+        public static final VerificationStateEnum TRUE_POSITIVE = new VerificationStateEnum("True_Positive");
+
+        /**
+         * Enum FALSE_POSITIVE for value: "False_Positive"
+         */
+        public static final VerificationStateEnum FALSE_POSITIVE = new VerificationStateEnum("False_Positive");
+
+        private static final Map<String, VerificationStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VerificationStateEnum> createStaticFields() {
+            Map<String, VerificationStateEnum> map = new HashMap<>();
+            map.put("Unknown", UNKNOWN);
+            map.put("True_Positive", TRUE_POSITIVE);
+            map.put("False_Positive", FALSE_POSITIVE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        VerificationStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VerificationStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VerificationStateEnum(value));
+        }
+
+        public static VerificationStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VerificationStateEnum) {
+                return this.value.equals(((VerificationStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_state")
 
-    private String verificationState;
+    private VerificationStateEnum verificationState;
+
+    /**
+     * 事件处理状态，可选类型如下： Open – 打开，默认 Block – 阻塞 Closed – 关闭 默认填写Open
+     */
+    public static final class HandleStatusEnum {
+
+        /**
+         * Enum OPEN for value: "Open"
+         */
+        public static final HandleStatusEnum OPEN = new HandleStatusEnum("Open");
+
+        /**
+         * Enum BLOCK for value: "Block"
+         */
+        public static final HandleStatusEnum BLOCK = new HandleStatusEnum("Block");
+
+        /**
+         * Enum CLOSED for value: "Closed"
+         */
+        public static final HandleStatusEnum CLOSED = new HandleStatusEnum("Closed");
+
+        private static final Map<String, HandleStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HandleStatusEnum> createStaticFields() {
+            Map<String, HandleStatusEnum> map = new HashMap<>();
+            map.put("Open", OPEN);
+            map.put("Block", BLOCK);
+            map.put("Closed", CLOSED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HandleStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HandleStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HandleStatusEnum(value));
+        }
+
+        public static HandleStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HandleStatusEnum) {
+                return this.value.equals(((HandleStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_status")
 
-    private String handleStatus;
+    private HandleStatusEnum handleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sla")
@@ -128,20 +398,93 @@ public class Incident {
 
     private String closeTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "chop_phase")
+    /**
+     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     */
+    public static final class IpdrrPhaseEnum {
 
-    private String chopPhase;
+        /**
+         * Enum PREPARTION for value: "Prepartion"
+         */
+        public static final IpdrrPhaseEnum PREPARTION = new IpdrrPhaseEnum("Prepartion");
+
+        /**
+         * Enum DETECTION_AND_ANALYSIS for value: "Detection and Analysis"
+         */
+        public static final IpdrrPhaseEnum DETECTION_AND_ANALYSIS = new IpdrrPhaseEnum("Detection and Analysis");
+
+        /**
+         * Enum CONTAINM_ERADICATION_RECOVERY for value: "Containm，Eradication& Recovery"
+         */
+        public static final IpdrrPhaseEnum CONTAINM_ERADICATION_RECOVERY =
+            new IpdrrPhaseEnum("Containm，Eradication& Recovery");
+
+        /**
+         * Enum POST_INCIDENT_ACTIVITY for value: "Post-Incident-Activity"
+         */
+        public static final IpdrrPhaseEnum POST_INCIDENT_ACTIVITY = new IpdrrPhaseEnum("Post-Incident-Activity");
+
+        private static final Map<String, IpdrrPhaseEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IpdrrPhaseEnum> createStaticFields() {
+            Map<String, IpdrrPhaseEnum> map = new HashMap<>();
+            map.put("Prepartion", PREPARTION);
+            map.put("Detection and Analysis", DETECTION_AND_ANALYSIS);
+            map.put("Containm，Eradication& Recovery", CONTAINM_ERADICATION_RECOVERY);
+            map.put("Post-Incident-Activity", POST_INCIDENT_ACTIVITY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IpdrrPhaseEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpdrrPhaseEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpdrrPhaseEnum(value));
+        }
+
+        public static IpdrrPhaseEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpdrrPhaseEnum) {
+                return this.value.equals(((IpdrrPhaseEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipdrr_phase")
 
-    private String ipdrrPhase;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ppdr_phase")
-
-    private String ppdrPhase;
+    private IpdrrPhaseEnum ipdrrPhase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simulation")
@@ -159,14 +502,96 @@ public class Incident {
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cteator")
+    @JsonProperty(value = "creator")
 
-    private String cteator;
+    private String creator;
+
+    /**
+     * 关闭原因: 误检 - False detection 已解决 - Resolved 重复 - Repeated 其他 - Other
+     */
+    public static final class CloseReasonEnum {
+
+        /**
+         * Enum FALSE_DETECTION for value: "False detection"
+         */
+        public static final CloseReasonEnum FALSE_DETECTION = new CloseReasonEnum("False detection");
+
+        /**
+         * Enum RESOLVED for value: "Resolved"
+         */
+        public static final CloseReasonEnum RESOLVED = new CloseReasonEnum("Resolved");
+
+        /**
+         * Enum REPEATED for value: "Repeated"
+         */
+        public static final CloseReasonEnum REPEATED = new CloseReasonEnum("Repeated");
+
+        /**
+         * Enum OTHER for value: "Other"
+         */
+        public static final CloseReasonEnum OTHER = new CloseReasonEnum("Other");
+
+        private static final Map<String, CloseReasonEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CloseReasonEnum> createStaticFields() {
+            Map<String, CloseReasonEnum> map = new HashMap<>();
+            map.put("False detection", FALSE_DETECTION);
+            map.put("Resolved", RESOLVED);
+            map.put("Repeated", REPEATED);
+            map.put("Other", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CloseReasonEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CloseReasonEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CloseReasonEnum(value));
+        }
+
+        public static CloseReasonEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CloseReasonEnum) {
+                return this.value.equals(((CloseReasonEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "close_reason")
 
-    private String closeReason;
+    private CloseReasonEnum closeReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "close_comment")
@@ -176,7 +601,7 @@ public class Incident {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "malware")
 
-    private CreateIncidentMalware malware;
+    private ShowAlertRspMalware malware;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_info")
@@ -186,32 +611,22 @@ public class Incident {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process")
 
-    private List<CreateIncidentProcess> process = null;
+    private List<AlertProcess> process = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_info")
 
-    private List<CreateIncidentUserInfo> userInfo = null;
+    private List<AlertUserInfo> userInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_info")
 
-    private List<ShowAlertRspFileInfo> fileInfo = null;
+    private List<AlertFileInfo> fileInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "system_incident_table")
+    @JsonProperty(value = "system_alert_table")
 
-    private Object systemIncidentTable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "workspace_id")
-
-    private String workspaceId;
+    private Object systemAlertTable;
 
     public Incident withVersion(String version) {
         this.version = version;
@@ -219,7 +634,7 @@ public class Incident {
     }
 
     /**
-     * 版本
+     * 事件对象的版本，该字段的值必须为华为云SSA服务确定的官方发布版本之一
      * @return version
      */
     public String getVersion() {
@@ -228,6 +643,91 @@ public class Incident {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Incident withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 事件唯一标识，UUID格式，最大36个字符
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Incident withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 数据投递后，被委托用户的domain_id
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public Incident withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * 数据投递后，被委托用户的region_id
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    public Incident withWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+        return this;
+    }
+
+    /**
+     * 当前的工作空间id
+     * @return workspaceId
+     */
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    public Incident withLabels(String labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    /**
+     * 标签，仅展示
+     * @return labels
+     */
+    public String getLabels() {
+        return labels;
+    }
+
+    public void setLabels(String labels) {
+        this.labels = labels;
     }
 
     public Incident withEnvironment(IncidentEnvironment environment) {
@@ -256,30 +756,30 @@ public class Incident {
         this.environment = environment;
     }
 
-    public Incident withDatasource(IncidentDatasource datasource) {
-        this.datasource = datasource;
+    public Incident withDataSource(AlertDataSource dataSource) {
+        this.dataSource = dataSource;
         return this;
     }
 
-    public Incident withDatasource(Consumer<IncidentDatasource> datasourceSetter) {
-        if (this.datasource == null) {
-            this.datasource = new IncidentDatasource();
-            datasourceSetter.accept(this.datasource);
+    public Incident withDataSource(Consumer<AlertDataSource> dataSourceSetter) {
+        if (this.dataSource == null) {
+            this.dataSource = new AlertDataSource();
+            dataSourceSetter.accept(this.dataSource);
         }
 
         return this;
     }
 
     /**
-     * Get datasource
-     * @return datasource
+     * Get dataSource
+     * @return dataSource
      */
-    public IncidentDatasource getDatasource() {
-        return datasource;
+    public AlertDataSource getDataSource() {
+        return dataSource;
     }
 
-    public void setDatasource(IncidentDatasource datasource) {
-        this.datasource = datasource;
+    public void setDataSource(AlertDataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     public Incident withFirstObservedTime(String firstObservedTime) {
@@ -288,7 +788,7 @@ public class Incident {
     }
 
     /**
-     * Update time
+     * 首次发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return firstObservedTime
      */
     public String getFirstObservedTime() {
@@ -305,7 +805,7 @@ public class Incident {
     }
 
     /**
-     * Update time
+     * 最近发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return lastObservedTime
      */
     public String getLastObservedTime() {
@@ -322,7 +822,7 @@ public class Incident {
     }
 
     /**
-     * Create time
+     * 记录时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return createTime
      */
     public String getCreateTime() {
@@ -339,7 +839,7 @@ public class Incident {
     }
 
     /**
-     * Update time
+     * 接收时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return arriveTime
      */
     public String getArriveTime() {
@@ -356,7 +856,7 @@ public class Incident {
     }
 
     /**
-     * The name, display only
+     * 事件标题
      * @return title
      */
     public String getTitle() {
@@ -373,7 +873,7 @@ public class Incident {
     }
 
     /**
-     * The description, display only
+     * 事件描述信息
      * @return description
      */
     public String getDescription() {
@@ -390,7 +890,7 @@ public class Incident {
     }
 
     /**
-     * 事件URL链接
+     * 事件URL链接，指向数据源产品中有关当前事件说明的页面
      * @return sourceUrl
      */
     public String getSourceUrl() {
@@ -409,7 +909,7 @@ public class Incident {
     /**
      * 事件发生次数
      * minimum: 0
-     * maximum: 64
+     * maximum: 999
      * @return count
      */
     public Integer getCount() {
@@ -426,9 +926,9 @@ public class Incident {
     }
 
     /**
-     * 置信度
+     * 事件的置信度。置信度的定义旨在说明识别的行为或问题的可能性。 取值范围：0-100，0表示置信度为0%，100表示置信度为100%
      * minimum: 0
-     * maximum: 5
+     * maximum: 100
      * @return confidence
      */
     public Integer getConfidence() {
@@ -439,21 +939,21 @@ public class Incident {
         this.confidence = confidence;
     }
 
-    public Incident withServerity(String serverity) {
-        this.serverity = serverity;
+    public Incident withSeverity(SeverityEnum severity) {
+        this.severity = severity;
         return this;
     }
 
     /**
-     * 严重性等级
-     * @return serverity
+     * 严重性等级，取值范围：Tips | Low | Medium | High | Fatal 说明： 0: Tips – 未发现任何问题。 1: Low – 无需针对问题执行任何操作。 2: Medium – 问题需要处理，但不紧急。 3: High – 问题必须优先处理。 4: Fatal – 问题必须立即处理，以防止产生进一步的损害
+     * @return severity
      */
-    public String getServerity() {
-        return serverity;
+    public SeverityEnum getSeverity() {
+        return severity;
     }
 
-    public void setServerity(String serverity) {
-        this.serverity = serverity;
+    public void setSeverity(SeverityEnum severity) {
+        this.severity = severity;
     }
 
     public Incident withCriticality(Integer criticality) {
@@ -462,9 +962,9 @@ public class Incident {
     }
 
     /**
-     * 关键性，是指事件涉及的资源的重要性级别。
+     * 关键性，是指事件涉及的资源的重要性级别。 取值范围：0-100，0表示资源不关键，100表示最关键资源
      * minimum: 0
-     * maximum: 5
+     * maximum: 100
      * @return criticality
      */
     public Integer getCriticality() {
@@ -475,29 +975,38 @@ public class Incident {
         this.criticality = criticality;
     }
 
-    public Incident withIncidentType(Object incidentType) {
+    public Incident withIncidentType(IncidentIncidentType incidentType) {
         this.incidentType = incidentType;
+        return this;
+    }
+
+    public Incident withIncidentType(Consumer<IncidentIncidentType> incidentTypeSetter) {
+        if (this.incidentType == null) {
+            this.incidentType = new IncidentIncidentType();
+            incidentTypeSetter.accept(this.incidentType);
+        }
+
         return this;
     }
 
     /**
-     * 事件分类
+     * Get incidentType
      * @return incidentType
      */
-    public Object getIncidentType() {
+    public IncidentIncidentType getIncidentType() {
         return incidentType;
     }
 
-    public void setIncidentType(Object incidentType) {
+    public void setIncidentType(IncidentIncidentType incidentType) {
         this.incidentType = incidentType;
     }
 
-    public Incident withNetworkList(List<CreateIncidentNetworkList> networkList) {
+    public Incident withNetworkList(List<AlertNetworkList> networkList) {
         this.networkList = networkList;
         return this;
     }
 
-    public Incident addNetworkListItem(CreateIncidentNetworkList networkListItem) {
+    public Incident addNetworkListItem(AlertNetworkList networkListItem) {
         if (this.networkList == null) {
             this.networkList = new ArrayList<>();
         }
@@ -505,7 +1014,7 @@ public class Incident {
         return this;
     }
 
-    public Incident withNetworkList(Consumer<List<CreateIncidentNetworkList>> networkListSetter) {
+    public Incident withNetworkList(Consumer<List<AlertNetworkList>> networkListSetter) {
         if (this.networkList == null) {
             this.networkList = new ArrayList<>();
         }
@@ -514,23 +1023,23 @@ public class Incident {
     }
 
     /**
-     * network_list
+     * 网络信息
      * @return networkList
      */
-    public List<CreateIncidentNetworkList> getNetworkList() {
+    public List<AlertNetworkList> getNetworkList() {
         return networkList;
     }
 
-    public void setNetworkList(List<CreateIncidentNetworkList> networkList) {
+    public void setNetworkList(List<AlertNetworkList> networkList) {
         this.networkList = networkList;
     }
 
-    public Incident withResourceList(List<CreateIncidentResourceList> resourceList) {
+    public Incident withResourceList(List<AlertResourceList> resourceList) {
         this.resourceList = resourceList;
         return this;
     }
 
-    public Incident addResourceListItem(CreateIncidentResourceList resourceListItem) {
+    public Incident addResourceListItem(AlertResourceList resourceListItem) {
         if (this.resourceList == null) {
             this.resourceList = new ArrayList<>();
         }
@@ -538,7 +1047,7 @@ public class Incident {
         return this;
     }
 
-    public Incident withResourceList(Consumer<List<CreateIncidentResourceList>> resourceListSetter) {
+    public Incident withResourceList(Consumer<List<AlertResourceList>> resourceListSetter) {
         if (this.resourceList == null) {
             this.resourceList = new ArrayList<>();
         }
@@ -547,25 +1056,25 @@ public class Incident {
     }
 
     /**
-     * network_list
+     * 受影响资源
      * @return resourceList
      */
-    public List<CreateIncidentResourceList> getResourceList() {
+    public List<AlertResourceList> getResourceList() {
         return resourceList;
     }
 
-    public void setResourceList(List<CreateIncidentResourceList> resourceList) {
+    public void setResourceList(List<AlertResourceList> resourceList) {
         this.resourceList = resourceList;
     }
 
-    public Incident withRemediation(ShowAlertRspRemediation remediation) {
+    public Incident withRemediation(AlertRemediation remediation) {
         this.remediation = remediation;
         return this;
     }
 
-    public Incident withRemediation(Consumer<ShowAlertRspRemediation> remediationSetter) {
+    public Incident withRemediation(Consumer<AlertRemediation> remediationSetter) {
         if (this.remediation == null) {
-            this.remediation = new ShowAlertRspRemediation();
+            this.remediation = new AlertRemediation();
             remediationSetter.accept(this.remediation);
         }
 
@@ -576,45 +1085,45 @@ public class Incident {
      * Get remediation
      * @return remediation
      */
-    public ShowAlertRspRemediation getRemediation() {
+    public AlertRemediation getRemediation() {
         return remediation;
     }
 
-    public void setRemediation(ShowAlertRspRemediation remediation) {
+    public void setRemediation(AlertRemediation remediation) {
         this.remediation = remediation;
     }
 
-    public Incident withVerificationState(String verificationState) {
+    public Incident withVerificationState(VerificationStateEnum verificationState) {
         this.verificationState = verificationState;
         return this;
     }
 
     /**
-     * 验证状态
+     * 验证状态，标识事件的准确性。可选类型如下： Unknown – 未知 True_Positive – 确认 False_Positive – 误报 默认填写Unknown
      * @return verificationState
      */
-    public String getVerificationState() {
+    public VerificationStateEnum getVerificationState() {
         return verificationState;
     }
 
-    public void setVerificationState(String verificationState) {
+    public void setVerificationState(VerificationStateEnum verificationState) {
         this.verificationState = verificationState;
     }
 
-    public Incident withHandleStatus(String handleStatus) {
+    public Incident withHandleStatus(HandleStatusEnum handleStatus) {
         this.handleStatus = handleStatus;
         return this;
     }
 
     /**
-     * 事件处理状态
+     * 事件处理状态，可选类型如下： Open – 打开，默认 Block – 阻塞 Closed – 关闭 默认填写Open
      * @return handleStatus
      */
-    public String getHandleStatus() {
+    public HandleStatusEnum getHandleStatus() {
         return handleStatus;
     }
 
-    public void setHandleStatus(String handleStatus) {
+    public void setHandleStatus(HandleStatusEnum handleStatus) {
         this.handleStatus = handleStatus;
     }
 
@@ -624,9 +1133,9 @@ public class Incident {
     }
 
     /**
-     * sla
+     * 约束闭环时间：设置风险接受持续时间。单位：小时
      * minimum: 0
-     * maximum: 65535
+     * maximum: 999
      * @return sla
      */
     public Integer getSla() {
@@ -643,7 +1152,7 @@ public class Incident {
     }
 
     /**
-     * Create time
+     * 更新时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -660,7 +1169,7 @@ public class Incident {
     }
 
     /**
-     * Create time
+     * 关闭时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return closeTime
      */
     public String getCloseTime() {
@@ -671,55 +1180,21 @@ public class Incident {
         this.closeTime = closeTime;
     }
 
-    public Incident withChopPhase(String chopPhase) {
-        this.chopPhase = chopPhase;
-        return this;
-    }
-
-    /**
-     * 周期/处置阶段编号
-     * @return chopPhase
-     */
-    public String getChopPhase() {
-        return chopPhase;
-    }
-
-    public void setChopPhase(String chopPhase) {
-        this.chopPhase = chopPhase;
-    }
-
-    public Incident withIpdrrPhase(String ipdrrPhase) {
+    public Incident withIpdrrPhase(IpdrrPhaseEnum ipdrrPhase) {
         this.ipdrrPhase = ipdrrPhase;
         return this;
     }
 
     /**
-     * 周期/处置阶段编号
+     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
      * @return ipdrrPhase
      */
-    public String getIpdrrPhase() {
+    public IpdrrPhaseEnum getIpdrrPhase() {
         return ipdrrPhase;
     }
 
-    public void setIpdrrPhase(String ipdrrPhase) {
+    public void setIpdrrPhase(IpdrrPhaseEnum ipdrrPhase) {
         this.ipdrrPhase = ipdrrPhase;
-    }
-
-    public Incident withPpdrPhase(String ppdrPhase) {
-        this.ppdrPhase = ppdrPhase;
-        return this;
-    }
-
-    /**
-     * 周期/处置阶段编号
-     * @return ppdrPhase
-     */
-    public String getPpdrPhase() {
-        return ppdrPhase;
-    }
-
-    public void setPpdrPhase(String ppdrPhase) {
-        this.ppdrPhase = ppdrPhase;
     }
 
     public Incident withSimulation(String simulation) {
@@ -728,7 +1203,7 @@ public class Incident {
     }
 
     /**
-     * 是否为调试事件.
+     * 调试字段
      * @return simulation
      */
     public String getSimulation() {
@@ -745,7 +1220,7 @@ public class Incident {
     }
 
     /**
-     * 委托人
+     * 事件调查员
      * @return actor
      */
     public String getActor() {
@@ -762,7 +1237,7 @@ public class Incident {
     }
 
     /**
-     * The name, display only
+     * 责任人、服务责任人
      * @return owner
      */
     public String getOwner() {
@@ -773,37 +1248,37 @@ public class Incident {
         this.owner = owner;
     }
 
-    public Incident withCteator(String cteator) {
-        this.cteator = cteator;
+    public Incident withCreator(String creator) {
+        this.creator = creator;
         return this;
     }
 
     /**
-     * The name, display only
-     * @return cteator
+     * 创建人
+     * @return creator
      */
-    public String getCteator() {
-        return cteator;
+    public String getCreator() {
+        return creator;
     }
 
-    public void setCteator(String cteator) {
-        this.cteator = cteator;
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 
-    public Incident withCloseReason(String closeReason) {
+    public Incident withCloseReason(CloseReasonEnum closeReason) {
         this.closeReason = closeReason;
         return this;
     }
 
     /**
-     * 关闭原因
+     * 关闭原因: 误检 - False detection 已解决 - Resolved 重复 - Repeated 其他 - Other
      * @return closeReason
      */
-    public String getCloseReason() {
+    public CloseReasonEnum getCloseReason() {
         return closeReason;
     }
 
-    public void setCloseReason(String closeReason) {
+    public void setCloseReason(CloseReasonEnum closeReason) {
         this.closeReason = closeReason;
     }
 
@@ -813,7 +1288,7 @@ public class Incident {
     }
 
     /**
-     * 关闭原因
+     * 关闭评论
      * @return closeComment
      */
     public String getCloseComment() {
@@ -824,14 +1299,14 @@ public class Incident {
         this.closeComment = closeComment;
     }
 
-    public Incident withMalware(CreateIncidentMalware malware) {
+    public Incident withMalware(ShowAlertRspMalware malware) {
         this.malware = malware;
         return this;
     }
 
-    public Incident withMalware(Consumer<CreateIncidentMalware> malwareSetter) {
+    public Incident withMalware(Consumer<ShowAlertRspMalware> malwareSetter) {
         if (this.malware == null) {
-            this.malware = new CreateIncidentMalware();
+            this.malware = new ShowAlertRspMalware();
             malwareSetter.accept(this.malware);
         }
 
@@ -842,11 +1317,11 @@ public class Incident {
      * Get malware
      * @return malware
      */
-    public CreateIncidentMalware getMalware() {
+    public ShowAlertRspMalware getMalware() {
         return malware;
     }
 
-    public void setMalware(CreateIncidentMalware malware) {
+    public void setMalware(ShowAlertRspMalware malware) {
         this.malware = malware;
     }
 
@@ -867,12 +1342,12 @@ public class Incident {
         this.systemInfo = systemInfo;
     }
 
-    public Incident withProcess(List<CreateIncidentProcess> process) {
+    public Incident withProcess(List<AlertProcess> process) {
         this.process = process;
         return this;
     }
 
-    public Incident addProcessItem(CreateIncidentProcess processItem) {
+    public Incident addProcessItem(AlertProcess processItem) {
         if (this.process == null) {
             this.process = new ArrayList<>();
         }
@@ -880,7 +1355,7 @@ public class Incident {
         return this;
     }
 
-    public Incident withProcess(Consumer<List<CreateIncidentProcess>> processSetter) {
+    public Incident withProcess(Consumer<List<AlertProcess>> processSetter) {
         if (this.process == null) {
             this.process = new ArrayList<>();
         }
@@ -892,20 +1367,20 @@ public class Incident {
      * 进程信息
      * @return process
      */
-    public List<CreateIncidentProcess> getProcess() {
+    public List<AlertProcess> getProcess() {
         return process;
     }
 
-    public void setProcess(List<CreateIncidentProcess> process) {
+    public void setProcess(List<AlertProcess> process) {
         this.process = process;
     }
 
-    public Incident withUserInfo(List<CreateIncidentUserInfo> userInfo) {
+    public Incident withUserInfo(List<AlertUserInfo> userInfo) {
         this.userInfo = userInfo;
         return this;
     }
 
-    public Incident addUserInfoItem(CreateIncidentUserInfo userInfoItem) {
+    public Incident addUserInfoItem(AlertUserInfo userInfoItem) {
         if (this.userInfo == null) {
             this.userInfo = new ArrayList<>();
         }
@@ -913,7 +1388,7 @@ public class Incident {
         return this;
     }
 
-    public Incident withUserInfo(Consumer<List<CreateIncidentUserInfo>> userInfoSetter) {
+    public Incident withUserInfo(Consumer<List<AlertUserInfo>> userInfoSetter) {
         if (this.userInfo == null) {
             this.userInfo = new ArrayList<>();
         }
@@ -925,20 +1400,20 @@ public class Incident {
      * 用户信息
      * @return userInfo
      */
-    public List<CreateIncidentUserInfo> getUserInfo() {
+    public List<AlertUserInfo> getUserInfo() {
         return userInfo;
     }
 
-    public void setUserInfo(List<CreateIncidentUserInfo> userInfo) {
+    public void setUserInfo(List<AlertUserInfo> userInfo) {
         this.userInfo = userInfo;
     }
 
-    public Incident withFileInfo(List<ShowAlertRspFileInfo> fileInfo) {
+    public Incident withFileInfo(List<AlertFileInfo> fileInfo) {
         this.fileInfo = fileInfo;
         return this;
     }
 
-    public Incident addFileInfoItem(ShowAlertRspFileInfo fileInfoItem) {
+    public Incident addFileInfoItem(AlertFileInfo fileInfoItem) {
         if (this.fileInfo == null) {
             this.fileInfo = new ArrayList<>();
         }
@@ -946,7 +1421,7 @@ public class Incident {
         return this;
     }
 
-    public Incident withFileInfo(Consumer<List<ShowAlertRspFileInfo>> fileInfoSetter) {
+    public Incident withFileInfo(Consumer<List<AlertFileInfo>> fileInfoSetter) {
         if (this.fileInfo == null) {
             this.fileInfo = new ArrayList<>();
         }
@@ -958,63 +1433,29 @@ public class Incident {
      * 文件信息
      * @return fileInfo
      */
-    public List<ShowAlertRspFileInfo> getFileInfo() {
+    public List<AlertFileInfo> getFileInfo() {
         return fileInfo;
     }
 
-    public void setFileInfo(List<ShowAlertRspFileInfo> fileInfo) {
+    public void setFileInfo(List<AlertFileInfo> fileInfo) {
         this.fileInfo = fileInfo;
     }
 
-    public Incident withSystemIncidentTable(Object systemIncidentTable) {
-        this.systemIncidentTable = systemIncidentTable;
+    public Incident withSystemAlertTable(Object systemAlertTable) {
+        this.systemAlertTable = systemAlertTable;
         return this;
     }
 
     /**
-     * 系统信息
-     * @return systemIncidentTable
+     * 事件管理列表的布局字段
+     * @return systemAlertTable
      */
-    public Object getSystemIncidentTable() {
-        return systemIncidentTable;
+    public Object getSystemAlertTable() {
+        return systemAlertTable;
     }
 
-    public void setSystemIncidentTable(Object systemIncidentTable) {
-        this.systemIncidentTable = systemIncidentTable;
-    }
-
-    public Incident withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * Id value
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Incident withWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-        return this;
-    }
-
-    /**
-     * workspace id
-     * @return workspaceId
-     */
-    public String getWorkspaceId() {
-        return workspaceId;
-    }
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
+    public void setSystemAlertTable(Object systemAlertTable) {
+        this.systemAlertTable = systemAlertTable;
     }
 
     @Override
@@ -1026,14 +1467,16 @@ public class Incident {
             return false;
         }
         Incident that = (Incident) obj;
-        return Objects.equals(this.version, that.version) && Objects.equals(this.environment, that.environment)
-            && Objects.equals(this.datasource, that.datasource)
+        return Objects.equals(this.version, that.version) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.environment, that.environment) && Objects.equals(this.dataSource, that.dataSource)
             && Objects.equals(this.firstObservedTime, that.firstObservedTime)
             && Objects.equals(this.lastObservedTime, that.lastObservedTime)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.arriveTime, that.arriveTime)
             && Objects.equals(this.title, that.title) && Objects.equals(this.description, that.description)
             && Objects.equals(this.sourceUrl, that.sourceUrl) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.serverity, that.serverity)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.severity, that.severity)
             && Objects.equals(this.criticality, that.criticality)
             && Objects.equals(this.incidentType, that.incidentType)
             && Objects.equals(this.networkList, that.networkList)
@@ -1042,22 +1485,25 @@ public class Incident {
             && Objects.equals(this.verificationState, that.verificationState)
             && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.sla, that.sla)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.closeTime, that.closeTime)
-            && Objects.equals(this.chopPhase, that.chopPhase) && Objects.equals(this.ipdrrPhase, that.ipdrrPhase)
-            && Objects.equals(this.ppdrPhase, that.ppdrPhase) && Objects.equals(this.simulation, that.simulation)
+            && Objects.equals(this.ipdrrPhase, that.ipdrrPhase) && Objects.equals(this.simulation, that.simulation)
             && Objects.equals(this.actor, that.actor) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.cteator, that.cteator) && Objects.equals(this.closeReason, that.closeReason)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.closeReason, that.closeReason)
             && Objects.equals(this.closeComment, that.closeComment) && Objects.equals(this.malware, that.malware)
             && Objects.equals(this.systemInfo, that.systemInfo) && Objects.equals(this.process, that.process)
             && Objects.equals(this.userInfo, that.userInfo) && Objects.equals(this.fileInfo, that.fileInfo)
-            && Objects.equals(this.systemIncidentTable, that.systemIncidentTable) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.workspaceId, that.workspaceId);
+            && Objects.equals(this.systemAlertTable, that.systemAlertTable);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(version,
+            id,
+            domainId,
+            regionId,
+            workspaceId,
+            labels,
             environment,
-            datasource,
+            dataSource,
             firstObservedTime,
             lastObservedTime,
             createTime,
@@ -1067,7 +1513,7 @@ public class Incident {
             sourceUrl,
             count,
             confidence,
-            serverity,
+            severity,
             criticality,
             incidentType,
             networkList,
@@ -1078,13 +1524,11 @@ public class Incident {
             sla,
             updateTime,
             closeTime,
-            chopPhase,
             ipdrrPhase,
-            ppdrPhase,
             simulation,
             actor,
             owner,
-            cteator,
+            creator,
             closeReason,
             closeComment,
             malware,
@@ -1092,9 +1536,7 @@ public class Incident {
             process,
             userInfo,
             fileInfo,
-            systemIncidentTable,
-            id,
-            workspaceId);
+            systemAlertTable);
     }
 
     @Override
@@ -1102,8 +1544,13 @@ public class Incident {
         StringBuilder sb = new StringBuilder();
         sb.append("class Incident {\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
-        sb.append("    datasource: ").append(toIndentedString(datasource)).append("\n");
+        sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
         sb.append("    firstObservedTime: ").append(toIndentedString(firstObservedTime)).append("\n");
         sb.append("    lastObservedTime: ").append(toIndentedString(lastObservedTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
@@ -1113,7 +1560,7 @@ public class Incident {
         sb.append("    sourceUrl: ").append(toIndentedString(sourceUrl)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-        sb.append("    serverity: ").append(toIndentedString(serverity)).append("\n");
+        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    criticality: ").append(toIndentedString(criticality)).append("\n");
         sb.append("    incidentType: ").append(toIndentedString(incidentType)).append("\n");
         sb.append("    networkList: ").append(toIndentedString(networkList)).append("\n");
@@ -1124,13 +1571,11 @@ public class Incident {
         sb.append("    sla: ").append(toIndentedString(sla)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    closeTime: ").append(toIndentedString(closeTime)).append("\n");
-        sb.append("    chopPhase: ").append(toIndentedString(chopPhase)).append("\n");
         sb.append("    ipdrrPhase: ").append(toIndentedString(ipdrrPhase)).append("\n");
-        sb.append("    ppdrPhase: ").append(toIndentedString(ppdrPhase)).append("\n");
         sb.append("    simulation: ").append(toIndentedString(simulation)).append("\n");
         sb.append("    actor: ").append(toIndentedString(actor)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-        sb.append("    cteator: ").append(toIndentedString(cteator)).append("\n");
+        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    closeReason: ").append(toIndentedString(closeReason)).append("\n");
         sb.append("    closeComment: ").append(toIndentedString(closeComment)).append("\n");
         sb.append("    malware: ").append(toIndentedString(malware)).append("\n");
@@ -1138,9 +1583,7 @@ public class Incident {
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
         sb.append("    userInfo: ").append(toIndentedString(userInfo)).append("\n");
         sb.append("    fileInfo: ").append(toIndentedString(fileInfo)).append("\n");
-        sb.append("    systemIncidentTable: ").append(toIndentedString(systemIncidentTable)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
+        sb.append("    systemAlertTable: ").append(toIndentedString(systemAlertTable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

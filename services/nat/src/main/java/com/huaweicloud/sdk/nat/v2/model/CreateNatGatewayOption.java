@@ -133,6 +133,11 @@ public class CreateNatGatewayOption {
 
     private SessionConfiguration sessionConf;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ngport_ip_address")
+
+    private String ngportIpAddress;
+
     public CreateNatGatewayOption withName(String name) {
         this.name = name;
         return this;
@@ -261,6 +266,23 @@ public class CreateNatGatewayOption {
         this.sessionConf = sessionConf;
     }
 
+    public CreateNatGatewayOption withNgportIpAddress(String ngportIpAddress) {
+        this.ngportIpAddress = ngportIpAddress;
+        return this;
+    }
+
+    /**
+     * 公网NAT网关私有IP地址，由VPC中子网分配。
+     * @return ngportIpAddress
+     */
+    public String getNgportIpAddress() {
+        return ngportIpAddress;
+    }
+
+    public void setNgportIpAddress(String ngportIpAddress) {
+        this.ngportIpAddress = ngportIpAddress;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -274,12 +296,20 @@ public class CreateNatGatewayOption {
             && Objects.equals(this.internalNetworkId, that.internalNetworkId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.spec, that.spec)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.sessionConf, that.sessionConf);
+            && Objects.equals(this.sessionConf, that.sessionConf)
+            && Objects.equals(this.ngportIpAddress, that.ngportIpAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, routerId, internalNetworkId, description, spec, enterpriseProjectId, sessionConf);
+        return Objects.hash(name,
+            routerId,
+            internalNetworkId,
+            description,
+            spec,
+            enterpriseProjectId,
+            sessionConf,
+            ngportIpAddress);
     }
 
     @Override
@@ -293,6 +323,7 @@ public class CreateNatGatewayOption {
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sessionConf: ").append(toIndentedString(sessionConf)).append("\n");
+        sb.append("    ngportIpAddress: ").append(toIndentedString(ngportIpAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

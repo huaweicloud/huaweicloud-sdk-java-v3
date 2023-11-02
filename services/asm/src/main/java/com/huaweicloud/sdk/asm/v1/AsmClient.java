@@ -28,7 +28,7 @@ public class AsmClient {
     /**
      * 新建网格
      *
-     * 该API用于创建一个网格。
+     * 该API用于创建一个网格
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -42,7 +42,7 @@ public class AsmClient {
     /**
      * 新建网格
      *
-     * 该API用于创建一个网格。
+     * 该API用于创建一个网格
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -56,7 +56,7 @@ public class AsmClient {
     /**
      * 删除网格
      *
-     * 该API用于删除一个指定的网格。
+     * 该API用于删除一个指定的网格
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -70,7 +70,7 @@ public class AsmClient {
     /**
      * 删除网格
      *
-     * 该API用于删除一个指定的网格。
+     * 该API用于删除一个指定的网格
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -84,7 +84,7 @@ public class AsmClient {
     /**
      * 查询网格列表
      *
-     * 该API用于获取用户所有网格的详细信息。
+     * 该API用于获取用户所有网格的详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -98,7 +98,7 @@ public class AsmClient {
     /**
      * 查询网格列表
      *
-     * 该API用于获取用户所有网格的详细信息。
+     * 该API用于获取用户所有网格的详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -112,7 +112,7 @@ public class AsmClient {
     /**
      * 查询网格
      *
-     * 该API用于获取指定网格的详细信息。
+     * 该API用于获取指定网格的详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -126,7 +126,7 @@ public class AsmClient {
     /**
      * 查询网格
      *
-     * 该API用于获取指定网格的详细信息。
+     * 该API用于获取指定网格的详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -39,7 +39,7 @@ public class ListAlertRuleTemplatesRequest {
     private String sortKey;
 
     /**
-     * sort_dir. asc, desc
+     * 排序顺序，顺序、逆序。Sort direction, asc, desc。
      */
     public static final class SortDirEnum {
 
@@ -212,7 +212,7 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     /**
-     * workspace_id
+     * 工作空间 ID。Workspace ID.
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -229,7 +229,7 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     /**
-     * offset
+     * 偏移量。Offset.
      * minimum: 0
      * maximum: 9223372036854775807
      * @return offset
@@ -248,7 +248,7 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     /**
-     * limit
+     * 条数。Limit.
      * minimum: 10
      * maximum: 50
      * @return limit
@@ -267,7 +267,7 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     /**
-     * sort_key
+     * 排序字段。Sort key
      * @return sortKey
      */
     public String getSortKey() {
@@ -284,7 +284,7 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     /**
-     * sort_dir. asc, desc
+     * 排序顺序，顺序、逆序。Sort direction, asc, desc。
      * @return sortDir
      */
     public SortDirEnum getSortDir() {
@@ -317,7 +317,7 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     /**
-     * severity. TIPS, LOW, MEDIUM, HIGH, FATAL
+     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
      * @return severity
      */
     public List<SeverityEnum> getSeverity() {

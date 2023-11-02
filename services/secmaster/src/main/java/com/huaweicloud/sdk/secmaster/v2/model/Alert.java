@@ -1,15 +1,20 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 告警详情
+ * 告警实体信息
  */
 public class Alert {
 
@@ -19,14 +24,39 @@ public class Alert {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "environment")
+    @JsonProperty(value = "id")
 
-    private ShowAlertRspEnvironment environment;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "datasource")
+    @JsonProperty(value = "domain_id")
 
-    private ShowAlertRspDatasource datasource;
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace_id")
+
+    private String workspaceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private String labels;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "environment")
+
+    private AlertEnvironment environment;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_source")
+
+    private AlertDataSource dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "first_observed_time")
@@ -73,10 +103,98 @@ public class Alert {
 
     private Integer confidence;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "serverity")
+    /**
+     * 严重性等级，取值范围：Tips | Low | Medium | High | Fatal 说明： 0: Tips – 未发现任何问题。 1: Low – 无需针对问题执行任何操作。 2: Medium – 问题需要处理，但不紧急。 3: High – 问题必须优先处理。 4: Fatal – 问题必须立即处理，以防止产生进一步的损害
+     */
+    public static final class SeverityEnum {
 
-    private String serverity;
+        /**
+         * Enum TIPS for value: "Tips"
+         */
+        public static final SeverityEnum TIPS = new SeverityEnum("Tips");
+
+        /**
+         * Enum LOW for value: "Low"
+         */
+        public static final SeverityEnum LOW = new SeverityEnum("Low");
+
+        /**
+         * Enum MEDIUM for value: "Medium"
+         */
+        public static final SeverityEnum MEDIUM = new SeverityEnum("Medium");
+
+        /**
+         * Enum HIGH for value: "High"
+         */
+        public static final SeverityEnum HIGH = new SeverityEnum("High");
+
+        /**
+         * Enum FATAL for value: "Fatal"
+         */
+        public static final SeverityEnum FATAL = new SeverityEnum("Fatal");
+
+        private static final Map<String, SeverityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SeverityEnum> createStaticFields() {
+            Map<String, SeverityEnum> map = new HashMap<>();
+            map.put("Tips", TIPS);
+            map.put("Low", LOW);
+            map.put("Medium", MEDIUM);
+            map.put("High", HIGH);
+            map.put("Fatal", FATAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SeverityEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SeverityEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
+        }
+
+        public static SeverityEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SeverityEnum) {
+                return this.value.equals(((SeverityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity")
+
+    private SeverityEnum severity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "criticality")
@@ -86,32 +204,184 @@ public class Alert {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alert_type")
 
-    private Object alertType;
+    private AlertAlertType alertType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_list")
 
-    private List<ShowAlertRspNetworkList> networkList = null;
+    private List<AlertNetworkList> networkList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_list")
 
-    private List<ShowAlertRspResourceList> resourceList = null;
+    private List<AlertResourceList> resourceList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remediation")
 
-    private ShowAlertRspRemediation remediation;
+    private AlertRemediation remediation;
+
+    /**
+     * 验证状态，标识事件的准确性。可选类型如下： Unknown – 未知 True_Positive – 确认 False_Positive – 误报 默认填写Unknown
+     */
+    public static final class VerificationStateEnum {
+
+        /**
+         * Enum UNKNOWN for value: "Unknown"
+         */
+        public static final VerificationStateEnum UNKNOWN = new VerificationStateEnum("Unknown");
+
+        /**
+         * Enum TRUE_POSITIVE for value: "True_Positive"
+         */
+        public static final VerificationStateEnum TRUE_POSITIVE = new VerificationStateEnum("True_Positive");
+
+        /**
+         * Enum FALSE_POSITIVE for value: "False_Positive"
+         */
+        public static final VerificationStateEnum FALSE_POSITIVE = new VerificationStateEnum("False_Positive");
+
+        private static final Map<String, VerificationStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VerificationStateEnum> createStaticFields() {
+            Map<String, VerificationStateEnum> map = new HashMap<>();
+            map.put("Unknown", UNKNOWN);
+            map.put("True_Positive", TRUE_POSITIVE);
+            map.put("False_Positive", FALSE_POSITIVE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        VerificationStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VerificationStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VerificationStateEnum(value));
+        }
+
+        public static VerificationStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VerificationStateEnum) {
+                return this.value.equals(((VerificationStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "verification_state")
 
-    private String verificationState;
+    private VerificationStateEnum verificationState;
+
+    /**
+     * 事件处理状态，可选类型如下： Open – 打开，默认 Block – 阻塞 Closed – 关闭 默认填写Open
+     */
+    public static final class HandleStatusEnum {
+
+        /**
+         * Enum OPEN for value: "Open"
+         */
+        public static final HandleStatusEnum OPEN = new HandleStatusEnum("Open");
+
+        /**
+         * Enum BLOCK for value: "Block"
+         */
+        public static final HandleStatusEnum BLOCK = new HandleStatusEnum("Block");
+
+        /**
+         * Enum CLOSED for value: "Closed"
+         */
+        public static final HandleStatusEnum CLOSED = new HandleStatusEnum("Closed");
+
+        private static final Map<String, HandleStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HandleStatusEnum> createStaticFields() {
+            Map<String, HandleStatusEnum> map = new HashMap<>();
+            map.put("Open", OPEN);
+            map.put("Block", BLOCK);
+            map.put("Closed", CLOSED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HandleStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HandleStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HandleStatusEnum(value));
+        }
+
+        public static HandleStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HandleStatusEnum) {
+                return this.value.equals(((HandleStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_status")
 
-    private String handleStatus;
+    private HandleStatusEnum handleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sla")
@@ -128,25 +398,98 @@ public class Alert {
 
     private String closeTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "chop_phase")
+    /**
+     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
+     */
+    public static final class IpdrrPhaseEnum {
 
-    private String chopPhase;
+        /**
+         * Enum PREPARTION for value: "Prepartion"
+         */
+        public static final IpdrrPhaseEnum PREPARTION = new IpdrrPhaseEnum("Prepartion");
+
+        /**
+         * Enum DETECTION_AND_ANALYSIS for value: "Detection and Analysis"
+         */
+        public static final IpdrrPhaseEnum DETECTION_AND_ANALYSIS = new IpdrrPhaseEnum("Detection and Analysis");
+
+        /**
+         * Enum CONTAINM_ERADICATION_RECOVERY for value: "Containm，Eradication& Recovery"
+         */
+        public static final IpdrrPhaseEnum CONTAINM_ERADICATION_RECOVERY =
+            new IpdrrPhaseEnum("Containm，Eradication& Recovery");
+
+        /**
+         * Enum POST_INCIDENT_ACTIVITY for value: "Post-Incident-Activity"
+         */
+        public static final IpdrrPhaseEnum POST_INCIDENT_ACTIVITY = new IpdrrPhaseEnum("Post-Incident-Activity");
+
+        private static final Map<String, IpdrrPhaseEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IpdrrPhaseEnum> createStaticFields() {
+            Map<String, IpdrrPhaseEnum> map = new HashMap<>();
+            map.put("Prepartion", PREPARTION);
+            map.put("Detection and Analysis", DETECTION_AND_ANALYSIS);
+            map.put("Containm，Eradication& Recovery", CONTAINM_ERADICATION_RECOVERY);
+            map.put("Post-Incident-Activity", POST_INCIDENT_ACTIVITY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IpdrrPhaseEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpdrrPhaseEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpdrrPhaseEnum(value));
+        }
+
+        public static IpdrrPhaseEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpdrrPhaseEnum) {
+                return this.value.equals(((IpdrrPhaseEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipdrr_phase")
 
-    private String ipdrrPhase;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ppdr_phase")
-
-    private String ppdrPhase;
+    private IpdrrPhaseEnum ipdrrPhase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "simulation")
 
-    private Boolean simulation;
+    private String simulation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actor")
@@ -159,14 +502,96 @@ public class Alert {
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cteator")
+    @JsonProperty(value = "creator")
 
-    private String cteator;
+    private String creator;
+
+    /**
+     * 关闭原因: 误检 - False detection 已解决 - Resolved 重复 - Repeated 其他 - Other
+     */
+    public static final class CloseReasonEnum {
+
+        /**
+         * Enum FALSE_DETECTION for value: "False detection"
+         */
+        public static final CloseReasonEnum FALSE_DETECTION = new CloseReasonEnum("False detection");
+
+        /**
+         * Enum RESOLVED for value: "Resolved"
+         */
+        public static final CloseReasonEnum RESOLVED = new CloseReasonEnum("Resolved");
+
+        /**
+         * Enum REPEATED for value: "Repeated"
+         */
+        public static final CloseReasonEnum REPEATED = new CloseReasonEnum("Repeated");
+
+        /**
+         * Enum OTHER for value: "Other"
+         */
+        public static final CloseReasonEnum OTHER = new CloseReasonEnum("Other");
+
+        private static final Map<String, CloseReasonEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CloseReasonEnum> createStaticFields() {
+            Map<String, CloseReasonEnum> map = new HashMap<>();
+            map.put("False detection", FALSE_DETECTION);
+            map.put("Resolved", RESOLVED);
+            map.put("Repeated", REPEATED);
+            map.put("Other", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CloseReasonEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CloseReasonEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CloseReasonEnum(value));
+        }
+
+        public static CloseReasonEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CloseReasonEnum) {
+                return this.value.equals(((CloseReasonEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "close_reason")
 
-    private String closeReason;
+    private CloseReasonEnum closeReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "close_comment")
@@ -186,32 +611,22 @@ public class Alert {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process")
 
-    private List<ShowAlertRspProcess> process = null;
+    private List<AlertProcess> process = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_info")
 
-    private List<ShowAlertRspUserInfo> userInfo = null;
+    private List<AlertUserInfo> userInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "file_info")
 
-    private List<ShowAlertRspFileInfo> fileInfo = null;
+    private List<AlertFileInfo> fileInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_alert_table")
 
     private Object systemAlertTable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "workspace_id")
-
-    private String workspaceId;
 
     public Alert withVersion(String version) {
         this.version = version;
@@ -219,7 +634,7 @@ public class Alert {
     }
 
     /**
-     * 版本
+     * 告警对象的版本，该字段的值必须为华为云SSA服务确定的官方发布版本之一
      * @return version
      */
     public String getVersion() {
@@ -230,14 +645,99 @@ public class Alert {
         this.version = version;
     }
 
-    public Alert withEnvironment(ShowAlertRspEnvironment environment) {
+    public Alert withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 事件唯一标识，UUID格式，最大36个字符
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Alert withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 数据投递后，被委托用户的domain_id
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public Alert withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * 数据投递后，被委托用户的region_id
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+    public Alert withWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+        return this;
+    }
+
+    /**
+     * 当前的工作空间id
+     * @return workspaceId
+     */
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    public Alert withLabels(String labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    /**
+     * 标签，仅展示
+     * @return labels
+     */
+    public String getLabels() {
+        return labels;
+    }
+
+    public void setLabels(String labels) {
+        this.labels = labels;
+    }
+
+    public Alert withEnvironment(AlertEnvironment environment) {
         this.environment = environment;
         return this;
     }
 
-    public Alert withEnvironment(Consumer<ShowAlertRspEnvironment> environmentSetter) {
+    public Alert withEnvironment(Consumer<AlertEnvironment> environmentSetter) {
         if (this.environment == null) {
-            this.environment = new ShowAlertRspEnvironment();
+            this.environment = new AlertEnvironment();
             environmentSetter.accept(this.environment);
         }
 
@@ -248,38 +748,38 @@ public class Alert {
      * Get environment
      * @return environment
      */
-    public ShowAlertRspEnvironment getEnvironment() {
+    public AlertEnvironment getEnvironment() {
         return environment;
     }
 
-    public void setEnvironment(ShowAlertRspEnvironment environment) {
+    public void setEnvironment(AlertEnvironment environment) {
         this.environment = environment;
     }
 
-    public Alert withDatasource(ShowAlertRspDatasource datasource) {
-        this.datasource = datasource;
+    public Alert withDataSource(AlertDataSource dataSource) {
+        this.dataSource = dataSource;
         return this;
     }
 
-    public Alert withDatasource(Consumer<ShowAlertRspDatasource> datasourceSetter) {
-        if (this.datasource == null) {
-            this.datasource = new ShowAlertRspDatasource();
-            datasourceSetter.accept(this.datasource);
+    public Alert withDataSource(Consumer<AlertDataSource> dataSourceSetter) {
+        if (this.dataSource == null) {
+            this.dataSource = new AlertDataSource();
+            dataSourceSetter.accept(this.dataSource);
         }
 
         return this;
     }
 
     /**
-     * Get datasource
-     * @return datasource
+     * Get dataSource
+     * @return dataSource
      */
-    public ShowAlertRspDatasource getDatasource() {
-        return datasource;
+    public AlertDataSource getDataSource() {
+        return dataSource;
     }
 
-    public void setDatasource(ShowAlertRspDatasource datasource) {
-        this.datasource = datasource;
+    public void setDataSource(AlertDataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     public Alert withFirstObservedTime(String firstObservedTime) {
@@ -288,7 +788,7 @@ public class Alert {
     }
 
     /**
-     * Update time
+     * 首次发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return firstObservedTime
      */
     public String getFirstObservedTime() {
@@ -305,7 +805,7 @@ public class Alert {
     }
 
     /**
-     * Update time
+     * 最近发现时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return lastObservedTime
      */
     public String getLastObservedTime() {
@@ -322,7 +822,7 @@ public class Alert {
     }
 
     /**
-     * Create time
+     * 记录时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return createTime
      */
     public String getCreateTime() {
@@ -339,7 +839,7 @@ public class Alert {
     }
 
     /**
-     * Update time
+     * 接收时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return arriveTime
      */
     public String getArriveTime() {
@@ -356,7 +856,7 @@ public class Alert {
     }
 
     /**
-     * The name, display only
+     * 告警标题
      * @return title
      */
     public String getTitle() {
@@ -373,7 +873,7 @@ public class Alert {
     }
 
     /**
-     * The description, display only
+     * 告警描述信息
      * @return description
      */
     public String getDescription() {
@@ -390,7 +890,7 @@ public class Alert {
     }
 
     /**
-     * 事件URL链接
+     * 告警URL链接，指向数据源产品中有关当前事件说明的页面
      * @return sourceUrl
      */
     public String getSourceUrl() {
@@ -409,7 +909,7 @@ public class Alert {
     /**
      * 事件发生次数
      * minimum: 0
-     * maximum: 5
+     * maximum: 999
      * @return count
      */
     public Integer getCount() {
@@ -426,9 +926,9 @@ public class Alert {
     }
 
     /**
-     * 置信度
+     * 事件的置信度。置信度的定义旨在说明识别的行为或问题的可能性。 取值范围：0-100，0表示置信度为0%，100表示置信度为100%
      * minimum: 0
-     * maximum: 5
+     * maximum: 100
      * @return confidence
      */
     public Integer getConfidence() {
@@ -439,21 +939,21 @@ public class Alert {
         this.confidence = confidence;
     }
 
-    public Alert withServerity(String serverity) {
-        this.serverity = serverity;
+    public Alert withSeverity(SeverityEnum severity) {
+        this.severity = severity;
         return this;
     }
 
     /**
-     * 严重性等级
-     * @return serverity
+     * 严重性等级，取值范围：Tips | Low | Medium | High | Fatal 说明： 0: Tips – 未发现任何问题。 1: Low – 无需针对问题执行任何操作。 2: Medium – 问题需要处理，但不紧急。 3: High – 问题必须优先处理。 4: Fatal – 问题必须立即处理，以防止产生进一步的损害
+     * @return severity
      */
-    public String getServerity() {
-        return serverity;
+    public SeverityEnum getSeverity() {
+        return severity;
     }
 
-    public void setServerity(String serverity) {
-        this.serverity = serverity;
+    public void setSeverity(SeverityEnum severity) {
+        this.severity = severity;
     }
 
     public Alert withCriticality(Integer criticality) {
@@ -462,9 +962,9 @@ public class Alert {
     }
 
     /**
-     * 关键性，是指事件涉及的资源的重要性级别。
+     * 关键性，是指事件涉及的资源的重要性级别。 取值范围：0-100，0表示资源不关键，100表示最关键资源
      * minimum: 0
-     * maximum: 5
+     * maximum: 100
      * @return criticality
      */
     public Integer getCriticality() {
@@ -475,29 +975,38 @@ public class Alert {
         this.criticality = criticality;
     }
 
-    public Alert withAlertType(Object alertType) {
+    public Alert withAlertType(AlertAlertType alertType) {
         this.alertType = alertType;
+        return this;
+    }
+
+    public Alert withAlertType(Consumer<AlertAlertType> alertTypeSetter) {
+        if (this.alertType == null) {
+            this.alertType = new AlertAlertType();
+            alertTypeSetter.accept(this.alertType);
+        }
+
         return this;
     }
 
     /**
-     * 事件分类
+     * Get alertType
      * @return alertType
      */
-    public Object getAlertType() {
+    public AlertAlertType getAlertType() {
         return alertType;
     }
 
-    public void setAlertType(Object alertType) {
+    public void setAlertType(AlertAlertType alertType) {
         this.alertType = alertType;
     }
 
-    public Alert withNetworkList(List<ShowAlertRspNetworkList> networkList) {
+    public Alert withNetworkList(List<AlertNetworkList> networkList) {
         this.networkList = networkList;
         return this;
     }
 
-    public Alert addNetworkListItem(ShowAlertRspNetworkList networkListItem) {
+    public Alert addNetworkListItem(AlertNetworkList networkListItem) {
         if (this.networkList == null) {
             this.networkList = new ArrayList<>();
         }
@@ -505,7 +1014,7 @@ public class Alert {
         return this;
     }
 
-    public Alert withNetworkList(Consumer<List<ShowAlertRspNetworkList>> networkListSetter) {
+    public Alert withNetworkList(Consumer<List<AlertNetworkList>> networkListSetter) {
         if (this.networkList == null) {
             this.networkList = new ArrayList<>();
         }
@@ -514,23 +1023,23 @@ public class Alert {
     }
 
     /**
-     * network_list
+     * 网络信息
      * @return networkList
      */
-    public List<ShowAlertRspNetworkList> getNetworkList() {
+    public List<AlertNetworkList> getNetworkList() {
         return networkList;
     }
 
-    public void setNetworkList(List<ShowAlertRspNetworkList> networkList) {
+    public void setNetworkList(List<AlertNetworkList> networkList) {
         this.networkList = networkList;
     }
 
-    public Alert withResourceList(List<ShowAlertRspResourceList> resourceList) {
+    public Alert withResourceList(List<AlertResourceList> resourceList) {
         this.resourceList = resourceList;
         return this;
     }
 
-    public Alert addResourceListItem(ShowAlertRspResourceList resourceListItem) {
+    public Alert addResourceListItem(AlertResourceList resourceListItem) {
         if (this.resourceList == null) {
             this.resourceList = new ArrayList<>();
         }
@@ -538,7 +1047,7 @@ public class Alert {
         return this;
     }
 
-    public Alert withResourceList(Consumer<List<ShowAlertRspResourceList>> resourceListSetter) {
+    public Alert withResourceList(Consumer<List<AlertResourceList>> resourceListSetter) {
         if (this.resourceList == null) {
             this.resourceList = new ArrayList<>();
         }
@@ -547,25 +1056,25 @@ public class Alert {
     }
 
     /**
-     * network_list
+     * 受影响资源
      * @return resourceList
      */
-    public List<ShowAlertRspResourceList> getResourceList() {
+    public List<AlertResourceList> getResourceList() {
         return resourceList;
     }
 
-    public void setResourceList(List<ShowAlertRspResourceList> resourceList) {
+    public void setResourceList(List<AlertResourceList> resourceList) {
         this.resourceList = resourceList;
     }
 
-    public Alert withRemediation(ShowAlertRspRemediation remediation) {
+    public Alert withRemediation(AlertRemediation remediation) {
         this.remediation = remediation;
         return this;
     }
 
-    public Alert withRemediation(Consumer<ShowAlertRspRemediation> remediationSetter) {
+    public Alert withRemediation(Consumer<AlertRemediation> remediationSetter) {
         if (this.remediation == null) {
-            this.remediation = new ShowAlertRspRemediation();
+            this.remediation = new AlertRemediation();
             remediationSetter.accept(this.remediation);
         }
 
@@ -576,45 +1085,45 @@ public class Alert {
      * Get remediation
      * @return remediation
      */
-    public ShowAlertRspRemediation getRemediation() {
+    public AlertRemediation getRemediation() {
         return remediation;
     }
 
-    public void setRemediation(ShowAlertRspRemediation remediation) {
+    public void setRemediation(AlertRemediation remediation) {
         this.remediation = remediation;
     }
 
-    public Alert withVerificationState(String verificationState) {
+    public Alert withVerificationState(VerificationStateEnum verificationState) {
         this.verificationState = verificationState;
         return this;
     }
 
     /**
-     * 验证状态
+     * 验证状态，标识事件的准确性。可选类型如下： Unknown – 未知 True_Positive – 确认 False_Positive – 误报 默认填写Unknown
      * @return verificationState
      */
-    public String getVerificationState() {
+    public VerificationStateEnum getVerificationState() {
         return verificationState;
     }
 
-    public void setVerificationState(String verificationState) {
+    public void setVerificationState(VerificationStateEnum verificationState) {
         this.verificationState = verificationState;
     }
 
-    public Alert withHandleStatus(String handleStatus) {
+    public Alert withHandleStatus(HandleStatusEnum handleStatus) {
         this.handleStatus = handleStatus;
         return this;
     }
 
     /**
-     * 事件处理状态
+     * 事件处理状态，可选类型如下： Open – 打开，默认 Block – 阻塞 Closed – 关闭 默认填写Open
      * @return handleStatus
      */
-    public String getHandleStatus() {
+    public HandleStatusEnum getHandleStatus() {
         return handleStatus;
     }
 
-    public void setHandleStatus(String handleStatus) {
+    public void setHandleStatus(HandleStatusEnum handleStatus) {
         this.handleStatus = handleStatus;
     }
 
@@ -624,9 +1133,9 @@ public class Alert {
     }
 
     /**
-     * sla
+     * 约束闭环时间：设置风险接受持续时间。单位：小时
      * minimum: 0
-     * maximum: 65535
+     * maximum: 999
      * @return sla
      */
     public Integer getSla() {
@@ -643,7 +1152,7 @@ public class Alert {
     }
 
     /**
-     * Create time
+     * 更新时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -660,7 +1169,7 @@ public class Alert {
     }
 
     /**
-     * Create time
+     * 关闭时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return closeTime
      */
     public String getCloseTime() {
@@ -671,71 +1180,37 @@ public class Alert {
         this.closeTime = closeTime;
     }
 
-    public Alert withChopPhase(String chopPhase) {
-        this.chopPhase = chopPhase;
-        return this;
-    }
-
-    /**
-     * 周期/处置阶段编号
-     * @return chopPhase
-     */
-    public String getChopPhase() {
-        return chopPhase;
-    }
-
-    public void setChopPhase(String chopPhase) {
-        this.chopPhase = chopPhase;
-    }
-
-    public Alert withIpdrrPhase(String ipdrrPhase) {
+    public Alert withIpdrrPhase(IpdrrPhaseEnum ipdrrPhase) {
         this.ipdrrPhase = ipdrrPhase;
         return this;
     }
 
     /**
-     * 周期/处置阶段编号
+     * 周期/处置阶段编号 Prepartion|Detection and Analysis|Containm，Eradication& Recovery|Post-Incident-Activity
      * @return ipdrrPhase
      */
-    public String getIpdrrPhase() {
+    public IpdrrPhaseEnum getIpdrrPhase() {
         return ipdrrPhase;
     }
 
-    public void setIpdrrPhase(String ipdrrPhase) {
+    public void setIpdrrPhase(IpdrrPhaseEnum ipdrrPhase) {
         this.ipdrrPhase = ipdrrPhase;
     }
 
-    public Alert withPpdrPhase(String ppdrPhase) {
-        this.ppdrPhase = ppdrPhase;
-        return this;
-    }
-
-    /**
-     * 周期/处置阶段编号
-     * @return ppdrPhase
-     */
-    public String getPpdrPhase() {
-        return ppdrPhase;
-    }
-
-    public void setPpdrPhase(String ppdrPhase) {
-        this.ppdrPhase = ppdrPhase;
-    }
-
-    public Alert withSimulation(Boolean simulation) {
+    public Alert withSimulation(String simulation) {
         this.simulation = simulation;
         return this;
     }
 
     /**
-     * 是否为调试事件.
+     * 调试字段
      * @return simulation
      */
-    public Boolean getSimulation() {
+    public String getSimulation() {
         return simulation;
     }
 
-    public void setSimulation(Boolean simulation) {
+    public void setSimulation(String simulation) {
         this.simulation = simulation;
     }
 
@@ -745,7 +1220,7 @@ public class Alert {
     }
 
     /**
-     * 委托人
+     * 告警调查员
      * @return actor
      */
     public String getActor() {
@@ -762,7 +1237,7 @@ public class Alert {
     }
 
     /**
-     * The name, display only
+     * 责任人、服务责任人
      * @return owner
      */
     public String getOwner() {
@@ -773,37 +1248,37 @@ public class Alert {
         this.owner = owner;
     }
 
-    public Alert withCteator(String cteator) {
-        this.cteator = cteator;
+    public Alert withCreator(String creator) {
+        this.creator = creator;
         return this;
     }
 
     /**
-     * The name, display only
-     * @return cteator
+     * 创建人
+     * @return creator
      */
-    public String getCteator() {
-        return cteator;
+    public String getCreator() {
+        return creator;
     }
 
-    public void setCteator(String cteator) {
-        this.cteator = cteator;
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 
-    public Alert withCloseReason(String closeReason) {
+    public Alert withCloseReason(CloseReasonEnum closeReason) {
         this.closeReason = closeReason;
         return this;
     }
 
     /**
-     * 关闭原因
+     * 关闭原因: 误检 - False detection 已解决 - Resolved 重复 - Repeated 其他 - Other
      * @return closeReason
      */
-    public String getCloseReason() {
+    public CloseReasonEnum getCloseReason() {
         return closeReason;
     }
 
-    public void setCloseReason(String closeReason) {
+    public void setCloseReason(CloseReasonEnum closeReason) {
         this.closeReason = closeReason;
     }
 
@@ -813,7 +1288,7 @@ public class Alert {
     }
 
     /**
-     * 关闭原因
+     * 关闭评论
      * @return closeComment
      */
     public String getCloseComment() {
@@ -867,12 +1342,12 @@ public class Alert {
         this.systemInfo = systemInfo;
     }
 
-    public Alert withProcess(List<ShowAlertRspProcess> process) {
+    public Alert withProcess(List<AlertProcess> process) {
         this.process = process;
         return this;
     }
 
-    public Alert addProcessItem(ShowAlertRspProcess processItem) {
+    public Alert addProcessItem(AlertProcess processItem) {
         if (this.process == null) {
             this.process = new ArrayList<>();
         }
@@ -880,7 +1355,7 @@ public class Alert {
         return this;
     }
 
-    public Alert withProcess(Consumer<List<ShowAlertRspProcess>> processSetter) {
+    public Alert withProcess(Consumer<List<AlertProcess>> processSetter) {
         if (this.process == null) {
             this.process = new ArrayList<>();
         }
@@ -892,20 +1367,20 @@ public class Alert {
      * 进程信息
      * @return process
      */
-    public List<ShowAlertRspProcess> getProcess() {
+    public List<AlertProcess> getProcess() {
         return process;
     }
 
-    public void setProcess(List<ShowAlertRspProcess> process) {
+    public void setProcess(List<AlertProcess> process) {
         this.process = process;
     }
 
-    public Alert withUserInfo(List<ShowAlertRspUserInfo> userInfo) {
+    public Alert withUserInfo(List<AlertUserInfo> userInfo) {
         this.userInfo = userInfo;
         return this;
     }
 
-    public Alert addUserInfoItem(ShowAlertRspUserInfo userInfoItem) {
+    public Alert addUserInfoItem(AlertUserInfo userInfoItem) {
         if (this.userInfo == null) {
             this.userInfo = new ArrayList<>();
         }
@@ -913,7 +1388,7 @@ public class Alert {
         return this;
     }
 
-    public Alert withUserInfo(Consumer<List<ShowAlertRspUserInfo>> userInfoSetter) {
+    public Alert withUserInfo(Consumer<List<AlertUserInfo>> userInfoSetter) {
         if (this.userInfo == null) {
             this.userInfo = new ArrayList<>();
         }
@@ -925,20 +1400,20 @@ public class Alert {
      * 用户信息
      * @return userInfo
      */
-    public List<ShowAlertRspUserInfo> getUserInfo() {
+    public List<AlertUserInfo> getUserInfo() {
         return userInfo;
     }
 
-    public void setUserInfo(List<ShowAlertRspUserInfo> userInfo) {
+    public void setUserInfo(List<AlertUserInfo> userInfo) {
         this.userInfo = userInfo;
     }
 
-    public Alert withFileInfo(List<ShowAlertRspFileInfo> fileInfo) {
+    public Alert withFileInfo(List<AlertFileInfo> fileInfo) {
         this.fileInfo = fileInfo;
         return this;
     }
 
-    public Alert addFileInfoItem(ShowAlertRspFileInfo fileInfoItem) {
+    public Alert addFileInfoItem(AlertFileInfo fileInfoItem) {
         if (this.fileInfo == null) {
             this.fileInfo = new ArrayList<>();
         }
@@ -946,7 +1421,7 @@ public class Alert {
         return this;
     }
 
-    public Alert withFileInfo(Consumer<List<ShowAlertRspFileInfo>> fileInfoSetter) {
+    public Alert withFileInfo(Consumer<List<AlertFileInfo>> fileInfoSetter) {
         if (this.fileInfo == null) {
             this.fileInfo = new ArrayList<>();
         }
@@ -958,11 +1433,11 @@ public class Alert {
      * 文件信息
      * @return fileInfo
      */
-    public List<ShowAlertRspFileInfo> getFileInfo() {
+    public List<AlertFileInfo> getFileInfo() {
         return fileInfo;
     }
 
-    public void setFileInfo(List<ShowAlertRspFileInfo> fileInfo) {
+    public void setFileInfo(List<AlertFileInfo> fileInfo) {
         this.fileInfo = fileInfo;
     }
 
@@ -972,7 +1447,7 @@ public class Alert {
     }
 
     /**
-     * 系统信息
+     * 告警管理列表的布局字段
      * @return systemAlertTable
      */
     public Object getSystemAlertTable() {
@@ -981,40 +1456,6 @@ public class Alert {
 
     public void setSystemAlertTable(Object systemAlertTable) {
         this.systemAlertTable = systemAlertTable;
-    }
-
-    public Alert withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * Id value
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Alert withWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-        return this;
-    }
-
-    /**
-     * workspace id
-     * @return workspaceId
-     */
-    public String getWorkspaceId() {
-        return workspaceId;
-    }
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
     }
 
     @Override
@@ -1026,14 +1467,16 @@ public class Alert {
             return false;
         }
         Alert that = (Alert) obj;
-        return Objects.equals(this.version, that.version) && Objects.equals(this.environment, that.environment)
-            && Objects.equals(this.datasource, that.datasource)
+        return Objects.equals(this.version, that.version) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.environment, that.environment) && Objects.equals(this.dataSource, that.dataSource)
             && Objects.equals(this.firstObservedTime, that.firstObservedTime)
             && Objects.equals(this.lastObservedTime, that.lastObservedTime)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.arriveTime, that.arriveTime)
             && Objects.equals(this.title, that.title) && Objects.equals(this.description, that.description)
             && Objects.equals(this.sourceUrl, that.sourceUrl) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.serverity, that.serverity)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.severity, that.severity)
             && Objects.equals(this.criticality, that.criticality) && Objects.equals(this.alertType, that.alertType)
             && Objects.equals(this.networkList, that.networkList)
             && Objects.equals(this.resourceList, that.resourceList)
@@ -1041,22 +1484,25 @@ public class Alert {
             && Objects.equals(this.verificationState, that.verificationState)
             && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.sla, that.sla)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.closeTime, that.closeTime)
-            && Objects.equals(this.chopPhase, that.chopPhase) && Objects.equals(this.ipdrrPhase, that.ipdrrPhase)
-            && Objects.equals(this.ppdrPhase, that.ppdrPhase) && Objects.equals(this.simulation, that.simulation)
+            && Objects.equals(this.ipdrrPhase, that.ipdrrPhase) && Objects.equals(this.simulation, that.simulation)
             && Objects.equals(this.actor, that.actor) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.cteator, that.cteator) && Objects.equals(this.closeReason, that.closeReason)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.closeReason, that.closeReason)
             && Objects.equals(this.closeComment, that.closeComment) && Objects.equals(this.malware, that.malware)
             && Objects.equals(this.systemInfo, that.systemInfo) && Objects.equals(this.process, that.process)
             && Objects.equals(this.userInfo, that.userInfo) && Objects.equals(this.fileInfo, that.fileInfo)
-            && Objects.equals(this.systemAlertTable, that.systemAlertTable) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.workspaceId, that.workspaceId);
+            && Objects.equals(this.systemAlertTable, that.systemAlertTable);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(version,
+            id,
+            domainId,
+            regionId,
+            workspaceId,
+            labels,
             environment,
-            datasource,
+            dataSource,
             firstObservedTime,
             lastObservedTime,
             createTime,
@@ -1066,7 +1512,7 @@ public class Alert {
             sourceUrl,
             count,
             confidence,
-            serverity,
+            severity,
             criticality,
             alertType,
             networkList,
@@ -1077,13 +1523,11 @@ public class Alert {
             sla,
             updateTime,
             closeTime,
-            chopPhase,
             ipdrrPhase,
-            ppdrPhase,
             simulation,
             actor,
             owner,
-            cteator,
+            creator,
             closeReason,
             closeComment,
             malware,
@@ -1091,9 +1535,7 @@ public class Alert {
             process,
             userInfo,
             fileInfo,
-            systemAlertTable,
-            id,
-            workspaceId);
+            systemAlertTable);
     }
 
     @Override
@@ -1101,8 +1543,13 @@ public class Alert {
         StringBuilder sb = new StringBuilder();
         sb.append("class Alert {\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
-        sb.append("    datasource: ").append(toIndentedString(datasource)).append("\n");
+        sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
         sb.append("    firstObservedTime: ").append(toIndentedString(firstObservedTime)).append("\n");
         sb.append("    lastObservedTime: ").append(toIndentedString(lastObservedTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
@@ -1112,7 +1559,7 @@ public class Alert {
         sb.append("    sourceUrl: ").append(toIndentedString(sourceUrl)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-        sb.append("    serverity: ").append(toIndentedString(serverity)).append("\n");
+        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    criticality: ").append(toIndentedString(criticality)).append("\n");
         sb.append("    alertType: ").append(toIndentedString(alertType)).append("\n");
         sb.append("    networkList: ").append(toIndentedString(networkList)).append("\n");
@@ -1123,13 +1570,11 @@ public class Alert {
         sb.append("    sla: ").append(toIndentedString(sla)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    closeTime: ").append(toIndentedString(closeTime)).append("\n");
-        sb.append("    chopPhase: ").append(toIndentedString(chopPhase)).append("\n");
         sb.append("    ipdrrPhase: ").append(toIndentedString(ipdrrPhase)).append("\n");
-        sb.append("    ppdrPhase: ").append(toIndentedString(ppdrPhase)).append("\n");
         sb.append("    simulation: ").append(toIndentedString(simulation)).append("\n");
         sb.append("    actor: ").append(toIndentedString(actor)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-        sb.append("    cteator: ").append(toIndentedString(cteator)).append("\n");
+        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    closeReason: ").append(toIndentedString(closeReason)).append("\n");
         sb.append("    closeComment: ").append(toIndentedString(closeComment)).append("\n");
         sb.append("    malware: ").append(toIndentedString(malware)).append("\n");
@@ -1138,8 +1583,6 @@ public class Alert {
         sb.append("    userInfo: ").append(toIndentedString(userInfo)).append("\n");
         sb.append("    fileInfo: ").append(toIndentedString(fileInfo)).append("\n");
         sb.append("    systemAlertTable: ").append(toIndentedString(systemAlertTable)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

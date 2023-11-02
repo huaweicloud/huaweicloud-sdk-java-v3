@@ -36,7 +36,7 @@ public class ModifyPlaybookInfo {
     }
 
     /**
-     * The name, display only
+     * 剧本名称
      * @return name
      */
     public String getName() {
@@ -53,7 +53,7 @@ public class ModifyPlaybookInfo {
     }
 
     /**
-     * The description, display only
+     * 描述
      * @return description
      */
     public String getDescription() {
@@ -70,7 +70,7 @@ public class ModifyPlaybookInfo {
     }
 
     /**
-     * If is enabled, false for disenabled, true for enabled
+     * 是否启用
      * @return enabled
      */
     public Boolean getEnabled() {

@@ -44,7 +44,7 @@ public class ReceptorLigandInfoDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bounding_box")
 
-    private BoundingBoxDto boundingBox;
+    private DrugBoundingBoxDto boundingBox;
 
     public ReceptorLigandInfoDto withIndex(Integer index) {
         this.index = index;
@@ -159,14 +159,14 @@ public class ReceptorLigandInfoDto {
         this.structure = structure;
     }
 
-    public ReceptorLigandInfoDto withBoundingBox(BoundingBoxDto boundingBox) {
+    public ReceptorLigandInfoDto withBoundingBox(DrugBoundingBoxDto boundingBox) {
         this.boundingBox = boundingBox;
         return this;
     }
 
-    public ReceptorLigandInfoDto withBoundingBox(Consumer<BoundingBoxDto> boundingBoxSetter) {
+    public ReceptorLigandInfoDto withBoundingBox(Consumer<DrugBoundingBoxDto> boundingBoxSetter) {
         if (this.boundingBox == null) {
-            this.boundingBox = new BoundingBoxDto();
+            this.boundingBox = new DrugBoundingBoxDto();
             boundingBoxSetter.accept(this.boundingBox);
         }
 
@@ -177,11 +177,11 @@ public class ReceptorLigandInfoDto {
      * Get boundingBox
      * @return boundingBox
      */
-    public BoundingBoxDto getBoundingBox() {
+    public DrugBoundingBoxDto getBoundingBox() {
         return boundingBox;
     }
 
-    public void setBoundingBox(BoundingBoxDto boundingBox) {
+    public void setBoundingBox(DrugBoundingBoxDto boundingBox) {
         this.boundingBox = boundingBox;
     }
 

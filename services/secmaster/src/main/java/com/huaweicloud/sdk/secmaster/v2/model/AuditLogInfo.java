@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Audit Log Info
+ * 剧本实例审计日志信息
  */
 public class AuditLogInfo {
 
@@ -81,7 +81,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * instance type.
+     * 实例类型（AOP_WORKFLOW--流程, SCRIPT--脚本, PLAYBOOK--剧本）
      * @return instanceType
      */
     public String getInstanceType() {
@@ -98,7 +98,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * Action id.
+     * 流程ID
      * @return actionId
      */
     public String getActionId() {
@@ -115,7 +115,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * action name.
+     * 流程名称
      * @return actionName
      */
     public String getActionName() {
@@ -132,7 +132,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * Instance id.
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -149,7 +149,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * parent instance id.
+     * 父节点实例ID
      * @return parentInstanceId
      */
     public String getParentInstanceId() {
@@ -166,7 +166,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * log level.
+     * 日志级别
      * @return logLevel
      */
     public String getLogLevel() {
@@ -183,7 +183,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * input.
+     * 输入
      * @return input
      */
     public String getInput() {
@@ -200,7 +200,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * output.
+     * 输出
      * @return output
      */
     public String getOutput() {
@@ -217,7 +217,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * error_msg.
+     * 错误信息
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -234,7 +234,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * start_time.
+     * 开始时间
      * @return startTime
      */
     public String getStartTime() {
@@ -251,7 +251,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * end_time.
+     * 结束时间
      * @return endTime
      */
     public String getEndTime() {
@@ -268,7 +268,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * status.
+     * 状态。(RUNNING--运行中、FINISHED--成功、FAILED--失败、RETRYING--重试中、TERMINATING--终止中、TERMINATED--已终止)
      * @return status
      */
     public String getStatus() {
@@ -285,7 +285,7 @@ public class AuditLogInfo {
     }
 
     /**
-     * trigger type.
+     * 触发类型. TIMER--定时触发, EVENT--事件触发
      * @return triggerType
      */
     public String getTriggerType() {

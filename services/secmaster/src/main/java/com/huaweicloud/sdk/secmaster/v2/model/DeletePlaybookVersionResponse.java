@@ -32,7 +32,7 @@ public class DeletePlaybookVersionResponse extends SdkResponse {
     }
 
     /**
-     * Error code
+     * 错误码
      * @return code
      */
     public String getCode() {
@@ -49,7 +49,7 @@ public class DeletePlaybookVersionResponse extends SdkResponse {
     }
 
     /**
-     * Error message
+     * 响应消息
      * @return message
      */
     public String getMessage() {

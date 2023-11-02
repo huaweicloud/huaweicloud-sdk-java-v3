@@ -22,7 +22,7 @@ public class DisableAlertRuleResponse extends SdkResponse {
     private String ruleId;
 
     /**
-     * status. ENABLED, DISABLED
+     * 启用状态，启用、停用。Status, enabled, disabled.
      */
     public static final class StatusEnum {
 
@@ -107,7 +107,7 @@ public class DisableAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * rule_id
+     * 告警规则 ID。Alert rule ID.
      * @return ruleId
      */
     public String getRuleId() {
@@ -124,7 +124,7 @@ public class DisableAlertRuleResponse extends SdkResponse {
     }
 
     /**
-     * status. ENABLED, DISABLED
+     * 启用状态，启用、停用。Status, enabled, disabled.
      * @return status
      */
     public StatusEnum getStatus() {

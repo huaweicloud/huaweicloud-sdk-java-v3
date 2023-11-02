@@ -134,6 +134,34 @@ public class KvsClient {
     }
 
     /**
+     * 更新指定kv的sortkey 并更新部分字段
+     *
+     * rename kv
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RenameKvRequest 请求对象
+     * @return RenameKvResponse
+     */
+    public RenameKvResponse renameKv(RenameKvRequest request) {
+        return hcClient.syncInvokeHttp(request, KvsMeta.renameKv);
+    }
+
+    /**
+     * 更新指定kv的sortkey 并更新部分字段
+     *
+     * rename kv
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RenameKvRequest 请求对象
+     * @return SyncInvoker<RenameKvRequest, RenameKvResponse>
+     */
+    public SyncInvoker<RenameKvRequest, RenameKvResponse> renameKvInvoker(RenameKvRequest request) {
+        return new SyncInvoker<RenameKvRequest, RenameKvResponse>(request, KvsMeta.renameKv, hcClient);
+    }
+
+    /**
      * 批量查询kv
      *
      * batch get kv
@@ -271,34 +299,6 @@ public class KvsClient {
      */
     public SyncInvoker<PutKvRequest, PutKvResponse> putKvInvoker(PutKvRequest request) {
         return new SyncInvoker<PutKvRequest, PutKvResponse>(request, KvsMeta.putKv, hcClient);
-    }
-
-    /**
-     * 更新指定kv的sortkey 并更新部分字段
-     *
-     * rename kv
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RenameKvRequest 请求对象
-     * @return RenameKvResponse
-     */
-    public RenameKvResponse renameKv(RenameKvRequest request) {
-        return hcClient.syncInvokeHttp(request, KvsMeta.renameKv);
-    }
-
-    /**
-     * 更新指定kv的sortkey 并更新部分字段
-     *
-     * rename kv
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param RenameKvRequest 请求对象
-     * @return SyncInvoker<RenameKvRequest, RenameKvResponse>
-     */
-    public SyncInvoker<RenameKvRequest, RenameKvResponse> renameKvInvoker(RenameKvRequest request) {
-        return new SyncInvoker<RenameKvRequest, RenameKvResponse>(request, KvsMeta.renameKv, hcClient);
     }
 
     /**

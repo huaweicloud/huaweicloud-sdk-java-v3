@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Information of dataobject
+ * 数据对象详情
  */
 public class DataobjectInfo {
 
@@ -41,11 +41,6 @@ public class DataobjectInfo {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
 
     private String content;
@@ -56,7 +51,7 @@ public class DataobjectInfo {
     }
 
     /**
-     * Id value
+     * ID值
      * @return id
      */
     public String getId() {
@@ -73,7 +68,7 @@ public class DataobjectInfo {
     }
 
     /**
-     * Create time
+     * 创建时间
      * @return createTime
      */
     public String getCreateTime() {
@@ -90,7 +85,7 @@ public class DataobjectInfo {
     }
 
     /**
-     * Update time
+     * 更新时间
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -107,7 +102,7 @@ public class DataobjectInfo {
     }
 
     /**
-     * Project id value
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -124,7 +119,7 @@ public class DataobjectInfo {
     }
 
     /**
-     * dataclass id.
+     * 数据类ID
      * @return dataclassId
      */
     public String getDataclassId() {
@@ -141,7 +136,7 @@ public class DataobjectInfo {
     }
 
     /**
-     * The name, display only
+     * 名称
      * @return name
      */
     public String getName() {
@@ -152,30 +147,13 @@ public class DataobjectInfo {
         this.name = name;
     }
 
-    public DataobjectInfo withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * SIMULATION,PLAYBOOK,MANUAL,INSTANCE,DATA_SOURCE
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public DataobjectInfo withContent(String content) {
         this.content = content;
         return this;
     }
 
     /**
-     * data
+     * 数据内容
      * @return content
      */
     public String getContent() {
@@ -198,12 +176,12 @@ public class DataobjectInfo {
         return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.content, that.content);
+            && Objects.equals(this.content, that.content);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, createTime, updateTime, projectId, dataclassId, name, type, content);
+        return Objects.hash(id, createTime, updateTime, projectId, dataclassId, name, content);
     }
 
     @Override
@@ -216,7 +194,6 @@ public class DataobjectInfo {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -8,7 +8,6 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dcs.v2.model.AclAccountModifyPasswordBody;
 import com.huaweicloud.sdk.dcs.v2.model.AclAccountResetPasswordBody;
 import com.huaweicloud.sdk.dcs.v2.model.AclAccountRoleModifyBody;
-import com.huaweicloud.sdk.dcs.v2.model.AdditionalBackupRequest;
 import com.huaweicloud.sdk.dcs.v2.model.AutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BackupInstanceBody;
 import com.huaweicloud.sdk.dcs.v2.model.BatchCreateOrDeleteTagsRequest;
@@ -35,9 +34,6 @@ import com.huaweicloud.sdk.dcs.v2.model.CreateAutoExpireScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAutoExpireScanTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateBigkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateBigkeyScanTaskResponse;
-import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestRequest;
-import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestRequestBody;
-import com.huaweicloud.sdk.dcs.v2.model.CreateConnectivityTestResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateBody;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateCustomTemplateResponse;
@@ -56,12 +52,13 @@ import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskBody;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOrDeleteInstanceTags;
-import com.huaweicloud.sdk.dcs.v2.model.CreateOrUpdateBackUpInfoRequest;
-import com.huaweicloud.sdk.dcs.v2.model.CreateOrUpdateBackUpInfoResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogDownloadLinkRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogDownloadLinkResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogResponse;
+import com.huaweicloud.sdk.dcs.v2.model.CreateResizeOrderRequest;
+import com.huaweicloud.sdk.dcs.v2.model.CreateResizeOrderRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.CreateResizeOrderResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteAclAccountRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteAclAccountResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackgroundTaskRequest;
@@ -89,6 +86,11 @@ import com.huaweicloud.sdk.dcs.v2.model.ExecuteClusterSwitchoverResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteCommandMobilizationRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteCommandMobilizationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteCommandRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.ExportExcelJobRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ExportExcelJobResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskBody;
+import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ExportInstancesTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.InstanceReplicationListInfo;
 import com.huaweicloud.sdk.dcs.v2.model.IpExchangeRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListAclAccountsRequest;
@@ -119,6 +121,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ListGroupReplicationInfoRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListGroupReplicationInfoResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListHotKeyScanTasksRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListHotKeyScanTasksResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ListInstanceOperationsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ListInstanceOperationsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListMaintenanceWindowsRequest;
@@ -171,18 +175,20 @@ import com.huaweicloud.sdk.dcs.v2.model.ScanExpireKeyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskBody;
 import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskResponse;
-import com.huaweicloud.sdk.dcs.v2.model.ShowBackUpInfoRequest;
-import com.huaweicloud.sdk.dcs.v2.model.ShowBackUpInfoResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBackgroundTaskProgressRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBackgroundTaskProgressResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowConfigHistoryDetailRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowConfigHistoryDetailResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowConfigTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowDiagnosisTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowDiagnosisTaskDetailsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowExpireAutoScanConfigRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowExpireAutoScanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowExpireKeyScanInfoRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowExpireKeyScanInfoResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyAutoscanConfigRequest;
@@ -199,8 +205,6 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsResponse;
-import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
-import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesRequest;
@@ -218,19 +222,27 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountPassWordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkRequestBody;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkResponse;
-import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRoleRequest;
-import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRoleResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateAutoScanConfigRequestBody;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateClientIpTransparentTransmissionRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateClientIpTransparentTransmissionRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateClientIpTransparentTransmissionResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigTemplateResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigurationsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateConfigurationsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateCustomTemplateBody;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateExpireAutoScanConfigRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateExpireAutoScanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistRequest;
@@ -243,6 +255,7 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityResponse;
 
 import java.util.List;
+import java.util.UUID;
 
 @SuppressWarnings("unchecked")
 public class DcsMeta {
@@ -552,38 +565,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateConnectivityTestRequest, CreateConnectivityTestResponse> createConnectivityTest =
-        genForcreateConnectivityTest();
-
-    private static HttpRequestDef<CreateConnectivityTestRequest, CreateConnectivityTestResponse> genForcreateConnectivityTest() {
-        // basic
-        HttpRequestDef.Builder<CreateConnectivityTestRequest, CreateConnectivityTestResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateConnectivityTestRequest.class, CreateConnectivityTestResponse.class)
-            .withName("CreateConnectivityTest")
-            .withUri("/v2/{project_id}/instance/{instance_id}/connectivity-test")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateConnectivityTestRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<CreateConnectivityTestRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateConnectivityTestRequestBody.class),
-            f -> f.withMarshaller(CreateConnectivityTestRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateCustomTemplateRequest, CreateCustomTemplateResponse> createCustomTemplate =
         genForcreateCustomTemplate();
 
@@ -744,46 +725,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateOrUpdateBackUpInfoRequest, CreateOrUpdateBackUpInfoResponse> createOrUpdateBackUpInfo =
-        genForcreateOrUpdateBackUpInfo();
-
-    private static HttpRequestDef<CreateOrUpdateBackUpInfoRequest, CreateOrUpdateBackUpInfoResponse> genForcreateOrUpdateBackUpInfo() {
-        // basic
-        HttpRequestDef.Builder<CreateOrUpdateBackUpInfoRequest, CreateOrUpdateBackUpInfoResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, CreateOrUpdateBackUpInfoRequest.class, CreateOrUpdateBackUpInfoResponse.class)
-                .withName("CreateOrUpdateBackUpInfo")
-                .withUri("/v2/{project_id}/instances/{instance_id}/additional-backups")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateOrUpdateBackUpInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<AdditionalBackupRequest>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(AdditionalBackupRequest.class),
-            f -> f.withMarshaller(CreateOrUpdateBackUpInfoRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-        builder.<Object>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            Object.class,
-            f -> f.withMarshaller(CreateOrUpdateBackUpInfoResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateRedislogRequest, CreateRedislogResponse> createRedislog =
         genForcreateRedislog();
 
@@ -858,6 +799,38 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateRedislogDownloadLinkRequest::getId, (req, v) -> {
                 req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateResizeOrderRequest, CreateResizeOrderResponse> createResizeOrder =
+        genForcreateResizeOrder();
+
+    private static HttpRequestDef<CreateResizeOrderRequest, CreateResizeOrderResponse> genForcreateResizeOrder() {
+        // basic
+        HttpRequestDef.Builder<CreateResizeOrderRequest, CreateResizeOrderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateResizeOrderRequest.class, CreateResizeOrderResponse.class)
+                .withName("CreateResizeOrder")
+                .withUri("/v2/{project_id}/orders/instances/{instance_id}/resize")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateResizeOrderRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateResizeOrderRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateResizeOrderRequestBody.class),
+            f -> f.withMarshaller(CreateResizeOrderRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1239,6 +1212,56 @@ public class DcsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExecuteCommandRequestBody.class),
             f -> f.withMarshaller(ExecuteCommandMobilizationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportExcelJobRequest, ExportExcelJobResponse> exportExcelJob =
+        genForexportExcelJob();
+
+    private static HttpRequestDef<ExportExcelJobRequest, ExportExcelJobResponse> genForexportExcelJob() {
+        // basic
+        HttpRequestDef.Builder<ExportExcelJobRequest, ExportExcelJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ExportExcelJobRequest.class, ExportExcelJobResponse.class)
+                .withName("ExportExcelJob")
+                .withUri("/v2/{project_id}/instances/export-job")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportExcelJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportInstancesTaskRequest, ExportInstancesTaskResponse> exportInstancesTask =
+        genForexportInstancesTask();
+
+    private static HttpRequestDef<ExportInstancesTaskRequest, ExportInstancesTaskResponse> genForexportInstancesTask() {
+        // basic
+        HttpRequestDef.Builder<ExportInstancesTaskRequest, ExportInstancesTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportInstancesTaskRequest.class, ExportInstancesTaskResponse.class)
+                .withName("ExportInstancesTask")
+                .withUri("/v2/{project_id}/instances/export")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ExportInstancesTaskBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportInstancesTaskBody.class),
+            f -> f.withMarshaller(ExportInstancesTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1842,6 +1865,38 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(ListHotKeyScanTasksRequest.StatusEnum.class),
             f -> f.withMarshaller(ListHotKeyScanTasksRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceOperationsRequest, ListInstanceOperationsResponse> listInstanceOperations =
+        genForlistInstanceOperations();
+
+    private static HttpRequestDef<ListInstanceOperationsRequest, ListInstanceOperationsResponse> genForlistInstanceOperations() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceOperationsRequest, ListInstanceOperationsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstanceOperationsRequest.class, ListInstanceOperationsResponse.class)
+            .withName("ListInstanceOperations")
+            .withUri("/v2/{project_id}/instances/{instance_id}/operations")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceOperationsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListInstanceOperationsRequest.OperationEnum>withRequestField("operation",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstanceOperationsRequest.OperationEnum.class),
+            f -> f.withMarshaller(ListInstanceOperationsRequest::getOperation, (req, v) -> {
+                req.setOperation(v);
             }));
 
         // response
@@ -2593,31 +2648,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBackUpInfoRequest, ShowBackUpInfoResponse> showBackUpInfo =
-        genForshowBackUpInfo();
-
-    private static HttpRequestDef<ShowBackUpInfoRequest, ShowBackUpInfoResponse> genForshowBackUpInfo() {
-        // basic
-        HttpRequestDef.Builder<ShowBackUpInfoRequest, ShowBackUpInfoResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowBackUpInfoRequest.class, ShowBackUpInfoResponse.class)
-                .withName("ShowBackUpInfo")
-                .withUri("/v2/{project_id}/instances/{instance_id}/additional-backups")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBackUpInfoRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> showBackgroundTaskProgress =
         genForshowBackgroundTaskProgress();
 
@@ -2714,6 +2744,45 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse> showConfigHistoryDetail =
+        genForshowConfigHistoryDetail();
+
+    private static HttpRequestDef<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse> genForshowConfigHistoryDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowConfigHistoryDetailRequest, ShowConfigHistoryDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowConfigHistoryDetailRequest.class, ShowConfigHistoryDetailResponse.class)
+            .withName("ShowConfigHistoryDetail")
+            .withUri("/v2/{project_id}/instances/{instance_id}/config-histories/{history_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigHistoryDetailRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("history_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConfigHistoryDetailRequest::getHistoryId, (req, v) -> {
+                req.setHistoryId(v);
+            }));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(ShowConfigHistoryDetailResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowConfigTemplateRequest, ShowConfigTemplateResponse> showConfigTemplate =
         genForshowConfigTemplate();
 
@@ -2765,6 +2834,32 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDiagnosisTaskDetailsRequest::getReportId, (req, v) -> {
                 req.setReportId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse> showExpireAutoScanConfig =
+        genForshowExpireAutoScanConfig();
+
+    private static HttpRequestDef<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse> genForshowExpireAutoScanConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowExpireAutoScanConfigRequest, ShowExpireAutoScanConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowExpireAutoScanConfigRequest.class, ShowExpireAutoScanConfigResponse.class)
+                .withName("ShowExpireAutoScanConfig")
+                .withUri("/v2/{project_id}/instances/{instance_id}/scan-expire-keys/autoscan-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowExpireAutoScanConfigRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response
@@ -2953,31 +3048,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNodesInformationRequest, ShowNodesInformationResponse> showNodesInformation =
-        genForshowNodesInformation();
-
-    private static HttpRequestDef<ShowNodesInformationRequest, ShowNodesInformationResponse> genForshowNodesInformation() {
-        // basic
-        HttpRequestDef.Builder<ShowNodesInformationRequest, ShowNodesInformationResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowNodesInformationRequest.class, ShowNodesInformationResponse.class)
-            .withName("ShowNodesInformation")
-            .withUri("/v2/{project_id}/instances/{instance_id}/logical-nodes")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodesInformationRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowQuotaOfTenantRequest, ShowQuotaOfTenantResponse> showQuotaOfTenant =
         genForshowQuotaOfTenant();
 
@@ -3137,6 +3207,45 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAclAccountRequest, UpdateAclAccountResponse> updateAclAccount =
+        genForupdateAclAccount();
+
+    private static HttpRequestDef<UpdateAclAccountRequest, UpdateAclAccountResponse> genForupdateAclAccount() {
+        // basic
+        HttpRequestDef.Builder<UpdateAclAccountRequest, UpdateAclAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAclAccountRequest.class, UpdateAclAccountResponse.class)
+                .withName("UpdateAclAccount")
+                .withUri("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}/role")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclAccountRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAclAccountRequest::getAccountId, (req, v) -> {
+                req.setAccountId(v);
+            }));
+        builder.<AclAccountRoleModifyBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AclAccountRoleModifyBody.class),
+            f -> f.withMarshaller(UpdateAclAccountRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAclAccountPassWordRequest, UpdateAclAccountPassWordResponse> updateAclAccountPassWord =
         genForupdateAclAccountPassWord();
 
@@ -3216,45 +3325,6 @@ public class DcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse> updateAclAccountRole =
-        genForupdateAclAccountRole();
-
-    private static HttpRequestDef<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse> genForupdateAclAccountRole() {
-        // basic
-        HttpRequestDef.Builder<UpdateAclAccountRoleRequest, UpdateAclAccountRoleResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateAclAccountRoleRequest.class, UpdateAclAccountRoleResponse.class)
-            .withName("UpdateAclAccountRole")
-            .withUri("/v2/{project_id}/instances/{instance_id}/accounts/{account_id}/role")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclAccountRoleRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("account_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAclAccountRoleRequest::getAccountId, (req, v) -> {
-                req.setAccountId(v);
-            }));
-        builder.<AclAccountRoleModifyBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AclAccountRoleModifyBody.class),
-            f -> f.withMarshaller(UpdateAclAccountRoleRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> updateBigkeyAutoscanConfig =
         genForupdateBigkeyAutoscanConfig();
 
@@ -3282,6 +3352,41 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AutoscanConfigRequest.class),
             f -> f.withMarshaller(UpdateBigkeyAutoscanConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse> updateClientIpTransparentTransmission =
+        genForupdateClientIpTransparentTransmission();
+
+    private static HttpRequestDef<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse> genForupdateClientIpTransparentTransmission() {
+        // basic
+        HttpRequestDef.Builder<UpdateClientIpTransparentTransmissionRequest, UpdateClientIpTransparentTransmissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateClientIpTransparentTransmissionRequest.class,
+                    UpdateClientIpTransparentTransmissionResponse.class)
+                .withName("UpdateClientIpTransparentTransmission")
+                .withUri("/v2/{project_id}/{instance_id}/client-ip-transparent-transmission")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClientIpTransparentTransmissionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateClientIpTransparentTransmissionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateClientIpTransparentTransmissionRequestBody.class),
+            f -> f.withMarshaller(UpdateClientIpTransparentTransmissionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3346,6 +3451,41 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyRedisConfigBody.class),
             f -> f.withMarshaller(UpdateConfigurationsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse> updateExpireAutoScanConfig =
+        genForupdateExpireAutoScanConfig();
+
+    private static HttpRequestDef<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse> genForupdateExpireAutoScanConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateExpireAutoScanConfigRequest, UpdateExpireAutoScanConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateExpireAutoScanConfigRequest.class,
+                    UpdateExpireAutoScanConfigResponse.class)
+                .withName("UpdateExpireAutoScanConfig")
+                .withUri("/v2/{project_id}/instances/{instance_id}/scan-expire-keys/autoscan-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateExpireAutoScanConfigRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateAutoScanConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAutoScanConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateExpireAutoScanConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3439,6 +3579,38 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceBandwidthRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> updateInstanceConfig =
+        genForupdateInstanceConfig();
+
+    private static HttpRequestDef<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> genForupdateInstanceConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateInstanceConfigRequest.class, UpdateInstanceConfigResponse.class)
+            .withName("UpdateInstanceConfig")
+            .withUri("/v2/{project_id}/instances/{instance_id}/async-configs")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UUID>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UUID.class),
+            f -> f.withMarshaller(UpdateInstanceConfigRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ModifyRedisConfigBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyRedisConfigBody.class),
+            f -> f.withMarshaller(UpdateInstanceConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

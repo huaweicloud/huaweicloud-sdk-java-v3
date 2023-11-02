@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * indicator detail
+ * 情报详情信息
  */
 public class IndicatorDetail {
 
@@ -20,16 +20,6 @@ public class IndicatorDetail {
     @JsonProperty(value = "name")
 
     private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataclass_id")
-
-    private String dataclassId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_object")
@@ -47,14 +37,9 @@ public class IndicatorDetail {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "layout_id")
+    @JsonProperty(value = "dataclass_ref")
 
-    private String layoutId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataclass")
-
-    private DataClassRefPojo dataclass;
+    private DataClassRefPojo dataclassRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -100,40 +85,6 @@ public class IndicatorDetail {
         this.name = name;
     }
 
-    public IndicatorDetail withDataclassId(String dataclassId) {
-        this.dataclassId = dataclassId;
-        return this;
-    }
-
-    /**
-     * 数据类ID
-     * @return dataclassId
-     */
-    public String getDataclassId() {
-        return dataclassId;
-    }
-
-    public void setDataclassId(String dataclassId) {
-        this.dataclassId = dataclassId;
-    }
-
-    public IndicatorDetail withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 类型（SIMULATION,PLAYBOOK,MANUAL,INSTANCE,DATA_SOURCE）
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public IndicatorDetail withDataObject(IndicatorDataObjectDetail dataObject) {
         this.dataObject = dataObject;
         return this;
@@ -166,7 +117,7 @@ public class IndicatorDetail {
     }
 
     /**
-     * workspace id
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -183,7 +134,7 @@ public class IndicatorDetail {
     }
 
     /**
-     * Project id value
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -194,47 +145,30 @@ public class IndicatorDetail {
         this.projectId = projectId;
     }
 
-    public IndicatorDetail withLayoutId(String layoutId) {
-        this.layoutId = layoutId;
+    public IndicatorDetail withDataclassRef(DataClassRefPojo dataclassRef) {
+        this.dataclassRef = dataclassRef;
         return this;
     }
 
-    /**
-     * 布局ID
-     * @return layoutId
-     */
-    public String getLayoutId() {
-        return layoutId;
-    }
-
-    public void setLayoutId(String layoutId) {
-        this.layoutId = layoutId;
-    }
-
-    public IndicatorDetail withDataclass(DataClassRefPojo dataclass) {
-        this.dataclass = dataclass;
-        return this;
-    }
-
-    public IndicatorDetail withDataclass(Consumer<DataClassRefPojo> dataclassSetter) {
-        if (this.dataclass == null) {
-            this.dataclass = new DataClassRefPojo();
-            dataclassSetter.accept(this.dataclass);
+    public IndicatorDetail withDataclassRef(Consumer<DataClassRefPojo> dataclassRefSetter) {
+        if (this.dataclassRef == null) {
+            this.dataclassRef = new DataClassRefPojo();
+            dataclassRefSetter.accept(this.dataclassRef);
         }
 
         return this;
     }
 
     /**
-     * Get dataclass
-     * @return dataclass
+     * Get dataclassRef
+     * @return dataclassRef
      */
-    public DataClassRefPojo getDataclass() {
-        return dataclass;
+    public DataClassRefPojo getDataclassRef() {
+        return dataclassRef;
     }
 
-    public void setDataclass(DataClassRefPojo dataclass) {
-        this.dataclass = dataclass;
+    public void setDataclassRef(DataClassRefPojo dataclassRef) {
+        this.dataclassRef = dataclassRef;
     }
 
     public IndicatorDetail withCreateTime(String createTime) {
@@ -243,7 +177,7 @@ public class IndicatorDetail {
     }
 
     /**
-     * Create time
+     * 创建时间
      * @return createTime
      */
     public String getCreateTime() {
@@ -260,7 +194,7 @@ public class IndicatorDetail {
     }
 
     /**
-     * Update time
+     * 更新时间
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -281,26 +215,14 @@ public class IndicatorDetail {
         }
         IndicatorDetail that = (IndicatorDetail) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.dataObject, that.dataObject) && Objects.equals(this.workspaceId, that.workspaceId)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.layoutId, that.layoutId)
-            && Objects.equals(this.dataclass, that.dataclass) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.dataclassRef, that.dataclassRef)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            name,
-            dataclassId,
-            type,
-            dataObject,
-            workspaceId,
-            projectId,
-            layoutId,
-            dataclass,
-            createTime,
-            updateTime);
+        return Objects.hash(id, name, dataObject, workspaceId, projectId, dataclassRef, createTime, updateTime);
     }
 
     @Override
@@ -309,13 +231,10 @@ public class IndicatorDetail {
         sb.append("class IndicatorDetail {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    dataObject: ").append(toIndentedString(dataObject)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    layoutId: ").append(toIndentedString(layoutId)).append("\n");
-        sb.append("    dataclass: ").append(toIndentedString(dataclass)).append("\n");
+        sb.append("    dataclassRef: ").append(toIndentedString(dataclassRef)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
