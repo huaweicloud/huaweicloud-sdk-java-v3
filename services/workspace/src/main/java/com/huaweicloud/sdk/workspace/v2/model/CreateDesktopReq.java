@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class CreateDesktopReq {
 
     /**
-     * 云桌面类型。  - DEDICATED：专属桌面。
+     * 云桌面类型。 - DEDICATED：专属桌面，单用户。 - SHARED: 多用户共享桌面。
      */
     public static final class DesktopTypeEnum {
 
@@ -28,11 +28,17 @@ public class CreateDesktopReq {
          */
         public static final DesktopTypeEnum DEDICATED = new DesktopTypeEnum("DEDICATED");
 
+        /**
+         * Enum SHARED for value: "SHARED"
+         */
+        public static final DesktopTypeEnum SHARED = new DesktopTypeEnum("SHARED");
+
         private static final Map<String, DesktopTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DesktopTypeEnum> createStaticFields() {
             Map<String, DesktopTypeEnum> map = new HashMap<>();
             map.put("DEDICATED", DEDICATED);
+            map.put("SHARED", SHARED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -133,9 +139,24 @@ public class CreateDesktopReq {
     private List<Desktop> desktops = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_name")
+
+    private String desktopName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "email_notification")
 
     private Boolean emailNotification;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -153,7 +174,7 @@ public class CreateDesktopReq {
     }
 
     /**
-     * 云桌面类型。  - DEDICATED：专属桌面。
+     * 云桌面类型。 - DEDICATED：专属桌面，单用户。 - SHARED: 多用户共享桌面。
      * @return desktopType
      */
     public DesktopTypeEnum getDesktopType() {
@@ -390,6 +411,42 @@ public class CreateDesktopReq {
         this.desktops = desktops;
     }
 
+    public CreateDesktopReq withDesktopName(String desktopName) {
+        this.desktopName = desktopName;
+        return this;
+    }
+
+    /**
+     * 搭配size使用，当size为1时代表桌面名，位数1-15，当size大于1时代表桌面名前缀，位数：1-13。
+     * @return desktopName
+     */
+    public String getDesktopName() {
+        return desktopName;
+    }
+
+    public void setDesktopName(String desktopName) {
+        this.desktopName = desktopName;
+    }
+
+    public CreateDesktopReq withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * 创建不分配用户的桌面的个数，和desktops不能同时生效，搭配desktop_name使用。
+     * minimum: 1
+     * maximum: 100
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
     public CreateDesktopReq withEmailNotification(Boolean emailNotification) {
         this.emailNotification = emailNotification;
         return this;
@@ -405,6 +462,23 @@ public class CreateDesktopReq {
 
     public void setEmailNotification(Boolean emailNotification) {
         this.emailNotification = emailNotification;
+    }
+
+    public CreateDesktopReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID，默认\"0\"
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public CreateDesktopReq withTags(List<Tag> tags) {
@@ -481,8 +555,10 @@ public class CreateDesktopReq {
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.rootVolume, that.rootVolume)
             && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.nics, that.nics)
             && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.desktops, that.desktops)
-            && Objects.equals(this.emailNotification, that.emailNotification) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.eip, that.eip);
+            && Objects.equals(this.desktopName, that.desktopName) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.emailNotification, that.emailNotification)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.eip, that.eip);
     }
 
     @Override
@@ -497,7 +573,10 @@ public class CreateDesktopReq {
             nics,
             securityGroups,
             desktops,
+            desktopName,
+            size,
             emailNotification,
+            enterpriseProjectId,
             tags,
             eip);
     }
@@ -516,7 +595,10 @@ public class CreateDesktopReq {
         sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    desktops: ").append(toIndentedString(desktops)).append("\n");
+        sb.append("    desktopName: ").append(toIndentedString(desktopName)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    emailNotification: ").append(toIndentedString(emailNotification)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    eip: ").append(toIndentedString(eip)).append("\n");
         sb.append("}");

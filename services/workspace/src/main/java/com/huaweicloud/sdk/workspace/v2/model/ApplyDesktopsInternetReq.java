@@ -109,6 +109,11 @@ public class ApplyDesktopsInternetReq {
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
@@ -199,6 +204,23 @@ public class ApplyDesktopsInternetReq {
         this.bandwidthSize = bandwidthSize;
     }
 
+    public ApplyDesktopsInternetReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID，默认\"0\"
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ApplyDesktopsInternetReq withCount(Integer count) {
         this.count = count;
         return this;
@@ -229,12 +251,14 @@ public class ApplyDesktopsInternetReq {
         ApplyDesktopsInternetReq that = (ApplyDesktopsInternetReq) obj;
         return Objects.equals(this.desktopIds, that.desktopIds) && Objects.equals(this.eipType, that.eipType)
             && Objects.equals(this.eipChargeMode, that.eipChargeMode)
-            && Objects.equals(this.bandwidthSize, that.bandwidthSize) && Objects.equals(this.count, that.count);
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopIds, eipType, eipChargeMode, bandwidthSize, count);
+        return Objects.hash(desktopIds, eipType, eipChargeMode, bandwidthSize, enterpriseProjectId, count);
     }
 
     @Override
@@ -245,6 +269,7 @@ public class ApplyDesktopsInternetReq {
         sb.append("    eipType: ").append(toIndentedString(eipType)).append("\n");
         sb.append("    eipChargeMode: ").append(toIndentedString(eipChargeMode)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();

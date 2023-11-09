@@ -21,6 +21,11 @@ public class Desktop {
     private String userEmail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_phone")
+
+    private String userPhone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_group")
 
     private String userGroup;
@@ -67,6 +72,23 @@ public class Desktop {
 
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
+    }
+
+    public Desktop withUserPhone(String userPhone) {
+        this.userPhone = userPhone;
+        return this;
+    }
+
+    /**
+     * 合法用户手机号。
+     * @return userPhone
+     */
+    public String getUserPhone() {
+        return userPhone;
+    }
+
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
     }
 
     public Desktop withUserGroup(String userGroup) {
@@ -130,13 +152,14 @@ public class Desktop {
         }
         Desktop that = (Desktop) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.userEmail, that.userEmail)
-            && Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.userPhone, that.userPhone) && Objects.equals(this.userGroup, that.userGroup)
+            && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.desktopNamePrefix, that.desktopNamePrefix);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, userEmail, userGroup, computerName, desktopNamePrefix);
+        return Objects.hash(userName, userEmail, userPhone, userGroup, computerName, desktopNamePrefix);
     }
 
     @Override
@@ -145,6 +168,7 @@ public class Desktop {
         sb.append("class Desktop {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
+        sb.append("    userPhone: ").append(toIndentedString(userPhone)).append("\n");
         sb.append("    userGroup: ").append(toIndentedString(userGroup)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    desktopNamePrefix: ").append(toIndentedString(desktopNamePrefix)).append("\n");

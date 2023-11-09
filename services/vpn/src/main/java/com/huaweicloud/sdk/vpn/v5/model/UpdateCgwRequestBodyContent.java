@@ -1,36 +1,35 @@
-package com.huaweicloud.sdk.dcs.v2.model;
+package com.huaweicloud.sdk.vpn.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * Response Object
+ * UpdateCgwRequestBodyContent
  */
-public class CheckMigrationConnectivityResponse extends SdkResponse {
+public class UpdateCgwRequestBodyContent {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "name")
 
-    private String body;
+    private String name;
 
-    public CheckMigrationConnectivityResponse withBody(String body) {
-        this.body = body;
+    public UpdateCgwRequestBodyContent withName(String name) {
+        this.name = name;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 网关名称
+     * @return name
      */
-    public String getBody() {
-        return body;
+    public String getName() {
+        return name;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -41,20 +40,20 @@ public class CheckMigrationConnectivityResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckMigrationConnectivityResponse that = (CheckMigrationConnectivityResponse) obj;
-        return Objects.equals(this.body, that.body);
+        UpdateCgwRequestBodyContent that = (UpdateCgwRequestBodyContent) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CheckMigrationConnectivityResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("class UpdateCgwRequestBodyContent {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -15,11 +14,6 @@ public class DeleteConnectorRequest {
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
-
-    private DeleteConnectorRequestBody body;
 
     public DeleteConnectorRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -38,32 +32,6 @@ public class DeleteConnectorRequest {
         this.instanceId = instanceId;
     }
 
-    public DeleteConnectorRequest withBody(DeleteConnectorRequestBody body) {
-        this.body = body;
-        return this;
-    }
-
-    public DeleteConnectorRequest withBody(Consumer<DeleteConnectorRequestBody> bodySetter) {
-        if (this.body == null) {
-            this.body = new DeleteConnectorRequestBody();
-            bodySetter.accept(this.body);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get body
-     * @return body
-     */
-    public DeleteConnectorRequestBody getBody() {
-        return body;
-    }
-
-    public void setBody(DeleteConnectorRequestBody body) {
-        this.body = body;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -73,12 +41,12 @@ public class DeleteConnectorRequest {
             return false;
         }
         DeleteConnectorRequest that = (DeleteConnectorRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, body);
+        return Objects.hash(instanceId);
     }
 
     @Override
@@ -86,7 +54,6 @@ public class DeleteConnectorRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteConnectorRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -64,6 +64,11 @@ public class ProductInfo {
     private String systemDiskSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_disk_size")
+
+    private String dataDiskSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gpu_desc")
 
     private String gpuDesc;
@@ -117,6 +122,16 @@ public class ProductInfo {
     @JsonProperty(value = "sub_product_list")
 
     private List<String> subProductList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_desktop_num")
+
+    private Integer defaultDesktopNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_apply_desktop_num")
+
+    private Integer maxApplyDesktopNum;
 
     public ProductInfo withProductId(String productId) {
         this.productId = productId;
@@ -286,6 +301,23 @@ public class ProductInfo {
 
     public void setSystemDiskSize(String systemDiskSize) {
         this.systemDiskSize = systemDiskSize;
+    }
+
+    public ProductInfo withDataDiskSize(String dataDiskSize) {
+        this.dataDiskSize = dataDiskSize;
+        return this;
+    }
+
+    /**
+     * 数据盘大小，单位GB。
+     * @return dataDiskSize
+     */
+    public String getDataDiskSize() {
+        return dataDiskSize;
+    }
+
+    public void setDataDiskSize(String dataDiskSize) {
+        this.dataDiskSize = dataDiskSize;
     }
 
     public ProductInfo withGpuDesc(String gpuDesc) {
@@ -507,6 +539,44 @@ public class ProductInfo {
         this.subProductList = subProductList;
     }
 
+    public ProductInfo withDefaultDesktopNum(Integer defaultDesktopNum) {
+        this.defaultDesktopNum = defaultDesktopNum;
+        return this;
+    }
+
+    /**
+     * 专享主机套餐默认的桌面数。
+     * minimum: 0
+     * maximum: 100
+     * @return defaultDesktopNum
+     */
+    public Integer getDefaultDesktopNum() {
+        return defaultDesktopNum;
+    }
+
+    public void setDefaultDesktopNum(Integer defaultDesktopNum) {
+        this.defaultDesktopNum = defaultDesktopNum;
+    }
+
+    public ProductInfo withMaxApplyDesktopNum(Integer maxApplyDesktopNum) {
+        this.maxApplyDesktopNum = maxApplyDesktopNum;
+        return this;
+    }
+
+    /**
+     * 专享主机支持创建的最大桌面数。
+     * minimum: 0
+     * maximum: 100
+     * @return maxApplyDesktopNum
+     */
+    public Integer getMaxApplyDesktopNum() {
+        return maxApplyDesktopNum;
+    }
+
+    public void setMaxApplyDesktopNum(Integer maxApplyDesktopNum) {
+        this.maxApplyDesktopNum = maxApplyDesktopNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -521,7 +591,8 @@ public class ProductInfo {
             && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.cpuDesc, that.cpuDesc)
             && Objects.equals(this.memory, that.memory) && Objects.equals(this.isGpu, that.isGpu)
             && Objects.equals(this.systemDiskType, that.systemDiskType)
-            && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.gpuDesc, that.gpuDesc)
+            && Objects.equals(this.systemDiskSize, that.systemDiskSize)
+            && Objects.equals(this.dataDiskSize, that.dataDiskSize) && Objects.equals(this.gpuDesc, that.gpuDesc)
             && Objects.equals(this.billSwitch, that.billSwitch) && Objects.equals(this.descriptions, that.descriptions)
             && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.containDataDisk, that.containDataDisk)
@@ -529,7 +600,9 @@ public class ProductInfo {
             && Objects.equals(this.cloudServiceType, that.cloudServiceType)
             && Objects.equals(this.volumeProductType, that.volumeProductType)
             && Objects.equals(this.domainIds, that.domainIds) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.subProductList, that.subProductList);
+            && Objects.equals(this.subProductList, that.subProductList)
+            && Objects.equals(this.defaultDesktopNum, that.defaultDesktopNum)
+            && Objects.equals(this.maxApplyDesktopNum, that.maxApplyDesktopNum);
     }
 
     @Override
@@ -544,6 +617,7 @@ public class ProductInfo {
             isGpu,
             systemDiskType,
             systemDiskSize,
+            dataDiskSize,
             gpuDesc,
             billSwitch,
             descriptions,
@@ -554,7 +628,9 @@ public class ProductInfo {
             volumeProductType,
             domainIds,
             status,
-            subProductList);
+            subProductList,
+            defaultDesktopNum,
+            maxApplyDesktopNum);
     }
 
     @Override
@@ -571,6 +647,7 @@ public class ProductInfo {
         sb.append("    isGpu: ").append(toIndentedString(isGpu)).append("\n");
         sb.append("    systemDiskType: ").append(toIndentedString(systemDiskType)).append("\n");
         sb.append("    systemDiskSize: ").append(toIndentedString(systemDiskSize)).append("\n");
+        sb.append("    dataDiskSize: ").append(toIndentedString(dataDiskSize)).append("\n");
         sb.append("    gpuDesc: ").append(toIndentedString(gpuDesc)).append("\n");
         sb.append("    billSwitch: ").append(toIndentedString(billSwitch)).append("\n");
         sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
@@ -582,6 +659,8 @@ public class ProductInfo {
         sb.append("    domainIds: ").append(toIndentedString(domainIds)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    subProductList: ").append(toIndentedString(subProductList)).append("\n");
+        sb.append("    defaultDesktopNum: ").append(toIndentedString(defaultDesktopNum)).append("\n");
+        sb.append("    maxApplyDesktopNum: ").append(toIndentedString(maxApplyDesktopNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

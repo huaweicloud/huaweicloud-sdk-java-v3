@@ -83,6 +83,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateJobTemplatesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueResponse;
@@ -118,6 +120,9 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalValueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalValueResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertiesRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteResourceRequest;
@@ -151,6 +156,7 @@ import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableResponse;
+import com.huaweicloud.sdk.dli.v1.model.InsertQueuePropertyRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ListAllTablesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListAllTablesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthInfoRequest;
@@ -181,6 +187,8 @@ import com.huaweicloud.sdk.dli.v1.model.ListJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesRequest;
@@ -292,6 +300,9 @@ import com.huaweicloud.sdk.dli.v1.model.UpdateOwnerRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrReq;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateResourceOwner;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlTemplatesRequestBody;
@@ -1037,6 +1048,38 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateQueuePropertyRequest, CreateQueuePropertyResponse> createQueueProperty =
+        genForcreateQueueProperty();
+
+    private static HttpRequestDef<CreateQueuePropertyRequest, CreateQueuePropertyResponse> genForcreateQueueProperty() {
+        // basic
+        HttpRequestDef.Builder<CreateQueuePropertyRequest, CreateQueuePropertyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateQueuePropertyRequest.class, CreateQueuePropertyResponse.class)
+                .withName("CreateQueueProperty")
+                .withUri("/v3/{project_id}/queues/{queue_name}/properties")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateQueuePropertyRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
+        builder.<InsertQueuePropertyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InsertQueuePropertyRequestBody.class),
+            f -> f.withMarshaller(CreateQueuePropertyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAuthInfoRequest, DeleteAuthInfoResponse> deleteAuthInfo =
         genFordeleteAuthInfo();
 
@@ -1255,6 +1298,38 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteQueuePlanRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteQueuePropertyRequest, DeleteQueuePropertyResponse> deleteQueueProperty =
+        genFordeleteQueueProperty();
+
+    private static HttpRequestDef<DeleteQueuePropertyRequest, DeleteQueuePropertyResponse> genFordeleteQueueProperty() {
+        // basic
+        HttpRequestDef.Builder<DeleteQueuePropertyRequest, DeleteQueuePropertyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteQueuePropertyRequest.class, DeleteQueuePropertyResponse.class)
+            .withName("DeleteQueueProperty")
+            .withUri("/v3/{project_id}/queues/{queue_name}/properties")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteQueuePropertyRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
+        builder.<DeleteQueuePropertiesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteQueuePropertiesRequestBody.class),
+            f -> f.withMarshaller(DeleteQueuePropertyRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1695,6 +1770,45 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListQueuePlansRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQueuePropertyRequest, ListQueuePropertyResponse> listQueueProperty =
+        genForlistQueueProperty();
+
+    private static HttpRequestDef<ListQueuePropertyRequest, ListQueuePropertyResponse> genForlistQueueProperty() {
+        // basic
+        HttpRequestDef.Builder<ListQueuePropertyRequest, ListQueuePropertyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQueuePropertyRequest.class, ListQueuePropertyResponse.class)
+                .withName("ListQueueProperty")
+                .withUri("/v3/{project_id}/queues/{queue_name}/properties")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueuePropertyRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueuePropertyRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueuePropertyRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
             }));
 
         // response
@@ -2358,6 +2472,38 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateQueueCidrReq.class),
             f -> f.withMarshaller(UpdateQueueCidrRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateQueuePropertyRequest, UpdateQueuePropertyResponse> updateQueueProperty =
+        genForupdateQueueProperty();
+
+    private static HttpRequestDef<UpdateQueuePropertyRequest, UpdateQueuePropertyResponse> genForupdateQueueProperty() {
+        // basic
+        HttpRequestDef.Builder<UpdateQueuePropertyRequest, UpdateQueuePropertyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateQueuePropertyRequest.class, UpdateQueuePropertyResponse.class)
+                .withName("UpdateQueueProperty")
+                .withUri("/v3/{project_id}/queues/{queue_name}/properties")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQueuePropertyRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
+        builder.<UpdateQueuePropertyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateQueuePropertyRequestBody.class),
+            f -> f.withMarshaller(UpdateQueuePropertyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

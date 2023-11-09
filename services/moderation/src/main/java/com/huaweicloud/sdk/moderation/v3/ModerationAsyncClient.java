@@ -13,12 +13,16 @@ import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobReques
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobResponse;
+import com.huaweicloud.sdk.moderation.v3.model.RunCreateDocumentModerationJobRequest;
+import com.huaweicloud.sdk.moderation.v3.model.RunCreateDocumentModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoStreamModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoStreamModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobResponse;
+import com.huaweicloud.sdk.moderation.v3.model.RunQueryDocumentModerationJobRequest;
+import com.huaweicloud.sdk.moderation.v3.model.RunQueryDocumentModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryVideoModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryVideoModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunTextModerationRequest;
@@ -195,6 +199,37 @@ public class ModerationAsyncClient {
     }
 
     /**
+     * 创建文档内容审核作业
+     *
+     * 创建文档内容审核作业，创建成功会将作业ID返回给用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunCreateDocumentModerationJobRequest 请求对象
+     * @return CompletableFuture<RunCreateDocumentModerationJobResponse>
+     */
+    public CompletableFuture<RunCreateDocumentModerationJobResponse> runCreateDocumentModerationJobAsync(
+        RunCreateDocumentModerationJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModerationMeta.runCreateDocumentModerationJob);
+    }
+
+    /**
+     * 创建文档内容审核作业
+     *
+     * 创建文档内容审核作业，创建成功会将作业ID返回给用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunCreateDocumentModerationJobRequest 请求对象
+     * @return AsyncInvoker<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse>
+     */
+    public AsyncInvoker<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> runCreateDocumentModerationJobAsyncInvoker(
+        RunCreateDocumentModerationJobRequest request) {
+        return new AsyncInvoker<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse>(request,
+            ModerationMeta.runCreateDocumentModerationJob, hcClient);
+    }
+
+    /**
      * 创建视频内容审核作业
      *
      * 创建视频内容审核作业，创建成功会将作业ID返回给用户
@@ -283,6 +318,37 @@ public class ModerationAsyncClient {
         RunQueryAudioModerationJobRequest request) {
         return new AsyncInvoker<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse>(request,
             ModerationMeta.runQueryAudioModerationJob, hcClient);
+    }
+
+    /**
+     * 查询文档审核作业结果
+     *
+     * 查询文档审核结果接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunQueryDocumentModerationJobRequest 请求对象
+     * @return CompletableFuture<RunQueryDocumentModerationJobResponse>
+     */
+    public CompletableFuture<RunQueryDocumentModerationJobResponse> runQueryDocumentModerationJobAsync(
+        RunQueryDocumentModerationJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModerationMeta.runQueryDocumentModerationJob);
+    }
+
+    /**
+     * 查询文档审核作业结果
+     *
+     * 查询文档审核结果接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunQueryDocumentModerationJobRequest 请求对象
+     * @return AsyncInvoker<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse>
+     */
+    public AsyncInvoker<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> runQueryDocumentModerationJobAsyncInvoker(
+        RunQueryDocumentModerationJobRequest request) {
+        return new AsyncInvoker<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse>(request,
+            ModerationMeta.runQueryDocumentModerationJob, hcClient);
     }
 
     /**

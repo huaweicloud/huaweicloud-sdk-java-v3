@@ -39,6 +39,16 @@ public class DesktopDetailInfo {
     private List<String> ipAddresses = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_list")
+
+    private List<String> userList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_group_list")
+
+    private List<String> userGroupList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_type")
 
     private String desktopType;
@@ -82,6 +92,11 @@ public class DesktopDetailInfo {
     @JsonProperty(value = "user_name")
 
     private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attach_user_infos")
+
+    private List<AttachInstancesUserInfo> attachUserInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
@@ -234,6 +249,136 @@ public class DesktopDetailInfo {
 
     private Boolean isAttachingEip;
 
+    /**
+     * 分配状态。 - ATTACHED：已分配。 - UNATTACH：未分配 表示未关联。 - DEATTACHED：已解分配。 - ATTACHING：分配中。 - DEATTACHING：解分配中。 - ATTACHFAIL：分配失败。 - DEATTACHFAIL：解分配失败。 - WAITING：等待被分配中,描述从批量分配（解分配）下发到转入分配（解分配）的中间状态 同时方便单个关联流程的状态独立性。 - ATTACH_FAIL_CAN_ATTACH_AGAIN：分配失败,还可以再关联。 - DEATTACH_FAIL_CAN_DEATTACH_AGAIN：解分配失败,还可以再解分配。
+     */
+    public static final class AttachStateEnum {
+
+        /**
+         * Enum ATTACHED for value: "ATTACHED"
+         */
+        public static final AttachStateEnum ATTACHED = new AttachStateEnum("ATTACHED");
+
+        /**
+         * Enum UNATTACH for value: "UNATTACH"
+         */
+        public static final AttachStateEnum UNATTACH = new AttachStateEnum("UNATTACH");
+
+        /**
+         * Enum DEATTACHED for value: "DEATTACHED"
+         */
+        public static final AttachStateEnum DEATTACHED = new AttachStateEnum("DEATTACHED");
+
+        /**
+         * Enum ATTACHING for value: "ATTACHING"
+         */
+        public static final AttachStateEnum ATTACHING = new AttachStateEnum("ATTACHING");
+
+        /**
+         * Enum DEATTACHING for value: "DEATTACHING"
+         */
+        public static final AttachStateEnum DEATTACHING = new AttachStateEnum("DEATTACHING");
+
+        /**
+         * Enum ATTACHFAIL for value: "ATTACHFAIL"
+         */
+        public static final AttachStateEnum ATTACHFAIL = new AttachStateEnum("ATTACHFAIL");
+
+        /**
+         * Enum DEATTACHFAIL for value: "DEATTACHFAIL"
+         */
+        public static final AttachStateEnum DEATTACHFAIL = new AttachStateEnum("DEATTACHFAIL");
+
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
+        public static final AttachStateEnum WAITING = new AttachStateEnum("WAITING");
+
+        /**
+         * Enum ATTACH_FAIL_CAN_ATTACH_AGAIN for value: "ATTACH_FAIL_CAN_ATTACH_AGAIN"
+         */
+        public static final AttachStateEnum ATTACH_FAIL_CAN_ATTACH_AGAIN =
+            new AttachStateEnum("ATTACH_FAIL_CAN_ATTACH_AGAIN");
+
+        /**
+         * Enum DEATTACH_FAIL_CAN_DEATTACH_AGAIN for value: "DEATTACH_FAIL_CAN_DEATTACH_AGAIN"
+         */
+        public static final AttachStateEnum DEATTACH_FAIL_CAN_DEATTACH_AGAIN =
+            new AttachStateEnum("DEATTACH_FAIL_CAN_DEATTACH_AGAIN");
+
+        private static final Map<String, AttachStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AttachStateEnum> createStaticFields() {
+            Map<String, AttachStateEnum> map = new HashMap<>();
+            map.put("ATTACHED", ATTACHED);
+            map.put("UNATTACH", UNATTACH);
+            map.put("DEATTACHED", DEATTACHED);
+            map.put("ATTACHING", ATTACHING);
+            map.put("DEATTACHING", DEATTACHING);
+            map.put("ATTACHFAIL", ATTACHFAIL);
+            map.put("DEATTACHFAIL", DEATTACHFAIL);
+            map.put("WAITING", WAITING);
+            map.put("ATTACH_FAIL_CAN_ATTACH_AGAIN", ATTACH_FAIL_CAN_ATTACH_AGAIN);
+            map.put("DEATTACH_FAIL_CAN_DEATTACH_AGAIN", DEATTACH_FAIL_CAN_DEATTACH_AGAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AttachStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AttachStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AttachStateEnum(value));
+        }
+
+        public static AttachStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AttachStateEnum) {
+                return this.value.equals(((AttachStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attach_state")
+
+    private AttachStateEnum attachState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public DesktopDetailInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
         return this;
@@ -332,6 +477,72 @@ public class DesktopDetailInfo {
 
     public void setIpAddresses(List<String> ipAddresses) {
         this.ipAddresses = ipAddresses;
+    }
+
+    public DesktopDetailInfo withUserList(List<String> userList) {
+        this.userList = userList;
+        return this;
+    }
+
+    public DesktopDetailInfo addUserListItem(String userListItem) {
+        if (this.userList == null) {
+            this.userList = new ArrayList<>();
+        }
+        this.userList.add(userListItem);
+        return this;
+    }
+
+    public DesktopDetailInfo withUserList(Consumer<List<String>> userListSetter) {
+        if (this.userList == null) {
+            this.userList = new ArrayList<>();
+        }
+        userListSetter.accept(this.userList);
+        return this;
+    }
+
+    /**
+     * 用户列表
+     * @return userList
+     */
+    public List<String> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<String> userList) {
+        this.userList = userList;
+    }
+
+    public DesktopDetailInfo withUserGroupList(List<String> userGroupList) {
+        this.userGroupList = userGroupList;
+        return this;
+    }
+
+    public DesktopDetailInfo addUserGroupListItem(String userGroupListItem) {
+        if (this.userGroupList == null) {
+            this.userGroupList = new ArrayList<>();
+        }
+        this.userGroupList.add(userGroupListItem);
+        return this;
+    }
+
+    public DesktopDetailInfo withUserGroupList(Consumer<List<String>> userGroupListSetter) {
+        if (this.userGroupList == null) {
+            this.userGroupList = new ArrayList<>();
+        }
+        userGroupListSetter.accept(this.userGroupList);
+        return this;
+    }
+
+    /**
+     * 用户组列表
+     * @return userGroupList
+     */
+    public List<String> getUserGroupList() {
+        return userGroupList;
+    }
+
+    public void setUserGroupList(List<String> userGroupList) {
+        this.userGroupList = userGroupList;
     }
 
     public DesktopDetailInfo withDesktopType(String desktopType) {
@@ -526,6 +737,39 @@ public class DesktopDetailInfo {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public DesktopDetailInfo withAttachUserInfos(List<AttachInstancesUserInfo> attachUserInfos) {
+        this.attachUserInfos = attachUserInfos;
+        return this;
+    }
+
+    public DesktopDetailInfo addAttachUserInfosItem(AttachInstancesUserInfo attachUserInfosItem) {
+        if (this.attachUserInfos == null) {
+            this.attachUserInfos = new ArrayList<>();
+        }
+        this.attachUserInfos.add(attachUserInfosItem);
+        return this;
+    }
+
+    public DesktopDetailInfo withAttachUserInfos(Consumer<List<AttachInstancesUserInfo>> attachUserInfosSetter) {
+        if (this.attachUserInfos == null) {
+            this.attachUserInfos = new ArrayList<>();
+        }
+        attachUserInfosSetter.accept(this.attachUserInfos);
+        return this;
+    }
+
+    /**
+     * 桌面已分配的用户信息列表。
+     * @return attachUserInfos
+     */
+    public List<AttachInstancesUserInfo> getAttachUserInfos() {
+        return attachUserInfos;
+    }
+
+    public void setAttachUserInfos(List<AttachInstancesUserInfo> attachUserInfos) {
+        this.attachUserInfos = attachUserInfos;
     }
 
     public DesktopDetailInfo withProductId(String productId) {
@@ -833,6 +1077,40 @@ public class DesktopDetailInfo {
         this.isAttachingEip = isAttachingEip;
     }
 
+    public DesktopDetailInfo withAttachState(AttachStateEnum attachState) {
+        this.attachState = attachState;
+        return this;
+    }
+
+    /**
+     * 分配状态。 - ATTACHED：已分配。 - UNATTACH：未分配 表示未关联。 - DEATTACHED：已解分配。 - ATTACHING：分配中。 - DEATTACHING：解分配中。 - ATTACHFAIL：分配失败。 - DEATTACHFAIL：解分配失败。 - WAITING：等待被分配中,描述从批量分配（解分配）下发到转入分配（解分配）的中间状态 同时方便单个关联流程的状态独立性。 - ATTACH_FAIL_CAN_ATTACH_AGAIN：分配失败,还可以再关联。 - DEATTACH_FAIL_CAN_DEATTACH_AGAIN：解分配失败,还可以再解分配。
+     * @return attachState
+     */
+    public AttachStateEnum getAttachState() {
+        return attachState;
+    }
+
+    public void setAttachState(AttachStateEnum attachState) {
+        this.attachState = attachState;
+    }
+
+    public DesktopDetailInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -844,11 +1122,13 @@ public class DesktopDetailInfo {
         DesktopDetailInfo that = (DesktopDetailInfo) obj;
         return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.addresses, that.addresses) && Objects.equals(this.ipAddresses, that.ipAddresses)
+            && Objects.equals(this.userList, that.userList) && Objects.equals(this.userGroupList, that.userGroupList)
             && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status)
             && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.created, that.created)
             && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.loginStatus, that.loginStatus) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.attachUserInfos, that.attachUserInfos)
             && Objects.equals(this.productId, that.productId) && Objects.equals(this.rootVolume, that.rootVolume)
             && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.userGroup, that.userGroup)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
@@ -857,7 +1137,9 @@ public class DesktopDetailInfo {
             && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.sid, that.sid)
             && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.internetMode, that.internetMode)
-            && Objects.equals(this.isAttachingEip, that.isAttachingEip);
+            && Objects.equals(this.isAttachingEip, that.isAttachingEip)
+            && Objects.equals(this.attachState, that.attachState)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -866,6 +1148,8 @@ public class DesktopDetailInfo {
             computerName,
             addresses,
             ipAddresses,
+            userList,
+            userGroupList,
             desktopType,
             metadata,
             flavor,
@@ -875,6 +1159,7 @@ public class DesktopDetailInfo {
             securityGroups,
             loginStatus,
             userName,
+            attachUserInfos,
             productId,
             rootVolume,
             dataVolumes,
@@ -889,7 +1174,9 @@ public class DesktopDetailInfo {
             orderId,
             tags,
             internetMode,
-            isAttachingEip);
+            isAttachingEip,
+            attachState,
+            enterpriseProjectId);
     }
 
     @Override
@@ -900,6 +1187,8 @@ public class DesktopDetailInfo {
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
         sb.append("    ipAddresses: ").append(toIndentedString(ipAddresses)).append("\n");
+        sb.append("    userList: ").append(toIndentedString(userList)).append("\n");
+        sb.append("    userGroupList: ").append(toIndentedString(userGroupList)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
@@ -909,6 +1198,7 @@ public class DesktopDetailInfo {
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    loginStatus: ").append(toIndentedString(loginStatus)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    attachUserInfos: ").append(toIndentedString(attachUserInfos)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
         sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
@@ -924,6 +1214,8 @@ public class DesktopDetailInfo {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    internetMode: ").append(toIndentedString(internetMode)).append("\n");
         sb.append("    isAttachingEip: ").append(toIndentedString(isAttachingEip)).append("\n");
+        sb.append("    attachState: ").append(toIndentedString(attachState)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

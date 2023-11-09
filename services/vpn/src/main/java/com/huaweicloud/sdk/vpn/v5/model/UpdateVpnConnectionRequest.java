@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.dcs.v2.model;
+package com.huaweicloud.sdk.vpn.v5.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,43 +9,43 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class CheckMigrationConnectivityRequest {
+public class UpdateVpnConnectionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
+    @JsonProperty(value = "vpn_connection_id")
 
-    private String taskId;
+    private String vpnConnectionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private RedisConnectionParam body;
+    private UpdateVpnConnectionRequestBody body;
 
-    public CheckMigrationConnectivityRequest withTaskId(String taskId) {
-        this.taskId = taskId;
+    public UpdateVpnConnectionRequest withVpnConnectionId(String vpnConnectionId) {
+        this.vpnConnectionId = vpnConnectionId;
         return this;
     }
 
     /**
-     * 任务ID
-     * @return taskId
+     * vpn连接ID
+     * @return vpnConnectionId
      */
-    public String getTaskId() {
-        return taskId;
+    public String getVpnConnectionId() {
+        return vpnConnectionId;
     }
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
+    public void setVpnConnectionId(String vpnConnectionId) {
+        this.vpnConnectionId = vpnConnectionId;
     }
 
-    public CheckMigrationConnectivityRequest withBody(RedisConnectionParam body) {
+    public UpdateVpnConnectionRequest withBody(UpdateVpnConnectionRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CheckMigrationConnectivityRequest withBody(Consumer<RedisConnectionParam> bodySetter) {
+    public UpdateVpnConnectionRequest withBody(Consumer<UpdateVpnConnectionRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new RedisConnectionParam();
+            this.body = new UpdateVpnConnectionRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CheckMigrationConnectivityRequest {
      * Get body
      * @return body
      */
-    public RedisConnectionParam getBody() {
+    public UpdateVpnConnectionRequestBody getBody() {
         return body;
     }
 
-    public void setBody(RedisConnectionParam body) {
+    public void setBody(UpdateVpnConnectionRequestBody body) {
         this.body = body;
     }
 
@@ -72,20 +72,20 @@ public class CheckMigrationConnectivityRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckMigrationConnectivityRequest that = (CheckMigrationConnectivityRequest) obj;
-        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.body, that.body);
+        UpdateVpnConnectionRequest that = (UpdateVpnConnectionRequest) obj;
+        return Objects.equals(this.vpnConnectionId, that.vpnConnectionId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, body);
+        return Objects.hash(vpnConnectionId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CheckMigrationConnectivityRequest {\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("class UpdateVpnConnectionRequest {\n");
+        sb.append("    vpnConnectionId: ").append(toIndentedString(vpnConnectionId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

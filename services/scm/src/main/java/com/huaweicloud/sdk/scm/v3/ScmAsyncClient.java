@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.scm.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateRequest;
@@ -33,9 +35,40 @@ public class ScmAsyncClient {
     }
 
     /**
+     * 批量推送证书
+     *
+     * 批量推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品多个region中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchPushCertificateRequest 请求对象
+     * @return CompletableFuture<BatchPushCertificateResponse>
+     */
+    public CompletableFuture<BatchPushCertificateResponse> batchPushCertificateAsync(
+        BatchPushCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.batchPushCertificate);
+    }
+
+    /**
+     * 批量推送证书
+     *
+     * 批量推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品多个region中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchPushCertificateRequest 请求对象
+     * @return AsyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse>
+     */
+    public AsyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse> batchPushCertificateAsyncInvoker(
+        BatchPushCertificateRequest request) {
+        return new AsyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse>(request,
+            ScmMeta.batchPushCertificate, hcClient);
+    }
+
+    /**
      * 删除证书
      *
-     * 删除证书实例，即将证书资源从华为云系统中删除。
+     * 删除证书实例，即将证书资源从系统中删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -49,7 +82,7 @@ public class ScmAsyncClient {
     /**
      * 删除证书
      *
-     * 删除证书实例，即将证书资源从华为云系统中删除。
+     * 删除证书实例，即将证书资源从系统中删除。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -155,7 +188,7 @@ public class ScmAsyncClient {
     /**
      * 推送证书
      *
-     * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
+     * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它云产品中。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -169,7 +202,7 @@ public class ScmAsyncClient {
     /**
      * 推送证书
      *
-     * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
+     * 推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它云产品中。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

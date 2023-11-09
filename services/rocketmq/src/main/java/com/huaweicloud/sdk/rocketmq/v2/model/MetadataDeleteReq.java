@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 public class MetadataDeleteReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "taskIds")
+    @JsonProperty(value = "task_ids")
 
     private List<String> taskIds = null;
 

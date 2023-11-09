@@ -134,6 +134,11 @@ public class ModifyWorkspaceAttributesReq {
 
     private Boolean isSendEmail;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dc_vnc_ip")
+
+    private String dcVncIp;
+
     public ModifyWorkspaceAttributesReq withAdInfo(AdDomainInfo adInfo) {
         this.adInfo = adInfo;
         return this;
@@ -304,6 +309,23 @@ public class ModifyWorkspaceAttributesReq {
         this.isSendEmail = isSendEmail;
     }
 
+    public ModifyWorkspaceAttributesReq withDcVncIp(String dcVncIp) {
+        this.dcVncIp = dcVncIp;
+        return this;
+    }
+
+    /**
+     * 开通专线访问VNC功能，如果传入的是default则自动创建，如果传入的自定义的dc_vnc_ip则直接使用，如果传入的是close表示关闭自定义VNC
+     * @return dcVncIp
+     */
+    public String getDcVncIp() {
+        return dcVncIp;
+    }
+
+    public void setDcVncIp(String dcVncIp) {
+        this.dcVncIp = dcVncIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -319,7 +341,7 @@ public class ModifyWorkspaceAttributesReq {
             && Objects.equals(this.subnetIds, that.subnetIds)
             && Objects.equals(this.internetAccessPort, that.internetAccessPort)
             && Objects.equals(this.enterpriseId, that.enterpriseId)
-            && Objects.equals(this.isSendEmail, that.isSendEmail);
+            && Objects.equals(this.isSendEmail, that.isSendEmail) && Objects.equals(this.dcVncIp, that.dcVncIp);
     }
 
     @Override
@@ -331,7 +353,8 @@ public class ModifyWorkspaceAttributesReq {
             subnetIds,
             internetAccessPort,
             enterpriseId,
-            isSendEmail);
+            isSendEmail,
+            dcVncIp);
     }
 
     @Override
@@ -346,6 +369,7 @@ public class ModifyWorkspaceAttributesReq {
         sb.append("    internetAccessPort: ").append(toIndentedString(internetAccessPort)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
         sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
+        sb.append("    dcVncIp: ").append(toIndentedString(dcVncIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -104,7 +104,8 @@ The following is an incorrect example:
 
 - The following example shows how to query a list of VPCs synchronously in a specific region, you need to substitute
   your real `{Service}Client` for `VpcClient` in actual use.
-- Substitute the values for `{your ak string}` and `{your sk string}`
+- Hard-coding ak and sk for authentication into the code has a great security risk. It is recommended to store the ciphertext in the profile or environment variables and decrypt it when used to ensure security.
+- In this example, ak and sk are stored in environment variables. Please configure the environment variables `HUAWEICLOUD_SDK_AK` and `HUAWEICLOUD_SDK_SK` before running this example.
 
 **Simplified Demo**
 
@@ -124,9 +125,10 @@ import com.huaweicloud.sdk.vpc.v2.region.VpcRegion;
 public class Application {
     public static void main(String[] args) {
         // Configure authentication
+        // Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.4 Authentication Management
         ICredential auth = new BasicCredentials()
-                .withAk("{your ak string}")
-                .withSk("{your sk string}");
+                .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+                .withSk(System.getenv("HUAWEICLOUD_SDK_SK"));
 
         // Create a service client
         VpcClient client = VpcClient.newBuilder()
@@ -175,9 +177,9 @@ public class Application {
     public static void main(String[] args) {
         // Configure authentication
         ICredential auth = new BasicCredentials()
-                // Access Key and Secret Access Key used for authentication
-                .withAk("{your ak string}")
-                .withSk("{your sk string}")
+                // Authentication can be configured through environment variables and other methods. Please refer to Chapter 2.4 Authentication Management
+                .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+                .withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
                 // If projectId is not filled in, the SDK will automatically call the IAM service to query the project id corresponding to the region.
                 .withProjectId("{your projectId string}")
                 // Configure the SDK built-in IAM service endpoint, default is https://iam.myhuaweicloud.com
@@ -189,11 +191,13 @@ public class Application {
         httpConfig.withIgnoreSSLVerification(true);
         // Configure timeout as needed, default timeout is 60 seconds
         httpConfig.withTimeout(60);
-        // Configure proxy as needed
+        // Configure proxy as needed, the default protocol is `http`
+        // Replace the proxy host and port in the example according to the actual situation
         httpConfig.withProxyHost("proxy.huaweicloud.com")
                 .withProxyPort(8080)
-                .withProxyUsername("username")
-                .withProxyPassword("password");
+            	// Configure the username and password if the proxy requires authentication
+                .withProxyUsername(System.getenv("PROXY_USERNAME"))
+                .withProxyPassword(System.getenv("PROXY_PASSWORD"));
         // Configure SSLSocketFactory and TrustManager, user implementation is required
         httpConfig.withSSLSocketFactory(sslSocketFactory)
                 .withX509TrustManager(trustManager);
@@ -320,10 +324,12 @@ Java SDK only supports HTTP proxy configuration currently.
 ``` java
 // Use network proxy if needed, the default protocol is `http`
 HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
+    // Replace the proxy host and port in the example according to the actual situation
     .withProxyHost("proxy.huaweicloud.com")
     .withProxyPort(8080)
-    .withProxyUsername("username")
-    .withProxyPassword("password");
+    // Configure the username and password if the proxy requires authentication
+    .withProxyUsername(System.getenv("PROXY_USERNAME"))
+    .withProxyPassword(System.getenv("PROXY_PASSWORD"));
 
 VpcClient client = VpcClient.newBuilder()
         .withHttpConfig(httpConfig)
@@ -415,12 +421,20 @@ The following authentications are supported:
 
 ``` java
 // Regional Services
-    BasicCredentials basicCredentials = new BasicCredentials()
+String ak = System.getenv("HUAWEICLOUD_SDK_AK");
+String sk = System.getenv("HUAWEICLOUD_SDK_SK");
+String projectId = "{your projectId string}";
+
+BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
     .withSk(sk)
     .withProjectId(projectId)
 
 // Global Services
+String ak = System.getenv("HUAWEICLOUD_SDK_AK");
+String sk = System.getenv("HUAWEICLOUD_SDK_SK");
+String domainId = "{your domainId string}";
+
 GlobalCredentials globalCredentials = new GlobalCredentials()
     .withAk(ak)
     .withSk(sk)
@@ -458,6 +472,11 @@ corresponds to the method of `CreateTemporaryAccessKeyByAgency` in IAM SDK.
 
 ``` java
 // Regional services
+String ak = System.getenv("HUAWEICLOUD_SDK_AK");
+String sk = System.getenv("HUAWEICLOUD_SDK_SK");
+String securityToken = System.getenv("HUAWEICLOUD_SDK_SECURITY_TOKEN");
+String projectId = "{your projectId string}";
+
 BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
     .withSk(sk)
@@ -465,6 +484,11 @@ BasicCredentials basicCredentials = new BasicCredentials()
     .withProjectId(projectId)
 
 // Global services
+String ak = System.getenv("HUAWEICLOUD_SDK_AK");
+String sk = System.getenv("HUAWEICLOUD_SDK_SK");
+String securityToken = System.getenv("HUAWEICLOUD_SDK_SECURITY_TOKEN");
+String domainId = "{your domainId string}";
+
 GlobalCredentials globalCredentials = new GlobalCredentials()
     .withAk(ak)
     .withSk(sk)
@@ -750,9 +774,9 @@ String endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
 
 // Initialize the credentials, you should provide projectId or domainId in this way, take initializing BasicCredentials for example
 BasicCredentials basicCredentials = new BasicCredentials()
-    .withAk(ak)
-    .withSk(sk)
-    .withProjectId(projectId);
+    .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+    .withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
+    .withProjectId("{your projectId string}");
 
 // Initialize specified service client instance, take initializing the regional service VPC's VpcClient for example
 VpcClient vpcClient = VpcClient.newBuilder()
@@ -777,8 +801,8 @@ import com.huaweicloud.sdk.iam.v3.region.IamRegion;
 
 // Initialize the credentials, projectId or domainId could be unassigned in this situation, take initializing GlobalCredentials for example
 GlobalCredentials globalCredentials = new GlobalCredentials()
-    .withAk(ak)
-    .withSk(sk);
+    .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+    .withSk(System.getenv("HUAWEICLOUD_SDK_SK"));
 
 // Initialize specified service client instance, take initializing the global service IAM's IamClient for example
 IamClient iamClient = IamClient.newBuilder()
@@ -834,7 +858,10 @@ This configuration is only valid for a credential, and it will override the glob
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 
 String iamEndpoint = "https://iam.cn-north-4.myhuaweicloud.com";
-BasicCredentials credentials = new BasicCredentials().withAk(ak).withSk(sk).withIamEndpoint(iamEndpoint);
+BasicCredentials credentials = new BasicCredentials()
+	.withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+    .withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
+    .withIamEndpoint(iamEndpoint);
 ```
 
 ##### 3.3.2 Region configuration [:top:](#user-manual-top)
@@ -1301,8 +1328,8 @@ public class CreateImageWatermarkDemo {
     }
 
     public static void main(String[] args) throws IOException {
-        String ak = "{your ak string}";
-        String sk = "{your sk string}";
+        String ak = System.getenv("HUAWEICLOUD_SDK_AK");
+        String sk = System.getenv("HUAWEICLOUD_SDK_SK");
         String endpoint = "{your endpoint string}";
         String projectId = "{your project id}";
         HttpConfig config = HttpConfig.getDefaultHttpConfig();

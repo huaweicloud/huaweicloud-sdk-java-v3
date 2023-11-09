@@ -28,6 +28,11 @@ public class DeleteDesktopsReq {
 
     private Boolean emailNotification;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_force_delete")
+
+    private Boolean isForceDelete;
+
     public DeleteDesktopsReq withDesktopIds(List<String> desktopIds) {
         this.desktopIds = desktopIds;
         return this;
@@ -95,6 +100,23 @@ public class DeleteDesktopsReq {
         this.emailNotification = emailNotification;
     }
 
+    public DeleteDesktopsReq withIsForceDelete(Boolean isForceDelete) {
+        this.isForceDelete = isForceDelete;
+        return this;
+    }
+
+    /**
+     * 是否强制删除，true：强制删除，false：不强制删除
+     * @return isForceDelete
+     */
+    public Boolean getIsForceDelete() {
+        return isForceDelete;
+    }
+
+    public void setIsForceDelete(Boolean isForceDelete) {
+        this.isForceDelete = isForceDelete;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +127,13 @@ public class DeleteDesktopsReq {
         }
         DeleteDesktopsReq that = (DeleteDesktopsReq) obj;
         return Objects.equals(this.desktopIds, that.desktopIds) && Objects.equals(this.deleteUsers, that.deleteUsers)
-            && Objects.equals(this.emailNotification, that.emailNotification);
+            && Objects.equals(this.emailNotification, that.emailNotification)
+            && Objects.equals(this.isForceDelete, that.isForceDelete);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopIds, deleteUsers, emailNotification);
+        return Objects.hash(desktopIds, deleteUsers, emailNotification, isForceDelete);
     }
 
     @Override
@@ -120,6 +143,7 @@ public class DeleteDesktopsReq {
         sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("    deleteUsers: ").append(toIndentedString(deleteUsers)).append("\n");
         sb.append("    emailNotification: ").append(toIndentedString(emailNotification)).append("\n");
+        sb.append("    isForceDelete: ").append(toIndentedString(isForceDelete)).append("\n");
         sb.append("}");
         return sb.toString();
     }

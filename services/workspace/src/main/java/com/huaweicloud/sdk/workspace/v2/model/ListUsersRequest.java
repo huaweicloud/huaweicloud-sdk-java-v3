@@ -35,6 +35,11 @@ public class ListUsersRequest {
 
     private String activeType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
     public ListUsersRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -120,6 +125,23 @@ public class ListUsersRequest {
         this.activeType = activeType;
     }
 
+    public ListUsersRequest withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /**
+     * 桌面用户组名，精确匹配。
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,12 @@ public class ListUsersRequest {
         ListUsersRequest that = (ListUsersRequest) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.activeType, that.activeType);
+            && Objects.equals(this.activeType, that.activeType) && Objects.equals(this.groupName, that.groupName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, limit, offset, description, activeType);
+        return Objects.hash(userName, limit, offset, description, activeType, groupName);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class ListUsersRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    activeType: ").append(toIndentedString(activeType)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

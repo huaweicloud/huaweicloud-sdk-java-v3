@@ -40,7 +40,7 @@ public class MeshExtendParams {
     }
 
     /**
-     * 网格内集群信息，仅基础版使用
+     * 网格内集群信息
      * @return clusters
      */
     public List<MeshCluster> getClusters() {

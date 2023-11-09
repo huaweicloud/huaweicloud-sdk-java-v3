@@ -113,7 +113,7 @@ public class UpdateAutoScalingPolicyRequestBody {
     }
 
     /**
-     * 扩容阈值（百分比数值）。  取值范围：50-100。  status为ON时必填。
+     * CPU平均使用率（百分比数值）。  取值范围：50-100。  status为ON时必填。
      * @return enlargeThreshold
      */
     public Integer getEnlargeThreshold() {

@@ -178,6 +178,11 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     private String detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_conf")
+
+    private String userConf;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statement")
 
     private String statement;
@@ -440,6 +445,23 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
         this.detail = detail;
     }
 
+    public ShowSqlJobStatusResponse withUserConf(String userConf) {
+        this.userConf = userConf;
+        return this;
+    }
+
+    /**
+     * SQL配置参数信息Json字符串。
+     * @return userConf
+     */
+    public String getUserConf() {
+        return userConf;
+    }
+
+    public void setUserConf(String userConf) {
+        this.userConf = userConf;
+    }
+
     public ShowSqlJobStatusResponse withStatement(String statement) {
         this.statement = statement;
         return this;
@@ -557,9 +579,10 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
             && Objects.equals(this.badRowCount, that.badRowCount) && Objects.equals(this.inputSize, that.inputSize)
             && Objects.equals(this.resultCount, that.resultCount)
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
-            && Objects.equals(this.detail, that.detail) && Objects.equals(this.statement, that.statement)
-            && Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
-            && Objects.equals(this.jobMode, that.jobMode) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.detail, that.detail) && Objects.equals(this.userConf, that.userConf)
+            && Objects.equals(this.statement, that.statement) && Objects.equals(this.isSuccess, that.isSuccess)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.jobMode, that.jobMode)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -578,6 +601,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
             databaseName,
             tableName,
             detail,
+            userConf,
             statement,
             isSuccess,
             message,
@@ -603,6 +627,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+        sb.append("    userConf: ").append(toIndentedString(userConf)).append("\n");
         sb.append("    statement: ").append(toIndentedString(statement)).append("\n");
         sb.append("    isSuccess: ").append(toIndentedString(isSuccess)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");

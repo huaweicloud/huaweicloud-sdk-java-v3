@@ -9,6 +9,7 @@ import com.huaweicloud.sdk.moderation.v3.model.AudioCreateRequest;
 import com.huaweicloud.sdk.moderation.v3.model.AudioStreamCreateRequest;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationRequest;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationResponse;
+import com.huaweicloud.sdk.moderation.v3.model.DocumentCreateRequest;
 import com.huaweicloud.sdk.moderation.v3.model.ImageDetectionReq;
 import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobResponse;
@@ -18,12 +19,16 @@ import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobReques
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobResponse;
+import com.huaweicloud.sdk.moderation.v3.model.RunCreateDocumentModerationJobRequest;
+import com.huaweicloud.sdk.moderation.v3.model.RunCreateDocumentModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoStreamModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoStreamModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobResponse;
+import com.huaweicloud.sdk.moderation.v3.model.RunQueryDocumentModerationJobRequest;
+import com.huaweicloud.sdk.moderation.v3.model.RunQueryDocumentModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryVideoModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryVideoModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunTextModerationRequest;
@@ -172,6 +177,34 @@ public class ModerationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> runCreateDocumentModerationJob =
+        genForrunCreateDocumentModerationJob();
+
+    private static HttpRequestDef<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> genForrunCreateDocumentModerationJob() {
+        // basic
+        HttpRequestDef.Builder<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RunCreateDocumentModerationJobRequest.class,
+                    RunCreateDocumentModerationJobResponse.class)
+                .withName("RunCreateDocumentModerationJob")
+                .withUri("/v3/{project_id}/moderation/document/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DocumentCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DocumentCreateRequest.class),
+            f -> f.withMarshaller(RunCreateDocumentModerationJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunCreateVideoModerationJobRequest, RunCreateVideoModerationJobResponse> runCreateVideoModerationJob =
         genForrunCreateVideoModerationJob();
 
@@ -248,6 +281,34 @@ public class ModerationMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RunQueryAudioModerationJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> runQueryDocumentModerationJob =
+        genForrunQueryDocumentModerationJob();
+
+    private static HttpRequestDef<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> genForrunQueryDocumentModerationJob() {
+        // basic
+        HttpRequestDef.Builder<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    RunQueryDocumentModerationJobRequest.class,
+                    RunQueryDocumentModerationJobResponse.class)
+                .withName("RunQueryDocumentModerationJob")
+                .withUri("/v3/{project_id}/moderation/document/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunQueryDocumentModerationJobRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
 

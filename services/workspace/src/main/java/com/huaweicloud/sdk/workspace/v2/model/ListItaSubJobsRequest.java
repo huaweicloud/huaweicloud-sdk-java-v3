@@ -26,6 +26,11 @@ public class ListItaSubJobsRequest {
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_pool_id")
+
+    private String desktopPoolId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -86,6 +91,23 @@ public class ListItaSubJobsRequest {
         this.jobType = jobType;
     }
 
+    public ListItaSubJobsRequest withDesktopPoolId(String desktopPoolId) {
+        this.desktopPoolId = desktopPoolId;
+        return this;
+    }
+
+    /**
+     * 桌面池ID。
+     * @return desktopPoolId
+     */
+    public String getDesktopPoolId() {
+        return desktopPoolId;
+    }
+
+    public void setDesktopPoolId(String desktopPoolId) {
+        this.desktopPoolId = desktopPoolId;
+    }
+
     public ListItaSubJobsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -134,13 +156,13 @@ public class ListItaSubJobsRequest {
         }
         ListItaSubJobsRequest that = (ListItaSubJobsRequest) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.jobId, that.jobId)
-            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.desktopPoolId, that.desktopPoolId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, jobId, jobType, limit, offset);
+        return Objects.hash(status, jobId, jobType, desktopPoolId, limit, offset);
     }
 
     @Override
@@ -150,6 +172,7 @@ public class ListItaSubJobsRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    desktopPoolId: ").append(toIndentedString(desktopPoolId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

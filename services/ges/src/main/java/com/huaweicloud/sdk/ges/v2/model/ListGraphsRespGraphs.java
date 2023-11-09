@@ -208,6 +208,26 @@ public class ListGraphsRespGraphs {
 
     private ListGraphsRespVertexIdType vertexIdType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_graph_size_type_index")
+
+    private String originGraphSizeTypeIndex;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expand_time")
+
+    private String expandTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resize_time")
+
+    private String resizeTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_multi_label")
+
+    private Boolean enableMultiLabel;
+
     public ListGraphsRespGraphs withId(String id) {
         this.id = id;
         return this;
@@ -976,6 +996,74 @@ public class ListGraphsRespGraphs {
         this.vertexIdType = vertexIdType;
     }
 
+    public ListGraphsRespGraphs withOriginGraphSizeTypeIndex(String originGraphSizeTypeIndex) {
+        this.originGraphSizeTypeIndex = originGraphSizeTypeIndex;
+        return this;
+    }
+
+    /**
+     * 图的初始规格。该参数从2.3.15版本后开始支持。
+     * @return originGraphSizeTypeIndex
+     */
+    public String getOriginGraphSizeTypeIndex() {
+        return originGraphSizeTypeIndex;
+    }
+
+    public void setOriginGraphSizeTypeIndex(String originGraphSizeTypeIndex) {
+        this.originGraphSizeTypeIndex = originGraphSizeTypeIndex;
+    }
+
+    public ListGraphsRespGraphs withExpandTime(String expandTime) {
+        this.expandTime = expandTime;
+        return this;
+    }
+
+    /**
+     * 图扩副本的时间。
+     * @return expandTime
+     */
+    public String getExpandTime() {
+        return expandTime;
+    }
+
+    public void setExpandTime(String expandTime) {
+        this.expandTime = expandTime;
+    }
+
+    public ListGraphsRespGraphs withResizeTime(String resizeTime) {
+        this.resizeTime = resizeTime;
+        return this;
+    }
+
+    /**
+     * 图扩容的时间。
+     * @return resizeTime
+     */
+    public String getResizeTime() {
+        return resizeTime;
+    }
+
+    public void setResizeTime(String resizeTime) {
+        this.resizeTime = resizeTime;
+    }
+
+    public ListGraphsRespGraphs withEnableMultiLabel(Boolean enableMultiLabel) {
+        this.enableMultiLabel = enableMultiLabel;
+        return this;
+    }
+
+    /**
+     * 是否启用多标签。
+     * @return enableMultiLabel
+     */
+    public Boolean getEnableMultiLabel() {
+        return enableMultiLabel;
+    }
+
+    public void setEnableMultiLabel(Boolean enableMultiLabel) {
+        this.enableMultiLabel = enableMultiLabel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1011,7 +1099,10 @@ public class ListGraphsRespGraphs {
             && Objects.equals(this.cryptAlgorithm, that.cryptAlgorithm)
             && Objects.equals(this.enableHttps, that.enableHttps) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.productType, that.productType)
-            && Objects.equals(this.vertexIdType, that.vertexIdType);
+            && Objects.equals(this.vertexIdType, that.vertexIdType)
+            && Objects.equals(this.originGraphSizeTypeIndex, that.originGraphSizeTypeIndex)
+            && Objects.equals(this.expandTime, that.expandTime) && Objects.equals(this.resizeTime, that.resizeTime)
+            && Objects.equals(this.enableMultiLabel, that.enableMultiLabel);
     }
 
     @Override
@@ -1054,7 +1145,11 @@ public class ListGraphsRespGraphs {
             enableHttps,
             tags,
             productType,
-            vertexIdType);
+            vertexIdType,
+            originGraphSizeTypeIndex,
+            expandTime,
+            resizeTime,
+            enableMultiLabel);
     }
 
     @Override
@@ -1100,6 +1195,10 @@ public class ListGraphsRespGraphs {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
         sb.append("    vertexIdType: ").append(toIndentedString(vertexIdType)).append("\n");
+        sb.append("    originGraphSizeTypeIndex: ").append(toIndentedString(originGraphSizeTypeIndex)).append("\n");
+        sb.append("    expandTime: ").append(toIndentedString(expandTime)).append("\n");
+        sb.append("    resizeTime: ").append(toIndentedString(resizeTime)).append("\n");
+        sb.append("    enableMultiLabel: ").append(toIndentedString(enableMultiLabel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

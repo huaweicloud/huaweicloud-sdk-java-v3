@@ -56,6 +56,8 @@ public class MrsRegion {
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://mrs.ap-southeast-4.myhuaweicloud.cn");
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://mrs.eu-west-101.myhuaweicloud.eu");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("MRS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -81,6 +83,7 @@ public class MrsRegion {
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("tr-west-1", TR_WEST_1);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

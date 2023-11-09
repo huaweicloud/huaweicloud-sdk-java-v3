@@ -26,7 +26,7 @@ public class PushCertificateRequestBody {
     }
 
     /**
-     * 推送到的目标服务所在的区域。
+     * 推送到的目标服务所在的区域，CDN支持区域固定为：Global。
      * @return targetProject
      */
     public String getTargetProject() {

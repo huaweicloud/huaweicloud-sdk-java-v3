@@ -24,11 +24,6 @@ public class AddDomainListDto {
     private String objectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_set_id")
-
-    private String domainSetId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_names")
 
     private List<DomainSetInfoDto> domainNames = null;
@@ -65,23 +60,6 @@ public class AddDomainListDto {
 
     public void setObjectId(String objectId) {
         this.objectId = objectId;
-    }
-
-    public AddDomainListDto withDomainSetId(String domainSetId) {
-        this.domainSetId = domainSetId;
-        return this;
-    }
-
-    /**
-     * 域名组id
-     * @return domainSetId
-     */
-    public String getDomainSetId() {
-        return domainSetId;
-    }
-
-    public void setDomainSetId(String domainSetId) {
-        this.domainSetId = domainSetId;
     }
 
     public AddDomainListDto withDomainNames(List<DomainSetInfoDto> domainNames) {
@@ -127,12 +105,12 @@ public class AddDomainListDto {
         }
         AddDomainListDto that = (AddDomainListDto) obj;
         return Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.objectId, that.objectId)
-            && Objects.equals(this.domainSetId, that.domainSetId) && Objects.equals(this.domainNames, that.domainNames);
+            && Objects.equals(this.domainNames, that.domainNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fwInstanceId, objectId, domainSetId, domainNames);
+        return Objects.hash(fwInstanceId, objectId, domainNames);
     }
 
     @Override
@@ -141,7 +119,6 @@ public class AddDomainListDto {
         sb.append("class AddDomainListDto {\n");
         sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    domainSetId: ").append(toIndentedString(domainSetId)).append("\n");
         sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
         sb.append("}");
         return sb.toString();

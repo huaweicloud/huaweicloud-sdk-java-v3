@@ -21,6 +21,11 @@ public class UpdateWorkspaceResponse extends SdkResponse {
 
     private String enterpriseId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dc_vnc_ip")
+
+    private String dcVncIp;
+
     public UpdateWorkspaceResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -55,6 +60,23 @@ public class UpdateWorkspaceResponse extends SdkResponse {
         this.enterpriseId = enterpriseId;
     }
 
+    public UpdateWorkspaceResponse withDcVncIp(String dcVncIp) {
+        this.dcVncIp = dcVncIp;
+        return this;
+    }
+
+    /**
+     * 专线vnc访问的ip
+     * @return dcVncIp
+     */
+    public String getDcVncIp() {
+        return dcVncIp;
+    }
+
+    public void setDcVncIp(String dcVncIp) {
+        this.dcVncIp = dcVncIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,13 @@ public class UpdateWorkspaceResponse extends SdkResponse {
             return false;
         }
         UpdateWorkspaceResponse that = (UpdateWorkspaceResponse) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.enterpriseId, that.enterpriseId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.enterpriseId, that.enterpriseId)
+            && Objects.equals(this.dcVncIp, that.dcVncIp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, enterpriseId);
+        return Objects.hash(jobId, enterpriseId, dcVncIp);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class UpdateWorkspaceResponse extends SdkResponse {
         sb.append("class UpdateWorkspaceResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
+        sb.append("    dcVncIp: ").append(toIndentedString(dcVncIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

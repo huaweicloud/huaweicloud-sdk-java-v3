@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class DeleteDomainsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "set_id")
+
+    private String setId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -20,6 +25,23 @@ public class DeleteDomainsRequest {
     @JsonProperty(value = "body")
 
     private DeleteDomainDto body;
+
+    public DeleteDomainsRequest withSetId(String setId) {
+        this.setId = setId;
+        return this;
+    }
+
+    /**
+     * 域名组id
+     * @return setId
+     */
+    public String getSetId() {
+        return setId;
+    }
+
+    public void setSetId(String setId) {
+        this.setId = setId;
+    }
 
     public DeleteDomainsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -73,19 +95,21 @@ public class DeleteDomainsRequest {
             return false;
         }
         DeleteDomainsRequest that = (DeleteDomainsRequest) obj;
-        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.setId, that.setId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, body);
+        return Objects.hash(setId, enterpriseProjectId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteDomainsRequest {\n");
+        sb.append("    setId: ").append(toIndentedString(setId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

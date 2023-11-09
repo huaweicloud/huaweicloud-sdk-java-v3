@@ -23,8 +23,6 @@ import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeInstanceStatusBody;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyResponse;
-import com.huaweicloud.sdk.dcs.v2.model.CheckMigrationConnectivityRequest;
-import com.huaweicloud.sdk.dcs.v2.model.CheckMigrationConnectivityResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountRequest;
@@ -156,7 +154,6 @@ import com.huaweicloud.sdk.dcs.v2.model.ModifyInstancePasswordBody;
 import com.huaweicloud.sdk.dcs.v2.model.ModifyIpWhitelistBody;
 import com.huaweicloud.sdk.dcs.v2.model.ModifyRedisConfigBody;
 import com.huaweicloud.sdk.dcs.v2.model.PriorityBody;
-import com.huaweicloud.sdk.dcs.v2.model.RedisConnectionParam;
 import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ResetInstancePasswordBody;
@@ -405,48 +402,6 @@ public class DcsMeta {
             }));
 
         // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CheckMigrationConnectivityRequest, CheckMigrationConnectivityResponse> checkMigrationConnectivity =
-        genForcheckMigrationConnectivity();
-
-    private static HttpRequestDef<CheckMigrationConnectivityRequest, CheckMigrationConnectivityResponse> genForcheckMigrationConnectivity() {
-        // basic
-        HttpRequestDef.Builder<CheckMigrationConnectivityRequest, CheckMigrationConnectivityResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CheckMigrationConnectivityRequest.class,
-                    CheckMigrationConnectivityResponse.class)
-                .withName("CheckMigrationConnectivity")
-                .withUri("/v2/{project_id}/migration/{task_id}/connectivity")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckMigrationConnectivityRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
-        builder.<RedisConnectionParam>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RedisConnectionParam.class),
-            f -> f.withMarshaller(CheckMigrationConnectivityRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CheckMigrationConnectivityResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }

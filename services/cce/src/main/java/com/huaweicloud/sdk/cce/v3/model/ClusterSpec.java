@@ -214,6 +214,11 @@ public class ClusterSpec {
     private EniNetwork eniNetwork;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serviceNetwork")
+
+    private ServiceNetwork serviceNetwork;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authentication")
 
     private Authentication authentication;
@@ -563,6 +568,32 @@ public class ClusterSpec {
         this.eniNetwork = eniNetwork;
     }
 
+    public ClusterSpec withServiceNetwork(ServiceNetwork serviceNetwork) {
+        this.serviceNetwork = serviceNetwork;
+        return this;
+    }
+
+    public ClusterSpec withServiceNetwork(Consumer<ServiceNetwork> serviceNetworkSetter) {
+        if (this.serviceNetwork == null) {
+            this.serviceNetwork = new ServiceNetwork();
+            serviceNetworkSetter.accept(this.serviceNetwork);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get serviceNetwork
+     * @return serviceNetwork
+     */
+    public ServiceNetwork getServiceNetwork() {
+        return serviceNetwork;
+    }
+
+    public void setServiceNetwork(ServiceNetwork serviceNetwork) {
+        this.serviceNetwork = serviceNetwork;
+    }
+
     public ClusterSpec withAuthentication(Authentication authentication) {
         this.authentication = authentication;
         return this;
@@ -645,7 +676,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 服务网段参数，kubernetes clusterIp取值范围，1.11.7版本及以上支持。 
+     * 服务网段参数，kubernetes clusterIP取值范围，1.11.7版本及以上支持。创建集群时如若未传参，默认为\"10.247.0.0/16\"。该参数废弃中，推荐使用新字段serviceNetwork，包含IPv4服务网段。 
      * @return kubernetesSvcIpRange
      */
     public String getKubernetesSvcIpRange() {
@@ -815,6 +846,7 @@ public class ClusterSpec {
             && Objects.equals(this.ipv6enable, that.ipv6enable) && Objects.equals(this.hostNetwork, that.hostNetwork)
             && Objects.equals(this.containerNetwork, that.containerNetwork)
             && Objects.equals(this.eniNetwork, that.eniNetwork)
+            && Objects.equals(this.serviceNetwork, that.serviceNetwork)
             && Objects.equals(this.authentication, that.authentication)
             && Objects.equals(this.billingMode, that.billingMode) && Objects.equals(this.masters, that.masters)
             && Objects.equals(this.kubernetesSvcIpRange, that.kubernetesSvcIpRange)
@@ -838,6 +870,7 @@ public class ClusterSpec {
             hostNetwork,
             containerNetwork,
             eniNetwork,
+            serviceNetwork,
             authentication,
             billingMode,
             masters,
@@ -865,6 +898,7 @@ public class ClusterSpec {
         sb.append("    hostNetwork: ").append(toIndentedString(hostNetwork)).append("\n");
         sb.append("    containerNetwork: ").append(toIndentedString(containerNetwork)).append("\n");
         sb.append("    eniNetwork: ").append(toIndentedString(eniNetwork)).append("\n");
+        sb.append("    serviceNetwork: ").append(toIndentedString(serviceNetwork)).append("\n");
         sb.append("    authentication: ").append(toIndentedString(authentication)).append("\n");
         sb.append("    billingMode: ").append(toIndentedString(billingMode)).append("\n");
         sb.append("    masters: ").append(toIndentedString(masters)).append("\n");

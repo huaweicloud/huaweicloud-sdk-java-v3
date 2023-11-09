@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequestBody;
+import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateRequest;
@@ -22,6 +25,38 @@ import com.huaweicloud.sdk.scm.v3.model.ShowCertificateResponse;
 
 @SuppressWarnings("unchecked")
 public class ScmMeta {
+
+    public static final HttpRequestDef<BatchPushCertificateRequest, BatchPushCertificateResponse> batchPushCertificate =
+        genForbatchPushCertificate();
+
+    private static HttpRequestDef<BatchPushCertificateRequest, BatchPushCertificateResponse> genForbatchPushCertificate() {
+        // basic
+        HttpRequestDef.Builder<BatchPushCertificateRequest, BatchPushCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchPushCertificateRequest.class, BatchPushCertificateResponse.class)
+            .withName("BatchPushCertificate")
+            .withUri("/v3/scm/certificates/{certificate_id}/batch-push")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchPushCertificateRequest::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<BatchPushCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchPushCertificateRequestBody.class),
+            f -> f.withMarshaller(BatchPushCertificateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
         genFordeleteCertificate();

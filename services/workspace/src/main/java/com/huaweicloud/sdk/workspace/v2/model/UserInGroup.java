@@ -30,6 +30,11 @@ public class UserInGroup {
 
     private String userPhone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public UserInGroup withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +103,23 @@ public class UserInGroup {
         this.userPhone = userPhone;
     }
 
+    public UserInGroup withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 用户描述。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class UserInGroup {
         }
         UserInGroup that = (UserInGroup) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.userEmail, that.userEmail) && Objects.equals(this.userPhone, that.userPhone);
+            && Objects.equals(this.userEmail, that.userEmail) && Objects.equals(this.userPhone, that.userPhone)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userName, userEmail, userPhone);
+        return Objects.hash(id, userName, userEmail, userPhone, description);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class UserInGroup {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
         sb.append("    userPhone: ").append(toIndentedString(userPhone)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

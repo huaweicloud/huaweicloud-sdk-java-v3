@@ -61,6 +61,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobRequest;
@@ -91,6 +93,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalValueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalValueResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteResourceRequest;
@@ -141,6 +145,8 @@ import com.huaweicloud.sdk.dli.v1.model.ListJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesRequest;
@@ -235,6 +241,8 @@ import com.huaweicloud.sdk.dli.v1.model.UpdateJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateTableOwnerRequest;
@@ -1022,6 +1030,36 @@ public class DliClient {
     }
 
     /**
+     * 新增队列属性
+     *
+     * 该接口用于增加队列属性, 一次可增加多个属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateQueuePropertyRequest 请求对象
+     * @return CreateQueuePropertyResponse
+     */
+    public CreateQueuePropertyResponse createQueueProperty(CreateQueuePropertyRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createQueueProperty);
+    }
+
+    /**
+     * 新增队列属性
+     *
+     * 该接口用于增加队列属性, 一次可增加多个属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateQueuePropertyRequest 请求对象
+     * @return SyncInvoker<CreateQueuePropertyRequest, CreateQueuePropertyResponse>
+     */
+    public SyncInvoker<CreateQueuePropertyRequest, CreateQueuePropertyResponse> createQueuePropertyInvoker(
+        CreateQueuePropertyRequest request) {
+        return new SyncInvoker<CreateQueuePropertyRequest, CreateQueuePropertyResponse>(request,
+            DliMeta.createQueueProperty, hcClient);
+    }
+
+    /**
      * 删除跨源认证
      *
      * 该API用于删除跨源认证信息。
@@ -1266,6 +1304,36 @@ public class DliClient {
         DeleteQueuePlanRequest request) {
         return new SyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse>(request, DliMeta.deleteQueuePlan,
             hcClient);
+    }
+
+    /**
+     * 删除队列的属性
+     *
+     * 该接口用于删除队列的属性，一次可删除多个属性值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteQueuePropertyRequest 请求对象
+     * @return DeleteQueuePropertyResponse
+     */
+    public DeleteQueuePropertyResponse deleteQueueProperty(DeleteQueuePropertyRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.deleteQueueProperty);
+    }
+
+    /**
+     * 删除队列的属性
+     *
+     * 该接口用于删除队列的属性，一次可删除多个属性值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteQueuePropertyRequest 请求对象
+     * @return SyncInvoker<DeleteQueuePropertyRequest, DeleteQueuePropertyResponse>
+     */
+    public SyncInvoker<DeleteQueuePropertyRequest, DeleteQueuePropertyResponse> deleteQueuePropertyInvoker(
+        DeleteQueuePropertyRequest request) {
+        return new SyncInvoker<DeleteQueuePropertyRequest, DeleteQueuePropertyResponse>(request,
+            DliMeta.deleteQueueProperty, hcClient);
     }
 
     /**
@@ -1595,6 +1663,36 @@ public class DliClient {
     public SyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse> listQueuePlansInvoker(
         ListQueuePlansRequest request) {
         return new SyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse>(request, DliMeta.listQueuePlans,
+            hcClient);
+    }
+
+    /**
+     * 获取队列属性
+     *
+     * 获取队列配置的属性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQueuePropertyRequest 请求对象
+     * @return ListQueuePropertyResponse
+     */
+    public ListQueuePropertyResponse listQueueProperty(ListQueuePropertyRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.listQueueProperty);
+    }
+
+    /**
+     * 获取队列属性
+     *
+     * 获取队列配置的属性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQueuePropertyRequest 请求对象
+     * @return SyncInvoker<ListQueuePropertyRequest, ListQueuePropertyResponse>
+     */
+    public SyncInvoker<ListQueuePropertyRequest, ListQueuePropertyResponse> listQueuePropertyInvoker(
+        ListQueuePropertyRequest request) {
+        return new SyncInvoker<ListQueuePropertyRequest, ListQueuePropertyResponse>(request, DliMeta.listQueueProperty,
             hcClient);
     }
 
@@ -2255,6 +2353,36 @@ public class DliClient {
         UpdateQueueCidrRequest request) {
         return new SyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse>(request, DliMeta.updateQueueCidr,
             hcClient);
+    }
+
+    /**
+     * 更新队列属性
+     *
+     * 更新队列属性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateQueuePropertyRequest 请求对象
+     * @return UpdateQueuePropertyResponse
+     */
+    public UpdateQueuePropertyResponse updateQueueProperty(UpdateQueuePropertyRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.updateQueueProperty);
+    }
+
+    /**
+     * 更新队列属性
+     *
+     * 更新队列属性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateQueuePropertyRequest 请求对象
+     * @return SyncInvoker<UpdateQueuePropertyRequest, UpdateQueuePropertyResponse>
+     */
+    public SyncInvoker<UpdateQueuePropertyRequest, UpdateQueuePropertyResponse> updateQueuePropertyInvoker(
+        UpdateQueuePropertyRequest request) {
+        return new SyncInvoker<UpdateQueuePropertyRequest, UpdateQueuePropertyResponse>(request,
+            DliMeta.updateQueueProperty, hcClient);
     }
 
     /**

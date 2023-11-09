@@ -26,6 +26,8 @@ public class AntiDDoSRegion {
 
     public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://antiddos.cn-south-2.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://antiddos.cn-south-4.myhuaweicloud.com");
+
     public static final Region CN_SOUTHWEST_2 =
         new Region("cn-southwest-2", "https://antiddos.cn-southwest-2.myhuaweicloud.com");
 
@@ -73,6 +75,7 @@ public class AntiDDoSRegion {
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-south-2", CN_SOUTH_2);
+        map.put("cn-south-4", CN_SOUTH_4);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);

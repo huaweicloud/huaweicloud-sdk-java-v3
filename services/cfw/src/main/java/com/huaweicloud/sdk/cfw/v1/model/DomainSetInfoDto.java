@@ -11,11 +11,6 @@ import java.util.Objects;
 public class DomainSetInfoDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_set_id")
-
-    private String domainSetId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
 
     private String domainName;
@@ -24,23 +19,6 @@ public class DomainSetInfoDto {
     @JsonProperty(value = "description")
 
     private String description;
-
-    public DomainSetInfoDto withDomainSetId(String domainSetId) {
-        this.domainSetId = domainSetId;
-        return this;
-    }
-
-    /**
-     * 域名组id
-     * @return domainSetId
-     */
-    public String getDomainSetId() {
-        return domainSetId;
-    }
-
-    public void setDomainSetId(String domainSetId) {
-        this.domainSetId = domainSetId;
-    }
 
     public DomainSetInfoDto withDomainName(String domainName) {
         this.domainName = domainName;
@@ -85,20 +63,18 @@ public class DomainSetInfoDto {
             return false;
         }
         DomainSetInfoDto that = (DomainSetInfoDto) obj;
-        return Objects.equals(this.domainSetId, that.domainSetId) && Objects.equals(this.domainName, that.domainName)
-            && Objects.equals(this.description, that.description);
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainSetId, domainName, description);
+        return Objects.hash(domainName, description);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DomainSetInfoDto {\n");
-        sb.append("    domainSetId: ").append(toIndentedString(domainSetId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");

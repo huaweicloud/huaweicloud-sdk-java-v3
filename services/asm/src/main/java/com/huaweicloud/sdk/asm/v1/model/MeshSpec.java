@@ -18,13 +18,8 @@ import java.util.function.Consumer;
  */
 public class MeshSpec {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
-
     /**
-     * 网格类型： InCluster：基础版网格
+     * 网格类型： InCluster: 集群内控制平面形态，基础版网格取值为InCluster
      */
     public static final class TypeEnum {
 
@@ -107,30 +102,13 @@ public class MeshSpec {
 
     private List<MeshTags> tags = null;
 
-    public MeshSpec withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * 网格控制面组件所在的region 可选参数
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public MeshSpec withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 网格类型： InCluster：基础版网格
+     * 网格类型： InCluster: 集群内控制平面形态，基础版网格取值为InCluster
      * @return type
      */
     public TypeEnum getType() {
@@ -226,21 +204,19 @@ public class MeshSpec {
             return false;
         }
         MeshSpec that = (MeshSpec) obj;
-        return Objects.equals(this.region, that.region) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.extendParams, that.extendParams)
-            && Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.extendParams, that.extendParams) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, type, version, extendParams, tags);
+        return Objects.hash(type, version, extendParams, tags);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MeshSpec {\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    extendParams: ").append(toIndentedString(extendParams)).append("\n");

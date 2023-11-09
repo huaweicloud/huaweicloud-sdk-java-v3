@@ -234,6 +234,11 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     private Boolean isSendEmail;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dc_vnc_ip")
+
+    private String dcVncIp;
+
     public ListWorkspacesResponse withId(String id) {
         this.id = id;
         return this;
@@ -671,6 +676,23 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.isSendEmail = isSendEmail;
     }
 
+    public ListWorkspacesResponse withDcVncIp(String dcVncIp) {
+        this.dcVncIp = dcVncIp;
+        return this;
+    }
+
+    /**
+     * 自定义的专线VNC地址
+     * @return dcVncIp
+     */
+    public String getDcVncIp() {
+        return dcVncIp;
+    }
+
+    public void setDcVncIp(String dcVncIp) {
+        this.dcVncIp = dcVncIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -696,7 +718,7 @@ public class ListWorkspacesResponse extends SdkResponse {
             && Objects.equals(this.progress, that.progress) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.failCode, that.failCode) && Objects.equals(this.failReason, that.failReason)
             && Objects.equals(this.enterpriseId, that.enterpriseId)
-            && Objects.equals(this.isSendEmail, that.isSendEmail);
+            && Objects.equals(this.isSendEmail, that.isSendEmail) && Objects.equals(this.dcVncIp, that.dcVncIp);
     }
 
     @Override
@@ -723,7 +745,8 @@ public class ListWorkspacesResponse extends SdkResponse {
             failCode,
             failReason,
             enterpriseId,
-            isSendEmail);
+            isSendEmail,
+            dcVncIp);
     }
 
     @Override
@@ -755,6 +778,7 @@ public class ListWorkspacesResponse extends SdkResponse {
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
         sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
+        sb.append("    dcVncIp: ").append(toIndentedString(dcVncIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

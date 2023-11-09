@@ -63,6 +63,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetMessageOffsetRequest;
@@ -89,6 +91,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoReq
 import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowGroupsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowGroupsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceConfigsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceConfigsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceMessagesRequest;
@@ -1075,6 +1079,36 @@ public class KafkaClient {
     }
 
     /**
+     * 修改实例配置
+     *
+     * 修改实例配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyInstanceConfigsRequest 请求对象
+     * @return ModifyInstanceConfigsResponse
+     */
+    public ModifyInstanceConfigsResponse modifyInstanceConfigs(ModifyInstanceConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.modifyInstanceConfigs);
+    }
+
+    /**
+     * 修改实例配置
+     *
+     * 修改实例配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyInstanceConfigsRequest 请求对象
+     * @return SyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse>
+     */
+    public SyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> modifyInstanceConfigsInvoker(
+        ModifyInstanceConfigsRequest request) {
+        return new SyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse>(request,
+            KafkaMeta.modifyInstanceConfigs, hcClient);
+    }
+
+    /**
      * 重置Manager密码
      *
      * 重置Manager密码。
@@ -1489,6 +1523,36 @@ public class KafkaClient {
      */
     public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
         return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, KafkaMeta.showInstance, hcClient);
+    }
+
+    /**
+     * 获取实例配置
+     *
+     * 获取实例配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceConfigsRequest 请求对象
+     * @return ShowInstanceConfigsResponse
+     */
+    public ShowInstanceConfigsResponse showInstanceConfigs(ShowInstanceConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.showInstanceConfigs);
+    }
+
+    /**
+     * 获取实例配置
+     *
+     * 获取实例配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceConfigsRequest 请求对象
+     * @return SyncInvoker<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse>
+     */
+    public SyncInvoker<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> showInstanceConfigsInvoker(
+        ShowInstanceConfigsRequest request) {
+        return new SyncInvoker<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse>(request,
+            KafkaMeta.showInstanceConfigs, hcClient);
     }
 
     /**

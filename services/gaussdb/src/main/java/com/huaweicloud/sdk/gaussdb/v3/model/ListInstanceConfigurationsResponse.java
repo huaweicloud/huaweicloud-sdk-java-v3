@@ -62,7 +62,7 @@ public class ListInstanceConfigurationsResponse extends SdkResponse {
     }
 
     /**
-     * 配置信息的总数。
+     * 参数信息的总数。
      * @return totalCount
      */
     public Long getTotalCount() {

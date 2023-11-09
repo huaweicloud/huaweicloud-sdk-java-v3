@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListDesktopsEipsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_id")
 
     private String desktopId;
@@ -44,6 +49,23 @@ public class ListDesktopsEipsRequest {
     @JsonProperty(value = "state")
 
     private String state;
+
+    public ListDesktopsEipsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ListDesktopsEipsRequest withDesktopId(String desktopId) {
         this.desktopId = desktopId;
@@ -177,7 +199,8 @@ public class ListDesktopsEipsRequest {
             return false;
         }
         ListDesktopsEipsRequest that = (ListDesktopsEipsRequest) obj;
-        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopName, that.desktopName)
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopName, that.desktopName)
             && Objects.equals(this.userName, that.userName) && Objects.equals(this.address, that.address)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.state, that.state);
@@ -185,13 +208,14 @@ public class ListDesktopsEipsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopId, desktopName, userName, address, offset, limit, state);
+        return Objects.hash(enterpriseProjectId, desktopId, desktopName, userName, address, offset, limit, state);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDesktopsEipsRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    desktopName: ").append(toIndentedString(desktopName)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");

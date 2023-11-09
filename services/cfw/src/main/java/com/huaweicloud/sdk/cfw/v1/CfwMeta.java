@@ -312,10 +312,17 @@ public class CfwMeta {
         HttpRequestDef.Builder<AddDomainsRequest, AddDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, AddDomainsRequest.class, AddDomainsResponse.class)
                 .withName("AddDomains")
-                .withUri("/v1/{project_id}/domain-set/domains")
+                .withUri("/v1/{project_id}/domain-set/domains/{set_id}")
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDomainsRequest::getSetId, (req, v) -> {
+                req.setSetId(v);
+            }));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -705,10 +712,17 @@ public class CfwMeta {
         HttpRequestDef.Builder<DeleteDomainsRequest, DeleteDomainsResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainsRequest.class, DeleteDomainsResponse.class)
                 .withName("DeleteDomains")
-                .withUri("/v1/{project_id}/domain-set/domains")
+                .withUri("/v1/{project_id}/domain-set/domains/{set_id}")
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDomainsRequest::getSetId, (req, v) -> {
+                req.setSetId(v);
+            }));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

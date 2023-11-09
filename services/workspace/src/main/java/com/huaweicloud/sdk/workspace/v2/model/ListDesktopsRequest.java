@@ -40,6 +40,16 @@ public class ListDesktopsRequest {
 
     private String poolId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_type")
+
+    private String desktopType;
+
     public ListDesktopsRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -146,6 +156,40 @@ public class ListDesktopsRequest {
         this.poolId = poolId;
     }
 
+    public ListDesktopsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListDesktopsRequest withDesktopType(String desktopType) {
+        this.desktopType = desktopType;
+        return this;
+    }
+
+    /**
+     * 桌面类型，为空时查所有桌面。查询多个类型时用,隔开。 - DEDICATED：普通桌面，包括专享桌面、专属桌面等。 - SHARED: 多用户共享桌面。
+     * @return desktopType
+     */
+    public String getDesktopType() {
+        return desktopType;
+    }
+
+    public void setDesktopType(String desktopType) {
+        this.desktopType = desktopType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -157,12 +201,14 @@ public class ListDesktopsRequest {
         ListDesktopsRequest that = (ListDesktopsRequest) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.poolId, that.poolId);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.desktopType, that.desktopType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, computerName, desktopIp, offset, limit, poolId);
+        return Objects.hash(userName, computerName, desktopIp, offset, limit, poolId, enterpriseProjectId, desktopType);
     }
 
     @Override
@@ -175,6 +221,8 @@ public class ListDesktopsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

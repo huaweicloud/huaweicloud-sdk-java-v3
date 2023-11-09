@@ -244,6 +244,86 @@ public class BackupRecordResponse {
 
     private String isSupportRestore;
 
+    /**
+     * 备份类型。
+     */
+    public static final class BackupFormatEnum {
+
+        /**
+         * Enum AOF for value: "aof"
+         */
+        public static final BackupFormatEnum AOF = new BackupFormatEnum("aof");
+
+        /**
+         * Enum RDB for value: "rdb"
+         */
+        public static final BackupFormatEnum RDB = new BackupFormatEnum("rdb");
+
+        private static final Map<String, BackupFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, BackupFormatEnum> createStaticFields() {
+            Map<String, BackupFormatEnum> map = new HashMap<>();
+            map.put("aof", AOF);
+            map.put("rdb", RDB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        BackupFormatEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static BackupFormatEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackupFormatEnum(value));
+        }
+
+        public static BackupFormatEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof BackupFormatEnum) {
+                return this.value.equals(((BackupFormatEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_format")
+
+    private BackupFormatEnum backupFormat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execution_at")
+
+    private String executionAt;
+
     public BackupRecordResponse withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -465,6 +545,40 @@ public class BackupRecordResponse {
         this.isSupportRestore = isSupportRestore;
     }
 
+    public BackupRecordResponse withBackupFormat(BackupFormatEnum backupFormat) {
+        this.backupFormat = backupFormat;
+        return this;
+    }
+
+    /**
+     * 备份类型。
+     * @return backupFormat
+     */
+    public BackupFormatEnum getBackupFormat() {
+        return backupFormat;
+    }
+
+    public void setBackupFormat(BackupFormatEnum backupFormat) {
+        this.backupFormat = backupFormat;
+    }
+
+    public BackupRecordResponse withExecutionAt(String executionAt) {
+        this.executionAt = executionAt;
+        return this;
+    }
+
+    /**
+     * 执行时间.
+     * @return executionAt
+     */
+    public String getExecutionAt() {
+        return executionAt;
+    }
+
+    public void setExecutionAt(String executionAt) {
+        this.executionAt = executionAt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -480,7 +594,9 @@ public class BackupRecordResponse {
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.progress, that.progress) && Objects.equals(this.errorCode, that.errorCode)
             && Objects.equals(this.remark, that.remark) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.isSupportRestore, that.isSupportRestore);
+            && Objects.equals(this.isSupportRestore, that.isSupportRestore)
+            && Objects.equals(this.backupFormat, that.backupFormat)
+            && Objects.equals(this.executionAt, that.executionAt);
     }
 
     @Override
@@ -497,7 +613,9 @@ public class BackupRecordResponse {
             errorCode,
             remark,
             status,
-            isSupportRestore);
+            isSupportRestore,
+            backupFormat,
+            executionAt);
     }
 
     @Override
@@ -517,6 +635,8 @@ public class BackupRecordResponse {
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    isSupportRestore: ").append(toIndentedString(isSupportRestore)).append("\n");
+        sb.append("    backupFormat: ").append(toIndentedString(backupFormat)).append("\n");
+        sb.append("    executionAt: ").append(toIndentedString(executionAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

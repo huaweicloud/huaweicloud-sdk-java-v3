@@ -19,11 +19,6 @@ public class DeleteDomainDto {
     private String objectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_set_id")
-
-    private String domainSetId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_address_ids")
 
     private List<String> domainAddressIds = null;
@@ -43,23 +38,6 @@ public class DeleteDomainDto {
 
     public void setObjectId(String objectId) {
         this.objectId = objectId;
-    }
-
-    public DeleteDomainDto withDomainSetId(String domainSetId) {
-        this.domainSetId = domainSetId;
-        return this;
-    }
-
-    /**
-     * 域名组id
-     * @return domainSetId
-     */
-    public String getDomainSetId() {
-        return domainSetId;
-    }
-
-    public void setDomainSetId(String domainSetId) {
-        this.domainSetId = domainSetId;
     }
 
     public DeleteDomainDto withDomainAddressIds(List<String> domainAddressIds) {
@@ -104,13 +82,13 @@ public class DeleteDomainDto {
             return false;
         }
         DeleteDomainDto that = (DeleteDomainDto) obj;
-        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.domainSetId, that.domainSetId)
+        return Objects.equals(this.objectId, that.objectId)
             && Objects.equals(this.domainAddressIds, that.domainAddressIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, domainSetId, domainAddressIds);
+        return Objects.hash(objectId, domainAddressIds);
     }
 
     @Override
@@ -118,7 +96,6 @@ public class DeleteDomainDto {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteDomainDto {\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    domainSetId: ").append(toIndentedString(domainSetId)).append("\n");
         sb.append("    domainAddressIds: ").append(toIndentedString(domainAddressIds)).append("\n");
         sb.append("}");
         return sb.toString();

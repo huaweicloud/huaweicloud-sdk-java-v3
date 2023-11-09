@@ -13,8 +13,6 @@ import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyResponse;
-import com.huaweicloud.sdk.dcs.v2.model.CheckMigrationConnectivityRequest;
-import com.huaweicloud.sdk.dcs.v2.model.CheckMigrationConnectivityResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountRequest;
@@ -379,36 +377,6 @@ public class DcsClient {
         ChangeMasterStandbyRequest request) {
         return new SyncInvoker<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse>(request,
             DcsMeta.changeMasterStandby, hcClient);
-    }
-
-    /**
-     * 数据迁移配置页实例连接测试
-     *
-     * 数据迁移配置页实例连接测试
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CheckMigrationConnectivityRequest 请求对象
-     * @return CheckMigrationConnectivityResponse
-     */
-    public CheckMigrationConnectivityResponse checkMigrationConnectivity(CheckMigrationConnectivityRequest request) {
-        return hcClient.syncInvokeHttp(request, DcsMeta.checkMigrationConnectivity);
-    }
-
-    /**
-     * 数据迁移配置页实例连接测试
-     *
-     * 数据迁移配置页实例连接测试
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CheckMigrationConnectivityRequest 请求对象
-     * @return SyncInvoker<CheckMigrationConnectivityRequest, CheckMigrationConnectivityResponse>
-     */
-    public SyncInvoker<CheckMigrationConnectivityRequest, CheckMigrationConnectivityResponse> checkMigrationConnectivityInvoker(
-        CheckMigrationConnectivityRequest request) {
-        return new SyncInvoker<CheckMigrationConnectivityRequest, CheckMigrationConnectivityResponse>(request,
-            DcsMeta.checkMigrationConnectivity, hcClient);
     }
 
     /**

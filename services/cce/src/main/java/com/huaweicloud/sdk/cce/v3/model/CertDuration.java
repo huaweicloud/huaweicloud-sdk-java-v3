@@ -21,9 +21,9 @@ public class CertDuration {
     }
 
     /**
-     * 集群证书有效时间，单位为天，最小值为1，最大值为10950(30*365，1年固定计365天，忽略闰年影响)；若填-1则为最大值30年。 
+     * 集群证书有效时间，单位为天，最小值为1，最大值为1825(5*365，1年固定计365天，忽略闰年影响)；若填-1则为最大值5年。 
      * minimum: 1
-     * maximum: 10950
+     * maximum: 1825
      * @return duration
      */
     public Integer getDuration() {

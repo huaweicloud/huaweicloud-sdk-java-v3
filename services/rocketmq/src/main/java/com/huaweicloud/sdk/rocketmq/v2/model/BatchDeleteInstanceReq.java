@@ -157,7 +157,7 @@ public class BatchDeleteInstanceReq {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "allFailure")
+    @JsonProperty(value = "all_failure")
 
     private AllFailureEnum allFailure;
 

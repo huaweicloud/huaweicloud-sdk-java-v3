@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class NodeStatus {
 
     /**
-     * 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。
+     * 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：纳管中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：正常，表示节点处于正常状态。 - Abnormal：异常，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：故障，表示节点处于故障状态。
      */
     public static final class PhaseEnum {
 
@@ -30,16 +30,6 @@ public class NodeStatus {
          * Enum INSTALLING for value: "Installing"
          */
         public static final PhaseEnum INSTALLING = new PhaseEnum("Installing");
-
-        /**
-         * Enum INSTALLED for value: "Installed"
-         */
-        public static final PhaseEnum INSTALLED = new PhaseEnum("Installed");
-
-        /**
-         * Enum SHUTDOWN for value: "ShutDown"
-         */
-        public static final PhaseEnum SHUTDOWN = new PhaseEnum("ShutDown");
 
         /**
          * Enum UPGRADING for value: "Upgrading"
@@ -72,8 +62,6 @@ public class NodeStatus {
             Map<String, PhaseEnum> map = new HashMap<>();
             map.put("Build", BUILD);
             map.put("Installing", INSTALLING);
-            map.put("Installed", INSTALLED);
-            map.put("ShutDown", SHUTDOWN);
             map.put("Upgrading", UPGRADING);
             map.put("Active", ACTIVE);
             map.put("Abnormal", ABNORMAL);
@@ -174,7 +162,7 @@ public class NodeStatus {
     }
 
     /**
-     * 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现。
+     * 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：纳管中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：正常，表示节点处于正常状态。 - Abnormal：异常，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：故障，表示节点处于故障状态。
      * @return phase
      */
     public PhaseEnum getPhase() {

@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesRequest;
@@ -25,10 +27,14 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipReques
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyRequest;
@@ -37,6 +43,8 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateTagRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupRequest;
@@ -45,6 +53,8 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteTagRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserGroupRequest;
@@ -61,6 +71,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
@@ -79,6 +91,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsRequest;
@@ -107,8 +121,12 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowWorkspaceLockRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowWorkspaceLockResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UnlockWorkspaceRequest;
@@ -542,6 +560,37 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 重建桌面
+     *
+     * 批量重建桌面系统盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRebuildDesktopsSystemDiskRequest 请求对象
+     * @return CompletableFuture<BatchRebuildDesktopsSystemDiskResponse>
+     */
+    public CompletableFuture<BatchRebuildDesktopsSystemDiskResponse> batchRebuildDesktopsSystemDiskAsync(
+        BatchRebuildDesktopsSystemDiskRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchRebuildDesktopsSystemDisk);
+    }
+
+    /**
+     * 重建桌面
+     *
+     * 批量重建桌面系统盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRebuildDesktopsSystemDiskRequest 请求对象
+     * @return AsyncInvoker<BatchRebuildDesktopsSystemDiskRequest, BatchRebuildDesktopsSystemDiskResponse>
+     */
+    public AsyncInvoker<BatchRebuildDesktopsSystemDiskRequest, BatchRebuildDesktopsSystemDiskResponse> batchRebuildDesktopsSystemDiskAsyncInvoker(
+        BatchRebuildDesktopsSystemDiskRequest request) {
+        return new AsyncInvoker<BatchRebuildDesktopsSystemDiskRequest, BatchRebuildDesktopsSystemDiskResponse>(request,
+            WorkspaceMeta.batchRebuildDesktopsSystemDisk, hcClient);
+    }
+
+    /**
      * 操作桌面
      *
      * 批量操作桌面，用于批量开机、关机和重启。
@@ -569,6 +618,37 @@ public class WorkspaceAsyncClient {
         BatchRunDesktopsRequest request) {
         return new AsyncInvoker<BatchRunDesktopsRequest, BatchRunDesktopsResponse>(request,
             WorkspaceMeta.batchRunDesktops, hcClient);
+    }
+
+    /**
+     * 切换桌面网络
+     *
+     * 切换桌面vpc、子网、ip、安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeDesktopNetworkRequest 请求对象
+     * @return CompletableFuture<ChangeDesktopNetworkResponse>
+     */
+    public CompletableFuture<ChangeDesktopNetworkResponse> changeDesktopNetworkAsync(
+        ChangeDesktopNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.changeDesktopNetwork);
+    }
+
+    /**
+     * 切换桌面网络
+     *
+     * 切换桌面vpc、子网、ip、安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeDesktopNetworkRequest 请求对象
+     * @return AsyncInvoker<ChangeDesktopNetworkRequest, ChangeDesktopNetworkResponse>
+     */
+    public AsyncInvoker<ChangeDesktopNetworkRequest, ChangeDesktopNetworkResponse> changeDesktopNetworkAsyncInvoker(
+        ChangeDesktopNetworkRequest request) {
+        return new AsyncInvoker<ChangeDesktopNetworkRequest, ChangeDesktopNetworkResponse>(request,
+            WorkspaceMeta.changeDesktopNetwork, hcClient);
     }
 
     /**
@@ -752,6 +832,36 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询桌面网络
+     *
+     * 查询桌面vpc、子网、privateIp、EIP、安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDesktopNetworkRequest 请求对象
+     * @return CompletableFuture<ShowDesktopNetworkResponse>
+     */
+    public CompletableFuture<ShowDesktopNetworkResponse> showDesktopNetworkAsync(ShowDesktopNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showDesktopNetwork);
+    }
+
+    /**
+     * 查询桌面网络
+     *
+     * 查询桌面vpc、子网、privateIp、EIP、安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDesktopNetworkRequest 请求对象
+     * @return AsyncInvoker<ShowDesktopNetworkRequest, ShowDesktopNetworkResponse>
+     */
+    public AsyncInvoker<ShowDesktopNetworkRequest, ShowDesktopNetworkResponse> showDesktopNetworkAsyncInvoker(
+        ShowDesktopNetworkRequest request) {
+        return new AsyncInvoker<ShowDesktopNetworkRequest, ShowDesktopNetworkResponse>(request,
+            WorkspaceMeta.showDesktopNetwork, hcClient);
+    }
+
+    /**
      * 查询在指定时间段未使用的桌面
      *
      * 查询在指定时间段未使用的桌面。
@@ -809,6 +919,182 @@ public class WorkspaceAsyncClient {
         ListUsedDesktopInfoRequest request) {
         return new AsyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse>(request,
             WorkspaceMeta.listUsedDesktopInfo, hcClient);
+    }
+
+    /**
+     * 批量添加删除标签
+     *
+     * 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchChangeTagsRequest 请求对象
+     * @return CompletableFuture<BatchChangeTagsResponse>
+     */
+    public CompletableFuture<BatchChangeTagsResponse> batchChangeTagsAsync(BatchChangeTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchChangeTags);
+    }
+
+    /**
+     * 批量添加删除标签
+     *
+     * 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchChangeTagsRequest 请求对象
+     * @return AsyncInvoker<BatchChangeTagsRequest, BatchChangeTagsResponse>
+     */
+    public AsyncInvoker<BatchChangeTagsRequest, BatchChangeTagsResponse> batchChangeTagsAsyncInvoker(
+        BatchChangeTagsRequest request) {
+        return new AsyncInvoker<BatchChangeTagsRequest, BatchChangeTagsResponse>(request, WorkspaceMeta.batchChangeTags,
+            hcClient);
+    }
+
+    /**
+     * 创建桌面标签
+     *
+     * 该接口用于为桌面创建标签，一个桌面上最多有10个标签。创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagRequest 请求对象
+     * @return CompletableFuture<CreateTagResponse>
+     */
+    public CompletableFuture<CreateTagResponse> createTagAsync(CreateTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createTag);
+    }
+
+    /**
+     * 创建桌面标签
+     *
+     * 该接口用于为桌面创建标签，一个桌面上最多有10个标签。创建时，如果创建的标签已经存在（key相同），则覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTagRequest 请求对象
+     * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
+     */
+    public AsyncInvoker<CreateTagRequest, CreateTagResponse> createTagAsyncInvoker(CreateTagRequest request) {
+        return new AsyncInvoker<CreateTagRequest, CreateTagResponse>(request, WorkspaceMeta.createTag, hcClient);
+    }
+
+    /**
+     * 删除桌面标签
+     *
+     * 该接口用于删除桌面标签。删除时，如果删除的标签不存在，默认处理成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagRequest 请求对象
+     * @return CompletableFuture<DeleteTagResponse>
+     */
+    public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteTag);
+    }
+
+    /**
+     * 删除桌面标签
+     *
+     * 该接口用于删除桌面标签。删除时，如果删除的标签不存在，默认处理成功。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTagRequest 请求对象
+     * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
+     */
+    public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
+        return new AsyncInvoker<DeleteTagRequest, DeleteTagResponse>(request, WorkspaceMeta.deleteTag, hcClient);
+    }
+
+    /**
+     * 使用标签过滤桌面
+     *
+     * 使用标签过滤桌面
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDesktopByTagsRequest 请求对象
+     * @return CompletableFuture<ListDesktopByTagsResponse>
+     */
+    public CompletableFuture<ListDesktopByTagsResponse> listDesktopByTagsAsync(ListDesktopByTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopByTags);
+    }
+
+    /**
+     * 使用标签过滤桌面
+     *
+     * 使用标签过滤桌面
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDesktopByTagsRequest 请求对象
+     * @return AsyncInvoker<ListDesktopByTagsRequest, ListDesktopByTagsResponse>
+     */
+    public AsyncInvoker<ListDesktopByTagsRequest, ListDesktopByTagsResponse> listDesktopByTagsAsyncInvoker(
+        ListDesktopByTagsRequest request) {
+        return new AsyncInvoker<ListDesktopByTagsRequest, ListDesktopByTagsResponse>(request,
+            WorkspaceMeta.listDesktopByTags, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户的所有标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return CompletableFuture<ListProjectTagsResponse>
+     */
+    public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询租户的所有标签集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectTagsRequest 请求对象
+     * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
+        ListProjectTagsRequest request) {
+        return new AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, WorkspaceMeta.listProjectTags,
+            hcClient);
+    }
+
+    /**
+     * 查询桌面标签
+     *
+     * 查询指定桌面的标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTagByDesktopIdRequest 请求对象
+     * @return CompletableFuture<ShowTagByDesktopIdResponse>
+     */
+    public CompletableFuture<ShowTagByDesktopIdResponse> showTagByDesktopIdAsync(ShowTagByDesktopIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showTagByDesktopId);
+    }
+
+    /**
+     * 查询桌面标签
+     *
+     * 查询指定桌面的标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTagByDesktopIdRequest 请求对象
+     * @return AsyncInvoker<ShowTagByDesktopIdRequest, ShowTagByDesktopIdResponse>
+     */
+    public AsyncInvoker<ShowTagByDesktopIdRequest, ShowTagByDesktopIdResponse> showTagByDesktopIdAsyncInvoker(
+        ShowTagByDesktopIdRequest request) {
+        return new AsyncInvoker<ShowTagByDesktopIdRequest, ShowTagByDesktopIdResponse>(request,
+            WorkspaceMeta.showTagByDesktopId, hcClient);
     }
 
     /**

@@ -53,6 +53,8 @@ public class CesRegion {
 
     public static final Region TR_WEST_1 = new Region("tr-west-1", "https://ces.tr-west-1.myhuaweicloud.com");
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://ces.eu-west-101.myhuaweicloud.eu");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CES");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -77,6 +79,7 @@ public class CesRegion {
         map.put("cn-north-2", CN_NORTH_2);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("tr-west-1", TR_WEST_1);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

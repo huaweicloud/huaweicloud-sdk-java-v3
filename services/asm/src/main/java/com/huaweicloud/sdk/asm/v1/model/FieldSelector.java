@@ -51,7 +51,7 @@ public class FieldSelector {
     }
 
     /**
-     * 可以在字段选择器中使用=、==和!= 操作符（= 和 == 意思相同）
+     * 操作符，仅支持取值\"In\"
      * @return operator
      */
     public String getOperator() {

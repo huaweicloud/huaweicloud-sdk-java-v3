@@ -45,6 +45,11 @@ public class Eips {
 
     private String attachedDesktopName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public Eips withId(String id) {
         this.id = id;
         return this;
@@ -166,6 +171,23 @@ public class Eips {
         this.attachedDesktopName = attachedDesktopName;
     }
 
+    public Eips withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,13 +202,20 @@ public class Eips {
             && Objects.equals(this.eipChargeMode, that.eipChargeMode)
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.attachedDesktopId, that.attachedDesktopId)
-            && Objects.equals(this.attachedDesktopName, that.attachedDesktopName);
+            && Objects.equals(this.attachedDesktopName, that.attachedDesktopName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, address, bandwidthSize, eipChargeMode, createTime, attachedDesktopId, attachedDesktopName);
+        return Objects.hash(id,
+            address,
+            bandwidthSize,
+            eipChargeMode,
+            createTime,
+            attachedDesktopId,
+            attachedDesktopName,
+            enterpriseProjectId);
     }
 
     @Override
@@ -200,6 +229,7 @@ public class Eips {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    attachedDesktopId: ").append(toIndentedString(attachedDesktopId)).append("\n");
         sb.append("    attachedDesktopName: ").append(toIndentedString(attachedDesktopName)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

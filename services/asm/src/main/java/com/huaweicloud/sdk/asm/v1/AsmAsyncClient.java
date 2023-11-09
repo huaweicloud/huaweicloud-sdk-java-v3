@@ -28,7 +28,7 @@ public class AsmAsyncClient {
     }
 
     /**
-     * 新建网格
+     * 创建网格
      *
      * 该API用于创建一个网格
      * 
@@ -42,7 +42,7 @@ public class AsmAsyncClient {
     }
 
     /**
-     * 新建网格
+     * 创建网格
      *
      * 该API用于创建一个网格
      * 

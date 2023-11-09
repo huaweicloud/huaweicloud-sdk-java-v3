@@ -54,7 +54,6 @@ import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorRequest;
-import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorRequestBody;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
@@ -80,6 +79,9 @@ import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsReq;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.PartitionReassignRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordReq;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordRequest;
@@ -114,6 +116,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoReq
 import com.huaweicloud.sdk.kafka.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowGroupsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowGroupsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceConfigsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceConfigsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceMessagesRequest;
@@ -741,13 +745,6 @@ public class KafkaMeta {
             f -> f.withMarshaller(DeleteConnectorRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
-        builder.<DeleteConnectorRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(DeleteConnectorRequestBody.class),
-            f -> f.withMarshaller(DeleteConnectorRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
 
         // response
 
@@ -1210,6 +1207,38 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> modifyInstanceConfigs =
+        genFormodifyInstanceConfigs();
+
+    private static HttpRequestDef<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> genFormodifyInstanceConfigs() {
+        // basic
+        HttpRequestDef.Builder<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ModifyInstanceConfigsRequest.class, ModifyInstanceConfigsResponse.class)
+            .withName("ModifyInstanceConfigs")
+            .withUri("/v2/{project_id}/instances/{instance_id}/configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyInstanceConfigsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ModifyInstanceConfigsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyInstanceConfigsReq.class),
+            f -> f.withMarshaller(ModifyInstanceConfigsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetManagerPasswordRequest, ResetManagerPasswordResponse> resetManagerPassword =
         genForresetManagerPassword();
 
@@ -1643,6 +1672,31 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> showInstanceConfigs =
+        genForshowInstanceConfigs();
+
+    private static HttpRequestDef<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> genForshowInstanceConfigs() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceConfigsRequest, ShowInstanceConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceConfigsRequest.class, ShowInstanceConfigsResponse.class)
+                .withName("ShowInstanceConfigs")
+                .withUri("/v2/{project_id}/instances/{instance_id}/configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceConfigsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
 

@@ -17,11 +17,6 @@ public class MeshCluster {
     private String clusterID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region")
-
-    private String region;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectID")
 
     private String projectID;
@@ -51,23 +46,6 @@ public class MeshCluster {
 
     public void setClusterID(String clusterID) {
         this.clusterID = clusterID;
-    }
-
-    public MeshCluster withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
-    /**
-     * 集群所在的Region
-     * @return region
-     */
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
     }
 
     public MeshCluster withProjectID(String projectID) {
@@ -148,14 +126,13 @@ public class MeshCluster {
             return false;
         }
         MeshCluster that = (MeshCluster) obj;
-        return Objects.equals(this.clusterID, that.clusterID) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.projectID, that.projectID) && Objects.equals(this.injection, that.injection)
-            && Objects.equals(this.installation, that.installation);
+        return Objects.equals(this.clusterID, that.clusterID) && Objects.equals(this.projectID, that.projectID)
+            && Objects.equals(this.injection, that.injection) && Objects.equals(this.installation, that.installation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterID, region, projectID, injection, installation);
+        return Objects.hash(clusterID, projectID, injection, installation);
     }
 
     @Override
@@ -163,7 +140,6 @@ public class MeshCluster {
         StringBuilder sb = new StringBuilder();
         sb.append("class MeshCluster {\n");
         sb.append("    clusterID: ").append(toIndentedString(clusterID)).append("\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    projectID: ").append(toIndentedString(projectID)).append("\n");
         sb.append("    injection: ").append(toIndentedString(injection)).append("\n");
         sb.append("    installation: ").append(toIndentedString(installation)).append("\n");

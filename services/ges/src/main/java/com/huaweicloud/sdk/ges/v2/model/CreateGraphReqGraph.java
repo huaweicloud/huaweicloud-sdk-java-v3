@@ -108,6 +108,11 @@ public class CreateGraphReqGraph {
 
     private CreateGraphReqGraphVertexIdType vertexIdType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_multi_label")
+
+    private Boolean enableMultiLabel;
+
     public CreateGraphReqGraph withName(String name) {
         this.name = name;
         return this;
@@ -500,6 +505,23 @@ public class CreateGraphReqGraph {
         this.vertexIdType = vertexIdType;
     }
 
+    public CreateGraphReqGraph withEnableMultiLabel(Boolean enableMultiLabel) {
+        this.enableMultiLabel = enableMultiLabel;
+        return this;
+    }
+
+    /**
+     * 是否启用多标签
+     * @return enableMultiLabel
+     */
+    public Boolean getEnableMultiLabel() {
+        return enableMultiLabel;
+    }
+
+    public void setEnableMultiLabel(Boolean enableMultiLabel) {
+        this.enableMultiLabel = enableMultiLabel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -522,7 +544,8 @@ public class CreateGraphReqGraph {
             && Objects.equals(this.enableHyg, that.enableHyg)
             && Objects.equals(this.cryptAlgorithm, that.cryptAlgorithm)
             && Objects.equals(this.enableHttps, that.enableHttps) && Objects.equals(this.productType, that.productType)
-            && Objects.equals(this.vertexIdType, that.vertexIdType);
+            && Objects.equals(this.vertexIdType, that.vertexIdType)
+            && Objects.equals(this.enableMultiLabel, that.enableMultiLabel);
     }
 
     @Override
@@ -545,7 +568,8 @@ public class CreateGraphReqGraph {
             cryptAlgorithm,
             enableHttps,
             productType,
-            vertexIdType);
+            vertexIdType,
+            enableMultiLabel);
     }
 
     @Override
@@ -571,6 +595,7 @@ public class CreateGraphReqGraph {
         sb.append("    enableHttps: ").append(toIndentedString(enableHttps)).append("\n");
         sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
         sb.append("    vertexIdType: ").append(toIndentedString(vertexIdType)).append("\n");
+        sb.append("    enableMultiLabel: ").append(toIndentedString(enableMultiLabel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

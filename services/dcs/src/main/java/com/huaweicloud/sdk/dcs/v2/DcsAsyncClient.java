@@ -13,8 +13,6 @@ import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyResponse;
-import com.huaweicloud.sdk.dcs.v2.model.CheckMigrationConnectivityRequest;
-import com.huaweicloud.sdk.dcs.v2.model.CheckMigrationConnectivityResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountRequest;
@@ -385,37 +383,6 @@ public class DcsAsyncClient {
         ChangeMasterStandbyRequest request) {
         return new AsyncInvoker<ChangeMasterStandbyRequest, ChangeMasterStandbyResponse>(request,
             DcsMeta.changeMasterStandby, hcClient);
-    }
-
-    /**
-     * 数据迁移配置页实例连接测试
-     *
-     * 数据迁移配置页实例连接测试
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CheckMigrationConnectivityRequest 请求对象
-     * @return CompletableFuture<CheckMigrationConnectivityResponse>
-     */
-    public CompletableFuture<CheckMigrationConnectivityResponse> checkMigrationConnectivityAsync(
-        CheckMigrationConnectivityRequest request) {
-        return hcClient.asyncInvokeHttp(request, DcsMeta.checkMigrationConnectivity);
-    }
-
-    /**
-     * 数据迁移配置页实例连接测试
-     *
-     * 数据迁移配置页实例连接测试
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CheckMigrationConnectivityRequest 请求对象
-     * @return AsyncInvoker<CheckMigrationConnectivityRequest, CheckMigrationConnectivityResponse>
-     */
-    public AsyncInvoker<CheckMigrationConnectivityRequest, CheckMigrationConnectivityResponse> checkMigrationConnectivityAsyncInvoker(
-        CheckMigrationConnectivityRequest request) {
-        return new AsyncInvoker<CheckMigrationConnectivityRequest, CheckMigrationConnectivityResponse>(request,
-            DcsMeta.checkMigrationConnectivity, hcClient);
     }
 
     /**

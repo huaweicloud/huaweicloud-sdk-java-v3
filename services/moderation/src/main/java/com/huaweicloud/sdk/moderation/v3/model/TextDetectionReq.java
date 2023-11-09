@@ -19,6 +19,11 @@ public class TextDetectionReq {
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "categories")
+
+    private List<String> categories = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "glossary_names")
 
     private List<String> glossaryNames = null;
@@ -53,6 +58,39 @@ public class TextDetectionReq {
 
     public void setEventType(String eventType) {
         this.eventType = eventType;
+    }
+
+    public TextDetectionReq withCategories(List<String> categories) {
+        this.categories = categories;
+        return this;
+    }
+
+    public TextDetectionReq addCategoriesItem(String categoriesItem) {
+        if (this.categories == null) {
+            this.categories = new ArrayList<>();
+        }
+        this.categories.add(categoriesItem);
+        return this;
+    }
+
+    public TextDetectionReq withCategories(Consumer<List<String>> categoriesSetter) {
+        if (this.categories == null) {
+            this.categories = new ArrayList<>();
+        }
+        categoriesSetter.accept(this.categories);
+        return this;
+    }
+
+    /**
+     * 文本审核场景，可选值如下： terrorism: 暴恐 porn: 色情 ban: 违禁 abuse: 辱骂 ad: 广告 当categories缺省或为空时，默认审核terrorism、porn、ban、abuse、ad。
+     * @return categories
+     */
+    public List<String> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<String> categories) {
+        this.categories = categories;
     }
 
     public TextDetectionReq withGlossaryNames(List<String> glossaryNames) {
@@ -173,14 +211,15 @@ public class TextDetectionReq {
             return false;
         }
         TextDetectionReq that = (TextDetectionReq) obj;
-        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.glossaryNames, that.glossaryNames)
-            && Objects.equals(this.data, that.data) && Objects.equals(this.whiteGlossaryNames, that.whiteGlossaryNames)
+        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.categories, that.categories)
+            && Objects.equals(this.glossaryNames, that.glossaryNames) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.whiteGlossaryNames, that.whiteGlossaryNames)
             && Objects.equals(this.bizType, that.bizType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventType, glossaryNames, data, whiteGlossaryNames, bizType);
+        return Objects.hash(eventType, categories, glossaryNames, data, whiteGlossaryNames, bizType);
     }
 
     @Override
@@ -188,6 +227,7 @@ public class TextDetectionReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class TextDetectionReq {\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+        sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
         sb.append("    glossaryNames: ").append(toIndentedString(glossaryNames)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    whiteGlossaryNames: ").append(toIndentedString(whiteGlossaryNames)).append("\n");

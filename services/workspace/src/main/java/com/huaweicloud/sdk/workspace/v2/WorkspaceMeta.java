@@ -20,6 +20,8 @@ import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipReq;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchActionDesktopsReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersResponse;
@@ -38,10 +40,15 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipReques
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkReq;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyReq;
@@ -52,6 +59,9 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateTagReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateTagRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsResponse;
@@ -65,6 +75,8 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopsReq;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteTagRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsResponse;
@@ -86,6 +98,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
@@ -104,6 +118,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsRequest;
@@ -126,6 +142,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListWorkspacesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.LogoffDesktopsReq;
 import com.huaweicloud.sdk.workspace.v2.model.ModifyWorkspaceAttributesReq;
 import com.huaweicloud.sdk.workspace.v2.model.OperateUserReq;
+import com.huaweicloud.sdk.workspace.v2.model.QueryDesktopByTagReq;
+import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopsReq;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopReq;
@@ -137,10 +155,15 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowWorkspaceLockRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowWorkspaceLockResponse;
+import com.huaweicloud.sdk.workspace.v2.model.TagsReq;
 import com.huaweicloud.sdk.workspace.v2.model.TerminalsBindingDesktopsConfig;
 import com.huaweicloud.sdk.workspace.v2.model.UnlockWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UnlockWorkspaceRequestBody;
@@ -161,6 +184,8 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateUserInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateUserInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateWorkspaceResponse;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class WorkspaceMeta {
@@ -605,6 +630,34 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchRebuildDesktopsSystemDiskRequest, BatchRebuildDesktopsSystemDiskResponse> batchRebuildDesktopsSystemDisk =
+        genForbatchRebuildDesktopsSystemDisk();
+
+    private static HttpRequestDef<BatchRebuildDesktopsSystemDiskRequest, BatchRebuildDesktopsSystemDiskResponse> genForbatchRebuildDesktopsSystemDisk() {
+        // basic
+        HttpRequestDef.Builder<BatchRebuildDesktopsSystemDiskRequest, BatchRebuildDesktopsSystemDiskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchRebuildDesktopsSystemDiskRequest.class,
+                    BatchRebuildDesktopsSystemDiskResponse.class)
+                .withName("BatchRebuildDesktopsSystemDisk")
+                .withUri("/v2/{project_id}/desktops/rebuild")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RebuildDesktopsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RebuildDesktopsReq.class),
+            f -> f.withMarshaller(BatchRebuildDesktopsSystemDiskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchRunDesktopsRequest, BatchRunDesktopsResponse> batchRunDesktops =
         genForbatchRunDesktops();
 
@@ -622,6 +675,38 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchActionDesktopsReq.class),
             f -> f.withMarshaller(BatchRunDesktopsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeDesktopNetworkRequest, ChangeDesktopNetworkResponse> changeDesktopNetwork =
+        genForchangeDesktopNetwork();
+
+    private static HttpRequestDef<ChangeDesktopNetworkRequest, ChangeDesktopNetworkResponse> genForchangeDesktopNetwork() {
+        // basic
+        HttpRequestDef.Builder<ChangeDesktopNetworkRequest, ChangeDesktopNetworkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ChangeDesktopNetworkRequest.class, ChangeDesktopNetworkResponse.class)
+            .withName("ChangeDesktopNetwork")
+            .withUri("/v2/{project_id}/desktops/{desktop_id}/networks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeDesktopNetworkRequest::getDesktopId, (req, v) -> {
+                req.setDesktopId(v);
+            }));
+        builder.<ChangeDesktopNetworkReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeDesktopNetworkReq.class),
+            f -> f.withMarshaller(ChangeDesktopNetworkRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -688,6 +773,13 @@ public class WorkspaceMeta {
             f -> f.withMarshaller(DeleteDesktopRequest::getEmailNotification, (req, v) -> {
                 req.setEmailNotification(v);
             }));
+        builder.<Boolean>withRequestField("is_force_delete",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteDesktopRequest::getIsForceDelete, (req, v) -> {
+                req.setIsForceDelete(v);
+            }));
 
         // response
 
@@ -747,6 +839,20 @@ public class WorkspaceMeta {
             f -> f.withMarshaller(ListDesktopsRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("desktop_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsRequest::getDesktopType, (req, v) -> {
+                req.setDesktopType(v);
+            }));
 
         // response
 
@@ -779,6 +885,27 @@ public class WorkspaceMeta {
             f -> f.withMarshaller(ListDesktopsDetailRequest::getUserName, (req, v) -> {
                 req.setUserName(v);
             }));
+        builder.<List<String>>withRequestField("user_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getUserNames, (req, v) -> {
+                req.setUserNames(v);
+            }));
+        builder.<ListDesktopsDetailRequest.SortFieldEnum>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDesktopsDetailRequest.SortFieldEnum.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getSortField, (req, v) -> {
+                req.setSortField(v);
+            }));
+        builder.<ListDesktopsDetailRequest.SortTypeEnum>withRequestField("sort_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDesktopsDetailRequest.SortTypeEnum.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getSortType, (req, v) -> {
+                req.setSortType(v);
+            }));
         builder.<String>withRequestField("computer_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -807,10 +934,10 @@ public class WorkspaceMeta {
             f -> f.withMarshaller(ListDesktopsDetailRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
-        builder.<String>withRequestField("desktop_id",
+        builder.<List<String>>withRequestField("desktop_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getDesktopId, (req, v) -> {
                 req.setDesktopId(v);
             }));
@@ -834,6 +961,41 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsDetailRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
+            }));
+        builder.<Boolean>withRequestField("user_attached",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getUserAttached, (req, v) -> {
+                req.setUserAttached(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getImageId, (req, v) -> {
+                req.setImageId(v);
+            }));
+        builder.<String>withRequestField("charge_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getChargeMode, (req, v) -> {
+                req.setChargeMode(v);
+            }));
+        builder.<Boolean>withRequestField("in_maintenance_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDesktopsDetailRequest::getInMaintenanceMode, (req, v) -> {
+                req.setInMaintenanceMode(v);
             }));
 
         // response
@@ -883,6 +1045,31 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDesktopDetailRequest::getDesktopId, (req, v) -> {
+                req.setDesktopId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDesktopNetworkRequest, ShowDesktopNetworkResponse> showDesktopNetwork =
+        genForshowDesktopNetwork();
+
+    private static HttpRequestDef<ShowDesktopNetworkRequest, ShowDesktopNetworkResponse> genForshowDesktopNetwork() {
+        // basic
+        HttpRequestDef.Builder<ShowDesktopNetworkRequest, ShowDesktopNetworkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDesktopNetworkRequest.class, ShowDesktopNetworkResponse.class)
+                .withName("ShowDesktopNetwork")
+                .withUri("/v2/{project_id}/desktops/{desktop_id}/networks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDesktopNetworkRequest::getDesktopId, (req, v) -> {
                 req.setDesktopId(v);
             }));
 
@@ -955,6 +1142,168 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(ListUsedDesktopInfoReq.class),
             f -> f.withMarshaller(ListUsedDesktopInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchChangeTagsRequest, BatchChangeTagsResponse> batchChangeTags =
+        genForbatchChangeTags();
+
+    private static HttpRequestDef<BatchChangeTagsRequest, BatchChangeTagsResponse> genForbatchChangeTags() {
+        // basic
+        HttpRequestDef.Builder<BatchChangeTagsRequest, BatchChangeTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchChangeTagsRequest.class, BatchChangeTagsResponse.class)
+                .withName("BatchChangeTags")
+                .withUri("/v2/{project_id}/desktops/{desktop_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchChangeTagsRequest::getDesktopId, (req, v) -> {
+                req.setDesktopId(v);
+            }));
+        builder.<TagsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagsReq.class),
+            f -> f.withMarshaller(BatchChangeTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForcreateTag();
+
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForcreateTag() {
+        // basic
+        HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
+                .withName("CreateTag")
+                .withUri("/v2/{project_id}/desktops/{desktop_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagRequest::getDesktopId, (req, v) -> {
+                req.setDesktopId(v);
+            }));
+        builder.<CreateTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTagReq.class),
+            f -> f.withMarshaller(CreateTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genFordeleteTag();
+
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genFordeleteTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
+                .withName("DeleteTag")
+                .withUri("/v2/{project_id}/desktops/{desktop_id}/tags/{key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagRequest::getDesktopId, (req, v) -> {
+                req.setDesktopId(v);
+            }));
+        builder.<String>withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDesktopByTagsRequest, ListDesktopByTagsResponse> listDesktopByTags =
+        genForlistDesktopByTags();
+
+    private static HttpRequestDef<ListDesktopByTagsRequest, ListDesktopByTagsResponse> genForlistDesktopByTags() {
+        // basic
+        HttpRequestDef.Builder<ListDesktopByTagsRequest, ListDesktopByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListDesktopByTagsRequest.class, ListDesktopByTagsResponse.class)
+                .withName("ListDesktopByTags")
+                .withUri("/v2/{project_id}/desktops/resource_instances/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<QueryDesktopByTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryDesktopByTagReq.class),
+            f -> f.withMarshaller(ListDesktopByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
+        genForlistProjectTags();
+
+    private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
+        // basic
+        HttpRequestDef.Builder<ListProjectTagsRequest, ListProjectTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectTagsRequest.class, ListProjectTagsResponse.class)
+                .withName("ListProjectTags")
+                .withUri("/v2/{project_id}/desktops/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTagByDesktopIdRequest, ShowTagByDesktopIdResponse> showTagByDesktopId =
+        genForshowTagByDesktopId();
+
+    private static HttpRequestDef<ShowTagByDesktopIdRequest, ShowTagByDesktopIdResponse> genForshowTagByDesktopId() {
+        // basic
+        HttpRequestDef.Builder<ShowTagByDesktopIdRequest, ShowTagByDesktopIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTagByDesktopIdRequest.class, ShowTagByDesktopIdResponse.class)
+                .withName("ShowTagByDesktopId")
+                .withUri("/v2/{project_id}/desktops/{desktop_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("desktop_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTagByDesktopIdRequest::getDesktopId, (req, v) -> {
+                req.setDesktopId(v);
             }));
 
         // response
@@ -1101,6 +1450,20 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUsersOfGroupRequest::getUserName, (req, v) -> {
                 req.setUserName(v);
+            }));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersOfGroupRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<ListUsersOfGroupRequest.ActiveTypeEnum>withRequestField("active_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListUsersOfGroupRequest.ActiveTypeEnum.class),
+            f -> f.withMarshaller(ListUsersOfGroupRequest::getActiveType, (req, v) -> {
+                req.setActiveType(v);
             }));
         builder.<String>withRequestField("limit",
             LocationType.Query,
@@ -1285,6 +1648,13 @@ public class WorkspaceMeta {
             f -> f.withMarshaller(ListItaSubJobsRequest::getJobType, (req, v) -> {
                 req.setJobType(v);
             }));
+        builder.<String>withRequestField("desktop_pool_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListItaSubJobsRequest::getDesktopPoolId, (req, v) -> {
+                req.setDesktopPoolId(v);
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1395,6 +1765,13 @@ public class WorkspaceMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsEipsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<String>withRequestField("desktop_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1962,6 +2339,13 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUsersRequest::getActiveType, (req, v) -> {
                 req.setActiveType(v);
+            }));
+        builder.<String>withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersRequest::getGroupName, (req, v) -> {
+                req.setGroupName(v);
             }));
 
         // response

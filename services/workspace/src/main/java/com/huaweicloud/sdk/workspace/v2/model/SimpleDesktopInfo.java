@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SimpleDesktopInfo
@@ -36,6 +39,11 @@ public class SimpleDesktopInfo {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attach_user_infos")
+
+    private List<AttachInstancesUserInfo> attachUserInfos = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_group")
 
     private String userGroup;
@@ -49,6 +57,16 @@ public class SimpleDesktopInfo {
     @JsonProperty(value = "ou_name")
 
     private String ouName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "in_maintenance_mode")
+
+    private Boolean inMaintenanceMode;
 
     public SimpleDesktopInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
@@ -135,6 +153,39 @@ public class SimpleDesktopInfo {
         this.userName = userName;
     }
 
+    public SimpleDesktopInfo withAttachUserInfos(List<AttachInstancesUserInfo> attachUserInfos) {
+        this.attachUserInfos = attachUserInfos;
+        return this;
+    }
+
+    public SimpleDesktopInfo addAttachUserInfosItem(AttachInstancesUserInfo attachUserInfosItem) {
+        if (this.attachUserInfos == null) {
+            this.attachUserInfos = new ArrayList<>();
+        }
+        this.attachUserInfos.add(attachUserInfosItem);
+        return this;
+    }
+
+    public SimpleDesktopInfo withAttachUserInfos(Consumer<List<AttachInstancesUserInfo>> attachUserInfosSetter) {
+        if (this.attachUserInfos == null) {
+            this.attachUserInfos = new ArrayList<>();
+        }
+        attachUserInfosSetter.accept(this.attachUserInfos);
+        return this;
+    }
+
+    /**
+     * 桌面已分配的用户信息列表。
+     * @return attachUserInfos
+     */
+    public List<AttachInstancesUserInfo> getAttachUserInfos() {
+        return attachUserInfos;
+    }
+
+    public void setAttachUserInfos(List<AttachInstancesUserInfo> attachUserInfos) {
+        this.attachUserInfos = attachUserInfos;
+    }
+
     public SimpleDesktopInfo withUserGroup(String userGroup) {
         this.userGroup = userGroup;
         return this;
@@ -186,6 +237,40 @@ public class SimpleDesktopInfo {
         this.ouName = ouName;
     }
 
+    public SimpleDesktopInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public SimpleDesktopInfo withInMaintenanceMode(Boolean inMaintenanceMode) {
+        this.inMaintenanceMode = inMaintenanceMode;
+        return this;
+    }
+
+    /**
+     * 是否处于管理员维护模式
+     * @return inMaintenanceMode
+     */
+    public Boolean getInMaintenanceMode() {
+        return inMaintenanceMode;
+    }
+
+    public void setInMaintenanceMode(Boolean inMaintenanceMode) {
+        this.inMaintenanceMode = inMaintenanceMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -197,13 +282,27 @@ public class SimpleDesktopInfo {
         SimpleDesktopInfo that = (SimpleDesktopInfo) obj;
         return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.created, that.created) && Objects.equals(this.ipAddress, that.ipAddress)
-            && Objects.equals(this.userName, that.userName) && Objects.equals(this.userGroup, that.userGroup)
-            && Objects.equals(this.sid, that.sid) && Objects.equals(this.ouName, that.ouName);
+            && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.attachUserInfos, that.attachUserInfos)
+            && Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.sid, that.sid)
+            && Objects.equals(this.ouName, that.ouName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopId, computerName, created, ipAddress, userName, userGroup, sid, ouName);
+        return Objects.hash(desktopId,
+            computerName,
+            created,
+            ipAddress,
+            userName,
+            attachUserInfos,
+            userGroup,
+            sid,
+            ouName,
+            enterpriseProjectId,
+            inMaintenanceMode);
     }
 
     @Override
@@ -215,9 +314,12 @@ public class SimpleDesktopInfo {
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    attachUserInfos: ").append(toIndentedString(attachUserInfos)).append("\n");
         sb.append("    userGroup: ").append(toIndentedString(userGroup)).append("\n");
         sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }
