@@ -19,6 +19,10 @@ import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagDelActionRequest;
@@ -129,6 +133,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
@@ -137,11 +143,7 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationRequest;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsRequest;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreResponse;
@@ -169,6 +171,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoHistoryRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoHistoryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlListHistoryTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlListHistoryTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsRequest;
@@ -478,6 +482,68 @@ public class RdsAsyncClient {
         BatchDeleteManualBackupRequest request) {
         return new AsyncInvoker<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse>(request,
             RdsMeta.batchDeleteManualBackup, hcClient);
+    }
+
+    /**
+     * 库级时间点恢复
+     *
+     * 库级时间点恢复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRestoreDatabaseRequest 请求对象
+     * @return CompletableFuture<BatchRestoreDatabaseResponse>
+     */
+    public CompletableFuture<BatchRestoreDatabaseResponse> batchRestoreDatabaseAsync(
+        BatchRestoreDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.batchRestoreDatabase);
+    }
+
+    /**
+     * 库级时间点恢复
+     *
+     * 库级时间点恢复
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRestoreDatabaseRequest 请求对象
+     * @return AsyncInvoker<BatchRestoreDatabaseRequest, BatchRestoreDatabaseResponse>
+     */
+    public AsyncInvoker<BatchRestoreDatabaseRequest, BatchRestoreDatabaseResponse> batchRestoreDatabaseAsyncInvoker(
+        BatchRestoreDatabaseRequest request) {
+        return new AsyncInvoker<BatchRestoreDatabaseRequest, BatchRestoreDatabaseResponse>(request,
+            RdsMeta.batchRestoreDatabase, hcClient);
+    }
+
+    /**
+     * 表级时间点恢复（PostgreSQL）
+     *
+     * 表级时间点恢复（PostgreSQL）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRestorePostgreSqlTablesRequest 请求对象
+     * @return CompletableFuture<BatchRestorePostgreSqlTablesResponse>
+     */
+    public CompletableFuture<BatchRestorePostgreSqlTablesResponse> batchRestorePostgreSqlTablesAsync(
+        BatchRestorePostgreSqlTablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.batchRestorePostgreSqlTables);
+    }
+
+    /**
+     * 表级时间点恢复（PostgreSQL）
+     *
+     * 表级时间点恢复（PostgreSQL）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRestorePostgreSqlTablesRequest 请求对象
+     * @return AsyncInvoker<BatchRestorePostgreSqlTablesRequest, BatchRestorePostgreSqlTablesResponse>
+     */
+    public AsyncInvoker<BatchRestorePostgreSqlTablesRequest, BatchRestorePostgreSqlTablesResponse> batchRestorePostgreSqlTablesAsyncInvoker(
+        BatchRestorePostgreSqlTablesRequest request) {
+        return new AsyncInvoker<BatchRestorePostgreSqlTablesRequest, BatchRestorePostgreSqlTablesResponse>(request,
+            RdsMeta.batchRestorePostgreSqlTables, hcClient);
     }
 
     /**
@@ -1374,6 +1440,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询指定时间点可恢复的库
+     *
+     * 查询指定时间点可恢复的库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListHistoryDatabaseRequest 请求对象
+     * @return CompletableFuture<ListHistoryDatabaseResponse>
+     */
+    public CompletableFuture<ListHistoryDatabaseResponse> listHistoryDatabaseAsync(ListHistoryDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listHistoryDatabase);
+    }
+
+    /**
+     * 查询指定时间点可恢复的库
+     *
+     * 查询指定时间点可恢复的库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListHistoryDatabaseRequest 请求对象
+     * @return AsyncInvoker<ListHistoryDatabaseRequest, ListHistoryDatabaseResponse>
+     */
+    public AsyncInvoker<ListHistoryDatabaseRequest, ListHistoryDatabaseResponse> listHistoryDatabaseAsyncInvoker(
+        ListHistoryDatabaseRequest request) {
+        return new AsyncInvoker<ListHistoryDatabaseRequest, ListHistoryDatabaseResponse>(request,
+            RdsMeta.listHistoryDatabase, hcClient);
+    }
+
+    /**
      * 获取诊断后的实例数量
      *
      * 获取诊断后的实例数量
@@ -1523,68 +1619,6 @@ public class RdsAsyncClient {
         ListInstancesInfoDiagnosisRequest request) {
         return new AsyncInvoker<ListInstancesInfoDiagnosisRequest, ListInstancesInfoDiagnosisResponse>(request,
             RdsMeta.listInstancesInfoDiagnosis, hcClient);
-    }
-
-    /**
-     * 查询购买推荐
-     *
-     * 查询购买推荐
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListInstancesRecommendationRequest 请求对象
-     * @return CompletableFuture<ListInstancesRecommendationResponse>
-     */
-    public CompletableFuture<ListInstancesRecommendationResponse> listInstancesRecommendationAsync(
-        ListInstancesRecommendationRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstancesRecommendation);
-    }
-
-    /**
-     * 查询购买推荐
-     *
-     * 查询购买推荐
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListInstancesRecommendationRequest 请求对象
-     * @return AsyncInvoker<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse>
-     */
-    public AsyncInvoker<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse> listInstancesRecommendationAsyncInvoker(
-        ListInstancesRecommendationRequest request) {
-        return new AsyncInvoker<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse>(request,
-            RdsMeta.listInstancesRecommendation, hcClient);
-    }
-
-    /**
-     * 查询监控大盘列表
-     *
-     * 查询监控大盘列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListInstancesResourceMetricsRequest 请求对象
-     * @return CompletableFuture<ListInstancesResourceMetricsResponse>
-     */
-    public CompletableFuture<ListInstancesResourceMetricsResponse> listInstancesResourceMetricsAsync(
-        ListInstancesResourceMetricsRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstancesResourceMetrics);
-    }
-
-    /**
-     * 查询监控大盘列表
-     *
-     * 查询监控大盘列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListInstancesResourceMetricsRequest 请求对象
-     * @return AsyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse>
-     */
-    public AsyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> listInstancesResourceMetricsAsyncInvoker(
-        ListInstancesResourceMetricsRequest request) {
-        return new AsyncInvoker<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse>(request,
-            RdsMeta.listInstancesResourceMetrics, hcClient);
     }
 
     /**
@@ -1834,6 +1868,37 @@ public class RdsAsyncClient {
         ListPostgresqlHbaInfoHistoryRequest request) {
         return new AsyncInvoker<ListPostgresqlHbaInfoHistoryRequest, ListPostgresqlHbaInfoHistoryResponse>(request,
             RdsMeta.listPostgresqlHbaInfoHistory, hcClient);
+    }
+
+    /**
+     * 查询指定时间点可恢复的表(PostgreSQL)
+     *
+     * 查询指定时间点可恢复的表(PostgreSQL)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPostgresqlListHistoryTablesRequest 请求对象
+     * @return CompletableFuture<ListPostgresqlListHistoryTablesResponse>
+     */
+    public CompletableFuture<ListPostgresqlListHistoryTablesResponse> listPostgresqlListHistoryTablesAsync(
+        ListPostgresqlListHistoryTablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listPostgresqlListHistoryTables);
+    }
+
+    /**
+     * 查询指定时间点可恢复的表(PostgreSQL)
+     *
+     * 查询指定时间点可恢复的表(PostgreSQL)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPostgresqlListHistoryTablesRequest 请求对象
+     * @return AsyncInvoker<ListPostgresqlListHistoryTablesRequest, ListPostgresqlListHistoryTablesResponse>
+     */
+    public AsyncInvoker<ListPostgresqlListHistoryTablesRequest, ListPostgresqlListHistoryTablesResponse> listPostgresqlListHistoryTablesAsyncInvoker(
+        ListPostgresqlListHistoryTablesRequest request) {
+        return new AsyncInvoker<ListPostgresqlListHistoryTablesRequest, ListPostgresqlListHistoryTablesResponse>(
+            request, RdsMeta.listPostgresqlListHistoryTables, hcClient);
     }
 
     /**

@@ -47,8 +47,12 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteBackupFileRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackupFileResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBigkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBigkeyScanTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteCenterTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteCenterTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteConfigTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteConfigTemplateResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteDiagnosisTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteDiagnosisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameRequest;
@@ -167,6 +171,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesRequest;
@@ -917,6 +923,36 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 删除任务中心任务
+     *
+     * 删除任务中心任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCenterTaskRequest 请求对象
+     * @return CompletableFuture<DeleteCenterTaskResponse>
+     */
+    public CompletableFuture<DeleteCenterTaskResponse> deleteCenterTaskAsync(DeleteCenterTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.deleteCenterTask);
+    }
+
+    /**
+     * 删除任务中心任务
+     *
+     * 删除任务中心任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCenterTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteCenterTaskRequest, DeleteCenterTaskResponse>
+     */
+    public AsyncInvoker<DeleteCenterTaskRequest, DeleteCenterTaskResponse> deleteCenterTaskAsyncInvoker(
+        DeleteCenterTaskRequest request) {
+        return new AsyncInvoker<DeleteCenterTaskRequest, DeleteCenterTaskResponse>(request, DcsMeta.deleteCenterTask,
+            hcClient);
+    }
+
+    /**
      * 删除自定义模板
      *
      * 删除自定义模板
@@ -945,6 +981,36 @@ public class DcsAsyncClient {
         DeleteConfigTemplateRequest request) {
         return new AsyncInvoker<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse>(request,
             DcsMeta.deleteConfigTemplate, hcClient);
+    }
+
+    /**
+     * 删除诊断记录
+     *
+     * 删除诊断记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDiagnosisTaskRequest 请求对象
+     * @return CompletableFuture<DeleteDiagnosisTaskResponse>
+     */
+    public CompletableFuture<DeleteDiagnosisTaskResponse> deleteDiagnosisTaskAsync(DeleteDiagnosisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.deleteDiagnosisTask);
+    }
+
+    /**
+     * 删除诊断记录
+     *
+     * 删除诊断记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDiagnosisTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse>
+     */
+    public AsyncInvoker<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse> deleteDiagnosisTaskAsyncInvoker(
+        DeleteDiagnosisTaskRequest request) {
+        return new AsyncInvoker<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse>(request,
+            DcsMeta.deleteDiagnosisTask, hcClient);
     }
 
     /**
@@ -2712,6 +2778,41 @@ public class DcsAsyncClient {
         ShowMigrationTaskStatsRequest request) {
         return new AsyncInvoker<ShowMigrationTaskStatsRequest, ShowMigrationTaskStatsResponse>(request,
             DcsMeta.showMigrationTaskStats, hcClient);
+    }
+
+    /**
+     * 查询实例节点信息
+     *
+     * 查询指定实例的节点信息。
+     * 仅支持Redis4.0和Redis5.0实例查询。
+     * 创建中实例不返回节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNodesInformationRequest 请求对象
+     * @return CompletableFuture<ShowNodesInformationResponse>
+     */
+    public CompletableFuture<ShowNodesInformationResponse> showNodesInformationAsync(
+        ShowNodesInformationRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showNodesInformation);
+    }
+
+    /**
+     * 查询实例节点信息
+     *
+     * 查询指定实例的节点信息。
+     * 仅支持Redis4.0和Redis5.0实例查询。
+     * 创建中实例不返回节点信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNodesInformationRequest 请求对象
+     * @return AsyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse>
+     */
+    public AsyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse> showNodesInformationAsyncInvoker(
+        ShowNodesInformationRequest request) {
+        return new AsyncInvoker<ShowNodesInformationRequest, ShowNodesInformationResponse>(request,
+            DcsMeta.showNodesInformation, hcClient);
     }
 
     /**

@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceExtendProductInfoRequest;
@@ -43,6 +45,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
@@ -560,6 +564,36 @@ public class RabbitMQClient {
     }
 
     /**
+     * 查询实例在CES的监控层级关系
+     *
+     * 查询实例在CES的监控层级关系。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCesHierarchyRequest 请求对象
+     * @return ShowCesHierarchyResponse
+     */
+    public ShowCesHierarchyResponse showCesHierarchy(ShowCesHierarchyRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showCesHierarchy);
+    }
+
+    /**
+     * 查询实例在CES的监控层级关系
+     *
+     * 查询实例在CES的监控层级关系。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCesHierarchyRequest 请求对象
+     * @return SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>
+     */
+    public SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchyInvoker(
+        ShowCesHierarchyRequest request) {
+        return new SyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>(request,
+            RabbitMQMeta.showCesHierarchy, hcClient);
+    }
+
+    /**
      * 查询新规格可扩容规格列表
      *
      * 查询新规格实例可扩容列表
@@ -681,6 +715,36 @@ public class RabbitMQClient {
         ShowMaintainWindowsRequest request) {
         return new SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>(request,
             RabbitMQMeta.showMaintainWindows, hcClient);
+    }
+
+    /**
+     * 查询RabbitMQ产品规格核数
+     *
+     * 查询RabbitMQ产品规格核数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRabbitMqProductCoresRequest 请求对象
+     * @return ShowRabbitMqProductCoresResponse
+     */
+    public ShowRabbitMqProductCoresResponse showRabbitMqProductCores(ShowRabbitMqProductCoresRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showRabbitMqProductCores);
+    }
+
+    /**
+     * 查询RabbitMQ产品规格核数
+     *
+     * 查询RabbitMQ产品规格核数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRabbitMqProductCoresRequest 请求对象
+     * @return SyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse>
+     */
+    public SyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> showRabbitMqProductCoresInvoker(
+        ShowRabbitMqProductCoresRequest request) {
+        return new SyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse>(request,
+            RabbitMQMeta.showRabbitMqProductCores, hcClient);
     }
 
     /**

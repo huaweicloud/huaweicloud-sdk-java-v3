@@ -24,6 +24,10 @@ import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteBackupRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagActionAddRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagActionDelRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionRequest;
@@ -165,6 +169,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListErrorlogForLtsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
@@ -173,11 +179,7 @@ import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesInfoDiagnosisResponse;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationRequest;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesRecommendationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesRequest;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsRequest;
-import com.huaweicloud.sdk.rds.v3.model.ListInstancesResourceMetricsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstancesSupportFastRestoreRequestBody;
@@ -206,6 +208,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoHistoryRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoHistoryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlHbaInfoResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlListHistoryTablesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlListHistoryTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPredefinedTagResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListProjectTagsRequest;
@@ -252,6 +256,10 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyProxyWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.MysqlReadOnlySwitch;
 import com.huaweicloud.sdk.rds.v3.model.OpenProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.OpsWindowRequest;
+import com.huaweicloud.sdk.rds.v3.model.PostgreSQLHistoryDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.PostgreSQLHistoryTableRequest;
+import com.huaweicloud.sdk.rds.v3.model.PostgreSQLRestoreDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.PostgreSQLRestoreTableRequest;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlDatabaseForCreation;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlDatabaseSchemaReq;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlGrantRequest;
@@ -565,6 +573,59 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteBackupRequestBody.class),
             f -> f.withMarshaller(BatchDeleteManualBackupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRestoreDatabaseRequest, BatchRestoreDatabaseResponse> batchRestoreDatabase =
+        genForbatchRestoreDatabase();
+
+    private static HttpRequestDef<BatchRestoreDatabaseRequest, BatchRestoreDatabaseResponse> genForbatchRestoreDatabase() {
+        // basic
+        HttpRequestDef.Builder<BatchRestoreDatabaseRequest, BatchRestoreDatabaseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchRestoreDatabaseRequest.class, BatchRestoreDatabaseResponse.class)
+            .withName("BatchRestoreDatabase")
+            .withUri("/v3/{project_id}/instances/batch/restore/databases")
+            .withContentType("application/json");
+
+        // requests
+        builder.<PostgreSQLRestoreDatabaseRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PostgreSQLRestoreDatabaseRequest.class),
+            f -> f.withMarshaller(BatchRestoreDatabaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRestorePostgreSqlTablesRequest, BatchRestorePostgreSqlTablesResponse> batchRestorePostgreSqlTables =
+        genForbatchRestorePostgreSqlTables();
+
+    private static HttpRequestDef<BatchRestorePostgreSqlTablesRequest, BatchRestorePostgreSqlTablesResponse> genForbatchRestorePostgreSqlTables() {
+        // basic
+        HttpRequestDef.Builder<BatchRestorePostgreSqlTablesRequest, BatchRestorePostgreSqlTablesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchRestorePostgreSqlTablesRequest.class,
+                    BatchRestorePostgreSqlTablesResponse.class)
+                .withName("BatchRestorePostgreSqlTables")
+                .withUri("/v3/{project_id}/instances/batch/restore/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<PostgreSQLRestoreTableRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PostgreSQLRestoreTableRequest.class),
+            f -> f.withMarshaller(BatchRestorePostgreSqlTablesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1782,6 +1843,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListHistoryDatabaseRequest, ListHistoryDatabaseResponse> listHistoryDatabase =
+        genForlistHistoryDatabase();
+
+    private static HttpRequestDef<ListHistoryDatabaseRequest, ListHistoryDatabaseResponse> genForlistHistoryDatabase() {
+        // basic
+        HttpRequestDef.Builder<ListHistoryDatabaseRequest, ListHistoryDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListHistoryDatabaseRequest.class, ListHistoryDatabaseResponse.class)
+                .withName("ListHistoryDatabase")
+                .withUri("/v3/{project_id}/{database_name}/instances/history/databases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryDatabaseRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryDatabaseRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<PostgreSQLHistoryDatabaseRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PostgreSQLHistoryDatabaseRequest.class),
+            f -> f.withMarshaller(ListHistoryDatabaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceDiagnosisRequest, ListInstanceDiagnosisResponse> listInstanceDiagnosis =
         genForlistInstanceDiagnosis();
 
@@ -2032,97 +2132,6 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstancesInfoDiagnosisRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse> listInstancesRecommendation =
-        genForlistInstancesRecommendation();
-
-    private static HttpRequestDef<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse> genForlistInstancesRecommendation() {
-        // basic
-        HttpRequestDef.Builder<ListInstancesRecommendationRequest, ListInstancesRecommendationResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListInstancesRecommendationRequest.class,
-                    ListInstancesRecommendationResponse.class)
-                .withName("ListInstancesRecommendation")
-                .withUri("/v3/{project_id}/instances/product-recommendation")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ListInstancesRecommendationRequest.EngineEnum>withRequestField("engine",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListInstancesRecommendationRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListInstancesRecommendationRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> listInstancesResourceMetrics =
-        genForlistInstancesResourceMetrics();
-
-    private static HttpRequestDef<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> genForlistInstancesResourceMetrics() {
-        // basic
-        HttpRequestDef.Builder<ListInstancesResourceMetricsRequest, ListInstancesResourceMetricsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListInstancesResourceMetricsRequest.class,
-                    ListInstancesResourceMetricsResponse.class)
-                .withName("ListInstancesResourceMetrics")
-                .withUri("/v3/{project_id}/instances/resource-monitoring")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ListInstancesResourceMetricsRequest.EngineEnum>withRequestField("engine",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListInstancesResourceMetricsRequest.EngineEnum.class),
-            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getEngine, (req, v) -> {
-                req.setEngine(v);
-            }));
-        builder.<String>withRequestField("search_field",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getSearchField, (req, v) -> {
-                req.setSearchField(v);
-            }));
-        builder.<String>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<ListInstancesResourceMetricsRequest.OrderEnum>withRequestField("order",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListInstancesResourceMetricsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            }));
-        builder.<ListInstancesResourceMetricsRequest.SortFieldEnum>withRequestField("sort_field",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListInstancesResourceMetricsRequest.SortFieldEnum.class),
-            f -> f.withMarshaller(ListInstancesResourceMetricsRequest::getSortField, (req, v) -> {
-                req.setSortField(v);
             }));
 
         // response
@@ -2471,6 +2480,48 @@ public class RdsMeta {
             f -> f.withMarshaller(ListPostgresqlHbaInfoHistoryResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }).withInnerContainerType(PostgresqlHbaHistory.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPostgresqlListHistoryTablesRequest, ListPostgresqlListHistoryTablesResponse> listPostgresqlListHistoryTables =
+        genForlistPostgresqlListHistoryTables();
+
+    private static HttpRequestDef<ListPostgresqlListHistoryTablesRequest, ListPostgresqlListHistoryTablesResponse> genForlistPostgresqlListHistoryTables() {
+        // basic
+        HttpRequestDef.Builder<ListPostgresqlListHistoryTablesRequest, ListPostgresqlListHistoryTablesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListPostgresqlListHistoryTablesRequest.class,
+                    ListPostgresqlListHistoryTablesResponse.class)
+                .withName("ListPostgresqlListHistoryTables")
+                .withUri("/v3/{project_id}/{database_name}/instances/history/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPostgresqlListHistoryTablesRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPostgresqlListHistoryTablesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<PostgreSQLHistoryTableRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PostgreSQLHistoryTableRequest.class),
+            f -> f.withMarshaller(ListPostgresqlListHistoryTablesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }

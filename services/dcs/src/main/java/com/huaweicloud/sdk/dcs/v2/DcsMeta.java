@@ -65,8 +65,14 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteBackupFileRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBackupFileResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBigkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteBigkeyScanTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteCenterTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteCenterTaskRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteCenterTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteConfigTemplateRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteConfigTemplateResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteDiagnosisReportRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteDiagnosisTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteDiagnosisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameRequest;
@@ -202,6 +208,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesRequest;
@@ -921,6 +929,38 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteCenterTaskRequest, DeleteCenterTaskResponse> deleteCenterTask =
+        genFordeleteCenterTask();
+
+    private static HttpRequestDef<DeleteCenterTaskRequest, DeleteCenterTaskResponse> genFordeleteCenterTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteCenterTaskRequest, DeleteCenterTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCenterTaskRequest.class, DeleteCenterTaskResponse.class)
+                .withName("DeleteCenterTask")
+                .withUri("/v2/{project_id}/tasks/{task_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCenterTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<DeleteCenterTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteCenterTaskRequestBody.class),
+            f -> f.withMarshaller(DeleteCenterTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteConfigTemplateRequest, DeleteConfigTemplateResponse> deleteConfigTemplate =
         genFordeleteConfigTemplate();
 
@@ -939,6 +979,38 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteConfigTemplateRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse> deleteDiagnosisTask =
+        genFordeleteDiagnosisTask();
+
+    private static HttpRequestDef<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse> genFordeleteDiagnosisTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteDiagnosisTaskRequest, DeleteDiagnosisTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDiagnosisTaskRequest.class, DeleteDiagnosisTaskResponse.class)
+            .withName("DeleteDiagnosisTask")
+            .withUri("/v2/{project_id}/instances/{instance_id}/diagnosis")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDiagnosisTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DeleteDiagnosisReportRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteDiagnosisReportRequest.class),
+            f -> f.withMarshaller(DeleteDiagnosisTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -2996,6 +3068,31 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMigrationTaskStatsRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNodesInformationRequest, ShowNodesInformationResponse> showNodesInformation =
+        genForshowNodesInformation();
+
+    private static HttpRequestDef<ShowNodesInformationRequest, ShowNodesInformationResponse> genForshowNodesInformation() {
+        // basic
+        HttpRequestDef.Builder<ShowNodesInformationRequest, ShowNodesInformationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowNodesInformationRequest.class, ShowNodesInformationResponse.class)
+            .withName("ShowNodesInformation")
+            .withUri("/v2/{project_id}/instances/{instance_id}/logical-nodes")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNodesInformationRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response

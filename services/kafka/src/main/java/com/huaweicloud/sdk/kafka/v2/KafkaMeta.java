@@ -979,6 +979,20 @@ public class KafkaMeta {
             f -> f.withMarshaller(ListInstanceTopicsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTopicsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTopicsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 

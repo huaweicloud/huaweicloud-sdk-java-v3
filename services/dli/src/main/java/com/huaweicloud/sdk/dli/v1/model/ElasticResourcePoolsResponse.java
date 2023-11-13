@@ -16,6 +16,16 @@ import java.util.function.Consumer;
 public class ElasticResourcePoolsResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_resource_pool_name")
+
+    private String elasticResourcePoolName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private Integer id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private Long updateTime;
@@ -29,11 +39,6 @@ public class ElasticResourcePoolsResponse {
     @JsonProperty(value = "owner")
 
     private String owner;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "elastic_resource_pool_name")
-
-    private String elasticResourcePoolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -110,6 +115,40 @@ public class ElasticResourcePoolsResponse {
 
     private Map<String, String> label = null;
 
+    public ElasticResourcePoolsResponse withElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+        return this;
+    }
+
+    /**
+     * 资源池名称
+     * @return elasticResourcePoolName
+     */
+    public String getElasticResourcePoolName() {
+        return elasticResourcePoolName;
+    }
+
+    public void setElasticResourcePoolName(String elasticResourcePoolName) {
+        this.elasticResourcePoolName = elasticResourcePoolName;
+    }
+
+    public ElasticResourcePoolsResponse withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 资源池id
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public ElasticResourcePoolsResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -175,23 +214,6 @@ public class ElasticResourcePoolsResponse {
 
     public void setOwner(String owner) {
         this.owner = owner;
-    }
-
-    public ElasticResourcePoolsResponse withElasticResourcePoolName(String elasticResourcePoolName) {
-        this.elasticResourcePoolName = elasticResourcePoolName;
-        return this;
-    }
-
-    /**
-     * 资源池名称
-     * @return elasticResourcePoolName
-     */
-    public String getElasticResourcePoolName() {
-        return elasticResourcePoolName;
-    }
-
-    public void setElasticResourcePoolName(String elasticResourcePoolName) {
-        this.elasticResourcePoolName = elasticResourcePoolName;
     }
 
     public ElasticResourcePoolsResponse withDescription(String description) {
@@ -474,9 +496,9 @@ public class ElasticResourcePoolsResponse {
             return false;
         }
         ElasticResourcePoolsResponse that = (ElasticResourcePoolsResponse) obj;
-        return Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.queues, that.queues)
-            && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
+        return Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.queues, that.queues) && Objects.equals(this.owner, that.owner)
             && Objects.equals(this.description, that.description) && Objects.equals(this.maxCu, that.maxCu)
             && Objects.equals(this.minCu, that.minCu) && Objects.equals(this.actualCu, that.actualCu)
             && Objects.equals(this.cidrInVpc, that.cidrInVpc) && Objects.equals(this.createTime, that.createTime)
@@ -489,10 +511,11 @@ public class ElasticResourcePoolsResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(updateTime,
+        return Objects.hash(elasticResourcePoolName,
+            id,
+            updateTime,
             queues,
             owner,
-            elasticResourcePoolName,
             description,
             maxCu,
             minCu,
@@ -514,10 +537,11 @@ public class ElasticResourcePoolsResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ElasticResourcePoolsResponse {\n");
+        sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
-        sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    maxCu: ").append(toIndentedString(maxCu)).append("\n");
         sb.append("    minCu: ").append(toIndentedString(minCu)).append("\n");

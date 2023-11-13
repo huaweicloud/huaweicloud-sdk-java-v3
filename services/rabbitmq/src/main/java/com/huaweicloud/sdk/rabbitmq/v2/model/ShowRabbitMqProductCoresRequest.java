@@ -1,51 +1,35 @@
-package com.huaweicloud.sdk.rds.v3.model;
+package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
- * Response Object
+ * Request Object
  */
-public class ListInstancesRecommendationResponse extends SdkResponse {
+public class ShowRabbitMqProductCoresRequest {
 
     /**
-     * 引擎类型
+     * 消息引擎的类型。
      */
     public static final class EngineEnum {
 
         /**
-         * Enum MYSQL for value: "mysql"
+         * Enum RABBITMQ for value: "rabbitmq"
          */
-        public static final EngineEnum MYSQL = new EngineEnum("mysql");
-
-        /**
-         * Enum POSTGRESQL for value: "postgresql"
-         */
-        public static final EngineEnum POSTGRESQL = new EngineEnum("postgresql");
-
-        /**
-         * Enum SQLSERVER for value: "sqlserver"
-         */
-        public static final EngineEnum SQLSERVER = new EngineEnum("sqlserver");
+        public static final EngineEnum RABBITMQ = new EngineEnum("rabbitmq");
 
         private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineEnum> createStaticFields() {
             Map<String, EngineEnum> map = new HashMap<>();
-            map.put("mysql", MYSQL);
-            map.put("postgresql", POSTGRESQL);
-            map.put("sqlserver", SQLSERVER);
+            map.put("rabbitmq", RABBITMQ);
             return Collections.unmodifiableMap(map);
         }
 
@@ -101,17 +85,27 @@ public class ListInstancesRecommendationResponse extends SdkResponse {
     private EngineEnum engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "recommended_products")
+    @JsonProperty(value = "product_id")
 
-    private List<RecommendedProduct> recommendedProducts = null;
+    private String productId;
 
-    public ListInstancesRecommendationResponse withEngine(EngineEnum engine) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "broker_num")
+
+    private Integer brokerNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    public ShowRabbitMqProductCoresRequest withEngine(EngineEnum engine) {
         this.engine = engine;
         return this;
     }
 
     /**
-     * 引擎类型
+     * 消息引擎的类型。
      * @return engine
      */
     public EngineEnum getEngine() {
@@ -122,38 +116,55 @@ public class ListInstancesRecommendationResponse extends SdkResponse {
         this.engine = engine;
     }
 
-    public ListInstancesRecommendationResponse withRecommendedProducts(List<RecommendedProduct> recommendedProducts) {
-        this.recommendedProducts = recommendedProducts;
-        return this;
-    }
-
-    public ListInstancesRecommendationResponse addRecommendedProductsItem(RecommendedProduct recommendedProductsItem) {
-        if (this.recommendedProducts == null) {
-            this.recommendedProducts = new ArrayList<>();
-        }
-        this.recommendedProducts.add(recommendedProductsItem);
-        return this;
-    }
-
-    public ListInstancesRecommendationResponse withRecommendedProducts(
-        Consumer<List<RecommendedProduct>> recommendedProductsSetter) {
-        if (this.recommendedProducts == null) {
-            this.recommendedProducts = new ArrayList<>();
-        }
-        recommendedProductsSetter.accept(this.recommendedProducts);
+    public ShowRabbitMqProductCoresRequest withProductId(String productId) {
+        this.productId = productId;
         return this;
     }
 
     /**
-     * 推荐商品信息
-     * @return recommendedProducts
+     * 产品ID。
+     * @return productId
      */
-    public List<RecommendedProduct> getRecommendedProducts() {
-        return recommendedProducts;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setRecommendedProducts(List<RecommendedProduct> recommendedProducts) {
-        this.recommendedProducts = recommendedProducts;
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public ShowRabbitMqProductCoresRequest withBrokerNum(Integer brokerNum) {
+        this.brokerNum = brokerNum;
+        return this;
+    }
+
+    /**
+     * 代理个数。  当产品为单机类型，代理个数只能为1；当产品为集群类型，可选3、5、7个代理个数。  产品类型为single时:   - 1  产品类型为cluster时:   - 3   - 5   - 7
+     * @return brokerNum
+     */
+    public Integer getBrokerNum() {
+        return brokerNum;
+    }
+
+    public void setBrokerNum(Integer brokerNum) {
+        this.brokerNum = brokerNum;
+    }
+
+    public ShowRabbitMqProductCoresRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     @Override
@@ -164,22 +175,24 @@ public class ListInstancesRecommendationResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesRecommendationResponse that = (ListInstancesRecommendationResponse) obj;
-        return Objects.equals(this.engine, that.engine)
-            && Objects.equals(this.recommendedProducts, that.recommendedProducts);
+        ShowRabbitMqProductCoresRequest that = (ShowRabbitMqProductCoresRequest) obj;
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.brokerNum, that.brokerNum) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, recommendedProducts);
+        return Objects.hash(engine, productId, brokerNum, instanceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListInstancesRecommendationResponse {\n");
+        sb.append("class ShowRabbitMqProductCoresRequest {\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
-        sb.append("    recommendedProducts: ").append(toIndentedString(recommendedProducts)).append("\n");
+        sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

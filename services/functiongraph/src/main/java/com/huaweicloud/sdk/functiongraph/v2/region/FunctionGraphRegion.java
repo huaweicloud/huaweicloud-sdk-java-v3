@@ -55,6 +55,9 @@ public class FunctionGraphRegion {
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://functiongraph.ap-southeast-4.myhuaweicloud.com");
 
+    public static final Region EU_WEST_101 =
+        new Region("eu-west-101", "https://functiongraph.eu-west-101.myhuaweicloud.eu");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("FUNCTIONGRAPH");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -76,6 +79,7 @@ public class FunctionGraphRegion {
         map.put("na-mexico-1", NA_MEXICO_1);
         map.put("la-north-2", LA_NORTH_2);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

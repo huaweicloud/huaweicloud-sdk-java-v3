@@ -56,6 +56,11 @@ public class CreatefavoriteResponse extends SdkResponse {
 
     private String projectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_global")
+
+    private Boolean isGlobal;
+
     public CreatefavoriteResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
@@ -211,6 +216,23 @@ public class CreatefavoriteResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    public CreatefavoriteResponse withIsGlobal(Boolean isGlobal) {
+        this.isGlobal = isGlobal;
+        return this;
+    }
+
+    /**
+     * 是否开启日志收藏
+     * @return isGlobal
+     */
+    public Boolean getIsGlobal() {
+        return isGlobal;
+    }
+
+    public void setIsGlobal(Boolean isGlobal) {
+        this.isGlobal = isGlobal;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -225,7 +247,8 @@ public class CreatefavoriteResponse extends SdkResponse {
             && Objects.equals(this.favoriteResourceType, that.favoriteResourceType)
             && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
             && Objects.equals(this.logStreamId, that.logStreamId)
-            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.projectId, that.projectId);
+            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.isGlobal, that.isGlobal);
     }
 
     @Override
@@ -238,7 +261,8 @@ public class CreatefavoriteResponse extends SdkResponse {
             logGroupName,
             logStreamId,
             logStreamName,
-            projectId);
+            projectId,
+            isGlobal);
     }
 
     @Override
@@ -254,6 +278,7 @@ public class CreatefavoriteResponse extends SdkResponse {
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    isGlobal: ").append(toIndentedString(isGlobal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -43,6 +43,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceExtendProductInfoRequest;
@@ -51,6 +53,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
@@ -612,6 +616,31 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchy =
+        genForshowCesHierarchy();
+
+    private static HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> genForshowCesHierarchy() {
+        // basic
+        HttpRequestDef.Builder<ShowCesHierarchyRequest, ShowCesHierarchyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCesHierarchyRequest.class, ShowCesHierarchyResponse.class)
+                .withName("ShowCesHierarchy")
+                .withUri("/v2/{project_id}/instances/{instance_id}/ces-hierarchy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCesHierarchyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfo =
         genForshowEngineInstanceExtendProductInfo();
 
@@ -732,6 +761,53 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> showRabbitMqProductCores =
+        genForshowRabbitMqProductCores();
+
+    private static HttpRequestDef<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> genForshowRabbitMqProductCores() {
+        // basic
+        HttpRequestDef.Builder<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowRabbitMqProductCoresRequest.class, ShowRabbitMqProductCoresResponse.class)
+                .withName("ShowRabbitMqProductCores")
+                .withUri("/v2/{engine}/products/cores")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowRabbitMqProductCoresRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowRabbitMqProductCoresRequest.EngineEnum.class),
+            f -> f.withMarshaller(ShowRabbitMqProductCoresRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("product_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRabbitMqProductCoresRequest::getProductId, (req, v) -> {
+                req.setProductId(v);
+            }));
+        builder.<Integer>withRequestField("broker_num",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowRabbitMqProductCoresRequest::getBrokerNum, (req, v) -> {
+                req.setBrokerNum(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRabbitMqProductCoresRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
 
         // response
 

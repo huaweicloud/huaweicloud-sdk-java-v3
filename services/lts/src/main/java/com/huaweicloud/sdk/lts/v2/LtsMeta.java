@@ -2136,7 +2136,7 @@ public class LtsMeta {
         HttpRequestDef.Builder<UpdateLogStreamRequest, UpdateLogStreamResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateLogStreamRequest.class, UpdateLogStreamResponse.class)
                 .withName("UpdateLogStream")
-                .withUri("/v2/{project_id}/groups/{log_group_id}/streams_ttl/{log_stream_id}")
+                .withUri("/v2/{project_id}/groups/{log_group_id}/streams-ttl/{log_stream_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests

@@ -45,6 +45,11 @@ public class CreatefavoriteReqbody {
 
     private String logStreamName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_global")
+
+    private Boolean isGlobal;
+
     public CreatefavoriteReqbody withEpsId(String epsId) {
         this.epsId = epsId;
         return this;
@@ -164,6 +169,23 @@ public class CreatefavoriteReqbody {
         this.logStreamName = logStreamName;
     }
 
+    public CreatefavoriteReqbody withIsGlobal(Boolean isGlobal) {
+        this.isGlobal = isGlobal;
+        return this;
+    }
+
+    /**
+     * 是否支持全局化，必填true，否则创建不了收藏
+     * @return isGlobal
+     */
+    public Boolean getIsGlobal() {
+        return isGlobal;
+    }
+
+    public void setIsGlobal(Boolean isGlobal) {
+        this.isGlobal = isGlobal;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,7 +200,7 @@ public class CreatefavoriteReqbody {
             && Objects.equals(this.favoriteResourceType, that.favoriteResourceType)
             && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
             && Objects.equals(this.logStreamId, that.logStreamId)
-            && Objects.equals(this.logStreamName, that.logStreamName);
+            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.isGlobal, that.isGlobal);
     }
 
     @Override
@@ -189,7 +211,8 @@ public class CreatefavoriteReqbody {
             logGroupId,
             logGroupName,
             logStreamId,
-            logStreamName);
+            logStreamName,
+            isGlobal);
     }
 
     @Override
@@ -203,6 +226,7 @@ public class CreatefavoriteReqbody {
         sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
+        sb.append("    isGlobal: ").append(toIndentedString(isGlobal)).append("\n");
         sb.append("}");
         return sb.toString();
     }
