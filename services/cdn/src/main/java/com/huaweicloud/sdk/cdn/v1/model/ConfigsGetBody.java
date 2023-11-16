@@ -14,6 +14,21 @@ import java.util.function.Consumer;
 public class ConfigsGetBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "business_type")
+
+    private String businessType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_area")
+
+    private String serviceArea;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remark")
+
+    private String remark;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_request_header")
 
     private List<OriginRequestHeader> originRequestHeader = null;
@@ -39,6 +54,11 @@ public class ConfigsGetBody {
     private List<SourcesConfig> sources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_protocol")
+
+    private String originProtocol;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_follow302_status")
 
     private String originFollow302Status;
@@ -57,11 +77,6 @@ public class ConfigsGetBody {
     @JsonProperty(value = "referer")
 
     private RefererConfig referer;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "origin_protocol")
-
-    private String originProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_redirect")
@@ -104,9 +119,110 @@ public class ConfigsGetBody {
     private List<OriginRequestUrlRewrite> originRequestUrlRewrite = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flexible_origin")
+
+    private List<FlexibleOrigins> flexibleOrigin = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slice_etag_status")
+
+    private String sliceEtagStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_receive_timeout")
+
+    private Integer originReceiveTimeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_auth")
+
+    private CommonRemoteAuth remoteAuth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "websocket")
+
+    private WebSocketSeek websocket;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "video_seek")
+
+    private VideoSeek videoSeek;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_limit_rules")
+
+    private List<RequestLimitRules> requestLimitRules = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_frequency_limit")
+
+    private IpFrequencyLimitQuery ipFrequencyLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hsts")
+
+    private HstsQuery hsts;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quic")
+
+    private Quic quic;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code_redirect_rules")
 
     private List<ErrorCodeRedirectRules> errorCodeRedirectRules = null;
+
+    public ConfigsGetBody withBusinessType(String businessType) {
+        this.businessType = businessType;
+        return this;
+    }
+
+    /**
+     * 业务类型： - web：网站加速； - download：文件下载加速； - video：点播加速； - wholesite：全站加速。
+     * @return businessType
+     */
+    public String getBusinessType() {
+        return businessType;
+    }
+
+    public void setBusinessType(String businessType) {
+        this.businessType = businessType;
+    }
+
+    public ConfigsGetBody withServiceArea(String serviceArea) {
+        this.serviceArea = serviceArea;
+        return this;
+    }
+
+    /**
+     * 服务区域： - mainland_china：中国大陆； - global：全球； - outside_mainland_china：中国大陆境外。
+     * @return serviceArea
+     */
+    public String getServiceArea() {
+        return serviceArea;
+    }
+
+    public void setServiceArea(String serviceArea) {
+        this.serviceArea = serviceArea;
+    }
+
+    public ConfigsGetBody withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    /**
+     * 域名备注。
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
     public ConfigsGetBody withOriginRequestHeader(List<OriginRequestHeader> originRequestHeader) {
         this.originRequestHeader = originRequestHeader;
@@ -259,6 +375,23 @@ public class ConfigsGetBody {
         this.sources = sources;
     }
 
+    public ConfigsGetBody withOriginProtocol(String originProtocol) {
+        this.originProtocol = originProtocol;
+        return this;
+    }
+
+    /**
+     * 回源协议，follow：协议跟随回源，http：HTTP回源(默认)，https：https回源。
+     * @return originProtocol
+     */
+    public String getOriginProtocol() {
+        return originProtocol;
+    }
+
+    public void setOriginProtocol(String originProtocol) {
+        this.originProtocol = originProtocol;
+    }
+
     public ConfigsGetBody withOriginFollow302Status(String originFollow302Status) {
         this.originFollow302Status = originFollow302Status;
         return this;
@@ -359,23 +492,6 @@ public class ConfigsGetBody {
 
     public void setReferer(RefererConfig referer) {
         this.referer = referer;
-    }
-
-    public ConfigsGetBody withOriginProtocol(String originProtocol) {
-        this.originProtocol = originProtocol;
-        return this;
-    }
-
-    /**
-     * 回源协议。
-     * @return originProtocol
-     */
-    public String getOriginProtocol() {
-        return originProtocol;
-    }
-
-    public void setOriginProtocol(String originProtocol) {
-        this.originProtocol = originProtocol;
     }
 
     public ConfigsGetBody withForceRedirect(ForceRedirectConfig forceRedirect) {
@@ -512,7 +628,7 @@ public class ConfigsGetBody {
     }
 
     /**
-     * Range回源。
+     * Range回源，开启: on，off:关闭。
      * @return originRangeStatus
      */
     public String getOriginRangeStatus() {
@@ -583,6 +699,262 @@ public class ConfigsGetBody {
         this.originRequestUrlRewrite = originRequestUrlRewrite;
     }
 
+    public ConfigsGetBody withFlexibleOrigin(List<FlexibleOrigins> flexibleOrigin) {
+        this.flexibleOrigin = flexibleOrigin;
+        return this;
+    }
+
+    public ConfigsGetBody addFlexibleOriginItem(FlexibleOrigins flexibleOriginItem) {
+        if (this.flexibleOrigin == null) {
+            this.flexibleOrigin = new ArrayList<>();
+        }
+        this.flexibleOrigin.add(flexibleOriginItem);
+        return this;
+    }
+
+    public ConfigsGetBody withFlexibleOrigin(Consumer<List<FlexibleOrigins>> flexibleOriginSetter) {
+        if (this.flexibleOrigin == null) {
+            this.flexibleOrigin = new ArrayList<>();
+        }
+        flexibleOriginSetter.accept(this.flexibleOrigin);
+        return this;
+    }
+
+    /**
+     * 高级回源。
+     * @return flexibleOrigin
+     */
+    public List<FlexibleOrigins> getFlexibleOrigin() {
+        return flexibleOrigin;
+    }
+
+    public void setFlexibleOrigin(List<FlexibleOrigins> flexibleOrigin) {
+        this.flexibleOrigin = flexibleOrigin;
+    }
+
+    public ConfigsGetBody withSliceEtagStatus(String sliceEtagStatus) {
+        this.sliceEtagStatus = sliceEtagStatus;
+        return this;
+    }
+
+    /**
+     * 回源是否校验ETag，on：开启，off：关闭。
+     * @return sliceEtagStatus
+     */
+    public String getSliceEtagStatus() {
+        return sliceEtagStatus;
+    }
+
+    public void setSliceEtagStatus(String sliceEtagStatus) {
+        this.sliceEtagStatus = sliceEtagStatus;
+    }
+
+    public ConfigsGetBody withOriginReceiveTimeout(Integer originReceiveTimeout) {
+        this.originReceiveTimeout = originReceiveTimeout;
+        return this;
+    }
+
+    /**
+     * 回源超时时间，单位：秒。
+     * @return originReceiveTimeout
+     */
+    public Integer getOriginReceiveTimeout() {
+        return originReceiveTimeout;
+    }
+
+    public void setOriginReceiveTimeout(Integer originReceiveTimeout) {
+        this.originReceiveTimeout = originReceiveTimeout;
+    }
+
+    public ConfigsGetBody withRemoteAuth(CommonRemoteAuth remoteAuth) {
+        this.remoteAuth = remoteAuth;
+        return this;
+    }
+
+    public ConfigsGetBody withRemoteAuth(Consumer<CommonRemoteAuth> remoteAuthSetter) {
+        if (this.remoteAuth == null) {
+            this.remoteAuth = new CommonRemoteAuth();
+            remoteAuthSetter.accept(this.remoteAuth);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get remoteAuth
+     * @return remoteAuth
+     */
+    public CommonRemoteAuth getRemoteAuth() {
+        return remoteAuth;
+    }
+
+    public void setRemoteAuth(CommonRemoteAuth remoteAuth) {
+        this.remoteAuth = remoteAuth;
+    }
+
+    public ConfigsGetBody withWebsocket(WebSocketSeek websocket) {
+        this.websocket = websocket;
+        return this;
+    }
+
+    public ConfigsGetBody withWebsocket(Consumer<WebSocketSeek> websocketSetter) {
+        if (this.websocket == null) {
+            this.websocket = new WebSocketSeek();
+            websocketSetter.accept(this.websocket);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get websocket
+     * @return websocket
+     */
+    public WebSocketSeek getWebsocket() {
+        return websocket;
+    }
+
+    public void setWebsocket(WebSocketSeek websocket) {
+        this.websocket = websocket;
+    }
+
+    public ConfigsGetBody withVideoSeek(VideoSeek videoSeek) {
+        this.videoSeek = videoSeek;
+        return this;
+    }
+
+    public ConfigsGetBody withVideoSeek(Consumer<VideoSeek> videoSeekSetter) {
+        if (this.videoSeek == null) {
+            this.videoSeek = new VideoSeek();
+            videoSeekSetter.accept(this.videoSeek);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get videoSeek
+     * @return videoSeek
+     */
+    public VideoSeek getVideoSeek() {
+        return videoSeek;
+    }
+
+    public void setVideoSeek(VideoSeek videoSeek) {
+        this.videoSeek = videoSeek;
+    }
+
+    public ConfigsGetBody withRequestLimitRules(List<RequestLimitRules> requestLimitRules) {
+        this.requestLimitRules = requestLimitRules;
+        return this;
+    }
+
+    public ConfigsGetBody addRequestLimitRulesItem(RequestLimitRules requestLimitRulesItem) {
+        if (this.requestLimitRules == null) {
+            this.requestLimitRules = new ArrayList<>();
+        }
+        this.requestLimitRules.add(requestLimitRulesItem);
+        return this;
+    }
+
+    public ConfigsGetBody withRequestLimitRules(Consumer<List<RequestLimitRules>> requestLimitRulesSetter) {
+        if (this.requestLimitRules == null) {
+            this.requestLimitRules = new ArrayList<>();
+        }
+        requestLimitRulesSetter.accept(this.requestLimitRules);
+        return this;
+    }
+
+    /**
+     * 请求限速。
+     * @return requestLimitRules
+     */
+    public List<RequestLimitRules> getRequestLimitRules() {
+        return requestLimitRules;
+    }
+
+    public void setRequestLimitRules(List<RequestLimitRules> requestLimitRules) {
+        this.requestLimitRules = requestLimitRules;
+    }
+
+    public ConfigsGetBody withIpFrequencyLimit(IpFrequencyLimitQuery ipFrequencyLimit) {
+        this.ipFrequencyLimit = ipFrequencyLimit;
+        return this;
+    }
+
+    public ConfigsGetBody withIpFrequencyLimit(Consumer<IpFrequencyLimitQuery> ipFrequencyLimitSetter) {
+        if (this.ipFrequencyLimit == null) {
+            this.ipFrequencyLimit = new IpFrequencyLimitQuery();
+            ipFrequencyLimitSetter.accept(this.ipFrequencyLimit);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ipFrequencyLimit
+     * @return ipFrequencyLimit
+     */
+    public IpFrequencyLimitQuery getIpFrequencyLimit() {
+        return ipFrequencyLimit;
+    }
+
+    public void setIpFrequencyLimit(IpFrequencyLimitQuery ipFrequencyLimit) {
+        this.ipFrequencyLimit = ipFrequencyLimit;
+    }
+
+    public ConfigsGetBody withHsts(HstsQuery hsts) {
+        this.hsts = hsts;
+        return this;
+    }
+
+    public ConfigsGetBody withHsts(Consumer<HstsQuery> hstsSetter) {
+        if (this.hsts == null) {
+            this.hsts = new HstsQuery();
+            hstsSetter.accept(this.hsts);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hsts
+     * @return hsts
+     */
+    public HstsQuery getHsts() {
+        return hsts;
+    }
+
+    public void setHsts(HstsQuery hsts) {
+        this.hsts = hsts;
+    }
+
+    public ConfigsGetBody withQuic(Quic quic) {
+        this.quic = quic;
+        return this;
+    }
+
+    public ConfigsGetBody withQuic(Consumer<Quic> quicSetter) {
+        if (this.quic == null) {
+            this.quic = new Quic();
+            quicSetter.accept(this.quic);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get quic
+     * @return quic
+     */
+    public Quic getQuic() {
+        return quic;
+    }
+
+    public void setQuic(Quic quic) {
+        this.quic = quic;
+    }
+
     public ConfigsGetBody withErrorCodeRedirectRules(List<ErrorCodeRedirectRules> errorCodeRedirectRules) {
         this.errorCodeRedirectRules = errorCodeRedirectRules;
         return this;
@@ -626,35 +998,48 @@ public class ConfigsGetBody {
             return false;
         }
         ConfigsGetBody that = (ConfigsGetBody) obj;
-        return Objects.equals(this.originRequestHeader, that.originRequestHeader)
+        return Objects.equals(this.businessType, that.businessType)
+            && Objects.equals(this.serviceArea, that.serviceArea) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.originRequestHeader, that.originRequestHeader)
             && Objects.equals(this.httpResponseHeader, that.httpResponseHeader)
             && Objects.equals(this.urlAuth, that.urlAuth) && Objects.equals(this.https, that.https)
-            && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.sources, that.sources) && Objects.equals(this.originProtocol, that.originProtocol)
             && Objects.equals(this.originFollow302Status, that.originFollow302Status)
             && Objects.equals(this.cacheRules, that.cacheRules) && Objects.equals(this.ipFilter, that.ipFilter)
-            && Objects.equals(this.referer, that.referer) && Objects.equals(this.originProtocol, that.originProtocol)
-            && Objects.equals(this.forceRedirect, that.forceRedirect) && Objects.equals(this.compress, that.compress)
+            && Objects.equals(this.referer, that.referer) && Objects.equals(this.forceRedirect, that.forceRedirect)
+            && Objects.equals(this.compress, that.compress)
             && Objects.equals(this.cacheUrlParameterFilter, that.cacheUrlParameterFilter)
             && Objects.equals(this.ipv6Accelerate, that.ipv6Accelerate)
             && Objects.equals(this.errorCodeCache, that.errorCodeCache)
             && Objects.equals(this.originRangeStatus, that.originRangeStatus)
             && Objects.equals(this.userAgentFilter, that.userAgentFilter)
             && Objects.equals(this.originRequestUrlRewrite, that.originRequestUrlRewrite)
+            && Objects.equals(this.flexibleOrigin, that.flexibleOrigin)
+            && Objects.equals(this.sliceEtagStatus, that.sliceEtagStatus)
+            && Objects.equals(this.originReceiveTimeout, that.originReceiveTimeout)
+            && Objects.equals(this.remoteAuth, that.remoteAuth) && Objects.equals(this.websocket, that.websocket)
+            && Objects.equals(this.videoSeek, that.videoSeek)
+            && Objects.equals(this.requestLimitRules, that.requestLimitRules)
+            && Objects.equals(this.ipFrequencyLimit, that.ipFrequencyLimit) && Objects.equals(this.hsts, that.hsts)
+            && Objects.equals(this.quic, that.quic)
             && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(originRequestHeader,
+        return Objects.hash(businessType,
+            serviceArea,
+            remark,
+            originRequestHeader,
             httpResponseHeader,
             urlAuth,
             https,
             sources,
+            originProtocol,
             originFollow302Status,
             cacheRules,
             ipFilter,
             referer,
-            originProtocol,
             forceRedirect,
             compress,
             cacheUrlParameterFilter,
@@ -663,6 +1048,16 @@ public class ConfigsGetBody {
             originRangeStatus,
             userAgentFilter,
             originRequestUrlRewrite,
+            flexibleOrigin,
+            sliceEtagStatus,
+            originReceiveTimeout,
+            remoteAuth,
+            websocket,
+            videoSeek,
+            requestLimitRules,
+            ipFrequencyLimit,
+            hsts,
+            quic,
             errorCodeRedirectRules);
     }
 
@@ -670,16 +1065,19 @@ public class ConfigsGetBody {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfigsGetBody {\n");
+        sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
+        sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    originRequestHeader: ").append(toIndentedString(originRequestHeader)).append("\n");
         sb.append("    httpResponseHeader: ").append(toIndentedString(httpResponseHeader)).append("\n");
         sb.append("    urlAuth: ").append(toIndentedString(urlAuth)).append("\n");
         sb.append("    https: ").append(toIndentedString(https)).append("\n");
         sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
+        sb.append("    originProtocol: ").append(toIndentedString(originProtocol)).append("\n");
         sb.append("    originFollow302Status: ").append(toIndentedString(originFollow302Status)).append("\n");
         sb.append("    cacheRules: ").append(toIndentedString(cacheRules)).append("\n");
         sb.append("    ipFilter: ").append(toIndentedString(ipFilter)).append("\n");
         sb.append("    referer: ").append(toIndentedString(referer)).append("\n");
-        sb.append("    originProtocol: ").append(toIndentedString(originProtocol)).append("\n");
         sb.append("    forceRedirect: ").append(toIndentedString(forceRedirect)).append("\n");
         sb.append("    compress: ").append(toIndentedString(compress)).append("\n");
         sb.append("    cacheUrlParameterFilter: ").append(toIndentedString(cacheUrlParameterFilter)).append("\n");
@@ -688,6 +1086,16 @@ public class ConfigsGetBody {
         sb.append("    originRangeStatus: ").append(toIndentedString(originRangeStatus)).append("\n");
         sb.append("    userAgentFilter: ").append(toIndentedString(userAgentFilter)).append("\n");
         sb.append("    originRequestUrlRewrite: ").append(toIndentedString(originRequestUrlRewrite)).append("\n");
+        sb.append("    flexibleOrigin: ").append(toIndentedString(flexibleOrigin)).append("\n");
+        sb.append("    sliceEtagStatus: ").append(toIndentedString(sliceEtagStatus)).append("\n");
+        sb.append("    originReceiveTimeout: ").append(toIndentedString(originReceiveTimeout)).append("\n");
+        sb.append("    remoteAuth: ").append(toIndentedString(remoteAuth)).append("\n");
+        sb.append("    websocket: ").append(toIndentedString(websocket)).append("\n");
+        sb.append("    videoSeek: ").append(toIndentedString(videoSeek)).append("\n");
+        sb.append("    requestLimitRules: ").append(toIndentedString(requestLimitRules)).append("\n");
+        sb.append("    ipFrequencyLimit: ").append(toIndentedString(ipFrequencyLimit)).append("\n");
+        sb.append("    hsts: ").append(toIndentedString(hsts)).append("\n");
+        sb.append("    quic: ").append(toIndentedString(quic)).append("\n");
         sb.append("    errorCodeRedirectRules: ").append(toIndentedString(errorCodeRedirectRules)).append("\n");
         sb.append("}");
         return sb.toString();

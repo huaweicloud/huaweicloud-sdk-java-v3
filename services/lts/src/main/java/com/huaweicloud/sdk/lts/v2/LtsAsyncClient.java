@@ -603,7 +603,7 @@ public class LtsAsyncClient {
     }
 
     /**
-     * 查询Demo
+     * 创建日志收藏
      *
      * 创建日志收藏
      * 
@@ -617,7 +617,7 @@ public class LtsAsyncClient {
     }
 
     /**
-     * 查询Demo
+     * 创建日志收藏
      *
      * 创建日志收藏
      * 

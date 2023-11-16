@@ -324,7 +324,7 @@ public class UpdateReal3DTaskResponse extends SdkResponse {
     }
 
     /**
-     * 华为云IAM租户帐号ID。
+     * 华为云IAM租户账号ID。
      * @return tenantDomainId
      */
     public String getTenantDomainId() {

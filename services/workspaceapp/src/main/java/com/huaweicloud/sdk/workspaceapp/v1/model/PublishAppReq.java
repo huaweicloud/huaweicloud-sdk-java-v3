@@ -14,47 +14,9 @@ import java.util.function.Consumer;
 public class PublishAppReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "accounts")
-
-    private List<AccountInfo> accounts = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
     private List<PublishApp> items = null;
-
-    public PublishAppReq withAccounts(List<AccountInfo> accounts) {
-        this.accounts = accounts;
-        return this;
-    }
-
-    public PublishAppReq addAccountsItem(AccountInfo accountsItem) {
-        if (this.accounts == null) {
-            this.accounts = new ArrayList<>();
-        }
-        this.accounts.add(accountsItem);
-        return this;
-    }
-
-    public PublishAppReq withAccounts(Consumer<List<AccountInfo>> accountsSetter) {
-        if (this.accounts == null) {
-            this.accounts = new ArrayList<>();
-        }
-        accountsSetter.accept(this.accounts);
-        return this;
-    }
-
-    /**
-     * 用户(组),单次最多允许操作100个用户(组)
-     * @return accounts
-     */
-    public List<AccountInfo> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(List<AccountInfo> accounts) {
-        this.accounts = accounts;
-    }
 
     public PublishAppReq withItems(List<PublishApp> items) {
         this.items = items;
@@ -98,19 +60,18 @@ public class PublishAppReq {
             return false;
         }
         PublishAppReq that = (PublishAppReq) obj;
-        return Objects.equals(this.accounts, that.accounts) && Objects.equals(this.items, that.items);
+        return Objects.equals(this.items, that.items);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accounts, items);
+        return Objects.hash(items);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PublishAppReq {\n");
-        sb.append("    accounts: ").append(toIndentedString(accounts)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("}");
         return sb.toString();

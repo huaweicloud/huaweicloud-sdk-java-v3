@@ -112,7 +112,7 @@ public class TopnRequstBody {
     }
 
     /**
-     * 排序依据，index/write/storage/basicTransfer/seniorTransfer，必须是search_list中存在的数据
+     * 排序依据，index/write/storage/basicTransfer/seniorTransfer/coldStorage，必须是search_list中存在的数据
      * @return sortBy
      */
     public String getSortBy() {
@@ -212,7 +212,7 @@ public class TopnRequstBody {
     }
 
     /**
-     * 查询数据类型，字符串数组可多种搭配，只能在index/write/storage/basicTransfer/seniorTransfer中选填
+     * 查询数据类型，字符串数组可多种搭配，只能在index/write/storage/basicTransfer/seniorTransfer/coldStorage中选填
      * @return searchList
      */
     public List<String> getSearchList() {

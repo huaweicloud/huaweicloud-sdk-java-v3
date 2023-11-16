@@ -217,6 +217,7 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowTagsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowTagsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.StartInstanceResizeCheckJobRequest;
+import com.huaweicloud.sdk.dcs.v2.model.StartInstanceResizeCheckJobRequestBody;
 import com.huaweicloud.sdk.dcs.v2.model.StartInstanceResizeCheckJobResponse;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.StopMigrationTaskResponse;
@@ -3193,7 +3194,7 @@ public class DcsMeta {
                     StartInstanceResizeCheckJobResponse.class)
                 .withName("StartInstanceResizeCheckJob")
                 .withUri("/v2/{project_id}/instances/{instance_id}/resize/check-job")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("instance_id",
@@ -3202,6 +3203,13 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartInstanceResizeCheckJobRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+        builder.<StartInstanceResizeCheckJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StartInstanceResizeCheckJobRequestBody.class),
+            f -> f.withMarshaller(StartInstanceResizeCheckJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

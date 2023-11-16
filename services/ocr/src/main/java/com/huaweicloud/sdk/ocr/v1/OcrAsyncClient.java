@@ -63,6 +63,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizePassportRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizePassportResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizePcrTestRecordRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizePcrTestRecordResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizePeruIdCardRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizePeruIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceRequest;
@@ -1101,6 +1103,36 @@ public class OcrAsyncClient {
         RecognizePcrTestRecordRequest request) {
         return new AsyncInvoker<RecognizePcrTestRecordRequest, RecognizePcrTestRecordResponse>(request,
             OcrMeta.recognizePcrTestRecord, hcClient);
+    }
+
+    /**
+     * 秘鲁身份证识别
+     *
+     * 识别秘鲁身份证图片中的文字内容，并将识别的结构化结果返回给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizePeruIdCardRequest 请求对象
+     * @return CompletableFuture<RecognizePeruIdCardResponse>
+     */
+    public CompletableFuture<RecognizePeruIdCardResponse> recognizePeruIdCardAsync(RecognizePeruIdCardRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizePeruIdCard);
+    }
+
+    /**
+     * 秘鲁身份证识别
+     *
+     * 识别秘鲁身份证图片中的文字内容，并将识别的结构化结果返回给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RecognizePeruIdCardRequest 请求对象
+     * @return AsyncInvoker<RecognizePeruIdCardRequest, RecognizePeruIdCardResponse>
+     */
+    public AsyncInvoker<RecognizePeruIdCardRequest, RecognizePeruIdCardResponse> recognizePeruIdCardAsyncInvoker(
+        RecognizePeruIdCardRequest request) {
+        return new AsyncInvoker<RecognizePeruIdCardRequest, RecognizePeruIdCardResponse>(request,
+            OcrMeta.recognizePeruIdCard, hcClient);
     }
 
     /**

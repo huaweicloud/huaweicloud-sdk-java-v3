@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 应用状态(正常、禁用) * &#39;NORMAL&#39; - 正常 * &#39;FORBIDDEN&#39; - 禁用状态
+ * 应用状态(正常、禁用) * &#x60;NORMAL&#x60; - 正常 * &#x60;FORBIDDEN&#x60; - 禁用状态
  */
 public class AppStateEnum {
 

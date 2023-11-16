@@ -5,12 +5,16 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.edgesec.v1.model.ApplyWafPolicyRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ApplyWafPolicyResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.CreateCertificateRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.CreateCertificateResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.CreateEdgeDDoSDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.CreateEdgeDDoSDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.CreateEdgeWafDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.CreateEdgeWafDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.CreatePolicyResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.DeleteCertificateRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.DeleteEdgeDDoSDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.DeleteEdgeDDoSDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.DeleteEdgeWafDomainsRequest;
@@ -19,6 +23,8 @@ import com.huaweicloud.sdk.edgesec.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.DeletePolicyResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ListCdnDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ListCdnDomainsResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.ListCertificatesRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.ListCertificatesResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeDDoSDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeDDoSDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeSecSubscriptionRequest;
@@ -27,12 +33,16 @@ import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeWafDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeWafDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ListPolicyResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.ShowCertificateRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.ShowCertificateResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowEdgeWafDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowEdgeWafDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowStatisticsEventRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowStatisticsEventResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowStatisticsTrafficRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowStatisticsTrafficResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.UpdateCertificateRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.UpdateEdgeDDoSDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.UpdateEdgeDDoSDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.UpdateEdgeWafDomainsRequest;
@@ -292,6 +302,36 @@ public class EdgeSecClient {
     }
 
     /**
+     * 创建证书
+     *
+     * 创建证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateRequest 请求对象
+     * @return CreateCertificateResponse
+     */
+    public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, EdgeSecMeta.createCertificate);
+    }
+
+    /**
+     * 创建证书
+     *
+     * 创建证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateRequest 请求对象
+     * @return SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
+     */
+    public SyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateInvoker(
+        CreateCertificateRequest request) {
+        return new SyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request,
+            EdgeSecMeta.createCertificate, hcClient);
+    }
+
+    /**
      * 创建防护域名
      *
      * 创建防护域名
@@ -347,6 +387,36 @@ public class EdgeSecClient {
      */
     public SyncInvoker<CreatePolicyRequest, CreatePolicyResponse> createPolicyInvoker(CreatePolicyRequest request) {
         return new SyncInvoker<CreatePolicyRequest, CreatePolicyResponse>(request, EdgeSecMeta.createPolicy, hcClient);
+    }
+
+    /**
+     * 删除证书
+     *
+     * 删除证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCertificateRequest 请求对象
+     * @return DeleteCertificateResponse
+     */
+    public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, EdgeSecMeta.deleteCertificate);
+    }
+
+    /**
+     * 删除证书
+     *
+     * 删除证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteCertificateRequest 请求对象
+     * @return SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>
+     */
+    public SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateInvoker(
+        DeleteCertificateRequest request) {
+        return new SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request,
+            EdgeSecMeta.deleteCertificate, hcClient);
     }
 
     /**
@@ -438,6 +508,36 @@ public class EdgeSecClient {
     }
 
     /**
+     * 查询证书列表
+     *
+     * 查询证书列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertificatesRequest 请求对象
+     * @return ListCertificatesResponse
+     */
+    public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
+        return hcClient.syncInvokeHttp(request, EdgeSecMeta.listCertificates);
+    }
+
+    /**
+     * 查询证书列表
+     *
+     * 查询证书列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCertificatesRequest 请求对象
+     * @return SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>
+     */
+    public SyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesInvoker(
+        ListCertificatesRequest request) {
+        return new SyncInvoker<ListCertificatesRequest, ListCertificatesResponse>(request, EdgeSecMeta.listCertificates,
+            hcClient);
+    }
+
+    /**
      * 查询WAF防护域名列表
      *
      * 查询WAF防护域名列表
@@ -496,6 +596,36 @@ public class EdgeSecClient {
     }
 
     /**
+     * 查询证书
+     *
+     * 查询证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCertificateRequest 请求对象
+     * @return ShowCertificateResponse
+     */
+    public ShowCertificateResponse showCertificate(ShowCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, EdgeSecMeta.showCertificate);
+    }
+
+    /**
+     * 查询证书
+     *
+     * 查询证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowCertificateRequest 请求对象
+     * @return SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>
+     */
+    public SyncInvoker<ShowCertificateRequest, ShowCertificateResponse> showCertificateInvoker(
+        ShowCertificateRequest request) {
+        return new SyncInvoker<ShowCertificateRequest, ShowCertificateResponse>(request, EdgeSecMeta.showCertificate,
+            hcClient);
+    }
+
+    /**
      * 查询防护域名
      *
      * 查询防护域名
@@ -523,6 +653,36 @@ public class EdgeSecClient {
         ShowEdgeWafDomainsRequest request) {
         return new SyncInvoker<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse>(request,
             EdgeSecMeta.showEdgeWafDomains, hcClient);
+    }
+
+    /**
+     * 修改证书
+     *
+     * 修改证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCertificateRequest 请求对象
+     * @return UpdateCertificateResponse
+     */
+    public UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request) {
+        return hcClient.syncInvokeHttp(request, EdgeSecMeta.updateCertificate);
+    }
+
+    /**
+     * 修改证书
+     *
+     * 修改证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateCertificateRequest 请求对象
+     * @return SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>
+     */
+    public SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateInvoker(
+        UpdateCertificateRequest request) {
+        return new SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request,
+            EdgeSecMeta.updateCertificate, hcClient);
     }
 
     /**

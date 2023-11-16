@@ -18,6 +18,11 @@ public class ListFlowBySimCardsReq {
 
     private List<String> iccids = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sim_card_ids")
+
+    private List<Long> simCardIds = null;
+
     public ListFlowBySimCardsReq withIccids(List<String> iccids) {
         this.iccids = iccids;
         return this;
@@ -40,7 +45,7 @@ public class ListFlowBySimCardsReq {
     }
 
     /**
-     * ICCID列表,最大支持50
+     * iccid列表（三网卡不支持），最大支持50，且iccid和sim_card_id列表二选一
      * @return iccids
      */
     public List<String> getIccids() {
@@ -49,6 +54,39 @@ public class ListFlowBySimCardsReq {
 
     public void setIccids(List<String> iccids) {
         this.iccids = iccids;
+    }
+
+    public ListFlowBySimCardsReq withSimCardIds(List<Long> simCardIds) {
+        this.simCardIds = simCardIds;
+        return this;
+    }
+
+    public ListFlowBySimCardsReq addSimCardIdsItem(Long simCardIdsItem) {
+        if (this.simCardIds == null) {
+            this.simCardIds = new ArrayList<>();
+        }
+        this.simCardIds.add(simCardIdsItem);
+        return this;
+    }
+
+    public ListFlowBySimCardsReq withSimCardIds(Consumer<List<Long>> simCardIdsSetter) {
+        if (this.simCardIds == null) {
+            this.simCardIds = new ArrayList<>();
+        }
+        simCardIdsSetter.accept(this.simCardIds);
+        return this;
+    }
+
+    /**
+     * sim_card_id列表，最大支持50，且iccid和sim_card_id列表二选一
+     * @return simCardIds
+     */
+    public List<Long> getSimCardIds() {
+        return simCardIds;
+    }
+
+    public void setSimCardIds(List<Long> simCardIds) {
+        this.simCardIds = simCardIds;
     }
 
     @Override
@@ -60,12 +98,12 @@ public class ListFlowBySimCardsReq {
             return false;
         }
         ListFlowBySimCardsReq that = (ListFlowBySimCardsReq) obj;
-        return Objects.equals(this.iccids, that.iccids);
+        return Objects.equals(this.iccids, that.iccids) && Objects.equals(this.simCardIds, that.simCardIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(iccids);
+        return Objects.hash(iccids, simCardIds);
     }
 
     @Override
@@ -73,6 +111,7 @@ public class ListFlowBySimCardsReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFlowBySimCardsReq {\n");
         sb.append("    iccids: ").append(toIndentedString(iccids)).append("\n");
+        sb.append("    simCardIds: ").append(toIndentedString(simCardIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

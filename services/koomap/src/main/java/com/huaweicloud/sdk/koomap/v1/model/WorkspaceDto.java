@@ -117,7 +117,7 @@ public class WorkspaceDto {
     }
 
     /**
-     * IAM租户帐号domain ID。
+     * 华为云IAM租户账号ID。
      * @return tenantDomainId
      */
     public String getTenantDomainId() {

@@ -378,7 +378,7 @@ public class WorkspaceAppMeta {
             }));
         builder.<UploadAppIconRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadAppIconRequestBody.class),
             f -> f.withMarshaller(UploadAppIconRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -725,6 +725,13 @@ public class WorkspaceAppMeta {
             f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAccount, (req, v) -> {
                 req.setAccount(v);
             }));
+        builder.<String>withRequestField("account_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppGroupAuthorizationRequest::getAccountType, (req, v) -> {
+                req.setAccountType(v);
+            }));
 
         // response
 
@@ -790,7 +797,7 @@ public class WorkspaceAppMeta {
         // requests
         builder.<CreateOrUpdateStoragePolicyStatementReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateOrUpdateStoragePolicyStatementReq.class),
             f -> f.withMarshaller(CreateOrUpdateStoragePolicyStatementRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1235,7 +1242,7 @@ public class WorkspaceAppMeta {
         // requests
         builder.<CreatePolicyGroupReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePolicyGroupReq.class),
             f -> f.withMarshaller(CreatePolicyGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1260,7 +1267,7 @@ public class WorkspaceAppMeta {
         // requests
         builder.<CreatePolicyTemplateReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePolicyTemplateReq.class),
             f -> f.withMarshaller(CreatePolicyTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1651,7 +1658,7 @@ public class WorkspaceAppMeta {
         // requests
         builder.<ServerHaltReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ServerHaltReq.class),
             f -> f.withMarshaller(BatchRebootServerRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1726,7 +1733,7 @@ public class WorkspaceAppMeta {
         // requests
         builder.<ServerHaltReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ServerHaltReq.class),
             f -> f.withMarshaller(BatchStopServerRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1906,7 +1913,7 @@ public class WorkspaceAppMeta {
             }));
         builder.<ReinstallServerReq>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReinstallServerReq.class),
             f -> f.withMarshaller(ReinstallServerRequest::getBody, (req, v) -> {
                 req.setBody(v);

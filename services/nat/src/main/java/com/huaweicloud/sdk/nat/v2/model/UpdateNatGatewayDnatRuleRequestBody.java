@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新DNAT规则的响应体。
+ * 更新DNAT规则的请求体。
  */
 public class UpdateNatGatewayDnatRuleRequestBody {
 

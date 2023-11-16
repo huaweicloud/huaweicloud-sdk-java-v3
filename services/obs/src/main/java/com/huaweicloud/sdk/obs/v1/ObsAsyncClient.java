@@ -3,22 +3,34 @@ package com.huaweicloud.sdk.obs.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.obs.v1.model.CopyObjectRequest;
+import com.huaweicloud.sdk.obs.v1.model.CopyObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.CreateBucketRequest;
 import com.huaweicloud.sdk.obs.v1.model.CreateBucketResponse;
+import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainRequest;
+import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsRequest;
+import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketCustomdomainRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketCustomdomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsRequest;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsResponse;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationResponse;
 
@@ -35,6 +47,84 @@ public class ObsAsyncClient {
     public static ClientBuilder<ObsAsyncClient> newBuilder() {
         ClientBuilder<ObsAsyncClient> clientBuilder = new ClientBuilder<>(ObsAsyncClient::new, "ObsCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 复制对象
+     *
+     * 复制对象（Copy Object）特性用来为OBS上已经存在的对象创建一个副本。
+     * 
+     * 当进行复制对象操作时，目标对象默认复制源对象的元数据；用户也可以将目标对象的元数据替换为本次请求中所带的元数据。新建的目标对象不会复制源对象的ACL信息，默认的新建对象的ACL是private，用户可以使用设置ACL的操作接口来重新设定新对象的ACL。
+     * 
+     * 复制对象操作的请求需要通过头域携带拷贝的原桶和对象信息，不能携带消息实体。
+     * 
+     * 该操作支持服务端加密功能。
+     * 
+     * 目标对象大小范围是[0, 5GB]，如果源对象大小超过5GB，只能使用Range拷贝部分对象。
+     * 
+     * #### 多版本 ####
+     * 默认情况下，x-obs-copy-source标识复制源对象的最新版本。如果源对象的最新版本是删除标记，则认为该对象已删除。要复制指定版本的对象，可以在x-obs-copy-source请求消息头中携带versionId参数。
+     * 
+     * 如果目标对象的桶的多版本状态是开启的，系统为目标对象生成唯一的版本号（此版本号与源对象的版本号不同），并且会在响应报头x-obs-version-id返回该版本号。如果目标对象的桶的多版本状态是暂停的，则目标对象的版本号为null。
+     * 
+     * 须知：
+     * 在桶没有开启多版本的情况下，将源对象object_A复制为目标对象object_B，如果在复制操作之前对象object_B已经存在，复制操作执行之后老对象object_B则会被新复制对象object_B覆盖，复制成功后，只能下载到新的对象object_B，老对象object_B将会被删除。因此在使用copy接口时请确保目标对象不存在或者已无价值，避免因copy导致数据误删除。复制过程中源对象object_A无任何变化。
+     * 
+     * 复制对象的结果不能仅根据HTTP返回头域中的status_code来判断请求是否成功，头域中status_code返回200时表示服务端已经收到请求，且开始处理复制对象请求。复制是否成功会在响应消息的body中，只有body体中有ETag标签才表示成功，否则表示复制失败。
+     * 
+     * #### 归档存储对象 ####
+     * 如果源对象是归档存储对象，需要判断源对象的取回状态，只有当源对象处于已取回状态时，才能复制成功。源对象未取回或者正在取回时，会复制失败，返回错误403 Forbidden。异常描述为：
+     * 
+     * ErrorCode: InvalidObjectState
+     * 
+     * ErrorMessage: Operation is not valid for the source object&#39;s storage class
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopyObjectRequest 请求对象
+     * @return CompletableFuture<CopyObjectResponse>
+     */
+    public CompletableFuture<CopyObjectResponse> copyObjectAsync(CopyObjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.copyObject);
+    }
+
+    /**
+     * 复制对象
+     *
+     * 复制对象（Copy Object）特性用来为OBS上已经存在的对象创建一个副本。
+     * 
+     * 当进行复制对象操作时，目标对象默认复制源对象的元数据；用户也可以将目标对象的元数据替换为本次请求中所带的元数据。新建的目标对象不会复制源对象的ACL信息，默认的新建对象的ACL是private，用户可以使用设置ACL的操作接口来重新设定新对象的ACL。
+     * 
+     * 复制对象操作的请求需要通过头域携带拷贝的原桶和对象信息，不能携带消息实体。
+     * 
+     * 该操作支持服务端加密功能。
+     * 
+     * 目标对象大小范围是[0, 5GB]，如果源对象大小超过5GB，只能使用Range拷贝部分对象。
+     * 
+     * #### 多版本 ####
+     * 默认情况下，x-obs-copy-source标识复制源对象的最新版本。如果源对象的最新版本是删除标记，则认为该对象已删除。要复制指定版本的对象，可以在x-obs-copy-source请求消息头中携带versionId参数。
+     * 
+     * 如果目标对象的桶的多版本状态是开启的，系统为目标对象生成唯一的版本号（此版本号与源对象的版本号不同），并且会在响应报头x-obs-version-id返回该版本号。如果目标对象的桶的多版本状态是暂停的，则目标对象的版本号为null。
+     * 
+     * 须知：
+     * 在桶没有开启多版本的情况下，将源对象object_A复制为目标对象object_B，如果在复制操作之前对象object_B已经存在，复制操作执行之后老对象object_B则会被新复制对象object_B覆盖，复制成功后，只能下载到新的对象object_B，老对象object_B将会被删除。因此在使用copy接口时请确保目标对象不存在或者已无价值，避免因copy导致数据误删除。复制过程中源对象object_A无任何变化。
+     * 
+     * 复制对象的结果不能仅根据HTTP返回头域中的status_code来判断请求是否成功，头域中status_code返回200时表示服务端已经收到请求，且开始处理复制对象请求。复制是否成功会在响应消息的body中，只有body体中有ETag标签才表示成功，否则表示复制失败。
+     * 
+     * #### 归档存储对象 ####
+     * 如果源对象是归档存储对象，需要判断源对象的取回状态，只有当源对象处于已取回状态时，才能复制成功。源对象未取回或者正在取回时，会复制失败，返回错误403 Forbidden。异常描述为：
+     * 
+     * ErrorCode: InvalidObjectState
+     * 
+     * ErrorMessage: Operation is not valid for the source object&#39;s storage class
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CopyObjectRequest 请求对象
+     * @return AsyncInvoker<CopyObjectRequest, CopyObjectResponse>
+     */
+    public AsyncInvoker<CopyObjectRequest, CopyObjectResponse> copyObjectAsyncInvoker(CopyObjectRequest request) {
+        return new AsyncInvoker<CopyObjectRequest, CopyObjectResponse>(request, ObsMeta.copyObject, hcClient);
     }
 
     /**
@@ -130,6 +220,37 @@ public class ObsAsyncClient {
     }
 
     /**
+     * 删除桶的自定义域名
+     *
+     * OBS使用DELETE操作来删除桶的自定义域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBucketCustomdomainRequest 请求对象
+     * @return CompletableFuture<DeleteBucketCustomdomainResponse>
+     */
+    public CompletableFuture<DeleteBucketCustomdomainResponse> deleteBucketCustomdomainAsync(
+        DeleteBucketCustomdomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.deleteBucketCustomdomain);
+    }
+
+    /**
+     * 删除桶的自定义域名
+     *
+     * OBS使用DELETE操作来删除桶的自定义域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBucketCustomdomainRequest 请求对象
+     * @return AsyncInvoker<DeleteBucketCustomdomainRequest, DeleteBucketCustomdomainResponse>
+     */
+    public AsyncInvoker<DeleteBucketCustomdomainRequest, DeleteBucketCustomdomainResponse> deleteBucketCustomdomainAsyncInvoker(
+        DeleteBucketCustomdomainRequest request) {
+        return new AsyncInvoker<DeleteBucketCustomdomainRequest, DeleteBucketCustomdomainResponse>(request,
+            ObsMeta.deleteBucketCustomdomain, hcClient);
+    }
+
+    /**
      * 删除对象
      *
      * 删除对象的操作。如果要删除的对象不存在，则仍然返回成功信息。
@@ -166,6 +287,74 @@ public class ObsAsyncClient {
     public AsyncInvoker<DeleteObjectRequest, DeleteObjectResponse> deleteObjectAsyncInvoker(
         DeleteObjectRequest request) {
         return new AsyncInvoker<DeleteObjectRequest, DeleteObjectResponse>(request, ObsMeta.deleteObject, hcClient);
+    }
+
+    /**
+     * 批量删除对象
+     *
+     * 批量删除对象特性用于将一个桶内的部分对象一次性删除，删除后不可恢复。批量删除对象要求返回结果里包含每个对象的删除结果。OBS的批量删除对象使用同步删除对象的方式，每个对象的删除结果返回给请求用户。
+     * 
+     * 批量删除对象支持两种响应方式：verbose和quiet。Verbose是指在返回响应时，不管对象是否删除成功都将删除结果包含在XML响应里；quiet是指在返回响应时，只返回删除失败的对象结果，没有返回的认为删除成功。OBS默认使用verbose模式，如果用户在请求消息体中指定quiet模式的话， 使用quiet模式。
+     * 
+     * 批量删除的请求消息头中必须包含Content-MD5以及Content-Length，用以保证请求的消息体在服务端检测到网络传输如果有错，则可以检测出来。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteObjectsRequest 请求对象
+     * @return CompletableFuture<DeleteObjectsResponse>
+     */
+    public CompletableFuture<DeleteObjectsResponse> deleteObjectsAsync(DeleteObjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.deleteObjects);
+    }
+
+    /**
+     * 批量删除对象
+     *
+     * 批量删除对象特性用于将一个桶内的部分对象一次性删除，删除后不可恢复。批量删除对象要求返回结果里包含每个对象的删除结果。OBS的批量删除对象使用同步删除对象的方式，每个对象的删除结果返回给请求用户。
+     * 
+     * 批量删除对象支持两种响应方式：verbose和quiet。Verbose是指在返回响应时，不管对象是否删除成功都将删除结果包含在XML响应里；quiet是指在返回响应时，只返回删除失败的对象结果，没有返回的认为删除成功。OBS默认使用verbose模式，如果用户在请求消息体中指定quiet模式的话， 使用quiet模式。
+     * 
+     * 批量删除的请求消息头中必须包含Content-MD5以及Content-Length，用以保证请求的消息体在服务端检测到网络传输如果有错，则可以检测出来。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteObjectsRequest 请求对象
+     * @return AsyncInvoker<DeleteObjectsRequest, DeleteObjectsResponse>
+     */
+    public AsyncInvoker<DeleteObjectsRequest, DeleteObjectsResponse> deleteObjectsAsyncInvoker(
+        DeleteObjectsRequest request) {
+        return new AsyncInvoker<DeleteObjectsRequest, DeleteObjectsResponse>(request, ObsMeta.deleteObjects, hcClient);
+    }
+
+    /**
+     * 获取桶的自定义域名
+     *
+     * OBS使用GET操作来获取桶的自定义域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetBucketCustomdomainRequest 请求对象
+     * @return CompletableFuture<GetBucketCustomdomainResponse>
+     */
+    public CompletableFuture<GetBucketCustomdomainResponse> getBucketCustomdomainAsync(
+        GetBucketCustomdomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.getBucketCustomdomain);
+    }
+
+    /**
+     * 获取桶的自定义域名
+     *
+     * OBS使用GET操作来获取桶的自定义域名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetBucketCustomdomainRequest 请求对象
+     * @return AsyncInvoker<GetBucketCustomdomainRequest, GetBucketCustomdomainResponse>
+     */
+    public AsyncInvoker<GetBucketCustomdomainRequest, GetBucketCustomdomainResponse> getBucketCustomdomainAsyncInvoker(
+        GetBucketCustomdomainRequest request) {
+        return new AsyncInvoker<GetBucketCustomdomainRequest, GetBucketCustomdomainResponse>(request,
+            ObsMeta.getBucketCustomdomain, hcClient);
     }
 
     /**
@@ -280,6 +469,44 @@ public class ObsAsyncClient {
     }
 
     /**
+     * 获取对象元数据
+     *
+     * 拥有对象读权限的用户可以执行HEAD操作命令获取对象元数据，返回信息包含对象的元数据信息。
+     * 该操作支持服务端加密功能。
+     * 
+     * #### 多版本 ####
+     * 默认情况下，获取的是最新版本的对象元数据。如果最新版本的对象是删除标记，则返回404。如果要获取指定版本的对象元数据，请求可携带versionId消息参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetObjectMetadataRequest 请求对象
+     * @return CompletableFuture<GetObjectMetadataResponse>
+     */
+    public CompletableFuture<GetObjectMetadataResponse> getObjectMetadataAsync(GetObjectMetadataRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.getObjectMetadata);
+    }
+
+    /**
+     * 获取对象元数据
+     *
+     * 拥有对象读权限的用户可以执行HEAD操作命令获取对象元数据，返回信息包含对象的元数据信息。
+     * 该操作支持服务端加密功能。
+     * 
+     * #### 多版本 ####
+     * 默认情况下，获取的是最新版本的对象元数据。如果最新版本的对象是删除标记，则返回404。如果要获取指定版本的对象元数据，请求可携带versionId消息参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetObjectMetadataRequest 请求对象
+     * @return AsyncInvoker<GetObjectMetadataRequest, GetObjectMetadataResponse>
+     */
+    public AsyncInvoker<GetObjectMetadataRequest, GetObjectMetadataResponse> getObjectMetadataAsyncInvoker(
+        GetObjectMetadataRequest request) {
+        return new AsyncInvoker<GetObjectMetadataRequest, GetObjectMetadataResponse>(request, ObsMeta.getObjectMetadata,
+            hcClient);
+    }
+
+    /**
      * 获取桶列表
      *
      * OBS用户可以通过请求查询自己创建的桶列表。
@@ -357,6 +584,41 @@ public class ObsAsyncClient {
      */
     public AsyncInvoker<PutObjectRequest, PutObjectResponse> putObjectAsyncInvoker(PutObjectRequest request) {
         return new AsyncInvoker<PutObjectRequest, PutObjectResponse>(request, ObsMeta.putObject, hcClient);
+    }
+
+    /**
+     * 设置桶的自定义域名
+     *
+     * OBS使用PUT操作为桶设置自定义域名，设置成功之后，用户访问桶的自定义域名就能访问到桶。
+     * 
+     * 必须保证此自定义域名通过DNS能够正确解析到OBS服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetBucketCustomedomainRequest 请求对象
+     * @return CompletableFuture<SetBucketCustomedomainResponse>
+     */
+    public CompletableFuture<SetBucketCustomedomainResponse> setBucketCustomedomainAsync(
+        SetBucketCustomedomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.setBucketCustomedomain);
+    }
+
+    /**
+     * 设置桶的自定义域名
+     *
+     * OBS使用PUT操作为桶设置自定义域名，设置成功之后，用户访问桶的自定义域名就能访问到桶。
+     * 
+     * 必须保证此自定义域名通过DNS能够正确解析到OBS服务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetBucketCustomedomainRequest 请求对象
+     * @return AsyncInvoker<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse>
+     */
+    public AsyncInvoker<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse> setBucketCustomedomainAsyncInvoker(
+        SetBucketCustomedomainRequest request) {
+        return new AsyncInvoker<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse>(request,
+            ObsMeta.setBucketCustomedomain, hcClient);
     }
 
     /**

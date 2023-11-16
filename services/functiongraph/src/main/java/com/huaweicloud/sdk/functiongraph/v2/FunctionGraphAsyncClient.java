@@ -51,6 +51,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.DeleteVersionAliasRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteVersionAliasResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteVpcEndpointRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteVpcEndpointResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.EnableAsyncStatusLogRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.EnableAsyncStatusLogResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.EnableLtsLogsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.EnableLtsLogsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ExportFunctionRequest;
@@ -63,6 +65,10 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ListActiveAsyncInvocationsRequ
 import com.huaweicloud.sdk.functiongraph.v2.model.ListActiveAsyncInvocationsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListAsyncInvocationsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListAsyncInvocationsResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListBridgeFunctionsRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListBridgeFunctionsResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListBridgeVersionsRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListBridgeVersionsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListDependenciesRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListDependenciesResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListDependencyVersionRequest;
@@ -77,6 +83,10 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionReservedInstancesR
 import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionReservedInstancesResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionStatisticsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionStatisticsResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionTagsRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionTagsResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionTemplateRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionTemplateResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionTriggersRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionTriggersResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionVersionsRequest;
@@ -103,6 +113,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependencyVersionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependencyVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowEventRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowEventResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFuncReservedInstanceMetricsRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFuncReservedInstanceMetricsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFuncSnapshotStateRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFuncSnapshotStateResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionAsyncInvokeConfigRequest;
@@ -111,10 +123,16 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionCodeRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionCodeResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionConfigRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionConfigResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionMetricsRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionMetricsResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionTemplateRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionTemplateResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionTriggerRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionTriggerResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowLtsLogDetailsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowLtsLogDetailsResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowProjectAsyncStatusLogInfoRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowProjectAsyncStatusLogInfoResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowProjectTagsListRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowProjectTagsListResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowResInstanceInfoRequest;
@@ -149,6 +167,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionAsyncInvokeConfi
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionAsyncInvokeConfigResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionCodeRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionCodeResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionCollectStateRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionCollectStateResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionConfigRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionConfigResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFunctionMaxInstanceConfigRequest;
@@ -926,6 +946,37 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 允许异步状态通知
+     *
+     * 允许异步状态通知。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableAsyncStatusLogRequest 请求对象
+     * @return CompletableFuture<EnableAsyncStatusLogResponse>
+     */
+    public CompletableFuture<EnableAsyncStatusLogResponse> enableAsyncStatusLogAsync(
+        EnableAsyncStatusLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.enableAsyncStatusLog);
+    }
+
+    /**
+     * 允许异步状态通知
+     *
+     * 允许异步状态通知。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableAsyncStatusLogRequest 请求对象
+     * @return AsyncInvoker<EnableAsyncStatusLogRequest, EnableAsyncStatusLogResponse>
+     */
+    public AsyncInvoker<EnableAsyncStatusLogRequest, EnableAsyncStatusLogResponse> enableAsyncStatusLogAsyncInvoker(
+        EnableAsyncStatusLogRequest request) {
+        return new AsyncInvoker<EnableAsyncStatusLogRequest, EnableAsyncStatusLogResponse>(request,
+            FunctionGraphMeta.enableAsyncStatusLog, hcClient);
+    }
+
+    /**
      * 开通lts日志上报功能
      *
      * 开通lts日志上报功能。
@@ -1105,6 +1156,66 @@ public class FunctionGraphAsyncClient {
         ListAsyncInvocationsRequest request) {
         return new AsyncInvoker<ListAsyncInvocationsRequest, ListAsyncInvocationsResponse>(request,
             FunctionGraphMeta.listAsyncInvocations, hcClient);
+    }
+
+    /**
+     * 获取指定函数绑定的servicebridge函数列表
+     *
+     * 获取指定函数绑定的servicebridge函数列表信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBridgeFunctionsRequest 请求对象
+     * @return CompletableFuture<ListBridgeFunctionsResponse>
+     */
+    public CompletableFuture<ListBridgeFunctionsResponse> listBridgeFunctionsAsync(ListBridgeFunctionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listBridgeFunctions);
+    }
+
+    /**
+     * 获取指定函数绑定的servicebridge函数列表
+     *
+     * 获取指定函数绑定的servicebridge函数列表信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBridgeFunctionsRequest 请求对象
+     * @return AsyncInvoker<ListBridgeFunctionsRequest, ListBridgeFunctionsResponse>
+     */
+    public AsyncInvoker<ListBridgeFunctionsRequest, ListBridgeFunctionsResponse> listBridgeFunctionsAsyncInvoker(
+        ListBridgeFunctionsRequest request) {
+        return new AsyncInvoker<ListBridgeFunctionsRequest, ListBridgeFunctionsResponse>(request,
+            FunctionGraphMeta.listBridgeFunctions, hcClient);
+    }
+
+    /**
+     * 获取servicebridge可用的版本
+     *
+     * 获取servicebridge可用的版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBridgeVersionsRequest 请求对象
+     * @return CompletableFuture<ListBridgeVersionsResponse>
+     */
+    public CompletableFuture<ListBridgeVersionsResponse> listBridgeVersionsAsync(ListBridgeVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listBridgeVersions);
+    }
+
+    /**
+     * 获取servicebridge可用的版本
+     *
+     * 获取servicebridge可用的版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBridgeVersionsRequest 请求对象
+     * @return AsyncInvoker<ListBridgeVersionsRequest, ListBridgeVersionsResponse>
+     */
+    public AsyncInvoker<ListBridgeVersionsRequest, ListBridgeVersionsResponse> listBridgeVersionsAsyncInvoker(
+        ListBridgeVersionsRequest request) {
+        return new AsyncInvoker<ListBridgeVersionsRequest, ListBridgeVersionsResponse>(request,
+            FunctionGraphMeta.listBridgeVersions, hcClient);
     }
 
     /**
@@ -1322,6 +1433,67 @@ public class FunctionGraphAsyncClient {
         ListFunctionStatisticsRequest request) {
         return new AsyncInvoker<ListFunctionStatisticsRequest, ListFunctionStatisticsResponse>(request,
             FunctionGraphMeta.listFunctionStatistics, hcClient);
+    }
+
+    /**
+     * 查询函数标签列表
+     *
+     * 查询函数标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFunctionTagsRequest 请求对象
+     * @return CompletableFuture<ListFunctionTagsResponse>
+     */
+    public CompletableFuture<ListFunctionTagsResponse> listFunctionTagsAsync(ListFunctionTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listFunctionTags);
+    }
+
+    /**
+     * 查询函数标签列表
+     *
+     * 查询函数标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFunctionTagsRequest 请求对象
+     * @return AsyncInvoker<ListFunctionTagsRequest, ListFunctionTagsResponse>
+     */
+    public AsyncInvoker<ListFunctionTagsRequest, ListFunctionTagsResponse> listFunctionTagsAsyncInvoker(
+        ListFunctionTagsRequest request) {
+        return new AsyncInvoker<ListFunctionTagsRequest, ListFunctionTagsResponse>(request,
+            FunctionGraphMeta.listFunctionTags, hcClient);
+    }
+
+    /**
+     * 获取函数模板列表
+     *
+     * 获取函数模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFunctionTemplateRequest 请求对象
+     * @return CompletableFuture<ListFunctionTemplateResponse>
+     */
+    public CompletableFuture<ListFunctionTemplateResponse> listFunctionTemplateAsync(
+        ListFunctionTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.listFunctionTemplate);
+    }
+
+    /**
+     * 获取函数模板列表
+     *
+     * 获取函数模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFunctionTemplateRequest 请求对象
+     * @return AsyncInvoker<ListFunctionTemplateRequest, ListFunctionTemplateResponse>
+     */
+    public AsyncInvoker<ListFunctionTemplateRequest, ListFunctionTemplateResponse> listFunctionTemplateAsyncInvoker(
+        ListFunctionTemplateRequest request) {
+        return new AsyncInvoker<ListFunctionTemplateRequest, ListFunctionTemplateResponse>(request,
+            FunctionGraphMeta.listFunctionTemplate, hcClient);
     }
 
     /**
@@ -1722,6 +1894,49 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 查询函数实例使用情况指标
+     *
+     * 查询函数实例使用情况指标。
+     * 
+     * - 指标单位为分钟：
+     *     当查询时间范围小于1小时,指标周期为1分钟
+     *     当查询时间范围小于1天,指标周期为30分钟
+     *     当查询时间范围大于1天,指标周期为180分钟
+     * - 指标分为如下几类：reservedinstancenum（预留实例使用）、concurrency（实例使用/并发）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFuncReservedInstanceMetricsRequest 请求对象
+     * @return CompletableFuture<ShowFuncReservedInstanceMetricsResponse>
+     */
+    public CompletableFuture<ShowFuncReservedInstanceMetricsResponse> showFuncReservedInstanceMetricsAsync(
+        ShowFuncReservedInstanceMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showFuncReservedInstanceMetrics);
+    }
+
+    /**
+     * 查询函数实例使用情况指标
+     *
+     * 查询函数实例使用情况指标。
+     * 
+     * - 指标单位为分钟：
+     *     当查询时间范围小于1小时,指标周期为1分钟
+     *     当查询时间范围小于1天,指标周期为30分钟
+     *     当查询时间范围大于1天,指标周期为180分钟
+     * - 指标分为如下几类：reservedinstancenum（预留实例使用）、concurrency（实例使用/并发）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFuncReservedInstanceMetricsRequest 请求对象
+     * @return AsyncInvoker<ShowFuncReservedInstanceMetricsRequest, ShowFuncReservedInstanceMetricsResponse>
+     */
+    public AsyncInvoker<ShowFuncReservedInstanceMetricsRequest, ShowFuncReservedInstanceMetricsResponse> showFuncReservedInstanceMetricsAsyncInvoker(
+        ShowFuncReservedInstanceMetricsRequest request) {
+        return new AsyncInvoker<ShowFuncReservedInstanceMetricsRequest, ShowFuncReservedInstanceMetricsResponse>(
+            request, FunctionGraphMeta.showFuncReservedInstanceMetrics, hcClient);
+    }
+
+    /**
      * 查询函数快照制作状态
      *
      * 查询函数快照制作状态。
@@ -1844,6 +2059,67 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 查询函数实例流量指标
+     *
+     * 查询函数流量指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFunctionMetricsRequest 请求对象
+     * @return CompletableFuture<ShowFunctionMetricsResponse>
+     */
+    public CompletableFuture<ShowFunctionMetricsResponse> showFunctionMetricsAsync(ShowFunctionMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showFunctionMetrics);
+    }
+
+    /**
+     * 查询函数实例流量指标
+     *
+     * 查询函数流量指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFunctionMetricsRequest 请求对象
+     * @return AsyncInvoker<ShowFunctionMetricsRequest, ShowFunctionMetricsResponse>
+     */
+    public AsyncInvoker<ShowFunctionMetricsRequest, ShowFunctionMetricsResponse> showFunctionMetricsAsyncInvoker(
+        ShowFunctionMetricsRequest request) {
+        return new AsyncInvoker<ShowFunctionMetricsRequest, ShowFunctionMetricsResponse>(request,
+            FunctionGraphMeta.showFunctionMetrics, hcClient);
+    }
+
+    /**
+     * 获取指定函数模板
+     *
+     * 获取指定函数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFunctionTemplateRequest 请求对象
+     * @return CompletableFuture<ShowFunctionTemplateResponse>
+     */
+    public CompletableFuture<ShowFunctionTemplateResponse> showFunctionTemplateAsync(
+        ShowFunctionTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showFunctionTemplate);
+    }
+
+    /**
+     * 获取指定函数模板
+     *
+     * 获取指定函数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFunctionTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowFunctionTemplateRequest, ShowFunctionTemplateResponse>
+     */
+    public AsyncInvoker<ShowFunctionTemplateRequest, ShowFunctionTemplateResponse> showFunctionTemplateAsyncInvoker(
+        ShowFunctionTemplateRequest request) {
+        return new AsyncInvoker<ShowFunctionTemplateRequest, ShowFunctionTemplateResponse>(request,
+            FunctionGraphMeta.showFunctionTemplate, hcClient);
+    }
+
+    /**
      * 获取指定触发器的信息
      *
      * 获取特定触发器的信息。
@@ -1901,6 +2177,37 @@ public class FunctionGraphAsyncClient {
         ShowLtsLogDetailsRequest request) {
         return new AsyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>(request,
             FunctionGraphMeta.showLtsLogDetails, hcClient);
+    }
+
+    /**
+     * 查询异步日志详情
+     *
+     * 查询异步日志详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectAsyncStatusLogInfoRequest 请求对象
+     * @return CompletableFuture<ShowProjectAsyncStatusLogInfoResponse>
+     */
+    public CompletableFuture<ShowProjectAsyncStatusLogInfoResponse> showProjectAsyncStatusLogInfoAsync(
+        ShowProjectAsyncStatusLogInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showProjectAsyncStatusLogInfo);
+    }
+
+    /**
+     * 查询异步日志详情
+     *
+     * 查询异步日志详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectAsyncStatusLogInfoRequest 请求对象
+     * @return AsyncInvoker<ShowProjectAsyncStatusLogInfoRequest, ShowProjectAsyncStatusLogInfoResponse>
+     */
+    public AsyncInvoker<ShowProjectAsyncStatusLogInfoRequest, ShowProjectAsyncStatusLogInfoResponse> showProjectAsyncStatusLogInfoAsyncInvoker(
+        ShowProjectAsyncStatusLogInfoRequest request) {
+        return new AsyncInvoker<ShowProjectAsyncStatusLogInfoRequest, ShowProjectAsyncStatusLogInfoResponse>(request,
+            FunctionGraphMeta.showProjectAsyncStatusLogInfo, hcClient);
     }
 
     /**
@@ -2414,6 +2721,37 @@ public class FunctionGraphAsyncClient {
         UpdateFunctionCodeRequest request) {
         return new AsyncInvoker<UpdateFunctionCodeRequest, UpdateFunctionCodeResponse>(request,
             FunctionGraphMeta.updateFunctionCode, hcClient);
+    }
+
+    /**
+     * 更新函数收藏状态
+     *
+     * 更新函数收藏状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFunctionCollectStateRequest 请求对象
+     * @return CompletableFuture<UpdateFunctionCollectStateResponse>
+     */
+    public CompletableFuture<UpdateFunctionCollectStateResponse> updateFunctionCollectStateAsync(
+        UpdateFunctionCollectStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateFunctionCollectState);
+    }
+
+    /**
+     * 更新函数收藏状态
+     *
+     * 更新函数收藏状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFunctionCollectStateRequest 请求对象
+     * @return AsyncInvoker<UpdateFunctionCollectStateRequest, UpdateFunctionCollectStateResponse>
+     */
+    public AsyncInvoker<UpdateFunctionCollectStateRequest, UpdateFunctionCollectStateResponse> updateFunctionCollectStateAsyncInvoker(
+        UpdateFunctionCollectStateRequest request) {
+        return new AsyncInvoker<UpdateFunctionCollectStateRequest, UpdateFunctionCollectStateResponse>(request,
+            FunctionGraphMeta.updateFunctionCollectState, hcClient);
     }
 
     /**

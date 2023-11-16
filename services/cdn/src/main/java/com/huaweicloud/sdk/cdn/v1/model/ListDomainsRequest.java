@@ -392,7 +392,7 @@ public class ListDomainsRequest {
     }
 
     /**
-     * 每页加速域名的数量，取值范围1-10000，不设值时默认值为30。
+     * 每页加速域名的数量，取值范围1-10000，默认值为30。
      * minimum: 1
      * maximum: 10000
      * @return pageSize
@@ -411,7 +411,7 @@ public class ListDomainsRequest {
     }
 
     /**
-     * 查询的页码，即：从哪一页开始查询。取值范围1-65535，不设值时默认值为1。
+     * 查询的页码，即：从哪一页开始查询，取值范围1-65535，默认值为1。
      * minimum: 1
      * maximum: 65535
      * @return pageNumber

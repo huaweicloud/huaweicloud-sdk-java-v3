@@ -45,7 +45,7 @@ public class ServerHaltReq {
     }
 
     /**
-     * 批量唯一标识请求列表，一次请求数量区间 [1, 20]
+     * 批量请求的服务器ID列表，一次请求数量区间 [1, 20]。
      * @return items
      */
     public List<String> getItems() {

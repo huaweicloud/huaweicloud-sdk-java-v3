@@ -20,6 +20,11 @@ public class Router {
 
     private String routerRegion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
     public Router withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
@@ -54,6 +59,23 @@ public class Router {
         this.routerRegion = routerRegion;
     }
 
+    public Router withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 资源状态。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class Router {
             return false;
         }
         Router that = (Router) obj;
-        return Objects.equals(this.routerId, that.routerId) && Objects.equals(this.routerRegion, that.routerRegion);
+        return Objects.equals(this.routerId, that.routerId) && Objects.equals(this.routerRegion, that.routerRegion)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(routerId, routerRegion);
+        return Objects.hash(routerId, routerRegion, status);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class Router {
         sb.append("class Router {\n");
         sb.append("    routerId: ").append(toIndentedString(routerId)).append("\n");
         sb.append("    routerRegion: ").append(toIndentedString(routerRegion)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

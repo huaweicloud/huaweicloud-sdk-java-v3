@@ -173,6 +173,11 @@ public class VifPeer {
 
     private String vifId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "receive_route_num")
+
+    private Integer receiveRouteNum;
+
     public VifPeer withId(String id) {
         this.id = id;
         return this;
@@ -496,6 +501,23 @@ public class VifPeer {
         this.vifId = vifId;
     }
 
+    public VifPeer withReceiveRouteNum(Integer receiveRouteNum) {
+        this.receiveRouteNum = receiveRouteNum;
+        return this;
+    }
+
+    /**
+     * 路由模式为bgp：receive_route_num值为接收搭配BGP的路由数目； 路由模式为static：该字段无意义，值为-1； 注：若早期接入华为云的部分用户无法获取该字段信息，如需要请联系客服迁移专线端口。
+     * @return receiveRouteNum
+     */
+    public Integer getReceiveRouteNum() {
+        return receiveRouteNum;
+    }
+
+    public void setReceiveRouteNum(Integer receiveRouteNum) {
+        this.receiveRouteNum = receiveRouteNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -514,7 +536,8 @@ public class VifPeer {
             && Objects.equals(this.bgpMd5, that.bgpMd5) && Objects.equals(this.remoteEpGroup, that.remoteEpGroup)
             && Objects.equals(this.serviceEpGroup, that.serviceEpGroup) && Objects.equals(this.deviceId, that.deviceId)
             && Objects.equals(this.bgpRouteLimit, that.bgpRouteLimit) && Objects.equals(this.bgpStatus, that.bgpStatus)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.vifId, that.vifId);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.vifId, that.vifId)
+            && Objects.equals(this.receiveRouteNum, that.receiveRouteNum);
     }
 
     @Override
@@ -535,7 +558,8 @@ public class VifPeer {
             bgpRouteLimit,
             bgpStatus,
             status,
-            vifId);
+            vifId,
+            receiveRouteNum);
     }
 
     @Override
@@ -559,6 +583,7 @@ public class VifPeer {
         sb.append("    bgpStatus: ").append(toIndentedString(bgpStatus)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    vifId: ").append(toIndentedString(vifId)).append("\n");
+        sb.append("    receiveRouteNum: ").append(toIndentedString(receiveRouteNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

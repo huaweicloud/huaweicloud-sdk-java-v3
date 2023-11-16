@@ -532,7 +532,7 @@ public class WorkspaceAppAsyncClient {
     }
 
     /**
-     * 移除授权
+     * 移除应用组授权
      *
      * 移除应用组内的指定用户的授权，用户授权删除后，用户将没有权限访问应用组内的任何应用。注意：重复执行会按照操作成功处理。
      * 
@@ -547,7 +547,7 @@ public class WorkspaceAppAsyncClient {
     }
 
     /**
-     * 移除授权
+     * 移除应用组授权
      *
      * 移除应用组内的指定用户的授权，用户授权删除后，用户将没有权限访问应用组内的任何应用。注意：重复执行会按照操作成功处理。
      * 
@@ -563,7 +563,7 @@ public class WorkspaceAppAsyncClient {
     }
 
     /**
-     * 查询授权记录
+     * 查询应用组授权记录
      *
      * 查询应用内已授权的用户列表。
      * 
@@ -578,7 +578,7 @@ public class WorkspaceAppAsyncClient {
     }
 
     /**
-     * 查询授权记录
+     * 查询应用组授权记录
      *
      * 查询应用内已授权的用户列表。
      * 
@@ -999,7 +999,7 @@ public class WorkspaceAppAsyncClient {
     /**
      * 创建个人存储目录
      *
-     * 创建个人存储目录
+     * 创建个人存储目录,已存在对应目录时,仅更新策略不会重复创建目录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1014,7 +1014,7 @@ public class WorkspaceAppAsyncClient {
     /**
      * 创建个人存储目录
      *
-     * 创建个人存储目录
+     * 创建个人存储目录,已存在对应目录时,仅更新策略不会重复创建目录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -2,18 +2,58 @@ package com.huaweicloud.sdk.codeartspipeline.v2;
 
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.AcceptManualReviewResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateOpenSourceStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineGroupRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteBasicPluginResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteOpenSourceStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTemplateRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePipelineTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePluginDraftRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePluginDraftResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePublisherRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeletePublisherResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListAvailablePublisherRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListAvailablePublisherResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListOpenSourceStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineRunsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineRunsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineSimpleInfoRequest;
@@ -24,8 +64,28 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelinesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelinesResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipleineBuildResultRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipleineBuildResultResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginVersionNumberRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginVersionNumberResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPluginsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectOpenSourceStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListProjectStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPublisherRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPublisherResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListRuleRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListRuleResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStagePluginsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStagePluginsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginBindRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginBindResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RemovePipelineRequest;
@@ -34,14 +94,38 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RetryPipelineRunResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RunPipelineResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineRunDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineRunDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineTemplateDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineTemplateDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipleineStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipleineStatusResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginInputsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginInputsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginMetricsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginMetricsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginOutputsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginOutputsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginVersionRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPluginVersionResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectOpenSourceStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowProjectStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPublisherRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPublisherResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowRuleRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowRuleResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowTemplateDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowTemplateDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StartNewPipelineRequest;
@@ -50,6 +134,28 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineNewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineNewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineRunRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.StopPipelineRunResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchOpenSourceStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.SwitchStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateBasicPluginResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateOpenSourceStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateRuleRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateRuleResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateStrategyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UploadBasicPluginRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UploadBasicPluginResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UploadPluginIconRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UploadPluginIconResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UploadPublisherIconRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UploadPublisherIconResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -95,6 +201,36 @@ public class CodeArtsPipelineClient {
         AcceptManualReviewRequest request) {
         return new SyncInvoker<AcceptManualReviewRequest, AcceptManualReviewResponse>(request,
             CodeArtsPipelineMeta.acceptManualReview, hcClient);
+    }
+
+    /**
+     * 批量把流水线移动到分组下
+     *
+     * 批量把流水线移动到分组下
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchMovePipelineToGroupRequest 请求对象
+     * @return BatchMovePipelineToGroupResponse
+     */
+    public BatchMovePipelineToGroupResponse batchMovePipelineToGroup(BatchMovePipelineToGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.batchMovePipelineToGroup);
+    }
+
+    /**
+     * 批量把流水线移动到分组下
+     *
+     * 批量把流水线移动到分组下
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchMovePipelineToGroupRequest 请求对象
+     * @return SyncInvoker<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse>
+     */
+    public SyncInvoker<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse> batchMovePipelineToGroupInvoker(
+        BatchMovePipelineToGroupRequest request) {
+        return new SyncInvoker<BatchMovePipelineToGroupRequest, BatchMovePipelineToGroupResponse>(request,
+            CodeArtsPipelineMeta.batchMovePipelineToGroup, hcClient);
     }
 
     /**
@@ -159,6 +295,66 @@ public class CodeArtsPipelineClient {
     }
 
     /**
+     * 创建基础插件
+     *
+     * 创建基础插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBasicPluginRequest 请求对象
+     * @return CreateBasicPluginResponse
+     */
+    public CreateBasicPluginResponse createBasicPlugin(CreateBasicPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.createBasicPlugin);
+    }
+
+    /**
+     * 创建基础插件
+     *
+     * 创建基础插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBasicPluginRequest 请求对象
+     * @return SyncInvoker<CreateBasicPluginRequest, CreateBasicPluginResponse>
+     */
+    public SyncInvoker<CreateBasicPluginRequest, CreateBasicPluginResponse> createBasicPluginInvoker(
+        CreateBasicPluginRequest request) {
+        return new SyncInvoker<CreateBasicPluginRequest, CreateBasicPluginResponse>(request,
+            CodeArtsPipelineMeta.createBasicPlugin, hcClient);
+    }
+
+    /**
+     * 创建租户级开源治理策略
+     *
+     * 创建租户级开源治理策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOpenSourceStrategyRequest 请求对象
+     * @return CreateOpenSourceStrategyResponse
+     */
+    public CreateOpenSourceStrategyResponse createOpenSourceStrategy(CreateOpenSourceStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.createOpenSourceStrategy);
+    }
+
+    /**
+     * 创建租户级开源治理策略
+     *
+     * 创建租户级开源治理策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateOpenSourceStrategyRequest 请求对象
+     * @return SyncInvoker<CreateOpenSourceStrategyRequest, CreateOpenSourceStrategyResponse>
+     */
+    public SyncInvoker<CreateOpenSourceStrategyRequest, CreateOpenSourceStrategyResponse> createOpenSourceStrategyInvoker(
+        CreateOpenSourceStrategyRequest request) {
+        return new SyncInvoker<CreateOpenSourceStrategyRequest, CreateOpenSourceStrategyResponse>(request,
+            CodeArtsPipelineMeta.createOpenSourceStrategy, hcClient);
+    }
+
+    /**
      * 基于模板快速创建流水线及流水线内任务
      *
      * 基于模板快速创建流水线及流水线内任务
@@ -219,6 +415,36 @@ public class CodeArtsPipelineClient {
     }
 
     /**
+     * 新建流水线分组
+     *
+     * 新建流水线分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineGroupRequest 请求对象
+     * @return CreatePipelineGroupResponse
+     */
+    public CreatePipelineGroupResponse createPipelineGroup(CreatePipelineGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.createPipelineGroup);
+    }
+
+    /**
+     * 新建流水线分组
+     *
+     * 新建流水线分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineGroupRequest 请求对象
+     * @return SyncInvoker<CreatePipelineGroupRequest, CreatePipelineGroupResponse>
+     */
+    public SyncInvoker<CreatePipelineGroupRequest, CreatePipelineGroupResponse> createPipelineGroupInvoker(
+        CreatePipelineGroupRequest request) {
+        return new SyncInvoker<CreatePipelineGroupRequest, CreatePipelineGroupResponse>(request,
+            CodeArtsPipelineMeta.createPipelineGroup, hcClient);
+    }
+
+    /**
      * 创建流水线
      *
      * 创建流水线
@@ -249,6 +475,155 @@ public class CodeArtsPipelineClient {
     }
 
     /**
+     * 创建流水线模板
+     *
+     * 创建流水线模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineTemplateRequest 请求对象
+     * @return CreatePipelineTemplateResponse
+     */
+    public CreatePipelineTemplateResponse createPipelineTemplate(CreatePipelineTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.createPipelineTemplate);
+    }
+
+    /**
+     * 创建流水线模板
+     *
+     * 创建流水线模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipelineTemplateRequest 请求对象
+     * @return SyncInvoker<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse>
+     */
+    public SyncInvoker<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse> createPipelineTemplateInvoker(
+        CreatePipelineTemplateRequest request) {
+        return new SyncInvoker<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse>(request,
+            CodeArtsPipelineMeta.createPipelineTemplate, hcClient);
+    }
+
+    /**
+     * 创建规则
+     *
+     * 创建规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRuleRequest 请求对象
+     * @return CreateRuleResponse
+     */
+    public CreateRuleResponse createRule(CreateRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.createRule);
+    }
+
+    /**
+     * 创建规则
+     *
+     * 创建规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRuleRequest 请求对象
+     * @return SyncInvoker<CreateRuleRequest, CreateRuleResponse>
+     */
+    public SyncInvoker<CreateRuleRequest, CreateRuleResponse> createRuleInvoker(CreateRuleRequest request) {
+        return new SyncInvoker<CreateRuleRequest, CreateRuleResponse>(request, CodeArtsPipelineMeta.createRule,
+            hcClient);
+    }
+
+    /**
+     * 创建规则集
+     *
+     * 创建规则集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateStrategyRequest 请求对象
+     * @return CreateStrategyResponse
+     */
+    public CreateStrategyResponse createStrategy(CreateStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.createStrategy);
+    }
+
+    /**
+     * 创建规则集
+     *
+     * 创建规则集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateStrategyRequest 请求对象
+     * @return SyncInvoker<CreateStrategyRequest, CreateStrategyResponse>
+     */
+    public SyncInvoker<CreateStrategyRequest, CreateStrategyResponse> createStrategyInvoker(
+        CreateStrategyRequest request) {
+        return new SyncInvoker<CreateStrategyRequest, CreateStrategyResponse>(request,
+            CodeArtsPipelineMeta.createStrategy, hcClient);
+    }
+
+    /**
+     * 删除基础插件
+     *
+     * 删除基础插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBasicPluginRequest 请求对象
+     * @return DeleteBasicPluginResponse
+     */
+    public DeleteBasicPluginResponse deleteBasicPlugin(DeleteBasicPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.deleteBasicPlugin);
+    }
+
+    /**
+     * 删除基础插件
+     *
+     * 删除基础插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBasicPluginRequest 请求对象
+     * @return SyncInvoker<DeleteBasicPluginRequest, DeleteBasicPluginResponse>
+     */
+    public SyncInvoker<DeleteBasicPluginRequest, DeleteBasicPluginResponse> deleteBasicPluginInvoker(
+        DeleteBasicPluginRequest request) {
+        return new SyncInvoker<DeleteBasicPluginRequest, DeleteBasicPluginResponse>(request,
+            CodeArtsPipelineMeta.deleteBasicPlugin, hcClient);
+    }
+
+    /**
+     * 删除租户级开源治理策略
+     *
+     * 删除租户级开源治理策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOpenSourceStrategyRequest 请求对象
+     * @return DeleteOpenSourceStrategyResponse
+     */
+    public DeleteOpenSourceStrategyResponse deleteOpenSourceStrategy(DeleteOpenSourceStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.deleteOpenSourceStrategy);
+    }
+
+    /**
+     * 删除租户级开源治理策略
+     *
+     * 删除租户级开源治理策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteOpenSourceStrategyRequest 请求对象
+     * @return SyncInvoker<DeleteOpenSourceStrategyRequest, DeleteOpenSourceStrategyResponse>
+     */
+    public SyncInvoker<DeleteOpenSourceStrategyRequest, DeleteOpenSourceStrategyResponse> deleteOpenSourceStrategyInvoker(
+        DeleteOpenSourceStrategyRequest request) {
+        return new SyncInvoker<DeleteOpenSourceStrategyRequest, DeleteOpenSourceStrategyResponse>(request,
+            CodeArtsPipelineMeta.deleteOpenSourceStrategy, hcClient);
+    }
+
+    /**
      * 删除流水线
      *
      * 删除流水线
@@ -276,6 +651,335 @@ public class CodeArtsPipelineClient {
         DeletePipelineRequest request) {
         return new SyncInvoker<DeletePipelineRequest, DeletePipelineResponse>(request,
             CodeArtsPipelineMeta.deletePipeline, hcClient);
+    }
+
+    /**
+     * 删除流水线分组
+     *
+     * 删除流水线分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePipelineGroupRequest 请求对象
+     * @return DeletePipelineGroupResponse
+     */
+    public DeletePipelineGroupResponse deletePipelineGroup(DeletePipelineGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.deletePipelineGroup);
+    }
+
+    /**
+     * 删除流水线分组
+     *
+     * 删除流水线分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePipelineGroupRequest 请求对象
+     * @return SyncInvoker<DeletePipelineGroupRequest, DeletePipelineGroupResponse>
+     */
+    public SyncInvoker<DeletePipelineGroupRequest, DeletePipelineGroupResponse> deletePipelineGroupInvoker(
+        DeletePipelineGroupRequest request) {
+        return new SyncInvoker<DeletePipelineGroupRequest, DeletePipelineGroupResponse>(request,
+            CodeArtsPipelineMeta.deletePipelineGroup, hcClient);
+    }
+
+    /**
+     * 删除流水线模板
+     *
+     * 删除流水线模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePipelineTemplateRequest 请求对象
+     * @return DeletePipelineTemplateResponse
+     */
+    public DeletePipelineTemplateResponse deletePipelineTemplate(DeletePipelineTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.deletePipelineTemplate);
+    }
+
+    /**
+     * 删除流水线模板
+     *
+     * 删除流水线模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePipelineTemplateRequest 请求对象
+     * @return SyncInvoker<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse>
+     */
+    public SyncInvoker<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse> deletePipelineTemplateInvoker(
+        DeletePipelineTemplateRequest request) {
+        return new SyncInvoker<DeletePipelineTemplateRequest, DeletePipelineTemplateResponse>(request,
+            CodeArtsPipelineMeta.deletePipelineTemplate, hcClient);
+    }
+
+    /**
+     * 删除插件草稿
+     *
+     * 删除插件草稿
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePluginDraftRequest 请求对象
+     * @return DeletePluginDraftResponse
+     */
+    public DeletePluginDraftResponse deletePluginDraft(DeletePluginDraftRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.deletePluginDraft);
+    }
+
+    /**
+     * 删除插件草稿
+     *
+     * 删除插件草稿
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePluginDraftRequest 请求对象
+     * @return SyncInvoker<DeletePluginDraftRequest, DeletePluginDraftResponse>
+     */
+    public SyncInvoker<DeletePluginDraftRequest, DeletePluginDraftResponse> deletePluginDraftInvoker(
+        DeletePluginDraftRequest request) {
+        return new SyncInvoker<DeletePluginDraftRequest, DeletePluginDraftResponse>(request,
+            CodeArtsPipelineMeta.deletePluginDraft, hcClient);
+    }
+
+    /**
+     * 删除发布商
+     *
+     * 删除发布商
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePublisherRequest 请求对象
+     * @return DeletePublisherResponse
+     */
+    public DeletePublisherResponse deletePublisher(DeletePublisherRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.deletePublisher);
+    }
+
+    /**
+     * 删除发布商
+     *
+     * 删除发布商
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePublisherRequest 请求对象
+     * @return SyncInvoker<DeletePublisherRequest, DeletePublisherResponse>
+     */
+    public SyncInvoker<DeletePublisherRequest, DeletePublisherResponse> deletePublisherInvoker(
+        DeletePublisherRequest request) {
+        return new SyncInvoker<DeletePublisherRequest, DeletePublisherResponse>(request,
+            CodeArtsPipelineMeta.deletePublisher, hcClient);
+    }
+
+    /**
+     * 删除规则
+     *
+     * 删除规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteRuleRequest 请求对象
+     * @return DeleteRuleResponse
+     */
+    public DeleteRuleResponse deleteRule(DeleteRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.deleteRule);
+    }
+
+    /**
+     * 删除规则
+     *
+     * 删除规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteRuleRequest 请求对象
+     * @return SyncInvoker<DeleteRuleRequest, DeleteRuleResponse>
+     */
+    public SyncInvoker<DeleteRuleRequest, DeleteRuleResponse> deleteRuleInvoker(DeleteRuleRequest request) {
+        return new SyncInvoker<DeleteRuleRequest, DeleteRuleResponse>(request, CodeArtsPipelineMeta.deleteRule,
+            hcClient);
+    }
+
+    /**
+     * 删除规则集
+     *
+     * 删除规则集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteStrategyRequest 请求对象
+     * @return DeleteStrategyResponse
+     */
+    public DeleteStrategyResponse deleteStrategy(DeleteStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.deleteStrategy);
+    }
+
+    /**
+     * 删除规则集
+     *
+     * 删除规则集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteStrategyRequest 请求对象
+     * @return SyncInvoker<DeleteStrategyRequest, DeleteStrategyResponse>
+     */
+    public SyncInvoker<DeleteStrategyRequest, DeleteStrategyResponse> deleteStrategyInvoker(
+        DeleteStrategyRequest request) {
+        return new SyncInvoker<DeleteStrategyRequest, DeleteStrategyResponse>(request,
+            CodeArtsPipelineMeta.deleteStrategy, hcClient);
+    }
+
+    /**
+     * 查询可用发布商
+     *
+     * 查询可用发布商
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailablePublisherRequest 请求对象
+     * @return ListAvailablePublisherResponse
+     */
+    public ListAvailablePublisherResponse listAvailablePublisher(ListAvailablePublisherRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listAvailablePublisher);
+    }
+
+    /**
+     * 查询可用发布商
+     *
+     * 查询可用发布商
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAvailablePublisherRequest 请求对象
+     * @return SyncInvoker<ListAvailablePublisherRequest, ListAvailablePublisherResponse>
+     */
+    public SyncInvoker<ListAvailablePublisherRequest, ListAvailablePublisherResponse> listAvailablePublisherInvoker(
+        ListAvailablePublisherRequest request) {
+        return new SyncInvoker<ListAvailablePublisherRequest, ListAvailablePublisherResponse>(request,
+            CodeArtsPipelineMeta.listAvailablePublisher, hcClient);
+    }
+
+    /**
+     * 查询基础插件列表
+     *
+     * 查询基础插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBasePluginsRequest 请求对象
+     * @return ListBasePluginsResponse
+     */
+    public ListBasePluginsResponse listBasePlugins(ListBasePluginsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listBasePlugins);
+    }
+
+    /**
+     * 查询基础插件列表
+     *
+     * 查询基础插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBasePluginsRequest 请求对象
+     * @return SyncInvoker<ListBasePluginsRequest, ListBasePluginsResponse>
+     */
+    public SyncInvoker<ListBasePluginsRequest, ListBasePluginsResponse> listBasePluginsInvoker(
+        ListBasePluginsRequest request) {
+        return new SyncInvoker<ListBasePluginsRequest, ListBasePluginsResponse>(request,
+            CodeArtsPipelineMeta.listBasePlugins, hcClient);
+    }
+
+    /**
+     * 分页查询可选插件列表
+     *
+     * 分页查询可选插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBasePluginsNewPostRequest 请求对象
+     * @return ListBasePluginsNewPostResponse
+     */
+    public ListBasePluginsNewPostResponse listBasePluginsNewPost(ListBasePluginsNewPostRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listBasePluginsNewPost);
+    }
+
+    /**
+     * 分页查询可选插件列表
+     *
+     * 分页查询可选插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBasePluginsNewPostRequest 请求对象
+     * @return SyncInvoker<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse>
+     */
+    public SyncInvoker<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse> listBasePluginsNewPostInvoker(
+        ListBasePluginsNewPostRequest request) {
+        return new SyncInvoker<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse>(request,
+            CodeArtsPipelineMeta.listBasePluginsNewPost, hcClient);
+    }
+
+    /**
+     * 查询租户级开源治理策略列表
+     *
+     * 查询租户级开源治理策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOpenSourceStrategyRequest 请求对象
+     * @return ListOpenSourceStrategyResponse
+     */
+    public ListOpenSourceStrategyResponse listOpenSourceStrategy(ListOpenSourceStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listOpenSourceStrategy);
+    }
+
+    /**
+     * 查询租户级开源治理策略列表
+     *
+     * 查询租户级开源治理策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListOpenSourceStrategyRequest 请求对象
+     * @return SyncInvoker<ListOpenSourceStrategyRequest, ListOpenSourceStrategyResponse>
+     */
+    public SyncInvoker<ListOpenSourceStrategyRequest, ListOpenSourceStrategyResponse> listOpenSourceStrategyInvoker(
+        ListOpenSourceStrategyRequest request) {
+        return new SyncInvoker<ListOpenSourceStrategyRequest, ListOpenSourceStrategyResponse>(request,
+            CodeArtsPipelineMeta.listOpenSourceStrategy, hcClient);
+    }
+
+    /**
+     * 查询插件所有版本信息
+     *
+     * 查询插件所有版本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPLuginVersionRequest 请求对象
+     * @return ListPLuginVersionResponse
+     */
+    public ListPLuginVersionResponse listPLuginVersion(ListPLuginVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listPLuginVersion);
+    }
+
+    /**
+     * 查询插件所有版本信息
+     *
+     * 查询插件所有版本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPLuginVersionRequest 请求对象
+     * @return SyncInvoker<ListPLuginVersionRequest, ListPLuginVersionResponse>
+     */
+    public SyncInvoker<ListPLuginVersionRequest, ListPLuginVersionResponse> listPLuginVersionInvoker(
+        ListPLuginVersionRequest request) {
+        return new SyncInvoker<ListPLuginVersionRequest, ListPLuginVersionResponse>(request,
+            CodeArtsPipelineMeta.listPLuginVersion, hcClient);
     }
 
     /**
@@ -428,6 +1132,242 @@ public class CodeArtsPipelineClient {
     }
 
     /**
+     * 查询插件版本号
+     *
+     * 查询插件版本号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginVersionNumberRequest 请求对象
+     * @return ListPluginVersionNumberResponse
+     */
+    public ListPluginVersionNumberResponse listPluginVersionNumber(ListPluginVersionNumberRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listPluginVersionNumber);
+    }
+
+    /**
+     * 查询插件版本号
+     *
+     * 查询插件版本号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginVersionNumberRequest 请求对象
+     * @return SyncInvoker<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse>
+     */
+    public SyncInvoker<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse> listPluginVersionNumberInvoker(
+        ListPluginVersionNumberRequest request) {
+        return new SyncInvoker<ListPluginVersionNumberRequest, ListPluginVersionNumberResponse>(request,
+            CodeArtsPipelineMeta.listPluginVersionNumber, hcClient);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginsRequest 请求对象
+     * @return ListPluginsResponse
+     */
+    public ListPluginsResponse listPlugins(ListPluginsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listPlugins);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPluginsRequest 请求对象
+     * @return SyncInvoker<ListPluginsRequest, ListPluginsResponse>
+     */
+    public SyncInvoker<ListPluginsRequest, ListPluginsResponse> listPluginsInvoker(ListPluginsRequest request) {
+        return new SyncInvoker<ListPluginsRequest, ListPluginsResponse>(request, CodeArtsPipelineMeta.listPlugins,
+            hcClient);
+    }
+
+    /**
+     * 查询项目级开源治理策略列表
+     *
+     * 查询项目级开源治理策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectOpenSourceStrategyRequest 请求对象
+     * @return ListProjectOpenSourceStrategyResponse
+     */
+    public ListProjectOpenSourceStrategyResponse listProjectOpenSourceStrategy(
+        ListProjectOpenSourceStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listProjectOpenSourceStrategy);
+    }
+
+    /**
+     * 查询项目级开源治理策略列表
+     *
+     * 查询项目级开源治理策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectOpenSourceStrategyRequest 请求对象
+     * @return SyncInvoker<ListProjectOpenSourceStrategyRequest, ListProjectOpenSourceStrategyResponse>
+     */
+    public SyncInvoker<ListProjectOpenSourceStrategyRequest, ListProjectOpenSourceStrategyResponse> listProjectOpenSourceStrategyInvoker(
+        ListProjectOpenSourceStrategyRequest request) {
+        return new SyncInvoker<ListProjectOpenSourceStrategyRequest, ListProjectOpenSourceStrategyResponse>(request,
+            CodeArtsPipelineMeta.listProjectOpenSourceStrategy, hcClient);
+    }
+
+    /**
+     * 获取规则模板实例列表
+     *
+     * 获取规则集列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectStrategyRequest 请求对象
+     * @return ListProjectStrategyResponse
+     */
+    public ListProjectStrategyResponse listProjectStrategy(ListProjectStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listProjectStrategy);
+    }
+
+    /**
+     * 获取规则模板实例列表
+     *
+     * 获取规则集列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProjectStrategyRequest 请求对象
+     * @return SyncInvoker<ListProjectStrategyRequest, ListProjectStrategyResponse>
+     */
+    public SyncInvoker<ListProjectStrategyRequest, ListProjectStrategyResponse> listProjectStrategyInvoker(
+        ListProjectStrategyRequest request) {
+        return new SyncInvoker<ListProjectStrategyRequest, ListProjectStrategyResponse>(request,
+            CodeArtsPipelineMeta.listProjectStrategy, hcClient);
+    }
+
+    /**
+     * 查询发布商列表
+     *
+     * 查询发布商列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublisherRequest 请求对象
+     * @return ListPublisherResponse
+     */
+    public ListPublisherResponse listPublisher(ListPublisherRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listPublisher);
+    }
+
+    /**
+     * 查询发布商列表
+     *
+     * 查询发布商列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublisherRequest 请求对象
+     * @return SyncInvoker<ListPublisherRequest, ListPublisherResponse>
+     */
+    public SyncInvoker<ListPublisherRequest, ListPublisherResponse> listPublisherInvoker(ListPublisherRequest request) {
+        return new SyncInvoker<ListPublisherRequest, ListPublisherResponse>(request, CodeArtsPipelineMeta.listPublisher,
+            hcClient);
+    }
+
+    /**
+     * 分页获取规则列表
+     *
+     * 分页获取规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRuleRequest 请求对象
+     * @return ListRuleResponse
+     */
+    public ListRuleResponse listRule(ListRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listRule);
+    }
+
+    /**
+     * 分页获取规则列表
+     *
+     * 分页获取规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRuleRequest 请求对象
+     * @return SyncInvoker<ListRuleRequest, ListRuleResponse>
+     */
+    public SyncInvoker<ListRuleRequest, ListRuleResponse> listRuleInvoker(ListRuleRequest request) {
+        return new SyncInvoker<ListRuleRequest, ListRuleResponse>(request, CodeArtsPipelineMeta.listRule, hcClient);
+    }
+
+    /**
+     * 查询可选插件列表
+     *
+     * 查询可选插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStagePluginsRequest 请求对象
+     * @return ListStagePluginsResponse
+     */
+    public ListStagePluginsResponse listStagePlugins(ListStagePluginsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listStagePlugins);
+    }
+
+    /**
+     * 查询可选插件列表
+     *
+     * 查询可选插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStagePluginsRequest 请求对象
+     * @return SyncInvoker<ListStagePluginsRequest, ListStagePluginsResponse>
+     */
+    public SyncInvoker<ListStagePluginsRequest, ListStagePluginsResponse> listStagePluginsInvoker(
+        ListStagePluginsRequest request) {
+        return new SyncInvoker<ListStagePluginsRequest, ListStagePluginsResponse>(request,
+            CodeArtsPipelineMeta.listStagePlugins, hcClient);
+    }
+
+    /**
+     * 获取规则集列表
+     *
+     * 获取规则集列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStrategyRequest 请求对象
+     * @return ListStrategyResponse
+     */
+    public ListStrategyResponse listStrategy(ListStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listStrategy);
+    }
+
+    /**
+     * 获取规则集列表
+     *
+     * 获取规则集列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListStrategyRequest 请求对象
+     * @return SyncInvoker<ListStrategyRequest, ListStrategyResponse>
+     */
+    public SyncInvoker<ListStrategyRequest, ListStrategyResponse> listStrategyInvoker(ListStrategyRequest request) {
+        return new SyncInvoker<ListStrategyRequest, ListStrategyResponse>(request, CodeArtsPipelineMeta.listStrategy,
+            hcClient);
+    }
+
+    /**
      * 查询模板列表
      *
      * 查询模板列表，支持分页查询,支持模板名字模糊查询
@@ -454,6 +1394,65 @@ public class CodeArtsPipelineClient {
     public SyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesInvoker(ListTemplatesRequest request) {
         return new SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, CodeArtsPipelineMeta.listTemplates,
             hcClient);
+    }
+
+    /**
+     * 发布插件
+     *
+     * 发布插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishPluginRequest 请求对象
+     * @return PublishPluginResponse
+     */
+    public PublishPluginResponse publishPlugin(PublishPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.publishPlugin);
+    }
+
+    /**
+     * 发布插件
+     *
+     * 发布插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishPluginRequest 请求对象
+     * @return SyncInvoker<PublishPluginRequest, PublishPluginResponse>
+     */
+    public SyncInvoker<PublishPluginRequest, PublishPluginResponse> publishPluginInvoker(PublishPluginRequest request) {
+        return new SyncInvoker<PublishPluginRequest, PublishPluginResponse>(request, CodeArtsPipelineMeta.publishPlugin,
+            hcClient);
+    }
+
+    /**
+     * 插件绑定发布商
+     *
+     * 插件绑定发布商
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishPluginBindRequest 请求对象
+     * @return PublishPluginBindResponse
+     */
+    public PublishPluginBindResponse publishPluginBind(PublishPluginBindRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.publishPluginBind);
+    }
+
+    /**
+     * 插件绑定发布商
+     *
+     * 插件绑定发布商
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishPluginBindRequest 请求对象
+     * @return SyncInvoker<PublishPluginBindRequest, PublishPluginBindResponse>
+     */
+    public SyncInvoker<PublishPluginBindRequest, PublishPluginBindResponse> publishPluginBindInvoker(
+        PublishPluginBindRequest request) {
+        return new SyncInvoker<PublishPluginBindRequest, PublishPluginBindResponse>(request,
+            CodeArtsPipelineMeta.publishPluginBind, hcClient);
     }
 
     /**
@@ -576,6 +1575,36 @@ public class CodeArtsPipelineClient {
     }
 
     /**
+     * 查询基础插件详情
+     *
+     * 查询基础插件详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBasicPluginRequest 请求对象
+     * @return ShowBasicPluginResponse
+     */
+    public ShowBasicPluginResponse showBasicPlugin(ShowBasicPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showBasicPlugin);
+    }
+
+    /**
+     * 查询基础插件详情
+     *
+     * 查询基础插件详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowBasicPluginRequest 请求对象
+     * @return SyncInvoker<ShowBasicPluginRequest, ShowBasicPluginResponse>
+     */
+    public SyncInvoker<ShowBasicPluginRequest, ShowBasicPluginResponse> showBasicPluginInvoker(
+        ShowBasicPluginRequest request) {
+        return new SyncInvoker<ShowBasicPluginRequest, ShowBasicPluginResponse>(request,
+            CodeArtsPipelineMeta.showBasicPlugin, hcClient);
+    }
+
+    /**
      * 检查流水线创建状态
      *
      * 检查流水线创建状态
@@ -603,6 +1632,66 @@ public class CodeArtsPipelineClient {
         ShowInstanceStatusRequest request) {
         return new SyncInvoker<ShowInstanceStatusRequest, ShowInstanceStatusResponse>(request,
             CodeArtsPipelineMeta.showInstanceStatus, hcClient);
+    }
+
+    /**
+     * 查询租户级开源治理策略详情
+     *
+     * 查询租户级开源治理策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOpenSourceStrategyRequest 请求对象
+     * @return ShowOpenSourceStrategyResponse
+     */
+    public ShowOpenSourceStrategyResponse showOpenSourceStrategy(ShowOpenSourceStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showOpenSourceStrategy);
+    }
+
+    /**
+     * 查询租户级开源治理策略详情
+     *
+     * 查询租户级开源治理策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOpenSourceStrategyRequest 请求对象
+     * @return SyncInvoker<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse>
+     */
+    public SyncInvoker<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse> showOpenSourceStrategyInvoker(
+        ShowOpenSourceStrategyRequest request) {
+        return new SyncInvoker<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse>(request,
+            CodeArtsPipelineMeta.showOpenSourceStrategy, hcClient);
+    }
+
+    /**
+     * 查询流水线分组树
+     *
+     * 查询流水线分组树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineGroupTreeRequest 请求对象
+     * @return ShowPipelineGroupTreeResponse
+     */
+    public ShowPipelineGroupTreeResponse showPipelineGroupTree(ShowPipelineGroupTreeRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showPipelineGroupTree);
+    }
+
+    /**
+     * 查询流水线分组树
+     *
+     * 查询流水线分组树
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineGroupTreeRequest 请求对象
+     * @return SyncInvoker<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse>
+     */
+    public SyncInvoker<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse> showPipelineGroupTreeInvoker(
+        ShowPipelineGroupTreeRequest request) {
+        return new SyncInvoker<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse>(request,
+            CodeArtsPipelineMeta.showPipelineGroupTree, hcClient);
     }
 
     /**
@@ -693,6 +1782,273 @@ public class CodeArtsPipelineClient {
         ShowPipleineStatusRequest request) {
         return new SyncInvoker<ShowPipleineStatusRequest, ShowPipleineStatusResponse>(request,
             CodeArtsPipelineMeta.showPipleineStatus, hcClient);
+    }
+
+    /**
+     * 查询插件输入配置
+     *
+     * 查询插件输入配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginInputsRequest 请求对象
+     * @return ShowPluginInputsResponse
+     */
+    public ShowPluginInputsResponse showPluginInputs(ShowPluginInputsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showPluginInputs);
+    }
+
+    /**
+     * 查询插件输入配置
+     *
+     * 查询插件输入配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginInputsRequest 请求对象
+     * @return SyncInvoker<ShowPluginInputsRequest, ShowPluginInputsResponse>
+     */
+    public SyncInvoker<ShowPluginInputsRequest, ShowPluginInputsResponse> showPluginInputsInvoker(
+        ShowPluginInputsRequest request) {
+        return new SyncInvoker<ShowPluginInputsRequest, ShowPluginInputsResponse>(request,
+            CodeArtsPipelineMeta.showPluginInputs, hcClient);
+    }
+
+    /**
+     * 查询插件指标配置
+     *
+     * 查询插件指标配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginMetricsRequest 请求对象
+     * @return ShowPluginMetricsResponse
+     */
+    public ShowPluginMetricsResponse showPluginMetrics(ShowPluginMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showPluginMetrics);
+    }
+
+    /**
+     * 查询插件指标配置
+     *
+     * 查询插件指标配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginMetricsRequest 请求对象
+     * @return SyncInvoker<ShowPluginMetricsRequest, ShowPluginMetricsResponse>
+     */
+    public SyncInvoker<ShowPluginMetricsRequest, ShowPluginMetricsResponse> showPluginMetricsInvoker(
+        ShowPluginMetricsRequest request) {
+        return new SyncInvoker<ShowPluginMetricsRequest, ShowPluginMetricsResponse>(request,
+            CodeArtsPipelineMeta.showPluginMetrics, hcClient);
+    }
+
+    /**
+     * 查询插件输出配置
+     *
+     * 查询插件输出配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginOutputsRequest 请求对象
+     * @return ShowPluginOutputsResponse
+     */
+    public ShowPluginOutputsResponse showPluginOutputs(ShowPluginOutputsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showPluginOutputs);
+    }
+
+    /**
+     * 查询插件输出配置
+     *
+     * 查询插件输出配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginOutputsRequest 请求对象
+     * @return SyncInvoker<ShowPluginOutputsRequest, ShowPluginOutputsResponse>
+     */
+    public SyncInvoker<ShowPluginOutputsRequest, ShowPluginOutputsResponse> showPluginOutputsInvoker(
+        ShowPluginOutputsRequest request) {
+        return new SyncInvoker<ShowPluginOutputsRequest, ShowPluginOutputsResponse>(request,
+            CodeArtsPipelineMeta.showPluginOutputs, hcClient);
+    }
+
+    /**
+     * 查询插件版本详情
+     *
+     * 查询插件版本详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginVersionRequest 请求对象
+     * @return ShowPluginVersionResponse
+     */
+    public ShowPluginVersionResponse showPluginVersion(ShowPluginVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showPluginVersion);
+    }
+
+    /**
+     * 查询插件版本详情
+     *
+     * 查询插件版本详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPluginVersionRequest 请求对象
+     * @return SyncInvoker<ShowPluginVersionRequest, ShowPluginVersionResponse>
+     */
+    public SyncInvoker<ShowPluginVersionRequest, ShowPluginVersionResponse> showPluginVersionInvoker(
+        ShowPluginVersionRequest request) {
+        return new SyncInvoker<ShowPluginVersionRequest, ShowPluginVersionResponse>(request,
+            CodeArtsPipelineMeta.showPluginVersion, hcClient);
+    }
+
+    /**
+     * 查询项目级开源治理策略详情
+     *
+     * 查询项目级开源治理策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectOpenSourceStrategyRequest 请求对象
+     * @return ShowProjectOpenSourceStrategyResponse
+     */
+    public ShowProjectOpenSourceStrategyResponse showProjectOpenSourceStrategy(
+        ShowProjectOpenSourceStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showProjectOpenSourceStrategy);
+    }
+
+    /**
+     * 查询项目级开源治理策略详情
+     *
+     * 查询项目级开源治理策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectOpenSourceStrategyRequest 请求对象
+     * @return SyncInvoker<ShowProjectOpenSourceStrategyRequest, ShowProjectOpenSourceStrategyResponse>
+     */
+    public SyncInvoker<ShowProjectOpenSourceStrategyRequest, ShowProjectOpenSourceStrategyResponse> showProjectOpenSourceStrategyInvoker(
+        ShowProjectOpenSourceStrategyRequest request) {
+        return new SyncInvoker<ShowProjectOpenSourceStrategyRequest, ShowProjectOpenSourceStrategyResponse>(request,
+            CodeArtsPipelineMeta.showProjectOpenSourceStrategy, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 查询项目级策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectStrategyRequest 请求对象
+     * @return ShowProjectStrategyResponse
+     */
+    public ShowProjectStrategyResponse showProjectStrategy(ShowProjectStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showProjectStrategy);
+    }
+
+    /**
+     * 
+     *
+     * 查询项目级策略详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectStrategyRequest 请求对象
+     * @return SyncInvoker<ShowProjectStrategyRequest, ShowProjectStrategyResponse>
+     */
+    public SyncInvoker<ShowProjectStrategyRequest, ShowProjectStrategyResponse> showProjectStrategyInvoker(
+        ShowProjectStrategyRequest request) {
+        return new SyncInvoker<ShowProjectStrategyRequest, ShowProjectStrategyResponse>(request,
+            CodeArtsPipelineMeta.showProjectStrategy, hcClient);
+    }
+
+    /**
+     * 查询发布商详情
+     *
+     * 查询发布商详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPublisherRequest 请求对象
+     * @return ShowPublisherResponse
+     */
+    public ShowPublisherResponse showPublisher(ShowPublisherRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showPublisher);
+    }
+
+    /**
+     * 查询发布商详情
+     *
+     * 查询发布商详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPublisherRequest 请求对象
+     * @return SyncInvoker<ShowPublisherRequest, ShowPublisherResponse>
+     */
+    public SyncInvoker<ShowPublisherRequest, ShowPublisherResponse> showPublisherInvoker(ShowPublisherRequest request) {
+        return new SyncInvoker<ShowPublisherRequest, ShowPublisherResponse>(request, CodeArtsPipelineMeta.showPublisher,
+            hcClient);
+    }
+
+    /**
+     * 获取单条规则详情
+     *
+     * 获取单条规则详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRuleRequest 请求对象
+     * @return ShowRuleResponse
+     */
+    public ShowRuleResponse showRule(ShowRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showRule);
+    }
+
+    /**
+     * 获取单条规则详情
+     *
+     * 获取单条规则详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRuleRequest 请求对象
+     * @return SyncInvoker<ShowRuleRequest, ShowRuleResponse>
+     */
+    public SyncInvoker<ShowRuleRequest, ShowRuleResponse> showRuleInvoker(ShowRuleRequest request) {
+        return new SyncInvoker<ShowRuleRequest, ShowRuleResponse>(request, CodeArtsPipelineMeta.showRule, hcClient);
+    }
+
+    /**
+     * 获取规则集详情
+     *
+     * 获取规则集详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStrategyRequest 请求对象
+     * @return ShowStrategyResponse
+     */
+    public ShowStrategyResponse showStrategy(ShowStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showStrategy);
+    }
+
+    /**
+     * 获取规则集详情
+     *
+     * 获取规则集详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowStrategyRequest 请求对象
+     * @return SyncInvoker<ShowStrategyRequest, ShowStrategyResponse>
+     */
+    public SyncInvoker<ShowStrategyRequest, ShowStrategyResponse> showStrategyInvoker(ShowStrategyRequest request) {
+        return new SyncInvoker<ShowStrategyRequest, ShowStrategyResponse>(request, CodeArtsPipelineMeta.showStrategy,
+            hcClient);
     }
 
     /**
@@ -813,6 +2169,335 @@ public class CodeArtsPipelineClient {
         StopPipelineRunRequest request) {
         return new SyncInvoker<StopPipelineRunRequest, StopPipelineRunResponse>(request,
             CodeArtsPipelineMeta.stopPipelineRun, hcClient);
+    }
+
+    /**
+     * 修改租户级开源治理策略启用状态
+     *
+     * 修改租户级开源治理策略启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchOpenSourceStrategyRequest 请求对象
+     * @return SwitchOpenSourceStrategyResponse
+     */
+    public SwitchOpenSourceStrategyResponse switchOpenSourceStrategy(SwitchOpenSourceStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.switchOpenSourceStrategy);
+    }
+
+    /**
+     * 修改租户级开源治理策略启用状态
+     *
+     * 修改租户级开源治理策略启用状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchOpenSourceStrategyRequest 请求对象
+     * @return SyncInvoker<SwitchOpenSourceStrategyRequest, SwitchOpenSourceStrategyResponse>
+     */
+    public SyncInvoker<SwitchOpenSourceStrategyRequest, SwitchOpenSourceStrategyResponse> switchOpenSourceStrategyInvoker(
+        SwitchOpenSourceStrategyRequest request) {
+        return new SyncInvoker<SwitchOpenSourceStrategyRequest, SwitchOpenSourceStrategyResponse>(request,
+            CodeArtsPipelineMeta.switchOpenSourceStrategy, hcClient);
+    }
+
+    /**
+     * 开关规则集
+     *
+     * 修改规则集状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchStrategyRequest 请求对象
+     * @return SwitchStrategyResponse
+     */
+    public SwitchStrategyResponse switchStrategy(SwitchStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.switchStrategy);
+    }
+
+    /**
+     * 开关规则集
+     *
+     * 修改规则集状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchStrategyRequest 请求对象
+     * @return SyncInvoker<SwitchStrategyRequest, SwitchStrategyResponse>
+     */
+    public SyncInvoker<SwitchStrategyRequest, SwitchStrategyResponse> switchStrategyInvoker(
+        SwitchStrategyRequest request) {
+        return new SyncInvoker<SwitchStrategyRequest, SwitchStrategyResponse>(request,
+            CodeArtsPipelineMeta.switchStrategy, hcClient);
+    }
+
+    /**
+     * 更新基础插件
+     *
+     * 更新基础插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBasicPluginRequest 请求对象
+     * @return UpdateBasicPluginResponse
+     */
+    public UpdateBasicPluginResponse updateBasicPlugin(UpdateBasicPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.updateBasicPlugin);
+    }
+
+    /**
+     * 更新基础插件
+     *
+     * 更新基础插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBasicPluginRequest 请求对象
+     * @return SyncInvoker<UpdateBasicPluginRequest, UpdateBasicPluginResponse>
+     */
+    public SyncInvoker<UpdateBasicPluginRequest, UpdateBasicPluginResponse> updateBasicPluginInvoker(
+        UpdateBasicPluginRequest request) {
+        return new SyncInvoker<UpdateBasicPluginRequest, UpdateBasicPluginResponse>(request,
+            CodeArtsPipelineMeta.updateBasicPlugin, hcClient);
+    }
+
+    /**
+     * 修改租户级开源治理策略
+     *
+     * 修改租户级开源治理策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateOpenSourceStrategyRequest 请求对象
+     * @return UpdateOpenSourceStrategyResponse
+     */
+    public UpdateOpenSourceStrategyResponse updateOpenSourceStrategy(UpdateOpenSourceStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.updateOpenSourceStrategy);
+    }
+
+    /**
+     * 修改租户级开源治理策略
+     *
+     * 修改租户级开源治理策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateOpenSourceStrategyRequest 请求对象
+     * @return SyncInvoker<UpdateOpenSourceStrategyRequest, UpdateOpenSourceStrategyResponse>
+     */
+    public SyncInvoker<UpdateOpenSourceStrategyRequest, UpdateOpenSourceStrategyResponse> updateOpenSourceStrategyInvoker(
+        UpdateOpenSourceStrategyRequest request) {
+        return new SyncInvoker<UpdateOpenSourceStrategyRequest, UpdateOpenSourceStrategyResponse>(request,
+            CodeArtsPipelineMeta.updateOpenSourceStrategy, hcClient);
+    }
+
+    /**
+     * 更新流水线分组
+     *
+     * 更新流水线分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePipelineGroupRequest 请求对象
+     * @return UpdatePipelineGroupResponse
+     */
+    public UpdatePipelineGroupResponse updatePipelineGroup(UpdatePipelineGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.updatePipelineGroup);
+    }
+
+    /**
+     * 更新流水线分组
+     *
+     * 更新流水线分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePipelineGroupRequest 请求对象
+     * @return SyncInvoker<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse>
+     */
+    public SyncInvoker<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse> updatePipelineGroupInvoker(
+        UpdatePipelineGroupRequest request) {
+        return new SyncInvoker<UpdatePipelineGroupRequest, UpdatePipelineGroupResponse>(request,
+            CodeArtsPipelineMeta.updatePipelineGroup, hcClient);
+    }
+
+    /**
+     * 更新流水线模板
+     *
+     * 更新流水线模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePipelineTemplateRequest 请求对象
+     * @return UpdatePipelineTemplateResponse
+     */
+    public UpdatePipelineTemplateResponse updatePipelineTemplate(UpdatePipelineTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.updatePipelineTemplate);
+    }
+
+    /**
+     * 更新流水线模板
+     *
+     * 更新流水线模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePipelineTemplateRequest 请求对象
+     * @return SyncInvoker<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse>
+     */
+    public SyncInvoker<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse> updatePipelineTemplateInvoker(
+        UpdatePipelineTemplateRequest request) {
+        return new SyncInvoker<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse>(request,
+            CodeArtsPipelineMeta.updatePipelineTemplate, hcClient);
+    }
+
+    /**
+     * 更新规则
+     *
+     * 更新规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateRuleRequest 请求对象
+     * @return UpdateRuleResponse
+     */
+    public UpdateRuleResponse updateRule(UpdateRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.updateRule);
+    }
+
+    /**
+     * 更新规则
+     *
+     * 更新规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateRuleRequest 请求对象
+     * @return SyncInvoker<UpdateRuleRequest, UpdateRuleResponse>
+     */
+    public SyncInvoker<UpdateRuleRequest, UpdateRuleResponse> updateRuleInvoker(UpdateRuleRequest request) {
+        return new SyncInvoker<UpdateRuleRequest, UpdateRuleResponse>(request, CodeArtsPipelineMeta.updateRule,
+            hcClient);
+    }
+
+    /**
+     * 修改规则集
+     *
+     * 修改规则集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateStrategyRequest 请求对象
+     * @return UpdateStrategyResponse
+     */
+    public UpdateStrategyResponse updateStrategy(UpdateStrategyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.updateStrategy);
+    }
+
+    /**
+     * 修改规则集
+     *
+     * 修改规则集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateStrategyRequest 请求对象
+     * @return SyncInvoker<UpdateStrategyRequest, UpdateStrategyResponse>
+     */
+    public SyncInvoker<UpdateStrategyRequest, UpdateStrategyResponse> updateStrategyInvoker(
+        UpdateStrategyRequest request) {
+        return new SyncInvoker<UpdateStrategyRequest, UpdateStrategyResponse>(request,
+            CodeArtsPipelineMeta.updateStrategy, hcClient);
+    }
+
+    /**
+     * 上传基础插件
+     *
+     * 上传基础插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadBasicPluginRequest 请求对象
+     * @return UploadBasicPluginResponse
+     */
+    public UploadBasicPluginResponse uploadBasicPlugin(UploadBasicPluginRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.uploadBasicPlugin);
+    }
+
+    /**
+     * 上传基础插件
+     *
+     * 上传基础插件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadBasicPluginRequest 请求对象
+     * @return SyncInvoker<UploadBasicPluginRequest, UploadBasicPluginResponse>
+     */
+    public SyncInvoker<UploadBasicPluginRequest, UploadBasicPluginResponse> uploadBasicPluginInvoker(
+        UploadBasicPluginRequest request) {
+        return new SyncInvoker<UploadBasicPluginRequest, UploadBasicPluginResponse>(request,
+            CodeArtsPipelineMeta.uploadBasicPlugin, hcClient);
+    }
+
+    /**
+     * 更新插件图标
+     *
+     * 更新插件图标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadPluginIconRequest 请求对象
+     * @return UploadPluginIconResponse
+     */
+    public UploadPluginIconResponse uploadPluginIcon(UploadPluginIconRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.uploadPluginIcon);
+    }
+
+    /**
+     * 更新插件图标
+     *
+     * 更新插件图标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadPluginIconRequest 请求对象
+     * @return SyncInvoker<UploadPluginIconRequest, UploadPluginIconResponse>
+     */
+    public SyncInvoker<UploadPluginIconRequest, UploadPluginIconResponse> uploadPluginIconInvoker(
+        UploadPluginIconRequest request) {
+        return new SyncInvoker<UploadPluginIconRequest, UploadPluginIconResponse>(request,
+            CodeArtsPipelineMeta.uploadPluginIcon, hcClient);
+    }
+
+    /**
+     * 更新发布商图标
+     *
+     * 更新发布商图标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadPublisherIconRequest 请求对象
+     * @return UploadPublisherIconResponse
+     */
+    public UploadPublisherIconResponse uploadPublisherIcon(UploadPublisherIconRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.uploadPublisherIcon);
+    }
+
+    /**
+     * 更新发布商图标
+     *
+     * 更新发布商图标
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadPublisherIconRequest 请求对象
+     * @return SyncInvoker<UploadPublisherIconRequest, UploadPublisherIconResponse>
+     */
+    public SyncInvoker<UploadPublisherIconRequest, UploadPublisherIconResponse> uploadPublisherIconInvoker(
+        UploadPublisherIconRequest request) {
+        return new SyncInvoker<UploadPublisherIconRequest, UploadPublisherIconResponse>(request,
+            CodeArtsPipelineMeta.uploadPublisherIcon, hcClient);
     }
 
 }

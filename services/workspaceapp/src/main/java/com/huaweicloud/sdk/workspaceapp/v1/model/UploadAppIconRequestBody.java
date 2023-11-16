@@ -57,9 +57,7 @@ public class UploadAppIconRequestBody implements SdkFormDataBody {
 
             private static final long serialVersionUID = 1L;
             {
-                if (data != null) {
-                    put("data", data);
-                }
+                put("data", data);
             }
         };
     }

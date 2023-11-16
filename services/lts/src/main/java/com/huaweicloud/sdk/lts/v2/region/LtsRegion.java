@@ -57,6 +57,8 @@ public class LtsRegion {
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://lts.eu-west-101.myhuaweicloud.eu");
 
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://lts.tr-west-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("LTS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -83,6 +85,7 @@ public class LtsRegion {
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("ae-ad-1", AE_AD_1);
         map.put("eu-west-101", EU_WEST_101);
+        map.put("tr-west-1", TR_WEST_1);
         return Collections.unmodifiableMap(map);
     }
 

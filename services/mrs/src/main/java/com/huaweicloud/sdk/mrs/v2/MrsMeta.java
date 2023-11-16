@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.mrs.v2.model.AddComponentRequest;
+import com.huaweicloud.sdk.mrs.v2.model.AddComponentResponse;
+import com.huaweicloud.sdk.mrs.v2.model.AddComponentsReq;
 import com.huaweicloud.sdk.mrs.v2.model.AgencyMappingArray;
 import com.huaweicloud.sdk.mrs.v2.model.AutoScalingPolicyV2;
 import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsRequest;
@@ -498,6 +501,37 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateClusterReq.class),
             f -> f.withMarshaller(UpdateClusterNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddComponentRequest, AddComponentResponse> addComponent = genForaddComponent();
+
+    private static HttpRequestDef<AddComponentRequest, AddComponentResponse> genForaddComponent() {
+        // basic
+        HttpRequestDef.Builder<AddComponentRequest, AddComponentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddComponentRequest.class, AddComponentResponse.class)
+                .withName("AddComponent")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/components")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddComponentRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<AddComponentsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddComponentsReq.class),
+            f -> f.withMarshaller(AddComponentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

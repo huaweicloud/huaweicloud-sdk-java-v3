@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 预定义合规包模板参数详情。
@@ -29,6 +32,11 @@ public class TemplateParameterDefinition {
     @JsonProperty(value = "default_value")
 
     private Object defaultValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allowed_values")
+
+    private List<Object> allowedValues = null;
 
     /**
      * 预定义合规包模板参数类型。
@@ -186,6 +194,39 @@ public class TemplateParameterDefinition {
         this.defaultValue = defaultValue;
     }
 
+    public TemplateParameterDefinition withAllowedValues(List<Object> allowedValues) {
+        this.allowedValues = allowedValues;
+        return this;
+    }
+
+    public TemplateParameterDefinition addAllowedValuesItem(Object allowedValuesItem) {
+        if (this.allowedValues == null) {
+            this.allowedValues = new ArrayList<>();
+        }
+        this.allowedValues.add(allowedValuesItem);
+        return this;
+    }
+
+    public TemplateParameterDefinition withAllowedValues(Consumer<List<Object>> allowedValuesSetter) {
+        if (this.allowedValues == null) {
+            this.allowedValues = new ArrayList<>();
+        }
+        allowedValuesSetter.accept(this.allowedValues);
+        return this;
+    }
+
+    /**
+     * 预定义合规包模板参数允许值列表
+     * @return allowedValues
+     */
+    public List<Object> getAllowedValues() {
+        return allowedValues;
+    }
+
+    public void setAllowedValues(List<Object> allowedValues) {
+        this.allowedValues = allowedValues;
+    }
+
     public TemplateParameterDefinition withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -213,12 +254,13 @@ public class TemplateParameterDefinition {
         }
         TemplateParameterDefinition that = (TemplateParameterDefinition) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.defaultValue, that.defaultValue) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.defaultValue, that.defaultValue)
+            && Objects.equals(this.allowedValues, that.allowedValues) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, defaultValue, type);
+        return Objects.hash(name, description, defaultValue, allowedValues, type);
     }
 
     @Override
@@ -228,6 +270,7 @@ public class TemplateParameterDefinition {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    defaultValue: ").append(toIndentedString(defaultValue)).append("\n");
+        sb.append("    allowedValues: ").append(toIndentedString(allowedValues)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();

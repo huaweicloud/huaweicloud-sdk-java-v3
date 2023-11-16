@@ -31,7 +31,7 @@ public class ShowJobListByProjectIdRequest {
     }
 
     /**
-     * CodeArts项目ID，32位数字、小写字母组合。[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)
+     * CodeArts项目ID，32位数字、小写字母组合。
      * @return projectId
      */
     public String getProjectId() {

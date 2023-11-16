@@ -27,6 +27,11 @@ public class ListPipelinesPagePipelines {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_name")
+
+    private String projectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "component_id")
 
     private String componentId;
@@ -110,6 +115,23 @@ public class ListPipelinesPagePipelines {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
+    }
+
+    public ListPipelinesPagePipelines withProjectName(String projectName) {
+        this.projectName = projectName;
+        return this;
+    }
+
+    /**
+     * 项目名称
+     * @return projectName
+     */
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 
     public ListPipelinesPagePipelines withComponentId(String componentId) {
@@ -250,8 +272,9 @@ public class ListPipelinesPagePipelines {
         }
         ListPipelinesPagePipelines that = (ListPipelinesPagePipelines) obj;
         return Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.componentId, that.componentId)
-            && Objects.equals(this.isPublish, that.isPublish) && Objects.equals(this.isCollect, that.isCollect)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.componentId, that.componentId) && Objects.equals(this.isPublish, that.isPublish)
+            && Objects.equals(this.isCollect, that.isCollect)
             && Objects.equals(this.manifestVersion, that.manifestVersion)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.latestRun, that.latestRun)
             && Objects.equals(this.convertSign, that.convertSign);
@@ -262,6 +285,7 @@ public class ListPipelinesPagePipelines {
         return Objects.hash(pipelineId,
             name,
             projectId,
+            projectName,
             componentId,
             isPublish,
             isCollect,
@@ -278,6 +302,7 @@ public class ListPipelinesPagePipelines {
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
         sb.append("    isPublish: ").append(toIndentedString(isPublish)).append("\n");
         sb.append("    isCollect: ").append(toIndentedString(isCollect)).append("\n");

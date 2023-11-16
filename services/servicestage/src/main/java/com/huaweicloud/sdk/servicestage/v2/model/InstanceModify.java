@@ -33,7 +33,7 @@ public class InstanceModify {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration")
 
-    private Map<String, Object> _configuration = null;
+    private InstanceConfiguration _configuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -117,36 +117,29 @@ public class InstanceModify {
         this.artifacts = artifacts;
     }
 
-    public InstanceModify withConfiguration(Map<String, Object> _configuration) {
+    public InstanceModify withConfiguration(InstanceConfiguration _configuration) {
         this._configuration = _configuration;
         return this;
     }
 
-    public InstanceModify putConfigurationItem(String key, Object _configurationItem) {
+    public InstanceModify withConfiguration(Consumer<InstanceConfiguration> _configurationSetter) {
         if (this._configuration == null) {
-            this._configuration = new HashMap<>();
+            this._configuration = new InstanceConfiguration();
+            _configurationSetter.accept(this._configuration);
         }
-        this._configuration.put(key, _configurationItem);
-        return this;
-    }
 
-    public InstanceModify withConfiguration(Consumer<Map<String, Object>> _configurationSetter) {
-        if (this._configuration == null) {
-            this._configuration = new HashMap<>();
-        }
-        _configurationSetter.accept(this._configuration);
         return this;
     }
 
     /**
-     * 应用配置，如环境变量。
+     * Get _configuration
      * @return _configuration
      */
-    public Map<String, Object> getConfiguration() {
+    public InstanceConfiguration getConfiguration() {
         return _configuration;
     }
 
-    public void setConfiguration(Map<String, Object> _configuration) {
+    public void setConfiguration(InstanceConfiguration _configuration) {
         this._configuration = _configuration;
     }
 

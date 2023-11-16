@@ -20,6 +20,9 @@ import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipReq;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchActionDesktopsReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersReq;
@@ -30,6 +33,9 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsReq;
@@ -1149,6 +1155,31 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchAddDesktopsTagsRequest, BatchAddDesktopsTagsResponse> batchAddDesktopsTags =
+        genForbatchAddDesktopsTags();
+
+    private static HttpRequestDef<BatchAddDesktopsTagsRequest, BatchAddDesktopsTagsResponse> genForbatchAddDesktopsTags() {
+        // basic
+        HttpRequestDef.Builder<BatchAddDesktopsTagsRequest, BatchAddDesktopsTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchAddDesktopsTagsRequest.class, BatchAddDesktopsTagsResponse.class)
+            .withName("BatchAddDesktopsTags")
+            .withUri("/v2/{project_id}/desktops/batch-tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchAddDesktopsTagsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchAddDesktopsTagsReq.class),
+            f -> f.withMarshaller(BatchAddDesktopsTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchChangeTagsRequest, BatchChangeTagsResponse> batchChangeTags =
         genForbatchChangeTags();
 
@@ -1173,6 +1204,31 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TagsReq.class),
             f -> f.withMarshaller(BatchChangeTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteDesktopsTagsRequest, BatchDeleteDesktopsTagsResponse> batchDeleteDesktopsTags =
+        genForbatchDeleteDesktopsTags();
+
+    private static HttpRequestDef<BatchDeleteDesktopsTagsRequest, BatchDeleteDesktopsTagsResponse> genForbatchDeleteDesktopsTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteDesktopsTagsRequest, BatchDeleteDesktopsTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeleteDesktopsTagsRequest.class, BatchDeleteDesktopsTagsResponse.class)
+            .withName("BatchDeleteDesktopsTags")
+            .withUri("/v2/{project_id}/desktops/batch-tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteDesktopsTagsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteDesktopsTagsReq.class),
+            f -> f.withMarshaller(BatchDeleteDesktopsTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

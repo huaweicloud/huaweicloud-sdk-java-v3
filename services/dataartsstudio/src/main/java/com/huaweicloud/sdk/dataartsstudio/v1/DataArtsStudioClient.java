@@ -417,6 +417,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardTemplateRequest;
@@ -6197,6 +6199,36 @@ public class DataArtsStudioClient {
         UpdateDirectoryRequest request) {
         return new SyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse>(request,
             DataArtsStudioMeta.updateDirectory, hcClient);
+    }
+
+    /**
+     * 修改作业名称
+     *
+     * 修改作业名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFactoryJobNameRequest 请求对象
+     * @return UpdateFactoryJobNameResponse
+     */
+    public UpdateFactoryJobNameResponse updateFactoryJobName(UpdateFactoryJobNameRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateFactoryJobName);
+    }
+
+    /**
+     * 修改作业名称
+     *
+     * 修改作业名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFactoryJobNameRequest 请求对象
+     * @return SyncInvoker<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse>
+     */
+    public SyncInvoker<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> updateFactoryJobNameInvoker(
+        UpdateFactoryJobNameRequest request) {
+        return new SyncInvoker<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse>(request,
+            DataArtsStudioMeta.updateFactoryJobName, hcClient);
     }
 
     /**

@@ -20,6 +20,11 @@ public class Compress {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_type")
+
+    private String fileType;
+
     public Compress withStatus(String status) {
         this.status = status;
         return this;
@@ -43,7 +48,7 @@ public class Compress {
     }
 
     /**
-     * 智能压缩类型（gzip：gzip压缩，br：br压缩）。
+     * 智能压缩类型（gzip：gzip压缩，brotli：brotli压缩）。
      * @return type
      */
     public String getType() {
@@ -52,6 +57,23 @@ public class Compress {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Compress withFileType(String fileType) {
+        this.fileType = fileType;
+        return this;
+    }
+
+    /**
+     * 压缩格式，内容总长度不可超过200个字符，  多种格式用“,”分割，每组内容不可超过50个字符， 开启状态下，首次传空时默认值为.js,.html,.css,.xml,.json,.shtml,.htm，否则为上次设置的结果。
+     * @return fileType
+     */
+    public String getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
     }
 
     @Override
@@ -63,12 +85,13 @@ public class Compress {
             return false;
         }
         Compress that = (Compress) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.fileType, that.fileType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, type);
+        return Objects.hash(status, type, fileType);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class Compress {
         sb.append("class Compress {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

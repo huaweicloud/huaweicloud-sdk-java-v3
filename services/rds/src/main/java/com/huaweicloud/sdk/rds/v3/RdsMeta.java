@@ -283,6 +283,9 @@ import com.huaweicloud.sdk.rds.v3.model.RestoreTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.RevokePostgresqlDbPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.RevokePostgresqlDbPrivilegeRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.RevokePostgresqlDbPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.RevokeRequest;
 import com.huaweicloud.sdk.rds.v3.model.RevokeRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.RevokeResponse;
@@ -6240,6 +6243,41 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPostgresqlExtensionRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RevokePostgresqlDbPrivilegeRequest, RevokePostgresqlDbPrivilegeResponse> revokePostgresqlDbPrivilege =
+        genForrevokePostgresqlDbPrivilege();
+
+    private static HttpRequestDef<RevokePostgresqlDbPrivilegeRequest, RevokePostgresqlDbPrivilegeResponse> genForrevokePostgresqlDbPrivilege() {
+        // basic
+        HttpRequestDef.Builder<RevokePostgresqlDbPrivilegeRequest, RevokePostgresqlDbPrivilegeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    RevokePostgresqlDbPrivilegeRequest.class,
+                    RevokePostgresqlDbPrivilegeResponse.class)
+                .withName("RevokePostgresqlDbPrivilege")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db_privilege")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokePostgresqlDbPrivilegeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<RevokePostgresqlDbPrivilegeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RevokePostgresqlDbPrivilegeRequestBody.class),
+            f -> f.withMarshaller(RevokePostgresqlDbPrivilegeRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

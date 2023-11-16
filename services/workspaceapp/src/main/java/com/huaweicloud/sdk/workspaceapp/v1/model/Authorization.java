@@ -12,6 +12,16 @@ import java.util.Objects;
 public class Authorization {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_id")
+
+    private String accountId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account")
 
     private String account;
@@ -47,6 +57,11 @@ public class Authorization {
     private AccountTypeEnum accountType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "platform_type")
+
+    private PlatformTypeEnum platformType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
     private String domain;
@@ -56,13 +71,47 @@ public class Authorization {
 
     private OffsetDateTime createAt;
 
+    public Authorization withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 授权ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Authorization withAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    /**
+     * 用户ID(或用户组ID)
+     * @return accountId
+     */
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
     public Authorization withAccount(String account) {
         this.account = account;
         return this;
     }
 
     /**
-     * 用户(组)
+     * 用户名(或用户组名)
      * @return account
      */
     public String getAccount() {
@@ -175,6 +224,23 @@ public class Authorization {
         this.accountType = accountType;
     }
 
+    public Authorization withPlatformType(PlatformTypeEnum platformType) {
+        this.platformType = platformType;
+        return this;
+    }
+
+    /**
+     * Get platformType
+     * @return platformType
+     */
+    public PlatformTypeEnum getPlatformType() {
+        return platformType;
+    }
+
+    public void setPlatformType(PlatformTypeEnum platformType) {
+        this.platformType = platformType;
+    }
+
     public Authorization withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -218,24 +284,38 @@ public class Authorization {
             return false;
         }
         Authorization that = (Authorization) obj;
-        return Objects.equals(this.account, that.account) && Objects.equals(this.appId, that.appId)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.account, that.account) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.appName, that.appName) && Objects.equals(this.appGroupId, that.appGroupId)
             && Objects.equals(this.appGroupName, that.appGroupName)
             && Objects.equals(this.authorizationType, that.authorizationType)
-            && Objects.equals(this.accountType, that.accountType) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.accountType, that.accountType)
+            && Objects.equals(this.platformType, that.platformType) && Objects.equals(this.domain, that.domain)
             && Objects.equals(this.createAt, that.createAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(account, appId, appName, appGroupId, appGroupName, authorizationType, accountType, domain, createAt);
+        return Objects.hash(id,
+            accountId,
+            account,
+            appId,
+            appName,
+            appGroupId,
+            appGroupName,
+            authorizationType,
+            accountType,
+            platformType,
+            domain,
+            createAt);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Authorization {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    account: ").append(toIndentedString(account)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
@@ -243,6 +323,7 @@ public class Authorization {
         sb.append("    appGroupName: ").append(toIndentedString(appGroupName)).append("\n");
         sb.append("    authorizationType: ").append(toIndentedString(authorizationType)).append("\n");
         sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+        sb.append("    platformType: ").append(toIndentedString(platformType)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
         sb.append("}");

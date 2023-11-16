@@ -13,7 +13,7 @@ public class GroupInfoSimple {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createdAt")
 
-    private Integer createdAt;
+    private Long createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
@@ -40,7 +40,7 @@ public class GroupInfoSimple {
 
     private Integer lag;
 
-    public GroupInfoSimple withCreatedAt(Integer createdAt) {
+    public GroupInfoSimple withCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -49,11 +49,11 @@ public class GroupInfoSimple {
      * 创建时间。
      * @return createdAt
      */
-    public Integer getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Integer createdAt) {
+    public void setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
     }
 

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * PolicyGroupForUpdate
+ * 修改的策略组详情
  */
 public class PolicyGroupForUpdate {
 

@@ -60,6 +60,11 @@ public class ResultsTopnBody {
 
     private Boolean isAgencyTransfer;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cold_storage")
+
+    private Double coldStorage;
+
     public ResultsTopnBody withIndexTraffic(Double indexTraffic) {
         this.indexTraffic = indexTraffic;
         return this;
@@ -230,6 +235,23 @@ public class ResultsTopnBody {
         this.isAgencyTransfer = isAgencyTransfer;
     }
 
+    public ResultsTopnBody withColdStorage(Double coldStorage) {
+        this.coldStorage = coldStorage;
+        return this;
+    }
+
+    /**
+     * 冷存储量
+     * @return coldStorage
+     */
+    public Double getColdStorage() {
+        return coldStorage;
+    }
+
+    public void setColdStorage(Double coldStorage) {
+        this.coldStorage = coldStorage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -246,7 +268,8 @@ public class ResultsTopnBody {
             && Objects.equals(this.logStreamName, that.logStreamName)
             && Objects.equals(this.basicTransfer, that.basicTransfer)
             && Objects.equals(this.seniorTransfer, that.seniorTransfer)
-            && Objects.equals(this.isAgencyTransfer, that.isAgencyTransfer);
+            && Objects.equals(this.isAgencyTransfer, that.isAgencyTransfer)
+            && Objects.equals(this.coldStorage, that.coldStorage);
     }
 
     @Override
@@ -260,7 +283,8 @@ public class ResultsTopnBody {
             logStreamName,
             basicTransfer,
             seniorTransfer,
-            isAgencyTransfer);
+            isAgencyTransfer,
+            coldStorage);
     }
 
     @Override
@@ -277,6 +301,7 @@ public class ResultsTopnBody {
         sb.append("    basicTransfer: ").append(toIndentedString(basicTransfer)).append("\n");
         sb.append("    seniorTransfer: ").append(toIndentedString(seniorTransfer)).append("\n");
         sb.append("    isAgencyTransfer: ").append(toIndentedString(isAgencyTransfer)).append("\n");
+        sb.append("    coldStorage: ").append(toIndentedString(coldStorage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

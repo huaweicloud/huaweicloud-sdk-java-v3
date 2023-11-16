@@ -596,7 +596,7 @@ public class LtsClient {
     }
 
     /**
-     * 查询Demo
+     * 创建日志收藏
      *
      * 创建日志收藏
      * 
@@ -610,7 +610,7 @@ public class LtsClient {
     }
 
     /**
-     * 查询Demo
+     * 创建日志收藏
      *
      * 创建日志收藏
      * 

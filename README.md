@@ -296,10 +296,12 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
 * [6. Troubleshooting](#6-troubleshooting-top)
     * [6.1 Access Log](#61-access-log-top)
     * [6.2 Original HTTP Listener](#62-original-http-listener-top)
-* [7. Retry For Request](#7-retry-for-request-top)
-    * [7.1 Synchronous Retry](#71-synchronous-retry-top)
-    * [7.2 Asynchronous Retry](#72-asynchronous-retry-top)
-    * [7.3 Typical Usage Scenarios](#73-typical-usage-scenarios-top)
+* [7. API Invoker](#7-api-invoker-top)
+    * [7.1 Custom request headers](#71-custom-request-headers-top)
+    * [7.2 Retry for request](#72-retry-for-request-top)
+        * [7.2.1 Synchronous Retry](#721-synchronous-retry-top)
+        * [7.2.2 Asynchronous Retry](#722-asynchronous-retry-top)
+        * [7.2.3 Typical Usage Scenarios](#723-typical-usage-scenarios-top)
 * [8. Upload and download files](#8-upload-and-download-files-top)
 
 ### 1. Client Configuration [:top:](#user-manual-top)
@@ -1120,7 +1122,34 @@ VpcClient vpcClient = VpcClient.newBuilder()
     .build();
 ```
 
-### 7. Retry For Request [:top:](#user-manual-top)
+### 7. API Invoker [:top:](#user-manual-top)
+
+#### 7.1 Custom request headers [:top:](#user-manual-top)
+
+You can flexibly configure request headers as needed. **Do not** specify common request headers such as `Host`, `Authorization`, `User-Agent`, `Content-Type` unless necessary, as this may cause the errors.
+
+``` java
+EcsClient client = EcsClient.newBuilder()
+    .withCredential(basicCredentials)
+    .withRegion(EcsRegion.CN_NORTH_4)
+    .withHttpConfig(config)
+    .build();
+
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    ShowJobResponse response = client.showJobInvoker(request)
+    // custom request headers
+    .addHeader("key1", "value1")
+    .addHeader("key2", "value2")
+    .invoke();
+    logger.info(response.toString());
+} catch (SdkException e) {
+    logger.error("", e);
+}
+```
+
+#### 7.2 Retry for request [:top:](#user-manual-top)
 
 When a request encounters a network exception or flow control on the interface, the request needs to be retried. The
 Java SDK provides the retry method for our users which could be used to the requests of `GET` HTTP method. The retry
@@ -1154,7 +1183,7 @@ public static <ResT> BiFunction<ResT, SdkException, Boolean> defaultRetryConditi
 
 Now let's begin to introduce how could you use retry for different scenarios.
 
-#### 7.1 Synchronous Retry [:top:](#user-manual-top)
+##### 7.2.1 Synchronous Retry [:top:](#user-manual-top)
 
 If you want to use retry in synchronous client, you could use `invoker()` method in `{Service}Client`.
 
@@ -1184,7 +1213,7 @@ try {
 }
 ```
 
-#### 7.2 Asynchronous Retry [:top:](#user-manual-top)
+##### 7.2.2 Asynchronous Retry [:top:](#user-manual-top)
 
 If you want to use retry in asynchronous client, you could use `invoker()` method in `{Service}Client`.
 
@@ -1214,7 +1243,7 @@ try {
 }
 ```
 
-#### 7.3 Typical Usage Scenarios [:top:](#user-manual-top)
+##### 7.2.3 Typical Usage Scenarios [:top:](#user-manual-top)
 
 **Scenario 1**: If the response status code of the interface is 500(Server Error) or 429(Server Flow Control), retry for
 the request, and the code would be like the following:

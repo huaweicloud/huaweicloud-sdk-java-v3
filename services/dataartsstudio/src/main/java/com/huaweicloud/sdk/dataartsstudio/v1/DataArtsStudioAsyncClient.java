@@ -417,6 +417,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardTemplateRequest;
@@ -6263,6 +6265,37 @@ public class DataArtsStudioAsyncClient {
         UpdateDirectoryRequest request) {
         return new AsyncInvoker<UpdateDirectoryRequest, UpdateDirectoryResponse>(request,
             DataArtsStudioMeta.updateDirectory, hcClient);
+    }
+
+    /**
+     * 修改作业名称
+     *
+     * 修改作业名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFactoryJobNameRequest 请求对象
+     * @return CompletableFuture<UpdateFactoryJobNameResponse>
+     */
+    public CompletableFuture<UpdateFactoryJobNameResponse> updateFactoryJobNameAsync(
+        UpdateFactoryJobNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateFactoryJobName);
+    }
+
+    /**
+     * 修改作业名称
+     *
+     * 修改作业名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateFactoryJobNameRequest 请求对象
+     * @return AsyncInvoker<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse>
+     */
+    public AsyncInvoker<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> updateFactoryJobNameAsyncInvoker(
+        UpdateFactoryJobNameRequest request) {
+        return new AsyncInvoker<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse>(request,
+            DataArtsStudioMeta.updateFactoryJobName, hcClient);
     }
 
     /**

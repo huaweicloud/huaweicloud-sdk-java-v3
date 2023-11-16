@@ -21,6 +21,16 @@ import java.util.function.Consumer;
 public class ShowFunctionConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "func_id")
+
+    private String funcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_urn")
 
     private String funcUrn;
@@ -552,6 +562,40 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     @JsonProperty(value = "custom_image")
 
     private CustomImage customImage;
+
+    public ShowFunctionConfigResponse withFuncId(String funcId) {
+        this.funcId = funcId;
+        return this;
+    }
+
+    /**
+     * 函数id，唯一标识函数。
+     * @return funcId
+     */
+    public String getFuncId() {
+        return funcId;
+    }
+
+    public void setFuncId(String funcId) {
+        this.funcId = funcId;
+    }
+
+    public ShowFunctionConfigResponse withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 资源id。
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
 
     public ShowFunctionConfigResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -1377,7 +1421,8 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             return false;
         }
         ShowFunctionConfigResponse that = (ShowFunctionConfigResponse) obj;
-        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName)
+        return Objects.equals(this.funcId, that.funcId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.namespace, that.namespace)
             && Objects.equals(this.projectName, that.projectName) && Objects.equals(this._package, that._package)
             && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.timeout, that.timeout)
@@ -1410,7 +1455,9 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn,
+        return Objects.hash(funcId,
+            resourceId,
+            funcUrn,
             funcName,
             domainId,
             namespace,
@@ -1459,6 +1506,8 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowFunctionConfigResponse {\n");
+        sb.append("    funcId: ").append(toIndentedString(funcId)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    funcUrn: ").append(toIndentedString(funcUrn)).append("\n");
         sb.append("    funcName: ").append(toIndentedString(funcName)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");

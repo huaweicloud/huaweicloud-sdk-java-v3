@@ -45,8 +45,6 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsResponse;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresRequest;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
@@ -715,36 +713,6 @@ public class RabbitMQClient {
         ShowMaintainWindowsRequest request) {
         return new SyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>(request,
             RabbitMQMeta.showMaintainWindows, hcClient);
-    }
-
-    /**
-     * 查询RabbitMQ产品规格核数
-     *
-     * 查询RabbitMQ产品规格核数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowRabbitMqProductCoresRequest 请求对象
-     * @return ShowRabbitMqProductCoresResponse
-     */
-    public ShowRabbitMqProductCoresResponse showRabbitMqProductCores(ShowRabbitMqProductCoresRequest request) {
-        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showRabbitMqProductCores);
-    }
-
-    /**
-     * 查询RabbitMQ产品规格核数
-     *
-     * 查询RabbitMQ产品规格核数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowRabbitMqProductCoresRequest 请求对象
-     * @return SyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse>
-     */
-    public SyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> showRabbitMqProductCoresInvoker(
-        ShowRabbitMqProductCoresRequest request) {
-        return new SyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse>(request,
-            RabbitMQMeta.showRabbitMqProductCores, hcClient);
     }
 
     /**

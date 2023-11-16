@@ -16,13 +16,18 @@ public class CreateAppServersResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
     public CreateAppServersResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
     /**
-     * 对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态。
+     * 对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态,按需购买返回该参数。
      * @return jobId
      */
     public String getJobId() {
@@ -31,6 +36,23 @@ public class CreateAppServersResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public CreateAppServersResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单号，创建包年包月的弹性云服务器时返回该参数。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     @Override
@@ -42,12 +64,12 @@ public class CreateAppServersResponse extends SdkResponse {
             return false;
         }
         CreateAppServersResponse that = (CreateAppServersResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, orderId);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class CreateAppServersResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAppServersResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -16,9 +16,9 @@ public class SysTag {
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "values")
+    @JsonProperty(value = "value")
 
-    private String values;
+    private String value;
 
     public SysTag withKey(String key) {
         this.key = key;
@@ -37,21 +37,21 @@ public class SysTag {
         this.key = key;
     }
 
-    public SysTag withValues(String values) {
-        this.values = values;
+    public SysTag withValue(String value) {
+        this.value = value;
         return this;
     }
 
     /**
      * 标签值。
-     * @return values
+     * @return value
      */
-    public String getValues() {
-        return values;
+    public String getValue() {
+        return value;
     }
 
-    public void setValues(String values) {
-        this.values = values;
+    public void setValue(String value) {
+        this.value = value;
     }
 
     @Override
@@ -63,12 +63,12 @@ public class SysTag {
             return false;
         }
         SysTag that = (SysTag) obj;
-        return Objects.equals(this.key, that.key) && Objects.equals(this.values, that.values);
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, values);
+        return Objects.hash(key, value);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class SysTag {
         StringBuilder sb = new StringBuilder();
         sb.append("class SysTag {\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
-        sb.append("    values: ").append(toIndentedString(values)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");
         return sb.toString();
     }

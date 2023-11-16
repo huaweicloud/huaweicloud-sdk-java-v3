@@ -11,6 +11,11 @@ import java.util.Objects;
 public class AccountInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account")
 
     private String account;
@@ -35,13 +40,35 @@ public class AccountInfo {
 
     private String telephoneNumber;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "platform_type")
+
+    private PlatformTypeEnum platformType;
+
+    public AccountInfo withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 用户ID(或用户组ID)，根据 account_type 参数决定值类型 对于用户组类型，必须传入用户组ID `USER` - 用户ID `USER_GROUP` - 用户组ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public AccountInfo withAccount(String account) {
         this.account = account;
         return this;
     }
 
     /**
-     * 用户(组)
+     * 用户名(或用户组名)，根据 account_type 参数决定值类型 `USER` - 用户名 `USER_GROUP` - 用户组名
      * @return account
      */
     public String getAccount() {
@@ -120,6 +147,23 @@ public class AccountInfo {
         this.telephoneNumber = telephoneNumber;
     }
 
+    public AccountInfo withPlatformType(PlatformTypeEnum platformType) {
+        this.platformType = platformType;
+        return this;
+    }
+
+    /**
+     * Get platformType
+     * @return platformType
+     */
+    public PlatformTypeEnum getPlatformType() {
+        return platformType;
+    }
+
+    public void setPlatformType(PlatformTypeEnum platformType) {
+        this.platformType = platformType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -129,25 +173,28 @@ public class AccountInfo {
             return false;
         }
         AccountInfo that = (AccountInfo) obj;
-        return Objects.equals(this.account, that.account) && Objects.equals(this.accountType, that.accountType)
-            && Objects.equals(this.domain, that.domain) && Objects.equals(this.email, that.email)
-            && Objects.equals(this.telephoneNumber, that.telephoneNumber);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.accountType, that.accountType) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.telephoneNumber, that.telephoneNumber)
+            && Objects.equals(this.platformType, that.platformType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(account, accountType, domain, email, telephoneNumber);
+        return Objects.hash(id, account, accountType, domain, email, telephoneNumber, platformType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccountInfo {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    account: ").append(toIndentedString(account)).append("\n");
         sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("    telephoneNumber: ").append(toIndentedString(telephoneNumber)).append("\n");
+        sb.append("    platformType: ").append(toIndentedString(platformType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

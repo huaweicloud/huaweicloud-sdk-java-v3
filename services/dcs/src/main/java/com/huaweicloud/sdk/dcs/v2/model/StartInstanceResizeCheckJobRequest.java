@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -14,6 +15,11 @@ public class StartInstanceResizeCheckJobRequest {
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private StartInstanceResizeCheckJobRequestBody body;
 
     public StartInstanceResizeCheckJobRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -32,6 +38,32 @@ public class StartInstanceResizeCheckJobRequest {
         this.instanceId = instanceId;
     }
 
+    public StartInstanceResizeCheckJobRequest withBody(StartInstanceResizeCheckJobRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public StartInstanceResizeCheckJobRequest withBody(Consumer<StartInstanceResizeCheckJobRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new StartInstanceResizeCheckJobRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public StartInstanceResizeCheckJobRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(StartInstanceResizeCheckJobRequestBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +73,12 @@ public class StartInstanceResizeCheckJobRequest {
             return false;
         }
         StartInstanceResizeCheckJobRequest that = (StartInstanceResizeCheckJobRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId);
+        return Objects.hash(instanceId, body);
     }
 
     @Override
@@ -54,6 +86,7 @@ public class StartInstanceResizeCheckJobRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class StartInstanceResizeCheckJobRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

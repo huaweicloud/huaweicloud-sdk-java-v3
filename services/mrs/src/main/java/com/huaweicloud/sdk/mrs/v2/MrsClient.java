@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.mrs.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.mrs.v2.model.AddComponentRequest;
+import com.huaweicloud.sdk.mrs.v2.model.AddComponentResponse;
 import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsRequest;
 import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlRequest;
@@ -443,6 +445,34 @@ public class MrsClient {
         UpdateClusterNameRequest request) {
         return new SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>(request, MrsMeta.updateClusterName,
             hcClient);
+    }
+
+    /**
+     * 集群添加组件
+     *
+     * 集群添加组件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddComponentRequest 请求对象
+     * @return AddComponentResponse
+     */
+    public AddComponentResponse addComponent(AddComponentRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.addComponent);
+    }
+
+    /**
+     * 集群添加组件
+     *
+     * 集群添加组件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddComponentRequest 请求对象
+     * @return SyncInvoker<AddComponentRequest, AddComponentResponse>
+     */
+    public SyncInvoker<AddComponentRequest, AddComponentResponse> addComponentInvoker(AddComponentRequest request) {
+        return new SyncInvoker<AddComponentRequest, AddComponentResponse>(request, MrsMeta.addComponent, hcClient);
     }
 
     /**

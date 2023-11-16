@@ -30,6 +30,11 @@ public class ListAppGroupAuthorizationRequest {
 
     private String account;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_type")
+
+    private String accountType;
+
     public ListAppGroupAuthorizationRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -91,7 +96,7 @@ public class ListAppGroupAuthorizationRequest {
     }
 
     /**
-     * 应用授权的用户(组)，精确查询。
+     * 应用授权的用户(组)名称，精确查询。
      * @return account
      */
     public String getAccount() {
@@ -100,6 +105,23 @@ public class ListAppGroupAuthorizationRequest {
 
     public void setAccount(String account) {
         this.account = account;
+    }
+
+    public ListAppGroupAuthorizationRequest withAccountType(String accountType) {
+        this.accountType = accountType;
+        return this;
+    }
+
+    /**
+     * 应用授权的用户(组)类型 * 'USER' - 用户 * 'USER_GROUP' - 用户组
+     * @return accountType
+     */
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
     @Override
@@ -112,12 +134,13 @@ public class ListAppGroupAuthorizationRequest {
         }
         ListAppGroupAuthorizationRequest that = (ListAppGroupAuthorizationRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.appGroupId, that.appGroupId) && Objects.equals(this.account, that.account);
+            && Objects.equals(this.appGroupId, that.appGroupId) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.accountType, that.accountType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, appGroupId, account);
+        return Objects.hash(limit, offset, appGroupId, account, accountType);
     }
 
     @Override
@@ -128,6 +151,7 @@ public class ListAppGroupAuthorizationRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    appGroupId: ").append(toIndentedString(appGroupId)).append("\n");
         sb.append("    account: ").append(toIndentedString(account)).append("\n");
+        sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

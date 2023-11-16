@@ -1,17 +1,37 @@
 package com.huaweicloud.sdk.codeartsbuild.v3;
 
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplatesRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateTemplatesResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DeleteBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DeleteBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DeleteTemplatesRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DeleteTemplatesResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableNoticeRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableNoticeResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildLogRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildLogResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadLogByRecordIdRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadLogByRecordIdResponse;
-import com.huaweicloud.sdk.codeartsbuild.v3.model.ResumeBuildJobRequest;
-import com.huaweicloud.sdk.codeartsbuild.v3.model.ResumeBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadTaskLogRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadTaskLogResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.EnableBuildJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.EnableBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListJobConfigRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListJobConfigResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListNoticeRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListNoticeResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListTemplatesRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowFlowGraphRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowFlowGraphResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowHistoryDetailsRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowHistoryDetailsResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdRequest;
@@ -26,10 +46,20 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListHistoryRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListHistoryResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListPeriodHistoryResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowOutputInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowOutputInfoResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordDetailRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordDetailResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordInfoRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.StopBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.StopJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateBuildJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNoticeRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.UpdateNoticeResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -45,6 +75,66 @@ public class CodeArtsBuildClient {
     public static ClientBuilder<CodeArtsBuildClient> newBuilder() {
         ClientBuilder<CodeArtsBuildClient> clientBuilder = new ClientBuilder<>(CodeArtsBuildClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 创建构建任务
+     *
+     * 创建构建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBuildJobRequest 请求对象
+     * @return CreateBuildJobResponse
+     */
+    public CreateBuildJobResponse createBuildJob(CreateBuildJobRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.createBuildJob);
+    }
+
+    /**
+     * 创建构建任务
+     *
+     * 创建构建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateBuildJobRequest 请求对象
+     * @return SyncInvoker<CreateBuildJobRequest, CreateBuildJobResponse>
+     */
+    public SyncInvoker<CreateBuildJobRequest, CreateBuildJobResponse> createBuildJobInvoker(
+        CreateBuildJobRequest request) {
+        return new SyncInvoker<CreateBuildJobRequest, CreateBuildJobResponse>(request, CodeArtsBuildMeta.createBuildJob,
+            hcClient);
+    }
+
+    /**
+     * 创建构建模板
+     *
+     * 创建构建模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTemplatesRequest 请求对象
+     * @return CreateTemplatesResponse
+     */
+    public CreateTemplatesResponse createTemplates(CreateTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.createTemplates);
+    }
+
+    /**
+     * 创建构建模板
+     *
+     * 创建构建模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateTemplatesRequest 请求对象
+     * @return SyncInvoker<CreateTemplatesRequest, CreateTemplatesResponse>
+     */
+    public SyncInvoker<CreateTemplatesRequest, CreateTemplatesResponse> createTemplatesInvoker(
+        CreateTemplatesRequest request) {
+        return new SyncInvoker<CreateTemplatesRequest, CreateTemplatesResponse>(request,
+            CodeArtsBuildMeta.createTemplates, hcClient);
     }
 
     /**
@@ -78,6 +168,36 @@ public class CodeArtsBuildClient {
     }
 
     /**
+     * 删除构建模板
+     *
+     * 删除构建模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTemplatesRequest 请求对象
+     * @return DeleteTemplatesResponse
+     */
+    public DeleteTemplatesResponse deleteTemplates(DeleteTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.deleteTemplates);
+    }
+
+    /**
+     * 删除构建模板
+     *
+     * 删除构建模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteTemplatesRequest 请求对象
+     * @return SyncInvoker<DeleteTemplatesRequest, DeleteTemplatesResponse>
+     */
+    public SyncInvoker<DeleteTemplatesRequest, DeleteTemplatesResponse> deleteTemplatesInvoker(
+        DeleteTemplatesRequest request) {
+        return new SyncInvoker<DeleteTemplatesRequest, DeleteTemplatesResponse>(request,
+            CodeArtsBuildMeta.deleteTemplates, hcClient);
+    }
+
+    /**
      * 禁用构建任务
      *
      * 禁用构建任务
@@ -105,6 +225,65 @@ public class CodeArtsBuildClient {
         DisableBuildJobRequest request) {
         return new SyncInvoker<DisableBuildJobRequest, DisableBuildJobResponse>(request,
             CodeArtsBuildMeta.disableBuildJob, hcClient);
+    }
+
+    /**
+     * 取消通知
+     *
+     * 取消通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisableNoticeRequest 请求对象
+     * @return DisableNoticeResponse
+     */
+    public DisableNoticeResponse disableNotice(DisableNoticeRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.disableNotice);
+    }
+
+    /**
+     * 取消通知
+     *
+     * 取消通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisableNoticeRequest 请求对象
+     * @return SyncInvoker<DisableNoticeRequest, DisableNoticeResponse>
+     */
+    public SyncInvoker<DisableNoticeRequest, DisableNoticeResponse> disableNoticeInvoker(DisableNoticeRequest request) {
+        return new SyncInvoker<DisableNoticeRequest, DisableNoticeResponse>(request, CodeArtsBuildMeta.disableNotice,
+            hcClient);
+    }
+
+    /**
+     * 下载全量构建日志
+     *
+     * 下载全量构建日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadBuildLogRequest 请求对象
+     * @return DownloadBuildLogResponse
+     */
+    public DownloadBuildLogResponse downloadBuildLog(DownloadBuildLogRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.downloadBuildLog);
+    }
+
+    /**
+     * 下载全量构建日志
+     *
+     * 下载全量构建日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadBuildLogRequest 请求对象
+     * @return SyncInvoker<DownloadBuildLogRequest, DownloadBuildLogResponse>
+     */
+    public SyncInvoker<DownloadBuildLogRequest, DownloadBuildLogResponse> downloadBuildLogInvoker(
+        DownloadBuildLogRequest request) {
+        return new SyncInvoker<DownloadBuildLogRequest, DownloadBuildLogResponse>(request,
+            CodeArtsBuildMeta.downloadBuildLog, hcClient);
     }
 
     /**
@@ -138,47 +317,33 @@ public class CodeArtsBuildClient {
     }
 
     /**
-     * 下载构建日志
+     * 下载全量构建步骤日志
      *
-     * 下载构建日志
+     * 下载全量构建步骤日志
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadLogByRecordIdRequest 请求对象
-     * @return DownloadLogByRecordIdResponse
+     * @param DownloadTaskLogRequest 请求对象
+     * @return DownloadTaskLogResponse
      */
-    public DownloadLogByRecordIdResponse downloadLogByRecordId(DownloadLogByRecordIdRequest request) {
-        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.downloadLogByRecordId);
+    public DownloadTaskLogResponse downloadTaskLog(DownloadTaskLogRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.downloadTaskLog);
     }
 
     /**
-     * 下载构建日志
+     * 下载全量构建步骤日志
      *
-     * 下载构建日志
+     * 下载全量构建步骤日志
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param DownloadLogByRecordIdRequest 请求对象
-     * @return SyncInvoker<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse>
+     * @param DownloadTaskLogRequest 请求对象
+     * @return SyncInvoker<DownloadTaskLogRequest, DownloadTaskLogResponse>
      */
-    public SyncInvoker<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse> downloadLogByRecordIdInvoker(
-        DownloadLogByRecordIdRequest request) {
-        return new SyncInvoker<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse>(request,
-            CodeArtsBuildMeta.downloadLogByRecordId, hcClient);
-    }
-
-    /**
-     * 恢复构建任务
-     *
-     * 恢复构建任务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ResumeBuildJobRequest 请求对象
-     * @return ResumeBuildJobResponse
-     */
-    public ResumeBuildJobResponse resumeBuildJob(ResumeBuildJobRequest request) {
-        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.resumeBuildJob);
+    public SyncInvoker<DownloadTaskLogRequest, DownloadTaskLogResponse> downloadTaskLogInvoker(
+        DownloadTaskLogRequest request) {
+        return new SyncInvoker<DownloadTaskLogRequest, DownloadTaskLogResponse>(request,
+            CodeArtsBuildMeta.downloadTaskLog, hcClient);
     }
 
     /**
@@ -188,19 +353,119 @@ public class CodeArtsBuildClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ResumeBuildJobRequest 请求对象
-     * @return SyncInvoker<ResumeBuildJobRequest, ResumeBuildJobResponse>
+     * @param EnableBuildJobRequest 请求对象
+     * @return EnableBuildJobResponse
      */
-    public SyncInvoker<ResumeBuildJobRequest, ResumeBuildJobResponse> resumeBuildJobInvoker(
-        ResumeBuildJobRequest request) {
-        return new SyncInvoker<ResumeBuildJobRequest, ResumeBuildJobResponse>(request, CodeArtsBuildMeta.resumeBuildJob,
+    public EnableBuildJobResponse enableBuildJob(EnableBuildJobRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.enableBuildJob);
+    }
+
+    /**
+     * 恢复构建任务
+     *
+     * 恢复构建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableBuildJobRequest 请求对象
+     * @return SyncInvoker<EnableBuildJobRequest, EnableBuildJobResponse>
+     */
+    public SyncInvoker<EnableBuildJobRequest, EnableBuildJobResponse> enableBuildJobInvoker(
+        EnableBuildJobRequest request) {
+        return new SyncInvoker<EnableBuildJobRequest, EnableBuildJobResponse>(request, CodeArtsBuildMeta.enableBuildJob,
+            hcClient);
+    }
+
+    /**
+     * 获取构建任务详情
+     *
+     * 获取构建任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobConfigRequest 请求对象
+     * @return ListJobConfigResponse
+     */
+    public ListJobConfigResponse listJobConfig(ListJobConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.listJobConfig);
+    }
+
+    /**
+     * 获取构建任务详情
+     *
+     * 获取构建任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobConfigRequest 请求对象
+     * @return SyncInvoker<ListJobConfigRequest, ListJobConfigResponse>
+     */
+    public SyncInvoker<ListJobConfigRequest, ListJobConfigResponse> listJobConfigInvoker(ListJobConfigRequest request) {
+        return new SyncInvoker<ListJobConfigRequest, ListJobConfigResponse>(request, CodeArtsBuildMeta.listJobConfig,
+            hcClient);
+    }
+
+    /**
+     * 查询通知
+     *
+     * 查询通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNoticeRequest 请求对象
+     * @return ListNoticeResponse
+     */
+    public ListNoticeResponse listNotice(ListNoticeRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.listNotice);
+    }
+
+    /**
+     * 查询通知
+     *
+     * 查询通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNoticeRequest 请求对象
+     * @return SyncInvoker<ListNoticeRequest, ListNoticeResponse>
+     */
+    public SyncInvoker<ListNoticeRequest, ListNoticeResponse> listNoticeInvoker(ListNoticeRequest request) {
+        return new SyncInvoker<ListNoticeRequest, ListNoticeResponse>(request, CodeArtsBuildMeta.listNotice, hcClient);
+    }
+
+    /**
+     * 查询构建模板
+     *
+     * 查询构建模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return ListTemplatesResponse
+     */
+    public ListTemplatesResponse listTemplates(ListTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.listTemplates);
+    }
+
+    /**
+     * 查询构建模板
+     *
+     * 查询构建模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTemplatesRequest 请求对象
+     * @return SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
+     */
+    public SyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesInvoker(ListTemplatesRequest request) {
+        return new SyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, CodeArtsBuildMeta.listTemplates,
             hcClient);
     }
 
     /**
      * 执行构建任务
      *
-     * 执行构建任务,可传自定义参数。
+     * 执行构建任务,可传自定义参数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -214,7 +479,7 @@ public class CodeArtsBuildClient {
     /**
      * 执行构建任务
      *
-     * 执行构建任务,可传自定义参数。
+     * 执行构建任务,可传自定义参数
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -435,17 +700,33 @@ public class CodeArtsBuildClient {
     }
 
     /**
-     * 获取构建记录信息
+     * 获取构建产物详情信息
      *
-     * 获取构建记录信息
+     * 获取构建产物详情信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordInfoRequest 请求对象
-     * @return ShowRecordInfoResponse
+     * @param ShowOutputInfoRequest 请求对象
+     * @return ShowOutputInfoResponse
      */
-    public ShowRecordInfoResponse showRecordInfo(ShowRecordInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.showRecordInfo);
+    public ShowOutputInfoResponse showOutputInfo(ShowOutputInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.showOutputInfo);
+    }
+
+    /**
+     * 获取构建产物详情信息
+     *
+     * 获取构建产物详情信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowOutputInfoRequest 请求对象
+     * @return SyncInvoker<ShowOutputInfoRequest, ShowOutputInfoResponse>
+     */
+    public SyncInvoker<ShowOutputInfoRequest, ShowOutputInfoResponse> showOutputInfoInvoker(
+        ShowOutputInfoRequest request) {
+        return new SyncInvoker<ShowOutputInfoRequest, ShowOutputInfoResponse>(request, CodeArtsBuildMeta.showOutputInfo,
+            hcClient);
     }
 
     /**
@@ -455,13 +736,27 @@ public class CodeArtsBuildClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowRecordInfoRequest 请求对象
-     * @return SyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse>
+     * @param ShowRecordDetailRequest 请求对象
+     * @return ShowRecordDetailResponse
      */
-    public SyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse> showRecordInfoInvoker(
-        ShowRecordInfoRequest request) {
-        return new SyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse>(request, CodeArtsBuildMeta.showRecordInfo,
-            hcClient);
+    public ShowRecordDetailResponse showRecordDetail(ShowRecordDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.showRecordDetail);
+    }
+
+    /**
+     * 获取构建记录信息
+     *
+     * 获取构建记录信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRecordDetailRequest 请求对象
+     * @return SyncInvoker<ShowRecordDetailRequest, ShowRecordDetailResponse>
+     */
+    public SyncInvoker<ShowRecordDetailRequest, ShowRecordDetailResponse> showRecordDetailInvoker(
+        ShowRecordDetailRequest request) {
+        return new SyncInvoker<ShowRecordDetailRequest, ShowRecordDetailResponse>(request,
+            CodeArtsBuildMeta.showRecordDetail, hcClient);
     }
 
     /**
@@ -491,6 +786,182 @@ public class CodeArtsBuildClient {
     public SyncInvoker<StopBuildJobRequest, StopBuildJobResponse> stopBuildJobInvoker(StopBuildJobRequest request) {
         return new SyncInvoker<StopBuildJobRequest, StopBuildJobResponse>(request, CodeArtsBuildMeta.stopBuildJob,
             hcClient);
+    }
+
+    /**
+     * 更新构建任务
+     *
+     * 更新构建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBuildJobRequest 请求对象
+     * @return UpdateBuildJobResponse
+     */
+    public UpdateBuildJobResponse updateBuildJob(UpdateBuildJobRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.updateBuildJob);
+    }
+
+    /**
+     * 更新构建任务
+     *
+     * 更新构建任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateBuildJobRequest 请求对象
+     * @return SyncInvoker<UpdateBuildJobRequest, UpdateBuildJobResponse>
+     */
+    public SyncInvoker<UpdateBuildJobRequest, UpdateBuildJobResponse> updateBuildJobInvoker(
+        UpdateBuildJobRequest request) {
+        return new SyncInvoker<UpdateBuildJobRequest, UpdateBuildJobResponse>(request, CodeArtsBuildMeta.updateBuildJob,
+            hcClient);
+    }
+
+    /**
+     * 更新通知
+     *
+     * 更新通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNoticeRequest 请求对象
+     * @return UpdateNoticeResponse
+     */
+    public UpdateNoticeResponse updateNotice(UpdateNoticeRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.updateNotice);
+    }
+
+    /**
+     * 更新通知
+     *
+     * 更新通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNoticeRequest 请求对象
+     * @return SyncInvoker<UpdateNoticeRequest, UpdateNoticeResponse>
+     */
+    public SyncInvoker<UpdateNoticeRequest, UpdateNoticeResponse> updateNoticeInvoker(UpdateNoticeRequest request) {
+        return new SyncInvoker<UpdateNoticeRequest, UpdateNoticeResponse>(request, CodeArtsBuildMeta.updateNotice,
+            hcClient);
+    }
+
+    /**
+     * 下载构建日志(待下线)
+     *
+     * 下载构建日志(待下线)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadLogByRecordIdRequest 请求对象
+     * @return DownloadLogByRecordIdResponse
+     */
+    public DownloadLogByRecordIdResponse downloadLogByRecordId(DownloadLogByRecordIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.downloadLogByRecordId);
+    }
+
+    /**
+     * 下载构建日志(待下线)
+     *
+     * 下载构建日志(待下线)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadLogByRecordIdRequest 请求对象
+     * @return SyncInvoker<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse>
+     */
+    public SyncInvoker<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse> downloadLogByRecordIdInvoker(
+        DownloadLogByRecordIdRequest request) {
+        return new SyncInvoker<DownloadLogByRecordIdRequest, DownloadLogByRecordIdResponse>(request,
+            CodeArtsBuildMeta.downloadLogByRecordId, hcClient);
+    }
+
+    /**
+     * 获取构建记录的有向无环图(待下线)
+     *
+     * 获取构建记录的有向无环图(待下线)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFlowGraphRequest 请求对象
+     * @return ShowFlowGraphResponse
+     */
+    public ShowFlowGraphResponse showFlowGraph(ShowFlowGraphRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.showFlowGraph);
+    }
+
+    /**
+     * 获取构建记录的有向无环图(待下线)
+     *
+     * 获取构建记录的有向无环图(待下线)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowFlowGraphRequest 请求对象
+     * @return SyncInvoker<ShowFlowGraphRequest, ShowFlowGraphResponse>
+     */
+    public SyncInvoker<ShowFlowGraphRequest, ShowFlowGraphResponse> showFlowGraphInvoker(ShowFlowGraphRequest request) {
+        return new SyncInvoker<ShowFlowGraphRequest, ShowFlowGraphResponse>(request, CodeArtsBuildMeta.showFlowGraph,
+            hcClient);
+    }
+
+    /**
+     * 获取构建记录信息(待下线)
+     *
+     * 获取构建记录信息(待下线)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRecordInfoRequest 请求对象
+     * @return ShowRecordInfoResponse
+     */
+    public ShowRecordInfoResponse showRecordInfo(ShowRecordInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.showRecordInfo);
+    }
+
+    /**
+     * 获取构建记录信息(待下线)
+     *
+     * 获取构建记录信息(待下线)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRecordInfoRequest 请求对象
+     * @return SyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse>
+     */
+    public SyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse> showRecordInfoInvoker(
+        ShowRecordInfoRequest request) {
+        return new SyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse>(request, CodeArtsBuildMeta.showRecordInfo,
+            hcClient);
+    }
+
+    /**
+     * 停止构建任务(待下线)
+     *
+     * 停止构建任务(待下线)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopJobRequest 请求对象
+     * @return StopJobResponse
+     */
+    public StopJobResponse stopJob(StopJobRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsBuildMeta.stopJob);
+    }
+
+    /**
+     * 停止构建任务(待下线)
+     *
+     * 停止构建任务(待下线)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopJobRequest 请求对象
+     * @return SyncInvoker<StopJobRequest, StopJobResponse>
+     */
+    public SyncInvoker<StopJobRequest, StopJobResponse> stopJobInvoker(StopJobRequest request) {
+        return new SyncInvoker<StopJobRequest, StopJobResponse>(request, CodeArtsBuildMeta.stopJob, hcClient);
     }
 
 }

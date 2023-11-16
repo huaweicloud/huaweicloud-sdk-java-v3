@@ -40,7 +40,7 @@ public class DeleteStorageClaimReq {
     }
 
     /**
-     * 批量唯一标识请求列表，一次请求数量区间 [1, 20]
+     * storage_claim_id,数量区间 [1, 50]
      * @return items
      */
     public List<String> getItems() {

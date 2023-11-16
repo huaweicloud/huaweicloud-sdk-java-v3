@@ -35,6 +35,7 @@ import com.huaweicloud.sdk.ocr.v1.model.MyanmarDriverLicenseRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.MyanmarIdcardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.PassportRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.PcrTestRecordRequestBody;
+import com.huaweicloud.sdk.ocr.v1.model.PeruIdCardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.QualificationCertificateRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.QuotaInvoiceRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.RealEstateCertificateRequestBody;
@@ -98,6 +99,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizePassportRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizePassportResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizePcrTestRecordRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizePcrTestRecordResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizePeruIdCardRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizePeruIdCardResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQualificationCertificateResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeQuotaInvoiceRequest;
@@ -1090,6 +1093,38 @@ public class OcrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PcrTestRecordRequestBody.class),
             f -> f.withMarshaller(RecognizePcrTestRecordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizePeruIdCardRequest, RecognizePeruIdCardResponse> recognizePeruIdCard =
+        genForrecognizePeruIdCard();
+
+    private static HttpRequestDef<RecognizePeruIdCardRequest, RecognizePeruIdCardResponse> genForrecognizePeruIdCard() {
+        // basic
+        HttpRequestDef.Builder<RecognizePeruIdCardRequest, RecognizePeruIdCardResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RecognizePeruIdCardRequest.class, RecognizePeruIdCardResponse.class)
+                .withName("RecognizePeruIdCard")
+                .withUri("/v2/{project_id}/ocr/peru-id-card")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizePeruIdCardRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<PeruIdCardRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PeruIdCardRequestBody.class),
+            f -> f.withMarshaller(RecognizePeruIdCardRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

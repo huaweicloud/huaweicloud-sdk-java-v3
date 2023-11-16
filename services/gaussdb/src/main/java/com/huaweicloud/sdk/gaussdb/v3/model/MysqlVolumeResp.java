@@ -13,9 +13,9 @@ public class MysqlVolumeResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private String size;
+    private Integer size;
 
-    public MysqlVolumeResp withSize(String size) {
+    public MysqlVolumeResp withSize(Integer size) {
         this.size = size;
         return this;
     }
@@ -24,11 +24,11 @@ public class MysqlVolumeResp {
      * 磁盘大小。单位GB。  取值范围：10~128000，为10的整数倍。
      * @return size
      */
-    public String getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 

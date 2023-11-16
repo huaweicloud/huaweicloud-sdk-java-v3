@@ -40,7 +40,7 @@ public class DeleteUserStorageAttachmentReq {
     }
 
     /**
-     * 批量唯一标识请求列表，一次请求数量区间 [1, 200]
+     * 用户名，请求数量区间 [1, 200]
      * @return items
      */
     public List<String> getItems() {

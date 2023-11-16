@@ -221,6 +221,8 @@ import com.huaweicloud.sdk.rds.v3.model.RestoreTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.RevokePostgresqlDbPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.RevokePostgresqlDbPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.RevokeRequest;
 import com.huaweicloud.sdk.rds.v3.model.RevokeResponse;
 import com.huaweicloud.sdk.rds.v3.model.RevokeSqlserverDbUserPrivilegeRequest;
@@ -4720,6 +4722,36 @@ public class RdsClient {
         ListPostgresqlExtensionRequest request) {
         return new SyncInvoker<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse>(request,
             RdsMeta.listPostgresqlExtension, hcClient);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     *
+     * 解除数据库帐号权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokePostgresqlDbPrivilegeRequest 请求对象
+     * @return RevokePostgresqlDbPrivilegeResponse
+     */
+    public RevokePostgresqlDbPrivilegeResponse revokePostgresqlDbPrivilege(RevokePostgresqlDbPrivilegeRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.revokePostgresqlDbPrivilege);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     *
+     * 解除数据库帐号权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokePostgresqlDbPrivilegeRequest 请求对象
+     * @return SyncInvoker<RevokePostgresqlDbPrivilegeRequest, RevokePostgresqlDbPrivilegeResponse>
+     */
+    public SyncInvoker<RevokePostgresqlDbPrivilegeRequest, RevokePostgresqlDbPrivilegeResponse> revokePostgresqlDbPrivilegeInvoker(
+        RevokePostgresqlDbPrivilegeRequest request) {
+        return new SyncInvoker<RevokePostgresqlDbPrivilegeRequest, RevokePostgresqlDbPrivilegeResponse>(request,
+            RdsMeta.revokePostgresqlDbPrivilege, hcClient);
     }
 
     /**

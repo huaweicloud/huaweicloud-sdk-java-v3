@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersRequest;
@@ -19,6 +21,8 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsRequest;
@@ -908,6 +912,36 @@ public class WorkspaceClient {
     }
 
     /**
+     * 批量添加多个桌面标签
+     *
+     * 同时对多个桌面批量添加标签，如果创建的标签已经存在（key相同）则覆，最大支持100个桌面，每个桌面最大20个标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAddDesktopsTagsRequest 请求对象
+     * @return BatchAddDesktopsTagsResponse
+     */
+    public BatchAddDesktopsTagsResponse batchAddDesktopsTags(BatchAddDesktopsTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.batchAddDesktopsTags);
+    }
+
+    /**
+     * 批量添加多个桌面标签
+     *
+     * 同时对多个桌面批量添加标签，如果创建的标签已经存在（key相同）则覆，最大支持100个桌面，每个桌面最大20个标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAddDesktopsTagsRequest 请求对象
+     * @return SyncInvoker<BatchAddDesktopsTagsRequest, BatchAddDesktopsTagsResponse>
+     */
+    public SyncInvoker<BatchAddDesktopsTagsRequest, BatchAddDesktopsTagsResponse> batchAddDesktopsTagsInvoker(
+        BatchAddDesktopsTagsRequest request) {
+        return new SyncInvoker<BatchAddDesktopsTagsRequest, BatchAddDesktopsTagsResponse>(request,
+            WorkspaceMeta.batchAddDesktopsTags, hcClient);
+    }
+
+    /**
      * 批量添加删除标签
      *
      * 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功
@@ -935,6 +969,36 @@ public class WorkspaceClient {
         BatchChangeTagsRequest request) {
         return new SyncInvoker<BatchChangeTagsRequest, BatchChangeTagsResponse>(request, WorkspaceMeta.batchChangeTags,
             hcClient);
+    }
+
+    /**
+     * 批量删除多个桌面标签
+     *
+     * 同时对多个桌面批量添加标签，删除时，如果删除的标签不存在默认处理成功，最大支持100个桌面，每个桌面最大20个标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteDesktopsTagsRequest 请求对象
+     * @return BatchDeleteDesktopsTagsResponse
+     */
+    public BatchDeleteDesktopsTagsResponse batchDeleteDesktopsTags(BatchDeleteDesktopsTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.batchDeleteDesktopsTags);
+    }
+
+    /**
+     * 批量删除多个桌面标签
+     *
+     * 同时对多个桌面批量添加标签，删除时，如果删除的标签不存在默认处理成功，最大支持100个桌面，每个桌面最大20个标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteDesktopsTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteDesktopsTagsRequest, BatchDeleteDesktopsTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteDesktopsTagsRequest, BatchDeleteDesktopsTagsResponse> batchDeleteDesktopsTagsInvoker(
+        BatchDeleteDesktopsTagsRequest request) {
+        return new SyncInvoker<BatchDeleteDesktopsTagsRequest, BatchDeleteDesktopsTagsResponse>(request,
+            WorkspaceMeta.batchDeleteDesktopsTags, hcClient);
     }
 
     /**

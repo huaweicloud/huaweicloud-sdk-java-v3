@@ -11,6 +11,11 @@ import java.util.Objects;
 public class Assignment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_statement_id")
+
+    private String policyStatementId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attach")
 
     private String attach;
@@ -20,10 +25,22 @@ public class Assignment {
 
     private AttachType attachType;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policy_statement_id")
+    public Assignment withPolicyStatementId(String policyStatementId) {
+        this.policyStatementId = policyStatementId;
+        return this;
+    }
 
-    private String policyStatementId;
+    /**
+     * 策略ID
+     * @return policyStatementId
+     */
+    public String getPolicyStatementId() {
+        return policyStatementId;
+    }
+
+    public void setPolicyStatementId(String policyStatementId) {
+        this.policyStatementId = policyStatementId;
+    }
 
     public Assignment withAttach(String attach) {
         this.attach = attach;
@@ -59,23 +76,6 @@ public class Assignment {
         this.attachType = attachType;
     }
 
-    public Assignment withPolicyStatementId(String policyStatementId) {
-        this.policyStatementId = policyStatementId;
-        return this;
-    }
-
-    /**
-     * 策略ID
-     * @return policyStatementId
-     */
-    public String getPolicyStatementId() {
-        return policyStatementId;
-    }
-
-    public void setPolicyStatementId(String policyStatementId) {
-        this.policyStatementId = policyStatementId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,22 +85,22 @@ public class Assignment {
             return false;
         }
         Assignment that = (Assignment) obj;
-        return Objects.equals(this.attach, that.attach) && Objects.equals(this.attachType, that.attachType)
-            && Objects.equals(this.policyStatementId, that.policyStatementId);
+        return Objects.equals(this.policyStatementId, that.policyStatementId)
+            && Objects.equals(this.attach, that.attach) && Objects.equals(this.attachType, that.attachType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(attach, attachType, policyStatementId);
+        return Objects.hash(policyStatementId, attach, attachType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Assignment {\n");
+        sb.append("    policyStatementId: ").append(toIndentedString(policyStatementId)).append("\n");
         sb.append("    attach: ").append(toIndentedString(attach)).append("\n");
         sb.append("    attachType: ").append(toIndentedString(attachType)).append("\n");
-        sb.append("    policyStatementId: ").append(toIndentedString(policyStatementId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

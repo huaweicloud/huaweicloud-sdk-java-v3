@@ -221,6 +221,8 @@ import com.huaweicloud.sdk.rds.v3.model.RestoreTablesRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.RevokePostgresqlDbPrivilegeRequest;
+import com.huaweicloud.sdk.rds.v3.model.RevokePostgresqlDbPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.RevokeRequest;
 import com.huaweicloud.sdk.rds.v3.model.RevokeResponse;
 import com.huaweicloud.sdk.rds.v3.model.RevokeSqlserverDbUserPrivilegeRequest;
@@ -4785,6 +4787,37 @@ public class RdsAsyncClient {
         ListPostgresqlExtensionRequest request) {
         return new AsyncInvoker<ListPostgresqlExtensionRequest, ListPostgresqlExtensionResponse>(request,
             RdsMeta.listPostgresqlExtension, hcClient);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     *
+     * 解除数据库帐号权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokePostgresqlDbPrivilegeRequest 请求对象
+     * @return CompletableFuture<RevokePostgresqlDbPrivilegeResponse>
+     */
+    public CompletableFuture<RevokePostgresqlDbPrivilegeResponse> revokePostgresqlDbPrivilegeAsync(
+        RevokePostgresqlDbPrivilegeRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.revokePostgresqlDbPrivilege);
+    }
+
+    /**
+     * 解除数据库帐号权限
+     *
+     * 解除数据库帐号权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RevokePostgresqlDbPrivilegeRequest 请求对象
+     * @return AsyncInvoker<RevokePostgresqlDbPrivilegeRequest, RevokePostgresqlDbPrivilegeResponse>
+     */
+    public AsyncInvoker<RevokePostgresqlDbPrivilegeRequest, RevokePostgresqlDbPrivilegeResponse> revokePostgresqlDbPrivilegeAsyncInvoker(
+        RevokePostgresqlDbPrivilegeRequest request) {
+        return new AsyncInvoker<RevokePostgresqlDbPrivilegeRequest, RevokePostgresqlDbPrivilegeResponse>(request,
+            RdsMeta.revokePostgresqlDbPrivilege, hcClient);
     }
 
     /**

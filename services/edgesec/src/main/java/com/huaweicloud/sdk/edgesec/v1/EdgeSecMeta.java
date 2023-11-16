@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.edgesec.v1.model.ApplyWafPolicyRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ApplyWafPolicyRequestBody;
 import com.huaweicloud.sdk.edgesec.v1.model.ApplyWafPolicyResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.CreateCertificateRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.CreateCertificateRequestBody;
+import com.huaweicloud.sdk.edgesec.v1.model.CreateCertificateResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.CreateEdgeDDoSDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.CreateEdgeDDoSDomainsRequestBody;
 import com.huaweicloud.sdk.edgesec.v1.model.CreateEdgeDDoSDomainsResponse;
@@ -17,6 +20,8 @@ import com.huaweicloud.sdk.edgesec.v1.model.CreateEdgeWafDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.CreatePolicyRequestBody;
 import com.huaweicloud.sdk.edgesec.v1.model.CreatePolicyResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.DeleteCertificateRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.DeleteCertificateResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.DeleteEdgeDDoSDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.DeleteEdgeDDoSDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.DeleteEdgeWafDomainsRequest;
@@ -25,6 +30,8 @@ import com.huaweicloud.sdk.edgesec.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.DeletePolicyResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ListCdnDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ListCdnDomainsResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.ListCertificatesRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.ListCertificatesResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeDDoSDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeDDoSDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeSecSubscriptionRequest;
@@ -33,12 +40,17 @@ import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeWafDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ListEdgeWafDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ListPolicyResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.ShowCertificateRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.ShowCertificateResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowEdgeWafDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowEdgeWafDomainsResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowStatisticsEventRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowStatisticsEventResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowStatisticsTrafficRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.ShowStatisticsTrafficResponse;
+import com.huaweicloud.sdk.edgesec.v1.model.UpdateCertificateRequest;
+import com.huaweicloud.sdk.edgesec.v1.model.UpdateCertificateRequestBody;
+import com.huaweicloud.sdk.edgesec.v1.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.edgesec.v1.model.UpdateEdgeDDoSDomainsRequest;
 import com.huaweicloud.sdk.edgesec.v1.model.UpdateEdgeDDoSDomainsRequestBody;
 import com.huaweicloud.sdk.edgesec.v1.model.UpdateEdgeDDoSDomainsResponse;
@@ -333,6 +345,45 @@ public class EdgeSecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
+        genForcreateCertificate();
+
+    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForcreateCertificate() {
+        // basic
+        HttpRequestDef.Builder<CreateCertificateRequest, CreateCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCertificateRequest.class, CreateCertificateResponse.class)
+                .withName("CreateCertificate")
+                .withUri("/v1/{project_id}/waf/certificate")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCertificateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<CreateCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCertificateRequestBody.class),
+            f -> f.withMarshaller(CreateCertificateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateEdgeWafDomainsRequest, CreateEdgeWafDomainsResponse> createEdgeWafDomains =
         genForcreateEdgeWafDomains();
 
@@ -389,6 +440,45 @@ public class EdgeSecMeta {
             TypeCasts.uncheckedConversion(CreatePolicyRequestBody.class),
             f -> f.withMarshaller(CreatePolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
+        genFordeleteCertificate();
+
+    private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genFordeleteCertificate() {
+        // basic
+        HttpRequestDef.Builder<DeleteCertificateRequest, DeleteCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCertificateRequest.class, DeleteCertificateResponse.class)
+                .withName("DeleteCertificate")
+                .withUri("/v1/{project_id}/waf/certificate/{certificate_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertificateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
 
         // response
@@ -512,6 +602,73 @@ public class EdgeSecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
+        genForlistCertificates();
+
+    private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForlistCertificates() {
+        // basic
+        HttpRequestDef.Builder<ListCertificatesRequest, ListCertificatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCertificatesRequest.class, ListCertificatesResponse.class)
+                .withName("ListCertificates")
+                .withUri("/v1/{project_id}/waf/certificate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getPage, (req, v) -> {
+                req.setPage(v);
+            }));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getPagesize, (req, v) -> {
+                req.setPagesize(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Boolean>withRequestField("host",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getHost, (req, v) -> {
+                req.setHost(v);
+            }));
+        builder.<Integer>withRequestField("exp_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getExpStatus, (req, v) -> {
+                req.setExpStatus(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEdgeWafDomainsRequest, ListEdgeWafDomainsResponse> listEdgeWafDomains =
         genForlistEdgeWafDomains();
 
@@ -617,6 +774,45 @@ public class EdgeSecMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate =
+        genForshowCertificate();
+
+    private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForshowCertificate() {
+        // basic
+        HttpRequestDef.Builder<ShowCertificateRequest, ShowCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCertificateRequest.class, ShowCertificateResponse.class)
+                .withName("ShowCertificate")
+                .withUri("/v1/{project_id}/waf/certificate/{certificate_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowEdgeWafDomainsRequest, ShowEdgeWafDomainsResponse> showEdgeWafDomains =
         genForshowEdgeWafDomains();
 
@@ -642,6 +838,52 @@ public class EdgeSecMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEdgeWafDomainsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificate =
+        genForupdateCertificate();
+
+    private static HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> genForupdateCertificate() {
+        // basic
+        HttpRequestDef.Builder<UpdateCertificateRequest, UpdateCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCertificateRequest.class, UpdateCertificateResponse.class)
+                .withName("UpdateCertificate")
+                .withUri("/v1/{project_id}/waf/certificate/{certificate_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCertificateRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCertificateRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<UpdateCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateCertificateRequestBody.class),
+            f -> f.withMarshaller(UpdateCertificateRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

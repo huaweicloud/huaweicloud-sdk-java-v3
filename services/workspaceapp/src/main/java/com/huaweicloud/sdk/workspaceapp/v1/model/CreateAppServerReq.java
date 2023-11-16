@@ -78,6 +78,11 @@ public class CreateAppServerReq {
 
     private Boolean updateAccessAgent;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_server_extend_param")
+
+    private CreateServerExtendParam createServerExtendParam;
+
     public CreateAppServerReq withType(String type) {
         this.type = type;
         return this;
@@ -335,6 +340,33 @@ public class CreateAppServerReq {
         this.updateAccessAgent = updateAccessAgent;
     }
 
+    public CreateAppServerReq withCreateServerExtendParam(CreateServerExtendParam createServerExtendParam) {
+        this.createServerExtendParam = createServerExtendParam;
+        return this;
+    }
+
+    public CreateAppServerReq withCreateServerExtendParam(
+        Consumer<CreateServerExtendParam> createServerExtendParamSetter) {
+        if (this.createServerExtendParam == null) {
+            this.createServerExtendParam = new CreateServerExtendParam();
+            createServerExtendParamSetter.accept(this.createServerExtendParam);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get createServerExtendParam
+     * @return createServerExtendParam
+     */
+    public CreateServerExtendParam getCreateServerExtendParam() {
+        return createServerExtendParam;
+    }
+
+    public void setCreateServerExtendParam(CreateServerExtendParam createServerExtendParam) {
+        this.createServerExtendParam = createServerExtendParam;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -350,7 +382,8 @@ public class CreateAppServerReq {
             && Objects.equals(this.ouName, that.ouName) && Objects.equals(this.productId, that.productId)
             && Objects.equals(this.osType, that.osType) && Objects.equals(this.rootVolume, that.rootVolume)
             && Objects.equals(this.schedulerHints, that.schedulerHints) && Objects.equals(this.subnetId, that.subnetId)
-            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.updateAccessAgent, that.updateAccessAgent);
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.updateAccessAgent, that.updateAccessAgent)
+            && Objects.equals(this.createServerExtendParam, that.createServerExtendParam);
     }
 
     @Override
@@ -367,7 +400,8 @@ public class CreateAppServerReq {
             schedulerHints,
             subnetId,
             vpcId,
-            updateAccessAgent);
+            updateAccessAgent,
+            createServerExtendParam);
     }
 
     @Override
@@ -387,6 +421,7 @@ public class CreateAppServerReq {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    updateAccessAgent: ").append(toIndentedString(updateAccessAgent)).append("\n");
+        sb.append("    createServerExtendParam: ").append(toIndentedString(createServerExtendParam)).append("\n");
         sb.append("}");
         return sb.toString();
     }

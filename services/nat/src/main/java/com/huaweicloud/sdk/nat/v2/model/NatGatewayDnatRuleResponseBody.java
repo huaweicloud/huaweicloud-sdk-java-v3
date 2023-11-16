@@ -315,7 +315,7 @@ public class NatGatewayDnatRuleResponseBody {
     }
 
     /**
-     * DNAT规则的描述。长度限制为255。
+     * DNAT规则的描述。长度范围小于等于255个字符，不能包含<>
      * @return description
      */
     public String getDescription() {

@@ -289,18 +289,20 @@ public class Application {
     * [3.1 指定云服务 Endpoint 方式](#31-指定云服务-endpoint-方式-top)
     * [3.2 指定 Region 方式（推荐）](#32-指定-region-方式-推荐-top)
     * [3.3 自定义配置](#33-自定义配置-top)
-        * [3.3.1 IAM endpoint配置](#331-IAM-endpoint配置-top)
-        * [3.3.2 Region配置](#332-Region配置-top)
+        * [3.3.1 IAM endpoint配置](#331-iam-endpoint配置-top)
+        * [3.3.2 Region配置](#332-region配置-top)
 * [4. 发送请求并查看响应](#4-发送请求并查看响应-top)
     * [4.1 异常处理](#41-异常处理-top)
 * [5. 异步客户端使用](#5-异步客户端使用-top)
 * [6. 故障处理](#6-故障处理-top)
     * [6.1 访问日志](#61-访问日志-top)
     * [6.2 HTTP 监听器](#62-http-监听器-top)
-* [7. 请求重试](#7-请求重试-top)
-    * [7.1 同步客户端请求重试](#71-同步客户端请求重试-top)
-    * [7.2 异步客户端请求重试](#72-异步客户端请求重试-top)
-    * [7.3 典型重试场景调用示例](#73-典型重试场景调用示例-top)
+* [7. 接口调用器](#7-接口调用器-top)
+    * [7.1 自定义请求头](#71-自定义请求头-top)
+    * [7.2 请求重试](#72-请求重试-top)
+        * [7.2.1 同步客户端请求重试](#721-同步客户端请求重试-top)
+        * [7.2.2 异步客户端请求重试](#722-异步客户端请求重试-top)
+        * [7.2.3 典型重试场景调用示例](#723-典型重试场景调用示例-top)
 * [8. 文件上传与下载](#8-文件上传与下载-top)
 
 ### 1. 客户端连接参数 [:top:](#用户手册-top)
@@ -1111,7 +1113,34 @@ VpcClient vpcClient = VpcClient.newBuilder()
     .build();
 ```
 
-### 7. 请求重试 [:top:](#用户手册-top)
+### 7. 接口调用器 [:top:](#用户手册-top)
+
+#### 7.1 自定义请求头 [:top:](#用户手册-top)
+
+可以根据需要灵活地配置请求头域参数，非必要**请勿**指定诸如`Host`、`Authorization`、`User-Agent`、`Content-Type`等通用请求头，可能会导致接口调用错误。
+
+``` java
+EcsClient client = EcsClient.newBuilder()
+    .withCredential(basicCredentials)
+    .withRegion(EcsRegion.CN_NORTH_4)
+    .withHttpConfig(config)
+    .build();
+
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    ShowJobResponse response = client.showJobInvoker(request)
+    // 自定义请求头
+    .addHeader("key1", "value1")
+    .addHeader("key2", "value2")
+    .invoke();
+    logger.info(response.toString());
+} catch (SdkException e) {
+    logger.error("", e);
+}
+```
+
+#### 7.2 请求重试 [:top:](#用户手册-top)
 
 当请求遇到网络异常或者流控场景的时候，通常需要对请求进行重试。Java SDK 提供了请求重试的入口，可用于请求方式为 `GET`
 的请求。重试配置支持同步客户端和异步客户端，如需使用重试，需要配置最大重试次数、重试条件和重试策略。其中，
@@ -1140,7 +1169,7 @@ public static <ResT> BiFunction<ResT, SdkException, Boolean> defaultRetryConditi
 
 以下将针对不同的场景介绍重试的具体使用。
 
-#### 7.1 同步客户端请求重试 [:top:](#用户手册-top)
+##### 7.2.1 同步客户端请求重试 [:top:](#用户手册-top)
 
 在同步客户端中使用重试，需要使用 {Service}Client 中提供的 invoker 方法，SDK 对连接超时类的异常提供了默认的重试条件，用户可以直接调用。
 
@@ -1169,7 +1198,7 @@ try {
 }
 ```
 
-#### 7.2 异步客户端请求重试 [:top:](#用户手册-top)
+##### 7.2.2 异步客户端请求重试 [:top:](#用户手册-top)
 
 在异步客户端中使用重试，需要使用 {Service}Client 中提供的 invoker 方法，SDK 对连接超时类的异常提供了默认的重试条件，用户可以直接调用。
 
@@ -1198,7 +1227,7 @@ try {
 }
 ```
 
-#### 7.3 典型重试场景调用示例 [:top:](#用户手册-top)
+##### 7.2.3 典型重试场景调用示例 [:top:](#用户手册-top)
 
 **场景1**：当接口响应状态码为 500(服务器端异常) 或者 429(服务器端流控) 时，对请求进行重试。示例代码如下：
 

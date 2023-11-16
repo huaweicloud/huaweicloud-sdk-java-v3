@@ -45,8 +45,6 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsResponse;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresRequest;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
@@ -726,37 +724,6 @@ public class RabbitMQAsyncClient {
         ShowMaintainWindowsRequest request) {
         return new AsyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse>(request,
             RabbitMQMeta.showMaintainWindows, hcClient);
-    }
-
-    /**
-     * 查询RabbitMQ产品规格核数
-     *
-     * 查询RabbitMQ产品规格核数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowRabbitMqProductCoresRequest 请求对象
-     * @return CompletableFuture<ShowRabbitMqProductCoresResponse>
-     */
-    public CompletableFuture<ShowRabbitMqProductCoresResponse> showRabbitMqProductCoresAsync(
-        ShowRabbitMqProductCoresRequest request) {
-        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.showRabbitMqProductCores);
-    }
-
-    /**
-     * 查询RabbitMQ产品规格核数
-     *
-     * 查询RabbitMQ产品规格核数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowRabbitMqProductCoresRequest 请求对象
-     * @return AsyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse>
-     */
-    public AsyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> showRabbitMqProductCoresAsyncInvoker(
-        ShowRabbitMqProductCoresRequest request) {
-        return new AsyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse>(request,
-            RabbitMQMeta.showRabbitMqProductCores, hcClient);
     }
 
     /**

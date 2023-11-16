@@ -5,29 +5,312 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.obs.v1.model.CopyObjectRequest;
+import com.huaweicloud.sdk.obs.v1.model.CopyObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.CreateBucketRequest;
 import com.huaweicloud.sdk.obs.v1.model.CreateBucketRequestBody;
 import com.huaweicloud.sdk.obs.v1.model.CreateBucketResponse;
+import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainRequest;
+import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsRequest;
+import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsRequestBody;
+import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketCustomdomainRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketCustomdomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsRequest;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsResponse;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequestBody;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationResponse;
 
 @SuppressWarnings("unchecked")
 public class ObsMeta {
+
+    public static final HttpRequestDef<CopyObjectRequest, CopyObjectResponse> copyObject = genForcopyObject();
+
+    private static HttpRequestDef<CopyObjectRequest, CopyObjectResponse> genForcopyObject() {
+        // basic
+        HttpRequestDef.Builder<CopyObjectRequest, CopyObjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CopyObjectRequest.class, CopyObjectResponse.class)
+                .withName("CopyObject")
+                .withUri("/{object_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("object_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getObjectKey, (req, v) -> {
+                req.setObjectKey(v);
+            }));
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getBucketName, (req, v) -> {
+                req.setBucketName(v);
+            }));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            }));
+        builder.<String>withRequestField("x-obs-acl",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsAcl, (req, v) -> {
+                req.setXObsAcl(v);
+            }));
+        builder.<String>withRequestField("x-obs-grant-read",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsGrantRead, (req, v) -> {
+                req.setXObsGrantRead(v);
+            }));
+        builder.<String>withRequestField("x-obs-grant-read-acp",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsGrantReadAcp, (req, v) -> {
+                req.setXObsGrantReadAcp(v);
+            }));
+        builder.<String>withRequestField("x-obs-grant-write-acp",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsGrantWriteAcp, (req, v) -> {
+                req.setXObsGrantWriteAcp(v);
+            }));
+        builder.<String>withRequestField("x-obs-grant-full-control",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsGrantFullControl, (req, v) -> {
+                req.setXObsGrantFullControl(v);
+            }));
+        builder.<String>withRequestField("x-obs-copy-source",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsCopySource, (req, v) -> {
+                req.setXObsCopySource(v);
+            }));
+        builder.<CopyObjectRequest.XObsMetadataDirectiveEnum>withRequestField("x-obs-metadata-directive",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CopyObjectRequest.XObsMetadataDirectiveEnum.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsMetadataDirective, (req, v) -> {
+                req.setXObsMetadataDirective(v);
+            }));
+        builder.<String>withRequestField("x-obs-copy-source-if-match",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsCopySourceIfMatch, (req, v) -> {
+                req.setXObsCopySourceIfMatch(v);
+            }));
+        builder.<String>withRequestField("x-obs-copy-source-if-none-match",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsCopySourceIfNoneMatch, (req, v) -> {
+                req.setXObsCopySourceIfNoneMatch(v);
+            }));
+        builder.<String>withRequestField("x-obs-copy-source-if-unmodified-since",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsCopySourceIfUnmodifiedSince, (req, v) -> {
+                req.setXObsCopySourceIfUnmodifiedSince(v);
+            }));
+        builder.<String>withRequestField("x-obs-copy-source-if-modified-since",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsCopySourceIfModifiedSince, (req, v) -> {
+                req.setXObsCopySourceIfModifiedSince(v);
+            }));
+        builder.<String>withRequestField("x-obs-storage-class",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsStorageClass, (req, v) -> {
+                req.setXObsStorageClass(v);
+            }));
+        builder.<String>withRequestField("x-obs-persistent-headers",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsPersistentHeaders, (req, v) -> {
+                req.setXObsPersistentHeaders(v);
+            }));
+        builder.<String>withRequestField("x-obs-website-redirect-location",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsWebsiteRedirectLocation, (req, v) -> {
+                req.setXObsWebsiteRedirectLocation(v);
+            }));
+        builder.<String>withRequestField("x-obs-server-side-encryption",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsServerSideEncryption, (req, v) -> {
+                req.setXObsServerSideEncryption(v);
+            }));
+        builder.<String>withRequestField("x-obs-server-side-encryption-kms-key-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsServerSideEncryptionKmsKeyId, (req, v) -> {
+                req.setXObsServerSideEncryptionKmsKeyId(v);
+            }));
+        builder.<String>withRequestField("x-obs-server-side-encryption-customer-algorithm",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsServerSideEncryptionCustomerAlgorithm, (req, v) -> {
+                req.setXObsServerSideEncryptionCustomerAlgorithm(v);
+            }));
+        builder.<String>withRequestField("x-obs-server-side-encryption-customer-key",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsServerSideEncryptionCustomerKey, (req, v) -> {
+                req.setXObsServerSideEncryptionCustomerKey(v);
+            }));
+        builder.<String>withRequestField("x-obs-server-side-encryption-customer-key-MD5",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsServerSideEncryptionCustomerKeyMD5, (req, v) -> {
+                req.setXObsServerSideEncryptionCustomerKeyMD5(v);
+            }));
+        builder.<String>withRequestField("x-obs-copy-source-server-side-encryption-customer-algorithm",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsCopySourceServerSideEncryptionCustomerAlgorithm,
+                (req, v) -> {
+                    req.setXObsCopySourceServerSideEncryptionCustomerAlgorithm(v);
+                }));
+        builder.<String>withRequestField("x-obs-copy-source-server-side-encryption-customer-key",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsCopySourceServerSideEncryptionCustomerKey, (req, v) -> {
+                req.setXObsCopySourceServerSideEncryptionCustomerKey(v);
+            }));
+        builder.<String>withRequestField("x-obs-copy-source-server-side-encryption-customer-key-MD5",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getXObsCopySourceServerSideEncryptionCustomerKeyMD5, (req, v) -> {
+                req.setXObsCopySourceServerSideEncryptionCustomerKeyMD5(v);
+            }));
+        builder.<String>withRequestField("success_action_redirect",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyObjectRequest::getSuccessActionRedirect, (req, v) -> {
+                req.setSuccessActionRedirect(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getXObsId2, CopyObjectResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getXObsRequestId, CopyObjectResponse::setXObsRequestId));
+        builder.<String>withResponseField("x-obs-server-side-encryption",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getXObsServerSideEncryption,
+                CopyObjectResponse::setXObsServerSideEncryption));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getConnection, CopyObjectResponse::setConnection));
+        builder.<String>withResponseField("x-obs-server-side-encryption-customer-key-MD5",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getXObsServerSideEncryptionCustomerKeyMD5,
+                CopyObjectResponse::setXObsServerSideEncryptionCustomerKeyMD5));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getDate, CopyObjectResponse::setDate));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getEtag, CopyObjectResponse::setEtag));
+        builder.<String>withResponseField("x-obs-server-side-encryption-customer-algorithm",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getXObsServerSideEncryptionCustomerAlgorithm,
+                CopyObjectResponse::setXObsServerSideEncryptionCustomerAlgorithm));
+        builder.<String>withResponseField("x-obs-copy-source-version-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getXObsCopySourceVersionId,
+                CopyObjectResponse::setXObsCopySourceVersionId));
+        builder.<String>withResponseField("x-obs-storage-class",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getXObsStorageClass, CopyObjectResponse::setXObsStorageClass));
+        builder.<String>withResponseField("x-obs-server-side-encryption-kms-key-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getXObsServerSideEncryptionKmsKeyId,
+                CopyObjectResponse::setXObsServerSideEncryptionKmsKeyId));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getContentLength, CopyObjectResponse::setContentLength));
+        builder.<String>withResponseField("x-obs-version-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CopyObjectResponse::getXObsVersionId, CopyObjectResponse::setXObsVersionId));
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateBucketRequest, CreateBucketResponse> createBucket = genForcreateBucket();
 
@@ -263,6 +546,84 @@ public class ObsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteBucketCustomdomainRequest, DeleteBucketCustomdomainResponse> deleteBucketCustomdomain =
+        genFordeleteBucketCustomdomain();
+
+    private static HttpRequestDef<DeleteBucketCustomdomainRequest, DeleteBucketCustomdomainResponse> genFordeleteBucketCustomdomain() {
+        // basic
+        HttpRequestDef.Builder<DeleteBucketCustomdomainRequest, DeleteBucketCustomdomainResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteBucketCustomdomainRequest.class,
+                    DeleteBucketCustomdomainResponse.class)
+                .withName("DeleteBucketCustomdomain")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBucketCustomdomainRequest::getBucketName, (req, v) -> {
+                req.setBucketName(v);
+            }));
+        builder.<String>withRequestField("customdomain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBucketCustomdomainRequest::getCustomdomain, (req, v) -> {
+                req.setCustomdomain(v);
+            }));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBucketCustomdomainRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBucketCustomdomainResponse::getXObsId2,
+                DeleteBucketCustomdomainResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBucketCustomdomainResponse::getXObsRequestId,
+                DeleteBucketCustomdomainResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBucketCustomdomainResponse::getEtag,
+                DeleteBucketCustomdomainResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBucketCustomdomainResponse::getConnection,
+                DeleteBucketCustomdomainResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBucketCustomdomainResponse::getContentLength,
+                DeleteBucketCustomdomainResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteBucketCustomdomainResponse::getDate,
+                DeleteBucketCustomdomainResponse::setDate));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteObjectRequest, DeleteObjectResponse> deleteObject = genFordeleteObject();
 
     private static HttpRequestDef<DeleteObjectRequest, DeleteObjectResponse> genFordeleteObject() {
@@ -346,6 +707,162 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteObjectResponse::getXObsVersionId, DeleteObjectResponse::setXObsVersionId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteObjectsRequest, DeleteObjectsResponse> deleteObjects =
+        genFordeleteObjects();
+
+    private static HttpRequestDef<DeleteObjectsRequest, DeleteObjectsResponse> genFordeleteObjects() {
+        // basic
+        HttpRequestDef.Builder<DeleteObjectsRequest, DeleteObjectsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteObjectsRequest.class, DeleteObjectsResponse.class)
+                .withName("DeleteObjects")
+                .withUri("/")
+                .withContentType("application/xml");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteObjectsRequest::getBucketName, (req, v) -> {
+                req.setBucketName(v);
+            }));
+        builder.<String>withRequestField("delete",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteObjectsRequest::getDelete, (req, v) -> {
+                req.setDelete(v);
+            }));
+        builder.<String>withRequestField("Content-MD5",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteObjectsRequest::getContentMD5, (req, v) -> {
+                req.setContentMD5(v);
+            }));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteObjectsRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            }));
+        builder.<DeleteObjectsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteObjectsRequestBody.class),
+            f -> f.withMarshaller(DeleteObjectsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteObjectsResponse::getXObsId2, DeleteObjectsResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteObjectsResponse::getXObsRequestId, DeleteObjectsResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteObjectsResponse::getEtag, DeleteObjectsResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteObjectsResponse::getConnection, DeleteObjectsResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteObjectsResponse::getContentLength, DeleteObjectsResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteObjectsResponse::getDate, DeleteObjectsResponse::setDate));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetBucketCustomdomainRequest, GetBucketCustomdomainResponse> getBucketCustomdomain =
+        genForgetBucketCustomdomain();
+
+    private static HttpRequestDef<GetBucketCustomdomainRequest, GetBucketCustomdomainResponse> genForgetBucketCustomdomain() {
+        // basic
+        HttpRequestDef.Builder<GetBucketCustomdomainRequest, GetBucketCustomdomainResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, GetBucketCustomdomainRequest.class, GetBucketCustomdomainResponse.class)
+            .withName("GetBucketCustomdomain")
+            .withUri("/")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketCustomdomainRequest::getBucketName, (req, v) -> {
+                req.setBucketName(v);
+            }));
+        builder.<String>withRequestField("customdomain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketCustomdomainRequest::getCustomdomain, (req, v) -> {
+                req.setCustomdomain(v);
+            }));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketCustomdomainRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketCustomdomainResponse::getXObsId2,
+                GetBucketCustomdomainResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketCustomdomainResponse::getXObsRequestId,
+                GetBucketCustomdomainResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketCustomdomainResponse::getEtag, GetBucketCustomdomainResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketCustomdomainResponse::getConnection,
+                GetBucketCustomdomainResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketCustomdomainResponse::getContentLength,
+                GetBucketCustomdomainResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketCustomdomainResponse::getDate, GetBucketCustomdomainResponse::setDate));
         return builder.build();
     }
 
@@ -814,6 +1331,241 @@ public class ObsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GetObjectMetadataRequest, GetObjectMetadataResponse> getObjectMetadata =
+        genForgetObjectMetadata();
+
+    private static HttpRequestDef<GetObjectMetadataRequest, GetObjectMetadataResponse> genForgetObjectMetadata() {
+        // basic
+        HttpRequestDef.Builder<GetObjectMetadataRequest, GetObjectMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.HEAD, GetObjectMetadataRequest.class, GetObjectMetadataResponse.class)
+                .withName("GetObjectMetadata")
+                .withUri("/{object_key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("object_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getObjectKey, (req, v) -> {
+                req.setObjectKey(v);
+            }));
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getBucketName, (req, v) -> {
+                req.setBucketName(v);
+            }));
+        builder.<String>withRequestField("versionId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getVersionId, (req, v) -> {
+                req.setVersionId(v);
+            }));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            }));
+        builder.<String>withRequestField("Origin",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getOrigin, (req, v) -> {
+                req.setOrigin(v);
+            }));
+        builder.<String>withRequestField("Access-Control-Request-Headers",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getAccessControlRequestHeaders, (req, v) -> {
+                req.setAccessControlRequestHeaders(v);
+            }));
+        builder.<String>withRequestField("x-obs-server-side-encryption-customer-algorithm",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getXObsServerSideEncryptionCustomerAlgorithm, (req, v) -> {
+                req.setXObsServerSideEncryptionCustomerAlgorithm(v);
+            }));
+        builder.<String>withRequestField("x-obs-server-side-encryption-customer-key",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getXObsServerSideEncryptionCustomerKey, (req, v) -> {
+                req.setXObsServerSideEncryptionCustomerKey(v);
+            }));
+        builder.<String>withRequestField("x-obs-server-side-encryption-customer-key-MD5",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getXObsServerSideEncryptionCustomerKeyMD5, (req, v) -> {
+                req.setXObsServerSideEncryptionCustomerKeyMD5(v);
+            }));
+        builder.<String>withRequestField("success-action-redirect",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getSuccessActionRedirect, (req, v) -> {
+                req.setSuccessActionRedirect(v);
+            }));
+        builder.<Integer>withRequestField("x-obs-expires",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(GetObjectMetadataRequest::getXObsExpires, (req, v) -> {
+                req.setXObsExpires(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsId2, GetObjectMetadataResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsRequestId,
+                GetObjectMetadataResponse::setXObsRequestId));
+        builder.<String>withResponseField("x-obs-hash-crc64ecma",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsHashCrc64ecma,
+                GetObjectMetadataResponse::setXObsHashCrc64ecma));
+        builder.<String>withResponseField("Access-Control-Allow-Origin",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getAccessControlAllowOrigin,
+                GetObjectMetadataResponse::setAccessControlAllowOrigin));
+        builder.<String>withResponseField("x-obs-server-side-encryption",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsServerSideEncryption,
+                GetObjectMetadataResponse::setXObsServerSideEncryption));
+        builder.<String>withResponseField("x-obs-restore",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsRestore,
+                GetObjectMetadataResponse::setXObsRestore));
+        builder.<String>withResponseField("x-obs-object-type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsObjectType,
+                GetObjectMetadataResponse::setXObsObjectType));
+        builder.<Integer>withResponseField("x-obs-next-append-position",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsNextAppendPosition,
+                GetObjectMetadataResponse::setXObsNextAppendPosition));
+        builder.<String>withResponseField("Access-Control-Allow-Methods",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getAccessControlAllowMethods,
+                GetObjectMetadataResponse::setAccessControlAllowMethods));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getConnection, GetObjectMetadataResponse::setConnection));
+        builder.<String>withResponseField("x-obs-server-side-encryption-customer-key-MD5",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsServerSideEncryptionCustomerKeyMD5,
+                GetObjectMetadataResponse::setXObsServerSideEncryptionCustomerKeyMD5));
+        builder.<String>withResponseField("x-obs-expiration",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsExpiration,
+                GetObjectMetadataResponse::setXObsExpiration));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getDate, GetObjectMetadataResponse::setDate));
+        builder.<String>withResponseField("Access-Control-Allow-Headers",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getAccessControlAllowHeaders,
+                GetObjectMetadataResponse::setAccessControlAllowHeaders));
+        builder.<String>withResponseField("x-obs-uploadId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsUploadId,
+                GetObjectMetadataResponse::setXObsUploadId));
+        builder.<String>withResponseField("Access-Control-Expose-Headers",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getAccessControlExposeHeaders,
+                GetObjectMetadataResponse::setAccessControlExposeHeaders));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getEtag, GetObjectMetadataResponse::setEtag));
+        builder.<String>withResponseField("x-obs-server-side-encryption-customer-algorithm",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsServerSideEncryptionCustomerAlgorithm,
+                GetObjectMetadataResponse::setXObsServerSideEncryptionCustomerAlgorithm));
+        builder.<String>withResponseField("x-obs-storage-class",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsStorageClass,
+                GetObjectMetadataResponse::setXObsStorageClass));
+        builder.<String>withResponseField("x-obs-server-side-encryption-kms-key-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsServerSideEncryptionKmsKeyId,
+                GetObjectMetadataResponse::setXObsServerSideEncryptionKmsKeyId));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getContentLength,
+                GetObjectMetadataResponse::setContentLength));
+        builder.<Integer>withResponseField("Access-Control-Max-Age",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getAccessControlMaxAge,
+                GetObjectMetadataResponse::setAccessControlMaxAge));
+        builder.<String>withResponseField("x-obs-website-redirect-location",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsWebsiteRedirectLocation,
+                GetObjectMetadataResponse::setXObsWebsiteRedirectLocation));
+        builder.<String>withResponseField("x-obs-version-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetObjectMetadataResponse::getXObsVersionId,
+                GetObjectMetadataResponse::setXObsVersionId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBucketsRequest, ListBucketsResponse> listBuckets = genForlistBuckets();
 
     private static HttpRequestDef<ListBucketsRequest, ListBucketsResponse> genForlistBuckets() {
@@ -1098,6 +1850,79 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(PutObjectResponse::getXObsVersionId, PutObjectResponse::setXObsVersionId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse> setBucketCustomedomain =
+        genForsetBucketCustomedomain();
+
+    private static HttpRequestDef<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse> genForsetBucketCustomedomain() {
+        // basic
+        HttpRequestDef.Builder<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SetBucketCustomedomainRequest.class, SetBucketCustomedomainResponse.class)
+            .withName("SetBucketCustomedomain")
+            .withUri("/")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketCustomedomainRequest::getBucketName, (req, v) -> {
+                req.setBucketName(v);
+            }));
+        builder.<String>withRequestField("customdomain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketCustomedomainRequest::getCustomdomain, (req, v) -> {
+                req.setCustomdomain(v);
+            }));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketCustomedomainRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketCustomedomainResponse::getXObsId2,
+                SetBucketCustomedomainResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketCustomedomainResponse::getXObsRequestId,
+                SetBucketCustomedomainResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketCustomedomainResponse::getEtag, SetBucketCustomedomainResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketCustomedomainResponse::getConnection,
+                SetBucketCustomedomainResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketCustomedomainResponse::getContentLength,
+                SetBucketCustomedomainResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketCustomedomainResponse::getDate, SetBucketCustomedomainResponse::setDate));
         return builder.build();
     }
 

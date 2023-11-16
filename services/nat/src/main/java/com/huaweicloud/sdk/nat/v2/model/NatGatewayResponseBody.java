@@ -323,7 +323,7 @@ public class NatGatewayResponseBody {
     }
 
     /**
-     * 公网NAT网关实例的描述，长度限制为255。
+     * 公网NAT网关实例的描述，长度范围小于等于255个字符，不能包含<>
      * @return description
      */
     public String getDescription() {
@@ -502,7 +502,7 @@ public class NatGatewayResponseBody {
     }
 
     /**
-     * 订单信息。
+     * 订单信息。此字段只有在订购包周期资源时才会有订单信息，而在订购按需资源时则为空。
      * @return billingInfo
      */
     public String getBillingInfo() {

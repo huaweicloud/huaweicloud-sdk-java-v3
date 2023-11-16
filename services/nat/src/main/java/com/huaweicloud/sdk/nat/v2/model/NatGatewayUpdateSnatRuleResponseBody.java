@@ -294,7 +294,7 @@ public class NatGatewayUpdateSnatRuleResponseBody {
     }
 
     /**
-     * SNAT规则的描述，长度限制为255。
+     * SNAT规则的描述，长度范围小于等于255个字符，不能包含<>
      * @return description
      */
     public String getDescription() {

@@ -48,6 +48,11 @@ public class DmsKafkaForwarding {
 
     private String mechanism;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_protocol")
+
+    private String securityProtocol;
+
     public DmsKafkaForwarding withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
@@ -172,7 +177,7 @@ public class DmsKafkaForwarding {
     }
 
     /**
-     * **参数说明**：转发kafka关联的鉴权机制。 **取值范围**： - PAAS：非SASL鉴权。 - PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。
+     * **参数说明**：转发kafka关联的SASL认证机制。 **取值范围**： - PAAS：明文传输，此模式下为非数据加密传输模式，数据传输不安全，建议您使用更安全的数据加密模式。 - PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。一种简单的用户名密码校验机制，在SASL_PLAINTEXT场景下，不建议使用。 - SCRAM-SHA-512：SASL/SCRAM-SHA-512模式。需要填写对应的用户名密码信息。采用哈希算法对用户名与密码生成凭证，进行身份校验的安全认证机制，比PLAIN机制安全性更高。
      * @return mechanism
      */
     public String getMechanism() {
@@ -181,6 +186,23 @@ public class DmsKafkaForwarding {
 
     public void setMechanism(String mechanism) {
         this.mechanism = mechanism;
+    }
+
+    public DmsKafkaForwarding withSecurityProtocol(String securityProtocol) {
+        this.securityProtocol = securityProtocol;
+        return this;
+    }
+
+    /**
+     * **参数说明**：kafka传输安全协议，此字段不填默认为SASL_SSL。当mechanism为PAAS或不填时，该字段不生效。 **取值范围**： - SASL_SSL：采用SSL证书进行加密传输，支持帐号密码认证，安全性更高。 - SASL_PLAINTEXT：明文传输，支持帐号密码认证，性能更好，建议mechanism使用SCRAM-SHA-512机制。
+     * @return securityProtocol
+     */
+    public String getSecurityProtocol() {
+        return securityProtocol;
+    }
+
+    public void setSecurityProtocol(String securityProtocol) {
+        this.securityProtocol = securityProtocol;
     }
 
     @Override
@@ -195,12 +217,13 @@ public class DmsKafkaForwarding {
         return Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.addresses, that.addresses) && Objects.equals(this.topic, that.topic)
             && Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password)
-            && Objects.equals(this.mechanism, that.mechanism);
+            && Objects.equals(this.mechanism, that.mechanism)
+            && Objects.equals(this.securityProtocol, that.securityProtocol);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regionName, projectId, addresses, topic, username, password, mechanism);
+        return Objects.hash(regionName, projectId, addresses, topic, username, password, mechanism, securityProtocol);
     }
 
     @Override
@@ -214,6 +237,7 @@ public class DmsKafkaForwarding {
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    mechanism: ").append(toIndentedString(mechanism)).append("\n");
+        sb.append("    securityProtocol: ").append(toIndentedString(securityProtocol)).append("\n");
         sb.append("}");
         return sb.toString();
     }

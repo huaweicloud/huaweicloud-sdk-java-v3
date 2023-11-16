@@ -146,6 +146,11 @@ public class RecordInfoResult {
     private String finishTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration")
+
+    private Float duration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_status")
 
     private String recordStatus;
@@ -629,6 +634,23 @@ public class RecordInfoResult {
         this.finishTime = finishTime;
     }
 
+    public RecordInfoResult withDuration(Float duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    /**
+     * 构建时长
+     * @return duration
+     */
+    public Float getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Float duration) {
+        this.duration = duration;
+    }
+
     public RecordInfoResult withRecordStatus(String recordStatus) {
         this.recordStatus = recordStatus;
         return this;
@@ -739,7 +761,7 @@ public class RecordInfoResult {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.scheduleTime, that.scheduleTime)
             && Objects.equals(this.queuedTime, that.queuedTime) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.runnableTime, that.runnableTime) && Objects.equals(this.finishTime, that.finishTime)
-            && Objects.equals(this.recordStatus, that.recordStatus)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.recordStatus, that.recordStatus)
             && Objects.equals(this.usePrivateSlave, that.usePrivateSlave) && Objects.equals(this.region, that.region)
             && Objects.equals(this.errMsg, that.errMsg) && Objects.equals(this.buildConfigType, that.buildConfigType);
     }
@@ -773,6 +795,7 @@ public class RecordInfoResult {
             startTime,
             runnableTime,
             finishTime,
+            duration,
             recordStatus,
             usePrivateSlave,
             region,
@@ -811,6 +834,7 @@ public class RecordInfoResult {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    runnableTime: ").append(toIndentedString(runnableTime)).append("\n");
         sb.append("    finishTime: ").append(toIndentedString(finishTime)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    recordStatus: ").append(toIndentedString(recordStatus)).append("\n");
         sb.append("    usePrivateSlave: ").append(toIndentedString(usePrivateSlave)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");

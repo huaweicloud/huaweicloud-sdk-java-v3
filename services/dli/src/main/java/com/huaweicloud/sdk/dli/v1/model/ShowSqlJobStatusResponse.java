@@ -183,6 +183,16 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     private String userConf;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result_path")
+
+    private String resultPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result_format")
+
+    private String resultFormat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statement")
 
     private String statement;
@@ -462,6 +472,40 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
         this.userConf = userConf;
     }
 
+    public ShowSqlJobStatusResponse withResultPath(String resultPath) {
+        this.resultPath = resultPath;
+        return this;
+    }
+
+    /**
+     * 查询结果OBS路径
+     * @return resultPath
+     */
+    public String getResultPath() {
+        return resultPath;
+    }
+
+    public void setResultPath(String resultPath) {
+        this.resultPath = resultPath;
+    }
+
+    public ShowSqlJobStatusResponse withResultFormat(String resultFormat) {
+        this.resultFormat = resultFormat;
+        return this;
+    }
+
+    /**
+     * 查询结果格式
+     * @return resultFormat
+     */
+    public String getResultFormat() {
+        return resultFormat;
+    }
+
+    public void setResultFormat(String resultFormat) {
+        this.resultFormat = resultFormat;
+    }
+
     public ShowSqlJobStatusResponse withStatement(String statement) {
         this.statement = statement;
         return this;
@@ -580,6 +624,7 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
             && Objects.equals(this.resultCount, that.resultCount)
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.detail, that.detail) && Objects.equals(this.userConf, that.userConf)
+            && Objects.equals(this.resultPath, that.resultPath) && Objects.equals(this.resultFormat, that.resultFormat)
             && Objects.equals(this.statement, that.statement) && Objects.equals(this.isSuccess, that.isSuccess)
             && Objects.equals(this.message, that.message) && Objects.equals(this.jobMode, that.jobMode)
             && Objects.equals(this.tags, that.tags);
@@ -602,6 +647,8 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
             tableName,
             detail,
             userConf,
+            resultPath,
+            resultFormat,
             statement,
             isSuccess,
             message,
@@ -628,6 +675,8 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    userConf: ").append(toIndentedString(userConf)).append("\n");
+        sb.append("    resultPath: ").append(toIndentedString(resultPath)).append("\n");
+        sb.append("    resultFormat: ").append(toIndentedString(resultFormat)).append("\n");
         sb.append("    statement: ").append(toIndentedString(statement)).append("\n");
         sb.append("    isSuccess: ").append(toIndentedString(isSuccess)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");

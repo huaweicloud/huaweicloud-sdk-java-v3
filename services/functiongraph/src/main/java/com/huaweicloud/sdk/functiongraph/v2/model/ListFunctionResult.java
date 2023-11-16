@@ -20,6 +20,11 @@ import java.util.function.Consumer;
 public class ListFunctionResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_urn")
 
     private String funcUrn;
@@ -526,6 +531,23 @@ public class ListFunctionResult {
     @JsonProperty(value = "bind_bridge_funcUrns")
 
     private List<String> bindBridgeFuncUrns = null;
+
+    public ListFunctionResult withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 资源id。
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
 
     public ListFunctionResult withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -1207,15 +1229,15 @@ public class ListFunctionResult {
             return false;
         }
         ListFunctionResult that = (ListFunctionResult) obj;
-        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.namespace, that.namespace)
-            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this._package, that._package)
-            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.timeout, that.timeout)
-            && Objects.equals(this.handler, that.handler) && Objects.equals(this.memorySize, that.memorySize)
-            && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.cpu, that.cpu)
-            && Objects.equals(this.codeType, that.codeType) && Objects.equals(this.codeUrl, that.codeUrl)
-            && Objects.equals(this.codeFilename, that.codeFilename) && Objects.equals(this.codeSize, that.codeSize)
-            && Objects.equals(this.userData, that.userData)
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.funcUrn, that.funcUrn)
+            && Objects.equals(this.funcName, that.funcName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this._package, that._package) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.handler, that.handler)
+            && Objects.equals(this.memorySize, that.memorySize) && Objects.equals(this.gpuMemory, that.gpuMemory)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.codeType, that.codeType)
+            && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.codeFilename, that.codeFilename)
+            && Objects.equals(this.codeSize, that.codeSize) && Objects.equals(this.userData, that.userData)
             && Objects.equals(this.encryptedUserData, that.encryptedUserData)
             && Objects.equals(this.digest, that.digest) && Objects.equals(this.version, that.version)
             && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.xrole, that.xrole)
@@ -1235,7 +1257,8 @@ public class ListFunctionResult {
 
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn,
+        return Objects.hash(resourceId,
+            funcUrn,
             funcName,
             domainId,
             namespace,
@@ -1279,6 +1302,7 @@ public class ListFunctionResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFunctionResult {\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    funcUrn: ").append(toIndentedString(funcUrn)).append("\n");
         sb.append("    funcName: ").append(toIndentedString(funcName)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");

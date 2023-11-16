@@ -483,6 +483,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardTemplateRequest;
@@ -9515,6 +9518,59 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DirectoryVO.class),
             f -> f.withMarshaller(UpdateDirectoryRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> updateFactoryJobName =
+        genForupdateFactoryJobName();
+
+    private static HttpRequestDef<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> genForupdateFactoryJobName() {
+        // basic
+        HttpRequestDef.Builder<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateFactoryJobNameRequest.class, UpdateFactoryJobNameResponse.class)
+            .withName("UpdateFactoryJobName")
+            .withUri("/v2/{project_id}/factory/jobs/{job_name}/rename")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getJobName, (req, v) -> {
+                req.setJobName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("Host",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getHost, (req, v) -> {
+                req.setHost(v);
+            }));
+        builder.<UpdateFactoryJobNameRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFactoryJobNameRequestBody.class),
+            f -> f.withMarshaller(UpdateFactoryJobNameRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
