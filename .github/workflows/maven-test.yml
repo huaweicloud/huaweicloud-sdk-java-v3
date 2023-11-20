@@ -1,4 +1,4 @@
-name: Publish packages to the Maven Central Repository
+name: Maven test CI
 on:
   workflow_dispatch:
   schedule:
