@@ -101,7 +101,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_time")
 
-    private String eventTime;
+    private Long eventTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack_type")
@@ -131,7 +131,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attack_rule_id")
 
-    private Integer attackRuleId;
+    private String attackRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hit_time")
@@ -171,7 +171,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "packet")
 
-    private Packet packet;
+    private String packet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
@@ -242,7 +242,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         this.action = action;
     }
 
-    public HttpQueryCfwAttackLogsResponseDTODataRecords withEventTime(String eventTime) {
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withEventTime(Long eventTime) {
         this.eventTime = eventTime;
         return this;
     }
@@ -251,11 +251,11 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
      * 事件时间
      * @return eventTime
      */
-    public String getEventTime() {
+    public Long getEventTime() {
         return eventTime;
     }
 
-    public void setEventTime(String eventTime) {
+    public void setEventTime(Long eventTime) {
         this.eventTime = eventTime;
     }
 
@@ -344,7 +344,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         this.packetLength = packetLength;
     }
 
-    public HttpQueryCfwAttackLogsResponseDTODataRecords withAttackRuleId(Integer attackRuleId) {
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withAttackRuleId(String attackRuleId) {
         this.attackRuleId = attackRuleId;
         return this;
     }
@@ -353,11 +353,11 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
      * 攻击规则id
      * @return attackRuleId
      */
-    public Integer getAttackRuleId() {
+    public String getAttackRuleId() {
         return attackRuleId;
     }
 
-    public void setAttackRuleId(Integer attackRuleId) {
+    public void setAttackRuleId(String attackRuleId) {
         this.attackRuleId = attackRuleId;
     }
 
@@ -484,29 +484,20 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
         this.protocol = protocol;
     }
 
-    public HttpQueryCfwAttackLogsResponseDTODataRecords withPacket(Packet packet) {
+    public HttpQueryCfwAttackLogsResponseDTODataRecords withPacket(String packet) {
         this.packet = packet;
         return this;
     }
 
-    public HttpQueryCfwAttackLogsResponseDTODataRecords withPacket(Consumer<Packet> packetSetter) {
-        if (this.packet == null) {
-            this.packet = new Packet();
-            packetSetter.accept(this.packet);
-        }
-
-        return this;
-    }
-
     /**
-     * Get packet
+     * 攻击日志报文
      * @return packet
      */
-    public Packet getPacket() {
+    public String getPacket() {
         return packet;
     }
 
-    public void setPacket(Packet packet) {
+    public void setPacket(String packet) {
         this.packet = packet;
     }
 

@@ -102,7 +102,7 @@ public class UpdateRuleAclDto {
     private OrderRuleAclDto sequence;
 
     /**
-     * 规则方向
+     * 方向：0表示外到内，1表示内到外【说明：规则type=0：互联网规则 | 2：nat规则时方向值必填】
      */
     public static final class DirectionEnum {
 
@@ -372,7 +372,7 @@ public class UpdateRuleAclDto {
     private RuleServiceDto service;
 
     /**
-     * 规则type，0：互联网规则，1:vpc规则，2：nat规则
+     * 规则type，0：互联网规则，1：vpc规则，2：nat规则
      */
     public static final class TypeEnum {
 
@@ -523,7 +523,7 @@ public class UpdateRuleAclDto {
     }
 
     /**
-     * 规则方向
+     * 方向：0表示外到内，1表示内到外【说明：规则type=0：互联网规则 | 2：nat规则时方向值必填】
      * @return direction
      */
     public DirectionEnum getDirection() {
@@ -754,7 +754,7 @@ public class UpdateRuleAclDto {
     }
 
     /**
-     * 规则type，0：互联网规则，1:vpc规则，2：nat规则
+     * 规则type，0：互联网规则，1：vpc规则，2：nat规则
      * @return type
      */
     public TypeEnum getType() {

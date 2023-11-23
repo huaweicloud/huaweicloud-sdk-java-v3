@@ -167,7 +167,7 @@ public class RuleAclListResponseDTODataRecords {
     private RuleServiceDto service;
 
     /**
-     * 规则type，0：互联网规则，1：vpc规则，2nat规则
+     * 规则type，0：互联网规则，1：vpc规则，2：nat规则
      */
     public static final class TypeEnum {
 
@@ -566,7 +566,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 规则type，0：互联网规则，1：vpc规则，2nat规则
+     * 规则type，0：互联网规则，1：vpc规则，2：nat规则
      * @return type
      */
     public TypeEnum getType() {

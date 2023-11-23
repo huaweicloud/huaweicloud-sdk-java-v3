@@ -103,12 +103,12 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private Integer startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private Integer endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_id")
@@ -123,7 +123,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_port")
 
-    private String srcPort;
+    private Integer srcPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_ip")
@@ -138,7 +138,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_port")
 
-    private String dstPort;
+    private Integer dstPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
@@ -201,7 +201,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
         this.packets = packets;
     }
 
-    public HttpQueryCfwFlowLogsResponseDTODataRecords withStartTime(Integer startTime) {
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -210,15 +210,15 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
      * 开始时间
      * @return startTime
      */
-    public Integer getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public HttpQueryCfwFlowLogsResponseDTODataRecords withEndTime(Integer endTime) {
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -227,11 +227,11 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
      * 结束时间
      * @return endTime
      */
-    public Integer getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
@@ -269,7 +269,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
         this.srcIp = srcIp;
     }
 
-    public HttpQueryCfwFlowLogsResponseDTODataRecords withSrcPort(String srcPort) {
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withSrcPort(Integer srcPort) {
         this.srcPort = srcPort;
         return this;
     }
@@ -278,11 +278,11 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
      * 源端口
      * @return srcPort
      */
-    public String getSrcPort() {
+    public Integer getSrcPort() {
         return srcPort;
     }
 
-    public void setSrcPort(String srcPort) {
+    public void setSrcPort(Integer srcPort) {
         this.srcPort = srcPort;
     }
 
@@ -320,7 +320,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
         this.app = app;
     }
 
-    public HttpQueryCfwFlowLogsResponseDTODataRecords withDstPort(String dstPort) {
+    public HttpQueryCfwFlowLogsResponseDTODataRecords withDstPort(Integer dstPort) {
         this.dstPort = dstPort;
         return this;
     }
@@ -329,11 +329,11 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
      * 目的端口
      * @return dstPort
      */
-    public String getDstPort() {
+    public Integer getDstPort() {
         return dstPort;
     }
 
-    public void setDstPort(String dstPort) {
+    public void setDstPort(Integer dstPort) {
         this.dstPort = dstPort;
     }
 

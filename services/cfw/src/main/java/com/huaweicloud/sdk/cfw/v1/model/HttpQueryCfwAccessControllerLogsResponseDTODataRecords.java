@@ -28,7 +28,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hit_time")
 
-    private Integer hitTime;
+    private Long hitTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_region_id")
@@ -63,7 +63,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "src_port")
 
-    private String srcPort;
+    private Integer srcPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_ip")
@@ -73,7 +73,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_port")
 
-    private String dstPort;
+    private Integer dstPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol")
@@ -141,7 +141,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
         this.ruleId = ruleId;
     }
 
-    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withHitTime(Integer hitTime) {
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withHitTime(Long hitTime) {
         this.hitTime = hitTime;
         return this;
     }
@@ -150,11 +150,11 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
      * 命中时间
      * @return hitTime
      */
-    public Integer getHitTime() {
+    public Long getHitTime() {
         return hitTime;
     }
 
-    public void setHitTime(Integer hitTime) {
+    public void setHitTime(Long hitTime) {
         this.hitTime = hitTime;
     }
 
@@ -260,7 +260,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
         this.srcIp = srcIp;
     }
 
-    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withSrcPort(String srcPort) {
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withSrcPort(Integer srcPort) {
         this.srcPort = srcPort;
         return this;
     }
@@ -269,11 +269,11 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
      * 源端口
      * @return srcPort
      */
-    public String getSrcPort() {
+    public Integer getSrcPort() {
         return srcPort;
     }
 
-    public void setSrcPort(String srcPort) {
+    public void setSrcPort(Integer srcPort) {
         this.srcPort = srcPort;
     }
 
@@ -294,7 +294,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
         this.dstIp = dstIp;
     }
 
-    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withDstPort(String dstPort) {
+    public HttpQueryCfwAccessControllerLogsResponseDTODataRecords withDstPort(Integer dstPort) {
         this.dstPort = dstPort;
         return this;
     }
@@ -303,11 +303,11 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
      * 目的端口
      * @return dstPort
      */
-    public String getDstPort() {
+    public Integer getDstPort() {
         return dstPort;
     }
 
-    public void setDstPort(String dstPort) {
+    public void setDstPort(Integer dstPort) {
         this.dstPort = dstPort;
     }
 

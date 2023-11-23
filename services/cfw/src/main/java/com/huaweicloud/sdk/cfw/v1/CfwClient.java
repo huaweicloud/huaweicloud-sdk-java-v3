@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.cfw.v1.model.AddDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.AddLogConfigRequest;
+import com.huaweicloud.sdk.cfw.v1.model.AddLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddServiceItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddServiceItemsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddServiceSetRequest;
@@ -32,6 +34,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsProtectModeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleRequest;
@@ -90,6 +94,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListRuleAclTagsRequest;
@@ -112,6 +118,8 @@ import com.huaweicloud.sdk.cfw.v1.model.UpdateDnsServersRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDnsServersResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -222,6 +230,7 @@ public class CfwClient {
     /**
      * 添加域名组
      *
+     * 添加域名组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -235,6 +244,7 @@ public class CfwClient {
     /**
      * 添加域名组
      *
+     * 添加域名组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -271,6 +281,34 @@ public class CfwClient {
      */
     public SyncInvoker<AddDomainsRequest, AddDomainsResponse> addDomainsInvoker(AddDomainsRequest request) {
         return new SyncInvoker<AddDomainsRequest, AddDomainsResponse>(request, CfwMeta.addDomains, hcClient);
+    }
+
+    /**
+     * 创建日志配置
+     *
+     * 创建日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddLogConfigRequest 请求对象
+     * @return AddLogConfigResponse
+     */
+    public AddLogConfigResponse addLogConfig(AddLogConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.addLogConfig);
+    }
+
+    /**
+     * 创建日志配置
+     *
+     * 创建日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddLogConfigRequest 请求对象
+     * @return SyncInvoker<AddLogConfigRequest, AddLogConfigResponse>
+     */
+    public SyncInvoker<AddLogConfigRequest, AddLogConfigResponse> addLogConfigInvoker(AddLogConfigRequest request) {
+        return new SyncInvoker<AddLogConfigRequest, AddLogConfigResponse>(request, CfwMeta.addLogConfig, hcClient);
     }
 
     /**
@@ -334,6 +372,7 @@ public class CfwClient {
     /**
      * 批量删除地址组成员
      *
+     * 批量删除地址组成员
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -347,6 +386,7 @@ public class CfwClient {
     /**
      * 批量删除地址组成员
      *
+     * 批量删除地址组成员
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -362,6 +402,7 @@ public class CfwClient {
     /**
      * 批量删除服务组成员信息
      *
+     * 批量删除服务组成员信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -375,6 +416,7 @@ public class CfwClient {
     /**
      * 批量删除服务组成员信息
      *
+     * 批量删除服务组成员信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -416,6 +458,36 @@ public class CfwClient {
         ChangeEastWestFirewallStatusRequest request) {
         return new SyncInvoker<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse>(request,
             CfwMeta.changeEastWestFirewallStatus, hcClient);
+    }
+
+    /**
+     * 创建东西向防火墙
+     *
+     * 创建东西向防火墙
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEastWestFirewallRequest 请求对象
+     * @return CreateEastWestFirewallResponse
+     */
+    public CreateEastWestFirewallResponse createEastWestFirewall(CreateEastWestFirewallRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.createEastWestFirewall);
+    }
+
+    /**
+     * 创建东西向防火墙
+     *
+     * 创建东西向防火墙
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEastWestFirewallRequest 请求对象
+     * @return SyncInvoker<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse>
+     */
+    public SyncInvoker<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> createEastWestFirewallInvoker(
+        CreateEastWestFirewallRequest request) {
+        return new SyncInvoker<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse>(request,
+            CfwMeta.createEastWestFirewall, hcClient);
     }
 
     /**
@@ -511,6 +583,7 @@ public class CfwClient {
     /**
      * 删除域名组
      *
+     * 删除域名组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -524,6 +597,7 @@ public class CfwClient {
     /**
      * 删除域名组
      *
+     * 删除域名组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1041,6 +1115,34 @@ public class CfwClient {
     }
 
     /**
+     * 获取日志配置
+     *
+     * 获取日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogConfigRequest 请求对象
+     * @return ListLogConfigResponse
+     */
+    public ListLogConfigResponse listLogConfig(ListLogConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listLogConfig);
+    }
+
+    /**
+     * 获取日志配置
+     *
+     * 获取日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogConfigRequest 请求对象
+     * @return SyncInvoker<ListLogConfigRequest, ListLogConfigResponse>
+     */
+    public SyncInvoker<ListLogConfigRequest, ListLogConfigResponse> listLogConfigInvoker(ListLogConfigRequest request) {
+        return new SyncInvoker<ListLogConfigRequest, ListLogConfigResponse>(request, CfwMeta.listLogConfig, hcClient);
+    }
+
+    /**
      * 查询防护VPC数
      *
      * 查询防护vpc信息
@@ -1253,6 +1355,7 @@ public class CfwClient {
     /**
      * 更新域名组
      *
+     * 更新域名组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1266,6 +1369,7 @@ public class CfwClient {
     /**
      * 更新域名组
      *
+     * 更新域名组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1275,6 +1379,36 @@ public class CfwClient {
     public SyncInvoker<UpdateDomainSetRequest, UpdateDomainSetResponse> updateDomainSetInvoker(
         UpdateDomainSetRequest request) {
         return new SyncInvoker<UpdateDomainSetRequest, UpdateDomainSetResponse>(request, CfwMeta.updateDomainSet,
+            hcClient);
+    }
+
+    /**
+     * 更新日志配置
+     *
+     * 更新日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogConfigRequest 请求对象
+     * @return UpdateLogConfigResponse
+     */
+    public UpdateLogConfigResponse updateLogConfig(UpdateLogConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.updateLogConfig);
+    }
+
+    /**
+     * 更新日志配置
+     *
+     * 更新日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogConfigRequest 请求对象
+     * @return SyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse>
+     */
+    public SyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse> updateLogConfigInvoker(
+        UpdateLogConfigRequest request) {
+        return new SyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse>(request, CfwMeta.updateLogConfig,
             hcClient);
     }
 
@@ -1369,6 +1503,7 @@ public class CfwClient {
     /**
      * 批量更新规则动作
      *
+     * 批量更新规则动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1382,6 +1517,7 @@ public class CfwClient {
     /**
      * 批量更新规则动作
      *
+     * 批量更新规则动作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1513,6 +1649,7 @@ public class CfwClient {
     /**
      * 查询规则标签
      *
+     * 查询规则标签
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1526,6 +1663,7 @@ public class CfwClient {
     /**
      * 查询规则标签
      *
+     * 查询规则标签
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1599,7 +1737,7 @@ public class CfwClient {
     /**
      * 弹性IP开启关闭
      *
-     * 开启关闭EIP,客户购买EIP后首次开启EIP防护前需使用ListEips同步EIP资产，sync字段设置为1。
+     * 开启关闭EIP，客户购买EIP后首次开启EIP防护前需使用ListEips同步EIP资产，sync字段设置为1。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1613,7 +1751,7 @@ public class CfwClient {
     /**
      * 弹性IP开启关闭
      *
-     * 开启关闭EIP,客户购买EIP后首次开启EIP防护前需使用ListEips同步EIP资产，sync字段设置为1。
+     * 开启关闭EIP，客户购买EIP后首次开启EIP防护前需使用ListEips同步EIP资产，sync字段设置为1。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

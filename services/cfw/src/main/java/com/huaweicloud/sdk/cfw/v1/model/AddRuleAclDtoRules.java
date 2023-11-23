@@ -288,7 +288,7 @@ public class AddRuleAclDtoRules {
     private String description;
 
     /**
-     * 方向：0表示外到内，1表示内到外
+     * 方向：0表示外到内，1表示内到外【说明：规则type=0：互联网规则 | 2：nat规则时方向值必填】
      */
     public static final class DirectionEnum {
 
@@ -584,7 +584,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 方向：0表示外到内，1表示内到外
+     * 方向：0表示外到内，1表示内到外【说明：规则type=0：互联网规则 | 2：nat规则时方向值必填】
      * @return direction
      */
     public DirectionEnum getDirection() {

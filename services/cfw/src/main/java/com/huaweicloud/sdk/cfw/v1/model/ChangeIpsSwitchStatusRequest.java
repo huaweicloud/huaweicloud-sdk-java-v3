@@ -22,6 +22,11 @@ public class ChangeIpsSwitchStatusRequest {
     private String fwInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+
+    private String xLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private IpsSwitchDTO body;
@@ -60,6 +65,25 @@ public class ChangeIpsSwitchStatusRequest {
         this.fwInstanceId = fwInstanceId;
     }
 
+    public ChangeIpsSwitchStatusRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    /**
+     * 语言头部，默认为zh-cn，如需使用英文，请选择en-us
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Language")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
+
     public ChangeIpsSwitchStatusRequest withBody(IpsSwitchDTO body) {
         this.body = body;
         return this;
@@ -96,12 +120,13 @@ public class ChangeIpsSwitchStatusRequest {
         }
         ChangeIpsSwitchStatusRequest that = (ChangeIpsSwitchStatusRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, fwInstanceId, body);
+        return Objects.hash(enterpriseProjectId, fwInstanceId, xLanguage, body);
     }
 
     @Override
@@ -110,6 +135,7 @@ public class ChangeIpsSwitchStatusRequest {
         sb.append("class ChangeIpsSwitchStatusRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.cfw.v1.model.AddDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.AddLogConfigRequest;
+import com.huaweicloud.sdk.cfw.v1.model.AddLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.AddServiceItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddServiceItemsResponse;
@@ -42,6 +44,9 @@ import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeProtectStatusRequestBody;
 import com.huaweicloud.sdk.cfw.v1.model.ClearAccessLogRuleHitCountsDto;
+import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequestBody;
+import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleRequest;
@@ -107,6 +112,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListRuleAclTagsRequest;
@@ -118,6 +125,7 @@ import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetDetailRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetDetailResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.LogConfigDto;
 import com.huaweicloud.sdk.cfw.v1.model.OrderRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.QueryFireWallInstanceDto;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAclRuleOrderRequest;
@@ -136,6 +144,8 @@ import com.huaweicloud.sdk.cfw.v1.model.UpdateDnsServersResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetInfoDto;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateSecurityPolciesActionDto;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetRequest;
@@ -350,6 +360,44 @@ public class CfwMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddLogConfigRequest, AddLogConfigResponse> addLogConfig = genForaddLogConfig();
+
+    private static HttpRequestDef<AddLogConfigRequest, AddLogConfigResponse> genForaddLogConfig() {
+        // basic
+        HttpRequestDef.Builder<AddLogConfigRequest, AddLogConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddLogConfigRequest.class, AddLogConfigResponse.class)
+                .withName("AddLogConfig")
+                .withUri("/v1/{project_id}/cfw/logs/configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddLogConfigRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddLogConfigRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<LogConfigDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LogConfigDto.class),
+            f -> f.withMarshaller(AddLogConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddServiceItemsRequest, AddServiceItemsResponse> addServiceItems =
         genForaddServiceItems();
 
@@ -540,6 +588,45 @@ public class CfwMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeProtectStatusRequestBody.class),
             f -> f.withMarshaller(ChangeEastWestFirewallStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> createEastWestFirewall =
+        genForcreateEastWestFirewall();
+
+    private static HttpRequestDef<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> genForcreateEastWestFirewall() {
+        // basic
+        HttpRequestDef.Builder<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateEastWestFirewallRequest.class, CreateEastWestFirewallResponse.class)
+            .withName("CreateEastWestFirewall")
+            .withUri("/v1/{project_id}/firewall/east-west")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateEastWestFirewallRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateEastWestFirewallRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
+        builder.<CreateEastWestFirewallRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateEastWestFirewallRequestBody.class),
+            f -> f.withMarshaller(CreateEastWestFirewallRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1918,6 +2005,38 @@ public class CfwMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLogConfigRequest, ListLogConfigResponse> listLogConfig =
+        genForlistLogConfig();
+
+    private static HttpRequestDef<ListLogConfigRequest, ListLogConfigResponse> genForlistLogConfig() {
+        // basic
+        HttpRequestDef.Builder<ListLogConfigRequest, ListLogConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogConfigRequest.class, ListLogConfigResponse.class)
+                .withName("ListLogConfig")
+                .withUri("/v1/{project_id}/cfw/logs/configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogConfigRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogConfigRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProtectedVpcsRequest, ListProtectedVpcsResponse> listProtectedVpcs =
         genForlistProtectedVpcs();
 
@@ -2285,6 +2404,45 @@ public class CfwMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDomainSetInfoDto.class),
             f -> f.withMarshaller(UpdateDomainSetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLogConfigRequest, UpdateLogConfigResponse> updateLogConfig =
+        genForupdateLogConfig();
+
+    private static HttpRequestDef<UpdateLogConfigRequest, UpdateLogConfigResponse> genForupdateLogConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogConfigRequest, UpdateLogConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLogConfigRequest.class, UpdateLogConfigResponse.class)
+                .withName("UpdateLogConfig")
+                .withUri("/v1/{project_id}/cfw/logs/configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogConfigRequest::getFwInstanceId, (req, v) -> {
+                req.setFwInstanceId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogConfigRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<LogConfigDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LogConfigDto.class),
+            f -> f.withMarshaller(UpdateLogConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3098,6 +3256,13 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getFwInstanceId, (req, v) -> {
                 req.setFwInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             }));
         builder.<IpsSwitchDTO>withRequestField("body",
             LocationType.Body,

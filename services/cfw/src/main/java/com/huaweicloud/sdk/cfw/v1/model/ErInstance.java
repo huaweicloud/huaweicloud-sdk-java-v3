@@ -46,7 +46,7 @@ public class ErInstance {
     }
 
     /**
-     * Er实例id
+     * ER实例id
      * @return id
      */
     public String getId() {
@@ -63,7 +63,7 @@ public class ErInstance {
     }
 
     /**
-     * Er名称
+     * ER名称
      * @return name
      */
     public String getName() {
@@ -80,7 +80,7 @@ public class ErInstance {
     }
 
     /**
-     * Er状态
+     * ER状态
      * @return state
      */
     public String getState() {
