@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.elb.v3.model.BatchAddAvailableZonesRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchAddAvailableZonesRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.BatchAddAvailableZonesResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersResponse;
@@ -14,6 +17,9 @@ import com.huaweicloud.sdk.elb.v3.model.BatchDeleteIpListResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteMembersRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteMembersResponse;
+import com.huaweicloud.sdk.elb.v3.model.BatchRemoveAvailableZonesRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchRemoveAvailableZonesRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.BatchRemoveAvailableZonesResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdateMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdateMembersRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdateMembersResponse;
@@ -49,6 +55,9 @@ import com.huaweicloud.sdk.elb.v3.model.CreateLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateLogtankRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.CreateLogtankResponse;
+import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolRequest;
+import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberResponse;
@@ -78,6 +87,8 @@ import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteLogtankResponse;
+import com.huaweicloud.sdk.elb.v3.model.DeleteMasterSlavePoolRequest;
+import com.huaweicloud.sdk.elb.v3.model.DeleteMasterSlavePoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolRequest;
@@ -108,6 +119,8 @@ import com.huaweicloud.sdk.elb.v3.model.ListLoadBalancersRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListLoadBalancersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListLogtanksRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListLogtanksResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListMasterSlavePoolsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListMasterSlavePoolsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListMembersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListPoolsRequest;
@@ -138,6 +151,8 @@ import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerStatusRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerStatusResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLogtankResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowMasterSlavePoolRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowMasterSlavePoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowPoolRequest;
@@ -187,6 +202,38 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class ElbMeta {
+
+    public static final HttpRequestDef<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse> batchAddAvailableZones =
+        genForbatchAddAvailableZones();
+
+    private static HttpRequestDef<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse> genForbatchAddAvailableZones() {
+        // basic
+        HttpRequestDef.Builder<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchAddAvailableZonesRequest.class, BatchAddAvailableZonesResponse.class)
+            .withName("BatchAddAvailableZones")
+            .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-add")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAddAvailableZonesRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            }));
+        builder.<BatchAddAvailableZonesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchAddAvailableZonesRequestBody.class),
+            f -> f.withMarshaller(BatchAddAvailableZonesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCreateMembersRequest, BatchCreateMembersResponse> batchCreateMembers =
         genForbatchCreateMembers();
@@ -244,6 +291,41 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteMembersRequestBody.class),
             f -> f.withMarshaller(BatchDeleteMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse> batchRemoveAvailableZones =
+        genForbatchRemoveAvailableZones();
+
+    private static HttpRequestDef<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse> genForbatchRemoveAvailableZones() {
+        // basic
+        HttpRequestDef.Builder<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchRemoveAvailableZonesRequest.class,
+                    BatchRemoveAvailableZonesResponse.class)
+                .withName("BatchRemoveAvailableZones")
+                .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-remove")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRemoveAvailableZonesRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            }));
+        builder.<BatchRemoveAvailableZonesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchRemoveAvailableZonesRequestBody.class),
+            f -> f.withMarshaller(BatchRemoveAvailableZonesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -513,6 +595,31 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLogtankRequestBody.class),
             f -> f.withMarshaller(CreateLogtankRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse> createMasterSlavePool =
+        genForcreateMasterSlavePool();
+
+    private static HttpRequestDef<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse> genForcreateMasterSlavePool() {
+        // basic
+        HttpRequestDef.Builder<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateMasterSlavePoolRequest.class, CreateMasterSlavePoolResponse.class)
+            .withName("CreateMasterSlavePool")
+            .withUri("/v3/{project_id}/elb/master-slave-pools")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateMasterSlavePoolRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMasterSlavePoolRequestBody.class),
+            f -> f.withMarshaller(CreateMasterSlavePoolRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -825,6 +932,31 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteLogtankRequest::getLogtankId, (req, v) -> {
                 req.setLogtankId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse> deleteMasterSlavePool =
+        genFordeleteMasterSlavePool();
+
+    private static HttpRequestDef<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse> genFordeleteMasterSlavePool() {
+        // basic
+        HttpRequestDef.Builder<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteMasterSlavePoolRequest.class, DeleteMasterSlavePoolResponse.class)
+            .withName("DeleteMasterSlavePool")
+            .withUri("/v3/{project_id}/elb/master-slave-pools/{pool_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMasterSlavePoolRequest::getPoolId, (req, v) -> {
+                req.setPoolId(v);
             }));
 
         // response
@@ -2053,6 +2185,20 @@ public class ElbMeta {
             f -> f.withMarshaller(ListLoadBalancersRequest::getGlobalEips, (req, v) -> {
                 req.setGlobalEips(v);
             }));
+        builder.<String>withRequestField("log_topic_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLoadBalancersRequest::getLogTopicId, (req, v) -> {
+                req.setLogTopicId(v);
+            }));
+        builder.<String>withRequestField("log_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLoadBalancersRequest::getLogGroupId, (req, v) -> {
+                req.setLogGroupId(v);
+            }));
 
         // response
 
@@ -2125,6 +2271,150 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLogtanksRequest::getLogTopicId, (req, v) -> {
                 req.setLogTopicId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse> listMasterSlavePools =
+        genForlistMasterSlavePools();
+
+    private static HttpRequestDef<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse> genForlistMasterSlavePools() {
+        // basic
+        HttpRequestDef.Builder<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMasterSlavePoolsRequest.class, ListMasterSlavePoolsResponse.class)
+            .withName("ListMasterSlavePools")
+            .withUri("/v3/{project_id}/elb/master-slave-pools")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getPageReverse, (req, v) -> {
+                req.setPageReverse(v);
+            }));
+        builder.<List<String>>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<List<String>>withRequestField("healthmonitor_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getHealthmonitorId, (req, v) -> {
+                req.setHealthmonitorId(v);
+            }));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<List<String>>withRequestField("loadbalancer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getLoadbalancerId, (req, v) -> {
+                req.setLoadbalancerId(v);
+            }));
+        builder.<List<String>>withRequestField("protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getProtocol, (req, v) -> {
+                req.setProtocol(v);
+            }));
+        builder.<List<String>>withRequestField("lb_algorithm",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getLbAlgorithm, (req, v) -> {
+                req.setLbAlgorithm(v);
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<List<String>>withRequestField("ip_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getIpVersion, (req, v) -> {
+                req.setIpVersion(v);
+            }));
+        builder.<List<String>>withRequestField("member_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getMemberAddress, (req, v) -> {
+                req.setMemberAddress(v);
+            }));
+        builder.<List<String>>withRequestField("member_device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getMemberDeviceId, (req, v) -> {
+                req.setMemberDeviceId(v);
+            }));
+        builder.<List<String>>withRequestField("listener_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getListenerId, (req, v) -> {
+                req.setListenerId(v);
+            }));
+        builder.<List<String>>withRequestField("member_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getMemberInstanceId, (req, v) -> {
+                req.setMemberInstanceId(v);
+            }));
+        builder.<List<String>>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getType, (req, v) -> {
+                req.setType(v);
             }));
 
         // response
@@ -2765,6 +3055,31 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowLogtankRequest::getLogtankId, (req, v) -> {
                 req.setLogtankId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse> showMasterSlavePool =
+        genForshowMasterSlavePool();
+
+    private static HttpRequestDef<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse> genForshowMasterSlavePool() {
+        // basic
+        HttpRequestDef.Builder<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMasterSlavePoolRequest.class, ShowMasterSlavePoolResponse.class)
+                .withName("ShowMasterSlavePool")
+                .withUri("/v3/{project_id}/elb/master-slave-pools/{pool_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMasterSlavePoolRequest::getPoolId, (req, v) -> {
+                req.setPoolId(v);
             }));
 
         // response

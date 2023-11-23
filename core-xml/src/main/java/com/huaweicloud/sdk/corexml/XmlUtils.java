@@ -85,9 +85,9 @@ public final class XmlUtils {
         }
     }
 
-    public static <T> T toObject(String json, Class<T> clazz) {
+    public static <T> T toObject(String xml, Class<T> clazz) {
         try {
-            return StringUtils.isEmpty(json) ? null : OBJECT_MAPPER_IGNORE_UNKNOWN.readValue(json, clazz);
+            return StringUtils.isEmpty(xml) ? null : OBJECT_MAPPER_IGNORE_UNKNOWN.readValue(xml, clazz);
         } catch (JsonProcessingException e) {
             logger.error("[Method toObject] Internal Error occurs: ", e);
             throw new SdkException(e);

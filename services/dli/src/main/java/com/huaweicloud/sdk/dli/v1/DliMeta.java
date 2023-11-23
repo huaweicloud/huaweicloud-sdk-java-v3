@@ -6,25 +6,25 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dli.v1.model.AssociateConnectionQueueReq;
-import com.huaweicloud.sdk.dli.v1.model.AssociateConnectionQueueRequest;
-import com.huaweicloud.sdk.dli.v1.model.AssociateConnectionQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToElasticResourcePoolRequest;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToElasticResourcePoolRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToElasticResourcePoolResponse;
-import com.huaweicloud.sdk.dli.v1.model.AuthorizeResourceRequest;
+import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.AssociateQueueToEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.AuthorizeResourceRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.AuthorizeResourceResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchDeleteQueuePlansResponse;
+import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesRequest;
+import com.huaweicloud.sdk.dli.v1.model.BatchDeleteSqlJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.BatchJobInfo;
 import com.huaweicloud.sdk.dli.v1.model.BatchRunFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.BatchRunFlinkJobsRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.BatchRunFlinkJobsResponse;
-import com.huaweicloud.sdk.dli.v1.model.CancelBatchJobRequest;
-import com.huaweicloud.sdk.dli.v1.model.CancelBatchJobResponse;
+import com.huaweicloud.sdk.dli.v1.model.CancelSparkJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.CancelSparkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CancelSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CancelSqlJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.ChangeAuthorizationRequest;
@@ -33,8 +33,6 @@ import com.huaweicloud.sdk.dli.v1.model.ChangeFlinkJobStatusReportRequest;
 import com.huaweicloud.sdk.dli.v1.model.ChangeFlinkJobStatusReportResponse;
 import com.huaweicloud.sdk.dli.v1.model.ChangeQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.ChangeQueuePlanResponse;
-import com.huaweicloud.sdk.dli.v1.model.CheckConnectionRequest;
-import com.huaweicloud.sdk.dli.v1.model.CheckConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlRequest;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CheckSqlResponse;
@@ -43,8 +41,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateAuthInfoResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateBatchJobRequest;
-import com.huaweicloud.sdk.dli.v1.model.CreateBatchJobResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateConnectivityTaskRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateConnectivityTaskResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateDatabaseRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateDatabaseResponse;
@@ -61,26 +59,26 @@ import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionRoutesRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionRoutesResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateEnhancedConnectionsReq;
-import com.huaweicloud.sdk.dli.v1.model.CreateFlinkJarRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateFlinkJarJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateFlinkJarJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkJarRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.CreateFlinkJarResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobGraphRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobGraphResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateFlinkTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateFlinkSqlJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateFlinkTemplateRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.CreateFlinkTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateGlobalValueReq;
-import com.huaweicloud.sdk.dli.v1.model.CreateGlobalValueRequest;
-import com.huaweicloud.sdk.dli.v1.model.CreateGlobalValueResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateGlobalVariableRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateGlobalVariableResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobTemplatesRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.CreateJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequest;
@@ -89,14 +87,16 @@ import com.huaweicloud.sdk.dli.v1.model.CreateQueueReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateRouteRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateSqlTemplatesRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateSqlJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSqlTemplatesRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.CreateSqlTemplatesResponse;
-import com.huaweicloud.sdk.dli.v1.model.CreateStreamGraphRequest;
-import com.huaweicloud.sdk.dli.v1.model.CreateStreamGraphResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateTableResponse;
@@ -114,10 +114,10 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteEnhancedConnectionRoutesRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteEnhancedConnectionRoutesResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkJobResponse;
-import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkTemplateRequest;
-import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkTemplateResponse;
-import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalValueRequest;
-import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalValueResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkSqlJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkSqlJobTemplateResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertiesRequestBody;
@@ -127,17 +127,15 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteResourceRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteResourceResponse;
-import com.huaweicloud.sdk.dli.v1.model.DeleteSqlTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteSqlTemplatesRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.DeleteSqlTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateConnectionQueueReq;
-import com.huaweicloud.sdk.dli.v1.model.DisassociateConnectionQueueRequest;
-import com.huaweicloud.sdk.dli.v1.model.DisassociateConnectionQueueResponse;
-import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobResponse;
+import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ExportFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ExportSqlJobResultRequest;
 import com.huaweicloud.sdk.dli.v1.model.ExportSqlJobResultResponse;
 import com.huaweicloud.sdk.dli.v1.model.ExportSqlResultRequestBody;
@@ -150,9 +148,9 @@ import com.huaweicloud.sdk.dli.v1.model.GrantQueuePermissionReq;
 import com.huaweicloud.sdk.dli.v1.model.IefFlinkJobMessagesReq;
 import com.huaweicloud.sdk.dli.v1.model.IefFlinkJobStatusReportReq;
 import com.huaweicloud.sdk.dli.v1.model.IefSystemEventsReq;
-import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobResponse;
+import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ImportFlinkJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.ImportTableResponse;
@@ -161,8 +159,8 @@ import com.huaweicloud.sdk.dli.v1.model.ListAllTablesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListAllTablesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListAuthInfoResponse;
-import com.huaweicloud.sdk.dli.v1.model.ListBatchesRequest;
-import com.huaweicloud.sdk.dli.v1.model.ListBatchesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListAuthorizationPrivilegesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListAuthorizationPrivilegesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListDatabaseUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListDatabaseUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListDatabasesRequest;
@@ -179,22 +177,26 @@ import com.huaweicloud.sdk.dli.v1.model.ListEnhancedConnectionsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListEnhancedConnectionsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListFlinkJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListFlinkJobsResponse;
-import com.huaweicloud.sdk.dli.v1.model.ListFlinkTemplatesRequest;
-import com.huaweicloud.sdk.dli.v1.model.ListFlinkTemplatesResponse;
-import com.huaweicloud.sdk.dli.v1.model.ListGlobalValuesRequest;
-import com.huaweicloud.sdk.dli.v1.model.ListGlobalValuesResponse;
-import com.huaweicloud.sdk.dli.v1.model.ListJobTemplatesRequest;
-import com.huaweicloud.sdk.dli.v1.model.ListJobTemplatesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListFlinkSqlJobTemplatesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListFlinkSqlJobTemplatesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansResponse;
-import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertyRequest;
-import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertyResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertiesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertiesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueueUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListResourcesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListResourcesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListSparkJobTemplatesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListSparkJobsRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListSparkJobsResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobTemplatesRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListSqlJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListSqlJobsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListTablePrivilegesRequest;
@@ -202,64 +204,62 @@ import com.huaweicloud.sdk.dli.v1.model.ListTablePrivilegesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListTableUsersRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListTableUsersResponse;
 import com.huaweicloud.sdk.dli.v1.model.ObsBuckets;
-import com.huaweicloud.sdk.dli.v1.model.PreviewJobResultRequest;
-import com.huaweicloud.sdk.dli.v1.model.PreviewJobResultResponse;
+import com.huaweicloud.sdk.dli.v1.model.PreviewSqlJobResultRequest;
+import com.huaweicloud.sdk.dli.v1.model.PreviewSqlJobResultResponse;
 import com.huaweicloud.sdk.dli.v1.model.QueuePlanIds;
 import com.huaweicloud.sdk.dli.v1.model.RegisterAuthorizedQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.RegisterAuthorizedQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.RegisterBucketRequest;
 import com.huaweicloud.sdk.dli.v1.model.RegisterBucketResponse;
+import com.huaweicloud.sdk.dli.v1.model.RunAuthorizationActionRequest;
+import com.huaweicloud.sdk.dli.v1.model.RunAuthorizationActionResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunIefJobActionCallBackRequest;
 import com.huaweicloud.sdk.dli.v1.model.RunIefJobActionCallBackResponse;
 import com.huaweicloud.sdk.dli.v1.model.RunQueueActionReq;
 import com.huaweicloud.sdk.dli.v1.model.RunQueueActionRequest;
 import com.huaweicloud.sdk.dli.v1.model.RunQueueActionResponse;
 import com.huaweicloud.sdk.dli.v1.model.SetQueuePlanReq;
-import com.huaweicloud.sdk.dli.v1.model.ShowBatchInfoRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowBatchInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowBatchLogRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowBatchLogResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowBatchStateRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowBatchStateResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowConnectivityTaskRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowConnectivityTaskResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowDatasourceConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowDatasourceConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowDescribeTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowDescribeTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowDliAgencyRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowDliAgencyResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowEnhancedConnectionPrivilegeRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowEnhancedConnectionPrivilegeResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowEnhancedConnectionRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowEnhancedConnectionResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowEnhancedPrivilegeRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowEnhancedPrivilegeResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowFlinkExecuteGraphRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowFlinkExecuteGraphResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowFlinkJobExecutionGraphRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowFlinkJobExecutionGraphResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowFlinkJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowFlinkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowFlinkMetricRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowFlinkMetricResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowJobMonitorInfoReq;
-import com.huaweicloud.sdk.dli.v1.model.ShowJobProgressRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowJobProgressResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowJobTemplateRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowJobTemplateResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowNodeConnectivityRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowNodeConnectivityResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowObjectUserRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowObjectUserResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowPartitionsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowPartitionsResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowQueueDetailRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowQueueDetailResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowQueueRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowResourceInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowResourceInfoResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobStatusRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobStatusResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDetailRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobDetailResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobProgressRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobProgressResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobStatusRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlJobStatusResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlSampleTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowSqlSampleTemplatesResponse;
-import com.huaweicloud.sdk.dli.v1.model.ShowSqlTemplatesRequest;
-import com.huaweicloud.sdk.dli.v1.model.ShowSqlTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowTableContentRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowTableContentResponse;
 import com.huaweicloud.sdk.dli.v1.model.StopFlinkJobsRequest;
@@ -270,32 +270,30 @@ import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateDatabaseOwnerRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateDatabaseOwnerResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolQueueInfoRequest;
-import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolQueueInfoResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolQueueRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolQueueScalingPolicyInfo;
 import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateElasticResourcePoolResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJarRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateEnhancedConnectionResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJarJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJarJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJarRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkJarResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkSqlResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkTemplateRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.UpdateFlinkTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalValueReq;
-import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalValueRequest;
-import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalValueResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateHostMassageReq;
-import com.huaweicloud.sdk.dli.v1.model.UpdateHostMassageRequest;
-import com.huaweicloud.sdk.dli.v1.model.UpdateHostMassageResponse;
-import com.huaweicloud.sdk.dli.v1.model.UpdateJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateJobTemplatesRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.UpdateJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateOwnerRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrReq;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrRequest;
@@ -304,9 +302,11 @@ import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateResourceOwner;
-import com.huaweicloud.sdk.dli.v1.model.UpdateSqlTemplatesRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSparkJobTemplateResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateSqlJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateSqlTemplatesRequestBody;
-import com.huaweicloud.sdk.dli.v1.model.UpdateSqlTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateTableOwnerRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateTableOwnerResponse;
 import com.huaweicloud.sdk.dli.v1.model.UploadFilesRequest;
@@ -326,64 +326,17 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class DliMeta {
 
-    public static final HttpRequestDef<CreateJobTemplatesRequest, CreateJobTemplatesResponse> createJobTemplates =
-        genForcreateJobTemplates();
+    public static final HttpRequestDef<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> batchDeleteSqlJobTemplates =
+        genForbatchDeleteSqlJobTemplates();
 
-    private static HttpRequestDef<CreateJobTemplatesRequest, CreateJobTemplatesResponse> genForcreateJobTemplates() {
+    private static HttpRequestDef<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> genForbatchDeleteSqlJobTemplates() {
         // basic
-        HttpRequestDef.Builder<CreateJobTemplatesRequest, CreateJobTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateJobTemplatesRequest.class, CreateJobTemplatesResponse.class)
-                .withName("CreateJobTemplates")
-                .withUri("/v3/{project_id}/templates")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateJobTemplatesRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateJobTemplatesRequestBody.class),
-            f -> f.withMarshaller(CreateJobTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateSqlTemplatesRequest, CreateSqlTemplatesResponse> createSqlTemplates =
-        genForcreateSqlTemplates();
-
-    private static HttpRequestDef<CreateSqlTemplatesRequest, CreateSqlTemplatesResponse> genForcreateSqlTemplates() {
-        // basic
-        HttpRequestDef.Builder<CreateSqlTemplatesRequest, CreateSqlTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateSqlTemplatesRequest.class, CreateSqlTemplatesResponse.class)
-                .withName("CreateSqlTemplates")
-                .withUri("/v1.0/{project_id}/sqls")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateSqlTemplatesRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateSqlTemplatesRequestBody.class),
-            f -> f.withMarshaller(CreateSqlTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteSqlTemplatesRequest, DeleteSqlTemplatesResponse> deleteSqlTemplates =
-        genFordeleteSqlTemplates();
-
-    private static HttpRequestDef<DeleteSqlTemplatesRequest, DeleteSqlTemplatesResponse> genFordeleteSqlTemplates() {
-        // basic
-        HttpRequestDef.Builder<DeleteSqlTemplatesRequest, DeleteSqlTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DeleteSqlTemplatesRequest.class, DeleteSqlTemplatesResponse.class)
-                .withName("DeleteSqlTemplates")
+        HttpRequestDef.Builder<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSqlJobTemplatesRequest.class,
+                    BatchDeleteSqlJobTemplatesResponse.class)
+                .withName("BatchDeleteSqlJobTemplates")
                 .withUri("/v1.0/{project_id}/sqls-deletion")
                 .withContentType("application/json");
 
@@ -392,7 +345,7 @@ public class DliMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteSqlTemplatesRequestBody.class),
-            f -> f.withMarshaller(DeleteSqlTemplatesRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(BatchDeleteSqlJobTemplatesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -401,44 +354,94 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListJobTemplatesRequest, ListJobTemplatesResponse> listJobTemplates =
-        genForlistJobTemplates();
+    public static final HttpRequestDef<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> createSparkJobTemplate =
+        genForcreateSparkJobTemplate();
 
-    private static HttpRequestDef<ListJobTemplatesRequest, ListJobTemplatesResponse> genForlistJobTemplates() {
+    private static HttpRequestDef<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> genForcreateSparkJobTemplate() {
         // basic
-        HttpRequestDef.Builder<ListJobTemplatesRequest, ListJobTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListJobTemplatesRequest.class, ListJobTemplatesResponse.class)
-                .withName("ListJobTemplates")
-                .withUri("/v3/{project_id}/templates")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSparkJobTemplateRequest.class, CreateSparkJobTemplateResponse.class)
+            .withName("CreateSparkJobTemplate")
+            .withUri("/v3/{project_id}/templates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateJobTemplatesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateJobTemplatesRequestBody.class),
+            f -> f.withMarshaller(CreateSparkJobTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> createSqlJobTemplate =
+        genForcreateSqlJobTemplate();
+
+    private static HttpRequestDef<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> genForcreateSqlJobTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSqlJobTemplateRequest.class, CreateSqlJobTemplateResponse.class)
+            .withName("CreateSqlJobTemplate")
+            .withUri("/v1.0/{project_id}/sqls")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateSqlTemplatesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSqlTemplatesRequestBody.class),
+            f -> f.withMarshaller(CreateSqlJobTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> listSparkJobTemplates =
+        genForlistSparkJobTemplates();
+
+    private static HttpRequestDef<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> genForlistSparkJobTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSparkJobTemplatesRequest.class, ListSparkJobTemplatesResponse.class)
+            .withName("ListSparkJobTemplates")
+            .withUri("/v3/{project_id}/templates")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobTemplatesRequest::getType, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getType, (req, v) -> {
                 req.setType(v);
             }));
         builder.<String>withRequestField("keyword",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJobTemplatesRequest::getKeyword, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getKeyword, (req, v) -> {
                 req.setKeyword(v);
             }));
         builder.<Integer>withRequestField("page-size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobTemplatesRequest::getPageSize, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getPageSize, (req, v) -> {
                 req.setPageSize(v);
             }));
         builder.<Integer>withRequestField("current-page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJobTemplatesRequest::getCurrentPage, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getCurrentPage, (req, v) -> {
                 req.setCurrentPage(v);
             }));
 
@@ -447,23 +450,48 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobTemplateRequest, ShowJobTemplateResponse> showJobTemplate =
-        genForshowJobTemplate();
+    public static final HttpRequestDef<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> listSqlJobTemplates =
+        genForlistSqlJobTemplates();
 
-    private static HttpRequestDef<ShowJobTemplateRequest, ShowJobTemplateResponse> genForshowJobTemplate() {
+    private static HttpRequestDef<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> genForlistSqlJobTemplates() {
         // basic
-        HttpRequestDef.Builder<ShowJobTemplateRequest, ShowJobTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowJobTemplateRequest.class, ShowJobTemplateResponse.class)
-                .withName("ShowJobTemplate")
-                .withUri("/v3/{project_id}/templates/{template_id}")
+        HttpRequestDef.Builder<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSqlJobTemplatesRequest.class, ListSqlJobTemplatesResponse.class)
+                .withName("ListSqlJobTemplates")
+                .withUri("/v1.0/{project_id}/sqls")
                 .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlJobTemplatesRequest::getKeyword, (req, v) -> {
+                req.setKeyword(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> showSparkJobTemplate =
+        genForshowSparkJobTemplate();
+
+    private static HttpRequestDef<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> genForshowSparkJobTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSparkJobTemplateRequest.class, ShowSparkJobTemplateResponse.class)
+            .withName("ShowSparkJobTemplate")
+            .withUri("/v3/{project_id}/templates/{template_id}")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobTemplateRequest::getTemplateId, (req, v) -> {
+            f -> f.withMarshaller(ShowSparkJobTemplateRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
             }));
 
@@ -490,55 +518,30 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSqlTemplatesRequest, ShowSqlTemplatesResponse> showSqlTemplates =
-        genForshowSqlTemplates();
+    public static final HttpRequestDef<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> updateSparkJobTemplate =
+        genForupdateSparkJobTemplate();
 
-    private static HttpRequestDef<ShowSqlTemplatesRequest, ShowSqlTemplatesResponse> genForshowSqlTemplates() {
+    private static HttpRequestDef<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> genForupdateSparkJobTemplate() {
         // basic
-        HttpRequestDef.Builder<ShowSqlTemplatesRequest, ShowSqlTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSqlTemplatesRequest.class, ShowSqlTemplatesResponse.class)
-                .withName("ShowSqlTemplates")
-                .withUri("/v1.0/{project_id}/sqls")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("keyword",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlTemplatesRequest::getKeyword, (req, v) -> {
-                req.setKeyword(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateJobTemplatesRequest, UpdateJobTemplatesResponse> updateJobTemplates =
-        genForupdateJobTemplates();
-
-    private static HttpRequestDef<UpdateJobTemplatesRequest, UpdateJobTemplatesResponse> genForupdateJobTemplates() {
-        // basic
-        HttpRequestDef.Builder<UpdateJobTemplatesRequest, UpdateJobTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateJobTemplatesRequest.class, UpdateJobTemplatesResponse.class)
-                .withName("UpdateJobTemplates")
-                .withUri("/v3/{project_id}/templates/{template_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSparkJobTemplateRequest.class, UpdateSparkJobTemplateResponse.class)
+            .withName("UpdateSparkJobTemplate")
+            .withUri("/v3/{project_id}/templates/{template_id}")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateJobTemplatesRequest::getTemplateId, (req, v) -> {
+            f -> f.withMarshaller(UpdateSparkJobTemplateRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
             }));
         builder.<UpdateJobTemplatesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateJobTemplatesRequestBody.class),
-            f -> f.withMarshaller(UpdateJobTemplatesRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateSparkJobTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -547,63 +550,30 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateSqlTemplatesRequest, UpdateSqlTemplatesResponse> updateSqlTemplates =
-        genForupdateSqlTemplates();
+    public static final HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> updateSqlJobTemplate =
+        genForupdateSqlJobTemplate();
 
-    private static HttpRequestDef<UpdateSqlTemplatesRequest, UpdateSqlTemplatesResponse> genForupdateSqlTemplates() {
+    private static HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> genForupdateSqlJobTemplate() {
         // basic
-        HttpRequestDef.Builder<UpdateSqlTemplatesRequest, UpdateSqlTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateSqlTemplatesRequest.class, UpdateSqlTemplatesResponse.class)
-                .withName("UpdateSqlTemplates")
-                .withUri("/v1.0/{project_id}/sqls/{sql_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSqlJobTemplateRequest.class, UpdateSqlJobTemplateResponse.class)
+            .withName("UpdateSqlJobTemplate")
+            .withUri("/v1.0/{project_id}/sqls/{sql_id}")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("sql_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSqlTemplatesRequest::getSqlId, (req, v) -> {
+            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getSqlId, (req, v) -> {
                 req.setSqlId(v);
             }));
         builder.<UpdateSqlTemplatesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSqlTemplatesRequestBody.class),
-            f -> f.withMarshaller(UpdateSqlTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<AssociateConnectionQueueRequest, AssociateConnectionQueueResponse> associateConnectionQueue =
-        genForassociateConnectionQueue();
-
-    private static HttpRequestDef<AssociateConnectionQueueRequest, AssociateConnectionQueueResponse> genForassociateConnectionQueue() {
-        // basic
-        HttpRequestDef.Builder<AssociateConnectionQueueRequest, AssociateConnectionQueueResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, AssociateConnectionQueueRequest.class, AssociateConnectionQueueResponse.class)
-                .withName("AssociateConnectionQueue")
-                .withUri("/v2.0/{project_id}/datasource/enhanced-connections/{connection_id}/associate-queue")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("connection_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateConnectionQueueRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
-        builder.<AssociateConnectionQueueReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociateConnectionQueueReq.class),
-            f -> f.withMarshaller(AssociateConnectionQueueRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -647,23 +617,33 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<AuthorizeResourceRequest, AuthorizeResourceResponse> authorizeResource =
-        genForauthorizeResource();
+    public static final HttpRequestDef<AssociateQueueToEnhancedConnectionRequest, AssociateQueueToEnhancedConnectionResponse> associateQueueToEnhancedConnection =
+        genForassociateQueueToEnhancedConnection();
 
-    private static HttpRequestDef<AuthorizeResourceRequest, AuthorizeResourceResponse> genForauthorizeResource() {
+    private static HttpRequestDef<AssociateQueueToEnhancedConnectionRequest, AssociateQueueToEnhancedConnectionResponse> genForassociateQueueToEnhancedConnection() {
         // basic
-        HttpRequestDef.Builder<AuthorizeResourceRequest, AuthorizeResourceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, AuthorizeResourceRequest.class, AuthorizeResourceResponse.class)
-                .withName("AuthorizeResource")
-                .withUri("/v1.0/{project_id}/authorization")
+        HttpRequestDef.Builder<AssociateQueueToEnhancedConnectionRequest, AssociateQueueToEnhancedConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateQueueToEnhancedConnectionRequest.class,
+                    AssociateQueueToEnhancedConnectionResponse.class)
+                .withName("AssociateQueueToEnhancedConnection")
+                .withUri("/v2.0/{project_id}/datasource/enhanced-connections/{connection_id}/associate-queue")
                 .withContentType("application/json");
 
         // requests
-        builder.<AuthorizeResourceRequestBody>withRequestField("body",
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateQueueToEnhancedConnectionRequest::getConnectionId, (req, v) -> {
+                req.setConnectionId(v);
+            }));
+        builder.<AssociateConnectionQueueReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AuthorizeResourceRequestBody.class),
-            f -> f.withMarshaller(AuthorizeResourceRequest::getBody, (req, v) -> {
+            TypeCasts.uncheckedConversion(AssociateConnectionQueueReq.class),
+            f -> f.withMarshaller(AssociateQueueToEnhancedConnectionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -768,38 +748,6 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckConnectionRequest, CheckConnectionResponse> checkConnection =
-        genForcheckConnection();
-
-    private static HttpRequestDef<CheckConnectionRequest, CheckConnectionResponse> genForcheckConnection() {
-        // basic
-        HttpRequestDef.Builder<CheckConnectionRequest, CheckConnectionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CheckConnectionRequest.class, CheckConnectionResponse.class)
-                .withName("CheckConnection")
-                .withUri("/v1.0/{project_id}/queues/{queue_name}/connection-test")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("queue_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CheckConnectionRequest::getQueueName, (req, v) -> {
-                req.setQueueName(v);
-            }));
-        builder.<VerityConnectivityReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VerityConnectivityReq.class),
-            f -> f.withMarshaller(CheckConnectionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateAuthInfoRequest, CreateAuthInfoResponse> createAuthInfo =
         genForcreateAuthInfo();
 
@@ -817,6 +765,38 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAuthInfoReq.class),
             f -> f.withMarshaller(CreateAuthInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateConnectivityTaskRequest, CreateConnectivityTaskResponse> createConnectivityTask =
+        genForcreateConnectivityTask();
+
+    private static HttpRequestDef<CreateConnectivityTaskRequest, CreateConnectivityTaskResponse> genForcreateConnectivityTask() {
+        // basic
+        HttpRequestDef.Builder<CreateConnectivityTaskRequest, CreateConnectivityTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateConnectivityTaskRequest.class, CreateConnectivityTaskResponse.class)
+            .withName("CreateConnectivityTask")
+            .withUri("/v1.0/{project_id}/queues/{queue_name}/connection-test")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateConnectivityTaskRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
+        builder.<VerityConnectivityReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(VerityConnectivityReq.class),
+            f -> f.withMarshaller(CreateConnectivityTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -967,23 +947,23 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateGlobalValueRequest, CreateGlobalValueResponse> createGlobalValue =
-        genForcreateGlobalValue();
+    public static final HttpRequestDef<CreateGlobalVariableRequest, CreateGlobalVariableResponse> createGlobalVariable =
+        genForcreateGlobalVariable();
 
-    private static HttpRequestDef<CreateGlobalValueRequest, CreateGlobalValueResponse> genForcreateGlobalValue() {
+    private static HttpRequestDef<CreateGlobalVariableRequest, CreateGlobalVariableResponse> genForcreateGlobalVariable() {
         // basic
-        HttpRequestDef.Builder<CreateGlobalValueRequest, CreateGlobalValueResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateGlobalValueRequest.class, CreateGlobalValueResponse.class)
-                .withName("CreateGlobalValue")
-                .withUri("/v1.0/{project_id}/variables")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateGlobalVariableRequest, CreateGlobalVariableResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateGlobalVariableRequest.class, CreateGlobalVariableResponse.class)
+            .withName("CreateGlobalVariable")
+            .withUri("/v1.0/{project_id}/variables")
+            .withContentType("application/json");
 
         // requests
         builder.<CreateGlobalValueReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateGlobalValueReq.class),
-            f -> f.withMarshaller(CreateGlobalValueRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(CreateGlobalVariableRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1224,23 +1204,23 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteGlobalValueRequest, DeleteGlobalValueResponse> deleteGlobalValue =
-        genFordeleteGlobalValue();
+    public static final HttpRequestDef<DeleteGlobalVariableRequest, DeleteGlobalVariableResponse> deleteGlobalVariable =
+        genFordeleteGlobalVariable();
 
-    private static HttpRequestDef<DeleteGlobalValueRequest, DeleteGlobalValueResponse> genFordeleteGlobalValue() {
+    private static HttpRequestDef<DeleteGlobalVariableRequest, DeleteGlobalVariableResponse> genFordeleteGlobalVariable() {
         // basic
-        HttpRequestDef.Builder<DeleteGlobalValueRequest, DeleteGlobalValueResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteGlobalValueRequest.class, DeleteGlobalValueResponse.class)
-                .withName("DeleteGlobalValue")
-                .withUri("/v1.0/{project_id}/variables/{var_name}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteGlobalVariableRequest, DeleteGlobalVariableResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteGlobalVariableRequest.class, DeleteGlobalVariableResponse.class)
+            .withName("DeleteGlobalVariable")
+            .withUri("/v1.0/{project_id}/variables/{var_name}")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("var_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteGlobalValueRequest::getVarName, (req, v) -> {
+            f -> f.withMarshaller(DeleteGlobalVariableRequest::getVarName, (req, v) -> {
                 req.setVarName(v);
             }));
 
@@ -1369,17 +1349,17 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DisassociateConnectionQueueRequest, DisassociateConnectionQueueResponse> disassociateConnectionQueue =
-        genFordisassociateConnectionQueue();
+    public static final HttpRequestDef<DisassociateQueueFromEnhancedConnectionRequest, DisassociateQueueFromEnhancedConnectionResponse> disassociateQueueFromEnhancedConnection =
+        genFordisassociateQueueFromEnhancedConnection();
 
-    private static HttpRequestDef<DisassociateConnectionQueueRequest, DisassociateConnectionQueueResponse> genFordisassociateConnectionQueue() {
+    private static HttpRequestDef<DisassociateQueueFromEnhancedConnectionRequest, DisassociateQueueFromEnhancedConnectionResponse> genFordisassociateQueueFromEnhancedConnection() {
         // basic
-        HttpRequestDef.Builder<DisassociateConnectionQueueRequest, DisassociateConnectionQueueResponse> builder =
+        HttpRequestDef.Builder<DisassociateQueueFromEnhancedConnectionRequest, DisassociateQueueFromEnhancedConnectionResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.POST,
-                    DisassociateConnectionQueueRequest.class,
-                    DisassociateConnectionQueueResponse.class)
-                .withName("DisassociateConnectionQueue")
+                    DisassociateQueueFromEnhancedConnectionRequest.class,
+                    DisassociateQueueFromEnhancedConnectionResponse.class)
+                .withName("DisassociateQueueFromEnhancedConnection")
                 .withUri("/v2.0/{project_id}/datasource/enhanced-connections/{connection_id}/disassociate-queue")
                 .withContentType("application/json");
 
@@ -1388,14 +1368,14 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateConnectionQueueRequest::getConnectionId, (req, v) -> {
+            f -> f.withMarshaller(DisassociateQueueFromEnhancedConnectionRequest::getConnectionId, (req, v) -> {
                 req.setConnectionId(v);
             }));
         builder.<DisassociateConnectionQueueReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisassociateConnectionQueueReq.class),
-            f -> f.withMarshaller(DisassociateConnectionQueueRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(DisassociateQueueFromEnhancedConnectionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1435,6 +1415,34 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAuthInfoRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAuthorizationPrivilegesRequest, ListAuthorizationPrivilegesResponse> listAuthorizationPrivileges =
+        genForlistAuthorizationPrivileges();
+
+    private static HttpRequestDef<ListAuthorizationPrivilegesRequest, ListAuthorizationPrivilegesResponse> genForlistAuthorizationPrivileges() {
+        // basic
+        HttpRequestDef.Builder<ListAuthorizationPrivilegesRequest, ListAuthorizationPrivilegesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAuthorizationPrivilegesRequest.class,
+                    ListAuthorizationPrivilegesResponse.class)
+                .withName("ListAuthorizationPrivileges")
+                .withUri("/v1.0/{project_id}/authorization/privileges")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("object",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthorizationPrivilegesRequest::getObject, (req, v) -> {
+                req.setObject(v);
             }));
 
         // response
@@ -1720,14 +1728,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListGlobalValuesRequest, ListGlobalValuesResponse> listGlobalValues =
-        genForlistGlobalValues();
+    public static final HttpRequestDef<ListGlobalVariablesRequest, ListGlobalVariablesResponse> listGlobalVariables =
+        genForlistGlobalVariables();
 
-    private static HttpRequestDef<ListGlobalValuesRequest, ListGlobalValuesResponse> genForlistGlobalValues() {
+    private static HttpRequestDef<ListGlobalVariablesRequest, ListGlobalVariablesResponse> genForlistGlobalVariables() {
         // basic
-        HttpRequestDef.Builder<ListGlobalValuesRequest, ListGlobalValuesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListGlobalValuesRequest.class, ListGlobalValuesResponse.class)
-                .withName("ListGlobalValues")
+        HttpRequestDef.Builder<ListGlobalVariablesRequest, ListGlobalVariablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGlobalVariablesRequest.class, ListGlobalVariablesResponse.class)
+                .withName("ListGlobalVariables")
                 .withUri("/v1.0/{project_id}/variables")
                 .withContentType("application/json");
 
@@ -1736,14 +1744,14 @@ public class DliMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGlobalValuesRequest::getLimit, (req, v) -> {
+            f -> f.withMarshaller(ListGlobalVariablesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGlobalValuesRequest::getOffset, (req, v) -> {
+            f -> f.withMarshaller(ListGlobalVariablesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
 
@@ -1777,14 +1785,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQueuePropertyRequest, ListQueuePropertyResponse> listQueueProperty =
-        genForlistQueueProperty();
+    public static final HttpRequestDef<ListQueuePropertiesRequest, ListQueuePropertiesResponse> listQueueProperties =
+        genForlistQueueProperties();
 
-    private static HttpRequestDef<ListQueuePropertyRequest, ListQueuePropertyResponse> genForlistQueueProperty() {
+    private static HttpRequestDef<ListQueuePropertiesRequest, ListQueuePropertiesResponse> genForlistQueueProperties() {
         // basic
-        HttpRequestDef.Builder<ListQueuePropertyRequest, ListQueuePropertyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListQueuePropertyRequest.class, ListQueuePropertyResponse.class)
-                .withName("ListQueueProperty")
+        HttpRequestDef.Builder<ListQueuePropertiesRequest, ListQueuePropertiesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQueuePropertiesRequest.class, ListQueuePropertiesResponse.class)
+                .withName("ListQueueProperties")
                 .withUri("/v3/{project_id}/queues/{queue_name}/properties")
                 .withContentType("application/json");
 
@@ -1793,21 +1801,21 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueuePropertyRequest::getQueueName, (req, v) -> {
+            f -> f.withMarshaller(ListQueuePropertiesRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
             }));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueuePropertyRequest::getPage, (req, v) -> {
+            f -> f.withMarshaller(ListQueuePropertiesRequest::getPage, (req, v) -> {
                 req.setPage(v);
             }));
         builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueuePropertyRequest::getPageSize, (req, v) -> {
+            f -> f.withMarshaller(ListQueuePropertiesRequest::getPageSize, (req, v) -> {
                 req.setPageSize(v);
             }));
 
@@ -2014,6 +2022,31 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunAuthorizationActionRequest, RunAuthorizationActionResponse> runAuthorizationAction =
+        genForrunAuthorizationAction();
+
+    private static HttpRequestDef<RunAuthorizationActionRequest, RunAuthorizationActionResponse> genForrunAuthorizationAction() {
+        // basic
+        HttpRequestDef.Builder<RunAuthorizationActionRequest, RunAuthorizationActionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, RunAuthorizationActionRequest.class, RunAuthorizationActionResponse.class)
+            .withName("RunAuthorizationAction")
+            .withUri("/v1.0/{project_id}/authorization")
+            .withContentType("application/json");
+
+        // requests
+        builder.<AuthorizeResourceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AuthorizeResourceRequestBody.class),
+            f -> f.withMarshaller(RunAuthorizationActionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunQueueActionRequest, RunQueueActionResponse> runQueueAction =
         genForrunQueueAction();
 
@@ -2039,6 +2072,38 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(RunQueueActionReq.class),
             f -> f.withMarshaller(RunQueueActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConnectivityTaskRequest, ShowConnectivityTaskResponse> showConnectivityTask =
+        genForshowConnectivityTask();
+
+    private static HttpRequestDef<ShowConnectivityTaskRequest, ShowConnectivityTaskResponse> genForshowConnectivityTask() {
+        // basic
+        HttpRequestDef.Builder<ShowConnectivityTaskRequest, ShowConnectivityTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowConnectivityTaskRequest.class, ShowConnectivityTaskResponse.class)
+            .withName("ShowConnectivityTask")
+            .withUri("/v1.0/{project_id}/queues/{queue_name}/connection-test/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConnectivityTaskRequest::getQueueName, (req, v) -> {
+                req.setQueueName(v);
+            }));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConnectivityTaskRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response
@@ -2115,23 +2180,26 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEnhancedPrivilegeRequest, ShowEnhancedPrivilegeResponse> showEnhancedPrivilege =
-        genForshowEnhancedPrivilege();
+    public static final HttpRequestDef<ShowEnhancedConnectionPrivilegeRequest, ShowEnhancedConnectionPrivilegeResponse> showEnhancedConnectionPrivilege =
+        genForshowEnhancedConnectionPrivilege();
 
-    private static HttpRequestDef<ShowEnhancedPrivilegeRequest, ShowEnhancedPrivilegeResponse> genForshowEnhancedPrivilege() {
+    private static HttpRequestDef<ShowEnhancedConnectionPrivilegeRequest, ShowEnhancedConnectionPrivilegeResponse> genForshowEnhancedConnectionPrivilege() {
         // basic
-        HttpRequestDef.Builder<ShowEnhancedPrivilegeRequest, ShowEnhancedPrivilegeResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowEnhancedPrivilegeRequest.class, ShowEnhancedPrivilegeResponse.class)
-            .withName("ShowEnhancedPrivilege")
-            .withUri("/v2.0/{project_id}/datasource/enhanced-connections/{connection_id}/privileges")
-            .withContentType("application/json");
+        HttpRequestDef.Builder<ShowEnhancedConnectionPrivilegeRequest, ShowEnhancedConnectionPrivilegeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowEnhancedConnectionPrivilegeRequest.class,
+                    ShowEnhancedConnectionPrivilegeResponse.class)
+                .withName("ShowEnhancedConnectionPrivilege")
+                .withUri("/v2.0/{project_id}/datasource/enhanced-connections/{connection_id}/privileges")
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("connection_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowEnhancedPrivilegeRequest::getConnectionId, (req, v) -> {
+            f -> f.withMarshaller(ShowEnhancedConnectionPrivilegeRequest::getConnectionId, (req, v) -> {
                 req.setConnectionId(v);
             }));
 
@@ -2140,71 +2208,13 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNodeConnectivityRequest, ShowNodeConnectivityResponse> showNodeConnectivity =
-        genForshowNodeConnectivity();
+    public static final HttpRequestDef<ShowQueueRequest, ShowQueueResponse> showQueue = genForshowQueue();
 
-    private static HttpRequestDef<ShowNodeConnectivityRequest, ShowNodeConnectivityResponse> genForshowNodeConnectivity() {
+    private static HttpRequestDef<ShowQueueRequest, ShowQueueResponse> genForshowQueue() {
         // basic
-        HttpRequestDef.Builder<ShowNodeConnectivityRequest, ShowNodeConnectivityResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowNodeConnectivityRequest.class, ShowNodeConnectivityResponse.class)
-            .withName("ShowNodeConnectivity")
-            .withUri("/v1.0/{project_id}/queues/{queue_name}/connection-test/{task_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("queue_name",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodeConnectivityRequest::getQueueName, (req, v) -> {
-                req.setQueueName(v);
-            }));
-        builder.<String>withRequestField("task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNodeConnectivityRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowObjectUserRequest, ShowObjectUserResponse> showObjectUser =
-        genForshowObjectUser();
-
-    private static HttpRequestDef<ShowObjectUserRequest, ShowObjectUserResponse> genForshowObjectUser() {
-        // basic
-        HttpRequestDef.Builder<ShowObjectUserRequest, ShowObjectUserResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowObjectUserRequest.class, ShowObjectUserResponse.class)
-                .withName("ShowObjectUser")
-                .withUri("/v1.0/{project_id}/authorization/privileges")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("object",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowObjectUserRequest::getObject, (req, v) -> {
-                req.setObject(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowQueueDetailRequest, ShowQueueDetailResponse> showQueueDetail =
-        genForshowQueueDetail();
-
-    private static HttpRequestDef<ShowQueueDetailRequest, ShowQueueDetailResponse> genForshowQueueDetail() {
-        // basic
-        HttpRequestDef.Builder<ShowQueueDetailRequest, ShowQueueDetailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowQueueDetailRequest.class, ShowQueueDetailResponse.class)
-                .withName("ShowQueueDetail")
+        HttpRequestDef.Builder<ShowQueueRequest, ShowQueueResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQueueRequest.class, ShowQueueResponse.class)
+                .withName("ShowQueue")
                 .withUri("/v1.0/{project_id}/queues/{queue_name}")
                 .withContentType("application/json");
 
@@ -2213,7 +2223,7 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowQueueDetailRequest::getQueueName, (req, v) -> {
+            f -> f.withMarshaller(ShowQueueRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
             }));
 
@@ -2314,17 +2324,17 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateElasticResourcePoolQueueInfoRequest, UpdateElasticResourcePoolQueueInfoResponse> updateElasticResourcePoolQueueInfo =
-        genForupdateElasticResourcePoolQueueInfo();
+    public static final HttpRequestDef<UpdateElasticResourcePoolQueueRequest, UpdateElasticResourcePoolQueueResponse> updateElasticResourcePoolQueue =
+        genForupdateElasticResourcePoolQueue();
 
-    private static HttpRequestDef<UpdateElasticResourcePoolQueueInfoRequest, UpdateElasticResourcePoolQueueInfoResponse> genForupdateElasticResourcePoolQueueInfo() {
+    private static HttpRequestDef<UpdateElasticResourcePoolQueueRequest, UpdateElasticResourcePoolQueueResponse> genForupdateElasticResourcePoolQueue() {
         // basic
-        HttpRequestDef.Builder<UpdateElasticResourcePoolQueueInfoRequest, UpdateElasticResourcePoolQueueInfoResponse> builder =
+        HttpRequestDef.Builder<UpdateElasticResourcePoolQueueRequest, UpdateElasticResourcePoolQueueResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.PUT,
-                    UpdateElasticResourcePoolQueueInfoRequest.class,
-                    UpdateElasticResourcePoolQueueInfoResponse.class)
-                .withName("UpdateElasticResourcePoolQueueInfo")
+                    UpdateElasticResourcePoolQueueRequest.class,
+                    UpdateElasticResourcePoolQueueResponse.class)
+                .withName("UpdateElasticResourcePoolQueue")
                 .withUri("/v3/{project_id}/elastic-resource-pools/{elastic_resource_pool_name}/queues/{queue_name}")
                 .withContentType("application/json");
 
@@ -2333,21 +2343,21 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateElasticResourcePoolQueueInfoRequest::getElasticResourcePoolName, (req, v) -> {
+            f -> f.withMarshaller(UpdateElasticResourcePoolQueueRequest::getElasticResourcePoolName, (req, v) -> {
                 req.setElasticResourcePoolName(v);
             }));
         builder.<String>withRequestField("queue_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateElasticResourcePoolQueueInfoRequest::getQueueName, (req, v) -> {
+            f -> f.withMarshaller(UpdateElasticResourcePoolQueueRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
             }));
         builder.<UpdateElasticResourcePoolQueueScalingPolicyInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateElasticResourcePoolQueueScalingPolicyInfo.class),
-            f -> f.withMarshaller(UpdateElasticResourcePoolQueueInfoRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateElasticResourcePoolQueueRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2356,30 +2366,63 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateGlobalValueRequest, UpdateGlobalValueResponse> updateGlobalValue =
-        genForupdateGlobalValue();
+    public static final HttpRequestDef<UpdateEnhancedConnectionRequest, UpdateEnhancedConnectionResponse> updateEnhancedConnection =
+        genForupdateEnhancedConnection();
 
-    private static HttpRequestDef<UpdateGlobalValueRequest, UpdateGlobalValueResponse> genForupdateGlobalValue() {
+    private static HttpRequestDef<UpdateEnhancedConnectionRequest, UpdateEnhancedConnectionResponse> genForupdateEnhancedConnection() {
         // basic
-        HttpRequestDef.Builder<UpdateGlobalValueRequest, UpdateGlobalValueResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateGlobalValueRequest.class, UpdateGlobalValueResponse.class)
-                .withName("UpdateGlobalValue")
-                .withUri("/v1.0/{project_id}/variables/{var_name}")
+        HttpRequestDef.Builder<UpdateEnhancedConnectionRequest, UpdateEnhancedConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateEnhancedConnectionRequest.class, UpdateEnhancedConnectionResponse.class)
+                .withName("UpdateEnhancedConnection")
+                .withUri("/v2.0/{project_id}/datasource/enhanced-connections/{connection_id}")
                 .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEnhancedConnectionRequest::getConnectionId, (req, v) -> {
+                req.setConnectionId(v);
+            }));
+        builder.<UpdateHostMassageReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateHostMassageReq.class),
+            f -> f.withMarshaller(UpdateEnhancedConnectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGlobalVariableRequest, UpdateGlobalVariableResponse> updateGlobalVariable =
+        genForupdateGlobalVariable();
+
+    private static HttpRequestDef<UpdateGlobalVariableRequest, UpdateGlobalVariableResponse> genForupdateGlobalVariable() {
+        // basic
+        HttpRequestDef.Builder<UpdateGlobalVariableRequest, UpdateGlobalVariableResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateGlobalVariableRequest.class, UpdateGlobalVariableResponse.class)
+            .withName("UpdateGlobalVariable")
+            .withUri("/v1.0/{project_id}/variables/{var_name}")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("var_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateGlobalValueRequest::getVarName, (req, v) -> {
+            f -> f.withMarshaller(UpdateGlobalVariableRequest::getVarName, (req, v) -> {
                 req.setVarName(v);
             }));
         builder.<UpdateGlobalValueReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateGlobalValueReq.class),
-            f -> f.withMarshaller(UpdateGlobalValueRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateGlobalVariableRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2408,38 +2451,6 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResourceOwner.class),
             f -> f.withMarshaller(UpdateGroupOrResourceOwnerRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateHostMassageRequest, UpdateHostMassageResponse> updateHostMassage =
-        genForupdateHostMassage();
-
-    private static HttpRequestDef<UpdateHostMassageRequest, UpdateHostMassageResponse> genForupdateHostMassage() {
-        // basic
-        HttpRequestDef.Builder<UpdateHostMassageRequest, UpdateHostMassageResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateHostMassageRequest.class, UpdateHostMassageResponse.class)
-                .withName("UpdateHostMassage")
-                .withUri("/v2.0/{project_id}/datasource/enhanced-connections/{connection_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("connection_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateHostMassageRequest::getConnectionId, (req, v) -> {
-                req.setConnectionId(v);
-            }));
-        builder.<UpdateHostMassageReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateHostMassageReq.class),
-            f -> f.withMarshaller(UpdateHostMassageRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2723,14 +2734,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateFlinkJarRequest, CreateFlinkJarResponse> createFlinkJar =
-        genForcreateFlinkJar();
+    public static final HttpRequestDef<CreateFlinkJarJobRequest, CreateFlinkJarJobResponse> createFlinkJarJob =
+        genForcreateFlinkJarJob();
 
-    private static HttpRequestDef<CreateFlinkJarRequest, CreateFlinkJarResponse> genForcreateFlinkJar() {
+    private static HttpRequestDef<CreateFlinkJarJobRequest, CreateFlinkJarJobResponse> genForcreateFlinkJarJob() {
         // basic
-        HttpRequestDef.Builder<CreateFlinkJarRequest, CreateFlinkJarResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateFlinkJarRequest.class, CreateFlinkJarResponse.class)
-                .withName("CreateFlinkJar")
+        HttpRequestDef.Builder<CreateFlinkJarJobRequest, CreateFlinkJarJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFlinkJarJobRequest.class, CreateFlinkJarJobResponse.class)
+                .withName("CreateFlinkJarJob")
                 .withUri("/v1.0/{project_id}/streaming/flink-jobs")
                 .withContentType("application/json");
 
@@ -2739,7 +2750,7 @@ public class DliMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFlinkJarRequestBody.class),
-            f -> f.withMarshaller(CreateFlinkJarRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(CreateFlinkJarJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2773,14 +2784,49 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateFlinkTemplateRequest, CreateFlinkTemplateResponse> createFlinkTemplate =
-        genForcreateFlinkTemplate();
+    public static final HttpRequestDef<CreateFlinkSqlJobGraphRequest, CreateFlinkSqlJobGraphResponse> createFlinkSqlJobGraph =
+        genForcreateFlinkSqlJobGraph();
 
-    private static HttpRequestDef<CreateFlinkTemplateRequest, CreateFlinkTemplateResponse> genForcreateFlinkTemplate() {
+    private static HttpRequestDef<CreateFlinkSqlJobGraphRequest, CreateFlinkSqlJobGraphResponse> genForcreateFlinkSqlJobGraph() {
         // basic
-        HttpRequestDef.Builder<CreateFlinkTemplateRequest, CreateFlinkTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateFlinkTemplateRequest.class, CreateFlinkTemplateResponse.class)
-                .withName("CreateFlinkTemplate")
+        HttpRequestDef.Builder<CreateFlinkSqlJobGraphRequest, CreateFlinkSqlJobGraphResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateFlinkSqlJobGraphRequest.class, CreateFlinkSqlJobGraphResponse.class)
+            .withName("CreateFlinkSqlJobGraph")
+            .withUri("/v3/{project_id}/streaming/jobs/{job_id}/gen-graph")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFlinkSqlJobGraphRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<GenStreamGraphReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GenStreamGraphReq.class),
+            f -> f.withMarshaller(CreateFlinkSqlJobGraphRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFlinkSqlJobTemplateRequest, CreateFlinkSqlJobTemplateResponse> createFlinkSqlJobTemplate =
+        genForcreateFlinkSqlJobTemplate();
+
+    private static HttpRequestDef<CreateFlinkSqlJobTemplateRequest, CreateFlinkSqlJobTemplateResponse> genForcreateFlinkSqlJobTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateFlinkSqlJobTemplateRequest, CreateFlinkSqlJobTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateFlinkSqlJobTemplateRequest.class,
+                    CreateFlinkSqlJobTemplateResponse.class)
+                .withName("CreateFlinkSqlJobTemplate")
                 .withUri("/v1.0/{project_id}/streaming/job-templates")
                 .withContentType("application/json");
 
@@ -2789,7 +2835,7 @@ public class DliMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFlinkTemplateRequestBody.class),
-            f -> f.withMarshaller(CreateFlinkTemplateRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(CreateFlinkSqlJobTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2848,38 +2894,6 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateStreamGraphRequest, CreateStreamGraphResponse> createStreamGraph =
-        genForcreateStreamGraph();
-
-    private static HttpRequestDef<CreateStreamGraphRequest, CreateStreamGraphResponse> genForcreateStreamGraph() {
-        // basic
-        HttpRequestDef.Builder<CreateStreamGraphRequest, CreateStreamGraphResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateStreamGraphRequest.class, CreateStreamGraphResponse.class)
-                .withName("CreateStreamGraph")
-                .withUri("/v3/{project_id}/streaming/jobs/{job_id}/gen-graph")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateStreamGraphRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
-        builder.<GenStreamGraphReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(GenStreamGraphReq.class),
-            f -> f.withMarshaller(CreateStreamGraphRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteFlinkJobRequest, DeleteFlinkJobResponse> deleteFlinkJob =
         genFordeleteFlinkJob();
 
@@ -2905,23 +2919,26 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteFlinkTemplateRequest, DeleteFlinkTemplateResponse> deleteFlinkTemplate =
-        genFordeleteFlinkTemplate();
+    public static final HttpRequestDef<DeleteFlinkSqlJobTemplateRequest, DeleteFlinkSqlJobTemplateResponse> deleteFlinkSqlJobTemplate =
+        genFordeleteFlinkSqlJobTemplate();
 
-    private static HttpRequestDef<DeleteFlinkTemplateRequest, DeleteFlinkTemplateResponse> genFordeleteFlinkTemplate() {
+    private static HttpRequestDef<DeleteFlinkSqlJobTemplateRequest, DeleteFlinkSqlJobTemplateResponse> genFordeleteFlinkSqlJobTemplate() {
         // basic
-        HttpRequestDef.Builder<DeleteFlinkTemplateRequest, DeleteFlinkTemplateResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeleteFlinkTemplateRequest.class, DeleteFlinkTemplateResponse.class)
-            .withName("DeleteFlinkTemplate")
-            .withUri("/v1.0/{project_id}/streaming/job-templates/{template_id}")
-            .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteFlinkSqlJobTemplateRequest, DeleteFlinkSqlJobTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteFlinkSqlJobTemplateRequest.class,
+                    DeleteFlinkSqlJobTemplateResponse.class)
+                .withName("DeleteFlinkSqlJobTemplate")
+                .withUri("/v1.0/{project_id}/streaming/job-templates/{template_id}")
+                .withContentType("application/json");
 
         // requests
         builder.<Long>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(DeleteFlinkTemplateRequest::getTemplateId, (req, v) -> {
+            f -> f.withMarshaller(DeleteFlinkSqlJobTemplateRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
             }));
 
@@ -2930,14 +2947,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExportFlinkJobRequest, ExportFlinkJobResponse> exportFlinkJob =
-        genForexportFlinkJob();
+    public static final HttpRequestDef<ExportFlinkJobsRequest, ExportFlinkJobsResponse> exportFlinkJobs =
+        genForexportFlinkJobs();
 
-    private static HttpRequestDef<ExportFlinkJobRequest, ExportFlinkJobResponse> genForexportFlinkJob() {
+    private static HttpRequestDef<ExportFlinkJobsRequest, ExportFlinkJobsResponse> genForexportFlinkJobs() {
         // basic
-        HttpRequestDef.Builder<ExportFlinkJobRequest, ExportFlinkJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ExportFlinkJobRequest.class, ExportFlinkJobResponse.class)
-                .withName("ExportFlinkJob")
+        HttpRequestDef.Builder<ExportFlinkJobsRequest, ExportFlinkJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportFlinkJobsRequest.class, ExportFlinkJobsResponse.class)
+                .withName("ExportFlinkJobs")
                 .withUri("/v1.0/{project_id}/streaming/jobs/export")
                 .withContentType("application/json");
 
@@ -2946,7 +2963,7 @@ public class DliMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportFlinkJobRequestBody.class),
-            f -> f.withMarshaller(ExportFlinkJobRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(ExportFlinkJobsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2955,14 +2972,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportFlinkJobRequest, ImportFlinkJobResponse> importFlinkJob =
-        genForimportFlinkJob();
+    public static final HttpRequestDef<ImportFlinkJobsRequest, ImportFlinkJobsResponse> importFlinkJobs =
+        genForimportFlinkJobs();
 
-    private static HttpRequestDef<ImportFlinkJobRequest, ImportFlinkJobResponse> genForimportFlinkJob() {
+    private static HttpRequestDef<ImportFlinkJobsRequest, ImportFlinkJobsResponse> genForimportFlinkJobs() {
         // basic
-        HttpRequestDef.Builder<ImportFlinkJobRequest, ImportFlinkJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ImportFlinkJobRequest.class, ImportFlinkJobResponse.class)
-                .withName("ImportFlinkJob")
+        HttpRequestDef.Builder<ImportFlinkJobsRequest, ImportFlinkJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportFlinkJobsRequest.class, ImportFlinkJobsResponse.class)
+                .withName("ImportFlinkJobs")
                 .withUri("/v1.0/{project_id}/streaming/jobs/import")
                 .withContentType("application/json");
 
@@ -2971,7 +2988,7 @@ public class DliMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportFlinkJobRequestBody.class),
-            f -> f.withMarshaller(ImportFlinkJobRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(ImportFlinkJobsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3082,14 +3099,15 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFlinkTemplatesRequest, ListFlinkTemplatesResponse> listFlinkTemplates =
-        genForlistFlinkTemplates();
+    public static final HttpRequestDef<ListFlinkSqlJobTemplatesRequest, ListFlinkSqlJobTemplatesResponse> listFlinkSqlJobTemplates =
+        genForlistFlinkSqlJobTemplates();
 
-    private static HttpRequestDef<ListFlinkTemplatesRequest, ListFlinkTemplatesResponse> genForlistFlinkTemplates() {
+    private static HttpRequestDef<ListFlinkSqlJobTemplatesRequest, ListFlinkSqlJobTemplatesResponse> genForlistFlinkSqlJobTemplates() {
         // basic
-        HttpRequestDef.Builder<ListFlinkTemplatesRequest, ListFlinkTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListFlinkTemplatesRequest.class, ListFlinkTemplatesResponse.class)
-                .withName("ListFlinkTemplates")
+        HttpRequestDef.Builder<ListFlinkSqlJobTemplatesRequest, ListFlinkSqlJobTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListFlinkSqlJobTemplatesRequest.class, ListFlinkSqlJobTemplatesResponse.class)
+                .withName("ListFlinkSqlJobTemplates")
                 .withUri("/v1.0/{project_id}/streaming/job-templates")
                 .withContentType("application/json");
 
@@ -3098,35 +3116,35 @@ public class DliMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFlinkTemplatesRequest::getLimit, (req, v) -> {
+            f -> f.withMarshaller(ListFlinkSqlJobTemplatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
             }));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkTemplatesRequest::getName, (req, v) -> {
+            f -> f.withMarshaller(ListFlinkSqlJobTemplatesRequest::getName, (req, v) -> {
                 req.setName(v);
             }));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListFlinkTemplatesRequest::getOffset, (req, v) -> {
+            f -> f.withMarshaller(ListFlinkSqlJobTemplatesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
             }));
         builder.<String>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkTemplatesRequest::getOrder, (req, v) -> {
+            f -> f.withMarshaller(ListFlinkSqlJobTemplatesRequest::getOrder, (req, v) -> {
                 req.setOrder(v);
             }));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFlinkTemplatesRequest::getTags, (req, v) -> {
+            f -> f.withMarshaller(ListFlinkSqlJobTemplatesRequest::getTags, (req, v) -> {
                 req.setTags(v);
             }));
 
@@ -3185,31 +3203,6 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFlinkExecuteGraphRequest, ShowFlinkExecuteGraphResponse> showFlinkExecuteGraph =
-        genForshowFlinkExecuteGraph();
-
-    private static HttpRequestDef<ShowFlinkExecuteGraphRequest, ShowFlinkExecuteGraphResponse> genForshowFlinkExecuteGraph() {
-        // basic
-        HttpRequestDef.Builder<ShowFlinkExecuteGraphRequest, ShowFlinkExecuteGraphResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowFlinkExecuteGraphRequest.class, ShowFlinkExecuteGraphResponse.class)
-            .withName("ShowFlinkExecuteGraph")
-            .withUri("/v1.0/{project_id}/streaming/jobs/{job_id}/execute-graph")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Long>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ShowFlinkExecuteGraphRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowFlinkJobRequest, ShowFlinkJobResponse> showFlinkJob = genForshowFlinkJob();
 
     private static HttpRequestDef<ShowFlinkJobRequest, ShowFlinkJobResponse> genForshowFlinkJob() {
@@ -3226,6 +3219,34 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowFlinkJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlinkJobExecutionGraphRequest, ShowFlinkJobExecutionGraphResponse> showFlinkJobExecutionGraph =
+        genForshowFlinkJobExecutionGraph();
+
+    private static HttpRequestDef<ShowFlinkJobExecutionGraphRequest, ShowFlinkJobExecutionGraphResponse> genForshowFlinkJobExecutionGraph() {
+        // basic
+        HttpRequestDef.Builder<ShowFlinkJobExecutionGraphRequest, ShowFlinkJobExecutionGraphResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowFlinkJobExecutionGraphRequest.class,
+                    ShowFlinkJobExecutionGraphResponse.class)
+                .withName("ShowFlinkJobExecutionGraph")
+                .withUri("/v1.0/{project_id}/streaming/jobs/{job_id}/execute-graph")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFlinkJobExecutionGraphRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
 
@@ -3291,14 +3312,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateFlinkJarRequest, UpdateFlinkJarResponse> updateFlinkJar =
-        genForupdateFlinkJar();
+    public static final HttpRequestDef<UpdateFlinkJarJobRequest, UpdateFlinkJarJobResponse> updateFlinkJarJob =
+        genForupdateFlinkJarJob();
 
-    private static HttpRequestDef<UpdateFlinkJarRequest, UpdateFlinkJarResponse> genForupdateFlinkJar() {
+    private static HttpRequestDef<UpdateFlinkJarJobRequest, UpdateFlinkJarJobResponse> genForupdateFlinkJarJob() {
         // basic
-        HttpRequestDef.Builder<UpdateFlinkJarRequest, UpdateFlinkJarResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateFlinkJarRequest.class, UpdateFlinkJarResponse.class)
-                .withName("UpdateFlinkJar")
+        HttpRequestDef.Builder<UpdateFlinkJarJobRequest, UpdateFlinkJarJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateFlinkJarJobRequest.class, UpdateFlinkJarJobResponse.class)
+                .withName("UpdateFlinkJarJob")
                 .withUri("/v1.0/{project_id}/streaming/flink-jobs/{job_id}")
                 .withContentType("application/json");
 
@@ -3307,14 +3328,14 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(UpdateFlinkJarRequest::getJobId, (req, v) -> {
+            f -> f.withMarshaller(UpdateFlinkJarJobRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
         builder.<UpdateFlinkJarRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFlinkJarRequestBody.class),
-            f -> f.withMarshaller(UpdateFlinkJarRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateFlinkJarJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3323,14 +3344,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateFlinkSqlRequest, UpdateFlinkSqlResponse> updateFlinkSql =
-        genForupdateFlinkSql();
+    public static final HttpRequestDef<UpdateFlinkSqlJobRequest, UpdateFlinkSqlJobResponse> updateFlinkSqlJob =
+        genForupdateFlinkSqlJob();
 
-    private static HttpRequestDef<UpdateFlinkSqlRequest, UpdateFlinkSqlResponse> genForupdateFlinkSql() {
+    private static HttpRequestDef<UpdateFlinkSqlJobRequest, UpdateFlinkSqlJobResponse> genForupdateFlinkSqlJob() {
         // basic
-        HttpRequestDef.Builder<UpdateFlinkSqlRequest, UpdateFlinkSqlResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateFlinkSqlRequest.class, UpdateFlinkSqlResponse.class)
-                .withName("UpdateFlinkSql")
+        HttpRequestDef.Builder<UpdateFlinkSqlJobRequest, UpdateFlinkSqlJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateFlinkSqlJobRequest.class, UpdateFlinkSqlJobResponse.class)
+                .withName("UpdateFlinkSqlJob")
                 .withUri("/v1.0/{project_id}/streaming/sql-jobs/{job_id}")
                 .withContentType("application/json");
 
@@ -3339,14 +3360,14 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(UpdateFlinkSqlRequest::getJobId, (req, v) -> {
+            f -> f.withMarshaller(UpdateFlinkSqlJobRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
         builder.<UpdateFlinkSqlRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFlinkSqlRequestBody.class),
-            f -> f.withMarshaller(UpdateFlinkSqlRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateFlinkSqlJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3355,14 +3376,17 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateFlinkTemplateRequest, UpdateFlinkTemplateResponse> updateFlinkTemplate =
-        genForupdateFlinkTemplate();
+    public static final HttpRequestDef<UpdateFlinkSqlJobTemplateRequest, UpdateFlinkSqlJobTemplateResponse> updateFlinkSqlJobTemplate =
+        genForupdateFlinkSqlJobTemplate();
 
-    private static HttpRequestDef<UpdateFlinkTemplateRequest, UpdateFlinkTemplateResponse> genForupdateFlinkTemplate() {
+    private static HttpRequestDef<UpdateFlinkSqlJobTemplateRequest, UpdateFlinkSqlJobTemplateResponse> genForupdateFlinkSqlJobTemplate() {
         // basic
-        HttpRequestDef.Builder<UpdateFlinkTemplateRequest, UpdateFlinkTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateFlinkTemplateRequest.class, UpdateFlinkTemplateResponse.class)
-                .withName("UpdateFlinkTemplate")
+        HttpRequestDef.Builder<UpdateFlinkSqlJobTemplateRequest, UpdateFlinkSqlJobTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateFlinkSqlJobTemplateRequest.class,
+                    UpdateFlinkSqlJobTemplateResponse.class)
+                .withName("UpdateFlinkSqlJobTemplate")
                 .withUri("/v1.0/{project_id}/streaming/job-templates/{template_id}")
                 .withContentType("application/json");
 
@@ -3371,14 +3395,14 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(UpdateFlinkTemplateRequest::getTemplateId, (req, v) -> {
+            f -> f.withMarshaller(UpdateFlinkSqlJobTemplateRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
             }));
         builder.<UpdateFlinkTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFlinkTemplateRequestBody.class),
-            f -> f.withMarshaller(UpdateFlinkTemplateRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UpdateFlinkSqlJobTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3387,14 +3411,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CancelBatchJobRequest, CancelBatchJobResponse> cancelBatchJob =
-        genForcancelBatchJob();
+    public static final HttpRequestDef<CancelSparkJobRequest, CancelSparkJobResponse> cancelSparkJob =
+        genForcancelSparkJob();
 
-    private static HttpRequestDef<CancelBatchJobRequest, CancelBatchJobResponse> genForcancelBatchJob() {
+    private static HttpRequestDef<CancelSparkJobRequest, CancelSparkJobResponse> genForcancelSparkJob() {
         // basic
-        HttpRequestDef.Builder<CancelBatchJobRequest, CancelBatchJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, CancelBatchJobRequest.class, CancelBatchJobResponse.class)
-                .withName("CancelBatchJob")
+        HttpRequestDef.Builder<CancelSparkJobRequest, CancelSparkJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, CancelSparkJobRequest.class, CancelSparkJobResponse.class)
+                .withName("CancelSparkJob")
                 .withUri("/v2.0/{project_id}/batches/{batch_id}")
                 .withContentType("application/json");
 
@@ -3403,7 +3427,7 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelBatchJobRequest::getBatchId, (req, v) -> {
+            f -> f.withMarshaller(CancelSparkJobRequest::getBatchId, (req, v) -> {
                 req.setBatchId(v);
             }));
 
@@ -3412,14 +3436,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> createBatchJob =
-        genForcreateBatchJob();
+    public static final HttpRequestDef<CreateSparkJobRequest, CreateSparkJobResponse> createSparkJob =
+        genForcreateSparkJob();
 
-    private static HttpRequestDef<CreateBatchJobRequest, CreateBatchJobResponse> genForcreateBatchJob() {
+    private static HttpRequestDef<CreateSparkJobRequest, CreateSparkJobResponse> genForcreateSparkJob() {
         // basic
-        HttpRequestDef.Builder<CreateBatchJobRequest, CreateBatchJobResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateBatchJobRequest.class, CreateBatchJobResponse.class)
-                .withName("CreateBatchJob")
+        HttpRequestDef.Builder<CreateSparkJobRequest, CreateSparkJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSparkJobRequest.class, CreateSparkJobResponse.class)
+                .withName("CreateSparkJob")
                 .withUri("/v2.0/{project_id}/batches")
                 .withContentType("application/json");
 
@@ -3428,14 +3452,14 @@ public class DliMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBatchJobRequest::getUserId, (req, v) -> {
+            f -> f.withMarshaller(CreateSparkJobRequest::getUserId, (req, v) -> {
                 req.setUserId(v);
             }));
         builder.<BatchJobInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchJobInfo.class),
-            f -> f.withMarshaller(CreateBatchJobRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(CreateSparkJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3444,13 +3468,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBatchesRequest, ListBatchesResponse> listBatches = genForlistBatches();
+    public static final HttpRequestDef<ListSparkJobsRequest, ListSparkJobsResponse> listSparkJobs =
+        genForlistSparkJobs();
 
-    private static HttpRequestDef<ListBatchesRequest, ListBatchesResponse> genForlistBatches() {
+    private static HttpRequestDef<ListSparkJobsRequest, ListSparkJobsResponse> genForlistSparkJobs() {
         // basic
-        HttpRequestDef.Builder<ListBatchesRequest, ListBatchesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListBatchesRequest.class, ListBatchesResponse.class)
-                .withName("ListBatches")
+        HttpRequestDef.Builder<ListSparkJobsRequest, ListSparkJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSparkJobsRequest.class, ListSparkJobsResponse.class)
+                .withName("ListSparkJobs")
                 .withUri("/v2.0/{project_id}/batches")
                 .withContentType("application/json");
 
@@ -3459,96 +3484,71 @@ public class DliMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchesRequest::getClusterName, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getClusterName, (req, v) -> {
                 req.setClusterName(v);
             }));
         builder.<Long>withRequestField("end",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBatchesRequest::getEnd, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getEnd, (req, v) -> {
                 req.setEnd(v);
             }));
         builder.<Integer>withRequestField("from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBatchesRequest::getFrom, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
             }));
         builder.<String>withRequestField("job-name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchesRequest::getJobName, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
             }));
         builder.<String>withRequestField("job-id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchesRequest::getJobId, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
         builder.<String>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchesRequest::getOrder, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getOrder, (req, v) -> {
                 req.setOrder(v);
             }));
         builder.<String>withRequestField("queue_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchesRequest::getQueueName, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
             }));
         builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBatchesRequest::getSize, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getSize, (req, v) -> {
                 req.setSize(v);
             }));
         builder.<Long>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListBatchesRequest::getStart, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getStart, (req, v) -> {
                 req.setStart(v);
             }));
         builder.<String>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBatchesRequest::getState, (req, v) -> {
+            f -> f.withMarshaller(ListSparkJobsRequest::getState, (req, v) -> {
                 req.setState(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowBatchInfoRequest, ShowBatchInfoResponse> showBatchInfo =
-        genForshowBatchInfo();
-
-    private static HttpRequestDef<ShowBatchInfoRequest, ShowBatchInfoResponse> genForshowBatchInfo() {
-        // basic
-        HttpRequestDef.Builder<ShowBatchInfoRequest, ShowBatchInfoResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowBatchInfoRequest.class, ShowBatchInfoResponse.class)
-                .withName("ShowBatchInfo")
-                .withUri("/v2.0/{project_id}/batches/{batch_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("batch_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBatchInfoRequest::getBatchId, (req, v) -> {
-                req.setBatchId(v);
             }));
 
         // response
@@ -3608,14 +3608,38 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBatchStateRequest, ShowBatchStateResponse> showBatchState =
-        genForshowBatchState();
+    public static final HttpRequestDef<ShowSparkJobRequest, ShowSparkJobResponse> showSparkJob = genForshowSparkJob();
 
-    private static HttpRequestDef<ShowBatchStateRequest, ShowBatchStateResponse> genForshowBatchState() {
+    private static HttpRequestDef<ShowSparkJobRequest, ShowSparkJobResponse> genForshowSparkJob() {
         // basic
-        HttpRequestDef.Builder<ShowBatchStateRequest, ShowBatchStateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowBatchStateRequest.class, ShowBatchStateResponse.class)
-                .withName("ShowBatchState")
+        HttpRequestDef.Builder<ShowSparkJobRequest, ShowSparkJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSparkJobRequest.class, ShowSparkJobResponse.class)
+                .withName("ShowSparkJob")
+                .withUri("/v2.0/{project_id}/batches/{batch_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("batch_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSparkJobRequest::getBatchId, (req, v) -> {
+                req.setBatchId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSparkJobStatusRequest, ShowSparkJobStatusResponse> showSparkJobStatus =
+        genForshowSparkJobStatus();
+
+    private static HttpRequestDef<ShowSparkJobStatusRequest, ShowSparkJobStatusResponse> genForshowSparkJobStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowSparkJobStatusRequest, ShowSparkJobStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSparkJobStatusRequest.class, ShowSparkJobStatusResponse.class)
+                .withName("ShowSparkJobStatus")
                 .withUri("/v2.0/{project_id}/batches/{batch_id}/state")
                 .withContentType("application/json");
 
@@ -3624,7 +3648,7 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBatchStateRequest::getBatchId, (req, v) -> {
+            f -> f.withMarshaller(ShowSparkJobStatusRequest::getBatchId, (req, v) -> {
                 req.setBatchId(v);
             }));
 
@@ -4153,14 +4177,14 @@ public class DliMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<PreviewJobResultRequest, PreviewJobResultResponse> previewJobResult =
-        genForpreviewJobResult();
+    public static final HttpRequestDef<PreviewSqlJobResultRequest, PreviewSqlJobResultResponse> previewSqlJobResult =
+        genForpreviewSqlJobResult();
 
-    private static HttpRequestDef<PreviewJobResultRequest, PreviewJobResultResponse> genForpreviewJobResult() {
+    private static HttpRequestDef<PreviewSqlJobResultRequest, PreviewSqlJobResultResponse> genForpreviewSqlJobResult() {
         // basic
-        HttpRequestDef.Builder<PreviewJobResultRequest, PreviewJobResultResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, PreviewJobResultRequest.class, PreviewJobResultResponse.class)
-                .withName("PreviewJobResult")
+        HttpRequestDef.Builder<PreviewSqlJobResultRequest, PreviewSqlJobResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, PreviewSqlJobResultRequest.class, PreviewSqlJobResultResponse.class)
+                .withName("PreviewSqlJobResult")
                 .withUri("/v1.0/{project_id}/jobs/{job_id}/preview")
                 .withContentType("application/json");
 
@@ -4169,14 +4193,14 @@ public class DliMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PreviewJobResultRequest::getJobId, (req, v) -> {
+            f -> f.withMarshaller(PreviewSqlJobResultRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
         builder.<String>withRequestField("queue-name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PreviewJobResultRequest::getQueueName, (req, v) -> {
+            f -> f.withMarshaller(PreviewSqlJobResultRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
             }));
 
@@ -4210,31 +4234,6 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDescribeTableRequest::getTableName, (req, v) -> {
                 req.setTableName(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowJobProgressRequest, ShowJobProgressResponse> showJobProgress =
-        genForshowJobProgress();
-
-    private static HttpRequestDef<ShowJobProgressRequest, ShowJobProgressResponse> genForshowJobProgress() {
-        // basic
-        HttpRequestDef.Builder<ShowJobProgressRequest, ShowJobProgressResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowJobProgressRequest.class, ShowJobProgressResponse.class)
-                .withName("ShowJobProgress")
-                .withUri("/v1/{project_id}/jobs/{job_id}/progress")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowJobProgressRequest::getJobId, (req, v) -> {
-                req.setJobId(v);
             }));
 
         // response
@@ -4305,6 +4304,31 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlJobDetailRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlJobProgressRequest, ShowSqlJobProgressResponse> showSqlJobProgress =
+        genForshowSqlJobProgress();
+
+    private static HttpRequestDef<ShowSqlJobProgressRequest, ShowSqlJobProgressResponse> genForshowSqlJobProgress() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlJobProgressRequest, ShowSqlJobProgressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSqlJobProgressRequest.class, ShowSqlJobProgressResponse.class)
+                .withName("ShowSqlJobProgress")
+                .withUri("/v1/{project_id}/jobs/{job_id}/progress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlJobProgressRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
 

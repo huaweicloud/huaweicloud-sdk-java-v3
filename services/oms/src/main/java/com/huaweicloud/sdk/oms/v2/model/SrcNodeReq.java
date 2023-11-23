@@ -64,7 +64,7 @@ public class SrcNodeReq {
     }
 
     /**
-     * 源端云服务提供商，task_type为非url_list时，本参数为URLSource。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     * 源端云服务提供商，task_type为非url_list时，本参数为URLSource且必选。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
      * @return cloudType
      */
     public String getCloudType() {

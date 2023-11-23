@@ -127,6 +127,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ListTagsOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListTagsOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.LoginWebCliRequest;
 import com.huaweicloud.sdk.dcs.v2.model.LoginWebCliResponse;
+import com.huaweicloud.sdk.dcs.v2.model.LogoffWebCliRequest;
+import com.huaweicloud.sdk.dcs.v2.model.LogoffWebCliResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ResetPasswordRequest;
@@ -2106,6 +2108,34 @@ public class DcsClient {
      */
     public SyncInvoker<LoginWebCliRequest, LoginWebCliResponse> loginWebCliInvoker(LoginWebCliRequest request) {
         return new SyncInvoker<LoginWebCliRequest, LoginWebCliResponse>(request, DcsMeta.loginWebCli, hcClient);
+    }
+
+    /**
+     * 登出webCli
+     *
+     * 登出webCli
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param LogoffWebCliRequest 请求对象
+     * @return LogoffWebCliResponse
+     */
+    public LogoffWebCliResponse logoffWebCli(LogoffWebCliRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.logoffWebCli);
+    }
+
+    /**
+     * 登出webCli
+     *
+     * 登出webCli
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param LogoffWebCliRequest 请求对象
+     * @return SyncInvoker<LogoffWebCliRequest, LogoffWebCliResponse>
+     */
+    public SyncInvoker<LogoffWebCliRequest, LogoffWebCliResponse> logoffWebCliInvoker(LogoffWebCliRequest request) {
+        return new SyncInvoker<LogoffWebCliRequest, LogoffWebCliResponse>(request, DcsMeta.logoffWebCli, hcClient);
     }
 
     /**

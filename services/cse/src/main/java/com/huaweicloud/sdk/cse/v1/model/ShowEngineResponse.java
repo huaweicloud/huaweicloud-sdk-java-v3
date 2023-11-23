@@ -105,7 +105,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auth_type")
+    @JsonProperty(value = "authType")
 
     private AuthTypeEnum authType;
 
@@ -125,7 +125,7 @@ public class ShowEngineResponse extends SdkResponse {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "latest_version")
+    @JsonProperty(value = "latestVersion")
 
     private String latestVersion;
 
@@ -265,27 +265,27 @@ public class ShowEngineResponse extends SdkResponse {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "be_default")
+    @JsonProperty(value = "beDefault")
 
     private Boolean beDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_user")
+    @JsonProperty(value = "createUser")
 
     private String createUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
+    @JsonProperty(value = "createTime")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cce_spec")
+    @JsonProperty(value = "cceSpec")
 
     private Spec cceSpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "external_entrypoint")
+    @JsonProperty(value = "externalEntrypoint")
 
     private EngineExternalEntrypoint externalEntrypoint;
 
@@ -295,17 +295,17 @@ public class ShowEngineResponse extends SdkResponse {
     private EngineReference reference;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "latest_job_id")
+    @JsonProperty(value = "latestJobId")
 
     private Integer latestJobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
+    @JsonProperty(value = "enterpriseProjectId")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_name")
+    @JsonProperty(value = "enterpriseProjectName")
 
     private String enterpriseProjectName;
 
@@ -393,7 +393,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "engine_additional_actions")
+    @JsonProperty(value = "engineAdditionalActions")
 
     private List<EngineAdditionalActionsEnum> engineAdditionalActions = null;
 
@@ -474,7 +474,7 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "spec_type")
+    @JsonProperty(value = "specType")
 
     private SpecTypeEnum specType;
 
@@ -554,12 +554,12 @@ public class ShowEngineResponse extends SdkResponse {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
+    @JsonProperty(value = "projectId")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vm_ids")
+    @JsonProperty(value = "vmIds")
 
     private List<String> vmIds = null;
 

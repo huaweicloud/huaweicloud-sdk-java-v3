@@ -40,6 +40,9 @@ import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceUserRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskReq;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionResponse;
@@ -57,6 +60,9 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskReq;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
@@ -134,6 +140,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaUserClientQuotaRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaUserClientQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMaintainWindowsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMessagesRequest;
@@ -164,6 +172,9 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskReq;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaReq;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaResponse;
@@ -566,6 +577,41 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> createKafkaUserClientQuotaTask =
+        genForcreateKafkaUserClientQuotaTask();
+
+    private static HttpRequestDef<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> genForcreateKafkaUserClientQuotaTask() {
+        // basic
+        HttpRequestDef.Builder<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateKafkaUserClientQuotaTaskRequest.class,
+                    CreateKafkaUserClientQuotaTaskResponse.class)
+                .withName("CreateKafkaUserClientQuotaTask")
+                .withUri("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateKafkaUserClientQuotaTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateKafkaUserClientQuotaTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateKafkaUserClientQuotaTaskReq.class),
+            f -> f.withMarshaller(CreateKafkaUserClientQuotaTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> createPartition =
         genForcreatePartition();
 
@@ -769,6 +815,41 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTask =
+        genFordeleteKafkaUserClientQuotaTask();
+
+    private static HttpRequestDef<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> genFordeleteKafkaUserClientQuotaTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteKafkaUserClientQuotaTaskRequest.class,
+                    DeleteKafkaUserClientQuotaTaskResponse.class)
+                .withName("DeleteKafkaUserClientQuotaTask")
+                .withUri("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKafkaUserClientQuotaTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DeleteKafkaUserClientQuotaTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteKafkaUserClientQuotaTaskReq.class),
+            f -> f.withMarshaller(DeleteKafkaUserClientQuotaTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -2005,6 +2086,46 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> showKafkaUserClientQuota =
+        genForshowKafkaUserClientQuota();
+
+    private static HttpRequestDef<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> genForshowKafkaUserClientQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowKafkaUserClientQuotaRequest.class, ShowKafkaUserClientQuotaResponse.class)
+                .withName("ShowKafkaUserClientQuota")
+                .withUri("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKafkaUserClientQuotaRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowKafkaUserClientQuotaRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowKafkaUserClientQuotaRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindows =
         genForshowMaintainWindows();
 
@@ -2509,6 +2630,41 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateUserReq.class),
             f -> f.withMarshaller(UpdateInstanceUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> updateKafkaUserClientQuotaTask =
+        genForupdateKafkaUserClientQuotaTask();
+
+    private static HttpRequestDef<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> genForupdateKafkaUserClientQuotaTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateKafkaUserClientQuotaTaskRequest.class,
+                    UpdateKafkaUserClientQuotaTaskResponse.class)
+                .withName("UpdateKafkaUserClientQuotaTask")
+                .withUri("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKafkaUserClientQuotaTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateKafkaUserClientQuotaTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateKafkaUserClientQuotaTaskReq.class),
+            f -> f.withMarshaller(UpdateKafkaUserClientQuotaTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

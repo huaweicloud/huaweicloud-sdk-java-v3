@@ -34,7 +34,7 @@ public class CreateRules {
     }
 
     /**
-     * precedence
+     * 优先级，数字越大，优先级越高。
      * @return precedence
      */
     public Integer getPrecedence() {
@@ -93,7 +93,7 @@ public class CreateRules {
     }
 
     /**
-     * route
+     * 路由规则列表。
      * @return route
      */
     public List<CreateRoute> getRoute() {

@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.obs.v1.model.DeleteObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketAclRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketAclResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketCustomdomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketCustomdomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataRequest;
@@ -27,8 +29,12 @@ import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsRequest;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsResponse;
+import com.huaweicloud.sdk.obs.v1.model.ListObjectsRequest;
+import com.huaweicloud.sdk.obs.v1.model.ListObjectsResponse;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketAclRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketAclResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequest;
@@ -222,7 +228,9 @@ public class ObsAsyncClient {
     /**
      * 删除桶的自定义域名
      *
-     * OBS使用DELETE操作来删除桶的自定义域名。
+     * OBS使用DELETE操作来删除指定桶的标签。
+     * 
+     * 要正确执行此操作，需要确保执行者有PutBucketcustomdomain权限。缺省情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -237,7 +245,9 @@ public class ObsAsyncClient {
     /**
      * 删除桶的自定义域名
      *
-     * OBS使用DELETE操作来删除桶的自定义域名。
+     * OBS使用DELETE操作来删除指定桶的标签。
+     * 
+     * 要正确执行此操作，需要确保执行者有PutBucketcustomdomain权限。缺省情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -327,9 +337,42 @@ public class ObsAsyncClient {
     }
 
     /**
+     * 获取桶ACL
+     *
+     * 用户执行获取桶ACL的操作，返回信息包含指定桶的权限控制列表信息。用户必须拥有对指定桶READ_ACP的权限或FULL_CONTROL权限，才能执行获取桶ACL的操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetBucketAclRequest 请求对象
+     * @return CompletableFuture<GetBucketAclResponse>
+     */
+    public CompletableFuture<GetBucketAclResponse> getBucketAclAsync(GetBucketAclRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.getBucketAcl);
+    }
+
+    /**
+     * 获取桶ACL
+     *
+     * 用户执行获取桶ACL的操作，返回信息包含指定桶的权限控制列表信息。用户必须拥有对指定桶READ_ACP的权限或FULL_CONTROL权限，才能执行获取桶ACL的操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param GetBucketAclRequest 请求对象
+     * @return AsyncInvoker<GetBucketAclRequest, GetBucketAclResponse>
+     */
+    public AsyncInvoker<GetBucketAclRequest, GetBucketAclResponse> getBucketAclAsyncInvoker(
+        GetBucketAclRequest request) {
+        return new AsyncInvoker<GetBucketAclRequest, GetBucketAclResponse>(request, ObsMeta.getBucketAcl, hcClient);
+    }
+
+    /**
      * 获取桶的自定义域名
      *
      * OBS使用GET操作来获取桶的自定义域名。
+     * 
+     * 要正确执行此操作，需要确保执行者有GetBucketcustomdomainConfiguration权限。桶拥有者默认具有此权限，并且可以将此权限授予其他人。
+     * 
+     * 有关权限控制的更多信息请参考《对象存储服务权限配置指南》的[OBS权限控制概述](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -345,6 +388,10 @@ public class ObsAsyncClient {
      * 获取桶的自定义域名
      *
      * OBS使用GET操作来获取桶的自定义域名。
+     * 
+     * 要正确执行此操作，需要确保执行者有GetBucketcustomdomainConfiguration权限。桶拥有者默认具有此权限，并且可以将此权限授予其他人。
+     * 
+     * 有关权限控制的更多信息请参考《对象存储服务权限配置指南》的[OBS权限控制概述](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)章节。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -535,6 +582,38 @@ public class ObsAsyncClient {
     }
 
     /**
+     * 列举桶内对象
+     *
+     * 对桶拥有读权限的用户可以执行获取桶内对象列表的操作。
+     * 
+     * 如果用户在请求的URI里只指定了桶名，即GET /BucketName，则返回信息中会包含桶内部分或所有对象的描述信息（一次最多返回1000个对象信息）；如果用户还指定了prefix、marker、max-keys、delimiter参数中的一个或多个，则返回的对象列表将按照如表1所示规定的语义返回指定的对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListObjectsRequest 请求对象
+     * @return CompletableFuture<ListObjectsResponse>
+     */
+    public CompletableFuture<ListObjectsResponse> listObjectsAsync(ListObjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.listObjects);
+    }
+
+    /**
+     * 列举桶内对象
+     *
+     * 对桶拥有读权限的用户可以执行获取桶内对象列表的操作。
+     * 
+     * 如果用户在请求的URI里只指定了桶名，即GET /BucketName，则返回信息中会包含桶内部分或所有对象的描述信息（一次最多返回1000个对象信息）；如果用户还指定了prefix、marker、max-keys、delimiter参数中的一个或多个，则返回的对象列表将按照如表1所示规定的语义返回指定的对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListObjectsRequest 请求对象
+     * @return AsyncInvoker<ListObjectsRequest, ListObjectsResponse>
+     */
+    public AsyncInvoker<ListObjectsRequest, ListObjectsResponse> listObjectsAsyncInvoker(ListObjectsRequest request) {
+        return new AsyncInvoker<ListObjectsRequest, ListObjectsResponse>(request, ObsMeta.listObjects, hcClient);
+    }
+
+    /**
      * PUT上传对象
      *
      * 用户在OBS系统中创建了桶之后，可以采用PUT操作的方式将对象上传到桶中。上传对象操作是指在指定的桶内增加一个对象，执行该操作需要用户拥有桶的写权限。
@@ -584,6 +663,43 @@ public class ObsAsyncClient {
      */
     public AsyncInvoker<PutObjectRequest, PutObjectResponse> putObjectAsyncInvoker(PutObjectRequest request) {
         return new AsyncInvoker<PutObjectRequest, PutObjectResponse>(request, ObsMeta.putObject, hcClient);
+    }
+
+    /**
+     * 设置桶ACL
+     *
+     * OBS支持对桶操作进行权限控制。默认情况下，只有桶的创建者才有该桶的读写权限。用户也可以设置其他的访问策略，比如对一个桶可以设置公共访问策略，允许所有人对其都有读权限。
+     * 
+     * OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的桶更改或者获取ACL(access control list) 。一个桶的ACL最多支持100条Grant授权。PUT接口为幂等的覆盖写语意，新设置的桶ACL将覆盖原有的桶ACL，如果需要修改或者删除某条ACL重新PUT一个新的桶ACL即可。
+     * 
+     * 使用桶ACL进行权限控制请参考[《对象存储服务权限配置指南》的OBS权限控制概述章节](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetBucketAclRequest 请求对象
+     * @return CompletableFuture<SetBucketAclResponse>
+     */
+    public CompletableFuture<SetBucketAclResponse> setBucketAclAsync(SetBucketAclRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.setBucketAcl);
+    }
+
+    /**
+     * 设置桶ACL
+     *
+     * OBS支持对桶操作进行权限控制。默认情况下，只有桶的创建者才有该桶的读写权限。用户也可以设置其他的访问策略，比如对一个桶可以设置公共访问策略，允许所有人对其都有读权限。
+     * 
+     * OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的桶更改或者获取ACL(access control list) 。一个桶的ACL最多支持100条Grant授权。PUT接口为幂等的覆盖写语意，新设置的桶ACL将覆盖原有的桶ACL，如果需要修改或者删除某条ACL重新PUT一个新的桶ACL即可。
+     * 
+     * 使用桶ACL进行权限控制请参考[《对象存储服务权限配置指南》的OBS权限控制概述章节](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetBucketAclRequest 请求对象
+     * @return AsyncInvoker<SetBucketAclRequest, SetBucketAclResponse>
+     */
+    public AsyncInvoker<SetBucketAclRequest, SetBucketAclResponse> setBucketAclAsyncInvoker(
+        SetBucketAclRequest request) {
+        return new AsyncInvoker<SetBucketAclRequest, SetBucketAclResponse>(request, ObsMeta.setBucketAcl, hcClient);
     }
 
     /**

@@ -63,6 +63,16 @@ public class PipelineDTO {
 
     private String projectName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
     public PipelineDTO withName(String name) {
         this.name = name;
         return this;
@@ -297,6 +307,40 @@ public class PipelineDTO {
         this.projectName = projectName;
     }
 
+    public PipelineDTO withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 流水线组ID
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public PipelineDTO withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 若为复制场景，则为原流水线ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -311,7 +355,8 @@ public class PipelineDTO {
             && Objects.equals(this.variables, that.variables) && Objects.equals(this.schedules, that.schedules)
             && Objects.equals(this.triggers, that.triggers)
             && Objects.equals(this.manifestVersion, that.manifestVersion)
-            && Objects.equals(this.definition, that.definition) && Objects.equals(this.projectName, that.projectName);
+            && Objects.equals(this.definition, that.definition) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.id, that.id);
     }
 
     @Override
@@ -325,7 +370,9 @@ public class PipelineDTO {
             triggers,
             manifestVersion,
             definition,
-            projectName);
+            projectName,
+            groupId,
+            id);
     }
 
     @Override
@@ -342,6 +389,8 @@ public class PipelineDTO {
         sb.append("    manifestVersion: ").append(toIndentedString(manifestVersion)).append("\n");
         sb.append("    definition: ").append(toIndentedString(definition)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

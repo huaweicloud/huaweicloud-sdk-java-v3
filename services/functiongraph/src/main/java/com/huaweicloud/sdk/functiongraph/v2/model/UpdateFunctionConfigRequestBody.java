@@ -273,6 +273,16 @@ public class UpdateFunctionConfigRequestBody {
     private Integer initializerTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_stop_handler")
+
+    private String preStopHandler;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_stop_timeout")
+
+    private Integer preStopTimeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ephemeral_storage")
 
     private Integer ephemeralStorage;
@@ -664,6 +674,40 @@ public class UpdateFunctionConfigRequestBody {
         this.initializerTimeout = initializerTimeout;
     }
 
+    public UpdateFunctionConfigRequestBody withPreStopHandler(String preStopHandler) {
+        this.preStopHandler = preStopHandler;
+        return this;
+    }
+
+    /**
+     * 函数预停止函数的入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.pre_stop_handler，则表示函数的文件名为myfunction.js，初始化的入口函数名为pre_stop_handler。
+     * @return preStopHandler
+     */
+    public String getPreStopHandler() {
+        return preStopHandler;
+    }
+
+    public void setPreStopHandler(String preStopHandler) {
+        this.preStopHandler = preStopHandler;
+    }
+
+    public UpdateFunctionConfigRequestBody withPreStopTimeout(Integer preStopTimeout) {
+        this.preStopTimeout = preStopTimeout;
+        return this;
+    }
+
+    /**
+     * 初始化超时时间，超时函数将被强行停止，范围1～90秒。
+     * @return preStopTimeout
+     */
+    public Integer getPreStopTimeout() {
+        return preStopTimeout;
+    }
+
+    public void setPreStopTimeout(Integer preStopTimeout) {
+        this.preStopTimeout = preStopTimeout;
+    }
+
     public UpdateFunctionConfigRequestBody withEphemeralStorage(Integer ephemeralStorage) {
         this.ephemeralStorage = ephemeralStorage;
         return this;
@@ -874,6 +918,8 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.extendConfig, that.extendConfig)
             && Objects.equals(this.initializerHandler, that.initializerHandler)
             && Objects.equals(this.initializerTimeout, that.initializerTimeout)
+            && Objects.equals(this.preStopHandler, that.preStopHandler)
+            && Objects.equals(this.preStopTimeout, that.preStopTimeout)
             && Objects.equals(this.ephemeralStorage, that.ephemeralStorage)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.logConfig, that.logConfig)
@@ -906,6 +952,8 @@ public class UpdateFunctionConfigRequestBody {
             extendConfig,
             initializerHandler,
             initializerTimeout,
+            preStopHandler,
+            preStopTimeout,
             ephemeralStorage,
             enterpriseProjectId,
             logConfig,
@@ -940,6 +988,8 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
+        sb.append("    preStopHandler: ").append(toIndentedString(preStopHandler)).append("\n");
+        sb.append("    preStopTimeout: ").append(toIndentedString(preStopTimeout)).append("\n");
         sb.append("    ephemeralStorage: ").append(toIndentedString(ephemeralStorage)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    logConfig: ").append(toIndentedString(logConfig)).append("\n");

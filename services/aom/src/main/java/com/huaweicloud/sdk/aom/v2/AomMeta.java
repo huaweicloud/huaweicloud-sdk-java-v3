@@ -15,8 +15,13 @@ import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.AlarmRuleParam;
 import com.huaweicloud.sdk.aom.v2.model.AppRulesBody;
+import com.huaweicloud.sdk.aom.v2.model.AuthModel;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsResponse;
+import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceRequest;
+import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceResponse;
+import com.huaweicloud.sdk.aom.v2.model.CreateRecordingRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.CreateRecordingRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleRequest;
@@ -29,14 +34,20 @@ import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRuleName;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeletePromInstanceRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeletePromInstanceResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteserviceDiscoveryRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteserviceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.Event2alarmRuleBody;
 import com.huaweicloud.sdk.aom.v2.model.EventList;
 import com.huaweicloud.sdk.aom.v2.model.EventQueryParam;
 import com.huaweicloud.sdk.aom.v2.model.EventQueryParam2;
+import com.huaweicloud.sdk.aom.v2.model.ListAccessCodeRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListAccessCodeResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListActionRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListAgentsRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListAgentsResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListEvent2alarmRuleRequest;
@@ -63,6 +74,10 @@ import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListPermissionsRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListPromInstanceRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListPromInstanceResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListRangeQueryAomPromGetRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListRangeQueryAomPromGetResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListRangeQueryAomPromPostRequest;
@@ -76,11 +91,13 @@ import com.huaweicloud.sdk.aom.v2.model.ListServiceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.MetricAPIQueryItemParam;
 import com.huaweicloud.sdk.aom.v2.model.MetricDataItem;
 import com.huaweicloud.sdk.aom.v2.model.MuteRule;
+import com.huaweicloud.sdk.aom.v2.model.PromInstanceEpsModel;
 import com.huaweicloud.sdk.aom.v2.model.PushEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.PushEventsResponse;
 import com.huaweicloud.sdk.aom.v2.model.QueryBodyParam;
 import com.huaweicloud.sdk.aom.v2.model.QueryMetricDataParam;
 import com.huaweicloud.sdk.aom.v2.model.QuerySampleParam;
+import com.huaweicloud.sdk.aom.v2.model.RecordingRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.SeriesAPIQueryItemParam;
 import com.huaweicloud.sdk.aom.v2.model.ShowActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ShowActionRuleResponse;
@@ -104,6 +121,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class AomMeta {
@@ -1020,6 +1038,158 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePromInstanceRequest, CreatePromInstanceResponse> createPromInstance =
+        genForcreatePromInstance();
+
+    private static HttpRequestDef<CreatePromInstanceRequest, CreatePromInstanceResponse> genForcreatePromInstance() {
+        // basic
+        HttpRequestDef.Builder<CreatePromInstanceRequest, CreatePromInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePromInstanceRequest.class, CreatePromInstanceResponse.class)
+                .withName("CreatePromInstance")
+                .withUri("/v1/{project_id}/aom/prometheus")
+                .withContentType("application/json");
+
+        // requests
+        builder.<PromInstanceEpsModel>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PromInstanceEpsModel.class),
+            f -> f.withMarshaller(CreatePromInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRecordingRuleRequest, CreateRecordingRuleResponse> createRecordingRule =
+        genForcreateRecordingRule();
+
+    private static HttpRequestDef<CreateRecordingRuleRequest, CreateRecordingRuleResponse> genForcreateRecordingRule() {
+        // basic
+        HttpRequestDef.Builder<CreateRecordingRuleRequest, CreateRecordingRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRecordingRuleRequest.class, CreateRecordingRuleResponse.class)
+                .withName("CreateRecordingRule")
+                .withUri("/v1/{project_id}/{prometheus_instance}/aom/api/v1/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("prometheus_instance",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRecordingRuleRequest::getPrometheusInstance, (req, v) -> {
+                req.setPrometheusInstance(v);
+            }));
+        builder.<RecordingRuleRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RecordingRuleRequest.class),
+            f -> f.withMarshaller(CreateRecordingRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRecordingRuleResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePromInstanceRequest, DeletePromInstanceResponse> deletePromInstance =
+        genFordeletePromInstance();
+
+    private static HttpRequestDef<DeletePromInstanceRequest, DeletePromInstanceResponse> genFordeletePromInstance() {
+        // basic
+        HttpRequestDef.Builder<DeletePromInstanceRequest, DeletePromInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePromInstanceRequest.class, DeletePromInstanceResponse.class)
+                .withName("DeletePromInstance")
+                .withUri("/v1/{project_id}/aom/prometheus")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("prom_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePromInstanceRequest::getPromId, (req, v) -> {
+                req.setPromId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeletePromInstanceResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAccessCodeRequest, ListAccessCodeResponse> listAccessCode =
+        genForlistAccessCode();
+
+    private static HttpRequestDef<ListAccessCodeRequest, ListAccessCodeResponse> genForlistAccessCode() {
+        // basic
+        HttpRequestDef.Builder<ListAccessCodeRequest, ListAccessCodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAccessCodeRequest.class, ListAccessCodeResponse.class)
+                .withName("ListAccessCode")
+                .withUri("/v1/{project_id}/access-code")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAgentsRequest, ListAgentsResponse> listAgents = genForlistAgents();
+
+    private static HttpRequestDef<ListAgentsRequest, ListAgentsResponse> genForlistAgents() {
+        // basic
+        HttpRequestDef.Builder<ListAgentsRequest, ListAgentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAgentsRequest.class, ListAgentsResponse.class)
+                .withName("ListAgents")
+                .withUri("/v1/{project_id}/{cluster_id}/{namespace}/agents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentsRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAgentsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGet =
         genForlistInstantQueryAomPromGet();
 
@@ -1166,6 +1336,77 @@ public class AomMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> listPermissions =
+        genForlistPermissions();
+
+    private static HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> genForlistPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListPermissionsRequest, ListPermissionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPermissionsRequest.class, ListPermissionsResponse.class)
+                .withName("ListPermissions")
+                .withUri("/v1/{project_id}/aom/auth/grant")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<Map<String, AuthModel>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f.withMarshaller(ListPermissionsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(AuthModel.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPromInstanceRequest, ListPromInstanceResponse> listPromInstance =
+        genForlistPromInstance();
+
+    private static HttpRequestDef<ListPromInstanceRequest, ListPromInstanceResponse> genForlistPromInstance() {
+        // basic
+        HttpRequestDef.Builder<ListPromInstanceRequest, ListPromInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPromInstanceRequest.class, ListPromInstanceResponse.class)
+                .withName("ListPromInstance")
+                .withUri("/v1/{project_id}/aom/prometheus")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("prom_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPromInstanceRequest::getPromId, (req, v) -> {
+                req.setPromId(v);
+            }));
+        builder.<ListPromInstanceRequest.PromTypeEnum>withRequestField("prom_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPromInstanceRequest.PromTypeEnum.class),
+            f -> f.withMarshaller(ListPromInstanceRequest::getPromType, (req, v) -> {
+                req.setPromType(v);
+            }));
+        builder.<ListPromInstanceRequest.CceClusterEnableEnum>withRequestField("cce_cluster_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPromInstanceRequest.CceClusterEnableEnum.class),
+            f -> f.withMarshaller(ListPromInstanceRequest::getCceClusterEnable, (req, v) -> {
+                req.setCceClusterEnable(v);
+            }));
+        builder.<ListPromInstanceRequest.PromStatusEnum>withRequestField("prom_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPromInstanceRequest.PromStatusEnum.class),
+            f -> f.withMarshaller(ListPromInstanceRequest::getPromStatus, (req, v) -> {
+                req.setPromStatus(v);
+            }));
 
         // response
 

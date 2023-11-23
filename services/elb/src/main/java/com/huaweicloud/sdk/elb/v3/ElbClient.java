@@ -3,12 +3,16 @@ package com.huaweicloud.sdk.elb.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.elb.v3.model.BatchAddAvailableZonesRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchAddAvailableZonesResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteIpListRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteIpListResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteMembersResponse;
+import com.huaweicloud.sdk.elb.v3.model.BatchRemoveAvailableZonesRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchRemoveAvailableZonesResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdateMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdateMembersResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdatePoliciesPriorityRequest;
@@ -33,6 +37,8 @@ import com.huaweicloud.sdk.elb.v3.model.CreateLoadBalancerRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateLogtankResponse;
+import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolRequest;
+import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreatePoolRequest;
@@ -59,6 +65,8 @@ import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteLogtankResponse;
+import com.huaweicloud.sdk.elb.v3.model.DeleteMasterSlavePoolRequest;
+import com.huaweicloud.sdk.elb.v3.model.DeleteMasterSlavePoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolRequest;
@@ -89,6 +97,8 @@ import com.huaweicloud.sdk.elb.v3.model.ListLoadBalancersRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListLoadBalancersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListLogtanksRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListLogtanksResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListMasterSlavePoolsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListMasterSlavePoolsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListMembersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListPoolsRequest;
@@ -119,6 +129,8 @@ import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerStatusRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerStatusResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLogtankResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowMasterSlavePoolRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowMasterSlavePoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowPoolRequest;
@@ -166,9 +178,39 @@ public class ElbClient {
     }
 
     /**
+     * 新增负载均衡器可用区
+     *
+     * 给负载均衡器新增可用区。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAddAvailableZonesRequest 请求对象
+     * @return BatchAddAvailableZonesResponse
+     */
+    public BatchAddAvailableZonesResponse batchAddAvailableZones(BatchAddAvailableZonesRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.batchAddAvailableZones);
+    }
+
+    /**
+     * 新增负载均衡器可用区
+     *
+     * 给负载均衡器新增可用区。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchAddAvailableZonesRequest 请求对象
+     * @return SyncInvoker<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse>
+     */
+    public SyncInvoker<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse> batchAddAvailableZonesInvoker(
+        BatchAddAvailableZonesRequest request) {
+        return new SyncInvoker<BatchAddAvailableZonesRequest, BatchAddAvailableZonesResponse>(request,
+            ElbMeta.batchAddAvailableZones, hcClient);
+    }
+
+    /**
      * 批量创建后端服务器
      *
-     * 在指定pool下批量创建后端服务器。一次最多添加200个。
+     * 在指定pool下批量创建后端服务器。一次最多创建200个。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -182,7 +224,7 @@ public class ElbClient {
     /**
      * 批量创建后端服务器
      *
-     * 在指定pool下批量创建后端服务器。一次最多添加200个。
+     * 在指定pool下批量创建后端服务器。一次最多创建200个。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -198,7 +240,7 @@ public class ElbClient {
     /**
      * 批量删除后端服务器
      *
-     * 在指定pool下批量删除后端服务器。一次最多删除200个。
+     * 在指定pool下批量删除后端服务器。一次最多添加200个。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -212,7 +254,7 @@ public class ElbClient {
     /**
      * 批量删除后端服务器
      *
-     * 在指定pool下批量删除后端服务器。一次最多删除200个。
+     * 在指定pool下批量删除后端服务器。一次最多添加200个。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -226,9 +268,41 @@ public class ElbClient {
     }
 
     /**
+     * 移除负载均衡器可用区
+     *
+     * 移除负载均衡器的可用区。
+     * &gt; 移除可用区可能导致已有链接断开，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRemoveAvailableZonesRequest 请求对象
+     * @return BatchRemoveAvailableZonesResponse
+     */
+    public BatchRemoveAvailableZonesResponse batchRemoveAvailableZones(BatchRemoveAvailableZonesRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.batchRemoveAvailableZones);
+    }
+
+    /**
+     * 移除负载均衡器可用区
+     *
+     * 移除负载均衡器的可用区。
+     * &gt; 移除可用区可能导致已有链接断开，请谨慎操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchRemoveAvailableZonesRequest 请求对象
+     * @return SyncInvoker<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse>
+     */
+    public SyncInvoker<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse> batchRemoveAvailableZonesInvoker(
+        BatchRemoveAvailableZonesRequest request) {
+        return new SyncInvoker<BatchRemoveAvailableZonesRequest, BatchRemoveAvailableZonesResponse>(request,
+            ElbMeta.batchRemoveAvailableZones, hcClient);
+    }
+
+    /**
      * 批量更新后端服务器
      *
-     * 在指定pool下批量更新后端服务器。一次最多更新200个。
+     * 在指定pool下批量更新后端服务器。一次最多添加200个。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -242,7 +316,7 @@ public class ElbClient {
     /**
      * 批量更新后端服务器
      *
-     * 在指定pool下批量更新后端服务器。一次最多更新200个。
+     * 在指定pool下批量更新后端服务器。一次最多添加200个。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -482,6 +556,11 @@ public class ElbClient {
      * 5. 若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
      * 6. 不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。
      * 
+     * [&gt; 关于计费：
+     * - 若billing_info非空时，包周期。
+     * - 若billing_info为空，autoscaling.enable&#x3D;true时，弹性计费。
+     * - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;lcu，按量计费。
+     * - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;flavor，固定规格按需计费。](tag:hws)
      * [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -505,6 +584,11 @@ public class ElbClient {
      * 5. 若要创建公网双栈负载均衡器，则需要设置ipv6_vip_virsubnet_id和ipv6_bandwidth。
      * 6. 不支持绑定已有未使用的内网IPv4、内网IPv6或公网IPv6地址。
      * 
+     * [&gt; 关于计费：
+     * - 若billing_info非空时，包周期。
+     * - 若billing_info为空，autoscaling.enable&#x3D;true时，弹性计费。
+     * - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;lcu，按量计费。
+     * - 若billing_info为空，autoscaling.enable&#x3D;false或未设置，charge_mode&#x3D;flavor，固定规格按需计费。](tag:hws)
      * [&gt; 不支持创建IPv6地址负载均衡器](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -521,7 +605,7 @@ public class ElbClient {
     /**
      * 创建云日志
      *
-     * 创建云日志。
+     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -535,7 +619,7 @@ public class ElbClient {
     /**
      * 创建云日志
      *
-     * 创建云日志。
+     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -544,6 +628,36 @@ public class ElbClient {
      */
     public SyncInvoker<CreateLogtankRequest, CreateLogtankResponse> createLogtankInvoker(CreateLogtankRequest request) {
         return new SyncInvoker<CreateLogtankRequest, CreateLogtankResponse>(request, ElbMeta.createLogtank, hcClient);
+    }
+
+    /**
+     * 创建主备后端服务器组
+     *
+     * 创建主备后端服务器组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateMasterSlavePoolRequest 请求对象
+     * @return CreateMasterSlavePoolResponse
+     */
+    public CreateMasterSlavePoolResponse createMasterSlavePool(CreateMasterSlavePoolRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.createMasterSlavePool);
+    }
+
+    /**
+     * 创建主备后端服务器组
+     *
+     * 创建主备后端服务器组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateMasterSlavePoolRequest 请求对象
+     * @return SyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>
+     */
+    public SyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse> createMasterSlavePoolInvoker(
+        CreateMasterSlavePoolRequest request) {
+        return new SyncInvoker<CreateMasterSlavePoolRequest, CreateMasterSlavePoolResponse>(request,
+            ElbMeta.createMasterSlavePool, hcClient);
     }
 
     /**
@@ -607,6 +721,8 @@ public class ElbClient {
      *
      * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
      * 
+     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param CreateSecurityPolicyRequest 请求对象
@@ -620,6 +736,8 @@ public class ElbClient {
      * 创建自定义安全策略
      *
      * 创建自定义安全策略。用于在创建HTTPS监听器时，请求参数中指定security_policy_id来设置监听器的自定义安全策略。
+     * 
+     * [荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -873,7 +991,7 @@ public class ElbClient {
     /**
      * 删除云日志
      *
-     * 删除云日志。
+     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -887,7 +1005,7 @@ public class ElbClient {
     /**
      * 删除云日志
      *
-     * 删除云日志。
+     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -896,6 +1014,36 @@ public class ElbClient {
      */
     public SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtankInvoker(DeleteLogtankRequest request) {
         return new SyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>(request, ElbMeta.deleteLogtank, hcClient);
+    }
+
+    /**
+     * 删除主备后端服务器组
+     *
+     * 删除主备后端服务器组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteMasterSlavePoolRequest 请求对象
+     * @return DeleteMasterSlavePoolResponse
+     */
+    public DeleteMasterSlavePoolResponse deleteMasterSlavePool(DeleteMasterSlavePoolRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.deleteMasterSlavePool);
+    }
+
+    /**
+     * 删除主备后端服务器组
+     *
+     * 删除主备后端服务器组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteMasterSlavePoolRequest 请求对象
+     * @return SyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>
+     */
+    public SyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse> deleteMasterSlavePoolInvoker(
+        DeleteMasterSlavePoolRequest request) {
+        return new SyncInvoker<DeleteMasterSlavePoolRequest, DeleteMasterSlavePoolResponse>(request,
+            ElbMeta.deleteMasterSlavePool, hcClient);
     }
 
     /**
@@ -957,7 +1105,7 @@ public class ElbClient {
     /**
      * 删除自定义安全策略
      *
-     * 删除自定义安全策略。
+     * 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -971,7 +1119,7 @@ public class ElbClient {
     /**
      * 删除自定义安全策略
      *
-     * 删除自定义安全策略。
+     * 删除自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1267,7 +1415,7 @@ public class ElbClient {
     /**
      * 查询云日志列表
      *
-     * 查询云日志列表。
+     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1281,7 +1429,7 @@ public class ElbClient {
     /**
      * 查询云日志列表
      *
-     * 查询云日志列表。
+     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1290,6 +1438,36 @@ public class ElbClient {
      */
     public SyncInvoker<ListLogtanksRequest, ListLogtanksResponse> listLogtanksInvoker(ListLogtanksRequest request) {
         return new SyncInvoker<ListLogtanksRequest, ListLogtanksResponse>(request, ElbMeta.listLogtanks, hcClient);
+    }
+
+    /**
+     * 查询主备后端服务器组列表
+     *
+     * 主备后端服务器组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMasterSlavePoolsRequest 请求对象
+     * @return ListMasterSlavePoolsResponse
+     */
+    public ListMasterSlavePoolsResponse listMasterSlavePools(ListMasterSlavePoolsRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.listMasterSlavePools);
+    }
+
+    /**
+     * 查询主备后端服务器组列表
+     *
+     * 主备后端服务器组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMasterSlavePoolsRequest 请求对象
+     * @return SyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>
+     */
+    public SyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse> listMasterSlavePoolsInvoker(
+        ListMasterSlavePoolsRequest request) {
+        return new SyncInvoker<ListMasterSlavePoolsRequest, ListMasterSlavePoolsResponse>(request,
+            ElbMeta.listMasterSlavePools, hcClient);
     }
 
     /**
@@ -1381,7 +1559,7 @@ public class ElbClient {
     /**
      * 查询自定义安全策略列表
      *
-     * 查询自定义安全策略列表。
+     * 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1395,7 +1573,7 @@ public class ElbClient {
     /**
      * 查询自定义安全策略列表
      *
-     * 查询自定义安全策略列表。
+     * 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1683,7 +1861,7 @@ public class ElbClient {
     /**
      * 查询云日志详情
      *
-     * 云日志详情。
+     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1697,7 +1875,7 @@ public class ElbClient {
     /**
      * 查询云日志详情
      *
-     * 云日志详情。
+     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1706,6 +1884,36 @@ public class ElbClient {
      */
     public SyncInvoker<ShowLogtankRequest, ShowLogtankResponse> showLogtankInvoker(ShowLogtankRequest request) {
         return new SyncInvoker<ShowLogtankRequest, ShowLogtankResponse>(request, ElbMeta.showLogtank, hcClient);
+    }
+
+    /**
+     * 查询主备后端服务器组详情
+     *
+     * 主备后端服务器组详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMasterSlavePoolRequest 请求对象
+     * @return ShowMasterSlavePoolResponse
+     */
+    public ShowMasterSlavePoolResponse showMasterSlavePool(ShowMasterSlavePoolRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.showMasterSlavePool);
+    }
+
+    /**
+     * 查询主备后端服务器组详情
+     *
+     * 主备后端服务器组详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMasterSlavePoolRequest 请求对象
+     * @return SyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>
+     */
+    public SyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse> showMasterSlavePoolInvoker(
+        ShowMasterSlavePoolRequest request) {
+        return new SyncInvoker<ShowMasterSlavePoolRequest, ShowMasterSlavePoolResponse>(request,
+            ElbMeta.showMasterSlavePool, hcClient);
     }
 
     /**
@@ -1795,7 +2003,7 @@ public class ElbClient {
     /**
      * 查询自定义安全策略详情
      *
-     * 查询自定义安全策略详情。
+     * 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1809,7 +2017,7 @@ public class ElbClient {
     /**
      * 查询自定义安全策略详情
      *
-     * 查询自定义安全策略详情。
+     * 查询自定义安全策略详情。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2003,7 +2211,7 @@ public class ElbClient {
     /**
      * 更新云日志
      *
-     * 更新云日志。
+     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2017,7 +2225,7 @@ public class ElbClient {
     /**
      * 更新云日志
      *
-     * 更新云日志。
+     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2087,7 +2295,7 @@ public class ElbClient {
     /**
      * 更新自定义安全策略
      *
-     * 更新自定义安全策略。
+     * 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2101,7 +2309,7 @@ public class ElbClient {
     /**
      * 更新自定义安全策略
      *
-     * 更新自定义安全策略。
+     * 更新自定义安全策略。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2145,9 +2353,9 @@ public class ElbClient {
     }
 
     /**
-     * 批量删除IP地址组的IP地址
+     * 删除IP地址组的IP列表项
      *
-     * 批量删除IP地址组的IP地址。
+     * 批量删除IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2159,9 +2367,9 @@ public class ElbClient {
     }
 
     /**
-     * 批量删除IP地址组的IP地址
+     * 删除IP地址组的IP列表项
      *
-     * 批量删除IP地址组的IP地址。
+     * 批量删除IP地址组的IP列表信息。[荷兰region不支持该API](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2241,7 +2449,7 @@ public class ElbClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * [不支持IPv6。](tag:dt,dt_test)
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2259,7 +2467,7 @@ public class ElbClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * [不支持IPv6。](tag:dt,dt_test)
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2273,7 +2481,7 @@ public class ElbClient {
     /**
      * 删除IP地址组
      *
-     * 删除IP地址组。
+     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2287,7 +2495,7 @@ public class ElbClient {
     /**
      * 删除IP地址组
      *
-     * 删除IP地址组。
+     * 删除ip地址组。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2301,7 +2509,7 @@ public class ElbClient {
     /**
      * 查询IP地址组列表
      *
-     * 查询IP地址组列表。
+     * 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2315,7 +2523,7 @@ public class ElbClient {
     /**
      * 查询IP地址组列表
      *
-     * 查询IP地址组列表。
+     * 查询IP地址组列表。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2329,7 +2537,7 @@ public class ElbClient {
     /**
      * 查询IP地址组详情
      *
-     * 获取IP地址组详情。
+     * 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2343,7 +2551,7 @@ public class ElbClient {
     /**
      * 查询IP地址组详情
      *
-     * 获取IP地址组详情。
+     * 获取IP地址组详情。[荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2362,7 +2570,7 @@ public class ElbClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * [不支持IPv6。](tag:dt,dt_test)
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2381,7 +2589,7 @@ public class ElbClient {
      * 
      * 需要注意0.0.0.0与0.0.0.0/32视为重复，0:0:0:0:0:0:0:1与::1与::1/128视为重复，只会保存其中一个。
      * 
-     * [不支持IPv6。](tag:dt,dt_test)
+     * [荷兰region不支持IP地址组功能，请勿使用。](tag:dt)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2393,9 +2601,9 @@ public class ElbClient {
     }
 
     /**
-     * 更新IP地址组的IP列表
+     * 更新IP地址组的IP列表项
      *
-     * 更新IP地址组的IP列表。
+     * 添加新的IP地址到IP地址组的IP列表信息，或更新已有IP地址的描述。[荷兰region不支持该API](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2407,9 +2615,9 @@ public class ElbClient {
     }
 
     /**
-     * 更新IP地址组的IP列表
+     * 更新IP地址组的IP列表项
      *
-     * 更新IP地址组的IP列表。
+     * 添加新的IP地址到IP地址组的IP列表信息，或更新已有IP地址的描述。[荷兰region不支持该API](tag:dt,dt_test)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

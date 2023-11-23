@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.codeartspipeline.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * PipelineSchedule
@@ -33,7 +36,7 @@ public class PipelineSchedule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "days_of_week")
 
-    private String daysOfWeek;
+    private List<Integer> daysOfWeek = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_zone")
@@ -108,8 +111,24 @@ public class PipelineSchedule {
         this.enable = enable;
     }
 
-    public PipelineSchedule withDaysOfWeek(String daysOfWeek) {
+    public PipelineSchedule withDaysOfWeek(List<Integer> daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
+        return this;
+    }
+
+    public PipelineSchedule addDaysOfWeekItem(Integer daysOfWeekItem) {
+        if (this.daysOfWeek == null) {
+            this.daysOfWeek = new ArrayList<>();
+        }
+        this.daysOfWeek.add(daysOfWeekItem);
+        return this;
+    }
+
+    public PipelineSchedule withDaysOfWeek(Consumer<List<Integer>> daysOfWeekSetter) {
+        if (this.daysOfWeek == null) {
+            this.daysOfWeek = new ArrayList<>();
+        }
+        daysOfWeekSetter.accept(this.daysOfWeek);
         return this;
     }
 
@@ -117,11 +136,11 @@ public class PipelineSchedule {
      * 一周内具体时间
      * @return daysOfWeek
      */
-    public String getDaysOfWeek() {
+    public List<Integer> getDaysOfWeek() {
         return daysOfWeek;
     }
 
-    public void setDaysOfWeek(String daysOfWeek) {
+    public void setDaysOfWeek(List<Integer> daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
     }
 

@@ -209,7 +209,6 @@ import com.huaweicloud.sdk.css.v1.model.UpdateFlavorReq;
 import com.huaweicloud.sdk.css.v1.model.UpdateFlavorRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateFlavorResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateInstanceRequest;
-import com.huaweicloud.sdk.css.v1.model.UpdateInstanceRequestBody;
 import com.huaweicloud.sdk.css.v1.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateLogSettingReq;
 import com.huaweicloud.sdk.css.v1.model.UpdateLogSettingRequest;
@@ -2121,13 +2120,6 @@ public class CssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            }));
-        builder.<UpdateInstanceRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateInstanceRequestBody.class),
-            f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
-                req.setBody(v);
             }));
 
         // response

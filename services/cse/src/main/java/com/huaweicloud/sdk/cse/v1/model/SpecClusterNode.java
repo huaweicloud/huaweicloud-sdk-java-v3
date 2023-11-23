@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 public class SpecClusterNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_nodes")
+    @JsonProperty(value = "clusterNodes")
 
     private List<ClusterNode> clusterNodes = null;
 

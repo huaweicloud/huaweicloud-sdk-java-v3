@@ -171,6 +171,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCoun
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
@@ -2770,6 +2772,36 @@ public class GaussDBAsyncClient {
         ShowIntelligentDiagnosisInstanceInfosPerMetricRequest request) {
         return new AsyncInvoker<ShowIntelligentDiagnosisInstanceInfosPerMetricRequest, ShowIntelligentDiagnosisInstanceInfosPerMetricResponse>(
             request, GaussDBMeta.showIntelligentDiagnosisInstanceInfosPerMetric, hcClient);
+    }
+
+    /**
+     * 查询表级时间点恢复可选表
+     *
+     * 查询表级时间点恢复可选表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRestoreTablesRequest 请求对象
+     * @return CompletableFuture<ShowRestoreTablesResponse>
+     */
+    public CompletableFuture<ShowRestoreTablesResponse> showRestoreTablesAsync(ShowRestoreTablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showRestoreTables);
+    }
+
+    /**
+     * 查询表级时间点恢复可选表
+     *
+     * 查询表级时间点恢复可选表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRestoreTablesRequest 请求对象
+     * @return AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse>
+     */
+    public AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTablesAsyncInvoker(
+        ShowRestoreTablesRequest request) {
+        return new AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse>(request,
+            GaussDBMeta.showRestoreTables, hcClient);
     }
 
     /**

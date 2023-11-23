@@ -43,6 +43,11 @@ public class InstanceConfiguration {
 
     private ConfigurationProbes probes;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_spec")
+
+    private ConfigurationContainerSpec containerSpec;
+
     public InstanceConfiguration withEnv(List<ConfigurationEnvParam> env) {
         this.env = env;
         return this;
@@ -213,6 +218,32 @@ public class InstanceConfiguration {
         this.probes = probes;
     }
 
+    public InstanceConfiguration withContainerSpec(ConfigurationContainerSpec containerSpec) {
+        this.containerSpec = containerSpec;
+        return this;
+    }
+
+    public InstanceConfiguration withContainerSpec(Consumer<ConfigurationContainerSpec> containerSpecSetter) {
+        if (this.containerSpec == null) {
+            this.containerSpec = new ConfigurationContainerSpec();
+            containerSpecSetter.accept(this.containerSpec);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get containerSpec
+     * @return containerSpec
+     */
+    public ConfigurationContainerSpec getContainerSpec() {
+        return containerSpec;
+    }
+
+    public void setContainerSpec(ConfigurationContainerSpec containerSpec) {
+        this.containerSpec = containerSpec;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -224,12 +255,13 @@ public class InstanceConfiguration {
         InstanceConfiguration that = (InstanceConfiguration) obj;
         return Objects.equals(this.env, that.env) && Objects.equals(this.storage, that.storage)
             && Objects.equals(this.strategy, that.strategy) && Objects.equals(this.lifecycle, that.lifecycle)
-            && Objects.equals(this.scheduler, that.scheduler) && Objects.equals(this.probes, that.probes);
+            && Objects.equals(this.scheduler, that.scheduler) && Objects.equals(this.probes, that.probes)
+            && Objects.equals(this.containerSpec, that.containerSpec);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(env, storage, strategy, lifecycle, scheduler, probes);
+        return Objects.hash(env, storage, strategy, lifecycle, scheduler, probes, containerSpec);
     }
 
     @Override
@@ -242,6 +274,7 @@ public class InstanceConfiguration {
         sb.append("    lifecycle: ").append(toIndentedString(lifecycle)).append("\n");
         sb.append("    scheduler: ").append(toIndentedString(scheduler)).append("\n");
         sb.append("    probes: ").append(toIndentedString(probes)).append("\n");
+        sb.append("    containerSpec: ").append(toIndentedString(containerSpec)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -270,6 +270,11 @@ public class EngineCreateReq {
     private String vpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcId")
+
+    private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "networkId")
 
     private String networkId;
@@ -504,6 +509,23 @@ public class EngineCreateReq {
         this.vpc = vpc;
     }
 
+    public EngineCreateReq withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * vpc标识
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
     public EngineCreateReq withNetworkId(String networkId) {
         this.networkId = networkId;
         return this;
@@ -643,10 +665,10 @@ public class EngineCreateReq {
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.payment, that.payment) && Objects.equals(this.flavor, that.flavor)
             && Objects.equals(this.azList, that.azList) && Objects.equals(this.authType, that.authType)
-            && Objects.equals(this.vpc, that.vpc) && Objects.equals(this.networkId, that.networkId)
-            && Objects.equals(this.subnetCidr, that.subnetCidr) && Objects.equals(this.publicIpId, that.publicIpId)
-            && Objects.equals(this.authCred, that.authCred) && Objects.equals(this.specType, that.specType)
-            && Objects.equals(this.inputs, that.inputs);
+            && Objects.equals(this.vpc, that.vpc) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.subnetCidr, that.subnetCidr)
+            && Objects.equals(this.publicIpId, that.publicIpId) && Objects.equals(this.authCred, that.authCred)
+            && Objects.equals(this.specType, that.specType) && Objects.equals(this.inputs, that.inputs);
     }
 
     @Override
@@ -658,6 +680,7 @@ public class EngineCreateReq {
             azList,
             authType,
             vpc,
+            vpcId,
             networkId,
             subnetCidr,
             publicIpId,
@@ -677,6 +700,7 @@ public class EngineCreateReq {
         sb.append("    azList: ").append(toIndentedString(azList)).append("\n");
         sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("    vpc: ").append(toIndentedString(vpc)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    networkId: ").append(toIndentedString(networkId)).append("\n");
         sb.append("    subnetCidr: ").append(toIndentedString(subnetCidr)).append("\n");
         sb.append("    publicIpId: ").append(toIndentedString(publicIpId)).append("\n");

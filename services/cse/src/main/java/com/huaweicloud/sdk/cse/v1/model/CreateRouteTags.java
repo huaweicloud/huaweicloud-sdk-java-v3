@@ -6,30 +6,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * tags
+ * 匹配的实例标记列表。
  */
 public class CreateRouteTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
+    @JsonProperty(value = "&lt;tag&gt;")
 
-    private String version;
+    private String lessThanTagGreaterThan;
 
-    public CreateRouteTags withVersion(String version) {
-        this.version = version;
+    public CreateRouteTags withLessThanTagGreaterThan(String lessThanTagGreaterThan) {
+        this.lessThanTagGreaterThan = lessThanTagGreaterThan;
         return this;
     }
 
     /**
-     * version
-     * @return version
+     * 实例标记。满足标记条件的实例放到这一组。
+     * @return lessThanTagGreaterThan
      */
-    public String getVersion() {
-        return version;
+    public String getLessThanTagGreaterThan() {
+        return lessThanTagGreaterThan;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public void setLessThanTagGreaterThan(String lessThanTagGreaterThan) {
+        this.lessThanTagGreaterThan = lessThanTagGreaterThan;
     }
 
     @Override
@@ -41,19 +41,19 @@ public class CreateRouteTags {
             return false;
         }
         CreateRouteTags that = (CreateRouteTags) obj;
-        return Objects.equals(this.version, that.version);
+        return Objects.equals(this.lessThanTagGreaterThan, that.lessThanTagGreaterThan);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(version);
+        return Objects.hash(lessThanTagGreaterThan);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateRouteTags {\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    lessThanTagGreaterThan: ").append(toIndentedString(lessThanTagGreaterThan)).append("\n");
         sb.append("}");
         return sb.toString();
     }

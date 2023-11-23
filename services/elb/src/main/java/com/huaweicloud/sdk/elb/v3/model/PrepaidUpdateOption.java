@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 负载均衡器的包周期规格变更信息。  [不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
+ * 负载均衡器的包周期规格变更信息
  */
 public class PrepaidUpdateOption {
 

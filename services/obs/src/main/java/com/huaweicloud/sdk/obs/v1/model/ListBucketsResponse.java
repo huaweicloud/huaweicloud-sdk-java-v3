@@ -6,8 +6,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.huaweicloud.sdk.corexml.SdkXmlResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,7 +26,8 @@ public class ListBucketsResponse extends SdkXmlResponse<ListBucketsResponse> {
     @JsonProperty(value = "Buckets")
 
     @JacksonXmlProperty(localName = "Buckets")
-    private List<Bucket> buckets = null;
+
+    private Buckets buckets;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-obs-id-2")
@@ -105,36 +104,29 @@ public class ListBucketsResponse extends SdkXmlResponse<ListBucketsResponse> {
         this.owner = owner;
     }
 
-    public ListBucketsResponse withBuckets(List<Bucket> buckets) {
+    public ListBucketsResponse withBuckets(Buckets buckets) {
         this.buckets = buckets;
         return this;
     }
 
-    public ListBucketsResponse addBucketsItem(Bucket bucketsItem) {
+    public ListBucketsResponse withBuckets(Consumer<Buckets> bucketsSetter) {
         if (this.buckets == null) {
-            this.buckets = new ArrayList<>();
+            this.buckets = new Buckets();
+            bucketsSetter.accept(this.buckets);
         }
-        this.buckets.add(bucketsItem);
-        return this;
-    }
 
-    public ListBucketsResponse withBuckets(Consumer<List<Bucket>> bucketsSetter) {
-        if (this.buckets == null) {
-            this.buckets = new ArrayList<>();
-        }
-        bucketsSetter.accept(this.buckets);
         return this;
     }
 
     /**
-     * 用户所拥有的桶列表。 
+     * Get buckets
      * @return buckets
      */
-    public List<Bucket> getBuckets() {
+    public Buckets getBuckets() {
         return buckets;
     }
 
-    public void setBuckets(List<Bucket> buckets) {
+    public void setBuckets(Buckets buckets) {
         this.buckets = buckets;
     }
 

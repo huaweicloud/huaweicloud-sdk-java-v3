@@ -46,7 +46,7 @@ public class CertDistinguishedName {
     }
 
     /**
-     * 证书通用名称（CN）。
+     * 证书通用名称（CN），名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、\"*\"、字母、数字、汉字组成，长度不能超过64位字符。
      * @return commonName
      */
     public String getCommonName() {
@@ -63,7 +63,7 @@ public class CertDistinguishedName {
     }
 
     /**
-     * 国家编码，需符合正则\"**[A-Za-z]{2}**\"。若不传入，则默认继承父CA对应的值。
+     * 国家编码，只能由英文组成，长度为2位字符。若不传入，则默认继承父CA对应的值。
      * @return country
      */
     public String getCountry() {
@@ -80,7 +80,7 @@ public class CertDistinguishedName {
     }
 
     /**
-     * 省市名称。若不传入，则默认继承父CA对应的值。
+     * 省市名称，名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、字母、数字、汉字组成，长度不能超过128位字符。若不传入，则默认继承父CA对应的值。
      * @return state
      */
     public String getState() {
@@ -97,7 +97,7 @@ public class CertDistinguishedName {
     }
 
     /**
-     * 地区名称。若不传入，则默认继承父CA对应的值。
+     * 地区名称，名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、字母、数字、汉字组成，长度不能超过128位字符。若不传入，则默认继承父CA对应的值。
      * @return locality
      */
     public String getLocality() {
@@ -114,7 +114,7 @@ public class CertDistinguishedName {
     }
 
     /**
-     * 组织名称。若不传入，则默认继承父CA对应的值。
+     * 组织名称，名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、字母、数字、汉字组成，长度不能超过64位字符。若不传入，则默认继承父CA对应的值。
      * @return organization
      */
     public String getOrganization() {
@@ -131,7 +131,7 @@ public class CertDistinguishedName {
     }
 
     /**
-     * 组织单元名称。若不传入，则默认继承父CA对应的值。
+     * 组织单元名称，名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、字母、数字、汉字组成，长度不能超过64位字符。若不传入，则默认继承父CA对应的值。
      * @return organizationalUnit
      */
     public String getOrganizationalUnit() {

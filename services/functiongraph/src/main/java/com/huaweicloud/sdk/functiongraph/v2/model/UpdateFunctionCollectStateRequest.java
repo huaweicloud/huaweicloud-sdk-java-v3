@@ -43,7 +43,7 @@ public class UpdateFunctionCollectStateRequest {
     }
 
     /**
-     * 收藏状态
+     * 置顶状态
      * @return state
      */
     public String getState() {

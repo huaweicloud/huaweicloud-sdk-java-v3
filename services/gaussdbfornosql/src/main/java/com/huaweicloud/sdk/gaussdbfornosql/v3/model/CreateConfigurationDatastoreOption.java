@@ -31,7 +31,7 @@ public class CreateConfigurationDatastoreOption {
     }
 
     /**
-     * 数据库类型。 - GaussDB(for Cassandra)实例取值为“cassandra”。 - GaussDB(for Mongo)实例取值为\"mongodb\"。 - GaussDB(for Influx)实例取值为\"influxdb\"。
+     * 数据库类型。 - GeminiDB Cassandra实例取值为“cassandra”。 - GeminiDB Mongo实例取值为\"mongodb\"。 - GeminiDB Influx实例取值为\"influxdb\"。 - GeminiDB Redis实例取值为\"redis\"。
      * @return type
      */
     public String getType() {
@@ -48,7 +48,7 @@ public class CreateConfigurationDatastoreOption {
     }
 
     /**
-     * 数据库版本。 - GaussDB(for Cassandra)实例支持3.11版本，取值为“3.11”。 - GaussDB(for Mongo)实例支持4.0版本，取值为\"4.0\"。 - GaussDB(for Influx)实例支持1.7版本，取值\"1.7\"。
+     * 数据库版本。 - GeminiDB Cassandra实例支持3.11版本，取值为“3.11”。 - GeminiDB Mongo实例支持4.0版本，取值为\"4.0\"。 - GeminiDB Influx实例支持1.7版本，取值\"1.7\"。 - GeminiDB Redis实例支持5.0版本，取值\"5.0\"。
      * @return version
      */
     public String getVersion() {
@@ -65,7 +65,7 @@ public class CreateConfigurationDatastoreOption {
     }
 
     /**
-     * 数据库部署模式，GaussDB(for Mongo)该参数必选。 - GaussDB(for Mongo) 副本集实例取值为\"ReplicaSet\"。
+     * 数据库部署模式，GeminiDB Mongo该参数必选。 - GeminiDB Mongo 副本集实例取值为\"ReplicaSet\"。
      * @return mode
      */
     public String getMode() {

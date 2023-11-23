@@ -323,7 +323,7 @@ public class NatGatewayResponseBody {
     }
 
     /**
-     * 公网NAT网关实例的描述，长度范围小于等于255个字符，不能包含<>
+     * 公网NAT网关实例的描述，长度范围小于等于255个字符，不能包含“<”和“>”。
      * @return description
      */
     public String getDescription() {

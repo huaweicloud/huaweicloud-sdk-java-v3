@@ -53,7 +53,7 @@ public class ExportFunctionRequest {
     }
 
     /**
-     * 是否导出函数配置，默认为false
+     * 是否导出函数配置，默认为false。若无type参数，则必填code=true或config=true至少一项。
      * @return config
      */
     public Boolean getConfig() {
@@ -70,7 +70,7 @@ public class ExportFunctionRequest {
     }
 
     /**
-     * 是否导出函数代码，默认为false
+     * 是否导出函数代码，默认为false。若无type参数，则必填code=true或config=true至少一项。
      * @return code
      */
     public Boolean getCode() {
@@ -87,7 +87,7 @@ public class ExportFunctionRequest {
     }
 
     /**
-     * 不兼容与code、config参数混用；type=code代表导出代码,type=config代码导出配置
+     * 不兼容与code、config参数混用；type=code代表导出代码，type=config代码导出配置
      * @return type
      */
     public String getType() {

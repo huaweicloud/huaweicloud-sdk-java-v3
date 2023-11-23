@@ -101,6 +101,11 @@ public class DeleteJobReq {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_show_breakpoint_position")
+
+    private Boolean isShowBreakpointPosition;
+
     public DeleteJobReq withDeleteType(DeleteTypeEnum deleteType) {
         this.deleteType = deleteType;
         return this;
@@ -135,6 +140,23 @@ public class DeleteJobReq {
         this.jobId = jobId;
     }
 
+    public DeleteJobReq withIsShowBreakpointPosition(Boolean isShowBreakpointPosition) {
+        this.isShowBreakpointPosition = isShowBreakpointPosition;
+        return this;
+    }
+
+    /**
+     * MySQL为源，实时迁移，实时同步，数据订阅，实时灾备结束任务时是否展示断点信息
+     * @return isShowBreakpointPosition
+     */
+    public Boolean getIsShowBreakpointPosition() {
+        return isShowBreakpointPosition;
+    }
+
+    public void setIsShowBreakpointPosition(Boolean isShowBreakpointPosition) {
+        this.isShowBreakpointPosition = isShowBreakpointPosition;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -144,12 +166,13 @@ public class DeleteJobReq {
             return false;
         }
         DeleteJobReq that = (DeleteJobReq) obj;
-        return Objects.equals(this.deleteType, that.deleteType) && Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.deleteType, that.deleteType) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.isShowBreakpointPosition, that.isShowBreakpointPosition);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deleteType, jobId);
+        return Objects.hash(deleteType, jobId, isShowBreakpointPosition);
     }
 
     @Override
@@ -158,6 +181,7 @@ public class DeleteJobReq {
         sb.append("class DeleteJobReq {\n");
         sb.append("    deleteType: ").append(toIndentedString(deleteType)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    isShowBreakpointPosition: ").append(toIndentedString(isShowBreakpointPosition)).append("\n");
         sb.append("}");
         return sb.toString();
     }

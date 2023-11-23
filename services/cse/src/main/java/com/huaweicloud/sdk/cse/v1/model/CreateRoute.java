@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateRoute
+ * 路由规则。
  */
 public class CreateRoute {
 
@@ -32,7 +32,7 @@ public class CreateRoute {
     }
 
     /**
-     * name
+     * 规则名称。
      * @return name
      */
     public String getName() {
@@ -49,7 +49,7 @@ public class CreateRoute {
     }
 
     /**
-     * weight
+     * 权重值。
      * @return weight
      */
     public Integer getWeight() {

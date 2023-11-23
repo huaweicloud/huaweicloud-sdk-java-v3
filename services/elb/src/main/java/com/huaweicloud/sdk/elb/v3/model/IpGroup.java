@@ -76,7 +76,7 @@ public class IpGroup {
     }
 
     /**
-     * IP地址组的更新时间。
+     * IP地址组的描述信息。
      * @return description
      */
     public String getDescription() {

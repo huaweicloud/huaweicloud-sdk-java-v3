@@ -974,7 +974,7 @@ public class TaskGroupResp {
     }
 
     /**
-     * 任务创建的对象总数量
+     * 已完成任务创建的对象总数量
      * minimum: 0
      * maximum: 9223372036854775807
      * @return createCompleteNum

@@ -6,12 +6,20 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
 @JacksonXmlRootElement(localName = "SetBucketCustomedomainRequest")
 public class SetBucketCustomedomainRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Content-MD5")
+
+    @JacksonXmlProperty(localName = "Content-MD5")
+
+    private String contentMD5;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Date")
@@ -33,6 +41,30 @@ public class SetBucketCustomedomainRequest {
     @JacksonXmlProperty(localName = "customdomain")
 
     private String customdomain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    @JacksonXmlProperty(localName = "body")
+
+    private SetBucketCustomDomainBody body;
+
+    public SetBucketCustomedomainRequest withContentMD5(String contentMD5) {
+        this.contentMD5 = contentMD5;
+        return this;
+    }
+
+    /**
+     * 按照RFC 1864标准计算出消息体的MD5摘要字符串，即消息体128-bit MD5值经过base64编码后得到的字符串。也支持设置Content-SHA256头域，其值为消息体256-bit SHA256值经过base64编码后得到的字符串，Content-MD5和Content-SHA256二选一。 示例：n58IG6hfM7vqI4K0vnWpog== 
+     * @return contentMD5
+     */
+    public String getContentMD5() {
+        return contentMD5;
+    }
+
+    public void setContentMD5(String contentMD5) {
+        this.contentMD5 = contentMD5;
+    }
 
     public SetBucketCustomedomainRequest withDate(String date) {
         this.date = date;
@@ -85,6 +117,32 @@ public class SetBucketCustomedomainRequest {
         this.customdomain = customdomain;
     }
 
+    public SetBucketCustomedomainRequest withBody(SetBucketCustomDomainBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public SetBucketCustomedomainRequest withBody(Consumer<SetBucketCustomDomainBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new SetBucketCustomDomainBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public SetBucketCustomDomainBody getBody() {
+        return body;
+    }
+
+    public void setBody(SetBucketCustomDomainBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -94,22 +152,25 @@ public class SetBucketCustomedomainRequest {
             return false;
         }
         SetBucketCustomedomainRequest that = (SetBucketCustomedomainRequest) obj;
-        return Objects.equals(this.date, that.date) && Objects.equals(this.bucketName, that.bucketName)
-            && Objects.equals(this.customdomain, that.customdomain);
+        return Objects.equals(this.contentMD5, that.contentMD5) && Objects.equals(this.date, that.date)
+            && Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.customdomain, that.customdomain)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, bucketName, customdomain);
+        return Objects.hash(contentMD5, date, bucketName, customdomain, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SetBucketCustomedomainRequest {\n");
+        sb.append("    contentMD5: ").append(toIndentedString(contentMD5)).append("\n");
         sb.append("    date: ").append(toIndentedString(date)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    customdomain: ").append(toIndentedString(customdomain)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

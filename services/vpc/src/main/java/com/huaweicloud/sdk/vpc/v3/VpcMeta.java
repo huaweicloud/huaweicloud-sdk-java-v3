@@ -938,6 +938,20 @@ public class VpcMeta {
             f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getPriority, (req, v) -> {
                 req.setPriority(v);
             }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFilterRulesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
 
         // response
 
@@ -991,6 +1005,20 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getUpdatedAt, (req, v) -> {
                 req.setUpdatedAt(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorFiltersRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
             }));
 
         // response
@@ -1103,6 +1131,20 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getUpdatedAt, (req, v) -> {
                 req.setUpdatedAt(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrafficMirrorSessionsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
             }));
 
         // response

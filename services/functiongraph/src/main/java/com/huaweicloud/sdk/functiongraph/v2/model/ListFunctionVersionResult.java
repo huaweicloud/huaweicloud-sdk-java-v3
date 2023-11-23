@@ -411,6 +411,16 @@ public class ListFunctionVersionResult {
     private Integer initializerTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_stop_handler")
+
+    private String preStopHandler;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_stop_timeout")
+
+    private Integer preStopTimeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "long_time")
 
     private Boolean longTime;
@@ -636,7 +646,7 @@ public class ListFunctionVersionResult {
     }
 
     /**
-     * 函数占用的cpu资源。 单位为millicore（1 core=1000 millicores）。 取值与MemorySize成比例，默认是128M内存占0.1个核（100 millicores）。 函数占用的CPU为基础CPU：200 millicores，再加上内存按比例占用的CPU，计算方法：内存/128 *100 + 200。
+     * 函数占用的cpu资源。 单位为millicore（1 core=1000 millicores）。 取值与MemorySize成比例，默认是128M内存占0.1个核（100 millicores）。
      * @return cpu
      */
     public Integer getCpu() {
@@ -962,6 +972,40 @@ public class ListFunctionVersionResult {
         this.initializerTimeout = initializerTimeout;
     }
 
+    public ListFunctionVersionResult withPreStopHandler(String preStopHandler) {
+        this.preStopHandler = preStopHandler;
+        return this;
+    }
+
+    /**
+     * 函数预停止函数的入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.pre_stop_handler，则表示函数的文件名为myfunction.js，初始化的入口函数名为pre_stop_handler。
+     * @return preStopHandler
+     */
+    public String getPreStopHandler() {
+        return preStopHandler;
+    }
+
+    public void setPreStopHandler(String preStopHandler) {
+        this.preStopHandler = preStopHandler;
+    }
+
+    public ListFunctionVersionResult withPreStopTimeout(Integer preStopTimeout) {
+        this.preStopTimeout = preStopTimeout;
+        return this;
+    }
+
+    /**
+     * 初始化超时时间，超时函数将被强行停止，范围1～90秒。
+     * @return preStopTimeout
+     */
+    public Integer getPreStopTimeout() {
+        return preStopTimeout;
+    }
+
+    public void setPreStopTimeout(Integer preStopTimeout) {
+        this.preStopTimeout = preStopTimeout;
+    }
+
     public ListFunctionVersionResult withLongTime(Boolean longTime) {
         this.longTime = longTime;
         return this;
@@ -1176,7 +1220,8 @@ public class ListFunctionVersionResult {
             && Objects.equals(this.strategyConfig, that.strategyConfig)
             && Objects.equals(this.initializerHandler, that.initializerHandler)
             && Objects.equals(this.initializerTimeout, that.initializerTimeout)
-            && Objects.equals(this.longTime, that.longTime)
+            && Objects.equals(this.preStopHandler, that.preStopHandler)
+            && Objects.equals(this.preStopTimeout, that.preStopTimeout) && Objects.equals(this.longTime, that.longTime)
             && Objects.equals(this.functionAsyncConfig, that.functionAsyncConfig)
             && Objects.equals(this.type, that.type) && Objects.equals(this.enableCloudDebug, that.enableCloudDebug)
             && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
@@ -1218,6 +1263,8 @@ public class ListFunctionVersionResult {
             strategyConfig,
             initializerHandler,
             initializerTimeout,
+            preStopHandler,
+            preStopTimeout,
             longTime,
             functionAsyncConfig,
             type,
@@ -1263,6 +1310,8 @@ public class ListFunctionVersionResult {
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
+        sb.append("    preStopHandler: ").append(toIndentedString(preStopHandler)).append("\n");
+        sb.append("    preStopTimeout: ").append(toIndentedString(preStopTimeout)).append("\n");
         sb.append("    longTime: ").append(toIndentedString(longTime)).append("\n");
         sb.append("    functionAsyncConfig: ").append(toIndentedString(functionAsyncConfig)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

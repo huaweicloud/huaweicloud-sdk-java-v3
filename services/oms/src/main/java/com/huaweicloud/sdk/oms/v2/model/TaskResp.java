@@ -990,9 +990,9 @@ public class TaskResp {
     }
 
     /**
-     * 任务状态。 1：等待调度 2：正在执行 3：停止 4：失败 5：成功
+     * 任务状态。 1：等待调度 2：正在执行 3：停止 4：失败 5：成功 7：等待中
      * minimum: 1
-     * maximum: 5
+     * maximum: 7
      * @return status
      */
     public Integer getStatus() {

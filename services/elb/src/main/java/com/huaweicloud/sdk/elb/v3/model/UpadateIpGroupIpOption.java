@@ -26,7 +26,7 @@ public class UpadateIpGroupIpOption {
     }
 
     /**
-     * IP地址。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
+     * IP地址。支持IPv4、IPv6。若传入IP地址不存在，则新增；否则更新已有IP地址的描述信息。  [不支持IPv6，请勿设置为IPv6地址。](tag:dt,dt_test)
      * @return ip
      */
     public String getIp() {

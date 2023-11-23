@@ -14,6 +14,10 @@ import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsResponse;
+import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceRequest;
+import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceResponse;
+import com.huaweicloud.sdk.aom.v2.model.CreateRecordingRuleRequest;
+import com.huaweicloud.sdk.aom.v2.model.CreateRecordingRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteActionRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteAlarmRuleRequest;
@@ -24,10 +28,16 @@ import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteEvent2alarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.DeletePromInstanceRequest;
+import com.huaweicloud.sdk.aom.v2.model.DeletePromInstanceResponse;
 import com.huaweicloud.sdk.aom.v2.model.DeleteserviceDiscoveryRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.DeleteserviceDiscoveryRulesResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListAccessCodeRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListAccessCodeResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListActionRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListActionRuleResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListAgentsRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListAgentsResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListAlarmRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListEvent2alarmRuleRequest;
@@ -54,6 +64,10 @@ import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListMuteRuleResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListNotifiedHistoriesResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListPermissionsRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.aom.v2.model.ListPromInstanceRequest;
+import com.huaweicloud.sdk.aom.v2.model.ListPromInstanceResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListRangeQueryAomPromGetRequest;
 import com.huaweicloud.sdk.aom.v2.model.ListRangeQueryAomPromGetResponse;
 import com.huaweicloud.sdk.aom.v2.model.ListRangeQueryAomPromPostRequest;
@@ -1047,6 +1061,154 @@ public class AomAsyncClient {
     }
 
     /**
+     * 新增Prometheus实例数据源
+     *
+     * 该接口用于新增Prometheus实例数据源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePromInstanceRequest 请求对象
+     * @return CompletableFuture<CreatePromInstanceResponse>
+     */
+    public CompletableFuture<CreatePromInstanceResponse> createPromInstanceAsync(CreatePromInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.createPromInstance);
+    }
+
+    /**
+     * 新增Prometheus实例数据源
+     *
+     * 该接口用于新增Prometheus实例数据源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePromInstanceRequest 请求对象
+     * @return AsyncInvoker<CreatePromInstanceRequest, CreatePromInstanceResponse>
+     */
+    public AsyncInvoker<CreatePromInstanceRequest, CreatePromInstanceResponse> createPromInstanceAsyncInvoker(
+        CreatePromInstanceRequest request) {
+        return new AsyncInvoker<CreatePromInstanceRequest, CreatePromInstanceResponse>(request,
+            AomMeta.createPromInstance, hcClient);
+    }
+
+    /**
+     * 创建预汇聚规则
+     *
+     * 该接口用于创建预汇聚规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRecordingRuleRequest 请求对象
+     * @return CompletableFuture<CreateRecordingRuleResponse>
+     */
+    public CompletableFuture<CreateRecordingRuleResponse> createRecordingRuleAsync(CreateRecordingRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.createRecordingRule);
+    }
+
+    /**
+     * 创建预汇聚规则
+     *
+     * 该接口用于创建预汇聚规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRecordingRuleRequest 请求对象
+     * @return AsyncInvoker<CreateRecordingRuleRequest, CreateRecordingRuleResponse>
+     */
+    public AsyncInvoker<CreateRecordingRuleRequest, CreateRecordingRuleResponse> createRecordingRuleAsyncInvoker(
+        CreateRecordingRuleRequest request) {
+        return new AsyncInvoker<CreateRecordingRuleRequest, CreateRecordingRuleResponse>(request,
+            AomMeta.createRecordingRule, hcClient);
+    }
+
+    /**
+     * 卸载托管Prometheus
+     *
+     * 该接口用于卸载托管Prometheus
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePromInstanceRequest 请求对象
+     * @return CompletableFuture<DeletePromInstanceResponse>
+     */
+    public CompletableFuture<DeletePromInstanceResponse> deletePromInstanceAsync(DeletePromInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.deletePromInstance);
+    }
+
+    /**
+     * 卸载托管Prometheus
+     *
+     * 该接口用于卸载托管Prometheus
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePromInstanceRequest 请求对象
+     * @return AsyncInvoker<DeletePromInstanceRequest, DeletePromInstanceResponse>
+     */
+    public AsyncInvoker<DeletePromInstanceRequest, DeletePromInstanceResponse> deletePromInstanceAsyncInvoker(
+        DeletePromInstanceRequest request) {
+        return new AsyncInvoker<DeletePromInstanceRequest, DeletePromInstanceResponse>(request,
+            AomMeta.deletePromInstance, hcClient);
+    }
+
+    /**
+     * 获取Prometheus监控所需Token-access code
+     *
+     * 该接口用于获取Prometheus监控所需Token-access code
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAccessCodeRequest 请求对象
+     * @return CompletableFuture<ListAccessCodeResponse>
+     */
+    public CompletableFuture<ListAccessCodeResponse> listAccessCodeAsync(ListAccessCodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listAccessCode);
+    }
+
+    /**
+     * 获取Prometheus监控所需Token-access code
+     *
+     * 该接口用于获取Prometheus监控所需Token-access code
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAccessCodeRequest 请求对象
+     * @return AsyncInvoker<ListAccessCodeRequest, ListAccessCodeResponse>
+     */
+    public AsyncInvoker<ListAccessCodeRequest, ListAccessCodeResponse> listAccessCodeAsyncInvoker(
+        ListAccessCodeRequest request) {
+        return new AsyncInvoker<ListAccessCodeRequest, ListAccessCodeResponse>(request, AomMeta.listAccessCode,
+            hcClient);
+    }
+
+    /**
+     * 查询集群Agent信息
+     *
+     * 该接口用于查询集群Agent信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAgentsRequest 请求对象
+     * @return CompletableFuture<ListAgentsResponse>
+     */
+    public CompletableFuture<ListAgentsResponse> listAgentsAsync(ListAgentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listAgents);
+    }
+
+    /**
+     * 查询集群Agent信息
+     *
+     * 该接口用于查询集群Agent信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAgentsRequest 请求对象
+     * @return AsyncInvoker<ListAgentsRequest, ListAgentsResponse>
+     */
+    public AsyncInvoker<ListAgentsRequest, ListAgentsResponse> listAgentsAsyncInvoker(ListAgentsRequest request) {
+        return new AsyncInvoker<ListAgentsRequest, ListAgentsResponse>(request, AomMeta.listAgents, hcClient);
+    }
+
+    /**
      * 瞬时数据查询
      *
      * 该接口用于查询PromQL(Prometheus Query Language)在特定时间点下的计算结果。（注：接口目前开放的region为：北京四、上海一和广州）。
@@ -1230,6 +1392,66 @@ public class AomAsyncClient {
         ListMetadataAomPromGetRequest request) {
         return new AsyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>(request,
             AomMeta.listMetadataAomPromGet, hcClient);
+    }
+
+    /**
+     * 是否开通aom2.0
+     *
+     * 该接口用于查询用户是否已经完成aom2.0授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPermissionsRequest 请求对象
+     * @return CompletableFuture<ListPermissionsResponse>
+     */
+    public CompletableFuture<ListPermissionsResponse> listPermissionsAsync(ListPermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listPermissions);
+    }
+
+    /**
+     * 是否开通aom2.0
+     *
+     * 该接口用于查询用户是否已经完成aom2.0授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPermissionsRequest 请求对象
+     * @return AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse>
+     */
+    public AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse> listPermissionsAsyncInvoker(
+        ListPermissionsRequest request) {
+        return new AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse>(request, AomMeta.listPermissions,
+            hcClient);
+    }
+
+    /**
+     * 获取所有正常实例
+     *
+     * 该接口用于获取所有正常prometheus实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPromInstanceRequest 请求对象
+     * @return CompletableFuture<ListPromInstanceResponse>
+     */
+    public CompletableFuture<ListPromInstanceResponse> listPromInstanceAsync(ListPromInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listPromInstance);
+    }
+
+    /**
+     * 获取所有正常实例
+     *
+     * 该接口用于获取所有正常prometheus实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPromInstanceRequest 请求对象
+     * @return AsyncInvoker<ListPromInstanceRequest, ListPromInstanceResponse>
+     */
+    public AsyncInvoker<ListPromInstanceRequest, ListPromInstanceResponse> listPromInstanceAsyncInvoker(
+        ListPromInstanceRequest request) {
+        return new AsyncInvoker<ListPromInstanceRequest, ListPromInstanceResponse>(request, AomMeta.listPromInstance,
+            hcClient);
     }
 
     /**

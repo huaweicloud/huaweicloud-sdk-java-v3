@@ -7,39 +7,40 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * headers
+ * 匹配的Headers。
  */
 public class CreateMatchHeaders {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "aaaa")
+    @JsonProperty(value = "&lt;header&gt;")
 
-    private CreateMatchHeadersAaaa aaaa;
+    private CreateMatchHeadersHeader lessThanHeaderGreaterThan;
 
-    public CreateMatchHeaders withAaaa(CreateMatchHeadersAaaa aaaa) {
-        this.aaaa = aaaa;
+    public CreateMatchHeaders withLessThanHeaderGreaterThan(CreateMatchHeadersHeader lessThanHeaderGreaterThan) {
+        this.lessThanHeaderGreaterThan = lessThanHeaderGreaterThan;
         return this;
     }
 
-    public CreateMatchHeaders withAaaa(Consumer<CreateMatchHeadersAaaa> aaaaSetter) {
-        if (this.aaaa == null) {
-            this.aaaa = new CreateMatchHeadersAaaa();
-            aaaaSetter.accept(this.aaaa);
+    public CreateMatchHeaders withLessThanHeaderGreaterThan(
+        Consumer<CreateMatchHeadersHeader> lessThanHeaderGreaterThanSetter) {
+        if (this.lessThanHeaderGreaterThan == null) {
+            this.lessThanHeaderGreaterThan = new CreateMatchHeadersHeader();
+            lessThanHeaderGreaterThanSetter.accept(this.lessThanHeaderGreaterThan);
         }
 
         return this;
     }
 
     /**
-     * Get aaaa
-     * @return aaaa
+     * Get lessThanHeaderGreaterThan
+     * @return lessThanHeaderGreaterThan
      */
-    public CreateMatchHeadersAaaa getAaaa() {
-        return aaaa;
+    public CreateMatchHeadersHeader getLessThanHeaderGreaterThan() {
+        return lessThanHeaderGreaterThan;
     }
 
-    public void setAaaa(CreateMatchHeadersAaaa aaaa) {
-        this.aaaa = aaaa;
+    public void setLessThanHeaderGreaterThan(CreateMatchHeadersHeader lessThanHeaderGreaterThan) {
+        this.lessThanHeaderGreaterThan = lessThanHeaderGreaterThan;
     }
 
     @Override
@@ -51,19 +52,19 @@ public class CreateMatchHeaders {
             return false;
         }
         CreateMatchHeaders that = (CreateMatchHeaders) obj;
-        return Objects.equals(this.aaaa, that.aaaa);
+        return Objects.equals(this.lessThanHeaderGreaterThan, that.lessThanHeaderGreaterThan);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(aaaa);
+        return Objects.hash(lessThanHeaderGreaterThan);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMatchHeaders {\n");
-        sb.append("    aaaa: ").append(toIndentedString(aaaa)).append("\n");
+        sb.append("    lessThanHeaderGreaterThan: ").append(toIndentedString(lessThanHeaderGreaterThan)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -217,7 +217,7 @@ public class CreateDependencyRequestBody {
     }
 
     /**
-     * depend_type为zip类型时必填，为文件流格式,需要base64编码zip文件。
+     * depend_type为zip类型时必填，为文件流格式,需要base64编码zip文件。上传的文件大小限制为40M，如超过40M，请通过OBS上传。
      * @return dependFile
      */
     public String getDependFile() {
@@ -251,7 +251,7 @@ public class CreateDependencyRequestBody {
     }
 
     /**
-     * 导入类型,目前支持obs和zip。
+     * 导入类型，目前支持obs和zip。
      * @return dependType
      */
     public String getDependType() {

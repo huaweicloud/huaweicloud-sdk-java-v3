@@ -22,7 +22,7 @@ public class Spec {
     private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "engine_id")
+    @JsonProperty(value = "engineId")
 
     private String engineId;
 
@@ -103,7 +103,7 @@ public class Spec {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "spec_type")
+    @JsonProperty(value = "specType")
 
     private SpecTypeEnum specType;
 
@@ -113,12 +113,12 @@ public class Spec {
     private String cluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_id")
+    @JsonProperty(value = "clusterId")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_nodes")
+    @JsonProperty(value = "clusterNodes")
 
     private SpecClusterNode clusterNodes;
 
@@ -138,7 +138,7 @@ public class Spec {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extend_param")
+    @JsonProperty(value = "extendParam")
 
     private String extendParam;
 

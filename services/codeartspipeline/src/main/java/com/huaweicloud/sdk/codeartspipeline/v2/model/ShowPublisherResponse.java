@@ -41,7 +41,7 @@ public class ShowPublisherResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 发布商详情
      * @return body
      */
     public Map<String, PublisherVO> getBody() {

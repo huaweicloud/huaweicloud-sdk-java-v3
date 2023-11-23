@@ -31,6 +31,7 @@ import com.huaweicloud.sdk.cse.v1.model.EngineConfigureReq;
 import com.huaweicloud.sdk.cse.v1.model.EngineCreateReq;
 import com.huaweicloud.sdk.cse.v1.model.EngineModifyReq;
 import com.huaweicloud.sdk.cse.v1.model.EngineUpdateReq;
+import com.huaweicloud.sdk.cse.v1.model.GovPolicyDetail;
 import com.huaweicloud.sdk.cse.v1.model.ListEnginesRequest;
 import com.huaweicloud.sdk.cse.v1.model.ListEnginesResponse;
 import com.huaweicloud.sdk.cse.v1.model.ListFlavorsRequest;
@@ -39,7 +40,6 @@ import com.huaweicloud.sdk.cse.v1.model.ListGovernancePolicyByPolicyIdRequest;
 import com.huaweicloud.sdk.cse.v1.model.ListGovernancePolicyByPolicyIdResponse;
 import com.huaweicloud.sdk.cse.v1.model.ListGovernancePolicyRequest;
 import com.huaweicloud.sdk.cse.v1.model.ListGovernancePolicyResponse;
-import com.huaweicloud.sdk.cse.v1.model.ListGovernancePolicyResponseBody;
 import com.huaweicloud.sdk.cse.v1.model.ListGovernancePolicysRequest;
 import com.huaweicloud.sdk.cse.v1.model.ListGovernancePolicysResponse;
 import com.huaweicloud.sdk.cse.v1.model.ListMicroserviceRouteRuleRequest;
@@ -507,13 +507,13 @@ public class CseMeta {
             }));
 
         // response
-        builder.<List<ListGovernancePolicyResponseBody>>withResponseField("body",
+        builder.<List<GovPolicyDetail>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListGovernancePolicyResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(ListGovernancePolicyResponseBody.class));
+            }).withInnerContainerType(GovPolicyDetail.class));
 
         return builder.build();
     }
@@ -616,13 +616,13 @@ public class CseMeta {
             }));
 
         // response
-        builder.<List<ListGovernancePolicyResponseBody>>withResponseField("body",
+        builder.<List<GovPolicyDetail>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListGovernancePolicysResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(ListGovernancePolicyResponseBody.class));
+            }).withInnerContainerType(GovPolicyDetail.class));
 
         return builder.build();
     }

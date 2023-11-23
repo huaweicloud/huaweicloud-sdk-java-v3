@@ -179,7 +179,7 @@ public class LoadBalancer {
     private List<String> elbVirsubnetIds = null;
 
     /**
-     * 下联面子网类型 - ipv4：ipv4 - dualstack：双栈  [不支持dualstack。](tag:dt,dt_test)
+     * 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
      */
     public static final class ElbVirsubnetTypeEnum {
 
@@ -284,6 +284,11 @@ public class LoadBalancer {
     private String publicBorderGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_mode")
+
+    private String chargeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waf_failure_action")
 
     private String wafFailureAction;
@@ -367,6 +372,16 @@ public class LoadBalancer {
     @JsonProperty(value = "protection_reason")
 
     private String protectionReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_id")
+
+    private String logGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_topic_id")
+
+    private String logTopicId;
 
     public LoadBalancer withId(String id) {
         this.id = id;
@@ -845,7 +860,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 企业项目ID。创建时不传则返回\"0\"，表示资源属于default企业项目。  注：\"0\"并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt,ctc,cmcc)
+     * 企业项目ID。创建时不传则返回\"0\"，表示资源属于default企业项目。  注：\"0\"并不是真实存在的企业项目ID，在创建、更新和查询时不能作为请求参数传入。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -862,7 +877,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 资源账单信息。  [取值： - 空：按需计费。 - 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584: az:057ef081eb00d2732fd1c01a9be75e6f](tag:hws)  [不支持该字段，请勿使用](tag:hws_ocb,ocb,hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,fcs,ctc,cmcc)
+     * 资源账单信息。  取值： - 空：按需计费。 [- 非空：包周期计费，  包周期计费billing_info字段的格式为：order_id:product_id:region_id:project_id，如：  CS2107161019CDJZZ:OFFI569702121789763584: az:057ef081eb00d2732fd1c01a9be75e6f  不支持该字段，请勿使用](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return billingInfo
      */
     public String getBillingInfo() {
@@ -879,7 +894,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 四层Flavor ID。[对于弹性扩缩容实例，表示上限规格ID。](tag:hws,hws_hk,ocb,ctc,cmcc,hws_ocb)  [使用说明： - 仅当guaranteed是true的场合，才支持更新。 - 不允许非null变成null，null变成非null，即不配置七层规格和配置七层规格之间不允许切换； - 可以支持规格改大改小，注意改小过程中可能会造成部分长连接中断，影响部分链接的新建， ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt)  [只支持设置为l4_flavor.elb.shared。](tag:hcso_dt)  [hcso场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+     * 四层Flavor ID。  对于弹性扩缩容实例，表示上限规格。  当传入的规格类型为L4，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L4_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return l4FlavorId
      */
     public String getL4FlavorId() {
@@ -913,7 +928,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 七层Flavor ID。[对于弹性扩缩容实例，表示上限规格ID。](tag:hws,hws_hk,ocb,ctc,cmcc,hws_ocb)  [使用说明： - 仅当guaranteed是true的场合，才支持更新。 - 不允许非null变成null，null变成非null，即不配置七层规格和配置七层规格之间不允许切换； - 可以支持规格改大改小，注意改小过程中可能会造成部分长连接中断，影响部分链接的新建， ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,dt) [- autoscaling.enable=true时，修改无意义，不生效。](tag:hws,hws_hk,ocb,ctc,cmcc,hws_ocb)  [只支持设置为l7_flavor.elb.shared。](tag:hcso_dt)  [所有LB实例共享带宽，该字段无效，请勿使用。](tag:fcs)
+     * 七层Flavor ID。 对于弹性扩缩容实例，表示上限规格ID。  当传入的规格类型为L7，表示该实例为固定规格实例，按规格计费； 当传入的规格类型为L7_elastic_max，表示该实例为弹性实例，按LCU计费  [hsco场景下所有LB实例共享带宽，该字段无效，请勿使用。](tag:hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -1046,7 +1061,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 下联面子网类型 - ipv4：ipv4 - dualstack：双栈  [不支持dualstack。](tag:dt,dt_test)
+     * 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
      * @return elbVirsubnetType
      */
     public ElbVirsubnetTypeEnum getElbVirsubnetType() {
@@ -1063,7 +1078,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否启用跨VPC后端转发。 开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加 [其他VPC、](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs) 其他云、云下数据中心的服务器。  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。 - 使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。 [- 仅独享型负载均衡器支持该特性。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)
+     * 是否启用跨VPC后端转发。  开启跨VPC后端转发后，后端服务器组不仅支持添加云上VPC内的服务器，还支持添加其他VPC、其他公有云、云下数据中心的服务器。  使用共享VPC的实例使用此特性时，需确保共享资源所有者已开通VPC对等连接，否则通信异常。 [仅独享型负载均衡器支持该特性。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  取值： - true：开启。 - false：不开启。  使用说明： - 开启不能关闭。  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -1123,7 +1138,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 是否开启删除保护。  取值： - false：不开启。 - true：开启。 >退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
+     * 是否开启删除保护。  取值： - false：不开启。 - true：开启。 >退场时需要先关闭所有资源的删除保护开关。  仅当前局点启用删除保护特性后才会返回该字段。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -1177,6 +1192,23 @@ public class LoadBalancer {
         this.publicBorderGroup = publicBorderGroup;
     }
 
+    public LoadBalancer withChargeMode(String chargeMode) {
+        this.chargeMode = chargeMode;
+        return this;
+    }
+
+    /**
+     * 收费模式。取值： - flavor：按规格计费 - lcu：按使用量计费
+     * @return chargeMode
+     */
+    public String getChargeMode() {
+        return chargeMode;
+    }
+
+    public void setChargeMode(String chargeMode) {
+        this.chargeMode = chargeMode;
+    }
+
     public LoadBalancer withWafFailureAction(String wafFailureAction) {
         this.wafFailureAction = wafFailureAction;
         return this;
@@ -1228,6 +1260,40 @@ public class LoadBalancer {
         this.protectionReason = protectionReason;
     }
 
+    public LoadBalancer withLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+        return this;
+    }
+
+    /**
+     * LB所绑定的logtank对应的group id
+     * @return logGroupId
+     */
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    public void setLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+    }
+
+    public LoadBalancer withLogTopicId(String logTopicId) {
+        this.logTopicId = logTopicId;
+        return this;
+    }
+
+    /**
+     * LB所绑定的logtank对应的topic id
+     * @return logTopicId
+     */
+    public String getLogTopicId() {
+        return logTopicId;
+    }
+
+    public void setLogTopicId(String logTopicId) {
+        this.logTopicId = logTopicId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1266,9 +1332,11 @@ public class LoadBalancer {
             && Objects.equals(this.deletionProtectionEnable, that.deletionProtectionEnable)
             && Objects.equals(this.autoscaling, that.autoscaling)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.wafFailureAction, that.wafFailureAction)
             && Objects.equals(this.protectionStatus, that.protectionStatus)
-            && Objects.equals(this.protectionReason, that.protectionReason);
+            && Objects.equals(this.protectionReason, that.protectionReason)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logTopicId, that.logTopicId);
     }
 
     @Override
@@ -1312,9 +1380,12 @@ public class LoadBalancer {
             deletionProtectionEnable,
             autoscaling,
             publicBorderGroup,
+            chargeMode,
             wafFailureAction,
             protectionStatus,
-            protectionReason);
+            protectionReason,
+            logGroupId,
+            logTopicId);
     }
 
     @Override
@@ -1360,9 +1431,12 @@ public class LoadBalancer {
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    wafFailureAction: ").append(toIndentedString(wafFailureAction)).append("\n");
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
+        sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
+        sb.append("    logTopicId: ").append(toIndentedString(logTopicId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -183,6 +183,16 @@ public class ListLoadBalancersRequest {
 
     private List<String> globalEips = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_topic_id")
+
+    private String logTopicId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_id")
+
+    private String logGroupId;
+
     public ListLoadBalancersRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -1068,7 +1078,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
+     * 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -1101,7 +1111,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type=ipv4&elb_virsubnet_type=dualstack*。  [不支持dualstack。](tag:dt,dt_test)
+     * 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type=ipv4&elb_virsubnet_type=dualstack*。
      * @return elbVirsubnetType
      */
     public List<String> getElbVirsubnetType() {
@@ -1211,6 +1221,40 @@ public class ListLoadBalancersRequest {
         this.globalEips = globalEips;
     }
 
+    public ListLoadBalancersRequest withLogTopicId(String logTopicId) {
+        this.logTopicId = logTopicId;
+        return this;
+    }
+
+    /**
+     * LB实例绑定的logtank的topic id信息，支持多值查询，查询条件格式：*log_topic_id=xxx&log_topic_id=xxx*。
+     * @return logTopicId
+     */
+    public String getLogTopicId() {
+        return logTopicId;
+    }
+
+    public void setLogTopicId(String logTopicId) {
+        this.logTopicId = logTopicId;
+    }
+
+    public ListLoadBalancersRequest withLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+        return this;
+    }
+
+    /**
+     * LB实例绑定的logtank的group id信息，支持多值查询，查询条件格式：*log_group_id=xxx&log_group_id=xxx*。
+     * @return logGroupId
+     */
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    public void setLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1247,7 +1291,8 @@ public class ListLoadBalancersRequest {
             && Objects.equals(this.elbVirsubnetType, that.elbVirsubnetType)
             && Objects.equals(this.autoscaling, that.autoscaling)
             && Objects.equals(this.protectionStatus, that.protectionStatus)
-            && Objects.equals(this.globalEips, that.globalEips);
+            && Objects.equals(this.globalEips, that.globalEips) && Objects.equals(this.logTopicId, that.logTopicId)
+            && Objects.equals(this.logGroupId, that.logGroupId);
     }
 
     @Override
@@ -1285,7 +1330,9 @@ public class ListLoadBalancersRequest {
             elbVirsubnetType,
             autoscaling,
             protectionStatus,
-            globalEips);
+            globalEips,
+            logTopicId,
+            logGroupId);
     }
 
     @Override
@@ -1326,6 +1373,8 @@ public class ListLoadBalancersRequest {
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    globalEips: ").append(toIndentedString(globalEips)).append("\n");
+        sb.append("    logTopicId: ").append(toIndentedString(logTopicId)).append("\n");
+        sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

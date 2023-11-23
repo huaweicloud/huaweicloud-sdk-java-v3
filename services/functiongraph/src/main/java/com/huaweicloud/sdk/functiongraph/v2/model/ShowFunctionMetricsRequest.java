@@ -43,7 +43,7 @@ public class ShowFunctionMetricsRequest {
     }
 
     /**
-     * 时间间隔
+     * 时间间隔（单位：min）
      * @return period
      */
     public String getPeriod() {

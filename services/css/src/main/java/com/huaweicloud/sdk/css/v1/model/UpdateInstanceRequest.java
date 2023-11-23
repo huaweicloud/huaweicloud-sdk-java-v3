@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -20,11 +19,6 @@ public class UpdateInstanceRequest {
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
-
-    private UpdateInstanceRequestBody body;
 
     public UpdateInstanceRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -60,32 +54,6 @@ public class UpdateInstanceRequest {
         this.instanceId = instanceId;
     }
 
-    public UpdateInstanceRequest withBody(UpdateInstanceRequestBody body) {
-        this.body = body;
-        return this;
-    }
-
-    public UpdateInstanceRequest withBody(Consumer<UpdateInstanceRequestBody> bodySetter) {
-        if (this.body == null) {
-            this.body = new UpdateInstanceRequestBody();
-            bodySetter.accept(this.body);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get body
-     * @return body
-     */
-    public UpdateInstanceRequestBody getBody() {
-        return body;
-    }
-
-    public void setBody(UpdateInstanceRequestBody body) {
-        this.body = body;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -95,13 +63,12 @@ public class UpdateInstanceRequest {
             return false;
         }
         UpdateInstanceRequest that = (UpdateInstanceRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.body, that.body);
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, instanceId, body);
+        return Objects.hash(clusterId, instanceId);
     }
 
     @Override
@@ -110,7 +77,6 @@ public class UpdateInstanceRequest {
         sb.append("class UpdateInstanceRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

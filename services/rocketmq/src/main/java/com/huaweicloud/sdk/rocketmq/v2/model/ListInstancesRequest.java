@@ -110,29 +110,79 @@ public class ListInstancesRequest {
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
 
         /**
-         * Enum FAULTY for value: "FAULTY"
-         */
-        public static final StatusEnum FAULTY = new StatusEnum("FAULTY");
-
-        /**
          * Enum RESTARTING for value: "RESTARTING"
          */
         public static final StatusEnum RESTARTING = new StatusEnum("RESTARTING");
 
         /**
-         * Enum RESIZING for value: "RESIZING"
+         * Enum DELETING for value: "DELETING"
          */
-        public static final StatusEnum RESIZING = new StatusEnum("RESIZING");
+        public static final StatusEnum DELETING = new StatusEnum("DELETING");
 
         /**
-         * Enum RESIZING_FAILED for value: "RESIZING FAILED"
+         * Enum ERROR for value: "ERROR"
          */
-        public static final StatusEnum RESIZING_FAILED = new StatusEnum("RESIZING FAILED");
+        public static final StatusEnum ERROR = new StatusEnum("ERROR");
+
+        /**
+         * Enum CREATEFAILED for value: "CREATEFAILED"
+         */
+        public static final StatusEnum CREATEFAILED = new StatusEnum("CREATEFAILED");
+
+        /**
+         * Enum FREEZING for value: "FREEZING"
+         */
+        public static final StatusEnum FREEZING = new StatusEnum("FREEZING");
 
         /**
          * Enum FROZEN for value: "FROZEN"
          */
         public static final StatusEnum FROZEN = new StatusEnum("FROZEN");
+
+        /**
+         * Enum EXTENDING for value: "EXTENDING"
+         */
+        public static final StatusEnum EXTENDING = new StatusEnum("EXTENDING");
+
+        /**
+         * Enum SHRINKING for value: "SHRINKING"
+         */
+        public static final StatusEnum SHRINKING = new StatusEnum("SHRINKING");
+
+        /**
+         * Enum EXTENDEDFAILED for value: "EXTENDEDFAILED"
+         */
+        public static final StatusEnum EXTENDEDFAILED = new StatusEnum("EXTENDEDFAILED");
+
+        /**
+         * Enum CONFIGURING for value: "CONFIGURING"
+         */
+        public static final StatusEnum CONFIGURING = new StatusEnum("CONFIGURING");
+
+        /**
+         * Enum UPGRADING for value: "UPGRADING"
+         */
+        public static final StatusEnum UPGRADING = new StatusEnum("UPGRADING");
+
+        /**
+         * Enum UPGRADINGFAILED for value: "UPGRADINGFAILED"
+         */
+        public static final StatusEnum UPGRADINGFAILED = new StatusEnum("UPGRADINGFAILED");
+
+        /**
+         * Enum ROLLBACK for value: "ROLLBACK"
+         */
+        public static final StatusEnum ROLLBACK = new StatusEnum("ROLLBACK");
+
+        /**
+         * Enum ROLLBACKFAILED for value: "ROLLBACKFAILED"
+         */
+        public static final StatusEnum ROLLBACKFAILED = new StatusEnum("ROLLBACKFAILED");
+
+        /**
+         * Enum VOLUMETYPECHANGING for value: "VOLUMETYPECHANGING"
+         */
+        public static final StatusEnum VOLUMETYPECHANGING = new StatusEnum("VOLUMETYPECHANGING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -140,11 +190,21 @@ public class ListInstancesRequest {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("CREATING", CREATING);
             map.put("RUNNING", RUNNING);
-            map.put("FAULTY", FAULTY);
             map.put("RESTARTING", RESTARTING);
-            map.put("RESIZING", RESIZING);
-            map.put("RESIZING FAILED", RESIZING_FAILED);
+            map.put("DELETING", DELETING);
+            map.put("ERROR", ERROR);
+            map.put("CREATEFAILED", CREATEFAILED);
+            map.put("FREEZING", FREEZING);
             map.put("FROZEN", FROZEN);
+            map.put("EXTENDING", EXTENDING);
+            map.put("SHRINKING", SHRINKING);
+            map.put("EXTENDEDFAILED", EXTENDEDFAILED);
+            map.put("CONFIGURING", CONFIGURING);
+            map.put("UPGRADING", UPGRADING);
+            map.put("UPGRADINGFAILED", UPGRADINGFAILED);
+            map.put("ROLLBACK", ROLLBACK);
+            map.put("ROLLBACKFAILED", ROLLBACKFAILED);
+            map.put("VOLUMETYPECHANGING", VOLUMETYPECHANGING);
             return Collections.unmodifiableMap(map);
         }
 

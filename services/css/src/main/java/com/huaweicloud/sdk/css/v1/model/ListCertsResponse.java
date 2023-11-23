@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,62 +17,76 @@ public class ListCertsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "defaultCerts")
 
-    private DefaultCertsResource defaultCerts;
+    private List<DefaultCertsResource> defaultCerts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customCerts")
 
-    private CustomCertsResource customCerts;
+    private List<CustomCertsResource> customCerts = null;
 
-    public ListCertsResponse withDefaultCerts(DefaultCertsResource defaultCerts) {
+    public ListCertsResponse withDefaultCerts(List<DefaultCertsResource> defaultCerts) {
         this.defaultCerts = defaultCerts;
         return this;
     }
 
-    public ListCertsResponse withDefaultCerts(Consumer<DefaultCertsResource> defaultCertsSetter) {
+    public ListCertsResponse addDefaultCertsItem(DefaultCertsResource defaultCertsItem) {
         if (this.defaultCerts == null) {
-            this.defaultCerts = new DefaultCertsResource();
-            defaultCertsSetter.accept(this.defaultCerts);
+            this.defaultCerts = new ArrayList<>();
         }
+        this.defaultCerts.add(defaultCertsItem);
+        return this;
+    }
 
+    public ListCertsResponse withDefaultCerts(Consumer<List<DefaultCertsResource>> defaultCertsSetter) {
+        if (this.defaultCerts == null) {
+            this.defaultCerts = new ArrayList<>();
+        }
+        defaultCertsSetter.accept(this.defaultCerts);
         return this;
     }
 
     /**
-     * Get defaultCerts
+     * 默认证书列表。
      * @return defaultCerts
      */
-    public DefaultCertsResource getDefaultCerts() {
+    public List<DefaultCertsResource> getDefaultCerts() {
         return defaultCerts;
     }
 
-    public void setDefaultCerts(DefaultCertsResource defaultCerts) {
+    public void setDefaultCerts(List<DefaultCertsResource> defaultCerts) {
         this.defaultCerts = defaultCerts;
     }
 
-    public ListCertsResponse withCustomCerts(CustomCertsResource customCerts) {
+    public ListCertsResponse withCustomCerts(List<CustomCertsResource> customCerts) {
         this.customCerts = customCerts;
         return this;
     }
 
-    public ListCertsResponse withCustomCerts(Consumer<CustomCertsResource> customCertsSetter) {
+    public ListCertsResponse addCustomCertsItem(CustomCertsResource customCertsItem) {
         if (this.customCerts == null) {
-            this.customCerts = new CustomCertsResource();
-            customCertsSetter.accept(this.customCerts);
+            this.customCerts = new ArrayList<>();
         }
+        this.customCerts.add(customCertsItem);
+        return this;
+    }
 
+    public ListCertsResponse withCustomCerts(Consumer<List<CustomCertsResource>> customCertsSetter) {
+        if (this.customCerts == null) {
+            this.customCerts = new ArrayList<>();
+        }
+        customCertsSetter.accept(this.customCerts);
         return this;
     }
 
     /**
-     * Get customCerts
+     * 自定义证书列表。
      * @return customCerts
      */
-    public CustomCertsResource getCustomCerts() {
+    public List<CustomCertsResource> getCustomCerts() {
         return customCerts;
     }
 
-    public void setCustomCerts(CustomCertsResource customCerts) {
+    public void setCustomCerts(List<CustomCertsResource> customCerts) {
         this.customCerts = customCerts;
     }
 

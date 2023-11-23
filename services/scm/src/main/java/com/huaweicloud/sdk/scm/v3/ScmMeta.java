@@ -10,6 +10,9 @@ import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.DeployCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.DeployCertificateRequestBody;
+import com.huaweicloud.sdk.scm.v3.model.DeployCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequest;
@@ -76,6 +79,38 @@ public class ScmMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeployCertificateRequest, DeployCertificateResponse> deployCertificate =
+        genFordeployCertificate();
+
+    private static HttpRequestDef<DeployCertificateRequest, DeployCertificateResponse> genFordeployCertificate() {
+        // basic
+        HttpRequestDef.Builder<DeployCertificateRequest, DeployCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeployCertificateRequest.class, DeployCertificateResponse.class)
+                .withName("DeployCertificate")
+                .withUri("/v3/scm/certificates/{certificate_id}/deploy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeployCertificateRequest::getCertificateId, (req, v) -> {
+                req.setCertificateId(v);
+            }));
+        builder.<DeployCertificateRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeployCertificateRequestBody.class),
+            f -> f.withMarshaller(DeployCertificateRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

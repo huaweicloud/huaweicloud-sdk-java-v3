@@ -46,7 +46,7 @@ public class DistinguishedName {
     }
 
     /**
-     * 证书通用名称（CN）。
+     * 证书通用名称（CN），名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、\"*\"、字母、数字、汉字组成，长度不能超过64位字符。
      * @return commonName
      */
     public String getCommonName() {
@@ -63,7 +63,7 @@ public class DistinguishedName {
     }
 
     /**
-     * 国家编码，需符合正则\"**[A-Za-z]{2}**\"。
+     * 国家编码，只能由英文组成，长度为2位字符。
      * @return country
      */
     public String getCountry() {
@@ -80,7 +80,7 @@ public class DistinguishedName {
     }
 
     /**
-     * 省市名称。
+     * 省市名称，名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、字母、数字、汉字组成，长度不能超过128位字符。
      * @return state
      */
     public String getState() {
@@ -97,7 +97,7 @@ public class DistinguishedName {
     }
 
     /**
-     * 地区名称。
+     * 地区名称，名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、字母、数字、汉字组成，长度不能超过128位字符。
      * @return locality
      */
     public String getLocality() {
@@ -114,7 +114,7 @@ public class DistinguishedName {
     }
 
     /**
-     * 组织名称。
+     * 组织名称，名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、字母、数字、汉字组成，长度不能超过64位字符。
      * @return organization
      */
     public String getOrganization() {
@@ -131,7 +131,7 @@ public class DistinguishedName {
     }
 
     /**
-     * 组织单元名称。
+     * 组织单元名称，名称只能由\"-\"、\"_\"、\" \"、\".\"、\",\"、字母、数字、汉字组成，长度不能超过64位字符。
      * @return organizationalUnit
      */
     public String getOrganizationalUnit() {

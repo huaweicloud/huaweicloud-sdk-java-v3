@@ -16,12 +16,12 @@ import java.util.Objects;
 public class EntrypointItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "master_entrypoint")
+    @JsonProperty(value = "masterEntrypoint")
 
     private String masterEntrypoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "master_entrypoint_ipv6")
+    @JsonProperty(value = "masterEntrypointIpv6")
 
     private String masterEntrypointIpv6;
 
@@ -31,7 +31,7 @@ public class EntrypointItem {
     private String slaveEntrypoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "slave_entrypoint_ipv6")
+    @JsonProperty(value = "slaveEntrypointIpv6")
 
     private String slaveEntrypointIpv6;
 

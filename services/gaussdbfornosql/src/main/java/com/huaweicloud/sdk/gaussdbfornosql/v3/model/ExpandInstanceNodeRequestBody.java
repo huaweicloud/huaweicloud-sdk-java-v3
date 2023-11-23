@@ -48,7 +48,7 @@ public class ExpandInstanceNodeRequestBody {
     }
 
     /**
-     * 扩容的节点所使用的子网的ID。 - 该参数仅只支持GaussDB(for Cassandra)数据库实例扩容节点时传入。 - 所传入的子网ID必须属于实例当前所在的VPC。 - 不传该参数时，系统会在当前实例所使用的子网中为当前扩容的节点选择一个IP容量较为充足的子网。
+     * 扩容的节点所使用的子网的ID。 - 该参数仅只支持GeminiDB Cassandra数据库实例扩容节点时传入。 - 所传入的子网ID必须属于实例当前所在的VPC。 - 不传该参数时，系统会在当前实例所使用的子网中为当前扩容的节点选择一个IP容量较为充足的子网。
      * @return subnetId
      */
     public String getSubnetId() {

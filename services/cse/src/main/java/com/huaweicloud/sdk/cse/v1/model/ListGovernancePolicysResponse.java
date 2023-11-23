@@ -17,14 +17,14 @@ public class ListGovernancePolicysResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<ListGovernancePolicyResponseBody> body = null;
+    private List<GovPolicyDetail> body = null;
 
-    public ListGovernancePolicysResponse withBody(List<ListGovernancePolicyResponseBody> body) {
+    public ListGovernancePolicysResponse withBody(List<GovPolicyDetail> body) {
         this.body = body;
         return this;
     }
 
-    public ListGovernancePolicysResponse addBodyItem(ListGovernancePolicyResponseBody bodyItem) {
+    public ListGovernancePolicysResponse addBodyItem(GovPolicyDetail bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListGovernancePolicysResponse extends SdkResponse {
         return this;
     }
 
-    public ListGovernancePolicysResponse withBody(Consumer<List<ListGovernancePolicyResponseBody>> bodySetter) {
+    public ListGovernancePolicysResponse withBody(Consumer<List<GovPolicyDetail>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -41,14 +41,14 @@ public class ListGovernancePolicysResponse extends SdkResponse {
     }
 
     /**
-     * 查询治理策略列表响应结构体
+     * 查询治理策略列表响应结构体。
      * @return body
      */
-    public List<ListGovernancePolicyResponseBody> getBody() {
+    public List<GovPolicyDetail> getBody() {
         return body;
     }
 
-    public void setBody(List<ListGovernancePolicyResponseBody> body) {
+    public void setBody(List<GovPolicyDetail> body) {
         this.body = body;
     }
 

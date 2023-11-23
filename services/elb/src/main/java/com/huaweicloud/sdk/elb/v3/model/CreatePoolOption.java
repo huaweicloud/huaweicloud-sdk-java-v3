@@ -211,7 +211,7 @@ public class CreatePoolOption {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt,tm)
+     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
      * @return lbAlgorithm
      */
     public String getLbAlgorithm() {
@@ -296,7 +296,7 @@ public class CreatePoolOption {
     }
 
     /**
-     * 后端云服务器组的后端协议。  [取值：TCP、UDP、HTTP、HTTPS和QUIC。](tag:hws,hws_hk,ocb,ctc,hcs,cmcc,hws_ocb,fcs,dt,dt_test) [取值：TCP、UDP、HTTP和HTTPS。](tag:hws_eu,g42,hk_g42,hcso_dt,tm)  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP[或QUIC](tag:hws,hws_hk,ocb,ctc,hcs,cmcc,hws_ocb,fcs,dt,dt_test)； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。 [- 若pool的protocol为QUIC，则必须开启session_persistence且type为SOURCE_IP。](tag:hws,hws_hk,ocb,ctc,hcs,cmcc,hws_ocb,fcs,dt,dt_test)；
+     * 后端云服务器组的后端协议。  取值：TCP、UDP、HTTP、HTTPS和QUIC。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC； - listener的protocol为TCP时pool的protocol必须为TCP； - listener的protocol为HTTP时，pool的protocol必须为HTTP。 - listener的protocol为HTTPS时，pool的protocol必须为HTTP或HTTPS。 - listener的protocol为TERMINATED_HTTPS时，pool的protocol必须为HTTP。 - 若pool的protocol为QUIC，则必须开启session_persistence且type为SOURCE_IP。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return protocol
      */
     public String getProtocol() {
@@ -366,7 +366,7 @@ public class CreatePoolOption {
     }
 
     /**
-     * 是否开启删除保护。  取值：false不开启，true开启，默认false。  > 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
+     * 是否开启删除保护。  取值：false不开启，true开启，默认false。  > 退场时需要先关闭所有资源的删除保护开关。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
      * @return memberDeletionProtectionEnable
      */
     public Boolean getMemberDeletionProtectionEnable() {
@@ -468,7 +468,7 @@ public class CreatePoolOption {
     }
 
     /**
-     * 后端是否开启端口透传，开启后，后端服务器端口与前端监听器端口保持一致。  使用说明： - 仅QUIC,TCP,UDP的pool支持。  > 关闭端口透传后，请求会转发给后端服务器protocol_port字段指定端口。
+     * 后端是否开启端口透传，开启后，后端服务器端口与前端监听器端口保持一致。  使用说明： - 仅QUIC,TCP,UDP的pool支持。
      * @return anyPortEnable
      */
     public Boolean getAnyPortEnable() {

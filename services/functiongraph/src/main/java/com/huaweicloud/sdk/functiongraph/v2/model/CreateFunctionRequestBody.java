@@ -373,6 +373,16 @@ public class CreateFunctionRequestBody {
     private Integer initializerTimeout;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_stop_handler")
+
+    private String preStopHandler;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_stop_timeout")
+
+    private Integer preStopTimeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -845,6 +855,40 @@ public class CreateFunctionRequestBody {
         this.initializerTimeout = initializerTimeout;
     }
 
+    public CreateFunctionRequestBody withPreStopHandler(String preStopHandler) {
+        this.preStopHandler = preStopHandler;
+        return this;
+    }
+
+    /**
+     * 函数预停止函数的入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.pre_stop_handler，则表示函数的文件名为myfunction.js，初始化的入口函数名为pre_stop_handler。
+     * @return preStopHandler
+     */
+    public String getPreStopHandler() {
+        return preStopHandler;
+    }
+
+    public void setPreStopHandler(String preStopHandler) {
+        this.preStopHandler = preStopHandler;
+    }
+
+    public CreateFunctionRequestBody withPreStopTimeout(Integer preStopTimeout) {
+        this.preStopTimeout = preStopTimeout;
+        return this;
+    }
+
+    /**
+     * 初始化超时时间，超时函数将被强行停止，范围1～90秒。
+     * @return preStopTimeout
+     */
+    public Integer getPreStopTimeout() {
+        return preStopTimeout;
+    }
+
+    public void setPreStopTimeout(Integer preStopTimeout) {
+        this.preStopTimeout = preStopTimeout;
+    }
+
     public CreateFunctionRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -952,6 +996,8 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.description, that.description) && Objects.equals(this.funcCode, that.funcCode)
             && Objects.equals(this.initializerHandler, that.initializerHandler)
             && Objects.equals(this.initializerTimeout, that.initializerTimeout)
+            && Objects.equals(this.preStopHandler, that.preStopHandler)
+            && Objects.equals(this.preStopTimeout, that.preStopTimeout)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.logConfig, that.logConfig)
             && Objects.equals(this.networkController, that.networkController);
@@ -979,6 +1025,8 @@ public class CreateFunctionRequestBody {
             funcCode,
             initializerHandler,
             initializerTimeout,
+            preStopHandler,
+            preStopTimeout,
             enterpriseProjectId,
             type,
             logConfig,
@@ -1009,6 +1057,8 @@ public class CreateFunctionRequestBody {
         sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
+        sb.append("    preStopHandler: ").append(toIndentedString(preStopHandler)).append("\n");
+        sb.append("    preStopTimeout: ").append(toIndentedString(preStopTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    logConfig: ").append(toIndentedString(logConfig)).append("\n");

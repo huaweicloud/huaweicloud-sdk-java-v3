@@ -6,6 +6,8 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.huaweicloud.sdk.corexml.SdkXmlResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -19,8 +21,7 @@ public class GetBucketCustomdomainResponse extends SdkXmlResponse<GetBucketCusto
     @JsonProperty(value = "Domains")
 
     @JacksonXmlProperty(localName = "Domains")
-
-    private Domains domains;
+    private List<Domains> domains = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-obs-id-2")
@@ -64,29 +65,36 @@ public class GetBucketCustomdomainResponse extends SdkXmlResponse<GetBucketCusto
 
     private String date;
 
-    public GetBucketCustomdomainResponse withDomains(Domains domains) {
+    public GetBucketCustomdomainResponse withDomains(List<Domains> domains) {
         this.domains = domains;
         return this;
     }
 
-    public GetBucketCustomdomainResponse withDomains(Consumer<Domains> domainsSetter) {
+    public GetBucketCustomdomainResponse addDomainsItem(Domains domainsItem) {
         if (this.domains == null) {
-            this.domains = new Domains();
-            domainsSetter.accept(this.domains);
+            this.domains = new ArrayList<>();
         }
+        this.domains.add(domainsItem);
+        return this;
+    }
 
+    public GetBucketCustomdomainResponse withDomains(Consumer<List<Domains>> domainsSetter) {
+        if (this.domains == null) {
+            this.domains = new ArrayList<>();
+        }
+        domainsSetter.accept(this.domains);
         return this;
     }
 
     /**
-     * Get domains
+     * 自定义域名元素。 
      * @return domains
      */
-    public Domains getDomains() {
+    public List<Domains> getDomains() {
         return domains;
     }
 
-    public void setDomains(Domains domains) {
+    public void setDomains(List<Domains> domains) {
         this.domains = domains;
     }
 

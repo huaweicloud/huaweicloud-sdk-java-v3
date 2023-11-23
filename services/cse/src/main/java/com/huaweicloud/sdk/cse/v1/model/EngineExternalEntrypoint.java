@@ -14,22 +14,22 @@ import java.util.function.Consumer;
 public class EngineExternalEntrypoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "external_address")
+    @JsonProperty(value = "externalAddress")
 
     private String externalAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_address")
+    @JsonProperty(value = "publicAddress")
 
     private String publicAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "service_endpoint")
+    @JsonProperty(value = "serviceEndpoint")
 
     private Map<String, EntrypointItem> serviceEndpoint = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_service_endpoint")
+    @JsonProperty(value = "publicServiceEndpoint")
 
     private Map<String, EntrypointItem> publicServiceEndpoint = null;
 

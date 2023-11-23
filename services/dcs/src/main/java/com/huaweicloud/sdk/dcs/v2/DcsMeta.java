@@ -154,6 +154,9 @@ import com.huaweicloud.sdk.dcs.v2.model.ListTagsOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.LoginWebCliBody;
 import com.huaweicloud.sdk.dcs.v2.model.LoginWebCliRequest;
 import com.huaweicloud.sdk.dcs.v2.model.LoginWebCliResponse;
+import com.huaweicloud.sdk.dcs.v2.model.LogoffWebCliRequest;
+import com.huaweicloud.sdk.dcs.v2.model.LogoffWebCliResponse;
+import com.huaweicloud.sdk.dcs.v2.model.LogoutWebCliBody;
 import com.huaweicloud.sdk.dcs.v2.model.MigrationUpdateRequestEntity;
 import com.huaweicloud.sdk.dcs.v2.model.ModifyInstanceBody;
 import com.huaweicloud.sdk.dcs.v2.model.ModifyInstancePasswordBody;
@@ -2451,6 +2454,37 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LoginWebCliBody.class),
             f -> f.withMarshaller(LoginWebCliRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<LogoffWebCliRequest, LogoffWebCliResponse> logoffWebCli = genForlogoffWebCli();
+
+    private static HttpRequestDef<LogoffWebCliRequest, LogoffWebCliResponse> genForlogoffWebCli() {
+        // basic
+        HttpRequestDef.Builder<LogoffWebCliRequest, LogoffWebCliResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, LogoffWebCliRequest.class, LogoffWebCliResponse.class)
+                .withName("LogoffWebCli")
+                .withUri("/v2/{project_id}/instances/{instance_id}/webcli/logout")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(LogoffWebCliRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<LogoutWebCliBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LogoutWebCliBody.class),
+            f -> f.withMarshaller(LogoffWebCliRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

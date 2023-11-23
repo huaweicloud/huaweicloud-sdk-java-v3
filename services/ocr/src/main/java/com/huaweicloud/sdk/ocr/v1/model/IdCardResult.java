@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.ocr.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -75,6 +77,11 @@ public class IdCardResult {
     @JsonProperty(value = "detect_copy_result")
 
     private Boolean detectCopyResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "portrait_location")
+
+    private List<List<Integer>> portraitLocation = null;
 
     public IdCardResult withName(String name) {
         this.name = name;
@@ -295,7 +302,7 @@ public class IdCardResult {
     }
 
     /**
-     * 判断身份证图像是黑白复印件还是原件，“true”表示是复印件，“false”表示是原件。仅在输入参数detect_copy为true时，返回该字段。           
+     * 判断身份证图像是黑白复印件还是原件，“true”表示是复印件，“false”表示是原件。仅在输入参数detect_copy为true时，返回该字段。 
      * @return detectCopyResult
      */
     public Boolean getDetectCopyResult() {
@@ -304,6 +311,39 @@ public class IdCardResult {
 
     public void setDetectCopyResult(Boolean detectCopyResult) {
         this.detectCopyResult = detectCopyResult;
+    }
+
+    public IdCardResult withPortraitLocation(List<List<Integer>> portraitLocation) {
+        this.portraitLocation = portraitLocation;
+        return this;
+    }
+
+    public IdCardResult addPortraitLocationItem(List<Integer> portraitLocationItem) {
+        if (this.portraitLocation == null) {
+            this.portraitLocation = new ArrayList<>();
+        }
+        this.portraitLocation.add(portraitLocationItem);
+        return this;
+    }
+
+    public IdCardResult withPortraitLocation(Consumer<List<List<Integer>>> portraitLocationSetter) {
+        if (this.portraitLocation == null) {
+            this.portraitLocation = new ArrayList<>();
+        }
+        portraitLocationSetter.accept(this.portraitLocation);
+        return this;
+    }
+
+    /**
+     * 身份证头像位置信息的结果，仅在输入参数“return_portrait_location”为true时，返回该字段，当输入身份证背面时返回为空列表。 
+     * @return portraitLocation
+     */
+    public List<List<Integer>> getPortraitLocation() {
+        return portraitLocation;
+    }
+
+    public void setPortraitLocation(List<List<Integer>> portraitLocation) {
+        this.portraitLocation = portraitLocation;
     }
 
     @Override
@@ -323,7 +363,8 @@ public class IdCardResult {
             && Objects.equals(this.verificationResult, that.verificationResult)
             && Objects.equals(this.textLocation, that.textLocation)
             && Objects.equals(this.detectReproduceResult, that.detectReproduceResult)
-            && Objects.equals(this.detectCopyResult, that.detectCopyResult);
+            && Objects.equals(this.detectCopyResult, that.detectCopyResult)
+            && Objects.equals(this.portraitLocation, that.portraitLocation);
     }
 
     @Override
@@ -340,7 +381,8 @@ public class IdCardResult {
             verificationResult,
             textLocation,
             detectReproduceResult,
-            detectCopyResult);
+            detectCopyResult,
+            portraitLocation);
     }
 
     @Override
@@ -360,6 +402,7 @@ public class IdCardResult {
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("    detectReproduceResult: ").append(toIndentedString(detectReproduceResult)).append("\n");
         sb.append("    detectCopyResult: ").append(toIndentedString(detectCopyResult)).append("\n");
+        sb.append("    portraitLocation: ").append(toIndentedString(portraitLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

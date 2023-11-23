@@ -53,7 +53,7 @@ public class UpdateMemberOption {
     }
 
     /**
-     * 后端云服务器名称。注意：该名称并非ECS名称，若不传则返回为空。
+     * 后端云服务器名称。
      * @return name
      */
     public String getName() {
@@ -89,7 +89,7 @@ public class UpdateMemberOption {
     }
 
     /**
-     * 后端服务器端口。 > 在开启端口透传的pool下的member，该字段无法更新。
+     * 后端服务器端口。>在开启端口透传的pool下的member，该字段无法更新
      * minimum: 1
      * maximum: 65535
      * @return protocolPort

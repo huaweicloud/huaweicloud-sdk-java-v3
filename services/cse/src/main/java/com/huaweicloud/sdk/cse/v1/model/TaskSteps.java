@@ -19,12 +19,12 @@ import java.util.function.Consumer;
 public class TaskSteps {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_name")
+    @JsonProperty(value = "taskName")
 
     private String taskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_names")
+    @JsonProperty(value = "taskNames")
 
     private List<String> taskNames = null;
 
@@ -122,17 +122,17 @@ public class TaskSteps {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_time")
+    @JsonProperty(value = "startTime")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
+    @JsonProperty(value = "endTime")
 
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_executor_brief")
+    @JsonProperty(value = "taskExecutorBrief")
 
     private TaskExecutorBrief taskExecutorBrief;
 

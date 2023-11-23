@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateMatch
+ * 请求匹配规则。0..N个，不配置表示匹配。
  */
 public class CreateMatch {
 

@@ -21,42 +21,42 @@ public class EngineReference {
     private String vpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "az_list")
+    @JsonProperty(value = "azList")
 
     private List<String> azList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "network_id")
+    @JsonProperty(value = "networkId")
 
     private String networkId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_cidr")
+    @JsonProperty(value = "subnetCidr")
 
     private String subnetCidr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_cidr_v6")
+    @JsonProperty(value = "subnetCidrV6")
 
     private String subnetCidrV6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subnet_gateway")
+    @JsonProperty(value = "subnetGateway")
 
     private String subnetGateway;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_ip_id")
+    @JsonProperty(value = "publicIpId")
 
     private String publicIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "service_limit")
+    @JsonProperty(value = "serviceLimit")
 
     private Integer serviceLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_limit")
+    @JsonProperty(value = "instanceLimit")
 
     private Integer instanceLimit;
 

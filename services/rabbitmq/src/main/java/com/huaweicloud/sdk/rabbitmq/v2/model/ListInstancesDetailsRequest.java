@@ -41,24 +41,9 @@ public class ListInstancesDetailsRequest {
         public static final StatusEnum CREATING = new StatusEnum("CREATING");
 
         /**
-         * Enum CREATEFAILED for value: "CREATEFAILED"
-         */
-        public static final StatusEnum CREATEFAILED = new StatusEnum("CREATEFAILED");
-
-        /**
          * Enum RUNNING for value: "RUNNING"
          */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
-
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
-        public static final StatusEnum ERROR = new StatusEnum("ERROR");
-
-        /**
-         * Enum STARTING for value: "STARTING"
-         */
-        public static final StatusEnum STARTING = new StatusEnum("STARTING");
 
         /**
          * Enum RESTARTING for value: "RESTARTING"
@@ -66,27 +51,96 @@ public class ListInstancesDetailsRequest {
         public static final StatusEnum RESTARTING = new StatusEnum("RESTARTING");
 
         /**
-         * Enum CLOSING for value: "CLOSING"
+         * Enum DELETING for value: "DELETING"
          */
-        public static final StatusEnum CLOSING = new StatusEnum("CLOSING");
+        public static final StatusEnum DELETING = new StatusEnum("DELETING");
+
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
+        public static final StatusEnum ERROR = new StatusEnum("ERROR");
+
+        /**
+         * Enum CREATEFAILED for value: "CREATEFAILED"
+         */
+        public static final StatusEnum CREATEFAILED = new StatusEnum("CREATEFAILED");
+
+        /**
+         * Enum FREEZING for value: "FREEZING"
+         */
+        public static final StatusEnum FREEZING = new StatusEnum("FREEZING");
 
         /**
          * Enum FROZEN for value: "FROZEN"
          */
         public static final StatusEnum FROZEN = new StatusEnum("FROZEN");
 
+        /**
+         * Enum EXTENDING for value: "EXTENDING"
+         */
+        public static final StatusEnum EXTENDING = new StatusEnum("EXTENDING");
+
+        /**
+         * Enum SHRINKING for value: "SHRINKING"
+         */
+        public static final StatusEnum SHRINKING = new StatusEnum("SHRINKING");
+
+        /**
+         * Enum EXTENDEDFAILED for value: "EXTENDEDFAILED"
+         */
+        public static final StatusEnum EXTENDEDFAILED = new StatusEnum("EXTENDEDFAILED");
+
+        /**
+         * Enum CONFIGURING for value: "CONFIGURING"
+         */
+        public static final StatusEnum CONFIGURING = new StatusEnum("CONFIGURING");
+
+        /**
+         * Enum UPGRADING for value: "UPGRADING"
+         */
+        public static final StatusEnum UPGRADING = new StatusEnum("UPGRADING");
+
+        /**
+         * Enum UPGRADINGFAILED for value: "UPGRADINGFAILED"
+         */
+        public static final StatusEnum UPGRADINGFAILED = new StatusEnum("UPGRADINGFAILED");
+
+        /**
+         * Enum ROLLBACK for value: "ROLLBACK"
+         */
+        public static final StatusEnum ROLLBACK = new StatusEnum("ROLLBACK");
+
+        /**
+         * Enum ROLLBACKFAILED for value: "ROLLBACKFAILED"
+         */
+        public static final StatusEnum ROLLBACKFAILED = new StatusEnum("ROLLBACKFAILED");
+
+        /**
+         * Enum VOLUMETYPECHANGING for value: "VOLUMETYPECHANGING"
+         */
+        public static final StatusEnum VOLUMETYPECHANGING = new StatusEnum("VOLUMETYPECHANGING");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("CREATING", CREATING);
-            map.put("CREATEFAILED", CREATEFAILED);
             map.put("RUNNING", RUNNING);
-            map.put("ERROR", ERROR);
-            map.put("STARTING", STARTING);
             map.put("RESTARTING", RESTARTING);
-            map.put("CLOSING", CLOSING);
+            map.put("DELETING", DELETING);
+            map.put("ERROR", ERROR);
+            map.put("CREATEFAILED", CREATEFAILED);
+            map.put("FREEZING", FREEZING);
             map.put("FROZEN", FROZEN);
+            map.put("EXTENDING", EXTENDING);
+            map.put("SHRINKING", SHRINKING);
+            map.put("EXTENDEDFAILED", EXTENDEDFAILED);
+            map.put("CONFIGURING", CONFIGURING);
+            map.put("UPGRADING", UPGRADING);
+            map.put("UPGRADINGFAILED", UPGRADINGFAILED);
+            map.put("ROLLBACK", ROLLBACK);
+            map.put("ROLLBACKFAILED", ROLLBACKFAILED);
+            map.put("VOLUMETYPECHANGING", VOLUMETYPECHANGING);
             return Collections.unmodifiableMap(map);
         }
 

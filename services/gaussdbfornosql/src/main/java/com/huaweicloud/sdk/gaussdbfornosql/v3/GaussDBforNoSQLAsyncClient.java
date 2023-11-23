@@ -39,12 +39,18 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeRequest
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteLtsConfigsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteLtsConfigsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationDatastoresRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationDatastoresResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationTemplatesRequest;
@@ -73,10 +79,26 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionStatisticsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListLtsConfigsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListLtsConfigsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbErrorLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbErrorLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreDatabasesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreDatabasesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTablesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsRequest;
@@ -95,6 +117,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.PauseResumeDataSynchronizati
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.PauseResumeDataSynchronizationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetDbUserPasswordRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetDbUserPasswordResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetParamGroupTemplateRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetParamGroupTemplateResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeColdVolumeRequest;
@@ -107,6 +131,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyRequest;
@@ -129,6 +155,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowElbIpGroupRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowElbIpGroupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowErrorLogRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowErrorLogResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowHighRiskCommandsRequest;
@@ -155,6 +183,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationRe
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSslRequest;
@@ -740,6 +770,67 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 关闭实例节点会话
+     *
+     * 关闭实例节点会话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteInstancesSessionRequest 请求对象
+     * @return CompletableFuture<DeleteInstancesSessionResponse>
+     */
+    public CompletableFuture<DeleteInstancesSessionResponse> deleteInstancesSessionAsync(
+        DeleteInstancesSessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.deleteInstancesSession);
+    }
+
+    /**
+     * 关闭实例节点会话
+     *
+     * 关闭实例节点会话。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteInstancesSessionRequest 请求对象
+     * @return AsyncInvoker<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse>
+     */
+    public AsyncInvoker<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> deleteInstancesSessionAsyncInvoker(
+        DeleteInstancesSessionRequest request) {
+        return new AsyncInvoker<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse>(request,
+            GaussDBforNoSQLMeta.deleteInstancesSession, hcClient);
+    }
+
+    /**
+     * 解除关联LTS日志流
+     *
+     * 将实例日志与LTS日志流解除关联，后台将取消上传实例日志到的LTS日志流里。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLtsConfigsRequest 请求对象
+     * @return CompletableFuture<DeleteLtsConfigsResponse>
+     */
+    public CompletableFuture<DeleteLtsConfigsResponse> deleteLtsConfigsAsync(DeleteLtsConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.deleteLtsConfigs);
+    }
+
+    /**
+     * 解除关联LTS日志流
+     *
+     * 将实例日志与LTS日志流解除关联，后台将取消上传实例日志到的LTS日志流里。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLtsConfigsRequest 请求对象
+     * @return AsyncInvoker<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse>
+     */
+    public AsyncInvoker<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> deleteLtsConfigsAsyncInvoker(
+        DeleteLtsConfigsRequest request) {
+        return new AsyncInvoker<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse>(request,
+            GaussDBforNoSQLMeta.deleteLtsConfigs, hcClient);
+    }
+
+    /**
      * 扩容指定集群实例的节点数量
      *
      * 扩容指定集群实例的节点数量。
@@ -798,6 +889,37 @@ public class GaussDBforNoSQLAsyncClient {
         ListAvailableFlavorInfosRequest request) {
         return new AsyncInvoker<ListAvailableFlavorInfosRequest, ListAvailableFlavorInfosResponse>(request,
             GaussDBforNoSQLMeta.listAvailableFlavorInfos, hcClient);
+    }
+
+    /**
+     * 查询GeminiDB(for Cassandra)数据库慢日志
+     *
+     * 查询GeminiDB(for Cassandra)数据库慢日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCassandraSlowLogsRequest 请求对象
+     * @return CompletableFuture<ListCassandraSlowLogsResponse>
+     */
+    public CompletableFuture<ListCassandraSlowLogsResponse> listCassandraSlowLogsAsync(
+        ListCassandraSlowLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listCassandraSlowLogs);
+    }
+
+    /**
+     * 查询GeminiDB(for Cassandra)数据库慢日志
+     *
+     * 查询GeminiDB(for Cassandra)数据库慢日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListCassandraSlowLogsRequest 请求对象
+     * @return AsyncInvoker<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse>
+     */
+    public AsyncInvoker<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> listCassandraSlowLogsAsyncInvoker(
+        ListCassandraSlowLogsRequest request) {
+        return new AsyncInvoker<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse>(request,
+            GaussDBforNoSQLMeta.listCassandraSlowLogs, hcClient);
     }
 
     /**
@@ -1224,6 +1346,159 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 获取节点会话列表
+     *
+     * 获取节点会话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesSessionRequest 请求对象
+     * @return CompletableFuture<ListInstancesSessionResponse>
+     */
+    public CompletableFuture<ListInstancesSessionResponse> listInstancesSessionAsync(
+        ListInstancesSessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listInstancesSession);
+    }
+
+    /**
+     * 获取节点会话列表
+     *
+     * 获取节点会话列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesSessionRequest 请求对象
+     * @return AsyncInvoker<ListInstancesSessionRequest, ListInstancesSessionResponse>
+     */
+    public AsyncInvoker<ListInstancesSessionRequest, ListInstancesSessionResponse> listInstancesSessionAsyncInvoker(
+        ListInstancesSessionRequest request) {
+        return new AsyncInvoker<ListInstancesSessionRequest, ListInstancesSessionResponse>(request,
+            GaussDBforNoSQLMeta.listInstancesSession, hcClient);
+    }
+
+    /**
+     * 查询实例节点会话统计信息
+     *
+     * 查询实例节点会话统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesSessionStatisticsRequest 请求对象
+     * @return CompletableFuture<ListInstancesSessionStatisticsResponse>
+     */
+    public CompletableFuture<ListInstancesSessionStatisticsResponse> listInstancesSessionStatisticsAsync(
+        ListInstancesSessionStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listInstancesSessionStatistics);
+    }
+
+    /**
+     * 查询实例节点会话统计信息
+     *
+     * 查询实例节点会话统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstancesSessionStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse>
+     */
+    public AsyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> listInstancesSessionStatisticsAsyncInvoker(
+        ListInstancesSessionStatisticsRequest request) {
+        return new AsyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse>(request,
+            GaussDBforNoSQLMeta.listInstancesSessionStatistics, hcClient);
+    }
+
+    /**
+     * 查询LTS日志配置信息
+     *
+     * 分页查询实例关联的LTS日志配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsConfigsRequest 请求对象
+     * @return CompletableFuture<ListLtsConfigsResponse>
+     */
+    public CompletableFuture<ListLtsConfigsResponse> listLtsConfigsAsync(ListLtsConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listLtsConfigs);
+    }
+
+    /**
+     * 查询LTS日志配置信息
+     *
+     * 分页查询实例关联的LTS日志配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsConfigsRequest 请求对象
+     * @return AsyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse>
+     */
+    public AsyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse> listLtsConfigsAsyncInvoker(
+        ListLtsConfigsRequest request) {
+        return new AsyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse>(request,
+            GaussDBforNoSQLMeta.listLtsConfigs, hcClient);
+    }
+
+    /**
+     * 查询GeminiDB(for Mongo)数据库错误日志
+     *
+     * 查询GeminiDB(for Mongo)数据库错误日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMongodbErrorLogsRequest 请求对象
+     * @return CompletableFuture<ListMongodbErrorLogsResponse>
+     */
+    public CompletableFuture<ListMongodbErrorLogsResponse> listMongodbErrorLogsAsync(
+        ListMongodbErrorLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listMongodbErrorLogs);
+    }
+
+    /**
+     * 查询GeminiDB(for Mongo)数据库错误日志
+     *
+     * 查询GeminiDB(for Mongo)数据库错误日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMongodbErrorLogsRequest 请求对象
+     * @return AsyncInvoker<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse>
+     */
+    public AsyncInvoker<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> listMongodbErrorLogsAsyncInvoker(
+        ListMongodbErrorLogsRequest request) {
+        return new AsyncInvoker<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse>(request,
+            GaussDBforNoSQLMeta.listMongodbErrorLogs, hcClient);
+    }
+
+    /**
+     * 查询GeminiDB(for Mongo)数据库慢日志
+     *
+     * 查询GeminiDB(for Mongo)数据库慢日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMongodbSlowLogsRequest 请求对象
+     * @return CompletableFuture<ListMongodbSlowLogsResponse>
+     */
+    public CompletableFuture<ListMongodbSlowLogsResponse> listMongodbSlowLogsAsync(ListMongodbSlowLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listMongodbSlowLogs);
+    }
+
+    /**
+     * 查询GeminiDB(for Mongo)数据库慢日志
+     *
+     * 查询GeminiDB(for Mongo)数据库慢日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListMongodbSlowLogsRequest 请求对象
+     * @return AsyncInvoker<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse>
+     */
+    public AsyncInvoker<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> listMongodbSlowLogsAsyncInvoker(
+        ListMongodbSlowLogsRequest request) {
+        return new AsyncInvoker<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse>(request,
+            GaussDBforNoSQLMeta.listMongodbSlowLogs, hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询指定项目的标签信息。
@@ -1282,6 +1557,97 @@ public class GaussDBforNoSQLAsyncClient {
         ListRecycleInstancesRequest request) {
         return new AsyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>(request,
             GaussDBforNoSQLMeta.listRecycleInstances, hcClient);
+    }
+
+    /**
+     * 查询GeminiDB(for Redis)数据库慢日志
+     *
+     * 查询GeminiDB(for Redis)数据库慢日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRedisSlowLogsRequest 请求对象
+     * @return CompletableFuture<ListRedisSlowLogsResponse>
+     */
+    public CompletableFuture<ListRedisSlowLogsResponse> listRedisSlowLogsAsync(ListRedisSlowLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listRedisSlowLogs);
+    }
+
+    /**
+     * 查询GeminiDB(for Redis)数据库慢日志
+     *
+     * 查询GeminiDB(for Redis)数据库慢日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRedisSlowLogsRequest 请求对象
+     * @return AsyncInvoker<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse>
+     */
+    public AsyncInvoker<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> listRedisSlowLogsAsyncInvoker(
+        ListRedisSlowLogsRequest request) {
+        return new AsyncInvoker<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse>(request,
+            GaussDBforNoSQLMeta.listRedisSlowLogs, hcClient);
+    }
+
+    /**
+     * 获取GeminiDB(for Cassandra)实例表级恢复的数据库信息
+     *
+     * 获取GeminiDB(for Cassandra)实例表级恢复的数据库信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRestoreDatabasesRequest 请求对象
+     * @return CompletableFuture<ListRestoreDatabasesResponse>
+     */
+    public CompletableFuture<ListRestoreDatabasesResponse> listRestoreDatabasesAsync(
+        ListRestoreDatabasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listRestoreDatabases);
+    }
+
+    /**
+     * 获取GeminiDB(for Cassandra)实例表级恢复的数据库信息
+     *
+     * 获取GeminiDB(for Cassandra)实例表级恢复的数据库信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRestoreDatabasesRequest 请求对象
+     * @return AsyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse>
+     */
+    public AsyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> listRestoreDatabasesAsyncInvoker(
+        ListRestoreDatabasesRequest request) {
+        return new AsyncInvoker<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse>(request,
+            GaussDBforNoSQLMeta.listRestoreDatabases, hcClient);
+    }
+
+    /**
+     * 获取GeminiDB(for Cassandra)实例表级恢复的表信息
+     *
+     * 获取GeminiDB(for Cassandra)实例表级恢复的表信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRestoreTablesRequest 请求对象
+     * @return CompletableFuture<ListRestoreTablesResponse>
+     */
+    public CompletableFuture<ListRestoreTablesResponse> listRestoreTablesAsync(ListRestoreTablesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listRestoreTables);
+    }
+
+    /**
+     * 获取GeminiDB(for Cassandra)实例表级恢复的表信息
+     *
+     * 获取GeminiDB(for Cassandra)实例表级恢复的表信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListRestoreTablesRequest 请求对象
+     * @return AsyncInvoker<ListRestoreTablesRequest, ListRestoreTablesResponse>
+     */
+    public AsyncInvoker<ListRestoreTablesRequest, ListRestoreTablesResponse> listRestoreTablesAsyncInvoker(
+        ListRestoreTablesRequest request) {
+        return new AsyncInvoker<ListRestoreTablesRequest, ListRestoreTablesResponse>(request,
+            GaussDBforNoSQLMeta.listRestoreTables, hcClient);
     }
 
     /**
@@ -1560,6 +1926,37 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 重置自定义参数模板
+     *
+     * 重置自定义参数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetParamGroupTemplateRequest 请求对象
+     * @return CompletableFuture<ResetParamGroupTemplateResponse>
+     */
+    public CompletableFuture<ResetParamGroupTemplateResponse> resetParamGroupTemplateAsync(
+        ResetParamGroupTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.resetParamGroupTemplate);
+    }
+
+    /**
+     * 重置自定义参数模板
+     *
+     * 重置自定义参数模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetParamGroupTemplateRequest 请求对象
+     * @return AsyncInvoker<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse>
+     */
+    public AsyncInvoker<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> resetParamGroupTemplateAsyncInvoker(
+        ResetParamGroupTemplateRequest request) {
+        return new AsyncInvoker<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse>(request,
+            GaussDBforNoSQLMeta.resetParamGroupTemplate, hcClient);
+    }
+
+    /**
      * 修改实例的管理员密码
      *
      * 修改实例的管理员密码。
@@ -1739,6 +2136,40 @@ public class GaussDBforNoSQLAsyncClient {
         RestoreExistingInstanceRequest request) {
         return new AsyncInvoker<RestoreExistingInstanceRequest, RestoreExistingInstanceResponse>(request,
             GaussDBforNoSQLMeta.restoreExistingInstance, hcClient);
+    }
+
+    /**
+     * 关联LTS日志流
+     *
+     * - 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
+     * - 关联成功后，会产生一定费用，具体计费可参考云日志服务（LTS）的定价详情。
+     * - 系统会为当前选择的日志流创建对应日志类型的结构化配置，若该日志流已存在其他日志类型的结构化配置，系统会进行覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SaveLtsConfigsRequest 请求对象
+     * @return CompletableFuture<SaveLtsConfigsResponse>
+     */
+    public CompletableFuture<SaveLtsConfigsResponse> saveLtsConfigsAsync(SaveLtsConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.saveLtsConfigs);
+    }
+
+    /**
+     * 关联LTS日志流
+     *
+     * - 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
+     * - 关联成功后，会产生一定费用，具体计费可参考云日志服务（LTS）的定价详情。
+     * - 系统会为当前选择的日志流创建对应日志类型的结构化配置，若该日志流已存在其他日志类型的结构化配置，系统会进行覆盖。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SaveLtsConfigsRequest 请求对象
+     * @return AsyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse>
+     */
+    public AsyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse> saveLtsConfigsAsyncInvoker(
+        SaveLtsConfigsRequest request) {
+        return new AsyncInvoker<SaveLtsConfigsRequest, SaveLtsConfigsResponse>(request,
+            GaussDBforNoSQLMeta.saveLtsConfigs, hcClient);
     }
 
     /**
@@ -2046,6 +2477,36 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询实例负载均衡的IP访问黑白名单
+     *
+     * 查询实例负载均衡的IP访问黑白名单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowElbIpGroupRequest 请求对象
+     * @return CompletableFuture<ShowElbIpGroupResponse>
+     */
+    public CompletableFuture<ShowElbIpGroupResponse> showElbIpGroupAsync(ShowElbIpGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showElbIpGroup);
+    }
+
+    /**
+     * 查询实例负载均衡的IP访问黑白名单
+     *
+     * 查询实例负载均衡的IP访问黑白名单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowElbIpGroupRequest 请求对象
+     * @return AsyncInvoker<ShowElbIpGroupRequest, ShowElbIpGroupResponse>
+     */
+    public AsyncInvoker<ShowElbIpGroupRequest, ShowElbIpGroupResponse> showElbIpGroupAsyncInvoker(
+        ShowElbIpGroupRequest request) {
+        return new AsyncInvoker<ShowElbIpGroupRequest, ShowElbIpGroupResponse>(request,
+            GaussDBforNoSQLMeta.showElbIpGroup, hcClient);
+    }
+
+    /**
      * 查询数据库错误日志信息
      *
      * 查询数据库错误日志
@@ -2293,7 +2754,7 @@ public class GaussDBforNoSQLAsyncClient {
     /**
      * 查询配额
      *
-     * 查询单租户在GaussDBforNoSQL服务下的资源配额。
+     * 查询单租户在GeminiDB服务下的资源配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2307,7 +2768,7 @@ public class GaussDBforNoSQLAsyncClient {
     /**
      * 查询配额
      *
-     * 查询单租户在GaussDBforNoSQL服务下的资源配额。
+     * 查询单租户在GeminiDB服务下的资源配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2438,6 +2899,36 @@ public class GaussDBforNoSQLAsyncClient {
         ShrinkInstanceNodeRequest request) {
         return new AsyncInvoker<ShrinkInstanceNodeRequest, ShrinkInstanceNodeResponse>(request,
             GaussDBforNoSQLMeta.shrinkInstanceNode, hcClient);
+    }
+
+    /**
+     * 设置实例负载均衡的IP访问黑白名单
+     *
+     * 设置实例负载均衡的IP访问黑白名单，黑名单、白名单只能选一种，每次调用此接口覆盖之前的设置。关闭后不限制连接的源IP地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchIpGroupRequest 请求对象
+     * @return CompletableFuture<SwitchIpGroupResponse>
+     */
+    public CompletableFuture<SwitchIpGroupResponse> switchIpGroupAsync(SwitchIpGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.switchIpGroup);
+    }
+
+    /**
+     * 设置实例负载均衡的IP访问黑白名单
+     *
+     * 设置实例负载均衡的IP访问黑白名单，黑名单、白名单只能选一种，每次调用此接口覆盖之前的设置。关闭后不限制连接的源IP地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchIpGroupRequest 请求对象
+     * @return AsyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse>
+     */
+    public AsyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse> switchIpGroupAsyncInvoker(
+        SwitchIpGroupRequest request) {
+        return new AsyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse>(request, GaussDBforNoSQLMeta.switchIpGroup,
+            hcClient);
     }
 
     /**

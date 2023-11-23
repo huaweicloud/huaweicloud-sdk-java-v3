@@ -43,7 +43,7 @@ public class CreateEventRequestBody {
     }
 
     /**
-     * 测试事件content,为json字符串
+     * 测试事件content，为json字符串的base64编码
      * @return content
      */
     public String getContent() {

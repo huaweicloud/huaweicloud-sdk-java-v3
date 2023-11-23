@@ -96,7 +96,7 @@ public class SourceCdnResp {
     private ProtocolEnum protocol;
 
     /**
-     * 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C, KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN
+     * 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C, KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN, TENCENT_COS_A, TENCENT_COS_B, TENCENT_COS_C, TENCENT_COS_D
      */
     public static final class AuthenticationTypeEnum {
 
@@ -137,6 +137,26 @@ public class SourceCdnResp {
          */
         public static final AuthenticationTypeEnum AZURE_SAS_TOKEN = new AuthenticationTypeEnum("AZURE_SAS_TOKEN");
 
+        /**
+         * Enum TENCENT_COS_A for value: "TENCENT_COS_A"
+         */
+        public static final AuthenticationTypeEnum TENCENT_COS_A = new AuthenticationTypeEnum("TENCENT_COS_A");
+
+        /**
+         * Enum TENCENT_COS_B for value: "TENCENT_COS_B"
+         */
+        public static final AuthenticationTypeEnum TENCENT_COS_B = new AuthenticationTypeEnum("TENCENT_COS_B");
+
+        /**
+         * Enum TENCENT_COS_C for value: "TENCENT_COS_C"
+         */
+        public static final AuthenticationTypeEnum TENCENT_COS_C = new AuthenticationTypeEnum("TENCENT_COS_C");
+
+        /**
+         * Enum TENCENT_COS_D for value: "TENCENT_COS_D"
+         */
+        public static final AuthenticationTypeEnum TENCENT_COS_D = new AuthenticationTypeEnum("TENCENT_COS_D");
+
         private static final Map<String, AuthenticationTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AuthenticationTypeEnum> createStaticFields() {
@@ -148,6 +168,10 @@ public class SourceCdnResp {
             map.put("ALIYUN_OSS_C", ALIYUN_OSS_C);
             map.put("KSYUN_PRIVATE_AUTHENTICATION", KSYUN_PRIVATE_AUTHENTICATION);
             map.put("AZURE_SAS_TOKEN", AZURE_SAS_TOKEN);
+            map.put("TENCENT_COS_A", TENCENT_COS_A);
+            map.put("TENCENT_COS_B", TENCENT_COS_B);
+            map.put("TENCENT_COS_C", TENCENT_COS_C);
+            map.put("TENCENT_COS_D", TENCENT_COS_D);
             return Collections.unmodifiableMap(map);
         }
 
@@ -242,7 +266,7 @@ public class SourceCdnResp {
     }
 
     /**
-     * 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C, KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN
+     * 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C, KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN, TENCENT_COS_A, TENCENT_COS_B, TENCENT_COS_C, TENCENT_COS_D
      * @return authenticationType
      */
     public AuthenticationTypeEnum getAuthenticationType() {

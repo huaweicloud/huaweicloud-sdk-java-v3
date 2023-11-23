@@ -35,6 +35,16 @@ public class SlowlogItem {
 
     private String shardName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_id")
+
+    private Integer databaseId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "username")
+
+    private String username;
+
     public SlowlogItem withId(Integer id) {
         this.id = id;
         return this;
@@ -120,6 +130,40 @@ public class SlowlogItem {
         this.shardName = shardName;
     }
 
+    public SlowlogItem withDatabaseId(Integer databaseId) {
+        this.databaseId = databaseId;
+        return this;
+    }
+
+    /**
+     * 慢日志数据库id
+     * @return databaseId
+     */
+    public Integer getDatabaseId() {
+        return databaseId;
+    }
+
+    public void setDatabaseId(Integer databaseId) {
+        this.databaseId = databaseId;
+    }
+
+    public SlowlogItem withUsername(String username) {
+        this.username = username;
+        return this;
+    }
+
+    /**
+     * 慢日志名称
+     * @return username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +175,13 @@ public class SlowlogItem {
         SlowlogItem that = (SlowlogItem) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.command, that.command)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
-            && Objects.equals(this.shardName, that.shardName);
+            && Objects.equals(this.shardName, that.shardName) && Objects.equals(this.databaseId, that.databaseId)
+            && Objects.equals(this.username, that.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, command, startTime, duration, shardName);
+        return Objects.hash(id, command, startTime, duration, shardName, databaseId, username);
     }
 
     @Override
@@ -148,6 +193,8 @@ public class SlowlogItem {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    shardName: ").append(toIndentedString(shardName)).append("\n");
+        sb.append("    databaseId: ").append(toIndentedString(databaseId)).append("\n");
+        sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("}");
         return sb.toString();
     }

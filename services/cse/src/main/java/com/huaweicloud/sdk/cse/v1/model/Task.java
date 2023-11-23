@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class Task {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job_id")
+    @JsonProperty(value = "jobId")
 
     private Integer jobId;
 
@@ -119,17 +119,17 @@ public class Task {
     private String assigned;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_name")
+    @JsonProperty(value = "taskName")
 
     private String taskName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "engine_name")
+    @JsonProperty(value = "engineName")
 
     private String engineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_order")
+    @JsonProperty(value = "taskOrder")
 
     private Integer taskOrder;
 
@@ -227,22 +227,22 @@ public class Task {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_time")
+    @JsonProperty(value = "startTime")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
+    @JsonProperty(value = "endTime")
 
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
+    @JsonProperty(value = "createTime")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
+    @JsonProperty(value = "updateTime")
 
     private Long updateTime;
 
@@ -262,7 +262,7 @@ public class Task {
     private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_executor_brief")
+    @JsonProperty(value = "taskExecutorBrief")
 
     private TaskExecutorBrief taskExecutorBrief;
 

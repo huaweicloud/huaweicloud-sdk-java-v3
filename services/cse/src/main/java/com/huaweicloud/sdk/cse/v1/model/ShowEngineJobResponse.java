@@ -25,7 +25,7 @@ public class ShowEngineJobResponse extends SdkResponse {
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "engine_id")
+    @JsonProperty(value = "engineId")
 
     private String engineId;
 
@@ -220,17 +220,17 @@ public class ShowEngineJobResponse extends SdkResponse {
     private Integer scheduling;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_user")
+    @JsonProperty(value = "createUser")
 
     private String createUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_time")
+    @JsonProperty(value = "startTime")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
+    @JsonProperty(value = "endTime")
 
     private Long endTime;
 

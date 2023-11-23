@@ -51,6 +51,9 @@ import com.huaweicloud.sdk.dds.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpResponse;
+import com.huaweicloud.sdk.dds.v3.model.CreateKillOpRuleRequest;
+import com.huaweicloud.sdk.dds.v3.model.CreateKillOpRuleRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.CreateKillOpRuleResponse;
 import com.huaweicloud.sdk.dds.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateManualBackupRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.CreateManualBackupResponse;
@@ -67,8 +70,17 @@ import com.huaweicloud.sdk.dds.v3.model.DeleteDatabaseUserRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.DeleteDatabaseUserResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteSessionRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteSessionRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.DeleteSessionResponse;
@@ -116,6 +128,11 @@ import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListLtsConfigsRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListLtsConfigsResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListLtsErrorLogsRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListLtsErrorLogsRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.ListLtsErrorLogsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsSlowLogsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsSlowLogsRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsSlowLogsResponse;
@@ -204,6 +221,8 @@ import com.huaweicloud.sdk.dds.v3.model.ShowEntityConfigurationRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowEntityConfigurationResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowJobDetailRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowJobDetailResponse;
+import com.huaweicloud.sdk.dds.v3.model.ShowKillOpRuleRuleListRequest;
+import com.huaweicloud.sdk.dds.v3.model.ShowKillOpRuleRuleListResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowRecyclePolicyRequest;
@@ -220,8 +239,13 @@ import com.huaweicloud.sdk.dds.v3.model.ShowUpgradeDurationRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowUpgradeDurationResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShrinkInstanceNodesResponse;
+import com.huaweicloud.sdk.dds.v3.model.StopBackupRequest;
+import com.huaweicloud.sdk.dds.v3.model.StopBackupRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchConfigurationRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchConfigurationResponse;
+import com.huaweicloud.sdk.dds.v3.model.SwitchInstancePrimaryRequest;
+import com.huaweicloud.sdk.dds.v3.model.SwitchInstancePrimaryResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSecondLevelMonitoringRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSecondLevelMonitoringResponse;
@@ -247,6 +271,12 @@ import com.huaweicloud.sdk.dds.v3.model.UpdateInstancePortResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateInstanceRemarkRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateInstanceRemarkRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.UpdateInstanceRemarkResponse;
+import com.huaweicloud.sdk.dds.v3.model.UpdateKillOpRuleRequest;
+import com.huaweicloud.sdk.dds.v3.model.UpdateKillOpRuleRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.UpdateKillOpRuleResponse;
+import com.huaweicloud.sdk.dds.v3.model.UpdateLtsConfigRequest;
+import com.huaweicloud.sdk.dds.v3.model.UpdateLtsConfigRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.UpdateLtsConfigResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateNameRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.UpdatePortRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.UpdateReplSetNameRequest;
@@ -743,6 +773,38 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateKillOpRuleRequest, CreateKillOpRuleResponse> createKillOpRule =
+        genForcreateKillOpRule();
+
+    private static HttpRequestDef<CreateKillOpRuleRequest, CreateKillOpRuleResponse> genForcreateKillOpRule() {
+        // basic
+        HttpRequestDef.Builder<CreateKillOpRuleRequest, CreateKillOpRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateKillOpRuleRequest.class, CreateKillOpRuleResponse.class)
+                .withName("CreateKillOpRule")
+                .withUri("/v3/{project_id}/instances/{instance_id}/kill-op-rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateKillOpRuleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateKillOpRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateKillOpRuleRequestBody.class),
+            f -> f.withMarshaller(CreateKillOpRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackup =
         genForcreateManualBackup();
 
@@ -921,6 +983,63 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteKillOpRuleListRequest, DeleteKillOpRuleListResponse> deleteKillOpRuleList =
+        genFordeleteKillOpRuleList();
+
+    private static HttpRequestDef<DeleteKillOpRuleListRequest, DeleteKillOpRuleListResponse> genFordeleteKillOpRuleList() {
+        // basic
+        HttpRequestDef.Builder<DeleteKillOpRuleListRequest, DeleteKillOpRuleListResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteKillOpRuleListRequest.class, DeleteKillOpRuleListResponse.class)
+            .withName("DeleteKillOpRuleList")
+            .withUri("/v3/{project_id}/instances/{instance_id}/kill-op-rule")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKillOpRuleListRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DeleteKillOpRuleListRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteKillOpRuleListRequestBody.class),
+            f -> f.withMarshaller(DeleteKillOpRuleListRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLtsConfigRequest, DeleteLtsConfigResponse> deleteLtsConfig =
+        genFordeleteLtsConfig();
+
+    private static HttpRequestDef<DeleteLtsConfigRequest, DeleteLtsConfigResponse> genFordeleteLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteLtsConfigRequest, DeleteLtsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLtsConfigRequest.class, DeleteLtsConfigResponse.class)
+                .withName("DeleteLtsConfig")
+                .withUri("/v3/{project_id}/instances/logs/lts-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteLtsConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteLtsConfigRequestBody.class),
+            f -> f.withMarshaller(DeleteLtsConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackup =
         genFordeleteManualBackup();
 
@@ -939,6 +1058,38 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteManualBackupRequest::getBackupId, (req, v) -> {
                 req.setBackupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteReadonlyNodeRequest, DeleteReadonlyNodeResponse> deleteReadonlyNode =
+        genFordeleteReadonlyNode();
+
+    private static HttpRequestDef<DeleteReadonlyNodeRequest, DeleteReadonlyNodeResponse> genFordeleteReadonlyNode() {
+        // basic
+        HttpRequestDef.Builder<DeleteReadonlyNodeRequest, DeleteReadonlyNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteReadonlyNodeRequest.class, DeleteReadonlyNodeResponse.class)
+                .withName("DeleteReadonlyNode")
+                .withUri("/v3/{project_id}/instances/{instance_id}/readonly-node")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReadonlyNodeRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<DeleteReadonlyNodeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteReadonlyNodeRequestBody.class),
+            f -> f.withMarshaller(DeleteReadonlyNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1740,6 +1891,70 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListInstancesByTagsRequestBody.class),
             f -> f.withMarshaller(ListInstancesByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLtsConfigsRequest, ListLtsConfigsResponse> listLtsConfigs =
+        genForlistLtsConfigs();
+
+    private static HttpRequestDef<ListLtsConfigsRequest, ListLtsConfigsResponse> genForlistLtsConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListLtsConfigsRequest, ListLtsConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLtsConfigsRequest.class, ListLtsConfigsResponse.class)
+                .withName("ListLtsConfigs")
+                .withUri("/v3/{project_id}/instances/logs/lts-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLtsConfigsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLtsConfigsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLtsErrorLogsRequest, ListLtsErrorLogsResponse> listLtsErrorLogs =
+        genForlistLtsErrorLogs();
+
+    private static HttpRequestDef<ListLtsErrorLogsRequest, ListLtsErrorLogsResponse> genForlistLtsErrorLogs() {
+        // basic
+        HttpRequestDef.Builder<ListLtsErrorLogsRequest, ListLtsErrorLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListLtsErrorLogsRequest.class, ListLtsErrorLogsResponse.class)
+                .withName("ListLtsErrorLogs")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/error-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLtsErrorLogsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListLtsErrorLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListLtsErrorLogsRequestBody.class),
+            f -> f.withMarshaller(ListLtsErrorLogsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -3013,6 +3228,73 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowKillOpRuleRuleListRequest, ShowKillOpRuleRuleListResponse> showKillOpRuleRuleList =
+        genForshowKillOpRuleRuleList();
+
+    private static HttpRequestDef<ShowKillOpRuleRuleListRequest, ShowKillOpRuleRuleListResponse> genForshowKillOpRuleRuleList() {
+        // basic
+        HttpRequestDef.Builder<ShowKillOpRuleRuleListRequest, ShowKillOpRuleRuleListResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowKillOpRuleRuleListRequest.class, ShowKillOpRuleRuleListResponse.class)
+            .withName("ShowKillOpRuleRuleList")
+            .withUri("/v3/{project_id}/instances/{instance_id}/kill-op-rule")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKillOpRuleRuleListRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("operation_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKillOpRuleRuleListRequest::getOperationTypes, (req, v) -> {
+                req.setOperationTypes(v);
+            }));
+        builder.<String>withRequestField("namespaces",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKillOpRuleRuleListRequest::getNamespaces, (req, v) -> {
+                req.setNamespaces(v);
+            }));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKillOpRuleRuleListRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
+        builder.<String>withRequestField("plan_summary",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKillOpRuleRuleListRequest::getPlanSummary, (req, v) -> {
+                req.setPlanSummary(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowKillOpRuleRuleListRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowKillOpRuleRuleListRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
 
     private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
@@ -3232,6 +3514,37 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StopBackupRequest, StopBackupResponse> stopBackup = genForstopBackup();
+
+    private static HttpRequestDef<StopBackupRequest, StopBackupResponse> genForstopBackup() {
+        // basic
+        HttpRequestDef.Builder<StopBackupRequest, StopBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StopBackupRequest.class, StopBackupResponse.class)
+                .withName("StopBackup")
+                .withUri("/v3/{project_id}/backups/{backup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("backup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBackupRequest::getBackupId, (req, v) -> {
+                req.setBackupId(v);
+            }));
+        builder.<StopBackupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StopBackupRequestBody.class),
+            f -> f.withMarshaller(StopBackupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SwitchConfigurationRequest, SwitchConfigurationResponse> switchConfiguration =
         genForswitchConfiguration();
 
@@ -3257,6 +3570,38 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(ApplyConfigurationRequestBody.class),
             f -> f.withMarshaller(SwitchConfigurationRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchInstancePrimaryRequest, SwitchInstancePrimaryResponse> switchInstancePrimary =
+        genForswitchInstancePrimary();
+
+    private static HttpRequestDef<SwitchInstancePrimaryRequest, SwitchInstancePrimaryResponse> genForswitchInstancePrimary() {
+        // basic
+        HttpRequestDef.Builder<SwitchInstancePrimaryRequest, SwitchInstancePrimaryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SwitchInstancePrimaryRequest.class, SwitchInstancePrimaryResponse.class)
+            .withName("SwitchInstancePrimary")
+            .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/primary")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchInstancePrimaryRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchInstancePrimaryRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
             }));
 
         // response
@@ -3587,6 +3932,63 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceRemarkRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceRemarkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKillOpRuleRequest, UpdateKillOpRuleResponse> updateKillOpRule =
+        genForupdateKillOpRule();
+
+    private static HttpRequestDef<UpdateKillOpRuleRequest, UpdateKillOpRuleResponse> genForupdateKillOpRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateKillOpRuleRequest, UpdateKillOpRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateKillOpRuleRequest.class, UpdateKillOpRuleResponse.class)
+                .withName("UpdateKillOpRule")
+                .withUri("/v3/{project_id}/instances/{instance_id}/kill-op-rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKillOpRuleRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateKillOpRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateKillOpRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateKillOpRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLtsConfigRequest, UpdateLtsConfigResponse> updateLtsConfig =
+        genForupdateLtsConfig();
+
+    private static HttpRequestDef<UpdateLtsConfigRequest, UpdateLtsConfigResponse> genForupdateLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateLtsConfigRequest, UpdateLtsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateLtsConfigRequest.class, UpdateLtsConfigResponse.class)
+                .withName("UpdateLtsConfig")
+                .withUri("/v3/{project_id}/instances/logs/lts-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateLtsConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLtsConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateLtsConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

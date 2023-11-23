@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceUserRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
@@ -41,6 +43,8 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
@@ -109,6 +113,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaUserClientQuotaRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaUserClientQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMaintainWindowsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMessagesRequest;
@@ -135,6 +141,8 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateSinkTaskQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
@@ -541,6 +549,37 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 创建客户端流控配置
+     *
+     * 该接口用于向Kafka实例提交创建user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateKafkaUserClientQuotaTaskRequest 请求对象
+     * @return CompletableFuture<CreateKafkaUserClientQuotaTaskResponse>
+     */
+    public CompletableFuture<CreateKafkaUserClientQuotaTaskResponse> createKafkaUserClientQuotaTaskAsync(
+        CreateKafkaUserClientQuotaTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.createKafkaUserClientQuotaTask);
+    }
+
+    /**
+     * 创建客户端流控配置
+     *
+     * 该接口用于向Kafka实例提交创建user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateKafkaUserClientQuotaTaskRequest 请求对象
+     * @return AsyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse>
+     */
+    public AsyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse> createKafkaUserClientQuotaTaskAsyncInvoker(
+        CreateKafkaUserClientQuotaTaskRequest request) {
+        return new AsyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse>(request,
+            KafkaMeta.createKafkaUserClientQuotaTask, hcClient);
+    }
+
+    /**
      * 新增Kafka实例指定Topic分区
      *
      * 新增Kafka实例指定Topic分区。
@@ -751,6 +790,37 @@ public class KafkaAsyncClient {
         DeleteInstanceRequest request) {
         return new AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, KafkaMeta.deleteInstance,
             hcClient);
+    }
+
+    /**
+     * 删除客户端流控设置
+     *
+     * 该接口用于向Kafka实例提交删除user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteKafkaUserClientQuotaTaskRequest 请求对象
+     * @return CompletableFuture<DeleteKafkaUserClientQuotaTaskResponse>
+     */
+    public CompletableFuture<DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTaskAsync(
+        DeleteKafkaUserClientQuotaTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.deleteKafkaUserClientQuotaTask);
+    }
+
+    /**
+     * 删除客户端流控设置
+     *
+     * 该接口用于向Kafka实例提交删除user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteKafkaUserClientQuotaTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse>
+     */
+    public AsyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTaskAsyncInvoker(
+        DeleteKafkaUserClientQuotaTaskRequest request) {
+        return new AsyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse>(request,
+            KafkaMeta.deleteKafkaUserClientQuotaTask, hcClient);
     }
 
     /**
@@ -1800,6 +1870,37 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 查询客户端流控配置
+     *
+     * 该接口用于向Kafka实例查询流控的配置，若成功则返回流控配置的列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowKafkaUserClientQuotaRequest 请求对象
+     * @return CompletableFuture<ShowKafkaUserClientQuotaResponse>
+     */
+    public CompletableFuture<ShowKafkaUserClientQuotaResponse> showKafkaUserClientQuotaAsync(
+        ShowKafkaUserClientQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaUserClientQuota);
+    }
+
+    /**
+     * 查询客户端流控配置
+     *
+     * 该接口用于向Kafka实例查询流控的配置，若成功则返回流控配置的列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowKafkaUserClientQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse>
+     */
+    public AsyncInvoker<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse> showKafkaUserClientQuotaAsyncInvoker(
+        ShowKafkaUserClientQuotaRequest request) {
+        return new AsyncInvoker<ShowKafkaUserClientQuotaRequest, ShowKafkaUserClientQuotaResponse>(request,
+            KafkaMeta.showKafkaUserClientQuota, hcClient);
+    }
+
+    /**
      * 查询维护时间窗时间段
      *
      * 查询维护时间窗开始时间和结束时间。
@@ -2197,6 +2298,37 @@ public class KafkaAsyncClient {
         UpdateInstanceUserRequest request) {
         return new AsyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse>(request,
             KafkaMeta.updateInstanceUser, hcClient);
+    }
+
+    /**
+     * 修改客户端流控设置
+     *
+     * 该接口用于向Kafka实例提交修改user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateKafkaUserClientQuotaTaskRequest 请求对象
+     * @return CompletableFuture<UpdateKafkaUserClientQuotaTaskResponse>
+     */
+    public CompletableFuture<UpdateKafkaUserClientQuotaTaskResponse> updateKafkaUserClientQuotaTaskAsync(
+        UpdateKafkaUserClientQuotaTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateKafkaUserClientQuotaTask);
+    }
+
+    /**
+     * 修改客户端流控设置
+     *
+     * 该接口用于向Kafka实例提交修改user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateKafkaUserClientQuotaTaskRequest 请求对象
+     * @return AsyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse>
+     */
+    public AsyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse> updateKafkaUserClientQuotaTaskAsyncInvoker(
+        UpdateKafkaUserClientQuotaTaskRequest request) {
+        return new AsyncInvoker<UpdateKafkaUserClientQuotaTaskRequest, UpdateKafkaUserClientQuotaTaskResponse>(request,
+            KafkaMeta.updateKafkaUserClientQuotaTask, hcClient);
     }
 
     /**

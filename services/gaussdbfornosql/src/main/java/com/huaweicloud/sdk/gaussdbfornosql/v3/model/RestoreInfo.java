@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 支持按指定备份文件恢复和按指定时间点恢复。 其中按指定时间点恢复仅支持GaussDB(for Cassandra)和GaussDB(for Influx)。
+ * 支持按指定备份文件恢复和按指定时间点恢复。 其中按指定时间点恢复仅支持GeminiDB Cassandra和GeminiDB Influx。
  */
 public class RestoreInfo {
 

@@ -171,6 +171,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCoun
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
@@ -2722,6 +2724,36 @@ public class GaussDBClient {
         ShowIntelligentDiagnosisInstanceInfosPerMetricRequest request) {
         return new SyncInvoker<ShowIntelligentDiagnosisInstanceInfosPerMetricRequest, ShowIntelligentDiagnosisInstanceInfosPerMetricResponse>(
             request, GaussDBMeta.showIntelligentDiagnosisInstanceInfosPerMetric, hcClient);
+    }
+
+    /**
+     * 查询表级时间点恢复可选表
+     *
+     * 查询表级时间点恢复可选表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRestoreTablesRequest 请求对象
+     * @return ShowRestoreTablesResponse
+     */
+    public ShowRestoreTablesResponse showRestoreTables(ShowRestoreTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showRestoreTables);
+    }
+
+    /**
+     * 查询表级时间点恢复可选表
+     *
+     * 查询表级时间点恢复可选表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRestoreTablesRequest 请求对象
+     * @return SyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse>
+     */
+    public SyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTablesInvoker(
+        ShowRestoreTablesRequest request) {
+        return new SyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse>(request,
+            GaussDBMeta.showRestoreTables, hcClient);
     }
 
     /**

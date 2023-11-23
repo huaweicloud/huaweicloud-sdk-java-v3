@@ -13,9 +13,12 @@ import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteFunctionTriggersReq
 import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteFunctionTriggersResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteWorkflowsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteWorkflowsResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.CallbackWorkflowRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.CancelAsyncInvocationRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CancelAsyncInvocationRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.CancelAsyncInvocationResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.CreateCallbackWorkflowRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.CreateCallbackWorkflowResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyResponse;
@@ -24,6 +27,9 @@ import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyVersionRespons
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateEventRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateEventRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateEventResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionAppRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionAppRequestBody;
+import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionAppResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateFunctionResponse;
@@ -49,6 +55,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyVersionRequest
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteEventRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteEventResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionAppRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionAppResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionAsyncInvokeConfigRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionAsyncInvokeConfigResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteFunctionRequest;
@@ -75,6 +83,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.InvokeFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.InvokeFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListActiveAsyncInvocationsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListActiveAsyncInvocationsResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListAppTemplatesRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListAppTemplatesResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListAsyncInvocationsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListAsyncInvocationsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListBridgeFunctionsRequest;
@@ -88,6 +98,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ListDependencyVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListEnterpriseResourceRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListEventsRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListEventsResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionApplicationsRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionApplicationsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionAsMetricRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionAsMetricResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ListFunctionAsyncInvokeConfigRequest;
@@ -124,6 +136,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ListWorkflowResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.RetryWorkFlowRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.RetryWorkFlowResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ServiceBridgeVersion;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowAppTemplateRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowAppTemplateResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependcyRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependcyResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependencyVersionRequest;
@@ -134,6 +148,8 @@ import com.huaweicloud.sdk.functiongraph.v2.model.ShowFuncReservedInstanceMetric
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFuncReservedInstanceMetricsResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFuncSnapshotStateRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFuncSnapshotStateResponse;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionAppRequest;
+import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionAppResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionAsyncInvokeConfigRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionAsyncInvokeConfigResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowFunctionCodeRequest;
@@ -379,6 +395,52 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCallbackWorkflowRequest, CreateCallbackWorkflowResponse> createCallbackWorkflow =
+        genForcreateCallbackWorkflow();
+
+    private static HttpRequestDef<CreateCallbackWorkflowRequest, CreateCallbackWorkflowResponse> genForcreateCallbackWorkflow() {
+        // basic
+        HttpRequestDef.Builder<CreateCallbackWorkflowRequest, CreateCallbackWorkflowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateCallbackWorkflowRequest.class, CreateCallbackWorkflowResponse.class)
+            .withName("CreateCallbackWorkflow")
+            .withUri("/v2/{project_id}/fgs/workflows/{workflow_id}/callback")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCallbackWorkflowRequest::getWorkflowId, (req, v) -> {
+                req.setWorkflowId(v);
+            }));
+        builder.<String>withRequestField("X-Workflow-Run-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCallbackWorkflowRequest::getXWorkflowRunId, (req, v) -> {
+                req.setXWorkflowRunId(v);
+            }));
+        builder.<String>withRequestField("X-Workflow-State-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCallbackWorkflowRequest::getXWorkflowStateId, (req, v) -> {
+                req.setXWorkflowStateId(v);
+            }));
+        builder.<CallbackWorkflowRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CallbackWorkflowRequestBody.class),
+            f -> f.withMarshaller(CreateCallbackWorkflowRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDependencyRequest, CreateDependencyResponse> createDependency =
         genForcreateDependency();
 
@@ -477,6 +539,31 @@ public class FunctionGraphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFunctionRequestBody.class),
             f -> f.withMarshaller(CreateFunctionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFunctionAppRequest, CreateFunctionAppResponse> createFunctionApp =
+        genForcreateFunctionApp();
+
+    private static HttpRequestDef<CreateFunctionAppRequest, CreateFunctionAppResponse> genForcreateFunctionApp() {
+        // basic
+        HttpRequestDef.Builder<CreateFunctionAppRequest, CreateFunctionAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFunctionAppRequest.class, CreateFunctionAppResponse.class)
+                .withName("CreateFunctionApp")
+                .withUri("/v2/{project_id}/fgs/applications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateFunctionAppRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFunctionAppRequestBody.class),
+            f -> f.withMarshaller(CreateFunctionAppRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -775,6 +862,31 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteFunctionRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFunctionAppRequest, DeleteFunctionAppResponse> deleteFunctionApp =
+        genFordeleteFunctionApp();
+
+    private static HttpRequestDef<DeleteFunctionAppRequest, DeleteFunctionAppResponse> genFordeleteFunctionApp() {
+        // basic
+        HttpRequestDef.Builder<DeleteFunctionAppRequest, DeleteFunctionAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFunctionAppRequest.class, DeleteFunctionAppResponse.class)
+                .withName("DeleteFunctionApp")
+                .withUri("/v2/{project_id}/fgs/applications/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFunctionAppRequest::getId, (req, v) -> {
+                req.setId(v);
             }));
 
         // response
@@ -1179,6 +1291,59 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAppTemplatesRequest, ListAppTemplatesResponse> listAppTemplates =
+        genForlistAppTemplates();
+
+    private static HttpRequestDef<ListAppTemplatesRequest, ListAppTemplatesResponse> genForlistAppTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListAppTemplatesRequest, ListAppTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAppTemplatesRequest.class, ListAppTemplatesResponse.class)
+                .withName("ListAppTemplates")
+                .withUri("/v2/{project_id}/fgs/application/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppTemplatesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("maxitems",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppTemplatesRequest::getMaxitems, (req, v) -> {
+                req.setMaxitems(v);
+            }));
+        builder.<String>withRequestField("runtime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppTemplatesRequest::getRuntime, (req, v) -> {
+                req.setRuntime(v);
+            }));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppTemplatesRequest::getCategory, (req, v) -> {
+                req.setCategory(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppTemplatesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAsyncInvocationsRequest, ListAsyncInvocationsResponse> listAsyncInvocations =
         genForlistAsyncInvocations();
 
@@ -1441,6 +1606,25 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ListEventsRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFunctionApplicationsRequest, ListFunctionApplicationsResponse> listFunctionApplications =
+        genForlistFunctionApplications();
+
+    private static HttpRequestDef<ListFunctionApplicationsRequest, ListFunctionApplicationsResponse> genForlistFunctionApplications() {
+        // basic
+        HttpRequestDef.Builder<ListFunctionApplicationsRequest, ListFunctionApplicationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListFunctionApplicationsRequest.class, ListFunctionApplicationsResponse.class)
+                .withName("ListFunctionApplications")
+                .withUri("/v2/{project_id}/fgs/applications")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -2078,6 +2262,31 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAppTemplateRequest, ShowAppTemplateResponse> showAppTemplate =
+        genForshowAppTemplate();
+
+    private static HttpRequestDef<ShowAppTemplateRequest, ShowAppTemplateResponse> genForshowAppTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowAppTemplateRequest, ShowAppTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAppTemplateRequest.class, ShowAppTemplateResponse.class)
+                .withName("ShowAppTemplate")
+                .withUri("/v2/{project_id}/fgs/application/templates/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppTemplateRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDependcyRequest, ShowDependcyResponse> showDependcy = genForshowDependcy();
 
     private static HttpRequestDef<ShowDependcyRequest, ShowDependcyResponse> genForshowDependcy() {
@@ -2218,6 +2427,31 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(ShowFuncSnapshotStateRequest.ActionEnum.class),
             f -> f.withMarshaller(ShowFuncSnapshotStateRequest::getAction, (req, v) -> {
                 req.setAction(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFunctionAppRequest, ShowFunctionAppResponse> showFunctionApp =
+        genForshowFunctionApp();
+
+    private static HttpRequestDef<ShowFunctionAppRequest, ShowFunctionAppResponse> genForshowFunctionApp() {
+        // basic
+        HttpRequestDef.Builder<ShowFunctionAppRequest, ShowFunctionAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFunctionAppRequest.class, ShowFunctionAppResponse.class)
+                .withName("ShowFunctionApp")
+                .withUri("/v2/{project_id}/fgs/applications/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFunctionAppRequest::getId, (req, v) -> {
+                req.setId(v);
             }));
 
         // response

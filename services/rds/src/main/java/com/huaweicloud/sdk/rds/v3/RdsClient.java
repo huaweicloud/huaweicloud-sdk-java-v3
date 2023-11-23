@@ -135,6 +135,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
@@ -203,6 +205,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerRequest;
@@ -263,6 +267,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyRequest;
@@ -293,6 +299,10 @@ import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartFailoverRequest;
@@ -345,6 +355,12 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
@@ -1459,6 +1475,36 @@ public class RdsClient {
     }
 
     /**
+     * 
+     *
+     * 查询实例大版本升级检查历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInspectionHistoriesRequest 请求对象
+     * @return ListInspectionHistoriesResponse
+     */
+    public ListInspectionHistoriesResponse listInspectionHistories(ListInspectionHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listInspectionHistories);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例大版本升级检查历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInspectionHistoriesRequest 请求对象
+     * @return SyncInvoker<ListInspectionHistoriesRequest, ListInspectionHistoriesResponse>
+     */
+    public SyncInvoker<ListInspectionHistoriesRequest, ListInspectionHistoriesResponse> listInspectionHistoriesInvoker(
+        ListInspectionHistoriesRequest request) {
+        return new SyncInvoker<ListInspectionHistoriesRequest, ListInspectionHistoriesResponse>(request,
+            RdsMeta.listInspectionHistories, hcClient);
+    }
+
+    /**
      * 获取诊断后的实例数量
      *
      * 获取诊断后的实例数量
@@ -2276,6 +2322,36 @@ public class RdsClient {
     }
 
     /**
+     * 
+     *
+     * 查询实例大版本升级历史信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpgradeHistoriesRequest 请求对象
+     * @return ListUpgradeHistoriesResponse
+     */
+    public ListUpgradeHistoriesResponse listUpgradeHistories(ListUpgradeHistoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listUpgradeHistories);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例大版本升级历史信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUpgradeHistoriesRequest 请求对象
+     * @return SyncInvoker<ListUpgradeHistoriesRequest, ListUpgradeHistoriesResponse>
+     */
+    public SyncInvoker<ListUpgradeHistoriesRequest, ListUpgradeHistoriesResponse> listUpgradeHistoriesInvoker(
+        ListUpgradeHistoriesRequest request) {
+        return new SyncInvoker<ListUpgradeHistoriesRequest, ListUpgradeHistoriesResponse>(request,
+            RdsMeta.listUpgradeHistories, hcClient);
+    }
+
+    /**
      * 查询扩展日志文件列表
      *
      * 查询扩展日志文件列表。
@@ -2824,6 +2900,36 @@ public class RdsClient {
     }
 
     /**
+     * 
+     *
+     * 查询实例可升级的目标版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAvailableVersionRequest 请求对象
+     * @return ShowAvailableVersionResponse
+     */
+    public ShowAvailableVersionResponse showAvailableVersion(ShowAvailableVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showAvailableVersion);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例可升级的目标版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAvailableVersionRequest 请求对象
+     * @return SyncInvoker<ShowAvailableVersionRequest, ShowAvailableVersionResponse>
+     */
+    public SyncInvoker<ShowAvailableVersionRequest, ShowAvailableVersionResponse> showAvailableVersionInvoker(
+        ShowAvailableVersionRequest request) {
+        return new SyncInvoker<ShowAvailableVersionRequest, ShowAvailableVersionResponse>(request,
+            RdsMeta.showAvailableVersion, hcClient);
+    }
+
+    /**
      * 获取备份下载链接
      *
      * 获取备份下载链接。
@@ -3207,6 +3313,65 @@ public class RdsClient {
         ShowSecondLevelMonitoringRequest request) {
         return new SyncInvoker<ShowSecondLevelMonitoringRequest, ShowSecondLevelMonitoringResponse>(request,
             RdsMeta.showSecondLevelMonitoring, hcClient);
+    }
+
+    /**
+     * 根据实例id查询sqlserver TDE状态
+     *
+     * 根据实例id查询sqlserver TDE状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTdeStatusRequest 请求对象
+     * @return ShowTdeStatusResponse
+     */
+    public ShowTdeStatusResponse showTdeStatus(ShowTdeStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showTdeStatus);
+    }
+
+    /**
+     * 根据实例id查询sqlserver TDE状态
+     *
+     * 根据实例id查询sqlserver TDE状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTdeStatusRequest 请求对象
+     * @return SyncInvoker<ShowTdeStatusRequest, ShowTdeStatusResponse>
+     */
+    public SyncInvoker<ShowTdeStatusRequest, ShowTdeStatusResponse> showTdeStatusInvoker(ShowTdeStatusRequest request) {
+        return new SyncInvoker<ShowTdeStatusRequest, ShowTdeStatusResponse>(request, RdsMeta.showTdeStatus, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 查询大版本检查状态或升级状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUpgradeDbMajorVersionStatusRequest 请求对象
+     * @return ShowUpgradeDbMajorVersionStatusResponse
+     */
+    public ShowUpgradeDbMajorVersionStatusResponse showUpgradeDbMajorVersionStatus(
+        ShowUpgradeDbMajorVersionStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showUpgradeDbMajorVersionStatus);
+    }
+
+    /**
+     * 
+     *
+     * 查询大版本检查状态或升级状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUpgradeDbMajorVersionStatusRequest 请求对象
+     * @return SyncInvoker<ShowUpgradeDbMajorVersionStatusRequest, ShowUpgradeDbMajorVersionStatusResponse>
+     */
+    public SyncInvoker<ShowUpgradeDbMajorVersionStatusRequest, ShowUpgradeDbMajorVersionStatusResponse> showUpgradeDbMajorVersionStatusInvoker(
+        ShowUpgradeDbMajorVersionStatusRequest request) {
+        return new SyncInvoker<ShowUpgradeDbMajorVersionStatusRequest, ShowUpgradeDbMajorVersionStatusResponse>(request,
+            RdsMeta.showUpgradeDbMajorVersionStatus, hcClient);
     }
 
     /**
@@ -3709,6 +3874,97 @@ public class RdsClient {
         UpdatePostgresqlInstanceAliasRequest request) {
         return new SyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>(request,
             RdsMeta.updatePostgresqlInstanceAlias, hcClient);
+    }
+
+    /**
+     * sqlserverTDE开关
+     *
+     * sqlserverTDE开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTdeStatusRequest 请求对象
+     * @return UpdateTdeStatusResponse
+     */
+    public UpdateTdeStatusResponse updateTdeStatus(UpdateTdeStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.updateTdeStatus);
+    }
+
+    /**
+     * sqlserverTDE开关
+     *
+     * sqlserverTDE开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateTdeStatusRequest 请求对象
+     * @return SyncInvoker<UpdateTdeStatusRequest, UpdateTdeStatusResponse>
+     */
+    public SyncInvoker<UpdateTdeStatusRequest, UpdateTdeStatusResponse> updateTdeStatusInvoker(
+        UpdateTdeStatusRequest request) {
+        return new SyncInvoker<UpdateTdeStatusRequest, UpdateTdeStatusResponse>(request, RdsMeta.updateTdeStatus,
+            hcClient);
+    }
+
+    /**
+     * 
+     *
+     * PostgreSQL数据库升级大版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeDbMajorVersionRequest 请求对象
+     * @return UpgradeDbMajorVersionResponse
+     */
+    public UpgradeDbMajorVersionResponse upgradeDbMajorVersion(UpgradeDbMajorVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.upgradeDbMajorVersion);
+    }
+
+    /**
+     * 
+     *
+     * PostgreSQL数据库升级大版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeDbMajorVersionRequest 请求对象
+     * @return SyncInvoker<UpgradeDbMajorVersionRequest, UpgradeDbMajorVersionResponse>
+     */
+    public SyncInvoker<UpgradeDbMajorVersionRequest, UpgradeDbMajorVersionResponse> upgradeDbMajorVersionInvoker(
+        UpgradeDbMajorVersionRequest request) {
+        return new SyncInvoker<UpgradeDbMajorVersionRequest, UpgradeDbMajorVersionResponse>(request,
+            RdsMeta.upgradeDbMajorVersion, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 大版本升级前进行升级检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeDbMajorVersionPreCheckRequest 请求对象
+     * @return UpgradeDbMajorVersionPreCheckResponse
+     */
+    public UpgradeDbMajorVersionPreCheckResponse upgradeDbMajorVersionPreCheck(
+        UpgradeDbMajorVersionPreCheckRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.upgradeDbMajorVersionPreCheck);
+    }
+
+    /**
+     * 
+     *
+     * 大版本升级前进行升级检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpgradeDbMajorVersionPreCheckRequest 请求对象
+     * @return SyncInvoker<UpgradeDbMajorVersionPreCheckRequest, UpgradeDbMajorVersionPreCheckResponse>
+     */
+    public SyncInvoker<UpgradeDbMajorVersionPreCheckRequest, UpgradeDbMajorVersionPreCheckResponse> upgradeDbMajorVersionPreCheckInvoker(
+        UpgradeDbMajorVersionPreCheckRequest request) {
+        return new SyncInvoker<UpgradeDbMajorVersionPreCheckRequest, UpgradeDbMajorVersionPreCheckResponse>(request,
+            RdsMeta.upgradeDbMajorVersionPreCheck, hcClient);
     }
 
     /**

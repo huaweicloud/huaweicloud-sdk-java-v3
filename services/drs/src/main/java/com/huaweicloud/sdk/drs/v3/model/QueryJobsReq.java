@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -528,6 +530,16 @@ public class QueryJobsReq {
 
     private Map<String, String> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_ids")
+
+    private List<String> instanceIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_ip")
+
+    private String instanceIp;
+
     public QueryJobsReq withCurPage(Integer curPage) {
         this.curPage = curPage;
         return this;
@@ -716,6 +728,56 @@ public class QueryJobsReq {
         this.tags = tags;
     }
 
+    public QueryJobsReq withInstanceIds(List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+        return this;
+    }
+
+    public QueryJobsReq addInstanceIdsItem(String instanceIdsItem) {
+        if (this.instanceIds == null) {
+            this.instanceIds = new ArrayList<>();
+        }
+        this.instanceIds.add(instanceIdsItem);
+        return this;
+    }
+
+    public QueryJobsReq withInstanceIds(Consumer<List<String>> instanceIdsSetter) {
+        if (this.instanceIds == null) {
+            this.instanceIds = new ArrayList<>();
+        }
+        instanceIdsSetter.accept(this.instanceIds);
+        return this;
+    }
+
+    /**
+     * 数据库实例ID列表，最多支持10个
+     * @return instanceIds
+     */
+    public List<String> getInstanceIds() {
+        return instanceIds;
+    }
+
+    public void setInstanceIds(List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+    }
+
+    public QueryJobsReq withInstanceIp(String instanceIp) {
+        this.instanceIp = instanceIp;
+        return this;
+    }
+
+    /**
+     * DRS绑定数据库实例IP
+     * @return instanceIp
+     */
+    public String getInstanceIp() {
+        return instanceIp;
+    }
+
+    public void setInstanceIp(String instanceIp) {
+        this.instanceIp = instanceIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -730,7 +792,8 @@ public class QueryJobsReq {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.netType, that.netType)
             && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.instanceIds, that.instanceIds)
+            && Objects.equals(this.instanceIp, that.instanceIp);
     }
 
     @Override
@@ -744,7 +807,9 @@ public class QueryJobsReq {
             netType,
             serviceName,
             status,
-            tags);
+            tags,
+            instanceIds,
+            instanceIp);
     }
 
     @Override
@@ -761,6 +826,8 @@ public class QueryJobsReq {
         sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    instanceIds: ").append(toIndentedString(instanceIds)).append("\n");
+        sb.append("    instanceIp: ").append(toIndentedString(instanceIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

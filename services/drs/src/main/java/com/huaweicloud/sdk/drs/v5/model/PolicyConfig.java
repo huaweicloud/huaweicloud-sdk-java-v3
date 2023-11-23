@@ -377,6 +377,11 @@ public class PolicyConfig {
 
     private String incrementReadMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dml_types")
+
+    private String dmlTypes;
+
     public PolicyConfig withFilterDdlPolicy(FilterDdlPolicyEnum filterDdlPolicy) {
         this.filterDdlPolicy = filterDdlPolicy;
         return this;
@@ -513,6 +518,23 @@ public class PolicyConfig {
         this.incrementReadMode = incrementReadMode;
     }
 
+    public PolicyConfig withDmlTypes(String dmlTypes) {
+        this.dmlTypes = dmlTypes;
+        return this;
+    }
+
+    /**
+     * DML同步类型。
+     * @return dmlTypes
+     */
+    public String getDmlTypes() {
+        return dmlTypes;
+    }
+
+    public void setDmlTypes(String dmlTypes) {
+        this.dmlTypes = dmlTypes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -528,7 +550,8 @@ public class PolicyConfig {
             && Objects.equals(this.dataSyncTopologyType, that.dataSyncTopologyType)
             && Objects.equals(this.supportDdlInfo, that.supportDdlInfo)
             && Objects.equals(this.syncTypePolicy, that.syncTypePolicy)
-            && Objects.equals(this.incrementReadMode, that.incrementReadMode);
+            && Objects.equals(this.incrementReadMode, that.incrementReadMode)
+            && Objects.equals(this.dmlTypes, that.dmlTypes);
     }
 
     @Override
@@ -540,7 +563,8 @@ public class PolicyConfig {
             dataSyncTopologyType,
             supportDdlInfo,
             syncTypePolicy,
-            incrementReadMode);
+            incrementReadMode,
+            dmlTypes);
     }
 
     @Override
@@ -555,6 +579,7 @@ public class PolicyConfig {
         sb.append("    supportDdlInfo: ").append(toIndentedString(supportDdlInfo)).append("\n");
         sb.append("    syncTypePolicy: ").append(toIndentedString(syncTypePolicy)).append("\n");
         sb.append("    incrementReadMode: ").append(toIndentedString(incrementReadMode)).append("\n");
+        sb.append("    dmlTypes: ").append(toIndentedString(dmlTypes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

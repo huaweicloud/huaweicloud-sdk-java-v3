@@ -29,12 +29,12 @@ public class EngineSimpleInfo {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterpris_project_id")
+    @JsonProperty(value = "enterpriseProjectId")
 
-    private String enterprisProjectId;
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_name")
+    @JsonProperty(value = "enterpriseProjectName")
 
     private String enterpriseProjectName;
 
@@ -281,7 +281,7 @@ public class EngineSimpleInfo {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auth_type")
+    @JsonProperty(value = "authType")
 
     private AuthTypeEnum authType;
 
@@ -421,37 +421,37 @@ public class EngineSimpleInfo {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "external_address")
+    @JsonProperty(value = "externalAddress")
 
     private String externalAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "service_endpoint")
+    @JsonProperty(value = "serviceEndpoint")
 
     private Map<String, EntrypointItem> serviceEndpoint = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_address")
+    @JsonProperty(value = "publicAddress")
 
     private String publicAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_service_endpoint")
+    @JsonProperty(value = "publicServiceEndpoint")
 
     private Map<String, EntrypointItem> publicServiceEndpoint = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total_instance")
+    @JsonProperty(value = "totalInstance")
 
     private Integer totalInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "used_instance")
+    @JsonProperty(value = "usedInstance")
 
     private Integer usedInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "available_instance")
+    @JsonProperty(value = "availableInstance")
 
     private Integer availableInstance;
 
@@ -461,22 +461,22 @@ public class EngineSimpleInfo {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "latest_version")
+    @JsonProperty(value = "latestVersion")
 
     private String latestVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
+    @JsonProperty(value = "createTime")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "due_to")
+    @JsonProperty(value = "dueTo")
 
     private Long dueTo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "latest_job_id")
+    @JsonProperty(value = "latestJobId")
 
     private Integer latestJobId;
 
@@ -564,7 +564,7 @@ public class EngineSimpleInfo {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "engine_additional_actions")
+    @JsonProperty(value = "engineAdditionalActions")
 
     private List<EngineAdditionalActionsEnum> engineAdditionalActions = null;
 
@@ -645,7 +645,7 @@ public class EngineSimpleInfo {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "spec_type")
+    @JsonProperty(value = "specType")
 
     private SpecTypeEnum specType;
 
@@ -688,21 +688,21 @@ public class EngineSimpleInfo {
         this.name = name;
     }
 
-    public EngineSimpleInfo withEnterprisProjectId(String enterprisProjectId) {
-        this.enterprisProjectId = enterprisProjectId;
+    public EngineSimpleInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
      * 微服务引擎专享版所属企业项目ID
-     * @return enterprisProjectId
+     * @return enterpriseProjectId
      */
-    public String getEnterprisProjectId() {
-        return enterprisProjectId;
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
     }
 
-    public void setEnterprisProjectId(String enterprisProjectId) {
-        this.enterprisProjectId = enterprisProjectId;
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public EngineSimpleInfo withEnterpriseProjectName(String enterpriseProjectName) {
@@ -1148,7 +1148,7 @@ public class EngineSimpleInfo {
         }
         EngineSimpleInfo that = (EngineSimpleInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.enterprisProjectId, that.enterprisProjectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
             && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.payment, that.payment)
@@ -1171,7 +1171,7 @@ public class EngineSimpleInfo {
     public int hashCode() {
         return Objects.hash(id,
             name,
-            enterprisProjectId,
+            enterpriseProjectId,
             enterpriseProjectName,
             type,
             description,
@@ -1202,7 +1202,7 @@ public class EngineSimpleInfo {
         sb.append("class EngineSimpleInfo {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    enterprisProjectId: ").append(toIndentedString(enterprisProjectId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

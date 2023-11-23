@@ -40,6 +40,9 @@ import com.huaweicloud.sdk.drs.v5.model.CopyJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.DataProcessReq;
+import com.huaweicloud.sdk.drs.v5.model.DeleteDriverReq;
+import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverRequest;
+import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.DownloadBatchCreateTemplateRequest;
@@ -60,6 +63,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListLinksRequest;
@@ -122,10 +127,13 @@ import com.huaweicloud.sdk.drs.v5.model.SingleUpdateJobReq;
 import com.huaweicloud.sdk.drs.v5.model.StopJobActionReq;
 import com.huaweicloud.sdk.drs.v5.model.StopJobActionRequest;
 import com.huaweicloud.sdk.drs.v5.model.StopJobActionResponse;
+import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverRequest;
+import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressResponse;
+import com.huaweicloud.sdk.drs.v5.model.UpdateDriverReq;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateStartPositionRequest;
@@ -133,6 +141,9 @@ import com.huaweicloud.sdk.drs.v5.model.UpdateStartPositionResponse;
 import com.huaweicloud.sdk.drs.v5.model.UploadDbObjectTemplateRequest;
 import com.huaweicloud.sdk.drs.v5.model.UploadDbObjectTemplateRequestBody;
 import com.huaweicloud.sdk.drs.v5.model.UploadDbObjectTemplateResponse;
+import com.huaweicloud.sdk.drs.v5.model.UploadJdbcDriverRequest;
+import com.huaweicloud.sdk.drs.v5.model.UploadJdbcDriverRequestBody;
+import com.huaweicloud.sdk.drs.v5.model.UploadJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.ValidateJobNameRequest;
 import com.huaweicloud.sdk.drs.v5.model.ValidateJobNameResponse;
 
@@ -632,6 +643,38 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteJdbcDriverRequest, DeleteJdbcDriverResponse> deleteJdbcDriver =
+        genFordeleteJdbcDriver();
+
+    private static HttpRequestDef<DeleteJdbcDriverRequest, DeleteJdbcDriverResponse> genFordeleteJdbcDriver() {
+        // basic
+        HttpRequestDef.Builder<DeleteJdbcDriverRequest, DeleteJdbcDriverResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteJdbcDriverRequest.class, DeleteJdbcDriverResponse.class)
+                .withName("DeleteJdbcDriver")
+                .withUri("/v5/{project_id}/jdbc-drivers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteJdbcDriverRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteJdbcDriverRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteJdbcDriverRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<DeleteDriverReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDriverReq.class),
+            f -> f.withMarshaller(DeleteJdbcDriverRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genFordeleteJob();
 
     private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genFordeleteJob() {
@@ -1020,6 +1063,45 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDbObjectsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListDbObjectsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJdbcDriversRequest, ListJdbcDriversResponse> listJdbcDrivers =
+        genForlistJdbcDrivers();
+
+    private static HttpRequestDef<ListJdbcDriversRequest, ListJdbcDriversResponse> genForlistJdbcDrivers() {
+        // basic
+        HttpRequestDef.Builder<ListJdbcDriversRequest, ListJdbcDriversResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJdbcDriversRequest.class, ListJdbcDriversResponse.class)
+                .withName("ListJdbcDrivers")
+                .withUri("/v5/{project_id}/jdbc-drivers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJdbcDriversRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJdbcDriversRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ListJdbcDriversRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListJdbcDriversRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListJdbcDriversRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -2285,6 +2367,45 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SyncJdbcDriverRequest, SyncJdbcDriverResponse> syncJdbcDriver =
+        genForsyncJdbcDriver();
+
+    private static HttpRequestDef<SyncJdbcDriverRequest, SyncJdbcDriverResponse> genForsyncJdbcDriver() {
+        // basic
+        HttpRequestDef.Builder<SyncJdbcDriverRequest, SyncJdbcDriverResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SyncJdbcDriverRequest.class, SyncJdbcDriverResponse.class)
+                .withName("SyncJdbcDriver")
+                .withUri("/v5/{project_id}/jobs/{job_id}/update-jdbc-driver")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncJdbcDriverRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+        builder.<SyncJdbcDriverRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SyncJdbcDriverRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SyncJdbcDriverRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<UpdateDriverReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDriverReq.class),
+            f -> f.withMarshaller(SyncJdbcDriverRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateBatchAsyncJobsRequest, UpdateBatchAsyncJobsResponse> updateBatchAsyncJobs =
         genForupdateBatchAsyncJobs();
 
@@ -2478,6 +2599,38 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadDbObjectTemplateRequestBody.class),
             f -> f.withMarshaller(UploadDbObjectTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadJdbcDriverRequest, UploadJdbcDriverResponse> uploadJdbcDriver =
+        genForuploadJdbcDriver();
+
+    private static HttpRequestDef<UploadJdbcDriverRequest, UploadJdbcDriverResponse> genForuploadJdbcDriver() {
+        // basic
+        HttpRequestDef.Builder<UploadJdbcDriverRequest, UploadJdbcDriverResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadJdbcDriverRequest.class, UploadJdbcDriverResponse.class)
+                .withName("UploadJdbcDriver")
+                .withUri("/v5/{project_id}/jdbc-driver")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<UploadJdbcDriverRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UploadJdbcDriverRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UploadJdbcDriverRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<UploadJdbcDriverRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadJdbcDriverRequestBody.class),
+            f -> f.withMarshaller(UploadJdbcDriverRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

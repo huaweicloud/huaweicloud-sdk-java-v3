@@ -27,6 +27,13 @@ public class Domains {
 
     private String createTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "CertificateId")
+
+    @JacksonXmlProperty(localName = "CertificateId")
+
+    private String certificateId;
+
     public Domains withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -61,6 +68,23 @@ public class Domains {
         this.createTime = createTime;
     }
 
+    public Domains withCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+        return this;
+    }
+
+    /**
+     * 自定义域名证书ID。 
+     * @return certificateId
+     */
+    public String getCertificateId() {
+        return certificateId;
+    }
+
+    public void setCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -70,12 +94,13 @@ public class Domains {
             return false;
         }
         Domains that = (Domains) obj;
-        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.createTime, that.createTime);
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.certificateId, that.certificateId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainName, createTime);
+        return Objects.hash(domainName, createTime, certificateId);
     }
 
     @Override
@@ -84,6 +109,7 @@ public class Domains {
         sb.append("class Domains {\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

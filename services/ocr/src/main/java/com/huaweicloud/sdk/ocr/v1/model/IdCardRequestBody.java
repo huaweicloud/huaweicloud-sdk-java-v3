@@ -45,6 +45,11 @@ public class IdCardRequestBody {
 
     private Boolean detectCopy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_portrait_location")
+
+    private Boolean returnPortraitLocation;
+
     public IdCardRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -153,7 +158,7 @@ public class IdCardRequestBody {
     }
 
     /**
-     * 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否是复印件  - false : 不返回身份证图像是否是复印件             
+     * 返回判断身份证图像是否是黑白复印件的开关，默认false，可选值如下所示：  - true ：返回身份证图像是否是复印件  - false : 不返回身份证图像是否是复印件 
      * @return detectCopy
      */
     public Boolean getDetectCopy() {
@@ -162,6 +167,23 @@ public class IdCardRequestBody {
 
     public void setDetectCopy(Boolean detectCopy) {
         this.detectCopy = detectCopy;
+    }
+
+    public IdCardRequestBody withReturnPortraitLocation(Boolean returnPortraitLocation) {
+        this.returnPortraitLocation = returnPortraitLocation;
+        return this;
+    }
+
+    /**
+     * 返回头像位置信息的开关，默认false，可选值如下所示：  - true ：开启返回头像位置信息的功能 - false : 关闭返回头像位置信息的功能 
+     * @return returnPortraitLocation
+     */
+    public Boolean getReturnPortraitLocation() {
+        return returnPortraitLocation;
+    }
+
+    public void setReturnPortraitLocation(Boolean returnPortraitLocation) {
+        this.returnPortraitLocation = returnPortraitLocation;
     }
 
     @Override
@@ -177,12 +199,20 @@ public class IdCardRequestBody {
             && Objects.equals(this.side, that.side) && Objects.equals(this.returnVerification, that.returnVerification)
             && Objects.equals(this.returnTextLocation, that.returnTextLocation)
             && Objects.equals(this.detectReproduce, that.detectReproduce)
-            && Objects.equals(this.detectCopy, that.detectCopy);
+            && Objects.equals(this.detectCopy, that.detectCopy)
+            && Objects.equals(this.returnPortraitLocation, that.returnPortraitLocation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, side, returnVerification, returnTextLocation, detectReproduce, detectCopy);
+        return Objects.hash(image,
+            url,
+            side,
+            returnVerification,
+            returnTextLocation,
+            detectReproduce,
+            detectCopy,
+            returnPortraitLocation);
     }
 
     @Override
@@ -196,6 +226,7 @@ public class IdCardRequestBody {
         sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
         sb.append("    detectReproduce: ").append(toIndentedString(detectReproduce)).append("\n");
         sb.append("    detectCopy: ").append(toIndentedString(detectCopy)).append("\n");
+        sb.append("    returnPortraitLocation: ").append(toIndentedString(returnPortraitLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

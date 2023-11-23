@@ -24,6 +24,12 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginDraftRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginDraftResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginVersionRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginVersionResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePublisherRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePublisherResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleReq;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleResponse;
@@ -102,14 +108,18 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineLatestRun;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineMoveToGroupResponseVo;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineTemplateDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PluginBasicDTO;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PluginDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PluginPartQueryDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PluginPartQueryVOListAgentPluginInputVO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PluginPartQueryVOListAgentPluginOutputVO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginBindRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginBindResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginDTO;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginDraftRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginDraftResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PublisherRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublisherVO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewResponse;
@@ -176,6 +186,10 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginBaseInfoRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginBaseInfoResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginDraftRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginDraftResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateRuleReq;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateRuleResponse;
@@ -619,6 +633,123 @@ public class CodeArtsPipelineMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePluginDraftRequest, CreatePluginDraftResponse> createPluginDraft =
+        genForcreatePluginDraft();
+
+    private static HttpRequestDef<CreatePluginDraftRequest, CreatePluginDraftResponse> genForcreatePluginDraft() {
+        // basic
+        HttpRequestDef.Builder<CreatePluginDraftRequest, CreatePluginDraftResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePluginDraftRequest.class, CreatePluginDraftResponse.class)
+                .withName("CreatePluginDraft")
+                .withUri("/v1/{domain_id}/agent-plugin/create-draft")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginDraftRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<PluginDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PluginDTO.class),
+            f -> f.withMarshaller(CreatePluginDraftRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePluginDraftResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePluginVersionRequest, CreatePluginVersionResponse> createPluginVersion =
+        genForcreatePluginVersion();
+
+    private static HttpRequestDef<CreatePluginVersionRequest, CreatePluginVersionResponse> genForcreatePluginVersion() {
+        // basic
+        HttpRequestDef.Builder<CreatePluginVersionRequest, CreatePluginVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePluginVersionRequest.class, CreatePluginVersionResponse.class)
+                .withName("CreatePluginVersion")
+                .withUri("/v1/{domain_id}/agent-plugin/create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePluginVersionRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<PluginDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PluginDTO.class),
+            f -> f.withMarshaller(CreatePluginVersionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePluginVersionResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePublisherRequest, CreatePublisherResponse> createPublisher =
+        genForcreatePublisher();
+
+    private static HttpRequestDef<CreatePublisherRequest, CreatePublisherResponse> genForcreatePublisher() {
+        // basic
+        HttpRequestDef.Builder<CreatePublisherRequest, CreatePublisherResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePublisherRequest.class, CreatePublisherResponse.class)
+                .withName("CreatePublisher")
+                .withUri("/v1/{domain_id}/publisher/create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePublisherRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<PublisherRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PublisherRequest.class),
+            f -> f.withMarshaller(CreatePublisherRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePublisherResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -1984,6 +2115,45 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<PublishPluginDraftRequest, PublishPluginDraftResponse> publishPluginDraft =
+        genForpublishPluginDraft();
+
+    private static HttpRequestDef<PublishPluginDraftRequest, PublishPluginDraftResponse> genForpublishPluginDraft() {
+        // basic
+        HttpRequestDef.Builder<PublishPluginDraftRequest, PublishPluginDraftResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PublishPluginDraftRequest.class, PublishPluginDraftResponse.class)
+                .withName("PublishPluginDraft")
+                .withUri("/v1/{domain_id}/agent-plugin/publish-draft")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PublishPluginDraftRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<PluginPartQueryDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PluginPartQueryDTO.class),
+            f -> f.withMarshaller(PublishPluginDraftRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PublishPluginDraftResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RejectManualReviewRequest, RejectManualReviewResponse> rejectManualReview =
         genForrejectManualReview();
 
@@ -3079,6 +3249,84 @@ public class CodeArtsPipelineMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse> updatePluginBaseInfo =
+        genForupdatePluginBaseInfo();
+
+    private static HttpRequestDef<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse> genForupdatePluginBaseInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdatePluginBaseInfoRequest.class, UpdatePluginBaseInfoResponse.class)
+            .withName("UpdatePluginBaseInfo")
+            .withUri("/v1/{domain_id}/agent-plugin/update-info")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginBaseInfoRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<PluginBasicDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PluginBasicDTO.class),
+            f -> f.withMarshaller(UpdatePluginBaseInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePluginBaseInfoResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePluginDraftRequest, UpdatePluginDraftResponse> updatePluginDraft =
+        genForupdatePluginDraft();
+
+    private static HttpRequestDef<UpdatePluginDraftRequest, UpdatePluginDraftResponse> genForupdatePluginDraft() {
+        // basic
+        HttpRequestDef.Builder<UpdatePluginDraftRequest, UpdatePluginDraftResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdatePluginDraftRequest.class, UpdatePluginDraftResponse.class)
+                .withName("UpdatePluginDraft")
+                .withUri("/v1/{domain_id}/agent-plugin/edit-draft")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePluginDraftRequest::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            }));
+        builder.<PluginDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(PluginDTO.class),
+            f -> f.withMarshaller(UpdatePluginDraftRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePluginDraftResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

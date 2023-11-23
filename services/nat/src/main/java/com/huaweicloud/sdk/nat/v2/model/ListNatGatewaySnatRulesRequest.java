@@ -282,7 +282,7 @@ public class ListNatGatewaySnatRulesRequest {
     }
 
     /**
-     * SNAT规则的描述，长度范围小于等于255个字符，不能包含<>
+     * SNAT规则的描述，长度范围小于等于255个字符，不能包含“<”和“>”。
      * @return description
      */
     public String getDescription() {

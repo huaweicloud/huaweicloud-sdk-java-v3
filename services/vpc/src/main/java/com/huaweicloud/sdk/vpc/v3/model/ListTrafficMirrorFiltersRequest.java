@@ -35,6 +35,16 @@ public class ListTrafficMirrorFiltersRequest {
 
     private String updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListTrafficMirrorFiltersRequest withId(String id) {
         this.id = id;
         return this;
@@ -120,6 +130,40 @@ public class ListTrafficMirrorFiltersRequest {
         this.updatedAt = updatedAt;
     }
 
+    public ListTrafficMirrorFiltersRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 功能说明：每页返回的个数 取值范围：0-2000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListTrafficMirrorFiltersRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页查询起始的资源ID，为空时查询第一页
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +175,13 @@ public class ListTrafficMirrorFiltersRequest {
         ListTrafficMirrorFiltersRequest that = (ListTrafficMirrorFiltersRequest) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, createdAt, updatedAt);
+        return Objects.hash(id, name, description, createdAt, updatedAt, limit, marker);
     }
 
     @Override
@@ -148,6 +193,8 @@ public class ListTrafficMirrorFiltersRequest {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

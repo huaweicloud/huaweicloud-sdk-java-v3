@@ -224,6 +224,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCoun
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
@@ -3787,6 +3789,66 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowIntelligentDiagnosisInstanceInfosPerMetricRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTables =
+        genForshowRestoreTables();
+
+    private static HttpRequestDef<ShowRestoreTablesRequest, ShowRestoreTablesResponse> genForshowRestoreTables() {
+        // basic
+        HttpRequestDef.Builder<ShowRestoreTablesRequest, ShowRestoreTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRestoreTablesRequest.class, ShowRestoreTablesResponse.class)
+                .withName("ShowRestoreTables")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/restore/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("restore_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getRestoreTime, (req, v) -> {
+                req.setRestoreTime(v);
+            }));
+        builder.<String>withRequestField("last_table_info",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getLastTableInfo, (req, v) -> {
+                req.setLastTableInfo(v);
+            }));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getTableName, (req, v) -> {
+                req.setTableName(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreTablesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 

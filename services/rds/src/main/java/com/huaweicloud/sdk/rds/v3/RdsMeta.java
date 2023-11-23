@@ -171,6 +171,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
@@ -240,6 +242,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerRequest;
@@ -265,6 +269,7 @@ import com.huaweicloud.sdk.rds.v3.model.PostgresqlDatabaseSchemaReq;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlGrantRequest;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlHbaConf;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlHbaHistory;
+import com.huaweicloud.sdk.rds.v3.model.PostgresqlPreCheckUpgradeMajorVersionReq;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlUserForCreation;
 import com.huaweicloud.sdk.rds.v3.model.PwdResetRequest;
 import com.huaweicloud.sdk.rds.v3.model.RecyclePolicyRequestBody;
@@ -334,6 +339,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyRequest;
@@ -364,6 +371,10 @@ import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplicationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowSecondLevelMonitoringResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.SimplifiedInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.Single2Ha;
 import com.huaweicloud.sdk.rds.v3.model.SlowLogStatisticsForLtsRequest;
@@ -431,10 +442,18 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateRdsInstanceAliasRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpgradePgMajorVersion;
 import com.huaweicloud.sdk.rds.v3.model.UserForCreation;
 
 import java.time.OffsetDateTime;
@@ -1885,6 +1904,80 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInspectionHistoriesRequest, ListInspectionHistoriesResponse> listInspectionHistories =
+        genForlistInspectionHistories();
+
+    private static HttpRequestDef<ListInspectionHistoriesRequest, ListInspectionHistoriesResponse> genForlistInspectionHistories() {
+        // basic
+        HttpRequestDef.Builder<ListInspectionHistoriesRequest, ListInspectionHistoriesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInspectionHistoriesRequest.class, ListInspectionHistoriesResponse.class)
+            .withName("ListInspectionHistories")
+            .withUri("/v3/{project_id}/instances/{instance_id}/major-version/inspection-histories")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInspectionHistoriesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInspectionHistoriesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInspectionHistoriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInspectionHistoriesRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInspectionHistoriesRequest::getSortField, (req, v) -> {
+                req.setSortField(v);
+            }));
+        builder.<String>withRequestField("target_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInspectionHistoriesRequest::getTargetVersion, (req, v) -> {
+                req.setTargetVersion(v);
+            }));
+        builder.<Boolean>withRequestField("is_available",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListInspectionHistoriesRequest::getIsAvailable, (req, v) -> {
+                req.setIsAvailable(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInspectionHistoriesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceDiagnosisRequest, ListInstanceDiagnosisResponse> listInstanceDiagnosis =
         genForlistInstanceDiagnosis();
 
@@ -3101,6 +3194,66 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListUpgradeHistoriesRequest, ListUpgradeHistoriesResponse> listUpgradeHistories =
+        genForlistUpgradeHistories();
+
+    private static HttpRequestDef<ListUpgradeHistoriesRequest, ListUpgradeHistoriesResponse> genForlistUpgradeHistories() {
+        // basic
+        HttpRequestDef.Builder<ListUpgradeHistoriesRequest, ListUpgradeHistoriesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListUpgradeHistoriesRequest.class, ListUpgradeHistoriesResponse.class)
+            .withName("ListUpgradeHistories")
+            .withUri("/v3/{project_id}/instances/{instance_id}/major-version/upgrade-histories")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradeHistoriesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUpgradeHistoriesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUpgradeHistoriesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradeHistoriesRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradeHistoriesRequest::getSortField, (req, v) -> {
+                req.setSortField(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradeHistoriesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListXellogFilesRequest, ListXellogFilesResponse> listXellogFiles =
         genForlistXellogFiles();
 
@@ -3793,6 +3946,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAvailableVersionRequest, ShowAvailableVersionResponse> showAvailableVersion =
+        genForshowAvailableVersion();
+
+    private static HttpRequestDef<ShowAvailableVersionRequest, ShowAvailableVersionResponse> genForshowAvailableVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowAvailableVersionRequest, ShowAvailableVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAvailableVersionRequest.class, ShowAvailableVersionResponse.class)
+            .withName("ShowAvailableVersion")
+            .withUri("/v3/{project_id}/instances/{instance_id}/major-version/available-version")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvailableVersionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvailableVersionRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> showBackupDownloadLink =
         genForshowBackupDownloadLink();
 
@@ -4205,6 +4390,73 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecondLevelMonitoringRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTdeStatusRequest, ShowTdeStatusResponse> showTdeStatus =
+        genForshowTdeStatus();
+
+    private static HttpRequestDef<ShowTdeStatusRequest, ShowTdeStatusResponse> genForshowTdeStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowTdeStatusRequest, ShowTdeStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTdeStatusRequest.class, ShowTdeStatusResponse.class)
+                .withName("ShowTdeStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/tde-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTdeStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUpgradeDbMajorVersionStatusRequest, ShowUpgradeDbMajorVersionStatusResponse> showUpgradeDbMajorVersionStatus =
+        genForshowUpgradeDbMajorVersionStatus();
+
+    private static HttpRequestDef<ShowUpgradeDbMajorVersionStatusRequest, ShowUpgradeDbMajorVersionStatusResponse> genForshowUpgradeDbMajorVersionStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowUpgradeDbMajorVersionStatusRequest, ShowUpgradeDbMajorVersionStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowUpgradeDbMajorVersionStatusRequest.class,
+                    ShowUpgradeDbMajorVersionStatusResponse.class)
+                .withName("ShowUpgradeDbMajorVersionStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/major-version/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeDbMajorVersionStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeDbMajorVersionStatusRequest::getAction, (req, v) -> {
+                req.setAction(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeDbMajorVersionStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -4861,6 +5113,119 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateRdsInstanceAliasRequest.class),
             f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTdeStatusRequest, UpdateTdeStatusResponse> updateTdeStatus =
+        genForupdateTdeStatus();
+
+    private static HttpRequestDef<UpdateTdeStatusRequest, UpdateTdeStatusResponse> genForupdateTdeStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateTdeStatusRequest, UpdateTdeStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTdeStatusRequest.class, UpdateTdeStatusResponse.class)
+                .withName("UpdateTdeStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/tde")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTdeStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateTdeStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateTdeStatusRequestBody.class),
+            f -> f.withMarshaller(UpdateTdeStatusRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeDbMajorVersionRequest, UpgradeDbMajorVersionResponse> upgradeDbMajorVersion =
+        genForupgradeDbMajorVersion();
+
+    private static HttpRequestDef<UpgradeDbMajorVersionRequest, UpgradeDbMajorVersionResponse> genForupgradeDbMajorVersion() {
+        // basic
+        HttpRequestDef.Builder<UpgradeDbMajorVersionRequest, UpgradeDbMajorVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpgradeDbMajorVersionRequest.class, UpgradeDbMajorVersionResponse.class)
+            .withName("UpgradeDbMajorVersion")
+            .withUri("/v3/{project_id}/instances/{instance_id}/major-version/upgrade")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDbMajorVersionRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpgradePgMajorVersion>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradePgMajorVersion.class),
+            f -> f.withMarshaller(UpgradeDbMajorVersionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpgradeDbMajorVersionResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeDbMajorVersionPreCheckRequest, UpgradeDbMajorVersionPreCheckResponse> upgradeDbMajorVersionPreCheck =
+        genForupgradeDbMajorVersionPreCheck();
+
+    private static HttpRequestDef<UpgradeDbMajorVersionPreCheckRequest, UpgradeDbMajorVersionPreCheckResponse> genForupgradeDbMajorVersionPreCheck() {
+        // basic
+        HttpRequestDef.Builder<UpgradeDbMajorVersionPreCheckRequest, UpgradeDbMajorVersionPreCheckResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpgradeDbMajorVersionPreCheckRequest.class,
+                    UpgradeDbMajorVersionPreCheckResponse.class)
+                .withName("UpgradeDbMajorVersionPreCheck")
+                .withUri("/v3/{project_id}/instances/{instance_id}/major-version/inspection")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDbMajorVersionPreCheckRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeDbMajorVersionPreCheckRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<PostgresqlPreCheckUpgradeMajorVersionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PostgresqlPreCheckUpgradeMajorVersionReq.class),
+            f -> f.withMarshaller(UpgradeDbMajorVersionPreCheckRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.obs.v1.model.DeleteObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsRequestBody;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketAclRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketAclResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketCustomdomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketCustomdomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataRequest;
@@ -31,8 +33,14 @@ import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsRequest;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsResponse;
+import com.huaweicloud.sdk.obs.v1.model.ListObjectsRequest;
+import com.huaweicloud.sdk.obs.v1.model.ListObjectsResponse;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketAclRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketAclRequestBody;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketAclResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomDomainBody;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequest;
@@ -790,6 +798,74 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteObjectsResponse::getDate, DeleteObjectsResponse::setDate));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetBucketAclRequest, GetBucketAclResponse> getBucketAcl = genForgetBucketAcl();
+
+    private static HttpRequestDef<GetBucketAclRequest, GetBucketAclResponse> genForgetBucketAcl() {
+        // basic
+        HttpRequestDef.Builder<GetBucketAclRequest, GetBucketAclResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetBucketAclRequest.class, GetBucketAclResponse.class)
+                .withName("GetBucketAcl")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketAclRequest::getBucketName, (req, v) -> {
+                req.setBucketName(v);
+            }));
+        builder.<String>withRequestField("acl",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketAclRequest::getAcl, (req, v) -> {
+                req.setAcl(v);
+            }));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketAclRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketAclResponse::getXObsId2, GetBucketAclResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketAclResponse::getXObsRequestId, GetBucketAclResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketAclResponse::getEtag, GetBucketAclResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketAclResponse::getConnection, GetBucketAclResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketAclResponse::getContentLength, GetBucketAclResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketAclResponse::getDate, GetBucketAclResponse::setDate));
         return builder.build();
     }
 
@@ -1632,6 +1708,121 @@ public class ObsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListObjectsRequest, ListObjectsResponse> listObjects = genForlistObjects();
+
+    private static HttpRequestDef<ListObjectsRequest, ListObjectsResponse> genForlistObjects() {
+        // basic
+        HttpRequestDef.Builder<ListObjectsRequest, ListObjectsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListObjectsRequest.class, ListObjectsResponse.class)
+                .withName("ListObjects")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObjectsRequest::getBucketName, (req, v) -> {
+                req.setBucketName(v);
+            }));
+        builder.<String>withRequestField("prefix",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObjectsRequest::getPrefix, (req, v) -> {
+                req.setPrefix(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObjectsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Integer>withRequestField("max-keys",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListObjectsRequest::getMaxKeys, (req, v) -> {
+                req.setMaxKeys(v);
+            }));
+        builder.<String>withRequestField("delimiter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObjectsRequest::getDelimiter, (req, v) -> {
+                req.setDelimiter(v);
+            }));
+        builder.<String>withRequestField("key-marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObjectsRequest::getKeyMarker, (req, v) -> {
+                req.setKeyMarker(v);
+            }));
+        builder.<String>withRequestField("version-id-marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObjectsRequest::getVersionIdMarker, (req, v) -> {
+                req.setVersionIdMarker(v);
+            }));
+        builder.<String>withRequestField("encoding-type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObjectsRequest::getEncodingType, (req, v) -> {
+                req.setEncodingType(v);
+            }));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObjectsRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListObjectsResponse::getXObsId2, ListObjectsResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListObjectsResponse::getXObsRequestId, ListObjectsResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListObjectsResponse::getEtag, ListObjectsResponse::setEtag));
+        builder.<String>withResponseField("x-obs-bucket-type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListObjectsResponse::getXObsBucketType, ListObjectsResponse::setXObsBucketType));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListObjectsResponse::getConnection, ListObjectsResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListObjectsResponse::getContentLength, ListObjectsResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListObjectsResponse::getDate, ListObjectsResponse::setDate));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PutObjectRequest, PutObjectResponse> putObject = genForputObject();
 
     private static HttpRequestDef<PutObjectRequest, PutObjectResponse> genForputObject() {
@@ -1853,6 +2044,88 @@ public class ObsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetBucketAclRequest, SetBucketAclResponse> setBucketAcl = genForsetBucketAcl();
+
+    private static HttpRequestDef<SetBucketAclRequest, SetBucketAclResponse> genForsetBucketAcl() {
+        // basic
+        HttpRequestDef.Builder<SetBucketAclRequest, SetBucketAclResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetBucketAclRequest.class, SetBucketAclResponse.class)
+                .withName("SetBucketAcl")
+                .withUri("/")
+                .withContentType("application/xml");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketAclRequest::getBucketName, (req, v) -> {
+                req.setBucketName(v);
+            }));
+        builder.<String>withRequestField("acl",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketAclRequest::getAcl, (req, v) -> {
+                req.setAcl(v);
+            }));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketAclRequest::getDate, (req, v) -> {
+                req.setDate(v);
+            }));
+        builder.<SetBucketAclRequest.XObsAclEnum>withRequestField("x-obs-acl",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SetBucketAclRequest.XObsAclEnum.class),
+            f -> f.withMarshaller(SetBucketAclRequest::getXObsAcl, (req, v) -> {
+                req.setXObsAcl(v);
+            }));
+        builder.<SetBucketAclRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SetBucketAclRequestBody.class),
+            f -> f.withMarshaller(SetBucketAclRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketAclResponse::getXObsId2, SetBucketAclResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketAclResponse::getXObsRequestId, SetBucketAclResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketAclResponse::getEtag, SetBucketAclResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketAclResponse::getConnection, SetBucketAclResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketAclResponse::getContentLength, SetBucketAclResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketAclResponse::getDate, SetBucketAclResponse::setDate));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetBucketCustomedomainRequest, SetBucketCustomedomainResponse> setBucketCustomedomain =
         genForsetBucketCustomedomain();
 
@@ -1862,7 +2135,7 @@ public class ObsMeta {
             .builder(HttpMethod.PUT, SetBucketCustomedomainRequest.class, SetBucketCustomedomainResponse.class)
             .withName("SetBucketCustomedomain")
             .withUri("/")
-            .withContentType("application/json");
+            .withContentType("application/xml");
 
         // requests
         builder.<String>withRequestField("bucket_name",
@@ -1879,12 +2152,26 @@ public class ObsMeta {
             f -> f.withMarshaller(SetBucketCustomedomainRequest::getCustomdomain, (req, v) -> {
                 req.setCustomdomain(v);
             }));
+        builder.<String>withRequestField("Content-MD5",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketCustomedomainRequest::getContentMD5, (req, v) -> {
+                req.setContentMD5(v);
+            }));
         builder.<String>withRequestField("Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SetBucketCustomedomainRequest::getDate, (req, v) -> {
                 req.setDate(v);
+            }));
+        builder.<SetBucketCustomDomainBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SetBucketCustomDomainBody.class),
+            f -> f.withMarshaller(SetBucketCustomedomainRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

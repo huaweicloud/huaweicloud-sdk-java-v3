@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class Thumbnail {
 
     /**
-     * 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
+     * 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。 - quantity： 按照指定张数，根据视频时长等分视频截图。
      */
     public static final class TypeEnum {
 
@@ -33,12 +33,18 @@ public class Thumbnail {
          */
         public static final TypeEnum DOTS = new TypeEnum("dots");
 
+        /**
+         * Enum QUANTITY for value: "quantity"
+         */
+        public static final TypeEnum QUANTITY = new TypeEnum("quantity");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("time", TIME);
             map.put("dots", DOTS);
+            map.put("quantity", QUANTITY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -94,6 +100,16 @@ public class Thumbnail {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quantity")
+
+    private Integer quantity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quantity_time")
+
+    private Integer quantityTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
     private Integer time;
@@ -129,7 +145,7 @@ public class Thumbnail {
     }
 
     /**
-     * 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
+     * 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。 - quantity： 按照指定张数，根据视频时长等分视频截图。
      * @return type
      */
     public TypeEnum getType() {
@@ -140,13 +156,53 @@ public class Thumbnail {
         this.type = type;
     }
 
+    public Thumbnail withQuantity(Integer quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+
+    /**
+     * **type**取值为quantity时必填。 按照指定张数，根据视频时长等分视频截图。 取值范围：[1,10]之间的整数。
+     * minimum: 1
+     * maximum: 10
+     * @return quantity
+     */
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Thumbnail withQuantityTime(Integer quantityTime) {
+        this.quantityTime = quantityTime;
+        return this;
+    }
+
+    /**
+     * **type**取值为quantity时选填。 按照指定时间间隔取指定张数截图。 取值范围：[0,2147483647]之间的整数。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return quantityTime
+     */
+    public Integer getQuantityTime() {
+        return quantityTime;
+    }
+
+    public void setQuantityTime(Integer quantityTime) {
+        this.quantityTime = quantityTime;
+    }
+
     public Thumbnail withTime(Integer time) {
         this.time = time;
         return this;
     }
 
     /**
-     * **type**取值为time时必填。根据时间间隔采样时的时间间隔值。  取值范围：[1,12]之间的整数。  单位：秒。
+     * 根据时间间隔采样时的时间间隔值。单位：秒。 **type**取值为time时。 默认值：12 取值范围：[0,100]之间的整数。
+     * minimum: 0
+     * maximum: 100
      * @return time
      */
     public Integer getTime() {
@@ -267,7 +323,8 @@ public class Thumbnail {
             return false;
         }
         Thumbnail that = (Thumbnail) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.time, that.time)
+        return Objects.equals(this.type, that.type) && Objects.equals(this.quantity, that.quantity)
+            && Objects.equals(this.quantityTime, that.quantityTime) && Objects.equals(this.time, that.time)
             && Objects.equals(this.dots, that.dots) && Objects.equals(this.coverPosition, that.coverPosition)
             && Objects.equals(this.format, that.format) && Objects.equals(this.aspectRatio, that.aspectRatio)
             && Objects.equals(this.maxLength, that.maxLength);
@@ -275,7 +332,7 @@ public class Thumbnail {
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, time, dots, coverPosition, format, aspectRatio, maxLength);
+        return Objects.hash(type, quantity, quantityTime, time, dots, coverPosition, format, aspectRatio, maxLength);
     }
 
     @Override
@@ -283,6 +340,8 @@ public class Thumbnail {
         StringBuilder sb = new StringBuilder();
         sb.append("class Thumbnail {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+        sb.append("    quantityTime: ").append(toIndentedString(quantityTime)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    dots: ").append(toIndentedString(dots)).append("\n");
         sb.append("    coverPosition: ").append(toIndentedString(coverPosition)).append("\n");

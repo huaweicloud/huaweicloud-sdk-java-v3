@@ -31,6 +31,11 @@ public class QueryProgressResp {
 
     private String increTransDelay;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incre_trans_delay_millis")
+
+    private String increTransDelayMillis;
+
     /**
      * 迁移模式。 - FULL_TRANS: 全量 - INCR_TRANS: 增量 - FULL_INCR_TRANS: 全量+增量
      */
@@ -182,7 +187,7 @@ public class QueryProgressResp {
     }
 
     /**
-     * 增量迁移时延
+     * 增量迁移时延。单位：s
      * @return increTransDelay
      */
     public String getIncreTransDelay() {
@@ -191,6 +196,23 @@ public class QueryProgressResp {
 
     public void setIncreTransDelay(String increTransDelay) {
         this.increTransDelay = increTransDelay;
+    }
+
+    public QueryProgressResp withIncreTransDelayMillis(String increTransDelayMillis) {
+        this.increTransDelayMillis = increTransDelayMillis;
+        return this;
+    }
+
+    /**
+     * 增量迁移时延。单位：ms
+     * @return increTransDelayMillis
+     */
+    public String getIncreTransDelayMillis() {
+        return increTransDelayMillis;
+    }
+
+    public void setIncreTransDelayMillis(String increTransDelayMillis) {
+        this.increTransDelayMillis = increTransDelayMillis;
     }
 
     public QueryProgressResp withTaskMode(TaskModeEnum taskMode) {
@@ -339,6 +361,7 @@ public class QueryProgressResp {
         QueryProgressResp that = (QueryProgressResp) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.progress, that.progress)
             && Objects.equals(this.increTransDelay, that.increTransDelay)
+            && Objects.equals(this.increTransDelayMillis, that.increTransDelayMillis)
             && Objects.equals(this.taskMode, that.taskMode) && Objects.equals(this.transferStatus, that.transferStatus)
             && Objects.equals(this.processTime, that.processTime)
             && Objects.equals(this.remainingTime, that.remainingTime)
@@ -351,6 +374,7 @@ public class QueryProgressResp {
         return Objects.hash(jobId,
             progress,
             increTransDelay,
+            increTransDelayMillis,
             taskMode,
             transferStatus,
             processTime,
@@ -367,6 +391,7 @@ public class QueryProgressResp {
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    increTransDelay: ").append(toIndentedString(increTransDelay)).append("\n");
+        sb.append("    increTransDelayMillis: ").append(toIndentedString(increTransDelayMillis)).append("\n");
         sb.append("    taskMode: ").append(toIndentedString(taskMode)).append("\n");
         sb.append("    transferStatus: ").append(toIndentedString(transferStatus)).append("\n");
         sb.append("    processTime: ").append(toIndentedString(processTime)).append("\n");

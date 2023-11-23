@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.dds.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpResponse;
+import com.huaweicloud.sdk.dds.v3.model.CreateKillOpRuleRequest;
+import com.huaweicloud.sdk.dds.v3.model.CreateKillOpRuleResponse;
 import com.huaweicloud.sdk.dds.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateManualBackupResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteAuditLogRequest;
@@ -47,8 +49,14 @@ import com.huaweicloud.sdk.dds.v3.model.DeleteDatabaseUserRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteDatabaseUserResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteKillOpRuleListResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteSessionRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteSessionResponse;
 import com.huaweicloud.sdk.dds.v3.model.DownloadErrorlogRequest;
@@ -89,6 +97,10 @@ import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListLtsConfigsRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListLtsConfigsResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListLtsErrorLogsRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListLtsErrorLogsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsSlowLogsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsSlowLogsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListProjectTagsRequest;
@@ -161,6 +173,8 @@ import com.huaweicloud.sdk.dds.v3.model.ShowEntityConfigurationRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowEntityConfigurationResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowJobDetailRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowJobDetailResponse;
+import com.huaweicloud.sdk.dds.v3.model.ShowKillOpRuleRuleListRequest;
+import com.huaweicloud.sdk.dds.v3.model.ShowKillOpRuleRuleListResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowRecyclePolicyRequest;
@@ -177,8 +191,12 @@ import com.huaweicloud.sdk.dds.v3.model.ShowUpgradeDurationRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowUpgradeDurationResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShrinkInstanceNodesResponse;
+import com.huaweicloud.sdk.dds.v3.model.StopBackupRequest;
+import com.huaweicloud.sdk.dds.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchConfigurationRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchConfigurationResponse;
+import com.huaweicloud.sdk.dds.v3.model.SwitchInstancePrimaryRequest;
+import com.huaweicloud.sdk.dds.v3.model.SwitchInstancePrimaryResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSecondLevelMonitoringRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSecondLevelMonitoringResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSlowlogDesensitizationRequest;
@@ -199,6 +217,10 @@ import com.huaweicloud.sdk.dds.v3.model.UpdateInstancePortRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateInstancePortResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateInstanceRemarkRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateInstanceRemarkResponse;
+import com.huaweicloud.sdk.dds.v3.model.UpdateKillOpRuleRequest;
+import com.huaweicloud.sdk.dds.v3.model.UpdateKillOpRuleResponse;
+import com.huaweicloud.sdk.dds.v3.model.UpdateLtsConfigRequest;
+import com.huaweicloud.sdk.dds.v3.model.UpdateLtsConfigResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateReplSetNameRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateReplSetNameResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateSecurityGroupRequest;
@@ -692,6 +714,36 @@ public class DdsClient {
     }
 
     /**
+     * 创建killOp规则
+     *
+     * 创建killOp规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateKillOpRuleRequest 请求对象
+     * @return CreateKillOpRuleResponse
+     */
+    public CreateKillOpRuleResponse createKillOpRule(CreateKillOpRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.createKillOpRule);
+    }
+
+    /**
+     * 创建killOp规则
+     *
+     * 创建killOp规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateKillOpRuleRequest 请求对象
+     * @return SyncInvoker<CreateKillOpRuleRequest, CreateKillOpRuleResponse>
+     */
+    public SyncInvoker<CreateKillOpRuleRequest, CreateKillOpRuleResponse> createKillOpRuleInvoker(
+        CreateKillOpRuleRequest request) {
+        return new SyncInvoker<CreateKillOpRuleRequest, CreateKillOpRuleResponse>(request, DdsMeta.createKillOpRule,
+            hcClient);
+    }
+
+    /**
      * 创建手动备份
      *
      * 创建数据库实例的手动备份。
@@ -872,6 +924,66 @@ public class DdsClient {
     }
 
     /**
+     * 删除killOp规则
+     *
+     * 删除killOp规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteKillOpRuleListRequest 请求对象
+     * @return DeleteKillOpRuleListResponse
+     */
+    public DeleteKillOpRuleListResponse deleteKillOpRuleList(DeleteKillOpRuleListRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteKillOpRuleList);
+    }
+
+    /**
+     * 删除killOp规则
+     *
+     * 删除killOp规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteKillOpRuleListRequest 请求对象
+     * @return SyncInvoker<DeleteKillOpRuleListRequest, DeleteKillOpRuleListResponse>
+     */
+    public SyncInvoker<DeleteKillOpRuleListRequest, DeleteKillOpRuleListResponse> deleteKillOpRuleListInvoker(
+        DeleteKillOpRuleListRequest request) {
+        return new SyncInvoker<DeleteKillOpRuleListRequest, DeleteKillOpRuleListResponse>(request,
+            DdsMeta.deleteKillOpRuleList, hcClient);
+    }
+
+    /**
+     * 解除关联LTS日志流
+     *
+     * 将实例日志与LTS日志流解除关联，后台将取消上传实例日志到的LTS日志流里。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLtsConfigRequest 请求对象
+     * @return DeleteLtsConfigResponse
+     */
+    public DeleteLtsConfigResponse deleteLtsConfig(DeleteLtsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteLtsConfig);
+    }
+
+    /**
+     * 解除关联LTS日志流
+     *
+     * 将实例日志与LTS日志流解除关联，后台将取消上传实例日志到的LTS日志流里。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLtsConfigRequest 请求对象
+     * @return SyncInvoker<DeleteLtsConfigRequest, DeleteLtsConfigResponse>
+     */
+    public SyncInvoker<DeleteLtsConfigRequest, DeleteLtsConfigResponse> deleteLtsConfigInvoker(
+        DeleteLtsConfigRequest request) {
+        return new SyncInvoker<DeleteLtsConfigRequest, DeleteLtsConfigResponse>(request, DdsMeta.deleteLtsConfig,
+            hcClient);
+    }
+
+    /**
      * 删除手动备份
      *
      * 删除数据库实例的手动备份。
@@ -899,6 +1011,36 @@ public class DdsClient {
         DeleteManualBackupRequest request) {
         return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request,
             DdsMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 删除只读节点
+     *
+     * 当副本集添加了只读节点后，需要删除对应的只读节点需要调用此API。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteReadonlyNodeRequest 请求对象
+     * @return DeleteReadonlyNodeResponse
+     */
+    public DeleteReadonlyNodeResponse deleteReadonlyNode(DeleteReadonlyNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteReadonlyNode);
+    }
+
+    /**
+     * 删除只读节点
+     *
+     * 当副本集添加了只读节点后，需要删除对应的只读节点需要调用此API。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteReadonlyNodeRequest 请求对象
+     * @return SyncInvoker<DeleteReadonlyNodeRequest, DeleteReadonlyNodeResponse>
+     */
+    public SyncInvoker<DeleteReadonlyNodeRequest, DeleteReadonlyNodeResponse> deleteReadonlyNodeInvoker(
+        DeleteReadonlyNodeRequest request) {
+        return new SyncInvoker<DeleteReadonlyNodeRequest, DeleteReadonlyNodeResponse>(request,
+            DdsMeta.deleteReadonlyNode, hcClient);
     }
 
     /**
@@ -1457,6 +1599,66 @@ public class DdsClient {
         ListInstancesByTagsRequest request) {
         return new SyncInvoker<ListInstancesByTagsRequest, ListInstancesByTagsResponse>(request,
             DdsMeta.listInstancesByTags, hcClient);
+    }
+
+    /**
+     * 查询LTS日志配置信息
+     *
+     * 查询LTS日志配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsConfigsRequest 请求对象
+     * @return ListLtsConfigsResponse
+     */
+    public ListLtsConfigsResponse listLtsConfigs(ListLtsConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listLtsConfigs);
+    }
+
+    /**
+     * 查询LTS日志配置信息
+     *
+     * 查询LTS日志配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsConfigsRequest 请求对象
+     * @return SyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse>
+     */
+    public SyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse> listLtsConfigsInvoker(
+        ListLtsConfigsRequest request) {
+        return new SyncInvoker<ListLtsConfigsRequest, ListLtsConfigsResponse>(request, DdsMeta.listLtsConfigs,
+            hcClient);
+    }
+
+    /**
+     * 查询数据库错误日志
+     *
+     * 查询数据库错误日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsErrorLogsRequest 请求对象
+     * @return ListLtsErrorLogsResponse
+     */
+    public ListLtsErrorLogsResponse listLtsErrorLogs(ListLtsErrorLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listLtsErrorLogs);
+    }
+
+    /**
+     * 查询数据库错误日志
+     *
+     * 查询数据库错误日志信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsErrorLogsRequest 请求对象
+     * @return SyncInvoker<ListLtsErrorLogsRequest, ListLtsErrorLogsResponse>
+     */
+    public SyncInvoker<ListLtsErrorLogsRequest, ListLtsErrorLogsResponse> listLtsErrorLogsInvoker(
+        ListLtsErrorLogsRequest request) {
+        return new SyncInvoker<ListLtsErrorLogsRequest, ListLtsErrorLogsResponse>(request, DdsMeta.listLtsErrorLogs,
+            hcClient);
     }
 
     /**
@@ -2499,6 +2701,36 @@ public class DdsClient {
     }
 
     /**
+     * 获取killOp规则列表
+     *
+     * 获取killOp规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowKillOpRuleRuleListRequest 请求对象
+     * @return ShowKillOpRuleRuleListResponse
+     */
+    public ShowKillOpRuleRuleListResponse showKillOpRuleRuleList(ShowKillOpRuleRuleListRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showKillOpRuleRuleList);
+    }
+
+    /**
+     * 获取killOp规则列表
+     *
+     * 获取killOp规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowKillOpRuleRuleListRequest 请求对象
+     * @return SyncInvoker<ShowKillOpRuleRuleListRequest, ShowKillOpRuleRuleListResponse>
+     */
+    public SyncInvoker<ShowKillOpRuleRuleListRequest, ShowKillOpRuleRuleListResponse> showKillOpRuleRuleListInvoker(
+        ShowKillOpRuleRuleListRequest request) {
+        return new SyncInvoker<ShowKillOpRuleRuleListRequest, ShowKillOpRuleRuleListResponse>(request,
+            DdsMeta.showKillOpRuleRuleList, hcClient);
+    }
+
+    /**
      * 查询配额
      *
      * 查询单租户在DDS服务下的资源配额，包括单节点实例配额、副本集实例配额、集群实例配额等。
@@ -2739,6 +2971,34 @@ public class DdsClient {
     }
 
     /**
+     * 停止备份
+     *
+     * 支持紧急情况下停止备份功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopBackupRequest 请求对象
+     * @return StopBackupResponse
+     */
+    public StopBackupResponse stopBackup(StopBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.stopBackup);
+    }
+
+    /**
+     * 停止备份
+     *
+     * 支持紧急情况下停止备份功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopBackupRequest 请求对象
+     * @return SyncInvoker<StopBackupRequest, StopBackupResponse>
+     */
+    public SyncInvoker<StopBackupRequest, StopBackupResponse> stopBackupInvoker(StopBackupRequest request) {
+        return new SyncInvoker<StopBackupRequest, StopBackupResponse>(request, DdsMeta.stopBackup, hcClient);
+    }
+
+    /**
      * 应用参数模板
      *
      * 指定实例变更参数模板。
@@ -2766,6 +3026,36 @@ public class DdsClient {
         SwitchConfigurationRequest request) {
         return new SyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse>(request,
             DdsMeta.switchConfiguration, hcClient);
+    }
+
+    /**
+     * 强制备节点升主
+     *
+     * 支持副本集、shard和config备节点强制升主。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchInstancePrimaryRequest 请求对象
+     * @return SwitchInstancePrimaryResponse
+     */
+    public SwitchInstancePrimaryResponse switchInstancePrimary(SwitchInstancePrimaryRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.switchInstancePrimary);
+    }
+
+    /**
+     * 强制备节点升主
+     *
+     * 支持副本集、shard和config备节点强制升主。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchInstancePrimaryRequest 请求对象
+     * @return SyncInvoker<SwitchInstancePrimaryRequest, SwitchInstancePrimaryResponse>
+     */
+    public SyncInvoker<SwitchInstancePrimaryRequest, SwitchInstancePrimaryResponse> switchInstancePrimaryInvoker(
+        SwitchInstancePrimaryRequest request) {
+        return new SyncInvoker<SwitchInstancePrimaryRequest, SwitchInstancePrimaryResponse>(request,
+            DdsMeta.switchInstancePrimary, hcClient);
     }
 
     /**
@@ -3066,6 +3356,70 @@ public class DdsClient {
         UpdateInstanceRemarkRequest request) {
         return new SyncInvoker<UpdateInstanceRemarkRequest, UpdateInstanceRemarkResponse>(request,
             DdsMeta.updateInstanceRemark, hcClient);
+    }
+
+    /**
+     * 启用/禁用killOp规则
+     *
+     * 启用/禁用killOp规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateKillOpRuleRequest 请求对象
+     * @return UpdateKillOpRuleResponse
+     */
+    public UpdateKillOpRuleResponse updateKillOpRule(UpdateKillOpRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.updateKillOpRule);
+    }
+
+    /**
+     * 启用/禁用killOp规则
+     *
+     * 启用/禁用killOp规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateKillOpRuleRequest 请求对象
+     * @return SyncInvoker<UpdateKillOpRuleRequest, UpdateKillOpRuleResponse>
+     */
+    public SyncInvoker<UpdateKillOpRuleRequest, UpdateKillOpRuleResponse> updateKillOpRuleInvoker(
+        UpdateKillOpRuleRequest request) {
+        return new SyncInvoker<UpdateKillOpRuleRequest, UpdateKillOpRuleResponse>(request, DdsMeta.updateKillOpRule,
+            hcClient);
+    }
+
+    /**
+     * 关联LTS日志流
+     *
+     * 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
+     * 关联成功后，会产生一定费用，具体计费可参考云日志服务（LTS）的定价详情。
+     * 系统会为当前选择的日志流创建对应日志类型的结构化配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLtsConfigRequest 请求对象
+     * @return UpdateLtsConfigResponse
+     */
+    public UpdateLtsConfigResponse updateLtsConfig(UpdateLtsConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.updateLtsConfig);
+    }
+
+    /**
+     * 关联LTS日志流
+     *
+     * 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
+     * 关联成功后，会产生一定费用，具体计费可参考云日志服务（LTS）的定价详情。
+     * 系统会为当前选择的日志流创建对应日志类型的结构化配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLtsConfigRequest 请求对象
+     * @return SyncInvoker<UpdateLtsConfigRequest, UpdateLtsConfigResponse>
+     */
+    public SyncInvoker<UpdateLtsConfigRequest, UpdateLtsConfigResponse> updateLtsConfigInvoker(
+        UpdateLtsConfigRequest request) {
+        return new SyncInvoker<UpdateLtsConfigRequest, UpdateLtsConfigResponse>(request, DdsMeta.updateLtsConfig,
+            hcClient);
     }
 
     /**

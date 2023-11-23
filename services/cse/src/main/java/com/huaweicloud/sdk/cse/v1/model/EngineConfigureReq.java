@@ -6,30 +6,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新微服务引擎专享版配置请求体
+ * 更新微服务引擎专享版配置请求体。
  */
 public class EngineConfigureReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
+    @JsonProperty(value = "authType")
 
-    private String version;
+    private String authType;
 
-    public EngineConfigureReq withVersion(String version) {
-        this.version = version;
+    public EngineConfigureReq withAuthType(String authType) {
+        this.authType = authType;
         return this;
     }
 
     /**
-     * 版本号
-     * @return version
+     * authType安全认证类型，支持填写NONE和RBAC。
+     * @return authType
      */
-    public String getVersion() {
-        return version;
+    public String getAuthType() {
+        return authType;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public void setAuthType(String authType) {
+        this.authType = authType;
     }
 
     @Override
@@ -41,19 +41,19 @@ public class EngineConfigureReq {
             return false;
         }
         EngineConfigureReq that = (EngineConfigureReq) obj;
-        return Objects.equals(this.version, that.version);
+        return Objects.equals(this.authType, that.authType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(version);
+        return Objects.hash(authType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EngineConfigureReq {\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

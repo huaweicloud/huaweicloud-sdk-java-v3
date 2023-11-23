@@ -21,10 +21,14 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIndicatorRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIndicatorResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookActionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookActionResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookApproveRequest;
@@ -65,6 +69,10 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassFieldsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassFieldsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsRequest;
@@ -83,6 +91,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookVersionsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookVersionsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleRequest;
@@ -406,6 +416,36 @@ public class SecMasterAsyncClient {
     }
 
     /**
+     * create dataspace (创建数据空间)
+     *
+     * create dataspace
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDataspaceRequest 请求对象
+     * @return CompletableFuture<CreateDataspaceResponse>
+     */
+    public CompletableFuture<CreateDataspaceResponse> createDataspaceAsync(CreateDataspaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.createDataspace);
+    }
+
+    /**
+     * create dataspace (创建数据空间)
+     *
+     * create dataspace
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDataspaceRequest 请求对象
+     * @return AsyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse>
+     */
+    public AsyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse> createDataspaceAsyncInvoker(
+        CreateDataspaceRequest request) {
+        return new AsyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse>(request, SecMasterMeta.createDataspace,
+            hcClient);
+    }
+
+    /**
      * 创建事件
      *
      * 创建事件
@@ -463,6 +503,34 @@ public class SecMasterAsyncClient {
         CreateIndicatorRequest request) {
         return new AsyncInvoker<CreateIndicatorRequest, CreateIndicatorResponse>(request, SecMasterMeta.createIndicator,
             hcClient);
+    }
+
+    /**
+     * create pipe (创建数据管道)
+     *
+     * create pipe
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipeRequest 请求对象
+     * @return CompletableFuture<CreatePipeResponse>
+     */
+    public CompletableFuture<CreatePipeResponse> createPipeAsync(CreatePipeRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.createPipe);
+    }
+
+    /**
+     * create pipe (创建数据管道)
+     *
+     * create pipe
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePipeRequest 请求对象
+     * @return AsyncInvoker<CreatePipeRequest, CreatePipeResponse>
+     */
+    public AsyncInvoker<CreatePipeRequest, CreatePipeResponse> createPipeAsyncInvoker(CreatePipeRequest request) {
+        return new AsyncInvoker<CreatePipeRequest, CreatePipeResponse>(request, SecMasterMeta.createPipe, hcClient);
     }
 
     /**
@@ -1070,6 +1138,66 @@ public class SecMasterAsyncClient {
     }
 
     /**
+     * 查询数据类列表
+     *
+     * 查询数据类列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDataclassRequest 请求对象
+     * @return CompletableFuture<ListDataclassResponse>
+     */
+    public CompletableFuture<ListDataclassResponse> listDataclassAsync(ListDataclassRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.listDataclass);
+    }
+
+    /**
+     * 查询数据类列表
+     *
+     * 查询数据类列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDataclassRequest 请求对象
+     * @return AsyncInvoker<ListDataclassRequest, ListDataclassResponse>
+     */
+    public AsyncInvoker<ListDataclassRequest, ListDataclassResponse> listDataclassAsyncInvoker(
+        ListDataclassRequest request) {
+        return new AsyncInvoker<ListDataclassRequest, ListDataclassResponse>(request, SecMasterMeta.listDataclass,
+            hcClient);
+    }
+
+    /**
+     * 查询字段列表
+     *
+     * 查询字段列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDataclassFieldsRequest 请求对象
+     * @return CompletableFuture<ListDataclassFieldsResponse>
+     */
+    public CompletableFuture<ListDataclassFieldsResponse> listDataclassFieldsAsync(ListDataclassFieldsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.listDataclassFields);
+    }
+
+    /**
+     * 查询字段列表
+     *
+     * 查询字段列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDataclassFieldsRequest 请求对象
+     * @return AsyncInvoker<ListDataclassFieldsRequest, ListDataclassFieldsResponse>
+     */
+    public AsyncInvoker<ListDataclassFieldsRequest, ListDataclassFieldsResponse> listDataclassFieldsAsyncInvoker(
+        ListDataclassFieldsRequest request) {
+        return new AsyncInvoker<ListDataclassFieldsRequest, ListDataclassFieldsResponse>(request,
+            SecMasterMeta.listDataclassFields, hcClient);
+    }
+
+    /**
      * 查询关联Dataobject列表
      *
      * 查询关联Dataobject列表
@@ -1341,6 +1469,36 @@ public class SecMasterAsyncClient {
     public AsyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse> listPlaybooksAsyncInvoker(
         ListPlaybooksRequest request) {
         return new AsyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse>(request, SecMasterMeta.listPlaybooks,
+            hcClient);
+    }
+
+    /**
+     * 查询流程列表
+     *
+     * 查询流程列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkflowsRequest 请求对象
+     * @return CompletableFuture<ListWorkflowsResponse>
+     */
+    public CompletableFuture<ListWorkflowsResponse> listWorkflowsAsync(ListWorkflowsRequest request) {
+        return hcClient.asyncInvokeHttp(request, SecMasterMeta.listWorkflows);
+    }
+
+    /**
+     * 查询流程列表
+     *
+     * 查询流程列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListWorkflowsRequest 请求对象
+     * @return AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>
+     */
+    public AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsAsyncInvoker(
+        ListWorkflowsRequest request) {
+        return new AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>(request, SecMasterMeta.listWorkflows,
             hcClient);
     }
 

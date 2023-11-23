@@ -33,11 +33,17 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIndicatorRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateIndicatorResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookActionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookActionResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookApproveRequest;
@@ -87,6 +93,10 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassFieldsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassFieldsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsRequest;
@@ -105,6 +115,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookVersionsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookVersionsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ModifyActionInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.ModifyPlaybookInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.ModifyPlaybookVersionInfo;
@@ -150,6 +162,7 @@ import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionResponse;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
@@ -547,6 +560,45 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDataspaceRequest, CreateDataspaceResponse> createDataspace =
+        genForcreateDataspace();
+
+    private static HttpRequestDef<CreateDataspaceRequest, CreateDataspaceResponse> genForcreateDataspace() {
+        // basic
+        HttpRequestDef.Builder<CreateDataspaceRequest, CreateDataspaceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDataspaceRequest.class, CreateDataspaceResponse.class)
+                .withName("CreateDataspace")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/dataspaces")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDataspaceRequest::getWorkspaceId, (req, v) -> {
+                req.setWorkspaceId(v);
+            }));
+        builder.<CreateDataspaceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDataspaceRequestBody.class),
+            f -> f.withMarshaller(CreateDataspaceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDataspaceResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateIncidentRequest, CreateIncidentResponse> createIncident =
         genForcreateIncident();
 
@@ -618,6 +670,37 @@ public class SecMasterMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(CreateIndicatorResponse::getXRequestId, CreateIndicatorResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePipeRequest, CreatePipeResponse> createPipe = genForcreatePipe();
+
+    private static HttpRequestDef<CreatePipeRequest, CreatePipeResponse> genForcreatePipe() {
+        // basic
+        HttpRequestDef.Builder<CreatePipeRequest, CreatePipeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePipeRequest.class, CreatePipeResponse.class)
+                .withName("CreatePipe")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/pipes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePipeRequest::getWorkspaceId, (req, v) -> {
+                req.setWorkspaceId(v);
+            }));
+        builder.<CreatePipeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePipeRequestBody.class),
+            f -> f.withMarshaller(CreatePipeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
         return builder.build();
     }
 
@@ -1515,6 +1598,158 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDataclassRequest, ListDataclassResponse> listDataclass =
+        genForlistDataclass();
+
+    private static HttpRequestDef<ListDataclassRequest, ListDataclassResponse> genForlistDataclass() {
+        // basic
+        HttpRequestDef.Builder<ListDataclassRequest, ListDataclassResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDataclassRequest.class, ListDataclassResponse.class)
+                .withName("ListDataclass")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/dataclasses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataclassRequest::getWorkspaceId, (req, v) -> {
+                req.setWorkspaceId(v);
+            }));
+        builder.<BigDecimal>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListDataclassRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<BigDecimal>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListDataclassRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataclassRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("business_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataclassRequest::getBusinessCode, (req, v) -> {
+                req.setBusinessCode(v);
+            }));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataclassRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<Boolean>withRequestField("is_built_in",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDataclassRequest::getIsBuiltIn, (req, v) -> {
+                req.setIsBuiltIn(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDataclassResponse::getXRequestId, ListDataclassResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDataclassFieldsRequest, ListDataclassFieldsResponse> listDataclassFields =
+        genForlistDataclassFields();
+
+    private static HttpRequestDef<ListDataclassFieldsRequest, ListDataclassFieldsResponse> genForlistDataclassFields() {
+        // basic
+        HttpRequestDef.Builder<ListDataclassFieldsRequest, ListDataclassFieldsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDataclassFieldsRequest.class, ListDataclassFieldsResponse.class)
+                .withName("ListDataclassFields")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/dataclasses/{dataclass_id}/fields")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataclassFieldsRequest::getWorkspaceId, (req, v) -> {
+                req.setWorkspaceId(v);
+            }));
+        builder.<String>withRequestField("dataclass_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataclassFieldsRequest::getDataclassId, (req, v) -> {
+                req.setDataclassId(v);
+            }));
+        builder.<BigDecimal>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListDataclassFieldsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<BigDecimal>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListDataclassFieldsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataclassFieldsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<Boolean>withRequestField("is_built_in",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDataclassFieldsRequest::getIsBuiltIn, (req, v) -> {
+                req.setIsBuiltIn(v);
+            }));
+        builder.<String>withRequestField("field_category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataclassFieldsRequest::getFieldCategory, (req, v) -> {
+                req.setFieldCategory(v);
+            }));
+        builder.<Boolean>withRequestField("mapping",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDataclassFieldsRequest::getMapping, (req, v) -> {
+                req.setMapping(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDataclassFieldsResponse::getXRequestId,
+                ListDataclassFieldsResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> listDataobjectRelations =
         genForlistDataobjectRelations();
 
@@ -2062,6 +2297,113 @@ public class SecMasterMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListPlaybooksResponse::getXRequestId, ListPlaybooksResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflows =
+        genForlistWorkflows();
+
+    private static HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> genForlistWorkflows() {
+        // basic
+        HttpRequestDef.Builder<ListWorkflowsRequest, ListWorkflowsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWorkflowsRequest.class, ListWorkflowsResponse.class)
+                .withName("ListWorkflows")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/workflows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getWorkspaceId, (req, v) -> {
+                req.setWorkspaceId(v);
+            }));
+        builder.<BigDecimal>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<BigDecimal>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ListWorkflowsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWorkflowsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
+        builder.<ListWorkflowsRequest.SortbyEnum>withRequestField("sortby",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWorkflowsRequest.SortbyEnum.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getSortby, (req, v) -> {
+                req.setSortby(v);
+            }));
+        builder.<Boolean>withRequestField("enabled",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getEnabled, (req, v) -> {
+                req.setEnabled(v);
+            }));
+        builder.<Boolean>withRequestField("last_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getLastVersion, (req, v) -> {
+                req.setLastVersion(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getDescription, (req, v) -> {
+                req.setDescription(v);
+            }));
+        builder.<String>withRequestField("dataclass_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getDataclassId, (req, v) -> {
+                req.setDataclassId(v);
+            }));
+        builder.<String>withRequestField("dataclass_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getDataclassName, (req, v) -> {
+                req.setDataclassName(v);
+            }));
+        builder.<String>withRequestField("aop_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getAopType, (req, v) -> {
+                req.setAopType(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListWorkflowsResponse::getXRequestId, ListWorkflowsResponse::setXRequestId));
         return builder.build();
     }
 

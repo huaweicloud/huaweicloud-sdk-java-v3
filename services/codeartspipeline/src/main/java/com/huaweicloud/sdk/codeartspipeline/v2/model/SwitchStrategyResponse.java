@@ -17,9 +17,9 @@ public class SwitchStrategyResponse extends SdkResponse {
     private Boolean status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_template_instance_id")
+    @JsonProperty(value = "rule_set_id")
 
-    private String ruleTemplateInstanceId;
+    private String ruleSetId;
 
     public SwitchStrategyResponse withStatus(Boolean status) {
         this.status = status;
@@ -38,21 +38,21 @@ public class SwitchStrategyResponse extends SdkResponse {
         this.status = status;
     }
 
-    public SwitchStrategyResponse withRuleTemplateInstanceId(String ruleTemplateInstanceId) {
-        this.ruleTemplateInstanceId = ruleTemplateInstanceId;
+    public SwitchStrategyResponse withRuleSetId(String ruleSetId) {
+        this.ruleSetId = ruleSetId;
         return this;
     }
 
     /**
-     * 规则模版实例ID
-     * @return ruleTemplateInstanceId
+     * 规则集ID
+     * @return ruleSetId
      */
-    public String getRuleTemplateInstanceId() {
-        return ruleTemplateInstanceId;
+    public String getRuleSetId() {
+        return ruleSetId;
     }
 
-    public void setRuleTemplateInstanceId(String ruleTemplateInstanceId) {
-        this.ruleTemplateInstanceId = ruleTemplateInstanceId;
+    public void setRuleSetId(String ruleSetId) {
+        this.ruleSetId = ruleSetId;
     }
 
     @Override
@@ -64,13 +64,12 @@ public class SwitchStrategyResponse extends SdkResponse {
             return false;
         }
         SwitchStrategyResponse that = (SwitchStrategyResponse) obj;
-        return Objects.equals(this.status, that.status)
-            && Objects.equals(this.ruleTemplateInstanceId, that.ruleTemplateInstanceId);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.ruleSetId, that.ruleSetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, ruleTemplateInstanceId);
+        return Objects.hash(status, ruleSetId);
     }
 
     @Override
@@ -78,7 +77,7 @@ public class SwitchStrategyResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class SwitchStrategyResponse {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    ruleTemplateInstanceId: ").append(toIndentedString(ruleTemplateInstanceId)).append("\n");
+        sb.append("    ruleSetId: ").append(toIndentedString(ruleSetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

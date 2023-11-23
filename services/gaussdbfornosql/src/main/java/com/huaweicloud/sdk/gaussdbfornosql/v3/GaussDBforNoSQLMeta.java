@@ -52,6 +52,12 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeRequest
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteLtsConfigsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteLtsConfigsRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteLtsConfigsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeResponse;
@@ -59,6 +65,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListApiVersionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListAvailableFlavorInfosResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListCassandraSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationDatastoresRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationDatastoresResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationTemplatesRequest;
@@ -88,10 +97,29 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByTagsRequestBo
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionStatisticsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionStatisticsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListLtsConfigsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListLtsConfigsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbErrorLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbErrorLogsRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbErrorLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreDatabasesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreDatabasesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTablesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListSlowLogsRequest;
@@ -122,6 +150,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RedisResetDbUserPasswordRequ
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RenameHighRiskCommandsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetDbUserPasswordRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetDbUserPasswordResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetParamGroupTemplateRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetParamGroupTemplateResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetPasswordRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetPasswordResponse;
@@ -139,6 +169,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoPolicyRequestBody;
@@ -163,6 +196,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowElbIpGroupRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowElbIpGroupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowErrorLogRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowErrorLogResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowHighRiskCommandsRequest;
@@ -190,6 +225,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationRe
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationResponse;
@@ -743,6 +781,70 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> deleteInstancesSession =
+        genFordeleteInstancesSession();
+
+    private static HttpRequestDef<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> genFordeleteInstancesSession() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstancesSessionRequest, DeleteInstancesSessionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteInstancesSessionRequest.class, DeleteInstancesSessionResponse.class)
+            .withName("DeleteInstancesSession")
+            .withUri("/v3/{project_id}/redis/nodes/{node_id}/sessions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstancesSessionRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<DeleteInstancesSessionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteInstancesSessionRequestBody.class),
+            f -> f.withMarshaller(DeleteInstancesSessionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> deleteLtsConfigs =
+        genFordeleteLtsConfigs();
+
+    private static HttpRequestDef<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> genFordeleteLtsConfigs() {
+        // basic
+        HttpRequestDef.Builder<DeleteLtsConfigsRequest, DeleteLtsConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLtsConfigsRequest.class, DeleteLtsConfigsResponse.class)
+                .withName("DeleteLtsConfigs")
+                .withUri("/v3/{project_id}/instances/logs/lts-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLtsConfigsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<DeleteLtsConfigsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteLtsConfigsRequestBody.class),
+            f -> f.withMarshaller(DeleteLtsConfigsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExpandInstanceNodeRequest, ExpandInstanceNodeResponse> expandInstanceNode =
         genForexpandInstanceNode();
 
@@ -808,6 +910,38 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAvailableFlavorInfosRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> listCassandraSlowLogs =
+        genForlistCassandraSlowLogs();
+
+    private static HttpRequestDef<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> genForlistCassandraSlowLogs() {
+        // basic
+        HttpRequestDef.Builder<ListCassandraSlowLogsRequest, ListCassandraSlowLogsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListCassandraSlowLogsRequest.class, ListCassandraSlowLogsResponse.class)
+            .withName("ListCassandraSlowLogs")
+            .withUri("/v3/{project_id}/cassandra/instances/{instance_id}/slow-logs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCassandraSlowLogsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListCassandraSlowLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListCassandraSlowLogsRequestBody.class),
+            f -> f.withMarshaller(ListCassandraSlowLogsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -1291,6 +1425,204 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstancesSessionRequest, ListInstancesSessionResponse> listInstancesSession =
+        genForlistInstancesSession();
+
+    private static HttpRequestDef<ListInstancesSessionRequest, ListInstancesSessionResponse> genForlistInstancesSession() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesSessionRequest, ListInstancesSessionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstancesSessionRequest.class, ListInstancesSessionResponse.class)
+            .withName("ListInstancesSession")
+            .withUri("/v3/{project_id}/redis/nodes/{node_id}/sessions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesSessionRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesSessionRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesSessionRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("addr_prefix",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesSessionRequest::getAddrPrefix, (req, v) -> {
+                req.setAddrPrefix(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> listInstancesSessionStatistics =
+        genForlistInstancesSessionStatistics();
+
+    private static HttpRequestDef<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> genForlistInstancesSessionStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstancesSessionStatisticsRequest.class,
+                    ListInstancesSessionStatisticsResponse.class)
+                .withName("ListInstancesSessionStatistics")
+                .withUri("/v3/{project_id}/redis/nodes/{node_id}/session-statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesSessionStatisticsRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLtsConfigsRequest, ListLtsConfigsResponse> listLtsConfigs =
+        genForlistLtsConfigs();
+
+    private static HttpRequestDef<ListLtsConfigsRequest, ListLtsConfigsResponse> genForlistLtsConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListLtsConfigsRequest, ListLtsConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLtsConfigsRequest.class, ListLtsConfigsResponse.class)
+                .withName("ListLtsConfigs")
+                .withUri("/v3/{project_id}/instances/logs/lts-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLtsConfigsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLtsConfigsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLtsConfigsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLtsConfigsRequest::getInstanceName, (req, v) -> {
+                req.setInstanceName(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLtsConfigsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLtsConfigsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> listMongodbErrorLogs =
+        genForlistMongodbErrorLogs();
+
+    private static HttpRequestDef<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> genForlistMongodbErrorLogs() {
+        // basic
+        HttpRequestDef.Builder<ListMongodbErrorLogsRequest, ListMongodbErrorLogsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListMongodbErrorLogsRequest.class, ListMongodbErrorLogsResponse.class)
+            .withName("ListMongodbErrorLogs")
+            .withUri("/v3/{project_id}/mongodb/instances/{instance_id}/error-logs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMongodbErrorLogsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListMongodbErrorLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListMongodbErrorLogsRequestBody.class),
+            f -> f.withMarshaller(ListMongodbErrorLogsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> listMongodbSlowLogs =
+        genForlistMongodbSlowLogs();
+
+    private static HttpRequestDef<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> genForlistMongodbSlowLogs() {
+        // basic
+        HttpRequestDef.Builder<ListMongodbSlowLogsRequest, ListMongodbSlowLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListMongodbSlowLogsRequest.class, ListMongodbSlowLogsResponse.class)
+                .withName("ListMongodbSlowLogs")
+                .withUri("/v3/{project_id}/mongodb/instances/{instance_id}/slow-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMongodbSlowLogsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListMongodbSlowLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListMongodbSlowLogsRequestBody.class),
+            f -> f.withMarshaller(ListMongodbSlowLogsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
         genForlistProjectTags();
 
@@ -1355,6 +1687,123 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRecycleInstancesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> listRedisSlowLogs =
+        genForlistRedisSlowLogs();
+
+    private static HttpRequestDef<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> genForlistRedisSlowLogs() {
+        // basic
+        HttpRequestDef.Builder<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListRedisSlowLogsRequest.class, ListRedisSlowLogsResponse.class)
+                .withName("ListRedisSlowLogs")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/slow-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRedisSlowLogsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListRedisSlowLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListRedisSlowLogsRequestBody.class),
+            f -> f.withMarshaller(ListRedisSlowLogsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> listRestoreDatabases =
+        genForlistRestoreDatabases();
+
+    private static HttpRequestDef<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> genForlistRestoreDatabases() {
+        // basic
+        HttpRequestDef.Builder<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRestoreDatabasesRequest.class, ListRestoreDatabasesResponse.class)
+            .withName("ListRestoreDatabases")
+            .withUri("/v3/{project_id}/instances/{instance_id}/databases")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestoreDatabasesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRestoreDatabasesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRestoreDatabasesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRestoreTablesRequest, ListRestoreTablesResponse> listRestoreTables =
+        genForlistRestoreTables();
+
+    private static HttpRequestDef<ListRestoreTablesRequest, ListRestoreTablesResponse> genForlistRestoreTables() {
+        // basic
+        HttpRequestDef.Builder<ListRestoreTablesRequest, ListRestoreTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRestoreTablesRequest.class, ListRestoreTablesResponse.class)
+                .withName("ListRestoreTables")
+                .withUri("/v3/{project_id}/instances/{instance_id}/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestoreTablesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestoreTablesRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRestoreTablesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRestoreTablesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -1706,6 +2155,31 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> resetParamGroupTemplate =
+        genForresetParamGroupTemplate();
+
+    private static HttpRequestDef<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> genForresetParamGroupTemplate() {
+        // basic
+        HttpRequestDef.Builder<ResetParamGroupTemplateRequest, ResetParamGroupTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResetParamGroupTemplateRequest.class, ResetParamGroupTemplateResponse.class)
+            .withName("ResetParamGroupTemplate")
+            .withUri("/v3/{project_id}/configurations/{config_id}/reset")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetParamGroupTemplateRequest::getConfigId, (req, v) -> {
+                req.setConfigId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
         genForresetPassword();
 
@@ -1883,6 +2357,38 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestoreRequestBody.class),
             f -> f.withMarshaller(RestoreExistingInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SaveLtsConfigsRequest, SaveLtsConfigsResponse> saveLtsConfigs =
+        genForsaveLtsConfigs();
+
+    private static HttpRequestDef<SaveLtsConfigsRequest, SaveLtsConfigsResponse> genForsaveLtsConfigs() {
+        // basic
+        HttpRequestDef.Builder<SaveLtsConfigsRequest, SaveLtsConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SaveLtsConfigsRequest.class, SaveLtsConfigsResponse.class)
+                .withName("SaveLtsConfigs")
+                .withUri("/v3/{project_id}/instances/logs/lts-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveLtsConfigsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<SaveLtsConfigsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveLtsConfigsRequestBody.class),
+            f -> f.withMarshaller(SaveLtsConfigsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2277,6 +2783,31 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConfigurationDetailRequest::getConfigId, (req, v) -> {
                 req.setConfigId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowElbIpGroupRequest, ShowElbIpGroupResponse> showElbIpGroup =
+        genForshowElbIpGroup();
+
+    private static HttpRequestDef<ShowElbIpGroupRequest, ShowElbIpGroupResponse> genForshowElbIpGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowElbIpGroupRequest, ShowElbIpGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowElbIpGroupRequest.class, ShowElbIpGroupResponse.class)
+                .withName("ShowElbIpGroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/lb/access-control")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowElbIpGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response
@@ -2713,6 +3244,38 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShrinkInstanceNodeRequestBody.class),
             f -> f.withMarshaller(ShrinkInstanceNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchIpGroupRequest, SwitchIpGroupResponse> switchIpGroup =
+        genForswitchIpGroup();
+
+    private static HttpRequestDef<SwitchIpGroupRequest, SwitchIpGroupResponse> genForswitchIpGroup() {
+        // basic
+        HttpRequestDef.Builder<SwitchIpGroupRequest, SwitchIpGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SwitchIpGroupRequest.class, SwitchIpGroupResponse.class)
+                .withName("SwitchIpGroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/lb/access-control")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchIpGroupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<SwitchIpGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchIpGroupRequestBody.class),
+            f -> f.withMarshaller(SwitchIpGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

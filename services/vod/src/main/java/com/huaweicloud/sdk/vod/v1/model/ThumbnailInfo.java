@@ -24,6 +24,11 @@ public class ThumbnailInfo {
     private List<ThumbnailRsp> dots = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quantity")
+
+    private List<ThumbnailRsp> quantity = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exec_desc")
 
     private String execDesc;
@@ -99,6 +104,39 @@ public class ThumbnailInfo {
         this.dots = dots;
     }
 
+    public ThumbnailInfo withQuantity(List<ThumbnailRsp> quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+
+    public ThumbnailInfo addQuantityItem(ThumbnailRsp quantityItem) {
+        if (this.quantity == null) {
+            this.quantity = new ArrayList<>();
+        }
+        this.quantity.add(quantityItem);
+        return this;
+    }
+
+    public ThumbnailInfo withQuantity(Consumer<List<ThumbnailRsp>> quantitySetter) {
+        if (this.quantity == null) {
+            this.quantity = new ArrayList<>();
+        }
+        quantitySetter.accept(this.quantity);
+        return this;
+    }
+
+    /**
+     * 视频截图信息，截图类型为数量。
+     * @return quantity
+     */
+    public List<ThumbnailRsp> getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(List<ThumbnailRsp> quantity) {
+        this.quantity = quantity;
+    }
+
     public ThumbnailInfo withExecDesc(String execDesc) {
         this.execDesc = execDesc;
         return this;
@@ -143,13 +181,13 @@ public class ThumbnailInfo {
         }
         ThumbnailInfo that = (ThumbnailInfo) obj;
         return Objects.equals(this.sample, that.sample) && Objects.equals(this.dots, that.dots)
-            && Objects.equals(this.execDesc, that.execDesc)
+            && Objects.equals(this.quantity, that.quantity) && Objects.equals(this.execDesc, that.execDesc)
             && Objects.equals(this.thumbnailStatus, that.thumbnailStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sample, dots, execDesc, thumbnailStatus);
+        return Objects.hash(sample, dots, quantity, execDesc, thumbnailStatus);
     }
 
     @Override
@@ -158,6 +196,7 @@ public class ThumbnailInfo {
         sb.append("class ThumbnailInfo {\n");
         sb.append("    sample: ").append(toIndentedString(sample)).append("\n");
         sb.append("    dots: ").append(toIndentedString(dots)).append("\n");
+        sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
         sb.append("    execDesc: ").append(toIndentedString(execDesc)).append("\n");
         sb.append("    thumbnailStatus: ").append(toIndentedString(thumbnailStatus)).append("\n");
         sb.append("}");

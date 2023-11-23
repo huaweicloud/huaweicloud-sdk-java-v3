@@ -22,6 +22,12 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineNewResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginDraftRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginDraftResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginVersionRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePluginVersionResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePublisherRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePublisherResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateStrategyRequest;
@@ -84,6 +90,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginBindRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginBindResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginDraftRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginDraftResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PublishPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.RejectManualReviewRequest;
@@ -146,6 +154,10 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePipelineTemplateResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginBaseInfoRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginBaseInfoResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginDraftRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdatePluginDraftResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.UpdateStrategyRequest;
@@ -511,6 +523,96 @@ public class CodeArtsPipelineAsyncClient {
         CreatePipelineTemplateRequest request) {
         return new AsyncInvoker<CreatePipelineTemplateRequest, CreatePipelineTemplateResponse>(request,
             CodeArtsPipelineMeta.createPipelineTemplate, hcClient);
+    }
+
+    /**
+     * 创建插件草稿版本
+     *
+     * 创建插件草稿版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePluginDraftRequest 请求对象
+     * @return CompletableFuture<CreatePluginDraftResponse>
+     */
+    public CompletableFuture<CreatePluginDraftResponse> createPluginDraftAsync(CreatePluginDraftRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.createPluginDraft);
+    }
+
+    /**
+     * 创建插件草稿版本
+     *
+     * 创建插件草稿版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePluginDraftRequest 请求对象
+     * @return AsyncInvoker<CreatePluginDraftRequest, CreatePluginDraftResponse>
+     */
+    public AsyncInvoker<CreatePluginDraftRequest, CreatePluginDraftResponse> createPluginDraftAsyncInvoker(
+        CreatePluginDraftRequest request) {
+        return new AsyncInvoker<CreatePluginDraftRequest, CreatePluginDraftResponse>(request,
+            CodeArtsPipelineMeta.createPluginDraft, hcClient);
+    }
+
+    /**
+     * 创建插件版本
+     *
+     * 创建插件版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePluginVersionRequest 请求对象
+     * @return CompletableFuture<CreatePluginVersionResponse>
+     */
+    public CompletableFuture<CreatePluginVersionResponse> createPluginVersionAsync(CreatePluginVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.createPluginVersion);
+    }
+
+    /**
+     * 创建插件版本
+     *
+     * 创建插件版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePluginVersionRequest 请求对象
+     * @return AsyncInvoker<CreatePluginVersionRequest, CreatePluginVersionResponse>
+     */
+    public AsyncInvoker<CreatePluginVersionRequest, CreatePluginVersionResponse> createPluginVersionAsyncInvoker(
+        CreatePluginVersionRequest request) {
+        return new AsyncInvoker<CreatePluginVersionRequest, CreatePluginVersionResponse>(request,
+            CodeArtsPipelineMeta.createPluginVersion, hcClient);
+    }
+
+    /**
+     * 创建发布商
+     *
+     * 创建发布商
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePublisherRequest 请求对象
+     * @return CompletableFuture<CreatePublisherResponse>
+     */
+    public CompletableFuture<CreatePublisherResponse> createPublisherAsync(CreatePublisherRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.createPublisher);
+    }
+
+    /**
+     * 创建发布商
+     *
+     * 创建发布商
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePublisherRequest 请求对象
+     * @return AsyncInvoker<CreatePublisherRequest, CreatePublisherResponse>
+     */
+    public AsyncInvoker<CreatePublisherRequest, CreatePublisherResponse> createPublisherAsyncInvoker(
+        CreatePublisherRequest request) {
+        return new AsyncInvoker<CreatePublisherRequest, CreatePublisherResponse>(request,
+            CodeArtsPipelineMeta.createPublisher, hcClient);
     }
 
     /**
@@ -1479,6 +1581,36 @@ public class CodeArtsPipelineAsyncClient {
     }
 
     /**
+     * 发布插件草稿
+     *
+     * 发布插件草稿
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishPluginDraftRequest 请求对象
+     * @return CompletableFuture<PublishPluginDraftResponse>
+     */
+    public CompletableFuture<PublishPluginDraftResponse> publishPluginDraftAsync(PublishPluginDraftRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.publishPluginDraft);
+    }
+
+    /**
+     * 发布插件草稿
+     *
+     * 发布插件草稿
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param PublishPluginDraftRequest 请求对象
+     * @return AsyncInvoker<PublishPluginDraftRequest, PublishPluginDraftResponse>
+     */
+    public AsyncInvoker<PublishPluginDraftRequest, PublishPluginDraftResponse> publishPluginDraftAsyncInvoker(
+        PublishPluginDraftRequest request) {
+        return new AsyncInvoker<PublishPluginDraftRequest, PublishPluginDraftResponse>(request,
+            CodeArtsPipelineMeta.publishPluginDraft, hcClient);
+    }
+
+    /**
      * 驳回人工审核
      *
      * 驳回人工审核
@@ -2381,6 +2513,67 @@ public class CodeArtsPipelineAsyncClient {
         UpdatePipelineTemplateRequest request) {
         return new AsyncInvoker<UpdatePipelineTemplateRequest, UpdatePipelineTemplateResponse>(request,
             CodeArtsPipelineMeta.updatePipelineTemplate, hcClient);
+    }
+
+    /**
+     * 更新插件基本信息
+     *
+     * 更新插件基本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePluginBaseInfoRequest 请求对象
+     * @return CompletableFuture<UpdatePluginBaseInfoResponse>
+     */
+    public CompletableFuture<UpdatePluginBaseInfoResponse> updatePluginBaseInfoAsync(
+        UpdatePluginBaseInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.updatePluginBaseInfo);
+    }
+
+    /**
+     * 更新插件基本信息
+     *
+     * 更新插件基本信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePluginBaseInfoRequest 请求对象
+     * @return AsyncInvoker<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse>
+     */
+    public AsyncInvoker<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse> updatePluginBaseInfoAsyncInvoker(
+        UpdatePluginBaseInfoRequest request) {
+        return new AsyncInvoker<UpdatePluginBaseInfoRequest, UpdatePluginBaseInfoResponse>(request,
+            CodeArtsPipelineMeta.updatePluginBaseInfo, hcClient);
+    }
+
+    /**
+     * 更新插件草稿
+     *
+     * 更新插件草稿
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePluginDraftRequest 请求对象
+     * @return CompletableFuture<UpdatePluginDraftResponse>
+     */
+    public CompletableFuture<UpdatePluginDraftResponse> updatePluginDraftAsync(UpdatePluginDraftRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.updatePluginDraft);
+    }
+
+    /**
+     * 更新插件草稿
+     *
+     * 更新插件草稿
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePluginDraftRequest 请求对象
+     * @return AsyncInvoker<UpdatePluginDraftRequest, UpdatePluginDraftResponse>
+     */
+    public AsyncInvoker<UpdatePluginDraftRequest, UpdatePluginDraftResponse> updatePluginDraftAsyncInvoker(
+        UpdatePluginDraftRequest request) {
+        return new AsyncInvoker<UpdatePluginDraftRequest, UpdatePluginDraftResponse>(request,
+            CodeArtsPipelineMeta.updatePluginDraft, hcClient);
     }
 
     /**

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * url重写配置。rewrite_url_enable为true时，该字段必须传入。
+ * 转发到的后端主机组的URL配置。rewrite_url_enable为true时，改字段有效。
  */
 public class RewriteUrlConfig {
 

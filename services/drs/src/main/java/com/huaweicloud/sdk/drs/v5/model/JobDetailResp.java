@@ -145,6 +145,11 @@ public class JobDetailResp {
 
     private String taskVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_management")
+
+    private ConnectionManagement connectionManagement;
+
     public JobDetailResp withId(String id) {
         this.id = id;
         return this;
@@ -810,6 +815,32 @@ public class JobDetailResp {
         this.taskVersion = taskVersion;
     }
 
+    public JobDetailResp withConnectionManagement(ConnectionManagement connectionManagement) {
+        this.connectionManagement = connectionManagement;
+        return this;
+    }
+
+    public JobDetailResp withConnectionManagement(Consumer<ConnectionManagement> connectionManagementSetter) {
+        if (this.connectionManagement == null) {
+            this.connectionManagement = new ConnectionManagement();
+            connectionManagementSetter.accept(this.connectionManagement);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get connectionManagement
+     * @return connectionManagement
+     */
+    public ConnectionManagement getConnectionManagement() {
+        return connectionManagement;
+    }
+
+    public void setConnectionManagement(ConnectionManagement connectionManagement) {
+        this.connectionManagement = connectionManagement;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -836,7 +867,8 @@ public class JobDetailResp {
             && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.compareResult, that.compareResult)
             && Objects.equals(this.supportImportFileResp, that.supportImportFileResp)
             && Objects.equals(this.instanceFeatures, that.instanceFeatures)
-            && Objects.equals(this.taskVersion, that.taskVersion);
+            && Objects.equals(this.taskVersion, that.taskVersion)
+            && Objects.equals(this.connectionManagement, that.connectionManagement);
     }
 
     @Override
@@ -866,7 +898,8 @@ public class JobDetailResp {
             compareResult,
             supportImportFileResp,
             instanceFeatures,
-            taskVersion);
+            taskVersion,
+            connectionManagement);
     }
 
     @Override
@@ -901,6 +934,7 @@ public class JobDetailResp {
         sb.append("    supportImportFileResp: ").append(toIndentedString(supportImportFileResp)).append("\n");
         sb.append("    instanceFeatures: ").append(toIndentedString(instanceFeatures)).append("\n");
         sb.append("    taskVersion: ").append(toIndentedString(taskVersion)).append("\n");
+        sb.append("    connectionManagement: ").append(toIndentedString(connectionManagement)).append("\n");
         sb.append("}");
         return sb.toString();
     }
