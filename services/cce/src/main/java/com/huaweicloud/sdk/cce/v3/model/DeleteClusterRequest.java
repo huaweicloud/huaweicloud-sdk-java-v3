@@ -740,6 +740,162 @@ public class DeleteClusterRequest {
 
     private TobedeletedEnum tobedeleted;
 
+    /**
+     * 集群下所有按需节点处理策略， 枚举取值： - delete (删除服务器) - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）
+     */
+    public static final class OndemandNodePolicyEnum {
+
+        /**
+         * Enum DELETE for value: "delete"
+         */
+        public static final OndemandNodePolicyEnum DELETE = new OndemandNodePolicyEnum("delete");
+
+        /**
+         * Enum RESET for value: "reset"
+         */
+        public static final OndemandNodePolicyEnum RESET = new OndemandNodePolicyEnum("reset");
+
+        /**
+         * Enum RETAIN for value: "retain"
+         */
+        public static final OndemandNodePolicyEnum RETAIN = new OndemandNodePolicyEnum("retain");
+
+        private static final Map<String, OndemandNodePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OndemandNodePolicyEnum> createStaticFields() {
+            Map<String, OndemandNodePolicyEnum> map = new HashMap<>();
+            map.put("delete", DELETE);
+            map.put("reset", RESET);
+            map.put("retain", RETAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OndemandNodePolicyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OndemandNodePolicyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OndemandNodePolicyEnum(value));
+        }
+
+        public static OndemandNodePolicyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OndemandNodePolicyEnum) {
+                return this.value.equals(((OndemandNodePolicyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ondemand_node_policy")
+
+    private OndemandNodePolicyEnum ondemandNodePolicy;
+
+    /**
+     * 集群下所有包周期节点处理策略， 枚举取值： - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）
+     */
+    public static final class PeriodicNodePolicyEnum {
+
+        /**
+         * Enum RESET for value: "reset"
+         */
+        public static final PeriodicNodePolicyEnum RESET = new PeriodicNodePolicyEnum("reset");
+
+        /**
+         * Enum RETAIN for value: "retain"
+         */
+        public static final PeriodicNodePolicyEnum RETAIN = new PeriodicNodePolicyEnum("retain");
+
+        private static final Map<String, PeriodicNodePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PeriodicNodePolicyEnum> createStaticFields() {
+            Map<String, PeriodicNodePolicyEnum> map = new HashMap<>();
+            map.put("reset", RESET);
+            map.put("retain", RETAIN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PeriodicNodePolicyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PeriodicNodePolicyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodicNodePolicyEnum(value));
+        }
+
+        public static PeriodicNodePolicyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PeriodicNodePolicyEnum) {
+                return this.value.equals(((PeriodicNodePolicyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "periodic_node_policy")
+
+    private PeriodicNodePolicyEnum periodicNodePolicy;
+
     public DeleteClusterRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -893,6 +1049,40 @@ public class DeleteClusterRequest {
         this.tobedeleted = tobedeleted;
     }
 
+    public DeleteClusterRequest withOndemandNodePolicy(OndemandNodePolicyEnum ondemandNodePolicy) {
+        this.ondemandNodePolicy = ondemandNodePolicy;
+        return this;
+    }
+
+    /**
+     * 集群下所有按需节点处理策略， 枚举取值： - delete (删除服务器) - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）
+     * @return ondemandNodePolicy
+     */
+    public OndemandNodePolicyEnum getOndemandNodePolicy() {
+        return ondemandNodePolicy;
+    }
+
+    public void setOndemandNodePolicy(OndemandNodePolicyEnum ondemandNodePolicy) {
+        this.ondemandNodePolicy = ondemandNodePolicy;
+    }
+
+    public DeleteClusterRequest withPeriodicNodePolicy(PeriodicNodePolicyEnum periodicNodePolicy) {
+        this.periodicNodePolicy = periodicNodePolicy;
+        return this;
+    }
+
+    /**
+     * 集群下所有包周期节点处理策略， 枚举取值： - reset (保留服务器并重置服务器，数据不保留) - retain （保留服务器不重置服务器，数据保留）
+     * @return periodicNodePolicy
+     */
+    public PeriodicNodePolicyEnum getPeriodicNodePolicy() {
+        return periodicNodePolicy;
+    }
+
+    public void setPeriodicNodePolicy(PeriodicNodePolicyEnum periodicNodePolicy) {
+        this.periodicNodePolicy = periodicNodePolicy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -906,7 +1096,9 @@ public class DeleteClusterRequest {
             && Objects.equals(this.deleteEni, that.deleteEni) && Objects.equals(this.deleteEvs, that.deleteEvs)
             && Objects.equals(this.deleteNet, that.deleteNet) && Objects.equals(this.deleteObs, that.deleteObs)
             && Objects.equals(this.deleteSfs, that.deleteSfs) && Objects.equals(this.deleteSfs30, that.deleteSfs30)
-            && Objects.equals(this.tobedeleted, that.tobedeleted);
+            && Objects.equals(this.tobedeleted, that.tobedeleted)
+            && Objects.equals(this.ondemandNodePolicy, that.ondemandNodePolicy)
+            && Objects.equals(this.periodicNodePolicy, that.periodicNodePolicy);
     }
 
     @Override
@@ -919,7 +1111,9 @@ public class DeleteClusterRequest {
             deleteObs,
             deleteSfs,
             deleteSfs30,
-            tobedeleted);
+            tobedeleted,
+            ondemandNodePolicy,
+            periodicNodePolicy);
     }
 
     @Override
@@ -935,6 +1129,8 @@ public class DeleteClusterRequest {
         sb.append("    deleteSfs: ").append(toIndentedString(deleteSfs)).append("\n");
         sb.append("    deleteSfs30: ").append(toIndentedString(deleteSfs30)).append("\n");
         sb.append("    tobedeleted: ").append(toIndentedString(tobedeleted)).append("\n");
+        sb.append("    ondemandNodePolicy: ").append(toIndentedString(ondemandNodePolicy)).append("\n");
+        sb.append("    periodicNodePolicy: ").append(toIndentedString(periodicNodePolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

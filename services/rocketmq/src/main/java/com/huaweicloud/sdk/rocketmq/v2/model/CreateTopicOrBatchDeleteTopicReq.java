@@ -116,7 +116,7 @@ public class CreateTopicOrBatchDeleteTopicReq {
     private PermissionEnum permission;
 
     /**
-     * 消息类型。
+     * 消息类型（RocketMQ实例5.x版本才包含此参数）。
      */
     public static final class MessageTypeEnum {
 
@@ -297,7 +297,7 @@ public class CreateTopicOrBatchDeleteTopicReq {
     }
 
     /**
-     * 消息类型。
+     * 消息类型（RocketMQ实例5.x版本才包含此参数）。
      * @return messageType
      */
     public MessageTypeEnum getMessageType() {

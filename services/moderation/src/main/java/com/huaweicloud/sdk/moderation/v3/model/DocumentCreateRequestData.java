@@ -31,7 +31,7 @@ public class DocumentCreateRequestData {
     }
 
     /**
-     * 文档url
+     * 文档url。目前支持：公网HTTP/HTTPS URL。
      * @return url
      */
     public String getUrl() {

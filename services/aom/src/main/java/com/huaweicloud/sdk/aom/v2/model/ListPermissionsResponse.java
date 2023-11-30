@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -17,26 +14,10 @@ public class ListPermissionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Map<String, AuthModel> body = null;
+    private String body;
 
-    public ListPermissionsResponse withBody(Map<String, AuthModel> body) {
+    public ListPermissionsResponse withBody(String body) {
         this.body = body;
-        return this;
-    }
-
-    public ListPermissionsResponse putBodyItem(String key, AuthModel bodyItem) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
-        }
-        this.body.put(key, bodyItem);
-        return this;
-    }
-
-    public ListPermissionsResponse withBody(Consumer<Map<String, AuthModel>> bodySetter) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
-        }
-        bodySetter.accept(this.body);
         return this;
     }
 
@@ -44,11 +25,11 @@ public class ListPermissionsResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public Map<String, AuthModel> getBody() {
+    public String getBody() {
         return body;
     }
 
-    public void setBody(Map<String, AuthModel> body) {
+    public void setBody(String body) {
         this.body = body;
     }
 

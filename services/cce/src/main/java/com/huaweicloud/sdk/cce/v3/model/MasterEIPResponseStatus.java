@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * MasterEIPResponseStatus
+ * 状态信息
  */
 public class MasterEIPResponseStatus {
 

@@ -80,7 +80,7 @@ public class DocumentCreateRequest {
     }
 
     /**
-     * 事件类型，可选值如下： default：默认事件
+     * 事件类型，可选值如下： default：默认事件 liberal_arts_education：文科教育 sciences_education：理科教育 news：新闻 forums：论坛 novels：小说
      * @return eventType
      */
     public String getEventType() {

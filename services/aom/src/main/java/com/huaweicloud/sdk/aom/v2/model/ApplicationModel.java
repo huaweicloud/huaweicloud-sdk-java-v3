@@ -31,7 +31,7 @@ public class ApplicationModel {
     }
 
     /**
-     * 应用id
+     * 应用id。
      * @return appId
      */
     public String getAppId() {
@@ -48,7 +48,7 @@ public class ApplicationModel {
     }
 
     /**
-     * 应用名称
+     * 应用名称。
      * @return appName
      */
     public String getAppName() {
@@ -65,7 +65,7 @@ public class ApplicationModel {
     }
 
     /**
-     * 应用来源
+     * 应用来源。
      * @return appType
      */
     public String getAppType() {

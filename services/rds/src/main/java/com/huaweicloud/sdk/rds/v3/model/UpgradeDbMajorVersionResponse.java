@@ -12,25 +12,25 @@ import java.util.Objects;
 public class UpgradeDbMajorVersionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "job_id")
 
-    private String body;
+    private String jobId;
 
-    public UpgradeDbMajorVersionResponse withBody(String body) {
-        this.body = body;
+    public UpgradeDbMajorVersionResponse withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 任务ID。
+     * @return jobId
      */
-    public String getBody() {
-        return body;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class UpgradeDbMajorVersionResponse extends SdkResponse {
             return false;
         }
         UpgradeDbMajorVersionResponse that = (UpgradeDbMajorVersionResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpgradeDbMajorVersionResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

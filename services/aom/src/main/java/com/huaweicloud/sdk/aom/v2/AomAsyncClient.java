@@ -531,6 +531,34 @@ public class AomAsyncClient {
     }
 
     /**
+     * 查询集群主机安装的ICAgent信息
+     *
+     * 该接口用于查询集群主机安装的ICAgent信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAgentsRequest 请求对象
+     * @return CompletableFuture<ListAgentsResponse>
+     */
+    public CompletableFuture<ListAgentsResponse> listAgentsAsync(ListAgentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listAgents);
+    }
+
+    /**
+     * 查询集群主机安装的ICAgent信息
+     *
+     * 该接口用于查询集群主机安装的ICAgent信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAgentsRequest 请求对象
+     * @return AsyncInvoker<ListAgentsRequest, ListAgentsResponse>
+     */
+    public AsyncInvoker<ListAgentsRequest, ListAgentsResponse> listAgentsAsyncInvoker(ListAgentsRequest request) {
+        return new AsyncInvoker<ListAgentsRequest, ListAgentsResponse>(request, AomMeta.listAgents, hcClient);
+    }
+
+    /**
      * 查询阈值规则列表
      *
      * 该接口用于查询阈值规则列表。
@@ -734,6 +762,36 @@ public class AomAsyncClient {
         ListNotifiedHistoriesRequest request) {
         return new AsyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>(request,
             AomMeta.listNotifiedHistories, hcClient);
+    }
+
+    /**
+     * 查询aom2.0相关云服务授权信息
+     *
+     * 该接口用于查询aom2.0相关云服务授权信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPermissionsRequest 请求对象
+     * @return CompletableFuture<ListPermissionsResponse>
+     */
+    public CompletableFuture<ListPermissionsResponse> listPermissionsAsync(ListPermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AomMeta.listPermissions);
+    }
+
+    /**
+     * 查询aom2.0相关云服务授权信息
+     *
+     * 该接口用于查询aom2.0相关云服务授权信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPermissionsRequest 请求对象
+     * @return AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse>
+     */
+    public AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse> listPermissionsAsyncInvoker(
+        ListPermissionsRequest request) {
+        return new AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse>(request, AomMeta.listPermissions,
+            hcClient);
     }
 
     /**
@@ -1061,9 +1119,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 新增Prometheus实例数据源
+     * 新增Prometheus实例
      *
-     * 该接口用于新增Prometheus实例数据源
+     * 该接口用于新增Prometheus实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1075,9 +1133,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 新增Prometheus实例数据源
+     * 新增Prometheus实例
      *
-     * 该接口用于新增Prometheus实例数据源
+     * 该接口用于新增Prometheus实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1091,9 +1149,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 创建预汇聚规则
+     * 创建Prometheus实例的预聚合规则
      *
-     * 该接口用于创建预汇聚规则
+     * 该接口用于给Prometheus实例创建预聚合规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1105,9 +1163,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 创建预汇聚规则
+     * 创建Prometheus实例的预聚合规则
      *
-     * 该接口用于创建预汇聚规则
+     * 该接口用于给Prometheus实例创建预聚合规则。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1121,9 +1179,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 卸载托管Prometheus
+     * 卸载托管Prometheus实例
      *
-     * 该接口用于卸载托管Prometheus
+     * 该接口用于卸载托管Prometheus实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1135,9 +1193,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 卸载托管Prometheus
+     * 卸载托管Prometheus实例
      *
-     * 该接口用于卸载托管Prometheus
+     * 该接口用于卸载托管Prometheus实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1151,9 +1209,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 获取Prometheus监控所需Token-access code
+     * 获取Prometheus实例调用凭证
      *
-     * 该接口用于获取Prometheus监控所需Token-access code
+     * 该接口用于获取Prometheus实例调用凭证。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1165,9 +1223,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 获取Prometheus监控所需Token-access code
+     * 获取Prometheus实例调用凭证
      *
-     * 该接口用于获取Prometheus监控所需Token-access code
+     * 该接口用于获取Prometheus实例调用凭证。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1178,34 +1236,6 @@ public class AomAsyncClient {
         ListAccessCodeRequest request) {
         return new AsyncInvoker<ListAccessCodeRequest, ListAccessCodeResponse>(request, AomMeta.listAccessCode,
             hcClient);
-    }
-
-    /**
-     * 查询集群Agent信息
-     *
-     * 该接口用于查询集群Agent信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListAgentsRequest 请求对象
-     * @return CompletableFuture<ListAgentsResponse>
-     */
-    public CompletableFuture<ListAgentsResponse> listAgentsAsync(ListAgentsRequest request) {
-        return hcClient.asyncInvokeHttp(request, AomMeta.listAgents);
-    }
-
-    /**
-     * 查询集群Agent信息
-     *
-     * 该接口用于查询集群Agent信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListAgentsRequest 请求对象
-     * @return AsyncInvoker<ListAgentsRequest, ListAgentsResponse>
-     */
-    public AsyncInvoker<ListAgentsRequest, ListAgentsResponse> listAgentsAsyncInvoker(ListAgentsRequest request) {
-        return new AsyncInvoker<ListAgentsRequest, ListAgentsResponse>(request, AomMeta.listAgents, hcClient);
     }
 
     /**
@@ -1395,39 +1425,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 是否开通aom2.0
+     * 查询Prometheus实例
      *
-     * 该接口用于查询用户是否已经完成aom2.0授权
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListPermissionsRequest 请求对象
-     * @return CompletableFuture<ListPermissionsResponse>
-     */
-    public CompletableFuture<ListPermissionsResponse> listPermissionsAsync(ListPermissionsRequest request) {
-        return hcClient.asyncInvokeHttp(request, AomMeta.listPermissions);
-    }
-
-    /**
-     * 是否开通aom2.0
-     *
-     * 该接口用于查询用户是否已经完成aom2.0授权
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListPermissionsRequest 请求对象
-     * @return AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse>
-     */
-    public AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse> listPermissionsAsyncInvoker(
-        ListPermissionsRequest request) {
-        return new AsyncInvoker<ListPermissionsRequest, ListPermissionsResponse>(request, AomMeta.listPermissions,
-            hcClient);
-    }
-
-    /**
-     * 获取所有正常实例
-     *
-     * 该接口用于获取所有正常prometheus实例
+     * 该接口用于查询Prometheus实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1439,9 +1439,9 @@ public class AomAsyncClient {
     }
 
     /**
-     * 获取所有正常实例
+     * 查询Prometheus实例
      *
-     * 该接口用于获取所有正常prometheus实例
+     * 该接口用于查询Prometheus实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

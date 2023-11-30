@@ -41,7 +41,7 @@ public class ListAccessCodeResponse extends SdkResponse {
     }
 
     /**
-     * accessCodes
+     * accessCodes。
      * @return accessCodes
      */
     public List<AccessCodeModel> getAccessCodes() {

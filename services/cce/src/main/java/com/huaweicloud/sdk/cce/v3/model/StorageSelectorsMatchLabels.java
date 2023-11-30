@@ -58,7 +58,7 @@ public class StorageSelectorsMatchLabels {
     }
 
     /**
-     * 云硬盘类型，目前支持SSD\\GPSSD\\SAS三种。
+     * 云硬盘类型，目前支持SSD\\GPSSD\\SAS\\ESSD\\SATA等。
      * @return volumeType
      */
     public String getVolumeType() {

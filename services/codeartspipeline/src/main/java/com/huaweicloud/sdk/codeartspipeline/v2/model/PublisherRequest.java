@@ -21,6 +21,11 @@ public class PublisherRequest {
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logo_url")
 
     private String logoUrl;
@@ -82,6 +87,23 @@ public class PublisherRequest {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public PublisherRequest withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public PublisherRequest withLogoUrl(String logoUrl) {
@@ -196,15 +218,16 @@ public class PublisherRequest {
         }
         PublisherRequest that = (PublisherRequest) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.userId, that.userId)
-            && Objects.equals(this.logoUrl, that.logoUrl) && Objects.equals(this.website, that.website)
-            && Objects.equals(this.supportUrl, that.supportUrl) && Objects.equals(this.sourceUrl, that.sourceUrl)
-            && Objects.equals(this.enName, that.enName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.logoUrl, that.logoUrl)
+            && Objects.equals(this.website, that.website) && Objects.equals(this.supportUrl, that.supportUrl)
+            && Objects.equals(this.sourceUrl, that.sourceUrl) && Objects.equals(this.enName, that.enName)
             && Objects.equals(this.publisherUniqueId, that.publisherUniqueId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, userId, logoUrl, website, supportUrl, sourceUrl, enName, publisherUniqueId);
+        return Objects
+            .hash(name, userId, description, logoUrl, website, supportUrl, sourceUrl, enName, publisherUniqueId);
     }
 
     @Override
@@ -213,6 +236,7 @@ public class PublisherRequest {
         sb.append("class PublisherRequest {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
         sb.append("    website: ").append(toIndentedString(website)).append("\n");
         sb.append("    supportUrl: ").append(toIndentedString(supportUrl)).append("\n");

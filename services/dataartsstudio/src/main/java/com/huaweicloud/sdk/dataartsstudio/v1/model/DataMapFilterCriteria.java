@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.dataartsstudio.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,105 +18,340 @@ import java.util.function.Consumer;
  */
 public class DataMapFilterCriteria {
 
+    /**
+     * 过滤属性维度，枚举值：typeName、base.DataAsset.sourceType、classifications.name、tags.name、securityLevel.name、workspaceId
+     */
+    public static final class AttributeEnum {
+
+        /**
+         * Enum BASE_DATAASSET_SOURCETYPE for value: "base.DataAsset.sourceType"
+         */
+        public static final AttributeEnum BASE_DATAASSET_SOURCETYPE = new AttributeEnum("base.DataAsset.sourceType");
+
+        /**
+         * Enum TYPENAME for value: "typeName"
+         */
+        public static final AttributeEnum TYPENAME = new AttributeEnum("typeName");
+
+        /**
+         * Enum CLASSIFICATIONS_NAME for value: "classifications.name"
+         */
+        public static final AttributeEnum CLASSIFICATIONS_NAME = new AttributeEnum("classifications.name");
+
+        /**
+         * Enum TAGS_NAME for value: "tags.name"
+         */
+        public static final AttributeEnum TAGS_NAME = new AttributeEnum("tags.name");
+
+        /**
+         * Enum SECURITYLEVEL_NAME for value: "securityLevel.name"
+         */
+        public static final AttributeEnum SECURITYLEVEL_NAME = new AttributeEnum("securityLevel.name");
+
+        /**
+         * Enum WORKSPACEID for value: "workspaceId"
+         */
+        public static final AttributeEnum WORKSPACEID = new AttributeEnum("workspaceId");
+
+        private static final Map<String, AttributeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AttributeEnum> createStaticFields() {
+            Map<String, AttributeEnum> map = new HashMap<>();
+            map.put("base.DataAsset.sourceType", BASE_DATAASSET_SOURCETYPE);
+            map.put("typeName", TYPENAME);
+            map.put("classifications.name", CLASSIFICATIONS_NAME);
+            map.put("tags.name", TAGS_NAME);
+            map.put("securityLevel.name", SECURITYLEVEL_NAME);
+            map.put("workspaceId", WORKSPACEID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AttributeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AttributeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AttributeEnum(value));
+        }
+
+        public static AttributeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AttributeEnum) {
+                return this.value.equals(((AttributeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attribute")
 
-    private String attribute;
+    private AttributeEnum attribute;
+
+    /**
+     * 操作表示，枚举值：EQ、IN
+     */
+    public static final class OperatorEnum {
+
+        /**
+         * Enum IN for value: "IN"
+         */
+        public static final OperatorEnum IN = new OperatorEnum("IN");
+
+        /**
+         * Enum EQ for value: "EQ"
+         */
+        public static final OperatorEnum EQ = new OperatorEnum("EQ");
+
+        private static final Map<String, OperatorEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OperatorEnum> createStaticFields() {
+            Map<String, OperatorEnum> map = new HashMap<>();
+            map.put("IN", IN);
+            map.put("EQ", EQ);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OperatorEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OperatorEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperatorEnum(value));
+        }
+
+        public static OperatorEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OperatorEnum) {
+                return this.value.equals(((OperatorEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operator")
 
-    private String operator;
+    private OperatorEnum operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private Object value;
+    private List<String> value = null;
+
+    /**
+     * 条件拼接准则，取值范围 AND,OR
+     */
+    public static final class ConditionEnum {
+
+        /**
+         * Enum OR for value: "OR"
+         */
+        public static final ConditionEnum OR = new ConditionEnum("OR");
+
+        private static final Map<String, ConditionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConditionEnum> createStaticFields() {
+            Map<String, ConditionEnum> map = new HashMap<>();
+            map.put("OR", OR);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ConditionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ConditionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionEnum(value));
+        }
+
+        public static ConditionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ConditionEnum) {
+                return this.value.equals(((ConditionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
-    private ConditionInfo condition;
+    private ConditionEnum condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "criterion")
 
     private List<DataMapFilterCriteria> criterion = null;
 
-    public DataMapFilterCriteria withAttribute(String attribute) {
+    public DataMapFilterCriteria withAttribute(AttributeEnum attribute) {
         this.attribute = attribute;
         return this;
     }
 
     /**
-     * 属性
+     * 过滤属性维度，枚举值：typeName、base.DataAsset.sourceType、classifications.name、tags.name、securityLevel.name、workspaceId
      * @return attribute
      */
-    public String getAttribute() {
+    public AttributeEnum getAttribute() {
         return attribute;
     }
 
-    public void setAttribute(String attribute) {
+    public void setAttribute(AttributeEnum attribute) {
         this.attribute = attribute;
     }
 
-    public DataMapFilterCriteria withOperator(String operator) {
+    public DataMapFilterCriteria withOperator(OperatorEnum operator) {
         this.operator = operator;
         return this;
     }
 
     /**
-     * 操作表示，默认值EQ
+     * 操作表示，枚举值：EQ、IN
      * @return operator
      */
-    public String getOperator() {
+    public OperatorEnum getOperator() {
         return operator;
     }
 
-    public void setOperator(String operator) {
+    public void setOperator(OperatorEnum operator) {
         this.operator = operator;
     }
 
-    public DataMapFilterCriteria withValue(Object value) {
+    public DataMapFilterCriteria withValue(List<String> value) {
         this.value = value;
         return this;
     }
 
+    public DataMapFilterCriteria addValueItem(String valueItem) {
+        if (this.value == null) {
+            this.value = new ArrayList<>();
+        }
+        this.value.add(valueItem);
+        return this;
+    }
+
+    public DataMapFilterCriteria withValue(Consumer<List<String>> valueSetter) {
+        if (this.value == null) {
+            this.value = new ArrayList<>();
+        }
+        valueSetter.accept(this.value);
+        return this;
+    }
+
     /**
-     * 值
+     * 属性过滤值，根据attribute变化。如attribute为数据源：base.DataAsset.sourceType，则值可为[\"dws\", \"hive\"]
      * @return value
      */
-    public Object getValue() {
+    public List<String> getValue() {
         return value;
     }
 
-    public void setValue(Object value) {
+    public void setValue(List<String> value) {
         this.value = value;
     }
 
-    public DataMapFilterCriteria withCondition(ConditionInfo condition) {
+    public DataMapFilterCriteria withCondition(ConditionEnum condition) {
         this.condition = condition;
         return this;
     }
 
-    public DataMapFilterCriteria withCondition(Consumer<ConditionInfo> conditionSetter) {
-        if (this.condition == null) {
-            this.condition = new ConditionInfo();
-            conditionSetter.accept(this.condition);
-        }
-
-        return this;
-    }
-
     /**
-     * Get condition
+     * 条件拼接准则，取值范围 AND,OR
      * @return condition
      */
-    public ConditionInfo getCondition() {
+    public ConditionEnum getCondition() {
         return condition;
     }
 
-    public void setCondition(ConditionInfo condition) {
+    public void setCondition(ConditionEnum condition) {
         this.condition = condition;
     }
 

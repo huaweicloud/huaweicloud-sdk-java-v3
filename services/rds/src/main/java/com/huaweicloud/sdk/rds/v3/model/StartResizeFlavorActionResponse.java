@@ -16,13 +16,18 @@ public class StartResizeFlavorActionResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
     public StartResizeFlavorActionResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
     /**
-     * 任务ID。
+     * 规格变更的任务id。 仅规格变更按需实例时会返回该参数。
      * @return jobId
      */
     public String getJobId() {
@@ -31,6 +36,23 @@ public class StartResizeFlavorActionResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public StartResizeFlavorActionResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单号，规格变更包年包月时返回该参数。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     @Override
@@ -42,12 +64,12 @@ public class StartResizeFlavorActionResponse extends SdkResponse {
             return false;
         }
         StartResizeFlavorActionResponse that = (StartResizeFlavorActionResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, orderId);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class StartResizeFlavorActionResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class StartResizeFlavorActionResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

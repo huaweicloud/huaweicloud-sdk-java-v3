@@ -19,11 +19,6 @@ public class CreateRuleSetReq {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rules")
 
     private List<RequestRuleInstance> rules = null;
@@ -43,23 +38,6 @@ public class CreateRuleSetReq {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public CreateRuleSetReq withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 规则集类型
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public CreateRuleSetReq withRules(List<RequestRuleInstance> rules) {
@@ -104,13 +82,12 @@ public class CreateRuleSetReq {
             return false;
         }
         CreateRuleSetReq that = (CreateRuleSetReq) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.rules, that.rules);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.rules, that.rules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, rules);
+        return Objects.hash(name, rules);
     }
 
     @Override
@@ -118,7 +95,6 @@ public class CreateRuleSetReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateRuleSetReq {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("}");
         return sb.toString();

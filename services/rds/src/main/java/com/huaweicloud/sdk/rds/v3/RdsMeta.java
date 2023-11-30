@@ -318,6 +318,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyResponse;
@@ -409,6 +411,7 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateDBShrinkRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDataIpRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDataIpResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateDatabaseReq;
@@ -1873,16 +1876,16 @@ public class RdsMeta {
         HttpRequestDef.Builder<ListHistoryDatabaseRequest, ListHistoryDatabaseResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListHistoryDatabaseRequest.class, ListHistoryDatabaseResponse.class)
                 .withName("ListHistoryDatabase")
-                .withUri("/v3/{project_id}/{database_name}/instances/history/databases")
+                .withUri("/v3/{project_id}/{engine}/instances/history/databases")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("database_name",
+        builder.<String>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListHistoryDatabaseRequest::getDatabaseName, (req, v) -> {
-                req.setDatabaseName(v);
+            f -> f.withMarshaller(ListHistoryDatabaseRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
             }));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
@@ -3679,6 +3682,38 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> setInstancesDbShrink =
+        genForsetInstancesDbShrink();
+
+    private static HttpRequestDef<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> genForsetInstancesDbShrink() {
+        // basic
+        HttpRequestDef.Builder<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetInstancesDbShrinkRequest.class, SetInstancesDbShrinkResponse.class)
+            .withName("SetInstancesDbShrink")
+            .withUri("/v3/{project_id}/instances/{instance_id}/db_shrink")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetInstancesDbShrinkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateDBShrinkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDBShrinkRequestBody.class),
+            f -> f.withMarshaller(SetInstancesDbShrinkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> setOffSiteBackupPolicy =
         genForsetOffSiteBackupPolicy();
 
@@ -5181,13 +5216,6 @@ public class RdsMeta {
             }));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpgradeDbMajorVersionResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
 
         return builder.build();
     }

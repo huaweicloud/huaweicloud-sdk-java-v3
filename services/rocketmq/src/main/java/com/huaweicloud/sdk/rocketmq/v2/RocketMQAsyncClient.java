@@ -59,12 +59,16 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ListUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListUserResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceRequest;
@@ -832,6 +836,40 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 实例规格变更
+     *
+     * 实例规格变更。
+     * 
+     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeInstanceRequest 请求对象
+     * @return CompletableFuture<ResizeInstanceResponse>
+     */
+    public CompletableFuture<ResizeInstanceResponse> resizeInstanceAsync(ResizeInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.resizeInstance);
+    }
+
+    /**
+     * 实例规格变更
+     *
+     * 实例规格变更。
+     * 
+     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeInstanceRequest 请求对象
+     * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
+     */
+    public AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceAsyncInvoker(
+        ResizeInstanceRequest request) {
+        return new AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request, RocketMQMeta.resizeInstance,
+            hcClient);
+    }
+
+    /**
      * 重发死信消息
      *
      * 重发死信消息。
@@ -921,6 +959,37 @@ public class RocketMQAsyncClient {
         ShowConsumerListOrDetailsRequest request) {
         return new AsyncInvoker<ShowConsumerListOrDetailsRequest, ShowConsumerListOrDetailsResponse>(request,
             RocketMQMeta.showConsumerListOrDetails, hcClient);
+    }
+
+    /**
+     * 查询实例的扩容规格列表
+     *
+     * 查询实例的扩容规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @return CompletableFuture<ShowEngineInstanceExtendProductInfoResponse>
+     */
+    public CompletableFuture<ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsync(
+        ShowEngineInstanceExtendProductInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showEngineInstanceExtendProductInfo);
+    }
+
+    /**
+     * 查询实例的扩容规格列表
+     *
+     * 查询实例的扩容规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEngineInstanceExtendProductInfoRequest 请求对象
+     * @return AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>
+     */
+    public AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsyncInvoker(
+        ShowEngineInstanceExtendProductInfoRequest request) {
+        return new AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse>(
+            request, RocketMQMeta.showEngineInstanceExtendProductInfo, hcClient);
     }
 
     /**

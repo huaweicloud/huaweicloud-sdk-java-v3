@@ -21,7 +21,7 @@ public class ListClustersRequest {
     private String detail;
 
     /**
-     * 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - RollingBack：回滚中，表示集群正处于回滚过程中。 - RollbackFailed：回滚异常，表示集群回滚异常。 - Empty：集群无任何资源
+     * 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - RollingBack：回滚中，表示集群正处于回滚过程中。 - RollbackFailed：回滚异常，表示集群回滚异常。 - Hibernating：休眠中，表示集群正处于休眠过程中。 - Hibernation：已休眠，表示集群正处于休眠状态。 - Awaking：唤醒中，表示集群正处于从休眠状态唤醒的过程中。 - Empty：集群无任何资源（已废弃）
      */
     public static final class StatusEnum {
 
@@ -76,6 +76,21 @@ public class ListClustersRequest {
         public static final StatusEnum ROLLBACKFAILED = new StatusEnum("RollbackFailed");
 
         /**
+         * Enum HIBERNATING for value: "Hibernating"
+         */
+        public static final StatusEnum HIBERNATING = new StatusEnum("Hibernating");
+
+        /**
+         * Enum HIBERNATION for value: "Hibernation"
+         */
+        public static final StatusEnum HIBERNATION = new StatusEnum("Hibernation");
+
+        /**
+         * Enum AWAKING for value: "Awaking"
+         */
+        public static final StatusEnum AWAKING = new StatusEnum("Awaking");
+
+        /**
          * Enum EMPTY for value: "Empty"
          */
         public static final StatusEnum EMPTY = new StatusEnum("Empty");
@@ -94,6 +109,9 @@ public class ListClustersRequest {
             map.put("Resizing", RESIZING);
             map.put("RollingBack", ROLLINGBACK);
             map.put("RollbackFailed", ROLLBACKFAILED);
+            map.put("Hibernating", HIBERNATING);
+            map.put("Hibernation", HIBERNATION);
+            map.put("Awaking", AWAKING);
             map.put("Empty", EMPTY);
             return Collections.unmodifiableMap(map);
         }
@@ -252,7 +270,7 @@ public class ListClustersRequest {
     }
 
     /**
-     * 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - RollingBack：回滚中，表示集群正处于回滚过程中。 - RollbackFailed：回滚异常，表示集群回滚异常。 - Empty：集群无任何资源
+     * 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - RollingBack：回滚中，表示集群正处于回滚过程中。 - RollbackFailed：回滚异常，表示集群回滚异常。 - Hibernating：休眠中，表示集群正处于休眠过程中。 - Hibernation：已休眠，表示集群正处于休眠状态。 - Awaking：唤醒中，表示集群正处于从休眠状态唤醒的过程中。 - Empty：集群无任何资源（已废弃）
      * @return status
      */
     public StatusEnum getStatus() {

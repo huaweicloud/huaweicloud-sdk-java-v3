@@ -27,7 +27,7 @@ public class ListHistoryDatabaseResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private List<PostgreSQLHistoryDatabaseInstance> instances = null;
+    private List<HistoryDatabaseInstance> instances = null;
 
     public ListHistoryDatabaseResponse withDatabaseLimit(Integer databaseLimit) {
         this.databaseLimit = databaseLimit;
@@ -63,12 +63,12 @@ public class ListHistoryDatabaseResponse extends SdkResponse {
         this.tableLimit = tableLimit;
     }
 
-    public ListHistoryDatabaseResponse withInstances(List<PostgreSQLHistoryDatabaseInstance> instances) {
+    public ListHistoryDatabaseResponse withInstances(List<HistoryDatabaseInstance> instances) {
         this.instances = instances;
         return this;
     }
 
-    public ListHistoryDatabaseResponse addInstancesItem(PostgreSQLHistoryDatabaseInstance instancesItem) {
+    public ListHistoryDatabaseResponse addInstancesItem(HistoryDatabaseInstance instancesItem) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -76,8 +76,7 @@ public class ListHistoryDatabaseResponse extends SdkResponse {
         return this;
     }
 
-    public ListHistoryDatabaseResponse withInstances(
-        Consumer<List<PostgreSQLHistoryDatabaseInstance>> instancesSetter) {
+    public ListHistoryDatabaseResponse withInstances(Consumer<List<HistoryDatabaseInstance>> instancesSetter) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -89,11 +88,11 @@ public class ListHistoryDatabaseResponse extends SdkResponse {
      * 实例信息
      * @return instances
      */
-    public List<PostgreSQLHistoryDatabaseInstance> getInstances() {
+    public List<HistoryDatabaseInstance> getInstances() {
         return instances;
     }
 
-    public void setInstances(List<PostgreSQLHistoryDatabaseInstance> instances) {
+    public void setInstances(List<HistoryDatabaseInstance> instances) {
         this.instances = instances;
     }
 

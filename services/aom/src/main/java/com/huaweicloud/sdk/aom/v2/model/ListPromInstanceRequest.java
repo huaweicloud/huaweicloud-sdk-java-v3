@@ -21,7 +21,7 @@ public class ListPromInstanceRequest {
     private String promId;
 
     /**
-     * 普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT
+     * Prometheus实例类型。
      */
     public static final class PromTypeEnum {
 
@@ -132,7 +132,7 @@ public class ListPromInstanceRequest {
     private PromTypeEnum promType;
 
     /**
-     * cce集群开关 true/false
+     * cce集群开关。
      */
     public static final class CceClusterEnableEnum {
 
@@ -207,7 +207,7 @@ public class ListPromInstanceRequest {
     private CceClusterEnableEnum cceClusterEnable;
 
     /**
-     * 普罗实例状态 true/false
+     * Prometheus实例状态。
      */
     public static final class PromStatusEnum {
 
@@ -287,7 +287,7 @@ public class ListPromInstanceRequest {
     }
 
     /**
-     * 普罗实例ID
+     * Prometheus实例id。
      * @return promId
      */
     public String getPromId() {
@@ -304,7 +304,7 @@ public class ListPromInstanceRequest {
     }
 
     /**
-     * 普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT
+     * Prometheus实例类型。
      * @return promType
      */
     public PromTypeEnum getPromType() {
@@ -321,7 +321,7 @@ public class ListPromInstanceRequest {
     }
 
     /**
-     * cce集群开关 true/false
+     * cce集群开关。
      * @return cceClusterEnable
      */
     public CceClusterEnableEnum getCceClusterEnable() {
@@ -338,7 +338,7 @@ public class ListPromInstanceRequest {
     }
 
     /**
-     * 普罗实例状态 true/false
+     * Prometheus实例状态。
      * @return promStatus
      */
     public PromStatusEnum getPromStatus() {

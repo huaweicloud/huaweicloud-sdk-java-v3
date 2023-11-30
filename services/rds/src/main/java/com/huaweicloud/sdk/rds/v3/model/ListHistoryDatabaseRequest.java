@@ -12,9 +12,9 @@ import java.util.function.Consumer;
 public class ListHistoryDatabaseRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "database_name")
+    @JsonProperty(value = "engine")
 
-    private String databaseName;
+    private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
@@ -26,21 +26,21 @@ public class ListHistoryDatabaseRequest {
 
     private PostgreSQLHistoryDatabaseRequest body;
 
-    public ListHistoryDatabaseRequest withDatabaseName(String databaseName) {
-        this.databaseName = databaseName;
+    public ListHistoryDatabaseRequest withEngine(String engine) {
+        this.engine = engine;
         return this;
     }
 
     /**
-     * 数据库引擎。支持的引擎如下，不区分大小写：postgresql
-     * @return databaseName
+     * 数据库引擎。支持的引擎如下，不区分大小写：postgresql,mysql
+     * @return engine
      */
-    public String getDatabaseName() {
-        return databaseName;
+    public String getEngine() {
+        return engine;
     }
 
-    public void setDatabaseName(String databaseName) {
-        this.databaseName = databaseName;
+    public void setEngine(String engine) {
+        this.engine = engine;
     }
 
     public ListHistoryDatabaseRequest withXLanguage(String xLanguage) {
@@ -97,20 +97,20 @@ public class ListHistoryDatabaseRequest {
             return false;
         }
         ListHistoryDatabaseRequest that = (ListHistoryDatabaseRequest) obj;
-        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.xLanguage, that.xLanguage)
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.xLanguage, that.xLanguage)
             && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(databaseName, xLanguage, body);
+        return Objects.hash(engine, xLanguage, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHistoryDatabaseRequest {\n");
-        sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

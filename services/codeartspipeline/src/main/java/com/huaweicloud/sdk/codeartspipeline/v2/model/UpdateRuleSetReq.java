@@ -19,11 +19,6 @@ public class UpdateRuleSetReq {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "parent_id")
-
-    private String parentId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rules")
 
     private List<UpdateRuleInstance> rules = null;
@@ -43,23 +38,6 @@ public class UpdateRuleSetReq {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public UpdateRuleSetReq withParentId(String parentId) {
-        this.parentId = parentId;
-        return this;
-    }
-
-    /**
-     * 规则类型
-     * @return parentId
-     */
-    public String getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(String parentId) {
-        this.parentId = parentId;
     }
 
     public UpdateRuleSetReq withRules(List<UpdateRuleInstance> rules) {
@@ -104,13 +82,12 @@ public class UpdateRuleSetReq {
             return false;
         }
         UpdateRuleSetReq that = (UpdateRuleSetReq) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.parentId, that.parentId)
-            && Objects.equals(this.rules, that.rules);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.rules, that.rules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, parentId, rules);
+        return Objects.hash(name, rules);
     }
 
     @Override
@@ -118,7 +95,6 @@ public class UpdateRuleSetReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateRuleSetReq {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -65,6 +65,11 @@ public class PluginBasicDTO {
 
     private String maintainers;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plugin_composition_type")
+
+    private String pluginCompositionType;
+
     public PluginBasicDTO withUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
         return this;
@@ -252,6 +257,23 @@ public class PluginBasicDTO {
         this.maintainers = maintainers;
     }
 
+    public PluginBasicDTO withPluginCompositionType(String pluginCompositionType) {
+        this.pluginCompositionType = pluginCompositionType;
+        return this;
+    }
+
+    /**
+     * 组合插件类型
+     * @return pluginCompositionType
+     */
+    public String getPluginCompositionType() {
+        return pluginCompositionType;
+    }
+
+    public void setPluginCompositionType(String pluginCompositionType) {
+        this.pluginCompositionType = pluginCompositionType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -267,7 +289,8 @@ public class PluginBasicDTO {
             && Objects.equals(this.businessType, that.businessType)
             && Objects.equals(this.businessTypeDisplayName, that.businessTypeDisplayName)
             && Objects.equals(this.description, that.description) && Objects.equals(this.isPrivate, that.isPrivate)
-            && Objects.equals(this.region, that.region) && Objects.equals(this.maintainers, that.maintainers);
+            && Objects.equals(this.region, that.region) && Objects.equals(this.maintainers, that.maintainers)
+            && Objects.equals(this.pluginCompositionType, that.pluginCompositionType);
     }
 
     @Override
@@ -282,7 +305,8 @@ public class PluginBasicDTO {
             description,
             isPrivate,
             region,
-            maintainers);
+            maintainers,
+            pluginCompositionType);
     }
 
     @Override
@@ -300,6 +324,7 @@ public class PluginBasicDTO {
         sb.append("    isPrivate: ").append(toIndentedString(isPrivate)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    maintainers: ").append(toIndentedString(maintainers)).append("\n");
+        sb.append("    pluginCompositionType: ").append(toIndentedString(pluginCompositionType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

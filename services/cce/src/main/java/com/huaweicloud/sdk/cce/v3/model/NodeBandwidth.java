@@ -65,7 +65,7 @@ public class NodeBandwidth {
     }
 
     /**
-     * 带宽的共享类型，共享类型枚举：PER，表示独享。WHOLE，表示共享。
+     * 带宽的共享类型，共享类型枚举：PER，表示独享，目前仅支持独享。
      * @return sharetype
      */
     public String getSharetype() {

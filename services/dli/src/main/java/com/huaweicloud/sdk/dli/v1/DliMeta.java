@@ -244,6 +244,8 @@ import com.huaweicloud.sdk.dli.v1.model.ShowPartitionsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowPartitionsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowQueueResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowQuotaRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowQuotaResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowResourceInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowResourceInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobRequest;
@@ -1804,19 +1806,19 @@ public class DliMeta {
             f -> f.withMarshaller(ListQueuePropertiesRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
             }));
-        builder.<Integer>withRequestField("page",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueuePropertiesRequest::getPage, (req, v) -> {
-                req.setPage(v);
+            f -> f.withMarshaller(ListQueuePropertiesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             }));
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueuePropertiesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
+            f -> f.withMarshaller(ListQueuePropertiesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -2226,6 +2228,23 @@ public class DliMeta {
             f -> f.withMarshaller(ShowQueueRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForshowQuota();
+
+    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForshowQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
+                .withName("ShowQuota")
+                .withUri("/v3/{project_id}/quotas")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

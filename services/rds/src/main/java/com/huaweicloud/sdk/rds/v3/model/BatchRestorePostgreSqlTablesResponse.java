@@ -17,14 +17,14 @@ public class BatchRestorePostgreSqlTablesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "restore_result")
 
-    private List<PostgreSQLRestoreResult> restoreResult = null;
+    private List<RestoreResult> restoreResult = null;
 
-    public BatchRestorePostgreSqlTablesResponse withRestoreResult(List<PostgreSQLRestoreResult> restoreResult) {
+    public BatchRestorePostgreSqlTablesResponse withRestoreResult(List<RestoreResult> restoreResult) {
         this.restoreResult = restoreResult;
         return this;
     }
 
-    public BatchRestorePostgreSqlTablesResponse addRestoreResultItem(PostgreSQLRestoreResult restoreResultItem) {
+    public BatchRestorePostgreSqlTablesResponse addRestoreResultItem(RestoreResult restoreResultItem) {
         if (this.restoreResult == null) {
             this.restoreResult = new ArrayList<>();
         }
@@ -32,8 +32,7 @@ public class BatchRestorePostgreSqlTablesResponse extends SdkResponse {
         return this;
     }
 
-    public BatchRestorePostgreSqlTablesResponse withRestoreResult(
-        Consumer<List<PostgreSQLRestoreResult>> restoreResultSetter) {
+    public BatchRestorePostgreSqlTablesResponse withRestoreResult(Consumer<List<RestoreResult>> restoreResultSetter) {
         if (this.restoreResult == null) {
             this.restoreResult = new ArrayList<>();
         }
@@ -45,11 +44,11 @@ public class BatchRestorePostgreSqlTablesResponse extends SdkResponse {
      * 表信息
      * @return restoreResult
      */
-    public List<PostgreSQLRestoreResult> getRestoreResult() {
+    public List<RestoreResult> getRestoreResult() {
         return restoreResult;
     }
 
-    public void setRestoreResult(List<PostgreSQLRestoreResult> restoreResult) {
+    public void setRestoreResult(List<RestoreResult> restoreResult) {
         this.restoreResult = restoreResult;
     }
 

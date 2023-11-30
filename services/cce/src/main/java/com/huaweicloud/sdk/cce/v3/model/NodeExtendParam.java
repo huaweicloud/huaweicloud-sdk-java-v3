@@ -101,14 +101,19 @@ public class NodeExtendParam {
     private String agencyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kube-reserved-mem")
+    @JsonProperty(value = "kubeReservedMem")
 
     private Integer kubeReservedMem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "system-reserved-mem")
+    @JsonProperty(value = "systemReservedMem")
 
     private Integer systemReservedMem;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "init-node-password")
+
+    private String initNodePassword;
 
     public NodeExtendParam withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
@@ -133,7 +138,7 @@ public class NodeExtendParam {
     }
 
     /**
-     * 订单ID，节点付费类型为自动付费包周期类型时，响应中会返回此字段。
+     * 订单ID，节点付费类型为自动付费包周期类型时，响应中会返回此字段(仅创建场景涉及)。
      * @return orderID
      */
     public String getOrderID() {
@@ -184,7 +189,7 @@ public class NodeExtendParam {
     }
 
     /**
-     * - month：月 - year：年 > billingMode为1（包周期）或2（已废弃：自动付费包周期）时生效，且为必选。 
+     * - month：月 - year：年 > 作为请求参数，billingMode为1（包周期）或2（已废弃：自动付费包周期）时生效，且为必选。 > 作为响应参数，仅在创建包周期节点时返回。 
      * @return periodType
      */
     public String getPeriodType() {
@@ -201,7 +206,7 @@ public class NodeExtendParam {
     }
 
     /**
-     * 订购周期数，取值范围： - periodType=month（周期类型为月）时，取值为[1-9]。 - periodType=year（周期类型为年）时，取值为1。 > billingMode为1或2（已废弃）时生效，且为必选。 
+     * 订购周期数，取值范围： - periodType=month（周期类型为月）时，取值为[1-9]。 - periodType=year（周期类型为年）时，取值为1。 > 作为请求参数，billingMode为1或2（已废弃）时生效，且为必选。 > 作为响应参数，仅在创建包周期节点时返回。 
      * @return periodNum
      */
     public Integer getPeriodNum() {
@@ -407,7 +412,7 @@ public class NodeExtendParam {
     }
 
     /**
-     * 委托的名称。  委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为CCE节点提供访问云服务器的临时凭证。 
+     * 委托的名称。  委托是由租户管理员在统一身份认证服务（Identity and Access Management，IAM）上创建的，可以为CCE节点提供访问云服务器的临时凭证。 作为响应参数仅在创建节点传入时返回该字段。 
      * @return agencyName
      */
     public String getAgencyName() {
@@ -424,7 +429,7 @@ public class NodeExtendParam {
     }
 
     /**
-     * 节点内存预留，Kubernetes相关组件预留值。 
+     * 节点内存预留，Kubernetes相关组件预留值。[随节点规格变动，具体请参见[节点预留资源策略说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0178.html)。](tag:hws) 
      * @return kubeReservedMem
      */
     public Integer getKubeReservedMem() {
@@ -441,7 +446,7 @@ public class NodeExtendParam {
     }
 
     /**
-     * 节点内存预留，系统组件预留值。 
+     * 节点内存预留，系统组件预留值。[随节点规格变动，具体请参见[节点预留资源策略说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0178.html)。](tag:hws) 
      * @return systemReservedMem
      */
     public Integer getSystemReservedMem() {
@@ -450,6 +455,23 @@ public class NodeExtendParam {
 
     public void setSystemReservedMem(Integer systemReservedMem) {
         this.systemReservedMem = systemReservedMem;
+    }
+
+    public NodeExtendParam withInitNodePassword(String initNodePassword) {
+        this.initNodePassword = initNodePassword;
+        return this;
+    }
+
+    /**
+     * 节点密码，作为响应参数时，固定展示星号。
+     * @return initNodePassword
+     */
+    public String getInitNodePassword() {
+        return initNodePassword;
+    }
+
+    public void setInitNodePassword(String initNodePassword) {
+        this.initNodePassword = initNodePassword;
     }
 
     @Override
@@ -476,7 +498,8 @@ public class NodeExtendParam {
             && Objects.equals(this.nicThreshold, that.nicThreshold)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.agencyName, that.agencyName)
             && Objects.equals(this.kubeReservedMem, that.kubeReservedMem)
-            && Objects.equals(this.systemReservedMem, that.systemReservedMem);
+            && Objects.equals(this.systemReservedMem, that.systemReservedMem)
+            && Objects.equals(this.initNodePassword, that.initNodePassword);
     }
 
     @Override
@@ -500,7 +523,8 @@ public class NodeExtendParam {
             chargingMode,
             agencyName,
             kubeReservedMem,
-            systemReservedMem);
+            systemReservedMem,
+            initNodePassword);
     }
 
     @Override
@@ -527,6 +551,7 @@ public class NodeExtendParam {
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    kubeReservedMem: ").append(toIndentedString(kubeReservedMem)).append("\n");
         sb.append("    systemReservedMem: ").append(toIndentedString(systemReservedMem)).append("\n");
+        sb.append("    initNodePassword: ").append(toIndentedString(initNodePassword)).append("\n");
         sb.append("}");
         return sb.toString();
     }

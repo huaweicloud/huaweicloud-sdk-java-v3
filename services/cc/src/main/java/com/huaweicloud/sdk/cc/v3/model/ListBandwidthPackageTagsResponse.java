@@ -22,7 +22,7 @@ public class ListBandwidthPackageTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Tag> tags = null;
+    private List<MultivaluedTag> tags = null;
 
     public ListBandwidthPackageTagsResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -41,12 +41,12 @@ public class ListBandwidthPackageTagsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ListBandwidthPackageTagsResponse withTags(List<Tag> tags) {
+    public ListBandwidthPackageTagsResponse withTags(List<MultivaluedTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ListBandwidthPackageTagsResponse addTagsItem(Tag tagsItem) {
+    public ListBandwidthPackageTagsResponse addTagsItem(MultivaluedTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListBandwidthPackageTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ListBandwidthPackageTagsResponse withTags(Consumer<List<Tag>> tagsSetter) {
+    public ListBandwidthPackageTagsResponse withTags(Consumer<List<MultivaluedTag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ListBandwidthPackageTagsResponse extends SdkResponse {
      * 带宽包的所有标签。
      * @return tags
      */
-    public List<Tag> getTags() {
+    public List<MultivaluedTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<MultivaluedTag> tags) {
         this.tags = tags;
     }
 

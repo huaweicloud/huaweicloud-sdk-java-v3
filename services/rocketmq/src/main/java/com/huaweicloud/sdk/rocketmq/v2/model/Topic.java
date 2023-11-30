@@ -121,7 +121,7 @@ public class Topic {
     private List<TopicBrokers> brokers = null;
 
     /**
-     * 消息类型。
+     * 消息类型（RocketMQ实例5.x版本才包含此参数）。
      */
     public static final class MessageTypeEnum {
 
@@ -314,7 +314,7 @@ public class Topic {
     }
 
     /**
-     * 消息类型。
+     * 消息类型（RocketMQ实例5.x版本才包含此参数）。
      * @return messageType
      */
     public MessageTypeEnum getMessageType() {

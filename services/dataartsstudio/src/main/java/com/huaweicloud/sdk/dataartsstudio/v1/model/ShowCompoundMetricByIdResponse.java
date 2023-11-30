@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class ShowCompoundMetricByIdResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private CompoundMetricVODetailData data;
 
-    public ShowCompoundMetricByIdResponse withData(Object data) {
+    public ShowCompoundMetricByIdResponse withData(CompoundMetricVODetailData data) {
         this.data = data;
         return this;
     }
 
+    public ShowCompoundMetricByIdResponse withData(Consumer<CompoundMetricVODetailData> dataSetter) {
+        if (this.data == null) {
+            this.data = new CompoundMetricVODetailData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public CompoundMetricVODetailData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(CompoundMetricVODetailData data) {
         this.data = data;
     }
 

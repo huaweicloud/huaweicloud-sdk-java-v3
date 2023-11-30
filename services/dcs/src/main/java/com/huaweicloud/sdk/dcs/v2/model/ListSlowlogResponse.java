@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class ListSlowlogResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_num")
+
+    private Integer totalNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
@@ -23,6 +28,23 @@ public class ListSlowlogResponse extends SdkResponse {
     @JsonProperty(value = "slowlogs")
 
     private List<SlowlogItem> slowlogs = null;
+
+    public ListSlowlogResponse withTotalNum(Integer totalNum) {
+        this.totalNum = totalNum;
+        return this;
+    }
+
+    /**
+     * 慢日志总条数
+     * @return totalNum
+     */
+    public Integer getTotalNum() {
+        return totalNum;
+    }
+
+    public void setTotalNum(Integer totalNum) {
+        this.totalNum = totalNum;
+    }
 
     public ListSlowlogResponse withCount(Integer count) {
         this.count = count;
@@ -83,18 +105,20 @@ public class ListSlowlogResponse extends SdkResponse {
             return false;
         }
         ListSlowlogResponse that = (ListSlowlogResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.slowlogs, that.slowlogs);
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.slowlogs, that.slowlogs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, slowlogs);
+        return Objects.hash(totalNum, count, slowlogs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListSlowlogResponse {\n");
+        sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    slowlogs: ").append(toIndentedString(slowlogs)).append("\n");
         sb.append("}");

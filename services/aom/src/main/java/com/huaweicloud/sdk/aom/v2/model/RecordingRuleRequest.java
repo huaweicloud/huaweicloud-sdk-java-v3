@@ -21,7 +21,7 @@ public class RecordingRuleRequest {
     }
 
     /**
-     * recordingRule
+     * 预聚合规则。
      * @return recordingRule
      */
     public String getRecordingRule() {

@@ -136,7 +136,7 @@ public class SlowlogItem {
     }
 
     /**
-     * 慢日志数据库id
+     * 数据库id，当前只对指定客户开放
      * @return databaseId
      */
     public Integer getDatabaseId() {
@@ -153,7 +153,7 @@ public class SlowlogItem {
     }
 
     /**
-     * 慢日志名称
+     * 操作慢日志的账号名称，当前只对指定客户开放
      * @return username
      */
     public String getUsername() {

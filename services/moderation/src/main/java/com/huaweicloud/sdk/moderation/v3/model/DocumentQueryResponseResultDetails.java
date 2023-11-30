@@ -39,6 +39,21 @@ public class DocumentQueryResponseResultDetails {
     private String text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_position")
+
+    private Integer startPosition;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_position")
+
+    private Integer endPosition;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_url")
+
+    private String imageUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segments")
 
     private List<DocumentQueryResponseResultSegments> segments = null;
@@ -127,7 +142,7 @@ public class DocumentQueryResponseResultDetails {
     }
 
     /**
-     * 当前内容片段中的文本内容
+     * 当前内容片段中的文本内容，仅当type为text时存在
      * @return text
      */
     public String getText() {
@@ -136,6 +151,57 @@ public class DocumentQueryResponseResultDetails {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public DocumentQueryResponseResultDetails withStartPosition(Integer startPosition) {
+        this.startPosition = startPosition;
+        return this;
+    }
+
+    /**
+     * 当前文本内容片段在输入中的起始位置，仅当type为text时存在
+     * @return startPosition
+     */
+    public Integer getStartPosition() {
+        return startPosition;
+    }
+
+    public void setStartPosition(Integer startPosition) {
+        this.startPosition = startPosition;
+    }
+
+    public DocumentQueryResponseResultDetails withEndPosition(Integer endPosition) {
+        this.endPosition = endPosition;
+        return this;
+    }
+
+    /**
+     * 当前文本内容片段在输入中的结束位置，仅当type为text时存在
+     * @return endPosition
+     */
+    public Integer getEndPosition() {
+        return endPosition;
+    }
+
+    public void setEndPosition(Integer endPosition) {
+        this.endPosition = endPosition;
+    }
+
+    public DocumentQueryResponseResultDetails withImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+        return this;
+    }
+
+    /**
+     * 网页图片url，仅当type为image且文档格式为webpage时存在
+     * @return imageUrl
+     */
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public DocumentQueryResponseResultDetails withSegments(List<DocumentQueryResponseResultSegments> segments) {
@@ -250,14 +316,26 @@ public class DocumentQueryResponseResultDetails {
         DocumentQueryResponseResultDetails that = (DocumentQueryResponseResultDetails) obj;
         return Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.type, that.type)
             && Objects.equals(this.label, that.label) && Objects.equals(this.index, that.index)
-            && Objects.equals(this.text, that.text) && Objects.equals(this.segments, that.segments)
+            && Objects.equals(this.text, that.text) && Objects.equals(this.startPosition, that.startPosition)
+            && Objects.equals(this.endPosition, that.endPosition) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.segments, that.segments)
             && Objects.equals(this.videoImageDetails, that.videoImageDetails)
             && Objects.equals(this.audioDetails, that.audioDetails);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(suggestion, type, label, index, text, segments, videoImageDetails, audioDetails);
+        return Objects.hash(suggestion,
+            type,
+            label,
+            index,
+            text,
+            startPosition,
+            endPosition,
+            imageUrl,
+            segments,
+            videoImageDetails,
+            audioDetails);
     }
 
     @Override
@@ -269,6 +347,9 @@ public class DocumentQueryResponseResultDetails {
         sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
         sb.append("    text: ").append(toIndentedString(text)).append("\n");
+        sb.append("    startPosition: ").append(toIndentedString(startPosition)).append("\n");
+        sb.append("    endPosition: ").append(toIndentedString(endPosition)).append("\n");
+        sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
         sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
         sb.append("    videoImageDetails: ").append(toIndentedString(videoImageDetails)).append("\n");
         sb.append("    audioDetails: ").append(toIndentedString(audioDetails)).append("\n");

@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.eip.v2.model.BatchDeletePublicipTagsRequest;
 import com.huaweicloud.sdk.eip.v2.model.BatchDeletePublicipTagsResponse;
 import com.huaweicloud.sdk.eip.v2.model.BatchDisassociatePublicipsRequest;
 import com.huaweicloud.sdk.eip.v2.model.BatchDisassociatePublicipsResponse;
+import com.huaweicloud.sdk.eip.v2.model.BatchModifyBandwidthRequest;
+import com.huaweicloud.sdk.eip.v2.model.BatchModifyBandwidthResponse;
 import com.huaweicloud.sdk.eip.v2.model.ChangeBandwidthToPeriodRequest;
 import com.huaweicloud.sdk.eip.v2.model.ChangeBandwidthToPeriodResponse;
 import com.huaweicloud.sdk.eip.v2.model.ChangePublicipToPeriodRequest;
@@ -152,6 +154,36 @@ public class EipClient {
         BatchCreateSharedBandwidthsRequest request) {
         return new SyncInvoker<BatchCreateSharedBandwidthsRequest, BatchCreateSharedBandwidthsResponse>(request,
             EipMeta.batchCreateSharedBandwidths, hcClient);
+    }
+
+    /**
+     * 批量更新带宽
+     *
+     * 批量更新带宽，共享带宽和包周期带宽该接口不适用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchModifyBandwidthRequest 请求对象
+     * @return BatchModifyBandwidthResponse
+     */
+    public BatchModifyBandwidthResponse batchModifyBandwidth(BatchModifyBandwidthRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.batchModifyBandwidth);
+    }
+
+    /**
+     * 批量更新带宽
+     *
+     * 批量更新带宽，共享带宽和包周期带宽该接口不适用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchModifyBandwidthRequest 请求对象
+     * @return SyncInvoker<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse>
+     */
+    public SyncInvoker<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse> batchModifyBandwidthInvoker(
+        BatchModifyBandwidthRequest request) {
+        return new SyncInvoker<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse>(request,
+            EipMeta.batchModifyBandwidth, hcClient);
     }
 
     /**

@@ -22,8 +22,14 @@ import com.huaweicloud.sdk.cce.v3.model.CreateNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreatePartitionRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteCloudPersistentVolumeClaimsRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteCloudPersistentVolumeClaimsResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteClusterRequest;
@@ -32,18 +38,28 @@ import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.DownloadChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.DownloadChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListChartsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListChartsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListPartitionsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListPartitionsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListReleasesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListReleasesResponse;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskRequest;
@@ -60,34 +76,64 @@ import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowChartValuesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowChartValuesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterConfigResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterConfigurationDetailsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterConfigurationDetailsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowPartitionRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowPartitionResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLogConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLogConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolConfigurationRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdatePartitionRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UploadChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.UploadChartResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -481,6 +527,65 @@ public class CceAsyncClient {
     }
 
     /**
+     * 创建分区
+     *
+     * 创建分区
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePartitionRequest 请求对象
+     * @return CompletableFuture<CreatePartitionResponse>
+     */
+    public CompletableFuture<CreatePartitionResponse> createPartitionAsync(CreatePartitionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.createPartition);
+    }
+
+    /**
+     * 创建分区
+     *
+     * 创建分区
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreatePartitionRequest 请求对象
+     * @return AsyncInvoker<CreatePartitionRequest, CreatePartitionResponse>
+     */
+    public AsyncInvoker<CreatePartitionRequest, CreatePartitionResponse> createPartitionAsyncInvoker(
+        CreatePartitionRequest request) {
+        return new AsyncInvoker<CreatePartitionRequest, CreatePartitionResponse>(request, CceMeta.createPartition,
+            hcClient);
+    }
+
+    /**
+     * 创建模板实例
+     *
+     * 创建模板实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateReleaseRequest 请求对象
+     * @return CompletableFuture<CreateReleaseResponse>
+     */
+    public CompletableFuture<CreateReleaseResponse> createReleaseAsync(CreateReleaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.createRelease);
+    }
+
+    /**
+     * 创建模板实例
+     *
+     * 创建模板实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateReleaseRequest 请求对象
+     * @return AsyncInvoker<CreateReleaseRequest, CreateReleaseResponse>
+     */
+    public AsyncInvoker<CreateReleaseRequest, CreateReleaseResponse> createReleaseAsyncInvoker(
+        CreateReleaseRequest request) {
+        return new AsyncInvoker<CreateReleaseRequest, CreateReleaseResponse>(request, CceMeta.createRelease, hcClient);
+    }
+
+    /**
      * 删除AddonInstance
      *
      * 删除插件实例的功能。
@@ -508,6 +613,34 @@ public class CceAsyncClient {
         DeleteAddonInstanceRequest request) {
         return new AsyncInvoker<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse>(request,
             CceMeta.deleteAddonInstance, hcClient);
+    }
+
+    /**
+     * 删除模板
+     *
+     * 删除模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteChartRequest 请求对象
+     * @return CompletableFuture<DeleteChartResponse>
+     */
+    public CompletableFuture<DeleteChartResponse> deleteChartAsync(DeleteChartRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.deleteChart);
+    }
+
+    /**
+     * 删除模板
+     *
+     * 删除模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteChartRequest 请求对象
+     * @return AsyncInvoker<DeleteChartRequest, DeleteChartResponse>
+     */
+    public AsyncInvoker<DeleteChartRequest, DeleteChartResponse> deleteChartAsyncInvoker(DeleteChartRequest request) {
+        return new AsyncInvoker<DeleteChartRequest, DeleteChartResponse>(request, CceMeta.deleteChart, hcClient);
     }
 
     /**
@@ -637,6 +770,64 @@ public class CceAsyncClient {
     }
 
     /**
+     * 删除指定模板实例
+     *
+     * 删除指定模板实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteReleaseRequest 请求对象
+     * @return CompletableFuture<DeleteReleaseResponse>
+     */
+    public CompletableFuture<DeleteReleaseResponse> deleteReleaseAsync(DeleteReleaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.deleteRelease);
+    }
+
+    /**
+     * 删除指定模板实例
+     *
+     * 删除指定模板实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteReleaseRequest 请求对象
+     * @return AsyncInvoker<DeleteReleaseRequest, DeleteReleaseResponse>
+     */
+    public AsyncInvoker<DeleteReleaseRequest, DeleteReleaseResponse> deleteReleaseAsyncInvoker(
+        DeleteReleaseRequest request) {
+        return new AsyncInvoker<DeleteReleaseRequest, DeleteReleaseResponse>(request, CceMeta.deleteRelease, hcClient);
+    }
+
+    /**
+     * 下载模板
+     *
+     * 下载模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadChartRequest 请求对象
+     * @return CompletableFuture<DownloadChartResponse>
+     */
+    public CompletableFuture<DownloadChartResponse> downloadChartAsync(DownloadChartRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.downloadChart);
+    }
+
+    /**
+     * 下载模板
+     *
+     * 下载模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadChartRequest 请求对象
+     * @return AsyncInvoker<DownloadChartRequest, DownloadChartResponse>
+     */
+    public AsyncInvoker<DownloadChartRequest, DownloadChartResponse> downloadChartAsyncInvoker(
+        DownloadChartRequest request) {
+        return new AsyncInvoker<DownloadChartRequest, DownloadChartResponse>(request, CceMeta.downloadChart, hcClient);
+    }
+
+    /**
      * 集群休眠
      *
      * 集群休眠用于将运行中的集群置于休眠状态，休眠后，将不再收取控制节点资源费用。
@@ -724,6 +915,34 @@ public class CceAsyncClient {
         ListAddonTemplatesRequest request) {
         return new AsyncInvoker<ListAddonTemplatesRequest, ListAddonTemplatesResponse>(request,
             CceMeta.listAddonTemplates, hcClient);
+    }
+
+    /**
+     * 获取模板列表
+     *
+     * 获取模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListChartsRequest 请求对象
+     * @return CompletableFuture<ListChartsResponse>
+     */
+    public CompletableFuture<ListChartsResponse> listChartsAsync(ListChartsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listCharts);
+    }
+
+    /**
+     * 获取模板列表
+     *
+     * 获取模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListChartsRequest 请求对象
+     * @return AsyncInvoker<ListChartsRequest, ListChartsResponse>
+     */
+    public AsyncInvoker<ListChartsRequest, ListChartsResponse> listChartsAsyncInvoker(ListChartsRequest request) {
+        return new AsyncInvoker<ListChartsRequest, ListChartsResponse>(request, CceMeta.listCharts, hcClient);
     }
 
     /**
@@ -819,10 +1038,68 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取分区列表
+     *
+     * 获取分区列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPartitionsRequest 请求对象
+     * @return CompletableFuture<ListPartitionsResponse>
+     */
+    public CompletableFuture<ListPartitionsResponse> listPartitionsAsync(ListPartitionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listPartitions);
+    }
+
+    /**
+     * 获取分区列表
+     *
+     * 获取分区列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPartitionsRequest 请求对象
+     * @return AsyncInvoker<ListPartitionsRequest, ListPartitionsResponse>
+     */
+    public AsyncInvoker<ListPartitionsRequest, ListPartitionsResponse> listPartitionsAsyncInvoker(
+        ListPartitionsRequest request) {
+        return new AsyncInvoker<ListPartitionsRequest, ListPartitionsResponse>(request, CceMeta.listPartitions,
+            hcClient);
+    }
+
+    /**
+     * 获取模板实例列表
+     *
+     * 获取模板实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListReleasesRequest 请求对象
+     * @return CompletableFuture<ListReleasesResponse>
+     */
+    public CompletableFuture<ListReleasesResponse> listReleasesAsync(ListReleasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listReleases);
+    }
+
+    /**
+     * 获取模板实例列表
+     *
+     * 获取模板实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListReleasesRequest 请求对象
+     * @return AsyncInvoker<ListReleasesRequest, ListReleasesResponse>
+     */
+    public AsyncInvoker<ListReleasesRequest, ListReleasesResponse> listReleasesAsyncInvoker(
+        ListReleasesRequest request) {
+        return new AsyncInvoker<ListReleasesRequest, ListReleasesResponse>(request, CceMeta.listReleases, hcClient);
+    }
+
+    /**
      * 节点迁移
      *
-     * 该API用于在指定集群下迁移节点到另一集群（仅支持在同一VPC、同一项目下的不同集群之间进行迁移，且迁移前后的集群类型需相同）。
-     * [CCE Turbo集群下弹性云服务-物理机类型节点不支持迁移。](tag:hws,hws_hk,dt)
+     * 该API用于在指定集群下迁移节点到另一集群。
      * 
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
@@ -838,8 +1115,7 @@ public class CceAsyncClient {
     /**
      * 节点迁移
      *
-     * 该API用于在指定集群下迁移节点到另一集群（仅支持在同一VPC、同一项目下的不同集群之间进行迁移，且迁移前后的集群类型需相同）。
-     * [CCE Turbo集群下弹性云服务-物理机类型节点不支持迁移。](tag:hws,hws_hk,dt)
+     * 该API用于在指定集群下迁移节点到另一集群。
      * 
      * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
      * 
@@ -953,7 +1229,8 @@ public class CceAsyncClient {
      * 该API用于变更一个指定集群的规格。
      * 
      * &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
-     * &gt;   - 使用限制请参考：[[变更集群规格](https://support.huaweicloud.com/usermanual-cce/cce_10_0403.html)。](tag:hws)[[变更集群规格](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0403.html)](tag:hws_hk)
+     * &gt;   [- 使用限制请参考[变更集群规格](https://support.huaweicloud.com/usermanual-cce/cce_10_0403.html)。](tag:hws)
+     * &gt;   [- 使用限制请参考[变更集群规格](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0403.html)](tag:hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -970,7 +1247,8 @@ public class CceAsyncClient {
      * 该API用于变更一个指定集群的规格。
      * 
      * &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
-     * &gt;   - 使用限制请参考：[[变更集群规格](https://support.huaweicloud.com/usermanual-cce/cce_10_0403.html)。](tag:hws)[[变更集群规格](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0403.html)](tag:hws_hk)
+     * &gt;   [- 使用限制请参考[变更集群规格](https://support.huaweicloud.com/usermanual-cce/cce_10_0403.html)。](tag:hws)
+     * &gt;   [- 使用限制请参考[变更集群规格](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0403.html)](tag:hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1079,6 +1357,64 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取模板
+     *
+     * 获取模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowChartRequest 请求对象
+     * @return CompletableFuture<ShowChartResponse>
+     */
+    public CompletableFuture<ShowChartResponse> showChartAsync(ShowChartRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showChart);
+    }
+
+    /**
+     * 获取模板
+     *
+     * 获取模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowChartRequest 请求对象
+     * @return AsyncInvoker<ShowChartRequest, ShowChartResponse>
+     */
+    public AsyncInvoker<ShowChartRequest, ShowChartResponse> showChartAsyncInvoker(ShowChartRequest request) {
+        return new AsyncInvoker<ShowChartRequest, ShowChartResponse>(request, CceMeta.showChart, hcClient);
+    }
+
+    /**
+     * 获取模板Values
+     *
+     * 获取模板Values
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowChartValuesRequest 请求对象
+     * @return CompletableFuture<ShowChartValuesResponse>
+     */
+    public CompletableFuture<ShowChartValuesResponse> showChartValuesAsync(ShowChartValuesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showChartValues);
+    }
+
+    /**
+     * 获取模板Values
+     *
+     * 获取模板Values
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowChartValuesRequest 请求对象
+     * @return AsyncInvoker<ShowChartValuesRequest, ShowChartValuesResponse>
+     */
+    public AsyncInvoker<ShowChartValuesRequest, ShowChartValuesResponse> showChartValuesAsyncInvoker(
+        ShowChartValuesRequest request) {
+        return new AsyncInvoker<ShowChartValuesRequest, ShowChartValuesResponse>(request, CceMeta.showChartValues,
+            hcClient);
+    }
+
+    /**
      * 获取指定的集群
      *
      * 该API用于获取指定集群的详细信息。
@@ -1106,6 +1442,67 @@ public class CceAsyncClient {
      */
     public AsyncInvoker<ShowClusterRequest, ShowClusterResponse> showClusterAsyncInvoker(ShowClusterRequest request) {
         return new AsyncInvoker<ShowClusterRequest, ShowClusterResponse>(request, CceMeta.showCluster, hcClient);
+    }
+
+    /**
+     * 查询集群日志配置信息
+     *
+     * 获取集群组件上报的LTS的配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterConfigRequest 请求对象
+     * @return CompletableFuture<ShowClusterConfigResponse>
+     */
+    public CompletableFuture<ShowClusterConfigResponse> showClusterConfigAsync(ShowClusterConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showClusterConfig);
+    }
+
+    /**
+     * 查询集群日志配置信息
+     *
+     * 获取集群组件上报的LTS的配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterConfigRequest 请求对象
+     * @return AsyncInvoker<ShowClusterConfigRequest, ShowClusterConfigResponse>
+     */
+    public AsyncInvoker<ShowClusterConfigRequest, ShowClusterConfigResponse> showClusterConfigAsyncInvoker(
+        ShowClusterConfigRequest request) {
+        return new AsyncInvoker<ShowClusterConfigRequest, ShowClusterConfigResponse>(request, CceMeta.showClusterConfig,
+            hcClient);
+    }
+
+    /**
+     * 查询指定集群支持配置的参数列表
+     *
+     * 该API用于查询CCE服务下指定集群支持配置的参数列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterConfigurationDetailsRequest 请求对象
+     * @return CompletableFuture<ShowClusterConfigurationDetailsResponse>
+     */
+    public CompletableFuture<ShowClusterConfigurationDetailsResponse> showClusterConfigurationDetailsAsync(
+        ShowClusterConfigurationDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showClusterConfigurationDetails);
+    }
+
+    /**
+     * 查询指定集群支持配置的参数列表
+     *
+     * 该API用于查询CCE服务下指定集群支持配置的参数列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClusterConfigurationDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse>
+     */
+    public AsyncInvoker<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse> showClusterConfigurationDetailsAsyncInvoker(
+        ShowClusterConfigurationDetailsRequest request) {
+        return new AsyncInvoker<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse>(
+            request, CceMeta.showClusterConfigurationDetails, hcClient);
     }
 
     /**
@@ -1239,6 +1636,66 @@ public class CceAsyncClient {
     }
 
     /**
+     * 查询指定节点池支持配置的参数内容
+     *
+     * 该API用于查询指定节点池支持配置的参数内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNodePoolConfigurationsRequest 请求对象
+     * @return CompletableFuture<ShowNodePoolConfigurationsResponse>
+     */
+    public CompletableFuture<ShowNodePoolConfigurationsResponse> showNodePoolConfigurationsAsync(
+        ShowNodePoolConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showNodePoolConfigurations);
+    }
+
+    /**
+     * 查询指定节点池支持配置的参数内容
+     *
+     * 该API用于查询指定节点池支持配置的参数内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNodePoolConfigurationsRequest 请求对象
+     * @return AsyncInvoker<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse>
+     */
+    public AsyncInvoker<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse> showNodePoolConfigurationsAsyncInvoker(
+        ShowNodePoolConfigurationsRequest request) {
+        return new AsyncInvoker<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse>(request,
+            CceMeta.showNodePoolConfigurations, hcClient);
+    }
+
+    /**
+     * 获取分区详情
+     *
+     * 获取分区详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPartitionRequest 请求对象
+     * @return CompletableFuture<ShowPartitionResponse>
+     */
+    public CompletableFuture<ShowPartitionResponse> showPartitionAsync(ShowPartitionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showPartition);
+    }
+
+    /**
+     * 获取分区详情
+     *
+     * 获取分区详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPartitionRequest 请求对象
+     * @return AsyncInvoker<ShowPartitionRequest, ShowPartitionResponse>
+     */
+    public AsyncInvoker<ShowPartitionRequest, ShowPartitionResponse> showPartitionAsyncInvoker(
+        ShowPartitionRequest request) {
+        return new AsyncInvoker<ShowPartitionRequest, ShowPartitionResponse>(request, CceMeta.showPartition, hcClient);
+    }
+
+    /**
      * 查询CCE服务下的资源配额
      *
      * 该API用于查询CCE服务下的资源配额。
@@ -1264,6 +1721,64 @@ public class CceAsyncClient {
      */
     public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
         return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, CceMeta.showQuotas, hcClient);
+    }
+
+    /**
+     * 获取指定模板实例
+     *
+     * 获取指定模板实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReleaseRequest 请求对象
+     * @return CompletableFuture<ShowReleaseResponse>
+     */
+    public CompletableFuture<ShowReleaseResponse> showReleaseAsync(ShowReleaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showRelease);
+    }
+
+    /**
+     * 获取指定模板实例
+     *
+     * 获取指定模板实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReleaseRequest 请求对象
+     * @return AsyncInvoker<ShowReleaseRequest, ShowReleaseResponse>
+     */
+    public AsyncInvoker<ShowReleaseRequest, ShowReleaseResponse> showReleaseAsyncInvoker(ShowReleaseRequest request) {
+        return new AsyncInvoker<ShowReleaseRequest, ShowReleaseResponse>(request, CceMeta.showRelease, hcClient);
+    }
+
+    /**
+     * 查询指定模板实例历史记录
+     *
+     * 查询指定模板实例历史记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReleaseHistoryRequest 请求对象
+     * @return CompletableFuture<ShowReleaseHistoryResponse>
+     */
+    public CompletableFuture<ShowReleaseHistoryResponse> showReleaseHistoryAsync(ShowReleaseHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showReleaseHistory);
+    }
+
+    /**
+     * 查询指定模板实例历史记录
+     *
+     * 查询指定模板实例历史记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowReleaseHistoryRequest 请求对象
+     * @return AsyncInvoker<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse>
+     */
+    public AsyncInvoker<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse> showReleaseHistoryAsyncInvoker(
+        ShowReleaseHistoryRequest request) {
+        return new AsyncInvoker<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse>(request,
+            CceMeta.showReleaseHistory, hcClient);
     }
 
     /**
@@ -1302,6 +1817,37 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取用户模板配额
+     *
+     * 获取用户模板配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUserChartsQuotasRequest 请求对象
+     * @return CompletableFuture<ShowUserChartsQuotasResponse>
+     */
+    public CompletableFuture<ShowUserChartsQuotasResponse> showUserChartsQuotasAsync(
+        ShowUserChartsQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showUserChartsQuotas);
+    }
+
+    /**
+     * 获取用户模板配额
+     *
+     * 获取用户模板配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowUserChartsQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse>
+     */
+    public AsyncInvoker<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> showUserChartsQuotasAsyncInvoker(
+        ShowUserChartsQuotasRequest request) {
+        return new AsyncInvoker<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse>(request,
+            CceMeta.showUserChartsQuotas, hcClient);
+    }
+
+    /**
      * 更新AddonInstance
      *
      * 更新插件实例的功能。
@@ -1329,6 +1875,34 @@ public class CceAsyncClient {
         UpdateAddonInstanceRequest request) {
         return new AsyncInvoker<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse>(request,
             CceMeta.updateAddonInstance, hcClient);
+    }
+
+    /**
+     * 更新模板
+     *
+     * 更新模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateChartRequest 请求对象
+     * @return CompletableFuture<UpdateChartResponse>
+     */
+    public CompletableFuture<UpdateChartResponse> updateChartAsync(UpdateChartRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.updateChart);
+    }
+
+    /**
+     * 更新模板
+     *
+     * 更新模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateChartRequest 请求对象
+     * @return AsyncInvoker<UpdateChartRequest, UpdateChartResponse>
+     */
+    public AsyncInvoker<UpdateChartRequest, UpdateChartResponse> updateChartAsyncInvoker(UpdateChartRequest request) {
+        return new AsyncInvoker<UpdateChartRequest, UpdateChartResponse>(request, CceMeta.updateChart, hcClient);
     }
 
     /**
@@ -1392,6 +1966,37 @@ public class CceAsyncClient {
         UpdateClusterEipRequest request) {
         return new AsyncInvoker<UpdateClusterEipRequest, UpdateClusterEipResponse>(request, CceMeta.updateClusterEip,
             hcClient);
+    }
+
+    /**
+     * 配置集群日志
+     *
+     * 用户可以选择集群管理节点上哪些组件的日志上报LTS
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClusterLogConfigRequest 请求对象
+     * @return CompletableFuture<UpdateClusterLogConfigResponse>
+     */
+    public CompletableFuture<UpdateClusterLogConfigResponse> updateClusterLogConfigAsync(
+        UpdateClusterLogConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.updateClusterLogConfig);
+    }
+
+    /**
+     * 配置集群日志
+     *
+     * 用户可以选择集群管理节点上哪些组件的日志上报LTS
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateClusterLogConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse>
+     */
+    public AsyncInvoker<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse> updateClusterLogConfigAsyncInvoker(
+        UpdateClusterLogConfigRequest request) {
+        return new AsyncInvoker<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse>(request,
+            CceMeta.updateClusterLogConfig, hcClient);
     }
 
     /**
@@ -1467,6 +2072,96 @@ public class CceAsyncClient {
     }
 
     /**
+     * 修改指定节点池配置参数的值
+     *
+     * 该API用于修改CCE服务下指定节点池配置参数的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNodePoolConfigurationRequest 请求对象
+     * @return CompletableFuture<UpdateNodePoolConfigurationResponse>
+     */
+    public CompletableFuture<UpdateNodePoolConfigurationResponse> updateNodePoolConfigurationAsync(
+        UpdateNodePoolConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.updateNodePoolConfiguration);
+    }
+
+    /**
+     * 修改指定节点池配置参数的值
+     *
+     * 该API用于修改CCE服务下指定节点池配置参数的值。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateNodePoolConfigurationRequest 请求对象
+     * @return AsyncInvoker<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse>
+     */
+    public AsyncInvoker<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse> updateNodePoolConfigurationAsyncInvoker(
+        UpdateNodePoolConfigurationRequest request) {
+        return new AsyncInvoker<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse>(request,
+            CceMeta.updateNodePoolConfiguration, hcClient);
+    }
+
+    /**
+     * 更新分区
+     *
+     * 更新分区
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePartitionRequest 请求对象
+     * @return CompletableFuture<UpdatePartitionResponse>
+     */
+    public CompletableFuture<UpdatePartitionResponse> updatePartitionAsync(UpdatePartitionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.updatePartition);
+    }
+
+    /**
+     * 更新分区
+     *
+     * 更新分区
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePartitionRequest 请求对象
+     * @return AsyncInvoker<UpdatePartitionRequest, UpdatePartitionResponse>
+     */
+    public AsyncInvoker<UpdatePartitionRequest, UpdatePartitionResponse> updatePartitionAsyncInvoker(
+        UpdatePartitionRequest request) {
+        return new AsyncInvoker<UpdatePartitionRequest, UpdatePartitionResponse>(request, CceMeta.updatePartition,
+            hcClient);
+    }
+
+    /**
+     * 更新指定模板实例
+     *
+     * 更新指定模板实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateReleaseRequest 请求对象
+     * @return CompletableFuture<UpdateReleaseResponse>
+     */
+    public CompletableFuture<UpdateReleaseResponse> updateReleaseAsync(UpdateReleaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.updateRelease);
+    }
+
+    /**
+     * 更新指定模板实例
+     *
+     * 更新指定模板实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateReleaseRequest 请求对象
+     * @return AsyncInvoker<UpdateReleaseRequest, UpdateReleaseResponse>
+     */
+    public AsyncInvoker<UpdateReleaseRequest, UpdateReleaseResponse> updateReleaseAsyncInvoker(
+        UpdateReleaseRequest request) {
+        return new AsyncInvoker<UpdateReleaseRequest, UpdateReleaseResponse>(request, CceMeta.updateRelease, hcClient);
+    }
+
+    /**
      * 集群升级
      *
      * 集群升级。
@@ -1501,7 +2196,35 @@ public class CceAsyncClient {
     }
 
     /**
-     * 查询API版本信息列表。
+     * 上传模板
+     *
+     * 上传模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadChartRequest 请求对象
+     * @return CompletableFuture<UploadChartResponse>
+     */
+    public CompletableFuture<UploadChartResponse> uploadChartAsync(UploadChartRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.uploadChart);
+    }
+
+    /**
+     * 上传模板
+     *
+     * 上传模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UploadChartRequest 请求对象
+     * @return AsyncInvoker<UploadChartRequest, UploadChartResponse>
+     */
+    public AsyncInvoker<UploadChartRequest, UploadChartResponse> uploadChartAsyncInvoker(UploadChartRequest request) {
+        return new AsyncInvoker<UploadChartRequest, UploadChartResponse>(request, CceMeta.uploadChart, hcClient);
+    }
+
+    /**
+     * 查询API版本信息列表
      *
      * 该API用于查询CCE服务当前支持的API版本信息列表。
      * 
@@ -1515,7 +2238,7 @@ public class CceAsyncClient {
     }
 
     /**
-     * 查询API版本信息列表。
+     * 查询API版本信息列表
      *
      * 该API用于查询CCE服务当前支持的API版本信息列表。
      * 

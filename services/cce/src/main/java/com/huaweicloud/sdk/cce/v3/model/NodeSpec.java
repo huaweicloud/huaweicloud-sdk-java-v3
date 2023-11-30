@@ -110,6 +110,11 @@ public class NodeSpec {
 
     private NodeExtendParam extendParam;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hostnameConfig")
+
+    private HostnameConfig hostnameConfig;
+
     public NodeSpec withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -150,7 +155,7 @@ public class NodeSpec {
     }
 
     /**
-     * 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 > - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 > - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 
+     * 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 > - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 > - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 > - 创建节点池时，该参数为必选。 
      * @return os
      */
     public String getOs() {
@@ -480,7 +485,7 @@ public class NodeSpec {
     }
 
     /**
-     * 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 
+     * 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 > 标签键只能包含大写字母.小写字母、数字和特殊字符(-_)以及Unicode字符，长度不超过36个字符。 
      * @return userTags
      */
     public List<UserTag> getUserTags() {
@@ -576,6 +581,32 @@ public class NodeSpec {
         this.extendParam = extendParam;
     }
 
+    public NodeSpec withHostnameConfig(HostnameConfig hostnameConfig) {
+        this.hostnameConfig = hostnameConfig;
+        return this;
+    }
+
+    public NodeSpec withHostnameConfig(Consumer<HostnameConfig> hostnameConfigSetter) {
+        if (this.hostnameConfig == null) {
+            this.hostnameConfig = new HostnameConfig();
+            hostnameConfigSetter.accept(this.hostnameConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hostnameConfig
+     * @return hostnameConfig
+     */
+    public HostnameConfig getHostnameConfig() {
+        return hostnameConfig;
+    }
+
+    public void setHostnameConfig(HostnameConfig hostnameConfig) {
+        this.hostnameConfig = hostnameConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -595,7 +626,8 @@ public class NodeSpec {
             && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
             && Objects.equals(this.userTags, that.userTags) && Objects.equals(this.runtime, that.runtime)
             && Objects.equals(this.initializedConditions, that.initializedConditions)
-            && Objects.equals(this.extendParam, that.extendParam);
+            && Objects.equals(this.extendParam, that.extendParam)
+            && Objects.equals(this.hostnameConfig, that.hostnameConfig);
     }
 
     @Override
@@ -618,7 +650,8 @@ public class NodeSpec {
             userTags,
             runtime,
             initializedConditions,
-            extendParam);
+            extendParam,
+            hostnameConfig);
     }
 
     @Override
@@ -644,6 +677,7 @@ public class NodeSpec {
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
+        sb.append("    hostnameConfig: ").append(toIndentedString(hostnameConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

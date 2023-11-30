@@ -41,7 +41,7 @@ public class ListPromInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 普罗实例列表名称
+     * Prometheus实例名称列表。
      * @return prometheus
      */
     public List<PromInstanceEpsModel> getPrometheus() {

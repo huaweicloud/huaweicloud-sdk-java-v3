@@ -23,8 +23,12 @@ import com.huaweicloud.sdk.eip.v3.model.EnableNat64Request;
 import com.huaweicloud.sdk.eip.v3.model.EnableNat64Response;
 import com.huaweicloud.sdk.eip.v3.model.ListBandwidthRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListBandwidthResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListBandwidthsLimitRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListBandwidthsLimitResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListEipBandwidthsRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListEipBandwidthsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicipPoolRequest;
@@ -41,6 +45,8 @@ import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipResponse;
+import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipRequest;
+import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipResponse;
 
 public class EipClient {
 
@@ -84,6 +90,36 @@ public class EipClient {
     }
 
     /**
+     * 查看租户带宽限制
+     *
+     * 获取EIP带宽限制列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthsLimitRequest 请求对象
+     * @return ListBandwidthsLimitResponse
+     */
+    public ListBandwidthsLimitResponse listBandwidthsLimit(ListBandwidthsLimitRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.listBandwidthsLimit);
+    }
+
+    /**
+     * 查看租户带宽限制
+     *
+     * 获取EIP带宽限制列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthsLimitRequest 请求对象
+     * @return SyncInvoker<ListBandwidthsLimitRequest, ListBandwidthsLimitResponse>
+     */
+    public SyncInvoker<ListBandwidthsLimitRequest, ListBandwidthsLimitResponse> listBandwidthsLimitInvoker(
+        ListBandwidthsLimitRequest request) {
+        return new SyncInvoker<ListBandwidthsLimitRequest, ListBandwidthsLimitResponse>(request,
+            EipMeta.listBandwidthsLimit, hcClient);
+    }
+
+    /**
      * 查询公共池列表
      *
      * 查询公共池列表
@@ -110,6 +146,36 @@ public class EipClient {
     public SyncInvoker<ListCommonPoolsRequest, ListCommonPoolsResponse> listCommonPoolsInvoker(
         ListCommonPoolsRequest request) {
         return new SyncInvoker<ListCommonPoolsRequest, ListCommonPoolsResponse>(request, EipMeta.listCommonPools,
+            hcClient);
+    }
+
+    /**
+     * 查询带宽列表
+     *
+     * 查询带宽列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEipBandwidthsRequest 请求对象
+     * @return ListEipBandwidthsResponse
+     */
+    public ListEipBandwidthsResponse listEipBandwidths(ListEipBandwidthsRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.listEipBandwidths);
+    }
+
+    /**
+     * 查询带宽列表
+     *
+     * 查询带宽列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListEipBandwidthsRequest 请求对象
+     * @return SyncInvoker<ListEipBandwidthsRequest, ListEipBandwidthsResponse>
+     */
+    public SyncInvoker<ListEipBandwidthsRequest, ListEipBandwidthsResponse> listEipBandwidthsInvoker(
+        ListEipBandwidthsRequest request) {
+        return new SyncInvoker<ListEipBandwidthsRequest, ListEipBandwidthsResponse>(request, EipMeta.listEipBandwidths,
             hcClient);
     }
 
@@ -613,6 +679,36 @@ public class EipClient {
         UpdateDisassociatePublicipRequest request) {
         return new SyncInvoker<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse>(request,
             EipMeta.updateDisassociatePublicip, hcClient);
+    }
+
+    /**
+     * 更新弹性公网IP
+     *
+     * 更新弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePublicipRequest 请求对象
+     * @return UpdatePublicipResponse
+     */
+    public UpdatePublicipResponse updatePublicip(UpdatePublicipRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.updatePublicip);
+    }
+
+    /**
+     * 更新弹性公网IP
+     *
+     * 更新弹性公网IP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePublicipRequest 请求对象
+     * @return SyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>
+     */
+    public SyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse> updatePublicipInvoker(
+        UpdatePublicipRequest request) {
+        return new SyncInvoker<UpdatePublicipRequest, UpdatePublicipResponse>(request, EipMeta.updatePublicip,
+            hcClient);
     }
 
 }

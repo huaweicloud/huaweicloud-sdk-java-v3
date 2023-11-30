@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class ShowAtomicIndexByIdResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private AtomicIndexVODetailData data;
 
-    public ShowAtomicIndexByIdResponse withData(Object data) {
+    public ShowAtomicIndexByIdResponse withData(AtomicIndexVODetailData data) {
         this.data = data;
         return this;
     }
 
+    public ShowAtomicIndexByIdResponse withData(Consumer<AtomicIndexVODetailData> dataSetter) {
+        if (this.data == null) {
+            this.data = new AtomicIndexVODetailData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public AtomicIndexVODetailData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(AtomicIndexVODetailData data) {
         this.data = data;
     }
 

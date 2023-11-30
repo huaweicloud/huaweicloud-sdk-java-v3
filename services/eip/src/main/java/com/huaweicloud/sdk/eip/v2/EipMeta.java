@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.eip.v2.model.BatchDeletePublicipTagsRequestBody;
 import com.huaweicloud.sdk.eip.v2.model.BatchDeletePublicipTagsResponse;
 import com.huaweicloud.sdk.eip.v2.model.BatchDisassociatePublicipsRequest;
 import com.huaweicloud.sdk.eip.v2.model.BatchDisassociatePublicipsResponse;
+import com.huaweicloud.sdk.eip.v2.model.BatchModifyBandwidthRequest;
+import com.huaweicloud.sdk.eip.v2.model.BatchModifyBandwidthResponse;
 import com.huaweicloud.sdk.eip.v2.model.BwChangeToPeriodReq;
 import com.huaweicloud.sdk.eip.v2.model.ChangeBandwidthToPeriodRequest;
 import com.huaweicloud.sdk.eip.v2.model.ChangeBandwidthToPeriodResponse;
@@ -66,6 +68,7 @@ import com.huaweicloud.sdk.eip.v2.model.ListPublicipsRequest;
 import com.huaweicloud.sdk.eip.v2.model.ListPublicipsResponse;
 import com.huaweicloud.sdk.eip.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.eip.v2.model.ListQuotasResponse;
+import com.huaweicloud.sdk.eip.v2.model.ModifyBandwidthRequestBody;
 import com.huaweicloud.sdk.eip.v2.model.NeutronCreateFloatingIpRequest;
 import com.huaweicloud.sdk.eip.v2.model.NeutronCreateFloatingIpRequestBody;
 import com.huaweicloud.sdk.eip.v2.model.NeutronCreateFloatingIpResponse;
@@ -161,6 +164,31 @@ public class EipMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateBandwidthRequestBody.class),
             f -> f.withMarshaller(BatchCreateSharedBandwidthsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse> batchModifyBandwidth =
+        genForbatchModifyBandwidth();
+
+    private static HttpRequestDef<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse> genForbatchModifyBandwidth() {
+        // basic
+        HttpRequestDef.Builder<BatchModifyBandwidthRequest, BatchModifyBandwidthResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, BatchModifyBandwidthRequest.class, BatchModifyBandwidthResponse.class)
+            .withName("BatchModifyBandwidth")
+            .withUri("/v2/{project_id}/batch-bandwidths/modify")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ModifyBandwidthRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyBandwidthRequestBody.class),
+            f -> f.withMarshaller(BatchModifyBandwidthRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -27,7 +27,7 @@ public class PromInstanceEpsModel {
     private String promId;
 
     /**
-     * 普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT
+     * Prometheus实例类型。
      */
     public static final class PromTypeEnum {
 
@@ -208,7 +208,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例名称 名称不能以下划线或中划线开头结尾，只含有中文、英文、数字、下划线、中划线、长度1-100
+     * Prometheus实例名称 名称不能以下划线或中划线开头结尾，只含有中文、英文、数字、下划线、中划线、长度1-100。
      * @return promName
      */
     public String getPromName() {
@@ -225,7 +225,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例ID
+     * Prometheus实例id。
      * @return promId
      */
     public String getPromId() {
@@ -242,7 +242,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例类型,DEFAULT,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT
+     * Prometheus实例类型。
      * @return promType
      */
     public PromTypeEnum getPromType() {
@@ -259,7 +259,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例版本号
+     * Prometheus实例版本号。
      * @return promVersion
      */
     public String getPromVersion() {
@@ -276,7 +276,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * CCE场景特殊字段
+     * CCE场景特殊字段。
      * @return cceSpec
      */
     public String getCceSpec() {
@@ -319,9 +319,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例创建时间戳
-     * minimum: 0
-     * maximum: 9999999999999
+     * Prometheus实例创建时间戳。
      * @return promCreateTimestamp
      */
     public Long getPromCreateTimestamp() {
@@ -338,9 +336,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例更新时间戳
-     * minimum: 0
-     * maximum: 9999999999999
+     * Prometheus实例更新时间戳。
      * @return promUpdateTimestamp
      */
     public Long getPromUpdateTimestamp() {
@@ -357,7 +353,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例状态 true/false
+     * Prometheus实例状态。
      * @return promStatus
      */
     public String getPromStatus() {
@@ -374,7 +370,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例所属的企业项目
+     * Prometheus实例所属的企业项目。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -391,7 +387,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例所属projectId
+     * Prometheus实例所属projectId。
      * @return projectId
      */
     public String getProjectId() {
@@ -408,9 +404,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 删除标记
-     * minimum: 0
-     * maximum: 9999999999999
+     * 删除标记。
      * @return isDeletedTag
      */
     public Long getIsDeletedTag() {
@@ -427,9 +421,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 删除时间
-     * minimum: 0
-     * maximum: 9999999999999
+     * 删除时间。
      * @return deletedTime
      */
     public Long getDeletedTime() {
@@ -472,7 +464,7 @@ public class PromInstanceEpsModel {
     }
 
     /**
-     * 普罗实例所属CCE特殊配置
+     * Prometheus实例所属CCE特殊配置。
      * @return cceSpecConfig
      */
     public String getCceSpecConfig() {

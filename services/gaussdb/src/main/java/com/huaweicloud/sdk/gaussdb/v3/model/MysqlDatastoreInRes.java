@@ -48,7 +48,7 @@ public class MysqlDatastoreInRes {
     }
 
     /**
-     * 数据库版本。  两位数的大版本号，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlEngineVersion.html)返回的name字段。
+     * 兼容的三位开源数据库版本号。  两位数的大版本号，获取方法请参见[查询数据库引擎的版本](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlEngineVersion.html)返回的version字段。
      * @return version
      */
     public String getVersion() {

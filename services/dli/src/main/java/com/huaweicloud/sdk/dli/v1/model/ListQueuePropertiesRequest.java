@@ -16,14 +16,14 @@ public class ListQueuePropertiesRequest {
     private String queueName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page")
+    @JsonProperty(value = "offset")
 
-    private Integer page;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "limit")
 
-    private Integer pageSize;
+    private Integer limit;
 
     public ListQueuePropertiesRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -42,40 +42,41 @@ public class ListQueuePropertiesRequest {
         this.queueName = queueName;
     }
 
-    public ListQueuePropertiesRequest withPage(Integer page) {
-        this.page = page;
+    public ListQueuePropertiesRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * 列表当前页
-     * minimum: 1
-     * @return page
+     * 偏移量
+     * minimum: 0
+     * @return offset
      */
-    public Integer getPage() {
-        return page;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPage(Integer page) {
-        this.page = page;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
-    public ListQueuePropertiesRequest withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ListQueuePropertiesRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
     /**
      * 每页显示条数
-     * maximum: 20
-     * @return pageSize
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     @Override
@@ -87,13 +88,13 @@ public class ListQueuePropertiesRequest {
             return false;
         }
         ListQueuePropertiesRequest that = (ListQueuePropertiesRequest) obj;
-        return Objects.equals(this.queueName, that.queueName) && Objects.equals(this.page, that.page)
-            && Objects.equals(this.pageSize, that.pageSize);
+        return Objects.equals(this.queueName, that.queueName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(queueName, page, pageSize);
+        return Objects.hash(queueName, offset, limit);
     }
 
     @Override
@@ -101,8 +102,8 @@ public class ListQueuePropertiesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListQueuePropertiesRequest {\n");
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
-        sb.append("    page: ").append(toIndentedString(page)).append("\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

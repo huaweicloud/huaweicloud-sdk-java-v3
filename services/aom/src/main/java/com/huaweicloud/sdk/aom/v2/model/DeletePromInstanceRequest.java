@@ -21,7 +21,7 @@ public class DeletePromInstanceRequest {
     }
 
     /**
-     * 普罗实例id。
+     * Prometheus实例id。
      * @return promId
      */
     public String getPromId() {

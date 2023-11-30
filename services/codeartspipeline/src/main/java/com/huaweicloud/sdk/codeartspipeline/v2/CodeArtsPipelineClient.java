@@ -110,6 +110,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyReque
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineLogRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineLogResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineRunDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineRunDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineTemplateDetailRequest;
@@ -1824,6 +1826,36 @@ public class CodeArtsPipelineClient {
         ShowPipelineGroupTreeRequest request) {
         return new SyncInvoker<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse>(request,
             CodeArtsPipelineMeta.showPipelineGroupTree, hcClient);
+    }
+
+    /**
+     * 查询流水线日志
+     *
+     * 查询流水线日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineLogRequest 请求对象
+     * @return ShowPipelineLogResponse
+     */
+    public ShowPipelineLogResponse showPipelineLog(ShowPipelineLogRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showPipelineLog);
+    }
+
+    /**
+     * 查询流水线日志
+     *
+     * 查询流水线日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineLogRequest 请求对象
+     * @return SyncInvoker<ShowPipelineLogRequest, ShowPipelineLogResponse>
+     */
+    public SyncInvoker<ShowPipelineLogRequest, ShowPipelineLogResponse> showPipelineLogInvoker(
+        ShowPipelineLogRequest request) {
+        return new SyncInvoker<ShowPipelineLogRequest, ShowPipelineLogResponse>(request,
+            CodeArtsPipelineMeta.showPipelineLog, hcClient);
     }
 
     /**

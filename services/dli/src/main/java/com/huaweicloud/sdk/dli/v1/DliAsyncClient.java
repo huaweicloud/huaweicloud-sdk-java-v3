@@ -197,6 +197,8 @@ import com.huaweicloud.sdk.dli.v1.model.ShowPartitionsRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowPartitionsResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowQueueResponse;
+import com.huaweicloud.sdk.dli.v1.model.ShowQuotaRequest;
+import com.huaweicloud.sdk.dli.v1.model.ShowQuotaResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowResourceInfoRequest;
 import com.huaweicloud.sdk.dli.v1.model.ShowResourceInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.ShowSparkJobRequest;
@@ -2141,6 +2143,34 @@ public class DliAsyncClient {
      */
     public AsyncInvoker<ShowQueueRequest, ShowQueueResponse> showQueueAsyncInvoker(ShowQueueRequest request) {
         return new AsyncInvoker<ShowQueueRequest, ShowQueueResponse>(request, DliMeta.showQueue, hcClient);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 该API用于获取用户配额信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotaRequest 请求对象
+     * @return CompletableFuture<ShowQuotaResponse>
+     */
+    public CompletableFuture<ShowQuotaResponse> showQuotaAsync(ShowQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.showQuota);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 该API用于获取用户配额信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
+     */
+    public AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaAsyncInvoker(ShowQuotaRequest request) {
+        return new AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, DliMeta.showQuota, hcClient);
     }
 
     /**

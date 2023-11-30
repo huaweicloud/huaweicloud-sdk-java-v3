@@ -26,7 +26,7 @@ public class ListAgentsRequest {
     }
 
     /**
-     * 集群id
+     * 集群id。
      * @return clusterId
      */
     public String getClusterId() {
@@ -43,7 +43,7 @@ public class ListAgentsRequest {
     }
 
     /**
-     * 命名空间
+     * 命名空间。
      * @return namespace
      */
     public String getNamespace() {

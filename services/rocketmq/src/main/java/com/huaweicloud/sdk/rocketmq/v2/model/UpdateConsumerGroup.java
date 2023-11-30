@@ -117,7 +117,7 @@ public class UpdateConsumerGroup {
     }
 
     /**
-     * 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
+     * 待修改参数的消费组（消费组名称不支持修改）。
      * @return name
      */
     public String getName() {
@@ -134,7 +134,7 @@ public class UpdateConsumerGroup {
     }
 
     /**
-     * 最大重试次数。
+     * 最大重试次数，取值范围为1~16。
      * @return retryMaxTime
      */
     public BigDecimal getRetryMaxTime() {

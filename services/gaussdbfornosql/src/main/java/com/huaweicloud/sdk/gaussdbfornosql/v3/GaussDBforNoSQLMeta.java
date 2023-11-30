@@ -86,6 +86,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorInfosRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorInfosResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInfluxdbSlowLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInfluxdbSlowLogsRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInfluxdbSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsRequest;
@@ -1227,6 +1230,38 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getEngineName, (req, v) -> {
                 req.setEngineName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> listInfluxdbSlowLogs =
+        genForlistInfluxdbSlowLogs();
+
+    private static HttpRequestDef<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> genForlistInfluxdbSlowLogs() {
+        // basic
+        HttpRequestDef.Builder<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListInfluxdbSlowLogsRequest.class, ListInfluxdbSlowLogsResponse.class)
+            .withName("ListInfluxdbSlowLogs")
+            .withUri("/v3/{project_id}/influxdb/instances/{instance_id}/slow-logs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInfluxdbSlowLogsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ListInfluxdbSlowLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInfluxdbSlowLogsRequestBody.class),
+            f -> f.withMarshaller(ListInfluxdbSlowLogsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

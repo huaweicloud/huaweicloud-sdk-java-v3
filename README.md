@@ -838,7 +838,7 @@ IamClient iamClient = IamClient.newBuilder()
 
 ##### 3.3.1 IAM endpoint configuration [:top:](#user-manual-top)
 
-Automatically acquiring projectId/domainId will invoke the [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) /[KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) interface of IAM service. The default iam enpoint is `https://iam.myhuaweicloud.com`, **European station users need to specify the endpoint as https://iam.eu-west-101.myhuaweicloud.com**, you can modify the endpoint in the following two ways:
+Automatically acquiring projectId/domainId will invoke the [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) /[KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) interface of IAM service. The default iam enpoint is `https://iam.myhuaweicloud.com`, **European station users need to specify the endpoint as https://iam.eu-west-101.myhuaweicloud.eu**, you can modify the endpoint in the following two ways:
 
 ###### 3.3.1.1 Global scope [:top:](#user-manual-top)
 

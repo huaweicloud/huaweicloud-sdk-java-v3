@@ -14,17 +14,17 @@ import java.util.function.Consumer;
 public class PageInfoBusinessTypeDefinitionVOData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "businessType")
+    @JsonProperty(value = "business_type")
 
     private String businessType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "displayName")
+    @JsonProperty(value = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "uniqueId")
+    @JsonProperty(value = "unique_id")
 
     private String uniqueId;
 

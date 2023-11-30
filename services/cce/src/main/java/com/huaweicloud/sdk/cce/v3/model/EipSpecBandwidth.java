@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * EipSpecBandwidth
+ * 带宽信息
  */
 public class EipSpecBandwidth {
 

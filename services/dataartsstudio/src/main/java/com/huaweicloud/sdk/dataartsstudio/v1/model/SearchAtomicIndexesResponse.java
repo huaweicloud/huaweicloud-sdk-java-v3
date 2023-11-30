@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class SearchAtomicIndexesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private AtomicIndexVOSearchResultData data;
 
-    public SearchAtomicIndexesResponse withData(Object data) {
+    public SearchAtomicIndexesResponse withData(AtomicIndexVOSearchResultData data) {
         this.data = data;
         return this;
     }
 
+    public SearchAtomicIndexesResponse withData(Consumer<AtomicIndexVOSearchResultData> dataSetter) {
+        if (this.data == null) {
+            this.data = new AtomicIndexVOSearchResultData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public AtomicIndexVOSearchResultData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(AtomicIndexVOSearchResultData data) {
         this.data = data;
     }
 

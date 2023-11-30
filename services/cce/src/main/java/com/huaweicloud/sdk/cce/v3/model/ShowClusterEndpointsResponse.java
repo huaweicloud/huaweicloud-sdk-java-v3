@@ -20,7 +20,7 @@ public class ShowClusterEndpointsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
 
-    private OpenAPIResponseSpec spec;
+    private OpenAPISpec spec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -53,14 +53,14 @@ public class ShowClusterEndpointsResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
-    public ShowClusterEndpointsResponse withSpec(OpenAPIResponseSpec spec) {
+    public ShowClusterEndpointsResponse withSpec(OpenAPISpec spec) {
         this.spec = spec;
         return this;
     }
 
-    public ShowClusterEndpointsResponse withSpec(Consumer<OpenAPIResponseSpec> specSetter) {
+    public ShowClusterEndpointsResponse withSpec(Consumer<OpenAPISpec> specSetter) {
         if (this.spec == null) {
-            this.spec = new OpenAPIResponseSpec();
+            this.spec = new OpenAPISpec();
             specSetter.accept(this.spec);
         }
 
@@ -71,11 +71,11 @@ public class ShowClusterEndpointsResponse extends SdkResponse {
      * Get spec
      * @return spec
      */
-    public OpenAPIResponseSpec getSpec() {
+    public OpenAPISpec getSpec() {
         return spec;
     }
 
-    public void setSpec(OpenAPIResponseSpec spec) {
+    public void setSpec(OpenAPISpec spec) {
         this.spec = spec;
     }
 

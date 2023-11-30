@@ -39,7 +39,7 @@ public class StorageGroups {
     }
 
     /**
-     * storageGroups的名字，作为虚拟存储组的名字，因此各个group名字不能重复。
+     * storageGroups的名字，作为虚拟存储组的名字，因此各个group名字不能重复。 > - 当cceManaged=ture时，name必须为：vgpass。 > - 当数据盘作为临时存储卷时：name必须为：vg-everest-localvolume-ephemeral。 > - 当数据盘作为持久存储卷时：name必须为：vg-everest-localvolume-persistent。 
      * @return name
      */
     public String getName() {

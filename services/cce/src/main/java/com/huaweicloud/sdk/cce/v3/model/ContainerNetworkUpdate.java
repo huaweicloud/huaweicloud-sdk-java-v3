@@ -40,7 +40,7 @@ public class ContainerNetworkUpdate {
     }
 
     /**
-     * 容器网络网段列表。1.21及新版本集群，当集群网络类型为vpc-router时，支持增量添加容器网段。  此参数在集群更新后不可更改，请谨慎选择。
+     * 容器网络网段列表。1.21及新版本集群，当集群网络类型为vpc-router时，支持增量添加容器网段，最多配置20个。  此参数在集群更新后不可更改，请谨慎选择。
      * @return cidrs
      */
     public List<ContainerCIDR> getCidrs() {

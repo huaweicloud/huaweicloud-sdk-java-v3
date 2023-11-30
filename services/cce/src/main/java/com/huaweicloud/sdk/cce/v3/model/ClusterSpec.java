@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class ClusterSpec {
 
     /**
-     * 集群类别： - CCE：CCE集群   CCE集群支持虚拟机与裸金属服务器混合、GPU、NPU等异构节点的混合部署，基于高性能网络模型提供全方位、多场景、安全稳定的容器运行环境。 [- Turbo: CCE Turbo集群。   全面基于云原生基础设施构建的云原生2.0的容器引擎服务，具备软硬协同、网络无损、安全可靠、调度智能的优势，为用户提供一站式、高性价比的全新容器服务体验。](tag:hws,hws_hk,dt) 
+     * 集群类别： - CCE：CCE集群   CCE集群支持虚拟机与裸金属服务器混合、GPU、NPU等异构节点的混合部署，基于高性能网络模型提供全方位、多场景、安全稳定的容器运行环境。 [- Turbo: CCE Turbo集群。   全面基于云原生基础设施构建的云原生2.0的容器引擎服务，具备软硬协同、网络无损、安全可靠、调度智能的优势，为用户提供一站式、高性价比的全新容器服务体验。](tag:hws,hws_hk,dt,hcs,g42,sbc) 
      */
     public static final class CategoryEnum {
 
@@ -94,7 +94,7 @@ public class ClusterSpec {
     private CategoryEnum category;
 
     /**
-     * 集群Master节点架构：  - VirtualMachine：Master节点为x86架构服务器 [- ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk) 
+     * 集群Master节点架构：  - VirtualMachine：Master节点为x86架构服务器 [- ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk,hcs) 
      */
     public static final class TypeEnum {
 
@@ -334,6 +334,11 @@ public class ClusterSpec {
     private Boolean supportIstio;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableMasterVolumeEncryption")
+
+    private Boolean enableMasterVolumeEncryption;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurationsOverride")
 
     private List<PackageConfiguration> configurationsOverride = null;
@@ -344,7 +349,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 集群类别： - CCE：CCE集群   CCE集群支持虚拟机与裸金属服务器混合、GPU、NPU等异构节点的混合部署，基于高性能网络模型提供全方位、多场景、安全稳定的容器运行环境。 [- Turbo: CCE Turbo集群。   全面基于云原生基础设施构建的云原生2.0的容器引擎服务，具备软硬协同、网络无损、安全可靠、调度智能的优势，为用户提供一站式、高性价比的全新容器服务体验。](tag:hws,hws_hk,dt) 
+     * 集群类别： - CCE：CCE集群   CCE集群支持虚拟机与裸金属服务器混合、GPU、NPU等异构节点的混合部署，基于高性能网络模型提供全方位、多场景、安全稳定的容器运行环境。 [- Turbo: CCE Turbo集群。   全面基于云原生基础设施构建的云原生2.0的容器引擎服务，具备软硬协同、网络无损、安全可靠、调度智能的优势，为用户提供一站式、高性价比的全新容器服务体验。](tag:hws,hws_hk,dt,hcs,g42,sbc) 
      * @return category
      */
     public CategoryEnum getCategory() {
@@ -361,7 +366,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 集群Master节点架构：  - VirtualMachine：Master节点为x86架构服务器 [- ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk) 
+     * 集群Master节点架构：  - VirtualMachine：Master节点为x86架构服务器 [- ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk,hcs) 
      * @return type
      */
     public TypeEnum getType() {
@@ -378,7 +383,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 字段默认值：创建CCE集群[或鲲鹏集群](tag:hws,hws_hk)时，如果是非专属云为cce.s1.small，专属云则为cce.dec.s1.small；  集群规格，集群创建完成后规格不可再变更，请按实际业务需求进行选择： - cce.s1.small: 小规模单控制节点CCE集群（最大50节点） - cce.s1.medium: 中等规模单控制节点CCE集群（最大200节点） - cce.s2.small: 小规模多控制节点CCE集群（最大50节点） - cce.s2.medium: 中等规模多控制节点CCE集群（最大200节点） - cce.s2.large: 大规模多控制节点CCE集群（最大1000节点） - cce.s2.xlarge: 超大规模多控制节点CCE集群（最大2000节点）  >    - s1：单控制节点CCE集群。 >    - s2：多控制节点CCE集群。 >    - dec：专属CCE集群规格。如cce.dec.s1.small为小规模单控制节点专属CCE集群（最大50节点）。 >    - 最大节点数：当前集群支持管理的最大节点规模，请根据业务需求选择。 >    - 单控制节点集群：普通集群是单控制节点，控制节点故障后，集群将不可用，但已运行工作负载不受影响。 >    - 多控制节点集群：即高可用集群，当某个控制节点故障时，集群仍然可用。 
+     * 集群规格，当集群为v1.15及以上版本时支持创建后变更，详情请参见[变更集群规格](ResizeCluster.xml)。请按实际业务需求进行选择： - cce.s1.small: 小规模单控制节点CCE集群（最大50节点） - cce.s1.medium: 中等规模单控制节点CCE集群（最大200节点） - cce.s2.small: 小规模多控制节点CCE集群（最大50节点） - cce.s2.medium: 中等规模多控制节点CCE集群（最大200节点） - cce.s2.large: 大规模多控制节点CCE集群（最大1000节点） - cce.s2.xlarge: 超大规模多控制节点CCE集群（最大2000节点）  >    关于规格参数中的字段说明如下： >    - s1：单控制节点的集群，控制节点数为1。单控制节点故障后，集群将不可用，但已运行工作负载不受影响。 >    - s2：多控制节点的集群，即高可用集群，控制节点数为3。当某个控制节点故障时，集群仍然可用。 >    [- dec：表示专属云的CCE集群规格。例如cce.dec.s1.small表示小规模单控制节点的专属云CCE集群（最大50节点）。](tag:hws,hws_hk) >    - small：表示集群支持管理的最大节点规模为50节点。 >    - medium：表示集群支持管理的最大节点规模为200节点。 >    - large：表示集群支持管理的最大节点规模为1000节点。 >    - xlarge：表示集群支持管理的最大节点规模为2000节点。 
      * @return flavor
      */
     public String getFlavor() {
@@ -395,7 +400,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新版本。  在CCE控制台支持创建两种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。  >    - 若不配置，默认创建最新版本的集群。 >    - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。 >    - Turbo集群支持1.19及以上版本商用。
+     * 集群版本，与Kubernetes社区基线版本保持一致，建议选择最新版本。  在CCE控制台支持创建两种最新版本的集群。可登录CCE控制台创建集群，在“版本”处获取到集群版本。 其它集群版本，当前仍可通过api创建，但后续会逐渐下线，具体下线策略请关注CCE官方公告。  >    - 若不配置，默认创建最新版本的集群。 >    - 若指定集群基线版本但是不指定具体r版本，则系统默认选择对应集群版本的最新r版本。建议不指定具体r版本由系统选择最新版本。 [>    - Turbo集群支持1.19及以上版本商用。](tag:hws,hws_hk,dt) [>    - Turbo集群支持1.23及以上版本商用。](tag:hcs,g42,sbc)
      * @return version
      */
     public String getVersion() {
@@ -797,6 +802,23 @@ public class ClusterSpec {
         this.supportIstio = supportIstio;
     }
 
+    public ClusterSpec withEnableMasterVolumeEncryption(Boolean enableMasterVolumeEncryption) {
+        this.enableMasterVolumeEncryption = enableMasterVolumeEncryption;
+        return this;
+    }
+
+    /**
+     * 集群控制节点系统盘、数据盘加密。默认使用AES_256加密算法。CCE、Turbo集群1.25及以上版本开始支持。集群创建后不支持修改。开启后存在一定的磁盘读写性能损耗。
+     * @return enableMasterVolumeEncryption
+     */
+    public Boolean getEnableMasterVolumeEncryption() {
+        return enableMasterVolumeEncryption;
+    }
+
+    public void setEnableMasterVolumeEncryption(Boolean enableMasterVolumeEncryption) {
+        this.enableMasterVolumeEncryption = enableMasterVolumeEncryption;
+    }
+
     public ClusterSpec withConfigurationsOverride(List<PackageConfiguration> configurationsOverride) {
         this.configurationsOverride = configurationsOverride;
         return this;
@@ -854,6 +876,7 @@ public class ClusterSpec {
             && Objects.equals(this.kubeProxyMode, that.kubeProxyMode) && Objects.equals(this.az, that.az)
             && Objects.equals(this.extendParam, that.extendParam)
             && Objects.equals(this.supportIstio, that.supportIstio)
+            && Objects.equals(this.enableMasterVolumeEncryption, that.enableMasterVolumeEncryption)
             && Objects.equals(this.configurationsOverride, that.configurationsOverride);
     }
 
@@ -880,6 +903,7 @@ public class ClusterSpec {
             az,
             extendParam,
             supportIstio,
+            enableMasterVolumeEncryption,
             configurationsOverride);
     }
 
@@ -908,6 +932,9 @@ public class ClusterSpec {
         sb.append("    az: ").append(toIndentedString(az)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    supportIstio: ").append(toIndentedString(supportIstio)).append("\n");
+        sb.append("    enableMasterVolumeEncryption: ")
+            .append(toIndentedString(enableMasterVolumeEncryption))
+            .append("\n");
         sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
         sb.append("}");
         return sb.toString();

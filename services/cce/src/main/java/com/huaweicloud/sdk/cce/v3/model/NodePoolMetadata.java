@@ -94,7 +94,7 @@ public class NodePoolMetadata {
     }
 
     /**
-     * 节点池的注解，以key value对表示。 
+     * 节点池的注解，以key value对表示。仅用于查询，不支持请求时传入，填写无效。 
      * @return annotations
      */
     public Map<String, String> getAnnotations() {

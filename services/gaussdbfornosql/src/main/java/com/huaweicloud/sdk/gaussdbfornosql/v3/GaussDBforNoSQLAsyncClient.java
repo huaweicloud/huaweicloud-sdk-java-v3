@@ -69,6 +69,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorInfosRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorInfosResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInfluxdbSlowLogsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInfluxdbSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsRequest;
@@ -1191,6 +1193,37 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
         return new AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, GaussDBforNoSQLMeta.listFlavors,
             hcClient);
+    }
+
+    /**
+     * 查询GeminiDB(for influxdb)数据库慢日志
+     *
+     * 查询GeminiDB(for influxdb)数据库慢日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInfluxdbSlowLogsRequest 请求对象
+     * @return CompletableFuture<ListInfluxdbSlowLogsResponse>
+     */
+    public CompletableFuture<ListInfluxdbSlowLogsResponse> listInfluxdbSlowLogsAsync(
+        ListInfluxdbSlowLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listInfluxdbSlowLogs);
+    }
+
+    /**
+     * 查询GeminiDB(for influxdb)数据库慢日志
+     *
+     * 查询GeminiDB(for influxdb)数据库慢日志信息，支持日志关键字搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInfluxdbSlowLogsRequest 请求对象
+     * @return AsyncInvoker<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse>
+     */
+    public AsyncInvoker<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse> listInfluxdbSlowLogsAsyncInvoker(
+        ListInfluxdbSlowLogsRequest request) {
+        return new AsyncInvoker<ListInfluxdbSlowLogsRequest, ListInfluxdbSlowLogsResponse>(request,
+            GaussDBforNoSQLMeta.listInfluxdbSlowLogs, hcClient);
     }
 
     /**

@@ -89,12 +89,12 @@ public class PageInfoBusinessTypeDefinitionVOPluginsList {
     private String location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publisherUniqueId")
+    @JsonProperty(value = "publisher_unique_id")
 
     private String publisherUniqueId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "manifestVersion")
+    @JsonProperty(value = "manifest_version")
 
     private String manifestVersion;
 

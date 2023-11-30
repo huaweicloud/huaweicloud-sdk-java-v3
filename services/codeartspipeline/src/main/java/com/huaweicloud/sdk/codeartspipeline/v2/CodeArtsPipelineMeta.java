@@ -96,6 +96,7 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.LogQuery;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.OpenSourceRuleSetCreateVO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineByTemplateDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineDTO;
@@ -138,6 +139,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyReque
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineLogRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineLogResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineRunDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineRunDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineTemplateDetailRequest;
@@ -213,7 +216,6 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class CodeArtsPipelineMeta {
@@ -2438,6 +2440,67 @@ public class CodeArtsPipelineMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPipelineLogRequest, ShowPipelineLogResponse> showPipelineLog =
+        genForshowPipelineLog();
+
+    private static HttpRequestDef<ShowPipelineLogRequest, ShowPipelineLogResponse> genForshowPipelineLog() {
+        // basic
+        HttpRequestDef.Builder<ShowPipelineLogRequest, ShowPipelineLogResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowPipelineLogRequest.class, ShowPipelineLogResponse.class)
+            .withName("ShowPipelineLog")
+            .withUri(
+                "/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/jobs/{job_run_id}/steps/{step_run_id}/logs")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineLogRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineLogRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
+            }));
+        builder.<String>withRequestField("pipeline_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineLogRequest::getPipelineRunId, (req, v) -> {
+                req.setPipelineRunId(v);
+            }));
+        builder.<String>withRequestField("job_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineLogRequest::getJobRunId, (req, v) -> {
+                req.setJobRunId(v);
+            }));
+        builder.<String>withRequestField("step_run_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineLogRequest::getStepRunId, (req, v) -> {
+                req.setStepRunId(v);
+            }));
+        builder.<LogQuery>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LogQuery.class),
+            f -> f.withMarshaller(ShowPipelineLogRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPipelineRunDetailRequest, ShowPipelineRunDetailResponse> showPipelineRunDetail =
         genForshowPipelineRunDetail();
 
@@ -2795,13 +2858,6 @@ public class CodeArtsPipelineMeta {
             }).withInnerContainerType(String.class));
 
         // response
-        builder.<Map<String, PublisherVO>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(ShowPublisherResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(PublisherVO.class));
 
         return builder.build();
     }
@@ -3489,7 +3545,7 @@ public class CodeArtsPipelineMeta {
             }));
         builder.<UploadPluginIconRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadPluginIconRequestBody.class),
             f -> f.withMarshaller(UploadPluginIconRequest::getBody, (req, v) -> {
                 req.setBody(v);

@@ -96,6 +96,11 @@ public class ListApisRequest {
     private DlmTypeEnum dlmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-return-publish-messages")
+
+    private String xReturnPublishMessages;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -137,6 +142,25 @@ public class ListApisRequest {
 
     public void setDlmType(DlmTypeEnum dlmType) {
         this.dlmType = dlmType;
+    }
+
+    public ListApisRequest withXReturnPublishMessages(String xReturnPublishMessages) {
+        this.xReturnPublishMessages = xReturnPublishMessages;
+        return this;
+    }
+
+    /**
+     * 是否返回专享版API的发布信息
+     * @return xReturnPublishMessages
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-return-publish-messages")
+    public String getXReturnPublishMessages() {
+        return xReturnPublishMessages;
+    }
+
+    public void setXReturnPublishMessages(String xReturnPublishMessages) {
+        this.xReturnPublishMessages = xReturnPublishMessages;
     }
 
     public ListApisRequest withOffset(Integer offset) {
@@ -183,12 +207,13 @@ public class ListApisRequest {
         }
         ListApisRequest that = (ListApisRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dlmType, that.dlmType)
+            && Objects.equals(this.xReturnPublishMessages, that.xReturnPublishMessages)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, dlmType, offset, limit);
+        return Objects.hash(workspace, dlmType, xReturnPublishMessages, offset, limit);
     }
 
     @Override
@@ -197,6 +222,7 @@ public class ListApisRequest {
         sb.append("class ListApisRequest {\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    dlmType: ").append(toIndentedString(dlmType)).append("\n");
+        sb.append("    xReturnPublishMessages: ").append(toIndentedString(xReturnPublishMessages)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

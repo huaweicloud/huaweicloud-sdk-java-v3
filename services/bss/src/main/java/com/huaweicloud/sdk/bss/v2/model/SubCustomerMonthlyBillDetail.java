@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -118,7 +119,7 @@ public class SubCustomerMonthlyBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_amount")
 
-    private Double usageAmount;
+    private BigDecimal usageAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage_measure_id")
@@ -128,7 +129,7 @@ public class SubCustomerMonthlyBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_usage")
 
-    private Double freeResourceUsage;
+    private BigDecimal freeResourceUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "free_resource_measure_id")
@@ -138,7 +139,7 @@ public class SubCustomerMonthlyBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ri_usage")
 
-    private Double riUsage;
+    private BigDecimal riUsage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ri_usage_measure_id")
@@ -148,52 +149,52 @@ public class SubCustomerMonthlyBillDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_amount")
 
-    private Double officialAmount;
+    private BigDecimal officialAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "official_discount_amount")
 
-    private Double officialDiscountAmount;
+    private BigDecimal officialDiscountAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payment_amount")
 
-    private Double paymentAmount;
+    private BigDecimal paymentAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cash_amount")
 
-    private Double cashAmount;
+    private BigDecimal cashAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "credit_amount")
 
-    private Double creditAmount;
+    private BigDecimal creditAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "coupon_amount")
 
-    private Double couponAmount;
+    private BigDecimal couponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flexipurchase_coupon_amount")
 
-    private Double flexipurchaseCouponAmount;
+    private BigDecimal flexipurchaseCouponAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stored_value_card_amount")
 
-    private Double storedValueCardAmount;
+    private BigDecimal storedValueCardAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "debt_amount")
 
-    private Double debtAmount;
+    private BigDecimal debtAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "writeoff_amount")
 
-    private Double writeoffAmount;
+    private BigDecimal writeoffAmount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
@@ -602,7 +603,7 @@ public class SubCustomerMonthlyBillDetail {
         this.usageType = usageType;
     }
 
-    public SubCustomerMonthlyBillDetail withUsageAmount(Double usageAmount) {
+    public SubCustomerMonthlyBillDetail withUsageAmount(BigDecimal usageAmount) {
         this.usageAmount = usageAmount;
         return this;
     }
@@ -611,11 +612,11 @@ public class SubCustomerMonthlyBillDetail {
      * 资源的使用量。
      * @return usageAmount
      */
-    public Double getUsageAmount() {
+    public BigDecimal getUsageAmount() {
         return usageAmount;
     }
 
-    public void setUsageAmount(Double usageAmount) {
+    public void setUsageAmount(BigDecimal usageAmount) {
         this.usageAmount = usageAmount;
     }
 
@@ -636,7 +637,7 @@ public class SubCustomerMonthlyBillDetail {
         this.usageMeasureId = usageMeasureId;
     }
 
-    public SubCustomerMonthlyBillDetail withFreeResourceUsage(Double freeResourceUsage) {
+    public SubCustomerMonthlyBillDetail withFreeResourceUsage(BigDecimal freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
         return this;
     }
@@ -645,11 +646,11 @@ public class SubCustomerMonthlyBillDetail {
      * 套餐内使用量。
      * @return freeResourceUsage
      */
-    public Double getFreeResourceUsage() {
+    public BigDecimal getFreeResourceUsage() {
         return freeResourceUsage;
     }
 
-    public void setFreeResourceUsage(Double freeResourceUsage) {
+    public void setFreeResourceUsage(BigDecimal freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
     }
 
@@ -670,7 +671,7 @@ public class SubCustomerMonthlyBillDetail {
         this.freeResourceMeasureId = freeResourceMeasureId;
     }
 
-    public SubCustomerMonthlyBillDetail withRiUsage(Double riUsage) {
+    public SubCustomerMonthlyBillDetail withRiUsage(BigDecimal riUsage) {
         this.riUsage = riUsage;
         return this;
     }
@@ -679,11 +680,11 @@ public class SubCustomerMonthlyBillDetail {
      * 预留实例使用量。
      * @return riUsage
      */
-    public Double getRiUsage() {
+    public BigDecimal getRiUsage() {
         return riUsage;
     }
 
-    public void setRiUsage(Double riUsage) {
+    public void setRiUsage(BigDecimal riUsage) {
         this.riUsage = riUsage;
     }
 
@@ -704,7 +705,7 @@ public class SubCustomerMonthlyBillDetail {
         this.riUsageMeasureId = riUsageMeasureId;
     }
 
-    public SubCustomerMonthlyBillDetail withOfficialAmount(Double officialAmount) {
+    public SubCustomerMonthlyBillDetail withOfficialAmount(BigDecimal officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
@@ -713,15 +714,15 @@ public class SubCustomerMonthlyBillDetail {
      * 官网价。
      * @return officialAmount
      */
-    public Double getOfficialAmount() {
+    public BigDecimal getOfficialAmount() {
         return officialAmount;
     }
 
-    public void setOfficialAmount(Double officialAmount) {
+    public void setOfficialAmount(BigDecimal officialAmount) {
         this.officialAmount = officialAmount;
     }
 
-    public SubCustomerMonthlyBillDetail withOfficialDiscountAmount(Double officialDiscountAmount) {
+    public SubCustomerMonthlyBillDetail withOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
         return this;
     }
@@ -730,15 +731,15 @@ public class SubCustomerMonthlyBillDetail {
      * 对应官网价折扣金额。
      * @return officialDiscountAmount
      */
-    public Double getOfficialDiscountAmount() {
+    public BigDecimal getOfficialDiscountAmount() {
         return officialDiscountAmount;
     }
 
-    public void setOfficialDiscountAmount(Double officialDiscountAmount) {
+    public void setOfficialDiscountAmount(BigDecimal officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
     }
 
-    public SubCustomerMonthlyBillDetail withPaymentAmount(Double paymentAmount) {
+    public SubCustomerMonthlyBillDetail withPaymentAmount(BigDecimal paymentAmount) {
         this.paymentAmount = paymentAmount;
         return this;
     }
@@ -747,15 +748,15 @@ public class SubCustomerMonthlyBillDetail {
      * 应付金额。
      * @return paymentAmount
      */
-    public Double getPaymentAmount() {
+    public BigDecimal getPaymentAmount() {
         return paymentAmount;
     }
 
-    public void setPaymentAmount(Double paymentAmount) {
+    public void setPaymentAmount(BigDecimal paymentAmount) {
         this.paymentAmount = paymentAmount;
     }
 
-    public SubCustomerMonthlyBillDetail withCashAmount(Double cashAmount) {
+    public SubCustomerMonthlyBillDetail withCashAmount(BigDecimal cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
@@ -764,15 +765,15 @@ public class SubCustomerMonthlyBillDetail {
      * 现金支付金额。
      * @return cashAmount
      */
-    public Double getCashAmount() {
+    public BigDecimal getCashAmount() {
         return cashAmount;
     }
 
-    public void setCashAmount(Double cashAmount) {
+    public void setCashAmount(BigDecimal cashAmount) {
         this.cashAmount = cashAmount;
     }
 
-    public SubCustomerMonthlyBillDetail withCreditAmount(Double creditAmount) {
+    public SubCustomerMonthlyBillDetail withCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
@@ -781,15 +782,15 @@ public class SubCustomerMonthlyBillDetail {
      * 信用额度支付金额。
      * @return creditAmount
      */
-    public Double getCreditAmount() {
+    public BigDecimal getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(Double creditAmount) {
+    public void setCreditAmount(BigDecimal creditAmount) {
         this.creditAmount = creditAmount;
     }
 
-    public SubCustomerMonthlyBillDetail withCouponAmount(Double couponAmount) {
+    public SubCustomerMonthlyBillDetail withCouponAmount(BigDecimal couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
@@ -798,15 +799,15 @@ public class SubCustomerMonthlyBillDetail {
      * 代金券支付金额。
      * @return couponAmount
      */
-    public Double getCouponAmount() {
+    public BigDecimal getCouponAmount() {
         return couponAmount;
     }
 
-    public void setCouponAmount(Double couponAmount) {
+    public void setCouponAmount(BigDecimal couponAmount) {
         this.couponAmount = couponAmount;
     }
 
-    public SubCustomerMonthlyBillDetail withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
+    public SubCustomerMonthlyBillDetail withFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
@@ -815,15 +816,15 @@ public class SubCustomerMonthlyBillDetail {
      * 现金券支付金额。
      * @return flexipurchaseCouponAmount
      */
-    public Double getFlexipurchaseCouponAmount() {
+    public BigDecimal getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
 
-    public void setFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
+    public void setFlexipurchaseCouponAmount(BigDecimal flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    public SubCustomerMonthlyBillDetail withStoredValueCardAmount(Double storedValueCardAmount) {
+    public SubCustomerMonthlyBillDetail withStoredValueCardAmount(BigDecimal storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
         return this;
     }
@@ -832,15 +833,15 @@ public class SubCustomerMonthlyBillDetail {
      * 储值卡支付金额。
      * @return storedValueCardAmount
      */
-    public Double getStoredValueCardAmount() {
+    public BigDecimal getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
 
-    public void setStoredValueCardAmount(Double storedValueCardAmount) {
+    public void setStoredValueCardAmount(BigDecimal storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
     }
 
-    public SubCustomerMonthlyBillDetail withDebtAmount(Double debtAmount) {
+    public SubCustomerMonthlyBillDetail withDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
@@ -849,15 +850,15 @@ public class SubCustomerMonthlyBillDetail {
      * 欠费金额。
      * @return debtAmount
      */
-    public Double getDebtAmount() {
+    public BigDecimal getDebtAmount() {
         return debtAmount;
     }
 
-    public void setDebtAmount(Double debtAmount) {
+    public void setDebtAmount(BigDecimal debtAmount) {
         this.debtAmount = debtAmount;
     }
 
-    public SubCustomerMonthlyBillDetail withWriteoffAmount(Double writeoffAmount) {
+    public SubCustomerMonthlyBillDetail withWriteoffAmount(BigDecimal writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
         return this;
     }
@@ -866,11 +867,11 @@ public class SubCustomerMonthlyBillDetail {
      * 欠费核销金额。
      * @return writeoffAmount
      */
-    public Double getWriteoffAmount() {
+    public BigDecimal getWriteoffAmount() {
         return writeoffAmount;
     }
 
-    public void setWriteoffAmount(Double writeoffAmount) {
+    public void setWriteoffAmount(BigDecimal writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
     }
 

@@ -110,6 +110,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyReque
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineLogRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineLogResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineRunDetailRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineRunDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineTemplateDetailRequest;
@@ -1849,6 +1851,36 @@ public class CodeArtsPipelineAsyncClient {
         ShowPipelineGroupTreeRequest request) {
         return new AsyncInvoker<ShowPipelineGroupTreeRequest, ShowPipelineGroupTreeResponse>(request,
             CodeArtsPipelineMeta.showPipelineGroupTree, hcClient);
+    }
+
+    /**
+     * 查询流水线日志
+     *
+     * 查询流水线日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineLogRequest 请求对象
+     * @return CompletableFuture<ShowPipelineLogResponse>
+     */
+    public CompletableFuture<ShowPipelineLogResponse> showPipelineLogAsync(ShowPipelineLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.showPipelineLog);
+    }
+
+    /**
+     * 查询流水线日志
+     *
+     * 查询流水线日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineLogRequest 请求对象
+     * @return AsyncInvoker<ShowPipelineLogRequest, ShowPipelineLogResponse>
+     */
+    public AsyncInvoker<ShowPipelineLogRequest, ShowPipelineLogResponse> showPipelineLogAsyncInvoker(
+        ShowPipelineLogRequest request) {
+        return new AsyncInvoker<ShowPipelineLogRequest, ShowPipelineLogResponse>(request,
+            CodeArtsPipelineMeta.showPipelineLog, hcClient);
     }
 
     /**

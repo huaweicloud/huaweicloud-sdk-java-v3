@@ -183,6 +183,16 @@ public class RecognizeFlashAsrRequest {
 
     private AudioFormatEnum audioFormat;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_bucket_name")
+
+    private String obsBucketName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_object_key")
+
+    private String obsObjectKey;
+
     /**
      * 是否加标点， 可以为 yes, 默认no
      */
@@ -413,16 +423,6 @@ public class RecognizeFlashAsrRequest {
 
     private String vocabularyId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "obs_bucket_name")
-
-    private String obsBucketName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "obs_object_key")
-
-    private String obsObjectKey;
-
     /**
      * 表示是否在识别中只识别首个声道的音频数据，取值为“yes”和“no”，默认为“no”。
      */
@@ -532,6 +532,40 @@ public class RecognizeFlashAsrRequest {
         this.audioFormat = audioFormat;
     }
 
+    public RecognizeFlashAsrRequest withObsBucketName(String obsBucketName) {
+        this.obsBucketName = obsBucketName;
+        return this;
+    }
+
+    /**
+     * obs桶名
+     * @return obsBucketName
+     */
+    public String getObsBucketName() {
+        return obsBucketName;
+    }
+
+    public void setObsBucketName(String obsBucketName) {
+        this.obsBucketName = obsBucketName;
+    }
+
+    public RecognizeFlashAsrRequest withObsObjectKey(String obsObjectKey) {
+        this.obsObjectKey = obsObjectKey;
+        return this;
+    }
+
+    /**
+     * obs对象key，经过urlencode编码，长度不超过1024个字符
+     * @return obsObjectKey
+     */
+    public String getObsObjectKey() {
+        return obsObjectKey;
+    }
+
+    public void setObsObjectKey(String obsObjectKey) {
+        this.obsObjectKey = obsObjectKey;
+    }
+
     public RecognizeFlashAsrRequest withAddPunc(AddPuncEnum addPunc) {
         this.addPunc = addPunc;
         return this;
@@ -600,40 +634,6 @@ public class RecognizeFlashAsrRequest {
         this.vocabularyId = vocabularyId;
     }
 
-    public RecognizeFlashAsrRequest withObsBucketName(String obsBucketName) {
-        this.obsBucketName = obsBucketName;
-        return this;
-    }
-
-    /**
-     * obs桶名
-     * @return obsBucketName
-     */
-    public String getObsBucketName() {
-        return obsBucketName;
-    }
-
-    public void setObsBucketName(String obsBucketName) {
-        this.obsBucketName = obsBucketName;
-    }
-
-    public RecognizeFlashAsrRequest withObsObjectKey(String obsObjectKey) {
-        this.obsObjectKey = obsObjectKey;
-        return this;
-    }
-
-    /**
-     * obs对象key，经过urlencode编码，长度不超过1024个字符
-     * @return obsObjectKey
-     */
-    public String getObsObjectKey() {
-        return obsObjectKey;
-    }
-
-    public void setObsObjectKey(String obsObjectKey) {
-        this.obsObjectKey = obsObjectKey;
-    }
-
     public RecognizeFlashAsrRequest withFirstChannelOnly(FirstChannelOnlyEnum firstChannelOnly) {
         this.firstChannelOnly = firstChannelOnly;
         return this;
@@ -661,11 +661,10 @@ public class RecognizeFlashAsrRequest {
         }
         RecognizeFlashAsrRequest that = (RecognizeFlashAsrRequest) obj;
         return Objects.equals(this.property, that.property) && Objects.equals(this.audioFormat, that.audioFormat)
-            && Objects.equals(this.addPunc, that.addPunc) && Objects.equals(this.digitNorm, that.digitNorm)
-            && Objects.equals(this.needWordInfo, that.needWordInfo)
-            && Objects.equals(this.vocabularyId, that.vocabularyId)
             && Objects.equals(this.obsBucketName, that.obsBucketName)
-            && Objects.equals(this.obsObjectKey, that.obsObjectKey)
+            && Objects.equals(this.obsObjectKey, that.obsObjectKey) && Objects.equals(this.addPunc, that.addPunc)
+            && Objects.equals(this.digitNorm, that.digitNorm) && Objects.equals(this.needWordInfo, that.needWordInfo)
+            && Objects.equals(this.vocabularyId, that.vocabularyId)
             && Objects.equals(this.firstChannelOnly, that.firstChannelOnly);
     }
 
@@ -673,12 +672,12 @@ public class RecognizeFlashAsrRequest {
     public int hashCode() {
         return Objects.hash(property,
             audioFormat,
+            obsBucketName,
+            obsObjectKey,
             addPunc,
             digitNorm,
             needWordInfo,
             vocabularyId,
-            obsBucketName,
-            obsObjectKey,
             firstChannelOnly);
     }
 
@@ -688,12 +687,12 @@ public class RecognizeFlashAsrRequest {
         sb.append("class RecognizeFlashAsrRequest {\n");
         sb.append("    property: ").append(toIndentedString(property)).append("\n");
         sb.append("    audioFormat: ").append(toIndentedString(audioFormat)).append("\n");
+        sb.append("    obsBucketName: ").append(toIndentedString(obsBucketName)).append("\n");
+        sb.append("    obsObjectKey: ").append(toIndentedString(obsObjectKey)).append("\n");
         sb.append("    addPunc: ").append(toIndentedString(addPunc)).append("\n");
         sb.append("    digitNorm: ").append(toIndentedString(digitNorm)).append("\n");
         sb.append("    needWordInfo: ").append(toIndentedString(needWordInfo)).append("\n");
         sb.append("    vocabularyId: ").append(toIndentedString(vocabularyId)).append("\n");
-        sb.append("    obsBucketName: ").append(toIndentedString(obsBucketName)).append("\n");
-        sb.append("    obsObjectKey: ").append(toIndentedString(obsObjectKey)).append("\n");
         sb.append("    firstChannelOnly: ").append(toIndentedString(firstChannelOnly)).append("\n");
         sb.append("}");
         return sb.toString();

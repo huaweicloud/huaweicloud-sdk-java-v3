@@ -32,7 +32,7 @@ public class ListPluginsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<PageInfoResponseListPluginBasicVOData> data = null;
+    private List<PluginBasicVO> data = null;
 
     public ListPluginsResponse withOffset(Integer offset) {
         this.offset = offset;
@@ -85,12 +85,12 @@ public class ListPluginsResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListPluginsResponse withData(List<PageInfoResponseListPluginBasicVOData> data) {
+    public ListPluginsResponse withData(List<PluginBasicVO> data) {
         this.data = data;
         return this;
     }
 
-    public ListPluginsResponse addDataItem(PageInfoResponseListPluginBasicVOData dataItem) {
+    public ListPluginsResponse addDataItem(PluginBasicVO dataItem) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListPluginsResponse extends SdkResponse {
         return this;
     }
 
-    public ListPluginsResponse withData(Consumer<List<PageInfoResponseListPluginBasicVOData>> dataSetter) {
+    public ListPluginsResponse withData(Consumer<List<PluginBasicVO>> dataSetter) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListPluginsResponse extends SdkResponse {
      * 结果集
      * @return data
      */
-    public List<PageInfoResponseListPluginBasicVOData> getData() {
+    public List<PluginBasicVO> getData() {
         return data;
     }
 
-    public void setData(List<PageInfoResponseListPluginBasicVOData> data) {
+    public void setData(List<PluginBasicVO> data) {
         this.data = data;
     }
 

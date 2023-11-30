@@ -34,7 +34,7 @@ public class NicSpec {
     }
 
     /**
-     * 网卡所在子网的网络ID。主网卡创建时若未指定subnetId,将使用集群子网。拓展网卡创建时必须指定subnetId。  
+     * 网卡所在子网的网络ID。主网卡创建时若未指定subnetId,将使用集群子网。扩展网卡创建时必须指定subnetId。  
      * @return subnetId
      */
     public String getSubnetId() {
@@ -67,7 +67,7 @@ public class NicSpec {
     }
 
     /**
-     * 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。
+     * 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。扩展网卡不支持指定fiexdIps。
      * @return fixedIps
      */
     public List<String> getFixedIps() {

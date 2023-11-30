@@ -13,8 +13,10 @@ import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.CertDuration;
+import com.huaweicloud.sdk.cce.v3.model.ChartResp;
 import com.huaweicloud.sdk.cce.v3.model.Cluster;
 import com.huaweicloud.sdk.cce.v3.model.ClusterInformation;
+import com.huaweicloud.sdk.cce.v3.model.ClusterLogConfig;
 import com.huaweicloud.sdk.cce.v3.model.ClusterNodeInformation;
 import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskResponse;
@@ -30,8 +32,15 @@ import com.huaweicloud.sdk.cce.v3.model.CreateNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreatePartitionRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateReleaseReqBody;
+import com.huaweicloud.sdk.cce.v3.model.CreateReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteCloudPersistentVolumeClaimsRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteCloudPersistentVolumeClaimsResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteClusterRequest;
@@ -40,6 +49,10 @@ import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.DownloadChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.DownloadChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.InstanceRequest;
@@ -47,12 +60,18 @@ import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonInstancesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAddonTemplatesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListChartsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListChartsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListClustersResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodePoolsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListPartitionsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListPartitionsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListReleasesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListReleasesResponse;
 import com.huaweicloud.sdk.cce.v3.model.MasterEIPRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeResponse;
@@ -60,9 +79,11 @@ import com.huaweicloud.sdk.cce.v3.model.MigrateNodesTask;
 import com.huaweicloud.sdk.cce.v3.model.NodeCreateRequest;
 import com.huaweicloud.sdk.cce.v3.model.NodePool;
 import com.huaweicloud.sdk.cce.v3.model.NodePoolUpdate;
+import com.huaweicloud.sdk.cce.v3.model.PartitionReqBody;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.PersistentVolumeClaim;
+import com.huaweicloud.sdk.cce.v3.model.ReleaseResp;
 import com.huaweicloud.sdk.cce.v3.model.RemoveNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.RemoveNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.RemoveNodesTask;
@@ -78,40 +99,76 @@ import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowChartValuesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowChartValuesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterConfigResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterConfigurationDetailsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowClusterConfigurationDetailsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowPartitionRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowPartitionResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateChartRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.UpdateChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterConfigurationsBody;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLogConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLogConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolConfigurationRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdatePartitionRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseReqBody;
+import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UploadChartRequest;
+import com.huaweicloud.sdk.cce.v3.model.UploadChartRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.UploadChartResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class CceMeta {
@@ -466,6 +523,70 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> createPartition =
+        genForcreatePartition();
+
+    private static HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> genForcreatePartition() {
+        // basic
+        HttpRequestDef.Builder<CreatePartitionRequest, CreatePartitionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePartitionRequest.class, CreatePartitionResponse.class)
+                .withName("CreatePartition")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePartitionRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<PartitionReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PartitionReqBody.class),
+            f -> f.withMarshaller(CreatePartitionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateReleaseRequest, CreateReleaseResponse> createRelease =
+        genForcreateRelease();
+
+    private static HttpRequestDef<CreateReleaseRequest, CreateReleaseResponse> genForcreateRelease() {
+        // basic
+        HttpRequestDef.Builder<CreateReleaseRequest, CreateReleaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateReleaseRequest.class, CreateReleaseResponse.class)
+                .withName("CreateRelease")
+                .withUri("/cce/cam/v3/clusters/{cluster_id}/releases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateReleaseRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<CreateReleaseReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateReleaseReqBody.class),
+            f -> f.withMarshaller(CreateReleaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAddonInstanceRequest, DeleteAddonInstanceResponse> deleteAddonInstance =
         genFordeleteAddonInstance();
 
@@ -499,6 +620,37 @@ public class CceMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteAddonInstanceResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteChartRequest, DeleteChartResponse> deleteChart = genFordeleteChart();
+
+    private static HttpRequestDef<DeleteChartRequest, DeleteChartResponse> genFordeleteChart() {
+        // basic
+        HttpRequestDef.Builder<DeleteChartRequest, DeleteChartResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteChartRequest.class, DeleteChartResponse.class)
+                .withName("DeleteChart")
+                .withUri("/v2/charts/{chart_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteChartRequest::getChartId, (req, v) -> {
+                req.setChartId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteChartResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
 
@@ -636,6 +788,20 @@ public class CceMeta {
             f -> f.withMarshaller(DeleteClusterRequest::getTobedeleted, (req, v) -> {
                 req.setTobedeleted(v);
             }));
+        builder.<DeleteClusterRequest.OndemandNodePolicyEnum>withRequestField("ondemand_node_policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteClusterRequest.OndemandNodePolicyEnum.class),
+            f -> f.withMarshaller(DeleteClusterRequest::getOndemandNodePolicy, (req, v) -> {
+                req.setOndemandNodePolicy(v);
+            }));
+        builder.<DeleteClusterRequest.PeriodicNodePolicyEnum>withRequestField("periodic_node_policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteClusterRequest.PeriodicNodePolicyEnum.class),
+            f -> f.withMarshaller(DeleteClusterRequest::getPeriodicNodePolicy, (req, v) -> {
+                req.setPeriodicNodePolicy(v);
+            }));
 
         // response
 
@@ -705,6 +871,77 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteNodePoolRequest::getNodepoolId, (req, v) -> {
                 req.setNodepoolId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteReleaseRequest, DeleteReleaseResponse> deleteRelease =
+        genFordeleteRelease();
+
+    private static HttpRequestDef<DeleteReleaseRequest, DeleteReleaseResponse> genFordeleteRelease() {
+        // basic
+        HttpRequestDef.Builder<DeleteReleaseRequest, DeleteReleaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteReleaseRequest.class, DeleteReleaseResponse.class)
+                .withName("DeleteRelease")
+                .withUri("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReleaseRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReleaseRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            }));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReleaseRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteReleaseResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadChartRequest, DownloadChartResponse> downloadChart =
+        genFordownloadChart();
+
+    private static HttpRequestDef<DownloadChartRequest, DownloadChartResponse> genFordownloadChart() {
+        // basic
+        HttpRequestDef.Builder<DownloadChartRequest, DownloadChartResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadChartRequest.class, DownloadChartResponse.class)
+                .withName("DownloadChart")
+                .withUri("/v2/charts/{chart_id}/archive")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadChartRequest::getChartId, (req, v) -> {
+                req.setChartId(v);
             }));
 
         // response
@@ -783,6 +1020,30 @@ public class CceMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListChartsRequest, ListChartsResponse> listCharts = genForlistCharts();
+
+    private static HttpRequestDef<ListChartsRequest, ListChartsResponse> genForlistCharts() {
+        // basic
+        HttpRequestDef.Builder<ListChartsRequest, ListChartsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListChartsRequest.class, ListChartsResponse.class)
+                .withName("ListCharts")
+                .withUri("/v2/charts")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<List<ChartResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListChartsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ChartResp.class));
 
         return builder.build();
     }
@@ -884,6 +1145,76 @@ public class CceMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> listPartitions =
+        genForlistPartitions();
+
+    private static HttpRequestDef<ListPartitionsRequest, ListPartitionsResponse> genForlistPartitions() {
+        // basic
+        HttpRequestDef.Builder<ListPartitionsRequest, ListPartitionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPartitionsRequest.class, ListPartitionsResponse.class)
+                .withName("ListPartitions")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPartitionsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListReleasesRequest, ListReleasesResponse> listReleases = genForlistReleases();
+
+    private static HttpRequestDef<ListReleasesRequest, ListReleasesResponse> genForlistReleases() {
+        // basic
+        HttpRequestDef.Builder<ListReleasesRequest, ListReleasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListReleasesRequest.class, ListReleasesResponse.class)
+                .withName("ListReleases")
+                .withUri("/cce/cam/v3/clusters/{cluster_id}/releases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReleasesRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("chart_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReleasesRequest::getChartId, (req, v) -> {
+                req.setChartId(v);
+            }));
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReleasesRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            }));
+
+        // response
+        builder.<List<ReleaseResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListReleasesResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ReleaseResp.class));
 
         return builder.build();
     }
@@ -1135,6 +1466,55 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowChartRequest, ShowChartResponse> showChart = genForshowChart();
+
+    private static HttpRequestDef<ShowChartRequest, ShowChartResponse> genForshowChart() {
+        // basic
+        HttpRequestDef.Builder<ShowChartRequest, ShowChartResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowChartRequest.class, ShowChartResponse.class)
+                .withName("ShowChart")
+                .withUri("/v2/charts/{chart_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowChartRequest::getChartId, (req, v) -> {
+                req.setChartId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowChartValuesRequest, ShowChartValuesResponse> showChartValues =
+        genForshowChartValues();
+
+    private static HttpRequestDef<ShowChartValuesRequest, ShowChartValuesResponse> genForshowChartValues() {
+        // basic
+        HttpRequestDef.Builder<ShowChartValuesRequest, ShowChartValuesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowChartValuesRequest.class, ShowChartValuesResponse.class)
+                .withName("ShowChartValues")
+                .withUri("/v2/charts/{chart_id}/values")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowChartValuesRequest::getChartId, (req, v) -> {
+                req.setChartId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowClusterRequest, ShowClusterResponse> showCluster = genForshowCluster();
 
     private static HttpRequestDef<ShowClusterRequest, ShowClusterResponse> genForshowCluster() {
@@ -1159,6 +1539,66 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterRequest::getDetail, (req, v) -> {
                 req.setDetail(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterConfigRequest, ShowClusterConfigResponse> showClusterConfig =
+        genForshowClusterConfig();
+
+    private static HttpRequestDef<ShowClusterConfigRequest, ShowClusterConfigResponse> genForshowClusterConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterConfigRequest, ShowClusterConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClusterConfigRequest.class, ShowClusterConfigResponse.class)
+                .withName("ShowClusterConfig")
+                .withUri("/api/v3/projects/{project_id}/cluster/{cluster_id}/log-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterConfigRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ShowClusterConfigRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowClusterConfigRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowClusterConfigRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse> showClusterConfigurationDetails =
+        genForshowClusterConfigurationDetails();
+
+    private static HttpRequestDef<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse> genForshowClusterConfigurationDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterConfigurationDetailsRequest, ShowClusterConfigurationDetailsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowClusterConfigurationDetailsRequest.class,
+                    ShowClusterConfigurationDetailsResponse.class)
+                .withName("ShowClusterConfigurationDetails")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/configuration/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterConfigurationDetailsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
             }));
 
         // response
@@ -1277,6 +1717,73 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse> showNodePoolConfigurations =
+        genForshowNodePoolConfigurations();
+
+    private static HttpRequestDef<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse> genForshowNodePoolConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ShowNodePoolConfigurationsRequest, ShowNodePoolConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowNodePoolConfigurationsRequest.class,
+                    ShowNodePoolConfigurationsResponse.class)
+                .withName("ShowNodePoolConfigurations")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNodePoolConfigurationsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("nodepool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNodePoolConfigurationsRequest::getNodepoolId, (req, v) -> {
+                req.setNodepoolId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPartitionRequest, ShowPartitionResponse> showPartition =
+        genForshowPartition();
+
+    private static HttpRequestDef<ShowPartitionRequest, ShowPartitionResponse> genForshowPartition() {
+        // basic
+        HttpRequestDef.Builder<ShowPartitionRequest, ShowPartitionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPartitionRequest.class, ShowPartitionResponse.class)
+                .withName("ShowPartition")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions/{partition_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPartitionRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("partition_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPartitionRequest::getPartitionName, (req, v) -> {
+                req.setPartitionName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
 
     private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
@@ -1290,6 +1797,90 @@ public class CceMeta {
         // requests
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowReleaseRequest, ShowReleaseResponse> showRelease = genForshowRelease();
+
+    private static HttpRequestDef<ShowReleaseRequest, ShowReleaseResponse> genForshowRelease() {
+        // basic
+        HttpRequestDef.Builder<ShowReleaseRequest, ShowReleaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReleaseRequest.class, ShowReleaseResponse.class)
+                .withName("ShowRelease")
+                .withUri("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReleaseRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReleaseRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            }));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReleaseRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse> showReleaseHistory =
+        genForshowReleaseHistory();
+
+    private static HttpRequestDef<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse> genForshowReleaseHistory() {
+        // basic
+        HttpRequestDef.Builder<ShowReleaseHistoryRequest, ShowReleaseHistoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReleaseHistoryRequest.class, ShowReleaseHistoryResponse.class)
+                .withName("ShowReleaseHistory")
+                .withUri("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReleaseHistoryRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReleaseHistoryRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            }));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReleaseHistoryRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+        builder.<List<ReleaseResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowReleaseHistoryResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ReleaseResp.class));
 
         return builder.build();
     }
@@ -1326,6 +1917,24 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> showUserChartsQuotas =
+        genForshowUserChartsQuotas();
+
+    private static HttpRequestDef<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> genForshowUserChartsQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowUserChartsQuotasRequest.class, ShowUserChartsQuotasResponse.class)
+            .withName("ShowUserChartsQuotas")
+            .withUri("/v2/charts/{project_id}/quotas")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAddonInstanceRequest, UpdateAddonInstanceResponse> updateAddonInstance =
         genForupdateAddonInstance();
 
@@ -1350,6 +1959,37 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(InstanceRequest.class),
             f -> f.withMarshaller(UpdateAddonInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateChartRequest, UpdateChartResponse> updateChart = genForupdateChart();
+
+    private static HttpRequestDef<UpdateChartRequest, UpdateChartResponse> genForupdateChart() {
+        // basic
+        HttpRequestDef.Builder<UpdateChartRequest, UpdateChartResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateChartRequest.class, UpdateChartResponse.class)
+                .withName("UpdateChart")
+                .withUri("/v2/charts/{chart_id}")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("chart_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateChartRequest::getChartId, (req, v) -> {
+                req.setChartId(v);
+            }));
+        builder.<UpdateChartRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateChartRequestBody.class),
+            f -> f.withMarshaller(UpdateChartRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1414,6 +2054,38 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MasterEIPRequest.class),
             f -> f.withMarshaller(UpdateClusterEipRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse> updateClusterLogConfig =
+        genForupdateClusterLogConfig();
+
+    private static HttpRequestDef<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse> genForupdateClusterLogConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateClusterLogConfigRequest, UpdateClusterLogConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateClusterLogConfigRequest.class, UpdateClusterLogConfigResponse.class)
+            .withName("UpdateClusterLogConfig")
+            .withUri("/api/v3/projects/{project_id}/cluster/{cluster_id}/log-configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterLogConfigRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ClusterLogConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClusterLogConfig.class),
+            f -> f.withMarshaller(UpdateClusterLogConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1499,6 +2171,133 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse> updateNodePoolConfiguration =
+        genForupdateNodePoolConfiguration();
+
+    private static HttpRequestDef<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse> genForupdateNodePoolConfiguration() {
+        // basic
+        HttpRequestDef.Builder<UpdateNodePoolConfigurationRequest, UpdateNodePoolConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateNodePoolConfigurationRequest.class,
+                    UpdateNodePoolConfigurationResponse.class)
+                .withName("UpdateNodePoolConfiguration")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/configuration")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNodePoolConfigurationRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("nodepool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNodePoolConfigurationRequest::getNodepoolId, (req, v) -> {
+                req.setNodepoolId(v);
+            }));
+        builder.<UpdateClusterConfigurationsBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateClusterConfigurationsBody.class),
+            f -> f.withMarshaller(UpdateNodePoolConfigurationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePartitionRequest, UpdatePartitionResponse> updatePartition =
+        genForupdatePartition();
+
+    private static HttpRequestDef<UpdatePartitionRequest, UpdatePartitionResponse> genForupdatePartition() {
+        // basic
+        HttpRequestDef.Builder<UpdatePartitionRequest, UpdatePartitionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePartitionRequest.class, UpdatePartitionResponse.class)
+                .withName("UpdatePartition")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions/{partition_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePartitionRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("partition_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePartitionRequest::getPartitionName, (req, v) -> {
+                req.setPartitionName(v);
+            }));
+        builder.<PartitionReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PartitionReqBody.class),
+            f -> f.withMarshaller(UpdatePartitionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateReleaseRequest, UpdateReleaseResponse> updateRelease =
+        genForupdateRelease();
+
+    private static HttpRequestDef<UpdateReleaseRequest, UpdateReleaseResponse> genForupdateRelease() {
+        // basic
+        HttpRequestDef.Builder<UpdateReleaseRequest, UpdateReleaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateReleaseRequest.class, UpdateReleaseResponse.class)
+                .withName("UpdateRelease")
+                .withUri("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateReleaseRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateReleaseRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            }));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateReleaseRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<UpdateReleaseReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateReleaseReqBody.class),
+            f -> f.withMarshaller(UpdateReleaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpgradeClusterRequest, UpgradeClusterResponse> upgradeCluster =
         genForupgradeCluster();
 
@@ -1523,6 +2322,30 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeClusterRequestBody.class),
             f -> f.withMarshaller(UpgradeClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadChartRequest, UploadChartResponse> uploadChart = genForuploadChart();
+
+    private static HttpRequestDef<UploadChartRequest, UploadChartResponse> genForuploadChart() {
+        // basic
+        HttpRequestDef.Builder<UploadChartRequest, UploadChartResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadChartRequest.class, UploadChartResponse.class)
+                .withName("UploadChart")
+                .withUri("/v2/charts")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<UploadChartRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadChartRequestBody.class),
+            f -> f.withMarshaller(UploadChartRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

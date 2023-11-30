@@ -74,12 +74,17 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ResendReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResizeEngineInstanceReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceRequest;
@@ -1103,6 +1108,45 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
+        genForresizeInstance();
+
+    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
+        // basic
+        HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
+                .withName("ResizeInstance")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/extend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeInstanceRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ResizeEngineInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeEngineInstanceReq.class),
+            f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SendDlqMessageRequest, SendDlqMessageResponse> sendDlqMessage =
         genForsendDlqMessage();
 
@@ -1244,6 +1288,48 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowConsumerListOrDetailsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfo =
+        genForshowEngineInstanceExtendProductInfo();
+
+    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> genForshowEngineInstanceExtendProductInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowEngineInstanceExtendProductInfoRequest.class,
+                    ShowEngineInstanceExtendProductInfoResponse.class)
+                .withName("ShowEngineInstanceExtendProductInfo")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/extend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ShowEngineInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType, (req, v) -> {
+                req.setType(v);
             }));
 
         // response

@@ -168,6 +168,20 @@ public class SisMeta {
             f -> f.withMarshaller(RecognizeFlashAsrRequest::getAudioFormat, (req, v) -> {
                 req.setAudioFormat(v);
             }));
+        builder.<String>withRequestField("obs_bucket_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getObsBucketName, (req, v) -> {
+                req.setObsBucketName(v);
+            }));
+        builder.<String>withRequestField("obs_object_key",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeFlashAsrRequest::getObsObjectKey, (req, v) -> {
+                req.setObsObjectKey(v);
+            }));
         builder.<RecognizeFlashAsrRequest.AddPuncEnum>withRequestField("add_punc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -195,20 +209,6 @@ public class SisMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RecognizeFlashAsrRequest::getVocabularyId, (req, v) -> {
                 req.setVocabularyId(v);
-            }));
-        builder.<String>withRequestField("obs_bucket_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getObsBucketName, (req, v) -> {
-                req.setObsBucketName(v);
-            }));
-        builder.<String>withRequestField("obs_object_key",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RecognizeFlashAsrRequest::getObsObjectKey, (req, v) -> {
-                req.setObsObjectKey(v);
             }));
         builder.<RecognizeFlashAsrRequest.FirstChannelOnlyEnum>withRequestField("first_channel_only",
             LocationType.Query,

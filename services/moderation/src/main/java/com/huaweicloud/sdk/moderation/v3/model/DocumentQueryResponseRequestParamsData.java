@@ -31,7 +31,7 @@ public class DocumentQueryResponseRequestParamsData {
     }
 
     /**
-     * 创建作业时传的url参数
+     * 创建作业时传的url参数。目前支持：公网HTTP/HTTPS URL。
      * @return url
      */
     public String getUrl() {

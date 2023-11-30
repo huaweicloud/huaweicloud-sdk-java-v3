@@ -83,11 +83,6 @@ public class AddonInstanceStatus {
          */
         public static final StatusEnum ROLLBACKFAILED = new StatusEnum("rollbackFailed");
 
-        /**
-         * Enum UNKNOWN for value: "unknown"
-         */
-        public static final StatusEnum UNKNOWN = new StatusEnum("unknown");
-
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -104,7 +99,6 @@ public class AddonInstanceStatus {
             map.put("available", AVAILABLE);
             map.put("rollbacking", ROLLBACKING);
             map.put("rollbackFailed", ROLLBACKFAILED);
-            map.put("unknown", UNKNOWN);
             return Collections.unmodifiableMap(map);
         }
 

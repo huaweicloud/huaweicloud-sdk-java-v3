@@ -15,41 +15,41 @@ import java.util.function.Consumer;
 public class ShowPublisherResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "publisher_detail_map")
 
-    private Map<String, PublisherVO> body = null;
+    private Map<String, PublisherVO> publisherDetailMap = null;
 
-    public ShowPublisherResponse withBody(Map<String, PublisherVO> body) {
-        this.body = body;
+    public ShowPublisherResponse withPublisherDetailMap(Map<String, PublisherVO> publisherDetailMap) {
+        this.publisherDetailMap = publisherDetailMap;
         return this;
     }
 
-    public ShowPublisherResponse putBodyItem(String key, PublisherVO bodyItem) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
+    public ShowPublisherResponse putPublisherDetailMapItem(String key, PublisherVO publisherDetailMapItem) {
+        if (this.publisherDetailMap == null) {
+            this.publisherDetailMap = new HashMap<>();
         }
-        this.body.put(key, bodyItem);
+        this.publisherDetailMap.put(key, publisherDetailMapItem);
         return this;
     }
 
-    public ShowPublisherResponse withBody(Consumer<Map<String, PublisherVO>> bodySetter) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
+    public ShowPublisherResponse withPublisherDetailMap(Consumer<Map<String, PublisherVO>> publisherDetailMapSetter) {
+        if (this.publisherDetailMap == null) {
+            this.publisherDetailMap = new HashMap<>();
         }
-        bodySetter.accept(this.body);
+        publisherDetailMapSetter.accept(this.publisherDetailMap);
         return this;
     }
 
     /**
      * 发布商详情
-     * @return body
+     * @return publisherDetailMap
      */
-    public Map<String, PublisherVO> getBody() {
-        return body;
+    public Map<String, PublisherVO> getPublisherDetailMap() {
+        return publisherDetailMap;
     }
 
-    public void setBody(Map<String, PublisherVO> body) {
-        this.body = body;
+    public void setPublisherDetailMap(Map<String, PublisherVO> publisherDetailMap) {
+        this.publisherDetailMap = publisherDetailMap;
     }
 
     @Override
@@ -61,19 +61,19 @@ public class ShowPublisherResponse extends SdkResponse {
             return false;
         }
         ShowPublisherResponse that = (ShowPublisherResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.publisherDetailMap, that.publisherDetailMap);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(publisherDetailMap);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPublisherResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    publisherDetailMap: ").append(toIndentedString(publisherDetailMap)).append("\n");
         sb.append("}");
         return sb.toString();
     }

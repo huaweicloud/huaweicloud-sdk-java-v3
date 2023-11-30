@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class ListDerivativeIndexesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private DerivativeIndexVOSearchResultData data;
 
-    public ListDerivativeIndexesResponse withData(Object data) {
+    public ListDerivativeIndexesResponse withData(DerivativeIndexVOSearchResultData data) {
         this.data = data;
         return this;
     }
 
+    public ListDerivativeIndexesResponse withData(Consumer<DerivativeIndexVOSearchResultData> dataSetter) {
+        if (this.data == null) {
+            this.data = new DerivativeIndexVOSearchResultData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回的数据信息
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public DerivativeIndexVOSearchResultData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(DerivativeIndexVOSearchResultData data) {
         this.data = data;
     }
 

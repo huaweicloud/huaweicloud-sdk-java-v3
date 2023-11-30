@@ -32,8 +32,12 @@ import com.huaweicloud.sdk.eip.v3.model.EnableNat64Request;
 import com.huaweicloud.sdk.eip.v3.model.EnableNat64Response;
 import com.huaweicloud.sdk.eip.v3.model.ListBandwidthRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListBandwidthResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListBandwidthsLimitRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListBandwidthsLimitResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListCommonPoolsResponse;
+import com.huaweicloud.sdk.eip.v3.model.ListEipBandwidthsRequest;
+import com.huaweicloud.sdk.eip.v3.model.ListEipBandwidthsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsRequest;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicBorderGroupsResponse;
 import com.huaweicloud.sdk.eip.v3.model.ListPublicipPoolRequest;
@@ -50,6 +54,9 @@ import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipResponse;
+import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipRequest;
+import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipResponse;
+import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipsRequestBody;
 
 import java.util.List;
 
@@ -186,6 +193,66 @@ public class EipMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListBandwidthsLimitRequest, ListBandwidthsLimitResponse> listBandwidthsLimit =
+        genForlistBandwidthsLimit();
+
+    private static HttpRequestDef<ListBandwidthsLimitRequest, ListBandwidthsLimitResponse> genForlistBandwidthsLimit() {
+        // basic
+        HttpRequestDef.Builder<ListBandwidthsLimitRequest, ListBandwidthsLimitResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBandwidthsLimitRequest.class, ListBandwidthsLimitResponse.class)
+                .withName("ListBandwidthsLimit")
+                .withUri("/v3/{project_id}/eip/eip-bandwidth-limits")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBandwidthsLimitRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBandwidthsLimitRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthsLimitRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListBandwidthsLimitRequest::getPageReverse, (req, v) -> {
+                req.setPageReverse(v);
+            }));
+        builder.<List<ListBandwidthsLimitRequest.FieldsEnum>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBandwidthsLimitRequest::getFields, (req, v) -> {
+                req.setFields(v);
+            }));
+        builder.<String>withRequestField("charge_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthsLimitRequest::getChargeMode, (req, v) -> {
+                req.setChargeMode(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCommonPoolsRequest, ListCommonPoolsResponse> listCommonPools =
         genForlistCommonPools();
 
@@ -232,6 +299,143 @@ public class EipMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCommonPoolsRequest::getPublicBorderGroup, (req, v) -> {
                 req.setPublicBorderGroup(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEipBandwidthsRequest, ListEipBandwidthsResponse> listEipBandwidths =
+        genForlistEipBandwidths();
+
+    private static HttpRequestDef<ListEipBandwidthsRequest, ListEipBandwidthsResponse> genForlistEipBandwidths() {
+        // basic
+        HttpRequestDef.Builder<ListEipBandwidthsRequest, ListEipBandwidthsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEipBandwidthsRequest.class, ListEipBandwidthsResponse.class)
+                .withName("ListEipBandwidths")
+                .withUri("/v3/{project_id}/eip-bandwidths")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("bandwidth_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getBandwidthType, (req, v) -> {
+                req.setBandwidthType(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("name_like",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getNameLike, (req, v) -> {
+                req.setNameLike(v);
+            }));
+        builder.<String>withRequestField("tenant_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getTenantId, (req, v) -> {
+                req.setTenantId(v);
+            }));
+        builder.<String>withRequestField("ingress_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getIngressSize, (req, v) -> {
+                req.setIngressSize(v);
+            }));
+        builder.<String>withRequestField("admin_state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getAdminState, (req, v) -> {
+                req.setAdminState(v);
+            }));
+        builder.<String>withRequestField("billing_info",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getBillingInfo, (req, v) -> {
+                req.setBillingInfo(v);
+            }));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+        builder.<String>withRequestField("enable_bandwidth_rules",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getEnableBandwidthRules, (req, v) -> {
+                req.setEnableBandwidthRules(v);
+            }));
+        builder.<Integer>withRequestField("rule_quota",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getRuleQuota, (req, v) -> {
+                req.setRuleQuota(v);
+            }));
+        builder.<String>withRequestField("public_border_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getPublicBorderGroup, (req, v) -> {
+                req.setPublicBorderGroup(v);
+            }));
+        builder.<String>withRequestField("charge_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getChargeMode, (req, v) -> {
+                req.setChargeMode(v);
+            }));
+        builder.<String>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getSize, (req, v) -> {
+                req.setSize(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getType, (req, v) -> {
+                req.setType(v);
             }));
 
         // response
@@ -1135,6 +1339,38 @@ public class EipMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DisassociatePublicipsRequestBody.class),
             f -> f.withMarshaller(UpdateDisassociatePublicipRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePublicipRequest, UpdatePublicipResponse> updatePublicip =
+        genForupdatePublicip();
+
+    private static HttpRequestDef<UpdatePublicipRequest, UpdatePublicipResponse> genForupdatePublicip() {
+        // basic
+        HttpRequestDef.Builder<UpdatePublicipRequest, UpdatePublicipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePublicipRequest.class, UpdatePublicipResponse.class)
+                .withName("UpdatePublicip")
+                .withUri("/v3/{project_id}/eip/publicips/{publicip_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("publicip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePublicipRequest::getPublicipId, (req, v) -> {
+                req.setPublicipId(v);
+            }));
+        builder.<UpdatePublicipsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePublicipsRequestBody.class),
+            f -> f.withMarshaller(UpdatePublicipRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

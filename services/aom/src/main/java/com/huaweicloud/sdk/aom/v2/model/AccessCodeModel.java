@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -30,80 +25,10 @@ public class AccessCodeModel {
 
     private Long createAt;
 
-    /**
-     * 状态 enable:开启 unenable:关闭
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum ENABLE for value: "enable"
-         */
-        public static final StatusEnum ENABLE = new StatusEnum("enable");
-
-        /**
-         * Enum UNENABLE for value: "unenable"
-         */
-        public static final StatusEnum UNENABLE = new StatusEnum("unenable");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("enable", ENABLE);
-            map.put("unenable", UNENABLE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
+    private String status;
 
     public AccessCodeModel withAccessCode(String accessCode) {
         this.accessCode = accessCode;
@@ -111,7 +36,7 @@ public class AccessCodeModel {
     }
 
     /**
-     * access_code
+     * access_code。
      * @return accessCode
      */
     public String getAccessCode() {
@@ -128,7 +53,7 @@ public class AccessCodeModel {
     }
 
     /**
-     * access_code_id
+     * access_code_id。
      * @return accessCodeId
      */
     public String getAccessCodeId() {
@@ -145,9 +70,7 @@ public class AccessCodeModel {
     }
 
     /**
-     * 创建时间
-     * minimum: 0
-     * maximum: 9999999999999
+     * 创建时间。
      * @return createAt
      */
     public Long getCreateAt() {
@@ -158,20 +81,20 @@ public class AccessCodeModel {
         this.createAt = createAt;
     }
 
-    public AccessCodeModel withStatus(StatusEnum status) {
+    public AccessCodeModel withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 状态 enable:开启 unenable:关闭
+     * 状态。
      * @return status
      */
-    public StatusEnum getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

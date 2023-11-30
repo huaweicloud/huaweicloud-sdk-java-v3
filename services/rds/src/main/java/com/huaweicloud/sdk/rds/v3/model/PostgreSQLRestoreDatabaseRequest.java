@@ -16,14 +16,14 @@ public class PostgreSQLRestoreDatabaseRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private List<PostgreSQLRestoreDatabaseInstance> instances = null;
+    private List<RestoreDatabaseInstance> instances = null;
 
-    public PostgreSQLRestoreDatabaseRequest withInstances(List<PostgreSQLRestoreDatabaseInstance> instances) {
+    public PostgreSQLRestoreDatabaseRequest withInstances(List<RestoreDatabaseInstance> instances) {
         this.instances = instances;
         return this;
     }
 
-    public PostgreSQLRestoreDatabaseRequest addInstancesItem(PostgreSQLRestoreDatabaseInstance instancesItem) {
+    public PostgreSQLRestoreDatabaseRequest addInstancesItem(RestoreDatabaseInstance instancesItem) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -31,8 +31,7 @@ public class PostgreSQLRestoreDatabaseRequest {
         return this;
     }
 
-    public PostgreSQLRestoreDatabaseRequest withInstances(
-        Consumer<List<PostgreSQLRestoreDatabaseInstance>> instancesSetter) {
+    public PostgreSQLRestoreDatabaseRequest withInstances(Consumer<List<RestoreDatabaseInstance>> instancesSetter) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -44,11 +43,11 @@ public class PostgreSQLRestoreDatabaseRequest {
      * 库级恢复实例信息
      * @return instances
      */
-    public List<PostgreSQLRestoreDatabaseInstance> getInstances() {
+    public List<RestoreDatabaseInstance> getInstances() {
         return instances;
     }
 
-    public void setInstances(List<PostgreSQLRestoreDatabaseInstance> instances) {
+    public void setInstances(List<RestoreDatabaseInstance> instances) {
         this.instances = instances;
     }
 

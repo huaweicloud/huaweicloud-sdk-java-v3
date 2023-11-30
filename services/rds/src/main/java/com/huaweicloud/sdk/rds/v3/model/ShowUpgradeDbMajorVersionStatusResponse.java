@@ -27,9 +27,9 @@ public class ShowUpgradeDbMajorVersionStatusResponse extends SdkResponse {
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "report_expiration_time")
+    @JsonProperty(value = "check_expiration_time")
 
-    private String reportExpirationTime;
+    private String checkExpirationTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
@@ -87,21 +87,21 @@ public class ShowUpgradeDbMajorVersionStatusResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
-    public ShowUpgradeDbMajorVersionStatusResponse withReportExpirationTime(String reportExpirationTime) {
-        this.reportExpirationTime = reportExpirationTime;
+    public ShowUpgradeDbMajorVersionStatusResponse withCheckExpirationTime(String checkExpirationTime) {
+        this.checkExpirationTime = checkExpirationTime;
         return this;
     }
 
     /**
      * 检查成功时，检查报告到期时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。 该字段仅在action为check时返回。
-     * @return reportExpirationTime
+     * @return checkExpirationTime
      */
-    public String getReportExpirationTime() {
-        return reportExpirationTime;
+    public String getCheckExpirationTime() {
+        return checkExpirationTime;
     }
 
-    public void setReportExpirationTime(String reportExpirationTime) {
-        this.reportExpirationTime = reportExpirationTime;
+    public void setCheckExpirationTime(String checkExpirationTime) {
+        this.checkExpirationTime = checkExpirationTime;
     }
 
     public ShowUpgradeDbMajorVersionStatusResponse withDetail(String detail) {
@@ -132,13 +132,13 @@ public class ShowUpgradeDbMajorVersionStatusResponse extends SdkResponse {
         ShowUpgradeDbMajorVersionStatusResponse that = (ShowUpgradeDbMajorVersionStatusResponse) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.targetVersion, that.targetVersion)
             && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.reportExpirationTime, that.reportExpirationTime)
+            && Objects.equals(this.checkExpirationTime, that.checkExpirationTime)
             && Objects.equals(this.detail, that.detail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, targetVersion, startTime, reportExpirationTime, detail);
+        return Objects.hash(status, targetVersion, startTime, checkExpirationTime, detail);
     }
 
     @Override
@@ -148,7 +148,7 @@ public class ShowUpgradeDbMajorVersionStatusResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    targetVersion: ").append(toIndentedString(targetVersion)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("    reportExpirationTime: ").append(toIndentedString(reportExpirationTime)).append("\n");
+        sb.append("    checkExpirationTime: ").append(toIndentedString(checkExpirationTime)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("}");
         return sb.toString();

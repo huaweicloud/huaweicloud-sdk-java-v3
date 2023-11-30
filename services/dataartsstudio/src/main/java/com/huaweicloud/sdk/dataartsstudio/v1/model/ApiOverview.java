@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ApiOverview
@@ -36,7 +39,7 @@ public class ApiOverview {
     private String description;
 
     /**
-     * API状态
+     * API状态（共享版）
      */
     public static final class StatusEnum {
 
@@ -162,7 +165,7 @@ public class ApiOverview {
     private StatusEnum status;
 
     /**
-     * API调试状态
+     * API调试状态（共享版）
      */
     public static final class DebugStatusEnum {
 
@@ -241,6 +244,11 @@ public class ApiOverview {
     @JsonProperty(value = "debug_status")
 
     private DebugStatusEnum debugStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_messages")
+
+    private List<ApiPublishDTO> publishMessages = null;
 
     /**
      * API 类型
@@ -378,7 +386,7 @@ public class ApiOverview {
     }
 
     /**
-     * API分组ID
+     * API分组ID（共享版）
      * @return groupId
      */
     public String getGroupId() {
@@ -412,7 +420,7 @@ public class ApiOverview {
     }
 
     /**
-     * API状态
+     * API状态（共享版）
      * @return status
      */
     public StatusEnum getStatus() {
@@ -429,7 +437,7 @@ public class ApiOverview {
     }
 
     /**
-     * API调试状态
+     * API调试状态（共享版）
      * @return debugStatus
      */
     public DebugStatusEnum getDebugStatus() {
@@ -438,6 +446,39 @@ public class ApiOverview {
 
     public void setDebugStatus(DebugStatusEnum debugStatus) {
         this.debugStatus = debugStatus;
+    }
+
+    public ApiOverview withPublishMessages(List<ApiPublishDTO> publishMessages) {
+        this.publishMessages = publishMessages;
+        return this;
+    }
+
+    public ApiOverview addPublishMessagesItem(ApiPublishDTO publishMessagesItem) {
+        if (this.publishMessages == null) {
+            this.publishMessages = new ArrayList<>();
+        }
+        this.publishMessages.add(publishMessagesItem);
+        return this;
+    }
+
+    public ApiOverview withPublishMessages(Consumer<List<ApiPublishDTO>> publishMessagesSetter) {
+        if (this.publishMessages == null) {
+            this.publishMessages = new ArrayList<>();
+        }
+        publishMessagesSetter.accept(this.publishMessages);
+        return this;
+    }
+
+    /**
+     * 发布信息列表（专享版）
+     * @return publishMessages
+     */
+    public List<ApiPublishDTO> getPublishMessages() {
+        return publishMessages;
+    }
+
+    public void setPublishMessages(List<ApiPublishDTO> publishMessages) {
+        this.publishMessages = publishMessages;
     }
 
     public ApiOverview withType(TypeEnum type) {
@@ -520,13 +561,24 @@ public class ApiOverview {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.description, that.description)
             && Objects.equals(this.status, that.status) && Objects.equals(this.debugStatus, that.debugStatus)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.manager, that.manager)
-            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.publishMessages, that.publishMessages) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.manager, that.manager) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, groupId, description, status, debugStatus, type, manager, createUser, createTime);
+        return Objects.hash(id,
+            name,
+            groupId,
+            description,
+            status,
+            debugStatus,
+            publishMessages,
+            type,
+            manager,
+            createUser,
+            createTime);
     }
 
     @Override
@@ -539,6 +591,7 @@ public class ApiOverview {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    debugStatus: ").append(toIndentedString(debugStatus)).append("\n");
+        sb.append("    publishMessages: ").append(toIndentedString(publishMessages)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
         sb.append("    createUser: ").append(toIndentedString(createUser)).append("\n");

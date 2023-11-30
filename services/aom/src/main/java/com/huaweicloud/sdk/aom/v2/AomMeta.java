@@ -15,7 +15,6 @@ import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesRequest;
 import com.huaweicloud.sdk.aom.v2.model.AddOrUpdateServiceDiscoveryRulesResponse;
 import com.huaweicloud.sdk.aom.v2.model.AlarmRuleParam;
 import com.huaweicloud.sdk.aom.v2.model.AppRulesBody;
-import com.huaweicloud.sdk.aom.v2.model.AuthModel;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsRequest;
 import com.huaweicloud.sdk.aom.v2.model.CountEventsResponse;
 import com.huaweicloud.sdk.aom.v2.model.CreatePromInstanceRequest;
@@ -121,7 +120,6 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class AomMeta {
@@ -500,6 +498,44 @@ public class AomMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAgentsRequest, ListAgentsResponse> listAgents = genForlistAgents();
+
+    private static HttpRequestDef<ListAgentsRequest, ListAgentsResponse> genForlistAgents() {
+        // basic
+        HttpRequestDef.Builder<ListAgentsRequest, ListAgentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAgentsRequest.class, ListAgentsResponse.class)
+                .withName("ListAgents")
+                .withUri("/v1/{project_id}/{cluster_id}/{namespace}/agents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentsRequest::getNamespace, (req, v) -> {
+                req.setNamespace(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAgentsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAlarmRuleRequest, ListAlarmRuleResponse> listAlarmRule =
         genForlistAlarmRule();
 
@@ -710,6 +746,31 @@ public class AomMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> listPermissions =
+        genForlistPermissions();
+
+    private static HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> genForlistPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListPermissionsRequest, ListPermissionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPermissionsRequest.class, ListPermissionsResponse.class)
+                .withName("ListPermissions")
+                .withUri("/v1/{project_id}/aom/auth/grant")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPermissionsResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }
@@ -1152,44 +1213,6 @@ public class AomMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAgentsRequest, ListAgentsResponse> listAgents = genForlistAgents();
-
-    private static HttpRequestDef<ListAgentsRequest, ListAgentsResponse> genForlistAgents() {
-        // basic
-        HttpRequestDef.Builder<ListAgentsRequest, ListAgentsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAgentsRequest.class, ListAgentsResponse.class)
-                .withName("ListAgents")
-                .withUri("/v1/{project_id}/{cluster_id}/{namespace}/agents")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("cluster_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentsRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            }));
-        builder.<String>withRequestField("namespace",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentsRequest::getNamespace, (req, v) -> {
-                req.setNamespace(v);
-            }));
-
-        // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAgentsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGet =
         genForlistInstantQueryAomPromGet();
 
@@ -1338,31 +1361,6 @@ public class AomMeta {
         // requests
 
         // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> listPermissions =
-        genForlistPermissions();
-
-    private static HttpRequestDef<ListPermissionsRequest, ListPermissionsResponse> genForlistPermissions() {
-        // basic
-        HttpRequestDef.Builder<ListPermissionsRequest, ListPermissionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPermissionsRequest.class, ListPermissionsResponse.class)
-                .withName("ListPermissions")
-                .withUri("/v1/{project_id}/aom/auth/grant")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-        builder.<Map<String, AuthModel>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(ListPermissionsResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }).withInnerContainerType(AuthModel.class));
 
         return builder.build();
     }

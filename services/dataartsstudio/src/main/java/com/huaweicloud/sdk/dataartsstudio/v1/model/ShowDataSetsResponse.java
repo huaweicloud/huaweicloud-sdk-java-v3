@@ -28,7 +28,7 @@ public class ShowDataSetsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "facets")
 
-    private Object facets;
+    private List<Object> facets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
@@ -90,8 +90,24 @@ public class ShowDataSetsResponse extends SdkResponse {
         this.entities = entities;
     }
 
-    public ShowDataSetsResponse withFacets(Object facets) {
+    public ShowDataSetsResponse withFacets(List<Object> facets) {
         this.facets = facets;
+        return this;
+    }
+
+    public ShowDataSetsResponse addFacetsItem(Object facetsItem) {
+        if (this.facets == null) {
+            this.facets = new ArrayList<>();
+        }
+        this.facets.add(facetsItem);
+        return this;
+    }
+
+    public ShowDataSetsResponse withFacets(Consumer<List<Object>> facetsSetter) {
+        if (this.facets == null) {
+            this.facets = new ArrayList<>();
+        }
+        facetsSetter.accept(this.facets);
         return this;
     }
 
@@ -99,11 +115,11 @@ public class ShowDataSetsResponse extends SdkResponse {
      * 资产分类facets维度信息列表，数据结构List<Map<String, List<Aggregation>>> 取值为count
      * @return facets
      */
-    public Object getFacets() {
+    public List<Object> getFacets() {
         return facets;
     }
 
-    public void setFacets(Object facets) {
+    public void setFacets(List<Object> facets) {
         this.facets = facets;
     }
 

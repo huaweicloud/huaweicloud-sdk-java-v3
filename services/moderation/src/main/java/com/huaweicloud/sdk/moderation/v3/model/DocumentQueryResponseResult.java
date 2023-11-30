@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 作业审核结果
+ * 作业审核结果，当作业状态为succeeded时存在。
  */
 public class DocumentQueryResponseResult {
 
@@ -29,7 +29,7 @@ public class DocumentQueryResponseResult {
     }
 
     /**
-     * 文档审核结果是否通过。 block：包含敏感信息，不通过 pass：不包含敏感信息，通过 review：需要人工复检
+     * 文档审核结果是否通过。 block：包含敏感信息，不通过 review：需要人工复检 pass：不包含敏感信息，通过
      * @return suggestion
      */
     public String getSuggestion() {

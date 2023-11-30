@@ -63,6 +63,11 @@ public class ReinstallNodeSpec {
 
     private ReinstallExtendParam extendParam;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hostnameConfig")
+
+    private HostnameConfig hostnameConfig;
+
     public ReinstallNodeSpec withOs(String os) {
         this.os = os;
         return this;
@@ -112,7 +117,7 @@ public class ReinstallNodeSpec {
     }
 
     /**
-     * 节点名称 > 重装时指定将修改节点名称，且服务器名称会同步修改。默认以服务器当前名称作为节点名称。 > 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位，且不能以中划线(-)结尾。
+     * 节点名称 > 重装时指定将修改节点名称，且服务器名称会同步修改。默认以服务器当前名称作为节点名称。 > 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位。
      * @return name
      */
     public String getName() {
@@ -312,6 +317,32 @@ public class ReinstallNodeSpec {
         this.extendParam = extendParam;
     }
 
+    public ReinstallNodeSpec withHostnameConfig(HostnameConfig hostnameConfig) {
+        this.hostnameConfig = hostnameConfig;
+        return this;
+    }
+
+    public ReinstallNodeSpec withHostnameConfig(Consumer<HostnameConfig> hostnameConfigSetter) {
+        if (this.hostnameConfig == null) {
+            this.hostnameConfig = new HostnameConfig();
+            hostnameConfigSetter.accept(this.hostnameConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hostnameConfig
+     * @return hostnameConfig
+     */
+    public HostnameConfig getHostnameConfig() {
+        return hostnameConfig;
+    }
+
+    public void setHostnameConfig(HostnameConfig hostnameConfig) {
+        this.hostnameConfig = hostnameConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -327,7 +358,8 @@ public class ReinstallNodeSpec {
             && Objects.equals(this.runtimeConfig, that.runtimeConfig)
             && Objects.equals(this.k8sOptions, that.k8sOptions) && Objects.equals(this.lifecycle, that.lifecycle)
             && Objects.equals(this.initializedConditions, that.initializedConditions)
-            && Objects.equals(this.extendParam, that.extendParam);
+            && Objects.equals(this.extendParam, that.extendParam)
+            && Objects.equals(this.hostnameConfig, that.hostnameConfig);
     }
 
     @Override
@@ -341,7 +373,8 @@ public class ReinstallNodeSpec {
             k8sOptions,
             lifecycle,
             initializedConditions,
-            extendParam);
+            extendParam,
+            hostnameConfig);
     }
 
     @Override
@@ -358,6 +391,7 @@ public class ReinstallNodeSpec {
         sb.append("    lifecycle: ").append(toIndentedString(lifecycle)).append("\n");
         sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
+        sb.append("    hostnameConfig: ").append(toIndentedString(hostnameConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

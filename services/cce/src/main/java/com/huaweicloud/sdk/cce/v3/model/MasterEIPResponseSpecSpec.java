@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * MasterEIPResponseSpecSpec
+ * 待绑定的弹性IP配置属性
  */
 public class MasterEIPResponseSpecSpec {
 

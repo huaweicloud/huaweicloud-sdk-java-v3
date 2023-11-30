@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -47,6 +52,81 @@ public class LogInstanceInfo {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    /**
+     * 日志类型。slow_log表示慢日志，audit_log表示审计日志。
+     */
+    public static final class SupportedLogTypesEnum {
+
+        /**
+         * Enum SLOW_LOG for value: "slow_log"
+         */
+        public static final SupportedLogTypesEnum SLOW_LOG = new SupportedLogTypesEnum("slow_log");
+
+        /**
+         * Enum AUDIT_LOG for value: "audit_log"
+         */
+        public static final SupportedLogTypesEnum AUDIT_LOG = new SupportedLogTypesEnum("audit_log");
+
+        private static final Map<String, SupportedLogTypesEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SupportedLogTypesEnum> createStaticFields() {
+            Map<String, SupportedLogTypesEnum> map = new HashMap<>();
+            map.put("slow_log", SLOW_LOG);
+            map.put("audit_log", AUDIT_LOG);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SupportedLogTypesEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SupportedLogTypesEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportedLogTypesEnum(value));
+        }
+
+        public static SupportedLogTypesEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SupportedLogTypesEnum) {
+                return this.value.equals(((SupportedLogTypesEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_log_types")
+
+    private SupportedLogTypesEnum supportedLogTypes;
 
     public LogInstanceInfo withId(String id) {
         this.id = id;
@@ -192,6 +272,23 @@ public class LogInstanceInfo {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public LogInstanceInfo withSupportedLogTypes(SupportedLogTypesEnum supportedLogTypes) {
+        this.supportedLogTypes = supportedLogTypes;
+        return this;
+    }
+
+    /**
+     * 日志类型。slow_log表示慢日志，audit_log表示审计日志。
+     * @return supportedLogTypes
+     */
+    public SupportedLogTypesEnum getSupportedLogTypes() {
+        return supportedLogTypes;
+    }
+
+    public void setSupportedLogTypes(SupportedLogTypesEnum supportedLogTypes) {
+        this.supportedLogTypes = supportedLogTypes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -204,12 +301,13 @@ public class LogInstanceInfo {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.status, that.status) && Objects.equals(this.mode, that.mode)
             && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.actions, that.actions)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.supportedLogTypes, that.supportedLogTypes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, mode, datastore, actions, enterpriseProjectId);
+        return Objects.hash(id, name, status, mode, datastore, actions, enterpriseProjectId, supportedLogTypes);
     }
 
     @Override
@@ -223,6 +321,7 @@ public class LogInstanceInfo {
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    supportedLogTypes: ").append(toIndentedString(supportedLogTypes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

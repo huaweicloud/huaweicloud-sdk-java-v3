@@ -305,7 +305,7 @@ public class ShowApiResponse extends SdkResponse {
     private String manager;
 
     /**
-     * API的状态
+     * API的状态（共享版）
      */
     public static final class StatusEnum {
 
@@ -512,7 +512,7 @@ public class ShowApiResponse extends SdkResponse {
     private TypeEnum type;
 
     /**
-     * API调试状态
+     * API调试状态（共享版）
      */
     public static final class DebugStatusEnum {
 
@@ -593,6 +593,11 @@ public class ShowApiResponse extends SdkResponse {
     private DebugStatusEnum debugStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_messages")
+
+    private List<ApiPublishDTO> publishMessages = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_paras")
 
     private List<RequestPara> requestParas = null;
@@ -647,7 +652,7 @@ public class ShowApiResponse extends SdkResponse {
     }
 
     /**
-     * API所属分组的ID
+     * API所属分组的ID（共享版）
      * @return groupId
      */
     public String getGroupId() {
@@ -877,7 +882,7 @@ public class ShowApiResponse extends SdkResponse {
     }
 
     /**
-     * API的状态
+     * API的状态（共享版）
      * @return status
      */
     public StatusEnum getStatus() {
@@ -911,7 +916,7 @@ public class ShowApiResponse extends SdkResponse {
     }
 
     /**
-     * API调试状态
+     * API调试状态（共享版）
      * @return debugStatus
      */
     public DebugStatusEnum getDebugStatus() {
@@ -920,6 +925,39 @@ public class ShowApiResponse extends SdkResponse {
 
     public void setDebugStatus(DebugStatusEnum debugStatus) {
         this.debugStatus = debugStatus;
+    }
+
+    public ShowApiResponse withPublishMessages(List<ApiPublishDTO> publishMessages) {
+        this.publishMessages = publishMessages;
+        return this;
+    }
+
+    public ShowApiResponse addPublishMessagesItem(ApiPublishDTO publishMessagesItem) {
+        if (this.publishMessages == null) {
+            this.publishMessages = new ArrayList<>();
+        }
+        this.publishMessages.add(publishMessagesItem);
+        return this;
+    }
+
+    public ShowApiResponse withPublishMessages(Consumer<List<ApiPublishDTO>> publishMessagesSetter) {
+        if (this.publishMessages == null) {
+            this.publishMessages = new ArrayList<>();
+        }
+        publishMessagesSetter.accept(this.publishMessages);
+        return this;
+    }
+
+    /**
+     * 发布信息列表（专享版）
+     * @return publishMessages
+     */
+    public List<ApiPublishDTO> getPublishMessages() {
+        return publishMessages;
+    }
+
+    public void setPublishMessages(List<ApiPublishDTO> publishMessages) {
+        this.publishMessages = publishMessages;
     }
 
     public ShowApiResponse withRequestParas(List<RequestPara> requestParas) {
@@ -1025,6 +1063,7 @@ public class ShowApiResponse extends SdkResponse {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.manager, that.manager) && Objects.equals(this.status, that.status)
             && Objects.equals(this.type, that.type) && Objects.equals(this.debugStatus, that.debugStatus)
+            && Objects.equals(this.publishMessages, that.publishMessages)
             && Objects.equals(this.requestParas, that.requestParas)
             && Objects.equals(this.datasourceConfig, that.datasourceConfig)
             && Objects.equals(this.backendConfig, that.backendConfig);
@@ -1050,6 +1089,7 @@ public class ShowApiResponse extends SdkResponse {
             status,
             type,
             debugStatus,
+            publishMessages,
             requestParas,
             datasourceConfig,
             backendConfig);
@@ -1077,6 +1117,7 @@ public class ShowApiResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    debugStatus: ").append(toIndentedString(debugStatus)).append("\n");
+        sb.append("    publishMessages: ").append(toIndentedString(publishMessages)).append("\n");
         sb.append("    requestParas: ").append(toIndentedString(requestParas)).append("\n");
         sb.append("    datasourceConfig: ").append(toIndentedString(datasourceConfig)).append("\n");
         sb.append("    backendConfig: ").append(toIndentedString(backendConfig)).append("\n");

@@ -247,6 +247,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetPostgresqlDbUserPwdRequest;
@@ -2717,6 +2719,37 @@ public class RdsAsyncClient {
         SetBinlogClearPolicyRequest request) {
         return new AsyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse>(request,
             RdsMeta.setBinlogClearPolicy, hcClient);
+    }
+
+    /**
+     * 收缩数据库日志
+     *
+     * 收缩数据库日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInstancesDbShrinkRequest 请求对象
+     * @return CompletableFuture<SetInstancesDbShrinkResponse>
+     */
+    public CompletableFuture<SetInstancesDbShrinkResponse> setInstancesDbShrinkAsync(
+        SetInstancesDbShrinkRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setInstancesDbShrink);
+    }
+
+    /**
+     * 收缩数据库日志
+     *
+     * 收缩数据库日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInstancesDbShrinkRequest 请求对象
+     * @return AsyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>
+     */
+    public AsyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> setInstancesDbShrinkAsyncInvoker(
+        SetInstancesDbShrinkRequest request) {
+        return new AsyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>(request,
+            RdsMeta.setInstancesDbShrink, hcClient);
     }
 
     /**

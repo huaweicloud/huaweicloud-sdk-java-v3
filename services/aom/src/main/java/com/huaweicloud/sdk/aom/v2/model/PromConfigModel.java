@@ -41,7 +41,7 @@ public class PromConfigModel {
     }
 
     /**
-     * 普罗实例remote-write地址
+     * Prometheus实例remote-write地址。
      * @return remoteWriteUrl
      */
     public String getRemoteWriteUrl() {
@@ -58,7 +58,7 @@ public class PromConfigModel {
     }
 
     /**
-     * 普罗实例remote-read地址
+     * Prometheus实例remote-read地址。
      * @return remoteReadUrl
      */
     public String getRemoteReadUrl() {
@@ -75,7 +75,7 @@ public class PromConfigModel {
     }
 
     /**
-     * 普罗实例调用url
+     * Prometheus实例调用url。
      * @return promHttpApiEndpoint
      */
     public String getPromHttpApiEndpoint() {
@@ -92,7 +92,7 @@ public class PromConfigModel {
     }
 
     /**
-     * 普罗实例关联dashboard的dashboard ID
+     * Prometheus实例关联dashboard的dashboard id。
      * @return dashboardId
      */
     public String getDashboardId() {
@@ -109,7 +109,7 @@ public class PromConfigModel {
     }
 
     /**
-     * 普罗实例所属的region
+     * Prometheus实例所属的region。
      * @return regionId
      */
     public String getRegionId() {

@@ -58,9 +58,7 @@ public class UploadPluginIconRequestBody implements SdkFormDataBody {
 
             private static final long serialVersionUID = 1L;
             {
-                if (uploadFile != null) {
-                    put("upload_file", uploadFile);
-                }
+                put("upload_file", uploadFile);
             }
         };
     }

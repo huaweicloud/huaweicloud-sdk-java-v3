@@ -10213,6 +10213,13 @@ public class DataArtsStudioMeta {
             f -> f.withMarshaller(ListApisRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
             }));
+        builder.<String>withRequestField("x-return-publish-messages",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisRequest::getXReturnPublishMessages, (req, v) -> {
+                req.setXReturnPublishMessages(v);
+            }));
 
         // response
 
