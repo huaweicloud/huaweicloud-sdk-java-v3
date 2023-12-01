@@ -19,8 +19,10 @@ jobs:
           server-password: OSSRH_PASSWORD
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: GPG_PASSPHRASE
+      - name: Install packages
+        run: mvn -B clean install
       - name: Publish packages
-        run: mvn -U -B clean deploy -P release
+        run: mvn -B deploy -P release -Dmaven.deploy.skip=true
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
