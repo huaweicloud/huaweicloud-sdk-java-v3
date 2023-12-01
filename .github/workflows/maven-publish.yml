@@ -22,7 +22,7 @@ jobs:
       - name: Install packages
         run: mvn -U -B clean install
       - name: Publish packages
-        run: mvn -B deploy -P release
+        run: mvn -B deploy -P release -Dmaven.install.skip=true
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
