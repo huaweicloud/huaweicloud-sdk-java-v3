@@ -46,7 +46,7 @@ public class InstanceModReq {
     }
 
     /**
-     * 实例描述
+     * 实例描述。支持除>和<以外的字符，长度为0~255。
      * @return description
      */
     public String getDescription() {
@@ -97,7 +97,7 @@ public class InstanceModReq {
     }
 
     /**
-     * 实例名称
+     * 实例名称。  中英文字符开头，只能由中英文字符、数字、中划线、下划线组成，长度为3~64。  > 中文字符必须为UTF-8或者unicode编码。
      * @return instanceName
      */
     public String getInstanceName() {

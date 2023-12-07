@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk</artifactId>
-    <version>3.1.70</version>
+    <version>3.1.71</version>
     <name>Huawei Cloud SDK for Java Parent</name>
     <description>Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
@@ -59,7 +59,7 @@
         <bgmprovider.version>1.0.7</bgmprovider.version>
         <junit.version>4.13.1</junit.version>
         <slf4j.version>1.7.36</slf4j.version>
-        <logback.version>1.2.12</logback.version>
+        <logback.version>1.3.12</logback.version>
         <wiremock.version>2.35.1</wiremock.version>
         <mongo-java-driver.version>3.12.11</mongo-java-driver.version>
         <spring-boot.version>2.7.12</spring-boot.version>

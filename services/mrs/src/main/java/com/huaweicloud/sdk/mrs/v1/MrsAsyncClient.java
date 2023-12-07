@@ -157,6 +157,7 @@ public class MrsAsyncClient {
      * @param CreateAndExecuteJobRequest 请求对象
      * @return CompletableFuture<CreateAndExecuteJobResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateAndExecuteJobResponse> createAndExecuteJobAsync(CreateAndExecuteJobRequest request) {
         return hcClient.asyncInvokeHttp(request, MrsMeta.createAndExecuteJob);
     }
@@ -173,6 +174,7 @@ public class MrsAsyncClient {
      * @param CreateAndExecuteJobRequest 请求对象
      * @return AsyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse> createAndExecuteJobAsyncInvoker(
         CreateAndExecuteJobRequest request) {
         return new AsyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>(request,
@@ -372,6 +374,7 @@ public class MrsAsyncClient {
      * @param DeleteJobExecutionRequest 请求对象
      * @return CompletableFuture<DeleteJobExecutionResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteJobExecutionResponse> deleteJobExecutionAsync(DeleteJobExecutionRequest request) {
         return hcClient.asyncInvokeHttp(request, MrsMeta.deleteJobExecution);
     }
@@ -387,6 +390,7 @@ public class MrsAsyncClient {
      * @param DeleteJobExecutionRequest 请求对象
      * @return AsyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse> deleteJobExecutionAsyncInvoker(
         DeleteJobExecutionRequest request) {
         return new AsyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>(request,
@@ -525,6 +529,7 @@ public class MrsAsyncClient {
      * @param ListExecuteJobRequest 请求对象
      * @return CompletableFuture<ListExecuteJobResponse>
      */
+    @Deprecated
     public CompletableFuture<ListExecuteJobResponse> listExecuteJobAsync(ListExecuteJobRequest request) {
         return hcClient.asyncInvokeHttp(request, MrsMeta.listExecuteJob);
     }
@@ -540,6 +545,7 @@ public class MrsAsyncClient {
      * @param ListExecuteJobRequest 请求对象
      * @return AsyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse> listExecuteJobAsyncInvoker(
         ListExecuteJobRequest request) {
         return new AsyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>(request, MrsMeta.listExecuteJob,
@@ -615,6 +621,7 @@ public class MrsAsyncClient {
      * @param ShowJobExesRequest 请求对象
      * @return CompletableFuture<ShowJobExesResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowJobExesResponse> showJobExesAsync(ShowJobExesRequest request) {
         return hcClient.asyncInvokeHttp(request, MrsMeta.showJobExes);
     }
@@ -630,6 +637,7 @@ public class MrsAsyncClient {
      * @param ShowJobExesRequest 请求对象
      * @return AsyncInvoker<ShowJobExesRequest, ShowJobExesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowJobExesRequest, ShowJobExesResponse> showJobExesAsyncInvoker(ShowJobExesRequest request) {
         return new AsyncInvoker<ShowJobExesRequest, ShowJobExesResponse>(request, MrsMeta.showJobExes, hcClient);
     }

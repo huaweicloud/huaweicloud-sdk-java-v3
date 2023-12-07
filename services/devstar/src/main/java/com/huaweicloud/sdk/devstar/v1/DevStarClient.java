@@ -854,6 +854,7 @@ public class DevStarClient {
      * @param ListPublishedTemplatesRequest 请求对象
      * @return ListPublishedTemplatesResponse
      */
+    @Deprecated
     public ListPublishedTemplatesResponse listPublishedTemplates(ListPublishedTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, DevStarMeta.listPublishedTemplates);
     }
@@ -868,6 +869,7 @@ public class DevStarClient {
      * @param ListPublishedTemplatesRequest 请求对象
      * @return SyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>
      */
+    @Deprecated
     public SyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse> listPublishedTemplatesInvoker(
         ListPublishedTemplatesRequest request) {
         return new SyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>(request,
@@ -943,6 +945,7 @@ public class DevStarClient {
      * @param ListTemplatesV2Request 请求对象
      * @return ListTemplatesV2Response
      */
+    @Deprecated
     public ListTemplatesV2Response listTemplatesV2(ListTemplatesV2Request request) {
         return hcClient.syncInvokeHttp(request, DevStarMeta.listTemplatesV2);
     }
@@ -957,6 +960,7 @@ public class DevStarClient {
      * @param ListTemplatesV2Request 请求对象
      * @return SyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>
      */
+    @Deprecated
     public SyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response> listTemplatesV2Invoker(
         ListTemplatesV2Request request) {
         return new SyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>(request, DevStarMeta.listTemplatesV2,

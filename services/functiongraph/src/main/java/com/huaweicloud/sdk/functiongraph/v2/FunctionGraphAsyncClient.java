@@ -5,8 +5,6 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.functiongraph.v2.model.AsyncInvokeFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.AsyncInvokeFunctionResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.AsyncInvokeReservedFunctionRequest;
-import com.huaweicloud.sdk.functiongraph.v2.model.AsyncInvokeReservedFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteFunctionTriggersRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteFunctionTriggersResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteWorkflowsRequest;
@@ -15,8 +13,6 @@ import com.huaweicloud.sdk.functiongraph.v2.model.CancelAsyncInvocationRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CancelAsyncInvocationResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateCallbackWorkflowRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateCallbackWorkflowResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyRequest;
-import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyVersionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateEventRequest;
@@ -37,8 +33,6 @@ import com.huaweicloud.sdk.functiongraph.v2.model.CreateVpcEndpointRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateVpcEndpointResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateWorkflowRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateWorkflowResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyRequest;
-import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyVersionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteEventRequest;
@@ -119,8 +113,6 @@ import com.huaweicloud.sdk.functiongraph.v2.model.RetryWorkFlowRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.RetryWorkFlowResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowAppTemplateRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowAppTemplateResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependcyRequest;
-import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependcyResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependencyVersionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependencyVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowEventRequest;
@@ -171,8 +163,6 @@ import com.huaweicloud.sdk.functiongraph.v2.model.StartWorkflowExecutionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.StartWorkflowExecutionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.StopWorkFlowRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.StopWorkFlowResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.UpdateDependcyRequest;
-import com.huaweicloud.sdk.functiongraph.v2.model.UpdateDependcyResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateEventRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateEventResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateFuncSnapshotRequest;
@@ -241,37 +231,6 @@ public class FunctionGraphAsyncClient {
         AsyncInvokeFunctionRequest request) {
         return new AsyncInvoker<AsyncInvokeFunctionRequest, AsyncInvokeFunctionResponse>(request,
             FunctionGraphMeta.asyncInvokeFunction, hcClient);
-    }
-
-    /**
-     * 函数异步执行并返回预留实例ID
-     *
-     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param AsyncInvokeReservedFunctionRequest 请求对象
-     * @return CompletableFuture<AsyncInvokeReservedFunctionResponse>
-     */
-    public CompletableFuture<AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunctionAsync(
-        AsyncInvokeReservedFunctionRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.asyncInvokeReservedFunction);
-    }
-
-    /**
-     * 函数异步执行并返回预留实例ID
-     *
-     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常，可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param AsyncInvokeReservedFunctionRequest 请求对象
-     * @return AsyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>
-     */
-    public AsyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunctionAsyncInvoker(
-        AsyncInvokeReservedFunctionRequest request) {
-        return new AsyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>(request,
-            FunctionGraphMeta.asyncInvokeReservedFunction, hcClient);
     }
 
     /**
@@ -407,36 +366,6 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
-     * 创建依赖包
-     *
-     * 创建依赖包
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateDependencyRequest 请求对象
-     * @return CompletableFuture<CreateDependencyResponse>
-     */
-    public CompletableFuture<CreateDependencyResponse> createDependencyAsync(CreateDependencyRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.createDependency);
-    }
-
-    /**
-     * 创建依赖包
-     *
-     * 创建依赖包
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateDependencyRequest 请求对象
-     * @return AsyncInvoker<CreateDependencyRequest, CreateDependencyResponse>
-     */
-    public AsyncInvoker<CreateDependencyRequest, CreateDependencyResponse> createDependencyAsyncInvoker(
-        CreateDependencyRequest request) {
-        return new AsyncInvoker<CreateDependencyRequest, CreateDependencyResponse>(request,
-            FunctionGraphMeta.createDependency, hcClient);
-    }
-
-    /**
      * 创建依赖包版本
      *
      * 创建依赖包版本
@@ -529,7 +458,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 创建应用程序
      *
-     * 创建应用程序
+     * 创建应用程序（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -543,7 +472,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 创建应用程序
      *
-     * 创建应用程序
+     * 创建应用程序（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -687,7 +616,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 创建下沉入口
      *
-     * 创建下沉入口。
+     * 创建下沉入口。（该功能目前仅支持华北-北京四、华东-上海一、华东-上海二、西南-贵阳一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -701,7 +630,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 创建下沉入口
      *
-     * 创建下沉入口。
+     * 创建下沉入口。（该功能目前仅支持华北-北京四、华东-上海一、华东-上海二、西南-贵阳一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -742,36 +671,6 @@ public class FunctionGraphAsyncClient {
         CreateWorkflowRequest request) {
         return new AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request,
             FunctionGraphMeta.createWorkflow, hcClient);
-    }
-
-    /**
-     * 删除指定的依赖包
-     *
-     * 删除指定的依赖包
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteDependencyRequest 请求对象
-     * @return CompletableFuture<DeleteDependencyResponse>
-     */
-    public CompletableFuture<DeleteDependencyResponse> deleteDependencyAsync(DeleteDependencyRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteDependency);
-    }
-
-    /**
-     * 删除指定的依赖包
-     *
-     * 删除指定的依赖包
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteDependencyRequest 请求对象
-     * @return AsyncInvoker<DeleteDependencyRequest, DeleteDependencyResponse>
-     */
-    public AsyncInvoker<DeleteDependencyRequest, DeleteDependencyResponse> deleteDependencyAsyncInvoker(
-        DeleteDependencyRequest request) {
-        return new AsyncInvoker<DeleteDependencyRequest, DeleteDependencyResponse>(request,
-            FunctionGraphMeta.deleteDependency, hcClient);
     }
 
     /**
@@ -873,7 +772,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 删除应用程序
      *
-     * 删除应用程序
+     * 删除应用程序（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -887,7 +786,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 删除应用程序
      *
-     * 删除应用程序
+     * 删除应用程序（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1023,7 +922,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 删除下沉入口
      *
-     * 删除下沉入口。
+     * 删除下沉入口。（该功能目前仅支持华北-北京四、华东-上海一、华东-上海二、西南-贵阳一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1037,7 +936,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 删除下沉入口
      *
-     * 删除下沉入口。
+     * 删除下沉入口。（该功能目前仅支持华北-北京四、华东-上海一、华东-上海二、西南-贵阳一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1235,7 +1134,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 查询应用程序模板列表
      *
-     * 查询应用程序模板列表
+     * 查询应用程序模板列表（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1249,7 +1148,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 查询应用程序模板列表
      *
-     * 查询应用程序模板列表
+     * 查询应用程序模板列表（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1445,7 +1344,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 查询应用程序列表
      *
-     * 查询应用程序列表
+     * 查询应用程序列表（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1460,7 +1359,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 查询应用程序列表
      *
-     * 查询应用程序列表
+     * 查询应用程序列表（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1973,7 +1872,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 查询应用程序模板详情
      *
-     * 查询应用程序模板详情
+     * 查询应用程序模板详情（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1987,7 +1886,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 查询应用程序模板详情
      *
-     * 查询应用程序模板详情
+     * 查询应用程序模板详情（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1998,36 +1897,6 @@ public class FunctionGraphAsyncClient {
         ShowAppTemplateRequest request) {
         return new AsyncInvoker<ShowAppTemplateRequest, ShowAppTemplateResponse>(request,
             FunctionGraphMeta.showAppTemplate, hcClient);
-    }
-
-    /**
-     * 获取指定依赖包
-     *
-     * 获取指定依赖包
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDependcyRequest 请求对象
-     * @return CompletableFuture<ShowDependcyResponse>
-     */
-    public CompletableFuture<ShowDependcyResponse> showDependcyAsync(ShowDependcyRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showDependcy);
-    }
-
-    /**
-     * 获取指定依赖包
-     *
-     * 获取指定依赖包
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDependcyRequest 请求对象
-     * @return AsyncInvoker<ShowDependcyRequest, ShowDependcyResponse>
-     */
-    public AsyncInvoker<ShowDependcyRequest, ShowDependcyResponse> showDependcyAsyncInvoker(
-        ShowDependcyRequest request) {
-        return new AsyncInvoker<ShowDependcyRequest, ShowDependcyResponse>(request, FunctionGraphMeta.showDependcy,
-            hcClient);
     }
 
     /**
@@ -2166,7 +2035,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 查询应用程序详情
      *
-     * 查询应用程序详情
+     * 查询应用程序详情（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2180,7 +2049,7 @@ public class FunctionGraphAsyncClient {
     /**
      * 查询应用程序详情
      *
-     * 查询应用程序详情
+     * 查询应用程序详情（该功能目前仅支持华北-北京四、华东-上海一）
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2797,36 +2666,6 @@ public class FunctionGraphAsyncClient {
         StopWorkFlowRequest request) {
         return new AsyncInvoker<StopWorkFlowRequest, StopWorkFlowResponse>(request, FunctionGraphMeta.stopWorkFlow,
             hcClient);
-    }
-
-    /**
-     * 更新指定依赖包
-     *
-     * 更新指定依赖包
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateDependcyRequest 请求对象
-     * @return CompletableFuture<UpdateDependcyResponse>
-     */
-    public CompletableFuture<UpdateDependcyResponse> updateDependcyAsync(UpdateDependcyRequest request) {
-        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.updateDependcy);
-    }
-
-    /**
-     * 更新指定依赖包
-     *
-     * 更新指定依赖包
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateDependcyRequest 请求对象
-     * @return AsyncInvoker<UpdateDependcyRequest, UpdateDependcyResponse>
-     */
-    public AsyncInvoker<UpdateDependcyRequest, UpdateDependcyResponse> updateDependcyAsyncInvoker(
-        UpdateDependcyRequest request) {
-        return new AsyncInvoker<UpdateDependcyRequest, UpdateDependcyResponse>(request,
-            FunctionGraphMeta.updateDependcy, hcClient);
     }
 
     /**

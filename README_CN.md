@@ -1013,7 +1013,7 @@ SDK支持的slf4j与对应的日志实现的版本关系，如下表所示：
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
-    <version>1.2.12</version>
+    <version>1.3.12</version>
 </dependency>
 ```
 

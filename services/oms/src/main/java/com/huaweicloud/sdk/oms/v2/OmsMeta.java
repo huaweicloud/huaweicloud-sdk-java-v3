@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.oms.v2.model.BatchUpdateTasksReq;
+import com.huaweicloud.sdk.oms.v2.model.BatchUpdateTasksRequest;
+import com.huaweicloud.sdk.oms.v2.model.BatchUpdateTasksResponse;
 import com.huaweicloud.sdk.oms.v2.model.CheckPrefixReq;
 import com.huaweicloud.sdk.oms.v2.model.CheckPrefixRequest;
 import com.huaweicloud.sdk.oms.v2.model.CheckPrefixResponse;
@@ -89,6 +92,31 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class OmsMeta {
+
+    public static final HttpRequestDef<BatchUpdateTasksRequest, BatchUpdateTasksResponse> batchUpdateTasks =
+        genForbatchUpdateTasks();
+
+    private static HttpRequestDef<BatchUpdateTasksRequest, BatchUpdateTasksResponse> genForbatchUpdateTasks() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateTasksRequest, BatchUpdateTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchUpdateTasksRequest.class, BatchUpdateTasksResponse.class)
+                .withName("BatchUpdateTasks")
+                .withUri("/v2/{project_id}/tasks/batch-update")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchUpdateTasksReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateTasksReq.class),
+            f -> f.withMarshaller(BatchUpdateTasksRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CheckPrefixRequest, CheckPrefixResponse> checkPrefix = genForcheckPrefix();
 

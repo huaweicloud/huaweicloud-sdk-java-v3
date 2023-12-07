@@ -17,6 +17,11 @@ public class UpdateChannelRequest {
     private String channelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ChannelUpdateReq body;
@@ -36,6 +41,23 @@ public class UpdateChannelRequest {
 
     public void setChannelId(String channelId) {
         this.channelId = channelId;
+    }
+
+    public UpdateChannelRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public UpdateChannelRequest withBody(ChannelUpdateReq body) {
@@ -73,12 +95,14 @@ public class UpdateChannelRequest {
             return false;
         }
         UpdateChannelRequest that = (UpdateChannelRequest) obj;
-        return Objects.equals(this.channelId, that.channelId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.channelId, that.channelId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(channelId, body);
+        return Objects.hash(channelId, enterpriseProjectId, body);
     }
 
     @Override
@@ -86,6 +110,7 @@ public class UpdateChannelRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateChannelRequest {\n");
         sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

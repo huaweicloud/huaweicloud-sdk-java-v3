@@ -21,6 +21,11 @@ public class EventStreamingSource {
 
     private SourceKafkaMQParameters sourceKafka;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_mobile_rocketmq")
+
+    private SourceMobileMQParameters sourceMobileRocketmq;
+
     /**
      * 事件源类型名称
      */
@@ -116,6 +121,33 @@ public class EventStreamingSource {
         this.sourceKafka = sourceKafka;
     }
 
+    public EventStreamingSource withSourceMobileRocketmq(SourceMobileMQParameters sourceMobileRocketmq) {
+        this.sourceMobileRocketmq = sourceMobileRocketmq;
+        return this;
+    }
+
+    public EventStreamingSource withSourceMobileRocketmq(
+        Consumer<SourceMobileMQParameters> sourceMobileRocketmqSetter) {
+        if (this.sourceMobileRocketmq == null) {
+            this.sourceMobileRocketmq = new SourceMobileMQParameters();
+            sourceMobileRocketmqSetter.accept(this.sourceMobileRocketmq);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sourceMobileRocketmq
+     * @return sourceMobileRocketmq
+     */
+    public SourceMobileMQParameters getSourceMobileRocketmq() {
+        return sourceMobileRocketmq;
+    }
+
+    public void setSourceMobileRocketmq(SourceMobileMQParameters sourceMobileRocketmq) {
+        this.sourceMobileRocketmq = sourceMobileRocketmq;
+    }
+
     public EventStreamingSource withName(NameEnum name) {
         this.name = name;
         return this;
@@ -142,12 +174,14 @@ public class EventStreamingSource {
             return false;
         }
         EventStreamingSource that = (EventStreamingSource) obj;
-        return Objects.equals(this.sourceKafka, that.sourceKafka) && Objects.equals(this.name, that.name);
+        return Objects.equals(this.sourceKafka, that.sourceKafka)
+            && Objects.equals(this.sourceMobileRocketmq, that.sourceMobileRocketmq)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sourceKafka, name);
+        return Objects.hash(sourceKafka, sourceMobileRocketmq, name);
     }
 
     @Override
@@ -155,6 +189,7 @@ public class EventStreamingSource {
         StringBuilder sb = new StringBuilder();
         sb.append("class EventStreamingSource {\n");
         sb.append("    sourceKafka: ").append(toIndentedString(sourceKafka)).append("\n");
+        sb.append("    sourceMobileRocketmq: ").append(toIndentedString(sourceMobileRocketmq)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();

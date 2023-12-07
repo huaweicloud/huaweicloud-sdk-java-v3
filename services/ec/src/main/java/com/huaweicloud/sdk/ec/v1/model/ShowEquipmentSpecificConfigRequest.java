@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.ec.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -15,90 +10,26 @@ import java.util.Objects;
  */
 public class ShowEquipmentSpecificConfigRequest {
 
-    /**
-     * 设备类型
-     */
-    public static final class EquipmentTypeEnum {
-
-        /**
-         * Enum STANDARD for value: "standard"
-         */
-        public static final EquipmentTypeEnum STANDARD = new EquipmentTypeEnum("standard");
-
-        private static final Map<String, EquipmentTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EquipmentTypeEnum> createStaticFields() {
-            Map<String, EquipmentTypeEnum> map = new HashMap<>();
-            map.put("standard", STANDARD);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EquipmentTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EquipmentTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EquipmentTypeEnum(value));
-        }
-
-        public static EquipmentTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EquipmentTypeEnum) {
-                return this.value.equals(((EquipmentTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "equipment_type")
+    @JsonProperty(value = "equipment_id")
 
-    private EquipmentTypeEnum equipmentType;
+    private String equipmentId;
 
-    public ShowEquipmentSpecificConfigRequest withEquipmentType(EquipmentTypeEnum equipmentType) {
-        this.equipmentType = equipmentType;
+    public ShowEquipmentSpecificConfigRequest withEquipmentId(String equipmentId) {
+        this.equipmentId = equipmentId;
         return this;
     }
 
     /**
-     * 设备类型
-     * @return equipmentType
+     * 智能企业网关设备ID
+     * @return equipmentId
      */
-    public EquipmentTypeEnum getEquipmentType() {
-        return equipmentType;
+    public String getEquipmentId() {
+        return equipmentId;
     }
 
-    public void setEquipmentType(EquipmentTypeEnum equipmentType) {
-        this.equipmentType = equipmentType;
+    public void setEquipmentId(String equipmentId) {
+        this.equipmentId = equipmentId;
     }
 
     @Override
@@ -110,19 +41,19 @@ public class ShowEquipmentSpecificConfigRequest {
             return false;
         }
         ShowEquipmentSpecificConfigRequest that = (ShowEquipmentSpecificConfigRequest) obj;
-        return Objects.equals(this.equipmentType, that.equipmentType);
+        return Objects.equals(this.equipmentId, that.equipmentId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(equipmentType);
+        return Objects.hash(equipmentId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEquipmentSpecificConfigRequest {\n");
-        sb.append("    equipmentType: ").append(toIndentedString(equipmentType)).append("\n");
+        sb.append("    equipmentId: ").append(toIndentedString(equipmentId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

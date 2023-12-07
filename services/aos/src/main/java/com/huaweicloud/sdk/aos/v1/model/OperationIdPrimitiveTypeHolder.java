@@ -21,7 +21,7 @@ public class OperationIdPrimitiveTypeHolder {
     }
 
     /**
-     * 资源栈集操作Id。  此Id由资源编排服务在生成资源栈集操作的时候生成，为UUID。
+     * 资源栈集操作Id。  此ID由资源编排服务在生成资源栈集操作的时候生成，为UUID。
      * @return operationId
      */
     public String getOperationId() {

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -79,6 +84,87 @@ public class ListApisV2Request {
     @JsonProperty(value = "vpc_channel_name")
 
     private String vpcChannelName;
+
+    /**
+     * 指定API详情中需要包含的额外返回结果，多个参数之间使用“,”隔开，当brief和其他include参数共同使用时，brief不生效。 目前仅支持brief，include_group，include_group_backend。 brief：默认值，不包含额外信息。 include_group：返回结果中包含api_group_info。 include_group_backend：返回结果中包含backend_api。
+     */
+    public static final class ReturnDataModeEnum {
+
+        /**
+         * Enum BRIEF for value: "brief"
+         */
+        public static final ReturnDataModeEnum BRIEF = new ReturnDataModeEnum("brief");
+
+        /**
+         * Enum INCLUDE_GROUP for value: "include_group"
+         */
+        public static final ReturnDataModeEnum INCLUDE_GROUP = new ReturnDataModeEnum("include_group");
+
+        /**
+         * Enum INCLUDE_GROUP_BACKEND for value: "include_group_backend"
+         */
+        public static final ReturnDataModeEnum INCLUDE_GROUP_BACKEND = new ReturnDataModeEnum("include_group_backend");
+
+        private static final Map<String, ReturnDataModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ReturnDataModeEnum> createStaticFields() {
+            Map<String, ReturnDataModeEnum> map = new HashMap<>();
+            map.put("brief", BRIEF);
+            map.put("include_group", INCLUDE_GROUP);
+            map.put("include_group_backend", INCLUDE_GROUP_BACKEND);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ReturnDataModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ReturnDataModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReturnDataModeEnum(value));
+        }
+
+        public static ReturnDataModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ReturnDataModeEnum) {
+                return this.value.equals(((ReturnDataModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_data_mode")
+
+    private ReturnDataModeEnum returnDataMode;
 
     public ListApisV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -309,7 +395,7 @@ public class ListApisV2Request {
     }
 
     /**
-     * 负载通道名称。
+     * 负载通道名称
      * @return vpcChannelName
      */
     public String getVpcChannelName() {
@@ -318,6 +404,23 @@ public class ListApisV2Request {
 
     public void setVpcChannelName(String vpcChannelName) {
         this.vpcChannelName = vpcChannelName;
+    }
+
+    public ListApisV2Request withReturnDataMode(ReturnDataModeEnum returnDataMode) {
+        this.returnDataMode = returnDataMode;
+        return this;
+    }
+
+    /**
+     * 指定API详情中需要包含的额外返回结果，多个参数之间使用“,”隔开，当brief和其他include参数共同使用时，brief不生效。 目前仅支持brief，include_group，include_group_backend。 brief：默认值，不包含额外信息。 include_group：返回结果中包含api_group_info。 include_group_backend：返回结果中包含backend_api。
+     * @return returnDataMode
+     */
+    public ReturnDataModeEnum getReturnDataMode() {
+        return returnDataMode;
+    }
+
+    public void setReturnDataMode(ReturnDataModeEnum returnDataMode) {
+        this.returnDataMode = returnDataMode;
     }
 
     @Override
@@ -336,7 +439,8 @@ public class ListApisV2Request {
             && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.authType, that.authType)
             && Objects.equals(this.envId, that.envId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.preciseSearch, that.preciseSearch)
-            && Objects.equals(this.vpcChannelName, that.vpcChannelName);
+            && Objects.equals(this.vpcChannelName, that.vpcChannelName)
+            && Objects.equals(this.returnDataMode, that.returnDataMode);
     }
 
     @Override
@@ -354,7 +458,8 @@ public class ListApisV2Request {
             envId,
             type,
             preciseSearch,
-            vpcChannelName);
+            vpcChannelName,
+            returnDataMode);
     }
 
     @Override
@@ -375,6 +480,7 @@ public class ListApisV2Request {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
         sb.append("    vpcChannelName: ").append(toIndentedString(vpcChannelName)).append("\n");
+        sb.append("    returnDataMode: ").append(toIndentedString(returnDataMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

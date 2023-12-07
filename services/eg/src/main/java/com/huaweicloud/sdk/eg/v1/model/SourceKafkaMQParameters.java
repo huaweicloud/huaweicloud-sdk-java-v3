@@ -26,6 +26,11 @@ public class SourceKafkaMQParameters {
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_protocol")
+
+    private String securityProtocol;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
@@ -244,6 +249,23 @@ public class SourceKafkaMQParameters {
         this.instanceName = instanceName;
     }
 
+    public SourceKafkaMQParameters withSecurityProtocol(String securityProtocol) {
+        this.securityProtocol = securityProtocol;
+        return this;
+    }
+
+    /**
+     * 安全协议
+     * @return securityProtocol
+     */
+    public String getSecurityProtocol() {
+        return securityProtocol;
+    }
+
+    public void setSecurityProtocol(String securityProtocol) {
+        this.securityProtocol = securityProtocol;
+    }
+
     public SourceKafkaMQParameters withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -407,6 +429,7 @@ public class SourceKafkaMQParameters {
         }
         SourceKafkaMQParameters that = (SourceKafkaMQParameters) obj;
         return Objects.equals(this.group, that.group) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.securityProtocol, that.securityProtocol)
             && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic)
             && Objects.equals(this.seekTo, that.seekTo) && Objects.equals(this.enableSaslSsl, that.enableSaslSsl)
             && Objects.equals(this.saslMechanism, that.saslMechanism)
@@ -419,6 +442,7 @@ public class SourceKafkaMQParameters {
     public int hashCode() {
         return Objects.hash(group,
             instanceName,
+            securityProtocol,
             instanceId,
             topic,
             seekTo,
@@ -436,6 +460,7 @@ public class SourceKafkaMQParameters {
         sb.append("class SourceKafkaMQParameters {\n");
         sb.append("    group: ").append(toIndentedString(group)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
+        sb.append("    securityProtocol: ").append(toIndentedString(securityProtocol)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    seekTo: ").append(toIndentedString(seekTo)).append("\n");

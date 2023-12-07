@@ -52,6 +52,8 @@ import com.huaweicloud.sdk.apig.v2.model.CancelingAuthorizationV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CancelingAuthorizationV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CheckApiGroupsV2Request;
+import com.huaweicloud.sdk.apig.v2.model.CheckApiGroupsV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CheckApisV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CheckApisV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CheckAppV2Request;
@@ -4280,7 +4282,7 @@ public class ApigClient {
     /**
      * 创建ACL策略
      *
-     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。
+     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com”之类的网络域名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4294,7 +4296,7 @@ public class ApigClient {
     /**
      * 创建ACL策略
      *
-     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com\&quot;之类的网络域名。
+     * 增加一个ACL策略，策略类型通过字段acl_type来确定（permit或者deny），限制的对象的类型可以为IP或者DOMAIN，这里的DOMAIN对应的acl_value的值为租户名称，而非“www.exampleDomain.com”之类的网络域名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4561,6 +4563,36 @@ public class ApigClient {
         ChangeApiVersionV2Request request) {
         return new SyncInvoker<ChangeApiVersionV2Request, ChangeApiVersionV2Response>(request,
             ApigMeta.changeApiVersionV2, hcClient);
+    }
+
+    /**
+     * 校验API分组名称是否存在
+     *
+     * 校验API分组名称是否存在。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckApiGroupsV2Request 请求对象
+     * @return CheckApiGroupsV2Response
+     */
+    public CheckApiGroupsV2Response checkApiGroupsV2(CheckApiGroupsV2Request request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.checkApiGroupsV2);
+    }
+
+    /**
+     * 校验API分组名称是否存在
+     *
+     * 校验API分组名称是否存在。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckApiGroupsV2Request 请求对象
+     * @return SyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>
+     */
+    public SyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response> checkApiGroupsV2Invoker(
+        CheckApiGroupsV2Request request) {
+        return new SyncInvoker<CheckApiGroupsV2Request, CheckApiGroupsV2Response>(request, ApigMeta.checkApiGroupsV2,
+            hcClient);
     }
 
     /**
@@ -4858,7 +4890,7 @@ public class ApigClient {
      *
      * 查询API分组列表。
      * 
-     * 如果是租户操作，则查询该租户下所有的分组；如果是管理员权限帐号操作，则查询的是所有租户的分组。
+     * 如果是租户操作，则查询该租户下所有的分组；如果是管理员权限账号操作，则查询的是所有租户的分组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4874,7 +4906,7 @@ public class ApigClient {
      *
      * 查询API分组列表。
      * 
-     * 如果是租户操作，则查询该租户下所有的分组；如果是管理员权限帐号操作，则查询的是所有租户的分组。
+     * 如果是租户操作，则查询该租户下所有的分组；如果是管理员权限账号操作，则查询的是所有租户的分组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5054,7 +5086,7 @@ public class ApigClient {
     /**
      * 查询API列表
      *
-     * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息。
+     * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息和API请求参数信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5068,7 +5100,7 @@ public class ApigClient {
     /**
      * 查询API列表
      *
-     * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息。
+     * 查看API列表，返回API详细信息、发布信息等，但不能查看到后端服务信息和API请求参数信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

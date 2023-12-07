@@ -69,6 +69,8 @@ import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentStaticRouteInfoRequest;
 import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentStaticRouteInfoResponse;
 import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentWanInfoRequest;
 import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentWanInfoResponse;
+import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentWlanRequest;
+import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentWlanResponse;
 import com.huaweicloud.sdk.ec.v1.model.ShowIegInfoRequest;
 import com.huaweicloud.sdk.ec.v1.model.ShowIegInfoResponse;
 import com.huaweicloud.sdk.ec.v1.model.ShowQuotasInfoRequest;
@@ -95,6 +97,8 @@ import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentStaticRouteConfigRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentStaticRouteConfigResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentWanConfigRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentWanConfigResponse;
+import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentWlanRequest;
+import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentWlanResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateIegRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateIegResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateVrrpConfigRequest;
@@ -1155,6 +1159,66 @@ public class EcClient {
         UpdateEquipmentWanConfigRequest request) {
         return new SyncInvoker<UpdateEquipmentWanConfigRequest, UpdateEquipmentWanConfigResponse>(request,
             EcMeta.updateEquipmentWanConfig, hcClient);
+    }
+
+    /**
+     * 查询智能企业网关设备Wlan配置
+     *
+     * 查询智能企业网关设备Wlan配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEquipmentWlanRequest 请求对象
+     * @return ShowEquipmentWlanResponse
+     */
+    public ShowEquipmentWlanResponse showEquipmentWlan(ShowEquipmentWlanRequest request) {
+        return hcClient.syncInvokeHttp(request, EcMeta.showEquipmentWlan);
+    }
+
+    /**
+     * 查询智能企业网关设备Wlan配置
+     *
+     * 查询智能企业网关设备Wlan配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowEquipmentWlanRequest 请求对象
+     * @return SyncInvoker<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse>
+     */
+    public SyncInvoker<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse> showEquipmentWlanInvoker(
+        ShowEquipmentWlanRequest request) {
+        return new SyncInvoker<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse>(request, EcMeta.showEquipmentWlan,
+            hcClient);
+    }
+
+    /**
+     * 配置智能企业网关设备Wlan
+     *
+     * 配置智能企业网关设备Wlan
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEquipmentWlanRequest 请求对象
+     * @return UpdateEquipmentWlanResponse
+     */
+    public UpdateEquipmentWlanResponse updateEquipmentWlan(UpdateEquipmentWlanRequest request) {
+        return hcClient.syncInvokeHttp(request, EcMeta.updateEquipmentWlan);
+    }
+
+    /**
+     * 配置智能企业网关设备Wlan
+     *
+     * 配置智能企业网关设备Wlan
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateEquipmentWlanRequest 请求对象
+     * @return SyncInvoker<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse>
+     */
+    public SyncInvoker<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse> updateEquipmentWlanInvoker(
+        UpdateEquipmentWlanRequest request) {
+        return new SyncInvoker<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse>(request,
+            EcMeta.updateEquipmentWlan, hcClient);
     }
 
     /**

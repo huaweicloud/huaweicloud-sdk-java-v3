@@ -26,7 +26,7 @@ public class ResponseInfo {
     }
 
     /**
-     * 响应的HTTP状态码
+     * 响应的HTTP状态码。范围为200-599，但不允许为444。
      * @return status
      */
     public Integer getStatus() {

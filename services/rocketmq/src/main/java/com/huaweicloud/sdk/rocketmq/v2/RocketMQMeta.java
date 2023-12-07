@@ -70,6 +70,7 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ListUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListUserResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.Message;
 import com.huaweicloud.sdk.rocketmq.v2.model.MetadataDeleteReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.ModifyConfigReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResendReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetRequest;
@@ -91,6 +92,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqConfigsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqConfigsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqProjectTagsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqProjectTagsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqTagsRequest;
@@ -105,6 +108,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateRocketMqConfigsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateRocketMqConfigsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicResponse;
@@ -1392,6 +1397,31 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> showRocketMqConfigs =
+        genForshowRocketMqConfigs();
+
+    private static HttpRequestDef<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> genForshowRocketMqConfigs() {
+        // basic
+        HttpRequestDef.Builder<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRocketMqConfigsRequest.class, ShowRocketMqConfigsResponse.class)
+                .withName("ShowRocketMqConfigs")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRocketMqConfigsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRocketmqProjectTagsRequest, ShowRocketmqProjectTagsResponse> showRocketmqProjectTags =
         genForshowRocketmqProjectTags();
 
@@ -1529,6 +1559,38 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateInstanceReq.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse> updateRocketMqConfigs =
+        genForupdateRocketMqConfigs();
+
+    private static HttpRequestDef<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse> genForupdateRocketMqConfigs() {
+        // basic
+        HttpRequestDef.Builder<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateRocketMqConfigsRequest.class, UpdateRocketMqConfigsResponse.class)
+            .withName("UpdateRocketMqConfigs")
+            .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRocketMqConfigsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ModifyConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyConfigReq.class),
+            f -> f.withMarshaller(UpdateRocketMqConfigsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

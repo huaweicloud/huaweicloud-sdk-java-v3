@@ -202,6 +202,13 @@ public class EgMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateChannelRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
         builder.<ChannelCreateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -430,6 +437,13 @@ public class EgMeta {
             f -> f.withMarshaller(DeleteChannelRequest::getChannelId, (req, v) -> {
                 req.setChannelId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteChannelRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -533,12 +547,6 @@ public class EgMeta {
 
         // response
 
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteEventStreamingResponse::getXRequestId,
-                DeleteEventStreamingResponse::setXRequestId));
         return builder.build();
     }
 
@@ -678,6 +686,13 @@ public class EgMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListChannelsRequest::getFuzzyName, (req, v) -> {
                 req.setFuzzyName(v);
+            }));
+        builder.<String>withRequestField("eps_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChannelsRequest::getEpsId, (req, v) -> {
+                req.setEpsId(v);
             }));
 
         // response
@@ -923,6 +938,20 @@ public class EgMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEventStreamingRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventStreamingRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("fuzzy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventStreamingRequest::getFuzzyName, (req, v) -> {
+                req.setFuzzyName(v);
             }));
 
         // response
@@ -1559,6 +1588,13 @@ public class EgMeta {
             f -> f.withMarshaller(ShowDetailOfChannelRequest::getChannelId, (req, v) -> {
                 req.setChannelId(v);
             }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailOfChannelRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
 
         // response
 
@@ -1608,6 +1644,13 @@ public class EgMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDetailOfEventRequest::getTraceId, (req, v) -> {
                 req.setTraceId(v);
+            }));
+        builder.<String>withRequestField("channel_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailOfEventRequest::getChannelId, (req, v) -> {
+                req.setChannelId(v);
             }));
 
         // response
@@ -1789,6 +1832,13 @@ public class EgMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateChannelRequest::getChannelId, (req, v) -> {
                 req.setChannelId(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateChannelRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             }));
         builder.<ChannelUpdateReq>withRequestField("body",
             LocationType.Body,

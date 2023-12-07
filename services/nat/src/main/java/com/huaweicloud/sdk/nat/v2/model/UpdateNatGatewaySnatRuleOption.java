@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * UpdateNatGatewaySnatRuleOption
+ * 更新SNAT规则的请求体。
  */
 public class UpdateNatGatewaySnatRuleOption {
 

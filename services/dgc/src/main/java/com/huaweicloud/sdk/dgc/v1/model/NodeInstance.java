@@ -23,22 +23,22 @@ public class NodeInstance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "planTime")
 
-    private Integer planTime;
+    private Long planTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
-    private Integer startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
-    private Integer endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executeTime")
 
-    private Integer executeTime;
+    private Long executeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeType")
@@ -104,7 +104,7 @@ public class NodeInstance {
         this.status = status;
     }
 
-    public NodeInstance withPlanTime(Integer planTime) {
+    public NodeInstance withPlanTime(Long planTime) {
         this.planTime = planTime;
         return this;
     }
@@ -113,15 +113,15 @@ public class NodeInstance {
      * Get planTime
      * @return planTime
      */
-    public Integer getPlanTime() {
+    public Long getPlanTime() {
         return planTime;
     }
 
-    public void setPlanTime(Integer planTime) {
+    public void setPlanTime(Long planTime) {
         this.planTime = planTime;
     }
 
-    public NodeInstance withStartTime(Integer startTime) {
+    public NodeInstance withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -130,15 +130,15 @@ public class NodeInstance {
      * Get startTime
      * @return startTime
      */
-    public Integer getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public NodeInstance withEndTime(Integer endTime) {
+    public NodeInstance withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -147,15 +147,15 @@ public class NodeInstance {
      * Get endTime
      * @return endTime
      */
-    public Integer getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
-    public NodeInstance withExecuteTime(Integer executeTime) {
+    public NodeInstance withExecuteTime(Long executeTime) {
         this.executeTime = executeTime;
         return this;
     }
@@ -164,11 +164,11 @@ public class NodeInstance {
      * Get executeTime
      * @return executeTime
      */
-    public Integer getExecuteTime() {
+    public Long getExecuteTime() {
         return executeTime;
     }
 
-    public void setExecuteTime(Integer executeTime) {
+    public void setExecuteTime(Long executeTime) {
         this.executeTime = executeTime;
     }
 

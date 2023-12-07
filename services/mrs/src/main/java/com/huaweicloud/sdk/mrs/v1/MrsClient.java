@@ -153,6 +153,7 @@ public class MrsClient {
      * @param CreateAndExecuteJobRequest 请求对象
      * @return CreateAndExecuteJobResponse
      */
+    @Deprecated
     public CreateAndExecuteJobResponse createAndExecuteJob(CreateAndExecuteJobRequest request) {
         return hcClient.syncInvokeHttp(request, MrsMeta.createAndExecuteJob);
     }
@@ -169,6 +170,7 @@ public class MrsClient {
      * @param CreateAndExecuteJobRequest 请求对象
      * @return SyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse> createAndExecuteJobInvoker(
         CreateAndExecuteJobRequest request) {
         return new SyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>(request,
@@ -366,6 +368,7 @@ public class MrsClient {
      * @param DeleteJobExecutionRequest 请求对象
      * @return DeleteJobExecutionResponse
      */
+    @Deprecated
     public DeleteJobExecutionResponse deleteJobExecution(DeleteJobExecutionRequest request) {
         return hcClient.syncInvokeHttp(request, MrsMeta.deleteJobExecution);
     }
@@ -381,6 +384,7 @@ public class MrsClient {
      * @param DeleteJobExecutionRequest 请求对象
      * @return SyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse> deleteJobExecutionInvoker(
         DeleteJobExecutionRequest request) {
         return new SyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>(request,
@@ -518,6 +522,7 @@ public class MrsClient {
      * @param ListExecuteJobRequest 请求对象
      * @return ListExecuteJobResponse
      */
+    @Deprecated
     public ListExecuteJobResponse listExecuteJob(ListExecuteJobRequest request) {
         return hcClient.syncInvokeHttp(request, MrsMeta.listExecuteJob);
     }
@@ -533,6 +538,7 @@ public class MrsClient {
      * @param ListExecuteJobRequest 请求对象
      * @return SyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>
      */
+    @Deprecated
     public SyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse> listExecuteJobInvoker(
         ListExecuteJobRequest request) {
         return new SyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>(request, MrsMeta.listExecuteJob,
@@ -608,6 +614,7 @@ public class MrsClient {
      * @param ShowJobExesRequest 请求对象
      * @return ShowJobExesResponse
      */
+    @Deprecated
     public ShowJobExesResponse showJobExes(ShowJobExesRequest request) {
         return hcClient.syncInvokeHttp(request, MrsMeta.showJobExes);
     }
@@ -623,6 +630,7 @@ public class MrsClient {
      * @param ShowJobExesRequest 请求对象
      * @return SyncInvoker<ShowJobExesRequest, ShowJobExesResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowJobExesRequest, ShowJobExesResponse> showJobExesInvoker(ShowJobExesRequest request) {
         return new SyncInvoker<ShowJobExesRequest, ShowJobExesResponse>(request, MrsMeta.showJobExes, hcClient);
     }

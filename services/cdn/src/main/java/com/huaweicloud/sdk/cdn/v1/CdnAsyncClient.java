@@ -538,6 +538,7 @@ public class CdnAsyncClient {
      * @param ShowDomainItemDetailsRequest 请求对象
      * @return CompletableFuture<ShowDomainItemDetailsResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowDomainItemDetailsResponse> showDomainItemDetailsAsync(
         ShowDomainItemDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainItemDetails);
@@ -561,6 +562,7 @@ public class CdnAsyncClient {
      * @param ShowDomainItemDetailsRequest 请求对象
      * @return AsyncInvoker<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse> showDomainItemDetailsAsyncInvoker(
         ShowDomainItemDetailsRequest request) {
         return new AsyncInvoker<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse>(request,
@@ -588,6 +590,7 @@ public class CdnAsyncClient {
      * @param ShowDomainItemLocationDetailsRequest 请求对象
      * @return CompletableFuture<ShowDomainItemLocationDetailsResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowDomainItemLocationDetailsResponse> showDomainItemLocationDetailsAsync(
         ShowDomainItemLocationDetailsRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainItemLocationDetails);
@@ -614,6 +617,7 @@ public class CdnAsyncClient {
      * @param ShowDomainItemLocationDetailsRequest 请求对象
      * @return AsyncInvoker<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse> showDomainItemLocationDetailsAsyncInvoker(
         ShowDomainItemLocationDetailsRequest request) {
         return new AsyncInvoker<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse>(request,
@@ -642,6 +646,7 @@ public class CdnAsyncClient {
      * @param ShowDomainLocationStatsRequest 请求对象
      * @return CompletableFuture<ShowDomainLocationStatsResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowDomainLocationStatsResponse> showDomainLocationStatsAsync(
         ShowDomainLocationStatsRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainLocationStats);
@@ -669,6 +674,7 @@ public class CdnAsyncClient {
      * @param ShowDomainLocationStatsRequest 请求对象
      * @return AsyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> showDomainLocationStatsAsyncInvoker(
         ShowDomainLocationStatsRequest request) {
         return new AsyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse>(request,
@@ -697,6 +703,7 @@ public class CdnAsyncClient {
      * @param ShowDomainStatsRequest 请求对象
      * @return CompletableFuture<ShowDomainStatsResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowDomainStatsResponse> showDomainStatsAsync(ShowDomainStatsRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showDomainStats);
     }
@@ -723,6 +730,7 @@ public class CdnAsyncClient {
      * @param ShowDomainStatsRequest 请求对象
      * @return AsyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse> showDomainStatsAsyncInvoker(
         ShowDomainStatsRequest request) {
         return new AsyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse>(request, CdnMeta.showDomainStats,
@@ -1042,6 +1050,7 @@ public class CdnAsyncClient {
      * @param ShowTopUrlRequest 请求对象
      * @return CompletableFuture<ShowTopUrlResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowTopUrlResponse> showTopUrlAsync(ShowTopUrlRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showTopUrl);
     }
@@ -1069,6 +1078,7 @@ public class CdnAsyncClient {
      * @param ShowTopUrlRequest 请求对象
      * @return AsyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse> showTopUrlAsyncInvoker(ShowTopUrlRequest request) {
         return new AsyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>(request, CdnMeta.showTopUrl, hcClient);
     }

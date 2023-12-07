@@ -868,6 +868,7 @@ public class DevStarAsyncClient {
      * @param ListPublishedTemplatesRequest 请求对象
      * @return CompletableFuture<ListPublishedTemplatesResponse>
      */
+    @Deprecated
     public CompletableFuture<ListPublishedTemplatesResponse> listPublishedTemplatesAsync(
         ListPublishedTemplatesRequest request) {
         return hcClient.asyncInvokeHttp(request, DevStarMeta.listPublishedTemplates);
@@ -883,6 +884,7 @@ public class DevStarAsyncClient {
      * @param ListPublishedTemplatesRequest 请求对象
      * @return AsyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse> listPublishedTemplatesAsyncInvoker(
         ListPublishedTemplatesRequest request) {
         return new AsyncInvoker<ListPublishedTemplatesRequest, ListPublishedTemplatesResponse>(request,
@@ -960,6 +962,7 @@ public class DevStarAsyncClient {
      * @param ListTemplatesV2Request 请求对象
      * @return CompletableFuture<ListTemplatesV2Response>
      */
+    @Deprecated
     public CompletableFuture<ListTemplatesV2Response> listTemplatesV2Async(ListTemplatesV2Request request) {
         return hcClient.asyncInvokeHttp(request, DevStarMeta.listTemplatesV2);
     }
@@ -974,6 +977,7 @@ public class DevStarAsyncClient {
      * @param ListTemplatesV2Request 请求对象
      * @return AsyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>
      */
+    @Deprecated
     public AsyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response> listTemplatesV2AsyncInvoker(
         ListTemplatesV2Request request) {
         return new AsyncInvoker<ListTemplatesV2Request, ListTemplatesV2Response>(request, DevStarMeta.listTemplatesV2,

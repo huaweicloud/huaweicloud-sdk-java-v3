@@ -34,6 +34,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanListRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanListResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlansRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlansResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowProjectDataDashboardRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowProjectDataDashboardResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportRequest;
@@ -506,6 +508,36 @@ public class CloudtestClient {
      */
     public SyncInvoker<ShowPlansRequest, ShowPlansResponse> showPlansInvoker(ShowPlansRequest request) {
         return new SyncInvoker<ShowPlansRequest, ShowPlansResponse>(request, CloudtestMeta.showPlans, hcClient);
+    }
+
+    /**
+     * 查询质量报告看板统计信息
+     *
+     * 查询质量报告看板统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectDataDashboardRequest 请求对象
+     * @return ShowProjectDataDashboardResponse
+     */
+    public ShowProjectDataDashboardResponse showProjectDataDashboard(ShowProjectDataDashboardRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showProjectDataDashboard);
+    }
+
+    /**
+     * 查询质量报告看板统计信息
+     *
+     * 查询质量报告看板统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectDataDashboardRequest 请求对象
+     * @return SyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse>
+     */
+    public SyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse> showProjectDataDashboardInvoker(
+        ShowProjectDataDashboardRequest request) {
+        return new SyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse>(request,
+            CloudtestMeta.showProjectDataDashboard, hcClient);
     }
 
     /**

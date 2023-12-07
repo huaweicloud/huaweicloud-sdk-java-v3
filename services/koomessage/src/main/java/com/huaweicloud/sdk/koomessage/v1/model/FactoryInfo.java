@@ -31,7 +31,7 @@ public class FactoryInfo {
     }
 
     /**
-     * 厂商类型。  - HUAWEI：表示华为厂商 - XIAOMI：表示小米厂商 - OPPO：表示OPPO厂商 - VIVO：表示VIVO厂商 - MEIZU：表示魅族厂商 
+     * 厂商类型。  - HUAWEI：表示华为厂商 - XIAOMI：表示小米厂商 - OPPO：表示OPPO厂商 - VIVO：表示VIVO厂商 - MEIZU：表示魅族厂商 - SAMSUNG：表示三星厂商 
      * @return factoryType
      */
     public String getFactoryType() {

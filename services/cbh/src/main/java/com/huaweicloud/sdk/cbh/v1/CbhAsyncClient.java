@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ListQuotaStatusRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ListQuotaStatusResponse;
+import com.huaweicloud.sdk.cbh.v1.model.LoginCbhRequest;
+import com.huaweicloud.sdk.cbh.v1.model.LoginCbhResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ResetLoginMethodRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ResetLoginMethodResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ResetPasswordRequest;
@@ -562,6 +564,34 @@ public class CbhAsyncClient {
         UpgradeCbhInstanceRequest request) {
         return new AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>(request,
             CbhMeta.upgradeCbhInstance, hcClient);
+    }
+
+    /**
+     * 获取IAM登录实例链接
+     *
+     * 获取当前IAM用户登录堡垒机的免登录链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param LoginCbhRequest 请求对象
+     * @return CompletableFuture<LoginCbhResponse>
+     */
+    public CompletableFuture<LoginCbhResponse> loginCbhAsync(LoginCbhRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbhMeta.loginCbh);
+    }
+
+    /**
+     * 获取IAM登录实例链接
+     *
+     * 获取当前IAM用户登录堡垒机的免登录链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param LoginCbhRequest 请求对象
+     * @return AsyncInvoker<LoginCbhRequest, LoginCbhResponse>
+     */
+    public AsyncInvoker<LoginCbhRequest, LoginCbhResponse> loginCbhAsyncInvoker(LoginCbhRequest request) {
+        return new AsyncInvoker<LoginCbhRequest, LoginCbhResponse>(request, CbhMeta.loginCbh, hcClient);
     }
 
 }

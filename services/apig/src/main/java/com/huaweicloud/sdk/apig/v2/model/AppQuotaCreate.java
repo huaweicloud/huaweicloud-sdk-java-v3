@@ -26,7 +26,7 @@ public class AppQuotaCreate {
     private Integer callLimits;
 
     /**
-     * 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
+     * 限定时间单位：SECOND:秒、MINUTE:分、HOUR:时、DAY:天
      */
     public static final class TimeUnitEnum {
 
@@ -167,7 +167,7 @@ public class AppQuotaCreate {
     }
 
     /**
-     * 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
+     * 限定时间单位：SECOND:秒、MINUTE:分、HOUR:时、DAY:天
      * @return timeUnit
      */
     public TimeUnitEnum getTimeUnit() {

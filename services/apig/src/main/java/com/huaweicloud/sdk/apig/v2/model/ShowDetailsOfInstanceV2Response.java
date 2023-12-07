@@ -1214,7 +1214,7 @@ public class ShowDetailsOfInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 企业项目ID，企业帐号必填
+     * 企业项目ID，企业账号必填
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

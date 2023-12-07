@@ -21,7 +21,7 @@ public class ShowTemplateVideoThumbnailRequest {
     }
 
     /**
-     * 目标资源ID
+     * 目标资源ID。
      * @return aimResourceId
      */
     public String getAimResourceId() {

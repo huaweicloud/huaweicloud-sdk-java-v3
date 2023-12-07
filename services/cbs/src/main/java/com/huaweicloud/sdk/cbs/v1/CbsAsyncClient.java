@@ -211,6 +211,7 @@ public class CbsAsyncClient {
      * @param CreateSessionRequest 请求对象
      * @return CompletableFuture<CreateSessionResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateSessionResponse> createSessionAsync(CreateSessionRequest request) {
         return hcClient.asyncInvokeHttp(request, CbsMeta.createSession);
     }
@@ -225,6 +226,7 @@ public class CbsAsyncClient {
      * @param CreateSessionRequest 请求对象
      * @return AsyncInvoker<CreateSessionRequest, CreateSessionResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateSessionRequest, CreateSessionResponse> createSessionAsyncInvoker(
         CreateSessionRequest request) {
         return new AsyncInvoker<CreateSessionRequest, CreateSessionResponse>(request, CbsMeta.createSession, hcClient);
@@ -240,6 +242,7 @@ public class CbsAsyncClient {
      * @param DeleteSessionRequest 请求对象
      * @return CompletableFuture<DeleteSessionResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteSessionResponse> deleteSessionAsync(DeleteSessionRequest request) {
         return hcClient.asyncInvokeHttp(request, CbsMeta.deleteSession);
     }
@@ -254,6 +257,7 @@ public class CbsAsyncClient {
      * @param DeleteSessionRequest 请求对象
      * @return AsyncInvoker<DeleteSessionRequest, DeleteSessionResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteSessionRequest, DeleteSessionResponse> deleteSessionAsyncInvoker(
         DeleteSessionRequest request) {
         return new AsyncInvoker<DeleteSessionRequest, DeleteSessionResponse>(request, CbsMeta.deleteSession, hcClient);
@@ -654,6 +658,7 @@ public class CbsAsyncClient {
      * @param ExecuteSessionRequest 请求对象
      * @return CompletableFuture<ExecuteSessionResponse>
      */
+    @Deprecated
     public CompletableFuture<ExecuteSessionResponse> executeSessionAsync(ExecuteSessionRequest request) {
         return hcClient.asyncInvokeHttp(request, CbsMeta.executeSession);
     }
@@ -668,6 +673,7 @@ public class CbsAsyncClient {
      * @param ExecuteSessionRequest 请求对象
      * @return AsyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>
      */
+    @Deprecated
     public AsyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse> executeSessionAsyncInvoker(
         ExecuteSessionRequest request) {
         return new AsyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>(request, CbsMeta.executeSession,
@@ -930,6 +936,7 @@ public class CbsAsyncClient {
      * @param PostRequestsRequest 请求对象
      * @return CompletableFuture<PostRequestsResponse>
      */
+    @Deprecated
     public CompletableFuture<PostRequestsResponse> postRequestsAsync(PostRequestsRequest request) {
         return hcClient.asyncInvokeHttp(request, CbsMeta.postRequests);
     }
@@ -947,6 +954,7 @@ public class CbsAsyncClient {
      * @param PostRequestsRequest 请求对象
      * @return AsyncInvoker<PostRequestsRequest, PostRequestsResponse>
      */
+    @Deprecated
     public AsyncInvoker<PostRequestsRequest, PostRequestsResponse> postRequestsAsyncInvoker(
         PostRequestsRequest request) {
         return new AsyncInvoker<PostRequestsRequest, PostRequestsResponse>(request, CbsMeta.postRequests, hcClient);

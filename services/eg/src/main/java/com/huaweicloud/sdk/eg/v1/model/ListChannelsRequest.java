@@ -121,6 +121,11 @@ public class ListChannelsRequest {
 
     private String fuzzyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eps_id")
+
+    private String epsId;
+
     public ListChannelsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -227,6 +232,23 @@ public class ListChannelsRequest {
         this.fuzzyName = fuzzyName;
     }
 
+    public ListChannelsRequest withEpsId(String epsId) {
+        this.epsId = epsId;
+        return this;
+    }
+
+    /**
+     * 指定查询的企业项目id，精确匹配
+     * @return epsId
+     */
+    public String getEpsId() {
+        return epsId;
+    }
+
+    public void setEpsId(String epsId) {
+        this.epsId = epsId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -238,12 +260,13 @@ public class ListChannelsRequest {
         ListChannelsRequest that = (ListChannelsRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.sort, that.sort) && Objects.equals(this.providerType, that.providerType)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.fuzzyName, that.fuzzyName);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.fuzzyName, that.fuzzyName)
+            && Objects.equals(this.epsId, that.epsId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, sort, providerType, name, fuzzyName);
+        return Objects.hash(offset, limit, sort, providerType, name, fuzzyName, epsId);
     }
 
     @Override
@@ -256,6 +279,7 @@ public class ListChannelsRequest {
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
+        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

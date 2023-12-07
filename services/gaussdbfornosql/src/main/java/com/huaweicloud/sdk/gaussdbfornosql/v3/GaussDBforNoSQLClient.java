@@ -115,6 +115,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPublicIpRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPublicIpResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyVolumeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyVolumeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.OfflineNodesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.OfflineNodesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.PauseResumeDataSynchronizationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.PauseResumeDataSynchronizationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResetDbUserPasswordRequest;
@@ -1863,6 +1865,35 @@ public class GaussDBforNoSQLClient {
      */
     public SyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse> modifyVolumeInvoker(ModifyVolumeRequest request) {
         return new SyncInvoker<ModifyVolumeRequest, ModifyVolumeResponse>(request, GaussDBforNoSQLMeta.modifyVolume,
+            hcClient);
+    }
+
+    /**
+     * 支持节点的开关机
+     *
+     * 当底层故障导致节点无法正常工作时，可以对该节点执行关机操作，关机后会由其他节点接管业务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param OfflineNodesRequest 请求对象
+     * @return OfflineNodesResponse
+     */
+    public OfflineNodesResponse offlineNodes(OfflineNodesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.offlineNodes);
+    }
+
+    /**
+     * 支持节点的开关机
+     *
+     * 当底层故障导致节点无法正常工作时，可以对该节点执行关机操作，关机后会由其他节点接管业务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param OfflineNodesRequest 请求对象
+     * @return SyncInvoker<OfflineNodesRequest, OfflineNodesResponse>
+     */
+    public SyncInvoker<OfflineNodesRequest, OfflineNodesResponse> offlineNodesInvoker(OfflineNodesRequest request) {
+        return new SyncInvoker<OfflineNodesRequest, OfflineNodesResponse>(request, GaussDBforNoSQLMeta.offlineNodes,
             hcClient);
     }
 

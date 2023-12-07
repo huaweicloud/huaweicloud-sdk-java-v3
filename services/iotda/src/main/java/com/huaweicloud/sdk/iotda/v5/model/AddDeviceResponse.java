@@ -72,7 +72,7 @@ public class AddDeviceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_info")
 
-    private AuthInfo authInfo;
+    private AuthInfoRes authInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
@@ -301,14 +301,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.deviceSdkVersion = deviceSdkVersion;
     }
 
-    public AddDeviceResponse withAuthInfo(AuthInfo authInfo) {
+    public AddDeviceResponse withAuthInfo(AuthInfoRes authInfo) {
         this.authInfo = authInfo;
         return this;
     }
 
-    public AddDeviceResponse withAuthInfo(Consumer<AuthInfo> authInfoSetter) {
+    public AddDeviceResponse withAuthInfo(Consumer<AuthInfoRes> authInfoSetter) {
         if (this.authInfo == null) {
-            this.authInfo = new AuthInfo();
+            this.authInfo = new AuthInfoRes();
             authInfoSetter.accept(this.authInfo);
         }
 
@@ -319,11 +319,11 @@ public class AddDeviceResponse extends SdkResponse {
      * Get authInfo
      * @return authInfo
      */
-    public AuthInfo getAuthInfo() {
+    public AuthInfoRes getAuthInfo() {
         return authInfo;
     }
 
-    public void setAuthInfo(AuthInfo authInfo) {
+    public void setAuthInfo(AuthInfoRes authInfo) {
         this.authInfo = authInfo;
     }
 

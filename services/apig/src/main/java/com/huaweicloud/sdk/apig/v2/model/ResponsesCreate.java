@@ -29,7 +29,7 @@ public class ResponsesCreate {
     }
 
     /**
-     * 响应名称
+     * 响应名称。支持英文、数字、下划线、中划线，1-64个字符。
      * @return name
      */
     public String getName() {

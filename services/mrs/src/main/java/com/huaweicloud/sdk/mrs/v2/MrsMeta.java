@@ -9,11 +9,14 @@ import com.huaweicloud.sdk.mrs.v2.model.AddComponentRequest;
 import com.huaweicloud.sdk.mrs.v2.model.AddComponentResponse;
 import com.huaweicloud.sdk.mrs.v2.model.AddComponentsReq;
 import com.huaweicloud.sdk.mrs.v2.model.AgencyMappingArray;
+import com.huaweicloud.sdk.mrs.v2.model.AutoScalingPolicyDeleteReq;
 import com.huaweicloud.sdk.mrs.v2.model.AutoScalingPolicyV2;
 import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsRequest;
 import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterReqV2;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterResponse;
@@ -22,6 +25,8 @@ import com.huaweicloud.sdk.mrs.v2.model.CreateDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobResponse;
 import com.huaweicloud.sdk.mrs.v2.model.DataConnectorReq;
+import com.huaweicloud.sdk.mrs.v2.model.DeleteAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.mrs.v2.model.DeleteAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlRequest;
@@ -60,6 +65,8 @@ import com.huaweicloud.sdk.mrs.v2.model.StopJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterReq;
@@ -95,6 +102,38 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobBatchDelete.class),
             f -> f.withMarshaller(BatchDeleteJobsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyResponse> createAutoScalingPolicy =
+        genForcreateAutoScalingPolicy();
+
+    private static HttpRequestDef<CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyResponse> genForcreateAutoScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAutoScalingPolicyRequest.class, CreateAutoScalingPolicyResponse.class)
+            .withName("CreateAutoScalingPolicy")
+            .withUri("/v2/{project_id}/autoscaling-policy/{cluster_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAutoScalingPolicyRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<AutoScalingPolicyV2>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AutoScalingPolicyV2.class),
+            f -> f.withMarshaller(CreateAutoScalingPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -152,6 +191,38 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobExecution.class),
             f -> f.withMarshaller(CreateExecuteJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAutoScalingPolicyRequest, DeleteAutoScalingPolicyResponse> deleteAutoScalingPolicy =
+        genFordeleteAutoScalingPolicy();
+
+    private static HttpRequestDef<DeleteAutoScalingPolicyRequest, DeleteAutoScalingPolicyResponse> genFordeleteAutoScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteAutoScalingPolicyRequest, DeleteAutoScalingPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAutoScalingPolicyRequest.class, DeleteAutoScalingPolicyResponse.class)
+            .withName("DeleteAutoScalingPolicy")
+            .withUri("/v2/{project_id}/autoscaling-policy/{cluster_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutoScalingPolicyRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<AutoScalingPolicyDeleteReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AutoScalingPolicyDeleteReq.class),
+            f -> f.withMarshaller(DeleteAutoScalingPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -469,6 +540,38 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AgencyMappingArray.class),
             f -> f.withMarshaller(UpdateAgencyMappingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse> updateAutoScalingPolicy =
+        genForupdateAutoScalingPolicy();
+
+    private static HttpRequestDef<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse> genForupdateAutoScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAutoScalingPolicyRequest.class, UpdateAutoScalingPolicyResponse.class)
+            .withName("UpdateAutoScalingPolicy")
+            .withUri("/v2/{project_id}/autoscaling-policy/{cluster_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutoScalingPolicyRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<AutoScalingPolicyV2>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AutoScalingPolicyV2.class),
+            f -> f.withMarshaller(UpdateAutoScalingPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

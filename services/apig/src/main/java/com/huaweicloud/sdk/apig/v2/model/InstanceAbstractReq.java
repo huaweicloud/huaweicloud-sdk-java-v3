@@ -31,7 +31,7 @@ public class InstanceAbstractReq {
     }
 
     /**
-     * 实例描述
+     * 实例描述。支持除>和<以外的字符，长度为0~255。
      * @return description
      */
     public String getDescription() {

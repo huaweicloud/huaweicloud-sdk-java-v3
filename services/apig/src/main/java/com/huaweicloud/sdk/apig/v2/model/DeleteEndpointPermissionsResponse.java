@@ -46,7 +46,7 @@ public class DeleteEndpointPermissionsResponse extends SdkResponse {
     }
 
     /**
-     * 权限列表
+     * 白名单记录列表。每个白名单记录的格式为iam:domain::授权账号ID。  其中，授权账号ID是长度为32的字符串，只包含英文字母（a-f）或数字；也可为*，表示允许全部用户连接。
      * @return permissions
      */
     public List<String> getPermissions() {

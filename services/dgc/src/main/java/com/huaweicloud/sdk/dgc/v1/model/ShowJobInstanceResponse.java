@@ -22,22 +22,22 @@ public class ShowJobInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "planTime")
 
-    private Integer planTime;
+    private Long planTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
-    private Integer startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
-    private Integer endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "executeTime")
 
-    private Integer executeTime;
+    private Long executeTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instancesId")
@@ -71,7 +71,7 @@ public class ShowJobInstanceResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ShowJobInstanceResponse withPlanTime(Integer planTime) {
+    public ShowJobInstanceResponse withPlanTime(Long planTime) {
         this.planTime = planTime;
         return this;
     }
@@ -80,15 +80,15 @@ public class ShowJobInstanceResponse extends SdkResponse {
      * Get planTime
      * @return planTime
      */
-    public Integer getPlanTime() {
+    public Long getPlanTime() {
         return planTime;
     }
 
-    public void setPlanTime(Integer planTime) {
+    public void setPlanTime(Long planTime) {
         this.planTime = planTime;
     }
 
-    public ShowJobInstanceResponse withStartTime(Integer startTime) {
+    public ShowJobInstanceResponse withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -97,15 +97,15 @@ public class ShowJobInstanceResponse extends SdkResponse {
      * Get startTime
      * @return startTime
      */
-    public Integer getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public ShowJobInstanceResponse withEndTime(Integer endTime) {
+    public ShowJobInstanceResponse withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -114,15 +114,15 @@ public class ShowJobInstanceResponse extends SdkResponse {
      * Get endTime
      * @return endTime
      */
-    public Integer getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
-    public ShowJobInstanceResponse withExecuteTime(Integer executeTime) {
+    public ShowJobInstanceResponse withExecuteTime(Long executeTime) {
         this.executeTime = executeTime;
         return this;
     }
@@ -131,11 +131,11 @@ public class ShowJobInstanceResponse extends SdkResponse {
      * Get executeTime
      * @return executeTime
      */
-    public Integer getExecuteTime() {
+    public Long getExecuteTime() {
         return executeTime;
     }
 
-    public void setExecuteTime(Integer executeTime) {
+    public void setExecuteTime(Long executeTime) {
         this.executeTime = executeTime;
     }
 

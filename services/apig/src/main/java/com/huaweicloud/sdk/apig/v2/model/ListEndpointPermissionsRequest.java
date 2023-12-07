@@ -89,7 +89,7 @@ public class ListEndpointPermissionsRequest {
     }
 
     /**
-     * 权限帐号ID，格式为“iam:domain::domain_id”，支持模糊搜索
+     * 权限账号ID，格式为“iam:domain::domain_id”，支持模糊搜索
      * @return permission
      */
     public String getPermission() {

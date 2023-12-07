@@ -219,7 +219,7 @@ public class ListPubMetricsRequest {
     }
 
     /**
-     * 指标数据统计周期（单位minute）
+     * 指标数据统计周期，单位minute。
      * @return period
      */
     public Integer getPeriod() {

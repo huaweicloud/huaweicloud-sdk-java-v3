@@ -65,6 +65,7 @@ public class CodeArtsArtifactAsyncClient {
      * @param ShowReleaseProjectFilesRequest 请求对象
      * @return CompletableFuture<ShowReleaseProjectFilesResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowReleaseProjectFilesResponse> showReleaseProjectFilesAsync(
         ShowReleaseProjectFilesRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showReleaseProjectFiles);
@@ -80,6 +81,7 @@ public class CodeArtsArtifactAsyncClient {
      * @param ShowReleaseProjectFilesRequest 请求对象
      * @return AsyncInvoker<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse> showReleaseProjectFilesAsyncInvoker(
         ShowReleaseProjectFilesRequest request) {
         return new AsyncInvoker<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse>(request,

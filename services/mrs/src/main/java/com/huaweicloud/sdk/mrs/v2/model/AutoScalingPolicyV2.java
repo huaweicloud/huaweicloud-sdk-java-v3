@@ -24,7 +24,7 @@ public class AutoScalingPolicyV2 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_scaling_policy")
 
-    private AutoScalingPolicy autoScalingPolicy;
+    private AutoScalingPolicyInfo autoScalingPolicy;
 
     public AutoScalingPolicyV2 withNodeGroupName(String nodeGroupName) {
         this.nodeGroupName = nodeGroupName;
@@ -32,7 +32,7 @@ public class AutoScalingPolicyV2 {
     }
 
     /**
-     * 节点组名称。
+     * 节点组名称。必填参数。如果resource_pool_name为default，则创建节点组维度的弹性伸缩策略。如果resource_pool_name不为default，则在该节点组下创建对应资源池维度的策略。
      * @return nodeGroupName
      */
     public String getNodeGroupName() {
@@ -49,7 +49,7 @@ public class AutoScalingPolicyV2 {
     }
 
     /**
-     * 资源计划名称
+     * 资源池名称。必填参数。当集群版本不支持按指定资源池进行弹性伸缩时，需要填写为default资源池。不为default时删除指定资源池维度的弹性伸缩策略。
      * @return resourcePoolName
      */
     public String getResourcePoolName() {
@@ -60,14 +60,14 @@ public class AutoScalingPolicyV2 {
         this.resourcePoolName = resourcePoolName;
     }
 
-    public AutoScalingPolicyV2 withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
+    public AutoScalingPolicyV2 withAutoScalingPolicy(AutoScalingPolicyInfo autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
         return this;
     }
 
-    public AutoScalingPolicyV2 withAutoScalingPolicy(Consumer<AutoScalingPolicy> autoScalingPolicySetter) {
+    public AutoScalingPolicyV2 withAutoScalingPolicy(Consumer<AutoScalingPolicyInfo> autoScalingPolicySetter) {
         if (this.autoScalingPolicy == null) {
-            this.autoScalingPolicy = new AutoScalingPolicy();
+            this.autoScalingPolicy = new AutoScalingPolicyInfo();
             autoScalingPolicySetter.accept(this.autoScalingPolicy);
         }
 
@@ -78,11 +78,11 @@ public class AutoScalingPolicyV2 {
      * Get autoScalingPolicy
      * @return autoScalingPolicy
      */
-    public AutoScalingPolicy getAutoScalingPolicy() {
+    public AutoScalingPolicyInfo getAutoScalingPolicy() {
         return autoScalingPolicy;
     }
 
-    public void setAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
+    public void setAutoScalingPolicy(AutoScalingPolicyInfo autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
     }
 

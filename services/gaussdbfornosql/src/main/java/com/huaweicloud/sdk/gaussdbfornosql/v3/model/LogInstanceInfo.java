@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -53,80 +48,10 @@ public class LogInstanceInfo {
 
     private String enterpriseProjectId;
 
-    /**
-     * 日志类型。slow_log表示慢日志，audit_log表示审计日志。
-     */
-    public static final class SupportedLogTypesEnum {
-
-        /**
-         * Enum SLOW_LOG for value: "slow_log"
-         */
-        public static final SupportedLogTypesEnum SLOW_LOG = new SupportedLogTypesEnum("slow_log");
-
-        /**
-         * Enum AUDIT_LOG for value: "audit_log"
-         */
-        public static final SupportedLogTypesEnum AUDIT_LOG = new SupportedLogTypesEnum("audit_log");
-
-        private static final Map<String, SupportedLogTypesEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, SupportedLogTypesEnum> createStaticFields() {
-            Map<String, SupportedLogTypesEnum> map = new HashMap<>();
-            map.put("slow_log", SLOW_LOG);
-            map.put("audit_log", AUDIT_LOG);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        SupportedLogTypesEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SupportedLogTypesEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportedLogTypesEnum(value));
-        }
-
-        public static SupportedLogTypesEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SupportedLogTypesEnum) {
-                return this.value.equals(((SupportedLogTypesEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supported_log_types")
 
-    private SupportedLogTypesEnum supportedLogTypes;
+    private List<String> supportedLogTypes = null;
 
     public LogInstanceInfo withId(String id) {
         this.id = id;
@@ -272,8 +197,24 @@ public class LogInstanceInfo {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public LogInstanceInfo withSupportedLogTypes(SupportedLogTypesEnum supportedLogTypes) {
+    public LogInstanceInfo withSupportedLogTypes(List<String> supportedLogTypes) {
         this.supportedLogTypes = supportedLogTypes;
+        return this;
+    }
+
+    public LogInstanceInfo addSupportedLogTypesItem(String supportedLogTypesItem) {
+        if (this.supportedLogTypes == null) {
+            this.supportedLogTypes = new ArrayList<>();
+        }
+        this.supportedLogTypes.add(supportedLogTypesItem);
+        return this;
+    }
+
+    public LogInstanceInfo withSupportedLogTypes(Consumer<List<String>> supportedLogTypesSetter) {
+        if (this.supportedLogTypes == null) {
+            this.supportedLogTypes = new ArrayList<>();
+        }
+        supportedLogTypesSetter.accept(this.supportedLogTypes);
         return this;
     }
 
@@ -281,11 +222,11 @@ public class LogInstanceInfo {
      * 日志类型。slow_log表示慢日志，audit_log表示审计日志。
      * @return supportedLogTypes
      */
-    public SupportedLogTypesEnum getSupportedLogTypes() {
+    public List<String> getSupportedLogTypes() {
         return supportedLogTypes;
     }
 
-    public void setSupportedLogTypes(SupportedLogTypesEnum supportedLogTypes) {
+    public void setSupportedLogTypes(List<String> supportedLogTypes) {
         this.supportedLogTypes = supportedLogTypes;
     }
 

@@ -9,12 +9,16 @@ import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsRequest;
 import com.huaweicloud.sdk.mrs.v2.model.BatchDeleteJobsResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSqlResponse;
+import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateExecuteJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.DeleteAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.mrs.v2.model.DeleteAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.DeleteDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlRequest;
@@ -47,6 +51,8 @@ import com.huaweicloud.sdk.mrs.v2.model.StopJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorRequest;
@@ -93,6 +99,36 @@ public class MrsClient {
         BatchDeleteJobsRequest request) {
         return new SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>(request, MrsMeta.batchDeleteJobs,
             hcClient);
+    }
+
+    /**
+     * 创建弹性伸缩策略
+     *
+     * 创建弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAutoScalingPolicyRequest 请求对象
+     * @return CreateAutoScalingPolicyResponse
+     */
+    public CreateAutoScalingPolicyResponse createAutoScalingPolicy(CreateAutoScalingPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.createAutoScalingPolicy);
+    }
+
+    /**
+     * 创建弹性伸缩策略
+     *
+     * 创建弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAutoScalingPolicyRequest 请求对象
+     * @return SyncInvoker<CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyResponse>
+     */
+    public SyncInvoker<CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyResponse> createAutoScalingPolicyInvoker(
+        CreateAutoScalingPolicyRequest request) {
+        return new SyncInvoker<CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyResponse>(request,
+            MrsMeta.createAutoScalingPolicy, hcClient);
     }
 
     /**
@@ -171,6 +207,36 @@ public class MrsClient {
         CreateExecuteJobRequest request) {
         return new SyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse>(request, MrsMeta.createExecuteJob,
             hcClient);
+    }
+
+    /**
+     * 删除弹性伸缩策略
+     *
+     * 删除弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAutoScalingPolicyRequest 请求对象
+     * @return DeleteAutoScalingPolicyResponse
+     */
+    public DeleteAutoScalingPolicyResponse deleteAutoScalingPolicy(DeleteAutoScalingPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.deleteAutoScalingPolicy);
+    }
+
+    /**
+     * 删除弹性伸缩策略
+     *
+     * 删除弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteAutoScalingPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteAutoScalingPolicyRequest, DeleteAutoScalingPolicyResponse>
+     */
+    public SyncInvoker<DeleteAutoScalingPolicyRequest, DeleteAutoScalingPolicyResponse> deleteAutoScalingPolicyInvoker(
+        DeleteAutoScalingPolicyRequest request) {
+        return new SyncInvoker<DeleteAutoScalingPolicyRequest, DeleteAutoScalingPolicyResponse>(request,
+            MrsMeta.deleteAutoScalingPolicy, hcClient);
     }
 
     /**
@@ -415,6 +481,36 @@ public class MrsClient {
         UpdateAgencyMappingRequest request) {
         return new SyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse>(request,
             MrsMeta.updateAgencyMapping, hcClient);
+    }
+
+    /**
+     * 更新弹性伸缩策略
+     *
+     * 更新弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAutoScalingPolicyRequest 请求对象
+     * @return UpdateAutoScalingPolicyResponse
+     */
+    public UpdateAutoScalingPolicyResponse updateAutoScalingPolicy(UpdateAutoScalingPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, MrsMeta.updateAutoScalingPolicy);
+    }
+
+    /**
+     * 更新弹性伸缩策略
+     *
+     * 更新弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateAutoScalingPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse>
+     */
+    public SyncInvoker<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse> updateAutoScalingPolicyInvoker(
+        UpdateAutoScalingPolicyRequest request) {
+        return new SyncInvoker<UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse>(request,
+            MrsMeta.updateAutoScalingPolicy, hcClient);
     }
 
     /**

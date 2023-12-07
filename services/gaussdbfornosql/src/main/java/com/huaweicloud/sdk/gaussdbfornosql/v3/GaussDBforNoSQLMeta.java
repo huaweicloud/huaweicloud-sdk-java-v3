@@ -142,6 +142,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyVolumeRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyVolumeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.NoSqlCreateBackupRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.NoSqlModiflyEpsQuotasRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.OfflineNodesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.OfflineNodesRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.OfflineNodesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.PauseResumeDataSynchronizationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.PauseResumeDataSynchronizationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.PrecheckDisasterRecoveryOperationBody;
@@ -2119,6 +2122,44 @@ public class GaussDBforNoSQLMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<OfflineNodesRequest, OfflineNodesResponse> offlineNodes = genForofflineNodes();
+
+    private static HttpRequestDef<OfflineNodesRequest, OfflineNodesResponse> genForofflineNodes() {
+        // basic
+        HttpRequestDef.Builder<OfflineNodesRequest, OfflineNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, OfflineNodesRequest.class, OfflineNodesResponse.class)
+                .withName("OfflineNodes")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(OfflineNodesRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<OfflineNodesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OfflineNodesRequestBody.class),
+            f -> f.withMarshaller(OfflineNodesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(OfflineNodesResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

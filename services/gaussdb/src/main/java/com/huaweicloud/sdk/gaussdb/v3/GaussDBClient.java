@@ -91,8 +91,12 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlDedicatedResourcesRequ
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlDedicatedResourcesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstanceDetailInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstanceDetailInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstanceDetailInfoUnifyStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstanceDetailInfoUnifyStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesUnifyStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesUnifyStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListImmediateJobsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListImmediateJobsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListInstanceConfigurationsRequest;
@@ -153,6 +157,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlIncrementalBackupListR
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlIncrementalBackupListResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlInstanceInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlInstanceInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlInstanceInfoUnifyStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlInstanceInfoUnifyStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlJobInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlJobInfoResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlProjectQuotasRequest;
@@ -185,6 +191,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateAuditLogRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateAuditLogResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateAutoScalingPolicyRequest;
@@ -1554,6 +1562,37 @@ public class GaussDBClient {
     }
 
     /**
+     * 批量查询实例详情
+     *
+     * 批量查询实例详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlInstanceDetailInfoUnifyStatusRequest 请求对象
+     * @return ListGaussMySqlInstanceDetailInfoUnifyStatusResponse
+     */
+    public ListGaussMySqlInstanceDetailInfoUnifyStatusResponse listGaussMySqlInstanceDetailInfoUnifyStatus(
+        ListGaussMySqlInstanceDetailInfoUnifyStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlInstanceDetailInfoUnifyStatus);
+    }
+
+    /**
+     * 批量查询实例详情
+     *
+     * 批量查询实例详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlInstanceDetailInfoUnifyStatusRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse>
+     */
+    public SyncInvoker<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> listGaussMySqlInstanceDetailInfoUnifyStatusInvoker(
+        ListGaussMySqlInstanceDetailInfoUnifyStatusRequest request) {
+        return new SyncInvoker<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse>(
+            request, GaussDBMeta.listGaussMySqlInstanceDetailInfoUnifyStatus, hcClient);
+    }
+
+    /**
      * 查询实例列表
      *
      * 根据指定条件查询实例列表。
@@ -1581,6 +1620,37 @@ public class GaussDBClient {
         ListGaussMySqlInstancesRequest request) {
         return new SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>(request,
             GaussDBMeta.listGaussMySqlInstances, hcClient);
+    }
+
+    /**
+     * 查询实例列表
+     *
+     * 根据指定条件查询实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlInstancesUnifyStatusRequest 请求对象
+     * @return ListGaussMySqlInstancesUnifyStatusResponse
+     */
+    public ListGaussMySqlInstancesUnifyStatusResponse listGaussMySqlInstancesUnifyStatus(
+        ListGaussMySqlInstancesUnifyStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlInstancesUnifyStatus);
+    }
+
+    /**
+     * 查询实例列表
+     *
+     * 根据指定条件查询实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListGaussMySqlInstancesUnifyStatusRequest 请求对象
+     * @return SyncInvoker<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse>
+     */
+    public SyncInvoker<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse> listGaussMySqlInstancesUnifyStatusInvoker(
+        ListGaussMySqlInstancesUnifyStatusRequest request) {
+        return new SyncInvoker<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse>(
+            request, GaussDBMeta.listGaussMySqlInstancesUnifyStatus, hcClient);
     }
 
     /**
@@ -2455,6 +2525,37 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询实例详情信息
+     *
+     * 查询实例详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowGaussMySqlInstanceInfoUnifyStatusRequest 请求对象
+     * @return ShowGaussMySqlInstanceInfoUnifyStatusResponse
+     */
+    public ShowGaussMySqlInstanceInfoUnifyStatusResponse showGaussMySqlInstanceInfoUnifyStatus(
+        ShowGaussMySqlInstanceInfoUnifyStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlInstanceInfoUnifyStatus);
+    }
+
+    /**
+     * 查询实例详情信息
+     *
+     * 查询实例详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowGaussMySqlInstanceInfoUnifyStatusRequest 请求对象
+     * @return SyncInvoker<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse>
+     */
+    public SyncInvoker<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse> showGaussMySqlInstanceInfoUnifyStatusInvoker(
+        ShowGaussMySqlInstanceInfoUnifyStatusRequest request) {
+        return new SyncInvoker<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse>(
+            request, GaussDBMeta.showGaussMySqlInstanceInfoUnifyStatus, hcClient);
+    }
+
+    /**
      * 获取指定ID的任务信息
      *
      * 获取GaussDB(for MySQL)任务中心指定ID的任务信息。
@@ -2877,6 +2978,36 @@ public class GaussDBClient {
         SwitchGaussMySqlInstanceSslRequest request) {
         return new SyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse>(request,
             GaussDBMeta.switchGaussMySqlInstanceSsl, hcClient);
+    }
+
+    /**
+     * 开关数据库代理SSL
+     *
+     * 为数据库代理设置SSL数据加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchGaussMySqlProxySslRequest 请求对象
+     * @return SwitchGaussMySqlProxySslResponse
+     */
+    public SwitchGaussMySqlProxySslResponse switchGaussMySqlProxySsl(SwitchGaussMySqlProxySslRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.switchGaussMySqlProxySsl);
+    }
+
+    /**
+     * 开关数据库代理SSL
+     *
+     * 为数据库代理设置SSL数据加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchGaussMySqlProxySslRequest 请求对象
+     * @return SyncInvoker<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse>
+     */
+    public SyncInvoker<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse> switchGaussMySqlProxySslInvoker(
+        SwitchGaussMySqlProxySslRequest request) {
+        return new SyncInvoker<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse>(request,
+            GaussDBMeta.switchGaussMySqlProxySsl, hcClient);
     }
 
     /**

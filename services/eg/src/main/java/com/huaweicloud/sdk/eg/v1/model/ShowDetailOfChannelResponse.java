@@ -122,6 +122,11 @@ public class ShowDetailOfChannelResponse extends SdkResponse {
 
     private String updatedTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eps_id")
+
+    private String epsId;
+
     public ShowDetailOfChannelResponse withId(String id) {
         this.id = id;
         return this;
@@ -224,6 +229,23 @@ public class ShowDetailOfChannelResponse extends SdkResponse {
         this.updatedTime = updatedTime;
     }
 
+    public ShowDetailOfChannelResponse withEpsId(String epsId) {
+        this.epsId = epsId;
+        return this;
+    }
+
+    /**
+     * 企业项目id
+     * @return epsId
+     */
+    public String getEpsId() {
+        return epsId;
+    }
+
+    public void setEpsId(String epsId) {
+        this.epsId = epsId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -236,12 +258,13 @@ public class ShowDetailOfChannelResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.providerType, that.providerType)
-            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime);
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.epsId, that.epsId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, providerType, createdTime, updatedTime);
+        return Objects.hash(id, name, description, providerType, createdTime, updatedTime, epsId);
     }
 
     @Override
@@ -254,6 +277,7 @@ public class ShowDetailOfChannelResponse extends SdkResponse {
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

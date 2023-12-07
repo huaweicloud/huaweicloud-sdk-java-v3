@@ -484,7 +484,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 实例描述
+     * 实例描述。支持除>和<以外的字符，长度为0~255。
      * @return description
      */
     public String getDescription() {
@@ -535,7 +535,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 实例名称
+     * 实例名称。  中英文字符开头，只能由中英文字符、数字、中划线、下划线组成，长度为3~64。  > 中文字符必须为UTF-8或者unicode编码。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -654,7 +654,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 企业项目ID，企业帐号必填。  获取方法如下： - 方法1：登录企业项目管理界面，在项目管理详情页面查找项目ID。 - 方法2：通过企业项目管理的API接口查询，具体方法请参见《企业管理API参考》的“查询企业项目列表”章节。
+     * 企业项目ID，企业账号必填。  获取方法如下： - 方法1：登录企业项目管理界面，在项目管理详情页面查找项目ID。 - 方法2：通过企业项目管理的API接口查询，具体方法请参见《企业管理API参考》的“查询企业项目列表”章节。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

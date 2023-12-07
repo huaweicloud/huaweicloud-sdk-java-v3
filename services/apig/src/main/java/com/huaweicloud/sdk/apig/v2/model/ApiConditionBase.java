@@ -106,7 +106,7 @@ public class ApiConditionBase {
     private String frontendAuthorizerParamName;
 
     /**
-     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param,system,cookie,frontend_authorizer时必选 
+     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param，system，cookie，frontend_authorizer时必选 
      */
     public static final class ConditionTypeEnum {
 
@@ -358,7 +358,7 @@ public class ApiConditionBase {
     }
 
     /**
-     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param,system,cookie,frontend_authorizer时必选 
+     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param，system，cookie，frontend_authorizer时必选 
      * @return conditionType
      */
     public ConditionTypeEnum getConditionType() {
@@ -392,7 +392,7 @@ public class ApiConditionBase {
     }
 
     /**
-     * 策略值;
+     * 策略值。策略类型为param，source，cookie，frontend_authorizer时必填
      * @return conditionValue
      */
     public String getConditionValue() {

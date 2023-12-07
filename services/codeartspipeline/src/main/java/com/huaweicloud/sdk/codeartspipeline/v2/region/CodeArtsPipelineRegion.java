@@ -42,6 +42,9 @@ public class CodeArtsPipelineRegion {
     public static final Region LA_NORTH_2 =
         new Region("la-north-2", "https://cloudpipeline-ext.la-north-2.myhuaweicloud.com");
 
+    public static final Region TR_WEST_1 =
+        new Region("tr-west-1", "https://pipeline-external.tr-west-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER =
         RegionProviderChain.getDefaultRegionProviderChain("CODEARTSPIPELINE");
 
@@ -59,6 +62,7 @@ public class CodeArtsPipelineRegion {
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("la-north-2", LA_NORTH_2);
+        map.put("tr-west-1", TR_WEST_1);
         return Collections.unmodifiableMap(map);
     }
 

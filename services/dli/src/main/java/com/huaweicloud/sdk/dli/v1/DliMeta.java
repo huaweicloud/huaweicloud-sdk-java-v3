@@ -78,6 +78,9 @@ import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateJobTemplatesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanResponse;
@@ -118,6 +121,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkSqlJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkSqlJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteJobAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteJobAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertiesRequestBody;
@@ -181,6 +186,8 @@ import com.huaweicloud.sdk.dli.v1.model.ListFlinkSqlJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListFlinkSqlJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListJobAuthInfosRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListJobAuthInfosResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertiesRequest;
@@ -295,6 +302,9 @@ import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateHostMassageReq;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateJobTemplatesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateOwnerRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrReq;
@@ -974,6 +984,31 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse> createJobAuthInfo =
+        genForcreateJobAuthInfo();
+
+    private static HttpRequestDef<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse> genForcreateJobAuthInfo() {
+        // basic
+        HttpRequestDef.Builder<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateJobAuthInfoRequest.class, CreateJobAuthInfoResponse.class)
+                .withName("CreateJobAuthInfo")
+                .withUri("/v3/{project_id}/datasource/auth-infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateJobAuthInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateJobAuthInfoRequestBody.class),
+            f -> f.withMarshaller(CreateJobAuthInfoRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateQueueRequest, CreateQueueResponse> createQueue = genForcreateQueue();
 
     private static HttpRequestDef<CreateQueueRequest, CreateQueueResponse> genForcreateQueue() {
@@ -1224,6 +1259,31 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteGlobalVariableRequest::getVarName, (req, v) -> {
                 req.setVarName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse> deleteJobAuthInfo =
+        genFordeleteJobAuthInfo();
+
+    private static HttpRequestDef<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse> genFordeleteJobAuthInfo() {
+        // basic
+        HttpRequestDef.Builder<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobAuthInfoRequest.class, DeleteJobAuthInfoResponse.class)
+                .withName("DeleteJobAuthInfo")
+                .withUri("/v3/{project_id}/datasource/auth-infos/{auth_info_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("auth_info_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobAuthInfoRequest::getAuthInfoName, (req, v) -> {
+                req.setAuthInfoName(v);
             }));
 
         // response
@@ -1755,6 +1815,45 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListGlobalVariablesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobAuthInfosRequest, ListJobAuthInfosResponse> listJobAuthInfos =
+        genForlistJobAuthInfos();
+
+    private static HttpRequestDef<ListJobAuthInfosRequest, ListJobAuthInfosResponse> genForlistJobAuthInfos() {
+        // basic
+        HttpRequestDef.Builder<ListJobAuthInfosRequest, ListJobAuthInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobAuthInfosRequest.class, ListJobAuthInfosResponse.class)
+                .withName("ListJobAuthInfos")
+                .withUri("/v3/{project_id}/datasource/auth-infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("auth_info_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobAuthInfosRequest::getAuthInfoName, (req, v) -> {
+                req.setAuthInfoName(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobAuthInfosRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobAuthInfosRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -2470,6 +2569,31 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateResourceOwner.class),
             f -> f.withMarshaller(UpdateGroupOrResourceOwnerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse> updateJobAuthInfo =
+        genForupdateJobAuthInfo();
+
+    private static HttpRequestDef<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse> genForupdateJobAuthInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateJobAuthInfoRequest.class, UpdateJobAuthInfoResponse.class)
+                .withName("UpdateJobAuthInfo")
+                .withUri("/v3/{project_id}/datasource/auth-infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateJobAuthInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateJobAuthInfoRequestBody.class),
+            f -> f.withMarshaller(UpdateJobAuthInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

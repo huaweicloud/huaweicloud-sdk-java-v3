@@ -109,7 +109,7 @@ public class SubscriptionTarget {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    private Detail detail;
+    private Object detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kafka_detail")
@@ -120,6 +120,11 @@ public class SubscriptionTarget {
     @JsonProperty(value = "smn_detail")
 
     private SmnTargetDetail smnDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eg_detail")
+
+    private EgTargetDetail egDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
@@ -199,29 +204,20 @@ public class SubscriptionTarget {
         this.connectionId = connectionId;
     }
 
-    public SubscriptionTarget withDetail(Detail detail) {
+    public SubscriptionTarget withDetail(Object detail) {
         this.detail = detail;
         return this;
     }
 
-    public SubscriptionTarget withDetail(Consumer<Detail> detailSetter) {
-        if (this.detail == null) {
-            this.detail = new Detail();
-            detailSetter.accept(this.detail);
-        }
-
-        return this;
-    }
-
     /**
-     * Get detail
+     * 订阅的事件目标参数列表，该字段序列化后总长度不超过1024字节，函数(urn、invoke_type、agency_name)、函数流（workflow_id、agency_name）、webhook（url）订阅目标必填，其中函数、函数流委托名称必填
      * @return detail
      */
-    public Detail getDetail() {
+    public Object getDetail() {
         return detail;
     }
 
-    public void setDetail(Detail detail) {
+    public void setDetail(Object detail) {
         this.detail = detail;
     }
 
@@ -275,6 +271,32 @@ public class SubscriptionTarget {
 
     public void setSmnDetail(SmnTargetDetail smnDetail) {
         this.smnDetail = smnDetail;
+    }
+
+    public SubscriptionTarget withEgDetail(EgTargetDetail egDetail) {
+        this.egDetail = egDetail;
+        return this;
+    }
+
+    public SubscriptionTarget withEgDetail(Consumer<EgTargetDetail> egDetailSetter) {
+        if (this.egDetail == null) {
+            this.egDetail = new EgTargetDetail();
+            egDetailSetter.accept(this.egDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get egDetail
+     * @return egDetail
+     */
+    public EgTargetDetail getEgDetail() {
+        return egDetail;
+    }
+
+    public void setEgDetail(EgTargetDetail egDetail) {
+        this.egDetail = egDetail;
     }
 
     public SubscriptionTarget withTransform(TransForm transform) {
@@ -342,14 +364,22 @@ public class SubscriptionTarget {
             && Objects.equals(this.providerType, that.providerType)
             && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.detail, that.detail)
             && Objects.equals(this.kafkaDetail, that.kafkaDetail) && Objects.equals(this.smnDetail, that.smnDetail)
-            && Objects.equals(this.transform, that.transform)
+            && Objects.equals(this.egDetail, that.egDetail) && Objects.equals(this.transform, that.transform)
             && Objects.equals(this.deadLetterQueue, that.deadLetterQueue);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, providerType, connectionId, detail, kafkaDetail, smnDetail, transform, deadLetterQueue);
+        return Objects.hash(id,
+            name,
+            providerType,
+            connectionId,
+            detail,
+            kafkaDetail,
+            smnDetail,
+            egDetail,
+            transform,
+            deadLetterQueue);
     }
 
     @Override
@@ -363,6 +393,7 @@ public class SubscriptionTarget {
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    kafkaDetail: ").append(toIndentedString(kafkaDetail)).append("\n");
         sb.append("    smnDetail: ").append(toIndentedString(smnDetail)).append("\n");
+        sb.append("    egDetail: ").append(toIndentedString(egDetail)).append("\n");
         sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
         sb.append("    deadLetterQueue: ").append(toIndentedString(deadLetterQueue)).append("\n");
         sb.append("}");

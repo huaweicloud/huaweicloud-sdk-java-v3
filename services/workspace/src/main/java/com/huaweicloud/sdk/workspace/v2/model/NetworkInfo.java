@@ -21,7 +21,7 @@ public class NetworkInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_info")
 
-    private Subnet subnetInfo;
+    private DesktopSubnet subnetInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port_info")
@@ -36,7 +36,7 @@ public class NetworkInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroup> securityGroups = null;
+    private List<SecurityGroupInfo> securityGroups = null;
 
     public NetworkInfo withVpcInfo(Vpc vpcInfo) {
         this.vpcInfo = vpcInfo;
@@ -64,14 +64,14 @@ public class NetworkInfo {
         this.vpcInfo = vpcInfo;
     }
 
-    public NetworkInfo withSubnetInfo(Subnet subnetInfo) {
+    public NetworkInfo withSubnetInfo(DesktopSubnet subnetInfo) {
         this.subnetInfo = subnetInfo;
         return this;
     }
 
-    public NetworkInfo withSubnetInfo(Consumer<Subnet> subnetInfoSetter) {
+    public NetworkInfo withSubnetInfo(Consumer<DesktopSubnet> subnetInfoSetter) {
         if (this.subnetInfo == null) {
-            this.subnetInfo = new Subnet();
+            this.subnetInfo = new DesktopSubnet();
             subnetInfoSetter.accept(this.subnetInfo);
         }
 
@@ -82,11 +82,11 @@ public class NetworkInfo {
      * Get subnetInfo
      * @return subnetInfo
      */
-    public Subnet getSubnetInfo() {
+    public DesktopSubnet getSubnetInfo() {
         return subnetInfo;
     }
 
-    public void setSubnetInfo(Subnet subnetInfo) {
+    public void setSubnetInfo(DesktopSubnet subnetInfo) {
         this.subnetInfo = subnetInfo;
     }
 
@@ -142,12 +142,12 @@ public class NetworkInfo {
         this.publicIpInfo = publicIpInfo;
     }
 
-    public NetworkInfo withSecurityGroups(List<SecurityGroup> securityGroups) {
+    public NetworkInfo withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public NetworkInfo addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+    public NetworkInfo addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -155,7 +155,7 @@ public class NetworkInfo {
         return this;
     }
 
-    public NetworkInfo withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
+    public NetworkInfo withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -167,11 +167,11 @@ public class NetworkInfo {
      * 桌面绑定的安全组列表
      * @return securityGroups
      */
-    public List<SecurityGroup> getSecurityGroups() {
+    public List<SecurityGroupInfo> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

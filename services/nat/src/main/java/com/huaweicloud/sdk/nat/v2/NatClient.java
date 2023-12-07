@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.nat.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteNatGatewayTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteNatGatewayTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeletePrivateNatTagsRequest;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeletePrivateNatTagsResponse;
 import com.huaweicloud.sdk.nat.v2.model.BatchCreateDeleteTransitIpTagsRequest;
@@ -15,6 +17,8 @@ import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewayRequest;
 import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewayResponse;
 import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewaySnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewaySnatRuleResponse;
+import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewayTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewayTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.CreatePrivateDnatRequest;
 import com.huaweicloud.sdk.nat.v2.model.CreatePrivateDnatResponse;
 import com.huaweicloud.sdk.nat.v2.model.CreatePrivateNatRequest;
@@ -33,6 +37,8 @@ import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewaySnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewaySnatRuleResponse;
+import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.DeleteNatGatewayTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeletePrivateDnatRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeletePrivateDnatResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeletePrivateNatRequest;
@@ -45,10 +51,14 @@ import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpResponse;
 import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpTagRequest;
 import com.huaweicloud.sdk.nat.v2.model.DeleteTransitIpTagResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayByTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayByTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayDnatRulesRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayDnatRulesResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySnatRulesRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaySnatRulesResponse;
+import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.ListNatGatewayTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaysRequest;
 import com.huaweicloud.sdk.nat.v2.model.ListNatGatewaysResponse;
 import com.huaweicloud.sdk.nat.v2.model.ListPrivateDnatsRequest;
@@ -73,6 +83,8 @@ import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayRequest;
 import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayResponse;
 import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewaySnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewaySnatRuleResponse;
+import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayTagRequest;
+import com.huaweicloud.sdk.nat.v2.model.ShowNatGatewayTagResponse;
 import com.huaweicloud.sdk.nat.v2.model.ShowPrivateDnatRequest;
 import com.huaweicloud.sdk.nat.v2.model.ShowPrivateDnatResponse;
 import com.huaweicloud.sdk.nat.v2.model.ShowPrivateNatRequest;
@@ -636,6 +648,199 @@ public class NatClient {
     public SyncInvoker<ShowTransitIpTagsRequest, ShowTransitIpTagsResponse> showTransitIpTagsInvoker(
         ShowTransitIpTagsRequest request) {
         return new SyncInvoker<ShowTransitIpTagsRequest, ShowTransitIpTagsResponse>(request, NatMeta.showTransitIpTags,
+            hcClient);
+    }
+
+    /**
+     * 批量添加/删除公网NAT网关资源标签
+     *
+     * - 为指定公网NAT网关实例批量添加或删除标签。 
+     * - 标签管理服务需要使用该接口批量管理实例的标签。 
+     * - 一个资源上最多有10个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateDeleteNatGatewayTagRequest 请求对象
+     * @return BatchCreateDeleteNatGatewayTagResponse
+     */
+    public BatchCreateDeleteNatGatewayTagResponse batchCreateDeleteNatGatewayTag(
+        BatchCreateDeleteNatGatewayTagRequest request) {
+        return hcClient.syncInvokeHttp(request, NatMeta.batchCreateDeleteNatGatewayTag);
+    }
+
+    /**
+     * 批量添加/删除公网NAT网关资源标签
+     *
+     * - 为指定公网NAT网关实例批量添加或删除标签。 
+     * - 标签管理服务需要使用该接口批量管理实例的标签。 
+     * - 一个资源上最多有10个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateDeleteNatGatewayTagRequest 请求对象
+     * @return SyncInvoker<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse>
+     */
+    public SyncInvoker<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse> batchCreateDeleteNatGatewayTagInvoker(
+        BatchCreateDeleteNatGatewayTagRequest request) {
+        return new SyncInvoker<BatchCreateDeleteNatGatewayTagRequest, BatchCreateDeleteNatGatewayTagResponse>(request,
+            NatMeta.batchCreateDeleteNatGatewayTag, hcClient);
+    }
+
+    /**
+     * 添加公网NAT网关资源标签
+     *
+     * - 添加公网NAT网关资源标签。一个资源上最多有10个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNatGatewayTagRequest 请求对象
+     * @return CreateNatGatewayTagResponse
+     */
+    public CreateNatGatewayTagResponse createNatGatewayTag(CreateNatGatewayTagRequest request) {
+        return hcClient.syncInvokeHttp(request, NatMeta.createNatGatewayTag);
+    }
+
+    /**
+     * 添加公网NAT网关资源标签
+     *
+     * - 添加公网NAT网关资源标签。一个资源上最多有10个标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateNatGatewayTagRequest 请求对象
+     * @return SyncInvoker<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse>
+     */
+    public SyncInvoker<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> createNatGatewayTagInvoker(
+        CreateNatGatewayTagRequest request) {
+        return new SyncInvoker<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse>(request,
+            NatMeta.createNatGatewayTag, hcClient);
+    }
+
+    /**
+     * 删除公网NAT网关资源标签
+     *
+     * - 删除指定公网NAT网关资源实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNatGatewayTagRequest 请求对象
+     * @return DeleteNatGatewayTagResponse
+     */
+    public DeleteNatGatewayTagResponse deleteNatGatewayTag(DeleteNatGatewayTagRequest request) {
+        return hcClient.syncInvokeHttp(request, NatMeta.deleteNatGatewayTag);
+    }
+
+    /**
+     * 删除公网NAT网关资源标签
+     *
+     * - 删除指定公网NAT网关资源实例的标签信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteNatGatewayTagRequest 请求对象
+     * @return SyncInvoker<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse>
+     */
+    public SyncInvoker<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> deleteNatGatewayTagInvoker(
+        DeleteNatGatewayTagRequest request) {
+        return new SyncInvoker<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse>(request,
+            NatMeta.deleteNatGatewayTag, hcClient);
+    }
+
+    /**
+     * 查询公网NAT网关资源实例
+     *
+     * - 使用标签过滤公网NAT网关资源实例。
+     * - 标签管理服务需要提供按标签过滤公网NAT网关服务实例并汇总显示在列表中，需要公网NAT网关服务提供查询能力。
+     * - 资源默认按照创建时间倒序，资源tag也按照创建时间倒序。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNatGatewayByTagRequest 请求对象
+     * @return ListNatGatewayByTagResponse
+     */
+    public ListNatGatewayByTagResponse listNatGatewayByTag(ListNatGatewayByTagRequest request) {
+        return hcClient.syncInvokeHttp(request, NatMeta.listNatGatewayByTag);
+    }
+
+    /**
+     * 查询公网NAT网关资源实例
+     *
+     * - 使用标签过滤公网NAT网关资源实例。
+     * - 标签管理服务需要提供按标签过滤公网NAT网关服务实例并汇总显示在列表中，需要公网NAT网关服务提供查询能力。
+     * - 资源默认按照创建时间倒序，资源tag也按照创建时间倒序。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNatGatewayByTagRequest 请求对象
+     * @return SyncInvoker<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse>
+     */
+    public SyncInvoker<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> listNatGatewayByTagInvoker(
+        ListNatGatewayByTagRequest request) {
+        return new SyncInvoker<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse>(request,
+            NatMeta.listNatGatewayByTag, hcClient);
+    }
+
+    /**
+     * 查询公网NAT网关项目标签
+     *
+     * - 查询租户在指定项目和公网NAT网关实例类型的所有标签集合。
+     * - 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNatGatewayTagRequest 请求对象
+     * @return ListNatGatewayTagResponse
+     */
+    public ListNatGatewayTagResponse listNatGatewayTag(ListNatGatewayTagRequest request) {
+        return hcClient.syncInvokeHttp(request, NatMeta.listNatGatewayTag);
+    }
+
+    /**
+     * 查询公网NAT网关项目标签
+     *
+     * - 查询租户在指定项目和公网NAT网关实例类型的所有标签集合。
+     * - 标签管理服务需要能够列出当前租户全部已使用的标签集合，为各服务Console打标签和过滤实例时提供标签联想功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNatGatewayTagRequest 请求对象
+     * @return SyncInvoker<ListNatGatewayTagRequest, ListNatGatewayTagResponse>
+     */
+    public SyncInvoker<ListNatGatewayTagRequest, ListNatGatewayTagResponse> listNatGatewayTagInvoker(
+        ListNatGatewayTagRequest request) {
+        return new SyncInvoker<ListNatGatewayTagRequest, ListNatGatewayTagResponse>(request, NatMeta.listNatGatewayTag,
+            hcClient);
+    }
+
+    /**
+     * 查询公网NAT网关资源标签
+     *
+     * - 查询指定公网NAT网关实例的标签信息。
+     * - 标签管理服务需要使用该接口查询指定公网NAT网关实例的全部标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNatGatewayTagRequest 请求对象
+     * @return ShowNatGatewayTagResponse
+     */
+    public ShowNatGatewayTagResponse showNatGatewayTag(ShowNatGatewayTagRequest request) {
+        return hcClient.syncInvokeHttp(request, NatMeta.showNatGatewayTag);
+    }
+
+    /**
+     * 查询公网NAT网关资源标签
+     *
+     * - 查询指定公网NAT网关实例的标签信息。
+     * - 标签管理服务需要使用该接口查询指定公网NAT网关实例的全部标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowNatGatewayTagRequest 请求对象
+     * @return SyncInvoker<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse>
+     */
+    public SyncInvoker<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> showNatGatewayTagInvoker(
+        ShowNatGatewayTagRequest request) {
+        return new SyncInvoker<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse>(request, NatMeta.showNatGatewayTag,
             hcClient);
     }
 

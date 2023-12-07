@@ -170,6 +170,7 @@ public class CdnAsyncClient {
      * @param DownloadRegionCarrierExcelRequest 请求对象
      * @return CompletableFuture<DownloadRegionCarrierExcelResponse>
      */
+    @Deprecated
     public CompletableFuture<DownloadRegionCarrierExcelResponse> downloadRegionCarrierExcelAsync(
         DownloadRegionCarrierExcelRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.downloadRegionCarrierExcel);
@@ -195,6 +196,7 @@ public class CdnAsyncClient {
      * @param DownloadRegionCarrierExcelRequest 请求对象
      * @return AsyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse>
      */
+    @Deprecated
     public AsyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse> downloadRegionCarrierExcelAsyncInvoker(
         DownloadRegionCarrierExcelRequest request) {
         return new AsyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse>(request,
@@ -221,6 +223,7 @@ public class CdnAsyncClient {
      * @param DownloadStatisticsExcelRequest 请求对象
      * @return CompletableFuture<DownloadStatisticsExcelResponse>
      */
+    @Deprecated
     public CompletableFuture<DownloadStatisticsExcelResponse> downloadStatisticsExcelAsync(
         DownloadStatisticsExcelRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.downloadStatisticsExcel);
@@ -246,6 +249,7 @@ public class CdnAsyncClient {
      * @param DownloadStatisticsExcelRequest 请求对象
      * @return AsyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse>
      */
+    @Deprecated
     public AsyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse> downloadStatisticsExcelAsyncInvoker(
         DownloadStatisticsExcelRequest request) {
         return new AsyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse>(request,
@@ -348,6 +352,7 @@ public class CdnAsyncClient {
      * @param ShowBandwidthCalcRequest 请求对象
      * @return CompletableFuture<ShowBandwidthCalcResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowBandwidthCalcResponse> showBandwidthCalcAsync(ShowBandwidthCalcRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showBandwidthCalc);
     }
@@ -374,6 +379,7 @@ public class CdnAsyncClient {
      * @param ShowBandwidthCalcRequest 请求对象
      * @return AsyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse> showBandwidthCalcAsyncInvoker(
         ShowBandwidthCalcRequest request) {
         return new AsyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse>(request, CdnMeta.showBandwidthCalc,
@@ -680,6 +686,7 @@ public class CdnAsyncClient {
      * @param ShowTopDomainNamesRequest 请求对象
      * @return CompletableFuture<ShowTopDomainNamesResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowTopDomainNamesResponse> showTopDomainNamesAsync(ShowTopDomainNamesRequest request) {
         return hcClient.asyncInvokeHttp(request, CdnMeta.showTopDomainNames);
     }
@@ -706,6 +713,7 @@ public class CdnAsyncClient {
      * @param ShowTopDomainNamesRequest 请求对象
      * @return AsyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse> showTopDomainNamesAsyncInvoker(
         ShowTopDomainNamesRequest request) {
         return new AsyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse>(request,

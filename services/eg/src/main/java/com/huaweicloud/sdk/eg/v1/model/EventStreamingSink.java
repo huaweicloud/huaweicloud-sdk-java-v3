@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 事件目标，一个事件流中只有一个
+ * 事件目标，一个事件流中只有一个事件目标，sink_fg、sink_kafka值能选择其中一个参数
  */
 public class EventStreamingSink {
 
@@ -21,21 +21,32 @@ public class EventStreamingSink {
 
     private SinkFGParameters sinkFg;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sink_kafka")
+
+    private SinkKafkaParameters sinkKafka;
+
     /**
      * 事件目标类型名称
      */
     public static final class NameEnum {
 
         /**
-         * Enum HC_FG for value: "HC.FG"
+         * Enum HC_FUNCTIONGRAPH for value: "HC.FunctionGraph"
          */
-        public static final NameEnum HC_FG = new NameEnum("HC.FG");
+        public static final NameEnum HC_FUNCTIONGRAPH = new NameEnum("HC.FunctionGraph");
+
+        /**
+         * Enum HC_KAFKA for value: "HC.Kafka"
+         */
+        public static final NameEnum HC_KAFKA = new NameEnum("HC.Kafka");
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, NameEnum> createStaticFields() {
             Map<String, NameEnum> map = new HashMap<>();
-            map.put("HC.FG", HC_FG);
+            map.put("HC.FunctionGraph", HC_FUNCTIONGRAPH);
+            map.put("HC.Kafka", HC_KAFKA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -116,6 +127,32 @@ public class EventStreamingSink {
         this.sinkFg = sinkFg;
     }
 
+    public EventStreamingSink withSinkKafka(SinkKafkaParameters sinkKafka) {
+        this.sinkKafka = sinkKafka;
+        return this;
+    }
+
+    public EventStreamingSink withSinkKafka(Consumer<SinkKafkaParameters> sinkKafkaSetter) {
+        if (this.sinkKafka == null) {
+            this.sinkKafka = new SinkKafkaParameters();
+            sinkKafkaSetter.accept(this.sinkKafka);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sinkKafka
+     * @return sinkKafka
+     */
+    public SinkKafkaParameters getSinkKafka() {
+        return sinkKafka;
+    }
+
+    public void setSinkKafka(SinkKafkaParameters sinkKafka) {
+        this.sinkKafka = sinkKafka;
+    }
+
     public EventStreamingSink withName(NameEnum name) {
         this.name = name;
         return this;
@@ -142,12 +179,13 @@ public class EventStreamingSink {
             return false;
         }
         EventStreamingSink that = (EventStreamingSink) obj;
-        return Objects.equals(this.sinkFg, that.sinkFg) && Objects.equals(this.name, that.name);
+        return Objects.equals(this.sinkFg, that.sinkFg) && Objects.equals(this.sinkKafka, that.sinkKafka)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sinkFg, name);
+        return Objects.hash(sinkFg, sinkKafka, name);
     }
 
     @Override
@@ -155,6 +193,7 @@ public class EventStreamingSink {
         StringBuilder sb = new StringBuilder();
         sb.append("class EventStreamingSink {\n");
         sb.append("    sinkFg: ").append(toIndentedString(sinkFg)).append("\n");
+        sb.append("    sinkKafka: ").append(toIndentedString(sinkKafka)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();

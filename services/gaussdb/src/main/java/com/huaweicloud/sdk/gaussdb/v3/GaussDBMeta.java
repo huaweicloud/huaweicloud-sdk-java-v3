@@ -115,8 +115,12 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlDedicatedResourcesRequ
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlDedicatedResourcesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstanceDetailInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstanceDetailInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstanceDetailInfoUnifyStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstanceDetailInfoUnifyStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesUnifyStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlInstancesUnifyStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListImmediateJobsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListImmediateJobsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListInstanceConfigurationsRequest;
@@ -206,6 +210,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlIncrementalBackupListR
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlIncrementalBackupListResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlInstanceInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlInstanceInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlInstanceInfoUnifyStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlInstanceInfoUnifyStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlJobInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlJobInfoResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlProjectQuotasRequest;
@@ -240,6 +246,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchProxySSLRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchSSLRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.TaurusModifyInstanceMonitorRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.TaurusModifyProxyWeightRequest;
@@ -2049,6 +2058,41 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> listGaussMySqlInstanceDetailInfoUnifyStatus =
+        genForlistGaussMySqlInstanceDetailInfoUnifyStatus();
+
+    private static HttpRequestDef<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> genForlistGaussMySqlInstanceDetailInfoUnifyStatus() {
+        // basic
+        HttpRequestDef.Builder<ListGaussMySqlInstanceDetailInfoUnifyStatusRequest, ListGaussMySqlInstanceDetailInfoUnifyStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListGaussMySqlInstanceDetailInfoUnifyStatusRequest.class,
+                    ListGaussMySqlInstanceDetailInfoUnifyStatusResponse.class)
+                .withName("ListGaussMySqlInstanceDetailInfoUnifyStatus")
+                .withUri("/v3.1/{project_id}/instances/details")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_ids",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoUnifyStatusRequest::getInstanceIds, (req, v) -> {
+                req.setInstanceIds(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstanceDetailInfoUnifyStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstances =
         genForlistGaussMySqlInstances();
 
@@ -2150,6 +2194,118 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListGaussMySqlInstancesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse> listGaussMySqlInstancesUnifyStatus =
+        genForlistGaussMySqlInstancesUnifyStatus();
+
+    private static HttpRequestDef<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse> genForlistGaussMySqlInstancesUnifyStatus() {
+        // basic
+        HttpRequestDef.Builder<ListGaussMySqlInstancesUnifyStatusRequest, ListGaussMySqlInstancesUnifyStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListGaussMySqlInstancesUnifyStatusRequest.class,
+                    ListGaussMySqlInstancesUnifyStatusResponse.class)
+                .withName("ListGaussMySqlInstancesUnifyStatus")
+                .withUri("/v3.1/{project_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getDatastoreType, (req, v) -> {
+                req.setDatastoreType(v);
+            }));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            }));
+        builder.<String>withRequestField("private_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getPrivateIp, (req, v) -> {
+                req.setPrivateIp(v);
+            }));
+        builder.<String>withRequestField("readonly_private_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getReadonlyPrivateIp, (req, v) -> {
+                req.setReadonlyPrivateIp(v);
+            }));
+        builder.<String>withRequestField("proxy_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getProxyIp, (req, v) -> {
+                req.setProxyIp(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGaussMySqlInstancesUnifyStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -3456,6 +3612,41 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse> showGaussMySqlInstanceInfoUnifyStatus =
+        genForshowGaussMySqlInstanceInfoUnifyStatus();
+
+    private static HttpRequestDef<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse> genForshowGaussMySqlInstanceInfoUnifyStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowGaussMySqlInstanceInfoUnifyStatusRequest, ShowGaussMySqlInstanceInfoUnifyStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowGaussMySqlInstanceInfoUnifyStatusRequest.class,
+                    ShowGaussMySqlInstanceInfoUnifyStatusResponse.class)
+                .withName("ShowGaussMySqlInstanceInfoUnifyStatus")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoUnifyStatusRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGaussMySqlInstanceInfoUnifyStatusRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse> showGaussMySqlJobInfo =
         genForshowGaussMySqlJobInfo();
 
@@ -4025,6 +4216,53 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchSSLRequest.class),
             f -> f.withMarshaller(SwitchGaussMySqlInstanceSslRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse> switchGaussMySqlProxySsl =
+        genForswitchGaussMySqlProxySsl();
+
+    private static HttpRequestDef<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse> genForswitchGaussMySqlProxySsl() {
+        // basic
+        HttpRequestDef.Builder<SwitchGaussMySqlProxySslRequest, SwitchGaussMySqlProxySslResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, SwitchGaussMySqlProxySslRequest.class, SwitchGaussMySqlProxySslResponse.class)
+                .withName("SwitchGaussMySqlProxySsl")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/ssl")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getProxyId, (req, v) -> {
+                req.setProxyId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<SwitchProxySSLRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchProxySSLRequest.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxySslRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

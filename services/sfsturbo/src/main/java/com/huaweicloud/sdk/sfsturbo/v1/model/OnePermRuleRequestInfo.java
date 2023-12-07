@@ -31,7 +31,7 @@ public class OnePermRuleRequestInfo {
     }
 
     /**
-     * 授权对象的IP地址或网段
+     * 授权对象的IP地址或网段，设置后不支持修改
      * @return ipCidr
      */
     public String getIpCidr() {

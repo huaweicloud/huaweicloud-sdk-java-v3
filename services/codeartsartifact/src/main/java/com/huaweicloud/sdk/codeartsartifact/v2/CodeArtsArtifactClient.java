@@ -61,6 +61,7 @@ public class CodeArtsArtifactClient {
      * @param ShowReleaseProjectFilesRequest 请求对象
      * @return ShowReleaseProjectFilesResponse
      */
+    @Deprecated
     public ShowReleaseProjectFilesResponse showReleaseProjectFiles(ShowReleaseProjectFilesRequest request) {
         return hcClient.syncInvokeHttp(request, CodeArtsArtifactMeta.showReleaseProjectFiles);
     }
@@ -75,6 +76,7 @@ public class CodeArtsArtifactClient {
      * @param ShowReleaseProjectFilesRequest 请求对象
      * @return SyncInvoker<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse> showReleaseProjectFilesInvoker(
         ShowReleaseProjectFilesRequest request) {
         return new SyncInvoker<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse>(request,

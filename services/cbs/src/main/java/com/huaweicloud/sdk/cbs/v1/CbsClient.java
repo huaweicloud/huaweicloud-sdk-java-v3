@@ -209,6 +209,7 @@ public class CbsClient {
      * @param CreateSessionRequest 请求对象
      * @return CreateSessionResponse
      */
+    @Deprecated
     public CreateSessionResponse createSession(CreateSessionRequest request) {
         return hcClient.syncInvokeHttp(request, CbsMeta.createSession);
     }
@@ -223,6 +224,7 @@ public class CbsClient {
      * @param CreateSessionRequest 请求对象
      * @return SyncInvoker<CreateSessionRequest, CreateSessionResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateSessionRequest, CreateSessionResponse> createSessionInvoker(CreateSessionRequest request) {
         return new SyncInvoker<CreateSessionRequest, CreateSessionResponse>(request, CbsMeta.createSession, hcClient);
     }
@@ -237,6 +239,7 @@ public class CbsClient {
      * @param DeleteSessionRequest 请求对象
      * @return DeleteSessionResponse
      */
+    @Deprecated
     public DeleteSessionResponse deleteSession(DeleteSessionRequest request) {
         return hcClient.syncInvokeHttp(request, CbsMeta.deleteSession);
     }
@@ -251,6 +254,7 @@ public class CbsClient {
      * @param DeleteSessionRequest 请求对象
      * @return SyncInvoker<DeleteSessionRequest, DeleteSessionResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteSessionRequest, DeleteSessionResponse> deleteSessionInvoker(DeleteSessionRequest request) {
         return new SyncInvoker<DeleteSessionRequest, DeleteSessionResponse>(request, CbsMeta.deleteSession, hcClient);
     }
@@ -640,6 +644,7 @@ public class CbsClient {
      * @param ExecuteSessionRequest 请求对象
      * @return ExecuteSessionResponse
      */
+    @Deprecated
     public ExecuteSessionResponse executeSession(ExecuteSessionRequest request) {
         return hcClient.syncInvokeHttp(request, CbsMeta.executeSession);
     }
@@ -654,6 +659,7 @@ public class CbsClient {
      * @param ExecuteSessionRequest 请求对象
      * @return SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>
      */
+    @Deprecated
     public SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse> executeSessionInvoker(
         ExecuteSessionRequest request) {
         return new SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>(request, CbsMeta.executeSession,
@@ -913,6 +919,7 @@ public class CbsClient {
      * @param PostRequestsRequest 请求对象
      * @return PostRequestsResponse
      */
+    @Deprecated
     public PostRequestsResponse postRequests(PostRequestsRequest request) {
         return hcClient.syncInvokeHttp(request, CbsMeta.postRequests);
     }
@@ -930,6 +937,7 @@ public class CbsClient {
      * @param PostRequestsRequest 请求对象
      * @return SyncInvoker<PostRequestsRequest, PostRequestsResponse>
      */
+    @Deprecated
     public SyncInvoker<PostRequestsRequest, PostRequestsResponse> postRequestsInvoker(PostRequestsRequest request) {
         return new SyncInvoker<PostRequestsRequest, PostRequestsResponse>(request, CbsMeta.postRequests, hcClient);
     }

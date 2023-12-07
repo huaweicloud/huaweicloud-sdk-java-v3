@@ -65,7 +65,7 @@ public class BatchWindow {
     }
 
     /**
-     * 批量推送间隔[0,15](时间：秒)
+     * 批量推送间隔[0,15]，单位秒
      * @return interval
      */
     public Integer getInterval() {

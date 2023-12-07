@@ -26,7 +26,7 @@ public class TagsSingleValue {
     }
 
     /**
-     * 资源标签键。最大长度36个Unicode字符，不能为空，不能包含非打印字符ASCII(0-31)，“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。同一资源的key值不能重复。action为delete时，不校验标签字符集，最大长度127个Unicode字符。
+     * 资源标签键。最大长度36个unicode字符。key不能为空。（搜索时不对此参数做校验）。最多为10个，不能为空或者空字符串。且不能重复。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class TagsSingleValue {
     }
 
     /**
-     * 资源标签值。每个值最大长度43个Unicode字符，可以为空字符串，不能包含非打印字符ASCII(0-31), “=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。action为delete时，不校验标签字符集，每个值最大长度255个Unicode字符。如果value有值按照key/value删除，如果value没值，则按照key删除。
+     * 资源标签值列表，每个值最大长度43个unicode字符，每个key下最多为10个，同一个key中values不能重复。  “*”为系统保留字符，如果value是以“*”开头表示按照“*”后面的值全模糊匹配。不能只传入“*”。 如果values为空列表但不可缺省，则表示any_value（查询任意value）。value之间为或的关系。
      * @return value
      */
     public String getValue() {

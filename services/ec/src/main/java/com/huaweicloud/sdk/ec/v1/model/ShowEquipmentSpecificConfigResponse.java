@@ -20,11 +20,6 @@ public class ShowEquipmentSpecificConfigResponse extends SdkResponse {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "model")
-
-    private String model;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wan_interfaces")
 
     private List<String> wanInterfaces = null;
@@ -54,23 +49,6 @@ public class ShowEquipmentSpecificConfigResponse extends SdkResponse {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public ShowEquipmentSpecificConfigResponse withModel(String model) {
-        this.model = model;
-        return this;
-    }
-
-    /**
-     * 设备型号
-     * @return model
-     */
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public ShowEquipmentSpecificConfigResponse withWanInterfaces(List<String> wanInterfaces) {
@@ -181,15 +159,14 @@ public class ShowEquipmentSpecificConfigResponse extends SdkResponse {
             return false;
         }
         ShowEquipmentSpecificConfigResponse that = (ShowEquipmentSpecificConfigResponse) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.model, that.model)
-            && Objects.equals(this.wanInterfaces, that.wanInterfaces)
+        return Objects.equals(this.type, that.type) && Objects.equals(this.wanInterfaces, that.wanInterfaces)
             && Objects.equals(this.lteInterfaces, that.lteInterfaces)
             && Objects.equals(this.lanInterfaces, that.lanInterfaces);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, model, wanInterfaces, lteInterfaces, lanInterfaces);
+        return Objects.hash(type, wanInterfaces, lteInterfaces, lanInterfaces);
     }
 
     @Override
@@ -197,7 +174,6 @@ public class ShowEquipmentSpecificConfigResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEquipmentSpecificConfigResponse {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    model: ").append(toIndentedString(model)).append("\n");
         sb.append("    wanInterfaces: ").append(toIndentedString(wanInterfaces)).append("\n");
         sb.append("    lteInterfaces: ").append(toIndentedString(lteInterfaces)).append("\n");
         sb.append("    lanInterfaces: ").append(toIndentedString(lanInterfaces)).append("\n");

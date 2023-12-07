@@ -28,6 +28,9 @@ public class KvsExceptionHandler implements ExceptionHandler {
     }
 
     private SdkErrorMessage parseErrorMessage(byte[] buf) {
+        if (buf == null) {
+            return null;
+        }
         BsonReader reader = new BsonBinaryReader(ByteBuffer.wrap(buf, 0, buf.length));
         CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
         CodecRegistry codecRegistry = CodecRegistries.fromRegistries(

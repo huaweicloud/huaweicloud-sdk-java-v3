@@ -75,6 +75,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqConfigsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqConfigsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqProjectTagsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqProjectTagsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqTagsRequest;
@@ -87,6 +89,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateRocketMqConfigsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateRocketMqConfigsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateUserRequest;
@@ -1033,6 +1037,36 @@ public class RocketMQClient {
     }
 
     /**
+     * 查询RocketMQ配置
+     *
+     * 该接口用于查询RocketMQ配置，若成功则返回配置的相关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRocketMqConfigsRequest 请求对象
+     * @return ShowRocketMqConfigsResponse
+     */
+    public ShowRocketMqConfigsResponse showRocketMqConfigs(ShowRocketMqConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, RocketMQMeta.showRocketMqConfigs);
+    }
+
+    /**
+     * 查询RocketMQ配置
+     *
+     * 该接口用于查询RocketMQ配置，若成功则返回配置的相关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowRocketMqConfigsRequest 请求对象
+     * @return SyncInvoker<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse>
+     */
+    public SyncInvoker<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> showRocketMqConfigsInvoker(
+        ShowRocketMqConfigsRequest request) {
+        return new SyncInvoker<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse>(request,
+            RocketMQMeta.showRocketMqConfigs, hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询项目标签。
@@ -1178,6 +1212,36 @@ public class RocketMQClient {
         UpdateInstanceRequest request) {
         return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, RocketMQMeta.updateInstance,
             hcClient);
+    }
+
+    /**
+     * 修改RocketMQ配置
+     *
+     * 该接口用于修改RocketMQ配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateRocketMqConfigsRequest 请求对象
+     * @return UpdateRocketMqConfigsResponse
+     */
+    public UpdateRocketMqConfigsResponse updateRocketMqConfigs(UpdateRocketMqConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, RocketMQMeta.updateRocketMqConfigs);
+    }
+
+    /**
+     * 修改RocketMQ配置
+     *
+     * 该接口用于修改RocketMQ配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateRocketMqConfigsRequest 请求对象
+     * @return SyncInvoker<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse>
+     */
+    public SyncInvoker<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse> updateRocketMqConfigsInvoker(
+        UpdateRocketMqConfigsRequest request) {
+        return new SyncInvoker<UpdateRocketMqConfigsRequest, UpdateRocketMqConfigsResponse>(request,
+            RocketMQMeta.updateRocketMqConfigs, hcClient);
     }
 
     /**

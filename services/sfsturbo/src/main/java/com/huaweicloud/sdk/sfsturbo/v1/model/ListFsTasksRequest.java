@@ -87,7 +87,7 @@ public class ListFsTasksRequest {
     }
 
     /**
-     * limit, 取值为正整数
+     * limit, 取值为正整数. 默认为20，最大值为100
      * @return limit
      */
     public Integer getLimit() {

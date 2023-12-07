@@ -17,6 +17,9 @@ import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ListQuotaStatusRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ListQuotaStatusResponse;
+import com.huaweicloud.sdk.cbh.v1.model.LoginCbhRequest;
+import com.huaweicloud.sdk.cbh.v1.model.LoginCbhRequestBody;
+import com.huaweicloud.sdk.cbh.v1.model.LoginCbhResponse;
 import com.huaweicloud.sdk.cbh.v1.model.NetworkRequestBody;
 import com.huaweicloud.sdk.cbh.v1.model.OperateEipRequestBody;
 import com.huaweicloud.sdk.cbh.v1.model.RebootCbhRequestBody;
@@ -484,6 +487,30 @@ public class CbhMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeCbhRequestBody.class),
             f -> f.withMarshaller(UpgradeCbhInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<LoginCbhRequest, LoginCbhResponse> loginCbh = genForloginCbh();
+
+    private static HttpRequestDef<LoginCbhRequest, LoginCbhResponse> genForloginCbh() {
+        // basic
+        HttpRequestDef.Builder<LoginCbhRequest, LoginCbhResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, LoginCbhRequest.class, LoginCbhResponse.class)
+                .withName("LoginCbh")
+                .withUri("/v1/{project_id}/cbs/instance/login")
+                .withContentType("application/json");
+
+        // requests
+        builder.<LoginCbhRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LoginCbhRequestBody.class),
+            f -> f.withMarshaller(LoginCbhRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -18,12 +18,12 @@ public class ConfigNasTarget {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private Object type;
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
-    private Object url;
+    private String url;
 
     public ConfigNasTarget withName(String name) {
         this.name = name;
@@ -42,7 +42,7 @@ public class ConfigNasTarget {
         this.name = name;
     }
 
-    public ConfigNasTarget withType(Object type) {
+    public ConfigNasTarget withType(String type) {
         this.type = type;
         return this;
     }
@@ -51,15 +51,15 @@ public class ConfigNasTarget {
      * nas 配置协议类型
      * @return type
      */
-    public Object getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Object type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    public ConfigNasTarget withUrl(Object url) {
+    public ConfigNasTarget withUrl(String url) {
         this.url = url;
         return this;
     }
@@ -68,11 +68,11 @@ public class ConfigNasTarget {
      * nas 配置 ip
      * @return url
      */
-    public Object getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(Object url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 

@@ -30,16 +30,6 @@ public class LogQuery {
 
     private String sort;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "level")
-
-    private String level;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job_run_id")
-
-    private String jobRunId;
-
     public LogQuery withStartOffset(Long startOffset) {
         this.startOffset = startOffset;
         return this;
@@ -108,40 +98,6 @@ public class LogQuery {
         this.sort = sort;
     }
 
-    public LogQuery withLevel(String level) {
-        this.level = level;
-        return this;
-    }
-
-    /**
-     * Get level
-     * @return level
-     */
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public LogQuery withJobRunId(String jobRunId) {
-        this.jobRunId = jobRunId;
-        return this;
-    }
-
-    /**
-     * Get jobRunId
-     * @return jobRunId
-     */
-    public String getJobRunId() {
-        return jobRunId;
-    }
-
-    public void setJobRunId(String jobRunId) {
-        this.jobRunId = jobRunId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -152,13 +108,12 @@ public class LogQuery {
         }
         LogQuery that = (LogQuery) obj;
         return Objects.equals(this.startOffset, that.startOffset) && Objects.equals(this.endOffset, that.endOffset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sort, that.sort)
-            && Objects.equals(this.level, that.level) && Objects.equals(this.jobRunId, that.jobRunId);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sort, that.sort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startOffset, endOffset, limit, sort, level, jobRunId);
+        return Objects.hash(startOffset, endOffset, limit, sort);
     }
 
     @Override
@@ -169,8 +124,6 @@ public class LogQuery {
         sb.append("    endOffset: ").append(toIndentedString(endOffset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
-        sb.append("    level: ").append(toIndentedString(level)).append("\n");
-        sb.append("    jobRunId: ").append(toIndentedString(jobRunId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

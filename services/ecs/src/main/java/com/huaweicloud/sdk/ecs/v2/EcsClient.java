@@ -1276,6 +1276,7 @@ public class EcsClient {
      * @param ListServersByTagRequest 请求对象
      * @return ListServersByTagResponse
      */
+    @Deprecated
     public ListServersByTagResponse listServersByTag(ListServersByTagRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.listServersByTag);
     }
@@ -1290,6 +1291,7 @@ public class EcsClient {
      * @param ListServersByTagRequest 请求对象
      * @return SyncInvoker<ListServersByTagRequest, ListServersByTagResponse>
      */
+    @Deprecated
     public SyncInvoker<ListServersByTagRequest, ListServersByTagResponse> listServersByTagInvoker(
         ListServersByTagRequest request) {
         return new SyncInvoker<ListServersByTagRequest, ListServersByTagResponse>(request, EcsMeta.listServersByTag,

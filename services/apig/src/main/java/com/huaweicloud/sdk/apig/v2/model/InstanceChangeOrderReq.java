@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class InstanceChangeOrderReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
     private String productId;
@@ -20,6 +25,23 @@ public class InstanceChangeOrderReq {
     @JsonProperty(value = "resize_info")
 
     private ResizeInstanceReq resizeInfo;
+
+    public InstanceChangeOrderReq withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例ID
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
 
     public InstanceChangeOrderReq withProductId(String productId) {
         this.productId = productId;
@@ -73,18 +95,20 @@ public class InstanceChangeOrderReq {
             return false;
         }
         InstanceChangeOrderReq that = (InstanceChangeOrderReq) obj;
-        return Objects.equals(this.productId, that.productId) && Objects.equals(this.resizeInfo, that.resizeInfo);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.resizeInfo, that.resizeInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, resizeInfo);
+        return Objects.hash(instanceId, productId, resizeInfo);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InstanceChangeOrderReq {\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    resizeInfo: ").append(toIndentedString(resizeInfo)).append("\n");
         sb.append("}");

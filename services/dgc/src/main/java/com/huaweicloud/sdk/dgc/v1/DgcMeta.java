@@ -787,6 +787,13 @@ public class DgcMeta {
             f -> f.withMarshaller(ListJobsRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
             }));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

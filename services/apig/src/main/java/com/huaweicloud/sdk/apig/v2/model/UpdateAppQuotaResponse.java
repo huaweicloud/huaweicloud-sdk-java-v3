@@ -33,7 +33,7 @@ public class UpdateAppQuotaResponse extends SdkResponse {
     private Integer callLimits;
 
     /**
-     * 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
+     * 限定时间单位：SECOND:秒、MINUTE:分、HOUR:时、DAY:天
      */
     public static final class TimeUnitEnum {
 
@@ -201,7 +201,7 @@ public class UpdateAppQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
+     * 限定时间单位：SECOND:秒、MINUTE:分、HOUR:时、DAY:天
      * @return timeUnit
      */
     public TimeUnitEnum getTimeUnit() {

@@ -46,11 +46,17 @@ public class EquipmentItem {
          */
         public static final TypeEnum STANDARD = new TypeEnum("standard");
 
+        /**
+         * Enum SOHO for value: "soho"
+         */
+        public static final TypeEnum SOHO = new TypeEnum("soho");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("standard", STANDARD);
+            map.put("soho", SOHO);
             return Collections.unmodifiableMap(map);
         }
 

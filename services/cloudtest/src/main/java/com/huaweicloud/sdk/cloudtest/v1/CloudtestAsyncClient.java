@@ -34,6 +34,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanListRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanListResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlansRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlansResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowProjectDataDashboardRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowProjectDataDashboardResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportRequest;
@@ -516,6 +518,37 @@ public class CloudtestAsyncClient {
      */
     public AsyncInvoker<ShowPlansRequest, ShowPlansResponse> showPlansAsyncInvoker(ShowPlansRequest request) {
         return new AsyncInvoker<ShowPlansRequest, ShowPlansResponse>(request, CloudtestMeta.showPlans, hcClient);
+    }
+
+    /**
+     * 查询质量报告看板统计信息
+     *
+     * 查询质量报告看板统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectDataDashboardRequest 请求对象
+     * @return CompletableFuture<ShowProjectDataDashboardResponse>
+     */
+    public CompletableFuture<ShowProjectDataDashboardResponse> showProjectDataDashboardAsync(
+        ShowProjectDataDashboardRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showProjectDataDashboard);
+    }
+
+    /**
+     * 查询质量报告看板统计信息
+     *
+     * 查询质量报告看板统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowProjectDataDashboardRequest 请求对象
+     * @return AsyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse>
+     */
+    public AsyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse> showProjectDataDashboardAsyncInvoker(
+        ShowProjectDataDashboardRequest request) {
+        return new AsyncInvoker<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse>(request,
+            CloudtestMeta.showProjectDataDashboard, hcClient);
     }
 
     /**

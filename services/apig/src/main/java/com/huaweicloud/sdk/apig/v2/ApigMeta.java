@@ -23,6 +23,7 @@ import com.huaweicloud.sdk.apig.v2.model.ApiCheckInfoV2;
 import com.huaweicloud.sdk.apig.v2.model.ApiCreate;
 import com.huaweicloud.sdk.apig.v2.model.ApiDebugInfo;
 import com.huaweicloud.sdk.apig.v2.model.ApiGroupBase;
+import com.huaweicloud.sdk.apig.v2.model.ApiGroupCheck;
 import com.huaweicloud.sdk.apig.v2.model.ApiGroupCreate;
 import com.huaweicloud.sdk.apig.v2.model.ApiOperPluginInfo;
 import com.huaweicloud.sdk.apig.v2.model.ApiVersion;
@@ -77,6 +78,8 @@ import com.huaweicloud.sdk.apig.v2.model.CertForm;
 import com.huaweicloud.sdk.apig.v2.model.CertificateForm;
 import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ChangeApiVersionV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CheckApiGroupsV2Request;
+import com.huaweicloud.sdk.apig.v2.model.CheckApiGroupsV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CheckApisV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CheckApisV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CheckAppV2Request;
@@ -3668,7 +3671,7 @@ public class ApigMeta {
             }));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginAttachableApisRequest::getEnvId, (req, v) -> {
                 req.setEnvId(v);
@@ -5943,6 +5946,38 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckApiGroupsV2Request, CheckApiGroupsV2Response> checkApiGroupsV2 =
+        genForcheckApiGroupsV2();
+
+    private static HttpRequestDef<CheckApiGroupsV2Request, CheckApiGroupsV2Response> genForcheckApiGroupsV2() {
+        // basic
+        HttpRequestDef.Builder<CheckApiGroupsV2Request, CheckApiGroupsV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckApiGroupsV2Request.class, CheckApiGroupsV2Response.class)
+                .withName("CheckApiGroupsV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckApiGroupsV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ApiGroupCheck>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiGroupCheck.class),
+            f -> f.withMarshaller(CheckApiGroupsV2Request::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckApisV2Request, CheckApisV2Response> checkApisV2 = genForcheckApisV2();
 
     private static HttpRequestDef<CheckApisV2Request, CheckApisV2Response> genForcheckApisV2() {
@@ -6696,6 +6731,13 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisV2Request::getVpcChannelName, (req, v) -> {
                 req.setVpcChannelName(v);
+            }));
+        builder.<ListApisV2Request.ReturnDataModeEnum>withRequestField("return_data_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListApisV2Request.ReturnDataModeEnum.class),
+            f -> f.withMarshaller(ListApisV2Request::getReturnDataMode, (req, v) -> {
+                req.setReturnDataMode(v);
             }));
 
         // response

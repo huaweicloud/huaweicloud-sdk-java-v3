@@ -100,6 +100,16 @@ public class ListStatisticsRequest {
 
     private String option;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private String limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListStatisticsRequest withFilter(FilterEnum filter) {
         this.filter = filter;
         return this;
@@ -151,6 +161,40 @@ public class ListStatisticsRequest {
         this.option = option;
     }
 
+    public ListStatisticsRequest withLimit(String limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 本次查询最大返回的数据条数，最大值500，默认值100
+     * @return limit
+     */
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
+    public ListStatisticsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 本次查询起始位置，默认值0
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -161,12 +205,13 @@ public class ListStatisticsRequest {
         }
         ListStatisticsRequest that = (ListStatisticsRequest) obj;
         return Objects.equals(this.filter, that.filter) && Objects.equals(this.period, that.period)
-            && Objects.equals(this.option, that.option);
+            && Objects.equals(this.option, that.option) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(filter, period, option);
+        return Objects.hash(filter, period, option, limit, marker);
     }
 
     @Override
@@ -176,6 +221,8 @@ public class ListStatisticsRequest {
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    option: ").append(toIndentedString(option)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

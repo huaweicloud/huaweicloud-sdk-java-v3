@@ -57,6 +57,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequest;
@@ -91,6 +93,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkSqlJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkSqlJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteJobAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteJobAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyRequest;
@@ -139,6 +143,8 @@ import com.huaweicloud.sdk.dli.v1.model.ListFlinkSqlJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListFlinkSqlJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListJobAuthInfosRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListJobAuthInfosResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertiesRequest;
@@ -239,6 +245,8 @@ import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequest;
@@ -461,6 +469,7 @@ public class DliClient {
      * @param ShowSqlSampleTemplatesRequest 请求对象
      * @return ShowSqlSampleTemplatesResponse
      */
+    @Deprecated
     public ShowSqlSampleTemplatesResponse showSqlSampleTemplates(ShowSqlSampleTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.showSqlSampleTemplates);
     }
@@ -475,6 +484,7 @@ public class DliClient {
      * @param ShowSqlSampleTemplatesRequest 请求对象
      * @return SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> showSqlSampleTemplatesInvoker(
         ShowSqlSampleTemplatesRequest request) {
         return new SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>(request,
@@ -613,6 +623,7 @@ public class DliClient {
      * @param BatchDeleteQueuePlansRequest 请求对象
      * @return BatchDeleteQueuePlansResponse
      */
+    @Deprecated
     public BatchDeleteQueuePlansResponse batchDeleteQueuePlans(BatchDeleteQueuePlansRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.batchDeleteQueuePlans);
     }
@@ -627,6 +638,7 @@ public class DliClient {
      * @param BatchDeleteQueuePlansRequest 请求对象
      * @return SyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse> batchDeleteQueuePlansInvoker(
         BatchDeleteQueuePlansRequest request) {
         return new SyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse>(request,
@@ -645,6 +657,7 @@ public class DliClient {
      * @param ChangeAuthorizationRequest 请求对象
      * @return ChangeAuthorizationResponse
      */
+    @Deprecated
     public ChangeAuthorizationResponse changeAuthorization(ChangeAuthorizationRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.changeAuthorization);
     }
@@ -661,6 +674,7 @@ public class DliClient {
      * @param ChangeAuthorizationRequest 请求对象
      * @return SyncInvoker<ChangeAuthorizationRequest, ChangeAuthorizationResponse>
      */
+    @Deprecated
     public SyncInvoker<ChangeAuthorizationRequest, ChangeAuthorizationResponse> changeAuthorizationInvoker(
         ChangeAuthorizationRequest request) {
         return new SyncInvoker<ChangeAuthorizationRequest, ChangeAuthorizationResponse>(request,
@@ -677,6 +691,7 @@ public class DliClient {
      * @param ChangeQueuePlanRequest 请求对象
      * @return ChangeQueuePlanResponse
      */
+    @Deprecated
     public ChangeQueuePlanResponse changeQueuePlan(ChangeQueuePlanRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.changeQueuePlan);
     }
@@ -691,6 +706,7 @@ public class DliClient {
      * @param ChangeQueuePlanRequest 请求对象
      * @return SyncInvoker<ChangeQueuePlanRequest, ChangeQueuePlanResponse>
      */
+    @Deprecated
     public SyncInvoker<ChangeQueuePlanRequest, ChangeQueuePlanResponse> changeQueuePlanInvoker(
         ChangeQueuePlanRequest request) {
         return new SyncInvoker<ChangeQueuePlanRequest, ChangeQueuePlanResponse>(request, DliMeta.changeQueuePlan,
@@ -707,6 +723,7 @@ public class DliClient {
      * @param CreateAuthInfoRequest 请求对象
      * @return CreateAuthInfoResponse
      */
+    @Deprecated
     public CreateAuthInfoResponse createAuthInfo(CreateAuthInfoRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createAuthInfo);
     }
@@ -721,6 +738,7 @@ public class DliClient {
      * @param CreateAuthInfoRequest 请求对象
      * @return SyncInvoker<CreateAuthInfoRequest, CreateAuthInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateAuthInfoRequest, CreateAuthInfoResponse> createAuthInfoInvoker(
         CreateAuthInfoRequest request) {
         return new SyncInvoker<CreateAuthInfoRequest, CreateAuthInfoResponse>(request, DliMeta.createAuthInfo,
@@ -770,6 +788,7 @@ public class DliClient {
      * @param CreateDatasourceConnectionRequest 请求对象
      * @return CreateDatasourceConnectionResponse
      */
+    @Deprecated
     public CreateDatasourceConnectionResponse createDatasourceConnection(CreateDatasourceConnectionRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createDatasourceConnection);
     }
@@ -787,6 +806,7 @@ public class DliClient {
      * @param CreateDatasourceConnectionRequest 请求对象
      * @return SyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse> createDatasourceConnectionInvoker(
         CreateDatasourceConnectionRequest request) {
         return new SyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse>(request,
@@ -803,6 +823,7 @@ public class DliClient {
      * @param CreateDliAgencyRequest 请求对象
      * @return CreateDliAgencyResponse
      */
+    @Deprecated
     public CreateDliAgencyResponse createDliAgency(CreateDliAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createDliAgency);
     }
@@ -817,6 +838,7 @@ public class DliClient {
      * @param CreateDliAgencyRequest 请求对象
      * @return SyncInvoker<CreateDliAgencyRequest, CreateDliAgencyResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateDliAgencyRequest, CreateDliAgencyResponse> createDliAgencyInvoker(
         CreateDliAgencyRequest request) {
         return new SyncInvoker<CreateDliAgencyRequest, CreateDliAgencyResponse>(request, DliMeta.createDliAgency,
@@ -893,6 +915,7 @@ public class DliClient {
      * @param CreateEnhancedConnectionRoutesRequest 请求对象
      * @return CreateEnhancedConnectionRoutesResponse
      */
+    @Deprecated
     public CreateEnhancedConnectionRoutesResponse createEnhancedConnectionRoutes(
         CreateEnhancedConnectionRoutesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createEnhancedConnectionRoutes);
@@ -908,6 +931,7 @@ public class DliClient {
      * @param CreateEnhancedConnectionRoutesRequest 请求对象
      * @return SyncInvoker<CreateEnhancedConnectionRoutesRequest, CreateEnhancedConnectionRoutesResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateEnhancedConnectionRoutesRequest, CreateEnhancedConnectionRoutesResponse> createEnhancedConnectionRoutesInvoker(
         CreateEnhancedConnectionRoutesRequest request) {
         return new SyncInvoker<CreateEnhancedConnectionRoutesRequest, CreateEnhancedConnectionRoutesResponse>(request,
@@ -942,6 +966,36 @@ public class DliClient {
         CreateGlobalVariableRequest request) {
         return new SyncInvoker<CreateGlobalVariableRequest, CreateGlobalVariableResponse>(request,
             DliMeta.createGlobalVariable, hcClient);
+    }
+
+    /**
+     * 创建跨源认证
+     *
+     * 该API用于创建跨源认证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateJobAuthInfoRequest 请求对象
+     * @return CreateJobAuthInfoResponse
+     */
+    public CreateJobAuthInfoResponse createJobAuthInfo(CreateJobAuthInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createJobAuthInfo);
+    }
+
+    /**
+     * 创建跨源认证
+     *
+     * 该API用于创建跨源认证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateJobAuthInfoRequest 请求对象
+     * @return SyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse>
+     */
+    public SyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse> createJobAuthInfoInvoker(
+        CreateJobAuthInfoRequest request) {
+        return new SyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse>(request, DliMeta.createJobAuthInfo,
+            hcClient);
     }
 
     /**
@@ -982,6 +1036,7 @@ public class DliClient {
      * @param CreateQueuePlanRequest 请求对象
      * @return CreateQueuePlanResponse
      */
+    @Deprecated
     public CreateQueuePlanResponse createQueuePlan(CreateQueuePlanRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createQueuePlan);
     }
@@ -996,6 +1051,7 @@ public class DliClient {
      * @param CreateQueuePlanRequest 请求对象
      * @return SyncInvoker<CreateQueuePlanRequest, CreateQueuePlanResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateQueuePlanRequest, CreateQueuePlanResponse> createQueuePlanInvoker(
         CreateQueuePlanRequest request) {
         return new SyncInvoker<CreateQueuePlanRequest, CreateQueuePlanResponse>(request, DliMeta.createQueuePlan,
@@ -1042,6 +1098,7 @@ public class DliClient {
      * @param DeleteAuthInfoRequest 请求对象
      * @return DeleteAuthInfoResponse
      */
+    @Deprecated
     public DeleteAuthInfoResponse deleteAuthInfo(DeleteAuthInfoRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.deleteAuthInfo);
     }
@@ -1056,6 +1113,7 @@ public class DliClient {
      * @param DeleteAuthInfoRequest 请求对象
      * @return SyncInvoker<DeleteAuthInfoRequest, DeleteAuthInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteAuthInfoRequest, DeleteAuthInfoResponse> deleteAuthInfoInvoker(
         DeleteAuthInfoRequest request) {
         return new SyncInvoker<DeleteAuthInfoRequest, DeleteAuthInfoResponse>(request, DliMeta.deleteAuthInfo,
@@ -1074,6 +1132,7 @@ public class DliClient {
      * @param DeleteDatasourceConnectionRequest 请求对象
      * @return DeleteDatasourceConnectionResponse
      */
+    @Deprecated
     public DeleteDatasourceConnectionResponse deleteDatasourceConnection(DeleteDatasourceConnectionRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.deleteDatasourceConnection);
     }
@@ -1090,6 +1149,7 @@ public class DliClient {
      * @param DeleteDatasourceConnectionRequest 请求对象
      * @return SyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse> deleteDatasourceConnectionInvoker(
         DeleteDatasourceConnectionRequest request) {
         return new SyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse>(request,
@@ -1166,6 +1226,7 @@ public class DliClient {
      * @param DeleteEnhancedConnectionRoutesRequest 请求对象
      * @return DeleteEnhancedConnectionRoutesResponse
      */
+    @Deprecated
     public DeleteEnhancedConnectionRoutesResponse deleteEnhancedConnectionRoutes(
         DeleteEnhancedConnectionRoutesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.deleteEnhancedConnectionRoutes);
@@ -1181,6 +1242,7 @@ public class DliClient {
      * @param DeleteEnhancedConnectionRoutesRequest 请求对象
      * @return SyncInvoker<DeleteEnhancedConnectionRoutesRequest, DeleteEnhancedConnectionRoutesResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteEnhancedConnectionRoutesRequest, DeleteEnhancedConnectionRoutesResponse> deleteEnhancedConnectionRoutesInvoker(
         DeleteEnhancedConnectionRoutesRequest request) {
         return new SyncInvoker<DeleteEnhancedConnectionRoutesRequest, DeleteEnhancedConnectionRoutesResponse>(request,
@@ -1215,6 +1277,36 @@ public class DliClient {
         DeleteGlobalVariableRequest request) {
         return new SyncInvoker<DeleteGlobalVariableRequest, DeleteGlobalVariableResponse>(request,
             DliMeta.deleteGlobalVariable, hcClient);
+    }
+
+    /**
+     * 删除跨源认证
+     *
+     * 该API用于删除跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteJobAuthInfoRequest 请求对象
+     * @return DeleteJobAuthInfoResponse
+     */
+    public DeleteJobAuthInfoResponse deleteJobAuthInfo(DeleteJobAuthInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.deleteJobAuthInfo);
+    }
+
+    /**
+     * 删除跨源认证
+     *
+     * 该API用于删除跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteJobAuthInfoRequest 请求对象
+     * @return SyncInvoker<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse>
+     */
+    public SyncInvoker<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse> deleteJobAuthInfoInvoker(
+        DeleteJobAuthInfoRequest request) {
+        return new SyncInvoker<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse>(request, DliMeta.deleteJobAuthInfo,
+            hcClient);
     }
 
     /**
@@ -1259,6 +1351,7 @@ public class DliClient {
      * @param DeleteQueuePlanRequest 请求对象
      * @return DeleteQueuePlanResponse
      */
+    @Deprecated
     public DeleteQueuePlanResponse deleteQueuePlan(DeleteQueuePlanRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.deleteQueuePlan);
     }
@@ -1273,6 +1366,7 @@ public class DliClient {
      * @param DeleteQueuePlanRequest 请求对象
      * @return SyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse> deleteQueuePlanInvoker(
         DeleteQueuePlanRequest request) {
         return new SyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse>(request, DliMeta.deleteQueuePlan,
@@ -1319,6 +1413,7 @@ public class DliClient {
      * @param DeleteResourceRequest 请求对象
      * @return DeleteResourceResponse
      */
+    @Deprecated
     public DeleteResourceResponse deleteResource(DeleteResourceRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.deleteResource);
     }
@@ -1333,6 +1428,7 @@ public class DliClient {
      * @param DeleteResourceRequest 请求对象
      * @return SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceInvoker(
         DeleteResourceRequest request) {
         return new SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, DliMeta.deleteResource,
@@ -1380,6 +1476,7 @@ public class DliClient {
      * @param ListAuthInfoRequest 请求对象
      * @return ListAuthInfoResponse
      */
+    @Deprecated
     public ListAuthInfoResponse listAuthInfo(ListAuthInfoRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listAuthInfo);
     }
@@ -1394,6 +1491,7 @@ public class DliClient {
      * @param ListAuthInfoRequest 请求对象
      * @return SyncInvoker<ListAuthInfoRequest, ListAuthInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ListAuthInfoRequest, ListAuthInfoResponse> listAuthInfoInvoker(ListAuthInfoRequest request) {
         return new SyncInvoker<ListAuthInfoRequest, ListAuthInfoResponse>(request, DliMeta.listAuthInfo, hcClient);
     }
@@ -1438,6 +1536,7 @@ public class DliClient {
      * @param ListDatabaseUsersRequest 请求对象
      * @return ListDatabaseUsersResponse
      */
+    @Deprecated
     public ListDatabaseUsersResponse listDatabaseUsers(ListDatabaseUsersRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listDatabaseUsers);
     }
@@ -1452,6 +1551,7 @@ public class DliClient {
      * @param ListDatabaseUsersRequest 请求对象
      * @return SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>
      */
+    @Deprecated
     public SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsersInvoker(
         ListDatabaseUsersRequest request) {
         return new SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>(request, DliMeta.listDatabaseUsers,
@@ -1468,6 +1568,7 @@ public class DliClient {
      * @param ListDatasourceConnectionsRequest 请求对象
      * @return ListDatasourceConnectionsResponse
      */
+    @Deprecated
     public ListDatasourceConnectionsResponse listDatasourceConnections(ListDatasourceConnectionsRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listDatasourceConnections);
     }
@@ -1482,6 +1583,7 @@ public class DliClient {
      * @param ListDatasourceConnectionsRequest 请求对象
      * @return SyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse> listDatasourceConnectionsInvoker(
         ListDatasourceConnectionsRequest request) {
         return new SyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse>(request,
@@ -1641,6 +1743,36 @@ public class DliClient {
     }
 
     /**
+     * 查询增强型跨源授权信息
+     *
+     * 该API用于查询跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobAuthInfosRequest 请求对象
+     * @return ListJobAuthInfosResponse
+     */
+    public ListJobAuthInfosResponse listJobAuthInfos(ListJobAuthInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.listJobAuthInfos);
+    }
+
+    /**
+     * 查询增强型跨源授权信息
+     *
+     * 该API用于查询跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobAuthInfosRequest 请求对象
+     * @return SyncInvoker<ListJobAuthInfosRequest, ListJobAuthInfosResponse>
+     */
+    public SyncInvoker<ListJobAuthInfosRequest, ListJobAuthInfosResponse> listJobAuthInfosInvoker(
+        ListJobAuthInfosRequest request) {
+        return new SyncInvoker<ListJobAuthInfosRequest, ListJobAuthInfosResponse>(request, DliMeta.listJobAuthInfos,
+            hcClient);
+    }
+
+    /**
      * 查看队列定时扩缩容计划
      *
      * 查看队列定时扩缩容计划接口，列出指定队列定时规格变更计划。
@@ -1650,6 +1782,7 @@ public class DliClient {
      * @param ListQueuePlansRequest 请求对象
      * @return ListQueuePlansResponse
      */
+    @Deprecated
     public ListQueuePlansResponse listQueuePlans(ListQueuePlansRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listQueuePlans);
     }
@@ -1664,6 +1797,7 @@ public class DliClient {
      * @param ListQueuePlansRequest 请求对象
      * @return SyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse>
      */
+    @Deprecated
     public SyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse> listQueuePlansInvoker(
         ListQueuePlansRequest request) {
         return new SyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse>(request, DliMeta.listQueuePlans,
@@ -1710,6 +1844,7 @@ public class DliClient {
      * @param ListQueueUsersRequest 请求对象
      * @return ListQueueUsersResponse
      */
+    @Deprecated
     public ListQueueUsersResponse listQueueUsers(ListQueueUsersRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listQueueUsers);
     }
@@ -1724,6 +1859,7 @@ public class DliClient {
      * @param ListQueueUsersRequest 请求对象
      * @return SyncInvoker<ListQueueUsersRequest, ListQueueUsersResponse>
      */
+    @Deprecated
     public SyncInvoker<ListQueueUsersRequest, ListQueueUsersResponse> listQueueUsersInvoker(
         ListQueueUsersRequest request) {
         return new SyncInvoker<ListQueueUsersRequest, ListQueueUsersResponse>(request, DliMeta.listQueueUsers,
@@ -1768,6 +1904,7 @@ public class DliClient {
      * @param ListResourcesRequest 请求对象
      * @return ListResourcesResponse
      */
+    @Deprecated
     public ListResourcesResponse listResources(ListResourcesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listResources);
     }
@@ -1782,6 +1919,7 @@ public class DliClient {
      * @param ListResourcesRequest 请求对象
      * @return SyncInvoker<ListResourcesRequest, ListResourcesResponse>
      */
+    @Deprecated
     public SyncInvoker<ListResourcesRequest, ListResourcesResponse> listResourcesInvoker(ListResourcesRequest request) {
         return new SyncInvoker<ListResourcesRequest, ListResourcesResponse>(request, DliMeta.listResources, hcClient);
     }
@@ -1796,6 +1934,7 @@ public class DliClient {
      * @param ListTablePrivilegesRequest 请求对象
      * @return ListTablePrivilegesResponse
      */
+    @Deprecated
     public ListTablePrivilegesResponse listTablePrivileges(ListTablePrivilegesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listTablePrivileges);
     }
@@ -1810,6 +1949,7 @@ public class DliClient {
      * @param ListTablePrivilegesRequest 请求对象
      * @return SyncInvoker<ListTablePrivilegesRequest, ListTablePrivilegesResponse>
      */
+    @Deprecated
     public SyncInvoker<ListTablePrivilegesRequest, ListTablePrivilegesResponse> listTablePrivilegesInvoker(
         ListTablePrivilegesRequest request) {
         return new SyncInvoker<ListTablePrivilegesRequest, ListTablePrivilegesResponse>(request,
@@ -1826,6 +1966,7 @@ public class DliClient {
      * @param ListTableUsersRequest 请求对象
      * @return ListTableUsersResponse
      */
+    @Deprecated
     public ListTableUsersResponse listTableUsers(ListTableUsersRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listTableUsers);
     }
@@ -1840,6 +1981,7 @@ public class DliClient {
      * @param ListTableUsersRequest 请求对象
      * @return SyncInvoker<ListTableUsersRequest, ListTableUsersResponse>
      */
+    @Deprecated
     public SyncInvoker<ListTableUsersRequest, ListTableUsersResponse> listTableUsersInvoker(
         ListTableUsersRequest request) {
         return new SyncInvoker<ListTableUsersRequest, ListTableUsersResponse>(request, DliMeta.listTableUsers,
@@ -1856,6 +1998,7 @@ public class DliClient {
      * @param RegisterAuthorizedQueueRequest 请求对象
      * @return RegisterAuthorizedQueueResponse
      */
+    @Deprecated
     public RegisterAuthorizedQueueResponse registerAuthorizedQueue(RegisterAuthorizedQueueRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.registerAuthorizedQueue);
     }
@@ -1870,6 +2013,7 @@ public class DliClient {
      * @param RegisterAuthorizedQueueRequest 请求对象
      * @return SyncInvoker<RegisterAuthorizedQueueRequest, RegisterAuthorizedQueueResponse>
      */
+    @Deprecated
     public SyncInvoker<RegisterAuthorizedQueueRequest, RegisterAuthorizedQueueResponse> registerAuthorizedQueueInvoker(
         RegisterAuthorizedQueueRequest request) {
         return new SyncInvoker<RegisterAuthorizedQueueRequest, RegisterAuthorizedQueueResponse>(request,
@@ -1976,6 +2120,7 @@ public class DliClient {
      * @param ShowDatasourceConnectionRequest 请求对象
      * @return ShowDatasourceConnectionResponse
      */
+    @Deprecated
     public ShowDatasourceConnectionResponse showDatasourceConnection(ShowDatasourceConnectionRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.showDatasourceConnection);
     }
@@ -1990,6 +2135,7 @@ public class DliClient {
      * @param ShowDatasourceConnectionRequest 请求对象
      * @return SyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse> showDatasourceConnectionInvoker(
         ShowDatasourceConnectionRequest request) {
         return new SyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse>(request,
@@ -2006,6 +2152,7 @@ public class DliClient {
      * @param ShowDliAgencyRequest 请求对象
      * @return ShowDliAgencyResponse
      */
+    @Deprecated
     public ShowDliAgencyResponse showDliAgency(ShowDliAgencyRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.showDliAgency);
     }
@@ -2020,6 +2167,7 @@ public class DliClient {
      * @param ShowDliAgencyRequest 请求对象
      * @return SyncInvoker<ShowDliAgencyRequest, ShowDliAgencyResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowDliAgencyRequest, ShowDliAgencyResponse> showDliAgencyInvoker(ShowDliAgencyRequest request) {
         return new SyncInvoker<ShowDliAgencyRequest, ShowDliAgencyResponse>(request, DliMeta.showDliAgency, hcClient);
     }
@@ -2151,6 +2299,7 @@ public class DliClient {
      * @param ShowResourceInfoRequest 请求对象
      * @return ShowResourceInfoResponse
      */
+    @Deprecated
     public ShowResourceInfoResponse showResourceInfo(ShowResourceInfoRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.showResourceInfo);
     }
@@ -2165,6 +2314,7 @@ public class DliClient {
      * @param ShowResourceInfoRequest 请求对象
      * @return SyncInvoker<ShowResourceInfoRequest, ShowResourceInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowResourceInfoRequest, ShowResourceInfoResponse> showResourceInfoInvoker(
         ShowResourceInfoRequest request) {
         return new SyncInvoker<ShowResourceInfoRequest, ShowResourceInfoResponse>(request, DliMeta.showResourceInfo,
@@ -2181,6 +2331,7 @@ public class DliClient {
      * @param UpdateAuthInfoRequest 请求对象
      * @return UpdateAuthInfoResponse
      */
+    @Deprecated
     public UpdateAuthInfoResponse updateAuthInfo(UpdateAuthInfoRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.updateAuthInfo);
     }
@@ -2195,6 +2346,7 @@ public class DliClient {
      * @param UpdateAuthInfoRequest 请求对象
      * @return SyncInvoker<UpdateAuthInfoRequest, UpdateAuthInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateAuthInfoRequest, UpdateAuthInfoResponse> updateAuthInfoInvoker(
         UpdateAuthInfoRequest request) {
         return new SyncInvoker<UpdateAuthInfoRequest, UpdateAuthInfoResponse>(request, DliMeta.updateAuthInfo,
@@ -2332,6 +2484,7 @@ public class DliClient {
      * @param UpdateGroupOrResourceOwnerRequest 请求对象
      * @return UpdateGroupOrResourceOwnerResponse
      */
+    @Deprecated
     public UpdateGroupOrResourceOwnerResponse updateGroupOrResourceOwner(UpdateGroupOrResourceOwnerRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.updateGroupOrResourceOwner);
     }
@@ -2346,10 +2499,41 @@ public class DliClient {
      * @param UpdateGroupOrResourceOwnerRequest 请求对象
      * @return SyncInvoker<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse> updateGroupOrResourceOwnerInvoker(
         UpdateGroupOrResourceOwnerRequest request) {
         return new SyncInvoker<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse>(request,
             DliMeta.updateGroupOrResourceOwner, hcClient);
+    }
+
+    /**
+     * 更新跨源认证
+     *
+     * 该API用于更新跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateJobAuthInfoRequest 请求对象
+     * @return UpdateJobAuthInfoResponse
+     */
+    public UpdateJobAuthInfoResponse updateJobAuthInfo(UpdateJobAuthInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.updateJobAuthInfo);
+    }
+
+    /**
+     * 更新跨源认证
+     *
+     * 该API用于更新跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateJobAuthInfoRequest 请求对象
+     * @return SyncInvoker<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse>
+     */
+    public SyncInvoker<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse> updateJobAuthInfoInvoker(
+        UpdateJobAuthInfoRequest request) {
+        return new SyncInvoker<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse>(request, DliMeta.updateJobAuthInfo,
+            hcClient);
     }
 
     /**
@@ -2364,6 +2548,7 @@ public class DliClient {
      * @param UpdateQueueCidrRequest 请求对象
      * @return UpdateQueueCidrResponse
      */
+    @Deprecated
     public UpdateQueueCidrResponse updateQueueCidr(UpdateQueueCidrRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.updateQueueCidr);
     }
@@ -2380,6 +2565,7 @@ public class DliClient {
      * @param UpdateQueueCidrRequest 请求对象
      * @return SyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse> updateQueueCidrInvoker(
         UpdateQueueCidrRequest request) {
         return new SyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse>(request, DliMeta.updateQueueCidr,
@@ -2427,6 +2613,7 @@ public class DliClient {
      * @param UploadFilesRequest 请求对象
      * @return UploadFilesResponse
      */
+    @Deprecated
     public UploadFilesResponse uploadFiles(UploadFilesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.uploadFiles);
     }
@@ -2442,6 +2629,7 @@ public class DliClient {
      * @param UploadFilesRequest 请求对象
      * @return SyncInvoker<UploadFilesRequest, UploadFilesResponse>
      */
+    @Deprecated
     public SyncInvoker<UploadFilesRequest, UploadFilesResponse> uploadFilesInvoker(UploadFilesRequest request) {
         return new SyncInvoker<UploadFilesRequest, UploadFilesResponse>(request, DliMeta.uploadFiles, hcClient);
     }
@@ -2457,6 +2645,7 @@ public class DliClient {
      * @param UploadJarsRequest 请求对象
      * @return UploadJarsResponse
      */
+    @Deprecated
     public UploadJarsResponse uploadJars(UploadJarsRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.uploadJars);
     }
@@ -2472,6 +2661,7 @@ public class DliClient {
      * @param UploadJarsRequest 请求对象
      * @return SyncInvoker<UploadJarsRequest, UploadJarsResponse>
      */
+    @Deprecated
     public SyncInvoker<UploadJarsRequest, UploadJarsResponse> uploadJarsInvoker(UploadJarsRequest request) {
         return new SyncInvoker<UploadJarsRequest, UploadJarsResponse>(request, DliMeta.uploadJars, hcClient);
     }
@@ -2487,6 +2677,7 @@ public class DliClient {
      * @param UploadPythonFilesRequest 请求对象
      * @return UploadPythonFilesResponse
      */
+    @Deprecated
     public UploadPythonFilesResponse uploadPythonFiles(UploadPythonFilesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.uploadPythonFiles);
     }
@@ -2502,6 +2693,7 @@ public class DliClient {
      * @param UploadPythonFilesRequest 请求对象
      * @return SyncInvoker<UploadPythonFilesRequest, UploadPythonFilesResponse>
      */
+    @Deprecated
     public SyncInvoker<UploadPythonFilesRequest, UploadPythonFilesResponse> uploadPythonFilesInvoker(
         UploadPythonFilesRequest request) {
         return new SyncInvoker<UploadPythonFilesRequest, UploadPythonFilesResponse>(request, DliMeta.uploadPythonFiles,
@@ -2518,6 +2710,7 @@ public class DliClient {
      * @param UploadResourcesRequest 请求对象
      * @return UploadResourcesResponse
      */
+    @Deprecated
     public UploadResourcesResponse uploadResources(UploadResourcesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.uploadResources);
     }
@@ -2532,6 +2725,7 @@ public class DliClient {
      * @param UploadResourcesRequest 请求对象
      * @return SyncInvoker<UploadResourcesRequest, UploadResourcesResponse>
      */
+    @Deprecated
     public SyncInvoker<UploadResourcesRequest, UploadResourcesResponse> uploadResourcesInvoker(
         UploadResourcesRequest request) {
         return new SyncInvoker<UploadResourcesRequest, UploadResourcesResponse>(request, DliMeta.uploadResources,
@@ -2608,6 +2802,7 @@ public class DliClient {
      * @param ChangeFlinkJobStatusReportRequest 请求对象
      * @return ChangeFlinkJobStatusReportResponse
      */
+    @Deprecated
     public ChangeFlinkJobStatusReportResponse changeFlinkJobStatusReport(ChangeFlinkJobStatusReportRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.changeFlinkJobStatusReport);
     }
@@ -2622,6 +2817,7 @@ public class DliClient {
      * @param ChangeFlinkJobStatusReportRequest 请求对象
      * @return SyncInvoker<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse>
      */
+    @Deprecated
     public SyncInvoker<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse> changeFlinkJobStatusReportInvoker(
         ChangeFlinkJobStatusReportRequest request) {
         return new SyncInvoker<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse>(request,
@@ -2758,6 +2954,7 @@ public class DliClient {
      * @param CreateIefMessageChannelRequest 请求对象
      * @return CreateIefMessageChannelResponse
      */
+    @Deprecated
     public CreateIefMessageChannelResponse createIefMessageChannel(CreateIefMessageChannelRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createIefMessageChannel);
     }
@@ -2772,6 +2969,7 @@ public class DliClient {
      * @param CreateIefMessageChannelRequest 请求对象
      * @return SyncInvoker<CreateIefMessageChannelRequest, CreateIefMessageChannelResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateIefMessageChannelRequest, CreateIefMessageChannelResponse> createIefMessageChannelInvoker(
         CreateIefMessageChannelRequest request) {
         return new SyncInvoker<CreateIefMessageChannelRequest, CreateIefMessageChannelResponse>(request,
@@ -2788,6 +2986,7 @@ public class DliClient {
      * @param CreateIefSystemEventsRequest 请求对象
      * @return CreateIefSystemEventsResponse
      */
+    @Deprecated
     public CreateIefSystemEventsResponse createIefSystemEvents(CreateIefSystemEventsRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createIefSystemEvents);
     }
@@ -2802,6 +3001,7 @@ public class DliClient {
      * @param CreateIefSystemEventsRequest 请求对象
      * @return SyncInvoker<CreateIefSystemEventsRequest, CreateIefSystemEventsResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateIefSystemEventsRequest, CreateIefSystemEventsResponse> createIefSystemEventsInvoker(
         CreateIefSystemEventsRequest request) {
         return new SyncInvoker<CreateIefSystemEventsRequest, CreateIefSystemEventsResponse>(request,
@@ -2996,6 +3196,7 @@ public class DliClient {
      * @param RegisterBucketRequest 请求对象
      * @return RegisterBucketResponse
      */
+    @Deprecated
     public RegisterBucketResponse registerBucket(RegisterBucketRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.registerBucket);
     }
@@ -3010,6 +3211,7 @@ public class DliClient {
      * @param RegisterBucketRequest 请求对象
      * @return SyncInvoker<RegisterBucketRequest, RegisterBucketResponse>
      */
+    @Deprecated
     public SyncInvoker<RegisterBucketRequest, RegisterBucketResponse> registerBucketInvoker(
         RegisterBucketRequest request) {
         return new SyncInvoker<RegisterBucketRequest, RegisterBucketResponse>(request, DliMeta.registerBucket,
@@ -3026,6 +3228,7 @@ public class DliClient {
      * @param RunIefJobActionCallBackRequest 请求对象
      * @return RunIefJobActionCallBackResponse
      */
+    @Deprecated
     public RunIefJobActionCallBackResponse runIefJobActionCallBack(RunIefJobActionCallBackRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.runIefJobActionCallBack);
     }
@@ -3040,6 +3243,7 @@ public class DliClient {
      * @param RunIefJobActionCallBackRequest 请求对象
      * @return SyncInvoker<RunIefJobActionCallBackRequest, RunIefJobActionCallBackResponse>
      */
+    @Deprecated
     public SyncInvoker<RunIefJobActionCallBackRequest, RunIefJobActionCallBackResponse> runIefJobActionCallBackInvoker(
         RunIefJobActionCallBackRequest request) {
         return new SyncInvoker<RunIefJobActionCallBackRequest, RunIefJobActionCallBackResponse>(request,
@@ -3114,6 +3318,7 @@ public class DliClient {
      * @param ShowFlinkMetricRequest 请求对象
      * @return ShowFlinkMetricResponse
      */
+    @Deprecated
     public ShowFlinkMetricResponse showFlinkMetric(ShowFlinkMetricRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.showFlinkMetric);
     }
@@ -3128,6 +3333,7 @@ public class DliClient {
      * @param ShowFlinkMetricRequest 请求对象
      * @return SyncInvoker<ShowFlinkMetricRequest, ShowFlinkMetricResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowFlinkMetricRequest, ShowFlinkMetricResponse> showFlinkMetricInvoker(
         ShowFlinkMetricRequest request) {
         return new SyncInvoker<ShowFlinkMetricRequest, ShowFlinkMetricResponse>(request, DliMeta.showFlinkMetric,
@@ -3350,6 +3556,7 @@ public class DliClient {
      * @param ShowBatchLogRequest 请求对象
      * @return ShowBatchLogResponse
      */
+    @Deprecated
     public ShowBatchLogResponse showBatchLog(ShowBatchLogRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.showBatchLog);
     }
@@ -3364,6 +3571,7 @@ public class DliClient {
      * @param ShowBatchLogRequest 请求对象
      * @return SyncInvoker<ShowBatchLogRequest, ShowBatchLogResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowBatchLogRequest, ShowBatchLogResponse> showBatchLogInvoker(ShowBatchLogRequest request) {
         return new SyncInvoker<ShowBatchLogRequest, ShowBatchLogResponse>(request, DliMeta.showBatchLog, hcClient);
     }
@@ -3492,6 +3700,7 @@ public class DliClient {
      * @param CreateDatabaseRequest 请求对象
      * @return CreateDatabaseResponse
      */
+    @Deprecated
     public CreateDatabaseResponse createDatabase(CreateDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createDatabase);
     }
@@ -3506,6 +3715,7 @@ public class DliClient {
      * @param CreateDatabaseRequest 请求对象
      * @return SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseInvoker(
         CreateDatabaseRequest request) {
         return new SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>(request, DliMeta.createDatabase,
@@ -3554,6 +3764,7 @@ public class DliClient {
      * @param CreateTableRequest 请求对象
      * @return CreateTableResponse
      */
+    @Deprecated
     public CreateTableResponse createTable(CreateTableRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.createTable);
     }
@@ -3568,6 +3779,7 @@ public class DliClient {
      * @param CreateTableRequest 请求对象
      * @return SyncInvoker<CreateTableRequest, CreateTableResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateTableRequest, CreateTableResponse> createTableInvoker(CreateTableRequest request) {
         return new SyncInvoker<CreateTableRequest, CreateTableResponse>(request, DliMeta.createTable, hcClient);
     }
@@ -3582,6 +3794,7 @@ public class DliClient {
      * @param DeleteDatabaseRequest 请求对象
      * @return DeleteDatabaseResponse
      */
+    @Deprecated
     public DeleteDatabaseResponse deleteDatabase(DeleteDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.deleteDatabase);
     }
@@ -3596,6 +3809,7 @@ public class DliClient {
      * @param DeleteDatabaseRequest 请求对象
      * @return SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabaseInvoker(
         DeleteDatabaseRequest request) {
         return new SyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>(request, DliMeta.deleteDatabase,
@@ -3612,6 +3826,7 @@ public class DliClient {
      * @param DeleteTableRequest 请求对象
      * @return DeleteTableResponse
      */
+    @Deprecated
     public DeleteTableResponse deleteTable(DeleteTableRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.deleteTable);
     }
@@ -3626,6 +3841,7 @@ public class DliClient {
      * @param DeleteTableRequest 请求对象
      * @return SyncInvoker<DeleteTableRequest, DeleteTableResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteTableRequest, DeleteTableResponse> deleteTableInvoker(DeleteTableRequest request) {
         return new SyncInvoker<DeleteTableRequest, DeleteTableResponse>(request, DliMeta.deleteTable, hcClient);
     }
@@ -3640,6 +3856,7 @@ public class DliClient {
      * @param ExportSqlJobResultRequest 请求对象
      * @return ExportSqlJobResultResponse
      */
+    @Deprecated
     public ExportSqlJobResultResponse exportSqlJobResult(ExportSqlJobResultRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.exportSqlJobResult);
     }
@@ -3654,6 +3871,7 @@ public class DliClient {
      * @param ExportSqlJobResultRequest 请求对象
      * @return SyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse>
      */
+    @Deprecated
     public SyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse> exportSqlJobResultInvoker(
         ExportSqlJobResultRequest request) {
         return new SyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse>(request,
@@ -3670,6 +3888,7 @@ public class DliClient {
      * @param ExportTableRequest 请求对象
      * @return ExportTableResponse
      */
+    @Deprecated
     public ExportTableResponse exportTable(ExportTableRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.exportTable);
     }
@@ -3684,6 +3903,7 @@ public class DliClient {
      * @param ExportTableRequest 请求对象
      * @return SyncInvoker<ExportTableRequest, ExportTableResponse>
      */
+    @Deprecated
     public SyncInvoker<ExportTableRequest, ExportTableResponse> exportTableInvoker(ExportTableRequest request) {
         return new SyncInvoker<ExportTableRequest, ExportTableResponse>(request, DliMeta.exportTable, hcClient);
     }
@@ -3698,6 +3918,7 @@ public class DliClient {
      * @param ImportTableRequest 请求对象
      * @return ImportTableResponse
      */
+    @Deprecated
     public ImportTableResponse importTable(ImportTableRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.importTable);
     }
@@ -3712,6 +3933,7 @@ public class DliClient {
      * @param ImportTableRequest 请求对象
      * @return SyncInvoker<ImportTableRequest, ImportTableResponse>
      */
+    @Deprecated
     public SyncInvoker<ImportTableRequest, ImportTableResponse> importTableInvoker(ImportTableRequest request) {
         return new SyncInvoker<ImportTableRequest, ImportTableResponse>(request, DliMeta.importTable, hcClient);
     }
@@ -3726,6 +3948,7 @@ public class DliClient {
      * @param ListAllTablesRequest 请求对象
      * @return ListAllTablesResponse
      */
+    @Deprecated
     public ListAllTablesResponse listAllTables(ListAllTablesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listAllTables);
     }
@@ -3740,6 +3963,7 @@ public class DliClient {
      * @param ListAllTablesRequest 请求对象
      * @return SyncInvoker<ListAllTablesRequest, ListAllTablesResponse>
      */
+    @Deprecated
     public SyncInvoker<ListAllTablesRequest, ListAllTablesResponse> listAllTablesInvoker(ListAllTablesRequest request) {
         return new SyncInvoker<ListAllTablesRequest, ListAllTablesResponse>(request, DliMeta.listAllTables, hcClient);
     }
@@ -3754,6 +3978,7 @@ public class DliClient {
      * @param ListDatabasesRequest 请求对象
      * @return ListDatabasesResponse
      */
+    @Deprecated
     public ListDatabasesResponse listDatabases(ListDatabasesRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.listDatabases);
     }
@@ -3768,6 +3993,7 @@ public class DliClient {
      * @param ListDatabasesRequest 请求对象
      * @return SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
      */
+    @Deprecated
     public SyncInvoker<ListDatabasesRequest, ListDatabasesResponse> listDatabasesInvoker(ListDatabasesRequest request) {
         return new SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>(request, DliMeta.listDatabases, hcClient);
     }
@@ -3842,6 +4068,7 @@ public class DliClient {
      * @param ShowDescribeTableRequest 请求对象
      * @return ShowDescribeTableResponse
      */
+    @Deprecated
     public ShowDescribeTableResponse showDescribeTable(ShowDescribeTableRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.showDescribeTable);
     }
@@ -3856,6 +4083,7 @@ public class DliClient {
      * @param ShowDescribeTableRequest 请求对象
      * @return SyncInvoker<ShowDescribeTableRequest, ShowDescribeTableResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowDescribeTableRequest, ShowDescribeTableResponse> showDescribeTableInvoker(
         ShowDescribeTableRequest request) {
         return new SyncInvoker<ShowDescribeTableRequest, ShowDescribeTableResponse>(request, DliMeta.showDescribeTable,
@@ -3871,6 +4099,7 @@ public class DliClient {
      * @param ShowPartitionsRequest 请求对象
      * @return ShowPartitionsResponse
      */
+    @Deprecated
     public ShowPartitionsResponse showPartitions(ShowPartitionsRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.showPartitions);
     }
@@ -3884,6 +4113,7 @@ public class DliClient {
      * @param ShowPartitionsRequest 请求对象
      * @return SyncInvoker<ShowPartitionsRequest, ShowPartitionsResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowPartitionsRequest, ShowPartitionsResponse> showPartitionsInvoker(
         ShowPartitionsRequest request) {
         return new SyncInvoker<ShowPartitionsRequest, ShowPartitionsResponse>(request, DliMeta.showPartitions,
@@ -3990,6 +4220,7 @@ public class DliClient {
      * @param ShowTableContentRequest 请求对象
      * @return ShowTableContentResponse
      */
+    @Deprecated
     public ShowTableContentResponse showTableContent(ShowTableContentRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.showTableContent);
     }
@@ -4004,6 +4235,7 @@ public class DliClient {
      * @param ShowTableContentRequest 请求对象
      * @return SyncInvoker<ShowTableContentRequest, ShowTableContentResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowTableContentRequest, ShowTableContentResponse> showTableContentInvoker(
         ShowTableContentRequest request) {
         return new SyncInvoker<ShowTableContentRequest, ShowTableContentResponse>(request, DliMeta.showTableContent,
@@ -4020,6 +4252,7 @@ public class DliClient {
      * @param UpdateDatabaseOwnerRequest 请求对象
      * @return UpdateDatabaseOwnerResponse
      */
+    @Deprecated
     public UpdateDatabaseOwnerResponse updateDatabaseOwner(UpdateDatabaseOwnerRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.updateDatabaseOwner);
     }
@@ -4034,6 +4267,7 @@ public class DliClient {
      * @param UpdateDatabaseOwnerRequest 请求对象
      * @return SyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse> updateDatabaseOwnerInvoker(
         UpdateDatabaseOwnerRequest request) {
         return new SyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse>(request,
@@ -4050,6 +4284,7 @@ public class DliClient {
      * @param UpdateTableOwnerRequest 请求对象
      * @return UpdateTableOwnerResponse
      */
+    @Deprecated
     public UpdateTableOwnerResponse updateTableOwner(UpdateTableOwnerRequest request) {
         return hcClient.syncInvokeHttp(request, DliMeta.updateTableOwner);
     }
@@ -4064,6 +4299,7 @@ public class DliClient {
      * @param UpdateTableOwnerRequest 请求对象
      * @return SyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse>
      */
+    @Deprecated
     public SyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse> updateTableOwnerInvoker(
         UpdateTableOwnerRequest request) {
         return new SyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse>(request, DliMeta.updateTableOwner,

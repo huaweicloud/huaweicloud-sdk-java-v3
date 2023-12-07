@@ -204,7 +204,7 @@ public class PluginCreate {
     }
 
     /**
-     * 插件名称。支持汉字，英文，数字，中划线，下划线，且只能以英文和汉字开头，3-255字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * 插件名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3-255字符。 > 中文字符必须为UTF-8或者unicode编码。
      * @return pluginName
      */
     public String getPluginName() {

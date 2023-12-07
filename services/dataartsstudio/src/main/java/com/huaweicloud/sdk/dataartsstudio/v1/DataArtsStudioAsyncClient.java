@@ -21,6 +21,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetMembersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetMembersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetPermissionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetPermissionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteTemplatesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteTemplatesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineRequest;
@@ -75,6 +81,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetPermissionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetPermissionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateServiceCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateServiceCatalogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateStandardRequest;
@@ -117,8 +131,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityLevelFromEntityRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityLevelFromEntityResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityPermissionSetRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityPermissionSetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteServiceCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteServiceCatalogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteStandardRequest;
@@ -233,6 +251,16 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRulesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRulesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPermissionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPermissionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsRequest;
@@ -293,6 +321,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchVersionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchVersionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SetFactoryJobTagsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SetFactoryJobTagsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowAggregationLogicTableByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowAggregationLogicTableByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowApiDashboardRequest;
@@ -377,6 +407,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateRequest;
@@ -419,6 +455,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityRuleEnableStatusRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityRuleEnableStatusResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardTemplateRequest;
@@ -665,6 +709,99 @@ public class DataArtsStudioAsyncClient {
         BatchAssociateSecurityLevelToEntitiesRequest request) {
         return new AsyncInvoker<BatchAssociateSecurityLevelToEntitiesRequest, BatchAssociateSecurityLevelToEntitiesResponse>(
             request, DataArtsStudioMeta.batchAssociateSecurityLevelToEntities, hcClient);
+    }
+
+    /**
+     * 批量删除识别规则接口
+     *
+     * 批量删除识别规则接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSecurityDataClassificationRuleRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSecurityDataClassificationRuleResponse>
+     */
+    public CompletableFuture<BatchDeleteSecurityDataClassificationRuleResponse> batchDeleteSecurityDataClassificationRuleAsync(
+        BatchDeleteSecurityDataClassificationRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.batchDeleteSecurityDataClassificationRule);
+    }
+
+    /**
+     * 批量删除识别规则接口
+     *
+     * 批量删除识别规则接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSecurityDataClassificationRuleRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse>
+     */
+    public AsyncInvoker<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse> batchDeleteSecurityDataClassificationRuleAsyncInvoker(
+        BatchDeleteSecurityDataClassificationRuleRequest request) {
+        return new AsyncInvoker<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse>(
+            request, DataArtsStudioMeta.batchDeleteSecurityDataClassificationRule, hcClient);
+    }
+
+    /**
+     * 批量删除权限集成员
+     *
+     * 批量删除权限集成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSecurityPermissionSetMembersRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSecurityPermissionSetMembersResponse>
+     */
+    public CompletableFuture<BatchDeleteSecurityPermissionSetMembersResponse> batchDeleteSecurityPermissionSetMembersAsync(
+        BatchDeleteSecurityPermissionSetMembersRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.batchDeleteSecurityPermissionSetMembers);
+    }
+
+    /**
+     * 批量删除权限集成员
+     *
+     * 批量删除权限集成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSecurityPermissionSetMembersRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse>
+     */
+    public AsyncInvoker<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse> batchDeleteSecurityPermissionSetMembersAsyncInvoker(
+        BatchDeleteSecurityPermissionSetMembersRequest request) {
+        return new AsyncInvoker<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse>(
+            request, DataArtsStudioMeta.batchDeleteSecurityPermissionSetMembers, hcClient);
+    }
+
+    /**
+     * 删除权限集的权限
+     *
+     * 删除权限集的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSecurityPermissionSetPermissionsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSecurityPermissionSetPermissionsResponse>
+     */
+    public CompletableFuture<BatchDeleteSecurityPermissionSetPermissionsResponse> batchDeleteSecurityPermissionSetPermissionsAsync(
+        BatchDeleteSecurityPermissionSetPermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.batchDeleteSecurityPermissionSetPermissions);
+    }
+
+    /**
+     * 删除权限集的权限
+     *
+     * 删除权限集的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSecurityPermissionSetPermissionsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse>
+     */
+    public AsyncInvoker<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse> batchDeleteSecurityPermissionSetPermissionsAsyncInvoker(
+        BatchDeleteSecurityPermissionSetPermissionsRequest request) {
+        return new AsyncInvoker<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse>(
+            request, DataArtsStudioMeta.batchDeleteSecurityPermissionSetPermissions, hcClient);
     }
 
     /**
@@ -1451,6 +1588,130 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 创建识别规则
+     *
+     * 创建识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecurityDataClassificationRuleRequest 请求对象
+     * @return CompletableFuture<CreateSecurityDataClassificationRuleResponse>
+     */
+    public CompletableFuture<CreateSecurityDataClassificationRuleResponse> createSecurityDataClassificationRuleAsync(
+        CreateSecurityDataClassificationRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createSecurityDataClassificationRule);
+    }
+
+    /**
+     * 创建识别规则
+     *
+     * 创建识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecurityDataClassificationRuleRequest 请求对象
+     * @return AsyncInvoker<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse>
+     */
+    public AsyncInvoker<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> createSecurityDataClassificationRuleAsyncInvoker(
+        CreateSecurityDataClassificationRuleRequest request) {
+        return new AsyncInvoker<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse>(
+            request, DataArtsStudioMeta.createSecurityDataClassificationRule, hcClient);
+    }
+
+    /**
+     * 创建权限集
+     *
+     * 创建权限集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecurityPermissionSetRequest 请求对象
+     * @return CompletableFuture<CreateSecurityPermissionSetResponse>
+     */
+    public CompletableFuture<CreateSecurityPermissionSetResponse> createSecurityPermissionSetAsync(
+        CreateSecurityPermissionSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createSecurityPermissionSet);
+    }
+
+    /**
+     * 创建权限集
+     *
+     * 创建权限集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecurityPermissionSetRequest 请求对象
+     * @return AsyncInvoker<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse>
+     */
+    public AsyncInvoker<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse> createSecurityPermissionSetAsyncInvoker(
+        CreateSecurityPermissionSetRequest request) {
+        return new AsyncInvoker<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse>(request,
+            DataArtsStudioMeta.createSecurityPermissionSet, hcClient);
+    }
+
+    /**
+     * 添加权限集成员
+     *
+     * 添加权限集成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecurityPermissionSetMemberRequest 请求对象
+     * @return CompletableFuture<CreateSecurityPermissionSetMemberResponse>
+     */
+    public CompletableFuture<CreateSecurityPermissionSetMemberResponse> createSecurityPermissionSetMemberAsync(
+        CreateSecurityPermissionSetMemberRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createSecurityPermissionSetMember);
+    }
+
+    /**
+     * 添加权限集成员
+     *
+     * 添加权限集成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecurityPermissionSetMemberRequest 请求对象
+     * @return AsyncInvoker<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse>
+     */
+    public AsyncInvoker<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse> createSecurityPermissionSetMemberAsyncInvoker(
+        CreateSecurityPermissionSetMemberRequest request) {
+        return new AsyncInvoker<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse>(
+            request, DataArtsStudioMeta.createSecurityPermissionSetMember, hcClient);
+    }
+
+    /**
+     * 添加权限集的权限
+     *
+     * 添加权限集的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecurityPermissionSetPermissionRequest 请求对象
+     * @return CompletableFuture<CreateSecurityPermissionSetPermissionResponse>
+     */
+    public CompletableFuture<CreateSecurityPermissionSetPermissionResponse> createSecurityPermissionSetPermissionAsync(
+        CreateSecurityPermissionSetPermissionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createSecurityPermissionSetPermission);
+    }
+
+    /**
+     * 添加权限集的权限
+     *
+     * 添加权限集的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSecurityPermissionSetPermissionRequest 请求对象
+     * @return AsyncInvoker<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse>
+     */
+    public AsyncInvoker<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse> createSecurityPermissionSetPermissionAsyncInvoker(
+        CreateSecurityPermissionSetPermissionRequest request) {
+        return new AsyncInvoker<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse>(
+            request, DataArtsStudioMeta.createSecurityPermissionSetPermission, hcClient);
+    }
+
+    /**
      * 创建服务目录
      *
      * 创建服务目录
@@ -2021,6 +2282,37 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 删除识别规则
+     *
+     * 删除识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSecurityDataClassificationRuleRequest 请求对象
+     * @return CompletableFuture<DeleteSecurityDataClassificationRuleResponse>
+     */
+    public CompletableFuture<DeleteSecurityDataClassificationRuleResponse> deleteSecurityDataClassificationRuleAsync(
+        DeleteSecurityDataClassificationRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.deleteSecurityDataClassificationRule);
+    }
+
+    /**
+     * 删除识别规则
+     *
+     * 删除识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSecurityDataClassificationRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse>
+     */
+    public AsyncInvoker<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse> deleteSecurityDataClassificationRuleAsyncInvoker(
+        DeleteSecurityDataClassificationRuleRequest request) {
+        return new AsyncInvoker<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse>(
+            request, DataArtsStudioMeta.deleteSecurityDataClassificationRule, hcClient);
+    }
+
+    /**
      * 移除资产关联密级
      *
      * 移除资产关联密级
@@ -2049,6 +2341,37 @@ public class DataArtsStudioAsyncClient {
         DeleteSecurityLevelFromEntityRequest request) {
         return new AsyncInvoker<DeleteSecurityLevelFromEntityRequest, DeleteSecurityLevelFromEntityResponse>(request,
             DataArtsStudioMeta.deleteSecurityLevelFromEntity, hcClient);
+    }
+
+    /**
+     * 删除权限集
+     *
+     * 删除权限集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSecurityPermissionSetRequest 请求对象
+     * @return CompletableFuture<DeleteSecurityPermissionSetResponse>
+     */
+    public CompletableFuture<DeleteSecurityPermissionSetResponse> deleteSecurityPermissionSetAsync(
+        DeleteSecurityPermissionSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.deleteSecurityPermissionSet);
+    }
+
+    /**
+     * 删除权限集
+     *
+     * 删除权限集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteSecurityPermissionSetRequest 请求对象
+     * @return AsyncInvoker<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse>
+     */
+    public AsyncInvoker<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse> deleteSecurityPermissionSetAsyncInvoker(
+        DeleteSecurityPermissionSetRequest request) {
+        return new AsyncInvoker<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse>(request,
+            DataArtsStudioMeta.deleteSecurityPermissionSet, hcClient);
     }
 
     /**
@@ -3669,6 +3992,161 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ListSchemasRequest, ListSchemasResponse> listSchemasAsyncInvoker(ListSchemasRequest request) {
         return new AsyncInvoker<ListSchemasRequest, ListSchemasResponse>(request, DataArtsStudioMeta.listSchemas,
             hcClient);
+    }
+
+    /**
+     * 查询规则组列表
+     *
+     * 查询规则组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityDataClassificationRuleGroupsRequest 请求对象
+     * @return CompletableFuture<ListSecurityDataClassificationRuleGroupsResponse>
+     */
+    public CompletableFuture<ListSecurityDataClassificationRuleGroupsResponse> listSecurityDataClassificationRuleGroupsAsync(
+        ListSecurityDataClassificationRuleGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listSecurityDataClassificationRuleGroups);
+    }
+
+    /**
+     * 查询规则组列表
+     *
+     * 查询规则组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityDataClassificationRuleGroupsRequest 请求对象
+     * @return AsyncInvoker<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse>
+     */
+    public AsyncInvoker<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse> listSecurityDataClassificationRuleGroupsAsyncInvoker(
+        ListSecurityDataClassificationRuleGroupsRequest request) {
+        return new AsyncInvoker<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse>(
+            request, DataArtsStudioMeta.listSecurityDataClassificationRuleGroups, hcClient);
+    }
+
+    /**
+     * 查询识别规则列表
+     *
+     * 查询识别规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityDataClassificationRulesRequest 请求对象
+     * @return CompletableFuture<ListSecurityDataClassificationRulesResponse>
+     */
+    public CompletableFuture<ListSecurityDataClassificationRulesResponse> listSecurityDataClassificationRulesAsync(
+        ListSecurityDataClassificationRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listSecurityDataClassificationRules);
+    }
+
+    /**
+     * 查询识别规则列表
+     *
+     * 查询识别规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityDataClassificationRulesRequest 请求对象
+     * @return AsyncInvoker<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse>
+     */
+    public AsyncInvoker<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse> listSecurityDataClassificationRulesAsyncInvoker(
+        ListSecurityDataClassificationRulesRequest request) {
+        return new AsyncInvoker<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse>(
+            request, DataArtsStudioMeta.listSecurityDataClassificationRules, hcClient);
+    }
+
+    /**
+     * 查询权限集成员列表
+     *
+     * 查询权限集成员列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityPermissionSetMembersRequest 请求对象
+     * @return CompletableFuture<ListSecurityPermissionSetMembersResponse>
+     */
+    public CompletableFuture<ListSecurityPermissionSetMembersResponse> listSecurityPermissionSetMembersAsync(
+        ListSecurityPermissionSetMembersRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listSecurityPermissionSetMembers);
+    }
+
+    /**
+     * 查询权限集成员列表
+     *
+     * 查询权限集成员列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityPermissionSetMembersRequest 请求对象
+     * @return AsyncInvoker<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse>
+     */
+    public AsyncInvoker<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse> listSecurityPermissionSetMembersAsyncInvoker(
+        ListSecurityPermissionSetMembersRequest request) {
+        return new AsyncInvoker<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse>(
+            request, DataArtsStudioMeta.listSecurityPermissionSetMembers, hcClient);
+    }
+
+    /**
+     * 查询权限集的权限列表
+     *
+     * 查询权限集的权限列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityPermissionSetPermissionsRequest 请求对象
+     * @return CompletableFuture<ListSecurityPermissionSetPermissionsResponse>
+     */
+    public CompletableFuture<ListSecurityPermissionSetPermissionsResponse> listSecurityPermissionSetPermissionsAsync(
+        ListSecurityPermissionSetPermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listSecurityPermissionSetPermissions);
+    }
+
+    /**
+     * 查询权限集的权限列表
+     *
+     * 查询权限集的权限列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityPermissionSetPermissionsRequest 请求对象
+     * @return AsyncInvoker<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse>
+     */
+    public AsyncInvoker<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse> listSecurityPermissionSetPermissionsAsyncInvoker(
+        ListSecurityPermissionSetPermissionsRequest request) {
+        return new AsyncInvoker<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse>(
+            request, DataArtsStudioMeta.listSecurityPermissionSetPermissions, hcClient);
+    }
+
+    /**
+     * 查询权限集列表
+     *
+     * 查询权限集列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityPermissionSetsRequest 请求对象
+     * @return CompletableFuture<ListSecurityPermissionSetsResponse>
+     */
+    public CompletableFuture<ListSecurityPermissionSetsResponse> listSecurityPermissionSetsAsync(
+        ListSecurityPermissionSetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listSecurityPermissionSets);
+    }
+
+    /**
+     * 查询权限集列表
+     *
+     * 查询权限集列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSecurityPermissionSetsRequest 请求对象
+     * @return AsyncInvoker<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse>
+     */
+    public AsyncInvoker<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse> listSecurityPermissionSetsAsyncInvoker(
+        ListSecurityPermissionSetsRequest request) {
+        return new AsyncInvoker<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse>(request,
+            DataArtsStudioMeta.listSecurityPermissionSets, hcClient);
     }
 
     /**
@@ -5696,6 +6174,99 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 查询特定识别规则
+     *
+     * 查询特定识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecurityDataClassificationRuleRequest 请求对象
+     * @return CompletableFuture<ShowSecurityDataClassificationRuleResponse>
+     */
+    public CompletableFuture<ShowSecurityDataClassificationRuleResponse> showSecurityDataClassificationRuleAsync(
+        ShowSecurityDataClassificationRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showSecurityDataClassificationRule);
+    }
+
+    /**
+     * 查询特定识别规则
+     *
+     * 查询特定识别规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecurityDataClassificationRuleRequest 请求对象
+     * @return AsyncInvoker<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse>
+     */
+    public AsyncInvoker<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse> showSecurityDataClassificationRuleAsyncInvoker(
+        ShowSecurityDataClassificationRuleRequest request) {
+        return new AsyncInvoker<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse>(
+            request, DataArtsStudioMeta.showSecurityDataClassificationRule, hcClient);
+    }
+
+    /**
+     * 查询规则组
+     *
+     * 查询规则组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecurityDataClassificationRuleGroupRequest 请求对象
+     * @return CompletableFuture<ShowSecurityDataClassificationRuleGroupResponse>
+     */
+    public CompletableFuture<ShowSecurityDataClassificationRuleGroupResponse> showSecurityDataClassificationRuleGroupAsync(
+        ShowSecurityDataClassificationRuleGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showSecurityDataClassificationRuleGroup);
+    }
+
+    /**
+     * 查询规则组
+     *
+     * 查询规则组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecurityDataClassificationRuleGroupRequest 请求对象
+     * @return AsyncInvoker<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse>
+     */
+    public AsyncInvoker<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse> showSecurityDataClassificationRuleGroupAsyncInvoker(
+        ShowSecurityDataClassificationRuleGroupRequest request) {
+        return new AsyncInvoker<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse>(
+            request, DataArtsStudioMeta.showSecurityDataClassificationRuleGroup, hcClient);
+    }
+
+    /**
+     * 查询权限集
+     *
+     * 查询权限集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecurityPermissionSetRequest 请求对象
+     * @return CompletableFuture<ShowSecurityPermissionSetResponse>
+     */
+    public CompletableFuture<ShowSecurityPermissionSetResponse> showSecurityPermissionSetAsync(
+        ShowSecurityPermissionSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showSecurityPermissionSet);
+    }
+
+    /**
+     * 查询权限集
+     *
+     * 查询权限集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSecurityPermissionSetRequest 请求对象
+     * @return AsyncInvoker<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse>
+     */
+    public AsyncInvoker<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> showSecurityPermissionSetAsyncInvoker(
+        ShowSecurityPermissionSetRequest request) {
+        return new AsyncInvoker<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse>(request,
+            DataArtsStudioMeta.showSecurityPermissionSet, hcClient);
+    }
+
+    /**
      * 查看数据标准详情
      *
      * 通过id获取数据标准详情信息
@@ -6296,6 +6867,130 @@ public class DataArtsStudioAsyncClient {
         UpdateFactoryJobNameRequest request) {
         return new AsyncInvoker<UpdateFactoryJobNameRequest, UpdateFactoryJobNameResponse>(request,
             DataArtsStudioMeta.updateFactoryJobName, hcClient);
+    }
+
+    /**
+     * 修改识别规则接口
+     *
+     * 修改识别规则接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecurityDataClassificationRuleRequest 请求对象
+     * @return CompletableFuture<UpdateSecurityDataClassificationRuleResponse>
+     */
+    public CompletableFuture<UpdateSecurityDataClassificationRuleResponse> updateSecurityDataClassificationRuleAsync(
+        UpdateSecurityDataClassificationRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateSecurityDataClassificationRule);
+    }
+
+    /**
+     * 修改识别规则接口
+     *
+     * 修改识别规则接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecurityDataClassificationRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse>
+     */
+    public AsyncInvoker<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> updateSecurityDataClassificationRuleAsyncInvoker(
+        UpdateSecurityDataClassificationRuleRequest request) {
+        return new AsyncInvoker<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse>(
+            request, DataArtsStudioMeta.updateSecurityDataClassificationRule, hcClient);
+    }
+
+    /**
+     * 更新权限集
+     *
+     * 更新权限集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecurityPermissionSetRequest 请求对象
+     * @return CompletableFuture<UpdateSecurityPermissionSetResponse>
+     */
+    public CompletableFuture<UpdateSecurityPermissionSetResponse> updateSecurityPermissionSetAsync(
+        UpdateSecurityPermissionSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateSecurityPermissionSet);
+    }
+
+    /**
+     * 更新权限集
+     *
+     * 更新权限集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecurityPermissionSetRequest 请求对象
+     * @return AsyncInvoker<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse>
+     */
+    public AsyncInvoker<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse> updateSecurityPermissionSetAsyncInvoker(
+        UpdateSecurityPermissionSetRequest request) {
+        return new AsyncInvoker<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse>(request,
+            DataArtsStudioMeta.updateSecurityPermissionSet, hcClient);
+    }
+
+    /**
+     * 更新权限集的权限
+     *
+     * 更新权限集的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecurityPermissionSetPermissionRequest 请求对象
+     * @return CompletableFuture<UpdateSecurityPermissionSetPermissionResponse>
+     */
+    public CompletableFuture<UpdateSecurityPermissionSetPermissionResponse> updateSecurityPermissionSetPermissionAsync(
+        UpdateSecurityPermissionSetPermissionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateSecurityPermissionSetPermission);
+    }
+
+    /**
+     * 更新权限集的权限
+     *
+     * 更新权限集的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecurityPermissionSetPermissionRequest 请求对象
+     * @return AsyncInvoker<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse>
+     */
+    public AsyncInvoker<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse> updateSecurityPermissionSetPermissionAsyncInvoker(
+        UpdateSecurityPermissionSetPermissionRequest request) {
+        return new AsyncInvoker<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse>(
+            request, DataArtsStudioMeta.updateSecurityPermissionSetPermission, hcClient);
+    }
+
+    /**
+     * 修改识别规则状态接口
+     *
+     * 修改识别规则状态接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecurityRuleEnableStatusRequest 请求对象
+     * @return CompletableFuture<UpdateSecurityRuleEnableStatusResponse>
+     */
+    public CompletableFuture<UpdateSecurityRuleEnableStatusResponse> updateSecurityRuleEnableStatusAsync(
+        UpdateSecurityRuleEnableStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateSecurityRuleEnableStatus);
+    }
+
+    /**
+     * 修改识别规则状态接口
+     *
+     * 修改识别规则状态接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSecurityRuleEnableStatusRequest 请求对象
+     * @return AsyncInvoker<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse>
+     */
+    public AsyncInvoker<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse> updateSecurityRuleEnableStatusAsyncInvoker(
+        UpdateSecurityRuleEnableStatusRequest request) {
+        return new AsyncInvoker<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse>(request,
+            DataArtsStudioMeta.updateSecurityRuleEnableStatus, hcClient);
     }
 
     /**
@@ -6923,6 +7618,34 @@ public class DataArtsStudioAsyncClient {
         SearchPublishInfoRequest request) {
         return new AsyncInvoker<SearchPublishInfoRequest, SearchPublishInfoResponse>(request,
             DataArtsStudioMeta.searchPublishInfo, hcClient);
+    }
+
+    /**
+     * 设置作业标签
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetFactoryJobTagsRequest 请求对象
+     * @return CompletableFuture<SetFactoryJobTagsResponse>
+     */
+    public CompletableFuture<SetFactoryJobTagsResponse> setFactoryJobTagsAsync(SetFactoryJobTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.setFactoryJobTags);
+    }
+
+    /**
+     * 设置作业标签
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetFactoryJobTagsRequest 请求对象
+     * @return AsyncInvoker<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse>
+     */
+    public AsyncInvoker<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> setFactoryJobTagsAsyncInvoker(
+        SetFactoryJobTagsRequest request) {
+        return new AsyncInvoker<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse>(request,
+            DataArtsStudioMeta.setFactoryJobTags, hcClient);
     }
 
     /**

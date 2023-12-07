@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,31 +17,39 @@ public class ShowAvailableZoneInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
-    private AvailabilityZones availabilityZone;
+    private List<AvailabilityZones> availabilityZone = null;
 
-    public ShowAvailableZoneInfoResponse withAvailabilityZone(AvailabilityZones availabilityZone) {
+    public ShowAvailableZoneInfoResponse withAvailabilityZone(List<AvailabilityZones> availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
 
-    public ShowAvailableZoneInfoResponse withAvailabilityZone(Consumer<AvailabilityZones> availabilityZoneSetter) {
+    public ShowAvailableZoneInfoResponse addAvailabilityZoneItem(AvailabilityZones availabilityZoneItem) {
         if (this.availabilityZone == null) {
-            this.availabilityZone = new AvailabilityZones();
-            availabilityZoneSetter.accept(this.availabilityZone);
+            this.availabilityZone = new ArrayList<>();
         }
+        this.availabilityZone.add(availabilityZoneItem);
+        return this;
+    }
 
+    public ShowAvailableZoneInfoResponse withAvailabilityZone(
+        Consumer<List<AvailabilityZones>> availabilityZoneSetter) {
+        if (this.availabilityZone == null) {
+            this.availabilityZone = new ArrayList<>();
+        }
+        availabilityZoneSetter.accept(this.availabilityZone);
         return this;
     }
 
     /**
-     * Get availabilityZone
+     * 可用区信息。
      * @return availabilityZone
      */
-    public AvailabilityZones getAvailabilityZone() {
+    public List<AvailabilityZones> getAvailabilityZone() {
         return availabilityZone;
     }
 
-    public void setAvailabilityZone(AvailabilityZones availabilityZone) {
+    public void setAvailabilityZone(List<AvailabilityZones> availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
 

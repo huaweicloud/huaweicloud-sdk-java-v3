@@ -26,6 +26,11 @@ public class KafkaConnectionDetail {
     private String addr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_protocol")
+
+    private String securityProtocol;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sasl_ssl")
 
     private Boolean saslSsl;
@@ -155,6 +160,23 @@ public class KafkaConnectionDetail {
         this.addr = addr;
     }
 
+    public KafkaConnectionDetail withSecurityProtocol(String securityProtocol) {
+        this.securityProtocol = securityProtocol;
+        return this;
+    }
+
+    /**
+     * 安全协议。
+     * @return securityProtocol
+     */
+    public String getSecurityProtocol() {
+        return securityProtocol;
+    }
+
+    public void setSecurityProtocol(String securityProtocol) {
+        this.securityProtocol = securityProtocol;
+    }
+
     public KafkaConnectionDetail withSaslSsl(Boolean saslSsl) {
         this.saslSsl = saslSsl;
         return this;
@@ -233,13 +255,14 @@ public class KafkaConnectionDetail {
         }
         KafkaConnectionDetail that = (KafkaConnectionDetail) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.addr, that.addr)
+            && Objects.equals(this.securityProtocol, that.securityProtocol)
             && Objects.equals(this.saslSsl, that.saslSsl) && Objects.equals(this.username, that.username)
             && Objects.equals(this.password, that.password) && Objects.equals(this.acks, that.acks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, addr, saslSsl, username, password, acks);
+        return Objects.hash(instanceId, addr, securityProtocol, saslSsl, username, password, acks);
     }
 
     @Override
@@ -248,6 +271,7 @@ public class KafkaConnectionDetail {
         sb.append("class KafkaConnectionDetail {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
+        sb.append("    securityProtocol: ").append(toIndentedString(securityProtocol)).append("\n");
         sb.append("    saslSsl: ").append(toIndentedString(saslSsl)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");

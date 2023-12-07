@@ -43,6 +43,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteBaseDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteRulesBaseDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetMembersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetMembersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetPermissionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetPermissionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteTemplatesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteTemplatesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineRequest;
@@ -111,6 +119,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetMemberResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetPermissionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetPermissionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateServiceCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateServiceCatalogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateStandardRequest;
@@ -131,6 +147,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceParams;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CustomizedFieldsVOList;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationRuleEnableDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationRuleOperateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugDataconnectionRequest;
@@ -155,8 +173,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityLevelFromEntityRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityLevelFromEntityResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityPermissionSetRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityPermissionSetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteServiceCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteServiceCatalogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteStandardRequest;
@@ -278,6 +300,16 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRulesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRulesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPermissionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPermissionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsRequest;
@@ -309,6 +341,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ParseUserBehaviorRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ParseUserBehaviorResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetCreateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetMemberCreateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetPermissionCreateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetPermissionUpdateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PublishApiToInstanceRequest;
@@ -350,6 +386,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchVersionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchVersionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SetFactoryJobTagsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SetFactoryJobTagsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SetJobTagsRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowAggregationLogicTableByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowAggregationLogicTableByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowApiDashboardRequest;
@@ -434,6 +473,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateRequest;
@@ -486,6 +531,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityRuleEnableStatusRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityRuleEnableStatusResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateStandardTemplateRequest;
@@ -687,7 +740,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<BatchApproveApplyRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchApproveApplyRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(BatchApproveApplyRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -767,6 +820,125 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BulkSecurityLevel.class),
             f -> f.withMarshaller(BatchAssociateSecurityLevelToEntitiesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse> batchDeleteSecurityDataClassificationRule =
+        genForbatchDeleteSecurityDataClassificationRule();
+
+    private static HttpRequestDef<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse> genForbatchDeleteSecurityDataClassificationRule() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSecurityDataClassificationRuleRequest, BatchDeleteSecurityDataClassificationRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSecurityDataClassificationRuleRequest.class,
+                    BatchDeleteSecurityDataClassificationRuleResponse.class)
+                .withName("BatchDeleteSecurityDataClassificationRule")
+                .withUri("/v1/{project_id}/security/data-classification/rule/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<BatchDeleteRulesBaseDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRulesBaseDTO.class),
+            f -> f.withMarshaller(BatchDeleteSecurityDataClassificationRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse> batchDeleteSecurityPermissionSetMembers =
+        genForbatchDeleteSecurityPermissionSetMembers();
+
+    private static HttpRequestDef<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse> genForbatchDeleteSecurityPermissionSetMembers() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSecurityPermissionSetMembersRequest, BatchDeleteSecurityPermissionSetMembersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSecurityPermissionSetMembersRequest.class,
+                    BatchDeleteSecurityPermissionSetMembersResponse.class)
+                .withName("BatchDeleteSecurityPermissionSetMembers")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}/members/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetMembersRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetMembersRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<BatchDeleteBaseDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteBaseDTO.class),
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetMembersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse> batchDeleteSecurityPermissionSetPermissions =
+        genForbatchDeleteSecurityPermissionSetPermissions();
+
+    private static HttpRequestDef<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse> genForbatchDeleteSecurityPermissionSetPermissions() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSecurityPermissionSetPermissionsRequest, BatchDeleteSecurityPermissionSetPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSecurityPermissionSetPermissionsRequest.class,
+                    BatchDeleteSecurityPermissionSetPermissionsResponse.class)
+                .withName("BatchDeleteSecurityPermissionSetPermissions")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}/permissions/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetPermissionsRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetPermissionsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<BatchDeleteBaseDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteBaseDTO.class),
+            f -> f.withMarshaller(BatchDeleteSecurityPermissionSetPermissionsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1096,7 +1268,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ConfirmMessageRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ConfirmMessageRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ConfirmMessageRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -1255,7 +1427,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<CreateAppRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateAppRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(CreateAppRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -1612,6 +1784,160 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> createSecurityDataClassificationRule =
+        genForcreateSecurityDataClassificationRule();
+
+    private static HttpRequestDef<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> genForcreateSecurityDataClassificationRule() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityDataClassificationRuleRequest.class,
+                    CreateSecurityDataClassificationRuleResponse.class)
+                .withName("CreateSecurityDataClassificationRule")
+                .withUri("/v1/{project_id}/security/data-classification/rule")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<DataClassificationRuleOperateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataClassificationRuleOperateDTO.class),
+            f -> f.withMarshaller(CreateSecurityDataClassificationRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse> createSecurityPermissionSet =
+        genForcreateSecurityPermissionSet();
+
+    private static HttpRequestDef<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse> genForcreateSecurityPermissionSet() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityPermissionSetRequest, CreateSecurityPermissionSetResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityPermissionSetRequest.class,
+                    CreateSecurityPermissionSetResponse.class)
+                .withName("CreateSecurityPermissionSet")
+                .withUri("/v1/{project_id}/security/permission-sets")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityPermissionSetRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<PermissionSetCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionSetCreateDTO.class),
+            f -> f.withMarshaller(CreateSecurityPermissionSetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse> createSecurityPermissionSetMember =
+        genForcreateSecurityPermissionSetMember();
+
+    private static HttpRequestDef<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse> genForcreateSecurityPermissionSetMember() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityPermissionSetMemberRequest, CreateSecurityPermissionSetMemberResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityPermissionSetMemberRequest.class,
+                    CreateSecurityPermissionSetMemberResponse.class)
+                .withName("CreateSecurityPermissionSetMember")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}/members")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityPermissionSetMemberRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityPermissionSetMemberRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<PermissionSetMemberCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionSetMemberCreateDTO.class),
+            f -> f.withMarshaller(CreateSecurityPermissionSetMemberRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse> createSecurityPermissionSetPermission =
+        genForcreateSecurityPermissionSetPermission();
+
+    private static HttpRequestDef<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse> genForcreateSecurityPermissionSetPermission() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityPermissionSetPermissionRequest, CreateSecurityPermissionSetPermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityPermissionSetPermissionRequest.class,
+                    CreateSecurityPermissionSetPermissionResponse.class)
+                .withName("CreateSecurityPermissionSetPermission")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}/permissions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<PermissionSetPermissionCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionSetPermissionCreateDTO.class),
+            f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateServiceCatalogRequest, CreateServiceCatalogResponse> createServiceCatalog =
         genForcreateServiceCatalog();
 
@@ -1633,7 +1959,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<CreateServiceCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateServiceCatalogRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(CreateServiceCatalogRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -1965,7 +2291,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<DeleteAppRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteAppRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(DeleteAppRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -2241,6 +2567,41 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse> deleteSecurityDataClassificationRule =
+        genFordeleteSecurityDataClassificationRule();
+
+    private static HttpRequestDef<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse> genFordeleteSecurityDataClassificationRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecurityDataClassificationRuleRequest, DeleteSecurityDataClassificationRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteSecurityDataClassificationRuleRequest.class,
+                    DeleteSecurityDataClassificationRuleResponse.class)
+                .withName("DeleteSecurityDataClassificationRule")
+                .withUri("/v1/{project_id}/security/data-classification/rule/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityDataClassificationRuleRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSecurityLevelFromEntityRequest, DeleteSecurityLevelFromEntityResponse> deleteSecurityLevelFromEntity =
         genFordeleteSecurityLevelFromEntity();
 
@@ -2276,6 +2637,41 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse> deleteSecurityPermissionSet =
+        genFordeleteSecurityPermissionSet();
+
+    private static HttpRequestDef<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse> genFordeleteSecurityPermissionSet() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecurityPermissionSetRequest, DeleteSecurityPermissionSetResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteSecurityPermissionSetRequest.class,
+                    DeleteSecurityPermissionSetResponse.class)
+                .withName("DeleteSecurityPermissionSet")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityPermissionSetRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityPermissionSetRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteServiceCatalogRequest, DeleteServiceCatalogResponse> deleteServiceCatalog =
         genFordeleteServiceCatalog();
 
@@ -2297,7 +2693,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<DeleteServiceCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteServiceCatalogRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(DeleteServiceCatalogRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -2851,7 +3247,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListAllCatalogListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAllCatalogListRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListAllCatalogListRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -2964,7 +3360,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListApiCatalogListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApiCatalogListRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListApiCatalogListRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -3044,7 +3440,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListApiTopNRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApiTopNRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListApiTopNRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -3104,7 +3500,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListApicGroupsRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApicGroupsRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListApicGroupsRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -3157,7 +3553,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListApicInstancesRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApicInstancesRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListApicInstancesRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -3230,7 +3626,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListApisTopRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApisTopRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListApisTopRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -3289,7 +3685,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListApplyRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApplyRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListApplyRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -3394,7 +3790,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListAppsRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAppsRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListAppsRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -3460,7 +3856,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListAppsTopRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAppsTopRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListAppsTopRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -3731,7 +4127,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListCatalogListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListCatalogListRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListCatalogListRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -5075,7 +5471,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListMessageRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListMessageRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListMessageRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -5501,6 +5897,489 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse> listSecurityDataClassificationRuleGroups =
+        genForlistSecurityDataClassificationRuleGroups();
+
+    private static HttpRequestDef<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse> genForlistSecurityDataClassificationRuleGroups() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityDataClassificationRuleGroupsRequest, ListSecurityDataClassificationRuleGroupsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityDataClassificationRuleGroupsRequest.class,
+                    ListSecurityDataClassificationRuleGroupsResponse.class)
+                .withName("ListSecurityDataClassificationRuleGroups")
+                .withUri("/v1/{project_id}/security/data-classification/rule/group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getCreator, (req, v) -> {
+                req.setCreator(v);
+            }));
+        builder.<ListSecurityDataClassificationRuleGroupsRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityDataClassificationRuleGroupsRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getOrderBy, (req, v) -> {
+                req.setOrderBy(v);
+            }));
+        builder.<Boolean>withRequestField("desc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getDesc, (req, v) -> {
+                req.setDesc(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRuleGroupsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse> listSecurityDataClassificationRules =
+        genForlistSecurityDataClassificationRules();
+
+    private static HttpRequestDef<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse> genForlistSecurityDataClassificationRules() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityDataClassificationRulesRequest, ListSecurityDataClassificationRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityDataClassificationRulesRequest.class,
+                    ListSecurityDataClassificationRulesResponse.class)
+                .withName("ListSecurityDataClassificationRules")
+                .withUri("/v1/{project_id}/security/data-classification/rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("secrecy_level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getSecrecyLevel, (req, v) -> {
+                req.setSecrecyLevel(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getCreator, (req, v) -> {
+                req.setCreator(v);
+            }));
+        builder.<Boolean>withRequestField("enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getEnable, (req, v) -> {
+                req.setEnable(v);
+            }));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<ListSecurityDataClassificationRulesRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityDataClassificationRulesRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getOrderBy, (req, v) -> {
+                req.setOrderBy(v);
+            }));
+        builder.<Boolean>withRequestField("desc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getDesc, (req, v) -> {
+                req.setDesc(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDataClassificationRulesRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse> listSecurityPermissionSetMembers =
+        genForlistSecurityPermissionSetMembers();
+
+    private static HttpRequestDef<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse> genForlistSecurityPermissionSetMembers() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityPermissionSetMembersRequest, ListSecurityPermissionSetMembersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityPermissionSetMembersRequest.class,
+                    ListSecurityPermissionSetMembersResponse.class)
+                .withName("ListSecurityPermissionSetMembers")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}/members")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("member_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getMemberName, (req, v) -> {
+                req.setMemberName(v);
+            }));
+        builder.<ListSecurityPermissionSetMembersRequest.MemberTypeEnum>withRequestField("member_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetMembersRequest.MemberTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getMemberType, (req, v) -> {
+                req.setMemberType(v);
+            }));
+        builder.<Boolean>withRequestField("order_by_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getOrderByAsc, (req, v) -> {
+                req.setOrderByAsc(v);
+            }));
+        builder.<ListSecurityPermissionSetMembersRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetMembersRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getOrderBy, (req, v) -> {
+                req.setOrderBy(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetMembersRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse> listSecurityPermissionSetPermissions =
+        genForlistSecurityPermissionSetPermissions();
+
+    private static HttpRequestDef<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse> genForlistSecurityPermissionSetPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityPermissionSetPermissionsRequest, ListSecurityPermissionSetPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityPermissionSetPermissionsRequest.class,
+                    ListSecurityPermissionSetPermissionsResponse.class)
+                .withName("ListSecurityPermissionSetPermissions")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ListSecurityPermissionSetPermissionsRequest.PermissionTypeEnum>withRequestField("permission_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.PermissionTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getPermissionType, (req, v) -> {
+                req.setPermissionType(v);
+            }));
+        builder.<ListSecurityPermissionSetPermissionsRequest.PermissionActionEnum>withRequestField("permission_action",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.PermissionActionEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getPermissionAction, (req, v) -> {
+                req.setPermissionAction(v);
+            }));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getClusterName, (req, v) -> {
+                req.setClusterName(v);
+            }));
+        builder.<ListSecurityPermissionSetPermissionsRequest.DatasourceTypeEnum>withRequestField("datasource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.DatasourceTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getDatasourceType, (req, v) -> {
+                req.setDatasourceType(v);
+            }));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getDatabaseName, (req, v) -> {
+                req.setDatabaseName(v);
+            }));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getTableName, (req, v) -> {
+                req.setTableName(v);
+            }));
+        builder.<String>withRequestField("column_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getColumnName, (req, v) -> {
+                req.setColumnName(v);
+            }));
+        builder.<ListSecurityPermissionSetPermissionsRequest.SyncStatusEnum>withRequestField("sync_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.SyncStatusEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getSyncStatus, (req, v) -> {
+                req.setSyncStatus(v);
+            }));
+        builder.<ListSecurityPermissionSetPermissionsRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetPermissionsRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getOrderBy, (req, v) -> {
+                req.setOrderBy(v);
+            }));
+        builder.<Boolean>withRequestField("order_by_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getOrderByAsc, (req, v) -> {
+                req.setOrderByAsc(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetPermissionsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse> listSecurityPermissionSets =
+        genForlistSecurityPermissionSets();
+
+    private static HttpRequestDef<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse> genForlistSecurityPermissionSets() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityPermissionSetsRequest, ListSecurityPermissionSetsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityPermissionSetsRequest.class,
+                    ListSecurityPermissionSetsResponse.class)
+                .withName("ListSecurityPermissionSets")
+                .withUri("/v1/{project_id}/security/permission-sets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<String>withRequestField("parent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getParentId, (req, v) -> {
+                req.setParentId(v);
+            }));
+        builder.<ListSecurityPermissionSetsRequest.TypeFilterEnum>withRequestField("type_filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.TypeFilterEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getTypeFilter, (req, v) -> {
+                req.setTypeFilter(v);
+            }));
+        builder.<String>withRequestField("manager_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getManagerId, (req, v) -> {
+                req.setManagerId(v);
+            }));
+        builder.<String>withRequestField("manager_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getManagerName, (req, v) -> {
+                req.setManagerName(v);
+            }));
+        builder.<ListSecurityPermissionSetsRequest.ManagerTypeEnum>withRequestField("manager_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.ManagerTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getManagerType, (req, v) -> {
+                req.setManagerType(v);
+            }));
+        builder.<ListSecurityPermissionSetsRequest.DatasourceTypeEnum>withRequestField("datasource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.DatasourceTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getDatasourceType, (req, v) -> {
+                req.setDatasourceType(v);
+            }));
+        builder.<ListSecurityPermissionSetsRequest.SyncStatusEnum>withRequestField("sync_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.SyncStatusEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getSyncStatus, (req, v) -> {
+                req.setSyncStatus(v);
+            }));
+        builder.<ListSecurityPermissionSetsRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityPermissionSetsRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getOrderBy, (req, v) -> {
+                req.setOrderBy(v);
+            }));
+        builder.<Boolean>withRequestField("order_by_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getOrderByAsc, (req, v) -> {
+                req.setOrderByAsc(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityPermissionSetsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSubjectLevelsRequest, ListSubjectLevelsResponse> listSubjectLevels =
         genForlistSubjectLevels();
 
@@ -5860,7 +6739,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<MigrateApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(MigrateApiRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(MigrateApiRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -5906,7 +6785,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<MigrateCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(MigrateCatalogRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(MigrateCatalogRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -6333,7 +7212,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<SearchAuthorizeAppRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchAuthorizeAppRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(SearchAuthorizeAppRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -6386,7 +7265,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<SearchBindApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchBindApiRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(SearchBindApiRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -6746,7 +7625,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<SearchIdByPathRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchIdByPathRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(SearchIdByPathRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7112,7 +7991,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowApiDashboardRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApiDashboardRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowApiDashboardRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7186,7 +8065,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowApisDashboardRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApisDashboardRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowApisDashboardRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7253,7 +8132,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowApisDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApisDetailRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowApisDetailRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7306,7 +8185,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowApisOverviewRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApisOverviewRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowApisOverviewRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7344,7 +8223,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowAppInfoRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAppInfoRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowAppInfoRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7383,7 +8262,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowApplyDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApplyDetailRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowApplyDetailRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7450,7 +8329,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowAppsDashboardRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAppsDashboardRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowAppsDashboardRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7510,7 +8389,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowAppsDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAppsDetailRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowAppsDetailRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7563,7 +8442,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowAppsOverviewRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowAppsOverviewRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowAppsOverviewRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -7786,7 +8665,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowCatalogDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowCatalogDetailRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowCatalogDetailRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -8589,7 +9468,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowMessageDetailRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowMessageDetailRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowMessageDetailRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -8698,7 +9577,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowPathByIdRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowPathByIdRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowPathByIdRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -8751,7 +9630,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowPathObjectByIdRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowPathObjectByIdRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowPathObjectByIdRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -8825,6 +9704,111 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRelationByIdRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse> showSecurityDataClassificationRule =
+        genForshowSecurityDataClassificationRule();
+
+    private static HttpRequestDef<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse> genForshowSecurityDataClassificationRule() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityDataClassificationRuleRequest.class,
+                    ShowSecurityDataClassificationRuleResponse.class)
+                .withName("ShowSecurityDataClassificationRule")
+                .withUri("/v1/{project_id}/security/data-classification/rule/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityDataClassificationRuleRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse> showSecurityDataClassificationRuleGroup =
+        genForshowSecurityDataClassificationRuleGroup();
+
+    private static HttpRequestDef<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse> genForshowSecurityDataClassificationRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityDataClassificationRuleGroupRequest, ShowSecurityDataClassificationRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityDataClassificationRuleGroupRequest.class,
+                    ShowSecurityDataClassificationRuleGroupResponse.class)
+                .withName("ShowSecurityDataClassificationRuleGroup")
+                .withUri("/v1/{project_id}/security/data-classification/rule/group/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityDataClassificationRuleGroupRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityDataClassificationRuleGroupRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> showSecurityPermissionSet =
+        genForshowSecurityPermissionSet();
+
+    private static HttpRequestDef<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> genForshowSecurityPermissionSet() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityPermissionSetRequest.class,
+                    ShowSecurityPermissionSetResponse.class)
+                .withName("ShowSecurityPermissionSet")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityPermissionSetRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityPermissionSetRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
             }));
 
@@ -9281,7 +10265,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<UpdateAppRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateAppRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(UpdateAppRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -9359,7 +10343,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<UpdateCatalogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateCatalogRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(UpdateCatalogRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -9571,6 +10555,181 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateFactoryJobNameRequestBody.class),
             f -> f.withMarshaller(UpdateFactoryJobNameRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> updateSecurityDataClassificationRule =
+        genForupdateSecurityDataClassificationRule();
+
+    private static HttpRequestDef<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> genForupdateSecurityDataClassificationRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityDataClassificationRuleRequest.class,
+                    UpdateSecurityDataClassificationRuleResponse.class)
+                .withName("UpdateSecurityDataClassificationRule")
+                .withUri("/v1/{project_id}/security/data-classification/rule/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<DataClassificationRuleOperateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataClassificationRuleOperateDTO.class),
+            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse> updateSecurityPermissionSet =
+        genForupdateSecurityPermissionSet();
+
+    private static HttpRequestDef<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse> genForupdateSecurityPermissionSet() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityPermissionSetRequest, UpdateSecurityPermissionSetResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityPermissionSetRequest.class,
+                    UpdateSecurityPermissionSetResponse.class)
+                .withName("UpdateSecurityPermissionSet")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityPermissionSetRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityPermissionSetRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<PermissionSetCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionSetCreateDTO.class),
+            f -> f.withMarshaller(UpdateSecurityPermissionSetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse> updateSecurityPermissionSetPermission =
+        genForupdateSecurityPermissionSetPermission();
+
+    private static HttpRequestDef<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse> genForupdateSecurityPermissionSetPermission() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityPermissionSetPermissionRequest, UpdateSecurityPermissionSetPermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityPermissionSetPermissionRequest.class,
+                    UpdateSecurityPermissionSetPermissionResponse.class)
+                .withName("UpdateSecurityPermissionSetPermission")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}/permissions/{permission_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getPermissionSetId, (req, v) -> {
+                req.setPermissionSetId(v);
+            }));
+        builder.<String>withRequestField("permission_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getPermissionId, (req, v) -> {
+                req.setPermissionId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<PermissionSetPermissionUpdateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionSetPermissionUpdateDTO.class),
+            f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse> updateSecurityRuleEnableStatus =
+        genForupdateSecurityRuleEnableStatus();
+
+    private static HttpRequestDef<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse> genForupdateSecurityRuleEnableStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityRuleEnableStatusRequest, UpdateSecurityRuleEnableStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityRuleEnableStatusRequest.class,
+                    UpdateSecurityRuleEnableStatusResponse.class)
+                .withName("UpdateSecurityRuleEnableStatus")
+                .withUri("/v1/{project_id}/security/data-classification/rule/switch-status/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityRuleEnableStatusRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityRuleEnableStatusRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<DataClassificationRuleEnableDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataClassificationRuleEnableDTO.class),
+            f -> f.withMarshaller(UpdateSecurityRuleEnableStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -9922,7 +11081,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<AuthorizeActionApiToInstanceRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AuthorizeActionApiToInstanceRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(AuthorizeActionApiToInstanceRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -9975,7 +11134,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<AuthorizeApiToInstanceRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(AuthorizeApiToInstanceRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(AuthorizeApiToInstanceRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10013,7 +11172,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<CreateApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(CreateApiRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(CreateApiRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10065,7 +11224,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<DebugApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DebugApiRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(DebugApiRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10103,7 +11262,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<DeleteApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteApiRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(DeleteApiRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10156,7 +11315,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ExecuteApiToInstanceRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExecuteApiToInstanceRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ExecuteApiToInstanceRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10208,7 +11367,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListApisRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListApisRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListApisRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10303,7 +11462,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ListInstanceListRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListInstanceListRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ListInstanceListRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10334,7 +11493,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<PublishApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PublishApiRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(PublishApiRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10387,7 +11546,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<PublishApiToInstanceRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PublishApiToInstanceRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(PublishApiToInstanceRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10447,7 +11606,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<SearchDebugInfoRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchDebugInfoRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(SearchDebugInfoRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10500,10 +11659,63 @@ public class DataArtsStudioMeta {
             }));
         builder.<SearchPublishInfoRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SearchPublishInfoRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(SearchPublishInfoRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> setFactoryJobTags =
+        genForsetFactoryJobTags();
+
+    private static HttpRequestDef<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> genForsetFactoryJobTags() {
+        // basic
+        HttpRequestDef.Builder<SetFactoryJobTagsRequest, SetFactoryJobTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetFactoryJobTagsRequest.class, SetFactoryJobTagsResponse.class)
+                .withName("SetFactoryJobTags")
+                .withUri("/v2/{project_id}/factory/jobs/{job_name}/tags")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getJobName, (req, v) -> {
+                req.setJobName(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("Host",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getHost, (req, v) -> {
+                req.setHost(v);
+            }));
+        builder.<SetJobTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetJobTagsRequestBody.class),
+            f -> f.withMarshaller(SetFactoryJobTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -10538,7 +11750,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<ShowApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowApiRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(ShowApiRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);
@@ -10576,7 +11788,7 @@ public class DataArtsStudioMeta {
             }));
         builder.<UpdateApiRequest.DlmTypeEnum>withRequestField("Dlm-Type",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateApiRequest.DlmTypeEnum.class),
             f -> f.withMarshaller(UpdateApiRequest::getDlmType, (req, v) -> {
                 req.setDlmType(v);

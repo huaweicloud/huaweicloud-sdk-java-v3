@@ -529,6 +529,7 @@ public class CdnClient {
      * @param ShowDomainItemDetailsRequest 请求对象
      * @return ShowDomainItemDetailsResponse
      */
+    @Deprecated
     public ShowDomainItemDetailsResponse showDomainItemDetails(ShowDomainItemDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showDomainItemDetails);
     }
@@ -551,6 +552,7 @@ public class CdnClient {
      * @param ShowDomainItemDetailsRequest 请求对象
      * @return SyncInvoker<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse> showDomainItemDetailsInvoker(
         ShowDomainItemDetailsRequest request) {
         return new SyncInvoker<ShowDomainItemDetailsRequest, ShowDomainItemDetailsResponse>(request,
@@ -578,6 +580,7 @@ public class CdnClient {
      * @param ShowDomainItemLocationDetailsRequest 请求对象
      * @return ShowDomainItemLocationDetailsResponse
      */
+    @Deprecated
     public ShowDomainItemLocationDetailsResponse showDomainItemLocationDetails(
         ShowDomainItemLocationDetailsRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showDomainItemLocationDetails);
@@ -604,6 +607,7 @@ public class CdnClient {
      * @param ShowDomainItemLocationDetailsRequest 请求对象
      * @return SyncInvoker<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse> showDomainItemLocationDetailsInvoker(
         ShowDomainItemLocationDetailsRequest request) {
         return new SyncInvoker<ShowDomainItemLocationDetailsRequest, ShowDomainItemLocationDetailsResponse>(request,
@@ -632,6 +636,7 @@ public class CdnClient {
      * @param ShowDomainLocationStatsRequest 请求对象
      * @return ShowDomainLocationStatsResponse
      */
+    @Deprecated
     public ShowDomainLocationStatsResponse showDomainLocationStats(ShowDomainLocationStatsRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showDomainLocationStats);
     }
@@ -658,6 +663,7 @@ public class CdnClient {
      * @param ShowDomainLocationStatsRequest 请求对象
      * @return SyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse> showDomainLocationStatsInvoker(
         ShowDomainLocationStatsRequest request) {
         return new SyncInvoker<ShowDomainLocationStatsRequest, ShowDomainLocationStatsResponse>(request,
@@ -686,6 +692,7 @@ public class CdnClient {
      * @param ShowDomainStatsRequest 请求对象
      * @return ShowDomainStatsResponse
      */
+    @Deprecated
     public ShowDomainStatsResponse showDomainStats(ShowDomainStatsRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showDomainStats);
     }
@@ -712,6 +719,7 @@ public class CdnClient {
      * @param ShowDomainStatsRequest 请求对象
      * @return SyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse> showDomainStatsInvoker(
         ShowDomainStatsRequest request) {
         return new SyncInvoker<ShowDomainStatsRequest, ShowDomainStatsResponse>(request, CdnMeta.showDomainStats,
@@ -1029,6 +1037,7 @@ public class CdnClient {
      * @param ShowTopUrlRequest 请求对象
      * @return ShowTopUrlResponse
      */
+    @Deprecated
     public ShowTopUrlResponse showTopUrl(ShowTopUrlRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showTopUrl);
     }
@@ -1056,6 +1065,7 @@ public class CdnClient {
      * @param ShowTopUrlRequest 请求对象
      * @return SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse> showTopUrlInvoker(ShowTopUrlRequest request) {
         return new SyncInvoker<ShowTopUrlRequest, ShowTopUrlResponse>(request, CdnMeta.showTopUrl, hcClient);
     }

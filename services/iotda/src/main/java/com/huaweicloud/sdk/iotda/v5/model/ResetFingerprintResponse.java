@@ -21,6 +21,11 @@ public class ResetFingerprintResponse extends SdkResponse {
 
     private String fingerprint;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fingerprint_type")
+
+    private String fingerprintType;
+
     public ResetFingerprintResponse withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
@@ -55,6 +60,23 @@ public class ResetFingerprintResponse extends SdkResponse {
         this.fingerprint = fingerprint;
     }
 
+    public ResetFingerprintResponse withFingerprintType(String fingerprintType) {
+        this.fingerprintType = fingerprintType;
+        return this;
+    }
+
+    /**
+     * **参数说明**：重置设备证书指纹的的类型。 **取值范围**： - PRIMARY：重置主指纹。 - SECONDARY：重置辅指纹。
+     * @return fingerprintType
+     */
+    public String getFingerprintType() {
+        return fingerprintType;
+    }
+
+    public void setFingerprintType(String fingerprintType) {
+        this.fingerprintType = fingerprintType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,13 @@ public class ResetFingerprintResponse extends SdkResponse {
             return false;
         }
         ResetFingerprintResponse that = (ResetFingerprintResponse) obj;
-        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.fingerprint, that.fingerprint);
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.fingerprintType, that.fingerprintType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, fingerprint);
+        return Objects.hash(deviceId, fingerprint, fingerprintType);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class ResetFingerprintResponse extends SdkResponse {
         sb.append("class ResetFingerprintResponse {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
+        sb.append("    fingerprintType: ").append(toIndentedString(fingerprintType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

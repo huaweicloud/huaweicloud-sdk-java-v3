@@ -57,6 +57,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefMessageChannelResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateIefSystemEventsResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateJobAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequest;
@@ -91,6 +93,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkSqlJobTemplateRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteFlinkSqlJobTemplateResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteGlobalVariableResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteJobAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteJobAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePlanResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueuePropertyRequest;
@@ -139,6 +143,8 @@ import com.huaweicloud.sdk.dli.v1.model.ListFlinkSqlJobTemplatesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListFlinkSqlJobTemplatesResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListGlobalVariablesResponse;
+import com.huaweicloud.sdk.dli.v1.model.ListJobAuthInfosRequest;
+import com.huaweicloud.sdk.dli.v1.model.ListJobAuthInfosResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansRequest;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePlansResponse;
 import com.huaweicloud.sdk.dli.v1.model.ListQueuePropertiesRequest;
@@ -239,6 +245,8 @@ import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGlobalVariableResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateGroupOrResourceOwnerResponse;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoRequest;
+import com.huaweicloud.sdk.dli.v1.model.UpdateJobAuthInfoResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrRequest;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueueCidrResponse;
 import com.huaweicloud.sdk.dli.v1.model.UpdateQueuePropertyRequest;
@@ -468,6 +476,7 @@ public class DliAsyncClient {
      * @param ShowSqlSampleTemplatesRequest 请求对象
      * @return CompletableFuture<ShowSqlSampleTemplatesResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowSqlSampleTemplatesResponse> showSqlSampleTemplatesAsync(
         ShowSqlSampleTemplatesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.showSqlSampleTemplates);
@@ -483,6 +492,7 @@ public class DliAsyncClient {
      * @param ShowSqlSampleTemplatesRequest 请求对象
      * @return AsyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> showSqlSampleTemplatesAsyncInvoker(
         ShowSqlSampleTemplatesRequest request) {
         return new AsyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>(request,
@@ -623,6 +633,7 @@ public class DliAsyncClient {
      * @param BatchDeleteQueuePlansRequest 请求对象
      * @return CompletableFuture<BatchDeleteQueuePlansResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchDeleteQueuePlansResponse> batchDeleteQueuePlansAsync(
         BatchDeleteQueuePlansRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.batchDeleteQueuePlans);
@@ -638,6 +649,7 @@ public class DliAsyncClient {
      * @param BatchDeleteQueuePlansRequest 请求对象
      * @return AsyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse> batchDeleteQueuePlansAsyncInvoker(
         BatchDeleteQueuePlansRequest request) {
         return new AsyncInvoker<BatchDeleteQueuePlansRequest, BatchDeleteQueuePlansResponse>(request,
@@ -656,6 +668,7 @@ public class DliAsyncClient {
      * @param ChangeAuthorizationRequest 请求对象
      * @return CompletableFuture<ChangeAuthorizationResponse>
      */
+    @Deprecated
     public CompletableFuture<ChangeAuthorizationResponse> changeAuthorizationAsync(ChangeAuthorizationRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.changeAuthorization);
     }
@@ -672,6 +685,7 @@ public class DliAsyncClient {
      * @param ChangeAuthorizationRequest 请求对象
      * @return AsyncInvoker<ChangeAuthorizationRequest, ChangeAuthorizationResponse>
      */
+    @Deprecated
     public AsyncInvoker<ChangeAuthorizationRequest, ChangeAuthorizationResponse> changeAuthorizationAsyncInvoker(
         ChangeAuthorizationRequest request) {
         return new AsyncInvoker<ChangeAuthorizationRequest, ChangeAuthorizationResponse>(request,
@@ -688,6 +702,7 @@ public class DliAsyncClient {
      * @param ChangeQueuePlanRequest 请求对象
      * @return CompletableFuture<ChangeQueuePlanResponse>
      */
+    @Deprecated
     public CompletableFuture<ChangeQueuePlanResponse> changeQueuePlanAsync(ChangeQueuePlanRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.changeQueuePlan);
     }
@@ -702,6 +717,7 @@ public class DliAsyncClient {
      * @param ChangeQueuePlanRequest 请求对象
      * @return AsyncInvoker<ChangeQueuePlanRequest, ChangeQueuePlanResponse>
      */
+    @Deprecated
     public AsyncInvoker<ChangeQueuePlanRequest, ChangeQueuePlanResponse> changeQueuePlanAsyncInvoker(
         ChangeQueuePlanRequest request) {
         return new AsyncInvoker<ChangeQueuePlanRequest, ChangeQueuePlanResponse>(request, DliMeta.changeQueuePlan,
@@ -718,6 +734,7 @@ public class DliAsyncClient {
      * @param CreateAuthInfoRequest 请求对象
      * @return CompletableFuture<CreateAuthInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateAuthInfoResponse> createAuthInfoAsync(CreateAuthInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.createAuthInfo);
     }
@@ -732,6 +749,7 @@ public class DliAsyncClient {
      * @param CreateAuthInfoRequest 请求对象
      * @return AsyncInvoker<CreateAuthInfoRequest, CreateAuthInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateAuthInfoRequest, CreateAuthInfoResponse> createAuthInfoAsyncInvoker(
         CreateAuthInfoRequest request) {
         return new AsyncInvoker<CreateAuthInfoRequest, CreateAuthInfoResponse>(request, DliMeta.createAuthInfo,
@@ -782,6 +800,7 @@ public class DliAsyncClient {
      * @param CreateDatasourceConnectionRequest 请求对象
      * @return CompletableFuture<CreateDatasourceConnectionResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateDatasourceConnectionResponse> createDatasourceConnectionAsync(
         CreateDatasourceConnectionRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.createDatasourceConnection);
@@ -800,6 +819,7 @@ public class DliAsyncClient {
      * @param CreateDatasourceConnectionRequest 请求对象
      * @return AsyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse> createDatasourceConnectionAsyncInvoker(
         CreateDatasourceConnectionRequest request) {
         return new AsyncInvoker<CreateDatasourceConnectionRequest, CreateDatasourceConnectionResponse>(request,
@@ -816,6 +836,7 @@ public class DliAsyncClient {
      * @param CreateDliAgencyRequest 请求对象
      * @return CompletableFuture<CreateDliAgencyResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateDliAgencyResponse> createDliAgencyAsync(CreateDliAgencyRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.createDliAgency);
     }
@@ -830,6 +851,7 @@ public class DliAsyncClient {
      * @param CreateDliAgencyRequest 请求对象
      * @return AsyncInvoker<CreateDliAgencyRequest, CreateDliAgencyResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateDliAgencyRequest, CreateDliAgencyResponse> createDliAgencyAsyncInvoker(
         CreateDliAgencyRequest request) {
         return new AsyncInvoker<CreateDliAgencyRequest, CreateDliAgencyResponse>(request, DliMeta.createDliAgency,
@@ -908,6 +930,7 @@ public class DliAsyncClient {
      * @param CreateEnhancedConnectionRoutesRequest 请求对象
      * @return CompletableFuture<CreateEnhancedConnectionRoutesResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateEnhancedConnectionRoutesResponse> createEnhancedConnectionRoutesAsync(
         CreateEnhancedConnectionRoutesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.createEnhancedConnectionRoutes);
@@ -923,6 +946,7 @@ public class DliAsyncClient {
      * @param CreateEnhancedConnectionRoutesRequest 请求对象
      * @return AsyncInvoker<CreateEnhancedConnectionRoutesRequest, CreateEnhancedConnectionRoutesResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateEnhancedConnectionRoutesRequest, CreateEnhancedConnectionRoutesResponse> createEnhancedConnectionRoutesAsyncInvoker(
         CreateEnhancedConnectionRoutesRequest request) {
         return new AsyncInvoker<CreateEnhancedConnectionRoutesRequest, CreateEnhancedConnectionRoutesResponse>(request,
@@ -958,6 +982,36 @@ public class DliAsyncClient {
         CreateGlobalVariableRequest request) {
         return new AsyncInvoker<CreateGlobalVariableRequest, CreateGlobalVariableResponse>(request,
             DliMeta.createGlobalVariable, hcClient);
+    }
+
+    /**
+     * 创建跨源认证
+     *
+     * 该API用于创建跨源认证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateJobAuthInfoRequest 请求对象
+     * @return CompletableFuture<CreateJobAuthInfoResponse>
+     */
+    public CompletableFuture<CreateJobAuthInfoResponse> createJobAuthInfoAsync(CreateJobAuthInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.createJobAuthInfo);
+    }
+
+    /**
+     * 创建跨源认证
+     *
+     * 该API用于创建跨源认证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateJobAuthInfoRequest 请求对象
+     * @return AsyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse>
+     */
+    public AsyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse> createJobAuthInfoAsyncInvoker(
+        CreateJobAuthInfoRequest request) {
+        return new AsyncInvoker<CreateJobAuthInfoRequest, CreateJobAuthInfoResponse>(request, DliMeta.createJobAuthInfo,
+            hcClient);
     }
 
     /**
@@ -998,6 +1052,7 @@ public class DliAsyncClient {
      * @param CreateQueuePlanRequest 请求对象
      * @return CompletableFuture<CreateQueuePlanResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateQueuePlanResponse> createQueuePlanAsync(CreateQueuePlanRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.createQueuePlan);
     }
@@ -1012,6 +1067,7 @@ public class DliAsyncClient {
      * @param CreateQueuePlanRequest 请求对象
      * @return AsyncInvoker<CreateQueuePlanRequest, CreateQueuePlanResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateQueuePlanRequest, CreateQueuePlanResponse> createQueuePlanAsyncInvoker(
         CreateQueuePlanRequest request) {
         return new AsyncInvoker<CreateQueuePlanRequest, CreateQueuePlanResponse>(request, DliMeta.createQueuePlan,
@@ -1058,6 +1114,7 @@ public class DliAsyncClient {
      * @param DeleteAuthInfoRequest 请求对象
      * @return CompletableFuture<DeleteAuthInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteAuthInfoResponse> deleteAuthInfoAsync(DeleteAuthInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.deleteAuthInfo);
     }
@@ -1072,6 +1129,7 @@ public class DliAsyncClient {
      * @param DeleteAuthInfoRequest 请求对象
      * @return AsyncInvoker<DeleteAuthInfoRequest, DeleteAuthInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteAuthInfoRequest, DeleteAuthInfoResponse> deleteAuthInfoAsyncInvoker(
         DeleteAuthInfoRequest request) {
         return new AsyncInvoker<DeleteAuthInfoRequest, DeleteAuthInfoResponse>(request, DliMeta.deleteAuthInfo,
@@ -1090,6 +1148,7 @@ public class DliAsyncClient {
      * @param DeleteDatasourceConnectionRequest 请求对象
      * @return CompletableFuture<DeleteDatasourceConnectionResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteDatasourceConnectionResponse> deleteDatasourceConnectionAsync(
         DeleteDatasourceConnectionRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.deleteDatasourceConnection);
@@ -1107,6 +1166,7 @@ public class DliAsyncClient {
      * @param DeleteDatasourceConnectionRequest 请求对象
      * @return AsyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse> deleteDatasourceConnectionAsyncInvoker(
         DeleteDatasourceConnectionRequest request) {
         return new AsyncInvoker<DeleteDatasourceConnectionRequest, DeleteDatasourceConnectionResponse>(request,
@@ -1185,6 +1245,7 @@ public class DliAsyncClient {
      * @param DeleteEnhancedConnectionRoutesRequest 请求对象
      * @return CompletableFuture<DeleteEnhancedConnectionRoutesResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteEnhancedConnectionRoutesResponse> deleteEnhancedConnectionRoutesAsync(
         DeleteEnhancedConnectionRoutesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.deleteEnhancedConnectionRoutes);
@@ -1200,6 +1261,7 @@ public class DliAsyncClient {
      * @param DeleteEnhancedConnectionRoutesRequest 请求对象
      * @return AsyncInvoker<DeleteEnhancedConnectionRoutesRequest, DeleteEnhancedConnectionRoutesResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteEnhancedConnectionRoutesRequest, DeleteEnhancedConnectionRoutesResponse> deleteEnhancedConnectionRoutesAsyncInvoker(
         DeleteEnhancedConnectionRoutesRequest request) {
         return new AsyncInvoker<DeleteEnhancedConnectionRoutesRequest, DeleteEnhancedConnectionRoutesResponse>(request,
@@ -1235,6 +1297,36 @@ public class DliAsyncClient {
         DeleteGlobalVariableRequest request) {
         return new AsyncInvoker<DeleteGlobalVariableRequest, DeleteGlobalVariableResponse>(request,
             DliMeta.deleteGlobalVariable, hcClient);
+    }
+
+    /**
+     * 删除跨源认证
+     *
+     * 该API用于删除跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteJobAuthInfoRequest 请求对象
+     * @return CompletableFuture<DeleteJobAuthInfoResponse>
+     */
+    public CompletableFuture<DeleteJobAuthInfoResponse> deleteJobAuthInfoAsync(DeleteJobAuthInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.deleteJobAuthInfo);
+    }
+
+    /**
+     * 删除跨源认证
+     *
+     * 该API用于删除跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteJobAuthInfoRequest 请求对象
+     * @return AsyncInvoker<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse>
+     */
+    public AsyncInvoker<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse> deleteJobAuthInfoAsyncInvoker(
+        DeleteJobAuthInfoRequest request) {
+        return new AsyncInvoker<DeleteJobAuthInfoRequest, DeleteJobAuthInfoResponse>(request, DliMeta.deleteJobAuthInfo,
+            hcClient);
     }
 
     /**
@@ -1279,6 +1371,7 @@ public class DliAsyncClient {
      * @param DeleteQueuePlanRequest 请求对象
      * @return CompletableFuture<DeleteQueuePlanResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteQueuePlanResponse> deleteQueuePlanAsync(DeleteQueuePlanRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.deleteQueuePlan);
     }
@@ -1293,6 +1386,7 @@ public class DliAsyncClient {
      * @param DeleteQueuePlanRequest 请求对象
      * @return AsyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse> deleteQueuePlanAsyncInvoker(
         DeleteQueuePlanRequest request) {
         return new AsyncInvoker<DeleteQueuePlanRequest, DeleteQueuePlanResponse>(request, DliMeta.deleteQueuePlan,
@@ -1339,6 +1433,7 @@ public class DliAsyncClient {
      * @param DeleteResourceRequest 请求对象
      * @return CompletableFuture<DeleteResourceResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteResourceResponse> deleteResourceAsync(DeleteResourceRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.deleteResource);
     }
@@ -1353,6 +1448,7 @@ public class DliAsyncClient {
      * @param DeleteResourceRequest 请求对象
      * @return AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse> deleteResourceAsyncInvoker(
         DeleteResourceRequest request) {
         return new AsyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, DliMeta.deleteResource,
@@ -1400,6 +1496,7 @@ public class DliAsyncClient {
      * @param ListAuthInfoRequest 请求对象
      * @return CompletableFuture<ListAuthInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ListAuthInfoResponse> listAuthInfoAsync(ListAuthInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listAuthInfo);
     }
@@ -1414,6 +1511,7 @@ public class DliAsyncClient {
      * @param ListAuthInfoRequest 请求对象
      * @return AsyncInvoker<ListAuthInfoRequest, ListAuthInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListAuthInfoRequest, ListAuthInfoResponse> listAuthInfoAsyncInvoker(
         ListAuthInfoRequest request) {
         return new AsyncInvoker<ListAuthInfoRequest, ListAuthInfoResponse>(request, DliMeta.listAuthInfo, hcClient);
@@ -1460,6 +1558,7 @@ public class DliAsyncClient {
      * @param ListDatabaseUsersRequest 请求对象
      * @return CompletableFuture<ListDatabaseUsersResponse>
      */
+    @Deprecated
     public CompletableFuture<ListDatabaseUsersResponse> listDatabaseUsersAsync(ListDatabaseUsersRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listDatabaseUsers);
     }
@@ -1474,6 +1573,7 @@ public class DliAsyncClient {
      * @param ListDatabaseUsersRequest 请求对象
      * @return AsyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsersAsyncInvoker(
         ListDatabaseUsersRequest request) {
         return new AsyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse>(request, DliMeta.listDatabaseUsers,
@@ -1490,6 +1590,7 @@ public class DliAsyncClient {
      * @param ListDatasourceConnectionsRequest 请求对象
      * @return CompletableFuture<ListDatasourceConnectionsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListDatasourceConnectionsResponse> listDatasourceConnectionsAsync(
         ListDatasourceConnectionsRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listDatasourceConnections);
@@ -1505,6 +1606,7 @@ public class DliAsyncClient {
      * @param ListDatasourceConnectionsRequest 请求对象
      * @return AsyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse> listDatasourceConnectionsAsyncInvoker(
         ListDatasourceConnectionsRequest request) {
         return new AsyncInvoker<ListDatasourceConnectionsRequest, ListDatasourceConnectionsResponse>(request,
@@ -1666,6 +1768,36 @@ public class DliAsyncClient {
     }
 
     /**
+     * 查询增强型跨源授权信息
+     *
+     * 该API用于查询跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobAuthInfosRequest 请求对象
+     * @return CompletableFuture<ListJobAuthInfosResponse>
+     */
+    public CompletableFuture<ListJobAuthInfosResponse> listJobAuthInfosAsync(ListJobAuthInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.listJobAuthInfos);
+    }
+
+    /**
+     * 查询增强型跨源授权信息
+     *
+     * 该API用于查询跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobAuthInfosRequest 请求对象
+     * @return AsyncInvoker<ListJobAuthInfosRequest, ListJobAuthInfosResponse>
+     */
+    public AsyncInvoker<ListJobAuthInfosRequest, ListJobAuthInfosResponse> listJobAuthInfosAsyncInvoker(
+        ListJobAuthInfosRequest request) {
+        return new AsyncInvoker<ListJobAuthInfosRequest, ListJobAuthInfosResponse>(request, DliMeta.listJobAuthInfos,
+            hcClient);
+    }
+
+    /**
      * 查看队列定时扩缩容计划
      *
      * 查看队列定时扩缩容计划接口，列出指定队列定时规格变更计划。
@@ -1675,6 +1807,7 @@ public class DliAsyncClient {
      * @param ListQueuePlansRequest 请求对象
      * @return CompletableFuture<ListQueuePlansResponse>
      */
+    @Deprecated
     public CompletableFuture<ListQueuePlansResponse> listQueuePlansAsync(ListQueuePlansRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listQueuePlans);
     }
@@ -1689,6 +1822,7 @@ public class DliAsyncClient {
      * @param ListQueuePlansRequest 请求对象
      * @return AsyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse> listQueuePlansAsyncInvoker(
         ListQueuePlansRequest request) {
         return new AsyncInvoker<ListQueuePlansRequest, ListQueuePlansResponse>(request, DliMeta.listQueuePlans,
@@ -1735,6 +1869,7 @@ public class DliAsyncClient {
      * @param ListQueueUsersRequest 请求对象
      * @return CompletableFuture<ListQueueUsersResponse>
      */
+    @Deprecated
     public CompletableFuture<ListQueueUsersResponse> listQueueUsersAsync(ListQueueUsersRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listQueueUsers);
     }
@@ -1749,6 +1884,7 @@ public class DliAsyncClient {
      * @param ListQueueUsersRequest 请求对象
      * @return AsyncInvoker<ListQueueUsersRequest, ListQueueUsersResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListQueueUsersRequest, ListQueueUsersResponse> listQueueUsersAsyncInvoker(
         ListQueueUsersRequest request) {
         return new AsyncInvoker<ListQueueUsersRequest, ListQueueUsersResponse>(request, DliMeta.listQueueUsers,
@@ -1793,6 +1929,7 @@ public class DliAsyncClient {
      * @param ListResourcesRequest 请求对象
      * @return CompletableFuture<ListResourcesResponse>
      */
+    @Deprecated
     public CompletableFuture<ListResourcesResponse> listResourcesAsync(ListResourcesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listResources);
     }
@@ -1807,6 +1944,7 @@ public class DliAsyncClient {
      * @param ListResourcesRequest 请求对象
      * @return AsyncInvoker<ListResourcesRequest, ListResourcesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListResourcesRequest, ListResourcesResponse> listResourcesAsyncInvoker(
         ListResourcesRequest request) {
         return new AsyncInvoker<ListResourcesRequest, ListResourcesResponse>(request, DliMeta.listResources, hcClient);
@@ -1822,6 +1960,7 @@ public class DliAsyncClient {
      * @param ListTablePrivilegesRequest 请求对象
      * @return CompletableFuture<ListTablePrivilegesResponse>
      */
+    @Deprecated
     public CompletableFuture<ListTablePrivilegesResponse> listTablePrivilegesAsync(ListTablePrivilegesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listTablePrivileges);
     }
@@ -1836,6 +1975,7 @@ public class DliAsyncClient {
      * @param ListTablePrivilegesRequest 请求对象
      * @return AsyncInvoker<ListTablePrivilegesRequest, ListTablePrivilegesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListTablePrivilegesRequest, ListTablePrivilegesResponse> listTablePrivilegesAsyncInvoker(
         ListTablePrivilegesRequest request) {
         return new AsyncInvoker<ListTablePrivilegesRequest, ListTablePrivilegesResponse>(request,
@@ -1852,6 +1992,7 @@ public class DliAsyncClient {
      * @param ListTableUsersRequest 请求对象
      * @return CompletableFuture<ListTableUsersResponse>
      */
+    @Deprecated
     public CompletableFuture<ListTableUsersResponse> listTableUsersAsync(ListTableUsersRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listTableUsers);
     }
@@ -1866,6 +2007,7 @@ public class DliAsyncClient {
      * @param ListTableUsersRequest 请求对象
      * @return AsyncInvoker<ListTableUsersRequest, ListTableUsersResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListTableUsersRequest, ListTableUsersResponse> listTableUsersAsyncInvoker(
         ListTableUsersRequest request) {
         return new AsyncInvoker<ListTableUsersRequest, ListTableUsersResponse>(request, DliMeta.listTableUsers,
@@ -1882,6 +2024,7 @@ public class DliAsyncClient {
      * @param RegisterAuthorizedQueueRequest 请求对象
      * @return CompletableFuture<RegisterAuthorizedQueueResponse>
      */
+    @Deprecated
     public CompletableFuture<RegisterAuthorizedQueueResponse> registerAuthorizedQueueAsync(
         RegisterAuthorizedQueueRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.registerAuthorizedQueue);
@@ -1897,6 +2040,7 @@ public class DliAsyncClient {
      * @param RegisterAuthorizedQueueRequest 请求对象
      * @return AsyncInvoker<RegisterAuthorizedQueueRequest, RegisterAuthorizedQueueResponse>
      */
+    @Deprecated
     public AsyncInvoker<RegisterAuthorizedQueueRequest, RegisterAuthorizedQueueResponse> registerAuthorizedQueueAsyncInvoker(
         RegisterAuthorizedQueueRequest request) {
         return new AsyncInvoker<RegisterAuthorizedQueueRequest, RegisterAuthorizedQueueResponse>(request,
@@ -2005,6 +2149,7 @@ public class DliAsyncClient {
      * @param ShowDatasourceConnectionRequest 请求对象
      * @return CompletableFuture<ShowDatasourceConnectionResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowDatasourceConnectionResponse> showDatasourceConnectionAsync(
         ShowDatasourceConnectionRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.showDatasourceConnection);
@@ -2020,6 +2165,7 @@ public class DliAsyncClient {
      * @param ShowDatasourceConnectionRequest 请求对象
      * @return AsyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse> showDatasourceConnectionAsyncInvoker(
         ShowDatasourceConnectionRequest request) {
         return new AsyncInvoker<ShowDatasourceConnectionRequest, ShowDatasourceConnectionResponse>(request,
@@ -2036,6 +2182,7 @@ public class DliAsyncClient {
      * @param ShowDliAgencyRequest 请求对象
      * @return CompletableFuture<ShowDliAgencyResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowDliAgencyResponse> showDliAgencyAsync(ShowDliAgencyRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.showDliAgency);
     }
@@ -2050,6 +2197,7 @@ public class DliAsyncClient {
      * @param ShowDliAgencyRequest 请求对象
      * @return AsyncInvoker<ShowDliAgencyRequest, ShowDliAgencyResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowDliAgencyRequest, ShowDliAgencyResponse> showDliAgencyAsyncInvoker(
         ShowDliAgencyRequest request) {
         return new AsyncInvoker<ShowDliAgencyRequest, ShowDliAgencyResponse>(request, DliMeta.showDliAgency, hcClient);
@@ -2183,6 +2331,7 @@ public class DliAsyncClient {
      * @param ShowResourceInfoRequest 请求对象
      * @return CompletableFuture<ShowResourceInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowResourceInfoResponse> showResourceInfoAsync(ShowResourceInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.showResourceInfo);
     }
@@ -2197,6 +2346,7 @@ public class DliAsyncClient {
      * @param ShowResourceInfoRequest 请求对象
      * @return AsyncInvoker<ShowResourceInfoRequest, ShowResourceInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowResourceInfoRequest, ShowResourceInfoResponse> showResourceInfoAsyncInvoker(
         ShowResourceInfoRequest request) {
         return new AsyncInvoker<ShowResourceInfoRequest, ShowResourceInfoResponse>(request, DliMeta.showResourceInfo,
@@ -2213,6 +2363,7 @@ public class DliAsyncClient {
      * @param UpdateAuthInfoRequest 请求对象
      * @return CompletableFuture<UpdateAuthInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateAuthInfoResponse> updateAuthInfoAsync(UpdateAuthInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.updateAuthInfo);
     }
@@ -2227,6 +2378,7 @@ public class DliAsyncClient {
      * @param UpdateAuthInfoRequest 请求对象
      * @return AsyncInvoker<UpdateAuthInfoRequest, UpdateAuthInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateAuthInfoRequest, UpdateAuthInfoResponse> updateAuthInfoAsyncInvoker(
         UpdateAuthInfoRequest request) {
         return new AsyncInvoker<UpdateAuthInfoRequest, UpdateAuthInfoResponse>(request, DliMeta.updateAuthInfo,
@@ -2367,6 +2519,7 @@ public class DliAsyncClient {
      * @param UpdateGroupOrResourceOwnerRequest 请求对象
      * @return CompletableFuture<UpdateGroupOrResourceOwnerResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateGroupOrResourceOwnerResponse> updateGroupOrResourceOwnerAsync(
         UpdateGroupOrResourceOwnerRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.updateGroupOrResourceOwner);
@@ -2382,10 +2535,41 @@ public class DliAsyncClient {
      * @param UpdateGroupOrResourceOwnerRequest 请求对象
      * @return AsyncInvoker<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse> updateGroupOrResourceOwnerAsyncInvoker(
         UpdateGroupOrResourceOwnerRequest request) {
         return new AsyncInvoker<UpdateGroupOrResourceOwnerRequest, UpdateGroupOrResourceOwnerResponse>(request,
             DliMeta.updateGroupOrResourceOwner, hcClient);
+    }
+
+    /**
+     * 更新跨源认证
+     *
+     * 该API用于更新跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateJobAuthInfoRequest 请求对象
+     * @return CompletableFuture<UpdateJobAuthInfoResponse>
+     */
+    public CompletableFuture<UpdateJobAuthInfoResponse> updateJobAuthInfoAsync(UpdateJobAuthInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DliMeta.updateJobAuthInfo);
+    }
+
+    /**
+     * 更新跨源认证
+     *
+     * 该API用于更新跨源认证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateJobAuthInfoRequest 请求对象
+     * @return AsyncInvoker<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse>
+     */
+    public AsyncInvoker<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse> updateJobAuthInfoAsyncInvoker(
+        UpdateJobAuthInfoRequest request) {
+        return new AsyncInvoker<UpdateJobAuthInfoRequest, UpdateJobAuthInfoResponse>(request, DliMeta.updateJobAuthInfo,
+            hcClient);
     }
 
     /**
@@ -2400,6 +2584,7 @@ public class DliAsyncClient {
      * @param UpdateQueueCidrRequest 请求对象
      * @return CompletableFuture<UpdateQueueCidrResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateQueueCidrResponse> updateQueueCidrAsync(UpdateQueueCidrRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.updateQueueCidr);
     }
@@ -2416,6 +2601,7 @@ public class DliAsyncClient {
      * @param UpdateQueueCidrRequest 请求对象
      * @return AsyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse> updateQueueCidrAsyncInvoker(
         UpdateQueueCidrRequest request) {
         return new AsyncInvoker<UpdateQueueCidrRequest, UpdateQueueCidrResponse>(request, DliMeta.updateQueueCidr,
@@ -2463,6 +2649,7 @@ public class DliAsyncClient {
      * @param UploadFilesRequest 请求对象
      * @return CompletableFuture<UploadFilesResponse>
      */
+    @Deprecated
     public CompletableFuture<UploadFilesResponse> uploadFilesAsync(UploadFilesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.uploadFiles);
     }
@@ -2478,6 +2665,7 @@ public class DliAsyncClient {
      * @param UploadFilesRequest 请求对象
      * @return AsyncInvoker<UploadFilesRequest, UploadFilesResponse>
      */
+    @Deprecated
     public AsyncInvoker<UploadFilesRequest, UploadFilesResponse> uploadFilesAsyncInvoker(UploadFilesRequest request) {
         return new AsyncInvoker<UploadFilesRequest, UploadFilesResponse>(request, DliMeta.uploadFiles, hcClient);
     }
@@ -2493,6 +2681,7 @@ public class DliAsyncClient {
      * @param UploadJarsRequest 请求对象
      * @return CompletableFuture<UploadJarsResponse>
      */
+    @Deprecated
     public CompletableFuture<UploadJarsResponse> uploadJarsAsync(UploadJarsRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.uploadJars);
     }
@@ -2508,6 +2697,7 @@ public class DliAsyncClient {
      * @param UploadJarsRequest 请求对象
      * @return AsyncInvoker<UploadJarsRequest, UploadJarsResponse>
      */
+    @Deprecated
     public AsyncInvoker<UploadJarsRequest, UploadJarsResponse> uploadJarsAsyncInvoker(UploadJarsRequest request) {
         return new AsyncInvoker<UploadJarsRequest, UploadJarsResponse>(request, DliMeta.uploadJars, hcClient);
     }
@@ -2523,6 +2713,7 @@ public class DliAsyncClient {
      * @param UploadPythonFilesRequest 请求对象
      * @return CompletableFuture<UploadPythonFilesResponse>
      */
+    @Deprecated
     public CompletableFuture<UploadPythonFilesResponse> uploadPythonFilesAsync(UploadPythonFilesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.uploadPythonFiles);
     }
@@ -2538,6 +2729,7 @@ public class DliAsyncClient {
      * @param UploadPythonFilesRequest 请求对象
      * @return AsyncInvoker<UploadPythonFilesRequest, UploadPythonFilesResponse>
      */
+    @Deprecated
     public AsyncInvoker<UploadPythonFilesRequest, UploadPythonFilesResponse> uploadPythonFilesAsyncInvoker(
         UploadPythonFilesRequest request) {
         return new AsyncInvoker<UploadPythonFilesRequest, UploadPythonFilesResponse>(request, DliMeta.uploadPythonFiles,
@@ -2554,6 +2746,7 @@ public class DliAsyncClient {
      * @param UploadResourcesRequest 请求对象
      * @return CompletableFuture<UploadResourcesResponse>
      */
+    @Deprecated
     public CompletableFuture<UploadResourcesResponse> uploadResourcesAsync(UploadResourcesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.uploadResources);
     }
@@ -2568,6 +2761,7 @@ public class DliAsyncClient {
      * @param UploadResourcesRequest 请求对象
      * @return AsyncInvoker<UploadResourcesRequest, UploadResourcesResponse>
      */
+    @Deprecated
     public AsyncInvoker<UploadResourcesRequest, UploadResourcesResponse> uploadResourcesAsyncInvoker(
         UploadResourcesRequest request) {
         return new AsyncInvoker<UploadResourcesRequest, UploadResourcesResponse>(request, DliMeta.uploadResources,
@@ -2645,6 +2839,7 @@ public class DliAsyncClient {
      * @param ChangeFlinkJobStatusReportRequest 请求对象
      * @return CompletableFuture<ChangeFlinkJobStatusReportResponse>
      */
+    @Deprecated
     public CompletableFuture<ChangeFlinkJobStatusReportResponse> changeFlinkJobStatusReportAsync(
         ChangeFlinkJobStatusReportRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.changeFlinkJobStatusReport);
@@ -2660,6 +2855,7 @@ public class DliAsyncClient {
      * @param ChangeFlinkJobStatusReportRequest 请求对象
      * @return AsyncInvoker<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse>
      */
+    @Deprecated
     public AsyncInvoker<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse> changeFlinkJobStatusReportAsyncInvoker(
         ChangeFlinkJobStatusReportRequest request) {
         return new AsyncInvoker<ChangeFlinkJobStatusReportRequest, ChangeFlinkJobStatusReportResponse>(request,
@@ -2798,6 +2994,7 @@ public class DliAsyncClient {
      * @param CreateIefMessageChannelRequest 请求对象
      * @return CompletableFuture<CreateIefMessageChannelResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateIefMessageChannelResponse> createIefMessageChannelAsync(
         CreateIefMessageChannelRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.createIefMessageChannel);
@@ -2813,6 +3010,7 @@ public class DliAsyncClient {
      * @param CreateIefMessageChannelRequest 请求对象
      * @return AsyncInvoker<CreateIefMessageChannelRequest, CreateIefMessageChannelResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateIefMessageChannelRequest, CreateIefMessageChannelResponse> createIefMessageChannelAsyncInvoker(
         CreateIefMessageChannelRequest request) {
         return new AsyncInvoker<CreateIefMessageChannelRequest, CreateIefMessageChannelResponse>(request,
@@ -2829,6 +3027,7 @@ public class DliAsyncClient {
      * @param CreateIefSystemEventsRequest 请求对象
      * @return CompletableFuture<CreateIefSystemEventsResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateIefSystemEventsResponse> createIefSystemEventsAsync(
         CreateIefSystemEventsRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.createIefSystemEvents);
@@ -2844,6 +3043,7 @@ public class DliAsyncClient {
      * @param CreateIefSystemEventsRequest 请求对象
      * @return AsyncInvoker<CreateIefSystemEventsRequest, CreateIefSystemEventsResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateIefSystemEventsRequest, CreateIefSystemEventsResponse> createIefSystemEventsAsyncInvoker(
         CreateIefSystemEventsRequest request) {
         return new AsyncInvoker<CreateIefSystemEventsRequest, CreateIefSystemEventsResponse>(request,
@@ -3041,6 +3241,7 @@ public class DliAsyncClient {
      * @param RegisterBucketRequest 请求对象
      * @return CompletableFuture<RegisterBucketResponse>
      */
+    @Deprecated
     public CompletableFuture<RegisterBucketResponse> registerBucketAsync(RegisterBucketRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.registerBucket);
     }
@@ -3055,6 +3256,7 @@ public class DliAsyncClient {
      * @param RegisterBucketRequest 请求对象
      * @return AsyncInvoker<RegisterBucketRequest, RegisterBucketResponse>
      */
+    @Deprecated
     public AsyncInvoker<RegisterBucketRequest, RegisterBucketResponse> registerBucketAsyncInvoker(
         RegisterBucketRequest request) {
         return new AsyncInvoker<RegisterBucketRequest, RegisterBucketResponse>(request, DliMeta.registerBucket,
@@ -3071,6 +3273,7 @@ public class DliAsyncClient {
      * @param RunIefJobActionCallBackRequest 请求对象
      * @return CompletableFuture<RunIefJobActionCallBackResponse>
      */
+    @Deprecated
     public CompletableFuture<RunIefJobActionCallBackResponse> runIefJobActionCallBackAsync(
         RunIefJobActionCallBackRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.runIefJobActionCallBack);
@@ -3086,6 +3289,7 @@ public class DliAsyncClient {
      * @param RunIefJobActionCallBackRequest 请求对象
      * @return AsyncInvoker<RunIefJobActionCallBackRequest, RunIefJobActionCallBackResponse>
      */
+    @Deprecated
     public AsyncInvoker<RunIefJobActionCallBackRequest, RunIefJobActionCallBackResponse> runIefJobActionCallBackAsyncInvoker(
         RunIefJobActionCallBackRequest request) {
         return new AsyncInvoker<RunIefJobActionCallBackRequest, RunIefJobActionCallBackResponse>(request,
@@ -3162,6 +3366,7 @@ public class DliAsyncClient {
      * @param ShowFlinkMetricRequest 请求对象
      * @return CompletableFuture<ShowFlinkMetricResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowFlinkMetricResponse> showFlinkMetricAsync(ShowFlinkMetricRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.showFlinkMetric);
     }
@@ -3176,6 +3381,7 @@ public class DliAsyncClient {
      * @param ShowFlinkMetricRequest 请求对象
      * @return AsyncInvoker<ShowFlinkMetricRequest, ShowFlinkMetricResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowFlinkMetricRequest, ShowFlinkMetricResponse> showFlinkMetricAsyncInvoker(
         ShowFlinkMetricRequest request) {
         return new AsyncInvoker<ShowFlinkMetricRequest, ShowFlinkMetricResponse>(request, DliMeta.showFlinkMetric,
@@ -3401,6 +3607,7 @@ public class DliAsyncClient {
      * @param ShowBatchLogRequest 请求对象
      * @return CompletableFuture<ShowBatchLogResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowBatchLogResponse> showBatchLogAsync(ShowBatchLogRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.showBatchLog);
     }
@@ -3415,6 +3622,7 @@ public class DliAsyncClient {
      * @param ShowBatchLogRequest 请求对象
      * @return AsyncInvoker<ShowBatchLogRequest, ShowBatchLogResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowBatchLogRequest, ShowBatchLogResponse> showBatchLogAsyncInvoker(
         ShowBatchLogRequest request) {
         return new AsyncInvoker<ShowBatchLogRequest, ShowBatchLogResponse>(request, DliMeta.showBatchLog, hcClient);
@@ -3546,6 +3754,7 @@ public class DliAsyncClient {
      * @param CreateDatabaseRequest 请求对象
      * @return CompletableFuture<CreateDatabaseResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateDatabaseResponse> createDatabaseAsync(CreateDatabaseRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.createDatabase);
     }
@@ -3560,6 +3769,7 @@ public class DliAsyncClient {
      * @param CreateDatabaseRequest 请求对象
      * @return AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseAsyncInvoker(
         CreateDatabaseRequest request) {
         return new AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>(request, DliMeta.createDatabase,
@@ -3609,6 +3819,7 @@ public class DliAsyncClient {
      * @param CreateTableRequest 请求对象
      * @return CompletableFuture<CreateTableResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateTableResponse> createTableAsync(CreateTableRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.createTable);
     }
@@ -3623,6 +3834,7 @@ public class DliAsyncClient {
      * @param CreateTableRequest 请求对象
      * @return AsyncInvoker<CreateTableRequest, CreateTableResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateTableRequest, CreateTableResponse> createTableAsyncInvoker(CreateTableRequest request) {
         return new AsyncInvoker<CreateTableRequest, CreateTableResponse>(request, DliMeta.createTable, hcClient);
     }
@@ -3637,6 +3849,7 @@ public class DliAsyncClient {
      * @param DeleteDatabaseRequest 请求对象
      * @return CompletableFuture<DeleteDatabaseResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteDatabaseResponse> deleteDatabaseAsync(DeleteDatabaseRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.deleteDatabase);
     }
@@ -3651,6 +3864,7 @@ public class DliAsyncClient {
      * @param DeleteDatabaseRequest 请求对象
      * @return AsyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse> deleteDatabaseAsyncInvoker(
         DeleteDatabaseRequest request) {
         return new AsyncInvoker<DeleteDatabaseRequest, DeleteDatabaseResponse>(request, DliMeta.deleteDatabase,
@@ -3667,6 +3881,7 @@ public class DliAsyncClient {
      * @param DeleteTableRequest 请求对象
      * @return CompletableFuture<DeleteTableResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteTableResponse> deleteTableAsync(DeleteTableRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.deleteTable);
     }
@@ -3681,6 +3896,7 @@ public class DliAsyncClient {
      * @param DeleteTableRequest 请求对象
      * @return AsyncInvoker<DeleteTableRequest, DeleteTableResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteTableRequest, DeleteTableResponse> deleteTableAsyncInvoker(DeleteTableRequest request) {
         return new AsyncInvoker<DeleteTableRequest, DeleteTableResponse>(request, DliMeta.deleteTable, hcClient);
     }
@@ -3695,6 +3911,7 @@ public class DliAsyncClient {
      * @param ExportSqlJobResultRequest 请求对象
      * @return CompletableFuture<ExportSqlJobResultResponse>
      */
+    @Deprecated
     public CompletableFuture<ExportSqlJobResultResponse> exportSqlJobResultAsync(ExportSqlJobResultRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.exportSqlJobResult);
     }
@@ -3709,6 +3926,7 @@ public class DliAsyncClient {
      * @param ExportSqlJobResultRequest 请求对象
      * @return AsyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse>
      */
+    @Deprecated
     public AsyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse> exportSqlJobResultAsyncInvoker(
         ExportSqlJobResultRequest request) {
         return new AsyncInvoker<ExportSqlJobResultRequest, ExportSqlJobResultResponse>(request,
@@ -3725,6 +3943,7 @@ public class DliAsyncClient {
      * @param ExportTableRequest 请求对象
      * @return CompletableFuture<ExportTableResponse>
      */
+    @Deprecated
     public CompletableFuture<ExportTableResponse> exportTableAsync(ExportTableRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.exportTable);
     }
@@ -3739,6 +3958,7 @@ public class DliAsyncClient {
      * @param ExportTableRequest 请求对象
      * @return AsyncInvoker<ExportTableRequest, ExportTableResponse>
      */
+    @Deprecated
     public AsyncInvoker<ExportTableRequest, ExportTableResponse> exportTableAsyncInvoker(ExportTableRequest request) {
         return new AsyncInvoker<ExportTableRequest, ExportTableResponse>(request, DliMeta.exportTable, hcClient);
     }
@@ -3753,6 +3973,7 @@ public class DliAsyncClient {
      * @param ImportTableRequest 请求对象
      * @return CompletableFuture<ImportTableResponse>
      */
+    @Deprecated
     public CompletableFuture<ImportTableResponse> importTableAsync(ImportTableRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.importTable);
     }
@@ -3767,6 +3988,7 @@ public class DliAsyncClient {
      * @param ImportTableRequest 请求对象
      * @return AsyncInvoker<ImportTableRequest, ImportTableResponse>
      */
+    @Deprecated
     public AsyncInvoker<ImportTableRequest, ImportTableResponse> importTableAsyncInvoker(ImportTableRequest request) {
         return new AsyncInvoker<ImportTableRequest, ImportTableResponse>(request, DliMeta.importTable, hcClient);
     }
@@ -3781,6 +4003,7 @@ public class DliAsyncClient {
      * @param ListAllTablesRequest 请求对象
      * @return CompletableFuture<ListAllTablesResponse>
      */
+    @Deprecated
     public CompletableFuture<ListAllTablesResponse> listAllTablesAsync(ListAllTablesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listAllTables);
     }
@@ -3795,6 +4018,7 @@ public class DliAsyncClient {
      * @param ListAllTablesRequest 请求对象
      * @return AsyncInvoker<ListAllTablesRequest, ListAllTablesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListAllTablesRequest, ListAllTablesResponse> listAllTablesAsyncInvoker(
         ListAllTablesRequest request) {
         return new AsyncInvoker<ListAllTablesRequest, ListAllTablesResponse>(request, DliMeta.listAllTables, hcClient);
@@ -3810,6 +4034,7 @@ public class DliAsyncClient {
      * @param ListDatabasesRequest 请求对象
      * @return CompletableFuture<ListDatabasesResponse>
      */
+    @Deprecated
     public CompletableFuture<ListDatabasesResponse> listDatabasesAsync(ListDatabasesRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.listDatabases);
     }
@@ -3824,6 +4049,7 @@ public class DliAsyncClient {
      * @param ListDatabasesRequest 请求对象
      * @return AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse> listDatabasesAsyncInvoker(
         ListDatabasesRequest request) {
         return new AsyncInvoker<ListDatabasesRequest, ListDatabasesResponse>(request, DliMeta.listDatabases, hcClient);
@@ -3899,6 +4125,7 @@ public class DliAsyncClient {
      * @param ShowDescribeTableRequest 请求对象
      * @return CompletableFuture<ShowDescribeTableResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowDescribeTableResponse> showDescribeTableAsync(ShowDescribeTableRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.showDescribeTable);
     }
@@ -3913,6 +4140,7 @@ public class DliAsyncClient {
      * @param ShowDescribeTableRequest 请求对象
      * @return AsyncInvoker<ShowDescribeTableRequest, ShowDescribeTableResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowDescribeTableRequest, ShowDescribeTableResponse> showDescribeTableAsyncInvoker(
         ShowDescribeTableRequest request) {
         return new AsyncInvoker<ShowDescribeTableRequest, ShowDescribeTableResponse>(request, DliMeta.showDescribeTable,
@@ -3928,6 +4156,7 @@ public class DliAsyncClient {
      * @param ShowPartitionsRequest 请求对象
      * @return CompletableFuture<ShowPartitionsResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowPartitionsResponse> showPartitionsAsync(ShowPartitionsRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.showPartitions);
     }
@@ -3941,6 +4170,7 @@ public class DliAsyncClient {
      * @param ShowPartitionsRequest 请求对象
      * @return AsyncInvoker<ShowPartitionsRequest, ShowPartitionsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowPartitionsRequest, ShowPartitionsResponse> showPartitionsAsyncInvoker(
         ShowPartitionsRequest request) {
         return new AsyncInvoker<ShowPartitionsRequest, ShowPartitionsResponse>(request, DliMeta.showPartitions,
@@ -4047,6 +4277,7 @@ public class DliAsyncClient {
      * @param ShowTableContentRequest 请求对象
      * @return CompletableFuture<ShowTableContentResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowTableContentResponse> showTableContentAsync(ShowTableContentRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.showTableContent);
     }
@@ -4061,6 +4292,7 @@ public class DliAsyncClient {
      * @param ShowTableContentRequest 请求对象
      * @return AsyncInvoker<ShowTableContentRequest, ShowTableContentResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowTableContentRequest, ShowTableContentResponse> showTableContentAsyncInvoker(
         ShowTableContentRequest request) {
         return new AsyncInvoker<ShowTableContentRequest, ShowTableContentResponse>(request, DliMeta.showTableContent,
@@ -4077,6 +4309,7 @@ public class DliAsyncClient {
      * @param UpdateDatabaseOwnerRequest 请求对象
      * @return CompletableFuture<UpdateDatabaseOwnerResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateDatabaseOwnerResponse> updateDatabaseOwnerAsync(UpdateDatabaseOwnerRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.updateDatabaseOwner);
     }
@@ -4091,6 +4324,7 @@ public class DliAsyncClient {
      * @param UpdateDatabaseOwnerRequest 请求对象
      * @return AsyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse> updateDatabaseOwnerAsyncInvoker(
         UpdateDatabaseOwnerRequest request) {
         return new AsyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse>(request,
@@ -4107,6 +4341,7 @@ public class DliAsyncClient {
      * @param UpdateTableOwnerRequest 请求对象
      * @return CompletableFuture<UpdateTableOwnerResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateTableOwnerResponse> updateTableOwnerAsync(UpdateTableOwnerRequest request) {
         return hcClient.asyncInvokeHttp(request, DliMeta.updateTableOwner);
     }
@@ -4121,6 +4356,7 @@ public class DliAsyncClient {
      * @param UpdateTableOwnerRequest 请求对象
      * @return AsyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse> updateTableOwnerAsyncInvoker(
         UpdateTableOwnerRequest request) {
         return new AsyncInvoker<UpdateTableOwnerRequest, UpdateTableOwnerResponse>(request, DliMeta.updateTableOwner,

@@ -2722,37 +2722,6 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 收缩数据库日志
-     *
-     * 收缩数据库日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SetInstancesDbShrinkRequest 请求对象
-     * @return CompletableFuture<SetInstancesDbShrinkResponse>
-     */
-    public CompletableFuture<SetInstancesDbShrinkResponse> setInstancesDbShrinkAsync(
-        SetInstancesDbShrinkRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.setInstancesDbShrink);
-    }
-
-    /**
-     * 收缩数据库日志
-     *
-     * 收缩数据库日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SetInstancesDbShrinkRequest 请求对象
-     * @return AsyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>
-     */
-    public AsyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> setInstancesDbShrinkAsyncInvoker(
-        SetInstancesDbShrinkRequest request) {
-        return new AsyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>(request,
-            RdsMeta.setInstancesDbShrink, hcClient);
-    }
-
-    /**
      * 设置跨区域备份策略
      *
      * 设置跨区域备份策略。
@@ -5920,6 +5889,37 @@ public class RdsAsyncClient {
         RevokeSqlserverDbUserPrivilegeRequest request) {
         return new AsyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse>(request,
             RdsMeta.revokeSqlserverDbUserPrivilege, hcClient);
+    }
+
+    /**
+     * 收缩数据库日志
+     *
+     * 收缩数据库日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInstancesDbShrinkRequest 请求对象
+     * @return CompletableFuture<SetInstancesDbShrinkResponse>
+     */
+    public CompletableFuture<SetInstancesDbShrinkResponse> setInstancesDbShrinkAsync(
+        SetInstancesDbShrinkRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setInstancesDbShrink);
+    }
+
+    /**
+     * 收缩数据库日志
+     *
+     * 收缩数据库日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInstancesDbShrinkRequest 请求对象
+     * @return AsyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>
+     */
+    public AsyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> setInstancesDbShrinkAsyncInvoker(
+        SetInstancesDbShrinkRequest request) {
+        return new AsyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>(request,
+            RdsMeta.setInstancesDbShrink, hcClient);
     }
 
 }

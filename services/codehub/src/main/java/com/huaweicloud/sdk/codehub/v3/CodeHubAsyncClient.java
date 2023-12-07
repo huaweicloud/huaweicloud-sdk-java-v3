@@ -400,6 +400,7 @@ public class CodeHubAsyncClient {
      * @param ShowFileRequest 请求对象
      * @return CompletableFuture<ShowFileResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowFileResponse> showFileAsync(ShowFileRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.showFile);
     }
@@ -414,6 +415,7 @@ public class CodeHubAsyncClient {
      * @param ShowFileRequest 请求对象
      * @return AsyncInvoker<ShowFileRequest, ShowFileResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowFileRequest, ShowFileResponse> showFileAsyncInvoker(ShowFileRequest request) {
         return new AsyncInvoker<ShowFileRequest, ShowFileResponse>(request, CodeHubMeta.showFile, hcClient);
     }
@@ -428,6 +430,7 @@ public class CodeHubAsyncClient {
      * @param GetAllRepositoryByProjectIdRequest 请求对象
      * @return CompletableFuture<GetAllRepositoryByProjectIdResponse>
      */
+    @Deprecated
     public CompletableFuture<GetAllRepositoryByProjectIdResponse> getAllRepositoryByProjectIdAsync(
         GetAllRepositoryByProjectIdRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.getAllRepositoryByProjectId);
@@ -443,6 +446,7 @@ public class CodeHubAsyncClient {
      * @param GetAllRepositoryByProjectIdRequest 请求对象
      * @return AsyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse>
      */
+    @Deprecated
     public AsyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse> getAllRepositoryByProjectIdAsyncInvoker(
         GetAllRepositoryByProjectIdRequest request) {
         return new AsyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse>(request,
@@ -459,6 +463,7 @@ public class CodeHubAsyncClient {
      * @param GetProductTemplatesRequest 请求对象
      * @return CompletableFuture<GetProductTemplatesResponse>
      */
+    @Deprecated
     public CompletableFuture<GetProductTemplatesResponse> getProductTemplatesAsync(GetProductTemplatesRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.getProductTemplates);
     }
@@ -473,6 +478,7 @@ public class CodeHubAsyncClient {
      * @param GetProductTemplatesRequest 请求对象
      * @return AsyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse>
      */
+    @Deprecated
     public AsyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse> getProductTemplatesAsyncInvoker(
         GetProductTemplatesRequest request) {
         return new AsyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse>(request,
@@ -669,6 +675,7 @@ public class CodeHubAsyncClient {
      * @param AddDeployKeyRequest 请求对象
      * @return CompletableFuture<AddDeployKeyResponse>
      */
+    @Deprecated
     public CompletableFuture<AddDeployKeyResponse> addDeployKeyAsync(AddDeployKeyRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.addDeployKey);
     }
@@ -683,6 +690,7 @@ public class CodeHubAsyncClient {
      * @param AddDeployKeyRequest 请求对象
      * @return AsyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse>
      */
+    @Deprecated
     public AsyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse> addDeployKeyAsyncInvoker(
         AddDeployKeyRequest request) {
         return new AsyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse>(request, CodeHubMeta.addDeployKey, hcClient);
@@ -816,6 +824,7 @@ public class CodeHubAsyncClient {
      * @param DeleteDeployKeyRequest 请求对象
      * @return CompletableFuture<DeleteDeployKeyResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteDeployKeyResponse> deleteDeployKeyAsync(DeleteDeployKeyRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.deleteDeployKey);
     }
@@ -830,6 +839,7 @@ public class CodeHubAsyncClient {
      * @param DeleteDeployKeyRequest 请求对象
      * @return AsyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse> deleteDeployKeyAsyncInvoker(
         DeleteDeployKeyRequest request) {
         return new AsyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse>(request, CodeHubMeta.deleteDeployKey,
@@ -906,6 +916,7 @@ public class CodeHubAsyncClient {
      * @param GetRepositoryByProjectIdRequest 请求对象
      * @return CompletableFuture<GetRepositoryByProjectIdResponse>
      */
+    @Deprecated
     public CompletableFuture<GetRepositoryByProjectIdResponse> getRepositoryByProjectIdAsync(
         GetRepositoryByProjectIdRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.getRepositoryByProjectId);
@@ -921,6 +932,7 @@ public class CodeHubAsyncClient {
      * @param GetRepositoryByProjectIdRequest 请求对象
      * @return AsyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse>
      */
+    @Deprecated
     public AsyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse> getRepositoryByProjectIdAsyncInvoker(
         GetRepositoryByProjectIdRequest request) {
         return new AsyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse>(request,
@@ -937,6 +949,7 @@ public class CodeHubAsyncClient {
      * @param GetTemplatesRequest 请求对象
      * @return CompletableFuture<GetTemplatesResponse>
      */
+    @Deprecated
     public CompletableFuture<GetTemplatesResponse> getTemplatesAsync(GetTemplatesRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.getTemplates);
     }
@@ -951,6 +964,7 @@ public class CodeHubAsyncClient {
      * @param GetTemplatesRequest 请求对象
      * @return AsyncInvoker<GetTemplatesRequest, GetTemplatesResponse>
      */
+    @Deprecated
     public AsyncInvoker<GetTemplatesRequest, GetTemplatesResponse> getTemplatesAsyncInvoker(
         GetTemplatesRequest request) {
         return new AsyncInvoker<GetTemplatesRequest, GetTemplatesResponse>(request, CodeHubMeta.getTemplates, hcClient);
@@ -1206,6 +1220,7 @@ public class CodeHubAsyncClient {
      * @param ShareTemplatesRequest 请求对象
      * @return CompletableFuture<ShareTemplatesResponse>
      */
+    @Deprecated
     public CompletableFuture<ShareTemplatesResponse> shareTemplatesAsync(ShareTemplatesRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.shareTemplates);
     }
@@ -1220,6 +1235,7 @@ public class CodeHubAsyncClient {
      * @param ShareTemplatesRequest 请求对象
      * @return AsyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse> shareTemplatesAsyncInvoker(
         ShareTemplatesRequest request) {
         return new AsyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse>(request, CodeHubMeta.shareTemplates,
@@ -1597,6 +1613,7 @@ public class CodeHubAsyncClient {
      * @param ShowStatisticCommitRequest 请求对象
      * @return CompletableFuture<ShowStatisticCommitResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowStatisticCommitResponse> showStatisticCommitAsync(ShowStatisticCommitRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.showStatisticCommit);
     }
@@ -1611,6 +1628,7 @@ public class CodeHubAsyncClient {
      * @param ShowStatisticCommitRequest 请求对象
      * @return AsyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse> showStatisticCommitAsyncInvoker(
         ShowStatisticCommitRequest request) {
         return new AsyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse>(request,
@@ -1716,6 +1734,7 @@ public class CodeHubAsyncClient {
      * @param DeleteSShkeyRequest 请求对象
      * @return CompletableFuture<DeleteSShkeyResponse>
      */
+    @Deprecated
     public CompletableFuture<DeleteSShkeyResponse> deleteSShkeyAsync(DeleteSShkeyRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.deleteSShkey);
     }
@@ -1730,6 +1749,7 @@ public class CodeHubAsyncClient {
      * @param DeleteSShkeyRequest 请求对象
      * @return AsyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse>
      */
+    @Deprecated
     public AsyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse> deleteSShkeyAsyncInvoker(
         DeleteSShkeyRequest request) {
         return new AsyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse>(request, CodeHubMeta.deleteSShkey, hcClient);
@@ -1804,6 +1824,7 @@ public class CodeHubAsyncClient {
      * @param ValidateHttpsInfoRequest 请求对象
      * @return CompletableFuture<ValidateHttpsInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ValidateHttpsInfoResponse> validateHttpsInfoAsync(ValidateHttpsInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, CodeHubMeta.validateHttpsInfo);
     }
@@ -1818,6 +1839,7 @@ public class CodeHubAsyncClient {
      * @param ValidateHttpsInfoRequest 请求对象
      * @return AsyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse> validateHttpsInfoAsyncInvoker(
         ValidateHttpsInfoRequest request) {
         return new AsyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse>(request,

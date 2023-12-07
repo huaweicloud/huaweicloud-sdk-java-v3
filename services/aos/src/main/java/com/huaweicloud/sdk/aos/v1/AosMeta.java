@@ -26,6 +26,8 @@ import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeleteStackInstanceDeprecatedRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeleteStackInstanceDeprecatedResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackInstanceRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackInstanceRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackInstanceResponse;
@@ -1036,11 +1038,11 @@ public class AosMeta {
 
     private static HttpRequestDef<DeleteStackInstanceRequest, DeleteStackInstanceResponse> genFordeleteStackInstance() {
         // basic
-        HttpRequestDef.Builder<DeleteStackInstanceRequest, DeleteStackInstanceResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeleteStackInstanceRequest.class, DeleteStackInstanceResponse.class)
-            .withName("DeleteStackInstance")
-            .withUri("/v1/stack-sets/{stack_set_name}/stack-instances")
-            .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteStackInstanceRequest, DeleteStackInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteStackInstanceRequest.class, DeleteStackInstanceResponse.class)
+                .withName("DeleteStackInstance")
+                .withUri("/v1/stack-sets/{stack_set_name}/stack-instances/deletion")
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("stack_set_name",
@@ -1062,6 +1064,48 @@ public class AosMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteStackInstanceRequestBody.class),
             f -> f.withMarshaller(DeleteStackInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse> deleteStackInstanceDeprecated =
+        genFordeleteStackInstanceDeprecated();
+
+    private static HttpRequestDef<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse> genFordeleteStackInstanceDeprecated() {
+        // basic
+        HttpRequestDef.Builder<DeleteStackInstanceDeprecatedRequest, DeleteStackInstanceDeprecatedResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteStackInstanceDeprecatedRequest.class,
+                    DeleteStackInstanceDeprecatedResponse.class)
+                .withName("DeleteStackInstanceDeprecated")
+                .withUri("/v1/stack-sets/{stack_set_name}/stack-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_set_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStackInstanceDeprecatedRequest::getStackSetName, (req, v) -> {
+                req.setStackSetName(v);
+            }));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteStackInstanceDeprecatedRequest::getClientRequestId, (req, v) -> {
+                req.setClientRequestId(v);
+            }));
+        builder.<DeleteStackInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteStackInstanceRequestBody.class),
+            f -> f.withMarshaller(DeleteStackInstanceDeprecatedRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

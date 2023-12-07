@@ -7,8 +7,6 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.functiongraph.v2.model.AsyncInvokeFunctionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.AsyncInvokeFunctionResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.AsyncInvokeReservedFunctionRequest;
-import com.huaweicloud.sdk.functiongraph.v2.model.AsyncInvokeReservedFunctionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteFunctionTriggersRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteFunctionTriggersResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.BatchDeleteWorkflowsRequest;
@@ -19,9 +17,7 @@ import com.huaweicloud.sdk.functiongraph.v2.model.CancelAsyncInvocationRequestBo
 import com.huaweicloud.sdk.functiongraph.v2.model.CancelAsyncInvocationResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateCallbackWorkflowRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateCallbackWorkflowResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyRequestBody;
-import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyVersionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateDependencyVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateEventRequest;
@@ -49,8 +45,6 @@ import com.huaweicloud.sdk.functiongraph.v2.model.CreateVpcEndpointRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateVpcEndpointResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateWorkflowRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.CreateWorkflowResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyRequest;
-import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyVersionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteDependencyVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.DeleteEventRequest;
@@ -138,8 +132,6 @@ import com.huaweicloud.sdk.functiongraph.v2.model.RetryWorkFlowResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ServiceBridgeVersion;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowAppTemplateRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowAppTemplateResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependcyRequest;
-import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependcyResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependencyVersionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowDependencyVersionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.ShowEventRequest;
@@ -190,9 +182,6 @@ import com.huaweicloud.sdk.functiongraph.v2.model.StartWorkflowExecutionRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.StartWorkflowExecutionResponse;
 import com.huaweicloud.sdk.functiongraph.v2.model.StopWorkFlowRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.StopWorkFlowResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.UpdateDependcyRequest;
-import com.huaweicloud.sdk.functiongraph.v2.model.UpdateDependcyResponse;
-import com.huaweicloud.sdk.functiongraph.v2.model.UpdateDependencyRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateEventRequest;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateEventRequestBody;
 import com.huaweicloud.sdk.functiongraph.v2.model.UpdateEventResponse;
@@ -266,47 +255,6 @@ public class FunctionGraphMeta {
 
         // response
 
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunction =
-        genForasyncInvokeReservedFunction();
-
-    private static HttpRequestDef<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> genForasyncInvokeReservedFunction() {
-        // basic
-        HttpRequestDef.Builder<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    AsyncInvokeReservedFunctionRequest.class,
-                    AsyncInvokeReservedFunctionResponse.class)
-                .withName("AsyncInvokeReservedFunction")
-                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/reserved-invocations")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("function_urn",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AsyncInvokeReservedFunctionRequest::getFunctionUrn, (req, v) -> {
-                req.setFunctionUrn(v);
-            }));
-        builder.<Map<String, Object>>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(AsyncInvokeReservedFunctionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }).withInnerContainerType(Object.class));
-
-        // response
-
-        builder.<String>withResponseField("Content-Type",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(AsyncInvokeReservedFunctionResponse::getContentType,
-                AsyncInvokeReservedFunctionResponse::setContentType));
         return builder.build();
     }
 
@@ -433,31 +381,6 @@ public class FunctionGraphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CallbackWorkflowRequestBody.class),
             f -> f.withMarshaller(CreateCallbackWorkflowRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateDependencyRequest, CreateDependencyResponse> createDependency =
-        genForcreateDependency();
-
-    private static HttpRequestDef<CreateDependencyRequest, CreateDependencyResponse> genForcreateDependency() {
-        // basic
-        HttpRequestDef.Builder<CreateDependencyRequest, CreateDependencyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateDependencyRequest.class, CreateDependencyResponse.class)
-                .withName("CreateDependency")
-                .withUri("/v2/{project_id}/fgs/dependencies")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateDependencyRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateDependencyRequestBody.class),
-            f -> f.withMarshaller(CreateDependencyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -749,31 +672,6 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(WorkflowCreateBody.class),
             f -> f.withMarshaller(CreateWorkflowRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteDependencyRequest, DeleteDependencyResponse> deleteDependency =
-        genFordeleteDependency();
-
-    private static HttpRequestDef<DeleteDependencyRequest, DeleteDependencyResponse> genFordeleteDependency() {
-        // basic
-        HttpRequestDef.Builder<DeleteDependencyRequest, DeleteDependencyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDependencyRequest.class, DeleteDependencyResponse.class)
-                .withName("DeleteDependency")
-                .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("depend_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDependencyRequest::getDependId, (req, v) -> {
-                req.setDependId(v);
             }));
 
         // response
@@ -1625,6 +1523,20 @@ public class FunctionGraphMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionApplicationsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionApplicationsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
 
         // response
 
@@ -2087,6 +1999,20 @@ public class FunctionGraphMeta {
             f -> f.withMarshaller(ListStatisticsRequest::getOption, (req, v) -> {
                 req.setOption(v);
             }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStatisticsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStatisticsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
 
         // response
 
@@ -2287,30 +2213,6 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDependcyRequest, ShowDependcyResponse> showDependcy = genForshowDependcy();
-
-    private static HttpRequestDef<ShowDependcyRequest, ShowDependcyResponse> genForshowDependcy() {
-        // basic
-        HttpRequestDef.Builder<ShowDependcyRequest, ShowDependcyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowDependcyRequest.class, ShowDependcyResponse.class)
-                .withName("ShowDependcy")
-                .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("depend_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDependcyRequest::getDependId, (req, v) -> {
-                req.setDependId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowDependencyVersionRequest, ShowDependencyVersionResponse> showDependencyVersion =
         genForshowDependencyVersion();
 
@@ -2395,6 +2297,20 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFuncReservedInstanceMetricsRequest::getFuncUrn, (req, v) -> {
                 req.setFuncUrn(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFuncReservedInstanceMetricsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFuncReservedInstanceMetricsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             }));
 
         // response
@@ -3122,38 +3038,6 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopWorkFlowRequest::getExecutionId, (req, v) -> {
                 req.setExecutionId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateDependcyRequest, UpdateDependcyResponse> updateDependcy =
-        genForupdateDependcy();
-
-    private static HttpRequestDef<UpdateDependcyRequest, UpdateDependcyResponse> genForupdateDependcy() {
-        // basic
-        HttpRequestDef.Builder<UpdateDependcyRequest, UpdateDependcyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateDependcyRequest.class, UpdateDependcyResponse.class)
-                .withName("UpdateDependcy")
-                .withUri("/v2/{project_id}/fgs/dependencies/{depend_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("depend_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDependcyRequest::getDependId, (req, v) -> {
-                req.setDependId(v);
-            }));
-        builder.<UpdateDependencyRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateDependencyRequestBody.class),
-            f -> f.withMarshaller(UpdateDependcyRequest::getBody, (req, v) -> {
-                req.setBody(v);
             }));
 
         // response

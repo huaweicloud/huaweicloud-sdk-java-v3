@@ -317,7 +317,7 @@ public class ApiCheckInfo {
     }
 
     /**
-     * 集成应用ID。  校验应用下API定义是否重复时必填
+     * 集成应用ID  暂不支持
      * @return romaAppId
      */
     public String getRomaAppId() {

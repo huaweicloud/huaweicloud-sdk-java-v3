@@ -44,6 +44,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanListRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanListResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlansRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlansResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowProjectDataDashboardRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowProjectDataDashboardResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowRegisterServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowReportRequest;
@@ -61,6 +63,7 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRespons
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanIssueDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanJournalList;
+import com.huaweicloud.sdk.cloudtest.v1.model.TestReportInfoRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseRequest;
@@ -692,6 +695,39 @@ public class CloudtestMeta {
             f -> f.withMarshaller(ShowPlansResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }).withInnerContainerType(TestPlanDetail.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse> showProjectDataDashboard =
+        genForshowProjectDataDashboard();
+
+    private static HttpRequestDef<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse> genForshowProjectDataDashboard() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectDataDashboardRequest, ShowProjectDataDashboardResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ShowProjectDataDashboardRequest.class, ShowProjectDataDashboardResponse.class)
+                .withName("ShowProjectDataDashboard")
+                .withUri("/v1/{project_id}/data-dashboard/overview")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectDataDashboardRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<TestReportInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TestReportInfoRequestBody.class),
+            f -> f.withMarshaller(ShowProjectDataDashboardRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }

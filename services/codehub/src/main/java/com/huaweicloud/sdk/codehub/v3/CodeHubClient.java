@@ -397,6 +397,7 @@ public class CodeHubClient {
      * @param ShowFileRequest 请求对象
      * @return ShowFileResponse
      */
+    @Deprecated
     public ShowFileResponse showFile(ShowFileRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.showFile);
     }
@@ -411,6 +412,7 @@ public class CodeHubClient {
      * @param ShowFileRequest 请求对象
      * @return SyncInvoker<ShowFileRequest, ShowFileResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowFileRequest, ShowFileResponse> showFileInvoker(ShowFileRequest request) {
         return new SyncInvoker<ShowFileRequest, ShowFileResponse>(request, CodeHubMeta.showFile, hcClient);
     }
@@ -425,6 +427,7 @@ public class CodeHubClient {
      * @param GetAllRepositoryByProjectIdRequest 请求对象
      * @return GetAllRepositoryByProjectIdResponse
      */
+    @Deprecated
     public GetAllRepositoryByProjectIdResponse getAllRepositoryByProjectId(GetAllRepositoryByProjectIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.getAllRepositoryByProjectId);
     }
@@ -439,6 +442,7 @@ public class CodeHubClient {
      * @param GetAllRepositoryByProjectIdRequest 请求对象
      * @return SyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse>
      */
+    @Deprecated
     public SyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse> getAllRepositoryByProjectIdInvoker(
         GetAllRepositoryByProjectIdRequest request) {
         return new SyncInvoker<GetAllRepositoryByProjectIdRequest, GetAllRepositoryByProjectIdResponse>(request,
@@ -455,6 +459,7 @@ public class CodeHubClient {
      * @param GetProductTemplatesRequest 请求对象
      * @return GetProductTemplatesResponse
      */
+    @Deprecated
     public GetProductTemplatesResponse getProductTemplates(GetProductTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.getProductTemplates);
     }
@@ -469,6 +474,7 @@ public class CodeHubClient {
      * @param GetProductTemplatesRequest 请求对象
      * @return SyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse>
      */
+    @Deprecated
     public SyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse> getProductTemplatesInvoker(
         GetProductTemplatesRequest request) {
         return new SyncInvoker<GetProductTemplatesRequest, GetProductTemplatesResponse>(request,
@@ -663,6 +669,7 @@ public class CodeHubClient {
      * @param AddDeployKeyRequest 请求对象
      * @return AddDeployKeyResponse
      */
+    @Deprecated
     public AddDeployKeyResponse addDeployKey(AddDeployKeyRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.addDeployKey);
     }
@@ -677,6 +684,7 @@ public class CodeHubClient {
      * @param AddDeployKeyRequest 请求对象
      * @return SyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse>
      */
+    @Deprecated
     public SyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse> addDeployKeyInvoker(AddDeployKeyRequest request) {
         return new SyncInvoker<AddDeployKeyRequest, AddDeployKeyResponse>(request, CodeHubMeta.addDeployKey, hcClient);
     }
@@ -809,6 +817,7 @@ public class CodeHubClient {
      * @param DeleteDeployKeyRequest 请求对象
      * @return DeleteDeployKeyResponse
      */
+    @Deprecated
     public DeleteDeployKeyResponse deleteDeployKey(DeleteDeployKeyRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.deleteDeployKey);
     }
@@ -823,6 +832,7 @@ public class CodeHubClient {
      * @param DeleteDeployKeyRequest 请求对象
      * @return SyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse> deleteDeployKeyInvoker(
         DeleteDeployKeyRequest request) {
         return new SyncInvoker<DeleteDeployKeyRequest, DeleteDeployKeyResponse>(request, CodeHubMeta.deleteDeployKey,
@@ -899,6 +909,7 @@ public class CodeHubClient {
      * @param GetRepositoryByProjectIdRequest 请求对象
      * @return GetRepositoryByProjectIdResponse
      */
+    @Deprecated
     public GetRepositoryByProjectIdResponse getRepositoryByProjectId(GetRepositoryByProjectIdRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.getRepositoryByProjectId);
     }
@@ -913,6 +924,7 @@ public class CodeHubClient {
      * @param GetRepositoryByProjectIdRequest 请求对象
      * @return SyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse>
      */
+    @Deprecated
     public SyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse> getRepositoryByProjectIdInvoker(
         GetRepositoryByProjectIdRequest request) {
         return new SyncInvoker<GetRepositoryByProjectIdRequest, GetRepositoryByProjectIdResponse>(request,
@@ -929,6 +941,7 @@ public class CodeHubClient {
      * @param GetTemplatesRequest 请求对象
      * @return GetTemplatesResponse
      */
+    @Deprecated
     public GetTemplatesResponse getTemplates(GetTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.getTemplates);
     }
@@ -943,6 +956,7 @@ public class CodeHubClient {
      * @param GetTemplatesRequest 请求对象
      * @return SyncInvoker<GetTemplatesRequest, GetTemplatesResponse>
      */
+    @Deprecated
     public SyncInvoker<GetTemplatesRequest, GetTemplatesResponse> getTemplatesInvoker(GetTemplatesRequest request) {
         return new SyncInvoker<GetTemplatesRequest, GetTemplatesResponse>(request, CodeHubMeta.getTemplates, hcClient);
     }
@@ -1193,6 +1207,7 @@ public class CodeHubClient {
      * @param ShareTemplatesRequest 请求对象
      * @return ShareTemplatesResponse
      */
+    @Deprecated
     public ShareTemplatesResponse shareTemplates(ShareTemplatesRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.shareTemplates);
     }
@@ -1207,6 +1222,7 @@ public class CodeHubClient {
      * @param ShareTemplatesRequest 请求对象
      * @return SyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse>
      */
+    @Deprecated
     public SyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse> shareTemplatesInvoker(
         ShareTemplatesRequest request) {
         return new SyncInvoker<ShareTemplatesRequest, ShareTemplatesResponse>(request, CodeHubMeta.shareTemplates,
@@ -1579,6 +1595,7 @@ public class CodeHubClient {
      * @param ShowStatisticCommitRequest 请求对象
      * @return ShowStatisticCommitResponse
      */
+    @Deprecated
     public ShowStatisticCommitResponse showStatisticCommit(ShowStatisticCommitRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.showStatisticCommit);
     }
@@ -1593,6 +1610,7 @@ public class CodeHubClient {
      * @param ShowStatisticCommitRequest 请求对象
      * @return SyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse> showStatisticCommitInvoker(
         ShowStatisticCommitRequest request) {
         return new SyncInvoker<ShowStatisticCommitRequest, ShowStatisticCommitResponse>(request,
@@ -1697,6 +1715,7 @@ public class CodeHubClient {
      * @param DeleteSShkeyRequest 请求对象
      * @return DeleteSShkeyResponse
      */
+    @Deprecated
     public DeleteSShkeyResponse deleteSShkey(DeleteSShkeyRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.deleteSShkey);
     }
@@ -1711,6 +1730,7 @@ public class CodeHubClient {
      * @param DeleteSShkeyRequest 请求对象
      * @return SyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse>
      */
+    @Deprecated
     public SyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse> deleteSShkeyInvoker(DeleteSShkeyRequest request) {
         return new SyncInvoker<DeleteSShkeyRequest, DeleteSShkeyResponse>(request, CodeHubMeta.deleteSShkey, hcClient);
     }
@@ -1783,6 +1803,7 @@ public class CodeHubClient {
      * @param ValidateHttpsInfoRequest 请求对象
      * @return ValidateHttpsInfoResponse
      */
+    @Deprecated
     public ValidateHttpsInfoResponse validateHttpsInfo(ValidateHttpsInfoRequest request) {
         return hcClient.syncInvokeHttp(request, CodeHubMeta.validateHttpsInfo);
     }
@@ -1797,6 +1818,7 @@ public class CodeHubClient {
      * @param ValidateHttpsInfoRequest 请求对象
      * @return SyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse> validateHttpsInfoInvoker(
         ValidateHttpsInfoRequest request) {
         return new SyncInvoker<ValidateHttpsInfoRequest, ValidateHttpsInfoResponse>(request,

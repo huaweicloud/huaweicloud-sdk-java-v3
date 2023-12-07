@@ -3682,38 +3682,6 @@ public class RdsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> setInstancesDbShrink =
-        genForsetInstancesDbShrink();
-
-    private static HttpRequestDef<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> genForsetInstancesDbShrink() {
-        // basic
-        HttpRequestDef.Builder<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, SetInstancesDbShrinkRequest.class, SetInstancesDbShrinkResponse.class)
-            .withName("SetInstancesDbShrink")
-            .withUri("/v3/{project_id}/instances/{instance_id}/db_shrink")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetInstancesDbShrinkRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<UpdateDBShrinkRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateDBShrinkRequestBody.class),
-            f -> f.withMarshaller(SetInstancesDbShrinkRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> setOffSiteBackupPolicy =
         genForsetOffSiteBackupPolicy();
 
@@ -7746,6 +7714,38 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SqlserverRevokeRequest.class),
             f -> f.withMarshaller(RevokeSqlserverDbUserPrivilegeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> setInstancesDbShrink =
+        genForsetInstancesDbShrink();
+
+    private static HttpRequestDef<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> genForsetInstancesDbShrink() {
+        // basic
+        HttpRequestDef.Builder<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetInstancesDbShrinkRequest.class, SetInstancesDbShrinkResponse.class)
+            .withName("SetInstancesDbShrink")
+            .withUri("/v3/{project_id}/instances/{instance_id}/db_shrink")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetInstancesDbShrinkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateDBShrinkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDBShrinkRequestBody.class),
+            f -> f.withMarshaller(SetInstancesDbShrinkRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

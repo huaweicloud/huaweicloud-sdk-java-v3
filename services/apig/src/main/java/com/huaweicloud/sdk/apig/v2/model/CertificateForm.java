@@ -121,7 +121,7 @@ public class CertificateForm {
     }
 
     /**
-     * 证书名称
+     * 证书名称。支持中文，英文字母，数字，下划线，且只能以英文或汉字开头，4~50个字符。 > 中文字符必须为UTF-8或者unicode编码。
      * @return name
      */
     public String getName() {

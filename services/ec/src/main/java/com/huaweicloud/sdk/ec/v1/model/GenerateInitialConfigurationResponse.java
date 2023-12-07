@@ -17,9 +17,14 @@ public class GenerateInitialConfigurationResponse extends SdkResponse {
     private String equipmentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "config_content")
+    @JsonProperty(value = "url_config_content")
 
-    private String configContent;
+    private String urlConfigContent;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "script_config_content")
+
+    private String scriptConfigContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_at")
@@ -43,21 +48,38 @@ public class GenerateInitialConfigurationResponse extends SdkResponse {
         this.equipmentId = equipmentId;
     }
 
-    public GenerateInitialConfigurationResponse withConfigContent(String configContent) {
-        this.configContent = configContent;
+    public GenerateInitialConfigurationResponse withUrlConfigContent(String urlConfigContent) {
+        this.urlConfigContent = urlConfigContent;
         return this;
     }
 
     /**
      * 初始配置URL
-     * @return configContent
+     * @return urlConfigContent
      */
-    public String getConfigContent() {
-        return configContent;
+    public String getUrlConfigContent() {
+        return urlConfigContent;
     }
 
-    public void setConfigContent(String configContent) {
-        this.configContent = configContent;
+    public void setUrlConfigContent(String urlConfigContent) {
+        this.urlConfigContent = urlConfigContent;
+    }
+
+    public GenerateInitialConfigurationResponse withScriptConfigContent(String scriptConfigContent) {
+        this.scriptConfigContent = scriptConfigContent;
+        return this;
+    }
+
+    /**
+     * 初始配置文件
+     * @return scriptConfigContent
+     */
+    public String getScriptConfigContent() {
+        return scriptConfigContent;
+    }
+
+    public void setScriptConfigContent(String scriptConfigContent) {
+        this.scriptConfigContent = scriptConfigContent;
     }
 
     public GenerateInitialConfigurationResponse withExpireAt(String expireAt) {
@@ -87,12 +109,14 @@ public class GenerateInitialConfigurationResponse extends SdkResponse {
         }
         GenerateInitialConfigurationResponse that = (GenerateInitialConfigurationResponse) obj;
         return Objects.equals(this.equipmentId, that.equipmentId)
-            && Objects.equals(this.configContent, that.configContent) && Objects.equals(this.expireAt, that.expireAt);
+            && Objects.equals(this.urlConfigContent, that.urlConfigContent)
+            && Objects.equals(this.scriptConfigContent, that.scriptConfigContent)
+            && Objects.equals(this.expireAt, that.expireAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(equipmentId, configContent, expireAt);
+        return Objects.hash(equipmentId, urlConfigContent, scriptConfigContent, expireAt);
     }
 
     @Override
@@ -100,7 +124,8 @@ public class GenerateInitialConfigurationResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class GenerateInitialConfigurationResponse {\n");
         sb.append("    equipmentId: ").append(toIndentedString(equipmentId)).append("\n");
-        sb.append("    configContent: ").append(toIndentedString(configContent)).append("\n");
+        sb.append("    urlConfigContent: ").append(toIndentedString(urlConfigContent)).append("\n");
+        sb.append("    scriptConfigContent: ").append(toIndentedString(scriptConfigContent)).append("\n");
         sb.append("    expireAt: ").append(toIndentedString(expireAt)).append("\n");
         sb.append("}");
         return sb.toString();

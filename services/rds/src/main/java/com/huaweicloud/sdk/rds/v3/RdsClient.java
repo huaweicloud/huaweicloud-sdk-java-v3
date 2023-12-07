@@ -2688,36 +2688,6 @@ public class RdsClient {
     }
 
     /**
-     * 收缩数据库日志
-     *
-     * 收缩数据库日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SetInstancesDbShrinkRequest 请求对象
-     * @return SetInstancesDbShrinkResponse
-     */
-    public SetInstancesDbShrinkResponse setInstancesDbShrink(SetInstancesDbShrinkRequest request) {
-        return hcClient.syncInvokeHttp(request, RdsMeta.setInstancesDbShrink);
-    }
-
-    /**
-     * 收缩数据库日志
-     *
-     * 收缩数据库日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param SetInstancesDbShrinkRequest 请求对象
-     * @return SyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>
-     */
-    public SyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> setInstancesDbShrinkInvoker(
-        SetInstancesDbShrinkRequest request) {
-        return new SyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>(request,
-            RdsMeta.setInstancesDbShrink, hcClient);
-    }
-
-    /**
      * 设置跨区域备份策略
      *
      * 设置跨区域备份策略。
@@ -5835,6 +5805,36 @@ public class RdsClient {
         RevokeSqlserverDbUserPrivilegeRequest request) {
         return new SyncInvoker<RevokeSqlserverDbUserPrivilegeRequest, RevokeSqlserverDbUserPrivilegeResponse>(request,
             RdsMeta.revokeSqlserverDbUserPrivilege, hcClient);
+    }
+
+    /**
+     * 收缩数据库日志
+     *
+     * 收缩数据库日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInstancesDbShrinkRequest 请求对象
+     * @return SetInstancesDbShrinkResponse
+     */
+    public SetInstancesDbShrinkResponse setInstancesDbShrink(SetInstancesDbShrinkRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.setInstancesDbShrink);
+    }
+
+    /**
+     * 收缩数据库日志
+     *
+     * 收缩数据库日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInstancesDbShrinkRequest 请求对象
+     * @return SyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>
+     */
+    public SyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse> setInstancesDbShrinkInvoker(
+        SetInstancesDbShrinkRequest request) {
+        return new SyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>(request,
+            RdsMeta.setInstancesDbShrink, hcClient);
     }
 
 }

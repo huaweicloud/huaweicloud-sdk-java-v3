@@ -110,6 +110,11 @@ public class ListJobsRequest {
 
     private String jobName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
     public ListJobsRequest withWorkspace(String workspace) {
         this.workspace = workspace;
         return this;
@@ -195,6 +200,23 @@ public class ListJobsRequest {
         this.jobName = jobName;
     }
 
+    public ListJobsRequest withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * 作业标签
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -206,12 +228,12 @@ public class ListJobsRequest {
         ListJobsRequest that = (ListJobsRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.jobType, that.jobType)
-            && Objects.equals(this.jobName, that.jobName);
+            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, limit, offset, jobType, jobName);
+        return Objects.hash(workspace, limit, offset, jobType, jobName, tags);
     }
 
     @Override
@@ -223,6 +245,7 @@ public class ListJobsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -46,6 +46,7 @@ import com.huaweicloud.sdk.ec.v1.model.EquipmentEsn;
 import com.huaweicloud.sdk.ec.v1.model.EquipmentLanItem;
 import com.huaweicloud.sdk.ec.v1.model.EquipmentOspfItem;
 import com.huaweicloud.sdk.ec.v1.model.EquipmentWanItemList;
+import com.huaweicloud.sdk.ec.v1.model.EquipmentWlanItem;
 import com.huaweicloud.sdk.ec.v1.model.GenerateInitialConfigurationRequest;
 import com.huaweicloud.sdk.ec.v1.model.GenerateInitialConfigurationResponse;
 import com.huaweicloud.sdk.ec.v1.model.InitialConfigurationReq;
@@ -83,6 +84,8 @@ import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentStaticRouteInfoRequest;
 import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentStaticRouteInfoResponse;
 import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentWanInfoRequest;
 import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentWanInfoResponse;
+import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentWlanRequest;
+import com.huaweicloud.sdk.ec.v1.model.ShowEquipmentWlanResponse;
 import com.huaweicloud.sdk.ec.v1.model.ShowIegInfoRequest;
 import com.huaweicloud.sdk.ec.v1.model.ShowIegInfoResponse;
 import com.huaweicloud.sdk.ec.v1.model.ShowQuotasInfoRequest;
@@ -114,6 +117,8 @@ import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentStaticRouteConfigRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentStaticRouteConfigResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentWanConfigRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentWanConfigResponse;
+import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentWlanRequest;
+import com.huaweicloud.sdk.ec.v1.model.UpdateEquipmentWlanResponse;
 import com.huaweicloud.sdk.ec.v1.model.UpdateIegRequest;
 import com.huaweicloud.sdk.ec.v1.model.UpdateIegRequestBody;
 import com.huaweicloud.sdk.ec.v1.model.UpdateIegResponse;
@@ -693,16 +698,16 @@ public class EcMeta {
                     ShowEquipmentSpecificConfigRequest.class,
                     ShowEquipmentSpecificConfigResponse.class)
                 .withName("ShowEquipmentSpecificConfig")
-                .withUri("/v1/{domain_id}/enterprise-connect/equipment-specification/{equipment_type}")
+                .withUri("/v1/{domain_id}/enterprise-connect/equipment-specification/{equipment_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.<ShowEquipmentSpecificConfigRequest.EquipmentTypeEnum>withRequestField("equipment_type",
+        builder.<String>withRequestField("equipment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowEquipmentSpecificConfigRequest.EquipmentTypeEnum.class),
-            f -> f.withMarshaller(ShowEquipmentSpecificConfigRequest::getEquipmentType, (req, v) -> {
-                req.setEquipmentType(v);
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEquipmentSpecificConfigRequest::getEquipmentId, (req, v) -> {
+                req.setEquipmentId(v);
             }));
 
         // response
@@ -1382,6 +1387,79 @@ public class EcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(EquipmentWanItemList.class),
             f -> f.withMarshaller(UpdateEquipmentWanConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse> showEquipmentWlan =
+        genForshowEquipmentWlan();
+
+    private static HttpRequestDef<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse> genForshowEquipmentWlan() {
+        // basic
+        HttpRequestDef.Builder<ShowEquipmentWlanRequest, ShowEquipmentWlanResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowEquipmentWlanRequest.class, ShowEquipmentWlanResponse.class)
+            .withName("ShowEquipmentWlan")
+            .withUri(
+                "/v1/{domain_id}/enterprise-connect/intelligent-enterprise-gateway/{ieg_id}/equipment/{equipment_id}/wlan")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ieg_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEquipmentWlanRequest::getIegId, (req, v) -> {
+                req.setIegId(v);
+            }));
+        builder.<String>withRequestField("equipment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEquipmentWlanRequest::getEquipmentId, (req, v) -> {
+                req.setEquipmentId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse> updateEquipmentWlan =
+        genForupdateEquipmentWlan();
+
+    private static HttpRequestDef<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse> genForupdateEquipmentWlan() {
+        // basic
+        HttpRequestDef.Builder<UpdateEquipmentWlanRequest, UpdateEquipmentWlanResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateEquipmentWlanRequest.class, UpdateEquipmentWlanResponse.class)
+            .withName("UpdateEquipmentWlan")
+            .withUri(
+                "/v1/{domain_id}/enterprise-connect/intelligent-enterprise-gateway/{ieg_id}/equipment/{equipment_id}/wlan")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ieg_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEquipmentWlanRequest::getIegId, (req, v) -> {
+                req.setIegId(v);
+            }));
+        builder.<String>withRequestField("equipment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEquipmentWlanRequest::getEquipmentId, (req, v) -> {
+                req.setEquipmentId(v);
+            }));
+        builder.<EquipmentWlanItem>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EquipmentWlanItem.class),
+            f -> f.withMarshaller(UpdateEquipmentWlanRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

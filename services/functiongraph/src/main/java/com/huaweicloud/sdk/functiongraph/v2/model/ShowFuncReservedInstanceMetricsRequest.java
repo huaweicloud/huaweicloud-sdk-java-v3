@@ -11,9 +11,53 @@ import java.util.Objects;
 public class ShowFuncReservedInstanceMetricsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private String limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "func_urn")
 
     private String funcUrn;
+
+    public ShowFuncReservedInstanceMetricsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 本次查询起始位置，默认值0
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ShowFuncReservedInstanceMetricsRequest withLimit(String limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 本次查询最大返回的数据条数，最大值500，默认值100
+     * @return limit
+     */
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
 
     public ShowFuncReservedInstanceMetricsRequest withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -41,18 +85,21 @@ public class ShowFuncReservedInstanceMetricsRequest {
             return false;
         }
         ShowFuncReservedInstanceMetricsRequest that = (ShowFuncReservedInstanceMetricsRequest) obj;
-        return Objects.equals(this.funcUrn, that.funcUrn);
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.funcUrn, that.funcUrn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn);
+        return Objects.hash(marker, limit, funcUrn);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowFuncReservedInstanceMetricsRequest {\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    funcUrn: ").append(toIndentedString(funcUrn)).append("\n");
         sb.append("}");
         return sb.toString();

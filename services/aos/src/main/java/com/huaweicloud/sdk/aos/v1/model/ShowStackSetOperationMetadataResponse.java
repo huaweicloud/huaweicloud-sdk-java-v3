@@ -143,7 +143,7 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
     private String statusMessage;
 
     /**
-     * 用户当前的操作   * `CREATE_STACK_INSTANCES` - 创建资源栈实例   * `DELETE_STACK_INSTANCES` - 删除资源栈实例   * `DEPLOY_STACK_SET` - 部署资源栈集   * `DEPLOY_STACK_INSTANCES` - 部署资源栈实例
+     * 用户当前的操作   * `CREATE_STACK_INSTANCES` - 创建资源栈实例   * `DELETE_STACK_INSTANCES` - 删除资源栈实例   * `DEPLOY_STACK_SET` - 部署资源栈集   * `DEPLOY_STACK_INSTANCES` - 部署资源栈实例   * `UPDATE_STACK_INSTANCES` - 更新资源栈实例
      */
     public static final class ActionEnum {
 
@@ -167,6 +167,11 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
          */
         public static final ActionEnum DEPLOY_STACK_INSTANCES = new ActionEnum("DEPLOY_STACK_INSTANCES");
 
+        /**
+         * Enum UPDATE_STACK_INSTANCES for value: "UPDATE_STACK_INSTANCES"
+         */
+        public static final ActionEnum UPDATE_STACK_INSTANCES = new ActionEnum("UPDATE_STACK_INSTANCES");
+
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ActionEnum> createStaticFields() {
@@ -175,6 +180,7 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
             map.put("DELETE_STACK_INSTANCES", DELETE_STACK_INSTANCES);
             map.put("DEPLOY_STACK_SET", DEPLOY_STACK_SET);
             map.put("DEPLOY_STACK_INSTANCES", DEPLOY_STACK_INSTANCES);
+            map.put("UPDATE_STACK_INSTANCES", UPDATE_STACK_INSTANCES);
             return Collections.unmodifiableMap(map);
         }
 
@@ -265,7 +271,7 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
     }
 
     /**
-     * 资源栈集操作（operation）的唯一Id。  此Id由资源编排服务在生成资源栈集操作的时候生成，为UUID。
+     * 资源栈集操作（stack_set_operation）的唯一Id。  此ID由资源编排服务在生成资源栈集操作的时候生成，为UUID。
      * @return stackSetOperationId
      */
     public String getStackSetOperationId() {
@@ -282,7 +288,7 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
     }
 
     /**
-     * 资源栈集（stack_set）的唯一ID。  此ID由资源编排服务在生成资源栈的时候生成，为UUID。  由于资源栈集名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈集，删除，在重新创建一个同名资源栈集。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈集就是我以为的那个，而不是又其他队友删除后创建的同名资源栈集。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈集所对应的ID都不相同，更新不会影响ID。如果给与的stack_set_id和当前资源栈集的ID不一致，则返回400
+     * 资源栈集（stack_set）的唯一ID。  此ID由资源编排服务在生成资源栈集的时候生成，为UUID。  由于资源栈集名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈集，删除，在重新创建一个同名资源栈集。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈集就是我以为的那个，而不是又其他队友删除后创建的同名资源栈集。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈集所对应的ID都不相同，更新不会影响ID。如果给与的stack_set_id和当前资源栈集的ID不一致，则返回400
      * @return stackSetId
      */
     public String getStackSetId() {
@@ -350,7 +356,7 @@ public class ShowStackSetOperationMetadataResponse extends SdkResponse {
     }
 
     /**
-     * 用户当前的操作   * `CREATE_STACK_INSTANCES` - 创建资源栈实例   * `DELETE_STACK_INSTANCES` - 删除资源栈实例   * `DEPLOY_STACK_SET` - 部署资源栈集   * `DEPLOY_STACK_INSTANCES` - 部署资源栈实例
+     * 用户当前的操作   * `CREATE_STACK_INSTANCES` - 创建资源栈实例   * `DELETE_STACK_INSTANCES` - 删除资源栈实例   * `DEPLOY_STACK_SET` - 部署资源栈集   * `DEPLOY_STACK_INSTANCES` - 部署资源栈实例   * `UPDATE_STACK_INSTANCES` - 更新资源栈实例
      * @return action
      */
     public ActionEnum getAction() {

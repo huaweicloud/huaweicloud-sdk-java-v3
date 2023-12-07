@@ -16,7 +16,7 @@ import java.util.Objects;
 public class StackSetOperationActionPrimitiveTypeHolder {
 
     /**
-     * 用户当前的操作   * `CREATE_STACK_INSTANCES` - 创建资源栈实例   * `DELETE_STACK_INSTANCES` - 删除资源栈实例   * `DEPLOY_STACK_SET` - 部署资源栈集   * `DEPLOY_STACK_INSTANCES` - 部署资源栈实例
+     * 用户当前的操作   * `CREATE_STACK_INSTANCES` - 创建资源栈实例   * `DELETE_STACK_INSTANCES` - 删除资源栈实例   * `DEPLOY_STACK_SET` - 部署资源栈集   * `DEPLOY_STACK_INSTANCES` - 部署资源栈实例   * `UPDATE_STACK_INSTANCES` - 更新资源栈实例
      */
     public static final class ActionEnum {
 
@@ -40,6 +40,11 @@ public class StackSetOperationActionPrimitiveTypeHolder {
          */
         public static final ActionEnum DEPLOY_STACK_INSTANCES = new ActionEnum("DEPLOY_STACK_INSTANCES");
 
+        /**
+         * Enum UPDATE_STACK_INSTANCES for value: "UPDATE_STACK_INSTANCES"
+         */
+        public static final ActionEnum UPDATE_STACK_INSTANCES = new ActionEnum("UPDATE_STACK_INSTANCES");
+
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ActionEnum> createStaticFields() {
@@ -48,6 +53,7 @@ public class StackSetOperationActionPrimitiveTypeHolder {
             map.put("DELETE_STACK_INSTANCES", DELETE_STACK_INSTANCES);
             map.put("DEPLOY_STACK_SET", DEPLOY_STACK_SET);
             map.put("DEPLOY_STACK_INSTANCES", DEPLOY_STACK_INSTANCES);
+            map.put("UPDATE_STACK_INSTANCES", UPDATE_STACK_INSTANCES);
             return Collections.unmodifiableMap(map);
         }
 
@@ -108,7 +114,7 @@ public class StackSetOperationActionPrimitiveTypeHolder {
     }
 
     /**
-     * 用户当前的操作   * `CREATE_STACK_INSTANCES` - 创建资源栈实例   * `DELETE_STACK_INSTANCES` - 删除资源栈实例   * `DEPLOY_STACK_SET` - 部署资源栈集   * `DEPLOY_STACK_INSTANCES` - 部署资源栈实例
+     * 用户当前的操作   * `CREATE_STACK_INSTANCES` - 创建资源栈实例   * `DELETE_STACK_INSTANCES` - 删除资源栈实例   * `DEPLOY_STACK_SET` - 部署资源栈集   * `DEPLOY_STACK_INSTANCES` - 部署资源栈实例   * `UPDATE_STACK_INSTANCES` - 更新资源栈实例
      * @return action
      */
     public ActionEnum getAction() {

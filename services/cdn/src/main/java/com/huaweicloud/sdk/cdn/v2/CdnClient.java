@@ -167,6 +167,7 @@ public class CdnClient {
      * @param DownloadRegionCarrierExcelRequest 请求对象
      * @return DownloadRegionCarrierExcelResponse
      */
+    @Deprecated
     public DownloadRegionCarrierExcelResponse downloadRegionCarrierExcel(DownloadRegionCarrierExcelRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.downloadRegionCarrierExcel);
     }
@@ -191,6 +192,7 @@ public class CdnClient {
      * @param DownloadRegionCarrierExcelRequest 请求对象
      * @return SyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse>
      */
+    @Deprecated
     public SyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse> downloadRegionCarrierExcelInvoker(
         DownloadRegionCarrierExcelRequest request) {
         return new SyncInvoker<DownloadRegionCarrierExcelRequest, DownloadRegionCarrierExcelResponse>(request,
@@ -217,6 +219,7 @@ public class CdnClient {
      * @param DownloadStatisticsExcelRequest 请求对象
      * @return DownloadStatisticsExcelResponse
      */
+    @Deprecated
     public DownloadStatisticsExcelResponse downloadStatisticsExcel(DownloadStatisticsExcelRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.downloadStatisticsExcel);
     }
@@ -241,6 +244,7 @@ public class CdnClient {
      * @param DownloadStatisticsExcelRequest 请求对象
      * @return SyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse>
      */
+    @Deprecated
     public SyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse> downloadStatisticsExcelInvoker(
         DownloadStatisticsExcelRequest request) {
         return new SyncInvoker<DownloadStatisticsExcelRequest, DownloadStatisticsExcelResponse>(request,
@@ -343,6 +347,7 @@ public class CdnClient {
      * @param ShowBandwidthCalcRequest 请求对象
      * @return ShowBandwidthCalcResponse
      */
+    @Deprecated
     public ShowBandwidthCalcResponse showBandwidthCalc(ShowBandwidthCalcRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showBandwidthCalc);
     }
@@ -369,6 +374,7 @@ public class CdnClient {
      * @param ShowBandwidthCalcRequest 请求对象
      * @return SyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse> showBandwidthCalcInvoker(
         ShowBandwidthCalcRequest request) {
         return new SyncInvoker<ShowBandwidthCalcRequest, ShowBandwidthCalcResponse>(request, CdnMeta.showBandwidthCalc,
@@ -671,6 +677,7 @@ public class CdnClient {
      * @param ShowTopDomainNamesRequest 请求对象
      * @return ShowTopDomainNamesResponse
      */
+    @Deprecated
     public ShowTopDomainNamesResponse showTopDomainNames(ShowTopDomainNamesRequest request) {
         return hcClient.syncInvokeHttp(request, CdnMeta.showTopDomainNames);
     }
@@ -697,6 +704,7 @@ public class CdnClient {
      * @param ShowTopDomainNamesRequest 请求对象
      * @return SyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse> showTopDomainNamesInvoker(
         ShowTopDomainNamesRequest request) {
         return new SyncInvoker<ShowTopDomainNamesRequest, ShowTopDomainNamesResponse>(request,

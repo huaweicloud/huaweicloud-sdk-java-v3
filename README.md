@@ -1018,7 +1018,7 @@ example, you can add one of the following dependency to your **pom.xml** file:
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
-    <version>1.2.12</version>
+    <version>1.3.12</version>
 </dependency>
 ```
 

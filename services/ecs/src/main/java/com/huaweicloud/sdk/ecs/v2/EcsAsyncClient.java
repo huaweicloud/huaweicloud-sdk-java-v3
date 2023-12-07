@@ -1298,6 +1298,7 @@ public class EcsAsyncClient {
      * @param ListServersByTagRequest 请求对象
      * @return CompletableFuture<ListServersByTagResponse>
      */
+    @Deprecated
     public CompletableFuture<ListServersByTagResponse> listServersByTagAsync(ListServersByTagRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.listServersByTag);
     }
@@ -1312,6 +1313,7 @@ public class EcsAsyncClient {
      * @param ListServersByTagRequest 请求对象
      * @return AsyncInvoker<ListServersByTagRequest, ListServersByTagResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListServersByTagRequest, ListServersByTagResponse> listServersByTagAsyncInvoker(
         ListServersByTagRequest request) {
         return new AsyncInvoker<ListServersByTagRequest, ListServersByTagResponse>(request, EcsMeta.listServersByTag,

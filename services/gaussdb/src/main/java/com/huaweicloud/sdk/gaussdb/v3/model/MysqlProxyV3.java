@@ -123,6 +123,11 @@ public class MysqlProxyV3 {
 
     private String subnetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ssl_option")
+
+    private String sslOption;
+
     public MysqlProxyV3 withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -513,6 +518,23 @@ public class MysqlProxyV3 {
         this.subnetId = subnetId;
     }
 
+    public MysqlProxyV3 withSslOption(String sslOption) {
+        this.sslOption = sslOption;
+        return this;
+    }
+
+    /**
+     * SSL数据加密开关设置。  取值范围： - true: 开启SSL数据加密。 - false: 关闭SSL数据加密。
+     * @return sslOption
+     */
+    public String getSslOption() {
+        return sslOption;
+    }
+
+    public void setSslOption(String sslOption) {
+        this.sslOption = sslOption;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -536,7 +558,7 @@ public class MysqlProxyV3 {
             && Objects.equals(this.routeMode, that.routeMode)
             && Objects.equals(this.balanceRouteModeEnabled, that.balanceRouteModeEnabled)
             && Objects.equals(this.consistenceMode, that.consistenceMode)
-            && Objects.equals(this.subnetId, that.subnetId);
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.sslOption, that.sslOption);
     }
 
     @Override
@@ -562,7 +584,8 @@ public class MysqlProxyV3 {
             routeMode,
             balanceRouteModeEnabled,
             consistenceMode,
-            subnetId);
+            subnetId,
+            sslOption);
     }
 
     @Override
@@ -593,6 +616,7 @@ public class MysqlProxyV3 {
         sb.append("    balanceRouteModeEnabled: ").append(toIndentedString(balanceRouteModeEnabled)).append("\n");
         sb.append("    consistenceMode: ").append(toIndentedString(consistenceMode)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    sslOption: ").append(toIndentedString(sslOption)).append("\n");
         sb.append("}");
         return sb.toString();
     }

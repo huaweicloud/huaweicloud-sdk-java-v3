@@ -86,6 +86,11 @@ public class AimPersonalTemplateContent {
 
     private AimPersonalTemplateContentAction action;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "button_type")
+
+    private String buttonType;
+
     public AimPersonalTemplateContent withType(String type) {
         this.type = type;
         return this;
@@ -213,7 +218,7 @@ public class AimPersonalTemplateContent {
     }
 
     /**
-     * 功能类型。  - OPEN_URL：表示跳转H5 - OPEN_QUICK：表示跳转快应用 - OPEN_APP：表示跳转APP - DIAL_PHONE：表示拉起拨号盘 - OPEN_SMS：表示新建短信息 - OPEN_EMAIL：表示打开邮箱 - OPEN_SCHEDULE：表示新建日程 - OPEN_MAP：表示位置定位 - OPEN_BROWSER：表示打开浏览器 - OPEN_POPUP：表示弹窗 - COPY_PARAMETER：表示复制 - VIEW_PIC：表示打开大图  > - type为Image和Button时为必填项，必须绑定事件 > - type为其他类型时则不必填 > - OPPO厂商点击事件类型只支持打开浏览器、打开快应用、打开APP、跳转H5 > - VIVO厂商点击事件类型不支持打开邮箱、打开地图 > - MEIZU厂商点击事件类型不支持打开大图 > - 横滑类1、横滑类2版式的图片不支持绑定事件，默认与按钮事件一致  
+     * 功能类型。  - OPEN_URL：表示跳转H5 - OPEN_QUICK：表示跳转快应用 - OPEN_APP：表示跳转APP - DIAL_PHONE：表示拉起拨号盘 - OPEN_SMS：表示新建短信息 - OPEN_EMAIL：表示打开邮箱 - OPEN_SCHEDULE：表示新建日程 - OPEN_MAP：表示位置定位 - OPEN_BROWSER：表示打开浏览器 - OPEN_POPUP：表示弹窗 - COPY_PARAMETER：表示复制 - VIEW_PIC：表示打开大图  > - type为Image和Button时为必填项，必须绑定事件 > - type为其他类型时则不必填 > - OPPO厂商点击事件类型只支持打开浏览器、打开快应用、打开APP、跳转H5 > - VIVO厂商点击事件类型不支持打开邮箱、打开地图 > - MEIZU厂商点击事件类型不支持打开大图 > - 横滑类1、横滑类2版式的图片不支持绑定事件，默认与按钮事件一致 > - 三星厂商点击事件类型不支持新建日程、打开大图  
      * @return actionType
      */
     public String getActionType() {
@@ -315,7 +320,7 @@ public class AimPersonalTemplateContent {
     }
 
     /**
-     * 表示短剧视频模板视频和封面的宽高比。即card_id为ShortVideo时，此项有值。 - threeToFour: 宽高比为3:4 - oneToOne: 宽高比为1:1 
+     * 表示短视频模板视频和封面的宽高比。即card_id为ShortVideo时，此项有值。 - threeToFour: 宽高比为3:4 - oneToOne: 宽高比为1:1 
      * @return ratio
      */
     public String getRatio() {
@@ -352,6 +357,23 @@ public class AimPersonalTemplateContent {
         this.action = action;
     }
 
+    public AimPersonalTemplateContent withButtonType(String buttonType) {
+        this.buttonType = buttonType;
+        return this;
+    }
+
+    /**
+     * 当模板为电商领券类竖版，即card_id为EcommerceCouponVertical时用于指定按钮类型，具体使用可参考创建电商领券类竖版模板请求示例。 - static：静态按钮 - dynamic：动态按钮 
+     * @return buttonType
+     */
+    public String getButtonType() {
+        return buttonType;
+    }
+
+    public void setButtonType(String buttonType) {
+        this.buttonType = buttonType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -369,7 +391,7 @@ public class AimPersonalTemplateContent {
             && Objects.equals(this.currencyDisplay, that.currencyDisplay)
             && Objects.equals(this.oppoBackground, that.oppoBackground)
             && Objects.equals(this.vivoBackground, that.vivoBackground) && Objects.equals(this.ratio, that.ratio)
-            && Objects.equals(this.action, that.action);
+            && Objects.equals(this.action, that.action) && Objects.equals(this.buttonType, that.buttonType);
     }
 
     @Override
@@ -388,7 +410,8 @@ public class AimPersonalTemplateContent {
             oppoBackground,
             vivoBackground,
             ratio,
-            action);
+            action,
+            buttonType);
     }
 
     @Override
@@ -410,6 +433,7 @@ public class AimPersonalTemplateContent {
         sb.append("    vivoBackground: ").append(toIndentedString(vivoBackground)).append("\n");
         sb.append("    ratio: ").append(toIndentedString(ratio)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    buttonType: ").append(toIndentedString(buttonType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

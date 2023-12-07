@@ -43,7 +43,7 @@ public class ObsBucketInfoOwner {
     }
 
     /**
-     * 用户的DomainID（帐号ID）
+     * 用户的DomainID，即帐号ID
      * @return id
      */
     public String getId() {
