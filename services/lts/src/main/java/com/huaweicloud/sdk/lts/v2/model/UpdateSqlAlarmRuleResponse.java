@@ -20,9 +20,14 @@ import java.util.function.Consumer;
 public class UpdateSqlAlarmRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "sql_alarm_rule_name")
 
-    private String id;
+    private String sqlAlarmRuleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_css_sql")
+
+    private Boolean isCssSql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "indexId")
@@ -30,19 +35,9 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     private String indexId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "language")
-
-    private String language;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "projectId")
 
     private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sql_alarm_rule_name")
-
-    private String sqlAlarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_alarm_rule_id")
@@ -62,7 +57,7 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
 
-    private Frequency frequency;
+    private FrequencyRespBody frequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_expression")
@@ -181,73 +176,201 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
 
     private List<Topics> topics = null;
 
-    public UpdateSqlAlarmRuleResponse withId(String id) {
-        this.id = id;
-        return this;
+    /**
+     * 邮件附加信息语言
+     */
+    public static final class LanguageEnum {
+
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
+        public static final LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
+
+        /**
+         * Enum EN_US for value: "en-us"
+         */
+        public static final LanguageEnum EN_US = new LanguageEnum("en-us");
+
+        private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LanguageEnum> createStaticFields() {
+            Map<String, LanguageEnum> map = new HashMap<>();
+            map.put("zh-cn", ZH_CN);
+            map.put("en-us", EN_US);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LanguageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
+        }
+
+        public static LanguageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LanguageEnum) {
+                return this.value.equals(((LanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
     }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
 
     /**
-     * 测试
-     * @return id
+     * 通知频率,单位(分钟)
      */
-    public String getId() {
-        return id;
+    public static final class NotificationFrequencyEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final NotificationFrequencyEnum NUMBER_0 = new NotificationFrequencyEnum(0);
+
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
+        public static final NotificationFrequencyEnum NUMBER_5 = new NotificationFrequencyEnum(5);
+
+        /**
+         * Enum NUMBER_10 for value: 10
+         */
+        public static final NotificationFrequencyEnum NUMBER_10 = new NotificationFrequencyEnum(10);
+
+        /**
+         * Enum NUMBER_15 for value: 15
+         */
+        public static final NotificationFrequencyEnum NUMBER_15 = new NotificationFrequencyEnum(15);
+
+        /**
+         * Enum NUMBER_30 for value: 30
+         */
+        public static final NotificationFrequencyEnum NUMBER_30 = new NotificationFrequencyEnum(30);
+
+        /**
+         * Enum NUMBER_60 for value: 60
+         */
+        public static final NotificationFrequencyEnum NUMBER_60 = new NotificationFrequencyEnum(60);
+
+        /**
+         * Enum NUMBER_180 for value: 180
+         */
+        public static final NotificationFrequencyEnum NUMBER_180 = new NotificationFrequencyEnum(180);
+
+        /**
+         * Enum NUMBER_360 for value: 360
+         */
+        public static final NotificationFrequencyEnum NUMBER_360 = new NotificationFrequencyEnum(360);
+
+        private static final Map<Integer, NotificationFrequencyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, NotificationFrequencyEnum> createStaticFields() {
+            Map<Integer, NotificationFrequencyEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(5, NUMBER_5);
+            map.put(10, NUMBER_10);
+            map.put(15, NUMBER_15);
+            map.put(30, NUMBER_30);
+            map.put(60, NUMBER_60);
+            map.put(180, NUMBER_180);
+            map.put(360, NUMBER_360);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        NotificationFrequencyEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static NotificationFrequencyEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotificationFrequencyEnum(value));
+        }
+
+        public static NotificationFrequencyEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof NotificationFrequencyEnum) {
+                return this.value.equals(((NotificationFrequencyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "notification_frequency")
 
-    public UpdateSqlAlarmRuleResponse withIndexId(String indexId) {
-        this.indexId = indexId;
-        return this;
-    }
+    private NotificationFrequencyEnum notificationFrequency;
 
-    /**
-     * 测试
-     * @return indexId
-     */
-    public String getIndexId() {
-        return indexId;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_action_rule_name")
 
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
-    }
-
-    public UpdateSqlAlarmRuleResponse withLanguage(String language) {
-        this.language = language;
-        return this;
-    }
-
-    /**
-     * 测试
-     * @return language
-     */
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public UpdateSqlAlarmRuleResponse withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 测试
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
+    private String alarmActionRuleName;
 
     public UpdateSqlAlarmRuleResponse withSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
@@ -264,6 +387,57 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
 
     public void setSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
+    }
+
+    public UpdateSqlAlarmRuleResponse withIsCssSql(Boolean isCssSql) {
+        this.isCssSql = isCssSql;
+        return this;
+    }
+
+    /**
+     * 是否管道符sql查询
+     * @return isCssSql
+     */
+    public Boolean getIsCssSql() {
+        return isCssSql;
+    }
+
+    public void setIsCssSql(Boolean isCssSql) {
+        this.isCssSql = isCssSql;
+    }
+
+    public UpdateSqlAlarmRuleResponse withIndexId(String indexId) {
+        this.indexId = indexId;
+        return this;
+    }
+
+    /**
+     * 索引id
+     * @return indexId
+     */
+    public String getIndexId() {
+        return indexId;
+    }
+
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
+    }
+
+    public UpdateSqlAlarmRuleResponse withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 项目id
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public UpdateSqlAlarmRuleResponse withSqlAlarmRuleId(String sqlAlarmRuleId) {
@@ -333,14 +507,14 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         this.sqlRequests = sqlRequests;
     }
 
-    public UpdateSqlAlarmRuleResponse withFrequency(Frequency frequency) {
+    public UpdateSqlAlarmRuleResponse withFrequency(FrequencyRespBody frequency) {
         this.frequency = frequency;
         return this;
     }
 
-    public UpdateSqlAlarmRuleResponse withFrequency(Consumer<Frequency> frequencySetter) {
+    public UpdateSqlAlarmRuleResponse withFrequency(Consumer<FrequencyRespBody> frequencySetter) {
         if (this.frequency == null) {
-            this.frequency = new Frequency();
+            this.frequency = new FrequencyRespBody();
             frequencySetter.accept(this.frequency);
         }
 
@@ -351,11 +525,11 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
      * Get frequency
      * @return frequency
      */
-    public Frequency getFrequency() {
+    public FrequencyRespBody getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(Frequency frequency) {
+    public void setFrequency(FrequencyRespBody frequency) {
         this.frequency = frequency;
     }
 
@@ -433,7 +607,9 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间(毫秒时间戳)
+     * 创建时间（毫秒时间戳）
+     * minimum: 13
+     * maximum: 13
      * @return createTime
      */
     public Long getCreateTime() {
@@ -450,7 +626,9 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间(毫秒时间戳)
+     * 更新时间（毫秒时间戳）
+     * minimum: 13
+     * maximum: 13
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -494,6 +672,74 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         this.topics = topics;
     }
 
+    public UpdateSqlAlarmRuleResponse withLanguage(LanguageEnum language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * 邮件附加信息语言
+     * @return language
+     */
+    public LanguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
+    }
+
+    public UpdateSqlAlarmRuleResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 规则ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public UpdateSqlAlarmRuleResponse withNotificationFrequency(NotificationFrequencyEnum notificationFrequency) {
+        this.notificationFrequency = notificationFrequency;
+        return this;
+    }
+
+    /**
+     * 通知频率,单位(分钟)
+     * @return notificationFrequency
+     */
+    public NotificationFrequencyEnum getNotificationFrequency() {
+        return notificationFrequency;
+    }
+
+    public void setNotificationFrequency(NotificationFrequencyEnum notificationFrequency) {
+        this.notificationFrequency = notificationFrequency;
+    }
+
+    public UpdateSqlAlarmRuleResponse withAlarmActionRuleName(String alarmActionRuleName) {
+        this.alarmActionRuleName = alarmActionRuleName;
+        return this;
+    }
+
+    /**
+     * 告警行动规则名称 >alarm_action_rule_name和notification_save_rule可以选填一个，如果都填，优先选择alarm_action_rule_name
+     * @return alarmActionRuleName
+     */
+    public String getAlarmActionRuleName() {
+        return alarmActionRuleName;
+    }
+
+    public void setAlarmActionRuleName(String alarmActionRuleName) {
+        this.alarmActionRuleName = alarmActionRuleName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -503,9 +749,9 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
             return false;
         }
         UpdateSqlAlarmRuleResponse that = (UpdateSqlAlarmRuleResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.indexId, that.indexId)
-            && Objects.equals(this.language, that.language) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
+        return Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
+            && Objects.equals(this.isCssSql, that.isCssSql) && Objects.equals(this.indexId, that.indexId)
+            && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId)
             && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
             && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
@@ -513,16 +759,18 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
             && Objects.equals(this.sqlAlarmLevel, that.sqlAlarmLevel)
             && Objects.equals(this.sqlAlarmSend, that.sqlAlarmSend) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.topics, that.topics);
+            && Objects.equals(this.topics, that.topics) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.id, that.id)
+            && Objects.equals(this.notificationFrequency, that.notificationFrequency)
+            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
+        return Objects.hash(sqlAlarmRuleName,
+            isCssSql,
             indexId,
-            language,
             projectId,
-            sqlAlarmRuleName,
             sqlAlarmRuleId,
             sqlAlarmRuleDescription,
             sqlRequests,
@@ -533,18 +781,21 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
             domainId,
             createTime,
             updateTime,
-            topics);
+            topics,
+            language,
+            id,
+            notificationFrequency,
+            alarmActionRuleName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateSqlAlarmRuleResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    indexId: ").append(toIndentedString(indexId)).append("\n");
-        sb.append("    language: ").append(toIndentedString(language)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    sqlAlarmRuleName: ").append(toIndentedString(sqlAlarmRuleName)).append("\n");
+        sb.append("    isCssSql: ").append(toIndentedString(isCssSql)).append("\n");
+        sb.append("    indexId: ").append(toIndentedString(indexId)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    sqlAlarmRuleId: ").append(toIndentedString(sqlAlarmRuleId)).append("\n");
         sb.append("    sqlAlarmRuleDescription: ").append(toIndentedString(sqlAlarmRuleDescription)).append("\n");
         sb.append("    sqlRequests: ").append(toIndentedString(sqlRequests)).append("\n");
@@ -556,6 +807,10 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
+        sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

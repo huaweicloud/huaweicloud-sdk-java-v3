@@ -42,6 +42,8 @@ import com.huaweicloud.sdk.dws.v2.model.ClusterCheckRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.ClusterDescriptionInfo;
 import com.huaweicloud.sdk.dws.v2.model.ClusterShrinkReq;
 import com.huaweicloud.sdk.dws.v2.model.ConfigurationParameterValues;
+import com.huaweicloud.sdk.dws.v2.model.ConvertToLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.ConvertToLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CopySnapshotRequest;
 import com.huaweicloud.sdk.dws.v2.model.CopySnapshotResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateAlarmSubRequest;
@@ -63,6 +65,9 @@ import com.huaweicloud.sdk.dws.v2.model.CreateDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterRequestBody;
+import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotPolicyRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotRequest;
@@ -77,6 +82,9 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteAlarmSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteAlarmSubResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteClusterDnsRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteClusterDnsResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteClusterNodesRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteClusterNodesRequestBody;
+import com.huaweicloud.sdk.dws.v2.model.DeleteClusterNodesResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.DeleteClusterResponse;
@@ -86,6 +94,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyRequest;
@@ -96,11 +106,18 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueResponse;
+import com.huaweicloud.sdk.dws.v2.model.DisableLtsLogsRequest;
+import com.huaweicloud.sdk.dws.v2.model.DisableLtsLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbResponse;
 import com.huaweicloud.sdk.dws.v2.model.DiskResp;
+import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterRequestBody;
+import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.EnableLtsLogsRequest;
+import com.huaweicloud.sdk.dws.v2.model.EnableLtsLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.EventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.EventSubUpdateRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteClusterUpgradeActionRequest;
@@ -139,6 +156,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListClusterConfigurationsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterConfigurationsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterDetailsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListClusterNodesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListClusterNodesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterScaleInNumbersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterScaleInNumbersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterSnapshotsRequest;
@@ -175,12 +194,25 @@ import com.huaweicloud.sdk.dws.v2.model.ListHostOverviewRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListHostOverviewResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListJobDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListJobDetailsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterRingsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterRingsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterTasksRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterTasksResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterVolumesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterVolumesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListQueriesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListQueriesRequestBody;
+import com.huaweicloud.sdk.dws.v2.model.ListQueriesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListQuotasResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionPolicyRequest;
@@ -197,8 +229,12 @@ import com.huaweicloud.sdk.dws.v2.model.ListSnapshotsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListStatisticsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListStatisticsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListTablesStatisticRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListTablesStatisticResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListTagsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListTagsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListTopoRingsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListTopoRingsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListUpdatableVersionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListUpdatableVersionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListUpdateRecordRequest;
@@ -218,14 +254,21 @@ import com.huaweicloud.sdk.dws.v2.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesRequestBody;
+import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.RestartLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.RestartLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.RestoreClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterResponse;
+import com.huaweicloud.sdk.dws.v2.model.RestoreRedistributionRequest;
+import com.huaweicloud.sdk.dws.v2.model.RestoreRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableResponse;
@@ -245,6 +288,8 @@ import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterRequest;
@@ -253,6 +298,8 @@ import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanResponse;
+import com.huaweicloud.sdk.dws.v2.model.StopRedistributionRequest;
+import com.huaweicloud.sdk.dws.v2.model.StopRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.StopWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.StopWorkloadPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.SwitchFailoverDisasterRequest;
@@ -281,6 +328,9 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateDisasterInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequestBody;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowResponse;
 import com.huaweicloud.sdk.dws.v2.model.V2CreateClusterReq;
@@ -670,6 +720,38 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ConvertToLogicalClusterRequest, ConvertToLogicalClusterResponse> convertToLogicalCluster =
+        genForconvertToLogicalCluster();
+
+    private static HttpRequestDef<ConvertToLogicalClusterRequest, ConvertToLogicalClusterResponse> genForconvertToLogicalCluster() {
+        // basic
+        HttpRequestDef.Builder<ConvertToLogicalClusterRequest, ConvertToLogicalClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ConvertToLogicalClusterRequest.class, ConvertToLogicalClusterResponse.class)
+            .withName("ConvertToLogicalCluster")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/convert-to-logical-cluster/{name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConvertToLogicalClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConvertToLogicalClusterRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CopySnapshotRequest, CopySnapshotResponse> copySnapshot = genForcopySnapshot();
 
     private static HttpRequestDef<CopySnapshotRequest, CopySnapshotResponse> genForcopySnapshot() {
@@ -922,6 +1004,38 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateLogicalClusterRequest, CreateLogicalClusterResponse> createLogicalCluster =
+        genForcreateLogicalCluster();
+
+    private static HttpRequestDef<CreateLogicalClusterRequest, CreateLogicalClusterResponse> genForcreateLogicalCluster() {
+        // basic
+        HttpRequestDef.Builder<CreateLogicalClusterRequest, CreateLogicalClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateLogicalClusterRequest.class, CreateLogicalClusterResponse.class)
+            .withName("CreateLogicalCluster")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/logical-clusters")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLogicalClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<CreateLogicalClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLogicalClusterRequestBody.class),
+            f -> f.withMarshaller(CreateLogicalClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshot =
         genForcreateSnapshot();
 
@@ -1107,6 +1221,38 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteClusterNodesRequest, DeleteClusterNodesResponse> deleteClusterNodes =
+        genFordeleteClusterNodes();
+
+    private static HttpRequestDef<DeleteClusterNodesRequest, DeleteClusterNodesResponse> genFordeleteClusterNodes() {
+        // basic
+        HttpRequestDef.Builder<DeleteClusterNodesRequest, DeleteClusterNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteClusterNodesRequest.class, DeleteClusterNodesResponse.class)
+                .withName("DeleteClusterNodes")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/nodes/delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClusterNodesRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<DeleteClusterNodesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteClusterNodesRequestBody.class),
+            f -> f.withMarshaller(DeleteClusterNodesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteDataSourceRequest, DeleteDataSourceResponse> deleteDataSource =
         genFordeleteDataSource();
 
@@ -1189,6 +1335,38 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteEventSubRequest::getEventSubId, (req, v) -> {
                 req.setEventSubId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLogicalClusterRequest, DeleteLogicalClusterResponse> deleteLogicalCluster =
+        genFordeleteLogicalCluster();
+
+    private static HttpRequestDef<DeleteLogicalClusterRequest, DeleteLogicalClusterResponse> genFordeleteLogicalCluster() {
+        // basic
+        HttpRequestDef.Builder<DeleteLogicalClusterRequest, DeleteLogicalClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteLogicalClusterRequest.class, DeleteLogicalClusterResponse.class)
+            .withName("DeleteLogicalCluster")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/logical-clusters/{logical_cluster_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLogicalClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("logical_cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLogicalClusterRequest::getLogicalClusterId, (req, v) -> {
+                req.setLogicalClusterId(v);
             }));
 
         // response
@@ -1352,6 +1530,31 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DisableLtsLogsRequest, DisableLtsLogsResponse> disableLtsLogs =
+        genFordisableLtsLogs();
+
+    private static HttpRequestDef<DisableLtsLogsRequest, DisableLtsLogsResponse> genFordisableLtsLogs() {
+        // basic
+        HttpRequestDef.Builder<DisableLtsLogsRequest, DisableLtsLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableLtsLogsRequest.class, DisableLtsLogsResponse.class)
+                .withName("DisableLtsLogs")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/lts-logs/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableLtsLogsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DisassociateEipRequest, DisassociateEipResponse> disassociateEip =
         genFordisassociateEip();
 
@@ -1409,6 +1612,63 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisassociateElbRequest::getElbId, (req, v) -> {
                 req.setElbId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableLogicalClusterRequest, EnableLogicalClusterResponse> enableLogicalCluster =
+        genForenableLogicalCluster();
+
+    private static HttpRequestDef<EnableLogicalClusterRequest, EnableLogicalClusterResponse> genForenableLogicalCluster() {
+        // basic
+        HttpRequestDef.Builder<EnableLogicalClusterRequest, EnableLogicalClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, EnableLogicalClusterRequest.class, EnableLogicalClusterResponse.class)
+            .withName("EnableLogicalCluster")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/logical-clusters/enable")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableLogicalClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<EnableLogicalClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EnableLogicalClusterRequestBody.class),
+            f -> f.withMarshaller(EnableLogicalClusterRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableLtsLogsRequest, EnableLtsLogsResponse> enableLtsLogs =
+        genForenableLtsLogs();
+
+    private static HttpRequestDef<EnableLtsLogsRequest, EnableLtsLogsResponse> genForenableLtsLogs() {
+        // basic
+        HttpRequestDef.Builder<EnableLtsLogsRequest, EnableLtsLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableLtsLogsRequest.class, EnableLtsLogsResponse.class)
+                .withName("EnableLtsLogs")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/lts-logs/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableLtsLogsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
             }));
 
         // response
@@ -1927,6 +2187,87 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListClusterNodesRequest, ListClusterNodesResponse> listClusterNodes =
+        genForlistClusterNodes();
+
+    private static HttpRequestDef<ListClusterNodesRequest, ListClusterNodesResponse> genForlistClusterNodes() {
+        // basic
+        HttpRequestDef.Builder<ListClusterNodesRequest, ListClusterNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListClusterNodesRequest.class, ListClusterNodesResponse.class)
+                .withName("ListClusterNodes")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/nodes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("deleted",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getDeleted, (req, v) -> {
+                req.setDeleted(v);
+            }));
+        builder.<List<String>>withRequestField("node_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getNodeIds, (req, v) -> {
+                req.setNodeIds(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("filter_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getFilterBy, (req, v) -> {
+                req.setFilterBy(v);
+            }));
+        builder.<String>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            }));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getOrderBy, (req, v) -> {
+                req.setOrderBy(v);
+            }));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterNodesRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClusterScaleInNumbersRequest, ListClusterScaleInNumbersResponse> listClusterScaleInNumbers =
         genForlistClusterScaleInNumbers();
 
@@ -2395,6 +2736,13 @@ public class DwsMeta {
             f -> f.withMarshaller(ListHostDiskRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostDiskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
         builder.<String>withRequestField("instance_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2559,6 +2907,231 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLogicalClusterRingsRequest, ListLogicalClusterRingsResponse> listLogicalClusterRings =
+        genForlistLogicalClusterRings();
+
+    private static HttpRequestDef<ListLogicalClusterRingsRequest, ListLogicalClusterRingsResponse> genForlistLogicalClusterRings() {
+        // basic
+        HttpRequestDef.Builder<ListLogicalClusterRingsRequest, ListLogicalClusterRingsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListLogicalClusterRingsRequest.class, ListLogicalClusterRingsResponse.class)
+            .withName("ListLogicalClusterRings")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/logical-clusters/rings")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicalClusterRingsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogicalClusterRingsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogicalClusterRingsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogicalClusterTasksRequest, ListLogicalClusterTasksResponse> listLogicalClusterTasks =
+        genForlistLogicalClusterTasks();
+
+    private static HttpRequestDef<ListLogicalClusterTasksRequest, ListLogicalClusterTasksResponse> genForlistLogicalClusterTasks() {
+        // basic
+        HttpRequestDef.Builder<ListLogicalClusterTasksRequest, ListLogicalClusterTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListLogicalClusterTasksRequest.class, ListLogicalClusterTasksResponse.class)
+            .withName("ListLogicalClusterTasks")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/logical-clusters/tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicalClusterTasksRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogicalClusterTasksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogicalClusterTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("logical_cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicalClusterTasksRequest::getLogicalClusterName, (req, v) -> {
+                req.setLogicalClusterName(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicalClusterTasksRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicalClusterTasksRequest::getOrderBy, (req, v) -> {
+                req.setOrderBy(v);
+            }));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicalClusterTasksRequest::getOrder, (req, v) -> {
+                req.setOrder(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogicalClusterVolumesRequest, ListLogicalClusterVolumesResponse> listLogicalClusterVolumes =
+        genForlistLogicalClusterVolumes();
+
+    private static HttpRequestDef<ListLogicalClusterVolumesRequest, ListLogicalClusterVolumesResponse> genForlistLogicalClusterVolumes() {
+        // basic
+        HttpRequestDef.Builder<ListLogicalClusterVolumesRequest, ListLogicalClusterVolumesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListLogicalClusterVolumesRequest.class,
+                    ListLogicalClusterVolumesResponse.class)
+                .withName("ListLogicalClusterVolumes")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/logical-clusters/volumes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicalClusterVolumesRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogicalClusterVolumesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogicalClusterVolumesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogicalClustersRequest, ListLogicalClustersResponse> listLogicalClusters =
+        genForlistLogicalClusters();
+
+    private static HttpRequestDef<ListLogicalClustersRequest, ListLogicalClustersResponse> genForlistLogicalClusters() {
+        // basic
+        HttpRequestDef.Builder<ListLogicalClustersRequest, ListLogicalClustersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogicalClustersRequest.class, ListLogicalClustersResponse.class)
+                .withName("ListLogicalClusters")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/logical-clusters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicalClustersRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogicalClustersRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogicalClustersRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLtsLogsRequest, ListLtsLogsResponse> listLtsLogs = genForlistLtsLogs();
+
+    private static HttpRequestDef<ListLtsLogsRequest, ListLtsLogsResponse> genForlistLtsLogs() {
+        // basic
+        HttpRequestDef.Builder<ListLtsLogsRequest, ListLtsLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLtsLogsRequest.class, ListLtsLogsResponse.class)
+                .withName("ListLtsLogs")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/lts-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLtsLogsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLtsLogsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLtsLogsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMonitorIndicatorDataRequest, ListMonitorIndicatorDataResponse> listMonitorIndicatorData =
         genForlistMonitorIndicatorData();
 
@@ -2671,6 +3244,37 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQueriesRequest, ListQueriesResponse> listQueries = genForlistQueries();
+
+    private static HttpRequestDef<ListQueriesRequest, ListQueriesResponse> genForlistQueries() {
+        // basic
+        HttpRequestDef.Builder<ListQueriesRequest, ListQueriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListQueriesRequest.class, ListQueriesResponse.class)
+                .withName("ListQueries")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/dms/queries")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueriesRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ListQueriesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListQueriesRequestBody.class),
+            f -> f.withMarshaller(ListQueriesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 
@@ -2879,6 +3483,80 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTablesStatisticRequest, ListTablesStatisticResponse> listTablesStatistic =
+        genForlistTablesStatistic();
+
+    private static HttpRequestDef<ListTablesStatisticRequest, ListTablesStatisticResponse> genForlistTablesStatistic() {
+        // basic
+        HttpRequestDef.Builder<ListTablesStatisticRequest, ListTablesStatisticResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTablesStatisticRequest.class, ListTablesStatisticResponse.class)
+                .withName("ListTablesStatistic")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/dms/tables/statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesStatisticRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("rate_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesStatisticRequest::getRateType, (req, v) -> {
+                req.setRateType(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTablesStatisticRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTablesStatisticRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesStatisticRequest::getOrderBy, (req, v) -> {
+                req.setOrderBy(v);
+            }));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesStatisticRequest::getSortBy, (req, v) -> {
+                req.setSortBy(v);
+            }));
+        builder.<String>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesStatisticRequest::getFilter, (req, v) -> {
+                req.setFilter(v);
+            }));
+        builder.<String>withRequestField("value",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesStatisticRequest::getValue, (req, v) -> {
+                req.setValue(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForlistTags();
 
     private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForlistTags() {
@@ -2890,6 +3568,45 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTopoRingsRequest, ListTopoRingsResponse> listTopoRings =
+        genForlistTopoRings();
+
+    private static HttpRequestDef<ListTopoRingsRequest, ListTopoRingsResponse> genForlistTopoRings() {
+        // basic
+        HttpRequestDef.Builder<ListTopoRingsRequest, ListTopoRingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTopoRingsRequest.class, ListTopoRingsResponse.class)
+                .withName("ListTopoRings")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/topo/rings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopoRingsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopoRingsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopoRingsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
 
         // response
 
@@ -3088,6 +3805,41 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeClusterWithExistedNodesRequest, ResizeClusterWithExistedNodesResponse> resizeClusterWithExistedNodes =
+        genForresizeClusterWithExistedNodes();
+
+    private static HttpRequestDef<ResizeClusterWithExistedNodesRequest, ResizeClusterWithExistedNodesResponse> genForresizeClusterWithExistedNodes() {
+        // basic
+        HttpRequestDef.Builder<ResizeClusterWithExistedNodesRequest, ResizeClusterWithExistedNodesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ResizeClusterWithExistedNodesRequest.class,
+                    ResizeClusterWithExistedNodesResponse.class)
+                .withName("ResizeClusterWithExistedNodes")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/resize-with-existed-nodes")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeClusterWithExistedNodesRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ResizeClusterWithExistedNodesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeClusterWithExistedNodesRequestBody.class),
+            f -> f.withMarshaller(ResizeClusterWithExistedNodesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestartClusterRequest, RestartClusterResponse> restartCluster =
         genForrestartCluster();
 
@@ -3113,6 +3865,38 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(RestartClusterRequestBody.class),
             f -> f.withMarshaller(RestartClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestartLogicalClusterRequest, RestartLogicalClusterResponse> restartLogicalCluster =
+        genForrestartLogicalCluster();
+
+    private static HttpRequestDef<RestartLogicalClusterRequest, RestartLogicalClusterResponse> genForrestartLogicalCluster() {
+        // basic
+        HttpRequestDef.Builder<RestartLogicalClusterRequest, RestartLogicalClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RestartLogicalClusterRequest.class, RestartLogicalClusterResponse.class)
+            .withName("RestartLogicalCluster")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/logical-clusters/{logical_cluster_id}/restart")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartLogicalClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("logical_cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartLogicalClusterRequest::getLogicalClusterId, (req, v) -> {
+                req.setLogicalClusterId(v);
             }));
 
         // response
@@ -3170,6 +3954,31 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreDisasterRequest::getDisasterRecoveryId, (req, v) -> {
                 req.setDisasterRecoveryId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreRedistributionRequest, RestoreRedistributionResponse> restoreRedistribution =
+        genForrestoreRedistribution();
+
+    private static HttpRequestDef<RestoreRedistributionRequest, RestoreRedistributionResponse> genForrestoreRedistribution() {
+        // basic
+        HttpRequestDef.Builder<RestoreRedistributionRequest, RestoreRedistributionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RestoreRedistributionRequest.class, RestoreRedistributionResponse.class)
+            .withName("RestoreRedistribution")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/redistribution/recovery")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreRedistributionRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
             }));
 
         // response
@@ -3505,6 +4314,45 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowQueryDetailRequest, ShowQueryDetailResponse> showQueryDetail =
+        genForshowQueryDetail();
+
+    private static HttpRequestDef<ShowQueryDetailRequest, ShowQueryDetailResponse> genForshowQueryDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowQueryDetailRequest, ShowQueryDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQueryDetailRequest.class, ShowQueryDetailResponse.class)
+                .withName("ShowQueryDetail")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/dms/queries/{query_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQueryDetailRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("query_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQueryDetailRequest::getQueryId, (req, v) -> {
+                req.setQueryId(v);
+            }));
+        builder.<Long>withRequestField("ctime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowQueryDetailRequest::getCtime, (req, v) -> {
+                req.setCtime(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowWorkloadPlanRequest, ShowWorkloadPlanResponse> showWorkloadPlan =
         genForshowWorkloadPlan();
 
@@ -3619,6 +4467,31 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartWorkloadPlanRequest::getPlanId, (req, v) -> {
                 req.setPlanId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopRedistributionRequest, StopRedistributionResponse> stopRedistribution =
+        genForstopRedistribution();
+
+    private static HttpRequestDef<StopRedistributionRequest, StopRedistributionResponse> genForstopRedistribution() {
+        // basic
+        HttpRequestDef.Builder<StopRedistributionRequest, StopRedistributionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopRedistributionRequest.class, StopRedistributionResponse.class)
+                .withName("StopRedistribution")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/redistribution/suspend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopRedistributionRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
             }));
 
         // response
@@ -4029,6 +4902,45 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EventSubUpdateRequest.class),
             f -> f.withMarshaller(UpdateEventSubRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse> updateLogicalCluster =
+        genForupdateLogicalCluster();
+
+    private static HttpRequestDef<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse> genForupdateLogicalCluster() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateLogicalClusterRequest.class, UpdateLogicalClusterResponse.class)
+            .withName("UpdateLogicalCluster")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/logical-clusters/{logical_cluster_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogicalClusterRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<String>withRequestField("logical_cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogicalClusterRequest::getLogicalClusterId, (req, v) -> {
+                req.setLogicalClusterId(v);
+            }));
+        builder.<UpdateLogicalClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLogicalClusterRequestBody.class),
+            f -> f.withMarshaller(UpdateLogicalClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -23,6 +23,7 @@ import com.huaweicloud.sdk.rocketmq.v2.model.CreateInstanceByEngineResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreateRocketMqMigrationTaskReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateRocketMqMigrationTaskRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateRocketMqMigrationTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateTopicOrBatchDeleteTopicReq;
@@ -120,7 +121,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageResponse;
 
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class RocketMQMeta {
@@ -360,13 +360,13 @@ public class RocketMQMeta {
             f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getType, (req, v) -> {
                 req.setType(v);
             }));
-        builder.<Map<String, Object>>withRequestField("body",
+        builder.<CreateRocketMqMigrationTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Map.class),
+            TypeCasts.uncheckedConversion(CreateRocketMqMigrationTaskReq.class),
             f -> f.withMarshaller(CreateRocketMqMigrationTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            }).withInnerContainerType(Object.class));
+            }));
 
         // response
 

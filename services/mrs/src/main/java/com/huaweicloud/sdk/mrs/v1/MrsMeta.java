@@ -48,6 +48,8 @@ import com.huaweicloud.sdk.mrs.v1.model.ShowClusterDetailsRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ShowClusterDetailsResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ShowJobExesRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ShowJobExesResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ShowMrsVersionMetadataRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ShowMrsVersionMetadataResponse;
 import com.huaweicloud.sdk.mrs.v1.model.SubmitJobReqV11;
 import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingRequest;
 import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingResponse;
@@ -659,6 +661,38 @@ public class MrsMeta {
             TypeCasts.uncheckedConversion(ListAvailableZonesRequest.ScopeEnum.class),
             f -> f.withMarshaller(ListAvailableZonesRequest::getScope, (req, v) -> {
                 req.setScope(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse> showMrsVersionMetadata =
+        genForshowMrsVersionMetadata();
+
+    private static HttpRequestDef<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse> genForshowMrsVersionMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowMrsVersionMetadataRequest.class, ShowMrsVersionMetadataResponse.class)
+            .withName("ShowMrsVersionMetadata")
+            .withUri("/v1.1/{project_id}/metadata/versions/{version_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMrsVersionMetadataRequest::getVersionName, (req, v) -> {
+                req.setVersionName(v);
+            }));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMrsVersionMetadataRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
             }));
 
         // response

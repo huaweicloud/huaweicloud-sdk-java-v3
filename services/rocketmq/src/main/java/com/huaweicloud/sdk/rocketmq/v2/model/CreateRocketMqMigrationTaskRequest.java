@@ -179,7 +179,7 @@ public class CreateRocketMqMigrationTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Map<String, Object> body = null;
+    private CreateRocketMqMigrationTaskReq body;
 
     public CreateRocketMqMigrationTaskRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -249,36 +249,29 @@ public class CreateRocketMqMigrationTaskRequest {
         this.type = type;
     }
 
-    public CreateRocketMqMigrationTaskRequest withBody(Map<String, Object> body) {
+    public CreateRocketMqMigrationTaskRequest withBody(CreateRocketMqMigrationTaskReq body) {
         this.body = body;
         return this;
     }
 
-    public CreateRocketMqMigrationTaskRequest putBodyItem(String key, Object bodyItem) {
+    public CreateRocketMqMigrationTaskRequest withBody(Consumer<CreateRocketMqMigrationTaskReq> bodySetter) {
         if (this.body == null) {
-            this.body = new HashMap<>();
+            this.body = new CreateRocketMqMigrationTaskReq();
+            bodySetter.accept(this.body);
         }
-        this.body.put(key, bodyItem);
-        return this;
-    }
 
-    public CreateRocketMqMigrationTaskRequest withBody(Consumer<Map<String, Object>> bodySetter) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
-        }
-        bodySetter.accept(this.body);
         return this;
     }
 
     /**
-     * 元数据json文件。
+     * Get body
      * @return body
      */
-    public Map<String, Object> getBody() {
+    public CreateRocketMqMigrationTaskReq getBody() {
         return body;
     }
 
-    public void setBody(Map<String, Object> body) {
+    public void setBody(CreateRocketMqMigrationTaskReq body) {
         this.body = body;
     }
 

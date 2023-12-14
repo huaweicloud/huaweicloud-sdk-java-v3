@@ -65,6 +65,8 @@ import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueuePropertyResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueResponse;
+import com.huaweicloud.sdk.dli.v1.model.CreateRouteToEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateRouteToEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateRequest;
@@ -103,6 +105,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteResourceRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteResourceResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableResponse;
 import com.huaweicloud.sdk.dli.v1.model.DisassociateQueueFromEnhancedConnectionRequest;
@@ -277,278 +281,6 @@ public class DliClient {
     public static ClientBuilder<DliClient> newBuilder() {
         ClientBuilder<DliClient> clientBuilder = new ClientBuilder<>(DliClient::new);
         return clientBuilder;
-    }
-
-    /**
-     * 批量删除SQL模板
-     *
-     * 该API用于批量删除SQL模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param BatchDeleteSqlJobTemplatesRequest 请求对象
-     * @return BatchDeleteSqlJobTemplatesResponse
-     */
-    public BatchDeleteSqlJobTemplatesResponse batchDeleteSqlJobTemplates(BatchDeleteSqlJobTemplatesRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.batchDeleteSqlJobTemplates);
-    }
-
-    /**
-     * 批量删除SQL模板
-     *
-     * 该API用于批量删除SQL模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param BatchDeleteSqlJobTemplatesRequest 请求对象
-     * @return SyncInvoker<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse>
-     */
-    public SyncInvoker<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> batchDeleteSqlJobTemplatesInvoker(
-        BatchDeleteSqlJobTemplatesRequest request) {
-        return new SyncInvoker<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse>(request,
-            DliMeta.batchDeleteSqlJobTemplates, hcClient);
-    }
-
-    /**
-     * 创建作业模板
-     *
-     * 该API用于创建作业模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateSparkJobTemplateRequest 请求对象
-     * @return CreateSparkJobTemplateResponse
-     */
-    public CreateSparkJobTemplateResponse createSparkJobTemplate(CreateSparkJobTemplateRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.createSparkJobTemplate);
-    }
-
-    /**
-     * 创建作业模板
-     *
-     * 该API用于创建作业模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateSparkJobTemplateRequest 请求对象
-     * @return SyncInvoker<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse>
-     */
-    public SyncInvoker<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> createSparkJobTemplateInvoker(
-        CreateSparkJobTemplateRequest request) {
-        return new SyncInvoker<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse>(request,
-            DliMeta.createSparkJobTemplate, hcClient);
-    }
-
-    /**
-     * 存储指定SQL语句
-     *
-     * 该API用于存储指定的SQL语句，后续可以重复使用。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateSqlJobTemplateRequest 请求对象
-     * @return CreateSqlJobTemplateResponse
-     */
-    public CreateSqlJobTemplateResponse createSqlJobTemplate(CreateSqlJobTemplateRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.createSqlJobTemplate);
-    }
-
-    /**
-     * 存储指定SQL语句
-     *
-     * 该API用于存储指定的SQL语句，后续可以重复使用。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateSqlJobTemplateRequest 请求对象
-     * @return SyncInvoker<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse>
-     */
-    public SyncInvoker<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> createSqlJobTemplateInvoker(
-        CreateSqlJobTemplateRequest request) {
-        return new SyncInvoker<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse>(request,
-            DliMeta.createSqlJobTemplate, hcClient);
-    }
-
-    /**
-     * 查询作业模板列表
-     *
-     * 该API用于查询作业模板列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSparkJobTemplatesRequest 请求对象
-     * @return ListSparkJobTemplatesResponse
-     */
-    public ListSparkJobTemplatesResponse listSparkJobTemplates(ListSparkJobTemplatesRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.listSparkJobTemplates);
-    }
-
-    /**
-     * 查询作业模板列表
-     *
-     * 该API用于查询作业模板列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSparkJobTemplatesRequest 请求对象
-     * @return SyncInvoker<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse>
-     */
-    public SyncInvoker<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> listSparkJobTemplatesInvoker(
-        ListSparkJobTemplatesRequest request) {
-        return new SyncInvoker<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse>(request,
-            DliMeta.listSparkJobTemplates, hcClient);
-    }
-
-    /**
-     * 查看所有SQL模板
-     *
-     * 该API用查看用户保存的所有SQL模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSqlJobTemplatesRequest 请求对象
-     * @return ListSqlJobTemplatesResponse
-     */
-    public ListSqlJobTemplatesResponse listSqlJobTemplates(ListSqlJobTemplatesRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.listSqlJobTemplates);
-    }
-
-    /**
-     * 查看所有SQL模板
-     *
-     * 该API用查看用户保存的所有SQL模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListSqlJobTemplatesRequest 请求对象
-     * @return SyncInvoker<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse>
-     */
-    public SyncInvoker<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> listSqlJobTemplatesInvoker(
-        ListSqlJobTemplatesRequest request) {
-        return new SyncInvoker<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse>(request,
-            DliMeta.listSqlJobTemplates, hcClient);
-    }
-
-    /**
-     * 获取作业模板
-     *
-     * 该API用于获取作业模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowSparkJobTemplateRequest 请求对象
-     * @return ShowSparkJobTemplateResponse
-     */
-    public ShowSparkJobTemplateResponse showSparkJobTemplate(ShowSparkJobTemplateRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.showSparkJobTemplate);
-    }
-
-    /**
-     * 获取作业模板
-     *
-     * 该API用于获取作业模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowSparkJobTemplateRequest 请求对象
-     * @return SyncInvoker<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse>
-     */
-    public SyncInvoker<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> showSparkJobTemplateInvoker(
-        ShowSparkJobTemplateRequest request) {
-        return new SyncInvoker<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse>(request,
-            DliMeta.showSparkJobTemplate, hcClient);
-    }
-
-    /**
-     * 查询所有SQL样例模板
-     *
-     * 该API用于查询所有SQL样例模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowSqlSampleTemplatesRequest 请求对象
-     * @return ShowSqlSampleTemplatesResponse
-     */
-    @Deprecated
-    public ShowSqlSampleTemplatesResponse showSqlSampleTemplates(ShowSqlSampleTemplatesRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.showSqlSampleTemplates);
-    }
-
-    /**
-     * 查询所有SQL样例模板
-     *
-     * 该API用于查询所有SQL样例模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowSqlSampleTemplatesRequest 请求对象
-     * @return SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>
-     */
-    @Deprecated
-    public SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> showSqlSampleTemplatesInvoker(
-        ShowSqlSampleTemplatesRequest request) {
-        return new SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>(request,
-            DliMeta.showSqlSampleTemplates, hcClient);
-    }
-
-    /**
-     * 修改作业模板
-     *
-     * 该API用于修改作业模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateSparkJobTemplateRequest 请求对象
-     * @return UpdateSparkJobTemplateResponse
-     */
-    public UpdateSparkJobTemplateResponse updateSparkJobTemplate(UpdateSparkJobTemplateRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.updateSparkJobTemplate);
-    }
-
-    /**
-     * 修改作业模板
-     *
-     * 该API用于修改作业模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateSparkJobTemplateRequest 请求对象
-     * @return SyncInvoker<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse>
-     */
-    public SyncInvoker<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> updateSparkJobTemplateInvoker(
-        UpdateSparkJobTemplateRequest request) {
-        return new SyncInvoker<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse>(request,
-            DliMeta.updateSparkJobTemplate, hcClient);
-    }
-
-    /**
-     * 更新SQL模板
-     *
-     * 该API用于更新SQL模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateSqlJobTemplateRequest 请求对象
-     * @return UpdateSqlJobTemplateResponse
-     */
-    public UpdateSqlJobTemplateResponse updateSqlJobTemplate(UpdateSqlJobTemplateRequest request) {
-        return hcClient.syncInvokeHttp(request, DliMeta.updateSqlJobTemplate);
-    }
-
-    /**
-     * 更新SQL模板
-     *
-     * 该API用于更新SQL模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateSqlJobTemplateRequest 请求对象
-     * @return SyncInvoker<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse>
-     */
-    public SyncInvoker<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> updateSqlJobTemplateInvoker(
-        UpdateSqlJobTemplateRequest request) {
-        return new SyncInvoker<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse>(request,
-            DliMeta.updateSqlJobTemplate, hcClient);
     }
 
     /**
@@ -1089,6 +821,37 @@ public class DliClient {
     }
 
     /**
+     * 创建路由
+     *
+     * 该API用于创建跨源需要的路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRouteToEnhancedConnectionRequest 请求对象
+     * @return CreateRouteToEnhancedConnectionResponse
+     */
+    public CreateRouteToEnhancedConnectionResponse createRouteToEnhancedConnection(
+        CreateRouteToEnhancedConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createRouteToEnhancedConnection);
+    }
+
+    /**
+     * 创建路由
+     *
+     * 该API用于创建跨源需要的路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateRouteToEnhancedConnectionRequest 请求对象
+     * @return SyncInvoker<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse>
+     */
+    public SyncInvoker<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse> createRouteToEnhancedConnectionInvoker(
+        CreateRouteToEnhancedConnectionRequest request) {
+        return new SyncInvoker<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse>(request,
+            DliMeta.createRouteToEnhancedConnection, hcClient);
+    }
+
+    /**
      * 删除跨源认证
      *
      * 该API用于删除跨源认证信息。
@@ -1433,6 +1196,37 @@ public class DliClient {
         DeleteResourceRequest request) {
         return new SyncInvoker<DeleteResourceRequest, DeleteResourceResponse>(request, DliMeta.deleteResource,
             hcClient);
+    }
+
+    /**
+     * 删除路由
+     *
+     * 该API用于删除跨源需要的路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteRouteFromEnhancedConnectionRequest 请求对象
+     * @return DeleteRouteFromEnhancedConnectionResponse
+     */
+    public DeleteRouteFromEnhancedConnectionResponse deleteRouteFromEnhancedConnection(
+        DeleteRouteFromEnhancedConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.deleteRouteFromEnhancedConnection);
+    }
+
+    /**
+     * 删除路由
+     *
+     * 该API用于删除跨源需要的路由。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteRouteFromEnhancedConnectionRequest 请求对象
+     * @return SyncInvoker<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse>
+     */
+    public SyncInvoker<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse> deleteRouteFromEnhancedConnectionInvoker(
+        DeleteRouteFromEnhancedConnectionRequest request) {
+        return new SyncInvoker<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse>(
+            request, DliMeta.deleteRouteFromEnhancedConnection, hcClient);
     }
 
     /**
@@ -3519,6 +3313,66 @@ public class DliClient {
     }
 
     /**
+     * 创建作业模板
+     *
+     * 该API用于创建作业模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSparkJobTemplateRequest 请求对象
+     * @return CreateSparkJobTemplateResponse
+     */
+    public CreateSparkJobTemplateResponse createSparkJobTemplate(CreateSparkJobTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createSparkJobTemplate);
+    }
+
+    /**
+     * 创建作业模板
+     *
+     * 该API用于创建作业模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSparkJobTemplateRequest 请求对象
+     * @return SyncInvoker<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse>
+     */
+    public SyncInvoker<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> createSparkJobTemplateInvoker(
+        CreateSparkJobTemplateRequest request) {
+        return new SyncInvoker<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse>(request,
+            DliMeta.createSparkJobTemplate, hcClient);
+    }
+
+    /**
+     * 查询作业模板列表
+     *
+     * 该API用于查询作业模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSparkJobTemplatesRequest 请求对象
+     * @return ListSparkJobTemplatesResponse
+     */
+    public ListSparkJobTemplatesResponse listSparkJobTemplates(ListSparkJobTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.listSparkJobTemplates);
+    }
+
+    /**
+     * 查询作业模板列表
+     *
+     * 该API用于查询作业模板列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSparkJobTemplatesRequest 请求对象
+     * @return SyncInvoker<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse>
+     */
+    public SyncInvoker<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> listSparkJobTemplatesInvoker(
+        ListSparkJobTemplatesRequest request) {
+        return new SyncInvoker<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse>(request,
+            DliMeta.listSparkJobTemplates, hcClient);
+    }
+
+    /**
      * 查询批处理作业列表
      *
      * 该API用于查询Project下某队列批处理作业的列表。
@@ -3632,6 +3486,96 @@ public class DliClient {
         ShowSparkJobStatusRequest request) {
         return new SyncInvoker<ShowSparkJobStatusRequest, ShowSparkJobStatusResponse>(request,
             DliMeta.showSparkJobStatus, hcClient);
+    }
+
+    /**
+     * 获取作业模板
+     *
+     * 该API用于获取作业模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSparkJobTemplateRequest 请求对象
+     * @return ShowSparkJobTemplateResponse
+     */
+    public ShowSparkJobTemplateResponse showSparkJobTemplate(ShowSparkJobTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.showSparkJobTemplate);
+    }
+
+    /**
+     * 获取作业模板
+     *
+     * 该API用于获取作业模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSparkJobTemplateRequest 请求对象
+     * @return SyncInvoker<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse>
+     */
+    public SyncInvoker<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> showSparkJobTemplateInvoker(
+        ShowSparkJobTemplateRequest request) {
+        return new SyncInvoker<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse>(request,
+            DliMeta.showSparkJobTemplate, hcClient);
+    }
+
+    /**
+     * 修改作业模板
+     *
+     * 该API用于修改作业模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSparkJobTemplateRequest 请求对象
+     * @return UpdateSparkJobTemplateResponse
+     */
+    public UpdateSparkJobTemplateResponse updateSparkJobTemplate(UpdateSparkJobTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.updateSparkJobTemplate);
+    }
+
+    /**
+     * 修改作业模板
+     *
+     * 该API用于修改作业模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSparkJobTemplateRequest 请求对象
+     * @return SyncInvoker<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse>
+     */
+    public SyncInvoker<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> updateSparkJobTemplateInvoker(
+        UpdateSparkJobTemplateRequest request) {
+        return new SyncInvoker<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse>(request,
+            DliMeta.updateSparkJobTemplate, hcClient);
+    }
+
+    /**
+     * 批量删除SQL模板
+     *
+     * 该API用于批量删除SQL模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSqlJobTemplatesRequest 请求对象
+     * @return BatchDeleteSqlJobTemplatesResponse
+     */
+    public BatchDeleteSqlJobTemplatesResponse batchDeleteSqlJobTemplates(BatchDeleteSqlJobTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.batchDeleteSqlJobTemplates);
+    }
+
+    /**
+     * 批量删除SQL模板
+     *
+     * 该API用于批量删除SQL模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteSqlJobTemplatesRequest 请求对象
+     * @return SyncInvoker<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse>
+     */
+    public SyncInvoker<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> batchDeleteSqlJobTemplatesInvoker(
+        BatchDeleteSqlJobTemplatesRequest request) {
+        return new SyncInvoker<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse>(request,
+            DliMeta.batchDeleteSqlJobTemplates, hcClient);
     }
 
     /**
@@ -3752,6 +3696,36 @@ public class DliClient {
      */
     public SyncInvoker<CreateSqlJobRequest, CreateSqlJobResponse> createSqlJobInvoker(CreateSqlJobRequest request) {
         return new SyncInvoker<CreateSqlJobRequest, CreateSqlJobResponse>(request, DliMeta.createSqlJob, hcClient);
+    }
+
+    /**
+     * 存储指定SQL语句
+     *
+     * 该API用于存储指定的SQL语句，后续可以重复使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSqlJobTemplateRequest 请求对象
+     * @return CreateSqlJobTemplateResponse
+     */
+    public CreateSqlJobTemplateResponse createSqlJobTemplate(CreateSqlJobTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.createSqlJobTemplate);
+    }
+
+    /**
+     * 存储指定SQL语句
+     *
+     * 该API用于存储指定的SQL语句，后续可以重复使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSqlJobTemplateRequest 请求对象
+     * @return SyncInvoker<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse>
+     */
+    public SyncInvoker<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> createSqlJobTemplateInvoker(
+        CreateSqlJobTemplateRequest request) {
+        return new SyncInvoker<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse>(request,
+            DliMeta.createSqlJobTemplate, hcClient);
     }
 
     /**
@@ -3999,6 +3973,36 @@ public class DliClient {
     }
 
     /**
+     * 查看所有SQL模板
+     *
+     * 该API用查看用户保存的所有SQL模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSqlJobTemplatesRequest 请求对象
+     * @return ListSqlJobTemplatesResponse
+     */
+    public ListSqlJobTemplatesResponse listSqlJobTemplates(ListSqlJobTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.listSqlJobTemplates);
+    }
+
+    /**
+     * 查看所有SQL模板
+     *
+     * 该API用查看用户保存的所有SQL模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSqlJobTemplatesRequest 请求对象
+     * @return SyncInvoker<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse>
+     */
+    public SyncInvoker<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> listSqlJobTemplatesInvoker(
+        ListSqlJobTemplatesRequest request) {
+        return new SyncInvoker<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse>(request,
+            DliMeta.listSqlJobTemplates, hcClient);
+    }
+
+    /**
      * 查询所有作业
      *
      * 该API用于查询当前工程下面的所有作业的信息。
@@ -4211,6 +4215,38 @@ public class DliClient {
     }
 
     /**
+     * 查询所有SQL样例模板
+     *
+     * 该API用于查询所有SQL样例模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSqlSampleTemplatesRequest 请求对象
+     * @return ShowSqlSampleTemplatesResponse
+     */
+    @Deprecated
+    public ShowSqlSampleTemplatesResponse showSqlSampleTemplates(ShowSqlSampleTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.showSqlSampleTemplates);
+    }
+
+    /**
+     * 查询所有SQL样例模板
+     *
+     * 该API用于查询所有SQL样例模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowSqlSampleTemplatesRequest 请求对象
+     * @return SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> showSqlSampleTemplatesInvoker(
+        ShowSqlSampleTemplatesRequest request) {
+        return new SyncInvoker<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse>(request,
+            DliMeta.showSqlSampleTemplates, hcClient);
+    }
+
+    /**
      * 预览表内容
      *
      * 该API用于用于预览表中前10行的内容。
@@ -4272,6 +4308,36 @@ public class DliClient {
         UpdateDatabaseOwnerRequest request) {
         return new SyncInvoker<UpdateDatabaseOwnerRequest, UpdateDatabaseOwnerResponse>(request,
             DliMeta.updateDatabaseOwner, hcClient);
+    }
+
+    /**
+     * 更新SQL模板
+     *
+     * 该API用于更新SQL模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSqlJobTemplateRequest 请求对象
+     * @return UpdateSqlJobTemplateResponse
+     */
+    public UpdateSqlJobTemplateResponse updateSqlJobTemplate(UpdateSqlJobTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, DliMeta.updateSqlJobTemplate);
+    }
+
+    /**
+     * 更新SQL模板
+     *
+     * 该API用于更新SQL模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSqlJobTemplateRequest 请求对象
+     * @return SyncInvoker<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse>
+     */
+    public SyncInvoker<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> updateSqlJobTemplateInvoker(
+        UpdateSqlJobTemplateRequest request) {
+        return new SyncInvoker<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse>(request,
+            DliMeta.updateSqlJobTemplate, hcClient);
     }
 
     /**

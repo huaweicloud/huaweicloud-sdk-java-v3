@@ -21,7 +21,7 @@ public class ListEnterpriseResourceResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_detail")
 
-    private ListFunctionResult resourceDetail;
+    private ListEnterpriseResourceDetail resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -55,14 +55,15 @@ public class ListEnterpriseResourceResult {
         this.resourceId = resourceId;
     }
 
-    public ListEnterpriseResourceResult withResourceDetail(ListFunctionResult resourceDetail) {
+    public ListEnterpriseResourceResult withResourceDetail(ListEnterpriseResourceDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
     }
 
-    public ListEnterpriseResourceResult withResourceDetail(Consumer<ListFunctionResult> resourceDetailSetter) {
+    public ListEnterpriseResourceResult withResourceDetail(
+        Consumer<ListEnterpriseResourceDetail> resourceDetailSetter) {
         if (this.resourceDetail == null) {
-            this.resourceDetail = new ListFunctionResult();
+            this.resourceDetail = new ListEnterpriseResourceDetail();
             resourceDetailSetter.accept(this.resourceDetail);
         }
 
@@ -73,11 +74,11 @@ public class ListEnterpriseResourceResult {
      * Get resourceDetail
      * @return resourceDetail
      */
-    public ListFunctionResult getResourceDetail() {
+    public ListEnterpriseResourceDetail getResourceDetail() {
         return resourceDetail;
     }
 
-    public void setResourceDetail(ListFunctionResult resourceDetail) {
+    public void setResourceDetail(ListEnterpriseResourceDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
     }
 

@@ -21,7 +21,7 @@ public class DataobjectSearchCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "logics")
 
-    private List<DataobjectSearchConditionLogics> logics = null;
+    private List<String> logics = null;
 
     public DataobjectSearchCondition withConditions(List<DataobjectSearchConditionConditions> conditions) {
         this.conditions = conditions;
@@ -57,12 +57,12 @@ public class DataobjectSearchCondition {
         this.conditions = conditions;
     }
 
-    public DataobjectSearchCondition withLogics(List<DataobjectSearchConditionLogics> logics) {
+    public DataobjectSearchCondition withLogics(List<String> logics) {
         this.logics = logics;
         return this;
     }
 
-    public DataobjectSearchCondition addLogicsItem(DataobjectSearchConditionLogics logicsItem) {
+    public DataobjectSearchCondition addLogicsItem(String logicsItem) {
         if (this.logics == null) {
             this.logics = new ArrayList<>();
         }
@@ -70,7 +70,7 @@ public class DataobjectSearchCondition {
         return this;
     }
 
-    public DataobjectSearchCondition withLogics(Consumer<List<DataobjectSearchConditionLogics>> logicsSetter) {
+    public DataobjectSearchCondition withLogics(Consumer<List<String>> logicsSetter) {
         if (this.logics == null) {
             this.logics = new ArrayList<>();
         }
@@ -79,14 +79,14 @@ public class DataobjectSearchCondition {
     }
 
     /**
-     * 表达式逻辑
+     * 表达式名称列表
      * @return logics
      */
-    public List<DataobjectSearchConditionLogics> getLogics() {
+    public List<String> getLogics() {
         return logics;
     }
 
-    public void setLogics(List<DataobjectSearchConditionLogics> logics) {
+    public void setLogics(List<String> logics) {
         this.logics = logics;
     }
 

@@ -39,6 +39,8 @@ import com.huaweicloud.sdk.mrs.v1.model.ShowClusterDetailsRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ShowClusterDetailsResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ShowJobExesRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ShowJobExesResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ShowMrsVersionMetadataRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ShowMrsVersionMetadataResponse;
 import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingRequest;
 import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingResponse;
 
@@ -703,6 +705,37 @@ public class MrsAsyncClient {
         ListAvailableZonesRequest request) {
         return new AsyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request,
             MrsMeta.listAvailableZones, hcClient);
+    }
+
+    /**
+     * 查询对应版本元数据
+     *
+     * 查询对应版本元数据。如果参数里指定集群id，则可查询集群更新过补丁之后的最新元数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMrsVersionMetadataRequest 请求对象
+     * @return CompletableFuture<ShowMrsVersionMetadataResponse>
+     */
+    public CompletableFuture<ShowMrsVersionMetadataResponse> showMrsVersionMetadataAsync(
+        ShowMrsVersionMetadataRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.showMrsVersionMetadata);
+    }
+
+    /**
+     * 查询对应版本元数据
+     *
+     * 查询对应版本元数据。如果参数里指定集群id，则可查询集群更新过补丁之后的最新元数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMrsVersionMetadataRequest 请求对象
+     * @return AsyncInvoker<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse>
+     */
+    public AsyncInvoker<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse> showMrsVersionMetadataAsyncInvoker(
+        ShowMrsVersionMetadataRequest request) {
+        return new AsyncInvoker<ShowMrsVersionMetadataRequest, ShowMrsVersionMetadataResponse>(request,
+            MrsMeta.showMrsVersionMetadata, hcClient);
     }
 
 }

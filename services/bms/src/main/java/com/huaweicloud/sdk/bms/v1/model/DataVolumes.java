@@ -22,6 +22,11 @@ public class DataVolumes {
     public static final class VolumetypeEnum {
 
         /**
+         * Enum GPSSD for value: "GPSSD"
+         */
+        public static final VolumetypeEnum GPSSD = new VolumetypeEnum("GPSSD");
+
+        /**
          * Enum SATA for value: "SATA"
          */
         public static final VolumetypeEnum SATA = new VolumetypeEnum("SATA");
@@ -40,6 +45,7 @@ public class DataVolumes {
 
         private static Map<String, VolumetypeEnum> createStaticFields() {
             Map<String, VolumetypeEnum> map = new HashMap<>();
+            map.put("GPSSD", GPSSD);
             map.put("SATA", SATA);
             map.put("SAS", SAS);
             map.put("SSD", SSD);

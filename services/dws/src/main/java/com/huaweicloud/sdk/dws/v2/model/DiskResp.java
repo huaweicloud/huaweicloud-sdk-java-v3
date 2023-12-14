@@ -16,6 +16,11 @@ public class DiskResp {
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
 
     private String hostName;
@@ -90,6 +95,23 @@ public class DiskResp {
 
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
+    }
+
+    public DiskResp withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例ID
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     public DiskResp withHostName(String hostName) {
@@ -305,10 +327,10 @@ public class DiskResp {
             return false;
         }
         DiskResp that = (DiskResp) obj;
-        return Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.hostName, that.hostName)
-            && Objects.equals(this.diskName, that.diskName) && Objects.equals(this.diskType, that.diskType)
-            && Objects.equals(this.total, that.total) && Objects.equals(this.used, that.used)
-            && Objects.equals(this.available, that.available)
+        return Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.diskName, that.diskName)
+            && Objects.equals(this.diskType, that.diskType) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.used, that.used) && Objects.equals(this.available, that.available)
             && Objects.equals(this.usedPercentage, that.usedPercentage) && Objects.equals(this.await, that.await)
             && Objects.equals(this.svctm, that.svctm) && Objects.equals(this.util, that.util)
             && Objects.equals(this.readRate, that.readRate) && Objects.equals(this.writeRate, that.writeRate);
@@ -317,6 +339,7 @@ public class DiskResp {
     @Override
     public int hashCode() {
         return Objects.hash(instanceName,
+            instanceId,
             hostName,
             diskName,
             diskType,
@@ -336,6 +359,7 @@ public class DiskResp {
         StringBuilder sb = new StringBuilder();
         sb.append("class DiskResp {\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    diskName: ").append(toIndentedString(diskName)).append("\n");
         sb.append("    diskType: ").append(toIndentedString(diskType)).append("\n");

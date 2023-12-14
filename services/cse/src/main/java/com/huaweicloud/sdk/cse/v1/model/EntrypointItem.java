@@ -26,7 +26,7 @@ public class EntrypointItem {
     private String masterEntrypointIpv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "slave_entrypoint")
+    @JsonProperty(value = "slaveEntrypoint")
 
     private String slaveEntrypoint;
 

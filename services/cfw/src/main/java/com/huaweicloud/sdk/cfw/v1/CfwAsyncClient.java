@@ -36,6 +36,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleRequest;
@@ -50,6 +52,8 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetRequest;
@@ -94,6 +98,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListJobRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListJobResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsRequest;
@@ -500,6 +506,36 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 创建防火墙
+     *
+     * 创建防火墙
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFirewallRequest 请求对象
+     * @return CompletableFuture<CreateFirewallResponse>
+     */
+    public CompletableFuture<CreateFirewallResponse> createFirewallAsync(CreateFirewallRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.createFirewall);
+    }
+
+    /**
+     * 创建防火墙
+     *
+     * 创建防火墙
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFirewallRequest 请求对象
+     * @return AsyncInvoker<CreateFirewallRequest, CreateFirewallResponse>
+     */
+    public AsyncInvoker<CreateFirewallRequest, CreateFirewallResponse> createFirewallAsyncInvoker(
+        CreateFirewallRequest request) {
+        return new AsyncInvoker<CreateFirewallRequest, CreateFirewallResponse>(request, CfwMeta.createFirewall,
+            hcClient);
+    }
+
+    /**
      * 删除地址组成员
      *
      * 删除地址组成员
@@ -647,6 +683,36 @@ public class CfwAsyncClient {
     public AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse> deleteDomainsAsyncInvoker(
         DeleteDomainsRequest request) {
         return new AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>(request, CfwMeta.deleteDomains, hcClient);
+    }
+
+    /**
+     * 删除防火墙
+     *
+     * 删除防火墙，仅按需生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFirewallRequest 请求对象
+     * @return CompletableFuture<DeleteFirewallResponse>
+     */
+    public CompletableFuture<DeleteFirewallResponse> deleteFirewallAsync(DeleteFirewallRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteFirewall);
+    }
+
+    /**
+     * 删除防火墙
+     *
+     * 删除防火墙，仅按需生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteFirewallRequest 请求对象
+     * @return AsyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>
+     */
+    public AsyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewallAsyncInvoker(
+        DeleteFirewallRequest request) {
+        return new AsyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>(request, CfwMeta.deleteFirewall,
+            hcClient);
     }
 
     /**
@@ -1128,6 +1194,34 @@ public class CfwAsyncClient {
     public AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogsAsyncInvoker(
         ListFlowLogsRequest request) {
         return new AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>(request, CfwMeta.listFlowLogs, hcClient);
+    }
+
+    /**
+     * 获取CFW任务执行状态
+     *
+     * 获取CFW任务执行状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobRequest 请求对象
+     * @return CompletableFuture<ListJobResponse>
+     */
+    public CompletableFuture<ListJobResponse> listJobAsync(ListJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listJob);
+    }
+
+    /**
+     * 获取CFW任务执行状态
+     *
+     * 获取CFW任务执行状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobRequest 请求对象
+     * @return AsyncInvoker<ListJobRequest, ListJobResponse>
+     */
+    public AsyncInvoker<ListJobRequest, ListJobResponse> listJobAsyncInvoker(ListJobRequest request) {
+        return new AsyncInvoker<ListJobRequest, ListJobResponse>(request, CfwMeta.listJob, hcClient);
     }
 
     /**

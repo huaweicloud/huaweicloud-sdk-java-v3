@@ -7,6 +7,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsRequest;
 import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsResponse;
+import com.huaweicloud.sdk.live.v1.model.CallbackUrl;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
@@ -23,6 +24,9 @@ import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainReq;
+import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainKeyChainRequest;
@@ -31,6 +35,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleRequest;
@@ -44,11 +50,21 @@ import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.DomainHttpsCertInfo;
 import com.huaweicloud.sdk.live.v1.model.DomainIpv6SwitchReq;
 import com.huaweicloud.sdk.live.v1.model.DomainMapping;
+import com.huaweicloud.sdk.live.v1.model.GeoBlockingConfigInfo;
+import com.huaweicloud.sdk.live.v1.model.IPAuthInfo;
 import com.huaweicloud.sdk.live.v1.model.KeyChainInfo;
+import com.huaweicloud.sdk.live.v1.model.ListDelayConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.ListDelayConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ListIpAuthListRequest;
+import com.huaweicloud.sdk.live.v1.model.ListIpAuthListResponse;
 import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineRequest;
 import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineResponse;
+import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordContentsRequest;
@@ -62,6 +78,8 @@ import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainCreateReq;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainModifyReq;
 import com.huaweicloud.sdk.live.v1.model.LiveSnapshotConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyDelayConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyPullSourcesConfig;
 import com.huaweicloud.sdk.live.v1.model.ObsAuthorityConfigV2;
 import com.huaweicloud.sdk.live.v1.model.RecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.RecordControlInfo;
@@ -75,6 +93,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordRuleRequest;
@@ -83,6 +103,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.StreamForbiddenSetting;
 import com.huaweicloud.sdk.live.v1.model.StreamTranscodingTemplate;
+import com.huaweicloud.sdk.live.v1.model.UpdateDelayConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateDelayConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainIp6SwitchRequest;
@@ -91,8 +113,16 @@ import com.huaweicloud.sdk.live.v1.model.UpdateDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateObsBucketAuthorityPublicRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateObsBucketAuthorityPublicResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdatePublishTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdatePublishTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdatePullSourcesConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdatePullSourcesConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateRecordRuleRequest;
@@ -345,6 +375,31 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse> createUrlAuthchain =
+        genForcreateUrlAuthchain();
+
+    private static HttpRequestDef<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse> genForcreateUrlAuthchain() {
+        // basic
+        HttpRequestDef.Builder<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateUrlAuthchainRequest.class, CreateUrlAuthchainResponse.class)
+                .withName("CreateUrlAuthchain")
+                .withUri("/v1/{project_id}/auth/chain")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<CreateUrlAuthchainReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateUrlAuthchainReq.class),
+            f -> f.withMarshaller(CreateUrlAuthchainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genFordeleteDomain();
 
     private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genFordeleteDomain() {
@@ -419,6 +474,31 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDomainMappingRequest::getPushDomain, (req, v) -> {
                 req.setPushDomain(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePublishTemplateRequest, DeletePublishTemplateResponse> deletePublishTemplate =
+        genFordeletePublishTemplate();
+
+    private static HttpRequestDef<DeletePublishTemplateRequest, DeletePublishTemplateResponse> genFordeletePublishTemplate() {
+        // basic
+        HttpRequestDef.Builder<DeletePublishTemplateRequest, DeletePublishTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeletePublishTemplateRequest.class, DeletePublishTemplateResponse.class)
+            .withName("DeletePublishTemplate")
+            .withUri("/v1/{project_id}/notifications/publish")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePublishTemplateRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
             }));
 
         // response
@@ -585,6 +665,92 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDelayConfigRequest, ListDelayConfigResponse> listDelayConfig =
+        genForlistDelayConfig();
+
+    private static HttpRequestDef<ListDelayConfigRequest, ListDelayConfigResponse> genForlistDelayConfig() {
+        // basic
+        HttpRequestDef.Builder<ListDelayConfigRequest, ListDelayConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDelayConfigRequest.class, ListDelayConfigResponse.class)
+                .withName("ListDelayConfig")
+                .withUri("/v1/{project_id}/domain/delay")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("play_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDelayConfigRequest::getPlayDomain, (req, v) -> {
+                req.setPlayDomain(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> listGeoBlockingConfig =
+        genForlistGeoBlockingConfig();
+
+    private static HttpRequestDef<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> genForlistGeoBlockingConfig() {
+        // basic
+        HttpRequestDef.Builder<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListGeoBlockingConfigRequest.class, ListGeoBlockingConfigResponse.class)
+            .withName("ListGeoBlockingConfig")
+            .withUri("/v1/{project_id}/domain/geo-blocking")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("play_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGeoBlockingConfigRequest::getPlayDomain, (req, v) -> {
+                req.setPlayDomain(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListGeoBlockingConfigResponse::getXRequestId,
+                ListGeoBlockingConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIpAuthListRequest, ListIpAuthListResponse> listIpAuthList =
+        genForlistIpAuthList();
+
+    private static HttpRequestDef<ListIpAuthListRequest, ListIpAuthListResponse> genForlistIpAuthList() {
+        // basic
+        HttpRequestDef.Builder<ListIpAuthListRequest, ListIpAuthListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListIpAuthListRequest.class, ListIpAuthListResponse.class)
+                .withName("ListIpAuthList")
+                .withUri("/v1/{project_id}/guard/ip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpAuthListRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListIpAuthListResponse::getXRequestId, ListIpAuthListResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListLiveSampleLogsRequest, ListLiveSampleLogsResponse> listLiveSampleLogs =
         genForlistLiveSampleLogs();
 
@@ -670,6 +836,31 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLiveStreamsOnlineRequest::getStream, (req, v) -> {
                 req.setStream(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPublishTemplateRequest, ListPublishTemplateResponse> listPublishTemplate =
+        genForlistPublishTemplate();
+
+    private static HttpRequestDef<ListPublishTemplateRequest, ListPublishTemplateResponse> genForlistPublishTemplate() {
+        // basic
+        HttpRequestDef.Builder<ListPublishTemplateRequest, ListPublishTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPublishTemplateRequest.class, ListPublishTemplateResponse.class)
+                .withName("ListPublishTemplate")
+                .withUri("/v1/{project_id}/notifications/publish")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublishTemplateRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
             }));
 
         // response
@@ -1057,6 +1248,31 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse> showPullSourcesConfig =
+        genForshowPullSourcesConfig();
+
+    private static HttpRequestDef<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse> genForshowPullSourcesConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPullSourcesConfigRequest.class, ShowPullSourcesConfigResponse.class)
+            .withName("ShowPullSourcesConfig")
+            .withUri("/v1/{project_id}/domain/pull-sources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("play_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPullSourcesConfigRequest::getPlayDomain, (req, v) -> {
+                req.setPlayDomain(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> showRecordCallbackConfig =
         genForshowRecordCallbackConfig();
 
@@ -1155,6 +1371,31 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDelayConfigRequest, UpdateDelayConfigResponse> updateDelayConfig =
+        genForupdateDelayConfig();
+
+    private static HttpRequestDef<UpdateDelayConfigRequest, UpdateDelayConfigResponse> genForupdateDelayConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateDelayConfigRequest, UpdateDelayConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDelayConfigRequest.class, UpdateDelayConfigResponse.class)
+                .withName("UpdateDelayConfig")
+                .withUri("/v1/{project_id}/domain/delay")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<ModifyDelayConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyDelayConfig.class),
+            f -> f.withMarshaller(UpdateDelayConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> updateDomain = genForupdateDomain();
 
     private static HttpRequestDef<UpdateDomainRequest, UpdateDomainResponse> genForupdateDomain() {
@@ -1228,6 +1469,131 @@ public class LiveMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(KeyChainInfo.class),
             f -> f.withMarshaller(UpdateDomainKeyChainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> updateGeoBlockingConfig =
+        genForupdateGeoBlockingConfig();
+
+    private static HttpRequestDef<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> genForupdateGeoBlockingConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateGeoBlockingConfigRequest.class, UpdateGeoBlockingConfigResponse.class)
+            .withName("UpdateGeoBlockingConfig")
+            .withUri("/v1/{project_id}/domain/geo-blocking")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("play_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGeoBlockingConfigRequest::getPlayDomain, (req, v) -> {
+                req.setPlayDomain(v);
+            }));
+        builder.<GeoBlockingConfigInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GeoBlockingConfigInfo.class),
+            f -> f.withMarshaller(UpdateGeoBlockingConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateGeoBlockingConfigResponse::getXRequestId,
+                UpdateGeoBlockingConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateIpAuthListRequest, UpdateIpAuthListResponse> updateIpAuthList =
+        genForupdateIpAuthList();
+
+    private static HttpRequestDef<UpdateIpAuthListRequest, UpdateIpAuthListResponse> genForupdateIpAuthList() {
+        // basic
+        HttpRequestDef.Builder<UpdateIpAuthListRequest, UpdateIpAuthListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateIpAuthListRequest.class, UpdateIpAuthListResponse.class)
+                .withName("UpdateIpAuthList")
+                .withUri("/v1/{project_id}/guard/ip")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<IPAuthInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IPAuthInfo.class),
+            f -> f.withMarshaller(UpdateIpAuthListRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateIpAuthListResponse::getXRequestId, UpdateIpAuthListResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse> updatePublishTemplate =
+        genForupdatePublishTemplate();
+
+    private static HttpRequestDef<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse> genForupdatePublishTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdatePublishTemplateRequest.class, UpdatePublishTemplateResponse.class)
+            .withName("UpdatePublishTemplate")
+            .withUri("/v1/{project_id}/notifications/publish")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePublishTemplateRequest::getDomain, (req, v) -> {
+                req.setDomain(v);
+            }));
+        builder.<CallbackUrl>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CallbackUrl.class),
+            f -> f.withMarshaller(UpdatePublishTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse> updatePullSourcesConfig =
+        genForupdatePullSourcesConfig();
+
+    private static HttpRequestDef<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse> genForupdatePullSourcesConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdatePullSourcesConfigRequest.class, UpdatePullSourcesConfigResponse.class)
+            .withName("UpdatePullSourcesConfig")
+            .withUri("/v1/{project_id}/domain/pull-sources")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<ModifyPullSourcesConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyPullSourcesConfig.class),
+            f -> f.withMarshaller(UpdatePullSourcesConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -31,7 +31,7 @@ public class MultiPicDisplayDO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "switchTime")
 
-    private String switchTime;
+    private Integer switchTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "picLayoutInfo")
@@ -105,7 +105,7 @@ public class MultiPicDisplayDO {
         this.subscriberInPics = subscriberInPics;
     }
 
-    public MultiPicDisplayDO withSwitchTime(String switchTime) {
+    public MultiPicDisplayDO withSwitchTime(Integer switchTime) {
         this.switchTime = switchTime;
         return this;
     }
@@ -114,11 +114,11 @@ public class MultiPicDisplayDO {
      * 表示轮询间隔，单位：秒。当同一个子画面中包含有多个视频源时，此参数有效。
      * @return switchTime
      */
-    public String getSwitchTime() {
+    public Integer getSwitchTime() {
         return switchTime;
     }
 
-    public void setSwitchTime(String switchTime) {
+    public void setSwitchTime(Integer switchTime) {
         this.switchTime = switchTime;
     }
 

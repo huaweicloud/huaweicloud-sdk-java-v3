@@ -90,6 +90,9 @@ import com.huaweicloud.sdk.dli.v1.model.CreateQueueReq;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateRouteRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.CreateRouteToEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.CreateRouteToEnhancedConnectionRequestBody;
+import com.huaweicloud.sdk.dli.v1.model.CreateRouteToEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobRequest;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobResponse;
 import com.huaweicloud.sdk.dli.v1.model.CreateSparkJobTemplateRequest;
@@ -132,6 +135,8 @@ import com.huaweicloud.sdk.dli.v1.model.DeleteQueueRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteQueueResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteResourceRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteResourceResponse;
+import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionRequest;
+import com.huaweicloud.sdk.dli.v1.model.DeleteRouteFromEnhancedConnectionResponse;
 import com.huaweicloud.sdk.dli.v1.model.DeleteSqlTemplatesRequestBody;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableRequest;
 import com.huaweicloud.sdk.dli.v1.model.DeleteTableResponse;
@@ -337,262 +342,6 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DliMeta {
-
-    public static final HttpRequestDef<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> batchDeleteSqlJobTemplates =
-        genForbatchDeleteSqlJobTemplates();
-
-    private static HttpRequestDef<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> genForbatchDeleteSqlJobTemplates() {
-        // basic
-        HttpRequestDef.Builder<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    BatchDeleteSqlJobTemplatesRequest.class,
-                    BatchDeleteSqlJobTemplatesResponse.class)
-                .withName("BatchDeleteSqlJobTemplates")
-                .withUri("/v1.0/{project_id}/sqls-deletion")
-                .withContentType("application/json");
-
-        // requests
-        builder.<DeleteSqlTemplatesRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteSqlTemplatesRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteSqlJobTemplatesRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> createSparkJobTemplate =
-        genForcreateSparkJobTemplate();
-
-    private static HttpRequestDef<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> genForcreateSparkJobTemplate() {
-        // basic
-        HttpRequestDef.Builder<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateSparkJobTemplateRequest.class, CreateSparkJobTemplateResponse.class)
-            .withName("CreateSparkJobTemplate")
-            .withUri("/v3/{project_id}/templates")
-            .withContentType("application/json");
-
-        // requests
-        builder.<CreateJobTemplatesRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateJobTemplatesRequestBody.class),
-            f -> f.withMarshaller(CreateSparkJobTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> createSqlJobTemplate =
-        genForcreateSqlJobTemplate();
-
-    private static HttpRequestDef<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> genForcreateSqlJobTemplate() {
-        // basic
-        HttpRequestDef.Builder<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateSqlJobTemplateRequest.class, CreateSqlJobTemplateResponse.class)
-            .withName("CreateSqlJobTemplate")
-            .withUri("/v1.0/{project_id}/sqls")
-            .withContentType("application/json");
-
-        // requests
-        builder.<CreateSqlTemplatesRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateSqlTemplatesRequestBody.class),
-            f -> f.withMarshaller(CreateSqlJobTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> listSparkJobTemplates =
-        genForlistSparkJobTemplates();
-
-    private static HttpRequestDef<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> genForlistSparkJobTemplates() {
-        // basic
-        HttpRequestDef.Builder<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListSparkJobTemplatesRequest.class, ListSparkJobTemplatesResponse.class)
-            .withName("ListSparkJobTemplates")
-            .withUri("/v3/{project_id}/templates")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getType, (req, v) -> {
-                req.setType(v);
-            }));
-        builder.<String>withRequestField("keyword",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getKeyword, (req, v) -> {
-                req.setKeyword(v);
-            }));
-        builder.<Integer>withRequestField("page-size",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getPageSize, (req, v) -> {
-                req.setPageSize(v);
-            }));
-        builder.<Integer>withRequestField("current-page",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getCurrentPage, (req, v) -> {
-                req.setCurrentPage(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> listSqlJobTemplates =
-        genForlistSqlJobTemplates();
-
-    private static HttpRequestDef<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> genForlistSqlJobTemplates() {
-        // basic
-        HttpRequestDef.Builder<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSqlJobTemplatesRequest.class, ListSqlJobTemplatesResponse.class)
-                .withName("ListSqlJobTemplates")
-                .withUri("/v1.0/{project_id}/sqls")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("keyword",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSqlJobTemplatesRequest::getKeyword, (req, v) -> {
-                req.setKeyword(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> showSparkJobTemplate =
-        genForshowSparkJobTemplate();
-
-    private static HttpRequestDef<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> genForshowSparkJobTemplate() {
-        // basic
-        HttpRequestDef.Builder<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowSparkJobTemplateRequest.class, ShowSparkJobTemplateResponse.class)
-            .withName("ShowSparkJobTemplate")
-            .withUri("/v3/{project_id}/templates/{template_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("template_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSparkJobTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> showSqlSampleTemplates =
-        genForshowSqlSampleTemplates();
-
-    private static HttpRequestDef<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> genForshowSqlSampleTemplates() {
-        // basic
-        HttpRequestDef.Builder<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowSqlSampleTemplatesRequest.class, ShowSqlSampleTemplatesResponse.class)
-            .withName("ShowSqlSampleTemplates")
-            .withUri("/v1.0/{project_id}/sqls/sample")
-            .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> updateSparkJobTemplate =
-        genForupdateSparkJobTemplate();
-
-    private static HttpRequestDef<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> genForupdateSparkJobTemplate() {
-        // basic
-        HttpRequestDef.Builder<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateSparkJobTemplateRequest.class, UpdateSparkJobTemplateResponse.class)
-            .withName("UpdateSparkJobTemplate")
-            .withUri("/v3/{project_id}/templates/{template_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("template_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSparkJobTemplateRequest::getTemplateId, (req, v) -> {
-                req.setTemplateId(v);
-            }));
-        builder.<UpdateJobTemplatesRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateJobTemplatesRequestBody.class),
-            f -> f.withMarshaller(UpdateSparkJobTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> updateSqlJobTemplate =
-        genForupdateSqlJobTemplate();
-
-    private static HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> genForupdateSqlJobTemplate() {
-        // basic
-        HttpRequestDef.Builder<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateSqlJobTemplateRequest.class, UpdateSqlJobTemplateResponse.class)
-            .withName("UpdateSqlJobTemplate")
-            .withUri("/v1.0/{project_id}/sqls/{sql_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("sql_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getSqlId, (req, v) -> {
-                req.setSqlId(v);
-            }));
-        builder.<UpdateSqlTemplatesRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateSqlTemplatesRequestBody.class),
-            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
 
     public static final HttpRequestDef<AssociateQueueToElasticResourcePoolRequest, AssociateQueueToElasticResourcePoolResponse> associateQueueToElasticResourcePool =
         genForassociateQueueToElasticResourcePool();
@@ -1097,6 +846,41 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse> createRouteToEnhancedConnection =
+        genForcreateRouteToEnhancedConnection();
+
+    private static HttpRequestDef<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse> genForcreateRouteToEnhancedConnection() {
+        // basic
+        HttpRequestDef.Builder<CreateRouteToEnhancedConnectionRequest, CreateRouteToEnhancedConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateRouteToEnhancedConnectionRequest.class,
+                    CreateRouteToEnhancedConnectionResponse.class)
+                .withName("CreateRouteToEnhancedConnection")
+                .withUri("/v3/{project_id}/datasource/enhanced-connections/{connection_id}/routes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRouteToEnhancedConnectionRequest::getConnectionId, (req, v) -> {
+                req.setConnectionId(v);
+            }));
+        builder.<CreateRouteToEnhancedConnectionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateRouteToEnhancedConnectionRequestBody.class),
+            f -> f.withMarshaller(CreateRouteToEnhancedConnectionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAuthInfoRequest, DeleteAuthInfoResponse> deleteAuthInfo =
         genFordeleteAuthInfo();
 
@@ -1404,6 +1188,41 @@ public class DliMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteResourceRequest::getGroup, (req, v) -> {
                 req.setGroup(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse> deleteRouteFromEnhancedConnection =
+        genFordeleteRouteFromEnhancedConnection();
+
+    private static HttpRequestDef<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse> genFordeleteRouteFromEnhancedConnection() {
+        // basic
+        HttpRequestDef.Builder<DeleteRouteFromEnhancedConnectionRequest, DeleteRouteFromEnhancedConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteRouteFromEnhancedConnectionRequest.class,
+                    DeleteRouteFromEnhancedConnectionResponse.class)
+                .withName("DeleteRouteFromEnhancedConnection")
+                .withUri("/v3/{project_id}/datasource/enhanced-connections/{connection_id}/routes/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRouteFromEnhancedConnectionRequest::getConnectionId, (req, v) -> {
+                req.setConnectionId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRouteFromEnhancedConnectionRequest::getName, (req, v) -> {
+                req.setName(v);
             }));
 
         // response
@@ -3611,6 +3430,77 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> createSparkJobTemplate =
+        genForcreateSparkJobTemplate();
+
+    private static HttpRequestDef<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> genForcreateSparkJobTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateSparkJobTemplateRequest, CreateSparkJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSparkJobTemplateRequest.class, CreateSparkJobTemplateResponse.class)
+            .withName("CreateSparkJobTemplate")
+            .withUri("/v3/{project_id}/templates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateJobTemplatesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateJobTemplatesRequestBody.class),
+            f -> f.withMarshaller(CreateSparkJobTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> listSparkJobTemplates =
+        genForlistSparkJobTemplates();
+
+    private static HttpRequestDef<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> genForlistSparkJobTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListSparkJobTemplatesRequest, ListSparkJobTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSparkJobTemplatesRequest.class, ListSparkJobTemplatesResponse.class)
+            .withName("ListSparkJobTemplates")
+            .withUri("/v3/{project_id}/templates")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getKeyword, (req, v) -> {
+                req.setKeyword(v);
+            }));
+        builder.<Integer>withRequestField("page-size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            }));
+        builder.<Integer>withRequestField("current-page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSparkJobTemplatesRequest::getCurrentPage, (req, v) -> {
+                req.setCurrentPage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSparkJobsRequest, ListSparkJobsResponse> listSparkJobs =
         genForlistSparkJobs();
 
@@ -3800,6 +3690,91 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> showSparkJobTemplate =
+        genForshowSparkJobTemplate();
+
+    private static HttpRequestDef<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> genForshowSparkJobTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowSparkJobTemplateRequest, ShowSparkJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSparkJobTemplateRequest.class, ShowSparkJobTemplateResponse.class)
+            .withName("ShowSparkJobTemplate")
+            .withUri("/v3/{project_id}/templates/{template_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSparkJobTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> updateSparkJobTemplate =
+        genForupdateSparkJobTemplate();
+
+    private static HttpRequestDef<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> genForupdateSparkJobTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateSparkJobTemplateRequest, UpdateSparkJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSparkJobTemplateRequest.class, UpdateSparkJobTemplateResponse.class)
+            .withName("UpdateSparkJobTemplate")
+            .withUri("/v3/{project_id}/templates/{template_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSparkJobTemplateRequest::getTemplateId, (req, v) -> {
+                req.setTemplateId(v);
+            }));
+        builder.<UpdateJobTemplatesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateJobTemplatesRequestBody.class),
+            f -> f.withMarshaller(UpdateSparkJobTemplateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> batchDeleteSqlJobTemplates =
+        genForbatchDeleteSqlJobTemplates();
+
+    private static HttpRequestDef<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> genForbatchDeleteSqlJobTemplates() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSqlJobTemplatesRequest, BatchDeleteSqlJobTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSqlJobTemplatesRequest.class,
+                    BatchDeleteSqlJobTemplatesResponse.class)
+                .withName("BatchDeleteSqlJobTemplates")
+                .withUri("/v1.0/{project_id}/sqls-deletion")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteSqlTemplatesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteSqlTemplatesRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteSqlJobTemplatesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CancelSqlJobRequest, CancelSqlJobResponse> cancelSqlJob = genForcancelSqlJob();
 
     private static HttpRequestDef<CancelSqlJobRequest, CancelSqlJobResponse> genForcancelSqlJob() {
@@ -3889,6 +3864,31 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSqlJobRequestBody.class),
             f -> f.withMarshaller(CreateSqlJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> createSqlJobTemplate =
+        genForcreateSqlJobTemplate();
+
+    private static HttpRequestDef<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> genForcreateSqlJobTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateSqlJobTemplateRequest, CreateSqlJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSqlJobTemplateRequest.class, CreateSqlJobTemplateResponse.class)
+            .withName("CreateSqlJobTemplate")
+            .withUri("/v1.0/{project_id}/sqls")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateSqlTemplatesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSqlTemplatesRequestBody.class),
+            f -> f.withMarshaller(CreateSqlJobTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -4205,6 +4205,31 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> listSqlJobTemplates =
+        genForlistSqlJobTemplates();
+
+    private static HttpRequestDef<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> genForlistSqlJobTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListSqlJobTemplatesRequest, ListSqlJobTemplatesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSqlJobTemplatesRequest.class, ListSqlJobTemplatesResponse.class)
+                .withName("ListSqlJobTemplates")
+                .withUri("/v1.0/{project_id}/sqls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlJobTemplatesRequest::getKeyword, (req, v) -> {
+                req.setKeyword(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSqlJobsRequest, ListSqlJobsResponse> listSqlJobs = genForlistSqlJobs();
 
     private static HttpRequestDef<ListSqlJobsRequest, ListSqlJobsResponse> genForlistSqlJobs() {
@@ -4505,6 +4530,24 @@ public class DliMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> showSqlSampleTemplates =
+        genForshowSqlSampleTemplates();
+
+    private static HttpRequestDef<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> genForshowSqlSampleTemplates() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlSampleTemplatesRequest, ShowSqlSampleTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSqlSampleTemplatesRequest.class, ShowSqlSampleTemplatesResponse.class)
+            .withName("ShowSqlSampleTemplates")
+            .withUri("/v1.0/{project_id}/sqls/sample")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTableContentRequest, ShowTableContentResponse> showTableContent =
         genForshowTableContent();
 
@@ -4568,6 +4611,38 @@ public class DliMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateOwnerRequestBody.class),
             f -> f.withMarshaller(UpdateDatabaseOwnerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> updateSqlJobTemplate =
+        genForupdateSqlJobTemplate();
+
+    private static HttpRequestDef<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> genForupdateSqlJobTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateSqlJobTemplateRequest, UpdateSqlJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSqlJobTemplateRequest.class, UpdateSqlJobTemplateResponse.class)
+            .withName("UpdateSqlJobTemplate")
+            .withUri("/v1.0/{project_id}/sqls/{sql_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sql_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getSqlId, (req, v) -> {
+                req.setSqlId(v);
+            }));
+        builder.<UpdateSqlTemplatesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSqlTemplatesRequestBody.class),
+            f -> f.withMarshaller(UpdateSqlJobTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

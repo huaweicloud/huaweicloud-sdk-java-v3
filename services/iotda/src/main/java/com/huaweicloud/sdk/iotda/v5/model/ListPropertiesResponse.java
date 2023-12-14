@@ -12,6 +12,11 @@ import java.util.Objects;
 public class ListPropertiesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "response")
 
     private Object response;
@@ -25,6 +30,23 @@ public class ListPropertiesResponse extends SdkResponse {
     @JsonProperty(value = "error_msg")
 
     private Object errorMsg;
+
+    public ListPropertiesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 设备属性查询ID，用于唯一标识一条属性查询，在下发查询属性时由物联网平台分配获得。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public ListPropertiesResponse withResponse(Object response) {
         this.response = response;
@@ -86,19 +108,20 @@ public class ListPropertiesResponse extends SdkResponse {
             return false;
         }
         ListPropertiesResponse that = (ListPropertiesResponse) obj;
-        return Objects.equals(this.response, that.response) && Objects.equals(this.errorCode, that.errorCode)
-            && Objects.equals(this.errorMsg, that.errorMsg);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.response, that.response)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(response, errorCode, errorMsg);
+        return Objects.hash(requestId, response, errorCode, errorMsg);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPropertiesResponse {\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    response: ").append(toIndentedString(response)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");

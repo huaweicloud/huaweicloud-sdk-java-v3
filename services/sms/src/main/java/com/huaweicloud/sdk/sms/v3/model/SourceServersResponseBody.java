@@ -417,6 +417,11 @@ public class SourceServersResponseBody {
 
     private Long stateActionTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_consistency_result_exist")
+
+    private Boolean isConsistencyResultExist;
+
     public SourceServersResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -824,6 +829,23 @@ public class SourceServersResponseBody {
         this.stateActionTime = stateActionTime;
     }
 
+    public SourceServersResponseBody withIsConsistencyResultExist(Boolean isConsistencyResultExist) {
+        this.isConsistencyResultExist = isConsistencyResultExist;
+        return this;
+    }
+
+    /**
+     * 是否有一致性校验结果
+     * @return isConsistencyResultExist
+     */
+    public Boolean getIsConsistencyResultExist() {
+        return isConsistencyResultExist;
+    }
+
+    public void setIsConsistencyResultExist(Boolean isConsistencyResultExist) {
+        this.isConsistencyResultExist = isConsistencyResultExist;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -846,7 +868,8 @@ public class SourceServersResponseBody {
             && Objects.equals(this.stageActionTime, that.stageActionTime)
             && Objects.equals(this.totalsize, that.totalsize) && Objects.equals(this.lastVisitTime, that.lastVisitTime)
             && Objects.equals(this.migrationCycle, that.migrationCycle)
-            && Objects.equals(this.stateActionTime, that.stateActionTime);
+            && Objects.equals(this.stateActionTime, that.stateActionTime)
+            && Objects.equals(this.isConsistencyResultExist, that.isConsistencyResultExist);
     }
 
     @Override
@@ -871,7 +894,8 @@ public class SourceServersResponseBody {
             totalsize,
             lastVisitTime,
             migrationCycle,
-            stateActionTime);
+            stateActionTime,
+            isConsistencyResultExist);
     }
 
     @Override
@@ -899,6 +923,7 @@ public class SourceServersResponseBody {
         sb.append("    lastVisitTime: ").append(toIndentedString(lastVisitTime)).append("\n");
         sb.append("    migrationCycle: ").append(toIndentedString(migrationCycle)).append("\n");
         sb.append("    stateActionTime: ").append(toIndentedString(stateActionTime)).append("\n");
+        sb.append("    isConsistencyResultExist: ").append(toIndentedString(isConsistencyResultExist)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -77,6 +77,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDatabaseRequest;
@@ -153,6 +155,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListMsdtcHostsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListMsdtcHostsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteBackupsRequest;
@@ -249,6 +253,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetPostgresqlDbUserPwdRequest;
@@ -1015,6 +1021,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 
+     *
+     * 解除LTS配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLogLtsConfigsRequest 请求对象
+     * @return CompletableFuture<DeleteLogLtsConfigsResponse>
+     */
+    public CompletableFuture<DeleteLogLtsConfigsResponse> deleteLogLtsConfigsAsync(DeleteLogLtsConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteLogLtsConfigs);
+    }
+
+    /**
+     * 
+     *
+     * 解除LTS配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLogLtsConfigsRequest 请求对象
+     * @return AsyncInvoker<DeleteLogLtsConfigsRequest, DeleteLogLtsConfigsResponse>
+     */
+    public AsyncInvoker<DeleteLogLtsConfigsRequest, DeleteLogLtsConfigsResponse> deleteLogLtsConfigsAsyncInvoker(
+        DeleteLogLtsConfigsRequest request) {
+        return new AsyncInvoker<DeleteLogLtsConfigsRequest, DeleteLogLtsConfigsResponse>(request,
+            RdsMeta.deleteLogLtsConfigs, hcClient);
+    }
+
+    /**
      * 删除手动备份
      *
      * 删除手动备份。
@@ -1762,6 +1798,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListJobInfoDetailRequest, ListJobInfoDetailResponse> listJobInfoDetailAsyncInvoker(
         ListJobInfoDetailRequest request) {
         return new AsyncInvoker<ListJobInfoDetailRequest, ListJobInfoDetailResponse>(request, RdsMeta.listJobInfoDetail,
+            hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 获取LTS配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogLtsConfigsRequest 请求对象
+     * @return CompletableFuture<ListLogLtsConfigsResponse>
+     */
+    public CompletableFuture<ListLogLtsConfigsResponse> listLogLtsConfigsAsync(ListLogLtsConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listLogLtsConfigs);
+    }
+
+    /**
+     * 
+     *
+     * 获取LTS配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogLtsConfigsRequest 请求对象
+     * @return AsyncInvoker<ListLogLtsConfigsRequest, ListLogLtsConfigsResponse>
+     */
+    public AsyncInvoker<ListLogLtsConfigsRequest, ListLogLtsConfigsResponse> listLogLtsConfigsAsyncInvoker(
+        ListLogLtsConfigsRequest request) {
+        return new AsyncInvoker<ListLogLtsConfigsRequest, ListLogLtsConfigsResponse>(request, RdsMeta.listLogLtsConfigs,
             hcClient);
     }
 
@@ -2719,6 +2785,36 @@ public class RdsAsyncClient {
         SetBinlogClearPolicyRequest request) {
         return new AsyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse>(request,
             RdsMeta.setBinlogClearPolicy, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 关联LTS配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetLogLtsConfigsRequest 请求对象
+     * @return CompletableFuture<SetLogLtsConfigsResponse>
+     */
+    public CompletableFuture<SetLogLtsConfigsResponse> setLogLtsConfigsAsync(SetLogLtsConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setLogLtsConfigs);
+    }
+
+    /**
+     * 
+     *
+     * 关联LTS配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetLogLtsConfigsRequest 请求对象
+     * @return AsyncInvoker<SetLogLtsConfigsRequest, SetLogLtsConfigsResponse>
+     */
+    public AsyncInvoker<SetLogLtsConfigsRequest, SetLogLtsConfigsResponse> setLogLtsConfigsAsyncInvoker(
+        SetLogLtsConfigsRequest request) {
+        return new AsyncInvoker<SetLogLtsConfigsRequest, SetLogLtsConfigsResponse>(request, RdsMeta.setLogLtsConfigs,
+            hcClient);
     }
 
     /**

@@ -108,6 +108,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineLogRequest;
@@ -1796,6 +1798,36 @@ public class CodeArtsPipelineClient {
         ShowOpenSourceStrategyRequest request) {
         return new SyncInvoker<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse>(request,
             CodeArtsPipelineMeta.showOpenSourceStrategy, hcClient);
+    }
+
+    /**
+     * 查询流水线详情
+     *
+     * 查询流水线详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineDetailRequest 请求对象
+     * @return ShowPipelineDetailResponse
+     */
+    public ShowPipelineDetailResponse showPipelineDetail(ShowPipelineDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.showPipelineDetail);
+    }
+
+    /**
+     * 查询流水线详情
+     *
+     * 查询流水线详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineDetailRequest 请求对象
+     * @return SyncInvoker<ShowPipelineDetailRequest, ShowPipelineDetailResponse>
+     */
+    public SyncInvoker<ShowPipelineDetailRequest, ShowPipelineDetailResponse> showPipelineDetailInvoker(
+        ShowPipelineDetailRequest request) {
+        return new SyncInvoker<ShowPipelineDetailRequest, ShowPipelineDetailResponse>(request,
+            CodeArtsPipelineMeta.showPipelineDetail, hcClient);
     }
 
     /**

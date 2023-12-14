@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigResponse;
+import com.huaweicloud.sdk.lts.v2.model.CreateAgencyAccessRequest;
+import com.huaweicloud.sdk.lts.v2.model.CreateAgencyAccessResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAomMappingRulesResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateDashBoardRequest;
@@ -207,6 +209,36 @@ public class LtsAsyncClient {
         CreateAccessConfigRequest request) {
         return new AsyncInvoker<CreateAccessConfigRequest, CreateAccessConfigResponse>(request,
             LtsMeta.createAccessConfig, hcClient);
+    }
+
+    /**
+     * 新建跨账号日志接入
+     *
+     * 新建跨账号日志接入
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAgencyAccessRequest 请求对象
+     * @return CompletableFuture<CreateAgencyAccessResponse>
+     */
+    public CompletableFuture<CreateAgencyAccessResponse> createAgencyAccessAsync(CreateAgencyAccessRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.createAgencyAccess);
+    }
+
+    /**
+     * 新建跨账号日志接入
+     *
+     * 新建跨账号日志接入
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAgencyAccessRequest 请求对象
+     * @return AsyncInvoker<CreateAgencyAccessRequest, CreateAgencyAccessResponse>
+     */
+    public AsyncInvoker<CreateAgencyAccessRequest, CreateAgencyAccessResponse> createAgencyAccessAsyncInvoker(
+        CreateAgencyAccessRequest request) {
+        return new AsyncInvoker<CreateAgencyAccessRequest, CreateAgencyAccessResponse>(request,
+            LtsMeta.createAgencyAccess, hcClient);
     }
 
     /**

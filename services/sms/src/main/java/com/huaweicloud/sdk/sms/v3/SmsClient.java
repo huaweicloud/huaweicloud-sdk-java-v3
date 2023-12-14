@@ -53,6 +53,8 @@ import com.huaweicloud.sdk.sms.v3.model.ShowConfigRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowConfigResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowConfigSettingRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowConfigSettingResponse;
+import com.huaweicloud.sdk.sms.v3.model.ShowConsistencyResultRequest;
+import com.huaweicloud.sdk.sms.v3.model.ShowConsistencyResultResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowMigprojectRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowMigprojectResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowOverviewRequest;
@@ -77,6 +79,8 @@ import com.huaweicloud.sdk.sms.v3.model.UnlockTargetEcsRequest;
 import com.huaweicloud.sdk.sms.v3.model.UnlockTargetEcsResponse;
 import com.huaweicloud.sdk.sms.v3.model.UpdateCommandResultRequest;
 import com.huaweicloud.sdk.sms.v3.model.UpdateCommandResultResponse;
+import com.huaweicloud.sdk.sms.v3.model.UpdateConsistencyResultRequest;
+import com.huaweicloud.sdk.sms.v3.model.UpdateConsistencyResultResponse;
 import com.huaweicloud.sdk.sms.v3.model.UpdateCopyStateRequest;
 import com.huaweicloud.sdk.sms.v3.model.UpdateCopyStateResponse;
 import com.huaweicloud.sdk.sms.v3.model.UpdateDefaultMigprojectRequest;
@@ -752,6 +756,36 @@ public class SmsClient {
     }
 
     /**
+     * 获取一致性校验结果
+     *
+     * 获取一致性校验结果简报
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConsistencyResultRequest 请求对象
+     * @return ShowConsistencyResultResponse
+     */
+    public ShowConsistencyResultResponse showConsistencyResult(ShowConsistencyResultRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.showConsistencyResult);
+    }
+
+    /**
+     * 获取一致性校验结果
+     *
+     * 获取一致性校验结果简报
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowConsistencyResultRequest 请求对象
+     * @return SyncInvoker<ShowConsistencyResultRequest, ShowConsistencyResultResponse>
+     */
+    public SyncInvoker<ShowConsistencyResultRequest, ShowConsistencyResultResponse> showConsistencyResultInvoker(
+        ShowConsistencyResultRequest request) {
+        return new SyncInvoker<ShowConsistencyResultRequest, ShowConsistencyResultResponse>(request,
+            SmsMeta.showConsistencyResult, hcClient);
+    }
+
+    /**
      * 查询指定ID迁移项目详情
      *
      * 查询指定ID的迁移项目详情。
@@ -1099,6 +1133,36 @@ public class SmsClient {
         UpdateCommandResultRequest request) {
         return new SyncInvoker<UpdateCommandResultRequest, UpdateCommandResultResponse>(request,
             SmsMeta.updateCommandResult, hcClient);
+    }
+
+    /**
+     * 上传一致性校验结果
+     *
+     * Agent 上传一致性校验结果简报
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateConsistencyResultRequest 请求对象
+     * @return UpdateConsistencyResultResponse
+     */
+    public UpdateConsistencyResultResponse updateConsistencyResult(UpdateConsistencyResultRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.updateConsistencyResult);
+    }
+
+    /**
+     * 上传一致性校验结果
+     *
+     * Agent 上传一致性校验结果简报
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateConsistencyResultRequest 请求对象
+     * @return SyncInvoker<UpdateConsistencyResultRequest, UpdateConsistencyResultResponse>
+     */
+    public SyncInvoker<UpdateConsistencyResultRequest, UpdateConsistencyResultResponse> updateConsistencyResultInvoker(
+        UpdateConsistencyResultRequest request) {
+        return new SyncInvoker<UpdateConsistencyResultRequest, UpdateConsistencyResultResponse>(request,
+            SmsMeta.updateConsistencyResult, hcClient);
     }
 
     /**

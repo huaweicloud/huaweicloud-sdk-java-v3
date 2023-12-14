@@ -12,10 +12,14 @@ import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.ConfigurationAggregatorRequest;
 import com.huaweicloud.sdk.config.v1.model.ConformancePackRequestBody;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesResponse;
+import com.huaweicloud.sdk.config.v1.model.CountTrackedResourcesRequest;
+import com.huaweicloud.sdk.config.v1.model.CountTrackedResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorRequest;
@@ -104,6 +108,10 @@ import com.huaweicloud.sdk.config.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.config.v1.model.ListSchemasResponse;
 import com.huaweicloud.sdk.config.v1.model.ListStoredQueriesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListStoredQueriesResponse;
+import com.huaweicloud.sdk.config.v1.model.ListTrackedResourceTagsRequest;
+import com.huaweicloud.sdk.config.v1.model.ListTrackedResourceTagsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListTrackedResourcesRequest;
+import com.huaweicloud.sdk.config.v1.model.ListTrackedResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.OrgConformancePackRequestBody;
 import com.huaweicloud.sdk.config.v1.model.OrganizationPolicyAssignmentRequest;
 import com.huaweicloud.sdk.config.v1.model.PolicyAssignmentRequestBody;
@@ -162,6 +170,8 @@ import com.huaweicloud.sdk.config.v1.model.ShowResourceRelationsRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowResourceRelationsResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowStoredQueryRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowStoredQueryResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowTrackedResourceDetailRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowTrackedResourceDetailResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigResponse;
 import com.huaweicloud.sdk.config.v1.model.StoredQueryRequestBody;
@@ -2697,6 +2707,76 @@ public class ConfigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse> collectTrackedResourcesSummary =
+        genForcollectTrackedResourcesSummary();
+
+    private static HttpRequestDef<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse> genForcollectTrackedResourcesSummary() {
+        // basic
+        HttpRequestDef.Builder<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    CollectTrackedResourcesSummaryRequest.class,
+                    CollectTrackedResourcesSummaryResponse.class)
+                .withName("CollectTrackedResourcesSummary")
+                .withUri("/v1/resource-manager/domains/{domain_id}/tracked-resources/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<List<String>>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<List<String>>withRequestField("ep_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getEpId, (req, v) -> {
+                req.setEpId(v);
+            }));
+        builder.<List<String>>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+
+        // response
+        builder.<List<ResourceSummaryResponseItem>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CollectTrackedResourcesSummaryResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(ResourceSummaryResponseItem.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CountAllResourcesRequest, CountAllResourcesResponse> countAllResources =
         genForcountAllResources();
 
@@ -2756,6 +2836,73 @@ public class ConfigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CountAllResourcesRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountTrackedResourcesRequest, CountTrackedResourcesResponse> countTrackedResources =
+        genForcountTrackedResources();
+
+    private static HttpRequestDef<CountTrackedResourcesRequest, CountTrackedResourcesResponse> genForcountTrackedResources() {
+        // basic
+        HttpRequestDef.Builder<CountTrackedResourcesRequest, CountTrackedResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CountTrackedResourcesRequest.class, CountTrackedResourcesResponse.class)
+            .withName("CountTrackedResources")
+            .withUri("/v1/resource-manager/domains/{domain_id}/tracked-resources/count")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<List<String>>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<List<String>>withRequestField("ep_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getEpId, (req, v) -> {
+                req.setEpId(v);
+            }));
+        builder.<List<String>>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CountTrackedResourcesRequest::getTags, (req, v) -> {
                 req.setTags(v);
             }));
 
@@ -2989,6 +3136,119 @@ public class ConfigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse> listTrackedResourceTags =
+        genForlistTrackedResourceTags();
+
+    private static HttpRequestDef<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse> genForlistTrackedResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTrackedResourceTagsRequest.class, ListTrackedResourceTagsResponse.class)
+            .withName("ListTrackedResourceTags")
+            .withUri("/v1/resource-manager/domains/{domain_id}/tracked-resources/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrackedResourceTagsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTrackedResourcesRequest, ListTrackedResourcesResponse> listTrackedResources =
+        genForlistTrackedResources();
+
+    private static HttpRequestDef<ListTrackedResourcesRequest, ListTrackedResourcesResponse> genForlistTrackedResources() {
+        // basic
+        HttpRequestDef.Builder<ListTrackedResourcesRequest, ListTrackedResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTrackedResourcesRequest.class, ListTrackedResourcesResponse.class)
+            .withName("ListTrackedResources")
+            .withUri("/v1/resource-manager/domains/{domain_id}/tracked-resources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getRegionId, (req, v) -> {
+                req.setRegionId(v);
+            }));
+        builder.<String>withRequestField("ep_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getEpId, (req, v) -> {
+                req.setEpId(v);
+            }));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getType, (req, v) -> {
+                req.setType(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTrackedResourcesRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowResourceByIdRequest, ShowResourceByIdResponse> showResourceById =
         genForshowResourceById();
 
@@ -3046,6 +3306,34 @@ public class ConfigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceDetailRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse> showTrackedResourceDetail =
+        genForshowTrackedResourceDetail();
+
+    private static HttpRequestDef<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse> genForshowTrackedResourceDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowTrackedResourceDetailRequest.class,
+                    ShowTrackedResourceDetailResponse.class)
+                .withName("ShowTrackedResourceDetail")
+                .withUri("/v1/resource-manager/domains/{domain_id}/tracked-resources/{resource_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrackedResourceDetailRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
             }));
 

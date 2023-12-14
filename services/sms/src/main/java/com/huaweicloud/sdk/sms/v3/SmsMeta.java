@@ -11,6 +11,7 @@ import com.huaweicloud.sdk.sms.v3.model.CollectLogRequest;
 import com.huaweicloud.sdk.sms.v3.model.CollectLogResponse;
 import com.huaweicloud.sdk.sms.v3.model.CommandBody;
 import com.huaweicloud.sdk.sms.v3.model.ConfigurationRequestBody;
+import com.huaweicloud.sdk.sms.v3.model.ConsistencyResultRequestBody;
 import com.huaweicloud.sdk.sms.v3.model.CreateMigprojectRequest;
 import com.huaweicloud.sdk.sms.v3.model.CreateMigprojectResponse;
 import com.huaweicloud.sdk.sms.v3.model.CreatePrivacyAgreementsRequest;
@@ -70,6 +71,8 @@ import com.huaweicloud.sdk.sms.v3.model.ShowConfigRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowConfigResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowConfigSettingRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowConfigSettingResponse;
+import com.huaweicloud.sdk.sms.v3.model.ShowConsistencyResultRequest;
+import com.huaweicloud.sdk.sms.v3.model.ShowConsistencyResultResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowMigprojectRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowMigprojectResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowOverviewRequest;
@@ -95,6 +98,8 @@ import com.huaweicloud.sdk.sms.v3.model.UnlockTargetEcsRequest;
 import com.huaweicloud.sdk.sms.v3.model.UnlockTargetEcsResponse;
 import com.huaweicloud.sdk.sms.v3.model.UpdateCommandResultRequest;
 import com.huaweicloud.sdk.sms.v3.model.UpdateCommandResultResponse;
+import com.huaweicloud.sdk.sms.v3.model.UpdateConsistencyResultRequest;
+import com.huaweicloud.sdk.sms.v3.model.UpdateConsistencyResultResponse;
 import com.huaweicloud.sdk.sms.v3.model.UpdateCopyStateRequest;
 import com.huaweicloud.sdk.sms.v3.model.UpdateCopyStateResponse;
 import com.huaweicloud.sdk.sms.v3.model.UpdateDefaultMigprojectRequest;
@@ -633,6 +638,13 @@ public class SmsMeta {
             f -> f.withMarshaller(ListServersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             }));
+        builder.<Boolean>withRequestField("is_consistency_result_exist",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListServersRequest::getIsConsistencyResultExist, (req, v) -> {
+                req.setIsConsistencyResultExist(v);
+            }));
 
         // response
 
@@ -863,6 +875,31 @@ public class SmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConfigSettingRequest::getConfigKey, (req, v) -> {
                 req.setConfigKey(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConsistencyResultRequest, ShowConsistencyResultResponse> showConsistencyResult =
+        genForshowConsistencyResult();
+
+    private static HttpRequestDef<ShowConsistencyResultRequest, ShowConsistencyResultResponse> genForshowConsistencyResult() {
+        // basic
+        HttpRequestDef.Builder<ShowConsistencyResultRequest, ShowConsistencyResultResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowConsistencyResultRequest.class, ShowConsistencyResultResponse.class)
+            .withName("ShowConsistencyResult")
+            .withUri("/v3/tasks/{task_id}/consistency-result")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConsistencyResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
             }));
 
         // response
@@ -1154,6 +1191,45 @@ public class SmsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateConsistencyResultRequest, UpdateConsistencyResultResponse> updateConsistencyResult =
+        genForupdateConsistencyResult();
+
+    private static HttpRequestDef<UpdateConsistencyResultRequest, UpdateConsistencyResultResponse> genForupdateConsistencyResult() {
+        // basic
+        HttpRequestDef.Builder<UpdateConsistencyResultRequest, UpdateConsistencyResultResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateConsistencyResultRequest.class, UpdateConsistencyResultResponse.class)
+            .withName("UpdateConsistencyResult")
+            .withUri("/v3/tasks/{task_id}/consistency-result")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConsistencyResultRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            }));
+        builder.<ConsistencyResultRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConsistencyResultRequestBody.class),
+            f -> f.withMarshaller(UpdateConsistencyResultRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateConsistencyResultResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
 
         return builder.build();
     }

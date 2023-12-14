@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.cloudtable.v2;
 
+import com.huaweicloud.sdk.cloudtable.v2.model.CreateCloudTableClusterRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.CreateCloudTableClusterResponse;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterRequest;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterResponse;
 import com.huaweicloud.sdk.cloudtable.v2.model.DeleteClusterRequest;
@@ -324,6 +326,47 @@ public class CloudTableAsyncClient {
         UpdateClusterSettingRequest request) {
         return new AsyncInvoker<UpdateClusterSettingRequest, UpdateClusterSettingResponse>(request,
             CloudTableMeta.updateClusterSetting, hcClient);
+    }
+
+    /**
+     * 创建CloudTable集群
+     *
+     * 创建一个CloudTable集群。
+     * 使用接口前，您需要先获取如下资源信息。
+     * - 通过VPC创建或查询VPC、子网
+     * - 通过安全组创建或查询可用的security_group_id
+     * 
+     * 本接口是一个同步接口，当创建CloudTable集群成功后会返回集群id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCloudTableClusterRequest 请求对象
+     * @return CompletableFuture<CreateCloudTableClusterResponse>
+     */
+    public CompletableFuture<CreateCloudTableClusterResponse> createCloudTableClusterAsync(
+        CreateCloudTableClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudTableMeta.createCloudTableCluster);
+    }
+
+    /**
+     * 创建CloudTable集群
+     *
+     * 创建一个CloudTable集群。
+     * 使用接口前，您需要先获取如下资源信息。
+     * - 通过VPC创建或查询VPC、子网
+     * - 通过安全组创建或查询可用的security_group_id
+     * 
+     * 本接口是一个同步接口，当创建CloudTable集群成功后会返回集群id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCloudTableClusterRequest 请求对象
+     * @return AsyncInvoker<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse>
+     */
+    public AsyncInvoker<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse> createCloudTableClusterAsyncInvoker(
+        CreateCloudTableClusterRequest request) {
+        return new AsyncInvoker<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse>(request,
+            CloudTableMeta.createCloudTableCluster, hcClient);
     }
 
 }

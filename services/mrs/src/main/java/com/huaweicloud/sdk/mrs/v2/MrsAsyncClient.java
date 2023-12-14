@@ -45,10 +45,16 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowTagQuotaRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowTagQuotaResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowTagStatusRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowTagStatusResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShrinkClusterRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShrinkClusterResponse;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.SwitchClusterTagsRequest;
+import com.huaweicloud.sdk.mrs.v2.model.SwitchClusterTagsResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyRequest;
@@ -871,6 +877,94 @@ public class MrsAsyncClient {
     public AsyncInvoker<ShowSqlResultRequest, ShowSqlResultResponse> showSqlResultAsyncInvoker(
         ShowSqlResultRequest request) {
         return new AsyncInvoker<ShowSqlResultRequest, ShowSqlResultResponse>(request, MrsMeta.showSqlResult, hcClient);
+    }
+
+    /**
+     * 查询标签配额
+     *
+     * 查询标签配额信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTagQuotaRequest 请求对象
+     * @return CompletableFuture<ShowTagQuotaResponse>
+     */
+    public CompletableFuture<ShowTagQuotaResponse> showTagQuotaAsync(ShowTagQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.showTagQuota);
+    }
+
+    /**
+     * 查询标签配额
+     *
+     * 查询标签配额信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTagQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse>
+     */
+    public AsyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse> showTagQuotaAsyncInvoker(
+        ShowTagQuotaRequest request) {
+        return new AsyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse>(request, MrsMeta.showTagQuota, hcClient);
+    }
+
+    /**
+     * 查询默认标签状态
+     *
+     * 查询集群默认标签状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTagStatusRequest 请求对象
+     * @return CompletableFuture<ShowTagStatusResponse>
+     */
+    public CompletableFuture<ShowTagStatusResponse> showTagStatusAsync(ShowTagStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.showTagStatus);
+    }
+
+    /**
+     * 查询默认标签状态
+     *
+     * 查询集群默认标签状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTagStatusRequest 请求对象
+     * @return AsyncInvoker<ShowTagStatusRequest, ShowTagStatusResponse>
+     */
+    public AsyncInvoker<ShowTagStatusRequest, ShowTagStatusResponse> showTagStatusAsyncInvoker(
+        ShowTagStatusRequest request) {
+        return new AsyncInvoker<ShowTagStatusRequest, ShowTagStatusResponse>(request, MrsMeta.showTagStatus, hcClient);
+    }
+
+    /**
+     * 集群操作默认标签
+     *
+     * 对已有集群启用或关闭集群默认标签。开启后，集群内节点会打上集群默认标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchClusterTagsRequest 请求对象
+     * @return CompletableFuture<SwitchClusterTagsResponse>
+     */
+    public CompletableFuture<SwitchClusterTagsResponse> switchClusterTagsAsync(SwitchClusterTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.switchClusterTags);
+    }
+
+    /**
+     * 集群操作默认标签
+     *
+     * 对已有集群启用或关闭集群默认标签。开启后，集群内节点会打上集群默认标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SwitchClusterTagsRequest 请求对象
+     * @return AsyncInvoker<SwitchClusterTagsRequest, SwitchClusterTagsResponse>
+     */
+    public AsyncInvoker<SwitchClusterTagsRequest, SwitchClusterTagsResponse> switchClusterTagsAsyncInvoker(
+        SwitchClusterTagsRequest request) {
+        return new AsyncInvoker<SwitchClusterTagsRequest, SwitchClusterTagsResponse>(request, MrsMeta.switchClusterTags,
+            hcClient);
     }
 
     /**

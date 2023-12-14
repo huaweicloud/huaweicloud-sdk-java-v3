@@ -385,6 +385,11 @@ public class ConferenceInfo {
     private Integer concurrentParticipants;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supportSimultaneousInterpretation")
+
+    private Boolean supportSimultaneousInterpretation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "picDisplay")
 
     private MultiPicDisplayDO picDisplay;
@@ -1199,6 +1204,23 @@ public class ConferenceInfo {
         this.concurrentParticipants = concurrentParticipants;
     }
 
+    public ConferenceInfo withSupportSimultaneousInterpretation(Boolean supportSimultaneousInterpretation) {
+        this.supportSimultaneousInterpretation = supportSimultaneousInterpretation;
+        return this;
+    }
+
+    /**
+     * 会议是否支持同声传译。默认值false。 * true:支持 * false:不支持 
+     * @return supportSimultaneousInterpretation
+     */
+    public Boolean getSupportSimultaneousInterpretation() {
+        return supportSimultaneousInterpretation;
+    }
+
+    public void setSupportSimultaneousInterpretation(Boolean supportSimultaneousInterpretation) {
+        this.supportSimultaneousInterpretation = supportSimultaneousInterpretation;
+    }
+
     public ConferenceInfo withPicDisplay(MultiPicDisplayDO picDisplay) {
         this.picDisplay = picDisplay;
         return this;
@@ -1315,6 +1337,7 @@ public class ConferenceInfo {
             && Objects.equals(this.multiStreamFlag, that.multiStreamFlag)
             && Objects.equals(this.confMode, that.confMode) && Objects.equals(this.scheduleVmr, that.scheduleVmr)
             && Objects.equals(this.concurrentParticipants, that.concurrentParticipants)
+            && Objects.equals(this.supportSimultaneousInterpretation, that.supportSimultaneousInterpretation)
             && Objects.equals(this.picDisplay, that.picDisplay) && Objects.equals(this.subConfs, that.subConfs)
             && Objects.equals(this.cycleSubConfID, that.cycleSubConfID);
     }
@@ -1365,6 +1388,7 @@ public class ConferenceInfo {
             confMode,
             scheduleVmr,
             concurrentParticipants,
+            supportSimultaneousInterpretation,
             picDisplay,
             subConfs,
             cycleSubConfID);
@@ -1418,6 +1442,9 @@ public class ConferenceInfo {
         sb.append("    confMode: ").append(toIndentedString(confMode)).append("\n");
         sb.append("    scheduleVmr: ").append(toIndentedString(scheduleVmr)).append("\n");
         sb.append("    concurrentParticipants: ").append(toIndentedString(concurrentParticipants)).append("\n");
+        sb.append("    supportSimultaneousInterpretation: ")
+            .append(toIndentedString(supportSimultaneousInterpretation))
+            .append("\n");
         sb.append("    picDisplay: ").append(toIndentedString(picDisplay)).append("\n");
         sb.append("    subConfs: ").append(toIndentedString(subConfs)).append("\n");
         sb.append("    cycleSubConfID: ").append(toIndentedString(cycleSubConfID)).append("\n");

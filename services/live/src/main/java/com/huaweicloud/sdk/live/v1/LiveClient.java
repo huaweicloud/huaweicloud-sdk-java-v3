@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateUrlAuthchainResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainKeyChainRequest;
@@ -29,6 +31,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleRequest;
@@ -39,10 +43,18 @@ import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.ListDelayConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.ListDelayConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ListIpAuthListRequest;
+import com.huaweicloud.sdk.live.v1.model.ListIpAuthListResponse;
 import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListLiveSampleLogsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineRequest;
 import com.huaweicloud.sdk.live.v1.model.ListLiveStreamsOnlineResponse;
+import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordContentsRequest;
@@ -61,12 +73,16 @@ import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowPullSourcesConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowRecordRuleResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowTranscodingsTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateDelayConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateDelayConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainIp6SwitchRequest;
@@ -75,8 +91,16 @@ import com.huaweicloud.sdk.live.v1.model.UpdateDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateObsBucketAuthorityPublicRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateObsBucketAuthorityPublicResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdatePublishTemplateRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdatePublishTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdatePullSourcesConfigRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdatePullSourcesConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateRecordRuleRequest;
@@ -370,6 +394,36 @@ public class LiveClient {
     }
 
     /**
+     * 生成URL鉴权串
+     *
+     * 生成URL鉴权串
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateUrlAuthchainRequest 请求对象
+     * @return CreateUrlAuthchainResponse
+     */
+    public CreateUrlAuthchainResponse createUrlAuthchain(CreateUrlAuthchainRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.createUrlAuthchain);
+    }
+
+    /**
+     * 生成URL鉴权串
+     *
+     * 生成URL鉴权串
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateUrlAuthchainRequest 请求对象
+     * @return SyncInvoker<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse>
+     */
+    public SyncInvoker<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse> createUrlAuthchainInvoker(
+        CreateUrlAuthchainRequest request) {
+        return new SyncInvoker<CreateUrlAuthchainRequest, CreateUrlAuthchainResponse>(request,
+            LiveMeta.createUrlAuthchain, hcClient);
+    }
+
+    /**
      * 删除直播域名
      *
      * 删除域名。只有在域名停用（off）状态时才能删除。
@@ -455,6 +509,36 @@ public class LiveClient {
         DeleteDomainMappingRequest request) {
         return new SyncInvoker<DeleteDomainMappingRequest, DeleteDomainMappingResponse>(request,
             LiveMeta.deleteDomainMapping, hcClient);
+    }
+
+    /**
+     * 删除直播推流通知配置
+     *
+     * 删除直播推流通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePublishTemplateRequest 请求对象
+     * @return DeletePublishTemplateResponse
+     */
+    public DeletePublishTemplateResponse deletePublishTemplate(DeletePublishTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.deletePublishTemplate);
+    }
+
+    /**
+     * 删除直播推流通知配置
+     *
+     * 删除直播推流通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeletePublishTemplateRequest 请求对象
+     * @return SyncInvoker<DeletePublishTemplateRequest, DeletePublishTemplateResponse>
+     */
+    public SyncInvoker<DeletePublishTemplateRequest, DeletePublishTemplateResponse> deletePublishTemplateInvoker(
+        DeletePublishTemplateRequest request) {
+        return new SyncInvoker<DeletePublishTemplateRequest, DeletePublishTemplateResponse>(request,
+            LiveMeta.deletePublishTemplate, hcClient);
     }
 
     /**
@@ -608,6 +692,102 @@ public class LiveClient {
     }
 
     /**
+     * 查询播放域名延时配置
+     *
+     * 查询播放域名延时配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDelayConfigRequest 请求对象
+     * @return ListDelayConfigResponse
+     */
+    public ListDelayConfigResponse listDelayConfig(ListDelayConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listDelayConfig);
+    }
+
+    /**
+     * 查询播放域名延时配置
+     *
+     * 查询播放域名延时配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDelayConfigRequest 请求对象
+     * @return SyncInvoker<ListDelayConfigRequest, ListDelayConfigResponse>
+     */
+    public SyncInvoker<ListDelayConfigRequest, ListDelayConfigResponse> listDelayConfigInvoker(
+        ListDelayConfigRequest request) {
+        return new SyncInvoker<ListDelayConfigRequest, ListDelayConfigResponse>(request, LiveMeta.listDelayConfig,
+            hcClient);
+    }
+
+    /**
+     * 获取地域限制配置列表
+     *
+     * 查询播放域名的地域限制列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListGeoBlockingConfigRequest 请求对象
+     * @return ListGeoBlockingConfigResponse
+     */
+    public ListGeoBlockingConfigResponse listGeoBlockingConfig(ListGeoBlockingConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listGeoBlockingConfig);
+    }
+
+    /**
+     * 获取地域限制配置列表
+     *
+     * 查询播放域名的地域限制列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListGeoBlockingConfigRequest 请求对象
+     * @return SyncInvoker<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse>
+     */
+    public SyncInvoker<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse> listGeoBlockingConfigInvoker(
+        ListGeoBlockingConfigRequest request) {
+        return new SyncInvoker<ListGeoBlockingConfigRequest, ListGeoBlockingConfigResponse>(request,
+            LiveMeta.listGeoBlockingConfig, hcClient);
+    }
+
+    /**
+     * 查询IP黑/白名单
+     *
+     * 查询推流/播放域名的IP黑/白名单。
+     * - 黑名单模式：禁止指定的IP或网段
+     * - 白名单模式：仅允许指定的IP或网段
+     * - 默认：全放通。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIpAuthListRequest 请求对象
+     * @return ListIpAuthListResponse
+     */
+    public ListIpAuthListResponse listIpAuthList(ListIpAuthListRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listIpAuthList);
+    }
+
+    /**
+     * 查询IP黑/白名单
+     *
+     * 查询推流/播放域名的IP黑/白名单。
+     * - 黑名单模式：禁止指定的IP或网段
+     * - 白名单模式：仅允许指定的IP或网段
+     * - 默认：全放通。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIpAuthListRequest 请求对象
+     * @return SyncInvoker<ListIpAuthListRequest, ListIpAuthListResponse>
+     */
+    public SyncInvoker<ListIpAuthListRequest, ListIpAuthListResponse> listIpAuthListInvoker(
+        ListIpAuthListRequest request) {
+        return new SyncInvoker<ListIpAuthListRequest, ListIpAuthListResponse>(request, LiveMeta.listIpAuthList,
+            hcClient);
+    }
+
+    /**
      * 获取直播播放日志
      *
      * 获取直播播放日志，基于域名以5分钟粒度进行打包，日志内容以 \&quot;|\&quot; 进行分隔。
@@ -665,6 +845,36 @@ public class LiveClient {
         ListLiveStreamsOnlineRequest request) {
         return new SyncInvoker<ListLiveStreamsOnlineRequest, ListLiveStreamsOnlineResponse>(request,
             LiveMeta.listLiveStreamsOnline, hcClient);
+    }
+
+    /**
+     * 查询直播推流通知配置
+     *
+     * 查询直播推流通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublishTemplateRequest 请求对象
+     * @return ListPublishTemplateResponse
+     */
+    public ListPublishTemplateResponse listPublishTemplate(ListPublishTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listPublishTemplate);
+    }
+
+    /**
+     * 查询直播推流通知配置
+     *
+     * 查询直播推流通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPublishTemplateRequest 请求对象
+     * @return SyncInvoker<ListPublishTemplateRequest, ListPublishTemplateResponse>
+     */
+    public SyncInvoker<ListPublishTemplateRequest, ListPublishTemplateResponse> listPublishTemplateInvoker(
+        ListPublishTemplateRequest request) {
+        return new SyncInvoker<ListPublishTemplateRequest, ListPublishTemplateResponse>(request,
+            LiveMeta.listPublishTemplate, hcClient);
     }
 
     /**
@@ -904,6 +1114,36 @@ public class LiveClient {
     }
 
     /**
+     * 查询直播拉流回源配置
+     *
+     * 查询直播拉流回源配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPullSourcesConfigRequest 请求对象
+     * @return ShowPullSourcesConfigResponse
+     */
+    public ShowPullSourcesConfigResponse showPullSourcesConfig(ShowPullSourcesConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.showPullSourcesConfig);
+    }
+
+    /**
+     * 查询直播拉流回源配置
+     *
+     * 查询直播拉流回源配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPullSourcesConfigRequest 请求对象
+     * @return SyncInvoker<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse>
+     */
+    public SyncInvoker<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse> showPullSourcesConfigInvoker(
+        ShowPullSourcesConfigRequest request) {
+        return new SyncInvoker<ShowPullSourcesConfigRequest, ShowPullSourcesConfigResponse>(request,
+            LiveMeta.showPullSourcesConfig, hcClient);
+    }
+
+    /**
      * 查询录制回调配置
      *
      * 查询录制回调配置接口
@@ -994,6 +1234,36 @@ public class LiveClient {
     }
 
     /**
+     * 修改播放域名延时配置
+     *
+     * 修改播放域名延时配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDelayConfigRequest 请求对象
+     * @return UpdateDelayConfigResponse
+     */
+    public UpdateDelayConfigResponse updateDelayConfig(UpdateDelayConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.updateDelayConfig);
+    }
+
+    /**
+     * 修改播放域名延时配置
+     *
+     * 修改播放域名延时配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDelayConfigRequest 请求对象
+     * @return SyncInvoker<UpdateDelayConfigRequest, UpdateDelayConfigResponse>
+     */
+    public SyncInvoker<UpdateDelayConfigRequest, UpdateDelayConfigResponse> updateDelayConfigInvoker(
+        UpdateDelayConfigRequest request) {
+        return new SyncInvoker<UpdateDelayConfigRequest, UpdateDelayConfigResponse>(request, LiveMeta.updateDelayConfig,
+            hcClient);
+    }
+
+    /**
      * 修改直播域名
      *
      * 修改直播播放、RTMP推流加速域名相关信息
@@ -1079,6 +1349,132 @@ public class LiveClient {
         UpdateDomainKeyChainRequest request) {
         return new SyncInvoker<UpdateDomainKeyChainRequest, UpdateDomainKeyChainResponse>(request,
             LiveMeta.updateDomainKeyChain, hcClient);
+    }
+
+    /**
+     * 修改地域限制配置
+     *
+     * 修改播放域名的地域限制，选中地域允许接入。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGeoBlockingConfigRequest 请求对象
+     * @return UpdateGeoBlockingConfigResponse
+     */
+    public UpdateGeoBlockingConfigResponse updateGeoBlockingConfig(UpdateGeoBlockingConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.updateGeoBlockingConfig);
+    }
+
+    /**
+     * 修改地域限制配置
+     *
+     * 修改播放域名的地域限制，选中地域允许接入。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateGeoBlockingConfigRequest 请求对象
+     * @return SyncInvoker<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse>
+     */
+    public SyncInvoker<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse> updateGeoBlockingConfigInvoker(
+        UpdateGeoBlockingConfigRequest request) {
+        return new SyncInvoker<UpdateGeoBlockingConfigRequest, UpdateGeoBlockingConfigResponse>(request,
+            LiveMeta.updateGeoBlockingConfig, hcClient);
+    }
+
+    /**
+     * 修改IP黑/白名单
+     *
+     * 修改推流/播放域名的IP黑/白名单，当前仅支持ipv4。
+     * - 黑名单模式：禁止指定的IP或网段
+     * - 白名单模式：仅允许指定的IP或网段
+     * - 默认：全放通。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIpAuthListRequest 请求对象
+     * @return UpdateIpAuthListResponse
+     */
+    public UpdateIpAuthListResponse updateIpAuthList(UpdateIpAuthListRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.updateIpAuthList);
+    }
+
+    /**
+     * 修改IP黑/白名单
+     *
+     * 修改推流/播放域名的IP黑/白名单，当前仅支持ipv4。
+     * - 黑名单模式：禁止指定的IP或网段
+     * - 白名单模式：仅允许指定的IP或网段
+     * - 默认：全放通。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIpAuthListRequest 请求对象
+     * @return SyncInvoker<UpdateIpAuthListRequest, UpdateIpAuthListResponse>
+     */
+    public SyncInvoker<UpdateIpAuthListRequest, UpdateIpAuthListResponse> updateIpAuthListInvoker(
+        UpdateIpAuthListRequest request) {
+        return new SyncInvoker<UpdateIpAuthListRequest, UpdateIpAuthListResponse>(request, LiveMeta.updateIpAuthList,
+            hcClient);
+    }
+
+    /**
+     * 新增、覆盖直播推流通知配置
+     *
+     * 新增、覆盖直播推流通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePublishTemplateRequest 请求对象
+     * @return UpdatePublishTemplateResponse
+     */
+    public UpdatePublishTemplateResponse updatePublishTemplate(UpdatePublishTemplateRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.updatePublishTemplate);
+    }
+
+    /**
+     * 新增、覆盖直播推流通知配置
+     *
+     * 新增、覆盖直播推流通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePublishTemplateRequest 请求对象
+     * @return SyncInvoker<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse>
+     */
+    public SyncInvoker<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse> updatePublishTemplateInvoker(
+        UpdatePublishTemplateRequest request) {
+        return new SyncInvoker<UpdatePublishTemplateRequest, UpdatePublishTemplateResponse>(request,
+            LiveMeta.updatePublishTemplate, hcClient);
+    }
+
+    /**
+     * 修改直播拉流回源配置
+     *
+     * 修改直播拉流回源配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePullSourcesConfigRequest 请求对象
+     * @return UpdatePullSourcesConfigResponse
+     */
+    public UpdatePullSourcesConfigResponse updatePullSourcesConfig(UpdatePullSourcesConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.updatePullSourcesConfig);
+    }
+
+    /**
+     * 修改直播拉流回源配置
+     *
+     * 修改直播拉流回源配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdatePullSourcesConfigRequest 请求对象
+     * @return SyncInvoker<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse>
+     */
+    public SyncInvoker<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse> updatePullSourcesConfigInvoker(
+        UpdatePullSourcesConfigRequest request) {
+        return new SyncInvoker<UpdatePullSourcesConfigRequest, UpdatePullSourcesConfigResponse>(request,
+            LiveMeta.updatePullSourcesConfig, hcClient);
     }
 
     /**

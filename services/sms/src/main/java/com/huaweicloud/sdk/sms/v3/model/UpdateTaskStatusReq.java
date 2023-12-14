@@ -131,6 +131,11 @@ public class UpdateTaskStatusReq {
 
     private Boolean switchHce;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_need_consistency_check")
+
+    private Boolean isNeedConsistencyCheck;
+
     public UpdateTaskStatusReq withOperation(OperationEnum operation) {
         this.operation = operation;
         return this;
@@ -198,6 +203,23 @@ public class UpdateTaskStatusReq {
         this.switchHce = switchHce;
     }
 
+    public UpdateTaskStatusReq withIsNeedConsistencyCheck(Boolean isNeedConsistencyCheck) {
+        this.isNeedConsistencyCheck = isNeedConsistencyCheck;
+        return this;
+    }
+
+    /**
+     * 是否进行一致性校验
+     * @return isNeedConsistencyCheck
+     */
+    public Boolean getIsNeedConsistencyCheck() {
+        return isNeedConsistencyCheck;
+    }
+
+    public void setIsNeedConsistencyCheck(Boolean isNeedConsistencyCheck) {
+        this.isNeedConsistencyCheck = isNeedConsistencyCheck;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -208,12 +230,13 @@ public class UpdateTaskStatusReq {
         }
         UpdateTaskStatusReq that = (UpdateTaskStatusReq) obj;
         return Objects.equals(this.operation, that.operation) && Objects.equals(this.param, that.param)
-            && Objects.equals(this.switchHce, that.switchHce);
+            && Objects.equals(this.switchHce, that.switchHce)
+            && Objects.equals(this.isNeedConsistencyCheck, that.isNeedConsistencyCheck);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operation, param, switchHce);
+        return Objects.hash(operation, param, switchHce, isNeedConsistencyCheck);
     }
 
     @Override
@@ -223,6 +246,7 @@ public class UpdateTaskStatusReq {
         sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
         sb.append("    param: ").append(toIndentedString(param)).append("\n");
         sb.append("    switchHce: ").append(toIndentedString(switchHce)).append("\n");
+        sb.append("    isNeedConsistencyCheck: ").append(toIndentedString(isNeedConsistencyCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.cloudtable.v2;
 
 import com.huaweicloud.sdk.cloudtable.v2.model.AddComponentReq;
+import com.huaweicloud.sdk.cloudtable.v2.model.CreateCloudTableClusterRequest;
+import com.huaweicloud.sdk.cloudtable.v2.model.CreateCloudTableClusterResponse;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterRequest;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterRequestBody;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterResponse;
@@ -356,6 +358,38 @@ public class CloudTableMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(HbaseModifySettingV2Req.class),
             f -> f.withMarshaller(UpdateClusterSettingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse> createCloudTableCluster =
+        genForcreateCloudTableCluster();
+
+    private static HttpRequestDef<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse> genForcreateCloudTableCluster() {
+        // basic
+        HttpRequestDef.Builder<CreateCloudTableClusterRequest, CreateCloudTableClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateCloudTableClusterRequest.class, CreateCloudTableClusterResponse.class)
+            .withName("CreateCloudTableCluster")
+            .withUri("/v3/{project_id}/clusters")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCloudTableClusterRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<CreateClusterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateClusterRequestBody.class),
+            f -> f.withMarshaller(CreateCloudTableClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -212,11 +212,16 @@ import com.huaweicloud.sdk.meeting.v1.model.RestProlongDurReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestRenamePartReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestScheduleConfDTO;
 import com.huaweicloud.sdk.meeting.v1.model.RestScheduleCycleConfDTO;
+import com.huaweicloud.sdk.meeting.v1.model.RestSetAttendeeLanChannelBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSetCohostBody;
+import com.huaweicloud.sdk.meeting.v1.model.RestSetInterpreterGroupBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSetLiveReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSetRecordReqBody;
+import com.huaweicloud.sdk.meeting.v1.model.RestSimultaneousInterpretationBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestSwitchModeReqBody;
 import com.huaweicloud.sdk.meeting.v1.model.RestVideoBody;
+import com.huaweicloud.sdk.meeting.v1.model.ResumeSimultaneousInterpretationRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ResumeSimultaneousInterpretationResponse;
 import com.huaweicloud.sdk.meeting.v1.model.RollcallParticipantRequest;
 import com.huaweicloud.sdk.meeting.v1.model.RollcallParticipantResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SaveLayoutRequest;
@@ -289,12 +294,16 @@ import com.huaweicloud.sdk.meeting.v1.model.SendVeriCodeForChangePwdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SendVeriCodeForChangePwdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SendVeriCodeForUpdateUserInfoRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SendVeriCodeForUpdateUserInfoResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetAttendeeLanChannelRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetAttendeeLanChannelResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetCohostRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetCohostResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetCustomMultiPictureRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetCustomMultiPictureResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetHostViewRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetHostViewResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetInterpreterGroupRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetInterpreterGroupResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetParticipantViewRequest;
@@ -3670,6 +3679,48 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> resumeSimultaneousInterpretation =
+        genForresumeSimultaneousInterpretation();
+
+    private static HttpRequestDef<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> genForresumeSimultaneousInterpretation() {
+        // basic
+        HttpRequestDef.Builder<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ResumeSimultaneousInterpretationRequest.class,
+                    ResumeSimultaneousInterpretationResponse.class)
+                .withName("ResumeSimultaneousInterpretation")
+                .withUri("/v1/mmc/control/conferences/simultaneousInterpretation")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumeSimultaneousInterpretationRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            }));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResumeSimultaneousInterpretationRequest::getXConferenceAuthorization, (req, v) -> {
+                req.setXConferenceAuthorization(v);
+            }));
+        builder.<RestSimultaneousInterpretationBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestSimultaneousInterpretationBody.class),
+            f -> f.withMarshaller(ResumeSimultaneousInterpretationRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RollcallParticipantRequest, RollcallParticipantResponse> rollcallParticipant =
         genForrollcallParticipant();
 
@@ -5518,6 +5569,45 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> setAttendeeLanChannel =
+        genForsetAttendeeLanChannel();
+
+    private static HttpRequestDef<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> genForsetAttendeeLanChannel() {
+        // basic
+        HttpRequestDef.Builder<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SetAttendeeLanChannelRequest.class, SetAttendeeLanChannelResponse.class)
+            .withName("SetAttendeeLanChannel")
+            .withUri("/v1/mmc/control/conferences/setAttendeeLanChannel")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAttendeeLanChannelRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            }));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAttendeeLanChannelRequest::getXConferenceAuthorization, (req, v) -> {
+                req.setXConferenceAuthorization(v);
+            }));
+        builder.<RestSetAttendeeLanChannelBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestSetAttendeeLanChannelBody.class),
+            f -> f.withMarshaller(SetAttendeeLanChannelRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetCohostRequest, SetCohostResponse> setCohost = genForsetCohost();
 
     private static HttpRequestDef<SetCohostRequest, SetCohostResponse> genForsetCohost() {
@@ -5632,6 +5722,45 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestChairViewReqBody.class),
             f -> f.withMarshaller(SetHostViewRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetInterpreterGroupRequest, SetInterpreterGroupResponse> setInterpreterGroup =
+        genForsetInterpreterGroup();
+
+    private static HttpRequestDef<SetInterpreterGroupRequest, SetInterpreterGroupResponse> genForsetInterpreterGroup() {
+        // basic
+        HttpRequestDef.Builder<SetInterpreterGroupRequest, SetInterpreterGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetInterpreterGroupRequest.class, SetInterpreterGroupResponse.class)
+                .withName("SetInterpreterGroup")
+                .withUri("/v1/mmc/control/conferences/interpreterGroup")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetInterpreterGroupRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            }));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetInterpreterGroupRequest::getXConferenceAuthorization, (req, v) -> {
+                req.setXConferenceAuthorization(v);
+            }));
+        builder.<RestSetInterpreterGroupBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestSetInterpreterGroupBody.class),
+            f -> f.withMarshaller(SetInterpreterGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -47,6 +47,9 @@ import com.huaweicloud.sdk.cfw.v1.model.ClearAccessLogRuleHitCountsDto;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequestBody;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallReq;
+import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleRequest;
@@ -63,6 +66,8 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteDomainsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemDto;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemRequest;
@@ -112,6 +117,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListJobRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListJobResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsRequest;
@@ -635,6 +642,45 @@ public class CfwMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> createFirewall =
+        genForcreateFirewall();
+
+    private static HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> genForcreateFirewall() {
+        // basic
+        HttpRequestDef.Builder<CreateFirewallRequest, CreateFirewallResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFirewallRequest.class, CreateFirewallResponse.class)
+                .withName("CreateFirewall")
+                .withUri("/v2/{project_id}/firewall")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFirewallRequest::getXClientToken, (req, v) -> {
+                req.setXClientToken(v);
+            }));
+        builder.<String>withRequestField("X-Trace-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFirewallRequest::getXTraceId, (req, v) -> {
+                req.setXTraceId(v);
+            }));
+        builder.<CreateFirewallReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFirewallReq.class),
+            f -> f.withMarshaller(CreateFirewallRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAddressItemRequest, DeleteAddressItemResponse> deleteAddressItem =
         genFordeleteAddressItem();
 
@@ -823,6 +869,31 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(DeleteDomainDto.class),
             f -> f.withMarshaller(DeleteDomainsRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewall =
+        genFordeleteFirewall();
+
+    private static HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> genFordeleteFirewall() {
+        // basic
+        HttpRequestDef.Builder<DeleteFirewallRequest, DeleteFirewallResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFirewallRequest.class, DeleteFirewallResponse.class)
+                .withName("DeleteFirewall")
+                .withUri("/v2/{project_id}/firewall/{resource_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFirewallRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
             }));
 
         // response
@@ -1998,6 +2069,30 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlowLogsRequest::getDstHost, (req, v) -> {
                 req.setDstHost(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobRequest, ListJobResponse> listJob = genForlistJob();
+
+    private static HttpRequestDef<ListJobRequest, ListJobResponse> genForlistJob() {
+        // basic
+        HttpRequestDef.Builder<ListJobRequest, ListJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobRequest.class, ListJobResponse.class)
+                .withName("ListJob")
+                .withUri("/v3/{project_id}/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
             }));
 
         // response

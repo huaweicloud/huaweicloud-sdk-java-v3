@@ -26,6 +26,9 @@ import com.huaweicloud.sdk.bms.v1.model.ChangeBaremetalServerOsResponse;
 import com.huaweicloud.sdk.bms.v1.model.CreateBareMetalServersRequest;
 import com.huaweicloud.sdk.bms.v1.model.CreateBareMetalServersResponse;
 import com.huaweicloud.sdk.bms.v1.model.CreateBaremetalServersBody;
+import com.huaweicloud.sdk.bms.v1.model.DeleteBaremetalBody;
+import com.huaweicloud.sdk.bms.v1.model.DeleteBaremetalServerRequest;
+import com.huaweicloud.sdk.bms.v1.model.DeleteBaremetalServerResponse;
 import com.huaweicloud.sdk.bms.v1.model.DeleteServerNicsReq;
 import com.huaweicloud.sdk.bms.v1.model.DeleteServerNicsRequest;
 import com.huaweicloud.sdk.bms.v1.model.DeleteServerNicsResponse;
@@ -388,6 +391,31 @@ public class BmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateBaremetalServersBody.class),
             f -> f.withMarshaller(CreateBareMetalServersRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> deleteBaremetalServer =
+        genFordeleteBaremetalServer();
+
+    private static HttpRequestDef<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> genFordeleteBaremetalServer() {
+        // basic
+        HttpRequestDef.Builder<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteBaremetalServerRequest.class, DeleteBaremetalServerResponse.class)
+            .withName("DeleteBaremetalServer")
+            .withUri("/v1/{project_id}/baremetalservers/delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DeleteBaremetalBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteBaremetalBody.class),
+            f -> f.withMarshaller(DeleteBaremetalServerRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

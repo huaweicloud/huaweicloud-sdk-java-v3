@@ -818,145 +818,6 @@ public class NatMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> createNatGatewayTag =
-        genForcreateNatGatewayTag();
-
-    private static HttpRequestDef<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> genForcreateNatGatewayTag() {
-        // basic
-        HttpRequestDef.Builder<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateNatGatewayTagRequest.class, CreateNatGatewayTagResponse.class)
-                .withName("CreateNatGatewayTag")
-                .withUri("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("nat_gateway_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
-        builder.<CreateNatTagRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateNatTagRequestBody.class),
-            f -> f.withMarshaller(CreateNatGatewayTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> deleteNatGatewayTag =
-        genFordeleteNatGatewayTag();
-
-    private static HttpRequestDef<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> genFordeleteNatGatewayTag() {
-        // basic
-        HttpRequestDef.Builder<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeleteNatGatewayTagRequest.class, DeleteNatGatewayTagResponse.class)
-            .withName("DeleteNatGatewayTag")
-            .withUri("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/{key}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("nat_gateway_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
-        builder.<String>withRequestField("key",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNatGatewayTagRequest::getKey, (req, v) -> {
-                req.setKey(v);
-            }));
-
-        // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteNatGatewayTagResponse::getBody, (response, data) -> {
-                response.setBody(data);
-            }));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> listNatGatewayByTag =
-        genForlistNatGatewayByTag();
-
-    private static HttpRequestDef<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> genForlistNatGatewayByTag() {
-        // basic
-        HttpRequestDef.Builder<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListNatGatewayByTagRequest.class, ListNatGatewayByTagResponse.class)
-                .withName("ListNatGatewayByTag")
-                .withUri("/v3/{project_id}/nat_gateways/resource_instances/action")
-                .withContentType("application/json");
-
-        // requests
-        builder.<ListNatsByTagsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListNatsByTagsRequestBody.class),
-            f -> f.withMarshaller(ListNatGatewayByTagRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListNatGatewayTagRequest, ListNatGatewayTagResponse> listNatGatewayTag =
-        genForlistNatGatewayTag();
-
-    private static HttpRequestDef<ListNatGatewayTagRequest, ListNatGatewayTagResponse> genForlistNatGatewayTag() {
-        // basic
-        HttpRequestDef.Builder<ListNatGatewayTagRequest, ListNatGatewayTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListNatGatewayTagRequest.class, ListNatGatewayTagResponse.class)
-                .withName("ListNatGatewayTag")
-                .withUri("/v3/{project_id}/nat_gateways/tags")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> showNatGatewayTag =
-        genForshowNatGatewayTag();
-
-    private static HttpRequestDef<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> genForshowNatGatewayTag() {
-        // basic
-        HttpRequestDef.Builder<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowNatGatewayTagRequest.class, ShowNatGatewayTagResponse.class)
-                .withName("ShowNatGatewayTag")
-                .withUri("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("nat_gateway_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
-                req.setNatGatewayId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<BatchCreateDeletePrivateNatTagsRequest, BatchCreateDeletePrivateNatTagsResponse> batchCreateDeletePrivateNatTags =
         genForbatchCreateDeletePrivateNatTags();
 
@@ -1009,6 +870,38 @@ public class NatMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateNatGatewayRequestBody.class),
             f -> f.withMarshaller(CreateNatGatewayRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> createNatGatewayTag =
+        genForcreateNatGatewayTag();
+
+    private static HttpRequestDef<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> genForcreateNatGatewayTag() {
+        // basic
+        HttpRequestDef.Builder<CreateNatGatewayTagRequest, CreateNatGatewayTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNatGatewayTagRequest.class, CreateNatGatewayTagResponse.class)
+                .withName("CreateNatGatewayTag")
+                .withUri("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("nat_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
+                req.setNatGatewayId(v);
+            }));
+        builder.<CreateNatTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateNatTagRequestBody.class),
+            f -> f.withMarshaller(CreateNatGatewayTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1099,6 +992,45 @@ public class NatMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> deleteNatGatewayTag =
+        genFordeleteNatGatewayTag();
+
+    private static HttpRequestDef<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> genFordeleteNatGatewayTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteNatGatewayTagRequest, DeleteNatGatewayTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteNatGatewayTagRequest.class, DeleteNatGatewayTagResponse.class)
+            .withName("DeleteNatGatewayTag")
+            .withUri("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/{key}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("nat_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
+                req.setNatGatewayId(v);
+            }));
+        builder.<String>withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNatGatewayTagRequest::getKey, (req, v) -> {
+                req.setKey(v);
+            }));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteNatGatewayTagResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeletePrivateNatRequest, DeletePrivateNatResponse> deletePrivateNat =
         genFordeletePrivateNat();
 
@@ -1159,6 +1091,49 @@ public class NatMeta {
             f -> f.withMarshaller(DeletePrivateNatTagResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> listNatGatewayByTag =
+        genForlistNatGatewayByTag();
+
+    private static HttpRequestDef<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> genForlistNatGatewayByTag() {
+        // basic
+        HttpRequestDef.Builder<ListNatGatewayByTagRequest, ListNatGatewayByTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListNatGatewayByTagRequest.class, ListNatGatewayByTagResponse.class)
+                .withName("ListNatGatewayByTag")
+                .withUri("/v3/{project_id}/nat_gateways/resource_instances/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListNatsByTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListNatsByTagsRequestBody.class),
+            f -> f.withMarshaller(ListNatGatewayByTagRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNatGatewayTagRequest, ListNatGatewayTagResponse> listNatGatewayTag =
+        genForlistNatGatewayTag();
+
+    private static HttpRequestDef<ListNatGatewayTagRequest, ListNatGatewayTagResponse> genForlistNatGatewayTag() {
+        // basic
+        HttpRequestDef.Builder<ListNatGatewayTagRequest, ListNatGatewayTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNatGatewayTagRequest.class, ListNatGatewayTagResponse.class)
+                .withName("ListNatGatewayTag")
+                .withUri("/v3/{project_id}/nat_gateways/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
 
         return builder.build();
     }
@@ -1413,6 +1388,31 @@ public class NatMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNatGatewayRequest::getNatGatewayId, (req, v) -> {
+                req.setNatGatewayId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> showNatGatewayTag =
+        genForshowNatGatewayTag();
+
+    private static HttpRequestDef<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> genForshowNatGatewayTag() {
+        // basic
+        HttpRequestDef.Builder<ShowNatGatewayTagRequest, ShowNatGatewayTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNatGatewayTagRequest.class, ShowNatGatewayTagResponse.class)
+                .withName("ShowNatGatewayTag")
+                .withUri("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("nat_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNatGatewayTagRequest::getNatGatewayId, (req, v) -> {
                 req.setNatGatewayId(v);
             }));
 

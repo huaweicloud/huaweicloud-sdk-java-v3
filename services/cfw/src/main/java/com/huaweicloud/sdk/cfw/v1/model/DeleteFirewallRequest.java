@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.secmaster.v2.model;
+package com.huaweicloud.sdk.cfw.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,30 +6,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * DataobjectSearchConditionLogics
+ * Request Object
  */
-public class DataobjectSearchConditionLogics {
+public class DeleteFirewallRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "resource_id")
 
-    private String name;
+    private String resourceId;
 
-    public DataobjectSearchConditionLogics withName(String name) {
-        this.name = name;
+    public DeleteFirewallRequest withResourceId(String resourceId) {
+        this.resourceId = resourceId;
         return this;
     }
 
     /**
-     * 表达式名称
-     * @return name
+     * 资源id
+     * @return resourceId
      */
-    public String getName() {
-        return name;
+    public String getResourceId() {
+        return resourceId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
     }
 
     @Override
@@ -40,20 +40,20 @@ public class DataobjectSearchConditionLogics {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataobjectSearchConditionLogics that = (DataobjectSearchConditionLogics) obj;
-        return Objects.equals(this.name, that.name);
+        DeleteFirewallRequest that = (DeleteFirewallRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(resourceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DataobjectSearchConditionLogics {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("class DeleteFirewallRequest {\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

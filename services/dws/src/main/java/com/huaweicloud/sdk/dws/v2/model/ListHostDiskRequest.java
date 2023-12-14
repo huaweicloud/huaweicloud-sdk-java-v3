@@ -16,6 +16,11 @@ public class ListHostDiskRequest {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_name")
 
     private String instanceName;
@@ -45,6 +50,23 @@ public class ListHostDiskRequest {
 
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
+    }
+
+    public ListHostDiskRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例ID。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     public ListHostDiskRequest withInstanceName(String instanceName) {
@@ -107,13 +129,14 @@ public class ListHostDiskRequest {
             return false;
         }
         ListHostDiskRequest that = (ListHostDiskRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.instanceName, that.instanceName)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, instanceName, limit, offset);
+        return Objects.hash(clusterId, instanceId, instanceName, limit, offset);
     }
 
     @Override
@@ -121,6 +144,7 @@ public class ListHostDiskRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHostDiskRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

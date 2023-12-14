@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.lts.v2.model.ChangeAlarmRuleStatus;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigResponse;
+import com.huaweicloud.sdk.lts.v2.model.CreateAgencyAccessRequest;
+import com.huaweicloud.sdk.lts.v2.model.CreateAgencyAccessResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAomMappingRulesResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateDashBoardReqBody;
@@ -97,6 +99,7 @@ import com.huaweicloud.sdk.lts.v2.model.EnableLogCollectionResponse;
 import com.huaweicloud.sdk.lts.v2.model.GetAccessConfigListRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.GetHostGroupListRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.GetHostListRequestBody;
+import com.huaweicloud.sdk.lts.v2.model.LTSAccessConfigInfoRespon200;
 import com.huaweicloud.sdk.lts.v2.model.ListAccessConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListAccessConfigResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListActiveOrHistoryAlarmsRequest;
@@ -149,6 +152,7 @@ import com.huaweicloud.sdk.lts.v2.model.ListTopnTrafficStatisticsResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListTransfersRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListTransfersResponse;
 import com.huaweicloud.sdk.lts.v2.model.LtsStructTemplateInfo;
+import com.huaweicloud.sdk.lts.v2.model.PreviewAgencyLogAccessReqListBody;
 import com.huaweicloud.sdk.lts.v2.model.PreviewTemplateBody;
 import com.huaweicloud.sdk.lts.v2.model.QueryLogKeyWordCountRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.QueryLtsLogParams;
@@ -238,6 +242,38 @@ public class LtsMeta {
             }));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAgencyAccessRequest, CreateAgencyAccessResponse> createAgencyAccess =
+        genForcreateAgencyAccess();
+
+    private static HttpRequestDef<CreateAgencyAccessRequest, CreateAgencyAccessResponse> genForcreateAgencyAccess() {
+        // basic
+        HttpRequestDef.Builder<CreateAgencyAccessRequest, CreateAgencyAccessResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgencyAccessRequest.class, CreateAgencyAccessResponse.class)
+                .withName("CreateAgencyAccess")
+                .withUri("/v2.0/{project_id}/lts/createAgencyAccess")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<PreviewAgencyLogAccessReqListBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PreviewAgencyLogAccessReqListBody.class),
+            f -> f.withMarshaller(CreateAgencyAccessRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+        builder.<List<LTSAccessConfigInfoRespon200>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CreateAgencyAccessResponse::getBody, (response, data) -> {
+                response.setBody(data);
+            }).withInnerContainerType(LTSAccessConfigInfoRespon200.class));
 
         return builder.build();
     }

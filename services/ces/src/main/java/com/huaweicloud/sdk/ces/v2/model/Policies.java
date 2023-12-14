@@ -37,6 +37,11 @@ public class Policies {
     public static final class PeriodEnum {
 
         /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final PeriodEnum NUMBER_0 = new PeriodEnum(0);
+
+        /**
          * Enum NUMBER_1 for value: 1
          */
         public static final PeriodEnum NUMBER_1 = new PeriodEnum(1);
@@ -70,6 +75,7 @@ public class Policies {
 
         private static Map<Integer, PeriodEnum> createStaticFields() {
             Map<Integer, PeriodEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
             map.put(1, NUMBER_1);
             map.put(300, NUMBER_300);
             map.put(1200, NUMBER_1200);
@@ -427,9 +433,9 @@ public class Policies {
     }
 
     /**
-     * 告警连续触发次数，正整数[1, 5]
+     * 告警连续触发次数，事件告警时参数值为1~180（包括1和180）；指标告警和站点告警时，次数采用枚举值，枚举值分别为：1、2、3、4、5、10、15、30、60、90、120、180
      * minimum: 1
-     * maximum: 5
+     * maximum: 180
      * @return count
      */
     public Integer getCount() {

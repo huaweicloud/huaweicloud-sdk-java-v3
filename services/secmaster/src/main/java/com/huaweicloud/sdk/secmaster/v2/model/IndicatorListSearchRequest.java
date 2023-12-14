@@ -31,7 +31,7 @@ public class IndicatorListSearchRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
-    private String condition;
+    private DataobjectSearchCondition condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
@@ -125,20 +125,29 @@ public class IndicatorListSearchRequest {
         this.dataclassId = dataclassId;
     }
 
-    public IndicatorListSearchRequest withCondition(String condition) {
+    public IndicatorListSearchRequest withCondition(DataobjectSearchCondition condition) {
         this.condition = condition;
         return this;
     }
 
+    public IndicatorListSearchRequest withCondition(Consumer<DataobjectSearchCondition> conditionSetter) {
+        if (this.condition == null) {
+            this.condition = new DataobjectSearchCondition();
+            conditionSetter.accept(this.condition);
+        }
+
+        return this;
+    }
+
     /**
-     * 查询条件
+     * Get condition
      * @return condition
      */
-    public String getCondition() {
+    public DataobjectSearchCondition getCondition() {
         return condition;
     }
 
-    public void setCondition(String condition) {
+    public void setCondition(DataobjectSearchCondition condition) {
         this.condition = condition;
     }
 

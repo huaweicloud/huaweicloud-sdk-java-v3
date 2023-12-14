@@ -113,6 +113,11 @@ public class RestScheduleConfDTO {
 
     private Integer concurrentParticipants;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supportSimultaneousInterpretation")
+
+    private Boolean supportSimultaneousInterpretation;
+
     public RestScheduleConfDTO withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -501,6 +506,23 @@ public class RestScheduleConfDTO {
         this.concurrentParticipants = concurrentParticipants;
     }
 
+    public RestScheduleConfDTO withSupportSimultaneousInterpretation(Boolean supportSimultaneousInterpretation) {
+        this.supportSimultaneousInterpretation = supportSimultaneousInterpretation;
+        return this;
+    }
+
+    /**
+     * 会议是否支持同声传译。默认值false。 * true:支持 * false:不支持 
+     * @return supportSimultaneousInterpretation
+     */
+    public Boolean getSupportSimultaneousInterpretation() {
+        return supportSimultaneousInterpretation;
+    }
+
+    public void setSupportSimultaneousInterpretation(Boolean supportSimultaneousInterpretation) {
+        this.supportSimultaneousInterpretation = supportSimultaneousInterpretation;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -521,7 +543,8 @@ public class RestScheduleConfDTO {
             && Objects.equals(this.confConfigInfo, that.confConfigInfo)
             && Objects.equals(this.recordAuthType, that.recordAuthType) && Objects.equals(this.vmrFlag, that.vmrFlag)
             && Objects.equals(this.cycleParams, that.cycleParams) && Objects.equals(this.vmrID, that.vmrID)
-            && Objects.equals(this.concurrentParticipants, that.concurrentParticipants);
+            && Objects.equals(this.concurrentParticipants, that.concurrentParticipants)
+            && Objects.equals(this.supportSimultaneousInterpretation, that.supportSimultaneousInterpretation);
     }
 
     @Override
@@ -545,7 +568,8 @@ public class RestScheduleConfDTO {
             vmrFlag,
             cycleParams,
             vmrID,
-            concurrentParticipants);
+            concurrentParticipants,
+            supportSimultaneousInterpretation);
     }
 
     @Override
@@ -572,6 +596,9 @@ public class RestScheduleConfDTO {
         sb.append("    cycleParams: ").append(toIndentedString(cycleParams)).append("\n");
         sb.append("    vmrID: ").append(toIndentedString(vmrID)).append("\n");
         sb.append("    concurrentParticipants: ").append(toIndentedString(concurrentParticipants)).append("\n");
+        sb.append("    supportSimultaneousInterpretation: ")
+            .append(toIndentedString(supportSimultaneousInterpretation))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

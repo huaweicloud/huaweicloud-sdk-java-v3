@@ -21,7 +21,7 @@ public class DataobjectSearchConditionConditions {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<DataobjectSearchConditionData> data = null;
+    private List<String> data = null;
 
     public DataobjectSearchConditionConditions withName(String name) {
         this.name = name;
@@ -40,12 +40,12 @@ public class DataobjectSearchConditionConditions {
         this.name = name;
     }
 
-    public DataobjectSearchConditionConditions withData(List<DataobjectSearchConditionData> data) {
+    public DataobjectSearchConditionConditions withData(List<String> data) {
         this.data = data;
         return this;
     }
 
-    public DataobjectSearchConditionConditions addDataItem(DataobjectSearchConditionData dataItem) {
+    public DataobjectSearchConditionConditions addDataItem(String dataItem) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class DataobjectSearchConditionConditions {
         return this;
     }
 
-    public DataobjectSearchConditionConditions withData(Consumer<List<DataobjectSearchConditionData>> dataSetter) {
+    public DataobjectSearchConditionConditions withData(Consumer<List<String>> dataSetter) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -62,14 +62,14 @@ public class DataobjectSearchConditionConditions {
     }
 
     /**
-     * 表达式内容
+     * 表达式内容列表
      * @return data
      */
-    public List<DataobjectSearchConditionData> getData() {
+    public List<String> getData() {
         return data;
     }
 
-    public void setData(List<DataobjectSearchConditionData> data) {
+    public void setData(List<String> data) {
         this.data = data;
     }
 

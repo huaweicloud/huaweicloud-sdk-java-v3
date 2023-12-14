@@ -1,12 +1,9 @@
 package com.huaweicloud.sdk.cae.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -124,6 +121,46 @@ public class ConfigurationDataSpec {
     private List<String> logPaths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instrumentation")
+
+    private String instrumentation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apm_application")
+
+    private String apmApplication;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_name")
+
+    private String appName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_name")
+
+    private String instanceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "env_name")
+
+    private String envName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_pull_policy")
+
+    private String imagePullPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_key")
 
     private String accessKey;
@@ -137,86 +174,6 @@ public class ConfigurationDataSpec {
     @JsonProperty(value = "business")
 
     private String business;
-
-    /**
-     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置升级策略。 - 重启自动升级：每次都尝试重新下载镜像。 - 手动升级: 如果本地有该镜像，则继续使用本地镜像，不下载镜像。
-     */
-    public static final class ImagePullPolicyEnum {
-
-        /**
-         * Enum ALWAYS for value: "Always"
-         */
-        public static final ImagePullPolicyEnum ALWAYS = new ImagePullPolicyEnum("Always");
-
-        /**
-         * Enum IFNOTPRESENT for value: "IfNotPresent"
-         */
-        public static final ImagePullPolicyEnum IFNOTPRESENT = new ImagePullPolicyEnum("IfNotPresent");
-
-        private static final Map<String, ImagePullPolicyEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ImagePullPolicyEnum> createStaticFields() {
-            Map<String, ImagePullPolicyEnum> map = new HashMap<>();
-            map.put("Always", ALWAYS);
-            map.put("IfNotPresent", IFNOTPRESENT);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ImagePullPolicyEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ImagePullPolicyEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImagePullPolicyEnum(value));
-        }
-
-        public static ImagePullPolicyEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ImagePullPolicyEnum) {
-                return this.value.equals(((ImagePullPolicyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "image_pull_policy")
-
-    private ImagePullPolicyEnum imagePullPolicy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
-
-    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "path")
@@ -717,13 +674,149 @@ public class ConfigurationDataSpec {
         this.logPaths = logPaths;
     }
 
+    public ConfigurationDataSpec withInstrumentation(String instrumentation) {
+        this.instrumentation = instrumentation;
+        return this;
+    }
+
+    /**
+     * - type为\"apm2\"时，配置此参数。 - 参数含义：探针注入方式。
+     * @return instrumentation
+     */
+    public String getInstrumentation() {
+        return instrumentation;
+    }
+
+    public void setInstrumentation(String instrumentation) {
+        this.instrumentation = instrumentation;
+    }
+
+    public ConfigurationDataSpec withApmApplication(String apmApplication) {
+        this.apmApplication = apmApplication;
+        return this;
+    }
+
+    /**
+     * - 参数含义：type为\"apm2\"时，性能管理配置应用。
+     * @return apmApplication
+     */
+    public String getApmApplication() {
+        return apmApplication;
+    }
+
+    public void setApmApplication(String apmApplication) {
+        this.apmApplication = apmApplication;
+    }
+
+    public ConfigurationDataSpec withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * - 参数含义：type为\"apm2\"时，监控系统类别，包括apm2和opentelemetry。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public ConfigurationDataSpec withAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+
+    /**
+     * - 参数含义：type为\"apm2\"时，apm2组件。
+     * @return appName
+     */
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    public ConfigurationDataSpec withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+        return this;
+    }
+
+    /**
+     * - 参数含义：type为\"apm2\"时，apm2实例。
+     * @return instanceName
+     */
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
+
+    public ConfigurationDataSpec withEnvName(String envName) {
+        this.envName = envName;
+        return this;
+    }
+
+    /**
+     * - 参数含义：type为\"apm2\"时，apm2环境。
+     * @return envName
+     */
+    public String getEnvName() {
+        return envName;
+    }
+
+    public void setEnvName(String envName) {
+        this.envName = envName;
+    }
+
+    public ConfigurationDataSpec withImagePullPolicy(String imagePullPolicy) {
+        this.imagePullPolicy = imagePullPolicy;
+        return this;
+    }
+
+    /**
+     * - 参数含义：已废弃，迁移到监控系统，type为\"apm2\"时，性能管理配置升级策略。 - Always，重启自动升级：每次都尝试重新下载镜像。 - IfNotPresent，手动升级: 如果本地有该镜像，则继续使用本地镜像，不下载镜像。
+     * @return imagePullPolicy
+     */
+    public String getImagePullPolicy() {
+        return imagePullPolicy;
+    }
+
+    public void setImagePullPolicy(String imagePullPolicy) {
+        this.imagePullPolicy = imagePullPolicy;
+    }
+
+    public ConfigurationDataSpec withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * - type为\"apm2\"时，配置此参数。 - 参数含义：已废弃，迁移到监控系统，type为\"apm2\"时，性能管理配置探针版本。
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     public ConfigurationDataSpec withAccessKey(String accessKey) {
         this.accessKey = accessKey;
         return this;
     }
 
     /**
-     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置访问密钥Key。
+     * - 参数含义：已废弃，迁移到监控系统，type为\"apm2\"时，性能管理配置访问密钥Key。
      * @return accessKey
      */
     public String getAccessKey() {
@@ -740,7 +833,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置访问密钥value。
+     * - 参数含义：已废弃，迁移到监控系统，type为\"apm2\"时，性能管理配置访问密钥value。
      * @return accessValue
      */
     public String getAccessValue() {
@@ -757,7 +850,7 @@ public class ConfigurationDataSpec {
     }
 
     /**
-     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置应用。
+     * - 参数含义：已废弃，type为\"apm2\"时，性能管理配置应用，同apm_application。
      * @return business
      */
     public String getBusiness() {
@@ -766,40 +859,6 @@ public class ConfigurationDataSpec {
 
     public void setBusiness(String business) {
         this.business = business;
-    }
-
-    public ConfigurationDataSpec withImagePullPolicy(ImagePullPolicyEnum imagePullPolicy) {
-        this.imagePullPolicy = imagePullPolicy;
-        return this;
-    }
-
-    /**
-     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置升级策略。 - 重启自动升级：每次都尝试重新下载镜像。 - 手动升级: 如果本地有该镜像，则继续使用本地镜像，不下载镜像。
-     * @return imagePullPolicy
-     */
-    public ImagePullPolicyEnum getImagePullPolicy() {
-        return imagePullPolicy;
-    }
-
-    public void setImagePullPolicy(ImagePullPolicyEnum imagePullPolicy) {
-        this.imagePullPolicy = imagePullPolicy;
-    }
-
-    public ConfigurationDataSpec withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    /**
-     * - type为\"apm2\"时，配置此参数。 - 参数含义：性能管理配置探针版本。
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
     }
 
     public ConfigurationDataSpec withPath(String path) {
@@ -890,9 +949,13 @@ public class ConfigurationDataSpec {
             && Objects.equals(this.startupProbe, that.startupProbe)
             && Objects.equals(this.readinessProbe, that.readinessProbe)
             && Objects.equals(this.postStart, that.postStart) && Objects.equals(this.preStop, that.preStop)
-            && Objects.equals(this.logPaths, that.logPaths) && Objects.equals(this.accessKey, that.accessKey)
+            && Objects.equals(this.logPaths, that.logPaths)
+            && Objects.equals(this.instrumentation, that.instrumentation)
+            && Objects.equals(this.apmApplication, that.apmApplication) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.envName, that.envName) && Objects.equals(this.imagePullPolicy, that.imagePullPolicy)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.accessKey, that.accessKey)
             && Objects.equals(this.accessValue, that.accessValue) && Objects.equals(this.business, that.business)
-            && Objects.equals(this.imagePullPolicy, that.imagePullPolicy) && Objects.equals(this.version, that.version)
             && Objects.equals(this.path, that.path) && Objects.equals(this.port, that.port)
             && Objects.equals(this.metrics, that.metrics);
     }
@@ -920,11 +983,17 @@ public class ConfigurationDataSpec {
             postStart,
             preStop,
             logPaths,
+            instrumentation,
+            apmApplication,
+            type,
+            appName,
+            instanceName,
+            envName,
+            imagePullPolicy,
+            version,
             accessKey,
             accessValue,
             business,
-            imagePullPolicy,
-            version,
             path,
             port,
             metrics);
@@ -955,11 +1024,17 @@ public class ConfigurationDataSpec {
         sb.append("    postStart: ").append(toIndentedString(postStart)).append("\n");
         sb.append("    preStop: ").append(toIndentedString(preStop)).append("\n");
         sb.append("    logPaths: ").append(toIndentedString(logPaths)).append("\n");
+        sb.append("    instrumentation: ").append(toIndentedString(instrumentation)).append("\n");
+        sb.append("    apmApplication: ").append(toIndentedString(apmApplication)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
+        sb.append("    envName: ").append(toIndentedString(envName)).append("\n");
+        sb.append("    imagePullPolicy: ").append(toIndentedString(imagePullPolicy)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    accessKey: ").append(toIndentedString(accessKey)).append("\n");
         sb.append("    accessValue: ").append(toIndentedString(accessValue)).append("\n");
         sb.append("    business: ").append(toIndentedString(business)).append("\n");
-        sb.append("    imagePullPolicy: ").append(toIndentedString(imagePullPolicy)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");

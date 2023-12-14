@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.cae.v1.model.CreateDomainResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentRequestBody;
 import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleResponse;
@@ -72,6 +74,7 @@ import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesResponse;
+import com.huaweicloud.sdk.cae.v1.model.MonitorSystemRequestBody;
 import com.huaweicloud.sdk.cae.v1.model.RetryJobRequest;
 import com.huaweicloud.sdk.cae.v1.model.RetryJobResponse;
 import com.huaweicloud.sdk.cae.v1.model.ShowApplicationRequest;
@@ -82,6 +85,8 @@ import com.huaweicloud.sdk.cae.v1.model.ShowExecutionResultRequest;
 import com.huaweicloud.sdk.cae.v1.model.ShowExecutionResultResponse;
 import com.huaweicloud.sdk.cae.v1.model.ShowJobRequest;
 import com.huaweicloud.sdk.cae.v1.model.ShowJobResponse;
+import com.huaweicloud.sdk.cae.v1.model.ShowMonitorSystemRequest;
+import com.huaweicloud.sdk.cae.v1.model.ShowMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertReq;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateResponse;
@@ -91,6 +96,8 @@ import com.huaweicloud.sdk.cae.v1.model.UpdateComponentResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateEipRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateEipRequestBody;
 import com.huaweicloud.sdk.cae.v1.model.UpdateEipResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
@@ -1372,6 +1379,123 @@ public class CaeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobRequest::getXEnvironmentID, (req, v) -> {
                 req.setXEnvironmentID(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMonitorSystemRequest, CreateMonitorSystemResponse> createMonitorSystem =
+        genForcreateMonitorSystem();
+
+    private static HttpRequestDef<CreateMonitorSystemRequest, CreateMonitorSystemResponse> genForcreateMonitorSystem() {
+        // basic
+        HttpRequestDef.Builder<CreateMonitorSystemRequest, CreateMonitorSystemResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMonitorSystemRequest.class, CreateMonitorSystemResponse.class)
+                .withName("CreateMonitorSystem")
+                .withUri("/v1/{project_id}/cae/monitor-system")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMonitorSystemRequest::getXEnterpriseProjectID, (req, v) -> {
+                req.setXEnterpriseProjectID(v);
+            }));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMonitorSystemRequest::getXEnvironmentID, (req, v) -> {
+                req.setXEnvironmentID(v);
+            }));
+        builder.<MonitorSystemRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MonitorSystemRequestBody.class),
+            f -> f.withMarshaller(CreateMonitorSystemRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMonitorSystemRequest, ShowMonitorSystemResponse> showMonitorSystem =
+        genForshowMonitorSystem();
+
+    private static HttpRequestDef<ShowMonitorSystemRequest, ShowMonitorSystemResponse> genForshowMonitorSystem() {
+        // basic
+        HttpRequestDef.Builder<ShowMonitorSystemRequest, ShowMonitorSystemResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMonitorSystemRequest.class, ShowMonitorSystemResponse.class)
+                .withName("ShowMonitorSystem")
+                .withUri("/v1/{project_id}/cae/monitor-system")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMonitorSystemRequest::getXEnterpriseProjectID, (req, v) -> {
+                req.setXEnterpriseProjectID(v);
+            }));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMonitorSystemRequest::getXEnvironmentID, (req, v) -> {
+                req.setXEnvironmentID(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse> updateMonitorSystem =
+        genForupdateMonitorSystem();
+
+    private static HttpRequestDef<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse> genForupdateMonitorSystem() {
+        // basic
+        HttpRequestDef.Builder<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateMonitorSystemRequest.class, UpdateMonitorSystemResponse.class)
+                .withName("UpdateMonitorSystem")
+                .withUri("/v1/{project_id}/cae/monitor-system/{monitor_system_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("monitor_system_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMonitorSystemRequest::getMonitorSystemId, (req, v) -> {
+                req.setMonitorSystemId(v);
+            }));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMonitorSystemRequest::getXEnterpriseProjectID, (req, v) -> {
+                req.setXEnterpriseProjectID(v);
+            }));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMonitorSystemRequest::getXEnvironmentID, (req, v) -> {
+                req.setXEnvironmentID(v);
+            }));
+        builder.<MonitorSystemRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MonitorSystemRequestBody.class),
+            f -> f.withMarshaller(UpdateMonitorSystemRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

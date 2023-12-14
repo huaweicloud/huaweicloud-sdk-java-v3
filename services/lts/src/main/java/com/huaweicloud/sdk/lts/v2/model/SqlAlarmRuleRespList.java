@@ -24,6 +24,11 @@ public class SqlAlarmRuleRespList {
     private String sqlAlarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_css_sql")
+
+    private Boolean isCssSql;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql_alarm_rule_id")
 
     private String sqlAlarmRuleId;
@@ -41,7 +46,7 @@ public class SqlAlarmRuleRespList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "frequency")
 
-    private Frequency frequency;
+    private FrequencyRespBody frequency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition_expression")
@@ -166,26 +171,26 @@ public class SqlAlarmRuleRespList {
     private String templateName;
 
     /**
-     * Gets or Sets status
+     * 告警状态
      */
     public static final class StatusEnum {
 
         /**
-         * Enum RUNNING for value: "RUNNING"
+         * Enum RUNNING_ for value: "RUNNING 启用"
          */
-        public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
+        public static final StatusEnum RUNNING_ = new StatusEnum("RUNNING 启用");
 
         /**
-         * Enum STOPPING for value: "STOPPING"
+         * Enum STOPPING_ for value: "STOPPING 停止"
          */
-        public static final StatusEnum STOPPING = new StatusEnum("STOPPING");
+        public static final StatusEnum STOPPING_ = new StatusEnum("STOPPING 停止");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("RUNNING", RUNNING);
-            map.put("STOPPING", STOPPING);
+            map.put("RUNNING 启用", RUNNING_);
+            map.put("STOPPING 停止", STOPPING_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -260,6 +265,122 @@ public class SqlAlarmRuleRespList {
 
     private Integer recoveryPolicy;
 
+    /**
+     * 通知频率,单位(分钟)
+     */
+    public static final class NotificationFrequencyEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final NotificationFrequencyEnum NUMBER_0 = new NotificationFrequencyEnum(0);
+
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
+        public static final NotificationFrequencyEnum NUMBER_5 = new NotificationFrequencyEnum(5);
+
+        /**
+         * Enum NUMBER_10 for value: 10
+         */
+        public static final NotificationFrequencyEnum NUMBER_10 = new NotificationFrequencyEnum(10);
+
+        /**
+         * Enum NUMBER_15 for value: 15
+         */
+        public static final NotificationFrequencyEnum NUMBER_15 = new NotificationFrequencyEnum(15);
+
+        /**
+         * Enum NUMBER_30 for value: 30
+         */
+        public static final NotificationFrequencyEnum NUMBER_30 = new NotificationFrequencyEnum(30);
+
+        /**
+         * Enum NUMBER_60 for value: 60
+         */
+        public static final NotificationFrequencyEnum NUMBER_60 = new NotificationFrequencyEnum(60);
+
+        /**
+         * Enum NUMBER_180 for value: 180
+         */
+        public static final NotificationFrequencyEnum NUMBER_180 = new NotificationFrequencyEnum(180);
+
+        /**
+         * Enum NUMBER_360 for value: 360
+         */
+        public static final NotificationFrequencyEnum NUMBER_360 = new NotificationFrequencyEnum(360);
+
+        private static final Map<Integer, NotificationFrequencyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, NotificationFrequencyEnum> createStaticFields() {
+            Map<Integer, NotificationFrequencyEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(5, NUMBER_5);
+            map.put(10, NUMBER_10);
+            map.put(15, NUMBER_15);
+            map.put(30, NUMBER_30);
+            map.put(60, NUMBER_60);
+            map.put(180, NUMBER_180);
+            map.put(360, NUMBER_360);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        NotificationFrequencyEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static NotificationFrequencyEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotificationFrequencyEnum(value));
+        }
+
+        public static NotificationFrequencyEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof NotificationFrequencyEnum) {
+                return this.value.equals(((NotificationFrequencyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "notification_frequency")
+
+    private NotificationFrequencyEnum notificationFrequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_action_rule_name")
+
+    private String alarmActionRuleName;
+
     public SqlAlarmRuleRespList withSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
         return this;
@@ -275,6 +396,23 @@ public class SqlAlarmRuleRespList {
 
     public void setSqlAlarmRuleName(String sqlAlarmRuleName) {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
+    }
+
+    public SqlAlarmRuleRespList withIsCssSql(Boolean isCssSql) {
+        this.isCssSql = isCssSql;
+        return this;
+    }
+
+    /**
+     * 是否管道符sql查询
+     * @return isCssSql
+     */
+    public Boolean getIsCssSql() {
+        return isCssSql;
+    }
+
+    public void setIsCssSql(Boolean isCssSql) {
+        this.isCssSql = isCssSql;
     }
 
     public SqlAlarmRuleRespList withSqlAlarmRuleId(String sqlAlarmRuleId) {
@@ -344,14 +482,14 @@ public class SqlAlarmRuleRespList {
         this.sqlRequests = sqlRequests;
     }
 
-    public SqlAlarmRuleRespList withFrequency(Frequency frequency) {
+    public SqlAlarmRuleRespList withFrequency(FrequencyRespBody frequency) {
         this.frequency = frequency;
         return this;
     }
 
-    public SqlAlarmRuleRespList withFrequency(Consumer<Frequency> frequencySetter) {
+    public SqlAlarmRuleRespList withFrequency(Consumer<FrequencyRespBody> frequencySetter) {
         if (this.frequency == null) {
-            this.frequency = new Frequency();
+            this.frequency = new FrequencyRespBody();
             frequencySetter.accept(this.frequency);
         }
 
@@ -362,11 +500,11 @@ public class SqlAlarmRuleRespList {
      * Get frequency
      * @return frequency
      */
-    public Frequency getFrequency() {
+    public FrequencyRespBody getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(Frequency frequency) {
+    public void setFrequency(FrequencyRespBody frequency) {
         this.frequency = frequency;
     }
 
@@ -477,7 +615,9 @@ public class SqlAlarmRuleRespList {
     }
 
     /**
-     * 创建时间(毫秒时间戳)
+     * 创建时间（毫秒时间戳）
+     * minimum: 13
+     * maximum: 13
      * @return createTime
      */
     public Long getCreateTime() {
@@ -494,7 +634,9 @@ public class SqlAlarmRuleRespList {
     }
 
     /**
-     * 更新时间(毫秒时间戳)
+     * 更新时间（毫秒时间戳）
+     * minimum: 13
+     * maximum: 13
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -511,7 +653,7 @@ public class SqlAlarmRuleRespList {
     }
 
     /**
-     * Get templateName
+     * 消息模板名称
      * @return templateName
      */
     public String getTemplateName() {
@@ -528,7 +670,7 @@ public class SqlAlarmRuleRespList {
     }
 
     /**
-     * Get status
+     * 告警状态
      * @return status
      */
     public StatusEnum getStatus() {
@@ -545,7 +687,7 @@ public class SqlAlarmRuleRespList {
     }
 
     /**
-     * 触发条件：触发次数;默认为1
+     * 触发条件：触发周期;默认为1
      * @return triggerConditionCount
      */
     public Integer getTriggerConditionCount() {
@@ -607,6 +749,40 @@ public class SqlAlarmRuleRespList {
         this.recoveryPolicy = recoveryPolicy;
     }
 
+    public SqlAlarmRuleRespList withNotificationFrequency(NotificationFrequencyEnum notificationFrequency) {
+        this.notificationFrequency = notificationFrequency;
+        return this;
+    }
+
+    /**
+     * 通知频率,单位(分钟)
+     * @return notificationFrequency
+     */
+    public NotificationFrequencyEnum getNotificationFrequency() {
+        return notificationFrequency;
+    }
+
+    public void setNotificationFrequency(NotificationFrequencyEnum notificationFrequency) {
+        this.notificationFrequency = notificationFrequency;
+    }
+
+    public SqlAlarmRuleRespList withAlarmActionRuleName(String alarmActionRuleName) {
+        this.alarmActionRuleName = alarmActionRuleName;
+        return this;
+    }
+
+    /**
+     * 告警行动规则名称 >alarm_action_rule_name和notification_save_rule可以选填一个，如果都填，优先选择alarm_action_rule_name
+     * @return alarmActionRuleName
+     */
+    public String getAlarmActionRuleName() {
+        return alarmActionRuleName;
+    }
+
+    public void setAlarmActionRuleName(String alarmActionRuleName) {
+        this.alarmActionRuleName = alarmActionRuleName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -617,7 +793,7 @@ public class SqlAlarmRuleRespList {
         }
         SqlAlarmRuleRespList that = (SqlAlarmRuleRespList) obj;
         return Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
-            && Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId)
+            && Objects.equals(this.isCssSql, that.isCssSql) && Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId)
             && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
             && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
@@ -628,12 +804,15 @@ public class SqlAlarmRuleRespList {
             && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
             && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
             && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
-            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy);
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy)
+            && Objects.equals(this.notificationFrequency, that.notificationFrequency)
+            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(sqlAlarmRuleName,
+            isCssSql,
             sqlAlarmRuleId,
             sqlAlarmRuleDescription,
             sqlRequests,
@@ -650,7 +829,9 @@ public class SqlAlarmRuleRespList {
             triggerConditionCount,
             triggerConditionFrequency,
             whetherRecoveryPolicy,
-            recoveryPolicy);
+            recoveryPolicy,
+            notificationFrequency,
+            alarmActionRuleName);
     }
 
     @Override
@@ -658,6 +839,7 @@ public class SqlAlarmRuleRespList {
         StringBuilder sb = new StringBuilder();
         sb.append("class SqlAlarmRuleRespList {\n");
         sb.append("    sqlAlarmRuleName: ").append(toIndentedString(sqlAlarmRuleName)).append("\n");
+        sb.append("    isCssSql: ").append(toIndentedString(isCssSql)).append("\n");
         sb.append("    sqlAlarmRuleId: ").append(toIndentedString(sqlAlarmRuleId)).append("\n");
         sb.append("    sqlAlarmRuleDescription: ").append(toIndentedString(sqlAlarmRuleDescription)).append("\n");
         sb.append("    sqlRequests: ").append(toIndentedString(sqlRequests)).append("\n");
@@ -675,6 +857,8 @@ public class SqlAlarmRuleRespList {
         sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
         sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
         sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
+        sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
+        sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

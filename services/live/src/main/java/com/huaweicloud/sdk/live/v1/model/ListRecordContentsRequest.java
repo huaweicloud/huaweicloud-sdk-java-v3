@@ -31,7 +31,7 @@ public class ListRecordContentsRequest {
     private String stream;
 
     /**
-     * 录制类型，包括：CONTINUOUS_RECORD，COMMAND_RECORD，PLAN_RECORD，ON_DEMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 - PLAN_RECORD：计划录制，在该规则类型配置后，推的流如果在计划录制的时间区间则触发录制。 - ON_DEMAND_RECORD：按需录制，在该规则类型配置后，录制系统收到推流后，需要调用租户提供的接口查询录制规则，并根据规则录制。 
+     * 录制类型，包括：CONTINUOUS_RECORD，COMMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 
      */
     public static final class RecordTypeEnum {
 
@@ -45,24 +45,12 @@ public class ListRecordContentsRequest {
          */
         public static final RecordTypeEnum COMMAND_RECORD = new RecordTypeEnum("COMMAND_RECORD");
 
-        /**
-         * Enum PLAN_RECORD for value: "PLAN_RECORD"
-         */
-        public static final RecordTypeEnum PLAN_RECORD = new RecordTypeEnum("PLAN_RECORD");
-
-        /**
-         * Enum ON_DEMAND_RECORD for value: "ON_DEMAND_RECORD"
-         */
-        public static final RecordTypeEnum ON_DEMAND_RECORD = new RecordTypeEnum("ON_DEMAND_RECORD");
-
         private static final Map<String, RecordTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RecordTypeEnum> createStaticFields() {
             Map<String, RecordTypeEnum> map = new HashMap<>();
             map.put("CONTINUOUS_RECORD", CONTINUOUS_RECORD);
             map.put("COMMAND_RECORD", COMMAND_RECORD);
-            map.put("PLAN_RECORD", PLAN_RECORD);
-            map.put("ON_DEMAND_RECORD", ON_DEMAND_RECORD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -143,7 +131,7 @@ public class ListRecordContentsRequest {
     }
 
     /**
-     * 直播推流放域名
+     * 直播推流域名
      * @return publishDomain
      */
     public String getPublishDomain() {
@@ -194,7 +182,7 @@ public class ListRecordContentsRequest {
     }
 
     /**
-     * 录制类型，包括：CONTINUOUS_RECORD，COMMAND_RECORD，PLAN_RECORD，ON_DEMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 - PLAN_RECORD：计划录制，在该规则类型配置后，推的流如果在计划录制的时间区间则触发录制。 - ON_DEMAND_RECORD：按需录制，在该规则类型配置后，录制系统收到推流后，需要调用租户提供的接口查询录制规则，并根据规则录制。 
+     * 录制类型，包括：CONTINUOUS_RECORD，COMMAND_RECORD。默认CONTINUOUS_RECORD。 - CONTINUOUS_RECORD：持续录制，在该规则类型配置后，只要有流到推送到录制系统，就触发录制。 - COMMAND_RECORD：命令录制，在该规则类型配置后，在流推送到录制系统后，租户需要通过命令控制该流的录制开始和结束。 
      * @return recordType
      */
     public RecordTypeEnum getRecordType() {

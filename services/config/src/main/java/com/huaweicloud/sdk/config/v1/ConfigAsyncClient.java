@@ -4,8 +4,12 @@ import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesRequest;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesResponse;
+import com.huaweicloud.sdk.config.v1.model.CountTrackedResourcesRequest;
+import com.huaweicloud.sdk.config.v1.model.CountTrackedResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationRequest;
 import com.huaweicloud.sdk.config.v1.model.CreateAggregationAuthorizationResponse;
 import com.huaweicloud.sdk.config.v1.model.CreateConfigurationAggregatorRequest;
@@ -94,6 +98,10 @@ import com.huaweicloud.sdk.config.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.config.v1.model.ListSchemasResponse;
 import com.huaweicloud.sdk.config.v1.model.ListStoredQueriesRequest;
 import com.huaweicloud.sdk.config.v1.model.ListStoredQueriesResponse;
+import com.huaweicloud.sdk.config.v1.model.ListTrackedResourceTagsRequest;
+import com.huaweicloud.sdk.config.v1.model.ListTrackedResourceTagsResponse;
+import com.huaweicloud.sdk.config.v1.model.ListTrackedResourcesRequest;
+import com.huaweicloud.sdk.config.v1.model.ListTrackedResourcesResponse;
 import com.huaweicloud.sdk.config.v1.model.RunAggregateResourceQueryRequest;
 import com.huaweicloud.sdk.config.v1.model.RunAggregateResourceQueryResponse;
 import com.huaweicloud.sdk.config.v1.model.RunEvaluationByPolicyAssignmentIdRequest;
@@ -146,6 +154,8 @@ import com.huaweicloud.sdk.config.v1.model.ShowResourceRelationsRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowResourceRelationsResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowStoredQueryRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowStoredQueryResponse;
+import com.huaweicloud.sdk.config.v1.model.ShowTrackedResourceDetailRequest;
+import com.huaweicloud.sdk.config.v1.model.ShowTrackedResourceDetailResponse;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigRequest;
 import com.huaweicloud.sdk.config.v1.model.ShowTrackerConfigResponse;
 import com.huaweicloud.sdk.config.v1.model.UpdateConfigurationAggregatorRequest;
@@ -2268,6 +2278,37 @@ public class ConfigAsyncClient {
     }
 
     /**
+     * 列举资源记录器收集的资源概要
+     *
+     * 查询当前用户资源记录器收集的资源概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectTrackedResourcesSummaryRequest 请求对象
+     * @return CompletableFuture<CollectTrackedResourcesSummaryResponse>
+     */
+    public CompletableFuture<CollectTrackedResourcesSummaryResponse> collectTrackedResourcesSummaryAsync(
+        CollectTrackedResourcesSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.collectTrackedResourcesSummary);
+    }
+
+    /**
+     * 列举资源记录器收集的资源概要
+     *
+     * 查询当前用户资源记录器收集的资源概览。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CollectTrackedResourcesSummaryRequest 请求对象
+     * @return AsyncInvoker<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse>
+     */
+    public AsyncInvoker<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse> collectTrackedResourcesSummaryAsyncInvoker(
+        CollectTrackedResourcesSummaryRequest request) {
+        return new AsyncInvoker<CollectTrackedResourcesSummaryRequest, CollectTrackedResourcesSummaryResponse>(request,
+            ConfigMeta.collectTrackedResourcesSummary, hcClient);
+    }
+
+    /**
      * 查询资源数量
      *
      * 查询当前帐号的资源数量。
@@ -2295,6 +2336,37 @@ public class ConfigAsyncClient {
         CountAllResourcesRequest request) {
         return new AsyncInvoker<CountAllResourcesRequest, CountAllResourcesResponse>(request,
             ConfigMeta.countAllResources, hcClient);
+    }
+
+    /**
+     * 查询资源记录器收集的资源数量
+     *
+     * 查询当前用户资源记录器收集的资源数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountTrackedResourcesRequest 请求对象
+     * @return CompletableFuture<CountTrackedResourcesResponse>
+     */
+    public CompletableFuture<CountTrackedResourcesResponse> countTrackedResourcesAsync(
+        CountTrackedResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.countTrackedResources);
+    }
+
+    /**
+     * 查询资源记录器收集的资源数量
+     *
+     * 查询当前用户资源记录器收集的资源数量。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CountTrackedResourcesRequest 请求对象
+     * @return AsyncInvoker<CountTrackedResourcesRequest, CountTrackedResourcesResponse>
+     */
+    public AsyncInvoker<CountTrackedResourcesRequest, CountTrackedResourcesResponse> countTrackedResourcesAsyncInvoker(
+        CountTrackedResourcesRequest request) {
+        return new AsyncInvoker<CountTrackedResourcesRequest, CountTrackedResourcesResponse>(request,
+            ConfigMeta.countTrackedResources, hcClient);
     }
 
     /**
@@ -2416,6 +2488,68 @@ public class ConfigAsyncClient {
     }
 
     /**
+     * 列举资源记录器收集的资源标签
+     *
+     * 查询当前用户资源记录器收集的资源的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrackedResourceTagsRequest 请求对象
+     * @return CompletableFuture<ListTrackedResourceTagsResponse>
+     */
+    public CompletableFuture<ListTrackedResourceTagsResponse> listTrackedResourceTagsAsync(
+        ListTrackedResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listTrackedResourceTags);
+    }
+
+    /**
+     * 列举资源记录器收集的资源标签
+     *
+     * 查询当前用户资源记录器收集的资源的标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrackedResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse>
+     */
+    public AsyncInvoker<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse> listTrackedResourceTagsAsyncInvoker(
+        ListTrackedResourceTagsRequest request) {
+        return new AsyncInvoker<ListTrackedResourceTagsRequest, ListTrackedResourceTagsResponse>(request,
+            ConfigMeta.listTrackedResourceTags, hcClient);
+    }
+
+    /**
+     * 列举资源记录器收集的全部资源
+     *
+     * 查询当前用户资源记录器收集的全部资源，需要当前用户有rms:resources:list权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrackedResourcesRequest 请求对象
+     * @return CompletableFuture<ListTrackedResourcesResponse>
+     */
+    public CompletableFuture<ListTrackedResourcesResponse> listTrackedResourcesAsync(
+        ListTrackedResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.listTrackedResources);
+    }
+
+    /**
+     * 列举资源记录器收集的全部资源
+     *
+     * 查询当前用户资源记录器收集的全部资源，需要当前用户有rms:resources:list权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTrackedResourcesRequest 请求对象
+     * @return AsyncInvoker<ListTrackedResourcesRequest, ListTrackedResourcesResponse>
+     */
+    public AsyncInvoker<ListTrackedResourcesRequest, ListTrackedResourcesResponse> listTrackedResourcesAsyncInvoker(
+        ListTrackedResourcesRequest request) {
+        return new AsyncInvoker<ListTrackedResourcesRequest, ListTrackedResourcesResponse>(request,
+            ConfigMeta.listTrackedResources, hcClient);
+    }
+
+    /**
      * 查询单个资源
      *
      * 指定资源ID，返回该资源的详细信息，需要当前用户有rms:resources:get权限。比如查询云服务器，对应的Config资源类型是ecs.cloudservers，其中provider为ecs，type为cloudservers。Config支持的服务和资源类型参见[支持的服务和区域](https://console.huaweicloud.com/eps/#/resources/supported)。
@@ -2473,6 +2607,37 @@ public class ConfigAsyncClient {
         ShowResourceDetailRequest request) {
         return new AsyncInvoker<ShowResourceDetailRequest, ShowResourceDetailResponse>(request,
             ConfigMeta.showResourceDetail, hcClient);
+    }
+
+    /**
+     * 查询资源记录器收集的单个资源
+     *
+     * 查询当前用户资源记录器收集的单个资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrackedResourceDetailRequest 请求对象
+     * @return CompletableFuture<ShowTrackedResourceDetailResponse>
+     */
+    public CompletableFuture<ShowTrackedResourceDetailResponse> showTrackedResourceDetailAsync(
+        ShowTrackedResourceDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, ConfigMeta.showTrackedResourceDetail);
+    }
+
+    /**
+     * 查询资源记录器收集的单个资源
+     *
+     * 查询当前用户资源记录器收集的单个资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowTrackedResourceDetailRequest 请求对象
+     * @return AsyncInvoker<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse>
+     */
+    public AsyncInvoker<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse> showTrackedResourceDetailAsyncInvoker(
+        ShowTrackedResourceDetailRequest request) {
+        return new AsyncInvoker<ShowTrackedResourceDetailRequest, ShowTrackedResourceDetailResponse>(request,
+            ConfigMeta.showTrackedResourceDetail, hcClient);
     }
 
     /**

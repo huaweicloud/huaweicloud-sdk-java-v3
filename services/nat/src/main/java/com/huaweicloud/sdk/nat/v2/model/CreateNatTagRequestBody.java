@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 请求参数。
@@ -13,22 +14,31 @@ public class CreateNatTagRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
-    private Object tag;
+    private TagBody tag;
 
-    public CreateNatTagRequestBody withTag(Object tag) {
+    public CreateNatTagRequestBody withTag(TagBody tag) {
         this.tag = tag;
         return this;
     }
 
+    public CreateNatTagRequestBody withTag(Consumer<TagBody> tagSetter) {
+        if (this.tag == null) {
+            this.tag = new TagBody();
+            tagSetter.accept(this.tag);
+        }
+
+        return this;
+    }
+
     /**
-     * 标签列表。请参考表TagBody字段数据结构说明。
+     * Get tag
      * @return tag
      */
-    public Object getTag() {
+    public TagBody getTag() {
         return tag;
     }
 
-    public void setTag(Object tag) {
+    public void setTag(TagBody tag) {
         this.tag = tag;
     }
 

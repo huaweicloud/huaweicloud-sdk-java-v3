@@ -252,6 +252,122 @@ public class UpdateKeywordsAlarmRuleRequestBody {
 
     private Integer recoveryPolicy;
 
+    /**
+     * 通知频率,单位(分钟)
+     */
+    public static final class NotificationFrequencyEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final NotificationFrequencyEnum NUMBER_0 = new NotificationFrequencyEnum(0);
+
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
+        public static final NotificationFrequencyEnum NUMBER_5 = new NotificationFrequencyEnum(5);
+
+        /**
+         * Enum NUMBER_10 for value: 10
+         */
+        public static final NotificationFrequencyEnum NUMBER_10 = new NotificationFrequencyEnum(10);
+
+        /**
+         * Enum NUMBER_15 for value: 15
+         */
+        public static final NotificationFrequencyEnum NUMBER_15 = new NotificationFrequencyEnum(15);
+
+        /**
+         * Enum NUMBER_30 for value: 30
+         */
+        public static final NotificationFrequencyEnum NUMBER_30 = new NotificationFrequencyEnum(30);
+
+        /**
+         * Enum NUMBER_60 for value: 60
+         */
+        public static final NotificationFrequencyEnum NUMBER_60 = new NotificationFrequencyEnum(60);
+
+        /**
+         * Enum NUMBER_180 for value: 180
+         */
+        public static final NotificationFrequencyEnum NUMBER_180 = new NotificationFrequencyEnum(180);
+
+        /**
+         * Enum NUMBER_360 for value: 360
+         */
+        public static final NotificationFrequencyEnum NUMBER_360 = new NotificationFrequencyEnum(360);
+
+        private static final Map<Integer, NotificationFrequencyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, NotificationFrequencyEnum> createStaticFields() {
+            Map<Integer, NotificationFrequencyEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(5, NUMBER_5);
+            map.put(10, NUMBER_10);
+            map.put(15, NUMBER_15);
+            map.put(30, NUMBER_30);
+            map.put(60, NUMBER_60);
+            map.put(180, NUMBER_180);
+            map.put(360, NUMBER_360);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        NotificationFrequencyEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static NotificationFrequencyEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotificationFrequencyEnum(value));
+        }
+
+        public static NotificationFrequencyEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof NotificationFrequencyEnum) {
+                return this.value.equals(((NotificationFrequencyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "notification_frequency")
+
+    private NotificationFrequencyEnum notificationFrequency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_action_rule_name")
+
+    private String alarmActionRuleName;
+
     public UpdateKeywordsAlarmRuleRequestBody withKeywordsAlarmRuleId(String keywordsAlarmRuleId) {
         this.keywordsAlarmRuleId = keywordsAlarmRuleId;
         return this;
@@ -529,6 +645,41 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         this.recoveryPolicy = recoveryPolicy;
     }
 
+    public UpdateKeywordsAlarmRuleRequestBody withNotificationFrequency(
+        NotificationFrequencyEnum notificationFrequency) {
+        this.notificationFrequency = notificationFrequency;
+        return this;
+    }
+
+    /**
+     * 通知频率,单位(分钟)
+     * @return notificationFrequency
+     */
+    public NotificationFrequencyEnum getNotificationFrequency() {
+        return notificationFrequency;
+    }
+
+    public void setNotificationFrequency(NotificationFrequencyEnum notificationFrequency) {
+        this.notificationFrequency = notificationFrequency;
+    }
+
+    public UpdateKeywordsAlarmRuleRequestBody withAlarmActionRuleName(String alarmActionRuleName) {
+        this.alarmActionRuleName = alarmActionRuleName;
+        return this;
+    }
+
+    /**
+     * 告警行动规则名称 >alarm_action_rule_name和notification_save_rule可以选填一个，如果都填，优先选择alarm_action_rule_name
+     * @return alarmActionRuleName
+     */
+    public String getAlarmActionRuleName() {
+        return alarmActionRuleName;
+    }
+
+    public void setAlarmActionRuleName(String alarmActionRuleName) {
+        this.alarmActionRuleName = alarmActionRuleName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -551,7 +702,9 @@ public class UpdateKeywordsAlarmRuleRequestBody {
             && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
             && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
             && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
-            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy);
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy)
+            && Objects.equals(this.notificationFrequency, that.notificationFrequency)
+            && Objects.equals(this.alarmActionRuleName, that.alarmActionRuleName);
     }
 
     @Override
@@ -569,7 +722,9 @@ public class UpdateKeywordsAlarmRuleRequestBody {
             triggerConditionCount,
             triggerConditionFrequency,
             whetherRecoveryPolicy,
-            recoveryPolicy);
+            recoveryPolicy,
+            notificationFrequency,
+            alarmActionRuleName);
     }
 
     @Override
@@ -592,6 +747,8 @@ public class UpdateKeywordsAlarmRuleRequestBody {
         sb.append("    triggerConditionFrequency: ").append(toIndentedString(triggerConditionFrequency)).append("\n");
         sb.append("    whetherRecoveryPolicy: ").append(toIndentedString(whetherRecoveryPolicy)).append("\n");
         sb.append("    recoveryPolicy: ").append(toIndentedString(recoveryPolicy)).append("\n");
+        sb.append("    notificationFrequency: ").append(toIndentedString(notificationFrequency)).append("\n");
+        sb.append("    alarmActionRuleName: ").append(toIndentedString(alarmActionRuleName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

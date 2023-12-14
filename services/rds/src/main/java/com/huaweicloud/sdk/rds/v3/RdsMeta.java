@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.rds.v3.model.AddLogConfigResponseBody;
 import com.huaweicloud.sdk.rds.v3.model.AddMsdtcRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.AddPostgresqlHbaConfRequest;
 import com.huaweicloud.sdk.rds.v3.model.AddPostgresqlHbaConfResponse;
@@ -101,6 +102,9 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteLogConfigResponseBody;
+import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDatabaseRequest;
@@ -190,6 +194,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListMsdtcHostsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListMsdtcHostsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteBackupsRequest;
@@ -320,6 +326,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyResponse;
@@ -620,7 +628,7 @@ public class RdsMeta {
         // requests
         builder.<PostgreSQLRestoreDatabaseRequest>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostgreSQLRestoreDatabaseRequest.class),
             f -> f.withMarshaller(BatchRestoreDatabaseRequest::getBody, (req, v) -> {
                 req.setBody(v);
@@ -1190,6 +1198,45 @@ public class RdsMeta {
             f -> f.withMarshaller(DeleteJobResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLogLtsConfigsRequest, DeleteLogLtsConfigsResponse> deleteLogLtsConfigs =
+        genFordeleteLogLtsConfigs();
+
+    private static HttpRequestDef<DeleteLogLtsConfigsRequest, DeleteLogLtsConfigsResponse> genFordeleteLogLtsConfigs() {
+        // basic
+        HttpRequestDef.Builder<DeleteLogLtsConfigsRequest, DeleteLogLtsConfigsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteLogLtsConfigsRequest.class, DeleteLogLtsConfigsResponse.class)
+            .withName("DeleteLogLtsConfigs")
+            .withUri("/v3/{project_id}/{engine}/instances/logs/lts-configs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeleteLogLtsConfigsRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteLogLtsConfigsRequest.EngineEnum.class),
+            f -> f.withMarshaller(DeleteLogLtsConfigsRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<DeleteLogLtsConfigsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteLogLtsConfigsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteLogLtsConfigsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<DeleteLogConfigResponseBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteLogConfigResponseBody.class),
+            f -> f.withMarshaller(DeleteLogLtsConfigsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -2342,6 +2389,87 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobInfoDetailRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogLtsConfigsRequest, ListLogLtsConfigsResponse> listLogLtsConfigs =
+        genForlistLogLtsConfigs();
+
+    private static HttpRequestDef<ListLogLtsConfigsRequest, ListLogLtsConfigsResponse> genForlistLogLtsConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListLogLtsConfigsRequest, ListLogLtsConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogLtsConfigsRequest.class, ListLogLtsConfigsResponse.class)
+                .withName("ListLogLtsConfigs")
+                .withUri("/v3/{project_id}/{engine}/instances/logs/lts-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListLogLtsConfigsRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListLogLtsConfigsRequest.EngineEnum.class),
+            f -> f.withMarshaller(ListLogLtsConfigsRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogLtsConfigsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogLtsConfigsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogLtsConfigsRequest::getInstanceName, (req, v) -> {
+                req.setInstanceName(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogLtsConfigsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogLtsConfigsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogLtsConfigsRequest::getSort, (req, v) -> {
+                req.setSort(v);
+            }));
+        builder.<String>withRequestField("instance_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogLtsConfigsRequest::getInstanceStatus, (req, v) -> {
+                req.setInstanceStatus(v);
+            }));
+        builder.<ListLogLtsConfigsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListLogLtsConfigsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListLogLtsConfigsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
 
@@ -3674,6 +3802,45 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BinlogClearPolicyRequestBody.class),
             f -> f.withMarshaller(SetBinlogClearPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetLogLtsConfigsRequest, SetLogLtsConfigsResponse> setLogLtsConfigs =
+        genForsetLogLtsConfigs();
+
+    private static HttpRequestDef<SetLogLtsConfigsRequest, SetLogLtsConfigsResponse> genForsetLogLtsConfigs() {
+        // basic
+        HttpRequestDef.Builder<SetLogLtsConfigsRequest, SetLogLtsConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetLogLtsConfigsRequest.class, SetLogLtsConfigsResponse.class)
+                .withName("SetLogLtsConfigs")
+                .withUri("/v3/{project_id}/{engine}/instances/logs/lts-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SetLogLtsConfigsRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetLogLtsConfigsRequest.EngineEnum.class),
+            f -> f.withMarshaller(SetLogLtsConfigsRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<SetLogLtsConfigsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SetLogLtsConfigsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SetLogLtsConfigsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+        builder.<AddLogConfigResponseBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddLogConfigResponseBody.class),
+            f -> f.withMarshaller(SetLogLtsConfigsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -83,6 +83,21 @@ public class OpenEditConfReq {
 
     private YesNoEnum enableRecording;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "liveAddress")
+
+    private String liveAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auxAddress")
+
+    private String auxAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "liveUrl")
+
+    private String liveUrl;
+
     public OpenEditConfReq withConferenceId(String conferenceId) {
         this.conferenceId = conferenceId;
         return this;
@@ -346,6 +361,57 @@ public class OpenEditConfReq {
         this.enableRecording = enableRecording;
     }
 
+    public OpenEditConfReq withLiveAddress(String liveAddress) {
+        this.liveAddress = liveAddress;
+        return this;
+    }
+
+    /**
+     * 主流直播推流地址，在录播类型为 :直播、直播+录播时有效。最大不超过255个字符。
+     * @return liveAddress
+     */
+    public String getLiveAddress() {
+        return liveAddress;
+    }
+
+    public void setLiveAddress(String liveAddress) {
+        this.liveAddress = liveAddress;
+    }
+
+    public OpenEditConfReq withAuxAddress(String auxAddress) {
+        this.auxAddress = auxAddress;
+        return this;
+    }
+
+    /**
+     * 辅流直播推流地址，在录播类型为 :直播、直播+录播时有效。最大不超过255个字符。
+     * @return auxAddress
+     */
+    public String getAuxAddress() {
+        return auxAddress;
+    }
+
+    public void setAuxAddress(String auxAddress) {
+        this.auxAddress = auxAddress;
+    }
+
+    public OpenEditConfReq withLiveUrl(String liveUrl) {
+        this.liveUrl = liveUrl;
+        return this;
+    }
+
+    /**
+     * 直播房间地址，在录播类型为录播+直播推流时有效。最大不超过255个字符。
+     * @return liveUrl
+     */
+    public String getLiveUrl() {
+        return liveUrl;
+    }
+
+    public void setLiveUrl(String liveUrl) {
+        this.liveUrl = liveUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -363,7 +429,9 @@ public class OpenEditConfReq {
             && Objects.equals(this.audiencePasswd, that.audiencePasswd)
             && Objects.equals(this.callRestriction, that.callRestriction) && Objects.equals(this.scope, that.scope)
             && Objects.equals(this.audienceScope, that.audienceScope)
-            && Objects.equals(this.enableRecording, that.enableRecording);
+            && Objects.equals(this.enableRecording, that.enableRecording)
+            && Objects.equals(this.liveAddress, that.liveAddress) && Objects.equals(this.auxAddress, that.auxAddress)
+            && Objects.equals(this.liveUrl, that.liveUrl);
     }
 
     @Override
@@ -381,7 +449,10 @@ public class OpenEditConfReq {
             callRestriction,
             scope,
             audienceScope,
-            enableRecording);
+            enableRecording,
+            liveAddress,
+            auxAddress,
+            liveUrl);
     }
 
     @Override
@@ -402,6 +473,9 @@ public class OpenEditConfReq {
         sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
         sb.append("    audienceScope: ").append(toIndentedString(audienceScope)).append("\n");
         sb.append("    enableRecording: ").append(toIndentedString(enableRecording)).append("\n");
+        sb.append("    liveAddress: ").append(toIndentedString(liveAddress)).append("\n");
+        sb.append("    auxAddress: ").append(toIndentedString(auxAddress)).append("\n");
+        sb.append("    liveUrl: ").append(toIndentedString(liveUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

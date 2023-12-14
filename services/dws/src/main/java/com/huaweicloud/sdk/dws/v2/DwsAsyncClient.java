@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckDisasterNameResponse;
 import com.huaweicloud.sdk.dws.v2.model.CheckTableRestoreRequest;
 import com.huaweicloud.sdk.dws.v2.model.CheckTableRestoreResponse;
+import com.huaweicloud.sdk.dws.v2.model.ConvertToLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.ConvertToLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CopySnapshotRequest;
 import com.huaweicloud.sdk.dws.v2.model.CopySnapshotResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateAlarmSubRequest;
@@ -45,6 +47,8 @@ import com.huaweicloud.sdk.dws.v2.model.CreateDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotPolicyRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotRequest;
@@ -55,6 +59,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteAlarmSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteAlarmSubResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteClusterDnsRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteClusterDnsResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteClusterNodesRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteClusterNodesResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDataSourceRequest;
@@ -63,6 +69,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyRequest;
@@ -73,10 +81,16 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueResponse;
+import com.huaweicloud.sdk.dws.v2.model.DisableLtsLogsRequest;
+import com.huaweicloud.sdk.dws.v2.model.DisableLtsLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbResponse;
+import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.EnableLtsLogsRequest;
+import com.huaweicloud.sdk.dws.v2.model.EnableLtsLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteClusterUpgradeActionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteClusterUpgradeActionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ExecuteDatabaseOmUserActionRequest;
@@ -107,6 +121,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListClusterConfigurationsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterConfigurationsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterDetailsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListClusterNodesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListClusterNodesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterScaleInNumbersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterScaleInNumbersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListClusterSnapshotsRequest;
@@ -143,12 +159,24 @@ import com.huaweicloud.sdk.dws.v2.model.ListHostOverviewRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListHostOverviewResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListJobDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListJobDetailsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterRingsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterRingsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterTasksRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterTasksResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterVolumesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterVolumesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClustersResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLtsLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorDataResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListMonitorIndicatorsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListNodeTypesResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListQueriesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListQueriesResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListQuotasResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionPolicyRequest;
@@ -165,8 +193,12 @@ import com.huaweicloud.sdk.dws.v2.model.ListSnapshotsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListStatisticsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListStatisticsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListTablesStatisticRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListTablesStatisticResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListTagsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListTagsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListTopoRingsRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListTopoRingsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListUpdatableVersionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListUpdatableVersionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListUpdateRecordRequest;
@@ -179,12 +211,18 @@ import com.huaweicloud.sdk.dws.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.dws.v2.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ResizeClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesRequest;
+import com.huaweicloud.sdk.dws.v2.model.ResizeClusterWithExistedNodesResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestartClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.RestartLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.RestartLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreDisasterResponse;
+import com.huaweicloud.sdk.dws.v2.model.RestoreRedistributionRequest;
+import com.huaweicloud.sdk.dws.v2.model.RestoreRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableRequest;
 import com.huaweicloud.sdk.dws.v2.model.RestoreTableResponse;
 import com.huaweicloud.sdk.dws.v2.model.SaveClusterDescriptionInfoRequest;
@@ -203,6 +241,8 @@ import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDisasterProgressResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowQueryDetailResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterRequest;
@@ -211,6 +251,8 @@ import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanResponse;
+import com.huaweicloud.sdk.dws.v2.model.StopRedistributionRequest;
+import com.huaweicloud.sdk.dws.v2.model.StopRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.StopWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.StopWorkloadPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.SwitchFailoverDisasterRequest;
@@ -237,6 +279,8 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateDisasterInfoRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateDisasterInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowResponse;
 
@@ -633,6 +677,37 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 物理集群转换到逻辑集群
+     *
+     * 逻辑集群-物理集群转换到逻辑集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ConvertToLogicalClusterRequest 请求对象
+     * @return CompletableFuture<ConvertToLogicalClusterResponse>
+     */
+    public CompletableFuture<ConvertToLogicalClusterResponse> convertToLogicalClusterAsync(
+        ConvertToLogicalClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.convertToLogicalCluster);
+    }
+
+    /**
+     * 物理集群转换到逻辑集群
+     *
+     * 逻辑集群-物理集群转换到逻辑集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ConvertToLogicalClusterRequest 请求对象
+     * @return AsyncInvoker<ConvertToLogicalClusterRequest, ConvertToLogicalClusterResponse>
+     */
+    public AsyncInvoker<ConvertToLogicalClusterRequest, ConvertToLogicalClusterResponse> convertToLogicalClusterAsyncInvoker(
+        ConvertToLogicalClusterRequest request) {
+        return new AsyncInvoker<ConvertToLogicalClusterRequest, ConvertToLogicalClusterResponse>(request,
+            DwsMeta.convertToLogicalCluster, hcClient);
+    }
+
+    /**
      * 复制快照
      *
      * 该接口用于复制一个自动快照。
@@ -911,6 +986,37 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 创建逻辑集群
+     *
+     * 逻辑集群-创建逻辑集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLogicalClusterRequest 请求对象
+     * @return CompletableFuture<CreateLogicalClusterResponse>
+     */
+    public CompletableFuture<CreateLogicalClusterResponse> createLogicalClusterAsync(
+        CreateLogicalClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createLogicalCluster);
+    }
+
+    /**
+     * 创建逻辑集群
+     *
+     * 逻辑集群-创建逻辑集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLogicalClusterRequest 请求对象
+     * @return AsyncInvoker<CreateLogicalClusterRequest, CreateLogicalClusterResponse>
+     */
+    public AsyncInvoker<CreateLogicalClusterRequest, CreateLogicalClusterResponse> createLogicalClusterAsyncInvoker(
+        CreateLogicalClusterRequest request) {
+        return new AsyncInvoker<CreateLogicalClusterRequest, CreateLogicalClusterResponse>(request,
+            DwsMeta.createLogicalCluster, hcClient);
+    }
+
+    /**
      * 创建快照
      *
      * 该接口用于为指定集群创建快照。
@@ -1091,6 +1197,36 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 删除节点
+     *
+     * 此接口用于删除节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteClusterNodesRequest 请求对象
+     * @return CompletableFuture<DeleteClusterNodesResponse>
+     */
+    public CompletableFuture<DeleteClusterNodesResponse> deleteClusterNodesAsync(DeleteClusterNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteClusterNodes);
+    }
+
+    /**
+     * 删除节点
+     *
+     * 此接口用于删除节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteClusterNodesRequest 请求对象
+     * @return AsyncInvoker<DeleteClusterNodesRequest, DeleteClusterNodesResponse>
+     */
+    public AsyncInvoker<DeleteClusterNodesRequest, DeleteClusterNodesResponse> deleteClusterNodesAsyncInvoker(
+        DeleteClusterNodesRequest request) {
+        return new AsyncInvoker<DeleteClusterNodesRequest, DeleteClusterNodesResponse>(request,
+            DwsMeta.deleteClusterNodes, hcClient);
+    }
+
+    /**
      * 删除数据源
      *
      * 该接口用于删除一个数据源。
@@ -1179,6 +1315,37 @@ public class DwsAsyncClient {
         DeleteEventSubRequest request) {
         return new AsyncInvoker<DeleteEventSubRequest, DeleteEventSubResponse>(request, DwsMeta.deleteEventSub,
             hcClient);
+    }
+
+    /**
+     * 删除逻辑集群
+     *
+     * 此接口用于删除逻辑集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLogicalClusterRequest 请求对象
+     * @return CompletableFuture<DeleteLogicalClusterResponse>
+     */
+    public CompletableFuture<DeleteLogicalClusterResponse> deleteLogicalClusterAsync(
+        DeleteLogicalClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteLogicalCluster);
+    }
+
+    /**
+     * 删除逻辑集群
+     *
+     * 此接口用于删除逻辑集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteLogicalClusterRequest 请求对象
+     * @return AsyncInvoker<DeleteLogicalClusterRequest, DeleteLogicalClusterResponse>
+     */
+    public AsyncInvoker<DeleteLogicalClusterRequest, DeleteLogicalClusterResponse> deleteLogicalClusterAsyncInvoker(
+        DeleteLogicalClusterRequest request) {
+        return new AsyncInvoker<DeleteLogicalClusterRequest, DeleteLogicalClusterResponse>(request,
+            DwsMeta.deleteLogicalCluster, hcClient);
     }
 
     /**
@@ -1334,6 +1501,36 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 关闭云服务日志
+     *
+     * 该接口用于关闭集群LTS云日志服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisableLtsLogsRequest 请求对象
+     * @return CompletableFuture<DisableLtsLogsResponse>
+     */
+    public CompletableFuture<DisableLtsLogsResponse> disableLtsLogsAsync(DisableLtsLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.disableLtsLogs);
+    }
+
+    /**
+     * 关闭云服务日志
+     *
+     * 该接口用于关闭集群LTS云日志服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisableLtsLogsRequest 请求对象
+     * @return AsyncInvoker<DisableLtsLogsRequest, DisableLtsLogsResponse>
+     */
+    public AsyncInvoker<DisableLtsLogsRequest, DisableLtsLogsResponse> disableLtsLogsAsyncInvoker(
+        DisableLtsLogsRequest request) {
+        return new AsyncInvoker<DisableLtsLogsRequest, DisableLtsLogsResponse>(request, DwsMeta.disableLtsLogs,
+            hcClient);
+    }
+
+    /**
      * 集群解绑EIP
      *
      * 集群解绑Eip
@@ -1391,6 +1588,66 @@ public class DwsAsyncClient {
         DisassociateElbRequest request) {
         return new AsyncInvoker<DisassociateElbRequest, DisassociateElbResponse>(request, DwsMeta.disassociateElb,
             hcClient);
+    }
+
+    /**
+     * 切换逻辑集群开关
+     *
+     * 此接口用于切换逻辑集群开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableLogicalClusterRequest 请求对象
+     * @return CompletableFuture<EnableLogicalClusterResponse>
+     */
+    public CompletableFuture<EnableLogicalClusterResponse> enableLogicalClusterAsync(
+        EnableLogicalClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.enableLogicalCluster);
+    }
+
+    /**
+     * 切换逻辑集群开关
+     *
+     * 此接口用于切换逻辑集群开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableLogicalClusterRequest 请求对象
+     * @return AsyncInvoker<EnableLogicalClusterRequest, EnableLogicalClusterResponse>
+     */
+    public AsyncInvoker<EnableLogicalClusterRequest, EnableLogicalClusterResponse> enableLogicalClusterAsyncInvoker(
+        EnableLogicalClusterRequest request) {
+        return new AsyncInvoker<EnableLogicalClusterRequest, EnableLogicalClusterResponse>(request,
+            DwsMeta.enableLogicalCluster, hcClient);
+    }
+
+    /**
+     * 开启云服务日志
+     *
+     * 该接口用于开启集群LTS云日志服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableLtsLogsRequest 请求对象
+     * @return CompletableFuture<EnableLtsLogsResponse>
+     */
+    public CompletableFuture<EnableLtsLogsResponse> enableLtsLogsAsync(EnableLtsLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.enableLtsLogs);
+    }
+
+    /**
+     * 开启云服务日志
+     *
+     * 该接口用于开启集群LTS云日志服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param EnableLtsLogsRequest 请求对象
+     * @return AsyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>
+     */
+    public AsyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse> enableLtsLogsAsyncInvoker(
+        EnableLtsLogsRequest request) {
+        return new AsyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>(request, DwsMeta.enableLtsLogs, hcClient);
     }
 
     /**
@@ -1850,6 +2107,36 @@ public class DwsAsyncClient {
         ListClusterDetailsRequest request) {
         return new AsyncInvoker<ListClusterDetailsRequest, ListClusterDetailsResponse>(request,
             DwsMeta.listClusterDetails, hcClient);
+    }
+
+    /**
+     * 查询节点列表
+     *
+     * 查询节点列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterNodesRequest 请求对象
+     * @return CompletableFuture<ListClusterNodesResponse>
+     */
+    public CompletableFuture<ListClusterNodesResponse> listClusterNodesAsync(ListClusterNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listClusterNodes);
+    }
+
+    /**
+     * 查询节点列表
+     *
+     * 查询节点列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListClusterNodesRequest 请求对象
+     * @return AsyncInvoker<ListClusterNodesRequest, ListClusterNodesResponse>
+     */
+    public AsyncInvoker<ListClusterNodesRequest, ListClusterNodesResponse> listClusterNodesAsyncInvoker(
+        ListClusterNodesRequest request) {
+        return new AsyncInvoker<ListClusterNodesRequest, ListClusterNodesResponse>(request, DwsMeta.listClusterNodes,
+            hcClient);
     }
 
     /**
@@ -2386,6 +2673,157 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 查询逻辑集群可用ring环节点信息
+     *
+     * 查询逻辑集群可用ring环节点信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogicalClusterRingsRequest 请求对象
+     * @return CompletableFuture<ListLogicalClusterRingsResponse>
+     */
+    public CompletableFuture<ListLogicalClusterRingsResponse> listLogicalClusterRingsAsync(
+        ListLogicalClusterRingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listLogicalClusterRings);
+    }
+
+    /**
+     * 查询逻辑集群可用ring环节点信息
+     *
+     * 查询逻辑集群可用ring环节点信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogicalClusterRingsRequest 请求对象
+     * @return AsyncInvoker<ListLogicalClusterRingsRequest, ListLogicalClusterRingsResponse>
+     */
+    public AsyncInvoker<ListLogicalClusterRingsRequest, ListLogicalClusterRingsResponse> listLogicalClusterRingsAsyncInvoker(
+        ListLogicalClusterRingsRequest request) {
+        return new AsyncInvoker<ListLogicalClusterRingsRequest, ListLogicalClusterRingsResponse>(request,
+            DwsMeta.listLogicalClusterRings, hcClient);
+    }
+
+    /**
+     * 查询逻辑集群任务信息
+     *
+     * 逻辑集群-查询逻辑集群任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogicalClusterTasksRequest 请求对象
+     * @return CompletableFuture<ListLogicalClusterTasksResponse>
+     */
+    public CompletableFuture<ListLogicalClusterTasksResponse> listLogicalClusterTasksAsync(
+        ListLogicalClusterTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listLogicalClusterTasks);
+    }
+
+    /**
+     * 查询逻辑集群任务信息
+     *
+     * 逻辑集群-查询逻辑集群任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogicalClusterTasksRequest 请求对象
+     * @return AsyncInvoker<ListLogicalClusterTasksRequest, ListLogicalClusterTasksResponse>
+     */
+    public AsyncInvoker<ListLogicalClusterTasksRequest, ListLogicalClusterTasksResponse> listLogicalClusterTasksAsyncInvoker(
+        ListLogicalClusterTasksRequest request) {
+        return new AsyncInvoker<ListLogicalClusterTasksRequest, ListLogicalClusterTasksResponse>(request,
+            DwsMeta.listLogicalClusterTasks, hcClient);
+    }
+
+    /**
+     * 查询逻辑集群磁盘信息
+     *
+     * 逻辑集群-查询逻辑集群磁盘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogicalClusterVolumesRequest 请求对象
+     * @return CompletableFuture<ListLogicalClusterVolumesResponse>
+     */
+    public CompletableFuture<ListLogicalClusterVolumesResponse> listLogicalClusterVolumesAsync(
+        ListLogicalClusterVolumesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listLogicalClusterVolumes);
+    }
+
+    /**
+     * 查询逻辑集群磁盘信息
+     *
+     * 逻辑集群-查询逻辑集群磁盘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogicalClusterVolumesRequest 请求对象
+     * @return AsyncInvoker<ListLogicalClusterVolumesRequest, ListLogicalClusterVolumesResponse>
+     */
+    public AsyncInvoker<ListLogicalClusterVolumesRequest, ListLogicalClusterVolumesResponse> listLogicalClusterVolumesAsyncInvoker(
+        ListLogicalClusterVolumesRequest request) {
+        return new AsyncInvoker<ListLogicalClusterVolumesRequest, ListLogicalClusterVolumesResponse>(request,
+            DwsMeta.listLogicalClusterVolumes, hcClient);
+    }
+
+    /**
+     * 查询逻辑集群列表
+     *
+     * 逻辑集群-查询逻辑集群列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogicalClustersRequest 请求对象
+     * @return CompletableFuture<ListLogicalClustersResponse>
+     */
+    public CompletableFuture<ListLogicalClustersResponse> listLogicalClustersAsync(ListLogicalClustersRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listLogicalClusters);
+    }
+
+    /**
+     * 查询逻辑集群列表
+     *
+     * 逻辑集群-查询逻辑集群列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLogicalClustersRequest 请求对象
+     * @return AsyncInvoker<ListLogicalClustersRequest, ListLogicalClustersResponse>
+     */
+    public AsyncInvoker<ListLogicalClustersRequest, ListLogicalClustersResponse> listLogicalClustersAsyncInvoker(
+        ListLogicalClustersRequest request) {
+        return new AsyncInvoker<ListLogicalClustersRequest, ListLogicalClustersResponse>(request,
+            DwsMeta.listLogicalClusters, hcClient);
+    }
+
+    /**
+     * 获取LTS日志列表
+     *
+     * 获取LTS日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsLogsRequest 请求对象
+     * @return CompletableFuture<ListLtsLogsResponse>
+     */
+    public CompletableFuture<ListLtsLogsResponse> listLtsLogsAsync(ListLtsLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listLtsLogs);
+    }
+
+    /**
+     * 获取LTS日志列表
+     *
+     * 获取LTS日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLtsLogsRequest 请求对象
+     * @return AsyncInvoker<ListLtsLogsRequest, ListLtsLogsResponse>
+     */
+    public AsyncInvoker<ListLtsLogsRequest, ListLtsLogsResponse> listLtsLogsAsyncInvoker(ListLtsLogsRequest request) {
+        return new AsyncInvoker<ListLtsLogsRequest, ListLtsLogsResponse>(request, DwsMeta.listLtsLogs, hcClient);
+    }
+
+    /**
      * openApi查询历史监控数据
      *
      * openApi查询历史监控数据
@@ -2474,6 +2912,34 @@ public class DwsAsyncClient {
     public AsyncInvoker<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypesAsyncInvoker(
         ListNodeTypesRequest request) {
         return new AsyncInvoker<ListNodeTypesRequest, ListNodeTypesResponse>(request, DwsMeta.listNodeTypes, hcClient);
+    }
+
+    /**
+     * 查询SQL列表
+     *
+     * 该接口用于查询实时SQL列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQueriesRequest 请求对象
+     * @return CompletableFuture<ListQueriesResponse>
+     */
+    public CompletableFuture<ListQueriesResponse> listQueriesAsync(ListQueriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listQueries);
+    }
+
+    /**
+     * 查询SQL列表
+     *
+     * 该接口用于查询实时SQL列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListQueriesRequest 请求对象
+     * @return AsyncInvoker<ListQueriesRequest, ListQueriesResponse>
+     */
+    public AsyncInvoker<ListQueriesRequest, ListQueriesResponse> listQueriesAsyncInvoker(ListQueriesRequest request) {
+        return new AsyncInvoker<ListQueriesRequest, ListQueriesResponse>(request, DwsMeta.listQueries, hcClient);
     }
 
     /**
@@ -2717,6 +3183,36 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 查询表倾斜或脏页率信息
+     *
+     * 该接口用于查询表倾斜或脏页率信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTablesStatisticRequest 请求对象
+     * @return CompletableFuture<ListTablesStatisticResponse>
+     */
+    public CompletableFuture<ListTablesStatisticResponse> listTablesStatisticAsync(ListTablesStatisticRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listTablesStatistic);
+    }
+
+    /**
+     * 查询表倾斜或脏页率信息
+     *
+     * 该接口用于查询表倾斜或脏页率信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTablesStatisticRequest 请求对象
+     * @return AsyncInvoker<ListTablesStatisticRequest, ListTablesStatisticResponse>
+     */
+    public AsyncInvoker<ListTablesStatisticRequest, ListTablesStatisticResponse> listTablesStatisticAsyncInvoker(
+        ListTablesStatisticRequest request) {
+        return new AsyncInvoker<ListTablesStatisticRequest, ListTablesStatisticResponse>(request,
+            DwsMeta.listTablesStatistic, hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询项目标签列表。
@@ -2742,6 +3238,35 @@ public class DwsAsyncClient {
      */
     public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
         return new AsyncInvoker<ListTagsRequest, ListTagsResponse>(request, DwsMeta.listTags, hcClient);
+    }
+
+    /**
+     * 查询集群拓扑ring环节点信息
+     *
+     * 查询集群拓扑ring环节点信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTopoRingsRequest 请求对象
+     * @return CompletableFuture<ListTopoRingsResponse>
+     */
+    public CompletableFuture<ListTopoRingsResponse> listTopoRingsAsync(ListTopoRingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listTopoRings);
+    }
+
+    /**
+     * 查询集群拓扑ring环节点信息
+     *
+     * 查询集群拓扑ring环节点信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTopoRingsRequest 请求对象
+     * @return AsyncInvoker<ListTopoRingsRequest, ListTopoRingsResponse>
+     */
+    public AsyncInvoker<ListTopoRingsRequest, ListTopoRingsResponse> listTopoRingsAsyncInvoker(
+        ListTopoRingsRequest request) {
+        return new AsyncInvoker<ListTopoRingsRequest, ListTopoRingsResponse>(request, DwsMeta.listTopoRings, hcClient);
     }
 
     /**
@@ -2925,6 +3450,37 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 从空闲节点扩容
+     *
+     * 此接口用于从空闲节点扩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeClusterWithExistedNodesRequest 请求对象
+     * @return CompletableFuture<ResizeClusterWithExistedNodesResponse>
+     */
+    public CompletableFuture<ResizeClusterWithExistedNodesResponse> resizeClusterWithExistedNodesAsync(
+        ResizeClusterWithExistedNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.resizeClusterWithExistedNodes);
+    }
+
+    /**
+     * 从空闲节点扩容
+     *
+     * 此接口用于从空闲节点扩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResizeClusterWithExistedNodesRequest 请求对象
+     * @return AsyncInvoker<ResizeClusterWithExistedNodesRequest, ResizeClusterWithExistedNodesResponse>
+     */
+    public AsyncInvoker<ResizeClusterWithExistedNodesRequest, ResizeClusterWithExistedNodesResponse> resizeClusterWithExistedNodesAsyncInvoker(
+        ResizeClusterWithExistedNodesRequest request) {
+        return new AsyncInvoker<ResizeClusterWithExistedNodesRequest, ResizeClusterWithExistedNodesResponse>(request,
+            DwsMeta.resizeClusterWithExistedNodes, hcClient);
+    }
+
+    /**
      * 重启集群
      *
      * 此接口用于重启集群。
@@ -2952,6 +3508,37 @@ public class DwsAsyncClient {
         RestartClusterRequest request) {
         return new AsyncInvoker<RestartClusterRequest, RestartClusterResponse>(request, DwsMeta.restartCluster,
             hcClient);
+    }
+
+    /**
+     * 重启逻辑集群
+     *
+     * 此接口用于重启逻辑集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestartLogicalClusterRequest 请求对象
+     * @return CompletableFuture<RestartLogicalClusterResponse>
+     */
+    public CompletableFuture<RestartLogicalClusterResponse> restartLogicalClusterAsync(
+        RestartLogicalClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.restartLogicalCluster);
+    }
+
+    /**
+     * 重启逻辑集群
+     *
+     * 此接口用于重启逻辑集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestartLogicalClusterRequest 请求对象
+     * @return AsyncInvoker<RestartLogicalClusterRequest, RestartLogicalClusterResponse>
+     */
+    public AsyncInvoker<RestartLogicalClusterRequest, RestartLogicalClusterResponse> restartLogicalClusterAsyncInvoker(
+        RestartLogicalClusterRequest request) {
+        return new AsyncInvoker<RestartLogicalClusterRequest, RestartLogicalClusterResponse>(request,
+            DwsMeta.restartLogicalCluster, hcClient);
     }
 
     /**
@@ -3012,6 +3599,37 @@ public class DwsAsyncClient {
         RestoreDisasterRequest request) {
         return new AsyncInvoker<RestoreDisasterRequest, RestoreDisasterResponse>(request, DwsMeta.restoreDisaster,
             hcClient);
+    }
+
+    /**
+     * 恢复重分布
+     *
+     * 此接口用于恢复重分布。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreRedistributionRequest 请求对象
+     * @return CompletableFuture<RestoreRedistributionResponse>
+     */
+    public CompletableFuture<RestoreRedistributionResponse> restoreRedistributionAsync(
+        RestoreRedistributionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.restoreRedistribution);
+    }
+
+    /**
+     * 恢复重分布
+     *
+     * 此接口用于恢复重分布。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RestoreRedistributionRequest 请求对象
+     * @return AsyncInvoker<RestoreRedistributionRequest, RestoreRedistributionResponse>
+     */
+    public AsyncInvoker<RestoreRedistributionRequest, RestoreRedistributionResponse> restoreRedistributionAsyncInvoker(
+        RestoreRedistributionRequest request) {
+        return new AsyncInvoker<RestoreRedistributionRequest, RestoreRedistributionResponse>(request,
+            DwsMeta.restoreRedistribution, hcClient);
     }
 
     /**
@@ -3288,6 +3906,36 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 查询SQL执行信息
+     *
+     * 查询SQL执行信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQueryDetailRequest 请求对象
+     * @return CompletableFuture<ShowQueryDetailResponse>
+     */
+    public CompletableFuture<ShowQueryDetailResponse> showQueryDetailAsync(ShowQueryDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.showQueryDetail);
+    }
+
+    /**
+     * 查询SQL执行信息
+     *
+     * 查询SQL执行信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowQueryDetailRequest 请求对象
+     * @return AsyncInvoker<ShowQueryDetailRequest, ShowQueryDetailResponse>
+     */
+    public AsyncInvoker<ShowQueryDetailRequest, ShowQueryDetailResponse> showQueryDetailAsyncInvoker(
+        ShowQueryDetailRequest request) {
+        return new AsyncInvoker<ShowQueryDetailRequest, ShowQueryDetailResponse>(request, DwsMeta.showQueryDetail,
+            hcClient);
+    }
+
+    /**
      * 查询某个工作负载计划详细信息
      *
      * 查询某个工作负载计划详细信息。
@@ -3405,6 +4053,36 @@ public class DwsAsyncClient {
         StartWorkloadPlanRequest request) {
         return new AsyncInvoker<StartWorkloadPlanRequest, StartWorkloadPlanResponse>(request, DwsMeta.startWorkloadPlan,
             hcClient);
+    }
+
+    /**
+     * 暂停重分布
+     *
+     * 此接口用于暂停重分布。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopRedistributionRequest 请求对象
+     * @return CompletableFuture<StopRedistributionResponse>
+     */
+    public CompletableFuture<StopRedistributionResponse> stopRedistributionAsync(StopRedistributionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.stopRedistribution);
+    }
+
+    /**
+     * 暂停重分布
+     *
+     * 此接口用于暂停重分布。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopRedistributionRequest 请求对象
+     * @return AsyncInvoker<StopRedistributionRequest, StopRedistributionResponse>
+     */
+    public AsyncInvoker<StopRedistributionRequest, StopRedistributionResponse> stopRedistributionAsyncInvoker(
+        StopRedistributionRequest request) {
+        return new AsyncInvoker<StopRedistributionRequest, StopRedistributionResponse>(request,
+            DwsMeta.stopRedistribution, hcClient);
     }
 
     /**
@@ -3802,6 +4480,37 @@ public class DwsAsyncClient {
         UpdateEventSubRequest request) {
         return new AsyncInvoker<UpdateEventSubRequest, UpdateEventSubResponse>(request, DwsMeta.updateEventSub,
             hcClient);
+    }
+
+    /**
+     * 编辑逻辑集群
+     *
+     * 此接口用于编辑修改逻辑集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogicalClusterRequest 请求对象
+     * @return CompletableFuture<UpdateLogicalClusterResponse>
+     */
+    public CompletableFuture<UpdateLogicalClusterResponse> updateLogicalClusterAsync(
+        UpdateLogicalClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.updateLogicalCluster);
+    }
+
+    /**
+     * 编辑逻辑集群
+     *
+     * 此接口用于编辑修改逻辑集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLogicalClusterRequest 请求对象
+     * @return AsyncInvoker<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse>
+     */
+    public AsyncInvoker<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse> updateLogicalClusterAsyncInvoker(
+        UpdateLogicalClusterRequest request) {
+        return new AsyncInvoker<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse>(request,
+            DwsMeta.updateLogicalCluster, hcClient);
     }
 
     /**

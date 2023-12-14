@@ -216,7 +216,7 @@ public class TemplateParameterDefinition {
     }
 
     /**
-     * 预定义合规包模板参数允许值列表
+     * 预定义合规包模板参数允许值列表。
      * @return allowedValues
      */
     public List<Object> getAllowedValues() {

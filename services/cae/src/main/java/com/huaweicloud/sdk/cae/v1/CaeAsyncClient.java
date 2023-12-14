@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.cae.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateDomainResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateEnvironmentResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateVolumeRequest;
@@ -72,12 +74,16 @@ import com.huaweicloud.sdk.cae.v1.model.ShowExecutionResultRequest;
 import com.huaweicloud.sdk.cae.v1.model.ShowExecutionResultResponse;
 import com.huaweicloud.sdk.cae.v1.model.ShowJobRequest;
 import com.huaweicloud.sdk.cae.v1.model.ShowJobResponse;
+import com.huaweicloud.sdk.cae.v1.model.ShowMonitorSystemRequest;
+import com.huaweicloud.sdk.cae.v1.model.ShowMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateCertificateResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateComponentRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateComponentResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateEipRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateEipResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -1046,6 +1052,96 @@ public class CaeAsyncClient {
      */
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
         return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, CaeMeta.showJob, hcClient);
+    }
+
+    /**
+     * 创建监控系统配置
+     *
+     * 创建监控系统配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateMonitorSystemRequest 请求对象
+     * @return CompletableFuture<CreateMonitorSystemResponse>
+     */
+    public CompletableFuture<CreateMonitorSystemResponse> createMonitorSystemAsync(CreateMonitorSystemRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.createMonitorSystem);
+    }
+
+    /**
+     * 创建监控系统配置
+     *
+     * 创建监控系统配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateMonitorSystemRequest 请求对象
+     * @return AsyncInvoker<CreateMonitorSystemRequest, CreateMonitorSystemResponse>
+     */
+    public AsyncInvoker<CreateMonitorSystemRequest, CreateMonitorSystemResponse> createMonitorSystemAsyncInvoker(
+        CreateMonitorSystemRequest request) {
+        return new AsyncInvoker<CreateMonitorSystemRequest, CreateMonitorSystemResponse>(request,
+            CaeMeta.createMonitorSystem, hcClient);
+    }
+
+    /**
+     * 获取监控系统配置
+     *
+     * 获取监控系统配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMonitorSystemRequest 请求对象
+     * @return CompletableFuture<ShowMonitorSystemResponse>
+     */
+    public CompletableFuture<ShowMonitorSystemResponse> showMonitorSystemAsync(ShowMonitorSystemRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.showMonitorSystem);
+    }
+
+    /**
+     * 获取监控系统配置
+     *
+     * 获取监控系统配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowMonitorSystemRequest 请求对象
+     * @return AsyncInvoker<ShowMonitorSystemRequest, ShowMonitorSystemResponse>
+     */
+    public AsyncInvoker<ShowMonitorSystemRequest, ShowMonitorSystemResponse> showMonitorSystemAsyncInvoker(
+        ShowMonitorSystemRequest request) {
+        return new AsyncInvoker<ShowMonitorSystemRequest, ShowMonitorSystemResponse>(request, CaeMeta.showMonitorSystem,
+            hcClient);
+    }
+
+    /**
+     * 更新监控系统配置
+     *
+     * 更新监控系统配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateMonitorSystemRequest 请求对象
+     * @return CompletableFuture<UpdateMonitorSystemResponse>
+     */
+    public CompletableFuture<UpdateMonitorSystemResponse> updateMonitorSystemAsync(UpdateMonitorSystemRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.updateMonitorSystem);
+    }
+
+    /**
+     * 更新监控系统配置
+     *
+     * 更新监控系统配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateMonitorSystemRequest 请求对象
+     * @return AsyncInvoker<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse>
+     */
+    public AsyncInvoker<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse> updateMonitorSystemAsyncInvoker(
+        UpdateMonitorSystemRequest request) {
+        return new AsyncInvoker<UpdateMonitorSystemRequest, UpdateMonitorSystemResponse>(request,
+            CaeMeta.updateMonitorSystem, hcClient);
     }
 
     /**

@@ -137,6 +137,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineLogRequest;
@@ -2401,6 +2403,38 @@ public class CodeArtsPipelineMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOpenSourceStrategyRequest::getRuleSetId, (req, v) -> {
                 req.setRuleSetId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPipelineDetailRequest, ShowPipelineDetailResponse> showPipelineDetail =
+        genForshowPipelineDetail();
+
+    private static HttpRequestDef<ShowPipelineDetailRequest, ShowPipelineDetailResponse> genForshowPipelineDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowPipelineDetailRequest, ShowPipelineDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPipelineDetailRequest.class, ShowPipelineDetailResponse.class)
+                .withName("ShowPipelineDetail")
+                .withUri("/v5/{project_id}/api/pipelines/{pipeline_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineDetailRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("pipeline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipelineDetailRequest::getPipelineId, (req, v) -> {
+                req.setPipelineId(v);
             }));
 
         // response

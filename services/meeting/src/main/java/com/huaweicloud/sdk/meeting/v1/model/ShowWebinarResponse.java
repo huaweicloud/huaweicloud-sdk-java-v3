@@ -125,6 +125,21 @@ public class ShowWebinarResponse extends SdkResponse {
     private YesNoEnum enableRecording;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "liveAddress")
+
+    private String liveAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auxAddress")
+
+    private String auxAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "liveUrl")
+
+    private String liveUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "notifySetting")
 
     private OpenNotifySetting notifySetting;
@@ -508,6 +523,57 @@ public class ShowWebinarResponse extends SdkResponse {
         this.enableRecording = enableRecording;
     }
 
+    public ShowWebinarResponse withLiveAddress(String liveAddress) {
+        this.liveAddress = liveAddress;
+        return this;
+    }
+
+    /**
+     * 主流直播推流地址，在录播类型为 :直播、直播+录播时有效。最大不超过255个字符。
+     * @return liveAddress
+     */
+    public String getLiveAddress() {
+        return liveAddress;
+    }
+
+    public void setLiveAddress(String liveAddress) {
+        this.liveAddress = liveAddress;
+    }
+
+    public ShowWebinarResponse withAuxAddress(String auxAddress) {
+        this.auxAddress = auxAddress;
+        return this;
+    }
+
+    /**
+     * 辅流直播推流地址，在录播类型为 :直播、直播+录播时有效。最大不超过255个字符。
+     * @return auxAddress
+     */
+    public String getAuxAddress() {
+        return auxAddress;
+    }
+
+    public void setAuxAddress(String auxAddress) {
+        this.auxAddress = auxAddress;
+    }
+
+    public ShowWebinarResponse withLiveUrl(String liveUrl) {
+        this.liveUrl = liveUrl;
+        return this;
+    }
+
+    /**
+     * 直播房间地址，在录播类型为录播+直播推流时有效。最大不超过255个字符。
+     * @return liveUrl
+     */
+    public String getLiveUrl() {
+        return liveUrl;
+    }
+
+    public void setLiveUrl(String liveUrl) {
+        this.liveUrl = liveUrl;
+    }
+
     public ShowWebinarResponse withNotifySetting(OpenNotifySetting notifySetting) {
         this.notifySetting = notifySetting;
         return this;
@@ -592,7 +658,9 @@ public class ShowWebinarResponse extends SdkResponse {
             && Objects.equals(this.audienceJoinUri, that.audienceJoinUri)
             && Objects.equals(this.audiencePasswd, that.audiencePasswd)
             && Objects.equals(this.enableRecording, that.enableRecording)
-            && Objects.equals(this.notifySetting, that.notifySetting) && Objects.equals(this.attendees, that.attendees);
+            && Objects.equals(this.liveAddress, that.liveAddress) && Objects.equals(this.auxAddress, that.auxAddress)
+            && Objects.equals(this.liveUrl, that.liveUrl) && Objects.equals(this.notifySetting, that.notifySetting)
+            && Objects.equals(this.attendees, that.attendees);
     }
 
     @Override
@@ -619,6 +687,9 @@ public class ShowWebinarResponse extends SdkResponse {
             audienceJoinUri,
             audiencePasswd,
             enableRecording,
+            liveAddress,
+            auxAddress,
+            liveUrl,
             notifySetting,
             attendees);
     }
@@ -649,6 +720,9 @@ public class ShowWebinarResponse extends SdkResponse {
         sb.append("    audienceJoinUri: ").append(toIndentedString(audienceJoinUri)).append("\n");
         sb.append("    audiencePasswd: ").append(toIndentedString(audiencePasswd)).append("\n");
         sb.append("    enableRecording: ").append(toIndentedString(enableRecording)).append("\n");
+        sb.append("    liveAddress: ").append(toIndentedString(liveAddress)).append("\n");
+        sb.append("    auxAddress: ").append(toIndentedString(auxAddress)).append("\n");
+        sb.append("    liveUrl: ").append(toIndentedString(liveUrl)).append("\n");
         sb.append("    notifySetting: ").append(toIndentedString(notifySetting)).append("\n");
         sb.append("    attendees: ").append(toIndentedString(attendees)).append("\n");
         sb.append("}");

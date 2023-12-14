@@ -108,6 +108,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowInstanceStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowOpenSourceStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineGroupTreeResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ShowPipelineLogRequest;
@@ -1820,6 +1822,36 @@ public class CodeArtsPipelineAsyncClient {
         ShowOpenSourceStrategyRequest request) {
         return new AsyncInvoker<ShowOpenSourceStrategyRequest, ShowOpenSourceStrategyResponse>(request,
             CodeArtsPipelineMeta.showOpenSourceStrategy, hcClient);
+    }
+
+    /**
+     * 查询流水线详情
+     *
+     * 查询流水线详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineDetailRequest 请求对象
+     * @return CompletableFuture<ShowPipelineDetailResponse>
+     */
+    public CompletableFuture<ShowPipelineDetailResponse> showPipelineDetailAsync(ShowPipelineDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsPipelineMeta.showPipelineDetail);
+    }
+
+    /**
+     * 查询流水线详情
+     *
+     * 查询流水线详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPipelineDetailRequest 请求对象
+     * @return AsyncInvoker<ShowPipelineDetailRequest, ShowPipelineDetailResponse>
+     */
+    public AsyncInvoker<ShowPipelineDetailRequest, ShowPipelineDetailResponse> showPipelineDetailAsyncInvoker(
+        ShowPipelineDetailRequest request) {
+        return new AsyncInvoker<ShowPipelineDetailRequest, ShowPipelineDetailResponse>(request,
+            CodeArtsPipelineMeta.showPipelineDetail, hcClient);
     }
 
     /**

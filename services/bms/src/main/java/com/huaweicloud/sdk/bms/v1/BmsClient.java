@@ -20,6 +20,8 @@ import com.huaweicloud.sdk.bms.v1.model.ChangeBaremetalServerOsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ChangeBaremetalServerOsResponse;
 import com.huaweicloud.sdk.bms.v1.model.CreateBareMetalServersRequest;
 import com.huaweicloud.sdk.bms.v1.model.CreateBareMetalServersResponse;
+import com.huaweicloud.sdk.bms.v1.model.DeleteBaremetalServerRequest;
+import com.huaweicloud.sdk.bms.v1.model.DeleteBaremetalServerResponse;
 import com.huaweicloud.sdk.bms.v1.model.DeleteServerNicsRequest;
 import com.huaweicloud.sdk.bms.v1.model.DeleteServerNicsResponse;
 import com.huaweicloud.sdk.bms.v1.model.DeleteWindowsBareMetalServerPasswordRequest;
@@ -371,6 +373,36 @@ public class BmsClient {
         CreateBareMetalServersRequest request) {
         return new SyncInvoker<CreateBareMetalServersRequest, CreateBareMetalServersResponse>(request,
             BmsMeta.createBareMetalServers, hcClient);
+    }
+
+    /**
+     * 删除裸金属服务器裸金属服务器物理机
+     *
+     * 删除裸金属服务器裸金属服务器物理机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBaremetalServerRequest 请求对象
+     * @return DeleteBaremetalServerResponse
+     */
+    public DeleteBaremetalServerResponse deleteBaremetalServer(DeleteBaremetalServerRequest request) {
+        return hcClient.syncInvokeHttp(request, BmsMeta.deleteBaremetalServer);
+    }
+
+    /**
+     * 删除裸金属服务器裸金属服务器物理机
+     *
+     * 删除裸金属服务器裸金属服务器物理机
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBaremetalServerRequest 请求对象
+     * @return SyncInvoker<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse>
+     */
+    public SyncInvoker<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse> deleteBaremetalServerInvoker(
+        DeleteBaremetalServerRequest request) {
+        return new SyncInvoker<DeleteBaremetalServerRequest, DeleteBaremetalServerResponse>(request,
+            BmsMeta.deleteBaremetalServer, hcClient);
     }
 
     /**

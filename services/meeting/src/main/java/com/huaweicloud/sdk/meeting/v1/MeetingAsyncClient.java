@@ -155,6 +155,8 @@ import com.huaweicloud.sdk.meeting.v1.model.ResetPwdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ResetPwdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ResetVisionActiveCodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ResetVisionActiveCodeResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ResumeSimultaneousInterpretationRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ResumeSimultaneousInterpretationResponse;
 import com.huaweicloud.sdk.meeting.v1.model.RollcallParticipantRequest;
 import com.huaweicloud.sdk.meeting.v1.model.RollcallParticipantResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SaveLayoutRequest;
@@ -227,12 +229,16 @@ import com.huaweicloud.sdk.meeting.v1.model.SendVeriCodeForChangePwdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SendVeriCodeForChangePwdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SendVeriCodeForUpdateUserInfoRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SendVeriCodeForUpdateUserInfoResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetAttendeeLanChannelRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetAttendeeLanChannelResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetCohostRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetCohostResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetCustomMultiPictureRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetCustomMultiPictureResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetHostViewRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetHostViewResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SetInterpreterGroupRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SetInterpreterGroupResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SetMultiPictureResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SetParticipantViewRequest;
@@ -2648,6 +2654,37 @@ public class MeetingAsyncClient {
     }
 
     /**
+     * 开启/关闭同声传译
+     *
+     * 该接口用于会议主席可以通过该接口开启/关闭同声传译。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResumeSimultaneousInterpretationRequest 请求对象
+     * @return CompletableFuture<ResumeSimultaneousInterpretationResponse>
+     */
+    public CompletableFuture<ResumeSimultaneousInterpretationResponse> resumeSimultaneousInterpretationAsync(
+        ResumeSimultaneousInterpretationRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.resumeSimultaneousInterpretation);
+    }
+
+    /**
+     * 开启/关闭同声传译
+     *
+     * 该接口用于会议主席可以通过该接口开启/关闭同声传译。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResumeSimultaneousInterpretationRequest 请求对象
+     * @return AsyncInvoker<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse>
+     */
+    public AsyncInvoker<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse> resumeSimultaneousInterpretationAsyncInvoker(
+        ResumeSimultaneousInterpretationRequest request) {
+        return new AsyncInvoker<ResumeSimultaneousInterpretationRequest, ResumeSimultaneousInterpretationResponse>(
+            request, MeetingMeta.resumeSimultaneousInterpretation, hcClient);
+    }
+
+    /**
      * 点名会场
      *
      * 该接口用于点名指定与会者。点名会场的效果是除了主持人外，点名与会者为非静音状态，未点名的与会者统一为静音状态。同一时间，只允许一个与会者被点名。
@@ -3504,6 +3541,37 @@ public class MeetingAsyncClient {
     }
 
     /**
+     * 设置普通与会人的语言频道
+     *
+     * 主持人通过该接口设置某些普通与会者(包括主持人)加入哪个语言频道。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetAttendeeLanChannelRequest 请求对象
+     * @return CompletableFuture<SetAttendeeLanChannelResponse>
+     */
+    public CompletableFuture<SetAttendeeLanChannelResponse> setAttendeeLanChannelAsync(
+        SetAttendeeLanChannelRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setAttendeeLanChannel);
+    }
+
+    /**
+     * 设置普通与会人的语言频道
+     *
+     * 主持人通过该接口设置某些普通与会者(包括主持人)加入哪个语言频道。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetAttendeeLanChannelRequest 请求对象
+     * @return AsyncInvoker<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse>
+     */
+    public AsyncInvoker<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse> setAttendeeLanChannelAsyncInvoker(
+        SetAttendeeLanChannelRequest request) {
+        return new AsyncInvoker<SetAttendeeLanChannelRequest, SetAttendeeLanChannelResponse>(request,
+            MeetingMeta.setAttendeeLanChannel, hcClient);
+    }
+
+    /**
      * 申请联席主持人
      *
      * 该接口用于设置联席主持人或释放联席主持人。只能将来宾设置为联席主持人。
@@ -3588,6 +3656,36 @@ public class MeetingAsyncClient {
      */
     public AsyncInvoker<SetHostViewRequest, SetHostViewResponse> setHostViewAsyncInvoker(SetHostViewRequest request) {
         return new AsyncInvoker<SetHostViewRequest, SetHostViewResponse>(request, MeetingMeta.setHostView, hcClient);
+    }
+
+    /**
+     * 设置传译组
+     *
+     * 主持人通过该接口设置传译组，每个传译组支持两种语言，传译组内支持多个传译员。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInterpreterGroupRequest 请求对象
+     * @return CompletableFuture<SetInterpreterGroupResponse>
+     */
+    public CompletableFuture<SetInterpreterGroupResponse> setInterpreterGroupAsync(SetInterpreterGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.setInterpreterGroup);
+    }
+
+    /**
+     * 设置传译组
+     *
+     * 主持人通过该接口设置传译组，每个传译组支持两种语言，传译组内支持多个传译员。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInterpreterGroupRequest 请求对象
+     * @return AsyncInvoker<SetInterpreterGroupRequest, SetInterpreterGroupResponse>
+     */
+    public AsyncInvoker<SetInterpreterGroupRequest, SetInterpreterGroupResponse> setInterpreterGroupAsyncInvoker(
+        SetInterpreterGroupRequest request) {
+        return new AsyncInvoker<SetInterpreterGroupRequest, SetInterpreterGroupResponse>(request,
+            MeetingMeta.setInterpreterGroup, hcClient);
     }
 
     /**

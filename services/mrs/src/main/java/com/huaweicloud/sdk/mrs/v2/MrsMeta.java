@@ -38,6 +38,7 @@ import com.huaweicloud.sdk.mrs.v2.model.JobBatchDelete;
 import com.huaweicloud.sdk.mrs.v2.model.JobExecution;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ModifyDefaultTagsRequestBody;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowCommand;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowRequest;
 import com.huaweicloud.sdk.mrs.v2.model.RunJobFlowResponse;
@@ -57,12 +58,18 @@ import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShowSqlResultWithJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowTagQuotaRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowTagQuotaResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ShowTagStatusRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ShowTagStatusResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShrinkClusterRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ShrinkClusterResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ShrinkParam;
 import com.huaweicloud.sdk.mrs.v2.model.SqlExecutionReq;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobRequest;
 import com.huaweicloud.sdk.mrs.v2.model.StopJobResponse;
+import com.huaweicloud.sdk.mrs.v2.model.SwitchClusterTagsRequest;
+import com.huaweicloud.sdk.mrs.v2.model.SwitchClusterTagsResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyRequest;
@@ -996,6 +1003,94 @@ public class MrsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlResultRequest::getSqlId, (req, v) -> {
                 req.setSqlId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTagQuotaRequest, ShowTagQuotaResponse> showTagQuota = genForshowTagQuota();
+
+    private static HttpRequestDef<ShowTagQuotaRequest, ShowTagQuotaResponse> genForshowTagQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowTagQuotaRequest, ShowTagQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTagQuotaRequest.class, ShowTagQuotaResponse.class)
+                .withName("ShowTagQuota")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/tags/quota")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTagQuotaRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<Boolean>withRequestField("auto_scaling_policy_tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowTagQuotaRequest::getAutoScalingPolicyTags, (req, v) -> {
+                req.setAutoScalingPolicyTags(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTagStatusRequest, ShowTagStatusResponse> showTagStatus =
+        genForshowTagStatus();
+
+    private static HttpRequestDef<ShowTagStatusRequest, ShowTagStatusResponse> genForshowTagStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowTagStatusRequest, ShowTagStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTagStatusRequest.class, ShowTagStatusResponse.class)
+                .withName("ShowTagStatus")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/tags/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTagStatusRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchClusterTagsRequest, SwitchClusterTagsResponse> switchClusterTags =
+        genForswitchClusterTags();
+
+    private static HttpRequestDef<SwitchClusterTagsRequest, SwitchClusterTagsResponse> genForswitchClusterTags() {
+        // basic
+        HttpRequestDef.Builder<SwitchClusterTagsRequest, SwitchClusterTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchClusterTagsRequest.class, SwitchClusterTagsResponse.class)
+                .withName("SwitchClusterTags")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/tags/switch")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchClusterTagsRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            }));
+        builder.<ModifyDefaultTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyDefaultTagsRequestBody.class),
+            f -> f.withMarshaller(SwitchClusterTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

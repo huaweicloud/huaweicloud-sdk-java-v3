@@ -289,6 +289,11 @@ public class ListServersRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_consistency_result_exist")
+
+    private Boolean isConsistencyResultExist;
+
     public ListServersRequest withState(StateEnum state) {
         this.state = state;
         return this;
@@ -463,6 +468,23 @@ public class ListServersRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListServersRequest withIsConsistencyResultExist(Boolean isConsistencyResultExist) {
+        this.isConsistencyResultExist = isConsistencyResultExist;
+        return this;
+    }
+
+    /**
+     * 是否存在一致性校验结果
+     * @return isConsistencyResultExist
+     */
+    public Boolean getIsConsistencyResultExist() {
+        return isConsistencyResultExist;
+    }
+
+    public void setIsConsistencyResultExist(Boolean isConsistencyResultExist) {
+        this.isConsistencyResultExist = isConsistencyResultExist;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -477,13 +499,23 @@ public class ListServersRequest {
             && Objects.equals(this.migproject, that.migproject) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.migrationCycle, that.migrationCycle)
             && Objects.equals(this.connected, that.connected)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.isConsistencyResultExist, that.isConsistencyResultExist);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(state, name, id, ip, migproject, limit, offset, migrationCycle, connected, enterpriseProjectId);
+        return Objects.hash(state,
+            name,
+            id,
+            ip,
+            migproject,
+            limit,
+            offset,
+            migrationCycle,
+            connected,
+            enterpriseProjectId,
+            isConsistencyResultExist);
     }
 
     @Override
@@ -500,6 +532,7 @@ public class ListServersRequest {
         sb.append("    migrationCycle: ").append(toIndentedString(migrationCycle)).append("\n");
         sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    isConsistencyResultExist: ").append(toIndentedString(isConsistencyResultExist)).append("\n");
         sb.append("}");
         return sb.toString();
     }
