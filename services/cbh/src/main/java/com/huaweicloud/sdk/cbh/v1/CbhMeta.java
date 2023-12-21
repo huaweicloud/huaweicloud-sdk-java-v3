@@ -5,14 +5,14 @@ import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceNetworkRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceNetworkResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceOrderRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceOrderResponse;
+import com.huaweicloud.sdk.cbh.v1.model.CreateCbhRequest;
+import com.huaweicloud.sdk.cbh.v1.model.CreateCbhResponse;
 import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceBody;
 import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceOrder;
 import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceOrderRequest;
 import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceOrderResponse;
-import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceRequest;
-import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceResponse;
-import com.huaweicloud.sdk.cbh.v1.model.InstallInstanceEipRequest;
-import com.huaweicloud.sdk.cbh.v1.model.InstallInstanceEipResponse;
+import com.huaweicloud.sdk.cbh.v1.model.InstallCbhEipRequest;
+import com.huaweicloud.sdk.cbh.v1.model.InstallCbhEipResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ListQuotaStatusRequest;
@@ -42,8 +42,8 @@ import com.huaweicloud.sdk.cbh.v1.model.StartCbhRequestBody;
 import com.huaweicloud.sdk.cbh.v1.model.StopCbhInstanceRequest;
 import com.huaweicloud.sdk.cbh.v1.model.StopCbhInstanceResponse;
 import com.huaweicloud.sdk.cbh.v1.model.StopCbhRequestBody;
-import com.huaweicloud.sdk.cbh.v1.model.UninstallInstanceEipRequest;
-import com.huaweicloud.sdk.cbh.v1.model.UninstallInstanceEipResponse;
+import com.huaweicloud.sdk.cbh.v1.model.UninstallCbhEipRequest;
+import com.huaweicloud.sdk.cbh.v1.model.UninstallCbhEipResponse;
 import com.huaweicloud.sdk.cbh.v1.model.UpgradeCbhInstanceRequest;
 import com.huaweicloud.sdk.cbh.v1.model.UpgradeCbhInstanceResponse;
 import com.huaweicloud.sdk.cbh.v1.model.UpgradeCbhRequestBody;
@@ -120,14 +120,13 @@ public class CbhMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
-        genForcreateInstance();
+    public static final HttpRequestDef<CreateCbhRequest, CreateCbhResponse> createCbh = genForcreateCbh();
 
-    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForcreateInstance() {
+    private static HttpRequestDef<CreateCbhRequest, CreateCbhResponse> genForcreateCbh() {
         // basic
-        HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
-                .withName("CreateInstance")
+        HttpRequestDef.Builder<CreateCbhRequest, CreateCbhResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCbhRequest.class, CreateCbhResponse.class)
+                .withName("CreateCbh")
                 .withUri("/v1/{project_id}/cbs/instance/create")
                 .withContentType("application/json");
 
@@ -136,7 +135,7 @@ public class CbhMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateInstanceBody.class),
-            f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(CreateCbhRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -170,14 +169,14 @@ public class CbhMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<InstallInstanceEipRequest, InstallInstanceEipResponse> installInstanceEip =
-        genForinstallInstanceEip();
+    public static final HttpRequestDef<InstallCbhEipRequest, InstallCbhEipResponse> installCbhEip =
+        genForinstallCbhEip();
 
-    private static HttpRequestDef<InstallInstanceEipRequest, InstallInstanceEipResponse> genForinstallInstanceEip() {
+    private static HttpRequestDef<InstallCbhEipRequest, InstallCbhEipResponse> genForinstallCbhEip() {
         // basic
-        HttpRequestDef.Builder<InstallInstanceEipRequest, InstallInstanceEipResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, InstallInstanceEipRequest.class, InstallInstanceEipResponse.class)
-                .withName("InstallInstanceEip")
+        HttpRequestDef.Builder<InstallCbhEipRequest, InstallCbhEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InstallCbhEipRequest.class, InstallCbhEipResponse.class)
+                .withName("InstallCbhEip")
                 .withUri("/v1/{project_id}/cbs/instance/{server_id}/eip/bind")
                 .withContentType("application/json");
 
@@ -186,14 +185,14 @@ public class CbhMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(InstallInstanceEipRequest::getServerId, (req, v) -> {
+            f -> f.withMarshaller(InstallCbhEipRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
             }));
         builder.<OperateEipRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateEipRequestBody.class),
-            f -> f.withMarshaller(InstallInstanceEipRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(InstallCbhEipRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -438,30 +437,30 @@ public class CbhMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UninstallInstanceEipRequest, UninstallInstanceEipResponse> uninstallInstanceEip =
-        genForuninstallInstanceEip();
+    public static final HttpRequestDef<UninstallCbhEipRequest, UninstallCbhEipResponse> uninstallCbhEip =
+        genForuninstallCbhEip();
 
-    private static HttpRequestDef<UninstallInstanceEipRequest, UninstallInstanceEipResponse> genForuninstallInstanceEip() {
+    private static HttpRequestDef<UninstallCbhEipRequest, UninstallCbhEipResponse> genForuninstallCbhEip() {
         // basic
-        HttpRequestDef.Builder<UninstallInstanceEipRequest, UninstallInstanceEipResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, UninstallInstanceEipRequest.class, UninstallInstanceEipResponse.class)
-            .withName("UninstallInstanceEip")
-            .withUri("/v1/{project_id}/cbs/instance/{server_id}/eip/unbind")
-            .withContentType("application/json");
+        HttpRequestDef.Builder<UninstallCbhEipRequest, UninstallCbhEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UninstallCbhEipRequest.class, UninstallCbhEipResponse.class)
+                .withName("UninstallCbhEip")
+                .withUri("/v1/{project_id}/cbs/instance/{server_id}/eip/unbind")
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UninstallInstanceEipRequest::getServerId, (req, v) -> {
+            f -> f.withMarshaller(UninstallCbhEipRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
             }));
         builder.<OperateEipRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateEipRequestBody.class),
-            f -> f.withMarshaller(UninstallInstanceEipRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(UninstallCbhEipRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

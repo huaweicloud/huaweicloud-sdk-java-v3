@@ -99,6 +99,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobDetailRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobDetailResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoRequest;
@@ -619,7 +621,7 @@ public class WorkspaceAppClient {
     /**
      * 查询任务的执行状态
      *
-     * 查询Job的执行状态。
+     * 查询Job的执行状态，即将下线。
      * 
      * 对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态。
      * 
@@ -635,7 +637,7 @@ public class WorkspaceAppClient {
     /**
      * 查询任务的执行状态
      *
-     * 查询Job的执行状态。
+     * 查询Job的执行状态，即将下线。
      * 
      * 对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态。
      * 
@@ -646,6 +648,39 @@ public class WorkspaceAppClient {
      */
     public SyncInvoker<ShowJobRequest, ShowJobResponse> showJobInvoker(ShowJobRequest request) {
         return new SyncInvoker<ShowJobRequest, ShowJobResponse>(request, WorkspaceAppMeta.showJob, hcClient);
+    }
+
+    /**
+     * 查询任务的执行状态
+     *
+     * 查询Job的执行状态。
+     * 
+     * 对于创建云服务器、删除云服务器、重装服务器等异步API，下发命令后会返回job_id，通过job_id可以查询任务的执行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return ShowJobDetailResponse
+     */
+    public ShowJobDetailResponse showJobDetail(ShowJobDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceAppMeta.showJobDetail);
+    }
+
+    /**
+     * 查询任务的执行状态
+     *
+     * 查询Job的执行状态。
+     * 
+     * 对于创建云服务器、删除云服务器、重装服务器等异步API，下发命令后会返回job_id，通过job_id可以查询任务的执行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
+     */
+    public SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailInvoker(ShowJobDetailRequest request) {
+        return new SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, WorkspaceAppMeta.showJobDetail,
+            hcClient);
     }
 
     /**

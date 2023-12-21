@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class BatchDeleteInstanceUsersReq {
 
     /**
-     * 删除类型。当前只支持delete。
+     * 删除类型。当前只支持delete。  当删除用户时，为必选参数。
      */
     public static final class ActionEnum {
 
@@ -98,7 +98,7 @@ public class BatchDeleteInstanceUsersReq {
     }
 
     /**
-     * 删除类型。当前只支持delete。
+     * 删除类型。当前只支持delete。  当删除用户时，为必选参数。
      * @return action
      */
     public ActionEnum getAction() {
@@ -131,7 +131,7 @@ public class BatchDeleteInstanceUsersReq {
     }
 
     /**
-     * 用户列表。
+     * 用户列表。  当删除用户时，为必选参数。
      * @return users
      */
     public List<String> getUsers() {

@@ -262,6 +262,8 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaResponse;
 
 import java.util.List;
 import java.util.UUID;
@@ -2948,6 +2950,27 @@ public class DcsMeta {
             f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<ShowExpireKeyScanInfoRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowExpireKeyScanInfoRequest.StatusEnum.class),
+            f -> f.withMarshaller(ShowExpireKeyScanInfoRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            }));
 
         // response
 
@@ -3823,6 +3846,32 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(PriorityBody.class),
             f -> f.withMarshaller(UpdateSlavePriorityRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse> validateDeletableReplica =
+        genForvalidateDeletableReplica();
+
+    private static HttpRequestDef<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse> genForvalidateDeletableReplica() {
+        // basic
+        HttpRequestDef.Builder<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ValidateDeletableReplicaRequest.class, ValidateDeletableReplicaResponse.class)
+                .withName("ValidateDeletableReplica")
+                .withUri("/v2/{project_id}/instances/{instance_id}/deletable-replication")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateDeletableReplicaRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
             }));
 
         // response

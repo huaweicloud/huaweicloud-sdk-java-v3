@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.iec.v1.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.iec.v1.model.CreateImageRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateImageResponse;
+import com.huaweicloud.sdk.iec.v1.model.CreateInstanceRequest;
+import com.huaweicloud.sdk.iec.v1.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.iec.v1.model.CreateKeypairRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateKeypairResponse;
 import com.huaweicloud.sdk.iec.v1.model.CreatePortRequest;
@@ -35,6 +37,8 @@ import com.huaweicloud.sdk.iec.v1.model.CreateSecurityGroupRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateSecurityGroupResponse;
 import com.huaweicloud.sdk.iec.v1.model.CreateSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.iec.v1.model.CreateSubnetRequest;
+import com.huaweicloud.sdk.iec.v1.model.CreateSubnetResponse;
 import com.huaweicloud.sdk.iec.v1.model.CreateVpcRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateVpcResponse;
 import com.huaweicloud.sdk.iec.v1.model.DeleteBandwidthRequest;
@@ -75,6 +79,8 @@ import com.huaweicloud.sdk.iec.v1.model.ExecuteDeploymentRequest;
 import com.huaweicloud.sdk.iec.v1.model.ExecuteDeploymentResponse;
 import com.huaweicloud.sdk.iec.v1.model.ExpandEdgecloudRequest;
 import com.huaweicloud.sdk.iec.v1.model.ExpandEdgecloudResponse;
+import com.huaweicloud.sdk.iec.v1.model.ListBandwidthTypesRequest;
+import com.huaweicloud.sdk.iec.v1.model.ListBandwidthTypesResponse;
 import com.huaweicloud.sdk.iec.v1.model.ListBandwidthsRequest;
 import com.huaweicloud.sdk.iec.v1.model.ListBandwidthsResponse;
 import com.huaweicloud.sdk.iec.v1.model.ListCloudImagesRequest;
@@ -431,6 +437,36 @@ public class IecClient {
      */
     public SyncInvoker<CreateImageRequest, CreateImageResponse> createImageInvoker(CreateImageRequest request) {
         return new SyncInvoker<CreateImageRequest, CreateImageResponse>(request, IecMeta.createImage, hcClient);
+    }
+
+    /**
+     * 创建边缘实例
+     *
+     * 创建边缘实例。单租户默认可创建50个边缘实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateInstanceRequest 请求对象
+     * @return CreateInstanceResponse
+     */
+    public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.createInstance);
+    }
+
+    /**
+     * 创建边缘实例
+     *
+     * 创建边缘实例。单租户默认可创建50个边缘实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateInstanceRequest 请求对象
+     * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
+     */
+    public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
+        CreateInstanceRequest request) {
+        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, IecMeta.createInstance,
+            hcClient);
     }
 
     /**
@@ -1133,6 +1169,36 @@ public class IecClient {
         ExpandEdgecloudRequest request) {
         return new SyncInvoker<ExpandEdgecloudRequest, ExpandEdgecloudResponse>(request, IecMeta.expandEdgecloud,
             hcClient);
+    }
+
+    /**
+     * 查询共享带宽类型列表
+     *
+     * 查询共享带宽类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthTypesRequest 请求对象
+     * @return ListBandwidthTypesResponse
+     */
+    public ListBandwidthTypesResponse listBandwidthTypes(ListBandwidthTypesRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.listBandwidthTypes);
+    }
+
+    /**
+     * 查询共享带宽类型列表
+     *
+     * 查询共享带宽类型列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListBandwidthTypesRequest 请求对象
+     * @return SyncInvoker<ListBandwidthTypesRequest, ListBandwidthTypesResponse>
+     */
+    public SyncInvoker<ListBandwidthTypesRequest, ListBandwidthTypesResponse> listBandwidthTypesInvoker(
+        ListBandwidthTypesRequest request) {
+        return new SyncInvoker<ListBandwidthTypesRequest, ListBandwidthTypesResponse>(request,
+            IecMeta.listBandwidthTypes, hcClient);
     }
 
     /**
@@ -2617,6 +2683,34 @@ public class IecClient {
         UpdatePublicIpRequest request) {
         return new SyncInvoker<UpdatePublicIpRequest, UpdatePublicIpResponse>(request, IecMeta.updatePublicIp,
             hcClient);
+    }
+
+    /**
+     * 创建子网
+     *
+     * 根据用户的请求内容，创建子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSubnetRequest 请求对象
+     * @return CreateSubnetResponse
+     */
+    public CreateSubnetResponse createSubnet(CreateSubnetRequest request) {
+        return hcClient.syncInvokeHttp(request, IecMeta.createSubnet);
+    }
+
+    /**
+     * 创建子网
+     *
+     * 根据用户的请求内容，创建子网。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateSubnetRequest 请求对象
+     * @return SyncInvoker<CreateSubnetRequest, CreateSubnetResponse>
+     */
+    public SyncInvoker<CreateSubnetRequest, CreateSubnetResponse> createSubnetInvoker(CreateSubnetRequest request) {
+        return new SyncInvoker<CreateSubnetRequest, CreateSubnetResponse>(request, IecMeta.createSubnet, hcClient);
     }
 
 }

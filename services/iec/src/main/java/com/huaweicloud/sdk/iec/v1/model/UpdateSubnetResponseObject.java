@@ -101,6 +101,16 @@ public class UpdateSubnetResponseObject {
 
     private StatusEnum status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "neutron_subnet_id_v6")
+
+    private String neutronSubnetIdV6;
+
     public UpdateSubnetResponseObject withId(String id) {
         this.id = id;
         return this;
@@ -135,6 +145,40 @@ public class UpdateSubnetResponseObject {
         this.status = status;
     }
 
+    public UpdateSubnetResponseObject withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 是否开启IPv6
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
+    public UpdateSubnetResponseObject withNeutronSubnetIdV6(String neutronSubnetIdV6) {
+        this.neutronSubnetIdV6 = neutronSubnetIdV6;
+        return this;
+    }
+
+    /**
+     * 对应IPv6子网（OpenStack Neutron接口）id，如果子网为IPv4子网，则不返回此参数。 
+     * @return neutronSubnetIdV6
+     */
+    public String getNeutronSubnetIdV6() {
+        return neutronSubnetIdV6;
+    }
+
+    public void setNeutronSubnetIdV6(String neutronSubnetIdV6) {
+        this.neutronSubnetIdV6 = neutronSubnetIdV6;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -144,12 +188,14 @@ public class UpdateSubnetResponseObject {
             return false;
         }
         UpdateSubnetResponseObject that = (UpdateSubnetResponseObject) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.neutronSubnetIdV6, that.neutronSubnetIdV6);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status);
+        return Objects.hash(id, status, ipv6Enable, neutronSubnetIdV6);
     }
 
     @Override
@@ -158,6 +204,8 @@ public class UpdateSubnetResponseObject {
         sb.append("class UpdateSubnetResponseObject {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    neutronSubnetIdV6: ").append(toIndentedString(neutronSubnetIdV6)).append("\n");
         sb.append("}");
         return sb.toString();
     }

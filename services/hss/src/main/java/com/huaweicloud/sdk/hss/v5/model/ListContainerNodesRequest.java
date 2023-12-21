@@ -45,6 +45,11 @@ public class ListContainerNodesRequest {
 
     private String protectStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_tags")
+
+    private String containerTags;
+
     public ListContainerNodesRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -168,6 +173,23 @@ public class ListContainerNodesRequest {
         this.protectStatus = protectStatus;
     }
 
+    public ListContainerNodesRequest withContainerTags(String containerTags) {
+        this.containerTags = containerTags;
+        return this;
+    }
+
+    /**
+     * 标签：用来识别cce容器节点和自建  - cce：cce节点  - self：自建节点  - other：其他节点
+     * @return containerTags
+     */
+    public String getContainerTags() {
+        return containerTags;
+    }
+
+    public void setContainerTags(String containerTags) {
+        this.containerTags = containerTags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -181,12 +203,14 @@ public class ListContainerNodesRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.agentStatus, that.agentStatus)
-            && Objects.equals(this.protectStatus, that.protectStatus);
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.containerTags, that.containerTags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, enterpriseProjectId, offset, limit, hostName, agentStatus, protectStatus);
+        return Objects
+            .hash(region, enterpriseProjectId, offset, limit, hostName, agentStatus, protectStatus, containerTags);
     }
 
     @Override
@@ -200,6 +224,7 @@ public class ListContainerNodesRequest {
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
+        sb.append("    containerTags: ").append(toIndentedString(containerTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class ListJarPackageHostInfoRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "part_match")
+
+    private Boolean partMatch;
+
     public ListJarPackageHostInfoRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -168,6 +173,23 @@ public class ListJarPackageHostInfoRequest {
         this.offset = offset;
     }
 
+    public ListJarPackageHostInfoRequest withPartMatch(Boolean partMatch) {
+        this.partMatch = partMatch;
+        return this;
+    }
+
+    /**
+     * 是否模糊匹配，默认false表示精确匹配
+     * @return partMatch
+     */
+    public Boolean getPartMatch() {
+        return partMatch;
+    }
+
+    public void setPartMatch(Boolean partMatch) {
+        this.partMatch = partMatch;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +202,13 @@ public class ListJarPackageHostInfoRequest {
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.category, that.category)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.partMatch, that.partMatch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, fileName, category, hostName, hostIp, limit, offset);
+        return Objects.hash(enterpriseProjectId, fileName, category, hostName, hostIp, limit, offset, partMatch);
     }
 
     @Override
@@ -199,6 +222,7 @@ public class ListJarPackageHostInfoRequest {
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    partMatch: ").append(toIndentedString(partMatch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

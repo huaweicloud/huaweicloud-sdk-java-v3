@@ -22,7 +22,7 @@ public class CreateFsTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务id
+     * 任务ID
      * @return taskId
      */
     public String getTaskId() {

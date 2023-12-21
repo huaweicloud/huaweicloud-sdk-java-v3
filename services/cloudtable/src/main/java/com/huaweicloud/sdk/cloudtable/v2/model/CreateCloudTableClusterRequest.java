@@ -19,7 +19,7 @@ public class CreateCloudTableClusterRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateClusterRequestBody body;
+    private CreateClusterReqBody body;
 
     public CreateCloudTableClusterRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -40,14 +40,14 @@ public class CreateCloudTableClusterRequest {
         this.xLanguage = xLanguage;
     }
 
-    public CreateCloudTableClusterRequest withBody(CreateClusterRequestBody body) {
+    public CreateCloudTableClusterRequest withBody(CreateClusterReqBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateCloudTableClusterRequest withBody(Consumer<CreateClusterRequestBody> bodySetter) {
+    public CreateCloudTableClusterRequest withBody(Consumer<CreateClusterReqBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateClusterRequestBody();
+            this.body = new CreateClusterReqBody();
             bodySetter.accept(this.body);
         }
 
@@ -58,11 +58,11 @@ public class CreateCloudTableClusterRequest {
      * Get body
      * @return body
      */
-    public CreateClusterRequestBody getBody() {
+    public CreateClusterReqBody getBody() {
         return body;
     }
 
-    public void setBody(CreateClusterRequestBody body) {
+    public void setBody(CreateClusterReqBody body) {
         this.body = body;
     }
 

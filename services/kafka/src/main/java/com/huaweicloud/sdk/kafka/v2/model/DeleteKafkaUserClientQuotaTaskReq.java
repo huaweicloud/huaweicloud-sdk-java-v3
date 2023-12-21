@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 要删除的客户端流控配置
+ * 待删除的用户/客户端流控配置
  */
 public class DeleteKafkaUserClientQuotaTaskReq {
 

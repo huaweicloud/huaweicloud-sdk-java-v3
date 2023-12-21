@@ -81,7 +81,7 @@ public class ListVulHostsRequest {
     }
 
     /**
-     * 企业租户ID，查询所有企业项目时填写：all_granted_eps
+     * 企业租户ID，“0”表示默认企业项目，查询所有企业项目时填写：all_granted_eps
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -115,7 +115,7 @@ public class ListVulHostsRequest {
     }
 
     /**
-     * 漏洞类型   - linux_vul : 漏洞类型-linux漏洞   - windows_vul : 漏洞类型-windows漏洞   - web_cms : Web-CMS漏洞   - app_vul : 应用漏洞
+     * 漏洞类型   - linux_vul : 漏洞类型-linux漏洞   - windows_vul : 漏洞类型-windows漏洞   - web_cms : Web-CMS漏洞   - app_vul : 应用漏洞   - urgent_vul : 应急漏洞
      * @return type
      */
     public String getType() {

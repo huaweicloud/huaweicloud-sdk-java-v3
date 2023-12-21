@@ -17,6 +17,16 @@ public class LocationDetail {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "zone_code")
+
+    private String zoneCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address")
+
+    private String address;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -63,6 +73,40 @@ public class LocationDetail {
         this.name = name;
     }
 
+    public LocationDetail withZoneCode(String zoneCode) {
+        this.zoneCode = zoneCode;
+        return this;
+    }
+
+    /**
+     * 场地所在地区
+     * @return zoneCode
+     */
+    public String getZoneCode() {
+        return zoneCode;
+    }
+
+    public void setZoneCode(String zoneCode) {
+        this.zoneCode = zoneCode;
+    }
+
+    public LocationDetail withAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
+    /**
+     * 部署位置
+     * @return address
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public LocationDetail withDescription(String description) {
         this.description = description;
         return this;
@@ -86,7 +130,7 @@ public class LocationDetail {
     }
 
     /**
-     * 场地所在国家
+     * 场地所在国家（逐步下线，使用zone_code替代）
      * @return country
      */
     public String getCountry() {
@@ -183,7 +227,8 @@ public class LocationDetail {
             return false;
         }
         LocationDetail that = (LocationDetail) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.zoneCode, that.zoneCode)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.description, that.description)
             && Objects.equals(this.country, that.country) && Objects.equals(this.province, that.province)
             && Objects.equals(this.city, that.city) && Objects.equals(this.district, that.district)
             && Objects.equals(this.condition, that.condition);
@@ -191,7 +236,7 @@ public class LocationDetail {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, country, province, city, district, condition);
+        return Objects.hash(name, zoneCode, address, description, country, province, city, district, condition);
     }
 
     @Override
@@ -199,6 +244,8 @@ public class LocationDetail {
         StringBuilder sb = new StringBuilder();
         sb.append("class LocationDetail {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    zoneCode: ").append(toIndentedString(zoneCode)).append("\n");
+        sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    country: ").append(toIndentedString(country)).append("\n");
         sb.append("    province: ").append(toIndentedString(province)).append("\n");

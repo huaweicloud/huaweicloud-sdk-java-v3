@@ -37,7 +37,7 @@ public class ShowFsDirUsageResponse extends SdkResponse {
     }
 
     /**
-     * 消息描述
+     * Get dirUsage
      * @return dirUsage
      */
     public FsDirUasge getDirUsage() {

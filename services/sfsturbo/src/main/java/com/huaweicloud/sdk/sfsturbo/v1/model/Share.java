@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.sfsturbo.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -70,6 +72,11 @@ public class Share {
     @JsonProperty(value = "backup_id")
 
     private String backupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
 
     public Share withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -222,7 +229,7 @@ public class Share {
     }
 
     /**
-     * 通用型-普通文件系统容量，取值范围500~32768，单位GB。 通用型-增强版文件系统，即在“metadata”字段中设置了expand_type=\"bandwidth\"，则容量范围是10240~327680，单位GiB。 HPC型文件系统，即在“metadata”字段中设置了expand_type=\"hpc\"，则容量范围是3686~1048576，单位GiB。HPC型文件系统的容量必须为1.2TiB的倍数，换算为GiB后需要向下取整。如3.6TiB->3686GiB, 4.8TiB->4915GiB，8.4TiB->8601GiB。 HPC缓存型文件系统，即在“metadata”字段中设置了expand_type=\"hpc_cache\"，则容量范围是4096~1048576，单位GiB。不同带宽，起步容量不一样，步长均为1TiB。如2GB/s带宽，起步容量为4TiB，即4096GiB；4GB/s带宽，起步容量为8TiB，即8192GiB；8GB/s带宽，起步容量为16TiB，即16384GiB。 
+     * 通用型-普通文件系统容量，取值范围500~32768，单位GB。 通用型-增强版文件系统，即在“metadata”字段中设置了expand_type=\"bandwidth\"，则容量范围是10240~327680，单位GiB。 HPC型文件系统，即在“metadata”字段中设置了expand_type=\"hpc\"，则容量范围是3686(或1228)~1048576，单位GiB。对于20MB/s/TiB的规格，起步容量为3686GiB；对于HPC其他规格，起步容量为1228GiB。HPC型文件系统的容量必须为1.2TiB的倍数，换算为GiB后需要向下取整。如3.6TiB->3686GiB, 4.8TiB->4915GiB，8.4TiB->8601GiB。 HPC缓存型文件系统，即在“metadata”字段中设置了expand_type=\"hpc_cache\"，则容量范围是4096~1048576，单位GiB。不同带宽，起步容量不一样，步长均为1TiB。如2GB/s带宽，起步容量为4TiB，即4096GiB；4GB/s带宽，起步容量为8TiB，即8192GiB；8GB/s带宽，起步容量为16TiB，即16384GiB。 
      * minimum: 500
      * maximum: 1048576
      * @return size
@@ -286,6 +293,39 @@ public class Share {
         this.backupId = backupId;
     }
 
+    public Share withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public Share addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public Share withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * tag标签的列表。
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -302,7 +342,8 @@ public class Share {
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.shareProto, that.shareProto) && Objects.equals(this.shareType, that.shareType)
             && Objects.equals(this.size, that.size) && Objects.equals(this.subnetId, that.subnetId)
-            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.backupId, that.backupId);
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.backupId, that.backupId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -318,7 +359,8 @@ public class Share {
             size,
             subnetId,
             vpcId,
-            backupId);
+            backupId,
+            tags);
     }
 
     @Override
@@ -337,6 +379,7 @@ public class Share {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

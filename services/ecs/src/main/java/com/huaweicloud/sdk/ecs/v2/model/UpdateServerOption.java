@@ -25,6 +25,11 @@ public class UpdateServerOption {
 
     private String hostname;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_data")
+
+    private String userData;
+
     public UpdateServerOption withName(String name) {
         this.name = name;
         return this;
@@ -76,6 +81,23 @@ public class UpdateServerOption {
         this.hostname = hostname;
     }
 
+    public UpdateServerOption withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+
+    /**
+     * 修改云服务器云主机过程中待注入实例自定义数据。支持注入文本、文本文件。  示例：  base64编码前：   Linux服务器：     #!/bin/bash     echo user_test > /home/user.txt   Windows服务器：     rem cmd     echo 111 > c:\\aaa.txt  base64编码后：   Linux服务器：IyEvYmluL2Jhc2gKZWNobyB1c2VyX3Rlc3QgPiAvaG9tZS91c2VyLnR4dA==   Windows服务器：cmVtIGNtZA0KZWNobyAxMTEgJmd0OyBjOlxhYWEudHh0
+     * @return userData
+     */
+    public String getUserData() {
+        return userData;
+    }
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class UpdateServerOption {
         }
         UpdateServerOption that = (UpdateServerOption) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.hostname, that.hostname);
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.userData, that.userData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, hostname);
+        return Objects.hash(name, description, hostname, userData);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class UpdateServerOption {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+        sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

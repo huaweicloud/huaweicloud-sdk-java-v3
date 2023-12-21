@@ -218,6 +218,31 @@ public class ModifyJobReq {
          */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
 
+        /**
+         * Enum GAUSSDBV5 for value: "gaussdbv5"
+         */
+        public static final EngineTypeEnum GAUSSDBV5 = new EngineTypeEnum("gaussdbv5");
+
+        /**
+         * Enum POSTGRESQL for value: "postgresql"
+         */
+        public static final EngineTypeEnum POSTGRESQL = new EngineTypeEnum("postgresql");
+
+        /**
+         * Enum MYSQL_TO_KAFKA for value: "mysql-to-kafka"
+         */
+        public static final EngineTypeEnum MYSQL_TO_KAFKA = new EngineTypeEnum("mysql-to-kafka");
+
+        /**
+         * Enum TAURUS_TO_KAFKA for value: "taurus-to-kafka"
+         */
+        public static final EngineTypeEnum TAURUS_TO_KAFKA = new EngineTypeEnum("taurus-to-kafka");
+
+        /**
+         * Enum GAUSSDBV5HA_TO_KAFKA for value: "gaussdbv5ha-to-kafka"
+         */
+        public static final EngineTypeEnum GAUSSDBV5HA_TO_KAFKA = new EngineTypeEnum("gaussdbv5ha-to-kafka");
+
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineTypeEnum> createStaticFields() {
@@ -225,6 +250,11 @@ public class ModifyJobReq {
             map.put("mysql", MYSQL);
             map.put("mongodb", MONGODB);
             map.put("cloudDataGuard-mysql", CLOUDDATAGUARD_MYSQL);
+            map.put("gaussdbv5", GAUSSDBV5);
+            map.put("postgresql", POSTGRESQL);
+            map.put("mysql-to-kafka", MYSQL_TO_KAFKA);
+            map.put("taurus-to-kafka", TAURUS_TO_KAFKA);
+            map.put("gaussdbv5ha-to-kafka", GAUSSDBV5HA_TO_KAFKA);
             return Collections.unmodifiableMap(map);
         }
 

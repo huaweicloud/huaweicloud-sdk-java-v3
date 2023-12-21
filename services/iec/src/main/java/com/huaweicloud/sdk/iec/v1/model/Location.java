@@ -131,6 +131,21 @@ public class Location {
 
     private String cityShortName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_bandwidth_enable")
+
+    private Boolean ipv6BandwidthEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_id_v6")
+
+    private String poolIdV6;
+
     public Location withSiteId(String siteId) {
         this.siteId = siteId;
         return this;
@@ -267,6 +282,57 @@ public class Location {
         this.cityShortName = cityShortName;
     }
 
+    public Location withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 创建边缘实例是否开启IPv6。
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
+    public Location withIpv6BandwidthEnable(Boolean ipv6BandwidthEnable) {
+        this.ipv6BandwidthEnable = ipv6BandwidthEnable;
+        return this;
+    }
+
+    /**
+     * 创建IPv6边缘实例是否支持公网访问。
+     * @return ipv6BandwidthEnable
+     */
+    public Boolean getIpv6BandwidthEnable() {
+        return ipv6BandwidthEnable;
+    }
+
+    public void setIpv6BandwidthEnable(Boolean ipv6BandwidthEnable) {
+        this.ipv6BandwidthEnable = ipv6BandwidthEnable;
+    }
+
+    public Location withPoolIdV6(String poolIdV6) {
+        this.poolIdV6 = poolIdV6;
+        return this;
+    }
+
+    /**
+     * IPv6线路ID。IPv6场景下，使用该线路下的子网分配IPv6端口。
+     * @return poolIdV6
+     */
+    public String getPoolIdV6() {
+        return poolIdV6;
+    }
+
+    public void setPoolIdV6(String poolIdV6) {
+        this.poolIdV6 = poolIdV6;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -280,12 +346,25 @@ public class Location {
             && Objects.equals(this.province, that.province) && Objects.equals(this.city, that.city)
             && Objects.equals(this.operator, that.operator) && Objects.equals(this.poolId, that.poolId)
             && Objects.equals(this.stackCount, that.stackCount)
-            && Objects.equals(this.cityShortName, that.cityShortName);
+            && Objects.equals(this.cityShortName, that.cityShortName)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6BandwidthEnable, that.ipv6BandwidthEnable)
+            && Objects.equals(this.poolIdV6, that.poolIdV6);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(siteId, area, province, city, operator, poolId, stackCount, cityShortName);
+        return Objects.hash(siteId,
+            area,
+            province,
+            city,
+            operator,
+            poolId,
+            stackCount,
+            cityShortName,
+            ipv6Enable,
+            ipv6BandwidthEnable,
+            poolIdV6);
     }
 
     @Override
@@ -300,6 +379,9 @@ public class Location {
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    stackCount: ").append(toIndentedString(stackCount)).append("\n");
         sb.append("    cityShortName: ").append(toIndentedString(cityShortName)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    ipv6BandwidthEnable: ").append(toIndentedString(ipv6BandwidthEnable)).append("\n");
+        sb.append("    poolIdV6: ").append(toIndentedString(poolIdV6)).append("\n");
         sb.append("}");
         return sb.toString();
     }

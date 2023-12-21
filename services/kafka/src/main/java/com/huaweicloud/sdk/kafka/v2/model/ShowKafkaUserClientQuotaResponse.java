@@ -63,7 +63,7 @@ public class ShowKafkaUserClientQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 客户端流控配置数目。 
+     * 用户/客户端流控配置数目。 
      * @return count
      */
     public Integer getCount() {

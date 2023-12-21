@@ -142,7 +142,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_system_time")
 
-    private String currentSystemTime;
+    private Long currentSystemTime;
 
     public ShowPipelineRunDetailResponse withId(String id) {
         this.id = id;
@@ -617,7 +617,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
         this.detailUrl = detailUrl;
     }
 
-    public ShowPipelineRunDetailResponse withCurrentSystemTime(String currentSystemTime) {
+    public ShowPipelineRunDetailResponse withCurrentSystemTime(Long currentSystemTime) {
         this.currentSystemTime = currentSystemTime;
         return this;
     }
@@ -626,11 +626,11 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
      * 当前系统时间
      * @return currentSystemTime
      */
-    public String getCurrentSystemTime() {
+    public Long getCurrentSystemTime() {
         return currentSystemTime;
     }
 
-    public void setCurrentSystemTime(String currentSystemTime) {
+    public void setCurrentSystemTime(Long currentSystemTime) {
         this.currentSystemTime = currentSystemTime;
     }
 

@@ -226,6 +226,11 @@ public class Node {
     private Integer pollingInterval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execTimeOutRetry")
+
+    private String execTimeOutRetry;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxExecutionTime")
 
     private Integer maxExecutionTime;
@@ -513,6 +518,23 @@ public class Node {
         this.pollingInterval = pollingInterval;
     }
 
+    public Node withExecTimeOutRetry(String execTimeOutRetry) {
+        this.execTimeOutRetry = execTimeOutRetry;
+        return this;
+    }
+
+    /**
+     * 节点是否超时重试
+     * @return execTimeOutRetry
+     */
+    public String getExecTimeOutRetry() {
+        return execTimeOutRetry;
+    }
+
+    public void setExecTimeOutRetry(String execTimeOutRetry) {
+        this.execTimeOutRetry = execTimeOutRetry;
+    }
+
     public Node withMaxExecutionTime(Integer maxExecutionTime) {
         this.maxExecutionTime = maxExecutionTime;
         return this;
@@ -646,6 +668,7 @@ public class Node {
             && Objects.equals(this.location, that.location) && Objects.equals(this.preNodeName, that.preNodeName)
             && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.properties, that.properties)
             && Objects.equals(this.pollingInterval, that.pollingInterval)
+            && Objects.equals(this.execTimeOutRetry, that.execTimeOutRetry)
             && Objects.equals(this.maxExecutionTime, that.maxExecutionTime)
             && Objects.equals(this.retryTimes, that.retryTimes)
             && Objects.equals(this.retryInterval, that.retryInterval)
@@ -662,6 +685,7 @@ public class Node {
             conditions,
             properties,
             pollingInterval,
+            execTimeOutRetry,
             maxExecutionTime,
             retryTimes,
             retryInterval,
@@ -681,6 +705,7 @@ public class Node {
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("    pollingInterval: ").append(toIndentedString(pollingInterval)).append("\n");
+        sb.append("    execTimeOutRetry: ").append(toIndentedString(execTimeOutRetry)).append("\n");
         sb.append("    maxExecutionTime: ").append(toIndentedString(maxExecutionTime)).append("\n");
         sb.append("    retryTimes: ").append(toIndentedString(retryTimes)).append("\n");
         sb.append("    retryInterval: ").append(toIndentedString(retryInterval)).append("\n");

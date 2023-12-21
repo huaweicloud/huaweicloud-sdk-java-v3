@@ -29,6 +29,11 @@ public class AssetInfo {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_multi_transcode")
+
+    private Boolean isMultiTranscode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "base_info")
 
     private BaseInfo baseInfo;
@@ -87,6 +92,23 @@ public class AssetInfo {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public AssetInfo withIsMultiTranscode(Boolean isMultiTranscode) {
+        this.isMultiTranscode = isMultiTranscode;
+        return this;
+    }
+
+    /**
+     * 是否是多转码模式 
+     * @return isMultiTranscode
+     */
+    public Boolean getIsMultiTranscode() {
+        return isMultiTranscode;
+    }
+
+    public void setIsMultiTranscode(Boolean isMultiTranscode) {
+        this.isMultiTranscode = isMultiTranscode;
     }
 
     public AssetInfo withBaseInfo(BaseInfo baseInfo) {
@@ -158,13 +180,14 @@ public class AssetInfo {
         }
         AssetInfo that = (AssetInfo) obj;
         return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.baseInfo, that.baseInfo)
-            && Objects.equals(this.playInfoArray, that.playInfoArray);
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isMultiTranscode, that.isMultiTranscode)
+            && Objects.equals(this.baseInfo, that.baseInfo) && Objects.equals(this.playInfoArray, that.playInfoArray);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, status, description, baseInfo, playInfoArray);
+        return Objects.hash(assetId, status, description, isMultiTranscode, baseInfo, playInfoArray);
     }
 
     @Override
@@ -174,6 +197,7 @@ public class AssetInfo {
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    isMultiTranscode: ").append(toIndentedString(isMultiTranscode)).append("\n");
         sb.append("    baseInfo: ").append(toIndentedString(baseInfo)).append("\n");
         sb.append("    playInfoArray: ").append(toIndentedString(playInfoArray)).append("\n");
         sb.append("}");

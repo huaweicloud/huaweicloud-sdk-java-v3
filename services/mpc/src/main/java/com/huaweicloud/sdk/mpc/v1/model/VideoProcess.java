@@ -25,6 +25,81 @@ public class VideoProcess {
 
     private Integer hlsInitInterval;
 
+    /**
+     * hls的音视频流存储方式。  - composite：存储在同一个文件中。 - separate：存储在不同的文件中 
+     */
+    public static final class HlsStorageTypeEnum {
+
+        /**
+         * Enum COMPOSITE for value: "composite"
+         */
+        public static final HlsStorageTypeEnum COMPOSITE = new HlsStorageTypeEnum("composite");
+
+        /**
+         * Enum SEPARATE for value: "separate"
+         */
+        public static final HlsStorageTypeEnum SEPARATE = new HlsStorageTypeEnum("separate");
+
+        private static final Map<String, HlsStorageTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HlsStorageTypeEnum> createStaticFields() {
+            Map<String, HlsStorageTypeEnum> map = new HashMap<>();
+            map.put("composite", COMPOSITE);
+            map.put("separate", SEPARATE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HlsStorageTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HlsStorageTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HlsStorageTypeEnum(value));
+        }
+
+        public static HlsStorageTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HlsStorageTypeEnum) {
+                return this.value.equals(((HlsStorageTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hls_storage_type")
+
+    private HlsStorageTypeEnum hlsStorageType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rotate")
 
@@ -154,6 +229,23 @@ public class VideoProcess {
         this.hlsInitInterval = hlsInitInterval;
     }
 
+    public VideoProcess withHlsStorageType(HlsStorageTypeEnum hlsStorageType) {
+        this.hlsStorageType = hlsStorageType;
+        return this;
+    }
+
+    /**
+     * hls的音视频流存储方式。  - composite：存储在同一个文件中。 - separate：存储在不同的文件中 
+     * @return hlsStorageType
+     */
+    public HlsStorageTypeEnum getHlsStorageType() {
+        return hlsStorageType;
+    }
+
+    public void setHlsStorageType(HlsStorageTypeEnum hlsStorageType) {
+        this.hlsStorageType = hlsStorageType;
+    }
+
     public VideoProcess withRotate(Integer rotate) {
         this.rotate = rotate;
         return this;
@@ -219,13 +311,14 @@ public class VideoProcess {
         }
         VideoProcess that = (VideoProcess) obj;
         return Objects.equals(this.hlsInitCount, that.hlsInitCount)
-            && Objects.equals(this.hlsInitInterval, that.hlsInitInterval) && Objects.equals(this.rotate, that.rotate)
+            && Objects.equals(this.hlsInitInterval, that.hlsInitInterval)
+            && Objects.equals(this.hlsStorageType, that.hlsStorageType) && Objects.equals(this.rotate, that.rotate)
             && Objects.equals(this.adaptation, that.adaptation) && Objects.equals(this.upsample, that.upsample);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hlsInitCount, hlsInitInterval, rotate, adaptation, upsample);
+        return Objects.hash(hlsInitCount, hlsInitInterval, hlsStorageType, rotate, adaptation, upsample);
     }
 
     @Override
@@ -234,6 +327,7 @@ public class VideoProcess {
         sb.append("class VideoProcess {\n");
         sb.append("    hlsInitCount: ").append(toIndentedString(hlsInitCount)).append("\n");
         sb.append("    hlsInitInterval: ").append(toIndentedString(hlsInitInterval)).append("\n");
+        sb.append("    hlsStorageType: ").append(toIndentedString(hlsStorageType)).append("\n");
         sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
         sb.append("    adaptation: ").append(toIndentedString(adaptation)).append("\n");
         sb.append("    upsample: ").append(toIndentedString(upsample)).append("\n");

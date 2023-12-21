@@ -65,7 +65,7 @@ public class CreateVpcOption {
     }
 
     /**
-     * 虚拟私有云的模式，支持的取值范围如下：  SYSTEM：该类型网络，系统会自动按照实际需要创建足够的子网。 [CUSTOMER：该类型网络，用户需要完全按照自己站点的需要，去申请足够的子网。](tag:internal)
+     * 虚拟私有云的模式，支持的取值范围如下：  SYSTEM：该类型网络，系统会自动按照实际需要创建足够的子网。 CUSTOMER：该类型网络，用户需要完全按照自己站点的需要，去申请足够的子网。
      * @return mode
      */
     public String getMode() {

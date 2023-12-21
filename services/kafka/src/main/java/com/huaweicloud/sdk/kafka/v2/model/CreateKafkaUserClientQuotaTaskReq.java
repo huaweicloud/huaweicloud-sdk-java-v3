@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 客户端流控配置
+ * 用户/客户端流控配置
  */
 public class CreateKafkaUserClientQuotaTaskReq {
 

@@ -191,7 +191,7 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     /**
-     * APP秘钥。 > 开启SSO登录时，若不修改APP秘钥，则置空即可 
+     * APP秘钥。 > 开启SSO登录时，当getTokenUrl或者getUserInfoUrl有变更时必填 > 开启SSO登录时，当getTokenUrl和getUserInfoUrl未变更时，且不修改APP秘钥，则置空即可 
      * @return clientSecret
      */
     public String getClientSecret() {

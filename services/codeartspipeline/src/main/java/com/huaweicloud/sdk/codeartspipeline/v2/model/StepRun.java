@@ -61,7 +61,7 @@ public class StepRun {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_ids")
 
-    private String endpointIds;
+    private List<String> endpointIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_dispatch_id")
@@ -257,8 +257,24 @@ public class StepRun {
         this.id = id;
     }
 
-    public StepRun withEndpointIds(String endpointIds) {
+    public StepRun withEndpointIds(List<String> endpointIds) {
         this.endpointIds = endpointIds;
+        return this;
+    }
+
+    public StepRun addEndpointIdsItem(String endpointIdsItem) {
+        if (this.endpointIds == null) {
+            this.endpointIds = new ArrayList<>();
+        }
+        this.endpointIds.add(endpointIdsItem);
+        return this;
+    }
+
+    public StepRun withEndpointIds(Consumer<List<String>> endpointIdsSetter) {
+        if (this.endpointIds == null) {
+            this.endpointIds = new ArrayList<>();
+        }
+        endpointIdsSetter.accept(this.endpointIds);
         return this;
     }
 
@@ -266,11 +282,11 @@ public class StepRun {
      * 扩展点
      * @return endpointIds
      */
-    public String getEndpointIds() {
+    public List<String> getEndpointIds() {
         return endpointIds;
     }
 
-    public void setEndpointIds(String endpointIds) {
+    public void setEndpointIds(List<String> endpointIds) {
         this.endpointIds = endpointIds;
     }
 

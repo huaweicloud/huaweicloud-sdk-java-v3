@@ -164,6 +164,31 @@ public class Subnet {
 
     private String neutronSubnetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cidr_v6")
+
+    private String cidrV6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_id")
+
+    private String poolId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "neutron_subnet_id_v6")
+
+    private String neutronSubnetIdV6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gateway_ip_v6")
+
+    private String gatewayIpV6;
+
     public Subnet withId(String id) {
         this.id = id;
         return this;
@@ -418,6 +443,91 @@ public class Subnet {
         this.neutronSubnetId = neutronSubnetId;
     }
 
+    public Subnet withCidrV6(String cidrV6) {
+        this.cidrV6 = cidrV6;
+        return this;
+    }
+
+    /**
+     * IPv6子网的网段，如果子网为IPv4子网，则不返回此参数
+     * @return cidrV6
+     */
+    public String getCidrV6() {
+        return cidrV6;
+    }
+
+    public void setCidrV6(String cidrV6) {
+        this.cidrV6 = cidrV6;
+    }
+
+    public Subnet withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 是否是IPv6子网  取值范围：true，false
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
+    public Subnet withPoolId(String poolId) {
+        this.poolId = poolId;
+        return this;
+    }
+
+    /**
+     * IPv6线路ID，如果子网为IPv4子网，则不返回此参数。
+     * @return poolId
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
+    public Subnet withNeutronSubnetIdV6(String neutronSubnetIdV6) {
+        this.neutronSubnetIdV6 = neutronSubnetIdV6;
+        return this;
+    }
+
+    /**
+     * 对应IPv6子网（OpenStack Neutron接口）id，如果子网为IPv4子网，则不返回此参数。
+     * @return neutronSubnetIdV6
+     */
+    public String getNeutronSubnetIdV6() {
+        return neutronSubnetIdV6;
+    }
+
+    public void setNeutronSubnetIdV6(String neutronSubnetIdV6) {
+        this.neutronSubnetIdV6 = neutronSubnetIdV6;
+    }
+
+    public Subnet withGatewayIpV6(String gatewayIpV6) {
+        this.gatewayIpV6 = gatewayIpV6;
+        return this;
+    }
+
+    /**
+     * IPv6子网的网关，如果子网为IPv4子网，则不返回此参数。
+     * @return gatewayIpV6
+     */
+    public String getGatewayIpV6() {
+        return gatewayIpV6;
+    }
+
+    public void setGatewayIpV6(String gatewayIpV6) {
+        this.gatewayIpV6 = gatewayIpV6;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -434,7 +544,10 @@ public class Subnet {
             && Objects.equals(this.status, that.status) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.siteId, that.siteId) && Objects.equals(this.siteInfo, that.siteInfo)
             && Objects.equals(this.neutronNetworkId, that.neutronNetworkId)
-            && Objects.equals(this.neutronSubnetId, that.neutronSubnetId);
+            && Objects.equals(this.neutronSubnetId, that.neutronSubnetId) && Objects.equals(this.cidrV6, that.cidrV6)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.neutronSubnetIdV6, that.neutronSubnetIdV6)
+            && Objects.equals(this.gatewayIpV6, that.gatewayIpV6);
     }
 
     @Override
@@ -452,7 +565,12 @@ public class Subnet {
             siteId,
             siteInfo,
             neutronNetworkId,
-            neutronSubnetId);
+            neutronSubnetId,
+            cidrV6,
+            ipv6Enable,
+            poolId,
+            neutronSubnetIdV6,
+            gatewayIpV6);
     }
 
     @Override
@@ -473,6 +591,11 @@ public class Subnet {
         sb.append("    siteInfo: ").append(toIndentedString(siteInfo)).append("\n");
         sb.append("    neutronNetworkId: ").append(toIndentedString(neutronNetworkId)).append("\n");
         sb.append("    neutronSubnetId: ").append(toIndentedString(neutronSubnetId)).append("\n");
+        sb.append("    cidrV6: ").append(toIndentedString(cidrV6)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
+        sb.append("    neutronSubnetIdV6: ").append(toIndentedString(neutronSubnetIdV6)).append("\n");
+        sb.append("    gatewayIpV6: ").append(toIndentedString(gatewayIpV6)).append("\n");
         sb.append("}");
         return sb.toString();
     }

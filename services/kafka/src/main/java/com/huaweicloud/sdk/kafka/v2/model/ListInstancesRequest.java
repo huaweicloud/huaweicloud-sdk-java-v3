@@ -160,16 +160,6 @@ public class ListInstancesRequest {
         public static final StatusEnum CONFIGURING = new StatusEnum("CONFIGURING");
 
         /**
-         * Enum UPGRADING for value: "UPGRADING"
-         */
-        public static final StatusEnum UPGRADING = new StatusEnum("UPGRADING");
-
-        /**
-         * Enum UPGRADINGFAILED for value: "UPGRADINGFAILED"
-         */
-        public static final StatusEnum UPGRADINGFAILED = new StatusEnum("UPGRADINGFAILED");
-
-        /**
          * Enum ROLLBACK for value: "ROLLBACK"
          */
         public static final StatusEnum ROLLBACK = new StatusEnum("ROLLBACK");
@@ -200,8 +190,6 @@ public class ListInstancesRequest {
             map.put("SHRINKING", SHRINKING);
             map.put("EXTENDEDFAILED", EXTENDEDFAILED);
             map.put("CONFIGURING", CONFIGURING);
-            map.put("UPGRADING", UPGRADING);
-            map.put("UPGRADINGFAILED", UPGRADINGFAILED);
             map.put("ROLLBACK", ROLLBACK);
             map.put("ROLLBACKFAILED", ROLLBACKFAILED);
             map.put("VOLUMETYPECHANGING", VOLUMETYPECHANGING);
@@ -260,7 +248,7 @@ public class ListInstancesRequest {
     private StatusEnum status;
 
     /**
-     * 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
+     * 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”，不返回创建失败的实例数。
      */
     public static final class IncludeFailureEnum {
 
@@ -498,7 +486,7 @@ public class ListInstancesRequest {
     }
 
     /**
-     * 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
+     * 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”，不返回创建失败的实例数。
      * @return includeFailure
      */
     public IncludeFailureEnum getIncludeFailure() {

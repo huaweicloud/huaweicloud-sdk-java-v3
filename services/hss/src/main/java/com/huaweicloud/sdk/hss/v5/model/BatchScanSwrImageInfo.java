@@ -25,6 +25,16 @@ public class BatchScanSwrImageInfo {
 
     private String imageVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_url")
+
+    private String instanceUrl;
+
     public BatchScanSwrImageInfo withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -76,6 +86,40 @@ public class BatchScanSwrImageInfo {
         this.imageVersion = imageVersion;
     }
 
+    public BatchScanSwrImageInfo withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 企业实例ID
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public BatchScanSwrImageInfo withInstanceUrl(String instanceUrl) {
+        this.instanceUrl = instanceUrl;
+        return this;
+    }
+
+    /**
+     * 下载企业镜像URL
+     * @return instanceUrl
+     */
+    public String getInstanceUrl() {
+        return instanceUrl;
+    }
+
+    public void setInstanceUrl(String instanceUrl) {
+        this.instanceUrl = instanceUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +130,13 @@ public class BatchScanSwrImageInfo {
         }
         BatchScanSwrImageInfo that = (BatchScanSwrImageInfo) obj;
         return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.imageName, that.imageName)
-            && Objects.equals(this.imageVersion, that.imageVersion);
+            && Objects.equals(this.imageVersion, that.imageVersion) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceUrl, that.instanceUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(namespace, imageName, imageVersion);
+        return Objects.hash(namespace, imageName, imageVersion, instanceId, instanceUrl);
     }
 
     @Override
@@ -101,6 +146,8 @@ public class BatchScanSwrImageInfo {
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    imageVersion: ").append(toIndentedString(imageVersion)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceUrl: ").append(toIndentedString(instanceUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

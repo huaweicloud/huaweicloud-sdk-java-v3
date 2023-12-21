@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 文件系统 obs 数据存储库
+ * OBS类型后端存储
  */
 public class ObsDataRepository {
 
@@ -26,7 +26,7 @@ public class ObsDataRepository {
     }
 
     /**
-     * obs 桶名称
+     * OBS桶名称
      * @return bucket
      */
     public String getBucket() {
@@ -43,7 +43,7 @@ public class ObsDataRepository {
     }
 
     /**
-     * obs 桶 endpoint
+     * OBS桶所在的区域域名
      * @return endpoint
      */
     public String getEndpoint() {

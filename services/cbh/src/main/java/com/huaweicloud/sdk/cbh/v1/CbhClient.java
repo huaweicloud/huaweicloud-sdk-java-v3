@@ -4,12 +4,12 @@ import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceNetworkRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceNetworkResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceOrderRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ChangeInstanceOrderResponse;
+import com.huaweicloud.sdk.cbh.v1.model.CreateCbhRequest;
+import com.huaweicloud.sdk.cbh.v1.model.CreateCbhResponse;
 import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceOrderRequest;
 import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceOrderResponse;
-import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceRequest;
-import com.huaweicloud.sdk.cbh.v1.model.CreateInstanceResponse;
-import com.huaweicloud.sdk.cbh.v1.model.InstallInstanceEipRequest;
-import com.huaweicloud.sdk.cbh.v1.model.InstallInstanceEipResponse;
+import com.huaweicloud.sdk.cbh.v1.model.InstallCbhEipRequest;
+import com.huaweicloud.sdk.cbh.v1.model.InstallCbhEipResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceRequest;
 import com.huaweicloud.sdk.cbh.v1.model.ListCbhInstanceResponse;
 import com.huaweicloud.sdk.cbh.v1.model.ListQuotaStatusRequest;
@@ -32,8 +32,8 @@ import com.huaweicloud.sdk.cbh.v1.model.StartCbhInstanceRequest;
 import com.huaweicloud.sdk.cbh.v1.model.StartCbhInstanceResponse;
 import com.huaweicloud.sdk.cbh.v1.model.StopCbhInstanceRequest;
 import com.huaweicloud.sdk.cbh.v1.model.StopCbhInstanceResponse;
-import com.huaweicloud.sdk.cbh.v1.model.UninstallInstanceEipRequest;
-import com.huaweicloud.sdk.cbh.v1.model.UninstallInstanceEipResponse;
+import com.huaweicloud.sdk.cbh.v1.model.UninstallCbhEipRequest;
+import com.huaweicloud.sdk.cbh.v1.model.UninstallCbhEipResponse;
 import com.huaweicloud.sdk.cbh.v1.model.UpgradeCbhInstanceRequest;
 import com.huaweicloud.sdk.cbh.v1.model.UpgradeCbhInstanceResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -120,11 +120,11 @@ public class CbhClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
-     * @return CreateInstanceResponse
+     * @param CreateCbhRequest 请求对象
+     * @return CreateCbhResponse
      */
-    public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, CbhMeta.createInstance);
+    public CreateCbhResponse createCbh(CreateCbhRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.createCbh);
     }
 
     /**
@@ -134,13 +134,11 @@ public class CbhClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param CreateInstanceRequest 请求对象
-     * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
+     * @param CreateCbhRequest 请求对象
+     * @return SyncInvoker<CreateCbhRequest, CreateCbhResponse>
      */
-    public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
-        CreateInstanceRequest request) {
-        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, CbhMeta.createInstance,
-            hcClient);
+    public SyncInvoker<CreateCbhRequest, CreateCbhResponse> createCbhInvoker(CreateCbhRequest request) {
+        return new SyncInvoker<CreateCbhRequest, CreateCbhResponse>(request, CbhMeta.createCbh, hcClient);
     }
 
     /**
@@ -180,11 +178,11 @@ public class CbhClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallInstanceEipRequest 请求对象
-     * @return InstallInstanceEipResponse
+     * @param InstallCbhEipRequest 请求对象
+     * @return InstallCbhEipResponse
      */
-    public InstallInstanceEipResponse installInstanceEip(InstallInstanceEipRequest request) {
-        return hcClient.syncInvokeHttp(request, CbhMeta.installInstanceEip);
+    public InstallCbhEipResponse installCbhEip(InstallCbhEipRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.installCbhEip);
     }
 
     /**
@@ -194,13 +192,11 @@ public class CbhClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param InstallInstanceEipRequest 请求对象
-     * @return SyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>
+     * @param InstallCbhEipRequest 请求对象
+     * @return SyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse>
      */
-    public SyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse> installInstanceEipInvoker(
-        InstallInstanceEipRequest request) {
-        return new SyncInvoker<InstallInstanceEipRequest, InstallInstanceEipResponse>(request,
-            CbhMeta.installInstanceEip, hcClient);
+    public SyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse> installCbhEipInvoker(InstallCbhEipRequest request) {
+        return new SyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse>(request, CbhMeta.installCbhEip, hcClient);
     }
 
     /**
@@ -506,11 +502,11 @@ public class CbhClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallInstanceEipRequest 请求对象
-     * @return UninstallInstanceEipResponse
+     * @param UninstallCbhEipRequest 请求对象
+     * @return UninstallCbhEipResponse
      */
-    public UninstallInstanceEipResponse uninstallInstanceEip(UninstallInstanceEipRequest request) {
-        return hcClient.syncInvokeHttp(request, CbhMeta.uninstallInstanceEip);
+    public UninstallCbhEipResponse uninstallCbhEip(UninstallCbhEipRequest request) {
+        return hcClient.syncInvokeHttp(request, CbhMeta.uninstallCbhEip);
     }
 
     /**
@@ -520,13 +516,13 @@ public class CbhClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param UninstallInstanceEipRequest 请求对象
-     * @return SyncInvoker<UninstallInstanceEipRequest, UninstallInstanceEipResponse>
+     * @param UninstallCbhEipRequest 请求对象
+     * @return SyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse>
      */
-    public SyncInvoker<UninstallInstanceEipRequest, UninstallInstanceEipResponse> uninstallInstanceEipInvoker(
-        UninstallInstanceEipRequest request) {
-        return new SyncInvoker<UninstallInstanceEipRequest, UninstallInstanceEipResponse>(request,
-            CbhMeta.uninstallInstanceEip, hcClient);
+    public SyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse> uninstallCbhEipInvoker(
+        UninstallCbhEipRequest request) {
+        return new SyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse>(request, CbhMeta.uninstallCbhEip,
+            hcClient);
     }
 
     /**

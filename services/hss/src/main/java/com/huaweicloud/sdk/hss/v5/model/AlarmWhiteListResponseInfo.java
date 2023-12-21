@@ -31,6 +31,21 @@ public class AlarmWhiteListResponseInfo {
     private Integer eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "white_field")
+
+    private String whiteField;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "field_value")
+
+    private String fieldValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "judge_type")
+
+    private String judgeType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private Long updateTime;
@@ -105,6 +120,57 @@ public class AlarmWhiteListResponseInfo {
         this.eventType = eventType;
     }
 
+    public AlarmWhiteListResponseInfo withWhiteField(String whiteField) {
+        this.whiteField = whiteField;
+        return this;
+    }
+
+    /**
+     * 加白字段，包含如下: - \"file/process hash\" # 进程/文件hash - \"file_path\" # 文件路径 - \"process_path\" # 进程路径 - \"login_ip\" # 登录ip - \"reg_key\" #注册表key - \"process_cmdline\" # 进程命令行 - \"username\" # 用户名
+     * @return whiteField
+     */
+    public String getWhiteField() {
+        return whiteField;
+    }
+
+    public void setWhiteField(String whiteField) {
+        this.whiteField = whiteField;
+    }
+
+    public AlarmWhiteListResponseInfo withFieldValue(String fieldValue) {
+        this.fieldValue = fieldValue;
+        return this;
+    }
+
+    /**
+     * 加白字段值
+     * @return fieldValue
+     */
+    public String getFieldValue() {
+        return fieldValue;
+    }
+
+    public void setFieldValue(String fieldValue) {
+        this.fieldValue = fieldValue;
+    }
+
+    public AlarmWhiteListResponseInfo withJudgeType(String judgeType) {
+        this.judgeType = judgeType;
+        return this;
+    }
+
+    /**
+     * 通配符，包含如下: - \"equal\" # 相等 - \"contain\" # 包含
+     * @return judgeType
+     */
+    public String getJudgeType() {
+        return judgeType;
+    }
+
+    public void setJudgeType(String judgeType) {
+        this.judgeType = judgeType;
+    }
+
     public AlarmWhiteListResponseInfo withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -135,12 +201,15 @@ public class AlarmWhiteListResponseInfo {
         AlarmWhiteListResponseInfo that = (AlarmWhiteListResponseInfo) obj;
         return Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
             && Objects.equals(this.hash, that.hash) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.whiteField, that.whiteField)
+            && Objects.equals(this.fieldValue, that.fieldValue) && Objects.equals(this.judgeType, that.judgeType)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectName, hash, description, eventType, updateTime);
+        return Objects
+            .hash(enterpriseProjectName, hash, description, eventType, whiteField, fieldValue, judgeType, updateTime);
     }
 
     @Override
@@ -151,6 +220,9 @@ public class AlarmWhiteListResponseInfo {
         sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+        sb.append("    whiteField: ").append(toIndentedString(whiteField)).append("\n");
+        sb.append("    fieldValue: ").append(toIndentedString(fieldValue)).append("\n");
+        sb.append("    judgeType: ").append(toIndentedString(judgeType)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();

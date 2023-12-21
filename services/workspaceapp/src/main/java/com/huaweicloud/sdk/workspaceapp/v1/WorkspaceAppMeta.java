@@ -126,6 +126,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ServerHaltReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobDetailRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobDetailResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoRequest;
@@ -772,6 +774,31 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail =
+        genForshowJobDetail();
+
+    private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowJobDetailRequest, ShowJobDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobDetailRequest.class, ShowJobDetailResponse.class)
+                .withName("ShowJobDetail")
+                .withUri("/v2/{project_id}/job/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobDetailRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
             }));
 

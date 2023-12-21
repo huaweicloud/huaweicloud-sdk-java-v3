@@ -252,7 +252,7 @@ public class ListAppChangeHistoriesRequest {
     /**
      * 变更开始时间，13位时间戳
      * minimum: 0
-     * maximum: 9223372036854774807
+     * maximum: 9007199254740992
      * @return startTime
      */
     public Long getStartTime() {
@@ -271,7 +271,7 @@ public class ListAppChangeHistoriesRequest {
     /**
      * 变更结束时间，13位时间戳
      * minimum: 0
-     * maximum: 9223372036854774807
+     * maximum: 9007199254740992
      * @return endTime
      */
     public Long getEndTime() {

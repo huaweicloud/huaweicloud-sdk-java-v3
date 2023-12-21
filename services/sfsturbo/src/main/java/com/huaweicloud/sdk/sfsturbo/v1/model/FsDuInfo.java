@@ -81,7 +81,7 @@ public class FsDuInfo {
     }
 
     /**
-     * 该目录下所有文件数目
+     * Get fileCount
      * @return fileCount
      */
     public FsFileCount getFileCount() {

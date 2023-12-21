@@ -27,7 +27,7 @@ public class DeleteBackendTargetResponse extends SdkResponse {
     private Boolean deleteDataInFileSystem;
 
     /**
-     * 后端存储库生命周期描述信息
+     * 绑定状态。只支持DELETING和FAILED
      */
     public static final class LifecycleEnum {
 
@@ -51,6 +51,11 @@ public class DeleteBackendTargetResponse extends SdkResponse {
          */
         public static final LifecycleEnum CREATING = new LifecycleEnum("CREATING");
 
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
+        public static final LifecycleEnum FAILED = new LifecycleEnum("FAILED");
+
         private static final Map<String, LifecycleEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LifecycleEnum> createStaticFields() {
@@ -59,6 +64,7 @@ public class DeleteBackendTargetResponse extends SdkResponse {
             map.put("AVAILABLE", AVAILABLE);
             map.put("MISCONFIGURED", MISCONFIGURED);
             map.put("CREATING", CREATING);
+            map.put("FAILED", FAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -124,7 +130,7 @@ public class DeleteBackendTargetResponse extends SdkResponse {
     }
 
     /**
-     * 后端存储库 id
+     * 绑定关系id
      * @return targetId
      */
     public String getTargetId() {
@@ -141,7 +147,7 @@ public class DeleteBackendTargetResponse extends SdkResponse {
     }
 
     /**
-     * 删除后端存储库时是否同时删除文件系统对应路径的数据
+     * 删除后端存储时是否同时删除文件系统内的联动目录及其数据文件
      * @return deleteDataInFileSystem
      */
     public Boolean getDeleteDataInFileSystem() {
@@ -158,7 +164,7 @@ public class DeleteBackendTargetResponse extends SdkResponse {
     }
 
     /**
-     * 后端存储库生命周期描述信息
+     * 绑定状态。只支持DELETING和FAILED
      * @return lifecycle
      */
     public LifecycleEnum getLifecycle() {

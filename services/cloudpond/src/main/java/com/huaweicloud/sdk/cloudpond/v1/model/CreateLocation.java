@@ -22,6 +22,16 @@ public class CreateLocation {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address")
+
+    private String address;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "zone_code")
+
+    private String zoneCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "province")
 
     private String province;
@@ -37,7 +47,7 @@ public class CreateLocation {
     private String district;
 
     /**
-     * 场地所在国家
+     * 场地所在国家（逐步下线，使用zone_code替代）
      */
     public static final class CountryEnum {
 
@@ -132,6 +142,40 @@ public class CreateLocation {
         this.name = name;
     }
 
+    public CreateLocation withAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
+    /**
+     * 场地所在省/自治区/直辖市
+     * @return address
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public CreateLocation withZoneCode(String zoneCode) {
+        this.zoneCode = zoneCode;
+        return this;
+    }
+
+    /**
+     * 场地所在地区
+     * @return zoneCode
+     */
+    public String getZoneCode() {
+        return zoneCode;
+    }
+
+    public void setZoneCode(String zoneCode) {
+        this.zoneCode = zoneCode;
+    }
+
     public CreateLocation withProvince(String province) {
         this.province = province;
         return this;
@@ -189,7 +233,7 @@ public class CreateLocation {
     }
 
     /**
-     * 场地所在国家
+     * 场地所在国家（逐步下线，使用zone_code替代）
      * @return country
      */
     public CountryEnum getCountry() {
@@ -252,7 +296,8 @@ public class CreateLocation {
             return false;
         }
         CreateLocation that = (CreateLocation) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.province, that.province)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.zoneCode, that.zoneCode) && Objects.equals(this.province, that.province)
             && Objects.equals(this.city, that.city) && Objects.equals(this.district, that.district)
             && Objects.equals(this.country, that.country) && Objects.equals(this.condition, that.condition)
             && Objects.equals(this.description, that.description);
@@ -260,7 +305,7 @@ public class CreateLocation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, province, city, district, country, condition, description);
+        return Objects.hash(name, address, zoneCode, province, city, district, country, condition, description);
     }
 
     @Override
@@ -268,6 +313,8 @@ public class CreateLocation {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateLocation {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    address: ").append(toIndentedString(address)).append("\n");
+        sb.append("    zoneCode: ").append(toIndentedString(zoneCode)).append("\n");
         sb.append("    province: ").append(toIndentedString(province)).append("\n");
         sb.append("    city: ").append(toIndentedString(city)).append("\n");
         sb.append("    district: ").append(toIndentedString(district)).append("\n");

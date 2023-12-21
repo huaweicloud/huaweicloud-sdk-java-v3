@@ -38,7 +38,7 @@ public class GroupInfoSimple {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lag")
 
-    private Integer lag;
+    private Long lag;
 
     public GroupInfoSimple withCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
@@ -125,7 +125,7 @@ public class GroupInfoSimple {
         this.groupDesc = groupDesc;
     }
 
-    public GroupInfoSimple withLag(Integer lag) {
+    public GroupInfoSimple withLag(Long lag) {
         this.lag = lag;
         return this;
     }
@@ -134,11 +134,11 @@ public class GroupInfoSimple {
      * 堆积数。
      * @return lag
      */
-    public Integer getLag() {
+    public Long getLag() {
         return lag;
     }
 
-    public void setLag(Integer lag) {
+    public void setLag(Long lag) {
         this.lag = lag;
     }
 

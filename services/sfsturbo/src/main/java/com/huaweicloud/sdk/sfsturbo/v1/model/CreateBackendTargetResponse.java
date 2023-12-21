@@ -38,7 +38,7 @@ public class CreateBackendTargetResponse extends SdkResponse {
     private String fileSystemPath;
 
     /**
-     * 后端存储库声明周期描述信息
+     * 绑定状态。如果返回状态为CREATING，您需要通过获取后端存储详细信息接口去轮询绑定完成状态。 如果返回状态为AVAILABLE，代表绑定后端存储成功。如果返回状态MISCONFIGURED，代表绑定后端存储失败。DELETING 状态暂不支持。
      */
     public static final class LifecycleEnum {
 
@@ -140,7 +140,7 @@ public class CreateBackendTargetResponse extends SdkResponse {
     }
 
     /**
-     * 后端存储库 id据
+     * 绑定关系id
      * @return targetId
      */
     public String getTargetId() {
@@ -157,7 +157,7 @@ public class CreateBackendTargetResponse extends SdkResponse {
     }
 
     /**
-     * 后端存储库创建时间
+     * 绑定关系创建时间
      * @return creationTime
      */
     public String getCreationTime() {
@@ -200,7 +200,7 @@ public class CreateBackendTargetResponse extends SdkResponse {
     }
 
     /**
-     * 文件系统路径
+     * 联动目录名称
      * @return fileSystemPath
      */
     public String getFileSystemPath() {
@@ -217,7 +217,7 @@ public class CreateBackendTargetResponse extends SdkResponse {
     }
 
     /**
-     * 后端存储库声明周期描述信息
+     * 绑定状态。如果返回状态为CREATING，您需要通过获取后端存储详细信息接口去轮询绑定完成状态。 如果返回状态为AVAILABLE，代表绑定后端存储成功。如果返回状态MISCONFIGURED，代表绑定后端存储失败。DELETING 状态暂不支持。
      * @return lifecycle
      */
     public LifecycleEnum getLifecycle() {

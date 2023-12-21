@@ -44,6 +44,11 @@ public class ListSecurityEventsRequest {
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_name")
 
     private String containerName;
@@ -117,6 +122,11 @@ public class ListSecurityEventsRequest {
     @JsonProperty(value = "att_ck")
 
     private String attCk;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_name")
+
+    private String eventName;
 
     public ListSecurityEventsRequest withRegion(String region) {
         this.region = region;
@@ -220,6 +230,23 @@ public class ListSecurityEventsRequest {
 
     public void setPrivateIp(String privateIp) {
         this.privateIp = privateIp;
+    }
+
+    public ListSecurityEventsRequest withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 服务器公网IP
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
     }
 
     public ListSecurityEventsRequest withContainerName(String containerName) {
@@ -545,6 +572,23 @@ public class ListSecurityEventsRequest {
         this.attCk = attCk;
     }
 
+    public ListSecurityEventsRequest withEventName(String eventName) {
+        this.eventName = eventName;
+        return this;
+    }
+
+    /**
+     * 告警名称
+     * @return eventName
+     */
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -558,14 +602,15 @@ public class ListSecurityEventsRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.lastDays, that.lastDays) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.privateIp, that.privateIp)
-            && Objects.equals(this.containerName, that.containerName) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.eventTypes, that.eventTypes)
-            && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.severity, that.severity)
-            && Objects.equals(this.category, that.category) && Objects.equals(this.beginTime, that.beginTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.eventClassIds, that.eventClassIds)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.containerName, that.containerName)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.eventTypes, that.eventTypes) && Objects.equals(this.handleStatus, that.handleStatus)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.eventClassIds, that.eventClassIds)
             && Objects.equals(this.severityList, that.severityList) && Objects.equals(this.attackTag, that.attackTag)
             && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.tagList, that.tagList)
-            && Objects.equals(this.attCk, that.attCk);
+            && Objects.equals(this.attCk, that.attCk) && Objects.equals(this.eventName, that.eventName);
     }
 
     @Override
@@ -576,6 +621,7 @@ public class ListSecurityEventsRequest {
             hostName,
             hostId,
             privateIp,
+            publicIp,
             containerName,
             offset,
             limit,
@@ -590,7 +636,8 @@ public class ListSecurityEventsRequest {
             attackTag,
             assetValue,
             tagList,
-            attCk);
+            attCk,
+            eventName);
     }
 
     @Override
@@ -603,6 +650,7 @@ public class ListSecurityEventsRequest {
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
@@ -618,6 +666,7 @@ public class ListSecurityEventsRequest {
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    tagList: ").append(toIndentedString(tagList)).append("\n");
         sb.append("    attCk: ").append(toIndentedString(attCk)).append("\n");
+        sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

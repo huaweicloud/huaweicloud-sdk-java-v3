@@ -123,7 +123,7 @@ public class OneFsTaskResp {
     }
 
     /**
-     * 任务id
+     * 任务ID
      * @return taskId
      */
     public String getTaskId() {
@@ -166,7 +166,7 @@ public class OneFsTaskResp {
     }
 
     /**
-     * 目录资源使用情况(包含子目录)
+     * Get dirUsage
      * @return dirUsage
      */
     public FsDuInfo getDirUsage() {

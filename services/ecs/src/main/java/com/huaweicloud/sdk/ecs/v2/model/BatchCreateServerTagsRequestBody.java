@@ -90,7 +90,7 @@ public class BatchCreateServerTagsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<ServerTag> tags = null;
+    private List<BatchAddServerTag> tags = null;
 
     public BatchCreateServerTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
@@ -109,12 +109,12 @@ public class BatchCreateServerTagsRequestBody {
         this.action = action;
     }
 
-    public BatchCreateServerTagsRequestBody withTags(List<ServerTag> tags) {
+    public BatchCreateServerTagsRequestBody withTags(List<BatchAddServerTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public BatchCreateServerTagsRequestBody addTagsItem(ServerTag tagsItem) {
+    public BatchCreateServerTagsRequestBody addTagsItem(BatchAddServerTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -122,7 +122,7 @@ public class BatchCreateServerTagsRequestBody {
         return this;
     }
 
-    public BatchCreateServerTagsRequestBody withTags(Consumer<List<ServerTag>> tagsSetter) {
+    public BatchCreateServerTagsRequestBody withTags(Consumer<List<BatchAddServerTag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -134,11 +134,11 @@ public class BatchCreateServerTagsRequestBody {
      * 标签列表。
      * @return tags
      */
-    public List<ServerTag> getTags() {
+    public List<BatchAddServerTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<ServerTag> tags) {
+    public void setTags(List<BatchAddServerTag> tags) {
         this.tags = tags;
     }
 

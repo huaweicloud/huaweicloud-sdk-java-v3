@@ -59,6 +59,11 @@ public class PrivateImageRepositoryInfo {
     private String scanStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_failed_desc")
+
+    private String scanFailedDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_size")
 
     private Long imageSize;
@@ -263,6 +268,23 @@ public class PrivateImageRepositoryInfo {
         this.scanStatus = scanStatus;
     }
 
+    public PrivateImageRepositoryInfo withScanFailedDesc(String scanFailedDesc) {
+        this.scanFailedDesc = scanFailedDesc;
+        return this;
+    }
+
+    /**
+     * 扫描失败原因，包含如下14种。   - \"unknown_error\" :未知错误   - \"authentication_failed\":认证失败   - \"download_failed\":镜像下载失败   - \"image_over_sized\":镜像大小超限   - \"image_oversized\":镜像超大   - \"failed_to_scan_vulnerability\":漏洞扫描失败      - \"failed_to_scan_file\":文件扫描失败   - \"failed_to_scan_software\":软件扫描失败   - \"failed_to_check_sensitive_information\":敏感信息核查失败   - \"failed_to_check_baseline\":基线检查失败   - \"failed_to_check_software_compliance\":软件合规检查失败   - \"failed_to_query_basic_image_information\":基础镜像信息查询失败   - \"response_timed_out\":响应超时   - \"database_error\" : 数据库错误   - \"failed_to_send_the_scan_request\" : 发送扫描请求失败
+     * @return scanFailedDesc
+     */
+    public String getScanFailedDesc() {
+        return scanFailedDesc;
+    }
+
+    public void setScanFailedDesc(String scanFailedDesc) {
+        this.scanFailedDesc = scanFailedDesc;
+    }
+
     public PrivateImageRepositoryInfo withImageSize(Long imageSize) {
         this.imageSize = imageSize;
         return this;
@@ -290,7 +312,7 @@ public class PrivateImageRepositoryInfo {
     /**
      * 镜像版本最后更新时间
      * minimum: 0
-     * maximum: 2147483547
+     * maximum: 4070880000000
      * @return latestUpdateTime
      */
     public Long getLatestUpdateTime() {
@@ -309,7 +331,7 @@ public class PrivateImageRepositoryInfo {
     /**
      * 最近扫描时间
      * minimum: 0
-     * maximum: 2147483547
+     * maximum: 4070880000000
      * @return latestScanTime
      */
     public Long getLatestScanTime() {
@@ -475,7 +497,9 @@ public class PrivateImageRepositoryInfo {
             && Objects.equals(this.imageDigest, that.imageDigest)
             && Objects.equals(this.imageVersion, that.imageVersion) && Objects.equals(this.imageType, that.imageType)
             && Objects.equals(this.latestVersion, that.latestVersion)
-            && Objects.equals(this.scanStatus, that.scanStatus) && Objects.equals(this.imageSize, that.imageSize)
+            && Objects.equals(this.scanStatus, that.scanStatus)
+            && Objects.equals(this.scanFailedDesc, that.scanFailedDesc)
+            && Objects.equals(this.imageSize, that.imageSize)
             && Objects.equals(this.latestUpdateTime, that.latestUpdateTime)
             && Objects.equals(this.latestScanTime, that.latestScanTime) && Objects.equals(this.vulNum, that.vulNum)
             && Objects.equals(this.unsafeSettingNum, that.unsafeSettingNum)
@@ -496,6 +520,7 @@ public class PrivateImageRepositoryInfo {
             imageType,
             latestVersion,
             scanStatus,
+            scanFailedDesc,
             imageSize,
             latestUpdateTime,
             latestScanTime,
@@ -521,6 +546,7 @@ public class PrivateImageRepositoryInfo {
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    latestVersion: ").append(toIndentedString(latestVersion)).append("\n");
         sb.append("    scanStatus: ").append(toIndentedString(scanStatus)).append("\n");
+        sb.append("    scanFailedDesc: ").append(toIndentedString(scanFailedDesc)).append("\n");
         sb.append("    imageSize: ").append(toIndentedString(imageSize)).append("\n");
         sb.append("    latestUpdateTime: ").append(toIndentedString(latestUpdateTime)).append("\n");
         sb.append("    latestScanTime: ").append(toIndentedString(latestScanTime)).append("\n");

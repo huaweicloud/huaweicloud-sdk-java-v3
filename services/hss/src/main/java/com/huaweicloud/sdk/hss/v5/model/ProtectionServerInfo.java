@@ -57,6 +57,11 @@ public class ProtectionServerInfo {
     private String ransomProtectionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_version")
+
+    private String agentVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
     private String protectStatus;
@@ -322,6 +327,23 @@ public class ProtectionServerInfo {
 
     public void setRansomProtectionStatus(String ransomProtectionStatus) {
         this.ransomProtectionStatus = ransomProtectionStatus;
+    }
+
+    public ProtectionServerInfo withAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+        return this;
+    }
+
+    /**
+     * agent版本
+     * @return agentVersion
+     */
+    public String getAgentVersion() {
+        return agentVersion;
+    }
+
+    public void setAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
     }
 
     public ProtectionServerInfo withProtectStatus(String protectStatus) {
@@ -750,6 +772,7 @@ public class ProtectionServerInfo {
             && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.osName, that.osName) && Objects.equals(this.hostStatus, that.hostStatus)
             && Objects.equals(this.ransomProtectionStatus, that.ransomProtectionStatus)
+            && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.groupName, that.groupName)
             && Objects.equals(this.protectPolicyId, that.protectPolicyId)
@@ -782,6 +805,7 @@ public class ProtectionServerInfo {
             osName,
             hostStatus,
             ransomProtectionStatus,
+            agentVersion,
             protectStatus,
             groupId,
             groupName,
@@ -820,6 +844,7 @@ public class ProtectionServerInfo {
         sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
         sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
         sb.append("    ransomProtectionStatus: ").append(toIndentedString(ransomProtectionStatus)).append("\n");
+        sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");

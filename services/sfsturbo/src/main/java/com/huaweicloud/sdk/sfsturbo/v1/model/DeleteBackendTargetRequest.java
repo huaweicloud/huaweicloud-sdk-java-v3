@@ -48,7 +48,7 @@ public class DeleteBackendTargetRequest {
     }
 
     /**
-     * 数据存储库 id
+     * 绑定关系id
      * @return targetId
      */
     public String getTargetId() {
@@ -65,7 +65,7 @@ public class DeleteBackendTargetRequest {
     }
 
     /**
-     * 删除后端存储库时是否删除文件系统对应目录文件，默认为 false
+     * 删除后端存储时是否同时删除文件系统内的联动目录及其数据文件，默认为 false。数据删除后无法恢复，请谨慎操作。
      * @return deleteDataInFileSystem
      */
     public Boolean getDeleteDataInFileSystem() {

@@ -38,6 +38,16 @@ public class UpdateSubnetOption {
 
     private List<String> dnsList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_id")
+
+    private String poolId;
+
     public UpdateSubnetOption withName(String name) {
         this.name = name;
         return this;
@@ -139,6 +149,40 @@ public class UpdateSubnetOption {
         this.dnsList = dnsList;
     }
 
+    public UpdateSubnetOption withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 是否创建IPv6子网  取值范围：  - true：开启  - false：关闭  约束：   1、若该字段为true，则pool_id字段必填；若该字段为false，则pool_id字段不生效。   2、子网开启IPv6后不支持关闭。
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
+    public UpdateSubnetOption withPoolId(String poolId) {
+        this.poolId = poolId;
+        return this;
+    }
+
+    /**
+     * IPv6线路ID。
+     * @return poolId
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -150,12 +194,13 @@ public class UpdateSubnetOption {
         UpdateSubnetOption that = (UpdateSubnetOption) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.dhcpEnable, that.dhcpEnable)
             && Objects.equals(this.primaryDns, that.primaryDns) && Objects.equals(this.secondaryDns, that.secondaryDns)
-            && Objects.equals(this.dnsList, that.dnsList);
+            && Objects.equals(this.dnsList, that.dnsList) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.poolId, that.poolId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, dhcpEnable, primaryDns, secondaryDns, dnsList);
+        return Objects.hash(name, dhcpEnable, primaryDns, secondaryDns, dnsList, ipv6Enable, poolId);
     }
 
     @Override
@@ -167,6 +212,8 @@ public class UpdateSubnetOption {
         sb.append("    primaryDns: ").append(toIndentedString(primaryDns)).append("\n");
         sb.append("    secondaryDns: ").append(toIndentedString(secondaryDns)).append("\n");
         sb.append("    dnsList: ").append(toIndentedString(dnsList)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

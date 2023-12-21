@@ -115,7 +115,7 @@ public class CreateJobReq {
     private String description;
 
     /**
-     * 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用
+     * 引擎类型 - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：GaussDB(for MySQL)到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB主备版到Kafka同步 - postgresql：PostgreSQL到PostgreSQL同步
      */
     public static final class EngineTypeEnum {
 
@@ -144,6 +144,21 @@ public class CreateJobReq {
          */
         public static final EngineTypeEnum POSTGRESQL = new EngineTypeEnum("postgresql");
 
+        /**
+         * Enum MYSQL_TO_KAFKA for value: "mysql-to-kafka"
+         */
+        public static final EngineTypeEnum MYSQL_TO_KAFKA = new EngineTypeEnum("mysql-to-kafka");
+
+        /**
+         * Enum TAURUS_TO_KAFKA for value: "taurus-to-kafka"
+         */
+        public static final EngineTypeEnum TAURUS_TO_KAFKA = new EngineTypeEnum("taurus-to-kafka");
+
+        /**
+         * Enum GAUSSDBV5HA_TO_KAFKA for value: "gaussdbv5ha-to-kafka"
+         */
+        public static final EngineTypeEnum GAUSSDBV5HA_TO_KAFKA = new EngineTypeEnum("gaussdbv5ha-to-kafka");
+
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineTypeEnum> createStaticFields() {
@@ -153,6 +168,9 @@ public class CreateJobReq {
             map.put("cloudDataGuard-mysql", CLOUDDATAGUARD_MYSQL);
             map.put("gaussdbv5", GAUSSDBV5);
             map.put("postgresql", POSTGRESQL);
+            map.put("mysql-to-kafka", MYSQL_TO_KAFKA);
+            map.put("taurus-to-kafka", TAURUS_TO_KAFKA);
+            map.put("gaussdbv5ha-to-kafka", GAUSSDBV5HA_TO_KAFKA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -733,7 +751,7 @@ public class CreateJobReq {
     }
 
     /**
-     * 引擎类型 - mysql：迁移，同步使用 - mongodb：迁移使用 - cloudDataGuard-mysql：灾备使用 - gaussdbv5，postgresql：同步使用
+     * 引擎类型 - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：GaussDB(for MySQL)到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB主备版到Kafka同步 - postgresql：PostgreSQL到PostgreSQL同步
      * @return engineType
      */
     public EngineTypeEnum getEngineType() {

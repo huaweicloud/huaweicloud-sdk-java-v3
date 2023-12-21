@@ -48,7 +48,7 @@ public class ShowKafkaUserClientQuotaRequest {
     }
 
     /**
-     * 偏移量，表示查询该偏移量后面的记录
+     * 偏移量，表示查询该偏移量后面的记录。
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -67,7 +67,7 @@ public class ShowKafkaUserClientQuotaRequest {
     }
 
     /**
-     * 查询返回记录的数量限制
+     * 查询返回记录的数量限制。
      * minimum: 1
      * maximum: 50
      * @return limit

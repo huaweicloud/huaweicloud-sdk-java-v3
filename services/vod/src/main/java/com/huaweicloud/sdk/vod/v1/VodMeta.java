@@ -62,6 +62,8 @@ import com.huaweicloud.sdk.vod.v1.model.DeleteWatermarkTemplateResponse;
 import com.huaweicloud.sdk.vod.v1.model.ExtractAudioTaskReq;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListDomainLogsRequest;
@@ -106,6 +108,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.SubtitleModifyReq;
@@ -127,6 +131,9 @@ import com.huaweicloud.sdk.vod.v1.model.UpdateCategoryReq;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailReq;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailResponse;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeReq;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeRequest;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupRequest;
@@ -907,6 +914,60 @@ public class VodMeta {
             f -> f.withMarshaller(ListAssetCategoryResponse::getBody, (response, data) -> {
                 response.setBody(data);
             }).withInnerContainerType(QueryCategoryRsp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> listAssetDailySummaryLog =
+        genForlistAssetDailySummaryLog();
+
+    private static HttpRequestDef<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> genForlistAssetDailySummaryLog() {
+        // basic
+        HttpRequestDef.Builder<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListAssetDailySummaryLogRequest.class, ListAssetDailySummaryLogResponse.class)
+                .withName("ListAssetDailySummaryLog")
+                .withUri("/v1/{project_id}/asset/daily-summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -2255,6 +2316,45 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrieval =
+        genForshowVodRetrieval();
+
+    private static HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> genForshowVodRetrieval() {
+        // basic
+        HttpRequestDef.Builder<ShowVodRetrievalRequest, ShowVodRetrievalResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVodRetrievalRequest.class, ShowVodRetrievalResponse.class)
+                .withName("ShowVodRetrieval")
+                .withUri("/v1/{project_id}/asset/vod-retrieval")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVodRetrievalRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVodRetrievalRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVodRetrievalRequest::getInterval, (req, v) -> {
+                req.setInterval(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitle =
         genFormodifySubtitle();
 
@@ -2272,6 +2372,31 @@ public class VodMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SubtitleModifyReq.class),
             f -> f.withMarshaller(ModifySubtitleRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageMode =
+        genForupdateStorageMode();
+
+    private static HttpRequestDef<UpdateStorageModeRequest, UpdateStorageModeResponse> genForupdateStorageMode() {
+        // basic
+        HttpRequestDef.Builder<UpdateStorageModeRequest, UpdateStorageModeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateStorageModeRequest.class, UpdateStorageModeResponse.class)
+                .withName("UpdateStorageMode")
+                .withUri("/v1/{project_id}/asset/storage-mode")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateStorageModeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateStorageModeReq.class),
+            f -> f.withMarshaller(UpdateStorageModeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

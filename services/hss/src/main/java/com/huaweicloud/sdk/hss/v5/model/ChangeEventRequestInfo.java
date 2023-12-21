@@ -28,6 +28,11 @@ public class ChangeEventRequestInfo {
 
     private List<OperateEventRequestInfo> operateEventList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_white_rule_list")
+
+    private List<EventWhiteRuleListRequestInfo> eventWhiteRuleList = null;
+
     public ChangeEventRequestInfo withOperateType(String operateType) {
         this.operateType = operateType;
         return this;
@@ -95,6 +100,40 @@ public class ChangeEventRequestInfo {
         this.operateEventList = operateEventList;
     }
 
+    public ChangeEventRequestInfo withEventWhiteRuleList(List<EventWhiteRuleListRequestInfo> eventWhiteRuleList) {
+        this.eventWhiteRuleList = eventWhiteRuleList;
+        return this;
+    }
+
+    public ChangeEventRequestInfo addEventWhiteRuleListItem(EventWhiteRuleListRequestInfo eventWhiteRuleListItem) {
+        if (this.eventWhiteRuleList == null) {
+            this.eventWhiteRuleList = new ArrayList<>();
+        }
+        this.eventWhiteRuleList.add(eventWhiteRuleListItem);
+        return this;
+    }
+
+    public ChangeEventRequestInfo withEventWhiteRuleList(
+        Consumer<List<EventWhiteRuleListRequestInfo>> eventWhiteRuleListSetter) {
+        if (this.eventWhiteRuleList == null) {
+            this.eventWhiteRuleList = new ArrayList<>();
+        }
+        eventWhiteRuleListSetter.accept(this.eventWhiteRuleList);
+        return this;
+    }
+
+    /**
+     * 用户自定义告警白名单规则列表
+     * @return eventWhiteRuleList
+     */
+    public List<EventWhiteRuleListRequestInfo> getEventWhiteRuleList() {
+        return eventWhiteRuleList;
+    }
+
+    public void setEventWhiteRuleList(List<EventWhiteRuleListRequestInfo> eventWhiteRuleList) {
+        this.eventWhiteRuleList = eventWhiteRuleList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +144,13 @@ public class ChangeEventRequestInfo {
         }
         ChangeEventRequestInfo that = (ChangeEventRequestInfo) obj;
         return Objects.equals(this.operateType, that.operateType) && Objects.equals(this.handler, that.handler)
-            && Objects.equals(this.operateEventList, that.operateEventList);
+            && Objects.equals(this.operateEventList, that.operateEventList)
+            && Objects.equals(this.eventWhiteRuleList, that.eventWhiteRuleList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operateType, handler, operateEventList);
+        return Objects.hash(operateType, handler, operateEventList, eventWhiteRuleList);
     }
 
     @Override
@@ -120,6 +160,7 @@ public class ChangeEventRequestInfo {
         sb.append("    operateType: ").append(toIndentedString(operateType)).append("\n");
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    operateEventList: ").append(toIndentedString(operateEventList)).append("\n");
+        sb.append("    eventWhiteRuleList: ").append(toIndentedString(eventWhiteRuleList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

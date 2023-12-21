@@ -271,6 +271,146 @@ public class VirtualInterface {
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "local_gateway_v4_ip")
+
+    private String localGatewayV4Ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_gateway_v4_ip")
+
+    private String remoteGatewayV4Ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ies_id")
+
+    private String iesId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private String reason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rate_limit")
+
+    private Boolean rateLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_family")
+
+    private String addressFamily;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "local_gateway_v6_ip")
+
+    private String localGatewayV6Ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_gateway_v6_ip")
+
+    private String remoteGatewayV6Ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lgw_id")
+
+    private String lgwId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gateway_id")
+
+    private String gatewayId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_ep_group")
+
+    private List<String> remoteEpGroup = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_ep_group")
+
+    private List<String> serviceEpGroup = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bgp_route_limit")
+
+    private Integer bgpRouteLimit;
+
+    /**
+     * 虚拟接口的优先级，支持两种优先级状态normal和low。 接口优先级相同时表示负载关系，接口优先级不同时表示主备关系，出云流量优先转到优先级更高的normal接口。 目前仅BGP模式接口支持。
+     */
+    public static final class PriorityEnum {
+
+        /**
+         * Enum NORMAL for value: "normal"
+         */
+        public static final PriorityEnum NORMAL = new PriorityEnum("normal");
+
+        /**
+         * Enum LOW for value: "low"
+         */
+        public static final PriorityEnum LOW = new PriorityEnum("low");
+
+        private static final Map<String, PriorityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PriorityEnum> createStaticFields() {
+            Map<String, PriorityEnum> map = new HashMap<>();
+            map.put("normal", NORMAL);
+            map.put("low", LOW);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PriorityEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PriorityEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PriorityEnum(value));
+        }
+
+        public static PriorityEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PriorityEnum) {
+                return this.value.equals(((PriorityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private PriorityEnum priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vif_peers")
 
     private List<VifPeer> vifPeers = null;
@@ -659,6 +799,276 @@ public class VirtualInterface {
         this.tags = tags;
     }
 
+    public VirtualInterface withLocalGatewayV4Ip(String localGatewayV4Ip) {
+        this.localGatewayV4Ip = localGatewayV4Ip;
+        return this;
+    }
+
+    /**
+     * 云侧网关IPv4接口地址，该字段现已经移到vifpeer参数列表中，未来将会废弃。
+     * @return localGatewayV4Ip
+     */
+    public String getLocalGatewayV4Ip() {
+        return localGatewayV4Ip;
+    }
+
+    public void setLocalGatewayV4Ip(String localGatewayV4Ip) {
+        this.localGatewayV4Ip = localGatewayV4Ip;
+    }
+
+    public VirtualInterface withRemoteGatewayV4Ip(String remoteGatewayV4Ip) {
+        this.remoteGatewayV4Ip = remoteGatewayV4Ip;
+        return this;
+    }
+
+    /**
+     * 客户侧网关IPv4接口地址，该字段现已经移到vifpeer参数列表中，未来将会废弃。
+     * @return remoteGatewayV4Ip
+     */
+    public String getRemoteGatewayV4Ip() {
+        return remoteGatewayV4Ip;
+    }
+
+    public void setRemoteGatewayV4Ip(String remoteGatewayV4Ip) {
+        this.remoteGatewayV4Ip = remoteGatewayV4Ip;
+    }
+
+    public VirtualInterface withIesId(String iesId) {
+        this.iesId = iesId;
+        return this;
+    }
+
+    /**
+     * 归属的IES站点的ID[（功能暂不支持）](tag:dt)
+     * @return iesId
+     */
+    public String getIesId() {
+        return iesId;
+    }
+
+    public void setIesId(String iesId) {
+        this.iesId = iesId;
+    }
+
+    public VirtualInterface withReason(String reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    /**
+     * 如果资源的状态是Error的情况下，该参数会显示相关错误信息。
+     * @return reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public VirtualInterface withRateLimit(Boolean rateLimit) {
+        this.rateLimit = rateLimit;
+        return this;
+    }
+
+    /**
+     * 标识虚拟接口是否开启限速
+     * @return rateLimit
+     */
+    public Boolean getRateLimit() {
+        return rateLimit;
+    }
+
+    public void setRateLimit(Boolean rateLimit) {
+        this.rateLimit = rateLimit;
+    }
+
+    public VirtualInterface withAddressFamily(String addressFamily) {
+        this.addressFamily = addressFamily;
+        return this;
+    }
+
+    /**
+     * 接口的地址簇类型，ipv4，ipv6。该字段现已迁移到vifpeer参数列表中，未来将会废弃。
+     * @return addressFamily
+     */
+    public String getAddressFamily() {
+        return addressFamily;
+    }
+
+    public void setAddressFamily(String addressFamily) {
+        this.addressFamily = addressFamily;
+    }
+
+    public VirtualInterface withLocalGatewayV6Ip(String localGatewayV6Ip) {
+        this.localGatewayV6Ip = localGatewayV6Ip;
+        return this;
+    }
+
+    /**
+     * 云侧网关IPv6接口地址，该字段现已迁移到vifpeer参数列表中，未来将会废弃。
+     * @return localGatewayV6Ip
+     */
+    public String getLocalGatewayV6Ip() {
+        return localGatewayV6Ip;
+    }
+
+    public void setLocalGatewayV6Ip(String localGatewayV6Ip) {
+        this.localGatewayV6Ip = localGatewayV6Ip;
+    }
+
+    public VirtualInterface withRemoteGatewayV6Ip(String remoteGatewayV6Ip) {
+        this.remoteGatewayV6Ip = remoteGatewayV6Ip;
+        return this;
+    }
+
+    /**
+     * 客户侧网关IPv6接口地址，该字段现已迁移到vifpeer参数列表中，未来将会废弃。
+     * @return remoteGatewayV6Ip
+     */
+    public String getRemoteGatewayV6Ip() {
+        return remoteGatewayV6Ip;
+    }
+
+    public void setRemoteGatewayV6Ip(String remoteGatewayV6Ip) {
+        this.remoteGatewayV6Ip = remoteGatewayV6Ip;
+    }
+
+    public VirtualInterface withLgwId(String lgwId) {
+        this.lgwId = lgwId;
+        return this;
+    }
+
+    /**
+     * 本地网关的ID，用于IES场景。[（功能暂不支持）](tag:dt)
+     * @return lgwId
+     */
+    public String getLgwId() {
+        return lgwId;
+    }
+
+    public void setLgwId(String lgwId) {
+        this.lgwId = lgwId;
+    }
+
+    public VirtualInterface withGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+        return this;
+    }
+
+    /**
+     * 虚拟接口关联的网关的ID
+     * @return gatewayId
+     */
+    public String getGatewayId() {
+        return gatewayId;
+    }
+
+    public void setGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+    }
+
+    public VirtualInterface withRemoteEpGroup(List<String> remoteEpGroup) {
+        this.remoteEpGroup = remoteEpGroup;
+        return this;
+    }
+
+    public VirtualInterface addRemoteEpGroupItem(String remoteEpGroupItem) {
+        if (this.remoteEpGroup == null) {
+            this.remoteEpGroup = new ArrayList<>();
+        }
+        this.remoteEpGroup.add(remoteEpGroupItem);
+        return this;
+    }
+
+    public VirtualInterface withRemoteEpGroup(Consumer<List<String>> remoteEpGroupSetter) {
+        if (this.remoteEpGroup == null) {
+            this.remoteEpGroup = new ArrayList<>();
+        }
+        remoteEpGroupSetter.accept(this.remoteEpGroup);
+        return this;
+    }
+
+    /**
+     * 远端子网列表，记录租户侧的cidrs。该字段现已迁移到vifpeer参数列表中，未来将会废弃。
+     * @return remoteEpGroup
+     */
+    public List<String> getRemoteEpGroup() {
+        return remoteEpGroup;
+    }
+
+    public void setRemoteEpGroup(List<String> remoteEpGroup) {
+        this.remoteEpGroup = remoteEpGroup;
+    }
+
+    public VirtualInterface withServiceEpGroup(List<String> serviceEpGroup) {
+        this.serviceEpGroup = serviceEpGroup;
+        return this;
+    }
+
+    public VirtualInterface addServiceEpGroupItem(String serviceEpGroupItem) {
+        if (this.serviceEpGroup == null) {
+            this.serviceEpGroup = new ArrayList<>();
+        }
+        this.serviceEpGroup.add(serviceEpGroupItem);
+        return this;
+    }
+
+    public VirtualInterface withServiceEpGroup(Consumer<List<String>> serviceEpGroupSetter) {
+        if (this.serviceEpGroup == null) {
+            this.serviceEpGroup = new ArrayList<>();
+        }
+        serviceEpGroupSetter.accept(this.serviceEpGroup);
+        return this;
+    }
+
+    /**
+     * 该字段用于公网专线接口，表示租户可以访问云上公网服务地址列表。该字段现已迁移到vifpeer参数列表中，未来将会废弃。
+     * @return serviceEpGroup
+     */
+    public List<String> getServiceEpGroup() {
+        return serviceEpGroup;
+    }
+
+    public void setServiceEpGroup(List<String> serviceEpGroup) {
+        this.serviceEpGroup = serviceEpGroup;
+    }
+
+    public VirtualInterface withBgpRouteLimit(Integer bgpRouteLimit) {
+        this.bgpRouteLimit = bgpRouteLimit;
+        return this;
+    }
+
+    /**
+     * BGP的路由配置规格
+     * @return bgpRouteLimit
+     */
+    public Integer getBgpRouteLimit() {
+        return bgpRouteLimit;
+    }
+
+    public void setBgpRouteLimit(Integer bgpRouteLimit) {
+        this.bgpRouteLimit = bgpRouteLimit;
+    }
+
+    public VirtualInterface withPriority(PriorityEnum priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 虚拟接口的优先级，支持两种优先级状态normal和low。 接口优先级相同时表示负载关系，接口优先级不同时表示主备关系，出云流量优先转到优先级更高的normal接口。 目前仅BGP模式接口支持。
+     * @return priority
+     */
+    public PriorityEnum getPriority() {
+        return priority;
+    }
+
+    public void setPriority(PriorityEnum priority) {
+        this.priority = priority;
+    }
+
     public VirtualInterface withVifPeers(List<VifPeer> vifPeers) {
         this.vifPeers = vifPeers;
         return this;
@@ -739,7 +1149,16 @@ public class VirtualInterface {
             && Objects.equals(this.enableBfd, that.enableBfd) && Objects.equals(this.lagId, that.lagId)
             && Objects.equals(this.deviceId, that.deviceId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.vifPeers, that.vifPeers)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.localGatewayV4Ip, that.localGatewayV4Ip)
+            && Objects.equals(this.remoteGatewayV4Ip, that.remoteGatewayV4Ip) && Objects.equals(this.iesId, that.iesId)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.rateLimit, that.rateLimit)
+            && Objects.equals(this.addressFamily, that.addressFamily)
+            && Objects.equals(this.localGatewayV6Ip, that.localGatewayV6Ip)
+            && Objects.equals(this.remoteGatewayV6Ip, that.remoteGatewayV6Ip) && Objects.equals(this.lgwId, that.lgwId)
+            && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.remoteEpGroup, that.remoteEpGroup)
+            && Objects.equals(this.serviceEpGroup, that.serviceEpGroup)
+            && Objects.equals(this.bgpRouteLimit, that.bgpRouteLimit) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.vifPeers, that.vifPeers)
             && Objects.equals(this.extendAttribute, that.extendAttribute);
     }
 
@@ -766,6 +1185,20 @@ public class VirtualInterface {
             deviceId,
             enterpriseProjectId,
             tags,
+            localGatewayV4Ip,
+            remoteGatewayV4Ip,
+            iesId,
+            reason,
+            rateLimit,
+            addressFamily,
+            localGatewayV6Ip,
+            remoteGatewayV6Ip,
+            lgwId,
+            gatewayId,
+            remoteEpGroup,
+            serviceEpGroup,
+            bgpRouteLimit,
+            priority,
             vifPeers,
             extendAttribute);
     }
@@ -795,6 +1228,20 @@ public class VirtualInterface {
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    localGatewayV4Ip: ").append(toIndentedString(localGatewayV4Ip)).append("\n");
+        sb.append("    remoteGatewayV4Ip: ").append(toIndentedString(remoteGatewayV4Ip)).append("\n");
+        sb.append("    iesId: ").append(toIndentedString(iesId)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    rateLimit: ").append(toIndentedString(rateLimit)).append("\n");
+        sb.append("    addressFamily: ").append(toIndentedString(addressFamily)).append("\n");
+        sb.append("    localGatewayV6Ip: ").append(toIndentedString(localGatewayV6Ip)).append("\n");
+        sb.append("    remoteGatewayV6Ip: ").append(toIndentedString(remoteGatewayV6Ip)).append("\n");
+        sb.append("    lgwId: ").append(toIndentedString(lgwId)).append("\n");
+        sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
+        sb.append("    remoteEpGroup: ").append(toIndentedString(remoteEpGroup)).append("\n");
+        sb.append("    serviceEpGroup: ").append(toIndentedString(serviceEpGroup)).append("\n");
+        sb.append("    bgpRouteLimit: ").append(toIndentedString(bgpRouteLimit)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    vifPeers: ").append(toIndentedString(vifPeers)).append("\n");
         sb.append("    extendAttribute: ").append(toIndentedString(extendAttribute)).append("\n");
         sb.append("}");

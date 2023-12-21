@@ -37,7 +37,7 @@ public class ShowBackendTargetInfoResponseBody {
     private FailureDetailsMessage failureDetails;
 
     /**
-     * 后端存储库生命周期描述信息
+     * 绑定状态
      */
     public static final class LifecycleEnum {
 
@@ -140,7 +140,7 @@ public class ShowBackendTargetInfoResponseBody {
     }
 
     /**
-     * 后端存储库 id
+     * 绑定关系id
      * @return targetId
      */
     public String getTargetId() {
@@ -157,7 +157,7 @@ public class ShowBackendTargetInfoResponseBody {
     }
 
     /**
-     * 后端存储库创建时间
+     * 绑定关系创建时间
      * @return creationTime
      */
     public String getCreationTime() {
@@ -174,7 +174,7 @@ public class ShowBackendTargetInfoResponseBody {
     }
 
     /**
-     * 文件系统路径
+     * 联动目录名称
      * @return fileSystemPath
      */
     public String getFileSystemPath() {
@@ -217,7 +217,7 @@ public class ShowBackendTargetInfoResponseBody {
     }
 
     /**
-     * 后端存储库生命周期描述信息
+     * 绑定状态
      * @return lifecycle
      */
     public LifecycleEnum getLifecycle() {

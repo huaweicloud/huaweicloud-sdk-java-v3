@@ -115,6 +115,16 @@ public class Output {
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encrypted")
 
     private Integer encrypted;
@@ -245,6 +255,40 @@ public class Output {
         this.url = url;
     }
 
+    public Output withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 所属转码组Id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public Output withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /**
+     * 所属转码组名称
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
     public Output withEncrypted(Integer encrypted) {
         this.encrypted = encrypted;
         return this;
@@ -315,13 +359,14 @@ public class Output {
         }
         Output that = (Output) obj;
         return Objects.equals(this.playType, that.playType) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
             && Objects.equals(this.encrypted, that.encrypted) && Objects.equals(this.quality, that.quality)
             && Objects.equals(this.metaData, that.metaData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playType, url, encrypted, quality, metaData);
+        return Objects.hash(playType, url, groupId, groupName, encrypted, quality, metaData);
     }
 
     @Override
@@ -330,6 +375,8 @@ public class Output {
         sb.append("class Output {\n");
         sb.append("    playType: ").append(toIndentedString(playType)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    encrypted: ").append(toIndentedString(encrypted)).append("\n");
         sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
         sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");

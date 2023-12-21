@@ -137,6 +137,11 @@ public class TestEndPoint {
          */
         public static final DbTypeEnum GAUSSDBV5HA = new DbTypeEnum("gaussdbv5ha");
 
+        /**
+         * Enum TAURUS for value: "taurus"
+         */
+        public static final DbTypeEnum TAURUS = new DbTypeEnum("taurus");
+
         private static final Map<String, DbTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DbTypeEnum> createStaticFields() {
@@ -147,6 +152,7 @@ public class TestEndPoint {
             map.put("postgresql", POSTGRESQL);
             map.put("kafka", KAFKA);
             map.put("gaussdbv5ha", GAUSSDBV5HA);
+            map.put("taurus", TAURUS);
             return Collections.unmodifiableMap(map);
         }
 

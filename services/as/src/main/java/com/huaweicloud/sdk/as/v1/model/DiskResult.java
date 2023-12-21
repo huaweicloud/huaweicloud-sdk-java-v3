@@ -51,6 +51,16 @@ public class DiskResult {
          */
         public static final VolumeTypeEnum UH_11 = new VolumeTypeEnum("uh-11");
 
+        /**
+         * Enum GPSSD2 for value: "GPSSD2"
+         */
+        public static final VolumeTypeEnum GPSSD2 = new VolumeTypeEnum("GPSSD2");
+
+        /**
+         * Enum ESSD2 for value: "ESSD2"
+         */
+        public static final VolumeTypeEnum ESSD2 = new VolumeTypeEnum("ESSD2");
+
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumeTypeEnum> createStaticFields() {
@@ -60,6 +70,8 @@ public class DiskResult {
             map.put("SSD", SSD);
             map.put("co-pl", CO_PL);
             map.put("uh-11", UH_11);
+            map.put("GPSSD2", GPSSD2);
+            map.put("ESSD2", ESSD2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -209,6 +221,16 @@ public class DiskResult {
 
     private MetaData metadata;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Integer throughput;
+
     public DiskResult withSize(Integer size) {
         this.size = size;
         return this;
@@ -337,6 +359,40 @@ public class DiskResult {
         this.metadata = metadata;
     }
 
+    public DiskResult withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * 云硬盘iops
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    public DiskResult withThroughput(Integer throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 云硬盘吞吐量
+     * @return throughput
+     */
+    public Integer getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -350,12 +406,21 @@ public class DiskResult {
             && Objects.equals(this.diskType, that.diskType)
             && Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId)
             && Objects.equals(this.dataDiskImageId, that.dataDiskImageId)
-            && Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.metadata, that.metadata);
+            && Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.iops, that.iops) && Objects.equals(this.throughput, that.throughput);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, volumeType, diskType, dedicatedStorageId, dataDiskImageId, snapshotId, metadata);
+        return Objects.hash(size,
+            volumeType,
+            diskType,
+            dedicatedStorageId,
+            dataDiskImageId,
+            snapshotId,
+            metadata,
+            iops,
+            throughput);
     }
 
     @Override
@@ -369,6 +434,8 @@ public class DiskResult {
         sb.append("    dataDiskImageId: ").append(toIndentedString(dataDiskImageId)).append("\n");
         sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("}");
         return sb.toString();
     }

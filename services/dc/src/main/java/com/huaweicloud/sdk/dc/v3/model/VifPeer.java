@@ -178,6 +178,16 @@ public class VifPeer {
 
     private Integer receiveRouteNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_nqa")
+
+    private Boolean enableNqa;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_bfd")
+
+    private Boolean enableBfd;
+
     public VifPeer withId(String id) {
         this.id = id;
         return this;
@@ -518,6 +528,40 @@ public class VifPeer {
         this.receiveRouteNum = receiveRouteNum;
     }
 
+    public VifPeer withEnableNqa(Boolean enableNqa) {
+        this.enableNqa = enableNqa;
+        return this;
+    }
+
+    /**
+     * 是否使能nqa功能：true或false
+     * @return enableNqa
+     */
+    public Boolean getEnableNqa() {
+        return enableNqa;
+    }
+
+    public void setEnableNqa(Boolean enableNqa) {
+        this.enableNqa = enableNqa;
+    }
+
+    public VifPeer withEnableBfd(Boolean enableBfd) {
+        this.enableBfd = enableBfd;
+        return this;
+    }
+
+    /**
+     * 是否使能bfd功能：true或false
+     * @return enableBfd
+     */
+    public Boolean getEnableBfd() {
+        return enableBfd;
+    }
+
+    public void setEnableBfd(Boolean enableBfd) {
+        this.enableBfd = enableBfd;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -537,7 +581,8 @@ public class VifPeer {
             && Objects.equals(this.serviceEpGroup, that.serviceEpGroup) && Objects.equals(this.deviceId, that.deviceId)
             && Objects.equals(this.bgpRouteLimit, that.bgpRouteLimit) && Objects.equals(this.bgpStatus, that.bgpStatus)
             && Objects.equals(this.status, that.status) && Objects.equals(this.vifId, that.vifId)
-            && Objects.equals(this.receiveRouteNum, that.receiveRouteNum);
+            && Objects.equals(this.receiveRouteNum, that.receiveRouteNum)
+            && Objects.equals(this.enableNqa, that.enableNqa) && Objects.equals(this.enableBfd, that.enableBfd);
     }
 
     @Override
@@ -559,7 +604,9 @@ public class VifPeer {
             bgpStatus,
             status,
             vifId,
-            receiveRouteNum);
+            receiveRouteNum,
+            enableNqa,
+            enableBfd);
     }
 
     @Override
@@ -584,6 +631,8 @@ public class VifPeer {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    vifId: ").append(toIndentedString(vifId)).append("\n");
         sb.append("    receiveRouteNum: ").append(toIndentedString(receiveRouteNum)).append("\n");
+        sb.append("    enableNqa: ").append(toIndentedString(enableNqa)).append("\n");
+        sb.append("    enableBfd: ").append(toIndentedString(enableBfd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -65,6 +65,11 @@ public class ListImageRiskConfigsRequest {
 
     private String standard;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
     public ListImageRiskConfigsRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -105,7 +110,7 @@ public class ListImageRiskConfigsRequest {
     }
 
     /**
-     * 镜像类型，包含如下:   - private_image : 私有镜像仓库   - shared_image : 共享镜像仓库
+     * 镜像类型，包含如下:   - private_image : 私有镜像仓库   - shared_image : 共享镜像仓库   - local_image : 本地镜像   - instance_image : 企业镜像
      * @return imageType
      */
     public String getImageType() {
@@ -256,6 +261,23 @@ public class ListImageRiskConfigsRequest {
         this.standard = standard;
     }
 
+    public ListImageRiskConfigsRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 企业仓库实例ID，swr共享版无需使用该参数
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -271,7 +293,7 @@ public class ListImageRiskConfigsRequest {
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.namespace, that.namespace)
             && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.imageVersion, that.imageVersion)
             && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.severity, that.severity)
-            && Objects.equals(this.standard, that.standard);
+            && Objects.equals(this.standard, that.standard) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
@@ -286,7 +308,8 @@ public class ListImageRiskConfigsRequest {
             imageVersion,
             checkName,
             severity,
-            standard);
+            standard,
+            instanceId);
     }
 
     @Override
@@ -304,6 +327,7 @@ public class ListImageRiskConfigsRequest {
         sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

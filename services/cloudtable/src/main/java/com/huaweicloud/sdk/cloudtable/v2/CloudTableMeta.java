@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.cloudtable.v2;
 import com.huaweicloud.sdk.cloudtable.v2.model.AddComponentReq;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateCloudTableClusterRequest;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateCloudTableClusterResponse;
+import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterReqBody;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterRequest;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterRequestBody;
 import com.huaweicloud.sdk.cloudtable.v2.model.CreateClusterResponse;
@@ -385,10 +386,10 @@ public class CloudTableMeta {
             f -> f.withMarshaller(CreateCloudTableClusterRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             }));
-        builder.<CreateClusterRequestBody>withRequestField("body",
+        builder.<CreateClusterReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateClusterRequestBody.class),
+            TypeCasts.uncheckedConversion(CreateClusterReqBody.class),
             f -> f.withMarshaller(CreateCloudTableClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

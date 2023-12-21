@@ -25,6 +25,16 @@ public class StandardReqDataByNameAndId {
 
     private String faceImage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detail")
+
+    private Boolean detail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "crop")
+
+    private Boolean crop;
+
     public StandardReqDataByNameAndId withVerificationName(String verificationName) {
         this.verificationName = verificationName;
         return this;
@@ -76,6 +86,40 @@ public class StandardReqDataByNameAndId {
         this.faceImage = faceImage;
     }
 
+    public StandardReqDataByNameAndId withDetail(Boolean detail) {
+        this.detail = detail;
+        return this;
+    }
+
+    /**
+     * 响应参数similarity是否详细显示，默认为false。 - true表示响应中的similarity为0~1000的小数。 - false表示响应中的similarity为0~100的整数。
+     * @return detail
+     */
+    public Boolean getDetail() {
+        return detail;
+    }
+
+    public void setDetail(Boolean detail) {
+        this.detail = detail;
+    }
+
+    public StandardReqDataByNameAndId withCrop(Boolean crop) {
+        this.crop = crop;
+        return this;
+    }
+
+    /**
+     * 是否允许对入参face_image进行人脸检测及图片裁剪，默认为true，表示允许。
+     * @return crop
+     */
+    public Boolean getCrop() {
+        return crop;
+    }
+
+    public void setCrop(Boolean crop) {
+        this.crop = crop;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +131,13 @@ public class StandardReqDataByNameAndId {
         StandardReqDataByNameAndId that = (StandardReqDataByNameAndId) obj;
         return Objects.equals(this.verificationName, that.verificationName)
             && Objects.equals(this.verificationId, that.verificationId)
-            && Objects.equals(this.faceImage, that.faceImage);
+            && Objects.equals(this.faceImage, that.faceImage) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.crop, that.crop);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(verificationName, verificationId, faceImage);
+        return Objects.hash(verificationName, verificationId, faceImage, detail, crop);
     }
 
     @Override
@@ -102,6 +147,8 @@ public class StandardReqDataByNameAndId {
         sb.append("    verificationName: ").append(toIndentedString(verificationName)).append("\n");
         sb.append("    verificationId: ").append(toIndentedString(verificationId)).append("\n");
         sb.append("    faceImage: ").append(toIndentedString(faceImage)).append("\n");
+        sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+        sb.append("    crop: ").append(toIndentedString(crop)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class ListPortStatisticsRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private String category;
+
     public ListPortStatisticsRequest withPort(Integer port) {
         this.port = port;
         return this;
@@ -192,6 +197,23 @@ public class ListPortStatisticsRequest {
         this.offset = offset;
     }
 
+    public ListPortStatisticsRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * 类别，默认为host，包含如下： - host：主机 - container：容器
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -205,12 +227,13 @@ public class ListPortStatisticsRequest {
             && Objects.equals(this.type, that.type)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.category, that.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(port, portString, type, enterpriseProjectId, sortKey, sortDir, limit, offset);
+        return Objects.hash(port, portString, type, enterpriseProjectId, sortKey, sortDir, limit, offset, category);
     }
 
     @Override
@@ -225,6 +248,7 @@ public class ListPortStatisticsRequest {
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("}");
         return sb.toString();
     }

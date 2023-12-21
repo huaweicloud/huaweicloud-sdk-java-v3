@@ -56,6 +56,21 @@ public class ShowAssetStatisticResponse extends SdkResponse {
 
     private Long kernelModuleNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "web_service_num")
+
+    private Long webServiceNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "web_app_num")
+
+    private Long webAppNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_num")
+
+    private Long databaseNum;
+
     public ShowAssetStatisticResponse withAccountNum(Long accountNum) {
         this.accountNum = accountNum;
         return this;
@@ -227,6 +242,63 @@ public class ShowAssetStatisticResponse extends SdkResponse {
         this.kernelModuleNum = kernelModuleNum;
     }
 
+    public ShowAssetStatisticResponse withWebServiceNum(Long webServiceNum) {
+        this.webServiceNum = webServiceNum;
+        return this;
+    }
+
+    /**
+     * web服务数量
+     * minimum: 0
+     * maximum: 2147483647
+     * @return webServiceNum
+     */
+    public Long getWebServiceNum() {
+        return webServiceNum;
+    }
+
+    public void setWebServiceNum(Long webServiceNum) {
+        this.webServiceNum = webServiceNum;
+    }
+
+    public ShowAssetStatisticResponse withWebAppNum(Long webAppNum) {
+        this.webAppNum = webAppNum;
+        return this;
+    }
+
+    /**
+     * web应用数量
+     * minimum: 0
+     * maximum: 2147483647
+     * @return webAppNum
+     */
+    public Long getWebAppNum() {
+        return webAppNum;
+    }
+
+    public void setWebAppNum(Long webAppNum) {
+        this.webAppNum = webAppNum;
+    }
+
+    public ShowAssetStatisticResponse withDatabaseNum(Long databaseNum) {
+        this.databaseNum = databaseNum;
+        return this;
+    }
+
+    /**
+     * 数据库数量
+     * minimum: 0
+     * maximum: 2147483647
+     * @return databaseNum
+     */
+    public Long getDatabaseNum() {
+        return databaseNum;
+    }
+
+    public void setDatabaseNum(Long databaseNum) {
+        this.databaseNum = databaseNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -242,7 +314,9 @@ public class ShowAssetStatisticResponse extends SdkResponse {
             && Objects.equals(this.webFrameworkNum, that.webFrameworkNum)
             && Objects.equals(this.webSiteNum, that.webSiteNum)
             && Objects.equals(this.jarPackageNum, that.jarPackageNum)
-            && Objects.equals(this.kernelModuleNum, that.kernelModuleNum);
+            && Objects.equals(this.kernelModuleNum, that.kernelModuleNum)
+            && Objects.equals(this.webServiceNum, that.webServiceNum) && Objects.equals(this.webAppNum, that.webAppNum)
+            && Objects.equals(this.databaseNum, that.databaseNum);
     }
 
     @Override
@@ -255,7 +329,10 @@ public class ShowAssetStatisticResponse extends SdkResponse {
             webFrameworkNum,
             webSiteNum,
             jarPackageNum,
-            kernelModuleNum);
+            kernelModuleNum,
+            webServiceNum,
+            webAppNum,
+            databaseNum);
     }
 
     @Override
@@ -271,6 +348,9 @@ public class ShowAssetStatisticResponse extends SdkResponse {
         sb.append("    webSiteNum: ").append(toIndentedString(webSiteNum)).append("\n");
         sb.append("    jarPackageNum: ").append(toIndentedString(jarPackageNum)).append("\n");
         sb.append("    kernelModuleNum: ").append(toIndentedString(kernelModuleNum)).append("\n");
+        sb.append("    webServiceNum: ").append(toIndentedString(webServiceNum)).append("\n");
+        sb.append("    webAppNum: ").append(toIndentedString(webAppNum)).append("\n");
+        sb.append("    databaseNum: ").append(toIndentedString(databaseNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

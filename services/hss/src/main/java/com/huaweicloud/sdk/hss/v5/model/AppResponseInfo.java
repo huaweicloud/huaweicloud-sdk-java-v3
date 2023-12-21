@@ -50,6 +50,16 @@ public class AppResponseInfo {
 
     private Long recentScanTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_id")
+
+    private String containerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_name")
+
+    private String containerName;
+
     public AppResponseInfo withAgentId(String agentId) {
         this.agentId = agentId;
         return this;
@@ -190,6 +200,40 @@ public class AppResponseInfo {
         this.recentScanTime = recentScanTime;
     }
 
+    public AppResponseInfo withContainerId(String containerId) {
+        this.containerId = containerId;
+        return this;
+    }
+
+    /**
+     * 容器id
+     * @return containerId
+     */
+    public String getContainerId() {
+        return containerId;
+    }
+
+    public void setContainerId(String containerId) {
+        this.containerId = containerId;
+    }
+
+    public AppResponseInfo withContainerName(String containerName) {
+        this.containerName = containerName;
+        return this;
+    }
+
+    /**
+     * 容器名称
+     * @return containerName
+     */
+    public String getContainerName() {
+        return containerName;
+    }
+
+    public void setContainerName(String containerName) {
+        this.containerName = containerName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -203,12 +247,23 @@ public class AppResponseInfo {
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.appName, that.appName) && Objects.equals(this.version, that.version)
             && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.recentScanTime, that.recentScanTime);
+            && Objects.equals(this.recentScanTime, that.recentScanTime)
+            && Objects.equals(this.containerId, that.containerId)
+            && Objects.equals(this.containerName, that.containerName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(agentId, hostId, hostName, hostIp, appName, version, updateTime, recentScanTime);
+        return Objects.hash(agentId,
+            hostId,
+            hostName,
+            hostIp,
+            appName,
+            version,
+            updateTime,
+            recentScanTime,
+            containerId,
+            containerName);
     }
 
     @Override
@@ -223,6 +278,8 @@ public class AppResponseInfo {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    recentScanTime: ").append(toIndentedString(recentScanTime)).append("\n");
+        sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
+        sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

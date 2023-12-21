@@ -98,7 +98,7 @@ public class IpPool {
     }
 
     /**
-     * IPv4[或IPv6](tag:hide)线路。  取值范围： - 4：IPv4线路 [- 6：IPv6线路](tag:hide)
+     * IPv4或IPv6线路。  取值范围： - 4：IPv4线路 - 6：IPv6线路
      * @return ipVersion
      */
     public String getIpVersion() {

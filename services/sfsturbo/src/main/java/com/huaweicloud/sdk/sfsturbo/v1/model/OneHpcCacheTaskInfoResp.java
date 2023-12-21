@@ -66,7 +66,7 @@ public class OneHpcCacheTaskInfoResp {
     }
 
     /**
-     * 任务id
+     * 任务ID
      * @return taskId
      */
     public String getTaskId() {
@@ -117,7 +117,7 @@ public class OneHpcCacheTaskInfoResp {
     }
 
     /**
-     * 源端对象
+     * 联动目录名称
      * @return srcTarget
      */
     public String getSrcTarget() {
@@ -134,7 +134,7 @@ public class OneHpcCacheTaskInfoResp {
     }
 
     /**
-     * 源端路径
+     * 导入导出任务的源端路径前缀
      * @return srcPrefix
      */
     public String getSrcPrefix() {
@@ -151,7 +151,7 @@ public class OneHpcCacheTaskInfoResp {
     }
 
     /**
-     * 目的端对象
+     * 和src_target保持一致
      * @return destTarget
      */
     public String getDestTarget() {
@@ -168,7 +168,7 @@ public class OneHpcCacheTaskInfoResp {
     }
 
     /**
-     * 目的端路径
+     * 和src_prefix保持一致
      * @return destPrefix
      */
     public String getDestPrefix() {

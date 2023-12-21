@@ -96,7 +96,7 @@ public class ShowJobDetailRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息
      */
     public static final class TypeEnum {
 
@@ -131,9 +131,9 @@ public class ShowJobDetailRequest {
         public static final TypeEnum LOG = new TypeEnum("log");
 
         /**
-         * Enum COMAPRE for value: "comapre"
+         * Enum COMPARE for value: "compare"
          */
-        public static final TypeEnum COMAPRE = new TypeEnum("comapre");
+        public static final TypeEnum COMPARE = new TypeEnum("compare");
 
         /**
          * Enum FILE for value: "file"
@@ -150,7 +150,7 @@ public class ShowJobDetailRequest {
             map.put("precheck", PRECHECK);
             map.put("progress", PROGRESS);
             map.put("log", LOG);
-            map.put("comapre", COMAPRE);
+            map.put("compare", COMPARE);
             map.put("file", FILE);
             return Collections.unmodifiableMap(map);
         }
@@ -328,6 +328,11 @@ public class ShowJobDetailRequest {
          */
         public static final QueryTypeEnum DETAIL = new QueryTypeEnum("detail");
 
+        /**
+         * Enum DIFF for value: "diff"
+         */
+        public static final QueryTypeEnum DIFF = new QueryTypeEnum("diff");
+
         private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, QueryTypeEnum> createStaticFields() {
@@ -335,6 +340,7 @@ public class ShowJobDetailRequest {
             map.put("overview", OVERVIEW);
             map.put("list", LIST);
             map.put("detail", DETAIL);
+            map.put("diff", DIFF);
             return Collections.unmodifiableMap(map);
         }
 
@@ -602,7 +608,7 @@ public class ShowJobDetailRequest {
     }
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - comapre：查询对比任务。 - file：对象导入信息
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息
      * @return type
      */
     public TypeEnum getType() {

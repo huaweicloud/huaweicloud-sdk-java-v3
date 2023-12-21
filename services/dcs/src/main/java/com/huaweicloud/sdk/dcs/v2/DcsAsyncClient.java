@@ -219,6 +219,8 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -3485,6 +3487,37 @@ public class DcsAsyncClient {
         UpdateSlavePriorityRequest request) {
         return new AsyncInvoker<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse>(request,
             DcsMeta.updateSlavePriority, hcClient);
+    }
+
+    /**
+     * 校验集群副本是否支持删除
+     *
+     * 校验集群副本是否支持删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ValidateDeletableReplicaRequest 请求对象
+     * @return CompletableFuture<ValidateDeletableReplicaResponse>
+     */
+    public CompletableFuture<ValidateDeletableReplicaResponse> validateDeletableReplicaAsync(
+        ValidateDeletableReplicaRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.validateDeletableReplica);
+    }
+
+    /**
+     * 校验集群副本是否支持删除
+     *
+     * 校验集群副本是否支持删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ValidateDeletableReplicaRequest 请求对象
+     * @return AsyncInvoker<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse>
+     */
+    public AsyncInvoker<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse> validateDeletableReplicaAsyncInvoker(
+        ValidateDeletableReplicaRequest request) {
+        return new AsyncInvoker<ValidateDeletableReplicaRequest, ValidateDeletableReplicaResponse>(request,
+            DcsMeta.validateDeletableReplica, hcClient);
     }
 
     /**

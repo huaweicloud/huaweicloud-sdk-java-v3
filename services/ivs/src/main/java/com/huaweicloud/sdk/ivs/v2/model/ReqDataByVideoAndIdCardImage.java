@@ -35,6 +35,11 @@ public class ReqDataByVideoAndIdCardImage {
 
     private Double nodThreshold;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "detail")
+
+    private Boolean detail;
+
     public ReqDataByVideoAndIdCardImage withIdcardImage1(String idcardImage1) {
         this.idcardImage1 = idcardImage1;
         return this;
@@ -120,6 +125,23 @@ public class ReqDataByVideoAndIdCardImage {
         this.nodThreshold = nodThreshold;
     }
 
+    public ReqDataByVideoAndIdCardImage withDetail(Boolean detail) {
+        this.detail = detail;
+        return this;
+    }
+
+    /**
+     * 响应参数similarity是否详细显示，默认为false。 - true表示响应中的similarity为0~1000的小数。 - false表示响应中的similarity为0~100的整数。
+     * @return detail
+     */
+    public Boolean getDetail() {
+        return detail;
+    }
+
+    public void setDetail(Boolean detail) {
+        this.detail = detail;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,13 @@ public class ReqDataByVideoAndIdCardImage {
         ReqDataByVideoAndIdCardImage that = (ReqDataByVideoAndIdCardImage) obj;
         return Objects.equals(this.idcardImage1, that.idcardImage1)
             && Objects.equals(this.idcardImage2, that.idcardImage2) && Objects.equals(this.video, that.video)
-            && Objects.equals(this.actions, that.actions) && Objects.equals(this.nodThreshold, that.nodThreshold);
+            && Objects.equals(this.actions, that.actions) && Objects.equals(this.nodThreshold, that.nodThreshold)
+            && Objects.equals(this.detail, that.detail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idcardImage1, idcardImage2, video, actions, nodThreshold);
+        return Objects.hash(idcardImage1, idcardImage2, video, actions, nodThreshold, detail);
     }
 
     @Override
@@ -148,6 +171,7 @@ public class ReqDataByVideoAndIdCardImage {
         sb.append("    video: ").append(toIndentedString(video)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    nodThreshold: ").append(toIndentedString(nodThreshold)).append("\n");
+        sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

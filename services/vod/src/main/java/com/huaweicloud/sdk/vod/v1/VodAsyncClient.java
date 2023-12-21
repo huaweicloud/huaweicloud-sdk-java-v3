@@ -49,6 +49,8 @@ import com.huaweicloud.sdk.vod.v1.model.DeleteWatermarkTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteWatermarkTemplateResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListDomainLogsRequest;
@@ -87,6 +89,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.UnpublishAssetsRequest;
@@ -101,6 +105,8 @@ import com.huaweicloud.sdk.vod.v1.model.UpdateBucketAuthorizedRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateBucketAuthorizedResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailResponse;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeRequest;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupRequest;
@@ -839,6 +845,45 @@ public class VodAsyncClient {
         ListAssetCategoryRequest request) {
         return new AsyncInvoker<ListAssetCategoryRequest, ListAssetCategoryResponse>(request, VodMeta.listAssetCategory,
             hcClient);
+    }
+
+    /**
+     * 查询媒资日播放统计数据
+     *
+     * 查询媒资日播放统计数据。
+     * 
+     * 使用媒资日播放统计查询API前，需要先提交工单开通统计功能，才能触发统计任务。
+     * 
+     * 支持查询最近一年的播放统计数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAssetDailySummaryLogRequest 请求对象
+     * @return CompletableFuture<ListAssetDailySummaryLogResponse>
+     */
+    public CompletableFuture<ListAssetDailySummaryLogResponse> listAssetDailySummaryLogAsync(
+        ListAssetDailySummaryLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.listAssetDailySummaryLog);
+    }
+
+    /**
+     * 查询媒资日播放统计数据
+     *
+     * 查询媒资日播放统计数据。
+     * 
+     * 使用媒资日播放统计查询API前，需要先提交工单开通统计功能，才能触发统计任务。
+     * 
+     * 支持查询最近一年的播放统计数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAssetDailySummaryLogRequest 请求对象
+     * @return AsyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse>
+     */
+    public AsyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> listAssetDailySummaryLogAsyncInvoker(
+        ListAssetDailySummaryLogRequest request) {
+        return new AsyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse>(request,
+            VodMeta.listAssetDailySummaryLog, hcClient);
     }
 
     /**
@@ -1772,6 +1817,44 @@ public class VodAsyncClient {
     }
 
     /**
+     * 查询取回数据信息
+     *
+     * ## 典型场景 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * ## 接口功能 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVodRetrievalRequest 请求对象
+     * @return CompletableFuture<ShowVodRetrievalResponse>
+     */
+    public CompletableFuture<ShowVodRetrievalResponse> showVodRetrievalAsync(ShowVodRetrievalRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.showVodRetrieval);
+    }
+
+    /**
+     * 查询取回数据信息
+     *
+     * ## 典型场景 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * ## 接口功能 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVodRetrievalRequest 请求对象
+     * @return AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse>
+     */
+    public AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrievalAsyncInvoker(
+        ShowVodRetrievalRequest request) {
+        return new AsyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse>(request, VodMeta.showVodRetrieval,
+            hcClient);
+    }
+
+    /**
      * 多字幕封装
      *
      * 多字幕封装，仅支持 HLS VTT格式
@@ -1798,6 +1881,38 @@ public class VodAsyncClient {
     public AsyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitleAsyncInvoker(
         ModifySubtitleRequest request) {
         return new AsyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse>(request, VodMeta.modifySubtitle,
+            hcClient);
+    }
+
+    /**
+     * 修改媒资文件在obs的存储模式
+     *
+     * ## 接口功能 ##
+     *   修改媒资文件在obs的存储模式&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateStorageModeRequest 请求对象
+     * @return CompletableFuture<UpdateStorageModeResponse>
+     */
+    public CompletableFuture<UpdateStorageModeResponse> updateStorageModeAsync(UpdateStorageModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.updateStorageMode);
+    }
+
+    /**
+     * 修改媒资文件在obs的存储模式
+     *
+     * ## 接口功能 ##
+     *   修改媒资文件在obs的存储模式&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateStorageModeRequest 请求对象
+     * @return AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse>
+     */
+    public AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageModeAsyncInvoker(
+        UpdateStorageModeRequest request) {
+        return new AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse>(request, VodMeta.updateStorageMode,
             hcClient);
     }
 

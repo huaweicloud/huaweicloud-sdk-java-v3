@@ -68,7 +68,7 @@ public class ListHpcCacheTasksResponse extends SdkResponse {
     }
 
     /**
-     * 联动任务数量
+     * 任务数量
      * @return count
      */
     public Long getCount() {

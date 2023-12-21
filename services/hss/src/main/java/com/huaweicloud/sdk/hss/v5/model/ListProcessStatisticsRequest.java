@@ -30,6 +30,11 @@ public class ListProcessStatisticsRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private String category;
+
     public ListProcessStatisticsRequest withPath(String path) {
         this.path = path;
         return this;
@@ -102,6 +107,23 @@ public class ListProcessStatisticsRequest {
         this.offset = offset;
     }
 
+    public ListProcessStatisticsRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * 类别，默认为host，包含如下： - host：主机 - container：容器
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -113,12 +135,13 @@ public class ListProcessStatisticsRequest {
         ListProcessStatisticsRequest that = (ListProcessStatisticsRequest) obj;
         return Objects.equals(this.path, that.path)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.category, that.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(path, enterpriseProjectId, limit, offset);
+        return Objects.hash(path, enterpriseProjectId, limit, offset, category);
     }
 
     @Override
@@ -129,6 +152,7 @@ public class ListProcessStatisticsRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("}");
         return sb.toString();
     }

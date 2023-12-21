@@ -22,6 +22,12 @@ public class DisRegion {
 
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://dis.cn-south-1.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_2 =
+        new Region("ap-southeast-2", "https://dis.ap-southeast-2.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_1 =
+        new Region("ap-southeast-1", "https://dis.ap-southeast-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DIS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -33,6 +39,8 @@ public class DisRegion {
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-south-1", CN_SOUTH_1);
+        map.put("ap-southeast-2", AP_SOUTHEAST_2);
+        map.put("ap-southeast-1", AP_SOUTHEAST_1);
         return Collections.unmodifiableMap(map);
     }
 

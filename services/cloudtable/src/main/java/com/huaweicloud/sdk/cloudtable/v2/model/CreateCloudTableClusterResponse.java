@@ -16,6 +16,16 @@ public class CreateCloudTableClusterResponse extends SdkResponse {
 
     private String clusterId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "jobId")
+
+    private String jobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "getJobEndpoint")
+
+    private String getJobEndpoint;
+
     public CreateCloudTableClusterResponse withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -33,6 +43,40 @@ public class CreateCloudTableClusterResponse extends SdkResponse {
         this.clusterId = clusterId;
     }
 
+    public CreateCloudTableClusterResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * Get jobId
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    public CreateCloudTableClusterResponse withGetJobEndpoint(String getJobEndpoint) {
+        this.getJobEndpoint = getJobEndpoint;
+        return this;
+    }
+
+    /**
+     * Get getJobEndpoint
+     * @return getJobEndpoint
+     */
+    public String getGetJobEndpoint() {
+        return getJobEndpoint;
+    }
+
+    public void setGetJobEndpoint(String getJobEndpoint) {
+        this.getJobEndpoint = getJobEndpoint;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +86,13 @@ public class CreateCloudTableClusterResponse extends SdkResponse {
             return false;
         }
         CreateCloudTableClusterResponse that = (CreateCloudTableClusterResponse) obj;
-        return Objects.equals(this.clusterId, that.clusterId);
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.getJobEndpoint, that.getJobEndpoint);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId);
+        return Objects.hash(clusterId, jobId, getJobEndpoint);
     }
 
     @Override
@@ -55,6 +100,8 @@ public class CreateCloudTableClusterResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCloudTableClusterResponse {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    getJobEndpoint: ").append(toIndentedString(getJobEndpoint)).append("\n");
         sb.append("}");
         return sb.toString();
     }

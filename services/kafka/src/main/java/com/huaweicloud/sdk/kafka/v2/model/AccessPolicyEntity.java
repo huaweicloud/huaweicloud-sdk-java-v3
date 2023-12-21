@@ -21,7 +21,7 @@ public class AccessPolicyEntity {
     private String userName;
 
     /**
-     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
+     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。  设置用户权限时，为必选参数。
      */
     public static final class AccessPolicyEnum {
 
@@ -107,7 +107,7 @@ public class AccessPolicyEntity {
     }
 
     /**
-     * 用户名称。
+     * 用户名称。  设置用户权限时，为必选参数。
      * @return userName
      */
     public String getUserName() {
@@ -124,7 +124,7 @@ public class AccessPolicyEntity {
     }
 
     /**
-     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
+     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。  设置用户权限时，为必选参数。
      * @return accessPolicy
      */
     public AccessPolicyEnum getAccessPolicy() {

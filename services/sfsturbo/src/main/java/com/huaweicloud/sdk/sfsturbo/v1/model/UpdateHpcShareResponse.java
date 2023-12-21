@@ -27,7 +27,7 @@ public class UpdateHpcShareResponse extends SdkResponse {
     }
 
     /**
-     * 文件系统 gc_time
+     * 文件系统冷数据淘汰时间
      * @return gcTime
      */
     public Integer getGcTime() {

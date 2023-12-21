@@ -17,6 +17,16 @@ public class PlayInfo {
     private String playType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
     private String url;
@@ -46,6 +56,40 @@ public class PlayInfo {
 
     public void setPlayType(String playType) {
         this.playType = playType;
+    }
+
+    public PlayInfo withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 所属转码组Id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public PlayInfo withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /**
+     * 所属转码组名称
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 
     public PlayInfo withUrl(String url) {
@@ -117,13 +161,14 @@ public class PlayInfo {
             return false;
         }
         PlayInfo that = (PlayInfo) obj;
-        return Objects.equals(this.playType, that.playType) && Objects.equals(this.url, that.url)
+        return Objects.equals(this.playType, that.playType) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.url, that.url)
             && Objects.equals(this.encrypted, that.encrypted) && Objects.equals(this.metaData, that.metaData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playType, url, encrypted, metaData);
+        return Objects.hash(playType, groupId, groupName, url, encrypted, metaData);
     }
 
     @Override
@@ -131,6 +176,8 @@ public class PlayInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class PlayInfo {\n");
         sb.append("    playType: ").append(toIndentedString(playType)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    encrypted: ").append(toIndentedString(encrypted)).append("\n");
         sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");

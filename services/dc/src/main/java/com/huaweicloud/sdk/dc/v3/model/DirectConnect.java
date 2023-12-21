@@ -147,7 +147,7 @@ public class DirectConnect {
     private String deviceId;
 
     /**
-     * 物理专线的类型，类似包括标准(standard),运营专线(hosting),托管专线（hosted）
+     * 物理专线的类型，类型包括标准(standard)，运营专线(hosting)，托管专线（hosted）[，一站式标准（onestop_standard），一站式托管（onestop_hosted）](tag:hws)。
      */
     public static final class TypeEnum {
 
@@ -166,6 +166,16 @@ public class DirectConnect {
          */
         public static final TypeEnum HOSTED = new TypeEnum("hosted");
 
+        /**
+         * Enum ONESTOP_STANDARD for value: "onestop_standard"
+         */
+        public static final TypeEnum ONESTOP_STANDARD = new TypeEnum("onestop_standard");
+
+        /**
+         * Enum ONESTOP_HOSTED for value: "onestop_hosted"
+         */
+        public static final TypeEnum ONESTOP_HOSTED = new TypeEnum("onestop_hosted");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -173,6 +183,8 @@ public class DirectConnect {
             map.put("standard", STANDARD);
             map.put("hosting", HOSTING);
             map.put("hosted", HOSTED);
+            map.put("onestop_standard", ONESTOP_STANDARD);
+            map.put("onestop_hosted", ONESTOP_HOSTED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -329,7 +341,7 @@ public class DirectConnect {
     private Integer vlan;
 
     /**
-     * 资源状态，合法值是：ACTIVE，DOWN，BUILD，ERROR，PENDING_DELETE，DELETED，APPLY，DENY，PENDING_PAY，PAID，ORDERING，ACCEPT，REJECTED
+     * 资源状态，合法值是： ACTIVE：专线已经开通完成且线路处于正常状态 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 BUILD：申请专线正在施工建设中 ERROR：专线配置异常，请联系客服解决相关问题。 PENDING_DELETE：正在删除 DELETED：已删除 APPLY：申请开通 DENY：客户需求无法满足，拒绝工勘。 PENDING_PAY：待支付 PAID：已支付 PENDING_SURVEY：待工勘
      */
     public static final class StatusEnum {
 
@@ -388,21 +400,6 @@ public class DirectConnect {
          */
         public static final StatusEnum PENDING_PAY = new StatusEnum("PENDING_PAY");
 
-        /**
-         * Enum ORDERING for value: "ORDERING"
-         */
-        public static final StatusEnum ORDERING = new StatusEnum("ORDERING");
-
-        /**
-         * Enum ACCEPT for value: "ACCEPT"
-         */
-        public static final StatusEnum ACCEPT = new StatusEnum("ACCEPT");
-
-        /**
-         * Enum REJECTED for value: "REJECTED"
-         */
-        public static final StatusEnum REJECTED = new StatusEnum("REJECTED");
-
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -418,9 +415,6 @@ public class DirectConnect {
             map.put("DELETED", DELETED);
             map.put("DENY", DENY);
             map.put("PENDING_PAY", PENDING_PAY);
-            map.put("ORDERING", ORDERING);
-            map.put("ACCEPT", ACCEPT);
-            map.put("REJECTED", REJECTED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -739,6 +733,11 @@ public class DirectConnect {
     private SignedAgreementStatusEnum signedAgreementStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "signed_agreement_time")
+
+    private OffsetDateTime signedAgreementTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -747,6 +746,81 @@ public class DirectConnect {
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locales")
+
+    private LocalesBody locales;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_feature")
+
+    private List<String> supportFeature = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ies_id")
+
+    private String iesId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private String reason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "email")
+
+    private String email;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "onestop_product_id")
+
+    private String onestopProductId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "building_line_product_id")
+
+    private String buildingLineProductId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_onestop_product_id")
+
+    private String lastOnestopProductId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_building_line_product_id")
+
+    private String lastBuildingLineProductId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modified_bandwidth")
+
+    private Integer modifiedBandwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "change_mode")
+
+    private Integer changeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "onestopdc_status")
+
+    private String onestopdcStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_renew")
+
+    private Integer autoRenew;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ratio_95peak")
+
+    private Integer ratio95peak;
 
     public DirectConnect withId(String id) {
         this.id = id;
@@ -909,7 +983,7 @@ public class DirectConnect {
     }
 
     /**
-     * 物理专线的类型，类似包括标准(standard),运营专线(hosting),托管专线（hosted）
+     * 物理专线的类型，类型包括标准(standard)，运营专线(hosting)，托管专线（hosted）[，一站式标准（onestop_standard），一站式托管（onestop_hosted）](tag:hws)。
      * @return type
      */
     public TypeEnum getType() {
@@ -960,7 +1034,7 @@ public class DirectConnect {
     }
 
     /**
-     * 物理专线连接的线路运营商如：中国电信 中国联通 中国移动 中国其他 境外其他专线归属的运营商
+     * 物理专线连接的线路运营商 [如：中国电信 中国联通 中国移动 中国其他 境外其他专线归属的运营商](tag:hws,hws_hk)
      * @return provider
      */
     public String getProvider() {
@@ -1013,7 +1087,7 @@ public class DirectConnect {
     }
 
     /**
-     * 资源状态，合法值是：ACTIVE，DOWN，BUILD，ERROR，PENDING_DELETE，DELETED，APPLY，DENY，PENDING_PAY，PAID，ORDERING，ACCEPT，REJECTED
+     * 资源状态，合法值是： ACTIVE：专线已经开通完成且线路处于正常状态 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 BUILD：申请专线正在施工建设中 ERROR：专线配置异常，请联系客服解决相关问题。 PENDING_DELETE：正在删除 DELETED：已删除 APPLY：申请开通 DENY：客户需求无法满足，拒绝工勘。 PENDING_PAY：待支付 PAID：已支付 PENDING_SURVEY：待工勘
      * @return status
      */
     public StatusEnum getStatus() {
@@ -1245,6 +1319,23 @@ public class DirectConnect {
         this.signedAgreementStatus = signedAgreementStatus;
     }
 
+    public DirectConnect withSignedAgreementTime(OffsetDateTime signedAgreementTime) {
+        this.signedAgreementTime = signedAgreementTime;
+        return this;
+    }
+
+    /**
+     * 专线协议的签暑时间
+     * @return signedAgreementTime
+     */
+    public OffsetDateTime getSignedAgreementTime() {
+        return signedAgreementTime;
+    }
+
+    public void setSignedAgreementTime(OffsetDateTime signedAgreementTime) {
+        this.signedAgreementTime = signedAgreementTime;
+    }
+
     public DirectConnect withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -1295,6 +1386,288 @@ public class DirectConnect {
         this.tags = tags;
     }
 
+    public DirectConnect withLocales(LocalesBody locales) {
+        this.locales = locales;
+        return this;
+    }
+
+    public DirectConnect withLocales(Consumer<LocalesBody> localesSetter) {
+        if (this.locales == null) {
+            this.locales = new LocalesBody();
+            localesSetter.accept(this.locales);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get locales
+     * @return locales
+     */
+    public LocalesBody getLocales() {
+        return locales;
+    }
+
+    public void setLocales(LocalesBody locales) {
+        this.locales = locales;
+    }
+
+    public DirectConnect withSupportFeature(List<String> supportFeature) {
+        this.supportFeature = supportFeature;
+        return this;
+    }
+
+    public DirectConnect addSupportFeatureItem(String supportFeatureItem) {
+        if (this.supportFeature == null) {
+            this.supportFeature = new ArrayList<>();
+        }
+        this.supportFeature.add(supportFeatureItem);
+        return this;
+    }
+
+    public DirectConnect withSupportFeature(Consumer<List<String>> supportFeatureSetter) {
+        if (this.supportFeature == null) {
+            this.supportFeature = new ArrayList<>();
+        }
+        supportFeatureSetter.accept(this.supportFeature);
+        return this;
+    }
+
+    /**
+     * 用户专线可支持的特性列表[（功能暂不支持）](tag:dt)
+     * @return supportFeature
+     */
+    public List<String> getSupportFeature() {
+        return supportFeature;
+    }
+
+    public void setSupportFeature(List<String> supportFeature) {
+        this.supportFeature = supportFeature;
+    }
+
+    public DirectConnect withIesId(String iesId) {
+        this.iesId = iesId;
+        return this;
+    }
+
+    /**
+     * 归属的IES站点的ID[（功能暂不支持）](tag:dt)
+     * @return iesId
+     */
+    public String getIesId() {
+        return iesId;
+    }
+
+    public void setIesId(String iesId) {
+        this.iesId = iesId;
+    }
+
+    public DirectConnect withReason(String reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    /**
+     * 如果专线资源的状态是Error的情况下，该参数会显示相关错误信息。[（功能暂不支持）](tag:dt)
+     * @return reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public DirectConnect withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    /**
+     * 客户邮箱信息[（功能暂不支持）](tag:dt)
+     * @return email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public DirectConnect withOnestopProductId(String onestopProductId) {
+        this.onestopProductId = onestopProductId;
+        return this;
+    }
+
+    /**
+     * 该参数用于销售线路场景，标识一站式专线产品ID[（功能暂不支持）](tag:dt)
+     * @return onestopProductId
+     */
+    public String getOnestopProductId() {
+        return onestopProductId;
+    }
+
+    public void setOnestopProductId(String onestopProductId) {
+        this.onestopProductId = onestopProductId;
+    }
+
+    public DirectConnect withBuildingLineProductId(String buildingLineProductId) {
+        this.buildingLineProductId = buildingLineProductId;
+        return this;
+    }
+
+    /**
+     * 该参数用于销售线路场景，标识机房内部线路资源产品ID[（功能暂不支持）](tag:dt)
+     * @return buildingLineProductId
+     */
+    public String getBuildingLineProductId() {
+        return buildingLineProductId;
+    }
+
+    public void setBuildingLineProductId(String buildingLineProductId) {
+        this.buildingLineProductId = buildingLineProductId;
+    }
+
+    public DirectConnect withLastOnestopProductId(String lastOnestopProductId) {
+        this.lastOnestopProductId = lastOnestopProductId;
+        return this;
+    }
+
+    /**
+     * 该参数用于销售线路场景，标识变更前的一站式专线产品ID，用于在做线路带宽变更时保存上一次的记录。[（功能暂不支持）](tag:dt)
+     * @return lastOnestopProductId
+     */
+    public String getLastOnestopProductId() {
+        return lastOnestopProductId;
+    }
+
+    public void setLastOnestopProductId(String lastOnestopProductId) {
+        this.lastOnestopProductId = lastOnestopProductId;
+    }
+
+    public DirectConnect withLastBuildingLineProductId(String lastBuildingLineProductId) {
+        this.lastBuildingLineProductId = lastBuildingLineProductId;
+        return this;
+    }
+
+    /**
+     * 该参数用于销售线路场景，标识变更前机房内部线路资源产品ID，用于在做线路带宽变更时保存上一次的记录。[（功能暂不支持）](tag:dt)
+     * @return lastBuildingLineProductId
+     */
+    public String getLastBuildingLineProductId() {
+        return lastBuildingLineProductId;
+    }
+
+    public void setLastBuildingLineProductId(String lastBuildingLineProductId) {
+        this.lastBuildingLineProductId = lastBuildingLineProductId;
+    }
+
+    public DirectConnect withModifiedBandwidth(Integer modifiedBandwidth) {
+        this.modifiedBandwidth = modifiedBandwidth;
+        return this;
+    }
+
+    /**
+     * 线路带宽变更后的带宽值[（功能暂不支持）](tag:dt)
+     * @return modifiedBandwidth
+     */
+    public Integer getModifiedBandwidth() {
+        return modifiedBandwidth;
+    }
+
+    public void setModifiedBandwidth(Integer modifiedBandwidth) {
+        this.modifiedBandwidth = modifiedBandwidth;
+    }
+
+    public DirectConnect withChangeMode(Integer changeMode) {
+        this.changeMode = changeMode;
+        return this;
+    }
+
+    /**
+     * 标识续费变更的一种状态[（功能暂不支持）](tag:dt)
+     * @return changeMode
+     */
+    public Integer getChangeMode() {
+        return changeMode;
+    }
+
+    public void setChangeMode(Integer changeMode) {
+        this.changeMode = changeMode;
+    }
+
+    public DirectConnect withOnestopdcStatus(String onestopdcStatus) {
+        this.onestopdcStatus = onestopdcStatus;
+        return this;
+    }
+
+    /**
+     * 一站式专线状态[（功能暂不支持）](tag:dt)
+     * @return onestopdcStatus
+     */
+    public String getOnestopdcStatus() {
+        return onestopdcStatus;
+    }
+
+    public void setOnestopdcStatus(String onestopdcStatus) {
+        this.onestopdcStatus = onestopdcStatus;
+    }
+
+    public DirectConnect withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 归属的可用区对应的边界组(public border group)，标识是否homezone局点。[（功能暂不支持）](tag:dt)
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
+    public DirectConnect withAutoRenew(Integer autoRenew) {
+        this.autoRenew = autoRenew;
+        return this;
+    }
+
+    /**
+     * 用于标识包周期产品是否自动续订[（功能暂不支持）](tag:dt)
+     * @return autoRenew
+     */
+    public Integer getAutoRenew() {
+        return autoRenew;
+    }
+
+    public void setAutoRenew(Integer autoRenew) {
+        this.autoRenew = autoRenew;
+    }
+
+    public DirectConnect withRatio95peak(Integer ratio95peak) {
+        this.ratio95peak = ratio95peak;
+        return this;
+    }
+
+    /**
+     * 95计费保底带宽率[（功能暂不支持）](tag:dt)
+     * minimum: 0
+     * maximum: 100
+     * @return ratio95peak
+     */
+    public Integer getRatio95peak() {
+        return ratio95peak;
+    }
+
+    public void setRatio95peak(Integer ratio95peak) {
+        this.ratio95peak = ratio95peak;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1320,8 +1693,20 @@ public class DirectConnect {
             && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
             && Objects.equals(this.vgwType, that.vgwType) && Objects.equals(this.lagId, that.lagId)
             && Objects.equals(this.signedAgreementStatus, that.signedAgreementStatus)
+            && Objects.equals(this.signedAgreementTime, that.signedAgreementTime)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.locales, that.locales)
+            && Objects.equals(this.supportFeature, that.supportFeature) && Objects.equals(this.iesId, that.iesId)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.onestopProductId, that.onestopProductId)
+            && Objects.equals(this.buildingLineProductId, that.buildingLineProductId)
+            && Objects.equals(this.lastOnestopProductId, that.lastOnestopProductId)
+            && Objects.equals(this.lastBuildingLineProductId, that.lastBuildingLineProductId)
+            && Objects.equals(this.modifiedBandwidth, that.modifiedBandwidth)
+            && Objects.equals(this.changeMode, that.changeMode)
+            && Objects.equals(this.onestopdcStatus, that.onestopdcStatus)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.autoRenew, that.autoRenew) && Objects.equals(this.ratio95peak, that.ratio95peak);
     }
 
     @Override
@@ -1355,8 +1740,24 @@ public class DirectConnect {
             vgwType,
             lagId,
             signedAgreementStatus,
+            signedAgreementTime,
             enterpriseProjectId,
-            tags);
+            tags,
+            locales,
+            supportFeature,
+            iesId,
+            reason,
+            email,
+            onestopProductId,
+            buildingLineProductId,
+            lastOnestopProductId,
+            lastBuildingLineProductId,
+            modifiedBandwidth,
+            changeMode,
+            onestopdcStatus,
+            publicBorderGroup,
+            autoRenew,
+            ratio95peak);
     }
 
     @Override
@@ -1392,8 +1793,24 @@ public class DirectConnect {
         sb.append("    vgwType: ").append(toIndentedString(vgwType)).append("\n");
         sb.append("    lagId: ").append(toIndentedString(lagId)).append("\n");
         sb.append("    signedAgreementStatus: ").append(toIndentedString(signedAgreementStatus)).append("\n");
+        sb.append("    signedAgreementTime: ").append(toIndentedString(signedAgreementTime)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
+        sb.append("    supportFeature: ").append(toIndentedString(supportFeature)).append("\n");
+        sb.append("    iesId: ").append(toIndentedString(iesId)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    email: ").append(toIndentedString(email)).append("\n");
+        sb.append("    onestopProductId: ").append(toIndentedString(onestopProductId)).append("\n");
+        sb.append("    buildingLineProductId: ").append(toIndentedString(buildingLineProductId)).append("\n");
+        sb.append("    lastOnestopProductId: ").append(toIndentedString(lastOnestopProductId)).append("\n");
+        sb.append("    lastBuildingLineProductId: ").append(toIndentedString(lastBuildingLineProductId)).append("\n");
+        sb.append("    modifiedBandwidth: ").append(toIndentedString(modifiedBandwidth)).append("\n");
+        sb.append("    changeMode: ").append(toIndentedString(changeMode)).append("\n");
+        sb.append("    onestopdcStatus: ").append(toIndentedString(onestopdcStatus)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    autoRenew: ").append(toIndentedString(autoRenew)).append("\n");
+        sb.append("    ratio95peak: ").append(toIndentedString(ratio95peak)).append("\n");
         sb.append("}");
         return sb.toString();
     }

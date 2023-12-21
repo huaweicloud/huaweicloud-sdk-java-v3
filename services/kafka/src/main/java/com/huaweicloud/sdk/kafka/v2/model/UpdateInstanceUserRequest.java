@@ -37,7 +37,7 @@ public class UpdateInstanceUserRequest {
     }
 
     /**
-     * 消息中间件。
+     * 消息引擎的类型。
      * @return engine
      */
     public String getEngine() {

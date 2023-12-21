@@ -194,9 +194,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 创建文件系统后端存储库
+     * 绑定后端存储
      *
-     * 创建文件系统后端存储库
+     * 为SFS Turbo HPC型文件系统绑定后端存储
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -208,9 +208,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 创建文件系统后端存储库
+     * 绑定后端存储
      *
-     * 创建文件系统后端存储库
+     * 为SFS Turbo HPC型文件系统绑定后端存储
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -284,7 +284,7 @@ public class SFSTurboAsyncClient {
     /**
      * 创建文件系统异步任务
      *
-     * 创建文件系统异步任务（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 创建文件系统异步任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -298,7 +298,7 @@ public class SFSTurboAsyncClient {
     /**
      * 创建文件系统异步任务
      *
-     * 创建文件系统异步任务（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 创建文件系统异步任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -312,9 +312,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 创建SFSTurbo 和 OBS 之间的联动任务
+     * 创建数据导入导出任务
      *
-     * 创建SFSTurbo 和 OBS 之间的联动任务
+     * 创建数据导入导出任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -326,9 +326,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 创建SFSTurbo 和 OBS 之间的联动任务
+     * 创建数据导入导出任务
      *
-     * 创建SFSTurbo 和 OBS 之间的联动任务
+     * 创建数据导入导出任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -436,9 +436,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 删除文件系统后端存储库
+     * 删除后端存储
      *
-     * 删除文件系统后端存储库
+     * 删除后端存储
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -450,9 +450,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 删除文件系统后端存储库
+     * 删除后端存储
      *
-     * 删除文件系统后端存储库
+     * 删除后端存储
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -526,7 +526,7 @@ public class SFSTurboAsyncClient {
     /**
      * 取消/删除文件系统异步任务
      *
-     * 如果异步任务正在执行，则取消并删除任务；否则，删除任务。（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 如果异步任务正在执行，则取消并删除任务；否则，删除任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -540,7 +540,7 @@ public class SFSTurboAsyncClient {
     /**
      * 取消/删除文件系统异步任务
      *
-     * 如果异步任务正在执行，则取消并删除任务；否则，删除任务。（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 如果异步任务正在执行，则取消并删除任务；否则，删除任务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -670,9 +670,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询文件系统后端存储库列表
+     * 查询后端存储列表
      *
-     * 查询文件系统后端存储库列表
+     * 查询后端存储列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -684,9 +684,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询文件系统后端存储库列表
+     * 查询后端存储列表
      *
-     * 查询文件系统后端存储库列表
+     * 查询后端存储列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -702,7 +702,7 @@ public class SFSTurboAsyncClient {
     /**
      * 获取文件系统异步任务列表
      *
-     * 获取文件系统异步任务列表（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 获取文件系统异步任务列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -716,7 +716,7 @@ public class SFSTurboAsyncClient {
     /**
      * 获取文件系统异步任务列表
      *
-     * 获取文件系统异步任务列表（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 获取文件系统异步任务列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -728,9 +728,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询联动任务详情列表
+     * 查询数据导入导出任务列表
      *
-     * 查询联动任务详情列表
+     * 查询数据导入导出任务列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -742,9 +742,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询联动任务详情列表
+     * 查询数据导入导出任务列表
      *
-     * 查询联动任务详情列表
+     * 查询数据导入导出任务列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -876,9 +876,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 获取文件系统后端存储库详细信息
+     * 获取后端存储详细信息
      *
-     * 获取文件系统后端存储库详细信息
+     * 获取后端存储详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -891,9 +891,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 获取文件系统后端存储库详细信息
+     * 获取后端存储详细信息
      *
-     * 获取文件系统后端存储库详细信息
+     * 获取后端存储详细信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -967,7 +967,7 @@ public class SFSTurboAsyncClient {
     /**
      * 查询目录资源使用情况
      *
-     * 查询目录资源使用情况(包括子目录的资源)。后端有5min的缓存时间，查询的数据可能有延迟。（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 查询目录资源使用情况(包括子目录的资源)。后端有5min的缓存时间，查询的数据可能有延迟。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -981,7 +981,7 @@ public class SFSTurboAsyncClient {
     /**
      * 查询目录资源使用情况
      *
-     * 查询目录资源使用情况(包括子目录的资源)。后端有5min的缓存时间，查询的数据可能有延迟。（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 查询目录资源使用情况(包括子目录的资源)。后端有5min的缓存时间，查询的数据可能有延迟。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -997,7 +997,7 @@ public class SFSTurboAsyncClient {
     /**
      * 获取文件系统异步任务详情
      *
-     * 获取文件系统异步任务详情（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 获取文件系统异步任务详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1011,7 +1011,7 @@ public class SFSTurboAsyncClient {
     /**
      * 获取文件系统异步任务详情
      *
-     * 获取文件系统异步任务详情（该接口目前仅支持“华南-广州-友好用户环境”，“华南-广州”，“华南-深圳”，“西南-贵阳一”，“华北-乌兰察布一”，“华北-北京一”，“华北-北京二”，“华北-北京四”，“华东-上海一”）
+     * 获取文件系统异步任务详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1023,9 +1023,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询联动任务详情
+     * 查询数据导入导出任务详情
      *
-     * 查询联动任务详情
+     * 查询数据导入导出任务详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1037,9 +1037,9 @@ public class SFSTurboAsyncClient {
     }
 
     /**
-     * 查询联动任务详情
+     * 查询数据导入导出任务详情
      *
-     * 查询联动任务详情
+     * 查询数据导入导出任务详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1173,7 +1173,7 @@ public class SFSTurboAsyncClient {
     /**
      * 更新文件系统
      *
-     * 设置文件系统冷数据淘汰时间
+     * 更新文件系统冷数据淘汰时间
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1187,7 +1187,7 @@ public class SFSTurboAsyncClient {
     /**
      * 更新文件系统
      *
-     * 设置文件系统冷数据淘汰时间
+     * 更新文件系统冷数据淘汰时间
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

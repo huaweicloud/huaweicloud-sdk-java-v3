@@ -29,6 +29,11 @@ public class ChangeVulScanPolicyRequestInfo {
     private List<String> hostIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_vul_types")
+
+    private List<String> scanVulTypes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -100,6 +105,39 @@ public class ChangeVulScanPolicyRequestInfo {
         this.hostIds = hostIds;
     }
 
+    public ChangeVulScanPolicyRequestInfo withScanVulTypes(List<String> scanVulTypes) {
+        this.scanVulTypes = scanVulTypes;
+        return this;
+    }
+
+    public ChangeVulScanPolicyRequestInfo addScanVulTypesItem(String scanVulTypesItem) {
+        if (this.scanVulTypes == null) {
+            this.scanVulTypes = new ArrayList<>();
+        }
+        this.scanVulTypes.add(scanVulTypesItem);
+        return this;
+    }
+
+    public ChangeVulScanPolicyRequestInfo withScanVulTypes(Consumer<List<String>> scanVulTypesSetter) {
+        if (this.scanVulTypes == null) {
+            this.scanVulTypes = new ArrayList<>();
+        }
+        scanVulTypesSetter.accept(this.scanVulTypes);
+        return this;
+    }
+
+    /**
+     * 扫描的漏洞类型列表
+     * @return scanVulTypes
+     */
+    public List<String> getScanVulTypes() {
+        return scanVulTypes;
+    }
+
+    public void setScanVulTypes(List<String> scanVulTypes) {
+        this.scanVulTypes = scanVulTypes;
+    }
+
     public ChangeVulScanPolicyRequestInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -128,12 +166,12 @@ public class ChangeVulScanPolicyRequestInfo {
         ChangeVulScanPolicyRequestInfo that = (ChangeVulScanPolicyRequestInfo) obj;
         return Objects.equals(this.scanPeriod, that.scanPeriod)
             && Objects.equals(this.scanRangeType, that.scanRangeType) && Objects.equals(this.hostIds, that.hostIds)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.scanVulTypes, that.scanVulTypes) && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scanPeriod, scanRangeType, hostIds, status);
+        return Objects.hash(scanPeriod, scanRangeType, hostIds, scanVulTypes, status);
     }
 
     @Override
@@ -143,6 +181,7 @@ public class ChangeVulScanPolicyRequestInfo {
         sb.append("    scanPeriod: ").append(toIndentedString(scanPeriod)).append("\n");
         sb.append("    scanRangeType: ").append(toIndentedString(scanRangeType)).append("\n");
         sb.append("    hostIds: ").append(toIndentedString(hostIds)).append("\n");
+        sb.append("    scanVulTypes: ").append(toIndentedString(scanVulTypes)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();

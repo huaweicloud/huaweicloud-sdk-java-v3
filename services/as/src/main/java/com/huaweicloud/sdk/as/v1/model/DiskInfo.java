@@ -22,7 +22,7 @@ public class DiskInfo {
     private Integer size;
 
     /**
-     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。GPSSD：通用型SSD磁盘类型。co-p1：高IO (性能优化Ⅰ型)uh-l1：超高IO (时延优化)当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。说明：对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
+     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。GPSSD：通用型SSD磁盘类型。co-p1：高IO (性能优化Ⅰ型)uh-l1：超高IO (时延优化)GPSSD2: 通用型SSD V2云硬盘ESSD2: 极速型SSD V2云硬盘当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。说明：对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
      */
     public static final class VolumeTypeEnum {
 
@@ -56,6 +56,16 @@ public class DiskInfo {
          */
         public static final VolumeTypeEnum GPSSD = new VolumeTypeEnum("GPSSD");
 
+        /**
+         * Enum GPSSD2 for value: "GPSSD2"
+         */
+        public static final VolumeTypeEnum GPSSD2 = new VolumeTypeEnum("GPSSD2");
+
+        /**
+         * Enum ESSD2 for value: "ESSD2"
+         */
+        public static final VolumeTypeEnum ESSD2 = new VolumeTypeEnum("ESSD2");
+
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VolumeTypeEnum> createStaticFields() {
@@ -66,6 +76,8 @@ public class DiskInfo {
             map.put("co-pl", CO_PL);
             map.put("uh-11", UH_11);
             map.put("GPSSD", GPSSD);
+            map.put("GPSSD2", GPSSD2);
+            map.put("ESSD2", ESSD2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -215,6 +227,16 @@ public class DiskInfo {
 
     private MetaData metadata;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Integer throughput;
+
     public DiskInfo withSize(Integer size) {
         this.size = size;
         return this;
@@ -240,7 +262,7 @@ public class DiskInfo {
     }
 
     /**
-     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。GPSSD：通用型SSD磁盘类型。co-p1：高IO (性能优化Ⅰ型)uh-l1：超高IO (时延优化)当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。说明：对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
+     * 云服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型。SAS：高IO磁盘类型。SSD：超高IO磁盘类型。GPSSD：通用型SSD磁盘类型。co-p1：高IO (性能优化Ⅰ型)uh-l1：超高IO (时延优化)GPSSD2: 通用型SSD V2云硬盘ESSD2: 极速型SSD V2云硬盘当指定的云硬盘类型在avaliability_zone内不存在时，则创建云硬盘失败。说明：对于HANA云服务器、HL1型云服务器、HL2型云服务器，需使用co-p1和uh-l1两种磁盘类型。对于其他类型的云服务器，不能使用co-p1和uh-l1两种磁盘类型。了解不同磁盘类型的详细信息，请参见[磁盘类型及性能介绍](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
      * @return volumeType
      */
     public VolumeTypeEnum getVolumeType() {
@@ -345,6 +367,40 @@ public class DiskInfo {
         this.metadata = metadata;
     }
 
+    public DiskInfo withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * 为云硬盘配置iops。当“volume_type”设置为GPSSD2、ESSD2类型的云硬盘时，该参数必填，其他类型无需设置。
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    public DiskInfo withThroughput(Integer throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 为云硬盘配置吞吐量，单位是MiB/s。当“volume_type”设置为GPSSD2类型的云硬盘时必填，其他类型不能设置。
+     * @return throughput
+     */
+    public Integer getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -358,12 +414,21 @@ public class DiskInfo {
             && Objects.equals(this.diskType, that.diskType)
             && Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId)
             && Objects.equals(this.dataDiskImageId, that.dataDiskImageId)
-            && Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.metadata, that.metadata);
+            && Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.iops, that.iops) && Objects.equals(this.throughput, that.throughput);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, volumeType, diskType, dedicatedStorageId, dataDiskImageId, snapshotId, metadata);
+        return Objects.hash(size,
+            volumeType,
+            diskType,
+            dedicatedStorageId,
+            dataDiskImageId,
+            snapshotId,
+            metadata,
+            iops,
+            throughput);
     }
 
     @Override
@@ -377,6 +442,8 @@ public class DiskInfo {
         sb.append("    dataDiskImageId: ").append(toIndentedString(dataDiskImageId)).append("\n");
         sb.append("    snapshotId: ").append(toIndentedString(snapshotId)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -99,6 +99,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobDetailRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobDetailResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoRequest;
@@ -627,7 +629,7 @@ public class WorkspaceAppAsyncClient {
     /**
      * 查询任务的执行状态
      *
-     * 查询Job的执行状态。
+     * 查询Job的执行状态，即将下线。
      * 
      * 对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态。
      * 
@@ -643,7 +645,7 @@ public class WorkspaceAppAsyncClient {
     /**
      * 查询任务的执行状态
      *
-     * 查询Job的执行状态。
+     * 查询Job的执行状态，即将下线。
      * 
      * 对于创建云应用服务器命令下发后会返回job_id，通过job_id可以查询任务的执行状态。
      * 
@@ -654,6 +656,40 @@ public class WorkspaceAppAsyncClient {
      */
     public AsyncInvoker<ShowJobRequest, ShowJobResponse> showJobAsyncInvoker(ShowJobRequest request) {
         return new AsyncInvoker<ShowJobRequest, ShowJobResponse>(request, WorkspaceAppMeta.showJob, hcClient);
+    }
+
+    /**
+     * 查询任务的执行状态
+     *
+     * 查询Job的执行状态。
+     * 
+     * 对于创建云服务器、删除云服务器、重装服务器等异步API，下发命令后会返回job_id，通过job_id可以查询任务的执行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return CompletableFuture<ShowJobDetailResponse>
+     */
+    public CompletableFuture<ShowJobDetailResponse> showJobDetailAsync(ShowJobDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceAppMeta.showJobDetail);
+    }
+
+    /**
+     * 查询任务的执行状态
+     *
+     * 查询Job的执行状态。
+     * 
+     * 对于创建云服务器、删除云服务器、重装服务器等异步API，下发命令后会返回job_id，通过job_id可以查询任务的执行状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobDetailRequest 请求对象
+     * @return AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
+     */
+    public AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailAsyncInvoker(
+        ShowJobDetailRequest request) {
+        return new AsyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, WorkspaceAppMeta.showJobDetail,
+            hcClient);
     }
 
     /**

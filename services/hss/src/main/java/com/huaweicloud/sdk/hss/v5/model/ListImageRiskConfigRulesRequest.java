@@ -75,6 +75,11 @@ public class ListImageRiskConfigRulesRequest {
 
     private String severity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
     public ListImageRiskConfigRulesRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -115,7 +120,7 @@ public class ListImageRiskConfigRulesRequest {
     }
 
     /**
-     * 镜像类型，包含如下:   - private_image : 私有镜像仓库   - shared_image : 共享镜像仓库
+     * 镜像类型，包含如下:   - private_image : 私有镜像仓库   - shared_image : 共享镜像仓库   - local_image : 本地镜像   - instance_image : 企业镜像
      * @return imageType
      */
     public String getImageType() {
@@ -300,6 +305,23 @@ public class ListImageRiskConfigRulesRequest {
         this.severity = severity;
     }
 
+    public ListImageRiskConfigRulesRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 企业仓库实例ID，swr共享版无需使用该参数
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -316,7 +338,8 @@ public class ListImageRiskConfigRulesRequest {
             && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.imageVersion, that.imageVersion)
             && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.standard, that.standard)
             && Objects.equals(this.resultType, that.resultType)
-            && Objects.equals(this.checkRuleName, that.checkRuleName) && Objects.equals(this.severity, that.severity);
+            && Objects.equals(this.checkRuleName, that.checkRuleName) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
@@ -333,7 +356,8 @@ public class ListImageRiskConfigRulesRequest {
             standard,
             resultType,
             checkRuleName,
-            severity);
+            severity,
+            instanceId);
     }
 
     @Override
@@ -353,6 +377,7 @@ public class ListImageRiskConfigRulesRequest {
         sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
         sb.append("    checkRuleName: ").append(toIndentedString(checkRuleName)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

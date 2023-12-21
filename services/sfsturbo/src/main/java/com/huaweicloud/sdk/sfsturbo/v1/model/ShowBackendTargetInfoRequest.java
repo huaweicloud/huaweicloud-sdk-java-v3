@@ -43,7 +43,7 @@ public class ShowBackendTargetInfoRequest {
     }
 
     /**
-     * 数据存储库 id
+     * 绑定关系id
      * @return targetId
      */
     public String getTargetId() {

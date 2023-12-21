@@ -31,7 +31,7 @@ public class CreateInstanceUserReq {
     }
 
     /**
-     * 用户名称。
+     * 用户名称。  创建用户时，为必选参数。
      * @return userName
      */
     public String getUserName() {
@@ -65,7 +65,7 @@ public class CreateInstanceUserReq {
     }
 
     /**
-     * 用户密码。  密码不能和用户名相同。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
+     * 用户密码。  创建用户时，为必选参数。  密码不能和用户名相同。 复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的三种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）和空格，并且不能以-开头
      * @return userPasswd
      */
     public String getUserPasswd() {

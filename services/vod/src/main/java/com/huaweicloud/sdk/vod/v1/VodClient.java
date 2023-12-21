@@ -49,6 +49,8 @@ import com.huaweicloud.sdk.vod.v1.model.DeleteWatermarkTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteWatermarkTemplateResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListDomainLogsRequest;
@@ -87,6 +89,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.UnpublishAssetsRequest;
@@ -101,6 +105,8 @@ import com.huaweicloud.sdk.vod.v1.model.UpdateBucketAuthorizedRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateBucketAuthorizedResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailResponse;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeRequest;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupRequest;
@@ -825,6 +831,44 @@ public class VodClient {
         ListAssetCategoryRequest request) {
         return new SyncInvoker<ListAssetCategoryRequest, ListAssetCategoryResponse>(request, VodMeta.listAssetCategory,
             hcClient);
+    }
+
+    /**
+     * 查询媒资日播放统计数据
+     *
+     * 查询媒资日播放统计数据。
+     * 
+     * 使用媒资日播放统计查询API前，需要先提交工单开通统计功能，才能触发统计任务。
+     * 
+     * 支持查询最近一年的播放统计数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAssetDailySummaryLogRequest 请求对象
+     * @return ListAssetDailySummaryLogResponse
+     */
+    public ListAssetDailySummaryLogResponse listAssetDailySummaryLog(ListAssetDailySummaryLogRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.listAssetDailySummaryLog);
+    }
+
+    /**
+     * 查询媒资日播放统计数据
+     *
+     * 查询媒资日播放统计数据。
+     * 
+     * 使用媒资日播放统计查询API前，需要先提交工单开通统计功能，才能触发统计任务。
+     * 
+     * 支持查询最近一年的播放统计数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAssetDailySummaryLogRequest 请求对象
+     * @return SyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse>
+     */
+    public SyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> listAssetDailySummaryLogInvoker(
+        ListAssetDailySummaryLogRequest request) {
+        return new SyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse>(request,
+            VodMeta.listAssetDailySummaryLog, hcClient);
     }
 
     /**
@@ -1745,6 +1789,44 @@ public class VodClient {
     }
 
     /**
+     * 查询取回数据信息
+     *
+     * ## 典型场景 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * ## 接口功能 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVodRetrievalRequest 请求对象
+     * @return ShowVodRetrievalResponse
+     */
+    public ShowVodRetrievalResponse showVodRetrieval(ShowVodRetrievalRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.showVodRetrieval);
+    }
+
+    /**
+     * 查询取回数据信息
+     *
+     * ## 典型场景 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * ## 接口功能 ##
+     *  用于查询点播低频和归档取回量统计数据。&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowVodRetrievalRequest 请求对象
+     * @return SyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse>
+     */
+    public SyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrievalInvoker(
+        ShowVodRetrievalRequest request) {
+        return new SyncInvoker<ShowVodRetrievalRequest, ShowVodRetrievalResponse>(request, VodMeta.showVodRetrieval,
+            hcClient);
+    }
+
+    /**
      * 多字幕封装
      *
      * 多字幕封装，仅支持 HLS VTT格式
@@ -1771,6 +1853,38 @@ public class VodClient {
     public SyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse> modifySubtitleInvoker(
         ModifySubtitleRequest request) {
         return new SyncInvoker<ModifySubtitleRequest, ModifySubtitleResponse>(request, VodMeta.modifySubtitle,
+            hcClient);
+    }
+
+    /**
+     * 修改媒资文件在obs的存储模式
+     *
+     * ## 接口功能 ##
+     *   修改媒资文件在obs的存储模式&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateStorageModeRequest 请求对象
+     * @return UpdateStorageModeResponse
+     */
+    public UpdateStorageModeResponse updateStorageMode(UpdateStorageModeRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.updateStorageMode);
+    }
+
+    /**
+     * 修改媒资文件在obs的存储模式
+     *
+     * ## 接口功能 ##
+     *   修改媒资文件在obs的存储模式&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateStorageModeRequest 请求对象
+     * @return SyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse>
+     */
+    public SyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageModeInvoker(
+        UpdateStorageModeRequest request) {
+        return new SyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse>(request, VodMeta.updateStorageMode,
             hcClient);
     }
 

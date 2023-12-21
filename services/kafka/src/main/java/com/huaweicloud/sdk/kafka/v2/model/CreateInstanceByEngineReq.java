@@ -550,7 +550,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 消息存储空间，单位GB。   - Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb)[900000](tag:g42,tm,hk_g42,ctc,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb)[900000](tag:g42,tm,hk_g42,ctc,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb)[900000](tag:g42,tm,hk_g42,ctc,hk_tm,hws_eu)GB。
+     * 消息存储空间，单位GB。   - Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc)[900000](tag:g42,tm,hk_g42,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc)[900000](tag:g42,tm,hk_g42,hk_tm,hws_eu)GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ [1500000](tag:hws,hws_hk,ocb,hws_ocb,ctc)[900000](tag:g42,tm,hk_g42,hk_tm,hws_eu)GB。
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -584,7 +584,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  实例的认证密码。  复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的两种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
+     * 当ssl_enable为true时，该参数必选，ssl_enable为false时，该参数无效。  实例的认证密码。  复杂度要求： - 输入长度为8到32位的字符串。 - 必须包含如下四种字符中的三种组合：   - 小写字母   - 大写字母   - 数字   - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）和空格，并且不能以-开头
      * @return password
      */
     public String getPassword() {
@@ -702,7 +702,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 表示登录Kafka Manager的用户名。只能由英文字母、数字、中划线组成，长度为4~64的字符。
+     * 表示登录Kafka Manager的用户名。只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
      * @return kafkaManagerUser
      */
     public String getKafkaManagerUser() {
@@ -719,7 +719,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 表示登录Kafka Manager的密码。  复杂度要求：   - 输入长度为8到32位的字符串。   - 必须包含如下四种字符中的两种组合：       - 小写字母       - 大写字母       - 数字       - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）
+     * 表示登录Kafka Manager的密码。  复杂度要求：   - 输入长度为8到32位的字符串。   - 必须包含如下四种字符中的三种组合：       - 小写字母       - 大写字母       - 数字       - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）和空格，并且不能以-开头
      * @return kafkaManagerPassword
      */
     public String getKafkaManagerPassword() {
@@ -736,7 +736,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 维护时间窗开始时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 开始时间必须为22:00、02:00、06:00、10:00、14:00和18:00。 - 该参数不能单独为空，若该值为空，则结束时间也为空。系统分配一个默认开始时间02:00。
+     * 维护时间窗开始时间，格式为HH:mm。
      * @return maintainBegin
      */
     public String getMaintainBegin() {
@@ -753,7 +753,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 维护时间窗结束时间，格式为HH:mm。 - 维护时间窗开始和结束时间必须为指定的时间段。 - 结束时间在开始时间基础上加四个小时，即当开始时间为22:00时，结束时间为02:00。 - 该参数不能单独为空，若该值为空，则开始时间也为空，系统分配一个默认结束时间06:00。
+     * 维护时间窗结束时间，格式为HH:mm。
      * @return maintainEnd
      */
     public String getMaintainEnd() {
@@ -821,7 +821,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 开启SASL后使用的安全协议，如果开启了SASL认证功能（即ssl_enable=true），该字段为必选。  若该字段值为空，默认开启SASL_SSL认证机制。  实例创建后将不支持动态开启和关闭。  - SASL_SSL: 采用SSL证书进行加密传输，支持帐号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持帐号密码认证，性能更好，仅支持SCRAM-SHA-512机制。  
+     * 开启SASL后使用的安全协议，如果开启了SASL认证功能（即ssl_enable=true），该字段为必选。  若该字段值为空，默认开启SASL_SSL认证机制。  实例创建后将不支持动态开启和关闭。  - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。  
      * @return kafkaSecurityProtocol
      */
     public String getKafkaSecurityProtocol() {
@@ -974,7 +974,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 企业项目ID。若为企业项目帐号，该参数必填。
+     * 企业项目ID。若为企业项目账号，该参数必填。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

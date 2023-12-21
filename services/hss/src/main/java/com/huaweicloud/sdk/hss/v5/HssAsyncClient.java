@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeBlockedIpRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeBlockedIpResponse;
+import com.huaweicloud.sdk.hss.v5.model.ChangeCheckRuleActionRequest;
+import com.huaweicloud.sdk.hss.v5.model.ChangeCheckRuleActionResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeEventRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeEventResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeHostsGroupRequest;
@@ -23,6 +25,8 @@ import com.huaweicloud.sdk.hss.v5.model.ChangeVulScanPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulScanPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusResponse;
+import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskRequest;
+import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteResourceInstanceTagRequest;
@@ -71,12 +75,16 @@ import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPolicyGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListPolicyGroupResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListPortHostRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListPortHostResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPortStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListPortStatisticsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPortsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListPortsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListProcessStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListProcessStatisticsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListProcessesHostRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListProcessesHostResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListProtectionPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListProtectionPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListProtectionServerRequest;
@@ -101,6 +109,10 @@ import com.huaweicloud.sdk.hss.v5.model.ListUsersRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListUsersResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListVulHostsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListVulHostsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListVulScanTaskHostRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListVulScanTaskHostResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListVulScanTaskRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListVulScanTaskResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListVulnerabilitiesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListVulnerabilitiesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListVulnerabilityCveRequest;
@@ -308,6 +320,37 @@ public class HssAsyncClient {
     }
 
     /**
+     * 对未通过的配置检查项进行忽略/取消忽略/修复/验证操作
+     *
+     * 对未通过的配置检查项进行忽略/取消忽略/修复/验证操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeCheckRuleActionRequest 请求对象
+     * @return CompletableFuture<ChangeCheckRuleActionResponse>
+     */
+    public CompletableFuture<ChangeCheckRuleActionResponse> changeCheckRuleActionAsync(
+        ChangeCheckRuleActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.changeCheckRuleAction);
+    }
+
+    /**
+     * 对未通过的配置检查项进行忽略/取消忽略/修复/验证操作
+     *
+     * 对未通过的配置检查项进行忽略/取消忽略/修复/验证操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ChangeCheckRuleActionRequest 请求对象
+     * @return AsyncInvoker<ChangeCheckRuleActionRequest, ChangeCheckRuleActionResponse>
+     */
+    public AsyncInvoker<ChangeCheckRuleActionRequest, ChangeCheckRuleActionResponse> changeCheckRuleActionAsyncInvoker(
+        ChangeCheckRuleActionRequest request) {
+        return new AsyncInvoker<ChangeCheckRuleActionRequest, ChangeCheckRuleActionResponse>(request,
+            HssMeta.changeCheckRuleAction, hcClient);
+    }
+
+    /**
      * 处理告警事件
      *
      * 处理告警事件
@@ -453,6 +496,37 @@ public class HssAsyncClient {
         ChangeVulStatusRequest request) {
         return new AsyncInvoker<ChangeVulStatusRequest, ChangeVulStatusResponse>(request, HssMeta.changeVulStatus,
             hcClient);
+    }
+
+    /**
+     * 创建漏洞扫描任务
+     *
+     * 创建漏洞扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVulnerabilityScanTaskRequest 请求对象
+     * @return CompletableFuture<CreateVulnerabilityScanTaskResponse>
+     */
+    public CompletableFuture<CreateVulnerabilityScanTaskResponse> createVulnerabilityScanTaskAsync(
+        CreateVulnerabilityScanTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.createVulnerabilityScanTask);
+    }
+
+    /**
+     * 创建漏洞扫描任务
+     *
+     * 创建漏洞扫描任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateVulnerabilityScanTaskRequest 请求对象
+     * @return AsyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse>
+     */
+    public AsyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse> createVulnerabilityScanTaskAsyncInvoker(
+        CreateVulnerabilityScanTaskRequest request) {
+        return new AsyncInvoker<CreateVulnerabilityScanTaskRequest, CreateVulnerabilityScanTaskResponse>(request,
+            HssMeta.createVulnerabilityScanTask, hcClient);
     }
 
     /**
@@ -1184,7 +1258,36 @@ public class HssAsyncClient {
     }
 
     /**
-     * 查询开放端口列表
+     * 资产指纹-端口-服务器列表
+     *
+     * 具备该端口的主机/容器信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPortHostRequest 请求对象
+     * @return CompletableFuture<ListPortHostResponse>
+     */
+    public CompletableFuture<ListPortHostResponse> listPortHostAsync(ListPortHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listPortHost);
+    }
+
+    /**
+     * 资产指纹-端口-服务器列表
+     *
+     * 具备该端口的主机/容器信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPortHostRequest 请求对象
+     * @return AsyncInvoker<ListPortHostRequest, ListPortHostResponse>
+     */
+    public AsyncInvoker<ListPortHostRequest, ListPortHostResponse> listPortHostAsyncInvoker(
+        ListPortHostRequest request) {
+        return new AsyncInvoker<ListPortHostRequest, ListPortHostResponse>(request, HssMeta.listPortHost, hcClient);
+    }
+
+    /**
+     * 查询开放端口统计信息
      *
      * 查询开放端口列表，支持通过传入端口或协议类型查询服务器数
      * 
@@ -1198,7 +1301,7 @@ public class HssAsyncClient {
     }
 
     /**
-     * 查询开放端口列表
+     * 查询开放端口统计信息
      *
      * 查询开放端口列表，支持通过传入端口或协议类型查询服务器数
      * 
@@ -1270,6 +1373,36 @@ public class HssAsyncClient {
         ListProcessStatisticsRequest request) {
         return new AsyncInvoker<ListProcessStatisticsRequest, ListProcessStatisticsResponse>(request,
             HssMeta.listProcessStatistics, hcClient);
+    }
+
+    /**
+     * 资产指纹-进程-服务器列表
+     *
+     * 具备该进程的主机/容器信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProcessesHostRequest 请求对象
+     * @return CompletableFuture<ListProcessesHostResponse>
+     */
+    public CompletableFuture<ListProcessesHostResponse> listProcessesHostAsync(ListProcessesHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listProcessesHost);
+    }
+
+    /**
+     * 资产指纹-进程-服务器列表
+     *
+     * 具备该进程的主机/容器信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListProcessesHostRequest 请求对象
+     * @return AsyncInvoker<ListProcessesHostRequest, ListProcessesHostResponse>
+     */
+    public AsyncInvoker<ListProcessesHostRequest, ListProcessesHostResponse> listProcessesHostAsyncInvoker(
+        ListProcessesHostRequest request) {
+        return new AsyncInvoker<ListProcessesHostRequest, ListProcessesHostResponse>(request, HssMeta.listProcessesHost,
+            hcClient);
     }
 
     /**
@@ -1632,6 +1765,66 @@ public class HssAsyncClient {
     public AsyncInvoker<ListVulHostsRequest, ListVulHostsResponse> listVulHostsAsyncInvoker(
         ListVulHostsRequest request) {
         return new AsyncInvoker<ListVulHostsRequest, ListVulHostsResponse>(request, HssMeta.listVulHosts, hcClient);
+    }
+
+    /**
+     * 查询漏洞扫描任务列表
+     *
+     * 查询漏洞扫描任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVulScanTaskRequest 请求对象
+     * @return CompletableFuture<ListVulScanTaskResponse>
+     */
+    public CompletableFuture<ListVulScanTaskResponse> listVulScanTaskAsync(ListVulScanTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listVulScanTask);
+    }
+
+    /**
+     * 查询漏洞扫描任务列表
+     *
+     * 查询漏洞扫描任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVulScanTaskRequest 请求对象
+     * @return AsyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse>
+     */
+    public AsyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse> listVulScanTaskAsyncInvoker(
+        ListVulScanTaskRequest request) {
+        return new AsyncInvoker<ListVulScanTaskRequest, ListVulScanTaskResponse>(request, HssMeta.listVulScanTask,
+            hcClient);
+    }
+
+    /**
+     * 查询漏洞扫描任务对应的主机列表
+     *
+     * 查询漏洞扫描任务对应的主机列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVulScanTaskHostRequest 请求对象
+     * @return CompletableFuture<ListVulScanTaskHostResponse>
+     */
+    public CompletableFuture<ListVulScanTaskHostResponse> listVulScanTaskHostAsync(ListVulScanTaskHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listVulScanTaskHost);
+    }
+
+    /**
+     * 查询漏洞扫描任务对应的主机列表
+     *
+     * 查询漏洞扫描任务对应的主机列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListVulScanTaskHostRequest 请求对象
+     * @return AsyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse>
+     */
+    public AsyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse> listVulScanTaskHostAsyncInvoker(
+        ListVulScanTaskHostRequest request) {
+        return new AsyncInvoker<ListVulScanTaskHostRequest, ListVulScanTaskHostResponse>(request,
+            HssMeta.listVulScanTaskHost, hcClient);
     }
 
     /**

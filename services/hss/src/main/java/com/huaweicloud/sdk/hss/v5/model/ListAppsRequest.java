@@ -55,6 +55,16 @@ public class ListAppsRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "part_match")
+
+    private Boolean partMatch;
+
     public ListAppsRequest withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -212,6 +222,40 @@ public class ListAppsRequest {
         this.offset = offset;
     }
 
+    public ListAppsRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * 类别，默认为host，包含如下： - host：主机 - container：容器
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public ListAppsRequest withPartMatch(Boolean partMatch) {
+        this.partMatch = partMatch;
+        return this;
+    }
+
+    /**
+     * 是否模糊匹配，默认false表示精确匹配
+     * @return partMatch
+     */
+    public Boolean getPartMatch() {
+        return partMatch;
+    }
+
+    public void setPartMatch(Boolean partMatch) {
+        this.partMatch = partMatch;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -225,12 +269,23 @@ public class ListAppsRequest {
             && Objects.equals(this.appName, that.appName) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.version, that.version) && Objects.equals(this.installDir, that.installDir)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.partMatch, that.partMatch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, hostName, appName, hostIp, version, installDir, enterpriseProjectId, limit, offset);
+        return Objects.hash(hostId,
+            hostName,
+            appName,
+            hostIp,
+            version,
+            installDir,
+            enterpriseProjectId,
+            limit,
+            offset,
+            category,
+            partMatch);
     }
 
     @Override
@@ -246,6 +301,8 @@ public class ListAppsRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    partMatch: ").append(toIndentedString(partMatch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

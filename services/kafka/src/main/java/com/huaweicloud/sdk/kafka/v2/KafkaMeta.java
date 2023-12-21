@@ -43,9 +43,6 @@ import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionReq;
-import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionRequest;
-import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
@@ -110,6 +107,9 @@ import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerResponse;
+import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequest;
+import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequestBody;
+import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyRequest;
@@ -604,45 +604,6 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateKafkaUserClientQuotaTaskReq.class),
             f -> f.withMarshaller(CreateKafkaUserClientQuotaTaskRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> createPartition =
-        genForcreatePartition();
-
-    private static HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> genForcreatePartition() {
-        // basic
-        HttpRequestDef.Builder<CreatePartitionRequest, CreatePartitionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePartitionRequest.class, CreatePartitionResponse.class)
-                .withName("CreatePartition")
-                .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions-reassignment")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePartitionRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            }));
-        builder.<String>withRequestField("topic",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePartitionRequest::getTopic, (req, v) -> {
-                req.setTopic(v);
-            }));
-        builder.<CreatePartitionReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreatePartitionReq.class),
-            f -> f.withMarshaller(CreatePartitionRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1565,6 +1526,45 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestartManagerRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendKafkaMessageRequest, SendKafkaMessageResponse> sendKafkaMessage =
+        genForsendKafkaMessage();
+
+    private static HttpRequestDef<SendKafkaMessageRequest, SendKafkaMessageResponse> genForsendKafkaMessage() {
+        // basic
+        HttpRequestDef.Builder<SendKafkaMessageRequest, SendKafkaMessageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SendKafkaMessageRequest.class, SendKafkaMessageResponse.class)
+                .withName("SendKafkaMessage")
+                .withUri("/v2/{project_id}/instances/{instance_id}/messages/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendKafkaMessageRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("action_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendKafkaMessageRequest::getActionId, (req, v) -> {
+                req.setActionId(v);
+            }));
+        builder.<SendKafkaMessageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SendKafkaMessageRequestBody.class),
+            f -> f.withMarshaller(SendKafkaMessageRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

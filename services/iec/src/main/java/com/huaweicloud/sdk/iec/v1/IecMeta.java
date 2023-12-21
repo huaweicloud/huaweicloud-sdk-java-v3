@@ -32,6 +32,9 @@ import com.huaweicloud.sdk.iec.v1.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.iec.v1.model.CreateImageRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateImageRequestBody;
 import com.huaweicloud.sdk.iec.v1.model.CreateImageResponse;
+import com.huaweicloud.sdk.iec.v1.model.CreateInstanceRequest;
+import com.huaweicloud.sdk.iec.v1.model.CreateInstanceRequestBody;
+import com.huaweicloud.sdk.iec.v1.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.iec.v1.model.CreateKeypairRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateKeypairRequestBody;
 import com.huaweicloud.sdk.iec.v1.model.CreateKeypairResponse;
@@ -53,6 +56,9 @@ import com.huaweicloud.sdk.iec.v1.model.CreateSecurityGroupResponse;
 import com.huaweicloud.sdk.iec.v1.model.CreateSecurityGroupRuleRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateSecurityGroupRuleRequestBody;
 import com.huaweicloud.sdk.iec.v1.model.CreateSecurityGroupRuleResponse;
+import com.huaweicloud.sdk.iec.v1.model.CreateSubnetRequest;
+import com.huaweicloud.sdk.iec.v1.model.CreateSubnetRequestBody;
+import com.huaweicloud.sdk.iec.v1.model.CreateSubnetResponse;
 import com.huaweicloud.sdk.iec.v1.model.CreateVpcRequest;
 import com.huaweicloud.sdk.iec.v1.model.CreateVpcRequestBody;
 import com.huaweicloud.sdk.iec.v1.model.CreateVpcResponse;
@@ -98,6 +104,8 @@ import com.huaweicloud.sdk.iec.v1.model.ExecuteDeploymentRequest;
 import com.huaweicloud.sdk.iec.v1.model.ExecuteDeploymentResponse;
 import com.huaweicloud.sdk.iec.v1.model.ExpandEdgecloudRequest;
 import com.huaweicloud.sdk.iec.v1.model.ExpandEdgecloudResponse;
+import com.huaweicloud.sdk.iec.v1.model.ListBandwidthTypesRequest;
+import com.huaweicloud.sdk.iec.v1.model.ListBandwidthTypesResponse;
 import com.huaweicloud.sdk.iec.v1.model.ListBandwidthsRequest;
 import com.huaweicloud.sdk.iec.v1.model.ListBandwidthsResponse;
 import com.huaweicloud.sdk.iec.v1.model.ListCloudImagesRequest;
@@ -421,6 +429,31 @@ public class IecMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateImageRequestBody.class),
             f -> f.withMarshaller(CreateImageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
+        genForcreateInstance();
+
+    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForcreateInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
+                .withName("CreateInstance")
+                .withUri("/v1/cloudservers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceRequestBody.class),
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -1041,6 +1074,52 @@ public class IecMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExpandEdgecloudRequest::getDeploymentId, (req, v) -> {
                 req.setDeploymentId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBandwidthTypesRequest, ListBandwidthTypesResponse> listBandwidthTypes =
+        genForlistBandwidthTypes();
+
+    private static HttpRequestDef<ListBandwidthTypesRequest, ListBandwidthTypesResponse> genForlistBandwidthTypes() {
+        // basic
+        HttpRequestDef.Builder<ListBandwidthTypesRequest, ListBandwidthTypesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBandwidthTypesRequest.class, ListBandwidthTypesResponse.class)
+                .withName("ListBandwidthTypes")
+                .withUri("/v1/share-bandwidth-types")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBandwidthTypesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBandwidthTypesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<String>withRequestField("site_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthTypesRequest::getSiteId, (req, v) -> {
+                req.setSiteId(v);
+            }));
+        builder.<String>withRequestField("bandwidth_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthTypesRequest::getBandwidthType, (req, v) -> {
+                req.setBandwidthType(v);
             }));
 
         // response
@@ -3097,6 +3176,30 @@ public class IecMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePublicIpRequestBody.class),
             f -> f.withMarshaller(UpdatePublicIpRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSubnetRequest, CreateSubnetResponse> createSubnet = genForcreateSubnet();
+
+    private static HttpRequestDef<CreateSubnetRequest, CreateSubnetResponse> genForcreateSubnet() {
+        // basic
+        HttpRequestDef.Builder<CreateSubnetRequest, CreateSubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSubnetRequest.class, CreateSubnetResponse.class)
+                .withName("CreateSubnet")
+                .withUri("/v1/subnets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateSubnetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSubnetRequestBody.class),
+            f -> f.withMarshaller(CreateSubnetRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

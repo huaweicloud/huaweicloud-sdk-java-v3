@@ -39,6 +39,11 @@ public class UpdateInstanceTopicReqTopics {
     private Integer newPartitionNumbers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_partition_brokers")
+
+    private List<Integer> newPartitionBrokers = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic_other_configs")
 
     private List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs = null;
@@ -133,6 +138,39 @@ public class UpdateInstanceTopicReqTopics {
         this.newPartitionNumbers = newPartitionNumbers;
     }
 
+    public UpdateInstanceTopicReqTopics withNewPartitionBrokers(List<Integer> newPartitionBrokers) {
+        this.newPartitionBrokers = newPartitionBrokers;
+        return this;
+    }
+
+    public UpdateInstanceTopicReqTopics addNewPartitionBrokersItem(Integer newPartitionBrokersItem) {
+        if (this.newPartitionBrokers == null) {
+            this.newPartitionBrokers = new ArrayList<>();
+        }
+        this.newPartitionBrokers.add(newPartitionBrokersItem);
+        return this;
+    }
+
+    public UpdateInstanceTopicReqTopics withNewPartitionBrokers(Consumer<List<Integer>> newPartitionBrokersSetter) {
+        if (this.newPartitionBrokers == null) {
+            this.newPartitionBrokers = new ArrayList<>();
+        }
+        newPartitionBrokersSetter.accept(this.newPartitionBrokers);
+        return this;
+    }
+
+    /**
+     * 增加分区时指定broker列表
+     * @return newPartitionBrokers
+     */
+    public List<Integer> getNewPartitionBrokers() {
+        return newPartitionBrokers;
+    }
+
+    public void setNewPartitionBrokers(List<Integer> newPartitionBrokers) {
+        this.newPartitionBrokers = newPartitionBrokers;
+    }
+
     public UpdateInstanceTopicReqTopics withTopicOtherConfigs(
         List<CreateInstanceTopicReqTopicOtherConfigs> topicOtherConfigs) {
         this.topicOtherConfigs = topicOtherConfigs;
@@ -199,6 +237,7 @@ public class UpdateInstanceTopicReqTopics {
             && Objects.equals(this.syncReplication, that.syncReplication)
             && Objects.equals(this.syncMessageFlush, that.syncMessageFlush)
             && Objects.equals(this.newPartitionNumbers, that.newPartitionNumbers)
+            && Objects.equals(this.newPartitionBrokers, that.newPartitionBrokers)
             && Objects.equals(this.topicOtherConfigs, that.topicOtherConfigs)
             && Objects.equals(this.topicDesc, that.topicDesc);
     }
@@ -210,6 +249,7 @@ public class UpdateInstanceTopicReqTopics {
             syncReplication,
             syncMessageFlush,
             newPartitionNumbers,
+            newPartitionBrokers,
             topicOtherConfigs,
             topicDesc);
     }
@@ -223,6 +263,7 @@ public class UpdateInstanceTopicReqTopics {
         sb.append("    syncReplication: ").append(toIndentedString(syncReplication)).append("\n");
         sb.append("    syncMessageFlush: ").append(toIndentedString(syncMessageFlush)).append("\n");
         sb.append("    newPartitionNumbers: ").append(toIndentedString(newPartitionNumbers)).append("\n");
+        sb.append("    newPartitionBrokers: ").append(toIndentedString(newPartitionBrokers)).append("\n");
         sb.append("    topicOtherConfigs: ").append(toIndentedString(topicOtherConfigs)).append("\n");
         sb.append("    topicDesc: ").append(toIndentedString(topicDesc)).append("\n");
         sb.append("}");

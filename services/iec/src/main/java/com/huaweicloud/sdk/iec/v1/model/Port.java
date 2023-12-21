@@ -169,6 +169,16 @@ public class Port {
 
     private String dnsName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_bandwidth_id")
+
+    private String ipv6BandwidthId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "binding:profile")
+
+    private Object bindingProfile;
+
     public Port withId(String id) {
         this.id = id;
         return this;
@@ -426,7 +436,7 @@ public class Port {
     }
 
     /**
-     * IP/Mac对列表。  约束：IP地址不允许为 “0.0.0.0/0”  建议：如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组。
+     * - 功能说明：IP/Mac对列表，allow_address_pair参见表3。 - 约束：   IP地址不允许为 “0.0.0.0/0”   如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组。   如果allowed_address_pairs的IP地址为“1.1.1.1/0”，表示关闭源目地址检查开关。
      * @return allowedAddressPairs
      */
     public List<AllowedAddressPair> getAllowedAddressPairs() {
@@ -504,6 +514,40 @@ public class Port {
         this.dnsName = dnsName;
     }
 
+    public Port withIpv6BandwidthId(String ipv6BandwidthId) {
+        this.ipv6BandwidthId = ipv6BandwidthId;
+        return this;
+    }
+
+    /**
+     * IPv6带宽ID
+     * @return ipv6BandwidthId
+     */
+    public String getIpv6BandwidthId() {
+        return ipv6BandwidthId;
+    }
+
+    public void setIpv6BandwidthId(String ipv6BandwidthId) {
+        this.ipv6BandwidthId = ipv6BandwidthId;
+    }
+
+    public Port withBindingProfile(Object bindingProfile) {
+        this.bindingProfile = bindingProfile;
+        return this;
+    }
+
+    /**
+     * 功能说明：提供用户设置自定义信息(扩展属性)    
+     * @return bindingProfile
+     */
+    public Object getBindingProfile() {
+        return bindingProfile;
+    }
+
+    public void setBindingProfile(Object bindingProfile) {
+        this.bindingProfile = bindingProfile;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -522,7 +566,8 @@ public class Port {
             && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts)
             && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
             && Objects.equals(this.siteId, that.siteId) && Objects.equals(this.dnsAssignment, that.dnsAssignment)
-            && Objects.equals(this.dnsName, that.dnsName);
+            && Objects.equals(this.dnsName, that.dnsName) && Objects.equals(this.ipv6BandwidthId, that.ipv6BandwidthId)
+            && Objects.equals(this.bindingProfile, that.bindingProfile);
     }
 
     @Override
@@ -541,7 +586,9 @@ public class Port {
             allowedAddressPairs,
             siteId,
             dnsAssignment,
-            dnsName);
+            dnsName,
+            ipv6BandwidthId,
+            bindingProfile);
     }
 
     @Override
@@ -563,6 +610,8 @@ public class Port {
         sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
         sb.append("    dnsAssignment: ").append(toIndentedString(dnsAssignment)).append("\n");
         sb.append("    dnsName: ").append(toIndentedString(dnsName)).append("\n");
+        sb.append("    ipv6BandwidthId: ").append(toIndentedString(ipv6BandwidthId)).append("\n");
+        sb.append("    bindingProfile: ").append(toIndentedString(bindingProfile)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -109,7 +109,7 @@ public class InstanceAddress {
     }
 
     /**
-     * IP地址版本。  - “4”：代表IPv4。 [- “6”：代表IPv6。](tag:hide)
+     * IP地址版本。  - “4”：代表IPv4。 - “6”：代表IPv6。
      * @return version
      */
     public String getVersion() {

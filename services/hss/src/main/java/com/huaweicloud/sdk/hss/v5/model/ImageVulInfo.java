@@ -36,6 +36,11 @@ public class ImageVulInfo {
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_path")
+
+    private String appPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
@@ -135,13 +140,30 @@ public class ImageVulInfo {
         this.appName = appName;
     }
 
+    public ImageVulInfo withAppPath(String appPath) {
+        this.appPath = appPath;
+        return this;
+    }
+
+    /**
+     * 应用软件的路径（只有应用漏洞有该字段）
+     * @return appPath
+     */
+    public String getAppPath() {
+        return appPath;
+    }
+
+    public void setAppPath(String appPath) {
+        this.appPath = appPath;
+    }
+
     public ImageVulInfo withVersion(String version) {
         this.version = version;
         return this;
     }
 
     /**
-     * 漏洞版本
+     * 软件版本
      * @return version
      */
     public String getVersion() {
@@ -197,13 +219,14 @@ public class ImageVulInfo {
         ImageVulInfo that = (ImageVulInfo) obj;
         return Objects.equals(this.vulId, that.vulId) && Objects.equals(this.repairNecessity, that.repairNecessity)
             && Objects.equals(this.description, that.description) && Objects.equals(this.position, that.position)
-            && Objects.equals(this.appName, that.appName) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.solution, that.solution) && Objects.equals(this.url, that.url);
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.appPath, that.appPath)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.solution, that.solution)
+            && Objects.equals(this.url, that.url);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vulId, repairNecessity, description, position, appName, version, solution, url);
+        return Objects.hash(vulId, repairNecessity, description, position, appName, appPath, version, solution, url);
     }
 
     @Override
@@ -215,6 +238,7 @@ public class ImageVulInfo {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    appPath: ").append(toIndentedString(appPath)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    solution: ").append(toIndentedString(solution)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");

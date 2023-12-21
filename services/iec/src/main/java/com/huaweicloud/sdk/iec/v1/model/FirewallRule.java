@@ -349,7 +349,7 @@ public class FirewallRule {
     }
 
     /**
-     * 目的地IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
+     * 目的地IP地址，IPv4或IPv6的CIDR格式
      * @return destinationIpAddress
      */
     public String getDestinationIpAddress() {
@@ -417,7 +417,7 @@ public class FirewallRule {
     }
 
     /**
-     * IP协议版本  取值范围：4[、6](tag:hide)
+     * IP协议版本  取值范围：4、6
      * @return ipVersion
      */
     public Integer getIpVersion() {
@@ -485,7 +485,7 @@ public class FirewallRule {
     }
 
     /**
-     * 源IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
+     * 源IP地址，IPv4或IPv6的CIDR格式
      * @return sourceIpAddress
      */
     public String getSourceIpAddress() {

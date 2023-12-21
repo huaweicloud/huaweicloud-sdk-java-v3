@@ -51,6 +51,10 @@ public class CfwRegion {
 
     public static final Region TR_WEST_1 = new Region("tr-west-1", "https://cfw.tr-west-1.myhuaweicloud.com");
 
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://cfw.me-east-1.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://cfw.cn-north-11.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CFW");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -74,6 +78,8 @@ public class CfwRegion {
         map.put("af-south-1", AF_SOUTH_1);
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("tr-west-1", TR_WEST_1);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("cn-north-11", CN_NORTH_11);
         return Collections.unmodifiableMap(map);
     }
 

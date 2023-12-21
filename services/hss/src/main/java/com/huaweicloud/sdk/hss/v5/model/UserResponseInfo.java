@@ -70,6 +70,16 @@ public class UserResponseInfo {
 
     private Long recentScanTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_id")
+
+    private String containerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_name")
+
+    private String containerName;
+
     public UserResponseInfo withAgentId(String agentId) {
         this.agentId = agentId;
         return this;
@@ -278,6 +288,40 @@ public class UserResponseInfo {
         this.recentScanTime = recentScanTime;
     }
 
+    public UserResponseInfo withContainerId(String containerId) {
+        this.containerId = containerId;
+        return this;
+    }
+
+    /**
+     * 容器id
+     * @return containerId
+     */
+    public String getContainerId() {
+        return containerId;
+    }
+
+    public void setContainerId(String containerId) {
+        this.containerId = containerId;
+    }
+
+    public UserResponseInfo withContainerName(String containerName) {
+        this.containerName = containerName;
+        return this;
+    }
+
+    /**
+     * 容器名称
+     * @return containerName
+     */
+    public String getContainerName() {
+        return containerName;
+    }
+
+    public void setContainerName(String containerName) {
+        this.containerName = containerName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -295,7 +339,9 @@ public class UserResponseInfo {
             && Objects.equals(this.userGroupName, that.userGroupName)
             && Objects.equals(this.userHomeDir, that.userHomeDir) && Objects.equals(this.shell, that.shell)
             && Objects.equals(this.expireTime, that.expireTime)
-            && Objects.equals(this.recentScanTime, that.recentScanTime);
+            && Objects.equals(this.recentScanTime, that.recentScanTime)
+            && Objects.equals(this.containerId, that.containerId)
+            && Objects.equals(this.containerName, that.containerName);
     }
 
     @Override
@@ -311,7 +357,9 @@ public class UserResponseInfo {
             userHomeDir,
             shell,
             expireTime,
-            recentScanTime);
+            recentScanTime,
+            containerId,
+            containerName);
     }
 
     @Override
@@ -330,6 +378,8 @@ public class UserResponseInfo {
         sb.append("    shell: ").append(toIndentedString(shell)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    recentScanTime: ").append(toIndentedString(recentScanTime)).append("\n");
+        sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
+        sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

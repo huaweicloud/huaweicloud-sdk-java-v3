@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -191,6 +193,16 @@ public class ShareInfo {
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
 
     public ShareInfo withActionProgress(ActionProgress actionProgress) {
         this.actionProgress = actionProgress;
@@ -558,6 +570,56 @@ public class ShareInfo {
         this.vpcId = vpcId;
     }
 
+    public ShareInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * SFS Turbo文件系统绑定的企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ShareInfo withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ShareInfo addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ShareInfo withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * tag标签的列表。
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -578,7 +640,9 @@ public class ShareInfo {
             && Objects.equals(this.shareProto, that.shareProto) && Objects.equals(this.shareType, that.shareType)
             && Objects.equals(this.size, that.size) && Objects.equals(this.status, that.status)
             && Objects.equals(this.subStatus, that.subStatus) && Objects.equals(this.subnetId, that.subnetId)
-            && Objects.equals(this.vpcId, that.vpcId);
+            && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -603,7 +667,9 @@ public class ShareInfo {
             status,
             subStatus,
             subnetId,
-            vpcId);
+            vpcId,
+            enterpriseProjectId,
+            tags);
     }
 
     @Override
@@ -631,6 +697,8 @@ public class ShareInfo {
         sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

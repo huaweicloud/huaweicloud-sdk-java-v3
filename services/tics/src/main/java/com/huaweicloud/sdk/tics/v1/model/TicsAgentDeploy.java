@@ -29,12 +29,12 @@ public class TicsAgentDeploy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "aom_flag")
 
-    private byte[] aomFlag;
+    private Boolean aomFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bcs_flag")
 
-    private byte[] bcsFlag;
+    private Boolean bcsFlag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cce_version")
@@ -332,7 +332,7 @@ public class TicsAgentDeploy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "high_avail")
 
-    private byte[] highAvail;
+    private Boolean highAvail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_id")
@@ -484,7 +484,7 @@ public class TicsAgentDeploy {
         this.agentName = agentName;
     }
 
-    public TicsAgentDeploy withAomFlag(byte[] aomFlag) {
+    public TicsAgentDeploy withAomFlag(Boolean aomFlag) {
         this.aomFlag = aomFlag;
         return this;
     }
@@ -493,15 +493,15 @@ public class TicsAgentDeploy {
      * 是否开启aom监控
      * @return aomFlag
      */
-    public byte[] getAomFlag() {
+    public Boolean getAomFlag() {
         return aomFlag;
     }
 
-    public void setAomFlag(byte[] aomFlag) {
+    public void setAomFlag(Boolean aomFlag) {
         this.aomFlag = aomFlag;
     }
 
-    public TicsAgentDeploy withBcsFlag(byte[] bcsFlag) {
+    public TicsAgentDeploy withBcsFlag(Boolean bcsFlag) {
         this.bcsFlag = bcsFlag;
         return this;
     }
@@ -510,11 +510,11 @@ public class TicsAgentDeploy {
      * 是否使用区块链存证
      * @return bcsFlag
      */
-    public byte[] getBcsFlag() {
+    public Boolean getBcsFlag() {
         return bcsFlag;
     }
 
-    public void setBcsFlag(byte[] bcsFlag) {
+    public void setBcsFlag(Boolean bcsFlag) {
         this.bcsFlag = bcsFlag;
     }
 
@@ -671,7 +671,7 @@ public class TicsAgentDeploy {
         this.deploymentEventInformation = deploymentEventInformation;
     }
 
-    public TicsAgentDeploy withHighAvail(byte[] highAvail) {
+    public TicsAgentDeploy withHighAvail(Boolean highAvail) {
         this.highAvail = highAvail;
         return this;
     }
@@ -680,11 +680,11 @@ public class TicsAgentDeploy {
      * 可信节点是否高可用部署
      * @return highAvail
      */
-    public byte[] getHighAvail() {
+    public Boolean getHighAvail() {
         return highAvail;
     }
 
-    public void setHighAvail(byte[] highAvail) {
+    public void setHighAvail(Boolean highAvail) {
         this.highAvail = highAvail;
     }
 
@@ -834,15 +834,14 @@ public class TicsAgentDeploy {
         }
         TicsAgentDeploy that = (TicsAgentDeploy) obj;
         return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.agentName, that.agentName)
-            && java.util.Arrays.equals(this.aomFlag, that.aomFlag)
-            && java.util.Arrays.equals(this.bcsFlag, that.bcsFlag) && Objects.equals(this.cceVersion, that.cceVersion)
-            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.aomFlag, that.aomFlag) && Objects.equals(this.bcsFlag, that.bcsFlag)
+            && Objects.equals(this.cceVersion, that.cceVersion) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.creatorDomainId, that.creatorDomainId)
             && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.creatorName, that.creatorName)
             && Objects.equals(this.creatorProjectId, that.creatorProjectId)
             && Objects.equals(this.deployStatus, that.deployStatus) && Objects.equals(this.deployType, that.deployType)
             && Objects.equals(this.deploymentEventInformation, that.deploymentEventInformation)
-            && java.util.Arrays.equals(this.highAvail, that.highAvail) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.highAvail, that.highAvail) && Objects.equals(this.imageId, that.imageId)
             && Objects.equals(this.imageVersion, that.imageVersion) && Objects.equals(this.leagueId, that.leagueId)
             && Objects.equals(this.leagueName, that.leagueName)
             && Objects.equals(this.leagueRegionName, that.leagueRegionName)
@@ -854,8 +853,8 @@ public class TicsAgentDeploy {
     public int hashCode() {
         return Objects.hash(agentId,
             agentName,
-            java.util.Arrays.hashCode(aomFlag),
-            java.util.Arrays.hashCode(bcsFlag),
+            aomFlag,
+            bcsFlag,
             cceVersion,
             createTime,
             creatorDomainId,
@@ -865,7 +864,7 @@ public class TicsAgentDeploy {
             deployStatus,
             deployType,
             deploymentEventInformation,
-            java.util.Arrays.hashCode(highAvail),
+            highAvail,
             imageId,
             imageVersion,
             leagueId,

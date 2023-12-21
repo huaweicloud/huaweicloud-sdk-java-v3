@@ -20,6 +20,11 @@ public class ShowAssetStatisticRequest {
 
     private String hostId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private String category;
+
     public ShowAssetStatisticRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -54,6 +59,23 @@ public class ShowAssetStatisticRequest {
         this.hostId = hostId;
     }
 
+    public ShowAssetStatisticRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * 类别，默认为host，包含如下： - host：主机 - container：容器
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,12 @@ public class ShowAssetStatisticRequest {
         }
         ShowAssetStatisticRequest that = (ShowAssetStatisticRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.hostId, that.hostId);
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.category, that.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, hostId);
+        return Objects.hash(enterpriseProjectId, hostId, category);
     }
 
     @Override
@@ -78,6 +100,7 @@ public class ShowAssetStatisticRequest {
         sb.append("class ShowAssetStatisticRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("}");
         return sb.toString();
     }

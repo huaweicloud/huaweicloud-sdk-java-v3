@@ -71,7 +71,7 @@ public class HostedDirectConnect {
     private Integer vlan;
 
     /**
-     * 操作状态，合法值是：ACTIVE， ERROR，PENDING_CREATE，PENDING_UPDATE。ACTIVE：虚拟网关正常ERROR： 虚拟网关异常PENDING_CREATE：创建中PENDING_UPDATE：更新中
+     * 操作状态，合法值是： BUILD：已开通 ACTIVE：虚拟网关正常 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 ERROR：虚拟网关异常 PENDING_DELETE：删除中 PENDING_UPDATE：更新中 PENDING_CREATE：创建中
      */
     public static final class StatusEnum {
 
@@ -79,21 +79,6 @@ public class HostedDirectConnect {
          * Enum BUILD for value: "BUILD"
          */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
-
-        /**
-         * Enum PAID for value: "PAID"
-         */
-        public static final StatusEnum PAID = new StatusEnum("PAID");
-
-        /**
-         * Enum APPLY for value: "APPLY"
-         */
-        public static final StatusEnum APPLY = new StatusEnum("APPLY");
-
-        /**
-         * Enum PENDING_SURVEY for value: "PENDING_SURVEY"
-         */
-        public static final StatusEnum PENDING_SURVEY = new StatusEnum("PENDING_SURVEY");
 
         /**
          * Enum ACTIVE for value: "ACTIVE"
@@ -116,53 +101,26 @@ public class HostedDirectConnect {
         public static final StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
 
         /**
-         * Enum DELETED for value: "DELETED"
+         * Enum PENDING_UPDATE for value: "PENDING_UPDATE"
          */
-        public static final StatusEnum DELETED = new StatusEnum("DELETED");
+        public static final StatusEnum PENDING_UPDATE = new StatusEnum("PENDING_UPDATE");
 
         /**
-         * Enum DENY for value: "DENY"
+         * Enum PENDING_CREATE for value: "PENDING_CREATE"
          */
-        public static final StatusEnum DENY = new StatusEnum("DENY");
-
-        /**
-         * Enum PENDING_PAY for value: "PENDING_PAY"
-         */
-        public static final StatusEnum PENDING_PAY = new StatusEnum("PENDING_PAY");
-
-        /**
-         * Enum ORDERING for value: "ORDERING"
-         */
-        public static final StatusEnum ORDERING = new StatusEnum("ORDERING");
-
-        /**
-         * Enum ACCEPT for value: "ACCEPT"
-         */
-        public static final StatusEnum ACCEPT = new StatusEnum("ACCEPT");
-
-        /**
-         * Enum REJECTED for value: "REJECTED"
-         */
-        public static final StatusEnum REJECTED = new StatusEnum("REJECTED");
+        public static final StatusEnum PENDING_CREATE = new StatusEnum("PENDING_CREATE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("BUILD", BUILD);
-            map.put("PAID", PAID);
-            map.put("APPLY", APPLY);
-            map.put("PENDING_SURVEY", PENDING_SURVEY);
             map.put("ACTIVE", ACTIVE);
             map.put("DOWN", DOWN);
             map.put("ERROR", ERROR);
             map.put("PENDING_DELETE", PENDING_DELETE);
-            map.put("DELETED", DELETED);
-            map.put("DENY", DENY);
-            map.put("PENDING_PAY", PENDING_PAY);
-            map.put("ORDERING", ORDERING);
-            map.put("ACCEPT", ACCEPT);
-            map.put("REJECTED", REJECTED);
+            map.put("PENDING_UPDATE", PENDING_UPDATE);
+            map.put("PENDING_CREATE", PENDING_CREATE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -301,6 +259,186 @@ public class HostedDirectConnect {
     @JsonProperty(value = "provider_status")
 
     private ProviderStatusEnum providerStatus;
+
+    /**
+     * 物理专线接入接口的类型，支持1G 10G 40G 100G
+     */
+    public static final class PortTypeEnum {
+
+        /**
+         * Enum _1G for value: "1G"
+         */
+        public static final PortTypeEnum _1G = new PortTypeEnum("1G");
+
+        /**
+         * Enum _10G for value: "10G"
+         */
+        public static final PortTypeEnum _10G = new PortTypeEnum("10G");
+
+        /**
+         * Enum _40G for value: "40G"
+         */
+        public static final PortTypeEnum _40G = new PortTypeEnum("40G");
+
+        /**
+         * Enum _100G for value: "100G"
+         */
+        public static final PortTypeEnum _100G = new PortTypeEnum("100G");
+
+        private static final Map<String, PortTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PortTypeEnum> createStaticFields() {
+            Map<String, PortTypeEnum> map = new HashMap<>();
+            map.put("1G", _1G);
+            map.put("10G", _10G);
+            map.put("40G", _40G);
+            map.put("100G", _100G);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PortTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PortTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PortTypeEnum(value));
+        }
+
+        public static PortTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PortTypeEnum) {
+                return this.value.equals(((PortTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port_type")
+
+    private PortTypeEnum portType;
+
+    /**
+     * 物理专线的类型，类型包括标准(standard)，运营专线(hosting)，托管专线（hosted）[，一站式标准（onestop_standard），一站式托管（onestop_hosted）](tag:hws)。
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum STANDARD for value: "standard"
+         */
+        public static final TypeEnum STANDARD = new TypeEnum("standard");
+
+        /**
+         * Enum HOSTING for value: "hosting"
+         */
+        public static final TypeEnum HOSTING = new TypeEnum("hosting");
+
+        /**
+         * Enum HOSTED for value: "hosted"
+         */
+        public static final TypeEnum HOSTED = new TypeEnum("hosted");
+
+        /**
+         * Enum ONESTOP_STANDARD for value: "onestop_standard"
+         */
+        public static final TypeEnum ONESTOP_STANDARD = new TypeEnum("onestop_standard");
+
+        /**
+         * Enum ONESTOP_HOSTED for value: "onestop_hosted"
+         */
+        public static final TypeEnum ONESTOP_HOSTED = new TypeEnum("onestop_hosted");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("standard", STANDARD);
+            map.put("hosting", HOSTING);
+            map.put("hosted", HOSTED);
+            map.put("onestop_standard", ONESTOP_STANDARD);
+            map.put("onestop_hosted", ONESTOP_HOSTED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
 
     public HostedDirectConnect withId(String id) {
         this.id = id;
@@ -499,7 +637,7 @@ public class HostedDirectConnect {
     }
 
     /**
-     * 操作状态，合法值是：ACTIVE， ERROR，PENDING_CREATE，PENDING_UPDATE。ACTIVE：虚拟网关正常ERROR： 虚拟网关异常PENDING_CREATE：创建中PENDING_UPDATE：更新中
+     * 操作状态，合法值是： BUILD：已开通 ACTIVE：虚拟网关正常 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 ERROR：虚拟网关异常 PENDING_DELETE：删除中 PENDING_UPDATE：更新中 PENDING_CREATE：创建中
      * @return status
      */
     public StatusEnum getStatus() {
@@ -561,6 +699,40 @@ public class HostedDirectConnect {
         this.providerStatus = providerStatus;
     }
 
+    public HostedDirectConnect withPortType(PortTypeEnum portType) {
+        this.portType = portType;
+        return this;
+    }
+
+    /**
+     * 物理专线接入接口的类型，支持1G 10G 40G 100G
+     * @return portType
+     */
+    public PortTypeEnum getPortType() {
+        return portType;
+    }
+
+    public void setPortType(PortTypeEnum portType) {
+        this.portType = portType;
+    }
+
+    public HostedDirectConnect withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 物理专线的类型，类型包括标准(standard)，运营专线(hosting)，托管专线（hosted）[，一站式标准（onestop_standard），一站式托管（onestop_hosted）](tag:hws)。
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -577,7 +749,8 @@ public class HostedDirectConnect {
             && Objects.equals(this.provider, that.provider) && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.vlan, that.vlan) && Objects.equals(this.status, that.status)
             && Objects.equals(this.applyTime, that.applyTime) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.providerStatus, that.providerStatus);
+            && Objects.equals(this.providerStatus, that.providerStatus) && Objects.equals(this.portType, that.portType)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
@@ -596,7 +769,9 @@ public class HostedDirectConnect {
             status,
             applyTime,
             createTime,
-            providerStatus);
+            providerStatus,
+            portType,
+            type);
     }
 
     @Override
@@ -618,6 +793,8 @@ public class HostedDirectConnect {
         sb.append("    applyTime: ").append(toIndentedString(applyTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    providerStatus: ").append(toIndentedString(providerStatus)).append("\n");
+        sb.append("    portType: ").append(toIndentedString(portType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

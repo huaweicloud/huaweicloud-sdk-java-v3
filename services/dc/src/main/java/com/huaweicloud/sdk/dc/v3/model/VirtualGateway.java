@@ -74,6 +74,21 @@ public class VirtualGateway {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "device_id")
+
+    private String deviceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redundant_device_id")
+
+    private String redundantDeviceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
@@ -316,6 +331,57 @@ public class VirtualGateway {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public VirtualGateway withDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+
+    /**
+     * 归属的设备ID
+     * @return deviceId
+     */
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public VirtualGateway withRedundantDeviceId(String redundantDeviceId) {
+        this.redundantDeviceId = redundantDeviceId;
+        return this;
+    }
+
+    /**
+     * 归属的冗余设备ID
+     * @return redundantDeviceId
+     */
+    public String getRedundantDeviceId() {
+        return redundantDeviceId;
+    }
+
+    public void setRedundantDeviceId(String redundantDeviceId) {
+        this.redundantDeviceId = redundantDeviceId;
+    }
+
+    public VirtualGateway withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 归属的可用区对应的边界组(public border group)，标识是否homezone局点。
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     public VirtualGateway withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -366,7 +432,9 @@ public class VirtualGateway {
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.status, that.status)
             && Objects.equals(this.bgpAsn, that.bgpAsn)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.redundantDeviceId, that.redundantDeviceId)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -383,6 +451,9 @@ public class VirtualGateway {
             status,
             bgpAsn,
             enterpriseProjectId,
+            deviceId,
+            redundantDeviceId,
+            publicBorderGroup,
             tags);
     }
 
@@ -402,6 +473,9 @@ public class VirtualGateway {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    bgpAsn: ").append(toIndentedString(bgpAsn)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+        sb.append("    redundantDeviceId: ").append(toIndentedString(redundantDeviceId)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

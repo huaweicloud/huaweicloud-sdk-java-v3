@@ -58,6 +58,31 @@ public class BatchScanPrivateImageRequestInfo {
 
     private Boolean latestVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_size")
+
+    private Long imageSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_latest_update_time")
+
+    private Long startLatestUpdateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_latest_update_time")
+
+    private Long endLatestUpdateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_latest_scan_time")
+
+    private Long startLatestScanTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_latest_scan_time")
+
+    private Long endLatestScanTime;
+
     public BatchScanPrivateImageRequestInfo withRepoType(String repoType) {
         this.repoType = repoType;
         return this;
@@ -228,6 +253,101 @@ public class BatchScanPrivateImageRequestInfo {
         this.latestVersion = latestVersion;
     }
 
+    public BatchScanPrivateImageRequestInfo withImageSize(Long imageSize) {
+        this.imageSize = imageSize;
+        return this;
+    }
+
+    /**
+     * 镜像大小
+     * minimum: 0
+     * maximum: 2147483547
+     * @return imageSize
+     */
+    public Long getImageSize() {
+        return imageSize;
+    }
+
+    public void setImageSize(Long imageSize) {
+        this.imageSize = imageSize;
+    }
+
+    public BatchScanPrivateImageRequestInfo withStartLatestUpdateTime(Long startLatestUpdateTime) {
+        this.startLatestUpdateTime = startLatestUpdateTime;
+        return this;
+    }
+
+    /**
+     * 创建时间开始日期
+     * minimum: 0
+     * maximum: 2147483547
+     * @return startLatestUpdateTime
+     */
+    public Long getStartLatestUpdateTime() {
+        return startLatestUpdateTime;
+    }
+
+    public void setStartLatestUpdateTime(Long startLatestUpdateTime) {
+        this.startLatestUpdateTime = startLatestUpdateTime;
+    }
+
+    public BatchScanPrivateImageRequestInfo withEndLatestUpdateTime(Long endLatestUpdateTime) {
+        this.endLatestUpdateTime = endLatestUpdateTime;
+        return this;
+    }
+
+    /**
+     * 创建时间结束日期
+     * minimum: 0
+     * maximum: 2147483547
+     * @return endLatestUpdateTime
+     */
+    public Long getEndLatestUpdateTime() {
+        return endLatestUpdateTime;
+    }
+
+    public void setEndLatestUpdateTime(Long endLatestUpdateTime) {
+        this.endLatestUpdateTime = endLatestUpdateTime;
+    }
+
+    public BatchScanPrivateImageRequestInfo withStartLatestScanTime(Long startLatestScanTime) {
+        this.startLatestScanTime = startLatestScanTime;
+        return this;
+    }
+
+    /**
+     * 最近一次扫描完成时间开始日期
+     * minimum: 0
+     * maximum: 2147483547
+     * @return startLatestScanTime
+     */
+    public Long getStartLatestScanTime() {
+        return startLatestScanTime;
+    }
+
+    public void setStartLatestScanTime(Long startLatestScanTime) {
+        this.startLatestScanTime = startLatestScanTime;
+    }
+
+    public BatchScanPrivateImageRequestInfo withEndLatestScanTime(Long endLatestScanTime) {
+        this.endLatestScanTime = endLatestScanTime;
+        return this;
+    }
+
+    /**
+     * 最近一次扫描完成时间结束日期
+     * minimum: 0
+     * maximum: 2147483547
+     * @return endLatestScanTime
+     */
+    public Long getEndLatestScanTime() {
+        return endLatestScanTime;
+    }
+
+    public void setEndLatestScanTime(Long endLatestScanTime) {
+        this.endLatestScanTime = endLatestScanTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -241,7 +361,11 @@ public class BatchScanPrivateImageRequestInfo {
             && Objects.equals(this.operateAll, that.operateAll) && Objects.equals(this.namespace, that.namespace)
             && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.imageVersion, that.imageVersion)
             && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.scanStatus, that.scanStatus)
-            && Objects.equals(this.latestVersion, that.latestVersion);
+            && Objects.equals(this.latestVersion, that.latestVersion) && Objects.equals(this.imageSize, that.imageSize)
+            && Objects.equals(this.startLatestUpdateTime, that.startLatestUpdateTime)
+            && Objects.equals(this.endLatestUpdateTime, that.endLatestUpdateTime)
+            && Objects.equals(this.startLatestScanTime, that.startLatestScanTime)
+            && Objects.equals(this.endLatestScanTime, that.endLatestScanTime);
     }
 
     @Override
@@ -254,7 +378,12 @@ public class BatchScanPrivateImageRequestInfo {
             imageVersion,
             imageType,
             scanStatus,
-            latestVersion);
+            latestVersion,
+            imageSize,
+            startLatestUpdateTime,
+            endLatestUpdateTime,
+            startLatestScanTime,
+            endLatestScanTime);
     }
 
     @Override
@@ -270,6 +399,11 @@ public class BatchScanPrivateImageRequestInfo {
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    scanStatus: ").append(toIndentedString(scanStatus)).append("\n");
         sb.append("    latestVersion: ").append(toIndentedString(latestVersion)).append("\n");
+        sb.append("    imageSize: ").append(toIndentedString(imageSize)).append("\n");
+        sb.append("    startLatestUpdateTime: ").append(toIndentedString(startLatestUpdateTime)).append("\n");
+        sb.append("    endLatestUpdateTime: ").append(toIndentedString(endLatestUpdateTime)).append("\n");
+        sb.append("    startLatestScanTime: ").append(toIndentedString(startLatestScanTime)).append("\n");
+        sb.append("    endLatestScanTime: ").append(toIndentedString(endLatestScanTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -58,7 +58,7 @@ public class ListHpcCacheTasksRequest {
     }
 
     /**
-     * 操作类型
+     * 任务类型
      * @return type
      */
     public String getType() {

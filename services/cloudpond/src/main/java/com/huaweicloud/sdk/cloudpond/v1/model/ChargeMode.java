@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 计费模式。 - prepaid：包年/包月
+ * 计费模式。 - prepaid：包周期
  */
 public class ChargeMode {
 

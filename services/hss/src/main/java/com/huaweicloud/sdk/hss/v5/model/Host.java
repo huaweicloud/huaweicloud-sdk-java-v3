@@ -94,6 +94,11 @@ public class Host {
     private String detectResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private Long expireTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
     private String chargingMode;
@@ -192,6 +197,11 @@ public class Host {
     @JsonProperty(value = "open_time")
 
     private Long openTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_interrupt")
+
+    private Boolean protectInterrupt;
 
     public Host withHostName(String hostName) {
         this.hostName = hostName;
@@ -463,6 +473,25 @@ public class Host {
 
     public void setDetectResult(String detectResult) {
         this.detectResult = detectResult;
+    }
+
+    public Host withExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * 试用版到期时间（-1表示非试用版配额，当值不为-1时为试用版本过期时间）
+     * minimum: 0
+     * maximum: 4824695185000
+     * @return expireTime
+     */
+    public Long getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
     }
 
     public Host withChargingMode(String chargingMode) {
@@ -835,6 +864,23 @@ public class Host {
         this.openTime = openTime;
     }
 
+    public Host withProtectInterrupt(Boolean protectInterrupt) {
+        this.protectInterrupt = protectInterrupt;
+        return this;
+    }
+
+    /**
+     * 防护是否中断
+     * @return protectInterrupt
+     */
+    public Boolean getProtectInterrupt() {
+        return protectInterrupt;
+    }
+
+    public void setProtectInterrupt(Boolean protectInterrupt) {
+        this.protectInterrupt = protectInterrupt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -854,9 +900,10 @@ public class Host {
             && Objects.equals(this.version, that.version) && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.osImage, that.osImage) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.osBit, that.osBit) && Objects.equals(this.detectResult, that.detectResult)
-            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.outsideHost, that.outsideHost) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.policyGroupId, that.policyGroupId)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.outsideHost, that.outsideHost)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.policyGroupId, that.policyGroupId)
             && Objects.equals(this.policyGroupName, that.policyGroupName) && Objects.equals(this.asset, that.asset)
             && Objects.equals(this.vulnerability, that.vulnerability) && Objects.equals(this.baseline, that.baseline)
             && Objects.equals(this.intrusion, that.intrusion) && Objects.equals(this.assetValue, that.assetValue)
@@ -865,7 +912,8 @@ public class Host {
             && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.upgradeStatus, that.upgradeStatus)
             && Objects.equals(this.upgradeResultCode, that.upgradeResultCode)
-            && Objects.equals(this.upgradable, that.upgradable) && Objects.equals(this.openTime, that.openTime);
+            && Objects.equals(this.upgradable, that.upgradable) && Objects.equals(this.openTime, that.openTime)
+            && Objects.equals(this.protectInterrupt, that.protectInterrupt);
     }
 
     @Override
@@ -886,6 +934,7 @@ public class Host {
             osType,
             osBit,
             detectResult,
+            expireTime,
             chargingMode,
             resourceId,
             outsideHost,
@@ -905,7 +954,8 @@ public class Host {
             upgradeStatus,
             upgradeResultCode,
             upgradable,
-            openTime);
+            openTime,
+            protectInterrupt);
     }
 
     @Override
@@ -928,6 +978,7 @@ public class Host {
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
         sb.append("    detectResult: ").append(toIndentedString(detectResult)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    outsideHost: ").append(toIndentedString(outsideHost)).append("\n");
@@ -948,6 +999,7 @@ public class Host {
         sb.append("    upgradeResultCode: ").append(toIndentedString(upgradeResultCode)).append("\n");
         sb.append("    upgradable: ").append(toIndentedString(upgradable)).append("\n");
         sb.append("    openTime: ").append(toIndentedString(openTime)).append("\n");
+        sb.append("    protectInterrupt: ").append(toIndentedString(protectInterrupt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

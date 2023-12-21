@@ -27,7 +27,7 @@ public class CreateHpcCacheTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务任务id
+     * 任务ID
      * @return taskId
      */
     public String getTaskId() {

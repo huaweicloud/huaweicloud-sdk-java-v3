@@ -37,7 +37,7 @@ public class UpdateInstanceConsumerGroupRequest {
     }
 
     /**
-     * 消息中间件类型。
+     * 消息引擎的类型。
      * @return engine
      */
     public String getEngine() {

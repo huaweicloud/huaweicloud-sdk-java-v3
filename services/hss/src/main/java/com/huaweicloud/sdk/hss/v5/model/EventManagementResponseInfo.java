@@ -218,6 +218,11 @@ public class EventManagementResponseInfo {
 
     private List<String> tagList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_count")
+
+    private Integer eventCount;
+
     public EventManagementResponseInfo withEventId(String eventId) {
         this.eventId = eventId;
         return this;
@@ -1028,6 +1033,25 @@ public class EventManagementResponseInfo {
         this.tagList = tagList;
     }
 
+    public EventManagementResponseInfo withEventCount(Integer eventCount) {
+        this.eventCount = eventCount;
+        return this;
+    }
+
+    /**
+     * 事件发生次数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return eventCount
+     */
+    public Integer getEventCount() {
+        return eventCount;
+    }
+
+    public void setEventCount(Integer eventCount) {
+        this.eventCount = eventCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1062,7 +1086,8 @@ public class EventManagementResponseInfo {
             && Objects.equals(this.processInfoList, that.processInfoList)
             && Objects.equals(this.userInfoList, that.userInfoList)
             && Objects.equals(this.fileInfoList, that.fileInfoList)
-            && Objects.equals(this.eventDetails, that.eventDetails) && Objects.equals(this.tagList, that.tagList);
+            && Objects.equals(this.eventDetails, that.eventDetails) && Objects.equals(this.tagList, that.tagList)
+            && Objects.equals(this.eventCount, that.eventCount);
     }
 
     @Override
@@ -1107,7 +1132,8 @@ public class EventManagementResponseInfo {
             userInfoList,
             fileInfoList,
             eventDetails,
-            tagList);
+            tagList,
+            eventCount);
     }
 
     @Override
@@ -1155,6 +1181,7 @@ public class EventManagementResponseInfo {
         sb.append("    fileInfoList: ").append(toIndentedString(fileInfoList)).append("\n");
         sb.append("    eventDetails: ").append(toIndentedString(eventDetails)).append("\n");
         sb.append("    tagList: ").append(toIndentedString(tagList)).append("\n");
+        sb.append("    eventCount: ").append(toIndentedString(eventCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

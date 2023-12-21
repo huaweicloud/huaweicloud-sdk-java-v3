@@ -46,6 +46,11 @@ public class TicsAgentDeployDetail {
     private String hostPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ief_instance_id")
+
+    private String iefInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace_name")
 
     private String namespaceName;
@@ -189,6 +194,23 @@ public class TicsAgentDeployDetail {
         this.hostPath = hostPath;
     }
 
+    public TicsAgentDeployDetail withIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+        return this;
+    }
+
+    /**
+     * ief白金版实例id, 仅IEF高可用部署有值
+     * @return iefInstanceId
+     */
+    public String getIefInstanceId() {
+        return iefInstanceId;
+    }
+
+    public void setIefInstanceId(String iefInstanceId) {
+        this.iefInstanceId = iefInstanceId;
+    }
+
     public TicsAgentDeployDetail withNamespaceName(String namespaceName) {
         this.namespaceName = namespaceName;
         return this;
@@ -287,7 +309,8 @@ public class TicsAgentDeployDetail {
             && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.cceClusterId, that.cceClusterId)
             && Objects.equals(this.cceClusterName, that.cceClusterName)
             && Objects.equals(this.consoleIp, that.consoleIp) && Objects.equals(this.consolePort, that.consolePort)
-            && Objects.equals(this.hostPath, that.hostPath) && Objects.equals(this.namespaceName, that.namespaceName)
+            && Objects.equals(this.hostPath, that.hostPath) && Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.namespaceName, that.namespaceName)
             && Objects.equals(this.obsPvcName, that.obsPvcName)
             && Objects.equals(this.persistenceId, that.persistenceId)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
@@ -303,6 +326,7 @@ public class TicsAgentDeployDetail {
             consoleIp,
             consolePort,
             hostPath,
+            iefInstanceId,
             namespaceName,
             obsPvcName,
             persistenceId,
@@ -321,6 +345,7 @@ public class TicsAgentDeployDetail {
         sb.append("    consoleIp: ").append(toIndentedString(consoleIp)).append("\n");
         sb.append("    consolePort: ").append(toIndentedString(consolePort)).append("\n");
         sb.append("    hostPath: ").append(toIndentedString(hostPath)).append("\n");
+        sb.append("    iefInstanceId: ").append(toIndentedString(iefInstanceId)).append("\n");
         sb.append("    namespaceName: ").append(toIndentedString(namespaceName)).append("\n");
         sb.append("    obsPvcName: ").append(toIndentedString(obsPvcName)).append("\n");
         sb.append("    persistenceId: ").append(toIndentedString(persistenceId)).append("\n");

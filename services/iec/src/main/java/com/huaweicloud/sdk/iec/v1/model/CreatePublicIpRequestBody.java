@@ -16,6 +16,11 @@ public class CreatePublicIpRequestBody {
 
     private CreatePublicIpOption publicip;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bandwidth")
+
+    private CreatePublicIpBandwidthOption bandwidth;
+
     public CreatePublicIpRequestBody withPublicip(CreatePublicIpOption publicip) {
         this.publicip = publicip;
         return this;
@@ -42,6 +47,32 @@ public class CreatePublicIpRequestBody {
         this.publicip = publicip;
     }
 
+    public CreatePublicIpRequestBody withBandwidth(CreatePublicIpBandwidthOption bandwidth) {
+        this.bandwidth = bandwidth;
+        return this;
+    }
+
+    public CreatePublicIpRequestBody withBandwidth(Consumer<CreatePublicIpBandwidthOption> bandwidthSetter) {
+        if (this.bandwidth == null) {
+            this.bandwidth = new CreatePublicIpBandwidthOption();
+            bandwidthSetter.accept(this.bandwidth);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get bandwidth
+     * @return bandwidth
+     */
+    public CreatePublicIpBandwidthOption getBandwidth() {
+        return bandwidth;
+    }
+
+    public void setBandwidth(CreatePublicIpBandwidthOption bandwidth) {
+        this.bandwidth = bandwidth;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -51,12 +82,12 @@ public class CreatePublicIpRequestBody {
             return false;
         }
         CreatePublicIpRequestBody that = (CreatePublicIpRequestBody) obj;
-        return Objects.equals(this.publicip, that.publicip);
+        return Objects.equals(this.publicip, that.publicip) && Objects.equals(this.bandwidth, that.bandwidth);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publicip);
+        return Objects.hash(publicip, bandwidth);
     }
 
     @Override
@@ -64,6 +95,7 @@ public class CreatePublicIpRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePublicIpRequestBody {\n");
         sb.append("    publicip: ").append(toIndentedString(publicip)).append("\n");
+        sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("}");
         return sb.toString();
     }

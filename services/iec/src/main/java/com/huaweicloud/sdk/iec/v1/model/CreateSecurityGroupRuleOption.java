@@ -101,7 +101,7 @@ public class CreateSecurityGroupRuleOption {
     private DirectionEnum direction;
 
     /**
-     * IP协议类型。  取值范围：IPv4[,IPv6](tag:hide)
+     * IP协议类型。  取值范围：IPv4,IPv6
      */
     public static final class EthertypeEnum {
 
@@ -110,11 +110,17 @@ public class CreateSecurityGroupRuleOption {
          */
         public static final EthertypeEnum IPV4 = new EthertypeEnum("IPv4");
 
+        /**
+         * Enum IPV6 for value: "IPv6"
+         */
+        public static final EthertypeEnum IPV6 = new EthertypeEnum("IPv6");
+
         private static final Map<String, EthertypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EthertypeEnum> createStaticFields() {
             Map<String, EthertypeEnum> map = new HashMap<>();
             map.put("IPv4", IPV4);
+            map.put("IPv6", IPV6);
             return Collections.unmodifiableMap(map);
         }
 
@@ -261,7 +267,7 @@ public class CreateSecurityGroupRuleOption {
     }
 
     /**
-     * IP协议类型。  取值范围：IPv4[,IPv6](tag:hide)
+     * IP协议类型。  取值范围：IPv4,IPv6
      * @return ethertype
      */
     public EthertypeEnum getEthertype() {
@@ -278,7 +284,7 @@ public class CreateSecurityGroupRuleOption {
     }
 
     /**
-     * 协议类型。  取值范围：icmp、tcp、udp等  约束：为空表示支持所有协议
+     * 协议类型。  取值范围：icmp、tcp、udp、icmpv6或IP协议号（0~255）  约束：为空表示支持所有协议
      * @return protocol
      */
     public String getProtocol() {

@@ -25,7 +25,6 @@ import com.huaweicloud.sdk.eip.v3.model.DetachSharedbwReq;
 import com.huaweicloud.sdk.eip.v3.model.DisableNat64Request;
 import com.huaweicloud.sdk.eip.v3.model.DisableNat64Response;
 import com.huaweicloud.sdk.eip.v3.model.DisassociatePublicipsRequest;
-import com.huaweicloud.sdk.eip.v3.model.DisassociatePublicipsRequestBody;
 import com.huaweicloud.sdk.eip.v3.model.DisassociatePublicipsResponse;
 import com.huaweicloud.sdk.eip.v3.model.EipResourcesAvailableV3RequestBody;
 import com.huaweicloud.sdk.eip.v3.model.EnableNat64Request;
@@ -50,10 +49,6 @@ import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipResponse;
-import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipRequest;
-import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipResponse;
-import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipRequest;
-import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipsRequestBody;
@@ -1273,73 +1268,6 @@ public class EipMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowPublicipRequest::getFields, (req, v) -> {
                 req.setFields(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse> updateAssociatePublicip =
-        genForupdateAssociatePublicip();
-
-    private static HttpRequestDef<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse> genForupdateAssociatePublicip() {
-        // basic
-        HttpRequestDef.Builder<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateAssociatePublicipRequest.class, UpdateAssociatePublicipResponse.class)
-            .withName("UpdateAssociatePublicip")
-            .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/associate-instance")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("publicip_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAssociatePublicipRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
-        builder.<AssociatePublicipsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociatePublicipsRequestBody.class),
-            f -> f.withMarshaller(UpdateAssociatePublicipRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse> updateDisassociatePublicip =
-        genForupdateDisassociatePublicip();
-
-    private static HttpRequestDef<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse> genForupdateDisassociatePublicip() {
-        // basic
-        HttpRequestDef.Builder<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    UpdateDisassociatePublicipRequest.class,
-                    UpdateDisassociatePublicipResponse.class)
-                .withName("UpdateDisassociatePublicip")
-                .withUri("/v3/{project_id}/eip/publicips/{publicip_id}/disassociate-instance")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("publicip_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDisassociatePublicipRequest::getPublicipId, (req, v) -> {
-                req.setPublicipId(v);
-            }));
-        builder.<DisassociatePublicipsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DisassociatePublicipsRequestBody.class),
-            f -> f.withMarshaller(UpdateDisassociatePublicipRequest::getBody, (req, v) -> {
-                req.setBody(v);
             }));
 
         // response

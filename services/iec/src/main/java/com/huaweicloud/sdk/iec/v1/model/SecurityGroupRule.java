@@ -106,7 +106,7 @@ public class SecurityGroupRule {
     private DirectionEnum direction;
 
     /**
-     * IP协议类型。  取值范围：IPv4[，IPv6](tag:hide)  约束：不填默认值为IPv4
+     * IP协议类型。  取值范围：IPv4，IPv6  约束：不填默认值为IPv4
      */
     public static final class EthertypeEnum {
 
@@ -283,7 +283,7 @@ public class SecurityGroupRule {
     }
 
     /**
-     * IP协议类型。  取值范围：IPv4[，IPv6](tag:hide)  约束：不填默认值为IPv4
+     * IP协议类型。  取值范围：IPv4，IPv6  约束：不填默认值为IPv4
      * @return ethertype
      */
     public EthertypeEnum getEthertype() {
@@ -300,7 +300,7 @@ public class SecurityGroupRule {
     }
 
     /**
-     * 协议类型。  取值范围：icmp、tcp、udp等  约束：为空表示支持所有协议
+     * 协议类型。  取值范围：icmp、tcp、udp、icmpv6等  约束：为空表示支持所有协议
      * @return protocol
      */
     public String getProtocol() {

@@ -1,0 +1,117 @@
+package com.huaweicloud.sdk.cbh.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class ListInstancesResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance")
+
+    private List<InstanceDetail> instance = null;
+
+    public ListInstancesResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * 云堡垒机实例总数。
+     * minimum: 0
+     * maximum: 100
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public ListInstancesResponse withInstance(List<InstanceDetail> instance) {
+        this.instance = instance;
+        return this;
+    }
+
+    public ListInstancesResponse addInstanceItem(InstanceDetail instanceItem) {
+        if (this.instance == null) {
+            this.instance = new ArrayList<>();
+        }
+        this.instance.add(instanceItem);
+        return this;
+    }
+
+    public ListInstancesResponse withInstance(Consumer<List<InstanceDetail>> instanceSetter) {
+        if (this.instance == null) {
+            this.instance = new ArrayList<>();
+        }
+        instanceSetter.accept(this.instance);
+        return this;
+    }
+
+    /**
+     * 云堡垒机实例列表信息。
+     * @return instance
+     */
+    public List<InstanceDetail> getInstance() {
+        return instance;
+    }
+
+    public void setInstance(List<InstanceDetail> instance) {
+        this.instance = instance;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ListInstancesResponse that = (ListInstancesResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.instance, that.instance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(total, instance);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListInstancesResponse {\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    instance: ").append(toIndentedString(instance)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

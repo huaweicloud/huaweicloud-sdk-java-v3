@@ -29,8 +29,6 @@ import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskResponse;
-import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionRequest;
-import com.huaweicloud.sdk.kafka.v2.model.CreatePartitionResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
@@ -83,6 +81,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerResponse;
+import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequest;
+import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyRequest;
@@ -328,9 +328,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 关闭kafka manager
+     * 关闭Kafka Manager
      *
-     * 关闭kafka manager，相应的原来开放出的management相关接口也将不可用
+     * 关闭Kafka Manager，相应的原来开放出的management相关接口也将不可用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -342,9 +342,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 关闭kafka manager
+     * 关闭Kafka Manager
      *
-     * 关闭kafka manager，相应的原来开放出的management相关接口也将不可用
+     * 关闭Kafka Manager，相应的原来开放出的management相关接口也将不可用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -549,9 +549,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 创建客户端流控配置
+     * 创建用户/客户端流控配置
      *
-     * 该接口用于向Kafka实例提交创建user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 该接口用于向Kafka实例提交创建用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -564,9 +564,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 创建客户端流控配置
+     * 创建用户/客户端流控配置
      *
-     * 该接口用于向Kafka实例提交创建user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 该接口用于向Kafka实例提交创建用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -577,36 +577,6 @@ public class KafkaAsyncClient {
         CreateKafkaUserClientQuotaTaskRequest request) {
         return new AsyncInvoker<CreateKafkaUserClientQuotaTaskRequest, CreateKafkaUserClientQuotaTaskResponse>(request,
             KafkaMeta.createKafkaUserClientQuotaTask, hcClient);
-    }
-
-    /**
-     * 新增Kafka实例指定Topic分区
-     *
-     * 新增Kafka实例指定Topic分区。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreatePartitionRequest 请求对象
-     * @return CompletableFuture<CreatePartitionResponse>
-     */
-    public CompletableFuture<CreatePartitionResponse> createPartitionAsync(CreatePartitionRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.createPartition);
-    }
-
-    /**
-     * 新增Kafka实例指定Topic分区
-     *
-     * 新增Kafka实例指定Topic分区。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreatePartitionRequest 请求对象
-     * @return AsyncInvoker<CreatePartitionRequest, CreatePartitionResponse>
-     */
-    public AsyncInvoker<CreatePartitionRequest, CreatePartitionResponse> createPartitionAsyncInvoker(
-        CreatePartitionRequest request) {
-        return new AsyncInvoker<CreatePartitionRequest, CreatePartitionResponse>(request, KafkaMeta.createPartition,
-            hcClient);
     }
 
     /**
@@ -733,9 +703,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 关闭实例转储节点
+     * 关闭Smart Connect（按需实例）
      *
-     * 关闭实例转储节点。
+     * 介绍按需实例如何关闭Smart Connect。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -747,9 +717,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 关闭实例转储节点
+     * 关闭Smart Connect（按需实例）
      *
-     * 关闭实例转储节点。
+     * 介绍按需实例如何关闭Smart Connect。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -793,9 +763,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 删除客户端流控设置
+     * 删除用户/客户端流控配置
      *
-     * 该接口用于向Kafka实例提交删除user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 该接口用于向Kafka实例提交删除用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -808,9 +778,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 删除客户端流控设置
+     * 删除用户/客户端流控配置
      *
-     * 该接口用于向Kafka实例提交删除user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 该接口用于向Kafka实例提交删除用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1264,7 +1234,7 @@ public class KafkaAsyncClient {
     /**
      * 重置密码
      *
-     * 重置密码。
+     * 重置密码（只针对开通SSL的实例）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1278,7 +1248,7 @@ public class KafkaAsyncClient {
     /**
      * 重置密码
      *
-     * 重置密码。
+     * 重置密码（只针对开通SSL的实例）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1322,9 +1292,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 实例规格变更
+     * 实例扩容
      *
-     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1337,9 +1307,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 实例规格变更
+     * 实例扩容
      *
-     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1353,9 +1323,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 实例规格变更
+     * 实例扩容
      *
-     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * 实例扩容。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1367,9 +1337,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 实例规格变更
+     * 实例扩容
      *
-     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例规格变更。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * 实例扩容。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1409,6 +1379,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<RestartManagerRequest, RestartManagerResponse> restartManagerAsyncInvoker(
         RestartManagerRequest request) {
         return new AsyncInvoker<RestartManagerRequest, RestartManagerResponse>(request, KafkaMeta.restartManager,
+            hcClient);
+    }
+
+    /**
+     * Kafka生产消息
+     *
+     * 在控制台发送指定消息到Kafka实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendKafkaMessageRequest 请求对象
+     * @return CompletableFuture<SendKafkaMessageResponse>
+     */
+    public CompletableFuture<SendKafkaMessageResponse> sendKafkaMessageAsync(SendKafkaMessageRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.sendKafkaMessage);
+    }
+
+    /**
+     * Kafka生产消息
+     *
+     * 在控制台发送指定消息到Kafka实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SendKafkaMessageRequest 请求对象
+     * @return AsyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse>
+     */
+    public AsyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse> sendKafkaMessageAsyncInvoker(
+        SendKafkaMessageRequest request) {
+        return new AsyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse>(request, KafkaMeta.sendKafkaMessage,
             hcClient);
     }
 
@@ -1870,7 +1870,7 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询客户端流控配置
+     * 查询用户/客户端流控配置
      *
      * 该接口用于向Kafka实例查询流控的配置，若成功则返回流控配置的列表。
      * 
@@ -1885,7 +1885,7 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询客户端流控配置
+     * 查询用户/客户端流控配置
      *
      * 该接口用于向Kafka实例查询流控的配置，若成功则返回流控配置的列表。
      * 
@@ -2301,9 +2301,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 修改客户端流控设置
+     * 修改用户/客户端流控配置
      *
-     * 该接口用于向Kafka实例提交修改user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 该接口用于向Kafka实例提交修改用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2316,9 +2316,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 修改客户端流控设置
+     * 修改用户/客户端流控配置
      *
-     * 该接口用于向Kafka实例提交修改user、client级别的流控任务，若成功则返回流控任务的job id。
+     * 该接口用于向Kafka实例提交修改用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

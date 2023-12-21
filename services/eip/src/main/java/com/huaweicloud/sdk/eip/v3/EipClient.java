@@ -41,10 +41,6 @@ import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipResponse;
-import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipRequest;
-import com.huaweicloud.sdk.eip.v3.model.UpdateAssociatePublicipResponse;
-import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipRequest;
-import com.huaweicloud.sdk.eip.v3.model.UpdateDisassociatePublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipResponse;
 
@@ -619,66 +615,6 @@ public class EipClient {
      */
     public SyncInvoker<ShowPublicipRequest, ShowPublicipResponse> showPublicipInvoker(ShowPublicipRequest request) {
         return new SyncInvoker<ShowPublicipRequest, ShowPublicipResponse>(request, EipMeta.showPublicip, hcClient);
-    }
-
-    /**
-     * 绑定弹性公网IP
-     *
-     * 绑定弹性公网IP
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateAssociatePublicipRequest 请求对象
-     * @return UpdateAssociatePublicipResponse
-     */
-    public UpdateAssociatePublicipResponse updateAssociatePublicip(UpdateAssociatePublicipRequest request) {
-        return hcClient.syncInvokeHttp(request, EipMeta.updateAssociatePublicip);
-    }
-
-    /**
-     * 绑定弹性公网IP
-     *
-     * 绑定弹性公网IP
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateAssociatePublicipRequest 请求对象
-     * @return SyncInvoker<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse>
-     */
-    public SyncInvoker<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse> updateAssociatePublicipInvoker(
-        UpdateAssociatePublicipRequest request) {
-        return new SyncInvoker<UpdateAssociatePublicipRequest, UpdateAssociatePublicipResponse>(request,
-            EipMeta.updateAssociatePublicip, hcClient);
-    }
-
-    /**
-     * 解绑弹性公网IP
-     *
-     * 解绑弹性公网IP
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateDisassociatePublicipRequest 请求对象
-     * @return UpdateDisassociatePublicipResponse
-     */
-    public UpdateDisassociatePublicipResponse updateDisassociatePublicip(UpdateDisassociatePublicipRequest request) {
-        return hcClient.syncInvokeHttp(request, EipMeta.updateDisassociatePublicip);
-    }
-
-    /**
-     * 解绑弹性公网IP
-     *
-     * 解绑弹性公网IP
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateDisassociatePublicipRequest 请求对象
-     * @return SyncInvoker<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse>
-     */
-    public SyncInvoker<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse> updateDisassociatePublicipInvoker(
-        UpdateDisassociatePublicipRequest request) {
-        return new SyncInvoker<UpdateDisassociatePublicipRequest, UpdateDisassociatePublicipResponse>(request,
-            EipMeta.updateDisassociatePublicip, hcClient);
     }
 
     /**

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 包年/包月计费信息
+ * 包周期计费信息
  */
 public class PrepaidOptions {
 

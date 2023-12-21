@@ -31,7 +31,7 @@ public class Instance {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nics")
 
-    private List<Nics> nics = null;
+    private List<Nic> nics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tsd_num")
@@ -89,12 +89,12 @@ public class Instance {
         this.lemonNum = lemonNum;
     }
 
-    public Instance withNics(List<Nics> nics) {
+    public Instance withNics(List<Nic> nics) {
         this.nics = nics;
         return this;
     }
 
-    public Instance addNicsItem(Nics nicsItem) {
+    public Instance addNicsItem(Nic nicsItem) {
         if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
@@ -102,7 +102,7 @@ public class Instance {
         return this;
     }
 
-    public Instance withNics(Consumer<List<Nics>> nicsSetter) {
+    public Instance withNics(Consumer<List<Nic>> nicsSetter) {
         if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
@@ -114,11 +114,11 @@ public class Instance {
      * 集群所在网络信息。
      * @return nics
      */
-    public List<Nics> getNics() {
+    public List<Nic> getNics() {
         return nics;
     }
 
-    public void setNics(List<Nics> nics) {
+    public void setNics(List<Nic> nics) {
         this.nics = nics;
     }
 

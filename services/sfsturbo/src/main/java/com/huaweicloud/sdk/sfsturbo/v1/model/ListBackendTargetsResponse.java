@@ -35,7 +35,7 @@ public class ListBackendTargetsResponse extends SdkResponse {
     }
 
     /**
-     * 文件系统后端存储库列表元素个数
+     * 后端存储列表个数
      * @return count
      */
     public Integer getCount() {
@@ -68,7 +68,7 @@ public class ListBackendTargetsResponse extends SdkResponse {
     }
 
     /**
-     * 文件系统后端存储库列表
+     * 后端存储列表
      * @return targets
      */
     public List<ShowBackendTargetInfoResponseBody> getTargets() {
