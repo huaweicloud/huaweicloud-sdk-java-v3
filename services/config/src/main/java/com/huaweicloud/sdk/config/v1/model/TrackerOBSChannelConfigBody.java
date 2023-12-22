@@ -16,6 +16,11 @@ public class TrackerOBSChannelConfigBody {
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bucket_prefix")
+
+    private String bucketPrefix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
     private String regionId;
@@ -35,6 +40,23 @@ public class TrackerOBSChannelConfigBody {
 
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
+    }
+
+    public TrackerOBSChannelConfigBody withBucketPrefix(String bucketPrefix) {
+        this.bucketPrefix = bucketPrefix;
+        return this;
+    }
+
+    /**
+     * OBS桶前缀
+     * @return bucketPrefix
+     */
+    public String getBucketPrefix() {
+        return bucketPrefix;
+    }
+
+    public void setBucketPrefix(String bucketPrefix) {
+        this.bucketPrefix = bucketPrefix;
     }
 
     public TrackerOBSChannelConfigBody withRegionId(String regionId) {
@@ -63,12 +85,13 @@ public class TrackerOBSChannelConfigBody {
             return false;
         }
         TrackerOBSChannelConfigBody that = (TrackerOBSChannelConfigBody) obj;
-        return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.regionId, that.regionId);
+        return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.bucketPrefix, that.bucketPrefix)
+            && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucketName, regionId);
+        return Objects.hash(bucketName, bucketPrefix, regionId);
     }
 
     @Override
@@ -76,6 +99,7 @@ public class TrackerOBSChannelConfigBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class TrackerOBSChannelConfigBody {\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
+        sb.append("    bucketPrefix: ").append(toIndentedString(bucketPrefix)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("}");
         return sb.toString();

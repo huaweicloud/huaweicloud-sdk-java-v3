@@ -33,7 +33,7 @@ public class ShowInstanceTopicDetailRespReplicas {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lag")
 
-    private Integer lag;
+    private Long lag;
 
     public ShowInstanceTopicDetailRespReplicas withBroker(Integer broker) {
         this.broker = broker;
@@ -103,7 +103,7 @@ public class ShowInstanceTopicDetailRespReplicas {
         this.size = size;
     }
 
-    public ShowInstanceTopicDetailRespReplicas withLag(Integer lag) {
+    public ShowInstanceTopicDetailRespReplicas withLag(Long lag) {
         this.lag = lag;
         return this;
     }
@@ -112,11 +112,11 @@ public class ShowInstanceTopicDetailRespReplicas {
      * 该副本当前落后hw的消息数。
      * @return lag
      */
-    public Integer getLag() {
+    public Long getLag() {
         return lag;
     }
 
-    public void setLag(Integer lag) {
+    public void setLag(Long lag) {
         this.lag = lag;
     }
 

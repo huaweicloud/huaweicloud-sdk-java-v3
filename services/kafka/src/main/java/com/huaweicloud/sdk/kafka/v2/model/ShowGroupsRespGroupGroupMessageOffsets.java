@@ -18,7 +18,7 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lag")
 
-    private Integer lag;
+    private Long lag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
@@ -52,7 +52,7 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
         this.partition = partition;
     }
 
-    public ShowGroupsRespGroupGroupMessageOffsets withLag(Integer lag) {
+    public ShowGroupsRespGroupGroupMessageOffsets withLag(Long lag) {
         this.lag = lag;
         return this;
     }
@@ -61,11 +61,11 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
      * 剩余可消费消息数，即消息堆积数。
      * @return lag
      */
-    public Integer getLag() {
+    public Long getLag() {
         return lag;
     }
 
-    public void setLag(Integer lag) {
+    public void setLag(Long lag) {
         this.lag = lag;
     }
 
