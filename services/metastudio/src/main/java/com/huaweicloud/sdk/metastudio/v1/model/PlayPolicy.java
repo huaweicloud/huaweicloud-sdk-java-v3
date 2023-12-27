@@ -100,6 +100,93 @@ public class PlayPolicy {
 
     private PlayModeEnum playMode;
 
+    /**
+     * 随机播报模式。 * NONE: 不启动随机播报。 * SCENE: 按场景随机播报。场景内段落按顺序播报。 * SCRIPT_ITEM：按段落随机播报。场景按顺序播报。 * SCENE_AND_SCRIPT_ITEM： 场景和段落都随机播报。
+     */
+    public static final class RandomPlayModeEnum {
+
+        /**
+         * Enum NONE for value: "NONE"
+         */
+        public static final RandomPlayModeEnum NONE = new RandomPlayModeEnum("NONE");
+
+        /**
+         * Enum SCENE for value: "SCENE"
+         */
+        public static final RandomPlayModeEnum SCENE = new RandomPlayModeEnum("SCENE");
+
+        /**
+         * Enum SCRIPT_ITEM for value: "SCRIPT_ITEM"
+         */
+        public static final RandomPlayModeEnum SCRIPT_ITEM = new RandomPlayModeEnum("SCRIPT_ITEM");
+
+        /**
+         * Enum SCENE_AND_SCRIPT_ITEM for value: "SCENE_AND_SCRIPT_ITEM"
+         */
+        public static final RandomPlayModeEnum SCENE_AND_SCRIPT_ITEM = new RandomPlayModeEnum("SCENE_AND_SCRIPT_ITEM");
+
+        private static final Map<String, RandomPlayModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RandomPlayModeEnum> createStaticFields() {
+            Map<String, RandomPlayModeEnum> map = new HashMap<>();
+            map.put("NONE", NONE);
+            map.put("SCENE", SCENE);
+            map.put("SCRIPT_ITEM", SCRIPT_ITEM);
+            map.put("SCENE_AND_SCRIPT_ITEM", SCENE_AND_SCRIPT_ITEM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RandomPlayModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RandomPlayModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RandomPlayModeEnum(value));
+        }
+
+        public static RandomPlayModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RandomPlayModeEnum) {
+                return this.value.equals(((RandomPlayModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "random_play_mode")
+
+    private RandomPlayModeEnum randomPlayMode;
+
     public PlayPolicy withRepeatCount(Integer repeatCount) {
         this.repeatCount = repeatCount;
         return this;
@@ -153,6 +240,23 @@ public class PlayPolicy {
         this.playMode = playMode;
     }
 
+    public PlayPolicy withRandomPlayMode(RandomPlayModeEnum randomPlayMode) {
+        this.randomPlayMode = randomPlayMode;
+        return this;
+    }
+
+    /**
+     * 随机播报模式。 * NONE: 不启动随机播报。 * SCENE: 按场景随机播报。场景内段落按顺序播报。 * SCRIPT_ITEM：按段落随机播报。场景按顺序播报。 * SCENE_AND_SCRIPT_ITEM： 场景和段落都随机播报。
+     * @return randomPlayMode
+     */
+    public RandomPlayModeEnum getRandomPlayMode() {
+        return randomPlayMode;
+    }
+
+    public void setRandomPlayMode(RandomPlayModeEnum randomPlayMode) {
+        this.randomPlayMode = randomPlayMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -163,12 +267,13 @@ public class PlayPolicy {
         }
         PlayPolicy that = (PlayPolicy) obj;
         return Objects.equals(this.repeatCount, that.repeatCount)
-            && Objects.equals(this.autoPlayScript, that.autoPlayScript) && Objects.equals(this.playMode, that.playMode);
+            && Objects.equals(this.autoPlayScript, that.autoPlayScript) && Objects.equals(this.playMode, that.playMode)
+            && Objects.equals(this.randomPlayMode, that.randomPlayMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repeatCount, autoPlayScript, playMode);
+        return Objects.hash(repeatCount, autoPlayScript, playMode, randomPlayMode);
     }
 
     @Override
@@ -178,6 +283,7 @@ public class PlayPolicy {
         sb.append("    repeatCount: ").append(toIndentedString(repeatCount)).append("\n");
         sb.append("    autoPlayScript: ").append(toIndentedString(autoPlayScript)).append("\n");
         sb.append("    playMode: ").append(toIndentedString(playMode)).append("\n");
+        sb.append("    randomPlayMode: ").append(toIndentedString(randomPlayMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

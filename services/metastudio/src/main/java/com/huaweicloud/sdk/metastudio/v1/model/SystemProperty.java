@@ -91,7 +91,7 @@ public class SystemProperty {
     private ActionEnum action;
 
     /**
-     * 系统属性。 * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。 * CREATED_BY_PLATFORM：是否平台生成
+     * 系统属性。  公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频。 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。
      */
     public static final class KeyEnum {
 
@@ -130,6 +130,26 @@ public class SystemProperty {
          */
         public static final KeyEnum CREATED_BY_PLATFORM = new KeyEnum("CREATED_BY_PLATFORM");
 
+        /**
+         * Enum MATERIAL_IMG for value: "MATERIAL_IMG"
+         */
+        public static final KeyEnum MATERIAL_IMG = new KeyEnum("MATERIAL_IMG");
+
+        /**
+         * Enum MATERIAL_VIDEO for value: "MATERIAL_VIDEO"
+         */
+        public static final KeyEnum MATERIAL_VIDEO = new KeyEnum("MATERIAL_VIDEO");
+
+        /**
+         * Enum BUSSINESS_CARD_VIDEO for value: "BUSSINESS_CARD_VIDEO"
+         */
+        public static final KeyEnum BUSSINESS_CARD_VIDEO = new KeyEnum("BUSSINESS_CARD_VIDEO");
+
+        /**
+         * Enum TO_BE_TRANSLATED_VIDEO for value: "TO_BE_TRANSLATED_VIDEO"
+         */
+        public static final KeyEnum TO_BE_TRANSLATED_VIDEO = new KeyEnum("TO_BE_TRANSLATED_VIDEO");
+
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, KeyEnum> createStaticFields() {
@@ -141,6 +161,10 @@ public class SystemProperty {
             map.put("BACKGROUND_IMG", BACKGROUND_IMG);
             map.put("BACKGROUND_SCENE", BACKGROUND_SCENE);
             map.put("CREATED_BY_PLATFORM", CREATED_BY_PLATFORM);
+            map.put("MATERIAL_IMG", MATERIAL_IMG);
+            map.put("MATERIAL_VIDEO", MATERIAL_VIDEO);
+            map.put("BUSSINESS_CARD_VIDEO", BUSSINESS_CARD_VIDEO);
+            map.put("TO_BE_TRANSLATED_VIDEO", TO_BE_TRANSLATED_VIDEO);
             return Collections.unmodifiableMap(map);
         }
 
@@ -223,7 +247,7 @@ public class SystemProperty {
     }
 
     /**
-     * 系统属性。 * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。 * CREATED_BY_PLATFORM：是否平台生成
+     * 系统属性。  公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频。 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。
      * @return key
      */
     public KeyEnum getKey() {

@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -17,7 +15,7 @@ public class CreateTemplatesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private List<CreateTemplatesItems> result = null;
+    private CreateTemplatesItems result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
@@ -29,36 +27,29 @@ public class CreateTemplatesResponse extends SdkResponse {
 
     private String status;
 
-    public CreateTemplatesResponse withResult(List<CreateTemplatesItems> result) {
+    public CreateTemplatesResponse withResult(CreateTemplatesItems result) {
         this.result = result;
         return this;
     }
 
-    public CreateTemplatesResponse addResultItem(CreateTemplatesItems resultItem) {
+    public CreateTemplatesResponse withResult(Consumer<CreateTemplatesItems> resultSetter) {
         if (this.result == null) {
-            this.result = new ArrayList<>();
+            this.result = new CreateTemplatesItems();
+            resultSetter.accept(this.result);
         }
-        this.result.add(resultItem);
-        return this;
-    }
 
-    public CreateTemplatesResponse withResult(Consumer<List<CreateTemplatesItems>> resultSetter) {
-        if (this.result == null) {
-            this.result = new ArrayList<>();
-        }
-        resultSetter.accept(this.result);
         return this;
     }
 
     /**
-     * 查询模板结果
+     * Get result
      * @return result
      */
-    public List<CreateTemplatesItems> getResult() {
+    public CreateTemplatesItems getResult() {
         return result;
     }
 
-    public void setResult(List<CreateTemplatesItems> result) {
+    public void setResult(CreateTemplatesItems result) {
         this.result = result;
     }
 

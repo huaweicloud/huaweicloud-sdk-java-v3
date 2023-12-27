@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
@@ -23,8 +25,13 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateFASReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionResponse;
@@ -53,6 +60,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardReq
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
@@ -62,6 +71,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.FilesCreateReq;
+import com.huaweicloud.sdk.metastudio.v1.model.InteractionRuleGroup;
+import com.huaweicloud.sdk.metastudio.v1.model.LanguageCheckInfoReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummaryResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetSummarysReq;
@@ -69,6 +80,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanVideoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRequest;
@@ -123,6 +140,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
@@ -973,6 +992,121 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDigitalHumanVideoRequest, ListDigitalHumanVideoResponse> listDigitalHumanVideo =
+        genForlistDigitalHumanVideo();
+
+    private static HttpRequestDef<ListDigitalHumanVideoRequest, ListDigitalHumanVideoResponse> genForlistDigitalHumanVideo() {
+        // basic
+        HttpRequestDef.Builder<ListDigitalHumanVideoRequest, ListDigitalHumanVideoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDigitalHumanVideoRequest.class, ListDigitalHumanVideoResponse.class)
+            .withName("ListDigitalHumanVideo")
+            .withUri("/v1/{project_id}/digital-human-videos")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getState, (req, v) -> {
+                req.setState(v);
+            }));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getSortKey, (req, v) -> {
+                req.setSortKey(v);
+            }));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getSortDir, (req, v) -> {
+                req.setSortDir(v);
+            }));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getCreateUntil, (req, v) -> {
+                req.setCreateUntil(v);
+            }));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getCreateSince, (req, v) -> {
+                req.setCreateSince(v);
+            }));
+        builder.<String>withRequestField("script_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getScriptId, (req, v) -> {
+                req.setScriptId(v);
+            }));
+        builder.<String>withRequestField("asset_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getAssetName, (req, v) -> {
+                req.setAssetName(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDigitalHumanVideoResponse::getXRequestId,
+                ListDigitalHumanVideoResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<Cancel2DDigitalHumanVideoRequest, Cancel2DDigitalHumanVideoResponse> cancel2DDigitalHumanVideo =
         genForcancel2DDigitalHumanVideo();
 
@@ -1047,7 +1181,7 @@ public class MetaStudioMeta {
                     Create2DDigitalHumanVideoResponse.class)
                 .withName("Create2DDigitalHumanVideo")
                 .withUri("/v1/{project_id}/2d-digital-human-videos")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -1234,7 +1368,7 @@ public class MetaStudioMeta {
             .builder(HttpMethod.POST, CreatePhotoDetectionRequest.class, CreatePhotoDetectionResponse.class)
             .withName("CreatePhotoDetection")
             .withUri("/v1/{project_id}/photo-detection")
-            .withContentType("application/json");
+            .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -1296,7 +1430,7 @@ public class MetaStudioMeta {
                     CreatePhotoDigitalHumanVideoResponse.class)
                 .withName("CreatePhotoDigitalHumanVideo")
                 .withUri("/v1/{project_id}/photo-digital-human-videos")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -1483,7 +1617,7 @@ public class MetaStudioMeta {
             HttpRequestDef.builder(HttpMethod.POST, ConfirmFileUploadRequest.class, ConfirmFileUploadResponse.class)
                 .withName("ConfirmFileUpload")
                 .withUri("/v1/{project_id}/files/{file_id}/complete")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("file_id",
@@ -1540,7 +1674,7 @@ public class MetaStudioMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateFileRequest.class, CreateFileResponse.class)
                 .withName("CreateFile")
                 .withUri("/v1/{project_id}/files")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("Authorization",
@@ -2041,19 +2175,19 @@ public class MetaStudioMeta {
             f -> f.withMarshaller(ListSmartLiveRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
             }));
-        builder.<String>withRequestField("create_until",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSmartLiveRequest::getCreateUntil, (req, v) -> {
-                req.setCreateUntil(v);
-            }));
         builder.<String>withRequestField("create_since",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSmartLiveRequest::getCreateSince, (req, v) -> {
                 req.setCreateSince(v);
+            }));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveRequest::getCreateUntil, (req, v) -> {
+                req.setCreateUntil(v);
             }));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
@@ -2382,6 +2516,93 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckTextLanguageRequest, CheckTextLanguageResponse> checkTextLanguage =
+        genForcheckTextLanguage();
+
+    private static HttpRequestDef<CheckTextLanguageRequest, CheckTextLanguageResponse> genForcheckTextLanguage() {
+        // basic
+        HttpRequestDef.Builder<CheckTextLanguageRequest, CheckTextLanguageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckTextLanguageRequest.class, CheckTextLanguageResponse.class)
+                .withName("CheckTextLanguage")
+                .withUri("/v1/{project_id}/smart-live-rooms-scripts/language-check")
+                .withContentType("application/json");
+
+        // requests
+        builder.<LanguageCheckInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LanguageCheckInfoReq.class),
+            f -> f.withMarshaller(CheckTextLanguageRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroup =
+        genForcreateInteractionRuleGroup();
+
+    private static HttpRequestDef<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> genForcreateInteractionRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateInteractionRuleGroupRequest.class,
+                    CreateInteractionRuleGroupResponse.class)
+                .withName("CreateInteractionRuleGroup")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<InteractionRuleGroup>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InteractionRuleGroup.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateInteractionRuleGroupResponse::getXRequestId,
+                CreateInteractionRuleGroupResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSmartLiveRoomRequest, CreateSmartLiveRoomResponse> createSmartLiveRoom =
         genForcreateSmartLiveRoom();
 
@@ -2441,6 +2662,68 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> deleteInteractionRuleGroup =
+        genFordeleteInteractionRuleGroup();
+
+    private static HttpRequestDef<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> genFordeleteInteractionRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteInteractionRuleGroupRequest.class,
+                    DeleteInteractionRuleGroupResponse.class)
+                .withName("DeleteInteractionRuleGroup")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteInteractionRuleGroupResponse::getXRequestId,
+                DeleteInteractionRuleGroupResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSmartLiveRoomRequest, DeleteSmartLiveRoomResponse> deleteSmartLiveRoom =
         genFordeleteSmartLiveRoom();
 
@@ -2497,6 +2780,96 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(DeleteSmartLiveRoomResponse::getXRequestId,
                 DeleteSmartLiveRoomResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> listInteractionRuleGroups =
+        genForlistInteractionRuleGroups();
+
+    private static HttpRequestDef<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> genForlistInteractionRuleGroups() {
+        // basic
+        HttpRequestDef.Builder<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInteractionRuleGroupsRequest.class,
+                    ListInteractionRuleGroupsResponse.class)
+                .withName("ListInteractionRuleGroups")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getCreateSince, (req, v) -> {
+                req.setCreateSince(v);
+            }));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getCreateUntil, (req, v) -> {
+                req.setCreateUntil(v);
+            }));
+        builder.<String>withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getGroupName, (req, v) -> {
+                req.setGroupName(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInteractionRuleGroupsResponse::getXRequestId,
+                ListInteractionRuleGroupsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -2567,6 +2940,13 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSmartLiveRoomsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
+            }));
+        builder.<String>withRequestField("room_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveRoomsRequest::getRoomType, (req, v) -> {
+                req.setRoomType(v);
             }));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
@@ -2663,6 +3043,75 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowSmartLiveRoomResponse::getXRequestId, ShowSmartLiveRoomResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> updateInteractionRuleGroup =
+        genForupdateInteractionRuleGroup();
+
+    private static HttpRequestDef<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> genForupdateInteractionRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateInteractionRuleGroupRequest.class,
+                    UpdateInteractionRuleGroupResponse.class)
+                .withName("UpdateInteractionRuleGroup")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            }));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getXProjectId, (req, v) -> {
+                req.setXProjectId(v);
+            }));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getXAppUserId, (req, v) -> {
+                req.setXAppUserId(v);
+            }));
+        builder.<InteractionRuleGroup>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InteractionRuleGroup.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateInteractionRuleGroupResponse::getXRequestId,
+                UpdateInteractionRuleGroupResponse::setXRequestId));
         return builder.build();
     }
 
@@ -2831,6 +3280,37 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse> createFacialAnimations =
+        genForcreateFacialAnimations();
+
+    private static HttpRequestDef<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse> genForcreateFacialAnimations() {
+        // basic
+        HttpRequestDef.Builder<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateFacialAnimationsRequest.class, CreateFacialAnimationsResponse.class)
+            .withName("CreateFacialAnimations")
+            .withUri("/v1/{project_id}/ttsa/fas")
+            .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<CreateFASReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateFASReq.class),
+            f -> f.withMarshaller(CreateFacialAnimationsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateFacialAnimationsResponse::getXRequestId,
+                CreateFacialAnimationsResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateTtsaRequest, CreateTtsaResponse> createTtsa = genForcreateTtsa();
 
     private static HttpRequestDef<CreateTtsaRequest, CreateTtsaResponse> genForcreateTtsa() {
@@ -2885,6 +3365,32 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(CreateTtsaResponse::getXRequestId, CreateTtsaResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse> listFacialAnimationsData =
+        genForlistFacialAnimationsData();
+
+    private static HttpRequestDef<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse> genForlistFacialAnimationsData() {
+        // basic
+        HttpRequestDef.Builder<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListFacialAnimationsDataRequest.class, ListFacialAnimationsDataResponse.class)
+                .withName("ListFacialAnimationsData")
+                .withUri("/v1/{project_id}/fas-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFacialAnimationsDataRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
+            }));
+
+        // response
+
         return builder.build();
     }
 
@@ -3090,7 +3596,7 @@ public class MetaStudioMeta {
                     ExecuteVideoMotionCaptureCommandResponse.class)
                 .withName("ExecuteVideoMotionCaptureCommand")
                 .withUri("/v1/{project_id}/video-motion-capture-jobs/{job_id}/command")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("job_id",
@@ -3482,6 +3988,27 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListVideoScriptsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVideoScriptsRequest::getName, (req, v) -> {
+                req.setName(v);
+            }));
+        builder.<ListVideoScriptsRequest.ScriptCatalogEnum>withRequestField("script_catalog",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListVideoScriptsRequest.ScriptCatalogEnum.class),
+            f -> f.withMarshaller(ListVideoScriptsRequest::getScriptCatalog, (req, v) -> {
+                req.setScriptCatalog(v);
+            }));
+        builder.<ListVideoScriptsRequest.ViewModeEnum>withRequestField("view_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListVideoScriptsRequest.ViewModeEnum.class),
+            f -> f.withMarshaller(ListVideoScriptsRequest::getViewMode, (req, v) -> {
+                req.setViewMode(v);
             }));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,

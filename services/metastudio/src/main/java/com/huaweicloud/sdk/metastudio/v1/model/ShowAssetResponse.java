@@ -45,7 +45,7 @@ public class ShowAssetResponse extends SdkResponse {
     private String updateTime;
 
     /**
-     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型 * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐
+     * 资产类型。  公共资产类型： * VOICE_MODEL：音色模型 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产类型： * HUMAN_MODEL_2D：分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产类型： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型
      */
     public static final class AssetTypeEnum {
 
@@ -114,6 +114,11 @@ public class ShowAssetResponse extends SdkResponse {
          */
         public static final AssetTypeEnum MUSIC = new AssetTypeEnum("MUSIC");
 
+        /**
+         * Enum AUDIO for value: "AUDIO"
+         */
+        public static final AssetTypeEnum AUDIO = new AssetTypeEnum("AUDIO");
+
         private static final Map<String, AssetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssetTypeEnum> createStaticFields() {
@@ -131,6 +136,7 @@ public class ShowAssetResponse extends SdkResponse {
             map.put("HUMAN_MODEL_2D", HUMAN_MODEL_2D);
             map.put("BUSINESS_CARD_TEMPLET", BUSINESS_CARD_TEMPLET);
             map.put("MUSIC", MUSIC);
+            map.put("AUDIO", AUDIO);
             return Collections.unmodifiableMap(map);
         }
 
@@ -290,6 +296,91 @@ public class ShowAssetResponse extends SdkResponse {
 
     private AssetStateEnum assetState;
 
+    /**
+     * 失败原因。 * AUTOMATIC_REVIEW_REJECT：自动审核失败 * MANUAL_REVIEW_REJECT：人工审核失败
+     */
+    public static final class FailTypeEnum {
+
+        /**
+         * Enum AUTOMATIC_REVIEW_REJECT for value: "AUTOMATIC_REVIEW_REJECT"
+         */
+        public static final FailTypeEnum AUTOMATIC_REVIEW_REJECT = new FailTypeEnum("AUTOMATIC_REVIEW_REJECT");
+
+        /**
+         * Enum MANUAL_REVIEW_REJECT for value: "MANUAL_REVIEW_REJECT"
+         */
+        public static final FailTypeEnum MANUAL_REVIEW_REJECT = new FailTypeEnum("MANUAL_REVIEW_REJECT");
+
+        private static final Map<String, FailTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, FailTypeEnum> createStaticFields() {
+            Map<String, FailTypeEnum> map = new HashMap<>();
+            map.put("AUTOMATIC_REVIEW_REJECT", AUTOMATIC_REVIEW_REJECT);
+            map.put("MANUAL_REVIEW_REJECT", MANUAL_REVIEW_REJECT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        FailTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static FailTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FailTypeEnum(value));
+        }
+
+        public static FailTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof FailTypeEnum) {
+                return this.value.equals(((FailTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fail_type")
+
+    private FailTypeEnum failType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private String reason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_need_generate_cover")
+
+    private Boolean isNeedGenerateCover;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
@@ -406,7 +497,7 @@ public class ShowAssetResponse extends SdkResponse {
     }
 
     /**
-     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型 * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐
+     * 资产类型。  公共资产类型： * VOICE_MODEL：音色模型 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产类型： * HUMAN_MODEL_2D：分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产类型： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型
      * @return assetType
      */
     public AssetTypeEnum getAssetType() {
@@ -432,6 +523,57 @@ public class ShowAssetResponse extends SdkResponse {
 
     public void setAssetState(AssetStateEnum assetState) {
         this.assetState = assetState;
+    }
+
+    public ShowAssetResponse withFailType(FailTypeEnum failType) {
+        this.failType = failType;
+        return this;
+    }
+
+    /**
+     * 失败原因。 * AUTOMATIC_REVIEW_REJECT：自动审核失败 * MANUAL_REVIEW_REJECT：人工审核失败
+     * @return failType
+     */
+    public FailTypeEnum getFailType() {
+        return failType;
+    }
+
+    public void setFailType(FailTypeEnum failType) {
+        this.failType = failType;
+    }
+
+    public ShowAssetResponse withReason(String reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    /**
+     * 冻结/解冻/失败 原因。
+     * @return reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public ShowAssetResponse withIsNeedGenerateCover(Boolean isNeedGenerateCover) {
+        this.isNeedGenerateCover = isNeedGenerateCover;
+        return this;
+    }
+
+    /**
+     * 是否需要资产库生成封面图片。 > * 当前支持自动生成封面图片的资产类型包括VIDEO
+     * @return isNeedGenerateCover
+     */
+    public Boolean getIsNeedGenerateCover() {
+        return isNeedGenerateCover;
+    }
+
+    public void setIsNeedGenerateCover(Boolean isNeedGenerateCover) {
+        this.isNeedGenerateCover = isNeedGenerateCover;
     }
 
     public ShowAssetResponse withTags(List<String> tags) {
@@ -591,6 +733,8 @@ public class ShowAssetResponse extends SdkResponse {
             && Objects.equals(this.assetDescription, that.assetDescription)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetState, that.assetState)
+            && Objects.equals(this.failType, that.failType) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
             && Objects.equals(this.systemProperties, that.systemProperties) && Objects.equals(this.files, that.files)
             && Objects.equals(this.xRequestId, that.xRequestId);
@@ -605,6 +749,9 @@ public class ShowAssetResponse extends SdkResponse {
             updateTime,
             assetType,
             assetState,
+            failType,
+            reason,
+            isNeedGenerateCover,
             tags,
             assetExtraMeta,
             systemProperties,
@@ -623,6 +770,9 @@ public class ShowAssetResponse extends SdkResponse {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
+        sb.append("    failType: ").append(toIndentedString(failType)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    isNeedGenerateCover: ").append(toIndentedString(isNeedGenerateCover)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
         sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");

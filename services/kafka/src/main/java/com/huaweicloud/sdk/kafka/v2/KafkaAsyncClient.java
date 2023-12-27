@@ -33,6 +33,8 @@ import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
@@ -125,6 +127,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
@@ -639,6 +643,36 @@ public class KafkaAsyncClient {
         CreateReassignmentTaskRequest request) {
         return new AsyncInvoker<CreateReassignmentTaskRequest, CreateReassignmentTaskResponse>(request,
             KafkaMeta.createReassignmentTask, hcClient);
+    }
+
+    /**
+     * 实例缩容
+     *
+     * 实例缩容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateShrinkageJobRequest 请求对象
+     * @return CompletableFuture<CreateShrinkageJobResponse>
+     */
+    public CompletableFuture<CreateShrinkageJobResponse> createShrinkageJobAsync(CreateShrinkageJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.createShrinkageJob);
+    }
+
+    /**
+     * 实例缩容
+     *
+     * 实例缩容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateShrinkageJobRequest 请求对象
+     * @return AsyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse>
+     */
+    public AsyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse> createShrinkageJobAsyncInvoker(
+        CreateShrinkageJobRequest request) {
+        return new AsyncInvoker<CreateShrinkageJobRequest, CreateShrinkageJobResponse>(request,
+            KafkaMeta.createShrinkageJob, hcClient);
     }
 
     /**
@@ -2050,6 +2084,37 @@ public class KafkaAsyncClient {
         ShowPartitionMessageRequest request) {
         return new AsyncInvoker<ShowPartitionMessageRequest, ShowPartitionMessageResponse>(request,
             KafkaMeta.showPartitionMessage, hcClient);
+    }
+
+    /**
+     * 实例缩容前置检查
+     *
+     * 实例缩容前置检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowShrinkCheckResultRequest 请求对象
+     * @return CompletableFuture<ShowShrinkCheckResultResponse>
+     */
+    public CompletableFuture<ShowShrinkCheckResultResponse> showShrinkCheckResultAsync(
+        ShowShrinkCheckResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showShrinkCheckResult);
+    }
+
+    /**
+     * 实例缩容前置检查
+     *
+     * 实例缩容前置检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowShrinkCheckResultRequest 请求对象
+     * @return AsyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse>
+     */
+    public AsyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> showShrinkCheckResultAsyncInvoker(
+        ShowShrinkCheckResultRequest request) {
+        return new AsyncInvoker<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse>(request,
+            KafkaMeta.showShrinkCheckResult, hcClient);
     }
 
     /**

@@ -30,86 +30,6 @@ public class VideoScriptBaseInfo {
 
     private String scriptDescription;
 
-    /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频
-     */
-    public static final class VideoMakingTypeEnum {
-
-        /**
-         * Enum MODEL for value: "MODEL"
-         */
-        public static final VideoMakingTypeEnum MODEL = new VideoMakingTypeEnum("MODEL");
-
-        /**
-         * Enum PICTURE for value: "PICTURE"
-         */
-        public static final VideoMakingTypeEnum PICTURE = new VideoMakingTypeEnum("PICTURE");
-
-        private static final Map<String, VideoMakingTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, VideoMakingTypeEnum> createStaticFields() {
-            Map<String, VideoMakingTypeEnum> map = new HashMap<>();
-            map.put("MODEL", MODEL);
-            map.put("PICTURE", PICTURE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        VideoMakingTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static VideoMakingTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoMakingTypeEnum(value));
-        }
-
-        public static VideoMakingTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof VideoMakingTypeEnum) {
-                return this.value.equals(((VideoMakingTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "video_making_type")
-
-    private VideoMakingTypeEnum videoMakingType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "human_image")
-
-    private String humanImage;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_asset_id")
 
@@ -191,6 +111,21 @@ public class VideoScriptBaseInfo {
     private ModelAssetTypeEnum modelAssetType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "script_cover_url")
+
+    private String scriptCoverUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "script_type")
+
+    private String scriptType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text")
+
+    private String text;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -251,40 +186,6 @@ public class VideoScriptBaseInfo {
         this.scriptDescription = scriptDescription;
     }
 
-    public VideoScriptBaseInfo withVideoMakingType(VideoMakingTypeEnum videoMakingType) {
-        this.videoMakingType = videoMakingType;
-        return this;
-    }
-
-    /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频
-     * @return videoMakingType
-     */
-    public VideoMakingTypeEnum getVideoMakingType() {
-        return videoMakingType;
-    }
-
-    public void setVideoMakingType(VideoMakingTypeEnum videoMakingType) {
-        this.videoMakingType = videoMakingType;
-    }
-
-    public VideoScriptBaseInfo withHumanImage(String humanImage) {
-        this.humanImage = humanImage;
-        return this;
-    }
-
-    /**
-     * 人物照片，需要Base64编码。
-     * @return humanImage
-     */
-    public String getHumanImage() {
-        return humanImage;
-    }
-
-    public void setHumanImage(String humanImage) {
-        this.humanImage = humanImage;
-    }
-
     public VideoScriptBaseInfo withModelAssetId(String modelAssetId) {
         this.modelAssetId = modelAssetId;
         return this;
@@ -317,6 +218,57 @@ public class VideoScriptBaseInfo {
 
     public void setModelAssetType(ModelAssetTypeEnum modelAssetType) {
         this.modelAssetType = modelAssetType;
+    }
+
+    public VideoScriptBaseInfo withScriptCoverUrl(String scriptCoverUrl) {
+        this.scriptCoverUrl = scriptCoverUrl;
+        return this;
+    }
+
+    /**
+     * 剧本封面下载url。
+     * @return scriptCoverUrl
+     */
+    public String getScriptCoverUrl() {
+        return scriptCoverUrl;
+    }
+
+    public void setScriptCoverUrl(String scriptCoverUrl) {
+        this.scriptCoverUrl = scriptCoverUrl;
+    }
+
+    public VideoScriptBaseInfo withScriptType(String scriptType) {
+        this.scriptType = scriptType;
+        return this;
+    }
+
+    /**
+     * 脚本类型，即视频制作的驱动方式。默认TEXT * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
+     * @return scriptType
+     */
+    public String getScriptType() {
+        return scriptType;
+    }
+
+    public void setScriptType(String scriptType) {
+        this.scriptType = scriptType;
+    }
+
+    public VideoScriptBaseInfo withText(String text) {
+        this.text = text;
+        return this;
+    }
+
+    /**
+     * 台词脚本。
+     * @return text
+     */
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     public VideoScriptBaseInfo withCreateTime(String createTime) {
@@ -364,9 +316,10 @@ public class VideoScriptBaseInfo {
         VideoScriptBaseInfo that = (VideoScriptBaseInfo) obj;
         return Objects.equals(this.scriptId, that.scriptId) && Objects.equals(this.scriptName, that.scriptName)
             && Objects.equals(this.scriptDescription, that.scriptDescription)
-            && Objects.equals(this.videoMakingType, that.videoMakingType)
-            && Objects.equals(this.humanImage, that.humanImage) && Objects.equals(this.modelAssetId, that.modelAssetId)
+            && Objects.equals(this.modelAssetId, that.modelAssetId)
             && Objects.equals(this.modelAssetType, that.modelAssetType)
+            && Objects.equals(this.scriptCoverUrl, that.scriptCoverUrl)
+            && Objects.equals(this.scriptType, that.scriptType) && Objects.equals(this.text, that.text)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
@@ -375,10 +328,11 @@ public class VideoScriptBaseInfo {
         return Objects.hash(scriptId,
             scriptName,
             scriptDescription,
-            videoMakingType,
-            humanImage,
             modelAssetId,
             modelAssetType,
+            scriptCoverUrl,
+            scriptType,
+            text,
             createTime,
             updateTime);
     }
@@ -390,10 +344,11 @@ public class VideoScriptBaseInfo {
         sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
         sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("    scriptDescription: ").append(toIndentedString(scriptDescription)).append("\n");
-        sb.append("    videoMakingType: ").append(toIndentedString(videoMakingType)).append("\n");
-        sb.append("    humanImage: ").append(toIndentedString(humanImage)).append("\n");
         sb.append("    modelAssetId: ").append(toIndentedString(modelAssetId)).append("\n");
         sb.append("    modelAssetType: ").append(toIndentedString(modelAssetType)).append("\n");
+        sb.append("    scriptCoverUrl: ").append(toIndentedString(scriptCoverUrl)).append("\n");
+        sb.append("    scriptType: ").append(toIndentedString(scriptType)).append("\n");
+        sb.append("    text: ").append(toIndentedString(text)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

@@ -38,7 +38,7 @@ public class MetricData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
-    private Integer timestamp;
+    private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -130,7 +130,7 @@ public class MetricData {
         this.variance = variance;
     }
 
-    public MetricData withTimestamp(Integer timestamp) {
+    public MetricData withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -139,11 +139,11 @@ public class MetricData {
      * 指标采集时间，UNIX时间戳，单位毫秒。
      * @return timestamp
      */
-    public Integer getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Integer timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 

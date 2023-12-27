@@ -435,7 +435,7 @@ public class NodeSpec {
     }
 
     /**
-     * 云服务器组ID，若指定，将节点创建在该云服务器组下
+     * 云服务器组ID，若指定，将节点创建在该云服务器组下 > 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置
      * @return ecsGroupId
      */
     public String getEcsGroupId() {

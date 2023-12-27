@@ -685,7 +685,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 产品ID。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
+     * 产品ID。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,cmcc,hws_eu,g42,hk_g42,tm,hk_tm,ocb,hws_ocb) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:hk_sbc,sbc,otc)
      * @return productId
      */
     public String getProductId() {

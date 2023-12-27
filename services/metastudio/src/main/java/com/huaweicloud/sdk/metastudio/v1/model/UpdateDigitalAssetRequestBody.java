@@ -29,7 +29,7 @@ public class UpdateDigitalAssetRequestBody {
     private String assetDescription;
 
     /**
-     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可更新） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐
+     * 资产类型。  公共资产类型： * VOICE_MODEL：音色模型（仅系统管理员可上传，普通租户仅可查询） * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产： * HUMAN_MODEL_2D: 分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型
      */
     public static final class AssetTypeEnum {
 
@@ -98,6 +98,11 @@ public class UpdateDigitalAssetRequestBody {
          */
         public static final AssetTypeEnum MUSIC = new AssetTypeEnum("MUSIC");
 
+        /**
+         * Enum AUDIO for value: "AUDIO"
+         */
+        public static final AssetTypeEnum AUDIO = new AssetTypeEnum("AUDIO");
+
         private static final Map<String, AssetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssetTypeEnum> createStaticFields() {
@@ -115,6 +120,7 @@ public class UpdateDigitalAssetRequestBody {
             map.put("HUMAN_MODEL_2D", HUMAN_MODEL_2D);
             map.put("BUSINESS_CARD_TEMPLET", BUSINESS_CARD_TEMPLET);
             map.put("MUSIC", MUSIC);
+            map.put("AUDIO", AUDIO);
             return Collections.unmodifiableMap(map);
         }
 
@@ -250,6 +256,16 @@ public class UpdateDigitalAssetRequestBody {
     private String assetOwner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_need_generate_cover")
+
+    private Boolean isNeedGenerateCover;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_config")
+
+    private ReviewConfig reviewConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<String> tags = null;
@@ -304,7 +320,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可更新） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型 * COMMON_FILE：通用文件 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐
+     * 资产类型。  公共资产类型： * VOICE_MODEL：音色模型（仅系统管理员可上传，普通租户仅可查询） * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产： * HUMAN_MODEL_2D: 分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型
      * @return assetType
      */
     public AssetTypeEnum getAssetType() {
@@ -338,7 +354,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 项目ID。
+     * 项目ID。 > * 仅管理员帐号可设置此参数。
      * @return assetOwner
      */
     public String getAssetOwner() {
@@ -347,6 +363,49 @@ public class UpdateDigitalAssetRequestBody {
 
     public void setAssetOwner(String assetOwner) {
         this.assetOwner = assetOwner;
+    }
+
+    public UpdateDigitalAssetRequestBody withIsNeedGenerateCover(Boolean isNeedGenerateCover) {
+        this.isNeedGenerateCover = isNeedGenerateCover;
+        return this;
+    }
+
+    /**
+     * 是否需要资产库生成封面图片。 > * 当前支持自动生成封面图片的资产类型包括VIDEO
+     * @return isNeedGenerateCover
+     */
+    public Boolean getIsNeedGenerateCover() {
+        return isNeedGenerateCover;
+    }
+
+    public void setIsNeedGenerateCover(Boolean isNeedGenerateCover) {
+        this.isNeedGenerateCover = isNeedGenerateCover;
+    }
+
+    public UpdateDigitalAssetRequestBody withReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+        return this;
+    }
+
+    public UpdateDigitalAssetRequestBody withReviewConfig(Consumer<ReviewConfig> reviewConfigSetter) {
+        if (this.reviewConfig == null) {
+            this.reviewConfig = new ReviewConfig();
+            reviewConfigSetter.accept(this.reviewConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reviewConfig
+     * @return reviewConfig
+     */
+    public ReviewConfig getReviewConfig() {
+        return reviewConfig;
+    }
+
+    public void setReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
     }
 
     public UpdateDigitalAssetRequestBody withTags(List<String> tags) {
@@ -453,7 +512,9 @@ public class UpdateDigitalAssetRequestBody {
         return Objects.equals(this.assetName, that.assetName)
             && Objects.equals(this.assetDescription, that.assetDescription)
             && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetState, that.assetState)
-            && Objects.equals(this.assetOwner, that.assetOwner) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.assetOwner, that.assetOwner)
+            && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover)
+            && Objects.equals(this.reviewConfig, that.reviewConfig) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
             && Objects.equals(this.systemProperties, that.systemProperties);
     }
@@ -465,6 +526,8 @@ public class UpdateDigitalAssetRequestBody {
             assetType,
             assetState,
             assetOwner,
+            isNeedGenerateCover,
+            reviewConfig,
             tags,
             assetExtraMeta,
             systemProperties);
@@ -479,6 +542,8 @@ public class UpdateDigitalAssetRequestBody {
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
         sb.append("    assetOwner: ").append(toIndentedString(assetOwner)).append("\n");
+        sb.append("    isNeedGenerateCover: ").append(toIndentedString(isNeedGenerateCover)).append("\n");
+        sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
         sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");

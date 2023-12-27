@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.aad.v1;
 
+import com.huaweicloud.sdk.aad.v1.model.AddBlackWhiteIpListRequest;
+import com.huaweicloud.sdk.aad.v1.model.AddBlackWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.AddPolicyBlackAndWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.AddPolicyBlackAndWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.AlarmBody;
@@ -11,12 +13,21 @@ import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleResponse;
 import com.huaweicloud.sdk.aad.v1.model.BatchIdBody;
 import com.huaweicloud.sdk.aad.v1.model.BatchTransferRuleBody;
+import com.huaweicloud.sdk.aad.v1.model.BlackWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.BlackWhiteIpRequestBody;
+import com.huaweicloud.sdk.aad.v1.model.CadDomainSwitchRequest;
+import com.huaweicloud.sdk.aad.v1.model.CertificateBody;
+import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainRequest;
+import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainResponse;
+import com.huaweicloud.sdk.aad.v1.model.CreateCertificateRequest;
+import com.huaweicloud.sdk.aad.v1.model.CreateCertificateResponse;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequestBody;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeleteAlarmConfigRequest;
 import com.huaweicloud.sdk.aad.v1.model.DeleteAlarmConfigResponse;
+import com.huaweicloud.sdk.aad.v1.model.DeleteBlackWhiteIpListRequest;
+import com.huaweicloud.sdk.aad.v1.model.DeleteBlackWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyBlackAndWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyBlackAndWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyRequest;
@@ -27,6 +38,7 @@ import com.huaweicloud.sdk.aad.v1.model.DomainRealServerInfo;
 import com.huaweicloud.sdk.aad.v1.model.ExecuteUnblockIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.ExecuteUnblockIpRequestBody;
 import com.huaweicloud.sdk.aad.v1.model.ExecuteUnblockIpResponse;
+import com.huaweicloud.sdk.aad.v1.model.HostBody;
 import com.huaweicloud.sdk.aad.v1.model.IpBindingBody;
 import com.huaweicloud.sdk.aad.v1.model.ListBlockIpsRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListBlockIpsResponse;
@@ -46,10 +58,14 @@ import com.huaweicloud.sdk.aad.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListPolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.ListProtectedIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListProtectedIpResponse;
+import com.huaweicloud.sdk.aad.v1.model.ListSourceIpsRequest;
+import com.huaweicloud.sdk.aad.v1.model.ListSourceIpsResponse;
 import com.huaweicloud.sdk.aad.v1.model.ListUnblockQuotaStatisticsRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListUnblockQuotaStatisticsResponse;
 import com.huaweicloud.sdk.aad.v1.model.ListUnboundProtectedIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListUnboundProtectedIpResponse;
+import com.huaweicloud.sdk.aad.v1.model.ModifyDomainWebSwitchRequest;
+import com.huaweicloud.sdk.aad.v1.model.ModifyDomainWebSwitchResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsRequest;
@@ -234,6 +250,31 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> addBlackWhiteIpList =
+        genForaddBlackWhiteIpList();
+
+    private static HttpRequestDef<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> genForaddBlackWhiteIpList() {
+        // basic
+        HttpRequestDef.Builder<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddBlackWhiteIpListRequest.class, AddBlackWhiteIpListResponse.class)
+                .withName("AddBlackWhiteIpList")
+                .withUri("/v1/{project_id}/aad/external/bwlist")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BlackWhiteIpListRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BlackWhiteIpListRequest.class),
+            f -> f.withMarshaller(AddBlackWhiteIpListRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddPolicyBlackAndWhiteIpListRequest, AddPolicyBlackAndWhiteIpListResponse> addPolicyBlackAndWhiteIpList =
         genForaddPolicyBlackAndWhiteIpList();
 
@@ -385,6 +426,56 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAadDomainRequest, CreateAadDomainResponse> createAadDomain =
+        genForcreateAadDomain();
+
+    private static HttpRequestDef<CreateAadDomainRequest, CreateAadDomainResponse> genForcreateAadDomain() {
+        // basic
+        HttpRequestDef.Builder<CreateAadDomainRequest, CreateAadDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAadDomainRequest.class, CreateAadDomainResponse.class)
+                .withName("CreateAadDomain")
+                .withUri("/v1/{project_id}/aad/external/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<HostBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HostBody.class),
+            f -> f.withMarshaller(CreateAadDomainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
+        genForcreateCertificate();
+
+    private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForcreateCertificate() {
+        // basic
+        HttpRequestDef.Builder<CreateCertificateRequest, CreateCertificateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCertificateRequest.class, CreateCertificateResponse.class)
+                .withName("CreateCertificate")
+                .withUri("/v1/{project_id}/aad/external/domains/certificate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CertificateBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CertificateBody.class),
+            f -> f.withMarshaller(CreateCertificateRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> createPolicy = genForcreatePolicy();
 
     private static HttpRequestDef<CreatePolicyRequest, CreatePolicyResponse> genForcreatePolicy() {
@@ -421,6 +512,31 @@ public class AadMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> deleteBlackWhiteIpList =
+        genFordeleteBlackWhiteIpList();
+
+    private static HttpRequestDef<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> genFordeleteBlackWhiteIpList() {
+        // basic
+        HttpRequestDef.Builder<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteBlackWhiteIpListRequest.class, DeleteBlackWhiteIpListResponse.class)
+            .withName("DeleteBlackWhiteIpList")
+            .withUri("/v1/{project_id}/aad/external/bwlist")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BlackWhiteIpListRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BlackWhiteIpListRequest.class),
+            f -> f.withMarshaller(DeleteBlackWhiteIpListRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
 
         // response
 
@@ -770,6 +886,24 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSourceIpsRequest, ListSourceIpsResponse> listSourceIps =
+        genForlistSourceIps();
+
+    private static HttpRequestDef<ListSourceIpsRequest, ListSourceIpsResponse> genForlistSourceIps() {
+        // basic
+        HttpRequestDef.Builder<ListSourceIpsRequest, ListSourceIpsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSourceIpsRequest.class, ListSourceIpsResponse.class)
+                .withName("ListSourceIps")
+                .withUri("/v1/{project_id}/aad/external/source-ip")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse> listUnboundProtectedIp =
         genForlistUnboundProtectedIp();
 
@@ -802,6 +936,31 @@ public class AadMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUnboundProtectedIpRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> modifyDomainWebSwitch =
+        genFormodifyDomainWebSwitch();
+
+    private static HttpRequestDef<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> genFormodifyDomainWebSwitch() {
+        // basic
+        HttpRequestDef.Builder<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ModifyDomainWebSwitchRequest.class, ModifyDomainWebSwitchResponse.class)
+            .withName("ModifyDomainWebSwitch")
+            .withUri("/v1/{project_id}/aad/external/domains/switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CadDomainSwitchRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CadDomainSwitchRequest.class),
+            f -> f.withMarshaller(ModifyDomainWebSwitchRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

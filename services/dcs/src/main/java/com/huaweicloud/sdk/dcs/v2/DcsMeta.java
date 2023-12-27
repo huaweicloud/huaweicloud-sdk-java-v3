@@ -83,6 +83,8 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DownloadBackupFilesReq;
+import com.huaweicloud.sdk.dcs.v2.model.DownloadSslCertRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DownloadSslCertResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExchangeInstanceIpRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExchangeInstanceIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteClusterSwitchoverRequest;
@@ -203,6 +205,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyTaskDetailsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowJobInfoRequest;
@@ -260,8 +264,11 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateSSLSwitchRequestBody;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateSslSwitchRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateSslSwitchResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaResponse;
 
@@ -1137,6 +1144,31 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSingleInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadSslCertRequest, DownloadSslCertResponse> downloadSslCert =
+        genFordownloadSslCert();
+
+    private static HttpRequestDef<DownloadSslCertRequest, DownloadSslCertResponse> genFordownloadSslCert() {
+        // basic
+        HttpRequestDef.Builder<DownloadSslCertRequest, DownloadSslCertResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadSslCertRequest.class, DownloadSslCertResponse.class)
+                .withName("DownloadSslCert")
+                .withUri("/v2/{project_id}/instances/{instance_id}/ssl-certs/download")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadSslCertRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
 
@@ -3059,6 +3091,31 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> showInstanceSslDetail =
+        genForshowInstanceSslDetail();
+
+    private static HttpRequestDef<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> genForshowInstanceSslDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInstanceSslDetailRequest.class, ShowInstanceSslDetailResponse.class)
+            .withName("ShowInstanceSslDetail")
+            .withUri("/v2/{project_id}/instances/{instance_id}/ssl")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceSslDetailRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfo = genForshowJobInfo();
 
     private static HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> genForshowJobInfo() {
@@ -3845,6 +3902,38 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PriorityBody.class),
             f -> f.withMarshaller(UpdateSlavePriorityRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSslSwitchRequest, UpdateSslSwitchResponse> updateSslSwitch =
+        genForupdateSslSwitch();
+
+    private static HttpRequestDef<UpdateSslSwitchRequest, UpdateSslSwitchResponse> genForupdateSslSwitch() {
+        // basic
+        HttpRequestDef.Builder<UpdateSslSwitchRequest, UpdateSslSwitchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSslSwitchRequest.class, UpdateSslSwitchResponse.class)
+                .withName("UpdateSslSwitch")
+                .withUri("/v2/{project_id}/instances/{instance_id}/ssl")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSslSwitchRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateSSLSwitchRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSSLSwitchRequestBody.class),
+            f -> f.withMarshaller(UpdateSslSwitchRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

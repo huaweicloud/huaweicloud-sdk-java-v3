@@ -122,6 +122,81 @@ public class TTSAJob {
 
     private Float contentDuration;
 
+    /**
+     * 任务类型。 * REAL_JOB：实时任务。如数字人交互。 * UNREAL_JOB：非实时任务。如数字人视频制作
+     */
+    public static final class JobTypeEnum {
+
+        /**
+         * Enum REAL_JOB for value: "REAL_JOB"
+         */
+        public static final JobTypeEnum REAL_JOB = new JobTypeEnum("REAL_JOB");
+
+        /**
+         * Enum UNREAL_JOB for value: "UNREAL_JOB"
+         */
+        public static final JobTypeEnum UNREAL_JOB = new JobTypeEnum("UNREAL_JOB");
+
+        private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, JobTypeEnum> createStaticFields() {
+            Map<String, JobTypeEnum> map = new HashMap<>();
+            map.put("REAL_JOB", REAL_JOB);
+            map.put("UNREAL_JOB", UNREAL_JOB);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        JobTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static JobTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
+        }
+
+        public static JobTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof JobTypeEnum) {
+                return this.value.equals(((JobTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_type")
+
+    private JobTypeEnum jobType;
+
     public TTSAJob withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -209,6 +284,23 @@ public class TTSAJob {
         this.contentDuration = contentDuration;
     }
 
+    public TTSAJob withJobType(JobTypeEnum jobType) {
+        this.jobType = jobType;
+        return this;
+    }
+
+    /**
+     * 任务类型。 * REAL_JOB：实时任务。如数字人交互。 * UNREAL_JOB：非实时任务。如数字人视频制作
+     * @return jobType
+     */
+    public JobTypeEnum getJobType() {
+        return jobType;
+    }
+
+    public void setJobType(JobTypeEnum jobType) {
+        this.jobType = jobType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -220,12 +312,12 @@ public class TTSAJob {
         TTSAJob that = (TTSAJob) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.state, that.state)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.contentDuration, that.contentDuration);
+            && Objects.equals(this.contentDuration, that.contentDuration) && Objects.equals(this.jobType, that.jobType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, state, startTime, endTime, contentDuration);
+        return Objects.hash(jobId, state, startTime, endTime, contentDuration, jobType);
     }
 
     @Override
@@ -237,6 +329,7 @@ public class TTSAJob {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    contentDuration: ").append(toIndentedString(contentDuration)).append("\n");
+        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -326,6 +326,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesNewDbShrinkRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesNewDbShrinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
@@ -411,6 +413,8 @@ import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartupInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartupInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.StopBackupRequest;
+import com.huaweicloud.sdk.rds.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
@@ -4903,6 +4907,37 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StopBackupRequest, StopBackupResponse> stopBackup = genForstopBackup();
+
+    private static HttpRequestDef<StopBackupRequest, StopBackupResponse> genForstopBackup() {
+        // basic
+        HttpRequestDef.Builder<StopBackupRequest, StopBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopBackupRequest.class, StopBackupResponse.class)
+                .withName("StopBackup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBackupRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBackupRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StopInstanceRequest, StopInstanceResponse> stopInstance = genForstopInstance();
 
     private static HttpRequestDef<StopInstanceRequest, StopInstanceResponse> genForstopInstance() {
@@ -7913,6 +7948,38 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDBShrinkRequestBody.class),
             f -> f.withMarshaller(SetInstancesDbShrinkRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetInstancesNewDbShrinkRequest, SetInstancesNewDbShrinkResponse> setInstancesNewDbShrink =
+        genForsetInstancesNewDbShrink();
+
+    private static HttpRequestDef<SetInstancesNewDbShrinkRequest, SetInstancesNewDbShrinkResponse> genForsetInstancesNewDbShrink() {
+        // basic
+        HttpRequestDef.Builder<SetInstancesNewDbShrinkRequest, SetInstancesNewDbShrinkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetInstancesNewDbShrinkRequest.class, SetInstancesNewDbShrinkResponse.class)
+            .withName("SetInstancesNewDbShrink")
+            .withUri("/v3.1/{project_id}/instances/{instance_id}/db-shrink")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetInstancesNewDbShrinkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<UpdateDBShrinkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDBShrinkRequestBody.class),
+            f -> f.withMarshaller(SetInstancesNewDbShrinkRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

@@ -202,7 +202,7 @@ public class BusinessCardTextConfig {
     }
 
     /**
-     * 其他信息1。可填写一些公司广告语等
+     * 其他信息2。可填写一些公司广告语等
      * @return other2
      */
     public String getOther2() {
@@ -219,7 +219,7 @@ public class BusinessCardTextConfig {
     }
 
     /**
-     * 其他信息1。可填写一些公司广告语等
+     * 其他信息3。可填写一些公司广告语等
      * @return other3
      */
     public String getOther3() {

@@ -48,6 +48,9 @@ import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobRequestBody;
+import com.huaweicloud.sdk.kafka.v2.model.CreateShrinkageJobResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateSinkTaskResponse;
@@ -152,6 +155,9 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckRequestBody;
+import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowShrinkCheckResultResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
@@ -661,6 +667,45 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PartitionReassignRequest.class),
             f -> f.withMarshaller(CreateReassignmentTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateShrinkageJobRequest, CreateShrinkageJobResponse> createShrinkageJob =
+        genForcreateShrinkageJob();
+
+    private static HttpRequestDef<CreateShrinkageJobRequest, CreateShrinkageJobResponse> genForcreateShrinkageJob() {
+        // basic
+        HttpRequestDef.Builder<CreateShrinkageJobRequest, CreateShrinkageJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateShrinkageJobRequest.class, CreateShrinkageJobResponse.class)
+                .withName("CreateShrinkageJob")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/shrink")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateShrinkageJobRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateShrinkageJobRequest.EngineEnum.class),
+            f -> f.withMarshaller(CreateShrinkageJobRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateShrinkageJobRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<CreateShrinkageJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateShrinkageJobRequestBody.class),
+            f -> f.withMarshaller(CreateShrinkageJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -2333,6 +2378,45 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionMessageRequest::getMessageOffset, (req, v) -> {
                 req.setMessageOffset(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> showShrinkCheckResult =
+        genForshowShrinkCheckResult();
+
+    private static HttpRequestDef<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> genForshowShrinkCheckResult() {
+        // basic
+        HttpRequestDef.Builder<ShowShrinkCheckResultRequest, ShowShrinkCheckResultResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowShrinkCheckResultRequest.class, ShowShrinkCheckResultResponse.class)
+            .withName("ShowShrinkCheckResult")
+            .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/shrink-check")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ShowShrinkCheckResultRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowShrinkCheckResultRequest.EngineEnum.class),
+            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getEngine, (req, v) -> {
+                req.setEngine(v);
+            }));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<ShowShrinkCheckRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowShrinkCheckRequestBody.class),
+            f -> f.withMarshaller(ShowShrinkCheckResultRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response

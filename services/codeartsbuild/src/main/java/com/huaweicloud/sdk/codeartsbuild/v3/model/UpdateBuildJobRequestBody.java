@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新构建作业配置接口请求体
+ * 更新构建任务请求体
  */
 public class UpdateBuildJobRequestBody {
 

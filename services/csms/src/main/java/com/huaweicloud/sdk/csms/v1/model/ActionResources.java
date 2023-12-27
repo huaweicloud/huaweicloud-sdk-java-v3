@@ -33,6 +33,11 @@ public class ActionResources {
 
     private List<TagItem> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_tags")
+
+    private List<SysTag> sysTags = null;
+
     public ActionResources withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -126,6 +131,39 @@ public class ActionResources {
         this.tags = tags;
     }
 
+    public ActionResources withSysTags(List<SysTag> sysTags) {
+        this.sysTags = sysTags;
+        return this;
+    }
+
+    public ActionResources addSysTagsItem(SysTag sysTagsItem) {
+        if (this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
+        this.sysTags.add(sysTagsItem);
+        return this;
+    }
+
+    public ActionResources withSysTags(Consumer<List<SysTag>> sysTagsSetter) {
+        if (this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
+        }
+        sysTagsSetter.accept(this.sysTags);
+        return this;
+    }
+
+    /**
+     * 系统标签列表，没有标签，数组默认为空
+     * @return sysTags
+     */
+    public List<SysTag> getSysTags() {
+        return sysTags;
+    }
+
+    public void setSysTags(List<SysTag> sysTags) {
+        this.sysTags = sysTags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -137,12 +175,13 @@ public class ActionResources {
         ActionResources that = (ActionResources) obj;
         return Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.resourceDetail, that.resourceDetail)
-            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourceDetail, resourceName, tags);
+        return Objects.hash(resourceId, resourceDetail, resourceName, tags, sysTags);
     }
 
     @Override
@@ -153,6 +192,7 @@ public class ActionResources {
         sb.append("    resourceDetail: ").append(toIndentedString(resourceDetail)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

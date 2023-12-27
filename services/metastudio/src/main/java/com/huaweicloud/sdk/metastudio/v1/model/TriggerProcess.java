@@ -24,7 +24,7 @@ public class TriggerProcess {
     private Integer timeWindow;
 
     /**
-     * 回复类型。 SYSTEM_REPLY：系统自动回复设置的话术
+     * 回复类型。 * SYSTEM_REPLY：系统自动回复设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER: 显示叠加图层，不影响话术。
      */
     public static final class ReplyModeEnum {
 
@@ -33,11 +33,23 @@ public class TriggerProcess {
          */
         public static final ReplyModeEnum SYSTEM_REPLY = new ReplyModeEnum("SYSTEM_REPLY");
 
+        /**
+         * Enum CALLBACK for value: "CALLBACK"
+         */
+        public static final ReplyModeEnum CALLBACK = new ReplyModeEnum("CALLBACK");
+
+        /**
+         * Enum SHOW_LAYER for value: "SHOW_LAYER"
+         */
+        public static final ReplyModeEnum SHOW_LAYER = new ReplyModeEnum("SHOW_LAYER");
+
         private static final Map<String, ReplyModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ReplyModeEnum> createStaticFields() {
             Map<String, ReplyModeEnum> map = new HashMap<>();
             map.put("SYSTEM_REPLY", SYSTEM_REPLY);
+            map.put("CALLBACK", CALLBACK);
+            map.put("SHOW_LAYER", SHOW_LAYER);
             return Collections.unmodifiableMap(map);
         }
 
@@ -93,9 +105,19 @@ public class TriggerProcess {
     private ReplyModeEnum replyMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "layer_config")
+
+    private SmartLayerConfig layerConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reply_texts")
 
     private List<String> replyTexts = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reply_audios")
+
+    private List<ReplyAudioInfo> replyAudios = null;
 
     /**
      * 回复次序 - RANDOM：随机 - ORDER：顺序循环
@@ -178,7 +200,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 处理抑制时长。单位秒。  -1 表示整场直播 0 表示无抑制，每次都触发
+     * 处理抑制时长。单位秒。 -1 表示整场直播 0 表示无抑制，每次都触发
      * minimum: -1
      * maximum: 7200
      * @return timeWindow
@@ -197,7 +219,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 回复类型。 SYSTEM_REPLY：系统自动回复设置的话术
+     * 回复类型。 * SYSTEM_REPLY：系统自动回复设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER: 显示叠加图层，不影响话术。
      * @return replyMode
      */
     public ReplyModeEnum getReplyMode() {
@@ -206,6 +228,32 @@ public class TriggerProcess {
 
     public void setReplyMode(ReplyModeEnum replyMode) {
         this.replyMode = replyMode;
+    }
+
+    public TriggerProcess withLayerConfig(SmartLayerConfig layerConfig) {
+        this.layerConfig = layerConfig;
+        return this;
+    }
+
+    public TriggerProcess withLayerConfig(Consumer<SmartLayerConfig> layerConfigSetter) {
+        if (this.layerConfig == null) {
+            this.layerConfig = new SmartLayerConfig();
+            layerConfigSetter.accept(this.layerConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get layerConfig
+     * @return layerConfig
+     */
+    public SmartLayerConfig getLayerConfig() {
+        return layerConfig;
+    }
+
+    public void setLayerConfig(SmartLayerConfig layerConfig) {
+        this.layerConfig = layerConfig;
     }
 
     public TriggerProcess withReplyTexts(List<String> replyTexts) {
@@ -241,6 +289,39 @@ public class TriggerProcess {
         this.replyTexts = replyTexts;
     }
 
+    public TriggerProcess withReplyAudios(List<ReplyAudioInfo> replyAudios) {
+        this.replyAudios = replyAudios;
+        return this;
+    }
+
+    public TriggerProcess addReplyAudiosItem(ReplyAudioInfo replyAudiosItem) {
+        if (this.replyAudios == null) {
+            this.replyAudios = new ArrayList<>();
+        }
+        this.replyAudios.add(replyAudiosItem);
+        return this;
+    }
+
+    public TriggerProcess withReplyAudios(Consumer<List<ReplyAudioInfo>> replyAudiosSetter) {
+        if (this.replyAudios == null) {
+            this.replyAudios = new ArrayList<>();
+        }
+        replyAudiosSetter.accept(this.replyAudios);
+        return this;
+    }
+
+    /**
+     * 回复音频集。填写audio_url。
+     * @return replyAudios
+     */
+    public List<ReplyAudioInfo> getReplyAudios() {
+        return replyAudios;
+    }
+
+    public void setReplyAudios(List<ReplyAudioInfo> replyAudios) {
+        this.replyAudios = replyAudios;
+    }
+
     public TriggerProcess withReplyOrder(ReplyOrderEnum replyOrder) {
         this.replyOrder = replyOrder;
         return this;
@@ -268,12 +349,13 @@ public class TriggerProcess {
         }
         TriggerProcess that = (TriggerProcess) obj;
         return Objects.equals(this.timeWindow, that.timeWindow) && Objects.equals(this.replyMode, that.replyMode)
-            && Objects.equals(this.replyTexts, that.replyTexts) && Objects.equals(this.replyOrder, that.replyOrder);
+            && Objects.equals(this.layerConfig, that.layerConfig) && Objects.equals(this.replyTexts, that.replyTexts)
+            && Objects.equals(this.replyAudios, that.replyAudios) && Objects.equals(this.replyOrder, that.replyOrder);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(timeWindow, replyMode, replyTexts, replyOrder);
+        return Objects.hash(timeWindow, replyMode, layerConfig, replyTexts, replyAudios, replyOrder);
     }
 
     @Override
@@ -282,7 +364,9 @@ public class TriggerProcess {
         sb.append("class TriggerProcess {\n");
         sb.append("    timeWindow: ").append(toIndentedString(timeWindow)).append("\n");
         sb.append("    replyMode: ").append(toIndentedString(replyMode)).append("\n");
+        sb.append("    layerConfig: ").append(toIndentedString(layerConfig)).append("\n");
         sb.append("    replyTexts: ").append(toIndentedString(replyTexts)).append("\n");
+        sb.append("    replyAudios: ").append(toIndentedString(replyAudios)).append("\n");
         sb.append("    replyOrder: ").append(toIndentedString(replyOrder)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class ShowAuthorizationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization")
 
-    private Object authorization;
+    private AgencyAuthorizeInfo authorization;
 
-    public ShowAuthorizationResponse withAuthorization(Object authorization) {
+    public ShowAuthorizationResponse withAuthorization(AgencyAuthorizeInfo authorization) {
         this.authorization = authorization;
         return this;
     }
 
+    public ShowAuthorizationResponse withAuthorization(Consumer<AgencyAuthorizeInfo> authorizationSetter) {
+        if (this.authorization == null) {
+            this.authorization = new AgencyAuthorizeInfo();
+            authorizationSetter.accept(this.authorization);
+        }
+
+        return this;
+    }
+
     /**
-     * 委托授权信息。
+     * Get authorization
      * @return authorization
      */
-    public Object getAuthorization() {
+    public AgencyAuthorizeInfo getAuthorization() {
         return authorization;
     }
 
-    public void setAuthorization(Object authorization) {
+    public void setAuthorization(AgencyAuthorizeInfo authorization) {
         this.authorization = authorization;
     }
 

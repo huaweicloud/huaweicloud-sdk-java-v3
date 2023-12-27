@@ -29,7 +29,7 @@ public class CreateSmartLiveRoomReq {
     private String roomDescription;
 
     /**
-     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。
+     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
      */
     public static final class RoomTypeEnum {
 
@@ -43,12 +43,18 @@ public class CreateSmartLiveRoomReq {
          */
         public static final RoomTypeEnum TEMP = new RoomTypeEnum("TEMP");
 
+        /**
+         * Enum TEMPLATE for value: "TEMPLATE"
+         */
+        public static final RoomTypeEnum TEMPLATE = new RoomTypeEnum("TEMPLATE");
+
         private static final Map<String, RoomTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RoomTypeEnum> createStaticFields() {
             Map<String, RoomTypeEnum> map = new HashMap<>();
             map.put("NORMAL", NORMAL);
             map.put("TEMP", TEMP);
+            map.put("TEMPLATE", TEMPLATE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -128,6 +134,31 @@ public class CreateSmartLiveRoomReq {
 
     private List<String> outputUrls = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_keys")
+
+    private List<String> streamKeys = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_model_asset_ids")
+
+    private List<String> backupModelAssetIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "live_event_callback_config")
+
+    private LiveEventCallBackConfig liveEventCallbackConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_config")
+
+    private ReviewConfig reviewConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "shared_config")
+
+    private SharedConfig sharedConfig;
+
     public CreateSmartLiveRoomReq withRoomName(String roomName) {
         this.roomName = roomName;
         return this;
@@ -168,7 +199,7 @@ public class CreateSmartLiveRoomReq {
     }
 
     /**
-     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。
+     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
      * @return roomType
      */
     public RoomTypeEnum getRoomType() {
@@ -319,7 +350,7 @@ public class CreateSmartLiveRoomReq {
     }
 
     /**
-     * 视频推流第三方直播平台地址。
+     * RTMP视频推流第三方直播平台地址。
      * @return outputUrls
      */
     public List<String> getOutputUrls() {
@@ -328,6 +359,151 @@ public class CreateSmartLiveRoomReq {
 
     public void setOutputUrls(List<String> outputUrls) {
         this.outputUrls = outputUrls;
+    }
+
+    public CreateSmartLiveRoomReq withStreamKeys(List<String> streamKeys) {
+        this.streamKeys = streamKeys;
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq addStreamKeysItem(String streamKeysItem) {
+        if (this.streamKeys == null) {
+            this.streamKeys = new ArrayList<>();
+        }
+        this.streamKeys.add(streamKeysItem);
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq withStreamKeys(Consumer<List<String>> streamKeysSetter) {
+        if (this.streamKeys == null) {
+            this.streamKeys = new ArrayList<>();
+        }
+        streamKeysSetter.accept(this.streamKeys);
+        return this;
+    }
+
+    /**
+     * RTMP视频推流第三方直播平台流秘钥，与推流地址对应。
+     * @return streamKeys
+     */
+    public List<String> getStreamKeys() {
+        return streamKeys;
+    }
+
+    public void setStreamKeys(List<String> streamKeys) {
+        this.streamKeys = streamKeys;
+    }
+
+    public CreateSmartLiveRoomReq withBackupModelAssetIds(List<String> backupModelAssetIds) {
+        this.backupModelAssetIds = backupModelAssetIds;
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq addBackupModelAssetIdsItem(String backupModelAssetIdsItem) {
+        if (this.backupModelAssetIds == null) {
+            this.backupModelAssetIds = new ArrayList<>();
+        }
+        this.backupModelAssetIds.add(backupModelAssetIdsItem);
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq withBackupModelAssetIds(Consumer<List<String>> backupModelAssetIdsSetter) {
+        if (this.backupModelAssetIds == null) {
+            this.backupModelAssetIds = new ArrayList<>();
+        }
+        backupModelAssetIdsSetter.accept(this.backupModelAssetIds);
+        return this;
+    }
+
+    /**
+     * 主播轮换时备选主播数字人资产ID（仅形象资产，不包含音色）。
+     * @return backupModelAssetIds
+     */
+    public List<String> getBackupModelAssetIds() {
+        return backupModelAssetIds;
+    }
+
+    public void setBackupModelAssetIds(List<String> backupModelAssetIds) {
+        this.backupModelAssetIds = backupModelAssetIds;
+    }
+
+    public CreateSmartLiveRoomReq withLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+        this.liveEventCallbackConfig = liveEventCallbackConfig;
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq withLiveEventCallbackConfig(
+        Consumer<LiveEventCallBackConfig> liveEventCallbackConfigSetter) {
+        if (this.liveEventCallbackConfig == null) {
+            this.liveEventCallbackConfig = new LiveEventCallBackConfig();
+            liveEventCallbackConfigSetter.accept(this.liveEventCallbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get liveEventCallbackConfig
+     * @return liveEventCallbackConfig
+     */
+    public LiveEventCallBackConfig getLiveEventCallbackConfig() {
+        return liveEventCallbackConfig;
+    }
+
+    public void setLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+        this.liveEventCallbackConfig = liveEventCallbackConfig;
+    }
+
+    public CreateSmartLiveRoomReq withReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq withReviewConfig(Consumer<ReviewConfig> reviewConfigSetter) {
+        if (this.reviewConfig == null) {
+            this.reviewConfig = new ReviewConfig();
+            reviewConfigSetter.accept(this.reviewConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reviewConfig
+     * @return reviewConfig
+     */
+    public ReviewConfig getReviewConfig() {
+        return reviewConfig;
+    }
+
+    public void setReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+    }
+
+    public CreateSmartLiveRoomReq withSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq withSharedConfig(Consumer<SharedConfig> sharedConfigSetter) {
+        if (this.sharedConfig == null) {
+            this.sharedConfig = new SharedConfig();
+            sharedConfigSetter.accept(this.sharedConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sharedConfig
+     * @return sharedConfig
+     */
+    public SharedConfig getSharedConfig() {
+        return sharedConfig;
+    }
+
+    public void setSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
     }
 
     @Override
@@ -344,7 +520,11 @@ public class CreateSmartLiveRoomReq {
             && Objects.equals(this.roomType, that.roomType) && Objects.equals(this.sceneScripts, that.sceneScripts)
             && Objects.equals(this.interactionRules, that.interactionRules)
             && Objects.equals(this.playPolicy, that.playPolicy) && Objects.equals(this.videoConfig, that.videoConfig)
-            && Objects.equals(this.outputUrls, that.outputUrls);
+            && Objects.equals(this.outputUrls, that.outputUrls) && Objects.equals(this.streamKeys, that.streamKeys)
+            && Objects.equals(this.backupModelAssetIds, that.backupModelAssetIds)
+            && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
+            && Objects.equals(this.reviewConfig, that.reviewConfig)
+            && Objects.equals(this.sharedConfig, that.sharedConfig);
     }
 
     @Override
@@ -356,7 +536,12 @@ public class CreateSmartLiveRoomReq {
             interactionRules,
             playPolicy,
             videoConfig,
-            outputUrls);
+            outputUrls,
+            streamKeys,
+            backupModelAssetIds,
+            liveEventCallbackConfig,
+            reviewConfig,
+            sharedConfig);
     }
 
     @Override
@@ -371,6 +556,11 @@ public class CreateSmartLiveRoomReq {
         sb.append("    playPolicy: ").append(toIndentedString(playPolicy)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
         sb.append("    outputUrls: ").append(toIndentedString(outputUrls)).append("\n");
+        sb.append("    streamKeys: ").append(toIndentedString(streamKeys)).append("\n");
+        sb.append("    backupModelAssetIds: ").append(toIndentedString(backupModelAssetIds)).append("\n");
+        sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
+        sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
+        sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

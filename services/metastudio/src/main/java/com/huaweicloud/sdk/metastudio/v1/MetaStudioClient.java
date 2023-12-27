@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CancelPhotoDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CheckTextLanguageResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
@@ -15,8 +17,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateFacialAnimationsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoRequest;
@@ -39,6 +45,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardReq
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
@@ -53,6 +61,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListAssetsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanVideoRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListDigitalHumanVideoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListFacialAnimationsDataResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRequest;
@@ -103,6 +117,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateInteractionRuleGroupResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateVideoScriptRequest;
@@ -124,7 +140,10 @@ public class MetaStudioClient {
     /**
      * 创建资产
      *
-     * 该接口用于在资产库中添加上传新的媒体资产。可上传的资产类型包括：数字人模型、素材、视频、图片、场景等。
+     * 该接口用于在资产库中添加上传新的媒体资产。可上传的资产类型包括：分身数字人模型、背景图片、素材图片、素材视频、PPT等。
+     * * &gt; 资产类型是IMAGE时，通过system_properties来区分背景图片（BACKGROUND_IMG）、素材图片（MATERIAL_IMG）。
+     * * &gt; 资产类型是VIDEO时，通过system_properties来区分素材视频（MATERIAL_VIDEO）、名片视频（BUSSINESS_CARD_VIDEO）。
+     * * &gt; MetaStudio平台生成的视频，system_properties带CREATED_BY_PLATFORM。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -138,7 +157,10 @@ public class MetaStudioClient {
     /**
      * 创建资产
      *
-     * 该接口用于在资产库中添加上传新的媒体资产。可上传的资产类型包括：数字人模型、素材、视频、图片、场景等。
+     * 该接口用于在资产库中添加上传新的媒体资产。可上传的资产类型包括：分身数字人模型、背景图片、素材图片、素材视频、PPT等。
+     * * &gt; 资产类型是IMAGE时，通过system_properties来区分背景图片（BACKGROUND_IMG）、素材图片（MATERIAL_IMG）。
+     * * &gt; 资产类型是VIDEO时，通过system_properties来区分素材视频（MATERIAL_VIDEO）、名片视频（BUSSINESS_CARD_VIDEO）。
+     * * &gt; MetaStudio平台生成的视频，system_properties带CREATED_BY_PLATFORM。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -477,6 +499,36 @@ public class MetaStudioClient {
         UpdateDigitalHumanBusinessCardRequest request) {
         return new SyncInvoker<UpdateDigitalHumanBusinessCardRequest, UpdateDigitalHumanBusinessCardResponse>(request,
             MetaStudioMeta.updateDigitalHumanBusinessCard, hcClient);
+    }
+
+    /**
+     * 查询视频制作任务列表
+     *
+     * 该接口用于查询视频制作任务列表。可查询分身数字人视频制作列表，照片数字人视频制作列表等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDigitalHumanVideoRequest 请求对象
+     * @return ListDigitalHumanVideoResponse
+     */
+    public ListDigitalHumanVideoResponse listDigitalHumanVideo(ListDigitalHumanVideoRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listDigitalHumanVideo);
+    }
+
+    /**
+     * 查询视频制作任务列表
+     *
+     * 该接口用于查询视频制作任务列表。可查询分身数字人视频制作列表，照片数字人视频制作列表等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDigitalHumanVideoRequest 请求对象
+     * @return SyncInvoker<ListDigitalHumanVideoRequest, ListDigitalHumanVideoResponse>
+     */
+    public SyncInvoker<ListDigitalHumanVideoRequest, ListDigitalHumanVideoResponse> listDigitalHumanVideoInvoker(
+        ListDigitalHumanVideoRequest request) {
+        return new SyncInvoker<ListDigitalHumanVideoRequest, ListDigitalHumanVideoResponse>(request,
+            MetaStudioMeta.listDigitalHumanVideo, hcClient);
     }
 
     /**
@@ -1106,6 +1158,66 @@ public class MetaStudioClient {
     }
 
     /**
+     * 检测音色与文本的语言一致性
+     *
+     * 检测音色与文本的语言一致性，音色与文本不一致会导致报错
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckTextLanguageRequest 请求对象
+     * @return CheckTextLanguageResponse
+     */
+    public CheckTextLanguageResponse checkTextLanguage(CheckTextLanguageRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.checkTextLanguage);
+    }
+
+    /**
+     * 检测音色与文本的语言一致性
+     *
+     * 检测音色与文本的语言一致性，音色与文本不一致会导致报错
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CheckTextLanguageRequest 请求对象
+     * @return SyncInvoker<CheckTextLanguageRequest, CheckTextLanguageResponse>
+     */
+    public SyncInvoker<CheckTextLanguageRequest, CheckTextLanguageResponse> checkTextLanguageInvoker(
+        CheckTextLanguageRequest request) {
+        return new SyncInvoker<CheckTextLanguageRequest, CheckTextLanguageResponse>(request,
+            MetaStudioMeta.checkTextLanguage, hcClient);
+    }
+
+    /**
+     * 创建智能直播间互动规则库
+     *
+     * 该接口用于创建智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateInteractionRuleGroupRequest 请求对象
+     * @return CreateInteractionRuleGroupResponse
+     */
+    public CreateInteractionRuleGroupResponse createInteractionRuleGroup(CreateInteractionRuleGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createInteractionRuleGroup);
+    }
+
+    /**
+     * 创建智能直播间互动规则库
+     *
+     * 该接口用于创建智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateInteractionRuleGroupRequest 请求对象
+     * @return SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse>
+     */
+    public SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroupInvoker(
+        CreateInteractionRuleGroupRequest request) {
+        return new SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse>(request,
+            MetaStudioMeta.createInteractionRuleGroup, hcClient);
+    }
+
+    /**
      * 创建智能直播间
      *
      * 该接口用于创建智能直播间。
@@ -1136,6 +1248,36 @@ public class MetaStudioClient {
     }
 
     /**
+     * 删除智能直播间互动规则库
+     *
+     * 该接口用于删除智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteInteractionRuleGroupRequest 请求对象
+     * @return DeleteInteractionRuleGroupResponse
+     */
+    public DeleteInteractionRuleGroupResponse deleteInteractionRuleGroup(DeleteInteractionRuleGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteInteractionRuleGroup);
+    }
+
+    /**
+     * 删除智能直播间互动规则库
+     *
+     * 该接口用于删除智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteInteractionRuleGroupRequest 请求对象
+     * @return SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse>
+     */
+    public SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> deleteInteractionRuleGroupInvoker(
+        DeleteInteractionRuleGroupRequest request) {
+        return new SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse>(request,
+            MetaStudioMeta.deleteInteractionRuleGroup, hcClient);
+    }
+
+    /**
      * 删除智能直播间
      *
      * 该接口用于删除智能直播间。
@@ -1163,6 +1305,36 @@ public class MetaStudioClient {
         DeleteSmartLiveRoomRequest request) {
         return new SyncInvoker<DeleteSmartLiveRoomRequest, DeleteSmartLiveRoomResponse>(request,
             MetaStudioMeta.deleteSmartLiveRoom, hcClient);
+    }
+
+    /**
+     * 查询智能直播间互动规则库列表
+     *
+     * 该接口用于智能直播间互动规则库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInteractionRuleGroupsRequest 请求对象
+     * @return ListInteractionRuleGroupsResponse
+     */
+    public ListInteractionRuleGroupsResponse listInteractionRuleGroups(ListInteractionRuleGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listInteractionRuleGroups);
+    }
+
+    /**
+     * 查询智能直播间互动规则库列表
+     *
+     * 该接口用于智能直播间互动规则库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInteractionRuleGroupsRequest 请求对象
+     * @return SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse>
+     */
+    public SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> listInteractionRuleGroupsInvoker(
+        ListInteractionRuleGroupsRequest request) {
+        return new SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse>(request,
+            MetaStudioMeta.listInteractionRuleGroups, hcClient);
     }
 
     /**
@@ -1226,6 +1398,36 @@ public class MetaStudioClient {
     }
 
     /**
+     * 更新智能直播间互动规则库
+     *
+     * 该接口用于更新智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInteractionRuleGroupRequest 请求对象
+     * @return UpdateInteractionRuleGroupResponse
+     */
+    public UpdateInteractionRuleGroupResponse updateInteractionRuleGroup(UpdateInteractionRuleGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateInteractionRuleGroup);
+    }
+
+    /**
+     * 更新智能直播间互动规则库
+     *
+     * 该接口用于更新智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateInteractionRuleGroupRequest 请求对象
+     * @return SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse>
+     */
+    public SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> updateInteractionRuleGroupInvoker(
+        UpdateInteractionRuleGroupRequest request) {
+        return new SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse>(request,
+            MetaStudioMeta.updateInteractionRuleGroup, hcClient);
+    }
+
+    /**
      * 更新智能直播间信息
      *
      * 该接口用于智能直播间信息。
@@ -1284,6 +1486,36 @@ public class MetaStudioClient {
     }
 
     /**
+     * 创建语音驱动表情动画任务
+     *
+     * 该接口用于创建驱动数字人表情的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFacialAnimationsRequest 请求对象
+     * @return CreateFacialAnimationsResponse
+     */
+    public CreateFacialAnimationsResponse createFacialAnimations(CreateFacialAnimationsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createFacialAnimations);
+    }
+
+    /**
+     * 创建语音驱动表情动画任务
+     *
+     * 该接口用于创建驱动数字人表情的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFacialAnimationsRequest 请求对象
+     * @return SyncInvoker<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse>
+     */
+    public SyncInvoker<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse> createFacialAnimationsInvoker(
+        CreateFacialAnimationsRequest request) {
+        return new SyncInvoker<CreateFacialAnimationsRequest, CreateFacialAnimationsResponse>(request,
+            MetaStudioMeta.createFacialAnimations, hcClient);
+    }
+
+    /**
      * 创建语音驱动任务
      *
      * 该接口用于创建驱动数字人表情、动作及语音的任务。
@@ -1309,6 +1541,36 @@ public class MetaStudioClient {
      */
     public SyncInvoker<CreateTtsaRequest, CreateTtsaResponse> createTtsaInvoker(CreateTtsaRequest request) {
         return new SyncInvoker<CreateTtsaRequest, CreateTtsaResponse>(request, MetaStudioMeta.createTtsa, hcClient);
+    }
+
+    /**
+     * 获取语音驱动表情数据
+     *
+     * 该接口用于获取生成的数字人表情驱动数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFacialAnimationsDataRequest 请求对象
+     * @return ListFacialAnimationsDataResponse
+     */
+    public ListFacialAnimationsDataResponse listFacialAnimationsData(ListFacialAnimationsDataRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listFacialAnimationsData);
+    }
+
+    /**
+     * 获取语音驱动表情数据
+     *
+     * 该接口用于获取生成的数字人表情驱动数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFacialAnimationsDataRequest 请求对象
+     * @return SyncInvoker<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse>
+     */
+    public SyncInvoker<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse> listFacialAnimationsDataInvoker(
+        ListFacialAnimationsDataRequest request) {
+        return new SyncInvoker<ListFacialAnimationsDataRequest, ListFacialAnimationsDataResponse>(request,
+            MetaStudioMeta.listFacialAnimationsData, hcClient);
     }
 
     /**

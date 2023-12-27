@@ -101,6 +101,81 @@ public class CreateDigitalHumanBusinessCardReq {
 
     private BusinessCardImageConfig cardImageConfig;
 
+    /**
+     * 自我介绍驱动方式。 * TEXT: 文本驱动，即通过TTS合成语音。文本驱动需要填写introduction_text和voice_asset_id参数。 * AUDIO: 语音驱动，需要在资产库中先上传语音资产。语音驱动需要填写introduction_audio_asset_id参数。
+     */
+    public static final class IntroductionTypeEnum {
+
+        /**
+         * Enum TEXT for value: "TEXT"
+         */
+        public static final IntroductionTypeEnum TEXT = new IntroductionTypeEnum("TEXT");
+
+        /**
+         * Enum AUDIO for value: "AUDIO"
+         */
+        public static final IntroductionTypeEnum AUDIO = new IntroductionTypeEnum("AUDIO");
+
+        private static final Map<String, IntroductionTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IntroductionTypeEnum> createStaticFields() {
+            Map<String, IntroductionTypeEnum> map = new HashMap<>();
+            map.put("TEXT", TEXT);
+            map.put("AUDIO", AUDIO);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IntroductionTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IntroductionTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IntroductionTypeEnum(value));
+        }
+
+        public static IntroductionTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IntroductionTypeEnum) {
+                return this.value.equals(((IntroductionTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "introduction_type")
+
+    private IntroductionTypeEnum introductionType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "introduction_text")
 
@@ -110,6 +185,11 @@ public class CreateDigitalHumanBusinessCardReq {
     @JsonProperty(value = "voice_asset_id")
 
     private String voiceAssetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "introduction_audio_asset_id")
+
+    private String introductionAudioAssetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_asset_name")
@@ -190,6 +270,11 @@ public class CreateDigitalHumanBusinessCardReq {
     @JsonProperty(value = "gender")
 
     private GenderEnum gender;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_config")
+
+    private ReviewConfig reviewConfig;
 
     public CreateDigitalHumanBusinessCardReq withBusinessCardType(BusinessCardTypeEnum businessCardType) {
         this.businessCardType = businessCardType;
@@ -278,6 +363,23 @@ public class CreateDigitalHumanBusinessCardReq {
         this.cardImageConfig = cardImageConfig;
     }
 
+    public CreateDigitalHumanBusinessCardReq withIntroductionType(IntroductionTypeEnum introductionType) {
+        this.introductionType = introductionType;
+        return this;
+    }
+
+    /**
+     * 自我介绍驱动方式。 * TEXT: 文本驱动，即通过TTS合成语音。文本驱动需要填写introduction_text和voice_asset_id参数。 * AUDIO: 语音驱动，需要在资产库中先上传语音资产。语音驱动需要填写introduction_audio_asset_id参数。
+     * @return introductionType
+     */
+    public IntroductionTypeEnum getIntroductionType() {
+        return introductionType;
+    }
+
+    public void setIntroductionType(IntroductionTypeEnum introductionType) {
+        this.introductionType = introductionType;
+    }
+
     public CreateDigitalHumanBusinessCardReq withIntroductionText(String introductionText) {
         this.introductionText = introductionText;
         return this;
@@ -310,6 +412,23 @@ public class CreateDigitalHumanBusinessCardReq {
 
     public void setVoiceAssetId(String voiceAssetId) {
         this.voiceAssetId = voiceAssetId;
+    }
+
+    public CreateDigitalHumanBusinessCardReq withIntroductionAudioAssetId(String introductionAudioAssetId) {
+        this.introductionAudioAssetId = introductionAudioAssetId;
+        return this;
+    }
+
+    /**
+     * 自我介绍语音资产ID，用于驱动数字人口型。 > * 介绍语音需要作为asset_type=AUDIO资产先上传至资产库。
+     * @return introductionAudioAssetId
+     */
+    public String getIntroductionAudioAssetId() {
+        return introductionAudioAssetId;
+    }
+
+    public void setIntroductionAudioAssetId(String introductionAudioAssetId) {
+        this.introductionAudioAssetId = introductionAudioAssetId;
     }
 
     public CreateDigitalHumanBusinessCardReq withVideoAssetName(String videoAssetName) {
@@ -346,6 +465,32 @@ public class CreateDigitalHumanBusinessCardReq {
         this.gender = gender;
     }
 
+    public CreateDigitalHumanBusinessCardReq withReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+        return this;
+    }
+
+    public CreateDigitalHumanBusinessCardReq withReviewConfig(Consumer<ReviewConfig> reviewConfigSetter) {
+        if (this.reviewConfig == null) {
+            this.reviewConfig = new ReviewConfig();
+            reviewConfigSetter.accept(this.reviewConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reviewConfig
+     * @return reviewConfig
+     */
+    public ReviewConfig getReviewConfig() {
+        return reviewConfig;
+    }
+
+    public void setReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -359,9 +504,12 @@ public class CreateDigitalHumanBusinessCardReq {
             && Objects.equals(this.cardTempletAssetId, that.cardTempletAssetId)
             && Objects.equals(this.cardTextConfig, that.cardTextConfig)
             && Objects.equals(this.cardImageConfig, that.cardImageConfig)
+            && Objects.equals(this.introductionType, that.introductionType)
             && Objects.equals(this.introductionText, that.introductionText)
             && Objects.equals(this.voiceAssetId, that.voiceAssetId)
-            && Objects.equals(this.videoAssetName, that.videoAssetName) && Objects.equals(this.gender, that.gender);
+            && Objects.equals(this.introductionAudioAssetId, that.introductionAudioAssetId)
+            && Objects.equals(this.videoAssetName, that.videoAssetName) && Objects.equals(this.gender, that.gender)
+            && Objects.equals(this.reviewConfig, that.reviewConfig);
     }
 
     @Override
@@ -370,10 +518,13 @@ public class CreateDigitalHumanBusinessCardReq {
             cardTempletAssetId,
             cardTextConfig,
             cardImageConfig,
+            introductionType,
             introductionText,
             voiceAssetId,
+            introductionAudioAssetId,
             videoAssetName,
-            gender);
+            gender,
+            reviewConfig);
     }
 
     @Override
@@ -384,10 +535,13 @@ public class CreateDigitalHumanBusinessCardReq {
         sb.append("    cardTempletAssetId: ").append(toIndentedString(cardTempletAssetId)).append("\n");
         sb.append("    cardTextConfig: ").append(toIndentedString(cardTextConfig)).append("\n");
         sb.append("    cardImageConfig: ").append(toIndentedString(cardImageConfig)).append("\n");
+        sb.append("    introductionType: ").append(toIndentedString(introductionType)).append("\n");
         sb.append("    introductionText: ").append(toIndentedString(introductionText)).append("\n");
         sb.append("    voiceAssetId: ").append(toIndentedString(voiceAssetId)).append("\n");
+        sb.append("    introductionAudioAssetId: ").append(toIndentedString(introductionAudioAssetId)).append("\n");
         sb.append("    videoAssetName: ").append(toIndentedString(videoAssetName)).append("\n");
         sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
+        sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

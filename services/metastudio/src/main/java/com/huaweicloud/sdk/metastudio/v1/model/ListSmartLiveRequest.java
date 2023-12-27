@@ -61,14 +61,14 @@ public class ListSmartLiveRequest {
     private String sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_until")
-
-    private String createUntil;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_since")
 
     private String createSince;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_until")
+
+    private String createUntil;
 
     public ListSmartLiveRequest withRoomId(String roomId) {
         this.roomId = roomId;
@@ -148,7 +148,7 @@ public class ListSmartLiveRequest {
     }
 
     /**
-     * 开发者应用作为资产权属的可选字段。
+     * 第三方用户ID。 > *不允许输入中文。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -250,23 +250,6 @@ public class ListSmartLiveRequest {
         this.sortDir = sortDir;
     }
 
-    public ListSmartLiveRequest withCreateUntil(String createUntil) {
-        this.createUntil = createUntil;
-        return this;
-    }
-
-    /**
-     * 过滤创建时间<=输入时间的记录。
-     * @return createUntil
-     */
-    public String getCreateUntil() {
-        return createUntil;
-    }
-
-    public void setCreateUntil(String createUntil) {
-        this.createUntil = createUntil;
-    }
-
     public ListSmartLiveRequest withCreateSince(String createSince) {
         this.createSince = createSince;
         return this;
@@ -284,6 +267,23 @@ public class ListSmartLiveRequest {
         this.createSince = createSince;
     }
 
+    public ListSmartLiveRequest withCreateUntil(String createUntil) {
+        this.createUntil = createUntil;
+        return this;
+    }
+
+    /**
+     * 过滤创建时间<=输入时间的记录。
+     * @return createUntil
+     */
+    public String getCreateUntil() {
+        return createUntil;
+    }
+
+    public void setCreateUntil(String createUntil) {
+        this.createUntil = createUntil;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -298,7 +298,7 @@ public class ListSmartLiveRequest {
             && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.state, that.state)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.createUntil, that.createUntil) && Objects.equals(this.createSince, that.createSince);
+            && Objects.equals(this.createSince, that.createSince) && Objects.equals(this.createUntil, that.createUntil);
     }
 
     @Override
@@ -313,8 +313,8 @@ public class ListSmartLiveRequest {
             state,
             sortKey,
             sortDir,
-            createUntil,
-            createSince);
+            createSince,
+            createUntil);
     }
 
     @Override
@@ -331,8 +331,8 @@ public class ListSmartLiveRequest {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
-        sb.append("    createUntil: ").append(toIndentedString(createUntil)).append("\n");
         sb.append("    createSince: ").append(toIndentedString(createSince)).append("\n");
+        sb.append("    createUntil: ").append(toIndentedString(createUntil)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -23,6 +23,11 @@ public class ReportLiveEventReq {
 
     private List<LiveEvent> events = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_config")
+
+    private ReviewConfig reviewConfig;
+
     public ReportLiveEventReq withTotal(Integer total) {
         this.total = total;
         return this;
@@ -75,6 +80,32 @@ public class ReportLiveEventReq {
         this.events = events;
     }
 
+    public ReportLiveEventReq withReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+        return this;
+    }
+
+    public ReportLiveEventReq withReviewConfig(Consumer<ReviewConfig> reviewConfigSetter) {
+        if (this.reviewConfig == null) {
+            this.reviewConfig = new ReviewConfig();
+            reviewConfigSetter.accept(this.reviewConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reviewConfig
+     * @return reviewConfig
+     */
+    public ReviewConfig getReviewConfig() {
+        return reviewConfig;
+    }
+
+    public void setReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -84,12 +115,13 @@ public class ReportLiveEventReq {
             return false;
         }
         ReportLiveEventReq that = (ReportLiveEventReq) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.events, that.events);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.events, that.events)
+            && Objects.equals(this.reviewConfig, that.reviewConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, events);
+        return Objects.hash(total, events, reviewConfig);
     }
 
     @Override
@@ -98,6 +130,7 @@ public class ReportLiveEventReq {
         sb.append("class ReportLiveEventReq {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
+        sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

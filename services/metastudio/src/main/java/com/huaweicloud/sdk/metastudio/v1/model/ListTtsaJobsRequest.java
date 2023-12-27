@@ -26,6 +26,11 @@ public class ListTtsaJobsRequest {
     private String xProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+
+    private String xAppUserId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -34,11 +39,6 @@ public class ListTtsaJobsRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-App-UserId")
-
-    private String xAppUserId;
 
     public ListTtsaJobsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -95,6 +95,25 @@ public class ListTtsaJobsRequest {
         this.xProjectId = xProjectId;
     }
 
+    public ListTtsaJobsRequest withXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
+        return this;
+    }
+
+    /**
+     * 第三方用户ID。 > *不允许输入中文。
+     * @return xAppUserId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+    public String getXAppUserId() {
+        return xAppUserId;
+    }
+
+    public void setXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
+    }
+
     public ListTtsaJobsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -133,25 +152,6 @@ public class ListTtsaJobsRequest {
         this.limit = limit;
     }
 
-    public ListTtsaJobsRequest withXAppUserId(String xAppUserId) {
-        this.xAppUserId = xAppUserId;
-        return this;
-    }
-
-    /**
-     * 开发者应用作为资产权属的可选字段。
-     * @return xAppUserId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-App-UserId")
-    public String getXAppUserId() {
-        return xAppUserId;
-    }
-
-    public void setXAppUserId(String xAppUserId) {
-        this.xAppUserId = xAppUserId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -162,13 +162,13 @@ public class ListTtsaJobsRequest {
         }
         ListTtsaJobsRequest that = (ListTtsaJobsRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
-            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.xAppUserId, that.xAppUserId);
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, offset, limit, xAppUserId);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, offset, limit);
     }
 
     @Override
@@ -178,9 +178,9 @@ public class ListTtsaJobsRequest {
         sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
+        sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -119,6 +119,158 @@ public class JobInfo {
     private ProcessTypeEnum processType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "singleNodeJobFlag")
+
+    private Boolean singleNodeJobFlag;
+
+    /**
+     * 单任务类型
+     */
+    public static final class SingleNodeJobTypeEnum {
+
+        /**
+         * Enum DLISQL for value: "DliSQL"
+         */
+        public static final SingleNodeJobTypeEnum DLISQL = new SingleNodeJobTypeEnum("DliSQL");
+
+        /**
+         * Enum DWSSQL for value: "DwsSQL"
+         */
+        public static final SingleNodeJobTypeEnum DWSSQL = new SingleNodeJobTypeEnum("DwsSQL");
+
+        /**
+         * Enum HIVESQL for value: "HiveSQL"
+         */
+        public static final SingleNodeJobTypeEnum HIVESQL = new SingleNodeJobTypeEnum("HiveSQL");
+
+        /**
+         * Enum SPARKSQL for value: "SparkSQL"
+         */
+        public static final SingleNodeJobTypeEnum SPARKSQL = new SingleNodeJobTypeEnum("SparkSQL");
+
+        /**
+         * Enum RDSSQL for value: "RdsSQL"
+         */
+        public static final SingleNodeJobTypeEnum RDSSQL = new SingleNodeJobTypeEnum("RdsSQL");
+
+        /**
+         * Enum DORISSQL for value: "DorisSQL"
+         */
+        public static final SingleNodeJobTypeEnum DORISSQL = new SingleNodeJobTypeEnum("DorisSQL");
+
+        /**
+         * Enum ASSIGNMENT for value: "ASSIGNMENT"
+         */
+        public static final SingleNodeJobTypeEnum ASSIGNMENT = new SingleNodeJobTypeEnum("ASSIGNMENT");
+
+        /**
+         * Enum BRANCH for value: "BRANCH"
+         */
+        public static final SingleNodeJobTypeEnum BRANCH = new SingleNodeJobTypeEnum("BRANCH");
+
+        /**
+         * Enum MERGE for value: "MERGE"
+         */
+        public static final SingleNodeJobTypeEnum MERGE = new SingleNodeJobTypeEnum("MERGE");
+
+        /**
+         * Enum DATAMIGRATION for value: "DataMigration"
+         */
+        public static final SingleNodeJobTypeEnum DATAMIGRATION = new SingleNodeJobTypeEnum("DataMigration");
+
+        /**
+         * Enum MRSFLINK for value: "MrsFlink"
+         */
+        public static final SingleNodeJobTypeEnum MRSFLINK = new SingleNodeJobTypeEnum("MrsFlink");
+
+        /**
+         * Enum FLINKSQL for value: "FlinkSQL"
+         */
+        public static final SingleNodeJobTypeEnum FLINKSQL = new SingleNodeJobTypeEnum("FlinkSQL");
+
+        /**
+         * Enum FLINKJAR for value: "FlinkJar"
+         */
+        public static final SingleNodeJobTypeEnum FLINKJAR = new SingleNodeJobTypeEnum("FlinkJar");
+
+        /**
+         * Enum DLISPARK for value: "DLISpark"
+         */
+        public static final SingleNodeJobTypeEnum DLISPARK = new SingleNodeJobTypeEnum("DLISpark");
+
+        private static final Map<String, SingleNodeJobTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SingleNodeJobTypeEnum> createStaticFields() {
+            Map<String, SingleNodeJobTypeEnum> map = new HashMap<>();
+            map.put("DliSQL", DLISQL);
+            map.put("DwsSQL", DWSSQL);
+            map.put("HiveSQL", HIVESQL);
+            map.put("SparkSQL", SPARKSQL);
+            map.put("RdsSQL", RDSSQL);
+            map.put("DorisSQL", DORISSQL);
+            map.put("ASSIGNMENT", ASSIGNMENT);
+            map.put("BRANCH", BRANCH);
+            map.put("MERGE", MERGE);
+            map.put("DataMigration", DATAMIGRATION);
+            map.put("MrsFlink", MRSFLINK);
+            map.put("FlinkSQL", FLINKSQL);
+            map.put("FlinkJar", FLINKJAR);
+            map.put("DLISpark", DLISPARK);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SingleNodeJobTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SingleNodeJobTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SingleNodeJobTypeEnum(value));
+        }
+
+        public static SingleNodeJobTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SingleNodeJobTypeEnum) {
+                return this.value.equals(((SingleNodeJobTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "singleNodeJobType")
+
+    private SingleNodeJobTypeEnum singleNodeJobType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastUpdateUser")
 
     private String lastUpdateUser;
@@ -362,6 +514,40 @@ public class JobInfo {
         this.processType = processType;
     }
 
+    public JobInfo withSingleNodeJobFlag(Boolean singleNodeJobFlag) {
+        this.singleNodeJobFlag = singleNodeJobFlag;
+        return this;
+    }
+
+    /**
+     * 是否选择单任务，默认为false
+     * @return singleNodeJobFlag
+     */
+    public Boolean getSingleNodeJobFlag() {
+        return singleNodeJobFlag;
+    }
+
+    public void setSingleNodeJobFlag(Boolean singleNodeJobFlag) {
+        this.singleNodeJobFlag = singleNodeJobFlag;
+    }
+
+    public JobInfo withSingleNodeJobType(SingleNodeJobTypeEnum singleNodeJobType) {
+        this.singleNodeJobType = singleNodeJobType;
+        return this;
+    }
+
+    /**
+     * 单任务类型
+     * @return singleNodeJobType
+     */
+    public SingleNodeJobTypeEnum getSingleNodeJobType() {
+        return singleNodeJobType;
+    }
+
+    public void setSingleNodeJobType(SingleNodeJobTypeEnum singleNodeJobType) {
+        this.singleNodeJobType = singleNodeJobType;
+    }
+
     public JobInfo withLastUpdateUser(String lastUpdateUser) {
         this.lastUpdateUser = lastUpdateUser;
         return this;
@@ -484,6 +670,8 @@ public class JobInfo {
         return Objects.equals(this.name, that.name) && Objects.equals(this.nodes, that.nodes)
             && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.params, that.params)
             && Objects.equals(this.directory, that.directory) && Objects.equals(this.processType, that.processType)
+            && Objects.equals(this.singleNodeJobFlag, that.singleNodeJobFlag)
+            && Objects.equals(this.singleNodeJobType, that.singleNodeJobType)
             && Objects.equals(this.lastUpdateUser, that.lastUpdateUser) && Objects.equals(this.logPath, that.logPath)
             && Objects.equals(this.basicConfig, that.basicConfig)
             && Objects.equals(this.targetStatus, that.targetStatus) && Objects.equals(this.approvers, that.approvers);
@@ -497,6 +685,8 @@ public class JobInfo {
             params,
             directory,
             processType,
+            singleNodeJobFlag,
+            singleNodeJobType,
             lastUpdateUser,
             logPath,
             basicConfig,
@@ -514,6 +704,8 @@ public class JobInfo {
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
         sb.append("    processType: ").append(toIndentedString(processType)).append("\n");
+        sb.append("    singleNodeJobFlag: ").append(toIndentedString(singleNodeJobFlag)).append("\n");
+        sb.append("    singleNodeJobType: ").append(toIndentedString(singleNodeJobType)).append("\n");
         sb.append("    lastUpdateUser: ").append(toIndentedString(lastUpdateUser)).append("\n");
         sb.append("    logPath: ").append(toIndentedString(logPath)).append("\n");
         sb.append("    basicConfig: ").append(toIndentedString(basicConfig)).append("\n");

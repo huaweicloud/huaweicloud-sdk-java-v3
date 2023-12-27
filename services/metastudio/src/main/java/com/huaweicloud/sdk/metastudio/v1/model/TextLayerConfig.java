@@ -36,7 +36,7 @@ public class TextLayerConfig {
     }
 
     /**
-     * 文字水印内容，内容需做Base64编码，若类型为文字水印 (type字段为Text)，则此配置项不能为空  示例：若想添加文字水印“测试文字水印”，那么Content的值为：5rWL6K+V5paH5a2X5rC05Y2w
+     * 文字图层的文本，内容需做Base64编码。  示例：若想添加文字水印“测试文字水印”，那么text_context的值为：5rWL6K+V5paH5a2X5rC05Y2w
      * @return textContext
      */
     public String getTextContext() {
@@ -53,7 +53,7 @@ public class TextLayerConfig {
     }
 
     /**
-     * 字体，当前支持fzyouh
+     * 字体。当前支持的字体： * HarmonyOS_Sans_SC_Black：鸿蒙粗体 * HarmonyOS_Sans_SC_Regular：鸿蒙常规 * HarmonyOS_Sans_SC_Thin：鸿蒙细体 * fzyouh：方正瘦体
      * @return fontName
      */
     public String getFontName() {
@@ -70,7 +70,7 @@ public class TextLayerConfig {
     }
 
     /**
-     * 字体大小。  取值范围：[4, 120]
+     * 字体大小（像素）。  取值范围：[4, 120]
      * minimum: 0
      * maximum: 120
      * @return fontSize
@@ -89,7 +89,7 @@ public class TextLayerConfig {
     }
 
     /**
-     * 字体颜色。 目前颜色支持 black，blue，white，green，red，yellow，brown，gold，pink，orange，purple。
+     * 字体颜色。RGB颜色值。
      * @return fontColor
      */
     public String getFontColor() {

@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 视频输出配置。
@@ -16,7 +17,7 @@ import java.util.Objects;
 public class VideoConfig {
 
     /**
-     * 输出视频的剪辑方式。 * RESIZE：视频缩放。 * CROP：视频裁剪。
+     * 输出视频的剪辑方式。默认值RESIZE。 * RESIZE：视频缩放。 * CROP：视频裁剪。
      */
     public static final class ClipModeEnum {
 
@@ -105,12 +106,18 @@ public class VideoConfig {
          */
         public static final CodecEnum VP8 = new CodecEnum("VP8");
 
+        /**
+         * Enum VP9 for value: "VP9"
+         */
+        public static final CodecEnum VP9 = new CodecEnum("VP9");
+
         private static final Map<String, CodecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CodecEnum> createStaticFields() {
             Map<String, CodecEnum> map = new HashMap<>();
             map.put("H264", H264);
             map.put("VP8", VP8);
+            map.put("VP9", VP9);
             return Collections.unmodifiableMap(map);
         }
 
@@ -181,7 +188,7 @@ public class VideoConfig {
     private Integer height;
 
     /**
-     * 帧率。  单位：FPS。 > * 分身数字人帧率目前只支持25。
+     * 帧率。  单位：FPS。 > *  分身数字人视频固定25FPS。
      */
     public static final class FrameRateEnum {
 
@@ -267,6 +274,11 @@ public class VideoConfig {
     private Boolean isSubtitleEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subtitle_config")
+
+    private SubtitleConfig subtitleConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dx")
 
     private Integer dx;
@@ -282,7 +294,7 @@ public class VideoConfig {
     }
 
     /**
-     * 输出视频的剪辑方式。 * RESIZE：视频缩放。 * CROP：视频裁剪。
+     * 输出视频的剪辑方式。默认值RESIZE。 * RESIZE：视频缩放。 * CROP：视频裁剪。
      * @return clipMode
      */
     public ClipModeEnum getClipMode() {
@@ -335,9 +347,9 @@ public class VideoConfig {
     }
 
     /**
-     * 视频宽度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280四种分辨率。 > * clip_mode=CROP，视频保留中间width宽度，裁掉左右两边。 > * 分身数字人直播目前只支持1080x1920。
+     * 视频宽度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280、3840x2160、2160x3840六种分辨率。4K分辨率视频需要分身数字人模型支持4K的情况下才能使用。 > * clip_mode=CROP，裁剪后视频，（dx,dy）为原点，保留视频像宽度为width。 > * 分身数字人直播目前只支持1080x1920。
      * minimum: 0
-     * maximum: 2560
+     * maximum: 3840
      * @return width
      */
     public Integer getWidth() {
@@ -354,9 +366,9 @@ public class VideoConfig {
     }
 
     /**
-     * 视频高度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280四种分辨率。 > * clip_mode=CROP，视频保留底部height高度，裁掉顶部。 > * 分身数字人直播目前只支持1080x1920。
+     * 视频高度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280、3840x2160、2160x3840六种分辨率分辨率。 > * clip_mode=CROP，裁剪后视频，（dx,dy）为原点，保留视频像高度为height。 > * 分身数字人直播目前只支持1080x1920。
      * minimum: 0
-     * maximum: 2560
+     * maximum: 3840
      * @return height
      */
     public Integer getHeight() {
@@ -373,7 +385,7 @@ public class VideoConfig {
     }
 
     /**
-     * 帧率。  单位：FPS。 > * 分身数字人帧率目前只支持25。
+     * 帧率。  单位：FPS。 > *  分身数字人视频固定25FPS。
      * @return frameRate
      */
     public FrameRateEnum getFrameRate() {
@@ -390,7 +402,7 @@ public class VideoConfig {
     }
 
     /**
-     * 输出的视频是否带字幕。 > true: 打开字幕 > false: 关闭字幕
+     * 输出的视频是否带字幕。默认false。 > true: 打开字幕 > false: 关闭字幕
      * @return isSubtitleEnable
      */
     public Boolean getIsSubtitleEnable() {
@@ -399,6 +411,32 @@ public class VideoConfig {
 
     public void setIsSubtitleEnable(Boolean isSubtitleEnable) {
         this.isSubtitleEnable = isSubtitleEnable;
+    }
+
+    public VideoConfig withSubtitleConfig(SubtitleConfig subtitleConfig) {
+        this.subtitleConfig = subtitleConfig;
+        return this;
+    }
+
+    public VideoConfig withSubtitleConfig(Consumer<SubtitleConfig> subtitleConfigSetter) {
+        if (this.subtitleConfig == null) {
+            this.subtitleConfig = new SubtitleConfig();
+            subtitleConfigSetter.accept(this.subtitleConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get subtitleConfig
+     * @return subtitleConfig
+     */
+    public SubtitleConfig getSubtitleConfig() {
+        return subtitleConfig;
+    }
+
+    public void setSubtitleConfig(SubtitleConfig subtitleConfig) {
+        this.subtitleConfig = subtitleConfig;
     }
 
     public VideoConfig withDx(Integer dx) {
@@ -451,13 +489,15 @@ public class VideoConfig {
         return Objects.equals(this.clipMode, that.clipMode) && Objects.equals(this.codec, that.codec)
             && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.width, that.width)
             && Objects.equals(this.height, that.height) && Objects.equals(this.frameRate, that.frameRate)
-            && Objects.equals(this.isSubtitleEnable, that.isSubtitleEnable) && Objects.equals(this.dx, that.dx)
+            && Objects.equals(this.isSubtitleEnable, that.isSubtitleEnable)
+            && Objects.equals(this.subtitleConfig, that.subtitleConfig) && Objects.equals(this.dx, that.dx)
             && Objects.equals(this.dy, that.dy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clipMode, codec, bitrate, width, height, frameRate, isSubtitleEnable, dx, dy);
+        return Objects
+            .hash(clipMode, codec, bitrate, width, height, frameRate, isSubtitleEnable, subtitleConfig, dx, dy);
     }
 
     @Override
@@ -471,6 +511,7 @@ public class VideoConfig {
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
         sb.append("    isSubtitleEnable: ").append(toIndentedString(isSubtitleEnable)).append("\n");
+        sb.append("    subtitleConfig: ").append(toIndentedString(subtitleConfig)).append("\n");
         sb.append("    dx: ").append(toIndentedString(dx)).append("\n");
         sb.append("    dy: ").append(toIndentedString(dy)).append("\n");
         sb.append("}");

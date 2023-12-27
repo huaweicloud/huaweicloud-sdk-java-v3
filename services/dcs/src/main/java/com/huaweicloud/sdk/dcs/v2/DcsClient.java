@@ -61,6 +61,8 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DownloadSslCertRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DownloadSslCertResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExchangeInstanceIpRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ExchangeInstanceIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExecuteClusterSwitchoverRequest;
@@ -165,6 +167,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyTaskDetailsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowJobInfoRequest;
@@ -219,6 +223,8 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateSslSwitchRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateSslSwitchResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaResponse;
 
@@ -1123,6 +1129,36 @@ public class DcsClient {
         DeleteSingleInstanceRequest request) {
         return new SyncInvoker<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse>(request,
             DcsMeta.deleteSingleInstance, hcClient);
+    }
+
+    /**
+     * 下载实例SSL证书
+     *
+     * 下载实例SSL证书。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadSslCertRequest 请求对象
+     * @return DownloadSslCertResponse
+     */
+    public DownloadSslCertResponse downloadSslCert(DownloadSslCertRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.downloadSslCert);
+    }
+
+    /**
+     * 下载实例SSL证书
+     *
+     * 下载实例SSL证书。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DownloadSslCertRequest 请求对象
+     * @return SyncInvoker<DownloadSslCertRequest, DownloadSslCertResponse>
+     */
+    public SyncInvoker<DownloadSslCertRequest, DownloadSslCertResponse> downloadSslCertInvoker(
+        DownloadSslCertRequest request) {
+        return new SyncInvoker<DownloadSslCertRequest, DownloadSslCertResponse>(request, DcsMeta.downloadSslCert,
+            hcClient);
     }
 
     /**
@@ -2681,6 +2717,36 @@ public class DcsClient {
     }
 
     /**
+     * 查询实例SSL信息
+     *
+     * 查询实例SSL信息。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceSslDetailRequest 请求对象
+     * @return ShowInstanceSslDetailResponse
+     */
+    public ShowInstanceSslDetailResponse showInstanceSslDetail(ShowInstanceSslDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.showInstanceSslDetail);
+    }
+
+    /**
+     * 查询实例SSL信息
+     *
+     * 查询实例SSL信息。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceSslDetailRequest 请求对象
+     * @return SyncInvoker<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse>
+     */
+    public SyncInvoker<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> showInstanceSslDetailInvoker(
+        ShowInstanceSslDetailRequest request) {
+        return new SyncInvoker<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse>(request,
+            DcsMeta.showInstanceSslDetail, hcClient);
+    }
+
+    /**
      * 查询租户Job执行结果
      *
      * 查询租户Job执行结果
@@ -3429,6 +3495,36 @@ public class DcsClient {
         UpdateSlavePriorityRequest request) {
         return new SyncInvoker<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse>(request,
             DcsMeta.updateSlavePriority, hcClient);
+    }
+
+    /**
+     * 开启/关闭SSL
+     *
+     * 开启/关闭SSL。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSslSwitchRequest 请求对象
+     * @return UpdateSslSwitchResponse
+     */
+    public UpdateSslSwitchResponse updateSslSwitch(UpdateSslSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.updateSslSwitch);
+    }
+
+    /**
+     * 开启/关闭SSL
+     *
+     * 开启/关闭SSL。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateSslSwitchRequest 请求对象
+     * @return SyncInvoker<UpdateSslSwitchRequest, UpdateSslSwitchResponse>
+     */
+    public SyncInvoker<UpdateSslSwitchRequest, UpdateSslSwitchResponse> updateSslSwitchInvoker(
+        UpdateSslSwitchRequest request) {
+        return new SyncInvoker<UpdateSslSwitchRequest, UpdateSslSwitchResponse>(request, DcsMeta.updateSslSwitch,
+            hcClient);
     }
 
     /**

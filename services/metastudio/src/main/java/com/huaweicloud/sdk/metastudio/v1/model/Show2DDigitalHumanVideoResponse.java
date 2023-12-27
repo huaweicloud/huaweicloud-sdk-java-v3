@@ -158,7 +158,7 @@ public class Show2DDigitalHumanVideoResponse extends SdkResponse {
     private String scriptId;
 
     /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频
+     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频 > * 该参数已废弃，照片数字人视频制作使用“创建照片分身数字人视频制作任务”接口。
      */
     public static final class VideoMakingTypeEnum {
 
@@ -463,7 +463,7 @@ public class Show2DDigitalHumanVideoResponse extends SdkResponse {
     }
 
     /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频
+     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频 > * 该参数已废弃，照片数字人视频制作使用“创建照片分身数字人视频制作任务”接口。
      * @return videoMakingType
      */
     public VideoMakingTypeEnum getVideoMakingType() {
@@ -480,7 +480,7 @@ public class Show2DDigitalHumanVideoResponse extends SdkResponse {
     }
 
     /**
-     * 人物照片，需要Base64编码。
+     * 人物照片，需要Base64编码。 > * 该参数已废弃，照片数字人视频制作使用“创建照片分身数字人视频制作任务”接口。
      * @return humanImage
      */
     public String getHumanImage() {

@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.lts.v2.model.CreateLogDumpObsRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogDumpObsResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogGroupResponse;
+import com.huaweicloud.sdk.lts.v2.model.CreateLogStreamIndexRequest;
+import com.huaweicloud.sdk.lts.v2.model.CreateLogStreamIndexResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogStreamRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateNotificationTemplateRequest;
@@ -447,6 +449,36 @@ public class LtsClient {
         CreateLogStreamRequest request) {
         return new SyncInvoker<CreateLogStreamRequest, CreateLogStreamResponse>(request, LtsMeta.createLogStream,
             hcClient);
+    }
+
+    /**
+     * 向指定流创建索引
+     *
+     * 向指定流创建索引
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLogStreamIndexRequest 请求对象
+     * @return CreateLogStreamIndexResponse
+     */
+    public CreateLogStreamIndexResponse createLogStreamIndex(CreateLogStreamIndexRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createLogStreamIndex);
+    }
+
+    /**
+     * 向指定流创建索引
+     *
+     * 向指定流创建索引
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateLogStreamIndexRequest 请求对象
+     * @return SyncInvoker<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse>
+     */
+    public SyncInvoker<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse> createLogStreamIndexInvoker(
+        CreateLogStreamIndexRequest request) {
+        return new SyncInvoker<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse>(request,
+            LtsMeta.createLogStreamIndex, hcClient);
     }
 
     /**

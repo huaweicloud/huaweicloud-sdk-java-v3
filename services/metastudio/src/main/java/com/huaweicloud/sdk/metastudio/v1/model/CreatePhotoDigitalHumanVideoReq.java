@@ -48,13 +48,18 @@ public class CreatePhotoDigitalHumanVideoReq {
 
     private BackgroundMusicConfig backgroundMusicConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_config")
+
+    private ReviewConfig reviewConfig;
+
     public CreatePhotoDigitalHumanVideoReq withScriptId(String scriptId) {
         this.scriptId = scriptId;
         return this;
     }
 
     /**
-     * 剧本ID。 > * 如果填写了script_id，model_asset_id、voice_config、scene_asset_id、video_config、shoot_scripts可以不填，以脚本中的配置为准。 > * 如果填写了script_id，并且同时也填写了model_asset_id、voice_config、scene_asset_id、video_config、shoot_scripts则以本接口中的配置为准。
+     * 剧本ID。 > * 如果shoot_scripts中shoot_script.script_type为\"TEXT\"，则台词以shoot_scripts中的文本为准； > * 如果shoot_scripts中shoot_script.script_type为\"AUDIO\"，则台词以script_id对应剧本中的音频为准。
      * @return scriptId
      */
     public String getScriptId() {
@@ -156,7 +161,7 @@ public class CreatePhotoDigitalHumanVideoReq {
     }
 
     /**
-     * 拍摄脚本列表。
+     * 剧本列表。照片数字人仅支持传入一个剧本shoot_script，剧本参数仅支持shoot_script.script_type、shoot_script.text_config；
      * @return shootScripts
      */
     public List<ShootScriptItem> getShootScripts() {
@@ -220,6 +225,32 @@ public class CreatePhotoDigitalHumanVideoReq {
         this.backgroundMusicConfig = backgroundMusicConfig;
     }
 
+    public CreatePhotoDigitalHumanVideoReq withReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+        return this;
+    }
+
+    public CreatePhotoDigitalHumanVideoReq withReviewConfig(Consumer<ReviewConfig> reviewConfigSetter) {
+        if (this.reviewConfig == null) {
+            this.reviewConfig = new ReviewConfig();
+            reviewConfigSetter.accept(this.reviewConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reviewConfig
+     * @return reviewConfig
+     */
+    public ReviewConfig getReviewConfig() {
+        return reviewConfig;
+    }
+
+    public void setReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -233,7 +264,8 @@ public class CreatePhotoDigitalHumanVideoReq {
             && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.videoConfig, that.videoConfig)
             && Objects.equals(this.shootScripts, that.shootScripts)
             && Objects.equals(this.outputAssetConfig, that.outputAssetConfig)
-            && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig);
+            && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig)
+            && Objects.equals(this.reviewConfig, that.reviewConfig);
     }
 
     @Override
@@ -244,7 +276,8 @@ public class CreatePhotoDigitalHumanVideoReq {
             videoConfig,
             shootScripts,
             outputAssetConfig,
-            backgroundMusicConfig);
+            backgroundMusicConfig,
+            reviewConfig);
     }
 
     @Override
@@ -258,6 +291,7 @@ public class CreatePhotoDigitalHumanVideoReq {
         sb.append("    shootScripts: ").append(toIndentedString(shootScripts)).append("\n");
         sb.append("    outputAssetConfig: ").append(toIndentedString(outputAssetConfig)).append("\n");
         sb.append("    backgroundMusicConfig: ").append(toIndentedString(backgroundMusicConfig)).append("\n");
+        sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -253,6 +253,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDbUserPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetInstancesDbShrinkResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesNewDbShrinkRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetInstancesNewDbShrinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetOffSiteBackupPolicyRequest;
@@ -327,6 +329,8 @@ import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartResizeFlavorActionResponse;
 import com.huaweicloud.sdk.rds.v3.model.StartupInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.StartupInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.StopBackupRequest;
+import com.huaweicloud.sdk.rds.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.StopDatabaseProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.StopInstanceRequest;
@@ -3683,6 +3687,34 @@ public class RdsClient {
     }
 
     /**
+     * 停止备份
+     *
+     * 停止创建备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopBackupRequest 请求对象
+     * @return StopBackupResponse
+     */
+    public StopBackupResponse stopBackup(StopBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.stopBackup);
+    }
+
+    /**
+     * 停止备份
+     *
+     * 停止创建备份
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param StopBackupRequest 请求对象
+     * @return SyncInvoker<StopBackupRequest, StopBackupResponse>
+     */
+    public SyncInvoker<StopBackupRequest, StopBackupResponse> stopBackupInvoker(StopBackupRequest request) {
+        return new SyncInvoker<StopBackupRequest, StopBackupResponse>(request, RdsMeta.stopBackup, hcClient);
+    }
+
+    /**
      * 停止实例
      *
      * 实例进行关机，通过暂时停止按需实例以节省费用，实例默认停止七天。
@@ -5931,6 +5963,36 @@ public class RdsClient {
         SetInstancesDbShrinkRequest request) {
         return new SyncInvoker<SetInstancesDbShrinkRequest, SetInstancesDbShrinkResponse>(request,
             RdsMeta.setInstancesDbShrink, hcClient);
+    }
+
+    /**
+     * 收缩数据库日志
+     *
+     * 收缩数据库日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInstancesNewDbShrinkRequest 请求对象
+     * @return SetInstancesNewDbShrinkResponse
+     */
+    public SetInstancesNewDbShrinkResponse setInstancesNewDbShrink(SetInstancesNewDbShrinkRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.setInstancesNewDbShrink);
+    }
+
+    /**
+     * 收缩数据库日志
+     *
+     * 收缩数据库日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param SetInstancesNewDbShrinkRequest 请求对象
+     * @return SyncInvoker<SetInstancesNewDbShrinkRequest, SetInstancesNewDbShrinkResponse>
+     */
+    public SyncInvoker<SetInstancesNewDbShrinkRequest, SetInstancesNewDbShrinkResponse> setInstancesNewDbShrinkInvoker(
+        SetInstancesNewDbShrinkRequest request) {
+        return new SyncInvoker<SetInstancesNewDbShrinkRequest, SetInstancesNewDbShrinkResponse>(request,
+            RdsMeta.setInstancesNewDbShrink, hcClient);
     }
 
 }

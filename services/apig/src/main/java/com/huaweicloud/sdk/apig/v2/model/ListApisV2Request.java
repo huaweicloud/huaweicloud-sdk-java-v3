@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -85,86 +80,10 @@ public class ListApisV2Request {
 
     private String vpcChannelName;
 
-    /**
-     * 指定API详情中需要包含的额外返回结果，多个参数之间使用“,”隔开，当brief和其他include参数共同使用时，brief不生效。 目前仅支持brief，include_group，include_group_backend。 brief：默认值，不包含额外信息。 include_group：返回结果中包含api_group_info。 include_group_backend：返回结果中包含backend_api。
-     */
-    public static final class ReturnDataModeEnum {
-
-        /**
-         * Enum BRIEF for value: "brief"
-         */
-        public static final ReturnDataModeEnum BRIEF = new ReturnDataModeEnum("brief");
-
-        /**
-         * Enum INCLUDE_GROUP for value: "include_group"
-         */
-        public static final ReturnDataModeEnum INCLUDE_GROUP = new ReturnDataModeEnum("include_group");
-
-        /**
-         * Enum INCLUDE_GROUP_BACKEND for value: "include_group_backend"
-         */
-        public static final ReturnDataModeEnum INCLUDE_GROUP_BACKEND = new ReturnDataModeEnum("include_group_backend");
-
-        private static final Map<String, ReturnDataModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ReturnDataModeEnum> createStaticFields() {
-            Map<String, ReturnDataModeEnum> map = new HashMap<>();
-            map.put("brief", BRIEF);
-            map.put("include_group", INCLUDE_GROUP);
-            map.put("include_group_backend", INCLUDE_GROUP_BACKEND);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ReturnDataModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ReturnDataModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReturnDataModeEnum(value));
-        }
-
-        public static ReturnDataModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ReturnDataModeEnum) {
-                return this.value.equals(((ReturnDataModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "return_data_mode")
 
-    private ReturnDataModeEnum returnDataMode;
+    private String returnDataMode;
 
     public ListApisV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -406,7 +325,7 @@ public class ListApisV2Request {
         this.vpcChannelName = vpcChannelName;
     }
 
-    public ListApisV2Request withReturnDataMode(ReturnDataModeEnum returnDataMode) {
+    public ListApisV2Request withReturnDataMode(String returnDataMode) {
         this.returnDataMode = returnDataMode;
         return this;
     }
@@ -415,11 +334,11 @@ public class ListApisV2Request {
      * 指定API详情中需要包含的额外返回结果，多个参数之间使用“,”隔开，当brief和其他include参数共同使用时，brief不生效。 目前仅支持brief，include_group，include_group_backend。 brief：默认值，不包含额外信息。 include_group：返回结果中包含api_group_info。 include_group_backend：返回结果中包含backend_api。
      * @return returnDataMode
      */
-    public ReturnDataModeEnum getReturnDataMode() {
+    public String getReturnDataMode() {
         return returnDataMode;
     }
 
-    public void setReturnDataMode(ReturnDataModeEnum returnDataMode) {
+    public void setReturnDataMode(String returnDataMode) {
         this.returnDataMode = returnDataMode;
     }
 

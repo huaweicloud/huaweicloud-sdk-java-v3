@@ -29,6 +29,11 @@ public class UpdateSqlAlarmRuleRequestBody {
     private String sqlAlarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_rule_alias")
+
+    private String alarmRuleAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_css_sql")
 
     private Boolean isCssSql;
@@ -412,6 +417,23 @@ public class UpdateSqlAlarmRuleRequestBody {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
     }
 
+    public UpdateSqlAlarmRuleRequestBody withAlarmRuleAlias(String alarmRuleAlias) {
+        this.alarmRuleAlias = alarmRuleAlias;
+        return this;
+    }
+
+    /**
+     * 规则名称
+     * @return alarmRuleAlias
+     */
+    public String getAlarmRuleAlias() {
+        return alarmRuleAlias;
+    }
+
+    public void setAlarmRuleAlias(String alarmRuleAlias) {
+        this.alarmRuleAlias = alarmRuleAlias;
+    }
+
     public UpdateSqlAlarmRuleRequestBody withIsCssSql(Boolean isCssSql) {
         this.isCssSql = isCssSql;
         return this;
@@ -732,7 +754,7 @@ public class UpdateSqlAlarmRuleRequestBody {
         UpdateSqlAlarmRuleRequestBody that = (UpdateSqlAlarmRuleRequestBody) obj;
         return Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId)
             && Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
-            && Objects.equals(this.isCssSql, that.isCssSql)
+            && Objects.equals(this.alarmRuleAlias, that.alarmRuleAlias) && Objects.equals(this.isCssSql, that.isCssSql)
             && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
             && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
             && Objects.equals(this.conditionExpression, that.conditionExpression)
@@ -753,6 +775,7 @@ public class UpdateSqlAlarmRuleRequestBody {
     public int hashCode() {
         return Objects.hash(sqlAlarmRuleId,
             sqlAlarmRuleName,
+            alarmRuleAlias,
             isCssSql,
             sqlAlarmRuleDescription,
             sqlRequests,
@@ -777,6 +800,7 @@ public class UpdateSqlAlarmRuleRequestBody {
         sb.append("class UpdateSqlAlarmRuleRequestBody {\n");
         sb.append("    sqlAlarmRuleId: ").append(toIndentedString(sqlAlarmRuleId)).append("\n");
         sb.append("    sqlAlarmRuleName: ").append(toIndentedString(sqlAlarmRuleName)).append("\n");
+        sb.append("    alarmRuleAlias: ").append(toIndentedString(alarmRuleAlias)).append("\n");
         sb.append("    isCssSql: ").append(toIndentedString(isCssSql)).append("\n");
         sb.append("    sqlAlarmRuleDescription: ").append(toIndentedString(sqlAlarmRuleDescription)).append("\n");
         sb.append("    sqlRequests: ").append(toIndentedString(sqlRequests)).append("\n");

@@ -70,6 +70,11 @@ public class ListSmartLiveRoomsRequest {
 
     private String endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "room_type")
+
+    private String roomType;
+
     public ListSmartLiveRoomsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -131,7 +136,7 @@ public class ListSmartLiveRoomsRequest {
     }
 
     /**
-     * 开发者应用作为资产权属的可选字段。
+     * 第三方用户ID。 > *不允许输入中文。
      * @return xAppUserId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -239,7 +244,7 @@ public class ListSmartLiveRoomsRequest {
     }
 
     /**
-     * 当前直播间直播状态。 WAITING，PROCESSING，SUCCESS，FAILED对应直播任务状态 NULL 对应没有直播任务 可多个状态查询，使用英文逗号分隔。
+     * 当前直播间直播状态。 WAITING，PROCESSING，SUCCESS，FAILED，CANCELED对应直播任务状态 NULL 对应没有直播任务 可多个状态查询，使用英文逗号分隔。
      * @return liveState
      */
     public String getLiveState() {
@@ -284,6 +289,23 @@ public class ListSmartLiveRoomsRequest {
         this.endTime = endTime;
     }
 
+    public ListSmartLiveRoomsRequest withRoomType(String roomType) {
+        this.roomType = roomType;
+        return this;
+    }
+
+    /**
+     * 按直播间类型查询。直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
+     * @return roomType
+     */
+    public String getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -298,7 +320,8 @@ public class ListSmartLiveRoomsRequest {
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.roomName, that.roomName) && Objects.equals(this.dhId, that.dhId)
             && Objects.equals(this.modelName, that.modelName) && Objects.equals(this.liveState, that.liveState)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.roomType, that.roomType);
     }
 
     @Override
@@ -314,7 +337,8 @@ public class ListSmartLiveRoomsRequest {
             modelName,
             liveState,
             startTime,
-            endTime);
+            endTime,
+            roomType);
     }
 
     @Override
@@ -333,6 +357,7 @@ public class ListSmartLiveRoomsRequest {
         sb.append("    liveState: ").append(toIndentedString(liveState)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    roomType: ").append(toIndentedString(roomType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -123,6 +123,11 @@ public class PPTAssetMeta {
     private PptAnalysisStatusEnum pptAnalysisStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorResponse errorInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_count")
 
     private Integer pageCount;
@@ -164,6 +169,32 @@ public class PPTAssetMeta {
 
     public void setPptAnalysisStatus(PptAnalysisStatusEnum pptAnalysisStatus) {
         this.pptAnalysisStatus = pptAnalysisStatus;
+    }
+
+    public PPTAssetMeta withErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public PPTAssetMeta withErrorInfo(Consumer<ErrorResponse> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorResponse();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorResponse getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
     }
 
     public PPTAssetMeta withPageCount(Integer pageCount) {
@@ -229,12 +260,13 @@ public class PPTAssetMeta {
         PPTAssetMeta that = (PPTAssetMeta) obj;
         return Objects.equals(this.autoAnalysis, that.autoAnalysis)
             && Objects.equals(this.pptAnalysisStatus, that.pptAnalysisStatus)
-            && Objects.equals(this.pageCount, that.pageCount) && Objects.equals(this.pages, that.pages);
+            && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.pageCount, that.pageCount)
+            && Objects.equals(this.pages, that.pages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autoAnalysis, pptAnalysisStatus, pageCount, pages);
+        return Objects.hash(autoAnalysis, pptAnalysisStatus, errorInfo, pageCount, pages);
     }
 
     @Override
@@ -243,6 +275,7 @@ public class PPTAssetMeta {
         sb.append("class PPTAssetMeta {\n");
         sb.append("    autoAnalysis: ").append(toIndentedString(autoAnalysis)).append("\n");
         sb.append("    pptAnalysisStatus: ").append(toIndentedString(pptAnalysisStatus)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
         sb.append("    pages: ").append(toIndentedString(pages)).append("\n");
         sb.append("}");

@@ -71,7 +71,7 @@ public class CBHInstances {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network")
 
-    private Object network;
+    private NetworkInfoCreate network;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
@@ -290,20 +290,29 @@ public class CBHInstances {
         this.isAutoPay = isAutoPay;
     }
 
-    public CBHInstances withNetwork(Object network) {
+    public CBHInstances withNetwork(NetworkInfoCreate network) {
         this.network = network;
         return this;
     }
 
+    public CBHInstances withNetwork(Consumer<NetworkInfoCreate> networkSetter) {
+        if (this.network == null) {
+            this.network = new NetworkInfoCreate();
+            networkSetter.accept(this.network);
+        }
+
+        return this;
+    }
+
     /**
-     * 网络信息。
+     * Get network
      * @return network
      */
-    public Object getNetwork() {
+    public NetworkInfoCreate getNetwork() {
         return network;
     }
 
-    public void setNetwork(Object network) {
+    public void setNetwork(NetworkInfoCreate network) {
         this.network = network;
     }
 

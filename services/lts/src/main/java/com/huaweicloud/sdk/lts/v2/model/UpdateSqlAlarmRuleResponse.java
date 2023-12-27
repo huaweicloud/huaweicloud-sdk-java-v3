@@ -25,6 +25,11 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     private String sqlAlarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_rule_alias")
+
+    private String alarmRuleAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_css_sql")
 
     private Boolean isCssSql;
@@ -389,6 +394,23 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         this.sqlAlarmRuleName = sqlAlarmRuleName;
     }
 
+    public UpdateSqlAlarmRuleResponse withAlarmRuleAlias(String alarmRuleAlias) {
+        this.alarmRuleAlias = alarmRuleAlias;
+        return this;
+    }
+
+    /**
+     * 规则名称
+     * @return alarmRuleAlias
+     */
+    public String getAlarmRuleAlias() {
+        return alarmRuleAlias;
+    }
+
+    public void setAlarmRuleAlias(String alarmRuleAlias) {
+        this.alarmRuleAlias = alarmRuleAlias;
+    }
+
     public UpdateSqlAlarmRuleResponse withIsCssSql(Boolean isCssSql) {
         this.isCssSql = isCssSql;
         return this;
@@ -750,8 +772,8 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         }
         UpdateSqlAlarmRuleResponse that = (UpdateSqlAlarmRuleResponse) obj;
         return Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
-            && Objects.equals(this.isCssSql, that.isCssSql) && Objects.equals(this.indexId, that.indexId)
-            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.alarmRuleAlias, that.alarmRuleAlias) && Objects.equals(this.isCssSql, that.isCssSql)
+            && Objects.equals(this.indexId, that.indexId) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId)
             && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
             && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
@@ -768,6 +790,7 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(sqlAlarmRuleName,
+            alarmRuleAlias,
             isCssSql,
             indexId,
             projectId,
@@ -793,6 +816,7 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateSqlAlarmRuleResponse {\n");
         sb.append("    sqlAlarmRuleName: ").append(toIndentedString(sqlAlarmRuleName)).append("\n");
+        sb.append("    alarmRuleAlias: ").append(toIndentedString(alarmRuleAlias)).append("\n");
         sb.append("    isCssSql: ").append(toIndentedString(isCssSql)).append("\n");
         sb.append("    indexId: ").append(toIndentedString(indexId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");

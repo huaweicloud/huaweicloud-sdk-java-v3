@@ -40,7 +40,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<CreateTableRequest, CreateTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTableRequest.class, CreateTableResponse.class)
                 .withName("CreateTable")
-                .withUri("/v1/{project_id}/create-table")
+                .withUri("/v1/create-table")
                 .withContentType("application/bson");
 
         // requests
@@ -65,7 +65,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<DescribeTableRequest, DescribeTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DescribeTableRequest.class, DescribeTableResponse.class)
                 .withName("DescribeTable")
-                .withUri("/v1/{project_id}/describe-table")
+                .withUri("/v1/describe-table")
                 .withContentType("application/bson");
 
         // requests
@@ -89,7 +89,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<ListTableRequest, ListTableResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ListTableRequest.class, ListTableResponse.class)
                 .withName("ListTable")
-                .withUri("/v1/{project_id}/list-table")
+                .withUri("/v1/list-table")
                 .withContentType("application/bson");
 
         // requests
@@ -113,7 +113,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<RenameKvRequest, RenameKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, RenameKvRequest.class, RenameKvResponse.class)
                 .withName("RenameKv")
-                .withUri("/v1/{project_id}/rename-kv")
+                .withUri("/v1/rename-kv")
                 .withContentType("application/bson");
 
         // requests
@@ -137,7 +137,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<BatchGetKvRequest, BatchGetKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchGetKvRequest.class, BatchGetKvResponse.class)
                 .withName("BatchGetKv")
-                .withUri("/v1/{project_id}/batch-get-kv")
+                .withUri("/v1/batch-get-kv")
                 .withContentType("application/bson");
 
         // requests
@@ -161,7 +161,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<BatchWriteKvRequest, BatchWriteKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, BatchWriteKvRequest.class, BatchWriteKvResponse.class)
                 .withName("BatchWriteKv")
-                .withUri("/v1/{project_id}/batch-write-kv")
+                .withUri("/v1/batch-write-kv")
                 .withContentType("application/bson");
 
         // requests
@@ -185,7 +185,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<DeleteKvRequest, DeleteKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteKvRequest.class, DeleteKvResponse.class)
                 .withName("DeleteKv")
-                .withUri("/v1/{project_id}/delete-kv")
+                .withUri("/v1/delete-kv")
                 .withContentType("application/bson");
 
         // requests
@@ -209,7 +209,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<GetKvRequest, GetKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, GetKvRequest.class, GetKvResponse.class)
                 .withName("GetKv")
-                .withUri("/v1/{project_id}/get-kv")
+                .withUri("/v1/get-kv")
                 .withContentType("application/bson");
 
         // requests
@@ -233,7 +233,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<PutKvRequest, PutKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, PutKvRequest.class, PutKvResponse.class)
                 .withName("PutKv")
-                .withUri("/v1/{project_id}/put-kv")
+                .withUri("/v1/put-kv")
                 .withContentType("application/bson");
 
         // requests
@@ -257,7 +257,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<ScanKvRequest, ScanKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ScanKvRequest.class, ScanKvResponse.class)
                 .withName("ScanKv")
-                .withUri("/v1/{project_id}/scan-kv")
+                .withUri("/v1/scan-kv")
                 .withContentType("application/bson");
 
         // requests
@@ -281,7 +281,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<ScanSkeyKvRequest, ScanSkeyKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ScanSkeyKvRequest.class, ScanSkeyKvResponse.class)
                 .withName("ScanSkeyKv")
-                .withUri("/v1/{project_id}/scan-skey-kv")
+                .withUri("/v1/scan-skey-kv")
                 .withContentType("application/bson");
 
         // requests
@@ -305,7 +305,7 @@ public class KvsMeta {
         HttpRequestDef.Builder<UpdateKvRequest, UpdateKvResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateKvRequest.class, UpdateKvResponse.class)
                 .withName("UpdateKv")
-                .withUri("/v1/{project_id}/update-kv")
+                .withUri("/v1/update-kv")
                 .withContentType("application/bson");
 
         // requests

@@ -109,6 +109,21 @@ public class PrivateImageRepositoryInfo {
     private Boolean scannable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_name")
+
+    private String instanceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_url")
+
+    private String instanceUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "association_images")
 
     private List<AssociateImages> associationImages = null;
@@ -450,6 +465,57 @@ public class PrivateImageRepositoryInfo {
         this.scannable = scannable;
     }
 
+    public PrivateImageRepositoryInfo withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+        return this;
+    }
+
+    /**
+     * 企业实例名称
+     * @return instanceName
+     */
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
+
+    public PrivateImageRepositoryInfo withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 企业实例ID
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public PrivateImageRepositoryInfo withInstanceUrl(String instanceUrl) {
+        this.instanceUrl = instanceUrl;
+        return this;
+    }
+
+    /**
+     * 企业镜像URL
+     * @return instanceUrl
+     */
+    public String getInstanceUrl() {
+        return instanceUrl;
+    }
+
+    public void setInstanceUrl(String instanceUrl) {
+        this.instanceUrl = instanceUrl;
+    }
+
     public PrivateImageRepositoryInfo withAssociationImages(List<AssociateImages> associationImages) {
         this.associationImages = associationImages;
         return this;
@@ -505,7 +571,8 @@ public class PrivateImageRepositoryInfo {
             && Objects.equals(this.unsafeSettingNum, that.unsafeSettingNum)
             && Objects.equals(this.maliciousFileNum, that.maliciousFileNum)
             && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.sharedStatus, that.sharedStatus)
-            && Objects.equals(this.scannable, that.scannable)
+            && Objects.equals(this.scannable, that.scannable) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceUrl, that.instanceUrl)
             && Objects.equals(this.associationImages, that.associationImages);
     }
 
@@ -530,6 +597,9 @@ public class PrivateImageRepositoryInfo {
             domainName,
             sharedStatus,
             scannable,
+            instanceName,
+            instanceId,
+            instanceUrl,
             associationImages);
     }
 
@@ -556,6 +626,9 @@ public class PrivateImageRepositoryInfo {
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    sharedStatus: ").append(toIndentedString(sharedStatus)).append("\n");
         sb.append("    scannable: ").append(toIndentedString(scannable)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceUrl: ").append(toIndentedString(instanceUrl)).append("\n");
         sb.append("    associationImages: ").append(toIndentedString(associationImages)).append("\n");
         sb.append("}");
         return sb.toString();

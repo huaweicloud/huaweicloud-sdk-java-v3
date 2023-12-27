@@ -21,7 +21,7 @@ public class Resources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_detail")
 
-    private Object resourceDetail;
+    private InstanceDetail resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -55,20 +55,29 @@ public class Resources {
         this.resourceId = resourceId;
     }
 
-    public Resources withResourceDetail(Object resourceDetail) {
+    public Resources withResourceDetail(InstanceDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
     }
 
+    public Resources withResourceDetail(Consumer<InstanceDetail> resourceDetailSetter) {
+        if (this.resourceDetail == null) {
+            this.resourceDetail = new InstanceDetail();
+            resourceDetailSetter.accept(this.resourceDetail);
+        }
+
+        return this;
+    }
+
     /**
-     * 资源详情。预留用于扩展，默认为空。
+     * Get resourceDetail
      * @return resourceDetail
      */
-    public Object getResourceDetail() {
+    public InstanceDetail getResourceDetail() {
         return resourceDetail;
     }
 
-    public void setResourceDetail(Object resourceDetail) {
+    public void setResourceDetail(InstanceDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
     }
 

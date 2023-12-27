@@ -45,6 +45,16 @@ public class PortResponseInfo {
 
     private String path;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_id")
+
+    private String agentId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_id")
+
+    private String containerId;
+
     public PortResponseInfo withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -168,6 +178,40 @@ public class PortResponseInfo {
         this.path = path;
     }
 
+    public PortResponseInfo withAgentId(String agentId) {
+        this.agentId = agentId;
+        return this;
+    }
+
+    /**
+     * agent id
+     * @return agentId
+     */
+    public String getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(String agentId) {
+        this.agentId = agentId;
+    }
+
+    public PortResponseInfo withContainerId(String containerId) {
+        this.containerId = containerId;
+        return this;
+    }
+
+    /**
+     * 容器id
+     * @return containerId
+     */
+    public String getContainerId() {
+        return containerId;
+    }
+
+    public void setContainerId(String containerId) {
+        this.containerId = containerId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +224,13 @@ public class PortResponseInfo {
         return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.laddr, that.laddr)
             && Objects.equals(this.status, that.status) && Objects.equals(this.port, that.port)
             && Objects.equals(this.type, that.type) && Objects.equals(this.pid, that.pid)
-            && Objects.equals(this.path, that.path);
+            && Objects.equals(this.path, that.path) && Objects.equals(this.agentId, that.agentId)
+            && Objects.equals(this.containerId, that.containerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, laddr, status, port, type, pid, path);
+        return Objects.hash(hostId, laddr, status, port, type, pid, path, agentId, containerId);
     }
 
     @Override
@@ -199,6 +244,8 @@ public class PortResponseInfo {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    pid: ").append(toIndentedString(pid)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+        sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

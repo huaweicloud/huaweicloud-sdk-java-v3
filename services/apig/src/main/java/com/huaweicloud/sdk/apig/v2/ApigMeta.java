@@ -6732,10 +6732,10 @@ public class ApigMeta {
             f -> f.withMarshaller(ListApisV2Request::getVpcChannelName, (req, v) -> {
                 req.setVpcChannelName(v);
             }));
-        builder.<ListApisV2Request.ReturnDataModeEnum>withRequestField("return_data_mode",
+        builder.<String>withRequestField("return_data_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListApisV2Request.ReturnDataModeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisV2Request::getReturnDataMode, (req, v) -> {
                 req.setReturnDataMode(v);
             }));

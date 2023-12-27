@@ -28,86 +28,6 @@ public class UpdateVideoScriptsReq {
 
     private String scriptDescription;
 
-    /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频
-     */
-    public static final class VideoMakingTypeEnum {
-
-        /**
-         * Enum MODEL for value: "MODEL"
-         */
-        public static final VideoMakingTypeEnum MODEL = new VideoMakingTypeEnum("MODEL");
-
-        /**
-         * Enum PICTURE for value: "PICTURE"
-         */
-        public static final VideoMakingTypeEnum PICTURE = new VideoMakingTypeEnum("PICTURE");
-
-        private static final Map<String, VideoMakingTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, VideoMakingTypeEnum> createStaticFields() {
-            Map<String, VideoMakingTypeEnum> map = new HashMap<>();
-            map.put("MODEL", MODEL);
-            map.put("PICTURE", PICTURE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        VideoMakingTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static VideoMakingTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoMakingTypeEnum(value));
-        }
-
-        public static VideoMakingTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof VideoMakingTypeEnum) {
-                return this.value.equals(((VideoMakingTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "video_making_type")
-
-    private VideoMakingTypeEnum videoMakingType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "human_image")
-
-    private String humanImage;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_asset_id")
 
@@ -189,11 +109,6 @@ public class UpdateVideoScriptsReq {
     private ModelAssetTypeEnum modelAssetType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scene_asset_id")
-
-    private String sceneAssetId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "voice_config")
 
     private VoiceConfig voiceConfig;
@@ -204,9 +119,9 @@ public class UpdateVideoScriptsReq {
     private VideoConfig videoConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "shoot_scripts")
+    @JsonProperty(value = "scene_asset_id")
 
-    private List<ShootScriptItem> shootScripts = null;
+    private String sceneAssetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priv_data")
@@ -218,13 +133,23 @@ public class UpdateVideoScriptsReq {
 
     private BackgroundMusicConfig backgroundMusicConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_config")
+
+    private ReviewConfig reviewConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "shoot_scripts")
+
+    private List<ShootScriptItem> shootScripts = null;
+
     public UpdateVideoScriptsReq withScriptName(String scriptName) {
         this.scriptName = scriptName;
         return this;
     }
 
     /**
-     * 剧本名称。
+     * 剧本名称
      * @return scriptName
      */
     public String getScriptName() {
@@ -252,47 +177,13 @@ public class UpdateVideoScriptsReq {
         this.scriptDescription = scriptDescription;
     }
 
-    public UpdateVideoScriptsReq withVideoMakingType(VideoMakingTypeEnum videoMakingType) {
-        this.videoMakingType = videoMakingType;
-        return this;
-    }
-
-    /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频
-     * @return videoMakingType
-     */
-    public VideoMakingTypeEnum getVideoMakingType() {
-        return videoMakingType;
-    }
-
-    public void setVideoMakingType(VideoMakingTypeEnum videoMakingType) {
-        this.videoMakingType = videoMakingType;
-    }
-
-    public UpdateVideoScriptsReq withHumanImage(String humanImage) {
-        this.humanImage = humanImage;
-        return this;
-    }
-
-    /**
-     * 人物照片，需要Base64编码。
-     * @return humanImage
-     */
-    public String getHumanImage() {
-        return humanImage;
-    }
-
-    public void setHumanImage(String humanImage) {
-        this.humanImage = humanImage;
-    }
-
     public UpdateVideoScriptsReq withModelAssetId(String modelAssetId) {
         this.modelAssetId = modelAssetId;
         return this;
     }
 
     /**
-     * 数字人资产ID。
+     * 数字人模型资产ID。
      * @return modelAssetId
      */
     public String getModelAssetId() {
@@ -318,23 +209,6 @@ public class UpdateVideoScriptsReq {
 
     public void setModelAssetType(ModelAssetTypeEnum modelAssetType) {
         this.modelAssetType = modelAssetType;
-    }
-
-    public UpdateVideoScriptsReq withSceneAssetId(String sceneAssetId) {
-        this.sceneAssetId = sceneAssetId;
-        return this;
-    }
-
-    /**
-     * 场景资产ID。
-     * @return sceneAssetId
-     */
-    public String getSceneAssetId() {
-        return sceneAssetId;
-    }
-
-    public void setSceneAssetId(String sceneAssetId) {
-        this.sceneAssetId = sceneAssetId;
     }
 
     public UpdateVideoScriptsReq withVoiceConfig(VoiceConfig voiceConfig) {
@@ -389,37 +263,21 @@ public class UpdateVideoScriptsReq {
         this.videoConfig = videoConfig;
     }
 
-    public UpdateVideoScriptsReq withShootScripts(List<ShootScriptItem> shootScripts) {
-        this.shootScripts = shootScripts;
-        return this;
-    }
-
-    public UpdateVideoScriptsReq addShootScriptsItem(ShootScriptItem shootScriptsItem) {
-        if (this.shootScripts == null) {
-            this.shootScripts = new ArrayList<>();
-        }
-        this.shootScripts.add(shootScriptsItem);
-        return this;
-    }
-
-    public UpdateVideoScriptsReq withShootScripts(Consumer<List<ShootScriptItem>> shootScriptsSetter) {
-        if (this.shootScripts == null) {
-            this.shootScripts = new ArrayList<>();
-        }
-        shootScriptsSetter.accept(this.shootScripts);
+    public UpdateVideoScriptsReq withSceneAssetId(String sceneAssetId) {
+        this.sceneAssetId = sceneAssetId;
         return this;
     }
 
     /**
-     * 剧本参数。
-     * @return shootScripts
+     * 场景资产ID。 > * 分身数字人视频制作不需要填写该参数。
+     * @return sceneAssetId
      */
-    public List<ShootScriptItem> getShootScripts() {
-        return shootScripts;
+    public String getSceneAssetId() {
+        return sceneAssetId;
     }
 
-    public void setShootScripts(List<ShootScriptItem> shootScripts) {
-        this.shootScripts = shootScripts;
+    public void setSceneAssetId(String sceneAssetId) {
+        this.sceneAssetId = sceneAssetId;
     }
 
     public UpdateVideoScriptsReq withPrivData(String privData) {
@@ -466,6 +324,65 @@ public class UpdateVideoScriptsReq {
         this.backgroundMusicConfig = backgroundMusicConfig;
     }
 
+    public UpdateVideoScriptsReq withReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+        return this;
+    }
+
+    public UpdateVideoScriptsReq withReviewConfig(Consumer<ReviewConfig> reviewConfigSetter) {
+        if (this.reviewConfig == null) {
+            this.reviewConfig = new ReviewConfig();
+            reviewConfigSetter.accept(this.reviewConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reviewConfig
+     * @return reviewConfig
+     */
+    public ReviewConfig getReviewConfig() {
+        return reviewConfig;
+    }
+
+    public void setReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+    }
+
+    public UpdateVideoScriptsReq withShootScripts(List<ShootScriptItem> shootScripts) {
+        this.shootScripts = shootScripts;
+        return this;
+    }
+
+    public UpdateVideoScriptsReq addShootScriptsItem(ShootScriptItem shootScriptsItem) {
+        if (this.shootScripts == null) {
+            this.shootScripts = new ArrayList<>();
+        }
+        this.shootScripts.add(shootScriptsItem);
+        return this;
+    }
+
+    public UpdateVideoScriptsReq withShootScripts(Consumer<List<ShootScriptItem>> shootScriptsSetter) {
+        if (this.shootScripts == null) {
+            this.shootScripts = new ArrayList<>();
+        }
+        shootScriptsSetter.accept(this.shootScripts);
+        return this;
+    }
+
+    /**
+     * 拍摄脚本列表。
+     * @return shootScripts
+     */
+    public List<ShootScriptItem> getShootScripts() {
+        return shootScripts;
+    }
+
+    public void setShootScripts(List<ShootScriptItem> shootScripts) {
+        this.shootScripts = shootScripts;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -477,29 +394,28 @@ public class UpdateVideoScriptsReq {
         UpdateVideoScriptsReq that = (UpdateVideoScriptsReq) obj;
         return Objects.equals(this.scriptName, that.scriptName)
             && Objects.equals(this.scriptDescription, that.scriptDescription)
-            && Objects.equals(this.videoMakingType, that.videoMakingType)
-            && Objects.equals(this.humanImage, that.humanImage) && Objects.equals(this.modelAssetId, that.modelAssetId)
+            && Objects.equals(this.modelAssetId, that.modelAssetId)
             && Objects.equals(this.modelAssetType, that.modelAssetType)
-            && Objects.equals(this.sceneAssetId, that.sceneAssetId)
             && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.videoConfig, that.videoConfig)
-            && Objects.equals(this.shootScripts, that.shootScripts) && Objects.equals(this.privData, that.privData)
-            && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig);
+            && Objects.equals(this.sceneAssetId, that.sceneAssetId) && Objects.equals(this.privData, that.privData)
+            && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig)
+            && Objects.equals(this.reviewConfig, that.reviewConfig)
+            && Objects.equals(this.shootScripts, that.shootScripts);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(scriptName,
             scriptDescription,
-            videoMakingType,
-            humanImage,
             modelAssetId,
             modelAssetType,
-            sceneAssetId,
             voiceConfig,
             videoConfig,
-            shootScripts,
+            sceneAssetId,
             privData,
-            backgroundMusicConfig);
+            backgroundMusicConfig,
+            reviewConfig,
+            shootScripts);
     }
 
     @Override
@@ -508,16 +424,15 @@ public class UpdateVideoScriptsReq {
         sb.append("class UpdateVideoScriptsReq {\n");
         sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("    scriptDescription: ").append(toIndentedString(scriptDescription)).append("\n");
-        sb.append("    videoMakingType: ").append(toIndentedString(videoMakingType)).append("\n");
-        sb.append("    humanImage: ").append(toIndentedString(humanImage)).append("\n");
         sb.append("    modelAssetId: ").append(toIndentedString(modelAssetId)).append("\n");
         sb.append("    modelAssetType: ").append(toIndentedString(modelAssetType)).append("\n");
-        sb.append("    sceneAssetId: ").append(toIndentedString(sceneAssetId)).append("\n");
         sb.append("    voiceConfig: ").append(toIndentedString(voiceConfig)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
-        sb.append("    shootScripts: ").append(toIndentedString(shootScripts)).append("\n");
+        sb.append("    sceneAssetId: ").append(toIndentedString(sceneAssetId)).append("\n");
         sb.append("    privData: ").append(toIndentedString(privData)).append("\n");
         sb.append("    backgroundMusicConfig: ").append(toIndentedString(backgroundMusicConfig)).append("\n");
+        sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
+        sb.append("    shootScripts: ").append(toIndentedString(shootScripts)).append("\n");
         sb.append("}");
         return sb.toString();
     }

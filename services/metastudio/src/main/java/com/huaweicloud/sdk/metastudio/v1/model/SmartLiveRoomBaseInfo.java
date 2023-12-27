@@ -28,6 +28,173 @@ public class SmartLiveRoomBaseInfo {
 
     private String roomName;
 
+    /**
+     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
+     */
+    public static final class RoomTypeEnum {
+
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
+        public static final RoomTypeEnum NORMAL = new RoomTypeEnum("NORMAL");
+
+        /**
+         * Enum TEMP for value: "TEMP"
+         */
+        public static final RoomTypeEnum TEMP = new RoomTypeEnum("TEMP");
+
+        /**
+         * Enum TEMPLATE for value: "TEMPLATE"
+         */
+        public static final RoomTypeEnum TEMPLATE = new RoomTypeEnum("TEMPLATE");
+
+        private static final Map<String, RoomTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RoomTypeEnum> createStaticFields() {
+            Map<String, RoomTypeEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("TEMP", TEMP);
+            map.put("TEMPLATE", TEMPLATE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RoomTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RoomTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RoomTypeEnum(value));
+        }
+
+        public static RoomTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RoomTypeEnum) {
+                return this.value.equals(((RoomTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "room_type")
+
+    private RoomTypeEnum roomType;
+
+    /**
+     * 直播间配置状态。 - ENABLE: 直播间正常可用。 - DISABLE： 直播间不可用。不可用原因在error_info中说明。 - BLOCKED：直播间被冻结。冻结原因在error_info中说明。
+     */
+    public static final class RoomStateEnum {
+
+        /**
+         * Enum ENABLE for value: "ENABLE"
+         */
+        public static final RoomStateEnum ENABLE = new RoomStateEnum("ENABLE");
+
+        /**
+         * Enum DISABLE for value: "DISABLE"
+         */
+        public static final RoomStateEnum DISABLE = new RoomStateEnum("DISABLE");
+
+        /**
+         * Enum BLOCKED for value: "BLOCKED"
+         */
+        public static final RoomStateEnum BLOCKED = new RoomStateEnum("BLOCKED");
+
+        private static final Map<String, RoomStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RoomStateEnum> createStaticFields() {
+            Map<String, RoomStateEnum> map = new HashMap<>();
+            map.put("ENABLE", ENABLE);
+            map.put("DISABLE", DISABLE);
+            map.put("BLOCKED", BLOCKED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RoomStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RoomStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RoomStateEnum(value));
+        }
+
+        public static RoomStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RoomStateEnum) {
+                return this.value.equals(((RoomStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "room_state")
+
+    private RoomStateEnum roomState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorResponse errorInfo;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_description")
 
@@ -188,6 +355,66 @@ public class SmartLiveRoomBaseInfo {
 
     public void setRoomName(String roomName) {
         this.roomName = roomName;
+    }
+
+    public SmartLiveRoomBaseInfo withRoomType(RoomTypeEnum roomType) {
+        this.roomType = roomType;
+        return this;
+    }
+
+    /**
+     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
+     * @return roomType
+     */
+    public RoomTypeEnum getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(RoomTypeEnum roomType) {
+        this.roomType = roomType;
+    }
+
+    public SmartLiveRoomBaseInfo withRoomState(RoomStateEnum roomState) {
+        this.roomState = roomState;
+        return this;
+    }
+
+    /**
+     * 直播间配置状态。 - ENABLE: 直播间正常可用。 - DISABLE： 直播间不可用。不可用原因在error_info中说明。 - BLOCKED：直播间被冻结。冻结原因在error_info中说明。
+     * @return roomState
+     */
+    public RoomStateEnum getRoomState() {
+        return roomState;
+    }
+
+    public void setRoomState(RoomStateEnum roomState) {
+        this.roomState = roomState;
+    }
+
+    public SmartLiveRoomBaseInfo withErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public SmartLiveRoomBaseInfo withErrorInfo(Consumer<ErrorResponse> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorResponse();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorResponse getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
     }
 
     public SmartLiveRoomBaseInfo withRoomDescription(String roomDescription) {
@@ -352,6 +579,8 @@ public class SmartLiveRoomBaseInfo {
         }
         SmartLiveRoomBaseInfo that = (SmartLiveRoomBaseInfo) obj;
         return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.roomName, that.roomName)
+            && Objects.equals(this.roomType, that.roomType) && Objects.equals(this.roomState, that.roomState)
+            && Objects.equals(this.errorInfo, that.errorInfo)
             && Objects.equals(this.roomDescription, that.roomDescription)
             && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.modelInfos, that.modelInfos)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
@@ -364,6 +593,9 @@ public class SmartLiveRoomBaseInfo {
     public int hashCode() {
         return Objects.hash(roomId,
             roomName,
+            roomType,
+            roomState,
+            errorInfo,
             roomDescription,
             coverUrl,
             modelInfos,
@@ -380,6 +612,9 @@ public class SmartLiveRoomBaseInfo {
         sb.append("class SmartLiveRoomBaseInfo {\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    roomName: ").append(toIndentedString(roomName)).append("\n");
+        sb.append("    roomType: ").append(toIndentedString(roomType)).append("\n");
+        sb.append("    roomState: ").append(toIndentedString(roomState)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    roomDescription: ").append(toIndentedString(roomDescription)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
         sb.append("    modelInfos: ").append(toIndentedString(modelInfos)).append("\n");

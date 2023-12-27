@@ -22,7 +22,7 @@ public class SmartLiveJob {
     private String jobId;
 
     /**
-     * 数字人直播任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败
+     * 数字人直播任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * BLOCKED: 封禁
      */
     public static final class StateEnum {
 
@@ -46,6 +46,11 @@ public class SmartLiveJob {
          */
         public static final StateEnum FAILED = new StateEnum("FAILED");
 
+        /**
+         * Enum BLOCKED for value: "BLOCKED"
+         */
+        public static final StateEnum BLOCKED = new StateEnum("BLOCKED");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -54,6 +59,7 @@ public class SmartLiveJob {
             map.put("PROCESSING", PROCESSING);
             map.put("SUCCEED", SUCCEED);
             map.put("FAILED", FAILED);
+            map.put("BLOCKED", BLOCKED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -148,6 +154,21 @@ public class SmartLiveJob {
 
     private String liveEventReportUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "live_event_callback_config")
+
+    private LiveEventCallBackConfig liveEventCallbackConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_duration")
+
+    private Float streamDuration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "block_reason")
+
+    private String blockReason;
+
     public SmartLiveJob withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -171,7 +192,7 @@ public class SmartLiveJob {
     }
 
     /**
-     * 数字人直播任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败
+     * 数字人直播任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * BLOCKED: 封禁
      * @return state
      */
     public StateEnum getState() {
@@ -338,6 +359,68 @@ public class SmartLiveJob {
         this.liveEventReportUrl = liveEventReportUrl;
     }
 
+    public SmartLiveJob withLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+        this.liveEventCallbackConfig = liveEventCallbackConfig;
+        return this;
+    }
+
+    public SmartLiveJob withLiveEventCallbackConfig(Consumer<LiveEventCallBackConfig> liveEventCallbackConfigSetter) {
+        if (this.liveEventCallbackConfig == null) {
+            this.liveEventCallbackConfig = new LiveEventCallBackConfig();
+            liveEventCallbackConfigSetter.accept(this.liveEventCallbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get liveEventCallbackConfig
+     * @return liveEventCallbackConfig
+     */
+    public LiveEventCallBackConfig getLiveEventCallbackConfig() {
+        return liveEventCallbackConfig;
+    }
+
+    public void setLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+        this.liveEventCallbackConfig = liveEventCallbackConfig;
+    }
+
+    public SmartLiveJob withStreamDuration(Float streamDuration) {
+        this.streamDuration = streamDuration;
+        return this;
+    }
+
+    /**
+     * 数字人直播推流时长，单位秒
+     * minimum: 0
+     * maximum: 2147483647
+     * @return streamDuration
+     */
+    public Float getStreamDuration() {
+        return streamDuration;
+    }
+
+    public void setStreamDuration(Float streamDuration) {
+        this.streamDuration = streamDuration;
+    }
+
+    public SmartLiveJob withBlockReason(String blockReason) {
+        this.blockReason = blockReason;
+        return this;
+    }
+
+    /**
+     * 封禁信息
+     * @return blockReason
+     */
+    public String getBlockReason() {
+        return blockReason;
+    }
+
+    public void setBlockReason(String blockReason) {
+        this.blockReason = blockReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -353,7 +436,10 @@ public class SmartLiveJob {
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.lastupdateTime, that.lastupdateTime)
             && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo)
-            && Objects.equals(this.liveEventReportUrl, that.liveEventReportUrl);
+            && Objects.equals(this.liveEventReportUrl, that.liveEventReportUrl)
+            && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
+            && Objects.equals(this.streamDuration, that.streamDuration)
+            && Objects.equals(this.blockReason, that.blockReason);
     }
 
     @Override
@@ -367,7 +453,10 @@ public class SmartLiveJob {
             createTime,
             lastupdateTime,
             rtcRoomInfo,
-            liveEventReportUrl);
+            liveEventReportUrl,
+            liveEventCallbackConfig,
+            streamDuration,
+            blockReason);
     }
 
     @Override
@@ -384,6 +473,9 @@ public class SmartLiveJob {
         sb.append("    lastupdateTime: ").append(toIndentedString(lastupdateTime)).append("\n");
         sb.append("    rtcRoomInfo: ").append(toIndentedString(rtcRoomInfo)).append("\n");
         sb.append("    liveEventReportUrl: ").append(toIndentedString(liveEventReportUrl)).append("\n");
+        sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
+        sb.append("    streamDuration: ").append(toIndentedString(streamDuration)).append("\n");
+        sb.append("    blockReason: ").append(toIndentedString(blockReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

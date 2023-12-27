@@ -20,6 +20,21 @@ public class ListTtsaDataResponse extends SdkResponse {
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private String startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private String endTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_tail")
+
+    private Boolean isTail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio")
 
     private String audio;
@@ -59,6 +74,57 @@ public class ListTtsaDataResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public ListTtsaDataResponse withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * 驱动任务开始时间，格式遵循：RFC 3339， 例 “2020-07-30T10:43:17Z”
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public ListTtsaDataResponse withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 驱动任务结束时间，格式遵循：RFC 3339， 例 “2020-07-30T10:45:17Z”
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public ListTtsaDataResponse withIsTail(Boolean isTail) {
+        this.isTail = isTail;
+        return this;
+    }
+
+    /**
+     * 是否为尾部(任务数据已全部生成，后续没有新的数据)
+     * @return isTail
+     */
+    public Boolean getIsTail() {
+        return isTail;
+    }
+
+    public void setIsTail(Boolean isTail) {
+        this.isTail = isTail;
     }
 
     public ListTtsaDataResponse withAudio(String audio) {
@@ -205,14 +271,16 @@ public class ListTtsaDataResponse extends SdkResponse {
             return false;
         }
         ListTtsaDataResponse that = (ListTtsaDataResponse) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.audio, that.audio)
-            && Objects.equals(this.blendshapes, that.blendshapes) && Objects.equals(this.animations, that.animations)
-            && Objects.equals(this.motions, that.motions) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.isTail, that.isTail)
+            && Objects.equals(this.audio, that.audio) && Objects.equals(this.blendshapes, that.blendshapes)
+            && Objects.equals(this.animations, that.animations) && Objects.equals(this.motions, that.motions)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, audio, blendshapes, animations, motions, xRequestId);
+        return Objects.hash(jobId, startTime, endTime, isTail, audio, blendshapes, animations, motions, xRequestId);
     }
 
     @Override
@@ -220,6 +288,9 @@ public class ListTtsaDataResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTtsaDataResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    isTail: ").append(toIndentedString(isTail)).append("\n");
         sb.append("    audio: ").append(toIndentedString(audio)).append("\n");
         sb.append("    blendshapes: ").append(toIndentedString(blendshapes)).append("\n");
         sb.append("    animations: ").append(toIndentedString(animations)).append("\n");

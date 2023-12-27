@@ -26,7 +26,7 @@ public class DigitalAssetSummary {
     private String assetName;
 
     /**
-     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型 * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐
+     * 资产类型。 公共资产类型： * VOICE_MODEL：音色模型（仅系统管理员可上传，普通租户仅可查询） * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产： * HUMAN_MODEL_2D: 分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型
      */
     public static final class AssetTypeEnum {
 
@@ -90,6 +90,11 @@ public class DigitalAssetSummary {
          */
         public static final AssetTypeEnum MUSIC = new AssetTypeEnum("MUSIC");
 
+        /**
+         * Enum AUDIO for value: "AUDIO"
+         */
+        public static final AssetTypeEnum AUDIO = new AssetTypeEnum("AUDIO");
+
         private static final Map<String, AssetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssetTypeEnum> createStaticFields() {
@@ -106,6 +111,7 @@ public class DigitalAssetSummary {
             map.put("HUMAN_MODEL_2D", HUMAN_MODEL_2D);
             map.put("BUSINESS_CARD_TEMPLET", BUSINESS_CARD_TEMPLET);
             map.put("MUSIC", MUSIC);
+            map.put("AUDIO", AUDIO);
             return Collections.unmodifiableMap(map);
         }
 
@@ -205,7 +211,7 @@ public class DigitalAssetSummary {
     }
 
     /**
-     * 资产类型。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型 * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * HUMAN_MODEL_2D:2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐
+     * 资产类型。 公共资产类型： * VOICE_MODEL：音色模型（仅系统管理员可上传，普通租户仅可查询） * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产： * HUMAN_MODEL_2D: 分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型
      * @return assetType
      */
     public AssetTypeEnum getAssetType() {

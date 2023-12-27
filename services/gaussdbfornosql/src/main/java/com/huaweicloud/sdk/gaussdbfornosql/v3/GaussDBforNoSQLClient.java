@@ -85,6 +85,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionStatisticsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesSessionStatisticsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListJobsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListJobsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListLtsConfigsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListLtsConfigsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbErrorLogsRequest;
@@ -1419,6 +1421,34 @@ public class GaussDBforNoSQLClient {
         ListInstancesSessionStatisticsRequest request) {
         return new SyncInvoker<ListInstancesSessionStatisticsRequest, ListInstancesSessionStatisticsResponse>(request,
             GaussDBforNoSQLMeta.listInstancesSessionStatistics, hcClient);
+    }
+
+    /**
+     * 查询任务列表和详情
+     *
+     * 查询任务列表和详情，默认查询任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobsRequest 请求对象
+     * @return ListJobsResponse
+     */
+    public ListJobsResponse listJobs(ListJobsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.listJobs);
+    }
+
+    /**
+     * 查询任务列表和详情
+     *
+     * 查询任务列表和详情，默认查询任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListJobsRequest 请求对象
+     * @return SyncInvoker<ListJobsRequest, ListJobsResponse>
+     */
+    public SyncInvoker<ListJobsRequest, ListJobsResponse> listJobsInvoker(ListJobsRequest request) {
+        return new SyncInvoker<ListJobsRequest, ListJobsResponse>(request, GaussDBforNoSQLMeta.listJobs, hcClient);
     }
 
     /**

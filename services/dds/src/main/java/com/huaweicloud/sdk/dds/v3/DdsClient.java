@@ -159,6 +159,8 @@ import com.huaweicloud.sdk.dds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupPolicyResponse;
+import com.huaweicloud.sdk.dds.v3.model.ShowClientNetworkRequest;
+import com.huaweicloud.sdk.dds.v3.model.ShowClientNetworkResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowConfigurationAppliedHistoryRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowConfigurationAppliedHistoryResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowConfigurationModifyHistoryRequest;
@@ -2489,6 +2491,36 @@ public class DdsClient {
     public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(
         ShowBackupPolicyRequest request) {
         return new SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, DdsMeta.showBackupPolicy,
+            hcClient);
+    }
+
+    /**
+     * 查询副本集跨网段访问配置
+     *
+     * 查询副本集跨网段访问配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClientNetworkRequest 请求对象
+     * @return ShowClientNetworkResponse
+     */
+    public ShowClientNetworkResponse showClientNetwork(ShowClientNetworkRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showClientNetwork);
+    }
+
+    /**
+     * 查询副本集跨网段访问配置
+     *
+     * 查询副本集跨网段访问配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowClientNetworkRequest 请求对象
+     * @return SyncInvoker<ShowClientNetworkRequest, ShowClientNetworkResponse>
+     */
+    public SyncInvoker<ShowClientNetworkRequest, ShowClientNetworkResponse> showClientNetworkInvoker(
+        ShowClientNetworkRequest request) {
+        return new SyncInvoker<ShowClientNetworkRequest, ShowClientNetworkResponse>(request, DdsMeta.showClientNetwork,
             hcClient);
     }
 

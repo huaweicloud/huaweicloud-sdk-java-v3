@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class LayerConfig {
 
     /**
-     * 图层类型。 - HUMAN:  人物图层 - IMAGE： 素材图片图层 - VIDEO： 素材视频图层
+     * 图层类型。 - HUMAN:  人物图层 - IMAGE： 素材图片图层 - VIDEO： 素材视频图层 - TEXT: 素材文字图层
      */
     public static final class LayerTypeEnum {
 
@@ -36,6 +36,11 @@ public class LayerConfig {
          */
         public static final LayerTypeEnum VIDEO = new LayerTypeEnum("VIDEO");
 
+        /**
+         * Enum TEXT for value: "TEXT"
+         */
+        public static final LayerTypeEnum TEXT = new LayerTypeEnum("TEXT");
+
         private static final Map<String, LayerTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LayerTypeEnum> createStaticFields() {
@@ -43,6 +48,7 @@ public class LayerConfig {
             map.put("HUMAN", HUMAN);
             map.put("IMAGE", IMAGE);
             map.put("VIDEO", VIDEO);
+            map.put("TEXT", TEXT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -98,6 +104,11 @@ public class LayerConfig {
     private LayerTypeEnum layerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position")
 
     private LayerPositionConfig position;
@@ -128,7 +139,7 @@ public class LayerConfig {
     }
 
     /**
-     * 图层类型。 - HUMAN:  人物图层 - IMAGE： 素材图片图层 - VIDEO： 素材视频图层
+     * 图层类型。 - HUMAN:  人物图层 - IMAGE： 素材图片图层 - VIDEO： 素材视频图层 - TEXT: 素材文字图层
      * @return layerType
      */
     public LayerTypeEnum getLayerType() {
@@ -137,6 +148,23 @@ public class LayerConfig {
 
     public void setLayerType(LayerTypeEnum layerType) {
         this.layerType = layerType;
+    }
+
+    public LayerConfig withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 多场景素材编组。同一group_id的素材，在应用全局时共享位置信息。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public LayerConfig withPosition(LayerPositionConfig position) {
@@ -278,14 +306,15 @@ public class LayerConfig {
             return false;
         }
         LayerConfig that = (LayerConfig) obj;
-        return Objects.equals(this.layerType, that.layerType) && Objects.equals(this.position, that.position)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.imageConfig, that.imageConfig)
-            && Objects.equals(this.videoConfig, that.videoConfig) && Objects.equals(this.textConfig, that.textConfig);
+        return Objects.equals(this.layerType, that.layerType) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.position, that.position) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.imageConfig, that.imageConfig) && Objects.equals(this.videoConfig, that.videoConfig)
+            && Objects.equals(this.textConfig, that.textConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(layerType, position, size, imageConfig, videoConfig, textConfig);
+        return Objects.hash(layerType, groupId, position, size, imageConfig, videoConfig, textConfig);
     }
 
     @Override
@@ -293,6 +322,7 @@ public class LayerConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("class LayerConfig {\n");
         sb.append("    layerType: ").append(toIndentedString(layerType)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    imageConfig: ").append(toIndentedString(imageConfig)).append("\n");

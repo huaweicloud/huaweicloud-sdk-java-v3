@@ -24,7 +24,7 @@ public class Create2DDigitalHumanVideoReq {
     private String scriptId;
 
     /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频
+     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频 > * 该参数已废弃，照片数字人视频制作使用“创建照片分身数字人视频制作任务”接口。
      */
     public static final class VideoMakingTypeEnum {
 
@@ -133,6 +133,16 @@ public class Create2DDigitalHumanVideoReq {
 
     private BackgroundMusicConfig backgroundMusicConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_config")
+
+    private ReviewConfig reviewConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "callback_config")
+
+    private CallBackConfig callbackConfig;
+
     public Create2DDigitalHumanVideoReq withScriptId(String scriptId) {
         this.scriptId = scriptId;
         return this;
@@ -156,7 +166,7 @@ public class Create2DDigitalHumanVideoReq {
     }
 
     /**
-     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频
+     * 视频生成类型。该参数取值是MODEL时，model_asset_id必填；取值是PICTURE时，human_image必填。 * MODEL：通过分数数字人模型生成视频 * PICTURE： 通过单张照片生成视频 > * 该参数已废弃，照片数字人视频制作使用“创建照片分身数字人视频制作任务”接口。
      * @return videoMakingType
      */
     public VideoMakingTypeEnum getVideoMakingType() {
@@ -190,7 +200,7 @@ public class Create2DDigitalHumanVideoReq {
     }
 
     /**
-     * 人物照片，需要Base64编码。照片分辨率不超过1080P。
+     * 人物照片，需要Base64编码。照片分辨率不超过1080P。 > * 该参数已废弃，照片数字人视频制作使用“创建照片分身数字人视频制作任务”接口。
      * @return humanImage
      */
     public String getHumanImage() {
@@ -339,6 +349,58 @@ public class Create2DDigitalHumanVideoReq {
         this.backgroundMusicConfig = backgroundMusicConfig;
     }
 
+    public Create2DDigitalHumanVideoReq withReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+        return this;
+    }
+
+    public Create2DDigitalHumanVideoReq withReviewConfig(Consumer<ReviewConfig> reviewConfigSetter) {
+        if (this.reviewConfig == null) {
+            this.reviewConfig = new ReviewConfig();
+            reviewConfigSetter.accept(this.reviewConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reviewConfig
+     * @return reviewConfig
+     */
+    public ReviewConfig getReviewConfig() {
+        return reviewConfig;
+    }
+
+    public void setReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+    }
+
+    public Create2DDigitalHumanVideoReq withCallbackConfig(CallBackConfig callbackConfig) {
+        this.callbackConfig = callbackConfig;
+        return this;
+    }
+
+    public Create2DDigitalHumanVideoReq withCallbackConfig(Consumer<CallBackConfig> callbackConfigSetter) {
+        if (this.callbackConfig == null) {
+            this.callbackConfig = new CallBackConfig();
+            callbackConfigSetter.accept(this.callbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get callbackConfig
+     * @return callbackConfig
+     */
+    public CallBackConfig getCallbackConfig() {
+        return callbackConfig;
+    }
+
+    public void setCallbackConfig(CallBackConfig callbackConfig) {
+        this.callbackConfig = callbackConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -354,7 +416,9 @@ public class Create2DDigitalHumanVideoReq {
             && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.videoConfig, that.videoConfig)
             && Objects.equals(this.shootScripts, that.shootScripts)
             && Objects.equals(this.outputAssetConfig, that.outputAssetConfig)
-            && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig);
+            && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig)
+            && Objects.equals(this.reviewConfig, that.reviewConfig)
+            && Objects.equals(this.callbackConfig, that.callbackConfig);
     }
 
     @Override
@@ -367,7 +431,9 @@ public class Create2DDigitalHumanVideoReq {
             videoConfig,
             shootScripts,
             outputAssetConfig,
-            backgroundMusicConfig);
+            backgroundMusicConfig,
+            reviewConfig,
+            callbackConfig);
     }
 
     @Override
@@ -383,6 +449,8 @@ public class Create2DDigitalHumanVideoReq {
         sb.append("    shootScripts: ").append(toIndentedString(shootScripts)).append("\n");
         sb.append("    outputAssetConfig: ").append(toIndentedString(outputAssetConfig)).append("\n");
         sb.append("    backgroundMusicConfig: ").append(toIndentedString(backgroundMusicConfig)).append("\n");
+        sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
+        sb.append("    callbackConfig: ").append(toIndentedString(callbackConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * HumanModel2DAssetMeta
+ * 分身模型元数据
  */
 public class HumanModel2DAssetMeta {
 
@@ -105,6 +105,11 @@ public class HumanModel2DAssetMeta {
 
     private ModelVersionEnum modelVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_resolution")
+
+    private String modelResolution;
+
     public HumanModel2DAssetMeta withIsActionEditable(Boolean isActionEditable) {
         this.isActionEditable = isActionEditable;
         return this;
@@ -173,6 +178,23 @@ public class HumanModel2DAssetMeta {
         this.modelVersion = modelVersion;
     }
 
+    public HumanModel2DAssetMeta withModelResolution(String modelResolution) {
+        this.modelResolution = modelResolution;
+        return this;
+    }
+
+    /**
+     * 分身数字人模型分辨率。默认是1080P。 * 1080P：1080P。支持1080P及720P的视频输出。 * 4K：4K。支持4K、1080P及720P的视频输出。
+     * @return modelResolution
+     */
+    public String getModelResolution() {
+        return modelResolution;
+    }
+
+    public void setModelResolution(String modelResolution) {
+        this.modelResolution = modelResolution;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -185,12 +207,13 @@ public class HumanModel2DAssetMeta {
         return Objects.equals(this.isActionEditable, that.isActionEditable)
             && Objects.equals(this.isRealBackground, that.isRealBackground)
             && Objects.equals(this.supportLive, that.supportLive)
-            && Objects.equals(this.modelVersion, that.modelVersion);
+            && Objects.equals(this.modelVersion, that.modelVersion)
+            && Objects.equals(this.modelResolution, that.modelResolution);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isActionEditable, isRealBackground, supportLive, modelVersion);
+        return Objects.hash(isActionEditable, isRealBackground, supportLive, modelVersion, modelResolution);
     }
 
     @Override
@@ -201,6 +224,7 @@ public class HumanModel2DAssetMeta {
         sb.append("    isRealBackground: ").append(toIndentedString(isRealBackground)).append("\n");
         sb.append("    supportLive: ").append(toIndentedString(supportLive)).append("\n");
         sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");
+        sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
         sb.append("}");
         return sb.toString();
     }

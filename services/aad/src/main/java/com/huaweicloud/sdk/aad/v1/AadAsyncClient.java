@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.aad.v1;
 
+import com.huaweicloud.sdk.aad.v1.model.AddBlackWhiteIpListRequest;
+import com.huaweicloud.sdk.aad.v1.model.AddBlackWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.AddPolicyBlackAndWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.AddPolicyBlackAndWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.AssociateIpToPolicyRequest;
@@ -8,10 +10,16 @@ import com.huaweicloud.sdk.aad.v1.model.BatchCreateInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.BatchCreateInstanceIpRuleResponse;
 import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleRequest;
 import com.huaweicloud.sdk.aad.v1.model.BatchDeleteInstanceIpRuleResponse;
+import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainRequest;
+import com.huaweicloud.sdk.aad.v1.model.CreateAadDomainResponse;
+import com.huaweicloud.sdk.aad.v1.model.CreateCertificateRequest;
+import com.huaweicloud.sdk.aad.v1.model.CreateCertificateResponse;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.CreatePolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeleteAlarmConfigRequest;
 import com.huaweicloud.sdk.aad.v1.model.DeleteAlarmConfigResponse;
+import com.huaweicloud.sdk.aad.v1.model.DeleteBlackWhiteIpListRequest;
+import com.huaweicloud.sdk.aad.v1.model.DeleteBlackWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyBlackAndWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyBlackAndWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyRequest;
@@ -38,10 +46,14 @@ import com.huaweicloud.sdk.aad.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListPolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.ListProtectedIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListProtectedIpResponse;
+import com.huaweicloud.sdk.aad.v1.model.ListSourceIpsRequest;
+import com.huaweicloud.sdk.aad.v1.model.ListSourceIpsResponse;
 import com.huaweicloud.sdk.aad.v1.model.ListUnblockQuotaStatisticsRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListUnblockQuotaStatisticsResponse;
 import com.huaweicloud.sdk.aad.v1.model.ListUnboundProtectedIpRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListUnboundProtectedIpResponse;
+import com.huaweicloud.sdk.aad.v1.model.ModifyDomainWebSwitchRequest;
+import com.huaweicloud.sdk.aad.v1.model.ModifyDomainWebSwitchResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigRequest;
 import com.huaweicloud.sdk.aad.v1.model.ShowAlarmConfigResponse;
 import com.huaweicloud.sdk.aad.v1.model.ShowBlockStatisticsRequest;
@@ -234,6 +246,36 @@ public class AadAsyncClient {
     }
 
     /**
+     * 高防实例添加黑白名单
+     *
+     * 高防实例添加黑白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddBlackWhiteIpListRequest 请求对象
+     * @return CompletableFuture<AddBlackWhiteIpListResponse>
+     */
+    public CompletableFuture<AddBlackWhiteIpListResponse> addBlackWhiteIpListAsync(AddBlackWhiteIpListRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.addBlackWhiteIpList);
+    }
+
+    /**
+     * 高防实例添加黑白名单
+     *
+     * 高防实例添加黑白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddBlackWhiteIpListRequest 请求对象
+     * @return AsyncInvoker<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse>
+     */
+    public AsyncInvoker<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse> addBlackWhiteIpListAsyncInvoker(
+        AddBlackWhiteIpListRequest request) {
+        return new AsyncInvoker<AddBlackWhiteIpListRequest, AddBlackWhiteIpListResponse>(request,
+            AadMeta.addBlackWhiteIpList, hcClient);
+    }
+
+    /**
      * 策略添加黑白名单
      *
      * 策略添加黑白名单
@@ -357,6 +399,66 @@ public class AadAsyncClient {
     }
 
     /**
+     * 创建防护域名
+     *
+     * 创建防护域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAadDomainRequest 请求对象
+     * @return CompletableFuture<CreateAadDomainResponse>
+     */
+    public CompletableFuture<CreateAadDomainResponse> createAadDomainAsync(CreateAadDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.createAadDomain);
+    }
+
+    /**
+     * 创建防护域名
+     *
+     * 创建防护域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateAadDomainRequest 请求对象
+     * @return AsyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse>
+     */
+    public AsyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse> createAadDomainAsyncInvoker(
+        CreateAadDomainRequest request) {
+        return new AsyncInvoker<CreateAadDomainRequest, CreateAadDomainResponse>(request, AadMeta.createAadDomain,
+            hcClient);
+    }
+
+    /**
+     * 上传/修改域名对应证书
+     *
+     * 上传/修改域名对应证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateRequest 请求对象
+     * @return CompletableFuture<CreateCertificateResponse>
+     */
+    public CompletableFuture<CreateCertificateResponse> createCertificateAsync(CreateCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.createCertificate);
+    }
+
+    /**
+     * 上传/修改域名对应证书
+     *
+     * 上传/修改域名对应证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateCertificateRequest 请求对象
+     * @return AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>
+     */
+    public AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse> createCertificateAsyncInvoker(
+        CreateCertificateRequest request) {
+        return new AsyncInvoker<CreateCertificateRequest, CreateCertificateResponse>(request, AadMeta.createCertificate,
+            hcClient);
+    }
+
+    /**
      * 创建策略
      *
      * 创建策略
@@ -413,6 +515,37 @@ public class AadAsyncClient {
         DeleteAlarmConfigRequest request) {
         return new AsyncInvoker<DeleteAlarmConfigRequest, DeleteAlarmConfigResponse>(request, AadMeta.deleteAlarmConfig,
             hcClient);
+    }
+
+    /**
+     * 高防实例删除黑白名单
+     *
+     * 高防实例删除黑白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBlackWhiteIpListRequest 请求对象
+     * @return CompletableFuture<DeleteBlackWhiteIpListResponse>
+     */
+    public CompletableFuture<DeleteBlackWhiteIpListResponse> deleteBlackWhiteIpListAsync(
+        DeleteBlackWhiteIpListRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.deleteBlackWhiteIpList);
+    }
+
+    /**
+     * 高防实例删除黑白名单
+     *
+     * 高防实例删除黑白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteBlackWhiteIpListRequest 请求对象
+     * @return AsyncInvoker<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse>
+     */
+    public AsyncInvoker<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse> deleteBlackWhiteIpListAsyncInvoker(
+        DeleteBlackWhiteIpListRequest request) {
+        return new AsyncInvoker<DeleteBlackWhiteIpListRequest, DeleteBlackWhiteIpListResponse>(request,
+            AadMeta.deleteBlackWhiteIpList, hcClient);
     }
 
     /**
@@ -738,6 +871,35 @@ public class AadAsyncClient {
     }
 
     /**
+     * 查询高防回源IP段列表
+     *
+     * 查询高防回源IP段列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSourceIpsRequest 请求对象
+     * @return CompletableFuture<ListSourceIpsResponse>
+     */
+    public CompletableFuture<ListSourceIpsResponse> listSourceIpsAsync(ListSourceIpsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.listSourceIps);
+    }
+
+    /**
+     * 查询高防回源IP段列表
+     *
+     * 查询高防回源IP段列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSourceIpsRequest 请求对象
+     * @return AsyncInvoker<ListSourceIpsRequest, ListSourceIpsResponse>
+     */
+    public AsyncInvoker<ListSourceIpsRequest, ListSourceIpsResponse> listSourceIpsAsyncInvoker(
+        ListSourceIpsRequest request) {
+        return new AsyncInvoker<ListSourceIpsRequest, ListSourceIpsResponse>(request, AadMeta.listSourceIps, hcClient);
+    }
+
+    /**
      * 查询可绑定的防护对象列表
      *
      * 查询可绑定的防护对象列表
@@ -766,6 +928,37 @@ public class AadAsyncClient {
         ListUnboundProtectedIpRequest request) {
         return new AsyncInvoker<ListUnboundProtectedIpRequest, ListUnboundProtectedIpResponse>(request,
             AadMeta.listUnboundProtectedIp, hcClient);
+    }
+
+    /**
+     * 修改域名WEB基础防护开关/CC防护开关
+     *
+     * 修改域名WEB基础防护开关/CC防护开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyDomainWebSwitchRequest 请求对象
+     * @return CompletableFuture<ModifyDomainWebSwitchResponse>
+     */
+    public CompletableFuture<ModifyDomainWebSwitchResponse> modifyDomainWebSwitchAsync(
+        ModifyDomainWebSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.modifyDomainWebSwitch);
+    }
+
+    /**
+     * 修改域名WEB基础防护开关/CC防护开关
+     *
+     * 修改域名WEB基础防护开关/CC防护开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyDomainWebSwitchRequest 请求对象
+     * @return AsyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse>
+     */
+    public AsyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse> modifyDomainWebSwitchAsyncInvoker(
+        ModifyDomainWebSwitchRequest request) {
+        return new AsyncInvoker<ModifyDomainWebSwitchRequest, ModifyDomainWebSwitchResponse>(request,
+            AadMeta.modifyDomainWebSwitch, hcClient);
     }
 
     /**

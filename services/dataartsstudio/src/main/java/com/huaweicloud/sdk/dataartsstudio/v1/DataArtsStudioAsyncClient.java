@@ -75,6 +75,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest;
@@ -231,6 +233,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDirectoriesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDirectoriesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstancesRequest;
@@ -393,6 +399,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMessageDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMessageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMetricAssetsRequest;
@@ -1493,6 +1501,36 @@ public class DataArtsStudioAsyncClient {
         CreateFactoryEnvRequest request) {
         return new AsyncInvoker<CreateFactoryEnvRequest, CreateFactoryEnvResponse>(request,
             DataArtsStudioMeta.createFactoryEnv, hcClient);
+    }
+
+    /**
+     * 创建作业
+     *
+     * 创建作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFactoryJobRequest 请求对象
+     * @return CompletableFuture<CreateFactoryJobResponse>
+     */
+    public CompletableFuture<CreateFactoryJobResponse> createFactoryJobAsync(CreateFactoryJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createFactoryJob);
+    }
+
+    /**
+     * 创建作业
+     *
+     * 创建作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateFactoryJobRequest 请求对象
+     * @return AsyncInvoker<CreateFactoryJobRequest, CreateFactoryJobResponse>
+     */
+    public AsyncInvoker<CreateFactoryJobRequest, CreateFactoryJobResponse> createFactoryJobAsyncInvoker(
+        CreateFactoryJobRequest request) {
+        return new AsyncInvoker<CreateFactoryJobRequest, CreateFactoryJobResponse>(request,
+            DataArtsStudioMeta.createFactoryJob, hcClient);
     }
 
     /**
@@ -3723,6 +3761,67 @@ public class DataArtsStudioAsyncClient {
         ListFactLogicTablesRequest request) {
         return new AsyncInvoker<ListFactLogicTablesRequest, ListFactLogicTablesResponse>(request,
             DataArtsStudioMeta.listFactLogicTables, hcClient);
+    }
+
+    /**
+     * 查询告警通知记录
+     *
+     * 查询告警通知记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFactoryAlarmInfoRequest 请求对象
+     * @return CompletableFuture<ListFactoryAlarmInfoResponse>
+     */
+    public CompletableFuture<ListFactoryAlarmInfoResponse> listFactoryAlarmInfoAsync(
+        ListFactoryAlarmInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listFactoryAlarmInfo);
+    }
+
+    /**
+     * 查询告警通知记录
+     *
+     * 查询告警通知记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFactoryAlarmInfoRequest 请求对象
+     * @return AsyncInvoker<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse>
+     */
+    public AsyncInvoker<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> listFactoryAlarmInfoAsyncInvoker(
+        ListFactoryAlarmInfoRequest request) {
+        return new AsyncInvoker<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse>(request,
+            DataArtsStudioMeta.listFactoryAlarmInfo, hcClient);
+    }
+
+    /**
+     * 查询作业列表
+     *
+     * 查询作业列表清单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFactoryJobsRequest 请求对象
+     * @return CompletableFuture<ListFactoryJobsResponse>
+     */
+    public CompletableFuture<ListFactoryJobsResponse> listFactoryJobsAsync(ListFactoryJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listFactoryJobs);
+    }
+
+    /**
+     * 查询作业列表
+     *
+     * 查询作业列表清单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFactoryJobsRequest 请求对象
+     * @return AsyncInvoker<ListFactoryJobsRequest, ListFactoryJobsResponse>
+     */
+    public AsyncInvoker<ListFactoryJobsRequest, ListFactoryJobsResponse> listFactoryJobsAsyncInvoker(
+        ListFactoryJobsRequest request) {
+        return new AsyncInvoker<ListFactoryJobsRequest, ListFactoryJobsResponse>(request,
+            DataArtsStudioMeta.listFactoryJobs, hcClient);
     }
 
     /**
@@ -5960,6 +6059,35 @@ public class DataArtsStudioAsyncClient {
         ShowInstanceResultRequest request) {
         return new AsyncInvoker<ShowInstanceResultRequest, ShowInstanceResultResponse>(request,
             DataArtsStudioMeta.showInstanceResult, hcClient);
+    }
+
+    /**
+     * 血缘查询
+     *
+     * 血缘查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLineageRequest 请求对象
+     * @return CompletableFuture<ShowLineageResponse>
+     */
+    public CompletableFuture<ShowLineageResponse> showLineageAsync(ShowLineageRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showLineage);
+    }
+
+    /**
+     * 血缘查询
+     *
+     * 血缘查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLineageRequest 请求对象
+     * @return AsyncInvoker<ShowLineageRequest, ShowLineageResponse>
+     */
+    public AsyncInvoker<ShowLineageRequest, ShowLineageResponse> showLineageAsyncInvoker(ShowLineageRequest request) {
+        return new AsyncInvoker<ShowLineageRequest, ShowLineageResponse>(request, DataArtsStudioMeta.showLineage,
+            hcClient);
     }
 
     /**

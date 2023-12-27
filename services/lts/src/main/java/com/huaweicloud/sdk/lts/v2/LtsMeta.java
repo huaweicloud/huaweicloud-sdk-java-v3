@@ -33,6 +33,8 @@ import com.huaweicloud.sdk.lts.v2.model.CreateLogDumpObsResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogGroupParams;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogGroupResponse;
+import com.huaweicloud.sdk.lts.v2.model.CreateLogStreamIndexRequest;
+import com.huaweicloud.sdk.lts.v2.model.CreateLogStreamIndexResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogStreamParams;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogStreamRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateLogStreamResponse;
@@ -100,6 +102,7 @@ import com.huaweicloud.sdk.lts.v2.model.GetAccessConfigListRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.GetHostGroupListRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.GetHostListRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.LTSAccessConfigInfoRespon200;
+import com.huaweicloud.sdk.lts.v2.model.LTSIndexConfigInfo;
 import com.huaweicloud.sdk.lts.v2.model.ListAccessConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListAccessConfigResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListActiveOrHistoryAlarmsRequest;
@@ -452,6 +455,45 @@ public class LtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateLogStreamParams.class),
             f -> f.withMarshaller(CreateLogStreamRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse> createLogStreamIndex =
+        genForcreateLogStreamIndex();
+
+    private static HttpRequestDef<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse> genForcreateLogStreamIndex() {
+        // basic
+        HttpRequestDef.Builder<CreateLogStreamIndexRequest, CreateLogStreamIndexResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateLogStreamIndexRequest.class, CreateLogStreamIndexResponse.class)
+            .withName("CreateLogStreamIndex")
+            .withUri("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLogStreamIndexRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLogStreamIndexRequest::getStreamId, (req, v) -> {
+                req.setStreamId(v);
+            }));
+        builder.<LTSIndexConfigInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LTSIndexConfigInfo.class),
+            f -> f.withMarshaller(CreateLogStreamIndexRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 

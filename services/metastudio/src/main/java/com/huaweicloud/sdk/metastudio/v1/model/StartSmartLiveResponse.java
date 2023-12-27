@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -26,6 +28,16 @@ public class StartSmartLiveResponse extends SdkResponse {
     @JsonProperty(value = "live_event_report_url")
 
     private String liveEventReportUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "live_event_callback_config")
+
+    private LiveEventCallBackConfig liveEventCallbackConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "live_warning_info")
+
+    private List<LiveWarningItem> liveWarningInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -92,6 +104,66 @@ public class StartSmartLiveResponse extends SdkResponse {
         this.liveEventReportUrl = liveEventReportUrl;
     }
 
+    public StartSmartLiveResponse withLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+        this.liveEventCallbackConfig = liveEventCallbackConfig;
+        return this;
+    }
+
+    public StartSmartLiveResponse withLiveEventCallbackConfig(
+        Consumer<LiveEventCallBackConfig> liveEventCallbackConfigSetter) {
+        if (this.liveEventCallbackConfig == null) {
+            this.liveEventCallbackConfig = new LiveEventCallBackConfig();
+            liveEventCallbackConfigSetter.accept(this.liveEventCallbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get liveEventCallbackConfig
+     * @return liveEventCallbackConfig
+     */
+    public LiveEventCallBackConfig getLiveEventCallbackConfig() {
+        return liveEventCallbackConfig;
+    }
+
+    public void setLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+        this.liveEventCallbackConfig = liveEventCallbackConfig;
+    }
+
+    public StartSmartLiveResponse withLiveWarningInfo(List<LiveWarningItem> liveWarningInfo) {
+        this.liveWarningInfo = liveWarningInfo;
+        return this;
+    }
+
+    public StartSmartLiveResponse addLiveWarningInfoItem(LiveWarningItem liveWarningInfoItem) {
+        if (this.liveWarningInfo == null) {
+            this.liveWarningInfo = new ArrayList<>();
+        }
+        this.liveWarningInfo.add(liveWarningInfoItem);
+        return this;
+    }
+
+    public StartSmartLiveResponse withLiveWarningInfo(Consumer<List<LiveWarningItem>> liveWarningInfoSetter) {
+        if (this.liveWarningInfo == null) {
+            this.liveWarningInfo = new ArrayList<>();
+        }
+        liveWarningInfoSetter.accept(this.liveWarningInfo);
+        return this;
+    }
+
+    /**
+     * 开播风险告警列表。
+     * @return liveWarningInfo
+     */
+    public List<LiveWarningItem> getLiveWarningInfo() {
+        return liveWarningInfo;
+    }
+
+    public void setLiveWarningInfo(List<LiveWarningItem> liveWarningInfo) {
+        this.liveWarningInfo = liveWarningInfo;
+    }
+
     public StartSmartLiveResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -122,12 +194,15 @@ public class StartSmartLiveResponse extends SdkResponse {
         StartSmartLiveResponse that = (StartSmartLiveResponse) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo)
             && Objects.equals(this.liveEventReportUrl, that.liveEventReportUrl)
+            && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
+            && Objects.equals(this.liveWarningInfo, that.liveWarningInfo)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, rtcRoomInfo, liveEventReportUrl, xRequestId);
+        return Objects
+            .hash(jobId, rtcRoomInfo, liveEventReportUrl, liveEventCallbackConfig, liveWarningInfo, xRequestId);
     }
 
     @Override
@@ -137,6 +212,8 @@ public class StartSmartLiveResponse extends SdkResponse {
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    rtcRoomInfo: ").append(toIndentedString(rtcRoomInfo)).append("\n");
         sb.append("    liveEventReportUrl: ").append(toIndentedString(liveEventReportUrl)).append("\n");
+        sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
+        sb.append("    liveWarningInfo: ").append(toIndentedString(liveWarningInfo)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

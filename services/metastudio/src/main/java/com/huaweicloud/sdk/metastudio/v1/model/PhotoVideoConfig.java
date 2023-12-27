@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 视频输出配置。
+ * 视频输出配置。照片数字人支持该输出配置查询，不支持修改。
  */
 public class PhotoVideoConfig {
 

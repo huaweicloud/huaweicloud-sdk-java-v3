@@ -156,7 +156,7 @@ public class BackgroundConfigInfo {
     }
 
     /**
-     * 背景标题。
+     * 背景标题。 > * 分身数字人视频制作此参数不生效。
      * @return backgroundTitle
      */
     public String getBackgroundTitle() {
@@ -225,7 +225,7 @@ public class BackgroundConfigInfo {
     }
 
     /**
-     * 视频文件封面图片的下载URL。  演示素材为视频时有效。
+     * 视频文件封面图片的下载URL。  演示素材为视频时有效。 > * 分身数字人视频制作此参数不生效。
      * @return backgroundCoverUrl
      */
     public String getBackgroundCoverUrl() {
@@ -242,7 +242,7 @@ public class BackgroundConfigInfo {
     }
 
     /**
-     * 背景文件的URL。
+     * 背景文件的URL。 > * 通过资产库查询获取，不支持外部URL。
      * @return backgroundConfig
      */
     public String getBackgroundConfig() {

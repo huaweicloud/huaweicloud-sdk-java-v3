@@ -74,7 +74,7 @@ public class DownloadTaskLogRequest implements ProgressRequest {
     }
 
     /**
-     * 记录ID,36位数字、小写字母、'-'组组合。
+     * 步骤名称
      * @return taskName
      */
     public String getTaskName() {

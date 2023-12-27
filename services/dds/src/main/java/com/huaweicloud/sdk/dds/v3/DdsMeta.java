@@ -207,6 +207,8 @@ import com.huaweicloud.sdk.dds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupPolicyResponse;
+import com.huaweicloud.sdk.dds.v3.model.ShowClientNetworkRequest;
+import com.huaweicloud.sdk.dds.v3.model.ShowClientNetworkResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowConfigurationAppliedHistoryRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowConfigurationAppliedHistoryResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowConfigurationModifyHistoryRequest;
@@ -2986,6 +2988,31 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClientNetworkRequest, ShowClientNetworkResponse> showClientNetwork =
+        genForshowClientNetwork();
+
+    private static HttpRequestDef<ShowClientNetworkRequest, ShowClientNetworkResponse> genForshowClientNetwork() {
+        // basic
+        HttpRequestDef.Builder<ShowClientNetworkRequest, ShowClientNetworkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClientNetworkRequest.class, ShowClientNetworkResponse.class)
+                .withName("ShowClientNetwork")
+                .withUri("/v3/{project_id}/instances/{instance_id}/client-network")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClientNetworkRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             }));
 

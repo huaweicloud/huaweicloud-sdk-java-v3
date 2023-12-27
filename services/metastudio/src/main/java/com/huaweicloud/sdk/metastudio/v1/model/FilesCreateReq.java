@@ -63,7 +63,7 @@ public class FilesCreateReq {
     }
 
     /**
-     * 文件内容MD5值，MD5值需要进行Base64编码。
+     * 文件内容MD5值，MD5值需要进行Base64编码。编码后字符串长度是24字节。
      * @return fileMd5
      */
     public String getFileMd5() {
@@ -133,7 +133,7 @@ public class FilesCreateReq {
     }
 
     /**
-     * 文件在资产中的分类。每种资产类型包含的文件分类不同。 * MAIN：主文件 * COVER：封面文件 * PAGE：内容页图片 * SAMPLE：样例音频 * OTHER：其他文件 * WHOLE_MODEL：全模型 * USER_MODIFIED_MODEL：用户上传模型 > * 资产类型为SCENE、ANIMATION、VIDEO、IMAGE、MATERIAL时，包含MAIN、COVER和OTHER > * 资产类型为PPT时，包含MAIN、COVER、PAGE和OTHER > * 资产类型为HUMAN_MODEL时，包含MAIN、COVER、WHOLE_MODEL、USER_MODIFIED_MODEL和OTHER > * 资产类型为VOICE_MODEL时，包含MAIN、SAMPLE(样例音频文件)和OTHER > * 资产类型为HUMAN_MODEL_2D时，包含MAIN、COVER、SAMPLE(动作样例)和OTHER(遮罩文件) > * 资产类型为BUSINESS_CARD_TEMPLET时，包含MAIN和COVER(名片效果图)
+     * 文件在资产中的分类。每种资产类型包含的文件分类不同。 * MAIN：主文件 * COVER：封面文件 * PAGE：PPT内容页图片文件 * SAMPLE：样例音频或样例动作文件 * OTHER：其他文件 * WHOLE_MODEL：全模型文件（3D数字人） * USER_MODIFIED_MODEL：用户上传模型（3D数字人） > * 资产类型为SCENE、ANIMATION、VIDEO、IMAGE、MATERIAL时，包含MAIN、COVER和OTHER > * 资产类型为PPT时，包含MAIN、COVER、PAGE和OTHER > * 资产类型为HUMAN_MODEL时，包含MAIN、COVER、WHOLE_MODEL、USER_MODIFIED_MODEL和OTHER > * 资产类型为VOICE_MODEL时，包含MAIN、SAMPLE(样例音频文件)和OTHER > * 资产类型为HUMAN_MODEL_2D时，包含MAIN、COVER、SAMPLE(动作样例)和OTHER > * 资产类型为BUSINESS_CARD_TEMPLET时，包含MAIN和COVER(名片效果图) > * 资产类型为IMAGE时，包含MAIN > * 资产类型为VIDEO时，包含MAIN、COVER
      * @return assetFileCategory
      */
     public String getAssetFileCategory() {

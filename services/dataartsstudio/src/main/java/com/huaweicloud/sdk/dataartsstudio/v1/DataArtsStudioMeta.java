@@ -112,6 +112,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceResponse;
@@ -210,6 +212,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.JobInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.LinkAttributeAndElementVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAggregationLogicTablesRequest;
@@ -280,6 +283,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDirectoriesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDirectoriesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstancesRequest;
@@ -459,6 +466,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowInstanceResultResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowLineageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMessageDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMessageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowMetricAssetsRequest;
@@ -1676,6 +1685,38 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             Boolean.class,
             f -> f.withMarshaller(CreateFactoryEnvResponse::getIsSuccess, CreateFactoryEnvResponse::setIsSuccess));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFactoryJobRequest, CreateFactoryJobResponse> createFactoryJob =
+        genForcreateFactoryJob();
+
+    private static HttpRequestDef<CreateFactoryJobRequest, CreateFactoryJobResponse> genForcreateFactoryJob() {
+        // basic
+        HttpRequestDef.Builder<CreateFactoryJobRequest, CreateFactoryJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFactoryJobRequest.class, CreateFactoryJobResponse.class)
+                .withName("CreateFactoryJob")
+                .withUri("/v2/{project_id}/factory/jobs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFactoryJobRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+        builder.<JobInfoRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(JobInfoRequest.class),
+            f -> f.withMarshaller(CreateFactoryJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
         return builder.build();
     }
 
@@ -5302,6 +5343,119 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFactLogicTablesRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> listFactoryAlarmInfo =
+        genForlistFactoryAlarmInfo();
+
+    private static HttpRequestDef<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> genForlistFactoryAlarmInfo() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryAlarmInfoRequest, ListFactoryAlarmInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListFactoryAlarmInfoRequest.class, ListFactoryAlarmInfoResponse.class)
+            .withName("ListFactoryAlarmInfo")
+            .withUri("/v2/{project_id}/factory/alarm-info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            }));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryAlarmInfoRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFactoryJobsRequest, ListFactoryJobsResponse> listFactoryJobs =
+        genForlistFactoryJobs();
+
+    private static HttpRequestDef<ListFactoryJobsRequest, ListFactoryJobsResponse> genForlistFactoryJobs() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryJobsRequest, ListFactoryJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFactoryJobsRequest.class, ListFactoryJobsResponse.class)
+                .withName("ListFactoryJobs")
+                .withUri("/v2/{project_id}/factory/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            }));
+        builder.<ListFactoryJobsRequest.JobTypeEnum>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFactoryJobsRequest.JobTypeEnum.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getJobType, (req, v) -> {
+                req.setJobType(v);
+            }));
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getJobName, (req, v) -> {
+                req.setJobName(v);
+            }));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
             }));
 
@@ -9432,6 +9586,51 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceResultRequest::getWorkspace, (req, v) -> {
+                req.setWorkspace(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLineageRequest, ShowLineageResponse> showLineage = genForshowLineage();
+
+    private static HttpRequestDef<ShowLineageRequest, ShowLineageResponse> genForshowLineage() {
+        // basic
+        HttpRequestDef.Builder<ShowLineageRequest, ShowLineageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLineageRequest.class, ShowLineageResponse.class)
+                .withName("ShowLineage")
+                .withUri("/v3/{project_id}/entities/{guid}/lineage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("guid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLineageRequest::getGuid, (req, v) -> {
+                req.setGuid(v);
+            }));
+        builder.<String>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLineageRequest::getDirection, (req, v) -> {
+                req.setDirection(v);
+            }));
+        builder.<Integer>withRequestField("depth",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowLineageRequest::getDepth, (req, v) -> {
+                req.setDepth(v);
+            }));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLineageRequest::getWorkspace, (req, v) -> {
                 req.setWorkspace(v);
             }));
 

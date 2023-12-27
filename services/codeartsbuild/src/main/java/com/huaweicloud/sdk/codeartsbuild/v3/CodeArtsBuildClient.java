@@ -317,9 +317,9 @@ public class CodeArtsBuildClient {
     }
 
     /**
-     * 下载全量构建步骤日志
+     * 下载构建步骤日志
      *
-     * 下载全量构建步骤日志
+     * 下载构建步骤日志
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -331,9 +331,9 @@ public class CodeArtsBuildClient {
     }
 
     /**
-     * 下载全量构建步骤日志
+     * 下载构建步骤日志
      *
-     * 下载全量构建步骤日志
+     * 下载构建步骤日志
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

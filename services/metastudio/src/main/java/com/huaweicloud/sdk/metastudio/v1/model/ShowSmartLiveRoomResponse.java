@@ -30,7 +30,7 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
     private String roomDescription;
 
     /**
-     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。
+     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
      */
     public static final class RoomTypeEnum {
 
@@ -44,12 +44,18 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
          */
         public static final RoomTypeEnum TEMP = new RoomTypeEnum("TEMP");
 
+        /**
+         * Enum TEMPLATE for value: "TEMPLATE"
+         */
+        public static final RoomTypeEnum TEMPLATE = new RoomTypeEnum("TEMPLATE");
+
         private static final Map<String, RoomTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RoomTypeEnum> createStaticFields() {
             Map<String, RoomTypeEnum> map = new HashMap<>();
             map.put("NORMAL", NORMAL);
             map.put("TEMP", TEMP);
+            map.put("TEMPLATE", TEMPLATE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -130,6 +136,31 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
     private List<String> outputUrls = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_keys")
+
+    private List<String> streamKeys = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_model_asset_ids")
+
+    private List<String> backupModelAssetIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "live_event_callback_config")
+
+    private LiveEventCallBackConfig liveEventCallbackConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_config")
+
+    private ReviewConfig reviewConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "shared_config")
+
+    private SharedConfig sharedConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_id")
 
     private String roomId;
@@ -148,6 +179,92 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
     @JsonProperty(value = "cover_url")
 
     private String coverUrl;
+
+    /**
+     * 直播间配置状态。 - ENABLE: 直播间正常可用。 - DISABLE： 直播间不可用。不可用原因在error_info中说明。 - BLOCKED：直播间被冻结。冻结原因在error_info中说明。
+     */
+    public static final class RoomStateEnum {
+
+        /**
+         * Enum ENABLE for value: "ENABLE"
+         */
+        public static final RoomStateEnum ENABLE = new RoomStateEnum("ENABLE");
+
+        /**
+         * Enum DISABLE for value: "DISABLE"
+         */
+        public static final RoomStateEnum DISABLE = new RoomStateEnum("DISABLE");
+
+        /**
+         * Enum BLOCKED for value: "BLOCKED"
+         */
+        public static final RoomStateEnum BLOCKED = new RoomStateEnum("BLOCKED");
+
+        private static final Map<String, RoomStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RoomStateEnum> createStaticFields() {
+            Map<String, RoomStateEnum> map = new HashMap<>();
+            map.put("ENABLE", ENABLE);
+            map.put("DISABLE", DISABLE);
+            map.put("BLOCKED", BLOCKED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RoomStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RoomStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RoomStateEnum(value));
+        }
+
+        public static RoomStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RoomStateEnum) {
+                return this.value.equals(((RoomStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "room_state")
+
+    private RoomStateEnum roomState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_info")
+
+    private ErrorResponse errorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -194,7 +311,7 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。
+     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
      * @return roomType
      */
     public RoomTypeEnum getRoomType() {
@@ -345,7 +462,7 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 视频推流第三方直播平台地址。
+     * RTMP视频推流第三方直播平台地址。
      * @return outputUrls
      */
     public List<String> getOutputUrls() {
@@ -354,6 +471,151 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
 
     public void setOutputUrls(List<String> outputUrls) {
         this.outputUrls = outputUrls;
+    }
+
+    public ShowSmartLiveRoomResponse withStreamKeys(List<String> streamKeys) {
+        this.streamKeys = streamKeys;
+        return this;
+    }
+
+    public ShowSmartLiveRoomResponse addStreamKeysItem(String streamKeysItem) {
+        if (this.streamKeys == null) {
+            this.streamKeys = new ArrayList<>();
+        }
+        this.streamKeys.add(streamKeysItem);
+        return this;
+    }
+
+    public ShowSmartLiveRoomResponse withStreamKeys(Consumer<List<String>> streamKeysSetter) {
+        if (this.streamKeys == null) {
+            this.streamKeys = new ArrayList<>();
+        }
+        streamKeysSetter.accept(this.streamKeys);
+        return this;
+    }
+
+    /**
+     * RTMP视频推流第三方直播平台流秘钥，与推流地址对应。
+     * @return streamKeys
+     */
+    public List<String> getStreamKeys() {
+        return streamKeys;
+    }
+
+    public void setStreamKeys(List<String> streamKeys) {
+        this.streamKeys = streamKeys;
+    }
+
+    public ShowSmartLiveRoomResponse withBackupModelAssetIds(List<String> backupModelAssetIds) {
+        this.backupModelAssetIds = backupModelAssetIds;
+        return this;
+    }
+
+    public ShowSmartLiveRoomResponse addBackupModelAssetIdsItem(String backupModelAssetIdsItem) {
+        if (this.backupModelAssetIds == null) {
+            this.backupModelAssetIds = new ArrayList<>();
+        }
+        this.backupModelAssetIds.add(backupModelAssetIdsItem);
+        return this;
+    }
+
+    public ShowSmartLiveRoomResponse withBackupModelAssetIds(Consumer<List<String>> backupModelAssetIdsSetter) {
+        if (this.backupModelAssetIds == null) {
+            this.backupModelAssetIds = new ArrayList<>();
+        }
+        backupModelAssetIdsSetter.accept(this.backupModelAssetIds);
+        return this;
+    }
+
+    /**
+     * 主播轮换时备选主播数字人资产ID（仅形象资产，不包含音色）。
+     * @return backupModelAssetIds
+     */
+    public List<String> getBackupModelAssetIds() {
+        return backupModelAssetIds;
+    }
+
+    public void setBackupModelAssetIds(List<String> backupModelAssetIds) {
+        this.backupModelAssetIds = backupModelAssetIds;
+    }
+
+    public ShowSmartLiveRoomResponse withLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+        this.liveEventCallbackConfig = liveEventCallbackConfig;
+        return this;
+    }
+
+    public ShowSmartLiveRoomResponse withLiveEventCallbackConfig(
+        Consumer<LiveEventCallBackConfig> liveEventCallbackConfigSetter) {
+        if (this.liveEventCallbackConfig == null) {
+            this.liveEventCallbackConfig = new LiveEventCallBackConfig();
+            liveEventCallbackConfigSetter.accept(this.liveEventCallbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get liveEventCallbackConfig
+     * @return liveEventCallbackConfig
+     */
+    public LiveEventCallBackConfig getLiveEventCallbackConfig() {
+        return liveEventCallbackConfig;
+    }
+
+    public void setLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+        this.liveEventCallbackConfig = liveEventCallbackConfig;
+    }
+
+    public ShowSmartLiveRoomResponse withReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+        return this;
+    }
+
+    public ShowSmartLiveRoomResponse withReviewConfig(Consumer<ReviewConfig> reviewConfigSetter) {
+        if (this.reviewConfig == null) {
+            this.reviewConfig = new ReviewConfig();
+            reviewConfigSetter.accept(this.reviewConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reviewConfig
+     * @return reviewConfig
+     */
+    public ReviewConfig getReviewConfig() {
+        return reviewConfig;
+    }
+
+    public void setReviewConfig(ReviewConfig reviewConfig) {
+        this.reviewConfig = reviewConfig;
+    }
+
+    public ShowSmartLiveRoomResponse withSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
+        return this;
+    }
+
+    public ShowSmartLiveRoomResponse withSharedConfig(Consumer<SharedConfig> sharedConfigSetter) {
+        if (this.sharedConfig == null) {
+            this.sharedConfig = new SharedConfig();
+            sharedConfigSetter.accept(this.sharedConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sharedConfig
+     * @return sharedConfig
+     */
+    public SharedConfig getSharedConfig() {
+        return sharedConfig;
+    }
+
+    public void setSharedConfig(SharedConfig sharedConfig) {
+        this.sharedConfig = sharedConfig;
     }
 
     public ShowSmartLiveRoomResponse withRoomId(String roomId) {
@@ -424,6 +686,49 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
         this.coverUrl = coverUrl;
     }
 
+    public ShowSmartLiveRoomResponse withRoomState(RoomStateEnum roomState) {
+        this.roomState = roomState;
+        return this;
+    }
+
+    /**
+     * 直播间配置状态。 - ENABLE: 直播间正常可用。 - DISABLE： 直播间不可用。不可用原因在error_info中说明。 - BLOCKED：直播间被冻结。冻结原因在error_info中说明。
+     * @return roomState
+     */
+    public RoomStateEnum getRoomState() {
+        return roomState;
+    }
+
+    public void setRoomState(RoomStateEnum roomState) {
+        this.roomState = roomState;
+    }
+
+    public ShowSmartLiveRoomResponse withErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
+        return this;
+    }
+
+    public ShowSmartLiveRoomResponse withErrorInfo(Consumer<ErrorResponse> errorInfoSetter) {
+        if (this.errorInfo == null) {
+            this.errorInfo = new ErrorResponse();
+            errorInfoSetter.accept(this.errorInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get errorInfo
+     * @return errorInfo
+     */
+    public ErrorResponse getErrorInfo() {
+        return errorInfo;
+    }
+
+    public void setErrorInfo(ErrorResponse errorInfo) {
+        this.errorInfo = errorInfo;
+    }
+
     public ShowSmartLiveRoomResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -457,9 +762,14 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
             && Objects.equals(this.roomType, that.roomType) && Objects.equals(this.sceneScripts, that.sceneScripts)
             && Objects.equals(this.interactionRules, that.interactionRules)
             && Objects.equals(this.playPolicy, that.playPolicy) && Objects.equals(this.videoConfig, that.videoConfig)
-            && Objects.equals(this.outputUrls, that.outputUrls) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.outputUrls, that.outputUrls) && Objects.equals(this.streamKeys, that.streamKeys)
+            && Objects.equals(this.backupModelAssetIds, that.backupModelAssetIds)
+            && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
+            && Objects.equals(this.reviewConfig, that.reviewConfig)
+            && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.roomId, that.roomId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.roomState, that.roomState)
+            && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -472,10 +782,17 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
             playPolicy,
             videoConfig,
             outputUrls,
+            streamKeys,
+            backupModelAssetIds,
+            liveEventCallbackConfig,
+            reviewConfig,
+            sharedConfig,
             roomId,
             createTime,
             updateTime,
             coverUrl,
+            roomState,
+            errorInfo,
             xRequestId);
     }
 
@@ -491,10 +808,17 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
         sb.append("    playPolicy: ").append(toIndentedString(playPolicy)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
         sb.append("    outputUrls: ").append(toIndentedString(outputUrls)).append("\n");
+        sb.append("    streamKeys: ").append(toIndentedString(streamKeys)).append("\n");
+        sb.append("    backupModelAssetIds: ").append(toIndentedString(backupModelAssetIds)).append("\n");
+        sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
+        sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
+        sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
+        sb.append("    roomState: ").append(toIndentedString(roomState)).append("\n");
+        sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

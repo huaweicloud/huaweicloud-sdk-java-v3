@@ -30,6 +30,11 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
     private String keywordsAlarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_rule_alias")
+
+    private String alarmRuleAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keywords_alarm_rule_description")
 
     private String keywordsAlarmRuleDescription;
@@ -396,6 +401,23 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         this.keywordsAlarmRuleName = keywordsAlarmRuleName;
     }
 
+    public UpdateKeywordsAlarmRuleResponse withAlarmRuleAlias(String alarmRuleAlias) {
+        this.alarmRuleAlias = alarmRuleAlias;
+        return this;
+    }
+
+    /**
+     * 规则名称
+     * @return alarmRuleAlias
+     */
+    public String getAlarmRuleAlias() {
+        return alarmRuleAlias;
+    }
+
+    public void setAlarmRuleAlias(String alarmRuleAlias) {
+        this.alarmRuleAlias = alarmRuleAlias;
+    }
+
     public UpdateKeywordsAlarmRuleResponse withKeywordsAlarmRuleDescription(String keywordsAlarmRuleDescription) {
         this.keywordsAlarmRuleDescription = keywordsAlarmRuleDescription;
         return this;
@@ -708,6 +730,7 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         UpdateKeywordsAlarmRuleResponse that = (UpdateKeywordsAlarmRuleResponse) obj;
         return Objects.equals(this.keywordsAlarmRuleId, that.keywordsAlarmRuleId)
             && Objects.equals(this.keywordsAlarmRuleName, that.keywordsAlarmRuleName)
+            && Objects.equals(this.alarmRuleAlias, that.alarmRuleAlias)
             && Objects.equals(this.keywordsAlarmRuleDescription, that.keywordsAlarmRuleDescription)
             && Objects.equals(this.keywordsRequests, that.keywordsRequests)
             && Objects.equals(this.frequency, that.frequency)
@@ -726,6 +749,7 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(keywordsAlarmRuleId,
             keywordsAlarmRuleName,
+            alarmRuleAlias,
             keywordsAlarmRuleDescription,
             keywordsRequests,
             frequency,
@@ -749,6 +773,7 @@ public class UpdateKeywordsAlarmRuleResponse extends SdkResponse {
         sb.append("class UpdateKeywordsAlarmRuleResponse {\n");
         sb.append("    keywordsAlarmRuleId: ").append(toIndentedString(keywordsAlarmRuleId)).append("\n");
         sb.append("    keywordsAlarmRuleName: ").append(toIndentedString(keywordsAlarmRuleName)).append("\n");
+        sb.append("    alarmRuleAlias: ").append(toIndentedString(alarmRuleAlias)).append("\n");
         sb.append("    keywordsAlarmRuleDescription: ")
             .append(toIndentedString(keywordsAlarmRuleDescription))
             .append("\n");
