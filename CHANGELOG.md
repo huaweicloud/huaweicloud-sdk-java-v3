@@ -1,3 +1,27 @@
+# 3.1.75-patch 2023-12-28
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowGroups**
+    - changes of response param
+      - `* group.group_message_offsets.message_current_offset: int32 -> int64`
+      - `* group.group_message_offsets.message_log_end_offset: int32 -> int64`
+  - **ResetMessageOffset**
+    - changes of request param
+      - `* message_offset: int32 -> int64`
+      - `* timestamp: int32 -> int64`
+  - **ShowMessages**
+    - changes of response param
+      - `* messages.message_offset: int32 -> int64`
+  - **ShowInstanceMessages**
+    - changes of response param
+      - `* messages.message_offset: int32 -> int64`
+
 # 3.1.75 2023-12-27
 
 ### HuaweiCloud SDK AAD

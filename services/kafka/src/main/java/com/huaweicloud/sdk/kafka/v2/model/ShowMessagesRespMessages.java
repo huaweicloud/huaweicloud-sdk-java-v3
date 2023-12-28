@@ -23,7 +23,7 @@ public class ShowMessagesRespMessages {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_offset")
 
-    private Integer messageOffset;
+    private Long messageOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
@@ -69,7 +69,7 @@ public class ShowMessagesRespMessages {
         this.partition = partition;
     }
 
-    public ShowMessagesRespMessages withMessageOffset(Integer messageOffset) {
+    public ShowMessagesRespMessages withMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
@@ -78,11 +78,11 @@ public class ShowMessagesRespMessages {
      * 消息编号。
      * @return messageOffset
      */
-    public Integer getMessageOffset() {
+    public Long getMessageOffset() {
         return messageOffset;
     }
 
-    public void setMessageOffset(Integer messageOffset) {
+    public void setMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
     }
 

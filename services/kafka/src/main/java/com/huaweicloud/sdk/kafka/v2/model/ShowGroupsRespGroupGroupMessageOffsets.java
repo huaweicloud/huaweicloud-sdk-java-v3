@@ -28,12 +28,12 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_current_offset")
 
-    private Integer messageCurrentOffset;
+    private Long messageCurrentOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_log_end_offset")
 
-    private Integer messageLogEndOffset;
+    private Long messageLogEndOffset;
 
     public ShowGroupsRespGroupGroupMessageOffsets withPartition(Integer partition) {
         this.partition = partition;
@@ -86,7 +86,7 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
         this.topic = topic;
     }
 
-    public ShowGroupsRespGroupGroupMessageOffsets withMessageCurrentOffset(Integer messageCurrentOffset) {
+    public ShowGroupsRespGroupGroupMessageOffsets withMessageCurrentOffset(Long messageCurrentOffset) {
         this.messageCurrentOffset = messageCurrentOffset;
         return this;
     }
@@ -95,15 +95,15 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
      * 当前消费进度。
      * @return messageCurrentOffset
      */
-    public Integer getMessageCurrentOffset() {
+    public Long getMessageCurrentOffset() {
         return messageCurrentOffset;
     }
 
-    public void setMessageCurrentOffset(Integer messageCurrentOffset) {
+    public void setMessageCurrentOffset(Long messageCurrentOffset) {
         this.messageCurrentOffset = messageCurrentOffset;
     }
 
-    public ShowGroupsRespGroupGroupMessageOffsets withMessageLogEndOffset(Integer messageLogEndOffset) {
+    public ShowGroupsRespGroupGroupMessageOffsets withMessageLogEndOffset(Long messageLogEndOffset) {
         this.messageLogEndOffset = messageLogEndOffset;
         return this;
     }
@@ -112,11 +112,11 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
      * 最大消息位置（LEO）。
      * @return messageLogEndOffset
      */
-    public Integer getMessageLogEndOffset() {
+    public Long getMessageLogEndOffset() {
         return messageLogEndOffset;
     }
 
-    public void setMessageLogEndOffset(Integer messageLogEndOffset) {
+    public void setMessageLogEndOffset(Long messageLogEndOffset) {
         this.messageLogEndOffset = messageLogEndOffset;
     }
 

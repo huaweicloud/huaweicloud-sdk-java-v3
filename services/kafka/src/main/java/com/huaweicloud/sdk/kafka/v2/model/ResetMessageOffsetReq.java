@@ -23,12 +23,12 @@ public class ResetMessageOffsetReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_offset")
 
-    private Integer messageOffset;
+    private Long messageOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
-    private Integer timestamp;
+    private Long timestamp;
 
     public ResetMessageOffsetReq withTopic(String topic) {
         this.topic = topic;
@@ -64,7 +64,7 @@ public class ResetMessageOffsetReq {
         this.partition = partition;
     }
 
-    public ResetMessageOffsetReq withMessageOffset(Integer messageOffset) {
+    public ResetMessageOffsetReq withMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
@@ -73,15 +73,15 @@ public class ResetMessageOffsetReq {
      * 重置消费进度到指定偏移量。 - 如果传入offset小于当前最小的offset，则重置到最小的offset。 - 如果大于最大的offset，则重置到最大的offset。  **message_offset、timestamp二者必选其一。** 
      * @return messageOffset
      */
-    public Integer getMessageOffset() {
+    public Long getMessageOffset() {
         return messageOffset;
     }
 
-    public void setMessageOffset(Integer messageOffset) {
+    public void setMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
     }
 
-    public ResetMessageOffsetReq withTimestamp(Integer timestamp) {
+    public ResetMessageOffsetReq withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -90,11 +90,11 @@ public class ResetMessageOffsetReq {
      * 重置消费进度到指定时间，格式为unix时间戳，单位为毫秒。 - 如果传入timestamp早于当前最早的timestamp，则重置到最早的timestamp。 - 如果晚于最晚的timestamp，则重置到最晚的timestamp。  **message_offset、timestamp二者必选其一。** 
      * @return timestamp
      */
-    public Integer getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Integer timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 

@@ -48,7 +48,7 @@ public class MessagesEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_offset")
 
-    private Integer messageOffset;
+    private Long messageOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_id")
@@ -184,7 +184,7 @@ public class MessagesEntity {
         this.hugeMessage = hugeMessage;
     }
 
-    public MessagesEntity withMessageOffset(Integer messageOffset) {
+    public MessagesEntity withMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
@@ -193,11 +193,11 @@ public class MessagesEntity {
      * 消息偏移量。
      * @return messageOffset
      */
-    public Integer getMessageOffset() {
+    public Long getMessageOffset() {
         return messageOffset;
     }
 
-    public void setMessageOffset(Integer messageOffset) {
+    public void setMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
     }
 
